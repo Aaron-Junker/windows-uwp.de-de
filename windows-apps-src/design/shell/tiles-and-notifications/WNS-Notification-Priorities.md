@@ -1,74 +1,74 @@
 ---
-title: WNS-Benachrichtigung-Prioritäten
+title: WNS-Benachrichtigungs Prioritäten
 description: Beschreibung der verschiedenen Prioritäten, die Sie für eine Benachrichtigung festlegen können
 ms.date: 01/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, WinRT-API, WNS
+keywords: Windows 10, UWP, WinRT-API, WNS
 localizationpriority: medium
-ms.openlocfilehash: f5c4b9f1db58a091dc4f9389888ad3739c4439e5
-ms.sourcegitcommit: b0edd3c09f931b9b62f9c2d17037fb58d826174f
+ms.openlocfilehash: 3310b34b2748bd684e46e04775c973680f8e03a9
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67349868"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282239"
 ---
-# <a name="wns-notification-priorities"></a>WNS-Benachrichtigung-Prioritäten
-Wenn eine Benachrichtigung, die Priorität mit einem einfachen-Header auf WNS beitragsnachrichten festlegen, können Sie steuern, wie Benachrichtigungen in Akku vertrauliche Situationen übermittelt werden.
+# <a name="wns-notification-priorities"></a>WNS-Benachrichtigungs Prioritäten
+Durch Festlegen der Priorität einer Benachrichtigung mit einem einfachen Header auf WNS-Post-Nachrichten können Sie steuern, wie Benachrichtigungen in Akku sensiblen Situationen zugestellt werden.
 
-## <a name="power-on-windows"></a>Schalten Sie Windows
-Mehr Benutzer nur auf Akkubetrieb Geräten arbeiten, ist nach der Stromverbrauch minimiert ist eine standard-Voraussetzung für alle apps geworden. Wenn apps mehr Energie als der Wert, die sie bereitstellen verwendet, können Benutzer die apps deinstallieren. Während des Windows-Betriebssystems Energieverbrauch auf den Akku möglichst reduziert, ist es der Zuständigkeit der app an effizient arbeiten. 
+## <a name="power-on-windows"></a>Einschalten von Fenstern
+Da mehr Benutzer nur auf Akku Geräten arbeiten, ist das Minimieren des Energieverbrauchs zu einer Standard Anforderung für alle apps geworden. Wenn apps mehr Energie beanspruchen als der von Ihnen bereitgestellte Wert, können Benutzer die apps deinstallieren. Wenngleich das Windows-Betriebssystem die Stromversorgung für den Akku nach Möglichkeit reduziert, ist es für die APP verantwortlich, effizient zu arbeiten. 
 
-WNS-Prioritäten ist eine Möglichkeit zum Verschieben der Akku nicht kritische Arbeit. Die Prioritäten WNS Teilen Sie das System die Benachrichtigungen sofort gesendet werden soll, und die darauf warten, bis das Gerät an eine Stromquelle angeschlossen ist. Mit diesen Hinweisen kann das System die genaue Zeit, die sie die Benutzer und die app die wertvollsten sind Benachrichtigungen bereitstellen. 
+WNS-Prioritäten sind eine Möglichkeit zum Verschieben nicht kritischer Arbeit aus dem Akku. Die WNS-Prioritäten teilen dem System mit, welche Benachrichtigungen umgehend zugestellt werden sollten und wie gewartet werden kann, bis das Gerät an eine Stromquelle angeschlossen ist. Mit diesen hinweisen kann das System die Benachrichtigungen genau so bereitstellen, wie Sie für den Benutzer und die APP am nützlichsten sind. 
 
-## <a name="power-modes-on-the-device"></a>Energiestatus auf dem Gerät
-Jedes Windows-Gerät ausgeführt wird, über eine Vielzahl von Energiestatus (Akku, Stromsparmodus und Kosten), und Benutzer erwarten, dass unterschiedliche Verhaltensweisen von apps in anderen Modi. Wenn das Gerät aktiviert ist, sollten alle Benachrichtigungen übermittelt werden. In Stromsparmodus sollten nur die wichtigsten Benachrichtigungen übermittelt werden. Während das Gerät im Netzbetrieb befindet, können Sync oder nicht-Time-kritische Vorgänge ausgeführt werden.
+## <a name="power-modes-on-the-device"></a>Energie Modi auf dem Gerät
+Jedes Windows-Gerät wird über eine Vielzahl von Energie Modi betrieben (Akku, Akku Schoner und Belastung), und Benutzer erwarten verschiedene Verhaltensweisen von apps in unterschiedlichen Energie Modi. Wenn das Gerät eingeschaltet ist, sollten alle Benachrichtigungen übermittelt werden. Im Akku Spar Modus sollten nur die wichtigsten Benachrichtigungen zugestellt werden. Während das Gerät angeschlossen ist, können Synchronisierungs-oder nicht zeitkritische Vorgänge abgeschlossen werden.
 
-Windows weiß nicht, welche Benachrichtigungen für alle Benutzer oder eine app, wichtig sind, damit das System vollständig apps zum Festlegen der richtigen Priorität für die Benachrichtigungen verwendet. 
+Windows weiß nicht, welche Benachrichtigungen für einen Benutzer oder eine APP wichtig sind, sodass das System vollständig von apps abhängig ist, um die richtige Priorität für Ihre Benachrichtigungen festzulegen. 
 
 ## <a name="priorities"></a>Prioritäten
-Es gibt vier Prioritäten für eine app verwendet beim Senden von Pushbenachrichtigungen zur Verfügung. Die Priorität für einzelne Benachrichtigungen, können Sie auswählen, welche Benachrichtigungen sofort übermittelt werden müssen (z. B. eine IM-Nachricht), und warten können, welche festgelegt ist (z. B. Wenden Sie sich an Foto-Updates).
+Es stehen vier Prioritäten für eine App zur Verfügung, die beim Senden von Pushbenachrichtigungen verwendet werden können. Die Priorität wird für einzelne Benachrichtigungen festgelegt, sodass Sie auswählen können, welche Benachrichtigungen umgehend zugestellt werden müssen (z. b. eine im-Nachricht) und welche Wartezeiten Sie warten können (z. b. mit Foto Aktualisierungen).
 
-Die Prioritäten liegen auf: 
+Die Prioritäten lauten: 
 
-|    Priority    |    Außerkraftsetzung durch Benutzer    |    Beschreibung    |    Beispiel    |
+|    Priority    |    Benutzer Außerkraftsetzung    |    Beschreibung    |    Beispiel    |
 |----------------|---------------------|-------------------|---------------|
-|    Hoch    |    Ja – Benutzer kann alle Benachrichtigungen von einer app blockiert, oder kann verhindern, dass eine app in Stromsparmodus gedrosselt.    |    Die wichtigsten Benachrichtigungen, die in jedem Fall sofort zugestellt werden müssen, wenn das Gerät Benachrichtigungen empfangen kann. Dinge wie VoIP-Anrufe oder kritische Warnungen, die das Gerät zu reaktivieren soll fallen in diese Kategorie.    |    VoIP-Anrufe, Zeit: kritische Warnungen    |
-|    Mittel    |    Ja – Benutzer kann alle Benachrichtigungen von einer app blockiert, oder kann verhindern, dass eine app in Stromsparmodus gedrosselt.    |    Hierbei handelt es sich um Dinge, die nicht als wichtige, Punkte, die nicht sofort erfolgen müssen, aber Benutzer würde nicht mögen werden, wenn sie nicht im Hintergrund ausgeführt werden.    |    Sekundären e-Mail-Konto-Synchronisierung aktualisiert live-Kachel.    |
-|    Niedrig    |    Ja – Benutzer kann alle Benachrichtigungen von einer app blockiert, oder kann verhindern, dass eine app in Stromsparmodus gedrosselt.    |    Benachrichtigungen, die nur sinnvoll, wenn der Benutzer das Gerät verwendet oder Hintergrundaktivitäten sinnvoll ist. Zwischengespeichert Sie werden und nicht verarbeitet, bis der Benutzer anmeldet oder das Plug-in in ihr Gerät.    |    Wenden Sie sich an Status (online/offline)    |
-|    Sehr niedrig     |    Nein – nicht es verhindern, dass Benachrichtigungen mit sehr niedriger Priorität in Stromsparmodus gedrosselt.    |    Dies ist fast identisch, da es sich bei die Akku Bildschirmschoner-Richtlinie mit niedriger Priorität, mit Ausnahme von Benutzern nicht übersteuert werden kann. Diese Benachrichtigungen werden nie in Stromsparmodus übermittelt werden.    |    Synchronisieren von Dateien für einen Synchronisierungsdienst.    |
+|    Hoch    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Die wichtigsten Benachrichtigungen, die sofort übermittelt werden müssen, wenn das Gerät Benachrichtigungen empfangen kann. Dinge wie VoIP-Anrufe oder kritische Warnungen, die das Gerät reaktivieren sollten, fallen in diese Kategorie.    |    VoIP-Anrufe, zeitkritische Warnungen    |
+|    Mittel    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Dabei handelt es sich um Dinge, die nicht so wichtig sind, aber Dinge, die nicht sofort ausgeführt werden müssen. die Benutzer sind jedoch verärgert, wenn Sie nicht im Hintergrund ausgeführt werden.    |    Sekundäre e-Mail-Konto Synchronisierung, Live-Kachel Aktualisierungen    |
+|    Niedrig    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Benachrichtigungen, die nur sinnvoll sind, wenn der Benutzer das Gerät verwendet oder wenn Hintergrund Aktivität sinnvoll ist. Diese werden zwischengespeichert und erst verarbeitet, wenn sich der Benutzer anmeldet oder in seinem Gerät einfügt.    |    Kontakt Status (Online/Offline)    |
+|    Sehr niedrig     |    Nein – es kann nicht verhindern, dass Benachrichtigungen mit sehr niedriger Priorität im Akku Spar Modus gedrosselt werden.    |    Dies ist fast identisch mit niedriger Priorität, außer dass Benutzer die Akku-sparrichtlinie nicht außer Kraft setzen können. Diese Benachrichtigungen werden nie in Akku Schoner zugestellt.    |    Synchronisieren von Dateien für einen Synchronisierungs Dienst.    |
 
-Beachten Sie, dass viele apps Benachrichtigungen mit unterschiedlichen Prioritäten während des gesamten Lebenszyklus. Da die Priorität auf einer pro-Notification-Basis festgelegt ist, ist dies kein Problem. Eine VoIP-app kann eine hohe Priorität-Benachrichtigung für einen eingehenden Aufruf senden und anschließend die entsprechende es mit niedriger Priorität eine Wenn ein Kontakt online geschaltet wird. 
+Beachten Sie, dass viele apps über den gesamten Lebenszyklus hinweg Benachrichtigungen mit unterschiedlichen Prioritäten erhalten. Da die Priorität pro Benachrichtigung festgelegt wird, ist dies kein Problem. Eine VoIP-App kann eine Benachrichtigung mit hoher Priorität für einen eingehenden Rückruf senden und Sie dann mit einer niedrigen Priorität nachverfolgen, wenn ein Kontakt online geschaltet wird. 
 
-## <a name="setting-the-priority"></a>Festlegen der Prioritäten
+## <a name="setting-the-priority"></a>Festlegen der Priorität
 
-Festlegen der Prioritäten für die benachrichtigungsanforderung erfolgt über einen zusätzlichen Header auf die POST-Anforderung `X-WNS-PRIORITY`. Dies ist eine ganze Zahl zwischen 1 und 4 der eine Priorität zugeordnet: 
+Das Festlegen der Priorität für die Benachrichtigungs Anforderung erfolgt über einen zusätzlichen Header in der Post-Anforderung, `X-WNS-PRIORITY`. Dies ist ein ganzzahliger Wert zwischen 1 und 4, der einer Priorität zugeordnet ist: 
 
-| Prioritätenname | X-WNS-PRIORITY-Wert | Standardwert für: |
+| Prioritäts Name | X-WNS-Priority-Wert | Standardwert für: |
 |---------------|----------------------|------------------|
 | Hoch | 1 | Popups |
-| Meduim | 2 | Kacheln und Signale |
+| Mittlerer | 2 | Kacheln und Abzeichen |
 | Niedrig | 3 | Raw |
 | Sehr niedrig | 4 |  |
 
-Um Abwärtskompatibilität zu sein ist kompatibel, das eine Priorität nicht erforderlich. Für den Fall, dass eine app nicht die Priorität der ihre Benachrichtigungen festgelegt, wird das System eine Standardpriorität bereitstellen. Die Standardwerte werden im Diagramm oben angezeigt und entspricht das Verhalten der vorhandenen Versionen von Windows. 
+Das Festlegen einer Priorität ist nicht erforderlich, um abwärts kompatibel zu sein. Für den Fall, dass eine APP die Priorität Ihrer Benachrichtigungen nicht festgelegt, wird vom System eine Standardpriorität bereitgestellt. Die Standardwerte werden im obigen Diagramm angezeigt und entsprechen dem Verhalten vorhandener Versionen von Windows. 
 
-## <a name="detailed-listing-of-desktop-behavior"></a>Ausführliche Liste der desktop-Verhalten 
+## <a name="detailed-listing-of-desktop-behavior"></a>Ausführliche Auflistung von Desktop Verhalten 
 
-Wenn Sie Ihre app über viele verschiedene SKUs von Windows liefern, empfiehlt es sich normalerweise auf das Diagramm im vorherigen Abschnitt folgen. 
+Wenn Sie Ihre APP über viele verschiedene SKUs von Windows versenden, empfiehlt es sich in der Regel, das Diagramm im obigen Abschnitt zu befolgen. 
 
-Spezifischere empfohlene Verhalten für die einzelnen Prioritäten sind unten aufgeführt. Dies ist keine Garantie dafür, die jedes Gerät genau entsprechend dem Diagramm funktionieren. OEMs können das Verhalten anders konfigurieren, aber die meisten sind in der Nähe dieses Diagramm. 
+Spezifischere Empfohlene Verhaltensweisen für jede Priorität sind unten aufgeführt. Dies ist keine Garantie dafür, dass jedes Gerät genau entsprechend dem Diagramm funktioniert. OEMs können das Verhalten anders konfigurieren, aber die meisten sind in der Nähe dieses Diagramms. 
 
-| Gerätestatus    | PRIORITÄT: Hoch    |    PRIORITÄT: Mittel        | PRIORITÄT: Niedrig    |    PRIORITÄT: Sehr niedrig    |
+| Gerätestatus    | HABEN Hoch    |    HABEN Mittel        | HABEN Niedrig    |    HABEN Sehr niedrig    |
 |-------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|--------------------------|
-|    Bildschirm für oder im Netzbetrieb befindet    |    Übermitteln    |    Übermitteln    |    Übermitteln    |    Übermitteln    |
-|    Bildschirm ausschalten und Akkubetrieb    |    Übermitteln    |    Wenn Benutzer ausgenommen: übermitteln Else: Batch     |    Wenn Benutzer ausgenommen: übermitteln Else: Cache *    |    Cache    |
-|    Stromsparmodus aktiviert    |    Wenn Benutzer ausgenommen: übermitteln Else: Cache    |    Wenn Benutzer ausgenommen: übermitteln Else: Cache    |    Wenn Benutzer ausgenommen: übermitteln Else: Cache    |    Cache     |
-|    Akku + Stromsparmodus aktiviert und Bildschirm deaktiviert    |    Wenn Benutzer ausgenommen: übermitteln Else: Cache    |    Wenn Benutzer ausgenommen: übermitteln Else: Cache    |    Wenn Benutzer ausgenommen: übermitteln Else: Cache    |    Cache    |
+|    Bildschirm ein-oder angeschlossen    |    Umsetzen    |    Umsetzen    |    Umsetzen    |    Umsetzen    |
+|    Bildschirm aus und Akku    |    Umsetzen    |    Wenn Benutzer ausgenommen: Übermitteln von else: Batch     |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache *    |    Cache    |
+|    Akku Schoner aktiviert    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Cache     |
+|    Auf Akku + Akku Schoner aktiviert + Bildschirm aus    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Cache    |
 
-Beachten Sie, die mit niedriger Priorität Benachrichtigungen für den Bildschirm standardmäßig off bereitgestellt werden und Akku nur für Windows Phone-basierten Geräten. Dies ist zum Maintian der Kompatibilität mit vorhandenen MPNS-Richtlinie. Beachten Sie außerdem, dass die vierten und fünften Zeilen identisch, nur verschiedene Szenarien aufgerufen werden.
+Beachten Sie, dass Benachrichtigungen mit niedriger Priorität standardmäßig für den Abbild Modus und Batterie nur für Windows Phone basierte Geräte übermittelt werden. Dies ist die Kompatibilität mit einer bereits vorhandenen mpns-Richtlinie. Beachten Sie auch, dass die vierte und fünfte Zeile identisch sind, indem Sie lediglich verschiedene Szenarien aufrufen.
 
-Um eine app in Stromsparmodus ausschließen möchten, müssen die Benutzer finden Sie unter der "Akku Nutzung von App" in den Einstellungen und wählen Sie "Zulassen" der app"zum Ausführen von Aufgaben im Hintergrund". Diese Benutzerauswahl nimmt die app aus dem Stromsparmodus für hoch, Mittel und niedriger Priorität Benachrichtigungen aus. Sie können auch aufrufen [BackgroundExecutionManager API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) programmgesteuert für die Berechtigung des Benutzers zu bitten.  
+Um eine APP im Akku Spar Modus auszumachen, müssen die Benutzer in den Einstellungen zur "Akku Nutzung nach app" wechseln und "zulassen, dass die APP Hintergrundaufgaben ausführen" auswählen. Bei Auswahl dieser Option wird die APP vom Akku Schoner für Benachrichtigungen mit hoher, mittlerer und niedriger Priorität ausgenommen. Sie können auch die [backgroundexecutionmanager-API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) anrufen, um die Berechtigung des Benutzers Programm gesteuert anzufordern.  
 
 ## <a name="related-topics"></a>Verwandte Themen
 - [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
-- [Berechtigung zum Ausführen im Hintergrund ausgeführt werden](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
+- [Anfordern der Berechtigung zum Ausführen im Hintergrund](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)

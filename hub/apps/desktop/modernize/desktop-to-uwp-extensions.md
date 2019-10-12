@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 316682ba136b5b3249d26abd0a5c5a877abbcf12
-ms.sourcegitcommit: 76357092f90b70bdb21ee43a5a416fe1fbfd9b89
+ms.openlocfilehash: c99d05a701f41e24663d116773b000017b805d81
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72257937"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281806"
 ---
 # <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Integrieren Ihrer APP für gepackte Desktops in Windows 10 und UWP
 
@@ -247,7 +247,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Verb |Der Name, der im Kontextmenü des Datei-Explorers angezeigt wird. Diese Zeichenfolge kann mithilfe von ```ms-resource``` lokalisiert werden.|
 |Id |Die eindeutige ID des Verbs. Wenn es sich bei Ihrer Anwendung um eine UWP-App handelt, wird Sie als Teil ihrer Aktivierungs Ereignis Argumente an Ihre APP übermittelt, sodass Sie die Auswahl des Benutzers entsprechend behandeln kann. Wenn es sich bei Ihrer Anwendung um eine APP mit vollständiger Vertrauenswürdigkeit handelt, empfängt Sie stattdessen Parameter (siehe das nächste Aufzählungs Zeichen). |
 |Parameter |Die Liste mit Argumentparametern und -werten für das Verb. Wenn es sich bei Ihrer Anwendung um eine APP mit vollständiger Vertrauenswürdigkeit handelt, werden diese Parameter als Ereignis Argumente an die Anwendung übermittelt, wenn die Anwendung aktiviert wird. Sie können das Verhalten Ihrer Anwendung auf der Grundlage verschiedener Aktivierungs Verben anpassen. Wenn eine Variable einen Dateipfad enthalten kann, schließen Sie den Parameterwert in Anführungszeichen. Dadurch werden jegliche Probleme vermieden, die in Fällen auftreten, bei denen der Pfad Leerzeichen enthält. Wenn Ihre Anwendung eine UWP-APP ist, können Sie keine Parameter übergeben. Die App empfängt stattdessen die ID (siehe das vorherige Aufzählungszeichen).|
-|Erweitert |Gibt an, dass das Verb nur angezeigt werden soll, wenn der Benutzer zum Anzeigen des Kontextmenüs **UMSCHALT** gedrückt hält, bevor er mit der rechten Maustaste auf die Datei klickt. Dieses Attribut ist optional und standardmäßig auf den Wert von **False** (Verb soll immer angezeigt werden) festgelegt. Dieses Verhalten muss für jedes Verb einzeln angegeben werden – mit Ausnahme von „Öffnen“: Bei diesem Verb ist der Wert immer **False**.|
+|Erweitert |Gibt an, dass das Verb nur angezeigt werden soll, wenn der Benutzer zum Anzeigen des Kontextmenüs **UMSCHALT** gedrückt hält, bevor er mit der rechten Maustaste auf die Datei klickt. Dieses Attribut ist optional und wird standardmäßig auf den Wert **false** gesetzt (z. b. immer das Verb anzeigen), wenn es nicht aufgeführt ist. Dieses Verhalten muss für jedes Verb einzeln angegeben werden – mit Ausnahme von „Öffnen“: Bei diesem Verb ist der Wert immer **False**.|
 
 #### <a name="example"></a>Beispiel
 

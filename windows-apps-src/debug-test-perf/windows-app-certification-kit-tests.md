@@ -1,22 +1,22 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Tests im Zertifizierungskit für Windows-Apps
-description: Die Windows-Zertifizierungskit für Apps enthält eine Reihe von Tests, die helfen können, stellen Sie sicher, dass Ihre app auf dem Microsoft Store veröffentlicht werden kann.
+description: Das zertifizierungskit für Windows-apps enthält eine Reihe von Tests, mit denen sichergestellt werden kann, dass Ihre APP auf dem Microsoft Store veröffentlicht werden kann.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, app-Zertifizierung
+keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a7cf1e89c91f9ad53777aa21af1d43e070c4fc8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3f0fe5219ad6e1401e189c27fec898cb8e56c6de
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362232"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281768"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests im Zertifizierungskit für Windows-Apps
 
 
-Die [Windows App Certification Kit](windows-app-certification-kit.md) enthält eine Reihe von Tests, die dabei helfen, sicherzustellen, dass Ihre app ist bereit für den Microsoft Store veröffentlicht werden. Die Tests sind unten aufgeführt, mit den Kriterien, die Informationen und empfohlene Maßnahmen bei einem Fehler.
+Das [zertifizierungskit für Windows-apps](windows-app-certification-kit.md) enthält eine Reihe von Tests, mit denen sichergestellt werden kann, dass Ihre APP auf dem Microsoft Store veröffentlicht werden kann. Die Tests sind unten mit Ihren Kriterien, Details und empfohlenen Aktionen im Falle eines Fehlers aufgeführt.
 
 ## <a name="deployment-and-launch-tests"></a>Bereitstellungs- und Starttests
 
@@ -28,7 +28,7 @@ Apps, die nicht mehr reagieren oder abstürzen, können zu einem Datenverlust un
 
 Apps müssen voll funktionsfähig sein, ohne Windows-Kompatibilitätsmodi, AppHelp-Meldungen oder andere Kompatibilitätspatches zu verwenden.
 
-Apps müssen nicht aufgeführt DLLs beim Laden in der zu öffnende HKEY\-lokalen\-Computer\\Software\\Microsoft\\Windows NT\\"CurrentVersion"\\Windows\\AppInit \-DLLs-Registrierungsschlüssel.
+Apps dürfen keine DLLs auflisten, die im Registrierungsschlüssel HKEY @ no__t-0local @ no__t-1machine @ no__t-2Software @ no__t-3Microsoft @ no__t-4Windows NT @ no__t-5currentversion @ no__t-6windows @ no__t-7appinit @ no__t-8dlls geladen werden.
 
 ### <a name="test-details"></a>Testdetails
 
@@ -44,8 +44,8 @@ Führen Sie den Test auf einem PC mit ausreichend großem Bildschirm aus.
 
 Falls die App nicht gestartet werden kann, obwohl die Testplattform die Voraussetzungen für [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) erfüllt, können Sie das Problem mithilfe des Aktivierungsereignisprotokolls beheben. So finden Sie die Einträge im Ereignisprotokoll:
 
-1.  Eventvwr.exe und navigieren Sie zu der Anwendung und Services Log\\Microsoft\\Windows\\Immersive-Shell-Ordner.
-2.  Filtern Sie die Ansicht, um die Ereignis-Ids anzuzeigen: 5900-6000.
+1.  Öffnen Sie eventvwr. exe, und navigieren Sie zum Ordner Anwendungs-und Dienst Protokoll @ no__t-0Microsoft @ no__t-1Windows @ no__t-2immersive-Shell.
+2.  Filtern Sie die Ansicht, um Ereignis-IDs anzuzeigen: 5900-6000.
 3.  Prüfen Sie die Protokolleinträge, um zu ermitteln, weshalb die App nicht gestartet wurde.
 
 Führen Sie für die Datei mit dem Problem eine Problembehandlung durch, um das Problem zu identifizieren und zu beheben. Erstellen Sie die App neu, und wiederholen Sie den Test. Sie können auch überprüfen, ob im Protokollordner des Zertifizierungskits für Windows-Apps eine Dumpdatei erstellt wurde, die zum Debuggen Ihrer App verwendet werden kann.
@@ -56,7 +56,7 @@ Führen Sie für die Datei mit dem Problem eine Problembehandlung durch, um das 
 
 ### <a name="background"></a>Hintergrund
 
-Version der Betriebssysteminformationen wurde Nutzung für den Microsoft Store eingeschränkt. Diese wurde von Apps häufig fälschlicherweise zum Überprüfen der Betriebssystemversion verwendet, damit Benutzern spezielle Funktionen für eine bestimmte Betriebssystemversion von der App bereitgestellt werden können.
+Die Informationen zur Betriebssystemversion weisen die Verwendung der Microsoft Store auf. Diese wurde von Apps häufig fälschlicherweise zum Überprüfen der Betriebssystemversion verwendet, damit Benutzern spezielle Funktionen für eine bestimmte Betriebssystemversion von der App bereitgestellt werden können.
 
 ### <a name="test-details"></a>Testdetails
 
@@ -116,7 +116,7 @@ Apps müssen ein korrekt formatiertes App-Manifest besitzen.
 
     Von der App können die Dateierweiterungen deklariert werden, die ihr zugeordnet werden sollen. Bei nicht korrekter Verwendung wird von einer App u. U. eine große Anzahl von Dateierweiterungen deklariert, von denen die meisten nicht verwendet werden. Darunter leidet die Benutzerfreundlichkeit. Mit diesem Test wird eine Überprüfung der Anzahl von Dateierweiterungen durchgeführt, die einer App zugeordnet werden können.
 
--   **Framework-abhängigkeitsregel**
+-   **Framework-Abhängigkeits Regel**
 
     Mit diesem Test wird die Anforderung durchgesetzt, dass für die Apps geeignete Abhängigkeiten von der UWP bestehen. Für den Test tritt ein Fehler auf, wenn eine unzulässige Abhängigkeit besteht.
 
@@ -124,7 +124,7 @@ Apps müssen ein korrekt formatiertes App-Manifest besitzen.
 
 -   **Überprüfung der prozessübergreifenden Kommunikation (IPC)**
 
-    Dieser Test setzt den Bedarf an, den dass die UWP-apps nicht außerhalb des app-Containers auf Desktop-Komponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen „DesktopApplicationPath“ angeben, bestehen diesen Test nicht.
+    Dieser Test erzwingt die Anforderung, dass UWP-apps nicht außerhalb des App-Containers mit Desktop Komponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen „DesktopApplicationPath“ angeben, bestehen diesen Test nicht.
 
 ### <a name="corrective-action"></a>Maßnahmen
 
@@ -154,133 +154,133 @@ Die [BinScope-Tests des Analyzers für Binärdateien](https://www.microsoft.com/
 Die BinScope-Tests des Analyzers für Binärdateien prüfen, ob die sicherheitsrelevanten Features korrekt verwendet werden:
 
 -   [AllowPartiallyTrustedCallersAttribute](#binscope-1)
--   [/ SafeSEH-Ausnahmebehandlungsschutz](#binscope-2)
--   [Datenausführungsverhinderung](#binscope-3)
--   [Address Space Layout Randomization](#binscope-4)
--   [Lese-/Schreibzugriff freigegebenen PE-Abschnitts](#binscope-5)
--   [AppContainerCheck](#appcontainercheck)
--   [ExecutableImportsCheck](#binscope-7)
--   [WXCheck](#binscope-8)
+-   [/SAFESEH Ausnahme Behandlungs Schutz](#binscope-2)
+-   [Verhinderung von Datenausführung](#binscope-3)
+-   [Adressraum Layout Randomization](#binscope-4)
+-   [Frei gegebener PE-Abschnitt lesen/schreiben](#binscope-5)
+-   [Appcontainercheck](#appcontainercheck)
+-   [Executableimportscheck](#binscope-7)
+-   [Wxcheck](#binscope-8)
 
 ### <a name="span-idbinscope-1spanallowpartiallytrustedcallersattribute"></a><span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** Fehler bei APTCACheck Test
+**Windows App Certification Kit-Fehlermeldung:** Aptcacheck-Test fehlgeschlagen
 
 Das AllowPartiallyTrustedCallersAttribute-Attribut (kurz: APTCA-Attribut) ermöglicht den Zugriff auf vollständig vertrauenswürdigen Code aus teilweise vertrauenswürdigem Code in signierten Assemblys. Wenn Sie das APTCA-Attribut auf eine Assembly anwenden, können teilweise vertrauenswürdige Aufrufer diese Assembly aufrufen, solange die Assembly besteht. Dies kann ein Sicherheitsrisiko darstellen.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
 Verwenden Sie das APTCA-Attribut nur dann für Assemblys mit starkem Namen, falls dies für das Projekt erforderlich ist und die Risiken bekannt sind. Falls das Attribut erforderlich ist, stellen Sie sicher, dass alle APIs durch geeignete Sicherheitsanforderungen für den Codezugriff geschützt sind. APTCA hat keine Auswirkung, wenn die Assembly Teil einer UWP-App (Universelle Windows-Plattform) ist.
 
-**"Hinweise"**
+**Rede**
 
 Dieser Test wird nur für verwalteten Code (C#, .NET usw.) ausgeführt.
 
-### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/ SafeSEH-Ausnahmebehandlungsschutz
+### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/SAFESEH Ausnahme Behandlungs Schutz
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** Fehler bei SafeSEHCheck Test
+**Windows App Certification Kit-Fehlermeldung:** Fehler beim safesehcheck-Test.
 
 Ein Ausnahmehandler wird ausgeführt, wenn in der App eine Ausnahmebedingung auftritt – beispielsweise bei einem Fehler aufgrund einer Division durch Null. Da die Adresse des Ausnahmehandlers beim Aufrufen einer Funktion im Stapel gespeichert wird, besteht das Risiko eines Pufferüberlaufangriffs, sollte Schadsoftware den Stapel überschreiben.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
 Aktivieren Sie beim Erstellen der App die Option "/SAFESEH" im Linker-Befehl. Diese Option ist in den Veröffentlichungskonfigurationen von Visual Studio standardmäßig aktiviert. Vergewissern Sie sich, dass diese Option in den Erstellungsanweisungen für alle alle ausführbaren Module Ihrer App aktiviert ist.
 
-**"Hinweise"**
+**Rede**
 
 Für 64-Bit-Binärdateien oder für Binärdateien für den ARM-Chipsatz wird dieser Test nicht ausgeführt, da hier keine Ausnahmehandleradressen im Stapel gespeichert werden.
 
-### <a name="span-idbinscope-3spandata-execution-prevention"></a><span id="binscope-3"></span>Datenausführungsverhinderung
+### <a name="span-idbinscope-3spandata-execution-prevention"></a><span id="binscope-3"></span>Verhinderung von Datenausführung
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** Fehler bei NXCheck Test
+**Windows App Certification Kit-Fehlermeldung:** Nxcheck-Test fehlgeschlagen
 
 Dieser Test stellt sicher, dass die App keinen Code ausführt, der in einem Datensegment gespeichert ist.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
 Aktivieren Sie beim Erstellen der App die Option „/NXCOMPAT“ im Linker-Befehl. Diese Option ist in Linker-Versionen mit Unterstützung der Datenausführungsverhinderung (Data Execution Prevention, DEP) standardmäßig aktiviert.
 
-**"Hinweise"**
+**Rede**
 
 Wir empfehlen, Apps auf einer DEP-fähigen CPU zu testen und alle DEP-bedingten Fehler zu beheben.
 
-### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>Address Space Layout Randomization
+### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>Adressraum Layout Randomization
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** Fehler bei DBCheck Test
+**Windows App Certification Kit-Fehlermeldung:** DBCheck-Test fehlgeschlagen
 
 Die Zufallsgestaltung des Adressraumlayouts (Address Space Layout Randomization, ASLR) lädt ausführbare Bilder in unvorhersehbare Speicherbereiche. Dadurch wird eine größere Hürde für Schadsoftware geschaffen, die erwartet, dass ein Programm an einer bestimmten virtuellen Adresse geladen wird. Ihre App und alle von der App verwendeten Komponenten müssen über ASLR-Unterstützung verfügen.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
 Aktivieren Sie beim Erstellen der App die Option "/DYNAMICBASE" im Linker-Befehl. Vergewissern Sie sich, dass auch alle von der App verwendeten Module diese Linker-Option verwenden.
 
-**"Hinweise"**
+**Rede**
 
 ASLR hat in der Regel keine Auswirkungen auf die Leistung. In einigen Szenarios ist auf 32-Bit-Systemen aber eine geringfügige Leistungsverbesserung zu beobachten. Es ist möglich, dass sich die Leistung bei einem stark belasteten System verschlechtert, bei dem viele Bilder an vielen unterschiedlichen Speicherbereichen geladen sind.
 
 Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen geschrieben wurden, z. B. mit C oder C++.
 
-### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>Lese-/Schreibzugriff freigegebenen PE-Abschnitts
+### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>Frei gegebener PE-Abschnitt lesen/schreiben
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** SharedSectionsCheck Test ist fehlgeschlagen.
+**Windows App Certification Kit-Fehlermeldung:** Fehler beim sharedsectionscheck-Test.
 
 Binärdateien mit beschreibbaren Abschnitten, die als freigegeben gekennzeichnet sind, stellen eine Sicherheitsbedrohung dar. Erstellen Sie keine Apps mit freigegebenen beschreibbaren Abschnitten, wenn dies nicht notwendig ist. Verwenden Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile), um ein freigegebenes Speicherobjekt zu erstellen, das korrekt gesichert ist.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
 Entfernen Sie sämtliche freigegebenen Abschnitte aus der App, und erstellen Sie freigegebene Speicherobjekte, indem Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) mit den passenden Sicherheitsattributen aufrufen und die App dann neu erstellen.
 
-**"Hinweise"**
+**Rede**
 
 Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen geschrieben wurden, z. B. mit C oder C++.
 
 ### <a name="appcontainercheck"></a>AppContainerCheck
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** AppContainerCheck Test ist fehlgeschlagen.
+**Windows App Certification Kit-Fehlermeldung:** Fehler beim appcontainercheck-Test.
 
 Der AppContainerCheck-Test prüft, ob das **appcontainer**-Bit im PE-Header einer ausführbaren Binärdatei gesetzt ist. Für Apps muss das **appcontainer**-Bit für alle EXE-Dateien und nicht verwalteten DLLs gesetzt sein, damit diese korrekt ausgeführt werden.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
 Wenn der Test für eine systemeigene ausführbare Datei nicht erfolgreich ist, stellen Sie sicher, dass Sie zum Erstellen der Datei den aktuellen Compiler und Linker und für den Linker das Kennzeichen */appcontainer* verwenden.
 
-Wenn eine verwaltete ausführbare Datei der Test fehlschlägt, stellen Sie sicher, dass Sie über aktuelle Compiler und Linker, z. B. Microsoft Visual Studio verwendet, um die UWP-app zu erstellen.
+Wenn eine verwaltete ausführbare Datei den Test nicht bestanden hat, stellen Sie sicher, dass Sie den neuesten Compiler und Linker (z. b. Microsoft Visual Studio) zum Erstellen der UWP-App verwendet haben.
 
-**"Hinweise"**
+**Rede**
 
 Dieser Test wird für alle EXE-Dateien und nicht verwalteten DLLs ausgeführt.
 
-### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span id="binscope-7"></span>ExecutableImportsCheck
+### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span id="binscope-7"></span>Executableimportscheck
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** ExecutableImportsCheck Test ist fehlgeschlagen.
+**Windows App Certification Kit-Fehlermeldung:** Fehler beim executableimportscheck-Test.
 
 Ein portierbares ausführbares Image (Portable Executable, PE) besteht diesen Test nicht, wenn es in einen Abschnitt mit ausführbaren Code eingefügt wurde. Dies kann auftreten, wenn Sie für das PE-Image das Zusammenführen von „.rdata“ ermöglicht haben, indem Sie das Kennzeichen */merge* des Visual C++-Linkers auf */merge:.rdata=.text* festgelegt haben.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
 Führen Sie die Importtabelle nicht in einem Abschnitt mit ausführbarem Code zusammen. Stellen Sie sicher, dass das Kennzeichen */merge* des Visual C++-Linkers nicht so eingestellt ist, dass der Abschnitt „.rdata“ in einem Codeabschnitt zusammengeführt wird.
 
-**"Hinweise"**
+**Rede**
 
 Dieser Test wird für den gesamten Binärcode ausgeführt, außer für ausschließlich verwaltete Assemblys.
 
-### <a name="span-idbinscope-8spanwxcheck"></a><span id="binscope-8"></span>WXCheck
+### <a name="span-idbinscope-8spanwxcheck"></a><span id="binscope-8"></span>Wxcheck
 
-**Windows-Zertifizierungskit für Apps-Fehlermeldung:** WXCheck Test ist fehlgeschlagen.
+**Windows App Certification Kit-Fehlermeldung:** Fehler beim wxcheck-Test.
 
-Mit dieser Überprüfung können Sie sicherstellen, dass eine Binärdatei keine Seiten enthält, die als schreibbar und ausführbar gekennzeichnet sind. Dies kann auftreten, wenn die Binärdatei einen writable- und ausführbaren Abschnitt aufweist oder wenn der Binärdatei *SectionAlignment* ist kleiner als *Seite\-Größe*.
+Mit dieser Überprüfung können Sie sicherstellen, dass eine Binärdatei keine Seiten enthält, die als schreibbar und ausführbar gekennzeichnet sind. Dies kann vorkommen, wenn die Binärdatei über einen beschreibbaren und ausführbaren Abschnitt verfügt oder wenn der *sectionalignment* der Binärdatei kleiner als die *Seite @ no__t-2size*ist.
 
-**Erläutert, wie bei Ihrer app dieser Test schlägt fehl.**
+**Was Sie tun sollten, wenn Ihre APP mit diesem Test fehlschlägt**
 
-Stellen Sie sicher, dass die Binärdatei einen Abschnitt geschrieben oder ausführbare Datei, und dass keine der Binärdatei *SectionAlignment* Wert ist mindestens gleich der *Seite\-Größe*.
+Stellen Sie sicher, dass die Binärdatei nicht über einen beschreibbaren oder ausführbaren Abschnitt verfügt und dass der *sectionalignment* -Wert der Binärdatei mindestens gleich ihrer *Seite @ no__t-2size*ist.
 
-**"Hinweise"**
+**Rede**
 
 Dieser Test wird für alle EXE-Dateien und systemeigenen, nicht verwalteten DLLs ausgeführt.
 
 Eine ausführbare Datei kann einen schreibbaren und ausführbaren Abschnitt enthalten, wenn bei ihrer Erstellung "Bearbeiten und Fortfahren" aktiviert wurden (/ZI). Bei Deaktivierung von „Bearbeiten und Fortfahren“ ist der ungültige Abschnitt nicht mehr enthalten.
 
-*Seite\-Größe* ist die Standardeinstellung *SectionAlignment* für ausführbare Dateien.
+*Page @ no__t-1Size* ist die *standardsectionalignment* für ausführbare Dateien.
 
 ### <a name="private-code-signing"></a>Private Codesignatur
 
@@ -296,7 +296,7 @@ Signaturdateien für privaten Code sollten privat bleiben, da sie im Fall einer 
 
 ### <a name="corrective-actions"></a>Maßnahmen
 
-Entfernen Sie alle Signaturschlüssel für privaten Code (z. B. PFX- und SNK-Dateien) aus dem Paket.
+Entfernen Sie alle privaten Code Signatur Schlüssel (z. b. pfx-und SNK-Dateien) aus dem Paket.
 
 ## <a name="supported-api-test"></a>Test der unterstützten APIs
 
@@ -304,22 +304,22 @@ Testet die App, um festzustellen, ob nicht kompatible APIs verwendet werden.
 
 ### <a name="background"></a>Hintergrund
 
-Apps müssen die APIs für UWP-apps (Windows-Runtime oder unterstützten Win32-APIs), für den Microsoft Store-Zertifizierung verwenden. Dieser Test ermittelt auch Situationen, in denen eine verwaltete Binärdatei eine Abhängigkeit von einer Funktion außerhalb des genehmigten Profils aufweist.
+Apps müssen die APIs für UWP-Apps (Windows-Runtime oder unterstützte Win32-APIs) verwenden, um für die Microsoft Store zertifiziert zu werden. Dieser Test ermittelt auch Situationen, in denen eine verwaltete Binärdatei eine Abhängigkeit von einer Funktion außerhalb des genehmigten Profils aufweist.
 
 ### <a name="test-details"></a>Testdetails
 
--   Stellt sicher, dass jede Binärdatei in der app-Paket eine Abhängigkeit auf eine Win32-API nicht, die nicht für die Entwicklung von UWP-Apps durch Aktivieren der Importadresstabelle der Binärdatei unterstützt wird.
+-   Überprüft, ob jede Binärdatei innerhalb des App-Pakets keine Abhängigkeit von einer Win32-API hat, die für die UWP-App-Entwicklung nicht unterstützt wird, indem die Import Adress Tabelle der Binärdatei überprüft wird.
 -   Stellt sicher, dass eine verwaltete Binärdatei des App-Pakets keine Abhängigkeit von einer Funktion außerhalb des genehmigten Profils aufweist.
 
 ### <a name="corrective-actions"></a>Maßnahmen
 
 Stellen Sie sicher, dass die App als Releasebuild und nicht als Debugbuild kompiliert wurde.
 
-> **Beachten Sie**  Debugbuild einer Anwendung können dieser Test schlägt fehl, selbst wenn die app nur verwendet [-APIs für UWP-apps](https://docs.microsoft.com/uwp/).
+> **Hinweis**  Der Debugbuild einer APP schlägt diesen Test auch dann fehl, wenn die app nur [APIs für UWP-apps](https://docs.microsoft.com/uwp/)verwendet.
 
-Überprüfen Sie den Fehlermeldungen zum Identifizieren der-API verwendet die app, die keine [-API für UWP-apps](https://docs.microsoft.com/uwp/).
+Überprüfen Sie die Fehlermeldungen, um die von der APP verwendete API zu identifizieren, die keine [API für UWP-apps](https://docs.microsoft.com/uwp/)ist.
 
-> **Beachten Sie**  C++-apps, die in einem Debug-Konfiguration erstellt werden können dieser Test schlägt fehl, selbst wenn die Konfiguration nur die APIs aus dem Windows SDK für UWP-apps verwendet. Angezeigt wird, [Alternativen zu Windows-APIs in UWP-apps](https://go.microsoft.com/fwlink/p/?LinkID=244022) für Weitere Informationen.
+> **Hinweis**  C++ -apps, die in einer Debugkonfiguration erstellt werden, schlagen diesen Test auch dann fehl, wenn die Konfiguration nur APIs aus dem Windows SDK für UWP-Apps verwendet. Weitere Informationen finden [Sie unter Alternativen zu Windows-APIs in UWP-apps](https://go.microsoft.com/fwlink/p/?LinkID=244022) .
 
 ## <a name="performance-tests"></a>Leistungstests
 
@@ -429,7 +429,7 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Für die Datei „resources.pri“ darf „Automatisch zusammenführen“ nicht aktiviert sein.</p>
 </td><td>
-<p>„MakePRI.exe“ unterstützt eine Option mit dem Namen <strong>AutoMerge</strong>. Der Standardwert von <strong>AutoMerge</strong> ist <strong>Aus</strong>. Ist sie aktiviert, führt <strong>AutoMerge</strong> die App-Sprachpaketressourcen in einer einzelnen Datei „resources.pri“ zur Laufzeit zusammen. Wir nicht für apps zu empfehlen, die Sie über den Microsoft Store verteilen möchten. Die resources.pri einer App, die über den Microsoft Store verteilt werden muss im Stammverzeichnis des app Paket und alle Verweise, die von der app unterstützte Sprache.</p>
+<p>„MakePRI.exe“ unterstützt eine Option mit dem Namen <strong>AutoMerge</strong>. Der Standardwert von <strong>AutoMerge</strong> ist <strong>Aus</strong>. Ist sie aktiviert, führt <strong>AutoMerge</strong> die App-Sprachpaketressourcen in einer einzelnen Datei „resources.pri“ zur Laufzeit zusammen. Dies wird für apps, die Sie über die Microsoft Store verteilen möchten, nicht empfohlen. Die Ressourcen. pri einer APP, die über den Microsoft Store verteilt wird, muss sich im Stammverzeichnis des App-Pakets befinden und alle sprach Verweise enthalten, die von der App unterstützt werden.</p>
 </td></tr>
 <tr><td>
 <p>Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.</p>
@@ -461,17 +461,17 @@ Orientieren Sie sich an der folgenden Tabelle.
 <p>Stellen Sie sicher, dass für das App-Manifest gültige Ressourcen in „resources.pri“ definiert sind.</p>
 </td></tr>
 <tr><td>
-<p>Die Bilddatei {Filename} muss kleiner als 204800 Bytes sein.\*\*</p>
+<p>Die Bilddatei "{filename}" muss kleiner als 204800 Bytes sein. \* @ no__t-1</p>
 </td><td>
 <p>Verringern Sie die Größe der angegebenen Bilder.</p>
 </td></tr>
 <tr><td>
-<p>Die {Filename}-Datei muss einen Abschnitt für die umgekehrte Zuordnung nicht enthalten.\*\*</p>
+<p>Die Datei "{filename}" darf keinen umgekehrten Karten Abschnitt enthalten. \* @ no__t-1</p>
 </td><td>
 <p>Die umgekehrte Zuordnung wird zwar während des Debuggens mit F5 in Visual Studio beim Aufrufen von „makepri.exe“ generiert, sie kann jedoch entfernt werden, indem „makepri.exe“ beim Generieren einer PRI-Datei ohne den Parameter „/m“ ausgeführt wird.</p>
 </td></tr>
 <tr><td colspan="2">
-<p>\*\* Gibt an, dass ein Test für Windows 8.1 in den Windows App Certification Kit 3.3 hinzugefügt wurde und ist gilt nur, wenn diese Version des Kits oder höher.</p>
+<p>\* @ no__t-1 gibt an, dass im Windows-zertifizierungskit für Windows-apps 3,3 ein Test für Windows 8.1 hinzugefügt wurde. Dies gilt nur, wenn Sie diese Version des Kits oder höher verwenden.</p>
 </td></tr>
 </table>
 
@@ -481,7 +481,7 @@ Orientieren Sie sich an der folgenden Tabelle.
 
 ### <a name="branding-validation"></a>Branding-Validierung
 
-UWP-apps komplett und voll funktionstüchtig sein sollten. Apps, für die Standardbilder (aus Vorlagen oder SDK-Beispielen) verwendet werden, verfügen über eine schlechte Benutzeroberfläche und können im Store-Katalog nicht leicht identifiziert werden.
+UWP-apps sind vollständig und voll funktionsfähig. Apps, für die Standardbilder (aus Vorlagen oder SDK-Beispielen) verwendet werden, verfügen über eine schlechte Benutzeroberfläche und können im Store-Katalog nicht leicht identifiziert werden.
 
 ### <a name="test-details"></a>Testdetails
 
@@ -497,7 +497,7 @@ Testet die App, um sicherzustellen, dass es sich nicht um einen Debugbuild hande
 
 ### <a name="background"></a>Hintergrund
 
-Für die Zertifizierung für die Microsoft Store-apps müssen nicht kompiliert werden, zum Debuggen, und sie müssen nicht auf die Debugversionen einer ausführbaren Datei verweisen. Darüber hinaus müssen Sie den Code für die App optimiert erstellen, damit dieser Test bestanden wird.
+Um für die Microsoft Store zertifiziert zu werden, dürfen apps nicht für das Debuggen kompiliert werden, und Sie dürfen nicht auf Debugversionen einer ausführbaren Datei verweisen. Darüber hinaus müssen Sie den Code für die App optimiert erstellen, damit dieser Test bestanden wird.
 
 ### <a name="test-details"></a>Testdetails
 
@@ -505,7 +505,7 @@ Testen Sie die App, um sicherzustellen, dass es sich nicht um einen Debugbuild h
 
 ### <a name="corrective-actions"></a>Maßnahmen
 
--   Erstellen Sie die app als ein Releasebuild erstellt, bevor Sie sie an den Microsoft Store übermitteln.
+-   Erstellen Sie die APP als Releasebuild, bevor Sie Sie an den Microsoft Store senden.
 -   Stellen Sie sicher, dass Sie die richtige .NET Framework-Version installiert haben.
 -   Stellen Sie sicher, dass die App nicht über Links zu Debugversionen eines Frameworks verfügt und dass die Erstellung mit einer Releaseversion erfolgt. Wenn diese App .NET-Komponenten enthält, sollten Sie sich vergewissern, dass Sie die richtige Version des .NET-Frameworks installiert haben.
 
@@ -533,21 +533,21 @@ Testet Microsoft Direct3D-Apps, um sicherzustellen, dass sie auf Geräten mit �
 
 ### <a name="background"></a>Hintergrund
 
-Microsoft Store müssen alle Anwendungen ordnungsgemäß gerendert, oder Fehler ordnungsgemäß auf mit Direct3D-Funktionsebene 9\-1 Grafikkarten.
+Microsoft Store erfordert, dass alle Anwendungen, die Direct3D verwenden, ordnungsgemäß auf Featureebene 9 @ no__t-01-Grafikkarten renderfähig sind oder fehlschlagen.
 
-Da Benutzer die Grafikhardware in ihr Gerät ändern können nach der Installation der app bei der Auswahl einer minimale Funktionsebene größer als 9\-1, Ihre app muss erkennen beim Start, und zwar unabhängig davon, ob die aktuelle Hardware die Mindestanforderungen erfüllt. Wenn die Mindestanforderungen nicht erfüllt sind, muss Ihre App dem Benutzer eine Meldung mit den Direct3D-Anforderungen anzeigen. Wird zudem eine App auf ein Gerät heruntergeladen, mit dem sie nicht kompatibel ist, sollte sie dies beim Start erkennen und dem Kunden eine Meldung bezüglich der erforderlichen Voraussetzungen anzeigen.
+Da Benutzer die Grafikhardware auf Ihrem Gerät nach der Installation der App ändern können, muss Ihre APP beim Start erkennen, ob die aktuelle Hardware die Mindestanforderungen erfüllt, wenn Sie eine mindestmerkmals Stufe über 9 @ no__t-01 auswählen. Wenn die Mindestanforderungen nicht erfüllt sind, muss Ihre App dem Benutzer eine Meldung mit den Direct3D-Anforderungen anzeigen. Wird zudem eine App auf ein Gerät heruntergeladen, mit dem sie nicht kompatibel ist, sollte sie dies beim Start erkennen und dem Kunden eine Meldung bezüglich der erforderlichen Voraussetzungen anzeigen.
 
 ### <a name="test-details"></a>Testdetails
 
-Der Test wird überprüft, ob es sich bei den apps genau auf Funktionsebene 9 gerendert werden\-1.
+Der Test überprüft, ob die apps auf Featureebene 9 @ no__t-01 korrekt dargestellt werden.
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Stellen Sie sicher, dass Ihre app richtig auf Direct3D-Funktionsebene 9 gerendert\-1, selbst wenn Sie es auf eine höhere Funktionsebene erwarten. Weitere Informationen finden Sie unter [Entwickeln für unterschiedliche Direct3D-Featureebenen](https://go.microsoft.com/fwlink/p/?LinkID=253575).
+Stellen Sie sicher, dass Ihre APP auf Direct3D Featureebene 9 @ no__t-01 ordnungsgemäß gerendert wird, auch wenn Sie davon ausgehen, dass Sie auf einer höheren Funktionsebene ausgeführt wird Weitere Informationen finden Sie unter [Entwickeln für unterschiedliche Direct3D-Featureebenen](https://go.microsoft.com/fwlink/p/?LinkID=253575).
 
 ### <a name="direct3d-trim-after-suspend"></a>Direct3D-Kürzung nach dem Anhalten
 
-> **Beachten Sie**  dieser Test gilt nur für UWP-apps entwickelt für Windows 8.1 und höher.
+> **Hinweis**  Dieser Test gilt nur für UWP-apps, die für Windows 8.1 und höher entwickelt wurden.
 
 ### <a name="background"></a>Hintergrund
 
@@ -595,11 +595,11 @@ Es wird überprüft, ob die **WINMD**-Dateien im Paket den UWP-Regeln entspreche
 
 ### <a name="corrective-actions"></a>Maßnahmen
 
--   **ExclusiveTo attributtest:** Stellen Sie sicher, dass UWP Klassen keine Schnittstellen implementiert werden, die als ExclusiveTo einer anderen Klasse markiert sind.
--   **Geben Sie Speicherort Test:** Stellen Sie sicher, dass sich die Metadaten für alle UWP-Typen in der Winmd-Datei mit dem längsten übereinstimmenden Namespace-Namen im app-Paket ab.
--   **Groß-/Kleinschreibung Namenstest Typ:** Stellen Sie sicher, dass alle UWP-Typen eindeutige Namen mit Groß-/Kleinschreibung im App-Paket aufweisen. Vergewissern Sie sich außerdem, dass UWP-Typnamen im App-Paket nicht auch als Namespacename verwendet werden.
--   **Geben Sie Namen Richtigkeit Test:** Stellen Sie sicher, dass im globalen Namespace oder im Windows-Namespace der obersten Ebene keine UWP-Typen vorhanden sind.
--   **Allgemeine Metadaten Richtigkeit Test:** Stellen Sie sicher, dass der Compiler, die, den Sie verwenden, um Ihre Typen generieren, auf dem neuesten Stand mit den UWP-Spezifikationen.
+-   **Exclusiveto-Attribut Test:** Stellen Sie sicher, dass UWP-Klassen keine Schnittstellen implementieren, die als exclusiveto einer anderen Klasse gekennzeichnet sind.
+-   **Typlocation-Test:** Stellen Sie sicher, dass die Metadaten für alle UWP-Typen in der winmd-Datei gespeichert sind, die im App-Paket den längsten Namespace-übereinstimmenden Namen aufweist.
+-   **Typname: Überprüfung der Groß-/Kleinschreibung:** Stellen Sie sicher, dass alle UWP-Typen eindeutige Namen mit Groß-/Kleinschreibung im App-Paket aufweisen. Vergewissern Sie sich außerdem, dass UWP-Typnamen im App-Paket nicht auch als Namespacename verwendet werden.
+-   **Test für Typnamen Richtigkeit:** Stellen Sie sicher, dass im globalen Namespace oder im Windows-Namespace der obersten Ebene keine UWP-Typen vorhanden sind.
+-   **Allgemeiner metadatenkorrektur-Test:** Stellen Sie sicher, dass der Compiler, den Sie zum Generieren von Typen verwenden, mit den UWP-Spezifikationen auf dem neuesten Stand ist.
 -   **Eigenschaftentest:** Stellen Sie sicher, dass alle Eigenschaften einer UWP-Klasse über eine get-Methode verfügen (set-Methoden sind optional). Vergewissern Sie sich, dass der Typ des Rückgabewerts der get-Methode für alle Eigenschaften von UWP-Typen jeweils mit dem Typ des Eingabeparameters der set-Methode übereinstimmt.
 
 ## <a name="package-sanity-tests"></a>Tests für die Paketintegrität
@@ -632,15 +632,15 @@ Befolgen Sie diese Richtlinien, um sicherzustellen, dass Ihr App-Paket nur Datei
 
 ### <a name="supported-directory-structure-test"></a>Test der unterstützten Verzeichnisstruktur
 
-Überprüft, dass Anwendungen nicht erstellen, werden Unterverzeichnisse im Rahmen der Installation, die länger als der HÖCHSTWERT\-Pfad.
+Überprüft, ob im Rahmen der Installation von Anwendungen keine Unterverzeichnisse erstellt werden, die länger sind als Max @ no__t-0path.
 
 ### <a name="background"></a>Hintergrund
 
-OS-Komponenten (einschließlich Trident, WWAHost usw.) sind auf maximal intern beschränkt\-Pfad für die System-Dateipfade und funktionieren nicht ordnungsgemäß für längere Pfade.
+Betriebssystemkomponenten (einschließlich "bident", "wwahost" usw.) sind intern auf den maximalen Wert @ no__t-0path für Dateisystem Pfade beschränkt und funktionieren für längere Pfade nicht ordnungsgemäß.
 
 ### <a name="test-details"></a>Testdetails
 
-Stellt sicher, dass kein Pfad innerhalb der app-Installationsverzeichnis MAX überschreitet\-Pfad.
+Hiermit wird überprüft, ob der Pfad im App-Installationsverzeichnis den maximalen Wert für @ no__t-0path überschreitet.
 
 ### <a name="corrective-action"></a>Maßnahmen
 
@@ -667,6 +667,6 @@ Aktualisieren Sie den JavaScript-Hintergrundcode so, dass „Close()” richtig 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Tests für Windows Desktop Bridge-app](windows-desktop-bridge-app-tests.md)
+* [Tests der Windows Desktop Bridge-App](windows-desktop-bridge-app-tests.md)
 * [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)
  

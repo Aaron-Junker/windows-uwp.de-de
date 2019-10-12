@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfaab1c8fe3ec3cf8893022a8f4e8dae7deac63
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f8ace0d56e6e647ed5f977cbe6860d8f91bb2b5f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340581"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282357"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Windows-Apps-Konzeptzuordnung für Android- und iOS-Entwickler
 
@@ -87,7 +87,7 @@ Siehe auch die Portierungsinformationen in [Wechsel von iOS zu UWP](ios-to-uwp-r
 <td align="left">Sie können wiederverwendbare <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style">Stile</a></strong> erstellen, die auf mehrere Steuerelemente angewendet und für die einfache Wiederverwendung in einem <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a></strong> gespeichert werden.<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465381(v=win.10)">Schnellstart: Formatierungs Steuerelemente @ no__t-0</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Bearbeiten der visuellen Struktur von Steuerelementen.</strong>  <br><br>Sie können die visuelle Struktur eines Steuerelements umfassender anpassen, als lediglich Eigenschaften oder Attribute zu ändern, z. B. den Kontrollkästchentext unter das Kontrollkästchen verschieben.</td>
+<td align="left"><strong>Bearbeiten der visuellen Struktur von Steuerelementen.</strong>  <br><br>Passen Sie die visuelle Struktur eines Steuer Elements über das Ändern von Eigenschaften oder Attributen hinaus an, indem Sie beispielsweise den CheckBox-Text unterhalb des Kontrollkästchens verschieben.</td>
 <td align="left">In Android gibt es keine einfache Methode zum Bearbeiten der visuellen Struktur von Steuerelementen.</td>
 <td align="left">In iOS gibt es keine einfache Methode zum Bearbeiten der visuellen Struktur von Steuerelementen.</td>
 <td align="left">Um die visuelle Struktur eines Steuerelements anzupassen, können Sie seine <strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">Steuerelementvorlage</a></strong> im XAML-Markup kopieren und bearbeiten.<br/><br/><a href="https://docs.microsoft.com/previous-versions/windows/apps/hh465374(v=win.10)">Schnellstart: Steuerelement Vorlagen @ no__t-0</td>
@@ -348,7 +348,7 @@ Siehe auch die Portierungsinformationen in [Wechsel von iOS zu UWP](ios-to-uwp-r
 <td align="left"><strong>Asynchrone Programmierung.</strong>  <br><br>Vermeiden Sie komplexes Threading, indem Sie mit Mustern der asynchronen Programmierung die Reaktionsfähigkeit des UI-Threads aufrechterhalten.</td>
 <td align="left">Zum Erstellen eigener asynchroner Klassen ist <strong>die Verwendung von Threading erforderlich</strong>. Einige integrierte Klassen sind asynchron.</td>
 <td align="left">Zum Erstellen eigener asynchroner Klassen ist <strong>die Verwendung von Threading erforderlich</strong>. Einige integrierte Klassen sind asynchron.</td>
-<td align="left">Sie können durch die Verwendung asynchroner Muster, z. B. mit <strong>async</strong> und <strong>await</strong> in C# und Visual Basic, vermeiden, dass der Hauptthread blockiert wird, wenn Sie eigene APIs erstellen. Sie können die integrierten asynchronen APIs verwenden, die mit dem Wort <strong>Async</strong> enden.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Asynchrone Programmierung</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Aufrufen asynchroner APIs in C# oder Visual Basic</a></td>
+<td align="left">Sie können asynchrone Muster verwenden, um zu vermeiden, dass der Haupt Thread blockiert wird, wenn Sie Ihre eigenen APIs erstellen, z. b C# . asynchrone <strong>und auf</strong> Visual Basic <strong>warten</strong> . Sie können die integrierten asynchronen APIs verwenden, die mit dem Wort <strong>Async</strong> enden.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps">Asynchrone Programmierung</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic">Aufrufen asynchroner APIs in C# oder Visual Basic</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Listen Ansichts Optimierung.</strong>  <br><br>Integrierte Muster zum Optimieren von Datenlisten, die häufig eine geringe Leistung aufweisen, wenn große Mengen von Daten angezeigt werden müssen.</td>

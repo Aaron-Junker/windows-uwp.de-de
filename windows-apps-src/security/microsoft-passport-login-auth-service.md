@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 98251ecba05dd27cbe3112a94b6cfcd36440d380
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6d15173471b7f1ef3f1c6b042671eb85b7a53dc4
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371230"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282340"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Erstellen eines Windows Hello-Anmeldediensts
 
@@ -19,7 +19,7 @@ Dies ist Teil 2 der umfassenden Schritt-für-Schritt-Lösung zum Verwenden von W
 
 Die Erstellung dieses Projekts setzt Erfahrung mit C# und XAML voraus. Außerdem muss Visual Studio 2015 (mindestens Community Edition) auf einem Computer unter Windows 10 verwendet werden.
 
-## <a name="exercise-1-server-side-logic"></a>Übung 1: Server clientseitige Logik
+## <a name="exercise-1-server-side-logic"></a>Übung 1: Server seitige Logik
 
 
 In dieser Übung beginnen Sie mit der in der ersten Übung erstellten Windows-Hello-Anwendung und erstellen einen lokalen Pseudoserver und eine Pseudodatenbank. Diese praktische Übung soll vermitteln, wie Windows Hello in ein vorhandenes System integriert werden kann. Mit einem Pseudoserver und einer Pseudodatenbank wird Setup ohne Bezug entfernt. In Ihren eigenen Anwendungen müssen Sie die Pseudoobjekte durch die echten Dienste und Datenbanken ersetzen.
@@ -535,7 +535,7 @@ In dieser Übung beginnen Sie mit der in der ersten Übung erstellten Windows-He
     }
     ```
 
-## <a name="exercise-2-client-side-logic"></a>Übung 2: Clientseitige Logik
+## <a name="exercise-2-client-side-logic"></a>Übung 2: Client seitige Logik
 
 In dieser Übung ändern Sie die clientseitigen Ansichten und Hilfsklassen aus der ersten Übung, um die AuthService-Klasse zu verwenden. In der realen Welt wäre AuthService der Authentifizierungsserver, und Sie müssten Web-APIs zum Senden und Empfangen von Daten vom Server verwenden. Für diese praktische Übung sind Client und Server der Einfachheit halber lokal. Das Ziel ist es, zu erfahren, wie Sie die Windows-Hello-API verwenden.
 
@@ -661,7 +661,7 @@ In dieser Übung ändern Sie die clientseitigen Ansichten und Hilfsklassen aus d
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             //For this sample there is not concept of a server implemented so just return true.
@@ -804,7 +804,7 @@ In dieser Übung ändern Sie die clientseitigen Ansichten und Hilfsklassen aus d
     }
     ```
 
--   Wie Sie die AuthService beim Entfernen eines Kontos den Verweis auf die AccountHelper in der Schaltfläche verwenden\_verwerfen\_Benutzer\_klicken Sie auf die Methode entfernt werden kann. Die Methode sollte nun folgendermaßen aussehen.
+-   Wenn Sie den authService verwenden, wenn Sie ein Konto entfernen, kann der Verweis auf die accounthelper in der Schaltfläche @ no__t-0forget @ no__t-1User @ no__t-2click-Methode entfernt werden. Die Methode sollte nun folgendermaßen aussehen.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1139,7 +1139,7 @@ In dieser Übung ändern Sie die clientseitigen Ansichten und Hilfsklassen aus d
             //If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             //would check the signed challenge. If it is correct it would allow the user access to the backend.
             //You would likely make a new method called RequestSignAsync to handle all this
-            //e.g. RequestSignAsync(openKeyResult);
+            //for example, RequestSignAsync(openKeyResult);
             //Refer to the second Windows Hello sample for information on how to do this.
 
             return await RequestSignAsync(account.UserId, openKeyResult);
@@ -1174,4 +1174,4 @@ Wir haben Ihnen in Form einer Übung die Details bereitgestellt, wie Sie die Aut
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Windows Hello](microsoft-passport.md)
-* [Windows Hello Login-app](microsoft-passport-login.md)
+* [Windows Hello Login-App](microsoft-passport-login.md)

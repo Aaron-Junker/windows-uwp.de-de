@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, erweitern, aufschlüsseln, App-Dienst, Paket, Erweiterung
 ms.localizationpriority: medium
-ms.openlocfilehash: 038f78182095546219152298b043fe876c2c18c8
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: a72b175e672b44d0dace0b4bf04956792edfadd0
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682715"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282512"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>Erweitern der App mit Diensten, Erweiterungen und Paketen
 
@@ -21,7 +21,7 @@ Es gibt viele Technologien in Windows 10, um Ihre APP zu erweitern und zu integr
 | Drittanbieter-Code-Plug-ins            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
 | In-Process Code-Plugins              |                    |                    | :heavy_check_mark: |                    |                    |                    |                    |
 | UX-Ressourcen (Zeichenfolgen/Images)         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
-| On-Demand Inhalte <br/> (z. B. zusätzliche Spielstufen) |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
+| On-Demand Inhalte <br/> (z. b. zusätzliche Ebenen) |      |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |
 | Separate Lizenzierung und Erwerb |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: | :heavy_check_mark: |                    |
 | In-App-Erwerb                 |                    |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    |                    |
 | Optimierung der Installationszeit              | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |                    | :heavy_check_mark: |

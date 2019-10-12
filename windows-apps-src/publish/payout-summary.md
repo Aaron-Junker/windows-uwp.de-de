@@ -6,12 +6,12 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10 UWP, Auszahlungszusammenfassung, Anweisung, Zahlungen, Einnahmen, Auszahlung, Einnahmen
 ms.localizationpriority: medium
-ms.openlocfilehash: 68a7de0692d05ffe8d1b489e75a58c16b3c826df
-ms.sourcegitcommit: 9779be4a1075e924dca7585808722d95cda99aff
+ms.openlocfilehash: 89cb689f0dce4f7dbaec96e9ce109e60d4292f92
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118059"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282480"
 ---
 # <a name="payout-summary"></a>Auszahlungsübersicht
 
@@ -59,7 +59,7 @@ Wählen Sie zum Exportieren der Transaktionsdaten auf dieser Seite die Option Ex
 | Ansteh                 | Der Zahlungsauftrag hat ausstehende interne Überprüfungen generiert, bevor die Zahlung verarbeitet wird.                                                               | Nein                                                         |
 | Ausstehende Steuerrechnung      | Ihre Steuerrechnung ist unvollständig oder ungültig.                                                                                                  | Sie müssen ihre Steuerrechnung aktualisieren, bevor Sie bezahlen können. |
 | Ablehnung während der Überprüfung   | Die Zahlung wurde während der Überprüfung abgelehnt.                                                                                                     | Weitere Informationen erhalten Sie vom [Microsoft Support](https://developer.microsoft.com/en-us/windows/support) .                      |
-| Fehler                   | Die Zahlung ist aufgrund eines Microsoft-Systemfehlers fehlgeschlagen.                                                                                         | Weitere Informationen erhalten Sie vom [Microsoft Support](https://developer.microsoft.com/en-us/windows/support) .                      |
+| Failed                   | Die Zahlung ist aufgrund eines Microsoft-Systemfehlers fehlgeschlagen.                                                                                         | Weitere Informationen erhalten Sie vom [Microsoft Support](https://developer.microsoft.com/en-us/windows/support) .                      |
 | In Bearbeitung              | Die Zahlung wird ausgeführt.                                                                                                                 | Nein                                                         |
 | Falsche Zahlung        | Der Zahlungsvorgang wird wiederholt.                                                                                                       | Nein                                                         |
 | Entsand                     | Die Zahlung wurde an Ihre Bank gesendet.                                                                                                     | Nein                                                         |
@@ -73,7 +73,7 @@ Wählen Sie zum Exportieren der Transaktionsdaten auf dieser Seite die Option Ex
 
 Befolgen Sie die Anweisungen auf dieser Seite, um die gewünschten Daten zu exportieren.
 
-Notizen:
+Hinweise:
 
 - Die Seite "Daten exportieren" wird nicht eigenständig aktualisiert. Möglicherweise müssen Sie die Seite manuell aktualisieren, um die neuesten Daten anzuzeigen.
 - Der Filter führt möglicherweise zu einem Fehler, der nicht verfügbar ist. Dies bedeutet wahrscheinlich, dass Sie den Standard Zeitraum in drei Monaten ausgewählt haben und dann eine Zahlungs-ID aus einem Verdienst außerhalb dieses Zeitraums ausgewählt haben. Erweitern Sie den Zeitraum, und versuchen Sie es noch mal.
@@ -95,7 +95,7 @@ Mit dieser Option können Sie die Zahlungen, die Sie in Ihrer Bank für ein best
 | servicefeetax            | Gesamtmenge der servicefeetax in "Pay-to-Currency" für das Programm/die "participantid" (gilt nur für Store-Programme und Azure Marketplace) |
 | totalpayment             | Gesamtzahlung in der lokalen Währung ohne die zurück Haltungs Steuern und einschließlich der Umsatzsteuer (falls zutreffend) für die Programm/participantid   |
 | currencyCode             | Bezahlen an Währungscode                                                                                                                      |
-| PaymentMethod            | Die Methode, mit der der Partner bezahlt wird, z. b. Electronic Bank Transfer, Bonitäts Hinweis                                                             |
+| PaymentMethod            | Die Methode, mit der der Partner bezahlt wird, z. b. elektronischer Bank Transfer, Bonitäts Hinweis                                                             |
 | PaymentID                | Eindeutiger Bezeichner für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar. (gilt nur für SAP-Zahlungen)              |
 | paymentstatus            | Zahlungsstatus                                                                                                                            |
 | paymentstatus Description | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                    |
@@ -122,7 +122,7 @@ Mit dieser Option können Sie jedes auf der Seite Transaktionsverlauf gelaufene 
 | Tor                          | Gibt die Geschäftsregel für den Verdienst an.                                                                                                  | All                                                            |
 | earningrate                    | Auf Transaktionsbetrag angewendete Incentive-Rate zum Generieren eines Erwerbs                                                                      | All                                                            |
 | quantity                       | Variiert je nach Programm. Gibt die in Rechnung gestellte Menge für Transaktions Programme an.                                                            | All                                                            |
-| quantitytype                   | Gibt den Typ der Menge an, z. b. die Abrechnung, Mau                                                                                     | All                                                            |
+| quantitytype                   | Gibt den Typ der Menge an, z. b. berechnete Menge, Mau                                                                                     | All                                                            |
 | earningtype                    | Gibt an, ob es sich um Gebühr, Rabatt, Coop, Sell usw. handelt.                                                                                          | All                                                            |
 | earningamount                  | Betrag in der ursprünglichen Transaktionswährung                                                                                      | All                                                            |
 | earningamountusd               | Betrag in USD                                                                                                                    | All                                                            |

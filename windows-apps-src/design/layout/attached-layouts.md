@@ -1,70 +1,70 @@
 ---
-Description: Sie können eine angefügte Layouts für die Verwendung mit Containern, z. B. das ItemsRepeater Steuerelement definieren.
-title: AttachedLayout
+Description: Sie können ein angefügtes Layout zur Verwendung mit Containern definieren, wie z. b. dem itemsrepeater-Steuerelement.
+title: Attachedlayout
 label: AttachedLayout
 template: detail.hbs
 ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ff73b13acb5f5970bb79755b0bf5706fb12545a
-ms.sourcegitcommit: c10d7843ccacb8529cb1f53948ee0077298a886d
+ms.openlocfilehash: dc23e86f85c5db3dd10c5cec152047be387d4513
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913990"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282293"
 ---
 # <a name="attached-layouts"></a>Angefügte Layouts
 
-Ein Container (z. B. Bereich), der die Layout-Logik in ein anderes Objekt delegiert basiert auf dem angefügten Layoutobjekt, das Layoutverhalten für seine untergeordneten Elemente bereitstellen.  Eine angefügte Layout-Modell bietet Flexibilität für eine Anwendung, das Layout der Elemente zur Laufzeit zu ändern oder mehr ganz einfach zwischen verschiedenen Teilen der Benutzeroberfläche (z. B. Elemente in den Zeilen einer Tabelle, die angezeigt werden, innerhalb einer Spalte ausgerichtet werden sollen) von layoutaspekten freigeben.
+Ein Container (z. b. Panel), der seine Layoutlogik an ein anderes Objekt delegiert, stützt das angefügte Layoutobjekt, um das Layoutverhalten für seine untergeordneten Elemente bereitzustellen.  Ein angefügtes Layoutmodell bietet Flexibilität für eine Anwendung, um das Layout von Elementen zur Laufzeit zu ändern oder um Aspekte des Layouts auf einfache Weise zwischen verschiedenen Teilen der Benutzeroberfläche zu teilen (z. b. Elemente in den Zeilen einer Tabelle, die in einer Spalte ausgerichtet sind).
 
-In diesem Thema geht es um welcher Aufwand erforderlich ist, erstellen Sie eine angefügte Layout (virtualisierenden und nicht virtualisiert), die Konzepte und die Klassen, die Sie benötigen, um zu verstehen, und die vor-und Nachteile Sie müssen bei der Entscheidung zwischen ihnen zu berücksichtigen.
+In diesem Thema wird erläutert, was mit der Erstellung eines angefügten Layouts (virtualisieren und nicht virtualisieren), den Konzepten und Klassen, die Sie verstehen müssen, und den vor-und Nachteile, die Sie berücksichtigen müssen, bei der Entscheidung zwischen Ihnen zu berücksichtigen ist.
 
 | **Abrufen der Windows-UI-Bibliothek** |
 | - |
-| Dieses Steuerelement ist Bestandteil der Windows-UI-Bibliothek, eines NuGet-Pakets, die neuen Steuerelemente und Funktionen der Benutzeroberfläche für UWP-apps enthält. Weitere Informationen einschließlich installationsanweisungen finden Sie in der [Übersicht über die Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/). |
+| Dieses Steuerelement ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Wichtige APIs:**
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 > * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
 > * [Layout](/uwp/api/microsoft.ui.xaml.controls.layout)
->     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
->     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
-> * [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)
->     * [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)
->     * [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)
+>     * [Nonvirtualizinglayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
+>     * [Virtualizinglayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
+> * [Layoutcontext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext)
+>     * [Nonvirtualizinglayoutcontext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)
+>     * [Virtualizinglayoutcontext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext)
 > * [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) (Vorschau)
 
 ## <a name="key-concepts"></a>Wichtige Konzepte
 
-Ausführen von Layout erfordert, dass für jedes Element zwei Fragen beantwortet werden:
+Zum Durchführen des Layouts müssen für jedes Element zwei Fragen beantwortet werden:
 
-1. Was ***Größe*** dieses Elements werden?
+1. Welche ***Größe*** hat dieses Element?
 
-2. Was ist die ***Position*** dieses Elements werden?
+2. Wie lautet die ***Position*** dieses Elements?
 
-Der XAML-Layout-System, das diese Fragen beantwortet, wird kurz behandelt, als Teil der Diskussion der [benutzerdefinierte Bereiche](/windows/uwp/design/layout/custom-panels-overview).
+Das Layoutsystem von XAML, das diese Fragen beantwortet, wird kurz im Rahmen der Erörterung von [benutzerdefinierten Panels](/windows/uwp/design/layout/custom-panels-overview)behandelt.
 
 ### <a name="containers-and-context"></a>Container und Kontext
 
-Im Prinzip XAMLs [Bereich](/uwp/api/windows.ui.xaml.controls.panel) zwei wichtige Rollen im Framework füllt:
+Konzeptionell füllt das [Panel](/uwp/api/windows.ui.xaml.controls.panel) von XAML zwei wichtige Rollen im Framework aus:
 
-1. Sie können untergeordnete Elemente enthalten und stellt die Verzweigungen in der Struktur von Elementen.
-2. Eine bestimmtes Layout-Strategie für die untergeordneten Elemente angewendet.
+1. Sie kann untergeordnete Elemente enthalten und stellt Verzweigungen in der Struktur von Elementen vor.
+2. Es wendet eine bestimmte layoutstrategie auf diese untergeordneten Elemente an.
 
-Aus diesem Grund wird ein Bereich in XAML wurde häufig gleichbedeutend mit dem Layout, aber die technisch gesehen, ist mehr als nur-Layout.
+Aus diesem Grund ist ein Panel in XAML oft gleichbedeutend mit dem Layout, aber technisch gesehen bedeutet dies mehr als nur das Layout.
 
-Die [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) auch verhält sich wie der Bereich, aber im Gegensatz zu den Bereich, es macht Children-Eigenschaft, die programmgesteuert hinzufügen oder Entfernen von "UIElement" untergeordnete Elemente ermöglichen.  Stattdessen werden die Lebensdauer der untergeordneten Elemente automatisch durch das Framework zur Anpassung an eine Auflistung von Datenelementen verwaltet.  Obwohl es nicht von Panel abgeleitet ist, verhält sich und wird vom Framework wie ein Bereich behandelt.
+Der [itemsrepeater](/windows/uwp/design/controls-and-patterns/items-repeater) verhält sich auch wie Panel, aber im Gegensatz zum Bereich macht er keine Children-Eigenschaft verfügbar, die das programmgesteuerte Hinzufügen oder Entfernen von UIElement-untergeordneten Elementen ermöglicht.  Stattdessen wird die Lebensdauer der untergeordneten Elemente automatisch vom Framework verwaltet, damit Sie einer Auflistung von Datenelementen entspricht.  Obwohl Sie nicht vom Panel abgeleitet ist, verhält sie sich und wird vom Framework wie einem Panel behandelt.
 
 > [!NOTE]
-> Die [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) ist ein Container, abgeleitet aus dem Bereich, der seine Logik für die angefügte delegiert [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) Objekt.  LayoutPanel befindet sich im *Vorschau* erhältlich und zurzeit nur in der *Vorabversion* des Pakets WinUI gelöscht.
+> Das [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) ist ein vom Panel abgeleiteter Container, der seine Logik an das angefügte [Layoutobjekt](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) delegiert.  Layoutpanel befindet sich in der *Vorschau* Phase und ist zurzeit nur in der *vorab* Version des WinUI-Pakets verfügbar.
 
 #### <a name="containers"></a>Container
 
-Im Prinzip [Bereich](/uwp/api/windows.ui.xaml.controls.panel) ist ein Container für Elemente, die auch die Möglichkeit zum Rendern der Pixel für ein [Hintergrund](/uwp/api/windows.ui.xaml.controls.panel.background).  Bereiche bieten eine Möglichkeit, allgemeine Layoutlogik in einem benutzerfreundlichen-Paket zu kapseln.
+Konzeptionell ist [Panel](/uwp/api/windows.ui.xaml.controls.panel) ein Container von Elementen, der auch die Möglichkeit hat, Pixel für einen [Hintergrund](/uwp/api/windows.ui.xaml.controls.panel.background)zu Rendering.  Panels bieten eine Möglichkeit, gängige Layoutlogik in einem leicht zu verwendenden Paket zu kapseln.
 
-Das Konzept der **angefügt Layout** macht den Unterschied zwischen den beiden Rollen des Containers und das Layout klarer.  Wenn der Container die Layout-Logik in ein anderes Objekt delegiert würden wir das Objekt das angefügte Layout aufrufen, wie im folgenden Codeausschnitt zu sehen. Container, die von erben ["FrameworkElement"](/uwp/api/windows.ui.xaml.frameworkelement), z. B. das LayoutPanel, automatisch verfügbar zu machen die allgemeinen Eigenschaften, die Eingabe XAMLs-Layout-Prozess (z. B. Höhe und Breite) bereitstellen.
+Das Konzept des **angefügten Layouts** macht den Unterschied zwischen den beiden Rollen von Container und Layout klarer.  Wenn der Container seine Layoutlogik an ein anderes Objekt delegiert, wird dieses Objekt wie im folgenden Code Ausschnitt gezeigt als angefügtes Layout bezeichnet. Container, die von [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)erben (z. b. Layoutpanel), machen automatisch die allgemeinen Eigenschaften verfügbar, die Eingaben für den XAML-Layoutprozess bereitstellen (z. b. Height und Width).
 
 ```xaml
 <LayoutPanel>
@@ -77,11 +77,11 @@ Das Konzept der **angefügt Layout** macht den Unterschied zwischen den beiden R
 </LayoutPanel>
 ```
 
-Während des Prozesses Layout der Container basiert, auf die angefügte *UniformGridLayout* zu messen und seine untergeordneten Elemente anzuordnen.
+Während des Layoutprozesses basiert der Container auf dem angeschlossenen *uniforgridlayout* , um seine untergeordneten Elemente zu messen und anzuordnen.
 
-#### <a name="per-container-state"></a>Pro Container-Status
+#### <a name="per-container-state"></a>Pro-Container-Status
 
-Mit einem angefügten Layout, eine einzelne Instanz des Objekts Layout kann zugeordnet werden *viele* -Container wie im folgenden Codeausschnitt; aus diesem Grund Es dürfen keine hängen oder direkt auf den Hostcontainer zu verweisen.  Zum Beispiel:
+Mit einem angefügten Layout kann eine einzelne Instanz des Layoutobjekte mit *vielen* Containern wie im folgenden Code Ausschnitt verknüpft werden. Daher darf Sie nicht vom Host Container abhängig sein oder ihn direkt referenzieren.  Zum Beispiel:
 
 ```xaml
 <!-- ... --->
@@ -94,74 +94,74 @@ Mit einem angefügten Layout, eine einzelne Instanz des Objekts Layout kann zuge
 <!-- ... --->
 ```
 
-In dieser Situation *ExampleLayout* muss sorgfältig bedacht werden den Status, die sie in seiner layoutberechnung und dem Speicherort, Status verwendet, um die Auswirkungen auf das Layout für Elemente in einem Bereich mit den anderen zu vermeiden.  Es wäre analog zu der ein benutzerdefiniertes Panel, deren MeasureOverride- und ArrangeOverride-Logik, die auf den Werten abhängig ist, dessen *statische* Eigenschaften.
+In *dieser Situation muss* das Unternehmen, das in der Layoutberechnung verwendet wird, und der Speicherort, an dem der Zustand gespeichert wird, sorgfältig in Erwägung gezogen werden, um das Layout für Elemente in einem Panel mit dem anderen zu beeinträchtigen  Dies wäre analog zu einem benutzerdefinierten Bereich, dessen messreoverride-und ArrangeOverride-Logik von den Werten der *statischen* Eigenschaften abhängig ist.
 
-#### <a name="layoutcontext"></a>LayoutContext
+#### <a name="layoutcontext"></a>Layoutcontext
 
-Der Zweck der [LayoutContext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext) ist für den Umgang mit diesen Herausforderungen.  Es bietet die angefügten Layout die Fähigkeit, mit dem Hostcontainer, wie das Abrufen von untergeordneten Elementen ohne direkte Abhängigkeit zwischen den beiden interagieren. Der Kontext ermöglicht auch das Layout, um alle dafür erforderlichen Zustand zu speichern, die von untergeordneten Elementen des Containers bezogen werden kann.
+Der Zweck von [layoutcontext](/uwp/api/microsoft.ui.xaml.controls.layoutcontext) besteht darin, diese Herausforderungen zu bewältigen.  Das angefügte Layout bietet die Möglichkeit, mit dem Host Container zu interagieren, z. b. das Abrufen von untergeordneten Elementen, ohne eine direkte Abhängigkeit zwischen beiden zu erstellen. Der Kontext ermöglicht es dem Layout auch, jeden beliebigen Zustand zu speichern, der möglicherweise mit den untergeordneten Elementen des Containers verknüpft ist.
 
-Einfache, nicht virtualisiert Layouts ist oftmals nicht erforderlich, zu einem beliebigen Zustand, sodass es nicht verwalten. Ein komplexeres Layout, wie z. B. Raster kann jedoch zum Beibehalten des Status zwischen dem Measure, und ordnen Sie aufrufen, um zu vermeiden, durch das Neuberechnen eines Werts auswählen.
+Einfache, nicht virtualisierende Layouts müssen häufig keinen Zustand aufrechterhalten, sodass es nicht zu Problemen wird. Ein komplexeres Layout, z. b. Raster, kann jedoch den Zustand zwischen dem Measure und dem Anordnungs Ansichts Zustand beibehalten, um das erneute Berechnen eines Werts zu vermeiden.
 
-Virtualisieren von Layouts *häufig* müssen einige Zustand zwischen sowohl für die Measure beibehalten und auch zwischen iterative layoutdurchläufe anordnen.
+Bei der Virtualisierung von Layouts müssen *häufig* einige Zustände zwischen Measure und anordnen sowie zwischen iterativen layoutdurchläufen beibehalten werden.
 
-#### <a name="initializing-and-uninitializing-per-container-state"></a>Initialisieren und Deinitialisierung pro Container-Status
+#### <a name="initializing-and-uninitializing-per-container-state"></a>Initialisieren und Aufheben der Initialisierung pro Container-Status
 
-Wenn ein Layout mit einem Container angefügt ist seine [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore) Methode wird aufgerufen, und bietet die Möglichkeit, ein Objekt zum Speichern von Status zu initialisieren.
+Wenn ein Layout an einen Container angefügt wird, wird seine [initializeforcontextcore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore) -Methode aufgerufen und bietet die Möglichkeit, ein Objekt zum Speichern des Zustands zu initialisieren.
 
-Auf ähnliche Weise, wenn das Layout entfernt wird aus einem Container, der [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) aufgerufene Methode.  Dadurch werden dem Layout Gelegenheit zum Bereinigen von einem beliebigen Zustand, die sie mit dem betreffenden Container verbunden hätten.
+Wenn das Layout aus einem Container entfernt wird, wird auch die [uninitializeforcontextcore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) -Methode aufgerufen.  Dadurch erhält das Layout die Möglichkeit, jeden Zustand zu bereinigen, der diesem Container zugeordnet ist.
 
-Das Layout des Zustandsobjekt, das mit gespeichert und abgerufen werden, aus dem Container mit werden die [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) Eigenschaft im Kontext.
+Das Zustands Objekt des Layouts kann mit der [layoutstate](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) -Eigenschaft im Kontext gespeichert und aus dem Container abgerufen werden.
 
 ### <a name="ui-virtualization"></a>UI-Virtualisierung
 
-UI-Virtualisierung bedeutet, dass die Erstellung eines UI-Objekts, bis zu verzögern _Wenn es benötigt_.  Es ist eine leistungsoptimierung.  Für Szenarien ohne Bildlauf zum Bestimmen der _bei Bedarf_ basiert möglicherweise auf eine beliebige Anzahl der Aufgaben, die app-spezifisch sind.  In diesen Fällen apps sollten mit den [X: Load](../../xaml-platform/x-load-attribute.md). Es erfordert keine spezielle Behandlung im Layout.
+Die UI-Virtualisierung bedeutet, dass das Erstellen eines UI-Objekts verzögert wird, bis _es benötigt_wird.  Es handelt sich um eine Leistungsoptimierung.  Für Szenarios ohne Bildlauf, die bestimmen, _wann erforderlich_ ist, können Sie auf einer beliebigen Anzahl von apps basieren, die APP-spezifisch sind.  In diesen Fällen sollten Apps die Verwendung von [x:Load](../../xaml-platform/x-load-attribute.md)in Erwägung gezogen werden. In Ihrem Layout ist keine besondere Handhabung erforderlich.
 
-In Szenarien wie z. B. eine Liste durchführen eines Bildlaufs basierende bestimmen _bei Bedarf_ basiert häufig auf "werden angezeigt, zu einem Benutzer" die hängt in hohem Maß, in dem sie, während der Layoutprozess abgelegt wurde und erfordert besondere Überlegungen.  Dieses Szenario ist ein Schwerpunkt für dieses Dokument.
+In Bild Lauf basierten Szenarios, wie z. b. einer Liste, hängt die Bestimmung, _bei Bedarf_ , häufig davon ab, dass Sie für einen Benutzer sichtbar ist. Dies hängt stark davon ab, wo es während des Layoutprozesses platziert wurde, und erfordert besondere Überlegungen.  Dieses Szenario ist der Schwerpunkt dieses Dokuments.
 
 > [!NOTE]
-> Obwohl in diesem Dokument nicht behandelt, konnten die gleichen Funktionen, die die UI-Virtualisierung Durchführen eines Bildlaufs Szenarien ermöglichen in Szenarien ohne Bildlauf angewendet werden.  Z. B. eine datengesteuerte Symbolleisten-Steuerelement, das die Lebensdauer der Befehle verwaltet werden, er bietet und reagiert auf Änderungen in den verfügbaren Speicherplatz, indem die Wiederverwendung / Verschieben von Elementen zwischen einer sichtbaren Bereich und ein Überlaufmenü.
+> Obwohl es in diesem Dokument nicht behandelt wird, können die gleichen Funktionen, die die UI-Virtualisierung in scrollszenarien ermöglichen, in Szenarios ohne Bildlauf angewendet werden.  Beispielsweise ein datengesteuerte Symbolleisten-Steuerelement, das die Lebensdauer der Befehle verwaltet, die es anzeigt, und auf Änderungen des verfügbaren Speicherplatzes reagiert, indem Elemente zwischen einem sichtbaren Bereich und einem Überlauf Menü verschoben werden.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Zunächst entscheiden Sie, ob das Layout, die, das Sie erstellen müssen, die UI-Virtualisierung unterstützen soll.
+Entscheiden Sie zunächst, ob das Layout, das Sie erstellen müssen, die UI-Virtualisierung unterstützen soll.
 
-**Einige Dinge zu bedenken...**
+**Einige Dinge, die Sie beachten müssen...**
 
-1. Layouts nicht virtualisiert sind einfacher zu erstellen. Wenn die Anzahl der Elemente immer kleine werden wird empfohlen, dann erstellen ein Layout nicht virtualisiert.
-2. Die Plattform bietet eine Reihe von angefügten Layouts, mit denen Arbeit mit der [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) und [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) muss häufig zu behandeln.  Machen Sie sich mit den bevor Sie sich entscheiden, müssen Sie ein benutzerdefiniertes Layout zu definieren.
-3. Virtualisierenden Layouts verfügen immer über einige zusätzliche CPU und Arbeitsspeicher/Komplexität/Kostenaufwand im Vergleich zu einem Layout nicht virtualisiert.  Wie wahrscheinlich eine allgemeine Faustregel, wenn die untergeordneten Elemente des Layouts verwalten muss in einem Bereich passt, die 3 x die Größe des Viewports, wird möglicherweise nicht Ihr Zuwachs vornehmlich aus einem virtualisierenden Layout. Die Größe 3 X wird weiter unten in diesem Dokument ausführlicher erläutert, ist jedoch aufgrund der asynchronen Natur des Bildlaufs auf Windows und seine Auswirkungen auf die Virtualisierung.
+1. Nicht virtualisierende Layouts sind einfacher zu erstellen. Wenn die Anzahl der Elemente immer klein ist, wird die Erstellung eines nicht virtualisierenden Layouts empfohlen.
+2. Die Plattform bietet eine Reihe angefügter Layouts, die mit [itemsrepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) und [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) zusammenarbeiten, um allgemeine Anforderungen abzudecken.  Machen Sie sich mit diesen vertraut, bevor Sie entscheiden, ein benutzerdefiniertes Layout zu definieren.
+3. Das Virtualisieren von Layouts hat im Vergleich zu einem nicht virtualisierenden Layout immer zusätzliche CPU-und Arbeitsspeicher Kosten/-Komplexität/mehr Aufwand.  Als allgemeine Faustregel gilt: Wenn die untergeordneten Elemente, die das Layout verwalten muss, wahrscheinlich in einen Bereich passen, der 3X die Größe des Viewports ist, kommt es möglicherweise nicht viel zu einem virtualisierunglayout. Die 3X-Größe wird weiter unten in diesem Dokument ausführlicher erläutert. Dies ist jedoch auf die asynchrone Art des Bildlaufs unter Windows und deren Auswirkung auf die Virtualisierung zurückzuführen.
 
 > [!TIP]
-> Als Ausgangspunkt des Verweises, die Standardeinstellungen für die [ListView](/uwp/api/windows.ui.xaml.controls.listview) (und [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)) sind, dass die Wiederverwendung erst beginnen, nicht die Anzahl der Elemente aus, um 3 x die Größe des aktuellen Viewports gefüllt werden.
+> Als Bezugspunkt gilt: die Standardeinstellungen für [ListView](/uwp/api/windows.ui.xaml.controls.listview) (und [itemsrepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)), dass die Wiederverwendung nicht beginnt, bis die Anzahl der Elemente ausreicht, um die 3X-Größe des aktuellen Viewports zu füllen.
 
-**Wählen Sie Ihr Basistyp**
+**Auswählen des Basistyps**
 
-![angefügte Layout-Hierarchie](images/xaml-attached-layout-hierarchy.png)
+![angefügte layoutanarchie](images/xaml-attached-layout-hierarchy.png)
 
-Die Basis [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) Typ verfügt über zwei abgeleitete Typen, die als Startpunkt für das Erstellen ein Layout für die angefügten dienen:
+Der [basislayouttyp](/uwp/api/microsoft.ui.xaml.controls.layout) verfügt über zwei abgeleitete Typen, die als Ausgangspunkt für die Erstellung eines angefügten Layouts fungieren:
 
-1. [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
-2. [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
+1. [Nonvirtualizinglayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
+2. [Virtualizinglayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
 
-## <a name="non-virtualizing-layout"></a>Nicht virtualisiert Layout
+## <a name="non-virtualizing-layout"></a>Nicht virtualisierungslayout
 
-Die Vorgehensweise zum Erstellen eines Layouts nicht virtualisiert vertraut für jeden, der Erstellung einer [benutzerdefinierte Panel](/windows/uwp/design/layout/custom-panels-overview).  Die gleichen Konzepte gelten.  Der Hauptunterschied besteht darin, die eine [NonVirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) wird verwendet, für den Zugriff auf die [untergeordneten](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) Auflistung und Layout, den Status speichern können.
+Der Ansatz für das Erstellen eines nicht virtualisierenden Layouts sollte allen Benutzern vertraut sein, die einen [benutzerdefinierten](/windows/uwp/design/layout/custom-panels-overview)Bereich erstellt haben.  Es gelten dieselben Konzepte.  Der Hauptunterschied besteht darin, dass ein [nonvirtualizinglayoutcontext-Objekt](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) verwendet wird, um [auf die Auflistung](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) der untergeordneten Elemente zuzugreifen, und das Layout kann den Zustand speichern.
 
-1. Der Basistyp abgeleitet [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (anstelle von Bereich).
-2. *(Optional)*  Abhängigkeitseigenschaften definieren, die bei geändert, wird das Layout ungültig.
-3. _(**Neu**/Optional)_ initialisieren alle Zustandsobjekt, das das Layout erforderlichen als Teil der [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Stash es mit dem Hostcontainer mithilfe der [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) bereitgestellt, mit dem Kontext.
-4. Überschreiben der [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) , und rufen Sie die [Measure](/uwp/api/windows.ui.xaml.uielement.measure) Methode für alle untergeordneten Elemente.
-5. Überschreiben der [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) , und rufen Sie die [anordnen](/uwp/api/windows.ui.xaml.uielement.arrange) Methode für alle untergeordneten Elemente.
-6. *(**Neu**/Optional)* bereinigen gespeicherte Zustände als Teil der [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
+1. Leiten Sie vom Basistyp [nonvirtualizinglayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (anstelle von Panel) ab.
+2. *(Optional)* Definieren Sie Abhängigkeits Eigenschaften, die bei einer Änderung das Layout für ungültig erklären.
+3. _(**Neue**/optional)_ Initialisieren Sie alle Zustands Objekte, die vom Layout als Teil von [initializeforcontextcore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)benötigt werden. Stash Sie mit dem Host Container, indem Sie den [layoutstate](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) verwenden, der mit dem Kontext bereitgestellt wird.
+4. Überschreiben Sie die [measreoverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride) -Methode, und nennen Sie die [Measure](/uwp/api/windows.ui.xaml.uielement.measure) -Methode für alle untergeordneten Elemente
+5. Überschreiben der [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) und aufzurufen der [Anordnungs](/uwp/api/windows.ui.xaml.uielement.arrange) Methode für alle untergeordneten Elemente.
+6. *(**Neue**/optional)* Bereinigen Sie einen gespeicherten Zustand als Teil von " [uninitializeforcontextcore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)".
 
-### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Beispiel: Eine einfache Stapellayout (ausgibt, deren Höhe der Elemente)
+### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Beispiel: Ein einfaches Stapel Layout (Elemente variabler Größen)
 
-![MyStackLayout](images/xaml-attached-layout-mystacklayout.png)
+![Mystacklayout](images/xaml-attached-layout-mystacklayout.png)
 
-Hier ist ein sehr einfaches-Virtualisierung von Stack Layout von Elementen mit unterschiedlicher Größe. Es fehlen alle Eigenschaften, um das Layout Verhalten anzupassen. Die nachfolgende Implementierung veranschaulicht, wie das Layout der Context-Objekt, das vom Container zum bereitgestellten abhängt:
+Im folgenden finden Sie ein sehr einfaches nicht Virtualisierungsstapel Layout von Elementen mit unterschiedlichen Größen. Es sind keine Eigenschaften zum Anpassen des Layoutverhaltens vorhanden. Die folgende Implementierung veranschaulicht, wie das Layout auf dem vom Container bereitgestellten Kontext Objekt basiert:
 
-1. Rufen Sie die Anzahl der untergeordneten Elemente und
-2. Zugriff auf jedes untergeordnete Element anhand des Indexes.
+1. Anzahl der untergeordneten Elemente und
+2. Greifen Sie über den Index auf jedes untergeordnete Element zu.
 
 ```csharp
 public class MyStackLayout : NonVirtualizingLayout
@@ -209,100 +209,100 @@ public class MyStackLayout : NonVirtualizingLayout
 
 ## <a name="virtualizing-layouts"></a>Virtualisieren von Layouts
 
-Ähnlich wie bei einem Layout nicht virtualisiert werden sind die allgemeinen Schritte für ein virtualisierenden Layout identisch.  Die Komplexität ist größtenteils in bestimmen, welche Elemente innerhalb des Viewports fällt und realisiert werden soll.
+Ähnlich wie bei einem nicht virtualisierenden Layout sind die Grundschritte für ein virtualisierungslayout identisch.  Die Komplexität liegt größtenteils darin, zu bestimmen, welche Elemente innerhalb des Viewports liegen und sollte realisiert werden.
 
-1. Der Basistyp abgeleitet [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout).
-2. (Optional) Definieren Sie Ihre Abhängigkeitseigenschaften bei geändert, wird das Layout ungültig.
-3. Initialisieren Sie alle Zustandsobjekt, das als Teil des durch das Layout erforderlich ist der [InitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore). Stash es mit dem Hostcontainer mithilfe der [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) bereitgestellt, mit dem Kontext.
-4. Überschreiben der [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) , und rufen Sie die [Measure](/uwp/api/windows.ui.xaml.uielement.measure) -Methode für jedes untergeordnete Element, das realisiert werden soll.
-   1. Die [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) Methode wird verwendet, um eine "UIElement" abzurufen, die durch das Framework (z. B. datenbindungen angewendet) vorbereitet wurde.
-5. Überschreiben der [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) , und rufen Sie die [anordnen](/uwp/api/windows.ui.xaml.uielement.arrange) -Methode für jedes erkannte untergeordnete Element.
-6. (Optional) Bereinigen Sie alle einen gespeicherten Status aufweist als Teil der [UninitializeForContextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore).
+1. Leiten Sie vom Basistyp [virtualizinglayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)ab.
+2. Optionale Definieren Sie die Abhängigkeits Eigenschaften, die bei einer Änderung das Layout für ungültig erklären.
+3. Initialisieren Sie alle Zustands Objekte, die vom Layout als Teil von [initializeforcontextcore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore)benötigt werden. Stash Sie mit dem Host Container, indem Sie den [layoutstate](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate) verwenden, der mit dem Kontext bereitgestellt wird.
+4. Überschreiben Sie die [measreoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) -Methode, und wenden Sie die [Measure](/uwp/api/windows.ui.xaml.uielement.measure) -Methode für jedes untergeordnete Element an, das
+   1. Die [getorkreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode wird verwendet, um ein UIElement abzurufen, das vom Framework vorbereitet wurde (z. b. angewendete Daten Bindungen).
+5. Überschreiben Sie die [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) -Methode, und wenden Sie die [Anordnungs](/uwp/api/windows.ui.xaml.uielement.arrange) Methode für jedes erkannte unter
+6. Optionale Bereinigen Sie einen gespeicherten Zustand als Teil von " [uninitializeforcontextcore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)".
 
 > [!TIP]
-> Der Rückgabewert von der [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) als die Größe des virtualisierten Inhalts verwendet wird.
+> Der von der " [messreoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) " zurückgegebene Wert wird als Größe des virtualisierten Inhalts verwendet.
 
-Es gibt zwei allgemeine Vorgehensweisen beim Erstellen eines Layouts virtualisierenden zu berücksichtigen.  Angibt, ob wählen Sie eines dieser Zuordnungsverfahren größtenteils hängt von "wie Sie die Größe eines Elements bestimmt".  Wenn die genug sein, um den Index eines Elements in das Dataset oder die Daten selbst kennen ihre letztendliche Größe bestimmt ist, würden wir betrachten es **datenabhängige**.  Dies sind einfacher zu erstellen.  Wenn Sie jedoch die einzige Möglichkeit zum Bestimmen der Größe für ein Element erstellt wird und die Benutzeroberfläche zu messen, und klicken Sie dann wir es also ist **Inhalt abhängiges**.  Diese sind komplexer.
+Beim Erstellen eines virtualisierenden Layouts sollten Sie zwei allgemeine Ansätze beachten.  Ob Sie eine oder die andere auswählen, hängt größtenteils davon ab, wie die Größe eines Elements bestimmt wird.  Wenn es ausreichend ist, den Index eines Elements im DataSet zu erkennen, oder die Daten selbst die endgültige Größe festgelegt haben, sollten wir Sie als **Daten abhängig**vorstellen.  Diese können einfacher erstellt werden.  Wenn jedoch die Größe für ein Element nur von der Erstellung und Messung der Benutzeroberfläche bestimmt werden soll, wird die Benutzeroberfläche als **Inhalts abhängig**angezeigt.  Diese sind komplexer.
 
-### <a name="the-layout-process"></a>Der Layoutvorgang
+### <a name="the-layout-process"></a>Der Layoutprozess
 
-Ob Sie eine Daten- oder Inhalt abhängiges Layout erstellen, ist es wichtig zu verstehen, der Layoutprozess und die Auswirkungen des Bildlaufs an asynchronen Windows.
+Unabhängig davon, ob Sie ein Daten-oder Inhalts abhängiges Layout erstellen, ist es wichtig, den Layoutprozess und die Auswirkung des asynchronen Bildlaufs von Windows zu verstehen.
 
-Eine (Failover) vereinfachte Ansicht der Schritte, die durch das Start-Framework für die Anzeige der Benutzeroberfläche auf dem Bildschirm darstellt:
+Eine (über) vereinfachte Ansicht der Schritte, die vom Framework gestartet werden, um die Benutzeroberfläche auf dem Bildschirm anzuzeigen, ist Folgendes:
 
-1. Das Markup analysiert.
+1. Das Markup wird analysiert.
 
-2. Generiert eine Struktur von Elementen an.
+2. Generiert eine Struktur von Elementen.
 
-3. Führt eine Layoutphase an.
+3. Führt eine layoutdurchführung aus.
 
-4. Führt eine Renderings aus.
+4. Führt einen renderdurchlauf aus.
 
-Mit UI-Virtualisierung, Erstellen von Elementen, die normalerweise ausgeführt werden würden in Schritt 2 wird verzögert, oder hat vorzeitig beendet, sobald die wurde festgestellt, dass ausreichend der Inhalt erstellt wurde zum Ausfüllen des Viewports. Virtualisierender Container (z. B. ItemsRepeater) verzögert das angefügte Layout, um diesen Prozess zu steuern. Es bietet die angefügten Layout mit einer [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) , die die zusätzliche Informationen, die ein virtualisierenden Layout angezeigt.
+Bei der benutzeroberflächenvirtualisierung wird das Erstellen der Elemente, die normalerweise in Schritt 2 ausgeführt werden, verzögert oder vorzeitig beendet, sobald festgestellt wurde, dass genügend Inhalte zum Ausfüllen des Viewports erstellt wurden. Ein virtualisierender Container (z. b. itemsrepeater) ist für das angefügte Layout festgelegt, um diesen Prozess zu steuern. Das angefügte Layout wird mit einem [virtualizinglayoutcontext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) bereitgestellt, der die zusätzlichen Informationen, die für ein virtualisierungslayout erforderlich sind, enthält.
 
-**Die RealizationRect (d. h. Viewport)**
+**Der realizationrect (z. b. Viewport)**
 
-Scrollen auf Windows erfolgt asynchron an den UI-Thread. Es wird nicht durch die Framework Layout gesteuert.  Stattdessen die Interaktion und die datenverschiebung tritt auf, in dem System Compositor. Der Vorteil dieses Ansatzes ist, dass Inhalt Schwenken mit 60 fps immer ausgeführt werden kann.  Die Herausforderung ist jedoch, dass "Viewport", wie Sie sehen das Layout, möglicherweise etwas veraltet ist relativ zum was tatsächlich auf dem Bildschirm angezeigt wird. Wenn ein Benutzer schnell einen Bildlauf durchführt, können sie die Geschwindigkeit des UI-Threads zum Generieren von neuen Inhalten und "Schwenken auf Schwarz festgelegt," überholt haben. Aus diesem Grund ist es häufig erforderlich, für ein virtualisierenden Layout einen zusätzlichen Puffer von vorbereiteten Elemente, die ausreichen, um einen größeren Bereich als der Viewport ausfüllen zu generieren. Wenn bei größerer Auslastung während des Bildlaufs des Benutzers weiterhin mit Inhalt angezeigt wird.
+Das Scrollen unter Windows erfolgt asynchron mit dem UI-Thread. Er wird nicht durch das Layout des Frameworks gesteuert.  Stattdessen erfolgt die Interaktion und Bewegung im System-Compositor. Der Vorteil dieses Ansatzes besteht darin, dass das Schwenken von Inhalten immer mit 60 fps erfolgen kann.  Die Herausforderung ist jedoch, dass der "Viewport", wie im Layout dargestellt, möglicherweise etwas veraltet ist, relativ zu dem, was auf dem Bildschirm tatsächlich sichtbar ist. Wenn ein Benutzer schnell einen Bildlauf durchführt, kann dies die Geschwindigkeit des UI-Threads übersteigen, um neuen Inhalt zu generieren, und "Pan to Black". Aus diesem Grund ist es häufig erforderlich, dass ein virtualisierungslayout einen zusätzlichen Puffer mit vorbereiteten Elementen generiert, um einen Bereich auszufüllen, der größer als der Viewport ist. Wenn beim Scrollen unter schwerer Ladevorgang angezeigt wird, wird der Benutzer weiterhin Inhalte angezeigt.
 
-![Realisierung rect](images/xaml-attached-layout-realizationrect.png)
+![Realisierung Rect](images/xaml-attached-layout-realizationrect.png)
 
-Virtualisieren von Containern, da elementerstellung teuer ist, (z. B. [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) erhalten Sie zunächst die angefügten Layout mit einem [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) entspricht den Viewport. Leerlaufzeit Anwachsen des Containers den Puffer mit vorbereiteten Inhalt durch wiederholte Aufrufe an das Layout mit einem immer größeren Realisierung Rect Dieses Verhalten ist eine leistungsoptimierung, die versucht, einen Mittelweg zwischen Schnellstart und schwenkansicht benutzerfreundlichkeit. Die maximale Puffergröße, die die ItemsRepeater generieren wird gesteuert, indem die [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) und [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) Eigenschaften.
+Da die Element Erstellung kostspielig ist, wird das angefügte Layout durch Virtualisieren von Containern (z. b. [itemsrepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) anfänglich mit einem " [realizationrect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) " bereitgestellt, das mit dem Viewport übereinstimmt. Während der Leerlaufzeit kann der Container den Puffer vorbereiteter Inhalte durch wiederholte Aufrufe des Layouts vergrößern, indem er eine immer größere ausführungsrect verwendet. Dieses Verhalten ist eine Leistungsoptimierung, die versucht, ein Gleichgewicht zwischen der schnellen Startzeit und einem guten Schwenk Verhalten zu erzielen. Die maximale Puffergröße, die der itemsrepeater generiert, wird durch die Eigenschaften [verticalcachelength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) und [horizontalcachelength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) gesteuert.
 
-**Erneut mithilfe von Elementen, die (Wiederverwenden von)**
+**Wieder verwenden von Elementen (Wiederverwendung)**
 
-Das Layout wird erwartet, dass die Größe und position der Elemente zum Ausfüllen der [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) jedes Mal ausgeführt. In der Standardeinstellung die [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) wird wiederverwendet, alle nicht verwendeten Elemente am Ende jeder Layoutdurchlauf.
+Beim Layout wird erwartet, dass die Elemente so groß werden, dass Sie jedes Mal, wenn Sie ausgeführt wird, die Größe der [realizationrect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) ausfüllen. Standardmäßig werden alle nicht verwendeten Elemente von [virtualizinglayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) am Ende jedes Layoutdurchlaufs wieder verwendet.
 
-Die [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) , an das Layout übergeben wird, als Teil der [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) und [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) erhalten Sie zusätzliche Informationen ein virtualisierenden Layout muss. Einige der am häufigsten verwendeten Dinge bereitgestellte sind die Möglichkeit zum:
+Der [virtualizinglayoutcontext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) , der als Teil von " [Mess reoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) " und " [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride) " an das Layout übergeben wird, bietet die zusätzlichen Informationen, die ein virtualisierungslayout benötigt. Zu den am häufigsten verwendeten Dingen gehören die folgenden Möglichkeiten:
 
-1. Die Anzahl der Elemente in den Daten ([ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount)).
-2. Abrufen einen bestimmten, mit der [GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat) Methode.
-3. Abrufen einer [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) , das den Anzeigebereich darstellt und als Puffer, der das Layout mit ausfüllen soll realisiert Elemente.
-4. Fordern Sie das "UIElement" für ein bestimmtes Element mit dem [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) Methode.
+1. Fragen Sie die Anzahl der Elemente in den Daten ([ItemCount](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount)) ab.
+2. Rufen Sie mithilfe der [GetItemAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat) -Methode ein bestimmtes Element ab.
+3. Abrufen eines [realizationrect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) , das den Viewport und Puffer darstellt, den das Layout mit den erkannten Elementen füllen soll.
+4. Fordern Sie das UIElement-Element für ein bestimmtes Element mit der [getorkreateelement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode an.
 
-Anfordern eines Elements für einen bestimmten Index wird dieses Element als "verwendet" markiert werden, übergeben Sie das Layout verursachen. Wenn das Element nicht bereits vorhanden ist, wird dann erkannt und automatisch vorbereitet, für die Verwendung (z. B. jedoch die Benutzeroberflächenautomatisierungs-Struktur, die in einem DataTemplate, Verarbeitung, Datenbindung, usw. definiert.).  Andernfalls wird sie aus einem Pool mit vorhandenen Instanzen abgerufen werden.
+Das Anfordern eines Elements für einen bestimmten Index bewirkt, dass dieses Element für diesen Durchlauf des Layouts als "in Verwendung" markiert wird. Wenn das Element nicht bereits vorhanden ist, wird es erkannt und automatisch zur Verwendung vorbereitet (z. b. zum Auffüllen der UI-Struktur, die in einem DataTemplate definiert ist, zum Verarbeiten von Daten Bindungen usw.).  Andernfalls wird Sie aus einem Pool vorhandener Instanzen abgerufen.
 
-Am Ende der einzelnen Maßübergabe, alle vorhandenen erkannte Element, das nicht "in Verwendung" markiert war gilt automatisch für die erneute Verwendung zur Verfügung, wenn die Option zum [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) wurde verwendet, wenn das Element über abgerufen wurden die [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) Methode. Das Framework automatisch verschiebt ihn in einem Pool für die Wiederverwendung und macht sie verfügbar. Sie können anschließend für die Verwendung durch einen anderen Container abgerufen werden. Das Framework versucht, die dies nach Möglichkeit vermeiden, da einige Kosten im Zusammenhang mit neuzuordnung ein Element vorhanden ist.
+Am Ende jedes Measures werden alle vorhandenen, erkannten Elemente, die nicht als "in Gebrauch" gekennzeichnet waren, automatisch als wieder verwendend angesehen, es sei denn, die Option " [suppressautorecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) " wurde verwendet, als das Element über die [ Getorkreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode. Das Framework verschiebt es automatisch in einen Papierkorb und stellt es zur Verfügung. Sie kann anschließend für die Verwendung durch einen anderen Container abgerufen werden. Das Framework versucht, dies zu vermeiden, wenn dies möglich ist, da bei der erneuten Verarbeitung eines Elements einige Kosten anfallen.
 
-Wenn ein virtualisierenden Layout am Anfang jedes Measure kennt die Elemente nicht mehr in der Erkenntnis Rect fallen werden können dann sie die erneute Verwendung optimieren. Statt auf die Framework Standardverhalten. Das Layout kann bereits im Vorfeld Elemente in den Papierkorb Pool verschieben, indem Sie mit der [RecycleElement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement) Methode.  Diese Methode aufrufen, bevor Sie neue Elemente anfordern bewirkt, dass die vorhandenen Elemente verfügbar sein, wenn Sie das Layout später Probleme mit einem [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) Anforderung für einen Index, der nicht bereits einem Element zugeordnet ist.
+Wenn ein virtualisierungslayout am Anfang jedes Measures weiß, welche Elemente nicht mehr in die Erkenntnis Rect fallen, kann die Wiederverwendung optimiert werden. Anstatt auf das Standardverhalten des Frameworks zu vertrauen. Das Layout kann Elemente mithilfe der Methode " [recycleelement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement) " vorab in den Papierkorb verschieben.  Wenn diese Methode aufgerufen wird, bevor neue Elemente angefordert werden, werden diese vorhandenen Elemente verfügbar, wenn das Layout später eine [getorcreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Anforderung für einen Index ausgibt, der nicht bereits einem Element zugeordnet ist.
 
-Die VirtualizingLayoutContext bietet zwei zusätzliche Eigenschaften für Layoutautoren Erstellen eines Layouts Inhalt abhängig. Sie werden später ausführlicher beschrieben.
+Der virtualizinglayoutcontext bietet zwei zusätzliche Eigenschaften, die für Layoutautoren entworfen wurden, die ein Inhalts abhängiges Layout erstellen. Sie werden später ausführlicher erläutert.
 
-1. Ein [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) , bietet ein optionales _Eingabe_ Layout.
-2. Ein [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) , ein optionales _Ausgabe_ des Layouts.
+1. Ein [Empfehlungs Empfehlungs Index](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) , der eine optionale _Eingabe_ für das Layout bereitstellt.
+2. Ein [layoutorigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) , bei dem es sich um eine optionale _Ausgabe_ des Layouts handelt.
 
-## <a name="data-dependent-virtualizing-layouts"></a>Datenabhängige virtualisierenden Layouts
+## <a name="data-dependent-virtualizing-layouts"></a>Daten abhängige virtualisierungslayouts
 
-Ein virtualisierenden Layout ist einfacher, wenn Sie wissen, was die Größe jedes Elements ohne messen Sie den Inhalt, der angezeigt werden soll.  In diesem Dokument werden wir einfach in dieser Kategorie des Layouts als Virtualisierung bezeichnen **Datenlayouts** , da sie in der Regel umfassen die Daten untersucht werden.  Anhand der Daten eine app eine visuelle Darstellung mit einer bekannten Größe – z. B. auswählen kann, da der Teil der Daten oder zuvor entwurfsbedingt ermittelt wurde.
+Ein virtualisierungslayout ist einfacher, wenn Sie wissen, welche Größe jedes Element aufweisen sollte, ohne dass der anzuzeigende Inhalt gemessen werden muss.  In diesem Dokument bezeichnen wir einfach diese Kategorie der virtualisierungslayouts als **Daten Layouts** , da Sie in der Regel die Daten überprüfen.  Basierend auf den Daten kann eine APP eine visuelle Darstellung mit einer bekannten Größe auswählen. Dies ist möglicherweise darauf zurückzuführen, dass Ihr Teil der Daten oder zuvor vom Entwurf bestimmt wurde.
 
-Der allgemeine Ansatz ist für das Layout auf:
+Der allgemeine Ansatz ist das Layout für Folgendes:
 
-1. Berechnen Sie eine Größe und Position eines jeden Elements ein.
-2. Als Teil der [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride):
-   1. Verwenden der [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) um zu bestimmen, welche Elemente innerhalb des Viewports angezeigt werden soll.
-   2. Rufen Sie das "UIElement", die das Element mit darstellen, sollten die [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) Methode.
-   3. [Measure](/uwp/api/windows.ui.xaml.uielement.measure) das "UIElement" mit der im Voraus berechnete Größe.
-3. Als Teil der [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride), [anordnen](/uwp/api/windows.ui.xaml.uielement.arrange) jedes "UIElement" mit der im Voraus berechnete Position realisiert.
+1. Berechnen Sie eine Größe und Position jedes Elements.
+2. Als Teil von " [Mess reoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride)":
+   1. Verwenden Sie das Element " [realizationrect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) ", um zu bestimmen, welche Elemente im Viewport angezeigt werden sollen.
+   2. Rufen Sie das UIElement ab, das das Element mit der [getorkreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode darstellen soll.
+   3. [Messen](/uwp/api/windows.ui.xaml.uielement.measure) Sie das UIElement mit der vorab berechneten Größe.
+3. [Ordnen](/uwp/api/windows.ui.xaml.uielement.arrange) Sie als Teil von [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride)jedes erkannte UIElement mit der Voraus berechneten Position an.
 
 > [!NOTE]
-> Ein Daten-Layout-Ansatz ist häufig nicht kompatibel mit _Datenvirtualisierung_.  Insbesondere, in dem nur die Daten in den Arbeitsspeicher geladen, Daten, die erforderlich sind, zum Ausfüllen, was für den Benutzer sichtbar ist vorhanden ist.  Data Virtualization ist nicht auf lazy oder inkrementellen Laden von Daten bezieht, wie ein Benutzer einen Bildlauf nach unten, wo die Daten erhält vom residenten bleibt.  Es ist vielmehr auf verweisen, wenn Elemente aus dem Speicher freigegeben werden, da sie außerhalb der Ansicht gescrollt werden.  Müssen Sie ein Datenlayout, die jedem Datenelement überprüft als Teil eines Datenlayouts Datenvirtualisierung ordnungsgemäß verhindern würden, wie erwartet.  Eine Ausnahme ist ein Layout wie die UniformGridLayout davon aus, alles, was die gleiche Größe hat.
+> Ein datenlayoutansatz ist häufig mit der _Datenvirtualisierung_nicht kompatibel.  Insbesondere, wenn die einzigen Daten, die in den Arbeitsspeicher geladen werden, die Daten sind, die für den Benutzer sichtbar sind.  Die Datenvirtualisierung verweist nicht auf ein verzögertes oder inkrementelles Laden von Daten, wenn ein Benutzer einen Bildlauf nach unten durchführt  Vielmehr bezieht sich dies auf den Fall, dass Elemente aus dem Arbeitsspeicher freigegeben werden, wenn Sie aus der Ansicht heraus scrollen.  Wenn ein Datenlayout vorhanden ist, bei dem jedes Datenelement als Teil eines Daten Layouts überprüft wird, würde die Datenvirtualisierung nicht wie erwartet funktionieren.  Eine Ausnahme ist ein Layout wie das uniforgridlayout, bei dem davon ausgegangen wird, dass alles die gleiche Größe hat.
 
 > [!TIP]
-> Wenn Sie ein benutzerdefiniertes Steuerelement für eine Steuerelementbibliothek erstellen, die von anderen Benutzern in einer Vielzahl von Situationen verwendet werden, wird möglicherweise ein Datenlayout keine Option für Sie.
+> Wenn Sie ein benutzerdefiniertes Steuerelement für eine Steuerelement Bibliothek erstellen, die von anderen in einer Vielzahl von Situationen verwendet wird, ist ein Datenlayout möglicherweise keine Option für Sie.
 
-### <a name="example-xbox-activity-feed-layout"></a>Beispiel: Xbox-Aktivitätsfeed layout
+### <a name="example-xbox-activity-feed-layout"></a>Beispiel: Layout des Xbox-Aktivitäts Feeds
 
-Die Benutzeroberfläche für die Xbox-Aktivitätsfeed verwendet ein sich wiederholendes Muster, in dem jede Zeile eine Breite Kachel, gefolgt von zwei schmalen Kacheln, die umgekehrt wird in der nachfolgenden Zeile hat. In diesem Layout wird die Größe für jedes Element eine Funktion von der Position des Elements in das DataSet und die bekannte Größe für die Kacheln (Breite Vs einzuschränken).
+Die Benutzeroberfläche für den Xbox-Aktivitäts Feed verwendet ein sich wiederholendes Muster, bei dem jede Zeile über eine breite Kachel verfügt, gefolgt von zwei schmalen Kacheln, die in der nachfolgenden Zeile invertiert werden. In diesem Layout ist die Größe für jedes Element eine Funktion der Position des Elements im DataSet und der bekannten Größe für die Kacheln (Wide vs Narrow).
 
-![Aktivitätsfeed Xbox](images/xaml-attached-layout-activityfeedscreenshot.png)
+![Xbox-Aktivitäts Feed](images/xaml-attached-layout-activityfeedscreenshot.png)
 
-Der Code folgt die Beschreibung, über welche eine benutzerdefinierte Virtualisierung der Benutzeroberfläche für die Aktivität mit dem feed kann sein, um zu veranschaulichen, werden die allgemeinen Ansatz Sie dauern für eine **Datenlayout**.
+Der folgende Code zeigt, was eine benutzerdefinierte virtualisierungsschnittstelle für den Aktivitäts Feed sein könnte, um den allgemeinen Ansatz zu veranschaulichen, den Sie für ein **Datenlayout**benötigen.
 
 <table>
 <td>
-    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um die app öffnen und finden Sie unter der <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in Aktion, die mit diesem Beispiel-Layout.</p>
+    <p>Wenn Sie die Katalog-App für <strong style="font-weight: semi-bold">XAML</strong> -Steuerelemente installiert haben, klicken Sie hier, um die APP zu öffnen, und sehen Sie sich das <a href="xamlcontrolsgallery:/item/ItemsRepeater">itemsrepeater</a> in Aktion mit diesem Beispiel Layout an.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Erwerben Sie die XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Erwerben Sie den Quellcode (GitHub)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Abrufen des Quellcodes (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -582,13 +582,13 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-### <a name="optional-managing-the-item-to-uielement-mapping"></a>(Optional) Verwalten das Element, das "UIElement"-Zuordnung
+### <a name="optional-managing-the-item-to-uielement-mapping"></a>Optionale Verwalten des Elements mit der UIElement-Zuordnung
 
-In der Standardeinstellung die [VirtualizingLayoutContext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) verwaltet eine Zuordnung zwischen den realisierten Elementen und den Index in der Datenquelle, die sie darstellen.  Ein Layout können diese Zuordnung selbst anfordern immer die Option zum Verwalten von [SuppressAutoRecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) beim Abrufen eines Elements über die [GetOrCreateElementAt](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode die verhindert, der Standardwert dass automatische Wiederverwendung Verhalten.  Ein Layout kann dazu z. B. entscheiden, wenn es nur verwendet wird, beim Durchführen eines Bildlaufs auf eine Richtung beschränkt ist und die Elemente, die er berücksichtigt werden immer in der zusammenhängenden (d. h. in dem wissen, dass der Index des ersten und letzten Elements ist ausreichend, um alle Elemente kennen, die Rea werden soll Lized).
+Standardmäßig verwaltet [virtualizinglayoutcontext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) eine Zuordnung zwischen den erkannten Elementen und dem Index in der Datenquelle, die Sie darstellen.  Ein Layout kann diese Zuordnung selbst verwalten, indem beim Abrufen eines Elements über die [getorkreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode immer die Option zum [suppressautorecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) angefordert wird, die das Standardverhalten für die automatische Wiederverwendung verhindert.  Dies kann sich z. b. als Layout erweisen, wenn es nur dann verwendet wird, wenn der Bildlauf auf eine Richtung beschränkt ist und die Elemente, die es berücksichtigt, immer zusammenhängend sind (d. h. das wissen, dass der Index des ersten und des letzten Elements genug ist, um alle Elemente zu kennen, die eine lisiert).
 
-#### <a name="example-xbox-activity-feed-measure"></a>Beispiel: Xbox-Aktivitätsfeed measure
+#### <a name="example-xbox-activity-feed-measure"></a>Beispiel: Xbox-Aktivitäts Feed-Measure
 
-Der folgende Codeausschnitt zeigt die zusätzliche Logik, die der MeasureOverride im vorherigen Beispiel zum Verwalten der Zuordnung hinzugefügt werden konnte.
+Der folgende Code Ausschnitt zeigt die zusätzliche Logik, die der Messung reoverride im vorherigen Beispiel hinzugefügt werden konnte, um die Zuordnung zu verwalten.
 
 ```csharp
     protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
@@ -660,59 +660,59 @@ internal class ActivityFeedLayoutState
 }
 ```
 
-## <a name="content-dependent-virtualizing-layouts"></a>Inhalt abhängiges virtualisierenden Layouts
+## <a name="content-dependent-virtualizing-layouts"></a>Inhalts abhängige virtualisierungslayouts
 
-Wenn Sie müssen zuerst messen, die Inhalte der Benutzeroberfläche für ein Element aus, um die genaue Größe zu ermitteln einer **Inhalt abhängiges Layout**.  Sie können auch davon vorstellen, als ein Layout, in dem jedes Element seine Größe selbst festlegen muss, anstatt das Layout an, dass dem Element die Größe. Virtualisierenden Layouts, die in diese Kategorie fallen, sind komplizierter.
+Wenn Sie den Inhalt der Benutzeroberfläche für ein Element zuerst messen müssen, um seine genaue Größe zu ermitteln, ist es ein **Inhalts abhängiges Layout**.  Sie können sich das Layout auch als Layout vorstellen, bei dem jedes Element seine Größe selbst überschreiten muss, anstatt das Layout, das dem Element seine Größe mitteilt. Das Virtualisieren von Layouts, die in diese Kategorie fallen, ist stärker betroffen.
 
 > [!NOTE]
-> Keine Inhalte abhängiges Layouts (sollte nicht) Datenvirtualisierung unterbrechen.
+> Inhalts abhängige Layouts sollten die Datenvirtualisierung nicht stören.
 
 ### <a name="estimations"></a>Schätzungen
 
-Inhalt abhängiges Layouts nutzen Schätzung, sowohl die Größe des Inhalts von realisierten als auch die Position des realisierten Inhalts zu erraten. Wenn diese Schätzungen ändern, verursacht dies die realisierten Inhalte regelmäßig Positionen innerhalb des bildlauffähigen Bereichs verschoben. Dies kann zu einer sehr frustrierend und bedürfen der Benutzeroberfläche führen, wenn dies nicht verringert. Hier werden die möglichen Probleme und Lösungen erläutert.
+Inhalts abhängige Layouts basieren auf der Schätzung, um sowohl die Größe des nicht erkannten Inhalts als auch die Position des realisierten Inhalts zu erraten. Wenn sich diese Schätzungen ändern, verschiebt der erkannte Inhalt regelmäßig Positionen innerhalb des Bild lauffähigen Bereichs. Dies kann zu einer sehr frustrierenden und jarringbenutzerbenutzerleistung führen, wenn diese nicht verringert werden. Die möglichen Probleme und entschärfungen werden hier erläutert.
 
 > [!NOTE]
-> Datenlayouts, die jedes Element berücksichtigen und kennen die genaue Größe aller Elemente, die erkannt oder nicht, und ihre Positionen können diese Probleme vollständig vermeiden.
+> Daten Layouts, die jedes Element berücksichtigen und die genaue Größe aller Elemente ermitteln, realisiert werden, und ihre Positionen können diese Probleme vollständig vermeiden.
 
-**Führen Sie einen Bildlauf zu verankern**
+**Scrollverankerung**
 
-XAML bietet einen Mechanismus zum plötzlichen Viewport-Schichten zu verringern, indem Sie mit Bildlauf Steuerelemente unterstützen [Scroll Verankern](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) durch die Implementierung der [IScrollAnchorPovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) Schnittstelle. Wie der Benutzer den Inhalt bearbeitet werden, wählt das Scrollen Steuerelement kontinuierlich ein Element aus der Gruppe der Kandidaten, die erfolgter Anmeldung nachverfolgt werden. Verschiebt die Position des Ankerelements während des Layouts verschiebt sich dann das Scroll-Steuerelement automatisch des Viewports, um den Viewport zu gewährleisten.
+XAML bietet einen Mechanismus, um plötzliche viewportverschiebungen zu verringern, indem scrollsteuerelemente die [scrollverankerung](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) durch Implementieren der [iscrollanchorpovider](/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider) -Schnittstelle unterstützen. Wenn der Benutzer den Inhalt ändert, wählt das scrollsteuer Element kontinuierlich ein Element aus der Gruppe von Kandidaten aus, die für die Nachverfolgung angemeldet wurden. Wenn sich die Position des Anker Elements während des Layouts verschiebt, verschiebt das scrollsteuerelement seinen Viewport automatisch, um den Viewport beizubehalten.
 
-Der Wert des der [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) bereitgestellt, um das Layout der dienstsynchronisierung vorliegen, aktuell ausgewählten Anchor-Element, das von der bildlaufsteuerelement ausgewählt. Alternativ, wenn ein Entwickler fordert explizit an, dass ein Element für einen Index mit realisiert werden die [GetOrCreateElement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement) Methode für die [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), diesen Index zugewiesen ist, als die [ RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) auf der nächsten Layoutdurchlauf. Das Layout auf die wahrscheinliches Szenario vorbereitet sein, dass ein Entwickler erkennt, ein Element dass, und anschließend fordert an, dass es in die Ansicht über die eingebunden werden dadurch die [StartBringIntoView](/uwp/api/windows.ui.xaml.uielement.startbringintoview) Methode.
+Der für das Layout angegebene Wert von " [Empfehlungs](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) Name" kann das aktuell ausgewählte Anker Element widerspiegeln, das von dem scrollsteuerelement ausgewählt wurde. Wenn ein Entwickler explizit anfordert, dass ein Element für einen Index mit der [getorkreateelement](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement) -Methode für das [itemsrepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Element realisiert werden soll, wird dieser Index beim nächsten Layoutdurchlauf als [Empfehlungs Index](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) angegeben. Dadurch kann das Layout für das wahrscheinliche Szenario vorbereitet werden, in dem ein Entwickler ein Element erkennt, und anschließend die Anzeige über die [startbringintoview](/uwp/api/windows.ui.xaml.uielement.startbringintoview) -Methode anfordern.
 
-Die [RecommendedAnchorIndex](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) ist der Index für das Element in der Datenquelle, das ein Layout Inhalt abhängiges zuerst positioniert werden sollte, um die Position der Elemente zu ermitteln. Sie sollten als Ausgangspunkt für die Positionierung anderer realisierten Elementen dienen.
+[Empfehlungs Index Index](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex) ist der Index für das Element in der Datenquelle, das von einem Inhalts abhängigen Layout zuerst positioniert werden soll, wenn die Position der Elemente geschätzt wird. Er sollte als Ausgangspunkt für die Positionierung anderer der erkannten Elemente dienen.
 
-**Auswirkungen auf die Bildlaufleisten**
+**Auswirkung auf Scrollleisten**
 
-Trotz führen Sie einen Bildlauf zu verankern, wenn das Layout des Schätzungen häufig verwenden, möglicherweise aufgrund von erhebliche abweichungen bei der variieren kann die Größe des Inhalts, und klicken Sie dann auf die Position des Ziehpunkts für die Bildlaufleiste angezeigt, um zu wechseln.  Dies kann für einen Benutzer irritierend sein, wenn das Thumb-Steuerelement nicht mit dem Mauszeiger auf die Position nachzuverfolgen, wenn sie sie ziehen können.
+Auch bei der Bild Lauf Verankerung, wenn die Schätzungen des Layouts stark variieren, vielleicht aufgrund bedeutender Variationen der Inhalts Größe, wird die Position des Zieh Punkts für die Scrollleiste möglicherweise angezeigt.  Dies kann für einen Benutzer der Fall sein, wenn der Ziehpunkt nicht angezeigt wird, um die Position des Mauszeigers beim Ziehen zu verfolgen.
 
-Desto genauer kann das Layout in seine Schätzungen werden, und klicken Sie dann die weniger wahrscheinlich, dass ein Benutzer wird die springen Bildlaufleiste angezeigt.
+Umso genauer kann das Layout in seinen Schätzungen sein, und desto wahrscheinlicher ist es, dass ein Benutzer den Ziehpunkt der Scrollleiste einspringt.
 
-### <a name="layout-corrections"></a>Layout-Korrekturen
+### <a name="layout-corrections"></a>Layoutkorrekturen
 
-Ein Layout Inhalt abhängiges sollten darauf vorbereitet sein, auf die Schätzung Abklingen zu rationalisieren.  Wenn der Benutzer scrollt, um z. B. am Anfang des Inhalts und das Layout erkennt, dass das erste Element sind, finden es möglicherweise, dass die Position des Elements erwartete Bezug auf das Element, in dem sie gestartet haben, als der Ursprung (x-: 0 an einer beliebigen Stelle angezeigt werden würde Y:0). In diesem Fall können das Layout der [LayoutOrigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) Eigenschaft, um die Position, die er berechnet als das neue Layout Ursprung festzulegen.  Das Ergebnis ähnelt der Scrollen verankern, in dem die bildlaufsteuerelement Viewport automatisch-Konto für den Inhalt der Position angepasst wird, wie das Layout gemeldet.
+Ein Inhalts abhängiges Layout sollte darauf vorbereitet sein, seine Schätzung mit der Realität zu rationalisieren.  Wenn z. b. der Benutzer einen Bildlauf zum Anfang des Inhalts durchführt und das Layout das erste Element erkennt, kann es vorkommen, dass die erwartete Position des Elements relativ zu dem Element, von dem es gestartet wurde, an einer anderen Stelle als der Ursprung von (x:0 , y:0). Wenn dies auftritt, kann das Layout die [layoutorigin](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin) -Eigenschaft verwenden, um die Position festzulegen, die als neuer layoutursprung berechnet wird.  Das Ergebnis ist vergleichbar mit der scrollverankerung, bei der der Viewport des scrollsteuer Elements automatisch so angepasst wird, dass die vom Layout gemeldete Position des Inhalts angepasst wird.
 
-![Korrigieren Sie die LayoutOrigin](images/xaml-attached-layout-origincorrection.png)
+![Korrigieren von layoutorigin](images/xaml-attached-layout-origincorrection.png)
 
-### <a name="disconnected-viewports"></a>Nicht verbundene Viewports
+### <a name="disconnected-viewports"></a>Getrennte Viewports
 
-Die Größe aus des Layouts des zurückgegebenen [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) Methode darstellt, die bestmögliche Schätzung der Größe des Inhalts der mit jedem nachfolgenden Layout ändern kann.  Wenn ein Benutzer einen Bildlauf durchführt wird das Layout mit einem aktualisierten ständig neu ausgewertet werden [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect).
+Die von der [Mess reoverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride) -Methode des Layouts zurückgegebene Größe stellt die beste Schätzung bei der Größe des Inhalts dar, die sich mit jedem aufeinander folgenden Layout ändern kann.  Wenn ein Benutzer einen Bildlauf durchführt, wird das Layout ständig mit einem aktualisierten [realizationrect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect)erneut ausgewertet.
 
-Wenn ein Benutzer das Thumb-Steuerelement sehr schnell zieht springt es möglich, für den Viewport, aus der Perspektive des Layouts, angezeigt werden, zu groß werden lassen, in denen die vorherige Position die aktuelle Position nicht überlappt.  Dies ist aufgrund der asynchronen Natur des Bildlaufs an. Es ist auch möglich, für eine app, die verwendet wird, das Layout, um anzufordern, dass ein Element in die Ansicht für ein Element eingebunden werden, die derzeit nicht realisiert und schätzungsweise um außerhalb des aktuellen Bereichs, der nachverfolgt werden, indem Sie das Layout zu erstellen.
+Wenn ein Benutzer den Ziehpunkt sehr schnell zieht, dann ist es möglich, dass der Viewport von der Perspektive des Layouts aus angezeigt wird, um große Sprünge zu erstellen, bei denen sich die vorherige Position nicht mit der aktuellen Position überschneidet.  Dies liegt an der asynchronen Art des Bildlaufs. Es ist auch möglich, dass eine APP, die das Layout beansprucht, anfordert, dass ein Element für ein Element, das derzeit nicht realisiert ist, angezeigt wird, und dass es sich außerhalb des aktuellen Bereichs befindet, der vom Layout nachverfolgt wird.
 
-Wenn das Layout wird ermittelt, die Schätzung nicht zutrifft und/oder eine unerwartete Viewport-Verschiebung sieht, muss sie die Position des ersten Basiswerte.  Die virtualisierenden Layouts, die im Rahmen der XAML-Steuerelemente geliefert werden als Inhalt abhängiges Layouts entwickelt, wenn sie weniger Einschränkungen auf die Art des Inhalts platzieren, die angezeigt wird.
+Wenn das Layout feststellt, dass der Schätzwert nicht korrekt ist und/oder eine unerwartete viewportverschiebung feststellt, muss er seine Anfangsposition neu ausrichten.  Die virtualisierungslayouts, die als Teil der XAML-Steuerelemente ausgeliefert werden, werden als Inhalts abhängige Layouts entwickelt, da Sie weniger Einschränkungen hinsichtlich der Art des angezeigten Inhalts haben.
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Beispiel: Einfache virtualisierenden Stapellayout für Elemente mit variabler Größe
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Beispiel: Einfaches virtualisieren des Stapel Layouts für Elemente variabler Größen
 
-Das folgende Beispiel veranschaulicht eine einfache Stapellayout zum variabler Größe, die Elemente:
+Im folgenden Beispiel wird ein einfaches Stapel Layout für Elemente variabler Größen veranschaulicht:
 
-* unterstützt die Virtualisierung der Benutzeroberfläche
-* Schätzungen, die verwendet wird, um die Größe von realisierten Elementen zu erraten,
-* erkennt mögliche diskontinuierlich Viewport-Schichten und
-* Wendet Layout Korrekturen vor, um diese Schichten zu berücksichtigen.
+* unterstützt die UI-Virtualisierung.
+* verwendet Schätzungen, um die Größe der nicht erkannten Elemente zu erraten.
+* Beachten Sie die möglichen diskontinuierlichen Ansichts Verschiebungen, und
+* wendet Layoutkorrekturen an, um diese Verschiebungen zu berücksichtigen.
 
-**Syntax: Markup**
+**Syntax: Markup @ no__t-0
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ Das folgende Beispiel veranschaulicht eine einfache Stapellayout zum variabler G
 </ScrollViewer>
 ```
 
-**Codebehind: Main.cs**
+**codebehind: Main. cs @ no__t-0
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-**Code: VirtualizingStackLayout.cs**
+**code: Virtualizingstacklayout. cs @ no__t-0
 
 ```csharp
 // This is a sample layout that stacks elements one after

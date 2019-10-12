@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4f44772a9e8b34bf7f19a3b14dc8efd3d16c792f
-ms.sourcegitcommit: e5ed95f8252ddc7f39055d8f7276e82167bb9891
+ms.openlocfilehash: 7dd8604d9c9f32c374161ec1478221ebee6972c6
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70973709"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282503"
 ---
 # <a name="launch-the-windows-settings-app"></a>Starten der Windows-Einstellungs-App
 
@@ -151,7 +151,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 |Einstellungsseite| URI |
 |-------------|-----|
-| Extras | ms-settings:extras (nur verfügbar, wenn "Apps-Einstellungen" installiert sind (z. B. von Drittanbietern) |
+| Extras | MS-Settings: Extras (nur verfügbar, wenn "Einstellungs-Apps" installiert ist, z. b. von einem Drittanbieter) |
 
 ## <a name="gaming"></a>Spiele
 

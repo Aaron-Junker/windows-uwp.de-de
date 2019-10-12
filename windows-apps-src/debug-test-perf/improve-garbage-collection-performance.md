@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb4e80d7f8da022e2ceb5496cbad592d7d22716
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: f9e7cc16b65f4ee2727fae5a711da9372ee91c01
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339625"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282187"
 ---
 # <a name="improve-garbage-collection-performance"></a>Verbessern der Leistung bei der Garbage Collection
 
@@ -74,7 +74,7 @@ Wie bereits erwähnt, wird jedes Objekt ab einer Größe von 85 KB dem Heap für
 
 ### <a name="avoid-reference-rich-objects"></a>Vermeiden von Objekten mit vielen Verweisen
 
-Der Garbage Collector folgt den Verweisen zwischen Objekten, um zu ermitteln, bei welchen Objekten es sich um Liveobjekte handelt. Den Ausgangspunkt bildet dabei jeweils der Stamm in Ihrer App. Weitere Informationen finden Sie unter [Vorgänge während einer Garbage Collection](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals). Enthält ein Objekt eine Vielzahl von Verweisen, bedeutet dies einen höheren Aufwand für den Garbage Collector. Eine gängige Technik (besonders bei großen Objekten) ist das Konvertieren von Objekten mit vielen Verweisen in Objekte ohne Verweise (beispielsweise, indem anstelle eines Verweises ein Index gespeichert wird). Diese Technik funktioniert natürlich nur, wenn diese Vorgehensweise logisch möglich ist.
+Der Garbage Collector folgt den Verweisen zwischen Objekten, um zu ermitteln, bei welchen Objekten es sich um Liveobjekte handelt. Den Ausgangspunkt bildet dabei jeweils der Stamm in Ihrer App. Weitere Informationen finden Sie unter [Vorgänge während einer Garbage Collection](https://docs.microsoft.com/dotnet/standard/garbage-collection/fundamentals). Enthält ein Objekt eine Vielzahl von Verweisen, bedeutet dies einen höheren Aufwand für den Garbage Collector. Eine gängige Methode (insbesondere bei großen Objekten) ist das Konvertieren von Verweis reichen Objekten in Objekte ohne Verweise (z. b. anstatt einen Verweis zu speichern). Diese Technik funktioniert natürlich nur, wenn diese Vorgehensweise logisch möglich ist.
 
 Das Ersetzen von Objektverweisen durch Indizes kann sich für Ihre App als komplizierte Änderung mit Störpotenzial erweisen und ist besonders für große Objekte mit einer Vielzahl von Verweisen gedacht. Führen Sie diesen Schritt nur aus, wenn Sie in Ihrer App eine hohe Garbage Collection-Dauer feststellen, die auf Objekte mit vielen Verweisen zurückzuführen ist.
 

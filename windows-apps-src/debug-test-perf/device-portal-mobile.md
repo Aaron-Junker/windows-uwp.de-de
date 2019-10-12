@@ -4,14 +4,14 @@ title: Geräteportal für Mobilgeräte
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr mobiles Gerät per Fernzugriff konfigurieren und verwalten können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Device-portal
+keywords: Windows 10, UWP, Geräte Portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597225"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281890"
 ---
 # <a name="device-portal-for-mobile"></a>Geräteportal für Mobilgeräte
 
@@ -31,9 +31,9 @@ Wenn Sie das erste Mal eine Verbindung mit dem Geräteportal herstellen, werden 
 
 ![Einstellungen für die Geräteerkennung im Entwicklermodus](images/device-portal/mob-dev-mode-pairing.png)
 
-Sie können aus 3 Möglichkeiten für Verbindungen mit Device Portal auswählen: USB, lokalen Host und über das lokale Netzwerk (einschließlich VPN und tethering).
+Sie können zwischen 3 Möglichkeiten zum Herstellen einer Verbindung mit dem Geräte Portal wählen: USB, lokaler Host und über das lokale Netzwerk (einschließlich VPN und Tethering).
 
-**Verbindung mit dem Device Portal**
+**Zum Herstellen einer Verbindung mit dem Geräte Portal**
 
 1. Geben Sie in Ihrem Browser die hier angegebene Adresse für den verwendeten Verbindungstyp ein.
 
@@ -49,7 +49,7 @@ Sie können aus 3 Möglichkeiten für Verbindungen mit Device Portal auswählen:
 
     Verwenden Sie diese Adresse, um die Verbindung über ein lokales Netzwerk herzustellen.
 
-    Die IP-Adresse des Smartphones wird in den Geräteportaleinstellungen auf dem Telefon angezeigt. Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich. Der Hostname (kann in „Einstellungen“ > „System“ > „Info“ bearbeitet werden) kann auch für den Zugriff auf das Geräteportal im lokalen Netzwerk verwendet werden (Beispiel: http://Phone360)). Dies ist hilfreich, wenn Netzwerke oder IP-Adressen von Geräten häufig geändert werden oder freigegeben werden müssen. 
+    Die IP-Adresse des Smartphones wird in den Geräteportaleinstellungen auf dem Telefon angezeigt. Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich. Der Hostname (bearbeitbar in Settings > System > About) kann auch für den Zugriff auf das Geräte Portal im lokalen Netzwerk verwendet werden (z. b. http://Phone360), was für Geräte nützlich ist, die Netzwerke oder IP-Adressen häufig ändern oder freigegeben werden müssen. 
 
 2. Tippen Sie auf Ihrem Smartphone auf die Schaltfläche „Koppeln“, um den Code zu generieren und anzuzeigen.
 
@@ -83,5 +83,5 @@ Das Geräteportal für mobile Geräte enthält den Standardsatz der Seiten. Ausf
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Übersicht über die Windows Device Portal](device-portal.md)
-* [Device Portal-Core-API-Referenz](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Übersicht über das Windows-Geräte Portal](device-portal.md)
+* [Referenz zur kernapi des Geräte Portals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

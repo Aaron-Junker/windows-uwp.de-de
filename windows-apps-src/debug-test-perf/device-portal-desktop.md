@@ -4,14 +4,14 @@ title: Geräteportal für Windows-Desktop
 description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows 10, Uwp, Device-portal
+keywords: Windows 10, UWP, Geräte Portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 0f25e882f53bb4f673aa5003495f37d553208721
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713809"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282001"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
@@ -47,7 +47,7 @@ Diese Links bieten zwei Möglichkeiten, sich mit dem Geräteportal zu verbinden:
 
 Um eine Verbindung über einen lokalen Host herzustellen, öffnen Sie ein Browserfenster und geben Sie die hier angezeigte Adresse für den von Ihnen verwendeten Verbindungstyp ein.
 
-* "Localhost": `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
+* Localhost: `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
 * Lokales Netzwerk: `https://<IP address of the desktop>:<PORT>`
 
 Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich.
@@ -80,22 +80,22 @@ Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführlic
 
 Wenn Sie Portnummern für Device Portal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
 
-- Klicken Sie unter `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`: Einen DWORD-Wert erforderlich. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
-    - `HttpPort`: Einen DWORD-Wert erforderlich. Enthält die Portnummer, an der Device Portal nach HTTP-Verbindungen lauscht.    
-    - `HttpsPort`: Einen DWORD-Wert erforderlich. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
+- Unter `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
+    - `UseDynamicPorts`: Ein erforderliches DWORD. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
+    - `HttpPort`: Ein erforderliches DWORD. Enthält die Portnummer, an der Device Portal nach HTTP-Verbindungen lauscht.    
+    - `HttpsPort`: Ein erforderliches DWORD. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
     
 Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderung deaktivieren:
-- `UseDefaultAuthorizer` - `0` für deaktiviert `1` für aktiviert.  
+- `UseDefaultAuthorizer` @ no__t-1 @ no__t-2 für deaktiviert, `1` für aktiviert.  
     - Dies steuert sowohl die grundlegende Authentifizierungsanforderung für jede Verbindung als auch die Weiterleitung von HTTP nach HTTPS.  
     
 ### <a name="command-line-options-for-device-portal"></a>Befehlszeilenoptionen für das Geräteportal
-Über eine administrative Eingabeaufforderung können Sie Teile des Geräteportal aktivieren und konfigurieren. Um den aktuellen Satz von Befehlen, die auf Ihrem Build unterstützt anzuzeigen, können Sie ausführen `webmanagement /?`
+Über eine administrative Eingabeaufforderung können Sie Teile des Geräteportal aktivieren und konfigurieren. Um die neuesten Befehle anzuzeigen, die für Ihren Build unterstützt werden, können Sie `webmanagement /?` ausführen.
 
 - `sc start webmanagement` oder `sc stop webmanagement` 
     - Schalten Sie den Dienst ein oder aus. Dazu muss ebenfalls der Entwicklermodus aktiviert sein. 
 - `-Credentials <username> <password>` 
-    - Legen Sie einen Benutzernamen und ein Passwort für das Geräteportal fest. Der Benutzername muss den Basic-Auth-Standards entsprechen, darf also keinen Doppelpunkt (:) enthalten und sollte aus Standard-ASCII-Zeichen wie z. B. [a-z, A-Z, 0-9] aufgebaut sein, da Browser standardmäßig nicht den gesamten Zeichensatz verarbeitet.  
+    - Legen Sie einen Benutzernamen und ein Passwort für das Geräteportal fest. Der Benutzername muss den Standard Authentifizierungs Standards entsprechen und darf daher keinen Doppelpunkt enthalten (:) und sollten aus standardmäßigen ASCII-Zeichen bestehen, z. b. [a-Za-z0-9], da Browser den vollständigen Zeichensatz nicht auf eine standardmäßige Weise analysieren.  
 - `-DeleteSSL` 
     - Dadurch wird der für HTTPS-Verbindungen verwendete SSL-Zertifikat-Cache zurückgesetzt. Wenn Sie auf TLS-Verbindungsfehler stoßen, die nicht umgangen werden können (im Gegensatz zur erwarteten Zertifikatswarnung), kann diese Option das Problem für Sie beheben. 
 - `-SetCert <pfxPath> <pfxPassword>`
@@ -107,29 +107,29 @@ Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderun
 
 ## <a name="common-errors-and-issues"></a>Häufige Fehler und Probleme
 
-Im folgenden sind einige häufige Fehler, die bei der Einrichtung des Device Portal auftreten können.
+Im folgenden finden Sie einige häufige Fehler, die beim Einrichten des Geräte Portals auftreten können.
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch returns invalid number of updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbs_e_invalid_windows_update_count"></a>Windowsupdatesearch gibt eine ungültige Anzahl von Updates zurück (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT).
 
-Sie können diese Fehlermeldung beim Versuch, die Entwickler-Pakete auf einer Vorabversion Build von Windows 10 installiert. Diese Features bei Bedarf (Feature-On) Pakete werden über Windows Update gehostet, und sie für Builds von Vorabversionen handelt herunterzuladen erfordert, dass Sie in Test-flighting entscheiden. Wenn die Installation in Test-flighting für die richtige Build- und die Kombination der Ring nicht aktiviert ist, wird die Nutzlast nicht heruntergeladen werden. Überprüfen Sie Folgendes:
+Dieser Fehler kann auftreten, wenn Sie versuchen, die Entwickler Pakete in einem vorab Release von Windows 10 zu installieren. Diese FOD-Pakete (Feature-on-Demand) werden auf Windows Update gehostet. Wenn Sie Sie herunterladen, müssen Sie sich für das flighting entscheiden. Wenn Ihre Installation nicht für die richtige Build-und Ring Kombination aktiviert ist, kann die Nutzlast nicht heruntergeladen werden. Überprüfen Sie Folgendes:
 
-1. Navigieren Sie zu **Einstellungen > Update und Sicherheit > Windows-Insider-Programm** und überprüfen Sie, ob die **Windows Insider-Konto** Abschnitt hat die richtigen Kontoinformationen. Wenn Sie diesen Abschnitt nicht sehen, wählen Sie **Verknüpfen eines Windows-Insider-Kontos**Ihr e-Mail-Konto hinzu, und vergewissern Sie sich, dass er unter wird angezeigt der **Windows Insider-Konto** Überschrift (müssen Sie möglicherweise auswählen**Verknüpfen eines Windows-Insider-Kontos** ein zweites Mal tatsächlich Link eine neu hinzugefügte Konto).
+1. Navigieren Sie zu **Einstellungen > aktualisieren Sie & Sicherheit > Windows Insider-Programm** , und vergewissern Sie sich, dass im Abschnitt **Windows Insider-Konto** die richtigen Kontoinformationen angezeigt werden. Wenn dieser Abschnitt nicht angezeigt wird, wählen Sie **Windows Insider-Konto verknüpfen**, Ihr e-Mail-Konto hinzufügen aus, und vergewissern Sie sich, dass es unter der Überschrift des **Windows Insider-Kontos** angezeigt wird (möglicherweise müssen Sie ein zweites Mal **ein Windows Insider-Konto verknüpfen** ). Verknüpfen Sie ein neu hinzugefügtes Konto.)
  
-2. Klicken Sie unter **welchen Inhalt Sie erhalten möchten?** , stellen Sie sicher, dass **aktiven Entwicklung von Windows** ausgewählt ist.
+2. Stellen **Sie unter welche Art von Inhalt möchten Sie erhalten?** sicher, dass die **aktive Windows-Entwicklung** ausgewählt ist.
  
-3. Klicken Sie unter **welchem Zeitrahmen dies geschehen soll neue Builds erhalten?** , stellen Sie sicher, dass **Windows Insider Fast** ausgewählt ist.
+3. Stellen **Sie unter welches Tempo möchten Sie neue Builds erhalten?** sicher, dass **Windows Insider fast** ausgewählt ist.
  
-4. Sie sollten jetzt die FoDs installieren können. Wenn Sie bestätigt haben, sind auf Windows-Insider Fast und noch nicht die FoDs installiert, bitte Ihr Feedback und fügen Sie die Log-Dateien unter **C:\Windows\Logs\CBS**.
+4. Sie sollten jetzt in der Lage sein, die fods zu installieren. Wenn Sie sich vergewissert haben, dass Sie mit Windows Insider fast arbeiten und die fods weiterhin nicht installieren können, geben Sie bitte Feedback, und fügen Sie die Protokolldateien unter " **c:\Windows\Logs\CBS**" an.
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC] StartService: OpenService Fehler 1060: Der angegebene Dienst ist nicht als installierter Dienst vorhanden.
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SC Start Service OpenService-Fehler 1060: Der angegebene Dienst ist nicht als installierter Dienst vorhanden.
 
-Sie erhalten diesen Fehler, die Developer-Pakete nicht installiert werden. Ohne die Developer-Pakete ist es keine Web-Management-Dienst. Versuchen Sie es erneut, die Entwickler-Pakete zu installieren.
+Dieser Fehler wird möglicherweise angezeigt, wenn die Entwickler Pakete nicht installiert sind. Ohne die Entwickler Pakete gibt es keinen Webverwaltungsdienst. Versuchen Sie erneut, die Entwickler Pakete zu installieren.
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>CBS kann nicht Download gestartet werden, da das System in getakteten Netzwerken (CBS_E_METERED_NETWORK) ist.
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>CBS kann nicht heruntergeladen werden, da sich das System im getakteten Netzwerk befindet (CBS_E_METERED_NETWORK).
 
-Sie können diese Fehlermeldung, wenn Sie mit einer getakteten Internetverbindung sind. Sie wird nicht auf die Developer-Pakete auf einer getakteten Verbindung herunterladen können.
+Dieser Fehler wird möglicherweise angezeigt, wenn Sie über eine getaktete Internetverbindung verfügen. Sie können die Entwickler Pakete nicht über eine getaktete Verbindung herunterladen.
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Übersicht über die Windows Device Portal](device-portal.md)
-* [Device Portal-Core-API-Referenz](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Übersicht über das Windows-Geräte Portal](device-portal.md)
+* [Referenz zur kernapi des Geräte Portals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

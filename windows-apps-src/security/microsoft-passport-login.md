@@ -6,34 +6,34 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ae3fb7442ac955b5edf4127dfdf66176c81a43
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: 8248e17a342563a0746e3c54c3a69a52f027d072
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399624"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282433"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Erstellen einer Windows Hello-Anmelde-App
 
 Dies ist der erste Teil einer umfassenden Schritt-für-Schritt-Lösung zum Erstellen einer Windows 10-App für die Universelle Windows-Plattform (UWP), die Windows Hello als Alternative zu herkömmlichen Authentifizierungssystemen mit Benutzername und Kennwort verwendet. Die App verwendet einen Benutzernamen für die Anmeldung und erstellt einen Hello-Schlüssel für jedes Konto. Diese Konten werden durch die PIN geschützt, die in den Windows-Einstellungen beim Konfigurieren von Windows Hello eingerichtet wird.
 
-Diese exemplarischen Vorgehensweise ist in zwei Teile aufgeteilt: Erstellen der App und Herstellen der Verbindung mit dem Back-End-Dienst. Wenn Sie fertig sind, fahren Sie mit Teil 2 fort: [Windows Hello-Anmeldedienst](microsoft-passport-login-auth-service.md).
+Diese exemplarischen Vorgehensweise ist in zwei Teile aufgeteilt: Erstellen der App und Herstellen der Verbindung mit dem Back-End-Dienst. Wenn Sie mit diesem Artikel fertig sind, fahren Sie mit Teil 2 fort: [Windows Hello Login-Dienst](microsoft-passport-login-auth-service.md).
 
 Machen Sie sich in der Übersicht [Windows Hello](microsoft-passport.md) zunächst mit grundlegenden Informationen zur Funktionsweise von Windows Hello vertraut.
 
-## <a name="get-started"></a>Beginnen
+## <a name="get-started"></a>Erste Schritte
 
 
-Die Erstellung dieses Projekts setzt Erfahrung mit C# und XAML voraus. Sie müssen außerdem verwendet Visual Studio 2015 (Community Edition oder höher), oder eine neuere Version von Visual Studio auf einem Windows 10-Computer. Obwohl Visual Studio 2015, die mindestens erforderliche Version ist, empfehlen wir, dass Sie die neueste Version von Visual Studio, um die neuesten Entwickler und Sicherheit verwenden.
+Die Erstellung dieses Projekts setzt Erfahrung mit C# und XAML voraus. Außerdem müssen Sie Visual Studio 2015 (Community Edition oder höher) oder eine spätere Version von Visual Studio auf einem Windows 10-Computer verwenden. Obwohl Visual Studio 2015 die mindestens erforderliche Version ist, wird empfohlen, dass Sie die neueste Version von Visual Studio für die neuesten Entwickler-und Sicherheitsupdates verwenden.
 
--   Öffnen Sie Visual Studio, und wählen Sie die Datei > Neu > Projekt.
+-   Öffnen Sie Visual Studio, und wählen Sie Datei > Neues > Projekt aus.
 -   Din Fenster für ein neues Projekt wird geöffnet. Navigieren Sie zu „Vorlagen“ > „Visual C#“.
 -   Wählen Sie „ Leere App (Universelle Windows-App)“ aus, und nennen Sie die Anwendung „PassportLogin“.
 -   Erstellen Sie die neue Anwendung, und führen Sie sie aus (F5). Anschließend sollte Ihnen auf dem Bildschirm ein leeres Fenster angezeigt werden. Schließen Sie die Anwendung.
 
 ![Neue Windows-Hello-Projekt](images/passport-login-1.png)
 
-## <a name="exercise-1-login-with-microsoft-passport"></a>Übung 1: Melden Sie sich mit Microsoft Passport
+## <a name="exercise-1-login-with-microsoft-passport"></a>Übung 1: Anmelden mit Microsoft Passport
 
 
 In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer eingerichtet ist, und wie Sie sich mit Windows Hello bei einem Konto anmelden.
@@ -490,7 +490,7 @@ In dieser Übung lernen Sie, wie Sie prüfen, ob Windows Hello auf dem Computer 
 
     ![Windows-Hello-Anmelde-Pin-Aufforderung](images/passport-login-8.png)
 
-## <a name="exercise-2-welcome-and-user-selection-pages"></a>Übung 2: Willkommen beim und Benutzer-Auswahl-Seiten
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>Übung 2: Willkommens-und Benutzer Auswahl Seiten
 
 
 Diese Übung baut direkt auf der vorherigen Übung auf. Nach erfolgreicher Anmeldung soll der Benutzer auf eine Willkommensseite weitergeleitet werden, auf der er sich abmelden oder sein Konto löschen kann. Da von Windows Hello ein computerspezifischer Schlüssel erstellt wird, kann ein Benutzerauswahlbildschirm erstellt werden, der alle Benutzer anzeigt, die auf diesem Computer angemeldet waren. Ein Benutzer kann dann eines dieser Konten auswählen, um direkt und ohne erneute Kennworteingabe zur Willkommensseite zu gelangen, da er bereits für den Zugriff auf den Computer authentifiziert wurde.
@@ -577,7 +577,7 @@ Diese Übung baut direkt auf der vorherigen Übung auf. Nach erfolgreicher Anmel
         if (keyOpenResult.Status == KeyCredentialStatus.Success)
         {
             // In the real world you would send key information to server to unregister
-            //e.g. RemovePassportAccountOnServer(account);
+            //for example, RemovePassportAccountOnServer(account);
         }
 
         // Then delete the account from the machines list of Passport Accounts
@@ -815,7 +815,7 @@ Diese Übung baut direkt auf der vorherigen Übung auf. Nach erfolgreicher Anmel
             // If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
             // would check the signed challenge. If it is correct it would allow the user access to the backend.
             // You would likely make a new method called RequestSignAsync to handle all this
-            // e.g. RequestSignAsync(openKeyResult);
+            // for example, RequestSignAsync(openKeyResult);
             // Refer to the second Microsoft Passport sample for information on how to do this.
 
             // For this sample there is not concept of a server implemented so just return true.
@@ -970,4 +970,4 @@ In dieser Übung wurden die Grundlagen für die Verwendung der neuen Windows-Hel
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Windows Hello](microsoft-passport.md)
-* [Windows Hello-Anmeldedienst](microsoft-passport-login-auth-service.md)
+* [Windows Hello Login-Dienst](microsoft-passport-login-auth-service.md)

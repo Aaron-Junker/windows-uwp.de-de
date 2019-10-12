@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: df1660f16127c2bc33a893a6e411b12e432272a1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b350aa58d7fed0bb78965dcd4742d759b8e9d988
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372633"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282450"
 ---
 # <a name="authentication-and-user-identity"></a>Authentifizierung und Benutzeridentität
 
@@ -21,7 +21,7 @@ UWP (Universelle Windows-Plattform)-Apps bieten mehrere Optionen für die Benutz
 
 Normale App-Verbindungen mit Identitätsanbieterdiensten von Drittanbietern, z. B. Facebook, Twitter, Flickr usw., verwenden den [Webauthentifizierungsbroker](web-authentication-broker.md). Verwenden Sie das [Schließfach für Anmeldeinformationen](credential-locker.md), um die Benutzerfreundlichkeit beim Speichern und Roaming der Anmeldeinformationen des Benutzers zu verbessern.
 
-Unternehmen, die mit Windows 10 sollten unbedingt mit [Microsoft Passport und Windows Hello](microsoft-passport.md), wodurch äußerst sichere zweistufige Authentifizierung. Wenn Microsoft Passport nicht verwendet werden kann, bieten [Smartcards](smart-cards.md) und der [biometrische Fingerabdruck](fingerprint-biometrics.md) eine zusätzliche Sicherheitsstufe.
+Unternehmen, die Windows 10 verwenden, sollten dringend die Verwendung von [Microsoft Passport und Windows Hello](microsoft-passport.md)in Erwägung gezogen, das eine äußerst sichere zweistufige Authentifizierung ermöglicht. Wenn Microsoft Passport nicht verwendet werden kann, bieten [Smartcards](smart-cards.md) und der [biometrische Fingerabdruck](fingerprint-biometrics.md) eine zusätzliche Sicherheitsstufe.
 
 <table>
 <tr><th>Thema</th><th>Beschreibung</th></tr>
@@ -33,8 +33,8 @@ Unternehmen, die mit Windows 10 sollten unbedingt mit [Microsoft Passport und Wi
 <tr><td><a href="microsoft-passport-login-auth-service.md">Erstellen eines Microsoft Passport-Anmeldediensts</a></td><td>Teil 2 der umfassenden exemplarischen Vorgehensweise zum Verwenden von Microsoft Passport als Alternative zu herkömmlichen Authentifizierungssystemen mit Benutzername und Kennwort in Windows 10-Apps für die universelle Windows-Plattform (UWP).</td></tr>
 <tr><td><a href="smart-cards.md">Smartcards</a></td><td>In diesem Thema wird erläutert, wie Apps Smartcards verwenden können, um Benutzer mit sicheren Netzwerkdiensten zu verbinden, einschließlich Informationen für den Zugriff auf physische Smartcardleser, zum Erstellen virtueller Smartcards, zum Kommunizieren mit Smartcards, zum Authentifizieren von Benutzern, zum Zurücksetzen von Benutzer-PINs und zum Entfernen oder Trennen von Smartcards.</td></tr>
 <tr><td><a href="share-certificates.md">Freigeben von Zertifikaten zwischen Apps</a></td><td>UWP-Apps, die über eine Kombination aus Benutzer-ID und Kennwort hinaus eine sichere Authentifizierung benötigen, können Zertifikate für die Authentifizierung verwenden. Die Zertifikatauthentifizierung bietet eine hohe Vertrauenswürdigkeit bei der Benutzerauthentifizierung. Es kann vorkommen, dass eine Gruppe von Diensten einen Benutzer für mehrere Apps authentifizieren möchte. In diesem Artikel wird gezeigt, wie Sie mehrere Apps mit demselben Zertifikat authentifizieren und für einen Benutzer geeigneten Code zum Importieren eines Zertifikats bereitstellen können, das für den Zugriff auf sichere Webdienste bestimmt ist.</td></tr>
-<tr><td><a href="companion-device-unlock.md">Entsperren von Windows mit Begleitgeräten (IoT)</a></td><td>Ein Begleitgerät ist ein Gerät, das in Verbindung mit dem Windows 10-Desktopgerät zur Verbesserung der Benutzerauthentifizierung verwendet werden kann. Mit dem Begleitgeräteframework kann ein Begleitgerät umfangreiche Funktionen für Microsoft Passport bereitstellen, auch wenn Windows Hello nicht verfügbar ist (beispielsweise, wenn das Windows 10-Desktopgerät über keine Kamera für die Gesichtsauthentifizierung oder kein Fingerabdrucklesegerät verfügt).</td></tr>
-<tr><td><a href="web-account-manager.md">Web-Konto-manager</a></td><td>In diesem Artikel wird beschrieben, wie Sie AccountsSettingsPane anzeigen und Ihre App für die universelle Windows-Plattform (UWP-App) mit externen Identitätsanbietern wie Microsoft oder Facebook verbinden. Dazu verwenden Sie die neuen Web Account Manager-APIs in Windows 10. Sie erfahren, wie Sie die Berechtigung eines Benutzers für die Verwendung seines Microsoft-Kontos anfordern können, ein Zugriffstoken erhalten und damit grundlegende Vorgänge (wie das Abrufen von Profildaten oder das Hochladen von Dateien in das OneDrive-Verzeichnis des Benutzers) durchführen können. </td></tr>
+<tr><td><a href="companion-device-unlock.md">Entsperren von Windows mit Begleitgeräten (IoT)</a></td><td>Ein Begleitgerät ist ein Gerät, das in Verbindung mit dem Windows 10-Desktopgerät zur Verbesserung der Benutzerauthentifizierung verwendet werden kann. Mithilfe des begleitenden Geräte-Frameworks kann ein Begleit Gerät eine umfangreiche Oberfläche für Microsoft Passport bereitstellen, selbst wenn Windows Hello nicht verfügbar ist (z. b. wenn Windows 10 Desktop nicht über eine Kamera für die Gesichts Authentifizierung oder Fingerabdruck Lese Gerät verfügt, Beispiel).</td></tr>
+<tr><td><a href="web-account-manager.md">Webkonto-Manager</a></td><td>In diesem Artikel wird beschrieben, wie Sie AccountsSettingsPane anzeigen und Ihre App für die universelle Windows-Plattform (UWP-App) mit externen Identitätsanbietern wie Microsoft oder Facebook verbinden. Dazu verwenden Sie die neuen Web Account Manager-APIs in Windows 10. Sie erfahren, wie Sie die Berechtigung eines Benutzers für die Verwendung seines Microsoft-Kontos anfordern können, ein Zugriffstoken erhalten und damit grundlegende Vorgänge (wie das Abrufen von Profildaten oder das Hochladen von Dateien in das OneDrive-Verzeichnis des Benutzers) durchführen können. </td></tr>
 <tr><td><a href="web-authentication-broker.md">Webauthentifizierungsbroker</a></td><td>In diesem Artikel wird erläutert, wie Ihre App eine Verbindung mit einem Onlineidentitätsanbieter herstellen kann, der Authentifizierungsprotokolle wie OpenID oder OAuth verwendet, wie Twitter, Facebook, Flickr, Instagram usw. Die <a href="https://docs.microsoft.com/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync">AuthenticateAsync</a>-Methode sendet eine Anforderung an den Onlineidentitätsanbieter und erhält als Antwort ein Zugriffstoken, das die für die App zugänglichen Anbieterressourcen beschreibt.</td></tr>
 </table>
 

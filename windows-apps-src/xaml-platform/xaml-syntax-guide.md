@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ab2ed7bea6a353ae30bb3c245e00c77365fb5af
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b70a3f9f9fad2d81716c22ab2f383e72ea363341
+ms.sourcegitcommit: cbd900f350569a3901086a44b2d5007bb6fb7bed
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339916"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72276304"
 ---
 # <a name="xaml-syntax-guide"></a>Anleitung zur XAML-Syntax
 
@@ -105,7 +105,7 @@ Einige Eigenschaften für Objekte können in XAML gar nicht festgelegt werden, s
 
 Schreibgeschützte Eigenschaften können in XAML nicht festgelegt werden. Selbst im Code müsste der besitzende Typ eine andere Festlegungsmethode unterstützen, z. B. eine Konstruktorüberladung, eine Hilfsmethode oder eine berechnete Eigenschaft. Eine berechnete Eigenschaft basiert auf den Werten anderer festlegbarer Eigenschaften und in machen Fällen auf einem Ereignis mit integrierter Behandlung. Diese Features sind im Abhängigkeitseigenschaftensystem verfügbar. Weitere Informationen zur Unterstützung berechneter Eigenschaften mithilfe von Abhängigkeitseigenschaften finden Sie unter [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md).
 
-Die Sammlungssyntax in XAML vermittelt den Eindruck, dass Sie eine schreibgeschützte Eigenschaft festlegen, was jedoch nicht der Fall ist. Informationen dazu finden Sie weiter unten in diesem Thema unter "Festlegen einer Eigenschaft mithilfe einer Sammlungssyntax".
+Die Sammlungssyntax in XAML vermittelt den Eindruck, dass Sie eine schreibgeschützte Eigenschaft festlegen, was jedoch nicht der Fall ist. Weitere Informationen finden Sie unter "[Sammlungs Syntax](#collection-syntax)" weiter unten in diesem Thema.
 
 ### <a name="setting-a-property-by-using-attribute-syntax"></a>Festlegen einer Eigenschaft mithilfe einer Attributsyntax
 

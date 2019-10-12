@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86-emulation auf ARM, problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 480d9cd6508b149e0d4966bae8835c05d30db7af
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 20aa5943fc1f3f0176cde33983da1fceca8a49ba
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682745"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282352"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Problembehandlung bei x86-Desktop-Apps
 >[!IMPORTANT]
@@ -40,7 +40,7 @@ Eine App kann Registrierungsschlüssel unter der nativen Registrierungsansicht p
 Alle Kernelmodustreiber, [User-Mode Driver Framework (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)-Treiber und Druckertreiber müssen entsprechend der Architektur des Betriebssystems kompiliert werden. Wenn eine x86-Anwendung über einen Treiber verfügt, muss dieser Treiber für ARM64 neu kompiliert werden. Die x86-App funktioniert möglicherweise problemlos unter Emulation, ihr Treiber muss jedoch für ARM64 neu kompiliert werden, und App-Funktionen, die von diesem Treiber abhängen, stehen nicht zur Verfügung. Weitere Informationen zum Kompilieren des Treibers für ARM64 finden Sie unter [Entwickeln von ARM64-Treibern mit WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers).
 
 ## <a name="shell-extensions"></a>-Shellerweiterungen 
-Apps, die versuchen, Windows-Komponenten zu verknüpfen oder ihre DLLs in Windows-Prozesse zu laden, müssen diese DLLs neu kompilieren, damit sie der Architektur des Systems entsprechen, d.h. ARM64. In der Regel werden diese von Eingabemethoden-Editoren (IMEs), Hilfstechnologien und Shell-Erweiterungs-Apps verwendet (z. B. um Cloud-Speichersymbole in Explorer oder einem Kontextmenü anzuzeigen). Weitere Informationen zum Neukompilieren von Apps oder DLLs für ARM64 finden Sie im Blogbeitrag der [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
+Apps, die versuchen, Windows-Komponenten zu verknüpfen oder ihre DLLs in Windows-Prozesse zu laden, müssen diese DLLs neu kompilieren, damit sie der Architektur des Systems entsprechen, d.h. ARM64. Diese werden in der Regel von Eingabemethoden-Editoren (IMEs), Hilfstechnologien und Shellerweiterungs-Apps verwendet (z. b. zum Anzeigen von Cloud-Speicher Symbolen im Explorer oder einem Kontextmenü mit der rechten Maustaste). Weitere Informationen zum Neukompilieren von Apps oder DLLs für ARM64 finden Sie im Blogbeitrag der [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
 
 ## <a name="debugging"></a>Debuggen
 Wenn Sie das Verhalten Ihrer App genauer untersuchen möchten, lesen Sie den Artikel [Debugging on ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64). Darin erfahren Sie Details über Tools und Strategien zum Debuggen unter ARM.
@@ -51,4 +51,4 @@ Die Windows-Hypervisor-Plattform wird auf der Qualcomm Snapdragon 835 Mobile PC-
 ## <a name="dynamic-code-generation"></a>Dynamische Code Generierung
 X86-Desktop-Apps werden auf ARM64 durch das System emuliert, das ARM64-Anweisungen zur Laufzeit erzeugt. Dies bedeutet, dass eine x86-Desktop-App das generieren oder Ändern dynamischer Code im Prozess verhindert, dass diese APP nicht als x86 auf ARM64 ausgeführt werden kann. 
 
-Dies ist eine Sicherheits Entschärfung, die einige apps bei Ihrem Prozess mithilfe der [setprocessentschärationpolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) -API mit dem `ProcessDynamicCodePolicy` -Flag aktivieren. Diese Entschärfungs Richtlinie muss deaktiviert werden, damit Sie auf ARM64 erfolgreich als x86-Prozess ausgeführt werden kann. 
+Dies ist eine Sicherheits Entschärfung, die einige apps bei Ihrem Prozess mithilfe der [setprocessentschärationpolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) -API mit dem `ProcessDynamicCodePolicy`-Flag aktivieren. Diese Entschärfungs Richtlinie muss deaktiviert werden, damit Sie auf ARM64 erfolgreich als x86-Prozess ausgeführt werden kann. 

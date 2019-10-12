@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
-ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
+ms.openlocfilehash: 557f5c03bda68d11507ba3b3b3b12823dbe6fd9f
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017435"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282403"
 ---
 # <a name="web-account-manager"></a>Web Account Manager
 
@@ -80,7 +80,7 @@ Der Bereich ist leer, weil das System nur eine UI-Shell bereitstellt. Der Entwic
 
 ## <a name="register-for-accountcommandsrequested"></a>Registrieren für AccountCommandsRequested
 
-Um dem Bereich Befehle hinzuzufügen, führen wir zunächst eine Registrierung für den AccountCommandsRequested-Ereignishandler durch. Dadurch wird das System angewiesen, unsere Buildlogik auszuführen, wenn der Benutzer die Anzeige des Bereichs anfordert (d. h. auf die XAML-Schaltfläche klickt). 
+Um dem Bereich Befehle hinzuzufügen, führen wir zunächst eine Registrierung für den AccountCommandsRequested-Ereignishandler durch. Dadurch wird dem System mitgeteilt, dass die buildlogik ausgeführt werden soll, wenn der Benutzer aufgefordert wird, den Bereich anzuzeigen (z. b. Klicken auf unsere XAML-Schaltfläche) 
 
 Überschreiben Sie im CodeBehind das OnNavigatedTo-Ereignis und das OnNavigatedFrom-Ereignis, und fügen Sie ihnen den folgenden Code hinzu: 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Als Nächstes rufen Sie einen Anbieter mit der WebAuthenticationCoreManager.FindAccountProviderAsync-Methode ab. Die Anbieter-URL ist je nach Anbieter verschieden und kann in der Anbieterdokumentation nachgeschlagen werden. Bei Microsoft-Konten und Azure Active Directory ist das "HTTPS\://Login.Microsoft.com". 
+Als Nächstes rufen Sie einen Anbieter mit der WebAuthenticationCoreManager.FindAccountProviderAsync-Methode ab. Die Anbieter-URL ist je nach Anbieter verschieden und kann in der Anbieterdokumentation nachgeschlagen werden. Bei Microsoft-Konten und Azure Active Directory lautet der Wert "https @ no__t-0//Login. Microsoft. com". 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,

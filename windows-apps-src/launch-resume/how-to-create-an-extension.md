@@ -5,12 +5,12 @@ keywords: App-Erweiterung, App-Dienst, Hintergrund
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd6d3fb875e95f251e02f07e7af563c95a400a6
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 1cb5395238ad6813556b7ae254ca4a86bc8f5b28
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682787"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282393"
 ---
 # <a name="create-and-host-an-app-extension"></a>Erstellen und Hosten einer App-Erweiterung
 
@@ -19,7 +19,7 @@ In diesem Artikel wird erläutert, wie Sie eine UWP-App-Erweiterung erstellen un
 Dieser Artikel wird zusammen mit einem Codebeispiel angezeigt:
 - Laden Sie [Math Extension-Codebeispiel](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)herunter und entzippen Sie die Dateien.
 - Öffnen Sie in Visual Studio 2019 mathextensionsample. sln. Legen Sie den Buildtyp auf x86 fest (**Build** > **Konfigurationsmanager**, ändern Sie dann **Plattform** auf **x86** für beide Projekte).
-- Stellen Sie die Lösung bereit:Erstellen > Sie die Bereitstellungs**Lösung**.
+- Stellen Sie die Lösung bereit: **Erstellen**Sie  > -**Lösung**bereitstellen.
 
 ## <a name="introduction-to-app-extensions"></a>Einführung in App-Erweiterungen
 
@@ -74,7 +74,7 @@ _"Package. appxmanifest" im mathextensionhost-Projekt_
 
 Beachten Sie `xmlns:uap3="http://..."` und `uap3` in `IgnorableNamespaces`. Diese sind erforderlich, da wir den uap3-Namespace verwenden.
 
-`<uap3:Extension Category="windows.appExtensionHost">`identifiziert diese APP als Erweiterungs Host.
+`<uap3:Extension Category="windows.appExtensionHost">` identifiziert diese APP als Erweiterungs Host.
 
 Das Element **Name** im `<uap3:AppExtensionHost>` ist der _Erweiterungsvertrags_name. Wenn eine Erweiterung den gleichen Erweiterungsvertragsnamen angibt, kann der Host diese finden. Üblicherweise empfehlen wir, den Namen der App oder den Namen des Herausgebers als Erweiterungsvertragsnamen zu verwenden, um potenzielle Konflikte mit anderen Erweiterungsvertragsnamen zu vermeiden.
 
@@ -116,7 +116,7 @@ _"Package. appxmanifest" im mathextension-Projekt:_
 
 Beachten Sie erneut die Zeile `xmlns:uap3="http://..."` und `uap3` in `IgnorableNamespaces`. Diese sind erforderlich, weil wir den `uap3`-Namespace verwenden.
 
-`<uap3:Extension Category="windows.appExtension">`identifiziert diese APP als Erweiterung.
+`<uap3:Extension Category="windows.appExtension">` identifiziert diese APP als Erweiterung.
 
 Die `<uap3:AppExtension>`-Attribute haben folgende Bedeutungen:
 
@@ -124,11 +124,11 @@ Die `<uap3:AppExtension>`-Attribute haben folgende Bedeutungen:
 |---------|-----------|:------:|
 |**Name**|Dies ist der Erweiterungsvertragsname. Wenn sie dem auf einem Host deklarierten **Namen** entspricht, kann dieser Host diese Erweiterung finden.| :heavy_check_mark: |
 |**ID**| Identifiziert diese Erweiterung eindeutig. Da es möglicherweise mehrere Erweiterungen mit dem gleichen Erweiterungsvertragsnamen gibt (wie eine Paint-App, die mehrere Erweiterungen unterstützt), können Sie die ID verwenden, um sie auseinanderzuhalten. App-Erweiterungshosts können die ID verwenden, um den Typ der Erweiterung zu überprüfen. Beispielsweise können Sie eine Erweiterung für den Desktop und eine weitere für Mobilgeräte haben, wobei die ID das Unterscheidungsmerkmal ist. Sie können ebenfalls dafür das Element **Eigenschaften** verwenden.| :heavy_check_mark: |
-|**Display Name**| Kann von der Host-App verwendet werden, um die Erweiterung für den Benutzer zu identifizieren. Ist abfragbar vom und verwendet das [Neue Ressourcenverwaltungssystem](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) für die Lokalisierung. Der lokalisierte Inhalt wird vom App-Erweiterungspaket und nicht von der Host-App geladen. | |
+|**DisplayName**| Kann von der Host-App verwendet werden, um die Erweiterung für den Benutzer zu identifizieren. Ist abfragbar vom und verwendet das [Neue Ressourcenverwaltungssystem](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) für die Lokalisierung. Der lokalisierte Inhalt wird vom App-Erweiterungspaket und nicht von der Host-App geladen. | |
 |**Beschreibung** | Kann von der Host-App verwendet werden, um die Erweiterung für den Benutzer zu beschreiben. Ist abfragbar vom und verwendet das [Neue Ressourcenverwaltungssystem](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) für die Lokalisierung. Der lokalisierte Inhalt wird vom App-Erweiterungspaket und nicht von der Host-App geladen. | |
 |**PublicFolder**|Der Name eines Ordners, relativ zum Stammverzeichnis des Pakets, in dem Sie Inhalte mit dem Erweiterungshost teilen können. Üblicherweise ist der Name "Public", Sie können allerdings einen beliebigen Namen verwenden, der einem Ordner in der Erweiterung entspricht.| :heavy_check_mark: |
 
-`<uap3:Properties>`ist ein optionales Element, das benutzerdefinierte Metadaten enthält, die Hosts zur Laufzeit lesen können. Im Codebeispiel ist die Erweiterung als App-Dienst implementiert, damit der Host den Namen des App-Diensts abrufen kann und ihn damit aufrufen kann. Der Name des App-Diensts ist im <Service>-Element definiert, das wir definiert haben (der Name spielt dabei keine Rolle). Der Host im Codebeispiel sucht zur Laufzeit nach dieser Eigenschaft, um den Namen des App-Diensts zu erfahren.
+`<uap3:Properties>` ist ein optionales Element, das benutzerdefinierte Metadaten enthält, die Hosts zur Laufzeit lesen können. Im Codebeispiel ist die Erweiterung als App-Dienst implementiert, damit der Host den Namen des App-Diensts abrufen kann und ihn damit aufrufen kann. Der Name des App-Diensts ist im <Service>-Element definiert, das wir definiert haben (der Name spielt dabei keine Rolle). Der Host im Codebeispiel sucht zur Laufzeit nach dieser Eigenschaft, um den Namen des App-Diensts zu erfahren.
 
 ## <a name="decide-how-you-will-implement-the-extension"></a>Entscheiden Sie, wie Sie die Erweiterung implementiert möchten.
 
@@ -211,7 +211,7 @@ Definieren Sie Ihren eigenen XML-Code im `<uap3:Properties>`-Element. In diesem 
 
 Wenn der Host eine Erweiterung lädt, extrahiert ein solcher Code den Namen des Diensts aus den Eigenschaften, die in der Erweiterung "Package.appxmanifest" definiert wurden:
 
-_`Update()`in ExtensionManager.cs im mathextensionhost-Projekt_
+_`Update()` in ExtensionManager.cs im mathextensionhost-Projekt_
 ```cs
 ...
 var properties = await ext.GetExtensionPropertiesAsync() as PropertySet;
@@ -233,13 +233,13 @@ if (_properties != null)
 
 Dank dem Namen des App-Diensts, der in `_serviceName` gespeichert ist, kann der Host diesen zum Aufrufen des App-Diensts verwenden.
 
-Das Aufrufen von App-Diensten erfordert auch den Familiennamen des Pakets, das den App-Dienst enthält. Glücklicherweise stellt die APP-Erweiterungs-API diese Informationen zur Verfügung, die in der folgenden Zeile abgerufen werden:`connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
+Das Aufrufen von App-Diensten erfordert auch den Familiennamen des Pakets, das den App-Dienst enthält. Glücklicherweise stellt die APP-Erweiterungs-API diese Informationen zur Verfügung, die in der folgenden Zeile abgerufen werden: `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
 
 ### <a name="define-how-the-host-and-the-extension-will-communicate"></a>Festlegen, wie der Host und die Erweiterung kommunizieren
 
 App-Dienste verwenden [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) zum Austauschen von Informationen. Als Autor des Hosts müssen Sie ein Protokoll für die Kommunikation mit Erweiterungen anbieten, das flexibel ist. Im Codebeispiel bedeutet dies, Erweiterungen zu berücksichtigen, die in Zukunft 1, 2 oder mehr Argumente annehmen können.
 
-In diesem Beispiel ist das Protokoll für die Argumente ein **ValueSet**, das die Schlüssel-Wert-Paare mit dem Namen "Argument" und der Anzahl der Argumente enthält, z. B. `Arg1` und `Arg2`. Der Host übergibt alle Argumente im **ValueSet**, und die Erweiterung verwendet diejenigen, die es benötigt. Wenn die Erweiterung das Ergebnis berechnen kann, erwarte der Host, dass das on der Erweiterung zurückgegebene **ValueSet** einen Schlüssel namens `Result` mit dem Wert der Berechnung enthält. Wenn dieser Schlüssel nicht vorhanden ist, geht der Host davon aus, dass die Erweiterung die Berechnung nicht abschließen konnte.
+In diesem Beispiel ist das Protokoll für die Argumente ein **valueset** , das die Schlüssel-Wert-Paare "Arg" und die Argument Nummer enthält, z. b. `Arg1` und `Arg2`. Der Host übergibt alle Argumente im **ValueSet**, und die Erweiterung verwendet diejenigen, die es benötigt. Wenn die Erweiterung das Ergebnis berechnen kann, erwarte der Host, dass das on der Erweiterung zurückgegebene **ValueSet** einen Schlüssel namens `Result` mit dem Wert der Berechnung enthält. Wenn dieser Schlüssel nicht vorhanden ist, geht der Host davon aus, dass die Erweiterung die Berechnung nicht abschließen konnte.
 
 ### <a name="extension-app-service-code"></a>App-Dienstcode der Erweiterung
 

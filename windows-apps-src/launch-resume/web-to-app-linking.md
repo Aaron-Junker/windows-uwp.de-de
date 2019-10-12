@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d8550d346833559ccea1e8aea4ae73a8c6d4e7c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5807cdc19e4b38c8cc8fa4ca45c4ef47e79b7742
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318659"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282251"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>Aktivieren von Apps für Websites mit App-URI-Handlern
 
@@ -23,7 +23,7 @@ Um die Web-to-App Verlinkung zu aktivieren, benötigen Sie Folgendes:
 - Behandeln Sie die Aktivierung in der App
 
 > [!Note]
-> Beginnen mit dem Windows 10 Creators Update, wird unterstützten Links in Microsoft Edge geklickt die entsprechende app gestartet. Unterstützte Links, die in anderen Browsern angeklickt werden (z. B. Internet Explorer usw.), führen Sie zum Surfen in das Internet.
+> Beginnend mit dem Windows 10 Creators Update wird durch unterstützte Links, auf die in Microsoft Edge geklickt wurde, die entsprechende App gestartet. Unterstützte Links, auf die in anderen Browsern geklickt wurde (z. b. Internet Explorer usw.), behalten Sie im Browser.
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>Registrieren Sie sich, um HTTP- und Https-Links im App-Manifest zu behandeln.
 
@@ -46,7 +46,7 @@ Wenn beispielsweise die Adresse Ihrer Website "msn.com" lautet, würden Sie den 
 </Applications>
 ```
 
-Die obige Deklaration registriert Ihre App zur Behandlung von Links vom angegebenen Host. Wenn Ihre Website mehrere Adressen aufweist (z. B.: m.example.com, Www\."example.com" und "example.com") fügen Sie dann auf eine separaten `<uap3:Host Name=... />` Eintrag in der die `<uap3:AppUriHandler>` für jede Adresse.
+Die obige Deklaration registriert Ihre App zur Behandlung von Links vom angegebenen Host. Wenn Ihre Website über mehrere Adressen verfügt (z. b.: m.example.com, www\.example.com und example.com), fügen Sie in der `<uap3:AppUriHandler>` für jede Adresse einen separaten `<uap3:Host Name=... />`-Eintrag hinzu.
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>Verknüpfen Sie Ihre App und die Website mit einer JSON-Datei
 
@@ -76,7 +76,7 @@ Das obige für eine JSON-Datei veranschaulicht die Verwendung von Platzhaltern. 
 | **\***       | Repräsentiert eine beliebige Teilzeichenfolge      |
 | **?**        | Steht für ein einzelnes Zeichen |
 
-Zum Beispiel, wenn `"excludePaths" : [ "/news/*", "/blog/*" ]` in dem obigen Beispiel gegeben ist, wird Ihre App alle Pfade unterstützen, die mit Ihrer Website-Adresse (z. B. msn.com) beginnen, **mit Ausnahme** der Pfade unter `/news/` und `/blog/`. **MSN.com/Weather.HTML** wird unterstützt, aber nicht **msn.com/news/topnews.html**.
+Wenn beispielsweise `"excludePaths" : [ "/news/*", "/blog/*" ]` im obigen Beispiel verwendet wird, unterstützt Ihre APP alle Pfade, die mit der Adresse Ihrer Website beginnen (z. b. MSN.com), mit **Ausnahme** derjenigen, die unter `/news/` und `/blog/` stehen. **MSN.com/weather.html** wird unterstützt, jedoch nicht als **MSN.com/News/Topnews.html**.
 
 ### <a name="multiple-apps"></a>Mehrere Apps
 
@@ -89,14 +89,14 @@ Wenn Sie zwei Apps haben, die Sie mit Ihrer Website verknüpfen möchten, listen
   "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
-  "packageFamilyName": "Your second app's package family name, e.g. MyApp2_8jmtgj2pbbz6e",
+  "packageFamilyName": "Your second app's package family name, for example, MyApp2_8jmtgj2pbbz6e",
   "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
 Um Ihren Benutzern die bestmögliche Erfahrung zu bieten, verwenden Sie Ausschlusspfade, um sicherzustellen, dass der nur online verfügbare Inhalt von den unterstützten Pfaden in der JSON-Datei ausgenommen ist.
 
-Ausschlusspfade werden zuerst überprüft, und wenn eine Übereinstimmung vorliegt wird die entsprechende Seite mit dem Browser anstelle der angegebenen App geöffnet. Im obigen Beispiel ist "/news/\*" enthält alle Seiten unter diesem Pfad beim "/ News\*" (kein Schrägstrich sportstrecken "News") enthält alle Pfade unter "News\*" wie z. B. "Newslocal /', ' Newsinternational /" und so weiter.
+Ausschlusspfade werden zuerst überprüft, und wenn eine Übereinstimmung vorliegt wird die entsprechende Seite mit dem Browser anstelle der angegebenen App geöffnet. Im obigen Beispiel schließt '/News/\* ' alle Seiten unter diesem Pfad ein, während '/News @ no__t-1 ' (keine vorwärts Striche ' News ') enthält alle Pfade unter ' News @ no__t-2 ' (z. b. ' newslocal/', ' newsinternational/' usw.).
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Behandeln Sie Links auf Aktivierung, um Links mit Inhalt zu verbinden.
 
@@ -150,19 +150,19 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **Wichtig** Stellen Sie sicher, dass das finale `if (rootFrame.Content == null)` logic durch `rootFrame.Navigate(deepLinkPageType, e);` ersetzt wird, wie im obigen Beispiel gezeigt wird.
 
-## <a name="test-it-out-local-validation-tool"></a>Probieren Sie es aus: – Lokale Überprüfung-tool
+## <a name="test-it-out-local-validation-tool"></a>Testen Sie es: Lokales Validierungs Tool
 
 Sie können die Konfiguration Ihrer App und Website durch Ausführen des App-Host Registration Verifier Werkzeugs prüfen, der hier verfügbar ist:
 
-%windir%\\system32\\**AppHostRegistrationVerifier.exe**
+% windir% \\system32 @ no__t-1**apphostregistrationverifier. exe**
 
 Testen Sie die Konfiguration Ihrer App und, indem Sie dieses Werkzeug mit folgenden Parametern ausführen.
 
-**AppHostRegistrationVerifier.exe** *Hostname Packagefamilyname "FilePath"*
+**Apphostregistrationverifier. exe** *Hostname packagefamilyname filePath*
 
--   Hostname: Ihre Website (z. B. microsoft.com)
--   Paketfamiliennamens (PFN): Ihrer app PFN
--   Dateipfad: Die JSON-Datei für lokale Überprüfung (z. B. "c:"\\SomeFolder\\Windows-app-Web-Link)
+-   Hostname: Ihre Website (z. b. Microsoft.com)
+-   Paket Familienname (PFN): PFN Ihrer APP
+-   Dateipfad: Die JSON-Datei für die lokale Validierung (z. b. C: \\somefolder @ no__t-1Windows-App-Web-Link)
 
 Wenn das Tool nichts zurückgibt, funktioniert die Überprüfung für diese Datei beim Hochladen. Wenn ein Fehlercode angezeigt wird, funktioniert dies nicht.
 
@@ -171,11 +171,11 @@ Sie können folgenden Registrierungsschlüssel ausführen, um den Pfad für quer
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-Schlüsselname: `ForceValidation` Wert: `1`
+KeyName `ForceValidation`-Wert: `1`
 
-## <a name="test-it-web-validation"></a>Testen Sie es aus: Web-Überprüfung
+## <a name="test-it-web-validation"></a>Testen Sie es: Webvalidierung
 
-Schließen Sie die Anwendung, um sicherzustellen, dass die App aktiviert wird, wenn Sie auf einen Link klicken. Kopieren Sie dann die Adresse eines unterstützten Pfades in Ihrer Website. Z. B. wenn der Website-Adresse ist "msn.com" und einer der Pfade Unterstützung "path1" ist, verwenden Sie `http://msn.com/path1`
+Schließen Sie die Anwendung, um sicherzustellen, dass die App aktiviert wird, wenn Sie auf einen Link klicken. Kopieren Sie dann die Adresse eines unterstützten Pfades in Ihrer Website. Wenn die Adresse Ihrer Website beispielsweise "MSN.com" lautet und einer der Support Pfade "path1" ist, verwenden Sie `http://msn.com/path1`
 
 Stellen Sie sicher, dass Ihre app geschlossen ist. Drücken Sie die **Windows-Taste + R** zum Öffnen des **ausführen**-Dialogfelds fügen Sie den Link im Fenster ein. Ihre app sollte anstelle des Webbrowsers gestartet werden.
 
@@ -186,7 +186,7 @@ Wenn Sie der protocol activation logic zu folgen möchten, legen Sie einen Halte
 ## <a name="appurihandlers-tips"></a>AppUriHandlers Tipps:
 
 - Stellen Sie sicher, dass Sie nur Links angeben, die mit Ihrer App kompatibel sind.
-- Listen Sie alle Hosts auf, die Sie unterstützen werden.  Beachten Sie, Www\."example.com" und "example.com" sind verschiedene Hosts.
+- Listen Sie alle Hosts auf, die Sie unterstützen werden.  Beachten Sie, dass www\.example.com und example.com unterschiedliche Hosts sind.
 - Benutzer können in den Einstellungen auswählen, welche App sie zum Öffnen von Websites bevorzugen.
 - Ihre JSON-Datei muss auf einen Https-Server hochgeladen werden.
 - Wenn Sie die Pfade, die Sie unterstützen möchten, ändern müssen, können Sie JSON-Datei erneut hochladen, ohne Ihre App erneut veröffentlichen zu müssen. Benutzern wird die Änderungen in 1 bis 8 Tagen angezeigt.
