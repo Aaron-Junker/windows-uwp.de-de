@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2b0f5918b240bf5c28e49f2ede6f10dbeefcbbfc
-ms.sourcegitcommit: e13f06042a28a8455a211b8693a009098e150cd1
+ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522092"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281793"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Einführung in das UWP-App-Design
 
@@ -49,7 +49,7 @@ Sie können die Pixeldichte und die tatsächliche Bildschirmauflösung beim Entw
     :::column span:::
 Die Größen, Ränder und Positionen der UI-Elemente in UWP-Apps sollten immer ein **Vielfaches von 4 Epx** betragen.
 
-UWP unterstützt eine Skalierung für eine Vielzahl von Geräten mit den Skalierungsebenen 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % und 400 %. Die Basiseinheit ist 4, da sie die einzige ganze Zahl ist, die mit nicht ganzen Zahlen (z. B. 4 * 1,5 = 6) skaliert werden kann. Durch die Verwendung von Vielfachen von vier werden alle Elemente der Benutzeroberfläche mit ganzen Pixeln ausgerichtet, und es wird sichergestellt, dass die Benutzeroberflächenelemente über klare, scharfe Kanten verfügen. (Beachten Sie, dass diese Anforderung für Text nicht gilt. Text kann eine beliebige Größe und Position haben.)
+UWP unterstützt eine Skalierung für eine Vielzahl von Geräten mit den Skalierungsebenen 100 %, 125 %, 150 %, 175 %, 200 %, 225 %, 250 %, 300 %, 350 % und 400 %. Die Basiseinheit ist 4, da sie die einzige ganze Zahl ist, die mit nicht ganzen Zahlen skaliert werden kann (z. B. 4 * 1,5 = 6). Durch die Verwendung von Vielfachen von vier werden alle Elemente der Benutzeroberfläche mit ganzen Pixeln ausgerichtet, und es wird sichergestellt, dass die Benutzeroberflächenelemente über klare, scharfe Kanten verfügen. (Beachten Sie, dass diese Anforderung für Text nicht gilt. Text kann eine beliebige Größe und Position haben.)
     :::column-end:::
     :::column:::
 ![Raster](images/4epx.svg)
@@ -104,7 +104,7 @@ Die UWP-Entwurfsplattform bietet eine Reihe allgemeiner Steuerelemente, die auf 
 
 Eine vollständige Liste der UWP-Steuerelemente und der möglichen Muster findest du im [Abschnitt zu Steuerelementen und Mustern](../controls-and-patterns/index.md).
 
-## <a name="style"></a>Stil
+## <a name="style"></a>Format
 
 Allgemeine Steuerelemente übernehmen automatisch das Systemdesign und die Akzentfarbe, funktionieren mit allen Eingabetypen und werden auf allen Geräten ordnungsgemäß skaliert. Sie sind also adaptiv, intuitiv und ansprechend und spiegeln somit das Fluent Design-System wider. Allgemeine Steuerelemente nutzen Licht, Bewegung und Tiefe in ihren Standardstilen. Durch die Verwendung dieser Steuerelemente integrierst du also unser Fluent Design-System in deine App.
 
@@ -144,7 +144,7 @@ UWP-Apps basieren auf intelligenten Interaktionen. Sie können sie ausgehend von
 
 UWP skaliert deine App zwar automatisch für verschiedene Geräte, du kannst aber auch [deine UWP-App für bestimmte Geräte optimieren](../devices/index.md).
 
-## <a name="usability"></a>Benutzerfreundlichkeit
+## <a name="usability"></a>Nutzbarkeit
 
 <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
 

@@ -1,7 +1,7 @@
 ---
 Description: Ein Texteingabefeld, das während der Benutzereingabe Vorschläge anzeigt.
-title: Kombinationsfeld (Dropdownliste)
-label: Combo box
+title: Kombinationsfeld und Listenfeld
+label: Combo box and list box
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
@@ -10,16 +10,16 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f053be1aeb88454b94d7c04ba2627818ea43736
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 351e234577b1a07b33bdcdbb92642c3697342503
+ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339403"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163700"
 ---
-# <a name="combo-box"></a>Kombinationsfeld
+# <a name="combo-box-and-list-box"></a>Kombinationsfeld und Listenfeld
 
-Verwenden Sie ein Kombinationsfeld (auch als Dropdownliste bezeichnet), um eine Liste von Elementen anzuzeigen, in der ein Benutzer eine Auswahl treffen kann. Ein Kombinationsfeld wird zunächst im kompakten Zustand angezeigt und kann erweitert werden, sodass eine Liste der auswählbaren Elemente angezeigt wird.
+Verwenden Sie ein Kombinationsfeld (auch als Dropdownliste bezeichnet), um eine Liste von Elementen anzuzeigen, in der ein Benutzer eine Auswahl treffen kann. Ein Kombinationsfeld wird zunächst im kompakten Zustand angezeigt und kann erweitert werden, sodass eine Liste der auswählbaren Elemente angezeigt wird. Ein ListBox ähnelt einem Kombinationsfeld, ist aber nicht reduzierbar/besitzt keinen kompakten Zustand. Weitere Informationen zu Listenfeldern findest du am Ende dieses Artikels.
 
 Wenn das Kombinationsfeld geschlossen ist, wird entweder die aktuelle Auswahl angezeigt oder das Feld ist leer, wenn kein Element ausgewählt ist. Wenn der Benutzer das Kombinationsfeld erweitert, wird die Liste der auswählbaren Elemente angezeigt.
 
@@ -294,6 +294,32 @@ bool IsValid(string Text)
 
 - Schränken Sie den Textinhalt von Kombinationsfeldelementen auf eine einzelne Zeile ein.
 - Sortieren Sie die Elemente in einem Kombinationsfeld in der logischsten Reihenfolge. Gruppieren Sie verwandte Optionen, und platzieren Sie die am häufigsten verwendeten Optionen oben in der Liste. Sortieren Sie Namen in alphabetischer Reihenfolge, Nummern in numerischer Reihenfolge und Datumsangaben in chronologischer Reihenfolge.
+
+## <a name="list-boxes"></a>Listenfelder
+
+In einem Listenfeld kann der Benutzer ein einzelnes Element oder mehrere Elemente aus einer Auflistung auswählen. Listenfelder ähneln Dropdownlisten, abgesehen davon, dass Listenfelder immer geöffnet sind; für ein Listenfeld gibt es keinen kompakten Zustand (nicht erweitert). Elemente in einem Listenfeld können gescrollt werden, wenn der Platz nicht ausreicht, um alle Elemente anzuzeigen.
+
+### <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
+
+- Ein Listenfeld kann nützlich sein, wenn Elemente in der Liste so relevant sind, dass sie auffälliger dargestellt werden sollten, und genügend Platz auf dem Bildschirm zum Anzeigen der vollständigen Liste vorhanden ist.
+- Ein Listenfeld sollte den Benutzer bei einer wichtigen Entscheidung bzw. Auswahl auf alle Alternativen aufmerksam machen. Im Gegensatz dazu lenkt eine Dropdownliste die Aufmerksamkeit des Benutzers zunächst auf das ausgewählte Element.
+- Vermeiden Sie die Verwendung eines Listenfelds in folgenden Fällen:
+    - Es gibt eine sehr kleine Anzahl von Elementen für die Liste. Ein Einzelauswahl-Listenfeld, das immer zwei identische Optionen enthält, sollte besser in Form von [Optionsfeldern](radio-button.md) dargestellt werden. Ziehen Sie die Verwendung von Optionsfeldern ebenfalls in Erwägung, wenn die Liste drei oder vier statische Elemente enthält.
+    - Das Listenfeld ist eine Einzelauswahl und enthält immer die gleichen zwei Optionen, wobei eine als „nicht die andere Option“ impliziert werden kann (beispielsweise „Ein“ und „Aus“). Verwenden Sie ein einzelnes Kontrollkästchen oder einen Umschalter.
+    - Die Anzahl von Elementen ist sehr hoch. Bessere Optionen für lange Listen sind Rasteransicht und Listenansicht. Für sehr lange Listen mit gruppierten Daten wir der semantische Zoom bevorzugt.
+    - Bei den Elementen handelt es sich um zusammenhängende numerische Werte. Wenn dies der Fall ist, sollten Sie einen [Schieberegler](slider.md) in Erwägung ziehen.
+    - Die Auswahlelemente sind im Fluss Ihrer App von sekundärer Bedeutung, oder für die meisten Benutzer wird in den meisten Situationen die Standardoption empfohlen. Verwenden Sie stattdessen eine Dropdownliste.
+
+### <a name="recommendations"></a>Empfehlungen
+
+- Der ideale Bereich von Elementen in einem Listenfeld beträgt 3 bis 9.
+- Ein Listenfeld funktioniert gut, wenn die Elemente darin dynamisch variieren können.
+- Legen Sie die Größe eines Listenfelds möglichst so fest, dass für die Liste der zugehörigen Elemente keine Verschiebung und kein Scrollen erforderlich sind.
+- Stellen Sie sicher, dass der Zweck des Listenfelds und die momentan ausgewählten Elemente klar sind.
+- Reservieren Sie visuelle Effekte und Animationen für das Feedback für die Fingereingabe und für den ausgewählten Zustand von Elementen.
+- Beschränken Sie den Text von Listenfeldelementen auf eine einzelne Zeile. Wenn es sich bei den Elementen um visuelle Objekte handelt, können Sie die Größe anpassen. Wenn ein Element mehrere Textzeilen oder Bilder enthält, verwenden Sie stattdessen eine Raster- oder Listenansicht.
+- Verwenden Sie die standardmäßige Schriftart, sofern Sie gemäß Ihren Markenrichtlinien keine andere verwenden müssen.
+- Verwenden Sie ein Listenfeld nicht zum Ausführen von Befehlen oder zum dynamischen Anzeigen oder Ausblenden anderer Steuerelemente.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 

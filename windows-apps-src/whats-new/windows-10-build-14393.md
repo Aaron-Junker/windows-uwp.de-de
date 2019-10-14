@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: 037963109fd6f70a60c17dc1b6c1b4eef82fb080
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: b4b887ad49cfdbdea89397105809db0fe6a5ab57
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821106"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282336"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>Neuigkeiten für Entwickler in Windows 10, Build 14393
 

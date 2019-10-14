@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, Einführung
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b6fd3f3085449c57dafdcedc60f63997e3ec807
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 1a9bb432ce7c856a6c54305f657f06a23dab14f1
+ms.sourcegitcommit: 805420bb7ec6850ec3576b21193a3681054c9754
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393436"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71976333"
 ---
 # <a name="introduction-to-cwinrt"></a>Einführung in C++/WinRT
 &nbsp;
@@ -71,7 +71,7 @@ Hier sind die Visual Studio-Projektvorlagen, die von der VSIX-Erweiterung bereit
 ### <a name="blank-app-cwinrt"></a>Blank App (C++/WinRT)
 Eine Projektvorlage für eine UWP-App (Universelle Windows-Plattform), die über eine XAML-Benutzeroberfläche verfügt.
 
-Visual Studio bietet XAML-Compiler-Unterstützung, um Implementierungs- und Header-Stubs aus der IDL-Datei (`.idl`) (Interface Definition Language) zu generieren, die sich hinter jeder XAML-Markup-Datei befindet. Definieren Sie in einer IDL-Datei alle lokalen Laufzeitklassen, auf die Sie in den XAML-Seiten Ihrer Anwendung verweisen möchten, und erstellen Sie das Projekt einmal, um Implementierungsvorlagen in `Generated Files` und Stubtypdefinitionen in `Generated Files\sources` zu generieren. Verwenden Sie dann die Stubtypdefinitionen als Referenz, um Ihre lokalen Laufzeitklassen zu implementieren. Siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
+Visual Studio bietet XAML-Compiler-Unterstützung, um Implementierungs- und Header-Stubs aus der IDL-Datei (`.idl`) (Interface Definition Language) zu generieren, die sich hinter jeder XAML-Markup-Datei befindet. Definieren Sie in einer IDL-Datei alle lokalen Laufzeitklassen, auf die Sie in den XAML-Seiten Ihrer Anwendung verweisen möchten, und erstellen Sie das Projekt einmal, um Implementierungsvorlagen in `Generated Files` und Stubtypdefinitionen in `Generated Files\sources` zu generieren. Verwende dann die Stubtypdefinitionen als Referenz, um dein lokalen Laufzeitklassen zu implementieren. Siehe [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 Die Unterstützung der XAML-Entwurfsoberfläche in Visual Studio 2019 für C++/WinRT ist nahezu gleichwertig mit C#. In Visual Studio 2019 können Sie mit der Registerkarte **Ereignisse** im Fenster **Eigenschaften** Ereignishandler in einem C++/WinRT-Projekt hinzufügen. Sie können Ihrem Code Ereignishandler auch manuell hinzufügen&mdash;Weitere Informationen hierzu erhalten Sie unter [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](handle-events.md).
 

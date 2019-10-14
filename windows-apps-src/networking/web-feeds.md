@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bc422f57cdc268ea517aff729a9c3e57c80acf69
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6ac962476ace10e08ef92ed4fff9fb9bf48f0006
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320613"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282259"
 ---
 # <a name="rssatom-feeds"></a>RSS-/Atom-Feeds
 
@@ -199,7 +199,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-Wie bereits angesprochen, unterscheidet sich der Inhaltstyp, der durch ein [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem)-Objekt dargestellt wird, in Abhängigkeit vom Feedstandard (RSS oder Atom), der für die Veröffentlichung des Feeds genutzt wird. Im Gegensatz zu einem RSS-Feed kann ein Atom-Feed beispielsweise eine Liste mit [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors)-Elementen bereitstellen. Auf Erweiterungselemente in einem Feedelement, die von keinem der Standards unterstützt werden (etwa Dublin Core-Erweiterungselemente), kann jedoch mithilfe der [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions)-Eigenschaft zugegriffen werden, um sie anschließend wie im folgenden Beispielcode dargestellt anzuzeigen:
+Wie bereits angesprochen, unterscheidet sich der Inhaltstyp, der durch ein [**SyndicationItem**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationItem)-Objekt dargestellt wird, in Abhängigkeit vom Feedstandard (RSS oder Atom), der für die Veröffentlichung des Feeds genutzt wird. Im Gegensatz zu einem RSS-Feed kann ein Atom-Feed beispielsweise eine Liste mit [**Contributors**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.contributors)-Elementen bereitstellen. Auf Erweiterungselemente in einem Feedelement, die von keinem der Standards unterstützt werden (etwa Dublin Core-Erweiterungselemente), kann jedoch mithilfe der [**SyndicationItem.ElementExtensions**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationitem.elementextensions)-Eigenschaft zugegriffen werden, um sie anschließend wie im folgenden Beispielcode dargestellt anzuzeigen.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

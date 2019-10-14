@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 26c7a7a123d8892bf1c3584685db49f2d86c654a
-ms.sourcegitcommit: 98343e851f25a11ae02fc739477f5316fe8fcb95
+ms.openlocfilehash: ba99abd906bd84a91fae5da1505ac8845dd5b99c
+ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71705554"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72282468"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
@@ -222,7 +222,7 @@ Wenn Ihr Produkt über Funktionen für Käufe innerhalb des Produkts, Abonnement
 
 Sie müssen die API für Einkäufe innerhalb des Produkts des Microsoft Store verwenden, um digitale Artikel oder Dienste zu verkaufen, die innerhalb Ihres Produkts genutzt oder verwendet werden. Ihr Produkt darf Kunden die Nutzung zuvor erworbener digitaler Inhalte oder Dienste ermöglichen, darf Nutzer jedoch nicht an einen anderen Kaufmechanismus als die API für Käufe innerhalb des Produkts des Microsoft Store weiterleiten.
 
-Im Produkt verkaufte In-Produkt-Angebote können nicht in eine gültige Währung (z. B. USD, Euro usw.) oder physische Waren oder Dienste umgetauscht werden.
+In deinem Produkt verkaufte In-Produkt-Angebote können nicht in eine gültige Währung (z. B. USD, Euro usw.) oder physische Waren oder Dienste umgetauscht werden.
 
 **10.8.2**
 
