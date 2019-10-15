@@ -10,51 +10,59 @@ metadata:
   ms.prod: dev-environment
   ms.technology: windows-python
   ms.topic: landing-page
-  ms.openlocfilehash: 60c0905a87d5089cccf5a525a6d29f87c327fd62
-  ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
+  ms.openlocfilehash: 568c8f2eb6d7dc9c6f010e8a7c2c5d6d71fda9c7
+  ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2019
-  ms.locfileid: "71251117"
+  ms.lasthandoff: 10/15/2019
+  ms.locfileid: "72313400"
 landingContent:
 - title: Erste Schritte für Einsteiger
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Einrichten der Entwicklungsumgebung
-      url: get-started/python-for-education.md#set-up-your-development-environment
+      url: ./beginners.md
   - linkListType: tutorial
     links:
     - text: Ausführen von einfachem Python-Code
-      url: get-started/python-for-education.md#hello-world-tutorial-for-some-python-basics
+      url: ./beginners.md#hello-world-tutorial-for-some-python-basics
     - text: HelloWorld mit VS Code
-      url: get-started/python-for-education.md#hello-world-tutorial-for-using-python-with-vs-code
+      url: ./beginners.md#hello-world-tutorial-for-using-python-with-vs-code
     - text: Erstellen eines einfachen Spiels mit Pygame
-      url: get-started/python-for-education.md#create-a-simple-game-with-pygame
+      url: ./beginners.md#create-a-simple-game-with-pygame
 - title: Erste Schritte mit der Webentwicklung
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Einrichten der Entwicklungsumgebung
-      url: get-started/python-for-web.md#set-up-your-development-environment
+      url: ./web-frameworks.md#set-up-your-development-environment
   - linkListType: tutorial
     links:
     - text: HelloWorld mit Flask
-      url: get-started/python-for-web.md#hello-world-tutorial-for-flask
+      url: ./web-frameworks.md#hello-world-tutorial-for-flask
     - text: HelloWorld mit Django
-      url: get-started/python-for-web.md#hello-world-tutorial-for-django
+      url: ./web-frameworks.md#hello-world-tutorial-for-django
 - title: Erste Schritte mit Automatisierungsskripts
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Einrichten der Entwicklungsumgebung
-      url: get-started/python-for-scripting.md#set-up-your-development-environment
+      url: ./scripting.md#set-up-your-development-environment
   - linkListType: tutorial
     links:
     - text: 'Beispielskript: Anzeigen des Dateisystems'
-      url: get-started/python-for-scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
+      url: ./scripting.md#example-script-to-display-the-structure-of-your-file-system-directory
     - text: 'Beispielskript: Ändern aller Dateien in einem Verzeichnis'
-      url: get-started/python-for-scripting.md#example-script-to-modify-all-files-in-a-directory
+      url: ./scripting.md#example-script-to-modify-all-files-in-a-directory
+- title: Erste Schritte mit Datenbanken
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Installieren und Ausführen von PostgreSQL
+      url: ./databases.md#install-postgresql
+    - text: Installieren und Ausführen von MongoDB
+      url: ./databases.md#install-mongodb
 - title: Zusätzliche Ressourcen
   linkLists:
   - linkListType: reference
@@ -71,17 +79,3 @@ landingContent:
       url: resources.md#online-courses
     - text: Empfohlene Webentwicklerlinks
       url: resources.md#web-development
-- title: Supportleitfaden für Mac zu Windows
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Ändern der Entwicklungsumgebung
-      url: ../mac-to-windows.md
-    - text: Tastenkombinationen
-      url: ../mac-to-windows.md#keyboard-shortcuts
-    - text: Trackpad-Tastenkombinationen
-      url: ../mac-to-windows.md#trackpad-shortcuts
-    - text: Terminal und Shell
-      url: ../mac-to-windows.md#terminal-and-shell
-    - text: Apps und Hilfsprogramme
-      url: ../mac-to-windows.md#apps-and-utilities

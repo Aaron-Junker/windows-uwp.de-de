@@ -1,0 +1,85 @@
+### YamlMime:Landing
+title: Entwicklung mit Node.js unter Windows
+summary: Erste Schritte bei der Entwicklung mit Node.js unter Windows.
+metadata:
+  author: mattwojo
+  description: Erste Schritte bei der Entwicklung mit Node.js unter Windows.
+  manager: jken
+  ms.author: mattwoj
+  ms.date: 09/15/2019
+  ms.prod: dev-environment
+  ms.technology: windows-node
+  ms.topic: landing-page
+  ms.openlocfilehash: 32c477cf230b7f8b5490b6f8ae7d227b6000aa77
+  ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 10/15/2019
+  ms.locfileid: "72314804"
+landingContent:
+- title: Einrichten der Node.js-Entwicklungsumgebung
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Einrichtung unter dem Windows-Subsystems für Linux (WSL 2)
+      url: ./setup-on-wsl2.md
+    - text: Einrichtung direkt unter Windows
+      url: ./setup-on-windows.md
+- title: Erste Schritte für Einsteiger
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Leitfaden für Einsteiger
+      url: ./beginners.md
+    - text: Typen von Node.js-Anwendungen
+      url: ./beginners.md#types-of-nodejs-applications
+  - linkListType: quickstart
+    links:
+    - text: Testen von Node.js mit VS Code
+      url: ./beginners.md#try-using-nodejs-in-vs-code
+    - text: Einrichten einer einfachen Web-App mit Express
+      url: ./beginners.md#set-up-a-basic-web-app-framework-by-using-express
+    - text: Verwenden eines Node.js-Moduls
+      url: ./beginners.md#try-using-a-nodejs-module
+- title: Erste Schritte mit Webframeworks
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Erste Schritte mit Next.js
+      url: ./web-frameworks.md
+    - text: Erste Schritte mit Nuxt.js
+      url: ./web-frameworks.md#get-started-with-nuxtjs
+    - text: Erste Schritte mit Gatsby.js
+      url: ./web-frameworks.md#get-started-with-gatsbyjs
+- title: Erste Schritte mit Datenbanken
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Gegenüberstellung von MongoDB und PostgreSQL
+      url: ./databases.md
+  - linkListType: quickstart
+    links:
+    - text: Erste Schritte mit MongoDB
+      url: ./databases.md#install-mongodb
+    - text: Erste Schritte mit PostgreSQL
+      url: ./databases.md#install-postgresql
+- title: Erste Schritte mit Containern
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Verwenden von Node.js mit Docker-Containern
+      url: ./containers.md
+  - linkListType: how-to-guide
+    links:
+    - text: Installieren von Docker
+      url: ./containers.md#install-docker-desktop-wsl-2-tech-preview
+    - text: Installieren der VS Code-Docker-Erweiterung
+      url: ./containers.md#install-the-docker-extension-on-vs-code
+  - linkListType: tutorial
+    links:
+    - text: Erstellen eines Containerimages mit DockerFile
+      url: ./containers.md#create-a-container-image-with-dockerfile
+    - text: Hochladen des Containerimages in ein Repository
+      url: ./containers.md#upload-your-container-image-to-a-repository
+    - text: Bereitstellung in einer Containerregistrierung
+      url: ./containers.md#deploy-to-azure-container-registry
