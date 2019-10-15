@@ -6,14 +6,14 @@ ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.author: mcleans
 author: mcleanbyron
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: bd49417d110759dc9fec4ff4c9003e842bf1d7bb
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
-ms.translationtype: MT
+ms.openlocfilehash: 52287576dbc395af60e15b5f4b4a403db7e92900
+ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643348"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313450"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)
 
@@ -29,13 +29,13 @@ Im Grunde werden XAML-Inseln mit der *UWP-XAML-Hosting-API*erstellt. Diese API b
 Wie Sie XAML-Inseln verwenden, hängt von Ihrem Anwendungstyp und den Typen von UWP-Steuerelementen ab, die Sie hosten möchten.
 
 > [!NOTE]
-> Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem im Repository " [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) ", und lassen Sie Ihre Kommentare dort ablegen. Wenn Sie Ihr Feedback lieber privat einreichen möchten, können Sie es an XamlIslandsFeedback@microsoft.comsenden. Ihre Einblicke und Szenarios sind für uns äußerst wichtig.
+> Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem im Repository " [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) ", und lassen Sie Ihre Kommentare dort ablegen. Wenn Sie Ihr Feedback lieber privat einreichen möchten, können Sie es an XamlIslandsFeedback@microsoft.com senden. Ihre Einblicke und Szenarios sind für uns äußerst wichtig.
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF-und Windows Forms Anwendungen
 
 Es wird empfohlen, dass WPF-und Windows Forms Anwendungen die XAML-Steuerelemente für die .net-Insel verwenden, die im Windows Community Toolkit verfügbar sind. Diese Steuerelemente stellen ein Objektmodell bereit, das die Eigenschaften, Methoden und Ereignisse der entsprechenden UWP-Steuerelemente imitiert (oder Zugriff darauf bietet). Außerdem behandeln Sie Verhalten wie Tastaturnavigation und Layoutänderungen.
 
-Es gibt zwei Sätze von XAML-Insel Steuerelementen für WPF-und Windows Forms-Anwendungen: umschließende Steuer *Elemente* und *Host Steuerelemente*. Ab Windows 10, Version 1903, sind diese Steuerelemente [als Entwicklervorschau verfügbar](#feature-roadmap).
+Es gibt zwei Sätze von XAML-Insel Steuerelementen für WPF-und Windows Forms-Anwendungen: *umschließende Steuerelemente* und *Host Steuerelemente*. Ab Windows 10, Version 1903, sind diese Steuerelemente [als Entwicklervorschau verfügbar](#feature-roadmap).
 
 ### <a name="wrapped-controls"></a>Umschließt Steuerelemente
 
@@ -81,7 +81,7 @@ Beachten Sie die folgenden Details:
 
 * Wenn Sie ein benutzerdefiniertes UWP-Steuerelement verwenden, muss das WPF-oder Windows Forms Projekt auf .net Core 3 ausgerichtet sein. Das Hosting von benutzerdefinierten UWP-Steuerelementen wird in apps nicht unterstützt, die auf .NET Framework abzielen. Außerdem müssen Sie einige zusätzliche Schritte ausführen, um auf das benutzerdefinierte Steuerelement zu verweisen. Weitere Informationen finden Sie unter [Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln](host-custom-control-with-xaml-islands.md).
 
-* In früheren Versionen dieser Anweisungen haben Sie das `maxversiontested` -Element einem Anwendungs Manifest in der WPF-oder Windows Forms-Projekt hinzugefügt. Solange Sie die neuesten Vorschau Versionen der oben aufgeführten nuget-Pakete verwenden, müssen Sie dieses Element nicht mehr dem Manifest hinzufügen.
+* In früheren Versionen dieser Anweisungen haben Sie das `maxversiontested`-Element einem Anwendungs Manifest in Ihrem WPF-oder Windows Forms-Projekt hinzugefügt. Solange Sie die neuesten Vorschau Versionen der oben aufgeführten nuget-Pakete verwenden, müssen Sie dieses Element nicht mehr dem Manifest hinzufügen.
 
 ### <a name="architecture-of-xaml-island-net-controls"></a>Architektur von .NET-Steuerelementen der XAML-Insel
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, Microsoft, Windows 10, Tutorials, Onlinekurse, Blogs, Veranstaltungen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3320cef0d3aaf48a2f93d65d93bf8876f1f997d6
-ms.sourcegitcommit: 7104ad5d01ad1c69a4ea0b3ba6732c1b2a98ec09
+ms.openlocfilehash: 64d4fc1c85ae4056da02f987ca654305a883d2c6
+ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249242"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313408"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressourcen für die Entwicklung mit Python unter Windows
 
@@ -21,7 +21,7 @@ Eine Liste der Links, die für python-Entwickler empfohlen werden, die auf Compu
 
 ## <a name="general"></a>Allgemein
 
-- [Microsoft dev-Blogs: Python](https://devblogs.microsoft.com/python/): Lesen Sie die neuesten Updates zu allen Dingen von python bei Microsoft.
+- [Microsoft dev Blogs: Python @ no__t-0: Lesen Sie die neuesten Updates zu allen Dingen von python bei Microsoft.
 
 - [Ein ausführliches Tutorial zur Linux-Entwicklung unter Windows mit WSL und Visual Studio Code](https://devblogs.microsoft.com/commandline/an-in-depth-tutorial-on-linux-development-on-windows-with-wsl-and-visual-studio-code/): Exemplarische Vorgehensweise zum Einrichten Ihrer Entwicklungsumgebung, zum Erstellen einer python-APP und zum Debuggen.
 
@@ -49,7 +49,7 @@ Eine Liste der Links, die für python-Entwickler empfohlen werden, die auf Compu
 
 - [Einführung in python auf Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/): Probieren Sie die interaktive Microsoft Learn Plattform aus, und gewinnen Sie Erfahrungspunkte für dieses Modul, das die Grundlagen zum Schreiben von grundlegender Python-Code, zum Deklarieren von Variablen und zum Arbeiten mit Konsolen Eingaben und-Ausgaben umfasst. Die interaktive Sandbox-Umgebung ist ein idealer Ausgangspunkt für Benutzer, die noch nicht Ihre python-Entwicklungsumgebung eingerichtet haben.
 
-- [Python in Pluralsight: 8 Kurse, 29 Stunden](https://app.pluralsight.com/paths/skills/python): Der python-Lernpfad in Pluralsight bietet Onlinekurse, die eine Vielzahl von Themen im Zusammenhang mit python abdecken, einschließlich eines Tools, mit dem Sie Ihre Fähigkeiten Messen und ihre Lücken finden.
+- [python in Pluralsight: 8 Kurse, 29 Stunden @ no__t-0: Der python-Lernpfad in Pluralsight bietet Onlinekurse, die eine Vielzahl von Themen im Zusammenhang mit python abdecken, einschließlich eines Tools, mit dem Sie Ihre Fähigkeiten Messen und ihre Lücken finden.
 
 - [LearnPython.org-Tutorials](https://www.learnpython.org/): Machen Sie sich mit den ersten Schritten zum Erlernen von python vertraut, ohne dass Sie mit diesen kostenlosen interaktiven Python-Tutorials von den Leuten im datacamp arbeiten müssen.
 
@@ -65,7 +65,7 @@ Eine Liste der Links, die für python-Entwickler empfohlen werden, die auf Compu
 
 - [Andere python-Webframe Works](https://wiki.python.org/moin/WebFrameworks): Eine Liste von python-Webframe Works mit kurzen Beschreibungen von Python.org.
 
-- [Tutorial: Erstellen Sie eine Flask-App mit](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis)Azure-Cognitive Services: Erstellen Sie eine Flask-Web-App, die Azure Cognitive Services verwendet, um Text zu übersetzen, Stimmungen zu analysieren und übersetzten Text in Sprache zu synthetisieren.
+- [Tutorial: Erstellen Sie eine Flask-App mit Azure Cognitive Services @ no__t-0: Erstellen Sie eine Flask-Web-App, die Azure Cognitive Services verwendet, um Text zu übersetzen, Stimmungen zu analysieren und übersetzten Text in Sprache zu synthetisieren.
 
 - Stellen [Sie eine Python-Web-App auf einem virtuellen Computer in Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-dev-start-howto-vm-python)bereit: Erstellen Sie einen virtuellen Computer zum Hosten Ihrer Python-Web-App in Azure Stack.
 
@@ -75,21 +75,4 @@ Eine Liste der Links, die für python-Entwickler empfohlen werden, die auf Compu
 
 - [Erstellen Sie python django-apps mit Microsoft Graph](https://docs.microsoft.com/graph/tutorials/python): Erstellen Sie eine python django-Web-App, die die Microsoft Graph-API verwendet, um Kalenderinformationen für einen Benutzer abzurufen.
 
-- [Exemplarische Vorgehensweise: App-Webanwendung für die](https://docs.microsoft.com/advertising/guides/walkthrough-web-application-python?view=bingads-13)AD-App in python Beginnen Sie mit der Ausführung einer Microsoft Advertising-Webanwendung mit dem App-Code für die Verwendung von "AD Ads", der Visual Studio Code IDE und dem Django-Web
-
-<!-- ## Data Science and Machine Learning
-
-- Anaconda - brief description
-- Canopy - brief description
-- TensorFlow - brief description
-- Scikit-Learn, Keras, PyTorch, etc - brief descriptions
-
-## Desktop GUI app and IoT development
-
-- PyQT - brief description
-- PyJs - brief description
-- PyGUI - brief descriptio
-- Kivy - brief descriptio
-- PyGTK - brief descriptio
-- WxPython - brief description
-- PyGame - brief description (with links to our internal games once they're done?) -->
+- [Exemplarische Vorgehensweise: App-Webanwendung für die AD-App in python @ no__t-0: Beginnen Sie mit der Ausführung einer Microsoft Advertising-Webanwendung mit dem App-Code für die Verwendung von "AD Ads", der Visual Studio Code IDE und dem Django-Web

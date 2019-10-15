@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, Windows 10, Microsoft, PIP, py. exe, Dateipfade, PYTHONPATH, python-Bereitstellung, Python-Paket Erstellung
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: f2dbc455578a3fbe79c2558e2ba16c8f82cea522
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.openlocfilehash: 4132ef0089ee707367666b4d6340333e538b1130
+ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68959040"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72313376"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Häufig gestellte Fragen zur Verwendung von Python unter Windows
 
@@ -29,35 +29,35 @@ Einige Pakete enthalten systemeigenen Code, der einen C C++ -oder-Compiler für 
 
 ## <a name="what-is-pyexe"></a>Was ist py. exe?
 
-Möglicherweise verfügen Sie über mehrere Versionen von Python, die auf Ihrem Computer installiert sind, da Sie an verschiedenen python-Projekttypen arbeiten. Da diese alle den `python` Befehl verwenden, ist es möglicherweise nicht offensichtlich, welche Python-Version Sie verwenden. Als Standard wird empfohlen, den `python3` Befehl (oder `python3.7` eine bestimmte Version auszuwählen) zu verwenden.
+Möglicherweise verfügen Sie über mehrere Versionen von Python, die auf Ihrem Computer installiert sind, da Sie an verschiedenen python-Projekttypen arbeiten. Da diese alle den Befehl "`python`" verwenden, ist es möglicherweise nicht offensichtlich, welche Python-Version Sie verwenden. Als Standard empfiehlt es sich, den Befehl "`python3`" zu verwenden (oder `python3.7`, um eine bestimmte Version auszuwählen).
 
-Das [Starter. exe](https://docs.python.org/3/using/windows.html#launcher) -Start Programm wählt automatisch die neueste Version von python aus, die Sie installiert haben. Sie können auch Befehle wie `py -3.7` verwenden, um eine bestimmte Version auszuwählen oder `py --list` um festzustellen, welche Versionen verwendet werden können. Das Starter. exe-Start Programm funktioniert **jedoch**nur, wenn Sie eine Version von Python verwenden, die von [python.org](https://www.python.org/downloads/windows/)installiert wird. Wenn Sie python von der Microsoft Store installieren, wird `py` der Befehl **nicht eingeschlossen**. Für Linux, macOS, WSL und die Microsoft Store-Version von python sollten Sie den `python3` Befehl (oder `python3.7`) verwenden.
+Das [Starter. exe](https://docs.python.org/3/using/windows.html#launcher) -Start Programm wählt automatisch die neueste Version von python aus, die Sie installiert haben. Sie können auch Befehle wie `py -3.7` verwenden, um eine bestimmte Version auszuwählen, oder `py --list`, um anzuzeigen, welche Versionen verwendet werden können. Das Starter. exe-Start Programm funktioniert **jedoch**nur, wenn Sie eine Version von Python verwenden, die von [python.org](https://www.python.org/downloads/windows/)installiert wird. Wenn Sie python über die Microsoft Store installieren, ist der Befehl "`py`" **nicht enthalten**. Für Linux, macOS, WSL und die Microsoft Store-Version von python sollten Sie den Befehl `python3` (oder `python3.7`) verwenden.
 
 ## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>Warum wird die Microsoft Store durch Ausführen von "python. exe" geöffnet?
 
-Um neuen Benutzern zu helfen, eine gute Installation von Python zu finden, haben wir eine Verknüpfung zu Windows hinzugefügt, mit der Sie direkt zur neuesten Version des Pakets der Community gelangen, die im Microsoft Store veröffentlicht wurde. Dieses Paket kann ohne Administrator Berechtigungen problemlos installiert werden und ersetzt die Standard `python` -und- `python3` Befehle durch die echten.
+Um neuen Benutzern zu helfen, eine gute Installation von Python zu finden, haben wir eine Verknüpfung zu Windows hinzugefügt, mit der Sie direkt zur neuesten Version des Pakets der Community gelangen, die im Microsoft Store veröffentlicht wurde. Dieses Paket kann problemlos, ohne Administrator Berechtigungen, installiert werden und ersetzt die Standard Befehle "`python`" und "`python3`" durch die echten.
 
 Wenn Sie die ausführbare Datei für die Verknüpfung mit Befehlszeilen Argumenten ausführen, wird ein Fehlercode zurückgegeben, um anzugeben, dass python nicht installiert wurde. Dadurch wird verhindert, dass Batch Dateien und Skripts die Store-APP öffnen, wenn Sie wahrscheinlich nicht beabsichtigt war.
 
-Wenn Sie python mithilfe der Installationsprogramme von [python.org](https://www.python.org/downloads/windows/) installieren und die Option "dem Pfad hinzufügen" auswählen, `python` erhält der neue Befehl Vorrang vor der Verknüpfung. Beachten Sie, dass andere Installer `python` eine _niedrigere_ Priorität als die integrierte Verknüpfung hinzufügen können.
+Wenn Sie python mithilfe der Installationsprogramme von [python.org](https://www.python.org/downloads/windows/) installieren und die Option "dem Pfad hinzufügen" auswählen, erhält der neue Befehl "`python`" Vorrang vor der Verknüpfung. Beachten Sie, dass andere Installer `python` mit einer _niedrigeren_ Priorität als die integrierte Verknüpfung hinzufügen können.
 
 Sie können die Verknüpfungen deaktivieren, ohne python zu installieren, indem Sie "App-Ausführungs Aliase verwalten" öffnen. Suchen Sie hierzu die python-Einträge "APP Installer", und wechseln Sie zu "aus".
 
 ## <a name="why-dont-file-paths-work-in-python-when-i-copy-paste-them"></a>Warum funktionieren Dateipfade in python nicht, wenn ich Sie kopieren und Einfügen?
 
-Python-Zeichen folgen verwenden "Escapezeichen" für Sonderzeichen. Wenn Sie z. b. ein neues Zeilenzeichen in eine Zeichenfolge einfügen möchten `\n`, geben Sie ein. Da Dateipfade unter Windows umgekehrte Schrägstriche verwenden, werden einige Teile möglicherweise in Sonderzeichen konvertiert.
+Python-Zeichen folgen verwenden "Escapezeichen" für Sonderzeichen. Wenn Sie z. b. ein neues Zeilenzeichen in eine Zeichenfolge einfügen möchten, geben Sie `\n` ein. Da Dateipfade unter Windows umgekehrte Schrägstriche verwenden, werden einige Teile möglicherweise in Sonderzeichen konvertiert.
 
-Fügen Sie das `r` Präfix hinzu, um einen Pfad als Zeichenfolge in python einzufügen. Dies weist darauf hin, dass `raw` es sich um eine Zeichenfolge handelt und keine Escapezeichen mit Ausnahme von \ "verwendet werden (möglicherweise müssen Sie den letzten umgekehrten Schrägstrich im Pfad entfernen). Ihr Pfad könnte also wie folgt aussehen: r "c:\users\meinname\documents\document.txt".
+Fügen Sie das Präfix "`r`" hinzu, um einen Pfad als Zeichenfolge in python einzufügen. Dies weist darauf hin, dass es sich um eine @no__t 0-Zeichenfolge handelt, und es werden keine Escapezeichen mit Ausnahme von \ "verwendet (möglicherweise müssen Sie den letzten umgekehrten Schrägstrich im Pfad entfernen). Ihr Pfad könnte also wie folgt aussehen: r "c:\users\meinname\documents\document.txt".
 
 Beim Arbeiten mit Pfaden in python empfiehlt es sich, das standardmäßige pathlib-Modul zu verwenden. Auf diese Weise können Sie die Zeichenfolge in ein Rich-Path-Objekt konvertieren, das Pfad Manipulationen konsistent durchführt, unabhängig davon, ob Sie Schrägstriche oder umgekehrte Schrägstriche verwenden, sodass Ihr Code in verschiedenen Betriebssystemen besser funktioniert.
 
 ## <a name="what-is-pythonpath"></a>Was ist PYTHONPATH?
 
-Die PYTHONPATH-Umgebungsvariable wird von Python verwendet, um eine Liste von Verzeichnissen anzugeben, aus denen Module importiert werden können. Wenn Sie ausführen, können Sie die `sys.path` Variable überprüfen, um festzustellen, welche Verzeichnisse durchsucht werden, wenn Sie etwas importieren.
+Die PYTHONPATH-Umgebungsvariable wird von Python verwendet, um eine Liste von Verzeichnissen anzugeben, aus denen Module importiert werden können. Wenn Sie ausführen, können Sie die `sys.path`-Variable überprüfen, um festzustellen, welche Verzeichnisse durchsucht werden, wenn Sie etwas importieren.
 
 Verwenden Sie zum Festlegen dieser Variablen an der Eingabeaufforderung: `set PYTHONPATH=list;of;paths`.
 
-Um diese Variable aus PowerShell festzulegen, verwenden `$env:PYTHONPATH=’list;of;paths’` Sie: direkt vor dem Starten von Python.
+Um diese Variable aus PowerShell festzulegen, verwenden Sie: `$env:PYTHONPATH=’list;of;paths’` direkt vor dem Starten von Python.
 
 Die globale Festlegung dieser Variablen über die **Umgebungsvariablen** Einstellungen ist **nicht** empfehlenswert, da Sie möglicherweise von einer beliebigen Version von python anstelle derjenigen verwendet wird, die Sie verwenden möchten.
 
@@ -77,4 +77,4 @@ Die vscode-Erweiterung [keymaps](https://marketplace.visualstudio.com/search?tar
 
 ## <a name="how-do-mac-shortcut-keys-map-to-windows-shortcut-keys"></a>Wie werden Mac-Tastenkombinationen Windows-Tastenkombinationen zugeordnet?
 
-Einige der Tastenkombinationen und System Verknüpfungen unterscheiden sich geringfügig von einem Windows-Computer und einem Macintosh-Computer. In diesem [Leitfaden zur Tastatur Zuordnung](https://support.microsoft.com/help/970299/keyboard-mappings-using-a-pc-keyboard-on-a-macintosh) von Microsoft-Support werden die Grundlagen behandelt.
+Einige der Tastenkombinationen und System Verknüpfungen unterscheiden sich geringfügig von einem Windows-Computer und einem Macintosh-Computer. [In diesem Umstieg auf das Umstieg auf Windows](../dev-environment/mac-to-windows.md) werden die Grundlagen behandelt.
