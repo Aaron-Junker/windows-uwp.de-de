@@ -147,8 +147,8 @@ Diese Eigenschaften funktionieren ähnlich wie die Eigenschaften der [**Binding*
 
 > [!NOTE]
 > Wenn Sie Markup von **{Binding}** in **{x:Bind}** konvertieren, beachten Sie die unterschiedlichen Standardwerte der **Mode**-Eigenschaft.
-** 
-> [X:DefaultBindMode](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute)** können verwendet werden, um den Standardmodus für X: Bind für ein bestimmtes Segment des der Markup-Struktur ändern. Der ausgewählte Modus gilt für alle x:Bind-Ausdrücke in diesem Element und seinen untergeordneten Elementen, die nicht explizit einen Bindungsmodus festlegen. OneTime ist leistungsfähiger als OneWay, da die Verwendung von OneWay bewirkt, dass mehr Code generiert wird, um die Änderungserkennung zu verknüpfen und zu behandeln.
+ 
+>  **[X:DefaultBindMode](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute)** können verwendet werden, um den Standardmodus für X: Bind für ein bestimmtes Segment des der Markup-Struktur ändern. Der ausgewählte Modus gilt für alle x:Bind-Ausdrücke in diesem Element und seinen untergeordneten Elementen, die nicht explizit einen Bindungsmodus festlegen. OneTime ist leistungsfähiger als OneWay, da die Verwendung von OneWay bewirkt, dass mehr Code generiert wird, um die Änderungserkennung zu verknüpfen und zu behandeln.
 
 ## <a name="remarks"></a>Hinweise
 
