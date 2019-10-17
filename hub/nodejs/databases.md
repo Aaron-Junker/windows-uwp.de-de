@@ -8,18 +8,18 @@ ms.topic: article
 keywords: NodeJS, Node. js, Windows 10, Microsoft, Learning NodeJS, Node on Windows, Node on WSL, Node on Linux on Windows, install Node on Windows, NodeJS with vs Code, Develop with Node on Windows, Develop with NodeJS on Windows, install Node on WSL, NodeJS on Windows Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: bdc3e3c944c4aeb25f5cf880fc4d31df1019da5a
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 63c47107538d8744201f83ea1be24cfaf3193f4f
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315114"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517816"
 ---
-# <a name="get-started-connecting-nodejs-apps-to-a-database"></a>Einstieg in das Verbinden von Node. js-apps mit einer Datenbank
+# <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>Beginnen Sie mit der Verwendung von MongoDb oder PostgreSQL mit Node. js unter Windows.
 
 Node. js-Anwendungen müssen häufig Daten persistent speichern, was durch Dateien, lokalen Speicher, Clouddienste oder Datenbanken erfolgen kann. Diese Schritt-für-Schritt-Anleitung hilft Ihnen beim Einstieg in die Verbindung Ihrer Node. js-App mit einer-Datenbank. Wir haben uns entschieden, sich auf zwei beliebte Optionen zu konzentrieren: MongoDB und PostgreSQL.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 In dieser Anleitung wird davon ausgegangen, dass Sie bereits die Schritte zum [Einrichten der Node. js-Entwicklungsumgebung mit WSL 2](./setup-on-wsl2.md)abgeschlossen haben, einschließlich:
 
@@ -41,14 +41,14 @@ In dieser Anleitung wird davon ausgegangen, dass Sie bereits die Schritte zum [E
 
 VS Code die Arbeit mit MongoDB-Datenbanken über die [Azure Cosmos DB-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)unterstützt, können Sie MongoDB-Datenbanken in vs Code erstellen, verwalten und Abfragen.
 
-Weitere Informationen finden Sie in den vs Code docs: [Arbeiten mit MongoDB](https://code.visualstudio.com/docs/azure/mongodb).
+Weitere Informationen finden Sie in der vs Code docs: [Arbeiten mit MongoDB](https://code.visualstudio.com/docs/azure/mongodb).
 
 Weitere Informationen finden Sie in der MongoDB-Dokumentation:
 
 - [Einführung in die Verwendung von MongoDB](https://docs.mongodb.com/manual/introduction/)
 - [Benutzer erstellen](https://docs.mongodb.com/manual/tutorial/create-users/)
 - [Herstellen einer Verbindung mit einer MongoDB-Instanz auf einem Remote Host](https://docs.mongodb.com/manual/mongo/#mongodb-instance-on-a-remote-host)
-- [CRUD: Create, Read, Update, DELETE @ no__t-0
+- [CRUD: erstellen, lesen, aktualisieren, löschen](https://docs.mongodb.com/manual/crud/)
 - [Referenzdokumente](https://docs.mongodb.com/manual/reference/)
 
 ## <a name="install-postgresql"></a>Installieren von PostgreSQL

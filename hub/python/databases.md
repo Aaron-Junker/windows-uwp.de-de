@@ -8,16 +8,16 @@ ms.topic: article
 keywords: python, Windows 10, PostgreSQL, MongoDB, Postgres, Mongo, Microsoft, python unter Windows, Installieren von PostgreSQL unter Windows, Installieren von MongoDB unter Windows, verwenden von PostgreSQL mit Python, verwenden von MongoDB mit Python, PostgreSQL auf WSL, MongoDB auf WSL
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 42a257361cffec974d060a6518dfdf5254d62082
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 9b1bdea86739f3d58b39cf7f0e6b8090474886f3
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314854"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517776"
 ---
-# <a name="get-started-using-databases-with-python-on-windows"></a>Einstieg in die Verwendung von Datenbanken mit Python unter Windows
+# <a name="get-started-using-postgresql-or-mongodb-with-python-on-windows"></a>Einstieg in die Verwendung von PostgreSQL oder MongoDB mit Python unter Windows
 
-Python-Anwendungen müssen häufig Daten persistent speichern, was durch Dateien, lokalen Speicher, Clouddienste oder Datenbanken erfolgen kann. Diese Schritt-für-Schritt-Anleitung hilft Ihnen beim Einstieg in die Verbindung Ihrer python-App mit einer Datenbank. Wir haben uns entschieden, sich auf zwei beliebte Optionen zu konzentrieren: PostgreSQL und MongoDB.
+Diese Schritt-für-Schritt-Anleitung hilft Ihnen beim Einstieg in die Verbindung Ihrer python-App mit einer Datenbank. Wir haben uns entschieden, sich auf zwei beliebte Optionen zu konzentrieren: PostgreSQL und MongoDB.
 
 ## <a name="differences-between-mongodb-and-postgresql"></a>Unterschiede zwischen MongoDB und PostgreSQL
 
@@ -42,7 +42,7 @@ VS Code die Arbeit mit PostgreSQL-Datenbanken über die [PostgreSQL-Erweiterung]
 
 VS Code die Arbeit mit MongoDB-Datenbanken über die [Azure Cosmos DB-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)unterstützt, können Sie MongoDB-Datenbanken in vs Code erstellen, verbinden, verwalten und Abfragen.
 
-Weitere Informationen finden Sie in den vs Code docs: [Arbeiten mit MongoDB](https://code.visualstudio.com/docs/azure/mongodb).
+Weitere Informationen finden Sie in der vs Code docs: [Arbeiten mit MongoDB](https://code.visualstudio.com/docs/azure/mongodb).
 
 ## <a name="set-up-profile-aliases"></a>Einrichten von Profil Aliasen
 

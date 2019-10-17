@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node. js, Windows 10, Microsoft, Learning NodeJS, Node on Windows, Node on WSL, Node on Linux on Windows, install Node on Windows, NodeJS with vs Code, Develop with Node on Windows, Develop with NodeJS on Windows, install Node on WSL, NodeJS on Windows Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 917192d782e0a44c6de7e549960161a003c646e5
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: e5875f0bf7ce73d3615aa131d57c2384c73dd8a1
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315064"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517838"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten der Node. js-Entwicklungsumgebung mit WSL 2
 
@@ -28,7 +28,7 @@ Im folgenden finden Sie eine Schritt-für-Schritt-Anleitung, die Sie beim Einric
 
     ![Windows Update-Assistent](../images/windows-update-assistant2019.png)
 
-2. Wechseln **[Sie zu Start > Einstellungen > Windows Insider-Programm](ms-settings:windowsinsider)** : Wählen Sie im Fenster Windows Insider-Programm die Option **Get Started** , und **Verknüpfen Sie ein Konto**.
+2. Wechseln Sie **[zu Start > Einstellungen > Windows-Insider-Programm](ms-settings:windowsinsider)** : **Klicken Sie im** Windows Insider-Programmfenster auf erste Schritte, und verknüpfen Sie dann **ein Konto**.
 
     ![Windows-Insider-Programmeinstellungen](../images/windows-insider-program-settings.png)
 
@@ -102,6 +102,10 @@ Es gibt mehrere Möglichkeiten, Node. js zu installieren. Es wird empfohlen, ein
 > [!TIP]
 > Wenn Sie "NVM" verwenden, um Node. js und NPM zu installieren, müssen Sie nicht den Befehl "sudo" verwenden, um neue Pakete zu installieren.
 
+> [!NOTE]
+> Zum Zeitpunkt der Veröffentlichung war NVM v 0.34.0 die aktuellste verfügbare Version. Sie können die [GitHub-Projektseite für die neueste Version von NVM](https://github.com/nvm-sh/nvm)überprüfen und den obigen Befehl so anpassen, dass Sie die neueste Version enthält.
+Durch die Installation der neueren Version von NVM mithilfe von cURL wird die ältere Version ersetzt, sodass die Version des Knotens, den Sie für die Installation von NVM verwendet haben, intakt ist. Beispiel: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash`
+
 ## <a name="alternative-version-managers"></a>Alternative Versions-Manager
 
 Obwohl NVM zurzeit der beliebteste Versions-Manager für Node ist, sind einige Alternativen zu beachten:
@@ -114,7 +118,7 @@ Obwohl NVM zurzeit der beliebteste Versions-Manager für Node ist, sind einige A
 
 ## <a name="install-your-favorite-code-editor"></a>Installieren Sie Ihren bevorzugten Code-Editor.
 
-Es wird empfohlen, [**Visual Studio Code**] mit der **Remote-WSL-Erweiterung** für Node. js-Entwicklungsprojekte zu verwenden. Dadurch wird vs Code in eine Client-Server-Architektur aufgeteilt, wobei der Client (die Benutzeroberfläche) auf Ihrem Windows-Computer und der Server (Code, git, Plug-ins usw.) Remote ausgeführt wird.
+Es wird empfohlen, **Visual Studio Code** mit der **Remote-WSL-Erweiterung** für Node. js-Projekte zu verwenden. Dadurch wird vs Code in eine Client-Server-Architektur aufgeteilt, wobei der Client (die Benutzeroberfläche) auf Ihrem Windows-Computer und der Server (Code, git, Plug-ins usw.) Remote ausgeführt wird.
 
 - Die Linux-basierte IntelliSense-und linting-Funktionen werden unterstützt.
 - Ihr Projekt wird in Linux automatisch erstellt.
@@ -136,43 +140,34 @@ So installieren Sie vs Code und die Remote-WSL-Erweiterung:
 
 ### <a name="helpful-vs-code-extensions"></a>Hilfreiche vs Code Erweiterungen
 
-Obwohl vs Code viele Features für die Node. js-Entwicklung enthalten, gibt es einige hilfreiche Erweiterungen, die Sie im [node. js-Erweiterungspaket](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)als verfügbar installieren sollten. Dazu gehören:
-
-- ES lint: ein Tool zum "linting" des Codes. Linting analysiert Ihren Code und warnt Sie vor potenziellen Fehlern.
-- NPM: führen Sie NPM-Skripts über die Befehls Palette aus, und überprüfen Sie die in "Package. JSON" definierten installierten Module.
-- JavaScript-Ausschnitte (ES6): Fügt Code Ausschnitte für die JavaScript-Entwicklung in der ES6-Syntax hinzu.
-- Suche node_modules: Suchen Sie in Ihrem Projekt schnell nach Knoten Modulen.
-- NPM IntelliSense: fügt IntelliSense für NPM-Module in Ihrem Code hinzu.
-- Path IntelliSense: schließt Dateinamen in Ihrem Code automatisch ab.
-
-Installieren Sie alle, oder wählen Sie aus, und wählen Sie aus, was für Sie am nützlichsten erscheint.
+Obwohl vs Code viele Features für die Node. js-Entwicklung enthalten, gibt es einige hilfreiche Erweiterungen, die Sie im [node. js-Erweiterungspaket](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)als verfügbar installieren sollten. Installieren Sie alle, oder wählen Sie aus, und wählen Sie aus, was für Sie am nützlichsten erscheint.
 
 So installieren Sie das Node. js-Erweiterungspaket:
 
 1. Öffnen Sie das Fenster " **Erweiterungen** " (STRG + UMSCHALT + X) in vs Code.
 
     Das Fenster Erweiterungen ist nun in drei Abschnitte unterteilt (weil Sie die Remote-WSL-Erweiterung installiert haben).
-    - "Lokal-installiert": Die für die Verwendung mit dem Windows-Betriebssystem installierten Erweiterungen.
-    - "WSL: Ubuntu-18,04-installiert": Die Erweiterungen, die für die Verwendung mit Ihrem Ubuntu-Betriebssystem (WSL) installiert sind.
+    - "Lokal-installiert": die für die Verwendung mit dem Windows-Betriebssystem installierten Erweiterungen.
+    - "WSL: Ubuntu-18,04-installiert": die Erweiterungen, die für die Verwendung mit Ihrem Ubuntu-Betriebssystem (WSL) installiert sind.
     - "Empfohlen": Erweiterungen, die von vs Code basierend auf den Dateitypen in Ihrem aktuellen Projekt empfohlen werden.
 
     ![Lokale und Remote-Erweiterungen für vs Code Erweiterungen](../images/vscode-extensions-local-remote.png)
 
-2. Geben Sie im Suchfeld am oberen Rand des Fensters Erweiterungen Folgendes ein: **Knoten Erweiterungspaket** (oder der Name der gewünschten Erweiterung). Die Erweiterung (oder Erweiterungen, wenn Sie ein Paket ist) wird entweder für Ihre lokalen oder WSL-Instanzen von installiert vs Code abhängig davon, wo Sie das aktuelle Projekt geöffnet haben. Sie können erkennen, indem Sie in der linken unteren Ecke des vs Code Fensters den Remote Link auswählen (in grün). Sie erhalten die Möglichkeit, eine Remote Verbindung zu öffnen oder zu schließen. Installieren Sie die Node. js-Erweiterungen in der Umgebung "WSL: Ubuntu-18,04".
+2. Geben Sie im Suchfeld am oberen Rand des Fensters Erweiterungen Folgendes ein: **Node Extension Pack** (oder den Namen der gewünschten Erweiterung). Die Erweiterung wird entweder für Ihre lokalen oder WSL-Instanzen von vs Code installiert, je nachdem, wo Sie das aktuelle Projekt geöffnet haben. Sie können erkennen, indem Sie in der linken unteren Ecke des vs Code Fensters den Remote Link auswählen (in grün). Sie erhalten die Möglichkeit, eine Remote Verbindung zu öffnen oder zu schließen. Installieren Sie die Node. js-Erweiterungen in der Umgebung "WSL: Ubuntu-18,04".
 
     ![Remote Verbindung vs Code](../images/wsl-remote-extension.png)
 
 Einige zusätzliche Erweiterungen, die Sie berücksichtigen sollten, sind u. A.:
 
-- [Debugger für Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Wenn Sie die Entwicklung auf dem Server mit Node. js abgeschlossen haben, müssen Sie die Clientseite entwickeln und testen. Diese Erweiterung integriert ihren vs Code-Editor in ihren Chrome-Browser-Debugdienst, sodass Dinge etwas effizienter werden.
+- [Debugger für Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Nachdem Sie die Entwicklung auf dem Server mit Node. js abgeschlossen haben, müssen Sie die Clientseite entwickeln und testen. Diese Erweiterung integriert ihren vs Code-Editor in ihren Chrome-Browser-Debugdienst, sodass Dinge etwas effizienter werden.
 - [Keymaps von anderen Editoren](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): Diese Erweiterungen können Ihre Umgebung zu Hause machen, wenn Sie von einem anderen Text-Editor wechseln (z. b. Atom, Sublime, vim, emacs, Notepad + + usw.).
-- [Synchronisierungs Einstellungen](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Ermöglicht die Synchronisierung Ihrer vs Code Einstellungen über verschiedene Installationen mithilfe von github. Wenn Sie auf unterschiedlichen Computern arbeiten, können Sie Ihre Umgebung auf diese Weise konsistent halten.
+- [Einstellungs Synchronisierung](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): ermöglicht die Synchronisierung Ihrer vs Code Einstellungen über verschiedene Installationen hinweg mithilfe von github. Wenn Sie auf unterschiedlichen Computern arbeiten, können Sie Ihre Umgebung auf diese Weise konsistent halten.
 
 ## <a name="install-windows-terminal-optional"></a>Installieren des Windows-Terminals (optional)
 
 Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Verteilungen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis ☺ und benutzerdefinierte Designs ( Farbschemas, Schriftarten und-Größen, Hintergrundbild/weich/Transparenz. [Weitere Informationen](https://devblogs.microsoft.com/commandline/).
 
-1. Holen Sie sich [das Windows-Terminal (Vorschau) in der Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): Durch die Installation über den Store werden Updates automatisch verarbeitet.
+1. Holen Sie sich [das Windows-Terminal (Vorschau) im Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): durch die Installation über den Store werden Updates automatisch verarbeitet.
 
 2. Öffnen Sie nach der Installation das Windows-Terminal, und wählen Sie **Einstellungen** aus, um das Terminal mithilfe der Datei `profile.json` anzupassen. [Erfahren Sie mehr über das Bearbeiten von Windows-Terminal Einstellungen](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md).
 
@@ -190,7 +185,7 @@ Wenn Sie beabsichtigen, mit anderen zusammenzuarbeiten oder das Projekt auf eine
 
 Sie haben jetzt eine Node. js-Entwicklungsumgebung eingerichtet. Um mit der Verwendung der Node. js-Umgebung zu beginnen, sollten Sie eines der folgenden Tutorials ausprobieren:
 
-- [Beginnen Sie mit Node. js für Einsteiger](./beginners.md): Eine Schritt-für-Schritt-Anleitung, die Sie beim Einstieg in die Node. js-Entwicklung unterstützt.
-- [Beginnen Sie mit Node. js-Webframe Works unter Windows](./web-frameworks.md): Eine Schritt-für-Schritt-Anleitung, die Sie beim Einstieg in die Verwendung von Node. js Web Framworks unter Windows unterstützt, einschließlich Next. js, nuxt. js und Gatsby.
-- [Beginnen Sie mit dem Verbinden von Node. js-apps mit einer Datenbank](./databases.md): Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Verbindung Ihrer Node. js-App mit einer Datenbank wie MongoDb oder Postgres.
-- [Beginnen Sie mit der Verwendung von Docker-Containern mit Node. js](./containers.md): Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Verwendung von Docker-Containern mit ihren Node. js-apps.
+- [Einstieg in Node. js für Einsteiger](./beginners.md)
+- [Einstieg in Node. js-Webframe Works unter Windows](./web-frameworks.md)
+- [Einstieg in das Verbinden von Node. js-apps mit einer Datenbank](./databases.md)
+- [Einstieg in die Verwendung von Docker-Containern mit Node. js](./containers.md)

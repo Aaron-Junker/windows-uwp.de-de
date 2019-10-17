@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node. js, Windows 10, native Fenster, direkt unter Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: eaeee6e2d55bcb9221d88bd87ebeafc7c45d0a5d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 18a8d07f790c391a6e10577ff512347106e1cf21
+ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315084"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72517829"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Einrichten der Node. js-Entwicklungsumgebung direkt unter Windows
 
@@ -70,30 +70,19 @@ Weitere Informationen zur Verwendung von Volta zum Installieren mehrerer Version
 
 ## <a name="install-your-favorite-code-editor"></a>Installieren Sie Ihren bevorzugten Code-Editor.
 
-Es wird empfohlen, vs Code sowie das [node. js-Erweiterungspaket](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)für die Entwicklung mit Node. js unter Windows zu [Installieren](https://code.visualstudio.com).
-
-Das Node. js-Erweiterungspaket umfasst Folgendes:
-
-- ES lint: ein Tool zum "linting" des Codes. Linting analysiert Ihren Code und warnt Sie vor potenziellen Fehlern.
-- NPM: führen Sie NPM-Skripts über die Befehls Palette aus, und überprüfen Sie die in "Package. JSON" definierten installierten Module.
-- JavaScript-Ausschnitte (ES6): Fügt Code Ausschnitte für die JavaScript-Entwicklung in der ES6-Syntax hinzu.
-- Suche node_modules: Suchen Sie in Ihrem Projekt schnell nach Knoten Modulen.
-- NPM IntelliSense: fügt IntelliSense für NPM-Module in Ihrem Code hinzu.
-- Path IntelliSense: schließt Dateinamen in Ihrem Code automatisch ab.
-
-Installieren Sie alle, oder wählen Sie aus, und wählen Sie aus, was für Sie am nützlichsten erscheint.
+Es wird empfohlen, vs Code sowie das [node. js-Erweiterungspaket](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)für die Entwicklung mit Node. js unter Windows zu [Installieren](https://code.visualstudio.com). Installieren Sie alle, oder wählen Sie aus, und wählen Sie aus, was für Sie am nützlichsten erscheint.
 
 So installieren Sie das Node. js-Erweiterungspaket:
 
 1. Öffnen Sie das Fenster " **Erweiterungen** " (STRG + UMSCHALT + X) in vs Code.
-2. Geben Sie im Suchfeld am oberen Rand des Fensters Erweiterungen Folgendes ein: "Node Extension Pack" (oder der Name der gewünschten Erweiterung).
+2. Geben Sie im Suchfeld am oberen Rand des Fensters Erweiterungen Folgendes ein: "Node Extension Pack" (oder den Namen der gewünschten Erweiterung).
 3. Wählen Sie **Installieren**aus. Nach der Installation wird die Erweiterung im Ordner "aktiviert" des Fensters **Erweiterungen** angezeigt. Sie können Einstellungen deaktivieren, deinstallieren oder konfigurieren, indem Sie das Zahnrad Symbol neben der Beschreibung der neuen Erweiterung auswählen.
 
 Einige zusätzliche Erweiterungen, die Sie berücksichtigen sollten, sind u. A.:
 
-- [Debugger für Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Wenn Sie die Entwicklung auf dem Server mit Node. js abgeschlossen haben, müssen Sie die Clientseite entwickeln und testen. Diese Erweiterung integriert ihren vs Code-Editor in ihren Chrome-Browser-Debugdienst, sodass Dinge etwas effizienter werden.
+- [Debugger für Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Nachdem Sie die Entwicklung auf dem Server mit Node. js abgeschlossen haben, müssen Sie die Clientseite entwickeln und testen. Diese Erweiterung integriert ihren vs Code-Editor in ihren Chrome-Browser-Debugdienst, sodass Dinge etwas effizienter werden.
 - [Keymaps von anderen Editoren](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): Diese Erweiterungen können Ihre Umgebung zu Hause machen, wenn Sie von einem anderen Text-Editor wechseln (z. b. Atom, Sublime, vim, emacs, Notepad + + usw.).
-- [Synchronisierungs Einstellungen](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): Ermöglicht die Synchronisierung Ihrer vs Code Einstellungen über verschiedene Installationen mithilfe von github. Wenn Sie auf unterschiedlichen Computern arbeiten, können Sie Ihre Umgebung auf diese Weise konsistent halten.
+- [Einstellungs Synchronisierung](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): ermöglicht die Synchronisierung Ihrer vs Code Einstellungen über verschiedene Installationen hinweg mithilfe von github. Wenn Sie auf unterschiedlichen Computern arbeiten, können Sie Ihre Umgebung auf diese Weise konsistent halten.
 
 ## <a name="install-git-optional"></a>Installieren von git (optional)
 
