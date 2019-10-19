@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff5d0831e918c0399bccb1dac9bb4fca8a6d408
-ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
+ms.openlocfilehash: a85edf0caa429d95d376af6fbc93bc7e8134340c
+ms.sourcegitcommit: 00cd8a6616e358479a63e56126c62ef02b8da75b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939681"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72548456"
 ---
 # <a name="list-view-and-grid-view"></a>Listenansicht und Rasteransicht
 
@@ -604,7 +604,7 @@ Informationen zum Ändern der Darstellung ausgewählter Elemente finden Sie unte
 
 ### <a name="drag-and-drop"></a>Drag & Drop
 
-ListView- und GridView-Steuerelemente unterstützen Drag & Drop für Elemente innerhalb von ihnen und zwischen ihnen und anderen ListView- und GridView-Steuerelementen. Weitere Informationen zur Implementierung des Musters für Drag & Drop finden Sie unter [Drag & Drop](https://docs.microsoft.com/windows/uwp/design/input/drag-and-drop). 
+ListView- und GridView-Steuerelemente unterstützen Drag & Drop für Elemente innerhalb von ihnen und zwischen ihnen und anderen ListView- und GridView-Steuerelementen. Weitere Informationen zur Implementierung des Musters für Drag & Drop finden Sie unter [Drag & Drop](../input/drag-and-drop.md).
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
@@ -616,4 +616,4 @@ ListView- und GridView-Steuerelemente unterstützen Drag & Drop für Elemente in
 
 - [Listen](lists.md)
 - [Elementcontainer und Vorlagen](item-containers-templates.md)
-- [Drag & Drop](https://docs.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Drag & Drop](../input/drag-and-drop.md)
