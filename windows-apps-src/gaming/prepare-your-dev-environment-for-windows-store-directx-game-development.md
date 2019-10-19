@@ -6,75 +6,39 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Vorlagen, Tools, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 090cb13faa00f55f5c611abc20f4ee9e90977113
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5b8bb51d6fb147e97356ac5ae30bfcb8c19f8d96
+ms.sourcegitcommit: cc9f5a16386be78c12821a975e43497a0693abba
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321182"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72578153"
 ---
 # <a name="project-templates-and-tools-for-games"></a>Projektvorlagen und Tools für Spiele
 
+In diesem Thema wird erläutert, was Sie zum Programmieren von DirectX-spielen für die universelle Windows-Plattform (UWP) benötigen.
 
+## <a name="visual-studio"></a>Visual Studio
 
+[Microsoft Visual Studio herunterladen und installieren](https://visualstudio.microsoft.com/downloads/).
 
-Hier erfahren Sie, was erforderlich ist, um mit dem Programmieren von DirectX-Spielen für die Universelle Windows-Plattform (UWP) beginnen zu können.
+Informationen zum Einrichten von Visual Studio für [ C++die/WinRT](/windows/uwp/cpp-and-winrt-apis/) -Entwicklung finden Sie [unter Visual Studio C++-Unterstützung für/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Zunächst benötigen Sie Visual Studio.
+## <a name="topics-in-this-section"></a>Themen in diesem Abschnitt
 
-## <a name="get-visual-studio"></a>Herunterladen von Visual Studio
-
-
-[Herunterladen und installieren Sie Microsoft Visual Studio 2015](https://visualstudio.microsoft.com/vs/).
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Thema</th>
-<th align="left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><a href="user-interface.md">DirectX-Spiele-Projektvorlagen</a></p></td>
-<td align="left"><p>Hier erhalten Sie Informationen zu den Vorlagen zum Erstellen eines UWP- und DirectX-Spiels.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">Visual Studio-Tools für die Spiele-Programmierung</a></p></td>
-<td align="left"><p>Sie erhalten eine Übersicht über spezielle DirectX-Tools, die unter Visual Studio verfügbar sind.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p><a href="use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md">Grafikdiagnose-tools</a></p></td>
-<td align="left"><p>Hier erfahren Sie, wie Sie in Visual Studio die Grafikdiagnosefeatures, einschließlich Grafikdebugging, Analyse von Grafikframes und GPU-Verwendung, abrufen und verwenden.</p></td>
-</tr>
-</tbody>
-</table>
-
- 
+|Thema|Beschreibung|
+|-|-|
+|[DirectX-Spiel Projektvorlagen](user-interface.md)|Hier erhalten Sie Informationen zu den Vorlagen zum Erstellen eines UWP- und DirectX-Spiels.|
+|[Visual Studio-Tools für die Spieleprogrammierung](set-up-visual-studio-for-game-development.md)|Sie erhalten eine Übersicht über spezielle DirectX-Tools, die unter Visual Studio verfügbar sind.|
+|[Grafik Diagnosetools](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)|Hier erfahren Sie, wie Sie in Visual Studio die Grafikdiagnosefeatures, einschließlich Grafikdebugging, Analyse von Grafikframes und GPU-Verwendung, abrufen und verwenden.|
 
 ## <a name="next-steps"></a>Nächste Schritte
 
+Wenn Sie ein vorhandenes Spiel portieren, finden Sie weitere Informationen in den folgenden Themen.
 
-Wenn Sie ein vorhandenes Spiel portieren, sind die folgenden Themen hilfreich:
+- [Port von OpenGL es 2,0 bis DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
+- [Port von DirectX 9 auf UWP](porting-your-directx-9-game-to-windows-store.md)
 
--   [Portieren von OpenGL ES 2.0 zu DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Portieren von DirectX 9 auf UWP](porting-your-directx-9-game-to-windows-store.md)
+Wenn Sie ein neues DirectX-Spiel erstellen, finden Sie weitere Informationen in den folgenden Themen.
 
-Wenn Sie ein neues DirectX-Spiel erstellen, sind die folgenden Themen hilfreich.
-
--   [Erstellen eines einfachen UWP-Spiels mit DirectX](tutorial--create-your-first-uwp-directx-game.md)
--   [Entwickeln von Marble Maze, eine universelle Windows-Plattform-Spiel in C++ und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
-
- 
-
- 
-
- 
-
-
-
-
+- [Erstellen eines einfachen UWP-Spiels mit DirectX](tutorial--create-your-first-uwp-directx-game.md)
+- [Entwickeln von Marble Maze, ein universelle Windows-Plattform Spiel C++ in und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
