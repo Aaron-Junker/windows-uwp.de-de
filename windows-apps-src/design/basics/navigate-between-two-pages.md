@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 3bc377e87d01106a1a2e7157dbe08f1ab022f52a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c35795eeb6afa32e77acb507c687e334e454d0d5
+ms.sourcegitcommit: e0f6150c8f45b69a3e114d0556c2c3d5aed7238f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361057"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72560803"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implementieren der Navigation zwischen zwei Seiten
 
@@ -34,7 +34,7 @@ Hier erfährst du, wie du einen Frame und Seiten verwendest, um in deiner App ei
 2.  Wähle im linken Bereich des Dialogfelds **Neues Projekt** den Knoten **Visual C#**  > **Windows** > **Universell** oder **Visual C++**  > **Windows** > **Universell** aus.
 3.  Wählen Sie im mittleren Bereich die Option **Leere App** aus.
 4.  Geben Sie in das Feld **Name** den Wert **NavApp1** ein, und klicken Sie anschließend auf **OK**.
-    Die Projektmappe wird erstellt, und die Projektdateien werden im **** Projektmappen-Explorer angezeigt.
+    Die Projektmappe wird erstellt, und die Projektdateien werden im **Projektmappen-Explorer** angezeigt.
 5.  Klicken Sie zum Ausführen des Programms im Menü auf **Debuggen** > **Debugging starten**, oder drücken Sie F5.
     Es wird eine leere Seite angezeigt.
 6.  Um das Debuggen zu beenden und zu Visual Studio zurückzukehren, kannst du entweder die App beenden oder im Menü auf **Debuggen beenden** klicken.
@@ -452,5 +452,5 @@ Page1::Page1()
 
 ## <a name="related-articles"></a>Verwandte Artikel
 * [Navigationsdesigngrundlagen für UWP-Apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
-* [Richtlinien für Registerkarten und Pivots](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)
-* [Richtlinien für Navigationsbereiche](https://docs.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)
+* [Pivot](../controls-and-patterns/pivot.md)
+* [Navigationsansicht](../controls-and-patterns/navigationview.md)
