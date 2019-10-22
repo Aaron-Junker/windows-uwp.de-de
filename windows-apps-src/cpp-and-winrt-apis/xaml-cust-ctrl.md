@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, benutzerdefiniert, vorlagenbasiert, Steuerelement
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0b2d8fb17b90bc55834f6bf2200b22af9352ef6
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 6acbd62a8fa75eefb39598dd5bbb6ec1270388c4
+ms.sourcegitcommit: cc9f5a16386be78c12821a975e43497a0693abba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270082"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72578173"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT
 
@@ -22,6 +22,9 @@ Eines der leistungsstärksten Features der universellen Windows-Plattform (UWP) 
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Erstellen einer leeren App (BgLabelControlApp)
 Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein Projekt vom Typ **Leere App (C++/WinRT)** , und nenne es *BgLabelControlApp*. Führe den Buildvorgang für dein Projekt erst aus, wenn du weiter unten in diesem Thema dazu aufgefordert wirst.
+
+> [!NOTE]
+> Informationen zum Einrichten von Visual Studio für die C++/WinRT-Entwicklung&mdash;einschließlich Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen)&mdash; finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Wir erstellen eine neue Klasse, um ein benutzerdefiniertes (vorlagenbasiertes) Steuerelement darzustellen. Die Klasse wird innerhalb der gleichen Kompilierungseinheit erstellt und genutzt. Da diese Klasse jedoch per XAML-Markup instanziierbar sein soll, verwenden wir eine Laufzeitklasse. Und wir verwenden C++/WinRT, um sie zu schreiben und zu nutzen.
 
@@ -116,7 +119,7 @@ In dieser exemplarischen Vorgehensweise wird **OnLabelChanged** nicht verwendet.
 
 **BgLabelControl** legt in seinem Konstruktor einen Standardstilschlüssel für sich selbst fest. *Aber was ist ein Standardstil?* Ein benutzerdefiniertes (vorlagenbasiertes) Steuerelement muss über einen Standardstil (mit einer Standardvorlage für das Steuerelement) verfügen, mit dem es sich selbst rendern kann, falls der Consumer des Steuerelements keinen Stil und/oder keine Vorlage festlegt. In diesem Abschnitt fügen wir dem Projekt eine Markupdatei mit unserem Standardstil hinzu.
 
-Erstelle unter deinem Projektknoten einen neuen Ordner mit dem Namen „Themes”. Füge unter `Themes` ein neues Element vom Typ **Visual C++**  > **XAML** > **XAML-Ansicht** hinzu, und nenne es „Generic.xaml“. Ordner- und Dateiname müssen wie angegeben festgelegt werden, damit das XAML-Framework den Standardstil für ein benutzerdefiniertes Steuerelement findet. Lösche den Standardinhalt von `Generic.xaml`, und füge das folgende Markup ein:
+Erstelle unter deinem Projektknoten einen neuen Ordner (keinen Filter, sondern einen Ordner) mit dem Namen „Themes”. Füge unter `Themes` ein neues Element vom Typ **Visual C++**  > **XAML** > **XAML-Ansicht** hinzu, und nenne es „Generic.xaml“. Ordner- und Dateiname müssen wie angegeben festgelegt werden, damit das XAML-Framework den Standardstil für ein benutzerdefiniertes Steuerelement findet. Lösche den Standardinhalt von `Generic.xaml`, und füge das folgende Markup ein:
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
