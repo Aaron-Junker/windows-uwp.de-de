@@ -3,15 +3,15 @@ title: Broker Windows-Runtime Komponenten für eine neben geladene UWP-App
 description: In diesem Artikel wird ein von Windows 10 unterstütztes Unternehmensziel vorgestellt, das es Touchscreen ermöglicht, den vorhandenen Code zu verwenden, der für wichtige geschäftskritische Vorgänge verantwortlich ist.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: f6eda179a3fea0c24f3a9de0d674800bd3d2015c
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: b28df646bb505889626ced8591c5ef9e6ece3f44
+ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282320"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690346"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Broker Windows-Runtime Komponenten für eine neben geladene UWP-App
 
@@ -19,7 +19,7 @@ In diesem Artikel wird ein von Windows 10 unterstütztes Unternehmensziel vorges
 
 ## <a name="introduction"></a>Einführung
 
->**Hinweis**  Der Beispielcode, der diesem Whitepaper folgt, kann für [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample)heruntergeladen werden. Die Microsoft Visual Studio Vorlage zum Erstellen von Broker Windows-Runtime Komponenten kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
+>**Beachten Sie** , dass  The Beispielcode, der diesem Whitepaper folgt, für [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample)heruntergeladen werden kann. Die Microsoft Visual Studio-Vorlage für das Erstellen vermittelter Komponenten für Windows-Runtime kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents).
 
 Windows enthält ein neues Feature namens *Vermittelte Windows-Runtime-Komponenten für quergeladene Anwendungen*. Wir verwenden den Begriff „prozessübergreifende Kommunikation“ (Inter-Process Communication, IPC), um die Fähigkeit zu beschreiben, vorhandene Desktopsoftwareressourcen in einem einzigen Prozess (Desktopkomponente) auszuführen und gleichzeitig mit diesem Code in einer UWP-App zu interagieren. Dieses Modell ist Unternehmensentwicklern vertraut, da Datenbankanwendungen und Anwendungen, die NT-Dienste unter Windows verwenden, eine ähnliche, aus mehreren Prozessen bestehende Architektur verwenden.
 
@@ -28,11 +28,11 @@ Unternehmensspezifische Anwendungen gehören nicht in den allgemeinen Microsoft 
 
 Auf Daten ausgerichtete Anwendungen sind ein Hauptziel für diese Anwendungsarchitektur. Es ist vorgesehen, dass vorhandene Unternehmensregeln, die beispielsweise in SQL Server integriert sind, ein häufig verwendeter Teil der Desktopkomponente sind. Dies ist sicher nicht die einzige Art von Funktionalität, die die Desktopkomponente bietet, aber ein großer Teil der Notwendigkeit dieses Features beruht auf vorhandenen Daten und Unternehmenslogiken.
 
-Schließlich wurde dieses Feature aufgrund der überwältigenden Durchdringung der .NET-Laufzeit und der Programmiersprache C @ no__t-0 bei der Unternehmensentwicklung mit einem Schwerpunkt auf die Verwendung von .net für die UWP-APP und die Desktop Komponenten Seite entwickelt. Wenngleich andere Sprachen und Laufzeiten für die UWP-APP möglich sind, veranschaulicht das dazugehörige Beispiel nur C @ no__t-0 und ist ausschließlich auf die .NET-Laufzeit beschränkt.
+Schließlich wurde dieses Feature aufgrund der überwältigenden Durchdringung der .NET-Laufzeit und der C-\# Sprache in der Unternehmensentwicklung mit einem Schwerpunkt auf die Verwendung von .net für die UWP-APP und die Desktop Komponenten Seite entwickelt. Wenngleich andere Sprachen und Laufzeiten für die UWP-APP möglich sind, veranschaulicht das dazugehörige Beispiel nur C-\# und ist ausschließlich auf die .NET-Laufzeit beschränkt.
 
 ## <a name="application-components"></a>Anwendungskomponenten
 
->**Hinweis**  dieses Feature dient ausschließlich der Verwendung von .net. Sowohl die Client-App als auch die Desktopkomponente müssen mit .NET erstellt worden sein.
+>**Beachten Sie**  This Feature ausschließlich für die Verwendung von .NET verwendet wird. Sowohl die Client-App als auch die Desktopkomponente müssen mit .NET erstellt worden sein.
 
 **Anwendungsmodell**
 
@@ -40,13 +40,13 @@ Dieses Feature basiert auf der allgemeinen Anwendungsarchitektur, die als MVVM (
 
 **Desktop Komponente**
 
-Bei der Desktopkomponente in diesem Feature handelt es sich um einen neuen Anwendungstyp, der als Teil dieses Features eingeführt wird. Diese Desktop Komponente kann nur in C @ no__t-0 geschrieben werden und muss für Windows 10 auf .NET 4,6 oder höher ausgerichtet sein. Der Projekttyp ist ein Hybrid für die Common Language Runtime (CLR) für UWP, da das Format für die prozessübergreifende Kommunikation UWP-Typen und -Klassen enthält, während die Desktopkomponente alle Teile der .NET-Laufzeit-Klassenbibliothek aufrufen darf. Die Auswirkungen auf das Visual Studio-Projekt werden später ausführlich beschrieben. Diese Hybridkonfiguration ermöglicht den Aufruf von UWP-Typen für die auf den Desktopkomponenten basierenden Anwendung, während gleichzeitig der Desktop-CLR-Code innerhalb der Desktopkomponentenimplementierung aufgerufen werden kann.
+Bei der Desktopkomponente in diesem Feature handelt es sich um einen neuen Anwendungstyp, der als Teil dieses Features eingeführt wird. Diese Desktop Komponente kann nur in C-\# geschrieben werden und muss für Windows 10 auf .NET 4,6 oder höher ausgerichtet sein. Der Projekttyp ist ein Hybrid für die Common Language Runtime (CLR) für UWP, da das Format für die prozessübergreifende Kommunikation UWP-Typen und -Klassen enthält, während die Desktopkomponente alle Teile der .NET-Laufzeit-Klassenbibliothek aufrufen darf. Die Auswirkungen auf das Visual Studio-Projekt werden später ausführlich beschrieben. Diese Hybridkonfiguration ermöglicht den Aufruf von UWP-Typen für die auf den Desktopkomponenten basierenden Anwendung, während gleichzeitig der Desktop-CLR-Code innerhalb der Desktopkomponentenimplementierung aufgerufen werden kann.
 
 **Bedingungen**
 
-Der Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente wird mithilfe des UWP-Typsystems beschrieben. Dies umfasst das Deklarieren einer oder mehrerer C @ no__t-0-Klassen, die eine UWP darstellen können. Weitere Informationen finden Sie [im MSDN-Thema Erstellen von Windows-Runtime Komponenten in c @ no__t-1 und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) für eine bestimmte Anforderung zum Erstellen Windows-Runtime Klasse mithilfe von c @ no__t-2.
+Der Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente wird mithilfe des UWP-Typsystems beschrieben. Dies umfasst das Deklarieren einer oder mehrerer C-\# Klassen, die eine UWP darstellen können. Weitere Informationen finden Sie [im MSDN-Thema Erstellen von Windows-Runtime Komponenten in c \# und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) , um Windows-Runtime Klasse mithilfe von c \# zu erstellen.
 
->**Beachten Sie** , dass  enums im Windows-Runtime Components-Vertrag zwischen der Desktop Komponente und der sideloloaded-Anwendung zurzeit nicht unterstützt werden.
+>**Beachten Sie** , dass  Enums zurzeit nicht im Windows-Runtime Components-Vertrag zwischen der Desktop Komponente und der sideloloaded-Anwendung unterstützt werden.
 
 **Sideloloaded-Anwendung**
 
@@ -55,7 +55,7 @@ Bei der quergeladenen Anwendung handelt es sich in jeder Hinsicht um eine normal
 >**Hinweis**  Das Querladen kann in „Einstellungen &gt; Update & Sicherheit &gt; Für Entwickler“ aktiviert werden.
 
 Es muss unbedingt angemerkt werden, dass der im Lieferumfang von Windows 10 enthaltene App-Broker nur als 32-Bit-Version vorliegt. Die Desktopkomponente muss eine 32-Bit-Version sein.
-Quergeladene Anwendungen können als 64-Bit-Version vorliegen (vorausgesetzt, dass 64-Bit- und 32-Bit-Proxys registriert sind), aber dies wäre untypisch. Wenn Sie die Anwendung mit Sideloading in C @ no__t-0 mit der normalen "neutralen" Konfiguration und der Standardeinstellung "bevorzugtes 32-Bit" erstellen, werden auf natürliche Weise 32-Bit-Anwendungen erstellt.
+Quergeladene Anwendungen können als 64-Bit-Version vorliegen (vorausgesetzt, dass 64-Bit- und 32-Bit-Proxys registriert sind), aber dies wäre untypisch. Wenn Sie die Anwendung mit Sideloading in C \# mit der normalen "neutralen" Konfiguration und der Standardeinstellung "bevorzugtes 32-Bit" erstellen, werden auf natürliche Weise 32-Bit-Anwendungen erstellt.
 
 **Server Instanz und AppDomains**
 
@@ -66,11 +66,11 @@ Die Servercodeimplementierung kann auf mehrere App-Broker-Serverinstanzen vertei
 ## <a name="defining-the-contract"></a>Definieren des Vertrags
 
 Der erste Schritt beim Erstellen einer Anwendung mithilfe dieses Features besteht darin, einen Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente zu erstellen. Dies darf nur mit Windows-Runtime-Typen erfolgen.
-Glücklicherweise sind diese mithilfe von C @ no__t-0-Klassen leicht zu deklarieren. Es gibt wichtige jedoch wichtige Überlegungen hinsichtlich der Leistung, wenn diese Konversationen definiert werden, die in einem späteren Abschnitt behandelt werden.
+Glücklicherweise sind diese mithilfe von C-\# Klassen leicht zu deklarieren. Es gibt wichtige jedoch wichtige Überlegungen hinsichtlich der Leistung, wenn diese Konversationen definiert werden, die in einem späteren Abschnitt behandelt werden.
 
 Die Sequenz zum Definieren des Vertrags wird wie folgt eingeführt:
 
-**Schritt 1:** Erstellen Sie eine neue Klassenbibliothek in Visual Studio. Stellen Sie sicher, dass Sie das Projekt mit der **Klassen Bibliotheks** Vorlage und nicht mit der Vorlage für die **Windows-Runtime-Komponente** erstellen.
+**Schritt 1:** Erstellen Sie in Visual Studio eine neue Klassenbibliothek. Stellen Sie sicher, dass Sie das Projekt mit der **Klassen Bibliotheks** Vorlage und nicht mit der Vorlage für die **Windows-Runtime-Komponente** erstellen.
 
 In der Regel folgt an dieser Stelle eine Implementierung, in diesem Abschnitt wird jedoch lediglich die Definition des prozessübergreifenden Vertrags erläutert. Das Begleitbeispiel enthält die folgende Klasse (EnterpriseServer.cs), deren Anfangsform wie folgt aussieht:
 
@@ -106,11 +106,11 @@ Hierdurch wird die Klasse „EnterpriseServer“ definiert, die von der quergela
 
 Klicken Sie dazu in Visual Studio mit der rechten Maustaste auf das neu erstellte Projekt, und wählen Sie „Projekt entladen“ aus. Klicken Sie anschließend erneut mit der rechten Maustaste, und wählen Sie „EnterpriseServer.csproj bearbeiten“ aus, um die Projektdatei, eine XML-Datei, für die Bearbeitung zu öffnen.
 
-Suchen Sie in der geöffneten Datei nach dem Tag \<outputtype @ no__t-1, und ändern Sie dessen Wert in "winmdobj".
+Suchen Sie in der geöffneten Datei nach dem \<OutputType \>-Tag, und ändern Sie dessen Wert in "winmdobj".
 
-**Schritt 3:** Erstellen Sie eine Buildregel, die eine "Verweis"-Windows-Metadatendatei (winmd-Datei) erstellt. Das bedeutet, es gibt keine Implementierung.
+**Schritt 3:** Erstellen Sie eine Buildregel, die eine Windows-Metadatendatei (WINMD-Datei) als „Verweis“ erstellt. Das bedeutet, es gibt keine Implementierung.
 
-**Schritt 4:** Erstellen Sie eine Buildregel, die eine Windows-Metadatendatei "Implementation" erstellt, d.h. die gleichen Metadateninformationen enthält, aber auch die-Implementierung enthält.
+**Schritt 4:** Erstellen Sie eine Buildregel, die eine Windows-Metadatendatei für die „Implementierung“ erstellt, d. h., sie enthält dieselben Metadateninformationen und dazu die Implementierung.
 
 Dies erfolgt durch die folgenden Skripts. Fügen Sie die Skripts der Befehlszeile nach dem Build-Ereignis im Projekt **Eigenschaften** > **Buildereignisse** hinzu.
 
@@ -181,11 +181,11 @@ Die Kategorie lautet „inProcessServer“, da die outOfProcessServer-Kategorie 
 
 Der <ActivatableClass>-Abschnitt entspricht einer echten prozessinternen RuntimeClass, die von einer Windows-Runtime-Komponente im App-Paket bevorzugt wird. <ActivatableClassAttribute> ist ein neues Element, und die Attribute Name = "desktopapplicationpath" und Type = "String" sind obligatorisch und invariant. Das Value-Attribut verweist auf den Ort, an dem sich die winmd-Implementierungsdatei der Desktopkomponente befindet (weitere Einzelheiten hierzu finden Sie im folgenden Abschnitt). Jede von der Desktopkomponente bevorzugte RuntimeClass sollte eine eigene <ActivatableClass>-Elementstruktur besitzen. Die ActivatableClassId muss dem vollständig qualifizierten Namespacenamen der RuntimeClass entsprechen.
 
-Wie im Abschnitt „Definieren des Vertrags“ erwähnt wurde, muss ein Projektverweis auf die winmd-Verweisdatei der Desktopkomponente vorgenommen werden. Das Visual Studio-Projektsystem erstellt normalerweise eine aus zwei Ebenen bestehende Verzeichnisstruktur mit demselben Namen. Im Beispiel ist dies enterpriseipcapplication @ no__t-0enterpriseipcapplication. Die **winmd**-Verweisdatei wird manuell in dieses Verzeichnis der zweiten Ebene kopiert. Anschließend wird das Dialogfeld „Projektverweise“ verwendet (klicken Sie auf die Schaltfläche **Durchsuchen**...), um diese **winmd**-Datei zu suchen und zu referenzieren. Danach sollte der Namespace auf oberster Ebene der Desktop Komponente (z. b. fabrikam) als Knoten der obersten Ebene im Verweis Teil des Projekts angezeigt werden.
+Wie im Abschnitt „Definieren des Vertrags“ erwähnt wurde, muss ein Projektverweis auf die winmd-Verweisdatei der Desktopkomponente vorgenommen werden. Das Visual Studio-Projektsystem erstellt normalerweise eine aus zwei Ebenen bestehende Verzeichnisstruktur mit demselben Namen. Im Beispiel ist es enterpriseipcapplication \\EnterpriseIPCApplication. Die **winmd**-Verweisdatei wird manuell in dieses Verzeichnis der zweiten Ebene kopiert. Anschließend wird das Dialogfeld „Projektverweise“ verwendet (klicken Sie auf die Schaltfläche **Durchsuchen**...), um diese **winmd**-Datei zu suchen und zu referenzieren. Danach sollte der Namespace auf oberster Ebene der Desktop Komponente (z. b. fabrikam) als Knoten der obersten Ebene im Verweis Teil des Projekts angezeigt werden.
 
->**Hinweis** Es ist sehr wichtig, die **WINMD-Verweisdatei** in der quergeladenen Anwendung zu verwenden. Wenn Sie versehentlich die **WINMD-Implementierungsdatei** in das Verzeichnis mit der quergeladenen App übernehmen und auf sie verweisen, wird wahrscheinlich ein Fehler wie „IStringable wurde nicht gefunden“ angezeigt. Dies ist ein sicheres Zeichen dafür, dass auf die falsche **WINMD-Datei** verwiesen wurde. Die Postbuildregeln in der IPC-Server-App (im folgenden Abschnitt ausführlich erläutert) trennen diese beiden **WINMD**-Dateien sorgfältig in zwei separaten Verzeichnissen.
+>**Hinweis**  Es ist sehr wichtig, die **WINMD-Verweisdatei** in der quergeladenen Anwendung zu verwenden. Wenn Sie versehentlich die **WINMD-Implementierungsdatei** in das Verzeichnis mit der quergeladenen App übernehmen und auf sie verweisen, wird wahrscheinlich ein Fehler wie „IStringable wurde nicht gefunden“ angezeigt. Dies ist ein sicheres Zeichen dafür, dass auf die falsche **WINMD-Datei** verwiesen wurde. Die Postbuildregeln in der IPC-Server-App (im folgenden Abschnitt ausführlich erläutert) trennen diese beiden **WINMD**-Dateien sorgfältig in zwei separaten Verzeichnissen.
 
-Umgebungsvariablen (insbesondere% Program Files%) kann in <ActivatableClassAttribute Value="path"> verwendet werden. Wie bereits erwähnt, unterstützt der APP-Broker nur 32-Bit, sodass% Program Files% in C: \\program-Dateien (x86) aufgelöst werden, wenn die Anwendung auf einem 64-Bit-Betriebssystem ausgeführt wird.
+Umgebungsvariablen (insbesondere% Program Files%) kann in <ActivatableClassAttribute Value="path"> verwendet werden. Wie bereits erwähnt, unterstützt der APP-Broker nur 32-Bit, sodass% Program Files% in C: \\Program-Dateien (x86) aufgelöst werden, wenn die Anwendung auf einem 64-Bit-Betriebssystem ausgeführt wird.
 
 ## <a name="desktop-ipc-server-detail"></a>Desktop-IPC-Serverdetail
 
@@ -194,7 +194,7 @@ In der Regel wird bei einem Visual Studio-Projekt mit .NET eines von zwei „Pro
 Eines ist für den Desktop („.NetFramework“) und eines ist auf den UWP-App-Teil der CLR ausgerichtet („.NetCore“). Bei einer Desktopkomponente in diesem Feature handelt es sich um einen Hybrid aus diesen beiden. Daher wird der Verweisabschnitt sehr sorgfältig konstruiert, um diese beiden Profile zu mischen.
 
 Ein normales UWP-App-Projekt enthält keine expliziten Projektverweise, da die gesamte Windows-Runtime-API-Oberfläche implizit enthalten ist.
-In der Regel werden nur andere projektübergreifenden Verweise vorgenommen. Ein Desktopkomponentenprojekt verfügt jedoch über einen sehr speziellen Satz an Verweisen. Die Lebensdauer beginnt als "klassisches Desktop @ no__t-0class Library"-Projekt und ist daher ein Desktop Projekt. Deshalb müssen explizite Verweise auf die Windows-Runtime-API (mithilfe von Verweisen auf **WINMD**-Dateien) vorgenommen werden. Fügen Sie die korrekten Verweise wie unten gezeigt hinzu.
+In der Regel werden nur andere projektübergreifenden Verweise vorgenommen. Ein Desktopkomponentenprojekt verfügt jedoch über einen sehr speziellen Satz an Verweisen. Die Lebensdauer wird als "klassisches Desktop \\Class Library"-Projekt gestartet und ist daher ein Desktop Projekt. Deshalb müssen explizite Verweise auf die Windows-Runtime-API (mithilfe von Verweisen auf **WINMD**-Dateien) vorgenommen werden. Fügen Sie die korrekten Verweise wie unten gezeigt hinzu.
 
 ```XML
 <ItemGroup>
@@ -406,8 +406,8 @@ In der Regel werden nur andere projektübergreifenden Verweise vorgenommen. Ein 
 
 Die oben erwähnten Verweise sind eine sorgfältige Mischung aus Verweisen, die für die korrekte Ausführung dieses Hybridservers entscheidend sind. Das normale Verfahren besteht darin, die CSPROJ-Datei (wie für die Bearbeitung des Projekts OutputType beschrieben) zu öffnen und diese Verweise wie erforderlich hinzuzufügen.
 
-Sobald die Verweise korrekt konfiguriert wurden, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Weitere Informationen finden Sie im MSDN [-Thema bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWP-apps mit CC++ @ no__t-1/VB/und XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
-Die Aufgabe besteht darin, eine Windows-Runtime-Komponenten-DLL zu erstellen, die Desktopcode als Teil der Implementierung aufrufen kann. Das Begleitbeispiel enthält die in der Windows-Runtime verwendeten Hauptmuster:
+Sobald die Verweise korrekt konfiguriert wurden, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Weitere Informationen finden [Sie im Thema bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWPC++ -apps mit C \#/VB/und XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
+Die Aufgabe besteht darin, eine DLL-Datei für die Komponente für Windows-Runtime zu erstellen, die Desktopcode als Teil der Implementierung aufrufen kann. Das Begleitbeispiel enthält die in der Windows-Runtime verwendeten Hauptmuster:
 
 -   Methodenaufrufe
 
@@ -453,7 +453,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**Hinweis** Beachten Sie, dass es beim Schreiben der Implementierung normal ist, auf andere Vorgänge mit potenziell langer Ausführungsdauer zu warten. In diesem Fall muss der **Task.Run**-Code deklariert werden:
+>**Hinweis**  Beachten Sie, dass es beim Schreiben der Implementierung normal ist, auf andere Vorgänge mit potenziell langer Ausführungsdauer zu warten. In diesem Fall muss der **Task.Run**-Code deklariert werden:
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -468,7 +468,7 @@ Clients dieser asynchronen Methode können wie bei jedem anderen asynchronen Win
 
 **Server Funktionalität aus einem Anwendungs Hintergrund Thread abrufen**
 
-Da Client und Server in der Regel von derselben Organisation geschrieben werden, kann eine Programmiermethode angewendet werden, bei der alle Aufrufe an den Server durch einen Hintergrundthread in der quergeladenen Anwendung erfolgen. Ein direkter Aufruf, bei dem ein oder mehrere Datenstapel vom Server abgerufen werden, kann über einen Hintergrundthread erfolgen. Wenn die Ergebnisse vollständig abgerufen wurden, kann der Datenstapel, der sich im Speicher des Anwendungsprozesses befindet, in der Regel direkt über den Benutzeroberflächen-Thread abgerufen werden. C @ no__t-0-Objekte sind natürlich zwischen Hintergrundthreads und Benutzeroberflächenthreads flexibel und somit besonders nützlich für diese Art von Aufruf Mustern.
+Da Client und Server in der Regel von derselben Organisation geschrieben werden, kann eine Programmiermethode angewendet werden, bei der alle Aufrufe an den Server durch einen Hintergrundthread in der quergeladenen Anwendung erfolgen. Ein direkter Aufruf, bei dem ein oder mehrere Datenstapel vom Server abgerufen werden, kann über einen Hintergrundthread erfolgen. Wenn die Ergebnisse vollständig abgerufen wurden, kann der Datenstapel, der sich im Speicher des Anwendungsprozesses befindet, in der Regel direkt über den Benutzeroberflächen-Thread abgerufen werden. C-\# Objekte sind natürlich flexibel zwischen Hintergrundthreads und Benutzeroberflächenthreads und sind daher besonders nützlich für diese Art von Aufruf Mustern.
 
 ## <a name="creating-and-deploying-the-windows-runtime-proxy"></a>Erstellen und Bereitstellen des Windows-Runtime-Proxys
 
@@ -479,27 +479,27 @@ Da die IPC-Methode das Marshalling von Windows-Runtime-Schnittstellen zwischen z
 Der Prozess zum Erstellen und Registrieren von Proxys und stubys für die Verwendung in einem regulären UWP-App-Paket wird im Thema zum Erstellen von [Ereignissen in Windows-Runtime Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140))beschrieben.
 Die in diesem Artikel beschriebenen Schritte sind komplizierter als der nachfolgend beschriebene Prozess, da sie das Registrieren des Proxys/Stubs innerhalb des Anwendungspakets enthalten (im Gegensatz zur globalen Registrierung).
 
-**Schritt 1:** Erstellen Sie in Visual Studio mithilfe der Projekt Mappe für das Desktop Komponenten Projekt ein Proxy-/Stubprojekt:
+**Schritt 1:** Erstellen Sie mithilfe der Projektmappe für das Desktopkomponentenprojekt ein Proxy-/Stub-Projekt in Visual Studio:
 
 **Projekt Mappe > > Projekt hinzufügen C++ > Visual > Win32-Konsole wählen Sie dll-Option aus.**
 
 Bei den nachfolgenden Schritten wird davon ausgegangen, dass der Name der Serverkomponente **MyWinRTComponent** lautet.
 
-**Schritt 3:** Löschen Sie alle cpp/H-Dateien aus dem Projekt.
+**Schritt 3:** Löschen Sie alle CPP/H-Dateien im Projekt.
 
-**Schritt 4:** Der vorherige Abschnitt "definieren des Vertrags" enthält einen Postbuildbefehl, der " **winmdidl. exe**", " **Mittel l. exe**", " **mdmerge. exe**" und so weiter ausführt. Eine der Ausgaben des midl-Schritts dieses Postbuildbefehls generiert vier wichtige Ausgaben:
+**Schritt 4:** Der vorherige Abschnitt „Definieren des Vertrags“ enthält einen Postbuildbefehl, der **winmdidl.exe**, **midl.exe**, **mdmerge.exe** usw. ausführt. Eine der Ausgaben des midl-Schritts dieses Postbuildbefehls generiert vier wichtige Ausgaben:
 
 a) Dlldata.c
 
 b) eine Header Datei (z. b. mywinrtcomponent. h)
 
-c) A \* @ no__t-1i. c-Datei (z. b. mywinrtcomponent @ no__t-2i. c)
+c) A \* \_i. c-Datei (z. b. mywinrtcomponent \_i. c)
 
-d) A \* @ no__t-1P. c-Datei (z. b. mywinrtcomponent @ no__t-2P. c)
+d) A \* \_p. c-Datei (z. b. mywinrtcomponent \_p. c)
 
-**Schritt 5:** Fügen Sie diese vier generierten Dateien dem Projekt "mywinrtproxy" hinzu.
+**Schritt 5:** Fügen Sie diese vier generierten Dateien dem Projekt „MyWinRTProxy“ hinzu.
 
-**Schritt 6:** Fügen Sie dem Projekt "mywinrtproxy" eine DEF-Datei hinzu **(Projekt > Neues Element > Code > Modul Definitionsdatei hinzufügen**), und aktualisieren Sie den Inhalt wie folgt:
+**Schritt 6:** Fügen Sie dem Projekt „MyWinRTProxy“ eine Definitionsdatei hinzu **(Projekt/Neues Element hinzufügen/Code/Moduldefinitionsdatei)** , und aktualisieren Sie den Inhalt wie folgt:
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -513,7 +513,7 @@ DllRegisterServer PRIVATE
 
 DllUnregisterServer PRIVATE
 
-**Schritt 7:** Öffnen Sie die Eigenschaften für das Projekt "mywinrtproxy":
+**Schritt 7:** Öffnen Sie Eigenschaften für das Projekt „MyWinRTProxy“:
 
 **Comfiguration-Eigenschaften > allgemeiner > Zielname:**
 
@@ -521,17 +521,17 @@ MyWinRTComponent.Proxies
 
 **Präprozessordefinitionen für C/C++ > > Hinzufügen**
 
-"WIN32; \_WINDOWS; REGISTER @ NO__T-1PROXY @ NO__T-2DLL "
+Win32 \_WINDOWS; Registrieren Sie \_PROXY \_DLL "
 
-vorkompilierter @no__t-C++ 0C/>-Header: Select "not using prekompiliert Header" **
+**Vorkompilierter C/>-C++ Header: Wählen Sie "nicht verwendeten vorkompilierten Header" aus.**
 
-**linker > Allgemein > Import Bibliothek ignorieren: Wählen Sie "Ja"**  aus.
+**Linker > Allgemein > Import Bibliothek ignorieren: Klicken Sie auf "Ja".**
 
-**linker > Eingabe > zusätzlichen Abhängigkeiten: Add rpcrt4. lib; runtimeobject. lib @ no__t-0
+**Linker > Eingabe > zusätzliche Abhängigkeiten: Add rpcrt4. lib; runtimeobject. lib**
 
-**linker > Windows-Metadaten > Generieren von Windows-Metadaten: Wählen Sie "Nein"**  aus.
+**Linker > Windows-Metadaten > Generieren von Windows-Metadaten: Wählen Sie "Nein" aus.**
 
-**Schritt 8:** Erstellen Sie das Projekt "mywinrtproxy".
+**Schritt 8:** Erstellen Sie das Projekt „MyWinRTProxy“.
 
 **Proxy Bereitstellung**
 
@@ -565,7 +565,7 @@ struct PersonStruct
 }
 ```
 
-Geben Sie dann * personstruct @ no__t-0 @ no__t-1 * anstelle von *List @ no__t-3personobject @ no__t-4*zurück.
+Geben Sie dann * personstruct \[ \] * anstelle von *List &lt;PersonObject &gt;* zurück.
 Dadurch werden alle Daten in einem prozessübergreifenden Hop verteilt.
 
 Wie bei allen Überlegungen in Bezug auf die Leistung sind Messungen und Tests erforderlich. Idealerweise sollte eine Telemetrie in die zahlreichen Vorgänge integriert werden, um deren Dauer zu ermitteln. Dabei ist es wichtig, einen Bereich zu messen: Wie lange dauert es beispielsweise tatsächlich, bis alle *People*-Objekte von einer bestimmten Warteschlange in der quergeladenen Anwendung verarbeitet wurden?
@@ -580,7 +580,7 @@ Wenn Sie Änderungen am Server vornehmen, müssen Sie sicherstellen, dass zuvor 
 Der Serverprozess kann im Task-Manager oder in anderen Drittanbieter-Apps aufgesucht und beendet werden. Das Befehlszeilentool **TaskList.exe **ist ebenfalls enthalten; es weist eine flexible Syntax wie die Folgende auf:
 
   
- | **Befehl** | **Aktion** |
+ | **S** | **Aktion** |
  | ------------| ---------- |
  | tasklist | Listet alle ausgeführten Prozesse in annähernder Reihenfolge des Erstellungszeitpunkts auf, wobei die zuletzt erstellten Prozesse unten aufgeführt werden. |
  | tasklist /FI "IMAGENAME eq dllhost.exe" /M | Listet Informationen zu allen Instanzen von „dllhost.exe“ auf. Vom /M-Schalter werden die von ihnen geladenen Module aufgelistet. |

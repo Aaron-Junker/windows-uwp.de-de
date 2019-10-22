@@ -9,17 +9,17 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, Windows-Benachrichtigungsdienst, Benachrichtigung, Windows, Firewall, Problembehandlung, IP, Datenverkehr, Unternehmen, Netzwerk, IPv4, VIP, FQDN, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ba6d2e678eee0d851b4f2e3897f9fc067b74580
-ms.sourcegitcommit: 3360db6bc975516e01913d3d73599c964a411052
+ms.openlocfilehash: c3774164d16e86a88f45eb50030beec099629d6f
+ms.sourcegitcommit: 738bab9a088a244a7a212dcac6fb3560c547b8d5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70296983"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695762"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Unternehmens Firewall-und Proxy Konfigurationen zur Unterstützung von WNS-Datenverkehr
 
 ## <a name="background"></a>Hintergrund
-Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk Datenverkehr. Leider können dadurch auch wichtige Dinge wie die Kommunikation mit dem Windows-Benachrichtigungsdienst blockiert werden. Dies bedeutet, dass alle über WNS gesendeten Benachrichtigungen in bestimmten Netzwerkkonfigurationen abgelegt werden. Um dies zu vermeiden, können Netzwerkadministratoren die Liste der genehmigten WNS-Kanäle zur Ausnahmeliste hinzufügen, damit der WNS-Datenverkehr die Firewall durchlaufen kann. Im folgenden finden Sie weitere Details dazu, wie und was hinzugefügt werden muss, sowie Unterstützung für verschiedene Proxy Typen.
+Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk Datenverkehr. Leider können dadurch auch wichtige Dinge wie die Kommunikation mit dem Windows-Benachrichtigungsdienst blockiert werden. Dies bedeutet, dass alle über WNS gesendeten Benachrichtigungen in bestimmten Netzwerkkonfigurationen abgelegt werden. Um dies zu vermeiden, können Netzwerkadministratoren die Liste der genehmigten WNS-FQDNs oder VIPs zur Ausnahmeliste hinzufügen, damit der WNS-Datenverkehr durch die Firewall geleitet wird. Im folgenden finden Sie weitere Details dazu, wie und was hinzugefügt werden muss, sowie Unterstützung für verschiedene Proxy Typen.
 
 ## <a name="proxy-support"></a>Proxy Unterstützung
 
@@ -36,11 +36,11 @@ Im folgenden finden Sie eine Liste, die die FQDNs, VIPs und IP-Adressbereiche en
 > Es wird dringend empfohlen, die Liste nach voll qualifizierten Namen zuzulassen, da sich diese nicht ändern. Wenn Sie die Liste nach FQDN zulassen, müssen Sie auch die IP-Adressbereiche nicht zulassen.
 
 > [!IMPORTANT]
-> Die IP-Adressbereiche werden regelmäßig geändert. aus diesem Grund sind Sie auf dieser Seite nicht enthalten. Wenn Sie die Liste der IP-Adressbereiche anzeigen möchten, können Sie die Datei aus dem Download Center herunterladen: [VIP-und IP-Adressbereiche für Windows Notification Service (WNS)](https://www.microsoft.com/download/details.aspx?id=44238). Überprüfen Sie regelmäßig, ob Sie über die aktuellsten Informationen verfügen. 
+> Die IP-Adressbereiche werden regelmäßig geändert. aus diesem Grund sind Sie auf dieser Seite nicht enthalten. Wenn Sie die Liste der IP-Adressbereiche anzeigen möchten, können Sie die Datei aus dem Download Center herunterladen: [Windows Notification Service (WNS) VIP und IP-Bereiche](https://www.microsoft.com/download/details.aspx?id=44238). Überprüfen Sie regelmäßig, ob Sie über die aktuellsten Informationen verfügen. 
 
 
 ### <a name="fqdns-vips-and-ips"></a>Voll qualifizierte DNS, VIPs und IPS
-Jedes der Elemente im folgenden XML-Dokument wird in der folgenden Tabelle erläutert (in [Begriffen und Notizen](#terms-and-notations)). Die IP-Adressbereiche wurden absichtlich nicht in diesem Dokument ausgelassen, damit Sie nur die FQDNs verwenden können, da die FQDNs konstant bleiben. Allerdings können Sie die XML-Datei mit der kompletten Liste aus dem Download Center herunterladen: [VIP-und IP-Adressbereiche für Windows Notification Service (WNS)](https://www.microsoft.com/download/details.aspx?id=44238). Neue VIPs oder IP-Adressbereiche werden **eine Woche nach dem Hochladen wirksam**.
+Jedes der Elemente im folgenden XML-Dokument wird in der folgenden Tabelle erläutert (in [Begriffen und Notizen](#terms-and-notations)). Die IP-Adressbereiche wurden absichtlich nicht in diesem Dokument ausgelassen, damit Sie nur die FQDNs verwenden können, da die FQDNs konstant bleiben. Allerdings können Sie die XML-Datei mit der kompletten Liste aus dem Download Center herunterladen: [Windows Notification Service (WNS) VIP und IP-Bereiche](https://www.microsoft.com/download/details.aspx?id=44238). Neue VIPs oder IP-Adressbereiche werden **eine Woche nach dem Hochladen wirksam**.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +78,7 @@ Im folgenden finden Sie Erläuterungen zu den im obigen XML-Code Ausschnitt verw
 
 
 ## <a name="microsoft-push-notifications-service-mpns-public-ip-ranges"></a>Öffentliche IP-Adressbereiche von Microsoft Push Notification Service (mpns)
-Wenn Sie den Legacy-Benachrichtigungsdienst (mpns) verwenden, sind die IP-Adressbereiche, die Sie der Zulassungsliste hinzufügen müssen, im Download Center verfügbar: [Öffentliche IP-Adressbereiche des Microsoft Push Notification Service (mpns)](https://www.microsoft.com/download/details.aspx?id=44535).
+Wenn Sie den Legacy-Benachrichtigungsdienst (mpns) verwenden, sind die IP-Adressbereiche, die Sie der Zulassungsliste hinzufügen müssen, im Download Center verfügbar: [öffentliche IP-Adressbereiche des Microsoft-pushbenachrichtigungsdiensts (mpns)](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
 ## <a name="related-topics"></a>Verwandte Themen
