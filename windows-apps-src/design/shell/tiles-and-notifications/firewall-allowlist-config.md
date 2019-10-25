@@ -21,7 +21,7 @@ ms.locfileid: "72695762"
 ## <a name="background"></a>Hintergrund
 Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk Datenverkehr. Leider können dadurch auch wichtige Dinge wie die Kommunikation mit dem Windows-Benachrichtigungsdienst blockiert werden. Dies bedeutet, dass alle über WNS gesendeten Benachrichtigungen in bestimmten Netzwerkkonfigurationen abgelegt werden. Um dies zu vermeiden, können Netzwerkadministratoren die Liste der genehmigten WNS-FQDNs oder VIPs zur Ausnahmeliste hinzufügen, damit der WNS-Datenverkehr durch die Firewall geleitet wird. Im folgenden finden Sie weitere Details dazu, wie und was hinzugefügt werden muss, sowie Unterstützung für verschiedene Proxy Typen.
 
-## <a name="proxy-support"></a>Proxy Unterstützung
+## <a name="proxy-support"></a>Proxyunterstützung
 
 > [!Note]
 > Windows-Clients unterstützen **nicht** alle Proxys, die Verbindung mit WNS muss eine direkte Verbindung sein.
@@ -68,7 +68,7 @@ Jedes der Elemente im folgenden XML-Dokument wird in der folgenden Tabelle erlä
 ### <a name="terms-and-notations"></a>Nutzungsbedingungen
 Im folgenden finden Sie Erläuterungen zu den im obigen XML-Code Ausschnitt verwendeten Notations-und Element Elementen.
 
-| Begriff | Erläuterung |
+| Laufzeit | Erklärung |
 |---|---|
 | **Punkt-Dezimal Schreibweise (d. h. 64.4.28.0/26)** | Mit der Punkt-Dezimal Schreibweise kann der Bereich der IP-Adressen beschrieben werden. 64.4.28.0/26 bedeutet beispielsweise, dass die ersten 26 Bits von 64.4.28.0 konstant sind, während die letzten 6 Bits variabel sind.  In diesem Fall ist der IPv4-Bereich 64.4.28.0-64.4.28.63. |
 | **Clientdns** | Dies sind die voll qualifizierten Domänen Namen (FQDN)-Filter für die Client Geräte (Windows-PCs, Desktops), die Benachrichtigungen von WNS empfangen. Diese müssen über die Firewall zugelassen werden, damit WNS-Clients die WNS-Funktionalität verwenden können.  Es wird empfohlen,-List durch die FQDNs anstelle der IP-/VIP-Bereiche zuzulassen, da diese nie geändert werden. |

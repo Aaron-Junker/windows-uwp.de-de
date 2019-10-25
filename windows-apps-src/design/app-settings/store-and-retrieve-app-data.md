@@ -1,6 +1,6 @@
 ---
-Description: Hier erfahren Sie, wie Sie lokale, Roaming- und temporäre App-Daten speichern und abrufen können.
-title: Speichern und Abrufen von Einstellungen und anderen App-Daten
+Description: Erfahren Sie, wie Sie lokale Daten, Roamingdaten und temporäre App-Daten speichern und abrufen.
+title: Speichern und Abrufen von Einstellungen und anderen APP-Daten
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
@@ -15,49 +15,49 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 10/21/2019
 ms.locfileid: "72690365"
 ---
-# <a name="store-and-retrieve-settings-and-other-app-data"></a>Speichern und Abrufen von Einstellungen und anderen App-Daten
+# <a name="store-and-retrieve-settings-and-other-app-data"></a>Speichern und Abrufen von Einstellungen und anderen APP-Daten
 
-*App-Daten* sind änderbare Daten, die von einer bestimmten App erstellt und verwaltet werden. Es umfasst den Lauf Zeit Zustand, App-Einstellungen, Benutzereinstellungen, Referenz Inhalte (z. b. die Wörterbuchdefinitionen in einer Wörterbuch-App) und andere Einstellungen. App-Daten unterscheiden sich von *Benutzerdaten*, Daten, die der Benutzer beim Verwenden einer App erstellt und verwaltet. Benutzerdaten umfassen Dokument- oder Mediendateien, E-Mail- oder Kommunikationstranskripte oder Datenbankeinträge, mit vom Benutzer erstellte Inhalte enthalten. Benutzerdaten können für mehrere Apps nützlich oder von Bedeutung sein. Häufig handelt es sich dabei um Daten, die der Benutzer als von der App unabhängige Entität ändern oder übertragen möchte (z. B. ein Dokument).
+*App-Daten* sind änderbare Daten, die von einer bestimmten App erstellt und verwaltet werden. Es umfasst den Lauf Zeit Zustand, App-Einstellungen, Benutzereinstellungen, Referenz Inhalte (z. b. die Wörterbuchdefinitionen in einer Wörterbuch-App) und andere Einstellungen. App-Daten unterscheiden sich von *Benutzerdaten*, Daten, die der Benutzer erstellt und verwaltet, wenn Sie eine APP verwenden. Zu den Benutzerdaten gehören Dokument-oder Mediendateien, e-Mail-oder kommunikationstranskriptionen oder Datenbankeinträge, die vom Benutzer erstellte Inhalte enthalten. Benutzerdaten können für mehr als eine App nützlich oder sinnvoll sein. Häufig handelt es sich hierbei um Daten, die der Benutzer als Entität unabhängig von der APP selbst (z. b. ein Dokument) bearbeiten oder übertragen möchte.
 
-**Wichtiger Hinweis zu App-Daten:** Die Lebensdauer der App-Daten ist an die Lebensdauer der App gebunden. Wenn die App entfernt wird, gehen auch alle App-Daten verloren. Verwenden Sie App-Daten nicht zum Speichern von Benutzerdaten oder anderen Daten, die Benutzer als wertvoll und unersetzlich betrachten. Solche Informationen sollten in den Bibliotheken des Benutzers und auf Microsoft OneDrive gespeichert werden. App-Daten eignen sich perfekt zum Speichern von App-spezifischen (Benutzer-)Einstellungen und Favoriten.
+**Wichtiger Hinweis zu app-Daten:** Die Lebensdauer der APP-Daten ist an die Lebensdauer der APP gebunden. Wenn die APP entfernt wird, gehen alle App-Daten als Folge verloren. Verwenden Sie keine app-Daten zum Speichern von Benutzerdaten oder etwas, das Benutzer als wertvoll und unersetzlich betrachten können. Es wird empfohlen, dass die Bibliotheken des Benutzers und Microsoft onedrive verwendet werden, um diese Art von Informationen zu speichern. App-Daten eignen sich ideal zum Speichern von App-spezifischen Benutzereinstellungen, Einstellungen und Favoriten.
 
-## <a name="types-of-app-data"></a>App-Datentypen
+## <a name="types-of-app-data"></a>Typen von App-Daten
 
 Es gibt zwei Arten von App-Daten: Einstellungen und Dateien.
 
-### <a name="settings"></a>„Einstellungen“
+### <a name="settings"></a>Einstellungen
 
-Verwenden Sie die Einstellungen zum Speichern von Benutzereinstellungen und Anwendungsstatus-Informationen. Mit der App-Daten-API können Sie ganz einfach Einstellungen erstellen und abrufen (später in diesem Artikel zeigen wir Ihnen einige Beispiele dazu).
+Verwenden Sie die Einstellungen, um Benutzereinstellungen und Anwendungs Zustandsinformationen zu speichern. Mit der APP Data-API können Sie problemlos Einstellungen erstellen und abrufen (einige Beispiele finden Sie weiter unten in diesem Artikel).
 
-Im Folgenden finden Sie Datentypen, die Sie für App-Einstellungen verwenden können:
+Die folgenden Datentypen können Sie für App-Einstellungen verwenden:
 
 - **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
-- **Booleschen**
-- **Char16**, **String**
+- **Boolescher Wert**
+- **Char16**, **Zeichenfolge**
 - [**DateTime**](/uwp/api/Windows.Foundation.DateTime), [ **TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
     - Verwenden C#Sie für/.net Folgendes: [**System. DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0), [**System. TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
-- **GUID**, [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-- [**Applicationdatacompositevalue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue): ein Satz verwandter App-Einstellungen, die atomarisch serialisiert und deserialisiert werden müssen. Verwenden Sie Verbundeinstellungen, um atomische Aktualisierungen voneinander abhängiger Einstellungen problemlos behandeln zu können. Das System stellt die Integrität von Verbundeinstellungen bei gleichzeitigem Zugriff und Roaming sicher. Verbundeinstellungen sind für kleine Datenmengen vorgesehen. Bei Verwendung für große Datasets kann die Leistung beeinträchtigt werden.
+- **GUID**, [**Punkt**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [**Größe**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size), [**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
+- [**Applicationdatacompositevalue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue): ein Satz verwandter App-Einstellungen, die atomarisch serialisiert und deserialisiert werden müssen. Verwenden Sie zusammengesetzte Einstellungen, um atomarische Updates von voneinander abhängigen Einstellungen problemlos zu verarbeiten. Das System stellt die Integrität der zusammengesetzten Einstellungen während des gleichzeitigen Zugriffs und Roamings sicher. Zusammengesetzte Einstellungen sind für kleine Datenmengen optimiert, und die Leistung kann gering sein, wenn Sie für große Datasets verwendet werden.
 
 ### <a name="files"></a>Dateien
 
-Verwenden Sie Dateien zum Speichern von Binärdaten oder zum Aktivieren Ihrer eigenen, benutzerdefinierten, serialisierten Typen.
+Verwenden Sie Dateien zum Speichern von Binärdaten oder zum Aktivieren eigener, angepasster serialisierter Typen.
 
-## <a name="storing-app-data-in-the-app-data-stores"></a>Speichern von App-Daten in den App-Datenspeichern
+## <a name="storing-app-data-in-the-app-data-stores"></a>Speichern von App-Daten in App-Daten speichern
 
 
-Bei der Installation einer App weist das System der App eigene, benutzerspezifische Datenspeicher für Einstellungen und Dateien zu. Sie müssen nicht wissen, wo und wie diese Daten vorhanden ist, da das System für die Verwaltung des physischen Speichers zuständig ist. Damit wird sichergestellt, dass die Daten von anderen Apps und anderen Benutzern isoliert gehalten werden. Das System behält außerdem den Inhalt dieser Datenspeicher bei, wenn der Benutzer ein App-Update installiert, und entfernt den Inhalt dieser Datenspeicher vollständig und sauber, wenn die App deinstalliert wird.
+Wenn eine APP installiert ist, gibt das System Ihr eigene benutzerspezifische Datenspeicher für Einstellungen und Dateien an. Sie müssen nicht wissen, wo oder wie diese Daten vorhanden sind, da das System für die Verwaltung des physischen Speichers zuständig ist, und sicherstellen, dass die Daten von anderen apps und anderen Benutzern isoliert werden. Das System behält auch den Inhalt dieser Datenspeicher bei, wenn der Benutzer ein Update für Ihre APP installiert und den Inhalt dieser Datenspeicher vollständig und ordnungsgemäß entfernt, wenn Ihre APP deinstalliert wird.
 
-Jede App verfügt in ihrem jeweiligen App-Datenspeicher über systemdefinierte Stammverzeichnisse: eines für lokale Dateien, eines für Roamingdateien und eines für temporäre Dateien. Ihre App kann den Stammverzeichnissen neue Dateien und Container hinzufügen.
+Innerhalb des App-Datenspeicher verfügt jede APP über System definierte Stamm Verzeichnisse: eine für lokale Dateien, eine für roamingdateien und eine für temporäre Dateien. Ihre APP kann jedem dieser Stamm Verzeichnisse neue Dateien und neue Container hinzufügen.
 
 ## <a name="local-app-data"></a>Lokale App-Daten
 
 
-Lokale App-Daten sollten für alle Informationen verwendet werden, die zwischen App-Sitzungen beibehalten werden müssen und die nicht als App-Roamingdaten geeignet sind. Daten, die auf anderen Geräten nicht verwendet werden können, sollten ebenfalls dort gespeichert werden. Es gibt keine allgemeinen Größenbeschränkungen für lokal gespeicherte Daten. Verwenden Sie den lokalen App-Datenspeicher für Daten, für die ein Roaming nicht sinnvoll ist, sowie für große Datasets.
+Lokale App-Daten sollten für alle Informationen verwendet werden, die zwischen App-Sitzungen beibehalten werden müssen und nicht für Roaming von App-Daten geeignet sind. Daten, die auf anderen Geräten nicht anwendbar sind, sollten ebenfalls hier gespeichert werden. Es gibt keine allgemeine Größenbeschränkung für lokale Daten. Verwenden Sie den lokalen app-Datenspeicher für Daten, die für das Roaming und für große Datasets nicht sinnvoll sind.
 
-### <a name="retrieve-the-local-app-data-store"></a>Abrufen des lokalen App-Datenspeichers
+### <a name="retrieve-the-local-app-data-store"></a>Abrufen des lokalen app-Datenspeicher
 
-Bevor Sie lokale App-Daten lesen oder schreiben können, müssen Sie den lokalen App-Datenspeicher abrufen. Verwenden Sie zum Abrufen des lokalen App-Datenspeichers die [**ApplicationData.LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings)-Eigenschaft, um die lokalen Einstellungen der App als [**ApplicationDataContainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer)-Objekt abzurufen. Verwenden Sie die [**ApplicationData.LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder)-Eigenschaft, um die Dateien aus einem [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)-Objekt abzurufen. Verwenden Sie die [**ApplicationData.LocalCacheFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder)-Eigenschaft, um den Ordner im lokalen App-Datenspeicher abzurufen, in dem Sie Dateien speichern können, die nicht in der Sicherung und Wiederherstellung enthalten sind.
+Bevor Sie lokale App-Daten lesen oder schreiben können, müssen Sie den lokalen app-Datenspeicher abrufen. Zum Abrufen des lokalen app-Datenspeicher verwenden Sie die [**ApplicationData. LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) -Eigenschaft, um die lokalen Einstellungen der App als [**applicationdatacontainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer) -Objekt abzurufen. Verwenden Sie die [**ApplicationData. localfolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) -Eigenschaft, um die Dateien in einem [**storagefolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) -Objekt abzurufen. Verwenden Sie die [**ApplicationData. localcachefolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder) -Eigenschaft, um den Ordner im lokalen app-Datenspeicher zu erhalten, in dem Sie Dateien speichern können, die nicht in der Sicherung und Wiederherstellung enthalten sind.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -68,7 +68,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### <a name="create-and-retrieve-a-simple-local-setting"></a>Erstellen und Abrufen einer einfachen lokalen Einstellung
 
-Um eine Einstellung zu erstellen oder zu schreiben, verwenden Sie die [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values)-Eigenschaft, um auf die Einstellungen im `localSettings`-Container zuzugreifen, den wir im vorherigen Schritt abgerufen haben. In diesem Beispiel wird eine Einstellung namens `exampleSetting` erstellt.
+Um eine Einstellung zu erstellen oder zu schreiben, verwenden Sie die [**applicationdatacontainer. Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) -Eigenschaft, um auf die Einstellungen im `localSettings`-Container zuzugreifen, den wir im vorherigen Schritt erhalten haben. In diesem Beispiel wird eine Einstellung mit dem Namen `exampleSetting`erstellt.
 
 ```CSharp
 // Simple setting
@@ -76,7 +76,7 @@ Um eine Einstellung zu erstellen oder zu schreiben, verwenden Sie die [**Applica
 localSettings.Values["exampleSetting"] = "Hello Windows";
 ```
 
-Um die Einstellung abzurufen, verwenden Sie dieselbe [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values)-Eigenschaft, mit der Sie die Einstellung erstellt haben. Dieses Beispiel zeigt, wie Sie die gerade erstellte Einstellung abrufen können.
+Zum Abrufen der Einstellung verwenden Sie die gleiche [**applicationdatacontainer. Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) -Eigenschaft, die Sie zum Erstellen der Einstellung verwendet haben. Dieses Beispiel zeigt, wie die soeben erstellte Einstellung abgerufen wird.
 
 ```CSharp
 // Simple setting
@@ -85,7 +85,7 @@ Object value = localSettings.Values["exampleSetting"];
 
 ### <a name="create-and-retrieve-a-local-composite-value"></a>Erstellen und Abrufen eines lokalen zusammengesetzten Werts
 
-Erstellen Sie zum Erstellen oder Schreiben eines zusammengesetzten Werts ein [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)-Objekt. In diesem Beispiel wird eine Verbundeinstellung namens `exampleCompositeSetting` erstellt und dem Container `localSettings` hinzugefügt.
+Um einen zusammengesetzten Wert zu erstellen oder zu schreiben, erstellen Sie ein [**applicationdatacompositevalue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) -Objekt. In diesem Beispiel wird eine zusammengesetzte Einstellung mit dem Namen `exampleCompositeSetting` erstellt und dem Container `localSettings` hinzugefügt.
 
 ```CSharp
 // Composite setting
@@ -98,7 +98,7 @@ composite["strVal"] = "string";
 localSettings.Values["exampleCompositeSetting"] = composite;
 ```
 
-In diesem Beispiel wird veranschaulicht, wie der gerade erstellte, zusammengesetzte Wert abgerufen werden kann.
+Dieses Beispiel zeigt, wie der zusammengesetzte Wert abgerufen wird, den wir soeben erstellt haben.
 
 ```CSharp
 // Composite setting
@@ -118,7 +118,7 @@ else
 
 ### <a name="create-and-read-a-local-file"></a>Erstellen und Lesen einer lokalen Datei
 
-Verwenden Sie die Datei-APIs (z. B. [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) und [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync)), um eine Datei im lokalen App-Datenspeicher zu erstellen und zu aktualisieren. In diesem Beispiel wird im Container `localFolder` die Datei `dataFile.txt` erstellt, in die das aktuelle Datum und die Uhrzeit geschrieben werden. Der Wert **ReplaceExisting** aus der [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption)-Enumeration gibt an, dass die Datei ersetzt werden soll, falls sie bereits vorhanden ist.
+Um eine Datei im lokalen app-Datenspeicher zu erstellen und zu aktualisieren, verwenden Sie die Datei-APIs, wie z [ **. b. Windows. Storage. storagefolder. kreatefileasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) und [**Windows. Storage. FileIO. Write tetextasync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). In diesem Beispiel wird eine Datei mit dem Namen `dataFile.txt` im `localFolder`-Container erstellt und das aktuelle Datum und die aktuelle Uhrzeit in die Datei geschrieben. Der **replacevorhandene** -Wert aus der-Enumeration von " [**kreationcollisionoption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) " zeigt an, dass die Datei ersetzt werden soll, wenn Sie bereits vorhanden
 
 ```csharp
 async void WriteTimestamp()
@@ -132,7 +132,7 @@ async void WriteTimestamp()
 }
 ```
 
-Verwenden Sie die Datei-APIs (z. B. [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) und [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync)), um eine Datei im lokalen App-Datenspeicher zu öffnen und zu lesen. In diesem Beispiel wird die im vorherigen Schritt erstellte Datei `dataFile.txt` geöffnet und das Datum aus der Datei gelesen. Einzelheiten zum Laden von Dateiressourcen aus verschiedenen Speicherorten finden Sie unter [So wird's gemacht: Laden von Dateiressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
+Verwenden Sie zum Öffnen und Lesen einer Datei im lokalen app-Datenspeicher die Datei-APIs, z. b [ **. Windows. Storage. storagefolder. getfileasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows. Storage. storagefile. getfilefromapplicationuriasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync)und [**Windows. Storage. FileIO. infotextasync.** ](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). In diesem Beispiel wird die `dataFile.txt` Datei geöffnet, die im vorherigen Schritt erstellt wurde, und das Datum wird aus der Datei gelesen. Ausführliche Informationen zum Laden von Datei Ressourcen aus verschiedenen Speicherorten finden Sie unter Vorgehens [Weise beim Laden von Datei Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -153,64 +153,64 @@ async void ReadTimestamp()
 ## <a name="roaming-data"></a>Roamingdaten
 
 
-Wenn Sie Roamingdaten in Ihrer App verwenden, können Benutzer die App-Daten der App problemlos für mehrere Geräte synchronisieren. Installiert ein Benutzer eine App auf mehreren Geräten, sorgt das Betriebssystem dafür, dass die App-Daten synchronisiert sind, und verringert so den Einrichtungsaufwand für die App auf weiteren Geräten. Mittels Roaming können Benutzer außerdem eine Aufgabe (beispielsweise das Erstellen einer Liste) an genau dem Punkt fortsetzen, an dem sie die Aufgabe auf einem anderen Gerät unterbrochen haben. Das Betriebssystem repliziert aktualisierte Roamingdaten in der Cloud und synchronisiert die Daten mit den anderen Geräten, auf denen die App installiert ist.
+Wenn Sie in Ihrer APP Roamingdaten verwenden, können Ihre Benutzer Ihre APP-Daten auf mehreren Geräten problemlos synchron halten. Wenn ein Benutzer die APP auf mehreren Geräten installiert, hält das Betriebssystem die APP-Daten synchron, wodurch die Menge der Setup Vorgänge verringert wird, die der Benutzer für Ihre APP auf dem zweiten Gerät ausführen muss. Das Roaming ermöglicht Ihren Benutzern außerdem das Fortsetzen einer Aufgabe (z. b. das Verfassen einer Liste), wo Sie auch auf einem anderen Gerät verbleibt. Das Betriebssystem repliziert Roamingdaten bei der Aktualisierung in die Cloud und synchronisiert die Daten mit den anderen Geräten, auf denen die APP installiert ist.
 
-Das Betriebssystem begrenzt für jede App die Menge der App-Daten für das Roaming. Siehe [**ApplicationData.RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota). Erreicht die App diese Grenze, werden keine App-Daten der App mehr in die Cloud repliziert, bis die Gesamtmenge der App-Roamingdaten wieder unter dem Grenzwert liegt. Aus diesem Grund ist es empfehlenswert, Roamingdaten nur für Benutzereinstellungen, Links und kleine Datendateien zu verwenden.
+Das Betriebssystem schränkt die Größe der APP-Daten ein, die von jeder App möglicherweise gewechselt werden. Siehe [**ApplicationData. roamingstoragequota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota). Wenn die APP diesen Grenzwert erreicht, wird keine app-Daten der app in die Cloud repliziert, bis die APP-Daten der APP insgesamt kleiner als der Grenzwert ist. Aus diesem Grund ist es eine bewährte Vorgehensweise, Roamingdaten nur für Benutzereinstellungen, Verknüpfungen und kleine Datendateien zu verwenden.
 
-Roamingdaten für Apps sind in der Cloud verfügbar, solange der Benutzer innerhalb des erforderlichen Zeitintervalls mit einem Gerät darauf zugreift. Führt ein Benutzer eine App für eine dieses Zeitintervall nicht überschreitende Spanne aus, werden die Roamingdaten aus der Cloud gelöscht. Bei der Deinstallation einer App werden die entsprechenden Roamingdaten in der Cloud nicht automatisch gelöscht, sondern beibehalten. Installiert der Benutzer die App innerhalb des Zeitintervalls wieder, werden die Roamingdaten über die Cloud synchronisiert.
+Roamingdaten für eine APP sind in der Cloud verfügbar, solange der Benutzer von einem Gerät innerhalb des erforderlichen Zeitintervalls darauf zugreifen kann. Wenn der Benutzer eine APP nicht länger als dieses Zeitintervall ausgeführt hat, werden die Roamingdaten aus der Cloud entfernt. Wenn ein Benutzer eine APP deinstalliert, werden die Roamingdaten nicht automatisch aus der Cloud entfernt. Wenn der Benutzer die APP innerhalb des Zeitintervalls erneut installiert, werden die Roamingdaten aus der Cloud synchronisiert.
 
-### <a name="roaming-data-dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen für Roamingdaten
+### <a name="roaming-data-dos-and-donts"></a>Roamingdaten und "TS"
 
-- Verwenden Sie Roaming für Benutzereinstellungen und -anpassungen, Links und kleine Datendateien. Sie können mithilfe von Roaming beispielsweise dafür sorgen, dass die vom Benutzer vorgenommene Einstellung für die Hintergrundfarbe auf allen Geräten angewendet wird.
-- Verwenden Sie Roaming, damit Benutzer eine Aufgabe auf mehreren Geräten fortsetzen können. Sie können das Roaming für Anwendungsdaten beispielsweise implementieren, um den Inhalt eines E-Mail-Entwurfs oder die zuletzt angezeigte Seite in einer Lese-App zu speichern.
-- Behandeln Sie das [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged)-Ereignis, indem Sie App-Daten aktualisieren. Dieses Ereignis tritt unmittelbar nach der Synchronisierung der App-Daten mit der Cloud auf.
-- Führen Sie Roaming für Verweise auf Inhalte durch, anstelle für unformatierte Daten. Das Roaming für eine URL eines Onlineartikel ist beispielsweise sinnvoller als das Roaming für den Inhalt des Artikels.
-- Verwenden Sie für wichtige, zeitkritische Informationen die Einstellung *HighPriority* zusammen mit [**RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings).
-- Führen Sie kein Roaming für gerätespezifische App-Daten durch. Manche dieser Informationen sind ausschließlich lokal relevant, wie beispielsweise der Pfadname zu einer lokalen Dateiressource. Wenn Sie lokale Informationen als Roamingdaten verwenden möchten, stellen Sie sicher, dass die App wiederhergestellt werden kann, wenn die Informationen auf dem zweiten Gerät nicht gültig sind.
-- Führen Sie kein Roaming für große App-Datenmengen durch. Die Menge der App-Daten für das Roaming ist begrenzt. Verwenden Sie die Eigenschaft [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota), um diese maximale Datenmenge zu implementieren. Wenn eine App diese Grenze erreicht, wird so lange kein Datenroaming durchgeführt, bis die Größe des App-Datenspeichers wieder unter die Grenze fällt. Berücksichtigen Sie beim App-Design, wie eine Grenze für größere Datenmengen festgelegt wird, sodass die Begrenzung nicht überschritten wird. Wenn für das Speichern eines Spielstands beispielsweise jeweils 10 KB erforderlich sind, sollte die App unter Umständen höchstens zulassen, dass 10 Spielstände gespeichert werden.
-- Verwenden Sie Roaming nicht für Daten, die von einer sofortigen Synchronisierung abhängig sind. Windows garantiert keine sofortige Synchronisierung; die Synchronisierung kann erheblich verzögert werden, wenn Benutzer offline oder mit einem Netzwerk mit hoher Latenz verbunden sind. Stellen Sie sicher, dass die UI nicht von einer sofortigen Synchronisierung abhängig ist.
-- Verwenden Sie Roaming nicht für häufig geänderte Daten. Wenn Ihre App beispielsweise Informationen nachverfolgt, die sich häufig ändern (z. B. die Position eines Musiktitels in Sekunden), speichern Sie diese Daten nicht als Roaming-App-Daten. Wählen Sie stattdessen eine weniger häufige angepasste Darstellung, die trotzdem eine gute Benutzererfahrung gewährleistet, z. B. den aktuell wiedergegebenen Titel.
+- Verwenden Sie Roaming für Benutzereinstellungen und Anpassungen, Links und kleine Datendateien. Verwenden Sie z. b. Roaming, um die Hintergrund Farbeinstellungen eines Benutzers auf allen Geräten beizubehalten.
+- Verwenden Sie Roaming, um Benutzern das Fortsetzen einer Aufgabe auf Geräten zu ermöglichen. Beispielsweise können Sie App-Daten wie den Inhalt einer entworfenen e-Mail oder die zuletzt angezeigte Seite in einer Reader-App übertragen.
+- Behandeln Sie das [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) -Ereignis, indem Sie App-Daten aktualisieren. Dieses Ereignis tritt auf, wenn die Synchronisierung von App-Daten aus der Cloud soeben abgeschlossen ist.
+- Übertragen Sie Verweise auf den Inhalt anstelle von Rohdaten. Wechseln Sie z. b. eine URL anstatt den Inhalt eines Online Artikels.
+- Verwenden Sie für wichtige, zeitkritische Einstellungen die mit [**roamingsettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)verknüpfte *HighPriority* -Einstellung.
+- Roaming von App-Daten, die für ein Gerät spezifisch sind. Einige Informationen sind nur lokal relevant, z. b. ein Pfadname zu einer lokalen Datei Ressource. Wenn Sie sich entscheiden, lokale Informationen zu übertragen, stellen Sie sicher, dass die APP wieder hergestellt werden kann, wenn die Informationen auf dem sekundären Gerät nicht gültig sind.
+- Wechseln Sie nicht zu großen Mengen von App-Daten. Die Menge der APP-Daten, die von einer APP möglicherweise gewechselt werden, ist begrenzt. Verwenden Sie die [**roamingstoragequota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) -Eigenschaft, um diesen maximalen Wert zu erhalten. Wenn eine APP diese Beschränkung erreicht, können keine Daten mehr Roaming durchlaufen, bis die Größe des App-Datenspeicher nicht mehr über dem Grenzwert liegt. Wenn Sie Ihre APP entwerfen, sollten Sie in Erwägung gezogen, dass Sie eine Grenze für größere Daten festlegen, damit der Grenzwert nicht überschritten wird. Wenn z. b. das Speichern eines Spiel Zustands jeweils 10 KB erfordert, gestattet die APP dem Benutzer möglicherweise nur bis zu 10 Spiele.
+- Verwenden Sie Roaming nicht für Daten, die sofort synchronisiert werden. Eine sofortige Synchronisierung wird von Windows nicht gewährleistet. das Roaming kann erheblich verzögert werden, wenn ein Benutzer offline ist oder sich in einem Netzwerk mit hoher Latenz befindet. Stellen Sie sicher, dass die Benutzeroberfläche nicht von der sofortigen Synchronisierung abhängt.
+- Verwenden Sie Roaming nicht für häufig geänderte Daten. Wenn Ihre APP z. b. häufig wechselnde Informationen nachverfolgt, z. b. die Position in einem Song, können Sie diese nicht als roaminganwendungsdaten speichern. Wählen Sie stattdessen eine seltener dargestellte Darstellung aus, die immer noch eine gute Benutzer Darstellung bietet, wie z. b. den aktuell Wiedergabe
 
-### <a name="roaming-pre-requisites"></a>Voraussetzungen für Roaming
+### <a name="roaming-pre-requisites"></a>Erforderliche roamingvoraussetzungen
 
-Jeder Benutzer kann von Roaming-App-Daten profitieren, wenn ein Microsoft-Konto zur Anmeldung am Gerät verwendet wird. Benutzer und Gruppenrichtlinienadministratoren haben jedoch die Möglichkeit, das Roaming von App-Daten auf einem Gerät zu deaktivieren. Wenn ein Benutzer sich dafür entscheidet, keine Microsoft-Konto zu verwenden oder die roamingdatenfunktionen zu deaktivieren, kann er die APP weiterhin verwenden, aber die APP-Daten werden lokal auf jedem Gerät angezeigt.
+Jeder Benutzer kann von roamingdatendaten profitieren, wenn er eine Microsoft-Konto verwendet, um sich bei seinem Gerät anzumelden. Benutzer und Gruppenrichtlinien Administratoren können jedoch jederzeit roaminganwendungsdaten auf einem Gerät deaktivieren. Wenn ein Benutzer sich dafür entscheidet, keine Microsoft-Konto zu verwenden oder die roamingdatenfunktionen zu deaktivieren, kann er die APP weiterhin verwenden, aber die APP-Daten werden lokal auf jedem Gerät angezeigt.
 
-Daten, die im [**PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) gespeichert sind, werden nur übertragen, wenn ein Benutzer ein Gerät als "vertrauenswürdig" eingestuft hat. Wird einem Gerät nicht vertraut, werden die in diesem Tresor gespeicherten Daten nicht für das Roaming verwendet.
+Die in [**passwordvault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) gespeicherten Daten werden nur dann übertragen, wenn ein Benutzer ein Gerät als vertrauenswürdig eingestuft hat. Wenn ein Gerät nicht vertrauenswürdig ist, werden die in diesem Tresor gesicherten Daten nicht übertragen.
 
 ### <a name="conflict-resolution"></a>Konfliktlösung
 
-Das Roaming von App-Daten ist nicht für eine gleichzeitige Verwendung auf mehreren Geräten vorgesehen Wenn es während der Synchronisierung zu einem Konflikt kommt, weil eine bestimmte Dateneinheit auf beiden Geräten geändert wurde, verwendet das System vorzugsweise immer den zuletzt geschriebenen Wert. Dadurch wird sichergestellt, dass der App immer die aktuellsten Informationen zur Verfügung stehen. Handelt es sich bei der Dateneinheit um eine zusammengesetzte Einstellung, findet die Konfliktlösung trotzdem auf der Ebene der Einstellungseinheit statt, d. h. der zuletzt geänderte Wert der Zusammensetzung wird synchronisiert.
+Roaminganwendungsdaten sind nicht für die gleichzeitige Verwendung auf mehr als einem Gerät gleichzeitig vorgesehen. Wenn während der Synchronisierung ein Konflikt auftritt, weil eine bestimmte Dateneinheit auf zwei Geräten geändert wurde, wird der zuletzt geschriebene Wert vom System immer bevorzugt. Dadurch wird sichergestellt, dass die APP die aktuellsten Informationen verwendet. Wenn die Dateneinheit eine zusammengesetzte Einstellung ist, wird die Konfliktlösung weiterhin auf der Ebene der Einstellungs Einheit ausgeführt, was bedeutet, dass das zusammengesetzte mit der aktuellen Änderung synchronisiert wird.
 
-### <a name="when-to-write-data"></a>Zeitpunkt für das Schreiben von Daten
+### <a name="when-to-write-data"></a>Wann Daten geschrieben werden sollen
 
-Je nach erwarteter Lebensdauer der Einstellung sollten Daten zu unterschiedlichen Zeitpunkten geschrieben werden. Selten bzw. langsam geänderte App-Daten sollten sofort geschrieben werden. Häufig geänderte App-Daten sollten dagegen nur in bestimmten Zeiträumen regelmäßig (beispielsweise einmal alle fünf Minuten) und bei angehaltener App geschrieben werden. So kann eine Musik-App beispielsweise die Einstellung für den aktuellen Titel schreiben, wenn ein neuer Titel wiedergegeben wird, aber die aktuelle Position im Titel sollte nur in angehaltenem Zustand der Anwendung geschrieben werden.
+Abhängig von der erwarteten Lebensdauer der Einstellung müssen Daten zu unterschiedlichen Zeiten geschrieben werden. Daten, die selten oder langsam geändert werden, sollten sofort geschrieben werden. App-Daten, die sich häufig ändern, sollten jedoch regelmäßig in regelmäßigen Abständen (z. b. alle 5 Minuten) geschrieben werden, und wenn die APP angehalten wird. Eine Musik-app könnte z. b. die "aktuellen Song"-Einstellungen schreiben, wenn ein neuer Song wiedergegeben wird. die tatsächliche Position im Song sollte jedoch nur auf Suspend geschrieben werden.
 
-### <a name="excessive-usage-protection"></a>Schutz vor übermäßiger Nutzung
+### <a name="excessive-usage-protection"></a>Übermäßiger Nutzungs Schutz
 
-Das System verfügt über verschiedene Schutzmechanismen, um unangemessene Verwendung der Ressourcen zu verhindern. Falls App-Daten nicht wie erwartet übertragen werden, wurde das Gerät wahrscheinlich vorübergehend beschränkt. Wenn Sie einige Zeit warten, wird dieses Problem normalerweise automatisch behoben, ohne dass eine Aktion erforderlich ist.
+Das System verfügt über verschiedene Schutzmechanismen, um eine ungeeignete Verwendung von Ressourcen zu vermeiden. Wenn App-Daten nicht erwartungsgemäß wechseln, ist es wahrscheinlich, dass das Gerät vorübergehend eingeschränkt wurde. Wenn Sie einige Zeit warten, wird diese Situation in der Regel automatisch behoben, und es ist keine Aktion erforderlich.
 
 ### <a name="versioning"></a>Versionsverwaltung
 
-App-Daten können die Versionsinformationen nutzen, um von einer Datenstruktur auf eine andere zu aktualisieren. Die Versionsnummer unterscheidet sich von der App-Version und kann nach Belieben festgelegt werden. Auch wenn es nicht zwingend erforderlich ist, empfiehlt es sich, aufsteigende Versionsnummern zu verwenden, da beim Übergang zu einer kleineren Nummer, die neuere Daten darstellt, unerwünschte Komplikationen (z. B. Datenverluste) entstehen können.
+App-Daten können die Versionsverwaltung nutzen, um ein Upgrade von einer Datenstruktur auf eine andere durchzuführen. Die Versionsnummer unterscheidet sich von der App-Version und kann bei der Ausführung festgelegt werden. Obwohl Sie nicht erzwungen wird, wird dringend empfohlen, dass Sie steigende Versionsnummern verwenden, da unerwünschte Komplikationen (einschließlich Datenverlust) auftreten können, wenn Sie versuchen, zu einer niedrigeren Daten Versionsnummer zu wechseln, die neuere Daten darstellt.
 
-Das Roaming für App-Daten wird nur in installierten Apps mit der gleichen Versionsnummer durchgeführt. Beispiel: Geräte mit der Versionsnummer 2 tauschen Daten untereinander aus. Gleiches gilt für Geräte mit der Version 3. Es erfolgt jedoch kein Roaming zwischen Geräten mit Version 2 und Geräten mit Version 3. Wenn Sie eine neue App installieren, die auf anderen Geräten unterschiedliche Versionsnummern verwendet hat, synchronisiert die neu installierte App die App-Daten, die mit der höchsten Versionsnummer verknüpft sind.
+App-Daten wechseln nur zwischen installierten apps mit derselben Versionsnummer. Beispielsweise werden Geräte in Version 2 miteinander übertragen, und die Geräte in Version 3 werden identisch sein, aber zwischen einem Gerät mit Version 2 und einem Gerät, auf dem Version 3 ausgeführt wird, erfolgt kein Roaming. Wenn Sie eine neue App installieren, die verschiedene Versionsnummern auf anderen Geräten verwendet hat, synchronisiert die neu installierte APP die APP-Daten, die mit der höchsten Versionsnummer verknüpft sind.
 
 ### <a name="testing-and-tools"></a>Tests und Tools
 
-Entwickler können ihr Gerät sperren, um eine Synchronisierung von Roaming-App-Daten auszulösen. Wenn die App-Daten scheinbar nicht innerhalb eines bestimmten Zeitrahmens übertragen werden, überprüfen Sie die folgenden Elemente, und stellen Sie sicher, dass:
+Entwickler können Ihr Gerät sperren, um eine Synchronisierung der roamingdatenapp-Daten zu initiieren. Wenn die APP-Daten anscheinend nicht innerhalb eines bestimmten Zeitraums übergehen, überprüfen Sie die folgenden Elemente, und stellen Sie Folgendes sicher:
 
-- Ihre Roamingdaten nicht die maximal zulässige Größe überschreiten (siehe auch [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)).
-- Ihre Dateien geschlossen und ordnungsgemäß veröffentlicht wurden.
-- Sie über mindestens zwei Geräte mit derselben App-Version verfügen.
+- Ihre Roamingdaten überschreiten die maximal zulässige Größe (Weitere Informationen finden Sie unter [**roamingstoragequota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) ).
+- Ihre Dateien werden geschlossen und ordnungsgemäß freigegeben.
+- Es gibt mindestens zwei Geräte, auf denen dieselbe Version der app ausgeführt wird.
 
 
-### <a name="register-to-receive-notification-when-roaming-data-changes"></a>Registrieren, um Benachrichtigungen bei der Änderung von Roamingdaten zu erhalten
+### <a name="register-to-receive-notification-when-roaming-data-changes"></a>Bei Änderungen an Roamingdaten registrieren
 
-Um das Roaming von App-Daten verwenden zu können, müssen Sie die Roamingdatenänderungen registrieren und die Roamingdatencontainer abrufen, damit Sie Einstellungen lesen und schreiben können.
+Wenn Sie roamingdatendaten verwenden möchten, müssen Sie sich für roamingdatenänderungen registrieren und die roamingdatencontainer abrufen, damit Sie Einstellungen lesen und schreiben können.
 
-1.  Nehmen Sie eine Registrierung für den Empfang einer Benachrichtigung vor, wenn sich Roamingdaten ändern.
+1.  Registrieren Sie sich, um Benachrichtigungen zu erhalten, wenn Roamingdaten
 
-    Das [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged)-Ereignis benachrichtigt Sie, wenn sich Roamingdaten ändern. In diesem Beispiel wird `DataChangeHandler` als Handler für Änderungen an Roamingdaten festgelegt.
+    Das [**DataChanged**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.datachanged) -Ereignis benachrichtigt Sie, wenn Roamingdaten geändert werden. In diesem Beispiel wird `DataChangeHandler` als Handler für roamingdatenänderungen festgelegt.
 
 ```csharp
 void InitHandlers()
@@ -225,9 +225,9 @@ void InitHandlers()
     }
 ```
 
-2.  Rufen Sie die Container für die Einstellungen und Dateien der App ab.
+2.  Sie erhalten die Container für die App-Einstellungen und-Dateien.
 
-    Rufen Sie mit der [**ApplicationData.RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)-Eigenschaft die Einstellungen und mit der [**ApplicationData.RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)-Eigenschaft die Dateien ab.
+    Verwenden Sie die [**ApplicationData. roamingsettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) -Eigenschaft, um die Einstellungen und die [**ApplicationData. roamingfolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder) -Eigenschaft zum erhalten der Dateien zu erhalten.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer roamingSettings = 
@@ -238,7 +238,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### <a name="create-and-retrieve-roaming-settings"></a>Erstellen und Abrufen von Roamingeinstellungen
 
-Verwenden Sie die [**ApplicationDataContainer.Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values)-Eigenschaft, um auf die Einstellungen im Container `roamingSettings` zuzugreifen, den wir im vorherigen Abschnitt abgerufen haben. In diesem Beispiel wird eine einfache Einstellung namens `exampleSetting` und ein zusammengesetzter Wert namens `composite` erstellt.
+Verwenden Sie die [**applicationdatacontainer. Values**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.values) -Eigenschaft, um auf die Einstellungen in dem `roamingSettings`-Container zuzugreifen, den wir im vorherigen Abschnitt erhalten haben. Dieses Beispiel erstellt eine einfache Einstellung mit dem Namen `exampleSetting` und einen zusammengesetzten Wert mit dem Namen `composite`.
 
 ```csharp
 // Simple setting
@@ -258,7 +258,7 @@ roamingSettings.Values["exampleCompositeSetting"] = composite;
 
 ```
 
-Dieses Beispiel ruft die gerade erstellten Einstellungen ab.
+In diesem Beispiel werden die soeben erstellten Einstellungen abgerufen.
 
 ```csharp
 // Simple setting
@@ -280,9 +280,9 @@ else
 }
 ```
 
-### <a name="create-and-retrieve-roaming-files"></a>Erstellen und Abrufen von Roamingdateien
+### <a name="create-and-retrieve-roaming-files"></a>Erstellen und Abrufen von roamingdateien
 
-Verwenden Sie die Datei-APIs, z. B. [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) und [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync), um eine Datei im Roamingspeicher für App-Daten zu erstellen und zu aktualisieren. In diesem Beispiel wird im Container `roamingFolder` die Datei `dataFile.txt` erstellt, in die das aktuelle Datum und die Uhrzeit geschrieben werden. Der Wert **ReplaceExisting** aus der [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption)-Enumeration gibt an, dass die Datei ersetzt werden soll, falls sie bereits vorhanden ist.
+Verwenden Sie die Datei-APIs, z. b [ **. Windows. Storage. storagefolder. anatefileasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) und [**Windows. Storage. FileIO. beschreitetextasync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync), um eine Datei im Datenspeicher für Roaming-apps zu erstellen und zu aktualisieren. In diesem Beispiel wird eine Datei mit dem Namen `dataFile.txt` im `roamingFolder`-Container erstellt und das aktuelle Datum und die aktuelle Uhrzeit in die Datei geschrieben. Der **replacevorhandene** -Wert aus der-Enumeration von " [**kreationcollisionoption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) " zeigt an, dass die Datei ersetzt werden soll, wenn Sie bereits vorhanden
 
 ```csharp
 async void WriteTimestamp()
@@ -296,7 +296,7 @@ async void WriteTimestamp()
 }
 ```
 
-Verwenden Sie die Datei-APIs, z. B. [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) und [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync), um eine Datei im Roamingspeicher für App-Daten zu öffnen und zu lesen. In diesem Beispiel wird die im vorherigen Abschnitt erstellte Datei `dataFile.txt` geöffnet und das Datum aus der Datei gelesen. Einzelheiten zum Laden von Dateiressourcen aus verschiedenen Speicherorten finden Sie unter [So wird's gemacht: Laden von Dateiressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
+Verwenden Sie zum Öffnen und Lesen einer Datei im roamingapp-Datenspeicher die Datei-APIs, wie z [ **. b. Windows. Storage. storagefolder. getfileasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows. Storage. storagefile. getfilefromapplicationuriasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync), und [ **Windows. Storage. fleio. Read textasync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). In diesem Beispiel wird die `dataFile.txt` Datei geöffnet, die im vorherigen Abschnitt erstellt wurde, und das Datum wird aus der Datei gelesen. Ausführliche Informationen zum Laden von Datei Ressourcen aus verschiedenen Speicherorten finden Sie unter Vorgehens [Weise beim Laden von Datei Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -318,11 +318,11 @@ async void ReadTimestamp()
 ## <a name="temporary-app-data"></a>Temporäre App-Daten
 
 
-Der temporäre App-Datenspeicher funktioniert wie ein Cache. Für diese Dateien erfolgt kein Roaming, und sie können jederzeit gelöscht werden. Daten, die an diesem Speicherort gespeichert werden, können von der Aufgabe zur Systemverwaltung jederzeit automatisch gelöscht werden. Benutzer können Dateien im temporären Datenspeicher auch mit der Datenträgerbereinigung löschen. Temporäre App-Daten können zum Speichern temporärer Informationen während einer App-Sitzung verwendet werden. Es gibt jedoch keine Garantie dafür, dass diese Daten über die App-Sitzung hinaus beibehalten werden, da der verwendete Speicherplatz ggf. vom System zurückgefordert wird. Der Speicherort ist über die [**temporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder)-Eigenschaft verfügbar.
+Der temporäre App-Datenspeicher funktioniert wie ein Cache. Die Dateien werden nicht gewechselt und können jederzeit entfernt werden. Der Task "System Wartung" kann Daten, die an diesem Speicherort gespeichert sind, jederzeit automatisch löschen. Der Benutzer kann auch Dateien aus dem temporären Datenspeicher mithilfe der Datenträger Bereinigung löschen. Temporäre App-Daten können verwendet werden, um temporäre Informationen während einer App-Sitzung zu speichern. Es gibt keine Garantie, dass diese Daten nach dem Ende der App-Sitzung beibehalten werden, da das System ggf. den genutzten Speicherplatz freigeben könnte. Der Speicherort ist über die [**temporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) -Eigenschaft verfügbar.
 
-### <a name="retrieve-the-temporary-data-container"></a>Abrufen des temporären Datencontainers
+### <a name="retrieve-the-temporary-data-container"></a>Abrufen des temporären Daten Containers
 
-Rufen Sie die Dateien mit der [**ApplicationData.TemporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder)-Eigenschaft ab. In den nächsten Schritten wird die `temporaryFolder`-Variable aus diesem Schritt verwendet.
+Verwenden Sie die [**ApplicationData. temporaryFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) -Eigenschaft, um die Dateien zu erhalten. In den nächsten Schritten wird die `temporaryFolder` Variable aus diesem Schritt verwendet.
 
 ```csharp
 Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;
@@ -330,7 +330,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### <a name="create-and-read-temporary-files"></a>Erstellen und Lesen von temporären Dateien
 
-Verwenden Sie die Datei-APIs, z. B. [**Windows.Storage.StorageFolder.CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) und [**Windows.Storage.FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync), um eine Datei im temporären App-Datenspeicher zu erstellen und zu aktualisieren. In diesem Beispiel wird im Container `temporaryFolder` die Datei `dataFile.txt` erstellt, in die das aktuelle Datum und die Uhrzeit geschrieben werden. Der Wert **ReplaceExisting** aus der [**CreationCollisionOption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption)-Enumeration gibt an, dass die Datei ersetzt werden soll, falls sie bereits vorhanden ist.
+Um eine Datei im temporären App-Datenspeicher zu erstellen und zu aktualisieren, verwenden Sie die Datei-APIs, wie z [ **. b. Windows. Storage. storagefolder. kreatefileasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync) und [**Windows. Storage. FileIO. Write tetextasync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync). In diesem Beispiel wird eine Datei mit dem Namen `dataFile.txt` im `temporaryFolder`-Container erstellt und das aktuelle Datum und die aktuelle Uhrzeit in die Datei geschrieben. Der **replacevorhandene** -Wert aus der-Enumeration von " [**kreationcollisionoption**](https://docs.microsoft.com/uwp/api/Windows.Storage.CreationCollisionOption) " zeigt an, dass die Datei ersetzt werden soll, wenn Sie bereits vorhanden
 
 
 ```csharp
@@ -345,7 +345,7 @@ async void WriteTimestamp()
 }
 ```
 
-Verwenden Sie die Datei-APIs, z. B. [**Windows.Storage.StorageFolder.GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) und [**Windows.Storage.FileIO.ReadTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync), um eine Datei im temporären App-Datenspeicher zu öffnen und zu lesen. In diesem Beispiel wird die im vorherigen Schritt erstellte Datei `dataFile.txt` geöffnet und das Datum aus der Datei gelesen. Einzelheiten zum Laden von Dateiressourcen aus verschiedenen Speicherorten finden Sie unter [So wird's gemacht: Laden von Dateiressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
+Um eine Datei im temporären App-Datenspeicher zu öffnen und zu lesen, verwenden Sie die Datei-APIs, wie z [ **. b. Windows. Storage. storagefolder. getfileasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows. Storage. storagefile. getfilefromapplicationuriasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync), und [ **Windows. Storage. fleio. Read textasync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.readtextasync). In diesem Beispiel wird die `dataFile.txt` Datei geöffnet, die im vorherigen Schritt erstellt wurde, und das Datum wird aus der Datei gelesen. Ausführliche Informationen zum Laden von Datei Ressourcen aus verschiedenen Speicherorten finden Sie unter Vorgehens [Weise beim Laden von Datei Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965322(v=win.10)).
 
 ```csharp
 async void ReadTimestamp()
@@ -366,9 +366,9 @@ async void ReadTimestamp()
 ## <a name="organize-app-data-with-containers"></a>Organisieren von App-Daten mit Containern
 
 
-Um Ihre Einstellungen für App-Daten und Dateien strukturiert zu speichern, erstellen Sie Container (dargestellt durch [**ApplicationDataContainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer)-Objekte), statt direkt mit Verzeichnissen zu arbeiten. Sie können Container zu den lokalen, Roaming- und temporären App-Datenspeichern hinzufügen. Container können in bis zu 32 Ebenen geschachtelt werden.
+Zur Unterstützung beim Organisieren von App-Daten Einstellungen und-Dateien erstellen Sie Container (dargestellt durch [**applicationdatacontainer**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataContainer) -Objekte), anstatt direkt mit Verzeichnissen zu arbeiten. Sie können Container zu den lokalen, Roaming-und temporären App-Daten speichern hinzufügen. Container können bis zu 32 Ebenen tief verschachtelt werden.
 
-Rufen Sie die [**ApplicationDataContainer.CreateContainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.createcontainer)-Methode auf, um einen Einstellungscontainer zu erstellen. In diesem Beispiel wird ein lokaler Einstellungscontainer namens `exampleContainer` erstellt und eine Einstellung namens `exampleSetting` hinzugefügt. Der Wert **Always** aus der [**ApplicationDataCreateDisposition**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCreateDisposition)-Enumeration gibt an, dass der Container erstellt wird, sofern er noch nicht vorhanden ist.
+Um einen Einstellungs Container zu erstellen, rufen Sie die [**applicationdatacontainer. kreatecontainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.createcontainer) -Methode auf. In diesem Beispiel wird ein lokaler Einstellungs Container mit dem Namen `exampleContainer` erstellt und eine Einstellung mit dem Namen `exampleSetting`hinzugefügt. Der **Always** -Wert aus der [**applicationdatacreatedisposition**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCreateDisposition) -Enumeration gibt an, dass der Container erstellt wird, wenn er nicht bereits vorhanden ist.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -386,10 +386,10 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 }
 ```
 
-## <a name="delete-app-settings-and-containers"></a>Löschen von App-Einstellungen und Containern
+## <a name="delete-app-settings-and-containers"></a>App-Einstellungen und Container löschen
 
 
-Verwenden Sie die [**ApplicationDataContainerSettings.Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainersettings.remove)-Methode, um eine einfache Einstellung zu löschen, die Ihre App nicht mehr benötigt. In diesem Beispiel wird die zuvor erstellte, lokale `exampleSetting`-Einstellung gelöscht.
+Verwenden Sie die [**applicationdatacontainersettings. Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainersettings.remove) -Methode, um eine einfache Einstellung zu löschen, die von der APP nicht mehr benötigt wird. In diesem Beispiel wird die `exampleSetting` lokale Einstellung, die wir zuvor erstellt haben, angezeigt.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -402,7 +402,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleSetting");
 ```
 
-Verwenden Sie die [**ApplicationDataCompositeValue.Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacompositevalue.remove)-Methode, um eine zusammengesetzte Einstellung zu löschen. In diesem Beispiel wird die lokale, zusammengesetzte `exampleCompositeSetting`-Einstellung gelöscht, die in einem früheren Beispiel erstellt wurde.
+Um eine zusammengesetzte Einstellung zu löschen, verwenden Sie die [**applicationdatacompositevalue. Remove**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacompositevalue.remove) -Methode. In diesem Beispiel wird die lokale `exampleCompositeSetting` die zusammengesetzte Einstellung gelöscht, die wir in einem früheren Beispiel erstellt haben.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -415,7 +415,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleCompositeSetting");
 ```
 
-Rufen Sie die [**ApplicationDataContainer.DeleteContainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.deletecontainer)-Methode auf, um einen Container zu löschen. In diesem Beispiel wird der zuvor erstellte, lokale `exampleContainer`-Einstellungscontainer gelöscht.
+Um einen Container zu löschen, müssen Sie die [**applicationdatacontainer. deletecontainer**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer.deletecontainer) -Methode aufrufen. In diesem Beispiel wird der zuvor erstellte Container "local `exampleContainer` Settings" gelöscht.
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -428,10 +428,10 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.DeleteContainer("exampleContainer");
 ```
 
-## <a name="versioning-your-app-data"></a>Versionsverwaltung Ihrer App-Daten
+## <a name="versioning-your-app-data"></a>Versionierung Ihrer APP-Daten
 
 
-Optional können Sie die App-Daten für Ihre App mit einer Versionsnummer versehen. In diesem Fall können Sie neue Versionen der betreffenden App erstellen, mit denen das Format der App-Daten geändert wird, ohne dass es dadurch zu Kompatibilitätsproblemen mit der Vorgängerversion der App kommt. Die App prüft die Version der App-Daten im Dateispeicher. Handelt es sich um eine niedrigere Version als erwartet, aktualisiert die App sowohl die Anwendungsdaten auf das neue Format als auch die Version. Weitere Informationen finden Sie in den Artikeln zur [**Application.Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version)-Eigenschaft und zur [**ApplicationData.SetVersionAsync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync)-Methode.
+Optional können Sie die APP-Daten für Ihre APP versionsversionen. Dies ermöglicht es Ihnen, eine zukünftige Version Ihrer APP zu erstellen, die das Format Ihrer APP-Daten ändert, ohne Kompatibilitätsprobleme mit der vorherigen Version Ihrer APP zu verursachen. Die APP überprüft die Version der APP-Daten im Datenspeicher. wenn die Version niedriger ist als die Version, die von der APP erwartet wird, sollte die APP die APP-Daten auf das neue Format aktualisieren und die Version aktualisieren. Weitere Informationen finden Sie unter der[**Application. Version**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.version) -Eigenschaft und der [**ApplicationData. setversionasync**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.setversionasync) -Methode.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

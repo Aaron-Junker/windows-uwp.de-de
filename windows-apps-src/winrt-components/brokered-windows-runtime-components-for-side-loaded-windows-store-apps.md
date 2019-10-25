@@ -19,60 +19,60 @@ In diesem Artikel wird ein von Windows 10 unterstütztes Unternehmensziel vorges
 
 ## <a name="introduction"></a>Einführung
 
->**Beachten Sie** , dass  The Beispielcode, der diesem Whitepaper folgt, für [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample)heruntergeladen werden kann. Die Microsoft Visual Studio-Vorlage für das Erstellen vermittelter Komponenten für Windows-Runtime kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents).
+>**Beachten Sie**  der Beispielcode, der diesem Whitepaper folgt, für [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample)heruntergeladen werden kann. Die Microsoft Visual Studio Vorlage zum Erstellen von Broker Windows-Runtime Komponenten kann hier heruntergeladen werden: [Visual Studio 2015-Vorlage für universelle Windows-Apps für Windows 10](https://marketplace.visualstudio.com/items?itemName=vs-publisher-713547.VS2015TemplateBrokeredComponents)
 
-Windows enthält ein neues Feature namens *Vermittelte Windows-Runtime-Komponenten für quergeladene Anwendungen*. Wir verwenden den Begriff „prozessübergreifende Kommunikation“ (Inter-Process Communication, IPC), um die Fähigkeit zu beschreiben, vorhandene Desktopsoftwareressourcen in einem einzigen Prozess (Desktopkomponente) auszuführen und gleichzeitig mit diesem Code in einer UWP-App zu interagieren. Dieses Modell ist Unternehmensentwicklern vertraut, da Datenbankanwendungen und Anwendungen, die NT-Dienste unter Windows verwenden, eine ähnliche, aus mehreren Prozessen bestehende Architektur verwenden.
+Windows umfasst ein neues Feature, das als *Broker Windows-Runtime Komponenten für neben geladene Anwendungen*bezeichnet wird. Wir verwenden den Begriff IPC (prozessübergreifende Kommunikation), um die Möglichkeit zu beschreiben, vorhandene Desktop Software Ressourcen in einem Prozess (Desktop Komponente) auszuführen, während Sie mit diesem Code in einer UWP-App interagieren. Dies ist ein bekanntes Modell für Unternehmensentwickler, da Datenbankanwendungen und-Anwendungen, die NT-Dienste in Windows nutzen, eine ähnliche Architektur mit mehreren Prozessen nutzen.
 
-Das Querladen der App ist eine kritische Komponente dieses Features.
-Unternehmensspezifische Anwendungen gehören nicht in den allgemeinen Microsoft Store für Verbraucher, und Unternehmen besitzen sehr spezielle Anforderungen hinsichtlich Sicherheit, Datenschutz, Verteilung, Einrichtung und Wartung. Das Querlademodell ist daher als solches eine Anforderung derer, die dieses Feature verwenden, und ein wichtiges Implementierungsdetail.
+Das Sideloading der APP ist eine wichtige Komponente dieses Features.
+Unternehmensspezifische Anwendungen haben keinen Platz in der allgemeinen consumerMicrosoft Store und Unternehmen haben sehr spezielle Anforderungen in Bezug auf Sicherheit, Datenschutz, Verteilung, Einrichtung und Wartung. Daher ist das Sideloading-Modell sowohl eine Anforderung von denjenigen, die dieses Feature verwenden, als auch ein kritisches Implementierungsdetail.
 
-Auf Daten ausgerichtete Anwendungen sind ein Hauptziel für diese Anwendungsarchitektur. Es ist vorgesehen, dass vorhandene Unternehmensregeln, die beispielsweise in SQL Server integriert sind, ein häufig verwendeter Teil der Desktopkomponente sind. Dies ist sicher nicht die einzige Art von Funktionalität, die die Desktopkomponente bietet, aber ein großer Teil der Notwendigkeit dieses Features beruht auf vorhandenen Daten und Unternehmenslogiken.
+Datenzentrierte Anwendungen sind ein wichtiges Ziel für diese Anwendungsarchitektur. Es ist bereits darauf bezogen, dass vorhandene Geschäftsregeln verwertet werden, z. b. in SQL Server, ein allgemeiner Teil der Desktop Komponente. Dies ist sicherlich nicht der einzige Funktionstyp, der von der Desktop Komponente angeboten werden kann, aber ein großer Teil der Anforderung für dieses Feature bezieht sich auf vorhandene Daten und Geschäftslogik.
 
-Schließlich wurde dieses Feature aufgrund der überwältigenden Durchdringung der .NET-Laufzeit und der C-\# Sprache in der Unternehmensentwicklung mit einem Schwerpunkt auf die Verwendung von .net für die UWP-APP und die Desktop Komponenten Seite entwickelt. Wenngleich andere Sprachen und Laufzeiten für die UWP-APP möglich sind, veranschaulicht das dazugehörige Beispiel nur C-\# und ist ausschließlich auf die .NET-Laufzeit beschränkt.
+Schließlich wurde dieses Feature aufgrund der überwältigenden Durchdringung der .NET-Laufzeit und der C-\# Sprache in der Unternehmensentwicklung mit einem Schwerpunkt auf die Verwendung von .net für die UWP-APP und die Desktop Komponenten Seite entwickelt. Wenngleich andere Sprachen und Laufzeiten für die UWP-APP möglich sind, veranschaulicht das dazugehörige Beispiel nur C-\#und ist ausschließlich auf die .NET-Laufzeit beschränkt.
 
 ## <a name="application-components"></a>Anwendungskomponenten
 
->**Beachten Sie**  This Feature ausschließlich für die Verwendung von .NET verwendet wird. Sowohl die Client-App als auch die Desktopkomponente müssen mit .NET erstellt worden sein.
+>**Beachten Sie**  diese Funktion ausschließlich für die Verwendung von .NET verwendet wird. Sowohl die Client-App als auch die Desktop Komponente müssen mithilfe von .NET erstellt werden.
 
 **Anwendungsmodell**
 
-Dieses Feature basiert auf der allgemeinen Anwendungsarchitektur, die als MVVM (Model View View-Model) bekannt ist. Daher wird angenommen, dass sich das „Modell“ vollständig in der Desktopkomponente befindet. Daher sollte sofort offensichtlich sein, dass die Desktopkomponente „kopflos“ ist (d. h., sie enthält keine Benutzeroberfläche). Die Ansicht ist komplett in der quergeladenen Unternehmensanwendung enthalten. Auch wenn es keine Anforderung gibt, dass diese Anwendung auf dem „Ansichtsmodell“-Konstrukt (View-Model-Konstrukt) basiert, gehen wir davon aus, dass dieses Muster allgemein verwendet wird.
+Diese Funktion baut auf der allgemeinen Anwendungsarchitektur auf, die MVVM (Model View View-Model) genannt wird. Daher wird davon ausgegangen, dass das "Modell" vollständig in der Desktop Komponente abgelegt ist. Daher sollte sofort offensichtlich sein, dass es sich bei der Desktop Komponente um einen "headless"-Wert handelt (d. h. ohne Benutzeroberfläche). Die Ansicht ist vollständig in der neben geladenen Unternehmens Anwendung enthalten. Obwohl es nicht erforderlich ist, dass diese Anwendung mit dem Konstrukt "View-Model" erstellt wird, wird davon abgerechnet, dass die Verwendung dieses Musters üblich ist.
 
 **Desktop Komponente**
 
-Bei der Desktopkomponente in diesem Feature handelt es sich um einen neuen Anwendungstyp, der als Teil dieses Features eingeführt wird. Diese Desktop Komponente kann nur in C-\# geschrieben werden und muss für Windows 10 auf .NET 4,6 oder höher ausgerichtet sein. Der Projekttyp ist ein Hybrid für die Common Language Runtime (CLR) für UWP, da das Format für die prozessübergreifende Kommunikation UWP-Typen und -Klassen enthält, während die Desktopkomponente alle Teile der .NET-Laufzeit-Klassenbibliothek aufrufen darf. Die Auswirkungen auf das Visual Studio-Projekt werden später ausführlich beschrieben. Diese Hybridkonfiguration ermöglicht den Aufruf von UWP-Typen für die auf den Desktopkomponenten basierenden Anwendung, während gleichzeitig der Desktop-CLR-Code innerhalb der Desktopkomponentenimplementierung aufgerufen werden kann.
+Die Desktop Komponente in diesem Feature ist ein neuer Anwendungstyp, der als Teil dieses Features eingeführt wird. Diese Desktop Komponente kann nur in C-\# geschrieben werden und muss für Windows 10 auf .NET 4,6 oder höher ausgerichtet sein. Der Projekttyp ist ein Hybrid zwischen der CLR für UWP, da das prozessübergreifende Kommunikationsformat UWP-Typen und-Klassen umfasst, während die Desktop Komponente alle Teile der .net-Lauf Zeit Klassenbibliothek abrufen kann. Die Auswirkungen auf das Visual Studio-Projekt werden später ausführlich beschrieben. Diese Hybrid Konfiguration ermöglicht das Marshalling von UWP-Typen zwischen der Anwendung, die auf den Desktop Komponenten basiert, und ermöglicht gleichzeitig das Aufrufen von Desktop-CLR-Code innerhalb der Implementierung der Desktop Komponente.
 
 **Bedingungen**
 
-Der Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente wird mithilfe des UWP-Typsystems beschrieben. Dies umfasst das Deklarieren einer oder mehrerer C-\# Klassen, die eine UWP darstellen können. Weitere Informationen finden Sie [im MSDN-Thema Erstellen von Windows-Runtime Komponenten in c \# und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) , um Windows-Runtime Klasse mithilfe von c \# zu erstellen.
+Der Vertrag zwischen der sideloloaded-Anwendung und der Desktop Komponente wird in Bezug auf das UWP-Typsystem beschrieben. Dies umfasst das Deklarieren einer oder mehrerer C-\# Klassen, die eine UWP darstellen können. Weitere Informationen finden Sie [im MSDN-Thema Erstellen von Windows-Runtime Komponenten in c\# und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) , um Windows-Runtime Klasse mithilfe von c\#zu erstellen.
 
->**Beachten Sie** , dass  Enums zurzeit nicht im Windows-Runtime Components-Vertrag zwischen der Desktop Komponente und der sideloloaded-Anwendung unterstützt werden.
+>**Beachten Sie** , dass  enums zurzeit nicht im Windows-Runtime Components-Vertrag zwischen der Desktop Komponente und der sideloloaded-Anwendung unterstützt werden.
 
 **Sideloloaded-Anwendung**
 
-Bei der quergeladenen Anwendung handelt es sich in jeder Hinsicht um eine normale UWP-App, mit einer Ausnahme: Sie wird quergeladen und nicht über den Microsoft Store installiert. Viele der Installationsmechanismen sind identisch: Das Manifest und das Anwendungspaket ähneln sich (ein Zusatz zum Manifest wird später ausführlich erläutert). Nach der Aktivierung des Querladens kann ein einfaches PowerShell-Skript die erforderlichen Zertifikate und die Anwendung selbst installieren. Normalerweise besteht die bewährte Methode darin, dass die quergeladene Anwendung den WACK-Zertifizierungstest durchläuft, der in Visual Studio im Menü „Projekt/Store“ enthalten ist.
+Bei der neben geladenen Anwendung handelt es sich um eine normale UWP-app in jeder Hinsicht mit Ausnahme von einem: Sie wird neben dem Microsoft Store nicht über die installiert. Die meisten Installations Mechanismen sind identisch: das Manifest und die Anwendungs Verpackung sind ähnlich (eine Ergänzung zum Manifest wird später ausführlich beschrieben). Wenn das Sideloading aktiviert ist, kann ein einfaches PowerShell-Skript die erforderlichen Zertifikate und die Anwendung selbst installieren. Die übliche bewährte Vorgehensweise besteht darin, dass die Anwendung, die die Seite geladen hat, den Wack-Zertifizierungstest übergibt, der im Menü "Projekt/Speicher" in Visual Studio enthalten ist.
 
->**Hinweis**  Das Querladen kann in „Einstellungen &gt; Update & Sicherheit &gt; Für Entwickler“ aktiviert werden.
+>**Hinweis** Das Sideloading kann in "Settings-&gt; Update & Security-&gt; für Entwickler aktiviert werden.
 
-Es muss unbedingt angemerkt werden, dass der im Lieferumfang von Windows 10 enthaltene App-Broker nur als 32-Bit-Version vorliegt. Die Desktopkomponente muss eine 32-Bit-Version sein.
-Quergeladene Anwendungen können als 64-Bit-Version vorliegen (vorausgesetzt, dass 64-Bit- und 32-Bit-Proxys registriert sind), aber dies wäre untypisch. Wenn Sie die Anwendung mit Sideloading in C \# mit der normalen "neutralen" Konfiguration und der Standardeinstellung "bevorzugtes 32-Bit" erstellen, werden auf natürliche Weise 32-Bit-Anwendungen erstellt.
+Ein wichtiger Punkt ist, dass der APP-Broker-Mechanismus, der als Teil von Windows 10 ausgeliefert wird, nur 32 Bit ist. Die Desktop Komponente muss 32 Bit sein.
+Sideloloaded-Anwendungen können 64-Bit-Version sein (vorausgesetzt, es sind sowohl ein 64-Bit-als auch ein 32-Bit-Proxys registriert), dies ist jedoch nicht typisch. Wenn Sie die Anwendung mit Sideloading in C\# mit der normalen "neutralen" Konfiguration und der Standardeinstellung "bevorzugtes 32-Bit" erstellen, werden auf natürliche Weise 32-Bit-Anwendungen erstellt.
 
 **Server Instanz und AppDomains**
 
-Jede quergeladene Anwendung erhält eine eigene Instanz eines App-Broker-Servers (so genannte „Multiinstanzerstellung“). Der Servercode wird innerhalb einer einzelnen AppDomain ausgeführt. Dadurch können mehrere Bibliotheksversionen in separaten Instanzen ausgeführt werden. Beispielsweise benötigt Anwendung A die Version V1.1 einer Komponente, und Anwendung B benötigt Version V2. Diese werden sauber voneinander getrennt, indem V1.1- und V2-Komponenten in separaten Serververzeichnissen gespeichert werden und die Anwendung auf den Server verweist, der die gewünschte Version unterstützt.
+Jede seitig geladene Anwendung erhält eine eigene Instanz eines App-Broker Servers (so genannte "multiinstancing"). Der Servercode wird innerhalb einer einzelnen AppDomain ausgeführt. Dies ermöglicht, dass mehrere Versionen von Bibliotheken in separaten Instanzen ausgeführt werden. Beispielsweise benötigt Anwendung A v 1.1 einer Komponente, und Anwendung B benötigt v2. Diese werden durch die Komponenten v 1.1 und v2 in separaten Server Verzeichnissen getrennt getrennt, und die Anwendung wird auf den Server verwiesen, der die richtige gewünschte Version unterstützt.
 
-Die Servercodeimplementierung kann auf mehrere App-Broker-Serverinstanzen verteilt werden, indem mehrere Anwendungen auf dasselbe Serververzeichnis verweisen. Es sind nach wie vor mehrere Instanzen des App-Broker-Servers vorhanden, auf ihnen wird jedoch identischer Code ausgeführt. Alle in einer einzelnen Anwendung verwendeten Implementierungskomponenten sollten sich unter demselben Pfad befinden.
+Die Implementierung des Server Codes kann von mehreren App Broker-Server Instanzen gemeinsam genutzt werden, indem mehrere Anwendungen auf dasselbe Serververzeichnis verwiesen werden. Es werden immer noch mehrere Instanzen des App Broker-Servers vorhanden sein, aber es wird identischer Code ausgeführt. Alle Implementierungs Komponenten, die in einer einzelnen Anwendung verwendet werden, sollten im gleichen Pfad vorhanden sein.
 
 ## <a name="defining-the-contract"></a>Definieren des Vertrags
 
-Der erste Schritt beim Erstellen einer Anwendung mithilfe dieses Features besteht darin, einen Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente zu erstellen. Dies darf nur mit Windows-Runtime-Typen erfolgen.
-Glücklicherweise sind diese mithilfe von C-\# Klassen leicht zu deklarieren. Es gibt wichtige jedoch wichtige Überlegungen hinsichtlich der Leistung, wenn diese Konversationen definiert werden, die in einem späteren Abschnitt behandelt werden.
+Der erste Schritt beim Erstellen einer Anwendung mithilfe dieses Features besteht darin, den Vertrag zwischen der Seite mit den Seiten geladenen Anwendungen und der Desktop Komponente zu erstellen. Dies muss ausschließlich mithilfe von Windows-Runtime Typen erfolgen.
+Glücklicherweise sind diese mithilfe von C-\# Klassen leicht zu deklarieren. Es gibt jedoch wichtige Überlegungen zur Leistung, wenn Sie diese Konversationen definieren, die in einem späteren Abschnitt behandelt werden.
 
 Die Sequenz zum Definieren des Vertrags wird wie folgt eingeführt:
 
-**Schritt 1:** Erstellen Sie in Visual Studio eine neue Klassenbibliothek. Stellen Sie sicher, dass Sie das Projekt mit der **Klassen Bibliotheks** Vorlage und nicht mit der Vorlage für die **Windows-Runtime-Komponente** erstellen.
+**Schritt 1:** Erstellen Sie eine neue Klassenbibliothek in Visual Studio. Stellen Sie sicher, dass Sie das Projekt mit der **Klassen Bibliotheks** Vorlage und nicht mit der Vorlage für die **Windows-Runtime-Komponente** erstellen.
 
-In der Regel folgt an dieser Stelle eine Implementierung, in diesem Abschnitt wird jedoch lediglich die Definition des prozessübergreifenden Vertrags erläutert. Das Begleitbeispiel enthält die folgende Klasse (EnterpriseServer.cs), deren Anfangsform wie folgt aussieht:
+Eine-Implementierung folgt offensichtlich, aber in diesem Abschnitt wird nur die Definition des prozessübergreifenden Vertrags behandelt. Das zugehörige Beispiel enthält die folgende Klasse (EnterpriseServer.cs), deren Anfangsform aussieht:
 
 ```csharp
 namespace Fabrikam
@@ -100,21 +100,21 @@ namespace Fabrikam
 }
 ```
 
-Hierdurch wird die Klasse „EnterpriseServer“ definiert, die von der quergeladenen Anwendung instanziiert werden kann. Diese Klasse stellt die in der RuntimeClass zugesagte Funktionalität bereit. Die RuntimeClass kann verwendet werden, um die WINMD-Verweisdatei zu generieren, die Bestandteil der quergeladenen Anwendung ist.
+Dadurch wird die Klasse "EnterpriseServer" definiert, die von der neben geladenen Anwendung instanziiert werden kann. Diese Klasse stellt die Funktionalität bereit, die in der runtimeclass versprochen wurde. Die runtimeclass kann verwendet werden, um den Verweis-winmd zu generieren, der in der neben geladenen Anwendung enthalten ist.
 
 **Schritt 2:** Bearbeiten Sie die Projektdatei manuell, um den Ausgabetyp des Projekts in **Windows-Runtime Komponente**zu ändern.
 
-Klicken Sie dazu in Visual Studio mit der rechten Maustaste auf das neu erstellte Projekt, und wählen Sie „Projekt entladen“ aus. Klicken Sie anschließend erneut mit der rechten Maustaste, und wählen Sie „EnterpriseServer.csproj bearbeiten“ aus, um die Projektdatei, eine XML-Datei, für die Bearbeitung zu öffnen.
+Klicken Sie dazu mit der rechten Maustaste auf das neu erstellte Projekt, und wählen Sie "Projekt entladen" aus. Klicken Sie dann erneut mit der rechten Maustaste, und wählen Sie "EnterpriseServer. csproj bearbeiten" aus, um die Projektdatei (eine XML-Datei) zum Bearbeiten zu öffnen.
 
-Suchen Sie in der geöffneten Datei nach dem \<OutputType \>-Tag, und ändern Sie dessen Wert in "winmdobj".
+Suchen Sie in der geöffneten Datei nach dem \<OutputType\> Tag, und ändern Sie dessen Wert in "winmdobj".
 
-**Schritt 3:** Erstellen Sie eine Buildregel, die eine Windows-Metadatendatei (WINMD-Datei) als „Verweis“ erstellt. Das bedeutet, es gibt keine Implementierung.
+**Schritt 3:** Erstellen Sie eine Buildregel, die eine "Verweis"-Windows-Metadatendatei (winmd-Datei) erstellt. bedeutet, dass über keine Implementierung verfügt.
 
-**Schritt 4:** Erstellen Sie eine Buildregel, die eine Windows-Metadatendatei für die „Implementierung“ erstellt, d. h., sie enthält dieselben Metadateninformationen und dazu die Implementierung.
+**Schritt 4:** Erstellen Sie eine Buildregel, die eine Windows-Metadatendatei "Implementation" erstellt, d.h. die gleichen Metadateninformationen enthält, aber auch die-Implementierung enthält.
 
-Dies erfolgt durch die folgenden Skripts. Fügen Sie die Skripts der Befehlszeile nach dem Build-Ereignis im Projekt **Eigenschaften** > **Buildereignisse** hinzu.
+Dies erfolgt mithilfe der folgenden Skripts. Fügen Sie die Skripts der Befehlszeile für das Postbuildereignis in den Projekt **Eigenschaften** > **Buildereignisse**hinzu.
 
-> **Hinweis**  Das Skript unterscheidet sich abhängig von der Version von Windows, auf die Sie abzielen (Windows 10) und der verwendeten Version von Visual Studio.
+> **Beachten Sie** , dass sich das Skript auf der Grundlage der Windows-Version (Windows 10) und der verwendeten Version von Visual Studio unterscheidet.
 
 **Visual Studio 2015**
 ```cmd
@@ -139,7 +139,7 @@ Dies erfolgt durch die folgenden Skripts. Fügen Sie die Skripts der Befehlszeil
 ```
 
 
-**Visual Studio 2017**
+**Visual Studio 2017**
 ```cmd
     call "$(DevEnvDir)..\..\vc\auxiliary\build\vcvarsall.bat" x86 10.0.16299.0
 
@@ -161,10 +161,10 @@ Dies erfolgt durch die folgenden Skripts. Fügen Sie die Skripts der Befehlszeil
     rem erase "$(TargetPath)"
 ```
 
-Nachdem der Verweis **winmd** erstellt wurde (im Ordner „Verweis“ unterhalb des Zielordners für das Projekt), wird er manuell in jedes verarbeitende quergeladene Anwendungsprojekt kopiert und referenziert. Dies wird im folgenden Abschnitt näher erläutert. Die in den oben erwähnten Buildregeln verkörperte Projektstruktur stellt sicher, dass sich die Implementierung und die **winmd**-Verweisdatei in klar getrennten Verzeichnissen in der Buildhierarchie befinden, um Verwirrung zu vermeiden.
+Sobald der Verweis- **winmd** (im Ordner "Reference" unter dem Zielordner des Projekts) erstellt wurde, wird er für jedes verwendete neben geordnete Anwendungsprojekt Hand geladen (kopiert), und es wird darauf verwiesen. Dies wird weiter unten im nächsten Abschnitt beschrieben. Die Projektstruktur, die in den obigen Buildregeln enthalten ist, stellt sicher, dass sich die Implementierung und der Verweis- **winmd** in eindeutig getrennten Verzeichnissen in der buildhierarchie befinden, um Verwirrung zu vermeiden.
 
-## <a name="side-loaded-applications-in-detail"></a>Quergeladene Anwendungen im Detail
-Wie bereits erwähnt, wird die quergeladene Anwendung genau wie jede andere UWP-App erstellt, aber es gibt ein zusätzliches Detail: das Deklarieren der Verfügbarkeit der RuntimeClass(es) im Manifest der quergeladenen Anwendung. Dies ermöglicht der Anwendung das einfache Neuschreiben, um auf die Funktionalität in der Desktopkomponente zuzugreifen. Ein Manifesteintrag im Abschnitt <Extension> beschreibt die in der Desktopkomponente implementierte RuntimeClass und enthält Informationen darüber, wo sie sich befindet. Diese Deklarationsinhalte im Manifest der Anwendung sind mit denen von Apps für Windows 10 identisch. Zum Beispiel:
+## <a name="side-loaded-applications-in-detail"></a>Paralleles Laden von Anwendungen im Detail
+Wie bereits erwähnt, wird die Seite mit Seiten geladenen Anwendungen wie jede andere UWP-App erstellt, aber es gibt noch ein zusätzliches Detail: Deklarieren der Verfügbarkeit der runtimeclass (es) im Manifest der neben geladenen Anwendung. Dadurch kann die Anwendung einfach neu schreiben, um auf die Funktionalität in der Desktop Komponente zuzugreifen. Ein neuer Manifest-Eintrag im Abschnitt "<Extension>" beschreibt die in der Desktop Komponente implementierte runtimeclass und Informationen dazu, wo Sie sich befinden. Diese Deklarations Inhalte im Anwendungs Manifest sind für apps, die auf Windows 10 ausgerichtet sind, identisch. Beispiel:
 
 ```XML
 <Extension Category="windows.activatableClass.inProcessServer">
@@ -177,24 +177,24 @@ Wie bereits erwähnt, wird die quergeladene Anwendung genau wie jede andere UWP-
 </Extension>
 ```
 
-Die Kategorie lautet „inProcessServer“, da die outOfProcessServer-Kategorie mehrere Einträge enthält, die für diese Anwendungskonfiguration nicht anwendbar sind. Beachten Sie, dass die <Path>-Komponente stets „clrhost.dll“ enthalten muss (dies wird jedoch **nicht** erzwungen, und das Angeben eines anderen Werts führt zu einem undefinierten Fehler).
+Die Kategorie ist "inprocessserver", weil in der Kategorie "oudefprocessserver" mehrere Einträge vorhanden sind, die für diese Anwendungskonfiguration nicht zutreffend sind. Beachten Sie, dass die <Path> Komponente immer "clrhost. dll" enthalten muss (Dies wird jedoch **nicht** erzwungen, und die Angabe eines anderen Werts schlägt auf nicht definierte Weise fehl).
 
-Der <ActivatableClass>-Abschnitt entspricht einer echten prozessinternen RuntimeClass, die von einer Windows-Runtime-Komponente im App-Paket bevorzugt wird. <ActivatableClassAttribute> ist ein neues Element, und die Attribute Name = "desktopapplicationpath" und Type = "String" sind obligatorisch und invariant. Das Value-Attribut verweist auf den Ort, an dem sich die winmd-Implementierungsdatei der Desktopkomponente befindet (weitere Einzelheiten hierzu finden Sie im folgenden Abschnitt). Jede von der Desktopkomponente bevorzugte RuntimeClass sollte eine eigene <ActivatableClass>-Elementstruktur besitzen. Die ActivatableClassId muss dem vollständig qualifizierten Namespacenamen der RuntimeClass entsprechen.
+Der Abschnitt "<ActivatableClass>" ist mit der "true" in-Process "runtimeclass" identisch, die von einer Windows-Runtime Komponente im Paket der APP bevorzugt wird. <ActivatableClassAttribute> ist ein neues Element, und die Attribute Name = "desktopapplicationpath" und Type = "String" sind obligatorisch und invariant. Das value-Attribut verweist auf den Speicherort, an dem sich die winmd-Implementierung der Desktop Komponente befindet (Ausführlichere Informationen hierzu finden Sie im nächsten Abschnitt). Jede von der Desktop Komponente bevorzugte runtimeclass sollte über eine eigene <ActivatableClass>-Elementstruktur verfügen. Activatableclassid muss mit dem vollständig Namespace qualifizierten Namen der runtimeclass identisch sein.
 
-Wie im Abschnitt „Definieren des Vertrags“ erwähnt wurde, muss ein Projektverweis auf die winmd-Verweisdatei der Desktopkomponente vorgenommen werden. Das Visual Studio-Projektsystem erstellt normalerweise eine aus zwei Ebenen bestehende Verzeichnisstruktur mit demselben Namen. Im Beispiel ist es enterpriseipcapplication \\EnterpriseIPCApplication. Die **winmd**-Verweisdatei wird manuell in dieses Verzeichnis der zweiten Ebene kopiert. Anschließend wird das Dialogfeld „Projektverweise“ verwendet (klicken Sie auf die Schaltfläche **Durchsuchen**...), um diese **winmd**-Datei zu suchen und zu referenzieren. Danach sollte der Namespace auf oberster Ebene der Desktop Komponente (z. b. fabrikam) als Knoten der obersten Ebene im Verweis Teil des Projekts angezeigt werden.
+Wie im Abschnitt "definieren des Vertrags" erwähnt, muss ein Projekt Verweis auf den Verweis-winmd der Desktop Komponente vorgenommen werden. Das Visual Studio-Projekt System erstellt normalerweise eine Verzeichnisstruktur mit zwei Ebenen mit demselben Namen. Im Beispiel ist es enterpriseipcapplication\\enterpriseipcapplication. Der **winmd** -Verweis wird manuell in dieses Verzeichnis der zweiten Ebene kopiert, und dann wird das Dialogfeld "Projekt Verweise" verwendet (Klicken Sie auf " **Durchsuchen".** Schaltfläche), um diese **winmd**zu suchen und darauf zu verweisen. Danach sollte der Namespace auf oberster Ebene der Desktop Komponente (z. b. fabrikam) als Knoten der obersten Ebene im Verweis Teil des Projekts angezeigt werden.
 
->**Hinweis**  Es ist sehr wichtig, die **WINMD-Verweisdatei** in der quergeladenen Anwendung zu verwenden. Wenn Sie versehentlich die **WINMD-Implementierungsdatei** in das Verzeichnis mit der quergeladenen App übernehmen und auf sie verweisen, wird wahrscheinlich ein Fehler wie „IStringable wurde nicht gefunden“ angezeigt. Dies ist ein sicheres Zeichen dafür, dass auf die falsche **WINMD-Datei** verwiesen wurde. Die Postbuildregeln in der IPC-Server-App (im folgenden Abschnitt ausführlich erläutert) trennen diese beiden **WINMD**-Dateien sorgfältig in zwei separaten Verzeichnissen.
+>**Hinweis** Es ist sehr wichtig, den **Verweis-winmd** in der neben geladenen Anwendung zu verwenden. Wenn Sie die **Implementierung von winmd** versehentlich in das neben geladene App-Verzeichnis übertragen und darauf verweisen, erhalten Sie wahrscheinlich eine Fehlermeldung im Zusammenhang mit dem Hinweis, dass istringable nicht gefunden werden kann. Dabei handelt es sich um ein sicheres Vorzeichen, auf das der falsche **winmd** verwiesen wurde. Die postbuildregeln in der IPC Server-app (im nächsten Abschnitt ausführlich erläutert) trennen diese beiden **winmd** sorgfältig in separate Verzeichnisse.
 
-Umgebungsvariablen (insbesondere% Program Files%) kann in <ActivatableClassAttribute Value="path"> verwendet werden. Wie bereits erwähnt, unterstützt der APP-Broker nur 32-Bit, sodass% Program Files% in C: \\Program-Dateien (x86) aufgelöst werden, wenn die Anwendung auf einem 64-Bit-Betriebssystem ausgeführt wird.
+Umgebungsvariablen (insbesondere% Program Files%) kann in <ActivatableClassAttribute Value="path"> verwendet werden. Wie bereits erwähnt, unterstützt der APP-Broker nur 32-Bit, sodass% Program Files% in C:\\-Programmdateien (x86) aufgelöst werden, wenn die Anwendung auf einem 64-Bit-Betriebssystem ausgeführt wird.
 
-## <a name="desktop-ipc-server-detail"></a>Desktop-IPC-Serverdetail
+## <a name="desktop-ipc-server-detail"></a>Desktop IPC-Server Details
 
-In den vorherigen beiden Abschnitten wurden die Deklaration der Klasse und die Mechanismen zur Übertragung der **WINMD**-Verweisdatei in das quergeladene Anwendungsprojekt erläutert. Der Großteil der restlichen Arbeit in der Desktopkomponente betrifft die Implementierung. Da die gesamte Desktopkomponente Desktopcode aufrufen kann (in der Regel zum Wiederverwenden vorhandener Coderessourcen), muss das Projekt auf spezielle Weise konfiguriert werden.
-In der Regel wird bei einem Visual Studio-Projekt mit .NET eines von zwei „Profilen“ verwendet.
-Eines ist für den Desktop („.NetFramework“) und eines ist auf den UWP-App-Teil der CLR ausgerichtet („.NetCore“). Bei einer Desktopkomponente in diesem Feature handelt es sich um einen Hybrid aus diesen beiden. Daher wird der Verweisabschnitt sehr sorgfältig konstruiert, um diese beiden Profile zu mischen.
+In den vorherigen beiden Abschnitten wird die Deklaration der-Klasse und die Mechanismen zum Transportieren des **verweiswinmd** zum neben geladenen Anwendungsprojekt beschrieben. Der Großteil der verbleibenden Arbeit in der Desktop Komponente umfasst die Implementierung. Da der gesamte Punkt der Desktop Komponente in der Lage sein soll, den Desktop Code aufzurufen (in der Regel, um vorhandene codeassets wiederzuverwenden), muss das Projekt auf besondere Weise konfiguriert werden.
+Normalerweise verwendet ein Visual Studio-Projekt, in dem .NET verwendet wird, eines von zwei "Profiles".
+Eine ist für Desktop (". NETFramework ") und eines für den UWP-App-Teil der CLR (". Netcore "). Eine Desktop Komponente in dieser Funktion ist eine Hybrid Verbindung zwischen diesen beiden. Daher wird der Verweis Abschnitt sehr sorgfältig erstellt, um diese beiden Profile zu kombinieren.
 
-Ein normales UWP-App-Projekt enthält keine expliziten Projektverweise, da die gesamte Windows-Runtime-API-Oberfläche implizit enthalten ist.
-In der Regel werden nur andere projektübergreifenden Verweise vorgenommen. Ein Desktopkomponentenprojekt verfügt jedoch über einen sehr speziellen Satz an Verweisen. Die Lebensdauer wird als "klassisches Desktop \\Class Library"-Projekt gestartet und ist daher ein Desktop Projekt. Deshalb müssen explizite Verweise auf die Windows-Runtime-API (mithilfe von Verweisen auf **WINMD**-Dateien) vorgenommen werden. Fügen Sie die korrekten Verweise wie unten gezeigt hinzu.
+Ein normales UWP-App-Projekt enthält keine expliziten Projekt Verweise, da die gesamte Windows-Runtime API-Oberfläche implizit eingeschlossen ist.
+Normalerweise werden nur andere projektübergreifende Verweise erstellt. Allerdings verfügt ein Desktop Komponenten Projekt über einen sehr speziellen Satz von verweisen. Die Lebensdauer wird als "klassisches Desktop\\-Klassenbibliothek"-Projekt gestartet und ist daher ein Desktop Projekt. Daher müssen explizite Verweise auf die Windows-Runtime-API (über Verweise auf **winmd** -Dateien) erstellt werden. Fügen Sie ordnungsgemäße Verweise hinzu, wie unten gezeigt.
 
 ```XML
 <ItemGroup>
@@ -404,45 +404,45 @@ In der Regel werden nur andere projektübergreifenden Verweise vorgenommen. Ein 
 </ItemGroup>
 ```
 
-Die oben erwähnten Verweise sind eine sorgfältige Mischung aus Verweisen, die für die korrekte Ausführung dieses Hybridservers entscheidend sind. Das normale Verfahren besteht darin, die CSPROJ-Datei (wie für die Bearbeitung des Projekts OutputType beschrieben) zu öffnen und diese Verweise wie erforderlich hinzuzufügen.
+Die obigen Verweise stellen eine sorgfältige Mischung aus eferences dar, die für den ordnungsgemäßen Betrieb dieses Hybrid Servers von entscheidender Bedeutung sind. Das Protokoll dient zum Öffnen der CSPROJ-Datei (wie unter Bearbeiten des Projekts OutputType beschrieben) und zum Hinzufügen dieser Verweise nach Bedarf.
 
-Sobald die Verweise korrekt konfiguriert wurden, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Weitere Informationen finden [Sie im Thema bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWPC++ -apps mit C \#/VB/und XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
-Die Aufgabe besteht darin, eine DLL-Datei für die Komponente für Windows-Runtime zu erstellen, die Desktopcode als Teil der Implementierung aufrufen kann. Das Begleitbeispiel enthält die in der Windows-Runtime verwendeten Hauptmuster:
+Sobald die Verweise ordnungsgemäß konfiguriert sind, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Weitere Informationen finden [Sie im Thema bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWPC++ -apps mit C\#/VB/und XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
+Die Aufgabe besteht darin, eine Windows-Runtime Komponenten-DLL zu erstellen, die im Rahmen der Implementierung von Desktop Code aufgerufen werden kann. Das zugehörige Beispiel enthält die wichtigsten Muster, die in Windows-Runtime verwendet werden:
 
 -   Methodenaufrufe
 
--   Windows-Runtime-Ereignisquellen der Desktopkomponente
+-   Ereignisse von der Desktop Komponente Windows-Runtime Ereignissen
 
--   Asynchrone Windows-Runtime-Vorgänge
+-   Asynchrone Vorgänge Windows-Runtime
 
--   Zurückgegebene Arrays grundlegender Typen
+-   Zurückgeben von Arrays von Basis Typen
 
 **Installieren**
 
-Zum Installieren der App kopieren Sie die **WINMD**-Implementierung in das richtige Verzeichnis, das im Manifest der zugehörigen quergeladenen Anwendung angegeben ist: der Wert Value="path" von <ActivatableClassAttribute>. Kopieren Sie auch alle zugehörigen Unterstützungsdateien und die Proxy-/Stub-DLL (letztere wird weiter unten erläutert). Wenn die **WINMD**-Implementierung nicht an den Speicherort im Serververzeichnis kopiert wird, führt dies dazu, dass alle zu erneuernden Aufrufe der quergeladenen Anwendung für die RuntimeClass einen Fehler des Typs „Klasse nicht registriert“ zurückgeben. Wenn der Proxy/Stub nicht installiert (oder nicht registriert) wird, tritt bei allen Aufrufen ein Fehler auf, und es werden keine Werte zurückgegeben. Dieser letzte Fehler ist häufig **nicht** mit sichtbaren Ausnahmen verbunden.
-Wenn aufgrund dieses Fehlers Ausnahmen beobachtet werden, beziehen sie sich unter Umständen auf eine „ungültige Umwandlung“.
+Um die APP zu installieren, kopieren Sie die **winmd** -Implementierung in das richtige Verzeichnis, das im zugehörigen Manifest der zugehörigen neben geladenen Anwendung angegeben ist: <ActivatableClassAttribute>es Value = "Path". Kopieren Sie außerdem alle zugeordneten Unterstützungs Dateien und die Proxy-/Stub-DLL (die nachfolgenden Details finden Sie unten). Wenn die Implementierung von **winmd** nicht in den Speicherort des Server Verzeichnisses kopiert wird, wird der Fehler "Class Not Registered" ausgelöst, wenn alle Aufrufe von "New" der Seite "New" in der runtimeclass aufgerufen werden. Wenn Sie den Proxy/Stub nicht installieren (oder die Registrierung nicht durchführen), werden alle Aufrufe fehlschlagen, ohne dass Rückgabewerte angezeigt werden. Der letztere Fehler ist häufig **nicht** mit sichtbaren Ausnahmen verknüpft.
+Wenn Ausnahmen aufgrund dieses Konfigurations Fehlers festgestellt werden, können Sie auf "ungültige Umwandlung" verweisen.
 
 **Überlegungen zur Server Implementierung**
 
-Sie können sich den Desktop-Windows-Runtime-Server als arbeits- oder aufgabenbasierten Server vorstellen. Jeder Aufruf an den Server fungiert als Nicht-UI-Thread, und der gesamte Code muss Multithread-fähig und sicher sein. Es ist auch wichtig, welcher Teil der quergeladenen Anwendung den Server aufruft. Es sollte auch immer vermieden werden, Code mit langer Ausführungsdauer über einen Benutzeroberflächen-Thread in der quergeladenen Anwendung auszuführen. Dazu gibt es zwei wesentlichen Möglichkeiten:
+Der Desktop Windows-Runtime Server kann als "Worker" oder "Task"-basiert betrachtet werden. Jeder Server Server wird in einem nicht-UI-Thread betrieben, und der gesamte Code muss Multithread-fähig und sicher sein. Der Teil der neben geladenen Anwendung, der die Funktionalität des Servers aufruft, ist ebenfalls wichtig. Es ist wichtig, dass Sie immer vermeiden, dass Code mit langer Ausführungszeit von einem beliebigen UI-Thread in der neben geladenen Anwendung aufgerufen wird. Hierfür gibt es zwei Möglichkeiten:
 
-1.  Verwenden Sie beim Aufrufen einer Serverfunktionalität über einen Benutzeroberflächen-Thread immer ein asynchrones Muster in der öffentlichen Oberfläche und der Implementierung des Servers.
+1.  Wenn Sie die Server Funktionalität von einem UI-Thread aufrufen, verwenden Sie immer ein Async-Muster in der öffentlichen Oberfläche und Implementierung des Servers.
 
-2.  Rufen Sie die Funktionalität des Servers über einen Hintergrundthread in der quergeladenen Anwendung auf.
+2.  Die Funktionalität des Servers wird von einem Hintergrund Thread in der neben geladenen Anwendung aufgerufen.
 
 **Windows-Runtime Async auf dem Server**
 
-Aufgrund der prozessübergreifenden Natur des Anwendungsmodells erzeugen Aufrufe an den Server mehr Mehraufwand als Code, der ausschließlich innerhalb eines Prozesses ausgeführt wird. In der Regel ist es sicher, eine einfache Eigenschaft aufzurufen, die einen speicherinternen Wert zurückgibt, da dies schnell genug ausgeführt wird, um den UI-Thread nicht zu blockieren. Allerdings können alle Aufrufe, die E/A-Vorgänge beinhalten (dazu zählen sämtliche Dateiverarbeitungen und Datenbankabrufe), den aufrufenden UI-Thread potenziell blockieren und dazu führen, dass die Anwendung beendet wird, weil sie nicht reagiert. Außerdem wird bei dieser Anwendungsarchitektur aus Leistungsgründen von Eigenschaftsaufrufen für Objekte abgeraten.
-Eine ausführlichere Erläuterung finden Sie im folgenden Abschnitt.
+Aufgrund der prozessübergreifenden Art des Anwendungs Modells haben Aufrufe an den Server mehr Aufwand als Code, der exklusiv Prozess übergreifend ausgeführt wird. Normalerweise ist es sicher, eine einfache Eigenschaft aufzurufen, die einen Speicher internen Wert zurückgibt, da Sie schnell genug ausgeführt wird, sodass das Blockieren des UI-Threads nicht relevant ist. Allerdings kann jeder Aufruf, der e/a-Vorgänge (einschließlich aller Datei Behandlung und Daten Bank Abruf Vorgänge) einschließt, den aufrufenden UI-Thread blockieren und bewirkt, dass die Anwendung aufgrund einer nicht Reaktionsfähigkeit beendet wird. Außerdem wird aus Leistungsgründen von der Verwendung von Eigenschafts aufrufen für Objekte in dieser Anwendungsarchitektur abgeraten.
+Dies wird im folgenden Abschnitt ausführlicher behandelt.
 
-Ein korrekt implementierter Server implementiert über UI-Threads ausgeführte Aufrufe normalerweise direkt über das asynchrone Windows-Runtime-Muster. Dies kann durch das folgende Muster implementiert werden. Zunächst erfolgt die Deklaration (erneut aus dem Begleitbeispiel):
+Ein ordnungsgemäß implementierter Server implementiert normalerweise Aufrufe, die direkt aus Benutzeroberflächenthreads über das Windows-Runtime Async-Muster vorgenommen werden. Dies kann mithilfe des folgenden Musters implementiert werden. Zuerst die Deklaration (wiederum aus dem zugehörigen Beispiel):
 
 ```csharp
 public IAsyncOperation<int> FindElementAsync(int input)
 ```
 
-Hiermit wird ein asynchroner Widows-Runtime-Vorgang deklariert, der eine ganze Zahl zurückgibt.
-Die Implementierung des asynchronen Vorgangs sieht in der Regel wie folgt aus:
+Dadurch wird ein Windows-Runtime asynchroner Vorgang deklariert, der eine ganze Zahl zurückgibt.
+Die Implementierung des Async-Vorgangs hat normalerweise das folgende Format:
 
 ```csharp
 return Task<int>.Run( () =>
@@ -453,7 +453,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**Hinweis**  Beachten Sie, dass es beim Schreiben der Implementierung normal ist, auf andere Vorgänge mit potenziell langer Ausführungsdauer zu warten. In diesem Fall muss der **Task.Run**-Code deklariert werden:
+>**Hinweis** Es kommt häufig vor, dass beim Schreiben der Implementierung einige andere möglicherweise lange ausgelaufende Vorgänge erwartet werden. Wenn dies der Fall ist, muss der **Task. Run** -Code deklariert werden:
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -464,64 +464,64 @@ return Task<int>.Run(async () =>
 }).AsAsyncOperation<int>();
 ```
 
-Clients dieser asynchronen Methode können wie bei jedem anderen asynchronen Windows-Runtime-Vorgang auf den Vorgang warten.
+Clients dieser Async-Methode können diesen Vorgang wie jede andere Windows-Runtime aysnc-Operation erwarten.
 
 **Server Funktionalität aus einem Anwendungs Hintergrund Thread abrufen**
 
-Da Client und Server in der Regel von derselben Organisation geschrieben werden, kann eine Programmiermethode angewendet werden, bei der alle Aufrufe an den Server durch einen Hintergrundthread in der quergeladenen Anwendung erfolgen. Ein direkter Aufruf, bei dem ein oder mehrere Datenstapel vom Server abgerufen werden, kann über einen Hintergrundthread erfolgen. Wenn die Ergebnisse vollständig abgerufen wurden, kann der Datenstapel, der sich im Speicher des Anwendungsprozesses befindet, in der Regel direkt über den Benutzeroberflächen-Thread abgerufen werden. C-\# Objekte sind natürlich flexibel zwischen Hintergrundthreads und Benutzeroberflächenthreads und sind daher besonders nützlich für diese Art von Aufruf Mustern.
+Da sowohl der Client als auch der Server von der gleichen Organisation geschrieben werden, kann eine Programmier Übung verwendet werden, die alle Aufrufe an den Server durch einen Hintergrund Thread in der neben geladenen Anwendung durchführt. Ein direkter-Befehl, der einen oder mehrere Daten Batches vom Server sammelt, kann aus einem Hintergrund Thread erstellt werden. Wenn die Ergebnisse vollständig abgerufen werden, kann der Daten Batch, der im Arbeitsspeicher des Anwendungsprozesses vorhanden ist, normalerweise direkt aus dem UI-Thread abgerufen werden. C @ no__t_0_-Objekte sind natürlich zwischen Hintergrundthreads und Benutzeroberflächenthreads flexibel und somit besonders nützlich für diese Art von Aufruf Mustern.\#
 
-## <a name="creating-and-deploying-the-windows-runtime-proxy"></a>Erstellen und Bereitstellen des Windows-Runtime-Proxys
+## <a name="creating-and-deploying-the-windows-runtime-proxy"></a>Erstellen und Bereitstellen des Windows-Runtime Proxys
 
-Da die IPC-Methode das Marshalling von Windows-Runtime-Schnittstellen zwischen zwei Prozessen beinhaltet, muss ein global registrierter Windows-Runtime-Proxy und -Stub verwendet werden.
+Da der IPC-Ansatz das Marshalling von Windows-Runtime Schnittstellen zwischen zwei Prozessen umfasst, muss ein Global registrierter Windows-Runtime Proxy und Stub verwendet werden.
 
 **Erstellen des Proxys in Visual Studio**
 
 Der Prozess zum Erstellen und Registrieren von Proxys und stubys für die Verwendung in einem regulären UWP-App-Paket wird im Thema zum Erstellen von [Ereignissen in Windows-Runtime Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140))beschrieben.
-Die in diesem Artikel beschriebenen Schritte sind komplizierter als der nachfolgend beschriebene Prozess, da sie das Registrieren des Proxys/Stubs innerhalb des Anwendungspakets enthalten (im Gegensatz zur globalen Registrierung).
+Die in diesem Artikel beschriebenen Schritte sind komplizierter als der unten beschriebene Prozess, da Sie das Registrieren des Proxys/Stubs innerhalb des Anwendungspakets (im Gegensatz zur globalen Registrierung) beinhalten.
 
-**Schritt 1:** Erstellen Sie mithilfe der Projektmappe für das Desktopkomponentenprojekt ein Proxy-/Stub-Projekt in Visual Studio:
+**Schritt 1:** Erstellen Sie in Visual Studio mithilfe der Projekt Mappe für das Desktop Komponenten Projekt ein Proxy-/Stubprojekt:
 
 **Projekt Mappe > > Projekt hinzufügen C++ > Visual > Win32-Konsole wählen Sie dll-Option aus.**
 
-Bei den nachfolgenden Schritten wird davon ausgegangen, dass der Name der Serverkomponente **MyWinRTComponent** lautet.
+Bei den folgenden Schritten wird davon ausgegangen, dass die Serverkomponente **mywinrtcomponent**heißt.
 
-**Schritt 3:** Löschen Sie alle CPP/H-Dateien im Projekt.
+**Schritt 3:** Löschen Sie alle cpp/H-Dateien aus dem Projekt.
 
-**Schritt 4:** Der vorherige Abschnitt „Definieren des Vertrags“ enthält einen Postbuildbefehl, der **winmdidl.exe**, **midl.exe**, **mdmerge.exe** usw. ausführt. Eine der Ausgaben des midl-Schritts dieses Postbuildbefehls generiert vier wichtige Ausgaben:
+**Schritt 4:** Der vorherige Abschnitt "definieren des Vertrags" enthält einen Postbuildbefehl, der " **winmdidl. exe**", " **Mittel l. exe**", " **mdmerge. exe**" und so weiter ausführt. Eine der Ausgaben aus dem Mittel l-Schritt dieses Postbuild-Befehls generiert vier wichtige Ausgaben:
 
-a) Dlldata.c
+a) dlldata. c
 
 b) eine Header Datei (z. b. mywinrtcomponent. h)
 
-c) A \* \_i. c-Datei (z. b. mywinrtcomponent \_i. c)
+c) A \*\_i. c-Datei (z. b. mywinrtcomponent\_i. c)
 
-d) A \* \_p. c-Datei (z. b. mywinrtcomponent \_p. c)
+d) A \*\_p. c-Datei (z. b. mywinrtcomponent\_p. c)
 
-**Schritt 5:** Fügen Sie diese vier generierten Dateien dem Projekt „MyWinRTProxy“ hinzu.
+**Schritt 5:** Fügen Sie diese vier generierten Dateien dem Projekt "mywinrtproxy" hinzu.
 
-**Schritt 6:** Fügen Sie dem Projekt „MyWinRTProxy“ eine Definitionsdatei hinzu **(Projekt/Neues Element hinzufügen/Code/Moduldefinitionsdatei)** , und aktualisieren Sie den Inhalt wie folgt:
+**Schritt 6:** Fügen Sie dem Projekt "mywinrtproxy" eine DEF-Datei hinzu **(Projekt > Neues Element > Code > Modul Definitionsdatei hinzufügen**), und aktualisieren Sie den Inhalt wie folgt:
 
-LIBRARY MyWinRTComponent.Proxies.dll
+Bibliothek mywinrtcomponent. Proxies. dll
 
-EXPORTS
+Ö
 
-DllCanUnloadNow PRIVATE
+DllCanUnloadNow privat
 
-DllGetClassObject PRIVATE
+DllGetClassObject privat
 
-DllRegisterServer PRIVATE
+DllRegisterServer privat
 
-DllUnregisterServer PRIVATE
+DllUnregisterServer privat
 
-**Schritt 7:** Öffnen Sie Eigenschaften für das Projekt „MyWinRTProxy“:
+**Schritt 7:** Öffnen Sie die Eigenschaften für das Projekt "mywinrtproxy":
 
 **Comfiguration-Eigenschaften > allgemeiner > Zielname:**
 
-MyWinRTComponent.Proxies
+Mywinrtcomponent. Proxies
 
 **Präprozessordefinitionen für C/C++ > > Hinzufügen**
 
-Win32 \_WINDOWS; Registrieren Sie \_PROXY \_DLL "
+Win32\_Windows;\_Proxy\_dll registrieren "
 
 **Vorkompilierter C/>-C++ Header: Wählen Sie "nicht verwendeten vorkompilierten Header" aus.**
 
@@ -531,29 +531,29 @@ Win32 \_WINDOWS; Registrieren Sie \_PROXY \_DLL "
 
 **Linker > Windows-Metadaten > Generieren von Windows-Metadaten: Wählen Sie "Nein" aus.**
 
-**Schritt 8:** Erstellen Sie das Projekt „MyWinRTProxy“.
+**Schritt 8:** Erstellen Sie das Projekt "mywinrtproxy".
 
 **Proxy Bereitstellung**
 
-Der Proxy muss global registriert werden. Die einfachste Möglichkeit hierzu besteht darin, dass beim Installationsprozess „DllRegisterServer“ in der Proxy-DLL aufgerufen wird. Da das Feature nur x86-Server unterstützt (d. h. keine 64-Bit-Unterstützung), besteht die einfachste Konfiguration in der Verwendung eines 32-Bit-Servers, eines 32-Bit-Proxys und einer quergeladenen 32-Bit-Anwendung. Der Proxy befindet sich normalerweise in der **WINMD**-Implementierung für die Desktopkomponente.
+Der Proxy muss Global registriert werden. Die einfachste Möglichkeit hierfür ist, dass der Installationsprozess DllRegisterServer auf der Proxy-dll aufruft. Beachten Sie Folgendes: da die Funktion nur Server unterstützt, die für x86 erstellt wurden (d. h. keine 64-Bit-Unterstützung), ist die einfachste Konfiguration die Verwendung eines 32-Bit-Servers, eines 32-Bit-Proxys und einer 32-Bit-Anwendung. Der Proxy befindet sich normalerweise neben der **winmd** -Implementierung für die Desktop Komponente.
 
-Es muss ein weiterer Konfigurationsschritt vorgenommen werden. Damit der Proxy vom quergeladenen Prozess geladen und ausgeführt wird, muss das Verzeichnis mit „lesen/ausführen“ für ALL_APPLICATION_PACKAGES gekennzeichnet sein. Dies erfolgt über das Befehlszeilentool **icacls.exe**. Dieser Befehl muss in dem Verzeichnis ausgeführt werden, in dem sich die **WINMD**-Implementierung und die Proxy-/Stub-DLL befinden:
+Ein zusätzlicher Konfigurationsschritt muss ausgeführt werden. Damit der sideloloaded-Prozess den Proxy laden und ausführen kann, muss das Verzeichnis für ALL_APPLICATION_PACKAGES als "Lesen/Ausführen" gekennzeichnet sein. Dies erfolgt über das Befehlszeilen Tool " **icacls. exe** ". Dieser Befehl sollte in dem Verzeichnis ausgeführt werden, in dem sich die **winmd** -Implementierung und die Proxy-/Stub-DLL befinden:
 
 *icacls. /T/Grant \*S-1-15-2-1: RX*
 
 ## <a name="patterns-and-performance"></a>Muster und Leistung
 
-Es ist sehr wichtig, die Leistung bei prozessübergreifenden Übertragungen genau zu überwachen. Ein prozessübergreifender Aufruf ist mindestens zweimal so teuer wie ein prozessinterner Aufruf. Das Erstellen prozessübergreifender „geschwätziger“ Konversationen oder das Ausführen wiederholter Übertragungen von großen Objekten wie Bitmapbildern kann zu einer unerwarteten und unerwünschten Leistung der Anwendung führen.
+Es ist sehr wichtig, dass die Leistung des prozessübergreifenden Transports sorgfältig überwacht wird. Ein Prozess übergreifender-Rückruf ist mindestens doppelt so teuer wie ein in-Process-Aufrufe. Die prozessübergreifende Erstellung von Konversationen und die Durchführung wiederholter Übertragungen von großen Objekten wie bitmapimages kann zu unerwarteter und unerwünschter Anwendungsleistung führen.
 
-Es folgt eine unvollständige Liste mit zu berücksichtigenden Punkten:
+Im folgenden finden Sie eine nicht vollständige Liste der zu berücksichtigenden Dinge:
 
--   Synchrone Methodenaufrufe über den Benutzeroberflächen-Thread einer Anwendung an den Server sollten immer vermieden werden. Rufen Sie die Methode über einen Hintergrundthread in der Anwendung auf, und verwenden Sie dann bei Bedarf „CoreWindowDispatcher“, um die Ergebnisse in den Benutzeroberflächen-Thread zu übertragen.
+-   Synchrone Methodenaufrufe aus dem UI-Thread der Anwendung an den Server sollten immer vermieden werden. Aufrufen der-Methode aus einem Hintergrund Thread in der Anwendung und anschließendes Verwenden von corewindowdispatcher, um die Ergebnisse bei Bedarf in den UI-Thread zu übernehmen.
 
--   Das Aufrufen asynchroner Vorgänge aus dem Benutzeroberflächen-Thread einer Anwendung ist zwar sicher, aber Sie sollten dabei die nachfolgend erläuterten Leistungsprobleme berücksichtigen.
+-   Das Aufrufen von asynchronen Vorgängen über einen Anwendungs Benutzeroberflächen-Thread ist sicher, aber beachten Sie die unten beschriebenen Leistungsprobleme.
 
--   Eine Massenübertragung von Ergebnissen reduziert die prozessübergreifende "Geschwätzigkeit". Dazu wird in der Regel das Windows-Runtime-Array-Konstrukt verwendet.
+-   Durch die Massenübertragung der Ergebnisse wird die prozessübergreifende Zeichenfolge reduziert. Dies erfolgt normalerweise mithilfe des Windows-Runtime Array-Konstrukts.
 
--   Beim Zurückgeben von *List<T>* , wobei *T* ein Objekt aus einem asynchronen Vorgang oder einem Eigenschaftsabruf ist, wird viel „Geschwätzigkeit“ erzeugt. Angenommen, Sie geben ein *List&lt;People&gt;* -Objekt zurück. Bei jedem Iterationsdurchlauf handelt es sich um einen prozessübergreifenden Aufruf. Jedes zurückgegebene *People*-Objekt wird durch einen Proxy dargestellt, und jeder Methoden- oder Eigenschaftsaufruf für dieses einzelne Objekt führt zu einem prozessübergreifenden Aufruf. Daher führt ein „harmloses“ *List&lt;People&gt;* -Objekt, wobei *Count* hoch ist, zu einer Vielzahl von langsamen Aufrufen. Durch Massenübertragung von Inhaltsstrukturen in einem Array wird eine bessere Leistung erzielt. Zum Beispiel:
+-   Das Zurückgeben von *Listen<T>* , wobei *t* ein Objekt aus einem asynchronen Vorgang oder einem Abruf der Eigenschaft ist, führt zu einer großen prozessübergreifenden unter Bearbeitung. Nehmen wir beispielsweise an, dass Sie eine*Liste&lt;People&gt;* -Objekten zurückgeben. Jeder Iterations Durchlauf ist ein Prozess übergreifender Rückruf. Jedes zurückgegebene *People* -Objekt wird durch einen Proxy dargestellt, und jeder Rückruf einer Methode oder Eigenschaft für dieses einzelne Objekt führt zu einem prozessübergreifenden Aufrufvorgang. Eine "unschuldige" *Liste&lt;People&gt;* Objekt, bei dem die *Anzahl* groß ist, führt zu einer großen Anzahl von langsamen aufrufen. Eine bessere Leistung ergibt sich aus der Massenübertragung von Strukturen des Inhalts in einem Array. Beispiel:
 
 ```csharp
 struct PersonStruct
@@ -565,28 +565,28 @@ struct PersonStruct
 }
 ```
 
-Geben Sie dann * personstruct \[ \] * anstelle von *List &lt;PersonObject &gt;* zurück.
-Dadurch werden alle Daten in einem prozessübergreifenden Hop verteilt.
+Geben Sie dann * personstruct\[\]* anstelle von *List&lt;personobject&gt;* zurück.
+Hierdurch werden alle Daten in einem prozessübergreifenden "Hop" abgerufen.
 
-Wie bei allen Überlegungen in Bezug auf die Leistung sind Messungen und Tests erforderlich. Idealerweise sollte eine Telemetrie in die zahlreichen Vorgänge integriert werden, um deren Dauer zu ermitteln. Dabei ist es wichtig, einen Bereich zu messen: Wie lange dauert es beispielsweise tatsächlich, bis alle *People*-Objekte von einer bestimmten Warteschlange in der quergeladenen Anwendung verarbeitet wurden?
+Wie bei allen Leistungs Überlegungen sind Messungen und Tests wichtig. Im Idealfall sollten Telemetriedaten in die verschiedenen Vorgänge eingefügt werden, um zu bestimmen, wie lange Sie dauern. Es ist wichtig, sich über einen Bereich zu messen, z. b. wie lange es dauert, bis alle *People* -Objekte für eine bestimmte Abfrage in der neben geladenen Anwendung verarbeitet werden?
 
-Eine weitere Technik ist das Testen variabler Lasten. Dazu können Leistungstest-Hooks in die Anwendung eingefügt werden, die Lasten mit variabler Verzögerung in die Serververarbeitung integrieren. So können verschiedene Lastenarten und die Reaktion der Anwendung auf die variierende Serverleistung simuliert werden.
-Im Beispiel ist dargestellt, wie mithilfe entsprechender asynchroner Techniken Zeitverzögerungen in den Code eingefügt werden können. Die genaue Dauer der zu integrierenden Verzögerung und die Zufallshäufigkeit für diese künstliche Last variieren je nach Anwendungsdesign und der voraussichtlichen Umgebung, in der die Anwendung ausgeführt wird.
+Eine andere Methode sind Variablen Auslastungs Tests. Dies können Sie erreichen, indem Sie leistungstesthooks in der Anwendung platzieren, die eine Variable verzögertes Laden in die Server Verarbeitung einbringen. Dadurch können verschiedene Arten von Auslastung und die Reaktion der Anwendung auf die unterschiedliche Serverleistung simuliert werden.
+Das Beispiel veranschaulicht, wie Sie Zeitverzögerungen in den Code einfügen, indem Sie ordnungsgemäße Async-Techniken verwenden. Die genaue Menge an Verzögerung, die eingefügt werden soll, und der Bereich der Randomisierung, der in diese künstliche Auslastung eingefügt werden soll, variieren je nach Anwendungs Entwurf und der erwarteten Umgebung, in der die Anwendung ausgeführt wird.
 
 ## <a name="development-process"></a>Entwicklungsprozess
 
-Wenn Sie Änderungen am Server vornehmen, müssen Sie sicherstellen, dass zuvor ausgeführte Instanzen nicht mehr ausgeführt werden. COM sorgt schließlich für das Bereinigen des Prozesses, die vom Rundown-Timer benötigte Zeit ist jedoch zu lang für eine iterative Entwicklung. Das Beenden einer zuvor ausgeführten Instanz ist somit ein regulärer Schritt im Rahmen der Entwicklung. Hierfür muss der Entwickler laufend verfolgen, welche dllhost-Instanz den Server hostet.
+Wenn Sie Änderungen am Server vornehmen, müssen Sie sicherstellen, dass alle Instanzen, die bereits ausgeführt werden, nicht mehr ausgeführt werden. COM führt den Prozess letztendlich aus, aber der rundowntimer dauert länger, als für die iterative Entwicklung effizient ist. Daher ist das Abbrechen einer zuvor laufenden Instanz ein normaler Schritt während der Entwicklung. Dies erfordert, dass der Entwickler nachverfolgen kann, welche dllhost-Instanz den Server hostet.
 
-Der Serverprozess kann im Task-Manager oder in anderen Drittanbieter-Apps aufgesucht und beendet werden. Das Befehlszeilentool **TaskList.exe **ist ebenfalls enthalten; es weist eine flexible Syntax wie die Folgende auf:
+Der Server Prozess kann mit dem Task-Manager oder anderen Drittanbieter-apps gefunden und abgebrochen werden. Das Befehlszeilen Tool * * tasklist. exe * * ist ebenfalls enthalten und verfügt über eine flexible Syntax, z. b.:
 
   
- | **S** | **Aktion** |
+ | **Befehl** | **Aktion** |
  | ------------| ---------- |
- | tasklist | Listet alle ausgeführten Prozesse in annähernder Reihenfolge des Erstellungszeitpunkts auf, wobei die zuletzt erstellten Prozesse unten aufgeführt werden. |
- | tasklist /FI "IMAGENAME eq dllhost.exe" /M | Listet Informationen zu allen Instanzen von „dllhost.exe“ auf. Vom /M-Schalter werden die von ihnen geladenen Module aufgelistet. |
- | tasklist /FI "PID eq 12564" /M | Sie können mit dieser Option die „dllhost.exe“ abfragen, wenn Ihnen die zugehörige PID bekannt ist. |
+ | tasklist | Listet alle laufenden Prozesse in der ungefähren Reihenfolge der Erstellungszeit mit den zuletzt erstellten Prozessen im unteren Bereich auf. |
+ | tasklist/Fi "IMAGENAME eq dllhost. exe"/M | Listet Informationen zu allen dllhost. exe-Instanzen auf. Der Schalter/M listet die Module auf, die Sie geladen haben. |
+ | tasklist/Fi "PID EQ 12564"/M | Sie können diese Option verwenden, um die Datei "Dllhost. exe" abzufragen, wenn Sie Ihre PID kennen. |
 
-In der Liste der Module für einen Broker-Server muss *clrhost.dll* als geladenes Modul aufgeführt werden.
+Die Modulliste für einen Broker Server sollte " *clrhost. dll* " in der Liste der geladenen Module auflisten.
 
 ## <a name="resources"></a>Ressourcen
 
