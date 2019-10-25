@@ -2,16 +2,16 @@
 title: Unbegrenzte Ausführung im Hintergrund
 description: Verwenden Sie die extendedExecutionUnconstrained-Funktion im Hintergrund, um eine Hintergrundaufgabe oder eine erweiterte Ausführungssitzung ohne zeitliche Begrenzung auszuführen.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: Erweiterte Ausführung "," Ressourcen "," Einschränkungen "," Hintergrundaufgabe Hintergrundaufgabe
+keywords: Hintergrundaufgabe, erweiterte Ausführung, Ressourcen, Limits, Hintergrundaufgabe
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
+ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630245"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72822452"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Unbegrenzte Ausführung im Hintergrund
 
@@ -27,34 +27,34 @@ Wenn Sie eine App entwickeln, die nicht für die Übermittlung an den Microsoft 
 
 Die `extendedExecutionUnconstrained`-Funktion wird als eingeschränkte Funktion im App-Manifest hinzugefügt. Weitere Informationen zu eingeschränkten Funktionen finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
-_Datei "Package.appxmanifest"_
+_Package.appxmanifest_
 ```xml
 <Package ...>
 ...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>
+  </Capabilities>
 </Package>
 ```
 
 Bei Verwendung der `extendedExecutionUnconstrained`-Funktion, werden [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) und [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) verwendet anstatt von [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) und [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). Das gleiche Muster zum Erstellen der Sitzung, Einrichten von Mitgliedern und zum Anfordern der asynchronen Erweiterung ist trotzdem gültig: 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;
+newSession.Description = "Long Running Processing";
+newSession.Revoked += SessionRevoked;
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+switch (result)
+{
+    case ExtendedExecutionResult.Allowed:
+        DoLongRunningWork();
+        break;
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:
+    case ExtendedExecutionResult.Denied:
+        DoShortRunningWork();
+        break;
 }
 ```
 
@@ -66,21 +66,21 @@ Das Registrieren eines **gesperrten** Ereignisses ermöglicht Ihrer App alle erf
 
 In der universellen Windows-Plattform werden Hintergrundaufgaben als Prozesse bezeichnet, die im Hintergrund ohne jede Benutzeroberfläche ausgeführt werden. Hintergrundaufgaben werden in der Regel maximal 25 Sekunden ausgeführt, bevor sie abgebrochen werden. Einige zeitintensivere Aufgaben enthalten ebenfalls eine Überprüfung, um sicherzustellen, dass die Hintergrundaufgabe sich nicht im Leerlauf oder mit Speicher befindet. Im Windows Creators Update (Version 1703), wurde die eingeschränkte Funktion [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) eingeführt, um diese Einschränkungen zu entfernen. Die **extendedBackgroundTaskTime**-Funktion wird als eingeschränkte Funktion im App-Manifest hinzugefügt:
 
-_Datei "Package.appxmanifest"_
+_Package.appxmanifest_
 ```xml
 <Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+  <Capabilities>
+    <rescap:Capability Name="extendedBackgroundTaskTime"/>
+  </Capabilities>
 </Package>
 ```
 
-Diese Funktion entfernt die Einschränkungen der Ausführungszeit und den Überwachungsdienst der Leerlaufaufgaben. Sobald eine Hintergrundaufgabe gestartet wurde, sei es durch einen Trigger oder einen Aufruf des App-Diensts, kann diese unbegrenzt ausgeführt werden, nachdem eine Verzögerung auf der [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) durch die **Run**-Methode bereitgestellt wurde. Wenn die App auf **Von Windows verwaltet** festgelegt wurde, kann möglicherweise noch ein Energiekontingent angewendet werden und die Hintergrundaufgaben werden nicht aktiviert, wenn der Stromsparmodus aktiviert ist. Dies kann mit betriebssystemeinstellungen geändert werden. Weitere Informationen finden Sie unter [Optimieren von Hintergrundaktivitäten](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
+Diese Funktion entfernt die Einschränkungen der Ausführungszeit und den Überwachungsdienst der Leerlaufaufgaben. Sobald eine Hintergrundaufgabe gestartet wurde, sei es durch einen Trigger oder einen Aufruf des App-Diensts, kann diese unbegrenzt ausgeführt werden, nachdem eine Verzögerung auf der [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) durch die **Run**-Methode bereitgestellt wurde. Wenn die App auf **Von Windows verwaltet** festgelegt wurde, kann möglicherweise noch ein Energiekontingent angewendet werden und die Hintergrundaufgaben werden nicht aktiviert, wenn der Stromsparmodus aktiviert ist. Dies kann mit den Betriebs Systemeinstellungen geändert werden. Weitere Informationen finden Sie unter [Optimieren von Hintergrundaktivitäten](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
 
 Die universelle Windows-Plattform überwacht die Aufgabenausführung im Hintergrund, um eine gute Akkulaufzeit und eine reibungslose Vordergrund-App-Umgebung zu gewährleisten. Persönliche Apps und branchenspezifische Unternehmens-Apps können jedoch die erweiterte Ausführung und die **extendedBackgroundTaskTime**-Funktion zum Erstellen von Apps verwenden, die solange wie notwendig und unabhängig von der Verfügbarkeit des Geräts ausgeführt werden.
 
 Beachten Sie, das die **extendedExecutionUnconstrained** und **extendedBackgroundTaskTime**-Funktionen die Standardrichtlinie für UWP-Apps überschreiben können und einen erheblichen Akkuverbrauch verursachen können. Bestätigen Sie vor der Nutzung dieser Funktionen, dass die Richtlinien für die standardmäßige erweiterte Ausführung und die Hintergrundaufgabenzeit nicht Ihren Bedürfnissen entspricht und führen Sie unter Umständen Tests in einer Umgebung mit eingeschränktem Akku aus, um die Auswirkungen zu verstehen, die Ihre App auf ein Gerät hat.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-[Einschränkungen für Hintergrund Aufgabe Ressource aufheben](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
+[Ressourceneinschränkungen für Hintergrundaufgaben entfernen](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
