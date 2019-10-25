@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: f12a83a2ad31972f344d95aa9dcfe1914eeb2b3b
-ms.sourcegitcommit: 82d202478ab4d3011c5ddd2e852958c34336830d
+ms.openlocfilehash: 167b388130ea02cc0613dc9638e93f0cde38eb46
+ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/22/2019
-ms.locfileid: "72715877"
+ms.locfileid: "72777281"
 ---
 # <a name="app-capability-declarations"></a>Deklarationen von App-Funktionen
 
@@ -59,6 +59,7 @@ Allgemeine Verwendungs Funktionen **werden mithilfe von** Funktions Elementen in
 | **Hintergrund Medienwiedergabe** | Mit der Funktion **backgroundMediaPlayback** ändert sich das Verhalten der medienspezifischen APIs, z. B. der Klassen [**MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer) und [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph), um die Medienwiedergabe zu ermöglichen, während sich die App im Hintergrund befindet. Alle aktiven Audiostreams sind nun nicht mehr stummgeschaltet, sondern weiterhin hörbar, wenn eine App in den Hintergrund wechselt. Außerdem wird die App-Lebensdauer automatisch verlängert, während die Wiedergabe erfolgt.
 | **Remote System** | Mit der Funktion **remoteSystem** haben Apps Zugriff auf eine Liste mit Geräten, die dem Microsoft-Konto des Benutzers zugeordnet sind. Der Zugriff auf die Geräteliste wird benötigt, um Vorgänge durchzuführen, die geräteübergreifend beibehalten werden. Diese Funktion ist für den Zugriff auf alle Member der folgenden Elemente erforderlich:<ul><li>[Windows. System. Remotesystems](https://docs.microsoft.com/uwp/api/windows.system.remotesystems) -Namespace</li><li>[Windows. System. remotelauncher](https://docs.microsoft.com/uwp/api/Windows.System.RemoteLauncher) -Klasse</li><li>[Appserviceconnection. openremoteasync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appservice.appserviceconnection.openremoteasync) -Methode</li></ul> |
 | **Räumliche Wahrnehmung** | Die Funktion **spatialPerception** bietet programmgesteuerten Zugriff auf Spatial-Mapping-Daten, und übergibt Mixed Reality-Apps Informationen zu Oberflächen in anwendungsspezifischen Regionen der Räumlichkeiten in der Nähe des Benutzers.  Deklarieren Sie die SpatialPerception-Funktion nur dann, wenn Ihre App diese Surface-Gitter explizit verwendet, da die Funktion nicht für das holografische Rendern je nach Kopfpose des Benutzers in Mixed Reality-Apps erforderlich ist. |
+| **Globales mediensteuer Element** | Die **globalmediacontrol** -Funktion ermöglicht apps den Zugriff auf Wiedergabe Sitzungen im gesamten System, die mit [**systemmediatransportcontrols**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls) integriert wurden, um Wiedergabe Informationen bereitzustellen und die Remote Steuerung zuzulassen. Diese Funktion ist erforderlich, um einige APIs im [**Windows. Media. Control**](https://docs.microsoft.com/uwp/api/windows.media.control) -Namespace zu verwenden. Diese Funktion wird im [uap7: Capability](/uwp/schemas/appxpackage/uapmanifestschema/element-uap7-capability) -Element definiert.  |
 
 ## <a name="device-capabilities"></a>Gerätefunktionen
 
@@ -84,7 +85,7 @@ Gerätefunktionen ermöglichen Ihrer App den Zugriff auf Peripheriegeräte und i
 | **Serielle Kommunikation** | Die **serialcommunication**-Gerätefunktion ermöglicht den Zugriff auf APIs im Namespace Windows.Devices.SerialCommunication. Dadurch kann eine Windows-App mit einem Gerät zu kommunizieren, das einen seriellen Anschluss oder eine Abstraktion eines seriellen Anschlusses verfügbar macht. Für diese Funktion sind die APIs im [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication)-Namespace erforderlich. |
 | **Eye Tracker** | Mit der **gazeInput**-Funktion können Apps erkennen, wo der Benutzer innerhalb der Anwendungsgrenzen hinschaut, wenn ein kompatibles Eye-Tracking-Gerät angeschlossen ist. Diese Funktion ist erforderlich, um einige APIs im [**Windows. Devices. Input. Preview**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview) -Namespace zu verwenden. |
 | **GPIO, I2C, SPI und PWM** | Die Geräte Funktion " **lowlevel** " ermöglicht den Zugriff auf GPIO, I2C, SPI und PWM-Geräte. Diese Funktion ist für die Verwendung der APIs in den folgenden Namespaces erforderlich: [**Windows. Devices. GPIO**](https://docs.microsoft.com/uwp/api/windows.devices.gpio), [**Windows. Devices. I2C**](https://docs.microsoft.com/uwp/api/windows.devices.i2c), [**Windows. Devices. SPI**](https://docs.microsoft.com/uwp/api/windows.devices.spi),[**Windows. Devices. PWM**](https://docs.microsoft.com/uwp/api/windows.devices.pwm).<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
-| **Globales mediensteuer Element** | Die **globalmediacontrol** -Funktion ermöglicht apps den Zugriff auf Wiedergabe Sitzungen im gesamten System, die mit [**systemmediatransportcontrols**](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls) integriert wurden, um Wiedergabe Informationen bereitzustellen und die Remote Steuerung zuzulassen. Diese Funktion ist erforderlich, um einige APIs im [**Windows. Media. Control**](https://docs.microsoft.com/uwp/api/windows.media.control) -Namespace zu verwenden. |
+
 
 <span id="special-and-restricted-capabilities" />
 
