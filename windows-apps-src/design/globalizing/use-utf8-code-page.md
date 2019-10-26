@@ -1,41 +1,41 @@
 ---
-Description: Verwenden Sie UTF-8-Zeichen, die Codierung für eine optimale Kompatibilität zwischen Web-apps und andere * Nix-basierten Plattformen (Unix, Linux und Varianten), Lokalisierung, Fehler, und zu verringern Verwaltungsaufwand testen.
-title: Verwenden Sie die Windows-UTF-8-Codepage
+Description: Verwenden Sie die UTF-8-Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen * nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
+title: Verwenden der Windows UTF-8-Codepage
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: a9386b31d16796c68d41a27ab48a5b2c9a9a342b
-ms.sourcegitcommit: 734aa941dc675157c07bdeba5059cb76a5626b39
+ms.openlocfilehash: be3aade0289911f878d960fb62bde49b8ef840a8
+ms.sourcegitcommit: 3a06cf3f8bd00e5e6eac3b38ee7e3c7cf4bc5197
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68141807"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72888746"
 ---
 # <a name="use-the-utf-8-code-page"></a>UTF-8-Codepage verwenden
 
-Verwendung [UTF-8](http://www.utf-8.com/) zeichencodierung für eine optimale Kompatibilität zwischen Web-apps und andere * Nix-basierten Plattformen (Unix, Linux und Varianten), Lokalisierung, Fehler, und zu verringern Verwaltungsaufwand testen.
+Verwenden Sie die [UTF-8](http://www.utf-8.com/) -Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen * nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
 
-UTF-8 ist die universelle Codepage für die Internationalisierung und alle Unicode-Codepunkte mit variabler Breite 1 bis 4-Byte-Codierung unterstützt. Sie wird im Web sehr häufig verwendet, und ist die Standardeinstellung für * Nix-basierte Plattformen.
+UTF-8 ist die universelle Codepage für die Internationalisierung und unterstützt alle Unicode-Code Punkte mithilfe von 1-6 Byte-Codierung mit variabler Breite. Sie wird im Web als Standard verwendet und ist die Standardeinstellung für * nix-basierte Plattformen.
 
-## <a name="-a-vs--w-apis"></a>Ein - oder -W-APIs
+## <a name="-a-vs--w-apis"></a>-A-und-W-APIs
   
-Win32-APIs unterstützen häufig sowohl – eine und -W-Varianten.
+Win32-APIs unterstützen häufig sowohl-A-als auch-W-Varianten.
 
-Ein - Varianten erkennen die ANSI-Codepage, die auf das System und die Unterstützung konfiguriert `char*`, während -W-Varianten in UTF-16 und Support betreiben `WCHAR`.
+-Eine Variante erkennt die auf dem System konfigurierte ANSI-Codepage und unterstützt `char*`, während-W-Varianten in UTF-16 arbeiten und `WCHAR`unterstützen.
 
-Bis vor kurzem hat Windows -W "Unicode"-Varianten über – ein APIs hervorgehoben. Allerdings den letzten Veröffentlichungen haben die ANSI-Codepage verwendet, und - A-APIs als eine Möglichkeit zum Einführen von UTF-8-Unterstützung für apps. Wenn die ANSI-Codepage für UTF-8 konfiguriert ist, arbeiten – eine APIs in UTF-8. Dieses Modell hat den Vorteil für die Unterstützung von vorhandenen Codes Dank – ein APIs ohne codeänderungen.
+Bis vor kurzem hat Windows "Unicode"-W-Varianten über-A-APIs hervorgehoben. In neueren Releases wurden jedoch die ANSI-Codepage und die-A-APIs verwendet, um die UTF-8-Unterstützung für apps einzuführen. Wenn die ANSI-Codepage für UTF-8 konfiguriert ist, funktionieren die APIs in UTF-8. Dieses Modell hat den Vorteil, dass vorhandener Code, der mit-A-APIs erstellt wurde, ohne Codeänderungen unterstützt wird.
 
-## <a name="set-a-process-code-page-to-utf-8"></a>Legen Sie eine Prozess-Codepage in UTF-8
+## <a name="set-a-process-code-page-to-utf-8"></a>Festlegen einer Prozess Codepage auf UTF-8
 
-Windows-Version 1903 (Mai 2019-Update), können die ActiveCodePage-Eigenschaft in die appxmanifest-Datei für App-Pakete oder das Fusion-Manifest für entpackt-apps Sie erzwingen, dass einen Prozess, die UTF-8 als die Prozess-Codepage verwendet.
+Ab Windows, Version 1903 (Mai 2019 Update), können Sie die activecodepage-Eigenschaft im appxmanifest für App-Pakete oder das Fusion-Manifest für nicht gepackte Apps verwenden, um die Verwendung von UTF-8 als Prozess Codepage durch einen Prozess zu erzwingen.
 
-Sie können diese Eigenschaft deklarieren und Ziel/ausführen, auf früheren Windows-builds, aber Sie müssen Erkennung von Legacycode Seiten und die Konvertierung wie gewohnt verarbeiten. Mit einer Mindestversion der Zielplattform-Version von Windows-Version 1903 sein werden die Codepage für den Prozess immer UTF-8, damit die Erkennung von Legacycode Seiten und die Konvertierung können vermieden werden.
+Sie können diese Eigenschaft deklarieren und für frühere Windows-Builds ausführen/ausführen, aber Sie müssen die Legacy-Code Page Erkennung und-Konvertierung wie gewohnt behandeln. Bei einer Mindestversion von Windows Version 1903 ist die Prozess Codepage immer UTF-8, sodass die Erkennung und Konvertierung von Legacy-Codeseiten vermieden werden kann.
 
 ## <a name="examples"></a>Beispiele
 
-**AppX-Manifests für ein app-Paket:**
+**AppX-Manifest für eine APP mit App-Paket:**
 
 ```xaml
 <?xml version="1.0" encoding="utf-8"?>
@@ -56,7 +56,7 @@ Sie können diese Eigenschaft deklarieren und Ziel/ausführen, auf früheren Win
 </Package>
 ```
 
-**Fusion-Manifest für eine entpackt Win32-app:**
+**Fusion-Manifest für eine nicht gepackte Win32-App:**
 
 ``` xaml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -71,18 +71,18 @@ Sie können diese Eigenschaft deklarieren und Ziel/ausführen, auf früheren Win
 ```
 
 > [!NOTE]
-> Fügen Sie ein Manifest über die Befehlszeile mit einer vorhandenen ausführbaren Datei `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
+> Hinzufügen eines Manifests zu einer vorhandenen ausführbaren Datei in der Befehlszeile mit `mt.exe -manifest <MANIFEST> -outputresource:<EXE>;#1`
 
-## <a name="code-page-conversion"></a>Codepagekonvertierung
+## <a name="code-page-conversion"></a>Code Page Konvertierung
 
-Wie Windows systemintern in UTF-16 (`WCHAR`), müssen Sie möglicherweise für die Zusammenarbeit mit Windows APIs UTF-8-Daten in UTF-16 (oder umgekehrt) zu konvertieren.
+Da Windows System eigen in UTF-16 (`WCHAR`) betrieben wird, müssen Sie möglicherweise UTF-8-Daten in UTF-16 (oder umgekehrt) konvertieren, um mit Windows-APIs zusammenzuarbeiten.
 
-[MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) und [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) können zwischen UTF-8 und UTF-16 konvertieren (`WCHAR`) (und anderen Codepages). Dies ist besonders nützlich, wenn eine ältere Win32-API nur verstehen möglicherweise `WCHAR`. Diese Funktionen können Sie zum Konvertieren von UTF-8-Eingabe für `WCHAR` zum Übergeben an eine -W-API- und konvertieren dann Ergebnisse zurück, falls erforderlich.
-Bei Verwendung dieser Funktionen mit `CodePage` festgelegt `CP_UTF8`, verwenden `dwFlags` entweder `0` oder `MB_ERR_INVALID_CHARS`, andernfalls ein `ERROR_INVALID_FLAGS` auftritt.
+Mit " [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) " und " [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) " können Sie zwischen UTF-8 und UTF-16 (`WCHAR`) (und anderen Codepages) konvertieren. Dies ist besonders nützlich, wenn eine Legacy-Win32-API nur `WCHAR`versteht. Diese Funktionen ermöglichen es Ihnen, UTF-8-Eingaben in `WCHAR` zu konvertieren, um Sie an eine-W-API zu übergeben, und dann alle Ergebnisse bei Bedarf zurück zu konvertieren.
+Wenn Sie diese Funktionen verwenden, wenn `CodePage` auf `CP_UTF8`festgelegt ist, verwenden Sie entweder `dwFlags` von `0` oder `MB_ERR_INVALID_CHARS`, andernfalls tritt ein `ERROR_INVALID_FLAGS` auf.
 
-Hinweis: `CP_ACP` entspricht `CP_UTF8` nur dann, wenn auf Windows-Version 1903 (Mai 2019-Update) oder höher und die ActiveCodePage-Eigenschaft, die oben beschriebenen in UTF-8 festgelegt ist. Andernfalls wird es die Codepage des älteren Systems berücksichtigt. Es wird empfohlen, `CP_UTF8` explizit.
+Hinweis: `CP_ACP` entspricht nur `CP_UTF8`, wenn Sie unter Windows, Version 1903 (Mai 2019 Update) oder höher ausgeführt wird und die oben beschriebene activecodepage-Eigenschaft auf UTF-8 festgelegt ist. Andernfalls wird die ältere System Codepage berücksichtigt. Es wird empfohlen, `CP_UTF8` explizit zu verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [Codepages](https://docs.microsoft.com/windows/desktop/Intl/code-pages)
-- [Codepage-IDs](https://docs.microsoft.com/windows/desktop/Intl/code-page-identifiers)
+- [Code Page Bezeichner](https://docs.microsoft.com/windows/desktop/Intl/code-page-identifiers)
