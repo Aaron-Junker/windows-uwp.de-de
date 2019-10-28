@@ -46,7 +46,7 @@ Die von " **{x:Bind}** " und " **{Binding}** " erstellten Bindungs Objekte sind 
 <object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
-| Laufzeit | Beschreibung |
+| Begriff | Beschreibung |
 |------|-------------|
 | _PropertyPath_ | Eine Zeichenfolge, die den Eigenschafts Pfad für die Bindung angibt. Weitere Informationen finden Sie weiter unten im Abschnitt [Eigenschafts Pfad](#property-path) . |
 | _bindingproperties_ |
