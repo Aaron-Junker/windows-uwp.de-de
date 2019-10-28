@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, neuerungen, neues
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fb869f4705210ab1fec28186b377ad68068b5877
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329582"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816716"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuerungen in C++/WinRT
 
@@ -283,7 +283,7 @@ In der unten stehenden Tabelle werden Änderungen für C++/WinRT im Windows SDK,
 | Das Systemformat von Visual Studio-Projekten hat sich geändert. | Weitere Informationen finden Sie unten unter [Festlegen des Ziels Ihres C++/WinRT-Projekt auf eine spätere Version des Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk). |
 | Es gibt neue Funktionen und Basisklassen, mit denen Sie ein Sammlungsobjekt an eine Windows-Runtime-Funktion übergeben oder Ihre eigenen Sammlungseigenschaften und Sammlungstypen implementieren können. | Weitere Informationen finden Sie unter [Collections with C++/WinRT (Sammlungen in C++/WinRT)](collections.md). |
 | Sie können die Markup-Erweiterung [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) mit Ihren C++/WinRT-Runtimeklassen verwenden. | Weitere Informationen und Codebeispiele finden Sie in der [Übersicht über Datenbindung](/windows/uwp/data-binding/data-binding-quickstart). |
-| Durch Unterstützung für das Abbrechen einer Coroutine können Sie einen Abbruchsrückruf registrieren. | Weitere Informationen finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks). |
+| Durch Unterstützung für das Abbrechen einer Coroutine können Sie einen Abbruchsrückruf registrieren. | Weitere Informationen finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
 | Beim Erstellen eines Delegaten, der auf eine Memberfunktion zeigt, können Sie einen starken oder einen schwachen Verweis auf das aktuelle Objekt (statt eines unformatierten *this*-Zeiger) erstellen. | Weitere Informationen und Codebeispiele finden Sie im Unterabschnitt **If you use a member function as a delegate (Wenn Sie eine Memberfunktion als Delegaten verwenden)** im Artikel [*Strong and weak references in C++/WinRT (Starke und schwache Verweise in C++/WinRT)* ](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Es wurden Probleme behoben, die durch die verbesserte Konformität mit dem C++-Standard in Visual Studio erkannt wurden. Die LLVM- und Clang-Toolkette wird zudem besser eingesetzt, um die Konformität mit Standards in C++/WinRT zu prüfen. | Das unter [Warum wird mein neues Projekt nicht kompiliert? Ich verwende Visual Studio 2017 (Version 15.8.0 oder höher) und die SDK-Version 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) beschriebene Problem tritt nicht mehr auf. |
 

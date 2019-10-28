@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820465"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680753"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutorial: Erstellen von adaptiven Layouts
 
@@ -46,11 +46,15 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
     **Wenn Sie mit GitHub nicht vertraut sind:**
     
     a. Klicken Sie auf **Download ZIP**, und speichern Sie die Datei lokal. Es wird eine ZIP-Datei heruntergeladen, die alle benötigten Projektdateien enthält.
-    b. Entpacken Sie die Datei. Verwenden Sie den Datei-Explorer, um zu der gerade heruntergeladenen ZIP-Datei zu navigieren, klicken Sie mit der rechten Maustaste darauf und wählen Sie **Alle extrahieren...** aus. c. Navigieren Sie zu Ihrer lokalen Kopie des Beispiels, und wechseln Sie zum Verzeichnis `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
+
+    b. Entpacken Sie die Datei. Verwenden Sie den Datei-Explorer, um zu der gerade heruntergeladenen ZIP-Datei zu navigieren, klicken Sie mit der rechten Maustaste darauf und wählen Sie **Alle extrahieren...** aus. 
+
+    c. Navigieren Sie zu Ihrer lokalen Kopie des Beispiels, und wechseln Sie zum Verzeichnis `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout`.    
 
     **Wenn Sie mit GitHub vertraut sind:**
 
     a. Klonen Sie den Master-Branch des Repositorys lokal.
+
     b. Wechseln Sie zum `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`-Verzeichnis.
 
 3. Öffnen Sie das Projekt durch einen Klick auf `Photolab.sln`.

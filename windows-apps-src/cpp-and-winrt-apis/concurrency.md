@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dd6ac2760189578932fc22db89c7091f2e527ab
-ms.sourcegitcommit: 8179902299df0f124dd770a09a5a332397970043
+ms.openlocfilehash: 06fadae3e33da3289726f45e7222617d51843015
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68428639"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816678"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Parallelität und asynchrone Vorgänge mit C++/WinRT
 
@@ -112,7 +112,7 @@ Sie können eine Coroutine in anderen Coroutinen zusammenfassen. Alternativ kön
 
 Es ist auch möglich, die Completed- und/oder Progress-Ereignisse von asynchronen Aktionen und Vorgängen mit Delegaten zu verarbeiten. Details und Codebeispiele finden Sie unter [Delegattypen für asynchrone Aktionen und Vorgänge](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
-## <a name="asychronously-return-a-windows-runtime-type"></a>Asynchrone Rückgabe eines Windows-Runtime-Typs
+## <a name="asynchronously-return-a-windows-runtime-type"></a>Asynchrone Rückgabe eines Windows-Runtime-Typs
 
 Im nächsten Beispiel verpacken wir einen Aufruf von **RetrieveFeedAsync** für einen bestimmten URI, um eine **RetrieveBlogFeedAsync**-Funktion zu erhalten, die asynchron einen [**SyndicationFeed**](/uwp/api/windows.web.syndication.syndicationfeed) zurückgibt.
 
@@ -170,7 +170,7 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 }
 ``` 
 
-## <a name="asychronously-return-a-non-windows-runtime-type"></a>Asynchrone Rückgabe eines Nicht-Windows-Runtime-Typs
+## <a name="asynchronously-return-a-non-windows-runtime-type"></a>Asynchrone Rückgabe eines Nicht-Windows-Runtime-Typs
 
 Wenn Sie asynchron einen Typ zurückgeben, der *kein* Windows-Runtime-Typ ist, sollten Sie einen [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)-PPL-Typ (Parallel Patterns Library) zurückgeben. Wir empfehlen die Verwendung von **concurrency::task**, weil dieser Typ eine bessere Leistung (und später eine bessere Kompatibilität) bietet als **std::future**.
 

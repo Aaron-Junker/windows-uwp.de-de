@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
+ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820500"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72680766"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
@@ -36,10 +36,7 @@ Die universelle Windows-Plattform (UWP) bietet eine Reihe von Möglichkeiten, mi
 
 Im ersten Teil des Tutorials peppen wir einige unserer Steuerelemente für die Fotobearbeitung auf. 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*Ein normaler Schieberegler im Standardstil.*</figure>
-</figure>
+![Ein normaler Schieberegler im Standardstil.](../basics/images/xaml-basics/slider-start.png)
 
 Diese Schieberegler sind zwar ganz in Ordnung und tun das, was man von einem Schieberegler erwartet, aber sie sind nichts Besonderes. Das ändern wir gleich. 
 
@@ -748,8 +745,7 @@ Das hat zwar funktioniert, der gleiche Effekt lässt sich jedoch noch besser mit
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **Nachher**

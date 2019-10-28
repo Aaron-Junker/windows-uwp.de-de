@@ -1,17 +1,17 @@
 ---
-title: Neues in Windows 10 für Entwickler, Werkzeuge und Features
+title: Neuigkeiten in Windows 10, Build 17763
 description: Windows 10, Build 17763, und neue Entwicklertools stellen Tools, Features und Umgebungen zur Verfügung, die durch die neue Universelle Windows-Plattform unterstützt werden.
 keywords: Neuigkeiten, Neuerungen, Aktualisierung, Updates, Features, neu, Windows 10, neueste, Entwickler, 17763
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: faf3cdc1a3fab3bd0332b995c25b081d296a55bb
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: c7387a7a66d2492bf6f228c662a48b19a19afe3d
+ms.sourcegitcommit: a7740ebb14c98cd5afadd52db5cf714522821b49
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682777"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893022"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Neuigkeiten für Entwickler in Windows 10, Build 17763
 
@@ -33,7 +33,7 @@ Bewegung in Fluent Design | Die Verwendung von Bewegung im Fluent Design-System 
 Seitenübergänge | [Seitenübergänge](../design/motion/page-transitions.md) lassen Benutzer zwischen den Seiten einer App navigieren. Sie ermöglichen Benutzern zu verstehen, wo sie sich in der Navigationshierarchie befinden, und bieten Feedback über die Beziehung zwischen den Seiten.
 Textskalierung | In der neuen [Anleitung zur Textskalierung](../design/input/text-scaling.md) wird erläutert, wie Sie eine Anwendung so aktualisieren, dass sie den neuen Textskalierungsverhaltensweisen entspricht, über die Benutzer den relativen Schriftgrad sowohl für das Betriebssystem als auch für einzelne Anwendungen ändern können. Statt eine Bildschirmlupen-App zu verwenden(die normalerweise einfach alles in einem Bereich des Bildschirms vergrößert und eigene Nutzbarkeitsprobleme mit sich bringt), die Bildschirmauflösung zu ändern oder sich auf die DPI-Skalierung zu verlassen (bei der die Größen aller Elemente anhand der Anzeige und des typischen Betrachtungsabstands geändert werden), kann ein Benutzer schnell auf eine Einstellung zugreifen, um nur die Textgröße im Bereich von 100 % (Standardgröße) bis zu 225 % zu ändern.
 Toolkits | Das [Adobe XD- und das Adobe Illustrator-Toolkit](../design/downloads/index.md) wurden mit neuen Features aktualisiert. Diese Design-Toolkits enthalten Steuerelemente und Layoutvorlagen für das Entwerfen von UWP-Apps.
-Befehle auf der Benutzeroberfläche | Zu den Aktualisierungen der [UWP-Befehlsinfrastruktur](../design/basics/commanding-basics.md) gehören eine bessere Kapselung eines Befehlsobjekts (Verhalten, Bezeichnung, Symbol, Zugriffstasten und Beschreibung) und ein Standardsatz von häufig verwendeten Befehlen, etwa Ausschneiden, Kopieren, Einfügen, Beenden usw., wodurch es nicht mehr erforderlich ist, diese Eigenschaften manuell festzulegen. </br> Die neue [XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse stellt eine Basisklasse bereit, mit der das Befehlsverhalten eines interaktiven Benutzeroberflächenelements definiert werden kann, das eine Aktion ausführt, wenn es aufgerufen wird. Diese Klasse ist die übergeordnete Klasse für die [StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse, die eine Reihe von Standardplattformbefehlen mit vordefinierten Eigenschaften verfügbar macht. 
+Befehle in der Benutzeroberfläche | Zu den Aktualisierungen der [UWP-Befehlsinfrastruktur](../design/basics/commanding-basics.md) gehören eine bessere Kapselung eines Befehlsobjekts (Verhalten, Bezeichnung, Symbol, Zugriffstasten und Beschreibung) und ein Standardsatz von häufig verwendeten Befehlen, etwa Ausschneiden, Kopieren, Einfügen, Beenden usw., wodurch es nicht mehr erforderlich ist, diese Eigenschaften manuell festzulegen. </br> Die neue [XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse stellt eine Basisklasse bereit, mit der das Befehlsverhalten eines interaktiven Benutzeroberflächenelements definiert werden kann, das eine Aktion ausführt, wenn es aufgerufen wird. Diese Klasse ist die übergeordnete Klasse für die [StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse, die eine Reihe von Standardplattformbefehlen mit vordefinierten Eigenschaften verfügbar macht. 
 Windows-UI-Bibliothek | Die [Windows-UI-Bibliothek](https://aka.ms/winui-docs) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass Ihre App selbst dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten. </br> Weitere Informationen zu den Neuerungen in der Windows-UI-Bibliothek finden Sie in [dieser Liste von API-Namespaces, die im NuGet-Paket enthalten sind](https://docs.microsoft.com/uwp/api/overview/winui/).
 
 ## <a name="develop-windows-apps"></a>Entwickeln von Windows-Apps

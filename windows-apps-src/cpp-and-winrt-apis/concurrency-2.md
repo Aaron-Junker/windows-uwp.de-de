@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: 9484b61aae91ae426efb1963cd37ebf276ef7c6c
-ms.sourcegitcommit: f8634aad3a3675c2f0eac62f56df3def4285a7b0
+ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
+ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71720437"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72816673"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 
@@ -359,7 +359,7 @@ Der Ausdruck `co_await` gibt `true` zurück, was bedeutet, dass die Wiederaufnah
 
 Sie haben also sehr viele Möglichkeiten, wenn Sie C++/WinRT mit Coroutinen kombinieren, insbesondere bei der herkömmlichen Desktopanwendungsentwicklung im Petzold-Stil.
 
-## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>Abbrechen eines asynchronen Vorgangs und Abbruchrückrufe
+## <a name="canceling-an-asynchronous-operation-and-cancellation-callbacks"></a>Abbrechen eines asynchronen Vorgangs und Abbruchrückrufe
 
 Die Funktionen der Windows-Runtime für die asynchrone Programmierung ermöglichen es Ihnen, ausgeführte asynchrone Aktionen oder Vorgänge abzubrechen. Im folgenden Beispiel wird [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) aufgerufen, um eine möglicherweise große Sammlung von Dateien abzurufen, und das resultierende asynchrone Vorgangsobjekt in einem Datenmember gespeichert. Der Benutzer hat die Möglichkeit, den Vorgang abzubrechen.
 
