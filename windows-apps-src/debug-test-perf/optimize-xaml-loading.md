@@ -1,19 +1,19 @@
 ---
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
-title: Optimieren Ihres XAML-Markups
+title: Optimieren des XAML-Markups
 description: Die Analyse von XAML-Markup zum Erstellen von Objekten im Arbeitsspeicher kann für eine komplexe Benutzeroberfläche viel Zeit in Anspruch nehmen. Hier finden Sie einige Punkte, die Sie zur Optimierung der XAML-Markupanalyse, Ladezeit und Effizienz des Arbeitsspeichers für Ihre App vornehmen können.
 ms.date: 08/10/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f46967cd26f10510e2620229fee0eec13ca7f52a
-ms.sourcegitcommit: 7bbc24d770bf23a8d7e2b234503aad743eb354f3
+ms.openlocfilehash: beb6dde4036019e004d94e5f60e8f3583c78d775
+ms.sourcegitcommit: de34aabd90a92a083dfa17d4f8a98578597763f4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852057"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980027"
 ---
-# <a name="optimize-your-xaml-markup"></a>Optimieren Ihres XAML-Markups
+# <a name="optimize-your-xaml-markup"></a>Optimieren des XAML-Markups
 
 
 Die Analyse von XAML-Markup zum Erstellen von Objekten im Arbeitsspeicher kann für eine komplexe Benutzeroberfläche viel Zeit in Anspruch nehmen. Es folgen einige Vorschläge zur Optimierung der XAML-Markupanalyse, Ladezeit und Effizienz des Arbeitsspeichers Ihrer App.
@@ -126,7 +126,7 @@ Das ListView-Steuerelement und seine untergeordneten Elemente werden nicht in de
 
 Layoutpanel verfügen über die Eigenschaft [Background](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.panel.background), sodass zum Einfärben kein [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) vor dem Panel erforderlich ist.
 
-**Inefficient**
+**Glich**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ Layoutpanel verfügen über die Eigenschaft [Background](https://docs.microsoft.
 </Grid>
 ```
 
-**Efficient**
+**Effizienter**
 
 ```xaml
 <Grid Background="Black"/>
@@ -159,15 +159,15 @@ Verwenden Sie das [x:Key-Attribut](../xaml-platform/x-key-attribute.md), um Ihre
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>ResourceDictionary in einem UserControl-Element
 
-Ein innerhalb von [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) definiertes ResourceDictionary führt zu Leistungseinbußen. Die Plattform erstellt für jede Instanz von UserControl eine Kopie von ResourceDictionary. Wenn Sie ein Steuerelement, die viel verwendet wird verfügen, klicken Sie dann verschieben Sie ResourceDictionary aus das UserControl-Steuerelement, und speichern Sie diese auf Seitenebene.
+Ein innerhalb von [UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) definiertes ResourceDictionary führt zu Leistungseinbußen. Die Plattform erstellt für jede Instanz von UserControl eine Kopie von ResourceDictionary. Wenn Sie ein Benutzer Steuerelement haben, das sehr viel verwendet wird, verschieben Sie das ResourceDictionary aus dem UserControl-Steuerelement, und legen Sie es auf Seitenebene ab.
 
 ### <a name="resource-and-resourcedictionary-scope"></a>Ressourcen und ResourceDictionary-Bereich
 
-Falls eine Seite auf ein Steuerelement oder auf eine Ressource in einer anderen Datei verweist, wird auch diese Datei vom Framework analysiert.
+Falls eine Seite auf ein Steuerelement oder eine Ressource in einer anderen Datei verweist, wird auch diese Datei vom Framework analysiert.
 
 Da _InitialPage.xaml_ in diesem Beispiel eine Ressource von _ExampleResourceDictionary.xaml_ verwendet, muss die gesamte Datei _ExampleResourceDictionary.xaml_ beim Start analysiert werden.
 
-**InitialPage.xaml.**
+**Initialpage. XAML.**
 
 ```xaml
 <Page x:Class="ExampleNamespace.InitialPage" ...>
@@ -185,7 +185,7 @@ Da _InitialPage.xaml_ in diesem Beispiel eine Ressource von _ExampleResourceDict
 </Page>
 ```
 
-**ExampleResourceDictionary.xaml.**
+**Exampleresourcedictionary. XAML.**
 
 ```xaml
 <ResourceDictionary>
@@ -198,7 +198,7 @@ Da _InitialPage.xaml_ in diesem Beispiel eine Ressource von _ExampleResourceDict
 
 Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es eine bewährte Methode, diese in der Datei _App.xaml_ zu speichern, um eine Duplizierung zu vermeiden. Aber _App.xaml_ wird beim Starten der App analysiert. Daher sollte jede Ressource, die nur auf einer Seite verwendet wird (es sei denn, diese Seite ist die Ausgangsseite), unter den lokalen Ressourcen der Seite gespeichert werden. In diesem Beispiel enthält die Datei _App.xaml_ Ressourcen, die nur von einer Seite verwendet werden (bei der es sich nicht um die Ausgangsseite handelt). Dadurch wird die Startzeit der App unnötigerweise erhöht.
 
-**App.xaml**
+**App. XAML**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -212,7 +212,7 @@ Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es 
 </Application>
 ```
 
-**InitialPage.xaml.**
+**Initialpage. XAML.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -223,7 +223,7 @@ Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es 
 </Page>
 ```
 
-**SecondPage.xaml.**
+**Secondpage. XAML.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -234,13 +234,13 @@ Wenn Sie eine Ressource in der gesamten App auf vielen Seiten verwenden, ist es 
 </Page>
 ```
 
-Um dieses Beispiel effizienter zu gestalten, verschieben Sie `SecondPageTextBrush` in _SecondPage.xaml_ und `ThirdPageTextBrush` in _ThirdPage.xaml_. `InitialPageTextBrush` verbleiben im _"App.xaml"_ Anwendungsressourcen in jedem Fall beim Starten der app analysiert werden müssen.
+Um dieses Beispiel effizienter zu gestalten, verschieben Sie `SecondPageTextBrush` in _SecondPage.xaml_ und `ThirdPageTextBrush` in _ThirdPage.xaml_. `InitialPageTextBrush` können in " _app. XAML_ " verbleiben, da Anwendungs Ressourcen in jedem Fall beim APP-Start analysiert werden müssen.
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>Zusammenfassen mehrerer gleichartiger Pinsel in einer Ressource
 
 Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine möglichst häufige Wiederverwendung zu ermöglichen. XAML kann jedoch nicht ohne Weiteres feststellen, ob es sich bei einem Pinsel, der in zwei unterschiedlichen Markupkomponenten deklariert ist, um denselben Pinsel handelt. Dieses Beispiel verwendet [SolidColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) zur Veranschaulichung, aber die Wahrscheinlichkeit und Bedeutung von [GradientBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.GradientBrush) ist höher. Prüfen Sie auch auf Pinsel, die vordefinierte Farben verwenden – beispielsweise bezeichnen `"Orange"` und `"#FFFFA500"` dieselbe Farbe.
 
-**Ineffizient.**
+**Glich.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -250,7 +250,7 @@ Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine mög
             <TextBlock.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
             </TextBlock.Foreground>
-        </TextBox>
+        </TextBlock>
         <Button Content="Submit">
             <Button.Foreground>
                 <SolidColorBrush Color="#FFFFA500"/>
@@ -262,7 +262,7 @@ Die XAML-Plattform speichert allgemein verwendete Objekte zwischen, um eine mög
 
 Definieren Sie den Pinsel als Ressource, um die Duplizierung zu beheben. Wenn Steuerelemente auf anderen Seiten denselben Pinsel verwenden, verschieben Sie diese in die Datei _App.xaml_.
 
-**Effiziente.**
+**Effizienter.**
 
 ```xaml
 <Page ... >
@@ -291,7 +291,7 @@ Wenn ein Element nicht angezeigt wird, da es transparent ist oder von anderen El
 
 Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stapeln, um einen Effekt zu erzielen. In diesem Beispiel ist das Ergebnis eine zweifarbige Form, wobei die obere Hälfte schwarz (vom Hintergrund von [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)) und die untere Hälfte grau ist (vom halbtransparenten weißen [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Objekt, das mit einer Alpha-Überblendung über den schwarzen Hintergrund von **Grid** gelegt wird). Hier werden 150 % der Pixel gefüllt, die erforderlich sind, um das Ergebnis zu erzielen.
 
-**Ineffizient.**
+**Glich.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -304,7 +304,7 @@ Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stap
 </Grid>
 ```
 
-**Effiziente.**
+**Effizienter.**
 
 ```xaml
 <Grid>
@@ -319,9 +319,9 @@ Verwenden Sie ein Verbundelement, anstatt mehrere Elemente übereinander zu stap
 
 ### <a name="layout-panels"></a>Layoutpanels
 
-Ein Layoutpanel kann zwei Zwecke verfolgen: einem Bereich eine Farbe zuzuweisen und untergeordnete Elemente darzustellen. Wenn ein Element, das sich in der Z-Ordnung weiter hinten befindet, einem Bereich bereits eine Farbe zuweist, dann muss ein darüber befindliches Layoutpanel diesem Bereich keine Farbe zuweisen. Stattdessen kann es sich darauf konzentrieren, seine untergeordneten Elemente zu gestalten. Hier sehen Sie ein Beispiel.
+Ein Layoutpanel kann für zwei Zwecke verwendet werden – um einem Bereich einzufärben und um untergeordnete Elemente darzustellen. Wenn ein Element, das sich in der Z-Ordnung weiter hinten befindet, einem Bereich bereits eine Farbe zuweist, dann muss ein darüber befindliches Layoutpanel diesem Bereich keine Farbe zuweisen. Stattdessen kann es sich darauf konzentrieren, seine untergeordneten Elemente zu gestalten. Hier ein Beispiel dazu.
 
-**Ineffizient.**
+**Glich.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -334,7 +334,7 @@ Ein Layoutpanel kann zwei Zwecke verfolgen: einem Bereich eine Farbe zuzuweisen 
 </GridView>
 ```
 
-**Effiziente.**
+**Effizienter.**
 
 ```xaml
 <GridView Background="Blue">
@@ -352,7 +352,7 @@ Wenn für das [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls
 
 Verwenden Sie ein [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border)-Element, um einen Rahmen um ein Objekt zu zeichnen. In diesem Beispiel wird ein [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) als provisorischer Rahmen für eine [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) verwendet. Allerdings werden alle Pixel in der Mitte der Zelle überzeichnet.
 
-**Ineffizient.**
+**Glich.**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -371,7 +371,7 @@ Verwenden Sie ein [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.co
 </Grid>
 ```
 
-**Effiziente.**
+**Effizienter.**
 
 ```xaml
  <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -379,7 +379,7 @@ Verwenden Sie ein [Border](https://docs.microsoft.com/uwp/api/windows.ui.xaml.co
 </Border>
 ```
 
-### <a name="margins"></a>Seitenränder
+### <a name="margins"></a>Ränder
 
 Achten Sie auf die Ränder. Zwei benachbarte Elemente überlappen sich (möglicherweise versehentlich), wenn negative Ränder in die Rendergrenzen hineinreichen und eine Überzeichnung verursachen.
 
@@ -387,7 +387,7 @@ Achten Sie auf die Ränder. Zwei benachbarte Elemente überlappen sich (möglich
 
 Eine andere Quelle für die Überzeichnung ist eine Form, die aus vielen überlappenden Elementen besteht. Wenn Sie [CacheMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CacheMode) für die [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Klasse mit der Verbundform auf **BitmapCache** festlegen, rendert die Plattform das Element für eine Bitmap einmalig und verwendet dann diese Bitmap für jeden Frame (anstelle der Überzeichnung).
 
-**Ineffizient.**
+**Glich.**
 
 ```xaml
 <Canvas Background="White">
@@ -403,7 +403,7 @@ Das obige Bild ist das Ergebnis, aber hier folgt eine Karte der überzeichneten 
 
 ![Venn-Diagramm mit Überschneidungsbereichen](images/translucentvenn.png)
 
-**Effiziente.**
+**Effizienter.**
 
 ```xaml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -425,7 +425,7 @@ Wenn Sie wissen möchten, ob Sie über XBF2 verfügen, öffnen Sie Ihre App in e
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Bewährte Methoden für die Leistung Ihrer app starten](best-practices-for-your-app-s-startup-performance.md)
+- [Bewährte Methoden für die Startleistung Ihrer APP](best-practices-for-your-app-s-startup-performance.md)
 - [Optimieren des XAML-Layouts](optimize-your-xaml-layout.md)
 - [Optimieren der ListView- und GridView-Benutzeroberfläche](optimize-gridview-and-listview.md)
-- [Tools zur profilerstellung und Leistung](tools-for-profiling-and-performance.md)
+- [Tools für Profilerstellung und Leistung](tools-for-profiling-and-performance.md)
