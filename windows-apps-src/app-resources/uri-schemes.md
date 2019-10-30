@@ -1,19 +1,19 @@
 ---
 Description: Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden.
-title: URI-Schemen
+title: URI-Schemas
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: f199d70fc9194f211533820a7b23e20de929752d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7564060e28d3e78608c6f30b1400179087db2b86
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359340"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061849"
 ---
-# <a name="uri-schemes"></a>URI-Schemen
+# <a name="uri-schemes"></a>URI-Schemas
 
 Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden. Sie können diese URI-Schemen in Ihrem Code, im XAML-Markup, in Ihrem App-Paketmanifest oder in der Kachel und Popupbenachrichtigungsvorlage verwenden.
 
@@ -112,7 +112,7 @@ Sie können natürlich auch die gleiche physische Datei abrufen, indem Sie direk
 
 Bei der Pfadkomponente von `ms-appx(-web)` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Wenn beim zugrunde liegenden Dateisystem, von dem auf die Ressource zugegriffen wird, wie bei NTFS die Groß-/Kleinschreibung nicht berücksichtigt wird, wird auch beim Abrufen der Ressource die Groß-/Kleinschreibung ignoriert.
 
-Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und '”' (doppelte Anführungszeichen) müssen in einem Pfad mit einem Prozentzeichen versehen werden, um Daten wie Datei- oder Ordnernamen anzugeben. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher zum Abrufen der Datei "Hello#World.html" diese URI.
+Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher zum Abrufen der Datei "Hello#World.html" diese URI.
 
 ```xml
 ms-appx:///Hello%23World.html
@@ -185,7 +185,7 @@ ms-appdata:///roaming/
 
 Bei der Pfadkomponente von `ms-appdata` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Wenn beim zugrunde liegenden Dateisystem, von dem auf die Ressource zugegriffen wird, wie bei NTFS die Groß-/Kleinschreibung nicht berücksichtigt wird, wird auch beim Abrufen der Ressource die Groß-/Kleinschreibung ignoriert.
 
-Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und '”' (doppelte Anführungszeichen) müssen in einem Pfad mit einem Prozentzeichen versehen werden, um Daten wie Datei- oder Ordnernamen anzugeben. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher zum Abrufen der lokalen Datei "Hello#World.html" diese URI.
+Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher zum Abrufen der lokalen Datei "Hello#World.html" diese URI.
 
 ```xml
 ms-appdata://local/Hello%23World.html
@@ -253,9 +253,9 @@ Der Pfad gibt den hierarchischen Ort der [ResourceMap](/uwp/api/Windows.Applicat
 
 Beispiele und weitere Informationen finden Sie unter [Lokalisieren der Zeichenfolge im Paketmanifest der Benutzeroberfläche und der App](localize-strings-ui-manifest.md) und [Unterstützte Kachel- und Popupbenachrichtigungen für Sprache, Skalierungsfaktor und hohen Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-Bei der Pfadkomponente von `ms-resource` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Das zugrunde liegende abrufen wird jedoch eine [CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) mit *IgnoreCase* festgelegt `true`.
+Bei der Pfadkomponente von `ms-resource` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Der zugrunde liegende Abruf bewirkt jedoch eine [comparestringordinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) , bei der *ignoreCase* auf `true`festgelegt ist.
 
-Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und '”' (doppelte Anführungszeichen) müssen in einem Pfad mit einem Prozentzeichen versehen werden, um Daten wie Datei- oder Ordnernamen anzugeben. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Daher zum Abrufen von einer Zeichenfolgenressource aus einer Ressourcendatei namens `Hello#World.resw`, diesen URI verwenden.
+Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher diesen URI, um eine Zeichen folgen Ressource aus einer Ressourcen Datei mit dem Namen `Hello#World.resw`abzurufen.
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -269,10 +269,10 @@ Entwickler bestimmter Komponenten, die sich in Ebenen über dieser URI-Analyse b
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Uniform Resource Identifier (URI): Generische Syntax](https://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Uniform Resource Identifier (URI): generische Syntax](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Verpacken von Apps](../packaging/index.md)
-* [Verweisen auf ein Bild oder eine andere Anlage aus XAML-Markup und code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [Verweisen auf ein Bild oder ein anderes Objekt aus XAML-Markup und Code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md)
 * [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
 * [Ressourcenverwaltungssystem](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
-* [Kachel- und popupbildgrößen benachrichtigungsunterstützung für Sprache, Skalierung und hoher Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [Unterstützung für Kachel-und Popup Benachrichtigungen für Sprache, Skalierung und hohen Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

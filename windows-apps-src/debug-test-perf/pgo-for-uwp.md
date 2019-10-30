@@ -1,15 +1,15 @@
 ---
 title: Ausführung der Profile Guided Optimization (PGO) auf Universal Windows Platform- (UWP) Apps
-description: Eine schrittweise Anleitung für die profilgesteuerte Optimierung (PGO) für apps der universellen Windows-Plattform (UWP) angewendet werden soll.
+description: Eine Schritt-für-Schritt-Anleitung zum Anwenden der Profil gesteuerten Optimierung (PGO) auf universelle Windows-Plattform-Apps (UWP).
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
-ms.openlocfilehash: 8c19ea1701c6b5e82e66a54223620dace57de4b6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c784812d2e070aba0857cb84e5729b1426717b8d
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57632915"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062369"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>Ausführung der Profile Guided Optimization auf Universal Windows Platform-Apps 
  
@@ -17,7 +17,7 @@ Dieses Thema enthält eine schrittweise Anleitung zum Anwenden von Profile Guide
 
 Im folgenden finden eine grundlegende exemplarische Vorgehensweise für die Anwendung von PGO für die Standard-DirectX 11-App (UWP)-Vorlage mit Visual Studio 2015 Update 3.
  
-Die Screenshots in diesem Leitfaden basieren auf dem folgenden neuen Projekt: ![Dialogfeld "Neues Projekt"](images/pgo-001.png)
+Die Screenshots in diesem Leitfaden basieren auf dem folgenden neuen Projekt: ![Dialog](images/pgo-001.png) "Neues Projekt".
 
 So wenden Sie PGO auf die DirectX 11-App-Vorlage an:
 
@@ -25,11 +25,11 @@ So wenden Sie PGO auf die DirectX 11-App-Vorlage an:
  
  ![App1-Fenster](images/pgo-002.png)
  
-2. Überprüfen Sie in den Eigenschaften ihres Projekts (**Eigenschaften** > **C/C++** > **Optimierung**), ob Sie mit dem /GL-Flag für **Optimierung des ganzen Programms** arbeiten (dies ist möglicherweise bereits durch Ihre Konfiguration festgelegt).
+2. Überprüfen Sie in den Eigenschaften ihres Projekts (**Eigenschaften** > **C/C++**  > **Optimierung**), ob Sie mit dem /GL-Flag für **Optimierung des ganzen Programms** arbeiten (dies ist möglicherweise bereits durch Ihre Konfiguration festgelegt).
 
  ![Optimierung des ganzen Programms](images/pgo-003.png)
 
-3. Gehen Sie zu Ihren Linker-Eigenschaften (**Eigenschaften** > **Linker** > **Optimierung**), und setzen Sie **Link-Zeitcode-Generierung** auf **Profilgeführte Optimierung - Instrument (LTCG:PGInstrument)**.
+3. Gehen Sie zu Ihren Linker-Eigenschaften (**Eigenschaften** > **Linker** > **Optimierung**), und setzen Sie **Link-Zeitcode-Generierung** auf **Profilgeführte Optimierung - Instrument (LTCG:PGInstrument)** .
  
  ![Link-Zeitcode-Generierung](images/pgo-004.png)
 
@@ -64,24 +64,24 @@ So wenden Sie PGO auf die DirectX 11-App-Vorlage an:
   Es ist sinnvoll, die .pgc-Dateien an dem Build-Speicherort auszugeben, an dem sich die .pgd-Datei befindet, und die Dateien als `<PGDName>!<RunIdentifier>.pgc` zu bezeichnen. In diesem Beispiel bedeutet dies:
  
   ```
-  pgosweep.exe App1.exe “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!1.pgc”
+  pgosweep.exe App1.exe "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!1.pgc"
   ```
  
-  Weitere werden ermittelt unter Umständen liegen auch `App1!CoreScenario.pgc`, `App1!UseCase5.pgc`usw. Wenn die PGC-Dateien auf diese Weise, und klicken Sie im Ausgabespeicherort Builds, zusammen mit der PGD identisch sind, werden sie beim Verknüpfen von in Schritt 9 automatisch zusammengeführt.
+  Die weitere Sammlung könnte auch `App1!CoreScenario.pgc`, `App1!UseCase5.pgc` u. dgl. sein. Wenn die .pgc-Dateien auf diese Weise benannt werden und sich zusammen mit der .pgd-Datei am Build-Speicherort befinden, werden Sie bei der Verknüpfung in Schritt 9 automatisch verknüpft.
  
-8. OPTIONAL: Standardmäßig werden alle PGC-Dateien, die mit dem Namen, wie in Schritt 7 angegebenen und aufgenommen werden neben der PGD zusammengeführt, beim Verknüpfen und gleichmäßig gewichtete, aber Sie können auch mehr besitzen steuern, wie bestimmte Läufen gewichtet werden. Zu diesem Zweck verwenden Sie das **pgomgr.exe**-Tool, das sich im selben Ordner befindet, in dem Sie zuerst die Kopie von `pgort140.dll` gefunden haben. Um beispielsweise den `CoreScenario`-Durchlauf mit der dreifachen Priorität anderer Durchläufe zusammenzuführen, kann der folgende Befehl verwendet werden:
+8. OPTIONAL: Standardmäßig werden alle .pgc-Dateien, die wie in Schritt 7 angegeben benannt und neben der .pgd-Datei abgelegt sind, bei der Verknüpfung zusammengeführt und gleich gewichtet, Sie können jedoch weiter steuern, wie bestimmte Durchläufe gewichtet werden. Zu diesem Zweck verwenden Sie das **pgomgr.exe**-Tool, das sich im selben Ordner befindet, in dem Sie zuerst die Kopie von `pgort140.dll` gefunden haben. Um beispielsweise den `CoreScenario`-Durchlauf mit der dreifachen Priorität anderer Durchläufe zusammenzuführen, kann der folgende Befehl verwendet werden:
  
  ```
- pgomgr.exe -merge:3 “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!CoreScenario.pgc” “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd”
+ pgomgr.exe -merge:3 "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!CoreScenario.pgc" "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd"
  ```
  
-9. Nachdem Sie eine oder mehrere .pgc-Dateien generiert und sie entweder neben Ihre .pgd-Datei gesetzt oder manuell zusammengeführt haben (Schritt 8), können Sie mit dem Linker den abschließenden optimierten Build erstellen. Wechseln Sie zurück zu Ihren Linker-Eigenschaften (**Eigenschaften** > **Linker** > **Optimierung**) und setzen Sie **Link-Zeitcode-Generierung** auf **Profilgeführte Optimierung - Optimierung (LTCG: PGOPTIMIZE)**; stellen Sie sicher, dass **Profilgeführte Datenbank** auf die .pgd-Datei verweist, die Sie verwenden möchten (wenn Sie dies nicht geändert haben, sollte alles in Ordnung sein).
+9. Nachdem Sie eine oder mehrere .pgc-Dateien generiert und sie entweder neben Ihre .pgd-Datei gesetzt oder manuell zusammengeführt haben (Schritt 8), können Sie mit dem Linker den abschließenden optimierten Build erstellen. Wechseln Sie zurück zu Ihren Linker-Eigenschaften (**Eigenschaften** > **Linker** > **Optimierung**) und setzen Sie **Link-Zeitcode-Generierung** auf **Profilgeführte Optimierung - Optimierung (LTCG: PGOPTIMIZE)** ; stellen Sie sicher, dass **Profilgeführte Datenbank** auf die .pgd-Datei verweist, die Sie verwenden möchten (wenn Sie dies nicht geändert haben, sollte alles in Ordnung sein).
 
  ![Dialogfeld „Neues Projekt“](images/pgo-009.png)
  
 10. Nachdem das Projekt erstellt wurde, ruft der Linker pgomgr.exe zur Zusammenführung aller `<PGDName>!*.pgc`-Datei in die .pgd-Datei mit dem Standard-Gewicht 1 auf, und die resultierende Anwendung wird auf der Grundlage der Profilierungsdaten optimiert.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 - [Leistung](performance-and-xaml-ui.md)
 
  

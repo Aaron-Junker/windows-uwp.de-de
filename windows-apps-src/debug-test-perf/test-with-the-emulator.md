@@ -1,21 +1,21 @@
 ---
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: Tests mit dem Emulator für Microsoft Windows 10 Mobile
-description: Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die Interaktion mit einem Gerät praxisnah simulieren und die Features Ihrer App testen.
+description: Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die praktische Interaktion mit einem Gerät simulieren und die Features Ihrer App testen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe6a8b7efd358640e59445c2f8fa9cb49ff6a67
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5e87fba21f74140e14688194864ccdc416ea227d
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317579"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062311"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tests mit dem Emulator für Microsoft Windows 10 Mobile
 
-Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die Interaktion mit einem Gerät praxisnah simulieren und die Features Ihrer App testen. Der Emulator ist eine Desktopanwendung zur Emulierung eines mobilen Geräts unter Windows 10. Die Anwendung stellt eine virtualisierte Umgebung bereit, in der Sie Windows-Apps ohne physisches Gerät debuggen und testen können. Außerdem steht Ihnen eine isolierte Umgebung für Ihre Anwendungsprototypen zur Verfügung.
+Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die praktische Interaktion mit einem Gerät simulieren und die Features Ihrer App testen. Der Emulator ist eine Desktopanwendung zur Emulierung eines mobilen Geräts unter Windows 10. Die Anwendung stellt eine virtualisierte Umgebung bereit, in der Sie Windows-Apps ohne physisches Gerät debuggen und testen können. Außerdem steht Ihnen eine isolierte Umgebung für Ihre Anwendungsprototypen zur Verfügung.
 
 Die Leistung des Emulators ist mit der Leistung eines echten Geräts vergleichbar. Es empfiehlt sich jedoch, die App vor der Veröffentlichung im Microsoft Store auf einem physischen Gerät zu testen.
 
@@ -25,9 +25,9 @@ Sie können Ihre universelle App mithilfe eines eindeutigen Windows 10 Mobile-
 
 Ihr Computer muss folgende Anforderungen erfüllen:
 
-CPU (diese Einstellungen können falls verfügbar, im BIOS aktiviert sein)
+CPU (diese Einstellungen (falls verfügbar) können im BIOS aktiviert werden.
 
--   Eine hardwaregestützte Virtualisierung ([überprüfen Sie die Kompatibilität](https://www.microsoft.com/download/details.aspx?id=592)).
+-   Hardware gestützte Virtualisierung ([Kompatibilitätsprüfung](https://www.microsoft.com/download/details.aspx?id=592)).
 -   SLAT (Second Level Address Translation)
 -   Hardwarebasierte Datenausführungsverhinderung (Data Execution Prevention, DEP)
 
@@ -45,32 +45,32 @@ Informationen zum Überprüfen der BIOS-Anforderungen finden Sie unter [So wird'
 
 Wählen Sie zum Überprüfen der RAM- und Betriebssystemanforderungen in der Systemsteuerung **System und Sicherheit** und anschließend **System**.
 
-Microsoft-Emulator für Windows 10 Mobile erfordert Visual Studio 2015 oder höher. Es ist nicht abwärtskompatibel mit früheren Versionen von Visual Studio.
+Für den Microsoft-Emulator für Windows 10 Mobile ist Visual Studio 2015 oder höher erforderlich. Es ist nicht abwärts kompatibel mit früheren Versionen von Visual Studio.
 
 Der Microsoft-Emulator für Windows 10 Mobile kann keine Apps laden, die für eine Windows Phone-Betriebssystemversion vor Windows Phone OS 7.1 konzipiert sind.
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>Installieren, deinstallieren und das Ausführen des Emulators
+## <a name="installing-uninstalling-and-running-the-emulator"></a>Installieren, deinstallieren und Ausführen des Emulators
 
 ### <a name="installing"></a>Installieren von
 Der Microsoft-Emulator für Windows 10 Mobile ist im Windows 10-SDK enthalten. Das Windows 10-SDK und der Emulator können zusammen mit Visual Studio installiert werden. Weitere Informationen finden Sie auf der [Downloadseite für Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=534785).
 
 Der Emulator für Microsoft Windows 10 Mobile kann auch über das [Microsoft-Emulator-Setup](https://go.microsoft.com/fwlink/p/?LinkID=615095) installiert werden.
 
-### <a name="uninstalling"></a>Deinstallieren von
+### <a name="uninstalling"></a>Deinstallieren
 
-Der Microsoft-Emulator für Windows 10 Mobile kann über die Setup-/Reparaturfunktion von Visual Studio deinstalliert werden Alternativ können Sie in der **Systemsteuerung** zu **Programme und Features** navigieren und den Emulator dort entfernen.
+Der Microsoft-Emulator für Windows 10 Mobile kann über die Setup-/Reparaturfunktion von Visual Studio deinstalliert werden Alternativ können Sie in der Systemsteuerung zu **Programme und Features** navigieren und den Emulator dort entfernen.
 
 Wenn Sie den Microsoft-Emulator für Windows 10 Mobile deinstallieren, wird automatisch auch der virtuelle, für den Emulator erstellte Hyper-V-Ethernetadapter entfernt. Dieser virtuelle Adapter kann in der **Systemsteuerung** unter **Netzwerkverbindungen** manuell entfernt werden.
 
-### <a name="running"></a>Wird ausgeführt
+### <a name="running"></a>Running
 
-Um eine app im Emulator auszuführen, wählen Sie einfach einen emulierten Gerät aus der **ausführen** Dropdown-Menü in Visual Studio.
+Um eine APP im Emulator auszuführen, wählen Sie einfach im Dropdown Menü **Ausführen** in Visual Studio ein emulierten Gerät aus.
 
 ![Verfügbare Emulatoren mit Auflösung, Größe und Arbeitsspeicher](images/em-list.png)
 
 ## <a name="whats-new-in-microsoft-emulator-for-windows-10-mobile"></a>Neues beim Emulator für Microsoft Windows 10 Mobile
 
-Neben der Unterstützung der Universal Windows Platform (UWP) bietet der Emulator folgende zusätzliche Funktionen:
+Neben der Unterstützung von UWP (Universelle Windows-Plattform) bietet der Emulator folgende zusätzliche Funktionen:
 
 -   Unterstützung des Mauseingabemodus zur Unterscheidung zwischen Maus- und einzelner Toucheingabe.
 -   NFC-Unterstützung. Der Emulator ermöglicht NFC-Simulationen sowie das Testen und Entwickeln universeller Apps mit NFC- und Näherungsfunktionen.
@@ -96,7 +96,7 @@ Zusätzlich zu den neuen Features, die im vorherigen Abschnitt erwähnt wurden, 
 
 -   **Anwendungslebenszyklus und Markieren als veraltet**. Testen Sie das Verhalten Ihrer App, wenn diese deaktiviert oder als veraltet markiert wird, indem Sie auf der Seite **Debug** der Projekteigenschaften den Wert der Option **Tombstone upon deactivation while debugging** ändern.
 
--   **Lokaler Ordnerspeicher (ehemals „isolierter Speicher”)** . Daten im isolierten Speicher bleiben während der Emulatorausführung erhalten, gehen beim Schließen des Emulators aber verloren.
+-   **Lokaler Ordnerspeicher (früher „isolierter Speicher“)** . Daten im isolierten Speicher bleiben während der Emulatorausführung erhalten, gehen beim Schließen des Emulators aber verloren.
 
 -   **Mikrofon**. Erfordert und nutzt das Mikrofon des Hostcomputers.
 
@@ -144,7 +144,7 @@ Die folgende Tabelle enthält die Tasten einer Hardwaretastatur, die Sie verwend
 
 Beachten Sie, dass mit Emulator Build 10.0.14332 die Zuordnung der Computerhardwaretasten geändert wurde. Die Einträge in der zweiten Spalte der folgenden Tabelle bezeichnen diese neuen Tasten. 
 
-Computerhardwaretasten (Emulator Build 10.0.14295 und früher) | Computerhardwaretasten (Emulator Build 10.0.14332 und höher) | Windows Phone-Hardwaretaste | Hinweise
+Computerhardwaretasten (Emulator Build 10.0.14295 und früher) | Computerhardwaretasten (Emulator Build 10.0.14332 und höher) | Windows Phone-Hardwaretaste | Anmerkungen
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ESC | Zurück | Eine lange Betätigung funktioniert wie erwartet.
 F2 | WIN + F2 | Start | Eine lange Betätigung funktioniert wie erwartet.
@@ -174,10 +174,10 @@ Die NFC-Registerkarte unterstützt drei Modi.
 In allen Modi bietet das Emulatorfenster drei interessante Bereiche.
 
 -   Der Abschnitt links oben ist modusspezifisch. Die Features dieses Abschnitts sind abhängig vom gewählten Modus und werden in den modusspezifischen Abschnitten weiter unten ausführlich beschrieben.
--   Rechts oben befinden sich die Protokolle. Wenn Sie ein Gerätepaar aneinander oder ein Gerät an das POS-Terminal halten, wird dieses Ereignis protokolliert. Gleiches gilt, wenn die Geräte wieder voneinander getrennt werden. In diesem Abschnitt wird auch erfasst, ob Ihre App vor dem Verbindungsabbruch reagiert hat, und alle Aktionen, die Sie auf der Benutzeroberfläche des Emulators ausgeführt haben, werden mit Zeitstempel dokumentiert. Die Protokolle bleiben beim Moduswechsel erhalten und können mithilfe der **Löschschaltfläche** über dem **Protokollbildschirm** jederzeit gelöscht werden.
+-   Rechts oben befinden sich die Protokolle. Wenn Sie ein Gerätepaar aneinander oder ein Gerät an das POS-Terminal halten, wird dieses Ereignis protokolliert. Gleiches gilt, wenn die Geräte wieder voneinander getrennt werden. In diesem Abschnitt wird auch erfasst, ob Ihre App vor dem Verbindungsabbruch reagiert hat, und alle Aktionen, die Sie auf der Benutzeroberfläche des Emulators ausgeführt haben, werden mit Zeitstempel dokumentiert. Die Protokolle bleiben beim Moduswechsel erhalten und können mithilfe der Löschschaltfläche über dem Protokollbildschirm jederzeit gelöscht werden.
 -   Die untere Bildschirmhälfte fungiert als Meldungsprotokoll und zeigt abhängig vom ausgewählten Modus die Aufzeichnung aller Meldungen, die über die derzeit ausgewählte Verbindung gesendet oder empfangen werden.
 
-> **Wichtige**  Wenn Sie zuerst das Tapper Tool starten, erhalten Sie eine Windows-Firewall auffordern. Aktivieren Sie unbedingt alle drei Kontrollkästchen, und lassen Sie das Tool durch die Firewall, da es ansonsten nicht funktioniert.
+> **Wichtig**  Wenn Sie das tappertool zum ersten Mal starten, erhalten Sie eine Windows-Firewall-Eingabeaufforderung. Aktivieren Sie unbedingt alle drei Kontrollkästchen, und lassen Sie das Tool durch die Firewall, da es ansonsten nicht funktioniert.
 
 Halten Sie sich nach dem Starten des Schnellstart-Installationsprogramms an die obige Anweisung, und aktivieren Sie in der Eingabeaufforderung der Firewall alle drei Kontrollkästchen. Das Tapper-Tool muss außerdem auf dem gleichen physischen Hostcomputer installiert und verwendet werden wie der Microsoft-Emulator.
 
@@ -191,7 +191,7 @@ Wenn Sie das Kontrollkästchen **Enable discovery of peer devices** aktivieren, 
 
 Wenn beide Emulatoren ausgeführt werden, gehen Sie wie folgt vor:
 
--   Wählen Sie in der Liste mit den **Peergeräten** den gewünschten Ziel-Emulator aus.
+-   Wählen Sie in der Liste mit den Peergeräten den gewünschten Ziel-Emulator aus.
 -   Aktivieren Sie das Optionsfeld **Send to peer device** (An Peergerät senden).
 -   Klicken Sie auf die Schaltfläche **Tap** (Berühren). Dadurch wird die Berührung der beiden Geräte simuliert und der entsprechende NFC-Benachrichtigungssound ausgegeben.
 -   Klicken Sie zum Trennen der beiden Geräte einfach auf die Schaltfläche **Untap** (Trennen).
@@ -215,7 +215,7 @@ Im Näherungsmodus können Sie Meldungen von einem Tag oder von einem anderen Pe
 -   NDEF:URI
 -   NDEF:wkt.U
 
-Zum Erstellen dieser Meldungen können Sie entweder die **Nutzlastfenster** bearbeiten oder die Meldungen in einer Datei bereitstellen. Weitere Informationen zu diesen Typen und zu deren Verwendung finden Sie im Anmerkungsabschnitt der[**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage)-Referenzseite.
+Zum Erstellen dieser Meldungen können Sie entweder die Nutzlastfenster bearbeiten oder die Meldungen in einer Datei bereitstellen. Weitere Informationen zu diesen Typen und zu deren Verwendung finden Sie im Anmerkungsabschnitt der[**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage)-Referenzseite.
 
 Das Windows 8-Treiberkit (Windows Driver Kit, WDK) enthält ein Treiberbeispiel, in dem das gleiche Protokoll verfügbar gemacht wird wie im Windows Phone 8-Emulator. Laden Sie das WDK herunter, erstellen Sie den Beispieltreiber, installieren Sie ihn auf einem Gerät unter Windows 8, und fügen Sie anschließend die IP-Adresse oder den Hostnamen des Geräts der Geräteliste hinzu, oder koppeln Sie es entweder mit einem anderen Gerät unter Windows 8 oder mit einem Windows Phone 8-Emulator.
 
@@ -227,21 +227,21 @@ Im HCE-Modus (Host Card Emulation) können Sie Ihre HCE-basierte Kartenemulation
 
 -   Klicken Sie im Skript-Editor-Abschnitt auf die Schaltfläche **Hinzufügen**, um ein neues Skript zu erstellen. Nach der Bearbeitung können Sie einen Namen für Ihr Skript angeben und es durch Klicken auf die Schaltfläche **Speichern** speichern.
 -   Gespeicherte Skripts sind beim nächsten Start des Emulators verfügbar.
--   Führen Sie Ihre Skripts aus, indem Sie im Skript-Editor-Fenster auf die **Wiedergabeschaltfläche** klicken. Mit dieser Aktion wird eine Berührung zwischen Smartphone und Terminal sowie das Senden von Befehlen aus Ihrem Skript simuliert. Alternativ können Sie auf die Schaltfläche **Tap** (Berühren) und anschließend auf die **Wiedergabeschaltfläche** tippen. Das Skript wird erst ausgeführt, wenn Sie auf die **Wiedergabeschaltfläche** tippen.
+-   Führen Sie Ihre Skripts aus, indem Sie im Skript-Editor-Fenster auf die Wiedergabeschaltfläche klicken. Mit dieser Aktion wird eine Berührung zwischen Smartphone und Terminal sowie das Senden von Befehlen aus Ihrem Skript simuliert. Alternativ können Sie auf die Schaltfläche **Tap** (Berühren) und anschließend auf die Wiedergabeschaltfläche tippen. Das Skript wird erst ausgeführt, wenn Sie auf die Wiedergabeschaltfläche tippen.
 -   Durch Klicken auf die Schaltfläche **Beenden** wird die Befehlsübermittlung an Ihre Anwendung beendet. Die Geräte bleiben jedoch gekoppelt, bis Sie auf die Schaltfläche **Untap** (Trennen) klicken.
 -   Wenn Sie ein Skript löschen möchten, wählen Sie es im Dropdownmenü aus, und klicken Sie anschließend auf die Schaltfläche **Löschen**.
--   Die Syntax Ihrer Skripts wird vom Emulator-Tool erst überprüft, wenn Sie das Skript mithilfe der **Wiedergabeschaltfläche** ausführen. Die vom Skript gesendeten Meldungen sind abhängig von der Implementierung Ihrer Kartenemulations-App.
+-   Die Syntax Ihrer Skripts wird vom Emulator-Tool erst überprüft, wenn Sie das Skript mithilfe der Wiedergabeschaltfläche ausführen. Die vom Skript gesendeten Meldungen sind abhängig von der Implementierung Ihrer Kartenemulations-App.
 
 Zahlungs-Apps können auch mithilfe des Terminalsimulators von MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) getestet werden.
 
--   Aktivieren Sie unterhalb des Skript-Editor-Fensters das Kontrollkästchen für den **MasterCard-Listener**, und starten Sie den Simulator von MasterCard.
+-   Aktivieren Sie unterhalb des Skript-Editor-Fensters das Kontrollkästchen für den **MasterCard**-Listener, und starten Sie den Simulator von MasterCard.
 -   Mithilfe dieses Tools können Sie Befehle generieren, die dann über das NFC-Tool an Ihre im Emulator ausgeführte Anwendung weitergeleitet werden.
 
 Weitere Informationen zur HCE-Unterstützung sowie zur Entwicklung von HCE-Apps in Windows 10 Mobile finden Sie im [Blog des NFC-Teams von Microsoft](https://go.microsoft.com/fwlink/?LinkId=534749).
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>So wird's gemacht: Erstellen von Skripts für HCE-Tests
 
-Die Skripts werden als C#-Code geschrieben, und die Run-Methode Ihres Skripts wird durch Klicken auf die **Wiedergabeschaltfläche** aufgerufen. Diese Methode verwendet eine IScriptProcessor-Schnittstelle, um APDU Befehle zu senden/empfangen, im Protokollfenster auszugeben und das Zeitlimit für eine APDU-Antwort des Smartphones zu steuern.
+Die Skripts werden als C#-Code geschrieben, und die Run-Methode Ihres Skripts wird durch Klicken auf die Wiedergabeschaltfläche aufgerufen. Diese Methode verwendet eine IScriptProcessor-Schnittstelle, um APDU Befehle zu senden/empfangen, im Protokollfenster auszugeben und das Zeitlimit für eine APDU-Antwort des Smartphones zu steuern.
 
 Im Anschluss finden Sie Informationen zu den verfügbaren Funktionen:
 
@@ -268,7 +268,7 @@ Im Anschluss finden Sie Informationen zu den verfügbaren Funktionen:
 
 ### <a name="smart-card-reader-mode"></a>Smartcardlesemodus
 
-Der Emulator kann mit einem Smartcard-Lesegerät Ihres Hostcomputers verbunden werden. Dadurch erscheinen eingelegte oder in die Nähe gehaltene Smartcards in Ihrer Smartphone-Anwendung, und die APDU-basierte Kommunikation über die [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) -Klasse wird ermöglicht. Hierzu muss Ihr Computer über ein kompatibles Smartcard-Lesegerät verfügen. USB-Smartcardleser mit NFC (kontaktlos) und Einschub (Kontakt) sind weit verbreitet. Um die Verwendung eines angeschlossenen Smartcardlesers mit dem Emulator zu ermöglichen, wählen Sie zunächst den **Kartenlesermodus** aus. Daraufhin erscheint eine Dropdownliste mit allen angeschlossenen und kompatiblen Smartcardlesern des Hostsystems, in der Sie den gewünschten Smartcardleser auswählen können.
+Der Emulator kann mit einem Smartcard-Lesegerät Ihres Hostcomputers verbunden werden. Dadurch erscheinen eingelegte oder in die Nähe gehaltene Smartcards in Ihrer Smartphone-Anwendung, und die APDU-basierte Kommunikation über die [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) -Klasse wird ermöglicht. Hierzu muss Ihr Computer über ein kompatibles Smartcard-Lesegerät verfügen. USB-Smartcardleser mit NFC (kontaktlos) und Einschub (Kontakt) sind weit verbreitet. Um die Verwendung eines angeschlossenen Smartcardlesers mit dem Emulator zu ermöglichen, wählen Sie zunächst den Kartenlesermodus aus. Daraufhin erscheint eine Dropdownliste mit allen angeschlossenen und kompatiblen Smartcardlesern des Hostsystems, in der Sie den gewünschten Smartcardleser auswählen können.
 
 Beachten Sie, dass einige NFC-fähige Smartcardleser bestimmte Arten von NFC-Karten und die APDU-Standardbefehle für PC/SC-Speicherkarten nicht unterstützen.
 
@@ -279,7 +279,7 @@ Simulieren Sie Multitoucheingaben für das Zusammendrücken und Zoomen, Drehen u
 1.  Tippen Sie auf der Symbolleiste des Emulators auf die Schaltfläche **Multitoucheingabe**, um die Multitoucheingabe zu aktivieren. Auf dem Bildschirm des Emulators erscheinen zwei Berührungspunkte, die um einen Mittelpunkt angeordnet sind.
 2.  Klicken Sie mit der rechten Maustaste auf einen der Berührungspunkte, und ziehen Sie ihn an die gewünschte Stelle, um die Punkte ohne Bildschirmberührung zu positionieren.
 3.  Klicken Sie mit der linken Maustaste auf einen der Berührungspunkte, und ziehen Sie ihn, um das Zusammendrücken und Zoomen bzw. das Drehen oder Verschieben zu simulieren.
-4.  Tippen Sie auf der Symbolleiste des Emulators auf die Schaltfläche für die **Einzeltoucheingabe**, um zur normalen Eingabe zurückzukehren.
+4.  Tippen Sie auf der Symbolleiste des Emulators auf die Schaltfläche für die Einzeltoucheingabe, um zur normalen Eingabe zurückzukehren.
 
 Der folgende Screenshot zeigt die Multitoucheingabe:
 
@@ -291,7 +291,7 @@ Der folgende Screenshot zeigt die Multitoucheingabe:
 
 ## <a name="accelerometer"></a>Beschleunigungsmesser
 
-Verwenden Sie die Registerkarte **Accelerometer** der zusätzlichen **Tools** des Emulators, um Apps zu testen, die die Bewegungen des Smartphones nachverfolgen.
+Verwenden Sie die Registerkarte **Accelerometer** der zusätzlichen Tools des Emulators, um Apps zu testen, die die Bewegungen des Smartphones nachverfolgen.
 
 Sie können den Beschleunigungsmesser mit einer Liveeingabe oder mit einer zuvor aufgezeichneten Eingabe testen. Als aufgezeichnete Daten ist nur das simulierte Schütteln des Smartphones verfügbar. Für den Beschleunigungsmesser können keine eigenen Simulationen aufgezeichnet oder gespeichert werden.
 
@@ -299,7 +299,7 @@ Sie können den Beschleunigungsmesser mit einer Liveeingabe oder mit einer zuvor
 
 2.  -   Wählen Sie die Art der Eingabe aus.
 
-        **Führen Sie die Simulation mit live-Eingabe**
+        **So führen Sie die Simulation mit Live Eingaben aus**
 
         Ziehen Sie den farbigen Punkt in der Mitte des Beschleunigungsmessersimulators, um eine Bewegung des Geräts in einer 3D-Ebene zu simulieren.
 
@@ -307,7 +307,7 @@ Sie können den Beschleunigungsmesser mit einer Liveeingabe oder mit einer zuvor
 
         Optional: Klicken Sie auf **Reset**, um die Ausgangsausrichtung wiederherzustellen.
 
-    -   **Die Simulation mit aufgezeichneten Eingabe ausgeführt.**
+    -   **So führen Sie die Simulation mit aufgezeichneten Eingaben aus**
 
         Klicken Sie im Abschnitt **Recorded Data** auf die Schaltfläche **Play**, um die Wiedergabe der simulierten Daten zu starten. Die Liste **Recorded Data** enthält nur die Option für Schütteln. Während der Wiedergabe der Daten bewegt sich der Simulator auf dem Bildschirm nicht.
 
@@ -315,7 +315,7 @@ Sie können den Beschleunigungsmesser mit einer Liveeingabe oder mit einer zuvor
 
 ## <a name="location-and-driving"></a>Position und Fahrt
 
-Verwenden Sie die Registerkarte **Location** der zusätzlichen **Tools** des Emulators, um Apps mit Navigationsfunktionen oder Geofencing zu testen. Dieses Feature ermöglicht das Simulieren der Fortbewegung per Auto, Fahrrad oder zu Fuß unter praxisnahen Bedingungen.
+Verwenden Sie die Registerkarte **Location** der zusätzlichen Tools des Emulators, um Apps mit Navigationsfunktionen oder Geofencing zu testen. Dieses Feature ermöglicht das Simulieren der Fortbewegung per Auto, Fahrrad oder zu Fuß unter praxisnahen Bedingungen.
 
 Sie können während des App-Tests Ortswechsel mit unterschiedlichen Geschwindigkeiten und Genauigkeitsprofilen simulieren. Mithilfe des Positionssimulators können Sie Veränderungen bei der Nutzung der Standort-API ermitteln, die die Benutzerfreundlichkeit erhöhen. So können Sie mithilfe des Tools beispielsweise feststellen, ob Sie zur erfolgreichen Erkennung von Geofences in unterschiedlichen Szenarien die Geofence-Parameter (wie Größe oder Verweildauer) justieren müssen.
 
@@ -329,13 +329,13 @@ Die Registerkarte **Location** unterstützt drei Modi. In allen Modi gilt: Wenn 
 
 In allen Modi des Positionssimulators haben Sie folgende Möglichkeiten:
 
--   Sie können mithilfe des **Suchfelds** nach einer Position suchen.
+-   Sie können mithilfe des Suchfelds nach einer Position suchen.
 
--   Sie können die Karte **vergrößern** und **verkleinern**.
+-   Sie können die Karte vergrößern und verkleinern.
 
 -   Sie können die aktuellen Datenpunkte in einer XML-Datei speichern und die Datei später laden, um die gleichen Datenpunkte erneut zu verwenden.
 
--   Sie können den Markierungsmodus ein- und **ausschalten** sowie alle **Punkte löschen**.
+-   Sie können den Markierungsmodus ein- und ausschalten sowie alle Punkte löschen.
 
 In den Modi "Pin" und "Route" haben Sie außerdem folgende Möglichkeiten:
 
@@ -345,7 +345,7 @@ In den Modi "Pin" und "Route" haben Sie außerdem folgende Möglichkeiten:
 
 -   Ändern einer Route durch Löschen von Markierungen (im Modus "Pin") oder Wegpunkten (im Modus "Route").
 
-**Genauigkeit Profile**
+**Genauigkeits profile**
 
 Über die Dropdownliste **Accuracy profile** können Sie in jedem Modus des Positionssimulators ein Genauigkeitsprofil auswählen.
 
@@ -356,7 +356,7 @@ In den Modi "Pin" und "Route" haben Sie außerdem folgende Möglichkeiten:
 | Suburban | Geht davon aus, dass die Positionsbestimmung per Satellit relativ gut funktioniert und dass ein ausreichend dichtes Netz von Mobilfunkmasten vorhanden, die Dichte von WLAN-Zugriffspunkten aber nicht besonders hoch ist.  |
 | Rural    | Geht davon aus, dass die Positionsbestimmung per Satellit gut funktioniert, aber nur wenige Mobilfunkmasten und nahezu gar keine WLAN-Zugriffspunkte für die Positionsbestimmung zur Verfügung stehen. |
 
-**Geschwindigkeit Profile**
+**Geschwindigkeits profile**
 
 Im Modus **Route** können Sie über die Dropdownliste eines der folgenden Geschwindigkeitsprofile auswählen:
 
@@ -367,7 +367,7 @@ Im Modus **Route** können Sie über die Dropdownliste eines der folgenden Gesch
 | Biking      | 25 km/h                  | 6,94 m/s           | Die Route wird mit einer natürlichen Radfahrergeschwindigkeit von 25 km/h durchlaufen. |
 | Fast        |                          |                  |Die Route wird ohne Berücksichtigung der geltenden Geschwindigkeitsbegrenzung durchlaufen. | 
 
-**Route-Modus**
+**Routen Modus**
 
 Der Modus "Route" besitzt folgende Features und Einschränkungen.
 
@@ -385,7 +385,7 @@ Der folgende Screenshot zeigt den Modus "Route": Die orangefarbene Linie ist die
 
 ![Seite "Location" in den zusätzlichen Tools des Emulators](images/em-drive.png)
 
-**Weitere Informationen zu den Location-simulator**
+**Weitere Informationen zum Speicherort Simulator**
 
 -   Sie können eine Position mit der standardmäßigen Genauigkeitseinstellung anfordern. Die Einschränkung, die in der Windows Phone 8-Version des Positionssimulators galt und beim Anfordern einer Position die Verwendung der Genauigkeitseinstellung "High" erforderte, wurde aufgehoben.
 
@@ -393,9 +393,9 @@ Der folgende Screenshot zeigt den Modus "Route": Die orangefarbene Linie ist die
 
 -   Die einzigen simulierten Positionseigenschaften sind Breitengrad, Längengrad, Genauigkeit und Positionsquelle. Andere Eigenschaften wie Geschwindigkeit, Richtung usw. werden vom Positionssimulator nicht simuliert.
 
-## <a name="network"></a>Network
+## <a name="network"></a>Netzwerk
 
-Verwenden Sie die Registerkarte **Netzwerk** der zusätzlichen **Tools** des Emulators, um Ihre App mit unterschiedlicher Netzwerkgeschwindigkeit und unterschiedlicher Signalstärke zu testen. Dieses Feature ist hilfreich, wenn Ihre App Webdienste aufruft oder Daten überträgt.
+Verwenden Sie die Registerkarte **Netzwerk** der zusätzlichen Tools des Emulators, um Ihre App mit unterschiedlicher Netzwerkgeschwindigkeit und unterschiedlicher Signalstärke zu testen. Dieses Feature ist hilfreich, wenn Ihre App Webdienste aufruft oder Daten überträgt.
 
 Mit dem Netzwerksimulationsfeature können Sie sicherstellen, dass Ihre App in der Praxis gut funktioniert. Der Windows Phone-Emulator wird in der Regel auf einem Computer mit schneller WLAN- oder Ethernetverbindung ausgeführt. Ihre App wird dagegen auf Smartphones ausgeführt, die üblicherweise über eine langsamere Mobilfunkverbindung verfügen.
 
@@ -408,7 +408,7 @@ Mit dem Netzwerksimulationsfeature können Sie sicherstellen, dass Ihre App in d
 
 3.  Wählen Sie in der Dropdownliste **Signalstärke** eine der folgenden Optionen aus:
     -   Fehlerfrei
-    -   Durchschnitt
+    -   Mittelmäßig
     -   Schlecht
 
 4.  Deaktivieren Sie das Kontrollkästchen **Enable network simulation**, um zum Standardverhalten zurückzukehren und wieder die Netzwerkeinstellungen des Entwicklungscomputers zu verwenden.
@@ -419,7 +419,7 @@ Die Registerkarte **Network** gibt auch Aufschluss über die aktuellen Netzwerke
 
 ## <a name="sd-card"></a>SD-Karte
 
-Verwenden Sie die Registerkarte **SD-Karte** der zusätzlichen **Tools** des Emulators, um Ihre App mit einer simulierten, austauschbaren SD-Karte zu testen. Dieses Feature ist hilfreich, wenn Ihre App Dateien liest oder schreibt.
+Verwenden Sie die Registerkarte **SD-Karte** der zusätzlichen Tools des Emulators, um Ihre App mit einer simulierten, austauschbaren SD-Karte zu testen. Dieses Feature ist hilfreich, wenn Ihre App Dateien liest oder schreibt.
 
 ![Seite „SD-Karte“ in den zusätzlichen Tools des Emulators](images/em-sdcard.png)
 
@@ -442,7 +442,7 @@ Die Registerkarte **SD-Karte** simuliert mithilfe eines Ordner auf dem Entwicklu
 
     Diese Option ist standardmäßig aktiviert. Wenn diese Option aktiviert ist, werden Dateien aus dem Emulator beim Auswerfen der SD-Karte wieder mit dem Ordner auf dem Entwicklungscomputer synchronisiert.
 
-4.  **Werfen Sie die SD-Karte aus**.
+4.  **Werfen Sie die SD-Karte aus.**
 
     Klicken Sie auf **Eject SD card**. Nach dem Auswerfen der SD-Karte kann Folgendes passieren:
 
@@ -452,7 +452,7 @@ Die Registerkarte **SD-Karte** simuliert mithilfe eines Ordner auf dem Entwicklu
         -   Wenn Sie während des Synchronisierungsvorgangs auf **Synchronisierung abbrechen** klicken, wird die Karte ausgeworfen, und die Ergebnisse des Synchronisierungsvorgangs sind unvollständig.
     -   Die Schaltfläche **Eject SD card** wird wieder zu **Insert SD card**.
 
-> **Beachten Sie**  da eine SD-Karte, die von das Telefon verwendet, die mit dem FAT32-Dateisystem formatiert wird, 32 GB beträgt die maximale Größe.
+> **Hinweis**  da eine SD-Karte, die vom Telefon verwendet wird, mit dem FAT32-Dateisystem formatiert ist, ist die maximale Größe von 32 GB.
 
 Die Geschwindigkeit von Lese- und Schreibvorgängen wird für die simulierte SD-Karte realistisch gedrosselt. Der Zugriff auf eine SD-Karte dauert länger als der Zugriff auf die Festplatte des Computers.
 
@@ -462,21 +462,21 @@ Verwenden Sie die Registerkarte **Benachrichtigungen** der **zusätzlichen Tools
 
 Sie können ganz einfach Pushbenachrichtigungen testen, ohne den funktionsfähigen Clouddienst zu erstellen, der nach der Veröffentlichung Ihrer App benötigt wird.
 
-1.  **Aktivieren Sie die Simulation.**
+1.  **Aktivieren der Simulation.**
 
     Wenn Sie **Enabled** auswählen, verwenden alle im Emulator bereitgestellten Apps anstelle der WNS oder des MPN-Diensts das Simulationsmodul, bis Sie die Simulation wieder deaktivieren.
 
-2.  **Wählen Sie eine app aus, um Benachrichtigungen zu erhalten.**
+2.  **Wählen Sie eine APP aus, um Benachrichtigungen zu empfangen.**
 
     Die Liste **AppId** wird automatisch mit allen Apps aufgefüllt, die für den Emulator bereitgestellt wurden und für Pushbenachrichtigungen geeignet sind. Wählen Sie in der Dropdownliste eine App aus.
 
     Falls Sie nach der Simulationsaktivierung eine weitere, für Pushbenachrichtigungen geeignete App bereitgestellt haben, klicken Sie auf **Aktualisieren**, um die App der Liste hinzuzufügen.
 
-3.  **Wählen Sie einen Benachrichtigungskanal.**
+3.  **Wählen Sie einen Benachrichtigungs Kanal aus.**
 
     Nachdem Sie in der Liste **AppId** eine App ausgewählt haben, wird die Liste **URI** automatisch mit allen Benachrichtigungskanälen aufgefüllt, die für die ausgewählte App registriert sind. Wählen Sie in der Dropdownliste einen Benachrichtigungskanal aus.
 
-4.  **Wählen Sie eine Benachrichtigung.**
+4.  **Wählen Sie einen Benachrichtigungstyp aus.**
 
     Nachdem Sie in der Liste **URI** einen Benachrichtigungskanal ausgewählt haben, wird die Liste **Notification Type** automatisch mit allen Typen aufgefüllt, die für den Benachrichtigungsdienst verfügbar sind. Wählen Sie in der Dropdownliste einen Benachrichtigungstyp aus.
 
@@ -487,7 +487,7 @@ Sie können ganz einfach Pushbenachrichtigungen testen, ohne den funktionsfähig
     -   Folgende WNS-Benachrichtigungstypen werden unterstützt:
 
         -   Raw
-        -   Toast
+        -   Popup
 
             Wenn Ihre App WNS-Benachrichtigungen verwendet und Sie den Benachrichtigungstyp **Toast** auswählen, enthält die Simulationsregisterkarte die Felder **Tag** und **Group**. Sie können diese Optionen aktivieren und Werte für **Tag** und **Group** eingeben, um Popupbenachrichtigungen im Benachrichtigungscenter zu verwalten.
 
@@ -497,16 +497,16 @@ Sie können ganz einfach Pushbenachrichtigungen testen, ohne den funktionsfähig
     -   Folgende MPN-Benachrichtigungstypen werden unterstützt:
 
         -   Raw
-        -   Toast
+        -   Popup
         -   Tile
 
-5.  **Wählen Sie eine Benachrichtigungsvorlage aus.**
+5.  **Wählen Sie eine Benachrichtigungs Vorlage aus.**
 
     Nachdem Sie in der Liste **Notification Type** einen Benachrichtigungstyp ausgewählt haben, wird die Liste **Templates** automatisch mit allen Vorlagen aufgefüllt, die für den Benachrichtigungstyp verfügbar sind. Wählen Sie in der Dropdownliste eine Vorlage aus.
 
     Die Simulation unterstützt alle Vorlagentypen.
 
-6.  **Ändern Sie optional die Nutzlast der Benachrichtigung.**
+6.  **Optional können Sie die Benachrichtigungs Nutzlast ändern.**
 
     Nachdem Sie in der Liste **Templates** eine Vorlage ausgewählt haben, wird das Feld **Notification Payload** automatisch mit einer Beispielnutzlast für die Vorlage aufgefüllt. Sehen Sie sich die Beispielnutzlast im Textfeld **Notification Payload** an.
 
@@ -520,7 +520,7 @@ Sie können ganz einfach Pushbenachrichtigungen testen, ohne den funktionsfähig
 
     Der Simulator überprüft den XML-Text der Nutzlast nicht.
 
-7.  **Die Pushbenachrichtigung zu senden.**
+7.  **Senden Sie die Pushbenachrichtigung.**
 
     Klicken Sie auf **Send**, um die Pushbenachrichtigung an die ausgewählte App zu senden.
 
@@ -530,16 +530,16 @@ Sie können ganz einfach Pushbenachrichtigungen testen, ohne den funktionsfähig
 
 ## <a name="sensors"></a>Sensoren
 
-Verwenden Sie die Registerkarte **Sensors** der zusätzlichen **Tools** des Emulators, um zu testen, wie Ihre App auf preisgünstigen Smartphones funktioniert, die nicht über alle optionalen Sensoren oder Kamerafeatures verfügen. Dieses Feature ist hilfreich, wenn Ihre App die Kamera oder Sensoren des Smartphones verwendet und Sie mit Ihrer App den größtmöglichen Markt erreichen möchten.
+Verwenden Sie die Registerkarte **Sensors** der zusätzlichen Tools des Emulators, um zu testen, wie Ihre App auf preisgünstigen Smartphones funktioniert, die nicht über alle optionalen Sensoren oder Kamerafeatures verfügen. Dieses Feature ist hilfreich, wenn Ihre App die Kamera oder Sensoren des Smartphones verwendet und Sie mit Ihrer App den größtmöglichen Markt erreichen möchten.
 
 -   Standardmäßig sind alle Sensoren in der Liste **Optional sensors** aktiviert. Aktivieren oder deaktivieren Sie einzelne Kontrollkästchen, um einzelne Sensoren zu aktivieren oder zu deaktivieren.
 -   Klicken Sie auf **Apply**, nachdem Sie Ihre Auswahl geändert haben. Anschließend müssen Sie den Emulator neu starten.
--   Wenn Sie Änderungen vornehmen und anschließend die Registerkarte wechseln oder das Fenster mit den zusätzlichen **Tools** schließen, ohne auf **Apply** zu klicken, werden Ihre Änderungen verworfen.
+-   Wenn Sie Änderungen vornehmen und anschließend die Registerkarte wechseln oder das Fenster mit den zusätzlichen Tools schließen, ohne auf **Apply** zu klicken, werden Ihre Änderungen verworfen.
 -   Ihre Einstellungen bleiben zwischen Emulatorsitzungen erhalten, bis Sie sie ändern oder zurücksetzen. Wenn Sie einen Prüfpunkt aufzeichnen, werden die Einstellungen zusammen mit dem Prüfpunkt gespeichert. Die Einstellungen bleiben nur für den spezifischen Emulator erhalten, den Sie verwenden – also beispielsweise für **Emulator 8.1 WVGA 4" 512MB**.
 
 ![Seite "Sensors" in den zusätzlichen Tools des Emulators](images/em-sensors.png)
 
-**Sensor-Optionen**
+**Sensor Optionen**
 
 Sie können folgende optionale Hardwaresensoren aktivieren oder deaktivieren:
 
@@ -550,7 +550,7 @@ Sie können folgende optionale Hardwaresensoren aktivieren oder deaktivieren:
 -   NFC
 -   Softwareschaltflächen (nur bei einigen hochauflösenden Emulatorbildern)
 
-**Kameraoptionen**
+**Kamera Optionen**
 
 Sie können die optionale, nach vorne gerichtete Kamera aktivieren oder deaktivieren, indem Sie in der Liste **Optional sensors** das entsprechende Kontrollkästchen aktivieren oder deaktivieren.
 
@@ -564,8 +564,8 @@ Im Anschluss folgt eine Liste mit den Kamerafeatures, die von den einzelnen Prof
 | Feature            | Windows Phone 8.0 camera | Windows Phone 8.1 camera  |
 |--------------------|--------------------------|---------------------------|
 | Auflösung         | 640 x 480 (VGA)          | 640 x 480 (VGA) oder höher |
-| Autofokus          | Ja                      | Ja                       |
-| Flash              | Nein                       | Ja                       |
+| Autofokus          | „Ja“                      | „Ja“                       |
+| Blitz              | Nein                       | „Ja“                       |
 | Zoom               | 2x (digital oder optisch)  | 2x (digital oder optisch)   |
 | Videoauflösung   | 640 x 480 (VGA)          | 640 x 480 (VGA) oder höher |
 | Vorschauauflösung | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
@@ -576,7 +576,7 @@ Mithilfe der Bildfrequenzzähler des Windows Phone-Emulators können Sie die Le
 
 ![Bildfrequenzzähler im Windows Phone-Emulator](images/em-frameratecounters.PNG)
 
-**Beschreibungen der die frameratenzähler**
+**Beschreibungen der Frameraten Zähler**
 
 Die folgende Tabelle beschreibt die einzelnen Bildfrequenzzähler:
 
@@ -589,7 +589,7 @@ Die folgende Tabelle beschreibt die einzelnen Bildfrequenzzähler:
 | Intermediate Surface Counter                 | Die Anzahl impliziter Oberflächen, die aufgrund von zwischengespeicherten Oberflächen generiert wurden.    |
 | Screen Fill Rate Counter                     | Die Anzahl von Pixeln, die pro Frame im Sinne von Bildschirmen gezeichnet werden. Der Wert "1" steht für die Anzahl von Pixeln in der aktuellen Bildschirmauflösung (beispielsweise 480 x 800 Pixel). |
 
-**Aktivieren und deaktivieren die frameratenzähler**
+**Aktivieren und Deaktivieren der Frameraten Zähler**
 
 Sie können die Anzeige der Bildfrequenzzähler in Ihrem Code aktivieren oder deaktivieren. Wenn Sie in Visual Studio ein Windows Phone-App-Projekt erstellen, wird der Datei „App.xaml.cs” automatisch der folgende Code hinzugefügt, um die Bildfrequenzzähler zu aktivieren. Wenn Sie die Bildfrequenzzähler deaktivieren möchten, legen Sie **EnableFrameRateCounter** auf **false** fest, oder kommentieren Sie die Codezeile aus.
 
@@ -619,25 +619,25 @@ Sie können die Anzeige der Bildfrequenzzähler in Ihrem Code aktivieren oder de
 
 Im Folgenden werden bekannte Probleme mit dem Emulator sowie Möglichkeiten beschrieben, diese zu umgehen.
 
-### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Fehlermeldung: "Fehler beim Entfernen des virtuellen Ethernet-Switch"
+### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>Fehlermeldung: „Fehler beim Entfernen des virtuellen Ethernet-Switchs.“
 
-In bestimmten Situationen, die nach dem Aktualisieren auf einen neuen Windows 10-Flug einzuschließen kann ein virtuellen Netzwerkswitch mit dem Emulator verknüpft ist in den Status abrufen, in denen über die Benutzeroberfläche nicht gelöscht werden kann.
+In bestimmten Situationen, auch nach dem Aktualisieren auf einen neuen Windows 10-Flug, kann ein dem Emulator zugeordneter virtueller Netzwerk Switch in einen Zustand versetzt werden, in dem er über die Benutzeroberfläche nicht gelöscht werden kann.
 
 Führen Sie zum Beheben dieses Problems an einer Eingabeaufforderung mit Administratorrechten den Befehl „Netcfg -d“ aus: `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. Starten Sie den Computer nach Ausführung des Befehls neu, um den Wiederherstellungsvorgang abzuschließen.
 
-**Beachten Sie**  dieser Befehl löscht alle Netzwerkgeräte, nicht nur diejenigen, die mit dem Emulator verknüpft ist. Beim Neustart des Computers werden alle Hardwarenetzwerkgeräte automatisch erkannt.
+**Beachten Sie**  mit diesem Befehl werden alle Netzwerkgeräte gelöscht, nicht nur die dem Emulator zugeordneten Netzwerkgeräte. Beim Neustart des Computers werden alle Hardwarenetzwerkgeräte automatisch erkannt.
  
 ### <a name="unable-to-launch-the-emulators"></a>Die Emulatoren können nicht gestartet werden.
 
 Der Microsoft-Emulator enthält „XDECleanup.exe“ – ein Tool, das alle VMs, differenzierenden Datenträger und emulatorspezifischen Netzwerkswitches löscht. Dieses Tool ist bereits in den Binärdateien (XDE) des Emulators enthalten. Verwenden Sie dieses Tool zum Bereinigen von Emulator-VMs, wenn diese einen fehlerhaften Zustand aufweisen. Führen Sie das Tool über eine Eingabeaufforderung mit Administratorrechten aus: `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`.
 
-> **Beachten Sie**  XDECleanup.exe löscht alle Emulator bestimmte Hyper-V-VMs, und es auch löscht alle Prüfpunkte des virtuellen Computers oder gespeicherten Zuständen.
+> **Beachten Sie**  xabcleanup. exe alle Emulator-spezifischen Hyper-V-VMS löscht und auch alle VM-Prüfpunkte oder gespeicherten Zustände gelöscht werden.
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>Deinstallieren des Windows 10 Mobile-Image
 
-Wenn Sie den Emulator installieren, wird ein VHD-Image mit Windows 10 Mobile installiert. Dieses erhält einen eigenen Eintrag in der Liste **Programme und Features** in der Systemsteuerung. Wenn Sie das Image deinstallieren möchten, suchen Sie in der Liste mit den installierten Programmen nach **Windows 10 Mobile Image – <version>** , klicken Sie mit der rechten Maustaste darauf, und wählen Sie **Deinstallieren** aus.
+Wenn Sie den Emulator installieren, wird ein VHD-Image mit Windows 10 Mobile installiert. Dieses erhält einen eigenen Eintrag in der Liste **Programme und Features** in der Systemsteuerung. Wenn Sie das Abbild deinstallieren möchten, **Suchen Sie nach Windows 10 for Mobile Image-\<Version\>** in der Liste der installierten Programme, klicken Sie mit der rechten Maustaste darauf, und wählen Sie **deinstallieren**aus.
 
-In der aktuellen Version müssen Sie die VHD-Datei für den Emulator manuell löschen. Wenn Sie auf den Standardpfad den Emulator installiert haben, wird die VHD-Datei unter "c:"\\Programmdateien (x86)\\Windows-Kits\\10\\Emulation\\Mobile\\ <version> \\ Flash.vhd.
+In der aktuellen Version müssen Sie die VHD-Datei für den Emulator manuell löschen. Wenn Sie den Emulator im Standardpfad installiert haben, befindet sich die VHD-Datei unter C:\\Programme (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<Version\>\\Flash. vhd.
 
 ### <a name="how-to-disable-hardware-accelerated-graphics"></a>So deaktivieren sie hardwarebeschleunigte Grafiken
 
@@ -646,13 +646,13 @@ Standardmäßig verwendet der Windows 10 Mobile-Emulator hardwarebeschleunigte 
 So deaktivieren sie die Hardwarbeschleunigung:
 
 1. Starten Sie den Registrierungs-Editor.
-2. Erstellen Sie folgenden Registrierungsunterschlüssel, falls er nicht vorhanden ist: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+2. Erstellen Sie den folgenden Registrierungsunterschlüssel, wenn er nicht vorhanden ist: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. Klicken Sie auf den Ordner „10.0”, zeigen Sie auf **Neu**, und klicken Sie dann auf **DWORD-Wert**.
 4. Geben Sie **DisableRemoteFx** ein, und drücken Sie die EINGABETASTE.
 5. Doppelklicken Sie auf **DisableRemoteFx**, geben Sie im Feld **Wert** den Wert 1 ein, wählen Sie die Option **Decimal** aus, und klicken Sie dann auf **OK**.
 6. Schließen Sie den Registrierungs-Editor.
 
-**Hinweis**: Nach dem Festlegen dieses Registrierungswerts, müssen Sie den virtuellen Computer in Hyper-V-Manager für die Konfiguration, die Sie in Visual Studio gestartet löschen, und klicken Sie dann erneut starten den Emulator mit Grafiken Software gerendert.
+**Hinweis:** Nach dem Festlegen dieses Registrierungswerts müssen Sie die virtuelle Maschine im Hyper-V-Manager für diejenige Konfiguration löschen, die Sie in Visual Studio gestartet haben, und dann den Emulator mit Softwarerendering neu starten.
 
 ## <a name="support-resources"></a>Supportressourcen
 
@@ -660,7 +660,7 @@ Antworten und Problemlösungen für die Windows 10-Tools finden Sie im [Forum f
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Ausführen von Windows Phone-apps im emulator](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [Ausführen von Windows Phone-apps im Emulator](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Windows und Windows Phone SDK-Archiv](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
 

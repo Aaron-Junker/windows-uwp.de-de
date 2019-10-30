@@ -3,14 +3,14 @@ title: App-Analyse
 description: Untersuchen Sie Leistungsprobleme der App
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 138bb762b9b1d424ac8f9c2148b43f230f096458
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362428"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062752"
 ---
 # <a name="app-analysis-overview"></a>App-Analyse – Übersicht
 
@@ -38,7 +38,7 @@ Für die App wird „SetSource()“ anstelle von „SetSourceAsync()“ verwende
 
 Für „BitmapImage“ wird die Verbindung mit der XAML-Live-Struktur hergestellt, nachdem der Inhalt mit „SetSourceAsync“ oder „UriSource“ festgelegt wurde. Fügen Sie stets ein [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)-Objekt an die Live-Struktur an, bevor Sie die Quelle festlegen. Dies erfolgt jedes Mal automatisch, wenn ein Bildelement oder ein Pinsel im Markupcode angegeben wird. Beispiele hierzu finden Sie weiter unten. 
 
-**Beispiele für die Live-Struktur**
+**Livebaum-Beispiele**
 
 Beispiel 1 (gut): URI (Uniform Resource Identifier) in Markup angegeben.
 
@@ -60,7 +60,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Beispiel 2-Code-Behind (schlecht) – die "BitmapImage" UriSource festlegen, bevor sie mit der Struktur.
+Beispiel 2: Code Behind (schlecht) – festlegen der UriSource des BitmapImage, bevor es mit der Struktur verbunden wird.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -119,7 +119,7 @@ Legen Sie eine explizite Decodierungsgröße fest, um eine Version des Bilds mit
 
 ## <a name="collapsed-elements-at-load-time"></a>Reduzierte Elemente zur Ladezeit
 
-Eine häufiges Muster bei Apps ist das anfängliche Ausblenden von Elementen in der UI und das spätere Anzeigen. In den meisten Fällen sollten diese Elemente mit „x:Load“ oder „x:DeferLoadStrategy“ zurückgestellt werden, um den Aufwand für die Erstellung des Elements zur Ladezeit zu vermeiden.
+Eine häufiges Muster bei Apps ist, UI-Elemente anfänglich auszublenden und erst später anzuzeigen. In den meisten Fällen sollten diese Elemente mit „x:Load“ oder „x:DeferLoadStrategy“ zurückgestellt werden, um den Aufwand für die Erstellung des Elements zur Ladezeit zu vermeiden.
 
 Hierzu gehören Fälle, in denen ein Konverter für die Konvertierung eines booleschen Operanden in einen Sichtbarkeitszustand genutzt wird, um Elemente bis zu einem späteren Zeitpunkt auszublenden.
 
@@ -135,7 +135,7 @@ Diese Regel wurde ausgelöst, weil ein Element zur Ladezeit reduziert wurde. Das
 
 Mit [x:Load](../xaml-platform/x-load-attribute.md) oder [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute) können Sie das Laden eines UI-Elements verschieben und es erst dann laden, wenn es benötigt wird. Dies ist eine gute Möglichkeit, die Verarbeitung der UI zu verzögern, die im ersten Frame nicht sichtbar ist. Sie können angeben, ob das Element bei Bedarf oder im Rahmen eines Satzes mit verzögerter Logik geladen werden soll. Rufen Sie zum Auslösen des Ladens „findName“ für das Element auf, das geladen werden soll. „x:Load“ erweitert die Funktionen von „x:DeferLoadStrategy“ und ermöglicht, dass Elemente entladen und beim Laden über „x:Bind“ gesteuert werden.
 
-In einigen Fällen ist die Verwendung von „findName“ zum Anzeigen eines Teils der UI ggf. nicht die Lösung. Dies gilt, wenn Sie Folgendes erwarten: Ein erheblicher Teil der UI soll nach dem Klicken auf eine Schaltfläche und mit sehr geringer Latenz realisiert werden. In diesem Fall sollten Sie eine geringere UI-Latenz auf Kosten des zusätzlichen Speichers in Kauf nehmen und „x: DeferLoadStrategy“ verwenden sowie die „Sichtbarkeit“ des Elements, das Sie realisieren möchten, auf „Reduziert“ festlegen. Nachdem die Seite geladen wurde und der UI-Thread frei ist, können Sie „findName“ je nach Bedarf zum Laden der Elemente aufrufen. Die Elemente sind für den Benutzer erst sichtbar, nachdem Sie die Sichtbarkeit des Elements auf „Visible“ (Sichtbar) festgelegt haben.
+In einigen Fällen ist die Verwendung von „findName“ zum Anzeigen eines UI-Elements eventuell nicht die Lösung. Dies gilt, wenn Sie Folgendes erwarten: Ein erheblicher Teil der UI soll nach dem Klicken auf eine Schaltfläche und mit sehr geringer Latenz realisiert werden. In diesem Fall sollten Sie eine geringere UI-Latenz auf Kosten des zusätzlichen Speichers in Kauf nehmen und „x: DeferLoadStrategy“ verwenden sowie die „Sichtbarkeit“ des Elements, das Sie realisieren möchten, auf „Reduziert“ festlegen. Nachdem die Seite geladen wurde und der UI-Thread frei ist, können Sie „findName“ je nach Bedarf zum Laden der Elemente aufrufen. Die Elemente sind für den Benutzer erst sichtbar, nachdem Sie die Sichtbarkeit des Elements auf „Visible“ (Sichtbar) festgelegt haben.
 
 ## <a name="listview-is-not-virtualized"></a>ListView ist nicht virtualisiert
 
@@ -209,7 +209,7 @@ Verwenden Sie „x:Key“ anstelle von „x:Name“, wenn Sie nicht aus CodeBehi
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>Sammlungssteuerelement verwendet ein Panel ohne Virtualisierung
 
-Wenn Sie eine benutzerdefinierte ItemsPanel-Vorlage bereitstellen (siehe ItemsPanel), ist es wichtig, dass Sie ein Virtualisierungspanel wie ItemsWrapGrid oder ItemsStackPanel verwenden. Wenn Sie VariableSizedWrapGrid, WrapGrid oder StackPanel verwenden, erhalten Sie keine Virtualisierung. Darüber hinaus werden die folgenden ListView-Ereignisse nur ausgelöst, wenn ein ItemsWrapGrid oder ein ItemsStackPanel verwenden: ChoosingGroupHeaderContainer ChoosingItemContainer und ContainerContentChanging.
+Wenn Sie eine benutzerdefinierte ItemsPanel-Vorlage bereitstellen (siehe ItemsPanel), ist es wichtig, dass Sie ein Virtualisierungspanel wie ItemsWrapGrid oder ItemsStackPanel verwenden. Wenn Sie VariableSizedWrapGrid, WrapGrid oder StackPanel verwenden, erhalten Sie keine Virtualisierung. Darüber hinaus werden die folgenden ListView-Ereignisse nur ausgelöst, wenn ItemsWrapGrid oder ItemsStackPanel verwendet werden: ChoosingGroupHeaderContainer, ChoosingItemContainer und ContainerContentChanging.
 
 Die UI-Virtualisierung ist die wichtigste Möglichkeit zur Leistungsoptimierung für Sammlungen. Dies bedeutet, dass die Benutzeroberflächenelemente, die die Objekte darstellen, bei Bedarf erstellt werden. Für ein Elementsteuerelement, das an eine Sammlung mit 1.000 Elementen gebunden ist, wäre es eine Verschwendung von Ressourcen, die UI für alle Elemente gleichzeitig zu erstellen. Sie können sowieso nicht alle gleichzeitig angezeigt werden. ListView und GridView (und andere von ItemsControl abgeleitete Standardsteuerelemente) führen die Virtualisierung der Benutzeroberfläche für Sie durch. Wenn Elemente kurz davor sind, per Bildlauf in der Ansicht angezeigt zu werden (einige Seiten davon entfernt), generiert das Framework die Benutzeroberfläche für die Elemente und speichert sie zwischen. Wenn es unwahrscheinlich ist, dass die Elemente erneut angezeigt werden, gibt das Framework den Arbeitsspeicher wieder frei.
 
@@ -227,7 +227,7 @@ Sie verwenden ein Panel, von dem die Virtualisierung nicht unterstützt wird.
 
 Verwenden Sie ein Virtualisierungspanel wie ItemsWrapGrid oder ItemsStackPanel.
 
-## <a name="accessibility-uia-elements-with-no-name"></a>Barrierefreiheit: UIA-Elemente ohne Namen
+## <a name="accessibility-uia-elements-with-no-name"></a>Eingabehilfen: UIA-Elemente ohne Namen
 
 Im XAML-Code können Sie einen Namen angeben, indem Sie „AutomationProperties.Name“ festlegen. Bei vielen Automatisierungspeers wird ein Standardname für UIA angegeben, wenn „AutomationProperties.Name“ nicht festgelegt wurde. 
 
@@ -243,9 +243,9 @@ Der UIA-Name des Elements ist NULL oder leer. Mit dieser Regel wird nicht der We
 
 Legen Sie die AutomationProperties.Name-Eigenschaft im XAML-Code des Steuerelements auf eine geeignete lokalisierte Zeichenfolge fest.
 
-In einigen Fällen ist der richtige Anwendungspatch nicht das Angeben eines Namens, sondern das Entfernen des UIA-Elements aus allen Strukturen mit Ausnahme der Raw-Strukturen. Dies erreichen Sie mit der Einstellung AutomationProperties.AccessibilityView = "Raw" im XAML-Code.
+In einigen Fällen ist der richtige Anwendungspatch nicht das Angeben eines Namens, sondern das Entfernen des UIA-Elements aus allen Strukturen mit Ausnahme der Raw-Strukturen. Dies können Sie in XAML tun, indem Sie `AutomationProperties.AccessibilityView = "Raw"`festlegen.
 
-## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Barrierefreiheit: Mit der gleichen Controltype UIA-Elemente sollten nicht die gleichen Namen haben.
+## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Eingabehilfen: UIA-Elemente mit dem gleichen ControlType sollten nicht den gleichen Namen haben.
 
 Zwei UIA-Elemente mit demselben übergeordneten UIA-Element dürfen nicht den gleichen Namen und ControlType haben. Zwei Steuerelemente können den gleichen Namen haben, wenn sie über unterschiedliche ControlTypes verfügen. 
 

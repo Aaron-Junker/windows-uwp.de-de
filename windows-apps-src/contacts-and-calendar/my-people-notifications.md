@@ -3,14 +3,14 @@ title: Meine Kontakte – Benachrichtigungen
 description: Erläutert das Erstellen und Verwenden von Benachrichtigungen für Meine Kontakte, eine neue Art Popups.
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bd9071eaaea0dd88a3dad06de78eff82b29725ec
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820237"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061896"
 ---
 # <a name="my-people-notifications"></a>Meine Kontakte – Benachrichtigungen
 
@@ -21,7 +21,7 @@ ms.locfileid: "67820237"
 ## <a name="requirements"></a>Anforderungen
 
 + Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="how-it-works"></a>Funktionsweise
 
@@ -42,7 +42,7 @@ Als Alternative zur generischen Popupbenachrichtigungen können Sie jetzt Benach
 Benachrichtigungen von „Meine Kontakte” verwenden die [Popupbenachrichtigung](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)-Framework, aber erfordern einen zusätzlichen Bindungsknoten in der Nutzlast des Popups. Die zweite Bindung muss folgende Parameter enthalten:
 
 ```xml
-experienceType=”shoulderTap”
+experienceType="shoulderTap"
 ```
 
 Dies bedeutet, dass das Popup als eine Benachrichtigung für „Meine Kontakte” behandelt werden soll.
@@ -51,13 +51,13 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 
 + **src**
     + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein.
-+ **spritesheet-src**
++ **SpriteSheet-src**
     + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein. Ist nur für Spritesheet-Animationen erforderlich.
-+ **spritesheet-height**
++ **SpriteSheet-Höhe**
     + Die Framehöhe (in Pixeln). Ist nur für Spritesheet-Animationen erforderlich.
-+ **spritesheet-fps**
++ **SpriteSheet-fps**
     + Frames pro Sekunde (FPS). Ist nur für Spritesheet-Animationen erforderlich. Es werden nur Werte von 1‑120 unterstützt.
-+ **spritesheet-startingFrame**
++ **SpriteSheet-startingframe**
     + Die Framenummer, um die Animation zu starten. Wird nur für Spritesheet-Animationen verwendet und hat den Standardwert 0, wenn keine Angabe erfolgt.
 + **alt**
     + Text-Zeichenfolge, die als Bildschirmsprachausgabe verwendet wird.
@@ -67,12 +67,12 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 
 Darüber hinaus muss der Knoten der obersten Ebene Popups **hint-people**-Parameter enthalten, um den Absender-Kontakt anzugeben. Dieser Parameter kann folgende Werte haben:
 
-+ **E-Mail-Adresse** 
-    + Beispiel: ` mailto:johndoe@mydomain.com `
++ **E-Mail Adresse** 
+    + z. B. ` mailto:johndoe@mydomain.com `
 + **Telefonnummer** 
-    + Beispiel: Tel:888-888-8888
+    + z. B. Tel:888-888-8888
 + **Remote-ID** 
-    + Beispiel: remoteid:1234
+    + z. B. remoteid:1234
 
 > [!NOTE]
 > Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
@@ -150,8 +150,8 @@ Es gibt einige Fälle, wo eine Benachrichtigung über „Meine Kontakte” statt
 
 Wenn eine Benachrichtigung für „Meine Kontakte” erneut auf eine Popupbenachrichtigung zurückfällt, wird die zweite spezifische Bindung für „Meine Kontakte” ignoriert, und nur die erste Bindung wird verwendet, um das Popup anzuzeigen. Deshalb ist es wichtig, eine Fallback-Nutzlast in der ersten Popupbindung bereitzustellen.
 
-## <a name="see-also"></a>Siehe auch
-+ [Meine Benutzer Notifications-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [Hinzufügen von Meine Benutzer zu unterstützen.](my-people-support.md)
-+ [Adaptive Popupbenachrichtigungen](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [ToastNotification-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
+## <a name="see-also"></a>Weitere Informationen:
++ [Beispiel für meine Personen Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [Unterstützung für meine Personen hinzufügen](my-people-support.md)
++ [Adaptive Popup Benachrichtigungen](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [Klasse "-Benachrichtigungs Klasse"](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

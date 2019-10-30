@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a2fa7e107d890a5be7c8d27af03289b839ec3c09
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596875"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73052011"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService-Geräteobjekte
 
@@ -41,10 +41,10 @@ Vor Windows 8 hatten Apps einen einfachen Lebenszyklus. Win32- und .NET-Apps wer
 
 In Windows 8 wurde mit UWP-Apps ein neues Anwendungsmodell eingeführt. Auf oberer Ebene wurde der neue Zustand „Angehalten“ eingeführt. Kurze Zeit, nachdem der Benutzer eine UWP-App minimiert oder zu einer anderen App wechselt, wird sie angehalten. Dies bedeutet Folgendes: die Threads der App werden angehalten, die App verbleibt im Arbeitsspeicher, es sei denn, das Betriebssystem muss Ressourcen zurückfordern, und alle Geräteobjekte, die PointOfService-Peripheriegeräte darstellen, werden automatisch geschlossen, damit andere Anwendungen auf die Peripheriegeräte zugreifen können. Wenn der Benutzer zur App zurückwechselt, kann diese schnell in einen ausgeführten Zustand wiederhergestellt werden, und auch die Verbindungen mit PointOfService-Peripheriegeräten werden wiederhergestellt, sofern sie zum Fortsetzen noch verfügbar sind.
 
-Mit einem <DeviceObject>.Closed-Ereignishandler können Sie erkennen, wann ein Objekt aus irgendeinem Grund geschlossen wird. Notieren Sie sich dann die Geräte-ID, um die Verbindung in der Zukunft wiederherzustellen.   Alternativ möchten Sie dies ggf. mit einer Benachrichtigung zum Anhalten der App handhaben, um die Geräte-IDs zur Wiederherstellung der Geräteverbindungen bei Benachrichtigung zum Fortsetzen der App zu speichern.  Stellen Sie sicher, dass Sie die Ereignishandler nicht duplizieren und keine doppelten Aktionen für das Geräteobjekt für <DeviceObject>.Closed und App Suspend ausgeführt werden.
+Sie können erkennen, wenn ein Objekt aus irgendeinem Grund mit einem \<DeviceObject\>geschlossen wird. Der geschlossene Ereignishandler notieren Sie sich die Geräte-ID, um die Verbindung in Zukunft wiederherzustellen.   Alternativ möchten Sie dies ggf. mit einer Benachrichtigung zum Anhalten der App handhaben, um die Geräte-IDs zur Wiederherstellung der Geräteverbindungen bei Benachrichtigung zum Fortsetzen der App zu speichern.  Stellen Sie sicher, dass Sie nicht auf den Ereignis Handlern und den doppelten Aktionen für das Geräte Objekt auf \<DeviceObject-\>doppelklicken. Closed und App Suspend.
 
 > [!TIP]
 > Weitere Informationen zum Anwendungslebenszyklus für die Universelle Windows-Plattform (UWP) in Windows 10 finden Sie in den folgenden Themen:
-> - [App-Lebenszyklus von Windows 10 universelle Windows-Plattform (UWP)](../launch-resume/app-lifecycle.md)
-> - [Behandeln Sie die app anhalten](../launch-resume/suspend-an-app.md)
+> - [Lebenszyklus der Windows 10 universelle Windows-Plattform-app (UWP)](../launch-resume/app-lifecycle.md)
+> - [Behandeln der APP-Aussetzung](../launch-resume/suspend-an-app.md)
 > - [Behandeln der App-Fortsetzung](../launch-resume/resume-an-app.md)

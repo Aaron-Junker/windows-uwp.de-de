@@ -4,14 +4,14 @@ description: Sie können die Verwendung von Hintergrundaufgaben aktivieren, inde
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgaben
+keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 471c2851f72027c364fdd0c9c295c8c9babe17c5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cf114ed3d2ffce95f9e9aba6ceb222029d23819c
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366184"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73052030"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Deklarieren von Hintergrundaufgaben im Anwendungsmanifest
 
@@ -20,8 +20,8 @@ ms.locfileid: "66366184"
 
 **Wichtige APIs**
 
--   [**BackgroundTasks-Schema**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**Backgroundtasks-Schema**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows. applicationmodel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Sie können die Verwendung von Hintergrundaufgaben aktivieren, indem Sie diese im App-Manifest als Erweiterungen deklarieren.
 
@@ -90,9 +90,9 @@ Kopieren Sie diesen Code in das "Extensions"-Element (Attribute werden in den fo
 
 2.  Ändern Sie die Liste der Aufgabentypenattribute, um den für diese Hintergrundaufgabe verwendeten Typ der Aufgabenregistrierung anzugeben. Wenn die Hintergrundaufgabe mit mehreren Triggertypen registriert wird, fügen Sie für jeden Typ zusätzliche Task-Elemente und Type-Attribute hinzu.
 
-    **Beachten Sie**  prüfen Sie zum Auflisten aller Triggertypen Sie verwenden, und die Hintergrundaufgabe wird nicht mit den nicht deklarierten Triggertypen registriert (die [ **registrieren** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) wird fehl und löst eine Ausnahme).
+    **Beachten Sie**  stellen Sie sicher, dass Sie die einzelnen Auslösertypen auflisten, die Sie verwenden, oder wenn die Hintergrundaufgabe nicht mit den nicht deklarierten Auslösertypen registriert wird (die [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) Methode schlägt fehl und löst eine Ausnahme aus).
 
-    Dieses Beispiel für einen Codeausschnitt gibt die Verwendung von Systemereignistriggern und Pushbenachrichtigungen an:
+    Dieses Beispiel veranschaulicht die Verwendung von Systemereignistriggern und Pushbenachrichtigungen:
 
 ```xml
 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -159,7 +159,7 @@ Sie können angeben, wo Ihre Hintergrundaufgaben ausführt werden sollen:
 
 ### <a name="run-in-the-same-process-as-your-foreground-application"></a>Die Ausführung erfolgt im gleichen Prozess wie Ihre Anwendung im Vordergrund.
 
-Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wird, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
+In diesem XML-Beispiel wird eine Hintergrundaufgabe deklariert, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
 
 ```xml
 <Extensions>
@@ -209,7 +209,7 @@ Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wir
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Ausführen in einem neuen Prozess, jedes Mal, wenn ein Trigger mit dem Attribut „SupportsMultipleInstances“ ausgelöst wird
 
-In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen Prozess ausgeführt wird, der, jedes Mal, wenn ein neuer Trigger ausgelöst wird, eigene Ressourcenbeschränkungen (Arbeitsspeicher und CPU) erhält. Beachten Sie die Verwendung von `SupportsMultipleInstances`, zur Aktivierung dieses Verhalten. Um dieses Attribut verwenden, müssen Sie als Ziel SDK, Version "10.0.15063" (Windows 10 Creators Update) oder höher.
+In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen Prozess ausgeführt wird, der, jedes Mal, wenn ein neuer Trigger ausgelöst wird, eigene Ressourcenbeschränkungen (Arbeitsspeicher und CPU) erhält. Beachten Sie die Verwendung von `SupportsMultipleInstances`, zur Aktivierung dieses Verhalten. Um dieses Attribut zu verwenden, müssen Sie die SDK-Version "10.0.15063" (Windows 10 Creators Update) oder höher als Ziel verwenden.
 
 ```xml
 <Package
@@ -220,7 +220,7 @@ In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen P
             ...
             <Extensions>
                 <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
-                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                    <BackgroundTasks uap4:SupportsMultipleInstances="True">
                         <Task Type="timer" />
                     </BackgroundTasks>
                 </Extension>
