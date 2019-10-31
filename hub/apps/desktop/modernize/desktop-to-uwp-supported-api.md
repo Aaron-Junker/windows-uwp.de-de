@@ -3,58 +3,55 @@ Description: Verpackte Desktop-Apps können eine Vielzahl von UWP-APIs (Universe
 title: UWP-APIs, die für eine verpackte Desktop-App verfügbar sind (Desktop-Brücke)
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3deb89a8eba60e5c4f67b18091d78d24d9179aa3
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 481b326c3f4b3608d0d3f5f7a8cec943f1d6c437
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979343"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142526"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>Für Desktop-Apps verfügbare UWP-APIs
 
 Desktop-Apps können eine große Bandbreite an universelle Windows-Plattform-APIs (UWP) verwenden, auch wenn Sie nicht vollständig in eine UWP-App übergegangen sind. In diesem Artikel werden die verfügbaren Klassen aufgelistet, die Ihre Desktop-App verwenden kann.
 
-> [!NOTE]
-> Viele UWP-APIs erfordern, dass die [Paket Identität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) in einer Desktop-App verwendet wird. Die Paket Identität ist verfügbar, wenn die Desktop-app in einem [msix-Paket](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)verpackt ist. In diesem Artikel werden diese apps als *App verpackt*bezeichnet.
-
-Die meisten UWP-APIs funktionieren gut bei App-Paketen. Allerdings sind einige Featurebereiche noch nicht vollständig getestet oder funktionieren derzeit noch nicht wie vorgesehen.
+Viele UWP-APIs erfordern, dass die [Paket Identität](modernize-packaged-apps.md) in einer Desktop-App verwendet wird. Die meisten UWP-APIs funktionieren gut für apps, die über die Paket Identität verfügen. Allerdings sind einige Featurebereiche noch nicht vollständig getestet oder funktionieren derzeit noch nicht wie vorgesehen.
 
 | Featurebereich | Details |
 |--------------|---------|
-| Termine, Kontakte und E-Mails | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Authentifizierung und Benutzeridentität | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Hintergrundaufgaben | Verpackte Apps können zwar Hintergrundaufgaben registrieren, jedoch können nur vollständige UWP-Apps <i>als</i> Hintergrundaufgabe ausgeführt werden. Weitere Informationen finden Sie in [Beispiel für eine Hintergrundaufgabe auf GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
-| Bluetooth | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Chat und Anrufe | Verpackte Apps können nicht auf mobilen Geräten ausgeführt werden, wenn sie nicht vollständig zu UWP portiert wurden. |
+| Termine, Kontakte und E-Mails | Derzeit werden nicht alle APIs unterstützt. |
+| Authentifizierung und Benutzeridentität | Derzeit werden nicht alle APIs unterstützt. |
+| Hintergrundaufgaben | Desktop-Apps können Hintergrundaufgaben registrieren, aber nur vollständige UWP-Apps können <i>als</i> Hintergrundaufgabe ausgeführt werden. Weitere Informationen finden Sie in [Beispiel für eine Hintergrundaufgabe auf GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
+| Bluetooth | Derzeit werden nicht alle APIs unterstützt. |
+| Chat und Anrufe | Desktop-Apps können erst dann auf Mobilgeräten ausgeführt werden, wenn Sie vollständig auf UWP portiert werden. |
 | Vertragsaktivierung | Nur vollständige UWP-Apps können von einem Vertrag aktiviert werden. |
-| Kryptografie | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Geolocation | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Datei- und Ordnerauswahl | Verpackte Apps verfügen über vollen Dateisystemzugriff und benötigen keine UWP-Auswahl. |
-| Media | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Point of Service (POS) | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Smartcards | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| PlayReady | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| VPN | Nicht alle APIs werden derzeit für verpackte Apps unterstützt. |
-| Wallet | Verpackte Apps können nicht auf mobilen Geräten ausgeführt werden, wenn sie nicht vollständig zu UWP portiert wurden. |
+| Kryptografie | Derzeit werden nicht alle APIs unterstützt. |
+| Geolocation | Derzeit werden nicht alle APIs unterstützt. |
+| Datei- und Ordnerauswahl | Apps mit Identität haben vollen Zugriff auf das Dateisystem und benötigen keine UWP-Picker. |
+| Media | Derzeit werden nicht alle APIs unterstützt. |
+| Point of Service (POS) | Derzeit werden nicht alle APIs unterstützt. |
+| Smartcards | Derzeit werden nicht alle APIs unterstützt. |
+| PlayReady | Derzeit werden nicht alle APIs unterstützt. |
+| „VPN“ | Derzeit werden nicht alle APIs unterstützt. |
+| Brieftasche | Desktop-Apps können erst dann auf Mobilgeräten ausgeführt werden, wenn Sie vollständig auf UWP portiert werden. |
 | XAML-UI | Windows 10, Version 1809 und frühere Versionen unterstützen nicht das Hosting von UWP-XAML-Inhalten in Desktop-Apps. Ab Windows 10, Version 1903, können Sie [XAML-Inseln](xaml-islands.md) verwenden, um UWP-XAML-Inhalte zu hosten.  |
 
 Gelegentlich können APIs in diesen Bereichen scheinbar ordnungsgemäß funktionieren. Wenn jedoch eine API nicht explizit als unterstützt aufgeführt wird, sollten Sie sie nicht verwenden, da sie ungewollte Nebenwirkungen oder ungewolltes Verhalten aufweisen kann. Unterstützung für diese APIs wird möglicherweise in zukünftigen Versionen verfügbar sein. In der Zwischenzeit sollte Ihre App entsprechende Win32- oder .NET-APIs verwenden.
 
 ## <a name="list-of-apis"></a>Liste der APIs
 
-Im folgenden finden Sie eine vollständige Liste der in Desktop-Apps unterstützten UWP-APIs. Sie können APIs anzeigen, die [nur in App-Paketen](#new) oder APIs unterstützt werden, die [in App-Paketen und Desktop Anwendungen unterstützt werden](#both)
+Im folgenden finden Sie eine vollständige Liste der in Desktop-Apps unterstützten UWP-APIs. Sie können APIs anzeigen, die [nur in apps mit](#new) der [in allen Desktop-Apps unterstützten](#both)Paket Identität oder APIs unterstützt werden.
 
 Beispiele für die Verwendung von UWP-APIs finden Sie in den Beispielen für [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) und [universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples) auf GitHub. Sie können außerdem den Blog-Artikel zum Erstellen einer App für Windows nutzen: [Aufrufen von Windows 10-APIs aus einer Desktop-Anwendung](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/).
 
 <a id="new" />
 
-### <a name="apis-supported-only-in-packaged-apps"></a>APIs werden nur in App-Paketen unterstützt
+### <a name="apis-supported-only-in-apps-with-package-identity"></a>APIs, die nur in apps mit Paket Identität unterstützt werden
 
 * [Windows. applicationmodel. datatransfer. dataproviderhandler](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [Windows. applicationmodel. datatransfer. datarequest](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -134,10 +131,10 @@ Beispiele für die Verwendung von UWP-APIs finden Sie in den Beispielen für [De
 * [Windows. Devices. Smartcards. smartcardconnection](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection)
 * [Windows. Devices. Smartcards. smartcardreader](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardReader)
 * [Windows. Foundation. asyncactioncompletedhandler](https://docs.microsoft.com/uwp/api/windows.foundation.asyncactioncompletedhandler)
-* [Windows. Foundation. asyncactionprogresshandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
-* [Windows. Foundation. asyncactionwithprogresscompletedhandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
-* [Windows. Foundation. asyncoperationcompletedhandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [Windows. Foundation. Collections. Vector changedeventhandler<T>](https://docs.microsoft.com/uwp/api/windows.foundation.collections.vectorchangedeventhandler)
+* [Windows. Foundation. asyncactionprogresshandler-<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
+* [Windows. Foundation. asyncactionwithprogresscompletedhandler-<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
+* [Windows. Foundation. asyncoperationcompletedhandler-<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
+* [Windows. Foundation. Collections. Vector changedeventhandler-<T>](https://docs.microsoft.com/uwp/api/windows.foundation.collections.vectorchangedeventhandler)
 * [Windows. Foundation. deferralcompletedhandler](https://docs.microsoft.com/uwp/api/windows.foundation.deferralcompletedhandler)
 * [Windows. Foundation. Diagnostics. fileloggingsession](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [Windows. Foundation. Diagnostics. logfilegeneratedeventargs](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -147,7 +144,7 @@ Beispiele für die Verwendung von UWP-APIs finden Sie in den Beispielen für [De
 * [Windows. Foundation. Diagnostics. loggingfields](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingFields)
 * [Windows. Foundation. Diagnostics. LoggingOptions](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingOptions)
 * [Windows. Foundation. Diagnostics. loggingsession](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingSession)
-* [Windows. Foundation. EventHandler<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.EventHandler<T>)
+* [Windows. Foundation. EventHandler-<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.EventHandler<T>)
 * [Windows. Foundation. memorybuffer](https://docs.microsoft.com/uwp/api/Windows.Foundation.MemoryBuffer)
 * [Windows. Globalization. applicationlanguages](https://docs.microsoft.com/uwp/api/Windows.Globalization.ApplicationLanguages)
 * [Windows. Globalization. japanesephoneme](https://docs.microsoft.com/uwp/api/Windows.Globalization.JapanesePhoneme)
@@ -380,9 +377,9 @@ Beispiele für die Verwendung von UWP-APIs finden Sie in den Beispielen für [De
 
 <a id="both" />
 
-### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>In verpackten Apps und Desktopanwendungen unterstützte APIs
+### <a name="apis-supported-in-all-desktop-applications"></a>APIs, die in allen Desktop Anwendungen unterstützt werden
 
-APIs, die über die [dualapipartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) verfügen, werden in App-Paketen und nicht verpackten Desktop Anwendungen unterstützt. Um zu ermitteln, ob eine API, die Sie von der Desktop Anwendung aus anrufen möchten, unterstützt wird, finden Sie den Referenz Artikel für die Klasse oder den Member, die Sie an der [Referenz Dokumentation für WinRT-Namespaces](https://docs.microsoft.com/uwp/api/)interessiert sind. Überprüfen Sie dann, ob der Abschnitt **Attribute** im Referenz Artikel das Attribut [dualapipartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) enthält.
+APIs, die über die [dualapipartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) verfügen, werden in allen Desktop-Apps unterstützt, einschließlich derjenigen mit der Paket Identität und denjenigen ohne Paket Identität. Um zu ermitteln, ob eine API, die Sie von der Desktop Anwendung aus anrufen möchten, unterstützt wird, finden Sie den Referenz Artikel für die Klasse oder den Member, die Sie an der [Referenz Dokumentation für WinRT-Namespaces](https://docs.microsoft.com/uwp/api/)interessiert sind. Überprüfen Sie dann, ob der Abschnitt **Attribute** im Referenz Artikel das Attribut [dualapipartition](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) enthält.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

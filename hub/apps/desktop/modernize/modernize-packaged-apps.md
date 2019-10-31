@@ -1,48 +1,47 @@
 ---
-Description: Erfahren Sie, wie Sie moderne Funktionen für Windows 10-Benutzern in einer Desktopanwendung hinzufügen, die Sie in einem Windows-app-Paket verpackt haben.
-title: Modernisieren von desktop-apps App-Pakete
+Description: Erfahren Sie, wie Sie in einer Desktop Anwendung, die Sie in ein Windows-App-Paket gepackt haben, moderne Umgebungen für Windows 10-Benutzer hinzufügen.
+title: Modernisieren von App-Paketen
 ms.date: 04/22/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 191a8b8a007a866f37780a7c52cd40047dc9817f
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: ec1c56f205b270262f618ffb46db16b38276975d
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215201"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142508"
 ---
 # <a name="features-that-require-package-identity"></a>Features, für die Paketidentität benötigt wird
 
-Wenn Sie Ihre desktop-app mit aktualisieren möchten [modernen Windows 10-Funktionen](index.md), viele Features sind nur in desktop-apps, die in einem MSIX-Paket verpackt sind verfügbar.
+Wenn Sie Ihre Desktop-App mit [modernen Windows 10-Erfahrungen](index.md)aktualisieren möchten, sind viele Funktionen nur in Desktop-Apps mit [Paket Identität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)verfügbar. Es gibt mehrere Möglichkeiten, einer Desktop-App eine Paket Identität zu erteilen:
 
-MSIX ist eine moderne Windows-app-Paket-Format, das eine universelle Packaging-Ergebnis für alle Windows-apps, WPF, Windows Forms und Win32-apps bietet. Packen Ihre Windows-desktop-apps können Sie moderne Windows 10-Funktionen wie live-Kacheln und Benachrichtigungen in Ihre apps integrieren. Er ruft auch Zugriff auf eine stabile Installation und Update-Oberfläche, ein verwalteter Sicherheitsmodell, das mit einem System flexible Möglichkeit, Unterstützung für den Microsoft Store, unternehmensverwaltung und viele benutzerdefinierte Verteilung Modelle ab. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
+* Verpacken Sie Sie in einem [msix-Paket](/windows/msix/desktop/desktop-to-uwp-root). Msix ist ein modernes App-Paketformat, das eine universelle Paket Erstellung für alle Windows-apps, WPF-, Windows Forms-und Win32-apps bereitstellt. Es bietet eine robuste Installation und Aktualisierung, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Unterstützung für die Microsoft Store, die Unternehmensverwaltung und viele benutzerdefinierte Verteilungsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
+* Wenn Sie keine msix-Paket Erstellung für die Bereitstellung Ihrer Desktop-App durchführen können, können Sie ab Windows 10 Insider Preview Build 10.0.19000.0 die Paket Identität gewähren, indem Sie ein *msix-Paket* mit geringer Dichte erstellen, das nur ein Paket Manifest enthält. Weitere Informationen finden Sie unter [erteilen der Identität für nicht gepackte Desktop-Apps](grant-identity-to-nonpackaged-apps.md).
 
-Wenn Sie Ihre desktop-app packen, können Sie dann UWP-APIs, die Paketidentität, paketerweiterungen und UWP-Komponenten in Ihrer app-Paket benötigen. Weitere Informationen finden Sie in diesen Artikeln.
+Wenn Ihre Desktop-App über die Paket Identität verfügt, können Sie die folgenden Funktionen in Ihrer APP verwenden.
 
-## <a name="use-uwp-apis-that-require-package-identity"></a>Verwenden von UWP-APIs, die Paketidentität erfordern
+## <a name="use-uwp-apis-that-require-package-identity"></a>Verwenden von UWP-APIs, die eine Paket Identität erfordern
 
-Einige UWP-APIs erfordern [Paket Identität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) in einer desktop-app verwendet werden. Das MSIX-Paket (einschließlich des Paketmanifests) bietet diese Identität.
-
-Weitere Informationen finden Sie unter [diese Liste der APIs](desktop-to-uwp-supported-api.md#list-of-apis).
+Die folgende Liste von UWP-APIs erfordert, dass die Paket Identität in einer Desktop-App verwendet wird: [Liste der APIs](desktop-to-uwp-supported-api.md#list-of-apis).
 
 ## <a name="integrate-with-package-extensions"></a>Integrieren mit Paketerweiterungen
 
-Wenn Ihre Anwendung Sie in das System integrieren muss (z. B.: Einrichten der Firewall-Regeln) Dinge im Paketmanifest der Anwendung und die Beschreibung des Systems erledigt den Rest. Für die meisten dieser Aufgaben müssen Sie gar keinen Code schreiben. Mit ein wenig XML in das Manifest können Sie Aktionen wie das Starten eines Prozesses, wenn der Benutzer anmeldet, integrieren Ihre Anwendung in Datei-Explorer und fügen Ihrer Anwendung eine Liste der print-Ziele, die in anderen apps angezeigt werden.
+Wenn Ihre Anwendung in das System integriert werden muss (z. b.: Einrichten von Firewallregeln), beschreiben Sie diese Dinge im Paket Manifest der Anwendung, und das System übernimmt den Rest. Für die meisten dieser Aufgaben müssen Sie gar keinen Code schreiben. Mit einem XML-Code im Manifest können Sie beispielsweise einen Prozess starten, wenn sich der Benutzer anmeldet, Ihre Anwendung in den Datei-Explorer integrieren und ihrer Anwendung eine Liste von Druck Zielen hinzufügen, die in anderen apps angezeigt werden.
 
-Weitere Informationen finden Sie unter [integrieren Sie Ihre desktop-app in paketerweiterungen](desktop-to-uwp-extensions.md).
+Weitere Informationen finden Sie unter [integrieren ihrer Desktop-app in Paket Erweiterungen](desktop-to-uwp-extensions.md).
 
 ## <a name="extend-with-uwp-components"></a>Erweitern mit UWP-Komponenten
 
-Einige Windows 10-Umgebungen (z. B. eine touch-fähige UI-Seite) müssen sich in einem Modern-App-Container befinden. Im Allgemeinen zuerst sollten Sie ermitteln, ob Sie Ihre Umgebung durch hinzufügen können [verbessern](desktop-to-uwp-enhance.md) Ihrer vorhandenen Desktopanwendung mit UWP-APIs. Wenn Sie eine UWP-Komponente zu verwenden, um die Funktionalität erzielen, müssen, können Sie Ihrer Projektmappe ein UWP-Projekt hinzufügen und app-Dienste für die Kommunikation zwischen Ihrer desktop-Anwendung und die UWP-Komponente verwenden.
+Einige Windows 10-Umgebungen (z. B. eine touch-fähige UI-Seite) müssen sich in einem Modern-App-Container befinden. Im Allgemeinen sollten Sie zunächst feststellen, ob Sie Ihre Benutzeroberflächen hinzufügen können, indem Sie Ihre vorhandene Desktop Anwendung mit UWP-APIs [verbessern](desktop-to-uwp-enhance.md) . Wenn Sie eine UWP-Komponente verwenden müssen, können Sie der Projekt Mappe ein UWP-Projekt hinzufügen und App Services verwenden, um zwischen der Desktop Anwendung und der UWP-Komponente zu kommunizieren.
 
-Weitere Informationen finden Sie unter [erweitern Sie Ihre desktop-app mit UWP-Komponente](desktop-to-uwp-extend.md).
+Weitere Informationen finden Sie unter [Erweitern Ihrer Desktop-App mit UWP-Komponenten](desktop-to-uwp-extend.md).
 
 ## <a name="distribute"></a>Vertreiben
 
-Sie können Ihre Anwendung verteilen, indem Sie sie dem Microsoft Store zu veröffentlichen oder durch querladen auf anderen Systemen.
+Wenn Sie Ihre APP in einem msix-Paket Verpacken, können Sie Sie verteilen, indem Sie Sie als Microsoft Store veröffentlichen oder indem Sie Sie auf andere Systeme sideloaden.
 
-Finden Sie unter [Ihrer desktop-app-Paket verteilen](desktop-to-uwp-distribute.md).
+Weitere Informationen finden [Sie unter Verteilen von App-Paketen](desktop-to-uwp-distribute.md).

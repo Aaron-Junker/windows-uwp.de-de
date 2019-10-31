@@ -3,28 +3,28 @@ Description: Sie können Erweiterungen verwenden, um Ihre verpackte Desktop-App 
 title: Integrieren Ihrer APP für gepackte Desktops in Windows 10 und UWP (Desktop Bridge)
 ms.date: 04/18/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c99d05a701f41e24663d116773b000017b805d81
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: f51fc081c5cc18132a386197feb2ae76a22d2088
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281806"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142502"
 ---
-# <a name="integrate-your-packaged-desktop-app-with-windows-10-and-uwp"></a>Integrieren Ihrer APP für gepackte Desktops in Windows 10 und UWP
+# <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren ihrer Desktop-app in Windows 10 und UWP
 
-Wenn Sie [Ihre Desktop Anwendung in einem msix-Container Verpacken](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root), können Sie Erweiterungen verwenden, um Ihre gepackte Desktop Anwendung mit Windows 10 zu integrieren, indem Sie vordefinierte Erweiterungen im [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)verwenden.
+Wenn Ihre Desktop-App über eine [Paket Identität](modernize-packaged-apps.md)verfügt, können Sie Erweiterungen verwenden, um Ihre APP mit Windows 10 zu integrieren, indem Sie im [Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)vordefinierte Erweiterungen verwenden.
 
-Verwenden Sie z. b. eine Erweiterung, um eine Firewallausnahme zu erstellen, die Anwendung als Standardanwendung für einen Dateityp zu verwenden, oder zeigen Sie auf Kacheln starten auf die gepackte Version der app. Um eine Erweiterung zu verwenden, fügen Sie einfach XML-Codes zur Paketmanifestdatei Ihrer App hinzu. Es ist kein Code erforderlich.
+Verwenden Sie z. b. eine Erweiterung, um eine Firewallausnahme zu erstellen, die APP als Standardanwendung für einen Dateityp zu verwenden, oder zeigen Sie mit der APP auf Start Kacheln. Um eine Erweiterung zu verwenden, fügen Sie einfach XML-Codes zur Paketmanifestdatei Ihrer App hinzu. Es ist kein Code erforderlich.
 
 In diesem Artikel werden diese Erweiterungen und die Aufgaben beschrieben, die Sie mit Ihnen ausführen können.
 
 > [!NOTE]
-> Die in diesem Artikel beschriebenen Funktionen erfordern, dass Sie ein Windows-App-Paket für Ihre Desktop Anwendung erstellen. Wenn Sie dies noch nicht getan haben, finden Sie weitere Informationen unter [Verpacken von Desktop Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root).
+> Die in diesem Artikel beschriebenen Funktionen erfordern, dass Ihre Desktop-App über die [Paket Identität](modernize-packaged-apps.md)verfügt, indem [Sie entweder Ihre Desktop-app in einem msix-Paket Verpacken](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) oder [Ihre APP-Identität mithilfe eines sparsepakets gewähren](grant-identity-to-nonpackaged-apps.md).
 
 ## <a name="transition-users-to-your-app"></a>Den Übergang Ihrer Benutzer auf Ihre App bereitstellen
 
@@ -44,7 +44,7 @@ Ihre Benutzer haben möglicherweise Ihre Desktop-Anwendung an die Taskleiste ode
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+`http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -103,8 +103,8 @@ Dazu müssen Sie den [programmgesteuerten Bezeichner (Programm-ID)](https://docs
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -160,10 +160,10 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 
 Sie können Ihre gepackte Anwendung mit Dateityp Erweiterungen verknüpft haben. Wenn ein Benutzer mit der rechten Maustaste auf eine Datei klickt und dann die Option **Öffnen mit** auswählt, wird Ihre Anwendung in der Liste der Vorschläge angezeigt.
 
-#### <a name="xml-namespace"></a>XML-Namespace
+#### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -222,9 +222,9 @@ Sie können diesem Menü Optionen hinzufügen. Diese Optionen geben Benutzern we
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -287,8 +287,8 @@ Sie können sicherstellen, dass die Benutzer ihre neue Paket Anwendung standardm
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http: \//Schemas. Microsoft. com/AppX/Manifest/UAP/Windows 10
-* http: \//Schemas. Microsoft. com/AppX/Manifest/UAP/Windows 10/3 "
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -349,7 +349,7 @@ Wenn Ihre Anwendung die Kommunikation über einen Port erfordert, können Sie Ih
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -374,13 +374,13 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |-------|-------------|
 |Kategorie |Immer ``windows.firewallRules``|
 |Ausführbare Datei |Der Name der ausführbaren Datei, die Sie der Liste der Firewallausnahmen hinzufügen möchten. |
-|Richtung |Gibt an, ob die Regel eine ein- oder ausgehende Regel ist. |
+|Direction |Gibt an, ob die Regel eine ein- oder ausgehende Regel ist. |
 |IPProtocol |Das Kommunikationsprotokoll |
 |LocalPortMin |Die untere Portnummer in einer Auswahl von lokalen Portnummern. |
 |LocalPortMax |Die höchste Portnummer in einer Auswahl von lokalen Portnummern. |
 |RemotePortMax |Die niedrigere Portnummer in einer Auswahl von Remoteportnummern. |
 |RemotePortMax |Die höchste Portnummer in einer Auswahl Remoteportnummern. |
-|Profile |Der Netzwerktyp |
+|Profil |Der Netzwerktyp |
 
 #### <a name="example"></a>Beispiel
 
@@ -415,7 +415,7 @@ Jedes Paket kann nur eine dieser Erweiterungen enthalten. Das bedeutet, Sie kön
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/6
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/6`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -475,9 +475,9 @@ Geben Sie an, wie sich die Anwendung verhält, wenn ein Benutzer mehrere Dateien
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -506,9 +506,9 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 
 Bei verpackten Desktop-Apps stehen die gleichen drei Optionen zur Verfügung wie bei regulären Desktop-Apps.
 
-* ``Player``: Ihre Anwendung wird einmal aktiviert. Alle ausgewählten Dateien werden als Argument Parameter an die Anwendung übermittelt.
-* ``Single``: Die Anwendung wird für die erste ausgewählte Datei einmal aktiviert. Andere Dateien werden ignoriert.
-* ``Document``: Für jede ausgewählte Datei wird eine neue, separate Instanz der Anwendung aktiviert.
+* ``Player``: die Anwendung wird einmal aktiviert. Alle ausgewählten Dateien werden als Argument Parameter an die Anwendung übermittelt.
+* ``Single``: die Anwendung wird für die erste ausgewählte Datei einmal aktiviert. Andere Dateien werden ignoriert.
+* ``Document``: für jede ausgewählte Datei wird eine neue, separate Instanz der Anwendung aktiviert.
 
  Für unterschiedliche Dateitypen und Aktionen können unterschiedliche Einstellungen festgelegt werden. So können beispielsweise *Dokumente* im Modus *Document* und *Bilder* im Modus *Player* geöffnet werden.
 
@@ -549,10 +549,10 @@ Ermöglichen Sie es Benutzern, eine Miniaturansicht des Dateiinhalts anzuzeigen,
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -612,10 +612,10 @@ Ermöglichen Sie es Benutzern, den Inhalt einer Datei in Vorschaubereich des Dat
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/2
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/2`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -677,8 +677,8 @@ Für weitere Informationen zum **Art**-Feld und die Werte, die Sie für dieses F
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -702,7 +702,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Kategorie |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |FileType |Die relevanten Dateierweiterungen. |
-|Wert |Ein gültiger [Art-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|value |Ein gültiger [Art-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>Beispiel
 
@@ -739,9 +739,9 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10`
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -798,8 +798,8 @@ Wenn Ihre Desktop Anwendung einen [Kontextmenü Handler](https://docs.microsoft.
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http://schemas.microsoft.com/appx/manifest/foundation/windows10
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10/4
+* `http://schemas.microsoft.com/appx/manifest/foundation/windows10`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10/4`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -896,7 +896,7 @@ Registrieren Sie die Handler, die Sie in Ihrer Anwendung implementieren. Sie kö
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -969,7 +969,7 @@ Protokollzuordnungen ermöglichen es anderen Programmen und Systemkomponenten, m
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-http://schemas.microsoft.com/appx/manifest/uap/windows10/3
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -1020,8 +1020,8 @@ Benutzer und andere Prozesse können einen Alias verwenden, um Ihre Anwendung zu
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-* http://schemas.microsoft.com/appx/manifest/uap/windows10/3
-* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -1083,7 +1083,7 @@ Benutzer können die Startaufgabe Ihrer App manuell mithilfe des Task-Managers d
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -1139,7 +1139,7 @@ Die automatische Wiedergabe kann die Anwendung als Option darstellen, wenn ein B
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/3`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -1157,8 +1157,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.autoPlayHandler``.
-|ActionDisplayName |Eine Zeichenfolge, die die Aktion darstellt, die Benutzer mit einem Gerät ausführen können, das Sie mit einem PC verbinden (z. b.: "Dateien importieren" oder "Video abspielen"). |
-|ProviderDisplayName | Eine Zeichenfolge, die Ihre Anwendung oder ihren Dienst darstellt (z. b.: "Configuration Manager"). |
+|ActionDisplayName |Eine Zeichenfolge, die die Aktion darstellt, die Benutzer mit einem Gerät ausführen können, das sie an einen PC anschließen (z. B.: „Dateien importieren” oder „Video wiedergeben”). |
+|ProviderDisplayName | Eine Zeichenfolge, die Ihre Anwendung oder ihren Dienst darstellt (z. b. "". |
 |ContentEvent |Der Name eines Inhaltsereignisses, bei dem Benutzer mit Ihrem ``ActionDisplayName`` und ``ProviderDisplayName`` aufgefordert werden. Ein Inhaltsereignis wird ausgelöst, wenn ein Volumegerät wie etwa die Speicherkarte einer Kamera, eine DVD oder ein USB-Stick in den PC eingelegt bzw. daran angeschlossen wird. Sie finden die vollständige Liste dieser Ereignisse [hier](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
 |Verb |Die Verb-Einstellung identifiziert einen Wert, der für die ausgewählte Option an die Anwendung übermittelt wird. Sie können mehrere Startaktionen für Ereignisse der automatischen Wiedergabe angeben und mit der Einstellung Verb ermitteln, welche Option ein Benutzer für Ihre App ausgewählt hat. Für welche Option sich der Benutzer entschieden hat, erfahren Sie durch Überprüfen der verb-Eigenschaft der an die App übergebenen Startereignisargumente. Für die Einstellung Verb können Sie einen beliebigen Wert verwenden. Einzige Ausnahme ist open: Dieser Wert ist reserviert. |
 |DropTargetHandler |Die Klassen-ID der Anwendung, die die [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) -Schnittstelle implementiert. Dateien aus Wechselmedien werden an die [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)-Methode Ihrer [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Implementierung übergeben.  |
@@ -1227,7 +1227,7 @@ Sie müssen Ihre Anwendung so ändern, dass Sie Druckdaten im XPS-Format (XML Pa
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -1277,7 +1277,7 @@ Teilen Sie Ihre benutzerdefinierten Schriftarten mit einer anderen Windows-Anwen
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10/2`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -1325,7 +1325,7 @@ Starten Sie einen vertrauenswürdigen Win32-Prozess.
 
 #### <a name="xml-namespaces"></a>XML-Namespaces
 
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
+`http://schemas.microsoft.com/appx/manifest/desktop/windows10`
 
 #### <a name="elements-and-attributes-of-this-extension"></a>Elemente und Attribute dieser Erweiterung
 
@@ -1340,7 +1340,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fullTrustProcess``.
-|GroupID |Eine Zeichenfolge, die eine Reihe von Parametern identifiziert, die an die ausführbare Datei übergeben werden sollen. |
+|Gruppen-ID |Eine Zeichenfolge, die eine Reihe von Parametern identifiziert, die an die ausführbare Datei übergeben werden sollen. |
 |Parameter |Parameter, die an die ausführbare Datei übergeben werden sollen. |
 
 #### <a name="example"></a>Beispiel

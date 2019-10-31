@@ -3,16 +3,16 @@ Description: Erweitern Sie Ihre Desktopanwendung mit Windows-Benutzeroberfläche
 title: Erweitern Sie Ihre Desktopanwendung mit Windows-Benutzeroberflächen und -Komponenten
 ms.date: 06/08/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7359d28d968a2948e9f4049e2acc3c655edcfcb3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0a404f2d9f58fc283cf47f47860362c0f5bc8164
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339201"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142546"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Erweitern Ihrer Desktop-App mit modernen UWP-Komponenten
 
@@ -21,7 +21,7 @@ Einige Windows 10-Umgebungen (z. B. eine touch-fähige UI-Seite) müssen sich in
 In vielen Fällen können Sie Windows-Runtime-APIs direkt von der Desktop Anwendung aus anrufen. bevor Sie dieses Handbuch lesen, finden Sie weitere Informationen unter [verbessern für Windows 10](desktop-to-uwp-enhance.md).
 
 > [!NOTE]
-> Die in diesem Artikel beschriebenen Funktionen erfordern, dass Sie ein Windows-App-Paket für Ihre Desktop Anwendung erstellen. Wenn Sie dies noch nicht getan haben, finden Sie weitere Informationen unter [Verpacken von Desktop Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root).
+> Die in diesem Artikel beschriebenen Funktionen erfordern, dass Ihre Desktop-App über die [Paket Identität](modernize-packaged-apps.md)verfügt, indem [Sie entweder Ihre Desktop-app in einem msix-Paket Verpacken](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) oder [Ihre APP-Identität mithilfe eines sparsepakets gewähren](grant-identity-to-nonpackaged-apps.md).
 
 Wenn Sie bereit sind, lassen Sie uns starten.
 
@@ -100,7 +100,7 @@ Diese Abbildung zeigt eine Windows Forms-Anwendung, die eine XAML-basierte, mod
 
 Um eine XAML-basierte Benutzeroberfläche anzuzeigen, gehen Sie folgendermaßen vor:
 
-:one: [Einrichten der Lösung](#solution-setup)
+:one: [Einrichten Ihrer Projektmappe](#solution-setup)
 
 :two: [Erstellen einer XAML-Benutzeroberfläche](#xaml-UI)
 
@@ -108,7 +108,7 @@ Um eine XAML-basierte Benutzeroberfläche anzuzeigen, gehen Sie folgendermaßen 
 
 :four: [Starten der UWP-App aus Ihrer Desktop-App](#start)
 
-:five: [Zeigen Sie im UWP-Projekt die gewünschte Seite an.](#parse)
+:five: [Anzeigen der gewünschten Seite im UWP-Projekt](#parse)
 
 <a id="solution-setup" />
 
@@ -261,15 +261,15 @@ Das komplette Beispiel finden Sie [hier](https://github.com/Microsoft/Windows-Pa
 
 Damit einer Anwendung als Freigabeziel arbeitet, führen Sie folgende Aktionen aus:
 
-:one: [Hinzufügen einer Freigabe Ziel Erweiterung](#share-extension)
+:one: [Hinzufügen der Freigabezielerweiterung](#share-extension)
 
-:two: [Überschreiben des onsharetargetaktivierten Ereignis Handlers](#override)
+: zwei: über [Schreiben des onsharetargetaktivierten Ereignis Handlers](#override)
 
-:three: [Hinzufügen von Desktop Erweiterungen zum UWP-Projekt](#desktop-extensions)
+: 3: [Hinzufügen von Desktop Erweiterungen zum UWP-Projekt](#desktop-extensions)
 
-:four: [Hinzufügen der voll vertrauenswürdigen Prozess Erweiterung](#full-trust)
+: vier: [Hinzufügen der voll vertrauenswürdigen Prozess Erweiterung](#full-trust)
 
-:five: [Ändern der Desktop Anwendung zum erhalten der freigegebenen Datei](#modify-desktop)
+: 5: [Ändern der Desktop Anwendung zum erhalten der freigegebenen Datei](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -295,7 +295,7 @@ Die folgenden Schritte
 </Extensions>  
 ```
 
-Geben Sie den Namen der ausführbaren Datei des UWP-Projekts an und den Namen der Einstiegspunkt-Klasse. Dieses Markup geht davon aus, dass der Name der ausführbaren Datei für Ihre UWP-App `ShareTarget.exe` ist.
+Geben Sie den Namen der ausführbaren Datei des UWP-Projekts an und den Namen der Einstiegspunkt-Klasse. Dieses Markup geht davon aus, dass der Name der ausführbaren Datei für die UWP-App `ShareTarget.exe`ist.
 
 Sie müssen außerdem angeben, welche Arten von Dateien mit Ihrer App freigegeben können. In diesem Beispiel erstellen wir die [WPF-photostoredemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) -Desktop Anwendung als Freigabe Ziel für Bitmapbilder, sodass wir `Bitmap` für den unterstützten Dateityp angeben.
 
@@ -410,9 +410,9 @@ Um einen Hintergrunddienst zu erstellen, gehen Sie folgendermaßen vor:
 
 :one: [Implementieren der Hintergrundaufgabe](#implement-task)
 
-:two: [Hintergrundaufgabe konfigurieren](#configure-background-task)
+:two: [Konfigurieren der Hintergrundaufgabe](#configure-background-task)
 
-:three: [Hintergrundaufgabe registrieren](#register-background-task)
+:three: [Registrieren der Hintergrundaufgabe](#register-background-task)
 
 <a id="implement-task" />
 

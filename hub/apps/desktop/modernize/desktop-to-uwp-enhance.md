@@ -3,17 +3,17 @@ Description: Verbessern Sie Ihre Desktop Anwendung für Windows 10-Benutzer mith
 title: Verwenden von UWP-APIs in Desktop-Apps
 ms.date: 08/20/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 44ea01bbc2200c1b028ed41e7c6a2845c7a1568b
-ms.sourcegitcommit: 6bb794c6e309ba543de6583d96627fbf1c177bef
+ms.openlocfilehash: bcdeafc3f30f5b385c6feeddee78cf31635177a0
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69643360"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142539"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>UWP-APIs in Desktop-Apps aufzurufen
 
@@ -21,7 +21,7 @@ Sie können universelle Windows-Plattform-APIs (UWP) verwenden, um Ihren Desktop
 
 Richten Sie zunächst das Projekt mit den erforderlichen verweisen ein. Anschließend können Sie UWP-APIs aus Ihrem Code abrufen, um ihrer Desktop-App Windows 10-Erfahrungen hinzuzufügen. Sie können für Windows 10-Benutzer separat erstellen oder die gleichen Binärdateien unabhängig von der Windows-Version, die Sie ausführen, an alle Benutzer verteilen.
 
-Einige UWP-APIs werden nur in Desktop-Apps unterstützt, die in einem [msix-Paket](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)verpackt sind. Weitere Informationen finden Sie unter [Verfügbare UWP-APIs](desktop-to-uwp-supported-api.md).
+Einige UWP-APIs werden nur in Desktop-Apps unterstützt, die über eine [Paket Identität](modernize-packaged-apps.md)verfügen. Weitere Informationen finden Sie unter [Verfügbare UWP-APIs](desktop-to-uwp-supported-api.md).
 
 ## <a name="set-up-your-project"></a>Einrichten des Projekts
 
@@ -43,13 +43,13 @@ Es gibt zwei Optionen für .net-Projekte:
 
 2. Wenn das Projekt in Visual Studio geöffnet ist, klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **nuget-Pakete verwalten**.
 
-3. Vergewissern Sie sich, dass im Fenster **nuget-Paket-Manager** die Option **Vorabversion einschließen** ausgewählt ist. Wählen Sie dann die Registerkarte **Durchsuchen** aus `Microsoft.Windows.SDK.Contracts`, und suchen Sie nach.
+3. Vergewissern Sie sich, dass im Fenster **nuget-Paket-Manager** die Option **Vorabversion einschließen** ausgewählt ist. Wählen Sie dann die Registerkarte **Durchsuchen** aus, und suchen Sie nach `Microsoft.Windows.SDK.Contracts`.
 
-4. Nachdem das `Microsoft.Windows.SDK.Contracts` Paket gefunden wurde, wählen Sie im rechten Bereich des Fensters **nuget-Paket-Manager** die **Version** des zu installierenden Pakets basierend auf der Version von Windows 10 aus, die Sie als Zielversion auswählen möchten:
+4. Nachdem Sie das `Microsoft.Windows.SDK.Contracts` Paket gefunden haben, wählen Sie im rechten Bereich des Fensters **nuget-Paket-Manager** die **Version** des zu installierenden Pakets basierend auf der Version von Windows 10 aus, die Sie als Zielversion auswählen möchten:
 
-    * **10.0.18362. xxxx-Vorschau**: Wählen Sie diese Option für Windows 10, Version 1903.
-    * **10.0.17763. xxxx-Vorschau**: Wählen Sie diese Option für Windows 10, Version 1809.
-    * **10.0.17134. xxxx-Vorschau**: Wählen Sie diese Option für Windows 10, Version 1803.
+    * **10.0.18362. xxxx-Preview**: Wählen Sie diese Option für Windows 10, Version 1903.
+    * **10.0.17763. xxxx-Preview**: Wählen Sie diese Option für Windows 10, Version 1809.
+    * **10.0.17134. xxxx-Preview**: Wählen Sie diese Option für Windows 10, Version 1803.
 
 5. Klicken Sie auf **Installieren**.
 
@@ -61,14 +61,14 @@ Es gibt zwei Optionen für .net-Projekte:
 
 2. Fügen Sie einen Verweis auf diese Dateien hinzu.
 
-    |Datei|Speicherort|
+    |Datei|Pfad|
     |--|--|
     |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
     |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
     |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |Windows. winmd|C:\Programme (x86) \Windows kits\10\unionmetadata\\<*SDK Version*> \facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Programme\\(x86) \Windows kits\10\references\<<*SDK Version*> \Windows.Foundation.UniversalApiContract*Version*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Programme\\(x86) \Windows kits\10\references\<<*SDK Version*> \Windows.Foundation.FoundationContract*Version*>|
+    |Windows. winmd|C:\Programme (x86) \Windows kits\10\unionmetadata\\<*SDK-Version*> \facade|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Programme (x86) \Windows kits\10\references\\<*SDK-Version*> \Windows.Foundation.UniversalApiContract\<*Version*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Programme (x86) \Windows kits\10\references\\<*SDK-Version*> \Windows.Foundation.FoundationContract\<*Version*>|
 
 3. Legen Sie im Dialogfeld **Eigenschaften** die **lokale Kopie** jeder *winmd*-Datei auf **Falsch** fest.
 
@@ -76,7 +76,7 @@ Es gibt zwei Optionen für .net-Projekte:
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>Ändern eines C++ Win32-Projekts für die Verwendung von Windows-Runtime-APIs
 
-Verwenden Sie [ C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) , um Windows-Runtime-APIs zu verwenden. C++/WinRT ist eine vollständig standardisierte, moderne C++17 Sprachprojektion für Windows-Runtime-(WinRT)-APIs, die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet.
+Verwenden Sie [ C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) , um Windows-Runtime-APIs zu verwenden. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet.
 
 So konfigurieren Sie Ihr Projekt C++für/WinRT:
 
@@ -89,17 +89,17 @@ Weitere Informationen zu diesen Optionen finden Sie in [diesem Artikel](/windows
 
 Jetzt können Sie moderner Funktionen für Benutzer der Anwendung unter Windows 10 Hinzufügen. Verwenden Sie diesen Designfluss.
 
-:white_check_mark: **Entscheiden Sie zunächst, welche Möglichkeiten Sie hinzufügen möchten.**
+:white_check_mark: **Entscheiden Sie zunächst, welche Funktionen Sie hinzufügen möchten**
 
 Es gibt viele zur Auswahl. Beispielsweise können Sie Ihren Bestell Fluss mithilfe von [monetarisierungsapis](/windows/uwp/monetize)vereinfachen oder eine [direkte Aufmerksamkeit auf Ihre Anwendung](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) haben, wenn Sie etwas interessantes freigeben möchten, z. b. ein neues Bild, das von einem anderen Benutzer gepostet wurde.
 
-![Toast](images/desktop-to-uwp/toast.png)
+![Popup](images/desktop-to-uwp/toast.png)
 
 Auch dann, wenn Benutzer Ihre Nachricht ignorieren oder schließen, können sie diese im Info-Center anzeigen und dann auf die Nachricht klicken, um Ihre App zu öffnen. Dies steigert die Einbindung Ihrer Anwendung und hat den zusätzlichen Vorteil, dass Ihre Anwendung tief in das Betriebssystem integriert werden muss. Wir zeigen Ihnen den Code für diese Darstellung etwas weiter unten in diesem Artikel.
 
 Weitere Ideen finden Sie in der [UWP-Dokumentation](/windows/uwp/get-started/) .
 
-:white_check_mark: **Entscheiden, ob erweitert oder erweitert werden soll**
+:white_check_mark: **Entscheiden Sie, ob Sie die App verbessern oder erweitern möchten**
 
 Häufig werden wir die Begriffe " *verbessern* " und " *erweitern*" verwenden, um genau zu erläutern, was die einzelnen Begriffe bedeuten.
 
@@ -119,7 +119,7 @@ Unterhalb der Zusammenfassung der API finden Sie eine Tabelle, die die API-Vertr
 
 Wenn Sie eine .NET-basierte Desktop-App haben, fügen Sie einen Verweis auf den API-Vertrag hinzu und legen Sie die **Lokale Kopie** Eigenschaft dieser Datei auf **Falsch** fest. Wenn Sie ein C++-basiertes Projekt haben, fügen Sie **Zusätzliche Include-Verzeichnisse** einen Pfad zu dem Ordner hinzu, der diesen Vertrag enthält.
 
-:white_check_mark: **API zum Hinzufügen von Benutzeroberflächen anrufen**
+:white_check_mark: **Aufrufen der APIs, um die Funktion hinzuzufügen**
 
 Dies ist der Code, den Sie verwenden würden, um dem Benachrichtigungsfenster anzuzeigen, dass wir weiter oben behandelt haben. Diese APIs werden in dieser [Liste](desktop-to-uwp-supported-api.md) angezeigt, sodass Sie den Code Ihrer Desktop-App hinzufügen und sofort ausführen können.
 
@@ -243,7 +243,7 @@ Der Compiler erstellt den Code nur dann, wenn die Konstante in der aktiven Build
 
 Sie können einen Satz von Binärdateien für alle Windows-Benutzer kompilieren, unabhängig davon, welche Version von Windows sie ausführen. Die Anwendung ruft Windows-Runtime APIs nur auf, wenn der Benutzer die Anwendung als Paket Anwendung unter Windows 10 ausführt.
 
-Die einfachste Möglichkeit zum Hinzufügen von Laufzeitüberprüfungen zu Ihrem Code besteht darin, dieses nuget-Paket zu installieren: [Desktop Bridge](https://www.nuget.org/packages/DesktopBridge.Helpers/) Hilfsprogramme, und verwenden Sie ``IsRunningAsUWP()`` dann die-Methode, um den gesamten Code zu deaktivieren, der Windows-Runtime-APIs aufruft. Weitere Informationen finden Sie in diesem Blogbeitrag: [Desktop Bridge: identifizieren Sie den Kontext der Anwendung](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
+Die einfachste Möglichkeit zum Hinzufügen von Laufzeitüberprüfungen zum Code besteht darin, dieses nuget-Paket zu installieren: [desktopbridge-](https://www.nuget.org/packages/DesktopBridge.Helpers/) Hilfsprogramme und dann die ``IsRunningAsUWP()``-Methode, um den gesamten Code zu deaktivieren, der Windows-Runtime-APIs aufruft. Weitere Detail finden Sie in diesem Blogbeitrag: [Desktop-Brücke - Identifizieren des Anwendungskontexts](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/).
 
 ## <a name="related-samples"></a>Verwandte Beispiele
 
