@@ -48,6 +48,8 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: Verteilen Ihres App-Pakets
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
+        - name: Identitätszuweisen für nicht verpackte Desktop-Apps
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: 'Tutorial: Modernisieren einer WPF-App'
           items:
             - name: Übersicht

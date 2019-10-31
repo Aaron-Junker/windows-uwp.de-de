@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b8ad9726397671bcb2b641d6769f014721a27a72
-ms.sourcegitcommit: f34deba1d4460d85ed08fe9648999fe03ff6a3dd
+ms.openlocfilehash: 7403c0a3fd9f822ee24411aa88d8fd91994748dd
+ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71317091"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73142521"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -54,11 +54,14 @@ Sie können UWP-APIs jetzt auch in anderen Desktop-Apps als UWP-Apps verwenden, 
 
 Weitere Informationen finden Sie unter [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md) (Modernisieren Ihrer Desktop-App über die visuelle Ebene).
 
-## <a name="additional-features-available-to-packaged-apps"></a>Zusätzliche Features für App-Pakete
+## <a name="additional-features-available-to-apps-with-package-identity"></a>Zusätzliche Features für Apps mit Paketidentität
 
-Einige moderne Windows 10-Benutzeroberflächen sind nur in Desktop-Apps verfügbar, die in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root) verpackt sind. Wenn Sie Ihre Desktop-App als MSIX-Paket verpacken, können Sie UWP-APIs verwenden, für die eine Paketidentität, Paketerweiterungen und UWP-Komponenten in Ihrem App-Paket benötigt werden.
+Einige moderne Windows 10-Benutzeroberflächen sind nur in Desktop-Apps verfügbar, die über [Paketidentität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) verfügen. Zu diesen Features gehören bestimmte UWP-APIs, Paketerweiterungen und UWP-Komponenten. Weitere Informationen finden Sie unter [Features that require package identity](modernize-packaged-apps.md) (Features, für die Paketidentität benötigt wird).
 
-Weitere Informationen finden Sie unter [Features that require package identity](modernize-packaged-apps.md) (Features, für die Paketidentität benötigt wird).
+Es gibt mehrere Möglichkeiten, einer Desktop-App Identität zuzuweisen:
+
+* Verpacken Sie sie in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root). MSIX ist ein modernes App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps, WPF, Windows Forms und Win32-Apps bereitgestellt wird. Dadurch erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
+* Wenn es nicht möglich ist, MSIX-Pakete zur Bereitstellung Ihrer Desktop-App zu erstellen, können Sie ab Windows 10 Insider Preview Build 10.0.19000.0 Paketidentität bereitstellen, indem Sie ein *platzsparendes MSIX-Paket* erstellen, das nur ein Paketmanifest enthält. Weitere Informationen finden Sie unter [Identitätszuweisen für nicht verpackte Desktop-Apps](grant-identity-to-nonpackaged-apps.md).
 
 <a id="desktop-uwp-controls"/>
 
