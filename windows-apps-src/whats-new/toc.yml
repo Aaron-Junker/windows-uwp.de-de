@@ -1,61 +1,59 @@
-items:
-- name: Neuigkeiten für Entwickler in Windows 10, Build 17763
-  href: ../whats-new/windows-10-build-17763.md
+- name: 'Neuigkeiten für Entwickler in Windows 10, Build 18362'
+  href: ../whats-new/windows-10-build-18362.md
   items:
-  - name: API-Ergänzungen in Windows 10, Build 17763
-    href: ../whats-new/windows-10-build-17763-api-diff.md
-- name: Neuigkeiten in der Windows-Dokumentation, Januar 2019
+    - name: "API-Ergänzungen in Windows\_10, Build 18362"
+      href: ../whats-new/windows-10-build-18362-api-diff.md
+- name: 'Neuigkeiten in der Windows-Dokumentation, Januar 2019'
   href: ../whats-new/windows-docs-january-2019.md
   items:
-  - name: Neuigkeiten in der Windows-Dokumentation, September 2018
-    href: ../whats-new/windows-docs-september-2018.md
-  - name: Neuigkeiten in der Windows-Dokumentation, August 2018
-    href: ../whats-new/windows-docs-august-2018.md
-  - name: Neuigkeiten in der Windows-Dokumentation, Juli 2018
-    href: ../whats-new/windows-docs-july-2018.md
-  - name: Neuigkeiten in der Windows-Dokumentation, Mai 2018
-    href: ../whats-new/windows-docs-may-2018.md
-  - name: Neuigkeiten in der Windows-Dokumentation, Februar 2018
-    href: ../whats-new/windows-docs-february-2018.md
-  - name: Neuigkeiten in der Windows-Dokumentation, Dezember 2017
-    href: ../whats-new/windows-docs-december-2017.md
-  - name: Neuigkeiten in der Windows-Dokumentation, September 2017
-    href: ../whats-new/windows-docs-september-2017.md
-  - name: Neuigkeiten in der Windows-Dokumentation, August 2017
-    href: ../whats-new/windows-docs-august-2017.md
-  - name: Neuigkeiten in der Windows-Dokumentation, Juli 2017
-    href: ../whats-new/windows-docs-july-2017.md
-- name: Vorherige Windows 10-Versionen
+    - name: 'Neuigkeiten in der Windows-Dokumentation, September 2018'
+      href: ../whats-new/windows-docs-september-2018.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, August 2018'
+      href: ../whats-new/windows-docs-august-2018.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, Juli 2018'
+      href: ../whats-new/windows-docs-july-2018.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, Mai 2018'
+      href: ../whats-new/windows-docs-may-2018.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, Februar 2018'
+      href: ../whats-new/windows-docs-february-2018.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, Dezember 2017'
+      href: ../whats-new/windows-docs-december-2017.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, September 2017'
+      href: ../whats-new/windows-docs-september-2017.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, August 2017'
+      href: ../whats-new/windows-docs-august-2017.md
+    - name: 'Neuigkeiten in der Windows-Dokumentation, Juli 2017'
+      href: ../whats-new/windows-docs-july-2017.md
+- name: "Vorherige Windows\_10-Versionen"
   items:
-  - name: Neuigkeiten für Entwickler in Windows 10, Build 17134
-    href: ../whats-new/windows-10-build-17134.md
-    items:
-    - name: API-Ergänzungen in Windows 10, Build 17134
-      href: ../whats-new/windows-10-build-17134-api-diff.md
-  - name: Neuigkeiten für Entwickler in Windows 10, Build 16299
-    href: ../whats-new/windows-10-build-16299.md
-    items:
-    - name: API-Ergänzungen in Windows 10, Build 16299
-      href: ../whats-new/windows-10-build-16299-api-diff.md
-  - name: Neuigkeiten in Windows 10, Build 15063
-    href: ../whats-new/windows-10-build-15063.md
-    items:
-    - name: API-Ergänzungen in Windows 10, Build 15063
-      href: ../whats-new/windows-10-build-15063-api-diff.md
-  - name: Neuigkeiten in Windows 10, Build 14393
-    href: ../whats-new/windows-10-build-14393.md
-    items:
-    - name: API-Ergänzungen in Windows 10, Build 14393
-      href: ../whats-new/windows-10-build-14393-api-diff.md
-  - name: Neuigkeiten in Windows 10, Build 10586
-    href: ../whats-new/windows-10-build-10586.md
-  - name: Neuigkeiten in Windows 10, Build 10240
-    href: ../whats-new/windows-10-build-10240.md
+    - name: "Neuigkeiten für Entwickler in Windows\_10, Build 17763"
+      href: ../whats-new/windows-10-build-17763.md
+      items:
+        - name: "API-Ergänzungen in Windows\_10, Build 17763"
+          href: ../whats-new/windows-10-build-17763-api-diff.md
+    - name: "Neuigkeiten für Entwickler in Windows\_10, Build 17134"
+      href: ../whats-new/windows-10-build-17134.md
+      items:
+        - name: "API-Ergänzungen in Windows\_10, Build 17134"
+          href: ../whats-new/windows-10-build-17134-api-diff.md
+    - name: "Neuigkeiten für Entwickler in Windows\_10, Build 16299"
+      href: ../whats-new/windows-10-build-16299.md
+      items:
+        - name: "API-Ergänzungen in Windows\_10, Build 16299"
+          href: ../whats-new/windows-10-build-16299-api-diff.md
+    - name: "Neuigkeiten in Windows\_10, Build 15063"
+      href: ../whats-new/windows-10-build-15063.md
+      items:
+        - name: "API-Ergänzungen in Windows\_10, Build 15063"
+          href: ../whats-new/windows-10-build-15063-api-diff.md
+    - name: "Neuigkeiten in Windows\_10, Build 14393"
+      href: ../whats-new/windows-10-build-14393.md
+      items:
+        - name: "API-Ergänzungen in Windows\_10, Build 14393"
+          href: ../whats-new/windows-10-build-14393-api-diff.md
+    - name: "Neuigkeiten in Windows\_10, Build 10586"
+      href: ../whats-new/windows-10-build-10586.md
+    - name: "Neuigkeiten in Windows\_10, Build 10240"
+      href: ../whats-new/windows-10-build-10240.md
 - name: Experimentelle APIs
   href: ../whats-new/experimental-apis.md
-ms.openlocfilehash: 136c6bd34dd3358d3f089aa06a664029a446b368
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582475"
