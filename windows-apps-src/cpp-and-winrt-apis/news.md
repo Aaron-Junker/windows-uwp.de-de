@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, neuerungen, neues
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 525110a09c56f48f9f9ce3d2521c98e2297a8372
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
+ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816716"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72998615"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuerungen in C++/WinRT
 
@@ -269,9 +269,9 @@ Es ist nicht einfach, mit `out`-Parametern zu arbeiten, besonders in Windows-Run
 
 Die [**winrt::event**](/uwp/cpp-ref-for-winrt/event)-Implementierung verarbeitet jetzt Fälle ordnungsgemäß, in denen ihre **remove**-Methode mit einem ungültigen Tokenwert aufgerufen wird (ein Wert, der im Array nicht vorhanden ist).
 
-#### <a name="coroutine-locals-are-now-destroyed-before-the-coroutine-returns"></a>Elemente der Coroutine werden vor der Rückgabe der Coroutine gelöscht
+#### <a name="coroutine-local-variables-are-now-destroyed-before-the-coroutine-returns"></a>Lokale Variablen der Coroutine werden vor der Rückgabe der Coroutine gelöscht
 
-Bei einer traditionellen Implementierung einer Coroutine können Elemente der Coroutine *nach* der Rückgabe/dem Abschluss der Coroutine gelöscht werden (statt vor dem letzten Anhalten). Das Fortsetzen von Wartevorgängen wird jetzt bis zum letzten Anhalten verzögert, um dieses Problem zu vermeiden und andere Vorteile zu schaffen.
+Bei einer traditionellen Implementierung einer Coroutine können lokale Variablen in der Coroutine *nach* der Rückgabe/dem Abschluss der Coroutine gelöscht werden (statt vor dem letzten Anhalten). Das Fortsetzen von Wartevorgängen wird jetzt bis zum letzten Anhalten verzögert, um dieses Problem zu vermeiden und andere Vorteile zu schaffen.
 
 ## <a name="news-and-changes-in-windows-sdk-version-100177630-windows-10-version-1809"></a>Neuerungen und Änderungen im Windows SDK, Version 10.0.17763.0 (Windows 10, Version 1809)
 
@@ -296,7 +296,7 @@ Sonstige Änderungen
 - **Breaking Change**. Der Konstruktor [**winrt::handle_type**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) wurde gehärtet, indem es explizit gemacht wurde (es ist jetzt nicht mehr so leicht, falschen Code damit zu schreiben). Wenn Sie einen unformatierten handle-Wert zuweisen müssen, rufen Sie stattdessen die [**Funktion handle_type::attach**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) auf.
 - **Breaking Change**. Die Signaturen von **WINRT_CanUnloadNow** und **WINRT_GetActivationFactory** haben sich geändert. Sie dürfen diese Funktionen nicht deklarieren. Verwenden Sie stattdessen `winrt/base.h` (was automatisch verwendet wird, wenn Sie C++/WinRT-Windows-Namespaceheaderdateien verwenden), um die Deklarationen dieser Funktionen einzubeziehen.
 - Für die [**winrt::clock-Struktur**](/uwp/cpp-ref-for-winrt/clock) sind **from_FILETIME/to_FILETIME** veraltet, stattdessen werden **from_file_time/to_file_time** verwendet.
-- APIs, die **IBuffer**-Parameter erwarten, wurden vereinfacht. Obwohl die meisten APIs Sammlungen oder Arrays bevorzugen, verwenden genug APIs die **IBuffer**-Schnittstelle, die das Verwenden derartiger APIs in C++ vereinfacht. Über dieses Update erhalten Sie direkten Zugriff auf die Daten einer **IBuffer**-Implementierung. Dabei werden die gleichen Datennamenskonventionen wie bei C++-Standardbibliothekscontainern verwendet. Dadurch wird zudem ein Überschneiden mit Metadatennamen verhindert, die per Konvention mit einem Großbuchstaben beginnen.
+- Vereinfachte APIs, die **IBuffer**-Parameter erwarten. Die meisten APIs bevorzugen Sammlungen oder Arrays. Wir sind jedoch der Meinung, dass wir es einfacher machen sollten, APIs aufzurufen, die sich auf **IBuffer** basieren. Dieses Update bietet direkten Zugriff auf die Daten hinter einer **IBuffer**-Implementierung. Dabei wird dieselbe Datenbenennungskonvention verwendet wie für die Container der C++-Standardbibliothek. Durch diese Konvention werden zudem Überschneidungen mit Metadatennamen verhindert, die per Konvention mit einem Großbuchstaben beginnen.
 - Verbesserte Codegenerierung: verschiedene Verbesserungen zum Senken der Codegröße, für verbesserte Inlineersetzung und für optimiertes Factoryzwischenspeichern.
 - Unnötige Rekursion wurde entfernt. Wenn die Befehlszeile auf einen Ordner statt auf eine spezifische `.winmd`-Datei verweist, sucht `cppwinrt.exe` nicht mehr rekursiv nach `.winmd`-Dateien. Das `cppwinrt.exe`-Tool behandelt Duplikate jetzt auf sinnvollere Weise, sodass es robuster gegenüber Benutzerfehler und falsch formatierten `.winmd`-Dateien ist.
 - Gehärtete intelligente Zeiger. In der Vergangenheit konnten event_revoker-Objekte keinen Widerruf durchführen, wenn ihnen per Verschieben ein neuer Wert zugewiesen wurde. Dadurch wurde ein Problem erkannt, bei dem Klassen für intelligente Zeiger die Selbstzuweisung nicht zuverlässig verarbeitet haben. Dieses Problem lag in der [**Vorlage für eine winrt::com_ptr-Struktur**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** und die event_revoker-Objekte wurden korrigiert, sodass sie jetzt Verschiebesemantik korrekt behandeln und bei der Zuweisung einen Widerruf durchführen.
