@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bcdeafc3f30f5b385c6feeddee78cf31635177a0
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: ca9e91233206f0e97d17fdbdd7b0fd09a2897cd8
+ms.sourcegitcommit: 3710117f24adb8555aa94b372db814e5d30ae45a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142539"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73427091"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>UWP-APIs in Desktop-Apps aufzurufen
 
@@ -43,13 +43,13 @@ Es gibt zwei Optionen für .net-Projekte:
 
 2. Wenn das Projekt in Visual Studio geöffnet ist, klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **nuget-Pakete verwalten**.
 
-3. Vergewissern Sie sich, dass im Fenster **nuget-Paket-Manager** die Option **Vorabversion einschließen** ausgewählt ist. Wählen Sie dann die Registerkarte **Durchsuchen** aus, und suchen Sie nach `Microsoft.Windows.SDK.Contracts`.
+3. Wählen Sie im Fenster **nuget-Paket-Manager** die Registerkarte **Durchsuchen** aus, und suchen Sie nach `Microsoft.Windows.SDK.Contracts`.
 
 4. Nachdem Sie das `Microsoft.Windows.SDK.Contracts` Paket gefunden haben, wählen Sie im rechten Bereich des Fensters **nuget-Paket-Manager** die **Version** des zu installierenden Pakets basierend auf der Version von Windows 10 aus, die Sie als Zielversion auswählen möchten:
 
-    * **10.0.18362. xxxx-Preview**: Wählen Sie diese Option für Windows 10, Version 1903.
-    * **10.0.17763. xxxx-Preview**: Wählen Sie diese Option für Windows 10, Version 1809.
-    * **10.0.17134. xxxx-Preview**: Wählen Sie diese Option für Windows 10, Version 1803.
+    * **10.0.18362. xxxx**: Wählen Sie diese Option für Windows 10, Version 1903.
+    * **10.0.17763. xxxx**: Wählen Sie diese Option für Windows 10, Version 1809.
+    * **10.0.17134. xxxx**: Wählen Sie diese Option für Windows 10, Version 1803.
 
 5. Klicken Sie auf **Installieren**.
 

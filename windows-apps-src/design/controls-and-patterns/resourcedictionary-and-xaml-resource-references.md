@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 662f23c5ab201a44669b2e4e4a454aa73ebd3b43
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340197"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061974"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary- und XAML-Ressourcenreferenzen
 
@@ -77,7 +77,7 @@ Hierbei werden sowohl ein Pinsel als auch eine Zeichenfolge als Ressourcen dekla
 </Page>
 ```
 
-Alle Ressourcen müssen über einen Schlüssel verfügen. Normalerweise ist dieser Schlüssel eine Zeichenfolge, die wie folgt definiert ist: `x:Key=”myString”`. Es gibt aber auch einige andere Möglichkeiten, einen Schlüssel anzugeben:
+Alle Ressourcen müssen über einen Schlüssel verfügen. Normalerweise ist dieser Schlüssel eine Zeichenfolge, die wie folgt definiert ist: `x:Key="myString"`. Es gibt aber auch einige andere Möglichkeiten, einen Schlüssel anzugeben:
 
 -   [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) und [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) erfordern ein **TargetType**-Element. **TargetType** wird als Schlüssel verwendet, wenn [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) nicht angegeben ist. In diesem Fall ist der Schlüssel das eigentliche Typobjekt, anstatt einer Zeichenfolge. (Siehe Beispiele unten.)
 -   Für [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)-Ressourcen mit **TargetType** wird das **TargetType**-Element als Schlüssel verwendet, wenn [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) nicht angegeben ist. In diesem Fall ist der Schlüssel das eigentliche Typobjekt, anstatt einer Zeichenfolge.

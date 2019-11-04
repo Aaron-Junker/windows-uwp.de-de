@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: b791768d4ccd78b46fef2d4e494ce06ef9f6ca6a
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63801301"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73062217"
 ---
 # <a name="color-picker"></a>Farbauswahl
 
@@ -67,7 +67,7 @@ In diesem Beispiel binden Sie die Color-Eigenschaft einer als Füllung für ein 
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
-             ColorSpectrumShape=”Ring”
+             ColorSpectrumShape="Ring"
              IsColorPreviewVisible="False"
              IsColorChannelTextInputVisible="False"
              IsHexInputVisible="False"/>
@@ -209,7 +209,7 @@ Hexadezimalwerte | IsHexInputVisible
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -217,7 +217,7 @@ Hexadezimalwerte | IsHexInputVisible
 - [Freihandeingaben](inking-controls.md)
 
 <!--
-<div class=”microsoft-internal-note”>
+<div class="microsoft-internal-note">
 <p>
 <p>
 Note: For more info, see the [color picker redlines](https://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.
