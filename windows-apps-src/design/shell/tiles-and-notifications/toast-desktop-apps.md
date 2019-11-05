@@ -7,12 +7,12 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popupbenachrichtigungen, Desktop-Brücke, Optionen zum Senden von Popups, COM-Server, COM-Aktivator, COM, gefälschter COM, kein COM, ohne COM, Senden von Popupbenachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 030f8b1380dc28a41e65989ccbda688523fad965
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 31501d2dc3ac255897e374ca81b05558be7bc2fc
+ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100815"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73560656"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>Popupbenachrichtigungen über Desktop-Apps
 
@@ -81,6 +81,6 @@ Richten Sie für klassische Win32-Apps die AUMID so ein, dass Sie Popupbenachric
 
 ## <a name="resources"></a>Ressourcen
 
-* [Lokale Popup Benachrichtigung von Desktop C# -apps senden](send-local-toast-desktop.md)
-* [Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md)
+* [Sendet eine lokale Popup Benachrichtigung von Desktop C# -apps.](send-local-toast-desktop.md)
+* [Senden einer lokalen Popup Benachrichtigung von Desktop C++ -WRL-apps](send-local-toast-desktop-cpp-wrl.md)
 * [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)
