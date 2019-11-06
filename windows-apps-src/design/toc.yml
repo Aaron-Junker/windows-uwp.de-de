@@ -114,6 +114,8 @@
           items:
             - name: Elementcontainer und Vorlagen
               href: controls-and-patterns/item-containers-templates.md
+            - name: Datenvorlagenauswahl
+              href: controls-and-patterns/data-template-selector.md
             - name: Elementvorlagen für Listenansicht
               href: controls-and-patterns/item-templates-listview.md
             - name: Elementvorlagen für Rasteransicht
