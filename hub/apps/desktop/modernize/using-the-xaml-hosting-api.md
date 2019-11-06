@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "71339295"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
@@ -22,7 +22,7 @@ Ab Windows 10, Version 1903, können nicht-UWP-Desktop-Apps C++ (einschließlich
 Die UWP-XAML-Hosting-API stellt die Grundlage für einen umfassenderen Satz von Steuerelementen dar, die wir bereitstellen, damit Entwickler eine fließende Benutzeroberfläche für Desktop-Apps ohne UWP bereitstellen können. Diese Funktion wird als *XAML-Inseln*bezeichnet. Eine Übersicht über diese Funktion finden Sie unter [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)](xaml-islands.md).
 
 > [!NOTE]
-> Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem im Repository " [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) ", und lassen Sie Ihre Kommentare dort ablegen. Wenn Sie Ihr Feedback lieber privat einreichen möchten, können Sie es an XamlIslandsFeedback@microsoft.comsenden. Ihre Einblicke und Szenarios sind für uns äußerst wichtig.
+> Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem im Repository " [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) ", und lassen Sie Ihre Kommentare dort ablegen. Wenn Sie Ihr Feedback lieber privat einreichen möchten, können Sie es an XamlIslandsFeedback@microsoft.com senden. Ihre Einblicke und Szenarios sind für uns äußerst wichtig.
 
 ## <a name="should-you-use-the-uwp-xaml-hosting-api"></a>Sollten Sie die UWP-XAML-Hosting-API verwenden?
 
@@ -34,7 +34,7 @@ Die UWP-XAML-Hosting-API bietet die Low-Level-Infrastruktur zum Hosten von UWP-S
 
 Wir empfehlen, dass nur C++ Win32-Apps die UWP-XAML-Hosting-API verwenden. dieser Artikel enthält Haupt C++ sächlich Anweisungen und Beispiele für Win32-apps. Sie können jedoch die UWP-XAML-Hosting-API in WPF und Windows Forms Apps verwenden, wenn Sie auswählen. Dieser Artikel verweist auf den relevanten Quellcode für die [Host Steuerelemente](xaml-islands.md#host-controls) für WPF und Windows Forms im Windows Community Toolkit, damit Sie sehen können, wie die UWP-XAML-Hosting-API von diesen Steuerelementen verwendet wird.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 XAML-Inseln erfordern Windows 10, Version 1903 (oder höher) und den entsprechenden Build der Windows SDK. Um XAML-Inseln in der C++ Win32-APP zu verwenden, müssen Sie zuerst das Projekt einrichten.
 
@@ -146,7 +146,7 @@ Der grundlegende Prozess der Verwendung der XAML-Hosting-API zum Hosten eines UW
 
     1. Erstellen Sie ein **desktopwindowxamlsource** -Objekt, und wandeln Sie es in die Schnittstelle **idesktopwindowxamlsourcenative** oder **IDesktopWindowXamlSourceNative2** com um.
         > [!NOTE]
-        > Diese Schnittstellen werden in der **Windows. UI. XAML. Hosting. desktopwindowxamlsource. h** -Header Datei im Windows SDK deklariert. Standardmäßig befindet sich diese Datei unter% Program Files (x86)% \ Windows kits\10\include @ no__t-0 < Buildnummer @ no__t-1\um.
+        > Diese Schnittstellen werden in der **Windows. UI. XAML. Hosting. desktopwindowxamlsource. h** -Header Datei im Windows SDK deklariert. Standardmäßig befindet sich diese Datei unter% Program Files (x86)% \ Windows kits\10\include\\< Buildnummer\>\e.
 
     2. Ruft die **attachtowindow** -Methode der **idesktopwindowxamlsourcenative** -Schnittstelle oder der **IDesktopWindowXamlSourceNative2** -Schnittstelle auf und übergibt das Fenster Handle des übergeordneten UI-Elements in der Anwendung.
 
@@ -156,7 +156,7 @@ Der grundlegende Prozess der Verwendung der XAML-Hosting-API zum Hosten eines UW
 
 Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben beschriebene Prozess implementiert wird:
 
-1. Öffnen Sie im Ordner **Quelldateien** des Projekts die Standarddatei **windowsproject. cpp** . Löschen Sie den gesamten Inhalt der Datei, und fügen Sie die folgenden `include`-und `using`-Anweisung hinzu. Zusätzlich zu den Standard C++ -und UWP-Headern und-Namespaces enthalten diese Anweisungen mehrere Elemente, die für XAML-Inseln spezifisch sind.
+1. Öffnen Sie im Ordner **Quelldateien** des Projekts die Standarddatei **windowsproject. cpp** . Löschen Sie den gesamten Inhalt der Datei, und fügen Sie die folgenden `include`-und `using`-Anweisungen hinzu. Zusätzlich zu den Standard C++ -und UWP-Headern und-Namespaces enthalten diese Anweisungen mehrere Elemente, die für XAML-Inseln spezifisch sind.
 
     ```cppwinrt
     #include <windows.h>
@@ -344,7 +344,7 @@ Ausführliche Beispiele für diese Aufgaben finden Sie in den folgenden Code Dat
   * Weitere Informationen finden Sie in der Datei " [hellowindowsdesktop. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_SimpleApp/Win32DesktopApp/HelloWindowsDesktop.cpp) " im [einfachen XAML-Insel Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp).
   * Informationen finden Sie in der [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) -Datei auf der [XAML-Insel mit benutzerdefiniertem Steuerelement Sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-* **WPF** Weitere Informationen finden Sie in den Dateien [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) und [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) im Windows Community Toolkit.  
+* **WPF:** Weitere Informationen finden Sie in den Dateien [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) und [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) im Windows Community Toolkit.  
 
 * **Windows Forms:** Weitere Informationen finden Sie in den Dateien [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) und [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) im Windows Community Toolkit.
 
@@ -358,9 +358,9 @@ Um ein benutzerdefiniertes UWP-Steuerelement zu hosten, benötigen Sie die folge
 
 * **Das benutzerdefinierte UWP-Steuer**Element. Sie benötigen den Quellcode für das benutzerdefinierte UWP-Steuerelement, das Sie hosten möchten, damit Sie es mit Ihrer APP kompilieren können. In der Regel wird das benutzerdefinierte Steuerelement in einem UWP-Klassen Bibliotheksprojekt definiert, auf das Sie in C++ derselben Projekt Mappe wie das Win32-Projekt verweisen.
 
-* **Ein UWP-App-Projekt, das ein xamlapplication-Objekt definiert**. Das C++ Win32-Projekt muss Zugriff auf eine Instanz der `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`-Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Dieser Typ fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung. Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das C++ Win32-Projekt hinzuzufügen und die Standard `App`-Klasse in diesem Projekt zu überarbeiten.
+* **Ein UWP-App-Projekt, das ein xamlapplication-Objekt definiert**. Das C++ Win32-Projekt muss Zugriff auf eine Instanz der `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Dieser Typ fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung. Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das C++ Win32-Projekt hinzuzufügen und die Standard `App` Klasse in diesem Projekt zu überarbeiten.
   > [!NOTE]
-  > Die Projekt Mappe kann nur ein Projekt enthalten, das `XamlApplication` ein-Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP `XamlApplication` verwenden dasselbe Objekt gemeinsam. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die in der XAML-Insel als Host-UWP-Steuerelemente verwendet werden.
+  > Die Projekt Mappe kann nur ein Projekt enthalten, das ein `XamlApplication` Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP verwenden dasselbe `XamlApplication` Objekt. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die in der XAML-Insel als Host-UWP-Steuerelemente verwendet werden.
 
 Führen Sie die folgenden allgemeinen Schritte aus, um C++ ein benutzerdefiniertes UWP-Steuerelement in einer Win32-APP zu
 
@@ -376,7 +376,7 @@ Führen Sie die folgenden allgemeinen Schritte aus, um C++ ein benutzerdefiniert
 
 Ein vollständiges Beispiel für eine C++ Win32-Anwendung finden Sie in den folgenden Projekten auf der [XAML-Insel mit benutzerdefiniertem Steuerelement Sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App):
 
-* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): In diesem Projekt wird ein benutzerdefiniertes UWP-XAML-Steuerelement mit dem Namen `MyUserControl` implementiert, das ein Textfeld, mehrere Schaltflächen und ein Kombinations Feld enthält.
+* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): dieses Projekt implementiert ein benutzerdefiniertes UWP-XAML-Steuerelement mit dem Namen `MyUserControl`, das ein Textfeld, mehrere Schaltflächen und ein Kombinations Feld enthält.
 * [Myapp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): Dies ist ein UWP-App-Projekt mit den oben beschriebenen Änderungen.
 * [Samplecppapp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): Dies ist das C++ Win32-App-Projekt, das das benutzerdefinierte UWP-XAML-Steuerelement in einer XAML-Insel hostet.
 
@@ -393,9 +393,9 @@ Die folgenden Abschnitte enthalten Anleitungen und Links zu Codebeispielen zum B
 
 Damit Tastatureingaben für jede XAML-Insel ordnungsgemäß behandelt werden, muss die Anwendung alle Windows-Meldungen an das UWP-XAML-Framework übergeben, damit bestimmte Nachrichten ordnungsgemäß verarbeitet werden können. Wandeln Sie das **desktopwindowxamlsource** -Objekt für jede XAML-Insel in eine **IDesktopWindowXamlSourceNative2** -com-Schnittstelle ein, um dies zu erreichen. Rufen Sie dann die **pretranslatemess Age** -Methode dieser Schnittstelle auf, und übergeben Sie die aktuelle Nachricht.
 
-  * **C++ Win32:** : Die APP kann **pretranslatemess** direkt in der Hauptnachrichten Schleife aufzurufen. Ein Beispiel finden Sie in der Datei " [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * Win32:: die APP kann **pretranslatemess** direkt in der Hauptnachrichten Schleife aufzurufen. **C++** Ein Beispiel finden Sie in der Datei " [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
 
-  * **WPF** Die APP kann **pretranslatemess** aus dem Ereignishandler für das [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) -Ereignis aufrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) im Windows Community Toolkit.
+  * **WPF:** Die APP kann **pretranslatemess** aus dem Ereignishandler für das [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) -Ereignis aufrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) im Windows Community Toolkit.
 
   * **Windows Forms:** Die APP kann **pretranslatemess** aus einer außer Kraft setzung für die [Control. PreProcessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage) -Methode abrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) im Windows Community Toolkit.
 
@@ -411,9 +411,9 @@ Die UWP-XAML-Hosting-API bietet verschiedene Typen und Member, die Sie beim Ausf
 
 Beispiele für die Vorgehensweise im Kontext einer funktionierenden Beispielanwendung finden Sie in den folgenden Code Dateien:
 
-  * **C++/Win32**: Weitere Informationen finden Sie in der Datei " [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * /Win32: Weitere Informationen finden Sie in der Datei " [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).  **C++**
 
-  * **WPF** Weitere Informationen finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) im Windows Community Toolkit.  
+  * **WPF:** Weitere Informationen finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) im Windows Community Toolkit.  
 
   * **Windows Forms:** Weitere Informationen finden Sie in der Datei [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs) im Windows Community Toolkit.
 
@@ -458,25 +458,25 @@ Fügen Sie Ihrem Projekt ein paralleles Assemblymanifest hinzu, und [legen Sie d
 
 | Problem | Auflösung |
 |-------|------------|
-| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "Desktopwindowxamlsource kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden. " oder "windowsxamlmanager kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden. " | Dieser Fehler weist darauf hin, dass Sie versuchen, die UWP-XAML-Hosting-API (insbesondere die Typen " [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) " oder " [windowsxamlmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) ") in einer UWP-APP zu verwenden. Die UWP-XAML-Hosting-API ist nur für die Verwendung in Desktop-Apps ohne UWP (z. b. WPF C++ -, Windows Forms-und Win32-Anwendungen) vorgesehen. |
+| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "desktopwindowxamlsource kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden. " oder "windowsxamlmanager kann nicht aktiviert werden. Dieser Typ kann nicht in einer UWP-App verwendet werden. " | Dieser Fehler weist darauf hin, dass Sie versuchen, die UWP-XAML-Hosting-API (insbesondere die Typen " [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) " oder " [windowsxamlmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) ") in einer UWP-APP zu verwenden. Die UWP-XAML-Hosting-API ist nur für die Verwendung in Desktop-Apps ohne UWP (z. b. WPF C++ -, Windows Forms-und Win32-Anwendungen) vorgesehen. |
 
 ### <a name="error-trying-to-use-the-windowsxamlmanager-or-desktopwindowxamlsource-types"></a>Fehler beim Versuch, die Typen "windowsxamlmanager" oder "desktopwindowxamlsource" zu verwenden.
 
 | Problem | Auflösung |
 |-------|------------|
-| Ihre APP empfängt eine Ausnahme mit der folgenden Meldung: "Windowsxamlmanager und desktopwindowxamlsource werden für Apps unterstützt, die auf Windows-Version 10.0.18226.0 und höher abzielen. Überprüfen Sie entweder das Anwendungs Manifest oder das Paket Manifest, und stellen Sie sicher, dass die maxtestedversion-Eigenschaft aktualisiert wird. " | Dieser Fehler zeigt an, dass die Anwendung versucht hat, die Typen **windowsxamlmanager** oder **desktopwindowxamlsource** in der UWP-XAML-Hosting-API zu verwenden, aber das Betriebssystem kann nicht bestimmen, ob die APP für das Ziel Windows 10, Version 1903 oder höher, entwickelt wurde. Die UWP-XAML-Hosting-API wurde erstmals als Vorschauversion in einer früheren Version von Windows 10 eingeführt, wird jedoch nur ab Windows 10, Version 1903, unterstützt.</p></p>Um dieses Problem zu beheben, erstellen Sie entweder ein msix-Paket für die APP, führen Sie es aus dem Paket aus, oder installieren Sie das nuget-Paket [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) in Ihrem Projekt. Weitere Informationen finden Sie in [diesem Abschnitt](#configure-your-project-for-app-deployment). |
+| Ihre APP empfängt eine Ausnahme mit folgender Meldung: "windowsxamlmanager und desktopwindowxamlsource werden für Apps unterstützt, die auf Windows-Version 10.0.18226.0 und höher abzielen. Überprüfen Sie entweder das Anwendungs Manifest oder das Paket Manifest, und stellen Sie sicher, dass die maxtestedversion-Eigenschaft aktualisiert wird. " | Dieser Fehler zeigt an, dass die Anwendung versucht hat, die Typen **windowsxamlmanager** oder **desktopwindowxamlsource** in der UWP-XAML-Hosting-API zu verwenden, aber das Betriebssystem kann nicht bestimmen, ob die APP für das Ziel Windows 10, Version 1903 oder höher, entwickelt wurde. Die UWP-XAML-Hosting-API wurde erstmals als Vorschauversion in einer früheren Version von Windows 10 eingeführt, wird jedoch nur ab Windows 10, Version 1903, unterstützt.</p></p>Um dieses Problem zu beheben, erstellen Sie entweder ein msix-Paket für die APP, führen Sie es aus dem Paket aus, oder installieren Sie das nuget-Paket [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) in Ihrem Projekt. Weitere Informationen finden Sie in [diesem Abschnitt](#configure-your-project-for-app-deployment). |
 
 ### <a name="error-attaching-to-a-window-on-a-different-thread"></a>Fehler beim Anfügen an ein Fenster in einem anderen Thread.
 
 | Problem | Auflösung |
 |-------|------------|
-| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "Fehler bei der attachywindow-Methode, weil das angegebene HWND in einem anderen Thread erstellt wurde". | Dieser Fehler weist darauf hin, dass die Anwendung die **idesktopwindowxamlsourcenative:: attachdewindow** -Methode aufgerufen hat und ihr das HWND eines Fensters, das in einem anderen Thread erstellt wurde, weitergereicht hat. Sie müssen diese Methode als HWND eines Fensters übergeben, das im gleichen Thread wie der Code erstellt wurde, von dem aus Sie die-Methode aufrufen. |
+| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "die attachdewindow-Methode konnte nicht ausgeführt werden, da das angegebene HWND in einem anderen Thread erstellt wurde". | Dieser Fehler weist darauf hin, dass die Anwendung die **idesktopwindowxamlsourcenative:: attachdewindow** -Methode aufgerufen hat und ihr das HWND eines Fensters, das in einem anderen Thread erstellt wurde, weitergereicht hat. Sie müssen diese Methode als HWND eines Fensters übergeben, das im gleichen Thread wie der Code erstellt wurde, von dem aus Sie die-Methode aufrufen. |
 
 ### <a name="error-attaching-to-a-window-on-a-different-top-level-window"></a>Fehler beim Anfügen an ein Fenster in einem anderen Fenster der obersten Ebene.
 
 | Problem | Auflösung |
 |-------|------------|
-| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "Die attachtewindow-Methode ist fehlgeschlagen, weil das angegebene HWND von einem anderen Fenster der obersten Ebene abweicht als das HWND, das zuvor an attachtewindow im gleichen Thread weitergegeben wurde." | Dieser Fehler zeigt an, dass die Anwendung die **idesktopwindowxamlsourcenative:: attachdewindow** -Methode aufgerufen hat und ihr das HWND eines Fensters, das von einem anderen Fenster der obersten Ebene abweicht, als ein Fenster, das Sie in einem vorherigen Aufruf dieser Methode angegeben haben, an Sie übermittelt hat. im gleichen Thread.</p></p>Nachdem die Anwendung " **attachtewindow** " für einen bestimmten Thread aufgerufen hat, können alle anderen [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) -Objekte im gleichen Thread nur an Fenster angefügt werden, bei denen es sich um nachfolgende Elemente desselben Fensters der obersten Ebene handelt, die im ersten Aufruf von weitergegeben wurden. **AttachTo Window**. Wenn alle **desktopwindowxamlsource** -Objekte für einen bestimmten Thread geschlossen sind, kann die nächste **desktopwindowxamlsource** wieder an jedes Fenster angefügt werden.</p></p>Um dieses Problem zu beheben, schließen Sie entweder alle **desktopwindowxamlsource** -Objekte, die an andere Fenster der obersten Ebene in diesem Thread gebunden sind, oder erstellen Sie einen neuen Thread für diese **desktopwindowxamlsource**. |
+| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "die attachdewindow-Methode konnte nicht ausgeführt werden, da das angegebene HWND von einem anderen Fenster der obersten Ebene abgeleitet ist als das HWND, das zuvor an attachtewindow im gleichen Thread weitergegeben wurde." | Dieser Fehler zeigt an, dass die Anwendung die **idesktopwindowxamlsourcenative:: attachdewindow** -Methode aufgerufen hat und ihr das HWND eines Fensters, das von einem anderen Fenster der obersten Ebene abweicht, als ein Fenster, das Sie in einem vorherigen Aufruf dieser Methode angegeben haben, an Sie übermittelt hat. im gleichen Thread.</p></p>Nachdem die Anwendung " **attachtewindow** " für einen bestimmten Thread aufgerufen hat, können alle anderen [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) -Objekte im gleichen Thread nur an Fenster angefügt werden, bei denen es sich um nachfolgende Elemente desselben Fensters der obersten Ebene handelt, die im ersten Aufruf von weitergegeben wurden. **AttachTo Window**. Wenn alle **desktopwindowxamlsource** -Objekte für einen bestimmten Thread geschlossen sind, kann die nächste **desktopwindowxamlsource** wieder an jedes Fenster angefügt werden.</p></p>Um dieses Problem zu beheben, schließen Sie entweder alle **desktopwindowxamlsource** -Objekte, die an andere Fenster der obersten Ebene in diesem Thread gebunden sind, oder erstellen Sie einen neuen Thread für diese **desktopwindowxamlsource**. |
 
 ## <a name="related-topics"></a>Verwandte Themen
 
