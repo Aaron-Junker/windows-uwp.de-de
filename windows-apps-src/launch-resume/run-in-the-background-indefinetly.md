@@ -6,12 +6,12 @@ keywords: Hintergrundaufgabe, erweiterte Ausführung, Ressourcen, Limits, Hinter
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dee95e02e43f3a541bd332f5150765ca76bb0955
-ms.sourcegitcommit: 234dce5fb67e435ae14eb0052d94ab01611ac5e4
+ms.openlocfilehash: 55025d0348abdf311ebf020c70ccf9029bf7ec5a
+ms.sourcegitcommit: ebd35887b00d94f1e76f7d26fa0d138ec4abe567
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72822452"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888669"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Unbegrenzte Ausführung im Hintergrund
 
@@ -27,17 +27,22 @@ Wenn Sie eine App entwickeln, die nicht für die Übermittlung an den Microsoft 
 
 Die `extendedExecutionUnconstrained`-Funktion wird als eingeschränkte Funktion im App-Manifest hinzugefügt. Weitere Informationen zu eingeschränkten Funktionen finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
+> **Hinweis:** Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
-...
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+  ...
   <Capabilities>
     <rescap:Capability Name="extendedExecutionUnconstrained"/>
   </Capabilities>
 </Package>
 ```
 
-Bei Verwendung der `extendedExecutionUnconstrained`-Funktion, werden [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) und [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) verwendet anstatt von [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) und [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). Das gleiche Muster zum Erstellen der Sitzung, Einrichten von Mitgliedern und zum Anfordern der asynchronen Erweiterung ist trotzdem gültig: 
+Bei Verwendung der `extendedExecutionUnconstrained`-Funktion, werden [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) und [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) verwendet anstatt von [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) und [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason). Das gleiche Muster zum Erstellen der Sitzung, Einrichten von Mitgliedern und zum Anfordern der asynchronen Erweiterung ist trotzdem gültig: 
 
 ```cs
 var newSession = new ExtendedExecutionForegroundSession();
@@ -66,9 +71,15 @@ Das Registrieren eines **gesperrten** Ereignisses ermöglicht Ihrer App alle erf
 
 In der universellen Windows-Plattform werden Hintergrundaufgaben als Prozesse bezeichnet, die im Hintergrund ohne jede Benutzeroberfläche ausgeführt werden. Hintergrundaufgaben werden in der Regel maximal 25 Sekunden ausgeführt, bevor sie abgebrochen werden. Einige zeitintensivere Aufgaben enthalten ebenfalls eine Überprüfung, um sicherzustellen, dass die Hintergrundaufgabe sich nicht im Leerlauf oder mit Speicher befindet. Im Windows Creators Update (Version 1703), wurde die eingeschränkte Funktion [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) eingeführt, um diese Einschränkungen zu entfernen. Die **extendedBackgroundTaskTime**-Funktion wird als eingeschränkte Funktion im App-Manifest hinzugefügt:
 
+> **Hinweis:** Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
+<Package
+    ... 
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+...
   <Capabilities>
     <rescap:Capability Name="extendedBackgroundTaskTime"/>
   </Capabilities>

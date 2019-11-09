@@ -1,23 +1,26 @@
 ---
-Description: Verwenden Sie die UTF-8-Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen * nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
+Description: Verwenden Sie die UTF-8-Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen \*nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
 title: Verwenden der Windows UTF-8-Codepage
 template: detail.hbs
 ms.date: 06/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: be3aade0289911f878d960fb62bde49b8ef840a8
-ms.sourcegitcommit: 3a06cf3f8bd00e5e6eac3b38ee7e3c7cf4bc5197
+ms.openlocfilehash: 4b4050dfea1589fbe79db08061bcc56e392173f1
+ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72888746"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73847597"
 ---
 # <a name="use-the-utf-8-code-page"></a>UTF-8-Codepage verwenden
 
-Verwenden Sie die [UTF-8](http://www.utf-8.com/) -Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen * nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
+Verwenden Sie die [UTF-8](http://www.utf-8.com/) -Zeichencodierung für eine optimale Kompatibilität zwischen Web-Apps und anderen \*nix-basierten Plattformen (UNIX, Linux und Varianten), minimieren Sie Lokalisierungsfehler, und reduzieren Sie den Testaufwand.
 
-UTF-8 ist die universelle Codepage für die Internationalisierung und unterstützt alle Unicode-Code Punkte mithilfe von 1-6 Byte-Codierung mit variabler Breite. Sie wird im Web als Standard verwendet und ist die Standardeinstellung für * nix-basierte Plattformen.
+UTF-8 ist die universelle Codepage für die Internationalisierung und kann den gesamten Unicode-Zeichensatz codieren. Sie wird im Web als Standard verwendet und ist die Standardeinstellung für * nix-basierte Plattformen.
+
+> [!NOTE]
+> Ein codiertes Zeichen dauert zwischen 1 und 4 Bytes. UTF-8-Codierung unterstützt längere Byte Sequenzen (bis zu 6 Bytes), aber der größte Codepunkt von Unicode 6,0 (U + 10FFFF) benötigt nur 4 Bytes.
 
 ## <a name="-a-vs--w-apis"></a>-A-und-W-APIs
   
@@ -80,7 +83,8 @@ Da Windows System eigen in UTF-16 (`WCHAR`) betrieben wird, müssen Sie möglich
 Mit " [MultiByteToWideChar](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar) " und " [WideCharToMultiByte](https://docs.microsoft.com/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte) " können Sie zwischen UTF-8 und UTF-16 (`WCHAR`) (und anderen Codepages) konvertieren. Dies ist besonders nützlich, wenn eine Legacy-Win32-API nur `WCHAR`versteht. Diese Funktionen ermöglichen es Ihnen, UTF-8-Eingaben in `WCHAR` zu konvertieren, um Sie an eine-W-API zu übergeben, und dann alle Ergebnisse bei Bedarf zurück zu konvertieren.
 Wenn Sie diese Funktionen verwenden, wenn `CodePage` auf `CP_UTF8`festgelegt ist, verwenden Sie entweder `dwFlags` von `0` oder `MB_ERR_INVALID_CHARS`, andernfalls tritt ein `ERROR_INVALID_FLAGS` auf.
 
-Hinweis: `CP_ACP` entspricht nur `CP_UTF8`, wenn Sie unter Windows, Version 1903 (Mai 2019 Update) oder höher ausgeführt wird und die oben beschriebene activecodepage-Eigenschaft auf UTF-8 festgelegt ist. Andernfalls wird die ältere System Codepage berücksichtigt. Es wird empfohlen, `CP_UTF8` explizit zu verwenden.
+> [!NOTE]
+> `CP_ACP` entspricht nur `CP_UTF8`, wenn Sie unter Windows, Version 1903 (Mai 2019 Update) oder höher ausgeführt wird und die oben beschriebene activecodepage-Eigenschaft auf UTF-8 festgelegt ist. Andernfalls wird die ältere System Codepage berücksichtigt. Es wird empfohlen, `CP_UTF8` explizit zu verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
