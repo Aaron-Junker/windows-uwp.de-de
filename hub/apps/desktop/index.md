@@ -1,427 +1,110 @@
 ---
-layout: LandingPage
 Description: Es wird beschrieben, wie Sie in das Erstellen von Desktop-Apps für Windows-PCs einsteigen, z. B. das Auswählen der richtigen App-Plattform für neue Apps und das Modernisieren von vorhandenen Apps für Windows 10.
 title: Erstellen von Desktop-Apps für Windows-PCs
-ms.topic: landing-page
-ms.date: 04/18/2019
+ms.topic: article
+ms.date: 11/04/2019
 keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: e940e744f72710a5960f888dda51d7f195841a60
-ms.sourcegitcommit: a4710e9e02e365f039a270435daa941dfec8d783
+ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
+ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749519"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74056858"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
-<ul class="cardsK panelContent">
-    <li>
-      <a href="choose-your-platform.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/biztalk-developer-documentation-1.svg?branch=master" alt="Platforms illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Auswählen Ihrer Plattform</h3>
-                        <p></p>Beginnen Sie mit dem Erstellen einer neuen Desktop-App, indem Sie Ihre App-Plattform auswählen: UWP, WPF, Windows Forms oder Win32.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/windows/apps/desktop/modernize">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/teams-fast-track.svg" alt="Modernize illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Modernisieren von Desktop-Apps</h3>
-                        <p>Erweitern Sie Ihre vorhandenen WPF-, Windows Forms- und Win32-Apps mit den neuesten Windows-Features.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="../fluent-design-system.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/sql-database-develop.svg" alt="Design illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                    <h3>Fluent Design-System</h3>
-                    <p>Erfahren Sie mehr zum Entwerfen und Codieren der Benutzeroberfläche für Windows-Apps mit dem Fluent Design-System.</p>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-</ul>
-<ul class="cardsY panelContent featuredContent">
-       <li>
-            <a href="https://developer.microsoft.com/windows/downloads">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_tools.svg" src="/media/common/i_tools.svg" alt="Tools icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Tools herunterladen</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="https://developer.microsoft.com/windows/samples">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-samples.svg" src="/media/common/i_code-samples.svg" alt="Samples icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Beispiele</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-       <li>
-            <a href="/windows/desktop/apiindex/api-index-portal">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_api-reference.svg" src="/media/common/i_api-reference.svg" alt="API index icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>API-Index</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-</ul>
-<hr />
-<h2>Plattformen und Features</h2>
-<ul class="cardsK panelContent">
-    <li>
-      <a href="/windows/uwp">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/dotnet/images/hub/net-docs-desktop-1.svg" alt="UWP illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Universelle Windows-Plattform (UWP)</h3>
-                        <p></p>Die führende Plattform für Windows 10-Anwendungen und Spiele.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/windows/desktop/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/hubs/windows/win_developer-desktop.svg" alt="Win32 illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Win32</h3>
-                        <p></p>Die ursprüngliche Plattform für systemeigene C/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/dotnet/framework/wpf/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/dotnet/images/hub/net-docs-desktop-2.svg" alt="WPF illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                    <h3>WPF</h3>
-                    <p>Die bekannte Plattform für verwaltete Windows-Anwendungen mit einem XAML-UI-Modell und Zugriffsmöglichkeit auf das gesamte .NET Framework.</p>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/dotnet/framework/winforms/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/dotnet/images/hub/net-docs-desktop-3.svg" alt="Windows Forms illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                    <h3>Windows Forms</h3>
-                    <p>Entwickeln Sie in kurzer Zeit Branchenanwendungen, indem Sie ein einfaches UI-Modell und Vollzugriff auf .NET Framework nutzen. </p>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/dotnet/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/system-center-virtual-machine.svg" alt=".NET illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                    <h3>.NET</h3>
-                    <p>Die leistungsstarke und umfassende Entwicklungsplattform, über die die Infrastruktur zur Ausführung von WPF- und Windows Forms-Apps bereitgestellt wird.</p>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="../features-and-technologies.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/dynamics-training.svg" alt="Features illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                    <h3>Features und Technologien</h3>
-                    <p>Erfahren Sie, wie Windows-Features auf verschiedenen App-Plattformen unterstützt werden, und beginnen Sie mit der Nutzung dieser Features in Ihrem Code.</p>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-</ul>
-<ul class="cardsY panelContent featuredContent">
-       <li>
-            <a href="/windows/desktop/appxpkg/windows-desktop-application-program">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-performance.svg" src="/media/common/i_code-performance.svg" alt="Performance icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Programm für Windows-Desktopanwendungen</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="https://developer.microsoft.com/windows/desktop/app-compatibility">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_code-quality.svg" src="/media/common/i_code-quality.svg" alt="App compatibility icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Kompatibel bleiben mit Windows 10</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-       <li>
-            <a href="https://developer.microsoft.com/windows/enterprise">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_form.svg" src="/media/common/i_form.svg" alt="Enterprise icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Unternehmensanwendungen</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-</ul>
-<hr/>
-</div>
-<ul class="panelContent cardsW">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Verwandte Dokumentation</h3>
-                        <p></p>
-                        <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX-Verpackung und -Bereitstellung</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet/">.NET</a></p>
-                        <p><a href="https://docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
-                        <p><a href="https://docs.microsoft.com/azure/">Azure</a></p>
-                        <p><a href="https://docs.microsoft.com/xamarin">Xamarin</a></p>
-                        <p><a href="https://docs.microsoft.com/microsoft-edge/progressive-web-apps">Progressive Web-Apps</a></p>
-                        <p><a href="https://docs.microsoft.com/previous-versions/windows/">Dokumentarchiv für Windows 8.x und früher</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Andere Technologien und Tools</h3>
-                        <p></p>
-                        <p><a href="https://docs.microsoft.com/windows/iot-core/">Windows IoT</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/mixed-reality/">Windows Mixed Reality</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/ai/">Windows ML</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/project-rome/">Project Rome</a></p>
-                        <p><a href="https://adaptivecards.io/">Adaptive Karten</a></p>
-                        <p><a href="https://developer.microsoft.com/graph">Microsoft Graph</a></p>
-                        <p><a href="https://docs.microsoft.com/virtualization/#pivot=main&panel=containers">Windows-Container</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Community und Support</h3>
-                        <p></p>
-                        <p><a href="https://twitter.com/WindowsDocs">@WindowsDocs auf Twitter</a></p>
-                        <p><a href="https://aka.ms/OneDevMinute">OneDevMinute auf YouTube</a></p>
-                        <p><a href="https://developer.microsoft.com/windows/support">Windows-Support für Entwickler</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </li>
-</ul>
+Dieser Artikel enthält Informationen, die Sie benötigen, um mit dem Entwickeln von Desktop-Apps für Windows zu beginnen oder vorhandene Desktop-Apps zu aktualisieren, um die neuesten Funktionen von Windows 10 zu nutzen.
 
-<!-- 
+## <a name="platforms-for-desktop-apps"></a>Plattformen für Desktop-Apps
 
-<ul class="panelContent cardsW">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Community and support</h3>
-                        <p><a href="https://twitter.com/WindowsDocs">@WindowsDocs on Twitter</a></p>
-                        <p><a href="https://aka.ms/OneDevMinute">OneDevMinute on YouTube</a></p>
-                        <p><a href="https://developer.microsoft.com/windows/support">Windows developer support</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Related docs for desktop app development</h3>
-                        <p><a href="https://docs.microsoft.com/previous-versions/windows/">Docs archive for Windows 8.x and earlier</a></p>
-                        <p><a href="/windows/msix/desktop/desktop-to-uwp-root">MSIX packaging and deployment</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/uwp">Universal Windows Platform (UWP)</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/desktop/apiindex/windows-api-list">Windows API (Win32)</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet/">.NET</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet/framework/wpf/">WPF</a></p>
-                        <p><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows Forms</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/ai/">Windows ML</a></p>
-                        <p><a href="https://docs.microsoft.com/xamarin/">Xamarin</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Other technologies and tools</h3>
-                        <p><a href="https://adaptivecards.io/">Adaptive Cards</a></p>
-                        <p><a href="https://docs.microsoft.com/azure/">Azure</a></p>
-                        <p><a href="https://developer.microsoft.com/cortana">Cortana</a></p>
-                        <p><a href="https://developer.microsoft.com/graph">Microsoft Graph</a></p>
-                        <p><a href="https://docs.microsoft.com/microsoft-edge/progressive-web-apps">Progressive Web Apps</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/project-rome/">Project Rome</a></p>
-                        <p><a href="https://docs.microsoft.com/virtualization/#pivot=main&panel=containers">Windows Containers</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/iot-core/">Windows IoT</a></p>
-                        <p><a href="https://docs.microsoft.com/windows/mixed-reality/">Windows Mixed Reality</a></p>
-                        <p><a href="https://docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+Es gibt vier Hauptplattformen zum Entwickeln von Desktop-Apps für Windows-PCs. Jede Plattform bietet ein App-Modell, das den Lebenszyklus der App definiert, einen vollständigen Satz von UI-Steuerelementen und Zugriff auf einen umfassenden Satz verwalteter oder nativer APIs für die Verwendung von Windows-Features.
 
--->
+In der folgenden Tabelle werden die Plattformen vorgestellt. Einen ausführlichen Vergleich dieser Plattformen sowie zusätzliche Ressourcen für jede Plattform finden Sie unter [Auswählen Ihrer App-Plattform](choose-your-platform.md).
+
+<br/>
+
+<table>
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plattform</th>
+<th>Beschreibung</th>
+<th>Tools und Ressourcen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://docs.microsoft.com/windows/uwp/">Universelle Windows-Plattform (UWP)</a></td>
+<td><p>Die führende Plattform für Windows 10-Apps und Spiele. Sie können UWP-Apps erstellen, die ausschließlich UWP-Steuerelemente und -APIs verwenden, oder Sie verwenden UWP-Steuerelemente und -APIs in Desktop-Apps, die mit einer der anderen Plattformen erstellt wurden.</p></td>
+<td><a href="/windows/uwp/get-started/">Erste Schritte</a><br/><a href="/uwp/">API-Referenz</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Beispiele</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
+<td><p>Die Plattform der Wahl für native C/C++-Windows-Apps, die direkten Zugriff auf Windows und Hardware erfordern.</p></td>
+<td><a href="/windows/win32/desktop-programming/">Erste Schritte</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API-Referenz</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Beispiele</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://docs.microsoft.com/dotnet/framework/wpf/">WPF</a></td>
+<td><p>Die festgelegte. NET-basierte Plattform für grafisch aufbereitet verwaltete Windows-Apps mit einem XAML-Benutzeroberflächenmodell. Diese Apps können als Ziel <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> oder das vollständige .NET Framework haben.</p></td>
+<td><a href="/dotnet/framework/wpf/getting-started/">Erste Schritte</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API-Referenz (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">Beispiele</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows Forms</a></td>
+<td><p>Eine .NET-basierte Plattform, die für verwaltete branchenspezifische Apps mit einem vereinfachten Benutzeroberflächenmodell entwickelt wurde. Diese Apps können als Ziel <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> oder das vollständige .NET Framework haben.</p></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">Erste Schritte</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API-Referenz (.NET)</a><br/><a href="https://code.msdn.microsoft.com/windowsdesktop/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=Windows%20Forms">Beispiele</a></td>
+</tr>
+</tbody>
+</table>
+
+## <a name="update-existing-desktop-apps-for-windows-10"></a>Aktualisieren vorhandener Desktop-Apps für Windows 10
+
+Wenn Sie über eine vorhandene WPF-, Windows Forms- oder native Win32-Desktop-App verfügen, bieten Windows 10 und die Universelle Windows-Plattform (UWP) viele Features, mit denen Sie in Ihren Apps eine moderne Benutzerumgebung bereitstellen können. Die meisten dieser Features sind als modulare Komponenten verfügbar, die Sie je nach Bedarf in Ihre Apps übernehmen können, ohne dass Sie Ihre App für eine andere Plattform umschreiben müssen.
+
+Hier sind einige der verfügbaren Features zum erweitern vorhandener Desktop-Apps aufgeführt:
+
+* Verwenden Sie [MSIX](/windows/msix/), um Ihre Desktop-Apps zu verpacken und bereitzustellen. MSIX ist ein modernes Windows-App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps bereitgestellt wird. MSIX vereint die besten Aspekte der MSI-, APPX-, App-V- und ClickOnce-Installationstechnologie und ist auf Sicherheit, Schutz und Zuverlässigkeit ausgelegt.
+* Integrieren Sie Ihre Desktop-App mit [Paketerweiterungen](/windows/apps/desktop/modernize/desktop-to-uwp-extensions) in Windows 10-Umgebungen. Zeigen Sie z.B. auf Startkacheln für die App, machen Sie Ihre App zu einem Freigabeziel, oder senden Sie Popupbenachrichtigungen von Ihrer App.
+* Verwenden Sie [XAML-Inseln](/windows/apps/desktop/modernize/xaml-islands), um UWP-XAML-Steuerelemente in Ihrer Desktop-App zu hosten. Viele der neuesten Windows 10-Benutzeroberflächenfeatures sind nur für UWP-XAML-Steuerelemente verfügbar.
+
+Weitere Informationen finden Sie in folgenden Artikeln.
+
+<br/>
+
+| Artikel | Beschreibung |
+|---------|-------------|
+| [Modernisieren von Desktop-Apps](/windows/apps/desktop/modernize) | Beschreibt die neuesten Windows 10- und UWP-Entwicklungsfeatures, die Sie in beliebigen Desktop-Apps wie WPF-, Windows Forms- und C++-Win32-Apps verwenden können. |
+| [Tutorial: Modernisieren einer WPF-App](/windows/apps/desktop/modernize/modernize-wpf-tutorial) | Befolgen Sie die Schritt-für-Schritt-Anweisungen, um eine vorhandene branchenspezifische WPF-Beispiel-App zu modernisieren, indem Sie der App UWP-Freihand- und Kalendersteuerelemente hinzufügen und sie in einem MSIX-Paket verpacken.  |
+
+## <a name="create-new-desktop-apps"></a>Erstellen neuer Desktop-Apps
+
+Wenn Sie eine neue Desktop-App für Windows erstellen, finden Sie hier einige Ressourcen, die Ihnen beim Einstieg helfen.
+
+<br/>
+
+| Artikel | Beschreibung |
+|---------|-------------|
+| [Auswählen Ihrer App-Plattform](choose-your-platform.md) | Bietet einen ausführlichen Vergleich der wichtigsten Desktop-App-Plattformen und unterstützt Sie bei der Auswahl der richtigen Plattform für Ihre Bedürfnisse. Außerdem finden Sie in diesem Artikel nützliche Links zur Dokumentation für jede Plattform. |
+| [Modernisieren von Desktop-Apps](/windows/apps/desktop/modernize) | Beschreibt die neuesten Windows 10- und UWP-Entwicklungsfeatures, die Sie in beliebigen Desktop-Apps wie WPF-, Windows Forms- und C++-Win32-Apps verwenden können. |
+| [Features und Technologien](/windows/apps/features-and-technologies) | Bietet eine Übersicht über die Windows-Features, auf die über jede der Hauptplattformen für Desktop-Apps zugegriffen werden kann, sowie Links zur zugehörigen Dokumentation. |
+
+## <a name="related-documentation-and-technologies"></a>Verwandte Dokumentation und Technologien
+
+| Ressource | Beschreibung |
+|---------|-------------|
+| [.NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0) | Erfahren Sie mehr über die neuesten Features von .NET Core 3.0, einschließlich Erweiterungen für WPF- und Windows Forms-Apps. |
+| [Desktophandbuch für WPF und .NET Core 3.0](https://docs.microsoft.com/dotnet/desktop-wpf/overview/index) | Entwickeln Sie WPF-Apps mit .NET Core 3.0 als Ziel, anstelle des vollständigen .NET Frameworks.  |
+| [Azure](https://docs.microsoft.com/azure/) | Erweitern Sie die Reichweite Ihrer Apps mit Azure Cloud Services. |
+| [Visual Studio](https://docs.microsoft.com/visualstudio/) | Erfahren Sie, wie Sie Visual Studio zum Entwickeln von Apps und Diensten verwenden. |
+| [MSIX](https://docs.microsoft.com/windows/msix/) | Sie können Windows-Apps in einem modernen und universellen Paketformat verpacken und bereitstellen. |
+| [Windows KI](https://docs.microsoft.com/windows/ai/) | Verwenden Sie Windows-KI, um intelligente Lösungen für komplexe Probleme in ihren Apps zu erstellen. |
+| [Windows-Container](https://docs.microsoft.com/virtualization/windowscontainers/) | Verpacken Sie Ihre Anwendungen mit ihren Abhängigkeiten in schnellen, vollständig isolierten Windows-Umgebungen. |
+| [Progressive Web-Apps](https://docs.microsoft.com/microsoft-edge/progressive-web-apps) | Konvertieren Sie Ihre Web-Apps in Progressive Web-Apps, die als UWP-Apps unter Windows 10 verteilt und ausgeführt werden können. |
+| [Xamarin](https://docs.microsoft.com/xamarin/) | Erstellen Sie plattformübergreifende Apps für Windows, Android, iOS und macOS mithilfe von .NET-Code und plattformspezifischen Benutzeroberflächen. |
+| [Dokumentarchiv für Windows 8.x und früher](https://docs.microsoft.com/previous-versions/windows/) | Hier finden Sie die archivierte Dokumentation zur Entwicklung von Apps für Windows 8.x und frühere Versionen. |
