@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e1167a57da6a3f54cabcc946cfbf7a592f301d2c
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
+ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163750"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74086865"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
@@ -38,11 +38,11 @@ Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) verfügt außerdem 
 
 > **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 
-> <div id="main">
-> <strong>Windows 10 Fall Creators Update – Abweichende Funktionsweise</strong>
-> </div>
-> Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
-> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
+> <div id="main">  
+> <strong>Windows 10 Fall Creators Update – Abweichende Funktionsweise</strong>  
+> </div>  
+> Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).  
+> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.  
 
 ## <a name="examples"></a>Beispiele
 
