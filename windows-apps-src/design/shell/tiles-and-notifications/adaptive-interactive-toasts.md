@@ -8,28 +8,28 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Popupbenachrichtigungen, interaktive Popups, adaptive Popups, Popup-Inhalt, Nutzlast des Popups
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bef6874b7855a321c4e5a9153faa96d432d2dea
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
+ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320931"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74125249"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
 Mit adaptiven und interaktiven Popupbenachrichtigungen können Sie flexible Benachrichtigungen mit Text, Bildern und Schaltflächen/Eingaben erstellen.
 
-> **Wichtige APIs:** [NuGet-Paket für UWP-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **Wichtige APIs**: [UWP Community Toolkit Notifications-NuGet-Paket](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Die älteren Vorlagen von Windows 8.1 und Windows Phone 8.1 finden Sie unter den [ältere popupvorlagenkatalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
+> Die Legacy Vorlagen aus Windows 8.1 und Windows Phone 8,1 finden Sie im Katalog mit der Legacy-Popup [Vorlage](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## <a name="getting-started"></a>Erste Schritte
 
-**Installieren Sie Benachrichtigungen-Bibliothek.** Wenn Sie C# anstelle von XML verwenden möchten, um Benachrichtigungen zu generieren, installieren Sie das NuGet-Paket mit dem Namen [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). (Suchen Sie nach „Benachrichtigungen UWP“.) Die in diesem Artikel bereitgestellten C#-Beispiele verwenden Version 1.0.0 des NuGet-Pakets.
+**Installieren Sie die Benachrichtigungs Bibliothek.** Wenn Sie C# anstelle von XML verwenden möchten, um Benachrichtigungen zu generieren, installieren Sie das NuGet-Paket mit dem Namen [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). (Suchen Sie nach „Benachrichtigungen UWP“.) Die in diesem Artikel bereitgestellten C#-Beispiele verwenden Version 1.0.0 des NuGet-Pakets.
 
-**Installieren Sie Benachrichtigungen Schnellansicht.** Diese kostenlose UWP-App hilft Ihnen, interaktive Popupbenachrichtigungen zu entwerfen, indem sie während der Bearbeitung des Popups sofort eine Vorschau des Popups bereitstellen, ähnlich dem XAML-Editor/der Entwurfsansicht von Visual Studio. Weitere Informationen finden Sie unter [Notifications Visualizer](notifications-visualizer.md) oder [Notifications Visualizer aus dem Store herunterladen](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+**Installieren Sie die Benachrichtigungs Schnellansicht.** Diese kostenlose UWP-App hilft Ihnen, interaktive Popupbenachrichtigungen zu entwerfen, indem sie während der Bearbeitung des Popups sofort eine Vorschau des Popups bereitstellen, ähnlich dem XAML-Editor/der Entwurfsansicht von Visual Studio. Weitere Informationen finden Sie unter [Notifications Visualizer](notifications-visualizer.md) oder [Notifications Visualizer aus dem Store herunterladen](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
 
 ## <a name="sending-a-toast-notification"></a>Senden einer Popupbenachrichtigung
@@ -42,10 +42,10 @@ Weitere Informationen zum Senden einer Benachrichtigung finden Sie unter [Senden
 Popupbenachrichtigungen sind eine Kombination aus einigen Dateneigenschaften wie Tag/Group (mit denen Sie die Benachrichtigung identifizieren können) und dem *Popupinhalt*.
 
 Die Kernkomponenten des Popupinhalts sind...
-* **Starten Sie**: Hiermit wird definiert, welche Argumente werden zurück an Ihre app übergeben werden, klickt der Benutzer Ihre Toast, da Sie deep-Link in den richtigen Inhalt, den der Toast angezeigt. Weitere Informationen hierzu finden Sie unter [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md).
-* **visual**: Der visuelle Teil den Toast, enthält die generische Bindung dar, einschließlich Text und Bilder.
-* **actions**: Der interaktive Teil den Toast, einschließlich der Eingaben und Aktionen.
-* **audio**: Steuerelemente werden das Audio abgespielt, wenn es sich bei der Toast, die dem Benutzer angezeigt wird.
+* **launch**: Hiermit wird definiert, welche Argumente wieder an Ihre App übergeben werden, wenn der Benutzer auf Ihr Popup klickt, sodass Sie einen Deep-Link zum richtigen Inhalt bereitstellen können, der im Popup angezeigt wurde. Weitere Informationen hierzu finden Sie unter [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md).
+* **visual**: der visuelle Teil des Popups, einschließlich der generischen Bindung, die Text und Bilder enthält
+* **actions**: der interaktive Teil des Popups, einschließlich Eingaben und Aktionen
+* **audio**: steuert die Tonwiedergabe, während dem Benutzer das Popup angezeigt wird
 
 Der Popupinhalt ist in XML-Rohdaten definiert, aber Sie können unsere [NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um ein C# (oder C++)-Objektmodell für die Erstellung des Popupinhalts zu erhalten. In diesem Artikel werden alle Elemente des Popupinhalts dokumentiert.
 
@@ -85,7 +85,7 @@ ToastContent content = new ToastContent()
 
 Hier sehen Sie eine visuelle Darstellung des Inhalts des Popups:
 
-![Struktur der Popupbenachrichtigung](images/adaptivetoasts-structure.jpg)
+![Aufbau einer Popupbenachrichtigung](images/adaptivetoasts-structure.jpg)
 
 
 ## <a name="visual"></a>Visuelles Element
@@ -173,7 +173,7 @@ new ToastBindingGeneric()
 
 ## <a name="hero-image"></a>Favoritenbild
 
-**Im Anniversary Update**: Popups können anzeigen, eine Hero-Bild, d.h. eine empfohlene [ **ToastGenericHeroImage** ](toast-schema.md#toastgenericheroimage) angezeigte an gut sichtbarer Stelle innerhalb der popupbanner und während Info-Center. Bildabmessungen sind 364 x 180 Pixel bei einer Skalierung von 100 %.
+**Neu im Anniversary Update**: Popups können ein Favoritenbild anzeigen. Dabei handelt es sich um ein ausgewähltes [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage), das an hervorgehobener Stelle innerhalb des Popup-Banners und im Info-Center angezeigt wird. Bildabmessungen sind 364 x 180 Pixel bei einer Skalierung von 100 %.
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
@@ -245,7 +245,7 @@ Wenn ein Bild die Dateigröße überschreitet oder nicht herunterladbar ist oder
 
 ## <a name="attribution-text"></a>Zuschreibungstext
 
-**Im Anniversary Update**: Wenn Sie die Quelle Ihrer Inhalte verweisen müssen, können Sie Attribution Text. Dieser Text wird zusammen mit der Identität Ihrer App oder dem Zeitstempel der Benachrichtigung immer am unteren Rand der Benachrichtigung angezeigt.
+**Neu im Anniversary Update**: Wenn Sie die Quelle des Inhalts angeben müssen, können Sie Zuschreibungstext verwenden. Dieser Text wird zusammen mit der Identität Ihrer App oder dem Zeitstempel der Benachrichtigung immer am unteren Rand der Benachrichtigung angezeigt.
 
 Für ältere Versionen von Windows, die Zuschreibungstext nicht unterstützen, wird der Text einfach als weiteres Textelement angezeigt (sofern Sie nicht bereits die maximalen drei Textelemente verwenden).
 
@@ -273,7 +273,7 @@ new ToastBindingGeneric()
 
 ## <a name="custom-timestamp"></a>Benutzerdefinierter Zeitstempel
 
-**Creators Update neues**: Sie können jetzt den Zeitstempel vom System bereitgestellten mit Ihren eigenen Zeitstempel überschreiben, die genau darstellt, wenn der Inhalt der Nachricht/Informationen/generiert wurde. Dieser Zeitstempel wird im Info-Center angezeigt.
+**Neu im Creators Update**: Sie können jetzt den vom System bereitgestellten Zeitstempel mit Ihrem eigenen Zeitstempel überschreiben, der genau angibt, wann die Nachricht/die Informationen/der Inhalt erstellt wurden. Dieser Zeitstempel wird im Info-Center angezeigt.
 
 <img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
 
@@ -296,7 +296,7 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="progress-bar"></a>Statusleiste
 
-**Creators Update neues**: Sie können eine Statusanzeige in Ihrer Toast-Benachrichtigung der Benutzer über den Status der Vorgänge, z. B. Downloads und vieles mehr zu bereitstellen.
+**Neues in Creators Update**: Sie können eine Statusanzeige für ihre Popup Benachrichtigung bereitstellen, um den Benutzer über den Fortschritt von Vorgängen, z. b. Downloads, zu informieren.
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
@@ -305,7 +305,7 @@ Weitere Informationen zur Verwendung einer Statusanzeige finden Sie unter [Popup
 
 ## <a name="headers"></a>Header
 
-**Creators Update neues**: Sie können Benachrichtigungen unter Header im Info-Centers gruppieren. Beispielsweise können Sie einen Gruppenchat unter einem Header zusammenfassen, oder einer Gruppenbenachrichtigungen unter einem Header zusammenfassen oder mehr.
+**Neu im Creators Update**: Sie können Benachrichtigungen unter dem Header im Info-Center gruppieren. Beispielsweise können Sie einen Gruppenchat unter einem Header zusammenfassen, oder einer Gruppenbenachrichtigungen unter einem Header zusammenfassen oder mehr.
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
@@ -314,7 +314,7 @@ Weitere Informationen zum Verwenden von Headern finden Sie unter [Toast headers]
 
 ## <a name="adaptive-content"></a>Adaptiver Inhalt
 
-**Im Anniversary Update**: Zusätzlich zu den oben angegebenen Inhalt können Sie auch zusätzlichen adaptiven Inhalte anzeigen, der angezeigt wird, wenn der Toast erweitert wird.
+**Neu im Anniversary Update**: Zusätzlich zu dem oben angegebenen Inhalt können Sie auch zusätzlichen adaptiven Inhalt anzeigen, der sichtbar ist, wenn das Popup erweitert wird.
 
 Dieser zusätzliche Inhalt wird mit Adaptive angegeben. Mehr zu diesem Thema erfahren Sie in der [Dokumentation zu adaptiven Kacheln](create-adaptive-tiles.md).
 
@@ -405,8 +405,8 @@ Schaltflächen können die folgenden verschiedenen Aktionen ausführen...
 
 -   Aktivieren der App im Vordergrund mit einem Argument, das zum Navigieren zu einer bestimmten Seite bzw. einem bestimmten Kontext verwendet werden kann
 -   Aktivieren der Hintergrundaufgabe der App für eine schnelle Antwort oder ein ähnliches Szenario
--   Aktivieren einer anderen App per Protokollstart.
--   Durchführen einer Systemaktion, z. B. erneute Erinnerung oder Schließen der Benachrichtigung
+-   Aktivieren einer anderen App per Protokollstart
+-   Ausführen einer System Aktion, z. b. das Zurückstellen oder verwerfen der Benachrichtigung.
 
 > [!NOTE]
 > Sie können nur bis zu 5 Schaltflächen haben (einschließlich Elementen des Kontextmenüs, die später erläutert werden).
@@ -488,7 +488,7 @@ new ToastButton("Dismiss", "dismiss")
 
 ### <a name="buttons-with-pending-update-activation"></a>Schaltflächen mit ausstehenden Updates in Aktion
 
-**Neues in Fall Creators Update**: Für Schaltflächen die Hintergrund-Aktivierung, können Sie eine nach Aktivierung Verhalten **"pendingupdate"** zum Erstellen von Aktivitäten, die mit mehreren Schritten in Ihrer Popupbenachrichtigungen. Wenn der Benutzer die Schaltfläche anklickt, wird die Hintergrundaufgabe aktiviert und das Popup wird in den Zustand "ausstehendes Update" versetzt, ein Zustand, in dem es auf dem Bildschirm bleibt, bis die Hintergrundaufgabe das Popup durch eine neue Popupbenachrichtigung ersetzt wird.
+**Neu im Fall Creators Update**: Bei Schaltflächen für die Hintergrundaktivierung können Sie nach dem Aktivierungsverhalten **PendingUpdate** mehrere Interaktionsschritte in Popupbenachrichtigungen verwenden. Wenn der Benutzer die Schaltfläche anklickt, wird die Hintergrundaufgabe aktiviert und das Popup wird in den Zustand "ausstehendes Update" versetzt, ein Zustand, in dem es auf dem Bildschirm bleibt, bis die Hintergrundaufgabe das Popup durch eine neue Popupbenachrichtigung ersetzt wird.
 
 Informationen zur Implementierung finden Sie unter [ausstehende Updates für Popups](toast-pending-update.md).
 
@@ -497,12 +497,12 @@ Informationen zur Implementierung finden Sie unter [ausstehende Updates für Pop
 
 ### <a name="context-menu-actions"></a>Kontextmenüaktionen
 
-**Im Anniversary Update**: Sie können zusätzliche Kontextmenü verfügbaren Aktionen, die die vorhandenen Kontextmenü hinzufügen, die angezeigt wird, klickt der Benutzer rechten Ihrer Toast aus im Info-Center. Beachten Sie, dass dieses Menü nur angezeigt wird, wenn der Benutzer mit der rechten Maustaste auf das Info-Center klickt. Es wird nicht angezeigt, wenn der Benutzer mit der rechten Maustaste auf ein Popup-Banner klickt.
+**Neu im Anniversary Update**: Sie können dem existierenden Kontextmenü zusätzliche Kontextmenüaktionen hinzufügen, die angezeigt werden, wenn der Benutzer mit der rechten Maustaste auf das Popup im Info-Center klickt. Beachten Sie, dass dieses Menü nur angezeigt wird, wenn der Benutzer mit der rechten Maustaste auf das Info-Center klickt. Es wird nicht angezeigt, wenn der Benutzer mit der rechten Maustaste auf ein Popup-Banner klickt.
 
 > [!NOTE]
 > Bei älteren Geräten werden diese zusätzlichen Kontextmenüaktionen einfach als normale Schaltflächen im Popup angezeigt.
 
-Die zusätzlichen Kontextmenüaktionen, die Sie hinzufügen (wie. "Pfad ändern"), werden über die zwei standardmäßigen Systemeinträge angezeigt.
+Die zusätzlichen Kontextmenü Aktionen, die Sie hinzufügen (z. b. "Änderungs Speicherort"), werden oberhalb der beiden Standardsystem Einträge angezeigt.
 
 <img alt="Toast with context menu" src="images/toast-contextmenu.png" width="444"/>
 
@@ -551,7 +551,7 @@ Eingaben werden innerhalb des Bereichs „Aktionen“ der Popupregion des Popups
 
 ### <a name="quick-reply-text-box"></a>Textfeld für schnelle Antworten
 
-Um ein Textfeld für schnelle Antworten – etwa für ein Nachrichten-Szenario – zu aktivieren, fügen Sie eine Texteingabe und eine Schaltfläche hinzu, und verweisen Sie auf die ID der Texteingabe, damit die Schaltfläche neben der Eingabe angezeigt wird.
+Wenn Sie ein Textfeld für die schnelle Antwort (z. b. in einer Messaging-APP) aktivieren möchten, fügen Sie eine Texteingabe und eine Schaltfläche hinzu, und verweisen Sie auf die ID des Texteingabe Felds, sodass die Schaltfläche neben dem Eingabefeld angezeigt wird. Das Symbol für die Schaltfläche muss ein 32 x 32 Pixel-Bild ohne Auffüll Zeichen, weiße Pixel auf transparent und 100% Skalierung sein.
 
 <img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
 
@@ -796,10 +796,10 @@ Gehen Sie wie folgt vor, um die Systemaktionen zum erneuten Erinnern und Schlie�
 
 -   Angeben eines **ToastButtonSnooze** oder **ToastButtonDismiss**
 -   Geben Sie optional eine benutzerdefinierte Inhaltszeichenfolge an:
-    -   Wenn Sie keine Zeichenfolge angeben, verwenden wir automatisch lokalisierte Zeichenfolgen für "Erneut erinnern" und "Verwerfen".
+    -   Wenn Sie keine Zeichenfolge angeben, werden automatisch lokalisierte Zeichen folgen für "zurückstellen" und "verwerfen" verwendet.
 -   Geben Sie optional die **SelectionBoxId** an:
     -   Wenn Sie nicht möchten, dass der Benutzer ein Intervall für das erneute Erinnern auswählen kann, sondern das erneute Erinnern an die Benachrichtigung nur einmal in einem vom System definierten (in allen Betriebssystemen einheitlichen) Zeitintervall erfolgt, legen Sie keinen Wert für &lt;input&gt; fest.
-    -   Wenn Sie mögliche Intervalle für das erneute Erinnern bereitstellen möchten:
+    -   Wenn Sie Intervalle für das erneute Erinnern angeben möchten:
         -   Geben Sie **SelectionBoxId** in der Aktion für das erneute Erinnern an
         -   Stimmen Sie die ID der Eingabe auf den Wert für **SelectionBoxId** der Aktion für das erneute Erinnern ab
         -   Legen Sie für den Wert von **ToastSelectionBoxItem** eine positive ganze Zahl (nonNegativeInteger) fest, die dem Intervall für das erneute Erinnern in Minuten entspricht.
@@ -847,8 +847,8 @@ Um Alarme, Erinnerungen und Benachrichtigungen über eingehende Anrufe zu erstel
 > [!IMPORTANT]
 > Wenn Sie Alarme oder Erinnerungen verwenden, müssen Sie mindestens eine Schaltfläche auf Ihrer Popupbenachrichtigung angeben. Andernfalls wird das Popup als ein normales Popup behandelt.
 
-* **Erinnerung**: Die Benachrichtigung, auf dem Bildschirm verbleibt, bis der Benutzer es schließt oder Maßnahmen ergreift. Unter Windows Mobile wird das Popup auch vorab vergrößert angezeigt. Ein Erinnerungston wird wiedergegeben.
-* **Alarm**: Zusätzlich zu das Verhalten Erinnerung durchlaufen Alarme darüber Audio eine Standard-Alarm Sound.
+* **Erinnerung**: Die Benachrichtigung bleibt auf dem Bildschirm, bis der Benutzer sie schließt oder eine Aktion ausführt. Unter Windows Mobile wird das Popup auch vorab vergrößert angezeigt. Ein Erinnerungston wird wiedergegeben.
+* **Alarm**: Zusätzlich zu den Erinnerungsverhaltensweisen wird bei Alarmen zusätzlich eine Audioschleife mit einem standardmäßigen Alarmton wiedergegeben.
 * **IncomingCall**: Benachrichtigungen über eingehende Anrufe werden auf Windows Mobile-Geräten im Vollbildmodus angezeigt. Andernfalls weisen sie die gleichen Verhaltensweisen wie Alarme auf, außer dass sie einen Klingelton verwenden und die Schaltflächen anders aussehen.
 
 ```csharp
@@ -879,6 +879,6 @@ Informationen dazu, wie Sie Popupaktivierungen behandeln (der Benutzer klickt au
  
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Senden Sie eine lokale Popup- und Handle-Aktivierung](send-local-toast.md)
-* [Benachrichtigungsbibliothek auf GitHub (Teil von das UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [Kachel- und popupbildgrößen benachrichtigungsunterstützung für Sprache, Skalierung und hoher Kontrast](tile-toast-language-scale-contrast.md)
+* [Senden eines lokalen Popups und behandeln der Aktivierung](send-local-toast.md)
+* [Benachrichtigungs Bibliothek auf GitHub (Teil des UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Unterstützung für Kachel-und Popup Benachrichtigungen für Sprache, Skalierung und hohen Kontrast](tile-toast-language-scale-contrast.md)

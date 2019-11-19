@@ -4,14 +4,14 @@ description: Wenn Sie Code für ein UWP-Spiel mit DirectX erstellen, müssen Sie
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.date: 10/24/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, directx
+keywords: Windows 10, UWP, Spiele, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 940de8c00dc2639785ae82e87d63f4994b1b6b2e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: af5d73e0a786e33aff6274cd63ee5ae6ac77c133
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367741"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153693"
 ---
 #  <a name="define-the-uwp-app-framework"></a>Definieren des UWP-App-Frameworks
 
@@ -24,9 +24,9 @@ Das Ansichtsanbieterobjekt implementiert die __IFrameworkView__-Schnittstelle, d
 Sie müssen diese fünf Methoden implementieren, die vom App-Singleton aufgerufen werden:
 * [__Initialisieren__](#initialize-the-view-provider)
 * [__SetWindow__](#configure-the-window-and-display-behaviors)
-* [__Load__](#load-method-of-the-view-provider)
-* [__Run__](#run-method-of-the-view-provider)
-* [__Die Initialisierung aufheben__](#uninitialize-method-of-the-view-provider)
+* [__Laden__](#load-method-of-the-view-provider)
+* [__Lauf__](#run-method-of-the-view-provider)
+* [__Uninitialize__](#uninitialize-method-of-the-view-provider)
 
 Die __Initialize__-Methode wird beim Starten der App aufgerufen. Die __SetWindow__-Methode wird nach __Initialize__ aufgerufen. Es wird dann __Load__ aufgerufen. Wenn das Spiel fortgesetzt wird, wird die __Run__-Methode aufgerufen. Wenn das Spiel beendet wird, wird die __Uninitialize__-Methode aufgerufen. Weitere Informationen finden Sie unter [__IFrameworkView__ API-Referenz](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview). 
 
@@ -186,10 +186,10 @@ void App::Load(
 
 ### <a name="gamemain-constructor"></a>GameMain-Konstruktor
 
-* Erstellen und initialisieren Sie den Spielrenderer. Weitere Informationen finden Sie unter [Rendering-Framework I: Einführung in Rendering](tutorial--assembling-the-rendering-pipeline.md).
+* Erstellen und initialisieren Sie den Spielrenderer. Weitere Informationen finden Sie unter [Rendering-Framework I: Einführung in das Rendering](tutorial--assembling-the-rendering-pipeline.md).
 * Erstellen Sie die Initialisierung des Simple3Dgame-Objekts. Weitere Informationen finden Sie unter [Definieren des Hauptobjekts für das Spiel](tutorial--defining-the-main-game-loop.md).    
 * Erstellen Sie das UI-Steuerelement und die Überlagerung von Spieledaten zum Anzeigen einer Statusleiste, während die Ressourcendateien geladen werden. Weitere Informationen finden Sie unter [Hinzufügen einer Benutzeroberfläche](tutorial--adding-a-user-interface.md).
-* Erstellen Sie den Controller, damit er die Eingaben des Controllers (Fingereingabe, Maus oder Xbox-Controller) lesen kann. Weitere Informationen finden Sie unter [Hinzufügen von Steuerelementen](tutorial--adding-controls.md).
+* Erstellen Sie den Controller, damit er Eingaben aus dem Controller (Touchscreen, Maus oder Xbox Wireless Controller) lesen kann. Weitere Informationen finden Sie unter [Hinzufügen von Steuerelementen](tutorial--adding-controls.md).
 * Nach dem Initialisieren des Controllers definieren wir zwei rechteckige Bereiche in den Ecken unten links und unten rechts auf dem Bildschirm für die Bewegungs- bzw. Kamerasteuerungen. Der Spieler verwendet das durch den Aufruf von **SetMoveRect** definierte Rechteck links unten als virtuelles Bedienfeld, um die Kamera vor und zurück sowie seitlich zu bewegen. Das durch die **SetFireRect**-Methode definierte Rechteck rechts unten wird als virtuelle Taste zum Abfeuern der Munition verwendet.
 * Verwenden Sie __create_task__ und __create_task::then__, um das Laden von Ressourcen in zwei getrennte Phasen zu unterteilen. Da der Zugriff auf den Direct3D 11-Gerätekontext auf den Thread beschränkt ist, auf dem der Gerätekontext beim Zugriff auf das Direct3D 11-Gerät erstellt wurde und die Erstellung des Objekts den Threadbeschränkungen unterliegt, bedeutet dies, dass die **CreateGameDeviceResourcesAsync**-Aufgabe in einem separaten Thread ausgeführt werden kann, von der Aufgabe zur Vervollständigung (*FinalizeCreateGameDeviceResources*), die im Originalthread ausgeführt wird. Wir verwenden ein ähnliches Muster zum Laden von Levelressourcen mit **LoadLevelAsync** und **FinalizeLoadLevel**.
 
@@ -298,19 +298,19 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="run-method-of-the-view-provider"></a>Die Run-Methode des Ansichtsanbieters
 
-Die früheren drei Methoden: __Initialisieren Sie__, __"SetWindow"__ , und __Load__ die Stufe festgelegt haben. Das Spiel kann jetzt auf die **Run**-Methode weitergehen und der Spaß kann beginnen! Die Ereignisse, die es für den Wechsel des Spielzustands nutzt, werden verteilt und verarbeitet. Die Grafik wird im Rahmen der Spielschleifendurchläufe aktualisiert.
+Die drei zuvor beschriebenen Methoden: __Initialize__, __SetWindow__ und __Load__ haben die Vorbereitung abgeschlossen. Das Spiel kann jetzt auf die **Run**-Methode weitergehen und der Spaß kann beginnen! Die Ereignisse, die es für den Wechsel des Spielzustands nutzt, werden verteilt und verarbeitet. Die Grafik wird im Rahmen der Spielschleifendurchläufe aktualisiert.
 
 ### <a name="apprun"></a>App::Run
 
 Starten Sie eine __While__-Schleife, die beendet wird, wenn der Spieler das Spielfenster schließt.
 
 Der Beispielcode geht im Zustandsautomaten der Spielengine in einen von zwei Zuständen über:
-    * __Deaktiviert__: Das Spielfenster wird deaktiviert (verliert also den Fokus) oder angedockt. In diesem Fall hält das Spiel die Ereignisverarbeitung an und wartet auf den Fensterfokus bzw. darauf, dass das Fenster wieder abgedockt wird.
-    * __TooSmall__: Das Spiel aktualisiert seinen eigenen Status und rendert die Grafiken für die Anzeige.
+    * __Deactivated__: Das Spielfenster wird deaktiviert (verliert also den Fokus) oder angedockt. In diesem Fall hält das Spiel die Ereignisverarbeitung an und wartet auf den Fensterfokus bzw. darauf, dass das Fenster wieder abgedockt wird.
+    * __TooSmall__: Das Spiel aktualisiert den eigenen Zustand und rendert die Grafik für die Anzeige.
 
 Wenn Ihr Spiel den Fokus hat, müssen Sie jedes in der Meldungswarteschlange eingehende Ereignis behandeln. Daher müssen Sie [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) mit der Option **ProcessAllIfPresent** aufrufen. Andere Optionen können zu einer verzögerten Verarbeitung von Meldungsereignissen führen. So entsteht der Eindruck, dass das Spiel nicht reagiert oder Toucheingaben nur träge umgesetzt werden.
 
-Wenn die App nicht sichtbar ist, angehalten oder angedockt wurde, möchten wir nicht, dass sie Meldungen ausgibt, die niemals ankommen, und dabei auch noch Ressourcen beansprucht. Daher muss das Spiel **ProcessOneAndAllPending** verwenden, was eine Blockierung bis zum Eingang eines Ereignisses zur Folge hat. Dieses Ereignis wird dann zusammen mit anderen Ereignissen verarbeitet, die während der Verarbeitung des ersten Ereignisses in der Prozesswarteschlange eingehen. [**ProcessEvents** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) dann sofort nach der Verarbeitung der Warteschlange zurückgegeben.
+Wenn die App nicht sichtbar ist, angehalten oder angedockt wurde, möchten wir nicht, dass sie Meldungen ausgibt, die niemals ankommen, und dabei auch noch Ressourcen beansprucht. Daher muss das Spiel **ProcessOneAndAllPending** verwenden, was eine Blockierung bis zum Eingang eines Ereignisses zur Folge hat. Dieses Ereignis wird dann zusammen mit anderen Ereignissen verarbeitet, die während der Verarbeitung des ersten Ereignisses in der Prozesswarteschlange eingehen. [**Processvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) wird dann sofort nach der Verarbeitung der Warteschlange zurückgegeben.
 
 ```cpp
 void App::Run()
@@ -384,7 +384,7 @@ void GameMain::Run()
 
 Wenn der Benutzer letztendlich die Sitzung beendet, müssen wir sie bereinigen. An dieser Stelle kommt die **Uninitialize**-Eigenschaft ins Spiel.
 
-Klicken Sie in Windows 10 schließen das app-Fenster nicht zu beenden den Prozess der app, aber stattdessen schreibt er den Status des app-Singletons in den Speicher. Sollte eine besondere Aktion wie eine spezielle Bereinigung von Ressourcen erforderlich sein, wenn das System diesen Speicher freigeben muss, platzieren Sie den Code für diese Bereinigung in dieser Methode.
+In Windows 10 wird durch das Schließen des App-Fensters der App-Prozess nicht beendet, stattdessen wird der Zustand der APP-Singleton in den Arbeitsspeicher geschrieben. Sollte eine besondere Aktion wie eine spezielle Bereinigung von Ressourcen erforderlich sein, wenn das System diesen Speicher freigeben muss, platzieren Sie den Code für diese Bereinigung in dieser Methode.
 
 ### <a name="app-uninitialize"></a>App:: Uninitialize
 

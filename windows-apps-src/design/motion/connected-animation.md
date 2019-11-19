@@ -1,28 +1,28 @@
 ---
-description: Mit verbundenen Animationen können Sie eine dynamische und ansprechende Navigationsfunktionalität erstellen, indem Sie den Übergang eines Elements zwischen zwei verschiedenen Ansichten animieren.
+description: Mit verbundenen Animationen können Sie dynamische und ansprechende Navigationsfunktionen erstellen, indem Sie den Übergang eines Elements zwischen zwei verschiedenen Ansichten animieren.
 title: Verbundene Animationen
 template: detail.hbs
 ms.date: 10/04/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f448f481b2b55a42cbaa158cc4b07261e2d7717b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6e17b1c18fc8e643ac788e5e13ac78cae49a35ef
+ms.sourcegitcommit: 6d743cf9c3e09f87ea2879b8e1f2dc4a1b1a16fe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317135"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166079"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>Verbundene Animation für UWP-Apps
 
-Mit verbundenen Animationen können Sie eine dynamische und ansprechende Navigationsfunktionalität erstellen, indem Sie den Übergang eines Elements zwischen zwei verschiedenen Ansichten animieren. So können Benutzer den Kontext beibehalten, und es entsteht Kontinuität zwischen den Ansichten.
+Mit verbundenen Animationen können Sie dynamische und ansprechende Navigationsfunktionen erstellen, indem Sie den Übergang eines Elements zwischen zwei verschiedenen Ansichten animieren. So können Benutzer den Kontext beibehalten, und es entsteht Kontinuität zwischen den Ansichten.
 
-In einer verbundenen-Animation scheint ein Element zwischen zwei Ansichten, während eine Änderung der Inhalte der Benutzeroberfläche, über den Bildschirm aus seiner Position in der Ansicht an das Ziel in der neuen Sicht fliege "Weiter". Dies betont die gemeinsamen Inhalte zwischen den Ansichten und eine ansprechende und dynamische Auswirkungen im Rahmen eines Übergangs.
+In einer verbundenen Animation scheint ein Element während einer Änderung des UI-Inhalts "Fortfahren" zwischen zwei Ansichten zu wechseln, und über den Bildschirm von seiner Position in der Quell Ansicht bis zum Ziel in der neuen Ansicht zu wechseln. Dadurch wird der gemeinsame Inhalt zwischen den Ansichten hervorgehoben, und es wird ein schöner und dynamischer Effekt als Teil eines Übergangs erzeugt.
 
-> **Wichtige APIs:**  [ConnectedAnimation Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService-Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **Wichtige APIs**: [connectedanimation Class](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [connectedanimationservice-Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 
 ## <a name="examples"></a>Beispiele
@@ -32,7 +32,7 @@ In einer verbundenen-Animation scheint ein Element zwischen zwei Ansichten, wäh
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ConnectedAnimation">öffnen Sie die app und die verbundene Animation in Aktion erleben</a>.</p>
+    <p>Wenn Sie die Katalog-App für <strong style="font-weight: semi-bold">XAML</strong> -Steuerelemente installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ConnectedAnimation">die APP zu öffnen und die verbundene Animation in Aktion zu sehen</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -41,7 +41,7 @@ In einer verbundenen-Animation scheint ein Element zwischen zwei Ansichten, wäh
 </tr>
 </table>
 
-In diesem kurzen Video verwendet eine app eine verbundene Animation, um ein Elementbild zu animieren, wie "so lange" Teil des Headers der nächsten Seite. Dieser Effekt trägt dazu bei, Benutzerkontext beim Übergang beizubehalten.
+In diesem kurzen Video wird eine APP mit einer verbundenen Animation zum Animieren eines Element Bilds verwendet, da es fortgesetzt wird, um Teil des Headers der nächsten Seite zu werden. Dieser Effekt trägt dazu bei, Benutzerkontext beim Übergang beizubehalten.
 
 ![Verbundene Animationen](images/connected-animations/example.gif)
 
@@ -49,13 +49,13 @@ In diesem kurzen Video verwendet eine app eine verbundene Animation, um ein Elem
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=b2daa5ee%2Dbe15%2D4503%2Db541%2D1328a6587c36&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-## <a name="video-summary"></a>Video-Zusammenfassung
+## <a name="video-summary"></a>Videozusammenfassung
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev005/player]
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>Verbundene Animationen und das Fluent Design-System
 
- Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Verbundene Animation ist eine Komponente des Fluent Design-Systems, die Bewegung in Ihre App bringt. Weitere Informationen finden Sie in der [Fluent Design für UWP-Übersicht](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. Verbundene Animation ist eine Komponente des Fluent Design-Systems, die Bewegung in Ihre App bringt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design für UWP](/windows/apps/fluent-design-system).
 
 ## <a name="why-connected-animation"></a>Warum eine verbundene Animation?
 
@@ -65,60 +65,60 @@ Beim Navigieren zwischen Seiten ist es wichtig, dass der Benutzer versteht, welc
 
 Verbundene Animationen werden in der Regel bei einem Seitenwechsel verwendet, sie können jedoch immer verwendet werden, wenn Sie Inhalt in einer UI ändern und möchten, dass der Benutzerkontext beibehalten wird. Sie sollten es in Betracht ziehen, eine verbundene Animation anstelle eines [Drills in einem Navigationsübergangs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) zu verwenden, wenn die Quell- und die Zielansicht ein gemeinsames Bild oder ein anderes gemeinsames UI-Element aufweisen.
 
-## <a name="configure-connected-animation"></a>Konfigurieren Sie die verbundene animation
+## <a name="configure-connected-animation"></a>Verbundene Animation konfigurieren
 
 > [!IMPORTANT]
-> Dieses Feature erfordert, dass Zielversion Ihrer app Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher. Die Configuration-Eigenschaft ist nicht in frühere SDKs zur Verfügung. Sie können eine Mindestversion von niedriger als SDK 17763 abzielen mit adaptiven Code oder bedingte XAML. Weitere Informationen finden Sie unter [versionsabhängig adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
+> Für dieses Feature ist es erforderlich, dass die Zielversion Ihrer APP Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher ist. Die-Konfigurations Eigenschaft ist in früheren sdert nicht verfügbar. Sie können eine minimale Version als SDK 17763 als Ziel verwenden, indem Sie adaptiven Code oder bedingtes XAML verwenden. Weitere Informationen finden Sie unter [Version Adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
-Ab Windows 10, Version 1809, weitere verbundene Animationen enthalten Fluent-Entwurf durch die Bereitstellung der Animation Konfigurationen zugeschnitten sind speziell für die Vorwärts und rückwärts navigieren.
+Ab Windows 10, Version 1809, können verbundene Animationen den fließenden Entwurf weiter untersuchen, indem Sie Animations Konfigurationen bereitstellen, die speziell für vorwärts-und rückwärts Seitennavigation zugeschnitten sind
 
-Geben Sie eine Animation-Konfiguration durch Festlegen der Konfigurationseigenschaft für die ConnectedAnimation. (Wir zeigen Beispiele im nächsten Abschnitt.)
+Sie geben eine Animations Konfiguration an, indem Sie die Konfigurations Eigenschaft für "connectedanimation" festlegen. (Im nächsten Abschnitt werden Beispiele dafür angezeigt.)
 
-Diese Tabelle beschreibt die verfügbaren Konfigurationen. Weitere Informationen zu den Motion-Prinzipien, die in diese Animationen angewendet, finden Sie unter [Direktionalität und die Schwerkraft](index.md).
+In dieser Tabelle werden die verfügbaren Konfigurationen beschrieben. Weitere Informationen zu den in diesen Animationen angewendeten Bewegungsprinzipien finden Sie unter [Direktionalität und Schwerkraft](index.md).
 
 | [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) |
 | - |
-| Dies ist die Standardkonfiguration, und es wird empfohlen, für die Vorwärtsnavigation. |
-Während der Benutzer die Weiterleitung in der app (A, B) navigiert, wird das Element verbundenen zu physisch "aus der Seite" pull"angezeigt. In diesem Fall wird das Element angezeigt wird, um vorwärts in Z-Raum zu wechseln und ein wenig als Folge der Schwerkraft halten und löscht. Um die Auswirkungen der Schwerkraft zu umgehen, wird das Element erhält der Geschwindigkeit und beschleunigt die in der letzten Position. Das Ergebnis ist eine Animation "skalieren und DIP-Adresse". |
+| Dies ist die Standardkonfiguration, die für die Vorwärtsnavigation empfohlen wird. |
+Wenn der Benutzer in der APP vorwärts navigiert (A zu B), wird das verbundene Element physisch als "Pull Off the page" angezeigt. Dabei scheint das-Element in z-Space vorwärts zu gehen und ein wenig als Auswirkung der Schwerkraft zu haben. Um die Auswirkungen der Schwerkraft zu überwinden, gewinnt das-Element Geschwindigkeit und beschleunigt die endgültige Position. Das Ergebnis ist eine "Skalierung und Dip"-Animation. |
 
 | [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) |
 | - |
-| Während der Benutzer rückwärts in der app (B, A) navigiert, wird die Animation mehr direkt. Das Element verbundenen übersetzt linear von B an einem mit einem Decelerate kubische Bezier Beschleunigungsfunktion. Die Abwärtskompatibilität visuelle Unterstützung gibt zurück, den Benutzer in ihren vorherigen Zustand so schnell wie möglich gleichzeitig den navigationsfluss Kontext. |
+| Wenn der Benutzer in der APP rückwärts navigiert (B zu A), ist die Animation direkter. Das verbundene Element übersetzt linear von B zu a und verwendet dabei eine verlangsamte gezier Ende Beschleunigungs Funktion. Der rückwärts visuelle Vorgang gibt den Benutzer so schnell wie möglich an den vorherigen Zustand zurück, während er weiterhin den Kontext des Navigations Flusses beibehält. |
 
 | [BasicConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration) |
 | - |
-| Dies ist die Standardeinstellung (nur und) Animation, die in Versionen vor Windows 10, Version 1809 verwendet ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)). |
+| Dies ist die standardmäßige (und einzige) Animation, die in Versionen vor Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), verwendet wird. |
 
-### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService-Konfiguration
+### <a name="connectedanimationservice-configuration"></a>Connectedanimationservice-Konfiguration
 
-Die [ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) -Klasse verfügt über zwei Eigenschaften, die für die einzelnen Animationen anstelle des gesamten Diensts gelten.
+Die [connectedanimationservice](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) -Klasse verfügt über zwei Eigenschaften, die auf die einzelnen Animationen anstatt auf den gesamten Dienst angewendet werden.
 
-- [DefaultDuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration)
-- [DefaultEasingFunction](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction)
+- [Defaultduration](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration)
+- [Defaulteasingfunction](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction)
 
-Um die unterschiedlichen Effekte zu erzielen, werden einige Konfigurationen ignorieren diese Eigenschaften für ConnectedAnimationService und stattdessen ihre eigenen Werte, wie in dieser Tabelle beschrieben.
+Um die verschiedenen Auswirkungen zu erzielen, werden diese Eigenschaften von einigen Konfigurationen auf connectedanimationservice ignoriert und stattdessen ihre eigenen Werte verwendet, wie in dieser Tabelle beschrieben.
 
-| Konfiguration | Hinsicht DefaultDuration? | Hinsicht DefaultEasingFunction? |
+| Konfiguration | Respektiert defaultduration? | Respektiert defaulteasingfunction? |
 | - | - | - |
-| Schwerkraft | Ja | Ja* <br/> **Die einfache Übersetzung von A zu B verwendet diese Beschleunigungsfunktion, aber die "Schwerkraft DIP-Adresse" verfügt über eine eigene Beschleunigungsfunktion.*  |
-| Direkte | Nein <br/> *Führt eine Animation über 150ms.*| Nein <br/> *Verwendet die Decelerate Beschleunigungsfunktion.* |
-| Einfach | Ja | Ja |
+| Schwerkraft | „Ja“ | Ja* <br/> **die grundlegende Übersetzung von A zu B verwendet diese Beschleunigungs Funktion, aber die "Gravity Dip" hat eine eigene Beschleunigungs Funktion.*  |
+| Unmittelbaren | Nein <br/> *Animiert mehr als 150 ms.*| Nein <br/> *Verwendet die verlangsamnde Beschleunigungs Funktion.* |
+| Basic | „Ja“ | „Ja“ |
 
-## <a name="how-to-implement-connected-animation"></a>Gewusst wie: Implementieren von verbundene animation
+## <a name="how-to-implement-connected-animation"></a>Implementieren einer verbundenen Animation
 
 Das Einrichten einer verbundenen Animation besteht aus zwei Schritten:
 
-1. *Bereiten Sie vor* eines Animationsobjekts auf der Seite "Quelle", die das System anzeigt, dass das Quellelement in die verbundene Animation einbezogen werden.
-1. *Starten Sie* die Animation auf der Seite "Ziel", und übergeben einen Verweis auf das Zielelement.
+1. *Bereiten* Sie ein Animations Objekt auf der Seite Quelle vor, das dem System anzeigt, dass das Quell Element an der verbundenen Animation beteiligt ist.
+1. *Starten* Sie die Animation auf der Zielseite, und übergeben Sie einen Verweis auf das Ziel Element.
 
-Wenn von der Quellseite zu navigieren, rufen Sie [ConnectedAnimationService.GetForCurrentView](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview) um eine Instanz des ConnectedAnimationService abzurufen. Um eine Animation vorzubereiten, rufen [PrepareToAnimate](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate) auf dieser Serverinstanz aus, und übergeben Sie einen eindeutigen Schlüssel und das UI-Element, das Sie beim Übergang verwenden möchten. Der eindeutige Schlüssel können Sie die Animation weiter unten auf der Seite "Ziel" abrufen.
+Wenn Sie von der Seite "Quelle" aus navigieren, können Sie [connectedanimationservice. getforcurrentview](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview) aufrufen, um eine Instanz von connectedanimationservice abzurufen. Um eine Animation vorzubereiten, nennen Sie [preparetoanimieren](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate) für diese Instanz, und übergeben Sie einen eindeutigen Schlüssel und das UI-Element, das Sie im Übergang verwenden möchten. Mit dem eindeutigen Schlüssel können Sie die Animation später auf der Zielseite abrufen.
 
 ```csharp
 ConnectedAnimationService.GetForCurrentView()
     .PrepareToAnimate("forwardAnimation", SourceImage);
 ```
 
-Bei der Navigation, starten Sie die Animation in der Seite "Ziel" aus. Rufen Sie zum Starten der Animation [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) auf. Sie können die richtige Animationsinstanz abrufen, indem Sie mit dem eindeutigen Schlüssel, den Sie beim Erstellen der Animation angegeben haben, [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation) aufrufen.
+Wenn die Navigation erfolgt, starten Sie die Animation auf der Zielseite. Rufen Sie zum Starten der Animation [ConnectedAnimation.TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) auf. Sie können die richtige Animationsinstanz abrufen, indem Sie mit dem eindeutigen Schlüssel, den Sie beim Erstellen der Animation angegeben haben, [ConnectedAnimationService.GetAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation) aufrufen.
 
 ```csharp
 ConnectedAnimation animation =
@@ -131,11 +131,11 @@ if (animation != null)
 
 ### <a name="forward-navigation"></a>Vorwärtsnavigation
 
-Dieses Beispiel zeigt, wie Sie ConnectedAnimationService zu verwenden, um einen Übergang für die Vorwärtsnavigation zwischen zwei Seiten (Page_A zu Page_B) zu erstellen.
+In diesem Beispiel wird gezeigt, wie connectedanimationservice verwendet wird, um einen Übergang für die Vorwärtsnavigation zwischen zwei Seiten (Page_A Page_B) zu erstellen.
 
-Ist die empfohlene Animation-Konfiguration für die Vorwärtsnavigation [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration). Dies ist die Standardeinstellung, sodass Sie nicht festlegen müssen die [Konfiguration](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) Eigenschaft, wenn Sie eine andere Konfiguration angeben möchten.
+Die empfohlene Animations Konfiguration für die Vorwärtsnavigation ist " [gravityconnectedanimationconfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration)". Dies ist die Standardeinstellung, sodass Sie die [Konfigurations](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration) Eigenschaft nur dann festlegen müssen, wenn Sie eine andere Konfiguration angeben möchten.
 
-Richten Sie die Animation auf der Quellseite.
+Richten Sie die Animation auf der Seite Quelle ein.
 
 ```xaml
 <!-- Page_A.xaml -->
@@ -169,7 +169,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-Starten Sie die Animation in der Seite "Ziel" ein.
+Starten Sie die Animation auf der Zielseite.
 
 ```xaml
 <!-- Page_B.xaml -->
@@ -196,13 +196,13 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-### <a name="back-navigation"></a>Rückwärtsnavigation
+### <a name="back-navigation"></a>Rückwärts Navigation
 
-Für die Rückwärtsnavigation (Page_B zu Page_A), führen Sie die gleichen Schritte aus, aber die Quelle und Ziel-Seiten werden rückgängig gemacht.
+Für die Rück Navigation (Page_B zu Page_A) führen Sie die gleichen Schritte aus, aber die Quell-und Zielseiten werden umgekehrt.
 
-Wenn der Benutzer zurück navigiert, erwarten sie, dass die app so bald wie möglich in den vorherigen Zustand zurückgegeben werden. Daher die empfohlene Konfiguration ist [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration). Diese Animation ist schneller, direkteren und verwendet die Decelerate vereinfachen.
+Wenn der Benutzer zurück navigiert, erwarten Sie, dass die APP so bald wie möglich in den vorherigen Zustand zurückversetzt wird. Daher ist die empfohlene Konfiguration [directconnectedanimationconfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration). Diese Animation ist schneller, direkter und verwendet die Verlangsamung der Verlangsamung.
 
-Richten Sie die Animation auf der Quellseite.
+Richten Sie die Animation auf der Seite Quelle ein.
 
 ```csharp
 // Page_B.xaml.cs
@@ -211,8 +211,8 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 {
     if (e.NavigationMode == NavigationMode.Back)
     {
-        ConnectedAnimationService.GetForCurrentView()
-            .PrepareToAnimate("backAnimation", DestinationImage);
+        ConnectedAnimation animation = 
+            ConnectedAnimationService.GetForCurrentView().PrepareToAnimate("backAnimation", DestinationImage);
 
         // Use the recommended configuration for back animation.
         animation.Configuration = new DirectConnectedAnimationConfiguration();
@@ -220,7 +220,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-Starten Sie die Animation in der Seite "Ziel" ein.
+Starten Sie die Animation auf der Zielseite.
 
 ```csharp
 // Page_A.xaml.cs
@@ -238,11 +238,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Zwischen dem Zeitpunkt, die die Animation eingerichtet ist und wenn sie gestartet ist wird das Quellelement eingefroren über andere Benutzeroberfläche in der app angezeigt. Dadurch können Sie alle anderen Übergangsanimationen gleichzeitig ausführen. Aus diesem Grund sollte nicht Sie mehr als ~ 250 Millisekunden zwischen den beiden Schritten warten, da das Vorhandensein des Quellelements ablenken werden kann. Wenn Sie eine Animation vorbereiten und diese nicht innerhalb von drei Sekunden starten, wird sie vom System gelöscht und alle folgenden Aufrufe von [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) schlagen fehl.
+Zwischen dem Zeitpunkt der Einrichtung und dem Start der Animation erscheint das Quell Element über der anderen Benutzeroberfläche in der APP fixiert. Auf diese Weise können Sie alle anderen Übergangs Animationen gleichzeitig ausführen. Aus diesem Grund sollten Sie nicht mehr als ~ 250 Millisekunden zwischen den beiden Schritten warten, da das vorhanden sein des Quell Elements möglicherweise ablenkend ist. Wenn Sie eine Animation vorbereiten und diese nicht innerhalb von drei Sekunden starten, wird sie vom System gelöscht und alle folgenden Aufrufe von [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) schlagen fehl.
 
 ## <a name="connected-animation-in-list-and-grid-experiences"></a>Verbundene Animationen in Listen- und Rasterumgebungen
 
-Sie werden wahrscheinlich häufig verbundene Animationen aus einem Listen- oder Rastersteuerelement erstellen wollen. Sie können die beiden Methoden verwenden, auf [ListView](/uwp/api/windows.ui.xaml.controls.listview) und [GridView](/uwp/api/windows.ui.xaml.controls.gridview), [: PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) und [TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync), Um diesen Prozess zu vereinfachen.
+Sie werden wahrscheinlich häufig verbundene Animationen aus einem Listen- oder Rastersteuerelement erstellen wollen. Um diesen Prozess zu vereinfachen, können Sie die beiden Methoden für " [ListView](/uwp/api/windows.ui.xaml.controls.listview) " und " [GridView](/uwp/api/windows.ui.xaml.controls.gridview)", " [prepareconnectedanimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) " und " [trystartconnectedanimationasync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)" verwenden.
 
 Nehmen wir beispielsweise an, Sie haben eine **ListView**, die ein Element mit dem Namen „PortraitEllipse” in der Datenvorlage enthält.
 
@@ -259,7 +259,7 @@ Nehmen wir beispielsweise an, Sie haben eine **ListView**, die ein Element mit d
 </ListView>
 ```
 
-Um eine verbundene Animation mit der Ellipse, die für ein bestimmtes Listenelement vorzubereiten, rufen Sie die [: PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) -Methode mit einem eindeutigen Schlüssel, das Element und den Namen "PortraitEllipse".
+Um eine verbundene Animation mit der Ellipse vorzubereiten, die einem bestimmten Listenelement entspricht, nennen Sie die [prepareconnectedanimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation) -Methode mit einem eindeutigen Schlüssel, dem Element und dem Namen "portraitellipse".
 
 ```csharp
 void PrepareAnimationWithItem(ContactsItem item)
@@ -268,7 +268,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-Verwenden Sie zum Starten einer Animation mit diesem Element als Ziel, z. B. wenn aus einer Detailansicht zurück navigiert [TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync). Wenn Sie nur die Datenquelle für die ListView geladen haben, wird TryStartConnectedAnimationAsync gewartet, die Animation gestartet, bis die entsprechenden Elementcontainer erstellt wurde.
+Verwenden Sie [trystartconnectedanimationasync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync), um eine Animation mit diesem Element als Ziel zu starten, z. b. Wenn Sie aus einer Detailansicht zurück navigieren. Wenn Sie gerade die Datenquelle für ListView geladen haben, wartet trystartconnectedanimationasync, dass die Animation gestartet wird, bis der entsprechende Element Container erstellt wurde.
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
@@ -296,11 +296,11 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=9066bbbe%2Dcf58%2D4ab4%2Db274%2D595616f5d0a0&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-Ein *koordiniert Animation* ist ein spezieller Typ von "entrance" Animation, in dem ein Element angezeigt, sowie die verbundene Animation-Ziel wird, zusammen mit dem Element für die verbundene Animation animieren, wenn es auf dem Bildschirm bewegt. Koordinierte Animationen können einem Übergang weitere visuelle Spannung hinzufügen und die Aufmerksamkeit des Benutzers auf den Kontext lenken, den die Quell- und die Zielansicht teilen. In diesen Bildern wird die Beschriftungs-UI für das Element mithilfe einer koordinierten Animation animiert.
+Eine *koordinierte Animation* ist eine besondere Art von Eingangs Animation, bei der ein Element zusammen mit dem verbundenen Animations Ziel angezeigt wird, das zusammen mit dem verbundenen Animations Element animiert wird, während es auf dem Bildschirm bewegt wird. Koordinierte Animationen können einem Übergang weitere visuelle Spannung hinzufügen und die Aufmerksamkeit des Benutzers auf den Kontext lenken, den die Quell- und die Zielansicht teilen. In diesen Bildern wird die Beschriftungs-UI für das Element mithilfe einer koordinierten Animation animiert.
 
-Wenn eine Animation koordinierte die Schwerkraft-Konfiguration verwendet wird, wird die Schwerkraft sowohl für das Element für die verbundene Animation als auch für die koordinierte Elemente angewendet. Die koordinierte Elemente werden zusammen mit dem Element verbundenen "swoop" werden, damit die Elemente wirklich koordinierte bleiben.
+Wenn eine koordinierte Animation die Gravitations Konfiguration verwendet, wird die Schwerkraft sowohl auf das verbundene Animations Element als auch auf die koordinierten Elemente angewendet. Die koordinierten Elemente werden neben dem verbundenen Element "Swoop", sodass die Elemente wirklich koordiniert bleiben.
 
-Verwenden Sie die Überladung von **TryStart** mit zwei Parametern, um koordinierte Elemente zu einer verbundenen Animation hinzuzufügen. Dieses Beispiel zeigt eine koordinierte Animation eines Grid-Layouts, die mit dem Namen "DescriptionRoot", die zusammen mit einem verbundene Animation-Element, das mit dem Namen "CoverImage" eingibt.
+Verwenden Sie die Überladung von **TryStart** mit zwei Parametern, um koordinierte Elemente zu einer verbundenen Animation hinzuzufügen. Dieses Beispiel veranschaulicht eine koordinierte Animation eines Raster Layouts namens "descriptionroot", die zusammen mit einem verbundenen Animations Element mit dem Namen "coverimage" eingegeben wird.
 
 ```xaml
 <!-- DestinationPage.xaml -->
@@ -329,15 +329,15 @@ void OnNavigatedTo(NavigationEventArgs e)
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
 - Verwenden Sie eine verbundene Animation bei Seitenübergängen, bei denen ein Element zwischen der Quell- und der Zielseite geteilt wird.
-- Verwendung [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) für die Vorwärtsnavigation.
-- Verwendung [DirectConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) sichern Sie bei Navigation.
-- Warten Sie nicht auf netzwerkanforderungen oder andere lang ausgeführte asynchrone Vorgänge zwischen vorbereiten und eine verbundene Animation wird gestartet. Möglicherweise müssen Sie die erforderlichen Informationen laden, um den Übergang vorab auszuführen, oder ein Platzhalterbild mit niedriger Auflösung verwenden, während ein Bild mit hoher Auflösung in der Zielansicht geladen wird.
-- Verwendung [SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) um zu verhindern, dass eine übergangsanimation in einer **Frame** bei Verwendung von **ConnectedAnimationService**, seit verbundene Animationen sollen nicht gleichzeitig mit der Standard-Navigation-Übergänge verwendet werden. Weitere Informationen zur Verwendung von Navigationsübergängen finden Sie unter [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition).
+- Verwenden Sie " [gravityconnectedanimationconfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) " für die Vorwärtsnavigation.
+- Verwenden Sie [directconnectedanimationconfiguration](/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration) für die Rück Navigation.
+- Warten Sie nicht auf Netzwerk Anforderungen oder andere asynchrone Vorgänge mit langer Ausführungszeit zwischen dem vorbereiten und Starten einer verbundenen Animation. Möglicherweise müssen Sie die erforderlichen Informationen laden, um den Übergang vorab auszuführen, oder ein Platzhalterbild mit niedriger Auflösung verwenden, während ein Bild mit hoher Auflösung in der Zielansicht geladen wird.
+- Verwenden Sie [suppressnavigationtransitioninfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) , um eine Übergangs Animation in einem **Frame** zu verhindern, wenn Sie **connectedanimationservice**verwenden, da verbundene Animationen nicht zur gleichzeitigen Verwendung mit den Standard Navigations Übergängen gedacht sind. Weitere Informationen zur Verwendung von Navigationsübergängen finden Sie unter [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition).
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 [ConnectedAnimation](/uwp/api/windows.ui.xaml.media.animation.connectedanimation)
 
-[ConnectedAnimationService](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+[Connectedanimationservice](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
-[NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)
+[Navigationermetransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition)
