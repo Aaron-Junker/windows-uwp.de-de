@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: f8f31630fed64e2a22b21e4572eaba76440a82fc
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 0b5ca136b969ca238226d6f6b63b8e2fcff3207f
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334768"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259736"
 ---
 # <a name="uwp-on-xbox-one"></a>UWP auf Xbox One
 
@@ -40,7 +40,7 @@ Dieser Abschnitt enthält die Schritte bei der Einrichtung, Informationen zum Au
 |[Einführung in Anwendungen mit mehreren Benutzern](multi-user-applications.md)| Beschreibt Anwendungen mit mehreren Benutzern (Multi-User Applications, MUAs) auf Xbox One. |
 | [Automatisieren von Xbox One-Entwicklungsaufgaben](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | Das Projekt „WindowsDevicePortalWrapper“ auf GitHub bietet eine Bibliothek, mit der Sie gängige Entwicklungsaufgaben wie das Bereitstellen oder Starten einer App automatisieren können. Das Projekt enthält ein Beispiel (XboxWdpDriver.exe), das die Verwendung der APIs für allgemeine Aufgaben veranschaulicht. |
 |[Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)|Basierend auf der Technologie, auf der Ihr Spiel entwickelt wurde, können wir Ihnen Schritt-für-Schritt-Anleitungen bereitstellen, die Ihnen helfen, Ihr Spiel mithilfe der UWP schneller für die Xbox bereitzustellen.|
-|[UWP-Funktionen, die noch nicht auf Xbox One unterstützt werden](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  Beschreibt die UWP-Funktionen, die auf Xbox One noch nicht voll funktionsfähig sind.|
+|[UWP-Funktionen, die noch nicht auf Xbox One unterstützt werden](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)|  Beschreibt die UWP-Funktionen, die auf Xbox One noch nicht voll funktionsfähig sind.|
 
 ## <a name="videos"></a>Videos
 
@@ -51,7 +51,7 @@ Die folgenden Gespräche auf Channel 9 sind eine hervorragende Informationsquell
 * [UWP-Entwicklung 1: Erstellen einer adaptiven Benutzeroberfläche](https://channel9.msdn.com/Events/Build/2016/L724-R1)
 * [Web-Apps über den Browser hinaus: plattformübergreifende und geräteübergreifende Entwicklung](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Automatisieren des Starts von UWP-Apps unter Windows 10](automate-launching-uwp-apps.md)
 - [CPUSets für die Entwicklung von Spielen](cpusets-games.md)

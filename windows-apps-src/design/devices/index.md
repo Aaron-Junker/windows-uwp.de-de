@@ -8,12 +8,12 @@ keywords: Gerät, Eingabe, Interaktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6333345a79d92394539d337f1f2390118cff1153
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065358"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258113"
 ---
 #  <a name="ui-considerations-for-uwp-devices"></a>Überlegungen zur Benutzeroberfläche für UWP-Geräte
 
@@ -131,7 +131,7 @@ Typische Gerätefunktionen
 
 Smartphones sind mittlerweile die am häufigsten genutzten Geräte und bieten auch bei begrenzter Bildschirmfläche und eingeschränkten Eingabeverfahren viele Möglichkeiten. Smartphones sind in zahlreichen verschiedenen Größen verfügbar. Größere Handys werden als Phablets bezeichnet. App-Benutzeroberflächen auf Phablets ähneln den Benutzeroberflächen auf Smartphones, aber die größere Bildschirmfläche von Phablets ermöglicht einige wichtige Änderungen bei der Nutzung von Inhalten.
 
-Mit Continuum für Smartphones, einem neuen Angebot für kompatible mobile Windows 10-Geräte, können Benutzer ihre Smartphones an einen Bildschirm anschließen und sogar mit Maus und Tastatur auf Ihren Smartphones wie auf einem Laptop arbeiten. (Weitere Informationen finden Sie im [Artikel zu Continuum für Smartphones](https://go.microsoft.com/fwlink/p/?LinkID=699431).)
+Mit Continuum für Smartphones, einem neuen Angebot für kompatible mobile Windows 10-Geräte, können Benutzer ihre Smartphones an einen Bildschirm anschließen und sogar mit Maus und Tastatur auf Ihren Smartphones wie auf einem Laptop arbeiten. (Weitere Informationen finden Sie im [Artikel zu Continuum für Smartphones](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN).)
 
 Bildschirmgrößen
 -   4 bis 5 Zoll bei Smartphones
