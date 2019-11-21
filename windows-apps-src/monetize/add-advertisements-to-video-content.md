@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Video, Planer, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 69fef2bc5deb21be8685badb0cf18f38769170cb
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 1a214288c778505d16707fd64391a9b8cedbbb32
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57603845"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260358"
 ---
 # <a name="show-ads-in-video-content"></a>Anzeigen von Werbung in Videoinhalten
 
@@ -26,7 +26,7 @@ Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürz
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-* Installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) mit Visual Studio 2015 oder einer neueren Version.
+* Installieren Sie das [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) mit Visual Studio 2015 oder einer neueren Version.
 
 * In Ihrem Projekt muss das [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)-Steuerelement verwendet werden, um die Videoinhalte bereitstellen zu können, für die die Anzeigen eingeplant werden. Dieses Steuerelement ist in der Bibliotheksammlung [TVHelpers](https://github.com/Microsoft/TVHelpers) von Microsoft auf GitHub verfügbar.
 
@@ -47,12 +47,12 @@ Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürz
 
 1. Öffnen Sie in Visual Studio Ihr Projekt, oder erstellen Sie ein neues Projekt.
 
-2. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **X86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf die Microsoft Advertising-Bibliotheken hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
+2. Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **x86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf die Microsoft Advertising-Bibliotheken hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 3. Fügen Sie Ihrem Projekt einen Verweis auf die Bibliothek **Microsoft Advertising SDK für JavaScript** hinzu.
 
     1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
-    2. Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising SDK für JavaScript** (Version 10.0).
+    2. Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising-SDK für JavaScript** (Version 10.0).
     3. Klicken Sie im **Verweis-Manager** auf „OK“.
 
 4.  Fügen Sie dem Projekt die Datei „AdScheduler.js“ hinzu:
@@ -142,7 +142,7 @@ Wenn Sie die Wiedergabe von Inhalten fortsetzen, die Werbung enthalten, legen Si
 
 ### <a name="requesttimeout"></a>requestTimeout
 
-Diese Eigenschaft ruft ab oder legt die Anzahl der Millisekunden, die für eine Ad-Anforderung-Antwort, bevor ein Timeout gewartet. Ein Wert 0 informiert das System darüber, dass es keine Zeitüberschreitung gibt. Der Standardwert ist 30000 ms (30 Sekunden).
+Mit dieser Eigenschaft wird die Anzahl der Millisekunden abgerufen oder festgelegt, die nach einer Anzeigenanfrage gewartet wird, bevor das Zeitlimit für die Antwort überschritten ist. Ein Wert von 0 informiert das System darüber, dass es keine Zeitüberschreitung gibt. Der Standardwert ist 30000 ms (30 Sekunden).
 
 ### <a name="schedule"></a>schedule
 
@@ -152,9 +152,9 @@ Diese Eigenschaft ruft die Zeitplandaten vom Anzeigenserver ab. Dieses Objekt en
 
 Dieses Ereignis wird ausgelöst, wenn die Anzeigenwiedergabe Prüfpunktquartile erreicht. Der zweite Parameter für den Ereignishandler (*eventInfo*) ist ein JSON-Objekt mit folgenden Elementen:
 
-* **Fortschritt**: Der Status der Ad-Wiedergabe (eines der **MediaProgress** Enum-Werte, die in AdScheduler.js definiert).
-* **Clip**: Der Videoclip wiedergegeben wird. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
-* **AdPackage**: Ein Objekt, das den Teil der Ad-Nutzlast, die entspricht dem AD darstellt, der wiedergegeben wird. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **progress**: Der Status der Anzeigenwiedergabe (einer der in AdScheduler.js definierten **MediaProgress**-Enumerationswerte).
+* **clip**: Der gerade wiedergegebene Videoclip. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **adPackage**: Ein Objekt, das den Teil der Anzeigennutzlast darstellt, welcher der wiedergegebenen Anzeige entspricht. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
 
 ### <a name="onallcomplete"></a>onAllComplete  
 
@@ -168,8 +168,8 @@ Dieses Ereignis wird ausgelöst, wenn im **AdScheduler** ein Fehler auftritt. We
 
 Dieses Ereignis wird ausgelöst, wenn eine Anzeige abgespielt wird, und gibt an, wie viel Zeit im aktuellen Pod verbleibt. Der zweite Parameter für den Ereignishandler (*eventData*) ist ein JSON-Objekt mit folgenden Elementen:
 
-* **RemainingAdTime**: Die Anzahl der Sekunden, die Links für die aktuelle Anzeige.
-* **RemainingPodTime**: Die Anzahl der Sekunden, die Links für den aktuellen Pod.
+* **remainingAdTime**: Die Anzahl der verbleibenden Sekunden für die aktuelle Anzeige.
+* **remainingPodTime**: Die Anzahl der verbleibenden Sekunden für den aktuellen Anzeigenblock.
 
 > [!NOTE]
 > Ein Block (Pod) ist eine Gruppe von Anzeigen, die als Sequenz wiedergegeben werden, z. B. während einer Werbepause. Weitere Informationen finden Sie in der IAB Digital Video Ad Serving Template (VAST)-Spezifikation.
@@ -178,12 +178,12 @@ Dieses Ereignis wird ausgelöst, wenn eine Anzeige abgespielt wird, und gibt an,
 
 Dieses Ereignis wird ausgelöst, wenn ein Anzeigenblock endet. Der zweite Parameter für den Ereignishandler (*eventData*) ist ein JSON-Objekt mit folgenden Elementen:
 
-* **"StartTime"**: Die Pod-Startzeit, in Sekunden.
-* **Pod**: Ein Objekt, das den Pod darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **startTime**: Die Startzeit des Anzeigenblocks in Sekunden.
+* **pod**: Ein Objekt, das den Anzeigenblock (Pod) darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
 
 ### <a name="onpodstart"></a>onPodStart
 
 Dieses Ereignis wird ausgelöst, wenn ein Anzeigenblock startet. Der zweite Parameter für den Ereignishandler (*eventData*) ist ein JSON-Objekt mit folgenden Elementen:
 
-* **"StartTime"**: Die Pod-Startzeit, in Sekunden.
-* **Pod**: Ein Objekt, das den Pod darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.
+* **startTime**: Die Startzeit des Anzeigenblocks in Sekunden.
+* **pod**: Ein Objekt, das den Anzeigenblock (Pod) darstellt. Dieses Objekt ist nicht dafür vorgesehen, im Code verwendet zu werden.

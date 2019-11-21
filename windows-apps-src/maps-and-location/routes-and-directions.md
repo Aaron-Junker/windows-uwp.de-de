@@ -1,27 +1,27 @@
 ---
 title: Anzeigen von Routen und Wegbeschreibungen auf einer Karte
-description: Fordern Sie Routen und Wegbeschreibungen an, und zeigen Sie sie in Ihrer App an.
+description: Fordern Sie Routen und Wegbeschreibungen an, und zeigen Sie diese in Ihrer App an.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.date: 09/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Route, Karte, Standort, Wegbeschreibungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 196cb4801436e8094dae4ead363ff86cc746034e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e9e464f9a3b49d3a94edbc8593df58e1e7c24515
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371692"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259336"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>Anzeigen von Routen und Wegbeschreibungen auf einer Karte
 
 
 
-Fordern Sie Routen und Wegbeschreibungen an, und zeigen Sie sie in Ihrer App an.
+Fordern Sie Routen und Wegbeschreibungen an, und zeigen Sie diese in Ihrer App an.
 
 >[!Note]
->Laden Sie das [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977) herunter, um mehr über die Verwendung von Karten in Ihrer App zu erfahren.
->Wenn die Kartenfunktion kein zentrales Feature Ihrer App ist, sollten Sie stattdessen die Windows-Karten-App starten. Sie können die URI-Schemas `bingmaps:`, `ms-drive-to:` und `ms-walk-to:` zum Starten der Windows-Karten-App für bestimmte Karten und für Wegbeschreibungen mit Sprachnavigation verwenden. Weitere Informationen finden Sie unter [Starten der Windows-Karten-App](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
+>Laden Sie das [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) herunter, um mehr über die Verwendung von Karten in Ihrer App zu erfahren.
+>Wenn die Kartenfunktion kein zentrales Feature Ihrer App ist, sollten Sie stattdessen die Windows-Karten-App starten. Sie können die URI-Schemas `bingmaps:`, `ms-drive-to:` und `ms-walk-to:` zum Starten der Windows-Karten-App für bestimmte Karten und für Turn-by-Turn-Wegbeschreibungen verwenden. Weitere Informationen finden Sie unter [Starten der Windows-Karten-App](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
  
 ## <a name="an-intro-to-maproutefinder-results"></a>Eine Einführung in die MapRouteFinder-Ergebnisse
@@ -138,7 +138,7 @@ You have reached your destination.
 ## <a name="display-routes"></a>Anzeigen von Routen
 
 
-Blenden Sie eine [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) auf einem [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) ein, indem Sie eine [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView) mit der **MapRoute** erstellen. Fügen Sie die **MapRouteView** anschließend zur [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes)-Auflistung von **MapControl** hinzu.
+Blenden Sie eine [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) auf einem [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) ein, indem Sie eine [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView) mit derMapRoute erstellen. Fügen Sie die **MapRouteView** anschließend zur [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes)-Auflistung von **MapControl** hinzu.
 
 >[!IMPORTANT]
 >Sie müssen einen Kartenauthentifizierungsschlüssel angeben, bevor Sie Kartendienste oder das Kartensteuerelement verwenden können. Weitere Informationen finden Sie unter [Anfordern eines Kartenauthentifizierungsschlüssels](authentication-key.md).
@@ -242,7 +242,7 @@ private async void ShowRouteOnMap()
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Bing Karten Developer Center](https://www.bingmapsportal.com/)
-* [Beispiel für UWP-Karte](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Beispiel für UWP-Karte](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Entwurfsrichtlinien für Karten](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015-Video: Nutzen von Karten und Ortung über Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Beispiel für eine UWP-App mit Verkehrsinformationen](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Beispiel für eine UWP-App mit Verkehrsinformationen](https://github.com/Microsoft/Windows-appsample-trafficapp)

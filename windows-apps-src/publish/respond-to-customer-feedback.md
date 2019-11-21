@@ -3,26 +3,26 @@ title: Reagieren auf Kundenfeedback
 description: Sie können direkt auf Feedback reagieren, das Ihre Kunden im Feedback-Hub hinterlassen.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 9bc305834381fcdddac6e4eacf12144fd9f189c2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57645075"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259946"
 ---
 # <a name="respond-to-customer-feedback"></a>Reagieren auf Kundenfeedback
 
 Sie können den [Feedbackbericht](feedback-report.md) verwenden, um das Feedback zu prüfen, das Ihre Windows 10-Kunden zu Ihrer App im Feedback-Hub hinterlassen haben, und dann direkt auf dieses Feedback antworten. Sie können Ihre Antworten im Feedback-Hub für alle Benutzer veröffentlichen (entweder als einzelne Kommentare oder durch Aktualisieren des Status eines Feedbacks und Hinzufügen einer Beschreibung), um die Kunden über neue Funktionen und Fehlerkorrekturen zu informieren oder um detaillierteres Feedback zur Verbesserung Ihrer App zu bitten. Sie können Ihre Antwort auch per E-Mail direkt an den Kunden senden, der das Feedback abgegeben hat.
 
 > [!TIP]
-> Über die Feedback-API im [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) können Sie es Kunden ermöglichen, Feedback zu geben. Dabei wird ein Steuerelement hinzugefügt, über das Kunden direkt [den Feedback-Hub von Ihrer UWP-App starten können](../monetize/launch-feedback-hub-from-your-app.md). Bedenken Sie, dass jeder Kunde, der Ihre App auf einem Windows 10-Gerät heruntergeladen hat, das den Feedback-Hub unterstützt, mithilfe der Feedback-Hub-App ein Feedback abgeben kann. Aus diesem Grund wird in diesem Bericht möglicherweise Feedback von Kunden angezeigt, auch wenn Sie in Ihrer App nicht explizit um Feedback gebeten haben.
+> Über die Feedback-API im [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK) können Sie es Kunden ermöglichen, Feedback zu geben. Dabei wird ein Steuerelement hinzugefügt, über das Kunden direkt [den Feedback-Hub von Ihrer UWP-App starten können](../monetize/launch-feedback-hub-from-your-app.md). Bedenken Sie, dass jeder Kunde, der Ihre App auf einem Windows 10-Gerät heruntergeladen hat, das den Feedback-Hub unterstützt, mithilfe der Feedback-Hub-App ein Feedback abgeben kann. Aus diesem Grund wird in diesem Bericht möglicherweise Feedback von Kunden angezeigt, auch wenn Sie in Ihrer App nicht explizit um Feedback gebeten haben.
 
 Um zu einem Feedback eine Antwort zu geben, klicken Sie auf den Link **Feedback beantworten**, der neben dem Feedback in Ihrem **Feedbackbericht** angezeigt wird.
 
-[Partner Center](https://partner.microsoft.com/dashboard) unterstützt drei Optionen für die Reaktion auf Kunden, die Bereitstellen von Feedback zu Ihrer app. Unabhängig davon, welche Option Sie wählen, denken Sie daran, dass maximal 1.000 Zeichen für jede Antwort zulässig sind.
+[Partner Center](https://partner.microsoft.com/dashboard) supports three options for responding to customers who provide feedback about your app. Unabhängig davon, welche Option Sie wählen, denken Sie daran, dass maximal 1.000 Zeichen für jede Antwort zulässig sind.
 
 ## <a name="public-comments-in-feedback-hub"></a>Öffentliche Kommentare im Feedback-Hub
 
@@ -44,9 +44,9 @@ Eine dritte Option für eine öffentliche Antwort ist, den Status eines Feedback
 
 Um diese Option zu verwenden, wählen Sie das Optionsfeld **Status aktualisieren** aus. Wählen Sie dann eine der folgenden Optionen aus:
 
-- **Untersuchen von**: Sie sind ein Problem bekannt, und Sie darin suchen.
-- **Wir arbeiten**: Sie können beim Beheben des Problems oder Hinzufügen eines angeforderten Features.
-- **Abgeschlossen**: Sie haben ein Update, um das Problem beheben, oder fügen Sie das angeforderte Feature veröffentlicht.
+- **Wird untersucht**: Sie sind sich des Problems bewusst und gehen ihm nach.
+- **Wir arbeiten daran**: Sie sind dabei, ein Problem zu lösen oder eine angeforderte Funktion hinzuzufügen.
+- **Abgeschlossen**: Sie haben ein Update veröffentlicht, um das Problem zu lösen oder die angeforderte Funktion hinzuzufügen.
 
 Neben dem Aktualisieren des Status können Sie auch einen Kommentar eingeben, um weitere Informationen bereitzustellen, z. B. eine Schätzung, wann das Problem gelöst sein wird, oder weitere Informationen zu den neuesten Änderungen. Diese Beschreibung wird am oberen Rand der Liste der Kommentare angezeigt (im Feedbackbericht werden der aktuelle Status und die Beschreibung angezeigt).
 
@@ -66,4 +66,4 @@ Unabhängig davon, welche Methode Sie verwenden, um auf das Feedback der Kunden 
 > [!NOTE]
 > Kunden können eine unangemessene Antwort, mit der ein Entwickler auf ein Feedback reagiert, an Microsoft melden. Sie können auch entscheiden, keine Antworten auf Feedback per E-Mail zu erhalten.
 
-Sie alleine sind für die Kommunikation mit Ihren Kunden verantwortlich. Microsoft beteiligt sich nicht an Meinungsverschiedenheiten zwischen Entwicklern und Kunden. Wenn Sie jedoch der Meinung sind, dass der Inhalt eines Feedbacks für Ihr Produkt unangebracht ist, reichen Sie bitte ein [Supportticket](https://go.microsoft.com/fwlink/p/?LinkID=401178) ein.
+Sie alleine sind für die Kommunikation mit Ihren Kunden verantwortlich. Microsoft beteiligt sich nicht an Meinungsverschiedenheiten zwischen Entwicklern und Kunden. Wenn Sie jedoch der Meinung sind, dass der Inhalt eines Feedbacks für Ihr Produkt unangebracht ist, reichen Sie bitte ein [Supportticket](https://developer.microsoft.com/windows/support) ein.

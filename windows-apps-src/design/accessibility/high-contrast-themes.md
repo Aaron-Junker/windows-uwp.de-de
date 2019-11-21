@@ -5,14 +5,14 @@ title: Designs mit hohem Kontrast
 template: detail.hbs
 ms.date: 09/28/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c37ceb63a5d9d9f83d3f1ebca0b0584f1092b7f6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 617511d23bcabe342abe7477f617d81cd01182e6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359580"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257785"
 ---
 # <a name="high-contrast-themes"></a>Designs mit hohem Kontrast  
 
@@ -20,7 +20,7 @@ Windows unterstützt Designs mit hohem Kontrast für das Betriebssystem und Apps
 
 ![Rechner im hellen Design und im Design „Hoher Kontrast (Schwarz)”](images/high-contrast-calculators.png)
 
-*Der Rechner im Design "hell" und das Design "hoher Kontrast Schwarz" angezeigt.*
+*Calculator shown in light theme and High Contrast Black theme.*
 
 Sie können über *Einstellungen > Erleichterte Bedienung > Hoher Kontrast* zu einem Design mit hohem Kontrast wechseln.
 
@@ -87,15 +87,15 @@ Auf der Seite *Einstellungen > Erleichterte Bedienung > Hoher Kontrast* sind sta
 
 ![Einstellungen für hohen Kontrast](images/high-contrast-settings.png)  
 
-*Nachdem der Benutzer eine Option auswählt, zeigt die Seite eine Vorschau an.*  
+*After the user selects an option, the page shows a preview.*  
 
 ![Ressourcen mit hohem Kontrast](images/high-contrast-resources.png)  
 
-*Jede Farbmuster auf die Vorschau kann geklickt werden, um den Wert zu ändern. Jedes Muster wird auch direkt in eine Farbressource XAML zugeordnet.*  
+*Every color swatch on the preview can be clicked to change its value. Every swatch also directly maps to an XAML color resource.*  
 
 Jede **SystemColor*Color**-Ressource ist eine Variable, die die Farbe automatisch aktualisiert, wenn der Benutzer Designs mit hohem Kontrast wechselt. Im Folgenden finden Sie Richtlinien für die Verwendung der einzelnen Ressourcen.
 
-Ressource | Verwendung |
+Ressource | Verwendungszweck |
 |--------|-------|
 **SystemColorWindowTextColor** | Textkörper, Überschriften, Listen, beliebiger Text, mit dem nicht interagiert werden kann |
 | **SystemColorHotlightColor** | Hyperlinks |
@@ -108,13 +108,13 @@ Ressource | Verwendung |
 
 Häufig ist es hilfreich, sich in vorhandenen Apps, Startseiten oder allgemeinen Steuerelementen anzusehen, wie andere Entwickler ähnliche Probleme beim Entwerfen für hohen Kontrast gelöst haben.
 
-**Führen Sie**
+**Do**
 
 * Beachten Sie nach Möglichkeit die Hintergrund-/Vordergrundpaare.
 * Testen Sie alle vier Designs mit hohem Kontrast, während die App ausgeführt wird. Der Benutzer sollte die App bei einem Wechsel des Designs nicht neu starten müssen.
 * Achten Sie auf Einheitlichkeit.
 
-**Tue nicht**
+**Don't**
 
 * Hartcodierung einer Farbe im Design **HighContrast** – verwenden Sie die **SystemColor*Color**-Ressourcen.
 * Berücksichtigen Sie bei der Auswahl einer Farbressource die Ästhetik. Denken Sie daran, dass sich die Farbressourcen mit dem Design ändern.
@@ -154,7 +154,7 @@ Später können Sie dann in Ihrer App den Hintergrund festlegen.
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-Hinweis wie **\{ThemeResource\}** wird zweimal verwendet, einmal zu verweisen **SystemColorWindowColor** und einmal, um Verweis **BrandedPageBackgroundBrush**. Beide Verweise sind erforderlich, damit zur Laufzeit das korrekte Design in Ihrer App verwendet wird. Dies ist ein guter Zeitpunkt, um die Funktionalität in Ihrer App zu testen. Der Hintergrund des Rasters wird automatisch aktualisiert, wenn Sie zu einem Design mit hohem Kontrast wechseln. Beim Wechseln zwischen verschiedenen Designs mit hohem Kontrast wird er ebenfalls aktualisiert.
+Note how **\{ThemeResource\}** is used twice, once to reference **SystemColorWindowColor** and again to reference **BrandedPageBackgroundBrush**. Beide Verweise sind erforderlich, damit zur Laufzeit das korrekte Design in Ihrer App verwendet wird. Dies ist ein guter Zeitpunkt, um die Funktionalität in Ihrer App zu testen. Der Hintergrund des Rasters wird automatisch aktualisiert, wenn Sie zu einem Design mit hohem Kontrast wechseln. Beim Wechseln zwischen verschiedenen Designs mit hohem Kontrast wird er ebenfalls aktualisiert.
 
 ## <a name="when-to-use-borders"></a>Wann sollten Rahmen verwenden werden?
 
@@ -162,7 +162,7 @@ Für den Hintergrund von Seiten, Bereichen, Popups und Leisten sollte im Design 
 
 ![Ein vom Rest der Seite abgegrenzter Navigationsbereich](images/high-contrast-actions-content.png)  
 
-*Verwenden die gleiche Hintergrundfarbe mit hohem Kontrast im Navigationsbereich und die Seite. Ein hoher Kontrast reine Rahmen, sie zu teilen ist unerlässlich.*
+*The navigation pane and the page both share the same background color in high contrast. A high contrast-only border to divide them is essential.*
 
 
 ## <a name="list-items"></a>Listenelemente
@@ -171,7 +171,7 @@ Im Design mit hohem Kontrast wird der Hintergrund von Elementen in ein [ListView
 
 ![Einfache Liste im hellen Design und im Design „Hoher Kontrast (Schwarz)”](images/high-contrast-list1.png)
 
-*Eine einfache Liste im Design "hell (links)" und das Design "hoher Kontrast Schwarz" (rechts). Das zweite Element ist ausgewählt. Beachten Sie, wie die Textfarbe mit hohem Kontrast umgekehrt wird.*
+*A simple list in light theme (left) and High Contrast Black theme (right). The second item is selected; note how its text color is inverted in high contrast.*
 
 
 ### <a name="list-items-with-colored-text"></a>Listenelemente mit farbigem Text
@@ -180,7 +180,7 @@ Das Festlegen von „TextBlock.Foreground” in der [DataTemplate](https://docs.
 
 ![Komplexe Liste im hellen Design und im Design „Hoher Kontrast (Schwarz)”](images/high-contrast-list2.png)
 
-*Komplexe Liste im Design "hell (links)" und das Design "hoher Kontrast Schwarz" (rechts). Fehler bei mit hohem Kontrast die zweite Zeile des ausgewählten Elements zum umkehren.*  
+*Complex list in light theme (left) and High Contrast Black theme (right). In high contrast, the second line of the selected item failed to invert.*  
 
 Sie können dieses Problem umgehen, indem Sie die Foreground-Eigenschaft bedingt über einen Stil in einer **ThemeDictionaries**-Sammlung festlegen. Da die **Foreground**-Eigenschaft nicht durch **SecondaryBodyTextBlockStyle** in **HighContrast** festgelegt wird, wird die Farbe korrekt umgekehrt.
 
@@ -235,7 +235,7 @@ Sie können mithilfe von Membern der [**AccessibilitySettings**](https://docs.mi
 
 ## <a name="related-topics"></a>Verwandte Themen  
 * [Bedienungshilfen](accessibility.md)
-* [Benutzeroberflächenbeispiel Kontrast und Einstellungen](https://go.microsoft.com/fwlink/p/?linkid=231539)
-* [Beispiel für XAML-Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570)
-* [Beispiel für XAML-hoher Kontrast](https://go.microsoft.com/fwlink/p/?linkid=254993)
+* [UI contrast and settings sample](https://code.msdn.microsoft.com/windowsapps/High-Contrast-UI-Settings-9a310961)
+* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML high contrast sample](https://code.msdn.microsoft.com/windowsapps/XAML-high-contrast-style-c0ce936f)
 * [**AccessibilitySettings**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings)

@@ -1,19 +1,19 @@
 ---
 ms.assetid: 3a3ea86e-fa47-46ee-9e2e-f59644c0d1db
 description: Dieser Artikel beschreibt, wie Sie Arbeitsspeicher reduzieren, wenn Ihre App in den Hintergrund verschoben wird.
-title: Reduzieren Sie die Speicherverwendung, wenn Ihre App in den Hintergrundzustand verschoben wird
+title: Reduzieren der Speicherverwendung bei Verschieben der App in den Hintergrundzustand
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a660512abe5f18f7b1955853dc5389dc902fd2e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0b5e0ea6deef7dfe3531c8d0406e08bfae80f0e2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371273"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260457"
 ---
-# <a name="free-memory-when-your-app-moves-to-the-background"></a>Geben Sie Speicher frei, wenn Ihre App in den Hintergrund verschoben wird
+# <a name="free-memory-when-your-app-moves-to-the-background"></a>Freigeben von Speicher, wenn die App in den Hintergrund verschoben wird
 
 Dieser Artikel beschreibt, wie Sie die Größe des Speichers reduzieren, den Ihre App verwendet, wenn sie in den Hintergrundzustand verschoben wird, so dass sie nicht angehalten und möglicherweise sogar beendet wird.
 
@@ -103,5 +103,5 @@ Wenn eine App vom Hintergrund in den Vordergrund wechselt, erhält sie zuerst ei
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Abspielbeispiel für Hintergrundmedien](https://go.microsoft.com/fwlink/p/?LinkId=800141) - zeigt, wie Sie Speicher freigeben, wenn ihre App in den Hintergrund wechselt.
+* [Abspielbeispiel für Hintergrundmedien](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback) - zeigt, wie Sie Speicher freigeben, wenn ihre App in den Hintergrund wechselt.
 * [Diagnosetools](https://devblogs.microsoft.com/devops/diagnostic-tools-debugger-window-in-visual-studio-2015/) - beobachten Sie mit den Diagnosetools die Garbage Collection-Ereignisse, und prüfen Sie, ob Ihre App Speicher in der erwarteten Weise freigibt.

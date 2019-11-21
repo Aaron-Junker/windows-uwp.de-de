@@ -6,16 +6,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Rezensionen-API, Reagieren auf Rezensionen
 ms.localizationpriority: medium
-ms.openlocfilehash: 677108e692bbc702778cad3c42a45b4f5408b8cd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b5462f5b98cee202e32b8266539f929127434a4e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653165"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260197"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>Antworten auf Rezensionen mit Store-Diensten
 
-Verwenden Sie die *Microsoft Store-Rezensionen-API*, um programmgesteuert auf Rezensionen Ihrer App im Store zu reagieren. Diese API ist besonders nützlich, für Entwickler möchten auf vielen Überprüfungen zu reagieren, ohne Verwendung von Partner Center. Diese API verwendet Azure Active Directory (Azure AD), um die Aufrufe von Ihrer App oder Ihrem Dienst zu authentifizieren.
+Verwenden Sie die *Microsoft Store-Rezensionen-API*, um programmgesteuert auf Rezensionen Ihrer App im Store zu reagieren. This API is especially useful for developers who want to bulk respond to many reviews without using Partner Center. Diese API verwendet Azure Active Directory (Azure AD), um die Aufrufe von Ihrer App oder Ihrem Dienst zu authentifizieren.
 
 Dazu müssen folgende Schritte ausgeführt werden:
 
@@ -24,25 +24,25 @@ Dazu müssen folgende Schritte ausgeführt werden:
 3.  [Aufrufen der Microsoft Store-Rezensionen-API](#call-the-windows-store-reviews-api).
 
 > [!NOTE]
-> Überprüft die zusätzlich zur Verwendung der Microsoft Store-API, um programmgesteuert das Reagieren auf Überprüfungen, Sie können alternativ reagieren auf Überprüfungen [über Partner Center](../publish/respond-to-customer-reviews.md).
+> In addition to using the Microsoft Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using Partner Center](../publish/respond-to-customer-reviews.md).
 
 <span id="prerequisites" />
 
-## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-reviews-api"></a>Schritt 1: Überprüft die vollständige Voraussetzungen für die Verwendung von den Microsoft Store-API
+## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-reviews-api"></a>Schritt 1: Erfüllen der Voraussetzungen für die Verwendung der Microsoft Store-Rezensionen-API
 
 Stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen, bevor Sie mit dem Schreiben von Code zum Aufrufen der MicrosoftStore-Rezensionen-API beginnen.
 
-* Sie (bzw. Ihre Organisation) müssen über ein Azure AD-Verzeichnis und die Berechtigung [Globaler Administrator](https://go.microsoft.com/fwlink/?LinkId=746654) für das Verzeichnis verfügen. Wenn Sie bereits mit Office 365 oder anderen Unternehmensdiensten von Microsoft arbeiten, verfügen Sie schon über ein Azure AD-Verzeichnis. Andernfalls können Sie [erstellen Sie einen neuen Azure AD im Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ohne zusätzliche Gebühren.
+* Sie (bzw. Ihre Organisation) müssen über ein Azure AD-Verzeichnis und die Berechtigung [Globaler Administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis verfügen. Wenn Sie bereits mit Office 365 oder anderen Business Services von Microsoft arbeiten, verfügen Sie schon über ein Azure AD-Verzeichnis. Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) for no additional charge.
 
-* Sie müssen eine Azure AD-Anwendung mit Ihrem Partner Center-Konto zuordnen, Abrufen der Mandanten-ID und Client-ID für die Anwendung und einen Schlüssel generieren. Die Azure-AD-Anwendung stellt die App oder den Dienst dar, von der/dem Sie die Microsoft Store-Rezensionen-API aufrufen möchten. Sie benötigen die Mandanten-ID, die Client-ID und den Schlüssel zum Abrufen eines Azure AD-Zugriffstokens, das Sie an die API übergeben.
+* You must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. Die Azure-AD-Anwendung stellt die App oder den Dienst dar, von der/dem Sie die Microsoft Store-Rezensionen-API aufrufen möchten. Sie benötigen die Mandanten-ID, die Client-ID und den Schlüssel zum Abrufen eines Azure-AD-Zugriffstokens, das Sie an die API übergeben.
     > [!NOTE]
-    > Sie müssen diesen Schritt nur einmal ausführen. Sobald Sie über die Mandanten-ID, Client-ID und den Schlüssel verfügen, können Sie diese Daten jederzeit wiederverwenden, um ein neues Azure AD-Zugriffstoken zu erstellen.
+    > Sie müssen diesen Schritt nur einmal ausführen. Wenn Sie im Besitz der Mandanten-ID, der Client-ID und des Schlüssel sind, können Sie diese Daten jederzeit wiederverwenden, um ein neues Azure AD-Zugriffstoken zu erstellen.
 
-So ordnen Sie eine Azure AD-Anwendung mit Ihrem Partner Center-Konto und Abrufen der erforderlichen Werte:
+To associate an Azure AD application with your Partner Center account and retrieve the required values:
 
-1.  Im Partner Center [Ihrer Organisation Azure AD-Verzeichnis Ihrer Organisation Partner Center-Konto zuordnen](../publish/associate-azure-ad-with-partner-center.md).
+1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-partner-center.md).
 
-2.  Als Nächstes wird von der **Benutzer** auf der Seite die **Kontoeinstellungen** Partner Center im Abschnitt [Hinzufügen von Azure AD-Anwendung](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) , das darstellt, die app oder Ihres Diensts, die Sie zu verwenden reagieren Sie auf Überprüfungen. Weisen Sie dieser Anwendung anschließend die Rolle **Verwalter** zu. Wenn die Anwendung ist nicht vorhanden, noch Sie in Ihrem Azure AD-Verzeichnis können [erstellen Sie ein neues Azure AD-Anwendung im Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
+2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to respond to reviews. Weisen Sie dieser Anwendung anschließend die Rolle **Verwalter** zu. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account). 
 
 3.  Wechseln Sie zurück zur Seite **Benutzer**, klicken Sie auf den Namen der Azure AD-Anwendung, um die Anwendungseinstellungen aufzurufen, und kopieren Sie die Werte unter **Mandanten-ID** und **Client-ID**.
 
@@ -50,9 +50,9 @@ So ordnen Sie eine Azure AD-Anwendung mit Ihrem Partner Center-Konto und Abrufen
 
 <span id="obtain-an-azure-ad-access-token" />
 
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>Schritt 2: Abrufen eines Azure AD-Zugriffstokens
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>Schritt 2: Abrufen eines Azure AD-Zugriffstokens
 
-Bevor Sie die Methoden in der Microsoft Store-Rezensionen-API aufrufen, müssen Sie ein Azure-AD-Zugriffstoken abrufen, das Sie für jede Methode in der API an den **Authorization**-Header übergeben. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Nachdem das Token abgelaufen ist, können Sie es aktualisieren, um es in weiteren Aufrufen an die API zu verwenden.
+Bevor Sie die Methoden in der Microsoft Store-Rezensionen-API aufrufen, müssen Sie ein Azure-AD-Zugriffstoken abrufen, das Sie für jede Methode in der API an den **Authorization**-Header übergeben. Nachdem Sie ein Zugriffstoken abgerufen haben, können Sie es 60 Minuten lang verwenden, bevor es abläuft. Nachdem das Token abgelaufen ist, können Sie es aktualisieren, um es in weiteren Aufrufen an die API zu verwenden.
 
 Befolgen Sie zum Abrufen des Zugriffstokens die Anweisungen unter [Aufrufe zwischen Diensten mithilfe von Clientanmeldeinformationen](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), um eine HTTP POST-Anforderung an den ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```-Endpunkt zu senden. Hier ist ein Beispiel für eine Anforderung angegeben.
 
@@ -67,13 +67,13 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-Für die *Mandanten\_Id* Wert in der POST-URI und die *Client\_Id* und *Client\_Geheimnis* den Mandanten zur Angabe von Parametern ID, Client-ID und den Schlüssel für Ihre Anwendung, die Sie vom Partner Center im vorherigen Abschnitt abgerufen haben. Für den Parameter *resource* müssen Sie ```https://manage.devcenter.microsoft.com``` angeben.
+For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. Für den Parameter *resource* müssen Sie ```https://manage.devcenter.microsoft.com``` angeben.
 
 Nachdem das Zugriffstoken abgelaufen ist, können Sie es aktualisieren, indem Sie [diese Anleitung](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens) befolgen.
 
 <span id="call-the-windows-store-reviews-api" />
 
-## <a name="step-3-call-the-microsoft-store-reviews-api"></a>Schritt 3: Die Microsoft Store-Bewertungen-API-aufrufen
+## <a name="step-3-call-the-microsoft-store-reviews-api"></a>Schritt 3: Aufrufen der Microsoft Store-Rezensionen-API
 
 Nachdem Sie ein Azure AD-Zugriffstoken abgerufen haben, können Sie die Microsoft Store-Rezensionen-API aufrufen. Sie müssen das Zugriffstoken an den **Authorization**-Header der einzelnen Methoden übergeben.
 
@@ -86,8 +86,8 @@ Die Microsoft Store-Rezensionen-API enthält mehrere Methoden, die Sie verwenden
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Abrufen von app-Bewertungen](get-app-reviews.md)
-* [Abrufen von Antwort-Informationen für Bewertungen zu Apps](get-response-info-for-app-reviews.md)
-* [Senden von Antworten auf app-Bewertungen](submit-responses-to-app-reviews.md)
+* [Get app reviews](get-app-reviews.md)
+* [Get response info for app reviews](get-response-info-for-app-reviews.md)
+* [Submit responses to app reviews](submit-responses-to-app-reviews.md)
 
  

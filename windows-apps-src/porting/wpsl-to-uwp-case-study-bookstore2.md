@@ -1,54 +1,54 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: Diese Fallstudie, die auf die Informationen in Bookstore angegebene erstellt wurde, beginnt mit einer Windows Phone Silverlight-app zeigt Daten in einem LongListSelector gruppiert.
-title: Windows Phone Silverlight, UWP Case Study Bookstore2
+description: This case study, which builds on the info given in Bookstore, begins with a Windows Phone Silverlight app that displays grouped data in a LongListSelector.
+title: Windows Phone Silverlight to UWP case study, Bookstore2
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e3b6ab53e5e9f0b36e6bdeb047b48766cda7a2a5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1d1440bf3cfded6b50eb58feffd322ea484e488a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372389"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260105"
 ---
-# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight, UWP-Fallstudie: Bookstore2
+# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight to UWP case study: Bookstore2
 
 
-Diese Fallstudie – die baut auf den Informationen, die im angegebenen [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)– beginnt mit einem Windows Phone Silverlight-app, die anzeigt, Daten in gruppierte einem **LongListSelector**. Im Ansichtsmodell stellt jede Instanz der **Author**-Klasse die Gruppe der vom betreffenden Autor verfassten Titel dar. In **LongList Selector** können wir dann entweder die Bücherliste nach Autoren gruppiert anzeigen oder die Liste verkleinern, um eine Sprungliste der Autoren zu erhalten. Die Sprungliste ermöglicht eine wesentlich schnellere Navigation im Vergleich zum Blättern in der Bücherliste. Wir führen durch die Schritte zum Portieren der app in einer app für Windows 10 universelle Windows-Plattform (UWP).
+This case study—which builds on the info given in [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)—begins with a Windows Phone Silverlight app that displays grouped data in a **LongListSelector**. Im Ansichtsmodell stellt jede Instanz der **Author**-Klasse die Gruppe der vom betreffenden Autor verfassten Titel dar. In **LongList Selector** können wir dann entweder die Bücherliste nach Autoren gruppiert anzeigen oder die Liste verkleinern, um eine Sprungliste der Autoren zu erhalten. Die Sprungliste ermöglicht eine wesentlich schnellere Navigation im Vergleich zum Blättern in der Bücherliste. We walk through the steps of porting the app to a Windows 10 Universal Windows Platform (UWP) app.
 
-**Beachten Sie**    beim Öffnen von Bookstore2Universal\_10 in Visual Studio, wenn die Meldung "Visual Studio-Update erforderlich", klicken Sie dann die Schritte zum Festlegen der Version der Zielplattform in [ TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
+**Note**   When opening Bookstore2Universal\_10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps for setting Target Platform Version in [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
 
 ## <a name="downloads"></a>Downloads
 
-[Herunterladen der Bookstore2WPSL8 Windows Phone Silverlight-app](https://go.microsoft.com/fwlink/p/?linkid=522601).
+[Download the Bookstore2WPSL8 Windows Phone Silverlight app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2WPSL8).
 
-[Herunterladen der Bookstore2Universal\_10 Windows 10-app](https://go.microsoft.com/fwlink/?linkid=532952).
+[Download the Bookstore2Universal\_10 Windows 10 app](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10).
 
-##  <a name="the-windowsphone-silverlight-app"></a>Die Windows Phone Silverlight-app
+##  <a name="the-windowsphone-silverlight-app"></a>The Windows Phone Silverlight app
 
-Die folgende Abbildung zeigt, wie die zu portierende App namens Bookstore2WPSL8 aussieht. Es handelt sich um einen vertikal scrollbaren **LongListSelector** mit Buchtiteln, die nach Autor gruppiert sind. Sie können die Liste auf die Sprungliste verkleinern und von dort aus wieder zurück zu einer beliebigen Gruppe navigieren. Die App besteht aus zwei Hauptteilen: dem Ansichtsmodell, das die gruppierte Datenquelle bereitstellt, und der Benutzeroberfläche, die an dieses Ansichtsmodell gebunden ist. Wie wir sehen werden, beide Teile Port ganz einfach von Windows Phone Silverlight-Technologie auf die universelle Windows-Plattform (UWP).
+Die folgende Abbildung zeigt, wie die zu portierende App namens Bookstore2WPSL8 aussieht. Es handelt sich um einen vertikal scrollbaren **LongListSelector** mit Buchtiteln, die nach Autor gruppiert sind. Sie können die Liste auf die Sprungliste verkleinern und von dort aus wieder zurück zu einer beliebigen Gruppe navigieren. Die App besteht aus zwei Hauptteilen: dem Ansichtsmodell, das die gruppierte Datenquelle bereitstellt, und der Benutzeroberfläche, die an dieses Ansichtsmodell gebunden ist. As we'll see, both of these pieces port easily from Windows Phone Silverlight technology to the Universal Windows Platform (UWP).
 
 ![Erscheinungsbild von „bookstore2wpsl8“](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
-##  <a name="porting-to-a-windows10-project"></a>Portieren auf einem Windows 10-Projekt
+##  <a name="porting-to-a-windows10-project"></a>Porting to a Windows 10 project
 
-Das Erstellen eines neuen Projekts in Visual Studio geht schnell: Kopieren Sie Dateien aus Bookstore2WPSL8, und fügen Sie die kopierten Dateien in das neue Projekt ein. Erstellen Sie zunächst ein neues Projekt vom Typ „Leere Anwendung“ (Windows Universal). Nennen Sie sie Bookstore2Universal\_10. Hierbei handelt es sich um die Dateien aus Bookstore2WPSL8 in Bookstore2Universal kopieren\_10.
+Das Erstellen eines neuen Projekts in Visual Studio geht schnell: Kopieren Sie Dateien aus Bookstore2WPSL8, und fügen Sie die kopierten Dateien in das neue Projekt ein. Erstellen Sie zunächst ein neues Projekt vom Typ „Leere Anwendung“ (Windows Universal). Name it Bookstore2Universal\_10. These are the files to copy over from Bookstore2WPSL8 to Bookstore2Universal\_10.
 
--   Kopieren Sie den Ordner mit den Buch Cover PNG-Dateien (der Ordner ist \\Assets\\CoverImages). Vergewissern Sie sich nach dem Kopieren des Ordners im **Projektmappen-Explorer**, dass **Alle Dateien anzeigen** aktiviert ist. Klicken Sie mit der rechten Maustaste auf den kopierten Ordner, und klicken Sie dann auf **Zu Projekt hinzufügen**. Mit „Einschließen“ von Dateien oder Ordnern in einem Projekt meinen wir diesen Befehl. Klicken Sie jedes Mal, wenn Sie eine Datei oder einen Ordner kopieren, im **Projektmappen-Explorer** auf **Aktualisieren**, und schließen Sie dann die Datei oder den Ordner in das Projekt ein. Dies ist nicht für Dateien erforderlich, die Sie am Ziel ersetzen.
--   Kopieren Sie den Ordner, die die Quelldatei des Ansicht-Modell enthält (der Ordner ist \\"ViewModel").
+-   Copy the folder containing the book cover image PNG files (the folder is \\Assets\\CoverImages). Vergewissern Sie sich nach dem Kopieren des Ordners im **Projektmappen-Explorer**, dass **Alle Dateien anzeigen** aktiviert ist. Klicken Sie mit der rechten Maustaste auf den kopierten Ordner, und klicken Sie dann auf **Zu Projekt hinzufügen**. Mit „Einschließen“ von Dateien oder Ordnern in einem Projekt meinen wir diesen Befehl. Klicken Sie jedes Mal, wenn Sie eine Datei oder einen Ordner kopieren, im **Projektmappen-Explorer** auf **Aktualisieren**, und schließen Sie dann die Datei oder den Ordner in das Projekt ein. Dies ist nicht für Dateien erforderlich, die Sie am Ziel ersetzen.
+-   Copy the folder containing the view model source file (the folder is \\ViewModel).
 -   Kopieren Sie „MainPage.xaml“, und ersetzen Sie die Datei am Ziel.
 
-Wir können beibehalten, der "App.xaml", und klicken Sie auf "App.Xaml.cs", die Visual Studio im Windows 10-Projekt für uns erstellt.
+We can keep the App.xaml, and App.xaml.cs that Visual Studio generated for us in the Windows 10 project.
 
-Bearbeiten Sie die Quelldateien von Code und Markup, das Sie gerade kopiert haben und ändern Sie alle Verweise auf den Namespace Bookstore2WPSL8 in Bookstore2Universal\_10. Eine schnelle Möglichkeit dafür ist die Verwendung des Features **In Dateien ersetzen**. Im imperativen Code in der Ansichtsmodell-Quelldatei sind die folgenden Portierungsänderungen erforderlich:
+Edit the source code and markup files that you just copied and change any references to the Bookstore2WPSL8 namespace to Bookstore2Universal\_10. Eine schnelle Möglichkeit dafür ist die Verwendung des Features **In Dateien ersetzen**. Im imperativen Code in der Ansichtsmodell-Quelldatei sind die folgenden Portierungsänderungen erforderlich:
 
 -   Ändern Sie `System.ComponentModel.DesignerProperties` in `DesignMode`, und wenden Sie dann den Befehl **Auflösen** darauf an. Löschen Sie die `IsInDesignTool`-Eigenschaft, und fügen Sie mithilfe von IntelliSense den richtigen Eigenschaftsnamen hinzu: `DesignModeEnabled`.
 -   Wenden Sie den Befehl **Auflösen** auf `ImageSource` an.
 -   Wenden Sie den Befehl **Auflösen** auf `BitmapImage` an.
 -   Löschen Sie `using System.Windows.Media;` und `using System.Windows.Media.Imaging;`.
--   Ändern Sie den Rückgabewert von der **Bookstore2Universal\_10.BookstoreViewModel.AppName** -Eigenschaft von "BOOKSTORE2WPSL8" in "BOOKSTORE2UNIVERSAL".
+-   Change the value returned by the **Bookstore2Universal\_10.BookstoreViewModel.AppName** property from "BOOKSTORE2WPSL8" to "BOOKSTORE2UNIVERSAL".
 -   Wie zuvor bei [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) aktualisieren Sie die Implementierung der **BookSku.CoverImage**-Eigenschaft (siehe [Binden eines Bilds an ein Ansichtsmodell](wpsl-to-uwp-case-study-bookstore1.md)).
 
 In „MainPage.xaml“ müssen Sie die folgenden anfänglichen Portierungsänderungen vornehmen:
@@ -58,7 +58,7 @@ In „MainPage.xaml“ müssen Sie die folgenden anfänglichen Portierungsänder
 -   Ändern Sie „clr-namespace“ in der verbleibenden Namespacepräfix-Deklaration in „using“.
 -   Löschen Sie `SupportedOrientations="Portrait"`und `Orientation="Portrait"`, und konfigurieren Sie **Portrait** im App-Paketmanifest des neuen Projekts.
 -   Löschen Sie `shell:SystemTray.IsVisible="True"`.
--   Die Konvertertypen für Sprunglistenelemente (die im Markup als Ressourcen enthalten sind) wurden in den [**Windows.UI.Xaml.Controls.Primitives**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives)-Namespace verschoben. Fügen Sie daher die Deklaration des Namespacepräfixes Windows\_UI\_Xaml\_Steuerelemente\_primitive und ordnen Sie es **Windows.UI.Xaml.Controls.Primitives**. Ändern Sie das Präfix in den Konverterressourcen für Sprunglistenelemente von `phone:` in `Windows_UI_Xaml_Controls_Primitives:`.
+-   Die Konvertertypen für Sprunglistenelemente (die im Markup als Ressourcen enthalten sind) wurden in den [**Windows.UI.Xaml.Controls.Primitives**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives)-Namespace verschoben. So, add the namespace prefix declaration Windows\_UI\_Xaml\_Controls\_Primitives and map it to **Windows.UI.Xaml.Controls.Primitives**. Ändern Sie das Präfix in den Konverterressourcen für Sprunglistenelemente von `phone:` in `Windows_UI_Xaml_Controls_Primitives:`.
 -   Ersetzen Sie wie zuvor bei [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) alle Verweise auf den `PhoneTextExtraLargeStyle` **TextBlock**-Stil durch einen Verweis auf `SubtitleTextBlockStyle`, und ersetzen Sie `PhoneTextSubtleStyle` durch `SubtitleTextBlockStyle`, `PhoneTextNormalStyle` durch `CaptionTextBlockStyle` und `PhoneTextTitle1Style` durch `HeaderTextBlockStyle`.
 -   Einzige Ausnahme ist `BookTemplate`. Der Stil des zweiten **TextBlock**-Elements sollte auf `CaptionTextBlockStyle` verweisen.
 -   Entfernen Sie das FontFamily-Attribut aus **TextBlock** innerhalb von `AuthorGroupHeaderTemplate`, und legen Sie den Hintergrund von **Border** so fest, dass nicht auf `PhoneAccentBrush` verwiesen wird, sondern auf `SystemControlBackgroundAccentBrush`.
@@ -120,7 +120,7 @@ Sie können die App jetzt erstellen und ausführen. Im Mobile-Emulator sieht sie
 
 ![UWP-App auf dem Mobilgerät mit Änderungen am ursprünglichen Quellcode](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-Das Ansichtsmodell und die vergrößerten sowie verkleinerten Ansichten arbeiten korrekt zusammen. Ein Problem ist aber, dass der Aufwand in Bezug auf die Formatierungen und Vorlagen etwas erhöht ist. Beispielsweise werden noch nicht die richtigen Stile und Pinsel verwendet. Daher ist der Text für die Gruppenköpfe, auf die Sie zum Verkleinern klicken können, nicht sichtbar. Wenn Sie die App auf einem Desktopgerät ausführen, tritt ein zweites Problem auf. Die App passt die Benutzeroberfläche noch nicht an, um für die bestmögliche Umgebung und Ausnutzung des verfügbaren Platzes auf größeren Geräten zu sorgen, auf denen Fenster deutlich größer als auf dem Bildschirm eines Mobilgeräts sein können. In den nächsten Abschnitten ([Anfängliches Erstellen von Formatierungen und Vorlagen](#initial-styling-and-templating), [Adaptive UI](#adaptive-ui) und [Abschließende Formatierung](#final-styling)) beheben wir diese Probleme.
+Das Ansichtsmodell und die vergrößerten sowie verkleinerten Ansichten arbeiten korrekt zusammen. Ein Problem ist aber, dass der Aufwand in Bezug auf die Formatierungen und Vorlagen etwas erhöht ist. For example, the correct styles and brushes are not yet being used, so the text is invisible on the group headers that you can click to zoom out. If you run the app on a desktop device, then you'll see a second issue, which is that the app doesn't yet adapt its user-interface to give the best experience and use of space on larger devices where windows can be potentially much larger than the screen of a mobile device. In den nächsten Abschnitten ([Anfängliches Erstellen von Formatierungen und Vorlagen](#initial-styling-and-templating), [Adaptive UI](#adaptive-ui) und [Abschließende Formatierung](#final-styling)) beheben wir diese Probleme.
 
 ## <a name="initial-styling-and-templating"></a>Anfängliches Erstellen von Formatierungen und Vorlagen
 
@@ -253,28 +253,28 @@ Nach den letzten Formatierungsvorgängen sieht die App folgendermaßen aus.
 
 ![Die portierte Windows 10-App auf einem Desktopgerät, vergrößerte Ansicht, zwei Fenstergrößen](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-Der portierten Windows 10-app auf einem Desktopgerät, vergrößerte Ansicht, Fenster in zwei Größen  
- ![der portierten Windows 10-app, die auf einem Desktopgerät, verkleinerte Ansicht, Fenster in zwei Größen ausgeführt wird](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+The ported Windows 10 app running on a Desktop device, zoomed-in view, two sizes of window  
+![the ported windows 10 app running on a desktop device, zoomed-out view, two sizes of window](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
-Der portierten Windows 10-app auf einem Desktopgerät, verkleinerte Ansicht, Fenster in zwei Größen ausgeführt wird
+The ported Windows 10 app running on a Desktop device, zoomed-out view, two sizes of window
 
 ![Die portierte Windows 10-App auf einem mobilen Gerät, vergrößerte Ansicht](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
 
-Der portierten Windows 10-app auf einem mobilen Gerät, vergrößerte Ansicht
+The ported Windows 10 app running on a Mobile device, zoomed-in view
 
 ![Die portierte Windows 10-App auf einem mobilen Gerät, verkleinerte Ansicht](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-Der portierten Windows 10-app auf einem mobilen Gerät, verkleinerte Ansicht
+The ported Windows 10 app running on a Mobile device, zoomed-out view
 
 ## <a name="making-the-view-model-more-flexible"></a>Entwickeln eines flexibleren Ansichtsmodells
 
-In diesem Abschnitt wird demonstriert, welche Möglichkeiten sich durch das Verschieben unserer App und die Verwendung der UWP ergeben. Hier erläutern wir optionale Schritte, mit denen Sie Ihr Ansichtsmodell flexibler gestalten können, wenn über **CollectionViewSource** darauf zugegriffen wird. Das Ansichtsmodell (die Quelldatei befindet sich in "ViewModel"\\BookstoreViewModel.cs), dass wir über die Windows Phone Silverlight-app Bookstore2WPSL8 portiert enthält eine Klasse namens Autor, abgeleitet von **Liste&lt;T&gt;** , wobei **T** BookSku ist. Dies bedeutet, dass die Author-Klasse einer Gruppe von BookSku-Objekten *entspricht*.
+In diesem Abschnitt wird demonstriert, welche Möglichkeiten sich durch das Verschieben unserer App und die Verwendung der UWP ergeben. Hier erläutern wir optionale Schritte, mit denen Sie Ihr Ansichtsmodell flexibler gestalten können, wenn über **CollectionViewSource** darauf zugegriffen wird. The view model (the source file is in ViewModel\\BookstoreViewModel.cs) that we ported from the Windows Phone Silverlight app Bookstore2WPSL8 contains a class named Author, which derives from **List&lt;T&gt;** , where **T** is BookSku. Dies bedeutet, dass die Author-Klasse einer Gruppe von BookSku-Objekten *entspricht*.
 
 Wenn wir **CollectionViewSource.Source** an „Authors“ binden, zeigen wir dadurch lediglich an, dass jeder Autor in „Authors“ eine Gruppe von *etwas* ist. Wir überlassen es **CollectionViewSource** zu bestimmen, dass „Author“ in diesem Fall eine BookSku-Gruppe ist. Diese Lösung funktioniert zwar, ist jedoch nicht sehr flexibel. Was wäre, wenn „Author“ *beides* sein soll, eine Gruppe von BookSku-Objekten *und* eine Gruppe der Adressen, unter denen der Autor gewohnt hat? „Author“ kann *nicht* beide dieser Gruppen darstellen. „Author“ *kann* jedoch eine beliebige Anzahl von Gruppen enthalten. Unsere Lösung sieht also wie folgt aus: Verwenden Sie das *has-a-group*-Muster anstelle oder zusätzlich zum aktuell verwendeten *is-a-group*-Muster. Gehen Sie dazu wie folgt vor:
 
 -   Ändern Sie „Author“, sodass das Element nicht mehr von **List&lt;T&gt;** abgeleitet wird.
--   Dieses Feld hinzufügen 
--   Fügen Sie diese Eigenschaft hinzu. 
+-   Add this field to 
+-   Add this property to 
 -   Selbstverständlich können wir die beiden vorangehenden Schritte auch wiederholen, um „Author“ so viele Gruppen wie nötig hinzuzufügen.
 -   Ändern Sie die Implementierung der AddBookSku-Methode in `this.BookSkus.Add(bookSku);`.
 -   Nachdem „Author“ jetzt über mindestens eine Gruppe *verfügt*, müssen wir **CollectionViewSource** mitteilen, welche dieser Gruppen verwendet werden soll. Fügen Sie diese Eigenschaft hierzu **CollectionViewSource** hinzu: `ItemsPath="BookSkus"`
@@ -299,6 +299,6 @@ Die Funktionalität dieser App wird durch diese Änderungen nicht verändert, ab
 
 Jetzt können wir `ItemsPath="BookSkus"` entfernen, ohne dass sich das Verhalten der App ändert.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Abschluss
 
-In dieser Fallstudie haben wir es mit einer aufwändigeren Benutzeroberfläche als im vorherigen Beispiel zu tun. Alle Funktionen und Konzepte des Windows Phone Silverlight **LongListSelector**– und vieles mehr – wurden gefunden, die für eine UWP-app in der Form verfügbar sein **SemanticZoom**, **ListView**, **GridView**, und **CollectionViewSource**. Sie haben erfahren, wie Sie sowohl imperativen Code als auch Markup in einer UWP-App wiederverwenden oder kopieren und bearbeiten, um Funktionen, Benutzeroberflächenelemente und Interaktionen speziell für die schmalsten und breitesten Formfaktoren von Windows-Geräten und alle Größen dazwischen umzusetzen.
+In dieser Fallstudie haben wir es mit einer aufwändigeren Benutzeroberfläche als im vorherigen Beispiel zu tun. All of the facilities and concepts of the Windows Phone Silverlight **LongListSelector**—and more—were found to be available to a UWP app in the form of **SemanticZoom**, **ListView**, **GridView**, and **CollectionViewSource**. Sie haben erfahren, wie Sie sowohl imperativen Code als auch Markup in einer UWP-App wiederverwenden oder kopieren und bearbeiten, um Funktionen, Benutzeroberflächenelemente und Interaktionen speziell für die schmalsten und breitesten Formfaktoren von Windows-Geräten und alle Größen dazwischen umzusetzen.

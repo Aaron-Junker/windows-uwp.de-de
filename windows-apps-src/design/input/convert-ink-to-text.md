@@ -8,18 +8,18 @@ keywords: Windows Ink, Windows-Freihandeingabe, DirectInk, InkPresenter, InkCanv
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f402c88efaca909fa5558880825629d94cc2a64b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 266f07385e3f7fd7450c32f8e912035d804a4740
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363745"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258055"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Erkennen von Windows Ink-Strichen als Text und Formen
 
 Konvertieren Sie mithilfe der integrierten Erkennungsfunktionen in Windows Ink Freihandstriche in Text und Form.
 
-> **Wichtige APIs:** [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Wichtige APIs**: [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>Freiformerkennung mit der Freihandeingabenanalyse
 
@@ -30,7 +30,7 @@ Hier wird veranschaulicht, wie Sie das Windows Ink-Analysemodul ([Windows.UI.Inp
 
 In diesem Beispiel wird die Erkennung durch den Benutzer initiiert, wenn er nach Abschluss des Zeichnens auf eine Schaltfläche klickt.
 
-**Laden Sie dieses Beispiel von [Ink Analysis-Beispiel (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
+**Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
 1. Zunächst richten wir die Benutzeroberfläche ein (MainPage.xaml). 
 
@@ -215,7 +215,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-6. Im Folgenden wird die Funktion zum Zeichnen eines TextBlock-Elements im Erkennungszeichenbereich beschrieben. Wir verwenden das umschließende Rechteck des Strichs zugeordneten Freihandeingaben auf der Leinwand Freihandeingaben, legen Sie die Position und Schriftartgröße des Textblocks.
+6. Im Folgenden wird die Funktion zum Zeichnen eines TextBlock-Elements im Erkennungszeichenbereich beschrieben. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
 
 ```csharp
 /// <summary>
@@ -236,7 +236,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 }
 ```
 
-7. Im Folgenden werden die Funktionen zum Zeichnen von Ellipsen und Polygonen im Erkennungszeichenbereich beschrieben. Wir verwenden das umschließende Rechteck des Strichs zugeordneten Freihandeingaben auf der Leinwand Freihandeingaben auf die Position und den Schriftgrad des Shapes festlegen.
+7. Im Folgenden werden die Funktionen zum Zeichnen von Ellipsen und Polygonen im Erkennungszeichenbereich beschrieben. We use the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
 
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
@@ -288,11 +288,11 @@ Im vorherigen Abschnitt ([Freiformerkennung mit der Freihandeingabenanalyse](#fr
 In diesem Abschnitt wird veranschaulicht, wie mit dem Windows Ink-Schrifterkennungsmodul (nicht der Freihandeingabenanalyse) ein Satz von Freihandstrichen in einer [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Klasse in Text interpretiert wird (je nach standardmäßig installiertem Sprachpaket).
 
 > [!NOTE]
-> Die grundlegende Schrifterkennung, so wie in diesem Abschnitt beschrieben, eignet sich insbesondere für einfache einzeilige Nur-Text-Eingabeszenarien wie Formulareingaben. Umfangreichere Recognition-Szenarios, die Analyse und Auswertung der Struktur eines Dokuments, Auflisten von Elementen, Formen und Zeichnungen (zusätzlich zur Erkennung von sichtbarem Text) einschließen, finden Sie im vorherigen Abschnitt: [Freiform-Erkennung mit handschrifterkennung](#free-form-recognition-with-ink-analysis).
+> Die grundlegende Schrifterkennung, so wie in diesem Abschnitt beschrieben, eignet sich insbesondere für einfache einzeilige Nur-Text-Eingabeszenarien wie Formulareingaben. Informationen zu umfangreicheren Erkennungsszenarien, die eine Analyse und Interpretation der Dokumentstruktur, Listenelemente, Formen und Zeichnungen (zusätzlich zur Texterkennung) umfassen, finden Sie im vorherigen Abschnitt: [Freiformerkennung mit der Freihandeingabenanalyse](#free-form-recognition-with-ink-analysis).
 
 In diesem Beispiel wird die Erkennung durch den Benutzer initiiert, wenn er nach Abschluss des Schreibens auf eine Schaltfläche klickt.
 
-**Laden Sie dieses Beispiel von [Freihandeingaben Handschrift Recognition-Beispiel](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
+**Download this sample from [Ink handwriting recognition sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
 
 1. Zuerst wird die Benutzeroberfläche eingerichtet.
 
@@ -333,7 +333,7 @@ In diesem Beispiel wird die Erkennung durch den Benutzer initiiert, wenn er nach
     - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
 
-3. Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
+3. Dann werden einige grundlegende Verhaltensweisen für Freihandeingaben festgelegt.
 
     Die [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Eigenschaft wird für die Interpretation von Eingabedaten von Stift oder Maus als Freihandstriche ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) konfiguriert. Freihandstriche werden in der [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Klasse mit der angegebenen [**InkDrawingAttributes**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class)-Klasse gerendert. Außerdem wird ein Listener für das Click-Ereignis der Schaltfläche „Erkennen“ deklariert.
 
@@ -377,9 +377,9 @@ In diesem Beispiel wird die Erkennung durch den Benutzer initiiert, wenn er nach
             new InkRecognizerContainer();
     ```
 
-    [**RecognizeAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) wird aufgerufen, um einen Satz von abrufen [ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) Objekte.
+    [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.recognizeasync) is called to retrieve a set of [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) objects.
 
-    Ergebnisse werden für jedes Wort, das von erkannt wurde, erzeugt ein [ **InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
+    Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognizer).
 
     ```csharp
     // Recognize all ink strokes on the ink canvas.
@@ -389,9 +389,9 @@ In diesem Beispiel wird die Erkennung durch den Benutzer initiiert, wenn er nach
                 InkRecognitionTarget.All);
     ```
 
-    Jede [ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) Objekt enthält einen Satz von Kandidaten für Text. Das oberste Element in dieser Liste wird durch die erkennungs-Engine als beste Übereinstimmung, gefolgt von die verbliebenen Kandidaten nach sinkender vertrauen betrachtet.
+    Each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) object contains a set of text candidates. The topmost item in this list is considered by the recognition engine to be the best match, followed by the remaining candidates in order of decreasing confidence.
 
-    Wird durchlaufen, jede [ **InkRecognitionResult** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) und kompilieren Sie die Liste der Kandidaten. Anschließend werden die Kandidaten angezeigt, und die [ **InkStrokeContainer** ](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) deaktiviert ist (die löscht auch die [ **InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
+    We iterate through each [**InkRecognitionResult**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkRecognitionResult) and compile the list of candidates. The candidates are then displayed and the [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) is cleared (which also clears the [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)).
 
     ```csharp
     string str = "Recognition result\n";
@@ -412,7 +412,7 @@ In diesem Beispiel wird die Erkennung durch den Benutzer initiiert, wenn er nach
         inkCanvas.InkPresenter.StrokeContainer.Clear();
     ```
 
-    Hier ist die vollständige Beispiel Handler auf.
+    Here's the click handler example, in full.
 
     ```csharp
     // Handle button click to initiate recognition.
@@ -483,7 +483,7 @@ Im Abschnitt der Eigenschaften [**InkRecognizer.Name**](https://docs.microsoft.c
 
 Ihre App kann den Satz der installierten Schrifterkennungsmodule abfragen und eines davon verwenden, oder der Benutzer wählt die bevorzugte Sprache aus.
 
-**Beachten Sie**    Benutzern können eine Liste der installierten Sprachen angezeigt, indem Sie zu **Einstellungen –&gt; Zeit & Sprache**. Die installierten Sprachen werden unter **Sprachen** aufgeführt.
+**Note**   Users can see a list of installed languages by going to **Settings -&gt; Time & Language**. Die installierten Sprachen werden unter **Sprachen** aufgeführt.
 
 So installieren Sie ein neues Sprachpaket und aktivieren die Schrifterkennung für die Sprache
 
@@ -543,7 +543,7 @@ Die Erkennung wird durch den Benutzer initiiert, indem er nach Abschluss des Sch
     </Grid>
 ```
 
-2. Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
+2. Dann werden einige grundlegende Verhaltensweisen für Freihandeingaben festgelegt.
 
     Die [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Eigenschaft wird für die Interpretation von Eingabedaten von Stift oder Maus als Freihandstriche ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) konfiguriert. Freihandstriche werden in der [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Klasse mit der angegebenen [**InkDrawingAttributes**](https://docs.microsoft.com/windows/desktop/tablet/inkdrawingattributes-class)-Klasse gerendert.
 
@@ -874,14 +874,14 @@ In diesem Beispiel werden die gleichen Einstellungen für Benutzeroberfläche un
 
 ### <a name="topic-samples"></a>Themenbeispiele
 
-- [Beispiel "Ink Analysis" (Basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-- [Beispiel von Freihandeingaben Handschrift Recognition (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+- [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+- [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 ### <a name="other-samples"></a>Andere Beispiele
 
-- [Beispiel für einfache Freihandeingaben (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-- [Komplexe Freihand-Beispiel (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-- [Freihand-Beispiel (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [Einstiegstutorial: Unterstützung von Freihandeingaben in Ihre UWP-app](https://aka.ms/appsample-ink)
-- [Codefarben Book-Beispiel](https://aka.ms/cpubsample-coloringbook)
-- [Anmerkungen zu dieser Version Familie-Beispiel](https://aka.ms/cpubsample-familynotessample)
+- [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)

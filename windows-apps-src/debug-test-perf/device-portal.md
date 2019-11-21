@@ -1,52 +1,52 @@
 ---
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Übersicht über das Windows Device Portal
+title: Übersicht über das Windows-Geräteportal
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr Gerät per Remotezugriff über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten.
 ms.date: 04/09/2019
 ms.topic: article
-keywords: Windows 10, UWP, Geräte Portal
+keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d149faaa967846244553ed53ed5e8255dae276
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282285"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254761"
 ---
-# <a name="windows-device-portal-overview"></a>Übersicht über das Windows Device Portal
+# <a name="windows-device-portal-overview"></a>Übersicht über das Windows-Geräteportal
 
-Mit dem Windows Device Portal können Sie Ihr Gerät remote über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten. Außerdem werden erweiterte Diagnosetools bereitstellt, die Ihnen bei der Problembehandlung und Anzeige der Echtzeitleistung Ihres Windows-Geräts helfen.
+Mit dem Windows Device Portal können Sie Ihr Gerät per Remotezugriff über ein Netzwerk oder eine USB-Verbindung konfigurieren und verwalten. It also provides advanced diagnostic tools to help you troubleshoot and view the real-time performance of your Windows device.
 
-Das Windows-Geräte Portal ist ein Webserver auf Ihrem Gerät, mit dem Sie über einen Webbrowser auf einem PC eine Verbindung herstellen können. Wenn Ihr Gerät über einen Webbrowser verfügt, können Sie auch lokal eine Verbindung mit dem Browser auf diesem Gerät herstellen.
+Windows Device Portal is a web server on your device that you can connect to from a web browser on a PC. If your device has a web browser, you can also connect locally with the browser on that device.
 
-Das Windows-Geräte Portal ist für jede Gerätefamilie verfügbar, aber Features und Setup sind abhängig von den Anforderungen der einzelnen Geräte. Dieser Artikel enthält eine allgemeine Beschreibung des Device Portals und Links zu Artikeln mit ausführlicheren Informationen für jede Gerätefamilie.
+Windows Device Portal is available on each device family, but features and setup vary based on each device's requirements. Dieser Artikel enthält eine allgemeine Beschreibung des Device Portals und Links zu Artikeln mit ausführlicheren Informationen für jede Gerätefamilie.
 
-Die Funktionalität des Windows-Geräte Portals wird mit [Rest-APIs](device-portal-api-core.md) implementiert, die Sie direkt verwenden können, um auf Daten zuzugreifen und Ihr Gerät Programm gesteuert zu steuern.
+The functionality of the Windows Device Portal is implemented with [REST APIs](device-portal-api-core.md) that you can use directly to access data and control your device programmatically.
 
 ## <a name="setup"></a>Setup
 
 Für jedes Gerät gelten spezielle Anweisungen zum Herstellen der Verbindung mit dem Device Portal, diese allgemeinen Schritte sind jedoch für jedes Gerät erforderlich:
 
-1. Aktivieren Sie den Entwicklermodus und das Geräte Portal auf Ihrem Gerät (konfiguriert in der App "Einstellungen").
+1. Enable Developer Mode and Device Portal on your device (configured in the Settings app).
 
-2. Verbinden Sie Ihr Gerät und Ihren PC über ein lokales Netzwerk oder mit USB.
+2. Connect your device and PC through a local network or with USB.
 
-3. Navigieren Sie im Browser zu der Seite für das Geräteportal. In dieser Tabelle werden die Ports und Protokolle angezeigt, die von den einzelnen Gerätefamilien verwendet werden.
+3. Navigieren Sie im Browser zu der Seite für das Geräteportal. This table shows the ports and protocols used by each device family.
 
 Gerätefamilie | Standardmäßig aktiviert? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
 HoloLens | Ja, im Entwicklermodus | 80 (Standard) | 443 (Standard) | http://127.0.0.1:10080
-IoT | Ja, im Entwicklermodus | 8080 | Über Registrierungsschlüssel aktivieren | Nicht zutreffend
-Xbox | Im Entwicklermodus aktivieren | Disabled | 11443 | Nicht zutreffend
-Desktop| Im Entwicklermodus aktivieren | 50080 @ no__t-0 | 50043 @ no__t-0 | Nicht zutreffend
-Phone | Im Entwicklermodus aktivieren | 80| 443 | http://127.0.0.1:10080
+IoT | Ja, im Entwicklermodus | 8080 | Über Registrierungsschlüssel aktivieren | n. v.
+Xbox-Taste | Im Entwicklermodus aktivieren | Deaktiviert | 11443 | n. v.
+Desktop| Im Entwicklermodus aktivieren | 50080\* | 50043\* | n. v.
+Telefone | Im Entwicklermodus aktivieren | 80| 443 | http://127.0.0.1:10080
 
-\* ist dies nicht immer der Fall, da das Geräte Portal auf den Desktops in den kurzlebigen Bereich (> 50000) anfordert, um Konflikte mit vorhandenen Port Ansprüchen auf dem Gerät zu verhindern. Weitere Informationen hierzu finden Sie im Abschnitt zu [Porteinstellungen](device-portal-desktop.md#registry-based-configuration-for-device-portal) für den Desktop.  
+\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. Weitere Informationen hierzu finden Sie im Abschnitt zu [Porteinstellungen](device-portal-desktop.md#registry-based-configuration-for-device-portal) für den Desktop.  
 
 Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
 
 - [Geräteportal für HoloLens](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [Geräteportal für IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [Geräteportal für IoT](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
 - [Geräteportal für Mobilgeräte](device-portal-mobile.md)
 - [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
 - [Geräteportal für Windows-Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -55,157 +55,157 @@ Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
 
 ### <a name="toolbar-and-navigation"></a>Symbolleiste und Navigation
 
-Die Symbolleiste oben auf der Seite bietet Zugriff auf häufig verwendete Funktionen.
+The toolbar at the top of the page provides access to commonly used features.
 
-- **Leistung**: Zugriffs Energieoptionen.
-  - **Herunter**fahren: Schaltet das Gerät aus.
-  - **Neu starten**: Zyklen Stromversorgung des Geräts.
+- **Power**: Access power options.
+  - **Herunterfahren**: Schaltet das Gerät aus.
+  - **Neu starten**: Schaltet das Gerät aus und wieder ein.
 - **Hilfe**: Öffnet die Hilfeseite.
 
 Verwenden Sie die Links im Navigationsbereich am linken Rand der Seite, um zu den verfügbaren Verwaltungs- und Überwachungstools für Ihr Gerät zu navigieren.
 
-Hier werden Tools beschrieben, die über Gerätefamilien hinweg gemeinsam sind. Je nach Gerät sind möglicherweise andere Optionen verfügbar. Weitere Informationen finden Sie auf der jeweiligen Seite für Ihren Gerätetyp.
+Tools that are common across device families are described here. Je nach Gerät sind möglicherweise andere Optionen verfügbar. For more info, see the specific page for your device type.
 
 ### <a name="apps-manager"></a>App-Manager
 
-Der apps-Manager bietet Funktionen für die Installation, Deinstallation und Verwaltung von App-Paketen und Paketen auf dem Hostgerät.
+The Apps manager provides install/uninstall and management functionality for app packages and bundles on the host device.
 
-![Geräte Portal-apps-Manager-Seite](images/device-portal/WDP_AppsManager2.png)
+![Device Portal Apps manager page](images/device-portal/WDP_AppsManager2.png)
 
-* Bereitstellen von **apps**: Bereitstellen von App-Paketen aus lokalen, Netzwerk-oder Webhosts und Registrieren von lockeren Dateien von Netzwerkfreigaben.
-* **Installierte apps**: Verwenden Sie das Dropdown Menü, um apps, die auf dem Gerät installiert sind, zu entfernen oder zu starten.
-* **Ausführen von apps**: Erhalten Sie Informationen zu den apps, die derzeit ausgeführt werden, und schließen Sie Sie nach Bedarf.
+* **Deploy apps**: Deploy packaged apps from local, network, or web hosts and register loose files from network shares.
+* **Installed apps**: Use the dropdown menu to remove or start apps that are installed on the device.
+* **Running apps**: Get information about the apps that are currently running and close them as necessary.
 
-#### <a name="install-sideload-an-app"></a>Installieren (Sideload) einer APP
+#### <a name="install-sideload-an-app"></a>Install (sideload) an app
 
-Sie können apps während der Entwicklung mithilfe des Windows-Geräte Portals querladen:
+You can sideload apps during development using Windows Device Portal:
 
-1. Wenn Sie ein App-Paket erstellt haben, können Sie es Remote auf Ihrem Gerät installieren. Nachdem Sie es in Visual Studio erstellt haben, wird ein Ausgabeordner generiert.
+1. When you've created an app package, you can remotely install it onto your device. Nachdem Sie es in Visual Studio erstellt haben, wird ein Ausgabeordner generiert.
 
     ![App-Installation](images/device-portal/iot-installapp0.png)
 
-2. Navigieren Sie im Windows-Geräte Portal zur Seite **App-Manager** .
+2. In Windows Device Portal, navigate to the **Apps manager** page.
 
-3. Wählen Sie im Abschnitt Bereitstellen von **apps** die Option **lokaler Speicher**aus.
+3. In the **Deploy apps** section, select **Local Storage**.
 
-4. Wählen Sie unter **Anwendungspaket auswählen**die Option **Datei auswählen** aus, und navigieren Sie zu dem App-Paket, das Sie Sideload durchlaufen möchten.
+4. Under **Select the application package**, select **Choose File** and browse to the app package that you want to sideload.
 
-5. Wählen Sie unter **Zertifikat Datei (. cer) zum Signieren des App-Pakets auswählen**die Option **Datei** auswählen aus, und navigieren Sie zu dem Zertifikat, das dem App-Paket zugeordnet ist.
+5. Under **Select certificate file (.cer) used to sign app package**, select **Choose File** and browse to the certificate associated with that app package.
 
-6. Aktivieren Sie die entsprechenden Kontrollkästchen, wenn Sie optionale-oder Framework-Pakete zusammen mit der App-Installation installieren möchten, und wählen Sie **weiter** aus, um Sie auszuwählen.
+6. Check the respective boxes if you want to install optional or framework packages along with the app installation, and select **Next** to choose them.
 
-7. Wählen Sie **Installieren** aus, um die Installation zu initiieren.
+7. Select **Install** to initiate the installation.
 
-8. Wenn auf dem Gerät Windows 10 im S-Modus ausgeführt wird und das angegebene Zertifikat zum ersten Mal auf dem Gerät installiert ist, starten Sie das Gerät neu.
+8. If the device is running Windows 10 in S mode, and it is the first time that the given certificate has been installed on the device, restart the device.
 
-#### <a name="install-a-certificate"></a>Installieren eines Zertifikats
+#### <a name="install-a-certificate"></a>Install a certificate
 
-Alternativ können Sie das Zertifikat über das Windows-Geräte Portal installieren und die APP auf andere Weise installieren:
+Alternatively, you can install the certificate via Windows Device Portal, and install the app through other means:
 
-1. Navigieren Sie im Windows-Geräte Portal zur Seite **App-Manager** .
+1. In Windows Device Portal, navigate to the **Apps manager** page.
 
-2. Wählen Sie im Abschnitt Bereitstellen von **apps** die Option **Zertifikat installieren**aus.
+2. In the **Deploy apps** section, select **Install Certificate**.
 
-3. Wählen Sie unter **Zertifikat Datei (. cer), die zum Signieren eines App-Pakets verwendet**wird die Option **Datei** auswählen aus, und navigieren Sie zu dem Zertifikat, das dem App-Paket zugeordnet ist, das Sie querladen möchten.
+3. Under **Select certificate file (.cer) used to sign an app package**, select **Choose File** and browse to the certificate associated with the app package that you want to sideload.
 
-4. Wählen Sie **Installieren** aus, um die Installation zu initiieren.
+4. Select **Install** to initiate the installation.
 
-5. Wenn auf dem Gerät Windows 10 im S-Modus ausgeführt wird und das angegebene Zertifikat zum ersten Mal auf dem Gerät installiert ist, starten Sie das Gerät neu.
+5. If the device is running Windows 10 in S mode, and it is the first time that the given certificate has been installed on the device, restart the device.
 
 #### <a name="uninstall-an-app"></a>Deinstallieren einer App
 
 1. Stellen Sie sicher, dass die App nicht ausgeführt wird.
-2. Wenn dies der Fall ist, navigieren Sie zu **laufende Apps** , und schließen Sie Sie. Wenn Sie versuchen, die APP zu deinstallieren, während die app ausgeführt wird, führt dies zu Problemen, wenn Sie versuchen, die APP erneut zu installieren.
-3. Wählen Sie in der Dropdown Liste die APP aus, und klicken Sie auf **Entfernen**
+2. If it is, go to **Running apps** and close it. If you attempt to uninstall while the app is running, it will cause issues when you attempt to reinstall the app.
+3. Select the app from the dropdown and click **Remove**.
 
-### <a name="running-processes"></a>Ausführen von Prozessen
+### <a name="running-processes"></a>Running processes
 
-Auf dieser Seite werden Details zu Prozessen angezeigt, die zurzeit auf dem Hostgerät ausgeführt werden. Diese umfassen Apps und Systemprozesse. Auf einigen Plattformen (Desktop, IOT und hololens) können Sie Prozesse beenden.
+This page shows details about processes currently running on the host device. Diese umfassen Apps und Systemprozesse. On some platforms (Desktop, IoT, and HoloLens), you can terminate processes.
 
-![Seite "Prozesse" des Geräte Portals](images/device-portal/mob-device-portal-processes.png)
+![Device Portal Running processes page](images/device-portal/mob-device-portal-processes.png)
 
 ### <a name="file-explorer"></a>Datei-Explorer
 
-Auf dieser Seite können Sie Dateien anzeigen und bearbeiten, die von beliebigen Sideload-apps gespeichert werden. Weitere Informationen zum Datei-Explorer und deren Verwendung finden Sie im Blogbeitrag [Verwenden des App-Datei-Explorers](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) .
+This page allows you to view and manipulate files stored by any sideloaded apps. See the [Using the App File Explorer](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) blog post to learn more about the File explorer and how to use it.
 
-![Datei-Explorer-Seite des Geräte Portals](images/device-portal/mob-device-portal-AppFileExplorer.png)
+![Device Portal File explorer page](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
 ### <a name="performance"></a>Leistung
 
-Die Seite Leistung zeigt Echtzeitdiagramme der Diagnoseinformationen des Systems, z. b. Energieverbrauch, Framerate und CPU-Auslastung.
+The Performance page shows real-time graphs of system diagnostic info like power usage, frame rate, and CPU load.
 
 Die folgenden Metriken sind verfügbar:
 
-- **CPU**: Prozentsatz der verfügbaren CPU-Auslastung
-- Arbeits **Speicher**: Gesamt, Verwendung, Verfügbarkeit, Commit, Auslagerungsseiten und nicht-Auslagerungsseiten
-- E **/** A: Datenmengen für Lese-und Schreibvorgänge
-- **Netzwerk**: Empfangene und gesendete Daten
-- **GPU**: Prozentsatz der verfügbaren GPU-Engine-Auslastung
+- **CPU**: Percent of total available CPU utilization
+- **Memory**: Total, in use, available, committed, paged, and non-paged
+- **I/O**: Read and write data quantities
+- **Network**: Received and sent data
+- **GPU**: Percent of total available GPU engine utilization
 
-![Seite "Geräte Portal Leistung"](images/device-portal/mob-device-portal-perf.png)
+![Device Portal Performance page](images/device-portal/mob-device-portal-perf.png)
 
-### <a name="event-tracing-for-windows-etw-logging"></a>Protokollierung der Ereignis Ablauf Verfolgung für Windows (ETW)
+### <a name="event-tracing-for-windows-etw-logging"></a>Event Tracing for Windows (ETW) logging
 
-Auf der etw-Protokollierungs Seite werden Informationen zur Ereignis Ablauf Verfolgung für Windows (Event Tracing for Windows, etw) auf dem Gerät verwaltet.
+The ETW logging page manages real-time Event Tracing for Windows (ETW) information on the device.
 
-![Seite mit ETW-Protokollierung des Geräte Portals](images/device-portal/mob-device-portal-etw.png)
+![Device Portal ETW logging page](images/device-portal/mob-device-portal-etw.png)
 
 Aktivieren Sie **Anbieter ausblenden**, um nur die Liste der Ereignisse anzuzeigen.
 
-- **Registrierte Anbieter**: Wählen Sie den Ereignis Anbieter und die Ablauf Verfolgungs Ebene aus. Die Ablauf Verfolgungs Ebene ist einer der folgenden Werte:
+- **Registered providers**: Select the event provider and the tracing level. The tracing level is one of these values:
   1. Abnormal exit or termination
   2. Severe errors
   3. Warnungen
   4. Non-error warnings
-  5. Ausführliche Ablauf Verfolgung
+  5. Detailed trace
 
   Klicken oder tippen Sie auf **Aktivieren**, um die Ablaufverfolgung zu starten. Der Anbieter wird der Liste **Aktivierte Anbieter** hinzugefügt.
-- **Benutzerdefinierte Anbieter**: Wählen Sie einen benutzerdefinierten ETW-Anbieter und die Ablauf Verfolgungs Ebene aus. Identifizieren Sie den Anbieter anhand seiner GUID. Fügen Sie keine Klammern in die GUID ein.
-- **Aktivierte Anbieter**: Dies listet die aktivierten Anbieter auf. Wählen Sie einen Anbieter aus der Dropdownliste aus, und klicken oder tippen Sie auf **Deaktivieren**, um die Ablaufverfolgung zu beenden. Klicken oder tippen Sie auf **Beenden**, um sämtliche Ablaufverfolgung anzuhalten.
-- **Anbieter Verlauf**: Dies zeigt die ETW-Anbieter an, die während der aktuellen Sitzung aktiviert wurden. Klicken oder tippen Sie auf **Aktivieren**, um einen Anbieter zu aktivieren, der deaktiviert war. Klicken oder tippen Sie auf **Löschen**, um den Verlauf zu löschen.
-- **Filter/Ereignisse**: Im Abschnitt **Ereignisse** sind ETW-Ereignisse der ausgewählten Anbieter im Tabellenformat aufgelistet. Die Tabelle wird in Echtzeit aktualisiert. Mit dem Menü **Filter** können Sie benutzerdefinierte Filter einrichten, für die Ereignisse angezeigt werden. Klicken Sie **auf die Schaltfläche löschen,** um alle ETW-Ereignisse aus der Tabelle zu löschen. Hierdurch werden keine Anbieter deaktiviert. Klicken Sie auf **in Datei speichern** , um die aktuell gesammelten ETW-Ereignisse in eine lokale CSV-Datei zu exportieren.
+- **Benutzerdefinierte Anbieter**: Wählen Sie einen benutzerdefinierten ETW-Anbieter und die Ablaufverfolgungsebene aus. Identifizieren Sie den Anbieter anhand seiner GUID. Do not include brackets in the GUID.
+- **Enabled providers**: This lists the enabled providers. Wählen Sie einen Anbieter aus der Dropdownliste aus, und klicken oder tippen Sie auf **Deaktivieren**, um die Ablaufverfolgung zu beenden. Klicken oder tippen Sie auf **Beenden**, um sämtliche Ablaufverfolgung anzuhalten.
+- **Providers history**: This shows the ETW providers that were enabled during the current session. Klicken oder tippen Sie auf **Aktivieren**, um einen Anbieter zu aktivieren, der deaktiviert war. Klicken oder tippen Sie auf **Löschen**, um den Verlauf zu löschen.
+- **Filters / Events**: The **Events** section lists ETW events from the selected providers in table format. The table is updated in real time. Use the **Filters** menu to set up custom filters for which events will be displayed. Click the **Clear** button to delete all ETW events from the table. Hierdurch werden keine Anbieter deaktiviert. You can click **Save to file** to export the currently collected ETW events to a local CSV file.
 
-Weitere Informationen zur Verwendung der ETW-Protokollierung finden Sie im Blogbeitrag [Verwenden des Geräte Portals zum Anzeigen von Debug-Protokollen](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) .
+For more details on using ETW logging, see the [Use Device Portal to view debug logs](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) blog post.
 
 ### <a name="performance-tracing"></a>Leistungsüberwachung
 
-Auf der Seite "Leistungs Ablauf Verfolgung" können Sie die [Windows Performance Recorder (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) -Ablauf Verfolgungen vom Hostgerät anzeigen.
+The Performance tracing page allows you for view the [Windows Performance Recorder (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) traces from the host device.
 
-![Ablauf Verfolgungs Seite des Geräte Portals](images/device-portal/mob-device-portal-perf-tracing.png)
+![Device Portal performance tracing page](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **Verfügbare Profile**: Wählen Sie in der Dropdown Liste das WPR-Profil aus, und klicken oder tippen Sie auf **starten** , um die Ablauf Verfolgung zu
-- **Benutzerdefinierte Profile**: Klicken oder tippen Sie auf **Durchsuchen** , um ein WPR-Profil auf Ihrem PC auszuwählen. Klicken oder tippen Sie auf **Hochladen und starten**, um die Ablaufverfolgung zu starten.
+- **Verfügbare Profile**: Wählen Sie in der Dropdownliste das WPR-Profil aus, und klicken oder tippen Sie auf **Starten**, um die Ablaufverfolgung zu starten.
+- **Benutzerdefinierte Profile**: Klicken oder tippen Sie auf **Durchsuchen**, um ein WPR-Profil vom PC auszuwählen. Klicken oder tippen Sie auf **Hochladen und starten**, um die Ablaufverfolgung zu starten.
 
-Klicken Sie auf **Beenden**, um die Ablaufverfolgung zu beenden. Bleiben Sie auf dieser Seite bis zur Ablauf Verfolgungs Datei (. ETL) hat den Download abgeschlossen.
+Klicken Sie auf **Beenden**, um die Ablaufverfolgung zu beenden. Stay on this page until the trace file (.ETL) has finished downloading.
 
-Gefasst. ETL-Dateien können für die Analyse in der [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))geöffnet werden.
+Captured .ETL files can be opened for analysis in the [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)).
 
 ### <a name="device-manager"></a>Geräte-Manager
 
-Auf der Seite Geräte-Manager werden alle Peripheriegeräte aufgelistet, die an Ihr Gerät angeschlossen sind. Sie können auf die Einstellungs Symbole klicken, um die Eigenschaften der einzelnen anzuzeigen.
+The Device manager page enumerates all peripherals attached to your device. You can click the settings icons to view the properties of each.
 
-![Geräte-Manager-Seite des Geräte Portals](images/device-portal/mob-device-portal-devices.png)
+![Device Portal Device manager page](images/device-portal/mob-device-portal-devices.png)
 
-### <a name="networking"></a>Netzwerk
+### <a name="networking"></a>-Netzwerk
 
-Die Netzwerkseite verwaltet Netzwerkverbindungen auf dem Gerät. Wenn Sie nicht über USB mit dem Geräte Portal verbunden sind, werden Sie durch das Ändern dieser Einstellungen wahrscheinlich vom Geräte Portal getrennt.
+The Networking page manages network connections on the device. Unless you are connected to Device Portal through USB, changing these settings will likely disconnect you from Device Portal.
 
-- **Verfügbare Netzwerke**: Zeigt die für das Gerät verfügbaren WLAN-Netzwerke an. Durch Klicken oder Tippen auf ein Netzwerk können Sie eine Verbindung mit ihm herstellen und ggf. ein Kennwort eingeben. Das Geräte Portal unterstützt die Enterprise-Authentifizierung noch nicht. Sie können auch die Dropdown Liste **profile** verwenden, um zu versuchen, eine Verbindung mit einem der WiFi-profile herzustellen, die dem Gerät bekannt sind.
-- **IP-Konfiguration**: Zeigt Adressinformationen zu den einzelnen Netzwerkports des Host Geräts an.
+- **Available networks**: Shows the WiFi networks available to the device. Durch Klicken oder Tippen auf ein Netzwerk können Sie eine Verbindung mit ihm herstellen und ggf. ein Kennwort eingeben. Device Portal does not yet support Enterprise Authentication. You can also use the **Profiles** dropdown to attempt to connect to any of the WiFi profiles known to the device.
+- **IP configuration**: Shows address information about each of the host device's network ports.
 
-![Geräte Portal-Netzwerkseite](images/device-portal/mob-device-portal-network.png)
+![Device Portal Networking page](images/device-portal/mob-device-portal-network.png)
 
-## <a name="service-features-and-notes"></a>Dienst Features und Notizen
+## <a name="service-features-and-notes"></a>Service features and notes
 
 ### <a name="dns-sd"></a>DNS-SD
 
 Das Geräteportal kündigt seine Präsenz im lokalen Netzwerk mithilfe von DNS-SD an. Alle Geräteportalinstanzen, unabhängig von deren Gerätetyp, kündigen sich unter „WDP._wdp._tcp.local“ an. Die TXT-Datensätze für die Instanz des Dienstes liefern Folgendes:
 
-Key | Typ | Beschreibung
+Schlüssel | Geben Sie in das Suchfeld auf der Taskleiste | Beschreibung
 ----|------|-------------
-S | ssNoversion | Sicherer Port für Geräteportal. Wenn 0 (null), lauscht das Geräteportal nicht auf HTTPS-Verbindungen.
-D | String | Typ des Geräts. Dies hat das Format "Windows. *", z. b. Windows. Xbox oder Windows. Desktop.
-A | String | Gerätearchitektur. Diese ist ARM, x86 oder AMD64.  
+E | int | Sicherer Port für Geräteportal. Wenn 0 (null), lauscht das Geräteportal nicht auf HTTPS-Verbindungen.
+D | String | Typ des Geräts. This will be in the format "Windows.*", for example, Windows.Xbox or Windows.Desktop
+Eine | String | Gerätearchitektur. Diese ist ARM, x86 oder AMD64.  
 T | Mit NULL-Zeichen getrennt Liste mit Zeichenfolgen | Vom Benutzer angewendete Tags für das Gerät. Informationen zur Verwendung finden Sie unter der Tags-REST-API. Liste wird durch Doppelnull beendet.  
 
 Es wird vorgeschlagen, die Verbindung über den HTTPS-Anschluss herzustellen, da nicht alle Geräte auf dem vom DNS-SD-Datensatz angekündigten HTTP-Port lauschen.
@@ -215,8 +215,8 @@ Es wird vorgeschlagen, die Verbindung über den HTTPS-Anschluss herzustellen, da
 Zum Schutz vor [CSRF-Angriffen](https://en.wikipedia.org/wiki/Cross-site_request_forgery) ist bei allen Nicht-GET-Anfragen ein eindeutiges Token erforderlich. Dieses Token, der X-CSFR-Token-Anforderungsheader, wird von einem Sitzungscookie CSRF-Token, abgeleitet. In der Web-Benutzeroberfläche des Geräteportals wird das CSRF-Token-Cookie bei jeder Anforderung in den X-CSRF-Token-Header kopiert.
 
 > [!IMPORTANT]
-> Dieser Schutz verhindert die Verwendung der Rest-APIs von einem eigenständigen Client (z. b. Befehlszeilen-Hilfsprogramme). Dies kann auf drei Arten gelöst werden:
-> - Verwenden Sie den Benutzernamen "Auto". Clients, die ihrem Benutzernamen „Auto-“ voranstellen, umgehen CSRF-Schutz. Es ist wichtig, dass dieser Benutzername nicht zur Anmeldung beim Geräteportal über den Browser verwendet wird, da dies den Dienst für CSRF-Angriffe öffnet. Beispiel: Wenn der Benutzername des Geräte Portals "admin" ist, sollte ```curl -u auto-admin:password <args>``` verwendet werden, um den CSRF-Schutz zu umgehen.
+> This protection prevents usages of the REST APIs from a standalone client (such as command-line utilities). Dies kann auf drei Arten gelöst werden:
+> - Use an "auto-" username. Clients, die ihrem Benutzernamen „Auto-“ voranstellen, umgehen CSRF-Schutz. Es ist wichtig, dass dieser Benutzername nicht zur Anmeldung beim Geräteportal über den Browser verwendet wird, da dies den Dienst für CSRF-Angriffe öffnet. Beispiel: Wenn der Benutzername des Geräteportals „Admin“ lautet, sollte ```curl -u auto-admin:password <args>``` zum Umgehen des CSRF Schutzes verwendet werden.
 > - Implementieren des Cookie-zu-Header-Schemas in den Client. Dies erfordert eine GET-Anforderung zur Erstellung des Sitzungscookies und dann die Aufnahme von Header und Cookie in alle nachfolgenden Anforderungen.
 > - Deaktivieren der Authentifizierung und Verwenden von HTTP. CSRF-Schutz bezieht sich nur auf HTTPS-Endpunkte, sodass für Verbindungen auf HTTP-Endpunkten keine der oben genannten Schritte ausgeführt werden müssen.
 

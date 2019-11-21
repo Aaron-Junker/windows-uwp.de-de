@@ -1,21 +1,21 @@
 ---
 Description: Wenn Ihre App keine barrierefreie Bedienung mit der Tastatur ermöglicht, können Benutzer, die blind oder in ihrer Beweglichkeit eingeschränkt sind, Schwierigkeiten bei der Verwendung Ihrer App haben oder Ihre App möglicherweise überhaupt nicht nutzen.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
-title: Barrierefreiheit der Tastaturnavigation
+title: Barrierefreiheit bei Tastaturnavigation
 label: Keyboard accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd8fa2b5264328619619df862d21f02f70f52e0
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393753"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257751"
 ---
-# <a name="keyboard-accessibility"></a>Barrierefreiheit der Tastaturnavigation  
+# <a name="keyboard-accessibility"></a>Barrierefreiheit bei Tastaturnavigation  
 
 
 
@@ -144,11 +144,11 @@ XAML
 ```
 
 > [!IMPORTANT]
-> Durch Festlegen von [**AutomationProperties. AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) oder [**AutomationProperties. AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty) werden keine Tastaturfunktionen aktiviert. Es wird lediglich an das Benutzeroberflächenautomatisierungs-Framework weitergegeben, welche Tasten verwendet werden sollen, damit diese Informationen über Hilfstechnologien an Benutzer weitergeleitet werden können. Die Implementierung für die Tastenverarbeitung muss dennoch im Code erfolgen, nicht in XAML. Sie müssen weiterhin Handler für [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)- oder [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse im entsprechenden Steuerelement anhängen, um das Verhalten der Tastenkombination tatsächlich in die App zu implementieren. Außerdem wird der Unterstrichzusatz für eine Zugriffstaste nicht automatisch bereitgestellt. Sie müssen den Text für die jeweilige Taste in Ihrem mnemonischen Zeichen explizit als [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline)-Formatierung unterstreichen, wenn in der UI unterstrichener Text angezeigt werden soll.
+> Setting the [**AutomationProperties.AcceleratorKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty) or [**AutomationProperties.AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty) doesn't enable keyboard functionality. Es wird lediglich an das Benutzeroberflächenautomatisierungs-Framework weitergegeben, welche Tasten verwendet werden sollen, damit diese Informationen über Hilfstechnologien an Benutzer weitergeleitet werden können. Die Implementierung für die Tastenverarbeitung muss dennoch im Code erfolgen, nicht in XAML. Sie müssen weiterhin Handler für [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)- oder [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse im entsprechenden Steuerelement anhängen, um das Verhalten der Tastenkombination tatsächlich in die App zu implementieren. Außerdem wird der Unterstrichzusatz für eine Zugriffstaste nicht automatisch bereitgestellt. Sie müssen den Text für die jeweilige Taste in Ihrem mnemonischen Zeichen explizit als [**Underline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Underline)-Formatierung unterstreichen, wenn in der UI unterstrichener Text angezeigt werden soll.
 
 Aus Gründen der Einfachheit werden im obigen Beispiel Ressourcen für Zeichenfolgen wie „STRG+A“ weggelassen. Sie müssen die Tastenkombinationen aber auch während der Lokalisierung berücksichtigen. Die Lokalisierung von Tastenkombinationen ist wichtig, da die Auswahl einer Taste als Tastenkombination in der Regel von der sichtbaren Textbeschriftung des Elements abhängt.
 
-Weitere Unterstützung bei der Implementierung von Tastenkombinationen erhalten Sie unter [Tastenkombinationen](https://go.microsoft.com/fwlink/p/?linkid=221825) in den Richtlinien zur benutzerfreundlichen Interaktion bei Windows.
+Weitere Unterstützung bei der Implementierung von Tastenkombinationen erhalten Sie unter [Tastenkombinationen](https://docs.microsoft.com/windows/win32/uxguide/inter-keyboard?redirectedfrom=MSDN) in den Richtlinien zur benutzerfreundlichen Interaktion bei Windows.
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -175,7 +175,7 @@ Im Allgemeinen implementieren Sie die benutzerdefinierte Tastenverarbeitung für
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>Beispiel für einen Ansichtszustand für eine Fokusanzeige  
 Wie bereits erwählt sollte jedes benutzerdefinierte Steuerelement, mit dem Benutzer fokussieren können, über eine visuelle Fokusanzeige verfügen. In der Regel kann diese Fokusanzeige einfach durch Zeichnen eines Rechtecks direkt um das normale umgebende Rechteck des Steuerelements erzeugt werden. Das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element für visuellen Fokus ist ein Peerelement der übrigen Zusammenstellung des Steuerelements in einer Steuerelementvorlage, wird jedoch anfänglich mit dem [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)-Wert **Collapsed** festgelegt, da das Steuerelement noch nicht fokussiert ist. Wenn das Steuerelement im Fokus steht, wird ein visueller Zustand aufgerufen, der die **Visibility** des visuellen Fokus speziell auf **Visible** festlegt. Sobald der Fokus verschoben wird, wird ein anderer visueller Zustand auf gerufen, und die **Visibility** wird zu **Collapsed**.
 
-Alle standardmäßigen XAML-Steuerelemente weisen eine entsprechende visuelle Fokusanzeige auf, wenn sie im Fokus stehen (sofern dies möglich ist). Je nach ausgewähltem Design des Benutzers gibt es auch möglicherweise unterschiedliche Unterschiede (insbesondere, wenn der Benutzer einen Modus mit hohem Kontrast verwendet). Wenn Sie die XAML-Steuerelemente in der Benutzeroberfläche verwenden und die Steuerelement Vorlagen nicht ersetzen, müssen Sie keine zusätzlichen Aktionen durchführen, um visuelle Fokus Indikatoren auf Steuerelemente zu erhalten, die sich Verhalten und ordnungsgemäß angezeigt werden. Wenn Sie aber eine neue Vorlage für ein Steuerelement verwenden möchten oder sich fragen, wie XAML-Steuerelemente ihre Fokusanzeigen bereitstellen, wird im restlichen Teil dieses Abschnitts erläutert, wie Sie dies in XAML und in der Steuerelementlogik erreichen.
+Alle standardmäßigen XAML-Steuerelemente weisen eine entsprechende visuelle Fokusanzeige auf, wenn sie im Fokus stehen (sofern dies möglich ist). Es gibt auch potenziell unterschiedliche Designs je nach ausgewähltem Design des Benutzers (insbesondere wenn der Benutzer einen hohen Kontrast verwendet). Wenn Sie die XAML-Steuerelemente in Ihrer UI verwenden und nicht die Steuerelementvorlagen ersetzen, sind für visuelle Fokusanzeigen für Steuerelemente, die korrekt funktionieren und angezeigt werden, keine weiteren Schritte erforderlich sind. Wenn Sie aber eine neue Vorlage für ein Steuerelement verwenden möchten oder sich fragen, wie XAML-Steuerelemente ihre Fokusanzeigen bereitstellen, wird im restlichen Teil dieses Abschnitts erläutert, wie Sie dies in XAML und in der Steuerelementlogik erreichen.
 
 Im Folgenden finden Sie eine Beispiel-XAML, die aus der standardmäßigen XAML-Vorlage für [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) stammt.
 
@@ -203,7 +203,7 @@ XAML
 </ControlTemplate>
 ```
 
-Bislang ist nur die Zusammensetzung vorhanden. Zum Steuern der Sichtbarkeit der Fokusanzeige definieren Sie visuelle Zustände zum Umschalten der Eigenschaft [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility). Dies erfolgt mithilfe der angefügten [VisualStateManager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) -und VisualStateManager. VisualStateGroups-Eigenschaft, die auf das root-Element angewendet wird, das die Komposition definiert.
+Bislang ist nur die Zusammensetzung vorhanden. Zum Steuern der Sichtbarkeit der Fokusanzeige definieren Sie visuelle Zustände zum Umschalten der Eigenschaft [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility). This is done using the [VisualStateManager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) and the VisualStateManager.VisualStateGroups attached property, as applied to the root element that defines the composition.
 
 XAML
 ```xml
@@ -247,7 +247,7 @@ Tastenkombinationen sind für Windows Phone-Apps in der Regel nicht relevant, da
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Barrierefreiheit](accessibility.md)
-* [Tastatur Interaktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
-* [Beispiel für eine Berührungs Tastatur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML-Barrierefreiheits Beispiel](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [Bedienungshilfen](accessibility.md)
+* [Keyboard interactions](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+* [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

@@ -1,25 +1,25 @@
 ---
 title: Windows Hello
-description: In diesem Artikel wird die neue Windows-Hello-Technologie beschrieben, die im Lieferumfang des Windows 10-Betriebssystems enthalten ist. Zudem wird erörtert, wie Entwickler diese Technologie implementieren können, um ihre UWP (Universelle Windows-Plattform)-Apps und Back-End-Dienste zu schützen. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
+description: In diesem Artikel wird die neue Windows-Hello-Technologie beschrieben, die im Lieferumfang des Windows 10-Betriebssystems enthalten ist. Zudem wird erörtert, wie Entwickler diese Technologie implementieren können, um ihre UWP (Universelle Windows-Plattform)-Apps und Back-End-Dienste zu schützen. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e69d3489bcc41f40eca07aff628425d34819c4b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 06699d01dad5aec107fbecf8450bd10fa51f9230
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320591"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259836"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-Dieser Artikel beschreibt die neue Windows Hello Technologie, die ist im Lieferumfang des Betriebssystems Windows 10 und erläutert, wie Entwickler diese Technologie zum Schutz ihrer apps der universellen Windows-Plattform (UWP) und Back-End-Dienste implementieren können. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
+This article describes the new Windows Hello technology that ships as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
 
 Beachten Sie, dass der Schwerpunkt dieses Artikels auf der App-Entwicklung liegt. Weitere Informationen zu den Architektur- und Implementierungsdetails von Windows Hello finden Sie unter [Windows-Hello-Anleitung auf TechNet](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide).
 
-Ein vollständiges Codebeispiel finden Sie im [Windows-Hello-Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkID=717812).
+Ein vollständiges Codebeispiel finden Sie im [Windows-Hello-Codebeispiel auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport).
 
 Ein schrittweises Vorgehen zum Erstellen einer UWP-App mit Windows Hello und dem zugrunde liegenden Authentifizierungsdienst finden Sie in den Artikeln [Windows-Hello-Anmelde-App](microsoft-passport-login.md) und [Windows-Hello-Anmeldedienst](microsoft-passport-login-auth-service.md).
 
@@ -33,7 +33,7 @@ Seit der Mitte der 1960er Jahre, als Fernando Corbató und sein Team im Massachu
 
 #### <a name="111-credential-theft"></a>1.1.1. Diebstahl von Anmeldeinformationen
 
-Das größte Risiko von Kennwörtern ist einfach: Ein Angreifer kann sie leicht stehlen. Jeder Ort, an dem ein Kennwort eingegeben, verarbeitet oder gespeichert wird, ist anfällig. So kann ein Angreifer beispielsweise eine Sammlung an Kennwörtern oder Hashwerten von einem Authentifizierungsserver stehlen, indem er Lauschangriffe auf Netzwerkdatenverkehr eines Anwendungsservers ausführt, Schadsoftware in eine Anwendung oder auf einem Gerät einschleust, die Benutzertastaturanschläge auf einem Gerät aufzeichnet oder dem Benutzer zusieht, welche Zeichen er eingibt. Diese sind nur die häufigsten Angriffsmethoden.
+Das größte Risiko in Bezug auf Kennwörtern ist: Ein Angreifer kann sie leicht stehlen. Jeder Ort, an dem ein Kennwort eingegeben, verarbeitet oder gespeichert wird, ist anfällig. So kann ein Angreifer beispielsweise eine Sammlung an Kennwörtern oder Hashwerten von einem Authentifizierungsserver stehlen, indem er Lauschangriffe auf Netzwerkdatenverkehr eines Anwendungsservers ausführt, Schadsoftware in eine Anwendung oder auf einem Gerät einschleust, die Benutzertastaturanschläge auf einem Gerät aufzeichnet oder dem Benutzer zusieht, welche Zeichen er eingibt. Diese sind nur die häufigsten Angriffsmethoden.
 
 Ein weiteres verwandtes Risiko besteht im sogenannten „Credential Replay“ (Wiedergabe von Anmeldeinformationen). Hierbei erfasst ein Angreifer gültige Anmeldeinformationen, indem er einen Lauschangriff auf ein unsicheres Netzwerk ausführt und die Anmeldeinformationen später wiedergibt, um einen gültigen Benutzer zu imitieren. Die meisten Authentifizierungsprotokolle (einschließlich Kerberos und OAuth) schützen vor Replay-Angriffen, indem ein Zeitstempel im Anmeldeinformationsaustauschprozess eingefügt wird. Dadurch wird jedoch nur das Token geschützt, das vom Authentifizierungssystem ausgestellt wird, nicht aber das Kennwort, das vom Benutzer bereitgestellt wird, um sich ursprünglich anzumelden.
 
@@ -43,7 +43,7 @@ Der häufige Ansatz, eine E-Mail-Adresse als den Benutzernamen zu verwenden, ver
 
 ### <a name="12-solving-credential-problems"></a>1.3 Beheben von Anmeldeinformationsproblemen
 
-Das Lösen der Probleme, die Kennwörter mit sich bringen, ist nicht einfach. Die Verschärfung von Kennwortrichtlinien allein wird das Problem nicht beheben: Die Benutzer könnten ihre Kennwörter einfach wiederverwenden, teilen oder aufschreiben. Auch wenn Benutzerschulungen für die Authentifizierungssicherheit wichtig sind, wird das Problem durch die Schulung allein ebenfalls nicht beseitigt.
+Das Lösen von Problemen, die Kennwörter mit sich bringen, ist nicht einfach. Die Verschärfung von Kennwortrichtlinien allein wird das Problem nicht beheben: Die Benutzer könnten ihre Kennwörter einfach wiederverwenden, teilen oder aufschreiben. Auch wenn Benutzerschulungen für die Authentifizierungssicherheit wichtig sind, wird das Problem durch die Schulung allein ebenfalls nicht beseitigt.
 
 Windows Hello ersetzt Kennwörter durch eine sichere zweistufige Authentifizierung (2FA). Dabei werden vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt, die durch eine Benutzergeste (Biometrie- oder PIN-basiert) geschützt sind. 
 
@@ -62,7 +62,7 @@ Bei Windows Hello handelt es sich jedoch nicht um einen bloßen Ersatz für herk
 
 ### <a name="22-how-windows-hello-works"></a>2.2 Wie funktioniert Windows Hello
 
-Wenn Benutzer Windows Hello auf ihrem Computer einrichten, generiert es ein neues Schlüsselpaar bestehend aus öffentlichem und privatem Schlüssel auf dem Gerät. Das [Trusted Platform Module](https://docs.microsoft.com/windows/keep-secure/trusted-platform-module-overview) (TPM) generiert und schützt diesen privaten Schlüssel. Wenn das Gerät nicht über einen TPM-Chip verfügt, wird der private Schlüssel verschlüsselt und durch Software geschützt. Zusätzlich generieren TPM-aktivierte Geräte einen Datenblock, der für die Bestätigung verwendet werden kann, dass ein Schlüssel an TPM gebunden ist. Die Nachweisinformationen können in Ihrer Lösung verwendet werden, um z. B. zu entscheiden, ob dem Benutzer eine andere Autorisierungsstufe gewährt wird.
+Wenn Benutzer Windows Hello auf ihrem Computer einrichten, generiert es ein neues Schlüsselpaar bestehend aus öffentlichem und privatem Schlüssel auf dem Gerät. Das [Trusted Platform Module](https://docs.microsoft.com/windows/keep-secure/trusted-platform-module-overview) (TPM) generiert und schützt diesen privaten Schlüssel. Wenn das Gerät nicht über einen TPM-Chip verfügt, wird der private Schlüssel verschlüsselt und durch Software geschützt. Zusätzlich generieren TPM-aktivierte Geräte einen Datenblock, der für die Bestätigung verwendet werden kann, dass ein Schlüssel an TPM gebunden ist. Die Nachweisinformationen können in Ihrer Lösung verwendet werden, um z. B. zu entscheiden, ob dem Benutzer eine andere Berechtigungsstufe gewährt wird.
 
 Zum Aktivieren von Windows Hello auf einem Gerät muss der Benutzer entweder sein Azure Active Directory-Konto oder sein Microsoft-Konto in den Windows-Einstellungen verbinden.
 
@@ -70,7 +70,7 @@ Zum Aktivieren von Windows Hello auf einem Gerät muss der Benutzer entweder sei
 
 Bei jedem Generieren von Schlüsselmaterialien muss dieses gegen Angriffe geschützt werden. Die zuverlässigste Möglichkeit diesbezüglich ist über spezialisierte Hardware möglich. Lange Zeit wurden Hardwaresicherheitsmodule (Hardware Security Modules, HSMs) verwendet, um Schlüssel für sicherheitskritische Anwendungen zu generieren, zu speichern und zu verarbeiten. Bei Smartcards handelt es sich um einen besonderen HSM-Typ, ebenso wie Geräte, die mit dem Trusted Computing Group TPM-Standard konform sind. Nach Möglichkeit profitiert die Windows-Hello-Implementierung von der integrierten TPM-Hardware, um Schlüssel zu generieren, zu speichern und zu verarbeiten. Allerdings benötigen Windows Hello und Windows Hello for Work kein integriertes TPM.
 
-Microsoft empfiehlt, nach Möglichkeit TPM-Hardware zu verwenden. Das TPM schützt vor einer Vielzahl von unbekannten und potenziellen Angriffen einschließlich Brute-Force-Angriffen auf die PIN. Das TPM stellt auch nach einer Kontosperre eine zusätzliche Schutzebene bereit. Wenn das Schlüsselmaterial von TPM gesperrt wurde, muss der Benutzer die PIN zurücksetzen. Beim Zurücksetzen der PIN werden alle mit dem alten Schlüsselmaterial verschlüsselten Schlüssel und Zertifikate entfernt.
+Microsoft empfiehlt, nach Möglichkeit TPM-Hardware zu verwenden. Das TPM schützt vor einer Vielzahl von unbekannten und potenziellen Angriffen, einschließlich Brute-Force-Angriffen auf die PIN. Das TPM stellt auch nach einer Kontosperre eine zusätzliche Schutzebene bereit. Wenn das Schlüsselmaterial von TPM gesperrt wurde, muss der Benutzer die PIN zurücksetzen. Beim Zurücksetzen der PIN werden alle mit dem alten Schlüsselmaterial verschlüsselten Schlüssel und Zertifikate entfernt.
 
 #### <a name="222-authentication"></a>2.2.2 Authentifizierung
 
@@ -90,7 +90,7 @@ Beachten Sie schließlich, dass die Windows-Hello-API die Verwendung des Windows
 
 In diesem Kapitel beginnen wir mit einem „frischen“ Szenario ohne vorhandenes Authentifizierungssystem und erläutern die Implementierung von Windows Hello.
 
-Im nächsten Abschnitt wird die Migration von einem System mit vorhandenem Benutzernamen/Kennwort behandelt. Auch wenn Sie am nächsten Kapitel mehr interessiert sind, sollten Sie sich dieses ansehen, um ein grundlegendes Verständnis des Prozesses und des erforderlichen Codes zu erhalten.
+Im nächsten Abschnitt wird die Migration von einem vorhandenem Benutzername-/Kennwort-System behandelt. Auch wenn Sie am nächsten Kapitel mehr interessiert sind, sollten Sie sich dieses ansehen, um ein grundlegendes Verständnis des Prozesses und des erforderlichen Codes zu erhalten.
 
 ### <a name="31-enrolling-new-users"></a>3.1 Registrieren neuer Benutzer
 
@@ -275,9 +275,9 @@ In diesem Sequenzdiagramm ist ein grundlegender Abfrage/Rückmeldungsablauf darg
 
 ![Windows Hello-Abfrage/Rückmeldung](images/passport-challenge-response.png)
 
-Als nächstes muss der Server die Signatur überprüfen. Wenn Sie den öffentlichen Schlüssel anfordern, und senden es an den Server zur zukünftigen Überprüfung verwenden, ist es in einem Blob ASN. 1-codierte PublicKeyInfo. Bei Betrachtung der [Windows Hello-Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkID=717812), sehen Sie, dass es sind Hilfsklassen zum Umschließen Crypt32-Funktionen, um der ASN. 1-codierte Blob in ein Blob CNG zu übersetzen, die häufiger verwendet wird. Das BLOB enthält den Algorithmus des öffentlichen Schlüssels, also RSA, und den öffentlichen RSA-Schlüssel.
+Als nächstes muss der Server die Signatur überprüfen. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob. If you look at the [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport), you will see that there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. Das BLOB enthält den Algorithmus des öffentlichen Schlüssels, also RSA, und den öffentlichen RSA-Schlüssel.
 
-In diesem Beispiel ist der Grund konvertieren wir die ASN. 1-codierte-Blob in ein Blob von CNG, damit es mit CNG verwendet (/ Windows/Desktop/SecCNG/Cng-Portal) sein kann und die BCrypt-API. Wenn Sie sich das Blob CNG ansehen, zeigen sie Sie auf den zugehörigen [BCRYPT_KEY_BLOB Struktur](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob). Dieser API-Oberfläche kann für die Authentifizierung und Verschlüsselung in Windows-Anwendungen verwendet werden. ASN. 1 ist ein dokumentierten Standard für die Kommunikation von Datenstrukturen, die serialisiert werden können, und sie wird häufig verwendet, in der Kryptografie mit öffentlichem Schlüssel und Zertifikate. Daher Informationen des öffentliche Schlüssels wird auf diese Weise zurückgegeben. Der öffentliche Schlüssel ist ein RSA-Schlüssel. und der Algorithmus, den Windows Hello verwendet, wenn sie die Daten signiert wird.
+In the sample, the reason we convert the ASN.1-encoded blob to a CNG blob is so that it can be used with CNG (/windows/desktop/SecCNG/cng-portal) and the BCrypt API. If you look up the CNG blob, it will point you to the related [BCRYPT_KEY_BLOB structure](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob). This API surface can be used for authentication and encryption in Windows applications. ASN.1 is a documented standard for communicating data structures that can be serialized, and it's commonly used in public key cryptography and with certificates. That's why the public key information is returned in this manner. The public key is an RSA key; and that's the algorithm that Windows Hello uses when it signs data.
 
 Sobald das CNG-BLOB verfügbar ist, müssen Sie die signierte Abfrage mit dem öffentlichen Schlüssel des Benutzers abgleichen. Da jeder seine eigene System- oder Back-End-Technologie verwendet, gibt es keine allgemeine Vorgehensweise zur Implementierung dieser Logik. Wir verwenden SHA256 als Hashalgorithmus und Pkcs1 für SignaturePadding, um sicherzustellen, dass Sie diese Funktionen zur Überprüfung der signierten Antwort vom Client verwenden. An dieser Stelle verweisen wir erneut auf das Beispiel, in dem die Vorgehensweise mit .NET 4.6 auf dem Server beschrieben wird. In der Regel werden jedoch etwa folgende Schritte ausgeführt:
 
@@ -407,9 +407,9 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 
 ### <a name="61-articles-and-sample-code"></a>6.1 Artikel und Beispielcode
 
-- [Windows Hello-Übersicht](https://support.microsoft.com/help/17215)
-- [Details zur Implementierung für Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
-- [Windows Hello-Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkID=717812)
+- [Windows Hello overview](https://support.microsoft.com/help/17215)
+- [Implementation details for Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
+- [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)
 
 ### <a name="62-terminology"></a>6.2 Terminologie
 
@@ -424,5 +424,5 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Windows Hello Login-app](microsoft-passport-login.md)
-* [Windows Hello-Anmeldedienst](microsoft-passport-login-auth-service.md)
+* [Windows Hello login app](microsoft-passport-login.md)
+* [Windows Hello login service](microsoft-passport-login-auth-service.md)

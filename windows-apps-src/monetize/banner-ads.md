@@ -5,12 +5,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, AdControl, Banneranzeigen
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8aea8f204127a0f783f9b751a9f4178667753e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cd3e57ebf5a7f7770adf2a8defcd92e66ad1e3a0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627245"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260339"
 ---
 # <a name="banner-ads"></a>Banneranzeigen
 
@@ -20,16 +20,16 @@ Banneranzeigen sind statische Anzeigen von Werbung, die einen rechteckigen Teil 
 
 ![addreferences](images/banner-ad.png)
 
-## <a name="in-this-section"></a>Inhalt dieses Abschnitts
+## <a name="in-this-section"></a>In diesem Abschnitt
 
 |  Thema    | Beschreibung |               
 |----------|-------|
-| [Adcontrol-Element in XAML und .NET](adcontrol-in-xaml-and--net.md)     | Hinzufügen eines Werbebanners in einer XAML-/.NET-App        |
-| [Adcontrol-Element in HTML 5- und Javascript](adcontrol-in-html-5-and-javascript.md)     | Hinzufügen eines Werbebanners in einer HTML5-/JavaScript-App        |
-| [Unterstützte Banner Ad Größen](supported-ad-sizes-for-banner-ads.md)    |  Prüfen Sie die für Werbebanner und UWP-Apps unterstützten Größen.        |
+| [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | Hinzufügen eines Werbebanners in einer XAML-/.NET-App        |
+| [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | Hinzufügen eines Werbebanners in einer HTML5-/JavaScript-App        |
+| [Supported banner ad sizes](supported-ad-sizes-for-banner-ads.md)    |  Prüfen Sie die für Werbebanner und UWP-Apps unterstützten Größen.        |
 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Anzeigenbeispiele auf GitHub](https://aka.ms/githubads)
-* [Ad-Einheiten für Ihre app einrichten](set-up-ad-units-in-your-app.md)
+* [Anzeigenbeispiele auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Set up ad units for your app](set-up-ad-units-in-your-app.md)

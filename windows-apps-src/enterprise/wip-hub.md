@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, Uwp, Windows Information Protection, Unternehmensdaten, Schutz von Unternehmensdaten, edp, optimierte Apps
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f08127567704b1c8623ac64857cc5afe0ef882
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f6e3839ac2c15c1f976a9135b121ffea26174d41
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321393"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259619"
 ---
 # <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
 
@@ -41,9 +41,9 @@ Wenn Benutzer die Registrierung ihres Geräts im MDM-System der Organisation auf
 
 ![WIP-Lebenszyklus](images/wip-lifecycle.png)
 
-> **Weitere Informationen zu WIP** <br>
-* [Einführung in Windows Informationen Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Schützen von Unternehmensdaten mit Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+> **Read more about WIP** <br>
+* [Introducing Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [Protect your enterprise data using Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 Wenn Ihre App auf der Liste der zugelassenen Apps steht, unterliegen alle von der App erstellten Daten den Einschränkungen der Richtlinien. Das bedeutet: Wenn Administratoren den Zugriff des Benutzers auf Unternehmensdaten widerrufen, geht dem Benutzer der Zugriff auf alle Daten verloren, die Ihre App erstellt hat.
 
@@ -61,13 +61,13 @@ Beispiel: Wenn die Richtlinie Benutzern erlaubt, Unternehmensdaten in einem priv
 
 Wenn Sie bereit sind, die App zu optimieren, sehen Sie sich eines dieser Handbücher an:
 
-**Für universelle Windows-Plattform (UWP)-apps, die Sie, indem Sie mithilfe von erstellenC#**
+**For Universal Windows Platform (UWP) apps that you build by using C#**
 
 [Entwicklerhandbuch für Windows Information Protection (WIP)](wip-dev-guide.md)
 
-**Für Desktop-apps, die Sie erstellen mithilfe C++**
+**For Desktop apps that you build by using C++**
 
-[Entwicklerhandbuch für Windows Information Protection (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)
+[Entwicklerhandbuch für Windows Information Protection (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN)
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Erstellen einer nicht für Unternehmen optimierten App

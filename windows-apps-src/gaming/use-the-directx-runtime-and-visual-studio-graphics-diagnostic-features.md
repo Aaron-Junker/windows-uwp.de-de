@@ -2,42 +2,31 @@
 title: Tools für die Grafikdiagnose
 description: Hier erfahren Sie, wie Sie in Visual Studio die Grafikdiagnosefeatures, einschließlich Grafikdebugging, Analyse von Grafikframes und GPU-Verwendung, abrufen und verwenden.
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
-ms.date: 02/08/2017
+ms.date: 11/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Grafiken, Diagnose, Tools, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e3c48e69dd1ad991a2a04017d4e262e45430504
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 14711a356f00ac027bf990554c90547017b9cc4d
+ms.sourcegitcommit: f464e5157ca22cfe31075f2f1219b8227587bf03
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608535"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74263096"
 ---
 # <a name="graphics-diagnostics-tools"></a>Tools für die Grafikdiagnose
 
+The graphics diagnostic tools are available from within Windows 10 as an optional feature. To use the graphics diagnostic features (provided in the runtime and Visual Studio) to develop DirectX apps or games, install the optional Graphics Tools feature.
 
-
-Unter Windows 10 sind die Grafik-Diagnosetools jetzt als optionales Feature in Windows verfügbar. Installieren Sie das optionale Grafiktoolfeature, um die in der Runtime und in Visual Studio bereitgestellten Grafikdiagnosefeatures für die Entwicklung von DirectX-Apps oder -Spielen zu nutzen:
-
-1.  Wechseln Sie zu **Einstellungen**Option **Apps**, und klicken Sie dann auf **optionale Features verwalten**.
-2.  Klicken Sie auf **Feature hinzufügen**.   
-3.  Wählen Sie in der Liste **Optionale Features****Grafiktools** aus, und klicken Sie dann auf **Installieren**.
+1. Go to **Settings** > **Apps** > **Apps & features/Optional features**.
+2. If **Graphics Tools** is already listed under **Installed features**, then you're done. Otherwise, click **Add a feature**.
+3. Search for and/or select **Graphics Tools**, and then click **Install**.
 
 Die Grafikdiagnosefeatures ermöglichen das Erstellen von Direct3D-Debugging-Geräten (über Direct3D-SDK-Ebenen) in der DirectX-Runtime sowie das Grafikdebugging, die Frame-Analyse und die GPU-Verwendung.
 
--   Mit dem Grafikdebugging können Sie Direct3D-Aufrufe Ihrer App nachverfolgen. Anschließend können Sie diese Aufrufe wiedergeben, Parameter untersuchen, Shader debuggen und mit ihnen experimentieren sowie Grafikobjekte visualisieren, um Renderingprobleme zu diagnostizieren. Protokolle können auf Windows-PCs, in Simulatoren oder auf Geräten erstellt und auf anderer Hardware wiedergegeben werden.
--   Die Analyse von Grafikframes in Visual Studio wird für ein Grafikdebuggingprotokoll ausgeführt und erfasst Details der Grundlinienzeitsteuerung für die Direct3D-Draw-Aufrufe. Anschließend führt sie eine Reihe von Versuchen aus, indem sie verschiedene Grafikeinstellungen ändert, und generiert eine Tabelle der Zeitsteuerungsergebnisse. Diese Daten können Aufschluss über Probleme mit der Grafikleistung Ihrer App geben, und anhand der Ergebnisse der verschiedenen Versuche können Sie feststellen, wie sich die Leistung verbessern lässt.
--   Anhand der GPU-Verwendung in Visual Studio können Sie die GPU-Verwendung in Echtzeit überwachen. Sie erfasst und analysiert die Zeitdaten der Arbeitsauslastungen, die von der CPU und GPU verarbeitet werden, und ermöglicht so die Erkennung von Engpässen.
+-   Mit dem Grafikdebugging können Sie Direct3D-Aufrufe Ihrer App nachverfolgen. Anschließend können Sie diese Aufrufe wiedergeben, Parameter untersuchen, Shader debuggen und mit ihnen experimentieren sowie Grafikobjekte visualisieren, um Renderingprobleme zu diagnostizieren. You can take logs on Windows PCs, simulators, or devices, and then play them back on different hardware.
+-   Graphics Frame Analysis in Visual Studio runs on a graphics debugging log, and gathers baseline timing for the Direct3D draw calls. It then performs a set of experiments by modifying various graphics settings, and produces a table of timing results. Diese Daten können Aufschluss über Probleme mit der Grafikleistung Ihrer App geben, und anhand der Ergebnisse der verschiedenen Versuche können Sie feststellen, wie sich die Leistung verbessern lässt.
+-   Anhand der GPU-Verwendung in Visual Studio können Sie die GPU-Verwendung in Echtzeit überwachen. It collects and analyzes the timing data of the workloads being handled by the CPU and GPU, so that you can determine where any bottlenecks are.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-
-[Übersicht über die Grafikdiagnose in Visual Studio](https://go.microsoft.com/fwlink/p/?LinkID=526382)
-
- 
-
- 
-
-
-
-
+[Graphics Diagnostics Overview in Visual Studio](/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)

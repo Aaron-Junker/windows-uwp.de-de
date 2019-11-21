@@ -6,19 +6,19 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Installieren, SDK, Werbebibliotheken
 ms.localizationpriority: medium
-ms.openlocfilehash: d348b1b7a7b057388b437fab9952bb8eaffe9957
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320230"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260271"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installieren des Microsoft Advertising-SDK
 
-Zum Anzeigen von UWP-Apps unter Windows 10, installieren Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp). Dieses SDK ist eine Erweiterung von Visual Studio 2015 und späteren Versionen.
+Zum Anzeigen von UWP-Apps unter Windows 10, installieren Sie das [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Dieses SDK ist eine Erweiterung von Visual Studio 2015 und späteren Versionen.
 
 > [!NOTE]
-> Wenn Sie eine JavaScript/HTML-UWP-app entwickeln und Sie Windows 10 SDK-Version 10.0.14393 (Anniversary Update) installiert haben oder höher verwenden, müssen Sie auch installieren die [WinJS](https://github.com/winjs/winjs) Bibliothek. Diese Bibliothek war in den früheren Versionen von Windows 10 enthalten, aber ab Windows 10 Anniversary SDK Version 10.0.14393 (Anniversary Update) muss diese Bibliothek separat installiert werden.
+> If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the [WinJS](https://github.com/winjs/winjs) library. Diese Bibliothek war in den früheren Versionen von Windows 10 enthalten, aber ab Windows 10 Anniversary SDK Version 10.0.14393 (Anniversary Update) muss diese Bibliothek separat installiert werden.
 
 <span id="install-msi" />
 
@@ -35,7 +35,7 @@ So installieren Sie das Microsoft Advertising-SDK über das MSI-Installationspro
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Laden Sie das [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) herunter, und installieren Sie es. Die Installation kann einige Minuten dauern. Warten Sie unbedingt, bis der Vorgang abgeschlossen ist.
+3.  Laden Sie das [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) herunter, und installieren Sie es. Die Installation kann einige Minuten dauern. Warten Sie unbedingt, bis der Vorgang abgeschlossen ist.
 
 4.  Starten Sie Visual Studio neu.
 
@@ -82,7 +82,7 @@ Folgen Sie nach der Installation des Microsoft Advertising-SDK diesen Anweisunge
 
 1. Öffnen Sie das Projekt in Visual Studio.
     > [!NOTE]
-    > Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **X86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
+    > Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **x86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
 
@@ -94,14 +94,14 @@ Exemplarische Vorgehensweisen zur erstmaligen Verwendung der Werbe-APIs finden S
 
 * [Interstitialwerbung](interstitial-ads.md)
 * [Native Anzeigen](native-ads.md)
-* [Adcontrol-Element in XAML und .NET](adcontrol-in-xaml-and--net.md)
-* [Adcontrol-Element in HTML 5- und Javascript](adcontrol-in-html-5-and-javascript.md)
+* [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
+* [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Grundlegendes zu Frameworkpaketen im Microsoft Advertising-SDK
 
-Die Bibliothek „Microsoft.Advertising.dll“ im [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) (für UWP-Apps) ist als *Frameworkpaket* konfiguriert. Diese Bibliothek enthält die Werbe-APIs in den [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising)- und [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui)-Namespaces.
+Die Bibliothek „Microsoft.Advertising.dll“ im [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (für UWP-Apps) ist als *Frameworkpaket* konfiguriert. Diese Bibliothek enthält die Werbe-APIs in den [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising)- und [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui)-Namespaces.
 
 Da es sich bei dieser Bibliothek um ein Frameworkpaket handelt, bedeutet dies Folgendes: Nachdem ein Benutzer eine Version Ihrer App installiert hat, die diese Bibliothek verwendet, wird diese Bibliothek automatisch auf dessen Gerät über Windows Update aktualisiert, wenn eine neue Version der Bibliothek mit Fixes und Leistungsverbesserungen veröffentlicht wird. Dadurch wird sichergestellt, dass Ihre Kunden stets die neueste Version der Bibliothek auf ihren Geräten installiert haben.
 

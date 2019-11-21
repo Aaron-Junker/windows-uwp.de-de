@@ -4,28 +4,28 @@ description: In diesem Artikel wird erläutert, wie die Medienwiedergabe erfolgt
 title: Wiedergeben von Medien im Hintergrund
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 19b3aa80bee643087a0aa92f714349004f6ec1c1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fb43e5b7006c7c81875651a926e87eb8f76621fe
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359160"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254298"
 ---
 # <a name="play-media-in-the-background"></a>Wiedergeben von Medien im Hintergrund
 In diesem Artikel wird beschrieben, wie Sie Ihre App so konfigurieren, dass die Medienwiedergabe fortgesetzt wird, wenn die App vom Vordergrund in den Hintergrund wechselt. Dies bedeutet, dass die App weiterhin Audio wiedergeben kann, auch nachdem der Benutzer die App minimiert hat, zur Startseite zurückgekehrt ist oder die App auf andere Weise verlassen hat. 
 
 Beispiele für Szenarien mit der Wiedergabe von Hintergrundaudio:
 
--   **Lang andauernde Wiedergabelisten:** Der Benutzer wird kurz eine Vordergrund-app auswählen und Starten einer Wiedergabeliste, wonach erwartet, dass der Benutzer die Wiedergabeliste aus, um die Wiedergabe im Hintergrund fortgesetzt.
+-   **Langzeit-Wiedergabelisten** Der Benutzer ruft kurz eine Vordergrund-App auf, um eine Wiedergabeliste auszuwählen und zu starten, und erwartet anschließend, dass die Wiedergabeliste kontinuierlich im Hintergrund wiedergegeben wird.
 
--   **Verwenden die programmumschaltung:** Der Benutzer kurz setzt eine Vordergrund-app um die Wiedergabe von audio, dann wechselt zu einer anderen app, die eine Verbindung mithilfe der programmumschaltung öffnen. Der Benutzer erwartet, dass die Audiowiedergabe im Hintergrund fortgesetzt wird.
+-   **Verwenden der Aufgabenumschaltfunktion:** Der Benutzer ruft kurz eine Vordergrund-App auf, um die Audiowiedergabe zu starten, und wechselt mit der Aufgabenumschaltfunktion dann zu einer anderen geöffneten App. Der Benutzer erwartet, dass die Audiowiedergabe im Hintergrund fortgesetzt wird.
 
 Dank der in diesem Artikel beschriebenen Implementierung von Hintergrundaudio kann die App universell auf allen Windows-Geräten, einschließlich Mobile, Desktop und Xbox, ausgeführt werden.
 
 > [!NOTE]
-> Der Code in diesem Artikel wurde aus dem UWP-Beispiel für [Hintergrundaudio](https://go.microsoft.com/fwlink/p/?LinkId=800141) übernommen und angepasst.
+> Der Code in diesem Artikel wurde aus dem UWP-Beispiel für [Hintergrundaudio](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback) übernommen und angepasst.
 
 ## <a name="explanation-of-one-process-model"></a>Erläuterung des Einzelprozessmodells
 Mit Windows 10, Version 1607, wurde ein neues Einzelprozessmodell eingeführt, das die Aktivierung von Hintergrundaudio erheblich vereinfacht. Zuvor musste Ihre App zusätzlich zur Vordergrund-App einen Hintergrundprozess verwalten und die Statusänderungen zwischen den beiden Prozessen manuell kommunizieren. Beim neuen Modell fügen Sie Ihrem App-Manifest einfach die Hintergrundaudio-Funktion hinzu, damit die Audiowiedergabe automatisch fortgesetzt wird, wenn die App in den Hintergrund wechselt. Durch die beiden neuen App-Lebenszyklusereignisse [**EnteredBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) und [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) weiß Ihre App, wann sie in den Hintergrund wechselt bzw. den Hintergrund wieder verlässt. Beim Übergang der App in den bzw. aus dem Hintergrund können sich die vom System erzwungenen Speicherbeschränkungen ändern. Sie können diese Ereignisse also verwenden, um die aktuelle Arbeitsspeichernutzung zu überprüfen und Ressourcen freizugeben, damit Sie unter dem Grenzwert bleiben.
@@ -42,7 +42,7 @@ Ihre App muss die folgenden Anforderungen für die Audiowiedergabe erfüllen, w�
 ## <a name="background-media-playback-manifest-capability"></a>Manifestfunktion „Medienwiedergabe im Hintergrund“
 Wenn Sie Hintergrundaudio aktivieren möchten, müssen Sie der App-Manifestdatei „Package.appxmanifest“ die Funktion „Medienwiedergabe im Hintergrund“ hinzufügen. 
 
-**Hinzufügen von Funktionen in der app-Manifest, das mit dem manifest-designer**
+**To add capabilities to the app manifest using the manifest designer**
 
 1.  Öffnen Sie in Microsoft Visual Studio im **Projektmappen-Explorer** den Designer für das Anwendungsmanifest, indem Sie auf das Element **package.appxmanifest** doppelklicken.
 2.  Wählen Sie die Registerkarte **Funktionen** aus.
@@ -86,15 +86,15 @@ Im [**LeavingBackground**](https://docs.microsoft.com/uwp/api/windows.applicatio
 Den wichtigsten Teil beim Übergang zwischen Vorder- und Hintergrund stellt die Verwaltung des von der App genutzten Speichers dar. Da die Ausführung im Hintergrund die Speicherressourcen verringert, die der App vom System gewährt werden, sollten Sie die App auch für das [**AppMemoryUsageIncreased**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusageincreased)-Ereignis und das [**AppMemoryUsageLimitChanging**](https://docs.microsoft.com/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging)-Ereignis registrieren. Wenn diese Ereignisse ausgelöst werden, sollten Sie die aktuelle Speicherbelegung und den aktuellen Grenzwert Ihrer App überprüfen und die Speichernutzung ggf. reduzieren. Informationen dazu, wie Sie die Speichernutzung während der Ausführung im Hintergrund reduzieren, finden Sie unter [Geben Sie Speicher frei, wenn Ihre App in den Hintergrund verschoben wird](../launch-resume/reduce-memory-usage.md).
 
 ## <a name="network-availability-for-background-media-apps"></a>Netzwerkverfügbarkeit für im Hintergrund ausgeführte Medien-Apps
-Alle netzwerkfähigen Medienquellen, die nicht auf der Basis eines Datenstroms oder einer Datei erstellt wurden, behalten beim Abrufen von Remoteinhalten eine aktive Netzwerkverbindung bei. Andernfalls wird die Verbindung nicht beibehalten. [**MediaStreamSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource), insbesondere dazu, abhängig von der Anwendung, melden den richtigen Bereich für die gepufferte ordnungsgemäß auf die Plattform mit [ **SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange). Nachdem der gesamte Inhalt vollständig gepuffert wurde, wird die Netzwerkverbindung nicht mehr für die App reserviert.
+Alle netzwerkfähigen Medienquellen, die nicht auf der Basis eines Datenstroms oder einer Datei erstellt wurden, behalten beim Abrufen von Remoteinhalten eine aktive Netzwerkverbindung bei. Andernfalls wird die Verbindung nicht beibehalten. [**MediaStreamSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaStreamSource), specifically, relies on the application to correctly report the correct buffered range to the platform using [**SetBufferedRange**](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource.setbufferedrange). Nachdem der gesamte Inhalt vollständig gepuffert wurde, wird die Netzwerkverbindung nicht mehr für die App reserviert.
 
 Beim Durchführen von Netzwerkaufrufen, die im Hintergrund ausgeführt werden, wenn kein Mediendownload stattfindet, müssen Sie diese in eine entsprechende Aufgabe, wie [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) oder [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger), einschließen. Weitere Informationen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Medienwiedergabe](media-playback.md)
-* [Abspielen von Audio- und Videodateien mit MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Integrieren Sie in das Medium für die Transport-Steuerelemente](integrate-with-systemmediatransportcontrols.md)
-* [Hintergrund-Audio-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
+* [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
+* [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
 

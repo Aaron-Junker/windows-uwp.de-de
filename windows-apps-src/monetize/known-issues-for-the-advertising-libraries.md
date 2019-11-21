@@ -6,19 +6,19 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Bekannte Probleme, Problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 51192e13c63bf3141989cfbf5d9ebd7fbaf13641
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641065"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260245"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Bekannte Probleme und Informationen zur Problembehandlung von Anzeigen in Apps
 
 Erfahren Sie in diesem Thema mehr über bekannte Probleme mit der aktuellen Version des Microsoft Advertising-SDKs. Weitere Erläuterungen zur Problembehandlung finden Sie unter folgenden Themen.
 
-* [HTML und JavaScript-Handbuch zur Problembehandlung](html-and-javascript-troubleshooting-guide.md)
-* [XAML und C# Handbuch zur Problembehandlung](xaml-and-c-troubleshooting-guide.md)
+* [HTML and JavaScript troubleshooting guide](html-and-javascript-troubleshooting-guide.md)
+* [XAML and C# troubleshooting guide](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>AdControl-Schnittstelle in XAML nicht bekannt
 
@@ -32,7 +32,7 @@ Wenn es einen **lastError** aus der vorherigen Anzeigenanforderung gibt, wird da
 
 Auf Telefonen (oder Emulatoren), die über Softwareschaltflächen für **Zurück**, **Start** und **Suche** anstelle von Hardwaretasten verfügen, werden die Countdown-Timer und Klickschaltflächen für Interstitialanzeigen möglicherweise verdeckt.
 
-## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Vor kurzem erstellte Anzeigen werden Ihrer App nicht bereitgestellt
+## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Vor Kurzem erstellte Anzeigen werden Ihrer App nicht bereitgestellt
 
 Wenn Sie vor kurzem (weniger als einem Tag) eine Anzeige erstellt haben, ist diese möglicherweise nicht sofort verfügbar. Wenn die Anzeige hinsichtlich ihrer redaktionellen Inhalte genehmigt wurde, wird sie bereitgestellt, nachdem der Anzeigenserver sie verarbeitet hat und die Anzeige als Bestand verfügbar ist.
 
@@ -40,25 +40,25 @@ Wenn Sie vor kurzem (weniger als einem Tag) eine Anzeige erstellt haben, ist die
 
 Es gibt viele Gründe, warum möglicherweise keine Anzeigen angezeigt werden, einschließlich Netzwerkfehlern. Andere Gründe können sein:
 
-* Wählen eine Werbeeinheit in Partner Center mit einer Größe, die größer oder kleiner als die Größe des ist der **adcontrol-Element** im Code Ihrer app.
+* Selecting an ad unit in Partner Center with a size that is greater or less than the size of the **AdControl** in your app's code.
 
 * Anzeigen werden nicht angezeigt, wenn Sie einen [Testmoduswert](set-up-ad-units-in-your-app.md#test-ad-units) für Ihre Anzeigeneinheiten-ID verwenden, wenn eine Live-App ausgeführt wird.
 
 * Wenn Sie in der letzten halben Stunde eine neue Anzeigeneinheiten-ID erstellt haben, wird eine Anzeige möglicherweise erst angezeigt, wenn der Server neue Daten durch das System propagiert hat. Vorhandene IDs, die zuvor bereits Anzeigen angezeigt haben, sollten Anzeigen sofort anzeigen.
 
-Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/en-us/windows/support). Wählen Sie auf dieser Seite **kontaktieren Sie uns**.
+Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/en-us/windows/support). On that page, choose **Contact us**.
 
-Sie können auch im [Forum](https://go.microsoft.com/fwlink/p/?LinkId=401266) eine Frage stellen.
+Sie können auch im [Forum](https://go.microsoft.com/fwlink/?LinkID=401264) eine Frage stellen.
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>In Ihrer App werden Testanzeigen anstelle von Liveanzeigen angezeigt.
 
-Testanzeigen können angezeigt werden, auch wenn Sie Liveanzeigen erwarten. Dies kann in den folgenden Situationen geschehen:
+Testanzeigen können angezeigt werden, auch wenn Sie Liveanzeigen erwarten. Dies kann in den folgenden Szenarien vorkommen:
 
 * Unsere Werbeplattform kann die Liveanwendungs-ID nicht überprüfen oder finden, die im Store verwendet wird. Wenn eine Anzeigeneinheit von einem Benutzer erstellt wird, kann in diesem Fall der Status als live (Nicht-Test) beginnen, jedoch innerhalb von 6 Stunden nach der ersten Anzeigenanforderung in den Teststatus wechseln. Er wechselt zurück zum Livestatus, wenn es 10 Tage keine Anforderungen von Test-Apps gibt.
 
 * Quergeladene Apps oder im Emulator ausgeführte Apps zeigen keine Liveanzeigen an.
 
-Bei einer live Werbeeinheit Test Ads eingesetzt wird, zeigt der Werbeeinheit Status **aktiv und der Bereitstellung testen Ads** im Partner Center. Dies gilt zurzeit nicht für Telefon-Apps.
+When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Partner Center. Dies gilt zurzeit nicht für Telefon-Apps.
 
 
 <span id="reference_errors"/>
@@ -67,7 +67,7 @@ Bei einer live Werbeeinheit Test Ads eingesetzt wird, zeigt der Werbeeinheit Sta
 
 Wenn Sie die Microsoft Advertising-SDK verwenden, können Sie in Ihrem Projekt als Ziel nicht **Any CPU** angeben. Wenn Ihr Projekt auf die Plattform **Any CPU** ausgerichtet ist, wird Ihnen möglicherweise eine Warnung angezeigt, nachdem Sie einen Verweis wie diesen hinzugefügt haben.
 
-![ReferenceError\-Solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 Um diese Warnung zu entfernen, müssen Sie eine architekturspezifische Buildausgabe verwenden (beispielsweise **x86**) und das Projekt entsprechend aktualisieren. Verwenden Sie den **Konfigurations-Manager**, um die Plattformziele für Debug- und Releasekonfigurationen festzulegen.
 
@@ -91,7 +91,7 @@ Die Festlegung von Rahmeneigenschaften, die **AdControl** von seiner übergeordn
 
 ## <a name="more-information"></a>Weitere Informationen
 
-Weitere Informationen zu den neuesten bekannten Problemen im Zusammenhang mit den Microsoft Advertising-SDKs finden Sie im [Forum](https://go.microsoft.com/fwlink/p/?LinkId=401266). Dort können Sie auch Fragen veröffentlichen.
+Weitere Informationen zu den neuesten bekannten Problemen im Zusammenhang mit den Microsoft Advertising-SDKs finden Sie im [Forum](https://go.microsoft.com/fwlink/?LinkID=401264). Dort können Sie auch Fragen veröffentlichen.
 
  
 

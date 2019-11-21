@@ -1,24 +1,24 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: Bewährte Methoden für die Leistung Ihrer App beim Starten
+title: Bewährte Methoden für die Startleistung der App
 description: Erstellen Sie UWP-Apps (Universelle Windows-Plattform) mit optimalen Startzeiten, indem Sie die Vorgehensweise bei Start und Aktivierung optimieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecb325566733e57c1ae9d1a13c68b25794e9e87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360037"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254686"
 ---
-# <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Leistung Ihrer App beim Starten
+# <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Startleistung der App
 
 
 Erstellen Sie UWP-Apps (Universelle Windows-Plattform) mit optimalen Startzeiten, indem Sie die Vorgehensweise bei Start und Aktivierung optimieren.
 
-## <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Leistung Ihrer App beim Starten
+## <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Startleistung der App
 
 Benutzer nehmen die Schnelligkeit (oder die Langsamkeit) einer App teilweise auch anhand des Umstands wahr, wie lange der Start der App dauert. Für die Zwecke dieses Themas legen wir Folgendes fest: Die Startzeit einer App beginnt, wenn der Benutzer die Anwendung startet, und sie endet, wenn der Benutzer auf sinnvolle Weise mit der App interagieren kann. Dieser Abschnitt enthält Vorschläge, wie Sie beim Starten Ihrer App eine bessere Leistung erzielen können.
 
@@ -32,7 +32,7 @@ Sie sollten die Messungen natürlich so durchführen, dass die Messergebnisse de
 
 Im folgenden Verfahren wird beschrieben, wie Sie „Ngen.exe“ zum Vorkompilieren Ihrer App ausführen.
 
-**Zum Ausführen von Ngen.exe**
+**To run Ngen.exe**
 
 1.  Führen Sie Ihre App mindestens einmal aus, um sicherzustellen, dass Sie von „Ngen.exe“ erkannt wird.
 2.  Öffnen Sie die **Aufgabenplanung**, indem Sie eine der folgenden Aktionen ausführen:
@@ -323,7 +323,7 @@ Bei Apps mit längerer Initialisierungsperiode ist das Anzeigen einer Ladeseite 
 > End Class
 > ```
 
-Ein Beispiel für die Verwendung erweiterter Begrüßungsbildschirme finden Sie im [Beispiel für einen Begrüßungsbildschirm](https://go.microsoft.com/fwlink/p/?linkid=234889).
+Ein Beispiel für die Verwendung erweiterter Begrüßungsbildschirme finden Sie im [Beispiel für einen Begrüßungsbildschirm](https://code.msdn.microsoft.com/windowsapps/Splash-screen-sample-89c1dc78).
 
 ### <a name="phase-3"></a>Phase 3
 
@@ -339,7 +339,7 @@ Wie genau eine App auf die einzelnen Startphasen reagiert, liegt ganz bei Ihnen.
 
 Wiederverwendbarer Code liegt oft in Gestalt von in das Projekt einbezogenen Modulen (DLL-Dateien) vor. Zum Laden dieser Module muss auf den Datenträger zugegriffen werden, was – wie Sie sich vorstellen können – schnell einen größeren Mehraufwand bedeuten kann. Dieser Aspekt wirkt sich am stärksten bei einem Kaltstart aus, kann aber auch Auswirkungen auf den Warmstart haben. Im Falle von C# und Visual Basic versucht die CLR, die Auswirkungen bestmöglich zu verzögern, indem sie die Assemblys nur bei Bedarf lädt. Mit anderen Worten: Die CLR lädt ein Modul erst, wenn in einer ausgeführten Methode darauf verwiesen wird. Verweisen Sie im Startcode also nur auf Assemblys, die für den Start Ihrer App erforderlich sind, damit die CLR keine überflüssigen Module lädt. Falls Ihr Startpfad nicht verwendete Codepfade mit unnötigen Verweisen enthält, können Sie diese Codepfade in andere Methoden auslagern, um unnötige Ladevorgänge zu vermeiden.
 
-Eine weitere Möglichkeit zum Optimieren von Modulladevorgängen ist das Kombinieren von App-Modulen. Eine einzelne große Assembly wird in der Regel schneller geladen als zwei kleinere Assemblys. Dies ist allerdings nicht immer möglich. Außerdem sollten Sie Module nur dann kombinieren, wenn dieser Schritt keine großen Nachteile für die Entwicklerproduktivität oder die Wiederverwendbarkeit des Codes bedeutet. Welche Module beim Start geladen werden, können Sie mit Tools wie [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) oder mit der [Windows-Leistungsanalyse](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) ermitteln.
+Eine weitere Möglichkeit zum Optimieren von Modulladevorgängen ist das Kombinieren von App-Modulen. Eine einzelne große Assembly wird in der Regel schneller geladen als zwei kleinere Assemblys. Dies ist allerdings nicht immer möglich. Außerdem sollten Sie Module nur dann kombinieren, wenn dieser Schritt keine großen Nachteile für die Entwicklerproduktivität oder die Wiederverwendbarkeit des Codes bedeutet. Welche Module beim Start geladen werden, können Sie mit Tools wie [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) oder mit der [Windows-Leistungsanalyse](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) ermitteln.
 
 ### <a name="make-smart-web-requests"></a>Verwenden intelligenter Webanforderungen
 
@@ -357,7 +357,7 @@ Das PageStackEntry-Element enthält auch den Parameter, der an die Frame.Navigat
 
 Daher ist es ratsam, die Navigationsparameter klein zu halten und die Größe des BackStack-Elements zu beschränken. Das BackStack-Element ist ein standardmäßiger Vektor (IList in C#, Platform::Vector in C++/CX) und kann daher gekürzt werden, indem einfach Einträge entfernt werden.
 
-**Zwischenspeichern von Seiten**: Wenn Sie mit der Frame.Navigate-Methode auf eine Seite navigieren, wird standardmäßig eine neue Instanz der Seite instanziiert. Wenn Sie mit Frame.GoBack dann wieder zurück auf die vorherige Seite navigieren, wird analog dazu eine neue Instanz der vorherigen Seite zugeordnet.
+**Zwischenspeichern von Seiten**. Wenn Sie mit der Frame.Navigate-Methode auf eine Seite navigieren, wird standardmäßig eine neue Instanz der Seite instanziiert. Wenn Sie mit Frame.GoBack dann wieder zurück auf die vorherige Seite navigieren, wird analog dazu eine neue Instanz der vorherigen Seite zugeordnet.
 
 „Frame“ verfügt aber über die Möglichkeit einer optionalen Zwischenspeicherung von Seiten, mit der diese Instanziierungen vermieden werden können. Verwenden Sie die Page.NavigationCacheMode-Eigenschaft, um eine Seite in den Cache einzufügen. Wenn Sie diesen Modus auf „Required“ festlegen, wird das Zwischenspeichern der Seite erzwungen. Bei der Einstellung „Enabled“ ist die Zwischenspeicherung zulässig. Standardmäßig beträgt die Cachegröße zehn Seiten, aber dies kann mit der Frame.CacheSize-Eigenschaft überschrieben werden. Alle Seiten mit der Einstellung „Required“ werden zwischengespeichert, und wenn weniger Seiten als mit „CacheSize Required“ festgelegt vorhanden sind, können auch Seiten mit der Einstellung „Enabled“ zwischengespeichert werden.
 

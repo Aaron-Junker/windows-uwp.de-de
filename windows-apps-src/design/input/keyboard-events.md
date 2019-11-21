@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 89257a4ec64458f5734c2b04c1e654a7c0c44f27
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 2800db96177f77648d2d2a98f5cd87c930f6840a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339902"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258335"
 ---
 # <a name="keyboard-events"></a>Tastaturereignisse
 
@@ -94,14 +94,14 @@ void MyProject::MainPage::Grid_KeyUp(
 
 Alle Tastaturereignisse verwenden [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs) für Ereignisdaten. **KeyRoutedEventArgs** enthält die folgenden Eigenschaften:
 
--   [**Wichtigen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
--   [**Keystatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Umgangs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
--   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (geerbt von [**routedebug args**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
+-   [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
+-   [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource) (inherited from [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs))
 
-### <a name="key"></a>Key
+### <a name="key"></a>Schlüssel
 
-Das [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)-Ereignis wird ausgelöst, wenn eine Taste gedrückt wird. Entsprechend wird das [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignis ausgelöst, wenn eine Taste losgelassen wird. In der Regel lauschen Sie auf Ereignisse, um einen bestimmten Tastenwert zu verarbeiten. Überprüfen Sie den Wert [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) in den Ereignisdaten, um die gedrückte oder losgelassene Taste zu ermitteln. **Key** gibt einen [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey)-Wert zurück. Die **VirtualKey**-Enumeration umfasst alle unterstützten Tasten.
+Das Ereignis [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) wird ausgelöst, wenn eine Taste gedrückt wird. Entsprechend wird das Ereignis [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) ausgelöst, wenn eine Taste losgelassen wird. In der Regel lauschen Sie auf Ereignisse, um einen bestimmten Tastenwert zu verarbeiten. Überprüfen Sie den Wert [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) in den Ereignisdaten, um die gedrückte oder losgelassene Taste zu ermitteln. **Key** gibt einen [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey)-Wert zurück. Die **VirtualKey**-Enumeration umfasst alle unterstützten Tasten.
 
 ### <a name="modifier-keys"></a>Zusatztasten
 
@@ -288,7 +288,7 @@ End Sub
 
 Bestimmte Ereignisse gelten als Routingereignisse, wie z. B. [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) und [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup). Routingereignisse verwenden die Bubbling-Routingstrategie. Bei der Bubbling-Routingstrategie geht ein Ereignis von einem untergeordneten Objekt aus und wird jeweils an die übergeordneten Objekte in der Struktur weitergeleitet. Dadurch ergibt sich eine weitere Möglichkeit, dasselbe Ereignis zu behandeln und mit denselben Ereignisdaten zu interagieren.
 
-Im folgenden XAML-Beispiel werden [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse für ein [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Objekt und zwei [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)-Objekte definiert. Wenn Sie in diesem Fall eine Taste loslassen, während der Fokus auf einem der **Button**-Objekte liegt, wird das **KeyUp**-Ereignis ausgelöst. Das Ereignis wird per Bubbling an die übergeordnete **Canvas** weitergeleitet.
+Im folgenden XAML-Beispiel werden [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)-Ereignisse für ein [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)-Objekt und zwei [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)-Objekte definiert. Wenn Sie in diesem Fall eine Taste loslassen, während der Fokus auf einem der **Button**-Objekte liegt, wird das Ereignis **KeyUp** ausgelöst. Das Ereignis wird per Bubbling an die übergeordnete **Canvas** weitergeleitet.
 
 ```xaml
 <StackPanel KeyUp="StackPanel_KeyUp">
@@ -319,7 +319,7 @@ Der Zweck der Eigenschaft [**Handled**](https://docs.microsoft.com/uwp/api/windo
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>"AddHandler " und bereits behandelte Tastaturereignisse
 
-Sie können eine spezielle Technik verwenden, um Handler anzufügen, die auf bereits als verarbeitet markierte Ereignisse reagieren können. Bei dieser Methode wird die [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) -Methode verwendet, um einen Handler zu registrieren, anstatt XAML-Attribute oder sprachspezifische Syntax zum Hinzufügen von Handlern zu verwenden, wie z. b. + = in C @ no__t-2.
+Sie können eine spezielle Technik verwenden, um Handler anzufügen, die auf bereits als verarbeitet markierte Ereignisse reagieren können. This technique uses the [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) method to register a handler, rather than using XAML attributes or language-specific syntax for adding handlers, such as += in C\#.
 
 Eine generelle Einschränkung dieser Technik besteht darin, dass die API **AddHandler** einen Parameter vom Typ [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) verwendet, der das fragliche Routingereignis identifiziert. Nicht alle Routingereignisse bieten einen **RoutedEvent**-Bezeichner. Dieser Umstand wirkt sich somit darauf aus, welche Routingereignisse im Fall [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) noch verarbeitet werden können. Die Ereignisse [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) und [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) haben Routingereignisbezeichner ([**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) und [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent)) in [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement). Andere Texteingabe-Ereignisse, wie [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged), besitzen jedoch keine Routingereignisbezeichner und können deshalb für die Technik **AddHandler** nicht verwendet werden.
 
@@ -327,7 +327,7 @@ Eine generelle Einschränkung dieser Technik besteht darin, dass die API **AddHa
 
 Sie können die wichtigsten Ereignisse für bestimmte Steuerelemente überschreiben (z. B. [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)), um eine konsistente Fokusnavigation für verschiedene Eingabegeräte (darunter Tastatur und Gamepad) bereitzustellen.
 
-Im folgenden Beispiel wird das-Steuerelement unterteilt und das KeyDown-Verhalten überschrieben, um den Fokus auf den GridView-Inhalt zu verschieben, wenn eine beliebige Pfeiltaste gedrückt wird.
+In the following example, we subclass the control and override the KeyDown behavior to move focus to the GridView content when any arrow key is pressed.
 
 ```csharp
   public class CustomGridView : GridView
@@ -384,25 +384,25 @@ Benutzer können Daten in Ihre App schneller und einfacher eingeben, wenn Sie de
 ## <a name="related-articles"></a>Verwandte Artikel
 
 **Entwickler**
-* [Tastatur Interaktionen](keyboard-interactions.md)
+* [Keyboard interactions](keyboard-interactions.md)
 * [Identifizieren von Eingabegeräten](identify-input-devices.md)
-* [Reagieren auf das vorhanden sein der Touchscreen-Tastatur](respond-to-the-presence-of-the-touch-keyboard.md)
+* [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
 
 **Designer**
 * [Tastaturentwurfsrichtlinien](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 
 **Beispiele**
-* [Beispiel für eine Berührungs Tastatur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [Beispiel für eine einfache Eingabe](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Eingabe Beispiel mit niedriger Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **Archivbeispiele**
-* [Eingabe Beispiel](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [eingabe: Beispiel für Gerätefunktionen @ no__t-0
-* [eingabe: Sample Tastatur Sample @ no__t-0
-* [Reagieren auf das Aussehen der Bildschirmtastatur (Beispiel)](https://go.microsoft.com/fwlink/p/?linkid=231633)
-* [Beispiel für XAML-Textbearbeitung](https://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [Input sample](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Input: Touch keyboard sample](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
+* [Responding to the appearance of the on-screen keyboard sample](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
+* [XAML text editing sample](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
  
 
  

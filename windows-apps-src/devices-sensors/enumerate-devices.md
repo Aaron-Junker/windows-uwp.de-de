@@ -4,19 +4,19 @@ title: Auflisten von Geräten
 description: Der Enumeration-Namespace ermöglicht die Suche nach Geräten, die intern mit dem System verbunden, extern verbunden oder über Drahtlos- oder Netzwerkprotokolle erkannt werden können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cddd7fbcff62f070fa4c4e181e012ec871f1c0c2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: b562dd139705e983bc8a8ad10962d923cff55559
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370162"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259677"
 ---
 # <a name="enumerate-devices"></a>Auflisten von Geräten
 
 
-## <a name="samples"></a>Proben
+## <a name="samples"></a>Beispiele
 
 Die einfachste Möglichkeit zum Auflisten aller verfügbaren Geräte ist, mithilfe des [**FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)-Befehls eine Momentaufnahme zu erstellen (hierauf wird in einem späteren Abschnitt eingegangen).
 
@@ -26,7 +26,7 @@ async void enumerateSnapshot(){
 }
 ```
 
-Wenn Sie ein Beispiel zur fortgeschrittenen Verwendung der [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-APIs herunterladen möchten, klicken Sie [hier](https://go.microsoft.com/fwlink/?LinkID=620536).
+Wenn Sie ein Beispiel zur fortgeschrittenen Verwendung der [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-APIs herunterladen möchten, klicken Sie [hier](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing).
 
 ## <a name="enumeration-apis"></a>Enumerations-APIs
 
@@ -42,13 +42,13 @@ Diese APIs können Geräte über jedes der folgenden Protokolle und jeden der fo
 -   Physisch verbundene Busse. Dies umfasst PCI und USB. Beispielsweise alle Elemente, die im **Geräte-Manager** angezeigt werden.
 -   [UPnP](https://docs.microsoft.com/windows/desktop/UPnP/universal-plug-and-play-start-page)
 -   Digital Living Network Alliance (DLNA)
--   [**Ermittlung, und starten Sie (DFÜ)** ](https://docs.microsoft.com/uwp/api/Windows.Media.DialProtocol)
--   [**DNS-Dienst-Ermittlung (DNS-SD)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)
--   [Web Service on Devices (WSD)](https://docs.microsoft.com/windows/desktop/WsdApi/wsd-portal)
+-   [**Discovery and Launch (DIAL)** ](https://docs.microsoft.com/uwp/api/Windows.Media.DialProtocol)
+-   [**DNS Service Discovery (DNS-SD)** ](https://docs.microsoft.com/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)
+-   [Web Services on Devices (WSD)](https://docs.microsoft.com/windows/desktop/WsdApi/wsd-portal)
 -   [Bluetooth](https://docs.microsoft.com/windows/desktop/Bluetooth/bluetooth-start-page)
 -   [**Wi-Fi Direct**](https://docs.microsoft.com/uwp/api/Windows.Devices.WiFiDirect)
 -   WiGig
--   [**Point-of-Service**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
+-   [**Point of Service**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
 
 In vielen Fällen müssen Sie sich über die Verwendung der Enumerations-APIs keine Gedanken machen. Der Grund hierfür ist, dass viele APIs, die Geräte verwenden, automatisch das entsprechende Standardgerät auswählen oder eine optimierte Enumerations-API bereitstellen. Beispielsweise verwendet [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) automatisch das standardmäßige Audiowiedergabegerät. Solange die App das Standardgerät verwenden kann, ist es nicht erforderlich, die Enumerations-APIs in Ihrer Anwendung zu verwenden. Die Enumerations-APIs bieten eine allgemeine und flexible Möglichkeit zum Ermitteln verfügbarer Geräte und zur Verbindung mit den Geräten. Dieses Thema enthält Informationen zur Enumeration von Geräten und beschreibt die vier gängigen Methoden hierfür.
 
@@ -62,11 +62,11 @@ In vielen Fällen müssen Sie sich über die Verwendung der Enumerations-APIs ke
 
 Beim Arbeiten mit Enumerations-APIs werden Sie häufig [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekte verwenden müssen. Diese Objekte enthalten einen Großteil der verfügbaren Informationen zum Gerät. Die folgende Tabelle beschreibt einige der **DeviceInformation**-Eigenschaften, die für Sie von Interesse sein werden. Die vollständige Liste finden Sie auf der Referenzseite für **DeviceInformation**.
 
-| Eigenschaft                         | Kommentare                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Eigenschaft                         | Anmerkungen                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **DeviceInformation.Id**         | Dies ist der eindeutige Bezeichner des Geräts, der als Zeichenfolgenvariable bereitgestellt wird. In den meisten Fällen ist dies ein verdeckter Wert, den Sie einfach von einer Methode an eine andere übergeben, um das für Sie relevante Gerät anzugeben. Sie können diese Eigenschaft und die **DeviceInformation.Kind**-Eigenschaft auch nach dem Schließen und erneuten Öffnen Ihrer App verwenden. Hierdurch wird sichergestellt, dass Sie dasselbe [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt wiederherstellen und wiederverwenden können. |
 | **DeviceInformation.Kind**       | Diese gibt die Art des Geräteobjekts an, das durch das [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt dargestellt wird. Dies entspricht nicht der Gerätekategorie oder dem Gerätetyp. Ein einzelnes Gerät kann durch mehrere verschiedene **DeviceInformation**-Objekte unterschiedlicher Art dargestellt werden. Die möglichen Werte dieser Eigenschaft sowie ihre Beziehung zueinander werden unter [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind) aufgeführt.                           |
-| **DeviceInformation.Properties** | Die Eigenschaftensammlung enthält Informationen, die für das [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt angefordert werden. Auf die gebräuchlichsten Eigenschaften wird einfach als Eigenschaften des **DeviceInformation**-Objekts verwiesen, z. B. mit [**DeviceInformation.Name**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name). Weitere Informationen finden Sie unter [Geräteinformationseigenschaften](device-information-properties.md).                                                                |
+| **DeviceInformation.Properties** | Die Eigenschaftensammlung enthält Informationen, die für das [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt angefordert werden. Auf die gebräuchlichsten Eigenschaften wird einfach als Eigenschaften des **DeviceInformation**-Objekts verwiesen, z. B. mit [**DeviceInformation.Name**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.name). Weitere Informationen finden Sie unter [Geräteinformationseigenschaften](device-information-properties.md).                                                                |
 
  
 
@@ -82,7 +82,7 @@ Der [**DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumer
 
 Während [**DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker) angezeigt wird, werden die Inhalte der Benutzeroberfläche automatisch aktualisiert, wenn Geräte hinzugefügt, entfernt oder aktualisiert werden.
 
-**Beachten Sie**  Sie nicht angeben, die [ **DeviceInformationKind** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind) mithilfe der [ **DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker). Wenn Sie Geräte mit einem bestimmten **DeviceInformationKind** ermitteln möchten, müssen Sie einen [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) erstellen und eine eigene Benutzeroberfläche bereitstellen.
+**Note**  You cannot specify the [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationkind) using the [**DevicePicker**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DevicePicker). Wenn Sie Geräte mit einem bestimmten **DeviceInformationKind** ermitteln möchten, müssen Sie einen [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) erstellen und eine eigene Benutzeroberfläche bereitstellen.
 
  
 
@@ -106,7 +106,7 @@ Zusätzlich zur Einschränkung der Ergebnisse können Sie auch die Eigenschaften
 ## <a name="enumerate-and-watch-devices"></a>Auflisten und Anzeigen von Geräten
 
 
-Eine leistungsfähigere und flexiblere Methode für die Enumeration von Geräten ist die Erstellung von [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher). Diese Option bietet die größte Flexibilität bei der Enumeration von Geräten. Sie ermöglicht Ihnen die Enumeration der aktuell verfügbaren Geräte sowie den Empfang von Benachrichtigungen, wenn mit der Geräteauswahl übereinstimmende Geräte hinzugefügt oder entfernt bzw. deren Eigenschaften geändert werden. Beim Erstellen von **DeviceWatcher** stellen Sie eine Geräteauswahl bereit. Weitere Informationen zur Geräteauswahl finden Sie unter [Erstellen einer Geräteauswahl](build-a-device-selector.md). Nachdem Sie die Überwachung erstellt haben, erhalten Sie für jedes Gerät, das die angegebenen Kriterien erfüllt, die folgenden Benachrichtigungen.
+Eine leistungsfähigere und flexiblere Methode für die Auflistung von Geräten ist die Erstellung eines [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)-Elements. Diese Option bietet die größte Flexibilität bei der Enumeration von Geräten. Sie ermöglicht Ihnen die Enumeration der aktuell verfügbaren Geräte sowie den Empfang von Benachrichtigungen, wenn mit der Geräteauswahl übereinstimmende Geräte hinzugefügt oder entfernt bzw. deren Eigenschaften geändert werden. Beim Erstellen von **DeviceWatcher** stellen Sie eine Geräteauswahl bereit. Weitere Informationen zur Geräteauswahl finden Sie unter [Erstellen einer Geräteauswahl](build-a-device-selector.md). Nachdem Sie die Überwachung erstellt haben, erhalten Sie für jedes Gerät, das die angegebenen Kriterien erfüllt, die folgenden Benachrichtigungen.
 
 -   Benachrichtigung über das Hinzufügen eines neuen Geräts
 -   Benachrichtigung über die Änderung einer für Sie relevanten Eigenschaft
@@ -123,7 +123,7 @@ Zum Erstellen von [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows
 
 Die Geräteüberwachung als Hintergrundaufgabe ist nahezu identisch mit der oben beschriebenen Erstellung von [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher). Tatsächlich müssen Sie zunächst ein normales **DeviceWatcher**-Objekt erstellen wie im vorangehenden Abschnitt beschrieben. Nach der Erstellung rufen Sie [**GetBackgroundTrigger**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted) anstelle von [**DeviceWatcher.Start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start) auf. Beim Aufruf von **GetBackgroundTrigger** müssen Sie angeben, welche der Benachrichtigungen Ihnen wichtig sind: Hinzufügen, Entfernen oder Aktualisieren. Benachrichtigungen über das Aktualisieren oder Entfernen können nur zusammen mit einer Benachrichtigung über das Hinzufügen angefordert werden. Nachdem Sie den Trigger registriert haben, wird die Ausführung von **DeviceWatcher** sofort im Hintergrund gestartet. Ab dann wird die Hintergrundaufgabe jedes Mal ausgelöst, wenn sie eine neue mit den Kriterien übereinstimmende Benachrichtigung für Ihre Anwendung empfängt. Sie teilt Ihnen die seit der letzten Auslösung der Anwendung vorgenommenen Änderungen mit.
 
-**Wichtige**  beim ersten Aufruf von einem [ **DeviceWatcherTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger) Trigger, die die Anwendung nicht auf, wenn die Watcher erreicht die **EnumerationCompleted**  Zustand. Dies bedeutet, dass alle anfänglich verfügbaren Ergebnisse enthalten sind. Wenn die Anwendung in Zukunft ausgelöst wird, enthält die Hintergrundaufgabe nur die Benachrichtigungen über Hinzufügungs-, Aktualisierungs- und Entfernungsvorgänge, die seit dem letzten Trigger aufgetreten sind. Dies unterscheidet sich geringfügig von dem im Vordergrund ausgeführten [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)-Objekt, da die anfänglichen Ergebnisse nicht nacheinander eingehen, sondern erst nach Erreichen des Zustands **EnumerationCompleted** gebündelt übermittelt werden.
+**Important**  The first time that a [**DeviceWatcherTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger) triggers your application will be when the watcher reaches the **EnumerationCompleted** state. Dies bedeutet, dass alle anfänglich verfügbaren Ergebnisse enthalten sind. Wenn die Anwendung in Zukunft ausgelöst wird, enthält die Hintergrundaufgabe nur die Benachrichtigungen über Hinzufügungs-, Aktualisierungs- und Entfernungsvorgänge, die seit dem letzten Trigger aufgetreten sind. Dies unterscheidet sich geringfügig von dem im Vordergrund ausgeführten [**DeviceWatcher**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)-Objekt, da die anfänglichen Ergebnisse nicht nacheinander eingehen, sondern erst nach Erreichen des Zustands **EnumerationCompleted** gebündelt übermittelt werden.
 
  
 
@@ -153,7 +153,7 @@ Beim Enumerieren von **AssociationEndpoint**-, **AssociationEndpointContainer**-
 ## <a name="save-a-device-for-later-use"></a>Speichern eines Geräts zur späteren Verwendung
 
 
-Alle [ **DeviceInformation** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) Objekt eindeutig durch eine Kombination von zwei Angaben: [**DeviceInformation.Id** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) und [ **DeviceInformation.Kind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.kind). Wenn Sie diese beiden Informationselemente beibehalten, können Sie ein **DeviceInformation**-Objekt erneut erstellen, nachdem es verloren gegangen ist, indem Sie diese Informationen für [**CreateFromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createfromidasync) bereitstellen. Auf diese Weise können Sie Benutzereinstellungen für ein Gerät speichern, mit dem die App verwendet wird.
+Jedes [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt wird durch eine Kombination aus zwei Informationselementen eindeutig identifiziert: [**DeviceInformation.Id**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) und [**DeviceInformation.Kind**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.kind). Wenn Sie diese beiden Informationselemente beibehalten, können Sie ein **DeviceInformation**-Objekt erneut erstellen, nachdem es verloren gegangen ist, indem Sie diese Informationen für [**CreateFromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.createfromidasync) bereitstellen. Auf diese Weise können Sie Benutzereinstellungen für ein Gerät speichern, mit dem die App verwendet wird.
 
 
  

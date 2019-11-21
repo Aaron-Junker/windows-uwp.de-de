@@ -4,14 +4,14 @@ description: Dieser Artikel veranschaulicht das Verwenden von MediaFrameReader m
 title: Verarbeiten von Audioframes mit „MediaFrameReader“
 ms.date: 04/18/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f8d357dfbceafb6cc366b2880956ab3db231047d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360700"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74256663"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Verarbeiten von Audioframes mit „MediaFrameReader“
 
@@ -21,12 +21,12 @@ Dieser Artikel veranschaulicht das Verwenden von [**MediaFrameReader**](https://
 > Die in diesem Artikel besprochenen Features sind erst ab Windows 10, Version 1803, verfügbar.
 
 > [!NOTE] 
-> Es gibt ein Beispiel für universelle Windows-Apps, in dem die Verwendung von **MediaFrameReader** zum Anzeigen von Frames aus unterschiedlichen Framequellen demonstriert wird, unter anderem Farb-, Tiefen- und Infrarotkameras. Weitere Informationen finden Sie unter [Beispiel für Kameraframes](https://go.microsoft.com/fwlink/?LinkId=823230).
+> Es gibt ein Beispiel für universelle Windows-Apps, in dem die Verwendung von **MediaFrameReader** zum Anzeigen von Frames aus unterschiedlichen Framequellen demonstriert wird, unter anderem Farb-, Tiefen- und Infrarotkameras. Weitere Informationen finden Sie unter [Beispiel für Kameraframes](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
 
 ## <a name="setting-up-your-project"></a>Einrichten Ihres Projekts
 Der Prozess zum Erwerb von Audioframes entspricht größtenteils dem Erwerb anderer Arten von Medienframes. Wie bei allen Apps, die **MediaCapture** verwenden, müssen Sie deklarieren, dass Ihre App die *Webcam*-Funktion verwendet. Erst dann können Sie auf Kamerageräte zugreifen. Wenn Ihre App von einem Audiogerät aufzeichnet, müssen Sie auch die *microphone*-Gerätefunktion deklarieren. 
 
-**Hinzufügen von Funktionen zu app-manifest**
+**Add capabilities to the app manifest**
 
 1.  Öffnen Sie in Microsoft Visual Studio im **Projektmappen-Explorer** den Designer für das Anwendungsmanifest, indem Sie auf das Element **package.appxmanifest** doppelklicken.
 2.  Wählen Sie die Registerkarte **Funktionen** aus.
@@ -76,10 +76,10 @@ Sie können Sie ein [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verarbeiten von Medien-Frames mit MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Kamera](camera.md)
-* [Erfassen Sie grundlegende Foto, Video- und Audiodateien mit MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [Beispiel für Camera-frames](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
 * [Audiodiagramme](audio-graphs.md)
  
 

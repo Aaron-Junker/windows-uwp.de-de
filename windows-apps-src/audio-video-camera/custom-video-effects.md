@@ -6,36 +6,36 @@ Search.Product: eADQiWindows 10XVcnh
 title: Benutzerdefinierte Videoeffekte
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f0b4a5ba17a866eb50539f5138460eefd0eec
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1be4bf71d99bd6560ce4ed753b55dacdfcceb868
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318403"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257193"
 ---
 # <a name="custom-video-effects"></a>Benutzerdefinierte Videoeffekte
 
 
 
 
-In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erstellen, die die [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect)-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Videostreams erstellen können. Benutzerdefinierte Effekte können mit verschiedenen Windows-Runtime-APIs verwendet werden, z. B. [MediaCapture](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), die den Zugriff auf die Kamera eines Gerätes ermöglicht, sowie [**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition), mit der Sie komplexe Kompositionen aus Medienclips erstellen können.
+In diesem Artikel wird beschrieben, wie Sie eine Komponente für Windows-Runtime erstellen, die die [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect)-Schnittstelle implementiert, mit der Sie benutzerdefinierte Effekte für Videostreams erstellen können. Benutzerdefinierte Effekte können mit verschiedenen Windows-Runtime-APIs verwendet werden, z. B. [MediaCapture](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaCapture), die den Zugriff auf die Kamera eines Gerätes ermöglicht, sowie [**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition), mit der Sie komplexe Kompositionen aus Medienclips erstellen können.
 
 ## <a name="add-a-custom-effect-to-your-app"></a>Hinzufügen eines benutzerdefinierten Effekts zu Ihrer App
 
 
 Sie definieren einen benutzerdefinierte Videoefekt in einer Klasse, die die [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect)-Schnittstelle implementiert. Diese Klasse kann nicht direkt in Ihr App-Projekt integriert werden. Stattdessen müssen Sie eine Windows-Runtime-Komponente verwenden, um Ihre Videoeffektklasse zu hosten.
 
-**Hinzufügen einer Windows-Runtime-Komponente, um Ihr video zu erzielen**
+**Add a Windows Runtime component for your video effect**
 
 1.  Wechseln Sie in Microsoft Visual Studio bei geöffneter Projektmappe zum Menü **Datei**, und wählen Sie **Hinzufügen-&gt;Neues Projekt** aus.
 2.  Wählen Sie den Projekttyp **Komponente für Windows-Runtime (Universal Windows)** aus.
 3.  Nennen Sie das Projekt in diesem Beispiel *VideoEffectComponent*. Auf diesen Namen wird später im Code verwiesen.
 4.  Klicken Sie auf **OK**.
 5.  Die Projektvorlage erstellt eine Klasse namens „Class1.cs“. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Symbol für „Class1.cs“, und wählen Sie **Umbenennen** aus.
-6.  Benennen Sie die Datei in *ExampleVideoEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. Klicken Sie auf **Ja**.
+6.  Benennen Sie die Datei in *ExampleVideoEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. klicken Sie auf **Ja**.
 7.  Öffnen Sie **ExampleVideoEffect.cs**, und aktualisieren Sie die Definition der Klasse, um die [**IBasicVideoEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicVideoEffect)-Schnittstelle zu implementieren.
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
@@ -86,7 +86,7 @@ Das System ruft [**SetEncodingProperties**](https://docs.microsoft.com/uwp/api/w
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties-Eigenschaft
 
-Das System überprüft die [**SupportedEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties)-Eigenschaft, um festzustellen, welche Codierungseigenschaften von dem Effekt unterstützt werden. Beachten Sie Folgendes: Wenn der Nutzer Ihres Effekts das Video mit den von Ihnen angegebenen Eigenschaften nicht codieren kann, wird [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.close) für den Effekt aufgerufen und er wird aus der Videopipeline entfernt.
+Das System überprüft die [**SupportedEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties) Eigenschaft, um festzustellen, welche Codierungseigenschaften von dem Effekt unterstützt werden. Beachten Sie Folgendes: Wenn der Nutzer Ihres Effekts das Video mit den von Ihnen angegebenen Eigenschaften nicht codieren kann, wird [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicvideoeffect.close) für den Effekt aufgerufen und er wird aus der Videopipeline entfernt.
 
 
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
@@ -162,14 +162,14 @@ Nun, da die Datenpuffer abgerufen wurden, können Sie aus dem Eingabepuffer lese
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>Implementieren der IBasicVideoEffect-Schnittstelle mit Hardwareverarbeitung
 
 
-Das Erstellen eines benutzerdefinierten Videoeffekts mit der Hardwareverarbeitung (GPU) ist nahezu identisch mit der oben beschriebenen Verfahrensweise mit Softwareverarbeitung. In diesem Abschnitt werden die wenigen Unterschiede in einem Effekt erläutert, bei dem die Hardwareverarbeitung verwendet wird. In diesem Beispiel wird die Win2D-Windows-Runtime-API verwendet. Weitere Informationen zur Verwendung von Win2D finden Sie in der [Win2D-Dokumentation](https://go.microsoft.com/fwlink/?LinkId=519078).
+Das Erstellen eines benutzerdefinierten Videoeffekts mit der Hardwareverarbeitung (GPU) ist nahezu identisch mit der oben beschriebenen Verfahrensweise mit Softwareverarbeitung. In diesem Abschnitt werden die wenigen Unterschiede in einem Effekt erläutert, bei dem die Hardwareverarbeitung verwendet wird. In diesem Beispiel wird die Win2D-Windows-Runtime-API verwendet. Weitere Informationen zur Verwendung von Win2D finden Sie in der [Win2D-Dokumentation](https://microsoft.github.io/Win2D/html/Introduction.htm).
 
 Führen Sie die folgenden Schritte aus, um das Win2D-NuGet-Paket zu dem Projekt hinzuzufügen, das Sie wie im Abschnitt **Hinzufügen eines benutzerdefinierten Effekts zu Ihrer App** zu Beginn dieses Artikels beschrieben erstellt haben.
 
-**Auf das Win2D-NuGet-Paket Ihrem Projekt Effekt hinzufügen**
+**To add the Win2D NuGet package to your effect project**
 
 1.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **VideoEffectComponent**, und wählen Sie **NuGet-Pakete verwalten** aus.
-2.  Wählen Sie oben im Fenster die Registerkarte **Durchsuchen** aus.
+2.  Klicken Sie oben im Fenster auf die Registerkarte **Durchsuchen**.
 3.  Geben Sie im Suchfeld **Win2D** ein.
 4.  Wählen Sie **Win2D.uwp** und anschließend im rechten Bereich **Installieren** aus.
 5.  Im Dialogfeld **Änderungen überprüfen** wird das zu installierende Paket angezeigt. Klicken Sie auf **OK**.
@@ -230,7 +230,7 @@ Nachdem der Effekt hinzugefügt wurde, wird [**StartPreviewAsync**](https://docs
 
 
 
-### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Hinzufügen Ihres benutzerdefinierten Effekts zu einem Clip in einer MediaComposition
+### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>Hinzufügen Ihres benutzerdefinierten Effekts zu einem Clip in einer Medienkomposition
 
 Allgemeine Informationen zum Erstellen von Medienkompositionen aus Videoclips finden Sie unter [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md). Der folgende Codeausschnitt zeigt das Erstellen einer einfachen Medienkomposition, die einen benutzerdefinierten Videoeffekt verwendet. Durch Aufruf von [**CreateFromFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync) wird ein [**MediaClip**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaClip)-Objekt erstellt. Dabei wird eine Videodatei übergeben, die von dem Benutzer mit einer [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) ausgewählt wurde, und der Clip wird zu einer neuen [**MediaComposition**](https://docs.microsoft.com/uwp/api/Windows.Media.Editing.MediaComposition) hinzugefügt. Als Nächstes wird ein neues [**VideoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.VideoEffectDefinition)-Objekt erstellt, wobei der Namespace und der Klassenname für Ihren Effekt an den Konstruktor übergeben wird. Schließlich wird die Effektdefinition zur [**VideoEffectDefinitions**](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions)-Sammlung des **MediaClip**-Objekts hinzugefügt.
 
@@ -239,7 +239,7 @@ Allgemeine Informationen zum Erstellen von Medienkompositionen aus Videoclips fi
 
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Zugriff auf die einfache Kamera-Vorschau](simple-camera-preview-access.md)
+* [Simple camera preview access](simple-camera-preview-access.md)
 * [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md)
-* [Win2D-Dokumentation](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D documentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Medienwiedergabe](media-playback.md)

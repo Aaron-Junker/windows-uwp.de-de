@@ -1,19 +1,19 @@
 ---
-title: Aktivierung des Xbox One-Entwicklermodus
-description: Dieser Artikel beschreibt das Aktivieren des Entwicklermodus, sodass Sie zwischen Einzelhandelsmodus und Entwicklermodus wechseln können.
+title: Aktivierung des Entwicklermodus auf Xbox One
+description: Dieser Artikel beschreibt das Aktivieren des Entwicklermodus, sodass Sie zwischen Retailmodus und Entwicklermodus wechseln können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 3664ecae152b7178709bffc373a877e58a86461a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 95b65e63c081734a560a852a5d064ef76c423ef6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590535"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258722"
 ---
-# <a name="xbox-one-developer-mode-activation"></a>Aktivierung des Xbox One-Entwicklermodus
+# <a name="xbox-one-developer-mode-activation"></a>Aktivierung des Entwicklermodus auf Xbox One
 
 ## <a name="how-developer-mode-works"></a>Funktionsweise des Entwicklermodus
 Die Xbox One verfügt über zwei Modi: *Einzelhandelsmodus* (**1**) und *Entwicklermodus* (**2**). Im Einzelhandelsmodus ist die Konsole in dem Zustand, in dem sie von jedem Kunden oder Benutzer einer Xbox One-Konsole verwendet wird: Sie können als Benutzer Spiele spielen und Apps ausführen. Im Entwicklermodus können Sie Software für die Konsole entwickeln, jedoch keine Spiele spielen und Apps ausführen.
@@ -38,17 +38,17 @@ Der Entwicklermodus kann auf jeder Xbox One-Konsole aktiviert werden. Nach dem A
 
     ![Aktivierungsschritt 5](images/activation-step-5.png)  
     
-5.  [Registrieren Sie ein app-Entwickler-Konto im Partner Center](https://developer.microsoft.com/store/register).  Dies ist auch der erste Schritt beim Veröffentlichen Ihres Spiels.
+5.  [Register an app developer account in Partner Center](https://developer.microsoft.com/store/register).  This is also the first step towards publishing your game.
 
-6.  Melden Sie sich beim [Partner Center](https://partner.microsoft.com/dashboard) mit dem gültige und aktuelle Partner Center-app-Entwicklerkonto.  Wenn Sie nicht mehrere Optionen im linken Navigationsbereich angezeigt oder wird nicht angezeigt der **Erstellen einer neuen app** option die **Übersicht über die** Abschnitt, die folgenden Schritte und die Aktivierungslinks _funktioniert nicht_ ; stellen Sie sicher, dass Sie vollständig app-Entwicklerkonto aus dem vorherigen Schritt registriert.
+6.  Sign in to [Partner Center](https://partner.microsoft.com/dashboard) with your valid, current Partner Center app developer account.  If you don't see multiple options in the left hand navigation pane, or don't see the **Create a new app** option in the **Overview** section, the following steps and activation links _will not work_; make sure you fully registered your app developer account from the previous step.
 
-7.  Wechseln Sie zu [partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices).
+7.  Go to [partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices).
 
-8.  Geben Sie den in der DevMode Aktivierungs-App angezeigten Aktivierungscode ein. Ihrem Konto ist eine begrenzte Anzahl von Aktivierungen zugewiesen. Nach der Entwicklermodus aktiviert wurde, gibt die Partner Center, dass Sie eines der Aktivierungen, die Ihrem Konto zugeordnet werden.
+8.  Geben Sie den in der DevMode Aktivierungs-App angezeigten Aktivierungscode ein. Ihrem Konto ist eine begrenzte Anzahl von Aktivierungen zugewiesen. After Developer Mode has been activated, Partner Center will indicate you have used one of the activations associated with your account.
 
     ![Aktivierungsschritt 8](images/activation-step-8-rs2.png)    
     
-9.  Klicken Sie auf **Agree and activate**. Dadurch wird die Seite neu geladen, und Ihr Gerät wird in der Tabelle aufgeführt. Die Nutzungsbedingungen für das Aktivierungsprogramm für den Xbox One-Entwicklermodus finden Sie unter [Programm zur Aktivierung des Xbox One-Entwicklermodus](https://go.microsoft.com/fwlink/p/?LinkId=760399).
+9.  Klicken Sie auf **Agree and activate**. Dadurch wird die Seite neu geladen, und Ihr Gerät wird in der Tabelle aufgeführt. Die Nutzungsbedingungen für das Aktivierungsprogramm für den Xbox One-Entwicklermodus finden Sie unter [Programm zur Aktivierung des Xbox One-Entwicklermodus](https://docs.microsoft.com/legal/windows/agreements/xbox-one-developer-mode-activation).
 
 10. Nachdem Sie den Aktivierungscode eingegeben haben, wird auf der Konsole ein Statusbildschirm für den Aktivierungsvorgang angezeigt.  
     
@@ -67,6 +67,6 @@ Nachdem der Entwicklermodus auf der Konsole aktiviert wurde, können Sie mithilf
 
   ![Aktivierungsschritt 14](images/activation-step-12.png)  
 
-## <a name="see-also"></a>Siehe auch
-- [Ein Xbox-Entwickler-Modus-Deaktivierung](devkit-deactivation.md)
+## <a name="see-also"></a>Weitere Informationen:
+- [Xbox One Developer Mode deactivation](devkit-deactivation.md)
 - [UWP auf Xbox One](index.md)

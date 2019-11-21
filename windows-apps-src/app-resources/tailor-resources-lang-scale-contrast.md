@@ -6,16 +6,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 0d6af9d532ecabe517983e8b56cdf8e1b2a2d812
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820215"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254520"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 
-In diesem Thema wird das allgemeine Konzept der Ressourcenqualifizierer erläutert, wie sie verwendet werden und wofür die einzelnen Qualifizierernamen dienen. Eine Referenztabelle für die verschiedenen Qualifiziererwerte finden Sie unter [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
+In diesem Thema wird das allgemeine Konzept der Ressourcenqualifizierer erläutert, wie sie verwendet werden und wozu die einzelnen Qualifizierernamen dienen. Eine Referenztabelle für die verschiedenen Qualifiziererwerte finden Sie unter [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
 Ihre App kann Assets und Ressourcen laden, die für Runtime-Kontexte wie Anzeigesprache, hoher Kontrast [Skalierungsfaktor des Displays](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor) und mehr zugeschnitten sind. Das erreichen Sie unter anderem durch das Benennen des Ressourcen-Ordners oder der Dateien mit dem Namen des Qualifizierers und den Qualifiziererwerten, die diesen Kontexten entsprechen. Beispielsweise können Sie für Ihre App einen anderen Satz von Bildressourcen laden, wenn sie in einem Modus mit hohem Kontrast ausgeführt wird.
 
@@ -29,7 +29,7 @@ Ein Qualifizierername ist ein Schlüssel, der einer Reihe von Qualifiziererwerte
 | :--------------- | :--------------- | :--------------- |
 | Einstellung für hohen Kontrast | Kontrast | Standard, hoch, schwarz, weiß |
 
-Kombinieren Sie einen Qualifizierernamen mit einem Qualifiziererwert, um einen Qualifizierer zu bilden. `<qualifier name>-<qualifier value>` ist das Format der Qualifizierer an. `contrast-standard` ist ein Beispiel für einen Qualifizierer an.
+Kombinieren Sie einen Qualifizierernamen mit einem Qualifiziererwert, um einen Qualifizierer zu bilden. `<qualifier name>-<qualifier value>` is the format of a qualifier. `contrast-standard` is an example of a qualifier.
 
 Für hohen Kontrast ist der Satz von Qualifizierern `contrast-standard`, `contrast-high`, `contrast-black` und `contrast-white`. Bei Qualifizierernamen und Qualifiziererwerten wird die Groß-/Kleinschreibung nicht beachtet. Beispielsweise: `contrast-standard` und `Contrast-Standard` sind die gleiche Qualifizierer.
 
@@ -102,7 +102,7 @@ Eine weitere Möglichkeit ist, mehrere Qualifizierer in einem Ordnernamen zu kom
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
-Kombinieren Sie in einem Ordnernamen mehrere Qualifizierer und trennen Sie diese mit einem Unterstrich. `<qualifier1>[_<qualifier2>...]` ist das Format.
+Kombinieren Sie in einem Ordnernamen mehrere Qualifizierer und trennen Sie diese mit einem Unterstrich. `<qualifier1>[_<qualifier2>...]` is the format.
 
 Sie können mehrere Qualifizierer in einem Dateinamen im selben Format kombinieren.
 
@@ -124,11 +124,11 @@ Es ist unwahrscheinlich, dass Sie den `configuration` Qualifizierernamen benöti
 
 Der Qualifizierer `configuration` wird verwendet, um eine Ressource zu laden, die am besten dem Wert der `MS_CONFIGURATION_ATTRIBUTE_VALUE`-Umgebungsvariablen entspricht. Die Variable kann auf den Zeichenfolgenwert festgelegt werden, der den relevanten Ressourcen zugewiesen wurde, beispielsweise `designer` oder `test`.
 
-## <a name="contrast"></a>Vergleichen Sie
+## <a name="contrast"></a>Kontrast
 
 Der `contrast`-Qualifizierer wird verwendet, um Ressourcen anzubieten, die den Einstellungen für hohen Kontrast am besten entsprechen.
 
-## <a name="custom"></a>Benutzerdefiniert
+## <a name="custom"></a>„Benutzerdefiniert“
 
 Ihre App kann einen Wert für den `custom`-Qualifizierer festlegen, wobei Ressourcen geladen werden, die am besten diesem Wert entsprechen. Möglicherweise möchten Sie Ressourcen basierend auf der App-Lizenz laden. Wenn die App startet, wird die Lizenz überprüft und als Wert für den `custom`-Qualifizierer durch Aufrufen von [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) verwendet, wie im Codebeispiel dargestellt.
 
@@ -191,11 +191,11 @@ Es ist unwahrscheinlich, dass Sie den `dxfeaturelevel` Qualifizierernamen benöt
 
 ## <a name="homeregion"></a>HomeRegion
 
-Der `homeregion`-Qualifizierer entspricht auf der Benutzereinstellung für Land/Region. Es stellt den Wohnort des Benutzers dar. Werte umfassen beliebig gültige [BCP-47-Regionstags](https://go.microsoft.com/fwlink/p/?linkid=227302). D. h. jeder **ISO 3166-1-Alpha-2** Regionscode mit zwei Buchstaben sowie ein Satz **ISO 3166-1 numerischen** dreistelliger geografischer Codes für zusammengesetzte Regionen (siehe [Zusammenstellung von Regionscodes der Statistikabteilung der Vereinten Nationen (M49)](https://go.microsoft.com/fwlink/p/?linkid=247929)). Codes für bestimmte wirtschaftliche und andere Gruppierungen sind ungültig.
+Der `homeregion`-Qualifizierer entspricht auf der Benutzereinstellung für Land/Region. Es stellt den Wohnort des Benutzers dar. Werte umfassen beliebig gültige [BCP-47-Regionstags](https://tools.ietf.org/html/bcp47). D. h. jeder **ISO 3166-1-Alpha-2** Regionscode mit zwei Buchstaben sowie ein Satz **ISO 3166-1 numerischen** dreistelliger geografischer Codes für zusammengesetzte Regionen (siehe [Zusammenstellung von Regionscodes der Statistikabteilung der Vereinten Nationen (M49)](https://unstats.un.org/unsd/methods/m49/m49regin.htm)). Codes für bestimmte wirtschaftliche und andere Gruppierungen sind ungültig.
 
-## <a name="language"></a>Sprache
+## <a name="language"></a>Sprachen
 
-Ein `language`-Qualifizierer entspricht der Einstellung für die Anzeigesprache. Werte umfassen beliebig gültige [BCP-47-Sprachtags](https://go.microsoft.com/fwlink/p/?linkid=227302). Eine Liste der Sprachen finden Sie unter [IANA Language Subtag Registry](https://go.microsoft.com/fwlink/p/?linkid=227303).
+Ein `language`-Qualifizierer entspricht der Einstellung für die Anzeigesprache. Werte umfassen beliebig gültige [BCP-47-Sprachtags](https://tools.ietf.org/html/bcp47). Eine Liste der Sprachen finden Sie unter [IANA Language Subtag Registry](https://www.iana.org/assignments/language-subtag-registry).
 
 Wenn Ihre App unterschiedliche Sprachen unterstützten soll und Sie Zeichenfolgenliterale im Code oder im XAML-Markup haben, verschieben Sie diese Zeichenfolgen aus dem Code/Markup und in eine Ressourcendatei (`.resw`). Sie können dann eine übersetzte Kopie dieser Ressourcendatei für jede Sprache erstellen, die Ihre App unterstützt.
 
@@ -226,7 +226,7 @@ Unter [Lokalisieren Ihrer UI-Zeichenfolgen](localize-strings-ui-manifest.md) fin
 
 Ein `layoutdirection`-Qualifizierer entspricht der Layoutrichtung der Einstellung für die Anzeigesprache. Beispielsweise muss ein Bild für eine Rechts-nach-links-Sprache wie Arabisch oder Hebräisch unter Umständen gespiegelt werden. Layoutpanels und Bilder in Ihrer Benutzeroberfläche reagieren der Layoutrichtung entsprechend, wenn Sie deren [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)-Eigenschaft festlegen (Informationen hierzu finden Sie unter [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). Allerdings ist der `layoutdirection`-Qualifizierer nur für Fälle, in denen ein einfaches Kippen nicht ausreicht. Sie können auf die Ausrichtung bestimmter Leserichtungen und Textausrichtungen auf allgemeine Weise reagieren.
 
-## <a name="scale"></a>Skalierung
+## <a name="scale"></a>Skalieren
 
 Windows wählt automatisch einen Skalierungsfaktor für jede Anzeige aus, basierend auf dem DPI-Wert (Punkte pro Zoll) und dem Betrachtungsabstand des Geräts. Weitere Informationen finden Sie unter [Effektive Pixel und Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). Sie sollten Ihre Bilder in mehreren empfohlenen Größen (mindestens 100, 200 und 400) erstellen, damit Windows entweder die passende Größe auswählen oder die nächstgelegene Größe verwenden und dann skalieren kann. Damit Windows erkennen kann, welche physische Datei die richtige Bildgröße für den Anzeigeskalierungsfaktor enthält, verwenden Sie einen `scale`-Qualifizierer. Die Skalierung einer Ressource entspricht dem Wert von [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale) oder der Ressource mit der nächstgrößeren Skalierung.
 
@@ -261,17 +261,17 @@ Weitere Informationen zum Qualifizieren einer Ressource für `scale` und `target
 Der Qualifizierer `theme` wird verwendet, um Ressourcen bereitzustellen, die am besten mit der Standardeinstellung für den App-Modus übereinstimmen oder mit der Überschreibung durch [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme).
 
 
-## <a name="shell-light-theme-and-unplated-resources"></a>Shell Design "hell" und unplated Ressourcen
-Die *Windows 10 aktualisieren ggf. 2019* eingeführt, ein neue "helle" Design für die Windows-Shell. Daher werden eine Anwendungsressourcen, die zuvor auf einen dunklen Hintergrund angezeigt wurden jetzt auf einen hellen Hintergrund angezeigt. Für apps, apps, die bereitgestellt Altform unplated Ressourcen für die Taskleiste und Fenster Switcher (Alt + Tab, Aufgabenansicht usw.), sollten Sie überprüfen, ob sie über einen hellen Hintergrund akzeptable Kontrast verfügen.
+## <a name="shell-light-theme-and-unplated-resources"></a>Shell light theme and unplated resources
+The *Windows 10 May 2019 Update* introduced a new "light" theme for the Windows Shell. As a result, some application assets that were previously shown on a dark background will now be shown on a light background. For apps that apps that provided altform-unplated assets for the taskbar and window switchers (Alt+Tab, Task View, etc), you should verify that they have acceptable contrast on a light background.
 
-### <a name="providing-light-theme-specific-assets"></a>Bereitstellen von spezifischen Datenobjekte aus Design "hell"
-Apps, die eine angepasste Ressource bereitstellen, Shell Design "hell" kann einen neue alternative ressourcenqualifizierer verwenden möchten: `altform-lightunplated`. Dieser Qualifizierer spiegelt den vorhandenen Altform unplated Qualifizierer. 
+### <a name="providing-light-theme-specific-assets"></a>Providing light theme specific assets
+Apps that want to provide a tailored resource for shell light theme can use a new alternate form resource qualifier: `altform-lightunplated`. This qualifier mirrors the existing altform-unplated qualifier. 
 
-### <a name="downlevel-considerations"></a>Kompatible Überlegungen
-Apps sollten nicht verwendet werden. die `theme-light` Qualifizierer mit dem `altform-unplated` Qualifizierer. Dadurch wird zu einem unvorhersehbaren Verhalten auf RS5 und frühere Versionen von Windows aufgrund der Möglichkeit Ressourcen werden geladen, für die Taskleiste. In früheren Versionen von Windows kann die Design-Light-Version nicht ordnungsgemäß verwendet werden. Die `altform-lightunplated` Qualifizierer wird dieses Problem vermieden. 
+### <a name="downlevel-considerations"></a>Downlevel considerations
+Apps should not use the `theme-light` qualifier with the `altform-unplated` qualifier. This will cause unpredictable behavior on RS5 and earlier versions of Windows due to the way resources are loaded for the Taskbar. On earlier versions of windows, the theme-light version may be used incorrectly. The `altform-lightunplated` qualifier avoids this issue. 
 
-### <a name="compatibility-behavior"></a>Kompatibilität-Verhalten
-Für Abwärtskompatibilität Kompatibilität mit der Windows Logik zum Erkennen von eine monochrome Symbole, und überprüfen Sie enthält, ob sie mit dem gewünschten Hintergrund steht im Gegensatz zu. Wenn das Symbol nicht kontrastanforderungen zu erfüllen, wird Windows einen Kontrast-weiß-Version der Ressource gesucht. Wenn diese nicht verfügbar ist, wird Windows ausweichen auf den mit vergoldeten Kontakten Version des Medienobjekts.
+### <a name="compatibility-behavior"></a>Compatibility behavior
+For backwards compatibility, Windows includes logic to detect a monochromatic icons and check whether it contrasts with the intended background. If the icon fails to meet contrast requirements, Windows will look for a contrast-white version of the asset. If that’s not available, Windows will fall back to using the plated version of the asset.
 
 
 
@@ -282,13 +282,13 @@ Für Abwärtskompatibilität Kompatibilität mit der Windows Logik zum Erkennen 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Effektive Pixel und Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Ressourcenverwaltungssystem](resource-management-system.md)
-* [Vorbereiten für die Lokalisierung](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
-* [Erkennen von der Plattform wird Ihrer app auf ausgeführt](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Familien Geräteübersicht](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [Lokalisieren Sie Ihre UI-Zeichenfolgen](localize-strings-ui-manifest.md)
-* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [United Nations Statistik Division M49 Zusammensetzung Landes-/Regionscodes](https://go.microsoft.com/fwlink/p/?linkid=247929)
-* [IANA Language-Sprachtags Registrierung](https://go.microsoft.com/fwlink/p/?linkid=227303)
+* [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
+* [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [Localize your UI strings](localize-strings-ui-manifest.md)
+* [BCP-47](https://tools.ietf.org/html/bcp47)
+* [United Nations Statistic Division M49 composition of region codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
 * [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

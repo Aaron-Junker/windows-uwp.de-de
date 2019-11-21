@@ -4,18 +4,18 @@ description: Erfahren Sie, wie Bedingungen festgelegt werden, die steuern, wann 
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgaben
+keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 88836ac0363001e86c17486e1527b96a4eac0faa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 618c8891551d851c27414968be76fb465eb89bf0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371846"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260416"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>Festlegen von Bedingungen zum Ausführen einer Hintergrundaufgabe
 
@@ -93,7 +93,7 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 ```
 
 > [!NOTE]
-> Universelle Windows-Apps müssen jedoch [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) aufrufen, bevor Hintergrundtrigger-Typen registriert werden.
+> Universelle Windows-Apps müssen jedoch [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) aufrufen, bevor Hintergrundtriggertypen registriert werden.
 
 Rufen Sie [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess) und anschließend [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) auf, wenn die App nach der Aktualisierung gestartet wird, um sicherzustellen, dass Ihre universelle Windows-App nach der Veröffentlichung eines Updates weiterhin ordnungsgemäß ausgeführt wird. Weitere Informationen finden Sie unter [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md).
 
@@ -105,9 +105,9 @@ Rufen Sie [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicat
 Zum Hinzufügen mehrerer Bedingungen ruft Ihre App die [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) -Methode mehrmals auf. Diese Aufrufe müssen stattfinden, bevor die Aufgabenregistrierung wirksam wird.
 
 > [!NOTE]
-> Achten Sie darauf, dass Sie nicht in Konflikt stehenden Bedingungen hinzufügen, eine Hintergrundaufgabe.
+> Take care not to add conflicting conditions to a background task.
 
-Der folgende Codeausschnitt zeigt mehrere Bedingungen im Kontext des erstellen und eine Hintergrundaufgabe registrieren.
+The following snippet shows multiple conditions in the context of creating and registering a background task.
 
 ```csharp
 // Set up the background task.
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>Hinweise
 
 > [!NOTE]
-> Wählen Sie die Bedingungen für den Hintergrundtask, sodass sie nur ausgeführt wird, wenn es erforderlich ist, und nicht ausgeführt werden, wenn es sollte nicht. Unter [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) finden Sie Beschreibungen der verschiedenen Bedingungen für Hintergrundaufgaben.
+> Choose conditions for your background task so that it only runs when it's needed, and doesn't run when it shouldn't. Unter [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) finden Sie Beschreibungen der verschiedenen Bedingungen für Hintergrundaufgaben.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
@@ -194,4 +194,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

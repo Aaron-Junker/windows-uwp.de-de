@@ -3,19 +3,19 @@ title: Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design
 description: Anstatt Ihre Benutzeroberfläche für die vielen Geräte im gesamten Windows 10-Ökosystem zu optimieren, empfehlen wir, ein Design für einige Schlüsselbreiten (sogenannte Breakpoints) zu erstellen.
 ms.date: 08/30/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612925"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258191"
 ---
-#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
+#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Breakpoints
 
-UWP-Apps können auf jedem Gerät mit Windows 10 ausgeführt werden – z. B. Telefone, Tablets, Desktops, Fernseher und mehr. Bei einer riesigen Anzahl der geräteziele und Bildschirmgrößen für das Windows 10-Ökosystem, anstatt beim Optimieren der Benutzeroberfläche für jedes Gerät empfiehlt es sich um Entwerfen für einige wichtige Breite Kategorien (auch als "Haltepunkte" bezeichnet): 
+UWP-Apps können auf jedem Gerät mit Windows 10 ausgeführt werden – z. B. Telefone, Tablets, Desktops, Fernseher und mehr. With a huge number of device targets and screen sizes across the Windows 10 ecosystem, rather than optimizing your UI for each device, we recommended designing for a few key width categories (also called "breakpoints"): 
 - Klein (kleiner als 640 Pixel)
 - Mittel (641 Pixel bis 1007 Pixel)
 - Groß (1008 Pixel und größer)
@@ -33,14 +33,14 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 <tr class="header">
 <th align="left">Größenklasse</th>
 <th align="left">Breakpoints</th>
-<th align="left">Normale Bildschirmgröße (diagonal)</th>
+<th align="left">Typische Bildschirmgröße (diagonal)</th>
 <th align="left">Geräte</th>
 <th align="left">Fenstergrößen</th>
 </tr>
 </thead>
 <tbody>
 <tr class="even">
-<td style="vertical-align:top;">Klein</td>
+<td style="vertical-align:top;">Gering</td>
 <td style="vertical-align:top;">640 Pixel oder weniger</td>
 <td style="vertical-align:top;">4&quot; bis 6&quot;; 20&quot; bis 65&quot;</td>
 <td style="vertical-align:top;">Smartphones, TV-Geräte</td>
@@ -55,7 +55,7 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 </tr>
 <tr class="even">
 <td style="vertical-align:top;">Groß</td>
-<td style="vertical-align:top;">1008 Pixel oder größer</td>
+<td style="vertical-align:top;">1008 Pixel oder mehr</td>
 <td style="vertical-align:top;">13&quot; und größer</td>
 <td style="vertical-align:top;">PCs, Laptops, Surface Hubs</td>
 <td style="vertical-align:top;">1024 x 640, 1366 x 768, 1920 x 1080</td>
@@ -76,7 +76,7 @@ UWP-Apps skalieren Ihre Benutzeroberfläche automatisch, um sicherzustellen, das
 
 ## <a name="general-recommendations"></a>Allgemeine Empfehlungen
 
-### <a name="small"></a>Klein
+### <a name="small"></a>Gering
 - Legen Sie den linken und den rechten Fensterrand auf 12px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
 - Docken Sie [App-Leisten](../controls-and-patterns/app-bars.md) für bessere Erreichbarkeit am unteren Fensterrand an.
 - Verwenden Sie jeweils eine Spalte/Region.
@@ -90,7 +90,7 @@ UWP-Apps skalieren Ihre Benutzeroberfläche automatisch, um sicherzustellen, das
 - Verwenden Sie bis zu zwei Spalten/Regionen.
 - Zeigen Sie das Suchfeld an.
 - Legen Sie für [Navigationsleiste](../controls-and-patterns/navigationview.md) den Streifenmodus fest, sodass immer ein schmaler Streifen mit Symbolen angezeigt wird.
-- Ziehen Sie weitere Anpassungen für [TV-Umgebungen](https://go.microsoft.com/fwlink/?LinkId=760736) in Erwägung.
+- Ziehen Sie weitere Anpassungen für [TV-Umgebungen](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN) in Erwägung.
 
 ### <a name="large"></a>Groß
 - Legen Sie den linken und den rechten Fensterrand auf 24px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
@@ -100,6 +100,6 @@ UWP-Apps skalieren Ihre Benutzeroberfläche automatisch, um sicherzustellen, das
 - Platzieren Sie den [Navigationsbereich](../controls-and-patterns/navigationview.md) im angedockten Modus so, dass er immer angezeigt wird.
 
 >[!TIP] 
-> Mit [ **Continuum für Smartphones**](https://go.microsoft.com/fwlink/p/?LinkID=699431), Benutzer können eine Verbindung herstellen kompatibel Windows 10 mobile-Geräten zu überwachen, Maus- und Tastatureingabe zu ihren Telefonen funktionieren wie Laptops. Berücksichtigen Sie diese neue Funktion beim Entwerfen für bestimmte Breakpoints – ein Mobiltelefon bleibt nicht immer in einer Klasse mit geringer Größe.
+> With [**Continuum for Phones**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), users can connect compatible Windows 10 mobile devices to a monitor, mouse and keyboard to make their phones work like laptops. Berücksichtigen Sie diese neue Funktion beim Entwerfen für bestimmte Breakpoints – ein Mobiltelefon bleibt nicht immer in einer Klasse mit geringer Größe.
 
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Karte, Standort, Ort, Geofencing
 ms.localizationpriority: medium
-ms.openlocfilehash: 4580662bf4caf5124caeb34883023121db7ce30f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6b1f328d45e626e1c7eb633165aad3671f1645e5
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370668"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260383"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>Richtlinien für Geofencing-Apps
 
@@ -20,8 +20,8 @@ ms.locfileid: "66370668"
 
 **Wichtige APIs**
 
--   [**Geofence-Klasse (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
--   [**Geolocator-Klasse (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
+-   [**Geofence class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
+-   [**Geolocator class (XAML)** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 Halten Sie sich bei der Verwendung von [**Geofencing**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing) in Ihrer App an die folgenden bewährten Methoden.
 
@@ -31,9 +31,9 @@ Halten Sie sich bei der Verwendung von [**Geofencing**](https://docs.microsoft.c
 -   Falls die App beim Eintreten eines [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)-Ereignisses Internetzugriff benötigt, überprüfen Sie den Internetzugriff, bevor Sie den Geofence erstellen.
     -   Falls die App gerade nicht über Internetzugriff verfügt, können Sie Benutzer zum Herstellen einer Internetverbindung auffordern, bevor Sie den Geofence einrichten.
     -   Falls kein Internetzugriff möglich ist, vermeiden Sie den Energieverbrauch, der für die Überprüfungen des Geofencing-Standorts anfällt.
--   Stellen Sie die Relevanz der Geofencing-Benachrichtigungen sicher, indem Sie den Zeitstempel und den aktuellen Standort prüfen, wenn ein Geofence-Ereignis eine Änderung für einen [**Entered**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState)- oder **Exited**-Zustand anzeigt. Weitere Informationen finden Sie weiter unten in diesem Thema unter **Überprüfen des Zeitstempels und des aktuellen Standorts**.
+-   Stellen Sie die Relevanz der Geofencing-Benachrichtigungen sicher, indem Sie den Zeitstempel und den aktuellen Standort prüfen, wenn ein Geofence-Ereignis eine Änderung für einen [**Entered**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState)- oder **Exited**-Zustand anzeigt. Weitere Informationen finden Sie weiter unten im Abschnitt **Überprüfen des Zeitstempels und aktuellen Standorts**.
 Weitere Informationen unter (#timestamp).
--   Erstellen Sie Ausnahmen zum Verwalten von Fällen, in denen ein Gerät keinen Zugriff auf Standortinformationen hat, und benachrichtigen Sie ggf. die Benutzer. Standortinformationen können aus verschiedenen Gründen nicht verfügbar sein, z. B. wenn die Berechtigungen deaktiviert sind, das Gerät keine GPS-Funkeinheit enthält, das GPS-Signal blockiert wird oder das WLAN-Signal nicht stark genug ist.
+-   Ausnahmen für Fälle erstellen, wenn ein Gerät keinen Zugriff auf Standortinformationen hat, und ggf. den Benutzer benachrichtigen. Standortinformationen können aus verschiedenen Gründen nicht verfügbar sein, z. B. wenn die Berechtigungen deaktiviert sind, das Gerät keine GPS-Funkeinheit enthält, das GPS-Signal blockiert wird oder das WLAN-Signal nicht stark genug ist.
 -   Es ist im Allgemeinen nicht erforderlich, die Überwachung auf Geofence-Ereignisse sowohl im Vordergrund als auch im Hintergrund durchzuführen. Wenn für Ihre App jedoch eine Überwachung auf Geofence-Ereignisse im Vordergrund und im Hintergrund erforderlich ist, empfehlen wir Folgendes:
 
     -   Rufen Sie die [**ReadReports**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geofencing.geofencemonitor.readreports)-Methode auf, um zu prüfen, ob ein Ereignis eingetreten ist.
@@ -129,7 +129,7 @@ Falls Ihre App Geofence-Bereiche mit kleinem Radius erfordert, empfehlen Sie Ben
 
 * [Einrichten von Geofence-Bereichen](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [Abrufen der aktuellen Position](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
-* [UWP-Ort-Beispiel (Geolocation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

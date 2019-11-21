@@ -6,21 +6,21 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Entwicklerkonto, individuell, Unternehmen, geschäftlich
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a02079e7589d7c92ececa03496600a82ef427e
-ms.sourcegitcommit: dafda665fd3d25136194e452e7500b5bab076638
+ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71982240"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260053"
 ---
 # <a name="account-types-locations-and-fees"></a>Kontotypen, Standorte und Gebühren
 
-Das Windows-Programm im [Partner Center](https://partner.microsoft.com/dashboard) bietet sowohl einzelne als auch Unternehmenskonten in vielen [Ländern und Regionen](#developer-account-and-app-submission-markets). Beide Konto Typen haben Zugriff auf das Veröffentlichen von apps im Store und die Teilnahme an weiteren Microsoft-Programmen.
+The Windows program in [Partner Center](https://partner.microsoft.com/dashboard) offers both individual and company accounts in many [countries and regions](#developer-account-and-app-submission-markets). Either type of account gives you access to publish apps to the Store and to participate in additional Microsoft programs.
 
 > [!NOTE]
-> Wenn Sie Ihr Entwicklerkonto öffnen, stellen Sie sicher, dass Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard) mit dem Microsoft-Konto anmelden, das Sie für Ihr Entwicklerkonto verwenden möchten. Sie haben die Möglichkeit, auch später noch [weitere Benutzer zum Konto hinzuzufügen](manage-account-users.md).
+> When opening your developer account, make sure to sign in to [Partner Center](https://partner.microsoft.com/dashboard) with the Microsoft account that you want to use for your developer account. Sie haben die Möglichkeit, auch später noch [weitere Benutzer zum Konto hinzuzufügen](manage-account-users.md).
 
-Zu [Beginn des Registrierungsprozesses](https://go.microsoft.com/fwlink/p/?LinkId=615100) müssen Sie entscheiden, ob Sie ein individuelles Konto oder ein Unternehmenskonto erstellen möchten. Beide Arten von Konten ermöglichen die Übermittlung von Apps, Spielen, Add-Ins und Diensten.
+Zu [Beginn des Registrierungsprozesses](https://developer.microsoft.com/store/register) müssen Sie entscheiden, ob Sie ein individuelles Konto oder ein Unternehmenskonto erstellen möchten. Beide Arten von Konten ermöglichen die Übermittlung von Apps, Spielen, Add-Ins und Diensten.
 
 Unternehmenskonten sind für Organisationen und Unternehmen vorgesehen. Unternehmenskonten müssen zusätzlich [geprüft werden](#account-verification), um sicherzustellen, dass Sie für die Einrichtung des Kontos für Ihr Unternehmen autorisiert sind. Individuelle Konten sind in der Regel für einzelne Entwickler geeignet, die alleine arbeiten, auch wenn Sie die Option haben, weitere Benutzer den verschiedenen Kontotypen hinzuzufügen.
 
@@ -33,11 +33,11 @@ Im Folgenden sind die grundlegenden Unterschiede zwischen den beiden Kontotypen 
 |--------------------|-----------------|
 | <ul><li>Kostet ca. 19 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Kürzerer Kontoüberprüfungsprozess</li></ul> | <ul><li>Kostet ca. 99 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Erfordert eine bessere Überprüfung des Kontos</li><li>Erfordert, dass Ihr Unternehmen als solches im Land oder in der Region seiner Niederlassung anerkannt ist</li><li>Übermitteln von Apps mit eingeschränkter Funktionalität (wie in den [Microsoft Store-Richtlinien](store-policies.md#1014-account-type) beschrieben)</li></ul> |
 
-Unternehmenskonten sind etwas teurer. Das liegt hauptsächlich daran, dass wir durch einige zusätzliche Schritte sicherstellen, dass Sie von Ihrem Unternehmen autorisiert wurden und zum Einrichten des Kontos berechtigt sind. Gemäß den [Store-Richtlinien](store-policies.md#1014-account-type), Apps mit einer bestimmten Funktionalität, z. b. solche, die auf finanzielle Kontoinformationen zugreifen oder eine Authentifizierung für den Zugriff auf die primäre Funktionalität benötigen (ohne einen sicheren dedizierten Drittanbieter-Authentifizierungs Anbieter) kann nur von Unternehmenskonten veröffentlicht werden.
+Unternehmenskonten sind etwas teurer. Das liegt hauptsächlich daran, dass wir durch einige zusätzliche Schritte sicherstellen, dass Sie von Ihrem Unternehmen autorisiert wurden und zum Einrichten des Kontos berechtigt sind. Per the [Store Policies](store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third party authentication provider), can only be published by company accounts.
 
 ## <a name="account-verification"></a>Kontobenachrichtigung
 
-Nach Abschluss der Registrierung durchläuft Ihr Konto den Überprüfungsprozess. Bei individuellen Konten wird sichergestellt, dass der Anzeigename für den Herausgeber nicht bereits von einem anderen Unternehmen verwendet wird. Bei Unternehmenskonten bestätigen unsere Partner Dun & Bradstreet, dass Sie zum Erstellen eines Kontos für Ihr Unternehmen autorisiert sind. Dieser Vorgang kann zwischen wenigen Tagen und mehreren Wochen dauern. Häufig erhält Ihr Unternehmen im Rahmen dieses Prozesses einen Telefonanruf. Stellen Sie daher sicher, dass alle Ihre Kontaktinformationen in den Registrierungsformularen aktuell sind. Sie können keine apps von einem Unternehmens Konto übermitteln, bis die Überprüfung erfolgt ist, aber während Sie warten, können Sie [einen APP-Namen reservieren](create-your-app-by-reserving-a-name.md) , um apps zu entwickeln und zu testen. Außerdem können Sie Ihre Einreichungen vorbereiten.
+Nach Abschluss der Registrierung durchläuft Ihr Konto den Überprüfungsprozess. Bei individuellen Konten wird sichergestellt, dass der Anzeigename für den Herausgeber nicht bereits von einem anderen Unternehmen verwendet wird. Bei Unternehmenskonten bestätigen unsere Partner Dun & Bradstreet, dass Sie zum Erstellen eines Kontos für Ihr Unternehmen autorisiert sind. Dieser Vorgang kann zwischen wenigen Tagen und mehreren Wochen dauern. Häufig erhält Ihr Unternehmen im Rahmen dieses Prozesses einen Telefonanruf. Stellen Sie daher sicher, dass alle Ihre Kontaktinformationen in den Registrierungsformularen aktuell sind. You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md) continue building and testing apps, and work on getting your submissions ready.
 
 Sie können den Überprüfungsstatus auf der Seite **Kontoeinstellungen** überprüfen. 
 
@@ -72,7 +72,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Bolivien                           | 19 USD              | 99 USD           |  
 | Bosnien und Herzegowina            | 19 USD              | 99 USD           |  
 | Botsuana                          | 19 USD              | 99 USD           |  
-| Brazilien                            | 46 BRL              | 160 BRL          |  
+| Brasilien                            | 46 BRL              | 160 BRL          |  
 | Brunei                            | 19 USD              | 99 USD           |  
 | Bulgarien                          | 28 BGN              | 160 BGN          |  
 | Burkina Faso                      | 19 USD              | 99 USD           |  
@@ -123,7 +123,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Guyana                            | 19 USD              | 99 USD           |  
 | Haiti                             | 19 USD              | 99 USD           |  
 | Honduras                          | 19 USD              | 99 USD           |  
-| Hongkong (SAR)                     | 147 HKD             | 760 HKD          |  
+| Hongkong SAR                     | 147 HKD             | 760 HKD          |  
 | Ungarn                           | 4237 HUF            | 18800 HUF        |  
 | Island                           | 2319 ISK            | 11929 ISK        |
 | Indien                             | 1201 INR            | 4500 INR         |  
@@ -190,7 +190,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Portugal                          | 14 EUR              | 75 EUR           |  
 | Katar                             | 69 QAR              | 360 QAR          |  
 | Rumänien                           | 14 EUR              | 75 EUR           |  
-| Russland                            | 626 RUB             | 3000 RUB         |  
+| Russische Föderation                            | 626 RUB             | 3000 RUB         |  
 | Ruanda                            | 19 USD              | 99 USD           |  
 | St. Kitts und Nevis             | 19 USD              | 99 USD           |  
 | St. Lucia                       | 19 USD              | 99 USD           |  
@@ -224,13 +224,13 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Tonga                             | 19 USD              | 99 USD           |  
 | Trinidad und Tobago               | 122 TTD             | 636 TTD          |  
 | Tunesien                           | 31 TND              | 140 TND          |  
-| Turkei                            | 37 TRY              | 160 TRY          |  
+| Türkei                            | 37 TRY              | 160 TRY          |  
 | Turkmenistan                      | 19 USD              | 99 USD           |  
 | Tuvalu                            | 19 USD              | 99 USD           |  
 | Uganda                            | 19 USD              | 99 USD           |  
 | Ukraine                           | 156 UAH             | 800 UAH          |  
 | Vereinigte Arabische Emirate              | 19 USD              | 99 USD           |  
-| Vereinigtes Königreich                    | 12 GBP              | 65 GBP           |  
+| Großbritannien                    | 12 GBP              | 65 GBP           |  
 | USA                     | 19 USD              | 99 USD           |  
 | Uruguay                           | 19 USD              | 99 USD           |  
 | Usbekistan                        | 19 USD              | 99 USD           |  

@@ -8,12 +8,12 @@ keywords: Cortana, Cortana-Canvas, Cortana-Design, Benutzeroberfläche, Sprachbe
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 49290d0e0ba96a5dce562ca4148b0ebf53bf0ff5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fa9001492228cee7427c2b18f2692a6a33fbb16b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648165"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258024"
 ---
 # <a name="cortana-interactions-in-uwp-apps"></a>Cortana-Interaktionen in UWP-Apps
 
@@ -29,14 +29,14 @@ Informationen zum Erweitern von Cortana mit Funktionen aus einer UWP-App mit Spr
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [**VCD-Elementen und Attributen v1. 2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [**VCD elements and attributes v1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
 **Designer**
 * [Richtlinien für den Sprachentwurf](speech-interactions.md)
-* [Cortana-Entwurfsrichtlinien für Sprachbefehle](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
+* [Cortana design guidelines for voice commands](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
 
 **Beispiele**
-* [Cortana-Sprach-Befehlsbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=619899)
+* [Cortana voice command sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
  
 
  

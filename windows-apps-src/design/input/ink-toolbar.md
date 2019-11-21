@@ -1,5 +1,5 @@
 ---
-Description: Fügen Sie einer App für die Freihandeingabe in der universellen Windows-Plattform (UWP) eine Standard-InkToolbar hinzu. Fügen Sie der InkToolbar eine anpassbare Stiftschaltfläche hinzu, und binden Sie diese an eine benutzerdefinierte Definition für den Stift.
+Description: Fügen Sie einer App für die Freihandeingabe in der universellen Windows-Plattform (UWP) eine Standard-InkToolbar hinzu. Fügen Sie der InkToolbar einen anpassbaren Stift hinzu und binden Sie diesen an eine benutzerdefinierte Definition für den Stift.
 title: Hinzufügen von InkToolbar zu einer App für die Universelle Windows-Plattform (UWP)
 label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e10fd728930ea23615e11ffd5a004a420c9b64
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8ae67e5d4d6da3cc9716c5f0efd276023bae9af0
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365838"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258379"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Hinzufügen von InkToolbar zu einer App für die Universelle Windows-Plattform (UWP)
 
 
 
-Es gibt zwei verschiedene Steuerelemente, die die erleichtern Freihand in apps für universelle Windows-Plattform (UWP): [**InkCanvas** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) und [ **InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
+Es gibt zwei verschiedene Steuerelemente, die die Freihandeingabe in Apps in der universellen Windows-Plattform (UWP) vereinfachen: [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) und [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar).
 
 Über das [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)-Steuerelement werden grundlegende Windows Ink-Funktionen bereitgestellt. Rendern Sie damit die Stifteingabe entweder als letzten Strich (mit den Standardeinstellungen für Farbe und Stärke) oder ausradierten Strich.
 
@@ -35,14 +35,14 @@ Als vollständig transparente Überlagerung bietet InkCanvas keine integrierte B
 
   InkToolbar wird in diesem Thema erläutert.
 
-> **Wichtige APIs:** [**InkCanvas-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [ **InkToolbar Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [ **InkPresenter-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Wichtige APIs**: [**InkCanvas class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), [**InkToolbar class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), [**InkPresenter class**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter), [**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="default-inktoolbar"></a>Standard-InkToolbar
 
 Das [**InkToolbar-Steuerelement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) enthält standardmäßig Schaltflächen zum Zeichnen, Löschen, Hervorheben sowie zum Anzeigen einer Schablone(Lineal oder Winkelmesser). Abhängig vom Feature werden in einem Flyout weitere Einstellungen und Befehle bereitgestellt, beispielsweise für Freihandfarbe, Strichstärke und das Löschen aller Freihandeingaben.
 
 ![InkToolbar](./images/ink/ink-tools-invoked-toolbar-small.png)  
-*Standardmäßige Windows Ink-Symbolleiste*
+*Default Windows Ink toolbar*
 
 Um eine standardmäßige [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) zu einer App für die Freihandeingabe hinzuzufügen, platzieren Sie sie einfach auf derselben Seite wie Ihr [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas), und verbinden Sie die beiden Steuerelemente.
 
@@ -87,10 +87,10 @@ Wenn Sie eine Freihandsymbolleiste zu Ihrer App hinzufügen, können Sie Standar
 
 Geben Sie den Standort und die Ausrichtung der Symbolleiste explizit über die Eigenschaften [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) und [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) an.
 
-| Default | Explizit |
+| Standard | Explizit |
 | --- | --- |
 | ![Standardstandort und -ausrichtung der Freihandsymbolleiste](./images/ink/location-default-small.png) | ![Explizite Angabe für Standort und Ausrichtung der Freihandsymbolleiste](./images/ink/location-explicit-small.png) |
-| *Standardspeicherort für Windows Ink-Symbolleiste und die Ausrichtung* | *Windows Ink Symbolleiste expliziten Ort und die Ausrichtung* |
+| *Windows Ink toolbar default location and orientation* | *Windows Ink toolbar explicit location and orientation* |
 
 Im Folgenden sehen Sie den Code, mit dem Sie den Standort und die Ausrichtung der Freihandsymbolleiste explizit in XAML festlegen.
 ```xaml
@@ -101,16 +101,16 @@ Im Folgenden sehen Sie den Code, mit dem Sie den Standort und die Ausrichtung de
     TargetInkCanvas="{x:Bind inkCanvas}" />
 ```
 
-**Initialisieren, die basierend auf benutzereinstellungen oder des Geräts**
+**Initialize based on user preferences or device state**
 
 In einigen Fällen möchten Sie möglicherweise den Standort und die Ausrichtung der Freihandsymbolleiste basierend auf Benutzereinstellungen oder Gerätestatus festlegen. Das folgende Beispiel veranschaulicht, wie Sie den Standort und die Ausrichtung der Freihandsymbolleiste basierend auf den Einstellungen für Rechts- oder Linkshänder festlegen, die über **Einstellungen > Geräte > Stift & Windows Ink > Stift > Schreibhand auswählen** angegeben werden.
 
-![Vorherrschende manuell festlegen](./images/ink/location-handedness-setting.png)  
-*Vorherrschende manuell festlegen*
+![Dominant hand setting](./images/ink/location-handedness-setting.png)  
+*Dominant hand setting*
 
 Sie können diese Einstellung über die HandPreference-Eigenschaft von Windows.UI.ViewManagement abfragen und [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) basierend auf dem zurückgegebenen Wert festlegen. In diesem Beispiel platzieren wir die Symbolleiste auf der linken Seite der App für einen Linkshänder und auf der rechten Seite für einen Rechtshänder.
 
-**Laden Sie dieses Beispiel von [Freihandeingaben Symbolleiste Ort und die Ausrichtung Beispiel (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
+**Download this sample from [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
 
 ```csharp
 public MainPage()
@@ -127,11 +127,11 @@ public MainPage()
 }
 ```
 
-**Dynamische Anpassungen Sie an Benutzer oder Gerät-Status**
+**Dynamically adjust to user or device state**
 
 Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzeroberfläche basierend auf Benutzereinstellungen, Geräteeinstellungen oder Gerätestatus zu suchen. Im folgenden Beispiel wird das vorherige Beispiel erweitert und gezeigt, wie Sie die Freihandsymbolleiste basierend auf der Ausrichtung des Geräts mithilfe von Bindung, einem ViewMOdel-Objekt und der [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)-Schnittstelle dynamisch positionieren. 
 
-**Laden Sie dieses Beispiel von [Freihandeingaben Symbolleiste Ort und die Ausrichtung Beispiel (dynamisch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
+**Download this sample from [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
 
 1. Zuerst fügen wir unser ViewModel hinzu.
     1. Fügen Sie Ihrem Projekt einen neuen Ordner hinzu, und nennen Sie ihn **ViewModels**.
@@ -170,7 +170,7 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
         }
         ```
 
-    1. Fügen Sie zwei boolesche Eigenschaften, auf die InkToolbarSnippetHostViewModel-Klasse: **LeftHandedLayout** (dieselbe Funktionalität wie das vorherige nur XAML-Beispiel) und **PortraitLayout** (Ausrichtung des Geräts).
+    1. Fügen Sie zwei boolesche Eigenschaften zur Klasse InkToolbarSnippetHostViewModel hinzu: **LeftHandedLayout** (dieselbe Funktion wie im vorherigen Beispiel reinen XAML-Beispiel) und **PortraitLayout** (Ausrichtung des Geräts).
         >[!NOTE] 
         > Die Eigenschaft PortraitLayout ist einstellbar und enthält die Definition für das Ereignis [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
 
@@ -279,11 +279,11 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
         }
         ```
 
-1. Öffnen Sie nun die Datei "MainPage.Xaml.cs" ein.
-    1. Hinzufügen `using using locationandorientation.ViewModels` zur Liste der Namespaces, in unserem ViewModel zu verknüpfen.
-    1. Hinzufügen `using Windows.UI.ViewManagement` zur Liste der Namespaces, in dem Lauschen auf Änderungen an der geräteausrichtung zu aktivieren.
-    1. Hinzufügen der [WindowSizeChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) Code.
-    1. Legen Sie die [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext) für die Sicht auf die Singletoninstanz der Klasse InkToolbarSnippetHostViewModel. 
+1. Now, open the MainPage.xaml.cs file.
+    1. Add `using using locationandorientation.ViewModels` to the list of namespaces to associate our ViewModel.
+    1. Add `using Windows.UI.ViewManagement` to the list of namespaces to enable listening for changes to the device orientation.
+    1. Add the [WindowSizeChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) code.
+    1. Set the [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext) for the view to the singleton instance of the InkToolbarSnippetHostViewModel class. 
     ```csharp
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
@@ -319,8 +319,8 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
     }
     ```
 
-1. Öffnen Sie als Nächstes die Datei "MainPage.xaml" ein.
-    1. Hinzufügen `xmlns:converters="using:locationandorientation.Converters"` auf die `Page` Element für die Bindung an unsere Konverter.
+1. Next, open the MainPage.xaml file.
+    1. Add `xmlns:converters="using:locationandorientation.Converters"` to the `Page` element for binding to our converters.
         ```xaml
         <Page
         x:Class="locationandorientation.MainPage"
@@ -333,7 +333,7 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
         mc:Ignorable="d">
         ```
 
-    1. Hinzufügen einer `PageResources` Element, und geben Sie die Verweise auf unsere Konverter.
+    1. Add a `PageResources` element and specify references to our converters.
         ```xaml
         <Page.Resources>
             <converters:HorizontalAlignmentFromHandednessConverter x:Key="HorizontalAlignmentConverter"/>
@@ -341,7 +341,7 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
         </Page.Resources>
         ```
 
-    1. Fügen Sie der InkCanvas-Steuerelement und InkToolbar Elemente hinzu und Binden der Eigenschaften "VerticalAlignment" und "HorizontalAlignment" von der InkToolbar.
+    1. Add the InkCanvas and InkToolbar elements and bind the VerticalAlignment and HorizontalAlignment properties of the InkToolbar.
         ```xaml
         <InkCanvas x:Name="inkCanvas" />
         <InkToolbar x:Name="inkToolbar" 
@@ -351,7 +351,7 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
                     TargetInkCanvas="{x:Bind inkCanvas}" />
         ```
 
-1. Zurück zu den InkToolbarSnippetHostViewModel.cs hinzuzufügenden Datei zu unserer `PortraitLayout` und `LeftHandedLayout` boolesche Eigenschaften, die `InkToolbarSnippetHostViewModel` -Klasse, zusammen mit der Unterstützung für das erneute Binden `PortraitLayout` Wenn dieser Eigenschaftswert geändert wird. 
+1. Return to the InkToolbarSnippetHostViewModel.cs file to add our `PortraitLayout` and `LeftHandedLayout` bool properties to the `InkToolbarSnippetHostViewModel` class, along with support for rebinding `PortraitLayout` when that property value changes. 
     ```csharp
     public bool LeftHandedLayout
     {
@@ -398,11 +398,11 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
     #endregion
     ```
 
-Sie verfügen nun über eine bereitgestelltem app, die passt sich sowohl die vorherrschende Hand-Einstellung des Benutzers und die Ausrichtung des Gerät des Benutzers dynamisch reagiert.
+You should now have an inking app that adapts to both the dominant hand preference of the user and dynamically responds to the orientation of the user's device.
 
 ### <a name="specify-the-selected-button"></a>Angeben der ausgewählten Schaltfläche  
-![Schaltfläche "Stift" ausgewählt, bei der Initialisierung](./images/ink/ink-tools-default-toolbar.png)  
-*Windows Ink Symbolleisten-Schaltfläche "Stift" ausgewählt, bei der Initialisierung*
+![Pencil button selected at initialization](./images/ink/ink-tools-default-toolbar.png)  
+*Windows Ink toolbar with pencil button selected at initialization*
 
 Standardmäßig wird die erste (oder äußerste linke) Schaltfläche aktiviert, wenn die App gestartet und die Symbolleiste initialisiert wird. In der standardmäßigen Windows Ink-Symbolleiste ist dies die Kugelschreiberschaltfläche.
 
@@ -452,8 +452,8 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 
 ### <a name="specify-the-built-in-buttons"></a>Angeben der integrierten Schaltflächen
 
-![Bestimmte Schaltflächen enthalten, die bei der Initialisierung](./images/ink/ink-tools-specific.png)  
-*Bestimmte Schaltflächen enthalten, die bei der Initialisierung*
+![Specific buttons included at initialization](./images/ink/ink-tools-specific.png)  
+*Specific buttons included at initialization*
 
 Wie bereits erwähnt, enthält die Windows Ink-Symbolleiste eine Sammlung von standardmäßigen, integrierten Schaltflächen. Diese Schaltflächen werden in der folgenden Reihenfolge angezeigt (von links nach rechts):
 
@@ -509,7 +509,7 @@ Verwenden Sie hierzu XAML oder CodeBehind.
 </Grid>
 ```
 
-**Code-behind**
+**CodeBehind**
 1. Verwenden Sie die XAML-Deklaration für InkCanvas und InkToolbar aus dem ersten Beispiel.
 
   ```xaml
@@ -593,10 +593,10 @@ Sie können die Sammlung von Schaltflächen (und zugehörige Freihandeingabefeat
 Das InkToolbar-Steuerelement besteht aus zwei unterschiedlichen Gruppen von Schaltflächentypen:
 
 1. Eine Gruppe von „Toolschaltflächen“ mit den integrierten Schaltflächen zum Zeichnen, Radieren und Hervorheben. Hier werden benutzerdefinierte Stifte und Tools hinzugefügt.
-> **Beachten Sie**&nbsp;&nbsp;Funktionsauswahl wird sich gegenseitig ausschließende.
+> **Note**&nbsp;&nbsp;Feature selection is mutually exclusive.
 
 2. Eine Gruppe von „Umschaltflächen“ mit der integrierten Linealschaltfläche. Hier werden benutzerdefinierte Umschaltflächen hinzugefügt.
-> **Beachten Sie**&nbsp;&nbsp;Features sind nicht gegenseitig und können gleichzeitig mit anderen Tools für die aktive verwendet werden.
+> **Note**&nbsp;&nbsp;Features are not mutually exclusive and can be used concurrently with other active tools.
 
 Je nach Anwendung und erforderlicher Freihandfunktion können Sie dem InkToolbar-Steuerelement eine der folgenden Schaltflächen (die an die benutzerdefinierten Freihandfunktionen gebunden sind) hinzufügen:
 
@@ -604,18 +604,18 @@ Je nach Anwendung und erforderlicher Freihandfunktion können Sie dem InkToolbar
 - Benutzerdefiniertes Tool: Ein Tool ohne Stift, das von der Host-App definiert wird.
 - Benutzerdefiniertes Umschalten: Legt den Zustand eines durch die App definierten Features auf „aktiviert“ oder „deaktiviert“ fest. Wenn die Schaltfläche aktiviert ist, funktioniert das Feature in Verbindung mit dem aktiven Tool.
 
-> **Beachten Sie**&nbsp;&nbsp;Sie können nicht ändern, die Anzeigereihenfolge von den integrierten Schaltflächen. Die Standardreihenfolge für die Anzeige ist: Kugelschreiber, Stift, Textmarker, Radierer und Lineal. Benutzerdefinierte Stifte werden an den letzten Standardstift angefügt, benutzerdefinierte Tool-Schaltflächen werden zwischen der letzten Stiftschaltfläche und der Radiererschaltfläche hinzugefügt, und benutzerdefinierte Umschaltflächen werden nach der Linealschaltfläche hinzugefügt. (Benutzerdefinierte Schaltflächen werden in der Reihenfolge hinzugefügt, in der sie angegeben werden.)
+> **Note**&nbsp;&nbsp;You cannot change the display order of the built-in buttons. Die standardmäßige Anzeigereihenfolge lautet wie folgt: Kugelschreiber, Stift, Textmarker, Radierer und Lineal. Benutzerdefinierte Stifte werden an den letzten Standardstift angefügt, benutzerdefinierte Tool-Schaltflächen werden zwischen der letzten Stiftschaltfläche und der Radiererschaltfläche hinzugefügt, und benutzerdefinierte Umschaltflächen werden nach der Linealschaltfläche hinzugefügt. (Benutzerdefinierte Schaltflächen werden in der Reihenfolge hinzugefügt, in der sie angegeben werden.)
 
 ### <a name="custom-pen"></a>Benutzerdefinierter Stift
 
 Sie können einen benutzerdefinierten Stift (zur Aktivierung über eine entsprechende Schaltfläche) erstellen, wobei Sie die Tintenfarbpalette und die Eigenschaften der Stiftspitze (Form, Rotation, Größe) definieren.
 
-![Benutzerdefinierte kalligrafische Stifttaste](./images/ink/ink-tools-custompen.png)  
-*Benutzerdefinierte kalligrafische Stifttaste*
+![Custom calligraphic pen button](./images/ink/ink-tools-custompen.png)  
+*Custom calligraphic pen button*
 
 In diesem Beispiel legen wir einen benutzerdefinierten Stift mit einer breiten Spitze fest, die einfache kalligrafische Freihandstriche ermöglicht. Wir passen außerdem die Sammlung der Pinsel in der auf dem Schaltflächen-Flyout angezeigten Palette an.
 
-**Code-behind**
+**CodeBehind**
 
 Zuerst definieren wir unseren benutzerdefinierten Stift und geben die Zeichnungsattribute im CodeBehind an. Wir verweisen später aus XAML auf diesen benutzerdefinierten Stift.
 
@@ -805,7 +805,7 @@ Beim Starten der App wird nur die Stift-Freihandeingabe unterstützt, und die To
 </Grid>
 ```
 
-**Code-behind**
+**CodeBehind**
 
 2. Im vorigen Codeausschnitt haben wir einen Klickereignis-Listener und -Handler (Toggle_Custom) auf der Schaltfläche für benutzerdefiniertes Umschalten für die benutzerdefinierte Schaltfläche für die Touch-Freihandeingabe (toggleButton) deklariert. Dieser Handler wechselt einfach die Unterstützung für CoreInputDeviceTypes.Touch über die Eigenschaft InputDeviceTypes des InkPresenter.
 
@@ -913,13 +913,13 @@ In diesem Beispiel definieren wir eine Schaltfläche für ein benutzerdefinierte
 </Grid>
 ```
 
-**Code-behind**
+**CodeBehind**
 
 2. Anschließend behandeln wir das Klickereignis für [**InkToolbarCustomToolButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton) in der CodeBehind-Datei MainPage.xaml.cs.
 
    Dieser Handler konfiguriert den [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) so, dass unverarbeitete Eingaben an die App weitergeleitet werden. 
 
-   Für eine ausführlichere Schritt durch diesen Code:  Finden Sie unter der Pass-Through-Eingabe für erweiterten Verarbeitung-Abschnitt des [Pen Interaktionen und Windows Ink in UWP-apps](pen-and-stylus-interactions.md).
+   Eine ausführlichere Schritt-für-Schritt-Anleitung zu diesem Code finden Sie im Abschnitt „Weitergabe der Eingabe für die erweiterte Verarbeitung“ von [Stiftinteraktionen und Windows Ink in UWP-Apps](pen-and-stylus-interactions.md).
 
    Hierzu haben wir ein Symbol für die Schaltfläche angegeben, wobei das SymbolIcon-Element und die Markuperweiterung [x:Bind], die dieses an ein in der CodeBehind-Datei (SelectIcon) definiertes Feld bindet, verwendet wurden.
 
@@ -1117,7 +1117,7 @@ Weitere Informationen zum benutzerdefinierten Trocknen finden Sie unter [Stiftin
 
 > [!NOTE]
 > Benutzerdefiniertes Trocknen und die [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)  
-> Wenn Ihre App das Standard-Renderverhalten für Freihandeingaben von [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) mit einer benutzerdefinierten Trockenimplementierung außer Kraft setzt, sind die gerenderten Freihandstriche für die InkToolbar nicht mehr verfügbar und die integrierten Löschbefehle der InkToolbar funktionieren nicht wie erwartet. Damit Sie Löschfunktionen bereitstellen können, müssen Sie alle Zeigerereignisse verarbeiten, für jeden Strich einen Treffertest ausführen und den integrierten Befehl „Freihand vollständig löschen“ außer Kraft setzen.
+> Wenn Ihre App das Standard-Renderverhalten für Freihandeingaben von [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) mit einer benutzerdefinierten Trockenimplementierung außer Kraft setzt, sind die gerenderten Freihandstriche für die InkToolbar nicht mehr verfügbar und die integrierten Löschbefehle der InkToolbar funktionieren nicht wie erwartet. Damit Sie Löschfunktionen bereitstellen können, müssen Sie alle Zeigerereignisse verarbeiten, für jeden Strich einen Treffertest ausführen und den integrierten Befehl „Freihand vollständig löschen“ überschreiben.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -1125,14 +1125,14 @@ Weitere Informationen zum benutzerdefinierten Trocknen finden Sie unter [Stiftin
 
 ### <a name="topic-samples"></a>Themenbeispiele
 
-- [Ink-Symbolleiste Ort und die Ausrichtung Beispiel (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-- [Ink-Symbolleiste Ort und die Ausrichtung Beispiel (dynamisch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+- [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+- [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
 
 ### <a name="other-samples"></a>Andere Beispiele
 
-- [Beispiel für einfache Freihandeingaben (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-- [Komplexe Freihand-Beispiel (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-- [Freihand-Beispiel (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [Einstiegstutorial: Unterstützung von Freihandeingaben in Ihre UWP-app](https://aka.ms/appsample-ink)
-- [Codefarben Book-Beispiel](https://aka.ms/cpubsample-coloringbook)
-- [Anmerkungen zu dieser Version Familie-Beispiel](https://aka.ms/cpubsample-familynotessample)
+- [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+- [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)

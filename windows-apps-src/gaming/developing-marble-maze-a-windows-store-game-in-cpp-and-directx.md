@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp, Spiele, beispiel, directx, 3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 754d1eb535fa2ac2930513981bb7d85a428778e5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b9192c15dd745be43027f32a8af0f5f3f99a74d4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321340"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259559"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Entwickeln von Marble Maze, einem UWP-Spiel in C++ und DirectX
 
@@ -21,10 +21,10 @@ ms.locfileid: "67321340"
 In diesem Thema wird das Erstellen von UWP-3D-Spielen (Universelle Windows-Plattform) mit DirectX und Visual C++ beschrieben. Das Spiel mit dem Namen „Marble Maze” unterstützt mehrere Formfaktoren wie Tablets, herkömmliche Desktop- und Laptop-PCs.
 
 > [!NOTE]
-> Den Quellcode für Marble Maze können Sie unter [Codebeispiel auf GitHub](https://go.microsoft.com/fwlink/?LinkId=624011) herunterladen.
+> Den Quellcode für Marble Maze können Sie unter [Codebeispiel auf GitHub](https://github.com/microsoft/Windows-appsample-marble-maze) herunterladen.
 
 > [!IMPORTANT]
-> Aus Marble Maze werden Entwurfsmuster ersichtlich, die als bewährte Methoden zum Erstellen von UWP-Spielen empfohlen werden. Viele der Implementierungsdetails können Sie an Ihre eigenen Vorgehensweisen und die konkreten Anforderungen des von Ihnen entwickelten Spiels anpassen. Wenn es Ihren Anforderungen besser entgegenkommt, können Sie natürlich auch andere Verfahren oder Bibliotheken verwenden. (Allerdings immer sicher, dass Ihr Code übergibt die [Windows App Certification Kit](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).) Betrachten wir eine Implementierung, die hier verwendet, um die wichtig für eine erfolgreiche Entwicklung von Spielen werden, gesondert angezeigt in dieser Dokumentation.
+> Aus Marble Maze werden Entwurfsmuster ersichtlich, die als bewährte Methoden zum Erstellen von UWP-Spielen empfohlen werden. Viele der Implementierungsdetails können Sie an Ihre eigenen Vorgehensweisen und die konkreten Anforderungen des von Ihnen entwickelten Spiels anpassen. Wenn es Ihren Anforderungen besser entgegenkommt, können Sie natürlich auch andere Verfahren oder Bibliotheken verwenden. (Achten Sie jedoch stets darauf, dass Ihr Code die Anforderungen des [ Zertifizierungskits für Windows-Apps](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit) erfüllt.) Wenn eine Marble Maze-Implementierung als unerlässlich für die erfolgreiche Spieleentwicklung erachtet wird, ist dies in der vorliegenden Dokumentation entsprechend gekennzeichnet.
 
  
 
@@ -39,10 +39,10 @@ Marble Maze bietet dem Benutzer mehrere Möglichkeiten zur Interaktion mit dem S
 
 ![Screenshot des Marble Maze-Spiels](images/marblemaze-2.png)
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 
--   Aktualisieren Sie Windows 10 Creators
+-   Windows 10 Creators Update
 -   [Microsoft Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 -   Kenntnisse in der C++-Programmierung
 -   Erfahrung mit DirectX und der Terminologie von DirectX
@@ -51,7 +51,7 @@ Marble Maze bietet dem Benutzer mehrere Möglichkeiten zur Interaktion mit dem S
 ## <a name="who-should-read-this"></a>Wer sollte diese Dokumentation lesen?
 
 
-Wenn Sie erstellen 3D-Spiele oder andere grafikintensive Anwendungen für Windows 10 interessieren, ist dies für Sie. Wir hoffen, dass Ihnen die in dieser Dokumentation skizzierten Prinzipien und praktischen Vorgehensweisen dabei helfen, eigene UWP-Spiele zu erstellen. Den größten Nutzen aus dieser Dokumentation werden Sie ziehen, wenn Sie bereits über Erfahrungen mit C++ und DirectX verfügen oder sich sehr dafür interessieren. Wenn Sie noch keine Erfahrung mit DirectX, dafür aber mit ähnlichen 3D-Grafikprogrammierumgebungen haben, wird Ihnen die Dokumentation ebenfalls nutzen.
+If you’re interested in creating 3D games or other graphics-intensive applications for Windows 10, this is for you. Wir hoffen, dass Ihnen die in dieser Dokumentation skizzierten Prinzipien und praktischen Vorgehensweisen dabei helfen, eigene UWP-Spiele zu erstellen. Den größten Nutzen aus dieser Dokumentation werden Sie ziehen, wenn Sie bereits über Erfahrungen mit C++ und DirectX verfügen oder sich sehr dafür interessieren. Wenn Sie noch keine Erfahrung mit DirectX, dafür aber mit ähnlichen 3D-Grafikprogrammierumgebungen haben, wird Ihnen die Dokumentation ebenfalls nutzen.
 
 Im Dokument [Exemplarische Vorgehensweise: Erstellen eines einfachen UWP-Spiels mit DirectX](tutorial--create-your-first-uwp-directx-game.md) wird ein weiteres Beispiel beschrieben, in dem ein einfacher 3D-Shooter mit DirectX und C++ implementiert wird.
 
@@ -86,16 +86,16 @@ Zwar bietet Marble Maze viele wiederverwendbare Komponenten, doch stellt es kein
 
 Es wird empfohlen, mit den [Grundlagen des Marble Maze-Beispiels](marble-maze-sample-fundamentals.md) zu beginnen, um sich mit der Struktur von Marble Maze und einigen Richtlinien zu Codierung und Stil im Marble Maze-Quellcode vertraut zu machen. Die folgende Tabelle skizziert die Dokumente in diesem Abschnitt, sodass Sie einen genaueren Überblick über diese gewinnen.
 
-## <a name="in-this-section"></a>Inhalt dieses Abschnitts
+## <a name="in-this-section"></a>In diesem Abschnitt
 
 
 | Titel                                                                                                                    | Beschreibung                                                                                                                                                                                                                                        |
 |--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Marble Maze-Beispiel-Grundlagen](marble-maze-sample-fundamentals.md)                                                   | Bietet einen Überblick über die Struktur des Spiels und einige Richtlinien zu Codierung und Stil im Marble Maze-Quellcode.                                                                                                                                 |
-| [Marble Maze-Anwendungsstruktur](marble-maze-application-structure.md)                                               | Beschreibt die Strukturierung der Anwendung Marble Maze und die Unterschiede zwischen der Struktur einer UWP-DirectX-App und der einer herkömmlichen Desktopanwendung.                                                                                    |
-| [Hinzufügen von visuellem Inhalt zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)                   | Beschreibt einige der zentralen praktischen Verfahren, die bei der Arbeit mit Direct3D und Direct2D zu beachten sind. Beschreibt außerdem, wie diese Verfahren in Marble Maze für visuelle Inhalte umgesetzt wurden.                                                                           |
-| [Hinzufügen von Eingaben und Interaktivität zum Marble Maze-Beispiel](adding-input-and-interactivity-to-the-marble-maze-sample.md) | Beschreibt die Zusammenarbeit von Marble Maze mit Beschleunigungsmesser, Touchgeräten und Xbox One-Controllereingaben, um den Benutzern das Navigieren in den Menüs und die Interaktion mit dem Spielbrett zu ermöglichen. Beschreibt außerdem einige bewährte Methoden, die bei der Arbeit mit Eingaben beachtet werden sollten. |
-| [Hinzufügen von Audio zum Marble Maze-Beispiel](adding-audio-to-the-marble-maze-sample.md)                                     | Beschreibt die Zusammenarbeit von Marble Maze mit Audio, um der Spielumgebung Musik und Soundeffekte hinzuzufügen.                                                                                                                                                  |
+| [Marble Maze sample fundamentals](marble-maze-sample-fundamentals.md)                                                   | Bietet einen Überblick über die Struktur des Spiels und einige Richtlinien zu Codierung und Stil im Marble Maze-Quellcode.                                                                                                                                 |
+| [Marble Maze application structure](marble-maze-application-structure.md)                                               | Beschreibt die Strukturierung der Anwendung Marble Maze und die Unterschiede zwischen der Struktur einer UWP-DirectX-App und der einer herkömmlichen Desktopanwendung.                                                                                    |
+| [Adding visual content to the Marble Maze sample](adding-visual-content-to-the-marble-maze-sample.md)                   | Beschreibt einige der zentralen praktischen Verfahren, die bei der Arbeit mit Direct3D und Direct2D zu beachten sind. Beschreibt außerdem, wie diese Verfahren in Marble Maze für visuelle Inhalte umgesetzt wurden.                                                                           |
+| [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md) | Beschreibt die Zusammenarbeit von Marble Maze mit Beschleunigungsmesser, Touchgeräten und Xbox One-Controllereingaben, um den Benutzern das Navigieren in den Menüs und die Interaktion mit dem Spielbrett zu ermöglichen. Beschreibt außerdem einige bewährte Methoden, die bei der Arbeit mit Eingaben beachtet werden sollten. |
+| [Adding audio to the Marble Maze sample](adding-audio-to-the-marble-maze-sample.md)                                     | Beschreibt die Zusammenarbeit von Marble Maze mit Audio, um der Spielumgebung Musik und Soundeffekte hinzuzufügen.                                                                                                                                                  |
 
  
 

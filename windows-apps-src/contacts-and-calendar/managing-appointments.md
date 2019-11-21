@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Termine, Kalender
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd4fc62a393e6439458ddc38f37bbb0680fb9b1
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 52200d7896c9edea727bf31c69c04c4c1bd02bb2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282236"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255495"
 ---
 # <a name="manage-appointments"></a>Verwalten von Terminen
 
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Beachten Sie**  Für Windows Phone Store-Apps: [**showaddappointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) funktioniert genauso wie [**showeditnewtermin**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) , da das Dialogfeld zum Hinzufügen des Termins bearbeitet werden kann.
+**Note**  For Windows Phone Store apps, [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) functions just like [**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) in that the dialog displayed for adding the appointment is editable.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Ersetzen eines Termins im Kalender des Benutzers
 
@@ -507,7 +507,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-a-new-editable-appointment"></a>Hinzufügen neuer bearbeitbarer Termine
 
-[**Showeditnewernennungen tmentasync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) funktioniert genauso wie [**showaddappointmentasync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) , mit dem Unterschied, dass das Dialogfeld zum Hinzufügen des Termins bearbeitbar ist, sodass der Benutzer die Termin Daten vor dem Speichern ändern kann.
+[**ShowEditNewAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) works just like [**ShowAddAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) except that the dialog for adding the appointment is editable so that the user can modify the appointment data before saving it.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-appointment-details"></a>Anzeigen von Termindetails
 
-[**Showernennungen tmentdetailsasync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) bewirkt, dass das Systemdetails für den angegebenen Termin anzeigt. Für Apps mit App-Kalendern kann das Anzeigen von Termindetails in den Kalendern aktiviert werden. Andernfalls werden vom System die Termindetails angezeigt. Eine Überladung der Methode, die ein Startdatumargument akzeptiert, wird zum Anzeigen von Details für eine Instanz einer Terminserie bereitgestellt.
+[**ShowAppointmentDetailsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) causes the system to show details for the specified appointment. Für Apps mit App-Kalendern kann das Anzeigen von Termindetails in den Kalendern aktiviert werden. Andernfalls werden vom System die Termindetails angezeigt. Eine Überladung der Methode, die ein Startdatumargument akzeptiert, wird zum Anzeigen von Details für eine Instanz einer Terminserie bereitgestellt.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -565,11 +565,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
-Sie verfügen nun über Grundkenntnisse zur Terminverwaltung. Laden Sie die [Beispiele für universelle Windows-Apps](https://go.microsoft.com/fwlink/p/?linkid=619979) von GitHub herunter, um sich weitere Terminverwaltungsbeispiele anzusehen.
+Sie verfügen nun über Grundkenntnisse zur Terminverwaltung. Laden Sie die [Beispiele für universelle Windows-Apps](https://github.com/Microsoft/Windows-universal-samples) von GitHub herunter, um sich weitere Terminverwaltungsbeispiele anzusehen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Beispiel zur Termin-API](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Beispiel zur Termin-API](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Appointments)
  
 
  

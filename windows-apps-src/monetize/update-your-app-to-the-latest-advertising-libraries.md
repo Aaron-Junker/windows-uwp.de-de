@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, AdControl, AdMediatorControl, Migrieren
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f33210f14df3fb855c5744ffcab3ecbc66e1ff58
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620465"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259238"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Aktualisieren Ihrer App auf die neuesten Advertising-Bibliotheken für Banneranzeigen
 
@@ -19,7 +19,7 @@ Am dem 1. April 2017 werden Banneranzeigen nicht mehr für Apps bereitgestellt
 
 ## <a name="overview"></a>Übersicht
 
-UWP-Apps, die Banneranzeige verwenden, müssen **AdControl** aus der Advertising-Bibliotheken verwenden, die in [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) verteilt werden. Diese SDK-Version unterstützt einen mindestens erforderlichen Satz von Funktionen. Dies umfasst auch die Möglichkeit, HTML5-Rich-Media über die [Mobile Rich Media Ad Interface Definitions (MRAID) 1.0-Spezifikation](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) vom Interactive Advertising Bureau (IAB) zu verarbeiten. Viele unserer Werbekunden wünschen sich diese Funktionen und wir setzen voraus, dass App-Entwickler eine dieser SDK-Versionen verwenden, damit unser App-Ökosystem für Werbekunden attraktiver wird und Ihr Umsatz wächst.
+UWP-Apps, die Banneranzeige verwenden, müssen **AdControl** aus der Advertising-Bibliotheken verwenden, die in [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) verteilt werden. Diese SDK-Version unterstützt einen mindestens erforderlichen Satz von Funktionen. Dies umfasst auch die Möglichkeit, HTML5-Rich-Media über die [Mobile Rich Media Ad Interface Definitions (MRAID) 1.0-Spezifikation](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) vom Interactive Advertising Bureau (IAB) zu verarbeiten. Viele unserer Werbekunden wünschen sich diese Funktionen und wir setzen voraus, dass App-Entwickler eine dieser SDK-Versionen verwenden, damit unser App-Ökosystem für Werbekunden attraktiver wird und Ihr Umsatz wächst.
 
 Vor der Freigabe dieses SDK wurde die **AdControl**-Klasse in mehreren älteren Advertising-SDK-Versionen angeboten. Diese älteren Advertising-SDK-Versionen werden nicht mehr unterstützt, da sie den oben beschriebenen mindestens erforderlichen Satz von Funktionen nicht unterstützen. Am dem 1. April 2017 werden Banneranzeigen nicht mehr für Apps bereitgestellt, die nicht unterstützte Advertising-SDK-Versionen verwenden. Wenn Sie eine App besitzen, die weiterhin eine nicht unterstützte Advertising-SDK-Version verwendet, geschieht Folgendes:
 
@@ -27,14 +27,14 @@ Vor der Freigabe dieses SDK wurde die **AdControl**-Klasse in mehreren älteren 
 
 * Wenn **AdControl** in Ihrer App eine neue Anzeige anfordert, wird ein **ErrorOccurred**-Ereignis des Steuerelements ausgegeben, und die **ErrorCode**-Eigenschaft der Ereignisargumente hat den Wert **NoAdAvailable**.
 
-* Alle Anzeigeneinheiten, die Ihrer App zugeordnet sind, werden deaktiviert. Sie können nicht diese deaktivierten Werbeeinheiten aus Ihrem DePartnerv-Center-Konto entfernen. Wenn Sie Ihre App aktualisieren, damit Sie ein unterstütztes [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) nutzen können, ignorieren Sie diese Anzeigeneinheiten und erstellen Sie neue.
+* Alle Anzeigeneinheiten, die Ihrer App zugeordnet sind, werden deaktiviert. You cannot remove these deactivated ad units from your DePartnerv Center account. Wenn Sie Ihre App aktualisieren, damit Sie ein unterstütztes [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) nutzen können, ignorieren Sie diese Anzeigeneinheiten und erstellen Sie neue.
 
 * Banneranzeigen werden nicht mehr für Anzeigeneinheiten bereitgestellt, die in mehreren Apps verwendet werden. Stellen Sie sicher, dass Ihre Anzeigeneinheiten jeweils nur in einer App verwendet werden.
 
-Wenn Sie über eine App verfügen (bereits im Store oder noch in Entwicklung), die Banneranzeigen mithilfe von **AdControl** anzeigt, und Sie nicht sicher sind, welches Advertising-SDK von Ihrer App verwendet wird, ermitteln Sie anhand der Anweisungen in diesem Artikel, ob Sie Ihre App auf ein unterstütztes SDK aktualisieren müssen. Wenn Schwierigkeiten auftreten oder Sie Hilfe benötigen, [wenden Sie sich an den Support](https://go.microsoft.com/fwlink/?LinkId=393643).
+Wenn Sie über eine App verfügen (bereits im Store oder noch in Entwicklung), die Banneranzeigen mithilfe von **AdControl** anzeigt, und Sie nicht sicher sind, welches Advertising-SDK von Ihrer App verwendet wird, ermitteln Sie anhand der Anweisungen in diesem Artikel, ob Sie Ihre App auf ein unterstütztes SDK aktualisieren müssen. Wenn Schwierigkeiten auftreten oder Sie Hilfe benötigen, [wenden Sie sich an den Support](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&supportregion=EN-US&ccfcode=US&ln=EN-US&pesid=14654&oaspworkflow=start_1.0.0.0&tenant=store&supporttopic_L1=32136151).
 
 > [!NOTE]
-> Wenn Ihre App bereits [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) (für UWP-Apps) verwendet müssen für Ihre App keine weiteren Änderungen vorgenommen werden.
+> Wenn Ihre App bereits [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (für UWP-Apps) verwendet müssen für Ihre App keine weiteren Änderungen vorgenommen werden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -46,7 +46,7 @@ Wenn Sie über eine App verfügen (bereits im Store oder noch in Entwicklung), d
 
 <span id="part-1" />
 
-## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>Teil 1: Bestimmen Sie, ob Sie Ihre UWP-app aktualisieren müssen
+## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>Teil 1: Ermitteln, ob Ihre UWP-App aktualisiert werden muss
 
 Befolgen Sie die Anweisungen in den folgenden Abschnitten, um festzustellen, ob Sie Ihre App aktualisieren müssen.
 
@@ -59,7 +59,7 @@ Befolgen Sie die Anweisungen in den folgenden Abschnitten, um festzustellen, ob 
 
 <span id="part-2" />
 
-## <a name="part-2-install-the-latest-sdk"></a>Teil 2: Installieren Sie das neueste SDK
+## <a name="part-2-install-the-latest-sdk"></a>Teil 2: Installieren der aktuellen SDK-Version
 
 Wenn Ihre App eine alte SDK-Version verwendet, führen Sie diese Anweisungen aus, um sicherzustellen, dass Sie das aktuelle SDK auf Ihrem Entwicklungscomputer verwenden.
 
@@ -76,14 +76,14 @@ Wenn Ihre App eine alte SDK-Version verwendet, führen Sie diese Anweisungen aus
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  Installieren des [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp).
+3.  Installieren des [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK).
 
-## <a name="part-3-update-your-project"></a>Teil 3: Aktualisieren Sie das Projekt
+## <a name="part-3-update-your-project"></a>Teil 3: Aktualisieren Ihres Projekts
 
 Entfernen Sie alle vorhandenen Verweise auf Microsoft Advertising-Bibliotheken aus dem Projekt, und führen Sie zum Hinzufügen der erforderlichen Verweise [diese Anweisungen](install-the-microsoft-advertising-libraries.md#reference) aus. Dadurch wird sichergestellt, dass Ihr Projekt die richtigen Bibliotheken verwendet. Sie können Ihr vorhandenes Markup und den Code beibehalten.
 
-## <a name="part-4-test-and-republish-your-app"></a>Teil 4: Testen und veröffentlichen Sie Ihre app erneut.
+## <a name="part-4-test-and-republish-your-app"></a>Teil 4: Testen und erneutes Veröffentlichen Ihrer App
 
 Testen Sie Ihre App, um sicherzustellen, dass sie Banneranzeigen korrekt anzeigt.
 
-Wenn die vorherige Version Ihrer App bereits verfügbar, in der Store ist [erstellen Sie eine neue Übermittlung](../publish/app-submissions.md) für die aktualisierte app im Partner Center Ihre app erneut veröffentlichen.
+If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in Partner Center to republish your app.

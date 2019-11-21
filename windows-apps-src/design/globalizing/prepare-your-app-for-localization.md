@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: e262a647e8c37d088c3a5b081076275a52cb8071
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 341d46879895da221e3a17ba88f28fd22e7c5e27
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363739"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258097"
 ---
 # <a name="make-your-app-localizable"></a>App lokalisierbar machen
 
@@ -22,7 +22,7 @@ Wir empfehlen außerdem, dass Sie sich mit den [Richtlinien für Globalisierung]
 
 ## <a name="put-your-strings-into-resources-files-resw"></a>Zeichenfolgen nur in Ressourcendateien (.resw)
 
-Nicht hartcodieren Zeichenfolgenliterale in imperativem Code, XAML-Markup, noch in Ihrer app-Paketmanifest. Speichern Sie Ihre Zeichenfolgen stattdessen in Ressourcendateien (.resw), damit sie unabhängig von den Binärdateien Ihrer App-Builds an unterschiedliche lokale Märkte angepasst werden können. Details dazu finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](../../app-resources/localize-strings-ui-manifest.md).
+Don't hard-code string literals in your imperative code, XAML markup, nor in your app package manifest. Speichern Sie Ihre Zeichenfolgen stattdessen in Ressourcendateien (.resw), damit sie unabhängig von den Binärdateien Ihrer App-Builds an unterschiedliche lokale Märkte angepasst werden können. Details dazu finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](../../app-resources/localize-strings-ui-manifest.md).
 
 In diesem Thema erfahren Sie außerdem, wie Sie Kommentare zu Ihrer Standard-Ressourcendatei (.resw) hinzufügen. Zum Beispiel können Sie informelle Anmerkungen in Kommentaren angeben. Um die Kosten zu minimieren, sollten Sie außerdem sicherstellen, dass nur die Zeichenfolgen, die übersetzt werden müssen, an die Übersetzer weitergegeben werden.
 
@@ -44,15 +44,15 @@ Seien Sie vorsichtig bei der Verwendung von Farben. Die Verwendung von Farbkombi
 
 Verwenden Sie Zeichenfolgen geeigneter Länge. Kurze Zeichenfolgen sind leichter zu übersetzen, und sie ermöglichen die Wiederverwendung von Übersetzungen (was Kosten spart, da dieselbe Zeichenfolge nur einmal an den Übersetzer gesendet wird). Zudem werden sehr lange Zeichenfolgen möglicherweise von einigen Lokalisierungstools nicht unterstützt.
 
-Das Risiko dieser Vorgehensweise besteht darin, dass eine Zeichenfolge in verschiedenen Kontexten wiederverwendet wird. Selbst einfache Wörter wie z. B. &quot;auf&quot; und &quot;aus&quot; werden möglicherweise je nach Kontext unterschiedlich übersetzt. Im Englischen können sich „on“ und „off“ auf das Ein- und Ausschalten von Flugzeugmodus, Bluetooth oder Geräten beziehen. Im Italienischen hängt die Übersetzung jedoch davon ab, was ein- und ausgeschaltet wird. Sie müssten für jeden Kontext ein Zeichenfolgenpaar erstellen. Sie können Zeichenfolgen im gleichen Kontext mehrmals verwenden. Sie können z. B. die Zeichenfolge „Volume“ sowohl für Soundeffekte als auch für die Lautstärke von Musik verwenden, da sich beides auf die Intensität von Tönen bezieht. Verwenden Sie dieselbe Zeichenfolge jedoch nicht für Festplattenvolumes, da sich hier Kontext und Bedeutung unterscheiden und das Wort anders übersetzt wird.
+Das Risiko dieser Vorgehensweise besteht darin, dass eine Zeichenfolge in verschiedenen Kontexten wiederverwendet wird. Selbst einfache Wörter wie z. B. &quot;auf&quot; und &quot;aus&quot; werden möglicherweise je nach Kontext unterschiedlich übersetzt. Im Englischen können sich „ein“ und „aus“ auf das Ein- und Ausschalten von Flugzeugmodus, Bluetooth oder Geräten beziehen. Im Italienischen hängt die Übersetzung jedoch davon ab, was ein- und ausgeschaltet wird. Sie müssten für jeden Kontext ein Zeichenfolgenpaar erstellen. Sie können Zeichenfolgen im gleichen Kontext mehrmals verwenden. Sie können z. B. die Zeichenfolge „Volume“ sowohl für Soundeffekte als auch für die Lautstärke von Musik verwenden, da sich beides auf die Intensität von Tönen bezieht. Verwenden Sie dieselbe Zeichenfolge jedoch nicht für Festplattenvolumes, da sich hier Kontext und Bedeutung unterscheiden und das Wort anders übersetzt wird.
 
 Zudem können Zeichenfolgen wie „text“ oder „fas“ in der englischen Sprache als Verb und als Substantiv verwendet werden, was die Übersetzung erschweren kann. Erstellen Sie deshalb jeweils eine getrennte Zeichenfolge für das Verb und das Substantiv. Falls unklar ist, ob es sich um den gleichen Kontext handelt, gehen Sie auf Nummer sicher, und verwenden Sie getrennte Zeichenfolgen.
 
 Kurz gesagt, gliedern Sie die Zeichenfolgen in Teile, die in allen Kontexten verwendbar sind. Es wird Fälle geben, in denen eine Zeichenfolge ein vollständiger Satz sein muss.
 
-Beachten Sie die folgende Zeichenfolge ein: "Die {0} konnte nicht synchronisiert werden."
+Consider the following string: "The {0} could not be synchronized."
 
-Es könnte eine Vielzahl von Wörtern ersetzen {0}, z. B. "Termin", "Task" oder "Document". Dieses Beispiel funktioniert zwar in der englischen Sprache, aber nicht in jedem Fall im entsprechenden deutschen Satz (beispielsweise). Sie sehen, dass in den folgenden deutschen Sätzen einige der Wörter in der Vorlagenzeichenfolge („Der“, „Die“, „Das“) zum parametrisierten Wort passen müssen:
+A variety of words could replace {0}, such as "appointment", "task", or "document". Dieses Beispiel funktioniert zwar in der englischen Sprache, aber nicht in jedem Fall im entsprechenden deutschen Satz (beispielsweise). Sie sehen, dass in den folgenden deutschen Sätzen einige der Wörter in der Vorlagenzeichenfolge („Der“, „Die“, „Das“) zum parametrisierten Wort passen müssen:
 
 | Englisch                                    | Deutsch                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -60,7 +60,7 @@ Es könnte eine Vielzahl von Wörtern ersetzen {0}, z. B. "Termin", "Task" oder 
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-Ein weiteres Beispiel: Stellen Sie sich den Satz "erinnern in {0} Minute(n)." Während „minute(s)" im Englischen passt, werden in anderen Sprachen möglicherweise unterschiedliche Begriffe verwendet. Auf Polnisch heißt es je nach Kontext „minuta“, „minuty“ oder „minut“.
+As another example, consider the sentence "Remind me in {0} minute(s)." Während „minute(s)" im Englischen passt, werden in anderen Sprachen möglicherweise unterschiedliche Begriffe verwendet. Auf Polnisch heißt es je nach Kontext „minuta“, „minuty“ oder „minut“.
 
 Lokalisieren Sie den gesamten Satz, statt nur ein einzelnes Wort, um das Problem zu beheben. Auf den ersten Blick wirkt diese Lösung vielleicht nicht ganz so elegant und sieht nach überflüssiger Arbeit aus, die Gründe sprechen jedoch für sich:
 
@@ -80,28 +80,28 @@ Gegen informelle Angaben in Zeichenfolgen ist nichts einzuwenden. Sie können en
 
 Nehmen Sie ein Pseudolokalisierung Ihrer App vor, um Lokalisierungsprobleme zu erkennen. Pseudolokalisierung ist eine Art von Lokalisierungstestlauf oder Offenlegungstest. Sie erstellen eine Reihe von Ressourcen, die nicht wirklich übersetzt werden, sondern nur übersetzt aussehen. Ihre Zeichenfolgen sind beispielsweise etwa 40 % länger als in der Standardsprache, und sie enthalten Trennzeichen, sodass Sie auf einen Blick erkennen können, ob sie in der Benutzeroberfläche abgeschnitten wurden.
 
-## <a name="deployment-considerations"></a>Überlegungen zur Bereitstellung
+## <a name="deployment-considerations"></a>Deployment Considerations
 
-Wenn Sie eine app, die lokalisierte Sprache Daten enthält installieren, werden Sie möglicherweise fest, dass nur die Standardsprache für die app verfügbar ist, auch wenn Sie ursprünglich aufgenommen hatten Ressourcen für mehrere Sprachen. Das liegt nur auf Ressourcen für die Standardsprache installieren, die die aktuelle Sprache und Kultur, des Geräts entsprechen der Installationsvorgang optimiert ist. Wenn Ihr Gerät für de-de konfiguriert ist, werden daher nur die En-US-Sprachressourcen für Ihre app installiert.
+When you install an app that contains localized language data, you might find that only the default language is available for the app even though you initially included resources for multiple languages. This is because the installation process is optimized to only install language resources that match the current language and culture of the device. Therefore, if your device is configured for en-US, only the en-US language resources are installed with your app.
 
 > [!NOTE]
-> Es ist nicht möglich, nach der Erstinstallation zusätzliche sprachunterstützung für Ihre app zu installieren. Wenn Sie die Standardsprache ändern, nach der Installation einer app, weiterhin die app nur die ursprünglichen Sprachressourcen zu verwenden.
+> It is not possible to install additional language support for your app after the initial installation. If you change the default language after installing an app, the app continues to use only the original language resources.
 
-Wenn Sie möchten sicherstellen, dass alle Sprachressourcen, die nach der Installation verfügbar sind, erstellen Sie eine Konfigurationsdatei für das app-Paket, das angibt, dass bestimmte Ressourcen während der Installation (einschließlich Sprachressourcen) erforderlich sind. Dieses Feature optimierte Installation wird automatisch aktiviert, wenn Ihre Anwendung .appxbundle während des Verpackens generiert wird. Weitere Informationen finden Sie unter [stellen Sie sicher, dass Ressourcen, auf einem Gerät installiert sind, unabhängig davon, ob das Gerät sie benötigt](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
+If you want to ensure all language resources are available after installation, create a configuration file for the app package that specifies that certain resources are required during installation (including language resources). This optimized installation feature is automatically enabled when your application's .appxbundle is generated during packaging. For more information, see [Ensure that resources are installed on a device regardless of whether a device requires them](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
 
-Optional, um sicherzustellen, dass alle Ressourcen sind installiert (und nicht nur eine Teilmenge) ist, können Sie .appxbundle-Generation, die beim Verpacken der app deaktivieren. Dies wird nicht jedoch empfohlen, wie es zum Zeitpunkt der Installation der app erhöhen kann.
+Optionally, to ensure all resources are installed (not just a subset), you can disable .appxbundle generation when you package your app. This is not recommended however as it can increase the installation time of your app.
 
-Deaktivieren Sie automatische Generierung von der .appxbundle durch Festlegen des Attributs "App-Bündel generieren" auf "never":
+Disable automatic generation of the .appxbundle by setting the "Generate App Bundle" attribute to “never”:
 
-1. In Visual Studio mit der Maustaste des Namens des Projekts
-2. Wählen Sie **Store** -> **app-Pakete erstellen...**
-3. In der **Ihre Pakete erstellen** wählen Sie im Dialogfeld **ich möchte Pakete zum Hochladen in den Microsoft Store-mit app-Namen erstellen** , und klicken Sie dann auf **Weiter**.
-4. In der **app-Name auswählen** Dialog, auswählen/erstellen eine app-Namen für Ihr Paket.
-5. In der **Pakete auswählen und konfigurieren** Dialog, Set **app-Bündel generieren** zu **nie**.
+1. In Visual Studio, right-click the project name
+2. Select **Store** -> **Create app packages...**
+3. In the **Create Your Packages** dialog, select **I want to create packages to upload to the Microsoft Store using a new app name** and then click **Next**.
+4. In the **Select an app name** dialog, select/create an app name for your package.
+5. In the **Select and Configure Packages** dialog, set **Generate app bundle** to **Never**.
 
 ## <a name="geopolitical-awareness"></a>Geopolitische Rücksichtnahme
 
-Vermeiden Sie politische Beleidigungen in Karten oder bei Verweisen auf Regionen. Karten können umstrittene regionale oder nationale Grenzen enthalten und sind eine häufige Quelle von politischer Beleidigungen. Achten Sie darauf, dass die Benutzeroberfläche für die Auswahl von Nationen die Formulierung &quot;Land/Region&quot; verwendet. Wenn ein umstrittenes Gebiet in einer Liste mit der Bezeichnung &quot;Länder&quot; (z. B. in einem Adressformular) aufgeführt wird, kann dies zu Problemen führen.
+Vermeiden Sie heikle politische Angaben in Karten oder bei Verweisen auf Regionen. Karten können umstrittene regionale oder nationale Grenzen enthalten und sind eine häufige Quelle von politischer Beleidigungen. Achten Sie darauf, dass die Benutzeroberfläche für die Auswahl von Nationen die Formulierung &quot;Land/Region&quot; verwendet. Wenn ein umstrittenes Gebiet in einer Liste mit der Bezeichnung &quot;Länder&quot; (z. B. in einem Adressformular) aufgeführt wird, kann dies zu Problemen führen.
 
 ## <a name="language--and-region-changed-events"></a>Ereignisse bei Änderung von Sprache und Region
 
@@ -115,7 +115,7 @@ Gehen Sie nicht davon aus, dass Parameter in allen Sprachen in der gleichen Reih
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-Die Formatzeichenfolge in diesem Beispiel ist für Englisch (USA) richtig. Sie ist jedoch nicht für Deutsch (Deutschland) geeignet, da in dieser Sprache Tag und Monat in umgekehrter Reihenfolge angezeigt werden. Stellen Sie sicher, dass der Konvertierer Parameter gibt die Absicht bekannt ist, damit sie die Reihenfolge der die Formatelemente in der Formatzeichenfolge umzukehren, können (z. B. "{1} {0}") nach Bedarf für die Zielsprache.
+Die Formatzeichenfolge in diesem Beispiel ist für Englisch (USA) richtig. Sie ist jedoch nicht für Deutsch (Deutschland) geeignet, da in dieser Sprache Tag und Monat in umgekehrter Reihenfolge angezeigt werden. Ensure that the translator knows the intent of each of the parameters so that they can reverse the order of the format items in the format string (for example, "{1} {0}") as appropriate for the target language.
 
 ## <a name="dont-over-localize"></a>Vermeiden Sie eine zu starke Lokalisierung.
 
@@ -134,16 +134,16 @@ Nachdem die Zeichenfolgen in Ressourcendateien untergliedert wurden, können sie
 
 Berücksichtigen Sie diese Optionen.
 
-- **Die Ressourcendateien können übersetzt werden, indem Sie sie direkt in das Projekt öffnen.** Dieser Ansatz funktioniert gut für ein Projekt mit wenigen Zeichenfolgen, die in zwei oder drei Sprachen übersetzt werden müssen. Er könnte sich für Szenarien eignen, in denen ein Entwickler mehrere Sprachen spricht und die Übersetzung übernehmen kann. Dieser Ansatz ist schnell, erfordert keine Tools und minimiert das Risiko von falschen Übersetzungen. Es ist jedoch nicht skalierbar. Insbesondere kann es passieren, das die Ressourcen in verschiedenen Sprachen nicht mehr synchron sind, was eine mangelnde Benutzerfreundlichkeit und Verwaltungsprobleme zur Folge haben kann.
-- **Die Zeichenfolgenressourcendateien sind in XML-Index oder ResJSON-Text-Format, sodass für die Übersetzung mit einem Text-Editor übergeben werden konnte. Die übersetzten Dateien würden dann erneut in das Projekt kopiert werden.** Bei diesem Ansatz besteht die Gefahr, dass Übersetzer versehentlich die XML-Tags bearbeiten. Andererseits besteht die Möglichkeit, Übersetzungen außerhalb des Microsoft Visual Studio-Projekts durchzuführen. Dieser Ansatz eignet sich gut für Projekte, die nur in wenige Sprachen übersetzt werden. Das XLIFF-Format ist ein XML-Format, das speziell für die Lokalisierung vorgesehen ist. Es sollte zudem von einigen Lokalisierungsanbietern oder -tools unterstützt werden. Sie können mit dem [Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) XLIFF-Dateien aus anderen Ressourcendateien wie „.resw“ oder „.resjson“ generieren.
+- **The resource files can be translated by opening them directly in the project.** Dieser Ansatz funktioniert gut für ein Projekt mit wenigen Zeichenfolgen, die in zwei oder drei Sprachen übersetzt werden müssen. Er könnte sich für Szenarien eignen, in denen ein Entwickler mehrere Sprachen spricht und die Übersetzung übernehmen kann. Dieser Ansatz ist schnell, erfordert keine Tools und minimiert das Risiko von falschen Übersetzungen. Es ist jedoch nicht skalierbar. Insbesondere kann es passieren, das die Ressourcen in verschiedenen Sprachen nicht mehr synchron sind, was eine mangelnde Benutzerfreundlichkeit und Verwaltungsprobleme zur Folge haben kann.
+- **The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.** Bei diesem Ansatz besteht die Gefahr, dass Übersetzer versehentlich die XML-Tags bearbeiten. Andererseits besteht die Möglichkeit, Übersetzungen außerhalb des Microsoft Visual Studio-Projekts durchzuführen. Dieser Ansatz eignet sich gut für Projekte, die nur in wenige Sprachen übersetzt werden. Das XLIFF-Format ist ein XML-Format, das speziell für die Lokalisierung vorgesehen ist. Es sollte zudem von einigen Lokalisierungsanbietern oder -tools unterstützt werden. Sie können mit dem [Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) XLIFF-Dateien aus anderen Ressourcendateien wie „.resw“ oder „.resjson“ generieren.
 
 > [!NOTE]
-> Lokalisierung kann auch für andere Objekte, einschließlich der Bilder und Audiodateien erforderlich sein.
+> Localization might also be necessary for other assets, including images and audio files.
 
-Sie sollten auch Folgendes berücksichtigen:
+You should also consider the following:
 
-- **Tools für die Lokalisierung** eine Reihe von Lokalisierungstools stehen für die Analyse von Ressourcendateien, und nur die übersetzbaren Zeichenfolgen von Übersetzern bearbeitet werden können. Das Risiko, dass ein Übersetzer versehentlich XML-Tags bearbeitet, ist somit geringer. Der Nachteil ist aber, dass neue Tools und Prozesse in den Lokalisierungsprozess eingebunden werden müssen. Ein Lokalisierungstool eignet sich für Projekte mit vielen Zeichenfolgen für wenige Sprachen. Weitere Informationen finden Sie unter [Verwenden des Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
-- **Lokalisierungsanbietern** erwägen Sie einen Lokalisierungsanbieter, wenn die Anwendung umfangreiche Zeichenfolgen enthält, die in eine große Anzahl von Sprachen übersetzt werden müssen. Ein Lokalisierungsanbieter kann Sie hinsichtlich der Tools und Prozesse beraten sowie die Ressourcendateien übersetzen. Diese Lösung ist ideal, stellt allerdings auch die teuerste Option dar und kann die Bearbeitungszeit für den übersetzten Inhalt verlängern.
+- **Localization tools** A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. Das Risiko, dass ein Übersetzer versehentlich XML-Tags bearbeitet, ist somit geringer. Der Nachteil ist aber, dass neue Tools und Prozesse in den Lokalisierungsprozess eingebunden werden müssen. Ein Lokalisierungstool eignet sich für Projekte mit vielen Zeichenfolgen für wenige Sprachen. Weitere Informationen finden Sie unter [Verwenden des Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
+- **Localization vendors** Consider using a localization vendor if your application contains extensive strings that need to be translated into a large number of languages. Ein Lokalisierungsanbieter kann Sie hinsichtlich der Tools und Prozesse beraten sowie die Ressourcendateien übersetzen. Diese Lösung ist ideal, stellt allerdings auch die teuerste Option dar und kann die Bearbeitungszeit für den übersetzten Inhalt verlängern.
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>Zugriffstasten und Beschreibungen konsistent halten
 
@@ -166,8 +166,8 @@ Japanische Kanji-Zeichen weisen die Besonderheit auf, dass sie je nach Wort und 
             Resources.resw
     ```
 
-3. In "Resources.resw" für allgemeine ja-JP: Fügen Sie eine Zeichenfolgenressource für App-Name "希蒼" hinzu.
-4. In Resources.altform-Msft-phonetic.resw für japanische Furigana Ressourcen: Furigana Mehrwert für App-Name "のあ"
+3. Unter „Resources.resw“ für „ja-JP“ allgemein: Fügen Sie eine Zeichenfolgenressource für den App-Namen „希蒼“ hinzu.
+4. Unter „Resources.altform-msft-phonetic.resw“ für japanische Furigana-Ressourcen: Fügen Sie einen Furigana-Wert für den App-Namen „のあ“ hinzu.
 
 Der Benutzer kann nach dem App-Namen „希 蒼” sowohl mit dem Furigana-Wert "の あ" (noa) als auch mit dem phonetischen Wert „ま れ あ お” (mare-ao) suchen (mit der Funktion **GetPhonetic** aus dem Eingabemethoden-Editor (IME)).
 
@@ -182,12 +182,12 @@ Die Sortierung folgt dem **regionalen Format der Systemsteuerung**:
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
+- [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
 - [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
 - [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md)
-- [Aktualisieren von Bildern als Reaktion auf den Wert des Qualifizierers change-Ereignissen](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+- [Updating images in response to qualifier value change events](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
-## <a name="samples"></a>Proben
+## <a name="samples"></a>Beispiele
 
-- [Anwendungsressourcen und Lokalisierungsbeispiel](https://go.microsoft.com/fwlink/p/?linkid=254478)
+- [Application resources and localization sample](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)

@@ -4,20 +4,20 @@ title: Binden von hierarchischen Daten und Erstellen einer Master/Details-Ansich
 description: Sie können eine Master/Detailansicht mit mehreren Ebenen (auch bekannt als Listendetailansicht) hierarchischer Daten erstellen, indem Sie Elementsteuerelemente an CollectionViewSource-Instanzen binden, die in einer Kette verbunden sind.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d8695a385dbc6d550a8002a5f64b7d777e95594e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360031"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255124"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>Binden von hierarchischen Daten und Erstellen einer Master/Details-Ansicht
 
 
 
-> **Beachten Sie**  finden Sie auch unter den [Master/Detail-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Note**  Also see the [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
 
 Sie können eine Master/Details-Ansicht mit mehreren Ebenen (auch bekannt als Listen-Details-Ansicht) von hierarchischen Daten erstellen, indem Sie Elementsteuerelemente an [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)-Instanzen binden, die in einer Kette verbunden sind. In diesem Thema verwenden wir nach Möglichkeit die [{x:Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) und die flexiblere (aber weniger leistungsfähige) [{Binding}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension), wenn nötig.
 
@@ -27,9 +27,9 @@ Wir erstellen eine Ansicht einer Sportmannschaftshierarchie, die in Listen für 
 
 ![Master/Details-Ansicht einer Sporthierarchie](images/xaml-masterdetails.png)
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-In diesem Thema wird vorausgesetzt, dass Sie mit dem Erstellen von UWP-Apps vertraut sind. Anweisungen zum Erstellen Ihrer ersten UWP-App finden Sie unter [Erstellen Ihrer ersten UWP-App mit C# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
+In diesem Thema wird vorausgesetzt, dass Sie eine UWP-App erstellen können. Anweisungen zum Erstellen Ihrer ersten UWP-App finden Sie unter [Erstellen Ihrer ersten UWP-App mit C# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10)).
 
 ## <a name="create-the-project"></a>Erstellen des Projekts
 

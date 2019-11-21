@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8cdad247a57ce5fab461e70c2725fda4231efd
-ms.sourcegitcommit: ed32219e04f814a12ea018348e9cf678fcfd5e3a
+ms.openlocfilehash: 4d36368fab267370e2301e52731d99bc7b146fbd
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67253064"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258249"
 ---
 # <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
@@ -58,7 +58,7 @@ Beenden Sie die Erkennung, wenn eine Eingabe von einem anderen Gerät als der Sp
 
 Legen Sie die Dauer fest, nach der das Ausbleiben einer Spracheingabe als Beendigung der Spracherkennung interpretiert wird. Starten Sie die Erkennung nach dieser Dauer nicht automatisch neu. Meist weist das Ausbleiben einer Spracheingabe darauf hin, dass der Benutzer die Interaktion mit Ihrer App beendet hat.
 
-Deaktivieren Sie die gesamte fortlaufende Erkennungs-UI, und beenden Sie die Erkennungssitzung, wenn keine Netzwerkverbindung verfügbar ist. Kontinuierliche Erkennung ist eine Netzwerkverbindung erforderlich.
+Deaktivieren Sie die gesamte fortlaufende Erkennungs-UI, und beenden Sie die Erkennungssitzung, wenn keine Netzwerkverbindung verfügbar ist. Continuous recognition requires a network connection.
 
 ## <a name="commanding"></a>Befehle
 
@@ -157,7 +157,7 @@ Diese vordefinierten Grammatiken können zum Erkennen von bis zu zehn Sekunden S
 Eine benutzerdefinierte Grammatik ist eine von Ihnen entworfene und erstellte Grammatik, die mit Ihrer App installiert wird. Die Spracherkennung anhand einer benutzerdefinierten Einschränkung wird auf dem Gerät ausgeführt.
 
 -   Einschränkungen per programmgesteuerter Liste sind eine unkomplizierte Methode für die Erstellung einfacher Grammatiken in Form einer Liste von Wörtern und Ausdrücken. Eine Einschränkungsliste eignet sich gut für die Erkennung kurzer, einzelner Ausdrücke. Das explizite Angeben aller Wörter in einer Grammatik verbessert auch die Erkennungsgenauigkeit, da das Spracherkennungsmodul nur eine Übereinstimmung bestätigen muss. Die Liste kann auch programmgesteuert aktualisiert werden.
--   Eine SRGS-Grammatik ist ein statisches Dokument, das im Gegensatz zu einer Einschränkung per programmgesteuerter Liste das in [SRGS Version 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) definierte XML-Format verwendet. Eine SRGS-Grammatik bietet die höchstmögliche Kontrolle über die Spracherkennungsfunktion, da Sie mehrere semantische Bedeutungen in einem einzigen Erkennungsvorgang erfassen können.
+-   Eine SRGS-Grammatik ist ein statisches Dokument, das im Gegensatz zu einer Einschränkung per programmgesteuerter Liste das in [SRGS Version 1.0](https://www.w3.org/TR/speech-grammar/) definierte XML-Format verwendet. Eine SRGS-Grammatik bietet die höchstmögliche Kontrolle über die Spracherkennungsfunktion, da Sie mehrere semantische Bedeutungen in einem einzigen Erkennungsvorgang erfassen können.
 
     Hier einige Tipps für das Erstellen von SRGS-Grammatiken:
 
@@ -179,7 +179,7 @@ Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwe
 
 Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
-## <a name="testing"></a>Test
+## <a name="testing"></a>Testing
 
 Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z. B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
 
@@ -200,18 +200,18 @@ Hören Sie sich alle TTS-Zeichenfolgen an, um sicherzustellen, dass sie verstän
 -   Wenn eine ungewöhnliche Abfolge von Wörtern kombiniert wird oder Teilenummern oder Satzzeichen gesprochen werden, kann ein Satz unverständlich werden.
 -   Sprache kann unnatürlich klingen, wenn der Sprechrhythmus von der normalen Sprechweise eines Muttersprachlers abweicht.
 
-Beide Probleme können durch die anstelle eines nur-Text als Eingabe für die Spracherkennung Synthesizer SSML behoben werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Both issues can be addressed by using SSML instead of plain text as input to the speech synthesizer. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Andere Artikel in diesem Abschnitt 
 
 | Thema | Beschreibung |
 | --- | --- |
 | [Spracherkennung](speech-recognition.md) | Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer Aktion, eines Befehls oder einer Aufgabe. |
-| [Geben Sie die Spracherkennung zu erkennende Sprache](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
+| [Specify the speech recognizer language](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
 | [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md) | Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können. |
 | [Ermöglichen kontinuierlicher Diktate](enable-continuous-dictation.md) |Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen. |
-| [Behandeln von Problemen mit der Audioeingabe](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
-| [Festlegen von Timeouts für Speech recognition](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
+| [Manage issues with audio input](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
+| [Set speech recognition timeouts](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -220,7 +220,7 @@ Beide Probleme können durch die anstelle eines nur-Text als Eingabe für die Sp
 
  **Beispiele**
 
-* [Die Spracherkennung und-Synthese sprachmuster](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

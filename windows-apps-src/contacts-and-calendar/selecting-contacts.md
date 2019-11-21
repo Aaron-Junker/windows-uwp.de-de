@@ -6,12 +6,12 @@ keywords: Kontakte, auswählen, einzelnen Kontakt auswählen, mehrere Kontakte a
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: facad25446dca286ac150e59d0418c2dd8bfc896
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 634b72032b37fe4a6bc4ea44a2e4fe27abede47d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361273"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255076"
 ---
 # <a name="select-contacts"></a>Auswählen von Kontakten
 
@@ -230,4 +230,4 @@ public class ContactItemAdapter
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
-Sie verfügen nun über grundlegende Kenntnisse zum Abrufen von Kontaktinformationen mithilfe der Kontaktauswahl. Laden Sie die [Beispiele für universelle Windows-Apps](https://go.microsoft.com/fwlink/p/?linkid=619979) von GitHub herunter, um sich weitere Beispiele für die Verwendung von Kontakten und Kontaktauswahl anzusehen.
+Sie verfügen nun über grundlegende Kenntnisse zum Abrufen von Kontaktinformationen mithilfe der Kontaktauswahl. Laden Sie die [Beispiele für universelle Windows-Apps](https://github.com/Microsoft/Windows-universal-samples) von GitHub herunter, um sich weitere Beispiele für die Verwendung von Kontakten und Kontaktauswahl anzusehen.

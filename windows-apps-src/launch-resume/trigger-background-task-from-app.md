@@ -3,20 +3,20 @@ title: Auslösen einer Hintergrundaufgabe in Ihrer App
 description: Es wird beschrieben, wie Sie eine Hintergrundaufgabe in einer Anwendung auslösen.
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Aufgabe des hintergrundtriggers, Hintergrundtasks
+keywords: background task trigger, background task
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d163d36b51e414a403986d1fdd73db7925cc0b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d8917c6ed181607459d6126aa295d270cfea838
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371897"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259409"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>Auslösen einer Hintergrundaufgabe in Ihrer App
 
-Hier erfahren Sie, wie Sie den [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) zum Aktivieren einer Hintergrundaufgabe in Ihrer App verwenden.
+Hier erfahren Sie, wie Sie [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) zum Aktivieren einer Hintergrundaufgabe in Ihrer App verwenden.
 
-Ein Beispiel für einen Trigger für die Anwendung zu erstellen, finden Sie in diesem [Beispiel](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs).
+For an example of how to create an Application trigger, see this [example](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs).
 
 In diesem Thema wird davon ausgegangen, dass Sie über eine Hintergrundaufgabe verfügen, die Sie in Ihrer Anwendung aktivieren möchten. Wenn Sie noch keine Hintergrundaufgabe haben, finden Sie unter [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs) ein Beispiel für eine Hintergrundaufgabe. Alternativ können Sie die Schritte in [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb des Prozesses](create-and-register-a-background-task.md) befolgen, um eine zu erstellen.
 
@@ -56,7 +56,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 Sie können eine Hintergrundaufgabenbedingung erstellen, um zu steuern, wann die Aufgabe ausgeführt wird. Eine Bedingung verhindert, dass die Hintergrundaufgabe ausgeführt wird, bis die Bedingung erfüllt ist. Weitere Informationen finden Sie unter [Festlegen von Bedingungen für die Ausführung einer Hintergrundaufgabe](set-conditions-for-running-a-background-task.md).
 
-In diesem Beispiel wird die Bedingung festgelegt ist **InternetAvailable** , einmal ausgelöst, der Task nur einmal ausgeführt Zugriff auf das Internet verfügbar ist. Eine Liste mit möglichen Bedingungen finden Sie in [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+In this example the condition is set to **InternetAvailable** so that, once triggered, the task only runs once internet access is available. Eine Liste mit möglichen Bedingungen finden Sie in [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -134,28 +134,28 @@ var result = await _AppTrigger.RequestAsync();
 
 Um zu ermitteln, ob der Benutzer die Hintergrundaktivität Ihrer App begrenzt hat, verwenden Sie [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager). Achten Sie auf die Akkunutzung, und führen Sie Ihre App nur dann im Hintergrund aus, wenn dies zum Ausführen einer vom Benutzer gewünschten Aktion notwendig ist. Weitere Informationen zu den Möglichkeiten, die Benutzer haben, um die Einstellungen für Hintergrundaktivitäten zu steuern, finden Sie unter [Optimieren von Hintergrundaktivitäten](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).  
 
-- Speicher: Optimieren Ihrer app-Speicher und Energieverbrauch mithilfe ist-Schlüssel, um sicherzustellen, dass das Betriebssystem Ihrer Hintergrundaufgabe ausgeführt werden kann. Um zu ermitteln, wie viel Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, verwenden Sie die [Speicherverwaltungs-APIs](https://docs.microsoft.com/uwp/api/windows.system.memorymanager). Je mehr Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, desto schwieriger wird es für das Betriebssystem, sie weiter auszuführen, wenn sich eine andere App im Vordergrund befindet. Der Benutzer hat letztendlich die Kontrolle über alle Hintergrundaktivitäten, die Ihre App ausführen kann, und kann die Auswirkungen Ihrer App auf den Akkuverbrauch erkennen.  
-- CPU-Zeit: Aufgaben im Hintergrund werden durch die Menge der Nutzung der wanduhrzeit beschränkt, die sie für Trigger vom Typ basiert, erhalten. Vom Anwendungstrigger ausgelöste Hintergrundaufgaben sind auf etwa 10 Minuten beschränkt.
+- Arbeitsspeicher: Eine Optimierung der Speicherverwendung und des Energieverbrauchs Ihrer App ist wichtig, um sicherzustellen, dass das Betriebssystem die Ausführung Ihrer Hintergrundaufgabe erlaubt. Um zu ermitteln, wie viel Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, verwenden Sie die [Speicherverwaltungs-APIs](https://docs.microsoft.com/uwp/api/windows.system.memorymanager). Je mehr Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, desto schwieriger wird es für das Betriebssystem, sie weiter auszuführen, wenn sich eine andere App im Vordergrund befindet. Der Benutzer hat letztendlich die Kontrolle über alle Hintergrundaktivitäten, die Ihre App ausführen kann, und kann die Auswirkungen Ihrer App auf den Akkuverbrauch erkennen.  
+- CPU-Zeit: Hintergrundaufgaben sind durch die Gesamtbetrachtungszeit eingeschränkt, die ihnen basierend auf dem Triggertyp zugeteilt wird. Vom Anwendungstrigger ausgelöste Hintergrundaufgaben sind auf etwa 10 Minuten beschränkt.
 
 Die für Hintergrundaufgaben geltenden Ressourcenbeschränkungen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md).
 
 ## <a name="remarks"></a>Hinweise
 
-Ab Windows 10, ist es nicht mehr erforderlich, für den Benutzer Ihrer app auf dem Sperrbildschirm hinzufügen, um Hintergrundaufgaben nutzen zu können.
+Starting with Windows 10, it is no longer necessary for the user to add your app to the lock screen in order to utilize background tasks.
 
 Eine Hintergrundaufgabe wird nur mithilfe eines **ApplicationTrigger** ausgeführt, wenn Sie zuerst [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) aufgerufen haben.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [Beispiel für einen Hintergrundtask code](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
+* [Background task code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb des Prozesses](create-and-register-an-inproc-background-task.md)
 * [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
 * [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
 * [Freigeben von Speicher, wenn die App in den Hintergrund verschoben wird](reduce-memory-usage.md)
 * [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
-* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 * [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
 * [Verschieben der angehaltenen App mithilfe der erweiterten Ausführung](run-minimized-with-extended-execution.md)
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)

@@ -1,19 +1,19 @@
 ---
-title: Netzwerk für Spiele
+title: Networking für Spiele
 description: Erfahren Sie, wie Sie Netzwerkfeatures entwickeln und in ein DirectX-Spiel integrieren.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Netzwerke, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: bc39f2608ed4d1be52757ae9718d1bc40a9de387
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 79a1640964902f1effc08196372128bd38bebe2d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367397"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258408"
 ---
-# <a name="networking-for-games"></a>Netzwerk für Spiele
+# <a name="networking-for-games"></a>Networking für Spiele
 
 
 
@@ -45,10 +45,10 @@ In DirectX-Spielen können verschiedene Netzwerk-APIs verwendet werden. Daher is
 
 Zu den beliebtesten Netzwerk-APIs für Spiele gehören:
 
--   TCP und Sockets – sorgen für eine zuverlässige Verbindung. Verwenden Sie TCP für Spielvorgänge, die keine Sicherheit erfordern. TCP ermöglicht eine einfache Skalierung des Servers, daher wird es häufig in Spielen mit dem Infrastruktur (Client-Server oder Peer-zu-Peer über das Internet)-Modell verwendet. TCP kann auch für Ad-hoc-Spiele (lokales Peer-zu-Peer) über Wi-Fi Direct und Bluetooth verwendet werden. TCP wird in der Regel für die Bewegung von Spielobjekten, die Interaktion zwischen Spielfiguren, Textchat und andere Vorgänge verwendet. Die [ **StreamSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) Klasse bietet einen TCP-Socket, der in Microsoft Store-Spiele verwendet werden kann. Die **StreamSocket**-Klasse wird zusammen mit verwandten Klassen im [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)-Namespace verwendet.
+-   TCP und Sockets – sorgen für eine zuverlässige Verbindung. Verwenden Sie TCP für Spielvorgänge, die keine Sicherheit erfordern. TCP ermöglicht eine einfache Skalierung des Servers, daher wird es häufig in Spielen mit dem Infrastruktur (Client-Server oder Peer-zu-Peer über das Internet)-Modell verwendet. TCP kann auch für Ad-hoc-Spiele (lokales Peer-zu-Peer) über Wi-Fi Direct und Bluetooth verwendet werden. TCP wird in der Regel für die Bewegung von Spielobjekten, die Interaktion zwischen Spielfiguren, Textchat und andere Vorgänge verwendet. The [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) class provides a TCP socket that can be used in Microsoft Store games. Die **StreamSocket**-Klasse wird zusammen mit verwandten Klassen im [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)-Namespace verwendet.
 -   TCP und Sockets mit SSL – sorgen für zuverlässige Verbindung und verhindern Mitverfolgung. Verwenden Sie TCP-Verbindungen mit SSL für Spielvorgänge, die Sicherheit erfordern. Die Verschlüsselung und der Mehraufwand von SSL erhöht die Latenz- und Leistungskosten, daher wird SSL nur verwendet, wenn Sicherheit erforderlich ist. TCP mit SSL wird in der Regel für Anmelde-, Kauf- und Handelsressourcen sowie die Erstellung und Verwaltung von Spielfiguren verwendet. Die [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)-Klasse bietet einen TCP-Socket, der SSL unterstützt.
--   UDP und Sockets – bieten unzuverlässige Netzwerkübertragungen mit wenig Mehraufwand. UDP wird für Spielvorgänge verwendet, die niedrige Latenz erfordern und Paketverluste tolerieren können. Dies wird häufig für Kampfspiele, Schießen mit Leuchtspur, Netzwerkaudio und Sprachchat verwendet. Die [ **DatagramSocket** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket) -Klasse stellt einen UDP-Socket, der in Microsoft Store-Spiele verwendet werden kann. Die **DatagramSocket**-Klasse wird zusammen mit verwandten Klassen im [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)-Namespace verwendet.
--   HTTP-Client – stellt eine zuverlässige Verbindung mit HTTP-Servern bereit. Das gängigste Netzwerkszenario ist der Zugriff auf eine Website, um Informationen abzurufen oder zu speichern. Ein einfaches Beispiel dafür ist ein Spiel, das eine Website zum Speichern von Benutzerinformationen und Spielständen verwendet. Wenn ein HTTP-Client zusammen mit SSL für die Sicherheit verwendet wird, kann er für Anmelde-, Kauf- und Handelsressourcen sowie die Erstellung und Verwaltung von Spielfiguren verwendet werden. Die [ **"HttpClient"** ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) -Klasse bietet eine moderne HTTP-Client-API für die Verwendung in Microsoft Store-Spiele. Die **HttpClient**-Klasse wird zusammen mit verwandten Klassen im [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)-Namespace verwendet.
+-   UDP und Sockets – bieten unzuverlässige Netzwerkübertragungen mit wenig Mehraufwand. UDP wird für Spielvorgänge verwendet, die niedrige Latenz erfordern und Paketverluste tolerieren können. Dies wird häufig für Kampfspiele, Schießen mit Leuchtspur, Netzwerkaudio und Sprachchat verwendet. The [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket) class provides a UDP socket that can be used in Microsoft Store games. Die **DatagramSocket**-Klasse wird zusammen mit verwandten Klassen im [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)-Namespace verwendet.
+-   HTTP-Client – stellt eine zuverlässige Verbindung mit HTTP-Servern bereit. Das gängigste Netzwerkszenario ist der Zugriff auf eine Website, um Informationen abzurufen oder zu speichern. Ein einfaches Beispiel dafür ist ein Spiel, das eine Website zum Speichern von Benutzerinformationen und Spielständen verwendet. Wenn ein HTTP-Client zusammen mit SSL für die Sicherheit verwendet wird, kann er für Anmelde-, Kauf- und Handelsressourcen sowie die Erstellung und Verwaltung von Spielfiguren verwendet werden. The [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) class provides a modern HTTP client API for use in Microsoft Store games. Die **HttpClient**-Klasse wird zusammen mit verwandten Klassen im [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http)-Namespace verwendet.
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>Behandeln von Netzwerkausnahmen in einem DirectX-Spiel
 
@@ -77,7 +77,7 @@ Die Netzwerk-APIs unterstützen verschiedene Methoden zum Abrufen der detaillier
 -   Eine Methode zum Abrufen des **HRESULT**-Werts des Fehlers, der die Ausnahme verursacht hat. Die mögliche Liste potenzieller **HRESULT**-Werte ist lang und nicht spezifiziert. Der **HRESULT**-Wert kann abgerufen werden, wenn eine der Netzwerk-APIs verwendet wird.
 -   Eine Hilfsmethode, die den **HRESULT**-Wert in einen Enumerationswert konvertiert. Die Liste der möglichen Enumerationswerte ist spezifiziert und relativ kurz. Eine Hilfsmethode für die Socketklassen ist in [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) verfügbar.
 
-### <a name="exceptions-in-windowsnetworkingsockets"></a>Ausnahmen in „Windows.Networking.Sockets“
+### <a name="exceptions-in-windowsnetworkingsockets"></a>Ausnahmen in "Windows.Networking.Sockets"
 
 Der Konstruktor für die [**HostName**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName)-Klasse in Verbindung mit Sockets kann eine Ausnahme auslösen, wenn die übergebene Zeichenfolge kein gültiger Hostname ist (enthält Zeichen, die in einem Hostnamen nicht zulässig sind). Wenn eine App vom Benutzer eine Eingabe für das **HostName**-Element einer Peerverbindung zum Spielen erhält, sollte sich der Konstruktor innerhalb eines try/catch-Blocks befinden. Wenn eine Ausnahme ausgelöst wird, kann die App den Benutzer benachrichtigen und einen neuen Hostnamen anfordern.
 
@@ -121,7 +121,7 @@ Der [**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.
 
 Ein Fehler, der für einen [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)-, [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)- oder [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener)-Vorgang auftritt, führt zur Auslösung einer Ausnahme. Die Ursache der Ausnahme ist ein Fehlerwert, der als **HRESULT**-Wert dargestellt wird. Mit der [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus)-Methode wird ein Netzwerkfehler aus einem Socketvorgang in einen [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus)-Enumerationswert konvertiert. Die meisten **SocketErrorStatus**-Enumerationswerte entsprechen einem vom systemeigenen Windows Sockets-Vorgang zurückgegebenen Fehler. Eine App kann nach bestimmten **SocketErrorStatus**-Enumerationswerten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
-Bei Parameterprüfungsfehlern kann eine App den **HRESULT**-Wert aus der Ausnahme auch verwenden, um ausführlichere Informationen zum zugehörigen Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Für die meisten Parameter Validierungsfehler die **HRESULT** zurückgegebene **E\_INVALIDARG**.
+Bei Parameterprüfungsfehlern kann eine App den **HRESULT**-Wert aus der Ausnahme auch verwenden, um ausführlichere Informationen zum zugehörigen Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E\_INVALIDARG** zurückgegeben.
 
 Hinzufügen von Code zum Behandeln von Ausnahmen beim Herstellen einer Streamsocketverbindung
 
@@ -273,7 +273,7 @@ Der [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/windows.web.http
 
 In Apps mit C++ stellt das [**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class)-Objekt einen Fehler während der App-Ausführung dar, wenn eine Ausnahme auftritt. Die [**Platform::Exception::HResult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult)-Eigenschaft gibt den **HRESULT**-Wert zurück, der der jeweiligen Ausnahme zugewiesen ist. Die [**Platform::Exception::Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message)-Eigenschaft gibt die vom System bereitgestellte Zeichenfolge zurück, die dem **HRESULT**-Wert zugeordnet ist. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Eine App kann nach bestimmten **HRESULT**-Werten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
-Für die meisten Parameter Validierungsfehler die **HRESULT** zurückgegebene **E\_INVALIDARG**. Für einige unzulässige Methodenaufrufe die **HRESULT** zurückgegebene **E\_UNZULÄSSIGE\_Methode\_Aufrufen**.
+Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E\_INVALIDARG** zurückgegeben. Bei manchen unzulässigen Methodenaufrufen wird der **HRESULT**-Wert **E\_ILLEGAL\_METHOD\_CALL** zurückgegeben.
 
 Hinzufügen von Code zum Behandeln von Ausnahmen beim Verwenden von [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) zum Herstellen einer Verbindung mit einem HTTP-Server
 
@@ -368,15 +368,15 @@ using namespace Windows::Web::Http;
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-**Weitere Ressourcen**
+**Other resources**
 
-* [Herstellen einer Verbindung mit einen Datagrammsocket](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
-* [Herstellen einer Verbindung mit einer Netzwerkressource mit einem Streamsocket](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
-* [Herstellen einer Verbindung mit Netzwerkdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
-* [Verbinden mit Webdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
+* [Connecting with a datagram socket](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
+* [Connecting to a network resource with a stream socket](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
+* [Connecting to network services](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
+* [Connecting to web services](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 * [Grundlagen zum Netzwerk](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
-* [Vorgehensweise: Konfigurieren der Netzwerkfunktionen für isolation](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [Wie Sie Loopback aktivieren, und Debuggen die Netzwerkisolation](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
+* [How to configure network isolation capabilities](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [How to enable loopback and debug network isolation](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
 
 **Referenz**
 
@@ -388,7 +388,7 @@ using namespace Windows::Web::Http;
 
 **Beispiele**
 
-* [DatagramSocket-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=243037)
-* [HttpClient-Beispiel]( https://go.microsoft.com/fwlink/p/?linkid=242550)
-* [NEAR-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=245082)
-* [Beispiel für StreamSocket](https://go.microsoft.com/fwlink/p/?linkid=243037)
+* [DatagramSocket sample](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
+* [HttpClient Sample]( https://go.microsoft.com/fwlink/p/?linkid=242550)
+* [Proximity sample](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
+* [Beispiel für StreamSocket](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)

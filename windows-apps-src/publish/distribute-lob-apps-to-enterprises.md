@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, LOB, Branche, Unternehmens-Apps, Store für Unternehmen, Store für Bildungseinrichtungen, Enterprise
 ms.localizationpriority: medium
-ms.openlocfilehash: cf970c1812b4200cea4e4902ad883ef8b0b5e141
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: accf4e8dbc19e5858148bcf0cf62d0e1cc95ab82
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320001"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260002"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>Verteilen von branchenspezifischen Apps an Unternehmen
 
@@ -22,7 +22,7 @@ ms.locfileid: "67320001"
 > Zurzeit können nur kostenlose Apps exklusiv über den Microsoft Store für Unternehmen oder den Microsoft Store für Bildungseinrichtungen verteilt werden. Wenn Sie eine kostenpflichtige App als LOB übermitteln, steht sie dem Unternehmen nicht zur Verfügung. 
 
 > [!IMPORTANT]
-> Sie können die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissions-using-windows-store-services.md) nicht verwenden, um branchenspezifische Apps direkt an Unternehmen zu veröffentlichen. Alle Übermittlungen für Branchen-apps müssen über das Partner Center veröffentlicht werden.
+> Sie können die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissions-using-windows-store-services.md) nicht verwenden, um branchenspezifische Apps direkt an Unternehmen zu veröffentlichen. All submissions for LOB apps must be published through Partner Center.
 
 
 ## <a name="set-up-the-enterprise-association"></a>Einrichten der Unternehmenszuordnung
@@ -30,7 +30,7 @@ ms.locfileid: "67320001"
 Der erste Schritt beim exklusiven Veröffentlichen von branchenspezifischen Apps für ein Unternehmen besteht darin, eine Zuordnung zwischen Ihrem Konto und dem privaten Store des Unternehmens einzurichten.
 
 > [!IMPORTANT]
-> Dieser Zuordnungsprozess muss vom Unternehmen initiiert werden, und Sie müssen die E-Mail-Adresse mit dem Microsoft-Konto verwenden, das mit das Entwicklerkonto erstellt wurde. Weitere Informationen finden Sie unter [Arbeiten mit LOB-Apps](https://go.microsoft.com/fwlink/p/?LinkId=698846).
+> Dieser Zuordnungsprozess muss vom Unternehmen initiiert werden, und Sie müssen die E-Mail-Adresse mit dem Microsoft-Konto verwenden, das mit das Entwicklerkonto erstellt wurde. Weitere Informationen finden Sie unter [Arbeiten mit LOB-Apps](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps).
 
 Wenn ein Unternehmen Sie zum Veröffentlichen von Apps für die exklusive Nutzung in diesem Unternehmen einlädt, erhalten Sie eine E-Mail mit einem Link, über den Sie die Zuordnung bestätigen können. Sie können diese Zuordnungen auch überprüfen, indem Sie zum Abschnitt **Unternehmenszusammenschlüsse** Ihrer **Kontoeinstellungen** navigieren (sofern Sie mit dem Microsoft-Konto angemeldet sind, das verwendet wurde, um das Entwicklerkonto zu eröffnen).
 
@@ -73,7 +73,7 @@ Wenn Sie auf **An Store übermitteln** klicken, durchläuft die App den Zertifiz
 > [!NOTE]
 > Um Ihre branchenspezifische App zu erhalten, muss sich die Organisation in einem [unterstützten Markt](https://docs.microsoft.com/windows/whats-new/windows-store-for-business-overview#supported-markets) befinden. Beim Übermitteln der App darf dieser Markt [nicht ausgeschlossen worden sein](define-pricing-and-market-selection.md). 
 
-Weitere Informationen finden Sie unter [Arbeiten mit Branchen-Apps](https://go.microsoft.com/fwlink/p/?LinkId=698846) und [Verteilen von Apps über den privaten Store](https://go.microsoft.com/fwlink/p/?LinkId=698847).
+Weitere Informationen finden Sie unter [Arbeiten mit Branchen-Apps](https://docs.microsoft.com/microsoft-store/working-with-line-of-business-apps) und [Verteilen von Apps über den privaten Store](https://docs.microsoft.com/microsoft-store/distribute-apps-from-your-private-store).
 
 
 ## <a name="update-lob-apps"></a>Aktualisieren branchenspezifischer Apps
@@ -92,9 +92,9 @@ Nachdem die Übermittlung den Zertifizierungsprozess durchlaufen hat, kann die A
 
 Wenn Apps über den Microsoft Store für Unternehmen oder den Microsoft Store für Bildungswesen für ein Unternehmen verfügbar gemacht werden, wird sichergestellt, dass die App vom Store signiert wurde und den Standardrichtlinien des Stores entspricht.
 
-In einigen Fällen möglicherweise Unternehmen möchten nicht, ihre Branchen-apps über das Partner Center (z. B. für Compliance-Gründen oder für apps, die benötigen zusätzliche Funktionen) übermittelt werden. In diesem Fall kann das Unternehmen Apps durch Querladen direkt auf Computern bereitstellen und müssen nicht den Microsoft Store für Unternehmen oder den Microsoft Store für Bildungseinrichtungen verwenden.
+In some cases, companies may not want their LOB apps to be submitted through Partner Center (such as for compliance reasons or for apps that need additional capabilities). In diesem Fall kann das Unternehmen Apps durch Querladen direkt auf Computern bereitstellen und müssen nicht den Microsoft Store für Unternehmen oder den Microsoft Store für Bildungseinrichtungen verwenden.
 
-Weitere Informationen finden Sie unter [Querladen von Branchen-Apps in Windows 10](https://go.microsoft.com/fwlink/p/?LinkId=623433).
+Weitere Informationen finden Sie unter [Querladen von Branchen-Apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
 
  
 

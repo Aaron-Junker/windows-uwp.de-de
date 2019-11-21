@@ -1,24 +1,24 @@
 ---
 title: Einführung in die Entwicklung sicherer Windows-Apps
-description: In diesem einführenden Artikel app Architekten und Entwicklern besser verstehen, die verschiedene Windows 10-Plattform-Funktionen, die zu beschleunigen, erstellen sichere apps der universellen Windows-Plattform (UWP).
+description: This introductory article helps app architects and developers better understand the various Windows 10 platform capabilities that accelerate creating secure Universal Windows Platform (UWP) apps.
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4060fbd2e59a545451c9c8ebe103c9bb527a0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 98ef721c2068927733648d494a086160f23baab9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320606"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258950"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>Einführung in die Entwicklung sicherer Windows-Apps
 
 
 
 
-In diesem einführenden Artikel app Architekten und Entwicklern besser verstehen, die verschiedene Windows 10-Plattform-Funktionen, die zu beschleunigen, erstellen sichere apps der universellen Windows-Plattform (UWP). Sie erfahren mehr über die Verwendung der verfügbaren Windows-Sicherheitsfeatures der Authentifizierungs-, In-Flight-Daten- und At-Rest-Daten-Stufe. In den in jedem Kapitel enthaltenen zusätzlichen Ressourcen finden Sie ausführlichere Informationen zu jedem Thema.
+This introductory article helps app architects and developers better understand the various Windows 10 platform capabilities that accelerate creating secure Universal Windows Platform (UWP) apps. Sie erfahren mehr über die Verwendung der verfügbaren Windows-Sicherheitsfeatures der Authentifizierungs-, In-Flight-Daten- und At-Rest-Daten-Stufe. In den in jedem Kapitel enthaltenen zusätzlichen Ressourcen finden Sie ausführlichere Informationen zu jedem Thema.
 
 ## <a name="1-introduction"></a>1 Einführung
 
@@ -45,7 +45,7 @@ Um die Daten zu schützen, muss die Person, die den Zugriff anfordert, sich iden
 Um sich bei einem bestimmten Dienst und/oder einer App zu authentifizieren, verwendet der Benutzer als Anmeldeinformationen eine Information, ein Gerät und/oder ein Merkmal. Diese Punkte werden als Authentifizierungsfaktoren bezeichnet.
 
 -   **Benutzerinformation** ist in der Regel ein Kennwort, kann aber auch eine Geheimzahl (PIN) oder eine Kombination aus „geheimer“ Frage und Antwort sein.
--   **Benutzergerät** ist häufig ein Hardwarespeichergerät wie ein USB-Stick mit den eindeutigen Authentifizierungsdaten des Benutzers.
+-   **Benutzergerät** ist meistens ein Hardwarespeichergerät wie ein USB-Stick mit den eindeutigen Authentifizierungsdaten des Benutzers.
 -   **Benutzermerkmal** umfasst häufig Fingerabdrücke. Mittlerweile werden jedoch zunehmend auch Faktoren wie Sprach-, Gesichts- oder Augenmerkmale und Verhaltensmuster des Benutzers verwendet. Werden sie als Daten gespeichert, bezeichnet man diese als Biometrie.
 
 Ein vom Benutzer erstelltes Kennwort ist naturgemäß ein Authentifizierungsfaktor, reicht aber häufig nicht aus. Jeder, der das Kennwort kennt, kann die Identität des Benutzers annehmen, dem das Kennwort gehört. Eine Smartcard bietet u. U. höhere Sicherheit, kann aber gestohlen, verloren oder verlegt werden. Ein System, das einen Benutzer anhand seines Fingerabdrucks oder eines Augenscans authentifizieren kann, bietet u. U. die höchste und komfortabelste Sicherheit, erfordert jedoch teure und spezialisierte Hardware (z. B. eine Intel RealSense-Kamera für die Gesichtserkennung), die möglicherweise nicht allen Benutzern zur Verfügung steht.
@@ -75,7 +75,7 @@ Die Single-Factor Authentication hat zwar einige Nachteile, überlässt dem Benu
 ## <a name="211-web-authentication-broker"></a>2.1.1 Webauthentifizierungsbroker
 
 
-Wie bereits erläutert, eine der Herausforderungen bei der Kennwortauthentifizierung für IT-Abteilung die hinzugefügte ist Aufwand die Basis von Benutzernamen und Kennwörtern, Zurücksetzen Mechanismen usw. verwalten. Eine zunehmend verbreitete Möglichkeit besteht darin Drittanbieter Identitätsanbieter, bieten Sie eine Authentifizierung mittels OAuth zu ein offener Standard für die Authentifizierung abhängig.
+Wie bereits erwähnt liegt eine der Herausforderungen in der Kennwortauthentifizierung für IT-Abteilung in der Verwaltung der Benutzernamen/Kennwörter, Zurücksetzungsmechanismen usw. Eine weitere, immer beliebtere Option der Einsatz von dritten Identitätsanbietern. Diese bieten die Authentifizierung über OAuth an, einen offenen Authentifizierungsstandard.
 
 Mit OAuth können IT-Abteilungen die Komplexität der Verwaltung einer Datenbank mit Benutzernamen und Kennwörtern, das Zurücksetzen von Kennwörtern usw. einem dritten Identitätsanbieter wie Facebook, Twitter oder Microsoft übertragen.
 
@@ -96,7 +96,7 @@ Nachfolgend finden Sie den allgemeinen Workflow beim Aufrufen der [**WebAuthenti
 
 Wenn die Kommunikation erfolgreich verläuft: Verarbeiten der vom Identitätsanbieter zurückgegebenen Antwortzeichenfolge. Falls sie nicht erfolgreich ist: Verarbeiten des Fehlers.
 
-C#-Beispielcode für dieses Verfahren finden Sie unten. Weitere Informationen und eine ausführliche exemplarische Vorgehensweise finden Sie unter [WebAuthenticationBroker](web-authentication-broker.md). Ein vollständiges Codebeispiel finden Sie im [WebAuthenticationBroker-Beispiel auf GitHub](https://go.microsoft.com/fwlink/p/?LinkId=620622).
+C#-Beispielcode für dieses Verfahren finden Sie unten. Weitere Informationen und eine ausführliche exemplarische Vorgehensweise finden Sie unter [WebAuthenticationBroker](web-authentication-broker.md). Ein vollständiges Codebeispiel finden Sie im [WebAuthenticationBroker-Beispiel auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker).
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>";
@@ -156,7 +156,7 @@ Azure Active Directory (Azure AD) ist ein cloudbasierter Identitäts- und Zugrif
 
 In Azure AD kann auch die Single-Factor Authentication implementiert werden. Unternehmen benötigen jedoch die höhere Sicherheit der Multi-Factor Authentication. Bei der Konfiguration der Multi-Factor Authentification kann ein Benutzer, der sich bei einem Azure AD-Konto authentifiziert, einen Überprüfungscode entweder als SMS an sein Mobiltelefon oder an die Azure Authenticator-App auf seinem Mobiltelefon senden lassen.
 
-Darüber hinaus kann Azure AD als OAuth-Anbieter verwendet werden und Standardbenutzer erhalten einen Authentifizierungs- und Autorisierungsmechanismus für Apps auf verschiedenen Plattformen. Weitere Informationen hierzu finden Sie unter [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) und [Multi-Factor Authentication von Azure](https://azure.microsoft.com/services/multi-factor-authentication/).
+Darüber hinaus kann Azure AD als OAuth-Anbieter verwendet werden und Standardbenutzer erhalten einen Authentifizierungs- und Autorisierungsmechanismus für Apps auf verschiedenen Plattformen. Weitere Informationen finden Sie unter [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) und [Multi-Factor Authentication on Azure](https://azure.microsoft.com/services/multi-factor-authentication/).
 
 ## <a name="24-windows-hello"></a>2.4 Windows Hello
 
@@ -192,9 +192,9 @@ Es gibt zwei allgemeine Szenarien, in denen die Kommunikation über ein Remoteco
 
 Für die Kommunikation zwischen Webdiensten gelten höhere Sicherheitsanforderungen als in Szenarien mit direkten Verbindungen, da Daten nicht mehr nur ein Teil eines sicheren, vertrauenswürdigen Netzwerks sind. Zudem besteht ein höheres Risiko, dass Angreifer versuchen, Daten abzufangen. Da verschiedene Gerätetypen auf den Dienst zugreifen werden, werden sie vermutlich als RESTful-Dienste erstellt und nicht als WCF. Die Authentifizierung und Autorisierung für den Dienst stellen Sie daher ebenfalls vor neue Herausforderungen. Wir werden zwei Anforderungen an die sichere Kommunikation mit Remotesystemen untersuchen.
 
-Die erste Anforderung ist die Vertraulichkeit von Nachrichten: Die Informationen, die zwischen dem Client und die Webdienste (z. B. die Identität des Benutzers und andere persönliche Informationen) übergeben, muss nicht von Drittanbietern, die bei der Übertragung gelesen werden. Dies wird normalerweise verhindert, indem die Verbindung, über die Nachrichten gesendet werden, und die Nachricht selbst verschlüsselt werden. Bei der Verschlüsselung mit privatem/öffentlichem Schlüssel ist der öffentliche Schlüssel für jeden verfügbar und dient zum Verschlüsseln von Nachrichten, die an einen bestimmten Empfänger gesendet werden sollen. Der private Schlüssel ist nur dem Empfänger bekannt und wird zum Entschlüsseln der Nachricht verwendet.
+Die erste Anforderung ist Nachrichtenvertraulichkeit: Die zwischen dem Client und den Webdiensten übertragenen Informationen (z. B. die Identität des Benutzers und andere persönliche Informationen) dürfen während der Übertragung nicht von Dritten gelesen werden. Dies wird normalerweise verhindert, indem die Verbindung, über die Nachrichten gesendet werden, und die Nachricht selbst verschlüsselt werden. Bei der Verschlüsselung mit privatem/öffentlichem Schlüssel ist der öffentliche Schlüssel für jeden verfügbar und dient zum Verschlüsseln von Nachrichten, die an einen bestimmten Empfänger gesendet werden sollen. Der private Schlüssel ist nur dem Empfänger bekannt und wird zum Entschlüsseln der Nachricht verwendet.
 
-Die zweite Anforderung ist die Nachrichtenintegrität: Der Client und dem Webdienst muss überprüfen, dass die Nachrichten, die sie erhalten die von der anderen Partei gesendet werden sollen sind und die Nachricht während der Übertragung nicht geändert wurden. Dazu werden Nachrichten mit digitalen Signaturen signiert und die Zertifikatauthentifizierung verwendet.
+Die zweite Anforderung ist die Nachrichtenintegrität: Der Client und der Webdienst müssen überprüfen können, ob die empfangenen Nachrichten diejenigen sind, die die Gegenseite senden wollte, und ob die Nachricht während der Übertragung nicht manipuliert wurde. Dazu werden Nachrichten mit digitalen Signaturen signiert und die Zertifikatauthentifizierung verwendet.
 
 ## <a name="32-ssl-connections"></a>3.2 SSL-Verbindungen
 
@@ -268,7 +268,7 @@ private bool ValidateCertificates(IReadOnlyList<Certificate> certs)
 
 Um autorisierten Zugriff auf Webdienste zu gewährleisten, müssen sie bei jedem API-Aufruf eine Authentifizierung anfordern. Die Steuerung der Leistung und Skalierung ist eine weitere Möglichkeit, wenn Webdienste über das Web verfügbar gemacht werden. Mit Azure API Management können Sie APIs über das Web verfügbar machen, wenn Sie Funktionen auf drei Ebenen bereitstellen.
 
-**Herausgeber/Administratoren** der API können die API einfach über das Herausgeberportal von Azure API Management konfigurieren. Hier können API-Sätze erstellt werden, und der Zugriff darauf kann verwaltet werden. So können Sie steuern, wer Zugriff auf welche APIs hat.
+**Herausgeber/Administratoren** des APIs können das API einfach über das Herausgeberportal von Azure API Management konfigurieren. Hier können API-Sätze erstellt werden, und der Zugriff darauf kann verwaltet werden. So können Sie steuern, wer Zugriff auf welche APIs hat.
 
 **Entwickler**, die auf diese APIs zugreifen möchten, können Anfragen über das Entwicklerportal stellen. Dieses kann sofort Zugriff gewähren oder eine Genehmigung durch den Herausgeber/Administrator vorschreiben. Entwickler können auch die API-Dokumentation und Beispielcode im Entwicklerportal anzeigen, um schnell die vom Webdienst angebotenen APIs anzuwenden.
 
@@ -286,7 +286,7 @@ Daten die von einem Gerät empfangen werden, bezeichnen wir als „At-Rest-Daten
 
 Bisher war in Windows keine App-Definition vorgesehen. Meist wurde sie als ausführbare Datei (.exe) bezeichnet und umfasste niemals Faktoren wie Installation, Zustandsspeicherung, Ausführungslänge, Versionsverwaltung, Betriebssystemintegration oder App-zu-App-Kommunikation. Das UWP-Modell verfügt über eine App-Modelldefinition, in der Installation, Laufzeitumgebung, Ressourcenverwaltung, Updates, Datenmodell und Deinstallation berücksichtigt werden.
 
-Windows 10-apps, die in einem Container, was bedeutet, dass sie standardmäßig über Berechtigungen eingeschränkte (zusätzliche Berechtigungen können angefordert und vom Benutzer) ausgeführt werden. Möchte eine App beispielsweise auf Dateien auf dem System zugreifen, muss eine Dateiauswahl aus dem Namespace [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) verwendet werden, damit der Benutzer eine Datei auswählen kann. (Es ist kein direkter Zugriff auf Dateien möglich.) Ein weiteres Beispiel: Wenn eine App auf Positionsdaten des Benutzers zugreifen möchte, müssen die Standortdienste des Geräts aktiviert werden. Der Benutzer wird beim Download informiert, dass diese App Zugriff auf die Position des Benutzers benötigt. Wenn die App erstmals auf den Standort des Benutzers zugreifen möchte, wird abermals die Zustimmung des Benutzers zum Zugriff auf diese Daten angefordert.
+Windows 10 apps run in a container, which means that they have limited privileges by default (additional privileges can be requested and granted by the user). Möchte eine App beispielsweise auf Dateien auf dem System zugreifen, muss eine Dateiauswahl aus dem Namespace [**Windows.Storage.Pickers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) verwendet werden, damit der Benutzer eine Datei auswählen kann. (Es ist kein direkter Zugriff auf Dateien möglich.) Ein weiteres Beispiel: Wenn eine App auf Positionsdaten des Benutzers zugreifen möchte, müssen die Standortdienste des Geräts aktiviert werden. Der Benutzer wird beim Download informiert, dass diese App Zugriff auf die Position des Benutzers benötigt. Wenn die App erstmals auf den Standort des Benutzers zugreifen möchte, wird abermals die Zustimmung des Benutzers zum Zugriff auf diese Daten angefordert.
 
 Beachten Sie, dass dieses App-Modell als „Gefängnis“ für Apps fungiert, diese also über keine Reichweite verfügen. Jedoch ist es keine „Burg“, die nicht von außen erreicht werden kann (Anwendungen mit Administratorrechten können die Apps noch erreichen). Mit Device Guard in Windows 10 können Unternehmen/IT festlegen, welche (Win32-) Apps ausgeführt werden dürfen und diesen Zugriff weiter einschränken.
 
@@ -294,7 +294,7 @@ Das App-Modell verwaltet auch den App-Lebenszyklus. Es beschränkt die Hintergru
 
 Wenn Speicherressourcen auf dem Gerät knapp werden, gibt Windows Speicher durch die Beendigung von Apps frei. Dieses Lebenszyklusmodell zwingt Apps, Daten beizubehalten, wenn sie angehalten werden, da zwischen dem Anhalten und Beenden keine Karenzzeit verfügbar ist.
 
-Weitere Informationen finden Sie unter [Universal ist: Die Kenntnis des Lebenszyklus einer Anwendung für Windows 10](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
+Weitere Informationen finden Sie unter [It's Universal: Understanding the Lifecycle of a Windows 10 Application](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx) (in englischer Sprache).
 
 ## <a name="42-stored-credential-protection"></a>4.2 Schutz gespeicherter Anmeldeinformationen
 
@@ -465,9 +465,9 @@ Wenn die Daten auf dem Gerät empfangen werden, bietet das Windows-App-Modell me
 -   [Windows Hello](microsoft-passport.md)
 -   [Schließfach für Anmeldeinformationen](credential-locker.md)
 -   [Webauthentifizierungsbroker](web-authentication-broker.md)
--   [Fingerabdruckbiometrie](fingerprint-biometrics.md)
+-   [Fingerprint biometrics](fingerprint-biometrics.md)
 -   [Smartcards](smart-cards.md)
--   [Gemeinsam genutzter Zertifikate](share-certificates.md)
+-   [Shared certificates](share-certificates.md)
 -   [Kryptografie](cryptography.md)
 -   [Zertifikate](certificates.md)
 -   [Kryptografische Schlüssel](cryptographic-keys.md)
@@ -479,12 +479,12 @@ Wenn die Daten auf dem Gerät empfangen werden, bietet das Windows-App-Modell me
 ### <a name="62-code-samples"></a>6.2 Codebeispiele
 
 -   [Schließfach für Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PasswordVault)
--   [Auswahl der Anmeldeinformationen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
--   [Gerätesperre mit Azure-Anmeldung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
--   [Unternehmensdatenschutz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+-   [Credential picker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CredentialPicker)
+-   [Device lockdown with Azure login](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceLockdownAzureLogin)
+-   [Enterprise data protection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
 -   [KeyCredentialManager](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/KeyCredentialManager)
 -   [Smartcards](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SmartCard)
--   [Web-kontoverwaltung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
+-   [Web account management](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 -   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker)
 
 ### <a name="63-api-reference"></a>6.3 API-Referenz

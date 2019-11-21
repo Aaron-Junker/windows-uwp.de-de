@@ -1,5 +1,5 @@
 ---
-Description: Dieses Thema beschreibt die neuen Windows-Benutzeroberfläche zum auswählen und Bearbeiten von Text, Bildern und Steuerelementen sowie Richtlinien zur benutzerfreundlichkeit, die berücksichtigt werden sollten, wenn diese neuen Auswahl und Manipulation Mechanismen in Ihre UWP-app verwenden.
+Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your UWP app.
 title: Auswählen von Text und Bildern
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,19 +8,19 @@ keywords: Tastatur, Text, Eingabe, Benutzerinteraktionen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dab8d26436d312601b749bed7e97048ed5805bb
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 56f09f2c903354159c63fa7226007cd65e57e69e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317283"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257918"
 ---
 # <a name="selecting-text-and-images"></a>Auswählen von Text und Bildern
 
 
 In diesem Artikel wird das Auswählen und Bearbeiten von Text, Bildern und Steuerelementen beschrieben. Außerdem enthält er Richtlinien für die Benutzeroberfläche, die Sie bei der Verwendung dieser Mechanismen in Ihren Apps berücksichtigen sollten.
 
-> **Wichtige APIs:** [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **Wichtige APIs**: [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
  
 
 
@@ -45,24 +45,24 @@ In diesem Artikel wird das Auswählen und Bearbeiten von Text, Bildern und Steue
 
 Für die Auswahl und Manipulation von Text ergeben sich durch Fingereingabeinteraktionen besonders leicht Probleme für die Benutzeroberfläche. Eingaben über Maus, Zeichen-/Tablettstift und Tastatur sind sehr präzise: Ein Mausklick oder ein Kontakt mit dem Zeichen- bzw. Tablettstift ist in der Regel einem einzigen Pixel zugeordnet, und eine Taste wird gedrückt oder nicht gedrückt. Die Fingereingabe ist weniger präzise. Es ist schwierig, die gesamte Oberfläche einer Fingerspitze einer bestimmten x-y-Position auf dem Bildschirm zuzuordnen, um ein Caretzeichen exakt im Text zu platzieren.
 
-**Überlegungen und Empfehlungen**
+**Considerations and recommendations**
 
-Verwenden Sie die integrierten Steuerelemente, die über die Sprachen-Frameworks in Windows verfügbar gemacht werden, um apps zu erstellen, die die vollständige Plattform Interaktion benutzerfreundlichkeit, einschließlich der Auswahl und-Bearbeitung Verhalten bereitstellen. Die Interaktionsfunktionen der integrierten Steuerelemente sollten daher für die meisten UWP-Apps ausreichen.
+Use the built-in controls exposed through the language frameworks in Windows to build apps that provide the full platform user interaction experience, including selection and manipulation behaviors. Die Interaktionsfunktionen der integrierten Steuerelemente sollten daher für die meisten UWP-Apps ausreichen.
 
 Bei Verwendung der standardmäßigen UWP-Textsteuerelemente können die in diesem Thema beschriebenen Auswahlverhalten und visuellen Elemente nicht angepasst werden.
 
 **Textauswahl**
 
-Wenn Ihre app eine benutzerdefinierte Benutzeroberfläche, die Textauswahl unterstützt erfordert, empfehlen wir, dass Sie die hier beschriebenen Windows-Auswahlverhalten befolgen.
+If your app requires a custom UI that supports text selection, we recommend that you follow the Windows selection behaviors described here.
 
-**Bearbeitbare und nicht-bearbeitbaren Inhalt**
+**Editable and non-editable content**
 
 
-Bei der Fingereingabe werden Auswahlinteraktionen hauptsächlich durch Bewegungen ausgeführt, z. B. Tippen, um einen Einfügecursor zu setzen oder ein Wort auszuwählen, und Ziehen, um eine Auswahl zu ändern. Wie mit anderen Windows touch Interaktionen, wird zeitgesteuerte Interaktionen sind auf das Drücken und halten die Eingabeaktion, die nur zu Informationszwecken Benutzeroberfläche angezeigt. Weitere Informationen finden Sie unter [Richtlinien für visuelles Feedback](guidelines-for-visualfeedback.md).
+Bei der Fingereingabe werden Auswahlinteraktionen hauptsächlich durch Bewegungen ausgeführt, z. B. Tippen, um einen Einfügecursor zu setzen oder ein Wort auszuwählen, und Ziehen, um eine Auswahl zu ändern. As with other Windows touch interactions, timed interactions are limited to the press and hold gesture to display informational UI. Weitere Informationen finden Sie unter [Richtlinien für visuelles Feedback](guidelines-for-visualfeedback.md).
 
-Windows erkennt zwei mögliche Zustände für die Auswahl Interaktionen, bearbeitbare und nicht bearbeitbare und passt die Benutzeroberfläche zur Auswahl, Feedback und Funktionen entsprechend.
+Windows recognizes two possible states for selection interactions, editable and non-editable, and adjusts selection UI, feedback, and functionality accordingly.
 
-**Bearbeitbarer Inhalt**
+**Editable content**
 
 Durch Tippen in der linken Hälfte eines Worts wird der Cursor links neben dem Wort platziert, durch Tippen in der rechten Hälfte wird er rechts neben dem Wort platziert.
 
@@ -78,11 +78,11 @@ Im folgenden Bild wird veranschaulicht, wie Sie das Kontextmenü aufrufen, indem
 
 ![Tippen (oder drücken und halten) Sie in die Auswahl oder auf ein Ziehelement, um das Kontextmenü aufzurufen.](images/textselection-show-context.png)
 
-**Beachten Sie**  diese Interaktionen, unterscheiden sich geringfügig bei ein falsch geschriebenes Wort. Wenn Sie auf ein Wort tippen, das als falsch geschrieben gekennzeichnet ist, wird das gesamte Wort hervorgehoben. Außerdem wird das Kontextmenü mit der vorgeschlagenen Schreibweise aufgerufen.
+**Note**  These interactions vary somewhat in the case of a misspelled word. Wenn Sie auf ein Wort tippen, das als falsch geschrieben gekennzeichnet ist, wird das gesamte Wort hervorgehoben. Außerdem wird das Kontextmenü mit der vorgeschlagenen Schreibweise aufgerufen.
 
  
 
-**Nicht-bearbeitbaren Inhalt**
+**Non-editable content**
 
 Im folgenden Bild wird veranschaulicht, wie Sie ein Wort auswählen, indem Sie in das Wort tippen (die anfängliche Auswahl enthält keine Leerzeichen).
 
@@ -90,7 +90,7 @@ Im folgenden Bild wird veranschaulicht, wie Sie ein Wort auswählen, indem Sie i
 
 Gehen Sie für bearbeitbaren Test genauso vor, um die Auswahl anzupassen und das Kontextmenü anzuzeigen.
 
-**Bearbeitung des Objekts**
+**Object manipulation**
 
 Verwenden Sie beim Implementieren einer benutzerdefinierten Objektmanipulation in einer UWP-App nach Möglichkeit die gleichen (oder ähnliche) Ziehelementressourcen wie für die Textauswahl. Auf diese Weise kann ein einheitliches Interaktionsverhalten für die gesamte Plattform bereitgestellt werden.
 
@@ -98,11 +98,11 @@ Zielelemente können wie in den folgenden Abbildungen dargestellt z. B. auch in
 
 ![Media-Player mit Statusziehelement](images/gripper-mediaplayer.png)
 
-*Media-Player mit anpassbaren Statusanzeige angezeigt.*
+*Media player with adjustable progress bar.*
 
 ![Bild mit Ziehelementen zum Zuschneiden](images/gripper-imagemanip.png)
 
-*Bild-Editor mit ziehelemente zuschneiden.*
+*Image editor with cropping grippers.*
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -112,20 +112,20 @@ Zielelemente können wie in den folgenden Abbildungen dargestellt z. B. auch in
 * [Benutzerdefinierte Benutzerinteraktionen](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
 **Beispiele**
-* [Grundlegende Eingabebeispiel](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Eingabebeispiel mit geringer Latenz](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Beispiel für den Benutzerinteraktionsmodus](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+* [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **Archivbeispiele**
-* [Eingabe: XAML-benutzerbeispiel Eingabeereignisse](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Eingabe: Funktionen-gerätebeispiel](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Eingabe: Beispiel zu Leistungstests in Touch Treffer](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML Bildlauf, schwenken und Zoomen Beispiel](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Eingabe: Vereinfachte Freihand-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Eingabe: Beispiel für Windows 8-Gesten](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Eingabe: Manipulationen und Beispiel für Bewegungen (C++)](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX-Touch-Eingabe-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [Input: XAML user input events sample](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Input: Touch hit testing sample](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [XAML scrolling, panning, and zooming sample](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Input: Simplified ink sample](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Input: Windows 8 gestures sample](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Input: Manipulations and gestures (C++) sample](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [DirectX touch input sample](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  
