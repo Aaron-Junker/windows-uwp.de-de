@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb19e406df98a24a6d65fc774a29e44ef267272
-ms.sourcegitcommit: c079388634cbd328d0d43e7a6185e09bb4bca65b
+ms.openlocfilehash: b0ec2c5a05e7c4e9309311fa22ad863d06597a53
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71939590"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254994"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Hier finden Sie Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -51,7 +51,7 @@ Nur wenn die Laufzeitklasse so konzipiert ist, dass sie von außerhalb ihrer imp
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>Warum gibt der Linker den Fehler „LNK2019: Nicht aufgelöstes externes Symbol“ aus?
 Wenn es sich bei dem nicht aufgelösten Symbol um eine API aus den Windows-Namespaceheadern für die C++/WinRT-Projektion (im **WinRT**-Namespace) handelt, wird die API in einem eingebundenen Header forward-deklariert, aber ihre Definition befindet sich in einem noch nicht eingebundenen Header. Binden Sie den Header ein, der für den Namespace der API benannt ist, und führen Sie eine erneute Erstellung durch. Weitere Informationen finden Sie unter [C++/WinRT-Projektionsheader](consume-apis.md#cwinrt-projection-headers).
 
-Wenn es sich bei dem nicht aufgelösten Symbol um eine freie Windows-Runtime-Funktion (wie [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)) handelt, müssen Sie die Überbibliothek [WindowsApp.lib](/uwp/win32-and-com/win32-apis) in Ihrem Projekt explizit verknüpfen. Die C++/WinRT-Projektion hängt von einigen dieser freien Funktionen (Nicht-Memberfunktionen) und Einstiegspunkten ab. Wenn Sie eine der Projektvorlagen von [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) für Ihre Anwendung verwenden, wird `WindowsApp.lib` automatisch für Sie verknüpft. Andernfalls können Sie die Projektverknüpfungseinstellungen verwenden, um sie einzuschließen, oder dies im Quellcode festlegen.
+Wenn es sich bei dem nicht aufgelösten Symbol um eine freie Windows-Runtime-Funktion (wie [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)) handelt, müssen Sie die Überbibliothek [WindowsApp.lib](/uwp/win32-and-com/win32-apis) in Ihrem Projekt explizit verknüpfen. Die C++/WinRT-Projektion hängt von einigen dieser freien Funktionen (Nicht-Memberfunktionen) und Einstiegspunkten ab. Wenn Sie eine der Projektvorlagen von [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) für Ihre Anwendung verwenden, wird `WindowsApp.lib` automatisch für Sie verknüpft. Andernfalls können Sie die Projektverknüpfungseinstellungen verwenden, um sie einzuschließen, oder dies im Quellcode festlegen.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")

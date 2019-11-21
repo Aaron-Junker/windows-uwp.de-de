@@ -5,18 +5,18 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Sept
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0876b2d9b65143cde2387a42e221460cc617cf0b
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 85e41a26343c9e4c6eb239cbfdd74dc946d5b657
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63800497"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258805"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im September 2018
 
 Die Windows-Entwicklerdokumentation wird ständig mit Informationen zu neuen Features aktualisiert, die Entwickler für die Windows-Plattform nutzen können. Die folgenden Featureübersichten, Entwicklerleitfäden und Videos wurden im Monat September bereitgestellt.
 
-Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/windows/downloads#_blank) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 ## <a name="features"></a>Features
 
@@ -32,7 +32,7 @@ Das [GitHub-Repository „Windows-Machine-Learning“](https://github.com/Micros
 
 ### <a name="windows-ui-library"></a>Windows-UI-Bibliothek
 
-Die [Windows-UI-Bibliothek](https://aka.ms/winui-docs) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass deine App auch dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten.
+Die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) umfasst eine Reihe von NuGet-Paketen, mit denen Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Diese Pakete sind auch mit früheren Versionen von Windows 10 kompatibel, sodass deine App auch dann funktioniert, wenn die Benutzer nicht mit der neuesten Betriebssystemversion arbeiten.
 
 Weitere Informationen zur Windows-UI-Bibliothek findest du in [dieser Liste mit API-Namespaces, die im NuGet-Paket enthalten sind](https://docs.microsoft.com/uwp/api/overview/winui/).
 
@@ -52,7 +52,7 @@ Wir haben [unsere Anleitung für Beitragende](https://github.com/MicrosoftDocs/w
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-In der „One Dev Question“-Videoreihe behandeln langjährige Microsoft-Entwickler eine Reihe von Fragen zur Windows-Entwicklung, -Teamkultur und -Geschichte. Hier sind die neuesten Antworten auf Fragen angegeben.
+In der Videoreihe „One Dev Question“ beantworten langjährige Microsoft-Entwickler eine Reihe von Fragen zur Entwicklung, Teamkultur und Geschichte von Windows. Hier sind die neuesten Antworten auf Fragen angegeben.
 
 Aaron Gustafson:
 

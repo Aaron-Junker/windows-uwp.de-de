@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: db2e444b9f13ba41127b362483774c92d45f1f77
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c4b1a0dab6bf1eb3301ba9fb97abd95fd896c53e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66372755"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259166"
 ---
 # <a name="which-networking-technology"></a>Welche Netzwerktechnologie?
 
@@ -91,7 +91,7 @@ Mit der [**Windows.Networking.Connectivity**](https://docs.microsoft.com/uwp/api
 
 ### <a name="dns-service-discovery"></a>DNS Service Discovery (DNS-SD)
 
-Mit der [**Windows.Networking.ServiceDiscovery.Dnssd**](https://docs.microsoft.com/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)-API können Sie einen Netzwerkdienst für andere Geräte im Netzwerk mithilfe des DNS-SD-Protokolls ankündigen, das in IETF [RFC 2782](https://go.microsoft.com/fwlink/?LinkId=524158) beschrieben wurde.
+Mit der [**Windows.Networking.ServiceDiscovery.Dnssd**](https://docs.microsoft.com/uwp/api/Windows.Networking.ServiceDiscovery.Dnssd)-API können Sie einen Netzwerkdienst für andere Geräte im Netzwerk mithilfe des DNS-SD-Protokolls ankündigen, das in IETF [RFC 2782](https://www.rfc-archive.org/getrfc.php?rfc=2782) beschrieben wurde.
 
 ### <a name="communicating-over-bluetooth"></a>Kommunikation über Bluetooth
 

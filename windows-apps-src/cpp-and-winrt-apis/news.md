@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, neuerungen, neues
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 24abdb26cf884367d9a9521d30b09b443d2e4e00
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72998615"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255046"
 ---
 # <a name="whats-new-in-cwinrt"></a>Neuerungen in C++/WinRT
 
@@ -19,7 +19,7 @@ Bei Veröffentlichung zukünftiger Versionen von C++/WinRT werden in diesem Them
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>Neuerungen und Änderungen in C++/WinRT 2.0
 
-Weitere Informationen zur [Visual Studio-Erweiterung C++/WinRT (VSIX)](https://aka.ms/cppwinrt/vsix), zum [NuGet-Paket Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) und dem `cppwinrt.exe`-Tool (auch dazu, wo Sie diese erhalten und wie Sie diese installieren können) finden Sie in der [Einführung in C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Weitere Informationen zur [Visual Studio-Erweiterung C++/WinRT (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), zum [NuGet-Paket Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) und dem `cppwinrt.exe`-Tool (auch dazu, wo Sie diese erhalten und wie Sie diese installieren können) finden Sie in der [Einführung in C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### <a name="changes-to-the-cwinrt-visual-studio-extension-vsix-for-version-20"></a>Änderungen in der C++/WinRT-Visual Studio-Erweiterung (VSIX) in Version 2.0
 
@@ -302,7 +302,7 @@ Sonstige Änderungen
 - Gehärtete intelligente Zeiger. In der Vergangenheit konnten event_revoker-Objekte keinen Widerruf durchführen, wenn ihnen per Verschieben ein neuer Wert zugewiesen wurde. Dadurch wurde ein Problem erkannt, bei dem Klassen für intelligente Zeiger die Selbstzuweisung nicht zuverlässig verarbeitet haben. Dieses Problem lag in der [**Vorlage für eine winrt::com_ptr-Struktur**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** und die event_revoker-Objekte wurden korrigiert, sodass sie jetzt Verschiebesemantik korrekt behandeln und bei der Zuweisung einen Widerruf durchführen.
 
 > [!IMPORTANT]
-> An der [Visual Studio-Erweiterung C++/WinRT (VXIX)](https://aka.ms/cppwinrt/vsix) wurden sowohl in Version 1.0.181002.2 als auch in Version 1.0.190128.4 wichtige Änderungen vorgenommen. Weitere Informationen zu diesen Änderungen (und wie diese sich auf Ihre vorhandenen Projekte auswirken) finden Sie in der Einführung in C++/WinRT in den Abschnitten zur [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) und zu [früheren Versionen der VSIX-Erweiterung](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
+> An der [Visual Studio-Erweiterung C++/WinRT (VXIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) wurden sowohl in Version 1.0.181002.2 als auch in Version 1.0.190128.4 wichtige Änderungen vorgenommen. Weitere Informationen zu diesen Änderungen (und wie diese sich auf Ihre vorhandenen Projekte auswirken) finden Sie in der Einführung in C++/WinRT in den Abschnitten zur [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) und zu [früheren Versionen der VSIX-Erweiterung](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
 
 ### <a name="isolation-from-windows-sdk-header-files"></a>Isolation von Windows SDK-Headerdateien
 

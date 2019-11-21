@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 65436d7efd1de6e9c3649ad27b29b925bc632d95
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 13e6f4ac59a99463cd891e936f51449baf4ea7c2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820658"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259539"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Erstellen der App „Hello World“ in C++/CX
 
@@ -25,7 +25,7 @@ Mit Microsoft Visual Studio kannst du eine App in C++/CX entwickeln, die unter W
 
 ## <a name="before-you-start"></a>Bevor Sie beginnen
 
--   Für dieses Tutorial benötigst du Visual Studio Community oder eine der anderen Community-Versionen von Visual Studio sowie einen Computer mit Windows 10. Informationen zum Herunterladen finden Sie unter [Herunterladen der Tools](https://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   Für dieses Tutorial benötigst du Visual Studio Community oder eine der anderen Community-Versionen von Visual Studio sowie einen Computer mit Windows 10. Informationen zum Herunterladen finden Sie unter [Herunterladen der Tools](https://visualstudio.microsoft.com/downloads/).
 -   Es wird davon ausgegangen, dass du über Grundkenntnisse in C++/CX und XAML verfügst und mit den Konzepten in der [XAML-Übersicht](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview) vertraut bist.
 -   Wir gehen davon aus, dass Sie das Standardfensterlayout in Visual Studio verwenden. Um das Layout auf das Standardlayout zurückzusetzen, klicken Sie in der Menüleiste auf **Fenster** > **Fensterlayout zurücksetzen**.
 
@@ -231,7 +231,7 @@ Viel zu bieten hat sie zwar noch nicht, aber trotzdem: Herzlichen Glückwunsch! 
 
 Kehren Sie zu Visual Studio zurück, und drücken Sie Umschalt+F5, um den Debugmodus zu beenden und die App zu schließen.
 
-Weitere Informationen finden Sie unter [Ausführen einer Store-App über Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=619619).
+Weitere Informationen finden Sie unter [Ausführen einer Store-App über Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/Hh441477(v=VS.140).aspx).
 
 In der App können Sie Text in das [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element eingeben, das Klicken auf [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) hat jedoch keinerlei Auswirkung. In späteren Schritten erstellen wir daher einen Ereignishandler für das [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis der Schaltfläche, um eine personalisierte Begrüßung einzublenden.
 
@@ -397,6 +397,6 @@ Herzlichen Glückwunsch! Sie haben das erste Lernprogramm abgeschlossen. Darin h
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Wenn du ein Projekt für universelle Windows-Apps für Windows 8.1 und/oder Windows Phone 8.1 besitzt, kannst du es zu Windows 10 portieren. Es gibt keinen automatischen Prozess dafür, du kannst das Projekt jedoch manuell portieren. Beginnen Sie mit einem neuen universellen Windows-Projekt, um die aktuelle Projektsystemstruktur und Manifestdateien abzurufen. Kopieren Sie dann die Codedateien in die Verzeichnisstruktur des Projekts, fügen Sie Ihrem Projekt Elemente hinzu, und schreiben Sie Ihren XAML-Code mithilfe von [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) gemäß den Anweisungen in diesem Thema um. Weitere Informationen finden Sie unter [Portieren eines Windows-Runtime 8-Projekts zu einem UWP-Projekt (Universelle Windows-Plattform)](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) sowie unter [Portieren zur Universellen Windows-Plattform (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525).
+Wenn du ein Projekt für universelle Windows-Apps für Windows 8.1 und/oder Windows Phone 8.1 besitzt, kannst du es zu Windows 10 portieren. Es gibt keinen automatischen Prozess dafür, du kannst das Projekt jedoch manuell portieren. Beginnen Sie mit einem neuen universellen Windows-Projekt, um die aktuelle Projektsystemstruktur und Manifestdateien abzurufen. Kopieren Sie dann die Codedateien in die Verzeichnisstruktur des Projekts, fügen Sie Ihrem Projekt Elemente hinzu, und schreiben Sie Ihren XAML-Code mithilfe von [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) gemäß den Anweisungen in diesem Thema um. Weitere Informationen finden Sie unter [Portieren eines Windows-Runtime 8-Projekts zu einem UWP-Projekt (Universelle Windows-Plattform)](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project) sowie unter [Portieren zur Universellen Windows-Plattform (C++)](https://msdn.microsoft.com/library/mt186164.aspx).
 
-Informationen dazu, wie du vorhandenen C++-Code in einer UWP-App verwenden kannst, um beispielsweise eine neue UWP-Benutzeroberfläche für eine vorhandene Anwendung zu erstellen, findest du unter [Vorgehensweise: Verwenden von vorhandenem C++-Code in einer UWP-App (Universelle Windows-Plattform)](https://go.microsoft.com/fwlink/p/?LinkId=619623).
+Informationen dazu, wie du vorhandenen C++-Code in einer UWP-App verwenden kannst, um beispielsweise eine neue UWP-Benutzeroberfläche für eine vorhandene Anwendung zu erstellen, findest du unter [Vorgehensweise: Verwenden von vorhandenem C++-Code in einer UWP-App (Universelle Windows-Plattform)](https://msdn.microsoft.com/library/mt186162.aspx).

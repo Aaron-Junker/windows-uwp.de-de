@@ -5,18 +5,18 @@ keywords: Neuigkeiten, Neues, Update, Features, Entwicklerleitfäden, Windows 1
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ac5f7e058a616117e73defde2c48bf4c66f68d2e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63800605"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259743"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Neues in der Windows-Entwicklerdokumentation im Januar 2019
 
 Die Entwicklerdokumentation für die Windows-Plattform wird kontinuierlich mit Informationen zu neuen Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden und Videos wurden im Januar veröffentlicht.
 
-Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/windows/downloads#_blank) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 ## <a name="features"></a>Features
 
@@ -70,7 +70,7 @@ Unter [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära
 
 ### <a name="progressive-web-apps"></a>Progressive Web Apps
 
-Progressive Web-Apps sind Websites, die in unterschiedlichen Browsern und auf einer Vielzahl von Windows 10-Geräten wie native Apps funktionieren. [Sieh dir das Video an](https://youtu.be/ugAewC3308Y), um mehr zu erfahren, und [lies anschließend die Dokumentation](https://aka.ms/Windows-PWA), um loszulegen.
+Progressive Web-Apps sind Websites, die in unterschiedlichen Browsern und auf einer Vielzahl von Windows 10-Geräten wie native Apps funktionieren. [Sieh dir das Video an](https://youtu.be/ugAewC3308Y), um mehr zu erfahren, und [lies anschließend die Dokumentation](https://developer.microsoft.com/windows/pwa), um loszulegen.
 
 ### <a name="vs-code-series"></a>VS Code-Reihe
 
@@ -78,7 +78,7 @@ In unserer [neuen Videoreihe zu Visual Studio Code](https://www.youtube.com/play
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-In der Videoreihe „One Dev Question“ beantworten langjährige Microsoft-Entwickler eine Reihe von Fragen zur Entwicklung, Teamkultur und Geschichte von Windows. Folgende Fragen wurden kürzlich beantwortet:
+In der Videoreihe „One Dev Question“ beantworten langjährige Microsoft-Entwickler eine Reihe von Fragen zur Entwicklung, Teamkultur und Geschichte von Windows. Hier sind die neuesten Antworten auf Fragen angegeben.
 
 Raymond Chen:
 

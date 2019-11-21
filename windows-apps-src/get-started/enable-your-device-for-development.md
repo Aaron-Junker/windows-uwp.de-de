@@ -6,12 +6,12 @@ keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4c1f90c0fa8304f95b1dc958fe5a75e74301dd
-ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
+ms.openlocfilehash: a2d1719379302dd8e996c37e05d7ddaf35a0cf18
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205930"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258417"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -74,7 +74,7 @@ Spezifische Informationen für Gerätefamilien
 Das **Querladen von Apps** ist eine sicherere Option als der Entwicklermodus, da Sie Apps ohne vertrauenswürdiges Zertifikat nicht auf dem Gerät installieren können.
 
 > [!NOTE]
-> Achten Sie beim Querladen von Apps darauf, dass diese von einer vertrauenswürdigen Quelle stammen. Wenn du eine quergeladene, nicht vom Microsoft Store zertifizierte App installierst, bestätigst du, dass du über alle erforderlichen Rechte zum Querladen dieser App verfügst und die alleinige Verantwortung für jegliche Schäden trägst, die durch das Installieren und Ausführen dieser App entstehen können. Weitere Informationen findest du in den [Datenschutzbestimmungen](https://go.microsoft.com/fwlink/?LinkId=521839) im Abschnitt „Windows“ &gt; „Microsoft Store“.
+> Achten Sie beim Querladen von Apps darauf, dass diese von einer vertrauenswürdigen Quelle stammen. Wenn du eine quergeladene, nicht vom Microsoft Store zertifizierte App installierst, bestätigst du, dass du über alle erforderlichen Rechte zum Querladen dieser App verfügst und die alleinige Verantwortung für jegliche Schäden trägst, die durch das Installieren und Ausführen dieser App entstehen können. Weitere Informationen findest du in den [Datenschutzbestimmungen](https://privacy.microsoft.com/privacystatement) im Abschnitt „Windows“ &gt; „Microsoft Store“.
 
 
 ### <a name="developer-mode"></a>Entwicklermodus

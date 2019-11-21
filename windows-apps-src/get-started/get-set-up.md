@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 30ffec0f2a5e771e649eda6240d9e7ef90f50890
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 7c95d915c8906e2052243fee509e260fc8864454
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318796"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258368"
 ---
 # <a name="get-set-up"></a>Einrichten
 
@@ -28,7 +28,7 @@ Microsoft Visual Studio 2019 unterstützt Sie beim Entwerfen, Codieren, Testen 
 
 Wenn Sie Visual Studio 2019 noch nicht verwenden, können Sie Microsoft Visual Studio Community 2019 kostenlos installieren. Dieser Download umfasst auch Gerätesimulatoren zum Testen Ihrer Apps:
 
--   [Windows 10-Entwicklungstools herunterladen](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Windows 10-Entwicklungstools herunterladen](https://developer.microsoft.com/windows/downloads)
 
 Verwenden Sie bei der Installation von Visual Studio die Option „Entwicklungstools für universelle Windows-Apps“, wie hier gezeigt:
 
@@ -67,7 +67,7 @@ Wenn Sie Ihr Gerät anpassen und andere Funktionen oder Pakete installieren möc
 
 ## <a name="want-more-tools-and-downloads"></a>Benötigen Sie mehr Tools und Downloads?
 
-Die vollständige Liste der Tools und Downloads finden Sie unter [Downloads](https://go.microsoft.com/fwlink/p/?linkid=285935).
+Die vollständige Liste der Tools und Downloads finden Sie unter [Downloads](https://developer.microsoft.com/windows/downloads).
 
 ## <a name="see-also"></a>Weitere Informationen
 

@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 97ad2485abab0bd4733699bc4ffcf29e17a22844
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 318c58b393a33916df7bab51a4ef2690494d14fb
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369438"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259606"
 ---
 # <a name="track-recently-used-files-and-folders"></a>Nachverfolgen kürzlich verwendeter Dateien und Ordner
 
@@ -25,7 +25,7 @@ Sie können Dateien nachverfolgen, auf die häufig zugegriffen wird, indem Sie s
 Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList)-Klasse repräsentiert, die Sie aus der statischen [**StorageApplicationPermissions.MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)-Eigenschaft abrufen können. MRU-Elemente werden als [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem)-Objekte gespeichert. Das bedeutet, dass sowohl [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekte (die Dateien darstellen) als auch [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)-Objekte (die Ordner darstellen) der MRU-Liste hinzugefügt werden können.
 
 > [!NOTE]
-> Vollständige Beispiele finden Sie im [Beispiel zur Dateiauswahl](https://go.microsoft.com/fwlink/p/?linkid=619994) und im [Beispiel zum Dateizugriff](https://go.microsoft.com/fwlink/p/?linkid=619995).
+> Vollständige Beispiele finden Sie im [Beispiel zur Dateiauswahl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) und im [Beispiel zum Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: ab582d0528d6af8c9a8ae97e43fda2714f8e2fe6
-ms.sourcegitcommit: 2442a5f5b0c4275204063162f0f379fa90ff13b4
+ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72292780"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255134"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
@@ -121,7 +121,7 @@ Sie brauchen auch keine HRESULT-Rückgabecodes zu verarbeiten. Für einen natür
 
 In diesem Abschnitt erfahren Sie, wie Sie einem eventuell vorhandenen Windows Desktop-Anwendungsprojekt C++/WinRT-Unterstützung hinzufügen können. Wenn Sie nicht über ein Windows Desktop-Anwendungsprojekt verfügen, können Sie diese Schritte nachvollziehen, indem Sie im ersten Schritt eins erstellen. Öffnen Sie beispielsweise Visual Studio, und erstellen Sie ein **Visual C++** \> **Windows Desktop** \> **Windows-Desktopanwendung**-Projekt.
 
-Optional können Sie die Erweiterung [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) und das NuGet-Paket installieren. Details dazu finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+Optional können Sie die Erweiterung [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) und das NuGet-Paket installieren. Details dazu finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### <a name="set-project-properties"></a>Festlegen von Projekteigenschaften
 

@@ -5,18 +5,18 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 1
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3c92de1901c9cc67a30f495e34289bac5d7d2b94
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320389"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258797"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Juli 2018
 
 Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informationen über neue Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden, Videos und Beispiele werden seit Juli 2018 bereitgestellt.
 
-Nach der [Installation der Tools und des SDKs](https://go.microsoft.com/fwlink/?LinkId=821431) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
+Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/windows/downloads#_blank) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
 ## <a name="features"></a>Features
 
@@ -34,7 +34,7 @@ Lesen Sie unsere PWA-Leitfäden, um folgende Aufgaben zu erledigen:
 
 ### <a name="notepad"></a>Editor
 
-Verfügbar in Windows 10 Insider Preview Build 17713 [wurde Editor mit vielen neuen Features aktualisiert](https://aka.ms/ant-man). Zoomen, rollierendes Suchen/Ersetzen und Unterstützung für Zeilenenden im Unix/Linux- (LF) und Macintosh-Format (CR) sind jetzt für [Windows-Insider](https://insider.windows.com/) verfügbar. 
+Verfügbar in Windows 10 Insider Preview Build 17713 [wurde Editor mit vielen neuen Features aktualisiert](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/). Zoomen, rollierendes Suchen/Ersetzen und Unterstützung für Zeilenenden im Unix/Linux- (LF) und Macintosh-Format (CR) sind jetzt für [Windows-Insider](https://insider.windows.com/) verfügbar. 
 
 ## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
@@ -70,11 +70,11 @@ Außerdem wurden einige vorhandene Seiten aktualisiert:
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>Erste Schritte für Entwickler: Erstellen und Anpassen eines Formulars unter Windows 10
 
-Unsere [Erste Schritte-Dokumentationen](../get-started/index.md) für Windows-Entwickler ermöglichen jetzt praktische Erfahrungen mit einfachen App-Entwicklungsaufgaben. Dieses Video führt Sie durch eines dieser Themen und behandelt die Grundlagen des Erstellens einer Formularbenutzeroberfläche in einer App. [Betrachten Sie das Video](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be), um den Code in Aktion zu sehen, und [lesen Sie dann das Thema.](https://aka.ms/CreateForms)
+Unsere [Erste Schritte-Dokumentationen](../get-started/index.md) für Windows-Entwickler ermöglichen jetzt praktische Erfahrungen mit einfachen App-Entwicklungsaufgaben. Dieses Video führt Sie durch eines dieser Themen und behandelt die Grundlagen des Erstellens einer Formularbenutzeroberfläche in einer App. [Betrachten Sie das Video](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be), um den Code in Aktion zu sehen, und [lesen Sie dann das Thema.](https://docs.microsoft.com/windows/uwp/get-started/construct-form-learning-track)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>Verbessern Ihrer Bots mit Project Personality Chat
 
-Project Personality Chat ermöglicht es Ihnen, anpassbare Rollen zu Ihren Chat-Bots hinzuzufügen. Durch Einbindung in das Microsoft Bot Framework SDK können Sie Small-Talk-Funktionen hinzufügen, um eine dialogorientiertere Art der Interaktion mit Kunden zu erreichen. [Sehen Sie sich das Video an](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be), um zu erfahren, wie Sie Personality Chat implementieren, und [führen Sie die interaktive Demo aus](https://aka.ms/PersonalityChat), um praktische Erfahrungen zu sammeln.
+Project Personality Chat ermöglicht es Ihnen, anpassbare Rollen zu Ihren Chat-Bots hinzuzufügen. Durch Einbindung in das Microsoft Bot Framework SDK können Sie Small-Talk-Funktionen hinzufügen, um eine dialogorientiertere Art der Interaktion mit Kunden zu erreichen. [Sehen Sie sich das Video an](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be), um zu erfahren, wie Sie Personality Chat implementieren, und [führen Sie die interaktive Demo aus](https://www.microsoft.com/research/project/personality-chat/), um praktische Erfahrungen zu sammeln.
 
 ### <a name="one-dev-question"></a>One Dev Question
 

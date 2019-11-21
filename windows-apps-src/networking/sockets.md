@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 49e126ea0212499361fea58b58237ee13fb76ca2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363300"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259178"
 ---
 # <a name="sockets"></a>Sockets
 Sockets sind eine einfache Datenübertragungstechnologie und bilden die Grundlage zahlreicher Netzwerkprotokollimplementierungen. UWP bietet TCP- und UDP-Socketklassen für Client-Server- oder Peer-to-Peer-Anwendungen, unabhängig davon, ob Verbindungen langlebig sind oder keine bestehende Verbindung erforderlich ist.
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-Aus der Perspektive des **StreamSocket** schließt der Abschlusshandler die Ausführung ab bzw. kann der Socket gelöscht werden, bevor der Fortsetzungstext ausgeführt wird. Um zu verhindern, dass das Socket gelöscht wird, wenn Sie es in dieser Fortsetzung verwenden möchten, müssen Sie entweder direkt auf das Socket verweisen (über Lambda-Capture) und es verwenden, oder indirekt darauf verweisen (indem Sie innerhalb der Fortsetzung weiterhin auf `args->Socket` zugreifen), oder erzwingen, dass die Fortsetzungsaufgaben inline sind. Im [StreamSocket-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620609) sehen Sie die erste Methode (Lambda-Capture) in Aktion. Im C++/CX-Code im Abschnitt [Erstellen eines grundlegenden TCP-Socket-Clients und -Servers](#build-a-basic-tcp-socket-client-and-server) oben wird die zweite Methode verwendet&mdash;sie gibt die Anforderung als Antwort zurück und greift auf `args->Socket` von innerhalb der innersten Fortsetzungen zu.
+Aus der Perspektive des **StreamSocket** schließt der Abschlusshandler die Ausführung ab bzw. kann der Socket gelöscht werden, bevor der Fortsetzungstext ausgeführt wird. Um zu verhindern, dass das Socket gelöscht wird, wenn Sie es in dieser Fortsetzung verwenden möchten, müssen Sie entweder direkt auf das Socket verweisen (über Lambda-Capture) und es verwenden, oder indirekt darauf verweisen (indem Sie innerhalb der Fortsetzung weiterhin auf `args->Socket` zugreifen), oder erzwingen, dass die Fortsetzungsaufgaben inline sind. Im [StreamSocket-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket) sehen Sie die erste Methode (Lambda-Capture) in Aktion. Im C++/CX-Code im Abschnitt [Erstellen eines grundlegenden TCP-Socket-Clients und -Servers](#build-a-basic-tcp-socket-client-and-server) oben wird die zweite Methode verwendet&mdash;sie gibt die Anforderung als Antwort zurück und greift auf `args->Socket` von innerhalb der innersten Fortsetzungen zu.
 
 Die dritte Methode ist geeignet, wenn Sie keine Antwort zurückgeben. Verwenden Sie die `task_continuation_context::use_synchronous_execution()`-Option um zu erzwingen, dass PPL den Fortsetzungstext inline ausführt. Dieses Codebeispiel veranschaulicht, wie Sie dies durchführen.
 
@@ -1384,4 +1384,4 @@ Der [**HostName**](/uwp/api/Windows.Networking.HostName)-Konstruktor kann eine A
 * [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>Beispiele
-* [Beispiel für StreamSocket](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [Beispiel für StreamSocket](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

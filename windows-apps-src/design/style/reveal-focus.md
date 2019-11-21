@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f416db0266c4ab2ec959c926c0bf0b676b66dd95
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370468"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258707"
 ---
 # <a name="reveal-focus"></a>Reveal Focus
 
@@ -163,7 +163,7 @@ Wenn Sie nur den Leuchteffekt ohne die primären oder sekundären visuellen Foku
 
 ## <a name="use-your-own-focus-visuals"></a>Verwenden Ihrer eigenen visuellen Fokuselemente
 
-Eine weitere Möglichkeit zum Anpassen von Reveal Fokus ist das Deaktivieren der systemeigenen visuellen Fokuselemente, indem Sie Ihre eigenen Elemente mithilfe von visuellen Zuständen zeichnen. Weitere Informationen finden Sie unter [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895).
+Eine weitere Möglichkeit zum Anpassen von Reveal Fokus ist das Deaktivieren der systemeigenen visuellen Fokuselemente, indem Sie Ihre eigenen Elemente mithilfe von visuellen Zuständen zeichnen. Weitere Informationen finden Sie unter [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals).
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>Reveal Focus und das Fluent Design-System
@@ -175,7 +175,7 @@ Reveal Focus ist eine Komponente des Fluent Design-Systems, die Ihrer App Lichte
 - [Reveal Highlight](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [Entwerfen für Xbox und Fernsehgeräte](/windows/uwp/design/devices/designing-for-tv)
 - [Interaktionen mit Gamepad und Fernbedienung](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [Beispiel für visuelle Fokuselemente](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 - [Kompositionseffekte](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Wissenschaft im System: Fluent Design und Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Wissenschaft im System: Fluent Design und Licht](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

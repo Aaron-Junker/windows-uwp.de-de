@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, netzwerk, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af1f478bc466719eef3c5e19d055ac6073a0b11
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: eb083b0d8ed0aedfc6e14be9bed9647daa2bb950
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63777846"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260167"
 ---
 # <a name="websockets"></a>WebSockets
 WebSockets stellt einen Mechanismus für die schnelle und sichere bidirektionale Kommunikation zwischen einem Client und einem Server über das Web mithilfe von HTTP(S) bereit und unterstützt sowohl UTF-8-Nachrichten als auch binäre Nachrichten.
@@ -838,4 +838,4 @@ protected:
 * [Sockets](sockets.md)
 
 ## <a name="samples"></a>Beispiele
-* [WebSocket-Beispiel](https://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebSocket)
