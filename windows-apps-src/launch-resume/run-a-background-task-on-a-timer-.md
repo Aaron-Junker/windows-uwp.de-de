@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie eine einmalige Hintergrundaufgabe planen
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Hintergrundaufgaben
+keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eaff7142c3c14f04b780b93a7e98e1447f068d8
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: b0d3c9401ff71475e379b2959a1f0cdc03fe8d8b
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399608"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260432"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>Ausführen einer Hintergrundaufgabe für einen Timer
 
@@ -32,9 +32,9 @@ Der integrierte Timer für auf Desktop- oder Mobilgeräte ausgerichtete UWP-Apps
 - Wenn *FreshnessTime* auf 15 Minuten und *OneShot* auf „false“ festgelegt ist, wird die Aufgabe alle 15 Minuten innerhalb der ersten 15 und 30 Minuten nach dem Registrierungszeitpunkt zur Ausführung eingeplant. Wenn sie auf „n” Minuten und *OneShot* auf „false“ festgelegt ist, wird die Aufgabe alle „n” Minuten innerhalb der ersten „n” und „n+15” Minuten nach dem Registrierungszeitpunkt zur Ausführung eingeplant.
 
 > [!NOTE]
-> Wenn *FreshnessTime* festgelegt ist auf weniger als 15 Minuten wird eine Ausnahme ausgelöst, bei dem Versuch, die die Hintergrundaufgabe zu registrieren.
+> Wenn *freshnesstime* auf weniger als 15 Minuten festgelegt ist, wird beim Versuch, die Hintergrundaufgabe zu registrieren, eine Ausnahme ausgelöst.
 
-Beispielsweise bewirkt dieses Triggers eine Hintergrundaufgabe einmal pro Stunde ausgeführt.
+Beispielsweise bewirkt dieser auslösen, dass eine Hintergrundaufgabe einmal pro Stunde ausgeführt wird.
 
 ```cs
 TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
@@ -87,7 +87,7 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 Registrieren Sie die Hintergrundaufgabe, indem Sie die Funktion zum Registrieren der Hintergrundaufgabe aufrufen. Weitere Informationen zum Registrieren von Hintergrundaufgaben sowie die Definition der **RegisterBackgroundTask()** -Methode im folgenden Beispielcode finden Sie unter [Registrieren einer Hintergrundaufgabe](register-a-background-task.md).
 
 > [!IMPORTANT]
-> Für Hintergrund, die in demselben Prozess wie Ihre app Aufgaben, stellen Sie keine `entryPoint`. Bei einem Hintergrund, die in einem separaten Prozess ausgeführt wird, von Ihrer app tasks, `entryPoint` werden der Namespace ".", und den Namen der Klasse, die Ihre Implementierung der Hintergrund-Aufgabe enthält.
+> Legen Sie für Hintergrundaufgaben, die in demselben Prozess wie Ihre APP ausgeführt werden, nicht `entryPoint`fest. Legen Sie für Hintergrundaufgaben, die in einem separaten Prozess von ihrer app ausgeführt werden, `entryPoint` auf den Namespace, "." und den Namen der Klasse fest, die die Implementierung der Hintergrundaufgabe enthält.
 
 ```cs
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -117,28 +117,28 @@ Parameter für die Registrierung von Hintergrundaufgaben werden zum Zeitpunkt de
 
 Um zu ermitteln, ob der Benutzer die Hintergrundaktivität Ihrer App begrenzt hat, verwenden Sie [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager). Achten Sie auf die Akkunutzung, und führen Sie Ihre App nur dann im Hintergrund aus, wenn dies zum Ausführen einer vom Benutzer gewünschten Aktion notwendig ist. Weitere Informationen zu den Möglichkeiten, die Benutzer haben, um die Einstellungen für Hintergrundaktivitäten zu steuern, finden Sie unter [Optimieren von Hintergrundaktivitäten](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity).
 
-- Speicher: Optimieren Ihrer app-Speicher und Energieverbrauch mithilfe ist-Schlüssel, um sicherzustellen, dass das Betriebssystem Ihrer Hintergrundaufgabe ausgeführt werden kann. Um zu ermitteln, wie viel Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, verwenden Sie die [Speicherverwaltungs-APIs](https://docs.microsoft.com/uwp/api/windows.system.memorymanager). Je mehr Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, desto schwieriger wird es für das Betriebssystem, sie weiter auszuführen, wenn sich eine andere App im Vordergrund befindet. Der Benutzer hat letztendlich die Kontrolle über alle Hintergrundaktivitäten, die Ihre App ausführen kann, und kann die Auswirkungen Ihrer App auf den Akkuverbrauch erkennen.  
-- CPU-Zeit: Aufgaben im Hintergrund werden durch die Menge der Nutzung der wanduhrzeit beschränkt, die sie für Trigger vom Typ basiert, erhalten.
+- Arbeitsspeicher: Eine Optimierung der Speicherverwendung und des Energieverbrauchs Ihrer App ist wichtig, um sicherzustellen, dass das Betriebssystem die Ausführung Ihrer Hintergrundaufgabe erlaubt. Um zu ermitteln, wie viel Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, verwenden Sie die [Speicherverwaltungs-APIs](https://docs.microsoft.com/uwp/api/windows.system.memorymanager). Je mehr Arbeitsspeicher Ihre Hintergrundaufgabe verwendet, desto schwieriger wird es für das Betriebssystem, sie weiter auszuführen, wenn sich eine andere App im Vordergrund befindet. Der Benutzer hat letztendlich die Kontrolle über alle Hintergrundaktivitäten, die Ihre App ausführen kann, und kann die Auswirkungen Ihrer App auf den Akkuverbrauch erkennen.  
+- CPU-Zeit: Hintergrundaufgaben sind durch die Gesamtbetrachtungszeit eingeschränkt, die ihnen basierend auf dem Triggertyp zugeteilt wird.
 
 Die für Hintergrundaufgaben geltenden Ressourcenbeschränkungen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](support-your-app-with-background-tasks.md).
 
 ## <a name="remarks"></a>Hinweise
 
-Ab Windows 10, ist es nicht mehr erforderlich, für den Benutzer Ihrer app auf dem Sperrbildschirm hinzufügen, um Hintergrundaufgaben nutzen zu können.
+Ab Windows 10 ist es nicht mehr erforderlich, dass der Benutzer die APP dem Sperrbildschirm hinzufügt, um Hintergrundaufgaben zu verwenden.
 
 Eine Hintergrundaufgabe wird nur mithilfe eines **TimeTrigger** ausgeführt, wenn Sie zuerst [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) aufgerufen haben.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
-* [Beispiel für einen Hintergrundtask code](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
+* [Codebeispiel für Hintergrundaufgabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb von Prozessen](create-and-register-an-inproc-background-task.md)
 * [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
 * [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
 * [Freigeben von Speicher, wenn die App in den Hintergrund verschoben wird](reduce-memory-usage.md)
 * [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
-* [Wie Sie auslösen, anhalten, fortsetzen und hintergrundereignissen in UWP-apps (beim debugging)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 * [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
 * [Verschieben der angehaltenen App mithilfe der erweiterten Ausführung](run-minimized-with-extended-execution.md)
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)

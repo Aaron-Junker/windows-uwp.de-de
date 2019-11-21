@@ -6,16 +6,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, Altersfreigabe, Spielfreigabe, IARC, Bewertung, Fragebogen, Bewertungsgremium, Inhaltsbewertung
 ms.localizationpriority: medium
-ms.openlocfilehash: 55592f2d16807e2ad359a21977bd483db0b2e089
-ms.sourcegitcommit: 978df7dfd3813de51609b6a44aedcd402083a5fd
+ms.openlocfilehash: bab98b50b1d53451708b7631f74d15947c60d4c8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66826177"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260046"
 ---
 # <a name="age-ratings"></a>Altersfreigaben
 
-Auf der Seite **Altersfreigaben** des [App-Übermittlungsprozesses](app-submissions.md) können Sie Informationen zu Ihrer App bereitstellen, damit sie die entsprechenden Altersfreigaben und Inhaltsbewertungen über das Bewertungssystem der [International Age Ratings Coalition (IARC)](https://go.microsoft.com/fwlink/p/?LinkId=716854) erhalten kann. Bei diesen Freigaben geht es um die Eignung des Inhalts einer App, und nicht um das Alter der Zielgruppe für Ihre App.
+Auf der Seite **Altersfreigaben** des [App-Übermittlungsprozesses](app-submissions.md) können Sie Informationen zu Ihrer App bereitstellen, damit sie die entsprechenden Altersfreigaben und Inhaltsbewertungen über das Bewertungssystem der [International Age Ratings Coalition (IARC)](https://www.globalratings.com/) erhalten kann. Bei diesen Freigaben geht es um die Eignung des Inhalts einer App, und nicht um das Alter der Zielgruppe für Ihre App.
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>Beantworten des Fragebogens zu den Altersfreigaben
 
@@ -26,7 +26,7 @@ Bei der ersten Übermittlung einer App (oder bei der ersten Aktualisierung einer
 
 Hierbei ist es unbedingt erforderlich, dass Sie die Fragen wahrheitsgetreu beantworten. Klicken Sie für weitere Informationen und Fragen auf das Symbol "Info", das angezeigt wird. Im Rahmen dieses Prozesses geben wir Ihren Herausgeber-Anzeigenamen und Ihre E-Mail-Adresse an die IARC weiter. Nach dem Ausfüllen des Fragebogens werden vom IARC-Bewertungssystem basierend auf Ihren Antworten Informationen zur Altersfreigabe und Inhaltsbewertung bereitgestellt. Wir verwenden diese Bewertungsinformationen, wenn Ihre App Kunden in unterschiedlichen Märkten angezeigt wird. Außerdem erhalten Sie von der IARC eine E-Mail mit einer Bestätigung der App-Bewertung, nachdem die App veröffentlicht wurde.
 
-Bei der ersten Frage wird nach der Kategorie gefragt, die Ihre App (und die dazugehörigen Metadaten) am besten beschreibt. Nachdem Sie eine Auswahl getroffen haben, werden weitere Fragen angezeigt. Die Fragen richten sich jeweils nach den vorherigen Antworten. Um weitere Informationen zu erhalten, mit denen Sie erfahren, wie Sie eine Frage zu beantworten können, klicken Sie auf das Symbol "Info" neben diese Frage. Falls Sie einen Fehler machen, können Sie zurückgehen oder den Fragebogen neu starten, um die richtigen Antworten anzugeben.
+Bei der ersten Frage wird nach der Kategorie gefragt, die Ihre App (und die dazugehörigen Metadaten) am besten beschreibt. Nachdem Sie eine Auswahl getroffen haben, werden weitere Fragen angezeigt. Die Fragen richten sich jeweils nach den vorherigen Antworten. Um weitere Details zu erhalten, die Ihnen helfen, sich mit der Beantwortung von Fragen vertraut zu machen, klicken Sie auf das Info-Symbol neben dieser Frage. Falls Sie einen Fehler machen, können Sie zurückgehen oder den Fragebogen neu starten, um die richtigen Antworten anzugeben.
 
 Klicken Sie nach dem Beantworten aller Fragen auf **Save and generate**. Alle zugewiesenen Freigaben der App werden angezeigt, und Sie können den Übermittlungsvorgang fortsetzen. Sie können auch auf **Bearbeiten** klicken, um Antworten im Fragebogen zu korrigieren.
 
@@ -35,10 +35,10 @@ Bei der nächsten Aktualisierung Ihrer App werden auf dieser Seite alle Freigabe
 <span id="boards" />
 
 > [!NOTE]
-> Das südkoreanische Recht erfordert, dass in Südkorea verfügbar gemachte Spiele durch das [Game Rating Board](https://go.microsoft.com/fwlink/p/?LinkId=228256) Südkoreas bewertet werden. Wenn Sie ein Spiel einreichen und Sie es in Südkorea anbieten möchten, müssen Sie diesen zusätzlichen Abschnitt ausfüllen und das Freigabezertifikat hochladen. Wenn Ihre App kein Spiel ist oder Sie es nicht in Südkorea anbieten möchten, können Sie diesen Abschnitt leer lassen.
+> Das südkoreanische Recht erfordert, dass in Südkorea verfügbar gemachte Spiele durch das [Game Rating Board](https://www.grb.or.kr/Default.aspx) Südkoreas bewertet werden. Wenn Sie ein Spiel einreichen und Sie es in Südkorea anbieten möchten, müssen Sie diesen zusätzlichen Abschnitt ausfüllen und das Freigabezertifikat hochladen. Wenn Ihre App kein Spiel ist oder Sie es nicht in Südkorea anbieten möchten, können Sie diesen Abschnitt leer lassen.
 
 > [!NOTE]
-> Wenn Sie ein Spiel anbieten möchten, das in Taiwan verfügbar ist, sind Sie gesetzlich verpflichtet, die bereitgestellte CSRR-Bewertung mit [diesem Formular](https://go.microsoft.com/fwlink/?linkid=867281) zu registrieren. 
+> Wenn Sie ein Spiel anbieten möchten, das in Taiwan verfügbar ist, sind Sie gesetzlich verpflichtet, die bereitgestellte CSRR-Bewertung mit [diesem Formular](https://www.gamerating.org.tw/company_login.php) zu registrieren. 
 
 <span id="appeal" />
 

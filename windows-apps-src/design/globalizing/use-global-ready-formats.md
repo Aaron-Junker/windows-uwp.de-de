@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 54846cd350e8f91f7ba664690cfd4dd7e36c129e
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634135"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258045"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>Globalisieren von Datum, Uhrzeit und Zahlenformaten
 
@@ -116,9 +116,9 @@ Um sicherzustellen, dass das bevorzugte Kalenderformat verwendet wird, können S
 
 Telefonnummern werden in verschiedenen Regionen unterschiedlich formatiert. Die Anzahl der Stellen, die Gruppierung der Ziffern und die Bedeutung bestimmter Teile der Telefonnummer variieren zwischen verschiedenen Ländern. Ab Windows 10, Version 1607, können Sie Klassen aus dem Namespace [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) verwenden, um Telefonnummern gemäß der aktuellen Region zu formatieren.
 
-[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) analysiert eine Zeichenfolge der Ziffern und ermöglicht Ihnen,: bestimmen, ob die Ziffern einer gültigen Telefonnummer in der aktuellen Region sind; Vergleichen zweier Zahlen Gleichheit und zum Extrahieren von den funktionalen Bestandteilen des Telefons Zahl, z. B. Ländercode oder geografischen Bereich-Code.
+[**Phonenumberinfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) analysiert eine Zeichenfolge mit Ziffern und ermöglicht Ihnen Folgendes: bestimmen Sie, ob die Ziffern eine gültige Telefonnummer in der aktuellen Region sind. Vergleicht zwei Zahlen auf Gleichheit. und, um die verschiedenen funktionalen Teile der Telefonnummer zu extrahieren, z. b. Ländercode oder geografischer flächencode.
 
-[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) Formate, die eine Folge von Ziffern oder **PhoneNumberInfo** für die Anzeige, selbst wenn die Zeichenfolge der Ziffern eine partielle Telefonnummer darstellt. Sie können diese partielle Nummernformatierung verwenden, um eine Zahl zu formatieren, die gerade von einem Benutzer eingegeben wird.
+[**Phonenumberformatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) formatiert eine Zeichenfolge oder eine **phonenumberinfo** für die Anzeige, auch wenn die Zeichenfolge eine partielle Telefonnummer darstellt. Sie können diese partielle Nummernformatierung verwenden, um eine Zahl zu formatieren, die gerade von einem Benutzer eingegeben wird.
 
 Das folgende Beispiel veranschaulicht die Verwendung von **PhoneNumberFormatter** zum Formatieren einer Telefonnummer, die gerade eingegeben wird. Sobald sich der Text in einer **TextBox** mit dem Namen „phoneNumberInputTextBox“ ändert, wird der Inhalt des Textfelds gemäß der aktuellen Standardregion formatiert und in einem **TextBlock** mit dem Namen „phoneNumberOutputTextBlock“ angezeigt. Zu Demonstrationszwecken wird die Zeichenfolge auch für die Region Neuseeland formatiert und in einem TextBlock mit dem Namen phoneNumberOutputTextBlockNZ angezeigt.
   
@@ -159,21 +159,21 @@ Für Szenarien, in denen Sie basierend auf den Sprach-, Regions- und Kultureinst
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-* [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [Datetimeformatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
 * [Kalender](/uwp/api/windows.globalization.calendar?branch=live)
-* [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
-* [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
+* [Phonenumberformatierung](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
+* [Globalizationpreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Kalender, Datums- und Zeitauswahl](../controls-and-patterns/date-and-time.md)
-* [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](manage-language-and-region.md)
+* [Kalender-, Datums- und Uhrzeitsteuerelemente](../controls-and-patterns/date-and-time.md)
+* [Grundlegendes zu Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md)
 * [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>Beispiele
 
-* [Kalenderdetails "und" Math-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [Datums- und Zeitformat-Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231618)
-* [Beispiel für eine globalisierte Voreinstellungen](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [Formatierung und Analyse von Beispiel-Nummer](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [Kalender Details und mathematische Beispiele](https://code.msdn.microsoft.com/windowsapps/Calendar-details-and-math-b1683bb7)
+* [Beispiel für Datums-und Uhrzeit Formatierung](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [Beispiel für Globalisierungs Einstellungen](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [Beispiel zum Formatieren und Testen von Zahlen](https://code.msdn.microsoft.com/windowsapps/Number-formatting-and-bb10ba3d)

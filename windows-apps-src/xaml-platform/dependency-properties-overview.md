@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: adb80c3396002a76b3c22a9ce8a8e2893ea728ac
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 279f0d007be927e29632986ce8178c4e0b9778b3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340509"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259858"
 ---
 # <a name="dependency-properties-overview"></a>Übersicht über Abhängigkeitseigenschaften
 
@@ -34,7 +34,7 @@ Eine Abhängigkeits Eigenschaft stellt eine bestimmte Funktion des Programmiermo
 
 - Datenbindung
 - Stile
-- Storyboardanimationen
+- Storyboard-Animationen
 - „PropertyChanged“-Verhalten: Eine Abhängigkeitseigenschaft kann implementiert werden, um Callbacks bereitzustellen, die Änderungen an andere Abhängigkeitseigenschaften weitergeben können.
 - Verwenden eines Standardwerts, der aus Eigenschaftsmetadaten stammt
 - Allgemeines Dienstprogramm für Eigenschaftssystem, wie etwa [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue) und die Metadatensuche
@@ -86,11 +86,11 @@ Zum Beispiel sind Stile und Vorlagen als gemeinsamer Ausgangspunkt zum Festlegen
 
 Im Folgenden wird die maßgebliche Rangfolge beschrieben, die beim Zuweisen des Laufzeitwerts für eine Abhängigkeitseigenschaft im Eigenschaftensystem verwendet wird. Die höchste Priorität befindet sich an erster Stelle der Liste. Eine ausführlichere Erklärung folgt nach dieser Liste.
 
-1. **Animierte Werte:** Aktive Animationen, visuelle Zustands Animationen oder Animationen mit einem [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) -Verhalten. Eine auf eine Eigenschaft angewendete Animation muss Vorrang vor dem Basiswert (nicht animiert) haben, auch wenn dieser Wert lokal festgelegt wurde, um die Wirksamkeit der Animation sicherzustellen.
-1. **Lokaler Wert:** Ein lokaler Wert kann durch die bequeme Verwendung des Eigenschafts Wrappers festgelegt werden, der auch das Festlegen von als Attribut oder Eigenschafts Element in XAML oder durch einen Aufrufen der [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) -Methode unter Verwendung einer Eigenschaft einer bestimmten Instanz entspricht. Wenn Sie einen lokalen Wert anhand einer Bindung oder einer statischen Ressource festlegen, werden die Bindung und die statische Ressource in der Rangfolge jeweils als festgelegter lokaler Wert behandelt. Somit werden Referenzen zu Bindungen oder Ressourcen gelöscht, wenn ein neuer lokaler Wert festgelegt wird.
-1. **Vorlagen Eigenschaften:** Ein Element verfügt über diese, wenn es als Teil einer Vorlage erstellt wurde (aus einem [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) -oder [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)-Element).
-1. **Stil Setter:** Werte aus einem [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) innerhalb von Stilen von Seiten-oder Anwendungs Ressourcen.
-1. **Standardwert:** Eine Abhängigkeits Eigenschaft kann als Teil der Metadaten einen Standardwert aufweisen.
+1. **Animierte Werte:** Aktive Animationen, Animationen von Ansichtszuständen oder Animationen mit [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior)-Verhalten. Eine auf eine Eigenschaft angewendete Animation muss Vorrang vor dem Basiswert (nicht animiert) haben, auch wenn dieser Wert lokal festgelegt wurde, um die Wirksamkeit der Animation sicherzustellen.
+1. **Lokaler Wert:** Ein lokaler Wert kann ganz bequem über den Eigenschaftenwrapper festgelegt werden, was dem Festlegen eines Werts als Attribut oder Eigenschaftselement in XAML gleichkommt. Eine weitere Möglichkeit ist das Aufrufen der [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)-Methode über die Eigenschaft einer bestimmten Instanz. Wenn Sie einen lokalen Wert anhand einer Bindung oder einer statischen Ressource festlegen, werden die Bindung und die statische Ressource in der Rangfolge jeweils als festgelegter lokaler Wert behandelt. Somit werden Referenzen zu Bindungen oder Ressourcen gelöscht, wenn ein neuer lokaler Wert festgelegt wird.
+1. **Auf Vorlagen basierende Eigenschaften:** Ein Element verfügt über diese Eigenschaften, wenn es als Teil einer Vorlage erstellt wurde (über [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) oder [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)).
+1. **Style Setters (Stilsetter):** Werte aus einem [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Element innerhalb der Stile von Seiten- oder Anwendungsressourcen.
+1. **Standardwert:** Eine Abhängigkeitseigenschaft kann in ihren Metadaten einen Standardwert enthalten.
 
 ### <a name="templated-properties"></a>Auf Vorlagen basierende Eigenschaften
 
@@ -170,7 +170,7 @@ Stile und Vorlagen sind zwei Szenarien für Eigenschaften, die als Abhängigkeit
 
 Werte, die aus Stilen oder Vorlagen stammen, sind zurückgestellte Werte (ähnlich wie bei Bindungen). So können Benutzer von Steuerelementen neue Vorlagen für Steuerelemente erstellen oder Stile neu definieren. Aus diesem Grund können Eigenschaftensetter in Stilen nur für Abhängigkeitseigenschaften und nicht für normale Eigenschaften verwendet werden.
 
-### <a name="storyboarded-animations"></a>Storyboardanimationen
+### <a name="storyboarded-animations"></a>Storyboard-Animationen
 
 Sie können den Wert einer Abhängigkeitseigenschaft mithilfe von Storyboardanimationen animieren. Storyboardanimationen in der Windows-Runtime dienen nicht nur reinen Dekorationszwecken. Stellen Sie sich Animationen eher als Zustandsautomatverfahren vor, mit dem die Werte einzelner Eigenschaften oder aller Eigenschaften und visuellen Elemente eines Steuerelements festgelegt und im Laufe der Zeit geändert werden können.
 
@@ -188,7 +188,7 @@ Mit Windows 10 wird die Methode [**RegisterPropertyChangedCallback**](https://d
 
 ### <a name="default-value-and-clearvalue"></a>Standardwert und **ClearValue**
 
-Für eine Abhängigkeitseigenschaft kann ein Standardwert als Teil der Metadaten der jeweiligen Eigenschaft definiert werden. Für eine Abhängigkeitseigenschaft wird ihr Standardwert nicht irrelevant, nachdem die Eigenschaft zum ersten Mal festgelegt wurde. Der Standardwert gilt zur Laufzeit möglicherweise jeweils erneut, wenn eine andere Determinante in der Wertrangfolge entfernt wird. (Im nächsten Abschnitt wird die Rangfolge der Abhängigkeits Eigenschaftswerte erläutert.) Sie können z. b. absichtlich einen Stilwert oder eine Animation entfernen, die für eine Eigenschaft gilt. Sie möchten jedoch, dass der Wert nach der Ausführung ein angemessener Standardwert ist. Der Standardwert der Abhängigkeitseigenschaft kann diesen Wert bereitstellen, ohne dass die Werte der einzelnen Eigenschaften zusätzlich festgelegt werden müssen.
+Für eine Abhängigkeitseigenschaft kann ein Standardwert als Teil der Metadaten der jeweiligen Eigenschaft definiert werden. Für eine Abhängigkeitseigenschaft wird ihr Standardwert nicht irrelevant, nachdem die Eigenschaft zum ersten Mal festgelegt wurde. Der Standardwert gilt zur Laufzeit möglicherweise jeweils erneut, wenn eine andere Determinante in der Wertrangfolge entfernt wird. (Der Vorrang von Abhängigkeitseigenschaftenwerten wird im nächsten Abschnitt erläutert). Zum Beispiel entfernen Sie unter Umständen zwar bewusst einen Formatwert oder eine Animation, der/die für eine Eigenschaft gilt, möchten aber, dass der Wert weiterhin ein angemessener Standardwert ist. Der Standardwert der Abhängigkeitseigenschaft kann diesen Wert bereitstellen, ohne dass die Werte der einzelnen Eigenschaften zusätzlich festgelegt werden müssen.
 
 Sie können eine Eigenschaft auch dann absichtlich auf den Standardwert festlegen, wenn die Eigenschaft bereits einem lokalen Wert zugewiesen wurde. Rufen Sie die [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue)-Methode auf, um einen Wert auf den Standardwert zurückzusetzen und andere Teilnehmer in der Rangfolge zu aktivieren, die den Standardwert, nicht aber einen lokalen Wert außer Kraft setzen können (verweisen Sie auf die zu löschende Eigenschaft als Methodenparameter). Sie möchten nicht in allen Fällen, dass die Eigenschaft genau den Standardwert verwendet. Das Löschen des lokalen Werts und das Zurücksetzen auf den Standardwert kann jedoch zur Aktivierung eines anderen Elements in der Rangfolge führen, das sofort behandelt werden soll, z. B. bei der Verwendung des Werts aus einem Style Setter in einer Steuerelementvorlage.
 
@@ -207,7 +207,7 @@ Die Threadingmerkmale von [**DependencyObject**](https://docs.microsoft.com/uwp/
 - [Datenbindung im Detail](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
 - [Storyboarding-Animationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 - [Erstellen von Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-- [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://go.microsoft.com/fwlink/p/?linkid=238581)
+- [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
 
 ## <a name="apis-related-to-dependency-properties"></a>APIs im Zusammenhang mit Abhängigkeits Eigenschaften
 

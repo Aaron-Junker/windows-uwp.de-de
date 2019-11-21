@@ -11,18 +11,18 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 6d1b97e76dc1bf15bded6f44c38a67f40babf7b6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f912e6212346a4019d8421c542a81eb2318dc5d9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370535"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260411"
 ---
 # <a name="handle-app-suspend"></a>Behandeln des Anhaltens von Apps
 
 **Wichtige APIs**
 
-- [**Das Anhalten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
+- [**Anhalten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
 Hier erfahren Sie, wie Sie wichtige Anwendungsdaten speichern, wenn das System die App anhält. Im Beispiel wird ein Ereignishandler für das [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)-Ereignis registriert und eine Zeichenfolge in einer Datei gespeichert.
 
@@ -137,21 +137,21 @@ Das System versucht, die App und die zugehörigen Daten im Arbeitsspeicher beizu
 
 Das System benachrichtigt eine App nicht, wenn sie beendet wird. Wenn Ihre App angehalten wird, muss sie daher die App-Daten speichern und die exklusiven Ressourcen und Dateihandles freigeben, damit diese beim erneuten Aktivieren der App nach der Beendigung wiederhergestellt werden können.
 
-Wenn Sie innerhalb Ihres Handlers einen asynchronen Aufruf ausführen, wird die Steuerung sofort von diesem asynchronen Aufruf zurückgegeben. Das bedeutet, dass die Ausführung dann vom Ereignishandler zurückgegeben werden kann und die App in den nächsten Zustand übergeht, obwohl der asynchrone Aufruf noch nicht abgeschlossen wurde. Verwenden Sie die [**GetDeferral**](https://aka.ms/Kt66iv)-Methode für das an den Ereignishandler übergebene [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4)-Objekt, um das Anhalten zu verzögern, bis Sie für das zurückgegebene [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral)-Objekt die [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete)-Methode aufgerufen haben.
+Wenn Sie innerhalb Ihres Handlers einen asynchronen Aufruf ausführen, wird die Steuerung sofort von diesem asynchronen Aufruf zurückgegeben. Das bedeutet, dass die Ausführung dann vom Ereignishandler zurückgegeben werden kann und die App in den nächsten Zustand übergeht, obwohl der asynchrone Aufruf noch nicht abgeschlossen wurde. Verwenden Sie die [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN)-Methode für das an den Ereignishandler übergebene [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN)-Objekt, um das Anhalten zu verzögern, bis Sie für das zurückgegebene [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete)-Objekt die [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral)-Methode aufgerufen haben.
 
 Durch eine Verzögerung verlängert sich nicht die Zeit, die Ihr Code ausgeführt werden muss, bevor die App beendet wird. Dabei wird nur die Beendigung verzögert, bis die *Complete*-Methode der Verzögerung aufgerufen wird oder die Frist abläuft, *je nachdem, was zuerst eintritt*. Um die Zeit im Zustand „Suspending“ zu verlängern, verwenden Sie [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> Zur Verbesserung der Reaktionsfähigkeit des Systems in Windows 8.1-apps mit niedriger Priorität, der Zugriff gewährt auf Ressourcen, nachdem sie angehalten wurden. Zur Unterstützung dieser neuen Priorität wird das Timeout für den Anhaltevorgang ausgedehnt, sodass die App für normale Priorität unter Windows über einen 5-Sekunden-Timeout und unter Windows Phone über einen Timeout von 1 bis 10 Sekunden verfügt. Dieses Timeout-Fenster kann weder verlängert noch geändert werden.
+> Um die Reaktionsfähigkeit des Systems in Windows 8.1 zu verbessern, erhalten apps Zugriff mit niedriger Priorität auf Ressourcen, nachdem Sie angehalten wurden. Zur Unterstützung dieser neuen Priorität wird das Timeout für den Anhaltevorgang ausgedehnt, sodass die App für normale Priorität unter Windows über einen 5-Sekunden-Timeout und unter Windows Phone über einen Timeout von 1 bis 10 Sekunden verfügt. Dieses Timeout-Fenster kann weder verlängert noch geändert werden.
 
-**Ein Hinweis zum Debuggen mit Visual Studio:** Visual Studio wird verhindert, dass Windows das Anhalten einer app, die an den Debugger angefügt ist. Dies hat den Zweck, dem Benutzer das Anzeigen der Debugging-Benutzeroberfläche von Visual Studio zu ermöglichen, während die App ausgeführt wird. Beim Debuggen einer App können Sie mit Visual Studio ein Anhalteereignis an die App senden. Stellen Sie sicher, dass die Symbolleiste **Debugspeicherort** angezeigt wird, und klicken Sie dann auf das Symbol **Anhalten**.
+**Hinweis zum Debuggen mit Visual Studio:** Visual Studio verhindert, dass in Windows eine an den Debugger angefügte App angehalten wird. Dies hat den Zweck, dem Benutzer das Anzeigen der Debugging-Benutzeroberfläche von Visual Studio zu ermöglichen, während die App ausgeführt wird. Beim Debuggen einer App können Sie mit Visual Studio ein Anhalteereignis an die App senden. Stellen Sie sicher, dass die Symbolleiste **Debugspeicherort** angezeigt wird, und klicken Sie dann auf das Symbol **Anhalten**.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [App-Lebenszyklus](app-lifecycle.md)
 * [Behandeln der App-Aktivierung](activate-an-app.md)
 * [Behandeln der App-Fortsetzung](resume-an-app.md)
-* [UX-Richtlinien für den Start, Anhalten und fortsetzen](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [UX-Richtlinien zum Starten, aussetzen und fortsetzen](https://docs.microsoft.com/windows/uwp/launch-resume/index)
 * [Erweiterte Ausführung](run-minimized-with-extended-execution.md)
 
  

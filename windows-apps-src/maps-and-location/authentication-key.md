@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Kartenauthentifizierungsschlüssel, Kartensteuerelement
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cf66a6725e8231fac693a81a39bc2f0b15fd2
-ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
+ms.openlocfilehash: c3bc74d83c3f713149e9001de4ec10fe0a4706de
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67498902"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259391"
 ---
 # <a name="request-a-maps-authentication-key"></a>Anfordern eines Kartenauthentifizierungsschlüssels
 
@@ -20,9 +20,9 @@ ms.locfileid: "67498902"
 
 Ihre [universelle Windows-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) muss authentifiziert werden, bevor sie die [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Klasse und Kartendienste im [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)-Namespace verwenden kann. Zum Authentifizieren Ihrer App müssen Sie einen Kartenauthentifizierungsschlüssel angeben. In diesem Thema wird beschrieben, wie Sie einen Kartenauthentifizierungsschlüssel vom [Bing Maps Developer Center](https://www.bingmapsportal.com/) anfordern und Ihrer App hinzufügen.
 
-**Tipp** Um mehr über das Verwenden von Karten in Ihrer App zu erfahren, laden Sie das folgende Beispiel aus den [API-Beispielen für die universelle Windows-Plattform](https://go.microsoft.com/fwlink/p/?LinkId=619979) auf GitHub herunter:
+**Tipp** Um mehr über das Verwenden von Karten in Ihrer App zu erfahren, laden Sie das folgende Beispiel aus den [API-Beispielen für die universelle Windows-Plattform](https://github.com/Microsoft/Windows-universal-samples) auf GitHub herunter:
 
--   [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## <a name="get-a-key"></a>Abrufen eines Schlüssels
 
@@ -31,7 +31,7 @@ Erstellen und verwalten Sie Kartenauthentifizierungsschlüssel für Ihre univers
 
 So erstellen Sie einen neuen Schlüssel
 
-1.  Wechseln Sie in Ihrem Browser zu Bing Maps Developer Center ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
+1.  Navigieren Sie in Ihrem Browser zum Info Maps Developer Center ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
 
 2.  Wenn Sie zum Anmelden aufgefordert werden, geben Sie Ihre Microsoft-Kontoinformationen ein, und klicken Sie auf **Anmelden**.
 
@@ -45,10 +45,10 @@ So erstellen Sie einen neuen Schlüssel
 
 7.  Füllen Sie das Formular **Schlüssel erstellen** aus, und klicken Sie dann auf **Erstellen**.
 
-    -   **Anwendungsname:** Der Name der Anwendung.
+    -   **Anwendungsname:** Der Name Ihrer Anwendung.
     -   **Anwendungs-URL (optional):** Die URL Ihrer Anwendung.
-    -   **Typ des Schlüssels:** Wählen Sie **grundlegende** oder **Enterprise**.
-    -   **Anwendungstyp:** Wählen Sie **Windows-Anwendung** für die Verwendung in Ihrer universellen Windows-app.
+    -   **Schlüsseltyp:** Wählen Sie **Basic** oder **Enterprise** aus.
+    -   **Anwendungstyp:** Wählen Sie **Windows-Anwendung** für die Verwendung in ihrer universellen Windows-App aus.
 
     So sieht das Formular aus.
 
@@ -90,7 +90,7 @@ Um Dienste im [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Win
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Bing Karten Developer Center](https://www.bingmapsportal.com/)
-* [Beispiel für UWP-Karte](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Beispiel für UWP-Karte](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Entwurfsrichtlinien für Karten](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015-Video: Nutzen von Karten und Ortung über Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Beispiel für eine UWP-App mit Verkehrsinformationen](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Build 2015-Video: Nutzen von Zuordnungen und Speicherort über Telefon, Tablet und PC in Ihren Windows-apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Beispiel für eine UWP-App mit Verkehrsinformationen](https://github.com/Microsoft/Windows-appsample-trafficapp)

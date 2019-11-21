@@ -7,12 +7,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d66962971844f1983b527c6cea436dba03d63b8b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 266a5f147b57e522088dab2ec298b54596ef77b7
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322330"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260160"
 ---
 # <a name="move-from-ios-to-uwp"></a>Wechsel von iOS zu UWP
 
@@ -26,12 +26,12 @@ Windows wird heute auf einer großen Anzahl von Geräten ausgeführt. Die UWP bi
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Wählen einen Ansatz für IOS- und UWP-app-Entwicklung](selecting-an-approach-to-ios-and-uwp-app-development.md) | Welche Optionen gibt es beim Entwickeln von plattformübergreifenden Apps? |
-| [Erste Schritte mit UWP für iOS-Entwickler](getting-started-with-uwp-for-ios-developers.md) | Wenn Sie iOS-Entwickler sind und die Entwicklung für Windows 10 in Erwägung ziehen, bieten diese Dokumente einen sehr guten Einstieg. |
-| [Einrichten von Ihrem Mac mit Windows 10](setting-up-your-mac-with-windows-10.md) | Verwenden Sie Ihren aktuellen Mac-Computer zum Entwickeln von Apps für Windows. |
+| [Auswählen eines Ansatzes für die Entwicklung von IOS-und UWP-apps](selecting-an-approach-to-ios-and-uwp-app-development.md) | Welche Optionen gibt es beim Entwickeln von plattformübergreifenden Apps? |
+| [Einführung in die UWP für IOS-Entwickler](getting-started-with-uwp-for-ios-developers.md) | Wenn Sie iOS-Entwickler sind und die Entwicklung für Windows 10 in Erwägung ziehen, bieten diese Dokumente einen sehr guten Einstieg. |
+| [Einrichten Ihres Macs mit Windows 10](setting-up-your-mac-with-windows-10.md) | Verwenden Sie Ihren aktuellen Mac-Computer zum Entwickeln von Apps für Windows. |
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 **Für Designer und Entwickler**
-* [Erstellen von universellen Windows-apps für alle Windows-Geräte](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Herunterladen von Designressourcen für UWP-apps](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+* [Entwickeln universeller Windows-Apps für alle Windows-Geräte](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+* [Herunterladen von Entwurfs Ressourcen für UWP-apps](https://docs.microsoft.com/windows/uwp/design/downloads/index)

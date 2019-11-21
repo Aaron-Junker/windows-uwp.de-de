@@ -1,76 +1,76 @@
 ---
 title: Erstellen einer Kundendatenbankanwendung
-description: Erstellen Sie eine datenbankanwendung Kunden, und erfahren Sie, wie grundlegende Enterprise-app-Funktionen zu implementieren.
-keywords: Tutorial, Enterprise, Kunde, die Daten, erstellen, lesen, aktualisieren-löschen, REST,-Authentifizierung
+description: Erstellen Sie eine Kundendaten Bank Anwendung, und erfahren Sie, wie Sie grundlegende Funktionen für Unternehmensanwendungen implementieren.
+keywords: Enterprise, Tutorial, Kunde, Daten, Erstellung von Lese Updates löschen, Rest, Authentifizierung
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: med
-ms.openlocfilehash: 7bd3a180762c3ef06d7c24ae001fb2c7fb7fc55e
-ms.sourcegitcommit: 6df46d7d5b5522805eab11a9c0e07754f28673c6
+ms.openlocfilehash: b8cf0554464b56337e3d57b58db543092682ffa3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58808298"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258617"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>Tutorial: Erstellen einer Kundendatenbankanwendung
+# <a name="tutorial-create-a-customer-database-application"></a>Lernprogramm: Erstellen einer Kundendatenbankanwendung
 
-In diesem Tutorial wird eine einfache app zum Verwalten einer Liste von Kunden erstellt. In diesem Fall führt es eine Auswahl von grundlegenden Konzepte für Unternehmens-apps in UWP. Sie erfahren Folgendes:
+In diesem Tutorial wird eine einfache APP zum Verwalten einer Kundenliste erstellt. Dadurch wird eine Auswahl von grundlegenden Konzepten für Unternehmens-apps in UWP eingeführt. Sie erfahren Folgendes:
 
-* Implementieren von Erstellungs-, Lese-, Aktualisierungs- und Löschvorgängen für eine lokale SQL-Datenbank.
-* Fügen Sie einem Datenraster, zum Anzeigen und Bearbeiten von Kundendaten in der Benutzeroberfläche hinzu.
-* Anordnen von Elementen der Benutzeroberfläche in ein einfaches Formularlayout zusammen.
+* Implementieren Sie Erstellungs-, Lese-, Aktualisierungs-und Löschvorgänge für eine lokale SQL-Datenbank.
+* Fügen Sie ein Datenraster hinzu, um Kundendaten in der Benutzeroberfläche anzuzeigen und zu bearbeiten.
+* Anordnen von UI-Elementen in einem grundlegenden Formularlayout.
 
-Der Ausgangspunkt für dieses Tutorial ist eine Einzelseiten-app mit minimalen Benutzeroberfläche und Funktionen, basierend auf einer vereinfachten Version des der [Auftragsdatenbank für die Customer-Beispiel-app](https://github.com/Microsoft/Windows-appsample-customers-orders-database). Es hat C# und XAML, und wir erwarten, dass Sie über grundlegende Kenntnisse von diesen beiden Sprachen verfügen.
+Der Ausgangspunkt für dieses Tutorial ist eine einseitige App mit minimaler Benutzeroberfläche und Funktionalität, die auf einer vereinfachten Version der Beispiel- [App der Customer Orders-Datenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database)basiert. Es ist in C# und XAML geschrieben, und wir erwarten, dass Sie eine grundlegende Vertrautheit mit beiden Sprachen haben.
 
-![Die Hauptseite der app arbeiten](images/customer-database-tutorial/customer-list.png)
+![Die Hauptseite der funktionierenden App](images/customer-database-tutorial/customer-list.png)
 
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Voraussetzungen
 
-* [Stellen Sie sicher, dass Sie die neueste Version von Visual Studio und das Windows 10 SDK verfügen](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* [Klonen Sie oder Laden Sie das Lernprogramm für die Customer-Beispiel](https://aka.ms/customer-database-tutorial)
+* [Stellen Sie sicher, dass Sie über die neueste Version von Visual Studio und das Windows 10 SDK verfügen.](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Beispiel zum Klonen oder Herunterladen des Kundendatenbank-Tutorials](https://github.com/microsoft/windows-tutorials-customer-database)
 
-Nachdem Sie geklont/Repository heruntergeladen haben, können Sie das Projekt bearbeiten, indem Sie öffnen **CustomerDatabaseTutorial.sln** mit Visual Studio.
+Nachdem Sie das Repository geklont/heruntergeladen haben, können Sie das Projekt bearbeiten, indem Sie **customerdatabasetutorial. sln** in Visual Studio öffnen.
 
 > [!NOTE]
-> Sehen Sie sich die [vollständigen Customer Orders-Beispieldatenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database) um die app anzuzeigen, in diesem Tutorial wurde basierend auf.
+> Sehen Sie sich das [Beispiel der vollständigen Customer Orders-Datenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database) an, um die APP anzuzeigen, auf der dieses Tutorial basiert.
 
-## <a name="part-1-code-of-interest"></a>Teil 1: Relevanten Code
+## <a name="part-1-code-of-interest"></a>Teil 1: relevanter Code
 
-Wenn Sie Ihre app unmittelbar nach dem öffnen es ausführen, sehen Sie einige Schaltflächen am oberen Rand einen leeren Bildschirm. Obwohl es nicht für Sie sichtbar ist, enthält die app bereits eine lokale SQLite-Datenbank, die mit wenigen Tests Kunden bereitgestellt. Von hier aus Sie zunächst ein UI-Steuerelement, sodass diese Kunden angezeigt, und klicken Sie dann auf Hinzufügen, die in Vorgänge in der Datenbank verschieben. Bevor Sie beginnen, ist hier, in dem Sie arbeiten werden.
+Wenn Sie die APP sofort nach dem Öffnen Ausführen, werden einige Schaltflächen oben auf einem leeren Bildschirm angezeigt. Obwohl Sie für Sie nicht sichtbar ist, enthält die APP bereits eine lokale SQLite-Datenbank, die mit einigen Testkunden bereitgestellt wird. Von hier aus müssen Sie zunächst ein UI-Steuerelement implementieren, um diese Kunden anzuzeigen, und dann mit dem Hinzufügen von Vorgängen für die Datenbank fortfahren. Bevor Sie beginnen, arbeiten Sie hier.
 
 ### <a name="views"></a>Ansichten
 
-**CustomerListPage.xaml** der Ansicht der app, die die Benutzeroberfläche für eine einzelne Seite in diesem Tutorial definiert ist. Jedes Mal, wenn müssen Sie zum Hinzufügen oder ändern ein visuelles Element auf der Benutzeroberfläche werden Sie es in dieser Datei ausführen. Dieses Tutorial führt Sie durch das Hinzufügen dieser Elemente:
+**Customerlistpage. XAML** ist die Ansicht der APP, die die Benutzeroberfläche für die einzelne Seite in diesem Tutorial definiert. Jedes Mal, wenn Sie ein visuelles Element in der Benutzeroberfläche hinzufügen oder ändern müssen, führen Sie es in dieser Datei aus. Dieses Tutorial führt Sie durch das Hinzufügen dieser Elemente:
 
-* Ein **RadDataGrid** zum Anzeigen und bearbeiten Ihre Kunden. 
-* Ein **StackPanel** die Anfangswerte für einen neuen Kunden festgelegt.
+* Ein **raddatagrid** zum Anzeigen und Bearbeiten Ihrer Kunden. 
+* Ein **StackPanel** , um die Anfangswerte für einen neuen Kunden festzulegen.
 
 ### <a name="viewmodels"></a>ViewModels
 
-**ViewModels\CustomerListPageViewModel.cs** ist, in denen die grundlegende Logik der app befindet. Jede Benutzeraktion, die in der Ansicht ausgeführt werden in diese Datei für die Verarbeitung übergeben. In diesem Tutorial haben Sie fügen Sie neuen Code hinzu, und implementieren Sie die folgenden Methoden:
+" **Viewmodels\customerlistpageviewmodel.cs** " ist der Ort, an dem sich die grundlegende Logik der APP befindet. Jede Benutzeraktion, die in der Ansicht ausgeführt wird, wird zur Verarbeitung an diese Datei übermittelt. In diesem Tutorial fügen Sie neuen Code hinzu und implementieren die folgenden Methoden:
 
-* **CreateNewCustomerAsync**, die ein neues CustomerViewModel Objekt initialisiert.
-* **DeleteNewCustomerAsync**, das einen neuen Kunden entfernt, bevor sie in der Benutzeroberfläche angezeigt wird.
-* **DeleteAndUpdateAsync**, die Schaltfläche zum Löschen der Logik behandelt.
-* **GetCustomerListAsync**, die eine Liste von Kunden aus der Datenbank abruft.
-* **SaveInitialChangesAsync**, die der Datenbank einen neuen Kunden Informationen hinzugefügt.
-* **UpdateCustomersAsync**, die die Benutzeroberfläche hinzufügen oder Löschen von Kunden entsprechend aktualisiert.
+* " **Kreatenewcustomerasync**": Initialisiert ein neues CustomerViewModel-Objekt.
+* **Deletenewcustomerasync**, wodurch ein neuer Kunde entfernt wird, bevor er in der Benutzeroberfläche angezeigt wird.
+* **Deleteandupdateasync**, der die Logik der Lösch Schaltfläche behandelt.
+* **Getcustomerlistasync**: Hiermit wird eine Liste von Kunden aus der Datenbank abgerufen.
+* **Saveinitialchangesasync**: Hiermit werden der Datenbank die Informationen eines neuen Kunden hinzugefügt.
+* **Updatecustomersasync**, das die Benutzeroberfläche aktualisiert, um alle hinzugefügten oder gelöschten Kunden widerzuspiegeln.
 
-**CustomerViewModel** ist ein Wrapper für die Informationen eines Kunden, die nachverfolgt, und zwar unabhängig davon, ob er zuletzt geändert wurde. Sie müssen nicht alle Elemente dieser Klasse hinzugefügt, jedoch einen Teil des Codes, die Sie an anderer Stelle hinzufügen, wird darauf verweisen.
+**CustomerViewModel** ist ein Wrapper für die Informationen eines Kunden, der nachverfolgt, ob er vor kurzem geändert wurde. Sie müssen dieser Klasse nichts hinzufügen, aber ein Teil des Codes, den Sie an anderer Stelle hinzufügen, wird darauf verweisen.
 
-Weitere Informationen über den Aufbau des Beispiels sehen Sie sich die [Übersicht über app-Struktur](../enterprise/customer-database-app-structure.md).
+Weitere Informationen zur Erstellung des Beispiels finden Sie in der Übersicht über die [App-Struktur](../enterprise/customer-database-app-structure.md).
 
-## <a name="part-2-add-the-datagrid"></a>Teil 2: Fügen Sie das DataGrid-Steuerelement hinzu
+## <a name="part-2-add-the-datagrid"></a>Teil 2: Hinzufügen des DataGrid
 
-Bevor Sie beginnen mit Kundendaten arbeiten, müssen Sie ein UI-Steuerelement zum Anzeigen von Kunden hinzufügen. Zu diesem Zweck, wir verwenden einen vorgefertigtes Drittanbieter- **RadDataGrid** Steuerelement. Die **Telerik.UI.for.UniversalWindowsPlatform** NuGet-Paket ist bereits in diesem Projekt enthalten. Fügen Sie im Raster auf das Projekt ein.
+Bevor Sie mit der Arbeit mit Kundendaten beginnen, müssen Sie ein UI-Steuerelement hinzufügen, um diese Kunden anzuzeigen. Zu diesem Zweck verwenden wir ein vorgefertigte **raddatagrid** -Steuerelement von Drittanbietern. Das nuget-Paket **Telerik. UI. for. universalwindowsplatform** ist bereits in diesem Projekt enthalten. Fügen wir das Raster zum Projekt hinzu.
 
-1. Open **Views\CustomerListPage.xaml** Projektmappen-Explorer. Fügen Sie die folgende Codezeile in der **Seite** Tag, um eine Zuordnung zu der Telerik-Namespace, enthält das Datenraster zu deklarieren.
+1. Öffnen Sie **views\customerlistpage.XAML** aus der Projektmappen-Explorer. Fügen Sie die folgende Codezeile innerhalb des **Seiten** Tags hinzu, um eine Zuordnung zum Telerik-Namespace zu deklarieren, der das Datenraster enthält.
 
     ```xaml
         xmlns:telerikGrid="using:Telerik.UI.Xaml.Controls.Grid"
     ```
 
-2. Unterhalb der **CommandBar** im des Haupt- **"relativepanel"** fügen Sie der Ansicht eine **RadDataGrid** -Steuerelement, mit einigen grundlegenden Konfigurationsoptionen:
+2. Fügen Sie unterhalb der **Befehlsleiste** im **hauptrelativepanel** der Ansicht ein **raddatagrid-** Steuerelement mit einigen grundlegenden Konfigurationsoptionen hinzu:
 
     ```xaml
     <Grid
@@ -96,21 +96,21 @@ Bevor Sie beginnen mit Kundendaten arbeiten, müssen Sie ein UI-Steuerelement zu
     </Grid>
     ```
 
-3. Sie haben das Datenraster hinzugefügt, aber die anzuzeigenden Daten benötigt. Fügen Sie darin die folgenden Codezeilen hinzu:
+3. Sie haben das Datenraster hinzugefügt, es müssen jedoch Daten angezeigt werden. Fügen Sie die folgenden Codezeilen hinzu:
 
     ```xaml
     ItemsSource="{x:Bind ViewModel.Customers}"
     UserEditMode="Inline"
     ```
-    Nun, da Sie eine Datenquelle angezeigt werden, definiert haben **RadDataGrid** behandelt den größten Teil der UI-Logik für Sie. Aber wenn Sie das Projekt ausführen, wird nicht weiterhin keine Daten auf Anzeige angezeigt. Dies liegt daran "ViewModel" noch beim Laden nicht ist.
+    Nachdem Sie nun eine Datenquelle definiert haben, die angezeigt werden soll, verarbeitet **raddatagrid** den größten Teil der Benutzeroberflächen-Logik. Wenn Sie jedoch das Projekt ausführen, werden Ihnen keine Daten auf dem Bildschirm angezeigt. Das liegt daran, dass das ViewModel es noch nicht lädt.
 
-![Leere app, die keine Kunden](images/customer-database-tutorial/blank-customer-list.png)
+![Leere APP, ohne Kunden](images/customer-database-tutorial/blank-customer-list.png)
 
 ## <a name="part-3-read-customers"></a>Teil 3: Kunden lesen
 
-Wenn es initialisiert wird, **ViewModels\CustomerListPageViewModel.cs** Aufrufe der **GetCustomerListAsync** Methode. In diesem Tutorial ist, dass die Anforderungen der Methode zum Abrufen von des Tests von Kundendaten aus der SQLite-Datenbank enthalten.
+Wenn es initialisiert ist, ruft **viewmodels\customerlistpageviewmodel.cs** die **getcustomerlistasync** -Methode auf. Diese Methode muss die Testkunden Daten aus der SQLite-Datenbank abrufen, die im Tutorial enthalten ist.
 
-1. In **ViewModels\CustomerListPageViewModel.cs**, aktualisieren Sie Ihre **GetCustomerListAsync** Methode durch den folgenden Code:
+1. Aktualisieren Sie in **viewmodels\customerlistpageviewmodel.cs**die **getcustomerlistasync** -Methode mit dem folgenden Code:
 
     ```csharp
     public async Task GetCustomerListAsync()
@@ -130,23 +130,23 @@ Wenn es initialisiert wird, **ViewModels\CustomerListPageViewModel.cs** Aufrufe 
         });
     }
     ```
-    Die **GetCustomerListAsync** Methode wird aufgerufen, wenn das "ViewModel" wird geladen, aber vor diesem Schritt haben sie nicht sonderlich. Wir haben hier hinzugefügt, einen Aufruf der **"getasync"** -Methode in der **Repository/SqlCustomerRepository**. Dadurch kann er, wenden Sie sich an das Repository um eine aufzählbare Auflistung von Customer-Objekten abzurufen. Es analysiert dann diese einzelne Objekte, bevor sie Sie der internen hinzufügen **ObservableCollection** , damit sie angezeigt und bearbeitet werden können.
+    Die **getcustomerlistasync** -Methode wird aufgerufen, wenn das ViewModel geladen wird, aber vor diesem Schritt hat Sie nichts unternommen. Hier haben wir einen Aufrufen der **getasync** -Methode im **Repository/sqlcustomerrepository**hinzugefügt. Dadurch kann eine Verbindung mit dem Repository hergestellt werden, um eine Aufzähl Bare Auflistung von Kunden Objekten abzurufen. Anschließend werden Sie in einzelne Objekte analysiert, bevor Sie zu ihrer internen **ObservableCollection** hinzugefügt werden, sodass Sie angezeigt und bearbeitet werden können.
 
-2. Führen Sie die app - wird jetzt das Datenraster mit einer Liste der Kunden angezeigt.
+2. Ausführen der APP: Sie sehen jetzt das Datenraster, in dem die Kundenliste angezeigt wird.
 
-![Ursprüngliche Liste von Kunden](images/customer-database-tutorial/initial-customers.png)
+![Anfängliche Kundenliste](images/customer-database-tutorial/initial-customers.png)
 
 ## <a name="part-4-edit-customers"></a>Teil 4: Bearbeiten von Kunden
 
-Sie können die Einträge im Raster bearbeiten, indem Sie darauf doppelklicken, aber Sie müssen sicherstellen, dass alle Änderungen, die Sie in der Benutzeroberfläche treffen auch auf die Auflistung von Kunden in der CodeBehind-vorgenommen werden. Dies bedeutet, dass müssen Sie die bidirektionale Datenbindung zu implementieren. Wenn Sie weitere Informationen zu diesem möchten, sehen Sie sich unsere [Einführung in die Datenbindung](../get-started/display-customers-in-list-learning-track.md).
+Sie können die Einträge im Datenraster bearbeiten, indem Sie darauf doppelklicken. Sie müssen jedoch sicherstellen, dass alle Änderungen, die Sie in der Benutzeroberfläche vornehmen, auch an ihrer Kunden Auflistung im Code-Behind vorgenommen werden. Dies bedeutet, dass Sie eine bidirektionale Datenbindung implementieren müssen. Weitere Informationen hierzu finden Sie [in unserer Einführung in die Datenbindung](../get-started/display-customers-in-list-learning-track.md).
 
-1. Zuerst deklarieren, die **ViewModels\CustomerListPageViewModel.cs** implementiert die **"INotifyPropertyChanged"** Schnittstelle:
+1. Deklarieren Sie zunächst, dass **viewmodels\customerlistpageviewmodel.cs** die **INotifyPropertyChanged** -Schnittstelle implementiert:
 
     ```csharp
     public class CustomerListPageViewModel : INotifyPropertyChanged
     ```
 
-2. Fügen Sie dann in den Hauptteil der-Klasse, die folgenden Methoden und -Ereignis:
+2. Fügen Sie dann im Hauptteil der-Klasse das folgende Ereignis und die folgende Methode hinzu:
 
     ```csharp
     public event PropertyChangedEventHandler PropertyChanged;
@@ -155,9 +155,9 @@ Sie können die Einträge im Raster bearbeiten, indem Sie darauf doppelklicken, 
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     ```
 
-    Die **OnPropertyChanged** Methode erleichtert es Ihrem Setter zum Auslösen der **PropertyChanged** -Ereignis, das für die bidirektionale Datenbindung erforderlich ist.
+    Mit der **OnPropertyChanged** -Methode können Ihre Setter problemlos das **PropertyChanged** -Ereignis aufrufen, das für die bidirektionale Datenbindung erforderlich ist.
 
-3. Aktualisieren Sie den Setter für **SelectedCustomer** mit dieser Funktionsaufruf:
+3. Aktualisieren Sie den Setter für **selectedcustomer** mit diesem Funktions aufzurufen:
 
     ```csharp
     public CustomerViewModel SelectedCustomer
@@ -174,23 +174,23 @@ Sie können die Einträge im Raster bearbeiten, indem Sie darauf doppelklicken, 
     }
     ```
 
-4. In **Views\CustomerListPage.xaml**, Hinzufügen der **SelectedCustomer** Eigenschaft, um Ihre Datenraster.
+4. Fügen Sie in **views\customerlistpage.XAML**dem Datenraster die **selectedcustomer** -Eigenschaft hinzu.
 
     ```xaml
     SelectedItem="{x:Bind ViewModel.SelectedCustomer, Mode=TwoWay}"
     ```
 
-    Dadurch wird die Auswahl des Benutzers im Datenraster mit der entsprechenden Customer-Objekt im Code-Behind verknüpft. Die TwoWay-Bindung-Modus können die Änderungen, die in der Benutzeroberfläche für das Objekt berücksichtigt werden.
+    Dadurch wird die Auswahl des Benutzers im Datenraster mit dem entsprechenden Customer-Objekt im Code Behind verknüpft. Der TwoWay-Bindungs Modus ermöglicht das Wiedergeben der Änderungen, die auf der Benutzeroberfläche vorgenommen werden, für dieses Objekt.
 
-5. Führen Sie Ihre app ein. Sie können jetzt finden Sie unter der Kunden, die im Raster angezeigt, und nehmen Sie Änderungen an der zugrunde liegenden Daten über die Benutzeroberfläche.
+5. Führen Sie die APP aus. Sie können jetzt die Kunden anzeigen, die im Raster angezeigt werden, und die zugrunde liegenden Daten über die Benutzeroberfläche ändern.
 
-![Ein Kunde im Raster bearbeiten](images/customer-database-tutorial/edit-customer-inline.png)
+![Bearbeiten eines Kunden im Datenraster](images/customer-database-tutorial/edit-customer-inline.png)
 
 ## <a name="part-5-update-customers"></a>Teil 5: Aktualisieren von Kunden
 
-Nun können Sie finden Sie unter und Ihre Kunden bearbeiten, müssen Sie in der Lage, Ihre Änderungen in der Datenbank mithilfe von Push übertragen, und um Updates abzurufen, die von anderen Benutzern vorgenommen wurden.
+Nachdem Sie Ihre Kunden nun sehen und bearbeiten können, müssen Sie in der Lage sein, Ihre Änderungen per Push an die Datenbank zu übernehmen und alle von anderen vorgenommenen Updates abzurufen.
 
-1. Wechseln Sie zurück zur **ViewModels\CustomerListPageViewModel.cs**, und navigieren Sie zu der **UpdateCustomersAsync** Methode. Mit diesem Code Änderungen in der Datenbank zu übertragen und Abrufen von neuen Informationen aktualisieren:
+1. Kehren Sie zu " **viewmodels\customerlistpageviewmodel.cs**" zurück, und navigieren Sie zur **updatecustomersasync** -Methode. Aktualisieren Sie ihn mit diesem Code, um Änderungen an die Datenbank zu übersetzen und neue Informationen abzurufen:
 
     ```csharp
     public async Task UpdateCustomersAsync()
@@ -203,15 +203,15 @@ Nun können Sie finden Sie unter und Ihre Kunden bearbeiten, müssen Sie in der 
         await GetCustomerListAsync();
     }
     ```
-    Dieser Code nutzt die **IsModified** Eigenschaft **ViewModels\CustomerViewModel.cs**, die wird automatisch aktualisiert, wenn der Kunde geändert wird. Dadurch können Sie unnötige Aufrufe zu vermeiden und nur die Änderungen von aktualisierten Kunden an die Datenbank übertragen.
+    In diesem Code wird die **IsModified** -Eigenschaft von **viewmodels\customerviewmodel.cs**verwendet. diese wird automatisch aktualisiert, wenn der Kunde geändert wird. Auf diese Weise können Sie unnötige Aufrufe vermeiden und Änderungen von aktualisierten Kunden nur per Push an die Datenbank Übertragung.
 
 ## <a name="part-6-create-a-new-customer"></a>Teil 6: Erstellen eines neuen Kunden
 
-Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde als eine leere Zeile angezeigt wird, wenn Sie es an der Benutzeroberfläche hinzufügen, vor dem Bereitstellen von Werten für die zugehörigen Eigenschaften. Das ist es nicht um ein Problem, aber hier wir müssen machen es einfacher, legen Sie die ursprünglichen Werte eines Kunden. In diesem Tutorial fügen wir einen einfache reduzierbaren Bedienfelder, aber wenn Sie weitere Informationen hinzugefügt haben könnten Sie eine separate Seite für diesen Zweck erstellen.
+Das Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, da der Kunde als leere Zeile angezeigt wird, wenn Sie ihn vor der Angabe von Werten für die Eigenschaften der Benutzeroberfläche hinzufügen. Das ist kein Problem, aber hier vereinfachen wir das Festlegen der Anfangswerte eines Kunden. In diesem Tutorial fügen wir einen einfachen redusible Panel hinzu, aber wenn Sie weitere Informationen zum Hinzufügen hätten, können Sie für diesen Zweck eine separate Seite erstellen.
 
-### <a name="update-the-code-behind"></a>Das Code-Behind zu aktualisieren
+### <a name="update-the-code-behind"></a>Code Behind aktualisieren
 
-1. Hinzufügen eines neues private-Feld und eine öffentliche Eigenschaft, die **ViewModels\CustomerListPageViewModel.cs**. Dies wird verwendet, um zu steuern, ob der Bereich sichtbar ist.
+1. Fügen Sie **viewmodels\customerlistpageviewmodel.cs**ein neues privates Feld und eine öffentliche Eigenschaft hinzu. Hiermit wird gesteuert, ob der Panel sichtbar ist.
 
     ```csharp
     private bool _addingNewCustomer = false;
@@ -230,14 +230,14 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
     }
     ```
 
-2. Fügen Sie eine neue öffentliche Eigenschaft, an das ViewModel eine Umkehrung der Wert des **AddingNewCustomer**. Hiermit wird die reguläre Schaltflächen auf der Befehlsleiste zu deaktivieren, wenn der Bereich sichtbar ist.
+2. Fügen Sie dem ViewModel eine neue öffentliche Eigenschaft hinzu, eine Umkehrung des Werts von **addingnewcustomer**. Diese Option wird verwendet, um die regulären Befehls leisten Schaltflächen zu deaktivieren, wenn der Bereich sichtbar ist.
 
     ```csharp
     public bool EnableCommandBar => !AddingNewCustomer;
     ```
-    Sie benötigen jetzt eine Möglichkeit, die reduzierbare angezeigt, und klicken Sie zum Erstellen eines Kunden aus, um darin zu bearbeiten. 
+    Sie benötigen nun eine Möglichkeit, den redusible Panel anzuzeigen und einen Kunden zu erstellen, der darin bearbeitet werden kann. 
 
-3. Fügen Sie eine neue private Fiend und eine öffentliche Eigenschaft, an das ViewModel, die den neu erstellten Kunden enthalten soll.
+3. Fügen Sie dem ViewModel eine neue private und öffentliche Eigenschaft hinzu, um den neu erstellten Kunden zu speichern.
 
     ```csharp
     private CustomerViewModel _newCustomer;
@@ -256,7 +256,7 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
     }
     ```
 
-2.  Aktualisieren Ihrer **CreateNewCustomerAsync** Methode, um einen neuen Kunden erstellen, fügen ihn in das Repository und legen Sie es als den ausgewählten Kunden:
+2.  Aktualisieren Sie die Methode " **kreatenewcustomerasync** ", um einen neuen Kunden zu erstellen, ihn dem Repository hinzuzufügen und ihn als ausgewählten Kunden festzulegen:
 
     ```csharp
     public async Task CreateNewCustomerAsync()
@@ -268,7 +268,7 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
     }
     ```
 
-3. Aktualisieren der **SaveInitialChangesAsync** Methode, um einen neu erstellten Kunden an das Repository hinzuzufügen. die Benutzeroberfläche aktualisiert, und schließen Sie den Zugriffsbereich.
+3. Aktualisieren Sie die **saveinitialchangesasync** -Methode, um einen neu erstellten Kunden zum Repository hinzuzufügen, aktualisieren Sie die Benutzeroberfläche, und schließen Sie den Bereich.
 
     ```csharp
     public async Task SaveInitialChangesAsync()
@@ -278,17 +278,17 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
         AddingNewCustomer = false;
     }
     ```
-4. Fügen Sie die folgende Zeile des Codes als die letzte Zeile in der Setter **AddingNewCustomer**:
+4. Fügen Sie die folgende Codezeile als letzte Zeile im Setter für **addingnewcustomer**hinzu:
 
     ```csharp
     OnPropertyChanged(nameof(EnableCommandBar));
     ```
 
-    Dies stellt sicher, dass **EnableCommandBar** wird automatisch aktualisiert, wenn **AddingNewCustomer** geändert wird.
+    Dadurch wird sichergestellt, dass **enablecommandbar** immer dann automatisch aktualisiert wird, wenn **addingnewcustomer** geändert wird.
 
-### <a name="update-the-ui"></a>Die Benutzeroberfläche aktualisiert
+### <a name="update-the-ui"></a>Aktualisieren der Benutzeroberfläche
 
-1. Navigieren Sie zurück zur **Views\CustomerListPage.xaml**, und fügen eine **StackPanel** mit den folgenden Eigenschaften zwischen Ihrem **CommandBar** und Ihre Daten:
+1. Navigieren Sie zurück zu " **views\customerlistpage.XAML**", und fügen Sie ein **StackPanel** -Element mit den folgenden Eigenschaften zwischen der **Befehlsleiste** und dem Datenraster hinzu:
 
     ```xaml
     <StackPanel
@@ -298,15 +298,15 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
         RelativePanel.Below="mainCommandBar">
     </StackPanel>
     ```
-    Die **X: Load** Attribut wird sichergestellt, dass in diesem Bereich wird nur angezeigt, wenn Sie einen neuen Kunden hinzufügen.
+    Das Attribut **x:Load** stellt sicher, dass dieser Bereich nur angezeigt wird, wenn Sie einen neuen Kunden hinzufügen.
 
-2. Nehmen Sie folgende Änderung an der Position des Ihre Datenraster, um sicherzustellen, dass sie nach unten verschoben wird, wenn der neue Bereich angezeigt wird:
+2. Nehmen Sie die folgende Änderung an der Position des Datenrasters vor, um sicherzustellen, dass es nach unten verschoben wird, wenn der neue Bereich angezeigt wird:
 
     ```xaml
     RelativePanel.Below="newCustomerPanel"
     ```
 
-3. Aktualisieren Sie Ihre StackPanel-Element mit vier **Textfeld** Steuerelemente. Sie werden an die einzelnen Eigenschaften der neuen Kundenabonnements binden und ermöglichen es Ihnen, ihre Werte zu bearbeiten, bevor Sie ihn in das Datenraster hinzufügen.
+3. Aktualisieren Sie das Stapel Panel mit vier **TextBox** -Steuerelementen. Sie werden an die einzelnen Eigenschaften des neuen Kunden gebunden und ermöglichen es Ihnen, die Werte zu bearbeiten, bevor Sie Sie dem Datenraster hinzufügen.
 
     ```xaml
     <StackPanel
@@ -341,7 +341,7 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
     </StackPanel>
     ```
 
-4. Fügen Sie einer einfachen Schaltfläche, auf Ihre neuen StackPanel-Element, um den neu erstellten Kunden zu speichern:
+4. Fügen Sie dem neuen Stapel Panel eine einfache Schaltfläche hinzu, um den neu erstellten Kunden zu speichern:
 
     ```xaml
     <StackPanel>
@@ -353,7 +353,7 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
     </StackPanel>
     ```
 
-5. Aktualisieren der **CommandBar**, sodass die regulären erstellen, DELETE- und Update-Schaltflächen deaktiviert sind, wenn das StackPanel-Element angezeigt wird:
+5. Aktualisieren Sie die **Befehlsleiste**, sodass die regulären Schaltflächen "erstellen", "Löschen" und "Aktualisieren" deaktiviert werden, wenn der Stapel Panel sichtbar ist:
 
     ```xaml
     <CommandBar
@@ -365,15 +365,15 @@ Hinzufügen eines neuen Kunden stellt eine Herausforderung dar, wie der Kunde al
     </CommandBar>
     ```
 
-6. Führen Sie Ihre app ein. Sie können jetzt einen Kunden zu erstellen und geben Sie die Daten auf den StackPanel-Element.
+6. Führen Sie die APP aus. Sie können jetzt einen Kunden erstellen und die zugehörigen Daten im Stapel Panel eingeben.
 
-![Erstellen ein neues Kunden](images/customer-database-tutorial/add-new-customer.png)
+![Erstellen eines neuen Kunden](images/customer-database-tutorial/add-new-customer.png)
 
-## <a name="part-7-delete-a-customer"></a>Teil 7: Löschen Sie ein Kunden
+## <a name="part-7-delete-a-customer"></a>Teil 7: Löschen eines Kunden
 
-Löschen eines Kunden ist die endgültige grundlegende Funktionsweise, die Sie implementieren müssen. Wenn Sie keinen Kunden Sie im Datenraster ausgewählt haben löschen, sollten Sie sofort aufrufen **UpdateCustomersAsync** um die Benutzeroberfläche zu aktualisieren. Allerdings müssen Sie diese Methode aufrufen, wenn Sie einen Kunden löschen, die, den Sie soeben erstellt haben.
+Das Löschen eines Kunden ist der abschließende grundlegende Vorgang, den Sie implementieren müssen. Wenn Sie einen Kunden löschen, den Sie im Datenraster ausgewählt haben, sollten Sie sofort **updatecustomersasync** aufrufen, um die Benutzeroberfläche zu aktualisieren. Sie müssen diese Methode jedoch nicht anrufen, wenn Sie einen Kunden löschen, den Sie gerade erstellt haben.
 
-1. Navigieren Sie zu **ViewModels\CustomerListPageViewModel.cs**, und aktualisieren Sie die **DeleteAndUpdateAsync** Methode:
+1. Navigieren Sie zu " **viewmodels\customerlistpageviewmodel.cs**", und aktualisieren Sie die **deleteandupdateasync** -Methode:
 
     ```csharp
     public async void DeleteAndUpdateAsync()
@@ -386,7 +386,7 @@ Löschen eines Kunden ist die endgültige grundlegende Funktionsweise, die Sie i
     }
     ```
 
-2. In **Views\CustomerListPage.xaml**, aktualisieren Sie das StackPanel-Element für einen neuen Kunden hinzufügen, sodass sie eine zweite Schaltfläche enthält:
+2. Aktualisieren Sie in **views\customerlistpage.XAML**den Stapelbereich zum Hinzufügen eines neuen Kunden, sodass er eine zweite Schaltfläche enthält:
 
     ```xaml
     <StackPanel>
@@ -402,7 +402,7 @@ Löschen eines Kunden ist die endgültige grundlegende Funktionsweise, die Sie i
     </StackPanel>
     ```
 
-3. In **ViewModels\CustomerListPageViewModel.cs**, aktualisieren Sie die **DeleteNewCustomerAsync** Methode, um den neuen Kunden zu löschen:
+3. Aktualisieren Sie in **viewmodels\customerlistpageviewmodel.cs**die **deletenewcustomerasync** -Methode, um den neuen Kunden zu löschen:
 
     ```csharp
     public async Task DeleteNewCustomerAsync()
@@ -415,50 +415,50 @@ Löschen eines Kunden ist die endgültige grundlegende Funktionsweise, die Sie i
     }
     ```
 
-4. Führen Sie Ihre app ein. Sie können jetzt Kunden, die entweder im Datenraster oder im StackPanel-Element löschen.
+4. Führen Sie die APP aus. Sie können jetzt Kunden löschen, entweder innerhalb des Datenrasters oder im Stapel Panel.
 
-![Löschen Sie einen neuen Kunden](images/customer-database-tutorial/delete-new-customer.png)
+![Neuen Kunden löschen](images/customer-database-tutorial/delete-new-customer.png)
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Abschluss
 
-Herzlichen Glückwunsch! Mit all dies erfolgt hat Ihre app jetzt eine Vielzahl von Vorgängen der lokalen Datenbank. Sie erstellen, lesen, aktualisieren und Löschen von Kunden innerhalb Ihrer Benutzeroberfläche, und diese Änderungen werden in der Datenbank gespeichert und bleiben für verschiedene Start Ihrer App.
+Gratulation! In diesem Fall verfügt Ihre APP nun über eine vollständige Palette an lokalen Daten Bank Vorgängen. Sie können Kunden innerhalb Ihrer Benutzeroberfläche erstellen, lesen, aktualisieren und löschen, und diese Änderungen werden in der Datenbank gespeichert und werden über verschiedene Starts der APP hinweg beibehalten.
 
-Nachdem Sie fertig sind, können Sie Folgendes:
-* Wenn Sie nicht bereits getan haben, sehen Sie sich die [Übersicht über app-Struktur](../enterprise/customer-database-app-structure.md) für Weitere Informationen darüber, warum ist die app erstellt, es ist.
-* Untersuchen der [vollständigen Customer Orders-Beispieldatenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database) um die app anzuzeigen, in diesem Tutorial wurde basierend auf.
+Nachdem Sie nun fertig sind, sollten Sie Folgendes beachten:
+* Wenn Sie dies noch nicht getan haben, finden Sie in der Übersicht über die [App-Struktur](../enterprise/customer-database-app-structure.md) Weitere Informationen dazu, warum die APP wie Sie erstellt wird.
+* Erkunden Sie das [vollständige Beispiel der Customer Orders-Datenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database) , um die APP anzuzeigen, auf der dieses Tutorial basiert.
 
-Oder wenn Sie für eine Herausforderung darstellen möchten, können Sie weiter, oder höher...
+Oder wenn Sie eine Herausforderung haben, können Sie fortfahren...
 
-## <a name="going-further-connect-to-a-remote-database"></a>Weiterführende Themen: Verbinden Sie mit einer Remotedatenbank
+## <a name="going-further-connect-to-a-remote-database"></a>Weitere Informationen: Herstellen einer Verbindung mit einer Remote Datenbank
 
-Wir haben eine schrittweise Anleitung zum Implementieren dieser Aufrufe mit einer lokalen SQLite-Datenbank bereitgestellt. Aber was geschieht, wenn Sie stattdessen eine Remotedatenbank, möchten?
+Wir haben eine schrittweise exemplarische Vorgehensweise zur Implementierung dieser Aufrufe für eine lokale SQLite-Datenbank bereitgestellt. Aber was geschieht, wenn Sie stattdessen eine Remote Datenbank verwenden möchten?
 
-Wenn Sie dies auszuprobieren möchten, benötigen Sie Ihr eigenes Konto für Azure Active Directory (AAD) und die Möglichkeit, eine eigene Datenquelle hosten.
+Wenn Sie dies ausprobieren möchten, benötigen Sie ein eigenes Azure Active Directory-Konto (AAD) und die Möglichkeit, ihre eigene Datenquelle zu hosten.
 
-Sie müssen zum Hinzufügen von Funktionen für die REST-Aufrufe zu behandeln, und erstellen Sie dann eine Remotedatenbank für die Interaktion mit Authentifizierung. Code vorhanden ist, in der vollständigen [Customer Orders-Datenbankbeispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database) , die Sie für jeden erforderlichen Vorgang verweisen können.
+Sie müssen Authentifizierung, Funktionen zum Verarbeiten von Rest-aufrufen und dann eine Remote Datenbank für die Interaktion mit erstellen. Das vollständige [Customer Orders-Daten Bank Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database) enthält Code, auf den Sie für jeden erforderlichen Vorgang verweisen können.
 
-### <a name="settings-and-configuration"></a>Einstellungen und Konfigurationen
+### <a name="settings-and-configuration"></a>Einstellungen und Konfiguration
 
-Die erforderlichen Schritte für die Verbindung mit Ihren eigenen Remotedatenbank geschrieben ist der [-Infodatei des Beispiels](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/README.md). Sie müssen die folgenden Schritte ausführen:
+Die erforderlichen Schritte zum Herstellen einer Verbindung mit ihrer eigenen Remote Datenbank sind in der Info Datei des Beispiels [beschrieben.](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/README.md) Sie müssen die folgenden Schritte ausführen:
 
-* Geben Sie Ihre Client-Id des Azure-Konto zu ["Constants.cs"](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs).
-* Geben Sie die Url der Remotedatenbank ["Constants.cs"](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs).
-* Geben Sie die Verbindungszeichenfolge für die Datenbank ["Constants.cs"](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs).
-* Verknüpfen Sie Ihre app mit dem Microsoft Store.
-* Kopieren Sie die [Dienstprojekt](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService) zu Ihrer app, und in Azure bereitstellen.
+* Geben Sie die Client-ID Ihres Azure-Kontos für [Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)an.
+* Geben Sie die URL der Remote Datenbank für [Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)an.
+* Geben Sie die Verbindungs Zeichenfolge für die [Constants.cs](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoRepository/Constants.cs)-Datenbank an.
+* Verknüpfen Sie die APP mit dem Microsoft Store.
+* Kopieren Sie das [Dienstprojekt](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService) in Ihre APP, und stellen Sie es in Azure bereit.
 
-### <a name="authentication"></a>Authentifizierung
+### <a name="authentication"></a>Authentication
 
-Sie müssen zum Erstellen einer Schaltfläche, um eine Authentifizierungssequenz ist, und ein Popupfenster oder eine separate Seite zum Sammeln von Benutzerinformationen zu starten. Nachdem Sie die, die erstellt haben, müssen Sie Code bereitstellen, die Anforderungen der Informationen eines Benutzers und wird verwendet, um ein Zugriffstoken abzurufen. Der Kunde Bestellungen-Datenbankbeispiel dient als Wrapper für Microsoft Graph-Aufrufe mit dem **Web Account Manager** Bibliothek, um ein Token abrufen und verarbeiten die Authentifizierung mit einem AAD-Konto.
+Sie müssen eine Schaltfläche erstellen, um eine Authentifizierungs Sequenz zu starten, sowie ein Popup oder eine separate Seite, um die Informationen eines Benutzers zu erfassen. Nachdem Sie das erstellt haben, müssen Sie Code bereitstellen, der die Informationen eines Benutzers anfordert und ihn zum Abrufen eines Zugriffs Tokens verwendet. Das Customer Orders Database-Beispiel umschließt Microsoft Graph Aufrufe mit der **webaccountmanager** -Bibliothek, um ein Token abzurufen und die Authentifizierung für ein Aad-Konto zu verarbeiten.
 
-* Ist die Authentifizierungslogik in implementiert [ **AuthenticationViewModel.cs**](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/ViewModels/AuthenticationViewModel.cs).
-* Der Authentifizierungsprozess wird angezeigt, in der benutzerdefinierten [ **AuthenticationControl.xaml** ](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/UserControls/AuthenticationControl.xaml) Steuerelement.
+* Die Authentifizierungs Logik ist in [**AuthenticationViewModel.cs**](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/ViewModels/AuthenticationViewModel.cs)implementiert.
+* Der Authentifizierungsprozess wird im benutzerdefinierten [**authenticationcontrol. XAML**](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/UserControls/AuthenticationControl.xaml) -Steuerelement angezeigt.
 
-### <a name="rest-calls"></a>REST-Aufrufe
+### <a name="rest-calls"></a>Rest-Aufrufe
 
-Sie müssen nicht ändern des Codes wir hinzugefügt, in diesem Tutorial um REST-Aufrufe zu implementieren. Stattdessen müssen Sie die folgenden Schritte ausführen:
+Sie müssen keinen der in diesem Tutorial hinzugefügten Codes ändern, um Rest-Aufrufe zu implementieren. Stattdessen müssen Sie die folgenden Schritte ausführen:
 
-* Erstellen von neuen Implementierungen von der **ICustomerRepository** und **ITutorialRepository** Schnittstellen, die den gleichen Satz von Funktionen über REST anstelle von SQLite zu implementieren. Sie müssen zum Serialisieren und Deserialisieren von JSON und können Ihre REST-Aufrufe in einer separaten umschließen **HttpHelper** Klasse, wenn Sie möchten. Finden Sie unter [das vollständige Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoRepository/Rest) Einzelheiten.
-* In **"App.Xaml.cs"**, erstellen Sie eine neue Funktion, um die REST-Repository zu initialisieren und rufen sie anstelle von **SqliteDatabase** beim Initialisieren der app. In diesem Fall finden Sie unter [das vollständige Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/App.xaml.cs).
+* Erstellen Sie neue Implementierungen der **icustomerrepository** -Schnittstelle und der **itutorialrepository** -Schnittstelle, und implementieren Sie dabei den gleichen Funktions Satz über Rest anstelle von SQLite. Sie müssen JSON Serialisieren und deserialisieren, und Sie können Ihre Rest-Aufrufe bei Bedarf in einer separaten **httphelper** -Klasse einschließen. Einzelheiten finden Sie [im vollständigen Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoRepository/Rest) .
+* Erstellen Sie in **app.XAML.cs**eine neue Funktion, um das Rest-Repository zu initialisieren, und rufen Sie es anstelle von **SQLiteDatabase** auf, wenn die APP initialisiert wird. Weitere Informationen finden Sie [im vollständigen Beispiel](https://github.com/Microsoft/Windows-appsample-customers-orders-database/blob/master/ContosoApp/App.xaml.cs).
 
-Nachdem Sie alle drei Schritte abgeschlossen haben, sollten Sie Ihre AAD-Kontos über Ihre app authentifizieren können. REST-Aufrufe an die Remotedatenbank ersetzt die lokalen SQLite-Aufrufe, aber die Benutzeroberfläche sollte identisch sein. Wenn Sie besonders ambitioniert fühlen, können Sie eine Seite "Einstellungen", damit der Benutzer dynamisch zwischen den beiden wechseln kann hinzufügen.
+Nachdem alle drei Schritte ausgeführt wurden, sollten Sie sich über Ihre APP bei Ihrem Aad-Konto authentifizieren können. Rest-Aufrufe an die Remote Datenbank ersetzen die lokalen SQLite-Aufrufe, aber die Benutzer Darstellung sollte identisch sein. Wenn Sie noch ehrgeiziger sind, können Sie eine Seite mit Einstellungen hinzufügen, die es dem Benutzer ermöglicht, zwischen beiden dynamisch zu wechseln.

@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, Uwp, Spiele, Beispiel, Directx, Struktur
 ms.localizationpriority: medium
-ms.openlocfilehash: a04e6714772d9b17c281f81ad93582d1fb691c9b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d248d8737f32d35cf0a25f4ad0c9138a1d334365
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368501"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258499"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze-Anwendungsstruktur
 
@@ -21,7 +21,7 @@ ms.locfileid: "66368501"
 Die Struktur einer DirectX-UWP-App unterscheidet sich von der einer herkömmlichen Desktopanwendung. Die Windows-Runtime verwendet keine Handletypen wie z. B. [HWND](https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types) und keine Funktionen wie z. B. [CreateWindow](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-createwindowa), sondern stellt Schnittstellen, z. B. [Windows::UI::Core::ICoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.ICoreWindow) bereit, sodass Sie UWP-Apps auf modernere Weise und mit stärkerer Objektorientierung entwickeln können. In diesem Abschnitt der Dokumentation ist dargestellt, wie der App-code von Marble Maze strukturiert ist.
 
 > [!NOTE]
-> Den Beispielcode für dieses Dokument finden Sie im [DirectX-Beispielspiel Marble Maze](https://go.microsoft.com/fwlink/?LinkId=624011).
+> Den Beispielcode für dieses Dokument finden Sie im [DirectX-Beispielspiel Marble Maze](https://github.com/microsoft/Windows-appsample-marble-maze).
 
  
 ## 
@@ -123,7 +123,7 @@ Das asynchrone Laden von Ressourcen beginnt mit der **App::Load**-Methode. Diese
     });
 ```
 
-Die **MarbleMazeMain** -Klasse definiert die *m\_DeferredResourcesReady* Flags an, dass der asynchrone Ladevorgang abgeschlossen ist. Die **MarbleMazeMain::LoadDeferredResources**-Methode lädt die Spielressourcen und legt anschließend dieses Kennzeichen fest. Während der Aktualisierung(**MarbleMazeMain::Update**) und des Renderns (**MarbleMazeMain::Render**) der App wird dieses Kennzeichen überprüft. Ist dieses Flag festgelegt, wird das Spiel normal fortgesetzt. Wurde das Flag noch nicht festgelegt, zeigt das Spiel den Ladebildschirm an.
+Die **marblemazemain** -Klasse definiert das *m\_deferredresourcesready* -Flag, um anzugeben, dass das asynchrone Laden abgeschlossen ist. Die **MarbleMazeMain::LoadDeferredResources**-Methode lädt die Spielressourcen und legt anschließend dieses Kennzeichen fest. Während der Aktualisierung(**MarbleMazeMain::Update**) und des Renderns (**MarbleMazeMain::Render**) der App wird dieses Kennzeichen überprüft. Ist dieses Flag festgelegt, wird das Spiel normal fortgesetzt. Wurde das Flag noch nicht festgelegt, zeigt das Spiel den Ladebildschirm an.
 
 Weitere Informationen zur asynchronen Programmierung für UWP-Apps finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-Der **MainMenu**-Zustand definiert beispielsweise, dass das Hauptmenü angezeigt wird und das Spiel nicht aktiv ist. Der **InGameActive**-Zustand definiert dagegen, dass das Spiel aktiv ist und das Menü nicht angezeigt wird. Die **MarbleMazeMain** -Klasse definiert die **m\_GameState** Membervariable, die den aktiven Status des spielen enthalten soll.
+Der **MainMenu**-Zustand definiert beispielsweise, dass das Hauptmenü angezeigt wird und das Spiel nicht aktiv ist. Der **InGameActive**-Zustand definiert dagegen, dass das Spiel aktiv ist und das Menü nicht angezeigt wird. Die **marblemazemain** -Klasse definiert die **m\_gamestate** -Member-Variable, die den aktiven Spielzustand enthalten soll.
 
 Die Methoden **MarbleMazeMain::Update** und **MarbleMazeMain::Render** verwenden die switch-Anweisung, um die Logik für den aktuellen Zustand auszuführen. Das folgende Beispiel zeigt, wie diese switch-Anweisung für die **MarbleMazeMain::Update**-Methode aussehen könnte (zur besseren Veranschaulichung der Struktur wurden Einzelheiten ausgespart).
 
@@ -423,9 +423,9 @@ Informationen zu einigen der wichtigsten Vorgehensweisen, die Sie beim Verwenden
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Hinzufügen von visuellem Inhalt zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)
-* [Marble Maze-Beispiel-Grundlagen](marble-maze-sample-fundamentals.md)
-* [Entwickeln von Marble Maze, einem UWP-Spiel in C++ und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Hinzufügen visueller Inhalte zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)
+* [Grundlagen zu Marble Maze-Beispielen](marble-maze-sample-fundamentals.md)
+* [Entwickeln von Marble Maze, einem UWP- C++ Spiel in und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

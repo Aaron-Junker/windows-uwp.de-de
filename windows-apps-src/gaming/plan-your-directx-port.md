@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Portieren von Windows 10, UWP, Directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 247c7cb05027520cb7a39e04ff65579297b66dc9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 032eeaf2a17ef244287e25e6d9ff32a12c61e137
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368304"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258465"
 ---
 # <a name="plan-your-directx-port"></a>Planen der DirectX-Portierung
 
@@ -20,8 +20,8 @@ ms.locfileid: "66368304"
 **Zusammenfassung**
 
 -   Planen der DirectX-Portierung
--   [Wichtige Änderungen von Direct3D 9 zu Direct3D 11](understand-direct3d-11-1-concepts.md)
--   [Feature-Zuordnung](feature-mapping.md)
+-   [Wichtige Änderungen von Direct3D 9 bis Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Funktions Zuordnung](feature-mapping.md)
 
 
 Planen Sie das Portieren des Spiels von DirectX 9 zu DirectX 11 und zur Universellen Windows-Plattform (UWP): Führen Sie ein Upgrade des Grafikcodes durch, und fügen Sie das Spiel in die Windows-Runtime-Umgebung ein.
@@ -35,11 +35,11 @@ Das Upgrade von Direct3D 9 auf Direct3D 11 ist mehr als nur ein Suchen-und-Ers
 
 Ersetzen Sie die Hilfsbibliotheken D3DX und DXUT durch Ihre eigenen Hilfsbibliotheken oder durch Communitytools. Weitere Informationen finden Sie im Abschnitt [Featurezuordnung](feature-mapping.md).
 
-> **Beachten Sie**    können Sie die [DirectX-Toolkit](https://go.microsoft.com/fwlink/p/?LinkID=248929) oder [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) , einige Funktionen zu ersetzen, die zuvor von D3DX und DXUT bereitgestellt wurden.
+> **Beachten** Sie   Sie das [DirectX-Toolkit](https://github.com/Microsoft/DirectXTK) oder [directxtex](https://github.com/Microsoft/DirectXTex) verwenden können, um einige Funktionen zu ersetzen, die zuvor von D3DX und dxut bereitgestellt wurden.
 
  
 
-Shader in der Assemblysprache geschrieben müssen aktualisiert werden, um HLSL-Shader 4 Modellebene 9 mit\_1 oder 9\_3-Funktionen und Shader für muss auf eine neuere Version der HLSL-Syntax aktualisiert werden, der effektbibliothek geschrieben wurden. Weitere Informationen finden Sie im Abschnitt [Featurezuordnung](feature-mapping.md).
+Shader, die in der Assemblysprache geschrieben wurden, sollten mit dem Shader-Modell 4 Level 9\_1 oder 9\_3-Funktionalität auf HLSL aktualisiert werden, und für die Effects-Bibliothek geschriebene Shader müssen auf eine neuere Version der HLSL-Syntax aktualisiert werden. Weitere Informationen finden Sie im Abschnitt [Featurezuordnung](feature-mapping.md).
 
 Machen Sie sich mit den verschiedenen [Direct3D-Featureebenen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro) vertraut. Mithilfe von Featureebenen wird ein großer Bereich von Videohardware klassifiziert, indem Gruppen bekannter Funktionen definiert werden. Jede Gruppe entspricht grob den Versionen von Direct3D, und zwar von 9.1 bis 11.2. Für alle Featureebenen wird die DirectX 11-API verwendet.
 

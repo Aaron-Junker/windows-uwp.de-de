@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Latenz, DXGI, Swapchains, Directx
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf4935abc543b1c11fbbee32812a7702298cd79
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: dd414c3ea65d30253d54cd335ed0b85d151b6dff
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368182"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258437"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Reduzieren der Latenz mit DXGI 1.3-Swapchains
 
@@ -24,18 +24,18 @@ Verwenden Sie DXGI 1.3 zum Reduzieren der geltenden Framelatenz, indem Sie warte
 
 Bei der Flipmodell-Swapchain werden „Flips“ des Hintergrundpuffers jeweils in die Warteschlange eingereiht, wenn vom Spiel [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) aufgerufen wird. Wenn von der Renderschleife „Present()“ aufgerufen wird, blockiert das System den Thread, bis die Darstellung eines vorherigen Frames abgeschlossen ist. So wird in der Warteschlange Platz für den neuen Frame geschaffen, bevor dieser dargestellt wird. Dies verursacht zusätzliche Latenz zwischen dem Zeitpunkt, zu dem vom Spiel ein Frame gezeichnet wird, und dem Zeitpunkt, zu dem die Anzeige des Frames vom System zugelassen wird. In vielen Fällen wird vom System ein stabiles Gleichgewicht erreicht, bei dem vom Spiel zwischen dem Rendern und Darstellen des Frames immer nahezu einen ganzen zusätzlichen Frame lang abgewartet wird. Es ist besser zu warten, bis das System zum Akzeptieren eines neuen Frames bereit ist, als den Frame basierend auf den aktuellen Daten zu rendern und sofort in die Warteschlange einzureihen.
 
-Erstellen eine mit wartemöglichkeit SwapChain mit der [ **DXGI\_SWAP\_Kette\_FLAG\_FRAME\_LATENZ\_WAITABLE\_Objekt** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) Flag. Swapchains, die auf diese Art erstellt werden, können Ihre Renderschleife benachrichtigen, wenn das System zum Akzeptieren eines neuen Frames bereit ist. So kann das Spiel anhand der aktuellen Daten rendern und das Ergebnis sofort in die vorhandene Warteschlange einfügen.
+Erstellen Sie eine ausnutzbare SwapChain mit der [**DXGI-\_Swap\_Chain\_Flag\_Frame\_Wartezeit\_der\_objektflag**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) . Swapchains, die auf diese Art erstellt werden, können Ihre Renderschleife benachrichtigen, wenn das System zum Akzeptieren eines neuen Frames bereit ist. So kann das Spiel anhand der aktuellen Daten rendern und das Ergebnis sofort in die vorhandene Warteschlange einfügen.
 
-## <a name="step-1-create-a-waitable-swap-chain"></a>Schritt 1: Erstellen einer SwapChain mit mit wartemöglichkeit
+## <a name="step-1-create-a-waitable-swap-chain"></a>Schritt 1: Erstellen einer Swapchain mit Wartemöglichkeit
 
 
-Geben Sie die [ **DXGI\_AUSTAUSCHEN\_Kette\_FLAG\_FRAME\_LATENZ\_WAITABLE\_Objekt** ](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) kennzeichnen Sie beim Aufrufen [ **CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow).
+Geben Sie die [**DXGI-\_Swap\_Chain\_Flag\_Frame\_Wartezeit\_wanutzbares\_objektflag**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) an, wenn Sie " [**kreateswapchadetailcorewindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)" aufrufen.
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Beachten Sie**    im Gegensatz zu einigen Flags die, dieses Flag kann nicht hinzugefügt oder entfernt werden mithilfe von [ **ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers). Von DXGI wird ein Fehlercode zurückgegeben, wenn dieses Flag anders als bei der Erstellung der Swapchain festgelegt wird.
+> **Beachten Sie**   im Gegensatz zu einigen Flags kann dieses Flag nicht mithilfe von [**resizebuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)hinzugefügt oder entfernt werden. Von DXGI wird ein Fehlercode zurückgegeben, wenn dieses Flag anders als bei der Erstellung der Swapchain festgelegt wird.
 
  
 
@@ -50,7 +50,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## <a name="step-2-set-the-frame-latency"></a>Schritt 2: Legen Sie die Frame-Latenz
+## <a name="step-2-set-the-frame-latency"></a>Schritt 2: Festlegen der Framelatenz
 
 
 Legen Sie die Framelatenz mit der [**IDXGISwapChain2::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-setmaximumframelatency)-API fest, anstatt [**IDXGIDevice1::SetMaximumFrameLatency**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency) aufzurufen.
@@ -68,7 +68,7 @@ Standardmäßig ist die Framelatenz für Swapchains mit Wartemöglichkeit auf 1 
 //    );
 ```
 
-## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Schritt 3: Das Objekt mit wartemöglichkeit aus der SwapChain zu erhalten.
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>Schritt 3: Abrufen des Objekts mit Wartemöglichkeit aus der Swapchain
 
 
 Rufen Sie [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject) auf, um das „wait“-Handle abzurufen. Das „wait“-Handle ist ein Zeiger auf das Objekt mit Wartemöglichkeit. Speichern Sie dieses Handle für die Verwendung durch die Renderschleife.
@@ -80,7 +80,7 @@ Rufen Sie [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.micr
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>Schritt 4: Warten Sie vor dem Rendern jeder frame
+## <a name="step-4-wait-before-rendering-each-frame"></a>Schritt 4: Warten vor dem Rendern der einzelnen Frames
 
 
 Die Renderschleife sollte warten, bis die Swapchain über das Objekt mit Wartemöglichkeit ein Signal sendet, bevor sie mit dem Rendern eines Frames beginnt. Dies gilt auch für den ersten Frame, der mit der Swapchain gerendert wird. Verwenden Sie [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex), und stellen Sie das in Schritt 2 abgerufene „wait“-Handle bereit, um den Start eines Frames zu signalisieren.
@@ -147,14 +147,14 @@ Weitere Informationen zur Programmierung mit Multithreading unter Windows finden
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [DirectXLatency-Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=317361)
-* [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
+* [Directxlatency-Beispiel](https://code.msdn.microsoft.com/windowsapps/DirectXLatency-sample-a2e2c9c3)
+* [**IDXGISwapChain2:: getframelatencywaitableobject**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobjectex)
-* [**Windows.System.Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
-* [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [**Windows. System. Threading**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+* [Asynchrone Programmierung inC++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
 * [Prozesse und Threads](https://docs.microsoft.com/windows/desktop/ProcThread/processes-and-threads)
-* [Synchronisierung](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
-* [Mithilfe solcher Objekte (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
+* [Synchron](https://docs.microsoft.com/windows/desktop/Sync/synchronization)
+* [Verwenden von Ereignis Objekten (Windows)](https://docs.microsoft.com/windows/desktop/Sync/using-event-objects)
 
  
 

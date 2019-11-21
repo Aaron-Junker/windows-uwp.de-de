@@ -1,30 +1,30 @@
 ---
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Verwenden Sie diese Methoden in der Microsoft Store Übermittlungs-API, um die Übertragung von Paketen für apps zu verwalten, die bei Ihrem Partner Center-Konto registriert sind.
-title: Verwalten von Übermittlungen von Paketen
+title: Verwalten von Flight-Paket-Übermittlungen
 ms.date: 04/16/2018
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Flug Übermittlung
+keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Flight-Übermittlungen
 ms.localizationpriority: medium
-ms.openlocfilehash: 50596fdadae2ac4a0625687e7c8acaf985ccfaa7
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: 4e96f6d2495583fcee4d16e54a5c8a5e208fec27
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690376"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259256"
 ---
-# <a name="manage-package-flight-submissions"></a>Verwalten von Übermittlungen von Paketen
+# <a name="manage-package-flight-submissions"></a>Verwalten von Flight-Paket-Übermittlungen
 
-Die Microsoft Store Übermittlungs-API stellt Methoden bereit, die Sie zum Verwalten von paketflügen für Ihre apps verwenden können, einschließlich der schrittweisen Paket Rollouts. Eine Einführung in die Microsoft Store Übermittlungs-API, einschließlich der Voraussetzungen für die Verwendung der API, finden [Sie unter Erstellen und Verwalten von Übermittlungen mithilfe Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md).
+Mithilfe der Methoden der Microsoft Store-Übermittlungs-API können Sie Flight-Paket-Übermittlungen für Ihre Apps verwalten, einschließlich gradueller Paketrollouts. Eine Einführung in die Microsoft Store-Übermittlungs-API einschließlich der Voraussetzungen für die Verwendung der API finden Sie unter [Erstellen und Verwalten von Übermittlungen mit Microsoft Store-Diensten](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> Wenn Sie die Microsoft Store Übermittlungs-API verwenden, um eine Übermittlung für einen paketflight zu erstellen, stellen Sie sicher, dass Sie weitere Änderungen an der Übermittlung nur über die API anstelle von Partner Center vornehmen. Wenn Sie das Dashboard verwenden, um eine Übermittlung zu ändern, die Sie ursprünglich mit der API erstellt haben, können Sie diese Übermittlung nicht mehr mithilfe der API ändern oder übertragen. In einigen Fällen kann die Übermittlung in einem Fehlerzustand belassen werden, in dem Sie im Übermittlungs Prozess nicht fortgesetzt werden kann. Wenn dies auftritt, müssen Sie die Übermittlung löschen und eine neue Übermittlung erstellen.
+> Wenn Sie die Microsoft Store Übermittlungs-API verwenden, um eine Übermittlung für einen paketflight zu erstellen, stellen Sie sicher, dass Sie weitere Änderungen an der Übermittlung nur über die API anstelle von Partner Center vornehmen. Wenn Sie das Dashboard zum Ändern einer Übermittlung verwenden, die ursprünglich mit der API erstellt wurde, können Sie die Übermittlung nicht länger mithilfe der API ändern oder übermitteln. In einigen Fällen kann der Fehlerstatus der Übermittlung belassen werden, mit dem die Übermittlung nicht fortgesetzt werden kann. In diesem Fall müssen Sie die Übermittlung löschen und eine neue Übermittlung erstellen.
 
 <span id="methods-for-package-flight-submissions" />
 
-## <a name="methods-for-managing-package-flight-submissions"></a>Methoden zum Verwalten von Übermittlungen von Paketen
+## <a name="methods-for-managing-package-flight-submissions"></a>Methoden zum Verwalten von Flight-Paket-Übermittlungen
 
-Verwenden Sie die folgenden Methoden, um die Übermittlung von Paketen zu übermitteln, zu erstellen, zu aktualisieren, zu übernehmen oder zu löschen. Bevor Sie diese Methoden verwenden können, muss der paketflug bereits im Partner Center vorhanden sein. Sie können einen paketflug [in Partner Center](https://docs.microsoft.com/windows/uwp/publish/package-flights) oder mithilfe der Methoden zur Microsoft Store Übermittlung von APIs in erstellen, die unter [Verwalten von Paket Flügen](manage-flights.md)beschrieben werden.
+Verwenden Sie die folgenden Methoden zum Abrufen, Erstellen, Aktualisieren, Committen oder Löschen einer Flight-Paket-Übermittlung. Bevor Sie diese Methoden verwenden können, muss der paketflug bereits im Partner Center vorhanden sein. Sie können einen paketflug [in Partner Center](https://docs.microsoft.com/windows/uwp/publish/package-flights) oder mithilfe der Methoden zur Microsoft Store Übermittlung von APIs in erstellen, die unter [Verwalten von Paket Flügen](manage-flights.md)beschrieben werden.
 
 <table>
 <colgroup>
@@ -75,42 +75,42 @@ Verwenden Sie die folgenden Methoden, um die Übermittlung von Paketen zu überm
 
 <span id="create-a-package-flight-submission">
 
-## <a name="create-a-package-flight-submission"></a>Erstellen einer paketflight-Übermittlung
+## <a name="create-a-package-flight-submission"></a>Erstellen einer Flight-Paket-Übermittlung
 
-Gehen Sie folgendermaßen vor, um eine Übermittlung für einen paketflug zu erstellen.
+Gehen Sie folgendermaßen vor, um eine Übermittlung für ein Flight-Paket zu erstellen.
 
-1. Wenn Sie dies noch nicht getan haben, müssen Sie die unter [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Diensten](create-and-manage-submissions-using-windows-store-services.md)beschriebenen Voraussetzungen erfüllen. dazu gehören das Zuordnen einer Azure AD Anwendung zu Ihrem Partner Center-Konto und das Abrufen der Client-ID und des Schlüssels. Dies ist nur einmal erforderlich. Nachdem Sie die Client-ID und den Schlüssel erstellt haben, können Sie Sie jederzeit wieder verwenden, wenn Sie ein neues Azure AD Zugriffs Token erstellen müssen.  
+1. Wenn Sie dies noch nicht getan haben, müssen Sie die unter [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Diensten](create-and-manage-submissions-using-windows-store-services.md)beschriebenen Voraussetzungen erfüllen. dazu gehören das Zuordnen einer Azure AD Anwendung zu Ihrem Partner Center-Konto und das Abrufen der Client-ID und des Schlüssels. Sie müssen dies nur einmal durchführen. nachdem Sie Client-ID und Schlüssel erhalten haben, können Sie diese jedes Mal wiederverwenden, wenn Sie ein neues Azure AD-Token erstellen müssen.  
 
-2. Rufen Sie [ein Azure AD Zugriffs Token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)ab. Sie müssen dieses Zugriffs Token an die Methoden in der Microsoft Store Übermittlungs-API übergeben. Nachdem Sie ein Zugriffs Token erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Nachdem das Token abgelaufen ist, können Sie ein neues abrufen.
+2. [Abrufen eines Azure AD-Zugriffstokens](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Sie müssen dieses Zugriffstoken an die Methoden in der Microsoft Store-Übermittlungs-API übergeben. Nachdem Sie ein Zugriffstoken abgerufen haben, können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
-3. [Erstellen Sie eine Package Flight-Übermittlung](create-a-flight-submission.md) , indem Sie die folgende Methode in der Microsoft Store Übermittlungs-API ausführen. Diese Methode erstellt eine neue, in Bearbeitung befindliche Übermittlung, bei der es sich um eine Kopie der letzten veröffentlichten Übermittlung handelt.
+3. [Erstellen Sie eine Flight-Paket-Übermittlung](create-a-flight-submission.md) mithilfe der folgenden Methode in der Microsoft Store-Übermittlungs-API. Diese Methode erstellt eine neue laufende Übermittlung, die eine Kopie der letzten veröffentlichten Übermittlung ist.
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions
     ```
 
-    Der Antworttext enthält eine Ressource für die [Flug Übermittlung](#flight-submission-object) , die die ID der neuen Übermittlung, den SAS-URI (Shared Access Signature) zum Hochladen von Paketen für die Übermittlung in Azure BLOB Storage und die Daten für die neue Übermittlung (einschließlich all) enthält. die Listen und Preisinformationen).
+    Der Antworttext enthält eine [Flight-Übermittlung](#flight-submission-object)-ressource, die eine ID für die neue Übermittlung, die SAS-URI (Shared Access Signatur) zum Hochladen von Paketen für die Übermittlung an Azure Blob Storage und die Daten für die neue Übermittlung (inkl. alle Eintrags- und Preisinfos) enthält.
 
     > [!NOTE]
-    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel erforderlich sind. Hintergrundinformationen zu SAS-URIs und deren Verwendung mit Azure BLOB Storage finden Sie unter [Shared Access Signature, Part 1: Grundlegendes zum SAS-Modell](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) und [Shared Access Signature, Teil 2: Erstellen und Verwenden einer SAS mit BLOB Storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+    > Ein SAS-URI ermöglicht den Zugriff auf eine sichere Ressource in Azure Storage, ohne dass Kontoschlüssel benötigt werden. Hintergrundinformationen zu SAS-URIs und deren Verwendung mit Azure Blob Storage finden Sie unter [Shared Access Signatures, Teil 1: Verstehen des SAS-Modells](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/) und [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit BLOB-Speicher](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, [bereiten Sie die Pakete](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) vor, und fügen Sie Sie einem ZIP-Archiv hinzu.
+4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, müssen Sie [die Pakete vorbereiten](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) und einem ZIP-Archiv hinzufügen.
 
-5. Überarbeiten Sie die [Flug](#flight-submission-object) Übermittlungs Daten mit den erforderlichen Änderungen für die neue Übermittlung, und führen Sie die folgende Methode aus, um [die paketflight-Übermittlung zu aktualisieren](update-a-flight-submission.md).
+5. Revidieren Sie die [Flight-Übermittlungsdaten](#flight-submission-object)mit allen erforderlichen Änderungen für die neue Übermittlung, und führen Sie die folgende Methode aus, um [die Flight-Paket-Übermittlung zu aktualisieren](update-a-flight-submission.md).
 
     ```json
     PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
     ```
       > [!NOTE]
-      > Wenn Sie neue Pakete für die Übermittlung hinzufügen, stellen Sie sicher, dass Sie die Übermittlungs Daten aktualisieren, um auf den Namen und den relativen Pfad dieser Dateien im ZIP-Archiv zu verweisen.
+      > Wenn Sie neue Pakete für die Übermittlung hinzufügen, müssen Sie die Übermittlungsdaten aktualisieren, damit diese auf den Namen und den relativen Pfad dieser Dateien im ZIP-Archiv verweisen.
 
-4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, laden Sie das ZIP-Archiv mit dem SAS-URI in [Azure BLOB Storage](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage) hoch, der im Antworttext der Post-Methode bereitgestellt wurde, die Sie zuvor aufgerufen haben. Es gibt verschiedene Azure-Bibliotheken, die Sie für eine Vielzahl von Plattformen verwenden können, darunter:
+4. Wenn Sie neue Pakete für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv mit dem SAS-URI auf [Azure Blob Storage](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage) hochladen, der im Antworttext der POST-Methode bereitgestellt wurde, die Sie zuvor aufgerufen haben. Zu diesem Zweck können Sie verschiedene Azure-Bibliotheken auf unterschiedlichen Plattformen verwenden, darunter:
 
-    * [Azure Storage-Clientbibliothek für .NET](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-    * [Azure Storage-SDK für Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-    * [Azure Storage SDK für Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [Azure Storage-Client Bibliothek für .net](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [Azure Storage SDK für Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [Azure Storage SDK für python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    Im folgenden C# Codebeispiel wird veranschaulicht, wie Sie ein ZIP-Archiv mithilfe der [cloudblockblob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) -Klasse in der Azure Storage-Client Bibliothek für .net in Azure BLOB Storage hochladen. In diesem Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstrom Objekt geschrieben wurde.
+    Das folgende C#-Codebeispiel zeigt, wie Sie ein ZIP-Archiv mithilfe der [CloudBlockBlob](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob)-Klasse in der Azure Storage-Clientbibliothek für .NET auf Azure Blob Storage hochladen. Im Beispiel wird davon ausgegangen, dass das ZIP-Archiv bereits in ein Datenstromobjekt geschrieben wurde.
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -119,51 +119,51 @@ Gehen Sie folgendermaßen vor, um eine Übermittlung für einen paketflug zu ers
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. Führen Sie die folgende Methode aus, um [die paketübertragungs Übermittlung](commit-a-flight-submission.md) auszuführen. Dadurch wird Partner Center benachrichtigt, dass Sie Ihre Übermittlung abgeschlossen haben und dass Ihre Updates jetzt auf Ihr Konto angewendet werden sollen.
+5. Führen Sie folgende Methode aus, um [die Flight-Paket-Übermittlung zu committen](commit-a-flight-submission.md). Dadurch wird Partner Center benachrichtigt, dass Sie Ihre Übermittlung abgeschlossen haben und dass Ihre Updates jetzt auf Ihr Konto angewendet werden sollen.
 
     ```json
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
     ```
 
-6. Überprüfen Sie den Commit-Status, indem Sie die folgende Methode ausführen, um [den Status der paketflight-Übermittlung zu erhalten](get-status-for-a-flight-submission.md).
+6. Überprüfen Sie den Commit-Status, indem Sie die folgende Methode ausführen, um [den Status der Flight-Paket-Übermittlung abzurufen](get-status-for-a-flight-submission.md).
 
     ```json
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
     ```
 
-    Überprüfen Sie den *Status* Wert im Antworttext, um den Übermittlungs Status zu bestätigen. Dieser Wert sollte von **commitstarted** entweder in **Vorverarbeitung** geändert werden, wenn die Anforderung erfolgreich ist, oder **commitfailed** , wenn die Anforderung Fehler enthält. Wenn Fehler auftreten, enthält das Feld " *Status Details* " Weitere Details zu diesem Fehler.
+    Um den Status der Übermittlung zu überprüfen, zeigen Sie den Wert *status* im Antworttext an. Dieser Wert sollte von **CommitStarted** entweder in **PreProcessing** geändert worden sein, wenn die Anforderung erfolgreich war, oder in **CommitFailed**, wenn die Anforderung Fehler enthalten hat. Wenn Fehler aufgetreten sind, enthält das Feld *StatusDetails* Feld weitere Details zu den Fehlern.
 
-7. Nachdem der Commit erfolgreich abgeschlossen wurde, wird die Übermittlung zur Erfassung an den Speicher gesendet. Sie können den Übermittlungs Fortschritt weiterhin mithilfe der vorherigen Methode oder durch Besuch von Partner Center überwachen.
+7. Nachdem das Commit erfolgreich abgeschlossen wurde, wird die Übermittlung zur Aufnahme an den Store gesendet. Sie können den Übermittlungs Fortschritt weiterhin mithilfe der vorherigen Methode oder durch Besuch von Partner Center überwachen.
 
 <span/>
 
 ## <a name="code-examples"></a>Codebeispiele
 
-In den folgenden Artikeln finden Sie ausführliche Codebeispiele, die veranschaulichen, wie Sie eine paketflight-Übermittlung in verschiedenen Programmiersprachen erstellen:
+Die folgenden Artikel enthalten ausführliche Codebeispiele, die zeigen, wie Sie eine Flight-Paket-Übermittlung in verschiedenen Programmiersprachen erstellen:
 
 * [C#Codebeispiele](csharp-code-examples-for-the-windows-store-submission-api.md)
 * [Java-Codebeispiele](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python-Codebeispiele](python-code-examples-for-the-windows-store-submission-api.md)
 
-## <a name="storebroker-powershell-module"></a>Storebroker-PowerShell-Modul
+## <a name="storebroker-powershell-module"></a>StoreBroker PowerShell-Modul
 
-Als Alternative zum direkten Aufrufen der Microsoft Store Übermittlungs-API stellen wir auch ein Open-Source-PowerShell-Modul bereit, das eine Befehlszeilenschnittstelle zusätzlich zur API implementiert. Dieses Modul heißt [storebroker](https://aka.ms/storebroker). Sie können dieses Modul verwenden, um Ihre APP-, Flug-und Add-on-Übermittlungen von der Befehlszeile aus zu verwalten, anstatt die Microsoft Store Übermittlungs-API direkt aufzurufen, oder Sie können einfach die Quelle durchsuchen, um weitere Beispiele zum Aufrufen dieser API anzuzeigen. Das storebroker-Modul wird in Microsoft aktiv als die primäre Art und Weise verwendet, dass viele Anwendungen von erst Anbietern an den Store übermittelt werden.
+Als Alternative zum direkten Aufruf der Microsoft Store-Übermittlungs-API stellen wir ein PowerShell-Modul (Open Source) bereit, das eine Befehlszeilenschnittstelle über der API implementiert. Dieses Modul heißt [StoreBroker](https://github.com/Microsoft/StoreBroker). Sie können dieses Modul verwenden, um Ihre App-, Flight- und Add-On-Übermittlungen über die Befehlszeile anstatt über die Microsoft Store-Übermittlungs-API direkt zu verwalten. Sie können auch ganz einfach die Quelle durchsuchen, um weitere Beispiele für das Aufrufen dieser API zu erhalten. Das StoreBroker-Modul wird innerhalb von Microsoft aktiv als primäre Methode verwendet, durch die viele Erstanbieter-Apps an den Store übermittelt werden.
 
-Weitere Informationen finden Sie [auf der Seite storebroker auf GitHub](https://aka.ms/storebroker).
+Weitere Informationen finden Sie auf unserer [StoreBroker-Seite auf GitHub](https://github.com/Microsoft/StoreBroker).
 
 <span id="manage-gradual-package-rollout">
 
-## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Verwalten einer schrittweisen Paket Bereitstellung für eine Package Flight-Übermittlung
+## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>Verwalten eines graduellen Paketrollouts für eine Flight-Paket-Übermittlung
 
-Sie können die aktualisierten Pakete in einem paketübertragungs-Übertragung in einen Prozentsatz Ihrer APP-Kunden unter Windows 10 schrittweise einführen. Auf diese Weise können Sie Feedback-und Analysedaten für bestimmte Pakete überwachen, um sicherzustellen, dass Sie sich vor dem Rollout der Aktualisierung für das Update sicher sind. Sie können den Rollout Prozentsatz (oder das Update anhalten) für eine veröffentlichte Übermittlung ändern, ohne eine neue Übermittlung erstellen zu müssen. Weitere Informationen, einschließlich Anleitungen zum Aktivieren und Verwalten einer schrittweisen Paket Bereitstellung in Partner Center, finden Sie in [diesem Artikel](../publish/gradual-package-rollout.md).
+Sie können die aktualisierten Pakete in einer Flight-Paket-Übermittlung graduell für einen bestimmten Prozentsatz der Kunden Ihrer App unter Windows 10 einführen. So können Sie Feedback und Analysedaten für die jeweiligen Pakete überwachen und vor einem umfassenden Rollout sicherstellen, dass das Update ordnungsgemäß funktioniert. Sie können den Rollout-Prozentwert für eine veröffentlichte Übermittlung ändern (oder die Aktualisierung anhalten), ohne dass Sie eine neue Übermittlung erstellen müssen. Weitere Informationen, einschließlich Anleitungen zum Aktivieren und Verwalten einer schrittweisen Paket Bereitstellung in Partner Center, finden Sie in [diesem Artikel](../publish/gradual-package-rollout.md).
 
-Wenn Sie Programm gesteuert eine schrittweise Paket Bereitstellung für eine Package Flight-Übermittlung aktivieren möchten, befolgen Sie diesen Prozess mithilfe der Methoden in der Microsoft Store Übermittlungs-API:
+Um ein graduelles Paketrollout für eine Flight-Paket-Übermittlung programmgesteuert zu aktivieren, gehen Sie wie folgt vor, und verwenden Sie dabei Methoden in der Microsoft Store-Übermittlungs-API:
 
-  1. [Erstellen Sie eine paketübertragungs Übermittlung](create-a-flight-submission.md) , oder senden [Sie eine paketübertragungs Übermittlung](get-a-flight-submission.md).
-  2. Suchen Sie in den Antwortdaten die Ressource " [packagerollout](#package-rollout-object) ", legen Sie das Feld " *ispackagerollout* " auf "true" fest, und legen Sie das Feld " *packagerolloutprozent* " auf den Prozentsatz der Kunden der APP fest, der die aktualisierten Pakete erhalten soll.
-  3. Übergeben Sie die aktualisierten paketflight-Übermittlungs Daten an die Methode zum Aktualisieren der Methode zum [Aktualisieren eines Pakets](update-a-flight-submission.md) .
+  1. [Erstellen Sie eine Flight-Paket-Übermittlung](create-a-flight-submission.md), oder [rufen Sie eine Flight-Paket-Übermittlung ab](get-a-flight-submission.md).
+  2. Suchen Sie in den Antwortdaten die [packageRollout](#package-rollout-object)-Ressource, legen Sie das Feld *isPackageRollout* auf „true“ und das Feld *packageRolloutPercentage* auf den Prozentsatz der Kunden Ihrer App fest, die die aktualisierten Pakete erhalten sollen.
+  3. Übergeben Sie die aktualisierten Daten der Flight-Paket-Übermittlung an die Methode zur [Aktualisierung einer Flight-Paket-Übermittlung](update-a-flight-submission.md).
 
-Nachdem ein schrittweises Paket Rollout für eine paketübertragungs Übermittlung aktiviert wurde, können Sie die folgenden Methoden verwenden, um das schrittweise Rollout Programm gesteuert zu erhalten, zu aktualisieren, anzuhalten oder zu finalisieren.
+Nachdem ein graduelles Paketrollout für eine Flight-Paket-Übermittlung aktiviert wurde, können Sie das graduelle Rollout mithilfe der folgenden Methoden programmgesteuert abrufen, aktualisieren, anhalten oder abschließen.
 
 <table>
 <colgroup>
@@ -206,13 +206,13 @@ Nachdem ein schrittweises Paket Rollout für eine paketübertragungs Übermittlu
 
 ## <a name="data-resources"></a>Datenressourcen
 
-Die Methoden zur Übermittlung von Microsoft Store Übermittlungs-API für die Verwaltung von Paket Flügen verwenden die folgenden JSON-Datenressourcen.
+Die Methoden der Microsoft Store-Übermittlungs-API für das Verwalten von Flight-Paket-Übermittlungen verwenden die folgenden JSON-Datenressourcen.
 
 <span id="flight-submission-object" />
 
-### <a name="flight-submission-resource"></a>Flight-Übermittlungs Ressource
+### <a name="flight-submission-resource"></a>Ressource für Flight-Paket-Übermittlungen
 
-Diese Ressource beschreibt die Übermittlung eines paketflugs.
+Diese Ressource beschreibt eine Flight-Paket-Übermittlung.
 
 ```json
 {
@@ -253,63 +253,63 @@ Diese Ressource beschreibt die Übermittlung eines paketflugs.
 }
 ```
 
-Diese Ressource verfügt über die folgenden Werte:
+Die Ressource hat die folgenden Werte.
 
 | Wert      | Typ   | Beschreibung              |
 |------------|--------|------------------------------|
-| id            | string  | Die ID für die Übermittlung.  |
-| flightid           | string  |  Die ID des paketflugs, dem die Übermittlung zugeordnet ist.  |  
-| status           | string  | Der Status der Übermittlung. Mögliche Werte: <ul><li>Keine</li><li>Canceled</li><li>Commit-Commit</li><li>Commitstarted</li><li>Commitfailed</li><li>""</li><li>Veröffentlichung</li><li>Veröffentlicht</li><li>Veröffentlichter Fehler</li><li>Vorverarbeitung</li><li>Preprocessingfailed</li><li>Zertifizierung</li><li>Certificationfailed</li><li>Release</li><li>Releasefehler</li></ul>   |
-| aktivierten           | objekt  |  Eine [Ressource mit Status Details](#status-details-object) , die zusätzliche Details zum Status der Übermittlung enthält, einschließlich Informationen zu Fehlern.  |
-| flightpackages           | array  | Enthält [Flight Package-Ressourcen](#flight-package-object) , die Details zu den einzelnen Paketen in der Übermittlung bereitstellen.   |
-| packagedeliveryoptions    | objekt  | Eine Ressource für die Paket Übermittlungs Optionen, die eine schrittweise Paket [Bereitstellung](#package-delivery-options-object) und verbindliche Update Einstellungen für die Übermittlung enthält.   |
-| fileuploadurl           | string  | Der SAS-URI (Shared Access Signature) zum Hochladen von Paketen für die Übermittlung. Wenn Sie neue Pakete für die Übermittlung hinzufügen, laden Sie das ZIP-Archiv, das die Pakete enthält, in diesen URI hoch. Weitere Informationen finden Sie unter [Erstellen einer paketflight-Übermittlung](#create-a-package-flight-submission).  |
-| targetpublishmode           | string  | Der Veröffentlichungs Modus für die Übermittlung. Mögliche Werte: <ul><li>Unmittelbar</li><li>Manuell</li><li>Spezificdate</li></ul> |
-| targetpublishdate           | string  | Das Veröffentlichungsdatum für die Übermittlung im ISO 8601-Format, wenn " *targetpublishmode* " auf "specificdate" festgelegt ist.  |
-| notesforcertification           | string  |  Bietet zusätzliche Informationen für die Zertifizierungs Tester, wie z. b. Test Konto-Anmelde Informationen und Schritte zum Zugreifen auf und Überprüfen von Features. Weitere Informationen finden Sie unter [Hinweise zur Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification). |
+| id            | String  | Die ID für die Übermittlung.  |
+| flightId           | String  |  Die ID des Flight-Pakets, dem die Übermittlung zugeordnet ist.  |  
+| status           | String  | Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | object  |  Eine [Ressource für Statusdetails](#status-details-object), die zusätzliche Details über den Status der Übermittlung enthält, einschließlich Fehlerinformationen.  |
+| flightPackages           | array  | Enthält [Ressourcen für Flight-Pakete](#flight-package-object), die Details über die einzelnen Pakete in der Übermittlung bereitstellen.   |
+| packageDeliveryOptions    | object  | Eine [Ressource für Paketübermittlungsoptionen](#package-delivery-options-object), die Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung enthält.   |
+| fileUploadUrl           | String  | Der Shared Access Signature (SAS)-URI für das Hochladen der Pakete für die Übermittlung. Wenn Sie neue Pakete oder Bilder für die Übermittlung hinzufügen, müssen Sie das ZIP-Archiv, das die Pakete enthält, zu dieser URI hochladen. Weitere Informationen finden Sie unter [Erstellen einer Flight-Paket-Übermittlung](#create-a-package-flight-submission).  |
+| targetPublishMode           | String  | Der Veröffentlichungsmodus für die Übermittlung. Folgende Werte sind möglich: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | String  | Das Veröffentlichungsdatum der Übermittlung im ISO 8601-Format, wenn *TargetPublishMode* den Wert SpecificDate hat.  |
+| notesForCertification           | String  |  Enthält zusätzliche Informationen für Zertifizierungstester wie Anmeldeinformationen für Testkonten und Schritte zum Zugriff auf und zur Überprüfung von Features. Weitere Informationen finden Sie unter [Hinweise zur Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span id="status-details-object" />
 
-### <a name="status-details-resource"></a>Status Details-Ressource
+### <a name="status-details-resource"></a>Ressource für Statusdetails
 
-Diese Ressource enthält weitere Details zum Status einer Übermittlung. Diese Ressource verfügt über die folgenden Werte:
+Diese Ressource enthält weitere Informationen über den Status einer Übermittlung. Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung                   |
 |-----------------|---------|------|
-|  errors               |    objekt     |   Ein Array von [Status Detail Ressourcen](#status-detail-object) , die Fehlerdetails für die Übermittlung enthalten.   |     
-|  Hinweise               |   objekt      | Ein Array von [Status Detail Ressourcen](#status-detail-object) , die Warnungs Details für die Übermittlung enthalten.     |
-|  certificationreports               |     objekt    |   Ein Array von [Zertifizierungs Berichts Ressourcen](#certification-report-object) , die den Zugriff auf die Zertifizierungs Berichtsdaten für die Übermittlung ermöglichen. Wenn die Zertifizierung fehlschlägt, können Sie diese Berichte auf Weitere Informationen überprüfen.    |  
+|  errors               |    object     |   Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Fehlerdetails zur Übermittlung enthalten.   |     
+|  warnings               |   object      | Ein Array von [Ressourcen für einzelne Statusdetails](#status-detail-object), die Warnungsdetails zur Übermittlung enthalten.     |
+|  certificationReports               |     object    |   Ein Array von [Ressourcen für Zertifizierungsberichte](#certification-report-object), die den Zugriff auf die Zertifizierungsberichtsdaten für die Übermittlung ermöglichen. Sie können diese Berichte auf weitere Informationen überprüfen, wenn die Zertifizierung nicht erfolgreich ist.    |  
 
 
 <span id="status-detail-object" />
 
-### <a name="status-detail-resource"></a>Status Detail Ressource
+### <a name="status-detail-resource"></a>Ressource für einzelne Statusdetails
 
-Diese Ressource enthält zusätzliche Informationen zu verwandten Fehlern oder Warnungen für eine Übermittlung. Diese Ressource verfügt über die folgenden Werte:
+Diese Ressource enthält weitere Informationen zu Fehlern oder Warnungen für eine Übermittlung. Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung       |
 |-----------------|---------|------|
-|  Code               |    string     |   Ein Übermittlungs [Statuscode](#submission-status-code) , der den Typ des Fehlers oder der Warnung beschreibt. |  
-|  Details               |     string    |  Eine Meldung mit weiteren Details zum Problem.     |
+|  code               |    String     |   Ein [Übermittlungsstatuscode](#submission-status-code), der den Fehler- oder Warnungstyp beschreibt. |  
+|  details               |     String    |  Eine Meldung mit weiteren Details zum Problem.     |
 
 
 <span id="certification-report-object" />
 
-### <a name="certification-report-resource"></a>Zertifikat Bericht Ressource
+### <a name="certification-report-resource"></a>Ressource für Zertifizierungsberichte
 
-Diese Ressource ermöglicht den Zugriff auf die Zertifizierungs Berichtsdaten für eine Übermittlung. Diese Ressource verfügt über die folgenden Werte:
+Diese Ressource stellt den Zugriff auf die Zertifizierungsberichtsdaten für eine Übermittlung bereit. Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung         |
 |-----------------|---------|------|
-|     date            |    string     |  Das Datum und die Uhrzeit, zu der der Bericht generiert wurde, im ISO 8601-Format.    |
-|     reporturl            |    string     |  Die URL, auf der Sie auf den Bericht zugreifen können.    |
+|     date            |    String     |  Das Datum und die Uhrzeit, zu der der Bericht generiert wurde, im ISO 8601-Format.    |
+|     reportUrl            |    String     |  Die URL, unter der Sie auf den Bericht zugreifen können.    |
 
 
 <span id="flight-package-object" />
 
-### <a name="flight-package-resource"></a>Flight Package-Ressource
+### <a name="flight-package-resource"></a>Flight-Paket-Ressource
 
-Diese Ressource stellt Details zu einem Paket in einer Übermittlung bereit.
+Diese Ressource enthält Details zu einem Paket in einer Übermittlung.
 
 ```json
 {
@@ -328,29 +328,29 @@ Diese Ressource stellt Details zu einem Paket in einer Übermittlung bereit.
 }
 ```
 
-Diese Ressource verfügt über die folgenden Werte:
+Die Ressource hat die folgenden Werte.
 
 > [!NOTE]
-> Beim Aufrufen der Methode zum [Aktualisieren einer paketübertragungs](update-a-flight-submission.md) -Methode ist nur der *Dateiname*, der *fileStatus*-Wert, der *minimumdirectxversion*-Wert und der *minimumsystemram* -Wert dieses Objekts im Anforderungs Text erforderlich. Die anderen Werte werden von Partner Center aufgefüllt.
+> Beim Aufruf der Methode für das [Aktualisieren einer Flight-Paket-Übermittlung](update-a-flight-submission.md) sind im Anforderungstext nur die Werte *fileName*, *fileStatus*, *minimumDirectXVersion* und *minimumSystemRam* dieses Objekts erforderlich. Die anderen Werte werden von Partner Center aufgefüllt.
 
 | Wert           | Typ    | Beschreibung              |
 |-----------------|---------|------|
-| fileName   |   string      |  Der Name des Pakets.    |  
-| Dateistatus    | string    |  Der Status des Pakets. Mögliche Werte: <ul><li>Keine</li><li>"Pdingupload"</li><li>Hochgeladen</li><li>"PendingDelete"</li></ul>    |  
-| id    |  string   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird von Partner Center verwendet.   |     
-| version    |  string   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paket Versionsnummerierung](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
-| Architektur    |  string   |  Die Architektur des App-Pakets (z. b. Arm).   |     
-| languages    | array    |  Ein Array von Sprachcodes für die Sprachen, die von der App unterstützt werden. Weitere Informationen finden Sie [unter Unterstützte Sprachen](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  array   |  Ein Array von Funktionen, die für das Paket erforderlich sind. Weitere Informationen zu Funktionen finden Sie unter [Deklarationen von App](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)-Funktionen.   |     
-| minimumdirectxversion    |  string   |  Die minimale DirectX-Version, die vom APP-Paket unterstützt wird. Dies kann nur für apps festgelegt werden, die auf Windows 8. x abzielen. Sie wird für apps ignoriert, die auf andere Versionen abzielen. Mögliche Werte: <ul><li>Keine</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumsystemram    | string    |  Der minimale Arbeitsspeicher, der für das App-Paket erforderlich ist. Dies kann nur für apps festgelegt werden, die auf Windows 8. x abzielen. Sie wird für apps ignoriert, die auf andere Versionen abzielen. Mögliche Werte: <ul><li>Keine</li><li>Memory2GB</li></ul>   |    
+| fileName   |   String      |  Der Name des Pakets.    |  
+| fileStatus    | String    |  Der Status des Pakets. Folgende Werte sind möglich: <ul><li>Keine</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| id    |  String   |  Eine ID, die das Paket eindeutig identifiziert. Dieser Wert wird von Partner Center verwendet.   |     
+| version    |  String   |  Die Version des App-Pakets. Weitere Informationen finden Sie unter [Paketversionsnummern](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| architecture    |  String   |  Die Architektur des App-Pakets (z. B. ARM).   |     
+| languages    | array    |  Ein Array von Sprachcodes für die Sprachen, die von der App unterstützt werden. Weitere Informationen finden Sie unter [Unterstützte Sprachen](https://docs.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  array   |  Ein Array von Funktionen, die für das Paket erforderlich sind. Weitere Informationen zu Funktionen finden Sie unter [Deklaration der App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| minimumDirectXVersion    |  String   |  Die DirectX-Version, die vom App-Paket mindestens unterstützt wird. Dieser Wert kann nur für Apps festgelegt werden, die für Windows 8.x bestimmt sind. Im Fall von Apps, die für andere Versionen bestimmt sind, wird er ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | String    |  Die Menge an RAM, die für das App-Paket mindestens erforderlich ist. Dieser Wert kann nur für Apps festgelegt werden, die für Windows 8.x bestimmt sind. Im Fall von Apps, die für andere Versionen bestimmt sind, wird er ignoriert. Folgende Werte sind möglich: <ul><li>Keine</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
 
-### <a name="package-delivery-options-resource"></a>Ressourcen für Paket Übermittlungs Optionen
+### <a name="package-delivery-options-resource"></a>Ressource für Paketübermittlungsoptionen
 
-Diese Ressource enthält ein schrittweises Paket Rollout und verbindliche Update Einstellungen für die Übermittlung.
+Diese Ressource enthält Einstellungen zu graduellen Paketrollouts und zu verpflichtenden Updates für die Übermittlung.
 
 ```json
 {
@@ -367,58 +367,58 @@ Diese Ressource enthält ein schrittweises Paket Rollout und verbindliche Update
 }
 ```
 
-Diese Ressource verfügt über die folgenden Werte:
+Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-| packagerollout   |   objekt      |   Eine [Package Rollout-Ressource](#package-rollout-object) , die schrittweise paketrollout-Einstellungen für die Übermittlung enthält.    |  
-| ismandatoryupdate    | Boolescher Wert    |  Gibt an, ob Sie die Pakete in dieser Übermittlung als obligatorisch für die Selbstinstallation von APP-Updates behandeln möchten. Weitere Informationen zu obligatorischen Paketen für die Selbstinstallation von APP-Updates finden [Sie unter herunterladen und Installieren von Paket Updates für Ihre APP](../packaging/self-install-package-updates.md).    |  
-| mandatoryupdateeffectivedate    |  date   |  Das Datum und die Uhrzeit, zu der die Pakete in dieser Übermittlung obligatorisch werden, im ISO 8601-Format und in der UTC-Zeitzone.   |        
+| packageRollout   |   object      |   Eine [Ressource für Paketrollouts](#package-rollout-object), die Einstellungen zu graduellen Paketrollouts für die Übermittlung enthält.    |  
+| isMandatoryUpdate    | boolean    |  Gibt an, ob die Pakete in dieser Übermittlung für automatisch installierte App-Updates als verpflichtend behandelt werden sollen. Weitere Informationen zu verpflichtenden Paketen für automatisch installierte App-Aktualisierungen finden Sie unter [Herunterladen und Installieren von Paketupdates für Ihre App](../packaging/self-install-package-updates.md).    |  
+| mandatoryUpdateEffectiveDate    |  date   |  Zeitpunkt (Datum und Uhrzeit), zu dem die Pakete in dieser Übermittlung verpflichtend werden, im ISO 8601-Format und gemäß UTC-Zeitzone.   |        
 
 <span id="package-rollout-object" />
 
-### <a name="package-rollout-resource"></a>Paket Rollout Ressource
+### <a name="package-rollout-resource"></a>Ressource für Paketrollouts
 
-Diese Ressource enthält schrittweise [paketrollout-Einstellungen](#manage-gradual-package-rollout) für die Übermittlung. Diese Ressource verfügt über die folgenden Werte:
+Diese Ressource enthält [Einstellungen für graduelle Paketrollouts](#manage-gradual-package-rollout) für die Übermittlung. Die Ressource hat die folgenden Werte.
 
 | Wert           | Typ    | Beschreibung        |
 |-----------------|---------|------|
-| ispackagerollout   |   Boolescher Wert      |  Gibt an, ob das schrittweise Rollout des Pakets für die Übermittlung aktiviert ist.    |  
-| packagerolloutprozentsatz    | float    |  Der Prozentsatz der Benutzer, die die Pakete beim schrittweisen Rollout erhalten.    |  
-| packagerolloutstatus    |  string   |  Eine der folgenden Zeichen folgen, die den Status des schrittweisen Paket Rollouts angibt: <ul><li>Packagerolloutnotstarted</li><li>Packagerolloutinprogress</li><li>Packagerolloutcomplete</li><li>Packagerolloutbeendet</li></ul>  |  
-| fallbacksubmissionid    |  string   |  Die ID der Übermittlung, die von Kunden empfangen wird, die die schrittweise Rollout Pakete nicht erhalten.   |          
+| isPackageRollout   |   boolean      |  Gibt an, ob für die Übermittlung der graduelle Paketrollout aktiviert ist.    |  
+| packageRolloutPercentage    | float    |  Der Prozentsatz der Benutzer, die im Rahmen des graduellen Paketrollouts die Pakete erhalten.    |  
+| packageRolloutStatus    |  String   |  Eine der folgenden Zeichenfolgen, die den Status des graduellen Paketrollouts angeben: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  String   |  Die ID der Übermittlung, die die Kunden erhalten, die keine Pakete im Rahmen des graduellen Paketrollouts erhalten.   |          
 
 > [!NOTE]
-> Die Werte *packagerolloutstatus* und *fallbacksubmissionid* werden von Partner Center zugewiesen und sind nicht für die Festlegung durch den Entwickler vorgesehen. Wenn Sie diese Werte in einen Anforderungs Text einfügen, werden diese Werte ignoriert.
+> Die Werte *packagerolloutstatus* und *fallbacksubmissionid* werden von Partner Center zugewiesen und sind nicht für die Festlegung durch den Entwickler vorgesehen. Wenn Sie diese Werte in einen Anforderungstext einfügen, werden diese Werte ignoriert.
 
 <span/>
 
 ## <a name="enums"></a>Enumerationen
 
-Diese Methoden verwenden die folgenden enumeren.
+Diese Methoden verwenden die folgenden Enumerationen.
 
 <span id="submission-status-code" />
 
-### <a name="submission-status-code"></a>Statuscode der Übermittlung
+### <a name="submission-status-code"></a>Übermittlungsstatuscode
 
 Die folgenden Codes stellen den Status einer Übermittlung dar.
 
 | Code           |  Beschreibung      |
 |-----------------|---------------|
 |  Keine            |     Es wurde kein Code angegeben.         |     
-|      Invalidarchive        |     Das ZIP-Archiv, das das Paket enthält, ist ungültig oder weist ein unbekanntes Archivformat auf.  |
-| MissingFiles | Das ZIP-Archiv enthält nicht alle Dateien, die in den Übermittlungs Daten aufgelistet waren, oder Sie befinden sich an der falschen Stelle im Archiv. |
-| Packagevalidationfailed | Mindestens ein Paket in der Übermittlung konnte nicht überprüft werden. |
-| Invalidparametervalue | Einer der Parameter im Anforderungs Text ist ungültig. |
-| InvalidOperation | Der Vorgang, den Sie versucht haben, ist ungültig. |
-| Invalidstate | Der Vorgang, den Sie versucht haben, ist nicht gültig für den aktuellen Status des paketflugs. |
-| ResourceNotFound | Der angegebene paketflug konnte nicht gefunden werden. |
-| ServiceError | Ein interner Dienst Fehler hat die erfolgreiche Anforderung verhindert. Wiederholen Sie die Anforderung. |
-| Listingoptoutwarning | Der Entwickler hat eine Auflistung aus einer vorherigen Übermittlung entfernt oder enthielt keine Auflistungs Informationen, die vom Paket unterstützt werden. |
-| Listingoptinwarning  | Der Entwickler hat eine Liste hinzugefügt. |
-| Updateonlywarning | Der Entwickler versucht, etwas einzufügen, das nur Aktualisierungs Unterstützung hat. |
-| Sonstiges  | Die Übermittlung befindet sich in einem nicht erkannten oder nicht kategorisierten Zustand. |
-| Packagevalidationwarning | Der Paket Überprüfungsprozess führte zu einer Warnung. |
+|      InvalidArchive        |     Das ZIP-Archiv, das das Paket enthält, ist ungültig oder hat ein unbekanntes Archivformat.  |
+| MissingFiles | Das ZIP-Archiv enthält nicht alle Dateien, die in den Übermittlungsdaten aufgeführt sind, oder sie befinden sich am falschen Speicherort im Archiv. |
+| PackageValidationFailed | Mindestens ein Paket in der Übermittlung konnte nicht überprüft werden. |
+| InvalidParameterValue | Einer der Parameter im Anforderungstext ist ungültig. |
+| InvalidOperation | Der von Ihnen versuchte Vorgang ist ungültig. |
+| InvalidState | Der von Ihnen versuchte Vorgang ist für den aktuellen Zustand des Flight-Pakets ungültig. |
+| ResourceNotFound | Das angegebene Flight-Paket konnte nicht gefunden werden. |
+| ServiceError | Ein interner Dienstfehler hat verhindert, dass die Anforderung erfolgreich ausgeführt wurde. Führen Sie die Anforderung erneut aus. |
+| ListingOptOutWarning | Der Entwickler hat einen Eintrag aus einer vorherigen Übermittlung entfernt oder Eintragsinformationen nicht hinzugefügt, die vom Paket unterstützt werden. |
+| ListingOptInWarning  | Der Entwickler hat einen Eintrag hinzugefügt. |
+| UpdateOnlyWarning | Der Entwickler versucht, etwas einzufügen, für das nur Aktualisierungsunterstützung verfügbar ist. |
+| Andere  | Die Übermittlung befindet sich in einem nicht erkannten oder nicht kategorisierten Zustand. |
+| PackageValidationWarning | Der Paketüberprüfungsvorgang hat zu einer Warnung geführt. |
 
 <span/>
 

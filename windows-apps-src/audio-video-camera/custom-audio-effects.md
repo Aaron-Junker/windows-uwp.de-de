@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bebf9533ab045822902d44f87f68eec55c11074
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e4bcd5294031e64aa9f21371fa389978b5e708ab
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318571"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257411"
 ---
 # <a name="custom-audio-effects"></a>Benutzerdefinierte Audioeffekte
 
@@ -22,14 +22,14 @@ In diesem Artikel wird beschrieben, wie Sie eine Windows-Runtime-Komponente erst
 
 Sie definieren einen benutzerdefinierte Audioeffekt in einer Klasse, die die [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect)-Schnittstelle implementiert. Diese Klasse kann nicht direkt in Ihr App-Projekt integriert werden. Stattdessen müssen Sie eine Windows-Runtime-Komponente verwenden, um Ihre Audioeffektklasse zu hosten.
 
-**Hinzufügen einer Komponente für Windows-Runtime für Ihre Audioeffekts**
+**Fügen Sie eine Windows-Runtime Komponente für den Audioeffekt hinzu.**
 
 1.  Wechseln Sie in Microsoft Visual Studio bei geöffneter Projektmappe zum Menü **Datei**, und wählen Sie **Hinzufügen-&gt;Neues Projekt** aus.
 2.  Wählen Sie den Projekttyp **Komponente für Windows-Runtime (Universal Windows)** aus.
 3.  Nennen Sie das Projekt in diesem Beispiel *AudioEffectComponent*. Auf diesen Namen wird später im Code verwiesen.
 4.  Klicken Sie auf **OK**.
 5.  Die Projektvorlage erstellt eine Klasse namens „Class1.cs“. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Symbol für „Class1.cs“, und wählen Sie **Umbenennen** aus.
-6.  Benennen Sie die Datei in *ExampleAudioEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. Klicken Sie auf **Ja**.
+6.  Benennen Sie die Datei in *ExampleAudioEffect.cs* um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. klicken Sie auf **Ja**.
 7.  Öffnen Sie **ExampleAudioEffect.cs**, und aktualisieren Sie die Definition der Klasse, um die [**IBasicAudioEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IBasicAudioEffect)-Schnittstelle zu implementieren.
 
 
@@ -93,7 +93,7 @@ Nun, da die Datenpuffer abgerufen wurden, können Sie aus dem Eingabepuffer lese
 
 ### <a name="close-method"></a>Close-Methode
 
-Das System Ruft die [ **schließen** ](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) [ **schließen** ](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) -Methode für die Klasse, wenn der Effekt heruntergefahren werden soll. Sie sollten diese Methode verwenden, um alle Ressourcen, die Sie erstellt haben, zu löschen. Das Argument der Methode ist ein [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason), der Ihnen mitteilt, ob der Effekt normal geschlossen wurde, ob ein Fehler aufgetreten ist oder ob der Effekt das erforderliche Codierungsformat nicht unterstützt.
+Das System ruft die [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) [**Close**](https://docs.microsoft.com/uwp/api/windows.media.effects.ibasicaudioeffect.close) -Methode für die Klasse auf, wenn die Auswirkung heruntergefahren werden soll. Sie sollten diese Methode verwenden, um alle Ressourcen, die Sie erstellt haben, zu löschen. Das Argument der Methode ist ein [**MediaEffectClosedReason**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.MediaEffectClosedReason), der Ihnen mitteilt, ob der Effekt normal geschlossen wurde, ob ein Fehler aufgetreten ist oder ob der Effekt das erforderliche Codierungsformat nicht unterstützt.
 
 [!code-cs[Close](./code/AudioGraph/AudioEffectComponent/ExampleAudioEffect.cs#SnippetClose)]
 
@@ -145,9 +145,9 @@ Der folgende Codeausschnitt veranschaulicht das Hinzufügen des benutzerdefinier
 
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Zugriff auf die einfache Kamera-Vorschau](simple-camera-preview-access.md)
+* [Zugriff auf einfache Kamera Vorschau](simple-camera-preview-access.md)
 * [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md)
-* [Win2D-Dokumentation](https://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D-Dokumentation](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [Medienwiedergabe](media-playback.md)
 
  

@@ -5,12 +5,12 @@ keywords: UWP mit mehreren Instanzen
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 175ef3a3199440bf4ed6b3ee0dc91726b52e5043
-ms.sourcegitcommit: 38884ab90d5ad775c97cd880e1933b73a68750a5
+ms.openlocfilehash: 9be9b5eec70bc98bc2c44beaf1dcfbba00876f20
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544203"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259436"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>Erstellen einer universellen Windows-App mit mehreren Instanzen
 
@@ -23,11 +23,11 @@ Ab Windows 10, Version 1803 (10,0; Build 17134): Ihre UWP-App kann sich für die
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>Verhalten beim multiinstanzverhalten
 
-Wenn Sie eine neue Multiinstanz-Anwendung erstellen, können Sie die [Mehrfachinstanz-App-Projekt Templates.VSIX](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps) installieren, die im [Visual Studio Marketplace ](https://aka.ms/E2nzbv) erhältlich sind. Nachdem Sie die Vorlagen installieren, sind sie im Dialogfeld **Neues Projekt** Dialogfeld unter **Visual C#-> Windows Universal** (oder **Andere Sprachen > Visual C++ > Windows Universal**) verfügbar.
+Wenn Sie eine neue Multiinstanz-Anwendung erstellen, können Sie die [Mehrfachinstanz-App-Projekt Templates.VSIX](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps) installieren, die im [Visual Studio Marketplace ](https://marketplace.visualstudio.com/) erhältlich sind. Nachdem Sie die Vorlagen installieren, sind sie im Dialogfeld **Neues Projekt** Dialogfeld unter **Visual C#-> Windows Universal** (oder **Andere Sprachen > Visual C++ > Windows Universal**) verfügbar.
 
-Zwei Vorlagen werden installiert: **UWP-App mit mehreren Instanzen**, die die Vorlage zum Erstellen einer APP mit mehreren Instanzen und eine **UWP-App mit mehreren Instanzen**bereitstellt, die zusätzliche Logik bereitstellt, die Sie erstellen können, um entweder eine neue Instanz zu starten oder eine selektiv zu aktivieren. eine Instanz, die bereits gestartet wurde. Wenn Sie z. b. nur eine Instanz gleichzeitig das gleiche Dokument bearbeiten möchten, können Sie die Instanz, für die diese Datei geöffnet ist, im Vordergrund öffnen, anstatt eine neue Instanz zu starten.
+Es werden zwei Vorlagen installiert: **UWP-Apps mit mehreren Instanzen**, die die Vorlage für die Erstellung einer Mulitiinstanz-App bereitstellt sowie **Multi-Instance Redirection UWP app** (UWP-App mit Umleitung für mehrere Instanzen), die zusätzlich die Möglichkeit bietet, eine neue Instanz zu starten oder selektiv eine Instanz zu aktivieren, die bereits gestartet wurde. Wenn Sie z. b. nur eine Instanz gleichzeitig das gleiche Dokument bearbeiten möchten, können Sie die Instanz, für die diese Datei geöffnet ist, im Vordergrund öffnen, anstatt eine neue Instanz zu starten.
 
-Beide Vorlagen fügen `SupportsMultipleInstances` der `package.appxmanifest` Datei hinzu. Beachten Sie das Namespace `desktop4` Präfix und `iot2`: nur Projekte, die auf die Desktop-oder Internet der Dinge (IOT)-Projekte abzielen, unterstützen die mehrfach Instanziierung.
+Beide Vorlagen fügen `SupportsMultipleInstances` zur `package.appxmanifest` Datei hinzu. Beachten Sie das Namespace Präfix `desktop4` und `iot2`: nur Projekte, die auf die Desktop-oder Internet der Dinge Projekte (IOT) abzielen, unterstützen die mehrfach Instanziierung.
 
 ```xml
 <Package
@@ -58,7 +58,7 @@ Sehen Sie sich dieses Video zum Erstellen von UWP-apps mit mehreren Instanzen an
 
 Die Vorlage **Multi-Instance Redirection UWP app** (UWP-App mit Umleitung für mehrere Instanzen) fügt der Datei „Package.appxmanifest” nicht nur wie oben beschrieben `SupportsMultipleInstances` hinzu, sondern fügt Ihrem Projekt auch die Funktion **Program.cs** (oder **Program.cpp**, wenn Sie die C++-Version der Vorlage verwenden), die eine `Main()`-Funktion enthält. Die Logik für die Umleitung der Aktivierung wird in die `Main`-Funktion eingefügt. Die Vorlage für **Program.cs** ist unten dargestellt.
 
-Die [**appInstance. Empfehlungs**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) Debug-Eigenschaft stellt die von der Shell bereitgestellte bevorzugte Instanz für diese Aktivierungs Anforderung dar ( `null` falls vorhanden). Wenn die Shell eine bevorzugte Einstellung bereitstellt, können Sie die Aktivierung an diese Instanz umleiten, oder Sie können Sie ignorieren, wenn Sie Sie auswählen.
+Die [**appInstance. Empfehlungs**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance) Debug-Eigenschaft stellt die von der Shell bereitgestellte bevorzugte Instanz für diese Aktivierungs Anforderung dar, sofern vorhanden (oder `null`, falls vorhanden). Wenn die Shell eine bevorzugte Einstellung bereitstellt, können Sie die Aktivierung an diese Instanz umleiten, oder Sie können Sie ignorieren, wenn Sie Sie auswählen.
 
 ``` csharp
 public static class Program
@@ -108,9 +108,9 @@ public static class Program
 }
 ```
 
-`Main()`ist der erste Schritt, der ausgeführt wird. Sie wird vor [**OnStart**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) und [**onaktiviert**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Dadurch können Sie bestimmen, ob Sie diese oder eine andere Instanz aktivieren möchten, bevor irgend ein anderer Initialisierungscode in Ihrer App ausgeführt wird.
+`Main()` ist das erste, das ausgeführt wird. Sie wird vor [**OnStart**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) und [**onaktiviert**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). Dadurch können Sie bestimmen, ob Sie diese oder eine andere Instanz aktivieren möchten, bevor irgend ein anderer Initialisierungscode in Ihrer App ausgeführt wird.
 
-Der obige Code bestimmt, ob eine vorhandene oder neue Instanz der App aktiviert wird. Um festzustellen, ob eine vorhandene Instanz aktiviert werden kann, wird ein Schlüssel verwendet. Wenn Ihre App beispielsweise nach [Behandeln der Dateiaktivierung](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation) gestartet wird, können Sie den Namen der Datei als Schlüssel verwenden. Anschließend können Sie überprüfen, ob bereits eine Instanz Ihrer App mit diesem Schlüssel registriert ist, und sie aktivieren, statt eine neue Instanz zu öffnen. Dies ist die Idee hinter dem Code:`var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+Der obige Code bestimmt, ob eine vorhandene oder neue Instanz der App aktiviert wird. Um festzustellen, ob eine vorhandene Instanz aktiviert werden kann, wird ein Schlüssel verwendet. Wenn Ihre App beispielsweise nach [Behandeln der Dateiaktivierung](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation) gestartet wird, können Sie den Namen der Datei als Schlüssel verwenden. Anschließend können Sie überprüfen, ob bereits eine Instanz Ihrer App mit diesem Schlüssel registriert ist, und sie aktivieren, statt eine neue Instanz zu öffnen. Dies ist die Idee hinter dem Code: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 Wenn eine Instanz gefunden wird, die bereits mit dem Schlüssel registriert ist, wird diese Instanz aktiviert. Wenn der Schlüssel nicht gefunden wird, erstellt die aktuelle Instanz (die Instanz, die zurzeit `Main` ausführt) ihr Anwendungsobjekt und wird gestartet.
 
@@ -132,9 +132,9 @@ Wenn eine Instanz gefunden wird, die bereits mit dem Schlüssel registriert ist,
 
 ## <a name="sample"></a>Beispiel
 
-Ein Beispiel für eine Aktivierungs Umleitung mit mehreren Instanzen finden Sie unter Beispiel für [mehrere](https://aka.ms/Kcrqst) Instanzen.
+Ein Beispiel für eine Aktivierungs Umleitung mit mehreren Instanzen finden Sie unter Beispiel für [mehrere](https://github.com/Microsoft/AppModelSamples/tree/master/Samples/BananaEdit) Instanzen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [AppInstance.FindOrRegisterInstanceForKey](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_FindOrRegisterInstanceForKey_System_String_)
 [AppInstance.GetActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appinstance#Windows_ApplicationModel_AppInstance_GetActivatedEventArgs)

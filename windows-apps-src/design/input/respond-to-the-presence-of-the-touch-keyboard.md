@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: Tastatur, Erreichbarkeit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktionen
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: 192c016dfa61f39074d99bccf58ff9371f16d16f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c752a5df96c22b945865c0c3a465f22391aa54bc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365428"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258278"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Reagieren auf die Anzeige der Bildschirmtastatur
 
@@ -25,15 +25,15 @@ Hier erfahren Sie, wie Sie die UI Ihrer App beim Ein- oder Ausblenden der Touch-
 
 ![Touch-Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
 
-<sup>Die Fingereingabe der Tastatur im Layoutmodus ".</sup>
+<sup>Die Touchscreen-Tastatur im standardlayoutmodus</sup>
 
 Die Bildschirmtastatur ermöglicht Texteingabe für Geräte, die Toucheingabe unterstützen. Texteingabesteuerelemente der Universellen Windows-Plattform (UWP) rufen standardmäßig die Bildschirmtastatur auf, wenn ein Benutzer auf ein bearbeitbares Eingabefeld tippt. Die Bildschirmtastatur bleibt in der Regel sichtbar, während der Benutzer zwischen Steuerelementen in einem Formular navigiert. Dieses Verhalten kann jedoch je nach Steuerelementtypen innerhalb des Formulars variieren.
 
-Um die entsprechenden Touch Tastaturverhalten in ein benutzerdefiniertes Texteingabe-Steuerelement zu unterstützen, die nicht von einer standardmäßigen Texteingabe-Steuerelement abgeleitet ist, müssen Sie verwenden die <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> Klasse, um die Steuerelemente für die Microsoft-Benutzeroberflächenautomatisierung verfügbar zu machen und Implementieren Sie die richtige Benutzeroberflächenautomatisierungs-Steuerelementmuster. Weitere Informationen finden Sie unter [Barrierefreiheit für den Tastaturzugriff](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) und [Benutzerdefinierte Automatisierungspeers](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
+Um das zugehörige Berührungs Tastatur Verhalten in einem benutzerdefinierten Texteingabe-Steuerelement zu unterstützen, das nicht von einem Standardtext Eingabe-Steuerelement abgeleitet ist, müssen Sie die <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> -Klasse verwenden, um die Steuerelemente für die Microsoft UI-Automatisierung verfügbar zu machen und die richtigen Steuerelement Muster Weitere Informationen finden Sie unter [Barrierefreiheit für den Tastaturzugriff](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility) und [Benutzerdefinierte Automatisierungspeers](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers).
 
 Wenn diese Unterstützung für Ihr benutzerdefiniertes Steuerelement hinzugefügt wurde, können Sie auf das Vorhandensein der Bildschirmtastatur entsprechend reagieren.
 
-**Voraussetzungen:**
+**Voraussetzung**
 
 Dieses Thema baut auf [Tastaturinteraktionen](keyboard-interactions.md) auf.
 
@@ -44,9 +44,9 @@ Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Wind
 - [Erste App erstellen](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-**Richtlinien zur benutzerfreundlichkeit:**
+**Richtlinien für die Benutzer Leistung:**
 
-Nützliche Tipps zum Entwerfen einer nützlich und ansprechende-app, die für die Tastatureingabe optimiert, finden Sie unter [Tastatur Interaktionen](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions) .
+Hilfreiche Tipps zum Entwerfen einer nützlichen und ansprechenden APP, die für Tastatureingaben optimiert ist, finden Sie unter [Tastatur Interaktionen](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions) .
 
 ## <a name="touch-keyboard-and-a-custom-ui"></a>Bildschirmtastatur und benutzerdefinierte Benutzeroberfläche
 
@@ -54,7 +54,7 @@ Im Folgenden finden Sie einige grundlegende Empfehlungen für benutzerdefinierte
 
 - Zeigen Sie die Bildschirmtastatur während der gesamten Interaktion mit dem Formular an.
 
-- Sicherzustellen, dass Ihre benutzerdefinierten Steuerelemente die Automatisierung der Benutzeroberfläche für das entsprechende [AutomationControlType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) für die Tastatur, beizubehalten, wenn ein Texteingabefeld, während er sich im Kontext der Texteingabe Fokus verliert. Wenn Sie zum Beispiel wünschen, dass die Tastatur eingeblendet bleibt, wenn während des Texteingabeszenarios ein Menü geöffnet wird, muss das Menü den **AutomationControlType** „Menu“ aufweisen.
+- Stellen Sie sicher, dass die benutzerdefinierten Steuerelemente den entsprechenden [AutomationControlType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) für die Benutzeroberflächen Automatisierung aufweisen, damit die Tastatur beibehalten wird, wenn sich der Fokus aus einem Texteingabefeld im Kontext des Text Eintrags verschiebt. Wenn Sie zum Beispiel wünschen, dass die Tastatur eingeblendet bleibt, wenn während des Texteingabeszenarios ein Menü geöffnet wird, muss das Menü den **AutomationControlType** „Menu“ aufweisen.
 
 - Vermeiden Sie die Manipulation der Eigenschaften der Benutzeroberflächenautomatisierung zur Kontrolle der Bildschirmtastatur. Andere Werkzeuge für die Barrierefreiheit sind von der Genauigkeit der Eigenschaften der Benutzeroberflächenautomatisierung abhängig.
 
@@ -62,7 +62,7 @@ Im Folgenden finden Sie einige grundlegende Empfehlungen für benutzerdefinierte
 
     Da die Bildschirmtastatur einen großen Teil des Bildschirms verdeckt, stellt die UWP sicher, dass das Eingabefeld im Fokus eingeblendet, wie ein Benutzer durch die Steuerelemente des Formulars navigiert, einschließlich der Steuerelemente, die derzeit nicht in der Ansicht sind.
 
-    Beim Anpassen der Benutzeroberflächenautomatisierungs Geben Sie die Darstellung der Bildschirmtastatur ähnliches Verhalten durch Behandeln der [mit](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) und [ausblenden](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) Ereignisse verfügbar gemacht, indem die [ **InputPane** ](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) Objekt.
+    Wenn Sie die Benutzeroberfläche anpassen, sollten Sie ein ähnliches Verhalten für die Darstellung der Fingereingabe Tastatur bereitstellen, indem Sie die [Anzeige](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) [und das](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) Ausblenden von Ereignissen verarbeiten, die durch das [**inputpane**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) -Objekt
 
     ![Formular mit und ohne angezeigte Bildschirmtastatur](images/touch-keyboard-pan1.png)
 
@@ -72,7 +72,7 @@ Im Folgenden finden Sie einige grundlegende Empfehlungen für benutzerdefinierte
 
 ## <a name="handling-the-showing-and-hiding-events"></a>Behandeln von Showing- und Hiding-Ereignissen
 
-Hier ist ein Beispiel für das Anfügen von Ereignishandlern für die [mit](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) und [ausblenden](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) Ereignisse der Bildschirmtastatur.
+Im folgenden finden Sie ein Beispiel für das Anfügen von Ereignis Handlern für die [Anzeige](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) und das Ausblenden von Ereignissen der [Touchscreen-Tastatur](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) .
 
 ```csharp
 using Windows.UI.ViewManagement;
@@ -210,17 +210,17 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Tastenkombinationen](keyboard-interactions.md)
+- [Tastatur Interaktionen](keyboard-interactions.md)
 - [Barrierefreiheit der Tastaturnavigation](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 - [Benutzerdefinierte Automatisierungs-Peers](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
 **Beispiele**
 
-- [Touch-Tastatur – Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+- [Beispiel für eine Berührungs Tastatur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 
 **Archivbeispiele**
 
-- [Eingabe: Touch-Tastatur – Beispiel](https://go.microsoft.com/fwlink/p/?linkid=246019)
-- [Reagieren auf die Darstellung der Bildschirmtastatur Beispiel](https://go.microsoft.com/fwlink/p/?linkid=231633)
-- [Bearbeiten der XAML-Textbeispiel](https://go.microsoft.com/fwlink/p/?LinkID=251417)
-- [Beispiel für XAML-Barrierefreiheit](https://go.microsoft.com/fwlink/p/?linkid=238570)
+- [Eingabe: Beispiel für eine Touchscreen-Tastatur](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
+- [Reagieren auf das Aussehen der Bildschirmtastatur (Beispiel)](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
+- [Beispiel für XAML-Textbearbeitung](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+- [XAML-Barrierefreiheits Beispiel](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)

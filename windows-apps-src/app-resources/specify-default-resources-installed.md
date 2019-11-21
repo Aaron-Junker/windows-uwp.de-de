@@ -6,12 +6,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5dfd09f2a1a3ab326c09434ee2c613ae57214d59
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593985"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254644"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>Angeben der von der App verwendeten Standardressourcen
 
@@ -44,7 +44,7 @@ Diese Standardwerte können Sie auf zweierlei Weise konfigurieren. Sie können e
    </default>
    ```
    
-   **Hinweis** Der Wert `LANGUAGE-TAG(S)` muss mit der Standardsprache Ihrer App synchronisiert werden. Wenn es sich um ein einzelnes [BCP-47-Sprachtag](https://go.microsoft.com/fwlink/p/?linkid=227302) handelt, muss die Standardsprache Ihrer App das gleiche Tag sein. Wenn es sich um eine durch Trennzeichen getrennte Liste von Sprachtags handelt, muss die Standardsprache Ihrer App das erste Tag in der Liste sein. Sie definieren die Standardsprache der App im Feld **Standardsprache** auf der Registerkarte **Anwendung** in der Quelldatei des App-Paketmanifests (`Package.appxmanifest`).
+   **Hinweis** Der Wert `LANGUAGE-TAG(S)` muss mit der Standardsprache Ihrer App synchronisiert werden. Wenn es sich um ein einzelnes [BCP-47-Sprachtag](https://tools.ietf.org/html/bcp47) handelt, muss die Standardsprache Ihrer App das gleiche Tag sein. Wenn es sich um eine durch Trennzeichen getrennte Liste von Sprachtags handelt, muss die Standardsprache Ihrer App das erste Tag in der Liste sein. Sie definieren die Standardsprache der App im Feld **Standardsprache** auf der Registerkarte **Anwendung** in der Quelldatei des App-Paketmanifests (`Package.appxmanifest`).
 
 4. Jedes `<qualifier>`-Element weist Visual Studio an, welcher Wert als Standard für jeden Qualifizierernamen verwendet werden soll. Mit den bisherigen Dateiinhalten haben Sie das Visual Studio Verhalten noch nicht wirklich geändert. Anders ausgedrückt: Visual Studio *verhält sich bereits so, als ob* diese Datei mit diesem Inhalt vorhanden wäre, da dies der Standard ist. Um also einen Standardwert mit Ihrem eigenen Standardwert zu überschreiben, müssen Sie einen Wert in der Datei ändern. Es folgt ein Beispiel dafür, wie die Datei aussehen könnte, wenn Sie die ersten drei Werte bearbeitet haben.
    ```xml
@@ -103,5 +103,5 @@ Speichern und schließen Sie, und erstellen Sie das Projekt dann neu.
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](tailor-resources-lang-scale-contrast.md)
-* [BCP-47-Sprachtag.](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Bcp-47-Sprachtag](https://tools.ietf.org/html/bcp47)
 * [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)

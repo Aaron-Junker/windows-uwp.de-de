@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe, Beispiel
 ms.localizationpriority: medium
-ms.openlocfilehash: 8daada2424dfc7a1bbe0a227449911f1fbb3b34d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f078cd721406120105efb35d1519e7fd0b36e74c
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369181"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258608"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Hinzufügen von Eingaben und Interaktivität zum Marble Maze-Beispiel
 
@@ -21,7 +21,7 @@ ms.locfileid: "66369181"
 UWP-Spiele können auf den verschiedensten Geräten ausgeführt werden, beispielsweise auf Desktopcomputern, Laptops und Tablets. Für ein Gerät sind viele verschiedene Eingabe- und Steuerungsmechanismen möglich. In diesem Dokument werden die wichtigsten Methoden beschrieben, die Sie berücksichtigen sollten, wenn Sie mit Eingabegeräten arbeiten. Außerdem erfahren Sie, wie diese Methoden in Marble Maze angewendet werden.
 
 > [!NOTE]
-> Den Beispielcode für dieses Dokument finden Sie im [DirectX-Beispielspiel Marble Maze](https://go.microsoft.com/fwlink/?LinkId=624011).
+> Den Beispielcode für dieses Dokument finden Sie im [DirectX-Beispielspiel Marble Maze](https://github.com/microsoft/Windows-appsample-marble-maze).
 
  
 Hier sind einige der wichtigsten in diesem Dokument erörterten Punkte für das Arbeiten mit Eingaben in Ihrem Spiel:
@@ -324,7 +324,7 @@ case GameState::InGamePaused:
 
 ### <a name="tracking-touch-and-mouse-input"></a>Nachverfolgen von Touch- und Mauseingaben
 
-Bei der Touch- und Mauseingabe wird ein Menüelement ausgewählt, wenn der Benutzer das Element berührt oder darauf klickt. Das folgende Beispiel zeigt, wie die **MarbleMazeMain::Update**-Methode die Zeigereingabe verarbeitet, um Menüelemente auszuwählen. Die **m\_PointQueue** Membervariable verfolgt die Speicherorte, in denen der Benutzer verwendete oder geklickt haben, auf dem Bildschirm. Im Abschnitt [Verarbeiten von Zeigereingaben](#processing-pointer-input) wird ausführlicher beschrieben, wie Marble Maze die Zeigereingaben erfasst.
+Bei der Touch- und Mauseingabe wird ein Menüelement ausgewählt, wenn der Benutzer das Element berührt oder darauf klickt. Das folgende Beispiel zeigt, wie die **MarbleMazeMain::Update**-Methode die Zeigereingabe verarbeitet, um Menüelemente auszuwählen. Die Element Variable **m\_pointqueue** verfolgt die Speicherorte, an denen der Benutzer auf dem Bildschirm berührt oder darauf geklickt hat. Im Abschnitt [Verarbeiten von Zeigereingaben](#processing-pointer-input) wird ausführlicher beschrieben, wie Marble Maze die Zeigereingaben erfasst.
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -541,7 +541,7 @@ Wir überprüfen, ob die Eingabe vom linken Analogstick außerhalb des inaktiven
 
 ###  <a name="applying-input-to-the-game-state"></a>Anwenden von Eingaben auf den Spielzustand
 
-Geräte melden Eingabewerte auf unterschiedliche Weise. So wird eine Zeigereingabe möglicherweise in Bildschirmkoordinaten angegeben, eine Controllereingabe aber in einem völlig anderen Format. Beim Kombinieren der Eingaben von mehreren Geräten in einem Satz von Eingabewerten besteht eine Herausforderung darin, die Werte in ein gemeinsames Format zu normalisieren oder konvertieren. Marble Maze normalisiert die Werte durch die sie auf den Bereich Skalierung \[Bereich von -1,0, 1,0\]. Mit der weiter oben in diesem Abschnitt beschriebenen **PointToTouch**-Funktion werden Bildschirmkoordinaten in normalisierte Werte konvertiert. Diese Werte liegen ungefähr zwischen -1,0 und +1,0.
+Geräte melden Eingabewerte auf unterschiedliche Weise. So wird eine Zeigereingabe möglicherweise in Bildschirmkoordinaten angegeben, eine Controllereingabe aber in einem völlig anderen Format. Beim Kombinieren der Eingaben von mehreren Geräten in einem Satz von Eingabewerten besteht eine Herausforderung darin, die Werte in ein gemeinsames Format zu normalisieren oder konvertieren. Marble Maze normalisiert Werte, indem Sie Sie auf den Bereich \[-1,0, 1,0\]skalieren. Mit der weiter oben in diesem Abschnitt beschriebenen **PointToTouch**-Funktion werden Bildschirmkoordinaten in normalisierte Werte konvertiert. Diese Werte liegen ungefähr zwischen -1,0 und +1,0.
 
 > [!TIP]
 > Auch wenn Ihre Anwendung eine einzige Eingabemethode verwendet, sollten Sie die Eingabewerte immer normalisieren. Auf diese Weise können Sie die Interpretation der Eingabe durch andere Komponenten des Spiels wie beispielsweise die Simulation von Physikeffekten vereinfachen und leichter Spiele schreiben, die sich für unterschiedliche Bildschirmauflösungen eignen.
@@ -613,9 +613,9 @@ Lesen Sie [Hinzufügen von Audio zum Marble Maze-Beispiel](adding-audio-to-the-m
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Hinzufügen von Audio zum Marble Maze-Beispiel](adding-audio-to-the-marble-maze-sample.md)
-* [Hinzufügen von visuellem Inhalt zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)
-* [Entwickeln von Marble Maze, einem UWP-Spiel in C++ und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Hinzufügen von Audiodaten zum Marble Maze-Beispiel](adding-audio-to-the-marble-maze-sample.md)
+* [Hinzufügen visueller Inhalte zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)
+* [Entwickeln von Marble Maze, einem UWP- C++ Spiel in und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

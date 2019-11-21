@@ -1,23 +1,23 @@
 ---
-Description: Verwalten und Anzeigen von Details für jede Ihrer apps im Partner Center an und Konfigurieren von Diensten wie z. B. ein / B-Tests und zugeordnet.
+Description: Verwalten und Anzeigen von Details im Zusammenhang mit den einzelnen apps in Partner Center und Konfigurieren von Diensten wie A/B-Tests und-Zuordnungen.
 title: App-Verwaltung und -Dienste
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e9567e06f80035bbcf811b5aaeaf8058ffee41a3
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 30610cdacbd9d2be10205958688376371f0387f6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320030"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260039"
 ---
 # <a name="app-management-and-services"></a>App-Verwaltung und -Dienste
 
-Können Sie verwalten und Anzeigen von Details im Zusammenhang mit der jede Ihrer apps im [Partner Center](https://partner.microsoft.com/dashboard), und Konfigurieren von Diensten wie z. B. Benachrichtigungen, die ein / B-Tests und zugeordnet.
+Sie können Details im Zusammenhang mit den einzelnen apps in [Partner Center](https://partner.microsoft.com/dashboard)verwalten und anzeigen und Dienste wie Benachrichtigungen, A/B-Tests und Zuordnungen konfigurieren.
 
-Bei der Arbeit mit einer app in Partner Center sehen Sie im linken Navigationsmenü für Abschnitte **Services** und **App-Verwaltung**. Sie können diese Abschnitte erweitern, um auf die unten beschriebenen Funktionen zuzugreifen.
+Wenn Sie mit einer APP in Partner Center arbeiten, sehen Sie die Abschnitte im linken Navigationsmenü für die **Dienste** und die **App-Verwaltung**. Sie können diese Abschnitte erweitern, um auf die unten beschriebenen Funktionen zuzugreifen.
 
 ## <a name="services"></a>Dienste
 
@@ -25,9 +25,9 @@ Im Abschnitt **Dienste** können Sie verschiedene Dienste für Ihre Apps verwalt
 
 ## <a name="xbox-live"></a>Xbox Live
 
-Wenn Sie ein Spiel veröffentlichen, können Sie aktivieren die [Xbox Live Creators-Programm](https://www.xbox.com/developers/creators-program) auf dieser Seite. Dadurch können Sie konfigurieren und Testen Xbox Live-Features zu starten, und schließlich veröffentlichen Sie Ihr Spiel Xbox Live Creators-Programm.
+Wenn Sie ein Spiel veröffentlichen, können Sie das [Xbox Live Creators-Programm](https://www.xbox.com/developers/creators-program) auf dieser Seite aktivieren. Auf diese Weise können Sie die Xbox Live-Features konfigurieren und testen und schließlich Ihr Xbox Live Creators-Programm Spiel veröffentlichen.
 
-Weitere Informationen finden Sie unter [erste Schritte mit dem Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) und [einen neuen Titel für die Xbox Live Creators-Programm zu erstellen und veröffentlichen Sie in der testumgebung](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
+Weitere Informationen finden Sie unter [Einstieg in das Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) und [Erstellen eines neuen Xbox Live Creators-Programm Titels und veröffentlichen in der Testumgebung](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/create-and-test-a-new-creators-title).
 
 ## <a name="experimentation"></a>Experimentation
 
@@ -37,21 +37,21 @@ Weitere Informationen finden Sie unter [Ausführen von App-Experimenten mit A/B-
 
 ## <a name="maps"></a>Karten
 
-Um Kartendienste in Apps zu verwenden, die auf Windows 10 or Windows 8.x ausgerichtet sind, besuchen Sie das [Bing Karten Dev Center](https://go.microsoft.com/fwlink/p/?LinkId=614880). Informationen dazu, wie Sie einen Authentifizierungsschlüssel für die Zuordnungen aus dem Bing Maps-Entwicklercenter anzufordern und zu Ihrer app hinzufügen, finden Sie unter [fordern Sie einen Maps-Authentifizierungsschlüssel](../maps-and-location/authentication-key.md) für Weitere Informationen. 
+Um Kartendienste in Apps zu verwenden, die auf Windows 10 or Windows 8.x ausgerichtet sind, besuchen Sie das [Bing Karten Dev Center](https://www.bingmapsportal.com/). Informationen dazu, wie Sie einen Zuordnungs-Authentifizierungsschlüssel aus dem Entwickler Center für den Kartendienst von Maps anfordern und zu Ihrer APP hinzufügen, finden Sie unter [Anfordern eines Zuordnungs Authentifizierungs Schlüssels](../maps-and-location/authentication-key.md) . 
 
-Verwenden der **Maps** Seite nur für zuvor veröffentlichte apps für Windows Phone 8.1 und frühere Versionen. Um die Map-Dienste in diesen apps zu verwenden, müssen Sie zum Anfordern einer Map-Service-Anwendungs-ID und ein Token in den Code Ihrer app eingeschlossen werden sollen. Beim Klicken auf **Tokenabruf**, generieren wir einen Map-Diensts Anwendungs-ID (**ApplicationID**), und ordnen Sie die Service-Authentifizierungstoken (**AuthenticationToken**) für Ihre app. Achten Sie darauf, um Ihren Code vor dem Verpacken Sie diese Werte hinzu, und senden Sie Ihre app. Weitere Informationen finden Sie unter [Hinzufügen eines Kartensteuerelements zu einer Seite (Windows Phone 8.1)](https://go.microsoft.com/fwlink/p/?LinkId=614882).
+Verwenden Sie die Seite **Maps** nur für zuvor veröffentlichte Apps für Windows Phone 8,1 und früher. Um Kartendienste in diesen apps zu verwenden, müssen Sie eine Zuordnungs Dienst-Anwendungs-ID und ein Token anfordern, die in den Code Ihrer APP eingeschlossen werden sollen. Wenn Sie auf **Token erhalten**klicken, generieren wir eine Zuordnungs Dienst-Anwendungs-ID (**ApplicationId**) und ein Kartendienst-Authentifizierungs Token (**authenticationtoken**) für Ihre APP. Stellen Sie sicher, dass Sie diese Werte dem Code hinzufügen, bevor Sie Ihre APP packen und übermitteln. Weitere Informationen finden Sie unter [Hinzufügen eines Kartensteuerelements zu einer Seite (Windows Phone 8.1)](https://docs.microsoft.com/previous-versions/windows/apps/jj207033(v=vs.105)?redirectedfrom=MSDN).
 
 ## <a name="product-collections-and-purchases"></a>Produktsammlungen und Einkäufe
 
-Um den Microsoft Store modelldatensammlungs-API und der Microsoft Store-Einkauf-API den Zugriff auf den von Besitzinformationen für apps und -Add-Ons zu verwenden, müssen Sie die zugeordnete eingeben hier Azure AD-Client-IDs. Beachten Sie, dass es bis zu 16 Stunden dauern kann, bis diese Änderungen wirksam werden.
+Wenn Sie die Microsoft Store Sammlungs-API und die Microsoft Store Purchase-API für den Zugriff auf Besitz Informationen für apps und Add-ons verwenden möchten, müssen Sie hier die zugehörigen Azure AD Client-IDs eingeben. Beachten Sie, dass es bis zu 16 Stunden dauern kann, bis diese Änderungen wirksam werden.
 
 Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus einem Dienst](../monetize/view-and-grant-products-from-a-service.md).
 
 ## <a name="administrator-consent"></a>Zustimmung des Administrators
 
-Wenn Ihr Produkt Azure AD integriert und Aufrufe von APIs, die entweder anfordern [Anwendungsberechtigungen oder delegierte Berechtigungen](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) , die Zustimmung des Administrators erfordern, geben Sie Ihre Azure AD-Client-ID hier. Dadurch können Administratoren, die die app für die Zustimmung erteilen Organisation für Ihr Produkt im Namen aller Benutzer im Mandanten abrufen.
+Wenn Ihr Produkt in Azure AD integriert ist und APIs aufruft, die entweder [Anwendungs Berechtigungen oder Delegierte Berechtigungen](https://developer.microsoft.com/graph/docs/concepts/permissions_reference) anfordern, die Zustimmung des Administrators erfordern, geben Sie hier Ihre Azure AD Client-ID ein. Dadurch können Administratoren, die die APP für Ihre Organisation erwerben, Ihre Zustimmung für Ihr Produkt erteilen, um im Namen aller Benutzer im Mandanten zu agieren.
 
-Weitere Informationen finden Sie unter [Anfordern der Zustimmung für einen gesamten Mandanten](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant).
+Weitere Informationen finden Sie unter [anfordern der Zustimmung für einen gesamten](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#requesting-consent-for-an-entire-tenant)Mandanten.
 
 ## <a name="app-management"></a>App-Verwaltung
 
@@ -78,22 +78,22 @@ Auf dieser Seite können Sie Details zu allen veröffentlichten Paketen anzeigen
 
 Der Name, die Version und die Architektur der einzelnen Pakete werden angezeigt. Klicken Sie auf **Details**, um zusätzliche Informationen wie z. B. unterstützte Sprache, App-Funktionen und Dateigrößen anzuzeigen. Welche Informationen jeweils für ein Paket angezeigt werden, variiert abhängig vom Zielbetriebssystem und anderen Faktoren. 
 
-Entwickler mit OEM-Berechtigungen können auf der Seite **Aktuelle Pakete** außerdem [Vorinstallationspakete generieren](generate-preinstall-packages-for-oems.md).
+Entwickler mit OEM-Berechtigungen können auf der Seite [Aktuelle Pakete](generate-preinstall-packages-for-oems.md) außerdem **Vorinstallationspakete generieren**.
 
-## <a name="wnsmpns"></a>WNS/MPNS
+## <a name="wnsmpns"></a>WNS/mpns
 
-Die **WNS/MPNS** Abschnitt bietet Optionen zum Erstellen und Senden von Benachrichtigungen an Ihre app Kunden. 
+Der Abschnitt **WNS/mpns** bietet Optionen zum Erstellen und Senden von Benachrichtigungen an die Kunden Ihrer APP. 
 
 > [!TIP]
-> Für UWP-apps, es wird empfohlen die **Benachrichtigungen** Funktion im Partner Center. Dieses Feature ermöglicht Ihnen das Senden von Benachrichtigungen an alle Kunden mit Ihrer app oder auf einen entsprechenden Teil Ihrer Windows 10-Kunden, die die Kriterien erfüllen, die Sie in definiert haben eine [Kundensegment](create-customer-segments.md). Weitere Informationen finden Sie unter [Senden von Benachrichtigung an die Kunden Ihrer App](send-push-notifications-to-your-apps-customers.md).
+> Für UWP-apps empfiehlt es sich, das **Benachrichtigungs** Feature in Partner Center zu verwenden. Diese Funktion ermöglicht Ihnen das Senden von Benachrichtigungen an alle Kunden der APP oder an eine bestimmte Teilmenge ihrer Windows 10-Kunden, die die Kriterien erfüllen, die Sie in einem [Kundensegment](create-customer-segments.md)definiert haben. Weitere Informationen finden Sie unter [Senden von Benachrichtigung an die Kunden Ihrer App](send-push-notifications-to-your-apps-customers.md).
 
-Abhängig von Ihrer app-Paket-Typ und die spezifischen Anforderungen können Sie auch eine der folgenden Optionen verwenden: 
+Abhängig vom Pakettyp Ihrer APP und den jeweiligen Anforderungen können Sie auch eine der folgenden Optionen verwenden: 
 
 -   **Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)** ermöglichen es, Popup-, Kachel- und Badgeupdates sowie unformatierte Updates von ihren eigenen Clouddiensten aus zu senden. Weitere Informationen finden Sie unter [Übersicht über den Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 
--   **Microsoft Azure Mobile Apps** ermöglichen das Senden von Pushbenachrichtigungen, die Authentifizierung und Verwaltung von App-Benutzern und das Speichern von App-Daten in der Cloud. Weitere Informationen finden Sie in der [Mobile Apps-Dokumentation](https://go.microsoft.com/fwlink/p/?LinkId=221116).
+-   **Microsoft Azure Mobile Apps** ermöglichen das Senden von Pushbenachrichtigungen, die Authentifizierung und Verwaltung von App-Benutzern und das Speichern von App-Daten in der Cloud. Weitere Informationen finden Sie in der [Mobile Apps-Dokumentation](https://docs.microsoft.com/azure/app-service-mobile/).
 
--   **Microsoft Push Notifications Service (MPNS)** kann mit zuvor veröffentlichte XAP-Paketen für Windows Phone verwendet werden. Sie können eine begrenzte Anzahl nicht authentifizierter Benachrichtigungen senden, ohne hier eine Konfiguration vorzunehmen. Zur Vermeidung von Drosselungslimits wird jedoch empfohlen, authentifizierte Benachrichtigungen zu verwenden. Wenn Sie MPNS verwenden, müssen Sie ein Zertifikat in das Feld auf Hochladen der **WNS/MPNS** Seite. Weitere Informationen finden Sie unter [Einrichten eines authentifizierten Webdiensts zum Senden von Pushbenachrichtigungen für Windows Phone 8](https://go.microsoft.com/fwlink/p/?LinkId=528736).
+-   Der **Microsoft-pushbenachrichtigungsdienst (mpns)** kann mit zuvor veröffentlichten XAP-Paketen für Windows Phone verwendet werden. Sie können eine begrenzte Anzahl nicht authentifizierter Benachrichtigungen senden, ohne hier eine Konfiguration vorzunehmen. Zur Vermeidung von Drosselungslimits wird jedoch empfohlen, authentifizierte Benachrichtigungen zu verwenden. Wenn Sie mpns verwenden, müssen Sie ein Zertifikat in das auf der Seite **WNS/mpns** angegebene Feld hochladen. Weitere Informationen finden Sie unter [Einrichten eines authentifizierten Webdiensts zum Senden von Pushbenachrichtigungen für Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/ff941099(v=vs.105)?redirectedfrom=MSDN).
  
 
  

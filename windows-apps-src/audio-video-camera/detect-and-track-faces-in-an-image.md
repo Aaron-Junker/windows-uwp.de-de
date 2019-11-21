@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9a253d8470407141c9ae56367d123d638d12c6
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: d23d33eb98f5ed01cf48eebd63a46aba2f923c65
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339822"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257112"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>Erkennen von Gesichtern in Bildern oder Videos
 
@@ -23,7 +23,7 @@ In diesem Thema erfahren Sie, wie mit dem [**FaceDetector**](https://docs.micros
 
 Ein alternatives Verfahren der Gesichtsverfolgung mit dem [**FaceDetectionEffect**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.FaceDetectionEffect) finden Sie unter [Szenenanalyse für die Medienaufnahme](scene-analysis-for-media-capture.md).
 
-Der Code in diesem Artikel wurde aus den Beispielen [Basic Face Detection](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409) und [Basic Face Tracking](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409) übernommen und angepasst. Sie können diese Beispiele herunterladen, um den verwendeten Code im Kontext anzuzeigen oder das Beispiel als Ausgangspunkt für Ihre eigene App zu verwenden.
+Der Code in diesem Artikel wurde aus den Beispielen [Basic Face Detection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection) und [Basic Face Tracking](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking) übernommen und angepasst. Sie können diese Beispiele herunterladen, um den verwendeten Code im Kontext anzuzeigen oder das Beispiel als Ausgangspunkt für Ihre eigene App zu verwenden.
 
 ## <a name="detect-faces-in-a-single-image"></a>Erkennen von Gesichtern in einem einzelnen Bild
 
@@ -98,8 +98,8 @@ Rufen Sie [**ProcessNextFrameAsync**](https://docs.microsoft.com/uwp/api/windows
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Szenenanalyse für Medien Erfassung](scene-analysis-for-media-capture.md)
-* [Beispiel für grundlegende Gesichtserkennung](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [Beispiel für grundlegende Gesichts Verfolgung](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [Beispiel für grundlegende Gesichtserkennung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)
+* [Beispiel für grundlegende Gesichts Verfolgung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)
 * [Kamera](camera.md)
 * [Einfaches Foto, Video und Audioerfassung mit mediacapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Medienwiedergabe](media-playback.md)

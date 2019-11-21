@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Threads, Threadpool
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322018"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259809"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Senden einer Arbeitsaufgabe an den Threadpool
 
-\[ Für UWP-apps unter Windows 10 aktualisiert. Windows 8.x-Artikeln finden Sie unter den [Archiv](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ für UWP-apps unter Windows 10 aktualisiert. Informationen zu Windows 8. x-Artikeln finden Sie im [Archiv](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
 
 <b>Wichtige APIs</b>
 
@@ -31,7 +31,7 @@ Erstellen Sie eine Arbeitsaufgabe, indem Sie [**RunAsync**](https://docs.microso
 Drei Versionen von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) sind verfügbar. Damit können Sie optional die Priorität der Arbeitsaufgabe angeben und steuern, ob sie gleichzeitig mit anderen Arbeitsaufgaben ausgeführt wird.
 
 >[!NOTE]
->Verwendung [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) zum Zugriff auf den UI-Thread und Anzeigen des Status von der Arbeitsaufgabe.
+>Verwenden Sie [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) , um auf den UI-Thread zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
 
 Im folgenden Beispiel werden eine Arbeitsaufgabe erstellt und ein Lambda für die Verarbeitung angegeben:
 
@@ -350,7 +350,7 @@ Beachten Sie, dass vom Vervollständigungshandler überprüft wird, ob die Arbei
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
-Weitere Informationen finden Sie durch Herunterladen von Code aus dieser schnellstartanleitung in die [erstellen eine ThreadPool Arbeit Beispiel](https://go.microsoft.com/fwlink/p/?LinkID=328569) für Windows 8.1, und verwenden den Quellcode erneut in ein Gewinn\_Unap Windows 10-app.
+Weitere Informationen finden Sie, indem Sie den Code aus dieser Schnellstartanleitung in das [Beispiel Erstellen eines Thread Pool-Arbeits Elements](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff) für Windows 8.1 schreiben und den Quellcode in einer Win\_UNAP Windows 10-APP wieder verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

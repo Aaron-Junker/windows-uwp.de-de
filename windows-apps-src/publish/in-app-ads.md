@@ -1,27 +1,27 @@
 ---
-Description: Wenn Ihre app anzeigen, die mit dem Microsoft Advertising SDK angezeigt wird, verwenden Sie der In-app-Werbung-Seite des Partner Center, um die Verwendung der Ads zu verwalten.
+Description: Wenn Ihre App anzeigen mithilfe des Microsoft Advertising SDK anzeigt, verwenden Sie die Seite in-App-ADS von Partner Center, um ihre Verwendung von anzeigen zu verwalten.
 title: In-App-Anzeigen
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 989aecdd6c33599b38a53b68439dbf0f0d925040
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: e12641695dd72cddcfb6b51f6cd2f20fa66ddf41
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468953"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258997"
 ---
 # <a name="in-app-ads"></a>In-App-Anzeigen
 
-Verwenden der **Monetize** &gt; **In-app-Werbung** auf der Seite [Partner Center](https://partner.microsoft.com/dashboard) zum Erstellen und Verwalten von Ad-Einheiten für:
+Verwenden Sie **die Seite** &gt; **in-App-Werbeeinblendungen** in [Partner Center](https://partner.microsoft.com/dashboard) , um Ad-Einheiten für Folgendes zu erstellen und zu verwalten:
 
-* Apps für die universelle Windows-Plattform (UWP), die [Microsoft Advertising-SDK](https://aka.ms/ads-sdk-uwp) verwenden.
-* Zuvor veröffentlichten Windows 8.x und Windows Phone 8.x-apps, mit denen die [Microsoft Advertising SDK für Windows und Windows Phone 8.x](https://aka.ms/store-8-sdk).
+* Apps für die universelle Windows-Plattform (UWP), die [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) verwenden.
+* Zuvor veröffentlichte Windows 8. x-und Windows Phone 8. x-apps, die das [Microsoft Advertising SDK für Windows und Windows Phone 8. x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)verwenden.
 
 > [!IMPORTANT]
-> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> Ab dem 31. Oktober 2018 können neu erstellte Produkte keine Pakete enthalten, die auf Windows 8. x/Windows Phone 8. x oder früher abzielen. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Weitere Informationen dazu, wie Sie diese SDKs in Ihren Apps zu Werbezwecken integrieren, finden Sie unter [Anzeigen von Werbung in Ihrer App mit dem Microsoft Advertising-SDK](../monetize/display-ads-in-your-app.md).
 
@@ -31,16 +31,16 @@ Weitere Informationen dazu, wie Sie diese SDKs in Ihren Apps zu Werbezwecken int
 
 So erstellen Sie eine Anzeigeeinheit für eine [Banneranzeige](../monetize/banner-ads.md), [Interstitialwerbung](../monetize/interstitial-ads.md) oder [native Anzeige](../monetize/native-ads.md) in Ihrer App:
 
-1.  Wechseln Sie zu der **Monetize** &gt; **In-app-Werbung** Seite im Partner Center, und klicken Sie auf **erstellen Werbeeinheit**.
+1.  Wechseln Sie in Partner Center zur Seite **Monetize** &gt; **in-App ADS** , und klicken Sie auf **Ad Unit erstellen**.
 2.  Wählen Sie in der Dropdownliste **App-Name** die App aus, in der die Anzeigeneinheit verwendet werden soll.
 3.  Geben Sie im Feld **Name der Anzeigeneinheit** einen Namen für die Anzeigeneinheit ein. Dies kann eine beliebige beschreibende Zeichenfolge sein, die Sie verwenden, um die Anzeigeneinheit zu Berichterstellungszwecken zu identifizieren.
 4.  Wählen Sie in der Dropdownliste **Art der Anzeigeneinheit** den Anzeigentyp aus.
 
-    * Wenn Sie ein Werbebanner in Ihrer app angezeigt werden, wählen Sie **Banner**.
-    * Wenn Sie eine interstitial videowerbung oder interstitial Werbebanner in Ihrer app angezeigt werden, wählen Sie **Video interstitial** oder **Banner interstitial** (Achten Sie darauf, wählen Sie die entsprechende Option für den Typ des Interstitial Ad, die Sie anzeigen möchten).
-    * Wenn Sie eine native Ad in Ihrer app angezeigt werden, wählen Sie **Native**.
+    * Wenn Sie in Ihrer APP eine Banner Anzeige anzeigen, wählen Sie **Banner**aus.
+    * Wenn Sie in Ihrer APP eine Video-oder Interstitial-Banner Anzeige mit Interstitial anzeigen, wählen Sie die Option **Video Interstitial** oder **Banner Interstitial** aus. (achten Sie darauf, dass Sie die entsprechende Option für den Typ der zu Anzeige enden Schnittstelle auswählen.)
+    * Wenn Sie in Ihrer APP eine native Werbung anzeigen, wählen Sie **native**aus.
 
-5. Wählen Sie in der Dropdownliste **Gerätefamilie** die Gerätefamilie aus, auf die Ihre App ausgerichtet ist, in der die Anzeigeneinheit verwendet werden. Die verfügbaren Optionen lauten: **UWP (Windows 10)** , **PC/Tablet (Windows 8.1)** , oder **Mobile (Windows Phone 8.x)** .
+5. Wählen Sie in der Dropdownliste **Gerätefamilie** die Gerätefamilie aus, auf die Ihre App ausgerichtet ist, in der die Anzeigeneinheit verwendet werden. Folgende Optionen sind verfügbar: **UWP (Windows 10)** , **PC/Tablet (Windows 8.1)** oder **Mobile (Windows Phone 8.x)** .
 
 6. Konfigurieren Sie die folgenden zusätzlichen Einstellungen wie gewünscht:
 
@@ -50,17 +50,17 @@ So erstellen Sie eine Anzeigeeinheit für eine [Banneranzeige](../monetize/banne
 7.  Wenn Sie die COPPA-Compliance für die ausgewählte App noch nicht eingerichtet haben, wählen Sie eine Option im Abschnitt [COPPA-Compliance](#coppa) aus.
 8.  Klicken Sie auf **Anzeigeneinheit erstellen**.
 
-Nach der Erstellung der neuen Ad-Einheit in der Tabelle der verfügbaren Ad Einheiten in werden anscheinend die **Monetize** &gt; **In-app-Werbung** Seite.
+Nachdem Sie die neue Ad-Einheit erstellt haben, wird Sie in der Tabelle Verfügbare Ad-Einheiten auf der Seite **Monetize** &gt; **in-App-Werbung** angezeigt.
 
 <span id="available-ad-units" />
 
 ## <a name="review-and-edit-ad-units"></a>Überprüfen und Bearbeiten von Anzeigeneinheiten
 
-Nach der Erstellung von Ad-Einheiten für eine oder mehrere apps in Ihrem Konto diesen Ad-Einheiten werden angezeigt, in einer Tabelle am unteren Rand der **Monetize** &gt; **In-app-Werbung** Seite. Diese Tabelle zeigt die **Anwendungs-ID** und **Anzeigeneinheits-ID** für jede Anzeigeneinheit zusammen mit anderen Informationen an. Zum Einblenden von Anzeigen in Ihrer App müssen Sie diese Werte in Ihrem Code verwenden. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](../monetize/set-up-ad-units-in-your-app.md).
+Nachdem Sie Ad-Einheiten für eine oder mehrere apps in Ihrem Konto erstellt haben, werden diese Ad-Einheiten in einer Tabelle am unteren Rand der Seite **Monetize** &gt; **in-App-Werbung** angezeigt. Diese Tabelle zeigt die **Anwendungs-ID** und **Anzeigeneinheits-ID** für jede Anzeigeneinheit zusammen mit anderen Informationen an. Zum Einblenden von Anzeigen in Ihrer App müssen Sie diese Werte in Ihrem Code verwenden. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](../monetize/set-up-ad-units-in-your-app.md).
 
 * Wenn Ihre App [Banneranzeigen](../monetize/banner-ads.md) anzeigt, weisen Sie diese Werte den Eigenschaften [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) und [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) Ihres [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)-Objekts hinzu.
 * Wenn Ihre App [Interstitialwerbung](../monetize/interstitial-ads.md) anzeigt, übergeben Sie diese Werte an die [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)-Method Ihres [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)-Objekts.
-* Wenn Ihre app zeigt [native Ads](../monetize/native-ads.md), übergeben Sie diese Werte, die **NativeAdsManagerV2** Konstruktor.
+* Wenn Ihre APP [native Werbung](../monetize/native-ads.md)anzeigt, übergeben Sie diese Werte an den **NativeAdsManagerV2** -Konstruktor.
   > [!IMPORTANT]
   > Sie können jede Anzeigeneinheit in nur einer App verwenden. Wenn Sie eine Anzeigeneinheit in mehr als einer App verwenden, werden für die Ad-Einheit keine Anzeigen platziert.
 
@@ -70,13 +70,13 @@ Nach der Erstellung von Ad-Einheiten für eine oder mehrere apps in Ihrem Konto 
 Um die [Vermittlungseinstellungen](#mediation) für eine UWP-Anzeigeneinheit oder die [COPPA-Compliance](#coppa) für die App, in denen die Anzeigeneinheit verwendet wird, zu bearbeiten, klicken Sie auf den Namen der Anzeigeneinheit.
 
 > [!NOTE]
-> Verfügt eine Werbeeinheit keine Aktivität für die letzten sechs Monate, werden wir bezeichnen sie als **inaktiv**, und schließlich vom Partner Center zu entfernen. Sie können Filter verwenden, um nur **aktive** oder **inaktive** Anzeigeneinheiten anzuzeigen. Wenn Sie Anzeigeneinheiten sehen, für die Sie der Meinung sind, sie seien ungenau als **inaktiv** markiert, [wenden Sie sich an den Support](https://aka.ms/storesupport).
+> Wenn eine Ad-Einheit in den letzten sechs Monaten keine Aktivität aufweist, bezeichnen wir diese als **inaktiv**und entfernen Sie schließlich aus Partner Center. Sie können Filter verwenden, um nur **aktive** oder **inaktive** Anzeigeneinheiten anzuzeigen. Wenn Sie Anzeigeneinheiten sehen, für die Sie der Meinung sind, sie seien ungenau als **inaktiv** markiert, [wenden Sie sich an den Support](https://developer.microsoft.com/windows/support).
 
 <span id="mediation" />
 
 ## <a name="mediation-settings"></a>Einstellungen der Anzeigenvermittlung
 
-Wenn Sie [erstellen Sie eine neue UWP-Ad-Einheit](#create-ad-unit) oder [bearbeiten eine vorhandene UWP Werbeeinheit](#available-ad-units), verwenden Sie die Optionen in diesem Abschnitt konfigurieren [Ad Vermittlung](../monetize/ad-mediation-service.md) für die Ad-Einheit. Mit der Anzeigenvermittlung können Sie Ihre Anzeigenumsätze maximieren und Werbefunktionen optimal nutzen, indem Sie Anzeigen aus mehreren Anzeigennetzwerken anzeigen, einschließlich Anzeigen aus anderen kostenpflichtigen Anzeigennetzwerken und Anzeigen ohne Umsatzgenerierung zu Werbekampagnen für Microsoft-Apps. Wir kümmern uns um die Vermittlung von Banneranzeigenanforderungen von den gewählten Anzeigennetzwerken. Wenn Sie eine UWP-Anzeigeneinheit haben, die bereits mit einer Banner-, Interstitial oder nativen Anzeige in Ihrer App verbunden ist, erfordert das Aktivieren der Anzeigenvermittlung keine Codeänderungen in Ihrer App.
+Wenn Sie [eine neue UWP-Ad-Einheit erstellen](#create-ad-unit) oder [eine vorhandene UWP-Ad-Einheit bearbeiten](#available-ad-units), verwenden Sie die Optionen in diesem Abschnitt, um die [AD-Vermittlung](../monetize/ad-mediation-service.md) für die Ad-Einheit zu konfigurieren. Mit der Anzeigenvermittlung können Sie Ihre Anzeigenumsätze maximieren und Werbefunktionen optimal nutzen, indem Sie Anzeigen aus mehreren Anzeigennetzwerken anzeigen, einschließlich Anzeigen aus anderen kostenpflichtigen Anzeigennetzwerken und Anzeigen ohne Umsatzgenerierung zu Werbekampagnen für Microsoft-Apps. Wir kümmern uns um die Vermittlung von Banneranzeigenanforderungen von den gewählten Anzeigennetzwerken. Wenn Sie eine UWP-Anzeigeneinheit haben, die bereits mit einer Banner-, Interstitial oder nativen Anzeige in Ihrer App verbunden ist, erfordert das Aktivieren der Anzeigenvermittlung keine Codeänderungen in Ihrer App.
 
 > [!NOTE]
 > Wenn Sie die Anzeigenvermittlung für eine UWP-Anzeigeneinheit aktivieren, müssen Sie keine Anzeigeneinheit von Drittanbieter-Anzeigennetzwerken erhalten. Unser Anzeigenvermittlungsdienst erstellt automatisch alle erforderlichen Drittanbieter-Anzeigeneinheiten.
@@ -84,13 +84,13 @@ Wenn Sie [erstellen Sie eine neue UWP-Ad-Einheit](#create-ad-unit) oder [bearbei
 So konfigurieren Sie die Anzeigenvermittlung für eine UWP-Anzeigeneinheit in Ihrer App:
 
 1. [Eine Anzeigeneinheit erstellen](#create-ad-unit) oder [Eine vorhandene Anzeigeneinheit auswählen](#available-ad-units).
-2. Auf der **In-app-Werbung** wechseln Sie zur Seite der **Vermittlung Einstellungen** Abschnitt und die Konfiguration der Einstellungen.
+2. Wechseln Sie auf der Seite " **in-App-Werbung** " zum Abschnitt " **Vermittlungs Einstellungen** ", und konfigurieren Sie die Einstellungen.
 
-    * In der Standardeinstellung die **Teilen Sie Microsoft optimieren die Einstellungen meines** das Kontrollkästchen aktiviert ist. Es wird empfohlen, diese Option zu verwenden. Diese Option verwendet Machine Learning-Algorithmen, um automatisch die Anzeigenvermittlungseinstellungen für Ihre App auszuwählen, um Ihnen beim Optimieren der Anzeigenumsätze in den verschiedenen Märkten zu helfen, die Ihre App unterstützt. Wenn Sie diese Option verwenden, können Sie auch die Ad-Netzwerke auswählen, die Sie in der Konfiguration verwenden möchten. Deaktivieren Sie die Ad-Netzwerke, die nicht Teil der Konfiguration werden möchten, und unsere Algorithmus wird sichergestellt, dass Ihre app nur Anzeige von den ausgewählten Ad-Netzwerken erhält.
-    * Wenn Sie Ihre eigenen Ad Einstellungen für die Vermittlung auswählen möchten, wählen Sie **Standardeinstellungen ändern**.
+    * Standardmäßig ist das Kontrollkästchen **Microsoft meine Einstellungen optimieren** aktiviert. Es wird empfohlen, diese Option zu verwenden. Diese Option verwendet Machine Learning-Algorithmen, um automatisch die Anzeigenvermittlungseinstellungen für Ihre App auszuwählen, um Ihnen beim Optimieren der Anzeigenumsätze in den verschiedenen Märkten zu helfen, die Ihre App unterstützt. Wenn Sie diese Option verwenden, können Sie auch die Ad-Netzwerke auswählen, die Sie in der Konfiguration verwenden möchten. Deaktivieren Sie die Ad-Netzwerke, die nicht Teil der Konfiguration sein sollen, und unser Algorithmus stellt sicher, dass Ihre APP nur anzeigen aus den ausgewählten Ad-Netzwerken empfängt.
+    * Wenn Sie Ihre eigenen Ad-Vermittlungs Einstellungen auswählen möchten, wählen Sie **Standardeinstellungen ändern**aus.
 
     > [!NOTE]
-    > Die restlichen Schritte in diesem Abschnitt gelten nur bei Auswahl **Standardeinstellungen ändern**.
+    > Die restlichen Schritte in diesem Abschnitt gelten nur, wenn Sie die Option **Standardeinstellungen ändern**auswählen.
 
 3. Wählen Sie in der Dropdownliste **Ziel** die Option **Basisplan**, um die Standardkonfiguration für Ihre Anzeigenvermittlungseinstellungen zu konfigurieren. Diese Standardkonfiguration wird auf alle Märkte angewendet, mit Ausnahme von Märkten, für die Sie marktspezifische Konfigurationen definieren.
 4. Geben Sie dann das Verhältnis der Anzeigen an, die Sie auf dem Steuerelement von kostenpflichtigen Netzwerken (die Sie für Aufrufe bezahlen) und anderen Anzeigennetzwerken (die Sie nicht für Aufrufe bezahlen) anzeigen möchten. Geben Sie hierzu einen Wert zwischen 0 und 100 im Feld **Gewichtung** für **Paid ad networks** und **Weitere Anzeigennetzwerke** ein.  
@@ -110,18 +110,18 @@ Die folgende Tabelle enthält die kostenpflichtigen Netzwerke, die wir derzeit f
 
 |  Anzeigennetzwerk  |  Beschreibung  |  Unterstützte Anzeigentypen  |
 |--------------|---------------|---------------------|
-| Oath- und AppNexus |  Dies ist eine von Microsoft verwaltet Ad-Netzwerk, das werbeeinblendungen über unser Partner Netzwerke Oath- und AppNexus erfüllt.<p/>**Hinweis**: Oath- und AppNexus wird immer zuerst Rangfolge der **bezahlt anzeigennetzwerke** Liste Werbeeinheiten Banner, und es kann nicht geändert werden, um eine niedrigere Rangfolge für diese Typen von anzeigen. | Banneranzeigen, Video-Interstitialanzeigen |
-| AppNexus (direkt) | Wählen Sie diese Option, um die Werbung von dienen [AppNexus](https://www.appnexus.com). | Video-Interstitialanzeigen, native Anzeigen  |
+| Oath und appnexus |  Dies ist ein von Microsoft verwaltetes Ad-Netzwerk, das Werbeeinblendungen über unsere Partnernetzwerke, Oath und appnexus, bietet.<p/>**Hinweis**: Oath und appnexus werden immer zuerst in der Liste der **kostenpflichtigen Ad-Netzwerke** für Banner-Werbe Einheiten sortiert und können für diese Art von Werbung nicht in eine niedrigere Rangfolge geändert werden. | Banneranzeigen, Video-Interstitialanzeigen |
+| AppNexus (direkt) | Wählen Sie diese Option aus, um Werbung von [appnexus](https://www.appnexus.com)zu verarbeiten. | Video-Interstitialanzeigen, native Anzeigen  |
 | Microsoft-Anzeigen für die App-Installation | Wählen Sie diese Option, um Anzeigen für die App-Installation oder das Wiedereinschalten von Anzeigen in Apps anzuzeigen, die von anderen Entwicklern im Windows-Ökosystem erstellt wurden, die [Werbeanzeigenkampagnen für ihre Apps erstellen](create-an-ad-campaign-for-your-app.md).  |  Banneranzeigen, Banner-Interstitialwerbung, native Anzeigen  |
-| MSN-Content-Empfehlungen |  Wählen Sie diese Option, um das Anzeigen von Inhalt MSN-Empfehlungen dienen. |  Banneranzeigen, Banner-Interstitialwerbung  |
+| MSN Content-Empfehlungen |  Wählen Sie diese Option aus, um Anzeigen von MSN Content-Empfehlungen zu verarbeiten. |  Banneranzeigen, Banner-Interstitialwerbung  |
 | Outbrain |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Outbrain](https://www.outbrain.com/). |  Banneranzeigen, Banner-Interstitialwerbung  |
 | Revcontent |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Revcontent](https://www.revcontent.com/). |  Banner, nativ  |
 | Smaato |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Smaato](https://www.smaato.com/). |  Banner  |
 | Smartclip |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Smartclip](http://www.smartclip.com/). |  Video-Interstitialanzeigen  |
 | SpotX |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [SpotX](https://www.spotx.tv/). |  Video-Interstitialanzeigen  |
 | Taboola |  Wählen Sie diese Option zum Bereitstellen von Anzeigen von [Taboola](https://www.taboola.com/). |  Banner  |
-| Vungle | Wählen Sie diese Option, um die Werbung von dienen [Vungle](https://vungle.com/) | Video-Interstitialanzeigen |
-| Undertone | Wählen Sie diese Option, um die Werbung von dienen [Undertone](https://www.undertone.com/). | Banner interstitial |
+| Vungle | Wählen Sie diese [Option aus,](https://vungle.com/) um Werbeeinblendungen zu verarbeiten. | Video-Interstitialanzeigen |
+| Unterton | Wählen Sie diese [Option aus,](https://www.undertone.com/)um Werbeeinblendungen bereitzustellen. | Banner Interstitial |
 
 
 <span id="other-networks" />
@@ -144,20 +144,20 @@ Die verfügbaren Anzeigennetzwerke schalten Anzeigen in allen [unterstützten M�
 
 |  Anzeigennetzwerk  |  Unterstützte Märkte  |
 |--------------|---------------------|
-| Revcontent | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Vereinigtes Königreich, USA  |
-| Smaato | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Vereinigtes Königreich, USA |
+| Revcontent | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Großbritannien, USA  |
+| Smaato | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Großbritannien, USA |
 | Smartclip | Österreich, Belgien, Dänemark, Finnland, Deutschland, Italien, Niederlande, Norwegen, Schweden, Schweiz  |
-| Undertone | USA |
+| Unterton | USA |
 
 <span id="coppa" />
 
 ## <a name="coppa-compliance"></a>COPPA-Compliance
 
-Wenn Sie [erstellen Sie eine Werbeeinheit](#create-ad-unit) oder [wählen Sie eine vorhandene Ad-Einheit](#available-ad-units), **COPPA Compliance** Abschnitt wird am unteren Rand der Seite angezeigt, die ausgewählte app für die Ad-Einheit verfügt über mindestens eine Übergabe, die erreicht die [in den Store](../publish/the-app-certification-process.md#in-the-store) Schritt Zertifizierungsprozess der app.
+Wenn Sie [eine Ad-Einheit erstellen](#create-ad-unit) oder [eine vorhandene Ad-Einheit auswählen](#available-ad-units), wird der Abschnitt **Coppa-Konformität** unten auf der Seite angezeigt, wenn für die ausgewählte App für die Ad-Einheit mindestens eine Übermittlung vorhanden ist, die im Schritt [Store](../publish/the-app-certification-process.md#in-the-store) im App-Zertifizierungsprozess erreicht wurde.
 
 Im Rahmen des Children's Online Privacy Protection Act ("COPPA"), wählen Sie **Diese Anwendung richtet sich an Kinder unter 13 Jahren** in diesem Abschnitt aus, wenn Ihre App an Kinder unter 13 Jahren gerichtet ist. Wenn Sie diese Option auswählen, wird Microsoft Maßnahmen ergreifen, um die verhaltensorientierten Werbedienste bei der Übermittlung von Werbung in Ihre App zu deaktivieren.
 
 Die **COPPA-Compliance**-Einstellung, die Sie auswählen, wird automatisch auf allen Anzeigeeinheiten für die ausgewählte App angewendet.
 
 > [!IMPORTANT]
-> Wenn Ihre App an Kinder unter 13 Jahren gerichtet ist, ergeben sich aus COPPA bestimmte Verpflichtungen für Sie. Weitere Informationen über Ihre Verpflichtungen finden Sie [auf dieser Seite](https://go.microsoft.com/fwlink/p/?linkid=536558).
+> Wenn Ihre App an Kinder unter 13 Jahren gerichtet ist, ergeben sich aus COPPA bestimmte Verpflichtungen für Sie. Weitere Informationen über Ihre Verpflichtungen finden Sie [auf dieser Seite](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule).

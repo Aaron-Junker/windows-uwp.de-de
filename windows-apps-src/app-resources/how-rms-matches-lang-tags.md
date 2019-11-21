@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: ccbfa5f06d336604160f98dd44c27cc0cf1b0aed
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2db4c7d98924ffb25800b1c615e929495b279fdc
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57659145"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254661"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>Wie das Ressourcenverwaltungssystem Sprachtags zuordnet
 
@@ -21,7 +21,7 @@ Im vorherigen Thema ([Wie das Ressourcenverwaltungssystem Ressourcen zuordnet un
 
 Ressourcen mit Sprachtagqualifizierern werden basierend auf der Sprachenliste für die App-Laufzeit verglichen und bewertet. Definitionen der verschiedenen Sprachlisten finden Sie unter [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](../design/globalizing/manage-language-and-region.md). Zuerst wird die erste Sprache in einer Liste abgeglichen und dann die zweite Sprache in der Liste (auch bei anderen regionalen Varianten). Eine Ressource für „en-GB“ wird z. B. vor einer „fr-CA“-Ressource ausgewählt, wenn „en-US“ die Sprache der App-Laufzeit ist. Nur dann, wenn keine Ressourcen für eine Form von „en“ vorhanden sind, wird eine Ressource für „fr-CA“ gewählt. (Beachten Sie, dass in diesem Fall die Standardsprache der App nicht auf eine beliebige Form von „en“ festgelegt werden kann).
 
-Der Bewertungsmechanismus verwendet Daten aus dem [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)-Register und aus andere Datenquellen. Dies ermöglicht einen Bewertungsgradienten mit unterschiedlichen Übereinstimmungsqualitäten. Sind mehrere Kandidaten verfügbar, wird der Kandidat mit der besten Übereinstimmungsbewertung ausgewählt.
+Der Bewertungsmechanismus verwendet Daten aus dem [BCP-47](https://tools.ietf.org/html/bcp47)-Register und aus andere Datenquellen. Dies ermöglicht einen Bewertungsgradienten mit unterschiedlichen Übereinstimmungsqualitäten. Sind mehrere Kandidaten verfügbar, wird der Kandidat mit der besten Übereinstimmungsbewertung ausgewählt.
 
 Dadurch können Sie Sprachinhalten allgemeine Tags hinzufügen, bei Bedarf aber dennoch bestimmte Inhalte angeben. Beispielsweise könnte Ihre App über viele englische Zeichenfolgen verfügen, die sowohl in den USA als auch in Großbritannien und anderen Regionen üblich sind. Werden diese Zeichenfolgen mit dem Tag „en” (Englisch) versehen, kann dadurch Platz gespart und der Lokalisierungsaufwand reduziert werden. Wenn eine Unterscheidung erforderlich ist, z. B. in einer Zeichenfolge mit dem Wort „color” oder „colour”, können für die US-amerikanische und die englische Version jeweils die Tags „en-US” und „en-GB” verwendet werden.
 
@@ -34,7 +34,7 @@ Sprachen werden über normalisierte, wohlgeformte BCP-47-Sprachtags identifizier
 - Untergeordnetes Regionstag (optional)
 - Varianten-Subtag (optional)
 
-Zusätzliche Subtag-Elemente können vorhanden sein, wirken sich jedoch nur unerheblich auf den Sprachvergleich aus. Mit dem Platzhalter „*” werden keine Sprachbereiche (z. B. „en-*”) definiert.
+Zusätzliche Subtag-Elemente können vorhanden sein, wirken sich jedoch nur unerheblich auf den Sprachvergleich aus. Mit dem Platzhalter „ *” werden keine Sprachbereiche (z. B. „en-* ”) definiert.
 
 ## <a name="matching-two-languages"></a>Vergleichen zweier Sprachen
 
@@ -70,11 +70,11 @@ Die Tags stimmen in Bezug auf die Subtags für Sprachen, Skripte und Regionen ü
 
 ### <a name="partial-matches"></a>Teilweise Übereinstimmungen
 
-Die Tags stimmen in Bezug auf die Subtags für Sprachen und Skripte überein, unterscheiden sich jedoch in der Region oder einigen anderen Subtags. Z. B. En-US entspricht En erstellt werden, oder entspricht Sie En-US-En -\*.
+Die Tags stimmen in Bezug auf die Subtags für Sprachen und Skripte überein, unterscheiden sich jedoch in der Region oder einigen anderen Subtags. Beispielsweise entspricht "en-US" en, oder "en-US" entspricht "en-\*".
 
 #### <a name="macro-region-match"></a>Vergleichen von Makroregion
 
-Die Tags stimmen in Bezug auf die Subtags für Sprachen- und Skripte überein. Beide Tags enthalten Regionen-Subtags, von denen eines eine Makroregion angibt, in der die andere Region enthalten ist. Die untergeordneten Tags für die Makroregion sind immer numerischer Art und werden von den Regionscodes der Statistikabteilung der Vereinten Nationen (M49) abgeleitet. Ausführliche Informationen zu umfassenden Beziehungen finden Sie unter [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](https://go.microsoft.com/fwlink/p/?LinkId=247929) (Zusammensetzung makrogeografischer (Kontinental-)Regionen, geografischer Unterregionen und ausgewählter ökonomischer und anderer Gruppierungen).
+Die Tags stimmen in Bezug auf die Subtags für Sprachen- und Skripte überein. Beide Tags enthalten Regionen-Subtags, von denen eines eine Makroregion angibt, in der die andere Region enthalten ist. Die untergeordneten Tags für die Makroregion sind immer numerischer Art und werden von den Regionscodes der Statistikabteilung der Vereinten Nationen (M49) abgeleitet. Ausführliche Informationen zu umfassenden Beziehungen finden Sie unter [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](https://unstats.un.org/unsd/methods/m49/m49regin.htm) (Zusammensetzung makrogeografischer (Kontinental-)Regionen, geografischer Unterregionen und ausgewählter ökonomischer und anderer Gruppierungen).
 
 **Hinweis** UN-Codes für „ökonomische Gruppierungen” oder „andere Gruppierungen” werden in BCP-47 nicht unterstützt.
  
@@ -116,7 +116,7 @@ Die Benutzersprache „zh-Hans-CN” (vereinfachtes Chinesisch (China)) stimmt m
 
 1. Genaue Übereinstimmung; 2. und 3: Übereinstimmung der Region; 4. Übereinstimmung des übergeordneten Elements; 5. Übereinstimmung der gleichgeordneten Elemente
 
-Wenn für ein untergeordnetes Sprachtag in der BCP-47-Registrierung für untergeordnete Tags ein Wert zum Unterdrücken von Skripts definiert ist, wird ein entsprechender Abgleich ausgeführt. Dabei wird der Wert des unterdrückten Skriptcodes übernommen. "en-Latn-US" passt z. B. zu "en-US". Im folgenden Beispiel ist die Benutzersprache „en-AU” (Englisch (Australien)).
+Wenn für ein untergeordnetes Sprachtag in der BCP-47-Registrierung für untergeordnete Tags ein Wert zum Unterdrücken von Skripts definiert ist, wird ein entsprechender Abgleich ausgeführt. Dabei wird der Wert des unterdrückten Skriptcodes übernommen. „en-Latn-US“ passt z. B. zu „en-US“. Im folgenden Beispiel ist die Benutzersprache „en-AU” (Englisch (Australien)).
 
 ![Übereinstimmung für Englisch (Australien)](images/language_matching_2.png)
 
@@ -131,7 +131,7 @@ Wenn die Sprachenliste zwei oder mehr regionale Varianten mit denselben untergeo
 - Sprachenliste (in dieser Reihenfolge): „pt-PT” (Portugiesisch (Portugal)), „en-US” (Englisch (USA)), „pt-BR” (Portugiesisch (Brasilien)).
 - Ressourcen: „en-US”, „pt-BR”.
 - Ressource mit der höheren Bewertung: „en-US”.
-- Beschreibung: Der Vergleich beginnt mit "pt-PT" findet jedoch keine genaue Übereinstimmung. Da „pt-BR” in der Sprachenliste des Benutzers vorhanden ist, wird der teilweise Vergleich auf den Vergleich mit „pt-BR” verschoben. Der nächste Sprachvergleich ist „en-US”, für den eine genaue Übereinstimmung vorliegt. Die vorrangige Ressource ist somit „en-US”.
+- Beschreibung: Der Vergleich beginnt mit „pt-PT”, es wird jedoch keine genaue Übereinstimmung gefunden. Da „pt-BR” in der Sprachenliste des Benutzers vorhanden ist, wird der teilweise Vergleich auf den Vergleich mit „pt-BR” verschoben. Der nächste Sprachvergleich ist „en-US”, für den eine genaue Übereinstimmung vorliegt. Die vorrangige Ressource ist somit „en-US”.
 
 ODER
 
@@ -141,26 +141,26 @@ ODER
 
 ## <a name="undetermined-language-und"></a>Undefinierte Sprache („und”)
 
-Das Sprachtag „und” kann zum Angeben einer Ressource verwendet werden, die mit allen Sprachen übereinstimmt, wenn keine bessere Übereinstimmung vorliegt. Sie ähnelt dem BCP-47-Sprachbereich „*” oder „*-&lt;script&gt;”. Hier sehen Sie ein Beispiel.
+Das Sprachtag „und” kann zum Angeben einer Ressource verwendet werden, die mit allen Sprachen übereinstimmt, wenn keine bessere Übereinstimmung vorliegt. Sie ähnelt dem BCP-47-Sprachbereich „ *” oder „* -&lt;script&gt;”. Hier sehen Sie ein Beispiel.
 
 - Sprachenliste: „en-US”, „zh-Hans-CN”.
 - Ressourcen: „zh-Hans-CN”, „und.”
 - Ressource mit dem höherem Wert: „und”.
-- Beschreibung: Der Vergleich beginnt mit "En-US", aber es findet keine Übereinstimmung basierend auf "En" (partielle oder besser). Da eine Ressource mit dem Tag „und” vorhanden ist, wird diese vom Vergleichsalgorithmus verwendet.
+- Beschreibung: Der Vergleich beginnt mit „en-US”, aber es wird keine Übereinstimmung basierend auf „en” gefunden (weder eine partielle noch eine höhere Übereinstimmung). Da eine Ressource mit dem Tag „und” vorhanden ist, wird diese vom Vergleichsalgorithmus verwendet.
 
 Das Tag „und” ermöglicht, dass mehrere Sprachen eine einzelne Ressource gemeinsam verwenden und dass einzelne Sprachen als Ausnahmen behandelt werden. Beispiel:
 
 - Sprachenliste: „zh-Hans-CN”, „en-US”.
 - Ressourcen: „zh-Hans-CN”, „und.”
 - Ressource mit dem höherem Wert: „zh-Hans-CN”.
-- Beschreibung: Der Vergleich findet eine genaue Übereinstimmung für das erste Element aus, und es nicht so überprüfen Sie für die Ressource, die mit der Bezeichnung "Und".
+- Beschreibung: Der Vergleich findet eine genaue Übereinstimmung für das erste Element und sucht daher nicht nach der mit „und” bezeichneten Ressource.
 
 „und” kann mit einem Skripttag zum Filtern von Ressourcen nach Skript verwendet werden. Beispiel:
 
 - Sprachenliste: „ru”.
 - Ressourcen: „und-Latn”, „und-Cyrl”, „und-Arab”.
 - Ressource mit dem höherem Wert: „und-Cyrl”.
-- Beschreibung: Der Vergleich eine Übereinstimmung für "RUS" nicht gefunden werden, (partielle oder besser), und daher entspricht die Sprach-Tag "Und". Der dem Sprachtag „ru” zugeordnete Wert für die Skriptunterdrückung „Cyrl ”stimmt mit der Ressource „und-Cyrl” überein.
+- Beschreibung: Der Vergleich findet keine Übereinstimmung für „ru” (weder eine partielle noch höhere), daher wird das Sprachtag „und” zugeordnet. Der dem Sprachtag „ru” zugeordnete Wert für die Skriptunterdrückung „Cyrl ”stimmt mit der Ressource „und-Cyrl” überein.
 
 ## <a name="orthographic-regional-affinity"></a>Ortografische Regionsaffinität
 
@@ -170,7 +170,7 @@ Wenn zwei Sprachtags mit unterschiedlichen untergeordneten Regionstags abgeglich
 
 Bestimmte Sprachen verfügen über viele Muttersprachler in unterschiedlichen Regionen, die verschiedene Varianten der Sprache sprechen. Dies gilt z. B. für Sprachen wie Englisch, Französisch und Spanisch, die auch zu den Sprachen gehören, die in mehrsprachigen Apps am häufigsten unterstützt werden. Zu den regionalen Unterschieden können Abweichungen bei der Schreibweise (z. B. „color” und „colour” im Englischen) oder beim Dialekt gehören, also beispielsweise bei der Wortwahl (z. B. „truck” und „lorry” im Englischen).
 
-Diese Sprachen mit Varianten, die erhebliche regionale stellen einigen Herausforderungen beim Bereitstellen einer weltweit einsetzbaren-app: "Wie viele unterschiedliche regionale Varianten unterstützt werden sollten?" „Welche Varianten?” „Welche Methode zum Verwalten dieser regionalen Ressourcenvarianten ist für meine App die kostengünstigste?” Die Beantwortung dieser Fragen würde den Rahmen dieses Themas sprengen. Die in Windows enthaltenen Mechanismen für den Sprachabgleich umfassen jedoch Funktionen, die Sie beim Behandeln regionaler Varianten unterstützen.
+Für diese Sprachen mit erheblichen regionalen Varianten stellt sich für eine weltweit einsetzbare App folgende Frage: „Wie viele unterschiedliche regionale Varianten sollen unterstützt werden?” „Welche Varianten?” „Welche Methode zum Verwalten dieser regionalen Ressourcenvarianten ist für meine App die kostengünstigste?” Die Beantwortung dieser Fragen würde den Rahmen dieses Themas sprengen. Die in Windows enthaltenen Mechanismen für den Sprachabgleich umfassen jedoch Funktionen, die Sie beim Behandeln regionaler Varianten unterstützen.
 
 Von Apps wird häufig nur eine Variante einer Sprache unterstützt. Angenommen, eine App verfügt über Ressourcen für nur eine Variante des Englischen, die von englischen Muttersprachlern unabhängig von der Region verwendet werden soll, aus der sie stammen. In diesem Fall würde das Tag „en” ohne Regionen-Subtag auf diese Zielsetzung hinweisen. Für Apps werden jedoch oft Tags wie „en-US” verwendet, die ein Regionen-Subtag enthalten. In diesem Fall funktioniert dies auch: Von der App wird nur eine Variante des Englischen verwendet. Windows führt den Abgleich einer Ressource, die mit einem Tag für eine regionale Variante versehen ist, mit einer vom Benutzer bevorzugten Sprache entsprechend durch.
 
@@ -184,11 +184,11 @@ Nehmen wir als weiteres Beispiel an, Sie möchten für Muttersprachler aus Spani
 
 Regionsneutrale Sprachtags und untergeordnete Tags für die Makroregion können sehr effektiv sein, wenn Sie mehrere regionale Varianten unterstützen möchten. Wenn Sie die Anzahl von erforderlichen separaten Ressourcen reduzieren möchten, können Sie eine Ressource so qualifizieren, dass die jeweils zutreffende größtmögliche Abdeckung widergespiegelt wird. Anschließend können Sie eine Ressource mit breiter Abdeckung bei Bedarf um eine speziellere Variante erweitern. Eine Ressource mit einem regionsneutralen Sprachqualifizierer wird für Benutzer jeder regionalen Variante verwendet, es sei denn, es ist eine andere Ressource mit einem regionsspezifischeren Qualifizierer vorhanden, die für den jeweiligen Benutzer gilt. Die Ressource „en” ergibt beispielsweise eine Übereinstimmung für einen Benutzer von „Englisch (Australien)”. Eine Ressource mit „en-053” (Englisch für Australien oder Neuseeland) ergibt für den Benutzer jedoch eine bessere Übereinstimmung, und die bestmögliche Übereinstimmung wird mit „en-AU” erzielt.
 
-Englisch erfordert hierbei besondere Beachtung. Wenn für eine App die Lokalisierung für zwei Varianten des Englischen hinzugefügt wird, sind dies meist Englisch (UK) und Englisch (Großbritannien), was auch als internationales Englisch bezeichnet wird. Wie oben bereits erwähnt, richten sich auch bestimmte Regionen außerhalb der USA nach der Schreibweise der Vereinigten Staaten. Dies wird beim Windows-Sprachabgleich entsprechend berücksichtigt. Für dieses Szenario wird davon abgeraten, für eine der Varianten das regionsneutrale Tag „en” zu verwenden. Nutzen Sie stattdessen „en-GB” und „en-US”. (Wenn eine bestimmte Ressource keine separate Varianten erfordert, kann jedoch "En" verwendet werden.) Wenn entweder "En-GB" oder "En-US" durch "En" ersetzt wird, klicken Sie dann, die die orthografische regionale Affinität von Windows bereitgestellten beeinträchtigt. Falls eine dritte Lokalisierung für Englisch hinzugefügt wird, sollten Sie für die zusätzlichen Varianten je nach Bedarf ein spezifisches Regionen-Subtag oder ein Makroregionen-Subtag angeben (z. B. „en-CA”, „en-AU” oder „en-053”), dabei aber weiterhin „en-GB” und „en-US” verwenden.
+Englisch erfordert hierbei besondere Beachtung. Wenn für eine App die Lokalisierung für zwei Varianten des Englischen hinzugefügt wird, sind dies meist Englisch (UK) und Englisch (Großbritannien), was auch als internationales Englisch bezeichnet wird. Wie oben bereits erwähnt, richten sich auch bestimmte Regionen außerhalb der USA nach der Schreibweise der Vereinigten Staaten. Dies wird beim Windows-Sprachabgleich entsprechend berücksichtigt. Für dieses Szenario wird davon abgeraten, für eine der Varianten das regionsneutrale Tag „en” zu verwenden. Nutzen Sie stattdessen „en-GB” und „en-US”. („en” kann jedoch verwendet werden, wenn eine gegebene Ressource keine separaten Varianten benötigt.) Wenn Sie entweder „en-GB” oder „en-US” durch „en” ersetzen, wird dies die von Windows bereitgestellte orthographische regionale Affinität beeinträchtigen. Falls eine dritte Lokalisierung für Englisch hinzugefügt wird, sollten Sie für die zusätzlichen Varianten je nach Bedarf ein spezifisches Regionen-Subtag oder ein Makroregionen-Subtag angeben (z. B. „en-CA”, „en-AU” oder „en-053”), dabei aber weiterhin „en-GB” und „en-US” verwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Wie das Ressourcenverwaltungssystem Ressourcen zuordnet und auswählt](how-rms-matches-and-chooses-resources.md)
-* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Grundlegendes zu Benutzersprachen-Profil und app-manifest-Sprachen](../design/globalizing/manage-language-and-region.md)
-* [Komposition von Makro geografischen (kontinentalen) Regionen, geografische Teilregionen und ausgewählte wirtschaftlichen und anderen Gruppierungen](https://go.microsoft.com/fwlink/p/?LinkId=247929)
+* [Bcp-47](https://tools.ietf.org/html/bcp47)
+* [Grundlegendes zu Benutzerprofil Sprachen und App-Manifest-Sprachen](../design/globalizing/manage-language-and-region.md)
+* [Komposition von Makro geografischen (kontinentalen) Regionen, geografischen Teilregionen und ausgewählten wirtschaftlichen und anderen Gruppierungen](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

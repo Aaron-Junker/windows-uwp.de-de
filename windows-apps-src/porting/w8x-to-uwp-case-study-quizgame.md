@@ -1,44 +1,44 @@
 ---
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
-description: Dieses Thema enthält eine Fallstudie des portierens von einer funktionsfähigen Peer-zu-Peer-Quiz spielen WinRT 8.1 Beispiel-app für eine app für Windows 10 universelle Windows-Plattform (UWP).
+description: In diesem Thema wird eine Fallstudie zum Portieren einer funktionsfähigen Peer-to-Peer Quiz Game-WinRT 8,1-Beispiel-app in eine Windows 10 universelle Windows-Plattform-app (UWP) vorgestellt.
 title: Windows-Runtime 8.x zu universeller Windows-Plattform (UWP) – Fallstudie, QuizGame-Beispiel-App (Peer-zu-Peer)
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 81f50625d3af6728adcc6c377a249410354489dd
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b03e13352717c5e414dda60fe413b00edc9ba827
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322357"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260120"
 ---
-# <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows-Runtime 8.x zu UWP-Fallstudie: QuizGame-Beispiel-app
+# <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows-Runtime 8.x zu universeller Windows-Plattform (UWP) – Fallstudie: QuizGame-Beispiel-App
 
 
 
 
-Dieses Thema enthält eine Fallstudie des portierens von einer funktionsfähigen Peer-zu-Peer-Quiz spielen WinRT 8.1 Beispiel-app für eine app für Windows 10 universelle Windows-Plattform (UWP).
+In diesem Thema wird eine Fallstudie zum Portieren einer funktionsfähigen Peer-to-Peer Quiz Game-WinRT 8,1-Beispiel-app in eine Windows 10 universelle Windows-Plattform-app (UWP) vorgestellt.
 
-Eine Universal 8.1-app ist eine, die zwei Versionen der gleichen app erstellt: eine app-Paket für Windows 8.1 und einer anderen app-Paket für Windows Phone 8.1. Für die WinRT 8.1-Version von QuizGame wird eine Anordnung mit einem Projekt für eine universelle Windows-App verwendet. Dabei wird aber ein anderer Ansatz gewählt und für die beiden Plattformen jeweils eine App mit unterschiedlicher Funktionalität erstellt. Das Windows 8.1-app-Paket dient als Host für eine Sitzung Quiz Spiel, während das Windows Phone 8.1-app-Paket mit dem Host wird die Rolle des Clients wiedergegeben. Die beiden Hälften der Quizspielsitzung kommunizieren per Peer-zu-Peer-Netzwerkverbindung.
+Eine universelle 8,1-App erstellt zwei Versionen derselben App: ein App-Paket für Windows 8.1 und ein anderes app-Paket für Windows Phone 8,1. Für die WinRT 8.1-Version von QuizGame wird eine Anordnung mit einem Projekt für eine universelle Windows-App verwendet. Dabei wird aber ein anderer Ansatz gewählt und für die beiden Plattformen jeweils eine App mit unterschiedlicher Funktionalität erstellt. Das App-Paket Windows 8.1 dient als Host für eine Quiz Spielsitzung, während das Windows Phone 8,1-App-Paket die Rolle des Clients auf dem Host wieder gibt. Die beiden Hälften der Quizspielsitzung kommunizieren per Peer-zu-Peer-Netzwerkverbindung.
 
-Die individuelle Anpassung der beiden Hälften für PC bzw. Telefone ist sinnvoll. Aber wäre es nicht sogar noch besser, wenn Sie sowohl den Host als auch den Client auf nahezu jedem beliebigen Gerät ausführen könnten? In diesem Fall werden Studie wir beide apps auf Windows 10 portieren, in denen sie jeweils in einem einzelnen app-Paket erstellen, die Benutzer auf eine Vielzahl von Geräten installieren können.
+Die individuelle Anpassung der beiden Hälften für PC bzw. Telefone ist sinnvoll. Aber wäre es nicht sogar noch besser, wenn Sie sowohl den Host als auch den Client auf nahezu jedem beliebigen Gerät ausführen könnten? In dieser Fallstudie portieren wir beide apps auf Windows 10, wo Sie jeweils in einem einzelnen App-Paket erstellt werden, das Benutzer auf einer Vielzahl von Geräten installieren können.
 
 Für die App werden Muster verwendet, bei denen Ansichten und Ansichtsmodelle genutzt werden. Sie werden sehen, dass der Portiervorgang für diese App aufgrund dieser klaren Trennung sehr einfach ist.
 
-**Beachten Sie**  in diesem Beispiel wird davon ausgegangen, das Netzwerk konfiguriert ist, zum Senden und Empfangen von benutzerdefinierten UDP multicast-Pakete (die meisten privaten Netzwerke sind, auch wenn das Netzwerk möglicherweise nicht) zu gruppieren. Im Beispiel werden auch TCP-Pakete gesendet und empfangen.
+**Beachten Sie**  in diesem Beispiel wird davon ausgegangen, dass Ihr Netzwerk für das Senden und empfangen von benutzerdefinierten Multicast Paketen für UDP-Gruppen konfiguriert ist (die meisten Heimnetzwerke sind, auch wenn Ihr Arbeitsnetzwerk möglicherweise nicht Im Beispiel werden auch TCP-Pakete gesendet und empfangen.
 
  
 
-**Beachten Sie**    Wenn QuizGame10 in Visual Studio öffnen, wenn die Meldung "Visual Studio-Update erforderlich", klicken Sie dann die Schritte in [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md).
+**Beachten** Sie   Wenn Sie QuizGame10 in Visual Studio öffnen, wenn die Meldung "Visual Studio-Update erforderlich" angezeigt wird, führen Sie die Schritte in " [targetplatformversion](w8x-to-uwp-troubleshooting.md)" aus.
 
  
 
 ## <a name="downloads"></a>Downloads
 
-[Laden Sie die universelle 8.1-App „QuizGame“ herunter](https://go.microsoft.com/fwlink/?linkid=532953). Dies ist der ursprünglichen Zustand der App vor dem Portieren. 
+[Laden Sie die universelle 8.1-App „QuizGame“ herunter](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/QuizGame). Dies ist der ursprünglichen Zustand der App vor dem Portieren. 
 
-[Windows 10-app Herunterladen der QuizGame10](https://go.microsoft.com/fwlink/?linkid=532954). Dies ist der Zustand der App direkt nach dem Portieren. 
+[Laden Sie die QuizGame10 Windows 10-APP herunter](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/QuizGame10). Dies ist der Zustand der App direkt nach dem Portieren. 
 
 [Die aktuelle Version dieses Beispiels finden Sie auf GitHub](https://github.com/microsoft/Windows-appsample-networkhelper).
 
@@ -75,42 +75,42 @@ Wenn Sie die App und ihre Interaktionen auf einem einzelnen PC ausprobieren möc
 
 Legen Sie zum Aktivieren des lokalen Testmodus den Eintrag **LOCALTESTMODEON** (in den Projekteigenschaften) als Symbol für die bedingte Kompilierung fest, und führen Sie eine Neuerstellung durch.
 
-## <a name="porting-to-a-windows10-project"></a>Portieren auf einem Windows 10-Projekt
+## <a name="porting-to-a-windows10-project"></a>Portieren auf ein Windows 10-Projekt
 
 QuizGame verfügt über die folgenden Bestandteile:
 
 -   P2PHelper Dies ist eine portable Klassenbibliothek, in der die Peer-zu-Peer-Netzwerklogik enthalten ist.
--   QuizGame.Windows Dies ist das Projekt, das das app-Paket für die Host-app erstellt, das auf Windows 8.1.
+-   QuizGame.Windows Dies ist das Projekt, mit dem das App-Paket für die Host-App erstellt wird, die Windows 8.1 als Ziel hat.
 -   QuizGame.WindowsPhone Dies ist das Projekt, mit dem das App-Paket für die Client-App für Windows Phone 8.1 erstellt wird.
 -   QuizGame.Shared Dies ist das Projekt, das den Quellcode, die Markupdateien und andere Assets und Ressourcen enthält, die von den beiden anderen Projekten verwendet werden.
 
 Für diese Fallstudie verwenden wir die üblichen Optionen, die unter [Bei einer Universal 8.1-App](w8x-to-uwp-root.md) in Bezug auf die zu unterstützenden Geräte beschrieben sind.
 
-Basierend auf diese Optionen, werden wir zu einem neuen Windows 10-Projekt namens QuizGameHost QuizGame.Windows portieren. Und wir werden ein neues Windows 10-Projekt namens QuizGameClient QuizGame.WindowsPhone portieren. Diese Projekte sind für die universelle Gerätefamilie bestimmt, damit sie auf jedem Gerät ausgeführt werden können. Wir belassen die QuizGame.Shared-Quelldateien usw. in ihrem eigenen Ordner und verknüpfen diese freigegebenen Dateien mit den beiden neuen Projekten. Wir verwenden wieder eine einzelne Projektmappe und nennen sie QuizGame10.
+Basierend auf diesen Optionen wird "Quiz Game. Windows" in ein neues Windows 10-Projekt mit dem Namen "quizgamehost" portieren. Und wir portieren "Quiz Game. windowsphone" in ein neues Windows 10-Projekt mit dem Namen "quizgameclient". Diese Projekte sind für die universelle Gerätefamilie bestimmt, damit sie auf jedem Gerät ausgeführt werden können. Wir belassen die QuizGame.Shared-Quelldateien usw. in ihrem eigenen Ordner und verknüpfen diese freigegebenen Dateien mit den beiden neuen Projekten. Wir verwenden wieder eine einzelne Projektmappe und nennen sie QuizGame10.
 
-**Die Lösung QuizGame10**
+**Die QuizGame10-Lösung**
 
--   Erstellen einer neuen Projektmappe (**neues Projekt** &gt; **andere Projekttypen** &gt; **Visual Studio-Projektmappen**) und nennen Sie sie QuizGame10.
+-   Erstellen Sie eine neue Projekt Mappe (**Neues Projekt** &gt; **andere Projekttypen** &gt; **Visual Studio**-Projektmappen), und nennen Sie Sie QuizGame10.
 
 **P2PHelper**
 
--   Erstellen Sie in der Projektmappe ein neues Windows 10-Klassenbibliotheksprojekt (**neues Projekt** &gt; **Windows Universal** &gt; **-Klassenbibliothek (Windows universell)** ) und nennen Sie sie P2PHelper.
+-   Erstellen Sie in der Projekt Mappe ein neues Windows 10-Klassen Bibliotheksprojekt (**Neues Projekt** &gt; **Windows Universal** &gt;- **Klassenbibliothek (universelle Windows-Klassenbibliothek)** , und nennen Sie es P2PHelper.
 -   Löschen Sie „Class1.cs“ aus dem neuen Projekt.
 -   Kopieren Sie „P2PSession.cs“, „P2PSessionClient.cs“ und „P2PSessionHost.cs“ in den Ordner des neuen Projekts, und fügen Sie die kopierten Dateien in das neue Projekt ein.
 -   Das Projekt kann dann ohne weitere Änderungen erstellt werden.
 
 **Freigegebene Dateien**
 
--   Kopieren Sie die Ordner Allgemeine, Modell, Ansicht und ViewModel aus \\QuizGame.Shared\\ zu \\QuizGame10\\.
+-   Kopieren Sie die Ordner "Common", "Model", "View" und "ViewModel" aus \\quizgame. Shared\\ in \\QuizGame10-\\.
 -   „Common“, „Model“, „View“ und „ViewModel“ sind die Ordner, die gemeint sind, wenn es um die freigegebenen Ordner auf dem Datenträger geht.
 
-**QuizGameHost**
+**Quizgamehost**
 
--   Erstellen eines neuen Windows 10-app-Projekts (**hinzufügen** &gt; **neues Projekt** &gt; **Windows Universal** &gt; **leer Anwendung (Windows universell)** ) und nennen Sie sie QuizGameHost.
--   Hinzufügen eines Verweises auf P2PHelper (**Verweis hinzufügen** &gt; **Projekte** &gt; **Lösung** &gt; **P2PHelper**).
--   Erstellen Sie im **Projektmappen-Explorer** für jeden freigegebenen Ordner auf dem Datenträger einen neuen Ordner. Im Gegenzug Maustaste auf jeden Ordner, die Sie gerade erstellt haben, und klicken Sie auf **hinzufügen** &gt; **vorhandenes Element** und Sie einen Ordner zu navigieren. Öffnen Sie den entsprechenden freigegebenen Ordner, wählen Sie alle Dateien aus, und klicken Sie anschließend auf **Link hinzufügen**.
--   Kopieren Sie "MainPage.xaml" aus \\QuizGame.Windows\\ zu \\QuizGameHost\\ , und ändern Sie den Namespace in QuizGameHost.
--   Kopieren Sie "App.xaml" von \\QuizGame.Shared\\ zu \\QuizGameHost\\ , und ändern Sie den Namespace in QuizGameHost.
+-   Erstellen Sie ein neues Windows 10-App-Projekt (fügen Sie &gt; **Neues Projekt** &gt; **Windows Universal** &gt; **leere Anwendung (universelle Windows-Anwendung)** **hinzu** , und nennen Sie es Quiz Host.
+-   Fügen Sie einen Verweis auf P2PHelper hinzu (Verweis &gt; **Projekte** **Hinzufügen** &gt; **Lösung** &gt; **P2PHelper**).
+-   Erstellen Sie im **Projektmappen-Explorer** für jeden freigegebenen Ordner auf dem Datenträger einen neuen Ordner. Klicken Sie mit der rechten Maustaste auf jeden Ordner, den Sie gerade erstellt haben, und klicken Sie auf &gt; **Vorhandenes Element** **Hinzufügen** und dann auf einen Ordner Öffnen Sie den entsprechenden freigegebenen Ordner, wählen Sie alle Dateien aus, und klicken Sie anschließend auf **Link hinzufügen**.
+-   Kopieren Sie die Datei "MainPage. XAML" aus \\"Quiz Game. Windows"-\\ in \\"quizgamehost"-\\ und ändern Sie den Namespace in "Quiz
+-   Kopieren Sie die Datei "App. XAML" aus \\"Quiz Game. Shared"-\\ in \\"quizgamehost"-\\, und ändern Sie den Namespace in "
 -   Anstatt „app.xaml.cs“ zu überschreiben, behalten wir die Version im neuen Projekt bei und nehmen nur eine gezielte Änderung vor, um den lokalen Testmodus zu unterstützen. Ersetzen Sie in „app.xaml.cs“ die folgende Codezeile:
 
 ```CSharp
@@ -127,26 +127,26 @@ durch diese Codezeile:
 #endif
 ```
 
--   In **Eigenschaften** &gt; **erstellen** &gt; **Symbole für bedingte Kompilierung**, LOCALTESTMODEON hinzufügen.
+-   Fügen Sie in den **Eigenschaften** &gt; &gt; **bedingte Kompilierungs Symbole** **Erstellen** die Zeichen localtestmudeon hinzu.
 -   Jetzt können Sie wieder auf den Code zurückgreifen, den Sie der Datei „app.xaml.cs“ hinzugefügt haben, und den TestView-Typ auflösen.
 -   Ändern Sie in „package.appxmanifest“ den capability-Namen von „internetClient“ in „internetClientServer“.
 
-**QuizGameClient**
+**Quiz Client**
 
--   Erstellen eines neuen Windows 10-app-Projekts (**hinzufügen** &gt; **neues Projekt** &gt; **Windows Universal** &gt; **leer Anwendung (Windows universell)** ) und nennen Sie sie QuizGameClient.
--   Hinzufügen eines Verweises auf P2PHelper (**Verweis hinzufügen** &gt; **Projekte** &gt; **Lösung** &gt; **P2PHelper**).
--   Erstellen Sie im **Projektmappen-Explorer** für jeden freigegebenen Ordner auf dem Datenträger einen neuen Ordner. Im Gegenzug Maustaste auf jeden Ordner, die Sie gerade erstellt haben, und klicken Sie auf **hinzufügen** &gt; **vorhandenes Element** und Sie einen Ordner zu navigieren. Öffnen Sie den entsprechenden freigegebenen Ordner, wählen Sie alle Dateien aus, und klicken Sie anschließend auf **Link hinzufügen**.
--   Kopieren Sie "MainPage.xaml" aus \\QuizGame.WindowsPhone\\ zu \\QuizGameClient\\ , und ändern Sie den Namespace in QuizGameClient.
--   Kopieren Sie "App.xaml" von \\QuizGame.Shared\\ zu \\QuizGameClient\\ , und ändern Sie den Namespace in QuizGameClient.
+-   Erstellen Sie ein neues Windows 10-App-Projekt (fügen Sie &gt; **Neues Projekt** &gt; **Windows Universal** &gt; **leere Anwendung (universelle Windows-Anwendung)** **hinzu** , und nennen Sie es quizgameclient.
+-   Fügen Sie einen Verweis auf P2PHelper hinzu (Verweis &gt; **Projekte** **Hinzufügen** &gt; **Lösung** &gt; **P2PHelper**).
+-   Erstellen Sie im **Projektmappen-Explorer** für jeden freigegebenen Ordner auf dem Datenträger einen neuen Ordner. Klicken Sie mit der rechten Maustaste auf jeden Ordner, den Sie gerade erstellt haben, und klicken Sie auf &gt; **Vorhandenes Element** **Hinzufügen** und dann auf einen Ordner Öffnen Sie den entsprechenden freigegebenen Ordner, wählen Sie alle Dateien aus, und klicken Sie anschließend auf **Link hinzufügen**.
+-   Kopieren Sie die Datei "MainPage. XAML" aus \\Quiz Game. windowsphone\\ in \\Quiz Client-\\ und ändern Sie den Namespace in "quizgameclient".
+-   Kopieren Sie die Datei "App. XAML" aus \\"Quiz Game. Shared"-\\ in \\"Quiz Client"-\\ und ändern Sie den Namespace in "quizgameclient
 -   Ändern Sie in „package.appxmanifest“ den capability-Namen von „internetClient“ in „internetClientServer“.
 
 Nun können Sie die Erstellung durchführen und die App ausführen.
 
 ## <a name="adaptive-ui"></a>Adaptive UI
 
-Die QuizGameHost Windows 10-app sieht gut, wenn die app in einem breiten Fenster ausgeführt wird (die nur auf einem Gerät mit einem großen Bildschirm möglich ist). Aber wenn das Fenster der App schmal ist (auf kleinen und großen Geräten möglich), wird die UI so gestaucht, dass die Lesbarkeit nicht mehr gewährleistet ist.
+Die quizgamehost Windows 10-App sieht problemlos aus, wenn die app in einem breiten Fenster ausgeführt wird (Dies ist nur auf einem Gerät mit einem großen Bildschirm möglich). Aber wenn das Fenster der App schmal ist (auf kleinen und großen Geräten möglich), wird die UI so gestaucht, dass die Lesbarkeit nicht mehr gewährleistet ist.
 
-Wir können die Funktion der adaptive Visual State-Manager, um dies zu beheben verwenden, wie wir unter [Fallstudie: Bookstore2](w8x-to-uwp-case-study-bookstore2.md). Zuerst legen wir die Eigenschaften für visuelle Elemente so fest, dass für die UI standardmäßig das schmale Layout gewählt wird. Alle diese Änderungen erfolgen \\Ansicht\\HostView.xaml.
+Wir können das adaptive Visual State-Manager-Feature nutzen, um dies zu beheben. Dies ist unter [Fallstudie: Bookstore2](w8x-to-uwp-case-study-bookstore2.md) beschrieben. Zuerst legen wir die Eigenschaften für visuelle Elemente so fest, dass für die UI standardmäßig das schmale Layout gewählt wird. Alle diese Änderungen erfolgen in \\Ansicht\\Hostview. XAML.
 
 -   Ändern Sie im **Grid**-Hauptelement den **Height**-Wert des **RowDefinition**-Elements von „140“ in „Auto“.
 -   Legen Sie im **Grid**-Element, in dem das **TextBlock**-Element mit dem Namen `pageTitle` enthalten ist, `x:Name="pageTitleGrid"` und `Height="60"` fest. Diese ersten beiden Schritte dienen dazu, dass wir die Höhe des **RowDefinition**-Elements über einen Setter in einem visuellen Zustand effektiv steuern können.
@@ -154,7 +154,7 @@ Wir können die Funktion der adaptive Visual State-Manager, um dies zu beheben v
 -   Legen Sie für das **Grid**-Element, das mit dem Kommentar `<!-- Content -->` angegeben wird, `x:Name="contentGrid"` und `Margin="-18,12,0,0"` fest.
 -   Geben Sie für das **TextBlock**-Element direkt oberhalb des Kommentars `<!-- Options -->` den Code `Margin="0,0,0,24"` an.
 -   Ändern Sie im standardmäßigen **TextBlock**-Stil (erste Ressource in der Datei) den Wert des **FontSize**-Setters in „15“.
--   Ändern Sie unter `OptionContentControlStyle` den Wert des **FontSize**-Setters in „20“. Durch diesen und den vorherigen Schritt erhalten wir eine gute Typhierarchie, die auf allen Geräten einwandfrei funktioniert. Hierbei handelt es sich um viel flexibler Größen als für die Windows 8.1-app wir verwenden "30".
+-   Ändern Sie unter `OptionContentControlStyle` den Wert des **FontSize**-Setters in „20“. Durch diesen und den vorherigen Schritt erhalten wir eine gute Typhierarchie, die auf allen Geräten einwandfrei funktioniert. Diese Größen sind viel flexibler als die "30", die wir für die Windows 8.1-App verwendet haben.
 -   Fügen Sie dem **Grid**-Stammelement schließlich den geeigneten Visual State-Manager-Markupcode hinzu.
 
 ```xml
@@ -177,7 +177,7 @@ Wir können die Funktion der adaptive Visual State-Manager, um dies zu beheben v
 ## <a name="universal-styling"></a>Universelle Formatierung
 
 
-Sie werden feststellen, dass die Schaltflächen in Windows 10, Touch-Ziels Abstand in ihrer Vorlage keine. Dies lässt sich mit zwei kleinen Änderungen beheben. Fügen Sie diesen Markupcode zuerst in QuizGameHost und QuizGameClient jeweils der Datei „app.xaml“ hinzu.
+Sie werden feststellen, dass die Schaltflächen in Windows 10 nicht die gleiche Auffüll Ziel-Auffüll Option in ihrer Vorlage haben. Dies lässt sich mit zwei kleinen Änderungen beheben. Fügen Sie diesen Markupcode zuerst in QuizGameHost und QuizGameClient jeweils der Datei „app.xaml“ hinzu.
 
 ```xml
 <Style TargetType="Button">
@@ -185,7 +185,7 @@ Sie werden feststellen, dass die Schaltflächen in Windows 10, Touch-Ziels Absta
 </Style>
 ```
 
-Und fügen Sie dann diesen Setter `OptionButtonStyle` in \\Ansicht\\ClientView.xaml.
+Und zweitens fügen Sie diesen Setter `OptionButtonStyle` in \\Ansicht\\clientview. XAML hinzu.
 
 ```xml
 <Setter Property="Margin" Value="6"/>
@@ -193,6 +193,6 @@ Und fügen Sie dann diesen Setter `OptionButtonStyle` in \\Ansicht\\ClientView.x
 
 Dank dieser letzten Optimierung verhält sich die App genauso wie vor dem Portieren und sieht auch genauso aus. Der entscheidende Vorteil ist aber, dass sie jetzt auf allen Geräten ausgeführt werden kann.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Abschluss
 
-Die App, die wir im Rahmen dieser Fallstudie portiert haben, war eine relativ komplexe App mit mehrere Projekten, einer Klassenbibliothek und einer größeren Menge an Code und UI-Elementen. Trotzdem war der Portiervorgang einfach. Die einfache Portieren ist direkt auf die Ähnlichkeit zwischen den Windows 10-Entwickler-Plattform und die Windows 8.1 und Windows Phone 8.1-Plattformen zurückzuführen. Ein anderer Grund ist der Entwurf der ursprünglichen App, bei dem darauf geachtet wurde, dass die Modelle, Ansichtsmodelle und Ansichten separat gehalten wurden.
+Die App, die wir im Rahmen dieser Fallstudie portiert haben, war eine relativ komplexe App mit mehrere Projekten, einer Klassenbibliothek und einer größeren Menge an Code und UI-Elementen. Trotzdem war der Portiervorgang einfach. Einige der einfachen Portierung sind direkt auf die Ähnlichkeit zwischen der Windows 10-Entwicklerplattform und den Windows 8.1-und Windows Phone 8,1-Plattformen zurückzuführen. Ein anderer Grund ist der Entwurf der ursprünglichen App, bei dem darauf geachtet wurde, dass die Modelle, Ansichtsmodelle und Ansichten separat gehalten wurden.

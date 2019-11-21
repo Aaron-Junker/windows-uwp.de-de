@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ff067729e71ed4d4a49a082adf9fc754804836a6
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 17ca27e9f9c10ba59edbe0af84118a1bee0a44a3
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317598"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254338"
 ---
 # <a name="audio-graphs"></a>Audiodiagramme
 
@@ -32,7 +32,7 @@ Nachdem alle Knoten erstellt und die Verbindungen zwischen ihnen eingerichtet wu
 Weitere Szenarien werden durch das Hinzufügen von Audioeffekten zum Audiodiagramm ermöglicht. Jeder Knoten in einem Audiodiagramm kann mit null oder mehr Audioeffekten gefüllt werden, die die Audioverarbeitung für die Audiodaten durchführen, die den Knoten durchlaufen. Es gibt verschiedene integrierte Effekte wie Echo, Equalizer, Begrenzungen und Halleffekt, die mit nur wenigen Codezeilen an einen Audioknoten angefügt werden können. Sie können auch eigene benutzerdefinierte Audioeffekte erstellen, die genau wie die integrierten Effekte funktionieren.
 
 > [!NOTE]
-> Im [UWP-Beispiel für AudioGraph](https://go.microsoft.com/fwlink/?LinkId=619481) wird der in dieser Übersicht erläuterte Code implementiert. Sie können das Beispiel herunterladen, um den Code im Kontext anzuzeigen oder ihn als Ausgangspunkt für Ihre eigene App zu verwenden.
+> Im [UWP-Beispiel für AudioGraph](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AudioCreation) wird der in dieser Übersicht erläuterte Code implementiert. Sie können das Beispiel herunterladen, um den Code im Kontext anzuzeigen oder ihn als Ausgangspunkt für Ihre eigene App zu verwenden.
 
 ## <a name="choosing-windows-runtime-audiograph-or-xaudio2"></a>Auswählen von Windows-Runtime-AudioGraph oder -XAudio2
 
@@ -43,7 +43,7 @@ Die Audiodiagramm-APIs von Windows-Runtime
 -   sind wesentlich benutzerfreundlicher als XAudio2.
 -   können von C# verwendet werden und werden auch für C++ unterstützt.
 -   können Audiodateien einschließlich komprimierter Dateiformate direkt verwenden. XAudio2 funktioniert nur auf Audiopuffern und stellt keine Datei-E/A-Funktionen bereit.
--   Die audio mit geringer Latenz-Pipeline können in Windows 10.
+-   Kann die audiopipeline mit niedriger Latenz in Windows 10 verwenden.
 -   unterstützen eine automatische Endpunktumschaltung, wenn standardmäßige Endpunktparameter verwendet werden. Wenn der Benutzer beispielsweise vom Lautsprecher eines Geräts zu einem Headset wechselt, werden die Audiodaten automatisch an den neuen Eingang umgeleitet.
 
 ## <a name="audiograph-class"></a>AudioGraph-Klasse
@@ -54,15 +54,15 @@ Die [**AudioGraph**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.Audi
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   Alle audio Knotentypen werden erstellt, mit der\* Methoden der **AudioGraph** Klasse.
--   Die [**AudioGraph.Start**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.start)-Methode bewirkt, dass das Audiodiagramm mit der Verarbeitung der Audiodaten beginnt. Die [**AudioGraph.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.stop)-Methode beendet die Audioverarbeitung. Jeder Knoten im Diagramm kann während der Ausführung des Diagramms unabhängig gestartet und beendet werden. Es sind aber keine Knoten aktiv, wenn das Diagramm beendet wird. [**ResetAllNodes** ](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.resetallnodes) bewirkt, dass alle Knoten im Diagramm, die momentan im audio-Puffer alle Daten verwerfen.
+-   Alle audioknotentypen werden mithilfe der Create\*-Methoden der **audiograph** -Klasse erstellt.
+-   Die [**AudioGraph.Start**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.start)-Methode bewirkt, dass das Audiodiagramm mit der Verarbeitung der Audiodaten beginnt. Die [**AudioGraph.Stop**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.stop)-Methode beendet die Audioverarbeitung. Jeder Knoten im Diagramm kann während der Ausführung des Diagramms unabhängig gestartet und beendet werden. Es sind aber keine Knoten aktiv, wenn das Diagramm beendet wird. [**Resetallnodes**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.resetallnodes) bewirkt, dass alle Knoten im Diagramm alle Daten verwerfen, die sich derzeit in den audiopuffern befinden.
 -   Das [**QuantumStarted**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumstarted)-Ereignis tritt auf, wenn das Diagramm die Verarbeitung eines neuen Quantums von Audiodaten beginnt. Das [**QuantumProcessed**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.quantumprocessed)-Ereignis tritt auf, wenn die Verarbeitung eines Quantums abgeschlossen ist.
 
 -   Als einzige [**AudioGraphSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraphSettings)-Eigenschaft ist [**AudioRenderCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Render.AudioRenderCategory) erforderlich. Durch Angabe dieses Werts kann das System die Audiopipeline für die angegebene Kategorie optimieren.
 -   Die Quantumgröße des Audiodiagramms bestimmt die Anzahl der Samples, die gleichzeitig verarbeitet werden. Standardmäßig beträgt die Quantumgröße 10 ms basierend auf der Standard-Samplingrate. Wenn Sie eine benutzerdefinierte Quantumgröße durch Festlegen der [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum)-Eigenschaft angeben, müssen Sie auch die [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode)-Eigenschaft auf **ClosestToDesired** festlegen, oder der angegebene Wert wird ignoriert. Wenn dieser Wert verwendet wird, wählt das System eine Quantumgröße aus, die möglich nah an der von Ihnen angegebenen Größe liegt. Um die tatsächliche Quantumgröße zu bestimmen, überprüfen Sie die [**SamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.samplesperquantum)-Eigenschaft der **AudioGraph**-Klasse, nachdem sie erstellt wurde.
 -   Wenn Sie das Audiodiagramm nur mit Dateien verwenden möchten und keine Ausgabe an ein Audiogerät planen, wird empfohlen, dass Sie die Standard-Quantumgröße verwenden, indem Sie die [**DesiredSamplesPerQuantum**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredsamplesperquantum)-Eigenschaft nicht festlegen.
 -   Die [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing)-Eigenschaft bestimmt Verarbeitungsleistung, die das primäre Darstellungsgerät für die Ausgabe des Audiodiagramms durchführt. Über die **Default**-Einstellung kann das System die Standardaudioverarbeitung für die angegebene Audiowiedergabekategorie verwenden. Durch diese Verarbeitung kann der Sound der Audiodaten auf einigen Geräten wesentlich verbessert werden, insbesondere auf mobilen Geräten mit kleinen Lautsprechern. Durch die **Raw**-Einstellung kann die Leistung durch Minimieren der Signalverarbeitungsleistung verbessert werden. Dies kann jedoch zu einer schlechteren Tonqualität auf einigen Geräten führen.
--   Wenn die [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode)-Eigenschaft auf **LowestLatency** festgelegt wird, verwendet das Audiodiagramm für [**DesiredRenderDeviceAudioProcessing**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing) automatisch **Raw**.
+-   Wenn die [**QuantumSizeSelectionMode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.quantumsizeselectionmode)-Eigenschaft auf **LowestLatency** festgelegt wird, verwendet das Audiodiagramm fürDesiredRenderDeviceAudioProcessing[**automatisch**Raw](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.desiredrenderdeviceaudioprocessing).
 - Ab Windows 10, Version 1803, können Sie die Eigenschaft [**AudioGraphSettings.MaxPlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.maxplaybackspeedfactor) auf einen Maximalwert für [**AudioFileInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.playbackspeedfactor), [**AudioFrameInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.playbackspeedfactor) und [**MediaSourceInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceinputnode.playbackspeedfactor) festlegen. Wenn ein Audiodiagramm einen Wiedergabegeschwindigkeitsfaktor höher als 1 unterstützt, muss ihm das System zusätzlichen Speicher zuweisen, um einen ausreichenden Puffer der Audiodaten zu gewährleisten. Daher minimiert das Festlegen der Einstellung **MaxPlaybackSpeedFactor** auf den niedrigsten Wert, der von der App erforderlich ist, den Speicherbedarf Ihrer App. Wenn Ihre App nur Inhalte in normaler Geschwindigkeit wiedergibt, empfiehlt es sich, dass Sie MaxPlaybackSpeedFactor auf 1 festgelegt.
 -   Die [**EncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.encodingproperties)-Eigenschaft bestimmt das vom Diagramm verwendete Audioformat. Es werden nur 32-Bit-Float-Formate unterstützt.
 -   Die [**PrimaryRenderDevice**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.primaryrenderdevice)-Eigenschaft legt das primäre Darstellungsgerät für das Audiodiagramm fest. Wenn Sie diese Eigenschaft nicht festlegen, wird das Standardsystemgerät verwendet. Das primäre Darstellungsgerät wird zur Berechnung der Quantumgrößen für andere Knoten im Diagramm verwendet. Wenn in dem System keine Audiowiedergabegeräte vorhanden sind, tritt bei der Erstellung des Audiodiagramms ein Fehler auf.
@@ -80,7 +80,7 @@ Eine Geräteingabeknoten liefert Audiodaten von einem an das System angeschlosse
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-Wenn Sie eine bestimmte Audioaufnahmegerät für des Knotens "Eingabe" angeben möchten, können Sie mithilfe der [ **Windows.Devices.Enumeration.DeviceInformation** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) Klasse um eine Liste der verfügbaren Audio des Systems zu erhalten. Erfassen von Geräten durch Aufrufen von [ **FindAllAsync** ](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) und übergeben Sie in der audio Render-Geräteauswahl zurückgegebenes [  **Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector). Sie können eines der zurückgegebenen **DeviceInformation**-Objekte programmgesteuert auswählen oder Benutzeroberfläche anzeigen, damit der Benutzer ein Gerät auswählen und dieses dann an die [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync)-Methode übergeben kann.
+Wenn Sie ein bestimmtes audioerfassungs Gerät für den Geräte Eingabe Knoten angeben möchten, können Sie mit der [**Windows. Devices. Enumeration. DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) -Klasse eine Liste der verfügbaren audioerfassungs Geräte des Systems abrufen, indem Sie [**findallasync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) aufrufen und die von [**Windows. Media. Devices. mediadevice. getaudiocaptureselector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)zurückgegebene Audiowiedergabe-Geräteauswahl übergeben Sie können eines der zurückgegebenen **DeviceInformation**-Objekte programmgesteuert auswählen oder Benutzeroberfläche anzeigen, damit der Benutzer ein Gerät auswählen und dieses dann an die [**CreateDeviceInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createdeviceinputnodeasync)-Methode übergeben kann.
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
@@ -152,7 +152,7 @@ Das [**FrameInputNode.QuantumStarted**](https://docs.microsoft.com/uwp/api/windo
 
 [!code-cs[QuantumStarted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
 
--   Durch das an den **QuantumStarted**-Ereignishandler übergebene [**FrameInputNodeQuantumStartedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)-Objekt wird die [**RequiredSamples**](https://docs.microsoft.com/uwp/api/windows.media.audio.frameinputnodequantumstartedeventargs.requiredsamples)-Eigenschaft verfügbar, die angibt, wie viele Sample das Audiodiagramm füllen muss, damit das Quantum verarbeitet wird.
+-   Durch das an den [QuantumStarted **-Ereignishandler übergebene** ](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)FrameInputNodeQuantumStartedEventArgs-Objekt wird die [**RequiredSamples**](https://docs.microsoft.com/uwp/api/windows.media.audio.frameinputnodequantumstartedeventargs.requiredsamples)-Eigenschaft verfügbar, die angibt, wie viele Sample das Audiodiagramm füllen muss, damit das Quantum verarbeitet wird.
 -   Rufen Sie die [**AudioFrameInputNode.AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe)-Methode auf, um ein mit Audiodaten gefülltes [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)-Objekt an das Diagramm zu übergeben.
 - Es wurde ein neuer Satz von APIs für die Verwendung von **MediaFrameReader** mit Audiodaten in Windows 10, Version 1803 eingeführt. Diese APIs ermöglichen es Ihnen, **AudioFrame**-Objekte von einer Medieframenquelle zu erhalten, die an ein **FrameInputNode** mithilfe der **AddFrame** Methode übergeben werden kann. Weitere Informationen finden Sie unter [Verarbeiten von Audioframes mit MediaFrameReader](process-audio-frames-with-mediaframereader.md).
 -   Nachfolgend sehen Sie ein Beispiel einer Implementierung der **GenerateAudioData**-Hilfsmethode.
@@ -166,7 +166,7 @@ Der folgende Code zeigt ein Beispiel einer Implementierung der **GenerateAudioDa
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
 -   Da diese Methode auf den Rohdatenpuffer zugreift, der Windows-Runtime-Typen zugrunde liegt, muss diese mithilfe des Schlüsselworts **unsafe** deklariert werden. Außerdem müssen Sie das Projekt in Microsoft Visual Studio so konfigurieren, dass die Kompilierung von unsicherem Code zugelassen wird, indem Sie die Seite **Eigenschaften** des Projekts öffnen, auf die Eigenschaftenseite **Build** klicken und das Kontrollkästchen **Unsicheren Code zulassen** aktivieren.
--   Initialisieren Sie im **Windows.Media**-Namespace eine neue Instanz des [**AudioFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)-Objekts, indem Sie die gewünschte Puffergröße an den Konstruktor übergeben. Die Puffergröße ist die Sample-Anzahl multipliziert mit der Größe der einzelnen Sample.
+-   Initialisieren Sie im [Windows.Media **-Namespace eine neue Instanz des** ](https://docs.microsoft.com/uwp/api/Windows.Media.AudioFrame)AudioFrame-Objekts, indem Sie die gewünschte Puffergröße an den Konstruktor übergeben. Die Puffergröße ist die Sample-Anzahl multipliziert mit der Größe der einzelnen Sample.
 -   Rufen Sie das [**AudioBuffer**](https://docs.microsoft.com/uwp/api/Windows.Media.AudioBuffer)-Objekt des Audioframes ab, indem Sie die [**LockBuffer**](https://docs.microsoft.com/uwp/api/windows.media.audioframe.lockbuffer)-Methode aufrufen.
 -   Rufen Sie eine Instanz der [**IMemoryBufferByteAccess**](https://docs.microsoft.com/previous-versions/mt297505(v=vs.85))-COM-Schnittstelle aus dem Audiopuffer ab, indem Sie [**CreateReference**](https://docs.microsoft.com/uwp/api/windows.media.audiobuffer.createreference) aufrufen.
 -   Rufen Sie einen Zeiger auf die Rohdaten des Audiopuffers ab, indem Sie die [**IMemoryBufferByteAccess.GetBuffer**](https://docs.microsoft.com/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)-Methode aufrufen und in den Beispieldatentyp der Audiodaten umwandeln.
@@ -231,10 +231,10 @@ Mit der Audiodiagramm-API können Sie Audioeffekte zu jedem Knotentyp in einem D
 
 -   Alle Audioeffekte implementieren die [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition)-Schnittstelle. Mit jedem Knoten wird eine **EffectDefinitions**-Eigenschaft verfügbar, welche die Liste der auf diesen Knoten angewendeten Effekte darstellt. Fügen Sie einen Effekt hinzu, indem Sie sein Definitionsobjekt zu der Liste hinzufügen.
 -   Es gibt mehrere Effektdefinitionsklassen, die im **Windows.Media.Audio**-Namespace bereitgestellt werden. Dazu gehören:
-    -   [**EchoEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
-    -   [**EqualizerEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
-    -   [**LimiterEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
-    -   [**ReverbEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.ReverbEffectDefinition)
+    -   [**Echo effectdefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
+    -   [**Equalizereffectdefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
+    -   [**Limitereffectdefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
+    -   [**Reverbeffectdefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.ReverbEffectDefinition)
 -   Sie können Ihre eigenen Audioeffekte zum Implementieren von [**IAudioEffectDefinition**](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IAudioEffectDefinition) erstellen. Wenden Sie diese anschließend auf einen beliebigen Knoten in einem Audiodiagramm an.
 -   Mit jedem Knotentyp wird eine **DisableEffectsByDefinition**-Methode verfügbar, die alle Effekte in der **EffectDefinitions**-Liste des Knotens deaktiviert, die mithilfe der angegebenen Definition hinzugefügt wurden. **EnableEffectsByDefinition** aktiviert die Effekte mit der angegebenen Definition.
 
@@ -264,7 +264,7 @@ Sie können auch die Position, Geschwindigkeit und Ausrichtung des Listener-Obje
 
 Die räumliche Audiowiedergabe wird standardmäßig mit dem HRTF-Algorithmus (Head-relative Transfer Function, kopfbezogene Übertragungsfunktion) von Microsoft berechnet, um die Audiowiedergabe basierend auf der Form, Geschwindigkeit und Position relativ zum Listener zu dämpfen. Sie können die [**SpatialAudioModel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audionodeemitter.spatialaudiomodel)-Eigenschaft auf **FoldDown** festlegen, um eine einfache Stereomischmethode zum Simulieren der räumlichen Audiowiedergabe zu verwenden. Diese ist zwar weniger genau, erfordert dafür aber weniger CPU-Leistung und Arbeitsspeicher.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 - [Medienwiedergabe](media-playback.md)
  
 

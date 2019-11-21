@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c11a812aaa62e9fa4d27fddc1d55739fe491bd20
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 1d6c1b4c477bfe5c4f584227491ef5a94e375fa2
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340844"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255661"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Benutzung des Visual Layer mit XAML
 
@@ -47,10 +47,10 @@ Codebeispiele finden Sie auf der Referenzseite für [**XamlLight**](https://docs
 
 [**Elementcompositionpreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) ist eine statische Klasse, die XAML-und Visual Layer-Interop-Funktionen bereitstellt. Eine Übersicht über die visuelle Ebene und die zugehörige Funktionalität finden Sie unter [Visual Layer](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). Die **ElementCompositionPreview** Klasse bietet die folgenden Methoden:
 
--   [**Getelementvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Dient zum Erstellen eines "Handout"-visuellen Elements, das zum Rendering dieses Elements verwendet wird.
--   [**Setelementchildvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Legt eine "handin"-Visualisierung als letztes untergeordnetes Element der visuellen Struktur dieses Elements fest. Dieses Visual wird über den Rest des Elements gezeichnet. 
+-   [**Getelementvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): dient zum Erstellen eines "Handout"-visuellen Elements, das zum Rendering dieses Elements verwendet wird.
+-   [**Setelementchildvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): legt eine "handin"-Visualisierung als letztes untergeordnetes Element der visuellen Struktur dieses Elements fest. Dieses Visual wird über den Rest des Elements gezeichnet. 
 -   [**Getelementchildvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Abrufen der visuellen Gruppe mithilfe von " **setelementchildvisual** "
--   [**Getscrollviewermanipulationpropertyset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Dient zum Erstellen eines Objekts, das zum Erstellen von 60fps-Animationen auf der Grundlage eines scrolloffsets in **ScrollViewer** verwendet werden kann.
+-   [**Getscrollviewermanipulationpropertyset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Rufen Sie ein Objekt ab, das zum Erstellen von 60fps-Animationen auf der Grundlage des Bild Lauf Offsets in einem **ScrollViewer** verwendet werden kann.
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Hinweise auf ElementCompositionPreview.GetElementVisual
 
@@ -199,7 +199,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-Die folgenden zwei Auflistungen zeigen die [C++/WinRT](https://aka.ms/cppwinrt)- und [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)-Entsprechungen des vorherigen C&#35;-Codes mit der gleichen XAML-Struktur.
+Die folgenden zwei Auflistungen zeigen die [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index)- und [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)-Entsprechungen des vorherigen C&#35;-Codes mit der gleichen XAML-Struktur.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -360,7 +360,7 @@ private void InitializeFrostedGlass(UIElement glassHost)
 }
 ```
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
 - [Übersicht über die visuelle Schicht](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
 - [**Elementcompositionpreview** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
