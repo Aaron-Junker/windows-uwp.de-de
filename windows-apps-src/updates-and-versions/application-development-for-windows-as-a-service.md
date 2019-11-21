@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c4a16902329e1dd9267e0339dca0e0dcf3539
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1a2b22df2610191636d258dc48838e0bc5be6ee4
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321970"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259783"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>Anwendungsentwicklung für Windows as a Service
 
@@ -50,7 +50,7 @@ Ursprünglich bestand die Unterstützung von Apps darin, mit jeder neuen Windows
 
 Im WaaS-Modell (Windows als Dienst) verpflichtet sich Microsoft, die Kompatibilität des zugrunde liegenden Betriebssystems zu gewährleisten. Das bedeutet, dass Microsoft alle Anstrengungen unternehmen wird, damit dass App-Ökosystem nicht durch bedeutende Änderungen negativ beeinflusst wird. In diesem Szenario bleiben die meisten Apps (die nicht vom Kernel abhängig sind) bei Freigabe eines Windows-Builds funktionsfähig.
 
-Aufgrund dieser Änderung empfiehlt Microsoft ISV-Partnern, die App-Freigabe und -Unterstützung von bestimmten Windows-Builds zu entkoppeln. Unsere gemeinsamen Kunden profitieren mehr von einem Modell, das auf dem Anwendungslebenszyklus basiert. Dies bedeutet Folgendes: Wenn eine Anwendungsversion veröffentlicht wird, wird sie für einen bestimmten Zeitraum unterstützt, und zwar unabhängig davon, wie viele Windows-Builds in der Zwischenzeit veröffentlicht wurden. Der ISV verpflichtet sich, die spezifische App-Version so lange zu unterstützen, wie sie im Lebenszyklus unterstützt wird. Microsoft verfolgt bei Windows einen ähnlichen Lebenszyklus-basierten Ansatz, der [hier](https://go.microsoft.com/fwlink/?LinkID=780549) beschrieben wird.
+Aufgrund dieser Änderung empfiehlt Microsoft ISV-Partnern, die App-Freigabe und -Unterstützung von bestimmten Windows-Builds zu entkoppeln. Unsere gemeinsamen Kunden profitieren mehr von einem Modell, das auf dem Anwendungslebenszyklus basiert. Dies bedeutet Folgendes: Wenn eine Anwendungsversion veröffentlicht wird, wird sie für einen bestimmten Zeitraum unterstützt, und zwar unabhängig davon, wie viele Windows-Builds in der Zwischenzeit veröffentlicht wurden. Der ISV verpflichtet sich, die spezifische App-Version so lange zu unterstützen, wie sie im Lebenszyklus unterstützt wird. Microsoft verfolgt bei Windows einen ähnlichen Lebenszyklus-basierten Ansatz, der [hier](https://support.microsoft.com/hub/4095338/microsoft-lifecycle-policy?C2=14019) beschrieben wird.
 
 Dadurch entfällt auch die Notwendigkeit, den App-Freigabezeitplan auf den der veröffentlichten Windows-Versionen abzustimmen. ISV-Partner sollten die Möglichkeit haben, Features oder Updates in ihrer eigenen Geschwindigkeit freizugeben. Wir sind überzeugt, dass unsere Partner ihre Kunden unabhängig von den Windows-Versionen mit neuesten App-Updates auf dem Laufenden halten können. Außerdem ist es nicht erforderlich, dass unsere Kunden bei jeder Freigabe eines Windows-Builds eine explizite Supportzusage einholen. Im folgenden Beispiel für eine Supportzusage wird beschrieben, wie eine App unter verschiedenen Betriebssystemversionen unterstützt werden kann:
 
@@ -90,7 +90,7 @@ Einige Apps überprüfen die Version und geben einfach eine Warnung an den Benut
 -   Wenn die App von bestimmten API-Funktionen abhängig ist, stellen Sie sicher, dass sie auf die richtige API-Version ausgerichtet ist.
 -   Die Änderung muss über APISet oder eine andere öffentliche API erkannt werden. Die Version darf nicht stellvertretend für ein Feature oder einen Fix verwendet werden. Wenn für bedeutende Änderungen keine ordnungsgemäße Prüfung verfügbar gemacht wird, liegt ein Fehler vor.
 -   Achten Sie darauf, dass die App KEINE ungewöhnliche Versionsprüfung vornimmt, z. B. über die Registrierung, Dateiversionen, Offsets, den Kernelmodus, Treiber oder auf andere Weise. Wenn eine Versionsprüfung für die App unverzichtbar ist, verwenden Sie die GetVersion-APIs, die die Hauptversion, Nebenversion und Buildnummer zurückgeben sollten.
--   Beachten Sie bei Verwendung der [GetVersion](https://go.microsoft.com/fwlink/?LinkID=780555)-API, dass sich ihr Verhalten seit Windows 8.1 geändert hat.
+-   Beachten Sie bei Verwendung der [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN)-API, dass sich ihr Verhalten seit Windows 8.1 geändert hat.
 
 Als Entwickler von Antischadsoftware- oder Firewall-Apps sollten Sie sich über Ihre üblichen Feedbackkanäle und über das Windows-Insider-Programm informieren.
 
@@ -100,9 +100,9 @@ Ihre Apps sollten keine nicht dokumentierten Windows-APIs aufrufen oder von best
 
 ### <a name="develop-universal-windows-platform-uwp-and-centennial-apps"></a>Entwickeln von UWP (Universelle Windows-Plattform)- und Centennial-Apps
 
-Wir empfehlen allen ISVs von Win32-Apps, zukünftig [UWP (Universelle Windows-Plattform)-Apps](https://go.microsoft.com/fwlink/?LinkID=780560) und insbesondere [Centennial](https://go.microsoft.com/fwlink/?LinkID=780562)-Apps zu entwickeln. Die Entwicklung dieser App-Pakete birgt deutliche Vorteile gegenüber der Verwendung herkömmlicher Win32-Installationsprogramme. Da UWP-Apps außerdem im [Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=780563) unterstützt werden, ist es für dich einfacher, deinen Benutzern ein automatisches Update auf eine konsistente Version zu bieten und deine Supportkosten zu senken.
+Wir empfehlen allen ISVs von Win32-Apps, zukünftig [UWP (Universelle Windows-Plattform)-Apps](https://blogs.windows.com/windowsdeveloper/2016/02/25/an-update-on-the-developer-opportunity-and-windows-10/) und insbesondere [Centennial](https://channel9.msdn.com/Events/Build/2015/2-692)-Apps zu entwickeln. Die Entwicklung dieser App-Pakete birgt deutliche Vorteile gegenüber der Verwendung herkömmlicher Win32-Installationsprogramme. Da UWP-Apps außerdem im [Microsoft Store](https://blogs.windows.com/windowsdeveloper/2016/02/04/windows-store-trends-february-2016/) unterstützt werden, ist es für dich einfacher, deinen Benutzern ein automatisches Update auf eine konsistente Version zu bieten und deine Supportkosten zu senken.
 
-Wenn das Centennial-Modell von Ihren Win32-App-Typen nicht unterstützt wird, sollten Sie unbedingt das richtige Installationsprogramm verwenden und sicherstellen, dass es eingehend getestet wurde. Das Installationsprogramm ist der erste Berührungspunkt Ihrer Benutzer oder Kunden mit der App und sollte einwandfrei funktionieren. Dies ist häufig nicht der Fall, u. a. auch, weil das Programm nicht für alle Szenarien getestet wurde. Mit dem [Zertifizierungskit für Windows-Apps](https://go.microsoft.com/fwlink/?LinkID=780565) können Sie die Installation und Deinstallation Ihrer Win32-App testen, ermitteln, ob nicht dokumentierte APIs verwendet werden, und andere allgemeine Leistungsprobleme aufdecken, die nicht den bewährten Methoden entsprechen, bevor dies Ihre Benutzer tun.
+Wenn das Centennial-Modell von Ihren Win32-App-Typen nicht unterstützt wird, sollten Sie unbedingt das richtige Installationsprogramm verwenden und sicherstellen, dass es eingehend getestet wurde. Das Installationsprogramm ist der erste Berührungspunkt Ihrer Benutzer oder Kunden mit der App und sollte einwandfrei funktionieren. Dies ist häufig nicht der Fall, u. a. auch, weil das Programm nicht für alle Szenarien getestet wurde. Mit dem [Zertifizierungskit für Windows-Apps](https://developer.microsoft.com/windows/develop/app-certification-kit) können Sie die Installation und Deinstallation Ihrer Win32-App testen, ermitteln, ob nicht dokumentierte APIs verwendet werden, und andere allgemeine Leistungsprobleme aufdecken, die nicht den bewährten Methoden entsprechen, bevor dies Ihre Benutzer tun.
 
 **Bewährte Methoden:**
 -   Verwenden Sie Installationsprogramme, die die 32-Bit- und 64-Bit-Version von Windows unterstützen.
@@ -117,7 +117,7 @@ Test-Flights des Windows-Betriebssystems sind Zwischenbuilds, die Windows-Inside
 Wenn Sie Ihre App im Store anbieten, können Sie sie über den Store für Test-Flights bereitstellen, wodurch sie von Windows-Insidern installiert werden kann. Benutzer können Ihre App installieren und vorläufiges Feedback dazu abgeben, bevor Sie sie für die Allgemeinheit freigeben. In den folgenden Abschnitten erfahren Sie, wie Sie ihre Apps unter Verwendung von Windows-Test-Flight-Builds testen.
 
 ### <a name="step-1-become-a-windows-insider-and-participate-in-flighting"></a>Schritt 1: Windows-Insider werden und am Test-Flighting teilnehmen
-Als [Windows-Insider](https://go.microsoft.com/fwlink/p/?LinkId=521639) können Sie die Zukunft von Windows mitgestalten – Ihr Feedback hilft uns, Plattformfeatures und -funktionen zu optimieren. Als Mitglied dieser lebendigen Community können Sie sich mit anderen Interessierten vernetzen, Foren beitreten, Tipps und Tricks austauschen und alles über anstehende Veranstaltungen nur für Insider erfahren.
+Als [Windows-Insider](https://insider.windows.com/) können Sie die Zukunft von Windows mitgestalten – Ihr Feedback hilft uns, Plattformfeatures und -funktionen zu optimieren. Als Mitglied dieser lebendigen Community können Sie sich mit anderen Interessierten vernetzen, Foren beitreten, Tipps und Tricks austauschen und alles über anstehende Veranstaltungen nur für Insider erfahren.
 
 Du hast Zugriff auf Vorabversionen von Windows 10, Windows 10 Mobile, das aktuelle Windows SDK und den Emulator und verfügst über alle Tools, die du zum Entwickeln großartiger Apps benötigst. Außerdem erhältst du Neuigkeiten über die universelle Windows-Plattform und den Microsoft Store.
 
@@ -157,7 +157,7 @@ Nach dem Update auf einen Test-Flight-Build sollen Ihnen die folgenden Beispielt
 Lassen Sie uns wissen, wie Ihre App mit Test-Flight-Builds funktioniert. Wenn die App während der Tests Fehler verursacht, sollten Sie diese über das Partnerportal melden (sofern Sie Zugriff haben) oder Kontakt zu Microsoft aufnehmen. Ihr Feedback ist uns wichtig, da es hilft, gemeinsam mit unseren Partnern eine optimale Benutzererfahrung zu schaffen.
 
 ### <a name="step-4-register-on-ready-for-windows"></a>Schritt 4: Bei Ready For Windows registrieren
-Auf der Website [Ready for Windows](https://go.microsoft.com/fwlink/?LinkID=780580) finden Sie ein Verzeichnis der Softwarelösungen, die Windows 10 unterstützen. Sie richtet sich an IT-Administratoren in Unternehmen und Organisationen weltweit, die die Bereitstellung von Windows 10 auf ihren Systemen in Betracht ziehen. IT-Administratoren können anhand der Website feststellen, ob die in ihrem Unternehmen bereitgestellte Software in Windows 10 unterstützt wird.
+Auf der Website [Ready for Windows](https://docs.microsoft.com/configmgr/desktop-analytics/ready-for-windows) finden Sie ein Verzeichnis der Softwarelösungen, die Windows 10 unterstützen. Sie richtet sich an IT-Administratoren in Unternehmen und Organisationen weltweit, die die Bereitstellung von Windows 10 auf ihren Systemen in Betracht ziehen. IT-Administratoren können anhand der Website feststellen, ob die in ihrem Unternehmen bereitgestellte Software in Windows 10 unterstützt wird.
 
 ## <a name="related-topics"></a>Verwandte Themen
 [Windows 10-Wartungsoptionen für Updates und Upgrades](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
