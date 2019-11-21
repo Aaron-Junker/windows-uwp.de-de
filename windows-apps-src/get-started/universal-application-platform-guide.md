@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, universell
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1f6e0e04cdf81512918e0cd3e33ec0f93e2245
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320999"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260538"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
@@ -115,7 +115,7 @@ Navigieren Sie zu [Vorbereiten](get-set-up.md), um die erforderlichen Tools heru
 
 Das Entwurfssystem von Microsoft heißt Fluent. Das Fluent Design System stellt eine Reihe von UWP-Funktionen in Kombination mit bewährten Methoden für die Erstellung von Apps bereit, die auf allen Windows-basierten Gerätetypen eine optimale Leistung bieten. Fluent-Umgebungen sind anpassungsfähig und überzeugen auf Geräten wie Tablets, Laptops, PCs, TV- und Virtual-Reality-Geräten durch eine intuitive Bedienung. Weitere Informationen zum Fluent Design System finden Sie unter [Das Fluent Design System für UWP-Apps](https://docs.microsoft.com/windows/uwp/design/fluent-design-system).
 
-Zu einem guten [Design](https://go.microsoft.com/fwlink/?LinkId=258848) gehören nicht nur das Erscheinungsbild und die Funktionalität einer App, sondern auch die Entscheidung darüber, wie Benutzer mit der App interagieren. Die Benutzerfreundlichkeit spielt eine große Rolle bei der Beurteilung, wie gerne Benutzer Ihre App verwenden. Sparen Sie daher nicht an diesem Schritt. [Designgrundlagen](https://developer.microsoft.com/en-us/windows/apps/design) bieten eine Einführung in den Entwurf von UWP-Apps (Universelle Windows-Plattform). Unter [Einführung in universelle Windows-Plattform-Apps (UWP) für Designer](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro) finden Sie Informationen zum Entwerfen von UWP-Apps, die Benutzer begeistern. Bevor Sie mit dem Schreiben von Code beginnen, lesen Sie die Informationen unter [Einführung der Geräte](../design/devices/index.md). Diese helfen Ihnen dabei, die Interaktionsmöglichkeiten Ihrer App für alle in Frage kommenden Formfaktoren zu durchdenken.
+Zu einem guten [Design](http://design.windows.com/) gehören nicht nur das Erscheinungsbild und die Funktionalität einer App, sondern auch die Entscheidung darüber, wie Benutzer mit der App interagieren. Die Benutzerfreundlichkeit spielt eine große Rolle bei der Beurteilung, wie gerne Benutzer Ihre App verwenden. Sparen Sie daher nicht an diesem Schritt. [Designgrundlagen](https://developer.microsoft.com/en-us/windows/apps/design) bieten eine Einführung in den Entwurf von UWP-Apps (Universelle Windows-Plattform). Unter [Einführung in universelle Windows-Plattform-Apps (UWP) für Designer](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro) finden Sie Informationen zum Entwerfen von UWP-Apps, die Benutzer begeistern. Bevor Sie mit dem Schreiben von Code beginnen, lesen Sie die Informationen unter [Einführung der Geräte](../design/devices/index.md). Diese helfen Ihnen dabei, die Interaktionsmöglichkeiten Ihrer App für alle in Frage kommenden Formfaktoren zu durchdenken.
 
 Zusätzlich zur Interaktion auf verschiedenen Geräten sollten Sie [Ihre App planen](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app), um die Vorteile verschiedener Geräte optimal zu nutzen. Zum Beispiel:
 
@@ -125,7 +125,7 @@ Zusätzlich zur Interaktion auf verschiedenen Geräten sollten Sie [Ihre App pla
 
 ### <a name="add-services"></a>Dienste hinzufügen
 
-- Verwenden Sie [Clouddienste](https://go.microsoft.com/fwlink/?LinkId=526377) für die Synchronisierung auf allen Geräten.
+- Verwenden Sie [Clouddienste](https://azure.microsoft.com/documentation/services/cloud-services) für die Synchronisierung auf allen Geräten.
 - Erfahren Sie, wie Sie eine [Verbindung mit Webdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) zur Unterstützung der App-Benutzerumgebung herstellen.
 - Beziehen Sie [Push-Benachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) und [In-App-Käufe](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases) in Ihre Planung ein. Diese Features sollten auf allen Geräten funktionieren.
 

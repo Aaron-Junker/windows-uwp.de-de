@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 97407ec48eaac3415980b9313092b21e9532250a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 834bea47a566789926648098086c05c0a47b6065
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321112"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260552"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Erstellen einer komplexen UWP-App (Universelle Windows-Plattform)
 
@@ -65,7 +65,7 @@ Der Ausdruck "Trichter" beruht auf der Form. Am breiten Ende des Trichters werde
 
 Wenn Sie mit Ihrem Konzept zufrieden sind, können Sie zur nächsten Phase übergehen und den App-Entwurf erstellen. Mithilfe der Informationsarchitektur (IA) verleihen Sie Ihren Inhalten die erforderliche strukturelle Integrität. Dies ist beim Festlegen des Navigationsmodells für die App und später der App-Identität hilfreich. Indem Sie die Organisation der Inhalte planen – und wie Ihre Benutzer diese Inhalte entdecken können –, erhalten Sie einen besseren Eindruck, wie Benutzer die App erleben werden.
 
-Eine gute Informationsarchitektur erleichtert nicht nur die Umsetzung von Benutzerszenarien, sondern auch die Planung wichtiger Bildschirme, die zuerst entworfen werden müssen. Bei der [Audible](https://go.microsoft.com/fwlink/p/?LinkID=268089)-App wird beispielsweise direkt mit einem Hub gestartet, über den Benutzer auf die Bibliothek, den Store, News und statistische Daten zugreifen können. Die Benutzeroberfläche ist zielgerichtet gestaltet, damit Benutzer Hörbücher schnell abrufen und verwenden können. Auf den unteren Ebene der App liegt der Schwerpunkt auf spezielleren Aufgaben.
+Eine gute Informationsarchitektur erleichtert nicht nur die Umsetzung von Benutzerszenarien, sondern auch die Planung wichtiger Bildschirme, die zuerst entworfen werden müssen. Bei der [Audible](https://www.windowsphone.com/store/app/audible-for-windows-phone/bdc813dd-c20b-41f8-8646-de72fa0b365d)-App wird beispielsweise direkt mit einem Hub gestartet, über den Benutzer auf die Bibliothek, den Store, News und statistische Daten zugreifen können. Die Benutzeroberfläche ist zielgerichtet gestaltet, damit Benutzer Hörbücher schnell abrufen und verwenden können. Auf den unteren Ebene der App liegt der Schwerpunkt auf spezielleren Aufgaben.
 
 Verwandte Richtlinien finden Sie unter [Navigationsdesigngrundlagen](../design/basics/navigation-basics.md).
 
