@@ -1,7 +1,7 @@
 - name: Erstellen von Apps für Windows
   items:
     - name: Übersicht
-      href: apps/index.md
+      href: apps/index.yml
     - name: Erstellen von Desktop-Apps
       items:
         - name: Übersicht
