@@ -1,0 +1,156 @@
+### YamlMime:Hub
+title: Dokumentation für Windows-App-Entwickler
+summary: Erfahren Sie, wie Sie Apps und Lösungen für Windows-PCs und andere Geräte entwerfen, entwickeln und bereitstellen.
+brand: windows
+metadata:
+  title: Dokumentation für Windows-Entwickler
+  description: Entwerfen, Entwickeln und Bereitstellen von Apps und Lösungen für Windows-PCs und andere Geräte.
+  author: mcleanbyron
+  ms.author: mcleans
+  ms.topic: hub-page
+  ms.date: 11/08/2019
+  ms.localizationpriority: medium
+  uhfHeaderId: MSDocsHeader-WinDevCenter
+  ms.openlocfilehash: f7c79005943440c4b8896e35f78b86c300a23d7f
+  ms.sourcegitcommit: 5bd8dcb5dc1b07fd97c60b41c3f8feae099fee4a
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 11/22/2019
+  ms.locfileid: "74320023"
+highlightedContent:
+  items:
+  - title: Erwerben von Visual Studio und des Windows SDK
+    itemType: download
+    url: https://developer.microsoft.com/windows/downloads
+  - title: Benutzeroberfläche und Designrichtlinien
+    itemType: overview
+    url: /windows/apps/fluent-design-system
+  - title: Nehmen Sie am Windows-Insider-Programm teil
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: Onlineschulungen für Windows-App-Entwickler
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=windows
+conceptualContent:
+  items:
+  - title: Geräteplattformen
+    links:
+    - text: Windows PCs
+      url: /windows/apps/desktop/
+      itemType: get-started
+    - text: Mixed Reality und HoloLens
+      url: https://docs.microsoft.com/windows/mixed-reality/
+      itemType: get-started
+    - text: IoT Core
+      url: https://docs.microsoft.com/windows/iot-core/windows-iot-core
+      itemType: get-started
+    - text: Xbox One
+      url: https://www.xbox.com/developers
+      itemType: get-started
+    - text: Entwicklung von Anwendungen für mobile Geräte
+      url: https://docs.microsoft.com/azure/mobile-apps/
+      itemType: overview
+  - title: Entwickeln Ihrer ersten Desktop-App
+    links:
+    - text: UWP
+      url: /windows/uwp/get-started/
+      itemType: get-started
+    - text: Win32
+      url: https://docs.microsoft.com/windows/win32/desktop-programming/
+      itemType: get-started
+    - text: WPF (.NET Core)
+      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json&view=vs-2019
+      itemType: get-started
+    - text: WPF (.NET Framework)
+      url: https://docs.microsoft.com/dotnet/framework/wpf/getting-started/
+      itemType: get-started
+    - text: Windows Forms
+      url: https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms
+      itemType: get-started
+  - title: API-Referenz
+    links:
+    - text: UWP
+      url: https://docs.microsoft.com/uwp/
+      itemType: reference
+    - text: Win32 (nach Header)
+      url: https://docs.microsoft.com/windows/win32/api/
+      itemType: reference
+    - text: Win32 (nach Feature)
+      url: https://docs.microsoft.com/windows/win32/apiindex/windows-api-list
+      itemType: reference
+    - text: .NET Core
+      url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.0
+      itemType: reference
+    - text: .NET Framework
+      url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
+      itemType: reference
+tools:
+  title: App-Plattformen und Frameworks
+  items:
+  - title: UWP
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: /windows/uwp/
+  - title: Win32
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows/win32/
+  - title: WPF
+    imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
+    url: https://docs.microsoft.com/dotnet/framework/wpf/
+  - title: Windows Forms
+    imageSrc: https://docs.microsoft.com/media/logos/logo_NET.svg
+    url: https://docs.microsoft.com/dotnet/framework/winforms/
+additionalContent:
+  sections:
+  - title: Aufgaben
+    items:
+    - title: Erstellen einer Desktop-App
+      summary: Erstellen Sie UWP-, Win32-, WPF- und Windows Forms-Desktop-Apps für PCs mit Windows.
+      url: /windows/apps/desktop/
+    - title: Modernisieren Ihrer Desktop-Apps
+      summary: Erweitern Sie Ihre vorhandene Desktop-App für die Verwendung der neuesten Features in Windows 10.
+      url: /windows/apps/desktop/modernize
+    - title: Entwickeln für Windows-Features
+      summary: Erfahren Sie, wie Windows-Features auf verschiedenen App-Plattformen unterstützt werden.
+      url: /windows/apps/features-and-technologies/
+    - title: Codebeispiele finden
+      summary: Hier erfahren Sie, wie Sie herausragende Apps erstellen können, indem Sie mit unseren Beispielen experimentieren.
+      url: https://developer.microsoft.com/windows/samples
+    - title: Entwickeln für Entwickeln für mobile Geräte
+      summary: Erkunden Sie die Microsoft-Dienste, die Ihnen ermöglichen, sichere und zuverlässige cloudbasierte Anwendungen für mobile Geräte zu erstellen.
+      url: https://docs.microsoft.com/azure/mobile-apps/
+    - title: Entwickeln mit Python, Node.js und mehr
+      summary: Richten Sie Ihren Windows-Computer für die Arbeit mit plattformübergreifenden Technologien ein, wie z.B. Python, Node.js und mehr.
+      url: /windows/dev-environment/
+    - title: Veröffentlichen im Microsoft Store
+      summary: Verwenden Sie Partner Center, um Windows-Apps und -Spiele im Microsoft Store zu veröffentlichen.
+      url: /windows/uwp/publish/
+    - title: Barrierefreiheit für Ihre App
+      summary: Integrieren Sie Barrierefreiheit in Ihre Anwendungen, um Menschen mit unterschiedlichsten Fähigkeiten zu unterstützen.
+      url: /windows/apps/accessibility/
+  - title: Technologien
+    items:
+    - title: Neuigkeiten für Entwickler
+      summary: Erfahren Sie mehr über die neuesten Entwicklerfeatures in Windows 10.
+      url: https://developer.microsoft.com/windows/windows-10-for-developers
+    - title: Windows KI
+      summary: Verwenden Sie Windows-KI, um intelligente Lösungen für komplexe Probleme in ihren Apps zu erstellen.
+      url: https://docs.microsoft.com/windows/ai/
+    - title: Windows für IoT
+      summary: Erstellen Sie Lösungen für die Windows für IoT-Plattform.
+      url: https://docs.microsoft.com/windows/iot-core/
+    - title: MSIX
+      summary: Sie können Windows-Apps in einem modernen und universellen Paketformat verpacken und bereitstellen.
+      url: https://docs.microsoft.com/windows/msix/
+    - title: Container unter Windows
+      summary: Verpacken Sie Ihre Anwendungen mit ihren Abhängigkeiten in schnellen, vollständig isolierten Windows-Umgebungen.
+      url: https://docs.microsoft.com/virtualization/windowscontainers/
+    - title: Mixed Reality
+      summary: Entwickeln Sie kollaborative Mixed Reality-Lösungen für HoloLens und mehr.
+      url: https://docs.microsoft.com/windows/mixed-reality/
+    - title: Project Rome
+      summary: Erstellen Sie geräteübergreifende Umgebungen für Ihre Apps.
+      url: https://docs.microsoft.com/windows/project-rome/
+    - title: Microsoft Graph
+      summary: Nutzen Sie ein einheitliches Programmierbarkeitsmodell, um Apps zu erstellen, die mit den Daten von Millionen von Benutzern interagieren.
+      url: https://docs.microsoft.com/graph/
+  footer: '[@WindowsDocs auf Twitter](https://twitter.com/WindowsDocs) - [OneDevMinute auf YouTube](https://aka.ms/OneDevMinute) - [Windows-Entwicklersupport](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)'
