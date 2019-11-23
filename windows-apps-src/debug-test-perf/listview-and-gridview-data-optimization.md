@@ -16,7 +16,7 @@ ms.locfileid: "71339611"
 # <a name="listview-and-gridview-data-virtualization"></a>Virtualisierung von ListView- und GridView-Daten
 
 
-**Beachten Sie**  Weitere Informationen finden Sie in der Build/-Sitzung, [Wenn Benutzer mit großen Datenmengen in GridView und ListView interagieren](https://channel9.msdn.com/Events/Build/2013/3-158).
+**Beachten Sie**  Weitere Informationen finden Sie in der Build/ [-Sitzung, wenn Benutzer mit großen Datenmengen in GridView und ListView interagieren](https://channel9.msdn.com/Events/Build/2013/3-158).
 
 Verbessern Sie die Leistung und Startzeit von [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) und [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) durch Datenvirtualisierung. Informationen zu UI-Virtualisierung, Elementreduzierung und die progressive Aktualisierung von Elementen finden Sie unter [Optimieren der ListView- und GridView-Benutzeroberfläche](optimize-gridview-and-listview.md).
 
@@ -27,7 +27,7 @@ Eine Methode zur Datenvirtualisierung ist für einen Datensatz erforderlich, der
 -   Die Quelle des Datasets (lokaler Datenträger, Netzwerk oder Cloud)
 -   Die gesamte Arbeitsspeichernutzung Ihrer App
 
-**Beachten Sie**  Beachten Sie, dass eine Funktion standardmäßig für ListView und GridView aktiviert ist, in der temporäre Platzhalter Visuals angezeigt werden, während der Benutzer schnell einen Bildlauf durchführt. Beim Laden von Daten werden diese Platzhalter für visuelle Elemente durch die Elementvorlage ersetzt. Sie können das Feature deaktivieren, indem Sie [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) auf „false“ festlegen. In diesem Fall wird jedoch empfohlen, das „x: Phase“-Attribut zu verwenden, um die Elemente in der Elementvorlage progressiv zu rendern. Siehe [Progressives Aktualisieren von ListView- und GridView-Elementen](optimize-gridview-and-listview.md#update-items-incrementally).
+**Beachten Sie  beachten Sie** , dass eine Funktion standardmäßig für ListView und GridView aktiviert ist, in der temporäre Platzhalter Visuals angezeigt werden, während der Benutzer schnell einen Bildlauf durchführt. Beim Laden von Daten werden diese Platzhalter für visuelle Elemente durch die Elementvorlage ersetzt. Sie können das Feature deaktivieren, indem Sie [**ListViewBase.ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) auf „false“ festlegen. In diesem Fall wird jedoch empfohlen, das „x: Phase“-Attribut zu verwenden, um die Elemente in der Elementvorlage progressiv zu rendern. Siehe [Progressives Aktualisieren von ListView- und GridView-Elementen](optimize-gridview-and-listview.md#update-items-incrementally).
 
 Hier erhalten Sie weitere Informationen über die Verfahren der inkrementellen Datenvirtualisierung und der Datenvirtualisierung mit wahlfreiem Zugriff.
 
@@ -36,7 +36,7 @@ Hier erhalten Sie weitere Informationen über die Verfahren der inkrementellen D
 Bei der inkrementellen Datenvirtualisierung werden Daten sequenziell geladen. Ein [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), das die inkrementelle Datenvirtualisierung verwendet, kann zum Anzeigen einer Sammlung von einer Million Elementen verwendet werden, wobei aber anfänglich nur 50 Elemente geladen werden. Beim Schwenken/Bildlauf werden die nächsten 50 Elemente geladen. Der Ziehpunkt der Bildlaufleiste wird beim Laden der Elemente kleiner. Für diese Art der Datenvirtualisierung schreiben Sie eine Datenquellenklasse, die diese Schnittstellen implementiert.
 
 -   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) oder [iobservablevector @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) oder [**iobservablevector&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISupportIncrementalLoading)
 
 Eine derartige Datenquelle ist eine speicherinterne Liste, die ständig erweitert werden kann. Das Elementsteuerelement fordert die Elemente mithilfe der standardmäßigen „Indexer“- und „Count“-Eigenschaften von [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist) an. Die Anzahl sollte die Anzahl der lokalen Elemente darstellen, nicht die tatsächliche Größe des Datasets.
@@ -48,7 +48,7 @@ Wenn sich das Elementsteuerelement dem Ende der vorhandenen Daten nähert, ruft 
 Die Datenvirtualisierung mit wahlfreiem Zugriff ermöglicht das Laden von Daten, die sich an einem beliebigen Punkt des Datasets befinden. Ein [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), das die Datenvirtualisierung mit wahlfreiem Zugriff verwendet und zum Anzeigen einer Sammlung von einer Million Elementen verwendet wird, kann die Elemente 100.000 bis 100.050 laden. Wechselt der Benutzer anschließend zum Listenanfang, lädt das Steuerelement die Elemente von 1 bis 50. Der Ziehpunkt der Bildlaufleiste gibt jederzeit an, dass **ListView** eine Million Elemente enthält. Die Position des Ziehpunkts der Bildlaufleiste gibt Aufschluss über die relative Position der sichtbaren Elemente innerhalb des gesamten Datasets der Sammlung. Diese Art der Datenvirtualisierung kann den Speicherbedarf und die Ladezeiten für die Sammlung erheblich reduzieren. Zur Aktivierung müssen Sie eine Datenquellenklasse erstellen, die Daten bei Bedarf abruft, einen lokalen Cache verwaltet und diese Schnittstellen implementiert.
 
 -   [**IList**](https://docs.microsoft.com/dotnet/api/system.collections.ilist)
--   [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) oder [iobservablevector @ no__t-5T @ no__t-6](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
+-   [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) (C#/VB) oder [**iobservablevector&lt;t&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IObservableVector_T_) (C++/CX)
 -   (Optional) [**IItemsRangeInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IItemsRangeInfo)
 -   (Optional) [**ISelectionInfo**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ISelectionInfo)
 

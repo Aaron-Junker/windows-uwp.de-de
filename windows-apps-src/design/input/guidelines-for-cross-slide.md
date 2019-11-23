@@ -4,7 +4,7 @@ title: Richtlinien für Querziehen
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 833949effd311c707de8dd1823ec6eee06e91e87
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -20,20 +20,20 @@ ms.locfileid: "74257979"
 
 **Wichtige APIs**
 
--   [**CrossSliding**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
--   [**CrossSlideThresholds**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
--   [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+-   [**Kreuz gleitend**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crosssliding)
+-   [**Crossdiasthreshold**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.crossslidethresholds)
+-   [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 Verwenden Sie Querziehen, um Auswahlinteraktionen mit einer Streifbewegung und Ziehinteraktionen (Verschieben) mit einer Ziehbewegung zu unterstützen.
 
-## <a name="span-iddos_and_don_tsspanspan-iddos_and_don_tsspanspan-iddos_and_don_tsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
+## <a name="span-iddos_and_don_tsspanspan-iddos_and_don_tsspanspan-iddos_and_don_tsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>DOS und es ' ts '
 
 
 -   Verwenden Sie das Querziehen für Listen oder Auflistungen, bei denen ein Bildlauf nur in eine Richtung möglich ist.
 -   Verwenden Sie das Querziehen für die Elementauswahl, wenn die Tippinteraktion für andere Zwecke verwendet wird.
 -   Verwenden Sie das Querziehen nicht, um Elemente zu einer Warteschlange hinzuzufügen.
 
-## <a name="span-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <a name="span-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanspan-idadditional_usage_guidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Zusätzlicher Verwendungs Leit Faden
 
 
 Auswahl und Ziehen sind nur in Inhaltsbereichen möglich, die in eine Richtung (vertikal oder horizontal) verschoben werden können. Damit die Interaktion funktioniert, muss eine Verschiebungsrichtung arretiert sein, und die Bewegung muss senkrecht zur Verschiebungsrichtung ausgeführt werden.
@@ -56,7 +56,7 @@ Beachten Sie die folgenden Richtlinien, wenn Sie eine Querziehfunktion in Ihrer 
 
 Verwenden Sie das Querziehen für Listen oder Auflistungen, bei denen ein Bildlauf nur in eine Richtung möglich ist. Weitere Informationen finden Sie unter [Hinzufügen von ListView-Steuerelementen](https://docs.microsoft.com/previous-versions/windows/apps/hh465382(v=win.10)).
 
-**Note**  In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
+**Beachten Sie**  in Fällen, in denen der Inhalts Bereich in zwei Richtungen (z. b. Webbrowser oder e-Reader) geheftet werden kann, sollte die zeitgesteuerte Interaktion mit Press und Hold zum Aufrufen des Kontextmenüs für Objekte wie Bilder und Hyperlinks verwendet werden.
 
  
 
@@ -69,7 +69,7 @@ Verwenden Sie das Querziehen für Listen oder Auflistungen, bei denen ein Bildla
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**Selecting**
+**Wahl**
 
 Beim Auswählen wird mindestens ein Objekt markiert, ohne es zu starten oder zu aktivieren. Diese Aktion entspricht einem einfachen Mausklick oder einem Mausklick mit gedrückter UMSCHALTTASTE auf mindestens ein Objekt.
 
@@ -97,7 +97,7 @@ In den folgenden Screenshots wird die Funktionsweise der Animation mit automatis
 
 Verwenden Sie in Apps, in denen das Auswählen die einzige Hauptaktion ist, einfaches Tippen für die Auswahl. Die Querziehanimation mit automatischem Einblenden wird angezeigt, um diese Funktion von der standardmäßigen Tippinteraktion für Aktivierung und Navigation zu unterscheiden.
 
-**Selection basket**
+**Auswahl Korb**
 
 Der Auswahlkorb ist eine visuell unverwechselbare, dynamische Darstellung von Elementen, die aus der primären Liste oder Auflistung in der Anwendung ausgewählt wurden. Dieses Feature ist hilfreich, um den Überblick über ausgewählte Elemente zu behalten, und es sollte in Anwendungen verwendet werden, auf die Folgendes zutrifft:
 
@@ -111,7 +111,7 @@ Wenn in einer Anwendung kein Auswahlkorb verwendet wird, sollte die aktuelle Aus
 
 Auch wenn kein Auswahlkorb verwendet und ein anderes Element in der Liste oder Auflistung aktiviert wird, sollte die aktuelle Auswahl gelöscht werden. Wenn Sie z. B. eine Nachricht im Posteingang auswählen, wird das Vorschaufenster aktualisiert. Wählen Sie anschließend eine zweite Nachricht im Posteingang aus, wird die Auswahl der vorherigen Nachricht aufgehoben und das Vorschaufenster erneut aktualisiert.
 
-**Queues**
+**Warteschlangen**
 
 Eine Warteschlange ist nicht mit der Liste im Auswahlkorb gleichzusetzen und sollte auch nicht so behandelt werden. Hier die wichtigsten Unterschiede:
 
@@ -123,29 +123,29 @@ Aus diesen Gründen sollte die Auswahlinteraktion durch Querziehen nicht verwend
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Drag**
+**Hinein**
 
 Verwenden Sie eine Ziehbewegung, um Objekte von einer Position an eine andere zu ziehen.
 
 Wenn mehrere Objekte verschoben werden müssen, geben Sie dem Benutzer die Möglichkeit, mehrere Elemente auszuwählen und anschließend gleichzeitig zu ziehen.
 
-## <a name="span-idrelated_topicsspanrelated-articles"></a><span id="related_topics"></span>Related articles
+## <a name="span-idrelated_topicsspanrelated-articles"></a><span id="related_topics"></span>Verwandte Artikel
 
 
 **Beispiele**
-* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 * [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+* [Beispiel für visuelle Fokus-Elemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 **Archivbeispiele**
-* [Input: XAML user input events sample](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Input: Touch hit testing sample](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [XAML scrolling, panning, and zooming sample](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Input: Simplified ink sample](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [Input: Windows 8 gestures sample](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Input: Manipulations and gestures (C++) sample](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [DirectX touch input sample](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
+* [Eingabe: Beispiel für XAML-Benutzereingabe Ereignisse](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Eingabe: Beispiel für Berührungs Treffer Tests](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Eingabe: vereinfachtes Ink-Beispiel](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Eingabe: Beispiel für Windows 8-Gesten](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Eingabe: Manipulationen und Gesten (C++) (Beispiel)](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Beispiel für DirectX-Fingereingabe](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

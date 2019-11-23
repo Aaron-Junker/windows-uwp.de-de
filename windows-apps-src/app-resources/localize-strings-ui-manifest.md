@@ -25,17 +25,17 @@ Hartcodierte Zeichenfolgenliterale können in imperativem Code oder in XAML-Mark
 
 Während eine Bildressourcendatei immer nur eine Bildressource enthält, sind in einer Zeichenfolgen-Ressourcendatei *mehrere* Zeichenfolgenressourcen enthalten. Eine Zeichenfolgen-Ressourcendatei ist die Art von Ressourcendatei (.resw), die Sie üblicherweise in einem \Strings-Ordner Ihres Projekts erstellen. Hintergrundinformationen zur Verwendung von Qualifizierern in den Namen von Ressourcendateien (.resw) finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung und andere Eigenschaften](tailor-resources-lang-scale-contrast.md).
 
-## <a name="store-strings-in-a-resources-file"></a>Store strings in a resources file
+## <a name="store-strings-in-a-resources-file"></a>Speichern von Zeichen folgen in einer Ressourcen Datei
 
 1. Legen Sie die Standardsprache Ihrer App fest.
     1. Öffnen Sie `Package.appxmanifest`, während Ihre Projektmappe in Visual Studio geöffnet ist.
     2. Vergewissern Sie sich auf der Registerkarte „Anwendung”, dass die Standardsprache passend festgelegt ist (z. B. auf „En” oder „en-US”). Für die verbleibenden Schritte wird davon ausgegangen, dass Sie die Standardsprache auf "en-US" festgelegt haben.
-    <br>**Note** At a minimum, you need to provide string resources localized for this default language. Diese Ressourcen werden geladen, wenn für die bevorzugte Sprache des Benutzers oder die eingestellte Anzeigesprache keine bessere Übereinstimmung gefunden wird.
+    <br>**Beachten** Sie, dass Sie mindestens Zeichen folgen Ressourcen angeben müssen, die für diese Standardsprache lokalisiert werden. Diese Ressourcen werden geladen, wenn für die bevorzugte Sprache des Benutzers oder die eingestellte Anzeigesprache keine bessere Übereinstimmung gefunden wird.
 2. Erstellen Sie eine Ressourcendatei (.resw) für die Standardsprache.
     1. Erstellen Sie unter Ihrem Projektknoten einen neuen Ordner mit dem Namen „Strings”.
     2. Erstellen Sie unter `Strings` einen neuen Unterordner mit dem Namen „en-US”.
     3. Erstellen Sie unter `en-US` eine neue Ressourcendatei (.resw). Vergewissern Sie sich, dass sie „Resources.resw” heißt.
-    <br>**Note** If you have .NET Resources Files (.resx) that you want to port, see [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
+    <br>**Hinweis** Wenn Sie über .NET-Ressourcen Dateien (RESX-Dateien) verfügen, die Sie portieren möchten, finden Sie weitere Informationen unter [Portieren von XAML und UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization).
 3. Öffnen Sie `Resources.resw`, und fügen Sie diese Zeichenfolgenressourcen hinzu.
 
     `Strings/en-US/Resources.resw`
@@ -48,7 +48,7 @@ Während eine Bildressourcendatei immer nur eine Bildressource enthält, sind in
 
     Bei Ressourcenbezeichnern wird zwischen Groß-/Kleinschreibung unterschieden, und die Bezeichner müssen pro Ressourcendatei eindeutig sein. Wählen Sie aussagekräftige Ressourcenbezeichner, um für die Übersetzung einen weiteren Kontext bereitzustellen. Ändern Sie die Ressourcenbezeichner nicht, nachdem die Zeichenfolgenressourcen zur Übersetzung weitergegeben wurden. Lokalisierungsteams verfolgen Ergänzungen, Löschungen und Aktualisierungen an den Ressourcen anhand der Ressourcenbezeichner nach. Bei Änderungen an Ressourcenbezeichnern – auch „Resource Identifiers Shift“ genannt – müssen die Zeichenfolgen neu übersetzt werden, da der Eindruck entsteht, dass Zeichenfolgen gelöscht oder hinzugefügt wurden.
 
-## <a name="refer-to-a-string-resource-identifier-from-xaml"></a>Refer to a string resource identifier from XAML
+## <a name="refer-to-a-string-resource-identifier-from-xaml"></a>Verweisen auf einen Zeichen folgen Ressourcen Bezeichner aus XAML
 
 Verwenden Sie eine [x:Uid-Direktive](../xaml-platform/x-uid-directive.md), um ein Steuerelement oder ein anderes Element in Ihrem Markup mit dem Bezeichner einer Zeichenfolgenressource zu verknüpfen.
 
@@ -56,13 +56,13 @@ Verwenden Sie eine [x:Uid-Direktive](../xaml-platform/x-uid-directive.md), um ei
 <TextBlock x:Uid="Greeting"/>
 ```
 
-Zur Laufzeit wird `\Strings\en-US\Resources.resw` geladen (da diese momentan die einzige Ressourcendatei im Projekt ist). Die Direktive **x:Uid** im **TextBlock**-Element bewirkt in `Resources.resw` eine Suche nach Eigenschaftsbezeichnern, die den Zeichenfolgenressourcen-Bezeichner „Greeting” enthalten. Die Eigenschaftsbezeichner „Greeting.Text” und „Greeting.Width” werden gefunden, und ihre Werte werden auf den **TextBlock** angewendet, wobei alle Werte, die lokal im Markup festgelegt sind, überschrieben werden. Der Wert „Greeting.Foreground” würde ebenfalls angewendet, wenn Sie ihn hinzugefügt hätten. Es hätte aber keine Auswirkung, wenn Sie in diesem TextBlock-Element **a:Uid** auf „Farewell” festlegen würden, da nur Eigenschaftsbezeichner verwendet werden, um Eigenschaften für XAML-Markupelemente festzulegen. `Resources.resw` *does* contain the string resource identifier "Farewell", but it contains no property identifiers for it.
+Zur Laufzeit wird `\Strings\en-US\Resources.resw` geladen (da diese momentan die einzige Ressourcendatei im Projekt ist). Die Direktive **x:Uid** im **TextBlock**-Element bewirkt in `Resources.resw` eine Suche nach Eigenschaftsbezeichnern, die den Zeichenfolgenressourcen-Bezeichner „Greeting” enthalten. Die Eigenschaftsbezeichner „Greeting.Text” und „Greeting.Width” werden gefunden, und ihre Werte werden auf den **TextBlock** angewendet, wobei alle Werte, die lokal im Markup festgelegt sind, überschrieben werden. Der Wert „Greeting.Foreground” würde ebenfalls angewendet, wenn Sie ihn hinzugefügt hätten. Es hätte aber keine Auswirkung, wenn Sie in diesem TextBlock-Element **a:Uid** auf „Farewell” festlegen würden, da nur Eigenschaftsbezeichner verwendet werden, um Eigenschaften für XAML-Markupelemente festzulegen. `Resources.resw` enthält den Zeichen folgen Ressourcen Bezeichner "Farewell" *, enthält aber* keine Eigenschaften Bezeichner.
 
 Sollten Sie einem XAML-Element einen Zeichenfolgeressourcen-Bezeichner zuordnen, müssen Sie sicherstellen, dass *alle* Eigenschaftsbezeichner für diesen Bezeichner für das XAML-Element geeignet sind. Wenn Sie beispielsweise `x:Uid="Greeting"` in einem **TextBlock**-Element verwenden, wird „Greeting.Text” korrekt zugeordnet, da der Typ **TextBlock** über eine Text-Eigenschaft verfügt. Wenn Sie `x:Uid="Greeting"` aber in einem **Button**-Element verwenden, wird „Greeting.Text” einen Laufzeitfehler verursachen, da der Typ **Button** nicht über eine Texteigenschaft verfügt. Eine Lösung für diesen Fall ist, einen Eigenschaftsbezeichner mit dem Namen "ButtonGreeting.Content" zu erstellen und `x:Uid="ButtonGreeting"` im **Button**-Element zu verwenden.
 
 Statt **Width** mithilfe einer Ressourcendatei festzulegen, können Sie veranlassen, dass sich Steuerelemente in ihrer Größe dynamisch an Inhalte anpassen.
 
-**Note** For [attached properties](../xaml-platform/attached-properties-overview.md), you need a special syntax in the Name column of a .resw file. Um beispielsweise einen Wert für die angefügte Eigenschaft [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) des Bezeichners „Greeting” festzulegen, müssen Sie Folgendes in der Spalte „Name” eingeben:
+**Hinweis** für [angefügte Eigenschaften](../xaml-platform/attached-properties-overview.md)benötigen Sie eine spezielle Syntax in der Spalte "Name" einer resw-Datei. Um beispielsweise einen Wert für die angefügte Eigenschaft [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) des Bezeichners „Greeting” festzulegen, müssen Sie Folgendes in der Spalte „Name” eingeben:
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 Sie können diesen Code in einer Klassenbibliothek (Universal Windows) oder in einem [Windows Runtime Library (Universal Windows)](../winrt-components/index.md)-Projekt verwenden. Zur Laufzeit werden die Ressourcen der App geladen, die die Bibliothek hostet. Wir empfehlen, dass eine Bibliothek Ressourcen aus der App lädt, die sie hostet, da die App wahrscheinlich einen höheren Lokalisierungsgrad aufweist. Wenn eine Bibliothek Ressourcen bereitstellen muss, sollte sie es der App, die sie hostet, ermöglichen, diese Ressourcen als Eingabe zu ersetzen.
 
-If a resource name is segmented (it contains "." characters), then replace dots with forward slash ("/") characters in the resource name. Property identifiers, for example, contain dots; so you'd need to do this substition in order to load one of those from code.
+Wenn ein Ressourcen Name segmentiert ist (er enthält die Zeichen "."), ersetzen Sie die Punkte durch Schrägstriche ("/") im Ressourcennamen. Eigenschafts Bezeichner z. b. Punkte enthalten. Daher müssen Sie diese untergeordnete Komponente durchführen, um eine dieser Komponenten aus dem Code zu laden.
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump your app's PRI file. Each resource's `uri` is shown in the dumped file.
+Im Zweifelsfall können Sie " [makepri. exe](makepri-exe-command-options.md) " verwenden, um die PRI-Datei Ihrer APP zu sichern. Die `uri` der Ressource wird in der abgekippten Datei angezeigt.
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -106,7 +106,7 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 
 ## <a name="refer-to-a-string-resource-identifier-from-your-app-package-manifest"></a>Verweisen auf einen Ressourcenbezeichner aus dem App-Paketmanifest
 
-1. Open your app package manifest source file (the `Package.appxmanifest` file), in which by default your app's `Display name` is expressed as a string literal.
+1. Öffnen Sie die Quelldatei für das App-Paket Manifest (die `Package.appxmanifest` Datei), in der die `Display name` der App standardmäßig als Zeichenfolgenliterale ausgedrückt wird.
 
    ![Ressource hinzufügen, Englisch](images/display-name-before.png)
 
@@ -122,8 +122,8 @@ If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump y
 
 1. Erstellen Sie eine Kopie der Ressourcendatei (.resw) für eine andere Sprache.
     1. Erstellen Sie unter „Strings” einen neuen Unterordner, und nennen Sie ihn „de-DE” für Deutsch (Deutschland).
-   <br>**Note** For the folder name, you can use any [BCP-47 language tag](https://tools.ietf.org/html/bcp47). Details zum Sprachqualifizierer und eine Liste häufiger Sprachtags finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung und anderen](tailor-resources-lang-scale-contrast.md).
-   2. Erstellen Sie im Ordner `Strings/de-DE` eine Kopie von `Strings/en-US/Resources.resw`.
+   <br>**Beachten** Sie für den Ordnernamen können Sie ein beliebiges [bcp-47-sprach Kennzeichen](https://tools.ietf.org/html/bcp47)verwenden. Details zum Sprachqualifizierer und eine Liste häufiger Sprachtags finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung und anderen](tailor-resources-lang-scale-contrast.md).
+   2. Erstellen Sie im Ordner `Strings/en-US/Resources.resw` eine Kopie von `Strings/de-DE`.
 2. Übersetzen Sie die Zeichenfolgen.
     1. Öffnen Sie `Strings/de-DE/Resources.resw`, und übersetzen Sie die Werte in der Spalte „Value”. Sie müssen die Kommentare nicht übersetzen.
 
@@ -155,7 +155,7 @@ Um den Verweis auf den Bezeichner einer Zeichenfolgenressource auf eine bestimmt
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-You only need to add `/<resources-file-name>/` before the string resource identifier for Resources Files *other than* `Resources.resw`. Der Grund ist, dass „Resources.resw” der Standarddateiname ist, der verwendet wird, wenn Sie keinen Dateinamen angeben (wie in früheren Beispielen in diesem Thema).
+Sie müssen nur `/<resources-file-name>/` vor dem Zeichen folgen Ressourcen Bezeichner für andere Ressourcen Dateien *als* `Resources.resw`hinzufügen. Der Grund ist, dass „Resources.resw” der Standarddateiname ist, der verwendet wird, wenn Sie keinen Dateinamen angeben (wie in früheren Beispielen in diesem Thema).
 
 Im folgenden Codebeispiel wird davon ausgegangen, dass `ErrorMessages.resw` eine Ressource mit dem Namen „MismatchedPasswords” enthält, deren Wert einen Fehler beschreibt.
 
@@ -179,13 +179,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 Würden Sie die Ressource „AppDisplayName” aus `Resources.resw` in `ManifestResources.resw` verschieben, müssten Sie in Ihrem App-Paketmanifest `ms-resource:AppDisplayName` in `ms-resource:/ManifestResources/AppDisplayName` ändern.
 
-If a resource file name is segmented (it contains "." characters), then leave the dots in the name when you reference it. **Don't** replace dots with forward slash ("/") characters, like you would for a resource name.
+Wenn ein Ressourcen Dateiname segmentiert ist (er enthält "."-Zeichen), lassen Sie die Punkte im Namen, wenn Sie darauf verweisen. Ersetzen Sie Punkte **nicht** durch Schrägstriche ("/"), wie für einen Ressourcennamen.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-If in doubt, you can use [MakePri.exe](makepri-exe-command-options.md) to dump your app's PRI file. Each resource's `uri` is shown in the dumped file.
+Im Zweifelsfall können Sie " [makepri. exe](makepri-exe-command-options.md) " verwenden, um die PRI-Datei Ihrer APP zu sichern. Die `uri` der Ressource wird in der abgekippten Datei angezeigt.
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -264,24 +264,24 @@ private void RefreshUIText()
 }
 ```
 
-## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Load strings from a Class Library or a Windows Runtime Library
+## <a name="load-strings-from-a-class-library-or-a-windows-runtime-library"></a>Laden von Zeichen folgen aus einer Klassenbibliothek oder einer Windows-Runtime Bibliothek
 
 Die Zeichenfolgenressourcen einer referenzierten Klassenbibliothek (Universal Windows) oder [Windows-Runtime Library (Universal Windows)](../winrt-components/index.md) stehen in der Regel in einem Unterordner des Pakets. Dort werden sie während des Buildprozesses eingefügt. Der Ressourcenbezeichner solche Zeichenfolgen besitzen in der Regel die Form *Bibliotheksname/Ressourcendateiname/Ressourcenbezeichner*.
 
-Eine Bibliothek kann einen ResourceLoader für ihre eigenen Ressourcen abrufen. For example, the following code illustrates how either a library or an app that references it can get a ResourceLoader for the library's string resources.
+Eine Bibliothek kann einen ResourceLoader für ihre eigenen Ressourcen abrufen. Der folgende Code veranschaulicht z. b., wie eine Bibliothek oder eine APP, die darauf verweist, einen resourceloader für die Zeichen folgen Ressourcen der Bibliothek erhalten kann.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-For a Windows Runtime Library (Universal Windows), if the default namespace is segmented (it contains "." characters), then use dots in the resource map name.
+Verwenden Sie für eine Windows-Runtime Bibliothek (universelle Windows), wenn der Standard Namespace segmentiert ist ("."-Zeichen enthält), die Punkte im Ressourcen Zuordnungs Namen.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-You don't need to do that for a Class Library (Universal Windows). If in doubt, you can specify [MakePri.exe command line options](makepri-exe-command-options.md) to dump your component or library's PRI file. Each resource's `uri` is shown in the dumped file.
+Dies ist für eine Klassenbibliothek (universelle Windows-Plattform) nicht erforderlich. Im Zweifelsfall können Sie [makepri. exe-Befehlszeilenoptionen](makepri-exe-command-options.md) angeben, um die PRI-Datei Ihrer Komponente oder Bibliothek zu sichern. Die `uri` der Ressource wird in der abgekippten Datei angezeigt.
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
@@ -289,44 +289,44 @@ You don't need to do that for a Class Library (Universal Windows). If in doubt, 
 
 ## <a name="loading-strings-from-other-packages"></a>Laden von Zeichenfolgen aus anderen Paketen
 
-The resources for an app package are managed and accessed through the package's own top-level [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) that's accessible from the current [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). Within each package, various components can have their own ResourceMap subtrees, which you can access via [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live).
+Die Ressourcen für ein App-Paket werden verwaltet, und der Zugriff erfolgt über die eigene [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) des Pakets, auf die vom aktuellen [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)-Server aus zugegriffen werden kann. Innerhalb jedes Pakets können verschiedene Komponenten über eigene ResourceMap-Unterstrukturen verfügen, auf die Sie über [**ResourceMap. getsubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)zugreifen können.
 
 Ein Frameworkpaket kann auf seine eigenen Ressourcen über einen absolute Ressourcenbezeichner-URI zugreifen. Weitere Informationen finden Sie unter [URI-Schemas](uri-schemes.md).
 
-## <a name="loading-strings-in-non-packaged-applications"></a>Loading strings in non-packaged applications
+## <a name="loading-strings-in-non-packaged-applications"></a>Laden von Zeichen folgen in nicht gepackten Anwendungen
 
-As of Windows Version 1903 (May 2019 Update), non-packaged applications can also leverage the Resource Management System.
+Ab Windows-Version 1903 (Update vom Mai 2019) können nicht gepackte Anwendungen auch das Ressourcen Verwaltungs System nutzen.
 
-Just create your UWP user controls/libraries and [store any strings in a resources file](#store-strings-in-a-resources-file). You can then [refer to a string resource identifier from XAML](#refer-to-a-string-resource-identifier-from-xaml), [refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code), or [load strings from a Class Library or a Windows Runtime Library](#load-strings-from-a-class-library-or-a-windows-runtime-library).
+Erstellen Sie einfach Ihre UWP-Benutzer Steuerelemente/-Bibliotheken, und speichern Sie alle Zeichen folgen [in einer Ressourcen Datei](#store-strings-in-a-resources-file). Sie können dann [auf einen Zeichen folgen Ressourcen Bezeichner aus XAML verweisen](#refer-to-a-string-resource-identifier-from-xaml), [einen Zeichen folgen Ressourcen Bezeichner aus dem Code oder Zeichen](#refer-to-a-string-resource-identifier-from-code)folgen [aus einer Klassenbibliothek oder einer Windows-Runtime Bibliothek laden](#load-strings-from-a-class-library-or-a-windows-runtime-library).
 
-To use resources in non-packaged applications, you should do a few things:
+Um Ressourcen in nicht verpackten Anwendungen zu verwenden, sollten Sie einige Dinge tun:
 
-1. Use [GetForViewIndependentUse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) instead of [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) when resolving resources from code as there is no *current view* in non-packaged scenarios. The following exception occurs if you call [GetForCurrentView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in non-packaged scenarios: *Resource Contexts may not be created on threads that do not have a CoreWindow.*
-1. Use [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) to manually generate your app's resources.pri file.
+1. Verwenden Sie beim Auflösen von Ressourcen aus dem Code [getforviewindependentuse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) anstelle von [getforcurrentview](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) , da keine *aktuelle Sicht* in Szenarios ohne Paket vorhanden ist. Die folgende Ausnahme tritt auf, wenn Sie [getforcurrentview](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) in Szenarios ohne Paket aufrufen: *Ressourcen Kontexte können nicht für Threads erstellt werden, die nicht über ein corewindow verfügen.*
+1. Verwenden Sie [makepri. exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) , um die Datei "Resources. pri" Ihrer APP manuell zu generieren.
     - Führen Sie `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri` aus.
-    - The &lt;PRICONFIG&gt; must omit the "&lt;packaging&gt;" section so that all resources are bundled in a single resources.pri file. If using the default [MakePri.exe configuration file](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command), you need to delete the "&lt;packaging&gt;" section manually after it is created.
-    - The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default [MakePri.exe configuration file](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) includes all indexers.
-    - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from UWP project references, NuGet references, and so on, that are located within the project root.
+    - Der &lt;priconfig-&gt; muss den Abschnitt "&lt;Packaging&gt;" weglassen, damit alle Ressourcen in einer einzigen Datei "Resources. pri" gebündelt werden. Wenn Sie die von " [kreateconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command)" erstellte Standard [Konfigurationsdatei "makepri. exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) " verwenden, müssen Sie den Abschnitt "&lt;Packaging&gt;" manuell löschen, nachdem er erstellt wurde.
+    - Der &lt;priconfig-&gt; muss alle relevanten Indexer enthalten, die erforderlich sind, um alle Ressourcen in Ihrem Projekt in einer einzelnen "Resources. pri"-Datei zusammenzuführen. Die von " [kreateconfig](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-command-options#createconfig-command) " erstellte Standard [Konfigurationsdatei "makepri. exe](https://docs.microsoft.com/windows/uwp/app-resources/makepri-exe-configuration) " schließt alle Indexer ein.
+    - Wenn Sie die Standardkonfiguration nicht verwenden, stellen Sie sicher, dass der PRI-Indexer aktiviert ist (überprüfen Sie die Standardkonfiguration für die Vorgehensweise), um Pris zusammenzuführen, die über UWP-Projekt Verweise, nuget-Verweise usw. gefunden werden, die sich innerhalb des Projekt Stamms befinden.
         > [!NOTE]
-        > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to *Application*, which the runtime understands for non-packaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer *Application* as the root namespace for non-packaged apps (or you can specify *Application* explicitly as in ms-resource://Application/).
-1. Copy the PRI file to the build output directory of the .exe
-1. Run the .exe 
+        > Wenn Sie `/IndexName`weglassen und das Projekt nicht über ein App-Manifest verfügt, wird der Indexname/Stamm Namespace der PRI-Datei automatisch auf die *Anwendung*festgelegt, die die Laufzeit für nicht gepackte apps versteht (Dadurch wird die vorherige harte Abhängigkeit von der Paket-ID entfernt). Bei der Angabe von Ressourcen-URIs werden MS-Resource:///Verweise, die die Stamm Namespace-ableiten- *Anwendung* als Stamm Namespace für nicht gepackte apps weglassen (oder Sie können die *Anwendung* explizit wie in MS-Resource://Application/angeben).
+1. Kopieren Sie die PRI-Datei in das Buildausgabeverzeichnis der exe-Datei.
+1. Ausführen der exe- 
     > [!NOTE]
-    > The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in non-packaged apps. The user preferred language list is only used for UWP apps.
+    > Das Ressourcen Verwaltungs System verwendet die System Anzeige Sprache anstelle der Liste der vom Benutzer bevorzugten Sprachen, wenn Ressourcen basierend auf der Sprache in nicht gepackten apps aufgelöst werden. Die Liste Benutzer bevorzugte Sprache wird nur für UWP-Apps verwendet.
 
 > [!Important]
-> You must manually rebuild PRI files whenever resources are modified. We recommend using a post-build script that handles the [MakePri.exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) command and copies the resources.pri output to the .exe directory.
+> Sie müssen PRI-Dateien immer dann manuell neu erstellen, wenn Ressourcen geändert werden. Wir empfehlen die Verwendung eines postbuildskripts, das den Befehl " [makepri. exe](https://docs.microsoft.com/windows/uwp/app-resources/compile-resources-manually-with-makepri) " verarbeitet und die "Resources. pri"-Ausgabe in das exe-Verzeichnis kopiert.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [ApplicationModel.Resources.ResourceLoader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
-* [ResourceContext.SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [Applicationmodel. resources. resourceloader](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
+* [Resourcecontext. setglobalqualifiervalue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x:Uid directive](../xaml-platform/x-uid-directive.md)
-* [attached properties](../xaml-platform/attached-properties-overview.md)
-* [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
-* [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
-* [How to load string resources](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))
+* [Portieren von XAML und UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
+* [x:UID-Direktive](../xaml-platform/x-uid-directive.md)
+* [angefügte Eigenschaften](../xaml-platform/attached-properties-overview.md)
+* [Lokalisierbare Manifest-Elemente](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+* [Bcp-47-Sprachtag](https://tools.ietf.org/html/bcp47)
+* [Passen Sie Ihre Ressourcen für Sprache, Skalierung und andere Qualifizierer an.](tailor-resources-lang-scale-contrast.md)
+* [Vorgehensweise beim Laden von Zeichen folgen Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965323(v=win.10))

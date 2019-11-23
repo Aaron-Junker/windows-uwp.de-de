@@ -19,10 +19,10 @@ Dies ist Teil 2 der umfassenden Schritt-für-Schritt-Lösung zum Verwenden von W
 
 Die Erstellung dieses Projekts setzt Erfahrung mit C# und XAML voraus. Außerdem muss Visual Studio 2015 (mindestens Community Edition) auf einem Computer unter Windows 10 verwendet werden.
 
-## <a name="exercise-1-server-side-logic"></a>Übung 1: Server seitige Logik
+## <a name="exercise-1-server-side-logic"></a>Übung 1: Serverseitige Logik
 
 
-In dieser Übung beginnen Sie mit der in der ersten Übung erstellten Windows-Hello-Anwendung und erstellen einen lokalen Pseudoserver und eine Pseudodatenbank. Diese praktische Übung soll vermitteln, wie Windows Hello in ein vorhandenes System integriert werden kann. Mit einem Pseudoserver und einer Pseudodatenbank wird Setup ohne Bezug entfernt. In Ihren eigenen Anwendungen müssen Sie die Pseudoobjekte durch die echten Dienste und Datenbanken ersetzen.
+In dieser Übung beginnen Sie mit der in der ersten Übung erstellten Windows-Hello-Anwendung und erstellen einen lokalen Pseudoserver und eine Pseudodatenbank. Diese praktische Übung soll vermitteln, wie Windows Hello in ein vorhandenes System integriert werden kann. Mit einem Pseudoserver und einer Pseudodatenbank werden viele Einstellungen ohne Bezug vermieden. In Ihren eigenen Anwendungen müssen Sie die Pseudoobjekte durch die echten Dienste und Datenbanken ersetzen.
 
 -   Öffnen Sie zunächst die PassportLogin-Projektmappe aus der ersten praktischen Übung für Passport.
 -   Beginnen Sie mit dem Implementieren des Pseudoservers und der Pseudodatenbank. Erstellen Sie einen neuen Ordner namens „AuthService“. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe „PassportLogin (Universelle Windows-App)“, und wählen Sie „Hinzufügen“ > „Neuer Ordner“ aus.
@@ -182,7 +182,7 @@ In dieser Übung beginnen Sie mit der in der ersten Übung erstellten Windows-He
     }
 ```
 
--   Möglicherweise haben Sie in der Load-Methode bemerkt, dass eine InitializeSampleUserAccounts-Methode auskommentiert wurde. Sie müssen diese Methode in „MockStore.cs“ erstellen. Diese Methode füllt die Liste der Benutzerkonten, sodass eine Anmeldung stattfinden kann. In der realen Welt würde die Benutzerdatenbank bereits gefüllt sein. In diesem Schritt erstellen Sie auch einen Konstruktor, der die Benutzerliste und den Ladeaufruf initialisiert.
+-   Möglicherweise haben Sie in der Load-Methode bemerkt, dass eine InitializeSampleUserAccounts-Methode auskommentiert wurde. Sie müssen diese Methode in MockStore.cs erstellen. Diese Methode füllt die Liste der Benutzerkonten, sodass eine Anmeldung stattfinden kann. In der realen Welt würde die Benutzerdatenbank bereits gefüllt sein. In diesem Schritt erstellen Sie auch einen Konstruktor, der die Benutzerliste und den Ladeaufruf initialisiert.
 
     ```cs
     namespace PassportLogin.AuthService
@@ -535,7 +535,7 @@ In dieser Übung beginnen Sie mit der in der ersten Übung erstellten Windows-He
     }
     ```
 
-## <a name="exercise-2-client-side-logic"></a>Übung 2: Client seitige Logik
+## <a name="exercise-2-client-side-logic"></a>Übung 2: Clientseitige Logik
 
 In dieser Übung ändern Sie die clientseitigen Ansichten und Hilfsklassen aus der ersten Übung, um die AuthService-Klasse zu verwenden. In der realen Welt wäre AuthService der Authentifizierungsserver, und Sie müssten Web-APIs zum Senden und Empfangen von Daten vom Server verwenden. Für diese praktische Übung sind Client und Server der Einfachheit halber lokal. Das Ziel ist es, zu erfahren, wie Sie die Windows-Hello-API verwenden.
 
@@ -804,7 +804,7 @@ In dieser Übung ändern Sie die clientseitigen Ansichten und Hilfsklassen aus d
     }
     ```
 
--   Wenn Sie den authService verwenden, wenn Sie ein Konto entfernen, kann der Verweis auf die accounthelper in der Schaltfläche @ no__t-0forget @ no__t-1User @ no__t-2click-Methode entfernt werden. Die Methode sollte nun folgendermaßen aussehen.
+-   Wenn Sie den authService verwenden, wenn Sie ein Konto entfernen, wird der Verweis auf die accounthelper auf der Schaltfläche\_vergessen\_Benutzer\_Click-Methode kann entfernt werden. Die Methode sollte nun folgendermaßen aussehen.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1060,7 +1060,7 @@ In dieser Übung ändern Sie die clientseitigen Ansichten und Hilfsklassen aus d
     }
     ```
 
--   Möglicherweise haben Sie in der GetKeyAttestationAsync-Methode, die Sie gerade hinzugefügt haben, bemerkt, dass die letzte Zeile auskommentiert wurde. Diese letzte Zeile wird eine neue Methode sein, die Sie erstellen, die alle Windows-Hello-Informationen an AuthService sendet. In der realen Welt müssten Sie diese an einen echten Server mit einer Web-API senden.
+-   Möglicherweise haben Sie in der soeben hinzugefügten GetKeyAttestationAsync-Methode bemerkt, dass die letzte Zeile auskommentiert wurde. Diese letzte Zeile ist eine neue Methode, die Sie erstellen, mit der alle Windows Hello-Informationen an AuthService gesendet werden. In der realen Welt müssten Sie diese an einen echten Server mit einer Web-API senden.
 
     ```cs
     using System.Runtime.InteropServices.WindowsRuntime;

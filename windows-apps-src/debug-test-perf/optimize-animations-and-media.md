@@ -54,7 +54,7 @@ Webinhalte innerhalb eines [**WebView**](https://docs.microsoft.com/uwp/api/Wind
 
 Auch das Animieren eines [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)-Objekts ist nicht empfehlenswert. Abgesehen von den Leistungsbeeinträchtigungen kann dies im wiedergegebenen Videoinhalt zu Bildstörungen und anderen Artefakten führen.
 
-> **Hinweis**   die Empfehlungen in diesem Artikel für **mediaplayerelement** gelten auch für [**Media Element**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). **MediaPlayerElement** ist nur in Windows 10, Version 1607 verfügbar. Wenn Sie daher eine App für eine frühere Version von Windows verwenden, müssen Sie **MediaElement** verwenden.
+> **Beachten Sie**   die Empfehlungen in diesem Artikel für **mediaplayerelement** auch für [**Media Element**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)gelten. **MediaPlayerElement** ist nur in Windows 10, Version 1607 verfügbar. Wenn Sie daher eine App für eine frühere Version von Windows verwenden, müssen Sie **MediaElement** verwenden.
 
 ### <a name="use-infinite-animations-sparingly"></a>Setzen Sie Endlosanimationen sparsam ein.
 
@@ -66,7 +66,7 @@ Das Hinzufügen eines Handlers für [**CompositionTarget.Rendering**](https://do
 
 Der [**Windows.UI.Xaml.Media.Animation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation)-Namespace umfasst eine Bibliothek mit schnellen Hochleistungsanimationen, deren Erscheinungsbild mit anderen Windows-Animation konsistent ist. Die relevanten Klassen enthalten „Design“ in ihrem Namen und werden in [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview) beschrieben. Diese Bibliothek unterstützt viele gängige Animationsszenarien, z. B. die Animation der ersten Ansicht einer App oder die Erstellung von Zustands- und Inhaltsübergängen. Wir empfehlen, die Animationsbibliothek so oft wie möglich zu nutzen, um die Leistung und Konsistenz für UWP-UI zu verbessern.
 
-> **Hinweis**   die Animations Bibliothek kann nicht alle möglichen Eigenschaften animieren. Informationen zu XAML-Szenarien, bei denen die Animationsbibliothek nicht verwendet werden kann, finden Sie unter [Storyboardanimationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
+> **Beachten Sie**   die Animations Bibliothek nicht alle möglichen Eigenschaften animieren kann. Informationen zu XAML-Szenarien, bei denen die Animationsbibliothek nicht verwendet werden kann, finden Sie unter [Storyboardanimationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Eigenständiges Animieren von CompositeTransform3D-Eigenschaften
@@ -259,7 +259,7 @@ Die [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 Die [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)-Klasse, die Quellinformationen bereitstellt, kann auch für ein benutzerdefiniertes [**IWICBitmap**](https://docs.microsoft.com/windows/desktop/api/wincodec/nn-wincodec-iwicbitmap)-Objekt konfiguriert werden. Dadurch wird ein erneut ladbarer Sicherungsspeicher bereitgestellt, mit dem die App Arbeitsspeicher nach Bedarf neu zuordnen kann. Dies ist ein erweiterter C++-Anwendungsfall.
 
-Ihre App sollte [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) und [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) für die Interoperabilität mit anderen WinRT-APIs verwenden, die Bilder produzieren und nutzen. Zudem sollte die App beim Laden von nicht komprimierten Bilddaten anstelle von [**WriteableBitmap**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap) die **SoftwareBitmapSource**-Klasse verwenden.
+Ihre App sollte [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) und [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) für die Interoperabilität mit anderen WinRT-APIs verwenden, die Bilder produzieren und nutzen. Zudem sollte die App beim Laden von nicht komprimierten Bilddaten anstelle vonWriteableBitmap[**die**SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap)-Klasse verwenden.
 
 ### <a name="use-getthumbnailasync-for-thumbnails"></a>Verwenden von „GetThumbnailAsync“ für Miniaturansichten
 

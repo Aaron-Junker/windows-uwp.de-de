@@ -21,7 +21,7 @@ ms.locfileid: "71340605"
 
 Eine *angefügte Eigenschaft* ist ein XAML-Konzept. Mit angefügten Eigenschaften können zusätzliche Eigenschaft-Wert-Paare für ein Objekt festgelegt werden, aber die Eigenschaften sind nicht Teil der ursprünglichen Objektdefinition. Angefügte Eigenschaften werden in der Regel als eine spezialisierte Form der Abhängigkeitseigenschaft definiert, die keinen herkömmlichen Eigenschaftenwrapper im Objektmodell des Besitzertyps enthält.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 Es wird davon ausgegangen, dass Sie das Grundkonzept von Abhängigkeitseigenschaften verstehen und die [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md) gelesen haben.
 
@@ -125,13 +125,13 @@ Der Punkt im Namen einer angefügten Eigenschaft ist ein wichtiger Teil des Iden
 > [!WARNING]
 > Eine vorhandene Einschränkung der Windows-Runtime XAML-Implementierung besteht darin, dass Sie keine benutzerdefinierte angefügte Eigenschaft animieren können.
 
-- Wenn Sie eine angefügte Eigenschaft als Ziel Eigenschaft für einen Ressourcen Verweis aus einer Ressourcen Datei auf " **x:UID**" angeben möchten, **verwenden Sie eine** spezielle Syntax, die eine voll qualifizierte Codeformat-Deklaration in eckigen Klammern ("\[ @ no__t-3") in einfügt. Erstellen Sie einen absichtlichen Bereichs Umbruch. Wenn beispielsweise ein Element `<TextBlock x:Uid="Title" />` vorhanden ist, lautet der Ressourcen Schlüssel in der Ressourcen Datei, der den **Canvas. Top** -Wert für diese Instanz verwendet, "Title. \[using: Windows.UI.XAML.Controls\]Canvas.Top". Weitere Informationen zu Ressourcen Dateien und XAML finden Sie unter [quick Start: Übersetzen von UI-Ressourcen @ no__t-0.
+- Wenn Sie eine angefügte Eigenschaft als Ziel Eigenschaft für einen Ressourcen Verweis aus einer Ressourcen Datei auf **x:UID**festlegen möchten, verwenden Sie eine spezielle Syntax, die eine Code-Format-Deklaration, voll qualifizierte **using:** -Deklaration in eckigen Klammern ("\[\]"), einfügt, um einen absichtlichen Bereichs Umbruch zu erstellen. Wenn beispielsweise ein Element `<TextBlock x:Uid="Title" />`vorhanden ist, lautet der Ressourcen Schlüssel in der Ressourcen Datei, der den **Canvas. Top** -Wert für diese Instanz als Ziel hat, "Title".\[mithilfe von: Windows. UI. XAML. Controls\]Canvas. Top ". Weitere Informationen zu Ressourcendateien und XAML finden Sie unter [Schnellstart: Übersetzen von UI-Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)).
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [Benutzerdefinierte angefügte Eigenschaften](custom-attached-properties.md)
 - [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md)
 - [Definieren von Layouts mit XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-- [Schnellstart: Übersetzen von UI-Ressourcen @ no__t-0
+- [Schnellstart: Übersetzen von UI-Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh943060(v=win.10))
 - [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.getvalue)

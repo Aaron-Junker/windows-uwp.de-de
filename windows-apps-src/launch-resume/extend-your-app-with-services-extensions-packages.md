@@ -82,7 +82,7 @@ Optionale Pakete dienen entweder der Ergänzung oder Erweiterung der Originalfun
 
 **App-Erweiterung**
 
-Durch [App-Erweiterungen](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) kann Ihre UWP-App Inhalte hosten, die von anderen UWP-Apps bereitgestellt werden. Sie können auf schreibgeschützte Inhalte dieser Apps zugreifen sowie diese ermitteln und enumerieren.
+Durch [App-Erweiterungen](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) kann Ihre UWP-App Inhalte hosten, die von anderen UWP-Apps bereitgestellt werden. Sie können schreibgeschützte Inhalte dieser Apps ermitteln und enumerieren und darauf zugreifen.
 
 Wenn eine App Erweiterungen unterstützt, kann jeder beliebige Entwickler Erweiterungen für diese App übermitteln. Daher bedarf es einer soliden Host-App, um Erweiterungen zu laden, die zuvor nicht mit dieser getestet wurde. Erweiterungen sollten als nicht vertrauenswürdig eingestuft werden.
 

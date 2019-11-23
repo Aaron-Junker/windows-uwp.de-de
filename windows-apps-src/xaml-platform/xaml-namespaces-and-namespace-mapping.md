@@ -4,7 +4,7 @@ title: XAML-Namespaces und Namespacezuordnung
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1da466cf12a8a5f959af7e863f7a300f3c713961
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -49,32 +49,32 @@ Die Beziehung zwischen diesen Deklarationen ist, dass XAML eine Sprachdefinition
 
 Die XAML-Sprache gibt bestimmte Sprachelemente an, und jedes dieser Elemente sollte über XAML-Verarbeitungsimplementierungen verfügbar sein und für den XAML-Namespace arbeiten. Auf die „x:“-Zuordnungskonvention für den XAML-Sprach-XML-Namespace folgen Projektvorlagen, Beispielcode und die Dokumentation für Sprachfunktionen. Der XAML-Sprachnamespace definiert verschiedene häufig verwendete Funktionen, die selbst für einfache Windows-Runtime-Apps mit C++, C# oder Visual Basic erforderlich sind. Soll z. B. CodeBehind durch eine partielle Klasse einer XAML-Datei hinzugefügt werden, muss die jeweilige Klasse im Stammelement der relevanten XAML-Datei als [x:Class-Attribut](x-class-attribute.md) benannt werden. Oder: In einem beliebigen per XAML-Seite als Schlüsselressource definierten Element in einem [ResourceDictionary- und XAML-Ressourcenverweis](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references) muss das [x:Key-Attribut](x-key-attribute.md) auf das relevante Objektelement festgelegt sein.
 
-## <a name="code-namespaces-that-map-to-the-default-xaml-namespace"></a>Code namespaces that map to the default XAML namespace
+## <a name="code-namespaces-that-map-to-the-default-xaml-namespace"></a>Codenamespaces, die dem XAML-Standard Namespace zugeordnet sind.
 
-The folowing is a list of code namespaces that are currently mapped to the default XAML namespace.
+Die foldue-Liste ist eine Liste von codenamespaces, die derzeit dem standardmäßigen XAML-Namespace zugeordnet sind.
 
 * Windows.UI
 * Windows.UI.Xaml
 * Windows.UI.Xaml.Automation
-* Windows.UI.Xaml.Automation.Peers
-* Windows.UI.Xaml.Automation.Provider
-* Windows.UI.Xaml.Automation.Text
-* Windows.UI.Xaml.Controls
+* Windows. UI. XAML. Automation. Peers
+* Windows. UI. XAML. Automation. Provider
+* Windows. UI. XAML. Automation. Text
+* Windows. UI. XAML. Controls
 * Windows.UI.Xaml.Controls.Primitives
-* Windows.UI.Xaml.Data
-* Windows.UI.Xaml.Documents
+* Windows. UI. XAML. Data
+* Windows. UI. XAML. Documents
 * Windows.UI.Xaml.Input
-* Windows.UI.Xaml.Interop
-* Windows.UI.Xaml.Markup
+* Windows. UI. XAML. Interop
+* Windows. UI. XAML. Markup
 * Windows.UI.Xaml.Media
 * Windows.UI.Xaml.Media.Animation
-* Windows.UI.Xaml.Media.Imaging
+* Windows. UI. XAML. Media. Imaging
 * Windows.UI.Xaml.Media.Media3D
 * Windows.UI.Xaml.Navigation
-* Windows.UI.Xaml.Resources
+* Windows. UI. XAML. Resources
 * Windows.UI.Xaml.Shapes
-* Windows.UI.Xaml.Threading
-* Windows.UI.Text
+* Windows. UI. XAML. Threading
+* Windows. UI. Text
 
 <span id="other-XAML-namespaces"/>
 
@@ -88,13 +88,13 @@ Der XAML-Namespace „d:“ soll der Designerunterstützung dienen, speziell der
 
 -   **Attribute „d:DesignHeight“ und „d:DesignWidth“:** Diese Attribute werden gelegentlich auf den Stamm der XAML-Datei angewendet, die von Visual Studio oder einer anderen XAML-Designeroberfläche erstellt wird. Beispielsweise werden diese Attribute am [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)-Stamm des XAML festgelegt, das beim Hinzufügen eines neuen **UserControl** zu Ihrem App-Projekt erstellt wird. Diese Attribute vereinfachen das Entwerfen der Zusammensetzung des XAML-Inhalts, sodass Sie bereits im Voraus die Layoutbeschränkungen berücksichtigen können, die u. U. vorhanden sind, sobald der XAML-Inhalt für eine Steuerelementinstanz oder einen anderen Teil einer größeren UI-Seite verwendet wird.
 
-   **Note**  If you are migrating XAML from Microsoft Silverlight you might have these attributes on root elements that represent an entire UI page. In diesem Fall wird empfohlen, die Attribute zu entfernen. Andere Features des XAML-Designers wie der Simulator eignen sich wahrscheinlich besser zum Entwerfen von Seitenlayouts für die Verarbeitung von Skalierungen und Ansichtszuständen als ein Seitenlayout mit fester Größe mit **d:DesignHeight** und **d:DesignWidth**.
+   **Hinweis**  Wenn Sie XAML von Microsoft Silverlight migrieren, verfügen Sie möglicherweise über diese Attribute für Stamm Elemente, die eine gesamte UI-Seite darstellen. In diesem Fall wird empfohlen, die Attribute zu entfernen. Andere Features des XAML-Designers wie der Simulator eignen sich wahrscheinlich besser zum Entwerfen von Seitenlayouts für die Verarbeitung von Skalierungen und Ansichtszuständen als ein Seitenlayout mit fester Größe mit **d:DesignHeight** und **d:DesignWidth**.
 
--   **d:DataContext-Attribut:** Sie können dieses Attribut für einen Seitenstamm oder ein Steuerelement festlegen, um alle expliziten oder geerbten [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)-Elemente zu überschreiben, die das Objekt ansonsten aufweist.
+-   **d:DataContext-Attribut:** Sie können dieses Attribut an einem Seitenstamm oder einem Steuerelement festlegen, um alle expliziten oder geerbten [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)-Elemente zu überschreiben, die das Objekt ansonsten hat.
 -   **d:DesignSource-Attribut:** Gibt eine Entwurfszeit-Datenquelle für [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) an, die [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.collectionviewsource.source) überschreibt.
 -   **Markuperweiterungen „d:DesignInstance“ und „d:DesignData“:** Diese Markuperweiterungen werden verwendet, um die Entwurfszeit-Datenressourcen für **d:DataContext** oder **d:DesignSource** bereitzustellen. Die Verwendung von Designzeit-Datenressourcen wird hier nicht vollständig erläutert. Weitere Informationen finden Sie unter [Entwurfszeitattribute](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx). Einige Verwendungsbeispiele finden Sie unter [Beispieldaten für die Entwurfsoberfläche und Prototyperstellung](https://docs.microsoft.com/windows/uwp/data-binding/displaying-data-in-the-designer).
 
-### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
+### <a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>**MC: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
 „mc:“ gibt einen Markupkompatibilitätsmodus zum Lesen von XAML an und unterstützt diesen. In der Regel gehört das „d:“-Präfix zum Attribut **mc:Ignorable**. Diese Methode ermöglicht es Laufzeit-XAML-Parsern, die Designattribute in „d:“ zu ignorieren.
 
@@ -102,7 +102,7 @@ Der XAML-Namespace „d:“ soll der Designerunterstützung dienen, speziell der
 
 „local:ׅ“ ist ein Präfix, das häufig innerhalb der XAML-Seiten für ein vorlagenbasiertes UWP-App-Projekt zugeordnet wird. Es wird so zugeordnet, dass es auf denselben Namespace verweist, der erstellt wird, um das [x:Class-Attribut](x-class-attribute.md) und den Code für alle XAML-Dateien aufzunehmen, einschließlich app.xaml. Wenn Sie benutzerdefinierte Klassen für die Verwendung in XAML in diesem Namespace definieren, können Sie mit dem Präfix **local:** auf Ihre benutzerdefinierten Typen in XAML verweisen. Ein zugehöriges Präfix, dass aus einem vorlagenbasierten UWP-Projekt stammt, ist **common:** . Dieses Präfix verweist auf einen geschachtelten „Common“-Namespace, der Hilfsklassen wie z. B. Konverter und Befehle enthält. Die Definitionen finden Sie im Ordner „Common“ in der **Projektmappen-Explorer**-Ansicht.
 
-### <a name="vsm"></a>**vsm:**
+### <a name="vsm"></a>**VSM**
 
 Nicht verwenden. „vsm:“ ist ein Präfix, das manchmal in älteren XAML-Vorlagen auftaucht, die aus anderen Microsoft-Technologien importiert wurden. Der Namespace diente ursprünglich der Behebung eines Toolproblems mit älteren Namespaces. Sie sollten XAML-Namespacedefinitionen für „vsm:“ im gesamten XAML-Code löschen, den Sie für die Windows-Runtime verwenden. Zudem sollten Sie alle Präfixverwendungen für [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState), [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) und zugehörige Objekte so ändern, dass stattdessen der Standard-XAML-Namespace verwendet wird. Weitere Informationen zur XAML-Migration finden Sie unter [Migrieren von Silverlight- oder WPF-XAML-Code in eine Windows-Runtime-App](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10)).
 
@@ -137,9 +137,9 @@ Wenn Sie auf angefügte Eigenschaften verweisen, muss der Besitzer-Typ-Teil der 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Übersicht über XAML](xaml-overview.md)
-* [XAML syntax guide](xaml-syntax-guide.md)
-* [Creating Windows Runtime components in C# and Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-* [C#, VB, and C++ project templates for Windows Runtime apps](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
-* [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))
+* [Leitfaden zur XAML-Syntax](xaml-syntax-guide.md)
+* [Erstellen von Windows-Runtime Komponenten C# in und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
+* [C#, VB und Projekt C++ Vorlagen für Windows-Runtime-apps](https://docs.microsoft.com/previous-versions/windows/apps/hh768232(v=win.10))
+* [Migrieren von Silverlight-oder WPF-XAML/-Code zu einer Windows-Runtime-App](https://docs.microsoft.com/previous-versions/windows/apps/br229571(v=win.10))
  
 

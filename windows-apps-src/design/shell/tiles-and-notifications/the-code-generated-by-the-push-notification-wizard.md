@@ -5,7 +5,7 @@ ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a91052adf29e6628ad70c1c004fdbaabe671d62
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>Registrierung für Pushbenachrichtigungen
 
 
-In push.register.\*, the UploadChannel method registers the device to receive push notifications. Vom Store werden die installierten Instanzen Ihrer App nachverfolgt, und der Kanal für Pushbenachrichtigungen wird bereitgestellt. Siehe [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
+In Push. Register.\*registriert die uploadchannel-Methode das Gerät für den Empfang von Pushbenachrichtigungen. Vom Store werden die installierten Instanzen Ihrer App nachverfolgt, und der Kanal für Pushbenachrichtigungen wird bereitgestellt. Siehe [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
 
 Der Client-Code ist für das JavaScript-Back-End und .NET-Back-End identisch. Beim Hinzufügen von Pushbenachrichtigungen zu einem JavaScript-Back-End-Dienst wird eine benutzerdefinierte API zum NotifyAllUsers-Aufruf in der UploadChannel-Methode eingefügt.
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 Von der sendNotifications-Funktion wird eine einzelne Benachrichtigung als Popupbenachrichtigung gesendet. Sie können auch andere Arten von Pushbenachrichtigungen verwenden.
 
-**Tip**  For information about how to get help while editing scripts, see [Enabling IntelliSense for server-side JavaScript](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx).
+**Tip**  Informationen zum erhalten von Hilfe beim Bearbeiten von Skripts finden Sie unter [Aktivieren von IntelliSense für serverseitiges JavaScript](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx).
 
  
 
@@ -233,7 +233,7 @@ Sie können den Windows-Pushbenachrichtigungsdienst (WNS) auch direkt aufrufen, 
 
 Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Dienst eine geplante Aufgabe ausführen. Weitere Informationen finden Sie unter [Planen von wiederkehrenden Aufträgen in Mobile Services](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/).
 
-**Warning**  Once you've run the push notification wizard once, don't run the wizard a second time to add registration code for another mobile service. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. For example, you can accomplish this by moving the wizard-generated code in push.register.\* (including the call to **CreatePushNotificationChannelForApplicationAsync**) outside of the OnLaunched event, but the specifics of this will depend on your app's architecture.
+**Warnung**  Wenn Sie den Assistenten für Pushbenachrichtigungen einmal ausgeführt haben, führen Sie den Assistenten nicht ein zweites Mal aus, um den Registrierungscode für einen anderen mobilen Dienst hinzuzufügen. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. Beispielsweise können Sie dies erreichen, indem Sie den vom Assistenten generierten Code in Push. Register verschieben.\* (einschließlich des Aufrufes " **foratepushnotificationchannelforapplicationasync**") außerhalb des OnCreated-Ereignisses, aber die Besonderheiten dieser sind von der Architektur Ihrer APP abhängig.
 
  
 
@@ -242,9 +242,9 @@ Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Diens
 
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 * [Übersicht über unformatierte Benachrichtigungen](raw-notification-overview.md)
-* [Connecting to Windows Azure Mobile Services (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [Connecting to Windows Azure Mobile Services (C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [Quickstart: Adding push notifications for a mobile service (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [Herstellen einer Verbindung mit Windows Azure Mobile Services (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [Herstellen einer Verbindung mit Windows AzureC#Mobile ServicesC++(//VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [Schnellstart: Hinzufügen von Pushbenachrichtigungen für einen mobilen Dienst (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

@@ -18,7 +18,7 @@ ms.locfileid: "71340454"
 
 Gibt im XAML-Markup einen **NULL**-Wert für eine Eigenschaft an.
 
-## <a name="xaml-attribute-usage"></a>XAML-Attributsyntax
+## <a name="xaml-attribute-usage"></a>XAML-Attributverwendung
 
 ``` syntax
 <object property="{x:Null}" .../>
@@ -30,11 +30,11 @@ Gibt im XAML-Markup einen **NULL**-Wert für eine Eigenschaft an.
 
 Der anfängliche Standardwert kann zwischen Abhängigkeitseigenschaften variieren und ist nicht unbedingt **null**. Viele Abhängigkeitseigenschaften akzeptieren **null** außerdem aufgrund ihrer internen Implementierung nicht als Wert (weder per Markup noch per Code). In einem solchen Fall tritt unter Umständen eine Analyseausnahme auf, wenn ein XAML-Attributwert mit **{x:Null}** festgelegt wird.
 
-Einige Windows-Runtime-Typen akzeptieren NULL-Werte. Sollte bei einem Typ, der NULL-Werte akzeptiert, **null** nicht bereits als Standardwert festgelegt sein, können Sie **{x:Null}** in XAML verwenden, um den **NULL**-Wert festzulegen. Bei Verwendung von C++ Visual Component ExtensionsC++(/CX) werden Werte zulässt-Typen als [Platform:: iBox @ no__t-4](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface)dargestellt. In Microsoft .NET-Sprachen werden Typen, die NULL-Werte akzeptieren, mit [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1) angegeben.
+Einige Windows-Runtime-Typen akzeptieren NULL-Werte. Sollte bei einem Typ, der NULL-Werte akzeptiert, **null** nicht bereits als Standardwert festgelegt sein, können Sie **{x:Null}** in XAML verwenden, um den **NULL**-Wert festzulegen. Wenn Sie Visual C++ Component Extensions (C++/CX) verwenden, werden Werte zulässt-Typen als [**Platform:: iBox-<T>** ](https://docs.microsoft.com/cpp/cppcx/platform-ibox-interface)dargestellt. In Microsoft .NET-Sprachen werden Typen, die NULL-Werte akzeptieren, mit [**Nullable<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1) angegeben.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [**Nullable @ no__t-2**](https://docs.microsoft.com/dotnet/api/system.nullable-1)
-* [**IReference @ no__t-2**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
+* [**NULL-Werte zulassen<T>** ](https://docs.microsoft.com/dotnet/api/system.nullable-1)
+* [**IReference-<T>** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IReference_T_)
  
 

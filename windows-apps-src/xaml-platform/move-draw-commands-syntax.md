@@ -22,7 +22,7 @@ Informieren Sie sich über die Verschieben- und Zeichnen-Befehle (eine Minisprac
 
 Die Syntax für die Verschieben- und Zeichnen-Befehle wird von einem internen Typkonverter für XAML verwendet, der die Befehle analysiert und eine Laufzeit-Grafikdarstellung erzeugt. Diese Darstellung ist im Grunde ein fertiger Satz von Vektoren, die zur Anzeige bereit sind. Mit den Vektoren selbst sind die Darstellungsdetails noch nicht vollständig. Sie müssen weitere Werte für die Elemente festlegen. Für ein [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)-Objekt benötigen Sie auch Werte für [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill), [**Stroke**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.shape.stroke) und andere Eigenschaften. Anschließend muss der **Path** mit der visuellen Struktur verbunden werden. Für ein [**PathIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PathIcon)-Objekt legen Sie die [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.iconelement.foreground)-Eigenschaft fest.
 
-Die Windows-Runtime enthält zwei Eigenschaften, die eine Zeichenfolge verwenden können, die Verschiebe-und Zeichnungs Befehle darstellt: [**Path. Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) und " [**pthicon. Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.data)". Wenn Sie eine dieser Eigenschaften festlegen, indem Sie Verschieben- und Zeichnen-Befehle angeben, legen Sie dafür in der Regel einen XAML-Attributwert sowie weitere erforderliche Attribute dieses Elements fest. Ohne auf die Einzelheiten einzugehen, sieht das Ganze so aus:
+Die Windows-Runtime enthält zwei Eigenschaften, die eine Zeichenfolge verwenden können, die Verschieben- und Zeichnen-Befehle darstellt: [**Path.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.path.data) und [**PathIcon.Data**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon.data). Wenn Sie eine dieser Eigenschaften festlegen, indem Sie Verschieben- und Zeichnen-Befehle angeben, legen Sie dafür in der Regel einen XAML-Attributwert sowie weitere erforderliche Attribute dieses Elements fest. Ohne auf die Einzelheiten einzugehen, sieht das Ganze so aus:
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
@@ -33,7 +33,7 @@ Die Windows-Runtime enthält zwei Eigenschaften, die eine Zeichenfolge verwenden
 
 ## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>Verwenden von Verschieben- und Zeichnen-Befehlen oder einer **PathGeometry**-Klasse
 
-Für Windows-Runtime-XAML erzeugen die Verschieben- und Zeichnen-Befehle eine [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Klasse mit einem einzigen [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure)-Objekt, das über einen [**Figures**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures)-Eigenschaftswert verfügt. Jeder Zeichnen-Befehl erzeugt eine von der [**PathSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathSegment)-Klasse abgeleitete Klasse in der [**Segments**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments)-Collection dieses einen **PathFigure**-Objekts. Der Verschieben-Befehl ändert die [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.startpoint)-Eigenschaft. Zudem wird durch das Vorhandensein eines Schließen-Befehls [**IsClosed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) auf **true** festgelegt. In dieser Struktur können Sie dann wie in einem Objektmodell navigieren, wenn Sie zur Laufzeit die **Data**-Werte untersuchen.
+Für Windows-Runtime-XAML erzeugen die Verschieben- und Zeichnen-Befehle eine [**PathGeometry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathGeometry)-Klasse mit einem einzigen [**PathFigure**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathFigure)-Objekt, das über einen [**Figures**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathgeometry.figures)-Eigenschaftswert verfügt. Jeder Zeichnen-Befehl erzeugt eine von der [**PathSegment**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PathSegment)-Klasse abgeleitete Klasse in derSegments[ **-Collection dieses einen** PathFigure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.segments)-Objekts. Der Verschieben-Befehl ändert die [**StartPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.startpoint)-Eigenschaft. Zudem wird durch das Vorhandensein eines Schließen-Befehls [**IsClosed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) auf **true** festgelegt. In dieser Struktur können Sie dann wie in einem Objektmodell navigieren, wenn Sie zur Laufzeit die **Data**-Werte untersuchen.
 
 ## <a name="the-basic-syntax"></a>Grundlegende Syntax
 
@@ -51,9 +51,9 @@ Allgemeine Regeln für diese Syntax:
 -   Auf jeden Befehl mit Ausnahme des Schließen-Befehls folgt normalerweise mindestens eine Zahl.
 -   Wenn Sie für einen Befehl mehrere Zahlen angeben, trennen Sie diese durch Komma oder Leerzeichen.
 
-**\[** _FillRule_ **\]** _muvecommand_ _drawcommand_ **\[** _drawcommand_**1 @ no__t-12** **4**_CloseCommand_**7**
+**\[** _FillRule_ **\]** " **\[** _drawcommand_ "-\*\] **\[** _CloseCommand_ - **\]**
 
-Viele der Zeichnen-Befehle verwenden Punkte, für die Sie einen _x,y_-Wert angeben. Wenn ein Platzhalter für \*-_Punkte_ angezeigt wird, können Sie davon ausgehen, dass Sie zwei Dezimalwerte für den _x-, y_ -Wert eines Punkts erhalten.
+Viele der Zeichnen-Befehle verwenden Punkte, für die Sie einen _x,y_-Wert angeben. Wenn ein Platzhalter für \*_Punkte_ angezeigt wird, können Sie davon ausgehen, dass Sie zwei Dezimalwerte für den _x-, y_ -Wert eines Punkts erhalten.
 
 Leerzeichen können bei eindeutigen Ergebnissen häufig weggelassen werden. Tatsächlich können Sie alle Leerzeichen weglassen, wenn Sie Kommas als Trennzeichen für alle Zahlengruppen (Punkte und Größe) verwenden. Diese Verwendung ist zum Beispiel gültig: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`. Typischer ist allerdings die Verwendung von Leerzeichen zwischen Befehlen, um die Übersichtlichkeit zu verbessern.
 
@@ -63,7 +63,7 @@ Verwenden Sie als Dezimalzeichen für Dezimalzahlen kein Komma. Die Befehlszeich
 
 **Füllregel**
 
-Für die optionale Füllregel gibt es zwei mögliche Werte: **F0** oder **F1**. ( **F** ist immer Großbuchstaben.) **F0** ist der Standardwert. Sie erzeugt das **EvenOdd** -Füllverhalten, sodass Sie es in der Regel nicht angeben. Verwenden Sie **F1**, um das Füllverhalten für **Nonzero** abzurufen. Diese Füllwerte sind an die Werte der [**FillRule**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.FillRule)-Aufzählung angepasst.
+Es gibt zwei mögliche Werte für die optionale Füllregel: **F0** oder **F1**. (Das **F** wird immer großgeschrieben.) **F0** ist der Standardwert. Er erzeugt das **EvenOdd**-Füllverhalten, sodass Sie dieses normalerweise nicht angeben. Verwenden Sie **F1**, um das Füllverhalten für **Nonzero** abzurufen. Diese Füllwerte sind an die Werte der [**FillRule**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.FillRule)-Aufzählung angepasst.
 
 **Move-Befehl**
 
@@ -71,7 +71,7 @@ Gibt den Anfangspunkt einer neuen Figur an.
 
 | Syntax |
 |--------|
-| `M `- _Startpunkt_ <br/>- Oder -<br/>`m`- _Startpunkt_|
+| `M ` _StartPoint_ <br/>- Oder -<br/>`m` _StartPoint_|
 
 | Begriff | Beschreibung |
 |------|-------------|
@@ -79,7 +79,7 @@ Gibt den Anfangspunkt einer neuen Figur an.
 
 Der Großbuchstabe **M** gibt an, dass *startPoint* eine absolute Koordinate ist. Der Kleinbuchstabe **m** gibt an, dass *startPoint* ein Offset zum vorherigen Punkt ist. Wenn kein vorheriger Punkt vorhanden ist, wird (0,0) angegeben.
 
-**Beachten Sie**  ites zulässig ist, um nach dem Move-Befehl mehrere Punkte anzugeben. Es wird eine Linie zu diesen Punkten gezeichnet, als hätten Sie den Linienbefehl angegeben. Dieser Stil wird aber nicht empfohlen, verwenden Sie stattdessen den speziellen Linienbefehl.
+**Beachten Sie**  es zulässig ist, nach dem Move-Befehl mehrere Punkte anzugeben. Es wird eine Linie zu diesen Punkten gezeichnet, als hätten Sie den Linienbefehl angegeben. Dieser Stil wird aber nicht empfohlen, verwenden Sie stattdessen den speziellen Linienbefehl.
 
 **Zeichnen von Befehlen**
 
@@ -145,7 +145,7 @@ Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem ang
 
 | Syntax |
 |--------|
-| `Q `- *ControlPoint-Endpunkt* <br/> - Oder - <br/> `q `- *ControlPoint-Endpunkt* |
+| `Q ` *ControlPoint-Endpunkt* <br/> - Oder - <br/> `q ` *ControlPoint-Endpunkt* |
 
 | Begriff | Beschreibung |
 |------|-------------|
@@ -158,7 +158,7 @@ Erstellt eine kubische Bézierkurve zwischen dem aktuellen Punkt und dem angegeb
 
 | Syntax |
 |--------|
-| `S` *controlPoint2* *Endpunkt* <br/> - Oder - <br/>`s` *controlPoint2 Endpunkt* |
+| `S` *controlPoint2* - *Endpunkt* <br/> - Oder - <br/>`s` *controlPoint2-Endpunkt* |
 
 | Begriff | Beschreibung |
 |------|-------------|
@@ -171,7 +171,7 @@ Erstellt eine quadratische Bézierkurve zwischen dem aktuellen Punkt und dem ang
 
 | Syntax |
 |--------|
-| `T`- *ControlPoint* - *Endpunkt* <br/> - Oder - <br/> `t`- *ControlPoint* - *Endpunkt* |
+| `T` *ControlPoint* - *Endpunkt* <br/> - Oder - <br/> `t` *ControlPoint* - *Endpunkt* |
 
 | Begriff | Beschreibung |
 |------|-------------|
@@ -184,7 +184,7 @@ Erstellt einen Ellipsenbogen zwischen dem aktuellen Punkt und dem angegebenen En
 
 | Syntax |
 |--------|
-| `A `- *Größe* *RotationAngle* *islargearcflag* *sweepdirectionflag* - *Endpunkt* <br/> - Oder - <br/>`a ` *sizerotationangleislargearcflagsweepdirectionflagendpoint* |
+| `A ` *Größe* von *RotationAngle* *islargearcflag* *sweepdirectionflag* - *Endpunkt* <br/> - Oder - <br/>`a ` *sizerotationangleislargearcflagsweepdirectionflagendpoint* |
 
 | Begriff | Beschreibung |
 |------|-------------|
@@ -219,9 +219,9 @@ Beschreibt die x-Koordinate und y-Koordinate eines Punkts. Weitere Informationen
 
 Anstelle eines standardmäßigen numerischen Werts können Sie auch die folgenden speziellen Werte verwenden. Bei diesen Werten wird zwischen Groß-/Kleinschreibung unterschieden.
 
--   **Unendlich**: Stellt **positivanfinity**dar.
--   **\-unendlich**: Stellt **negativanfinity**dar.
--   **NaN**: Stellt **NaN**dar.
+-   **Infinity**: repräsentiert **PositiveInfinity**.
+-   **\-unendlich**: stellt **negativanfinity**dar.
+-   **NaN**: repräsentiert **NaN**.
 
 Anstelle von Dezimalzahlen oder Ganzzahlen können Sie die wissenschaftliche Notation verwenden. `+1.e17` ist zum Beispiel ein gültiger Wert.
 

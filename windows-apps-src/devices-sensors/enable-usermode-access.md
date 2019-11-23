@@ -26,7 +26,7 @@ Benutzermoduszugriff auf Low-Level-Busse unter Windows wird über die vorhandene
 
 ## <a name="asl-by-example"></a>ASL anhand eines Beispiels
 
-Betrachten wir die rhproxy-Geräteknotendeklaration auf Raspberry Pi 2. Erstellen Sie zunächst die ACPI-Geräte Deklaration im Bereich "@no__t -0 _Sb".
+Betrachten wir die rhproxy-Geräteknotendeklaration auf Raspberry Pi 2. Erstellen Sie zunächst die ACPI-Geräte Deklaration im Bereich \\_Sb.
 
 ```cpp
 Device(RHPX)
@@ -37,9 +37,9 @@ Device(RHPX)
 }
 ```
 
-* _HID – Hardware-ID. Legen Sie hier eine herstellerspezifische Hardware-ID fest.
-* _CID – Kompatible ID. Muss „MSFT8000“ sein.
-* _UID – Eindeutige ID. Legen Sie den Wert auf 1 fest.
+* _HID – Hardware Id. Legen Sie hier eine herstellerspezifische Hardware-ID fest.
+* _CID – Compatible Id. Muss “MSFT8000” sein.
+* _UID – Eindeutige ID. Auf 1 festlegen.
 
 Als Nächstes deklarieren wir alle GPIO- und SPB-Ressourcen, die für den Benutzermodus verfügbar gemacht werden soll. Die Reihenfolge, in der Ressourcen deklariert werden, ist wichtig, da Ressourcenindizes verwendet werden, um Ressourcen Eigenschaften zuordnen. Sind mehrere I2C- oder SPI-Busse verfügbar gemacht, gilt der erste deklarierte Bus als „Standard“-Bus für diesen Typ und ist die Instanz, die durch die `GetDefaultAsync()`-Methoden der [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) und [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) zurückgegeben wird.
 
@@ -254,10 +254,10 @@ Die SupportedDriveModes-Eigenschaft gibt an, welche Laufwerkmodi vom GPIO-Contro
 
 | Flagwert | Laufwerkmodus | Beschreibung |
 |------------|------------|-------------|
-| 0x1        | InputHighImpedance | Der Pin unterstützt eine hohe Impedanzeingabe, die dem Wert „PullNone“ in ACPI entspricht. |
+| 0 x 1        | InputHighImpedance | Der Pin unterstützt eine hohe Impedanzeingabe, die dem Wert „PullNone“ in ACPI entspricht. |
 | 0x2        | InputPullUp | Der Pin unterstützt einen integrierten Pull-Up-Widerstand, der dem Wert „PullUp“ in ACPI entspricht. |
-| 0x4        | InputPullDown | Der Pin unterstützt einen integrierten Pull-Down-Widerstand, der dem Wert „PullDown“ in ACPI entspricht. |
-| 0x8        | OutputCmos | Der Pin unterstützt sowohl die Generierung von starken Höhen als auch die von starken Tiefen (im Gegensatz zu einem offenen Ausgleich). |
+| 0 x 4        | InputPullDown | Der Pin unterstützt einen integrierten Pull-Down-Widerstand, der dem Wert „PullDown“ in ACPI entspricht. |
+| 0 x 8        | OutputCmos | Der Pin unterstützt sowohl die Generierung von starken Höhen als auch die von starken Tiefen (im Gegensatz zu einem offenen Ausgleich). |
 
 InputHighImpedance und OutputCmos werden von fast allen GPIO-Controllern unterstützt. Wenn die SupportedDriveModes-Eigenschaft nicht angegeben wird, ist dies die Standardeinstellung.
 
@@ -288,7 +288,7 @@ Wählen Sie das Schema für die Nummerierung, das am kompatibelsten mit der ver�
 
 #### <a name="gpio-driver-requirements"></a>GPIO-Treiberanforderungen
 
-* Muss `GpioClx` verwendet werden.
+* Muss `GpioClx`
 * Müssen auf SOC-Speicher zugeordnet werden
 * Müssen emulierte ActiveBoth-Interruptbehandlung verwenden
 
@@ -553,7 +553,7 @@ Wenn ein Client eine Muxing-Ressource nicht länger benötigt, wird das Handle g
 
 ### <a name="authoring-guidelines-for-acpi-tables"></a>Richtlinien für das Erstellen von ACPI-Tabellen
 
-In diesem Abschnitt wird beschrieben, wie Muxing-Ressourcen Clienttreibern bereitgestellt werden. Beachten Sie, dass Sie Microsoft ASL Compiler Build 14327 oder höher zum Kompilieren von Tabellen mit `MsftFunctionConfig()`-Ressourcen benötigen. zum Anheften von Clients als Hardware Ressourcen werden `MsftFunctionConfig()`-Ressourcen bereitgestellt. `MsftFunctionConfig()`-Ressourcen sollten für Treiber bereitgestellt werden, die PIN-muxing-Änderungen erfordern, bei denen es sich in der Regel um SPB-und serielle Controller Treiber handelt. Sie sollten jedoch nicht für SPB-und serielle Peripherie-Treiber bereitgestellt werden, da der Controller Treiber die muxing
+In diesem Abschnitt wird beschrieben, wie Muxing-Ressourcen Clienttreibern bereitgestellt werden. Beachten Sie, dass Sie Microsoft ASL Compiler Build 14327 oder höher zum Kompilieren von Tabellen mit `MsftFunctionConfig()`-Ressourcen benötigen. zum Anheften von Clients als Hardware Ressourcen werden `MsftFunctionConfig()` Ressourcen bereitgestellt. `MsftFunctionConfig()` Ressourcen sollten für Treiber bereitgestellt werden, für die PIN-Änderungen erforderlich sind, bei denen es sich normalerweise um SPB-und serielle Controller Treiber handelt, die jedoch nicht für SPB-und serielle Peripherietreiber bereitgestellt werden sollen, da der Controller Treiber die muxing-Konfiguration verarbeitet
 Das `MsftFunctionConfig()`-ACPI-Makro wird wie folgt definiert:
 
 ```cpp
@@ -605,7 +605,7 @@ Device(I2C1)
 }
 ```
 
-Zusätzlich zum Arbeitsspeicher und den Interruptressourcen, die normalerweise von einem Controllertreiber benötigt werden, wird eine `MsftFunctionConfig()`-Ressource ebenfalls angegeben. Diese Ressource ermöglicht dem I2C-Controller Treiber das Platzieren von Pins 2 und 3 durch den Geräteknoten unter @no__t -0 _Sb. GPIO0 – in Funktion 4, bei der der pullaufziehungspunkt aktiviert ist.
+Zusätzlich zum Arbeitsspeicher und den Interruptressourcen, die normalerweise von einem Controllertreiber benötigt werden, wird eine `MsftFunctionConfig()`-Ressource ebenfalls angegeben. Diese Ressource ermöglicht dem I2C-Controller Treiber das Platzieren von Pins 2 und 3 durch den Geräteknoten auf \\_Sb. GPIO0 – in Funktion 4, bei der der pullaufziehungspunkt aktiviert ist.
 
 ## <a name="supporting-muxing-support-in-gpioclx-client-drivers"></a>Unterstützen der Muxing-Unterstützung im GpioClx-Clienttreiber
 
@@ -633,11 +633,11 @@ Das folgende Diagramm zeigt die Abhängigkeiten zwischen den einzelnen Komponent
 
 Bei Gerätinitialisierung analysieren die `SpbCx`- und `SerCx`-Frameworks alle `MsftFunctionConfig()`-Ressourcen, die dem Gerät als Hardwareressourcen bereitgestellt werden. SpbCx/SerCx erwerben dann Pin-Muxing-Ressourcen bzw. geben diese bei Bedarf frei.
 
-`SpbCx` wendet die Konfiguration der PIN-muxing in seinem *IRP_MJ_CREATE* -Handler an, kurz bevor der [evtspbtargetconnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) -Rückruf des Client Treibers aufgerufen wird. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
+`SpbCx` wendet die PIN-muxing-Konfiguration im *IRP_MJ_CREATE* Handler an, kurz bevor der [evtspbtargetconnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_connect) -Rückruf des Client Treibers aufgerufen wird. Wenn die Muxing-Konfiguration nicht angewendet werden kann, wird der `EvtSpbTargetConnect()`-Rückruf des Controllertreibers nicht aufgerufen. Daher kann ein SPB-Controllertreiber davon ausgehen, dass Pins an die SPB-Funktion gemuxt werden, wenn `EvtSpbTargetConnect()` aufgerufen wird.
 
-`SpbCx` stellt die PIN-muxing-Konfiguration in seinem *IRP_MJ_CLOSE* -Handler wieder her, unmittelbar nach dem Aufrufen des [evtspbtargetdisconnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) -Rückrufs des Controller Treibers. Das Ergebnis ist, dass Pins an die SPB-Funktion gemuxt werden, sobald ein peripherer Treiber einen Handle für den SPB-Controllertreiber öffnet. Das Muxing wird entfernt, wenn der periphere Treiber seinen Handle schließt.
+`SpbCx` stellt die PIN-muxing-Konfiguration im *IRP_MJ_CLOSE* Handler wieder her, kurz nachdem der [evtspbtargetdisconnect ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) -Rückruf des Controller Treibers aufgerufen wurde. Das Ergebnis ist, dass Pins an die SPB-Funktion gemuxt werden, sobald ein peripherer Treiber einen Handle für den SPB-Controllertreiber öffnet. Das Muxing wird entfernt, wenn der periphere Treiber seinen Handle schließt.
 
-`SerCx` verhält sich ähnlich. `SerCx` ruft alle `MsftFunctionConfig()`-Ressourcen in seinem *IRP_MJ_CREATE* -Handler direkt vor dem Aufrufen des [EvtSerCx2FileOpen ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) -Rückrufs des Controller Treibers ab und gibt alle Ressourcen in seinem IRP_MJ_CLOSE-Handler frei, unmittelbar nach dem Aufrufen des Controllers. [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) -Rückruf des Treibers.
+`SerCx` verhält sich ähnlich. `SerCx` ruft vor dem Aufrufen des [EvtSerCx2FileOpen ()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) -Rückrufs des Controller Treibers alle `MsftFunctionConfig()` Ressourcen in seinem *IRP_MJ_CREATE* Handler ab und gibt alle Ressourcen in seinem IRP_MJ_CLOSE Handler frei, kurz nachdem der [EvtSerCx2FileClose](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) -Rückruf des Controller Treibers aufgerufen wurde.
 
 Die Auswirkung des dynamischen Pin-Muxing für `SerCx` und `SpbCx`-Controllertreiber besteht darin, dass sie Pins tolerieren müssen, bei denen das Muxing von der SPB-/UART-Funktion zu bestimmten Zeiten entfernt wird. Controllertreiber müssen wird davon ausgehen, dass Pins nicht gemuxt werden, bis `EvtSpbTargetConnect()` oder `EvtSerCx2FileOpen()` aufgerufen wird. Pins werden nicht zwangsläufig während der folgenden Rückrufe an eine SPB-/UART-Funktion gemuxt. Folgende Liste ist nicht vollständig, sie stellt jedoch die am häufigsten verwendeten PNP-Routinen dar, die von Controllertreibern implementiert werden.
 
@@ -652,7 +652,7 @@ Wenn Sie bereit sind, Rhproxy zu testen, ist die folgende schrittweise Anleitung
 
 1. Stellen Sie sicher, dass jeder `SpbCx`, `GpioClx` und `SerCx`-Controllertreiber geladen und ordnungsgemäß ausgeführt wird
 1. Stellen Sie sicher, dass `rhproxy` im System vorhanden ist In einigen Editionen und Builds von Windows ist er nicht vorhanden.
-1. Kompilieren und laden Sie Ihren rhproxy-Knoten mit `ACPITABL.dat`
+1. Kompilieren und laden Sie Ihren rhproxy-Knoten mithilfe `ACPITABL.dat`
 1. Überprüfen Sie, ob der `rhproxy`-Geräteknoten vorhanden ist.
 1. Überprüfen Sie, dass `rhproxy` geladen ist und startet
 1. Stellen Sie sicher, dass die erwarteten Geräte für den Benutzermodus verfügbar gemacht werden
@@ -701,7 +701,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-2. Herunterladen des [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) und suchen von `asl.exe` bei `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
+2. Herunterladen des [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) und suchen der `asl.exe` unter `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
 3. Führen Sie den folgenden Befehl aus, um ACPITABL.dat zu generieren:
 
 ```ps
@@ -737,14 +737,14 @@ devcon status *msft8000
 
 Wenn die Ausgabe angibt, dass rhproxy gestartet wurde, wurde rhproxy geladen und erfolgreich gestartet. Wenn ein Fehlercode angezeigt wird, müssen Sie dies untersuchen. Einige häufige Problemcodes sind:
 
-* Problem 51 – `CM_PROB_WAITING_ON_DEPENDENCY` -Das System startet rhproxy nicht, da eine der Abhängigkeiten nicht geladen wurde. Dies bedeutet, dass die Ressourcen auf rhproxy auf einen ungültigen ACPI-Knoten hinweisen, oder dass die Zielgeräte nicht gestartet wurden. Überprüfen Sie zunächst, dass alle Geräte erfolgreich ausgeführt werden (siehe 'Überprüfen Sie die Controller-Treiber' weiter oben). Überprüfen Sie dann Ihre ASL-Option, und stellen Sie sicher, dass alle Ressourcen Pfade (z. b. `\_SB.I2C1`) korrekt sind und auf gültige Knoten in Ihrem DSDT zeigen.
+* Problem 51 – `CM_PROB_WAITING_ON_DEPENDENCY` -Das System startet rhproxy nicht, da eine der Abhängigkeiten nicht geladen wurde. Dies bedeutet, dass die Ressourcen auf rhproxy auf einen ungültigen ACPI-Knoten hinweisen, oder dass die Zielgeräte nicht gestartet wurden. Überprüfen Sie zunächst, dass alle Geräte erfolgreich ausgeführt werden (siehe 'Überprüfen Sie die Controller-Treiber' weiter oben). Überprüfen Sie dann Ihre ASL, und stellen Sie sicher, dass alle Ressourcen Pfade (z. b. `\_SB.I2C1`) korrekt sind und auf gültige Knoten in Ihrem DSDT zeigen.
 * Problem 10: `CM_PROB_FAILED_START` -Rhproxy konnte nicht gestartet werden, wahrscheinlich aufgrund eines Ressourceananalyseproblems. Überprüfen Sie die ASL und Ressourceindizes in der DSD, und stellen Sie sicher, dass die GPIO-Ressourcen in zunehmender Pin-Reihenfolge angegeben werden.
 
 ### <a name="verify-that-the-expected-devices-are-exposed-to-usermode"></a>Stellen Sie sicher, dass die erwarteten Geräte für den Benutzermodus verfügbar gemacht werden
 
 Wenn rhproxy ausgeführt wird, sollte es Geräte-Schnittstellen erstellt haben, auf die vom Benutzermodus zugegriffen werden kann. Wir verwenden einige Befehlszeilentools zum Aufzählen von Geräten und sehen, ob sie vorhanden sind.
 
-Klonen Sie das Repository [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) , und erstellen Sie die Beispiele `GpioTestTool`, `I2cTestTool`, `SpiTestTool` und `Mincomm`. Kopieren Sie die Tools auf Ihr Testgerät, und verwenden Sie die folgenden Befehle zur Auflistung der Geräte.
+Klonen Sie das [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) Repository, und erstellen Sie die Beispiele für `GpioTestTool`, `I2cTestTool`, `SpiTestTool`und `Mincomm`. Kopieren Sie die Tools auf Ihr Testgerät, und verwenden Sie die folgenden Befehle zur Auflistung der Geräte.
 
 ```ps
 I2cTestTool.exe -list

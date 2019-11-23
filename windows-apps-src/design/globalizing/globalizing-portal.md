@@ -18,9 +18,9 @@ ms.locfileid: "72302249"
 ---
 # <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
-Windows wird auf der ganzen Welt von Anwendern unterschiedlicher Sprachen, Kulturen und Herkunft verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehr als eine Sprache. Ihre App wird also auf Konfigurationen ausgeführt, die viele Systemeinstellungen für Sprache, Region und Kultur beinhalten. Sie können die Marktchancen Ihrer App erweitern, indem Sie mithilfe von *Globalisierung* und *Lokalisierung* eine variable App entwickeln.
+Windows wird auf der ganzen Welt in verschiedenen Märkten und von Anwendern unterschiedlicher Kulturen, Herkunft und Sprachen verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehr als eine Sprache. Ihre App wird also auf Konfigurationen ausgeführt, die viele Systemeinstellungen für Sprache, Region und Kultur beinhalten. Sie können die Marktchancen Ihrer App erweitern, indem Sie mithilfe von *Globalisierung* und *Lokalisierung* eine variable App entwickeln.
 
-Dieses Video enthält eine kurze Einführung in die Vorbereitung Ihrer APP für die Welt: [Einführung in die Globalisierung und Lokalisierung](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
+Das folgende Video enthält eine kurze Einführung dazu, wie Sie Ihre App für die weltweite Verbreitung vorbereiten: [Einführung in die Globalisierung und Lokalisierung](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
 **Globalisierung** ist der Vorgang, bei dem Sie Ihre App so entwerfen und entwickeln, dass sie auf verschiedenen globalen Märkten (auf Systemen mit unterschiedlichen Sprach- und Kulturkonfigurationen) angemessen funktioniert, ohne dass kulturspezifische Änderungen oder Anpassungen erforderlich sind.
 
@@ -38,7 +38,7 @@ Ihr Code muss in allen Kulturen, für die Sie Ihre App vorgesehen haben, gleich 
 - Sortierregeln
 
 >[!NOTE]
-> Eine Liste der unterstützten Gebiets Schema Namen in der Windows-Betriebssystemversion finden Sie in der Spalte Sprachtag der Tabelle in [anhang a: Produktverhalten @ no__t-0 in der [Referenz für die Windows-Sprach Code Kennung (LCID)](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
+> Eine Liste der unterstützten Gebiets Schema Namen in der Windows-Betriebssystemversion finden Sie in der Spalte Sprachtag der Tabelle in [Anhang a: Produktverhalten](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in der [Referenz zur Windows-Sprach Code Kennung (LCID)](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
 
 **Lokalisierbarkeit** ist das Ergebnis des Prozess der Vorbereitung der Lokalisierung einer globalisierten App und/oder der Überprüfung, ob die App für die Lokalisierung bereit ist. Die korrekte Herstellung der Lokalisierbarkeit einer App bedeutet, dass der spätere Lokalisierungsprozess keine funktionalen Mängel in der App aufdeckt. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist.
 
@@ -64,7 +64,7 @@ Die meisten Lokalisierungsteams verwenden spezielle Tools, um den Prozess zu unt
 | [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md) | Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL). |
 | [Numeralsystem-Werte](glob-numeralsystem-values.md) | In diesem Thema werden die für die **NumeralSystem**-Eigenschaft von verschiedenen Klassen im [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live)-Namespace verfügbaren Werte aufgeführt. |
 | [Lokalisier barkeit Ihrer APP](prepare-your-app-for-localization.md) | Eine lokalisierte App kann in anderen Märkten, Sprachen oder Regionen lokalisiert werden, ohne dass funktionale Mängel in der App auftreten. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist. |
-| [Internationale Schriftarten](loc-international-fonts.md) | In diesem Thema werden die verfügbaren Schriftarten für UWP-apps aufgelistet, die in anderen Sprachen als in den USA Englisch. |
+| [Internationale Schriftarten](loc-international-fonts.md) | Dieses Thema enthält eine Liste der für UWP-Apps verfügbaren Schriften, die in andere Sprachen als Englisch (USA) lokalisiert sind. |
 | [Entwerfen der APP für bidirektionalen Text](design-for-bidi-text.md) | Entwerfen Sie Ihre App so, dass bidirektionale Textunterstützung (BiDi) bereitgestellt wird, sodass Sie Texte aus links und rechtsbündigen Schreibsystemen kombinieren können. |
 | [Verwenden Sie das mehrsprachige App-Toolkit 4,0](use-mat.md) | Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2017 und höher integriert, um UWP-apps mit Übersetzungsunterstützung, Übersetzungsdatei Verwaltung und Editor-Tools bereitzustellen. |
 | [Mehrsprachige App-Toolkit 4,0 FAQ & Problembehandlung](mat-faq-troubleshooting.md) | Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0. |

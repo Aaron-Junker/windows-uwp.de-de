@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Note**  For Windows Phone Store apps, [**ShowAddAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) functions just like [**ShowEditNewAppointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) in that the dialog displayed for adding the appointment is editable.
+**Beachten Sie**  für Windows Phone Store-Apps: [**showaddappointment**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) funktioniert genauso wie [**showeditnewtermin**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) , dass das Dialogfeld zum Hinzufügen des Termins bearbeitet werden kann.
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>Ersetzen eines Termins im Kalender des Benutzers
 
@@ -507,7 +507,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-a-new-editable-appointment"></a>Hinzufügen neuer bearbeitbarer Termine
 
-[**ShowEditNewAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) works just like [**ShowAddAppointmentAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) except that the dialog for adding the appointment is editable so that the user can modify the appointment data before saving it.
+[**Showeditnewernennungen tmentasync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) funktioniert genauso wie [**showaddappointmentasync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) , mit dem Unterschied, dass das Dialogfeld zum Hinzufügen des Termins bearbeitbar ist, sodass der Benutzer die Termin Daten vor dem Speichern ändern kann.
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-appointment-details"></a>Anzeigen von Termindetails
 
-[**ShowAppointmentDetailsAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) causes the system to show details for the specified appointment. Für Apps mit App-Kalendern kann das Anzeigen von Termindetails in den Kalendern aktiviert werden. Andernfalls werden vom System die Termindetails angezeigt. Eine Überladung der Methode, die ein Startdatumargument akzeptiert, wird zum Anzeigen von Details für eine Instanz einer Terminserie bereitgestellt.
+[**Showernennungen tmentdetailsasync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) bewirkt, dass das Systemdetails für den angegebenen Termin anzeigt. Für Apps mit App-Kalendern kann das Anzeigen von Termindetails in den Kalendern aktiviert werden. Andernfalls werden vom System die Termindetails angezeigt. Eine Überladung der Methode, die ein Startdatumargument akzeptiert, wird zum Anzeigen von Details für eine Instanz einer Terminserie bereitgestellt.
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)

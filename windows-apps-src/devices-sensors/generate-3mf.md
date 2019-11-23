@@ -83,7 +83,7 @@ Der Standardmaterialtyp ist **Base Material**, der sowohl einen **Color Material
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> Das 3D-Produktions Gerät bestimmt, welche verfügbaren physischen Materialien den in 3MF gespeicherten virtuellen Material Elementen zugeordnet werden. Die Materialzuordnung muss nicht 1:1 erfolgen: Wenn ein 3D-Drucker nur ein Material verwendet, wird das gesamte Modell in diesem Material gedruckt, unabhängig davon, welchen Objekten oder Oberflächen verschiedene Materialien zugeordnet wurden.
+> das 3D-Produktions Gerät bestimmt, welche verfügbaren physischen Materialien den in 3MF gespeicherten virtuellen Material Elementen zugeordnet werden. Die Materialzuordnung muss nicht 1:1 erfolgen: Wenn ein 3D-Drucker nur ein Material verwendet, wird das gesamte Modell in diesem Material gedruckt, unabhängig davon, welchen Objekten oder Oberflächen verschiedene Materialien zugeordnet wurden.
 
 ### <a name="color-materials"></a>Farbmaterialien
 

@@ -60,13 +60,13 @@ Es stehen mehrere Linux-Distributionen zur Verfügung, die auf WSL ausgeführt w
 
     ![Linux-Distributionen im Microsoft Store](../images/store-linux-distros.png)
 
-Sie können die derzeit verwendete Linux-Distribution überprüfen, indem Sie Folgendes eingeben: `lsb_release -dc`. Verwenden Sie zum Aktualisieren der Ubuntu-Distribution Folgendes: `sudo apt update && sudo apt upgrade`. Wir empfehlen, regelmäßig zu aktualisieren, um sicherzustellen, dass Sie über die neuesten Pakete verfügen Dieses Update wird von Windows nicht automatisch verarbeitet. Links zu anderen verfügbaren Linux-Distributionen, die im Microsoft Store verfügbar sind, finden Sie unter [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+Sie können die Linux-Distribution, die Sie zurzeit verwenden, überprüfen, indem Sie Folgendes eingeben: `lsb_release -dc`. Verwenden Sie zum Aktualisieren der Ubuntu-Distribution: `sudo apt update && sudo apt upgrade`. Wir empfehlen, regelmäßig zu aktualisieren, um sicherzustellen, dass Sie über die neuesten Pakete verfügen Dieses Update wird von Windows nicht automatisch verarbeitet. Links zu anderen verfügbaren Linux-Distributionen, die im Microsoft Store verfügbar sind, finden Sie unter [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 ## <a name="install-wsl-2"></a>Installieren von WSL 2
 
 WSL 2 ist eine [neue Version der Architektur](https://docs.microsoft.com/windows/wsl/wsl2-about) in WSL, die ändert, wie Linux-Distributionen mit Windows interagieren, die Leistung verbessert und eine vollständige System aufrufskompatibilität hinzugefügt wird.
 
-1. Geben Sie in PowerShell den folgenden Befehl ein: `wsl -l`, um die Liste der auf Ihrem Computer installierten WSL-Distributionen anzuzeigen. Nun sollte Ubuntu-18,04 in dieser Liste angezeigt werden.
+1. Geben Sie in PowerShell den Befehl: `wsl -l` ein, um die Liste der auf Ihrem Computer installierten WSL-Distributionen anzuzeigen. Nun sollte Ubuntu-18,04 in dieser Liste angezeigt werden.
 2. Geben Sie nun den folgenden Befehl ein: `wsl --set-version Ubuntu-18.04 2`, um die Ubuntu-Installation für die Verwendung von WSL 2 festzulegen.
 3. Überprüfen Sie die WSL-Version, die von den einzelnen installierten Distributionen verwendet wird: `wsl --list --verbose` (oder `wsl -l -v`).
 
@@ -80,12 +80,12 @@ WSL 2 ist eine [neue Version der Architektur](https://docs.microsoft.com/windows
 Es gibt mehrere Möglichkeiten, Node. js zu installieren. Es wird empfohlen, einen Versions-Manager zu verwenden, wenn sich Versionen sehr schnell ändern. Sie müssen wahrscheinlich zwischen mehreren Versionen wechseln, je nach den Anforderungen verschiedener Projekte, an denen Sie arbeiten. Knoten Versions-Manager, üblicherweise NVM genannt, ist die beliebteste Methode zum Installieren mehrerer Versionen von Node. js. Wir führen Sie durch die Schritte zum Installieren von NVM und verwenden Sie dann zum Installieren von Node. js und Node Package Manager (NPM). Es gibt [Alternative Versions Manager](#alternative-version-managers) , die im nächsten Abschnitt behandelt werden müssen.
 
 > [!IMPORTANT]
-> Es wird immer empfohlen, vorhandene Installationen von Node. js oder NPM von Ihrem Betriebssystem zu entfernen, bevor Sie einen Versions-Manager installieren, da die verschiedenen Installationstypen zu seltsamen und verwirrenden Konflikten führen können. Beispielsweise ist die Version des Knotens, die mit dem `apt-get`-Befehl von Ubuntu installiert werden kann, zurzeit veraltet. Hilfe zum Entfernen vorheriger Installationen finden Sie unter Vorgehens [Weise beim Entfernen von nodejs aus Ubuntu](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04).)
+> Es wird immer empfohlen, vorhandene Installationen von Node. js oder NPM von Ihrem Betriebssystem zu entfernen, bevor Sie einen Versions-Manager installieren, da die verschiedenen Installationstypen zu seltsamen und verwirrenden Konflikten führen können. Beispielsweise ist die Version des Knotens, die mit dem `apt-get` Befehl von Ubuntu installiert werden kann, zurzeit veraltet. Hilfe zum Entfernen vorheriger Installationen finden Sie unter Vorgehens [Weise beim Entfernen von nodejs aus Ubuntu](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04).)
 
 1. Öffnen Sie die Befehlszeile von Ubuntu 18,04.
 2. Installieren Sie curl (ein Tool zum Herunterladen von Inhalten aus dem Internet in der Befehlszeile) mit: `sudo apt-get install curl`
 3. Installieren Sie NVM mit: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
-4. Geben Sie Folgendes ein, um die Installation zu überprüfen: `command -v nvm`... Dies sollte "NVM" zurückgeben, wenn Sie den Befehl "Befehl wurde nicht gefunden" oder gar keine Antwort erhalten, schließen Sie das aktuelle Terminal, öffnen Sie es erneut, und versuchen Sie es noch mal. [Weitere Informationen finden Sie im GitHub-Repository NVM](https://github.com/nvm-sh/nvm).
+4. Geben Sie zum Überprüfen der Installation Folgendes ein: `command -v nvm`... Dies sollte "NVM" zurückgeben, wenn Sie den Befehl "Befehl wurde nicht gefunden" oder gar keine Antwort erhalten, schließen Sie das aktuelle Terminal, öffnen Sie es erneut, und versuchen Sie es noch mal. [Weitere Informationen finden Sie im GitHub-Repository NVM](https://github.com/nvm-sh/nvm).
 5. Listet die Versionen von Knoten auf, die derzeit installiert sind (sollte an diesem Punkt "None" lauten): `nvm ls`
 
     ![NVM-Liste, die keine Knoten Versionen anzeigt](../images/nvm-no-node.png)
@@ -96,8 +96,8 @@ Es gibt mehrere Möglichkeiten, Node. js zu installieren. Es wird empfohlen, ein
 
     ![NVM-Liste mit LTS und aktuellen Knoten Versionen](../images/nvm-node-installed.png)
 
-9. Überprüfen Sie, ob Node. js installiert ist und die aktuelle Standardversion mit: `node --version`. Stellen Sie dann sicher, dass Sie auch über NPM verfügen, mit: `npm --version` (Sie können auch `which node` oder `which npm` verwenden, um den für die Standardversionen verwendeten Pfad anzuzeigen).
-10. Um die Version von Node. js zu ändern, die Sie für ein Projekt verwenden möchten, erstellen Sie ein neues Projektverzeichnis `mkdir NodeTest`, und geben Sie das Verzeichnis `cd NodeTest` ein. Geben Sie dann `nvm use node` ein, um zur aktuellen Version zu wechseln, oder `nvm use --lts`, um zur LTS-Version zu wechseln. Sie können auch die spezifische Anzahl für alle zusätzlichen Versionen verwenden, die Sie installiert haben, wie z. b. `nvm use v8.2.1`. (Um alle verfügbaren Versionen von Node. js aufzulisten, verwenden Sie den Befehl: `nvm ls-remote`).
+9. Überprüfen Sie, ob Node. js installiert ist und die aktuelle Standardversion mit: `node --version`. Vergewissern Sie sich dann, dass Sie auch über NPM verfügen, mit: `npm --version` (Sie können auch `which node` oder `which npm` verwenden, um den für die Standardversionen verwendeten Pfad anzuzeigen).
+10. Um die Version von Node. js zu ändern, die Sie für ein Projekt verwenden möchten, erstellen Sie ein neues Projektverzeichnis `mkdir NodeTest`und geben Sie das Verzeichnis `cd NodeTest`ein. Geben Sie dann `nvm use node` ein, um zur aktuellen Version zu wechseln, oder `nvm use --lts`, um zur LTS-Version zu wechseln. Sie können auch die spezifische Anzahl für alle zusätzlichen Versionen verwenden, die Sie installiert haben, wie z. b. `nvm use v8.2.1`. (Um alle verfügbaren Versionen von Node. js aufzulisten, verwenden Sie den Befehl: `nvm ls-remote`).
 
 > [!TIP]
 > Wenn Sie "NVM" verwenden, um Node. js und NPM zu installieren, müssen Sie nicht den Befehl "sudo" verwenden, um neue Pakete zu installieren.
@@ -110,11 +110,11 @@ Durch die Installation der neueren Version von NVM mithilfe von cURL wird die ä
 
 Obwohl NVM zurzeit der beliebteste Versions-Manager für Node ist, sind einige Alternativen zu beachten:
 
-- [n](https://www.npmjs.com/package/n#installation) ist eine langfristige `nvm`-Alternative, die das gleiche mit leicht unterschiedlichen Befehlen erreicht und über `npm` anstelle eines Bash-Skripts installiert wird.
-- [FNM](https://github.com/Schniz/fnm#using-a-script) ist ein neuerer Versions-Manager, der einen viel schnelleren Wert als `nvm` vorgibt. (Außerdem wird [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)verwendet.)
+- [n](https://www.npmjs.com/package/n#installation) ist eine langfristige `nvm` Alternative, die das gleiche mit leicht unterschiedlichen Befehlen erreicht und über `npm` anstelle eines Bash-Skripts installiert wird.
+- [FNM](https://github.com/Schniz/fnm#using-a-script) ist ein neuerer Versions Manager, der eine viel schnellere Leistung als `nvm`vorgibt. (Außerdem wird [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)verwendet.)
 - [Volta](https://github.com/volta-cli/volta#installing-volta) ist ein neuer Versions Manager des LinkedIn-Teams, der höhere Geschwindigkeit und plattformübergreifende Unterstützung beansprucht.
 - [asdf-VM](https://asdf-vm.com/#/core-manage-asdf-vm) ist eine einzelne CLI für mehrere Sprachen, wie z. b. IKE GVM, NVM, rbenv & pyenv (usw.).
-- [NVS](https://github.com/jasongin/nvs) (Node-Version Switcher) ist eine plattformübergreifende `nvm`-Alternative mit der Möglichkeit, in [vs Code zu integrieren](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
+- [NVS](https://github.com/jasongin/nvs) (Node-Version Switcher) ist eine plattformübergreifende `nvm` Alternative mit der Möglichkeit, in [vs Code zu integrieren](https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md).
 
 ## <a name="install-your-favorite-code-editor"></a>Installieren Sie Ihren bevorzugten Code-Editor.
 
@@ -127,7 +127,7 @@ Es wird empfohlen, **Visual Studio Code** mit der **Remote-WSL-Erweiterung** fü
 Terminal basierte Text-Editoren (vim, emacs, Nano) sind ebenfalls hilfreich, um schnell Änderungen direkt in der Konsole vorzunehmen. (In[diesem Artikel](https://medium.com/linode-cube/emacs-nano-or-vim-choose-your-terminal-based-text-editor-wisely-8f3826c92a68) werden die Unterschiede erläutert und erläutert, wie Sie diese verwenden können.)
 
 > [!NOTE]
-> Einige GUI-Editoren (Atom, Sublime Text, Eclipse) können Probleme beim Zugriff auf den freigegebenen WSL-Netzwerk Speicherort haben (\\wsl $ \ubuntu\home @ no__t-1 und versuchen, Ihre Linux-Dateien mithilfe von Windows-Tools zu erstellen, was Ihnen möglicherweise nicht entspricht. Diese Kompatibilität wird von der Remote-WSL-Erweiterung in vs Code behandelt.
+> Einige GUI-Editoren (Atom, Sublime Text, Eclipse) können Probleme beim Zugriff auf den freigegebenen WSL-Netzwerkort haben (\\WSL $ \ubuntu\home\) und versuchen, Ihre Linux-Dateien mithilfe von Windows-Tools zu erstellen, was Ihnen möglicherweise nicht entspricht. Diese Kompatibilität wird von der Remote-WSL-Erweiterung in vs Code behandelt.
 
 So installieren Sie vs Code und die Remote-WSL-Erweiterung:
 
@@ -165,11 +165,11 @@ Einige zusätzliche Erweiterungen, die Sie berücksichtigen sollten, sind u. A.:
 
 ## <a name="install-windows-terminal-optional"></a>Installieren des Windows-Terminals (optional)
 
-Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Verteilungen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis ☺ und benutzerdefinierte Designs ( Farbschemas, Schriftarten und-Größen, Hintergrundbild/weich/Transparenz. [Weitere Informationen](https://devblogs.microsoft.com/commandline/).
+Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Verteilungen), benutzerdefinierte Tastenbindungen (erstellen Sie eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, kopieren und Einfügen usw.), Emojis-☺ und benutzerdefinierte Designs (Farbschemas, Schriftarten und Größen, Hintergrundbild/weich/Transparenz). [Weitere Informationen](https://devblogs.microsoft.com/commandline/).
 
 1. Holen Sie sich [das Windows-Terminal (Vorschau) im Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): durch die Installation über den Store werden Updates automatisch verarbeitet.
 
-2. Öffnen Sie nach der Installation das Windows-Terminal, und wählen Sie **Einstellungen** aus, um das Terminal mithilfe der Datei `profile.json` anzupassen. [Erfahren Sie mehr über das Bearbeiten von Windows-Terminal Einstellungen](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md).
+2. Öffnen Sie nach der Installation das Windows-Terminal, und wählen Sie **Einstellungen** aus, um das Terminal mithilfe der `profile.json` Datei anzupassen. [Erfahren Sie mehr über das Bearbeiten von Windows-Terminal Einstellungen](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md).
 
     ![Windows-Terminal Einstellungen](../images/windows-terminal-settings.png)
 
@@ -177,7 +177,7 @@ Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalt
 
 Wenn Sie beabsichtigen, mit anderen zusammenzuarbeiten oder das Projekt auf einem Open-Source-Standort (wie GitHub) zu hosten, unterstützt vs Code die [Versionskontrolle mit git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). Auf der Registerkarte Quell Code Verwaltung in vs Code werden alle Änderungen nachverfolgt, und es werden allgemeine git-Befehle (Add, Commit, Push, Pull) direkt in die Benutzeroberfläche integriert.
 
-1. Git wird mit dem Windows-Subsystem für Linux-Distributionen installiert. Sie müssen jedoch ihre git-Konfigurationsdatei einrichten. Geben Sie hierzu im Terminal Folgendes ein: `git config --global user.name "Your Name"` und dann `git config --global user.email "youremail@domain.com"`. Wenn Sie noch nicht über ein git-Konto verfügen, können Sie sich [für ein Konto auf GitHub registrieren](https://github.com/join). Wenn Sie noch nie mit git gearbeitet haben, können Ihnen [GitHub-Leitfäden](https://guides.github.com/) beim Einstieg helfen. Wenn Sie Ihre git-Konfiguration bearbeiten müssen, können Sie dazu einen integrierten Text-Editor wie Nano: `nano ~/.gitconfig` verwenden.
+1. Git wird mit dem Windows-Subsystem für Linux-Distributionen installiert. Sie müssen jedoch ihre git-Konfigurationsdatei einrichten. Geben Sie hierzu im Terminal Folgendes ein: `git config --global user.name "Your Name"` und dann `git config --global user.email "youremail@domain.com"`. Wenn Sie noch nicht über ein git-Konto verfügen, können Sie sich [für ein Konto auf GitHub registrieren](https://github.com/join). Wenn Sie noch nie mit git gearbeitet haben, können Ihnen [GitHub-Leitfäden](https://guides.github.com/) beim Einstieg helfen. Wenn Sie Ihre git-Konfiguration bearbeiten müssen, können Sie dies mit einem integrierten Text-Editor wie Nano: `nano ~/.gitconfig`tun.
 
 2. Es wird empfohlen, Ihren Knoten Projekten eine [gitignore-Datei](https://help.github.com/en/articles/ignoring-files) hinzuzufügen. Hier finden Sie [die gitignore-Standardvorlage von GitHub für Node. js](https://github.com/github/gitignore/blob/master/Node.gitignore). Wenn Sie [ein neues Repository mithilfe der GitHub-Website erstellen](https://help.github.com/articles/create-a-repo), sind Kontrollkästchen verfügbar, mit denen Sie Ihr Repository mit einer Infodatei, einer gitignore-Datei für Node. js-Projekte und Optionen zum Hinzufügen einer Lizenz bei Bedarf initialisieren können.
 

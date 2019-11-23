@@ -1,12 +1,12 @@
 ---
 Description: Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einzelnen Ansicht navigieren, um den Inhalt der Ansicht anzuzeigen, der nicht in den Anzeigebereich passt. Beispiele für Ansichten sind die Ordnerstruktur eines Computers, eine Dokumentbibliothek oder ein Fotoalbum.
-title: Schwenken
+title: Verschieben
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 945368e27c4f6215d2f5df20d52d916ead3597dd
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -26,17 +26,17 @@ Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einz
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
 
-**Panning indicators and scroll bars**
+**Schwenken von Indikatoren und Bild Lauf leisten**
 
 -   Stellen Sie sicher, dass eine Verschiebung bzw. ein Bildlauf möglich ist, bevor Sie Inhalt in die App laden.
 
 -   Zeigen Sie Verschiebungsindikatoren und Bildlaufleisten an, um Hinweise zu Position und Größe bereitzustellen. Blenden Sie sie aus, wenn Sie eine benutzerdefinierte Navigationsfunktion bereitstellen.
 
-    **Note**  Unlike standard scroll bars, panning indicators are purely informative. Sie werden nicht für Eingabegeräte verfügbar gemacht und können in keiner Weise geändert werden.
+    **Beachten Sie**  im Gegensatz zu Standard Scrollleisten sind Schwenk Indikatoren rein informativ. Sie werden nicht für Eingabegeräte verfügbar gemacht und können in keiner Weise geändert werden.
 
      
 
-**Single-axis panning (one-dimensional overflow)**
+**Schwenken mit einer einzelnen Achse (eindimensionaler Überlauf)**
 
 -   Verwenden Sie die Verschiebung entlang einer Achse für Inhaltsbereiche, die über eine Viewportgrenze (vertikal oder horizontal) hinausgehen.
 
@@ -44,27 +44,27 @@ Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einz
     -   Horizontale Verschiebung für ein Raster von Elementen.
 -   Verwenden Sie bei der Verschiebung entlang einer Achse keine erforderlichen Andockpunkte, wenn Benutzer in der Lage sein müssen, den Inhalt zu verschieben und zwischen Andockpunkten anzuhalten. Erforderliche Andockpunkte gewährleisten, dass der Benutzer an einem Andockpunkt anhält. Verwenden Sie stattdessen Näherungsandockpunkte.
 
-**Freeform panning (two-dimensional overflow)**
+**Schwenken von Freiform (zweidimensionaler Überlauf)**
 
 -   Verwenden Sie die Verschiebung entlang zweier Achsen für Inhaltsbereiche, die über beide Viewportgrenzen (vertikal und horizontal) hinausgehen.
 
     -   Setzen Sie das Standardverhalten der Führungsschienen außer Kraft, und verwenden Sie die formfreie Verschiebung für unstrukturierten Inhalt, den der Benutzer wahrscheinlich in mehrere Richtungen verschieben möchte.
 -   Die formfreie Verschiebung eignet sich in der Regel für die Navigation innerhalb von Bildern oder Karten.
 
-**Paged view**
+**Auslagerbare Ansicht**
 
 -   Verwenden Sie erforderliche Andockpunkte, wenn sich der Inhalt aus separaten Elementen zusammensetzt oder Sie ein Element vollständig anzeigen möchten. Dies können z. B. Seiten eines Buchs oder einer Zeitschrift, eine Spalte mit Elementen oder einzelne Bilder sein.
 
     -   An jeder logischen Grenze sollte ein Andockpunkt platziert werden.
     -   Jedes Element sollte in seiner Größe an die Ansicht angepasst oder skaliert werden.
 
-**Logical and key points**
+**Logische und wichtige Punkte**
 
 -   Verwenden Sie Näherungsandockpunkte, wenn der Inhalt Schlüsselpunkte oder logische Orte aufweist, an denen Benutzer wahrscheinlich anhalten. Ein Beispiel hierfür wäre eine Abschnittsüberschrift.
 
 -   Wenn Beschränkungen oder Grenzen der maximalen und minimalen Größe definiert sind, sollte ein visuelles Feedback erfolgen, wenn der Benutzer die Grenzen erreicht oder überschreitet.
 
-**Chaining embedded or nested content**
+**Verketten von eingebettetem oder geschachtelte Content**
 
 -   Verwenden Sie die Verschiebung entlang einer Achse (normalerweise horizontal) und Spaltenlayouts für text- und rasterbasierte Inhalte. In diesen Fällen wird der Inhalt meist umgebrochen und fließt natürlich von Spalte zu Spalte, sodass die Benutzeroberfläche bei allen UWP-Apps konsistent und erkennbar bleibt.
 
@@ -76,10 +76,10 @@ Mit einer Verschiebung oder einem Bildlauf können Benutzer innerhalb einer einz
 
 ## <a name="additional-usage-guidance"></a>Weitere Hinweise zur Verwendung
 
-Das Verschieben per Toucheingabe mittels Streif- oder Ziehbewegung mit einem oder mehreren Fingern funktioniert wie der Bildlauf mit der Maus. Die Verschiebungsinteraktion gleicht eher dem Drehen des Mausrads oder Verschieben des Bildlauffelds als dem Klicken auf die Bildlaufleiste. Unless a distinction is made in an API or required by some device-specific Windows UI, we simply refer to both interactions as panning.
+Das Verschieben per Toucheingabe mittels Streif- oder Ziehbewegung mit einem oder mehreren Fingern funktioniert wie der Bildlauf mit der Maus. Die Verschiebungsinteraktion gleicht eher dem Drehen des Mausrads oder Verschieben des Bildlauffelds als dem Klicken auf die Bildlaufleiste. Wenn eine API nicht in einer API oder für eine gerätespezifische Windows-Benutzeroberfläche erforderlich ist, verweisen wir einfach auf beide Interaktionen als schwenken.
 
 > <div id="main">
-> <strong>Windows 10 Fall Creators Update - Behavior change</strong> By default, instead of text selection, an active pen now scrolls/pans in UWP apps (like touch, touchpad, and passive pen).  
+> <strong>Windows 10 Fall Creators Update-Verhaltensänderung</strong> Standardmäßig wird ein aktiver Stift in UWP-Apps (z. b. Touch, Touchpad und passiver Stift) nicht in der Textauswahl angezeigt.  
 > Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.
 > </div>
 
@@ -96,15 +96,15 @@ Beim Ziehen werden die Finger nur in der Verschiebungsrichtung bewegt. Diese Bew
 -   Verlangsamung (Trägheit): Wenn die Finger angehoben werden, wird die Verschiebung langsamer. Dies ist mit allmählichem Anhalten auf glattem Untergrund vergleichbar.
 -   Absorption: Die Dynamik der Verschiebung bewirkt bei der Verlangsamung ein leichtes Zurückspringen, wenn entweder ein Andockpunkt oder eine Grenze des Inhaltsbereichs erreicht wird.
 
-**Types of panning**
+**Arten von schwenken**
 
-Windows 8 supports three types of panning:
+Windows 8 unterstützt drei Arten von schwenken:
 
 -   Eine Achse – die Verschiebung wird nur in eine Richtung unterstützt (horizontal oder vertikal).
 -   Führungsschienen – die Verschiebung wird in alle Richtungen unterstützt. Sobald jedoch der Benutzer in einer bestimmten Richtung eine Distanzschwelle überschreitet, wird die Verschiebung auf die betreffende Achse beschränkt.
 -   Formfrei – die Verschiebung wird in alle Richtungen unterstützt.
 
-**Panning UI**
+**Schwenken der Benutzeroberfläche**
 
 Die Interaktion für die Verschiebung ist von Eingabegerät zu Eingabegerät unterschiedlich, bietet aber trotzdem eine ähnliche Funktion.
 
@@ -115,7 +115,7 @@ Abhängig vom erkannten Eingabegerät sind zwei Anzeigemodi für die Verschiebun
 -   Verschiebungsanzeigen für Fingereingabe.
 -   Bildlaufleisten für andere Eingabegeräte wie Maus, Touchpad, Tastatur und Eingabestift.
 
-**Note**  Panning indicators are only visible when the touch contact is within the pannable region. Ebenso ist die Bildlaufleiste nur sichtbar, wenn sich der Mauszeiger, Eingabe-/Zeichenstiftcursor oder Tastaturfokus im bildlauffähigen Bereich befindet.
+**Beachten Sie** , dass  Schwenk Indikatoren nur sichtbar sind, wenn sich der Berührungs Kontakt innerhalb des kategorierbaren Bereichs befindet. Ebenso ist die Bildlaufleiste nur sichtbar, wenn sich der Mauszeiger, Eingabe-/Zeichenstiftcursor oder Tastaturfokus im bildlauffähigen Bereich befindet.
 
  
 
@@ -152,7 +152,7 @@ Das folgende Diagramm verdeutlicht das Konzept der Führungsschienen.
 
 ![Diagramm eines Bildschirms mit Führungsschienen, die die Verschiebung einschränken](images/ux-panning-rails.png)
 
-**Chaining embedded or nested content**
+**Verketten von eingebettetem oder geschachtelte Content**
 
 Wenn ein Benutzer in einem Element, das in ein anderes zoomfähiges oder bildlauffähiges Element geschachtelt ist, ein Zoom- oder Bildlauflimit erreicht, können Sie angeben, ob das übergeordnete Element den im untergeordneten Element begonnenen Zoom- oder Bildlaufvorgang fortsetzen soll. Dies wird als Verketten von Zoom- oder Bildlaufvorgängen bezeichnet.
 
@@ -172,24 +172,24 @@ Dieser Leitfaden ist auch für Apps wie Fotoalben oder Karten-Apps hilfreich, di
 
 
 * [Benutzerdefinierte Benutzerinteraktionen](https://docs.microsoft.com/windows/uwp/design/layout/index)
-* [Optimize ListView and GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
+* [Optimieren von ListView und GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
 * [Barrierefreiheit der Tastaturnavigation](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
 
 **Beispiele**
-* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 * [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 * [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **Archivbeispiele**
-* [Input: XAML user input events sample](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Input: Touch hit testing sample](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [XAML scrolling, panning, and zooming sample](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Input: Simplified ink sample](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [Input: Windows 8 gestures sample](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Input: Manipulations and gestures (C++) sample](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [DirectX touch input sample](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
+* [Eingabe: Beispiel für XAML-Benutzereingabe Ereignisse](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Eingabe: Beispiel für Berührungs Treffer Tests](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Eingabe: vereinfachtes Ink-Beispiel](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Eingabe: Beispiel für Windows 8-Gesten](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Eingabe: Manipulationen und Gesten (C++) (Beispiel)](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Beispiel für DirectX-Fingereingabe](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

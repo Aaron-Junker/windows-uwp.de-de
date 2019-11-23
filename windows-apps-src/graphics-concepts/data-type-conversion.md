@@ -53,7 +53,7 @@ Wenn eine Gleitkomma-Konvertierung zwischen verschiedenen Darstellungen auftritt
 ### <a name="span-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanspan-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanspan-idconverting_from_a_lower_range_representation_to_a_higher_range_representationspanconverting-from-a-lower-range-representation-to-a-higher-range-representation"></a><span id="Converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="CONVERTING_FROM_A_LOWER_RANGE_REPRESENTATION_TO_A_HIGHER_RANGE_REPRESENTATION"></span>Wandeln von einer unteren Bereichs Darstellung in eine Darstellung mit höherem Bereich
 
 -   NaN in einem Format für einen kleineren Bereich wird zur NaN Darstellung im Format für den größeren Bereich konvertiert, wenn der Wert im Format für den größeren Bereich vorhanden ist. Wenn das Format für den größeren Bereich keine NaN-Darstellung hat, wird der Wert in 0 konvertiert.
--   INFO in einem Format für einen kleineren Bereich wird zur INF-Darstellung im Format für den größeren Bereich konvertiert, wenn der Wert im Format für den größeren Bereich vorhanden ist. Wenn das höhere Format keine INF-Darstellung hat, wird es in den maximalen Wert konvertiert, der darstellbar ist (max @ no__t-0float in diesem Format). Wenn im Zielformat vorhanden, wird das Vorzeichen beibehalten.
+-   INFO in einem Format für einen kleineren Bereich wird zur INF-Darstellung im Format für den größeren Bereich konvertiert, wenn der Wert im Format für den größeren Bereich vorhanden ist. Wenn das höhere Format keine INF-Darstellung hat, wird es in den Maximalwert konvertiert (max\_float in diesem Format). Wenn im Zielformat vorhanden, wird das Vorzeichen beibehalten.
 -   Denorm in einem Format für einen kleineren Bereich wird, wenn möglich, in die normalisierte Darstellung des Formats für den größeren Bereich konvertiert. Andernfalls wird zu einer Denorm-Darstellung im Format für den größeren Bereich konvertiert, solange die Denorm-Darstellung vorhanden ist. Ist dies nicht möglich, da das Format für den größeren Bereich keine Denorm-Darstellung hat, wird zu 0 konvertiert. Wenn im Zielformat vorhanden, wird das Vorzeichen beibehalten. Beachten Sie, dass die 32-Bit-Gleitkommawerten als Format ohne eine Denorm-Darstellung zählen (da Denorms bei Operationen für 32-Bit-Gleitkommawerten auf eine vorzeichenbehaftete 0 gesetzt werden).
 
 ## <a name="span-idinteger_conversionspanspan-idinteger_conversionspanspan-idinteger_conversionspaninteger-conversion"></a><span id="Integer_Conversion"></span><span id="integer_conversion"></span><span id="INTEGER_CONVERSION"></span>Ganzzahlige Konvertierung
@@ -170,7 +170,7 @@ Sofern nicht anders angegeben, werden bei Ganzzahlen alle Konvertierungen zu und
 <tr class="odd">
 <td align="left">SINT</td>
 <td align="left">UINT mit mehr Bits</td>
-<td align="left"><p>So konvertieren Sie von "Sint" in "uint" mit mehr Bits: Bei einem negativen Wert wird der Wert auf 0 (null) geklammert. Andernfalls wird die Zahl in die hochwertigsten Bits des Zielformates kopiert und die zusätzlichen Bits mit geringer Wertigkeit werden mit 0 aufgefüllt.</p></td>
+<td align="left"><p>Beim Konvertieren von SINT mit UINT mit mehr Bits: Wenn negativ wird der Wert auf 0 gesetzt. Andernfalls wird die Zahl in die hochwertigsten Bits des Zielformates kopiert und die zusätzlichen Bits mit geringer Wertigkeit werden mit 0 aufgefüllt.</p></td>
 </tr>
 <tr class="even">
 <td align="left">UINT</td>
@@ -228,7 +228,7 @@ Im Rahmen von Direct3D werden Festkomma-Ganzzahl-Darstellungen auf zwei Arten ve
 <li>Wenn n &gt;= FixedMax, Ergebnis = Fixedmax*2<sup>f</sup>; wenn n &lt;= FixedMin, Ergebnis = FixedMin*2<sup>f</sup></li>
 <li>Andernfalls berechnen von n * 2<sup>f</sup> und Konvertierung in Ganzzahl.</li>
 </ul>
-<p>Implementierungen dürfen statt dem Wert n * 2<sup>f</sup> mit unendlicher Genauigkeit nach dem letzten Schritt oben eine Toleranz von D3D<em>xx</em>_FLOAT32_TO_INTEGER_TOLERANCE_IN_ULP Unit-Last-Place für das Ganzzahlergebnis aufweisen.</p></td>
+<p>Implementierungen dürfen statt dem Wert n * 2<em>f</em> mit unendlicher Genauigkeit nach dem letzten Schritt oben eine Toleranz von D3D<sup>xx</sup>_FLOAT32_TO_INTEGER_TOLERANCE_IN_ULP Unit-Last-Place für das Ganzzahlergebnis aufweisen.</p></td>
 </tr>
 <tr class="even">
 <td align="left">Festkomma-Ganzzahl</td>

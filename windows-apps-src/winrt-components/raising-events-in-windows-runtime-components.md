@@ -4,7 +4,7 @@ ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: Vorgehensweise zum Auslösen eines Ereignisses eines benutzerdefinierten Delegattyps in einem Hintergrundthread, sodass JavaScript das Ereignis empfangen kann.
 ms.date: 07/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 78bc43c26a73a6184e5788ad7d003813e567a8d0
 ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
@@ -134,7 +134,7 @@ Diese exemplarische Vorgehensweise besteht aus folgenden Teilen:
 
 Klicken Sie in Visual Studio auf der Menüleiste auf **Datei &gt; Neues Projekt**. Erweitern Sie im Dialogfeld **Neues Projekt** die Option **JavaScript &gt; Universal Windows**, und wählen Sie dann **Leere App** aus. Geben Sie als Projektnamen „ToasterApplication“ ein, und klicken Sie dann auf die Schaltfläche **OK**.
 
-Fügen Sie der Projektmappe eine C#-Komponente für Windows-Runtime hinzu: Öffnen Sie im Projektmappen-Explorer das Kontextmenü für die Projektmappe, und wählen Sie dann **Hinzufügen &gt; Neues Projekt** aus. Erweitern **Sie C# Visual&gt;Microsoft Store** , und wählen Sie dann **Windows-Runtime Komponente**aus. Geben Sie als Projektnamen „ToasterComponent“ ein, und klicken Sie dann auf die Schaltfläche **OK**. ToasterComponent ist der Stammnamespace für die Komponenten, die Sie in späteren Schritten erstellen.
+Fügen Sie der Projektmappe eine C#-Komponente für Windows-Runtime hinzu: Öffnen Sie im Projektmappen-Explorer das Kontextmenü für die Projektmappe, und wählen Sie dann **Hinzufügen &gt; Neues Projekt** aus. Erweitern **Sie C# Visual &gt; Microsoft Store** , und wählen Sie dann **Windows-Runtime Komponente**aus. Geben Sie als Projektnamen „ToasterComponent“ ein, und klicken Sie dann auf die Schaltfläche **OK**. ToasterComponent ist der Stammnamespace für die Komponenten, die Sie in späteren Schritten erstellen.
 
 Öffnen Sie im Projektmappen-Explorer das Kontextmenü für die Projektmappe, und wählen Sie dann **Eigenschaften** aus. Wählen Sie im Dialogfeld **Eigenschaftenseiten** im linken Bereich **Konfigurationseigenschaften** aus, und legen Sie dann oben im Dialogfeld die **Konfiguration** auf **Debuggen** und die **Plattform** auf „x86”, „x64” oder „ARM” fest. Klicken Sie auf die Schaltfläche **OK**.
 
@@ -337,7 +337,7 @@ Sie können überprüfen, ob MIDL die Projektmappe ordnungsgemäß kompiliert ha
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>So kompilieren Sie den Proxy- und Stubcode in eine DLL-Datei
 
-Nachdem Sie nun über die erforderlichen Dateien verfügen, können Sie diese kompilieren, um eine DLL (C++-Datei) zu erstellen. Um dies so einfach wie möglich zu machen, fügen Sie ein neues Projekt hinzu, um das Erstellen der Proxys zu unterstützen. Öffnen Sie das Kontextmenü für die ToasterApplication-Projektmappe, und wählen Sie dann **Hinzufügen > Neues Projekt** aus. Erweitern Sie im linken Bereich des Dialog Felds **Neues Projekt** den Eintrag **Visual C++&gt;Fenster&gt;Univeral Windows**, und wählen Sie dann im mittleren Bereich **dll (UWP-Apps)** aus. (Beachten Sie, dass dies KEIN C++-Komponentenprojekt für Windows-Runtime ist.) Geben Sie als Projektnamen „Proxies” ein, und klicken Sie dann auf die Schaltfläche **OK**. Diese Dateien werden bei Änderungen der C#-Klasse von den Postbuildereignissen aktualisiert.
+Nachdem Sie nun über die erforderlichen Dateien verfügen, können Sie diese kompilieren, um eine DLL (C++-Datei) zu erstellen. Um dies so einfach wie möglich zu machen, fügen Sie ein neues Projekt hinzu, um das Erstellen der Proxys zu unterstützen. Öffnen Sie das Kontextmenü für die ToasterApplication-Projektmappe, und wählen Sie dann **Hinzufügen > Neues Projekt** aus. Erweitern Sie im linken Bereich des Dialog Felds **Neues Projekt** den Eintrag **Visual C++ &gt; Fenster &gt; Univeral Windows**, und wählen Sie dann im mittleren Bereich **dll (UWP-Apps)** aus. (Beachten Sie, dass dies KEIN C++-Komponentenprojekt für Windows-Runtime ist.) Geben Sie als Projektnamen „Proxies” ein, und klicken Sie dann auf die Schaltfläche **OK**. Diese Dateien werden bei Änderungen der C#-Klasse von den Postbuildereignissen aktualisiert.
 
 Standardmäßig generiert das Proxies-Projekt Headerdateien (.h) und C++-Dateien (.cpp). Da die DLL aus den Dateien erstellt wird, die von MIDL generiert werden, sind die H- und CPP-Dateien nicht erforderlich. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für diese Dateien, wählen Sie **Entfernen**, und bestätigen Sie dann die Löschung.
 

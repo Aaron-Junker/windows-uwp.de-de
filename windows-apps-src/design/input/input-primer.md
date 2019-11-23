@@ -6,7 +6,7 @@ label: Interaction primer
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f9aab8c4b627b9a4952e7e3e292f1e4b528f992
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -25,14 +25,14 @@ Die UWP verwendet ein intelligentes, kontextbezogenes Interaktionssystem, mit de
 
 Machen Sie sich mit den verschiedenen Arten von Eingabegeräten sowie ihren Verhaltensweisen, Möglichkeiten und Einschränkungen in Verbindung mit bestimmten Formfaktoren vertraut. Dies erleichtert Ihnen die Entscheidung, ob die Steuerelemente und Angebote der Plattform für die App ausreichend sind oder ob Sie angepasste Funktionen für die Benutzerinteraktion bereitstellen müssen.
 
-## <a name="gaze"></a>Anvisieren
+## <a name="gaze"></a>Blickeingabe
 
 Mit dem **Windows 10-Update April 2018** haben wir die Unterstützung für die Blickeingabe mit Eye- und Head-Tracking-Eingabegeräten eingeführt. 
 
 > [!NOTE]
 > Die Unterstützung für Eye Tracking-Hardware wurde mit dem **Windows 10 Fall Creators Update** zusammen mit der [Augensteuerung](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen verwenden können, um den Bildschirmzeiger zu steuern, Text über die Bildschirmtastatur einzugeben und mit Personen über Text-zu-Sprache zu kommunizieren.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 - Tablet
 - PCs und Laptops
@@ -43,13 +43,13 @@ Verfolgen Sie den Blick, die Aufmerksamkeit und die Präsenz eines Benutzers anh
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Gaze interactions and eye tracking](gaze-interactions.md)
+[Blick Interaktionen und Eye Tracking](gaze-interactions.md)
 
 ## <a name="surface-dial"></a>Surface Dial
 
 Mit dem **Windows 10 Anniversary Update** haben wir eine neue Kategorie von Eingabegeräten eingeführt: Windows Wheel. Surface Dial ist das erste Angebot dieser Art.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 - Tablet
 - PCs und Laptops
@@ -60,20 +60,20 @@ Der Formfaktor von Surface Dial entspricht einer Drehaktion (oder -geste). Surfa
 
 ### <a name="more-info"></a>Weitere Informationen
 
-[Surface Dial design guidelines](windows-wheel-interactions.md)
+[Entwurfs Richtlinien für Oberflächen Wähl](windows-wheel-interactions.md)
 
 ## <a name="cortana"></a>Cortana
 
-In Windows 10, **Cortana** extensibility lets you handle voice commands from a user and launch your application to carry out a single action.
+In Windows 10 können Sie mit der **Cortana** -Erweiterbarkeit Sprachbefehle von einem Benutzer verarbeiten und Ihre Anwendung starten, um eine einzelne Aktion auszuführen.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox-Taste
+-   Xbox
 -   HoloLens
 
 ![Cortana](images/input-interactions/icons-cortana01.png)
@@ -97,14 +97,14 @@ Die Spracherkennung kann den Haupteingabetyp je nach Gerät in vielen Fällen er
 
 Mit Text-zu-Sprache (auch als TTS oder Sprachsynthese bezeichnet) werden Informationen oder Anweisungen an den Benutzer ausgegeben.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox-Taste
+-   Xbox
 -   HoloLens
 
 ![Spracherkennung](images/input-interactions/icons-speech01.png)
@@ -113,7 +113,7 @@ Mit Text-zu-Sprache (auch als TTS oder Sprachsynthese bezeichnet) werden Informa
 
 Es gibt drei Modi der Sprachinteraktion:
 
-**Natural language**
+**Natürliche Sprache**
 
 Mit natürlicher Sprache kommunizieren wir laufend mündlich mit anderen Personen. Unsere Sprache variiert in Abhängigkeit von der jeweiligen Person oder Situation, sie wird jedoch generell verstanden. Wenn dies nicht der Fall ist, verwenden wir häufig andere Wörter oder eine abweichende Wortreihenfolge, um die gleichen Gedanken zu vermitteln.
 
@@ -121,13 +121,13 @@ Die Kommunikation über natürliche Sprache mit einer App verläuft ähnlich: Wi
 
 Die natürliche Sprache ist der fortgeschrittenste Modus der Sprachinteraktion, der über **Cortana** implementiert und verfügbar gemacht wird.
 
-**Command and control**
+**Befehl und Steuerung**
 
 Unter Befehl und Steuerung wird die Verwendung von Sprachbefehlen zum Aktivieren von Steuerelementen und Funktionen verstanden, z. B. zum Klicken auf eine Schaltfläche oder zum Auswählen eines Menüelements.
 
 Da Befehl und Steuerung entscheidend für eine erfolgreiche Benutzeroberfläche ist, wird ein einzelner Eingabetyp im Allgemeinen nicht empfohlen. Die Spracherkennung ist in der Regel eine von mehreren Eingabeoptionen für einen Benutzer, die von seinen Vorlieben und Hardwarefunktionen abhängen.
 
-**Dictation**
+**Diktat**
 
 Die einfachste Methode der Spracheingabe. Jede Äußerung wird in Text umgewandelt.
 
@@ -142,13 +142,13 @@ Das Diktieren wird in der Regel verwendet, wenn eine App die Bedeutung oder die 
 
 Ein (Eingabe-)Stift kann ähnlich wie eine Maus als pixelgenaues Zeigegerät verwendet werden, und er eignet sich optimal für die Freihandeingabe.
 
-**Note**  There are two types of pen devices: active and passive.
+**Beachten Sie**  zwei Arten von Stift Geräten vorhanden sind: aktiv und passiv.
   -   Passive Stifte enthalten keine Elektronik, und sie emulieren effektiv die Toucheingabe über einen Finger. Sie benötigen eine Basisgerätanzeige, welche die Eingabe basierend auf dem Berührungsdruck erkennt. Da Benutzer beim Schreiben auf der Eingabeoberfläche häufig die Hand ablegen, können Eingabedaten wegen des nicht erfolgreichen Ablehnens der Handfläche verzerrt werden.
   -   Aktive Stifte enthalten Elektronik und können mit komplexen Gerätedisplays zusammenwirken und viel umfassendere Eingabedaten (u. a. Daten bei Daraufzeigen oder Näherung) für das System und die App liefern. Die Handflächenablehnung ist sehr viel robuster.
 
 In diesem Text beziehen wir uns auf aktive Stifte, die umfangreiche Eingabedaten liefern und in erster Linie für präzise Freihandeingaben und für zeigebasierte Interaktionen verwendet werden.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   Smartphones und Phablets
 -   Tablet
@@ -160,7 +160,7 @@ In diesem Text beziehen wir uns auf aktive Stifte, die umfangreiche Eingabedaten
 
 ### <a name="typical-usage"></a>Typische Verwendung
 
-In Kombination mit einem Stift ermöglicht die Windows-Freihandplattform die natürliche Erstellung von handschriftlichen Notizen, Zeichnungen und Anmerkungen. Die Plattform unterstützt das Erfassen von Freihanddaten aus einem Eingabedigitalisierungsgerät, das Generieren von Freihanddaten, das Ausgeben von Daten und das Rendern von Freihandstrichen auf dem Ausgabegerät sowie das Verwalten von Daten und das Ausführen einer Schrifterkennung. Ihre App kann nicht nur die räumlichen Bewegungen des Stifts beim Schreiben oder Zeichnen erfassen. Sie kann auch Informationen zu Druck, Form, Farbe und Deckkraft sammeln und ermöglicht so eine Arbeitsweise, die der Verwendung eines Stifts, Bleistifts oder Pinsels auf Papier schon sehr nahe kommt.
+In Kombination mit einem Stift ermöglicht die Windows-Freihandplattform die natürliche Erstellung von handschriftlichen Notizen, Zeichnungen und Anmerkungen. Sie können auf der Plattform Freihanddaten aus einem Eingabedigitalisierungsgerät erfassen, Freihanddaten generieren, Daten ausgeben, Freihandstriche auf dem Ausgabegerät rendern, Daten verwalten und eine Schrifterkennung durchführen. Ihre App kann nicht nur die räumlichen Bewegungen des Stifts beim Schreiben oder Zeichnen erfassen. Sie kann auch Informationen zu Druck, Form, Farbe und Deckkraft sammeln und ermöglicht so eine Arbeitsweise, die der Verwendung eines Stifts, Bleistifts oder Pinsels auf Papier schon sehr nahe kommt.
 
 Die Stift- und die Toucheingabe unterscheiden sich dahingehend, dass bei der Toucheingabe die direkte Manipulation von UI-Elementen auf dem Bildschirm durch physische Gesten für diese Objekte (wie Wischen, Ziehen, Drehen usw.) emuliert werden kann.
 
@@ -175,7 +175,7 @@ Sie müssen stiftspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unt
 
 Bei der Toucheingabe können mit einem oder mehreren Fingern ausgeführte Gesten verwendet werden, um die direkte Manipulation von UI-Elementen (wie etwa Verschieben, Drehen, Ändern der Größe oder Bewegen) zu emulieren. Außerdem können die Gesten auch als alternative Eingabemethode (ähnlich einer Maus- oder Stifteingabe) oder als ergänzende Eingabemethode (zum Modifizieren anderer Eingaben; also beispielsweise zum Verwischen eines mit einem Stift gezeichneten Freihandstrichs) verwendet werden. Diese berührungsbasierte Bedienung wird von Benutzern unter Umständen als natürlicher wahrgenommen als die symbolbasierte Interaktion auf einem Bildschirm.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   Smartphones und Phablets
 -   Tablet
@@ -208,9 +208,9 @@ Im Allgemeinen weist die Toucheingabe folgende Merkmale auf:
 
 ## <a name="touchpad"></a>Touchpad
 
-Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigergeräts (beispielsweise eine Maus). Durch diese Kombination ist das Touchpad sowohl für eine toucheingabeoptimierte Benutzeroberfläche als auch für die kleineren Ziele von Produktivitäts-Apps geeignet.
+Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigegeräts (beispielsweise eine Maus). Durch diese Kombination ist das Touchpad sowohl für eine toucheingabeoptimierte Benutzeroberfläche als auch für die kleineren Ziele von Produktivitäts-Apps geeignet.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   PCs und Laptops
 -   IoT
@@ -234,16 +234,16 @@ Sie müssen mausspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unte
 
 Eine Tastatur ist das Haupteingabegerät für Text und häufig unentbehrlich für Personen mit bestimmten körperlichen Beeinträchtigungen oder für Benutzer, die die Tastatur als schnellere und effizientere Interaktionsmethode betrachten.
 
-With [Continuum for Phone](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a mouse and keyboard to make their phones work like a laptop.
+Mit [Continuum for Phone](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), einem neuen Benutzeroberflächen für kompatible Windows 10 Mobile-Geräte, können Benutzer ihre Telefone mit einer Maus und Tastatur verbinden, damit ihre Telefone wie ein Laptop funktionieren.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox-Taste
+-   Xbox
 -   HoloLens
 
 ![Tastatur](images/input-interactions/icons-keyboard01.png)
@@ -256,7 +256,7 @@ Bei der Bildschirmtastatur handelt es sich um eine visuelle Softwaretastatur, di
 
 Bei der Touch-Bildschirmtastatur handelt es sich um eine visuelle Softwaretastatur für die Texteingabe per Touchscreen. Die Touchtastatur ist kein Ersatz für die Bildschirmtastatur. Sie wird nur für die Texteingabe (ohne Emulierung der Hardwaretastatur) verwendet und nur angezeigt, wenn der Fokus auf einem Textfeld oder einem anderen bearbeitbaren Textsteuerelement liegt. Die Bildschirmtastatur unterstützt keine App- oder Systembefehle.
 
-**Note**  The OSK has priority over the touch keyboard, which won't be shown if the OSK is present.
+**Beachten Sie** ,  der OSK Vorrang vor der Touchscreen-Tastatur hat, die nicht angezeigt wird, wenn der OSK vorhanden ist.
 
 Im Allgemeinen weist eine Tastatur folgende Merkmale auf:
 
@@ -274,7 +274,7 @@ Im Allgemeinen weist eine Tastatur folgende Merkmale auf:
 
 Eine Maus eignet sich am besten für Produktivitäts-Apps und Benutzeroberflächen mit hoher Dichte, bei denen Benutzerinteraktionen beim Zielen und bei der Befehlseingabe Pixelgenauigkeit erfordern.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   Smartphones und Phablets
 -   Tablet
@@ -301,11 +301,11 @@ Sie müssen mausspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unte
 
 Eine Geste ist jede Art von Benutzerbewegung, die als Steuerungs- oder Interaktionseingabe für eine Anwendung erkannt wird. Es gibt verschiedene Arten von Gesten – von der einfachen Geste, die dazu dient, mit der Hand etwas auf dem Bildschirm zu verwenden, über spezifische, erlernte Bewegungsmuster bis hin zu langen Bewegungsabläufen des gesamten Körpers. Beachten Sie beim Entwerfen benutzerdefinierter Gesten, dass diese in anderen Regionen/Kulturkreisen unter Umständen eine andere Bedeutung haben.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   PCs und Laptops
 -   IoT
--   Xbox-Taste
+-   Xbox
 -   HoloLens
 
 ![Geste](images/input-interactions/icons-gesture01.png)
@@ -329,11 +329,11 @@ Aufgrund der Konvergenz von durch Windows unterstützten Interaktionsumgebungen 
 
 Ein Gamepad/Controller ist ein sehr spezielles Gerät und kommt in der Regel bei Spielen zum Einsatz. Es wird jedoch auch zum Emulieren einfacher Tastatureingaben sowie für eine tastaturähnliche UI-Navigation verwendet.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   PCs und Laptops
 -   IoT
--   Xbox-Taste
+-   Xbox
 
 ![Controller](images/input-interactions/icons-controller01.png)
 
@@ -346,14 +346,14 @@ Spielen und Interaktionen mit einer speziellen Konsole.
 
 Durch die Berücksichtigung so vieler Benutzer und Geräte wie möglich und den Entwurf Ihrer App für die Kompatibilität mit möglichst vielen Eingabearten (Gesten, Spracherkennung, Toucheingabe, Touchpad, Maus und Tastatur) maximieren Sie die Flexibilität, Benutzerfreundlichkeit und Barrierefreiheit Ihrer Apps.
 
-### <a name="device-support"></a>Geräteunterstützung
+### <a name="device-support"></a>Unterstützung von Geräten
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox-Taste
+-   Xbox
 -   HoloLens
 
 ![Mehrfacheingaben](images/input-interactions/icons-inputdevices03-vertical.png)

@@ -4,7 +4,7 @@ description: Sie können die Verwendung von Hintergrundaufgaben aktivieren, inde
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, background task
+keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fb8c0b213705a5a79680356bb4f1773594dcdc
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -20,8 +20,8 @@ ms.locfileid: "74260487"
 
 **Wichtige APIs**
 
--   [**BackgroundTasks Schema**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**Backgroundtasks-Schema**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows. applicationmodel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Sie können die Verwendung von Hintergrundaufgaben aktivieren, indem Sie diese im App-Manifest als Erweiterungen deklarieren.
 
@@ -90,9 +90,9 @@ Kopieren Sie diesen Code in das "Extensions"-Element (Attribute werden in den fo
 
 2.  Ändern Sie die Liste der Aufgabentypenattribute, um den für diese Hintergrundaufgabe verwendeten Typ der Aufgabenregistrierung anzugeben. Wenn die Hintergrundaufgabe mit mehreren Triggertypen registriert wird, fügen Sie für jeden Typ zusätzliche Task-Elemente und Type-Attribute hinzu.
 
-    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) method will fail and throw an exception).
+    **Beachten Sie**  stellen Sie sicher, dass Sie die einzelnen Auslösertypen auflisten, die Sie verwenden, oder wenn die Hintergrundaufgabe nicht mit den nicht deklarierten Auslösertypen registriert wird (die [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) Methode schlägt fehl und löst eine Ausnahme aus).
 
-    Dieses Beispiel veranschaulicht die Verwendung von Systemereignistriggern und Pushbenachrichtigungen:
+    Dieses Beispiel für einen Codeausschnitt gibt die Verwendung von Systemereignistriggern und Pushbenachrichtigungen an:
 
 ```xml
 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -159,7 +159,7 @@ Sie können angeben, wo Ihre Hintergrundaufgaben ausführt werden sollen:
 
 ### <a name="run-in-the-same-process-as-your-foreground-application"></a>Die Ausführung erfolgt im gleichen Prozess wie Ihre Anwendung im Vordergrund.
 
-In diesem XML-Beispiel wird eine Hintergrundaufgabe deklariert, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
+Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wird, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
 
 ```xml
 <Extensions>
@@ -209,7 +209,7 @@ Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wir
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Ausführen in einem neuen Prozess, jedes Mal, wenn ein Trigger mit dem Attribut „SupportsMultipleInstances“ ausgelöst wird
 
-In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen Prozess ausgeführt wird, der, jedes Mal, wenn ein neuer Trigger ausgelöst wird, eigene Ressourcenbeschränkungen (Arbeitsspeicher und CPU) erhält. Beachten Sie die Verwendung von `SupportsMultipleInstances`, zur Aktivierung dieses Verhalten. In order to use this attribute you must target SDK version '10.0.15063' (Windows 10 Creators Update) or higher.
+In diesem Beispiel wird eine Hintergrundaufgabe deklariert, die in einem neuen Prozess ausgeführt wird, der, jedes Mal, wenn ein neuer Trigger ausgelöst wird, eigene Ressourcenbeschränkungen (Arbeitsspeicher und CPU) erhält. Beachten Sie die Verwendung von `SupportsMultipleInstances`, zur Aktivierung dieses Verhalten. Um dieses Attribut zu verwenden, müssen Sie die SDK-Version "10.0.15063" (Windows 10 Creators Update) oder höher als Ziel verwenden.
 
 ```xml
 <Package

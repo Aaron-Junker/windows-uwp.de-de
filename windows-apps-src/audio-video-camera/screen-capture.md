@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>Erstellen Sie ein Frameerfassungspool und eine Sammlungssitzung
 
-Mithilfe von **graphicscaptureitem**erstellen Sie ein [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) -Element mit Ihrem D3D-Gerät, unterstütztes Pixel Format (**DXGI @ no__t-3format @ no__t-4b8g8r8a8 @ no__t-5unorm**), Anzahl der gewünschten Frames (die beliebig Integer sein können). ) und Frame Größe. Die **ContentSize**-Eigenschaft der **GraphicsCaptureItem**-Klasse kann ebenfalls als Anzahl der Frames verwendet werden:
+Mithilfe von **graphicscaptureitem**erstellen Sie ein [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) -Element mit Ihrem D3D-Gerät, unterstützte Pixel Formate (**DXGI\_Format\_B8G8R8A8\_unorm**), die Anzahl der gewünschten Frames (beliebige ganzzahlige Zahlen) und die Frame Größe. Die **ContentSize**-Eigenschaft der **GraphicsCaptureItem**-Klasse kann ebenfalls als Anzahl der Frames verwendet werden:
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -688,6 +688,6 @@ End Class
 
 Wenn Sie ein Video der Anwendung aufzeichnen möchten, können Sie dies mit dem [Windows. Media. apprecording-Namespace](https://docs.microsoft.com/uwp/api/windows.media.apprecording)vereinfachen. Diese Funktion ist Teil des Desktop Erweiterungs-SDKs, funktioniert daher nur auf dem Desktop und erfordert, dass Sie einen Verweis darauf aus dem Projekt hinzufügen. Weitere Informationen finden Sie unter [Übersicht über Gerätefamilien](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) .
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 * [Windows. Graphics. Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

@@ -72,9 +72,11 @@ Microsoft Word bietet beispielsweise zwei Zugriffstastenbereiche: einen primäre
 
 Die folgenden Abbildungen zeigen die zwei Zugriffstastenbereiche in Word. Das erste Beispiel zeigt die primären Zugriffstasten, mit denen ein Benutzer eine Registerkarte und andere Befehle auf oberster Ebene auswählen kann. Das zweite zeigt die sekundären Zugriffstasten für die Registerkarte „Start“.
 
-primäre Zugriffsschlüssel für @no__t 0in Microsoft Word @ no__t-1_primäre Zugriffsschlüssel in Microsoft Word_
+![primäre Zugriffsschlüssel in Microsoft Word](images/accesskeys/primary-access-keys-word.png)
+_primären Zugriffsschlüssel in Microsoft Word_
 
-sekundäre Zugriffsschlüssel für ![in Microsoft Word @ no__t-1_sekundäre Zugriffsschlüssel in Microsoft Word_
+![sekundärer Zugriffsschlüssel in Microsoft Word](images/accesskeys/secondary-access-keys-word.png)
+_Sekundär Zugriffsschlüssel in Microsoft Word_
 
 Zugriffstasten können für Elemente in verschiedenen Bereichen dupliziert werden. Im obigen Beispiel ist „2“ die Zugriffstaste für „Rückgängig“ im primären Bereich und „Kursiv“ im sekundären Bereich.
 
@@ -253,17 +255,17 @@ _Beispiel für automatische schlüsseltip-Platzierung_
 
 Falls Sie jedoch mehr Kontrolle über die Positionierung der Zugriffstasteninfo benötigen, empfehlen wir Folgendes:
 
-1.  **Offensichtliches**Zuordnungs Prinzip: Der Benutzer kann das Steuerelement problemlos mit dem Schlüssel Tipp verknüpfen.
+1.  **Offensichtliches Zuordnungsprinzip**: Der Benutzer kann das Steuerelement auf einfache Weise der Zugriffstasteninfo zuordnen.
 
     a.  Die Zugriffstasteninfo sollte sich **in der Nähe** des Elements mit der Zugriffstaste befinden (Besitzer).  
     b.  Die Zugriffstasteninfo sollte **aktivierte Elemente nicht verdecken**, die Zugriffstasten aufweisen.   
     c.  Wenn eine Zugriffstasteninfo nicht in der Nähe des Besitzers platziert werden kann, sollte sie mit dem Besitzer überlappen. 
 
-2.  **Auffindbarkeit**: Der Benutzer kann das Steuerelement schnell mit dem Schlüssel Tipp ermitteln.
+2.  **Auffindbarkeit**: Der Benutzer kann das Steuerelement mit der Zugriffstasteninfo schnell auffinden.
 
     a.  Die Zugriffstasteninfo sollte andere Zugriffstasteninfos nie **überlappen**.  
 
-3.  **Einfache Überprüfung:** Der Benutzer kann problemlos die Schlüssel Tipps erhalten.
+3.  **Lesbarkeit:** Der Benutzer kann die Zugriffstasteninfos einfach überfliegen.
 
     a.  Zugriffstasteninfos sollten aneinander und am UI-Element **ausgerichtet** sein.
     b.  Zugriffstasteninfos sollten so weitgehend wie möglich **gruppiert** sein. 
@@ -272,7 +274,7 @@ Falls Sie jedoch mehr Kontrolle über die Positionierung der Zugriffstasteninfo 
 
 Verwenden Sie die Eigenschaft **KeyTipPlacementMode**, um die Platzierung der Zugriffstasteninfo auf Element- oder Gruppenbasis anzupassen.
 
-Die Platzierungs Modi lauten: Oben, unten, rechts, Links, ausgeblendet, zentriert und automatisch.
+Die Platzierungsmodi sind: Top, Bottom, Right, Left, Hidden, Center und Auto.
 
 ![Platzierungsmodi für Zugriffstasteninfo](images/accesskeys/keytip-postion-modes.png)
 

@@ -6,7 +6,7 @@ label: Optical zoom and resizing
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fbcb4510a5b3ecca80b388172fe30028ac511452
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -33,11 +33,11 @@ Die folgenden Diagramme verdeutlichen die Unterschiede zwischen Größenänderun
 
 ![Wenn die Finger aufeinander zu bewegt werden, wird der Inhaltsbereich vergrößert, beim Spreizen der Finger wird er verkleinert.](images/areazoom.png)
 
-**Größe ändern**: Der Benutzer wählt ein Objekt in einem Bereich aus und ändert die Größe dieses Objekts.
+**Größenänderung**: Der Benutzer wählt ein Objekt in einem Bereich aus und ändert die Größe dieses Objekts.
 
 ![Wenn die Finger aufeinander zu bewegt werden, wird das Objekt verkleinert, beim Spreizen der Finger wird es vergrößert.](images/objectresize.png)
 
-**Note**   Optical zoom shouldn't be confused with [Semantic Zoom](../controls-and-patterns/semantic-zoom.md). Zwar werden bei beiden Interaktionen dieselben Gesten ausgeführt, jedoch bezieht sich der semantische Zoom auf die Darstellung von und die Navigation in Inhalten in einer einzelnen Ansicht (z. B. in der Ordnerstruktur eines Computers, einer Dokumentbibliothek oder einem Fotoalbum).
+**Beachten Sie** , dass   optischer Zoom nicht mit [semantischem Zoom](../controls-and-patterns/semantic-zoom.md)verwechselt werden sollte. Zwar werden bei beiden Interaktionen dieselben Gesten ausgeführt, jedoch bezieht sich der semantische Zoom auf die Darstellung von und die Navigation in Inhalten in einer einzelnen Ansicht (z. B. in der Ordnerstruktur eines Computers, einer Dokumentbibliothek oder einem Fotoalbum).
 
  
 
@@ -55,7 +55,7 @@ Beachten Sie die folgenden Richtlinien für Apps, die entweder Größenänderung
 
     -   Näherung – Nachdem der Kontakt aufhoben wurde, wird ein Andockpunkt ausgewählt, wenn die Trägheitsbewegung innerhalb einer Distanzschwelle zum Andockpunkt anhält. Bei Näherungsandockpunkten kann ein Zoom- oder Größenänderungsvorgang zwischen Andockpunkten enden.
     -   Erforderlich – Der ausgewählte Andockpunkt ist der Punkt direkt vor oder nach dem Andockpunkt, der vor dem Aufheben des Kontakts zuletzt überschritten wurde (abhängig von der Richtung und Geschwindigkeit der Geste). Eine Manipulation muss an einem erforderlichen Andockpunkt enden.
--   Verwenden Sie Trägheitseffekte. Dazu zählen:
+-   Verwenden Sie Trägheitseffekte. Beispiele:
     -   Verlangsamung: Findet statt, wenn der Benutzer mit dem Zusammendrücken oder Aufziehen aufhört. Dies ist mit allmählichem Anhalten auf glattem Untergrund vergleichbar.
     -   Springen: Beim Überschreiten einer Größeneinschränkung oder -grenze erfolgt ein leichter Rückpralleffekt.
 -   Verteilen Sie die Steuerelemente entsprechend den [Richtlinien für Zielbestimmung](guidelines-for-targeting.md).
@@ -65,7 +65,7 @@ Beachten Sie die folgenden Richtlinien für Apps, die entweder Größenänderung
     -   Zeichnungsprogramme, in denen in der Größe anpassbare Elemente in einem Zeichenbereich oder auf einer Zeichenfläche, dessen bzw. deren Größe geändert werden kann, angezeigt werden können
     -   Webseiten mit einem eingebetteten Objekt, z. B. einer Karte
 
-    **Note**   In all cases, the content area is resized unless all touch points are within the resizable object.
+    **Beachten Sie**   in allen Fällen wird die Größe des Inhalts Bereichs geändert, es sei denn, alle Berührungspunkte befinden sich im Objekt, dessen Größe geändert werden kann.
 
      
 
@@ -73,20 +73,20 @@ Beachten Sie die folgenden Richtlinien für Apps, die entweder Größenänderung
 
 
 **Beispiele**
-* [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+* [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+* [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 * [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 * [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 **Archivbeispiele**
-* [Input: XAML user input events sample](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Input: Touch hit testing sample](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [XAML scrolling, panning, and zooming sample](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Input: Simplified ink sample](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [Input: Windows 8 gestures sample](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [Input: Manipulations and gestures (C++) sample](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [DirectX touch input sample](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
+* [Eingabe: Beispiel für XAML-Benutzereingabe Ereignisse](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+* [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+* [Eingabe: Beispiel für Berührungs Treffer Tests](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+* [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+* [Eingabe: vereinfachtes Ink-Beispiel](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+* [Eingabe: Beispiel für Windows 8-Gesten](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+* [Eingabe: Manipulationen und Gesten (C++) (Beispiel)](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+* [Beispiel für DirectX-Fingereingabe](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
  
 
  

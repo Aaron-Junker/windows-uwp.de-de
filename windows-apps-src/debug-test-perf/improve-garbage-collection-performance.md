@@ -18,7 +18,7 @@ ms.locfileid: "72282187"
 
 In C# und Visual Basic geschriebene UWP-Apps profitieren von der automatischen Arbeitsspeicherverwaltung des .NET Garbage Collectors. Dieser Abschnitt bietet einen Überblick über das Verhalten des .NET Garbage Collectors sowie über die bewährten Methoden zur Leistungssteigerung für den Garbage Collector in UWP-Apps. Weitere Informationen zur Funktionsweise des .NET Garbage Collectors sowie zu Debugging- und Leistungsanalysetools für den Garbage Collector finden Sie unter [Garbage Collection](https://docs.microsoft.com/dotnet/standard/garbage-collection/index).
 
-**Beachten Sie**, dass   , der in das Standardverhalten des Garbage Collector eingreifen muss, stark auf allgemeine Speicherprobleme mit Ihrer APP hinweist. Weitere Informationen finden Sie unter [Speichernutzungstool beim Debuggen in Visual Studio 2015](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/). Dieses Thema betrifft ausschließlich C# und Visual Basic.
+**Beachten Sie** , dass  , die in das Standardverhalten des Garbage Collector eingreifen müssen, stark darauf hinweist, dass allgemeine Speicherprobleme mit ihrer app auftreten. Weitere Informationen finden Sie unter [Speichernutzungstool beim Debuggen in Visual Studio 2015](https://devblogs.microsoft.com/devops/memory-usage-tool-while-debugging-in-visual-studio-2015/). Dieses Thema betrifft ausschließlich C# und Visual Basic.
 
  
 
@@ -42,7 +42,7 @@ Lösen Sie eine Garbage Collection nur aus, nachdem Sie die Leistung Ihrer App e
 
 Rufen Sie zum Auslösen der Garbage Collection einer Generation [**GC.Collect(n)** ](https://docs.microsoft.com/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) auf, wobei „n“ für die Generation steht, die Sie erfassen möchten (0, 1 oder 2).
 
-**Hinweis**   Es wird empfohlen, dass Sie keine Garbage Collection in der APP erzwingen, da der Garbage Collector viele Heuristik verwendet, um den besten Zeitpunkt für die Durchführung einer Auflistung zu bestimmen. das Erzwingen einer Auflistung ist in vielen Fällen eine unnötige Verwendung der CPU. Falls Ihre App allerdings eine große Anzahl von Objekten enthält, die nicht mehr verwendet werden, und Sie den entsprechenden Arbeitsspeicher wieder für das System freigeben möchten, ist die Erzwingung einer Garbage Collection unter Umständen dennoch angemessen. So können Sie beispielsweise in einem Spiel eine Bereinigung am Ende einer Ladesequenz auslösen, um vor Spielbeginn Arbeitsspeicher freizugeben.
+**Hinweis**  wir empfehlen, dass Sie keine Garbage Collection in der APP erzwingen, da der Garbage Collector viele Heuristik verwendet, um den besten Zeitpunkt für die Durchführung einer Auflistung zu bestimmen. das Erzwingen einer Auflistung ist in vielen Fällen eine unnötige Verwendung der CPU. Falls Ihre App allerdings eine große Anzahl von Objekten enthält, die nicht mehr verwendet werden, und Sie den entsprechenden Arbeitsspeicher wieder für das System freigeben möchten, ist die Erzwingung einer Garbage Collection unter Umständen dennoch angemessen. So können Sie beispielsweise in einem Spiel eine Bereinigung am Ende einer Ladesequenz auslösen, um vor Spielbeginn Arbeitsspeicher freizugeben.
  
 Damit Sie nicht versehentlich zu viele Garbage Collections auslösen, können Sie [**GCCollectionMode**](https://docs.microsoft.com/dotnet/api/system.gccollectionmode) auf **Optimized** festlegen. Dadurch wird der Garbage Collector angewiesen, nur dann eine Garbage Collection zu starten, wenn eine ausreichend hohe Produktivität dies rechtfertigt.
 

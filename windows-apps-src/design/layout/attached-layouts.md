@@ -154,7 +154,7 @@ Der Ansatz für das Erstellen eines nicht virtualisierenden Layouts sollte allen
 5. Überschreiben der [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride) und aufzurufen der [Anordnungs](/uwp/api/windows.ui.xaml.uielement.arrange) Methode für alle untergeordneten Elemente.
 6. *(**Neue**/optional)* Bereinigen Sie einen gespeicherten Zustand als Teil von " [uninitializeforcontextcore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore)".
 
-### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Beispiel: Ein einfaches Stapel Layout (Elemente variabler Größen)
+### <a name="example-a-simple-stack-layout-varying-sized-items"></a>Beispiel: einfaches Stapel Layout (Elemente variabler Größen)
 
 ![Mystacklayout](images/xaml-attached-layout-mystacklayout.png)
 
@@ -261,7 +261,7 @@ Der [virtualizinglayoutcontext](/uwp/api/microsoft.ui.xaml.controls.virtualizing
 
 Das Anfordern eines Elements für einen bestimmten Index bewirkt, dass dieses Element für diesen Durchlauf des Layouts als "in Verwendung" markiert wird. Wenn das Element nicht bereits vorhanden ist, wird es erkannt und automatisch zur Verwendung vorbereitet (z. b. zum Auffüllen der UI-Struktur, die in einem DataTemplate definiert ist, zum Verarbeiten von Daten Bindungen usw.).  Andernfalls wird Sie aus einem Pool vorhandener Instanzen abgerufen.
 
-Am Ende jedes Measures werden alle vorhandenen, erkannten Elemente, die nicht als "in Gebrauch" gekennzeichnet waren, automatisch als wieder verwendend angesehen, es sei denn, die Option " [suppressautorecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) " wurde verwendet, als das Element über die [ Getorkreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode. Das Framework verschiebt es automatisch in einen Papierkorb und stellt es zur Verfügung. Sie kann anschließend für die Verwendung durch einen anderen Container abgerufen werden. Das Framework versucht, dies zu vermeiden, wenn dies möglich ist, da bei der erneuten Verarbeitung eines Elements einige Kosten anfallen.
+Am Ende jeder Measure-Übergabe werden alle vorhandenen, erkannten Elemente, die nicht als "in Gebrauch" gekennzeichnet waren, automatisch für die erneute Verwendung als verfügbar erachtet, es sei denn, die Option " [suppressautorecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) " wurde verwendet, als das Element über die [getorkreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode abgerufen wurde. Das Framework verschiebt es automatisch in einen Papierkorb und stellt es zur Verfügung. Sie kann anschließend für die Verwendung durch einen anderen Container abgerufen werden. Das Framework versucht, dies zu vermeiden, wenn dies möglich ist, da bei der erneuten Verarbeitung eines Elements einige Kosten anfallen.
 
 Wenn ein virtualisierungslayout am Anfang jedes Measures weiß, welche Elemente nicht mehr in die Erkenntnis Rect fallen, kann die Wiederverwendung optimiert werden. Anstatt auf das Standardverhalten des Frameworks zu vertrauen. Das Layout kann Elemente mithilfe der Methode " [recycleelement](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement) " vorab in den Papierkorb verschieben.  Wenn diese Methode aufgerufen wird, bevor neue Elemente angefordert werden, werden diese vorhandenen Elemente verfügbar, wenn das Layout später eine [getorcreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Anforderung für einen Index ausgibt, der nicht bereits einem Element zugeordnet ist.
 
@@ -289,7 +289,7 @@ Der allgemeine Ansatz ist das Layout für Folgendes:
 > [!TIP]
 > Wenn Sie ein benutzerdefiniertes Steuerelement für eine Steuerelement Bibliothek erstellen, die von anderen in einer Vielzahl von Situationen verwendet wird, ist ein Datenlayout möglicherweise keine Option für Sie.
 
-### <a name="example-xbox-activity-feed-layout"></a>Beispiel: Layout des Xbox-Aktivitäts Feeds
+### <a name="example-xbox-activity-feed-layout"></a>Beispiel: Xbox-Aktivitäts Feed-Layout
 
 Die Benutzeroberfläche für den Xbox-Aktivitäts Feed verwendet ein sich wiederholendes Muster, bei dem jede Zeile über eine breite Kachel verfügt, gefolgt von zwei schmalen Kacheln, die in der nachfolgenden Zeile invertiert werden. In diesem Layout ist die Größe für jedes Element eine Funktion der Position des Elements im DataSet und der bekannten Größe für die Kacheln (Wide vs Narrow).
 
@@ -586,7 +586,7 @@ internal class ActivityFeedLayoutState
 
 Standardmäßig verwaltet [virtualizinglayoutcontext](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext) eine Zuordnung zwischen den erkannten Elementen und dem Index in der Datenquelle, die Sie darstellen.  Ein Layout kann diese Zuordnung selbst verwalten, indem beim Abrufen eines Elements über die [getorkreateelementat](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat) -Methode immer die Option zum [suppressautorecycle](/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions) angefordert wird, die das Standardverhalten für die automatische Wiederverwendung verhindert.  Dies kann sich z. b. als Layout erweisen, wenn es nur dann verwendet wird, wenn der Bildlauf auf eine Richtung beschränkt ist und die Elemente, die es berücksichtigt, immer zusammenhängend sind (d. h. das wissen, dass der Index des ersten und des letzten Elements genug ist, um alle Elemente zu kennen, die eine lisiert).
 
-#### <a name="example-xbox-activity-feed-measure"></a>Beispiel: Xbox-Aktivitäts Feed-Measure
+#### <a name="example-xbox-activity-feed-measure"></a>Beispiel: "Xbox Activity Feed Measure"
 
 Der folgende Code Ausschnitt zeigt die zusätzliche Logik, die der Messung reoverride im vorherigen Beispiel hinzugefügt werden konnte, um die Zuordnung zu verwalten.
 
@@ -703,7 +703,7 @@ Wenn ein Benutzer den Ziehpunkt sehr schnell zieht, dann ist es möglich, dass d
 Wenn das Layout feststellt, dass der Schätzwert nicht korrekt ist und/oder eine unerwartete viewportverschiebung feststellt, muss er seine Anfangsposition neu ausrichten.  Die virtualisierungslayouts, die als Teil der XAML-Steuerelemente ausgeliefert werden, werden als Inhalts abhängige Layouts entwickelt, da Sie weniger Einschränkungen hinsichtlich der Art des angezeigten Inhalts haben.
 
 
-### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Beispiel: Einfaches virtualisieren des Stapel Layouts für Elemente variabler Größen
+### <a name="example-simple-virtualizing-stack-layout-for-variable-sized-items"></a>Beispiel: einfaches virtualisieren des Stapel Layouts für Elemente variabler Größen
 
 Im folgenden Beispiel wird ein einfaches Stapel Layout für Elemente variabler Größen veranschaulicht:
 
@@ -712,7 +712,7 @@ Im folgenden Beispiel wird ein einfaches Stapel Layout für Elemente variabler G
 * Beachten Sie die möglichen diskontinuierlichen Ansichts Verschiebungen, und
 * wendet Layoutkorrekturen an, um diese Verschiebungen zu berücksichtigen.
 
-**Syntax: Markup @ no__t-0
+**Verwendung: Markup**
 
 ```xaml
 <ScrollViewer>
@@ -741,7 +741,7 @@ Im folgenden Beispiel wird ein einfaches Stapel Layout für Elemente variabler G
 </ScrollViewer>
 ```
 
-**codebehind: Main. cs @ no__t-0
+**Code Behind: Main.cs**
 
 ```csharp
 string _lorem = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.";
@@ -757,7 +757,7 @@ var data = new ObservableCollection<Recipe>(Enumerable.Range(0, 300).Select(k =>
 repeater.ItemsSource = data;
 ```
 
-**code: Virtualizingstacklayout. cs @ no__t-0
+**Code: VirtualizingStackLayout.cs**
 
 ```csharp
 // This is a sample layout that stacks elements one after

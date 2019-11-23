@@ -18,8 +18,8 @@ ms.locfileid: "74258930"
 
 <b>Wichtige APIs</b>
 
--   [**Windows.UI.Core namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows.System.Threading namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+-   [**Windows. UI. Core-Namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+-   [**Windows. System. Threading-Namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
 Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Zeitgebers ausgeführt wird.
 
@@ -27,7 +27,7 @@ Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen 
 
 Verwenden Sie die [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Methode, um einen Timer für die Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *delay*-Parameter an, wie lange der Threadpool warten soll, bevor er die Arbeitsaufgabe einem verfügbaren Thread zuweist. Die Verzögerung wird mithilfe einer [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)-Struktur angegeben.
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
+> **Beachten** Sie  Sie " [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) " verwenden können, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
 
 Im folgenden Beispiel wird eine Arbeitsaufgabe erstellt, die in drei Minuten ausgeführt wird:
 
@@ -205,7 +205,7 @@ Das folgende Beispiel erstellt einen Zeitgeber, der die Arbeitsaufgabe sendet, u
 >         }));
 > ```
 
-## <a name="cancel-the-timer"></a>Abbrechen des Timers
+## <a name="cancel-the-timer"></a>Abbrechen des Zeitgebers
 
 Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird, rufen Sie [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) auf. Der Timer wird abgebrochen, und die Arbeitsaufgabe wird nicht an den Threadpool übermittelt.
 
@@ -221,7 +221,7 @@ Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird,
 
 UWP (Universelle Windows-Plattform)-Apps können **Thread.Sleep** nicht verwenden, da dies den UI-Thread blockieren kann. Verwenden Sie zum Erstellen einer Arbeitsaufgabe stattdessen einen [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer). Dieser Timer verzögert die von der Arbeitsaufgabe ausgeführte Aufgabe, ohne den UI-Thread zu blockieren.
 
-Ein vollständiges Codebeispiel für Arbeitsaufgaben, Arbeitsaufgaben mit Zeitgeber und regelmäßige Arbeitsaufgaben finden Sie im [Beispiel für den Threadpool](https://code.msdn.microsoft.com/windowsapps/Pool-Sample-5aa60454). The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
+Ein vollständiges Codebeispiel für Arbeitsaufgaben, Arbeitsaufgaben mit Zeitgeber und regelmäßige Arbeitsaufgaben finden Sie im [Beispiel für den Threadpool](https://code.msdn.microsoft.com/windowsapps/Pool-Sample-5aa60454). Das Codebeispiel wurde ursprünglich für Windows 8.1 geschrieben, aber der Code kann in Windows 10 wieder verwendet werden.
 
 Informationen zu Wiederholungstimern finden Sie unter [Erstellen einer regelmäßigen Arbeitsaufgabe](create-a-periodic-work-item.md).
 

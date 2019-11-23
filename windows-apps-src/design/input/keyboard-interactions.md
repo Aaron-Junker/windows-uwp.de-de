@@ -28,9 +28,9 @@ Auf verschiedenen Geräten ist die Tastatureingabe ein wichtiger Teil der Gesamt
 
 ![Bild von Tastatur und Gamepad](images/keyboard/keyboard-gamepad.jpg)
 
-***Common interaction patterns are shared between keyboard and gamepad***
+***Allgemeine Interaktionsmuster werden von Tastatur und Gamepad gemeinsam genutzt.***
 
-In diesem Thema konzentrieren wir uns speziell auf das UWP-App-Design für die Tastatureingabe auf PCs. However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using [software keyboards](#software-keyboard) such as the touch keyboard and the On-Screen Keyboard (OSK), and for handling other input device types, such as the Xbox gamepad and remote control.
+In diesem Thema konzentrieren wir uns speziell auf das UWP-App-Design für die Tastatureingabe auf PCs. Eine gut entworfene Tastatur ist jedoch wichtig für die Unterstützung von Tools für die Barrierefreiheit, wie z. b. die Windows-Sprachausgabe, für die Verwendung von [Software-Tastaturen](#software-keyboard) wie der touchtastatur und der Bildschirmtastatur (OSK) sowie für die Handhabung anderer Eingabegeräte Typen, wie z. b. Xbox Gamepad und Remote Steuerung.
 
 Viele der hier erwähnten Richtlinien und Empfehlungen, einschließlich [visueller Fokuselemente](#focus-visuals), [Zugriffstasten](#access-keys), und [UI-Navigation](#navigation), gelten auch für diese anderen Szenarien.
 
@@ -44,20 +44,20 @@ Alle UWP-Steuerelemente enthalten integrierte Unterstützung für umfangreiche T
 
 ![Bild von Tastatur mit Telefon](images/keyboard/keyboard-phone.jpg)
 
-***UWP supports keyboard with any device***
+***UWP unterstützt Tastatur mit jedem Gerät.***
 
 ## <a name="basic-experiences"></a>Grundlegende Funktionen
 ![Fokusbasierte Geräte](images/keyboard/focus-based-devices.jpg)
 
 Wie bereits erwähnt, ist die Tastatureingabe für Navigation und Befehle von Eingabegeräten wie Xbox-Gamepad und -Fernbedienung und Eingabehilfen wie der Sprachausgabe zum Großteil gleich. Die Einheitlichkeit in Bezug auf Eingabetypen und Tools minimiert zusätzliche Aufgaben und trägt zur Erreichung des Ziels der Universellen Windows-Plattform bei: einmal erstellen, überall ausführen.
 
-Where necessary, we'll identify key differences you should be aware of and describe any mitigations you should consider.
+Bei Bedarf identifizieren wir wichtige Unterschiede, die Sie kennen sollten, und beschreiben alle Maßnahmen, die Sie berücksichtigen sollten.
 
 Hier sind die Geräte und die Tools, die in diesem Thema erläutert werden:
 
 | Gerät/Tool                       | Beschreibung     |
 |-----------------------------------|-----------------|
-|Tastatur (Hardware und Software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software) keyboard](#software-keyboard) and the [On-Screen Keyboard](#on-screen-keyboard).|
+|Tastatur (Hardware und Software)   |Neben der Standard Hardware Tastatur unterstützen UWP-Anwendungen zwei Software-Tastaturen: die [touchtastatur (oder Software)](#software-keyboard) und die [Bildschirmtastatur](#on-screen-keyboard).|
 |Gamepad und Fernbedienung         |Xbox-Gamepad und -Fernbedienung sind grundlegende Eingabegeräte im [10-Fuß-Bereich](../devices/designing-for-tv.md). Ausführliche Informationen zur UWP-Unterstützung für Gamepad und Fernbedienung finden Sie unter [Interaktionen mit Gamepad und Fernbedienung](gamepad-and-remote-interactions.md).|
 |Bildschirmleseprogramme (Sprachausgabe)          |Die Sprachausgabe ist ein integriertes Bildschirmleseprogramm für Windows, das eindeutige Interaktion und Funktionalität bietet, aber dennoch auf der einfachen Tastaturnavigation und -eingabe basiert. Weitere Informationen zur Sprachausgabe finden Sie unter [Erste Schritte mit Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator).|
 
@@ -69,12 +69,12 @@ Wie bereits erwähnt, ist Die Tastaturunterstützung ist ein wesentlicher Bestan
     - Bieten Sie eine Navigation mittels Pfeiltasten für "innere Navigationsvorgänge" an (siehe [Navigation](#navigation))
 - Unterstützen Sie Tastenkombinationen
     - Stellen Sie Zugriffstasten für schnelle Aktionen bereit (siehe [Schnellinfos](#accelerators))
-    - Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
+    - Geben Sie Zugriffsschlüssel für die Navigation in der Benutzeroberfläche Ihrer Anwendung an (siehe [Zugriffsschlüssel](access-keys.md)).
 
-### <a name="focus-visuals"></a>Focus visuals
+### <a name="focus-visuals"></a>Visuelle Elemente im Fokus
 
 Die UWP unterstützt ein einzelnes Design für visuelle Fokuselemente, das gut für alle Eingabearten und -funktionen funktioniert.
-![Focus visual](images/keyboard/focus-visual.png)
+![visuelle Fokus](images/keyboard/focus-visual.png)
 
 Ein visuelles Fokuselement:
 
@@ -87,29 +87,29 @@ Ein visuelles Fokuselement:
 
 ### <a name="tab-stops"></a>Tabstopps
 
-Damit ein Steuerelement (einschließlich der Navigationselemente) über die Tastatur verwendet werden kann, muss auf dem Steuerelement der Fokus liegen. One way for a control to receive keyboard focus is to make it accessible through tab navigation by identifying it as a tab stop in your application's tab order.
+Damit ein Steuerelement (einschließlich der Navigationselemente) über die Tastatur verwendet werden kann, muss auf dem Steuerelement der Fokus liegen. Eine Möglichkeit für ein Steuerelement, den Tastaturfokus zu erhalten, besteht darin, ihn über die Registerkarten Navigation zugänglich zu machen, indem er als Tabstopp in der Aktivier Reihenfolge der Anwendung identifiziert
 
-For a control to be included in the tab order, the [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) property must be set to **true** and the [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) property must be set to **true**.
+Damit ein Steuerelement in der Aktivier Reihenfolge enthalten ist, muss die [isaktivierte](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) Eigenschaft auf **true** festgelegt werden, und die [istabstopp](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) -Eigenschaft muss auf **true**festgelegt werden.
 
-To specifically exclude a control from the tab order, set the [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) property to **false**.
+Wenn Sie ein Steuerelement explizit aus der Aktivier Reihenfolge ausschließen möchten, legen Sie die Eigenschaft [istabstopp](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) auf **false**fest.
 
 Standardmäßig entspricht die Aktivierreihenfolge der Reihenfolge, in der UI-Elemente erstellt werden. Wenn beispielsweise ein `StackPanel` die Elemente `Button`, `Checkbox` und `TextBox` enthält, ist die Aktivierreihenfolge `Button`, `Checkbox` und`TextBox`.
 
-You can override the default tab order by setting the [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) property.
+Sie können die Standard Sortierreihenfolge überschreiben, indem Sie die [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) -Eigenschaft festlegen.
 
 #### <a name="tab-order-should-be-logical-and-predictable"></a>Aktivierreihenfolge sollte logisch und vorhersehbar sein
 
 Ein gut durchdachtes Tastatur-Navigationsmodell, das eine logische und vorhersehbare Aktivierreihenfolge verwendet, macht Ihre App intuitiver und unterstützt Benutzer dabei, Funktionen effizienter und effektiver zu erkunden, zu identifizieren und auf sie zuzugreifen.
 
-All interactive controls should have tab stops (unless they are in a [group](#control-group)), while non-interactive controls, such as labels, should not.
+Alle interaktiven Steuerelemente sollten Tabstopps haben (es sei denn, Sie befinden sich in einer [Gruppe](#control-group)), während nicht interaktive Steuerelemente, wie z. b. Bezeichnungen, nicht.
 
 Vermeiden Sie eine benutzerdefinierte Aktivierreihenfolge, durch die der Fokus in Ihrer Anwendung wechselt. Beispielsweise sollte eine Liste mit Steuerelementen in einem Formular eine Aktivierreihenfolge aufweisen, die von oben nach unten und von links nach rechts (je nach Gebietsschema) verläuft.
 
-See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) for more details about customizing tab stops.
+Weitere Informationen zum Anpassen von Tabstopps finden Sie unter [Tastatur](../accessibility/keyboard-accessibility.md) Eingabe.
 
 #### <a name="try-to-coordinate-tab-order-and-visual-order"></a>Koordinieren von Aktivierreihenfolge und visueller Reihenfolge
 
-Coordinating tab order and visual order (also referred to as reading order or display order) helps reduce confusion for users as they navigate through your application's UI.
+Durch die Koordination der Aktivier Reihenfolge und der visuellen Reihenfolge (auch als Lesefolge oder Anzeigereihenfolge bezeichnet) werden Verwirrung für Benutzer verringert, wenn Sie durch die Benutzeroberfläche Ihrer Anwendung navigieren
 
 Versuchen Sie, die wichtigsten Befehle, Steuerelemente und Inhalte zuerst in der Aktivierreihenfolge und der visuellen Reihenfolge einzustufen und darzustellen. Die tatsächliche Anzeigeposition kann jedoch vom übergeordneten Layoutcontainer und bestimmten Eigenschaften der untergeordneten Elemente abhängen, die das Layout beeinflussen. Insbesondere kann sich die visuelle Reihenfolge von Layouts mit einer Raster- oder Tabellenmetapher erheblich von der Aktivierreihenfolge unterscheiden.
 
@@ -117,9 +117,9 @@ Versuchen Sie, die wichtigsten Befehle, Steuerelemente und Inhalte zuerst in der
 
 ### <a name="initial-focus"></a>Anfänglicher Fokus
 
-Der anfängliche Fokus gibt das UI-Element an, das den Fokus erhält, wenn eine Anwendung oder eine Seite zum ersten Mal gestartet oder aktiviert wird. When using a keyboard, it is from this element that a user starts interacting with your application's UI.
+Der anfängliche Fokus gibt das UI-Element an, das den Fokus erhält, wenn eine Anwendung oder eine Seite zum ersten Mal gestartet oder aktiviert wird. Wenn Sie eine Tastatur verwenden, ist es von diesem Element aus, dass ein Benutzer mit der Interaktion mit der Benutzeroberfläche Ihrer Anwendung beginnt.
 
-For UWP apps, initial focus is set to the element with the highest [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) that can receive focus. Untergeordnete Elemente von Container-Steuerelementen werden ignoriert. Bei einer Verknüpfung erhält das erste Element in der visuellen Struktur den Fokus.
+Für UWP-apps wird der anfängliche Fokus auf das-Element mit dem höchsten [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) festgelegt, das den Fokus erhalten kann. Untergeordnete Elemente von Container-Steuerelementen werden ignoriert. Bei einer Verknüpfung erhält das erste Element in der visuellen Struktur den Fokus.
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>Festlegen des anfänglichen Fokus auf das logischste Element
 
@@ -127,11 +127,11 @@ Legen Sie den anfänglichen Fokus auf das UI-Element für die erste, oder primä
 -   Eine Foto-App, wobei der Fokus auf dem ersten Element in einer Galerie liegt
 -   Eine Musik-App, wobei der Fokus auf der Wiedergabe-Taste liegt
 
-#### <a name="dont-set-initial-focus-on-an-element-that-exposes-a-potentially-negative-or-even-disastrous-outcome"></a>Don't set initial focus on an element that exposes a potentially negative, or even disastrous, outcome
+#### <a name="dont-set-initial-focus-on-an-element-that-exposes-a-potentially-negative-or-even-disastrous-outcome"></a>Legen Sie den anfänglichen Fokus nicht auf ein Element fest, das potenziell negatives oder sogar katastrophale Ergebnisse verfügbar macht.
 
-This level of functionality should be a user's choice. Das Festlegen des anfänglichen Fokus auf ein Element mit einem signifikanten Ergebnis resultiert möglicherweise in unerwünschtem Datenverlust oder Systemzugriff. For example, don't set focus to the delete button when navigating to an e-mail.
+Dieses Maß an Funktionalität sollte eine Benutzer Auswahl sein. Das Festlegen des anfänglichen Fokus auf ein Element mit einem signifikanten Ergebnis resultiert möglicherweise in unerwünschtem Datenverlust oder Systemzugriff. Legen Sie den Fokus beispielsweise beim Navigieren zu einer e-Mail nicht auf die Schaltfläche Löschen fest.
 
-See [Focus navigation](focus-navigation.md) for more details about overriding tab order.
+Weitere Informationen zum Überschreiben der Aktivier Reihenfolge finden Sie unter [Fokus Navigation](focus-navigation.md)
 
 ### <a name="navigation"></a>Navigation
 
@@ -143,28 +143,28 @@ Standardmäßig weisen UWP-Steuerelemente dieses grundlegende Tastaturverhalten 
 -   **TAB-Tasten** dienen der Navigation zwischen ausführbaren/aktiven Steuerelementen in der Aktivierreihenfolge.
 -   **UMSCHALT + TAB** dient der Navigation zwischen Steuerelementen in umgekehrter Aktivierreihenfolge. Wenn der Benutzer mit der Pfeiltaste in das Steuerelement navigiert ist, liegt der Fokus auf dem letzten bekannten Wert im Steuerelement.
 -   **Pfeiltasten** ermöglichen die steuerelementspezifische „interne Navigation“, wenn der Benutzer zur „internen Navigation“ wechselt. Pfeiltasten dienen nicht der Navigation außerhalb des Steuerelements. Beispiele:
-    -   Up/Down arrow key moves focus inside `ListView` and `MenuFlyout`
-    -   Modify currently selected values for `Slider` and `RatingsControl`
-    -   Move caret inside `TextBox`
-    -   Expand/collapse items inside `TreeView`
+    -   Nach-oben/nach-unten-Taste Verschiebt den Fokus in `ListView` und `MenuFlyout`
+    -   Ändern der aktuell ausgewählten Werte für `Slider` und `RatingsControl`
+    -   Einfügemarke in `TextBox` verschieben
+    -   Elemente innerhalb `TreeView` erweitern/reduzieren
 
-Use these default behaviors to optimize your application's keyboard navigation.
+Verwenden Sie diese Standardverhalten, um die Tastaturnavigation Ihrer Anwendung zu optimieren.
 
 #### <a name="use-inner-navigation-with-sets-of-related-controls"></a>Verwenden Sie die „interne Navigation“ mit Gruppen verwandter Steuerelemente.
 
-Providing arrow key navigation into a set of related controls reinforces their relationship within the overall organization of your application's UI.
+Durch die Bereitstellung der Pfeiltasten Navigation in eine Gruppe verwandter Steuerelemente wird die Beziehung innerhalb der gesamten Organisation der Benutzeroberfläche Ihrer Anwendung verstärkt.
 
 Das hier gezeigte Steuerelement `ContentDialog` ermöglicht beispielsweise standardmäßig die interne Navigation für eine horizontale Reihe von Tasten. (Informationen zu benutzerdefinierten Steuerelementen finden Sie im Abschnitt [Steuerelementgruppe](#control-group)).
 
 ![Dialogfeldbeispiel](images/keyboard/dialog.png)
 
-***Interaction with a collection of related buttons is made easier with arrow key navigation***
+***Die Interaktion mit einer Auflistung verwandter Schaltflächen wird durch die Pfeiltasten Navigation vereinfacht.***
 
 Wenn Elemente in einer einzelnen Spalte angezeigt werden, erfolgt die Elementnavigation mit der Nach-oben-/Nach-unten-Pfeiltaste. Wenn Elemente in einer einzelnen Zeile angezeigt werden, erfolgt die Elementnavigation mit der Rechts-/Links-Pfeiltaste. Wenn sich die Elemente in mehreren Spalten befinden, erfolgt die Navigation über alle 4 Pfeiltasten.
 
-#### <a name="define-a-single-tab-stop-for-a-collection-of-related-controls"></a>Define a single tab stop for a collection of related controls
+#### <a name="define-a-single-tab-stop-for-a-collection-of-related-controls"></a>Definieren eines einzelnen Tabstopps für eine Sammlung verwandter Steuerelemente
 
-By defining a single tab stop for a collection of related, or complementary, controls, you can minimize the number of overall tab stops in your app.
+Durch Definieren eines einzelnen Tabstopps für eine Auflistung verwandter, oder ergänzender Steuerelemente können Sie die Anzahl der allgemeinen Tabstopps in der APP minimieren.
 
 Die folgenden Abbildungen zeigen beispielsweise zwei gestapelte `ListView`-Steuerelemente. Die Abbildung auf der linken Seite zeigt die Pfeiltastennavigation zwischen `ListView`-Steuerelementen für einen Tabstopp. Die Abbildung auf der rechten Seite zeigt, wie die Navigation zwischen untergeordneten Elementen einfacher und effizienter gestaltet werden kann, da die Navigation in übergeordneten Steuerelementen nicht mit einer TAB-Taste erfolgt.
 
@@ -174,7 +174,7 @@ Die folgenden Abbildungen zeigen beispielsweise zwei gestapelte `ListView`-Steue
   <td><img src="images/keyboard/arrow-only.png" alt="arrow only" /></td>
 </table>
 
-***Interaction with two stacked ListView controls can be made easier and more efficient by eliminating the tab stop and navigating with just arrow keys.***
+***Interaktionen mit zwei gestapelten ListView-Steuerelementen können einfacher und effizienter gemacht werden, indem die Tab-Taste und die Navigation mit nur Pfeiltasten vermieden werden.***
 
 Im Abschnitt [Steuerelementgruppe](#control-group) erfahren Sie, wie Sie die Optimierungsbeispiele auf Ihre Anwendungs-UI anwenden.
 
@@ -235,30 +235,30 @@ Für die Steuerelemente `ListView` und `GridView` führt die **BILD-AUF-TASTE** 
 
 ### <a name="keyboard-shortcuts"></a>Tastenkombinationen
 
-Keyboard shortcuts can make your app easier to use by providing both enhanced support for accessibility and improved efficiency for keyboard users.
+Mithilfe von Tastenkombinationen können Sie die Verwendung Ihrer APP vereinfachen, indem Sie eine verbesserte Unterstützung für Barrierefreiheit und eine verbesserte Effizienz für Tastatur Benutzer bereitstellen.
 
-In addition to supporting keyboard navigation and activation in your app, it is also good practice to provide shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with more complex UI you might want to add support for shortcut keys as well. 
+Neben der Unterstützung der Tastaturnavigation und-Aktivierung in Ihrer APP empfiehlt es sich auch, Verknüpfungen für die Funktionalität Ihrer Anwendung bereitzustellen. Die Registerkarten Navigation bietet eine gute, grundlegende Ebene der Tastatur Unterstützung, aber mit einer komplexeren Benutzeroberfläche können Sie auch Unterstützung für Tastenkombinationen hinzufügen. 
 
 Tastenkombinationen sind eine effiziente Methode für den Zugriff auf App-Funktionen und verbessern daher die Produktivität der Benutzer. Es gibt zwei Arten von Tastenkombinationen:
--   [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
--   [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typicaly consist of the Alt key plus a letter key.
+-   [Accelerators](#accelerators) sind Verknüpfungen, die einen app-Befehl aufrufen. Ihre APP kann eine bestimmte Benutzeroberfläche bereitstellen, die dem Befehl entspricht. Zugriffstasten bestehen normalerweise aus der STRG-Taste und einem Buchstaben.
+-   [Zugriffsschlüssel](#access-keys) sind Verknüpfungen, die den Fokus auf bestimmte Benutzeroberflächen in der Anwendung festlegen. Zugriffsschlüssel typicaly bestehen aus der Alt-Taste und einem Buchstaben Schlüssel.
 
-Providing consistent keyboard shortcuts that support similar tasks across applications makes them much more useful and powerful and helps users remember them.
+Durch die Bereitstellung konsistentes Tastenkombinationen, die ähnliche Aufgaben über Anwendungen hinweg unterstützen, sind diese viel nützlicher und leistungsfähiger.
 
 #### <a name="accelerators"></a>Schnellinfos
 
-Accelerators help users perform common actions in an application much more quickly and efficiently. 
+Accelerators helfen Benutzern, gängige Aktionen in einer Anwendung wesentlich schneller und effizienter auszuführen. 
 
 Beispiele für Tastenkombinationen mit der STRG-Taste:
--   Pressing Ctrl + N key anywhere in the **Mail** app launches a new mail item.
--   Pressing Ctrl + E key anywhere in Microsoft Edge (and many Microsoft Store applications) launches search.
+-   Durch Drücken der Tastenkombination STRG + N in der **Mail** -APP wird ein neues e-Mail-Element gestartet.
+-   Durch Drücken von STRG + E-Taste in Microsoft Edge (und viele Microsoft Store Anwendungen) wird die Suche gestartet.
 
 Tastenkombinationen mit der STRG-Taste weisen die folgenden Merkmale auf:
--   They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt + non-alphanumeric keys and the Windows logo key).
+-   Sie verwenden hauptsächlich STRG-und Funktions schlüsselsequenzen (Windows-Systemtasten Kombinationen verwenden auch alt + nicht-alphanumerische Tasten und die Windows-Taste).
 -   Sie werden nur den am häufigsten verwendeten Befehlen zugewiesen.
 -   Ihre Speicherung ist vorgesehen, und sie werden nur in Menüs, QuickInfos und in der Hilfe dokumentiert.
--   They have effect throughout the entire application, when supported.
--   They should be assigned consistently as they are memorized and not directly documented.
+-   Sie sind in der gesamten Anwendung wirksam, wenn Sie unterstützt werden.
+-   Sie sollten konsistent zugewiesen werden, wenn Sie gespeichert und nicht direkt dokumentiert werden.
 
 #### <a name="access-keys"></a>Zugriffstasten
 
@@ -266,26 +266,26 @@ Auf der Seite [Tastenkombinationen mit der STRG-Taste](access-keys.md) finden Si
 
 Tastenkombinationen mit der STRG-Taste ermöglichen es Benutzern mit motorischen Einschränkungen, jeweils eine Taste zu drücken, um eine Aktion für ein bestimmtes Element in der UI durchzuführen. Darüber hinaus können Tastenkombinationen mit der STRG-Taste verwendet werden, um zusätzliche Tastenkombinationen zu kommunizieren, damit erfahrene Benutzer schnell Aktionen durchführen können.
 
-Tastenkombinationen mit der STRG-Taste weisen die folgenden Merkmale auf:
+Zugriffstasten weisen die folgenden Merkmale auf:
 -   Sie verwenden ALT und eine alphanumerische Taste.
 -   Sie dienen in erster Linie der Barrierefreiheit.
--   They are documented directly in the UI, adjacent to the control, through [Key Tips](access-keys.md).
+-   Sie werden direkt in der Benutzeroberfläche, neben dem Steuerelement, über [wichtige Tipps](access-keys.md)dokumentiert.
 -   Sie wirken sich nur auf das aktuelle Fenster aus und navigieren zum entsprechenden Menü- oder Steuerelement.
--   Access keys should be assigned consistently to commonly used commands (especially commit buttons), whenever possible.
+-   Zugriffsschlüssel sollten nach Möglichkeit konsistent den häufig verwendeten Befehlen (insbesondere "Commit"-Schaltflächen) zugewiesen werden.
 -   Sie sind lokalisiert.
 
 #### <a name="common-keyboard-shortcuts"></a>Häufig verwendete Tastenkombinationen
 
-The following table is a small sample of frequently used keyboard shortcuts. 
+In der folgenden Tabelle finden Sie eine kleine Stichprobe häufig verwendeter Tastenkombinationen. 
 
 | Aktion                               | Tastenkombination                                      |
 |--------------------------------------|--------------------------------------------------|
 | Alle auswählen                           | STRG+A                                           |
 | Fortlaufend auswählen                  | UMSCHALT+Pfeiltaste                                  |
 | Speichern                                 | STRG+S                                           |
-| Suchen Sie                                 | STRG+F                                           |
+| Suchen                                 | STRG+F                                           |
 | Drucken                                | STRG+P                                           |
-| „Kopieren“                                 | STRG+C                                           |
+| Kopieren                                 | STRG+C                                           |
 | Ausschneiden                                  | STRG+X                                           |
 | Einfügen                                | STRG+V                                           |
 | Rückgängig machen                                 | STRG+Z                                           |
@@ -293,47 +293,47 @@ The following table is a small sample of frequently used keyboard shortcuts.
 | Registerkarte schließen                            | STRG+F4 oder STRG+W                                |
 | Semantischer Zoom                        | STRG+PLUS-TASTE oder STRG+MINUS-TASTE                                 |
 
-For a comprehensive list of Windows system shortcuts, see [keyboard shortcuts for Windows](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts). For common application shortcuts, see [keyboard shortcuts for Microsoft applications](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps).
+Eine umfassende Liste der Windows-System Verknüpfungen finden Sie unter [Tastenkombinationen für Windows](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts). Allgemeine Anwendungs Verknüpfungen finden Sie unter [Tastenkombinationen für Microsoft-Anwendungen](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps).
 
 ## <a name="advanced-experiences"></a>Erweiterte Funktionen
 
 In diesem Abschnitt erläutern wir einige der komplexeren Tastaturinteraktionen, die durch UWP-Apps unterstützt werden, sowie einige der Verhaltensweisen, die Sie bei Verwendung Ihrer App auf verschiedenen Geräten und mit verschiedenen Tools berücksichtigen sollten.
 
-### <a name="control-group"></a>Control group
+### <a name="control-group"></a>Steuerelement Gruppe
 
 Sie können eine Gruppe verwandter oder komplementärer Steuerelemente in einer „Steuerelementgruppe“ (oder einem direktionalen Bereich) gruppieren, was die „interne Navigation“ mit den Pfeiltasten aktiviert. Die Steuerelementgruppe kann ein einzelner Tabstopp sein, oder Sie können mehrere Tabstopps innerhalb der Steuerelementgruppe angeben.
 
 #### <a name="arrow-key-navigation"></a>Pfeiltastennavigation
 
 Benutzer erwarten Unterstützung für die Pfeiltastennavigation, wenn eine Gruppe ähnlicher, verwandter Steuerelemente in einem UI-Bereich vorhanden ist:
--   `AppBarButtons` in a `CommandBar`
--   `ListItems` or `GridItems` inside `ListView` or `GridView`
--   `Buttons` inside `ContentDialog`
+-   `AppBarButtons` in einer `CommandBar`
+-   `ListItems` oder `GridItems` innerhalb `ListView` oder `GridView`
+-   in `ContentDialog` `Buttons`
 
 UWP-Steuerelemente unterstützen die Pfeiltastennavigation standardmäßig. Verwenden Sie für benutzerdefinierte Layouts und Steuerelementgruppen `XYFocusKeyboardNavigation="Enabled"`, um ein ähnliches Verhalten zu erzeugen.
 
-Consider adding support for arrow key navigation when using the following controls:
+Fügen Sie Unterstützung für die Pfeiltasten Navigation in Erwägung, wenn Sie die folgenden Steuerelemente verwenden
 
 <table>
   <tr>
     <td>
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
-      <p><sup>Dialog buttons</sup></p>
+      <p><sup>Dialog Felder</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>RadioButtons</sup></p>     
+      <p><sup>Radiobuttons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
-      <p><sup>AppBarButtons</sup></p>
+      <p><sup>Appbarbuttons</sup></p>
       <p><img src="images/keyboard/list-and-grid-items.png" alt="List and Grid items"/></p>
-      <p><sup>ListItems and GridItems</sup></p>
+      <p><sup>ListItems und GridItems</sup></p>
     </td>    
   </tr>
 </table>
 
 #### <a name="tab-stops"></a>Tabstopps
 
-Depending on your application's functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.
+Abhängig von der Funktionalität und dem Layout Ihrer Anwendung kann die beste Navigations Option für eine Steuerelement Gruppe ein einzelner Tabstopp mit Pfeil Navigation zu untergeordneten Elementen, mehreren Tabstopps oder einer Kombination sein.
 
 ##### <a name="use-multiple-tab-stops-and-arrow-keys-for-buttons"></a>Verwenden mehrerer Tabstopps und Pfeiltasten für Schaltflächen
 
@@ -347,7 +347,7 @@ In Fällen, in denen das Layout einem bekannten UI-Muster für Steuerelementgrup
 
 Dazu gehören:
 -   `RadioButtons`
--   Multiple `ListViews` that look like and behave like a single `ListView`
+-   Mehrere `ListViews`, die wie ein einzelner `ListView` Aussehen und sich Verhalten.
 -   Jede UI, die wie ein Kachelraster aussehen und sich entsprechend verhalten soll (z. B. Kacheln im Startmenü)
 
 #### <a name="specifying-control-group-behavior"></a>Angeben von Steuerelementgruppenverhalten
@@ -377,17 +377,17 @@ Die Suchschaltfläche für `AutoSuggestBox` ist nicht bei der standardmäßigen 
 
 ![Automatische Vorschläge für Tastaturfokus](images/keyboard/auto-suggest-keyboard.png)
 
-*With keyboard, users press the* ***Enter*** *key to submit search query*
+*Mit Tastatur drücken Benutzer die* ***Eingabe*** *Taste, um eine Suchabfrage zu übermitteln* .
 
 <table>
   <tr>
     <td>
       <p><img src="images/keyboard/auto-suggest-narrator-1.png" alt="autosuggest narrator focus"/></p>
-      <p><em>With Narrator, users press the <strong>Enter</strong> key to submit search query</em></p>
+      <p><em>Mit der Sprachausgabe drücken Benutzer die <strong>Eingabe</strong> Taste, um eine Suchabfrage zu übermitteln.</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/auto-suggest-narrator-2.png" alt="autosuggest narrator focus on search"/></p>
-      <p><em>With Narrator, users are also able to access the search button using the <strong>Caps Lock + Right arrow key</strong>, then pressing <strong>Space</strong> key</em></p>
+      <p><em>Mit der Sprachausgabe können Benutzer auch auf die Such Schaltfläche zugreifen, indem Sie die Taste " <strong>Caps Lock + right Pfeil</strong>" drücken und dann die <strong>LEERTASTE</strong> drücken.</em></p>
     </td>
   </tr>
 </table>
@@ -396,17 +396,17 @@ Die Suchschaltfläche für `AutoSuggestBox` ist nicht bei der standardmäßigen 
 
 Xbox-Gamepads und -Fernbedienungen unterstützen das Verhalten und die Funktionen der UWP-Tastatur größtenteils. Da jedoch verschiedene Tastenoptionen einer Tastatur fehlen, stehen bei Gamepad und Fernbedienung viele Tastaturoptimierungen nicht zur Verfügung (Fernbedienung noch eingeschränkter als Gamepad).
 
-See [Gamepad and remote control interactions](gamepad-and-remote-interactions.md) for more detail on UWP support for gamepad and remote control input.
+Weitere Details zur UWP-Unterstützung für Gamepad und Remote Steuerung finden Sie unter [Gamepad-und Remote Steuerungs Interaktionen](gamepad-and-remote-interactions.md) .
 
 Im Folgenden finden Sie einige wichtige Zuordnungen zwischen Tastatur, Gamepad und Fernbedienung.
 
-| **Tastatur**  | **Gamepad**                         | **Remote control**  |
+| **Tastatur**  | **Gamepad**                         | **Remote Steuerung**  |
 |---------------|-------------------------------------|---------------------|
-| LEERTASTE         | A-TASTE                            | Auswahltaste       |
-| Eingabetaste         | A-TASTE                            | Auswahltaste       |
-| ESCAPE-TASTE        | B-TASTE                            | Zurück-Schaltfläche         |
-| POS1/ENDE      | n. v.                                 | n. v.                 |
-| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | n. v.                 |
+| LEERTASTE         | A-Taste                            | Auswahltaste       |
+| EINGABETASTE         | A-Taste                            | Auswahltaste       |
+| Beenden        | B-Taste                            | Zurück-Schaltfläche         |
+| POS1/ENDE      | N/V                                 | N/V                 |
+| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | N/V                 |
 
 Einige der wichtigsten Unterschiede, die Sie beim Entwerfen Ihrer UWP-App für die Verwendung mit Gamepad und Fernbedienung beachten sollten, sind:
 -   Die Texteingabe erfordert, dass der Benutzer A drückt, um ein Textsteuerelement zu aktivieren.
@@ -417,11 +417,11 @@ Einige der wichtigsten Unterschiede, die Sie beim Entwerfen Ihrer UWP-App für d
 
     **HINWEIS** Gamepad und Fernbedienung navigieren nur zu Elementen in derselben visuellen Reihenfolge wie die gedrückte Richtungstaste. Die Navigation in diese Richtung wird deaktiviert, wenn es kein nachfolgendes Element gibt, das den Fokus erhalten kann. Abhängig von der Situation gilt diese Einschränkung für Tastaturbenutzer nicht immer. Im Abschnitt [Integrierte Tastaturoptimierung](#built-in-keyboard-optimization) erhalten Sie weitere Infos.
 
-#### <a name="directional-navigation"></a>Directional navigation
+#### <a name="directional-navigation"></a>Direktionale Navigation
 
 Die direktionale Navigation wird über die UWP-Hilfsklasse [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) verwaltet, die die gedrückte Richtungstaste (Pfeiltaste, Steuerkreuz) verwendet und versucht, den Fokus in die entsprechende visuelle Richtung zu verlagern.
 
-Unlike the keyboard, when an app opts out of [Mouse Mode](gamepad-and-remote-interactions.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control. See [Gamepad and remote control interactions](gamepad-and-remote-interactions.md) for more detail on directional navigation optimization.
+Anders als bei der Tastatur wird eine direktionale Navigation in der gesamten Anwendung für Gamepad und Remote Steuerung angewendet, wenn eine APP aus dem [Maus Modus wechselt](gamepad-and-remote-interactions.md#mouse-mode). Ausführlichere Informationen zur direktionalen Navigations Optimierung finden Sie unter [Gamepad-und Remote Steuerungs Interaktionen](gamepad-and-remote-interactions.md) .
 
 **HINWEIS** Die Navigation mithilfe der TAB-TASTE der Tastatur wird nicht als direktionale Navigation betrachtet. Weitere Informationen finden Sie im Abschnitt [Tabstopps](#tab-stops).
 
@@ -429,16 +429,16 @@ Unlike the keyboard, when an app opts out of [Mouse Mode](gamepad-and-remote-int
   <tr>
     <td>
       <p><img src="images/keyboard/directional-navigation.png" alt="directional navigation"/></p>
-      <p><em><strong>Directional navigation supported</strong></br>Using directional keys (keyboard arrows, gamepad and remote control D-pad), user can navigate between different controls.</em></p>
+      <p><strong>unterstützte <em>direktionale Navigation</strong></br>Mithilfe von Richtungs Schlüsseln (Tastatur Pfeile, Gamepad und Remote Steuerung D-Pad) kann der Benutzer zwischen verschiedenen Steuerelementen navigieren.</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/no-directional-navigation.png" alt="no directional navigation"/></p>
-      <p><em><strong>Directional navigation not supported</strong> </br>Der Benutzer kann nicht zwischen verschiedenen Steuerelementen mit Richtungstasten navigieren. Other methods of navigating between controls (tab key) are not impacted.</em></p>
+      <p><em><strong>direktionale Navigation wird nicht unterstützt</strong> </br>Der Benutzer kann nicht zwischen verschiedenen Steuerelementen mit Richtungstasten navigieren. Andere Methoden zum Navigieren zwischen Steuerelementen (Tab-Taste) sind nicht betroffen.</em></p>
     </td>
   </tr>
 </table>
 
-### <a name="built-in-keyboard-optimization"></a>Built in keyboard optimization
+### <a name="built-in-keyboard-optimization"></a>Integrierte Tastatur Optimierung
 
 Je nach Layout und Steuerelementen können UWP-Apps speziell für die Tastatureingabe optimiert werden.
 
@@ -446,15 +446,15 @@ Das folgende Beispiel zeigt eine Gruppe von Listenelementen, Rasterelementen und
 
 ![Pfeiltastennavigation in einzelner Spalte](images/keyboard/single-column-arrow.png)
 
-***Single Column Arrow Key Navigation***
+***Navigation in einer einzelnen Spalten Pfeiltaste***
 
 ![Pfeiltastennavigation in einzelner Zeile](images/keyboard/single-row-arrow.png)
 
-***Single Row Arrow Key Navigation***
+***Navigation in einer einzelnen Zeilen Pfeiltaste***
 
 ![Pfeiltastennavigation in mehreren Spalten und Zeilen](images/keyboard/multiple-column-and-row-navigation.png)
 
-***Multiple Column/Row Arrow Key Navigation***
+***Mehrere Spalten/Zeilen-Pfeiltasten Navigation***
 
 #### <a name="wrapping-homogeneous-list-and-grid-view-items"></a>Umschließen homogener Listen- und Rasteransichtselemente
 
@@ -472,62 +472,62 @@ Wenn bei spaltenweise absteigender Reihenfolge (Eingabe der Elemente von oben na
   <tr>
     <td>
       <p><img src="images/keyboard/row-major-keyboard.png" alt="row major keyboard navigation"/></p>
-      <p><em>Row major keyboard navigation</em></p>
+      <p><em>Zeilen Haupttastatur Navigation</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/column-major-keyboard.png" alt="column major keyboard navigation"/></p>
-      <p><em>Column major keyboard navigation</em></p>
+      <p><em>Spalten Haupttastatur Navigation</em></p>
     </td>
   </tr>
 </table>
 
-#### <a name="popup-ui"></a>Popup UI
+#### <a name="popup-ui"></a>Popup-Benutzeroberfläche
 
-As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your application's UI.
+Wie bereits erwähnt, sollten Sie sicherstellen, dass die direktionale Navigation der visuellen Reihenfolge der Steuerelemente in der Benutzeroberfläche Ihrer Anwendung entspricht.
 
-Some controls (such as the context menu, CommandBar overflow menu, and AutoSuggest menu) display a menu popup in a location and direction (downwards by default) relative to the primary control and available screen space. Note that the opening direction can be affected by a variety of factors at run time.
+Einige Steuerelemente (z. b. das Kontextmenü, das Befehls leisten-Überlauf Menü und das Menü "AutoVorschlagen") zeigen in Bezug auf das primäre Steuerelement und den verfügbaren Bildschirmbereich ein Menü-Popup in einer Position und Richtung an (standardmäßig abwärts). Beachten Sie, dass die öffnende Richtung von einer Vielzahl von Faktoren zur Laufzeit betroffen sein kann.
 
 <table>
   <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
   <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key" /></td>
 </table>
 
-For these controls, when the menu is first opened (and no item has been selected by the user), the Down arrow key always sets focus to the first item while the Up arrow key always sets focus to the last item on the menu. 
+Wenn für diese Steuerelemente das Menü zum ersten Mal geöffnet wird (und kein Element vom Benutzer ausgewählt wurde), legt die nach-unten-Taste den Fokus immer auf das erste Element fest, während die nach-oben-Taste den Fokus immer auf das letzte Element im Menü festlegt. 
 
-If the last item has focus and the Down arrow key is pressed, focus moves to the first item on the menu. Similarly, if the first item has focus and the Up arrow key is pressed, focus moves to the last item on the menu. This behavior is referred to as *cycling* and is useful for navigating popup menus that can open in unpredictable directions.
+Wenn das letzte Element den Fokus besitzt und die nach-unten-Taste gedrückt wird, wechselt der Fokus zum ersten Element im Menü. Wenn das erste Element den Fokus besitzt und die nach-oben-Taste gedrückt wird, wechselt der Fokus zum letzten Element im Menü. Dieses Verhalten wird als " *Radfahren* " bezeichnet und eignet sich zum Navigieren in Popup Menüs, die in unvorhersehbaren Richtungen geöffnet werden können.
 
 > [!NOTE]
-> Cycling should be avoided in non-popup UIs where users might come to feel trapped in an endless loop. 
+> Das Radfahren sollte in nicht-Popup-UIs vermieden werden, in denen Benutzer sich in einer Endlosschleife befinden könnten. 
 
-We recommend that you emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in [Programmatic focus navigation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) documentation.
+Es wird empfohlen, dass Sie diese Verhaltensweisen in Ihren benutzerdefinierten Steuerelementen emulieren. Ein Code Beispiel zur Implementierung dieses Verhaltens finden Sie in der [programmatischen Fokus-Navigations](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) Dokumentation.
 
 ## <a name="test-your-app"></a>Testen der App
 
 Testen Sie Ihre App mit allen unterstützten Eingabegeräten, um sicherzustellen, dass eine einheitliche und intuitive Navigation zu UI-Elementen möglich ist und keine unerwarteten Elemente die gewünschte Aktivierreihenfolge beeinträchtigen.
 
 ## <a name="related-articles"></a>Verwandte Artikel
-* [Keyboard events](keyboard-events.md)
+* [Tastatur Ereignisse](keyboard-events.md)
 * [Identifizieren von Eingabegeräten](identify-input-devices.md)
-* [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
+* [Reagieren auf das vorhanden sein der Touchscreen-Tastatur](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 ## <a name="appendix"></a>Anhang
 
-### <a name="software-keyboard"></a>Software keyboard
+### <a name="software-keyboard"></a>Software Tastatur
 
 Bei der Softwaretastatur handelt es sich um eine Tastatur auf dem Bildschirm, die der Benutzer anstelle der physischen Tastatur zum Eingeben von Daten per Touch, Maus, Zeichen-/Eingabestift oder mit einem anderen Zeigegerät verwenden kann. Ein Touchscreen ist nicht erforderlich. Auf einem Touchscreen kann diese Tastatur auch direkt zum Eingeben von Text verwendet werden. Auf Xbox One-Geräten müssen einzelne Tasten ausgewählt werden, indem Sie visuelle Fokuselemente verschieben oder Tastenkombinationen mit dem Gamepad oder der Fernbedienung verwenden.
 
 ![Windows 10-Bildschirmtastatur](images/keyboard/default.png)
 
-***Windows 10 Touch Keyboard***
+***Windows 10-Fingereingabe Tastatur***
 
 ![Xbox one-Bildschirmtastatur](images/keyboard/xbox-onscreen-keyboard.png)
 
-***Xbox One Onscreen Keyboard***
+***Xbox One-Bildschirmtastatur***
 
 Abhängig vom Gerät wird die Softwaretastatur angezeigt, wenn ein Textfeld oder ein anderes bearbeitbares Textsteuerelement im Fokus steht, oder wenn der Benutzer sie über das **Benachrichtigungs-Center**manuell aktiviert.
 
-![Symbol der Bildschirmtastatur im Benachrichtigungs-Center](images/keyboard/touch-keyboard-notificationcenter.png)
+![Symbol der Touch-Bildschirmtastatur im Benachrichtigungs-Center](images/keyboard/touch-keyboard-notificationcenter.png)
 
 Wenn Ihre App den Fokus programmgesteuert auf ein Texteingabesteuerelement festlegt, wird die Bildschirmtastatur nicht aufgerufen. Dadurch wird unerwartetes, nicht direkt vom Benutzer ausgelöstes Verhalten verhindert. Allerdings wird die Tastatur automatisch ausgeblendet, wenn der Fokus programmgesteuert auf ein nicht textuelles Eingabesteuerelement bewegt wird.
 
@@ -537,7 +537,7 @@ Im Folgenden finden Sie eine Liste der nicht bearbeitbaren Steuerelemente, die i
 
 -   Kontrollkästchen
 -   Kombinationsfeld
--   Optionsschaltfläche
+-   Optionsfeld
 -   Bildlaufleiste
 -   Struktur
 -   Strukturelement
@@ -545,22 +545,22 @@ Im Folgenden finden Sie eine Liste der nicht bearbeitbaren Steuerelemente, die i
 -   Menüleiste
 -   Menüelement
 -   Symbolleiste
--   Liste
+-   List
 -   Listenelement
 
 Hier finden Sie einige Beispiele für verschiedene Modi der Touch-Bildschirmtastatur. Das erste Bild zeigt das Standardlayout, das zweite das Daumenlayout. (Letzteres ist unter Umständen nicht in allen Sprachen verfügbar.)
 
-![Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
+![Touch-Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
 
-***The touch keyboard in default layout mode***
+***Die Touchscreen-Tastatur im standardlayoutmodus***
 
-![Bildschirmtastatur mit erweitertem Layout](images/keyboard/extendedview.png)
+![Touch-Bildschirmtastatur mit erweitertem Layout](images/keyboard/extendedview.png)
 
-***The touch keyboard in expanded layout mode***
+***Die Touchscreen-Tastatur im erweiterten Layoutmodus***
 
 Erfolgreiche Tastaturinteraktionen ermöglichen es Benutzern, einfache App-Szenarien nur über die Tastatur auszuführen; Benutzer können demnach über die Tastatur alle interaktiven Elemente erreichen und Standardfunktionen aktivieren. Eine Reihe von Faktoren kann den Erfolg beeinflussen, z. B. Tastaturnavigation, Tastenkombinationen für die Barrierefreiheit sowie Tastenkombinationen für erfahrene Benutzer.
 
-**NOTE**  The touch keyboard does not support toggle and most system commands.
+**Beachten Sie**  die Fingereingabe Tastatur die UMSCHALTTASTE und die meisten Systembefehle nicht unterstützt.
 
 #### <a name="on-screen-keyboard"></a>Bildschirmtastatur
 Wie bei der Softwaretastatur handelt es sich bei der Bildschirmtastatur um eine visuelle Softwaretastatur, die Sie anstelle der physischen Tastatur zum Eingeben von Daten per Touch, Maus, Zeichen-/Eingabestift oder mit einem anderen Zeigegerät verwenden können. Ein Touchscreen ist nicht erforderlich. Die Bildschirmtastatur ist für Systeme ohne physische Tastatur oder für Benutzer vorgesehen, deren Mobilitätseinschränkungen die Verwendung herkömmlicher physischer Eingabegeräte verhindern. Die Bildschirmtastatur emuliert nahezu alle Funktionen der Hardwaretastatur.

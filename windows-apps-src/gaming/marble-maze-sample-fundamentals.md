@@ -25,9 +25,9 @@ In diesem Thema werden die fundamentalen Eigenschaften des Marble Maze-Projekt&m
 
 Es folgen einige wichtige Punkte, die in diesem Dokument erläutert werden und die beim Planen und Entwickeln Ihres UWP-Spiels relevant sind.
 
--   Use the **DirectX 11 App (Universal Windows - C++/CX)** template in Visual Studio to create your DirectX UWP game.
+-   Verwenden Sie die Vorlage **DirectX 11-app ( C++universelle Windows-/CX)** in Visual Studio, um Ihr DirectX-UWP-Spiel zu erstellen.
 -   Windows-Runtime stellt Klassen und Schnittstellen bereit, sodass Sie UWP-Apps auf moderne, objektorientierte Art und Weise entwickeln können.
--   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class) to manage the lifetime of COM objects, and [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) or [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) to manage the lifetime of all other heap-allocated C++ objects.
+-   Verwenden Sie Objekt Verweise mit dem hat-Symbol (^), um die Lebensdauer von Windows-Runtime Variablen zu verwalten, [Microsoft:: WRL:: comptr](https://docs.microsoft.com/cpp/windows/comptr-class) zum Verwalten der Lebensdauer von COM-Objekten, und [Std:: Shared\_PTR](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) oder [Std:: Unique\_PTR](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) , um die C++ Lebensdauer aller anderen vom Heap zugewiesenen Objekte zu verwalten.
 -   In den meisten Fällen verwenden Sie für die Behandlung unerwarteter Fehler die Ausnahmebehandlung anstelle von Ergebniscodes.
 -   Verwenden Sie [SAL-Anmerkungen](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects) in Kombination mit Codeanalysetools, um Fehler in der App zu finden.
 
@@ -36,25 +36,25 @@ Es folgen einige wichtige Punkte, die in diesem Dokument erläutert werden und d
 
 Wenn Sie das Beispiel heruntergeladen und extrahiert haben, können Sie die Projektmappendatei **MarbleMaze_VS2017.sln** (im Ordner **C++** ) öffnen, und der gesamte Code liegt offen vor Ihnen.
 
-Beim Erstellen des Visual Studio-Projekts für Marble Maze haben wir mit einem bereits vorhandenen Projekt begonnen. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows - C++/CX)** template because it provides a basic working 3D application. Gehen Sie hierzu folgendermaßen vor:
+Beim Erstellen des Visual Studio-Projekts für Marble Maze haben wir mit einem bereits vorhandenen Projekt begonnen. Wenn Sie jedoch noch nicht über ein vorhandenes Projekt verfügen, das die grundlegenden Funktionen bereitstellt, die Ihr DirectX-UWP-Spiel erfordert, empfiehlt es sich, ein Projekt zu erstellen, das auf der Visual Studio **DirectX 11-app (Universal Windows-/CX) C++** basiert, da es eine grundlegende funktionierende 3D-Anwendung bereitstellt. Gehen Sie hierzu folgendermaßen vor:
 
-1. In Visual Studio 2019, select **File > New > Project...**
+1. Wählen Sie in Visual Studio 2019 **Datei > Neues > Projekt... aus.**
 
-2. In the **Create a new project** window, select **DirectX 11 App (Universal Windows - C++/CX)** . If you don't see this option, you may not have the required components installed&mdash;see [Modify Visual Studio 2019 by adding or removing workloads and components](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) for information about how to install additional components.
+2. Wählen Sie im Fenster **Neues Projekt erstellen** die Option **DirectX 11-app (universelle C++Windows-/CX)** aus. Wenn diese Option nicht angezeigt wird, sind die erforderlichen Komponenten möglicherweise nicht installiert&mdash;Weitere Informationen zum Installieren zusätzlicher Komponenten finden Sie [unter Ändern von Visual Studio 2019 durch Hinzufügen oder Entfernen von Arbeits Auslastungen und Komponenten](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) .
 
 ![Neues Projekt](images/vs2019-marble-maze-sample-fundamentals-1.png)
 
-3. Select **Next**, and then enter  a **Project name**, a **Location** for the files to be stored, and a **Solution name**, and then select **Create**.
+3. Wählen Sie **weiter**aus, geben Sie dann einen Projektnamen, einen **Speicherort** für die zu speichernden Dateien und einen **Projektmappennamen**ein, und wählen Sie dann **Erstellen**aus.
 
 
 
-One important project setting in the **DirectX 11 App (Universal Windows - C++/CX)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. Sie ist standardmäßig aktiviert, wenn Sie die Visual Studio-Vorlage verwenden. Weitere Informationen zur Vorgehensweise beim Festlegen von Compiler-Optionen in Visual Studio finden Sie unter [Compileroptionen festlegen](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options).
+Eine wichtige Projekteinstellung in der Vorlage **DirectX 11-app (Univers C++Elle Windows-/CX)** ist die **/ZW** -Option, die es dem Programm ermöglicht, die Windows-Runtime-Spracherweiterungen zu verwenden. Sie ist standardmäßig aktiviert, wenn Sie die Visual Studio-Vorlage verwenden. Weitere Informationen zur Vorgehensweise beim Festlegen von Compiler-Optionen in Visual Studio finden Sie unter [Compileroptionen festlegen](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options).
 
-> **Caution**   The **/ZW** option is not compatible with options such as **/clr**. Im Fall von **/clr** können Sie demnach über ein und dasselbe Visual C++-Projekt nicht das .NET Framework und die Windows-Runtime erreichen.
+> **Vorsicht**   die Option **/ZW** ist nicht mit Optionen wie **/CLR**kompatibel. Im Fall von **/clr** können Sie demnach über ein und dasselbe Visual C++-Projekt nicht das .NET Framework und die Windows-Runtime erreichen.
 
  
 
-Every UWP app that you acquire from the Microsoft Store comes in the form of an app package. Ein App-Paket enthält ein App-Manifest, das wiederum Informationen zur App beinhaltet. Sie können beispielsweise die Funktionen (d. h. den erforderlichen Zugriff auf geschützte Systemressourcen oder Benutzerdaten) Ihrer App angeben. Wenn Sie festlegen, dass für Ihre App bestimmte Funktionen erforderlich sind, verwenden Sie das Paketmanifest, um die erforderlichen Funktionen zu deklarieren. Das Manifest ermöglicht Ihnen auch die Angabe von Projekteigenschaften wie der Rotation unterstützter Geräte, Kachelbildern und Begrüßungsbildschirm. Sie können das Manifest bearbeiten, indem Sie **Package.appxmanifest** in Ihrem Projekt öffnen. Weitere Informationen zu App-Paketen finden Sie unter [Verpacken von Apps](https://docs.microsoft.com/windows/uwp/packaging/index).
+Jede UWP-APP, die Sie aus dem Microsoft Store abrufen, ist in Form eines App-Pakets. Ein App-Paket enthält ein App-Manifest, das wiederum Informationen zur App beinhaltet. Sie können beispielsweise die Funktionen (d. h. den erforderlichen Zugriff auf geschützte Systemressourcen oder Benutzerdaten) Ihrer App angeben. Wenn Sie festlegen, dass für Ihre App bestimmte Funktionen erforderlich sind, verwenden Sie das Paketmanifest, um die erforderlichen Funktionen zu deklarieren. Das Manifest ermöglicht Ihnen auch die Angabe von Projekteigenschaften wie der Rotation unterstützter Geräte, Kachelbildern und Begrüßungsbildschirm. Sie können das Manifest bearbeiten, indem Sie **Package.appxmanifest** in Ihrem Projekt öffnen. Weitere Informationen zu App-Paketen finden Sie unter [Verpacken von Apps](https://docs.microsoft.com/windows/uwp/packaging/index).
 
 ##  <a name="building-deploying-and-running-the-game"></a>Erstellen, Bereitstellen und Ausführen des Spiels
 
@@ -77,14 +77,14 @@ Für die Steuerung von Marble Maze können Sie die Fingereingabe, den Beschleuni
 ##  <a name="code-conventions"></a>Codekonventionen
 
 
-Die Windows-Runtime ist eine Programmierschnittstelle, die Sie zum Erstellen von UWP-Apps verwenden können, die nur in einer speziellen Anwendungsumgebung ausgeführt werden. Such apps use authorized functions, data types, and devices, and are distributed from the Microsoft Store. Die Windows-Runtime besteht auf der untersten Ebene aus einer binären Anwendungsschnittstelle (Application Binary Interface, ABI). Die ABI ist ein binärer Vertrag auf unterer Ebene, der Windows-Runtime-APIs für mehrere Programmiersprachen zur Verfügung stellt, beispielsweise für JavaScript, die .NET-Sprachen und Visual C++.
+Die Windows-Runtime ist eine Programmierschnittstelle, die Sie zum Erstellen von UWP-Apps verwenden können, die nur in einer speziellen Anwendungsumgebung ausgeführt werden. Solche Apps verwenden autorisierte Funktionen, Datentypen und Geräte und werden aus dem Microsoft Store verteilt. Die Windows-Runtime besteht auf der untersten Ebene aus einer binären Anwendungsschnittstelle (Application Binary Interface, ABI). Die ABI ist ein binärer Vertrag auf unterer Ebene, der Windows-Runtime-APIs für mehrere Programmiersprachen zur Verfügung stellt, beispielsweise für JavaScript, die .NET-Sprachen und Visual C++.
 
 Diese Sprachen erfordern für den Aufruf von Windows-Runtime-APIs aus JavaScript und .NET Projektionen, die für die jeweilige Sprachumgebung spezifisch sind. Wenn Sie eine Windows-Runtime-API aus JavaScript oder .NET aufrufen, rufen Sie die Projektion auf, die wiederum die zugrunde liegende ABI-Funktion aufruft. Sie können zwar die ABI-Funktionen direkt aus Standard-C++ aufrufen, jedoch stellt Microsoft auch Projektionen für C++ bereit, da diese die Verwendung der Windows-Runtime-APIs stark vereinfachen und dennoch eine hohe Leistung aufrecht erhalten. Microsoft stellt außerdem Spracherweiterungen für Visual C++ bereit, die spezielle Unterstützung für die Windows-Runtime-Projektionen bieten. Viele dieser Spracherweiterungen ähneln der Syntax für die Sprache C++/CLI. Anstelle einer Zielgruppenadressierung für die Common Language Runtime (CLR) durchzuführen, verwenden systemeigene Apps diese Syntax zum Erreichen der Windows-Runtime. Der Modifizierer in Form einer Objektreferenz, bzw. des Hütchensymbols (^), ist ein wichtiger Teil dieser neuen Syntax, da er die automatische Löschung von Runtime-Objekten anhand einer Referenzzählung ermöglicht. Anstatt Methoden wie [AddRef](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) und [Release](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-release) zum Verwalten der Lebensdauer eines Windows-Runtime-Objekts aufzurufen, löscht die Runtime das Objekt, wenn keine andere Komponente darauf verweist. Dies ist beispielsweise der Fall, wenn es den Bereich verlässt oder wenn Sie alle Verweise auf **nullptr** festlegen. Ein weiterer wichtiger Aspekt beim Erstellen von UWP-Apps ist das **ref new**-Schlüsselwort. Verwenden Sie **ref new** anstelle von **new**, um Windows-Runtime-Objekte mit Verweiszählung zu erstellen. Weitere Informationen finden Sie unter [Typsystem (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
 
 > [!IMPORTANT]
-> Wenn Sie Windows-Runtime-Objekte oder Komponenten für Windows-Runtime erstellen, müssen Sie nur **^** und **ref new** verwenden. Sie können die C++-Standardsyntax verwenden, wenn Sie Kernanwendungscode schreiben, in dem die Windows-Runtime nicht genutzt wird.
+> Wenn Sie Windows-Runtime-Objekte oder Komponenten für die Windows-Runtime erstellen, müssen Sie nur **^** und **ref new** verwenden. Sie können die C++-Standardsyntax verwenden, wenn Sie Kernanwendungscode schreiben, in dem die Windows-Runtime nicht genutzt wird.
 
-In Marble Maze werden mit **^** und **Microsoft::WRL::ComPtr** zugewiesene Objekte verwaltet und Arbeitsspeicherverluste minimiert. We recommend that you use ^ to manage the lifetime of Windows Runtime variables, **ComPtr** to manage the lifetime of COM variables (such as when you use DirectX), and **std::shared\_ptr** or **std::unique\_ptr** to manage the lifetime of all other heap-allocated C++ objects.
+In Marble Maze werden mit **^** und **Microsoft::WRL::ComPtr** zugewiesene Objekte verwaltet und Arbeitsspeicherverluste minimiert. Zum Verwalten der Lebensdauer von com-Variablen (z. b. bei Verwendung von DirectX) und " **Std:: Shared\_PTR** " oder " **Std:: Unique\_PTR** " wird die Verwendung von "Windows-Runtime ^" **empfohlen, um** die Lebensdauer aller anderen vom Heap zugewiesenen C++ Objekte zu verwalten.
 
  
 
@@ -99,7 +99,7 @@ Es wird empfohlen, in Ihrem Fehlerbehandlungsmodell die folgenden Konventionen z
 -   Kommunizieren Sie unerwartete Fehler anhand von Ausnahmen.
 -   Verwenden Sie Ausnahmen nicht zum Steuern des Codeflusses.
 -   Fangen Sie nur die Ausnahmen ab, die Sie auf jeden Fall behandeln und beheben können. Fangen Sie andernfalls die Ausnahme nicht ab, und ermöglichen Sie das Beenden der App.
--   Wenn Sie eine DirectX-Routine aufrufen, die **HRESULT** zurückgibt, verwenden Sie die **DX::ThrowIfFailed**-Funktion. Diese Funktion wird in [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) definiert. **ThrowIfFailed** löst eine Ausnahme aus, wenn die bereitgestellten **HRESULT** einen Fehlercode enthalten. For example, **E\_POINTER** causes **ThrowIfFailed** to throw [Platform::NullReferenceException](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class).
+-   Wenn Sie eine DirectX-Routine aufrufen, die **HRESULT** zurückgibt, verwenden Sie die **DX::ThrowIfFailed**-Funktion. Diese Funktion wird in [DirectXHelper.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/master/C%2B%2B/Shared/DirectXHelper.h) definiert. **ThrowIfFailed** löst eine Ausnahme aus, wenn die bereitgestellten **HRESULT** einen Fehlercode enthalten. Beispielsweise bewirkt der **E\_-Zeiger** , dass **throwiffailed** auf [Platform:: NullReferenceException](https://docs.microsoft.com/cpp/cppcx/platform-nullreferenceexception-class)zulöst.
 
     Wenn Sie **ThrowIfFailed** verwenden, platzieren Sie den DirectX-Aufruf in einer separaten Zeile, um die Lesbarkeit des Codes zu verbessern. Dies wird im folgenden Beispiel veranschaulicht.
 
@@ -143,8 +143,8 @@ Lesen Sie die Informationen unter [Marble Maze-Anwendungsstruktur](marble-maze-a
 ## <a name="related-topics"></a>Verwandte Themen
 
 
-* [Marble Maze application structure](marble-maze-application-structure.md)
-* [Developing Marble Maze, a UWP game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Marble Maze-Anwendungs Struktur](marble-maze-application-structure.md)
+* [Entwickeln von Marble Maze, einem UWP- C++ Spiel in und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

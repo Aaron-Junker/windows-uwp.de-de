@@ -24,7 +24,7 @@ Integrieren Sie Spracherkennung und Text-zu-Sprache (auch als Text-to-Speech, TT
 **TTS:** TTS verwendet ein Sprachsynthesemodul (Sprache), um eine Textzeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z. B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
 
 **Andere sprachrelevante Komponenten:** 
-**Cortana** in Windows-Anwendungen nutzt angepasste Sprachbefehle (gesprochen oder eingegeben), um Ihre App im Vordergrund zu starten (die App erhält wie beim Starten über das Startmenü den Fokus) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, es werden aber Ergebnisse aus der App angezeigt). Weitere Hinweise, um App-Funktionen in der **Cortana**-UI verfügbar machen, finden Sie in den [Richtlinien zu Cortana-Sprachbefehlen](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd).
+**Cortana** in Windows-Anwendungen nutzt angepasste Sprachbefehle (gesprochen oder eingegeben), um Ihre App im Vordergrund zu starten (die App erhält wie beim Starten über das Startmenü den Fokus) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, es werden aber Ergebnisse aus der App angezeigt). Weitere Hinweise, um App-Funktionen in der [Cortana](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd)-UI verfügbar machen, finden Sie in den **Richtlinien zu Cortana-Sprachbefehlen**.
 
 ## <a name="speech-interaction-design"></a>Integrieren der Spracherkennung
 
@@ -58,7 +58,7 @@ Beenden Sie die Erkennung, wenn eine Eingabe von einem anderen Gerät als der Sp
 
 Legen Sie die Dauer fest, nach der das Ausbleiben einer Spracheingabe als Beendigung der Spracherkennung interpretiert wird. Starten Sie die Erkennung nach dieser Dauer nicht automatisch neu. Meist weist das Ausbleiben einer Spracheingabe darauf hin, dass der Benutzer die Interaktion mit Ihrer App beendet hat.
 
-Deaktivieren Sie die gesamte fortlaufende Erkennungs-UI, und beenden Sie die Erkennungssitzung, wenn keine Netzwerkverbindung verfügbar ist. Continuous recognition requires a network connection.
+Deaktivieren Sie die gesamte fortlaufende Erkennungs-UI, und beenden Sie die Erkennungssitzung, wenn keine Netzwerkverbindung verfügbar ist. Continuous Recognition erfordert eine Netzwerkverbindung.
 
 ## <a name="commanding"></a>Befehle
 
@@ -179,7 +179,7 @@ Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwe
 
 Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
-## <a name="testing"></a>Testing
+## <a name="testing"></a>Test
 
 Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z. B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
 
@@ -200,18 +200,18 @@ Hören Sie sich alle TTS-Zeichenfolgen an, um sicherzustellen, dass sie verstän
 -   Wenn eine ungewöhnliche Abfolge von Wörtern kombiniert wird oder Teilenummern oder Satzzeichen gesprochen werden, kann ein Satz unverständlich werden.
 -   Sprache kann unnatürlich klingen, wenn der Sprechrhythmus von der normalen Sprechweise eines Muttersprachlers abweicht.
 
-Both issues can be addressed by using SSML instead of plain text as input to the speech synthesizer. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Beide Probleme können mithilfe von SSML anstelle von nur-Text als Eingabe für den Sprachsynthesizer adressiert werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Andere Artikel in diesem Abschnitt 
 
 | Thema | Beschreibung |
 | --- | --- |
 | [Spracherkennung](speech-recognition.md) | Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer Aktion, eines Befehls oder einer Aufgabe. |
-| [Specify the speech recognizer language](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
+| [Sprach Erkennungs Sprache angeben](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
 | [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md) | Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können. |
 | [Ermöglichen kontinuierlicher Diktate](enable-continuous-dictation.md) |Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen. |
-| [Manage issues with audio input](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
-| [Set speech recognition timeouts](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
+| [Verwalten von Problemen mit Audioeingaben](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
+| [Festlegen von Timeouts für die Spracherkennung](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -220,7 +220,7 @@ Both issues can be addressed by using SSML instead of plain text as input to the
 
  **Beispiele**
 
-* [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+* [Beispiel für Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

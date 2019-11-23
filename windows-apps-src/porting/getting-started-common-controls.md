@@ -4,7 +4,7 @@ description: Erste Schritte mit allgemeinen Steuerelementen
 title: Erste Schritte mit allgemeinen Steuerelementen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bc45f21acf5b9a485cf6bd5ead18482f1920bf99
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -18,19 +18,19 @@ ms.locfileid: "74260143"
 
 ## <a name="common-controls-list"></a>Liste „Allgemeine Steuerelemente“
 
-Im vorherigen Abschnitt haben Sie mit nur zwei Steuerelementen gearbeitet: Schaltflächen und Textblöcken. There are, of course, many more controls that are available to you. Hier sind einige allgemeine Steuerelemente, die Sie in Ihren Apps und unter iOS verwenden können. Die iOS-Steuerelemente sind in alphabetischer Reihenfolge neben den entsprechenden UWP-Steuerelementen aufgeführt.
+Im vorherigen Abschnitt haben Sie mit nur zwei Steuerelementen gearbeitet: Schaltflächen und Textblöcken. Es gibt natürlich noch viele weitere Steuerelemente, die Ihnen zur Verfügung stehen. Hier sind einige allgemeine Steuerelemente, die Sie in Ihren Apps und unter iOS verwenden können. Die iOS-Steuerelemente sind in alphabetischer Reihenfolge neben den entsprechenden UWP-Steuerelementen aufgeführt.
 
 Das Besondere bei UWP-Steuerelementen ist, dass sie den Typ des Geräts erkennen, auf dem sie ausgeführt werden, und ihre Darstellung und Funktionalität entsprechend ändern können. Wenn Ihr Projekt z. B. das [**DatePicker**](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10))-Steuerelement verwendet, ist dieses in der Lage, seine Darstellung und sein Verhalten auf einem Desktopcomputer im Vergleich zu einem Telefon entsprechend zu optimieren und anzupassen. Sie müssen nichts weiter unternehmen: die Steuerelemente passen sich automatisch zur Laufzeit an.
 
-| iOS-Steuerelement (Klasse/Protokoll) | Equivalent UWP control |
+| iOS-Steuerelement (Klasse/Protokoll) | Entsprechendes UWP-Steuerelement |
 |------------------------------|--------------------------------------|
-| Aktivitätsanzeige (**UIActivityIndicatorView**) | [**ProgressRing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) <br/> Siehe auch [Schnellstart: Hinzufügen von Statussteuerelementen](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10)) |
+| Aktivitätsanzeige (**UIActivityIndicatorView**) | [**Progressring**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing) <br/> Siehe auch [Schnellstart: Hinzufügen von Statussteuerelementen](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10)) |
 | Anzeigenbanner-Ansicht (**ADBannerView**) und Anzeigenbanner-Ansichtsdelegat (**ADBannerViewDelegate**) | [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) <br/> Siehe auch [Anzeigen von Werbung in Ihrer App](../monetize/display-ads-in-your-app.md) |
 | Schaltfläche (UIButton) | [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) <br/> Siehe auch [Schnellstart: Hinzufügen von Schaltflächensteuerelementen](https://docs.microsoft.com/previous-versions/windows/apps/jj153346(v=win.10)) |
 | Datumsauswahl (UIDatePicker) | [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10)) |
 | Bildansicht (UIImageView) | [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) <br/> Siehe auch [Image und ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes) |
 | Bezeichnung (UILabel) | [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) <br/> Siehe auch [Schnellstart: Anzeigen von Text](https://docs.microsoft.com/previous-versions/windows/apps/hh700392(v=win.10)) |
-| Kartenansicht (MKMapView) und Kartenansichtsdelegat (MKMapViewDelegate) | See [Bing Maps for UWP apps](https://msdn.microsoft.com/library/hh846481) |
+| Kartenansicht (MKMapView) und Kartenansichtsdelegat (MKMapViewDelegate) | Weitere Informationen finden Sie unter [App](https://msdn.microsoft.com/library/hh846481) |
 | Navigationscontrollerdelegat (UINavigationController) und Navigationscontrollerdelegat (UINavigationControllerDelegate) | [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) <br/> Siehe auch [Navigation](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
 | Seitensteuerung (UIPageControl) | [Page](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) <br/> Siehe auch [Navigation](https://docs.microsoft.com/windows/uwp/layout/navigation-basics) |
 | Auswahlansicht (UIPickerView) und Auswahlansichtsdelegat (UIPickerViewDelegate) | [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) <br/> Siehe auch [Hinzufügen von Kombinationsfeldern und Listenfeldern](https://docs.microsoft.com/previous-versions/windows/apps/hh780616(v=win.10)) |
@@ -51,14 +51,14 @@ Das Besondere bei UWP-Steuerelementen ist, dass sie den Typ des Geräts erkennen
 
 Unter [Steuerelementliste](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) finden Sie noch mehr Steuerelemente.
 
-**Note**  For a list of controls for UWP apps using JavaScript and HTML, see [Controls list](https://docs.microsoft.com/previous-versions/windows/apps/hh465453(v=win.10)).
+**Hinweis**  eine Liste der Steuerelemente für UWP-apps, die JavaScript und HTML verwenden, finden Sie in der Liste der Steuer [Elemente](https://docs.microsoft.com/previous-versions/windows/apps/hh465453(v=win.10)).
 
 ### <a name="next-step"></a>Nächster Schritt
 
-[Getting Started: Navigation](getting-started-navigation.md)
+[Einstieg: Navigation](getting-started-navigation.md)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [build 2014: What about XAML UI and Controls?](https://channel9.msdn.com/Events/Build/2014/2-516)
-* [build 2014: Developing Apps using the Common XAML UI Framework](https://channel9.msdn.com/Events/Build/2014/2-507)
-* [build 2014: Using Visual Studio to Build XAML Converged Apps](https://channel9.msdn.com/Events/Build/2014/3-591)
+* [Build 2014: wie sieht es mit XAML-UI und-Steuerelementen aus?](https://channel9.msdn.com/Events/Build/2014/2-516)
+* [Build 2014: Entwickeln von apps mithilfe des allgemeinen XAML-Benutzeroberflächen-Frameworks](https://channel9.msdn.com/Events/Build/2014/2-507)
+* [Build 2014: Verwenden von Visual Studio zum Erstellen von XAML-konvergierten apps](https://channel9.msdn.com/Events/Build/2014/3-591)

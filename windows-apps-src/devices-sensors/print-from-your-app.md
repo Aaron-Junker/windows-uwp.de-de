@@ -4,7 +4,7 @@ title: Drucken in Apps
 description: Hier erfahren Sie, wie Sie Dokumente in einer Universellen Windows-App drucken. In diesem Thema wird zudem gezeigt, wie bestimmte Seiten gedruckt werden.
 ms.date: 01/29/2018
 ms.topic: article
-keywords: windows 10, uwp, printing
+keywords: Windows 10, UWP, Drucken
 ms.localizationpriority: medium
 ms.openlocfilehash: d14a037a84fe64fd9fd3ccca171e3ecfdaaae472
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -19,21 +19,21 @@ ms.locfileid: "74258634"
 
 **Wichtige APIs**
 
--   [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
--   [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
+-   [**Windows. Graphics. Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)
+-   [**Windows. UI. XAML. Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)
 -   [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument)
 
 Hier erfahren Sie, wie Sie Dokumente in einer Universellen Windows-App drucken. In diesem Thema wird zudem gezeigt, wie bestimmte Seiten gedruckt werden. Informationen zu erweiterten Änderungen an der Benutzeroberfläche für die Druckvorschau finden Sie unter [Anpassen der Benutzeroberfläche für die Druckvorschau](customize-the-print-preview-ui.md).
 
 > [!TIP]
-> Most of the examples in this topic are based on the [Universal Windows Platform (UWP) print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing), which is part of the [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) repo on GitHub.
+> die meisten der Beispiele in diesem Thema basieren auf dem [universelle Windows-Plattform (UWP) Print Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing), das Teil des [universelle Windows-Plattform (UWP) app Samples](https://github.com/Microsoft/Windows-universal-samples) -Repository auf GitHub ist.
 
 ## <a name="register-for-printing"></a>Registrieren für Druckfunktionen
 
-Um Ihrer App Druckfunktionen hinzuzufügen, müssen Sie sie als Erstes für den Vertrag für "Drucken" registrieren. Die Registrierung ist für jeden Bildschirm erforderlich, auf dem der Benutzer drucken können soll. Es kann jeweils nur der Bildschirm, der gerade angezeigt wird, für das Drucken registriert werden. Wenn ein Bildschirm Ihrer App für das Drucken registriert wurde, muss die Registrierung beim Schließen des Bildschirms aufgehoben werden. Wird an seiner Stelle ein anderer Bildschirm angezeigt, muss dieser nächste Bildschirm beim Öffnen für einen neuen Vertrag für "Drucken" registriert werden.
+Um Ihrer App Druckfunktionen hinzuzufügen, müssen Sie sie als Erstes für den Vertrag für "Drucken" registrieren. Die Registrierung ist für jeden Bildschirm erforderlich, auf dem der Benutzer drucken können soll. Es kann jeweils nur der Bildschirm, der gerade angezeigt wird, für das Drucken registriert werden. Wenn ein Bildschirm Ihrer App für das Drucken registriert wurde, muss die Registrierung beim Schließen des Bildschirms aufgehoben werden. Wird an seiner Stelle ein anderer Bildschirm angezeigt, muss dieser nächste Bildschirm beim Öffnen für einen neuen Vertrag für „Drucken“ registriert werden.
 
 > [!TIP]
-> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. Ein entsprechendes Beispiel finden Sie in der `PrintHelper`-Klasse im [UWP-Druckbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
+> Wenn Sie das Drucken von mehr als einer Seite in der APP unterstützen müssen, können Sie diesen Druck Code in einer gemeinsamen Hilfsklasse platzieren und die APP-Seiten wieder verwenden. Ein entsprechendes Beispiel finden Sie in der `PrintHelper`-Klasse im [UWP-Druckbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
 
 Geben Sie zuerst die Klassen [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) und [**PrintDocument**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing.PrintDocument) an. Der **PrintManager**-Typ und Typen zur Unterstützung anderer Windows-Druckfunktionen befinden sich im [**Windows.Graphics.Printing**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing)-Namespace. Der **PrintDocument**-Typ und andere Typen zur Unterstützung der Vorbereitung von XAML-Inhalten für das Drucken sind im [**Windows.UI.Xaml.Printing**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Printing)-Namespace enthalten. Sie können das Schreiben eines eigenen Druckcodes vereinfachen, indem Sie der Seite die folgenden **using**- oder **Imports**-Anweisungen hinzufügen.
 
@@ -77,7 +77,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-In the sample, the event handlers are unregistered in the `UnregisterForPrinting` method.
+Im Beispiel wird die Registrierung der Ereignishandler in der `UnregisterForPrinting`-Methode aufgehoben.
 
 ```csharp
 public virtual void UnregisterForPrinting()
@@ -96,10 +96,10 @@ public virtual void UnregisterForPrinting()
 }
 ```
 
-When the user leaves a page that supports printing, the event handlers are unregistered within the `OnNavigatedFrom` method. 
+Wenn der Benutzer eine Seite verlässt, die das Drucken unterstützt, wird die Registrierung der Ereignishandler innerhalb der `OnNavigatedFrom` Methode aufgehoben. 
 
 > [!NOTE]
-> If you have a multiple-page app and don't disconnect printing, an exception is thrown when the user leaves the page and then returns to it.
+> Wenn Sie über eine APP mit mehreren Seiten verfügen und den Druck nicht trennen, wird eine Ausnahme ausgelöst, wenn der Benutzer die Seite verlässt und dann wieder zurückgibt.
 
 ```csharp
 protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -191,7 +191,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 Nachdem die Druckaufgabe erstellt wurde, löst der [**PrintManager**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.PrintManager) das [**Paginate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.paginate)-Ereignis aus, um eine Sammlung zu druckender Seiten anzufordern, die auf der Druckvorschau-Benutzeroberfläche angezeigt werden. Dies entspricht der **Paginate**-Methode der **IPrintPreviewPageCollection**-Schnittstelle. Der Ereignishandler, den Sie bei der Registrierung erstellt haben, wird zu diesem Zeitpunkt aufgerufen.
 
 > [!IMPORTANT]
-> If the user changes print settings, the paginate event handler will be called again to allow you to reflow the content. Für die bestmögliche Benutzerfreundlichkeit wird empfohlen, die Einstellungen zu überprüfen, bevor Sie den Inhalt umbrechen und die erneute Initialisierung der auf Seiten aufgeteilten Inhalte vermeiden, wenn dies nicht erforderlich ist.
+> wenn der Benutzer die Druckeinstellungen ändert, wird der paginieren-Ereignishandler erneut aufgerufen, damit Sie den Inhalt erneut ausführen können. Für die bestmögliche Benutzerfreundlichkeit wird empfohlen, die Einstellungen zu überprüfen, bevor Sie den Inhalt umbrechen und die erneute Initialisierung der auf Seiten aufgeteilten Inhalte vermeiden, wenn dies nicht erforderlich ist.
 
 Im [**Paginate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.printing.printdocument.paginate)-Ereignishandler (der `CreatePrintPreviewPages`-Methode im [UWP-Druckbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)) erstellen Sie die Seiten, die auf der Druckvorschau-Benutzeroberfläche angezeigt und an den Drucker gesendet werden. Der Code zum Vorbereiten der App-Inhalte für den Druck muss speziell an Ihre App und die gedruckten Inhalte angepasst werden. Im Quellcode für das [UWP-Druckbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) können Sie sehen, wie der Inhalt für das Drucken formatiert wird.
 
@@ -277,9 +277,9 @@ In diesem Schritt wird eine neue Druckoption erstellt und eine Liste von Werten 
 
 | Optionsname          | Aktion |
 |----------------------|--------|
-| **Print all**        | Druckt alle Seiten im Dokument.|
-| **Print Selection**  | Druckt nur den vom Benutzer ausgewählten Inhalt.|
-| **Print Range**      | Zeigt ein Bearbeitungssteuerelement an, in das der Benutzer die zu druckenden Seiten eingeben kann.|
+| **Alle drucken**        | Druckt alle Seiten im Dokument.|
+| **Auswahl drucken**  | Druckt nur den vom Benutzer ausgewählten Inhalt.|
+| **Druckbereich**      | Zeigt ein Bearbeitungssteuerelement an, in das der Benutzer die zu druckenden Seiten eingeben kann.|
 
 Ändern Sie zunächst den [**PrintTaskRequested**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress)-Ereignishandler, um den Code zum Abrufen eines [**PrintTaskOptionDetails**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails)-Objekts hinzuzufügen.
 
@@ -290,7 +290,7 @@ PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrin
 Löschen Sie die Liste der Optionen, die in der Druckvorschau-Benutzeroberfläche angezeigt werden, und fügen Sie die Optionen hinzu, die angezeigt werden sollen, wenn der Benutzer in der App druckt.
 
 > [!NOTE]
-> The options appear in the print preview UI in the same order they are appended, with the first option shown at the top of the window.
+> die Optionen in der Benutzeroberfläche der Seitenansicht in derselben Reihenfolge angezeigt, in der Sie angefügt werden, und die erste Option wird oben im Fenster angezeigt.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -330,7 +330,7 @@ Die [**CreateTextOption**](https://docs.microsoft.com/uwp/api/windows.graphics.p
 
 Der **OptionChanged**-Ereignishandler ist im Wesentlichen für zwei Dinge zuständig. Erstens blendet er das Texteingabefeld für den Seitenbereich je nach der vom Benutzer ausgewählten Seitenbereichsoption ein und aus. Zweitens testet er den Text, den der Benutzer in das Seitenbereich-Textfeld eingibt, um sicherzustellen, dass es sich um einen gültigen Seitenbereich für das Dokument handelt.
 
-This example shows how print option change events are handled in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing).
+Dieses Beispiel zeigt, wie die Änderungs Ereignisse von Druckoptionen im [Beispiel für den UWP-Druck](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)behandelt werden.
 
 ```csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -407,13 +407,13 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 ```
 
 > [!TIP]
-> See the `GetPagesInRange` method in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) for details on how to parse the page range the user enters in the Range text box.
+> die `GetPagesInRange`-Methode im [UWP-Druck Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) anzuzeigen, finden Sie ausführliche Informationen zum Analysieren des Seitenbereichs, den der Benutzer in das Textfeld "Bereich" eingibt.
 
 ## <a name="preview-selected-pages"></a>Vorschau auf ausgewählte Seiten
 
-Die Formatierung des Inhalts Ihrer App zum Drucken hängt von der Art der App und deren Inhalt ab. A print helper class in used in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) to format the content for printing.
+Die Formatierung des Inhalts Ihrer App zum Drucken hängt von der Art der App und deren Inhalt ab. Eine druckhilfsklasse, die im [UWP-Druck Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing) verwendet wird, um den Inhalt für den Druck zu formatieren.
 
-When printing a subset of pages, there are several ways to show the content in the print preview. Unabhängig davon, welche Methode Sie zum Anzeigen des Seitenbereichs in der Druckvorschau ausgewählt haben, darf der Ausdruck nur die ausgewählten Seiten enthalten.
+Beim Drucken einer Teilmenge von Seiten gibt es mehrere Möglichkeiten, den Inhalt in der Seitenansicht anzuzeigen. Unabhängig davon, welche Methode Sie zum Anzeigen des Seitenbereichs in der Druckvorschau ausgewählt haben, darf der Ausdruck nur die ausgewählten Seiten enthalten.
 
 -   Alle Seiten in der Druckvorschau anzeigen, unabhängig davon, ob ein Seitenbereich festgelegt wurde. Der Benutzer muss selbst wissen, welche Seiten ausgedruckt werden.
 -   Nur den vom Benutzer ausgewählten Seitenbereich in der Druckvorschau anzeigen und die Anzeige aktualisieren, wenn der Benutzer den Seitenbereich ändert.
@@ -421,6 +421,6 @@ When printing a subset of pages, there are several ways to show the content in t
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Design guidelines for printing](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
-* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)
+* [Entwurfs Richtlinien für das Drucken](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning)
+* [Build 2015-Video: Entwickeln von apps, die in Windows 10 gedruckt werden](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Beispiel für UWP-Druck](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Printing)

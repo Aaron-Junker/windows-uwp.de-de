@@ -1,6 +1,6 @@
 ---
 Description: Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen.
-title: Angeben der Sprache für die Spracherkennung
+title: Festlegen der Sprache für die Spracherkennung
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258239"
 ---
-# <a name="specify-the-speech-recognizer-language"></a>Angeben der Sprache für die Spracherkennung
+# <a name="specify-the-speech-recognizer-language"></a>Festlegen der Sprache für die Spracherkennung
 
 
 Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen.
@@ -25,18 +25,18 @@ Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung au
 
 Im Folgenden listen wir die auf einem System installierten Sprachen auf, ermitteln die Standardsprache und wählen eine andere Sprache für die Spracherkennung aus.
 
-**Prerequisites:**
+**Voraussetzung**
 
 Dieses Thema baut auf dem Thema [Spracherkennung](speech-recognition.md) auf.
 
 Sie sollten über Grundkenntnisse in den Bereichen Spracherkennung und Erkennungseinschränkungen verfügen.
 
-Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-Plattform) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
+Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 
 -   [Erste App erstellen](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-**User experience guidelines:**
+**Richtlinien für die Benutzer Leistung:**
 
 Nützliche Tipps zum Entwerfen einer hilfreichen und ansprechenden App mit Sprachfunktion finden Sie unter [Entwurfsrichtlinien für die Spracherkennung](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions).
 
@@ -56,15 +56,15 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 Die installierten Sprachen können sich von Gerät zu Gerät unterscheiden. Überprüfen Sie, ob eine Sprache vorhanden ist, wenn diese für eine bestimmte Einschränkung erforderlich ist.
 
-**Note**  A reboot is required after a new language pack is installed. An exception with error code SPERR\_NOT\_FOUND (0x8004503a) is raised if the specified language is not supported or has not finished installing.
+**Beachten Sie**  nach der Installation eines neuen Sprachpakets ein Neustart erforderlich ist. Eine Ausnahme mit dem Fehlercode "-\_nicht gefunden\_(0x8004503a)" wird ausgelöst, wenn die angegebene Sprache nicht unterstützt wird oder die Installation noch nicht abgeschlossen ist.
 
  
 
 Zum Ermitteln der auf einem Gerät unterstützten Sprachen überprüfen Sie eine von zwei statischen Eigenschaften der [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)-Klasse:
 
--   [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)—The collection of [**Language**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) objects used with predefined dictation and web search grammars.
+-   [**SupportedTopicLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)– die Sammlung von [**sprach**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) Objekten, die mit vordefinierten Diktat-und websuchgrammatiken verwendet werden.
 
--   [**SupportedGrammarLanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)—The collection of [**Language**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) objects used with a list constraint or a Speech Recognition Grammar Specification (SRGS) file.
+-   [**Supportedgrammarlanguages**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)– die Sammlung von [**sprach**](https://docs.microsoft.com/uwp/api/Windows.Globalization.Language) Objekten, die mit einer Listen Einschränkung oder einer SRGS-Datei (Speech Recognition Grammar Specification) verwendet werden.
 
 ## <a name="specify-a-language"></a>Angeben einer Sprache
 
@@ -86,7 +86,7 @@ Sie können eine Themeneinschränkung konfigurieren, indem Sie [**SpeechRecognit
 
 Sie können eine Einschränkungsliste konfigurieren, indem Sie [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) zur [**Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints)-Sammlung der [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) hinzufügen und anschließend [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) aufrufen. Die Sprache einer benutzerdefinierten Liste kann nicht direkt angegeben werden. Stattdessen wird die Liste mit der Sprache der Erkennung verarbeitet.
 
-Bei einer SRGS-Grammatik handelt es sich um ein offenes XML-Standardformat, das durch die [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)-Klasse dargestellt wird. Anders als bei benutzerdefinierten Listen können Sie die Sprache der Grammatik im SRGS-Markup angeben. [**CompileConstraintsAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) fails with a [**SpeechRecognitionResultStatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) of **TopicLanguageNotSupported** if the recognizer is not initialized to the same language as the SRGS markup.
+Bei einer SRGS-Grammatik handelt es sich um ein offenes XML-Standardformat, das durch die [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)-Klasse dargestellt wird. Anders als bei benutzerdefinierten Listen können Sie die Sprache der Grammatik im SRGS-Markup angeben. [**Compileeinschränintsasync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync) schlägt mit dem [**Status "sprachlos erkentionresultstatus**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus) " von " **TopicLanguageNotSupported** " fehl, wenn die Erkennung nicht in derselben Sprache wie das SRGS-Markup initialisiert wird.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -100,7 +100,7 @@ Bei einer SRGS-Grammatik handelt es sich um ein offenes XML-Standardformat, das 
 
 **Beispiele**
 
-* [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+* [Beispiel für Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

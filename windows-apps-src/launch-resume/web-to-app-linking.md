@@ -46,7 +46,7 @@ Wenn beispielsweise die Adresse Ihrer Website "msn.com" lautet, würden Sie den 
 </Applications>
 ```
 
-Die obige Deklaration registriert Ihre App zur Behandlung von Links vom angegebenen Host. Wenn Ihre Website über mehrere Adressen verfügt (z. b.: m.example.com, www\.example.com und example.com), fügen Sie in der `<uap3:AppUriHandler>` für jede Adresse einen separaten `<uap3:Host Name=... />`-Eintrag hinzu.
+Die obige Deklaration registriert Ihre App zur Behandlung von Links vom angegebenen Host. Wenn Ihre Website über mehrere Adressen verfügt (z. b. m.example.com, www\.example.com und example.com), fügen Sie in der `<uap3:AppUriHandler>` für jede Adresse einen separaten `<uap3:Host Name=... />` Eintrag hinzu.
 
 ## <a name="associate-your-app-and-website-with-a-json-file"></a>Verknüpfen Sie Ihre App und die Website mit einer JSON-Datei
 
@@ -76,7 +76,7 @@ Das obige für eine JSON-Datei veranschaulicht die Verwendung von Platzhaltern. 
 | **\***       | Repräsentiert eine beliebige Teilzeichenfolge      |
 | **?**        | Steht für ein einzelnes Zeichen |
 
-Wenn beispielsweise `"excludePaths" : [ "/news/*", "/blog/*" ]` im obigen Beispiel verwendet wird, unterstützt Ihre APP alle Pfade, die mit der Adresse Ihrer Website beginnen (z. b. MSN.com), mit **Ausnahme** derjenigen, die unter `/news/` und `/blog/` stehen. **MSN.com/weather.html** wird unterstützt, jedoch nicht als **MSN.com/News/Topnews.html**.
+Wenn beispielsweise `"excludePaths" : [ "/news/*", "/blog/*" ]` im obigen Beispiel verwendet wird, unterstützt Ihre APP alle Pfade, die mit der Adresse Ihrer Website beginnen (z. b. MSN.com), mit **Ausnahme** der unter `/news/` und `/blog/`. **MSN.com/weather.html** wird unterstützt, jedoch nicht als **MSN.com/News/Topnews.html**.
 
 ### <a name="multiple-apps"></a>Mehrere Apps
 
@@ -96,7 +96,7 @@ Wenn Sie zwei Apps haben, die Sie mit Ihrer Website verknüpfen möchten, listen
 
 Um Ihren Benutzern die bestmögliche Erfahrung zu bieten, verwenden Sie Ausschlusspfade, um sicherzustellen, dass der nur online verfügbare Inhalt von den unterstützten Pfaden in der JSON-Datei ausgenommen ist.
 
-Ausschlusspfade werden zuerst überprüft, und wenn eine Übereinstimmung vorliegt wird die entsprechende Seite mit dem Browser anstelle der angegebenen App geöffnet. Im obigen Beispiel schließt '/News/\* ' alle Seiten unter diesem Pfad ein, während '/News @ no__t-1 ' (keine vorwärts Striche ' News ') enthält alle Pfade unter ' News @ no__t-2 ' (z. b. ' newslocal/', ' newsinternational/' usw.).
+Ausschlusspfade werden zuerst überprüft, und wenn eine Übereinstimmung vorliegt wird die entsprechende Seite mit dem Browser anstelle der angegebenen App geöffnet. Im obigen Beispiel schließt '/News/\*' alle Seiten unter diesem Pfad ein, während '/News\*' (keine vorwärts Striche ' News ') enthält alle Pfade unter ' News\*' (z. b. ' newslocal/', ' newsinternational/' usw.).
 
 ## <a name="handle-links-on-activation-to-link-to-content"></a>Behandeln Sie Links auf Aktivierung, um Links mit Inhalt zu verbinden.
 
@@ -150,19 +150,19 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **Wichtig** Stellen Sie sicher, dass das finale `if (rootFrame.Content == null)` logic durch `rootFrame.Navigate(deepLinkPageType, e);` ersetzt wird, wie im obigen Beispiel gezeigt wird.
 
-## <a name="test-it-out-local-validation-tool"></a>Testen Sie es: Lokales Validierungs Tool
+## <a name="test-it-out-local-validation-tool"></a>Testen Sie: Lokales Überprüfungswerkzeug
 
 Sie können die Konfiguration Ihrer App und Website durch Ausführen des App-Host Registration Verifier Werkzeugs prüfen, der hier verfügbar ist:
 
-% windir% \\system32 @ no__t-1**apphostregistrationverifier. exe**
+% windir%\\System32\\**apphostregistrationverifier. exe**
 
 Testen Sie die Konfiguration Ihrer App und, indem Sie dieses Werkzeug mit folgenden Parametern ausführen.
 
 **Apphostregistrationverifier. exe** *Hostname packagefamilyname filePath*
 
 -   Hostname: Ihre Website (z. b. Microsoft.com)
--   Paket Familienname (PFN): PFN Ihrer APP
--   Dateipfad: Die JSON-Datei für die lokale Validierung (z. b. C: \\somefolder @ no__t-1Windows-App-Web-Link)
+-   Paketfamiliennamen (PFN): Ihre App-PFN
+-   Dateipfad: die JSON-Datei für die lokale Validierung (z. b. C:\\somefolder\\Windows-App-Web-Link)
 
 Wenn das Tool nichts zurückgibt, funktioniert die Überprüfung für diese Datei beim Hochladen. Wenn ein Fehlercode angezeigt wird, funktioniert dies nicht.
 
@@ -171,9 +171,9 @@ Sie können folgenden Registrierungsschlüssel ausführen, um den Pfad für quer
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
 
-KeyName `ForceValidation`-Wert: `1`
+KeyName: `ForceValidation` Wert: `1`
 
-## <a name="test-it-web-validation"></a>Testen Sie es: Webvalidierung
+## <a name="test-it-web-validation"></a>Testen Sie es: Web-Überprüfung
 
 Schließen Sie die Anwendung, um sicherzustellen, dass die App aktiviert wird, wenn Sie auf einen Link klicken. Kopieren Sie dann die Adresse eines unterstützten Pfades in Ihrer Website. Wenn die Adresse Ihrer Website beispielsweise "MSN.com" lautet und einer der Support Pfade "path1" ist, verwenden Sie `http://msn.com/path1`
 
@@ -193,7 +193,7 @@ Wenn Sie der protocol activation logic zu folgen möchten, legen Sie einen Halte
 - Alle quergeladenen Apps mit AppUriHandlern werden validierte Links für den Host on Install haben Sie müssen kein JSON-Datei hochgeladen haben, um das Feature zu testen.
 - Dieses Feature funktioniert, wann immer Ihre App eine UWP-App ist, die mit  [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) gestartet ist, oder eine Windows-Desktop-App, gestartet mit  [ShellExecuteEx](https://docs.microsoft.com/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). Wenn die URL einen registrierten URI App Handler entspricht, wird die App anstelle des Browsers gestartet werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Verknüpfung zwischen Web und App – Beispielprojet](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol-Registrierung](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)

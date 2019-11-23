@@ -24,19 +24,19 @@ Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer
 
 Die Spracherkennung besteht aus einer Sprachlaufzeit, Erkennungs-APIs zum Programmieren der Laufzeit, einsatzfähiger Grammatik für das Diktieren und die Websuche und einer Standard-UI, die Benutzern das Auffinden und Verwenden der Spracherkennungsfeatures erleichtert.
 
-## <a name="configure-speech-recognition"></a>Configure speech recognition
+## <a name="configure-speech-recognition"></a>Konfigurieren der Spracherkennung
 
-To support speech recognition with your app, the user must connect and enable a microphone on their device, and accept the Microsoft Privacy Policy granting permission for your app to use it.
+Um die Spracherkennung mit Ihrer APP zu unterstützen, muss der Benutzer auf seinem Gerät eine Verbindung herstellen und ein Mikrofon aktivieren und die Microsoft-Datenschutzrichtlinie akzeptieren, die der APP die Berechtigung erteilt, Sie zu verwenden.
 
-To automatically prompt the user with a system dialog requesting permission to access and use the microphone's audio feed (example from the [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis) shown below), just set the **Microphone** [device capability](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) in the [App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). For more detail, see [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+Um den Benutzer automatisch mit einem System Dialogfeld aufzufordern, das die Berechtigung für den Zugriff auf den audiofeed des Mikrofons (z. b. aus dem unten gezeigten [sprach Erkennungs-und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis) Beispiel) anfordert, legen Sie einfach die **Mikrofon** [Geräte Funktion](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) im [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)fest. Weitere Details finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
-![Privacy policy for microphone access](images/speech/privacy.png)
+![Datenschutzrichtlinie für den Mikrofon Zugriff](images/speech/privacy.png)
 
-If the user clicks Yes to grant access to the microphone, your app is added to the list of approved applications on the Settings -> Privacy -> Microphone page. However, as the user can choose to turn this setting off at any time, you should confirm that your app has access to the microphone before attempting to use it.
+Wenn der Benutzer auf Ja klickt, um dem Mikrofon Zugriff zu gewähren, wird die APP auf der Seite Einstellungen-> Datenschutz > Mikrofon der Liste der genehmigten Anwendungen hinzugefügt. Da der Benutzer diese Einstellung jedoch jederzeit deaktivieren kann, sollten Sie sicherstellen, dass Ihre APP auf das Mikrofon zugreifen kann, bevor Sie versuchen, Sie zu verwenden.
 
-If you also want to support dictation, Cortana, or other speech recognition services (such as a [predefined grammar](#predefined-grammars) defined in a topic constraint), you must also confirm that **Online speech recognition** (Settings -> Privacy -> Speech) is enabled.
+Wenn Sie auch Diktat, Cortana oder andere sprach Erkennungs Dienste unterstützen möchten (z. b. eine in einer Thema Einschränkung definierte [vordefinierte Grammatik](#predefined-grammars) ), müssen Sie auch bestätigen, dass die **Online Spracherkennung** (Einstellungen-> Datenschutz > Sprache) aktiviert ist.
 
-This snippet shows how your app can check if a microphone is present and if it has permission to use it.
+Dieser Code Ausschnitt zeigt, wie Ihre APP überprüfen kann, ob ein Mikrofon vorhanden ist, und ob Sie über die entsprechende Berechtigung verfügt.
 
 ```csharp
 public class AudioCapturePermissions
@@ -210,7 +210,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 Mit einer *Einschränkung* werden die Wörter und Wortgruppen (Vokabular) definiert, die eine App bei der Spracheingabe erkennt. Einschränkungen sind der Kern der Spracherkennung und verleihen Ihrer App mehr Kontrolle über die Genauigkeit der Spracherkennung.
 
-You can use the following types of constraints for recognizing speech input.
+Sie können die folgenden Einschränkungs Typen zum Erkennen von Spracheingaben verwenden.
 
 ### <a name="predefined-grammars"></a>Vordefinierte Grammatiken
 
@@ -220,7 +220,7 @@ Die Standardgrammatik der Freitext-Diktierfunktion erkennt die meisten Wörter u
 
 Die Grammatik für die Websuche enthält wie die Diktiergrammatik eine große Anzahl von Wörtern und Ausdrücken, die Benutzer sagen können. Sie ist allerdings für die Erkennung von Begriffen optimiert, die beim Suchen im Web häufig verwendet werden.
 
-**Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.     
+**Beachten Sie**  da die vordefinierten Diktat-und websuchgrammatiken groß sein können und weil Sie online sind (nicht auf dem Gerät), ist die Leistung möglicherweise nicht so schnell wie bei einer benutzerdefinierten Grammatik, die auf dem Gerät installiert ist.     
 
 Diese vordefinierten Grammatiken können zum Erkennen von bis zu zehn Sekunden Spracheingabe verwendet werden. Sie müssen dazu keinen Code selbst erstellen. Sie erfordern jedoch eine Netzwerkverbindung.
 
@@ -228,7 +228,7 @@ Zum Verwenden der Webdiensteinschränkungen muss die Unterstützung für die Spr
 
 Hier wird erläutert, wie Sie testen, ob die Spracheingabe aktiviert ist, und wie Sie die Seite „Einstellungen -> Datenschutz -> Datenschutzeinstellungen für Sprache, Freihand und Eingabe“ öffnen.
 
-Zuerst initialisieren wir eine globale Variable (HResultPrivacyStatementDeclined) für den HResult-Wert 0x80045509. See [Exception handling for in C\# or Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
+Zuerst initialisieren wir eine globale Variable (HResultPrivacyStatementDeclined) für den HResult-Wert 0x80045509. Weitere Informationen finden Sie [unter Ausnahmebehandlung für in C-\# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
@@ -257,29 +257,29 @@ catch (Exception exception)
 }
 ```
 
-See [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint).
+Siehe [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint).
 
-### <a name="programmatic-list-constraints"></a>Programmatic list constraints 
+### <a name="programmatic-list-constraints"></a>Programmgesteuerte Listen Einschränkungen 
 
 Einschränkungen per programmgesteuerter Liste sind eine unkomplizierte Methode für die Erstellung einfacher Grammatiken in Form einer Liste von Wörtern und Ausdrücken. Eine Einschränkungsliste eignet sich gut für die Erkennung kurzer, einzelner Ausdrücke. Das explizite Angeben aller Wörter in einer Grammatik verbessert auch die Erkennungsgenauigkeit, da das Spracherkennungsmodul nur eine Übereinstimmung bestätigen muss. Die Liste kann auch programmgesteuert aktualisiert werden.
 
 Eine Einschränkungsliste besteht aus einem Array von Zeichenfolgen, die die Spracheingaben darstellen, die von Ihrer App für einen Erkennungsvorgang akzeptiert werden. Sie können in Ihrer App eine Einschränkungsliste einrichten, indem Sie ein Einschränkungslistenobjekt für die Spracherkennung erstellen und ein Array mit Zeichenfolgen übergeben. Fügen Sie dieses Objekt dann der Einschränkungsauflistung der Erkennung hinzu. Die Erkennung ist erfolgreich, wenn die Spracherkennung die Zeichenfolgen des Arrays erkennt.
 
-See [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint).
+Weitere Informationen finden Sie unter [**sprach Erkennungs-listeinschränkung**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint).
 
-### <a name="srgs-grammars"></a>SRGS grammars
+### <a name="srgs-grammars"></a>SRGS-Grammatiken
 
 Eine Speech Recognition Grammar Specification (SRGS)-Grammatik ist ein statisches Dokument, das im Gegensatz zu einer Einschränkung per programmgesteuerter Liste das in [SRGS Version 1.0](https://www.w3.org/TR/speech-grammar/) definierte XML-Format verwendet. Eine SRGS-Grammatik bietet die höchstmögliche Kontrolle über die Spracherkennungsfunktion, da Sie mehrere semantische Bedeutungen in einem einzigen Erkennungsvorgang erfassen können.
 
- See [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint).
+ Siehe die [**Spracherkennung**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint).
 
-### <a name="voice-command-constraints"></a>Voice command constraints
+### <a name="voice-command-constraints"></a>Sprach Befehls Einschränkungen
 
-Verwenden Sie eine Voice Command Definition-(VCD-)XML-Datei, um die Befehle zu definieren, mit denen der Benutzer Aktionen initiieren kann, wenn er Ihre App aktiviert. For more detail, see [Activate a foreground app with voice commands through Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
+Verwenden Sie eine Voice Command Definition-(VCD-)XML-Datei, um die Befehle zu definieren, mit denen der Benutzer Aktionen initiieren kann, wenn er Ihre App aktiviert. Weitere Details finden Sie unter [Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
 
-See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+Siehe [**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**Note**  The type of constraint type you use depends on the complexity of the recognition experience you want to create. Für eine bestimmte Erkennungsaufgabe kann jeweils einer der Ansätze am besten geeignet sein, und vielleicht haben Sie in Ihrer App sogar für alle Einschränkungsarten Verwendung.
+**Beachten** Sie,  der Typ des Einschränkungs Typs, den Sie verwenden, von der Komplexität der Erkennungsfunktion abhängt, die Sie erstellen möchten. Für eine bestimmte Erkennungsaufgabe kann jeweils einer der Ansätze am besten geeignet sein, und vielleicht haben Sie in Ihrer App sogar für alle Einschränkungsarten Verwendung.
 Informationen zu den ersten Schritten mit Einschränkungen finden Sie unter [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md).
 
 Die vordefinierte Diktiergrammatik von universellen Windows-Apps erkennt die meisten Wörter und kurzen Wortgruppen einer Sprache. Sie wird standardmäßig aktiviert, wenn ein Spracherkennungsobjekt ohne benutzerdefinierte Einschränkungen instanziiert wird.
@@ -373,7 +373,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 **Designer**
 * [Entwicklungsrichtlinien für die Spracherkennung](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
 **Beispiele**
-* [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+* [Beispiel für Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  

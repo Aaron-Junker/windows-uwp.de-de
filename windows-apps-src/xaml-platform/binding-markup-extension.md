@@ -4,7 +4,7 @@ title: Binding-Markuperweiterung
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6f11aae7d08f25e9dffaee12e24d1486cf9de581
@@ -25,7 +25,7 @@ ms.locfileid: "72998608"
 
 Die **{Binding}** -Markup Erweiterung wird verwendet, um Eigenschaften von Steuerelementen an Werte zu binden, die aus einer Datenquelle, z. b. Code, stammen. description: Die **{Binding}** -Markuperweiterung wird beim Laden von XAML in eine Instanz der [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)-Klasse konvertiert. Dieses Bindungsobjekt erhält einen Wert von der Eigenschaft einer Datenquelle und leitet ihn an die Eigenschaft des Steuerelements weiter. Das Bindungsobjekt kann optional konfiguriert werden, um Änderungen am Wert der Datenquelleneigenschaft zu beobachten und sich basierend auf diesen Änderungen zu aktualisieren. Es kann optional auch so konfiguriert werden, dass Änderungen am Wert des Steuerelements per Push zurück an die Quelleigenschaft gesendet werden. Die als Ziel einer Datenbindung verwendete Eigenschaft muss eine Abhängigkeitseigenschaft sein. Weitere Informationen finden Sie unter [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md).
 
-**{Binding}** weist die gleiche Rangfolge für Abhängigkeitseigenschaften wie ein lokaler Wert auf. So wird beim Festlegen eines lokalen Werts im imperativen Code der Effekt aller im Markup festgelegten **{Binding}** -Objekte entfernt.
+**{Binding}** weist die gleiche Rangfolge für Abhängigkeitseigenschaften auf wie ein lokaler Wert. So wird beim Festlegen eines lokalen Werts im imperativen Code der Effekt aller im Markup festgelegten **{Binding}** -Objekte entfernt.
 
 ## <a name="xaml-attribute-usage"></a>XAML-Attributverwendung
 
@@ -42,7 +42,7 @@ Die **{Binding}** -Markup Erweiterung wird verwendet, um Eigenschaften von Steue
 
 | Begriff | Beschreibung |
 |------|-------------|
-| *PropertyPath* | Eine Zeichenfolge, die den Eigenschaftspfad für die Bindung angibt. Weitere Informationen finden Sie unten im Abschnitt [Eigenschaftspfad](#property-path). |
+| *propertyPath* | Eine Zeichenfolge, die den Eigenschaftspfad für die Bindung angibt. Weitere Informationen finden Sie unten im Abschnitt [Eigenschaftspfad](#property-path). |
 | *bindingproperties* | *propName*=*Wert*\[, *propName*=*Wert*\]*<br/>Mindestens eine Bindungseigenschaft, die mithilfe einer Name-Wert-Paarsyntax angegeben wird. |
 | *propName* | Der Zeichenfolgenname der für das [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)-Objekt festzulegenden Eigenschaft. Beispiel: „Konverter“. |
 | *value* | Der für die Eigenschaft festzulegende Wert. Die Syntax des Arguments hängt von der Eigenschaft der festgelegten Binding-Klasse ab. Weitere Informationen finden Sie unten im Abschnitt [Mit {Binding} festlegbare Eigenschaften der Bindungsklasse](#properties-of-the-binding-class-that-can-be-set-with-binding). |
@@ -51,7 +51,7 @@ Die **{Binding}** -Markup Erweiterung wird verwendet, um Eigenschaften von Steue
 
 [**Pfad**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path) beschreibt die Eigenschaft, an die Sie binden (die Source-Eigenschaft). „Path“ ist ein Positionsparameter. Das bedeutet, dass Sie den Parameternamen explizit verwenden können (`{Binding Path=EmployeeID}`) oder dass Sie ihn als ersten nicht benannten Parameter angeben können (`{Binding EmployeeID}`).
 
-Der [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)-Typ ist ein Eigenschaftspfad. Es handelt sich dabei um eine Zeichenfolge, die als Eigenschaft oder Untereigenschaft Ihres benutzerdefinierten Typs oder eines Frameworktyps ausgewertet wird. Der Typ kann auch eine [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)-Klasse sein. Die Schritte in einem Eigenschaftspfad werden durch Punkte (.) getrennt, und Sie können mehrere Trennzeichen angeben, um aufeinanderfolgende untergeordnete Eigenschaften zu durchlaufen. Verwenden Sie unabhängig von der verwendeten Programmiersprache einen Punkt als Trennzeichen, um das Objekt zu implementieren, an das die Bindung erfolgt.
+Der [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)-Typ ist ein Eigenschaftspfad. Es handelt sich dabei um eine Zeichenfolge, die als Eigenschaft oder Untereigenschaft Ihres benutzerdefinierten Typs oder eines Frameworktyps ausgewertet wird. Der Typ kann auch eine [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)-Klasse sein. Die Schritte in einem Eigenschaftspfad werden durch Punkte getrennt (.), und Sie können mehrere Trennzeichen angeben, um aufeinander folgende untergeordnete Eigenschaften zu durchlaufen. Verwenden Sie unabhängig von der verwendeten Programmiersprache einen Punkt als Trennzeichen, um das Objekt zu implementieren, an das die Bindung erfolgt.
 
 Zum Binden der Benutzeroberfläche an die Vornameneigenschaft eines Mitarbeiterobjekts können Sie z. B. „Employee.FirstName“ als Eigenschaftspfad verwenden. Wenn Sie ein ItemsControl-Element an eine Eigenschaft binden, die die abhängigen Elemente des Mitarbeiters enthält, kann der Eigenschaftspfad „Employee.Dependents“ lauten, und die Elementvorlage des ItemsControl-Elements wäre für die Anzeige der Elemente „Dependents“ verantwortlich.
 
@@ -120,7 +120,7 @@ Weitere Informationen zur Zeichenfolgensyntax für einen Eigenschaftspfad, zu Ei
 </Page>
 ```
 
-Im zweiten Beispiel werden vier unterschiedliche [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)-Eigenschaften festgelegt: [**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname), [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path), [**Mode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.mode) und [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter). **Path** wird in diesem Fall explizit mit der Benennung als **Binding**-Eigenschaft gezeigt. Die **Path**-Eigenschaft wird zu einer Datenbindungsquelle ausgewertet, bei der es sich um ein anderes Objekt in derselben Laufzeit-Objektstruktur handelt – ein [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) mit dem Namen `sliderValueConverter`.
+Im zweiten Beispiel werden vier unterschiedliche [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)-Eigenschaften festgelegt: [**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname), [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path), [**Mode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.mode) und [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter). **Path** wird in diesem Fall explizit als **Binding**-Eigenschaft benannt gezeigt. Die **Path**-Eigenschaft wird zu einer Datenbindungsquelle ausgewertet, bei der es sich um ein anderes Objekt in derselben Laufzeit-Objektstruktur handelt – ein [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) mit dem Namen `sliderValueConverter`.
 
 Beachten Sie, dass der [**Converter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.converter)-Eigenschaftswert eine weitere Markuperweiterung ([{StaticResource} markup extension](staticresource-markup-extension.md)) verwendet, sodass hier zwei geschachtelte Markuperweiterungssyntaxen zu sehen sind. Die innere Syntax wird zuerst ausgewertet. Nach dem Abrufen der Ressource ist daher ein [**IValueConverter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter) verfügbar (eine benutzerdefinierte Klasse, die vom `local:S2Formatter`-Element in Ressourcen instanziiert wird), den die Bindung verwenden kann.
 
