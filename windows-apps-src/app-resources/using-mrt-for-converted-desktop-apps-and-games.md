@@ -1,6 +1,6 @@
 ---
 title: Verwenden von MRT für konvertierte Desktop-Apps und -Spiele
-description: Indem Sie Ihre .NET- oder Win32-App oder Ihr Spiel als AppX-Paket verpacken, können Sie das Ressourcenverwaltungssystem nutzen, um App-Ressourcen zu laden, die auf den Laufzeitkontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben.
+description: Indem Sie Ihre .NET- oder Win32-App oder Ihr Spiel als AppX-Paket verpacken, können Sie das Ressourcenverwaltungssystem nutzen, um App-Ressourcen zu laden, die auf den Laufzeitkontext zugeschnitten sind. In diesem Thema werden die erforderlichen Techniken detailliert beschrieben.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, mrt, pri. Ressourcen, Spiele, Centennial, Desktop App Converter, mui, Satellitenassembly
@@ -14,11 +14,11 @@ ms.locfileid: "74254752"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Verwenden des Ressourcenverwaltungssystem für Windows 10 in älteren Apps oder Spielen
 
-Apps und Spiele für .NET und Win32 werden häufig in verschiedene Sprachen übersetzt, um die Anzahl potenzieller Märkte zu vergrößern. Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md). By packaging your .NET or Win32 app or game as an MSIX or AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. In diesem Thema werden die Techniken detailliert beschrieben.
+Apps und Spiele für .NET und Win32 werden häufig in verschiedene Sprachen übersetzt, um die Anzahl potenzieller Märkte zu vergrößern. Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md). Indem Sie Ihre .net-oder Win32-APP oder Ihr Spiel als msix-oder AppX-Paket Verpacken, können Sie das Ressourcen Verwaltungs System zum Laden von App-Ressourcen nutzen, die auf den Lauf Zeit Kontext zugeschnitten sind. In diesem Thema werden die erforderlichen Techniken detailliert beschrieben.
 
 Es gibt viele Möglichkeiten zum Lokalisieren einer herkömmlichen Win32-Anwendung, aber unter Windows 8 wurde ein neues [Ressourcenverwaltungssystem](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) eingeführt, das sich für alle Programmiersprachen und alle Anwendungstypen eignet und Funktionalität für mehr als eine einfache Lokalisierung bereitstellt. Dieses System wird im vorliegenden Artikel als „MRT” bezeichnet. Früher bedeutete dies „Modern Resource Technology“. Der Bestandteil „Modern“ wird jedoch nicht mehr verwendet. Der Ressourcen-Manager ist möglicherweise auch unter den Namen MRM (Modern Resource Manager, moderner Ressourcen-Manager) oder PRI (Package Resource Index, Paketressourcenindex) bekannt.
 
-Combined with MSIX-based or AppX-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. Die Größenreduzierung kann bei Anwendungen mit einer großen Menge an lokalisiertem Inhalt erheblich sein, möglicherweise in einer Größenordnung von mehreren *Gigabytes* für AAA-Spiele. Weitere Vorteile von MRT sind lokalisierte Angebote in der Windows-Shell und im Microsoft Store sowie eine automatische Fallback-Logik für den Fall, dass die bevorzugte Sprache eines Benutzers nicht den verfügbaren Ressourcen entspricht.
+In Kombination mit der msix-basierten oder der AppX-basierten Bereitstellung (z. b. aus dem Microsoft Store) kann MRT automatisch die am meisten anwendbaren Ressourcen für einen bestimmten Benutzer/Gerät liefern, wodurch die Download-und Installations Größe Ihrer Anwendung minimiert wird. Die Größenreduzierung kann bei Anwendungen mit einer großen Menge an lokalisiertem Inhalt erheblich sein, möglicherweise in einer Größenordnung von mehreren *Gigabytes* für AAA-Spiele. Weitere Vorteile von MRT sind lokalisierte Angebote in der Windows-Shell und im Microsoft Store sowie eine automatische Fallback-Logik für den Fall, dass die bevorzugte Sprache eines Benutzers nicht den verfügbaren Ressourcen entspricht.
 
 Dieses Dokument beschreibt die allgemeine MRT-Architektur und stellt ein Handbuch für das Portieren bereit, sodass ältere Win32-Anwendungen mit minimalen Codeänderungen zu MRT verschoben werden können. Wenn der Wechsel zu MRT erfolgt sind, stehen Entwicklern weitere Vorteile zur Verfügung (z. B. die Möglichkeit, Ressourcen nach Skalierungsfaktor oder Systemdesign zu segmentieren). Beachten Sie, dass die MRT-basierte Lokalisierung sowohl für UWP-Anwendungen als auch für Win32-Anwendungen funktioniert, die von der Desktop-Brücke verarbeitet werden (auch bekannt als „Centennial”).
 
@@ -26,14 +26,14 @@ In vielen Fällen können Sie Ihre vorhandenen Lokalisierungsformate und Ihren Q
 
 <table>
 <tr>
-<th>Beruflich</th>
+<th>Aufgabe</th>
 <th>Vorteil</th>
 <th>Geschätzte Kosten</th>
 </tr>
 <tr>
-<td>Localize package manifest</td>
+<td>Lokalisieren des Paket Manifests</td>
 <td>Kaum Arbeitsaufwand erforderlich, damit der lokalisierte Inhalt in der Windows-Shell und im Microsoft Store angezeigt wird</td>
-<td>Gering</td>
+<td>Klein</td>
 </tr>
 <tr>
 <td>Verwenden von MRT zum Erkennen und Suchen von Ressourcen</td>
@@ -43,7 +43,7 @@ In vielen Fällen können Sie Ihre vorhandenen Lokalisierungsformate und Ihren Q
 <tr>
 <td>Erstellen von Ressourcenpaketen</td>
 <td>Letzter Schritt für die Verringerung der Download- und Installationsgrößen</td>
-<td>Gering</td>
+<td>Klein</td>
 </tr>
 <tr>
 <td>Migrieren von MRT-Ressourcenformaten und APIs</td>
@@ -66,7 +66,7 @@ Dies ist ein einfaches Beispiel für eine Anwendung mit Beschriftungen auf zwei 
 
 In der Grafik verweist der Anwendungscode auf die drei logischen Ressourcennamen. Zur Laufzeit verwendet die Pseudo-Funktion `GetResource` MRT, um diese Ressourcennamen in der Ressourcentabelle (als PRI-Datei bezeichnet) zu suchen und basierend auf den Umgebungsbedingungen (der Sprache des Benutzers und dem Skalierungsfaktor des Displays) den am besten geeigneten Kandidaten zu finden. Bei Beschriftungen werden die Zeichenfolgen direkt verwendet. Beim Logobild werden die Zeichenfolgen als Dateinamen interpretiert, und die Dateien werden von der Festplatte gelesen. 
 
-If the user speaks a language other than English or German, or has a display scale-factor other than 100% or 300%, MRT picks the "closest" matching candidate based on a set of fallback rules (see [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) for more background).
+Wenn der Benutzer eine andere Sprache als Englisch oder Deutsch oder einen anderen Display scale-Faktor als 100% oder 300% spricht, wählt das MRT den "nächstgelegenen" übereinstimmenden Kandidaten basierend auf einem Satz von Fall Back Regeln aus (Weitere Hintergrundinformationen finden Sie unter [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) ).
 
 Beachten Sie, dass MRT Ressourcen unterstützt, die auf mehrere Qualifizierer zugeschnitten sind – wenn beispielsweise das Logobild eingebetteten Text enthält, der auch lokalisiert werden muss, würde das Logo über vier Kandidaten verfügen: EN/Scale-100, DE/Scale-100, EN/Scale-300 and DE/Scale-300.
 
@@ -92,7 +92,7 @@ In diesem Abschnitt werden die endgültigen Änderungen beschrieben, die erforde
 
 ### <a name="not-covered-in-this-document"></a>In diesem Dokument nicht behandelt
 
-After completing Phases 0-3 above, you will have an application "bundle" that can be submitted to the Microsoft Store and that will minimize the download and install size for users by omitting the resources they don't need (eg, languages they don't speak). Weitere Verbesserungen hinsichtlich Größe der Anwendung und Funktionen können über einen letzten Schritt vorgenommen werden.
+Nachdem Sie die oben aufgeführten Phasen 0-3 abgeschlossen haben, verfügen Sie über eine Anwendung "Bundle", die an die Microsoft Store übermittelt werden kann. Dadurch wird die Download-und Installations Größe für Benutzer minimiert, indem nicht benötigte Ressourcen ausgelassen werden (z. b. Sprachen, die Sie nicht benötigen). Weitere Verbesserungen hinsichtlich Größe der Anwendung und Funktionen können über einen letzten Schritt vorgenommen werden.
 
 #### <a name="phase-4-migrate-to-mrt-resource-formats-and-apis"></a>Phase 4: Migrieren von MRT-Ressourcenformaten und APIs
 
@@ -102,13 +102,13 @@ Diese Phase kann in diesem Dokument nicht behandelt werden. Sie umfasst das Übe
 
 Bevor Sie Änderungen an den Ressourcen Ihrer Anwendung vornehmen, müssen Sie zunächst Ihre aktuelle Paketerstellungs- und Installationstechnologie durch die standardmäßige UWP-Paketerstellungs und Bereitstellungstechnologie ersetzen. Hierfür gibt es drei Möglichkeiten:
 
-* If you have a large desktop application with a complex installer or you utilize lots of OS extensibility points, you can use the Desktop App Converter tool to generate the UWP file layout and manifest information from your existing app installer (for example, an MSI).
-* If you have a smaller desktop application with relatively few files or a simple installer and no extensibility hooks, you can create the file layout and manifest information manually.
-* If you're rebuilding from source and want to update your app to be a pure UWP application, you can create a new project in Visual Studio and rely on the IDE to do much of the work for you.
+* Wenn Sie über eine große Desktop Anwendung mit einem komplexen Installer verfügen oder viele Betriebssystem-Erweiterbarkeits Punkte verwenden, können Sie mit dem Desktop App Converter-Tool das UWP-Datei Layout und die manifestressformationen aus dem vorhandenen APP-Installer (z. b. einer MSI-Datei) generieren.
+* Wenn Sie über eine kleinere Desktop Anwendung mit relativ wenigen Dateien oder einem einfachen Installer und ohne Erweiterbarkeits Hooks verfügen, können Sie das Datei Layout und die manifestressformationen manuell erstellen.
+* Wenn Sie die Neuerstellung von der Quelle ausführen und Ihre APP als reine UWP-Anwendung aktualisieren möchten, können Sie ein neues Projekt in Visual Studio erstellen und sich auf die IDE verlassen, um einen Großteil der Arbeit zu erledigen.
 
-If you want to use the [Desktop App Converter](https://www.microsoft.com/store/p/desktopappconverter/9nblggh4skzw), see [Package a desktop application using the Desktop App Converter](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-run-desktop-app-converter) for more information on the conversion process. A complete set of Desktop Converter samples can be found on [the Desktop Bridge to UWP samples GitHub repo](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
+Wenn Sie den [Desktop-App Converter](https://www.microsoft.com/store/p/desktopappconverter/9nblggh4skzw)verwenden möchten, finden Sie weitere Informationen zum Konvertierungsprozess unter [Verpacken einer Desktop Anwendung mithilfe des Desktop-App-Konverters](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-run-desktop-app-converter) . Ein kompletter Satz von Desktop konverterbeispielen finden Sie im [GitHub-Repository "Desktop Bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)".
 
-If you want to manually create the package, you will need to create a directory structure that includes all your application's files (executables and content, but not source code) and a package manifest file (.appxmanifest). An example can be found in [the Hello, World GitHub sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml), but a basic package manifest file that runs the desktop executable named `ContosoDemo.exe` is as follows, where the <span style="background-color: yellow">highlighted text</span> would be replaced by your own values.
+Wenn Sie das Paket manuell erstellen möchten, müssen Sie eine Verzeichnisstruktur erstellen, die alle Dateien Ihrer Anwendung (ausführbare Dateien und Inhalt, aber keinen Quellcode) und eine Paket Manifest-Datei (. appxmanifest) enthält. Ein Beispiel finden Sie im Beispiel " [Hello, World GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml)", aber eine grundlegende Paket Manifest-Datei, die die ausführbare Desktop Datei mit dem Namen "`ContosoDemo.exe`" ausführt, sieht wie folgt aus, wobei der <span style="background-color: yellow">markierte Text</span> durch ihre eigenen Werte ersetzt wird.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -148,17 +148,17 @@ If you want to manually create the package, you will need to create a directory 
 </Package>
 ```
 
-For more information about the package manifest file and package layout, see [App package manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
+Weitere Informationen zur Paket Manifest-Datei und zum Paket Layout finden Sie unter [App-Paket Manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
 
-Finally, if you're using Visual Studio to create a new project and migrate your existing code across, see [Create a "Hello, world" app](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). You can include your existing code into the new project, but you will likely have to make significant code changes (particularly in the user interface) in order to run as a pure UWP app. Diese Änderungen werden in diesem Dokument nicht behandelt.
+Wenn Sie Visual Studio verwenden, um ein neues Projekt zu erstellen und Ihren vorhandenen Code zu migrieren, finden Sie weitere Informationen unter [Erstellen einer "Hello, World"-App](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). Sie können Ihren vorhandenen Code in das neue Projekt einschließen, aber Sie müssen wahrscheinlich bedeutende Codeänderungen vornehmen (insbesondere in der Benutzeroberfläche), um als reine UWP-app ausgeführt werden zu können. Diese Änderungen werden in diesem Dokument nicht behandelt.
 
-## <a name="phase-1-localize-the-manifest"></a>Phase 1: Localize the manifest
+## <a name="phase-1-localize-the-manifest"></a>Phase 1: Lokalisieren des Manifests
 
-### <a name="step-11-update-strings--assets-in-the-manifest"></a>Step 1.1: Update strings & assets in the manifest
+### <a name="step-11-update-strings--assets-in-the-manifest"></a>Schritt 1,1: Aktualisieren von Zeichen folgen & Assets im Manifest
 
-In Phase 0 you created a basic package manifest (.appxmanifest) file for your application (based on values provided to the converter, extracted from the MSI, or manually entered into the manifest) but it will not contain localized information, nor will it support additional features like high-resolution Start tile assets, etc.
+In Phase 0 haben Sie eine grundlegende Paket Manifest-Datei (. appxmanifest) für Ihre Anwendung erstellt (basierend auf den Werten, die für den Konverter bereitgestellt, aus der msi extrahiert oder manuell in das Manifest eingegeben werden), aber keine lokalisierten Informationen enthalten, und es wird auch nicht unterstützt. zusätzliche Features, wie z. b. hochauflösende Start-Kachel Ressourcen usw.
 
-To ensure your application's name and description are correctly localized, you must define some resources in a set of resource files, and update the package manifest to reference them.
+Um sicherzustellen, dass der Name und die Beschreibung Ihrer Anwendung ordnungsgemäß lokalisiert werden, müssen Sie einige Ressourcen in einem Satz von Ressourcen Dateien definieren und das Paket Manifest aktualisieren, um darauf zu verweisen.
 
 #### <a name="creating-a-default-resource-file"></a>Erstellen eine Standardressourcendatei
 
@@ -166,11 +166,11 @@ Der erste Schritt ist das Erstellen einer Standardressourcendatei in der Standar
 
 Wenn Sie die Ressourcen manuell erstellen möchten:
 
-1. Erstellen Sie eine XML-Datei mit dem Namen `resources.resw`, und legen Sie sie in einem `Strings\en-us`-Unterordner Ihres Projekts ab. Use the appropriate BCP-47 code if your default language is not US English.
+1. Erstellen Sie eine XML-Datei mit dem Namen `resources.resw`, und legen Sie sie in einem `Strings\en-us`-Unterordner Ihres Projekts ab. Verwenden Sie den entsprechenden bcp-47-Code, wenn die Standardsprache nicht Englisch (USA) ist.
 2. Fügen Sie in der XML-Datei den folgenden Inhalt hinzu. Ersetzten Sie dabei den <span style="background-color: yellow">hervorgehobenen Text</span> durch den entsprechenden Text in der Standardsprache Ihrer App.
 
 > [!NOTE]
-> There are restrictions on the lengths of some of these strings. Weitere Informationen finden Sie unter [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
+> Es gibt Einschränkungen hinsichtlich der Längen einiger dieser Zeichen folgen. Weitere Informationen finden Sie unter [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -195,22 +195,22 @@ Wenn Sie die Ressourcen manuell erstellen möchten:
 
 Wenn Sie den Designer in Visual Studio verwenden möchten:
 
-1. Create the `Strings\en-us` folder (or other language as appropriate) in your project and add a **New Item** to the root folder of your project, using the default name of `resources.resw`. Be sure to choose **Resources File (.resw)** and not **Resource Dictionary** - a Resource Dictionary is a file used by XAML applications.
+1. Erstellen Sie im Projekt den `Strings\en-us` Ordner (oder eine andere Sprache), und fügen Sie dem Stamm Ordner des Projekts mit dem Standardnamen `resources.resw`ein **Neues Element** hinzu. Achten Sie darauf, **Ressourcen Datei (. resw)** und kein **Ressourcen Wörterbuch** auszuwählen. ein Ressourcen Wörterbuch ist eine Datei, die von XAML-Anwendungen verwendet wird.
 2. Geben Sie im Designer die folgenden Zeichenfolgen ein (verwenden Sie dieselben `Names`, ersetzen Sie die `Values` jedoch mit dem entsprechenden Text für Ihre Anwendung):
 
 <img src="images\editing-resources-resw.png"/>
 
 > [!NOTE]
-> If you start with the Visual Studio designer, you can always edit the XML directly by pressing `F7`. Wenn Sie jedoch mit einer kleinen XML-Datei starten, *erkennt der Designer die Datei nicht*, weil viele zusätzliche Metadaten fehlen. Dies lässt sich durch Kopieren der XSD-Textbausteininformationen aus einer mit dem Designer erstellten Datei in die manuell bearbeitete XML-Datei beheben.
+> Wenn Sie mit dem Visual Studio-Designer beginnen, können Sie den XML-Code jederzeit direkt bearbeiten, indem Sie `F7`drücken. Wenn Sie jedoch mit einer kleinen XML-Datei starten, *erkennt der Designer die Datei nicht*, weil viele zusätzliche Metadaten fehlen. Dies lässt sich durch Kopieren der XSD-Textbausteininformationen aus einer mit dem Designer erstellten Datei in die manuell bearbeitete XML-Datei beheben.
 
 #### <a name="update-the-manifest-to-reference-the-resources"></a>Aktualisieren des Manifests, um auf die Ressourcen zu verweisen
 
-After you have the values defined in the `.resw` file, the next step is to update the manifest to reference the resource strings. Auch in diesem Fall können Sie eine XML-Datei direkt bearbeiten oder dies durch den Manifest-Designer von Visual Studio vornehmen lassen.
+Nachdem Sie die Werte in der `.resw`-Datei definiert haben, besteht der nächste Schritt darin, das Manifest zu aktualisieren, um auf die Ressourcen Zeichenfolgen zu verweisen. Auch in diesem Fall können Sie eine XML-Datei direkt bearbeiten oder dies durch den Manifest-Designer von Visual Studio vornehmen lassen.
 
 Wenn Sie XML-Code direkt bearbeiten, öffnen Sie die Datei `AppxManifest.xml`, und nehmen Sie die folgenden Änderungen an den <span style="background-color: lightgreen">hervorgehoben Werten</span> vor – verwenden Sie *genau* diesen Text und keinen für Ihre Anwendung spezifischen. Es besteht keine Notwendigkeit, genau diese Ressourcennamen zu verwenden.&mdash;Sie können eigene Ressourcennamen verwenden&mdash;, die jedoch genau mit den Angaben in der Datei `.resw` übereinstimmen müssen. Diese Namen sollten den `Names` entsprechen, die Sie in der `.resw`-Datei erstellt haben, und als Präfix das `ms-resource:`-Schema und den `Resources/`-Namespace aufweisen. 
 
 > [!NOTE]
-> Many elements of the manifest have been omitted from this snippet - do not delete anything!
+> In diesem Code Ausschnitt wurden viele Elemente des Manifests ausgelassen. löschen Sie nichts.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -234,32 +234,32 @@ Wenn Sie XML-Code direkt bearbeiten, öffnen Sie die Datei `AppxManifest.xml`, u
 </Package>
 ```
 
-If you are using the Visual Studio manifest designer, open the .appxmanifest file and change the <span style="background-color: lightgreen">highlighted values</span> values in the **Application* tab and the *Packaging* tab:
+Wenn Sie den Visual Studio-Manifest-Designer verwenden, öffnen Sie die. appxmanifest-Datei, und ändern Sie die Werte der <span style="background-color: lightgreen">markierten Werte</span> auf der Registerkarte **Anwendung* und der Registerkarte *Paket* Erstellung:
 
 <img src="images\editing-application-info.png"/>
 <img src="images\editing-packaging-info.png"/>
 
-### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>Step 1.2: Build PRI file, make an MSIX package, and verify it's working
+### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>Schritt 1,2: Erstellen von PRI-Dateien, Erstellen eines msix-Pakets und Überprüfen der Funktionsweise
 
 Sie sollten jetzt in der Lage sein, die `.pri`-Datei zu erstellen und die Anwendung bereitzustellen, um sicherzustellen, dass die richtigen Informationen (in Ihrer Standardsprache) im Startmenü angezeigt werden.
 
 Wenn Sie in Visual Studio erstellen, drücken Sie einfach `Ctrl+Shift+B`, um das Projekt zu erstellen, und klicken Sie dann mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü `Deploy` aus.
 
-If you're building manually, follow these steps to create a configuration file for `MakePRI` tool and to generate the `.pri` file itself (more information can be found in [Manual app packaging](/windows/msix/package/manual-packaging-root)):
+Wenn Sie manuell erstellen, führen Sie die folgenden Schritte aus, um eine Konfigurationsdatei für `MakePRI` Tool zu erstellen und die `.pri` Datei selbst zu generieren (Weitere Informationen finden Sie unter [Manuelle App-Paket](/windows/msix/package/manual-packaging-root)Erstellung):
 
-1. Open a developer command prompt from the **Visual Studio 2017** or **Visual Studio 2019** folder in the Start menu.
-2. Switch to the project root directory (the one that contains the .appxmanifest file and the **Strings** folder).
-3. Geben Sie den folgenden Befehl ein, und ersetzen Sie dabei „contoso_demo.xml” mit einem für Ihr Projekt geeigneten Namen und „en-US” mit der Standardsprache Ihrer App (oder lassen Sie es nach Bedarf auf en-US). Note the XML file is created in the parent directory (**not** in the project directory) since it's not part of the application (you can choose any other directory you want, but be sure to substitute that in future commands).
+1. Öffnen Sie eine Developer-Eingabeaufforderung im Ordner **Visual Studio 2017** oder **Visual Studio 2019** im Startmenü.
+2. Wechseln Sie zum Stammverzeichnis des Projekts (das Verzeichnis, das die appxmanifest-Datei und den Ordner " **Strings** " enthält).
+3. Geben Sie den folgenden Befehl ein, und ersetzen Sie dabei „contoso_demo.xml” mit einem für Ihr Projekt geeigneten Namen und „en-US” mit der Standardsprache Ihrer App (oder lassen Sie es nach Bedarf auf en-US). Beachten Sie, dass die XML-Datei im übergeordneten Verzeichnis (**nicht** im Projektverzeichnis) erstellt wird, da Sie nicht Teil der Anwendung ist. (Sie können ein beliebiges anderes Verzeichnis auswählen, aber achten Sie darauf, dies in zukünftigen Befehlen zu ersetzen.)
 
     ```CMD
     makepri createconfig /cf ..\contoso_demo.xml /dq en-US /pv 10.0 /o
     ```
 
     Sie können `makepri createconfig /?` eingeben, um zu sehen, was die einzelnen Parameter bedeuten. Kurz zusammengefasst:
-      * `/cf` sets the Configuration Filename (the output of this command)
-      * `/dq` sets the Default Qualifiers, in this case the language `en-US`
-      * `/pv` sets the Platform Version, in this case Windows 10
-      * `/o` sets it to Overwrite the output file if it exists
+      * `/cf` legt den Konfigurations Dateinamen fest (die Ausgabe dieses Befehls).
+      * `/dq` legt die Standard Qualifizierer fest, in diesem Fall die Sprache `en-US`
+      * `/pv` legt die Platt Form Version fest, in diesem Fall Windows 10.
+      * `/o` legt fest, dass die Ausgabedatei überschrieben wird, falls vorhanden.
 
 4. Sie verfügen jetzt über eine Konfigurationsdatei. Führen Sie `MakePRI` erneut aus, um auf der Festplatte tatsächlich nach Ressourcen zu suchen und diese in einer PRI-Datei zu verpacken. Ersetzen Sie „contoso_demop.xml” mit dem XML-Dateinamen, den Sie im vorherigen Schritt verwendet haben, und legen Sie das übergeordnete Verzeichnis für Eingabe und Ausgabe fest: 
 
@@ -268,11 +268,11 @@ If you're building manually, follow these steps to create a configuration file f
     ```
 
     Sie können `makepri new /?` eingeben, um zu sehen, was die einzelnen Parameter bedeuten. Kurz zusammengefasst:
-      * `/pr` sets the Project Root (in this case, the current directory)
-      * `/cf` sets the Configuration Filename, created in the previous step
-      * `/of` sets the Output File 
-      * `/mf` creates a Mapping File (so we can exclude files in the package in a later step)
-      * `/o` sets it to Overwrite the output file if it exists
+      * `/pr` legt den Projektstamm fest (in diesem Fall das aktuelle Verzeichnis).
+      * `/cf` legt den Konfigurations Dateinamen fest, der im vorherigen Schritt erstellt wurde.
+      * `/of` legt die Ausgabedatei fest. 
+      * `/mf` erstellt eine Mapping-Datei (daher können in einem späteren Schritt Dateien im Paket ausgeschlossen werden).
+      * `/o` legt fest, dass die Ausgabedatei überschrieben wird, falls vorhanden.
 
 5. Sie verfügen jetzt über eine `.pri`-Datei mit den Standardsprachressourcen (z. B. en-US). Um sicherzustellen, dass es ordnungsgemäß funktioniert hat, können Sie den folgenden Befehl ausführen:
 
@@ -281,45 +281,45 @@ If you're building manually, follow these steps to create a configuration file f
     ```
 
     Sie können `makepri dump /?` eingeben, um zu sehen, was die einzelnen Parameter bedeuten. Kurz zusammengefasst:
-      * `/if` sets the Input Filename 
-      * `/of` sets the Output Filename (`.xml` will be appended automatically)
-      * `/o` sets it to Overwrite the output file if it exists
+      * `/if` den Eingabe Dateinamen festlegt. 
+      * `/of` legt den Ausgabe Dateinamen fest (`.xml` werden automatisch angefügt).
+      * `/o` legt fest, dass die Ausgabedatei überschrieben wird, falls vorhanden.
 
 6. Zuletzt können Sie `..\resources.xml` in einem Text-Editor öffnen und überprüfen, ob Ihre `<NamedResource>`-Werte (z. B. `ApplicationDescription` und `PublisherDisplayName`) zusammen mit den `<Candidate>`-Werten für die ausgewählte Standardsprache aufgeführt werden (am Anfang der Datei befinden sich auch weitere Inhalte; diese können Sie vorerst ignorieren).
 
-You can open the mapping file `..\resources.map.txt` to verify it contains the files needed for your project (including the PRI file, which is not part of the project's directory). Besonders wichtig ist, dass die Zuordnungsdatei *keinen* Verweis auf Ihre `resources.resw`-Datei enthält, da der Inhalt dieser Datei bereits in die PRI-Datei eingebettet wurde. Sie enthält jedoch andere Ressourcen wie die Dateinamen Ihrer Bilder.
+Sie können die `..\resources.map.txt` der Mapping-Datei öffnen, um zu überprüfen, ob Sie die Dateien enthält, die für Ihr Projekt erforderlich sind (einschließlich der PRI-Datei, die nicht Teil des Projektverzeichnisses ist). Besonders wichtig ist, dass die Zuordnungsdatei *keinen* Verweis auf Ihre `resources.resw`-Datei enthält, da der Inhalt dieser Datei bereits in die PRI-Datei eingebettet wurde. Sie enthält jedoch andere Ressourcen wie die Dateinamen Ihrer Bilder.
 
 #### <a name="building-and-signing-the-package"></a>Erstellen und Signieren des Pakets 
 
 Nachdem die PRI-Datei jetzt erstellt wurde, können Sie das Paket erstellen und signieren:
 
-1. To create the app package, run the following command replacing `contoso_demo.appx` with the name of the MSIX/AppX file you want to create and making sure to choose a different directory for the file (this sample uses the parent directory; it can be anywhere but should **not** be the project directory).
+1. Um das App-Paket zu erstellen, führen Sie den folgenden Befehl aus, indem Sie `contoso_demo.appx` durch den Namen der zu erstellenden msix-/AppX-Datei ersetzen, und stellen Sie sicher, dass Sie ein anderes Verzeichnis für die Datei auswählen (in diesem Beispiel wird das übergeordnete Verzeichnis verwendet, es kann sich an einem beliebigen Ort befinden, sollte aber **nicht** das
 
     ```CMD
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
     ```
 
     Sie können `makeappx pack /?` eingeben, um zu sehen, was die einzelnen Parameter bedeuten. Kurz zusammengefasst:
-      * `/m` sets the Manifest file to use
-      * `/f` sets the mapping File to use (created in the previous step) 
-      * `/p` sets the output Package name
-      * `/o` sets it to Overwrite the output file if it exists
+      * `/m` legt die zu verwendende Manifest-Datei fest.
+      * `/f` legt die zu verwendende Mapping-Datei fest (die im vorherigen Schritt erstellt wurde). 
+      * `/p` legt den Namen des Ausgabe Pakets fest.
+      * `/o` legt fest, dass die Ausgabedatei überschrieben wird, falls vorhanden.
 
-2. After the package is created, it must be signed. The easiest way to get a signing certificate is by creating an empty Universal Windows project in Visual Studio and copying the `.pfx` file it creates, but you can create one manually using the `MakeCert` and `Pvk2Pfx` utilities as described in [How to create an app package signing certificate](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate).
+2. Nachdem das Paket erstellt wurde, muss es signiert werden. Die einfachste Möglichkeit, ein Signaturzertifikat zu erhalten, besteht darin, ein leeres universelles Windows-Projekt in Visual Studio zu erstellen und die `.pfx` erstellte Datei zu kopieren. Sie können Sie jedoch mithilfe der `MakeCert`-und `Pvk2Pfx`-Hilfsprogramme manuell erstellen, wie unter [Erstellen eines App-Paket-Signatur Zertifikats](https://docs.microsoft.com/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate)beschrieben.
 
     > [!IMPORTANT]
-    > If you manually create a signing certificate, make sure you place the files in a different directory than your source project or your package source, otherwise it might get included as part of the package, including the private key!
+    > Wenn Sie ein Signaturzertifikat manuell erstellen, stellen Sie sicher, dass Sie die Dateien in einem anderen Verzeichnis als das Quell Projekt oder die Paketquelle platzieren. andernfalls wird es möglicherweise als Teil des Pakets eingeschlossen, einschließlich des privaten Schlüssels!
 
-3. Verwenden Sie zum Signieren des Pakets den folgenden Befehl. Beachten Sie, dass der im Element `Identity` der Datei `AppxManifest.xml` angegebene `Publisher` mit dem `Subject` des Zertifikats übereinstimmen muss (hierbei handelt es sich **nicht** um das Element `<PublisherDisplayName>`; dieses ist der lokalisierte Anzeigename, der den Benutzern angezeigt wird). Ersetzen Sie wie gewohnt die `contoso_demo...`-Dateinamen mit den Namen für Ihr Projekt, und (**sehr wichtig**) stellen Sie sicher, dass die `.pfx`-Datei sich nicht im aktuellen Verzeichnis befindet (andernfalls wäre sie als Teil Ihres Pakets erstellt worden, einschließlich des privaten Signaturschlüssels!):
+3. Verwenden Sie zum Signieren des Pakets den folgenden Befehl. Beachten Sie, dass der im Element `Publisher` der Datei `Identity` angegebene `AppxManifest.xml` mit dem `Subject` des Zertifikats übereinstimmen muss (hierbei handelt es sich **nicht** um das Element `<PublisherDisplayName>`; dieses ist der lokalisierte Anzeigename, der den Benutzern angezeigt wird). Ersetzen Sie wie gewohnt die `contoso_demo...`-Dateinamen mit den Namen für Ihr Projekt, und (**sehr wichtig**) stellen Sie sicher, dass die `.pfx`-Datei sich nicht im aktuellen Verzeichnis befindet (andernfalls wäre sie als Teil Ihres Pakets erstellt worden, einschließlich des privaten Signaturschlüssels!):
 
     ```CMD
     signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx
     ```
 
     Sie können `signtool sign /?` eingeben, um zu sehen, was die einzelnen Parameter bedeuten. Kurz zusammengefasst:
-      * `/fd` sets the File Digest algorithm (SHA256 is the default for AppX)
-      * `/a` will Automatically select the best certificate
-      * `/f` specifies the input File that contains the signing certificate
+      * `/fd` legt den File Digest-Algorithmus fest (SHA256 ist der Standardwert für AppX).
+      * `/a` automatisch das beste Zertifikat auswählen
+      * `/f` gibt die Eingabedatei an, die das Signaturzertifikat enthält.
 
 Zuletzt können Sie auf die Datei `.appx` doppelklicken, um diese zu installieren. Wenn Sie lieber die Befehlszeile verwenden, können Sie eine PowerShell-Eingabeaufforderung öffnen, zum Verzeichnis mit dem Paket wechseln, und Folgendes eingeben (wobei Sie `contoso_demo.appx` mit Ihrem Paketnamen ersetzen müssen):
 
@@ -331,7 +331,7 @@ Wenn Sie Fehlermeldungen erhalten, dass das Zertifikat nicht als vertrauenswürd
 
 Verwenden der Befehlszeile:
 
-1. Run a Visual Studio 2017 or Visual Studio 2019 command prompt as an Administrator.
+1. Führen Sie eine Visual Studio 2017-oder Visual Studio 2019-Eingabeaufforderung als Administrator aus.
 2. Wechseln Sie zu dem Verzeichnis mit der `.cer`-Datei (stellen Sie sicher, dass dies nicht das Verzeichnis Ihrer Quelle oder Ihres Projekts ist!)
 3. Geben Sie folgenden Befehl ein, und ersetzen Sie dabei `contoso_demo.cer` mit Ihrem Dateinamen:
     ```CMD
@@ -339,19 +339,19 @@ Verwenden der Befehlszeile:
     ```
     
     Sie können `certutil -addstore /?` ausführen, um zu sehen, was die einzelnen Parameter bedeuten. Kurz zusammengefasst:
-      * `-addstore` adds a certificate to a certificate store
-      * `TrustedPeople` indicates the store into which the certificate is placed
+      * `-addstore` Hinzufügen eines Zertifikats zu einem Zertifikat Speicher
+      * `TrustedPeople` gibt den Speicher an, in den das Zertifikat eingefügt wird.
 
 Verwenden von Windows Explorer:
 
 1. Navigieren Sie zum Ordner mit der `.pfx`-Datei
 2. Doppelklicken Sie auf die `.pfx`-Datei. Der **Zertifikatimport-Assistent** sollte angezeigt werden.
-3. Choose `Local Machine` and click `Next`
-4. Accept the User Account Control admin elevation prompt, if it appears, and click `Next`
-5. Enter the password for the private key, if there is one, and click `Next`
-6. Select `Place all certificates in the following store`
+3. Wählen Sie `Local Machine` und klicken Sie `Next`
+4. Akzeptieren Sie die Eingabeaufforderung für Administratorrechte der Benutzerkontensteuerung, sofern diese angezeigt wird, und klicken Sie auf `Next`
+5. Geben Sie ggf. das Kennwort für den privaten Schlüssel ein, und klicken Sie auf `Next`
+6. `Place all certificates in the following store` auswählen
 7. Klicken Sie auf `Browse`, und wählen Sie den Ordner `Trusted People` (**nicht** „Vertrauenswürdige Herausgeber”)
-8. Click `Next` and then `Finish`
+8. Klicken Sie auf `Next` und dann auf `Finish`
 
 Versuchen Sie nach dem Hinzufügen des Zertifikats zum `Trusted People`-Speicher erneut, das Paket zu installieren.
 
@@ -359,7 +359,7 @@ Ihre App sollte jetzt in der Liste „Alle Apps” im Startmenü angezeigt werde
 
 ### <a name="step-13-add-more-supported-languages"></a>Schritt 1.3: Hinzufügen von mehr unterstützten Sprachen
 
-After the changes have been made to the package manifest and the initial `resources.resw` file has been created, adding additional languages is easy.
+Nachdem die Änderungen am Paket Manifest vorgenommen und die anfängliche `resources.resw` Datei erstellt wurde, ist das Hinzufügen zusätzlicher Sprachen einfach.
 
 #### <a name="create-additional-localized-resources"></a>Erstellen zusätzlicher lokalisierter Ressourcen
 
@@ -392,9 +392,9 @@ Die Datei `Strings\de-DE\resources.resw` könnte beispielsweise wie folgt ausseh
 
 Für die folgenden Schritte gilt die Annahme, dass Sie sowohl für `de-DE` als auch für `fr-FR` Ressourcen hinzugefügt haben, dasselbe Muster kann jedoch für alle Sprachen befolgt werden.
 
-#### <a name="update-the-package-manifest-to-list-supported-languages"></a>Update the package manifest to list supported languages
+#### <a name="update-the-package-manifest-to-list-supported-languages"></a>Aktualisieren des Paket Manifests zum Auflisten unterstützter Sprachen
 
-The package manifest must be updated to list the languages supported by the app. Der Desktop App Converter fügt die Standardsprache hinzu, die anderen müssen jedoch explizit hinzugefügt werden. Aktualisieren Sie beim direkten Bearbeiten der Datei `AppxManifest.xml` den `Resources`-Knoten wie folgt, fügen Sie dabei so viele Elemente hinzu, wie Sie benötigen, und ersetzen die <span style="background-color: yellow">entsprechenden Sprachen, die Sie unterstützen</span>. Stellen Sie dabei außerdem sicher, dass der erste Eintrag in der Liste die Standard- (Fallback-)Sprache ist. In diesem Beispiel ist der Standard Englisch (USA) mit zusätzlicher Unterstützung für Deutsch (Deutschland) und Französisch (Frankreich):
+Das Paket Manifest muss aktualisiert werden, damit die von der APP unterstützten Sprachen aufgelistet werden. Der Desktop App Converter fügt die Standardsprache hinzu, die anderen müssen jedoch explizit hinzugefügt werden. Aktualisieren Sie beim direkten Bearbeiten der Datei `AppxManifest.xml` den `Resources`-Knoten wie folgt, fügen Sie dabei so viele Elemente hinzu, wie Sie benötigen, und ersetzen die <span style="background-color: yellow">entsprechenden Sprachen, die Sie unterstützen</span>. Stellen Sie dabei außerdem sicher, dass der erste Eintrag in der Liste die Standard- (Fallback-)Sprache ist. In diesem Beispiel ist der Standard Englisch (USA) mit zusätzlicher Unterstützung für Deutsch (Deutschland) und Französisch (Frankreich):
 
 ```xml
 <Resources>
@@ -404,7 +404,7 @@ The package manifest must be updated to list the languages supported by the app.
 </Resources>
 ```
 
-Wenn Sie Visual Studio verwenden, sollte Sie nichts weiter tun müssen; wenn Sie `Package.appxmanifest` betrachten, sollten Sie den speziellen Wert <span style="background-color: yellow">x generate</span> sehen. Dieser bewirkt, dass der Buildprozess die Sprachen einfügt, die sich in Ihrem Projekt befinden (basierend auf den Ordnern, die mit den BCP-47 Codes benannt sind). Note that this is not a valid value for a real package manifest; it only works for Visual Studio projects:
+Wenn Sie Visual Studio verwenden, sollte Sie nichts weiter tun müssen; wenn Sie `Package.appxmanifest` betrachten, sollten Sie den speziellen Wert <span style="background-color: yellow">x generate</span> sehen. Dieser bewirkt, dass der Buildprozess die Sprachen einfügt, die sich in Ihrem Projekt befinden (basierend auf den Ordnern, die mit den BCP-47 Codes benannt sind). Beachten Sie, dass es sich hierbei nicht um einen gültigen Wert für ein echtes Paket Manifest handelt. Dies funktioniert nur für Visual Studio-Projekte:
 
 ```xml
 <Resources>
@@ -431,19 +431,19 @@ Dadurch wird eine PRI-Datei erstellt, die alle angegebenen Sprachen enthält, di
 Zum Testen der neuen lokalisierten Änderungen müssen Sie einfach eine neue bevorzugte UI-Sprache zu Windows hinzufügen. Es ist nicht erforderlich, Language Packs herunterzuladen, das System neu zu starten, oder die gesamte Windows-UI in einer fremden Sprache anzuzeigen. 
 
 1. Führen Sie die `Settings`-App aus (`Windows + I`).
-2. Go to `Time & language`
-3. Go to `Region & language`
-4. Click `Add a language`
+2. Gehe zu `Time & language`
+3. Gehe zu `Region & language`
+4. Klicken Sie auf `Add a language`
 5. Geben (oder wählen) Sie die gewünschte Sprache ein (z. B. `Deutsch` oder `German`)
  * Wenn untergeordnete Sprachen vorhanden sind, wählen Sie die gewünschte Sprache aus (z. B. `Deutsch / Deutschland`)
 6. Wählen Sie die neue Sprache in der Liste der Sprachen aus.
-7. Click `Set as default`
+7. Klicken Sie auf `Set as default`
 
 Öffnen Sie nun das Startmenü und suchen Sie Ihre Anwendung, und die lokalisierten Werte für die ausgewählte Sprache (andere Apps können auch lokalisiert angezeigt werden) sollten angezeigt werden. Wenn Sie den lokalisierten Namen nicht sofort sehen, warten Sie einige Minuten, bis der Cache des Startmenüs aktualisiert wird. Um auf Ihre Muttersprache zurückzuwechseln, stellen Sie sie als Standardsprache in der Liste der Sprachen ein. 
 
-### <a name="step-14-localizing-more-parts-of-the-package-manifest-optional"></a>Step 1.4: Localizing more parts of the package manifest (optional)
+### <a name="step-14-localizing-more-parts-of-the-package-manifest-optional"></a>Schritt 1,4: Lokalisieren von mehr Teilen des Paket Manifests (optional)
 
-Other sections of the package manifest can be localized. Wenn Ihre Anwendung beispielsweise Dateierweiterungen bearbeitet, dann sollte sie eine `windows.fileTypeAssociation`-Erweiterung im Manifest aufweisen, die den <span style="background-color: lightgreen">grün hervorgehobenen Text gemäß der Abbildung verwendet</span> (da es auf Ressourcen verweisen wird), und den <span style="background-color: yellow">gelb hervorgehobenen Text</span> mit Informationen ersetzt, die für Ihre Anwendung spezifisch sind:
+Andere Abschnitte des Paket Manifests können lokalisiert werden. Wenn Ihre Anwendung beispielsweise Dateierweiterungen bearbeitet, dann sollte sie eine `windows.fileTypeAssociation`-Erweiterung im Manifest aufweisen, die den <span style="background-color: lightgreen">grün hervorgehobenen Text gemäß der Abbildung verwendet</span> (da es auf Ressourcen verweisen wird), und den <span style="background-color: yellow">gelb hervorgehobenen Text</span> mit Informationen ersetzt, die für Ihre Anwendung spezifisch sind:
 
 ```xml
 <Extensions>
@@ -492,12 +492,12 @@ Da es viele Möglichkeiten gibt, Win32-Desktop-Apps zu lokalisieren, wird dieses
 
 #### <a name="resource-file-layout"></a>Layout der Ressourcendatei
 
-This article assumes your localized resources all have the same filenames (eg, `contoso_demo.exe.mui` or `contoso_strings.dll` or `contoso.strings.xml`) but that they are placed in different folders with BCP-47 names (`en-US`, `de-DE`, etc.). Es spielt keine Rolle, wie viele Ressourcendateien Sie haben, wie sie benannt sind, welche Dateiformate/verknüpften APIs sie aufweisen usw. Das einzig Wichtige ist, dass alle *logischen* Ressourcen den gleichen Dateinamen aufweisen (sie müssen jedoch in verschiedenen *physischen* Verzeichnissen abgelegt werden). 
+In diesem Artikel wird davon ausgegangen, dass Ihre lokalisierten Ressourcen alle die gleichen Dateinamen haben (z. b. `contoso_demo.exe.mui` oder `contoso_strings.dll` oder `contoso.strings.xml`), aber dass Sie in unterschiedlichen Ordnern mit bcp-47-Namen (`en-US`, `de-DE`usw.) platziert werden. Es spielt keine Rolle, wie viele Ressourcendateien Sie haben, wie sie benannt sind, welche Dateiformate/verknüpften APIs sie aufweisen usw. Das einzig Wichtige ist, dass alle *logischen* Ressourcen den gleichen Dateinamen aufweisen (sie müssen jedoch in verschiedenen *physischen* Verzeichnissen abgelegt werden). 
 
 Gegenbeispiel: wenn Ihre Anwendung eine flache Dateistruktur mit einem einzigen `Resources`-Verzeichnis verwendet, das die Dateien `english_strings.dll` und `french_strings.dll` enthält, würde sie sich nicht gut zu MRT zuordnen lassen. Eine bessere Struktur wäre ein `Resources`-Verzeichnis mit Unterverzeichnissen und den Dateien `en\strings.dll` und `fr\strings.dll`. Es ist auch möglich, den gleichen Basisdateinamen mit eingebetteten Qualifizierern zu verwenden, z. B. `strings.lang-en.dll` und `strings.lang-fr.dll`. Die Verwendung von Verzeichnissen mit Sprachcodes ist jedoch konzeptionell einfacher. Daher konzentrieren wir uns auf diese Vorgehensweise.
 
 >[!NOTE]
-> It is still possible to use MRT and the benefits of packaging even if you can't follow this file naming convention; it just requires more work.
+> Es ist weiterhin möglich, MRT und die Vorteile der Paket Erstellung zu verwenden, auch wenn Sie dieser Datei Benennungs Konvention nicht folgen können. Es erfordert nur noch mehr Arbeit.
 
 Die Anwendung weist beispielweise eine Reihe von benutzerdefinierten Benutzeroberflächenbefehlen auf (die für Schaltflächenbeschriftungen usw. verwendet werden), die sich in einer einfachen Textdatei mit dem Namen <span style="background-color: yellow">ui.txt</span> befinden, die unter einem <span style="background-color: yellow">UICommands</span>-Ordner dargestellt wird:
 
@@ -521,7 +521,7 @@ Die Anwendung weist beispielweise eine Reihe von benutzerdefinierten Benutzerobe
 
 #### <a name="resource-loading-code"></a>Ressourcenladecode
 
-This article assumes that at some point in your code you want to locate the file that contains a localized resource, load it, and then use it. Die APIs, die zum Laden der Ressourcen verwendet werden und die APIs, die zum Extrahieren der Ressourcen verwendet werden, sind nicht wichtig. Im Pseudocode gibt es im Wesentlichen drei Schritte:
+In diesem Artikel wird davon ausgegangen, dass Sie zu einem bestimmten Zeitpunkt im Code die Datei suchen möchten, die eine lokalisierte Ressource enthält, Sie laden und dann verwenden können. Die APIs, die zum Laden der Ressourcen verwendet werden und die APIs, die zum Extrahieren der Ressourcen verwendet werden, sind nicht wichtig. Im Pseudocode gibt es im Wesentlichen drei Schritte:
 
 <blockquote>
 <pre>
@@ -578,7 +578,7 @@ Ab dieser Stelle kann die Beispiel-App weiterhin `CreateFile` zum Laden der `abs
 
 #### <a name="loading-net-resources"></a>Laden von .NET-Ressourcen
 
-Da .NET über einen integrierten Mechanismus für das Suchen und Laden von Ressourcen (als „Satellitenassemblys” bekannt) verfügt, muss für kein expliziter Code wie im obigen synthetischen Beispiel ersetzt werden – in. NET benötigen Sie lediglich die Ressourcen-DLL-Dateien in den entsprechenden Verzeichnissen, und sie werden automatisch für Sie gefunden. When an app is packaged as an MSIX or AppX using resource packs, the directory structure is somewhat different - rather than having the resource directories be subdirectories of the main application directory, they are peers of it (or not present at all if the user doesn't have the language listed in their preferences). 
+Da .NET über einen integrierten Mechanismus für das Suchen und Laden von Ressourcen (als „Satellitenassemblys” bekannt) verfügt, muss für kein expliziter Code wie im obigen synthetischen Beispiel ersetzt werden – in. NET benötigen Sie lediglich die Ressourcen-DLL-Dateien in den entsprechenden Verzeichnissen, und sie werden automatisch für Sie gefunden. Wenn eine App mithilfe von Ressourcen Paketen als msix oder AppX verpackt wird, unterscheidet sich die Verzeichnisstruktur etwas, anstatt dass die Ressourcen Verzeichnisse Unterverzeichnisse des Haupt Anwendungs Verzeichnisses sind, Sie sind Peers davon (oder gar nicht vorhanden, wenn der Benutzer die Sprache ist nicht in Ihren Einstellungen aufgeführt.) 
 
 Stellen Sie sich beispielsweise eine .NET-Anwendung mit dem folgenden Layout vor, in dem alle Dateien unter dem `MainApp`-Ordner vorhanden sind:
 
@@ -649,7 +649,7 @@ void EnableMrtResourceLookup()
 Die .NET-Laufzeit löst das Ereignis `AssemblyResolve` aus, wenn die Ressourcen-DLLs nicht gefunden werden kann. An diesem Punkt sucht der bereitgestellten Ereignishandler die gewünschte Datei über MRT und gibt die Assembly zurück.
 
 > [!NOTE]
-> If your app already has an `AssemblyResolve` handler for other purposes, you will need to integrate the resource-resolving code with your existing code.
+> Wenn Ihre APP bereits über einen `AssemblyResolve` Handler für andere Zwecke verfügt, müssen Sie den Code zur Ressourcen Auflösung in Ihren vorhandenen Code integrieren.
 
 #### <a name="loading-win32-mui-resources"></a>Laden von Win32-MUI-Ressourcen
 
@@ -724,7 +724,7 @@ Jetzt, da Sie über ein umfangreiches Paket verfügen, das alle Ressourcen enth�
 
 Um das Bündel-Generator-Tool zu verwenden, muss die für das Paket erstellte PRI-Konfigurationsdatei manuell aktualisiert werden, um den Abschnitt `<packaging>` zu entfernen.
 
-If you're using Visual Studio, refer to [Ensure that resources are installed on a device regardless of whether a device requires them](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)) for information on how to build all languages into the main package by creating the files `priconfig.packaging.xml` and `priconfig.default.xml`.
+Wenn Sie Visual Studio verwenden, [Stellen Sie sicher, dass Ressourcen auf einem Gerät installiert sind, unabhängig davon, ob Sie von einem Gerät benötigt werden](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)) , um Informationen dazu zu erhalten, wie Sie alle Sprachen in das Hauptpaket erstellen, indem Sie die Dateien `priconfig.packaging.xml` und `priconfig.default.xml`erstellen.
 
 Wenn Sie Dateien manuell bearbeiten, gehen Sie folgendermaßen vor: 
 
@@ -753,13 +753,13 @@ Wenn Sie Dateien manuell bearbeiten, gehen Sie folgendermaßen vor:
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
     ```
 
-4. AFter the package has been created, use the following command to create the bundle, using the appropriate directory and file names:
+4. Nachdem das Paket erstellt wurde, verwenden Sie den folgenden Befehl, um das Paket mit den entsprechenden Verzeichnis-und Dateinamen zu erstellen:
 
     ```CMD
     BundleGenerator.exe -Package ..\contoso_demo.appx -Destination ..\bundle -BundleName contoso_demo
     ```
 
-Now you can move to the final step, signing (see below).
+Nun können Sie mit dem letzten Schritt fortfahren (siehe unten).
 
 #### <a name="manually-creating-resource-packages"></a>Manuelles Erstellen von Ressourcenpaketen
 
@@ -795,7 +795,7 @@ Das manuelle Erstellen von Ressourcenpaketem erfordert die Ausführung eines etw
     makeappx bundle /d ..\bundle /p ..\contoso_demo.appxbundle /o
     ```
 
-The final step to building the package is signing.
+Der letzte Schritt zum Entwickeln des Pakets ist das Signieren.
 
 ### <a name="step-32-signing-the-bundle"></a>Schritt 3.2: Signieren des Bündels
 
@@ -805,7 +805,7 @@ Nachdem Sie die `.appxbundle`-Datei erstellt haben (entweder über das Bündel-G
 signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appxbundle
 ```
 
-This will produce a signed `.appxbundle` file that contains the main package plus all the language-specific resource packages. Wie bei einer Paketdatei werden durch Doppelklicken auf diese Datei die App und alle relevanten Sprachpakete installiert, abhängig von den Windows-Spracheinstellungen des Benutzers.
+Dadurch wird eine signierte `.appxbundle` Datei erstellt, die das Hauptpaket sowie alle sprachspezifischen Ressourcen Pakete enthält. Wie bei einer Paketdatei werden durch Doppelklicken auf diese Datei die App und alle relevanten Sprachpakete installiert, abhängig von den Windows-Spracheinstellungen des Benutzers.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

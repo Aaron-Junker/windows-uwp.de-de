@@ -15,7 +15,7 @@ ms.locfileid: "74259836"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-This article describes the new Windows Hello technology that ships as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
+Dieser Artikel beschreibt die neue Windows Hello-Technologie, die im Lieferumfang des Windows 10-Betriebssystems enthalten ist, und erläutert, wie Entwickler diese Technologie implementieren können, um ihre universelle Windows-Plattform-Apps (UWP) und Back-End-Dienste zu schützen. Der Artikel hebt die spezifischen Funktionen dieser Technologien hervor, die dabei helfen, aus der Verwendung herkömmlicher Anmeldeinformationen erwachsende Bedrohungen zu mindern. Darüber hinaus bietet er eine Anleitung dazu, wie diese Technologien als Bestandteil Ihrer Windows 10-Einführung entworfen und bereitgestellt werden.
 
 Beachten Sie, dass der Schwerpunkt dieses Artikels auf der App-Entwicklung liegt. Weitere Informationen zu den Architektur- und Implementierungsdetails von Windows Hello finden Sie unter [Windows-Hello-Anleitung auf TechNet](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide).
 
@@ -43,7 +43,7 @@ Der häufige Ansatz, eine E-Mail-Adresse als den Benutzernamen zu verwenden, ver
 
 ### <a name="12-solving-credential-problems"></a>1.3 Beheben von Anmeldeinformationsproblemen
 
-Das Lösen von Problemen, die Kennwörter mit sich bringen, ist nicht einfach. Die Verschärfung von Kennwortrichtlinien allein wird das Problem nicht beheben: Die Benutzer könnten ihre Kennwörter einfach wiederverwenden, teilen oder aufschreiben. Auch wenn Benutzerschulungen für die Authentifizierungssicherheit wichtig sind, wird das Problem durch die Schulung allein ebenfalls nicht beseitigt.
+Das Lösen der Probleme, die Kennwörter mit sich bringen, ist nicht einfach. Die Verschärfung von Kennwortrichtlinien allein wird das Problem nicht beheben: Die Benutzer könnten ihre Kennwörter einfach wiederverwenden, teilen oder aufschreiben. Auch wenn Benutzerschulungen für die Authentifizierungssicherheit wichtig sind, wird das Problem durch die Schulung allein ebenfalls nicht beseitigt.
 
 Windows Hello ersetzt Kennwörter durch eine sichere zweistufige Authentifizierung (2FA). Dabei werden vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt, die durch eine Benutzergeste (Biometrie- oder PIN-basiert) geschützt sind. 
 
@@ -275,9 +275,9 @@ In diesem Sequenzdiagramm ist ein grundlegender Abfrage/Rückmeldungsablauf darg
 
 ![Windows Hello-Abfrage/Rückmeldung](images/passport-challenge-response.png)
 
-Als nächstes muss der Server die Signatur überprüfen. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob. If you look at the [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport), you will see that there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. Das BLOB enthält den Algorithmus des öffentlichen Schlüssels, also RSA, und den öffentlichen RSA-Schlüssel.
+Als nächstes muss der Server die Signatur überprüfen. Wenn Sie den öffentlichen Schlüssel anfordern und ihn an den Server senden, der für die spätere Überprüfung verwendet werden soll, befindet er sich in einem ASN. 1-codierten PublicKeyInfo-BLOB. Wenn Sie sich das [Windows Hello-Codebeispiel auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)ansehen, sehen Sie, dass es Hilfsklassen gibt, die crypt32 Functions umschließen, um das ASN. 1-codierte BLOB in ein CNG-BLOB zu übersetzen, das häufiger verwendet wird. Das BLOB enthält den Algorithmus des öffentlichen Schlüssels, also RSA, und den öffentlichen RSA-Schlüssel.
 
-In the sample, the reason we convert the ASN.1-encoded blob to a CNG blob is so that it can be used with CNG (/windows/desktop/SecCNG/cng-portal) and the BCrypt API. If you look up the CNG blob, it will point you to the related [BCRYPT_KEY_BLOB structure](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob). This API surface can be used for authentication and encryption in Windows applications. ASN.1 is a documented standard for communicating data structures that can be serialized, and it's commonly used in public key cryptography and with certificates. That's why the public key information is returned in this manner. The public key is an RSA key; and that's the algorithm that Windows Hello uses when it signs data.
+Im Beispiel wird das ASN. 1-codierte BLOB in ein CNG-BLOB konvertiert, sodass es mit CNG (/Windows/Desktop/SecCNG/CNG-Portal) und der bcrypt-API verwendet werden kann. Wenn Sie nach dem CNG-BLOB suchen, werden Sie auf die zugehörige [BCRYPT_KEY_BLOB Struktur](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)verweisen. Diese API-Oberfläche kann für die Authentifizierung und Verschlüsselung in Windows-Anwendungen verwendet werden. ASN. 1 ist ein dokumentierter Standard für die Kommunikation von Datenstrukturen, die serialisiert werden können. Sie wird häufig in der Kryptografie mit öffentlichem Schlüssel und mit Zertifikaten verwendet. Aus diesem Grund werden die Informationen des öffentlichen Schlüssels auf diese Weise zurückgegeben. Der öffentliche Schlüssel ist ein RSA-Schlüssel. und das ist der Algorithmus, den Windows Hello verwendet, wenn Daten signiert werden.
 
 Sobald das CNG-BLOB verfügbar ist, müssen Sie die signierte Abfrage mit dem öffentlichen Schlüssel des Benutzers abgleichen. Da jeder seine eigene System- oder Back-End-Technologie verwendet, gibt es keine allgemeine Vorgehensweise zur Implementierung dieser Logik. Wir verwenden SHA256 als Hashalgorithmus und Pkcs1 für SignaturePadding, um sicherzustellen, dass Sie diese Funktionen zur Überprüfung der signierten Antwort vom Client verwenden. An dieser Stelle verweisen wir erneut auf das Beispiel, in dem die Vorgehensweise mit .NET 4.6 auf dem Server beschrieben wird. In der Regel werden jedoch etwa folgende Schritte ausgeführt:
 
@@ -407,9 +407,9 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 
 ### <a name="61-articles-and-sample-code"></a>6.1 Artikel und Beispielcode
 
-- [Windows Hello overview](https://support.microsoft.com/help/17215)
-- [Implementation details for Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
-- [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)
+- [Windows Hello-Übersicht](https://support.microsoft.com/help/17215)
+- [Implementierungsdetails für Windows Hello](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
+- [Windows Hello-Codebeispiel auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)
 
 ### <a name="62-terminology"></a>6.2 Terminologie
 
@@ -424,5 +424,5 @@ Mission erfüllt! Sie haben das Internet gerade sicherer gemacht!
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Windows Hello login app](microsoft-passport-login.md)
-* [Windows Hello login service](microsoft-passport-login-auth-service.md)
+* [Windows Hello Login-App](microsoft-passport-login.md)
+* [Windows Hello Login-Dienst](microsoft-passport-login-auth-service.md)

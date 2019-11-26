@@ -193,6 +193,6 @@ Und zweitens fügen Sie diesen Setter `OptionButtonStyle` in \\Ansicht\\clientvi
 
 Dank dieser letzten Optimierung verhält sich die App genauso wie vor dem Portieren und sieht auch genauso aus. Der entscheidende Vorteil ist aber, dass sie jetzt auf allen Geräten ausgeführt werden kann.
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Fazit
 
 Die App, die wir im Rahmen dieser Fallstudie portiert haben, war eine relativ komplexe App mit mehrere Projekten, einer Klassenbibliothek und einer größeren Menge an Code und UI-Elementen. Trotzdem war der Portiervorgang einfach. Einige der einfachen Portierung sind direkt auf die Ähnlichkeit zwischen der Windows 10-Entwicklerplattform und den Windows 8.1-und Windows Phone 8,1-Plattformen zurückzuführen. Ein anderer Grund ist der Entwurf der ursprünglichen App, bei dem darauf geachtet wurde, dass die Modelle, Ansichtsmodelle und Ansichten separat gehalten wurden.

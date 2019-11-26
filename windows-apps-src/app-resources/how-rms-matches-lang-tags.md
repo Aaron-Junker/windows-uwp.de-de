@@ -126,7 +126,7 @@ Wenn für ein untergeordnetes Sprachtag in der BCP-47-Registrierung für unterge
 
 Manchmal wird der Abgleich im Rahmen des umfangreicheren Prozesses zum Abgleichen einer einzelnen Sprache mit einer Liste von Sprachen ausgeführt. Ein Beispiel hierfür ist eine Übereinstimmung einer einzelnen sprachbasierten Ressource mit einer Sprachenliste einer App. Der Wert für die Höhe der Übereinstimmung wird nach der Position der ersten übereinstimmenden Sprache in der Liste gewichtet. Je weiter unten in der Liste sich die Sprache befindet, desto niedriger ist der Wert.
 
-Wenn die Sprachenliste zwei oder mehr regionale Varianten mit denselben untergeordneten Sprach- und Skripttags enthält, werden Vergleiche für das erste Sprachtag nur für genaue Übereinstimmungen und Übereinstimmungen der Variante und Region bewertet. Die Vergabe von Werten für partielle Übereinstimmungen wird bis zur letzten Regionsvariante verschoben. Dadurch können Benutzer das Abgleichverhalten für ihre Sprachenliste genau steuern. Es ist z. B. möglich, dass eine genaue Übereinstimmung für ein sekundäres Element in der Liste einer partiellen Übereinstimmung für das erste Element in der Liste vorgezogen wird, wenn ein drittes Element vorliegt, das mit der Sprache und dem Skript des ersten Elements übereinstimmt. Hier sehen Sie ein Beispiel.
+Wenn die Sprachenliste zwei oder mehr regionale Varianten mit denselben untergeordneten Sprach- und Skripttags enthält, werden Vergleiche für das erste Sprachtag nur für genaue Übereinstimmungen und Übereinstimmungen der Variante und Region bewertet. Die Vergabe von Werten für partielle Übereinstimmungen wird bis zur letzten Regionsvariante verschoben. Dadurch können Benutzer das Abgleichverhalten für ihre Sprachenliste genau steuern. Es ist z. B. möglich, dass eine genaue Übereinstimmung für ein sekundäres Element in der Liste einer partiellen Übereinstimmung für das erste Element in der Liste vorgezogen wird, wenn ein drittes Element vorliegt, das mit der Sprache und dem Skript des ersten Elements übereinstimmt. Hier ein Beispiel dazu.
 
 - Sprachenliste (in dieser Reihenfolge): „pt-PT” (Portugiesisch (Portugal)), „en-US” (Englisch (USA)), „pt-BR” (Portugiesisch (Brasilien)).
 - Ressourcen: „en-US”, „pt-BR”.
@@ -141,7 +141,7 @@ ODER
 
 ## <a name="undetermined-language-und"></a>Undefinierte Sprache („und”)
 
-Das Sprachtag „und” kann zum Angeben einer Ressource verwendet werden, die mit allen Sprachen übereinstimmt, wenn keine bessere Übereinstimmung vorliegt. Sie ähnelt dem BCP-47-Sprachbereich „ *” oder „* -&lt;script&gt;”. Hier sehen Sie ein Beispiel.
+Das Sprachtag „und” kann zum Angeben einer Ressource verwendet werden, die mit allen Sprachen übereinstimmt, wenn keine bessere Übereinstimmung vorliegt. Sie ähnelt dem BCP-47-Sprachbereich „ *” oder „* -&lt;script&gt;”. Hier ein Beispiel dazu.
 
 - Sprachenliste: „en-US”, „zh-Hans-CN”.
 - Ressourcen: „zh-Hans-CN”, „und.”

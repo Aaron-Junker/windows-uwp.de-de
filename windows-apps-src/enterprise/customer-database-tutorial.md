@@ -419,9 +419,9 @@ Das Löschen eines Kunden ist der abschließende grundlegende Vorgang, den Sie i
 
 ![Neuen Kunden löschen](images/customer-database-tutorial/delete-new-customer.png)
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Fazit
 
-Gratulation! In diesem Fall verfügt Ihre APP nun über eine vollständige Palette an lokalen Daten Bank Vorgängen. Sie können Kunden innerhalb Ihrer Benutzeroberfläche erstellen, lesen, aktualisieren und löschen, und diese Änderungen werden in der Datenbank gespeichert und werden über verschiedene Starts der APP hinweg beibehalten.
+Herzlichen Glückwunsch! In diesem Fall verfügt Ihre APP nun über eine vollständige Palette an lokalen Daten Bank Vorgängen. Sie können Kunden innerhalb Ihrer Benutzeroberfläche erstellen, lesen, aktualisieren und löschen, und diese Änderungen werden in der Datenbank gespeichert und werden über verschiedene Starts der APP hinweg beibehalten.
 
 Nachdem Sie nun fertig sind, sollten Sie Folgendes beachten:
 * Wenn Sie dies noch nicht getan haben, finden Sie in der Übersicht über die [App-Struktur](../enterprise/customer-database-app-structure.md) Weitere Informationen dazu, warum die APP wie Sie erstellt wird.
@@ -447,7 +447,7 @@ Die erforderlichen Schritte zum Herstellen einer Verbindung mit ihrer eigenen Re
 * Verknüpfen Sie die APP mit dem Microsoft Store.
 * Kopieren Sie das [Dienstprojekt](https://github.com/Microsoft/Windows-appsample-customers-orders-database/tree/master/ContosoService) in Ihre APP, und stellen Sie es in Azure bereit.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Authentifizierung
 
 Sie müssen eine Schaltfläche erstellen, um eine Authentifizierungs Sequenz zu starten, sowie ein Popup oder eine separate Seite, um die Informationen eines Benutzers zu erfassen. Nachdem Sie das erstellt haben, müssen Sie Code bereitstellen, der die Informationen eines Benutzers anfordert und ihn zum Abrufen eines Zugriffs Tokens verwendet. Das Customer Orders Database-Beispiel umschließt Microsoft Graph Aufrufe mit der **webaccountmanager** -Bibliothek, um ein Token abzurufen und die Authentifizierung für ein Aad-Konto zu verarbeiten.
 

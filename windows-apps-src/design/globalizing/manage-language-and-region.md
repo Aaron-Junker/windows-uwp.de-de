@@ -1,5 +1,5 @@
 ---
-Description: This topic defines the terms user profile language list, app manifest language list, and app runtime language list. Wir verwenden diese Begriffe in diesem Thema und in anderen Themen in diesem Featurebereich. Daher ist es wichtig zu wissen, was sie bedeuten.
+Description: In diesem Thema werden die Begriffe Benutzerprofil-Sprachliste, App-Manifest-Sprachliste und App-Lauf Zeit Sprache definiert. Wir verwenden diese Begriffe in diesem Thema und in anderen Themen in diesem Featurebereich. Daher ist es wichtig zu wissen, was sie bedeuten.
 title: Benutzerprofilsprachen und App-Manifest-Sprachen verstehen
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
@@ -93,23 +93,23 @@ Die Liste der App-Laufzeitsprachen bestimmt die Ressourcen, die Windows für Ihr
 **Hinweis:** Sind die Benutzerprofilsprache und die App-Manifestsprache regionale Varianten voneinander, wird die regionale Variante des Benutzers als App-Laufzeitsprache verwendet. Wenn der Benutzer beispielsweise „en-GB” bevorzugt, die App jedoch „en-US” unterstützt, ist „en-GB ”die App-Laufzeitsprache. Dadurch wird sichergestellt, dass Datumsangaben, Uhrzeiten und Zahlen den Erwartungen des Benutzers entsprechend formatiert werden („en-GB“), die lokalisierten Ressourcen aber dank des Sprachabgleichs trotzdem in der von der App unterstützten Sprache („en-US“) geladen werden.
 
 ## <a name="qualify-resource-files-with-their-language"></a>Ressourcendateien mit Sprachqualifizierern benennen
-Benennen Sie die Ressourcendateien oder ihre Ordner mit Qualifizierern für Sprachressourcen. Weitere Informationen über Ressourcenqualifizierer finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)). A resource file can be an image (or other asset), or it can be a resource container file, such as a *.resw* that contains text strings.
+Benennen Sie die Ressourcendateien oder ihre Ordner mit Qualifizierern für Sprachressourcen. Weitere Informationen über Ressourcenqualifizierer finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)). Eine Ressourcen Datei kann ein Image (oder ein anderes Objekt) oder eine Ressourcen Containerdatei sein, z *. b. eine resw* -Datei, die Text Zeichenfolgen enthält.
 
-**Note** Even resources in your app's default language must specify the language qualifier. For example, if your app's default language is English (United States), then qualify your assets as `\Assets\Images\en-US\logo.png`.
+**Hinweis** Selbst Ressourcen in der Standardsprache Ihrer APP müssen den sprach Qualifizierer angeben. Wenn die Standardsprache ihrer App z. b. Englisch (USA) ist, qualifizieren Sie Ihre Assets als `\Assets\Images\en-US\logo.png`.
 
-- Windows performs complex matching, including across regional variants such as en-US and en-GB. So include the region sub-tag as appropriate. Siehe [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md).
-- Specify a language script sub-tag in the qualifier when there is no Suppress-Script value defined for the language. For example, instead of zh-CN or zh-TW, use zh-Hant, zh-Hant-TW, or zh-Hans (for more detail, see the [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)).
-- For languages that have a single standard dialect, there is no need to include the region qualifier. For example, use ja instead of ja-JP.
+- Windows führt komplexe Übereinstimmungen aus, einschließlich Regions übergreifender Varianten wie z. b. en-US und en-GB. Nehmen Sie also das untergeordnete Tag Region nach Bedarf. Siehe [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md).
+- Geben Sie ein sprach Skript-Untertag im Qualifizierer an, wenn kein unter drückungsskript-Wert für die Sprache definiert ist. Verwenden Sie beispielsweise anstelle von zh-CN oder zh-tw zh-Hant, zh-Hant-TW oder zh-Hans (Weitere Informationen finden Sie in der [IANA Language Tags-Registrierung](https://www.iana.org/assignments/language-subtag-registry)).
+- Für Sprachen, die über einen einzelnen Standarddialekt verfügen, ist es nicht erforderlich, den Regions Qualifizierer einzubeziehen. Verwenden Sie z. b. ja anstelle von ja-JP.
 - Für einige Tools und Komponenten wie Übersetzungsprogramme können spezielle Sprachtags, beispielsweise Informationen zu regionalen Dialekten, für das Verständnis der Daten hilfreich sein.
 
-### <a name="not-all-resources-need-to-be-localized"></a>Not all resources need to be localized
+### <a name="not-all-resources-need-to-be-localized"></a>Nicht alle Ressourcen müssen lokalisiert werden.
 
-Localization might not be required for all resources.
+Für alle Ressourcen ist möglicherweise keine Lokalisierung erforderlich.
 
-- At a minimum, ensure all resources exist in the default language.
-- A subset of some resources might suffice for a closely related language (partial localization). Beispielsweise muss nicht die gesamte Benutzeroberfläche einer App ins Katalanische lokalisiert werden, wenn die App über einen vollständigen Satz von Ressourcen auf Spanisch verfügt. For users who speak Catalan and then Spanish, the resources that are not available in Catalan appear in Spanish.
-- Some resources might require exceptions for specific languages, while the majority of other resources map to a common resource. In this case, mark the resource intended to be used for all languages with the undetermined language tag 'und'. Windows interprets the 'und' language tag as a wildcard (similar to '\*') in that it matches the top app language after any other specific match. Wenn beispielsweise einige Ressourcen für Finnisch verschieden sind, der Rest der Ressourcen aber für alle Sprachen übereinstimmt, sollte die Ressource für Finnisch mit dem Sprachtag für Finnisch und die übrigen mit „und” markiert werden.
-- For resources that are based on a language script, such as a font or height of text, use the undetermined language tag with a specified script: 'und-&lt;script&gt;'. Verwenden Sie beispielsweise `und-Latn\\fonts.css` für lateinische Schriften und `und-Cryl\\fonts.css` für kyrillische Schriften.
+- Stellen Sie mindestens sicher, dass alle Ressourcen in der Standardsprache vorhanden sind.
+- Eine Teilmenge einiger Ressourcen genügt möglicherweise für eine eng verwandte Sprache (partielle Lokalisierung). Beispielsweise muss nicht die gesamte Benutzeroberfläche einer App ins Katalanische lokalisiert werden, wenn die App über einen vollständigen Satz von Ressourcen auf Spanisch verfügt. Für Benutzer, die Katalanisch und dann Spanisch sprechen, werden die Ressourcen, die in Katalanisch nicht verfügbar sind, in Spanisch angezeigt.
+- Einige Ressourcen erfordern möglicherweise Ausnahmen für bestimmte Sprachen, während die Mehrzahl anderer Ressourcen einer gemeinsamen Ressource zugeordnet werden. Markieren Sie in diesem Fall die Ressource, die für alle Sprachen mit dem unbestimmten Sprachtag "und" verwendet werden soll. Windows interpretiert das sprach Kennzeichen "und" als Platzhalter Zeichen (ähnlich wie "\*"), da es nach jeder anderen spezifischen Übereinstimmung mit der Sprache der obersten App übereinstimmt. Wenn beispielsweise einige Ressourcen für Finnisch verschieden sind, der Rest der Ressourcen aber für alle Sprachen übereinstimmt, sollte die Ressource für Finnisch mit dem Sprachtag für Finnisch und die übrigen mit „und” markiert werden.
+- Verwenden Sie für Ressourcen, die auf einem sprach Skript basieren, z. b. eine Schriftart oder eine Texthöhe, das undefinierte Sprachtag mit einem angegebenen Skript: ' und-&lt;Script&gt;'. Verwenden Sie beispielsweise `und-Latn\\fonts.css` für lateinische Schriften und `und-Cryl\\fonts.css` für kyrillische Schriften.
 
 ## <a name="set-the-http-accept-language-request-header"></a>Festlegen des HTTP-Headers „Accept-Language“.
 Bedenken Sie, ob die von Ihnen aufgerufenen Webdienste im selben Umfang lokalisiert sind wie Ihre App. HTTP-Anforderungen in UWP- und Desktop-Apps sowie XMLHttpRequest (XHR) verwenden den HTTP-Standardheader „Accept-Language“. Dieser HTTP-Header wird der Liste der Benutzersprofilsprachen standardmäßig hinzugefügt. Jede Sprache in der Liste wird zudem um die regionsneutralen Varianten der Sprache sowie um eine Gewichtung (q) erweitert. Beispielsweise ergibt eine Benutzersprachenliste, die aus „fr-FR“ und „en-US“ besteht, einen„Accept-Language“-Anforderungsheader (HTTP) mit „fr-FR“, „fr“, „en-US“, „en“ („fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3“). Aber wenn Ihre App eine Benutzeroberfläche in Französisch (Frankreich) anzeigt, die erste Sprache des Benutzers in dessen Präferenzenliste jedoch Deutsch ist, müssen Sie Französisch (Frankreich) explizit vom Dienst anfordern, um in der App konsistent zu bleiben.
@@ -193,27 +193,27 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 </table>
 
 >[!NOTE]
-> For a list of standard country/region codes used by Microsoft, see the [Official Country/Region List](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion).
+> Eine Liste der von Microsoft verwendeten Standard Codes für Länder und Regionen finden Sie in der [Liste offizieller Länder/](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)Regionen.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
-* [ApplicationLanguages.ManifestLanguages](/uwp/api/windows.globalization.applicationlanguages.ManifestLanguages)
-* [PrimaryLanguageOverride](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride)
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
-* [ResourceContext.Languages](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.Languages)
-* [ApplicationLanguages.Languages](/uwp/api/windows.globalization.applicationlanguages.Languages)
+* [Globalizationpreferences. Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
+* [Applicationlanguages. ManifestLanguages](/uwp/api/windows.globalization.applicationlanguages.ManifestLanguages)
+* [Primarylanguageoverride](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride)
+* [Resourcecontext. qualifiervalues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
+* [Resourcecontext. Languages](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.Languages)
+* [Applicationlanguages. Languages](/uwp/api/windows.globalization.applicationlanguages.Languages)
 * [Windows.Globalization](/uwp/api/windows.globalization?branch=live)
 * [Sprache](/uwp/api/windows.globalization.language?branch=live)
-* [GlobalizationPreferences.HomeGeographicRegion](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
-* [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
+* [Globalizationpreferences. homegeocregion](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
+* [Geografische Region](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
-* [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
+* [Bcp-47-Sprachtag](https://tools.ietf.org/html/bcp47)
+* [IANA-sprachsubtag-Registrierung](https://www.iana.org/assignments/language-subtag-registry)
 * [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Supported languages](../../publish/supported-languages.md)
-* [Globalize your date/time/number formats](use-global-ready-formats.md)
+* [Unterstützte Sprachen](../../publish/supported-languages.md)
+* [Globalisieren von Datums-/Uhrzeit-/nummerformaten](use-global-ready-formats.md)
 * [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>Beispiele
-* [Application resources and localization sample](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
+* [Beispiel für Anwendungs Ressourcen und-Lokalisierung](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)

@@ -4,7 +4,7 @@ description: Erfahren Sie, wie Bedingungen festgelegt werden, die steuern, wann 
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.date: 07/06/2018
 ms.topic: article
-keywords: windows 10, uwp, background task
+keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -21,8 +21,8 @@ ms.locfileid: "74260416"
 
 **Wichtige APIs**
 
-- [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
-- [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
+- [**Systemcondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
+- [**Systemconditiontype**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
 - [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Erfahren Sie, wie Bedingungen festgelegt werden, die steuern, wann die Hintergrundaufgabe ausgeführt wird.
@@ -105,9 +105,9 @@ Rufen Sie [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicat
 Zum Hinzufügen mehrerer Bedingungen ruft Ihre App die [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) -Methode mehrmals auf. Diese Aufrufe müssen stattfinden, bevor die Aufgabenregistrierung wirksam wird.
 
 > [!NOTE]
-> Take care not to add conflicting conditions to a background task.
+> Achten Sie darauf, dass Sie einer Hintergrundaufgabe keine Konflikt verursachenden Bedingungen hinzufügen.
 
-The following snippet shows multiple conditions in the context of creating and registering a background task.
+Der folgende Code Ausschnitt zeigt mehrere Bedingungen im Zusammenhang mit dem Erstellen und Registrieren eines Hintergrund Tasks.
 
 ```csharp
 // Set up the background task.
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>Hinweise
 
 > [!NOTE]
-> Choose conditions for your background task so that it only runs when it's needed, and doesn't run when it shouldn't. Unter [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) finden Sie Beschreibungen der verschiedenen Bedingungen für Hintergrundaufgaben.
+> Wählen Sie Bedingungen für Ihre Hintergrundaufgabe aus, sodass Sie nur bei Bedarf ausgeführt wird und nicht ausgeführt werden kann. Unter [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) finden Sie Beschreibungen der verschiedenen Bedingungen für Hintergrundaufgaben.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
@@ -194,4 +194,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

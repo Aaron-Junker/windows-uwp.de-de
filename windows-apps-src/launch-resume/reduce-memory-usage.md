@@ -4,7 +4,7 @@ description: Dieser Artikel beschreibt, wie Sie Arbeitsspeicher reduzieren, wenn
 title: Reduzieren der Speicherverwendung bei Verschieben der App in den Hintergrundzustand
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5e0ea6deef7dfe3531c8d0406e08bfae80f0e2
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

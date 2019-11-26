@@ -234,7 +234,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Hinweis: Die letzten beiden Zeichen müssen „01“ sein.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Großbritannien</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Vereinigtes Königreich</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 9 oder 12 Ziffern</li>
 <li>Code für Land/Region: GB</li>

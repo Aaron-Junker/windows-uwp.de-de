@@ -3,7 +3,7 @@ title: Verbundene Apps und Geräte (Projekt „Rome”)
 description: In diesem Abschnitt wird beschrieben, wie Sie mithilfe der Remote Systems-Plattform Remotegeräte entdecken, eine App auf einem Remotegerät starten und mit einem App-Dienst auf einem Remotegerät kommunizieren.
 ms.date: 06/08/2018
 ms.topic: article
-keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
+keywords: Windows 10, UWP, verbundene Geräte, Remote Systeme, Rom, Project Rom
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: b989f5c115ef5c8555f8cb48ac43f2d50a9d830c
@@ -15,9 +15,9 @@ ms.locfileid: "74260516"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Verbundene Apps und Geräte (Projekt „Rome”)
 
-This section explains how to connect apps across devices and platforms using [Project Rome](https://developer.microsoft.com/en-us/windows/project-rome). To learn how to implement Project Rome in a cross-platform scenario, visit the [main docs page for Project Rome](https://docs.microsoft.com/en-us/windows/project-rome/).
+In diesem Abschnitt wird erläutert, wie Sie Apps über Geräte und Plattformen mithilfe von [Project Rom](https://developer.microsoft.com/en-us/windows/project-rome)verbinden können. Um zu erfahren, wie Sie Project Rom in einem plattformübergreifenden Szenario implementieren, besuchen Sie die [Hauptseite der Dokumente für Project Rom](https://docs.microsoft.com/en-us/windows/project-rome/).
 
-Die meisten Benutzer verfügen über mehrere Geräte, wobei sie häufig eine Aktivität auf einem Gerät beginnen und auf einem anderen Gerät abschließen. Dazu müssen Apps geräte- und plattformübergreifend sein. Project Rome allows you to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
+Die meisten Benutzer verfügen über mehrere Geräte, wobei sie häufig eine Aktivität auf einem Gerät beginnen und auf einem anderen Gerät abschließen. Dazu müssen Apps geräte- und plattformübergreifend sein. Project Rom ermöglicht Ihnen das Ermitteln von Remote Geräten, das Starten einer APP auf einem Remote Gerät und das kommunizieren mit einem App Service auf einem Remote Gerät.
 
 Die mit Windows 10, Version 1607, eingeführten [Remotesysteme-APIs](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems) ermöglichen Ihnen das Schreiben von Apps, mit denen Benutzer eine Aufgabe auf einem Gerät starten und auf einem anderen Gerät abschließen können. Die Aufgabe bleibt der zentrale Fokus, und Benutzer können an dem für sie komfortabelsten Gerät arbeiten. Zum Beispiel hört ein Benutzer vielleicht Radio auf seinem Mobiltelefon. Aber zu Hause angekommen möchte er möglicherweise die Wiedergabe auf seine Xbox One übertragen, die in die Heim-Stereoanlage eingebunden ist.
 
@@ -35,5 +35,5 @@ Weitere Informationen zu Project Rome im Allgemeinen, einschließlich Ressourcen
 | [Entdecken von Remotegeräten](discover-remote-devices.md)  | Erfahren Sie, wie Sie Geräte erkennen, zu denen Sie eine Verbindung herstellen können. |
 | [Kommunizieren mit einem App-Remotedienst](communicate-with-a-remote-app-service.md) | Erfahren Sie, wie Sie mit einer App auf einem Remotegerät interagieren. |
 | [Verbinden von Geräten über Remotesitzungen](remote-sessions.md) | Ermöglichen Sie die gemeinsame Nutzung auf verbundenen Geräten, indem Sie diese in einer Remotesitzung vereinen. |
-| [Fortsetzen von Benutzeraktivitäten (auch geräteübergreifend)](useractivities.md)| Help users resume what they were doing in your app, even across multiple devices.|
-| [User Activities best practices](useractivities-best-practices.md)| Learn the recommended practices for creating and updating User Activities.|
+| [Fortsetzen von Benutzeraktivitäten (auch geräteübergreifend)](useractivities.md)| Helfen Sie Benutzern dabei, das, was Sie in ihrer app ausgeführt haben, sogar über mehrere Geräte hinweg wieder aufzunehmen.|
+| [Bewährte Methoden für Benutzeraktivitäten](useractivities-best-practices.md)| Informieren Sie sich über die empfohlenen Vorgehensweisen zum Erstellen und Aktualisieren von Benutzeraktivitäten.|

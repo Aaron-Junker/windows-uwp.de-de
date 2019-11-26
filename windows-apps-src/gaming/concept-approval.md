@@ -21,7 +21,7 @@ Konzeptgenehmigung ist der Prozess der Übermittlung eines Vorschlags für ein S
 
 Dieser Vorgang ist nur dann erforderlich, wenn Sie ein Spiel auf Xbox durch [ID@Xbox](https://www.xbox.com/Developers/id) oder als verwaltete Partner veröffentlichen. Sie müssen diese Schritte nicht ausführen, wenn Sie dem [Xbox Live Creators-Programm](https://developer.microsoft.com/games/xbox/xboxlive/creator) beitreten und ein Universal Windows Platform (UWP)-Spiel entwickeln, das Sie anschließend selbst an Xbox veröffentlichen. Spiele, die über dieses Programm entwickelt werden, werden jedoch in einem separaten Abschnitt des Store angeboten. Wenn Ihr Spiel zusammen mit großen AAA-Spielen angeboten werden soll oder wenn Sie ein umfassenderes Spiel mit dem Xbox Development Kit (XDK) entwickeln möchten, benötigen Sie eine Konzeptgenehmigung.
 
-Sie benötigen ebenfalls keine Konzeptgenehmigung, wenn Sie ein UWP-Spiel für Windows-Desktopgeräte oder -Mobilgeräte entwickeln(oder wenn Sie eine UWP-App für alle Geräte veröffentlichen, die *kein* Spiel ist). All you need is a [developer account](https://developer.microsoft.com/store/register), and you can freely configure and submit your app to the Store through Partner Center.
+Sie benötigen ebenfalls keine Konzeptgenehmigung, wenn Sie ein UWP-Spiel für Windows-Desktopgeräte oder -Mobilgeräte entwickeln(oder wenn Sie eine UWP-App für alle Geräte veröffentlichen, die *kein* Spiel ist). Sie benötigen lediglich ein [Entwicklerkonto](https://developer.microsoft.com/store/register), und Sie können Ihre APP über Partner Center kostenlos an den Store übermitteln.
 
 ## <a name="submit-your-concept-for-approval"></a>Übermitteln des Konzepts zur Genehmigung
 

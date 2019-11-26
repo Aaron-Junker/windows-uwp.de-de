@@ -1,5 +1,5 @@
 ---
-title: Hinzufügen von Audio zum Marble Maze-Beispiel
+title: Hinzufügen von Audiodaten zum Marble Maze-Beispiel
 description: In diesem Dokument werden die wichtigsten Methoden beschrieben, die Sie berücksichtigen sollten, wenn Sie mit Audio arbeiten. Außerdem erfahren Sie, wie diese Methoden in Marble Maze angewendet werden.
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.date: 10/18/2017
@@ -13,7 +13,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258557"
 ---
-# <a name="adding-audio-to-the-marble-maze-sample"></a>Hinzufügen von Audio zum Marble Maze-Beispiel
+# <a name="adding-audio-to-the-marble-maze-sample"></a>Hinzufügen von Audiodaten zum Marble Maze-Beispiel
 
 In diesem Dokument werden die wichtigsten Methoden beschrieben, die Sie berücksichtigen sollten, wenn Sie mit Audio arbeiten. Außerdem erfahren Sie, wie diese Methoden in Marble Maze angewendet werden. Marble Maze verwendet [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk), um Audioressourcen aus einer Datei zu laden, und [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal), um Audio zu mischen und wiederzugeben und Effekte auf Audio anzuwenden.
 
@@ -819,7 +819,7 @@ Marble Maze verwendet auch das **m\_engineexperiencedcriticalerror** -Flag zum S
 > [!CAUTION]
 > Sie sollten grundsätzlich im Hauptteil eines Modulrückrufs keine Blockierungsvorgänge ausführen. Diese können zu Leistungsproblemen führen. Marble Maze legt im **OnCriticalError**-Rückruf ein Kennzeichen fest und behandelt später den Fehler in der normalen Audioverarbeitungsphase. Weitere Informationen zu XAudio2-Rückrufen finden Sie unter [XAudio2-Rückrufe](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-callbacks).
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Fazit
 
 Hier endet das Spielebeispiel für Marble Maze! Obwohl es sich um ein relativ einfaches Spiel handelt, enthält es viele wichtige Teile, die in jedem UWP-DirectX-Spiel enthalten sind, und ist ein gutes Beispiel, wenn Sie Ihr eigenes Spiel erstellen möchten.
 

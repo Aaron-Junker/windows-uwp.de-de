@@ -151,7 +151,7 @@ Wenden Sie Pixelgenaue Schlagschatten auf ein **UIElement**, z. B. einer **Ellip
 3. Konfigurieren Sie den **DropShadow**, damit er seine Form vom Zielelement über eine Maske bekommt
     - **DropShadow** ist in den Standarteinstellung rechteckig, sodass dies nicht nötig ist, wenn das Zielelement rechteckig ist
 4. Fügen Sie einen Schatten an einen neuen **SpriteVisual** an, und legen Sie das **SpriteVisual** als untergeordnetes Element des Hostelements fest
-5. Legen Sie die Größe des **SpriteVisual** auf die Größe des Hosts fest, mit einer **ExpressionAnimation**
+5. Legen Sie die Größe des **SpriteVisual**-Elements auf die Größe des Hosts fest, indem Sie eine **ExpressionAnimation** verwenden
 
 ```xaml
 <Grid Width="200" Height="200">
@@ -292,7 +292,7 @@ Erstellen Sie einen Effekt, der den Inhalt verwischt und den Hintergrund färbt.
 3.  Erstellen Sie **CompositionEffectBrush**, basierend auf der Effekt-Struktur
 4.  Legen Sie die Eingabe von der **CompositionEffectBrush** zu einer **CompositionBackdropBrush**, was ihnen einen Effekt ermöglicht, der auf den Inhalt hinter einem **SpriteVisual** angewendet werden kann.
 5.  Legen Sie **CompositionEffectBrush** als Inhalt eines neuen **SpriteVisual**-Elements fest, und legen Sie das **SpriteVisual**-Element als untergeordnetes Element des Hostelements fest. Alternativ könnten Sie eine XamlCompositionBrushBase verwenden.
-6.  Legen Sie die Größe des **SpriteVisual** auf die Größe des Hosts fest, mit einer **ExpressionAnimation**
+6.  Legen Sie die Größe des **SpriteVisual**-Elements auf die Größe des Hosts fest, indem Sie eine **ExpressionAnimation** verwenden
 
 ```xaml
 <Grid Width="300" Height="300" Grid.Column="1">

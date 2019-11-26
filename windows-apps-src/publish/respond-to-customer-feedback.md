@@ -3,7 +3,7 @@ title: Reagieren auf Kundenfeedback
 description: Sie können direkt auf Feedback reagieren, das Ihre Kunden im Feedback-Hub hinterlassen.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bc305834381fcdddac6e4eacf12144fd9f189c2
@@ -22,7 +22,7 @@ Sie können den [Feedbackbericht](feedback-report.md) verwenden, um das Feedback
 
 Um zu einem Feedback eine Antwort zu geben, klicken Sie auf den Link **Feedback beantworten**, der neben dem Feedback in Ihrem **Feedbackbericht** angezeigt wird.
 
-[Partner Center](https://partner.microsoft.com/dashboard) supports three options for responding to customers who provide feedback about your app. Unabhängig davon, welche Option Sie wählen, denken Sie daran, dass maximal 1.000 Zeichen für jede Antwort zulässig sind.
+[Partner Center](https://partner.microsoft.com/dashboard) unterstützt drei Optionen für die Reaktion auf Kunden, die Feedback zu Ihrer APP bereitstellen. Unabhängig davon, welche Option Sie wählen, denken Sie daran, dass maximal 1.000 Zeichen für jede Antwort zulässig sind.
 
 ## <a name="public-comments-in-feedback-hub"></a>Öffentliche Kommentare im Feedback-Hub
 

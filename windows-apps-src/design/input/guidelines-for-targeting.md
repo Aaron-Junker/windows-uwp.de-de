@@ -6,7 +6,7 @@ label: Targeting
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b1cac04405f18aaf3c8f39f9bfce2b965577807
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -15,15 +15,15 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74257941"
 ---
-# <a name="guidelines-for-touch-targets"></a>Guidelines for touch targets
+# <a name="guidelines-for-touch-targets"></a>Richtlinien für Berührungs Ziele
 
-All interactive UI elements in your Universal Windows Platform (UWP) application must be large enough for users to accurately access and use, regardless of device type or input method.
+Alle interaktiven Benutzeroberflächen Elemente in ihrer universelle Windows-Plattform-Anwendung (UWP) müssen groß genug sein, damit Benutzer unabhängig vom Gerätetyp oder der Eingabemethode genau darauf zugreifen und diese verwenden können.
 
-Supporting touch input (and the relatively imprecise nature of the touch contact area) requires further optimization with respect to target size and control layout as the larger, more complex set of input data reported by the touch digitizer is used to determine the user's intended (or most likely) target.
+Die Unterstützung von Berührungs Eingaben (und die relativ ungenaue Natur des Berührungs Kontakt Bereichs) erfordert eine weitere Optimierung in Bezug auf die Zielgröße und das Steuerelement Layout, da der größere, komplexere Satz von Eingabedaten, die vom Fingerabdruck-Digitalisierer gemeldet werden, verwendet wird, um den das beabsichtigte (oder wahrscheinlichste) Ziel des Benutzers.
 
-All UWP controls have been designed with default touch target sizes and layouts that enable you to build visually balanced and appealing apps that are comfortable, easy to use, and inspire confidence.
+Alle UWP-Steuerelemente wurden mit standardmäßigen Berührungs Zielgrößen und-Layouts entworfen, mit denen Sie visuell ausgeglichene und ansprechende Apps erstellen können, die komfortabel und einfach zu verwenden sind.
 
-In this topic, we describe these default behaviors so you can design your app for maximum usability using both platform controls and custom controls (should your app require them).
+In diesem Thema werden diese Standardverhalten beschrieben, damit Sie Ihre APP für maximale Nutzbarkeit mithilfe von Platt Form Steuerelementen und benutzerdefinierten Steuerelementen entwerfen können (falls Ihre APP Sie benötigt).
 
 > **Wichtige APIs**: [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
 
@@ -38,11 +38,11 @@ Die *Standard-Größenanpassung von Fluent* wurde entwickelt, um ein Gleichgewic
 
 ## <a name="fluent-compact-sizing"></a>Compact-Größenanpassung von Fluent
 
-Applications can display a higher level of information density with *Fluent Compact sizing*. Compact sizing aligns UI elements to a 32x32 epx target, which lets UI elements to align to a tighter grid and scale appropriately based on system level scaling.
+Anwendungen können ein höheres Maß an Informationsdichte mit der *fließenden kompakten Größe*anzeigen. Bei der kompakten Größenanpassung werden Benutzeroberflächen Elemente an ein 32 x 32-EPX-Ziel angepasst, sodass Benutzeroberflächen Elemente an einem engeren Raster ausgerichtet und entsprechend der Skalierung auf Systemebene entsprechend skaliert werden können.
 
 ### <a name="examples"></a>Beispiele
 
-Compact sizing can be applied at the page or grid level.
+Compact Sizing kann auf Seiten-oder Rasterebene angewendet werden.
 
 ### <a name="page-level"></a>Seitenebene
 
@@ -62,39 +62,39 @@ Compact sizing can be applied at the page or grid level.
 </Grid>
 ```
 
-## <a name="target-size"></a>Target size
+## <a name="target-size"></a>Zielgröße
 
-In general, set your touch target size to 7.5mm square range (40x40 pixels on a 135 PPI display at a 1.0x scaling plateau). Typically, UWP controls align with 7.5mm touch target (this can vary based on the specific control and any common usage patterns). See [Control size and density](../style/spacing.md) for more detail.
+Legen Sie im Allgemeinen die Größe des touchziels auf einen quadratischen Bereich von 7,5 mm fest (40 x 40 Pixel auf einer 135-ppi-Anzeige auf einem 1.0 x-Skalierungs Plateau). UWP-Steuerelemente entsprechen in der Regel dem 7,5-mm-Berührungs Ziel (Dies kann je nach dem spezifischen Steuerelement und allen gängigen Verwendungs Mustern variieren). Weitere Details finden Sie unter [Steuerelement Größe und Dichte](../style/spacing.md) .
 
-Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jeweiligen Szenarios anpassen. Here are some things to consider:
+Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jeweiligen Szenarios anpassen. Hier sind einige Punkte zu beachten:
 
-- Frequency of Touches - consider making targets that are repeatedly or frequently pressed larger than the minimum size.
-- Error Consequence - targets that have severe consequences if touched in error should have greater padding and be placed further from the edge of the content area. Dies gilt insbesondere für Ziele, die häufig berührt werden.
-- Position in the content area.
-- Form factor and screen size.
-- Finger posture.
-- Touch visualizations.
+- Häufigkeit von Berührungen: Stellen Sie sich vor, dass Ziele, die wiederholt oder häufig gedrückt werden, die minimale Größe überschreiten.
+- Fehler Folge: Ziele, die schwerwiegende Folgen haben, wenn Sie bei einem Fehler berührt werden, sollten größere Abstände aufweisen und am Rand des Inhalts Bereichs weiter platziert werden. Dies gilt insbesondere für Ziele, die häufig berührt werden.
+- Position im Inhalts Bereich.
+- Form Faktor und Bildschirmgröße.
+- Der Finger Zustand.
+- Touchscreen-Visualisierungen.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Einführung in das UWP-App-Design](../basics/design-and-ui-intro.md)
-- [Control size and density](../style/spacing.md)
+- [Steuerelement Größe und-Dichte](../style/spacing.md)
 - [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md)
 
 ### <a name="samples"></a>Beispiele
 
-- [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-- [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 - [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 - [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
 ### <a name="archive-samples"></a>Archivbeispiele
 
-- [Input: XAML user input events sample](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-- [Input: Device capabilities sample](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-- [Input: Touch hit testing sample](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-- [XAML scrolling, panning, and zooming sample](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-- [Input: Simplified ink sample](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-- [Input: Windows 8 gestures sample](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-- [Input: Manipulations and gestures (C++) sample](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-- [DirectX touch input sample](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
+- [Eingabe: Beispiel für XAML-Benutzereingabe Ereignisse](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
+- [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
+- [Eingabe: Beispiel für Berührungs Treffer Tests](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
+- [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+- [Eingabe: vereinfachtes Ink-Beispiel](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+- [Eingabe: Beispiel für Windows 8-Gesten](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Eingabe: Manipulationen und Gesten (C++) (Beispiel)](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
+- [Beispiel für DirectX-Fingereingabe](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)

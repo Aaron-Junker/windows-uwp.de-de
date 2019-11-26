@@ -34,7 +34,7 @@ Eine Abhängigkeits Eigenschaft stellt eine bestimmte Funktion des Programmiermo
 
 - Datenbindung
 - Stile
-- Storyboard-Animationen
+- Storyboardanimationen
 - „PropertyChanged“-Verhalten: Eine Abhängigkeitseigenschaft kann implementiert werden, um Callbacks bereitzustellen, die Änderungen an andere Abhängigkeitseigenschaften weitergeben können.
 - Verwenden eines Standardwerts, der aus Eigenschaftsmetadaten stammt
 - Allgemeines Dienstprogramm für Eigenschaftssystem, wie etwa [**ClearValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.clearvalue) und die Metadatensuche
@@ -43,7 +43,7 @@ Eine Abhängigkeits Eigenschaft stellt eine bestimmte Funktion des Programmiermo
 
 Mit Abhängigkeitseigenschaften werden die grundlegenden Windows-Runtime-Eigenschaftsfunktionen erweitert, indem ein globaler, interner Eigenschaftenspeicher bereitgestellt wird, in dem alle Abhängigkeitseigenschaften einer App zur Laufzeit gesichert werden. Dies ist eine Alternative zur Standardvorgehensweise, bei der die Eigenschaft mit einem privaten Feld abgesichert wird, das in der Eigenschaftsdefinitionsklasse als privat festgelegt ist. Sie können sich diesen internen Eigenschaftenspeicher als einen Satz von Bezeichnern und Werten vorstellen, der für jedes einzelne Objekt vorhanden ist (sofern es sich um ein [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)-Element handelt). Die einzelnen Eigenschaften werden im Speicher nicht anhand des Namens identifiziert, sondern durch eine [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)-Instanz. Vom Eigenschaftensystem wird dieses Implementierungsdetail jedoch meist ausgeblendet: Sie können auf Abhängigkeitseigenschaften normalerweise über einen einfachen Namen (den programmgesteuerten Eigenschaftsnamen in der verwendeten Codesprache oder beim Schreiben von XAML-Code mithilfe eines Attributnamens) zugreifen.
 
-Der Basistyp, der dem Abhängigkeitseigenschaftensystem zugrunde liegt, ist [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject). Mit **DependencyObject** werden Methoden definiert, die auf die Abhängigkeitseigenschaft zugreifen können. Instanzen einer abgeleiteten **DependencyObject** -Klasse stellen die interne Unterstützung des bereits erwähnten Eigenschaftenspeicherkonzepts bereit.
+Der Basistyp, der dem Abhängigkeitseigenschaftensystem zugrunde liegt, ist [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject). Mit **DependencyObject** werden Methoden definiert, die auf die Abhängigkeitseigenschaft zugreifen können. Instanzen einer abgeleiteten **DependencyObject**-Klasse stellen die interne Unterstützung des bereits erwähnten Eigenschaftenspeicherkonzepts bereit.
 
 Im Folgenden finden Sie einen Überblick über die Terminologie, die für die Beschreibung der Abhängigkeitseigenschaften verwendet wird:
 
@@ -170,7 +170,7 @@ Stile und Vorlagen sind zwei Szenarien für Eigenschaften, die als Abhängigkeit
 
 Werte, die aus Stilen oder Vorlagen stammen, sind zurückgestellte Werte (ähnlich wie bei Bindungen). So können Benutzer von Steuerelementen neue Vorlagen für Steuerelemente erstellen oder Stile neu definieren. Aus diesem Grund können Eigenschaftensetter in Stilen nur für Abhängigkeitseigenschaften und nicht für normale Eigenschaften verwendet werden.
 
-### <a name="storyboarded-animations"></a>Storyboard-Animationen
+### <a name="storyboarded-animations"></a>Storyboardanimationen
 
 Sie können den Wert einer Abhängigkeitseigenschaft mithilfe von Storyboardanimationen animieren. Storyboardanimationen in der Windows-Runtime dienen nicht nur reinen Dekorationszwecken. Stellen Sie sich Animationen eher als Zustandsautomatverfahren vor, mit dem die Werte einzelner Eigenschaften oder aller Eigenschaften und visuellen Elemente eines Steuerelements festgelegt und im Laufe der Zeit geändert werden können.
 

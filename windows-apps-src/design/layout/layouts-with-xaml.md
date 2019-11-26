@@ -46,7 +46,7 @@ In diesem Beispiel wird die feste, automatische und proportionale Größenanpass
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
-Column_1 | **Automatisch** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
+Column_1 | **Auto** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
 Column_2 | * | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_2 ist nur halb so breit wie Column_4.
 Column_3 | **44** | Die Spalte ist 44 Pixel breit.
 Column_4 | **2**\* | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_4 ist doppelt so breit wie Column_2.
@@ -126,7 +126,7 @@ Verwenden Sie visuelle Zustände, um wesentliche Änderungen an Ihrer UI basiere
 
 Wenn sich die Größe Ihres App-Fensters über einen bestimmten Punkt vergrößert oder verkleinert, können Sie Layouteigenschaften ändern, um die Größe und Position von Abschnitten Ihrer UI zu ändern oder diese neu anzuordnen, einzublenden oder zu ersetzen. Sie können verschiedene visuelle Zustände für Ihre Benutzeroberfläche definieren und diese anwenden, wenn die Fensterbreite oder Fensterhöhe einen bestimmten Schwellenwert überschreitet. 
 
-Ein [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) bietet eine einfache Möglichkeit, um einen Schwellenwert (auch „Haltepunkt“ genannt) festzulegen, wenn ein Zustand angewendet wird. Ein [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) definiert Eigenschaftswerte, die auf ein Element angewendet werden, wenn es sich in einem bestimmten Zustand befindet. Gruppieren Sie visuelle Zustände in einem [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager), der den entsprechenden „VisualState“ anwendet, wenn die angegebenen Bedingungen erfüllt werden.
+Ein [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) bietet eine einfache Möglichkeit, um einen Schwellenwert (auch „Breakpoint“ genannt) festzulegen, wenn ein Zustand angewendet wird. Ein [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) definiert Eigenschaftswerte, die auf ein Element angewendet werden, wenn es sich in einem bestimmten Zustand befindet. Gruppieren Sie visuelle Zustände in einem [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager), der den entsprechenden „VisualState“ anwendet, wenn die angegebenen Bedingungen erfüllt werden.
 
 ### <a name="set-visual-states-in-code"></a>Festlegen von visuellen Zuständen im Code
 

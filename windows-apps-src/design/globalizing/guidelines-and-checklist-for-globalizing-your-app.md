@@ -32,27 +32,27 @@ Entwerfen und entwickeln Sie Ihre App so, dass sie auf Systemen mit unterschiedl
 | Die Regeln zum Vergleichen von Sprachtags sind nicht trivial. | [BCP-47-Sprachtags](https://tools.ietf.org/html/bcp47) sind komplex. Beim Vergleichen von Sprachtags muss einiges berücksichtigt werden, wie z. B. der Abgleich von Skriptinformationen, Legacytags und mehrfache regionale Varianten. Das Ressourcenverwaltungssystem in Windows übernimmt den Abgleich für Sie. Sie können eine Ressourcengruppe in beliebigen Sprachen angeben, und das System wählt die geeignete Gruppe für den Benutzer und die App aus. Weitere Informationen finden Sie unter [App-Ressourcen und das Ressourcenverwaltungssystem](../../app-resources/index.md) und [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md). |
 | Entwerfen Sie Ihre Benutzeroberfläche so, dass verschiedenen Textlängen und Schriftgrößen für Beschriftungen und Texteingabesteuerelemente möglich sind. | Zeichenfolgen, die in verschiedene Sprachen übersetzt sind, können sehr unterschiedlich lang sein. Daher müssen Sie die UI-Steuerelemente dynamisch an ihren Inhalt anpassen. Gängige Zeichen in anderen Sprachen enthalten Markierungen über oder unter denen, die normalerweise in Englisch verwendet werden (wie Å oder Ņ). Verwenden Sie die standardmäßigen Schriftgrößen und Zeilenhöhen, um angemessenen vertikalen Platz bereitzustellen. Beachten Sie, dass Schriften für andere Sprachen möglicherweise größere Mindestschriftgrößen benötigen, um lesbar zu bleiben. Siehe die Klassen im Namespace [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live). |
 | Unterstützen Sie die Spiegelung der Leserichtung. | Die Textausrichtung und Leserichtung kann von links nach rechts (wie bei Deutsch) oder von links nach rechts (RTL, wie bei Arabisch oder Hebräisch) verlaufen. Wenn Sie Ihr Produkt in Sprachen mit einer anderen Leserichtung lokalisieren, achten Sie darauf, dass das Layout der UI-Elemente eine Spiegelung unterstützt. Auch Elemente wie Zurück-Schaltflächen, UI-Übergangseffekte und Bilder müssen gegebenenfalls gespiegelt werden. Weitere Informationen finden Sie unter [Layout und Schriften anpassen und RTL unterstützen](adjust-layout-and-fonts--and-support-rtl.md). |
-| Zeigen Sie Text und Schriften richtig an. | Die ideale Schriftart sowie Schriftgröße und Textrichtung sind vom jeweiligen Markt abhängig. Weitere Informationen finden Sie unter [**Layout und Schriften anpassen und RTL unterstützen**](adjust-layout-and-fonts--and-support-rtl.md) und [Internationale Schriften](loc-international-fonts.md). |
+| Zeigen Sie Text und Schriften richtig an. | Die ideale Schriftart, Schriftgrad und Textrichtung hängt vom jeweiligen Markt ab. Weitere Informationen finden Sie unter [**Layout und Schriften anpassen und RTL unterstützen**](adjust-layout-and-fonts--and-support-rtl.md) und [Internationale Schriften](loc-international-fonts.md). |
 
 ## <a name="important-apis"></a>Wichtige APIs
  
-* [Globalization](/uwp/api/Windows.Globalization?branch=live)
-* [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
-* [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
-* [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live)
+* [Globalisierungs](/uwp/api/Windows.Globalization?branch=live)
+* [Geografische Region. Currency cregion](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
+* [Language. currentinputmethodlanguagetag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
+* [Windows. Globalization. Fonts](/uwp/api/windows.globalization.fonts?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Recommendations for String Usage](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
-* [Globalize your date/time/number formats](use-global-ready-formats.md)
-* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
-* [BCP-47 language tags](https://tools.ietf.org/html/bcp47)
-* [App resources and the Resource Management System](../../app-resources/index.md)
+* [Empfehlungen für die Zeichen folgen Verwendung](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
+* [Globalisieren von Datums-/Uhrzeit-/nummerformaten](use-global-ready-formats.md)
+* [Grundlegendes zu Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md)
+* [Bcp-47-sprach Tags](https://tools.ietf.org/html/bcp47)
+* [App-Ressourcen und das Ressourcen Verwaltungs System](../../app-resources/index.md)
 * [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md)
 * [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md)
-* [International fonts](loc-international-fonts.md)
-* [Make your app localizable](prepare-your-app-for-localization.md)
+* [Internationale Schriftarten](loc-international-fonts.md)
+* [Lokalisier barkeit Ihrer APP](prepare-your-app-for-localization.md)
 
 ## <a name="samples"></a>Beispiele
 
-* [Globalization preferences sample](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [Beispiel für Globalisierungs Einstellungen](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)

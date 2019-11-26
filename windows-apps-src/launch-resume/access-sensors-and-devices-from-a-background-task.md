@@ -44,7 +44,7 @@ Hintergrundaufgaben mit [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/ap
 | USB              | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
 | HID              | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
 | Bluetooth RFCOMM | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
-| Bluetooth GATT   | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
+| Bluetooth GATT   | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
 | MTP              | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
 | Netzwerk (drahtgebunden)    | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
 | Netzwerk (WLAN)    | ![Dieses Protokoll wird unterstützt.](images/ap-tools.png)                                                                                                                                            |
@@ -136,7 +136,7 @@ In dieser Tabelle ist aufgeführt, welche Laufzeitrichtlinien für universelle W
 | Gesamtbetrachtungszeit-Limit – Gesamtzeit, die die Aufgabe der App im Hintergrund ausgeführt werden kann. | **Familie der Desktopgeräte**: 10 Minuten. **Familie der Mobilgeräte**: Kein Zeitlimit. Um Ressourcen zu schonen, können maximal eine oder zwei Aufgaben gleichzeitig ausgeführt werden. |
 | Die App wurde nicht beendet. | ![Richtlinienprüfung gilt](images/ap-tools.png) |
 
-## <a name="best-practices"></a>Empfohlene Methoden
+## <a name="best-practices"></a>Bewährte Verfahren
 
 Unten sind bewährte Methoden für Apps angegeben, von denen die [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)-Hintergrundaufgaben verwendet werden.
 

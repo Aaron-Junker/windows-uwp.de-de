@@ -40,7 +40,7 @@ Abhängigkeitseigenschaften haben für gewöhnlich eine Wrapperimplementierung. 
 
 Wenn Sie eine benutzerdefinierte Abhängigkeitseigenschaft selbst implementieren und diese veröffentlichen und leicht auffindbar machen möchten, definieren Sie auch die Eigenschaftenwrapper. Eigenschaftenwrapper sind des Weiteren nützlich für die Berichterstattung über grundlegende Informationen der Abhängigkeitseigenschaft für Betrachtungen und statische Analysen. Der Wrapper befindet sich insbesondere dort, wo Sie Attribute platzieren, beispielsweise [**ContentPropertyAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.ContentPropertyAttribute).
 
-## <a name="when-to-implement-a-property-as-a-dependency-property"></a>Wann sollte eine Eigenschaft als Abhängigkeitseigenschaft implementiert werden?
+## <a name="when-to-implement-a-property-as-a-dependency-property"></a>Wann sollten Sie eine Eigenschaft als Abhängigkeitseigenschaft implementieren?
 
 Wenn Sie eine öffentliche Lese-/Schreibeigenschaft in eine Klasse implementieren und die Klasse von [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) abgeleitet ist, können Sie Ihre Eigenschaft als Abhängigkeitseigenschaft nutzen. In einigen Fällen ist die typische Methode, Ihre Eigenschaft mit einem privaten Feld abzusichern, angemessen. Das Definieren Ihrer benutzerdefinierten Eigenschaft als Abhängigkeitseigenschaft ist nicht immer notwendig oder angemessen. Die Entscheidung hängt von den Szenarien ab, die Ihre Eigenschaft unterstützen soll.
 
@@ -421,7 +421,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## <a name="best-practices"></a>Empfohlene Methoden
+## <a name="best-practices"></a>Bewährte Verfahren
 
 Berücksichtigen Sie die folgenden Überlegungen als bewährte Methoden, wenn Sie Ihre benutzerdefinierte Abhängigkeitseigenschaft festlegen.
 

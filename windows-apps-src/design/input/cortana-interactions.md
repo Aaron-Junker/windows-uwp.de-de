@@ -29,14 +29,14 @@ Informationen zum Erweitern von Cortana mit Funktionen aus einer UWP-App mit Spr
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [**VCD elements and attributes v1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+* [**VCD-Elemente und-Attribute v 1.2**](https://docs.microsoft.com/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
 
 **Designer**
 * [Richtlinien für den Sprachentwurf](speech-interactions.md)
-* [Cortana design guidelines for voice commands](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
+* [Cortana-Entwurfs Richtlinien für Sprachbefehle](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
 
 **Beispiele**
-* [Cortana voice command sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
+* [Cortana Voice-Befehlsbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
  
 
  

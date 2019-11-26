@@ -23,29 +23,29 @@ Weitere Informationen zur Spieleprogrammierung unter Windows finden Sie in den f
 ## <a name="game-programming-reference"></a>Programmierreferenz für Spiele
 
 
--   [Graphics and Gaming](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
--   [OpenGL reference](https://www.opengl.org/sdk/docs/man4/)
+-   [Grafiken und Spiele](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
+-   [OpenGL-Referenz](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>Designleitfaden für Spiele
 
 
--   [Index of UX guidelines for UWP apps](https://developer.microsoft.com/windows/apps/design)
+-   [Index der UX-Richtlinien für UWP-apps](https://developer.microsoft.com/windows/apps/design)
 
 ## <a name="blogs"></a>Blogs
 
 
--   [Games for Windows and the DirectX SDK]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX Developer Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
+-   [Spiele für Windows und das DirectX SDK]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
+-   [DirectX-Entwickler Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
 -   [Shawn Hargreaves Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (Infos zu XNA-Spielen).
 
 ## <a name="toolkits"></a>Toolkits
 
 
--   [DirectX Tool Kit](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex texture processing library](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [DirectX-Toolkit](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
+-   [Directxtex-Textur Verarbeitungs Bibliothek](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio-[Grafikdiagnose](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) – Einfach zu verwendende Windows-Runtime-API für 2D-Grafikrendering im unmittelbaren Modus mit GPU-Beschleunigung.
--   [ANGLE for Microsoft Store](https://github.com/microsoft/angle/wiki) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
+-   Der [Winkel für Microsoft Store](https://github.com/microsoft/angle/wiki) -führt OpenGL es-Inhalte unter Windows aus, indem OpenGL es-API-Aufrufe in DirectX 11 API-Aufrufe übersetzt werden.
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>Videos zu GDC 2015-Spieleentwicklersitzungen
 

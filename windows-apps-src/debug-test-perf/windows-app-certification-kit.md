@@ -88,7 +88,7 @@ Beim Installieren einer neueren Version des [Zertifizierungskits für Windows-Ap
 
 Die Leistungstestgrenzen des Zertifizierungskits für Windows-Apps basieren auf der Leistung eines Computers mit geringem Energieverbrauch.
 
-Die Merkmale des Computers, auf dem der Test ausgeführt wird, können die Testergebnisse beeinflussen. Um zu ermitteln, ob die Leistung Ihrer APP den [Microsoft Store Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)entspricht, empfiehlt es sich, die APP auf einem Computer mit geringer Leistung zu testen, z. b. auf einem Computer mit Intel Atom-Prozessor, auf dem eine Bildschirmauflösung von 1366x768 (oder höher) und einer rotierenden Festplatte (im Gegensatz zu einer Solid-State-Festplatte).
+Die Eigenschaften des Computers, auf dem der Test ausgeführt wird, können die Testergebnisse beeinflussen. Um zu ermitteln, ob die Leistung Ihrer APP den [Microsoft Store Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)entspricht, empfiehlt es sich, die APP auf einem Computer mit geringer Leistung zu testen, z. b. auf einem Computer mit Intel Atom-Prozessor, auf dem eine Bildschirmauflösung von 1366x768 (oder höher) und einer rotierenden Festplatte (im Gegensatz zu einer Solid-State-Festplatte).
 
 Da Computer mit geringem Energieverbrauch weiterentwickelt werden, können sich die Leistungsmerkmale im Laufe der Zeit ändern. Informieren Sie sich in den aktuellsten [Microsoft Store Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies) , und testen Sie Ihre APP mit der aktuellsten Version des zertifizierungskit für Windows-apps, um sicherzustellen, dass Ihre APP die neuesten Leistungsanforderungen erfüllt.
 

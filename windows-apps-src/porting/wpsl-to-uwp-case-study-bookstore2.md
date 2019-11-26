@@ -299,6 +299,6 @@ Die Funktionalität dieser App wird durch diese Änderungen nicht verändert, ab
 
 Jetzt können wir `ItemsPath="BookSkus"` entfernen, ohne dass sich das Verhalten der App ändert.
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Fazit
 
 In dieser Fallstudie haben wir es mit einer aufwändigeren Benutzeroberfläche als im vorherigen Beispiel zu tun. Alle Funktionen und Konzepte der Windows Phone Silverlight **longlistselector**– und mehr – sind für eine UWP-app in Form von **semanticzoom**, **ListView**, **GridView**und **CollectionViewSource**verfügbar. Sie haben erfahren, wie Sie sowohl imperativen Code als auch Markup in einer UWP-App wiederverwenden oder kopieren und bearbeiten, um Funktionen, Benutzeroberflächenelemente und Interaktionen speziell für die schmalsten und breitesten Formfaktoren von Windows-Geräten und alle Größen dazwischen umzusetzen.

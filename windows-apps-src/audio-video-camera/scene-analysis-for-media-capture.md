@@ -4,7 +4,7 @@ description: Dieser Artikel beschreibt, wie Sie mit SceneAnalysisEffect und Face
 title: Effekte für die Analyse von Kamera-Frames
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 406af54cfaae8710cea2d989278a16f28c8dd619
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -116,7 +116,7 @@ Nicht alle Geräte verfügen über ein Aufnahmegerät, das den Fokus und die Bel
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Einfaches Foto, Video und Audioerfassung mit mediacapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

@@ -1,7 +1,7 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Senden einer Arbeitsaufgabe mithilfe eines Timers
-description: Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Zeitgebers ausgeführt wird.
+description: Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Timer, Threads
@@ -21,7 +21,7 @@ ms.locfileid: "74258930"
 -   [**Windows. UI. Core-Namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 -   [**Windows. System. Threading-Namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
-Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Zeitgebers ausgeführt wird.
+Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
 
 ## <a name="create-a-single-shot-timer"></a>Erstellen eines einmaligen Timers
 
@@ -205,7 +205,7 @@ Das folgende Beispiel erstellt einen Zeitgeber, der die Arbeitsaufgabe sendet, u
 >         }));
 > ```
 
-## <a name="cancel-the-timer"></a>Abbrechen des Zeitgebers
+## <a name="cancel-the-timer"></a>Abbrechen des Timers
 
 Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird, rufen Sie [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) auf. Der Timer wird abgebrochen, und die Arbeitsaufgabe wird nicht an den Threadpool übermittelt.
 

@@ -33,7 +33,7 @@ Das Direct3D-Gerät wird jetzt zum Erstellen von Ressourcen im Videospeicher ver
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>Muss ich meinen Spieltimer für UWP aktualisieren?
 
 
-[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter), along with [**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency), is still the best way to implement a game timer for UWP apps.
+[**QueryPerformanceCounter**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)ist zusammen mit [**QueryPerformanceFrequency**](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancefrequency)immer noch die beste Möglichkeit, einen Spieltimer für UWP-apps zu implementieren.
 
 Eine Kleinigkeit sollten Sie im Hinblick auf Timer und den UWP-App-Lebenszyklus beachten. Das Anhalten und Fortsetzen ist nicht das Gleiche wie das erneute Starten eines Desktopspiels durch den Spieler, da das Spiel in diesem Fall eine Momentaufnahme ab dem Zeitpunkt fortsetzt, zu dem das Spiel zuletzt gespielt wurde. Ist viel Zeit vergangen – z. B. einige Wochen – können bei einigen Timerimplementierungen Fehler auftreten. Sie können App-Lebenszyklusereignisse verwenden, um Ihren Timer beim Fortsetzen des Spiels zurückzusetzen.
 
@@ -44,10 +44,10 @@ Spiele, die noch immer die RDTSC-Anweisung verwenden, müssen aktualisiert werde
 
 Das Communityprojekt [DirectX-Toolkit (DirectXTK)](https://github.com/Microsoft/DirectXTK) bietet Hilfsklassen zur Verwendung mit Direct3D 11.
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>How do I maintain code paths for the desktop and the Microsoft Store?
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>Gewusst wie die Codepfade für den Desktop und die Microsoft Store beibehalten?
 
 
-Chuck Walbourn's article series titled [Dual-use Coding Techniques for Games](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx) offers guidance on sharing code between the desktop and the Microsoft Store code paths.
+Die Artikel Reihe von Chuck walbourn mit der Bezeichnung [Dual-Use-Codierungstechniken für Spiele](https://blogs.msdn.com/b/chuckw/archive/2012/09/17/dual-use-coding-techniques-for-games.aspx) bietet Anleitungen zum Freigeben von Code zwischen dem Desktop und den Microsoft Store Codepfade.
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>Wie lade ich Bildressourcen in meine DirectX-UWP-App?
 
@@ -98,7 +98,7 @@ Der Benutzer wählt aus, auf welchem Monitor Ihre App angezeigt wird. Rufen Sie 
 ## <a name="how-do-i-turn-on-antialiasing"></a>Wie aktiviere ich Antialiasing?
 
 
-Antialiasing (Multisampling) wird beim Erstellen des Direct3D-Geräts aktiviert. Enumerate multisampling support by calling [**CheckMultisampleQualityLevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels), then set multisample options in the [**DXGI\_SAMPLE\_DESC structure**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) when you call [**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
+Antialiasing (Multisampling) wird beim Erstellen des Direct3D-Geräts aktiviert. Auflisten der Unterstützung für mehrere Stichproben durch Aufrufen von [**checkmultisamplequalitylevels**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkmultisamplequalitylevels)und anschließendes Festlegen von Multisampling-Optionen im [**DXGI-\_Sample\_DESC-Struktur**](https://docs.microsoft.com/windows/desktop/api/dxgicommon/ns-dxgicommon-dxgi_sample_desc) beim Aufrufen von [**CreateSurface**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgidevice-createsurface).
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>Mein Spiel rendert mit Multithreading und/oder verzögertem Rendering. Was muss ich in diesem Zusammenhang bei Direct3D 11 beachten?
 
@@ -110,8 +110,8 @@ Lesen Sie [Einführung in das Multithreading in Direct3D 11](https://docs.micro
 
 Lesen Sie die folgenden Themen:
 
--   [Programming Guide for HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
--   [Direct3D 10 Frequently Asked Questions](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
+-   [Programmier Handbuch für HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-pguide)
+-   [Direct3D 10 häufig gestellte Fragen](https://docs.microsoft.com/windows/desktop/DxTechArts/direct3d10-frequently-asked-questions)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>Was sollte ich anstelle des X-Dateiformats für meine Modelle verwenden?
 
@@ -121,14 +121,14 @@ Es gibt zwar keinen offiziellen Ersatz für das X-Dateiformat, in vielen Beispie
 ## <a name="how-do-i-debug-my-shaders"></a>Wie debugge ich meine Shader?
 
 
-Microsoft Visual Studio 2015 includes diagnostic tools for DirectX graphics. Siehe [Debuggen von DirectX-Grafiken](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
+Microsoft Visual Studio 2015 umfasst Diagnosetools für DirectX-Grafiken. Siehe [Debuggen von DirectX-Grafiken](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>Was ist das Direct3D 11-Äquivalent für die *x*-Funktion?
 
 
 Informationen hierzu finden Sie in der [Funktionszuordnung](feature-mapping.md#function-mapping) in „Zuordnung von DirectX 9-Features zu DirectX 11-APIs“.
 
-##  <a name="what-is-the-dxgi_format-equivalent-of-y-surface-format"></a>What is the DXGI\_FORMAT equivalent of *y* surface format?
+##  <a name="what-is-the-dxgi_format-equivalent-of-y-surface-format"></a>Was ist das DXGI-\_Format, das dem *y* -Oberflächen Format entspricht?
 
 
 Informationen hierzu finden Sie in der [Oberflächenformatzuordnung](feature-mapping.md#surface-format-mapping) in „Zuordnung von DirectX 9-Funktionen zu DirectX 11-APIs“.

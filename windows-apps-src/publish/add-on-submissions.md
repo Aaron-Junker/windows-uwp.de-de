@@ -32,7 +32,7 @@ Hier finden Sie eine Liste mit den Informationen, die Sie beim Erstellen Ihrer A
 
 ### <a name="create-a-new-add-on-page"></a>Erstellen einer neuen Add-On-Seite
 
-| Name des Felds                    | Anmerkungen                            |
+| Feldname                    | Anmerkungen                            |
 |-------------------------------|----------------------------------|
 | [**Produkttyp**](set-your-add-on-product-id.md#product-type)      | Erforderlich |  
 | [**Produkt-ID**](set-your-add-on-product-id.md#product-id)          | Erforderlich |        
@@ -40,7 +40,7 @@ Hier finden Sie eine Liste mit den Informationen, die Sie beim Erstellen Ihrer A
 
 ### <a name="properties-page"></a>Seite „Eigenschaften“
 
-| Name des Felds                    | Anmerkungen                              |   
+| Feldname                    | Anmerkungen                              |   
 |-------------------------------|------------------------------------|
 | [**Produktlebensdauer**](enter-add-on-properties.md#product-lifetime)  | Erforderlich, wenn der Produkttyp **Gebrauchsgut** lautet. Gilt nicht für andere Produkttypen. |
 | [**Mess**](enter-add-on-properties.md#quantity)  | Erforderlich, wenn der Produkttyp **Vom Store verwalteter Verbrauchsartikel** lautet. Gilt nicht für andere Produkttypen. |
@@ -53,7 +53,7 @@ Hier finden Sie eine Liste mit den Informationen, die Sie beim Erstellen Ihrer A
 
 ### <a name="pricing-and-availability-page"></a>Seite „Preise und Verfügbarkeit“
 
-| Name des Felds                    | Anmerkungen                                       |
+| Feldname                    | Anmerkungen                                       |
 |-------------------------------|---------------------------------------------|
 | [**Agrar**](set-add-on-pricing-and-availability.md#markets)  | Standard: alle möglichen Märkte |
 | [**Transparenz**](set-add-on-pricing-and-availability.md#visibility)   | Standard: Zum Kauf erhältlich. Kann im App-Eintrag angezeigt werden |
@@ -66,7 +66,7 @@ Hier finden Sie eine Liste mit den Informationen, die Sie beim Erstellen Ihrer A
 
 Ein Store-Eintrag ist erforderlich. Es wird empfohlen, für jede von der App unterstützte [Sprache](create-add-on-store-listings.md#store-listing-languages) Store-Einträge anzugeben.
 
-| Name des Felds                    | Anmerkungen                                       |
+| Feldname                    | Anmerkungen                                       |
 |-------------------------------|---------------------------------------------|
 | [**Tel**](create-add-on-store-listings.md#title)                    | Erforderlich (max. 100 Zeichen)           |
 | [**Beschreibung**](create-add-on-store-listings.md#description)       | Optional (max. 200 Zeichen)            |

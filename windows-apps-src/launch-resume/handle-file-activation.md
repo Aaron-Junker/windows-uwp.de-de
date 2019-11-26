@@ -151,6 +151,6 @@ Die empfangenen Dateien stammen unter Umständen aus einer nicht vertrauenswürd
 
 * [Richtlinien für Dateitypen und URIs](https://docs.microsoft.com/windows/uwp/files/index)
 
-### <a name="reference"></a>Verweis
+### <a name="reference"></a>Referenz
 * [Windows. applicationmodel. Activation. fileactivatedeventargs](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
 * [Windows. UI. XAML. Application. onfileaktivierte](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onfileactivated)

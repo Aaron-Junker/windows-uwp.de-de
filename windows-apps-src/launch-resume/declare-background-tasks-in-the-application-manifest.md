@@ -92,7 +92,7 @@ Kopieren Sie diesen Code in das "Extensions"-Element (Attribute werden in den fo
 
     **Beachten Sie**  stellen Sie sicher, dass Sie die einzelnen Auslösertypen auflisten, die Sie verwenden, oder wenn die Hintergrundaufgabe nicht mit den nicht deklarierten Auslösertypen registriert wird (die [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) Methode schlägt fehl und löst eine Ausnahme aus).
 
-    Dieses Beispiel für einen Codeausschnitt gibt die Verwendung von Systemereignistriggern und Pushbenachrichtigungen an:
+    Dieses Beispiel veranschaulicht die Verwendung von Systemereignistriggern und Pushbenachrichtigungen:
 
 ```xml
 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -159,7 +159,7 @@ Sie können angeben, wo Ihre Hintergrundaufgaben ausführt werden sollen:
 
 ### <a name="run-in-the-same-process-as-your-foreground-application"></a>Die Ausführung erfolgt im gleichen Prozess wie Ihre Anwendung im Vordergrund.
 
-Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wird, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
+In diesem XML-Beispiel wird eine Hintergrundaufgabe deklariert, die im gleichen Prozess wie die Anwendung im Vordergrund ausgeführt wird.
 
 ```xml
 <Extensions>

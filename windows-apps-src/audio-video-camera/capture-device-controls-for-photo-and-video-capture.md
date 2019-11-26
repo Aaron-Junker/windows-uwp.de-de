@@ -4,7 +4,7 @@ description: In diesem Artikel wird veranschaulicht, wie Sie manuelle Geräteste
 title: Manuelle Kamerasteuerelemente für Foto- und Videoaufnahmen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7344e5004e6ac398673734cb03ddbdde93b3bd0d
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -38,7 +38,7 @@ Dieses Beispiel enthält ein [**Slider**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-xml[ExposureXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetExposureXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **ExposureControl** unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Legen Sie den Aktivierungszustand des Kontrollkästchens für den Wert der [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecontrol.auto)-Eigenschaft fest, um anzugeben, ob die automatische Belichtungsanpassung derzeit aktiv ist.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** ExposureControl](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecontrol.supported) unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Legen Sie den Aktivierungszustand des Kontrollkästchens für den Wert der [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecontrol.auto)-Eigenschaft fest, um anzugeben, ob die automatische Belichtungsanpassung derzeit aktiv ist.
 
 Der Belichtungswert muss innerhalb des vom Gerät unterstützten Bereichs liegen und ein inkrementeller Wert der unterstützten Schrittgröße sein. Ermitteln Sie die unterstützten Werte für das aktuelle Gerät anhand der Eigenschaften [**Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecontrol.min), [**Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecontrol.max) und [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecontrol.step). Sie werden verwendet, um die entsprechenden Eigenschaften des Schieberegler-Steuerelements festzulegen.
 
@@ -65,7 +65,7 @@ In diesem Beispiel wird ein [**Slider**](https://docs.microsoft.com/uwp/api/Wind
 
 [!code-xml[EvXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetEvXAML)]
 
-Überprüfen Sie anhand der [Supported](supported-codecs.md)-Eigenschaft, ob das aktuelle Aufnahmegerät **ExposureCompensationControl** unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
+Überprüfen Sie anhand der **Supported**-Eigenschaft, ob das aktuelle Aufnahmegerät [ExposureCompensationControl](supported-codecs.md) unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
 
 Der Belichtungskorrekturwert muss innerhalb des vom Gerät unterstützten Bereichs liegen und ein inkrementeller Wert der unterstützten Schrittgröße sein. Ermitteln Sie die unterstützten Werte für das aktuelle Gerät anhand der Eigenschaften [**Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecompensationcontrol.min), [**Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecompensationcontrol.max) und [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurecompensationcontrol.step). Sie werden verwendet, um die entsprechenden Eigenschaften des Schieberegler-Steuerelements festzulegen.
 
@@ -85,7 +85,7 @@ In diesem Beispiel wird eine Gruppe von Optionsfeldern verwendet, damit Benutzer
 
 [!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **FlashControl** unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Die Unterstützung von **FlashControl** bedeutet nicht automatisch, dass auch die Reduzierung des Rote-Augen-Effekts unterstützt wird. Prüfen Sie daher vor dem Aktivieren der UI auch die [**RedEyeReductionSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported)-Eigenschaft. Da **TorchControl** nicht direkt mit dem Blitzsteuerelement zusammenhängt, müssen Sie vor der Verwendung auch dessen [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.torchcontrol.supported)-Eigenschaft prüfen.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** FlashControl](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supported) unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Die Unterstützung von **FlashControl** bedeutet nicht automatisch, dass auch die Reduzierung des Rote-Augen-Effekts unterstützt wird. Prüfen Sie daher vor dem Aktivieren der UI auch die [**RedEyeReductionSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported)-Eigenschaft. Da **TorchControl** nicht direkt mit dem Blitzsteuerelement zusammenhängt, müssen Sie vor der Verwendung auch dessen [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.torchcontrol.supported)-Eigenschaft prüfen.
 
 Aktivieren oder deaktivieren Sie die gewünschte Blitzeinstellung im [**Checked**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)-Ereignishandler für die einzelnen Blitz-Optionsfelder. Beachten Sie Folgendes: Damit der Blitz immer verwendet wird, müssen Sie die [**Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.enabled)-Eigenschaft auf „true“ und die [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.auto)-Eigenschaft auf „false“ festlegen.
 
@@ -114,7 +114,7 @@ Wenn der fortlaufende Autofokus aktiviert wird, wird die Kamera angewiesen, den 
 
 [!code-xml[CAFXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCAFXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **FocusControl** unterstützt. Prüfen Sie als Nächstes anhand der [**SupportedFocusModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supportedfocusmodes)-Liste, ob der fortlaufende Autofokus unterstützt wird. Wenn sie den Wert [**FocusMode.Continuous**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.FocusMode) enthält, zeigen Sie das Optionsfeld für den fortlaufenden Autofokus an.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** FocusControl](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported) unterstützt. Prüfen Sie als Nächstes anhand der [**SupportedFocusModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supportedfocusmodes)-Liste, ob der fortlaufende Autofokus unterstützt wird. Wenn sie den Wert [**FocusMode.Continuous**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.FocusMode) enthält, zeigen Sie das Optionsfeld für den fortlaufenden Autofokus an.
 
 [!code-cs[CAF](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCAF)]
 
@@ -135,7 +135,7 @@ In diesem Beispiel wird ein Optionsfeld verwendet, um den Modus „Tippen zum Sc
 
 [!code-xml[TapFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetTapFocusXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **FocusControl** unterstützt. **RegionsOfInterestControl** muss unterstützt werden und selbst mindestens einen Bereich unterstützen, um dieses Verfahren verwenden zu können. Ermitteln Sie anhand der Eigenschaften [**AutoFocusSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) und [**MaxRegions**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions), ob das Optionsfeld für „Tippen zum Scharfstellen“ ein- oder ausgeblendet werden soll.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** FocusControl](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported) unterstützt. **RegionsOfInterestControl** muss unterstützt werden und selbst mindestens einen Bereich unterstützen, um dieses Verfahren verwenden zu können. Ermitteln Sie anhand der Eigenschaften [**AutoFocusSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) und [**MaxRegions**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions), ob das Optionsfeld für „Tippen zum Scharfstellen“ ein- oder ausgeblendet werden soll.
 
 [!code-cs[TapFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocus)]
 
@@ -149,13 +149,13 @@ In diesem Beispiel wird ein Bereich scharf gestellt, wenn der Benutzer auf den B
 
 Im nächsten Schritt geht es um das Lauschen auf das Ereignis, wenn der Benutzer auf den Bildschirm tippt. Hierzu wird das [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)-Ereignis von [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) behandelt, mit dem derzeit der Vorschaudatenstrom für die Aufnahme angezeigt wird. Falls die Vorschau der Kamera gerade nicht aktiv ist oder der Modus „Tippen zum Scharfstellen“ deaktiviert ist, können Sie den Handler verlassen, ohne eine Aktion auszuführen.
 
-If the tracking variable *\_isFocused* is toggled to false, and if the camera isn't currently in the process of focus (determined by the [**FocusState**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate) property of the **FocusControl**), begin the tap-to-focus process. Ermitteln Sie anhand der an den Handler übergebenen Ereignisargumente die Position, auf die der Benutzer getippt hat. In diesem Beispiel wird diese Gelegenheit auch genutzt, um die Größe des Bereichs auszuwählen, der scharf gestellt wird. In diesem Fall beträgt die Größe ein Viertel der kleinsten Abmessung des Capture-Elements. Übergeben Sie die Tippposition und die Bereichsgröße an die im nächsten Abschnitt definierte **TapToFocus**-Hilfsmethode.
+Wenn die nach Verfolgungs Variable *\_isfocus* auf false festgelegt ist und sich die Kamera derzeit nicht im Fokus Prozess befindet (festgelegt durch die [**focusstate**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusstate) -Eigenschaft von **focuscontrol**), beginnen Sie mit dem Tap-to-Focus-Prozess. Ermitteln Sie anhand der an den Handler übergebenen Ereignisargumente die Position, auf die der Benutzer getippt hat. In diesem Beispiel wird diese Gelegenheit auch genutzt, um die Größe des Bereichs auszuwählen, der scharf gestellt wird. In diesem Fall beträgt die Größe ein Viertel der kleinsten Abmessung des Capture-Elements. Übergeben Sie die Tippposition und die Bereichsgröße an die im nächsten Abschnitt definierte **TapToFocus**-Hilfsmethode.
 
-If the *\_isFocused* toggle is set to true, the user tap should clear the focus from the previous region. Dies wird mit der im Anschluss gezeigten **TapUnfocus**-Hilfsmethode erreicht.
+Wenn die *\_isfokussierte* UMSCHALT Fläche auf true festgelegt ist, sollte die Benutzer Abzweigung den Fokus aus dem vorherigen Bereich löschen. Dies wird mit der im Anschluss gezeigten **TapUnfocus**-Hilfsmethode erreicht.
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-In the **TapToFocus** helper method, first set the *\_isFocused* toggle to true so that the next screen tap will release the focus from the tapped region.
+Legen Sie in der " **tapdefocus** "-Hilfsmethode zuerst den *\_isfokussierten* UMSCHALT Wert auf "true" fest, damit der nächste Bildschirm den Fokus aus dem abgezweigten Bereich freigibt.
 
 Die nächste Aufgabe besteht bei dieser Hilfsmethode darin, das Rechteck im Vorschaudatenstrom zu bestimmen, das dem Fokussteuerelement zugewiesen wird. Hierfür sind zwei Schritte erforderlich. Im ersten Schritt wird der Rechteckbereich bestimmt, der vom Vorschaudatenstrom im [**CaptureElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CaptureElement)-Steuerelement eingenommen wird. Dies hängt von den Abmessungen des Vorschaudatenstroms und der Ausrichtung des Geräts ab. Mit der **GetPreviewStreamRectInControl**-Hilfsmethode, die am Ende dieses Abschnitts veranschaulicht wird, wird diese Aufgabe durchgeführt, und das Rechteck mit dem Vorschaudatenstrom wird zurückgegeben.
 
@@ -172,9 +172,9 @@ Rufen Sie schließlich [**FocusAsync**](https://docs.microsoft.com/uwp/api/windo
 > [!IMPORTANT]
 > Beim Implementieren von „Tippen zum Scharfstellen“ ist die Reihenfolge der Vorgänge wichtig. Die APIs müssen in folgender Reihenfolge aufgerufen werden:
 >
-> 1. [**FocusControl.Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.configure)
-> 2. [**RegionsOfInterestControl.SetRegionsAsync**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.setregionsasync)
-> 3. [**FocusControl.FocusAsync**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusasync)
+> 1. [**Focus Control. configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.configure)
+> 2. [**Regionsofinterestcontrol. setregionsasync**](https://docs.microsoft.com/uwp/api/windows.media.devices.regionsofinterestcontrol.setregionsasync)
+> 3. [**Focrcontrol. Focus Async**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.focusasync)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -196,7 +196,7 @@ Für das Verfahren „Manueller Fokus“ wird ein **Slider**-Steuerelement verwe
 
 [!code-xml[ManualFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetManualFocusXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **FocusControl** unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** FocusControl](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.supported) unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
 
 Der Fokuswert muss innerhalb des vom Gerät unterstützten Bereichs liegen und ein inkrementeller Wert der unterstützten Schrittgröße sein. Ermitteln Sie die unterstützten Werte für das aktuelle Gerät anhand der Eigenschaften [**Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.min), [**Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.max) und [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.focuscontrol.step). Sie werden verwendet, um die entsprechenden Eigenschaften des Schieberegler-Steuerelements festzulegen.
 
@@ -218,7 +218,7 @@ Auf Geräten mit entsprechender Unterstützung können Sie ein Hilfslicht aktivi
 
 [!code-xml[FocusLightXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFocusLightXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **FlashControl** unterstützt. Überprüfen Sie auch [**AssistantLightSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.assistantlightsupported), um sich zu vergewissern, dass das Hilfslicht ebenfalls unterstützt wird. Wenn beides unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** FlashControl](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.supported) unterstützt. Überprüfen Sie auch [**AssistantLightSupported**](https://docs.microsoft.com/uwp/api/windows.media.devices.flashcontrol.assistantlightsupported), um sich zu vergewissern, dass das Hilfslicht ebenfalls unterstützt wird. Wenn beides unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
 
 [!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
 
@@ -234,7 +234,7 @@ Dieses Beispiel enthält ein [**Slider**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-xml[IsoXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetIsoXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.isospeedcontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **IsoSpeedControl** unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Legen Sie den Aktivierungszustand des Kontrollkästchens für den Wert der [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.isospeedcontrol.auto)-Eigenschaft fest, um anzugeben, ob die automatische Anpassung der ISO-Geschwindigkeit derzeit aktiv ist.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** IsoSpeedControl](https://docs.microsoft.com/uwp/api/windows.media.devices.isospeedcontrol.supported) unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Legen Sie den Aktivierungszustand des Kontrollkästchens für den Wert der [**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.isospeedcontrol.auto)-Eigenschaft fest, um anzugeben, ob die automatische Anpassung der ISO-Geschwindigkeit derzeit aktiv ist.
 
 Der Wert für die ISO-Geschwindigkeit muss innerhalb des vom Gerät unterstützten Bereichs liegen und ein inkrementeller Wert der unterstützten Schrittgröße sein. Ermitteln Sie die unterstützten Werte für das aktuelle Gerät anhand der Eigenschaften [**Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.isospeedcontrol.min), [**Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.isospeedcontrol.max) und [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.isospeedcontrol.step). Sie werden verwendet, um die entsprechenden Eigenschaften des Schieberegler-Steuerelements festzulegen.
 
@@ -265,7 +265,7 @@ Legen Sie [**OpticalImageStabilizationControl.Mode**](https://docs.microsoft.com
 ## <a name="powerline-frequency"></a>Leitungsfrequenz
 Einige Kamerageräte unterstützen die Anti-Flacker-Verarbeitung. Hierfür muss die Wechselstromfrequenz der Stromleitungen in der derzeitigen Umgebung bekannt sein. Einige Geräte unterstützen die automatische Ermittlung der Leitungsfrequenz, und bei anderen Geräten muss die Frequenz manuell festgelegt werden. Im folgenden Codebeispiel wird veranschaulicht, wie Sie die Unterstützung der Leitungsfrequenz für das Gerät ermitteln und, falls erforderlich, die Frequenz manuell festlegen. 
 
-Rufen Sie zuerst die **VideoDeviceController**-Methode auf [**TryGetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency), indem Sie einen Ausgabeparameter vom Typ [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency) übergeben. Wenn dieser Aufruf nicht erfolgreich ist, wird die Steuerung der Leitungsfrequenz auf dem aktuellen Gerät nicht unterstützt. Wenn die Funktion unterstützt wird, können Sie ermitteln, ob der automatische Modus auf dem Gerät verfügbar ist, indem Sie versuchen, den automatischen Modus festzulegen. Do this by calling [**TrySetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) and passing in the value **Auto**. If the call succeeds, that means that your auto powerline frequency is supported. Wenn die Steuerung der Leitungsfrequenz auf dem Gerät unterstützt wird, die automatische Frequenzerkennung aber nicht, können Sie die Frequenz trotzdem manuell mit **TrySetPowerlineFrequency** festlegen. In diesem Beispiel ist **MyCustomFrequencyLookup** eine benutzerdefinierte Methode, die Sie implementieren, um für die aktuelle Position des Geräts die richtige Frequenz zu ermitteln. 
+Rufen Sie zuerst die **VideoDeviceController**-Methode auf [**TryGetPowerlineFrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency), indem Sie einen Ausgabeparameter vom Typ [**PowerlineFrequency**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.PowerlineFrequency) übergeben. Wenn dieser Aufruf nicht erfolgreich ist, wird die Steuerung der Leitungsfrequenz auf dem aktuellen Gerät nicht unterstützt. Wenn die Funktion unterstützt wird, können Sie ermitteln, ob der automatische Modus auf dem Gerät verfügbar ist, indem Sie versuchen, den automatischen Modus festzulegen. Rufen Sie hierzu [**trysetpowerlinefrequency**](https://docs.microsoft.com/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency) auf, und übergeben Sie den Wert **Auto**. Wenn der Aufruf erfolgreich ist, bedeutet dies, dass die automatische Powerline-Häufigkeit unterstützt wird. Wenn die Steuerung der Leitungsfrequenz auf dem Gerät unterstützt wird, die automatische Frequenzerkennung aber nicht, können Sie die Frequenz trotzdem manuell mit **TrySetPowerlineFrequency** festlegen. In diesem Beispiel ist **MyCustomFrequencyLookup** eine benutzerdefinierte Methode, die Sie implementieren, um für die aktuelle Position des Geräts die richtige Frequenz zu ermitteln. 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -277,7 +277,7 @@ In diesem Beispiel werden ein [**ComboBox**](https://docs.microsoft.com/uwp/api/
 
 [!code-xml[WhiteBalanceXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetWhiteBalanceXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **WhiteBalanceControl** unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Legen Sie die Elemente des Kombinationsfelds auf die Werte der [**ColorTemperaturePreset**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ColorTemperaturePreset)-Enumeration fest. Legen Sie außerdem das ausgewählte Element auf den aktuellen Wert der [**Preset**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.preset)-Eigenschaft fest.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** WhiteBalanceControl](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.supported) unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren. Legen Sie die Elemente des Kombinationsfelds auf die Werte der [**ColorTemperaturePreset**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ColorTemperaturePreset)-Enumeration fest. Legen Sie außerdem das ausgewählte Element auf den aktuellen Wert der [**Preset**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.preset)-Eigenschaft fest.
 
 Für die manuelle Steuerung muss der Weißabgleichwert innerhalb des Bereichs liegen, der vom Gerät unterstützt wird, und es muss ein inkrementeller Wert der unterstützten Schrittgröße sein. Ermitteln Sie die unterstützten Werte für das aktuelle Gerät anhand der Eigenschaften [**Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.min), [**Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.max) und [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.whitebalancecontrol.step). Sie werden verwendet, um die entsprechenden Eigenschaften des Schieberegler-Steuerelements festzulegen. Stellen Sie vor dem Aktivieren der manuellen Steuerung sicher, dass der Bereich zwischen den kleinsten und größten unterstützten Werten größer als die Schrittgröße ist. Andernfalls wird die manuelle Steuerung auf dem aktuellen Gerät nicht unterstützt.
 
@@ -307,7 +307,7 @@ In diesem Beispiel wird ein [**Slider**](https://docs.microsoft.com/uwp/api/Wind
 
 [!code-xml[ZoomXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetZoomXAML)]
 
-Überprüfen Sie anhand der [**Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.supported)-Eigenschaft, ob das aktuelle Aufnahmegerät **ZoomControl** unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
+Überprüfen Sie anhand derSupported[ **-Eigenschaft, ob das aktuelle Aufnahmegerät** ZoomControl](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.supported) unterstützt. Wenn das Steuerelement unterstützt wird, können Sie die UI für dieses Feature anzeigen und aktivieren.
 
 Der Zoomfaktorwert muss innerhalb des vom Gerät unterstützten Bereichs liegen und ein inkrementeller Wert der unterstützten Schrittgröße sein. Ermitteln Sie die unterstützten Werte für das aktuelle Gerät anhand der Eigenschaften [**Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min), [**Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max) und [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step). Sie werden verwendet, um die entsprechenden Eigenschaften des Schieberegler-Steuerelements festzulegen.
 
@@ -335,7 +335,7 @@ Auf einem Gerät mit Mehrfingereingabe wird der Zoomfaktor üblicherweise durch 
 
 Aktualisieren Sie den Zoomfaktor im Handler für das **ManipulationDelta**-Ereignis basierend auf der Änderung der Zusammendrückbewegung. Der [**ManipulationDelta.Scale**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.ManipulationDelta)-Wert stellt die Änderung der Skalierung der Zusammendrückbewegung wie folgt dar: Eine geringfügige Vergrößerung der Zusammendrückbewegung wird durch eine Zahl dargestellt, die etwas größer als 1 ist. Eine geringfügige Verkleinerung wird durch eine Zahl dargestellt, die etwas kleiner als 1 ist. In diesem Beispiel wird der aktuelle Wert des Zoom-Steuerelements mit dem Skalierungsdelta multipliziert.
 
-Bevor Sie den Zoomfaktor festlegen, müssen Sie sich vergewissern, dass der Wert nicht kleiner als der vom Gerät unterstützte Mindestwert (angegeben durch die [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min)-Eigenschaft) ist. Vergewissern Sie sich außerdem, dass der Wert maximal dem [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max)-Wert entspricht. Finally, you must make sure that the zoom factor is a multiple of the zoom step size supported by the device as indicated by the [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step) property. Falls der Zoomfaktor diese Anforderungen nicht erfüllt, wird eine Ausnahme ausgelöst, wenn Sie versuchen, den Zoomfaktor für das Aufnahmegerät festzulegen.
+Bevor Sie den Zoomfaktor festlegen, müssen Sie sich vergewissern, dass der Wert nicht kleiner als der vom Gerät unterstützte Mindestwert (angegeben durch die [**ZoomControl.Min**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.min)-Eigenschaft) ist. Vergewissern Sie sich außerdem, dass der Wert maximal dem [**ZoomControl.Max**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.max)-Wert entspricht. Schließlich müssen Sie sicherstellen, dass der Zoomfaktor ein Vielfaches der Zoom Schrittgröße ist, die vom Gerät unterstützt wird, wie in der [**Step**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.step) -Eigenschaft angegeben. Falls der Zoomfaktor diese Anforderungen nicht erfüllt, wird eine Ausnahme ausgelöst, wenn Sie versuchen, den Zoomfaktor für das Aufnahmegerät festzulegen.
 
 Legen Sie den Zoomfaktor auf dem Aufnahmegerät fest, indem Sie ein neues [**ZoomSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomSettings)-Objekt erstellen. Legen Sie die [**Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.mode)-Eigenschaft auf [**ZoomTransitionMode.Smooth**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ZoomTransitionMode) fest, und legen Sie dann die [**Value**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomsettings.value)-Eigenschaft auf den gewünschten Zoomfaktor fest. Rufen Sie schließlich [**ZoomControl.Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.zoomcontrol.configure) auf, um den neuen Zoomwert auf dem Gerät festzulegen. Es erfolgt ein sanfter Übergang zum neuen Zoomwert.
 
@@ -344,4 +344,4 @@ Legen Sie den Zoomfaktor auf dem Aufnahmegerät fest, indem Sie ein neues [**Zoo
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Einfaches Foto, Video und Audioerfassung mit mediacapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

@@ -169,7 +169,7 @@ Die portierte Windows 10-APP, die auf einem mobilen Gerät ausgeführt wird, Zoo
 
 Die portierte Windows 10-APP, die auf einem mobilen Gerät ausgeführt wird, und Zoomansicht
 
-## <a name="conclusion"></a>Abschluss
+## <a name="conclusion"></a>Fazit
 
 In dieser Fallstudie haben wir es mit einer aufwändigeren Benutzeroberfläche als im vorherigen Beispiel zu tun. Wie bei der vorherigen Fallstudie war für dieses Anzeigemodell kein großer Aufwand erforderlich, und unsere Anstrengungen konzentrierten sich in erster Linie auf die Umgestaltung der Benutzeroberfläche. Einige der Änderungen wurden dadurch erforderlich, dass wir zwei Projekte in eines kombinierten und dennoch viele Formfaktoren (letzten Endes mehr, als zuvor möglich waren) unterstützen wollten. Einige wenige Änderungen aufgrund von Änderungen erforderlich, die an der Plattform vorgenommen wurden.
 

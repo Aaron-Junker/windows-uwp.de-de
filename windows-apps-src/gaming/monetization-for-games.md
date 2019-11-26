@@ -20,14 +20,14 @@ Als Spieleentwickler müssen Sie Ihre Monetisierungsoptionen kennen, um die Rent
 Bisher haben Sie Ihr Spiel einfach mit einem Preis versehen und gewartet, dass es von Benutzern in einem Geschäft erworben wird. Heute haben Sie jedoch verschiedene Optionen. Sie können ein Spiel in einem normalen Geschäft anbieten, es online (als physische Version oder als Softcopy) verkaufen oder Benutzer das Spiel kostenlos spielen lassen, dabei aber gewisse Anzeigen oder In-Game-Gegenstände integrieren, die erworben werden können. Spiele sind auch nicht mehr einfach eigenständige Produkte. Sie werden häufig mit zusätzlichem Inhalt bereitgestellt, der zusätzlich zum Hauptspiel erworben werden kann.
 
 Sie können ein UWP-Spiel folgendermaßen bewerben und monetisieren:
-* Put your game in the Microsoft Store, which is a secured, online store offering [worldwide distribution](#worldwide-distribution-channel). Spieler auf der ganzen Welt können Ihr Spiel online zu dem von Ihnen [festgelegten Preis](#set-a-price-for-your-game) kaufen.
+* Bringen Sie Ihr Spiel in den Microsoft Store, ein sicheres Onlinegeschäft, das eine [weltweite Verteilung](#worldwide-distribution-channel)bietet. Spieler auf der ganzen Welt können Ihr Spiel online zu dem von Ihnen [festgelegten Preis](#set-a-price-for-your-game) kaufen.
 * Verwenden Sie APIs im Windows SDK zum Erstellen von [In-Game-Käufen](#in-game-purchases). Spieler können In-Game-Käufe tätigen oder ergänzende Inhalte wie zusätzliche Ausstattung, Designs, Karten oder Spiellevels kaufen.
 * Verwenden Sie APIs im [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK), um Anzeigen aus Anzeigennetzwerken anzuzeigen. Sie können [Anzeigen in Ihrem Spiel anzeigen](#display-ads-in-your-game) und Spielern die Option anbieten, Videoanzeigen im Austausch für In-Game-Belohnungen anzusehen.
 * [Maximieren Sie das Potenzial des Spiels über Anzeigenkampagnen](#maximize-your-games-potential-through-ad-campaigns). Bewerben Sie Ihr Spiel mithilfe von kostenpflichtigen Anzeigenkampagnen, kostenlosen Community-Anzeigenkampagnen oder kostenloser Eigenwerbung, um die Benutzeranzahl zu steigern.
 
 ## <a name="worldwide-distribution-channel"></a>Weltweiter Vertriebskanal
 
-The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Define market selection](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
+Der Microsoft Store kann das Spiel in mehr als 200 Ländern und Regionen weltweit zum Download bereitstellen, mit Unterstützung für die Abrechnung über verschiedene Zahlungsarten, einschließlich Visa, MasterCard und PayPal. Eine vollständige Liste der Länder und Regionen finden Sie unter [Definieren der Markt Auswahl](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
 
 ## <a name="set-a-price-for-your-game"></a>Festlegen eines Preises für Ihr Spiel
 
@@ -37,7 +37,7 @@ Hier sind einige wichtige Konzepte bezüglich der Preise für Ihr Spiel im Store
 
 ### <a name="base-price"></a>Grundpreis
 
-Der Grundpreis für das Spiel bestimmt, ob Ihr Spiel als _bezahlt_ oder _kostenlos_ eingestuft wird. You can use [Partner Center](https://partner.microsoft.com/dashboard) to configure the base price based on country and region.
+Der Grundpreis für das Spiel bestimmt, ob Ihr Spiel als _bezahlt_ oder _kostenlos_ eingestuft wird. Sie können [Partner Center](https://partner.microsoft.com/dashboard) verwenden, um den Basispreis auf der Grundlage von Land und Region zu konfigurieren.
 Beim Festlegen des Preises müssen unter Umständen [Steuerpflichten beim Verkauf in anderen Ländern](https://docs.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps) und [Kostenüberlegungen für bestimmte Märkte](https://docs.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection) in Betracht gezogen werden. Sie können auch [angepasste Preise für spezifische Märkte](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) festlegen.
 
 ### <a name="sale-price"></a>Angebotspreis
@@ -47,18 +47,18 @@ Sie können Angebotskampagnen im Voraus planen, indem Sie Start- und Enddatum de
 
 ## <a name="in-game-purchases"></a>In-Game-Käufe
 
-Bei In-Game-Käufen handelt es sich um Produkte, die in einem Spiel gekauft werden. Sie werden allgemein auch als _In-App-Käufe_ bezeichnet. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](https://docs.microsoft.com/windows/uwp/publish/add-on-submissions) through Partner Center. Sie müssen die Add-Ons außerdem im Code Ihres Spiels aktivieren.
+Bei In-Game-Käufen handelt es sich um Produkte, die in einem Spiel gekauft werden. Sie werden allgemein auch als _In-App-Käufe_ bezeichnet. In der Microsoft Store werden diese Produkte als _Add-ons_bezeichnet. [Add-ons werden](https://docs.microsoft.com/windows/uwp/publish/add-on-submissions) über Partner Center veröffentlicht. Sie müssen die Add-Ons außerdem im Code Ihres Spiels aktivieren.
 
 ### <a name="types-of-add-ons"></a>Arten von Add-Ons
 
 Sie können zwei Arten von Add-Ons im Store erstellen: _Gebrauchsgüter_ oder _Verbrauchsartikel_. Gebrauchsgüter sind Elemente, die bis zu ihrem Ablauf für einen angegebenen Zeitraum erhalten bleiben und nur einmal erworben werden können. Verbrauchsartikel sind Elemente, die gekauft und immer wieder verwendet werden können.
 
-Beim Erstellen von Verbrauchsartikeln entscheiden Sie, wie Sie sie nachverfolgen möchten, d. h. ob sie _vom Entwickler verwaltet_ oder _vom Store verwaltet_ werden. (Dieses Feature ist ab Windows 10, Version 1607, verfügbar). With a developer-managed consumable, you are responsible for keeping track of the item's balance for the gamer; with a Store-managed consumable, the Microsoft Store keeps track of the item's balance for you. Weitere Informationen finden Sie unter [Übersicht über Endverbraucher-Add-Ons](https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases).
+Beim Erstellen von Verbrauchsartikeln entscheiden Sie, wie Sie sie nachverfolgen möchten, d. h. ob sie &mdash;vom Entwickler verwaltet_oder_vom Store verwaltet_ werden. (Dieses Feature ist ab Windows 10, Version 1607, verfügbar). Mit einem vom Entwickler verwalteten nutzbaren sind Sie dafür verantwortlich, den Saldo des Elements für den Spieler zu verfolgen. mit einem nutzbaren Speicher, der vom Speicher verwaltet wird, verfolgt das Microsoft Store den Saldo des Elements. Weitere Informationen finden Sie unter [Übersicht über Endverbraucher-Add-Ons](https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases).
 
 ### <a name="create-in-game-purchases"></a>Erstellen von In-Game-Käufen
 
 Die aktuellen APIs für In-App-Käufe und Lizenzinformationen sind Teil des [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)-Namespace im Windows SDK (ab Windows 10, Version 1607). Bei der Entwicklung eines neuen Spiels für 1607 oder eine höhere Version wird empfohlen, den __Windows.Services.Store__-Namespace zu verwenden, da er die aktuellen Add-On-Typen unterstützt und eine bessere Leistung bietet.
-It's also designed to be compatible with future types of products and features supported by the Partner Center and the Store. Verwenden Sie bei der Entwicklung für vorherige Windows 10-Versionen stattdessen den [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store)-Namespace.
+Es ist auch für die Kompatibilität mit zukünftigen Typen von Produkten und Features konzipiert, die vom Partner Center und dem Store unterstützt werden. Verwenden Sie bei der Entwicklung für vorherige Windows 10-Versionen stattdessen den [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store)-Namespace.
 
 Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials).
 
@@ -77,10 +77,10 @@ Da ein Add-On im Zusammenhang mit einem Spiel erstellt werden muss, muss das Spi
 (Wenn Ihr fertiges Spiel bereits im Store veröffentlicht wurde, können Sie die ersten drei Schritte überspringen und direkt mit [Erstellen eines Add-Ons im Store](#create-an-add-on-in-the-store) fortfahren.)
 
 So erstellen Sie Add-Ons, während sich das Spiel noch in der Entwicklung befindet:
-1. [Create a package](#create-a-package)
-2. [Publish the game as hidden](#publish-the-game-as-hidden)
-3. [Associate your game solution in Visual Studio with the Store](#associate-your-game-solution-with-the-store)
-4. [Create an add-on in the Store](#create-an-add-on-in-the-store)
+1. [Erstellen eines Pakets](#create-a-package)
+2. [Das Spiel als ausgeblendet veröffentlichen](#publish-the-game-as-hidden)
+3. [Ordnen Sie Ihre Game-Projekt Mappe in Visual Studio dem Store zu.](#associate-your-game-solution-with-the-store)
+4. [Erstellen eines Add-Ins im Speicher](#create-an-add-on-in-the-store)
 
 #### <a name="create-a-package"></a>Erstellen eines Pakets
 
@@ -90,19 +90,19 @@ So erstellen Sie ein Paket, das in den Store hochgeladen werden kann:
 
 1. Öffnen Sie Ihre Spielelösung in Visual Studio.
 2. Navigieren Sie in Visual Studio zu __Projekt__ > __Store__ > __App-Pakete erstellen...__ .
-3. For the __Do you want to build packages to upload to the Microsoft Store?__ option, select __Yes__.
-4. Sign in to your [Partner Center](https://partner.microsoft.com/dashboard) developer account. Oder [registrieren](https://developer.microsoft.com/store/register) Sie sich für ein Entwicklerkonto, falls Sie keins besitzen.
+3. Wählen Sie für die Option möchten __Sie Pakete zum Hochladen in die Microsoft Store? erstellen?__ die Option __Ja__aus.
+4. Melden Sie sich bei Ihrem [Partner Center](https://partner.microsoft.com/dashboard) -Entwicklerkonto an. Oder [registrieren](https://developer.microsoft.com/store/register) Sie sich für ein Entwicklerkonto, falls Sie keins besitzen.
 5. Wählen Sie eine App aus, für die das Uploadpaket erstellt werden soll. Falls Sie noch keine App-Übermittlung erstellt haben, geben Sie einen neuen App-Namen ein, um eine neue Übermittlung zu erstellen. Weitere Informationen finden Sie unter [Erstellen einer App durch Reservieren eines Namens](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 6. Nachdem das Paket erfolgreich erstellt wurde, klicken Sie auf __Zertifizierungskit für Windows-Apps starten__, um den Testprozess zu starten.
 7. Beheben Sie mögliche Fehler, um ein Spielpaket zu erstellen.
 
 #### <a name="publish-the-game-as-hidden"></a>Veröffentlichen des Spiels als ausgeblendet
 
-1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in.
+1. Wechseln Sie zu [Partner Center](https://partner.microsoft.com/dashboard) , und melden Sie sich an.
 2. Klicken Sie in der __Dashboardübersicht__ oder auf der Seite __Alle Apps__ auf die App, die Sie verwenden möchten. Falls Sie noch keine App-Übermittlung erstellt haben, klicken Sie auf __Neue App erstellen__, und reservieren Sie einen Namen.
 3. Klicken Sie auf der Seite __App-Übersicht__ auf __Übermittlung starten__.
 4. Konfigurieren Sie diese neue Übermittlung. Auf der Übermittlungsseite:
-    * Klicken Sie auf __Preise und Verfügbarkeit__. In the __Visibility__ section, choose '__Hide this app and prevent acquisition...__ ' to ensure only your development team has access to the game. Weitere Informationen finden Sie unter [Verteilung und Sichtbarkeit](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).
+    * Klicken Sie auf __Preise und Verfügbarkeit__. Wählen Sie im Abschnitt __Sichtbarkeit__ die Option "__diese APP ausblenden und die Übernahme verhindern...__ " aus, um sicherzustellen, dass nur Ihr Entwicklungsteam auf das Spiel zugreifen kann. Weitere Informationen finden Sie unter [Verteilung und Sichtbarkeit](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability).
     * Klicken Sie auf __Eigenschaften__. Wählen Sie im Abschnitt __Kategorie und Unterkategorie__ die Option __Spiele__ und anschließend eine geeignete Unterkategorie für Ihr Spiel aus.
     * Klicken Sie auf __Altersfreigaben__. Füllen Sie den Fragebogen ordnungsgemäß aus.
     * Klicken Sie auf __Pakete__. Laden Sie das zuvor erstellte Spielpaket hoch.
@@ -118,7 +118,7 @@ Nachdem das Spiel an den Store übermittelt wurde, beginnt der [App-Zertifizieru
 Bei in Visual Studio geöffneter Spielelösung:
 
 1. Navigieren Sie zu __Projekt__ > __Store__ > __App mit Store verknüpfen...__ .
-2. Sign in to your Partner Center developer account and select the app name to associate this solution with.
+2. Melden Sie sich bei Ihrem Partner Center-Entwicklerkonto an, und wählen Sie den APP-Namen aus, dem diese Lösung zugeordnet werden soll
 3. Doppelklicken Sie auf die Datei __Package.appxmanifest.xml__, und wechseln Sie zur Registerkarte __Verpacken__, um zu überprüfen, ob das Spiel richtig zugeordnet wurde.
 
 Wenn Sie die Lösung einem veröffentlichten Spiel zugeordnet haben, das im Store aufgeführt ist, verfügt Ihre Lösung über eine aktive Lizenz und Sie sind dem Erstellen von Add-Ons für Ihr Spiel einen Schritt näher. Weitere Informationen finden Sie unter [Verpacken von Apps](https://docs.microsoft.com/windows/uwp/packaging/index).
@@ -127,7 +127,7 @@ Wenn Sie die Lösung einem veröffentlichten Spiel zugeordnet haben, das im Stor
 
 Stellen Sie beim Erstellen von Add-Ons sicher, dass Sie sie der richtigen Spieleübermittlung zuordnen. Ausführliche Informationen zum Konfigurieren aller Informationen für ein Add-On finden Sie unter [Add-On-Übermittlungen](https://docs.microsoft.com/windows/uwp/publish/add-on-submissions).
 
-1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in.
+1. Wechseln Sie zu [Partner Center](https://partner.microsoft.com/dashboard) , und melden Sie sich an.
 2. Klicken Sie in der __Dashboardübersicht__ oder auf der Seite __Alle Apps__ auf die App, für die Sie das Add-On erstellen möchten.
 3. Wählen Sie auf der Seite __App-Übersicht__ im Abschnitt __Add-Ons__ die Option __Neues Add-On erstellen__.
 4. Wählen Sie den Produkttyp für das Add-On aus: __von Entwicklern verwaltete Verbrauchsartikel__, __vom Store verwalteter Verbrauchsartikel__ oder __Gebrauchsgut__.
@@ -135,10 +135,10 @@ Stellen Sie beim Erstellen von Add-Ons sicher, dass Sie sie der richtigen Spiele
 
 Weitere Konfigurationen für Add-Ons:
 * [Eigenschaften](https://docs.microsoft.com/windows/uwp/publish/enter-add-on-properties)
-* [Pricing and availability](https://docs.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
-* [Store listing](https://docs.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
+* [Preise und Verfügbarkeit](https://docs.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
+* [Store-Auflistung](https://docs.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-If your game has many add-ons, you can create them programmatically by using the __Microsoft Store submission API__. For more info, see [Create and manage submissions using Microsoft Store services](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
+Wenn Ihr Spiel viele Add-ons enthält, können Sie Sie mithilfe der Microsoft Store Übermittlungs- __API__Programm gesteuert erstellen. Weitere Informationen finden Sie unter [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store-Diensten](https://docs.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
 
 ## <a name="display-ads-in-your-game"></a>Anzeigen von Werbung in Ihrem Spiel
 
@@ -171,16 +171,16 @@ Laden Sie zunächst mit Visual Studio 2015 das [Microsoft Advertising-SDK](https
 
 In diesen exemplarischen Vorgehensweisen wird die Implementierung von Anzeigen mithilfe von __AdControl__, __InterstitialAd__, und __NativeAd__ veranschaulicht:
 
-* [Create banner ads in XAML and .NET](https://docs.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
-* [Create banner ads in HTML5 and JavaScript](https://docs.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
-* [Create interstitial ads](https://docs.microsoft.com/windows/uwp/monetize/interstitial-ads)
-* [Create native ads](https://docs.microsoft.com/windows/uwp/monetize/native-ads)
+* [Erstellen von Banner Anzeigen in XAML und .net](https://docs.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
+* [Erstellen von Banner Anzeigen in HTML5 und JavaScript](https://docs.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
+* [Erstellen von Interstitial-anzeigen](https://docs.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [Erstellen von nativen anzeigen](https://docs.microsoft.com/windows/uwp/monetize/native-ads)
 
 Sie können während der Entwicklung mit diesen [Testanzeigen-Einheitenwerten](../monetize/test-mode-values.md) überprüfen, wie die Anzeigen gerendert werden. Dieselben Testanzeigen-Einheitenwerte werden auch oben in den exemplarischen Vorgehensweisen verwendet.
 
 Hier sind einige bewährte Methoden aufgeführt, die Sie beim Entwurfs- und Implementierungsprozess unterstützen.
 
-* [Best practices for banner ads](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
+* [Bewährte Methoden für Bannerwerbung](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 * [Bewährte Methoden für Interstitialanzeigen](https://docs.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
 
 Wenn bei der Entwicklung Probleme auftreten, beispielsweise wenn Anzeigen nicht eingeblendet werden, die Blackbox blinkt und wieder verschwindet oder Anzeigen nicht aktualisiert werden, finden Sie Lösungen in den [Handbüchern zur Problembehandlung](https://docs.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
@@ -226,8 +226,8 @@ Wählen Sie zwischen verschiedenen Kampagnenarten, mit denen Sie die Zahl von Sp
 ## <a name="related-links"></a>Verwandte Links
 
 * [Bezahlung](https://docs.microsoft.com/windows/uwp/publish/getting-paid-apps)
-* [Account types, locations, and fees](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)
+* [Konto Typen, Standorte und Gebühren](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)
 * [Analysen](https://docs.microsoft.com/windows/uwp/publish/analytics)
 * [Globalisierung und Lokalisierung](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
-* [Implement a trial version of your app](https://docs.microsoft.com/windows/uwp/monetize/implement-a-trial-version-of-your-app)
-* [Run app experiments with A/B testing](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing)
+* [Implementieren Sie eine Testversion Ihrer APP.](https://docs.microsoft.com/windows/uwp/monetize/implement-a-trial-version-of-your-app)
+* [Ausführen von App-Experimenten mit A/B-Tests](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing)

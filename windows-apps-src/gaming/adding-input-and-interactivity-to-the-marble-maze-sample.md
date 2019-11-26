@@ -356,7 +356,7 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### <a name="updating-the-game-state"></a>Aktualisieren des Spielzustands
+### <a name="updating-the-game-state"></a>Upgrade des Spielzustands
 
 Wenn die **MarbleMazeMain::Update**-Methode die Controller- und Toucheingabe verarbeitet hat und eine Taste gedrückt wurde, aktualisiert sie den Spielzustand.
 

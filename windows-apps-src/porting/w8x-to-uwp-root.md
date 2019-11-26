@@ -13,7 +13,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259100"
 ---
-# <a name="move-from-windows-runtime-8x-to-uwp"></a>Wechsel von Windows-Runtime 8.x zu UWP
+# <a name="move-from-windows-runtime-8x-to-uwp"></a>Wechsel von Windows-Runtime 8.x zu UWP
 
 
 Wenn Sie über eine universelle 8,1-App verfügen – ob es sich um Windows 8.1, Windows Phone 8,1 oder beides –, werden Sie feststellen, dass ihr Quellcode und ihre Kenntnisse reibungslos zu Windows 10 portieren. Mit Windows 10 können Sie eine APP für die universelle Windows-Plattform (UWP) erstellen, bei der es sich um ein einzelnes App-Paket handelt, das Ihre Kunden auf jeder Art von Gerät installieren können. Weitere Hintergrundinformationen zu Windows 10, UWP-apps und den Konzepten von adaptiver Code und adaptiver Benutzeroberfläche, die wir in diesem Leitfaden erwähnen werden, finden Sie unter [Leitfaden für UWP-apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).

@@ -404,9 +404,9 @@ Im Folgenden finden Sie einige wichtige Zuordnungen zwischen Tastatur, Gamepad u
 |---------------|-------------------------------------|---------------------|
 | LEERTASTE         | A-Taste                            | Auswahltaste       |
 | EINGABETASTE         | A-Taste                            | Auswahltaste       |
-| Beenden        | B-Taste                            | Zurück-Schaltfläche         |
-| POS1/ENDE      | N/V                                 | N/V                 |
-| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | N/V                 |
+| ESCAPE-TASTE        | B-TASTE                            | Zurück-Schaltfläche         |
+| POS1/ENDE      | n. v.                                 | n. v.                 |
+| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | n. v.                 |
 
 Einige der wichtigsten Unterschiede, die Sie beim Entwerfen Ihrer UWP-App für die Verwendung mit Gamepad und Fernbedienung beachten sollten, sind:
 -   Die Texteingabe erfordert, dass der Benutzer A drückt, um ein Textsteuerelement zu aktivieren.
@@ -527,7 +527,7 @@ Bei der Softwaretastatur handelt es sich um eine Tastatur auf dem Bildschirm, di
 
 Abhängig vom Gerät wird die Softwaretastatur angezeigt, wenn ein Textfeld oder ein anderes bearbeitbares Textsteuerelement im Fokus steht, oder wenn der Benutzer sie über das **Benachrichtigungs-Center**manuell aktiviert.
 
-![Symbol der Touch-Bildschirmtastatur im Benachrichtigungs-Center](images/keyboard/touch-keyboard-notificationcenter.png)
+![Symbol der Bildschirmtastatur im Benachrichtigungs-Center](images/keyboard/touch-keyboard-notificationcenter.png)
 
 Wenn Ihre App den Fokus programmgesteuert auf ein Texteingabesteuerelement festlegt, wird die Bildschirmtastatur nicht aufgerufen. Dadurch wird unerwartetes, nicht direkt vom Benutzer ausgelöstes Verhalten verhindert. Allerdings wird die Tastatur automatisch ausgeblendet, wenn der Fokus programmgesteuert auf ein nicht textuelles Eingabesteuerelement bewegt wird.
 
@@ -545,16 +545,16 @@ Im Folgenden finden Sie eine Liste der nicht bearbeitbaren Steuerelemente, die i
 -   Menüleiste
 -   Menüelement
 -   Symbolleiste
--   List
+-   Liste
 -   Listenelement
 
 Hier finden Sie einige Beispiele für verschiedene Modi der Touch-Bildschirmtastatur. Das erste Bild zeigt das Standardlayout, das zweite das Daumenlayout. (Letzteres ist unter Umständen nicht in allen Sprachen verfügbar.)
 
-![Touch-Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
+![Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
 
 ***Die Touchscreen-Tastatur im standardlayoutmodus***
 
-![Touch-Bildschirmtastatur mit erweitertem Layout](images/keyboard/extendedview.png)
+![Bildschirmtastatur mit erweitertem Layout](images/keyboard/extendedview.png)
 
 ***Die Touchscreen-Tastatur im erweiterten Layoutmodus***
 

@@ -4,7 +4,7 @@ title: Auswählen eines Ansatzes für die Entwicklung von iOS- und UWP-Apps
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -54,21 +54,21 @@ Bei einer vorhandenen iOS-App stehen weniger Optionen zur Verfügung. Es ist jed
 
     Wenn die Kerngeschäftslogik nicht in Objective-C oder Swift, sondern in C++ geschrieben ist, können Sie diesen Code häufig mit geringfügigen Änderungen in Ihrem Projekt verwenden. Anschließend können Sie wie bei anderen Windows-Apps mithilfe von XAML die Benutzeroberfläche definieren und den C++-Code bei Bedarf nutzen.
 
--   [Use ANGLE to run OpenGL ES on Windows](https://github.com/microsoft/angle/wiki)
+-   [Verwenden von Angle zum Ausführen von OpenGL-es unter Windows](https://github.com/microsoft/angle/wiki)
 
     Ein Zwischenschritt zum Portieren Ihres OpenGL ES 2.0-Projekts ist die Verwendung von ANGLE. Mit ANGLE können Sie OpenGL ES-Inhalte unter Windows ausführen, indem Sie OpenGL ES-API-Aufrufe in DirectX 11-API-Aufrufe übersetzen.
 
 ## <a name="other-cross-platform-authoring-tools"></a>Andere plattformübergreifende Erstellungstools
 
--   [GameSalad](https://gamesalad.com/)
+-   [Gamesalad](https://gamesalad.com/)
 
     Eine Spielerstellungsumgebung
 
--   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Konstrukt 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     Eine Spielerstellungsumgebung
 
--   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
+-   [Titan Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     Eine plattformübergreifende Erstellungsumgebung
 
@@ -76,23 +76,23 @@ Bei einer vorhandenen iOS-App stehen weniger Optionen zur Verfügung. Es ist jed
 
     Eine plattformübergreifende Codebibliothek zur Spritebehandlung und Physikmodellierung
 
--   [Impact.js](https://impactjs.com/)
+-   [Impact. js](https://impactjs.com/)
 
     Eine HTML-basierte Spielbibliothek.
 
--   [Marmalade](http://madewithmarmalade.com/)
+-   [Marmelade](http://madewithmarmalade.com/)
 
     Ein plattformübergreifendes SDK
 
--   [OpenFL](https://www.openfl.org/)
+-   [Openfl](https://www.openfl.org/)
 
     Ein plattformübergreifendes Entwicklungstool
 
--   [GameMaker](https://www.yoyogames.com/gamemaker/studio)
+-   [Gamemaker](https://www.yoyogames.com/gamemaker/studio)
 
     Eine spezielle Entwicklungsumgebung für Spiele
 
--   [PlayCanvas](https://playcanvas.com/)
+-   [Playcanvas](https://playcanvas.com/)
 
     Ein HTML-basiertes Tool für die Spielentwicklung
 

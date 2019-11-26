@@ -44,7 +44,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den geografische Standort eines Benutz
 
 ### <a name="step-1-request-access-to-the-users-location"></a>Schritt 1: Anfordern des Zugriffs auf die Position des Benutzers
 
-Unless your app has coarse location capability (see note), you must request access to the user's location by using the [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) method before attempting to access the location. Sie müssen die **RequestAccessAsync**-Methode aus dem UI-Thread aufrufen, und die App muss sich im Vordergrund befinden. Your app will not be able to access the user's location information until after the user grants permission to your app.\*
+Wenn Ihre APP keine grobe Standort Funktion hat (siehe Hinweis), müssen Sie den Zugriff auf den Speicherort des Benutzers mithilfe der [**requestaccessasync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) -Methode anfordern, bevor Sie versuchen, auf den Speicherort zuzugreifen. Sie müssen die **RequestAccessAsync**-Methode aus dem UI-Thread aufrufen, und die App muss sich im Vordergrund befinden. Ihre APP kann erst dann auf die Standortinformationen des Benutzers zugreifen, wenn der Benutzer die Berechtigung für Ihre APP erteilt hat.\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -54,9 +54,9 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 
 
-Die [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)-Methode fordert den Benutzer auf, den Zugriff auf seinen Standort zu genehmigen. Der Benutzer wird nur einmal (pro App) aufgefordert. Nachdem die Berechtigung erstmalig gewährt oder verweigert wurde, fordert die Methode keine Berechtigung mehr vom Benutzer an. Um das Ändern von Standortberechtigungen nach der Aufforderung für den Benutzer zu vereinfachen, sollten Sie einen Link zu den Standorteinstellungen bereitstellen wie weiter unten in diesem Thema beschrieben.
+Die [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)-Methode fordert den Benutzer auf, den Zugriff auf seinen Standort zu genehmigen. Der Benutzer wird nur einmal (pro App) aufgefordert. Nachdem die Berechtigung erstmalig gewährt oder verweigert wurde, fordert die Methode keine Berechtigung mehr vom Benutzer an. Um das Ändern von Standortberechtigungen nach der Aufforderung für den Benutzer zu vereinfachen, sollten Sie einen Link zu den Standorteinstellungen bereitstellen (s. wie weiter unten in diesem Thema).
 
->Note:  The coarse location feature allows your app to obtain an intentionally obfuscated (imprecise) location without getting the user's explicit permission (the system-wide location switch must still be **on**, however). To learn how to utilize coarse location in your app, see the [**AllowFallbackToConsentlessPositions**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) method in the [**Geolocator**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator) class.
+>Hinweis: mit dem Feature "grobe Speicherort" kann Ihre APP einen absichtlich verfugenden (unpräzisen) Speicherort abrufen, ohne die explizite Berechtigung des Benutzers zu erhalten (der systemweite Schalter muss **jedoch weiterhin aktiviert sein)** . Informationen dazu, wie Sie eine grobe Position in Ihrer APP verwenden, finden Sie in der [**allowfallbacktoallowlesspositionen**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) -Methode in der [**GeoLocator**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator) -Klasse.
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Schritt 2: Abrufen des Benutzerstandorts und Registrieren für Änderungen von Standortberechtigungen
 
@@ -261,12 +261,12 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Bevor Ihre App auf die Position des Benutzers zugreifen kann, muss **Position** auf dem Gerät aktiviert sein. Vergewissern Sie sich in der **Einstellungs**-App, dass die folgenden **Datenschutzeinstellungen für den Standort** aktiviert sind:
 
--   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
+-   **Speicherort für dieses Gerät..** . ist aktiviert **(** nicht zutreffend in Windows 10 Mobile)
 -   Die Einstellung **Position** der Positionsdienste ist **aktiviert**.
 -   Ihre App hat unter **Wählen Sie Apps aus, die Ihre Position verwenden dürfen** die Einstellung **Ein**.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [UWP-Geolocation-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
-* [Design guidelines for geofencing](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
+* [Entwurfs Richtlinien für Geofencing](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
 * [Entwurfsrichtlinien für Apps mit Positionsbestimmung](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)

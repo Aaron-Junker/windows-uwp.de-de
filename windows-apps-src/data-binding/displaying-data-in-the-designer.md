@@ -132,7 +132,7 @@ Wenn Sie eine JSON-Beispieldatendatei anstelle einer XAML-Beispieldatendatei ver
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-Bisher haben wir zum Laden von Entwurfszeit-Beispieldaten aus einer XAML- oder JSON-Datei **d:DesignData** verwendet. Alternativ kann die Markuperweiterung **d:DesignInstance** verwendet werden. Diese gibt an, dass die Entwurfszeitquelle auf der von der **Type**-Eigenschaft angegebenen Klasse basiert. Hier sehen Sie ein Beispiel.
+Bisher haben wir zum Laden von Entwurfszeit-Beispieldaten aus einer XAML- oder JSON-Datei **d:DesignData** verwendet. Alternativ kann die Markuperweiterung **d:DesignInstance** verwendet werden. Diese gibt an, dass die Entwurfszeitquelle auf der von der **Type**-Eigenschaft angegebenen Klasse basiert. Hier ein Beispiel dazu.
 
 ``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"

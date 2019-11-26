@@ -36,7 +36,7 @@ Es ist besser, ein erstes Ziel festzulegen und es später zu überdenken, anstat
 | Fast                    | Minimal erkennbare Verzögerung      | 100 Millisekunden | 200 Millisekunden | App-Leiste aufrufen; Schaltfläche betätigen (erste Reaktion)                        |
 | Standard                 | Zügig, aber nicht schnell             | 300 Millisekunden | 500 Millisekunden | Größe ändern; semantischer Zoom                                                        |
 | Dynamisch              | Nicht zügig, aber dynamisch | 500 Millisekunden | 1 Sekunde         | Zu einer anderen Seite navigieren; angehaltene App fortsetzen          |
-| Starten                  | Nicht flüssig          | 1 Sekunde         | 3 Sekunden        | App zum ersten Mal starten oder App aufrufen, nachdem sie zuvor beendet wurde |
+| Launch                  | Nicht flüssig          | 1 Sekunde         | 3 Sekunden        | App zum ersten Mal starten oder App aufrufen, nachdem sie zuvor beendet wurde |
 | Kontinuierlich              | Wird nicht mehr als dynamisch wahrgenommen      | 500 Millisekunden | 5 Sekunden        | Datei aus dem Internet herunterladen                                            |
 | Träge                 | Lang; Benutzer könnte Interesse verlieren    | 500 Millisekunden | 10 Sekunden       | Mehrere Apps aus dem Store installieren                                         |
 

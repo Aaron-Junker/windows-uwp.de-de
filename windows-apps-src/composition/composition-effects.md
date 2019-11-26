@@ -4,7 +4,7 @@ title: Kompositionseffekte
 description: Mithilfe von Effekt-APIs können Entwickler anpassen, wie ihre Benutzeroberfläche gerendert wird.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 57236b6780a7afe996fb1e68ac474d8d8077ca69
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -27,17 +27,17 @@ Effekte können auch für XAML-UI-Elemente mit einem Effektpinsel mit [**XamlCom
 
 ## <a name="effect-features"></a>Effektfeatures
 
-- [Effect Library](./composition-effects.md#effect-library)
-- [Chaining Effects](./composition-effects.md#chaining-effects)
-- [Animation Support](./composition-effects.md#animation-support)
-- [Constant vs. Animated Effect Properties](./composition-effects.md#constant-vs-animated-effect-properties)
-- [Multiple Effect Instances with Independent Properties](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [Wirkungs Bibliothek](./composition-effects.md#effect-library)
+- [Verkettungs Effekte](./composition-effects.md#chaining-effects)
+- [Animations Unterstützung](./composition-effects.md#animation-support)
+- [Eigenschaften von Konstanten und animierten Effekten](./composition-effects.md#constant-vs-animated-effect-properties)
+- [Instanzen mit mehreren Effekten mit unabhängigen Eigenschaften](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>Effektbibliothek
 
 Derzeit unterstützt die Komposition folgende Effekte:
 
-| Auswirkung               | Beschreibung                                                                                                                                                                                                                |
+| Effekt               | Beschreibung                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D-affine Transformation  | Wendet eine 2D-affine Transformationsmatrix auf ein Bild an. Dieser Effekt wurde verwendet, um die Alphamaske in unseren [Effektbeispielen](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects) zu animieren.       |
 | Arithmetische Komposition | Kombiniert zwei Bilder mittels einer flexiblen Gleichung. Eine arithmetische Komposition wurde verwendet, um einen Überblendungseffekt in unseren [Beispielen](https://github.com/microsoft/WindowsCompositionSamples/tree/master/Demos/Reference Demos/BasicCompositonEffects) zu erzeugen. |
@@ -54,7 +54,7 @@ Derzeit unterstützt die Komposition folgende Effekte:
 | Sepia                | Konvertiert ein Bild in Sepiatöne.                                                                                                                                                                                          |
 | Temperatur und Farbton | Passt die Temperatur und/oder den Farbton eines Bilds an.                                                                                                                                                                           |
 
-Ausführliche Informationen finden Sie in der Beschreibung des Win2D-Namespaces [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm). Effects not supported in composition are noted as \[NoComposition\].
+Ausführliche Informationen finden Sie in der Beschreibung des Win2D-Namespaces [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm). Effekte, die in der Komposition nicht unterstützt werden, werden als \[nocomposition\]angegeben.
 
 ### <a name="chaining-effects"></a>Verketten von Effekten
 
@@ -133,12 +133,12 @@ Wenn angegeben wird, dass ein Parameter während der Effektkompilierung dynamisc
 
 In diesem Schnellstart-Lernprogramm erfahren Sie, wie Sie einige der grundlegenden Effektfunktionen nutzen.
 
-- [Installing Visual Studio](./composition-effects.md#installing-visual-studio)
-- [Creating a new project](./composition-effects.md#creating-a-new-project)
-- [Installing Win2D](./composition-effects.md#installing-win2d)
-- [Setting your Composition Basics](./composition-effects.md#setting-your-composition-basics)
-- [Creating a CompositionSurface Brush](./composition-effects.md#creating-a-compositionsurface-brush)
-- [Creating, Compiling and Applying Effects](./composition-effects.md#creating-compiling-and-applying-effects)
+- [Installieren von Visual Studio](./composition-effects.md#installing-visual-studio)
+- [Erstellen eines neuen Projekts](./composition-effects.md#creating-a-new-project)
+- [Installieren von Win2D](./composition-effects.md#installing-win2d)
+- [Einrichten der Grundlagen der Komposition](./composition-effects.md#setting-your-composition-basics)
+- [Erstellen eines compositionsurface-Pinsels](./composition-effects.md#creating-a-compositionsurface-brush)
+- [Erstellen, kompilieren und Anwenden von Effekten](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>Installieren von Visual Studio
 
@@ -237,12 +237,12 @@ LoadImage(surfaceBrush);
 
 ## <a name="more-information"></a>Weitere Informationen
 
-- [Microsoft – Composition GitHub](https://github.com/microsoft/WindowsCompositionSamples)
-- [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
-- [Windows Composition team on Twitter](https://twitter.com/wincomposition)
-- [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
-- [Visual Tree Basics](composition-visual-tree.md)
-- [Composition Brushes](composition-brushes.md)
-- [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
-- [Animation Overview](composition-animation.md)
-- [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)
+- [Microsoft – Komposition GitHub](https://github.com/microsoft/WindowsCompositionSamples)
+- [**Windows. UI. Komposition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
+- [Windows-Kompositions Team auf Twitter](https://twitter.com/wincomposition)
+- [Zusammenfassungs Übersicht](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [Grundlagen der visuellen Struktur](composition-visual-tree.md)
+- [Kompositions Pinsel](composition-brushes.md)
+- [Xamlcompositionbrushbase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
+- [Übersicht über Animationen](composition-animation.md)
+- [Komposition Native DirectX und Direct2D Interoperation mit beginDraw und EndDraw](composition-native-interop.md)

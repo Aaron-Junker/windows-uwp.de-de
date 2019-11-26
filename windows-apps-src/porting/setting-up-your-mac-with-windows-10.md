@@ -1,6 +1,6 @@
 ---
 description: Verwenden Sie Ihren aktuellen Mac-Computer zum Entwickeln von Apps für Windows.
-title: Einrichten von Windows 10 auf Ihrem Mac
+title: Einrichten von Windows 10 auf Mac
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
@@ -13,7 +13,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259118"
 ---
-# <a name="setting-up-your-mac-with-windows-10"></a>Einrichten von Windows 10 auf Ihrem Mac
+# <a name="setting-up-your-mac-with-windows-10"></a>Einrichten von Windows 10 auf Mac
 
 
 Verwenden Sie Ihren aktuellen Mac-Computer zum Entwickeln von Apps für Windows.

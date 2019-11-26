@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: Tests mit dem Emulator für Microsoft Windows 10 Mobile
-description: Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die Interaktion mit einem Gerät praxisnah simulieren und die Features Ihrer App testen.
+description: Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die praktische Interaktion mit einem Gerät simulieren und die Features Ihrer App testen.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
@@ -15,7 +15,7 @@ ms.locfileid: "74257868"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tests mit dem Emulator für Microsoft Windows 10 Mobile
 
-Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die Interaktion mit einem Gerät praxisnah simulieren und die Features Ihrer App testen. Der Emulator ist eine Desktopanwendung zur Emulierung eines mobilen Geräts unter Windows 10. Die Anwendung stellt eine virtualisierte Umgebung bereit, in der Sie Windows-Apps ohne physisches Gerät debuggen und testen können. Außerdem steht Ihnen eine isolierte Umgebung für Ihre Anwendungsprototypen zur Verfügung.
+Mit den Tools des Emulators für Microsoft Windows 10 Mobile können Sie die praktische Interaktion mit einem Gerät simulieren und die Features Ihrer App testen. Der Emulator ist eine Desktopanwendung zur Emulierung eines mobilen Geräts unter Windows 10. Die Anwendung stellt eine virtualisierte Umgebung bereit, in der Sie Windows-Apps ohne physisches Gerät debuggen und testen können. Außerdem steht Ihnen eine isolierte Umgebung für Ihre Anwendungsprototypen zur Verfügung.
 
 Die Leistung des Emulators ist mit der Leistung eines echten Geräts vergleichbar. Es empfiehlt sich jedoch, die App vor der Veröffentlichung im Microsoft Store auf einem physischen Gerät zu testen.
 
@@ -60,9 +60,9 @@ Der Emulator für Microsoft Windows 10 Mobile kann auch über das [Microsoft-Emu
 
 Der Microsoft-Emulator für Windows 10 Mobile kann über die Setup-/Reparaturfunktion von Visual Studio deinstalliert werden Alternativ können Sie in der Systemsteuerung zu **Programme und Features** navigieren und den Emulator dort entfernen.
 
-Wenn Sie den Microsoft-Emulator für Windows 10 Mobile deinstallieren, wird automatisch auch der virtuelle, für den Emulator erstellte Hyper-V-Ethernetadapter entfernt. Dieser virtuelle Adapter kann in der Systemsteuerung unter **Netzwerkverbindungen** manuell entfernt werden.
+Wenn Sie den Microsoft-Emulator für Windows 10 Mobile deinstallieren, wird automatisch auch der virtuelle, für den Emulator erstellte Hyper-V-Ethernetadapter entfernt. Dieser virtuelle Adapter kann in der **Systemsteuerung** unter **Netzwerkverbindungen** manuell entfernt werden.
 
-### <a name="running"></a>Wird ausgeführt
+### <a name="running"></a>Running
 
 Um eine APP im Emulator auszuführen, wählen Sie einfach im Dropdown Menü **Ausführen** in Visual Studio ein emulierten Gerät aus.
 
@@ -96,7 +96,7 @@ Zusätzlich zu den neuen Features, die im vorherigen Abschnitt erwähnt wurden, 
 
 -   **Anwendungslebenszyklus und Markieren als veraltet**. Testen Sie das Verhalten Ihrer App, wenn diese deaktiviert oder als veraltet markiert wird, indem Sie auf der Seite **Debug** der Projekteigenschaften den Wert der Option **Tombstone upon deactivation while debugging** ändern.
 
--   **Lokaler Ordnerspeicher (ehemals „isolierter Speicher”)** . Daten im isolierten Speicher bleiben während der Emulatorausführung erhalten, gehen beim Schließen des Emulators aber verloren.
+-   **Lokaler Ordnerspeicher (früher „isolierter Speicher“)** . Daten im isolierten Speicher bleiben während der Emulatorausführung erhalten, gehen beim Schließen des Emulators aber verloren.
 
 -   **Mikrofon**. Erfordert und nutzt das Mikrofon des Hostcomputers.
 
@@ -234,7 +234,7 @@ Im HCE-Modus (Host Card Emulation) können Sie Ihre HCE-basierte Kartenemulation
 
 Zahlungs-Apps können auch mithilfe des Terminalsimulators von MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) getestet werden.
 
--   Aktivieren Sie unterhalb des Skript-Editor-Fensters das Kontrollkästchen für den MasterCard-Listener, und starten Sie den Simulator von MasterCard.
+-   Aktivieren Sie unterhalb des Skript-Editor-Fensters das Kontrollkästchen für den **MasterCard**-Listener, und starten Sie den Simulator von MasterCard.
 -   Mithilfe dieses Tools können Sie Befehle generieren, die dann über das NFC-Tool an Ihre im Emulator ausgeführte Anwendung weitergeleitet werden.
 
 Weitere Informationen zur HCE-Unterstützung sowie zur Entwicklung von HCE-Apps in Windows 10 Mobile finden Sie im [Blog des NFC-Teams von Microsoft](https://blogs.msdn.com/b/nfc/).
@@ -362,7 +362,7 @@ Im Modus **Route** können Sie über die Dropdownliste eines der folgenden Gesch
 
 | Profil | Geschwindigkeit pro Stunde               | Geschwindigkeit pro Sekunde | Beschreibung | 
 |---------|------------------------------|------------------|-------------|
-| Speed Limit | Die Geschwindigkeitsbegrenzung der Route. | Nicht verfügbar   | Die Route wird unter Berücksichtigung der geltenden Geschwindigkeitsbegrenzung durchlaufen. |
+| Speed Limit | Die Geschwindigkeitsbegrenzung der Route. | Nicht anwendbar   | Die Route wird unter Berücksichtigung der geltenden Geschwindigkeitsbegrenzung durchlaufen. |
 | Walking     | 5 km/h                   | 1,39 m/s           | Die Route wird mit einer natürlichen Schrittgeschwindigkeit von 5 km/h durchlaufen. |
 | Biking      | 25 km/h                  | 6,94 m/s           | Die Route wird mit einer natürlichen Radfahrergeschwindigkeit von 25 km/h durchlaufen. |
 | Fast        |                          |                  |Die Route wird ohne Berücksichtigung der geltenden Geschwindigkeitsbegrenzung durchlaufen. | 
@@ -393,7 +393,7 @@ Der folgende Screenshot zeigt den Modus "Route": Die orangefarbene Linie ist die
 
 -   Die einzigen simulierten Positionseigenschaften sind Breitengrad, Längengrad, Genauigkeit und Positionsquelle. Andere Eigenschaften wie Geschwindigkeit, Richtung usw. werden vom Positionssimulator nicht simuliert.
 
-## <a name="network"></a>Network
+## <a name="network"></a>Netzwerk
 
 Verwenden Sie die Registerkarte **Netzwerk** der zusätzlichen Tools des Emulators, um Ihre App mit unterschiedlicher Netzwerkgeschwindigkeit und unterschiedlicher Signalstärke zu testen. Dieses Feature ist hilfreich, wenn Ihre App Webdienste aufruft oder Daten überträgt.
 
@@ -407,8 +407,8 @@ Mit dem Netzwerksimulationsfeature können Sie sicherstellen, dass Ihre App in d
     -   4G
 
 3.  Wählen Sie in der Dropdownliste **Signalstärke** eine der folgenden Optionen aus:
-    -   Fehlerfrei
-    -   Durchschnitt
+    -   Gut
+    -   Mittelmäßig
     -   Schlecht
 
 4.  Deaktivieren Sie das Kontrollkästchen **Enable network simulation**, um zum Standardverhalten zurückzukehren und wieder die Netzwerkeinstellungen des Entwicklungscomputers zu verwenden.
@@ -442,7 +442,7 @@ Die Registerkarte **SD-Karte** simuliert mithilfe eines Ordner auf dem Entwicklu
 
     Diese Option ist standardmäßig aktiviert. Wenn diese Option aktiviert ist, werden Dateien aus dem Emulator beim Auswerfen der SD-Karte wieder mit dem Ordner auf dem Entwicklungscomputer synchronisiert.
 
-4.  **Werfen Sie die SD-Karte aus**.
+4.  **Werfen Sie die SD-Karte aus.**
 
     Klicken Sie auf **Eject SD card**. Nach dem Auswerfen der SD-Karte kann Folgendes passieren:
 
@@ -487,18 +487,18 @@ Sie können ganz einfach Pushbenachrichtigungen testen, ohne den funktionsfähig
     -   Folgende WNS-Benachrichtigungstypen werden unterstützt:
 
         -   Raw
-        -   Toast
+        -   Popup
 
             Wenn Ihre App WNS-Benachrichtigungen verwendet und Sie den Benachrichtigungstyp **Toast** auswählen, enthält die Simulationsregisterkarte die Felder **Tag** und **Group**. Sie können diese Optionen aktivieren und Werte für **Tag** und **Group** eingeben, um Popupbenachrichtigungen im Benachrichtigungscenter zu verwalten.
 
-        -   Tile
+        -   Kachel
         -   Badge
 
     -   Folgende MPN-Benachrichtigungstypen werden unterstützt:
 
         -   Raw
-        -   Toast
-        -   Tile
+        -   Popup
+        -   Kachel
 
 5.  **Wählen Sie eine Benachrichtigungs Vorlage aus.**
 
@@ -565,7 +565,7 @@ Im Anschluss folgt eine Liste mit den Kamerafeatures, die von den einzelnen Prof
 |--------------------|--------------------------|---------------------------|
 | Auflösung         | 640 x 480 (VGA)          | 640 x 480 (VGA) oder höher |
 | Autofokus          | Ja                      | Ja                       |
-| Flash              | Nein                       | Ja                       |
+| Blitz              | Nein                       | Ja                       |
 | Zoom               | 2x (digital oder optisch)  | 2x (digital oder optisch)   |
 | Videoauflösung   | 640 x 480 (VGA)          | 640 x 480 (VGA) oder höher |
 | Vorschauauflösung | 640 x 480 (VGA)          | 640 x 480 (VGA)           |

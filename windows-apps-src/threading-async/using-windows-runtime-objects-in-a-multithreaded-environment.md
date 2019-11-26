@@ -1,6 +1,6 @@
 ---
 title: Verwenden von Windows-Runtime-Objekten in einer Multithread-Umgebung | Microsoft Docs
-description: This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
+description: In diesem Artikel wird erläutert, wie die .NET Framework Aufrufe C# von und Visual Basic Code an Objekte behandelt, die vom Windows-Runtime oder von Windows-Runtime Komponenten bereitgestellt werden.
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
@@ -14,7 +14,7 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259798"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>Verwenden von Windows-Runtime-Objekten in einer Multithread-Umgebung
-This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime components.
+In diesem Artikel wird erläutert, wie die .NET Framework Aufrufe C# von und Visual Basic Code an Objekte behandelt, die vom Windows-Runtime oder von Windows-Runtime Komponenten bereitgestellt werden.
 
 Im .NET Framework können Sie standardmäßig ohne besondere Verarbeitung über mehrere Threads auf alle Objekte zugreifen. Sie benötigen lediglich einen Verweis auf das Objekt. Solche Objekte werden in der Windows-Runtime als *agil* bezeichnet. Die meisten Windows-Runtime-Klassen sind agil, einige jedoch nicht, und selbst agile Klassen erfordern möglicherweise eine besondere Verarbeitung.
 
@@ -58,7 +58,7 @@ Private Async Sub Button_Click_2(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-Ein sicherer Zugriff auf die Schaltfläche ist bei Verwendung ihrer [Dispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.dispatcher.aspx)-Eigenschaft oder der `Dispatcher`-Eigenschaft eines beliebigen Objekts im Kontext des UI-Threads (beispielsweise die Seite, auf der sich die Schaltfläche befindet) möglich. Der folgende Code verwendet die Methode [RunAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) des [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx)-Objekts, um den Aufruf für den UI-Thread zu verteilen.
+Ein sicherer Zugriff auf die Schaltfläche ist bei Verwendung ihrer [Dispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.dispatcher.aspx)-Eigenschaft oder der `Dispatcher`-Eigenschaft eines beliebigen Objekts im Kontext des UI-Threads (beispielsweise die Seite, auf der sich die Schaltfläche befindet) möglich. Der folgende Code verwendet die Methode [RunAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) des [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx)-Objekts, um den Aufruf für den UI-Thread zu verteilen.
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -160,7 +160,7 @@ Standardmäßig sind die Klassen in der Komponente, die aktiviert werden kann, a
 
 Für Objekte, die im UI-Thread ausgeführt werden und Ausnahmen auslösen, wenn sie von einem anderen Thread als dem UI-Thread aufgerufen werden, können Sie das [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx)-Objekt des UI-Threads verwenden, um den Aufruf zu verteilen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 [C#-Handbuch](/dotnet/csharp/)
 
-[Visual Basic Guide](/dotnet/visual-basic/)
+[Visual Basic Handbuch](/dotnet/visual-basic/)

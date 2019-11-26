@@ -3,7 +3,7 @@ title: Einrichten der Umgebung für die UWP-Entwicklung auf Xbox
 description: Schritte zum Einrichten und Testen der Umgebung für die UWP-Entwicklung auf Xbox
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
 ms.openlocfilehash: 844aaf8ff1e85836683bf752d301c1254066ea5a
@@ -16,19 +16,19 @@ ms.locfileid: "74258740"
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Einrichten der Umgebung für die UWP-Entwicklung auf Xbox
 
 Die Umgebung für die UWP-Entwicklung (Universelle Windows-Plattform) auf Xbox besteht aus einem Entwicklungscomputer, der über ein lokales Netzwerk mit einer Xbox One-Konsole verbunden ist.
-The development PC requires Visual Studio 2015 Update 3, Visual Studio 2017, or Visual Studio 2019.
-The development PC also requires Windows 10, the Windows 10 SDK build 14393 or later, and a range of supporting tools.
+Der Entwicklungs-PC erfordert Visual Studio 2015 Update 3, Visual Studio 2017 oder Visual Studio 2019.
+Der Entwicklungs-PC erfordert auch Windows 10, den Windows 10 SDK-Build 14393 oder höher sowie eine Reihe unterstützter Tools.
 
 In diesem Artikel werden die Schritte zum Einrichten und Testen der Entwicklungsumgebung beschrieben.
 
 ## <a name="visual-studio-setup"></a>Einrichten von Visual Studio
 
-1. Install Visual Studio 2015 Update 3, Visual Studio 2017, or Visual Studio 2019. Weitere Informationen und Downloads für die Installation finden Sie unter [Downloads und Tools für Windows 10](https://dev.windows.com/downloads). We recommend that you use the latest version of Visual Studio so that you can receive the latest updates for developers and security.
+1. Installieren Sie Visual Studio 2015 Update 3, Visual Studio 2017 oder Visual Studio 2019. Weitere Informationen und Downloads für die Installation finden Sie unter [Downloads und Tools für Windows 10](https://dev.windows.com/downloads). Es wird empfohlen, dass Sie die neueste Version von Visual Studio verwenden, damit Sie die neuesten Updates für Entwickler und Sicherheit erhalten.
 
 
-2. If you're installing Visual Studio 2017 or Visual Studio 2019, make sure that you choose the **Universal Windows Platform development** workload. Wenn Sie ein C++-Entwickler sind, stellen Sie sicher, dass Sie auch das Kontrollkästchen  **	UWP-Tools für C++** im Bereich **Zusammenfassung** rechts unter **Entwicklung für die universelle Windows-Plattform** wählen. Es ist nicht Teil der Standardinstallation.
+2. Wenn Sie Visual Studio 2017 oder Visual Studio 2019 installieren, stellen Sie sicher, dass Sie die Arbeitsauslastung für die **universelle Windows-Plattform Entwicklung** auswählen. Wenn Sie ein C++-Entwickler sind, stellen Sie sicher, dass Sie auch das Kontrollkästchen  **	UWP-Tools für C++** im Bereich **Zusammenfassung** rechts unter **Entwicklung für die universelle Windows-Plattform** wählen. Es ist nicht Teil der Standardinstallation.
 
-    ![Install Visual Studio 2019](images/development-environment-setup-1.png)
+    ![Installieren von Visual Studio 2019](images/development-environment-setup-1.png)
 
     Wenn Sie Visual Studio 2015 Update 3 installieren, stellen Sie sicher, dass das Kontrollkästchen **Entwicklungstools für universelle Windows-Apps** aktiviert ist.
 
@@ -123,7 +123,7 @@ Herzlichen Glückwunsch! Sie haben Ihre erste UWP-App auf Xbox erfolgreich erste
 
 ## <a name="see-also"></a>Weitere Informationen:
 - [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md)  
-- [Downloads and tools for Windows 10](https://developer.microsoft.com/windows/downloads)  
+- [Downloads und Tools für Windows 10](https://developer.microsoft.com/windows/downloads)  
 - [Windows-Insider-Programm](https://insider.windows.com/)  
-- [Introduction to Xbox One tools](introduction-to-xbox-tools.md) 
+- [Einführung in Xbox One-Tools](introduction-to-xbox-tools.md) 
 - [UWP auf Xbox One](index.md)

@@ -106,9 +106,9 @@ Das Stammelement dieser Datei ist das Element **Receipt**, das Informationen zu 
 
 |  Element  |  Erforderlich  |  Anzahl  |  Beschreibung   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    Nein        |  0 oder 1  |  Enthält Kaufinformationen für die aktuelle App.            |
-|  [ProductReceipt](#productreceipt)  |     Nein       |  0 oder mehr    |   Enthält Informationen zu einem In-App-Kauf für die aktuelle App.     |
-|  Signatur  |      „Ja“      |  1   |   Dieses Element ist ein standardmäßiges [XML-DSIG-Konstrukt](https://www.w3.org/TR/xmldsig-core/). Es enthält ein **SignatureValue**-Element, das die Signatur enthält, die Sie für die Überprüfung des Belegs verwenden können, und ein **SignedInfo**-Element.      |
+|  [Appreceipt](#appreceipt)  |    Nein        |  0 oder 1  |  Enthält Kaufinformationen für die aktuelle App.            |
+|  [Productreceipt](#productreceipt)  |     Nein       |  0 oder mehr    |   Enthält Informationen zu einem In-App-Kauf für die aktuelle App.     |
+|  Signatur  |      Ja      |  1   |   Dieses Element ist ein standardmäßiges [XML-DSIG-Konstrukt](https://www.w3.org/TR/xmldsig-core/). Es enthält ein **SignatureValue**-Element, das die Signatur enthält, die Sie für die Überprüfung des Belegs verwenden können, und ein **SignedInfo**-Element.      |
 
 **Receipt** hat die folgenden Attribute.
 
@@ -116,8 +116,8 @@ Das Stammelement dieser Datei ist das Element **Receipt**, das Informationen zu 
 |-------------|-------------------|
 |  **Version**  |    Die Versionsnummer des Belegs.            |
 |  **CertificateId**  |     Der Fingerabdruck des Zertifikats, der für die Signierung des Belegs verwendet wurde.          |
-|  **ReceiptDate**  |    Das Datum, an dem der Beleg signiert und heruntergeladen wurde.           |  
-|  **ReceiptDeviceId**  |   Identifiziert das Gerät, das für die Anforderung dieses Belegs verwendet wurde.         |  |
+|  **Receiptdate**  |    Das Datum, an dem der Beleg signiert und heruntergeladen wurde.           |  
+|  **Receiptde viceid**  |   Identifiziert das Gerät, das für die Anforderung dieses Belegs verwendet wurde.         |  |
 
 <span id="appreceipt" />
 
@@ -129,7 +129,7 @@ Dieses Element enthält Kaufinformationen für die aktuelle App.
 
 |  Attribut  |  Beschreibung   |
 |-------------|-------------------|
-|  **Id**  |    Identifiziert den Kauf.           |
+|  **Name**  |    Identifiziert den Kauf.           |
 |  **AppId**  |     Der Paketfamilienname-Wert, den das Betriebssystem für die App verwendet.           |
 |  **LicenseType**  |    **Full**, wenn der Benutzer die Vollversion der App gekauft hat. **Trial**, wenn der Benutzer eine Testversion der App heruntergeladen hat.           |  
 |  **PurchaseDate**  |    Das Datum, an dem die App gekauft wurde.          |  |
@@ -144,9 +144,9 @@ Dieses Element enthält Informationen zu einem In-App-Kauf für die aktuelle App
 
 |  Attribut  |  Beschreibung   |
 |-------------|-------------------|
-|  **Id**  |    Identifiziert den Kauf.           |
+|  **Name**  |    Identifiziert den Kauf.           |
 |  **AppId**  |     Identifiziert die App, über die der Benutzer den Kauf durchgeführt hat.           |
-|  **ProductId**  |     Identifiziert das gekaufte Produkt.           |
+|  **ProductID**  |     Identifiziert das gekaufte Produkt.           |
 |  **ProductType**  |    Legt den Produkttyp fest. Zurzeit wird nur der Wert **Durable** unterstützt.          |  
 |  **PurchaseDate**  |    Das Datum, an dem der Kauf erfolgte.          |  |
 

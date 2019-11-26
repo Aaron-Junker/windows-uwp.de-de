@@ -27,7 +27,7 @@ Vor der Freigabe dieses SDK wurde die **AdControl**-Klasse in mehreren älteren 
 
 * Wenn **AdControl** in Ihrer App eine neue Anzeige anfordert, wird ein **ErrorOccurred**-Ereignis des Steuerelements ausgegeben, und die **ErrorCode**-Eigenschaft der Ereignisargumente hat den Wert **NoAdAvailable**.
 
-* Alle Anzeigeneinheiten, die Ihrer App zugeordnet sind, werden deaktiviert. You cannot remove these deactivated ad units from your DePartnerv Center account. Wenn Sie Ihre App aktualisieren, damit Sie ein unterstütztes [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) nutzen können, ignorieren Sie diese Anzeigeneinheiten und erstellen Sie neue.
+* Alle Anzeigeneinheiten, die Ihrer App zugeordnet sind, werden deaktiviert. Sie können diese deaktivierten Ad-Einheiten nicht aus Ihrem departnerv Center-Konto entfernen. Wenn Sie Ihre App aktualisieren, damit Sie ein unterstütztes [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) nutzen können, ignorieren Sie diese Anzeigeneinheiten und erstellen Sie neue.
 
 * Banneranzeigen werden nicht mehr für Anzeigeneinheiten bereitgestellt, die in mehreren Apps verwendet werden. Stellen Sie sicher, dass Ihre Anzeigeneinheiten jeweils nur in einer App verwendet werden.
 
@@ -86,4 +86,4 @@ Entfernen Sie alle vorhandenen Verweise auf Microsoft Advertising-Bibliotheken a
 
 Testen Sie Ihre App, um sicherzustellen, dass sie Banneranzeigen korrekt anzeigt.
 
-If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in Partner Center to republish your app.
+Wenn die vorherige Version der App bereits im Store verfügbar ist, erstellen Sie [eine neue Übermittlung](../publish/app-submissions.md) für Ihre aktualisierte APP im Partner Center, um Ihre APP erneut zu veröffentlichen.

@@ -86,8 +86,8 @@ Hier eine Zusammenfassung der Unterschiede zwischen Formatvorlagen und Formatmus
 **Format Muster, z. b. "{Month. Full} {Day. Integer}"**
 
 -   Eine Zeichenfolge mit explizit festgelegter Reihenfolge, die den vollständigen Monatsnamen, gefolgt von einem Leerzeichen, gefolgt von einer ganze Zahl (für den Tag) angibt, und zwar in dieser Reihenfolge oder gemäß dem angegebenen spezifischen Formatmuster.
--   Entspricht möglicherweise nicht dem gültigen Standardformat für jedes Sprach-Region-Paar.
--   Ist nicht in jedem Fall der Kultur angemessen.
+-   Entspricht möglicherweise nicht dem gültigen Standardformat für jedes Sprache-Region-Paar.
+-   Ist nicht unbedingt der Kultur angemessen.
 -   Es kann eine beliebige Kombination von Komponenten in einer beliebigen Reihenfolge angegeben werden.
 
 ## <a name="examples"></a>Beispiele

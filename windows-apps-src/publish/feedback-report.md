@@ -1,10 +1,10 @@
 ---
-Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
+Description: Der Feedback Bericht in Partner Center ermöglicht Ihnen das Anzeigen der Probleme, Vorschläge und upstimmen, die Ihre Windows 10-Kunden über den FeedHub übermittelt haben.
 title: Feedbackbericht
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 47eb494ac1b61caac0549f89254ae5d60a7ddf4c
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -15,19 +15,19 @@ ms.locfileid: "74259020"
 ---
 # <a name="feedback-report"></a>Feedbackbericht
 
-The **Feedback report** in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in Partner Center, or export the data to view offline.
+Der **Feedback Bericht** in Partner Center ermöglicht Ihnen das Anzeigen der Probleme, Vorschläge und upstimmen, die Ihre Windows 10-Kunden über den FeedHub übermittelt haben. Sie können diese Daten im Partner Center anzeigen oder die Daten exportieren, um Sie offline anzuzeigen.
 
 > [!NOTE]
 > Sie können über diesen Bericht auch [direkt auf Feedback reagieren](respond-to-customer-feedback.md), um Kunden zu signalisieren, dass Sie ihr Feedback ernst nehmen.
 
 Ermuntern Sie Ihre Kunden, Ihnen Feedback zu Ihrer App zu geben. Dies ist eine hervorragende Möglichkeit, um mehr über die Probleme und Funktionen zu erfahren, die ihnen besonders wichtig sind. Wenn Ihre Kunden wissen, dass sie Ihnen ihr Feedback direkt senden können, geben sie mit höherer Wahrscheinlichkeit keine negative Bewertung im Store ab.
 
-Verwenden Sie die Feedback-API im [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK), um es Ihren Kunden zu ermöglichen, den [Feedback-Hub direkt aus Ihrer App heraus zu starten](../monetize/launch-feedback-hub-from-your-app.md). Bedenken Sie, dass jeder Kunde, der Ihre App auf einem Windows 10-Gerät heruntergeladen hat, das den Feedback-Hub unterstützt, mithilfe der Feedback-Hub-App ein Feedback abgeben kann. Because of this, you may see customer feedback in this report even if you have not specifically asked for feedback from within your app.
+Verwenden Sie die Feedback-API im [Microsoft Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK), um es Ihren Kunden zu ermöglichen, den [Feedback-Hub direkt aus Ihrer App heraus zu starten](../monetize/launch-feedback-hub-from-your-app.md). Bedenken Sie, dass jeder Kunde, der Ihre App auf einem Windows 10-Gerät heruntergeladen hat, das den Feedback-Hub unterstützt, mithilfe der Feedback-Hub-App ein Feedback abgeben kann. Daher wird in diesem Bericht möglicherweise ein Kundenfeedback angezeigt, auch wenn Sie nicht ausdrücklich innerhalb Ihrer APP nach Feedback gefragt haben.
 
-Feedback can also be helpful when using [package flighting](package-flights.md), since the **Feedback** report shows you the specific package that each customer had installed on their device when they left the feedback.
+Feedback kann auch bei der Verwendung von [Paket-flighting](package-flights.md)hilfreich sein, da der **Feedback** Bericht das jeweilige Paket anzeigt, das jeder Kunde beim Verlassen des Feedbacks auf seinem Gerät installiert hat.
 
 > [!TIP]
-> For a quick look at the reviews, ratings, and user feedback across all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.** 
+> Wenn Sie in den letzten 30 Tagen Überprüfungen, BEWERTUNGEN und Benutzer Feedback für alle Ihre apps verfügen **, erweitern Sie** im linken Navigationsmenü die Option Einbindung, und wählen Sie über **Prüfungen und Feedback aus.** 
 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
@@ -54,14 +54,14 @@ Im Bericht finden Sie das jeweilige Feedback von Ihren Kunden. Links neben dem F
 - **Populär**: Zeigt Feedback, das von anderen Kunden in den letzten sieben Tagen bewertet wurde, beginnend mit dem Feedback, das die letzte Aktivität aufweist.
 - **Aktuellste**: Zeigt sämtliches Feedback, beginnend mit dem zuletzt abgegebenen Feedback an.
 
-Neben jedem Kommentar werden der Typ des Feedbacks sowie das Datum angezeigt, an dem das Feedback abgegeben wurde. You’ll also see the customer’s market, the specific package that was installed on the device they were using when they left the feedback, the type of that device, and **Windows Insider** if the customer submitting the feedback is a member of the Windows Insider program.
+Neben jedem Kommentar werden der Typ des Feedbacks sowie das Datum angezeigt, an dem das Feedback abgegeben wurde. Außerdem sehen Sie den Markt des Kunden, das Paket, das auf dem Gerät installiert wurde, das Sie verwendet haben, als Sie das Feedback hinterlassen haben, den Typ des Geräts und **Windows Insider** , wenn der Kunde, der das Feedback übermittelt, ein Mitglied des Windows Insider-Programms ist.
 
 Hier sehen Sie auch eine Option, um auf das [Feedback zu antworten](respond-to-customer-feedback.md).
 
 
 ## <a name="translating-feedback"></a>Übersetzen von Feedback
 
-By default, feedback that was not written in your preferred language is translated for you. Falls gewünscht, können Sie die Übersetzung von Feedback deaktivieren, indem Sie das Kontrollkästchen **Feedback übersetzen** neben der Seitenfilter deaktivieren.
+Standardmäßig wird Feedback, das nicht in Ihrer bevorzugten Sprache geschrieben wurde, für Sie übersetzt. Falls gewünscht, können Sie die Übersetzung von Feedback deaktivieren, indem Sie das Kontrollkästchen **Feedback übersetzen** neben der Seitenfilter deaktivieren.
 
 Da das Feedback durch ein automatisches Übersetzungssystem übersetzt wird, sind die resultierenden Übersetzungen u. U. nicht immer exakt. Für den Fall, dass sie ihn mit der Übersetzung vergleichen oder auf andere Weise übersetzen lassen möchten, steht der Originaltext zur Verfügung.
 

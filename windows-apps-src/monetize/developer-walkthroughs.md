@@ -22,9 +22,9 @@ In diesem Abschnitt wird erläutert, wie Sie Banneranzeigen, Interstitialwerbung
 |  Thema    | Beschreibung |               
 |----------|-------|
 | [Banneranzeigen](banner-ads.md)     | Enthält Informationen zum Hinzufügen einer Banneranzeige für Ihre UWP-App mithilfe der [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)-Klasse in der Microsoft Advertising-SDK.        |
-| [Interstitial Ads](interstitial-ads.md)    | Enthält Informationen zum Hinzufügen einer Interstitialwerbung für Ihre UWP-App mithilfe der [Interstitialwerbung](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)-Klasse in der Microsoft Advertising-SDK.       |
+| [Interstitial-anzeigen](interstitial-ads.md)    | Enthält Informationen zum Hinzufügen einer Interstitialwerbung für Ihre UWP-App mithilfe der [Interstitialwerbung](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)-Klasse in der Microsoft Advertising-SDK.       |
 | [Native Anzeigen](native-ads.md)       | Enthält Informationen zum Hinzufügen einer nativen Anzeige für Ihre UWP-App mithilfe des [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) und der [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2)-Klasse in der Microsoft Advertising-SDK.  |
-| [Show ads in video content](add-advertisements-to-video-content.md)     |  Enthält Anweisungen zum Anzeigen von Werbung während der Videoinhalte in Ihrer UWP-App (dieses Feature ist derzeit nur für Apps verfügbar, die mit JavaScript und HTML geschrieben werden). |
+| [Anzeigen in Videoinhalten anzeigen](add-advertisements-to-video-content.md)     |  Enthält Anweisungen zum Anzeigen von Werbung während der Videoinhalte in Ihrer UWP-App (dieses Feature ist derzeit nur für Apps verfügbar, die mit JavaScript und HTML geschrieben werden). |
 
 
 

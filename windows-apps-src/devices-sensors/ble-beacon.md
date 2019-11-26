@@ -3,7 +3,7 @@ title: Bluetooth-Werbung
 description: Dieser Abschnitt enthält Artikel zur Integration von Bluetooth Low Energy (LE)-Ankündigungen in Apps für die Universelle Windows-Plattform (UWP) mithilfe der AdvertisementWatcher- and AdvertisementPublisher-APIs.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c4bef6045f75992e0fad503ff2a357d52363008
@@ -18,7 +18,7 @@ ms.locfileid: "74259686"
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows. Devices. Bluetooth. Ankündigung**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 Dieser Artikel enthält eine Übersicht über Bluetooth Low Energy (LE)-Ankündigungsbeacons für Apps für die Universelle Windows-Plattform (UWP).  
 

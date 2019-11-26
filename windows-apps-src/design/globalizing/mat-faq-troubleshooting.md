@@ -13,7 +13,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258144"
 ---
-# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Multilingual App Toolkit 4.0: häufig gestellte Fragen und Problembehandlung
+# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>Multilingual App Toolkit 4.0 – Häufig gestellte Fragen und Problembehandlung
 
 Dieses Thema enthält Antworten auf häufig gestellte Fragen und Probleme in Bezug auf das Multilingual App Toolkit (MAT) 4.0.
 
@@ -177,6 +177,6 @@ Vor dem Start des Zertifizierungsprozesses für den Microsoft Store müssen Sie 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Use the Multilingual App Toolkit 4.0](use-mat.md)
+* [Verwenden Sie das mehrsprachige App-Toolkit 4,0](use-mat.md)
 * [Microsoft Translator](https://www.microsofttranslator.com/)
-* [MakePri.exe command-line options](../../app-resources/makepri-exe-command-options.md)
+* [Makepri. exe-Befehlszeilenoptionen](../../app-resources/makepri-exe-command-options.md)

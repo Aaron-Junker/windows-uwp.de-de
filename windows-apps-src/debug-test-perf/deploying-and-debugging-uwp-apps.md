@@ -211,13 +211,13 @@ Sie können die folgenden Bereitstellungsoptionen auf der Eigenschaftenseite **D
   - Aktivieren Sie C# auf der Eigenschaften Seite für und Visual Basic **Debuggen** das Kontrollkästchen **eigenen Code beim Starten nicht starten, sondern Debuggen** .
   - Legen Sie den Wert **Anwendung starten** auf der Eigenschaftenseite **Debuggen** für JavaSCript und C++ auf **Ja** fest.
 
-## <a name="symbols"></a>Sonderzeichen
+## <a name="symbols"></a>Symbole
 
 Symboldateien enthalten eine Vielzahl von Daten, die sehr hilfreich beim Debuggen von Code sind (z. B. Variablen, Funktionsnamen und Adressen von Einsprungspunkten). Mit diesen Daten können Sie die Ausnahmen und Ausführungsreihenfolge von Aufruflisten besser überblicken. Über den [Microsoft-Symbolserver](https://msdl.microsoft.com/download/symbols) stehen Symbole für die meisten Windows-Varianten zur Verfügung. Für schnellere Offline-Lookups können Sie jedoch auch unter [Herunterladen von Windows-Symbolpaketen](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols) heruntergeladen werden.
 
 Wählen Sie zum Festlegen von Symboloptionen für Visual Studio **Extras > Optionen** aus, und navigieren Sie im Dialogfeld zu **Debuggen > Symbole**.
 
-![Optionen (Dialogfeld)](images/gs-debug-uwp-apps-004.png)
+![Dialogfeld „Optionen“](images/gs-debug-uwp-apps-004.png)
 
 Legen Sie die [Sympath](#windbg)-Variable auf dem Speicherort des Symbolpakets fest, um die Symbole in einer Debugsitzung mit **WinDbg** zu laden. Der folgende Befehl lädt beispielsweise Symbole vom Microsoft-Symbolserver und speichert sie dann im Verzeichnis C:\Symbols zwischen:
 

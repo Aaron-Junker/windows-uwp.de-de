@@ -1,5 +1,5 @@
 ---
-Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
+Description: Erfahren Sie mehr über das Empfangen von Zahlungen für Ihre apps, Add-ons (in-App-Produkte) und Werbeeinnahmen.
 title: Regelung der Bezahlung
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 03/05/2019
@@ -14,10 +14,10 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74259993"
 ---
 # <a name="getting-paid"></a>Regelung der Bezahlung
-Here’s some important info about receiving payment for your apps, add-ons, and advertising earnings.
+Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre apps, Add-ons und Werbeeinnahmen.
 
 > [!IMPORTANT]
-> Before you can receive money from app sales in the Microsoft Store, you need to [set up your payout account and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
+> Bevor Sie im Microsoft Store Geld von App-Verkäufen erhalten können, müssen Sie [Ihr Auszahlungs Konto einrichten und die erforderlichen Steuerformulare ausfüllen](setting-up-your-payout-account-and-tax-forms.md).
 
 ## <a name="store-fee"></a>Store-Gebühr
 
@@ -46,7 +46,7 @@ Beachten Sie, dass der von Ihnen ausgewählte Preis u. U. eine Verkaufs- oder Me
 
 ## <a name="payout-reporting"></a>Auszahlungsberichte
 
-You can access details about your payment info and download reports in the **Payout summary** of [Partner Center](https://partner.microsoft.com/dashboard). Weitere Informationen zu den aufgeführten Details und zu den Kategorien, in die wir Ihre Erlöse einteilen, finden Sie unter [Auszahlungszusammenfassung](payout-summary.md).
+Sie können auf Details zu ihren Zahlungsinformationen zugreifen und Berichte in der **Auszahlungs Zusammenfassung** von [Partner Center](https://partner.microsoft.com/dashboard)herunterladen. Weitere Informationen zu den aufgeführten Details und zu den Kategorien, in die wir Ihre Erlöse einteilen, finden Sie unter [Auszahlungszusammenfassung](payout-summary.md).
 
 
 ## <a name="payout-timeframe"></a>Auszahlungszeitraum
@@ -56,14 +56,14 @@ Zahlungen erfolgen monatlich (vorausgesetzt, der entsprechende Zahlungsschwellen
 
 ##  <a name="payout-hold-status"></a>Auszahlungssperre
 
-Standardmäßig senden wir Zahlungen monatlich, wie oben beschrieben. However, you have the option to put your payouts for a program on hold, which will prevent us from sending payments to your account. Wenn Sie Ihre Auszahlungen sperren, zeichnen wir weiterhin alle Ihre Umsätze auf und geben die Details in Ihrer **Auszahlungszusammenfassung** an. Allerdings senden wir so lange keine Zahlungen an Ihr Konto, bis Sie die Sperre entfernen.
+Standardmäßig senden wir Zahlungen monatlich, wie oben beschrieben. Sie haben jedoch die Möglichkeit, Ihre Zahlungen für ein Programm auf dem halten zu platzieren, was uns daran hindert, Zahlungen an Ihr Konto zu senden. Wenn Sie Ihre Auszahlungen sperren, zeichnen wir weiterhin alle Ihre Umsätze auf und geben die Details in Ihrer **Auszahlungszusammenfassung** an. Allerdings senden wir so lange keine Zahlungen an Ihr Konto, bis Sie die Sperre entfernen.
 
-To place your payments on hold, go to **Developer settings**. Under **Payout and tax**, in the **Payout and tax profile assignment** section, locate the program for which you would like payments held. Click the **Hold my Payment** checkbox to hold payments for this program. Sie können die Auszahlungssperre jederzeit ändern. Beachten Sie jedoch, dass sich Ihre Auswahl auf die nächste monatliche Auszahlung auswirkt. Wenn Sie beispielsweise die April-Auszahlung sperren möchten, sollten Sie die Auszahlungssperre schon vor Ende März auf **Ein** festlegen.
+Wechseln Sie zu den **Entwicklereinstellungen**, um Ihre Zahlungen zu speichern. Suchen Sie unter " **Auszahlungs-und Steuer**Profil Zuweisung" im Abschnitt " **Auszahlungs-und Steuer Profil Zuweisung** " das Programm, für das Sie die Zahlungen erhalten möchten. Aktivieren Sie das Kontrollkästchen **meine Zahlung aufbewahren** , um die Zahlungen für dieses Programm zu speichern. Sie können die Auszahlungssperre jederzeit ändern. Beachten Sie jedoch, dass sich Ihre Auswahl auf die nächste monatliche Auszahlung auswirkt. Wenn Sie beispielsweise die April-Auszahlung sperren möchten, sollten Sie die Auszahlungssperre schon vor Ende März auf **Ein** festlegen.
 
-Once you have set your payout hold status to **On**, all payouts for this program will be on hold until you toggle the slider back to **Off**. Dann werden Sie im nächsten monatlichen Auszahlungszyklus berücksichtigt (vorausgesetzt, der entsprechende Zahlungsschwellenwert wurde erreicht). Wenn Sie zum Beispiel Ihre Auszahlungen gesperrt haben, aber eine Auszahlung im Juni generieren möchten, sollten Sie die Auszahlungssperre noch vor Ende Mai auf **Aus** setzen.
+Nachdem Sie den Status der Auszahlungs Aufbewahrung auf ein festgelegt **haben, werden**alle Auszahlungen für dieses Programm angehalten, bis Sie den Schieberegler wieder auf aus-und **ausschalten**. Dann werden Sie im nächsten monatlichen Auszahlungszyklus berücksichtigt (vorausgesetzt, der entsprechende Zahlungsschwellenwert wurde erreicht). Wenn Sie zum Beispiel Ihre Auszahlungen gesperrt haben, aber eine Auszahlung im Juni generieren möchten, sollten Sie die Auszahlungssperre noch vor Ende Mai auf **Aus** setzen.
 
 > [!NOTE]
-> Your **Payout hold status** applies to each program individually (Microsoft Store, advertising, Azure Marketplace, etc.). If you wish to hold payments on all of your programs, you must hold payments on each program individually.
+> Der **Status Ihrer Auszahlungs Aufbewahrung** gilt für jedes Programm einzeln (Microsoft Store, Werbung, Azure Marketplace usw.). Wenn Sie Zahlungen für all Ihre Programme durchsetzen möchten, müssen Sie die Zahlungen für jedes Programm einzeln aufbewahren.
 
 
  

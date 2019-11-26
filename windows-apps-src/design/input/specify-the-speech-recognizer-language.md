@@ -1,6 +1,6 @@
 ---
 Description: Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen.
-title: Festlegen der Sprache für die Spracherkennung
+title: Angeben der Sprache für die Spracherkennung
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258239"
 ---
-# <a name="specify-the-speech-recognizer-language"></a>Festlegen der Sprache für die Spracherkennung
+# <a name="specify-the-speech-recognizer-language"></a>Angeben der Sprache für die Spracherkennung
 
 
 Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen.
@@ -31,7 +31,7 @@ Dieses Thema baut auf dem Thema [Spracherkennung](speech-recognition.md) auf.
 
 Sie sollten über Grundkenntnisse in den Bereichen Spracherkennung und Erkennungseinschränkungen verfügen.
 
-Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
+Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-Plattform) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 
 -   [Erste App erstellen](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).

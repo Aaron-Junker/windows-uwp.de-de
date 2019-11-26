@@ -30,7 +30,7 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 | Aserbaidschanisch (Lateinisch) | az-Latn-AZ | Segoe UI |
 | Bangla (Bangladesch) | bn-BD | Nirmala UI |
 | Bangla (Indien) | bn-IN | Nirmala UI |
-| Baskisch (Baskenland) | eu-ES | Segoe UI |
+| Baskisch (Baskisch) | eu-ES | Segoe UI |
 | Belarussisch | be-BY | Segoe UI |
 | Bosnisch (Lateinisch) | bs-Latn-BA | Segoe UI |
 | Bulgarisch | bg-BG | Segoe UI |
@@ -131,5 +131,5 @@ In der folgenden Tabelle ist in der Spalte „Sprachtag” das [BCP-47-Sprachtag
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
-* [Supported languages](../../publish/supported-languages.md)
+* [Bcp-47-Sprachtag](https://tools.ietf.org/html/bcp47)
+* [Unterstützte Sprachen](../../publish/supported-languages.md)

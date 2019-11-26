@@ -815,7 +815,7 @@ await Windows.Storage.FileIO.WriteTextAsync
 ```
 <a id="read-protected" />
 
-### <a name="read-the-protected-part-of-a-file"></a>Lesen Sie den geschützten Teil einer Datei
+### <a name="read-the-protected-part-of-a-file"></a>Lesen Sie den geschützten Teil einer Datei.
 
 Hier wird beschrieben, wie die Unternehmensdaten aus der Datei gelesen werden würde.
 
@@ -896,7 +896,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 
 <a id="protect-folder" />
 
-### <a name="protect-data-to-a-folder"></a>Schützen Sie Daten in einem Ordner
+### <a name="protect-data-to-a-folder"></a>Schützen Sie Daten in einem Ordner.
 
 Sie können einen Ordner erstellen und diesen schützen. Auf diese Weise sind alle Elemente, die Sie zu diesem Ordner hinzufügen, automatisch geschützt.
 
@@ -931,7 +931,7 @@ Stellen Sie sicher, dass der Ordner leer ist, bevor Sie ihn schützen. Es ist ni
 
 <a id="protect-network" />
 
-### <a name="protect-data-to-a-network-end-point"></a>Schützen Sie Daten in einem Netzwerkendpunkt
+### <a name="protect-data-to-a-network-end-point"></a>Schützen Sie Daten in einem Netzwerkendpunkt.
 
 Erstellen Sie einen geschützten Threadkontext zum Senden von Daten an einen Unternehmensendpunkt.  
 
@@ -985,7 +985,7 @@ else
 
 <a id="protect-share" />
 
-### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>Schützen Sie Daten, die Ihre App über einen Freigabe-Vertrag teilt
+### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>Schützen Sie Daten, die Ihre App über einen Freigabe-Vertrag teilt.
 
 Wenn Benutzer Inhalt aus Ihrer App freigeben sollen, müssen Sie einen Freigabe-Vertrag implementieren und das Ereignis [**DataTransferManager.DataRequested**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) behandeln.
 

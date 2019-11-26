@@ -51,7 +51,7 @@ Die Abrechnung über den Mobilfunkanbieter wird aktuell von den folgenden Mobilf
 | Türkei               | Turkcell                                                |
 | Vereinigte Arabische Emirate | Etisalat                                                |
 | USA        | Sprint, Verizon                                         |
-| Großbritannien       | O2, 3 UK, EE                                            |
+| Vereinigtes Königreich       | O2, 3 UK, EE                                            |
 
  
 

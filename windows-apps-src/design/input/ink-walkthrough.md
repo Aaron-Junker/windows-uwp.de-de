@@ -15,7 +15,7 @@ ms.locfileid: "74258398"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>Lernprogramm: Unterstützen von Freihandeingaben in Ihrer UWP-App
 
-![Surface Pen](images/ink/ink-hero-small.png)  
+![Oberflächen Stift](images/ink/ink-hero-small.png)  
 *Surface Pen* (zum Kauf im [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b) verfügbar).
 
 Dieses Lernprogramm zeigt Ihnen, wie Sie eine einfachen Universelle Windows-Plattform-App (UWP-App) erstellen, die das Schreiben und Zeichnen mit Windows Ink unterstützt. Wir verwenden Ausschnitte aus einer Beispiel-App, die Sie von GitHub herunterladen können (unter [Beispielcode](#sample-code)), um die in den einzelnen Schritten erläuterten, verschiedenen Features und zugehörigen Windows Ink-APIs (siehe [Komponenten der Windows-Freihandplattform](#components-of-the-windows-ink-platform)) zu veranschaulichen.
@@ -36,12 +36,12 @@ Mit Windows Ink können Sie Ihren Kunden fast alle erdenklichen schriftlichen Er
 ## <a name="prerequisites"></a>Voraussetzungen
 
 * Einen Computer (oder einen virtuellen Computer) mit der aktuellen Version von Windows 10.
-* [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
+* [Visual Studio 2019 und das RS2 SDK](https://developer.microsoft.com/windows/downloads)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Abhängig von Ihrer Konfiguration müssen Sie möglicherweise das nuget-Paket [Microsoft. Netcore. universalwindowsplatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) installieren und den **Entwicklermodus** in Ihren Systemeinstellungen aktivieren (Einstellungen-> Update & Security-> für Entwickler, > Entwickler Features verwenden).
 * Wenn Sie noch keine Erfahrung mit der App-Entwicklung in der Universellen Windows-Plattform (UWP) mit Visual Studio haben, werfen Sie einen Blick in diese Themen, bevor Sie dieses Lernprogramm starten:  
     * [Vorbereiten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Erstellen einer "Hello, World"-app (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 * **[OPTIONAL]** Ein digitaler Stift und ein Computer mit einer Anzeige, die die Eingaben eines digitalen Stifts unterstützt.
 
 > [!NOTE] 
@@ -53,7 +53,7 @@ In diesem Lernprogramm verwenden wir eine Beispiels-App für die Freihandeingabe
 Laden Sie dieses Visual Studio-Beispiel und den Quellecode von [GitHub](https://github.com/) unter [Windows-Appsample-Erste-Schritte-Freihandbeispiel](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink) herunter:
 
 1. Wählen Sie die grüne **Klonen oder herunterladen**-Schaltfläche aus  
-![Cloning the repo](images/ink/ink-clone.png)
+![Klonen des Repository](images/ink/ink-clone.png)
 2. Wenn Sie ein GitHub-Konto haben, können Sie das Repository auf Ihrem lokalen Computer mit der Option **In Visual Studio öffnen** klonen. 
 3. Wenn Sie kein GitHub-Konto haben, oder wenn Sie einfach eine lokale Kopie des Projekts möchten, wählen Sie **Herunterladen der ZIP-Datei** (Sie müssen regelmäßig auf neues Updates prüfen)
 
@@ -66,9 +66,9 @@ Diese Objekte bieten den Großteil der Freihandfunktionen für UWP-Apps.
 
 | Komponente | Beschreibung |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | A XAML UI platform control that, by default, receives and displays all input from a pen as either an ink stroke or an erase stroke. |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Ein XAML-UI-Steuerelement, das standardmäßig alle Eingaben von einem Stift entweder als frei Hand Strich oder als Lösch Strich empfängt und anzeigt. |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Ein CodeBehind-Objekt, das zusammen mit einem [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement instanziiert wird (über die [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)-Eigenschaft verfügbar gemacht). Dieses Objekt stellt alle Standardfreihandfunktionen bereit, die vom [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)-Steuerelement zur Verfügung gestellt werden, sowie einen umfassenden Satz von APIs für zusätzliche Anpassung und Personalisierung. |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | A XAML UI platform control containing a customizable and extensible collection of buttons that activate ink-related features in an associated [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas). |
+| [**Inktoolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Ein XAML-UI-Platt Form Steuerelement, das eine anpassbare und erweiterbare Auflistung von Schaltflächen enthält, die frei Hand Funktionen in einem zugeordneten [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)aktivieren. |
 | [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Diese Funktionalität wird von uns hier nicht erläutert. Weitere Informationen finden Sie unter [Komplexes Freihandbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk). | Ermöglicht das Rendern von Freihandstrichen im angegebenen Direct2D-Gerätekontext einer universellen Windows-App statt im standardmäßigen [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement. |
 
 ## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
@@ -80,7 +80,7 @@ Nachdem Sie die RadialController-Beispiel-App heruntergeladen haben, stellen Sie
 
    > [!NOTE]
    > Alternativ können Sie **Debuggen** > **Debuggen starten** Menüelement auswählen, oder wählen Sie die hier dargestellte Ausführungsschaltfläche für die **Lokale Maschine** aus.
-   > ![Visual Studio Build project button](images/ink/ink-vsrun-small.png)
+   > ![Visual Studio-Schaltfläche "Projekt erstellen"](images/ink/ink-vsrun-small.png)
 
 Das App-Fenster wird geöffnet und nach einem Begrüßungsbildschirm wird der Startbildschirm angezeigt.
 
@@ -112,7 +112,7 @@ Um einfaches Freihandzeichen hinzuzufügen, platzieren Sie einfach ein [**InkCan
 ```
 
 4. Öffnen Sie die Datei „MainPage.xaml“.
-5. Find the code marked with the title of this step ("\<!-- Step 2: Basic inking with InkCanvas -->").
+5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("\<!--Schritt 2: grundlegender Einzug mit InkCanvas-->").
 6. Entfernen Sie aus der folgenden Zeile die Kommentare.  
 
 ``` xaml
@@ -165,7 +165,7 @@ Um eine standardmäßige [**InkToolbar**](https://docs.microsoft.com/uwp/api/win
 
 ### <a name="in-the-sample"></a>Im Beispiel
 1. Öffnen Sie die Datei „MainPage.xaml“.
-2. Find the code marked with the title of this step ("\<!-- Step 4: Add an ink toolbar -->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("\<!--Schritt 4: Hinzufügen einer frei Handsymbol Leiste-->").
 3. Entfernen Sie die Kommentare aus den folgenden Zeilen.  
 
 ``` xaml
@@ -213,13 +213,13 @@ In diesem Schritt verwenden wir die Handschrifterkennungsfunktionen von Windows 
 > Die Handschrifterkennung kann anhand der **Stift & Windows Ink**-Einstellungen verbessert werden:
 > 1. Öffnen Sie das Startmenü und wählen Sie **Einstellungen** aus.
 > 2. Wählen Sie auf dem Bildschirm „Einstellungen” **Geräte** > **Stift & Windows Ink**.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-small.png)
+> ![Sie "inktoolbar" aus](images/ink/ink-settings-small.png) dem ""
 > 3. Wählen Sie **Meine Handschrift erkennen**, um das Dialogfeld **Handschriftanpassung** zu öffnen.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![Sie "inktoolbar" aus](images/ink/ink-settings-handwritingpersonalization-small.png) dem ""
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei „MainPage.xaml“.
-2. Find the code marked with the title of this step ("\<!-- Step 5: Support handwriting recognition -->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("\<!--Schritt 5: unterstützen Sie die Handschrifterkennung-->").
 3. Entfernen Sie die Kommentare aus den folgenden Zeilen.  
 
 ``` xaml
@@ -335,7 +335,7 @@ Anhand einer Freihandeingabenanalyse kann Ihre App auch eine Reihe von Kernforme
 - Parallelogramm
 - Richtungspfeil
 - Viereckig
-- Rectangle
+- Rechteck
 - Rechtes Dreieck
 - Quadrat
 - Trapez
@@ -347,7 +347,7 @@ In diesem Beispiel werden wir nicht, Freihandstriche nachzuzeichnen (obwohl dies
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei „MainPage.xaml“
-2. Find the code marked with the title of this step ("\<!-- Step 6: Recognize shapes -->")
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("\<!--Schritt 6: Erkennen von Formen-->")
 3. Löschen Sie die Kommentare in dieser Zeile.  
 
 ``` xaml
@@ -402,7 +402,7 @@ In diesem Schritt verknüpfen wir die Schaltflächen **Speichern** und **Laden**
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei „MainPage.xaml“.
-2. Find the code marked with the title of this step ("\<!-- Step 7: Saving and loading ink -->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("\<!--Schritt 7: Speichern und Laden von frei Hand Eingaben->").
 3. Entfernen Sie die Kommentare aus den folgenden Zeilen. 
 
 ``` xaml
@@ -468,15 +468,15 @@ Herzlichen Glückwunsch, Sie haben das Lernprogramm **Eingaben: Unterstützen vo
 
 ### <a name="samples"></a>Beispiele
 
-* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
-* [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [Save and load ink strokes from the clipboard](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
-* [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
-* [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
-* [Simple ink sample (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
-* [Complex ink sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
-* [Ink sample (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Get Started Tutorial: Support ink in your UWP app](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
-* [Coloring book sample](https://github.com/Microsoft/Windows-appsample-coloringbook)
-* [Family notes sample](https://github.com/Microsoft/Windows-appsample-familynotes)
+* [Ink-Analyse-Beispiel (BasicC#) ()](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [Handschrift Erkennungs Beispiel (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+* [Speichern und Laden von Hand Strichen aus einer ISF-Datei (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [Speichern und Laden von Hand Strichen aus der Zwischenablage](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [Symbolleisten-Speicherort und-Ausrichtung (Beispiel) (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
+* [Symbolleisten-Speicherort und-Ausrichtung Beispiel (dynamisch)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
+* [Einfaches Ink-BeispielC#(C++/)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [Complex Ink Sample (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [Ink-Beispiel (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Tutorial zu den ersten Schritten: Unterstützung von frei Hand Eingaben in ihrer UWP](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [Beispiel für ein Farb Buch](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [Beispiel für Familien Notizen](https://github.com/Microsoft/Windows-appsample-familynotes)

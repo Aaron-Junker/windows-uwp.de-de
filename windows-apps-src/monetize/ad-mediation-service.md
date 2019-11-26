@@ -28,7 +28,7 @@ Der Anzeigenvermittlungsdienst wird in eine Vielzahl von Anzeigennetzwerken übe
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>Verwalten der Komplexität von Anzeigennetzwerkbeziehungen  
 
-Der Anzeigenvermittlungsdienst ist in eine Vielzahl von Anzeigennetzwerken integriert, sodass Sie diese Arbeit nicht übernehmen müssen. After you use the Microsoft Advertising SDK to display ads in your app, you can modify your ad mediation settings [in Partner Center](../publish/in-app-ads.md#mediation-settings) to display ads from multiple ad networks. Sie profitieren davon, Anzeigen aus neuen Anzeigennetzwerken abrufen zu können, ohne Änderungen an Ihrem Code vorzunehmen.
+Der Anzeigenvermittlungsdienst ist in eine Vielzahl von Anzeigennetzwerken integriert, sodass Sie diese Arbeit nicht übernehmen müssen. Nachdem Sie das Microsoft Advertising SDK zum Anzeigen von anzeigen in der APP verwendet haben, können Sie Ihre AD-Vermittlungs Einstellungen [im Partner Center](../publish/in-app-ads.md#mediation-settings) ändern, um Werbeanzeigen aus mehreren Ad-Netzwerken anzuzeigen. Sie profitieren davon, Anzeigen aus neuen Anzeigennetzwerken abrufen zu können, ohne Änderungen an Ihrem Code vorzunehmen.
 
 Wir verwalten die End-to-End-Beziehung mit den Anzeigennetzwerken in Ihrem Auftrag. Wir kümmern uns um alles von der Anzeigennetzwerkintegration bis zur Bereitstellung von Anzeigen, der Berichterstellung und den Auszahlungen ohne zusätzlichen Aufwand von Ihrer Seite.
 
@@ -47,7 +47,7 @@ Der Anzeigenvermittlungsdienst ist darauf ausgelegt, die höchste Rentabilität 
 
 Neue Anzeigennetzwerke werden automatisch eingefügt und über ein lernendes Budget auf ihre Leistung bewertet. Innerhalb kurzer Zeit finden sie Ihren Platz im Wasserfall. Damit werden die Anzeigennetzwerke wettbewerbsfähiger, und es trägt außerdem dazu bei, dass der Entwickler die Monetarisierung durch Apps optimal nutzt.
 
-Es wird dringend empfohlen, unsere [empfohlenen Vermittlungseinstellungen](../publish/in-app-ads.md#mediation-settings) zu verwenden, um den Umsatz durch Anzeigen in Ihren Apps zu maximieren. Dadurch können unsere Algorithmen,die beste Rentabilität für Ihre App ermöglichen. However, you also have the freedom to choose your own mediation settings in Partner Center to have more control over the ad networks that serve ads and the order in which they do.
+Es wird dringend empfohlen, unsere [empfohlenen Vermittlungseinstellungen](../publish/in-app-ads.md#mediation-settings) zu verwenden, um den Umsatz durch Anzeigen in Ihren Apps zu maximieren. Dadurch können unsere Algorithmen,die beste Rentabilität für Ihre App ermöglichen. Sie haben jedoch auch die Möglichkeit, ihre eigenen Vermittlungs Einstellungen in Partner Center auszuwählen, um mehr Kontrolle über die Ad-Netzwerke zu erhalten, die Werbeeinblendungen und die Reihenfolge ihrer Aufgaben erfüllen.
 
 ## <a name="rich-data-and-signals"></a>Umfangreiche Daten und Signale
 
@@ -56,5 +56,5 @@ Der Anzeigenvermittlungsdienst arbeitet mit verschiedenen Anzeigennetzwerken zus
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
-* [Mediation settings](../publish/in-app-ads.md#mediation-settings)
+* [Vermittlungs Einstellungen](../publish/in-app-ads.md#mediation-settings)
 * [Bericht zur Anzeigenleistung](../publish/advertising-performance-report.md)

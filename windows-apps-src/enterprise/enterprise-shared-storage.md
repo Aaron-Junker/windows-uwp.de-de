@@ -4,7 +4,7 @@ title: Im Unternehmen freigegebener Speicher
 description: Im Unternehmen freigegebener Speicher definiert lokale Datenspeicherorte für Branchenanwendungen zum Freigeben von Daten.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 05a646979977bca5c19be2efe3f8bec12994cb19
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1

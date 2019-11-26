@@ -41,9 +41,9 @@ Wenn Benutzer die Registrierung ihres Geräts im MDM-System der Organisation auf
 
 ![WIP-Lebenszyklus](images/wip-lifecycle.png)
 
-> **Read more about WIP** <br>
-* [Introducing Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Protect your enterprise data using Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+> **Weitere Informationen zu WIP** <br>
+* [Einführung in Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
+* [Schützen von Unternehmensdaten mithilfe von Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
 
 Wenn Ihre App auf der Liste der zugelassenen Apps steht, unterliegen alle von der App erstellten Daten den Einschränkungen der Richtlinien. Das bedeutet: Wenn Administratoren den Zugriff des Benutzers auf Unternehmensdaten widerrufen, geht dem Benutzer der Zugriff auf alle Daten verloren, die Ihre App erstellt hat.
 
@@ -61,11 +61,11 @@ Beispiel: Wenn die Richtlinie Benutzern erlaubt, Unternehmensdaten in einem priv
 
 Wenn Sie bereit sind, die App zu optimieren, sehen Sie sich eines dieser Handbücher an:
 
-**For Universal Windows Platform (UWP) apps that you build by using C#**
+**Für universelle Windows-Plattform-Apps (UWP), die Sie mithilfe von erstellen.C#**
 
 [Entwicklerhandbuch für Windows Information Protection (WIP)](wip-dev-guide.md)
 
-**For Desktop apps that you build by using C++**
+**Für Desktop-Apps, die Sie mithilfe von erstellen.C++**
 
 [Entwicklerhandbuch für Windows Information Protection (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN)
 

@@ -26,7 +26,7 @@ Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2019 inte
 
 ## <a name="how-to-use-the-toolkit"></a>So verwenden Sie das Toolkit
 
-### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Schritt 1 Entwerfen Sie Ihre App im Hinblick auf Globalisierung und Lokalisierung.
+### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Schritt 1. Entwerfen Sie Ihre App im Hinblick auf Globalisierung und Lokalisierung.
 
 Bevor Sie MAT effektiv nutzen können, muss Ihre App lokalisierbar sein. Insbesondere sollten zu Ihrem Projekt eine oder mehrere Ressourcendateien (.resw) gehören, die die Zeichenfolgen Ihrer App in der Standardsprache enthalten. Details dazu finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](../../app-resources/localize-strings-ui-manifest.md). Sobald Sie damit fertig sind, können mit dem Toolkit zusätzliche Sprachen schnell und einfach hinzugefügt werden.
 
@@ -34,7 +34,7 @@ Die Vorteile von Globalisierung und Lokalisierung sowie die Begriffe &mdash;Glob
 
 Siehe auch [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) und [App lokalisierbar machen](prepare-your-app-for-localization.md).
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Schritt 2 Laden Sie das Multilingual App Toolkit 4.0 herunter, und installieren Sie es.
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Schritt 2. Laden Sie das Multilingual App Toolkit 4.0 herunter, und installieren Sie es.
 
 Das Multilingual App Toolkit 4.0 (MAT) besteht aus zwei Teilen. Zu jedem Teil gehört ein eigenes Installationsprogramm.
 
@@ -43,7 +43,7 @@ Das Multilingual App Toolkit 4.0 (MAT) besteht aus zwei Teilen. Zu jedem Teil ge
 
 Wenn Sie Visual Studio 2017 oder Visual Studio 2019 verwenden, laden Sie beide Installer herunter, und führen Sie Sie nacheinander aus. Wenn Sie Visual Studio 2015 oder Visual Studio 2013 verwenden, laden Sie das MSI-Installationsprogramm herunter und führen es aus.
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Schritt 3 Aktivieren Sie das Multilingual App Toolkit für Ihr Projekt
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Schritt 3. Aktivieren Sie das Multilingual App Toolkit für Ihr Projekt
 
 Bevor Sie mit der Lokalisierung der App beginnen können, muss das MAT für Ihr Projekt aktiviert werden. So aktivieren Sie das Toolkit:
 
@@ -53,7 +53,7 @@ Bevor Sie mit der Lokalisierung der App beginnen können, muss das MAT für Ihr 
 
 Warten Sie, bis im Ausgabefenster (das die Ausgabe des Multilingual App Toolkit enthält) die Nachricht `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>` angezeigt wird. Sobald diese Meldung erscheint, kann MAT verwendet werden.
 
-### <a name="step-4-add-languages-to-your-project"></a>Schritt 4 Fügen Sie Ihrem Projekt Sprachen hinzu.
+### <a name="step-4-add-languages-to-your-project"></a>Schritt 4. Fügen Sie Ihrem Projekt Sprachen hinzu.
 
 Führen Sie die folgenden Schritte aus, um Ihrem Projekt Sprachen hinzuzufügen.
 
@@ -75,7 +75,7 @@ Im Dialogfeld "Übersetzungssprachen" wird für alle vorhandenen XLF-basierten S
 
 Sobald eine Sprache zum Projekt hinzugefügt wurde, kann sie nicht einfach dadurch entfernt werden, dass Sie das Kontrollkästchen im Dialogfeld „Übersetzungssprachen” deaktivieren. Klicken Sie zum Entfernen einer Sprache mit der rechten Maustaste auf die sprachspezifische XLF-Datei, und wählen Sie **Löschen**. Nach Ihrer Bestätigung wird auch die zugehörige Ressourcendatei (.resw) gelöscht.
 
-### <a name="step-5-test-your-app-using-pseudo-language"></a>Schritt 5 Testen Sie Ihre App mit Pseudosprache.
+### <a name="step-5-test-your-app-using-pseudo-language"></a>Schritt 5. Testen Sie Ihre App mit Pseudosprache.
 
 Pseudosprache ist eine künstliche Modifikation des Softwareprodukts, die eine echte Sprachlokalisierung simulieren soll, aber für Muttersprachler lesbar bleibt. Bei einer Pseudoübersetzung werden Zeichen ersetzt und die Länge der Ressourcenzeichenfolge erweitert, um mögliche Lokalisierungsprobleme oder Fehler früh im Projektzyklus und vor Beginn der Lokalisierung zu erkennen.
 
@@ -154,7 +154,7 @@ Sie und Ihre Übersetzer können den Status von Übersetzungen im Mehrsprachen-E
 
 Erstellen Sie Ihr Projekt neu, um zu bewirken, dass die übersetzten Zeichenfolgen in die Ressourcendatei (.resw) kopiert werden, die der gerade bearbeiteten XLF-Datei entspricht.
 
-### <a name="step-7-upload-your-app-to-the-microsoft-store"></a>Schritt 7 Laden Sie Ihre App in den Microsoft Store hoch.
+### <a name="step-7-upload-your-app-to-the-microsoft-store"></a>Schritt 7. Laden Sie Ihre App in den Microsoft Store hoch.
 
 Vor dem Start des Zertifizierungsprozesses für den Microsoft Store müssen Sie die Datei `<project-name>.qps-ploc.xlf` aus dem Projekt entfernen. Zum Ermitteln potenzieller Lokalisierungsprobleme oder -fehler wird Pseudosprache verwendet. Diese ist jedoch keine gültige Sprache für den Microsoft Store. Falls sie nicht entfernt wird, tritt beim Zertifizierungsprozess für den Microsoft Store ein Fehler auf.
 

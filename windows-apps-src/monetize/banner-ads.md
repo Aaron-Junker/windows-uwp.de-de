@@ -24,12 +24,12 @@ Banneranzeigen sind statische Anzeigen von Werbung, die einen rechteckigen Teil 
 
 |  Thema    | Beschreibung |               
 |----------|-------|
-| [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | Hinzufügen eines Werbebanners in einer XAML-/.NET-App        |
-| [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | Hinzufügen eines Werbebanners in einer HTML5-/JavaScript-App        |
-| [Supported banner ad sizes](supported-ad-sizes-for-banner-ads.md)    |  Prüfen Sie die für Werbebanner und UWP-Apps unterstützten Größen.        |
+| [Adcontrol in XAML und .net](adcontrol-in-xaml-and--net.md)     | Hinzufügen eines Werbebanners in einer XAML-/.NET-App        |
+| [Adcontrol in HTML 5 und JavaScript](adcontrol-in-html-5-and-javascript.md)     | Hinzufügen eines Werbebanners in einer HTML5-/JavaScript-App        |
+| [Unterstützte Banner-Werbe Größen](supported-ad-sizes-for-banner-ads.md)    |  Prüfen Sie die für Werbebanner und UWP-Apps unterstützten Größen.        |
 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Anzeigenbeispiele auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
-* [Set up ad units for your app](set-up-ad-units-in-your-app.md)
+* [Einrichten von Ad-Einheiten für Ihre APP](set-up-ad-units-in-your-app.md)

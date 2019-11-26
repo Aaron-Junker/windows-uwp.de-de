@@ -1,7 +1,7 @@
 ---
-title: Werbekampagnenbericht
+title: Werbekampagnen-Bericht
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: The Ad campaign report in Partner Center lets you see how your app promotion ad campaigns are performing.
+description: Mit dem AD-Kampagnenbericht in Partner Center können Sie sehen, wie Ihre Werbeaktionen für die APP-herauf Stufung durchgeführt werden.
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, bewerben, App, Kampagnen, Bericht, Installationen
@@ -13,9 +13,9 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74260063"
 ---
-# <a name="ad-campaign-report"></a>Werbekampagnenbericht
+# <a name="ad-campaign-report"></a>Werbekampagnen-Bericht
 
-The **Ad campaign** report in [Partner Center](https://partner.microsoft.com/dashboard) lets you see how your app promotion [ad campaigns](create-an-ad-campaign-for-your-app.md) are performing. To see the report, expand **Attract** in the left navigation menu and select **Ad campaigns**.
+Mit dem **Ad-Kampagnen** Bericht in [Partner Center](https://partner.microsoft.com/dashboard) können Sie sehen, wie Ihre [Werbeaktionen](create-an-ad-campaign-for-your-app.md) für die APP-herauf Stufung durchgeführt werden. Um den Bericht anzuzeigen **, erweitern Sie** im linken Navigationsmenü die Option anzeigen, und wählen Sie **Werbekampagnen**aus.
 
 ## <a name="definitions"></a>Definitionen
 
@@ -48,7 +48,7 @@ Sie können jeweils Leistungsdaten für bis zu sechs verschiedene Anzeigenkampag
 
 ## <a name="install-tracking"></a>Nachverfolgung von Installationen
 
-Running an install ad campaign through Partner Center provides much-needed exposure to advertise your apps. Anzeigenaufrufe werden Kunden angezeigt, die ein hohes Interesse an der App haben. Diese Kunden klicken auf die Anzeige und installieren die App aus dem Store. Vorher war es schwierig zu unterscheiden, ob die Installationen das Ergebnis einer Anzeigenkampagne waren oder auf andere Weise zustande gekommen sind.
+Das Ausführen einer AD-Werbekampagne über das Partner Center bietet eine sehr erforderliche Verfügbarkeit, um Ihre apps ankündigen zu können. Anzeigenaufrufe werden Kunden angezeigt, die ein hohes Interesse an der App haben. Diese Kunden klicken auf die Anzeige und installieren die App aus dem Store. Vorher war es schwierig zu unterscheiden, ob die Installationen das Ergebnis einer Anzeigenkampagne waren oder auf andere Weise zustande gekommen sind.
 
 Dieser Bericht zeigt, wie viele Installationen Sie mit Ihren Anzeigenkampagnen erzielt haben. Dies umfasst nur Downloads, die das direkte Ergebnis Ihrer Anzeigenkampagnen sind, und schließt alle anderen Downloadquellen aus.
 
@@ -67,7 +67,7 @@ Eine Installation per Handy, Tablet, PC oder andere Windows 10-Geräte wird im S
 2.  Der Kunde hat sich mit einem Microsoft-Konto angemeldet.
 3.  Der Kunde erfüllt die [COPPA](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule)- Anforderungen (Kunden, die die COPPA-Anforderungen nicht erfüllen, können nicht nachverfolgt werden).
 
-Folglich kann es dazu kommen, dass die Nachverfolgung der App-Installationen nicht die exakte Anzahl von Installationen ergibt, die durch eine Anzeigenkampagne generiert werden. Please note that you can view the total number of installs for an app (through campaigns and otherwise) in the [Acquisitions](acquisitions-report.md) report in Partner Center.
+Folglich kann es dazu kommen, dass die Nachverfolgung der App-Installationen nicht die exakte Anzahl von Installationen ergibt, die durch eine Anzeigenkampagne generiert werden. Beachten Sie, dass Sie die Gesamtanzahl der Installationen für eine APP (über Kampagnen und anderweitig) im Bericht über [Käufe](acquisitions-report.md) im Partner Center anzeigen können.
 
 
 ## <a name="account-billing-history"></a>Verlauf der Rechnungsstellung für das Konto
@@ -80,7 +80,7 @@ Sie können den Verlauf der Rechnungsstellung für Ihr Konto auch als Microsoft 
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+* [Erstellen einer Werbekampagne für Ihre APP](create-an-ad-campaign-for-your-app.md)
 
  
 

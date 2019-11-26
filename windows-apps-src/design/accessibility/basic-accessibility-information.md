@@ -6,7 +6,7 @@ label: Expose basic accessibility information
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d39d2f094dd85c29b51a19e1affcf0d292183ede
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -32,7 +32,7 @@ In der folgenden Tabelle wird beschrieben, wie Sie für verschiedene Elementtype
 | Elementtyp | Beschreibung |
 |--------------|-------------|
 | Statischer Text | Für [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) und [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)-Elemente wird automatisch anhand des sichtbaren (inneren) Textes ein Name zur Verwendung durch Screenreader-Software bestimmt. Der gesamte Text im Element wird als Name verwendet. Siehe [Name aus innerem Text](#name_from_inner_text). |
-| Abbilder | Das XAML-Element [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) verfügt nicht über ein direktes Gegenstück zum **alt**-HTML-Attribut von **img** und ähnlichen Elementen. Verwenden Sie zum Bereitstellen eines Namens die [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft oder das Untertitelverfahren. Siehe [Namen zur Verwendung durch Bildschirmleseprogramme für Bilder](#images). |
+| Bilder | Das XAML-Element [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) verfügt nicht über ein direktes Gegenstück zum **alt**-HTML-Attribut von **img** und ähnlichen Elementen. Verwenden Sie zum Bereitstellen eines Namens die [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft oder das Untertitelverfahren. Siehe [Namen zur Verwendung durch Bildschirmleseprogramme für Bilder](#images). |
 | Formularelemente | Bei einem Formularelement sollte der Name zur Verwendung durch Screenreader-Software mit der Bezeichnung identisch sein, die für das Element angezeigt wird. Siehe [Bezeichnungen und „LabeledBy“](#labels). |
 | Schaltflächen und Links | Standardmäßig basiert der Name zur Verwendung durch Screenreader-Software einer Schaltfläche oder eines Links auf dem sichtbaren Text, wobei ebenfalls die unter [Name aus innerem Text](#name_from_inner_text) beschriebenen Regeln angewendet werden. Verwenden Sie in Fällen, in denen eine Schaltfläche nur ein Bild enthält, die [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft, um eine reine Textentsprechung für die Schaltflächenaktion bereitzustellen. |
 
@@ -64,7 +64,7 @@ Standardmäßig werden alle von der [**Control**](https://docs.microsoft.com/uwp
 ## <a name="name-from-inner-text"></a>Name aus innerem Text  
 Damit bereits in der sichtbaren Benutzeroberfläche vorhandene Zeichenfolgen leichter als Namen zur Verwendung durch Screenreader-Software genutzt werden können, unterstützen die meisten Steuerelemente und anderen UI-Elemente die automatische Bestimmung eines standardmäßigen Namens zur Verwendung durch Screenreader-Software. Dabei basiert der Name auf dem inneren Text im Element oder auf Zeichenfolgenwerten von Inhaltseigenschaften.
 
-* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) and **RichTextBlock** each promote the value of the **Text** property as the default accessible name.
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [**richtextblock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) und **richtextblock** Stufen jeweils den Wert der **Text** -Eigenschaft als den standardmäßigen zugänglichen Namen herauf.
 * Jegliche [**ContentControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Unterklassen verwenden eine iterative „ToString“-Technik, um Zeichenfolgen im [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Wert zu finden. Sie unterstützen diese Zeichenfolgen als standardmäßigen Namen für Screenreader-Programme.
 
 > [!NOTE]
@@ -134,7 +134,7 @@ Der Name zur Verwendung durch Screenreader-Software soll keine vollständige Bes
 ## <a name="testing-accessibility-early-and-often"></a>Frühzeitiges und häufiges Testen der Barrierefreiheit  
 Der beste Ansatz beim Implementieren der Unterstützung der Sprachausgabe besteht letztlich darin, die App selbst mit einer Sprachausgabe zu testen. So können Sie sehen, wie sich die Sprachausgabe verhält und welche grundlegenden Barrierefreiheitsinformationen in der App fehlen. Anschließend können Sie die Benutzeroberfläche oder Eigenschaftswerte der Benutzeroberflächenautomatisierung entsprechend anpassen. Weitere Informationen finden Sie unter [Barrierefreiheitstests](accessibility-testing.md).
 
-Eines der Tools, das Sie zum Testen der Barrierefreiheit verwenden können, heißt **AccScope**. Das Tool **AccScope** ist besonders nützlich, weil Sie visuelle Darstellungen Ihrer UI anzeigen können, mit denen anhand einer Automatisierungsstruktur verdeutlicht wird, wie Ihre App mit Hilfstechnologie angezeigt wird. Es ist beispielsweise ein Sprachausgabemodus vorhanden, in dem Sie sehen, wie die Sprachausgabe Text aus der App abruft und die Elemente in der UI organisiert. AccScope ist so konzipiert, dass das Tool während des gesamten Entwicklungszyklus einer App verwendet werden kann und nützlich ist. Dies gilt auch für die Phase des vorläufigen Entwurfs. Weitere Informationen finden Sie unter [AccScope](https://docs.microsoft.com/windows/desktop/WinAuto/accscope).
+Eines der Tools, das Sie zum Testen der Barrierefreiheit verwenden können, heißt **EH-Viewer**. Das Tool **AccScope** ist besonders nützlich, weil Sie visuelle Darstellungen Ihrer UI anzeigen können, mit denen anhand einer Automatisierungsstruktur verdeutlicht wird, wie Ihre App mit Hilfstechnologie angezeigt wird. Es ist beispielsweise ein Sprachausgabemodus vorhanden, in dem Sie sehen, wie die Sprachausgabe Text aus der App abruft und die Elemente in der UI organisiert. AccScope ist so konzipiert, dass das Tool während des gesamten Entwicklungszyklus einer App verwendet werden kann und nützlich ist. Dies gilt auch für die Phase des vorläufigen Entwurfs. Weitere Informationen finden Sie unter [AccScope](https://docs.microsoft.com/windows/desktop/WinAuto/accscope).
 
 <span id="Accessible_names_from_dynamic_data"/>
 <span id="accessible_names_from_dynamic_data"/>
@@ -157,5 +157,5 @@ Beachten Sie, dass angefügte Eigenschaften, z. B. die [**AutomationProperties*
 ## <a name="related-topics"></a>Verwandte Themen  
 * [Bedienungshilfen](accessibility.md)
 * [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
-* [XAML accessibility sample](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML-Barrierefreiheits Beispiel](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [Testen der Barrierefreiheit](accessibility-testing.md)

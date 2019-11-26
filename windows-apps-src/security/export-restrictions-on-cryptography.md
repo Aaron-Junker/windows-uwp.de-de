@@ -51,7 +51,7 @@ Beachten Sie, dass einige Verwendungsarten von Kryptografie nicht eingeschränkt
 
 -   Kennwortverschlüsselung
 -   Kopierschutz
--   Authentication
+-   Authentifizierung
 -   Verwaltung digitaler Rechte (DRM)
 -   Verwendung digitaler Signaturen
 

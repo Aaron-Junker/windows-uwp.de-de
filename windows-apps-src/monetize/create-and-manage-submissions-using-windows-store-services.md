@@ -1,6 +1,6 @@
 ---
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
-description: Use the Microsoft Store submission API to programmatically create and manage submissions for apps that are registered to your Partner Center account.
+description: Verwenden Sie die Microsoft Store Übermittlungs-API, um Übermittlungen für apps zu erstellen und zu verwalten, die bei Ihrem Partner Center-Konto registriert sind.
 title: Erstellen und Verwalten von Übermittlungen
 ms.date: 06/04/2018
 ms.topic: article
@@ -15,7 +15,7 @@ ms.locfileid: "74260317"
 ---
 # <a name="create-and-manage-submissions"></a>Erstellen und Verwalten von Übermittlungen
 
-Use the *Microsoft Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Partner Center account. Diese API ist hilfreich, wenn über Ihr Konto viele Apps oder Add-Ons verwaltet werden und Sie den Übermittlungsprozess für diese Ressourcen automatisieren und optimieren möchten. Diese API verwendet Azure Active Directory (Azure AD), um die Aufrufe von Ihrer App oder Ihrem Dienst zu authentifizieren.
+Verwenden Sie die Microsoft Store Übermittlungs- *API* , um Übermittlungen für apps, Add-ons und Paket Flüge für das Partner Center-Konto Ihrer Organisation Programm gesteuert abzufragen und zu erstellen. Diese API ist hilfreich, wenn über Ihr Konto viele Apps oder Add-Ons verwaltet werden und Sie den Übermittlungsprozess für diese Ressourcen automatisieren und optimieren möchten. Diese API verwendet Azure Active Directory (Azure AD), um die Aufrufe von Ihrer App oder Ihrem Dienst zu authentifizieren.
 
 Die folgenden Schritte beschreiben den gesamten Prozess der Verwendung der Microsoft Store-Übermittlungs-API:
 
@@ -26,13 +26,13 @@ Die folgenden Schritte beschreiben den gesamten Prozess der Verwendung der Micro
 <span id="not_supported" />
 
 > [!IMPORTANT]
-> If you use this API to create a submission for an app, package flight, or add-on, be sure to make further changes to the submission only by using the API, rather than in Partner Center. If you use Partner Center to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In einigen Fällen kann der Fehlerstatus der Übermittlung belassen werden, mit dem die Übermittlung nicht fortgesetzt werden kann. In diesem Fall müssen Sie die Übermittlung löschen und eine neue Übermittlung erstellen.
+> Wenn Sie diese API verwenden, um eine Übermittlung für eine APP, einen paketflug oder ein Add-on zu erstellen, stellen Sie sicher, dass Sie weitere Änderungen an der Übermittlung nur mithilfe der API anstelle von Partner Center vornehmen. Wenn Sie Partner Center verwenden, um eine Übermittlung zu ändern, die Sie ursprünglich mit der API erstellt haben, können Sie diese Übermittlung nicht mehr mithilfe der API ändern oder ein Commit dafür durchführen. In einigen Fällen kann der Fehlerstatus der Übermittlung belassen werden, mit dem die Übermittlung nicht fortgesetzt werden kann. In diesem Fall müssen Sie die Übermittlung löschen und eine neue Übermittlung erstellen.
 
 > [!IMPORTANT]
-> Sie können mit dieser API weder Übermittlungen für [Volumeneinkäufe über den Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen](../publish/organizational-licensing.md) veröffentlichen noch Übermittlungen für [Branchenanwendungen](../publish/distribute-lob-apps-to-enterprises.md) direkt an Unternehmen. For both of these scenarios, you must use publish the submission in Partner Center.
+> Sie können mit dieser API weder Übermittlungen für [Volumeneinkäufe über den Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen](../publish/organizational-licensing.md) veröffentlichen noch Übermittlungen für [Branchenanwendungen](../publish/distribute-lob-apps-to-enterprises.md) direkt an Unternehmen. Für beide Szenarien müssen Sie veröffentlichen der Übermittlung im Partner Center verwenden.
 
 > [!NOTE]
-> Diese API kann nicht mit Apps oder Add-Ons verwendet werden, die obligatorische App-Updates und über den Store verwaltete Add-Ons verwenden. Bei Verwendung der Microsoft Store-Übermittlungs-API mit einer App oder einem Add-On, das eines dieser Features verwendet, gibt die API den Fehlercode 409 zurück. In this case, you must use Partner Center to manage the submissions for the app or add-on.
+> Diese API kann nicht mit Apps oder Add-Ons verwendet werden, die obligatorische App-Updates und über den Store verwaltete Add-Ons verwenden. Bei Verwendung der Microsoft Store-Übermittlungs-API mit einer App oder einem Add-On, das eines dieser Features verwendet, gibt die API den Fehlercode 409 zurück. In diesem Fall müssen Sie Partner Center zum Verwalten der Übermittlungen für die APP oder das Add-on verwenden.
 
 <span id="prerequisites" />
 
@@ -40,15 +40,15 @@ Die folgenden Schritte beschreiben den gesamten Prozess der Verwendung der Micro
 
 Stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllt haben, bevor Sie mit dem Schreiben von Code zum Aufrufen der Microsoft Store-Übermittlungs-API beginnen:
 
-* Sie (bzw. Ihre Organisation) müssen über ein Azure AD-Verzeichnis und die Berechtigung [Globaler Administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis verfügen. Wenn Sie bereits mit Office 365 oder anderen Business Services von Microsoft arbeiten, verfügen Sie schon über ein Azure AD-Verzeichnis. Otherwise, you can [create a new Azure AD in Partner Center](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) for no additional charge.
+* Sie (bzw. Ihre Organisation) müssen über ein Azure AD-Verzeichnis und die Berechtigung [Globaler Administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis verfügen. Wenn Sie bereits mit Office 365 oder anderen Business Services von Microsoft arbeiten, verfügen Sie schon über ein Azure AD-Verzeichnis. Andernfalls können Sie [eine neue Azure AD im Partner Center erstellen](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) , ohne dass zusätzliche Kosten anfallen.
 
-* You must [associate an Azure AD application with your Partner Center account](#associate-an-azure-ad-application-with-your-windows-partner-center-account) and obtain your tenant ID, client ID and key. Sie benötigen diese Werte, um ein Azure AD-Zugriffstoken abzurufen, das Sie in Aufrufen von der Microsoft Store-Übermittlungs-API verwenden.
+* Sie müssen [Ihrem Partner Center-Konto eine Azure AD Anwendung zuordnen](#associate-an-azure-ad-application-with-your-windows-partner-center-account) und ihre Mandanten-ID, Client-ID und den dazugehörigen Schlüssel abrufen. Sie benötigen diese Werte, um ein Azure AD-Zugriffstoken abzurufen, das Sie in Aufrufen von der Microsoft Store-Übermittlungs-API verwenden.
 
 * Bereiten Sie Ihre App für die Verwendung mit der Microsoft Store-Übermittlungs-API vor:
 
-  * If your app does not yet exist in Partner Center, you must [create your app by reserving its name in Partner Center](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it. Sie können jedoch mithilfe der API Add-Ons und Flight-Pakete programmgesteuert erstellen, bevor Sie Übermittlungen für sie erstellen.
+  * Wenn Ihre APP noch nicht im Partner Center vorhanden ist, müssen Sie [Ihre APP erstellen, indem Sie Ihren Namen im Partner Center reservieren](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). Sie können die Microsoft Store Übermittlungs-API nicht zum Erstellen einer APP in Partner Center verwenden. Sie müssen im Partner Center arbeiten, um es zu erstellen. Anschließend können Sie die API verwenden, um auf die APP zuzugreifen und Übermittlungen für die APP Programm gesteuert zu erstellen. Sie können jedoch mithilfe der API Add-Ons und Flight-Pakete programmgesteuert erstellen, bevor Sie Übermittlungen für sie erstellen.
 
-  * Before you can create a submission for a given app using this API, you must first [create one submission for the app in Partner Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions), including answering the [age ratings](https://docs.microsoft.com/windows/uwp/publish/age-ratings) questionnaire. Danach können Sie neue Übermittlungen für diese App mithilfe der API programmgesteuert erstellen. Sie müssen keine Add-On-Übermittlung oder Flight-Paketübermittlung vor der Verwendung der API für diese Arten von Übermittlungen erstellen.
+  * Bevor Sie mithilfe dieser API eine Übermittlung für eine bestimmte app erstellen können, müssen Sie zunächst [eine Übermittlung für die APP im Partner Center erstellen](https://docs.microsoft.com/windows/uwp/publish/app-submissions), einschließlich der Beantwortung der [Alters Bewertungs](https://docs.microsoft.com/windows/uwp/publish/age-ratings) frafrafrage. Danach können Sie neue Übermittlungen für diese App mithilfe der API programmgesteuert erstellen. Sie müssen keine Add-On-Übermittlung oder Flight-Paketübermittlung vor der Verwendung der API für diese Arten von Übermittlungen erstellen.
 
   * Wenn Sie eine App-Übermittlung erstellen oder aktualisieren und ein App-Paket angeben müssen, [bereiten Sie das App-Paket vor](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements).
 
@@ -58,16 +58,16 @@ Stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllt haben, bevor
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
-### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>How to associate an Azure AD application with your Partner Center account
+### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>Zuordnen einer Azure AD Anwendung zu Ihrem Partner Center-Konto
 
-Before you can use the Microsoft Store submission API, you must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. Die Azure AD-Anwendung stellt die App oder den Dienst dar, aus denen Sie die Microsoft Store-Übermittlungs-API aufrufen möchten. Sie benötigen die Mandanten-ID, die Client-ID und den Schlüssel zum Abrufen eines Azure-AD-Zugriffstokens, das Sie an die API übergeben.
+Bevor Sie die Microsoft Store Übermittlungs-API verwenden können, müssen Sie Ihrem Partner Center-Konto eine Azure AD Anwendung zuordnen, die Mandanten-ID und die Client-ID für die Anwendung abrufen und einen Schlüssel generieren. Die Azure AD-Anwendung stellt die App oder den Dienst dar, aus denen Sie die Microsoft Store-Übermittlungs-API aufrufen möchten. Sie benötigen die Mandanten-ID, die Client-ID und den Schlüssel zum Abrufen eines Azure-AD-Zugriffstokens, das Sie an die API übergeben.
 
 > [!NOTE]
 > Sie müssen diesen Schritt nur einmal ausführen. Wenn Sie im Besitz der Mandanten-ID, der Client-ID und des Schlüssel sind, können Sie diese Daten jederzeit wiederverwenden, um ein neues Azure AD-Zugriffstoken zu erstellen.
 
-1.  In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-partner-center.md).
+1.  Ordnen Sie in Partner Center das [Partner Center-Konto Ihrer Organisation dem Azure AD-Verzeichnis Ihrer Organisation zu](../publish/associate-azure-ad-with-partner-center.md).
 
-2.  Next, from the **Users** page in the **Account settings** section of Partner Center, [add the Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) that represents the app or service that you will use to access submissions for your Partner Center account. Weisen Sie dieser Anwendung anschließend die Rolle **Verwalter** zu. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).  
+2.  Fügen Sie als nächstes auf der Seite " **Benutzer** " im Abschnitt " **Kontoeinstellungen** " von Partner Center [die Azure AD Anwendung hinzu](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account) , die die APP oder den Dienst darstellt, die Sie für den Zugriff auf Einsendungen für Ihr Partner Center-Konto verwenden. Weisen Sie dieser Anwendung anschließend die Rolle **Verwalter** zu. Wenn die Anwendung noch nicht in Ihrem Azure AD Verzeichnis vorhanden ist, können Sie [eine neue Azure AD Anwendung im Partner Center erstellen](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).  
 
 3.  Wechseln Sie zurück zur Seite **Benutzer**, klicken Sie auf den Namen der Azure AD-Anwendung, um die Anwendungseinstellungen aufzurufen, und kopieren Sie die Werte unter **Mandanten-ID** und **Client-ID**.
 
@@ -92,7 +92,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. Für den Parameter *resource* müssen Sie ```https://manage.devcenter.microsoft.com``` angeben.
+Geben Sie für den Mandanten *\_ID* -Wert im Post-URI und die Parameter " *Client\_ID* " und " *Client\_Secret* " die Mandanten-ID, die Client-ID und den Schlüssel für die Anwendung an, die Sie im vorherigen Abschnitt aus Partner Center abgerufen haben. Für den Parameter *resource* müssen Sie ```https://manage.devcenter.microsoft.com``` angeben.
 
 Nachdem das Zugriffstoken abgelaufen ist, können Sie es aktualisieren, indem Sie [diese Anleitung](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens) befolgen.
 
@@ -109,9 +109,9 @@ Nachdem Sie ein Azure AD-Zugriffstoken abgerufen haben, können Sie Methoden in
 
 | Szenario       | Beschreibung                                                                 |
 |---------------|----------------------------------------------------------------------|
-| Apps |  Retrieve data for all the apps that are registered to your Partner Center account and create submissions for apps. Weitere Informationen zu diesen Methoden finden Sie in den folgenden Artikeln: <ul><li>[Get app data](get-app-data.md)</li><li>[Manage app submissions](manage-app-submissions.md)</li></ul> |
-| Add-Ons | Rufen Sie Add-Ons für Ihre Apps ab, erstellen oder löschen Sie diese, und rufen Sie dann Übermittlungen für die Add-Ons ab, erstellen oder löschen Sie diese. Weitere Informationen zu diesen Methoden finden Sie in den folgenden Artikeln: <ul><li>[Manage add-ons](manage-add-ons.md)</li><li>[Manage add-on submissions](manage-add-on-submissions.md)</li></ul> |
-| Flight-Pakete | Rufen Sie Flight-Pakete für Ihre Apps ab, erstellen oder löschen Sie diese, und rufen Sie dann Übermittlungen für die Flight-Pakete ab, erstellen oder löschen Sie diese. Weitere Informationen zu diesen Methoden finden Sie in den folgenden Artikeln: <ul><li>[Manage package flights](manage-flights.md)</li><li>[Manage package flight submissions](manage-flight-submissions.md)</li></ul> |
+| Apps |  Rufen Sie Daten für alle apps ab, die bei Ihrem Partner Center-Konto registriert sind, und erstellen Sie Übermittlungen für apps. Weitere Informationen zu diesen Methoden finden Sie in den folgenden Artikeln: <ul><li>[App-Daten erhalten](get-app-data.md)</li><li>[App-Übermittlungen verwalten](manage-app-submissions.md)</li></ul> |
+| Add-Ons | Rufen Sie Add-Ons für Ihre Apps ab, erstellen oder löschen Sie diese, und rufen Sie dann Übermittlungen für die Add-Ons ab, erstellen oder löschen Sie diese. Weitere Informationen zu diesen Methoden finden Sie in den folgenden Artikeln: <ul><li>[Verwalten von Add-ons](manage-add-ons.md)</li><li>[Verwalten von Add-on-Einsendungen](manage-add-on-submissions.md)</li></ul> |
+| Flight-Pakete | Rufen Sie Flight-Pakete für Ihre Apps ab, erstellen oder löschen Sie diese, und rufen Sie dann Übermittlungen für die Flight-Pakete ab, erstellen oder löschen Sie diese. Weitere Informationen zu diesen Methoden finden Sie in den folgenden Artikeln: <ul><li>[Verwalten von Paket Flügen](manage-flights.md)</li><li>[Verwalten von Übermittlungen von Paketen](manage-flight-submissions.md)</li></ul> |
 
 <span id="code-samples"/>
 
@@ -119,12 +119,12 @@ Nachdem Sie ein Azure AD-Zugriffstoken abgerufen haben, können Sie Methoden in
 
 Die folgenden Artikel enthalten ausführliche Codebeispiele, die zeigen, wie Sie die Microsoft Store-Übermittlungs-API in verschiedenen Programmiersprachen verwenden können:
 
-* [C# sample: submissions for apps, add-ons, and flights](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [C# sample: app submission with game options and trailers](csharp-code-examples-for-submissions-game-options-and-trailers.md)
-* [Java sample: submissions for apps, add-ons, and flights](java-code-examples-for-the-windows-store-submission-api.md)
-* [Java sample: app submission with game options and trailers](java-code-examples-for-submissions-game-options-and-trailers.md)
-* [Python sample: submissions for apps, add-ons, and flights](python-code-examples-for-the-windows-store-submission-api.md)
-* [Python sample: app submission with game options and trailers](python-code-examples-for-submissions-game-options-and-trailers.md)
+* [C#Beispiel: Einreichungen für apps, Add-ons und Flüge](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [C#Beispiel: App-Übermittlung mit Spieloptionen und-Nachspann](csharp-code-examples-for-submissions-game-options-and-trailers.md)
+* [Java-Beispiel: Einreichungen für apps, Add-ons und Flüge](java-code-examples-for-the-windows-store-submission-api.md)
+* [Java-Beispiel: App-Übermittlung mit Spieloptionen und-Nachspann](java-code-examples-for-submissions-game-options-and-trailers.md)
+* [Python-Beispiel: Übermittlungen für apps, Add-ons und Flüge](python-code-examples-for-the-windows-store-submission-api.md)
+* [Python-Beispiel: App-Übermittlung mit Spieloptionen und-Nachspann](python-code-examples-for-submissions-game-options-and-trailers.md)
 
 ## <a name="storebroker-powershell-module"></a>StoreBroker PowerShell-Modul
 
@@ -132,7 +132,7 @@ Als Alternative zum direkten Aufruf der Microsoft Store-Übermittlungs-API stell
 
 Weitere Informationen finden Sie auf unserer [StoreBroker-Seite auf GitHub](https://github.com/Microsoft/StoreBroker).
 
-## <a name="troubleshooting"></a>Fehlerbehebung
+## <a name="troubleshooting"></a>Problembehandlung
 
 | Problem      | Auflösung                                          |
 |---------------|---------------------------------------------|
@@ -143,13 +143,13 @@ Weitere Informationen finden Sie auf unserer [StoreBroker-Seite auf GitHub](http
 Wenn Sie Fragen zur Microsoft Store-Übermittlungs-API haben oder Hilfe beim Verwalten der Übermittlungen mit dieser API benötigen, verwenden Sie die folgenden Ressourcen:
 
 * Stellen Sie Ihre Fragen in unseren [Foren](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit).
-* Visit our [support page](https://developer.microsoft.com/windows/support) and request one of the assisted support options for Partner Center. Wenn Sie aufgefordert werden, einen Problemtyp und eine Kategorie auszuwählen, wählen Sie **App submission and certification** bzw. **Übermitteln einer App**.  
+* Besuchen Sie unsere [Supportseite](https://developer.microsoft.com/windows/support) , und fordern Sie eine der unterstützten Supportoptionen für Partner Center an. Wenn Sie aufgefordert werden, einen Problemtyp und eine Kategorie auszuwählen, wählen Sie **App submission and certification** bzw. **Übermitteln einer App**.  
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Get app data](get-app-data.md)
-* [Manage app submissions](manage-app-submissions.md)
-* [Manage add-ons](manage-add-ons.md)
-* [Manage add-on submissions](manage-add-on-submissions.md)
-* [Manage package flights](manage-flights.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
+* [App-Daten erhalten](get-app-data.md)
+* [App-Übermittlungen verwalten](manage-app-submissions.md)
+* [Verwalten von Add-ons](manage-add-ons.md)
+* [Verwalten von Add-on-Einsendungen](manage-add-on-submissions.md)
+* [Verwalten von Paket Flügen](manage-flights.md)
+* [Verwalten von Übermittlungen von Paketen](manage-flight-submissions.md)

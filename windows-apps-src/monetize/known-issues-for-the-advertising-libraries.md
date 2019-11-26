@@ -17,8 +17,8 @@ ms.locfileid: "74260245"
 
 Erfahren Sie in diesem Thema mehr über bekannte Probleme mit der aktuellen Version des Microsoft Advertising-SDKs. Weitere Erläuterungen zur Problembehandlung finden Sie unter folgenden Themen.
 
-* [HTML and JavaScript troubleshooting guide](html-and-javascript-troubleshooting-guide.md)
-* [XAML and C# troubleshooting guide](xaml-and-c-troubleshooting-guide.md)
+* [Handbuch zur Problembehandlung für HTML und JavaScript](html-and-javascript-troubleshooting-guide.md)
+* [Leitfaden für XAML und C# Problembehandlung](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>AdControl-Schnittstelle in XAML nicht bekannt
 
@@ -40,13 +40,13 @@ Wenn Sie vor kurzem (weniger als einem Tag) eine Anzeige erstellt haben, ist die
 
 Es gibt viele Gründe, warum möglicherweise keine Anzeigen angezeigt werden, einschließlich Netzwerkfehlern. Andere Gründe können sein:
 
-* Selecting an ad unit in Partner Center with a size that is greater or less than the size of the **AdControl** in your app's code.
+* Wählen Sie eine Ad-Einheit im Partner Center mit einer Größe aus, die größer oder kleiner als die Größe der **adcontrol** im Code Ihrer APP ist.
 
 * Anzeigen werden nicht angezeigt, wenn Sie einen [Testmoduswert](set-up-ad-units-in-your-app.md#test-ad-units) für Ihre Anzeigeneinheiten-ID verwenden, wenn eine Live-App ausgeführt wird.
 
 * Wenn Sie in der letzten halben Stunde eine neue Anzeigeneinheiten-ID erstellt haben, wird eine Anzeige möglicherweise erst angezeigt, wenn der Server neue Daten durch das System propagiert hat. Vorhandene IDs, die zuvor bereits Anzeigen angezeigt haben, sollten Anzeigen sofort anzeigen.
 
-Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/en-us/windows/support). On that page, choose **Contact us**.
+Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/en-us/windows/support). Wählen Sie auf dieser Seite die Option **kontaktieren Sie uns**.
 
 Sie können auch im [Forum](https://go.microsoft.com/fwlink/?LinkID=401264) eine Frage stellen.
 
@@ -58,7 +58,7 @@ Testanzeigen können angezeigt werden, auch wenn Sie Liveanzeigen erwarten. Dies
 
 * Quergeladene Apps oder im Emulator ausgeführte Apps zeigen keine Liveanzeigen an.
 
-When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Partner Center. Dies gilt zurzeit nicht für Telefon-Apps.
+Wenn eine aktive Ad-Einheit Test anzeigen bedient, wird der Status der Ad-Einheit aktiv angezeigt, und es werden **Test anzeigen** in Partner Center bedient. Dies gilt zurzeit nicht für Telefon-Apps.
 
 
 <span id="reference_errors"/>
@@ -67,7 +67,7 @@ When a live ad unit is serving test ads, the ad unit’s status shows **Active a
 
 Wenn Sie die Microsoft Advertising-SDK verwenden, können Sie in Ihrem Projekt als Ziel nicht **Any CPU** angeben. Wenn Ihr Projekt auf die Plattform **Any CPU** ausgerichtet ist, wird Ihnen möglicherweise eine Warnung angezeigt, nachdem Sie einen Verweis wie diesen hinzugefügt haben.
 
-![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![ReferenceError\-SolutionExplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 Um diese Warnung zu entfernen, müssen Sie eine architekturspezifische Buildausgabe verwenden (beispielsweise **x86**) und das Projekt entsprechend aktualisieren. Verwenden Sie den **Konfigurations-Manager**, um die Plattformziele für Debug- und Releasekonfigurationen festzulegen.
 

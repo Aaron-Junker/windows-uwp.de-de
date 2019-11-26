@@ -19,6 +19,6 @@ Hier erfahren Sie, wie Sie Ihre DirectX-App für die universelle Windows-Plattfo
 
 |Thema|Beschreibung|
 |-|-|
-|[How to activate an app](how-to-activate-an-app-directx-and-cpp.md)|In diesem Thema erfahren Sie, wie Sie die Aktivierungsbenutzeroberfläche für eine DirectX-App für die universelle Windows-Plattform (UWP) definieren.|
-|[How to suspend an app](how-to-suspend-an-app-directx-and-cpp.md)|In diesem Thema wird gezeigt, wie wichtige Systemzustände und App-Daten gespeichert werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) anhält.|
-|[How to resume an app](how-to-resume-an-app-directx-and-cpp.md)|In diesem Thema erfahren Sie, wie wichtige Anwendungsdaten wiederhergestellt werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) fortsetzt.|
+|[Aktivieren einer APP](how-to-activate-an-app-directx-and-cpp.md)|In diesem Thema erfahren Sie, wie Sie die Aktivierungsbenutzeroberfläche für eine DirectX-App für die universelle Windows-Plattform (UWP) definieren.|
+|[Aussetzen einer APP](how-to-suspend-an-app-directx-and-cpp.md)|In diesem Thema wird gezeigt, wie wichtige Systemzustände und App-Daten gespeichert werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) anhält.|
+|[Fortsetzen einer APP](how-to-resume-an-app-directx-and-cpp.md)|In diesem Thema erfahren Sie, wie wichtige Anwendungsdaten wiederhergestellt werden, wenn das System Ihre DirectX-App für die universelle Windows-Plattform (UWP) fortsetzt.|

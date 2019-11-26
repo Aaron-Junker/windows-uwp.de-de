@@ -1,6 +1,6 @@
 ---
 Description: Hier erfahren Sie, wie Sie die UI Ihrer App beim Ein- oder Ausblenden der Touch-Bildschirmtastatur anpassen können.
-title: Reagieren auf die Anzeige der Bildschirmtastatur
+title: Reagieren auf das Vorhandensein der Bildschirmtastatur
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
@@ -14,7 +14,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258278"
 ---
-# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Reagieren auf die Anzeige der Bildschirmtastatur
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Reagieren auf das Vorhandensein der Bildschirmtastatur
 
 Hier erfahren Sie, wie Sie die UI Ihrer App beim Ein- oder Ausblenden der Touch-Bildschirmtastatur anpassen können.
 
@@ -23,7 +23,7 @@ Hier erfahren Sie, wie Sie die UI Ihrer App beim Ein- oder Ausblenden der Touch-
 - [AutomationPeer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
 - [InputPane](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane)
 
-![Touch-Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
+![Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
 
 <sup>Die Touchscreen-Tastatur im standardlayoutmodus</sup>
 
@@ -39,7 +39,7 @@ Dieses Thema baut auf [Tastaturinteraktionen](keyboard-interactions.md) auf.
 
 Sie sollten über ein grundlegendes Verständnis der standardmäßigen Tastaturinteraktionen, das Behandeln von Tastatureingaben und Ereignissen und der Benutzeroberflächenautomatisierung verfügen.
 
-Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-App) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
+Wenn Sie noch keine Erfahrung mit der Entwicklung von UWP-Apps (Universelle Windows-Plattform) haben, sollten Sie sich in den folgenden Themen zunächst mit den hier besprochenen Technologien vertraut machen.
 
 - [Erste App erstellen](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
@@ -64,7 +64,7 @@ Im Folgenden finden Sie einige grundlegende Empfehlungen für benutzerdefinierte
 
     Wenn Sie die Benutzeroberfläche anpassen, sollten Sie ein ähnliches Verhalten für die Darstellung der Fingereingabe Tastatur bereitstellen, indem Sie die [Anzeige](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) [und das](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) Ausblenden von Ereignissen verarbeiten, die durch das [**inputpane**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) -Objekt
 
-    ![Formular mit und ohne angezeigte Bildschirmtastatur](images/touch-keyboard-pan1.png)
+    ![Formular mit und ohne angezeigte Touch-Bildschirmtastatur](images/touch-keyboard-pan1.png)
 
     Manchmal müssen bestimmte UI-Elemente dauerhaft auf dem Bildschirm zu sehen sein. Gestalten Sie die UI so, dass sich die Formularsteuerelemente in einer verschiebbaren Region befinden und die wichtigen UI-Elemente statisch sind. Zum Beispiel:
 

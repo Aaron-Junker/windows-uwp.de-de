@@ -15,7 +15,7 @@ ms.locfileid: "74254520"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 
-In diesem Thema wird das allgemeine Konzept der Ressourcenqualifizierer erläutert, wie sie verwendet werden und wozu die einzelnen Qualifizierernamen dienen. Eine Referenztabelle für die verschiedenen Qualifiziererwerte finden Sie unter [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
+In diesem Thema wird das allgemeine Konzept der Ressourcenqualifizierer erläutert, wie sie verwendet werden und wofür die einzelnen Qualifizierernamen dienen. Eine Referenztabelle für die verschiedenen Qualifiziererwerte finden Sie unter [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues).
 
 Ihre App kann Assets und Ressourcen laden, die für Runtime-Kontexte wie Anzeigesprache, hoher Kontrast [Skalierungsfaktor des Displays](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor) und mehr zugeschnitten sind. Das erreichen Sie unter anderem durch das Benennen des Ressourcen-Ordners oder der Dateien mit dem Namen des Qualifizierers und den Qualifiziererwerten, die diesen Kontexten entsprechen. Beispielsweise können Sie für Ihre App einen anderen Satz von Bildressourcen laden, wenn sie in einem Modus mit hohem Kontrast ausgeführt wird.
 
@@ -29,7 +29,7 @@ Ein Qualifizierername ist ein Schlüssel, der einer Reihe von Qualifiziererwerte
 | :--------------- | :--------------- | :--------------- |
 | Einstellung für hohen Kontrast | Kontrast | Standard, hoch, schwarz, weiß |
 
-Kombinieren Sie einen Qualifizierernamen mit einem Qualifiziererwert, um einen Qualifizierer zu bilden. `<qualifier name>-<qualifier value>` is the format of a qualifier. `contrast-standard` is an example of a qualifier.
+Kombinieren Sie einen Qualifizierernamen mit einem Qualifiziererwert, um einen Qualifizierer zu bilden. `<qualifier name>-<qualifier value>` ist das Format eines Qualifizierers. `contrast-standard` ist ein Beispiel für einen Qualifizierer.
 
 Für hohen Kontrast ist der Satz von Qualifizierern `contrast-standard`, `contrast-high`, `contrast-black` und `contrast-white`. Bei Qualifizierernamen und Qualifiziererwerten wird die Groß-/Kleinschreibung nicht beachtet. Beispielsweise: `contrast-standard` und `Contrast-Standard` sind die gleiche Qualifizierer.
 
@@ -102,7 +102,7 @@ Eine weitere Möglichkeit ist, mehrere Qualifizierer in einem Ordnernamen zu kom
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
-Kombinieren Sie in einem Ordnernamen mehrere Qualifizierer und trennen Sie diese mit einem Unterstrich. `<qualifier1>[_<qualifier2>...]` is the format.
+Kombinieren Sie in einem Ordnernamen mehrere Qualifizierer und trennen Sie diese mit einem Unterstrich. `<qualifier1>[_<qualifier2>...]` ist das Format.
 
 Sie können mehrere Qualifizierer in einem Dateinamen im selben Format kombinieren.
 
@@ -261,34 +261,34 @@ Weitere Informationen zum Qualifizieren einer Ressource für `scale` und `target
 Der Qualifizierer `theme` wird verwendet, um Ressourcen bereitzustellen, die am besten mit der Standardeinstellung für den App-Modus übereinstimmen oder mit der Überschreibung durch [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme).
 
 
-## <a name="shell-light-theme-and-unplated-resources"></a>Shell light theme and unplated resources
-The *Windows 10 May 2019 Update* introduced a new "light" theme for the Windows Shell. As a result, some application assets that were previously shown on a dark background will now be shown on a light background. For apps that apps that provided altform-unplated assets for the taskbar and window switchers (Alt+Tab, Task View, etc), you should verify that they have acceptable contrast on a light background.
+## <a name="shell-light-theme-and-unplated-resources"></a>Shell Light-Design und nicht geplatzte Ressourcen
+Das *Windows 10-Update von Mai 2019* hat ein neues "Light"-Design für die Windows-Shell eingeführt. Folglich werden einige Anwendungs Ressourcen, die zuvor in einem dunklen Hintergrund angezeigt wurden, nun in einem hellen Hintergrund angezeigt. Für apps, die apps bereitstellen, die für die Taskleiste und die Fenster Switcher (Alt + Tab, Aufgaben Ansicht usw.) in altform Geschützte Assets bereitgestellt haben, sollten Sie überprüfen, ob Sie einen akzeptablen Kontrast in einem hellen Hintergrund haben.
 
-### <a name="providing-light-theme-specific-assets"></a>Providing light theme specific assets
-Apps that want to provide a tailored resource for shell light theme can use a new alternate form resource qualifier: `altform-lightunplated`. This qualifier mirrors the existing altform-unplated qualifier. 
+### <a name="providing-light-theme-specific-assets"></a>Bereitstellen von Design spezifischen Ressourcen
+Apps, die eine angepasste Ressource für das Shell Light-Design bereitstellen möchten, können einen neuen alternativen Formular Ressourcen Qualifizierer verwenden: `altform-lightunplated`. Dieser Qualifizierer spiegelt den vorhandenen, in altform ungebundenen Qualifizierer wider. 
 
-### <a name="downlevel-considerations"></a>Downlevel considerations
-Apps should not use the `theme-light` qualifier with the `altform-unplated` qualifier. This will cause unpredictable behavior on RS5 and earlier versions of Windows due to the way resources are loaded for the Taskbar. On earlier versions of windows, the theme-light version may be used incorrectly. The `altform-lightunplated` qualifier avoids this issue. 
+### <a name="downlevel-considerations"></a>Überlegungen zu downlevels
+Apps sollten nicht den `theme-light` Qualifizierer mit dem `altform-unplated` Qualifizierer verwenden. Dies führt zu unvorhersehbarem Verhalten bei RS5 und früheren Versionen von Windows aufgrund der Art und Weise, wie Ressourcen für die Taskleiste geladen werden. In früheren Versionen von Windows kann die Design-Light-Version falsch verwendet werden. Der `altform-lightunplated`-Qualifizierer vermeidet dieses Problem. 
 
-### <a name="compatibility-behavior"></a>Compatibility behavior
-For backwards compatibility, Windows includes logic to detect a monochromatic icons and check whether it contrasts with the intended background. If the icon fails to meet contrast requirements, Windows will look for a contrast-white version of the asset. If that’s not available, Windows will fall back to using the plated version of the asset.
+### <a name="compatibility-behavior"></a>Kompatibilitäts Verhalten
+Aus Gründen der Abwärtskompatibilität enthält Windows Logik, um ein Mono-Symbol zu erkennen und zu überprüfen, ob es mit dem vorgesehenen Hintergrund in Kontrast steht. Wenn das Symbol die Kontrast Anforderungen nicht erfüllt, wird in Windows nach der Kontrast weißen Version des Assets gesucht. Wenn dies nicht verfügbar ist, greift Windows auf die geplatzte Version des Assets zurück.
 
 
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
-* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
+* [Resourcecontext. qualifiervalues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
+* [Setglobalqualifiervalue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [Effektive Pixel und Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Ressourcenverwaltungssystem](resource-management-system.md)
-* [How to prepare for localization](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
-* [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [Localize your UI strings](localize-strings-ui-manifest.md)
-* [BCP-47](https://tools.ietf.org/html/bcp47)
-* [United Nations Statistic Division M49 composition of region codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
-* [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
+* [Vorbereiten der Lokalisierung](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
+* [Erkennen der Plattform, auf der Ihre APP ausgeführt wird](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [Übersicht über Gerätefamilien](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [Lokalisieren von UI-Zeichen folgen](localize-strings-ui-manifest.md)
+* [Bcp-47](https://tools.ietf.org/html/bcp47)
+* [Statistik Division der Vereinten Nationen M49 Komposition von Regions Codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [IANA-sprachsubtag-Registrierung](https://www.iana.org/assignments/language-subtag-registry)
 * [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

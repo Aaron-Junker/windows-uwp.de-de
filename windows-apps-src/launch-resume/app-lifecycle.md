@@ -56,7 +56,7 @@ Den vorherigen Zustand Ihrer App können Sie von der [LaunchActivatedEventArgs.P
 |**Closedbyuser** | Der Benutzer hat die App im Tablet-Modus mit der Geste zum Schließen oder mit ALT+F4 geschlossen. Wenn der Benutzer die App schließt, wird sie zunächst angehalten und anschließend beendet. | Da die App im Wesentlichen dieselben Phasen durchlaufen hat, die zum Zustand „Terminated“ führen, behandeln Sie sie genauso wie eine App im Zustand „Terminated“.|
 |**Wird ausgeführt** | Die App war bereits geöffnet, als der Benutzer versucht hat, sie erneut zu starten. | Nichts. Beachten Sie, dass keine weitere App-Instanz gestartet wird. Es wird einfach die bereits ausgeführte Instanz aktiviert. |
 
-**Hinweis**  *Aktuelle Benutzersitzung* basiert auf Windows-Anmeldung. Solange sich der aktuelle Benutzer nicht abgemeldet oder Windows heruntergefahren oder neu gestartet hat, bleibt die aktuelle Benutzersitzung unabhängig von bestimmten Ereignissen – wie Sperrbildschirmauthentifizierung, Benutzerwechsel usw. – bestehen. 
+**Hinweis:**   *Aktuelle Benutzersitzung* basiert auf der Windows-Anmeldung. Solange sich der aktuelle Benutzer nicht abgemeldet oder Windows heruntergefahren oder neu gestartet hat, bleibt die aktuelle Benutzersitzung unabhängig von bestimmten Ereignissen – wie Sperrbildschirmauthentifizierung, Benutzerwechsel usw. – bestehen. 
 
 Folgendes sollte unbedingt beachtet werden: Wenn das Gerät über genügend Ressourcen verfügt, startet das Betriebssystem häufig verwendete Apps, für die dieses Verhalten zulässig ist, vorab, um die Reaktionsfähigkeit zu verbessern. Eine vorab gestartete App wird Hintergrund gestartet und dann schnell angehalten. Bei Bedarf kann sie fortgesetzt werden, wodurch der Benutzer schneller darauf zugreifen kann als bei einem Start der App.
 
@@ -119,7 +119,7 @@ Weitere Details finden Sie unter [Reduzieren der Speicherverwendung, wenn die Ap
 
 ### <a name="save-your-state"></a>Speichern des Zustands
 
-Der Ereignishandler „Suspending“ ist die beste Möglichkeit, den App-Zustand zu speichern. Arbeiten Sie jedoch mit Prozessen im Hintergrund (z. B. in Gestalt einer Audiowiedergabe, einer erweiterten Ausführungssitzung oder einer In-Process-Hintergrundaufgabe), sollten Sie Ihre Daten außerdem asynchron im Ereignishandler **EnteredBackground** speichern. Das ist empfehlenswert, weil der Benutzer die App möglicherweise beendet, während sie sich im Hintergrund befindet. Und da die App in diesem Fall nicht den Zustand „Angehalten“ durchlaufen hat, gehen Ihre Daten verloren.
+Der Ereignishandler „Suspending“ ist die beste Möglichkeit, den App-Zustand zu speichern. Arbeiten Sie jedoch mit Prozessen im Hintergrund (z. B. in Gestalt einer Audiowiedergabe, einer erweiterten Ausführungssitzung oder einer In-Process-Hintergrundaufgabe), sollten Sie Ihre Daten außerdem asynchron im Ereignishandler **EnteredBackground** speichern. Das ist empfehlenswert, weil der Benutzer die App möglicherweise beendet, während sie sich im Hintergrund befindet. In diesem Fall würde die App den Zustand „Suspended“ nicht durchlaufen, und Ihre Daten würden verloren gehen.
 
 Wenn Sie die Daten vor dem Start der Hintergrundaktivität im Ereignishandler **EnteredBackground** speichern, ist eine optimale Benutzererfahrung gewährleistet, wenn der Benutzer die App zurück in den Vordergrund holt. Zum Speichern von Daten und Einstellungen können Sie die Anwendungsdaten-APIs verwenden. Weitere Informationen finden Sie unter [Speichern und Abrufen von Einstellungen und anderen App-Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
@@ -179,7 +179,7 @@ Allgemeine Richtlinien finden Sie unter [Richtlinien für das Anhalten und Forts
 
 ## <a name="app-close"></a>Schließen einer App
 
-Im Allgemeinen müssen Benutzer Apps nicht schließen, sondern können die Verwaltung Windows überlassen. Benutzer können Apps jedoch mit der Geste zum Schließen, durch Drücken von ALT+F4 oder mithilfe der Aufgabenumschaltfunktion in Windows Phone schließen.
+Im Allgemeinen müssen Benutzer Apps nicht schließen, sondern können deren Verwaltung Windows überlassen. Benutzer können Apps jedoch mit der Geste zum Schließen, durch Drücken von ALT+F4 oder mithilfe der Aufgabenumschaltfunktion in Windows Phone schließen.
 
 Es gibt kein Ereignis zum Angeben, dass der Benutzer die App geschlossen hat. Wenn eine App durch den Benutzer geschlossen wird, wird sie zuerst angehalten, damit Sie ihren Zustand speichern können. Wenn in Windows 8.1 und höher eine APP vom Benutzer geschlossen wurde, wird die APP aus dem Bildschirm entfernt, aber nicht explizit beendet.
 

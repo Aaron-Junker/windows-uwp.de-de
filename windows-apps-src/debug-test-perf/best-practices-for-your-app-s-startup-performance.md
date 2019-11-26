@@ -4,7 +4,7 @@ title: Bewährte Methoden für die Startleistung der App
 description: Erstellen Sie UWP-Apps (Universelle Windows-Plattform) mit optimalen Startzeiten, indem Sie die Vorgehensweise bei Start und Aktivierung optimieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -32,7 +32,7 @@ Sie sollten die Messungen natürlich so durchführen, dass die Messergebnisse de
 
 Im folgenden Verfahren wird beschrieben, wie Sie „Ngen.exe“ zum Vorkompilieren Ihrer App ausführen.
 
-**To run Ngen.exe**
+**So führen Sie "ngen. exe" aus**
 
 1.  Führen Sie Ihre App mindestens einmal aus, um sicherzustellen, dass Sie von „Ngen.exe“ erkannt wird.
 2.  Öffnen Sie die **Aufgabenplanung**, indem Sie eine der folgenden Aktionen ausführen:

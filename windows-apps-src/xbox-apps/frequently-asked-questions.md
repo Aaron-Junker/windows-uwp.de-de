@@ -3,7 +3,7 @@ title: Häufig gestellte Fragen
 description: Häufig gestellte Fragen zu UWP auf Xbox
 ms.date: 03/29/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: e134e64c441aececdc50b1ac868efeb2b31bd5e5
@@ -59,15 +59,15 @@ Weitere Informationen dazu, wie Sie das Entwicklerprogramm verlassen, finden Sie
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>Ich habe meine Xbox One verkauft und im Entwicklermodus belassen. Wie deaktiviere ich den Entwicklermodus?
 
-If you no longer have access to your Xbox One, you can deactivate it in Windows Partner Center. For details, see the **Deactivate your console using Partner Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-partner-center) topic. 
+Wenn Sie keinen Zugriff mehr auf Ihre Xbox One haben, können Sie Sie im Windows Partner Center deaktivieren. Weitere Informationen finden Sie im Abschnitt **Deaktivieren der Konsole mithilfe von Partner Center** des Themas [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-partner-center) . 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>I left the Developer Program using Partner Center but I'm in still Developer Mode. Wie gehe ich vor?
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>Ich habe das Entwicklerprogramm mit Partner Center verlassen, bin aber im Entwicklermodus. Wie gehe ich vor?
 
 Starten Sie Dev Home, und wählen Sie die Schaltfläche **Leave developer mode** aus. Dadurch wird die Konsole im Einzelhandelsmodus neu gestartet. 
 
 ### <a name="can-i-publish-my-app"></a>Kann ich meine App veröffentlichen?
 
-You can [publish apps](../publish/index.md) through Partner Center if you have a [developer account](https://developer.microsoft.com/store/register). Die auf einer Xbox One im Einzelhandelsmodus erstellten und getesteten UWP-Apps durchlaufen denselben Aufnahme-, Überprüfungs- und Veröffentlichungsprozess, den Windows heutzutage durchführt. Mithilfe zusätzlicher Überprüfungen werden die aktuellen Xbox One-Standards erfüllt.
+Wenn Sie über ein [Entwicklerkonto](https://developer.microsoft.com/store/register)verfügen, können Sie Apps über Partner Center [veröffentlichen](../publish/index.md) . Die auf einer Xbox One im Einzelhandelsmodus erstellten und getesteten UWP-Apps durchlaufen denselben Aufnahme-, Überprüfungs- und Veröffentlichungsprozess, den Windows heutzutage durchführt. Mithilfe zusätzlicher Überprüfungen werden die aktuellen Xbox One-Standards erfüllt.
 
 ### <a name="can-i-publish-my-game"></a>Kann ich mein Spiel veröffentlichen?
 
@@ -117,6 +117,6 @@ TVHelpers ist ein Satz von JavaScript- und XAML-/C#-Beispielen und -Bibliotheken
 Weitere Informationen finden Sie im Projekt [TVHelpers](https://github.com/Microsoft/TVHelpers) und im Projekt [wiki](https://github.com/Microsoft/TVHelpers/wiki).
 
 ## <a name="see-also"></a>Weitere Informationen:
-- [Known issues with UWP on Xbox One](known-issues.md)
+- [Bekannte Probleme mit UWP auf Xbox One](known-issues.md)
 - [UWP auf Xbox One](index.md)
 - [UWP auf Xbox One](index.md)

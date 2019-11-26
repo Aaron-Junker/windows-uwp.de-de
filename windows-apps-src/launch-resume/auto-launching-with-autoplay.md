@@ -1,6 +1,6 @@
 ---
-title: Automatisches Starten mit automatischer Wiedergabe
-description: Sie können die automatische Wiedergabe verwenden, um Ihre App als Option bereitzustellen, wenn ein Benutzer ein Gerät an seinen PC anschließt. Hierzu zählen andere Geräte als Volumegeräte, wie Kameras oder Medienplayer, oder Volumegeräte wie USB-Sticks, SD-Karten oder DVDs.
+title: Automatischer Start mit Automatischer Wiedergabe
+description: Sie können die automatische Wiedergabe verwenden, um Ihre App als Option bereitzustellen, wenn ein Benutzer ein Gerät an seinen PC anschließt. Hierzu zählen Nicht-Volumegeräte wie Kameras oder Media Player und Volumegeräte wie USB-Sticks, SD-Karten oder DVDs.
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.date: 02/08/2017
 ms.topic: article
@@ -15,7 +15,7 @@ ms.locfileid: "74259465"
 ---
 # <a name="span-iddev_launch_resumeauto-launching_with_autoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Automatischer Start mit Autoplay
 
-Sie können die **automatische Wiedergabe** verwenden, um Ihre App als Option bereitzustellen, wenn ein Benutzer ein Gerät an seinen PC anschließt. Hierzu zählen andere Geräte als Volumegeräte, wie Kameras oder Medienplayer, oder Volumegeräte wie USB-Sticks, SD-Karten oder DVDs. Die **automatische Wiedergabe** bietet Ihnen auch die Möglichkeit, Ihre App als Option anzubieten, wenn Benutzer mithilfe von Näherung (Kopplung) Dateien zwischen zwei PCs freigeben.
+Sie können die **automatische Wiedergabe** verwenden, um Ihre App als Option bereitzustellen, wenn ein Benutzer ein Gerät an seinen PC anschließt. Hierzu zählen Nicht-Volumegeräte wie Kameras oder Media Player und Volumegeräte wie USB-Sticks, SD-Karten oder DVDs. Die **automatische Wiedergabe** bietet Ihnen auch die Möglichkeit, Ihre App als Option anzubieten, wenn Benutzer mithilfe von Näherung (Kopplung) Dateien zwischen zwei PCs freigeben.
 
 > **Hinweis**  Wenn Sie ein Gerätehersteller sind und Ihre [Microsoft Store Geräte-App](https://msdn.microsoft.com/library/windows/hardware/Dn265154(v=vs.85).aspx) als **AutoPlay** -Handler für Ihr Gerät zuordnen möchten, können Sie diese APP in den Geräte Metadaten erkennen. Weitere Informationen finden Sie im Thema [Automatische Wiedergabe für Microsoft Store-Geräte-Apps](https://msdn.microsoft.com/library/windows/hardware/dn265136(v=vs.85).aspx).
 
@@ -47,7 +47,7 @@ Wenn Dateien mithilfe der Näherungsfunktion freigegeben werden, enthält die **
 
 **Tabelle 1**
 
-| Einstellung             | Wert                 |
+| Einstellung             | Value                 |
 |---------------------|-----------------------|
 | Verb                | show                  |
 | Aktionsanzeigename | Bilder anzeigen         |
@@ -57,7 +57,7 @@ Die Einstellung **Aktionsanzeigename** gibt die Zeichenfolge an, die bei der aut
 
 **Tabelle 2**  
 
-| Einstellung             | Wert                      |
+| Einstellung             | Value                      |
 |--------------------:|----------------------------|
 | Verb                | copy                       |
 | Aktionsanzeigename | Bilder in die Bibliothek kopieren |
@@ -240,7 +240,7 @@ Hier wird gezeigt, wie Sie eine App als Option für die **automatische Wiedergab
 5.  Wählen Sie in der Dropdownliste **Verfügbare Deklarationen** die Option **Dateitypzuordnungen** aus, und klicken Sie anschließend auf **Hinzufügen**. Legen Sie in den Eigenschaften der neuen **Dateityp** Zuordnungs Deklaration das Feld **Anzeige Name** so fest, dass **Bilder von der Kamera** und das Feld **Name** auf **Kamera\_Association1**angezeigt werden. Klicken Sie im Abschnitt **Unterstützte Dateitypen** auf **Neu hinzufügen** (falls erforderlich). Legen Sie im Feld **Dateityp** die Option **.jpg** fest. Klicken Sie im Abschnitt **Unterstützte Dateitypen** erneut auf **Neu hinzufügen**. Legen Sie das Feld **Dateityp** der neuen Dateizuordnung auf **.png** fest. Für Inhaltsereignisse filtert die automatische Wiedergabe alle Dateitypen heraus, die nicht explizit Ihrer App zugeordnet sind.
 6.  Speichern und schließen Sie die Manifestdatei.
 
-| Einstellung             | Wert            |
+| Einstellung             | Value            |
 |---------------------|------------------|
 | Verb                | show             |
 | Aktionsanzeigename | Bilder anzeigen    |
@@ -437,7 +437,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 5.  Wählen Sie in der Dropdownliste **Verfügbare Deklarationen** die Option **Dateitypzuordnungen** aus, und klicken Sie anschließend auf **Hinzufügen**. Legen Sie in den Eigenschaften der neuen **Dateityp** Zuordnungs Deklaration das Feld **Anzeige Name** auf MS- **Dateien anzeigen** und das Feld **Name** auf **MS\_Association**fest. Klicken Sie im Abschnitt **Unterstützte Dateitypen** auf **Neu hinzufügen**. Legen Sie im Feld **Dateityp** die Option **.ms** fest. Für Inhaltsereignisse filtert die automatische Wiedergabe alle Dateitypen heraus, die nicht explizit Ihrer App zugeordnet sind.
 6.  Speichern und schließen Sie die Manifestdatei.
 
-| Einstellung             | Wert                         |
+| Einstellung             | Value                         |
 |---------------------|-------------------------------|
 | Verb                | show                          |
 | Aktionsanzeigename | Dateien anzeigen                    |

@@ -16,9 +16,9 @@ ms.locfileid: "74258430"
 # <a name="add-controls"></a>Hinzufügen von Steuerelementen
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
+\[ für UWP-apps unter Windows 10 aktualisiert. Informationen zu Windows 8. x-Artikeln finden Sie im [Archiv](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
 
-Ein gutes universelles Windows Plattform (UWP)-Spiel unterstützt viele unterschiedliche Schnittstellen. A potential player might have Windows 10 on a tablet with no physical buttons, a PC with an Xbox controller attached, or the latest desktop gaming rig with a high-performance mouse and gaming keyboard. In unserem Spiel werden die Steuerelemente in der [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp)-Klasse implementiert. Diese Klasse aggregiert alle drei Arten von Eingaben (Maus und Tastatur, Fingereingabe und Gamepad) in einem einzelnen Domänencontroller. Das Endergebnis ist ein First-Person-Shooter, der Standard-Bewegungs-/Blicksteuerungen des Genres verwendet, die mit mehreren Geräten funktionieren.
+Ein gutes universelles Windows Plattform (UWP)-Spiel unterstützt viele unterschiedliche Schnittstellen. Ein potenzieller Player kann Windows 10 auf einem Tablet ohne physische Schaltflächen, einem PC mit einem Xbox-Controller oder dem neuesten Desktop Gaming-Gerät mit einer Hochleistungs Tastatur für Maus und Spiele haben. In unserem Spiel werden die Steuerelemente in der [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp)-Klasse implementiert. Diese Klasse aggregiert alle drei Arten von Eingaben (Maus und Tastatur, Fingereingabe und Gamepad) in einem einzelnen Domänencontroller. Das Endergebnis ist ein First-Person-Shooter, der Standard-Bewegungs-/Blicksteuerungen des Genres verwendet, die mit mehreren Geräten funktionieren.
 
 > [!NOTE]
 > Weitere Informationen zu Steuerelementen finden Sie unter [Bewegungs-/Blicksteuerungen für Spiele](tutorial--adding-move-look-controls-to-your-directx-game.md) und [Toucheingabesteuerelemente für Spiele](tutorial--adding-touch-controls-to-your-directx-game.md).
@@ -43,11 +43,11 @@ Beim Initialisieren der **MoveLookController**-Klasse im Beispielspiel werden vi
 
 Ereignis | Beschreibung
 :------ | :-------
-[**CoreWindow::PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | Die linke oder rechte Maustaste wurde gedrückt (und gedrückt gehalten), oder der Touchscreen wurde berührt.
-[**CoreWindow::PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |Die Maus wurde bewegt, oder eine Zieh-Aktion wurde auf dem Touchscreen ausgeführt.
-[**CoreWindow::PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |Die linke Maustaste wurde losgelassen, oder das Objekt, das den Touchscreen berührt, wurde angehoben.
-[**CoreWindow::PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |Der Zeiger wurde aus dem Hauptfenster bewegt.
-[**Windows::Devices::Input::MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | Die Maus wurde über eine bestimmte Distanz bewegt. Wir sind aber nur an Deltawerten der Mausbewegungen und nicht an der aktuellen x-y-Position interessiert.
+[**Corewindow::P ointerpressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed) | Die linke oder rechte Maustaste wurde gedrückt (und gedrückt gehalten), oder der Touchscreen wurde berührt.
+[**Corewindow::P ointerverschoben**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) |Die Maus wurde bewegt, oder eine Zieh-Aktion wurde auf dem Touchscreen ausgeführt.
+[**Corewindow::P ointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) |Die linke Maustaste wurde losgelassen, oder das Objekt, das den Touchscreen berührt, wurde angehoben.
+[**Corewindow::P ointerexited**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerexited) |Der Zeiger wurde aus dem Hauptfenster bewegt.
+[**Windows::D EVICES:: Input:: mou\verschogs.** ](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) | Die Maus wurde über eine bestimmte Distanz bewegt. Wir sind aber nur an Deltawerten der Mausbewegungen und nicht an der aktuellen x-y-Position interessiert.
 
 
 Diese Ereignishandler werden beim Starten der Überwachung für die Benutzereingabe festgelegt, sobald **MoveLookController** im Anwendungsfenster initialisiert wird.
@@ -82,7 +82,7 @@ Der vollständige Code für [**InitWindow**](https://github.com/Microsoft/Window
 
 Um festzulegen, ob das Spiel auf Eingabe warten soll, verfügt die **MoveLookController**-Klasse unabhängig vom Steuerungstyp über drei Controllerzustände:
 
-Bundesland | Beschreibung
+Status | Beschreibung
 :----- | :-------
 **Keine** | Dies ist der Initialisierungszustand für den Controller. Das Spiel erwartet keine Controllereingabe und die Eingabe wird ignoriert.
 **WaitForInput** | Der Controller wartet auf die Bestätigung der Nachricht des Spielers über das Spiel, entweder mit einem Mausklick, einem Touchereignis oder der Menütaste auf einem Gamepad.
@@ -95,7 +95,7 @@ Bundesland | Beschreibung
 Das Spiel wechselt in den **WaitForInput**-Zustand, wenn das Spiel angehalten wurde. Dies passiert, wenn der Spieler den Zeiger aus dem Hauptfenster des Spiels bewegt oder die Pause-Taste drückt (P-TASTE oder **Start**-Taste auf dem Gamepad), drückt. Die **MoveLookController-Instanz** registriert die Tastenbetätigung und informiert die Spielschleife, wenn sie die [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127)-Methode aufruft. Wenn **IsPauseRequested** jetzt **true** zurückgibt, ruft die Spielschleife **WaitForPress** für die **MoveLookController**-Instanz auf, um den Controller in den Zustand **WaitForInput** zu versetzen. 
 
 
-Im **WaitForInput**-Zustand beendet das Spiel die Verarbeitung von fast allen Eingabeereignissen, bis der Controller wieder in den **Active**-Zustand übergeht. Eine Ausnahme ist die Pause-Taste, da durch Drücken der Taste das Spiel zum aktiven Zustand zurückkehret. Other than the pause button, in order for the game to go back to the **Active** state the player needs to select a menu item. 
+Im **WaitForInput**-Zustand beendet das Spiel die Verarbeitung von fast allen Eingabeereignissen, bis der Controller wieder in den **Active**-Zustand übergeht. Eine Ausnahme ist die Pause-Taste, da durch Drücken der Taste das Spiel zum aktiven Zustand zurückkehret. Abgesehen von der Schaltfläche Pause, damit das Spiel wieder in den **aktiven** Zustand wechselt, muss der Spieler ein Menü Element auswählen. 
 
 
 
@@ -113,7 +113,7 @@ Wenn ein [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core
 
 Nachdem die Zeigerereignisse einer bestimmten Spielaktion zugeordnet wurden, müssen die Daten aktualisiert werden, die das **MoveLookController**-Objekt an die Hauptspielschleife weitergibt.
 
-When called, the [**Update**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) method in the game sample processes the input and updates the velocity and look direction variables (**m\_velocity** and **m\_lookdirection**), which the game loop then retrieves by calling the public [**Velocity**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) and [**LookDirection**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) methods.
+Wenn Sie aufgerufen wird, verarbeitet die [**Update**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1005-L1096) -Methode im Spielbeispiel die Eingabe und aktualisiert die Variablen für die Geschwindigkeit und die Ausrichtung (**m\_Velocity** und **m\_LookDirection**), die von der Spiel Schleife durch Aufrufen der öffentlichen [**Velocity**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L906-L909) -und [**LookDirection**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L913-L923) -Methoden abgerufen werden.
 
 > [!NOTE]
 > Weitere Informationen zur [**Update**](#the-update-method)-Methode finden Sie später auf dieser Seite.
@@ -160,7 +160,7 @@ Jetzt wollen wir uns etwas ausführlicher mit der Implementierung der drei Steue
 
 Wenn Mausbewegungen erkannt werden, sollen diese Bewegungen zum Ermitteln des neuen Neigungs- und Schwenkwinkels der Kamera verwendet werden. Hierzu implementieren wir relative Maussteuerungen, bei denen nicht die absoluten x-y-Pixelkoordinaten der Bewegung aufgezeichnet werden, sondern die relative Distanz der Mausbewegung (also das Delta zwischen Start und Ende der Bewegung) erfasst wird.
 
-Dazu ermitteln wir die Änderung der X-Koordinate (horizontale Bewegung) und der Y-Koordinate (vertikale Bewegung), indem wir die Felder [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) und **MouseDelta::Y** für das vom [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved)-Ereignis zurückgegebene [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta)-Argumentobjekt überprüfen.
+Dazu ermitteln wir die Änderung der X-Koordinate (horizontale Bewegung) und der Y-Koordinate (vertikale Bewegung), indem wir die Felder [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) und **MouseDelta::Y** für das vom [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta)-Ereignis zurückgegebene [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved)-Argumentobjekt überprüfen.
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -240,7 +240,7 @@ Nach dem Einrichten wird durch das Tippen auf den Schieß-Controller im unteren 
 Mit den [**SetMoveRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L843-L853) und [**SetFireRect**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L857-L867)-Methoden werden die Eingaberechtecke mit zwei Methoden erstellt, indem zwei 2D-Vektoren an jedem Rechtecke oben links und unten rechts unten auf dem Bildschirm positioniert werden. 
 
 
-The parameters are then assigned to **m\_fireUpperLeft** and **m\_fireLowerRight** that will help us determine if the user is touching within on of the rectangles. 
+Die Parameter werden dann **m\_fireupperleft** und **m\_firelowerright** zugewiesen, damit wir ermitteln können, ob der Benutzer innerhalb der Rechtecke berührt. 
 ```cpp
 m_fireUpperLeft  = upperLeft;
 m_fireLowerRight = lowerRight;
@@ -266,9 +266,9 @@ window->PointerReleased +=
 
 Wir ermitteln, was geschieht, wenn der Benutzer zunächst auf die Bewegungs- oder Schießrechtecke drückt, mithilfe der [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313)-Methode.
 Hier überprüfen wir, wo ein Steuerelement berührt wird und ob ein Zeiger bereits in diesem Controller vorhanden ist. Wenn dies der erste Finger ist. der das spezifische Steuerelement berührt, gehen wir wie folgt vor.
-- Store the location of the touchdown in **m\_moveFirstDown** or **m\_fireFirstDown** as a 2D vector.
-- Assign the pointer ID to **m\_movePointerID** or **m\_firePointerID**.
-- Set the proper **InUse** flag (**m\_moveInUse** or **m\_fireInUse**) to `true` since we now have an active pointer for that control.
+- Speichern Sie den Speicherort des Touchdown in **m\_"muvefirstdown** " oder " **m"\_"firefirstdown** " als 2D-Vektor.
+- Weisen Sie die Zeiger-ID m\_die Datei " **muvepointerid** " oder " **m\_firepointerid**" zu.
+- Legen Sie das richtige **InUse** -Flag (**m\_moveinuse** oder **m\_fireinuse**) auf `true` fest, da wir jetzt über einen aktiven Zeiger für dieses Steuerelement verfügen.
 
 
 ```cpp
@@ -357,7 +357,7 @@ Nachdem der Benutzer seine Gesten in den Steuerelementen vorgenommen hat, lassen
 
 Wenn das Steuerelement freigegeben wurde, gehen wir wie folgt vor.
 - Legen Sie die Geschwindigkeit des Players auf `0` in alle Richtungen fest, um zu verhindern, dass Sie im Spiel verschoben werden.
-- Switch **m\_moveInUse** to `false` since the user is no longer touching the move controller.
+- Switch **m\_moveinuse** to `false`, da der Benutzer den Verschiebungs Controller nicht mehr berührt.
 - Legen Sie die Bewegungszeiger-ID auf `0` fest, da der Bewegungscontroller keinen Zeiger mehr hat.
 
 ```cpp
@@ -399,13 +399,13 @@ Sehen Sie den vollständigen Code für die **MoveLookController::OnPointerPresse
 
 
 
-Hier weist **MoveLookController** die Zeiger-ID für den Zeiger zu, der das Ereignis für eine bestimmte Variable ausgelöst hat, die dem Blickbereich entspricht. In the case of a touch occurring in the look region, the **m\_lookPointerID** variable is set to the pointer ID that fired the event. A boolean variable, **m\_lookInUse**, is also set to indicate that the control has not yet been released.
+Hier weist **MoveLookController** die Zeiger-ID für den Zeiger zu, der das Ereignis für eine bestimmte Variable ausgelöst hat, die dem Blickbereich entspricht. Im Fall einer Berührung, die im Suchbereich auftritt, wird die **m\_lookpointerid** -Variable auf die Zeiger-ID festgelegt, die das Ereignis ausgelöst hat. Eine boolesche Variable, **m\_lookinuse**, wird ebenfalls festgelegt, um anzugeben, dass das Steuerelement noch nicht freigegeben wurde.
 
 Im nächsten Schritt erfahren Sie, wie das Beispielspiel das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)-Touchscreenereignis behandelt.
 
 
 In der **MoveLookController::OnPointerMoved**-Methode überprüfen wir, welche Art von Zeiger-ID dem Ereignis zugewiesen wurde. Ist es **m_lookPointerID**, berechnen wir die Änderung an der Position des Zeigers.
-Wir verwenden dann Deltas, um zu berechnen, wie die Drehung geändert werden muss. Finally we're at a point where we can update the **m\_pitch** and **m\_yaw** to be used in the game to change the player rotation. 
+Wir verwenden dann Deltas, um zu berechnen, wie die Drehung geändert werden muss. Schließlich sind wir an einem Punkt, an dem wir die **m\_** -und **m-\_Yaw** aktualisieren können, um die Spieler Drehung zu ändern. 
 
 ```cpp
     else if (pointerID == m_lookPointerID)     // This is the look pointer.
@@ -459,8 +459,8 @@ Dieses Spiel hat das folgende Steuerelementlayout für Tastatur und Maus.
 Benutzereingabe | Aktion
 :------- | :--------
 W | Spieler vorwärts
-Eine | Spieler nach links
-E | Spieler rückwärts
+A | Spieler nach links
+S | Spieler rückwärts
 D | Spieler nach rechts
 X | Ansicht nach oben
 Leertaste | Ansicht nach unten
@@ -575,7 +575,7 @@ Ein-/Aus-Menütaste | Anhalten oder Fortsetzen des Spiels
 
 
 
-In der [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103)-Methode fügen wir zwei neue Ereignisse hinzu, um festzustellen, ob ein Gamepad [hinzugefügt](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) oder [entfernt](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114) wurde. Diese Ereignisse aktualisieren die **m_gamepadsChanged**-Eigenschaft. This is used in the **UpdatePollingDevices** method to check if the list of known gamepads has changed. 
+In der [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103)-Methode fügen wir zwei neue Ereignisse hinzu, um festzustellen, ob ein Gamepad [hinzugefügt](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105) oder [entfernt](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114) wurde. Diese Ereignisse aktualisieren die **m_gamepadsChanged**-Eigenschaft. Dies wird in der **updatepollingdevices** -Methode verwendet, um zu überprüfen, ob sich die Liste der bekannten Gamepads geändert hat. 
 
 ```cpp
     // Detect gamepad connection and disconnection events.
@@ -587,7 +587,7 @@ In der [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/b
 ```
 
 > [!NOTE]
-> UWP apps cannot receive input from an Xbox One Controller while the app is not in focus.
+> UWP-Apps können keine Eingaben von einem Xbox One-Controller empfangen, während die APP nicht den Fokus hat.
 
 ### <a name="the-updatepollingdevices-method"></a>Die UpdatePollingDevices-Methode
 
@@ -727,7 +727,7 @@ Die **Update**-Methode startet Elemente durch Aufrufen von [**UpdatePollingDevic
 
 In unserer **Update**-Methode überprüfen wir dann die folgende Eingabe.
 - Wenn der Spieler das Bewegungsrechteck des Controllers verwendet, wird die Änderung der Zeigerposition ermittelt und wir verwenden diese, um zu berechnen, ob der Benutzer den Mauszeiger aus dem inaktiven Bereich des Controller entfernt hat. Wenn sich der Mauszeiger außerhalb des inaktiven Bereichs befindet, wird die **m_moveCommand**-Vektoreigenschaft mit dem virtuellen Joystick-Wert aktualisiert.
-- If any of the movement keyboard inputs are pressed, a value of `1.0f` or `-1.0f` are added in the corresponding component of the **m_moveCommand** vector &mdash; `1.0f` for forward, and `-1.0f` for backward.
+- Wenn eine der Verschiebungs Tastatureingaben gedrückt wird, wird der Wert `1.0f` oder `-1.0f` in der entsprechenden Komponente des **m_moveCommand** Vector hinzugefügt &mdash; `1.0f` für vorwärts und `-1.0f` für rückwärts.
 
 
 Nachdem alle Bewegungseingaben berücksichtigt wurden, führen wird den **m_moveCommand**-Vektor über einige Berechnungen aus, um einen neuen Vektor zu generieren, der die Richtung des Spielers in der Spielwelt darstellt.

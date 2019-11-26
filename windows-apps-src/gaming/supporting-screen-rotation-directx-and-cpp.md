@@ -388,7 +388,7 @@ Wenn ein Benutzer die Ausrichtung der Anzeige dreht, zeigt Windows 10 eine Anima
 
 Wenn eine APP [**notifylayoutabgeschlossene**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted)aufruft, hält Windows 10 das Timeout Fenster an, schließt die Rotations Animation ab und gibt die Steuerung an die APP zurück, die nun in der neuen Anzeige Ausrichtung gezeichnet wird. In der Gesamtheit fühlt sich die App nun ein wenig flüssiger und schneller an, und sie arbeitet etwas effizienter!
 
-## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>Anhang A: Anwenden von Matrizen für die Bildschirmdrehung (2-D)
+## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>Anhang A: Anwenden von Matrizen für die automatische Bildschirmausrichtung (2-D)
 
 
 In dem Beispielcode unter [Ändern der Swapchaingröße und Vorgeben der Bildschirmausrichtung für die Inhalte](#resizing-the-swap-chain-and-pre-rotating-its-contents) (und im [DXGI-Swapchain-Drehungsbeispiel](https://code.msdn.microsoft.com/windowsapps/DXGI-swap-chain-rotation-21d13d71)) haben Sie möglicherweise bemerkt, dass wir für die Direct2D- und die Direct3D-Ausgabe separate Drehungsmatrizen verwendet haben. Sehen wir uns zunächst die 2-D-Matrizen an.
