@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4ab5b177539bc286ce24d480cd949d43a51e17
-ms.sourcegitcommit: bd41fb6f59dfbd7021b14ff749b8b0f83f883c0f
+ms.openlocfilehash: a161a5e26bd647a37b06a270ef6714d54bc16d80
+ms.sourcegitcommit: ac9fb37fe58cc728df2fa0495e36ee4d7b811a23
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70963624"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467410"
 ---
 # <a name="create-a-hello-world-app-js"></a>Erstellen der App „Hello, world“ (JS)
 
@@ -23,13 +23,13 @@ In diesem Tutorial erfahren Sie, wie Sie JavaScript und HTML zum Erstellen einer
 > [!WARNING]
 > Die Entwicklung von JavaScript-UWP-Apps wird in Visual Studio 2019 nicht unterstützt. Sie müssen Visual Studio 2017 verwenden, um eine JavaScript-UWP-App zu entwickeln.
 
-Hier erfahren Sie Folgendes:
+In diesem Artikel werden folgende Aktionen beschrieben:
 
 -   Erstellen eines neuen **Visual Studio 2017**-Projekts für **Windows 10** und die **UWP**.
 -   Hinzufügen von HTML und JavaScript-Inhalten
 -   Ausführen des Projekts auf dem lokalen Desktop in Visual Studio
 
-## <a name="before-you-start"></a>Vorbereitung
+## <a name="before-you-start"></a>Bevor Sie beginnen
 
 -   [Was ist eine UWP-App?](universal-application-platform-guide.md)
 -   Zum Durcharbeiten dieses Tutorials benötigen Sie Windows 10 und Visual Studio. [Vorbereiten](get-set-up.md).
@@ -39,16 +39,16 @@ Hier erfahren Sie Folgendes:
 
 1.  Starten Sie Visual Studio 2017.
 
-2.  Wählen Sie im Menü **Datei** die Befehle **Neu > Projekt...** aus, um das Dialogfeld *Neues Projekt erstellen* zu öffnen.
+2.  Wählen Sie im Menü **Datei** die Befehle **Neu > Projekt** aus, um das Dialogfeld **Neues Projekt erstellen** zu öffnen.
 
 3.  Wählen Sie **Leere App (Universelles Windows: JavaScript)** aus, und klicken Sie dann auf **Weiter**.
 
-    (Werden keine universellen Vorlagen angezeigt, fehlen möglicherweise die Komponenten zum Erstellen von UWP-Apps. Sie können die Installation wiederholen und UWP-Unterstützung hinzufügen, indem Sie im Dialogfeld *Neues Projekt erstellen* auf **Visual Studio-Installer öffnen** klicken. Siehe [Vorbereiten](get-set-up.md))
+    (Werden keine universellen Vorlagen angezeigt, fehlen möglicherweise die Komponenten zum Erstellen von UWP-Apps. Sie können die Installation wiederholen und UWP-Unterstützung hinzufügen, indem Sie im Dialogfeld **Neues Projekt erstellen** die Option **Visual Studio-Installer öffnen** auswählen. Siehe [Vorbereiten](get-set-up.md).
 
-4.  Geben Sie im Dialogfeld *Neues Projekt konfigurieren* „HelloWorld“ als **Projektname** ein, und klicken Sie dann auf **Erstellen**.
+4.  Geben Sie im Dialogfeld **Neues Projekt konfigurieren** die Zeichenfolge **HelloWorld** als **Projektname** ein, und wählen Sie dann **Erstellen** aus.
 
 > [!NOTE]
-> Wenn du Visual Studio zum ersten Mal verwendest, wird möglicherweise das Dialogfeld „Einstellungen“ angezeigt, in dem du zur Aktivierung von **Entwicklermodus** aufgefordert wirst. Der Entwicklermodus ist eine spezielle Einstellung, die bestimmte Features unterstützt, z. B. die direkte Ausführung von Apps und nicht nur die Ausführung aus dem Store. Weitere Informationen findest du unter [Aktivieren deines Geräts für die Entwicklung](enable-your-device-for-development.md). Wähle **Entwicklermodus** aus, klicke auf **Ja**, und schließe das Dialogfeld, um mit dem Tutorial fortzufahren.
+> Wenn du Visual Studio zum ersten Mal verwendest, wird möglicherweise das Dialogfeld „Einstellungen“ angezeigt, in dem du zur Aktivierung von **Entwicklermodus** aufgefordert wirst. Der Entwicklermodus ist eine spezielle Einstellung, die bestimmte Features unterstützt, z. B. die direkte Ausführung von Apps und nicht nur die Ausführung aus dem Store. Weitere Informationen findest du unter [Aktivieren deines Geräts für die Entwicklung](enable-your-device-for-development.md). Wählen Sie **Entwicklermodus** aus, wählen Sie **Ja** aus, und schließen Sie das Dialogfeld, um mit dem Lernprogramm fortzufahren.
 
  ![Dialogfeld zum Aktivieren des Entwicklermodus](images/win10-cs-00.png)
 
@@ -80,13 +80,13 @@ Doppelklicken Sie zum Anzeigen und Bearbeiten einer Datei im Projekt im **Projek
 - Die Webseite der App, die beim Start der App geladen und angezeigt wird.
 
 *Ein Satz mit Logobildern*
--   „Assets/Square150x150Logo.scale-200.png“ stellt Ihre App im Startmenü dar.
--   „Assets/StoreLogo.png“ stellt Ihre App im Microsoft Store dar.
+-   „Assets/Square150x150Logo.scale-200.png“ stellt Ihre App im Menü **Start** dar.
+-   „Assets/StoreLogo.png“ stellt deine App im Microsoft Store dar.
 -   „Assets/SplashScreen.scale-200.png“ ist der Begrüßungsbildschirm, der beim Start der App angezeigt wird.
 
 ## <a name="step-2-adding-a-button"></a>Schritt 2: Hinzufügen einer Schaltfläche
 
-Klicken Sie auf *index.html*, um die Datei im Editor auszuwählen, und ändern Sie den darin enthaltenen HTML-Code wie folgt:
+Wählen Sie **index.html** aus, um die Datei im Editor auszuwählen, und ändern Sie den darin enthaltenen HTML-Code wie folgt.
 
 ```html
 <!DOCTYPE html>
@@ -107,7 +107,7 @@ Klicken Sie auf *index.html*, um die Datei im Editor auszuwählen, und ändern S
 </html>
 ```
 
-Die Datei sollte wie folgt aussehen:
+Die Datei sollte wie folgt aussehen.
 
  ![HTML-Code des Projekts](images/win10-js-03.png)
 
@@ -116,7 +116,7 @@ Dieser HTML-Code verweist auf die Datei *main.js*, die das JavaScript enthält. 
 
 ## <a name="step-3-adding-some-javascript"></a>Schritt 3: Hinzufügen von JavaScript-Code
 
-Jetzt fügen wir JavaScript-Code hinzu. Klicken Sie auf die Datei *main.js*, um sie auszuwählen, und fügen Sie Folgendes hinzu:
+Jetzt fügen wir JavaScript-Code hinzu. Wählen Sie die Datei **main.js** aus, und fügen Sie Folgendes hinzu.
 
 ```javascript
 // Your code here!
@@ -135,7 +135,7 @@ function sayHello() {
 
 ```
 
-Die Datei sollte wie folgt aussehen:
+Die Datei sollte wie folgt aussehen.
 
  ![JavaScript-Code des Projekts](images/win10-js-04.png)
 
@@ -146,7 +146,7 @@ Durch die zweite Funktion, *sayHello()* , wird ein Dialogfeld erstellt und angez
 
 ## <a name="step-4-run-the-app"></a>Schritt 4: Führen Sie die App aus.
 
-Jetzt können Sie die App ausführen, indem Sie F5 drücken. Die App wird geladen, und die Webseite wird angezeigt. Klicken Sie auf die Schaltfläche, um das Meldungsfeld einzublenden.
+Jetzt können Sie die App ausführen, indem Sie F5 drücken. Die App wird geladen, und die Webseite wird angezeigt. Wählen Sie die Schaltfläche aus, um das Meldungsfeld einzublenden.
 
  ![Ausführen des Projekts](images/win10-js-05.png)
 
