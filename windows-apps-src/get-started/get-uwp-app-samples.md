@@ -15,22 +15,22 @@ ms.locfileid: "74259515"
 ---
 # <a name="get-uwp-app-samples"></a>Beispiele für UWP-Apps abrufen
 
-Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind in Repositorys auf GitHub verfügbar. Unter [Codebeispiele](https://developer.microsoft.com/windows/samples) findest du eine durchsuchbare, kategorisierte Liste. Alternativ kannst du das Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit Beispielen für Universelle Windows-Plattform-Apps – GitHub-Repository") durchsuchen. Das Repository mit Beispielen für die universelle Windows-Plattform enthält Beispiele, in denen alle UWP-Features und deren API-Verwendungsmuster veranschaulicht werden.
+Die Beispiele für Universelle Windows Plattform-Apps (UWP-Apps) sind in Repositorys auf GitHub verfügbar. Unter [Codebeispiele](https://developer.microsoft.com/windows/samples) finden Sie eine durchsuchbare, kategorisierte Liste. Alternativ können Sie das Repository [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit Beispielen für Universelle Windows-Plattform-Apps – GitHub-Repository") durchsuchen. Das Repository mit Beispielen für die universelle Windows-Plattform enthält Beispiele, in denen alle UWP-Features und deren API-Verwendungsmuster veranschaulicht werden.
 
 ![UWP-Beispielrepository von GitHub](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>Code herunterladen
 
-Um die Beispiele herunterzuladen, wechsle zum [Repository](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit Beispielen für Universelle Windows-Plattform-Apps – GitHub-Repository"). Wähle **Clone or download** (Klonen oder herunterladen) und dann **Download ZIP** (ZIP-Datei herunterladen) aus. 
+Um die Beispiele herunterzuladen, wechseln Sie zum [Repository](https://github.com/Microsoft/Windows-universal-samples "GitHub-Repository mit Beispielen für Universelle Windows-Plattform-Apps – GitHub-Repository"). Wähle **Clone or download** (Klonen oder herunterladen) und dann **Download ZIP** (ZIP-Datei herunterladen) aus. 
 
 ![Herunterladen von Beispielen](images/SamplesDownloadButton.png)
 
-Du kannst auch die [Beispiele](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ZIP-Datei mit Beispielen für Universelle Windows-Plattform-Apps herunterladen") aus diesem Artikel herunterladen.
+Sie können auch die [Beispiele](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ZIP-Datei mit Beispielen für Universelle Windows-Plattform-Apps herunterladen") aus diesem Artikel herunterladen.
 
 Die ZIP-Downloaddatei enthält immer die neuesten Beispiele. Du benötigst zum Herunterladen kein GitHub-Konto. Wenn ein SDK-Update veröffentlicht wird oder du alle aktuellen Änderungen und Ergänzungen übernehmen möchtest, lade einfach die neueste ZIP-Datei herunter.
 
 > [!NOTE]
-> Für das Öffnen, Erstellen und Ausführen der UWP-Beispiele sind Visual Studio 2015 oder höher und das Windows SDK erforderlich. Eine kostenlose Kopie von Visual Studio Community erhältst du [hier](https://www.microsoft.com/?ref=go). Visual Studio Community unterstützt das Entwickeln von UWP-Apps.  
+> Für das Öffnen, Erstellen und Ausführen der UWP-Beispiele sind Visual Studio 2015 oder höher und das Windows SDK erforderlich. Eine kostenlose Kopie von Visual Studio Community erhalten Sie [hier](https://www.microsoft.com/?ref=go). Visual Studio Community unterstützt das Entwickeln von UWP-Apps.  
 >
 > Damit die Beispiele ordnungsgemäß funktionieren, solltest du sicherstellen, dass nicht einzelne Beispiele, sondern das gesamte Archiv entpackt wird. Alle Beispiele erfordern den Archivordner „SharedContent“. Die Beispiele für UWP-Features verfügen über verknüpfte Dateien in Visual Studio, um das Duplizieren gemeinsam verwendeter Dateien zu vermeiden, z. B. von Beispieldateien für Vorlagen und Bildressourcen. Allgemeine Dateien werden im Stammverzeichnis des Repositorys im SharedContent-Ordner gespeichert. Links werden in den Projektdateien verwendet, um auf allgemeine Dateien zu verweisen.
 > 
