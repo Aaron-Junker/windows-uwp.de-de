@@ -6,12 +6,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, Altersfreigabe, Spielfreigabe, IARC, Bewertung, Fragebogen, Bewertungsgremium, Inhaltsbewertung
 ms.localizationpriority: medium
-ms.openlocfilehash: bab98b50b1d53451708b7631f74d15947c60d4c8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2e8ffdcf1daf9198ded9658c471e765acf5ab8f3
+ms.sourcegitcommit: 7754c1cb1a348f3311417ea7df3e9d168fe39517
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260046"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74694776"
 ---
 # <a name="age-ratings"></a>Altersfreigaben
 
@@ -33,9 +33,6 @@ Klicken Sie nach dem Beantworten aller Fragen auf **Save and generate**. Alle zu
 Bei der nächsten Aktualisierung Ihrer App werden auf dieser Seite alle Freigaben angezeigt, die der App zugewiesen wurden. Sie können auch auf **Bearbeiten** klicken, um den Fragebogen erneut auszufüllen, wenn sich der Inhalt Ihrer App so geändert hat, dass Sie Ihre Antworten anpassen müssen. IARC kann die Fragen auch von Zeit zu Zeit aktualisieren. In diesem Fall werden Sie unter Umständen aufgefordert, den Fragebogen erneut auszufüllen, wenn Sie ein Update übermitteln.
 
 <span id="boards" />
-
-> [!NOTE]
-> Das südkoreanische Recht erfordert, dass in Südkorea verfügbar gemachte Spiele durch das [Game Rating Board](https://www.grb.or.kr/Default.aspx) Südkoreas bewertet werden. Wenn Sie ein Spiel einreichen und Sie es in Südkorea anbieten möchten, müssen Sie diesen zusätzlichen Abschnitt ausfüllen und das Freigabezertifikat hochladen. Wenn Ihre App kein Spiel ist oder Sie es nicht in Südkorea anbieten möchten, können Sie diesen Abschnitt leer lassen.
 
 > [!NOTE]
 > Wenn Sie ein Spiel anbieten möchten, das in Taiwan verfügbar ist, sind Sie gesetzlich verpflichtet, die bereitgestellte CSRR-Bewertung mit [diesem Formular](https://www.gamerating.org.tw/company_login.php) zu registrieren. 

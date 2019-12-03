@@ -12,16 +12,20 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d309ce7e18a8dc62a24bc0e7f51f0015042a5f84
-ms.sourcegitcommit: 3bb982f35c057e30c742ab9f1eea119bae627a5f
+ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
+ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74086865"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74162347"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
-Sammlungen und Listen beziehen sich beide auf die Darstellung mehrerer verwandter Datenelemente, die gemeinsam angezeigt werden. Sammlungen können auf mehrere Arten und durch mehrere unterschiedliche Sammlungssteuerelemente dargestellt werden (können auch als Sammlungsansichten bezeichnet werden). Sammlungssteuerelemente zeigen und ermöglichen Interaktionen mit sammlungsbasierten Inhalten wie einer Liste mit Kontakten, einer Liste mit Daten, einer Sammlung von Bildern usw.  Zu den in diesem Artikel behandelten Steuerelementen gehören:
+Sammlungen und Listen beziehen sich beide auf die Darstellung mehrerer verwandter Datenelemente, die gemeinsam angezeigt werden. Sammlungen können auf mehrere Arten und durch mehrere unterschiedliche Sammlungssteuerelemente dargestellt werden (können auch als Sammlungsansichten bezeichnet werden). Sammlungssteuerelemente zeigen und ermöglichen Interaktionen mit sammlungsbasierten Inhalten wie einer Liste mit Kontakten, einer Liste mit Daten, einer Sammlung von Bildern usw.
+
+> **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+
+Zu den in diesem Artikel behandelten Steuerelementen gehören:
 
 - Listenansichten, die in erster Linie zum Anzeigen von textlastigen Inhaltssammlungen verwendet werden
 - Rasteransichten, die in erster Linie zum Anzeigen von bildlastigen Inhaltssammlungen verwendet werden
@@ -29,20 +33,14 @@ Sammlungen und Listen beziehen sich beide auf die Darstellung mehrerer verwandte
 - Strukturansichten, die in erster Linie zum Anzeigen von textlastigen Inhaltssammlungen in einer bestimmten Hierarchie verwendet werden.
 - ItemsRepeater, wobei es sich um einen anpassbaren Baustein zum Erstellen benutzerdefinierter Sammlungssteuerelemente handelt.
 
-
 Entwurfsrichtlinien, Funktionen und Beispiele für jedes Steuerelement findest du weiter unten.
 
 Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) bietet integrierte Stile und Interaktionen. Um jedoch die visuelle Darstellung Ihrer Sammlungsansicht und der darin enthaltenen Elemente weiter anzupassen, wird ein [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) verwendet. Ausführliche Informationen zu Datenvorlagen und zum Anpassen der Darstellung einer Sammlungsansicht findest du auf der Seite [Elementcontainer und -vorlagen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
 
 Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) verfügt außerdem über ein integriertes Verhalten, das die Auswahl einzelner oder mehrerer Elemente ermöglicht. Weitere Informationen findest du unter [Übersicht über Auswahlmodi](selection-modes.md).
 
-> **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
-
-> <div id="main">  
-> <strong>Windows 10 Fall Creators Update – Abweichende Funktionsweise</strong>  
-> </div>  
-> Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).  
-> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer-Klasse</a>.  
+> **Windows 10 Fall Creators Update – Verhaltensänderung**: Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
+> Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die [ScrollViewer-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Beispiele
 

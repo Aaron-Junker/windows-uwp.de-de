@@ -1,31 +1,31 @@
 ---
-title: Barrierefreiheit in Windows 10
-description: Diese Seite enthält Informationen, die Ihnen den Einstieg in die Entwicklung zugänglicher Windows-apps erleichtern.
+title: Barrierefreiheit unter Windows 10
+description: Diese Seite enthält die Informationen, die Sie zum Entwickeln von barrierefreien Windows-Apps benötigen.
 ms.topic: article
 ms.date: 09/12/2019
-keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, Barrierefreiheit, barrierefreie Win32-apps, Aufbau barer UWP-apps, Aufbau zugänglicher WPF-apps, Aufbau von zugänglichen WinForms-apps
+keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, Erstellen barrierefreier Win32-Apps, Erstellen barrierefreier UWP-Apps, Erstellen barrierefreier WPF-Apps, Erstellen barrierefreier WinForms-Apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
 ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
 ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 09/14/2019
 ms.locfileid: "70987195"
 ---
-# <a name="accessibility-in-windows-10"></a>Barrierefreiheit in Windows 10
+# <a name="accessibility-in-windows-10"></a>Barrierefreiheit unter Windows 10
 
-![Hero-Accessibility-Bar-Smaller. png](images/hero-accessibility-bar-smaller.png)
+![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
 
-## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>Erstellen Sie Barrierefreiheit in Ihre Anwendungen, um die Benutzer aller Fähigkeiten zu unterstützen
+## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>Integrieren Sie Barrierefreiheit in Ihre Anwendungen, um Menschen mit unterschiedlichsten Fähigkeiten zu unterstützen
 
-Produkte und Dienste – einschließlich elektronischer Medien – können aufgerufen werden, wenn Sie so viele Personen wie möglich vollständige und erfolgreiche Umgebungen bereitstellen.
+Produkte und Dienste – einschließlich elektronischer Medien – sind barrierefrei, wenn sie von so vielen Personen wie möglich vollständig und erfolgreich genutzt werden können.
 
-Erstellen Sie barrierefreie und inklusivwindows-Anwendungen mit verbesserter Funktionalität und Benutzerfreundlichkeit für Personen mit Behinderungen (sowohl temporär als auch permanent), persönliche Einstellungen, bestimmte Arbeitsstile oder situations Einschränkungen (z. b. freigegebene Arbeitsbereiche, "Driving", "Cooking", "glare" usw.). Zu den gängigen Lösungen gehören das Bereitstellen von Informationen in alternativen Formaten (z. b. Beschriftungen in einem Video) oder das Aktivieren der Verwendung von Hilfstechnologien (z. b. Bildschirm Sprachausgaben).
+Erstellen Sie barrierefreie und inklusive Windows-Anwendungen mit verbesserter Funktionalität und Benutzerfreundlichkeit für Personen mit Behinderungen (sowohl temporär als auch permanent), unterschiedlichen persönlichen Einstellungen, bestimmten Arbeitsstilen oder situationsbedingten Einschränkungen (z. B. in gemeinsam genutzten Arbeitsbereichen, beim Autofahren, Kochen, Geblendetwerden usw.). Zu den gängigen Lösungen gehören das Bereitstellen von Informationen in alternativen Formaten (z. B. Beschriftungen in einem Video) oder das Aktivieren der Verwendung von Hilfstechnologien (z. B. Bildschirmsprachausgaben).
 
-**Jeder sollte auf die gleichen Räume in einem Gebäude zugreifen können, egal, ob er die Treppe oder den Lift verwenden muss.**
+**Alle sollten gleichermaßen über Treppe oder Lift Zugang zu den gleichen Räumen in einem Gebäude haben.**
 
-Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklungs Frameworks Barrierefreiheits Unterstützung für Entwickler bereitstellen, die Windows-Anwendungen erstellen, hilfstechnologieentwickler, die Tools wie Sprachausgabe und Bildschirmlupe sowie Software erstellen. Test Entwickler, die automatisierte Skripts zum Testen von Anwendungen erstellen.
+Diese Seite informiert darüber, wie die verschiedenen Windows-Entwicklungsframeworks die Barrierefreiheit für Entwickler von Windows-Anwendungen unterstützen, für Hilfstechnologieentwickler, die Tools wie Sprachausgaben und Bildschirmlupen erstellen, sowie Softwaretestentwickler, die automatisierte Skripts zum Testen von Anwendungen erstellen.
 
 ## <a name="platform-specific-documentation"></a>Plattformspezifische Dokumentation
 
@@ -35,7 +35,7 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       **Universelle Windows-Plattform (UWP)**
 
-      Entwickeln Sie barrierefreie apps und Tools auf der modernen Plattform für Windows 10-Anwendungen und-Spiele auf allen Windows-Geräten (einschließlich PCs, Smartphones, Xbox One, hololens usw.), und veröffentlichen Sie Sie auf dem Microsoft Store.
+      Entwickeln Sie barrierefreie Apps und Tools auf der modernen Plattform für Windows 10-Anwendungen und -Spiele auf allen Windows-Geräten (einschließlich PCs, Smartphones, Xbox One, HoloLens usw.), und veröffentlichen Sie sie im Microsoft Store.
 
       [Entwerfen von barrierefreier Software](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
 
@@ -46,25 +46,25 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
       [Barrierefreiheit im Store](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
-      ![Win32-Plattform-apps](images/platform-win32.png)
+      ![Win32-Plattform-Apps](images/platform-win32.png)
 
       **Win32-Plattform**
 
-      Entwickeln Sie barrierefreie apps und Tools auf der ursprünglichen Plattform für CC++ /Windows-Anwendungen.
+      Entwickeln Sie barrierefreie Apps und Tools auf der ursprünglichen Plattform für C/CC++-Windows-Anwendungen.
 
-      [Neues bei Windows-Barrierefreiheit und-Automatisierung](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Neues zu Windows-Barrierefreiheit und -Automatisierung](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
 
-      [Entwickeln von zugänglichen Anwendungen für Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [Entwickeln von barrierefreien Anwendungen für Windows](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
 
-      [Entwickeln barrierefreier Benutzeroberflächen-Frameworks für Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [Entwickeln von barrierefreien Benutzeroberflächenframeworks für Windows](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
 
-      [Entwickeln von Hilfstechnologien für Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [Entwickeln von Hilfstechnologie für Windows](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
 
-      [Testen auf Barrierefreiheit](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [Testen für Barrierefreiheit](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
 
-      [Legacy-Barrierefreiheit und Automatisierungs Technologie-MSAA für die Benutzeroberflächen Automatisierung](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [Legacy-Barrierefreiheit und -Automatisierungstechnologie – von MSAA bis Benutzeroberflächenautomatisierung](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
 
-      [Windows-Barrierefreiheits Funktionen](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Windows-Eingabehilfefunktionen](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
 
       [Richtlinien zum Entwerfen barrierefreier Apps](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
    :::column-end:::
@@ -73,11 +73,11 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
    :::column:::
       ![WPF-Plattform](images/platform-wpf2-small.png)
 
-      **Windows Presentation Foundation (WPF)**
+      **WPF (Windows Presentation Foundation)**
 
-      Entwickeln Sie barrierefreie apps und Tools auf der eingerichteten Plattform für verwaltete Windows-Anwendungen mit einem XAML-Benutzeroberflächen Modell und den .NET Framework.
+      Entwickeln Sie barrierefreie Apps und Tools auf der bekannten Plattform für verwaltete Windows-Anwendungen mit einem XAML-UI-Modell und dem .NET Framework.
 
-      [Bewährte Methoden für die Barrierefreiheit](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [Bewährte Methoden für Eingabehilfen](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
 
       [Grundlagen der Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
 
@@ -85,62 +85,62 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       [Benutzeroberflächenautomatisierungs-Clients für verwalteten Code](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-      [Steuerelement Muster für Benutzeroberflächen Automatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [Steuerelementmuster für Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [Benutzeroberflächenautomatisierungs-Text Muster](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [Textmuster für Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-      [Steuerelement Typen der Benutzeroberflächen Automatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [Steuerelementtypen der Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [Benutzeroberflächenautomatisierungs-Spezifikation und Community Promise](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      [Benutzeroberflächenautomatisierung – Spezifikation und Zusage an die Community](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
-      ![Apps für Windows Forms Plattform](images/platform-winforms.png)
+      ![Apps für Windows Forms-Plattform](images/platform-winforms.png)
 
       **Windows Forms (WinForms)**
 
-      Entwickeln Sie barrierefreie apps und Tools für verwaltete Windows-Anwendungen mit einem XAML-Benutzeroberflächen Modell und dem .NET Framework.
+      Entwickeln Sie barrierefreie Apps und Tools für verwaltete Windows-Anwendungen mit einem XAML-UI-Modell und dem .NET Framework.
 
-      [Windows Forms Barrierefreiheit](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows Forms-Barrierefreiheit](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [Erstellen einer zugänglichen Windows-Anwendung](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [Erstellen von behindertengerechten Windows-Anwendungen](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [Eigenschaften für Windows Forms Steuerelemente, die Barrierefreiheits Richtlinien unterstützen](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [Eigenschaften für Windows Forms-Steuerelemente, die Richtlinien für Eingabehilfen unterstützen](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [Bereitstellen von Barrierefreiheits Informationen für Steuerelemente in einem Windows Form](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [Informationen über Eingabehilfen für Steuerelemente in Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
-      **Web-Barrierefreiheit**
+      **Webbarrierefreiheit**
 
-      Entwerfen, erstellen und testen Sie barrierefreie Websites in Microsoft Edge.
+      Entwickeln, erstellen und testen Sie barrierefreie Websites in Microsoft Edge.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [Einführung in Web-Barrierefreiheit](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Einführung in die Barrierefreiheit im Internet](https://docs.microsoft.com/microsoft-edge/accessibility)
 
       [Entwerfen von barrierefreien Websites](https://docs.microsoft.com/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
       [Erstellen von barrierefreien Websites](https://docs.microsoft.com/microsoft-edge/accessibility/build)
 
-      [Testen von zugänglichen Websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [Testen von barrierefreien Websites](https://docs.microsoft.com/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>Proben
+## <a name="samples"></a>Beispiele
 
-Laden Sie vollständige Windows-Beispiele herunter, die verschiedene Barrierefreiheits Features und-Funktionen veranschaulichen.
+Laden Sie vollständige Windows-Beispiele herunter, die verschiedene Barrierefreiheitsfeatures und -funktionen veranschaulichen, und führen Sie sie aus.
 
 :::row:::
    :::column:::
-      [Code Beispiel Browser](https://docs.microsoft.com/en-us/samples/browse/)
+      [Codebeispielbrowser](https://docs.microsoft.com/en-us/samples/browse/)
 
-      Der neue Beispiele-Browser ersetzt die MSDN Code Gallery.
+      Der neue Beispielebrowser ersetzt den MSDN-Codekatalog.
    :::column-end:::
    :::column:::
-      [MSDN Code Gallery (veraltet)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [MSDN-Codekatalog (eingestellt)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
 
       Laden Sie Beispiele für Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight und andere Produkte herunter.
    :::column-end:::
@@ -152,32 +152,32 @@ Laden Sie vollständige Windows-Beispiele herunter, die verschiedene Barrierefre
       Diese Beispiele veranschaulichen die Funktionalität und das Programmiermodell für Windows und Windows Server. 
    :::column-end:::
    :::column:::
-      [Universelle Windows-Plattform (UWP)-Beispiele auf GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+      [UWP-Beispiele (Universelle Windows-Plattform) auf GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
 
-      Diese Beispiele veranschaulichen die API-Verwendungs Muster für den universelle Windows-Plattform (UWP) im Windows Software Development Kit (SDK) für Windows 10.
+      Diese Beispiele veranschaulichen die API-Verwendungsmuster für die Universelle Windows-Plattform (UWP) im Windows Software Development Kit (SDK) für Windows 10.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
       [XAML-Steuerelementekatalog](https://github.com/microsoft/Xaml-Controls-Gallery)
 
-      Diese APP zeigt die verschiedenen XAML-Steuerelemente, die im System eigenen Design System unterstützt werden.
+      Diese App zeigt die verschiedenen XAML-Steuerelemente, die im Fluent Design-System unterstützt werden.
    :::column-end:::
 :::row-end:::
 
 ## <a name="videos"></a>Videos
 
-Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anwendungen für allgemeine Barrierefreiheits Probleme erstellen und wie Microsoft diese adressiert.
+Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anwendungen für allgemeine Barrierefreiheitsprobleme erstellen, und wie Microsoft diese behandelt.
 
 :::row:::
    :::column:::
-      **Einstieg in die Barrierefreiheit in Windows-apps**
+      **Vorgehensweise: Einstieg in die Barrierefreiheit in Windows-Apps**
    :::column-end:::
    :::column:::
-      **Eine dev-Minute: Entwickeln von Apps für Barrierefreiheit**
+      **Eine Entwickler-Minute: Entwickeln von Apps für Barrierefreiheit**
    :::column-end:::
    :::column:::
-      **Einführung in die Barrierefreiheit und Barrierefreiheit**
+      **Einführung zu Behinderung und Barrierefreiheit**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -193,13 +193,13 @@ Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anw
 :::row-end:::
 :::row:::
    :::column:::
-      **Von Hack zu Produkt, Eye Control für Windows 10**
+      **Vom Hackathon zum Produkt – Augensteuerung für Windows 10**
    :::column-end:::
    :::column:::
-      **Barrierefreiheit unter Windows 10**
+      **Barrierefreiheit unter Windows 10**
    :::column-end:::
    :::column:::
-      **Einführung in das Entwickeln von zugänglichen UWP-apps**
+      **Einführung in die Erstellung barrierefreier UWP-Apps**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -215,13 +215,13 @@ Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anw
 :::row-end:::
 :::row:::
    :::column:::
-      **Entwerfen von Windows-Barrierefreiheits Features**
+      **Entwerfen von Windows-Eingabehilfefunktionen**
    :::column-end:::
    :::column:::
-      **Windows 10-Barrierefreiheits Features ermöglichen allen Benutzern**
+      **Windows 10-Barrierefreiheitsfeatures befähigen alle**
    :::column-end:::
    :::column:::
-      **Vereinfachen der Mauszeiger**
+      **Verbessern der Mauszeigersichtbarkeit**
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -242,18 +242,18 @@ Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anw
    :::column span="3":::
       **Blogs und Neuigkeiten**
 
-      Die neuesten aus der Welt der Microsoft-Barrierefreiheit.
+      Das Neueste aus der Welt der Microsoft-Barrierefreiheit.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [In den Nachrichten](https://news.microsoft.com/presskits/accessibility/)
+      [Nachrichten](https://news.microsoft.com/presskits/accessibility/)
    :::column-end:::
    :::column:::
-      [Barrierefreiheits Blogs](https://blogs.microsoft.com/accessibility/)
+      [Barrierefreiheitsblogs](https://blogs.microsoft.com/accessibility/).
    :::column-end:::
    :::column:::
-      [Blogs zur Windows-Benutzeroberflächen Automatisierung](https://blogs.msdn.microsoft.com/winuiautomation/)
+      [Blogs zur Automatisierung der Windows-Benutzeroberfläche](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
 
@@ -261,7 +261,7 @@ Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anw
    :::column span="3":::
       **Community und Support**
 
-      Ein Ort, an dem Windows-Entwickler und-Benutzer zusammenarbeiten und kennenlernen.
+      Ein Ort, an dem Windows-Entwickler und -Benutzer zusammen arbeiten und lernen können.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -269,9 +269,9 @@ Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anw
       [Windows-Community: Barrierefreiheit](https://community.windows.com/search?q=accessibility)
    :::column-end:::
    :::column:::
-      [Entwicklungs Forum für Windows-Barrierefreiheit und-Automatisierung](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
+      [Entwicklungsforum zu Windows-Barrierefreiheit und -Automatisierung](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
    :::column-end:::
    :::column:::
-      [Fähigkeits-Antwort Desk](https://www.microsoft.com/Accessibility/disability-answer-desk)
+      [Answer Desk zu Behinderungen](https://www.microsoft.com/Accessibility/disability-answer-desk)
    :::column-end:::
 :::row-end:::

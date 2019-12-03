@@ -6,20 +6,20 @@ label: Guidelines
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
 ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/09/2019
 ms.locfileid: "72163704"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
-App-Einstellungen sind die Benutzer anpassbaren Teile ihrer universelle Windows-Plattform-app (UWP), auf die über eine APP-Einstellungsseite zugegriffen wird. Beispielsweise kann eine Newsreader-App den Benutzer angeben, welche Nachrichtenquellen angezeigt werden sollen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen, während eine Wetter-App den Benutzer zwischen Celsius und Fahrenheit wählen kann. Dieser Artikel enthält Empfehlungen und bewährte Methoden zum Erstellen und Anzeigen von App-Einstellungen.
+App-Einstellungen sind die vom Benutzer anpassbaren Teile Ihrer UWP-App (Universelle Windows-Plattform), auf die über eine App-Einstellungenseite zugegriffen wird. Beispielsweise kann ein Benutzer in einer Newsreader-App angeben, welche neuen Quellen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen, und eine Wetter-App könnte dem Benutzer ermöglichen, zwischen Celsius und Fahrenheit zu wählen. Dieser Artikel enthält Empfehlungen und bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.
 
-## <a name="when-to-provide-a-settings-page"></a>Angeben der Seite "Einstellungen"
+## <a name="when-to-provide-a-settings-page"></a>Wann sollte eine Einstellungenseite angegeben werden?
 
 Hier sind Beispiele für App-Optionen, die zu einer Seite für App-Einstellungen gehören:
 
@@ -50,7 +50,7 @@ Bei einem Navigationsbereichs-Layout sollten App-Einstellungen das letzte Elemen
 
 **App-Leiste**
 
-Bei Verwendung einer [App-Leiste](../controls-and-patterns/app-bars.md) oder Toolleiste sollte der Einstiegspunkt für die Einstellungen das letzte Element im Überlaufmenü „Mehr“ sein. Wenn Sie den Einstiegspunkt für die Einstellungen in Ihrer App intuitiver positionieren möchten, platzieren Sie ihn direkt auf die App-Leiste und nicht ins Überlaufmenü.
+Bei Verwendung einer [App-Leiste](../controls-and-patterns/app-bars.md) oder Toolleiste sollte der Einstiegspunkt für die Einstellungen das letzte Element im Überlaufmenü „Mehr“ sein. Wenn Sie den Einstiegspunkt für die Einstellungen in Ihrer App intuitiver positionieren möchten, platzieren Sie ihn direkt auf der App-Leiste und nicht im Überlaufmenü.
 
 ![App-Einstellungen-Einstiegspunkt für die App-Leiste](images/appsettings-entrypoint-tabs.png)
 
@@ -62,7 +62,7 @@ Wenn Sie ein Hublayout verwenden, sollte sich der Einstiegspunkt für App-Einste
 
 Bei einem Registerkarten- oder Pivots-Layout raten wir davon ab, den Einstiegspunkt für App-Einstellungen als eines der Elemente der obersten Ebene in der Navigation zu platzieren. Stattdessen sollte der Einstiegspunkt für App-Einstellungen im Überlaufmenü „Mehr“ einer App-Leiste platziert werden.
 
-**Master-Details**
+**Master/Details**
 
 Anstatt den Einstiegspunkt für App-Einstellungen innerhalb eines Master/Details-Bereichs zu u verstecken, machen Sie ihn als letztes angeheftete Element auf der obersten Ebene des Masterbereichs verfügbar.
 
@@ -85,7 +85,7 @@ Mobilgeräte:
 Wenn Ihre App Benutzern die Auswahl des Farbmodus ermöglicht, machen Sie diese Optionen mit [Optionsfeldern](../controls-and-patterns/radio-button.md) oder einem [Kombinationsfeld](../controls-and-patterns/combo-box.md) mit dem Header „Wählen Sie einen App-Modus“ verfügbar. Die Optionen sollten lauten:
 - Hell
 - Dunkel
-- Windows-Standard
+- Standard (Windows)
 
 Wir empfehlen außerdem, einen Hyperlink zur Seite „Farben” der Windows-Einstellungen-App hinzuzufügen. Dort können Benutzer auf den aktuellen App-Standardmodus zugreifen und ihn ändern. Verwenden Sie die Zeichenfolge „Windows-Farbeinstellungen“ als Text für den Link.
 
@@ -97,12 +97,12 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 </div>
 -->
 
-## <a name="about-section-and-feedback-button"></a>Abschnitt „Info” und Feedback-Schaltfläche
+## <a name="about-section-and-feedback-button"></a>Abschnitt „Info” und Feedbackschaltfläche
 
 
 Wir empfehlen Ihnen, den Abschnitt „Info/Über diese App” entweder als eigene Seite oder in einem eigenen Abschnitt in Ihrer App zu platzieren. Wenn Sie eine „Feedback senden”-Schaltfläche benötigen, platzieren Sie diese unten auf der Seite „Info/Über diese App”.
 
-Unter einer Unterüberschrift „Rechtliches” können Sie alle „Nutzungsbedingungen” und „Datenschutzerklärung” (sollten [Hyperlink-Schaltflächen](../controls-and-patterns/hyperlinks.md) mit Textumbruch sein) sowie weitere rechtliche Informationen, wie z. B. das Urheberrecht, einfügen.
+Unter einer Unterüberschrift „Rechtliches” können Sie alle „Nutzungsbedingungen” und „Datenschutzerklärung” (sollten [Hyperlinkschaltflächen](../controls-and-patterns/hyperlinks.md) mit Textumbruch sein) sowie weitere rechtliche Informationen, wie z. B. das Urheberrecht, einfügen.
 
 ![Abschnitt „Info“ mit Schaltfläche „Feedback“](images/appsettings-about.png)
 
@@ -124,11 +124,11 @@ Wenn Sie eine Liste der gewünschten Elemente auf der Seite für App-Einstellung
 - Stellen Sie Inhalte von oben nach unten in einer einzelnen, ggf. bildlauffähigen Spalte dar. Beschränken Sie den Bildlauf auf die doppelte Bildschirmhöhe.
 - Verwenden Sie die folgenden Steuerelemente für App-Einstellungen:
 
-    - [Schalter umschalten](../controls-and-patterns/toggles.md): , Damit Benutzer Werte ein-oder ausschalten können.
-    - Options [Felder:](../controls-and-patterns/radio-button.md) Ermöglicht Benutzern das Auswählen eines Elements aus einem Satz von bis zu 5 Optionen, die sich gegenseitig ausschließen.
-    - [Eingabefeld für Text](../controls-and-patterns/text-block.md): , Damit Benutzer Text eingeben können. Wählen Sie die Art des Texteingabefelds passend zum Typ des vom Benutzer erhaltenen Texts aus, beispielsweise für E-Mail-Adressen oder Kennwörter.
-    - [Hyperlinks](../controls-and-patterns/hyperlinks.md): , Wenn der Benutzer auf eine andere Seite in der APP oder auf eine externe Website über gelangen soll. Wenn ein Benutzer auf einen Hyperlink klickt, wird das Einstellungen-Flyout geschlossen.
-    - [Schalt](../controls-and-patterns/buttons.md)Flächen: , Damit Benutzer eine sofortige Aktion initiieren können, ohne das aktuelle Einstellungs-Flyout zu verwerfen.
+    - [Umschalter](../controls-and-patterns/toggles.md): Benutzer können Werte aktivieren oder deaktivieren.
+    - [Optionsfelder](../controls-and-patterns/radio-button.md): Benutzer können aus bis zu fünf zusammenhängenden Optionen, die sich gegenseitig ausschließen, eine auswählen.
+    - [Texteingabefeld](../controls-and-patterns/text-block.md): Benutzer können hier Text eingeben. Wählen Sie die Art des Texteingabefelds passend zum Typ des vom Benutzer erhaltenen Texts aus, beispielsweise für E-Mail-Adressen oder Kennwörter.
+    - [Hyperlinks](../controls-and-patterns/hyperlinks.md): Benutzer werden zu einer anderen Seite innerhalb der App oder zu einer externen Website weitergeleitet. Wenn ein Benutzer auf einen Hyperlink klickt, wird das Einstellungen-Flyout geschlossen.
+    - [Schaltflächen](../controls-and-patterns/buttons.md): Benutzer können eine Aktion sofort ausführen, ohne das aktuell geöffnete Einstellungenflyout zu schließen.
 - Wenn eines der Steuerelemente deaktiviert ist, fügen Sie eine beschreibende Meldung hinzu. Platzieren Sie diese Meldung über dem deaktivierten Steuerelement.
 - Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) oder [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) mit einem Offset links von 100 Pixel.
 - Verwenden Sie Abschnittsüberschriften, Absätze und Bezeichnungen, um Inhalte ggf. zu organisieren und zu erläutern.
@@ -140,7 +140,7 @@ Wenn Sie eine Liste der gewünschten Elemente auf der Seite für App-Einstellung
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Grundlagen des Befehls Entwurfs](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+* [Befehlsdesigngrundlagen](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
 * [Richtlinien für Statussteuerelemente](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
 * [Speichern und Abrufen von App-Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [ **"Entrancemetransition"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

@@ -10,7 +10,7 @@ ms.author: mcleans
 author: mcleanbyron
 ms.openlocfilehash: f3a2575b17cc4228d7c4db273845478aecf65f29
 ms.sourcegitcommit: f0936ce8e88d78b1af99998794a8765094f6a487
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/25/2019
 ms.locfileid: "72915108"
@@ -25,15 +25,15 @@ Das Fluent Design-System ist unser System zum Erstellen adaptiver, einfühlsamer
 
 ## <a name="principles"></a>Prinzipien
 
-**Adaptive: fließende Erlebnisse wirken sich auf jedem Gerät natürlich aus.**
+**Adaptiv: Fluent-Benutzeroberflächen fühlen sich auf jedem Gerät natürlich an.**
 
 Fluent-Benutzeroberflächen passen sich an die Umgebung an. Eine Fluent-Benutzeroberfläche fühlt sich auf einem Tablet, einem Desktop-PC und einer Xbox gut an. Sie funktioniert sogar mit einem Mixed Reality-Headset hervorragend. Und wenn Sie mehr Hardware hinzufügen, z. B. einen zusätzlichen Monitor für Ihren PC, wird sie für ein Fluent-Erlebnis genutzt.
 
-**Einfühlsam: fließende Oberflächen sind intuitiv und leistungsstark.**
+**Einfühlsam: Fluent-Benutzeroberflächen sind intuitiv und kraftvoll.**
 
 Fluent-Benutzeroberflächen passen sich dem Verhalten und der Absicht an – sie verstehen und antizipieren, was nötig ist. Sie vereinen Menschen und Ideen, egal ob diese sich auf gegenüberliegenden Seiten der Erde befinden oder direkt nebeneinander stehen.
 
-**Schön: fließende Erfahrung ist ansprechend und immersiv**
+**Wunderschön: Fluent-Benutzeroberflächen sind einnehmend und immersiv.**
 
 Durch das Einbeziehen von Elementen der physischen Welt erschließt sich eine Fluent-Benutzeroberfläche etwas Grundsätzliches. Sie nutzt Licht, Schatten, Bewegung, Tiefe und Textur, um Informationen intuitiv und instinktiv zu organisieren.
 
@@ -69,52 +69,52 @@ Wie gestaltet man eine App auf einer Vielzahl von Geräten natürlich? Indem sie
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/thumbnail-size-classes.jpg)
+        ![FPO-Bild](images/fluent/thumbnail-size-classes.jpg)
     :::column-end:::
     :::column span="2":::
-**Entwurf für die richtigen Breakpoints**
+**Design der richtigen Breakpoints**
 
 Anstatt das Design für jede einzelne Bildschirmgröße anzupassen, kann die Konzentration auf einige wenige aber wichtige Größen („Breakpoints”) Ihre Designs und Ihren Code stark vereinfachen und Ihre App gleichzeitig auf kleinen und großen Bildschirmen großartig darstellen.
 
-[Weitere Informationen zu Bildschirmgrößen und Breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+[Mehr über Bildschirmgrößen und Breakpoints](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/rspd-resize.gif)
+        ![FPO-Bild](images/fluent/rspd-resize.gif)
     :::column-end:::
     :::column span="2":::
-**Erstellen eines reaktionsfähigen Layouts**
+**Erstellen eines dynamischen Layouts**
 
-Damit eine APP naturgemäß ist, sollte Sie das Layout an verschiedene Bildschirmgrößen und Geräte anpassen. Sie können die automatische Größenanpassung, Layoutpanels, visuelle Zustände und sogar separate Benutzeroberflächen Definitionen in XAML verwenden, um eine reaktionsfähige Benutzeroberfläche zu erstellen.
+Damit eine App natürlich wirkt, sollte sich das Layout verschiedenen Bildschirmgrößen und Geräten anpassen. In XAML können Sie automatische Größenanpassung, Layoutpanel, visuelle Zustände und sogar getrennte UI-Definitionen verwenden, um eine reaktionsfähige Benutzeroberfläche zu erstellen.
 
-[Weitere Informationen zum reaktionsfähigen Design](/windows/uwp/design/layout/responsive-design)
+[Weitere Informationen zu dynamischem Design](/windows/uwp/design/layout/responsive-design)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/devices.jpg)
+        ![FPO-Bild](images/fluent/devices.jpg)
     :::column-end:::
     :::column span="2":::
-**Entwurf für ein Spektrum von Geräten**
+**Design für ein Gerätespektrum**
 
 UWP-Apps können auf einer Vielzahl von Windows-basierten Geräten ausgeführt werden. Es ist hilfreich zu wissen, welche Geräte verfügbar sind, wofür sie gemacht sind und wie Benutzer mit ihnen interagieren.
 
-[Weitere Informationen zu UWP-Geräten](/windows/uwp/design/devices/)
+[Mehr über UWP-Geräte](/windows/uwp/design/devices/)
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/keyboard-shortcuts.jpg)
+        ![FPO-Bild](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
     :::column span="2":::
-**Für die Rechte Eingabe optimieren**
+**Optimierung für die passende Eingabe**
 
-UWP-Apps unterstützen automatisch gängige Maus-, Tastatur-, Stift- und Touch-Interaktionen. Sie müssen sich nicht extra darum kümmern. Aber Sie können Ihre Apps um einer optimierte Unterstützung für bestimmte Eingabemöglichkeiten (z. B. Stift und Surface Dial) erweitern.
+UWP-Apps unterstützen automatisch gängige Maus-, Tastatur-, Stift- und Touch-Interaktionen &mdash; Sie müssen sich nicht extra darum kümmern. Aber Sie können Ihre Apps um eine optimierte Unterstützung für bestimmte Eingabemöglichkeiten (z. B. Stift und Surface Dial) erweitern.
 
-[Weitere Informationen zu Eingaben und Interaktionen](/windows/uwp/design/input/input-primer)
+[Mehr über Eingaben und Interaktionen](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
 ## <a name="make-it-intuitive"></a>Sicherstellen der Intuitivität
@@ -127,48 +127,48 @@ Für Fluent-Benutzeroberflächen werden Steuerelemente und Muster konsistent ein
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/thumbnail-navview.png)
+        ![FPO-Bild](images/fluent/thumbnail-navview.png)
     :::column-end:::
     :::column span="2":::
 **Bereitstellen der richtigen Navigation**
 
-Erstellen Sie mit der richtigen App-Struktur und den entsprechenden Navigations Komponenten eine mühelose Darstellung.
+Sorgen Sie mit der richtigen App-Struktur und den entsprechenden Navigationskomponenten für eine angenehme Benutzererfahrung.
 
 [Weitere Informationen zur Navigation](/windows/uwp/design/basics/navigation-basics/)
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/thumbnail-commanding.png)
+        ![FPO-Bild](images/fluent/thumbnail-commanding.png)
     :::column-end:::
     :::column span="2":::
 **Interaktiv sein**
 
-Mithilfe von Schaltflächen, Befehls leisten, Tastenkombinationen und Kontextmenüs können Benutzer mit Ihrer APP interagieren. Dabei handelt es sich um die Tools, die eine statische Darstellung in etwas dynamisches Verhalten ändern.
+Mithilfe von Schaltflächen, Befehlsleisten, Tastenkombinationen und Kontextmenüs können Benutzer mit Ihrer App interagieren. Dabei handelt es sich um die Tools, die einer statischen Benutzeroberfläche Dynamik verleihen.
 
-[Weitere Informationen zu Befehle](/windows/uwp/design/basics/commanding-basics/)
+[Weitere Informationen zu Befehlen](/windows/uwp/design/basics/commanding-basics/)
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/thumbnail-controls-2.jpg)
+        ![FPO-Bild](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
     :::column span="2":::
-**Verwenden des richtigen Steuer Elements für den Auftrag**
+**Das passende Steuerelement für eine Aufgabe**
 
-Steuerelemente sind die Bausteine der Benutzeroberfläche. Mit dem richtigen Steuerelement können Sie eine Benutzeroberfläche erstellen, die sich so verhält, wie es die Benutzer erwarten. UWP bietet mehr als 45 Steuerelemente – von einfachen Schaltflüchen bis hin zu leistungsstarken Daten-Steuerelementen.
+Steuerelemente sind die Bausteine der Benutzeroberfläche. Mit dem richtigen Steuerelement können Sie eine Benutzeroberfläche erstellen, die sich so verhält, wie es die Benutzer erwarten. UWP bietet mehr als 45 Steuerelemente – von einfachen Schaltflächen bis hin zu leistungsstarken Datensteuerelementen.
 
-[Weitere Informationen zu UWP-Steuerelementen](/windows/uwp/design/controls-and-patterns/)
+[Mehr über UWP-Steuerelemente](/windows/uwp/design/controls-and-patterns/)
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Inklusives Image](images/fluent/thumbnail-inclusive.png)
+        ![Inklusiv-Bild](images/fluent/thumbnail-inclusive.png)
     :::column-end:::
     :::column span="2":::
-**Inklusiv** Eine gut entworfene APP ist für Personen mit Behinderungen zugänglich. Mit zusätzlichem Code können Sie Ihre Apps mit anderen Menschen auf der ganzen Welt teilen.
+**Inklusiv sein** Eine gut gestaltete App ist für Menschen mit Behinderungen zugänglich. Mit zusätzlichem Code können Sie Ihre Apps mit anderen Menschen auf der ganzen Welt teilen.
 
-[Weitere Informationen zur Benutzerfreundlichkeit](/windows/uwp/design/usability/)
+[Mehr über Benutzerfreundlichkeit](/windows/uwp/design/usability/)
 :::row-end:::
 
 ## <a name="be-engaging-and-immersive"></a>Gestalten auf ansprechende und immersive Weise
@@ -183,22 +183,22 @@ Bringen Sie Licht in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/Nav_Reveal_Animation.gif)
+        ![FPO-Bild](images/fluent/Nav_Reveal_Animation.gif)
     :::column-end:::
     :::column span="2":::
 **Reveal Highlight**
 
-[Reveal-Highlight](/windows/uwp/design/style/reveal) setzt Licht ein, um interaktive Elemente hervorzuheben. Licht beleuchtet das Element, mit dem der Benutzer interagieren kann und zeigt verborgene Grenzen auf. Reveal ist bei einigen Steuerelementen, wie z. B. der List-Ansicht und der Grid-Ansicht, automatisch aktiviert. Sie können es für andere Steuerelementen aktivieren, indem Sie unsere vordefinierten Reveal-Highlight-Stile verwenden.
+[Reveal highlight](/windows/uwp/design/style/reveal) hebt interaktive Elemente mit Lichteffekten hervor. Mithilfe von Lichteffekten werden die Elemente hervorgehoben, mit denen der Benutzer interagieren kann, und dabei verborgene Ränder angezeigt. „Reveal“ ist bei einigen Steuerelementen, wie z. B. der Listen- und der Rasteransicht, automatisch aktiviert. Zur Aktivierung für andere Steuerelemente können Sie unsere vordefinierten Reveal-Highlight-Stile verwenden.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/traveling-focus-fullscreen-light-rf.gif)
+        ![FPO-Bild](images/fluent/traveling-focus-fullscreen-light-rf.gif)
     :::column-end:::
     :::column span="2":::
 **Reveal Focus**
 
-[Reveal-Focus](/windows/uwp/design/style/reveal-focus) verwendet Licht, um die Aufmerksamkeit auf das Element zu lenken, das aktuell den Eingabefokus hat.
+[Reveal Focus](/windows/uwp/design/style/reveal-focus) lenkt mit Lichteffekten die Aufmerksamkeit auf das Element, das aktuell den Eingabefokus hat.
 :::row-end:::
 
 ## <a name="create-a-sense-of-depth"></a>Schaffen Sie ein Gefühl von Tiefe
@@ -209,12 +209,12 @@ Bringen Sie Tiefe in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/_parallax_v2.gif)
+        ![FPO-Bild](images/fluent/_parallax_v2.gif)
     :::column-end:::
     :::column span="2":::
-**Parallaxeneffekte**
+**Parallax**
 
-[Parallax](/windows/uwp/design/motion/parallax) Erzeugt die Illusion der Tiefe, indem es Gegenstände im Vordergrund schneller als Gegenstände im Hintergrund erscheinen lässt.
+[Parallax](/windows/uwp/design/motion/parallax) erzeugt eine Tiefenillusion, indem die Bewegung von Gegenständen im Vordergrund schneller als die Bewegung von Gegenständen im Hintergrund erscheint.
 :::row-end:::
 
 ## <a name="incorporate-motion"></a>Integrieren von Bewegung
@@ -225,12 +225,12 @@ Bringen Sie Bewegung in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![Kontinuitäts GIF](images/fluent/continuityXbox.gif)
+        ![Kontinuitäts-GIF](images/fluent/continuityXbox.gif)
     :::column-end:::
     :::column span="2":::
 **Verbundene Animationen**
 
-[Connected-Animations](/windows/uwp/design/motion/connected-animation) helfen dem Benutzer, den Kontext zu behalten, indem sie einen nahtlosen Übergang zwischen den Szenen herstellen.
+[Verbundene Animationen](/windows/uwp/design/motion/connected-animation) helfen dem Benutzer, den Kontext beizubehalten, indem ein nahtloser Übergang zwischen den Szenen hergestellt wird.
 :::row-end:::
 
 ## <a name="build-it-with-the-right-material"></a>Verwenden Sie das richtige Material
@@ -241,12 +241,12 @@ Bringen Sie Material in Ihre UWP-App:
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/acrylic_lighttheme_base.png)
+        ![FPO-Bild](images/fluent/acrylic_lighttheme_base.png)
     :::column-end:::
     :::column span="2":::
 **Acrylic**
 
-[Acrylic](/windows/uwp/design/style/acrylic) Ein transparentes Material, das dem Benutzer Ebenen von Inhalten anzeigt und eine Hierarchie von Oberflächenelementen aufbaut.
+[Acrylic](/windows/uwp/design/style/acrylic) ist ein transparentes Material, das dem Benutzer Ebenen von Inhalten anzeigt und eine Hierarchie von Oberflächenelementen aufbaut.
 :::row-end:::
 
 ## <a name="design-toolkits-and-code-samples"></a>Design-Toolkits und Codebeispiele
@@ -255,10 +255,10 @@ Sie möchten Ihre eigenen Apps mit Fluent Design erstellen? Unsere Toolkits für
 
 :::row:::
     :::column:::
-        ![Grafik zum Bild](images/fluent/thumbnail-toolkits.jpg)
+        ![FPO-Bild](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
     :::column span="2":::
-**Entwerfen von Toolkits und Beispielen (Seite)**
+**Seite zu Design-Toolkits und Beispielen**
 
 Schauen Sie sich unsere [Seite zu Design-Toolkits und Beispielen](/windows/uwp/design/downloads/) an.
 :::row-end:::
