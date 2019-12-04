@@ -1,20 +1,20 @@
 ---
-Description: Mit der Paketressource (PRI) APIs Indizierung können Sie ein benutzerdefiniertes Buildsystem für Ihre UWP-app-Ressourcen erstellen. Das Buildsystem kann PRI-Dateien erstellen und versionieren sowie Sicherungskopien erzeugen, und zwar für jeden Grad an Komplexität, die Ihre UWP-App benötigt.
-title: APIs zur Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme
+Description: Mit den PRI-APIs (Package Resource Index) können Sie ein benutzerdefiniertes Buildsystem für die Ressourcen ihrer UWP-App entwickeln. Das Buildsystem kann PRI-Dateien erstellen und mit einer Versionsangabe versehen sowie Sicherungskopien generieren, und zwar für jeden Grad an Komplexität, den Ihre UWP-App benötigt.
+title: Paket Ressourcen Indizierung und benutzerdefinierte Buildsysteme
 template: detail.hbs
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: b300630ff4a9b6735cb7891444da4333532735c1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ebbec3a89d795dde5c47d3dce76f77be06feebe2
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359377"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734925"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>APIs zur Paketressourcenindizierung (PRI) und benutzerdefinierte Buildsysteme
-Mit den [APIs zur Paketressourcenindizierung (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) können Sie ein benutzerdefiniertes Buildsystem für die Ressourcen Ihrer UWP-App entwickeln. Das Buildsystem kann Paketressourcenindexdateien (PRI) erstellen, versionieren und per Dump sichern (als XML), und zwar für jedes Maß an Komplexität, das Ihre UWP-App benötigt. Wenn Sie ein benutzerdefiniertes Buildsystem besitzen, das derzeit das Befehlszeilentool MakePri.exe verwendet (siehe [Manuelles Kompilieren von Ressourcen mit MakePri.exe](makepri-exe-command-options.md)), empfiehlt es sich zur Erzielung einer höheren Leistung und für mehr Steuerungsmöglichkeiten, die PRI-APIs anstelle von MakePri.exe aufzurufen.
+Mit den [APIs für die Paketressourcenindizierung (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference) können Sie ein benutzerdefiniertes Buildsystem für die Ressourcen Ihrer UWP-App entwickeln. Das Buildsystem kann Indexdateien der Paketressource (PRI) erstellen, versionieren und per Dump sichern (als XML), und zwar für jedes Maß an Komplexität, das Ihre UWP-App benötigt. Wenn Sie ein benutzerdefiniertes Buildsystem besitzen, das derzeit das Befehlszeilentool MakePri.exe verwendet (siehe [Manuelles Kompilieren von Ressourcen mit MakePri.exe](makepri-exe-command-options.md)), empfiehlt es sich zur Erzielung einer höheren Leistung und für mehr Steuerungsmöglichkeiten, die PRI-APIs anstelle von MakePri.exe aufzurufen.
 
 Die PRI-APIs wurden mit dem Windows SDK für Windows 10, Version 1803, eingeführt. Die APIs weisen die Form von Win32-Windows-APIs auf, was bedeutet, dass Ihnen mehrere Optionen für deren Aufruf zur Verfügung stehen. Sie können sie direkt von einer Win32-App oder über [Plattformaufrufe](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live) von einer .NET-App oder auch von einer UWP-App aus aufrufen.
 
@@ -28,10 +28,10 @@ Die maximale Größe für eine PRI-Datei beträgt 64 KB.
 ## <a name="scenario-walkthroughs"></a>Exemplarische Vorgehensweisen für die Szenarien
 |Thema|Beschreibung|
 |-|-|
-|[Szenario 1: Generieren einer PRI-Datei von Zeichenfolgenressourcen und Ressourcendateien](pri-apis-scenario-1.md)|In diesem Szenario erstellen wir eine neue App zur Darstellung unseres benutzerdefinierten Buildsystems. Wir erstellen einen Ressourceindexer und fügen diesem Zeichenfolgen und andere Arten von Ressourcen hinzu. Dann generieren und sichern wir eine PRI-Datei.|
+|[Szenario 1: Generieren einer PRI-Datei aus Zeichen folgen Ressourcen und assetdateien](pri-apis-scenario-1.md)|In diesem Szenario erstellen wir eine neue App zur Darstellung unseres benutzerdefinierten Buildsystems. Wir erstellen einen Ressourceindexer und fügen diesem Zeichenfolgen und andere Arten von Ressourcen hinzu. Dann generieren und sichern wir eine PRI-Datei.|
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Ressource "Package" Indizierung (PRI)-Referenz](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
+* [Referenz zur Paket Ressourcen Indizierung (PRI)](https://docs.microsoft.com/windows/desktop/menurc/pri-indexing-reference)
 
 ## <a name="related-topics"></a>Verwandte Themen
 * [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](makepri-exe-command-options.md)

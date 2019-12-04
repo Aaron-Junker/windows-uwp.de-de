@@ -1,19 +1,19 @@
 ---
-Description: Verteilen einer gepackten Desktop Anwendung (Desktop Bridge)
+Description: Eine mit Desktop Bridge Paketierte App verteilen
 title: Veröffentlichen Sie die gepackte Desktop Anwendung im Microsoft Store, oder querladen Sie Sie auf einem oder mehreren Geräten.
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 597a283fd28b571ed968255312059c7049f3f700
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 15970afbeb5d9dee1c2079cd5933b1250ecb2f09
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682564"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734776"
 ---
 # <a name="distribute-your-packaged-desktop-app"></a>Verteilen der APP für gepackte Desktops
 

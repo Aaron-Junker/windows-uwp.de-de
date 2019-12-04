@@ -1,6 +1,6 @@
 ---
-title: Fokusnavigation für Tastatur, Gamepad, Fernbedienung und Bedienungshilfen
-Description: Erfahren Sie, wie mit Fokusnavigation umfassendes und konsistentes Interaktion Oberflächen in Ihren UWP-apps und benutzerdefinierte Steuerelemente für Benutzer über die Tastatur Power, Menschen mit Behinderung und andere Anforderungen zur Barrierefreiheit, als auch die 10-Fuß benutzerfreundlichkeit bereitstellen TV-Bildschirme und der Xbox One.
+title: Fokus Navigation ohne Maus
+Description: Erfahren Sie, wie Sie mithilfe der Fokus Navigation umfassende und konsistente Interaktionen in ihren UWP-apps und benutzerdefinierten Steuerelementen für Benutzer von Tastatur Anwendern, Benutzer mit Behinderungen und andere Barrierefreiheits Anforderungen sowie die 10-Fuß-Erfahrung von Fernsehbildschirme und die Xbox One.
 label: ''
 template: detail.hbs
 keywords: Tastatur, Gamecontroller, Fernbedienung, Navigation, direktionale interne Navigation, direktionaler Bereich, Navigationsstrategie, Eingabe, Benutzerinteraktion, Bedienungshilfen, Verwendbarkeit
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a699ef00b3f377656940e66e6d35bfcba1cc5762
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: cb49ed58f03710d44a5c06c15530936885b9beea
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57625825"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735095"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Fokusnavigation für Tastatur, Gamepad, Fernbedienung und Bedienungshilfen
 
@@ -58,8 +58,8 @@ Das E-Book [Entwickeln von barrierefreier Software](https://www.microsoft.com/do
 
 Der interne 2D-Navigationsbereich eines Steuerelements oder einer Steuerelementgruppe wird als „direktionaler Bereich“ bezeichnet. Wenn der Fokus auf dieses Objekt verschoben wird, können die Pfeiltasten der Tastatur (links, rechts, oben und unten) verwendet werden, um zwischen untergeordneten Elementen im direktionalen Bereich zu navigieren.
 
-![direktionale Bereich](images/keyboard/directional-area-small.png)
-*2D innere Navigation Region oder direktionale Bereich, der eine Steuerelementgruppe*
+![direktionaler Bereich](images/keyboard/directional-area-small.png)
+*2D-inneren Navigationsbereich oder direktionaler Bereich einer Steuerelement Gruppe*
 
 Die können die Eigenschaft [XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) (mit den möglichen Werten [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode), [Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) oder [Disabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) verwenden, um die interne 2D-Navigation mit den Pfeiltasten der Tastatur zu verwalten.
 
@@ -74,8 +74,8 @@ Bei Festlegung auf Auto wird das Verhalten der direktionalen Navigation von der 
 
 Legen Sie **XYFocusKeyboardNavigation** auf **Disabled** fest, um die direktionale Navigation für das Steuerelement und seine untergeordneten Elemente zu blockieren.
 
-![XYFocusKeyboardNavigation deaktiviert Verhalten](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-*XYFocusKeyboardNavigation deaktiviert Verhalten*
+![das deaktivierte Verhalten von xyfocrokeyboardnavigation](images/keyboard/xyfocuskeyboardnav-disabled.gif)
+" *xyfocrokeyboardnavigation" deaktiviert* .
 
 In diesem Beispiel ist beim primären [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) für **XYFocusKeyboardNavigation** der Wert **Enabled** festgelegt. Alle untergeordneten Elemente erben diese Einstellung, und Sie können mit den Pfeiltasten zu diesen navigieren. Die Elemente B3 und B4 befinden sich jedoch in einem sekundären [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary), für den **XYFocusKeyboardNavigation** auf **Disabled** festgelegt wurde, wodurch der primäre Container überschrieben und die Pfeiltastennavigation zu sich selbst und zwischen den untergeordneten Elementen deaktiviert wird.
 
@@ -125,14 +125,14 @@ In diesem Beispiel ist beim primären [StackPanel](https://docs.microsoft.com/uw
 </Grid>
 ```
 
-### <a name="enabledhttpsdocsmicrosoftcomuwpapiwindowsuixamlinputxyfocuskeyboardnavigationmode"></a>[aktiviert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="enabledhttpsdocsmicrosoftcomuwpapiwindowsuixamlinputxyfocuskeyboardnavigationmode"></a>[Aktiviert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
 Legen Sie **XYFocusKeyboardNavigation** auf **Enabled** fest, um die direktionale 2D-Navigation zu einem Steuerelement und jedem seiner untergeordneten [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Objekte zu unterstützen.
 
 Bei Festlegung ist die Navigation mit den Pfeiltasten auf Elemente innerhalb des direktionalen Bereichs beschränkt. Die TAB-Navigation ist nicht betroffen, da alle Steuerelemente über eine Hierarchie für die Aktivierreihenfolge zugänglich bleiben.
 
-![XYFocusKeyboardNavigation aktiviert Verhalten](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-*XYFocusKeyboardNavigation aktiviert Verhalten*
+!["xyfocrokeyboardnavigation"-fähiges Verhalten](images/keyboard/xyfocuskeyboardnav-enabled.gif)
+*xyfocrokeyboardnavigation-fähiges Verhalten*
 
 In diesem Beispiel ist beim primären [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) für **XYFocusKeyboardNavigation** der Wert **Enabled** festgelegt. Alle untergeordneten Elemente erben diese Einstellung, und Sie können mit den Pfeiltasten zu diesen navigieren. Die Elemente B3 und B4 befinden sich in einem sekundären [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary), in dem **XYFocusKeyboardNavigation** nicht festgelegt ist und dann die Einstellung des primären Containers erbt. Das Element B5 befindet sich nicht in einem deklarierten direktionalen Bereich und bietet keine Unterstützung für die Pfeiltastennavigation, unterstützt jedoch das Standardverhalten für die TAB-Navigation.
 
@@ -194,8 +194,8 @@ Sie können auf mehreren Ebenen verschachtelte direktionale Bereiche verwenden. 
 
 Im Folgenden sehen Sie ein Beispiel für zwei geschachtelte direktionale Bereiche innerhalb eines Elements, das die direktionale 2D-Navigation nicht ausdrücklich unterstützt. In diesem Fall wird direktionale Navigation zwischen den zwei geschachtelten Bereichen nicht unterstützt.
 
-![XYFocusKeyboardNavigation aktiviert und geschachtelte Verhalten](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-*XYFocusKeyboardNavigation aktiviert und geschachtelte Verhalten*
+!["xyfocingkeyboardnavigation" und "netsted Behavior"](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
+" *xyfocrokeyboardnavigation" aktiviert und "Verhalten* "
 
 Nachfolgend sehen Sie ein komplexeres Beispiel für drei verschachtelte direktionale Bereiche, wobei Folgendes gilt:
 
@@ -205,7 +205,7 @@ Nachfolgend sehen Sie ein komplexeres Beispiel für drei verschachtelte direktio
 
 ![Verhalten bei aktivierter und komplex verschachtelter XYFocusKeyboardNavigation](images/keyboard/xyfocuskeyboardnav-enabled-nested2.gif)
 
-*XYFocusKeyboardNavigation aktiviert und komplexe, geschachtelte Verhalten*
+*"Xyfocrokeyboardnavigation" aktiviert und komplexes Verhalten in der Liste*
 
 ## <a name="tab-navigation"></a>TAB-Navigation
 
@@ -234,21 +234,21 @@ Wie im vorherigen Abschnitt erwähnt, sollten untergeordnete Elemente eines dire
 
    ![Verhalten bei der TAB-Navigation mit der Option „Local“](images/keyboard/tabnav-local.gif)
 
-   *"Local", Registerkarte Navigationsverhalten*
+   *Navigationsverhalten der Registerkarte "local"*
 
 - **Einmal**  
   Der Fokus wird einmal auf den Container und alle untergeordneten Elemente gesetzt. In diesem Beispiel ist die Aktivierreihenfolge B1, B2, B7, B1 (die interne Navigation mit Pfeiltasten wird ebenfalls gezeigt).
 
    ![Verhalten bei der TAB-Navigation mit der Option „Once“](images/keyboard/tabnav-once.gif)
 
-   *Registerkarte "Einmal" Navigationsverhalten*
+   *Navigationsverhalten der Registerkarte "Once"*
 
-- **Zyklus**   
+- Schleifen   
   Der Fokus wird wieder auf das erste fokussierbare Element in einem Container gesetzt. In diesem Beispiel ist die Aktivierreihenfolge B1, B2, B3, B4, B5, B6, B2...
 
    ![Verhalten bei der TAB-Navigation mit der Option „Cycle“](images/keyboard/tabnav-cycle.gif)
 
-   *"Durchlaufen Sie" Verhalten*
+   *Navigationsverhalten der Registerkarte "Cycle"*
 
 Im Folgenden sehen Sie den Code für die vorherigen Beispiele (mit TabFocusNavigation = Cycle).
 
@@ -318,7 +318,7 @@ Im Folgenden sehen Sie den Code für die vorherigen Beispiele (mit TabFocusNavig
 </Grid>
 ```
 
-### <a name="tabindexhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrolwindowsuixamlcontrolscontroltabindex"></a>[TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
+### <a name="tabindexhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolscontrolwindows_ui_xaml_controls_control_tabindex"></a>[TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
 
 Verwenden Sie [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex), um die Reihenfolge anzugeben, in der der Fokus auf Elemente gesetzt wird, wenn der Benutzer mithilfe der TAB-Taste durch Steuerelemente navigiert. Auf ein Steuerelement mit einem niedrigeren Tabindex wird der Fokus vor einem Steuerelement mit einem höheren Index gesetzt.
 
@@ -338,7 +338,7 @@ Im Folgenden sehen Sie, wie die Fokusnavigation von der Eigenschaft [TabIndex](h
 
 ![Verhalten bei der TAB-Navigation mit der Option „Local“ und TabIndex](images/keyboard/tabnav-tabindex.gif)
 
-*"Local", Registerkarte Navigation mit dem TabIndex-Verhalten*
+*Lokale Registerkarten Navigation mit TabIndex-Verhalten*
 
 Im vorherigen Beispiel gibt es zwei Bereiche: 
 - B1, direktionaler Bereich (B2–B6) und B7
@@ -425,7 +425,7 @@ Nicht zeigerorientierte Eingabetypen wie Tastatur, Gamepad, Fernbedienung und Be
 
 In diesem Abschnitt wird erläutert, wie Sie eine bevorzugte Navigationsstrategie angeben und die Fokusnavigation in Ihrer Anwendung durch eine Reihe von Navigationsstrategieeigenschaften optimieren, die alle fokusbasierten, nicht zeigerorientierten Eingabetypen unterstützen.
 
-Weitere allgemeine Informationen zum Erstellen von apps und-Umgebungen für Xbox/TV, finden Sie unter [Tastaturinteraktion](keyboard-interactions.md), [Entwerfen für Xbox und TV-](../devices/designing-for-tv.md), und [Gamepad und Remotesteuerung Interaktionen](gamepad-and-remote-interactions.md).
+Weitere allgemeine Informationen zum Entwickeln von apps und Erfahrungen für Xbox/TV finden Sie unter [Tastatur Interaktion](keyboard-interactions.md), [Entwerfen für Xbox und TV](../devices/designing-for-tv.md)und [Gamepad-und Remote Steuerungs Interaktionen](gamepad-and-remote-interactions.md).
 
 ### <a name="navigation-strategies"></a>Navigationsstrategien
 
@@ -453,7 +453,7 @@ In diesem Beispiel ist jede Fokusnavigationsrichtung auf Projection festgelegt. 
 
 ![Projection-Navigationsstrategie](images/keyboard/xyfocusnavigationstrategy-projection.gif)
 
-*Strategie für die Projektion navigation*
+*Projektions Navigations Strategie*
 
 ### <a name="navigationdirectiondistance"></a>NavigationDirectionDistance
 
@@ -463,7 +463,7 @@ Der Rand des umgebenden Rechtecks, das der Richtung der Navigation entspricht, w
 
 ![NavigationDirectionDistance-Navigationsstrategie](images/keyboard/xyfocusnavigationstrategy-navigationdirectiondistance.gif)
 
-*Strategie für die Navigation NavigationDirectionDistance*
+*Navigations Strategie "navigationdirectiondistance"*
 
 ### <a name="rectilineardistance"></a>RectilinearDistance
 
@@ -473,7 +473,7 @@ Der beste Kandidat wird durch Hinzufügen des primären und sekundären Abstands
 
 ![RectilinearDistance-Navigationsstrategie](images/keyboard/xyfocusnavigationstrategy-rectilineardistance.gif)
 
-*Strategie für die Navigation RectilinearDistance*
+*Navigations Strategie "rectilineardistance"*
 
 Diese Abbildung zeigt, dass B3 der RectilinearDistance-Fokuskandidat ist, wenn der Fokus auf B1 gesetzt ist und eine Richtung nach unten angefordert wird. Das basiert auf den folgenden Berechnungen für dieses Beispiel:
 -   Abstand (B1, B3, nach unten) = 10 + 0 = 10
@@ -482,8 +482,8 @@ Diese Abbildung zeigt, dass B3 der RectilinearDistance-Fokuskandidat ist, wenn d
 
 
 ## <a name="related-articles"></a>Verwandte Artikel
-- [Programmgesteuerte Fokusnavigation](focus-navigation-programmatic.md)
-- [Tastenkombinationen](keyboard-interactions.md)
+- [Programmgesteuerte Fokus Navigation](focus-navigation-programmatic.md)
+- [Tastatur Interaktionen](keyboard-interactions.md)
 - [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md) 
 
 

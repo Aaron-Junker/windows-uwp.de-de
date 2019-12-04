@@ -1,17 +1,17 @@
 ---
 description: Tools und Verfahren zum Debuggen und Testen der Kompatibilität Ihrer App mit der Prozesslebensdauer-Verwaltung.
-title: Test- und Debugtools für die Prozesslebensdauer-Verwaltung (PLM)
+title: Testen und Debuggen Prozess Lebensdauer-Verwaltung
 ms.date: 04/08/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d99492577fafc9f67929f795cd115d367940938
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 6912d7faa3a86dade13b60eac5654aef8a52173d
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713736"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735015"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>Test- und Debugtools für die Prozesslebensdauer-Verwaltung (PLM)
 

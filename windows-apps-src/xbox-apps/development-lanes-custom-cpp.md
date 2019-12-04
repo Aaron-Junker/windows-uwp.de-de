@@ -1,17 +1,17 @@
 ---
-title: C++-Spieleentwicklung auf Xbox mithilfe der universellen Windows-Plattform (UWP)
+title: C++Spieleentwicklung auf Xbox mithilfe von UWP
 description: UWP-Spieleentwicklung auf Xbox in C++.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 276a352918e4458e145755bbafad09d4278ec4d7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e64a9a443a35e1585257c02ad58186ae53192b48
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322049"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734935"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>Portieren benutzerdefinierter C++-Spiele auf die UWP auf Xbox
 
@@ -27,7 +27,7 @@ Unter [Spiele und DirectX](../gaming/index.md) sowie im Leitfaden mit den [erste
 > DirectX 12 wird von Xbox One derzeit nicht unterstützt.
 
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 - [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)
 

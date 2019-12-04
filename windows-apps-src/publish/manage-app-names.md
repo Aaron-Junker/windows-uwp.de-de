@@ -6,19 +6,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, APP-Namen, Ändern des App-namens, Aktualisieren von App-Name, Spiel Name, Produktname
 ms.localizationpriority: medium
-ms.openlocfilehash: 0022c53dc3afc7e710495900898d3fc5c81ea45a
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 38cedf40d4ecf997f6fbced2186cd5b27c6d5e4f
+ms.sourcegitcommit: 2d709ddcc31f52d2a4ace1134aea45057d99a615
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682684"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74782587"
 ---
 # <a name="manage-app-names"></a>Verwalten von App-Namen
 
 Mit der **APP-Namen verwalten** können Sie alle Namen anzeigen, die Sie für Ihre APP reserviert haben, zusätzliche Namen reservieren (für andere Sprachen oder den Namen Ihrer APP) und Namen löschen, die Sie nicht benötigen. Sie finden diese Seite im [Partner Center](https://partner.microsoft.com/dashboard) , indem Sie im linken Navigationsmenü für Ihre apps den Abschnitt **App-Verwaltung** erweitern.
 
 > [!IMPORTANT]
-> Sie können zusätzliche Namen für eine APP reservieren, und Sie können entscheiden, ob Sie eine der apps in der veröffentlichten Version Ihrer APP verwenden möchten, anstatt Sie zu verwenden, die Sie bei der ersten Erstellung Ihrer APP im Partner Center reserviert haben. Beachten Sie jedoch, dass der Vorname, den Sie für Ihr Produkt reservieren, in einigen ihrer [Identitäts Details](view-app-identity-details.md)verwendet wird, wie z. b. der **Paket Familienname (PFN)** . Diese Werte sind möglicherweise für einige Benutzer sichtbar und können nicht geändert werden. Stellen Sie daher sicher, dass der von Ihnen reservierte Name für diese Verwendung geeignet ist.
+> Sie können zusätzliche Namen für eine APP reservieren, und Sie können entscheiden, ob Sie eine der apps in der veröffentlichten Version Ihrer APP verwenden möchten, anstatt Sie zu verwenden, die Sie bei der ersten Erstellung Ihrer APP im Partner Center reserviert haben. Beachten Sie jedoch, dass der Vorname, den Sie für Ihr Produkt reservieren, in einigen [Identitäts Details](view-app-identity-details.md)verwendet wird, wie z. b. der **Paket Familienname (PFN)** . Diese Werte sind möglicherweise für einige Benutzer sichtbar und können nicht geändert werden. Stellen Sie daher sicher, dass der von Ihnen reservierte Name für diese Verwendung geeignet ist.
 
 
 ## <a name="reserve-additional-names-for-your-app"></a>Reservieren zusätzlicher Namen für Ihre App
@@ -45,7 +45,7 @@ Beachten Sie, dass Ihre APP mindestens einen reservierten Namen aufweisen muss. 
 Wenn Ihre App bereits im Store veröffentlicht wurde und Sie sie umbenennen möchten, können Sie dazu (mithilfe der oben beschriebenen Schritte) einen neuen Namen für die App reservieren und eine neue App-Übermittlung vornehmen. 
 
 Sie müssen die Pakete Ihrer APP aktualisieren, um den alten Namen durch den neuen zu ersetzen, und die aktualisierten Pakete in ihre Übermittlung hochladen.
-- Aktualisieren Sie zuerst die Package.StoreAssociation.xml-Datei, um den neuen Namen, entweder manuell oder mithilfe von Visual Studio, zu verwenden (**Projekt > Store > App mit Store verknüpfen** ). Weitere Informationen finden Sie unter [Packen einer UWP-App mit Visual Studio](/windows/msix/package/packaging-uwp-apps).
+- Aktualisieren Sie zunächst die Datei "Package. storeassociation. xml" so, dass der neue Name entweder manuell oder mithilfe von Visual Studio (**Project > Store > Zuordnen der APP mit dem Store...** ) verwendet wird. Weitere Informationen finden Sie unter [Packen einer UWP-App mit Visual Studio](/windows/msix/package/packaging-uwp-apps).
 - Aktualisieren Sie ebenfalls das [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname)-Element im App-Manifest, und aktualisieren Sie Grafiken oder Texte, die den App-Namen enthalten. 
   > [!IMPORTANT]
   > Achten Sie darauf, dass Sie die Datei Package.StoreAssociation.xml aktualisieren, bevor Sie **Paket/Eigenschaften/Anzeigenname** im App-Manifest ändern, andernfalls erhalten Sie möglicherweise einen Fehler.

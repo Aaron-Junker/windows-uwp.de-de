@@ -1,50 +1,47 @@
 ---
-title: Erste Schritte mit Point Of Service-Geräten
+title: Grundlagen zu Dienst Punkten
 description: Dieser Artikel enthält Informationen für die ersten Schritte mit PointOfService-UWP-Apps.
-ms.date: 06/13/2018
+ms.date: 12/3/2019
 ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: f1e58dbf8bae22df0652ada6ff8aafff6d30e8aa
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 4749b66cc5ce2593aead75d65993f70106da7c8b
+ms.sourcegitcommit: 2d709ddcc31f52d2a4ace1134aea45057d99a615
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63817399"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74782586"
 ---
-# <a name="getting-started-with-point-of-service"></a>Erste Schritte mit Point Of Service-Geräten
-
-## <a name="pointofservice-basics"></a>PointOfService-Grundlagen
+# <a name="point-of-service-basics"></a>Grundlagen zu Dienst Punkten
 
 Dieser Abschnitt enthält Themen, die für alle Point of Service-Gerätekategorien gleich sind.
 
 |Thema |Beschreibung |
 |------|------------|
-| [Deklaration der Funktion](pos-basics-capability.md)      | Erfahren Sie, wie Sie die Funktion **pointOfService** zu Ihrem Anwendungsmanifest hinzufügen.  Diese Funktion wird für die Verwendung des Windows.Devices.PointOfService-Namespace benötigt.  |
-| [Aufzählen von Geräten](pos-basics-enumerating.md)        | Erfahren Sie, wie Sie eine Geräteauswahl definieren, die verwendet wird, um die im System verfügbaren Geräte abzufragen, und verwenden diese Auswahl, um Point of Service-Geräte aufzulisten.  |
-| [Ein Geräteobjekt erstellen](pos-basics-deviceobject.md)  | Erfahren Sie, wie Sie ein PointOfService-Geräteobjekt erstellen, das Ihnen den Zugriff auf schreibgeschützte Eigenschaften des Peripheriegeräts und die Beanspruchung der exklusiven Nutzung des Peripheriegeräts ermöglicht. |
-| [Anspruch, und aktivieren ](pos-basics-claim.md)  | Erfahren Sie, wie Sie eine PointOfService peripheren für die ausschließliche Verwendung zu reservieren, und aktivieren für e/a-Vorgänge.  |
-| [Peripheriegeräte für andere Benutzer freigeben](pos-basics-sharing.md) | Erfahren Sie mehr über das Netzwerk oder verbundene Bluetooth-Peripheriegeräte mit anderen Computern in einer Umgebung gemeinsam nutzen, in denen mehrere PCs freigegebene Peripheriegeräte anstelle von dedizierten, auf jedem Computer angeschlossenen Peripheriegeräten abhängen.
-| [PointOfService-End-to-end](pos-get-started.md)  | Dies ist ein End-to-End-Beispiel für die Interaktion mit PointOfService-Peripheriegeräte, die mit den obigen Beispielen. |
+| [Funktionsdeklaration](pos-basics-capability.md)      | Erfahren Sie, wie Sie die Funktion **pointOfService** zu Ihrem Anwendungsmanifest hinzufügen.  Diese Funktion wird für die Verwendung des Windows.Devices.PointOfService-Namespace benötigt.  |
+| [Auflisten von Geräten](pos-basics-enumerating.md)        | Erfahren Sie, wie Sie eine Geräteauswahl definieren, die verwendet wird, um die im System verfügbaren Geräte abzufragen, und verwenden diese Auswahl, um Point of Service-Geräte aufzulisten.  |
+| [Erstellen eines Geräte Objekts](pos-basics-deviceobject.md)  | Erfahren Sie, wie Sie ein PointOfService-Geräteobjekt erstellen, das Ihnen den Zugriff auf schreibgeschützte Eigenschaften des Peripheriegeräts und die Beanspruchung der exklusiven Nutzung des Peripheriegeräts ermöglicht. |
+| [Anspruch und Aktivierung](pos-basics-claim.md)  | Erfahren Sie, wie Sie eine "pointfservice"-Peripherie für exklusive Verwendungszwecke reservieren und für e/a-Vorgänge aktivieren.  |
+| [Freigeben von Peripheriegeräten für andere](pos-basics-sharing.md) | Erfahren Sie, wie Sie Netzwerk-oder Bluetooth-verbundene Peripheriegeräte für andere Computer in einer Umgebung freigeben, in der mehrere PCs auf freigegebenen Peripheriegeräten anstatt auf dedizierte Peripheriegeräte basieren, die an jeden Computer angeschlossen sind.
+| [End-to-End-pointfservice](pos-get-started.md)  | Dies ist ein End-to-End-Beispiel, in dem die Interaktion mit pointfservice-Peripheriegeräten mithilfe der obigen Beispiele beschrieben wird. |
 |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 | Thema   | Beschreibung |
 |:--------|:------------|
-| [Anwendungsverteilung](../publish/distribute-lob-apps-to-enterprises.md) | Informationen Sie zu den Optionen für den Vertrieb Ihrer app für Enterprise-Kunden. |
-| [Anwendungslebenszyklus](../launch-resume/app-lifecycle.md) | Erfahren Sie mehr über den Lebenszyklus einer UWP-Anwendung und was geschieht, wenn Windows gestartet wird, angehalten und fortgesetzt wird Ihre app. |
-| [Anwendungsressourcen](../app-resources/index.md) | Informationen Sie zum Erstellen, das Paket, und Nutzen von Ihrer app Zeichenfolge, Bild und -Ressourcen. |
-| [Datenbindung](../data-binding/index.md) | Erfahren Sie, wie die Datenbindung zu verwenden, um Daten in Ihrer app Benutzeroberfläche anzuzeigen. |
-| [Geräteenumeration](enumerate-devices.md) | Erfahren Sie, verwenden Sie erweiterte Enumeration Techniken von Peripheriegeräten zu finden.|
-| [Adaptive Anwendungsversionen](../debug-test-perf/version-adaptive-apps.md) | Erfahren Sie, wie Ihre app so entwerfen, dass es auf mehrere Versionen von Windows 10 ausgeführt wird.|
+| [Anwendungs Verteilung](../publish/distribute-lob-apps-to-enterprises.md) | Erfahren Sie mehr über die Optionen für die Verteilung Ihrer APP an Unternehmenskunden. |
+| [Anwendungslebenszyklus](../launch-resume/app-lifecycle.md) | Erfahren Sie mehr über den Lebenszyklus einer UWP-Anwendung und was passiert, wenn Windows die APP gestartet, anhält und fortsetzt. |
+| [Anwendungs Ressourcen](../app-resources/index.md) | Erfahren Sie, wie Sie die Zeichen folgen-, Image-und Datei Ressourcen ihrer app erstellen, Verpacken und nutzen. |
+| [Datenbindung](../data-binding/index.md) | Erfahren Sie, wie Sie Datenbindung zum Anzeigen von Daten in der Benutzeroberfläche Ihrer APP verwenden. |
+| [Geräte Enumeration](enumerate-devices.md) | Weitere Informationen finden Sie unter Verwenden erweiterter Enumerationstechniken zum Ermitteln Ihrer Peripheriegeräte.|
+| [Adaptive Anwendungen von Versionen](../debug-test-perf/version-adaptive-apps.md) | Sie können Ihre APP so entwerfen, dass Sie in mehreren Versionen von Windows 10 ausgeführt wird.|
 |
 
 
 ## <a name="sample-code"></a>Beispielcode
-+ [Barcode Scanner-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [Bargeld Drawer-Beispiel]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [Beispiel für Zeile anzeigen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [Magnetstreifens Reader-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [POSPrinter-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
-
++ [Beispiel für Barcode Scanner](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
++ [Beispiel für Bargeld laden]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [Beispiel für eine Zeilen Anzeige](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
++ [Beispiel für Magnet Stripe Reader](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
++ [Posprinter-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)

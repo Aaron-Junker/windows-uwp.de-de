@@ -1,17 +1,17 @@
 ---
-Description: Einige Arten von Apps (mehrsprachige Wörterbücher, Übersetzungstools usw.) müssen das Standardverhalten von einem App Bundle überschreiben und Ressourcen im App-Paket und nicht in separaten Ressourcenpaketen integrieren. In diesem Thema wird erläutert, wie das geht.
-title: Integrieren von Ressourcen im App-Paket und nicht in einem Ressourcenpaket
+Description: Einige Arten von Apps (mehrsprachige Wörterbücher, Übersetzungstools usw.) müssen das Standardverhalten von einem App-Paket überschreiben und Ressourcen im App-Paket und nicht in separaten Ressourcenpaketen integrieren. In diesem Thema wird erläutert, wie das geht.
+title: Erstellen von Ressourcen in Ihrem App-Paket
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: f7acabc9858f5a2fa0b6b76d752d2a342959f41f
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: d7a63c44ac8cb6f6b17951cf6515fad33fb83ee9
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682514"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734945"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>Integrieren von Ressourcen im App-Paket und nicht in einem Ressourcenpaket
 
@@ -97,6 +97,6 @@ Es gibt noch einen letzten Schritt, den Sie durchführen müssen. **Aber nur, we
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Verpacken einer UWP-App mit Visual Studio](../packaging/packaging-uwp-apps.md)
+* [Packen einer UWP-App mit Visual Studio](../packaging/packaging-uwp-apps.md)
 * [Manuelles Kompilieren von Ressourcen mit „MakePri.exe“](compile-resources-manually-with-makepri.md)
 * [Angeben der von der App verwendeten Standardressourcen](specify-default-resources-installed.md)

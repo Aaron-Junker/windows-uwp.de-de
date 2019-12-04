@@ -4,13 +4,13 @@ description: Dieser Artikel enthält zusätzliche Informationen zu den Einschrä
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 55bf6360f09ba4ab6c7878543ecfa0c80c4558e3
-ms.sourcegitcommit: 74c674c70b86bafeac7c8c749b1662fae838c428
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 12/03/2019
 ms.locfileid: "72252312"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Diagnostizieren von Fehlerbedingungen für Komponenten für Windows-Runtime
@@ -81,7 +81,7 @@ Die Komponente muss mindestens einen **public sealed**-Typ (**Public NotInherita
 
 Ein Typ in einer Komponente für Windows-Runtime darf nicht wie ein Namespace benannt werden (WME1068).
 
-> **Achtung**  Wenn Sie Winmdexp.exe direkt aufrufen und für die Benennung der Komponente für Windows-Runtime nicht die Option „/out” verwenden, versucht Winmdexp.exe, einen Namen zu generieren, der alle Namespaces in der Komponente enthält. Die Umbenennung von Namespaces kann zur Änderung des Komponentennamens führen.
+> **Achtung**  Wenn Sie Winmdexp.exe direkt aufrufen und für die Benennung der Komponente für Windows-Runtime nicht die Option „/out” verwenden, versucht „Winmdexp.exe“, einen Namen zu generieren, der alle Namespaces in der Komponente enthält. Die Umbenennung von Namespaces kann zur Änderung des Komponentennamens führen.
 
  
 
@@ -130,7 +130,7 @@ Im Allgemeinen sollte die Schnittstelle ausgewählt werden, die dem Typ am näch
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>Die Methode '{0}' weist in der Signatur einen Parameter vom Typ '{1}' auf. Obwohl es sich bei diesem generischen Typ nicht um einen gültigen Windows-Runtime-Typ handelt, werden von diesem Typ oder von dessen generischen Parametern Schnittstellen implementiert, die gültige Windows-Runtime-Typen sind. {2}</p>
+<td align="left"><p>Die Methode '{0}' weist in der Signatur einen Parameter vom Typ '{1}' auf. Obwohl es sich bei diesem generischen Typ nicht um einen gültigen Windows-Runtime-Typ handelt, werden von diesem Typ oder von dessen generischen Parametern Schnittstellen implementiert, die gültige Windows-Runtime-Typen sind. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/]({2})</p>
 > **Hinweis**  Bei {2}fügt winmdebug. exe eine Liste von Alternativen an, beispielsweise können Sie den Typ "System. Collections. Generic. List&lt;t&gt;" in der Methoden Signatur stattdessen in einen der folgenden Typen ändern: "System. Collections. Generic. IList&lt;t&gt;, System. Collections. Generic. Iread onlylist&lt;t&gt;, System. Collections. Generic. IEnumerable&lt;t&gt;'."
 </td>
 </tr>
@@ -180,10 +180,10 @@ In der UWP müssen Parameter schreibgeschützt oder lesegeschützt sein. Paramet
 |--------------|----------------------|
 | WME1101      | Die Methode '{0}' weist den Parameter '{1}' auf, bei dem es sich um ein Array handelt, das sowohl {2} als auch {3}hat. Die Inhalte von Arrayparametern müssen in der Windows-Runtime entweder lesbar oder schreibbar sein. Entfernen Sie eines der Attribute aus '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | WME1102      | Die Methode '{0}' weist den Ausgabeparameter '{1}' auf, bei dem es sich um ein Array handelt, das jedoch {2}enthält. Die Inhalte von Ausgabearrays sind in der Windows-Runtime schreibbar. Entfernen Sie das Attribut aus '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| WME1103      | Die Methode '{0}' weist den Parameter '{1}' auf, bei dem es sich um ein Array handelt, das entweder System. Runtime. InteropServices. InAttribute oder System. Runtime. InteropServices. OutAttribute aufweist. Arrayparameter müssen für Windows-Runtime entweder {3} oder {3} enthalten. Entfernen Sie diese Attribute, oder ersetzen Sie sie bei Bedarf durch das entsprechende Windows-Runtime-Attribut.                                                                                                                                                                                                                                                                                                                                                                                          |
-| WME1104      | Die Methode '{0}' weist den Parameter '{1}' auf, bei dem es sich nicht um ein Array handelt, das entweder eine {2} oder eine {3}hat. Das Markieren von Nicht-Arrayparametern mit {3} oder {3} wird von Windows-Runtime nicht unterstützt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1103      | Die Methode '{0}' weist den Parameter '{1}' auf, bei dem es sich um ein Array handelt, das entweder System. Runtime. InteropServices. InAttribute oder System. Runtime. InteropServices. OutAttribute aufweist. Arrayparameter müssen für Windows-Runtime entweder {2} oder {3} enthalten. Entfernen Sie diese Attribute, oder ersetzen Sie sie bei Bedarf durch das entsprechende Windows-Runtime-Attribut.                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | Die Methode '{0}' weist den Parameter '{1}' auf, bei dem es sich nicht um ein Array handelt, das entweder eine {2} oder eine {3}hat. Das Markieren von Nicht-Arrayparametern mit {2} oder {3} wird von Windows-Runtime nicht unterstützt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | WME1105      | Die Methode "{0}" hat den Parameter "{1}" mit einem System. Runtime. InteropServices. InAttribute oder System. Runtime. InteropServices. OutAttribute. Das Markieren von Parametern mit System.Runtime.InteropServices.InAttribute oder System.Runtime.InteropServices.OutAttribute wird von Windows-Runtime nicht unterstützt. Entfernen Sie eventuell System.Runtime.InteropServices.InAttribute, und ersetzen Sie System.Runtime.InteropServices.OutAttribute stattdessen durch den 'out'-Modifizierer. Die Methode "{0}" hat den Parameter "{1}" mit einem System. Runtime. InteropServices. InAttribute oder System. Runtime. InteropServices. OutAttribute. Windows-Runtime unterstützt nur das Markieren von ByRef-Parametern mit System.Runtime.InteropServices.OutAttribute. Eine andere Verwendung dieser Attribute ist nicht möglich. |
-| WME1106      | Die Methode '{0}' weist den Parameter '{1}' auf, der ein Array ist. Die Inhalte von Array-Parametern müssen in der Windows-Runtime entweder lesbar oder schreibbar sein. Wenden Sie entweder {1} oder {1} auf '{1}' an.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1106      | Die Methode '{0}' weist den Parameter '{1}' auf, der ein Array ist. Die Inhalte von Array-Parametern müssen in der Windows-Runtime entweder lesbar oder schreibbar sein. Wenden Sie entweder {2} oder {3} auf '{1}' an.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 ## <a name="member-with-a-parameter-named-value"></a>Member mit einem Parameter mit dem Namen „Value"
@@ -210,7 +210,7 @@ In der UWP werden Rückgabewerte als Ausgabeparameter betrachtet, und die Namen 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **Hinweis**  Wenn Sie den Namen des Rückgabewerts ändern und der neue Namen mit dem Namen eines anderen Parameters in Konflikt steht, erhalten Sie die Fehlermeldung WME1091.
+> **Hinweis**  Wenn Sie den Namen des Rückgabewerts ändern und der neue Name mit dem Namen eines anderen Parameters in Konflikt steht, erhalten Sie die Fehlermeldung WME1091.
 
 JavaScript-Code kann auf die Ausgabeparameter einer Methode, einschließlich des Rückgabewerts, über den Namen zugreifen. Ein Beispiel finden Sie unter [ReturnValueNameAttribute](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.returnvaluenameattribute).
 

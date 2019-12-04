@@ -1,17 +1,17 @@
 ---
 description: Im Hintergrund Ihrer UI befinden sich Ihre Geschäfts- und Datenebenen.
-title: Portieren Windows Phone Silverlight-Geschäfts-und Daten Ebenen auf UWP
+title: Portieren von WPSL-Geschäfts-und Daten Ebenen auf UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 25d8bba5e1b26613185017642d63128cc2b1f7f6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9548026f0cae4ac414da15ad4ad2aa86f6226cbc
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259083"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734915"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>Portieren Windows Phone Silverlight-Geschäfts-und Daten Ebenen auf UWP
 
