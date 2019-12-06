@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac zu Windows, Tastenkombination für Tastenkombinationen, Wechsel von UNIX zu Windows, Übergang von Mac zu Windows, Unterstützung der Umstellung von MacBook auf die Oberfläche, Verwendung von Windows für einen Macintosh-Benutzer, Wechsel von Macintosh zu Windows, Hilfe beim Ändern von Entwicklungsumgebungen, Mac OS X zu Windows, Hilfe Wechsel von Mac zu PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 563a8ad659cfff1396049aae78342642d1db3e72
-ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
+ms.openlocfilehash: a4e71143730184db094df2a7e8f1416cbaf244c4
+ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309160"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74881272"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Leitfaden zum Ändern der Entwicklungsumgebung von Mac zu Windows
 
@@ -24,23 +24,23 @@ Bei der APP-Entwicklung wäre das nächste Äquivalent zu Xcode [Visual Studio](
 
 ## <a name="keyboard-shortcuts"></a>Tastenkombinationen
 
-| **Betriebs** | **Mac** | **Windows** |
+| **Vorgang** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Kopieren | Befehl + C | CTR + C |
-| Ausschneiden | Befehl + X | CTR + X |
-| Einfügen | Befehl + V | CTR + V |
+| „Kopieren“ | Befehl + C | STRG+C |
+| Ausschneiden | Befehl + X | STRG+X |
+| Einfügen | Befehl + V | STRG+V |
 | Rückgängig machen | Befehl + Z | STRG+Z |
 | Speichern | Befehl + S | STRG+S |
-| Offen | Befehl + O | STRG+O |
-| Computer sperren | Befehl + Steuerung + Q | Windowkey + L |
-| Desktop anzeigen | Befehl + F3 | Windowkey + D |
-| Minimieren von Fenstern | Befehl + M | Windows-Taste + M |
-| Suche | Befehl + Leertaste | Windows-Taste |
+| Öffnen Sie den | Befehl + O | STRG+O |
+| Computer sperren | Befehl + Steuerung + Q | WindowsKey + L |
+| Desktop anzeigen | Befehl + F3 | WindowsKey + D |
+| Minimieren von Fenstern | Befehl + M | WindowsKey + M |
+| Suche | Befehl + Leertaste | WindowsKey |
 | Aktives Fenster schließen | Befehl + W | Steuerelement + W |
 | Aktuellen Task wechseln | Befehl + Tab | ALT+TAB |
-| Bildschirm speichern (Screenshot) | Befehl + Umschalt + 3 | Windows + UMSCHALT + S |
-| Fenster speichern | Befehl + Umschalt + 4 | Windows + UMSCHALT + S |
-| Element Informationen oder Eigenschaften anzeigen | Befehl + I | ALT + EINGABETASTE |
+| Bildschirm speichern (Screenshot) | Befehl + Umschalt + 3 | WindowsKey + UMSCHALT + S |
+| Fenster speichern | Befehl + Umschalt + 4 | WindowsKey + UMSCHALT + S |
+| Element Informationen oder Eigenschaften anzeigen | Befehl + I | ALT+EINGABE |
  | Alle Elemente auswählen | Befehl + A | STRG+A |
 | Wählen Sie mehr als ein Element in einer Liste aus (nicht zusammenhängend). | , Und klicken Sie dann auf die einzelnen Elemente. | Steuerelement, und klicken Sie dann auf jedes Element |
 | Sonderzeichen eingeben | Option + Zeichen Taste | ALT + Zeichen Taste|
@@ -49,7 +49,7 @@ Bei der APP-Entwicklung wäre das nächste Äquivalent zu Xcode [Visual Studio](
 
 Hinweis: für einige dieser Verknüpfungen ist eine "Genauigkeits Trackpad" erforderlich, z. b. die Trackpad-Geräte auf Surface-Geräten und andere Laptops von Drittanbietern.
 
- **Betriebs** | **Mac** | **Windows** |
+ **Vorgang** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Scroll | Vertikaler Schwenken mit zwei Fingern | Vertikaler Schwenken mit zwei Fingern |
 | Zoom | Zwei Finger ein-und ausgehend | Zwei Finger ein-und ausgehend |
@@ -70,7 +70,7 @@ Windows stellt verschiedene Alternativen zum Terminal Emulator des Macs bereit.
 
 1. Die Windows-Befehlszeile
 
-Die Windows-Befehlszeile akzeptiert DOS-Befehle und ist das am häufigsten verwendete Befehlszeilen Tool unter Windows. Um es zu öffnen, drücken Sie **Windows + R** , um das Feld **Ausführen** zu öffnen, geben Sie dann **cmd** ein, und klicken Sie dann auf **OK**. Um eine Administrator Befehlszeile zu öffnen, geben Sie **cmd** ein, und drücken **Sie STRG + UMSCHALT + Eingabe**Taste. 
+Die Windows-Befehlszeile akzeptiert DOS-Befehle und ist das am häufigsten verwendete Befehlszeilen Tool unter Windows. Um es zu öffnen, drücken Sie **WindowsKey + R** , um das Feld **Ausführen** zu öffnen, geben Sie dann **cmd** ein, und klicken Sie dann auf **OK**. Um eine Administrator Befehlszeile zu öffnen, geben Sie **cmd** ein, und drücken **Sie STRG + UMSCHALT + Eingabe**Taste.
 
 2. PowerShell
 
@@ -80,14 +80,14 @@ Die Windows-Befehlszeile akzeptiert DOS-Befehle und ist das am häufigsten verwe
 
 3. Windows-Subsystem für Linux (WSL)
 
-Mit WSL können Sie eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass Sie *bash** oder eine andere Shell ausführen können, abhängig von der Auswahl und der spezifischen installierten Linux-Distribution. Mithilfe von WSL wird die Art der Umgebung bereitgestellt, die den Mac-Benutzern am meisten vertraut ist. Beispielsweise können Sie die Dateien in einem aktuellen Verzeichnis und **nicht in der** Windows- Befehlszeile auflisten. Weitere Informationen zum Installieren und Verwenden von WSL finden Sie im [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+Mit WSL können Sie eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass Sie *bash** oder eine andere Shell ausführen können, abhängig von der Auswahl und der spezifischen installierten Linux-Distribution. Mithilfe von WSL wird die Art der Umgebung bereitgestellt, die den Mac-Benutzern am meisten vertraut ist. Beispielsweise können Sie die Dateien in einem aktuellen Verzeichnis und **nicht in der** Windows- Befehlszeile auflisten. Weitere Informationen zum Installieren und Verwenden von WSL finden Sie im [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 ## <a name="apps-and-utilities"></a>Apps und Hilfsprogramme
 
  **App** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Einstellungen und Einstellungen | System Einstellungen | Einstellungen |
-| Task-Manager | Aktivitäts Monitor | Task-Manager |
+| Einstellungen und Einstellungen | System Einstellungen | „Einstellungen“ |
+| Task-Manager | Aktivitätsmonitor | Task-Manager |
 | Datenträger Formatierung | Datenträger Dienstprogramm | Datenträgerverwaltung |
 | Text Bearbeitung | TextEdit | Editor |
 | Ereignisanzeige | Console | Ereignisanzeige |
