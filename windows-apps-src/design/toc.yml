@@ -232,6 +232,8 @@
           href: controls-and-patterns/rich-edit-box.md
         - name: Kennwortfeld
           href: controls-and-patterns/password-box.md
+        - name: Zahlenfeld
+          href: controls-and-patterns/number-box.md
         - name: Beschriftungen
           href: controls-and-patterns/labels.md
         - name: Links zu Inhalten
