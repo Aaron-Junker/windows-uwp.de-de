@@ -1,18 +1,18 @@
 ---
 Description: In diesem Artikel erfahren Sie, wie Sie die Rückwärtsnavigation zum Durchlaufen des Navigationsverlaufs eines Benutzers in einer UWP-App implementieren.
-title: Navigationsverlauf und Rückwärtsnavigation (Windows-Apps)
+title: Navigationsverlauf und Rückwärtsnavigation
 template: detail.hbs
 op-migration-status: ready
 ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713796"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735025"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Navigationsverlauf und Rückwärtsnavigation für UWP-Apps
 

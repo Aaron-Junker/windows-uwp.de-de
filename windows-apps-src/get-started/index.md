@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: Erste Schritte, Windows 10, UWP, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 106e85fc0bd74740d99d5de6cb34c8b5a6e75e0f
-ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
+ms.openlocfilehash: 7439d437dda69bf235bd8681751617b2982be394
+ms.sourcegitcommit: 2d3a7d18edf2715987b26d1b5341ec88eefc99ec
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205913"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74898525"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps
 
@@ -208,6 +208,7 @@ ms.locfileid: "71205913"
                 <div class="card">
                     <div class="cardText">
                         <h3>Entwicklungstools</h3>
+                        <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows-Community-Toolkit</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtuelle Computer.</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu unter Windows</a></p>

@@ -7,17 +7,17 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 72951270a45ba82f1241c967bb70628a3f27f7c1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f33e2f10686edf149feb11e317a10e535685ef19
+ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258108"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902534"
 ---
+# <a name="design-toolkits-and-samples-for-uwp-apps"></a>Design-Toolkits und Beispiele für UWP-Apps
+
 ![Designgrundlagen](../images/downloads-2x.png)
 
-# <a name="design-toolkits-and-samples-for-uwp-apps"></a>Design-Toolkits und Beispiele für UWP-Apps
- 
 Design- und UI-bezogene Downloads für Fluent Design/UWP-Apps. Zusätzliche Tools wie beispielsweise Visual Studio finden Sie auf der <a href="https://developer.microsoft.com/windows/downloads">Hauptseite für Downloads</a>. 
 
 
