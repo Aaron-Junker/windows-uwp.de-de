@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, pip, py.exe, Dateipfade, PYTHONPATH, Python-Entwicklung, Python-Paketerstellung
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4132ef0089ee707367666b4d6340333e538b1130
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
+ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72313376"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74663557"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Häufig gestellte Fragen zum Verwenden von Python unter Windows
 
@@ -47,7 +47,7 @@ Sie können die Verknüpfungen deaktivieren, ohne Python zu installieren, indem 
 
 Python-Zeichenfolgen verwenden Escapezeichen für Sonderzeichen. Wenn Sie z. B. ein neues Zeilenzeichen in einer Zeichenfolge einfügen möchten, geben Sie `\n` ein. Da in Dateipfaden unter Windows umgekehrte Schrägstriche verwendet werden, werden einige Teile möglicherweise in Sonderzeichen umgewandelt.
 
-Fügen Sie das Präfix `r` hinzu, um einen Pfad als Zeichenfolge in Python einzufügen. Dies gibt an, dass es sich um eine `raw`-Zeichenfolge handelt und mit Ausnahme von \" keine Escapezeichen verwendet werden (möglicherweise müssen Sie den letzten umgekehrten Schrägstrich im Pfad entfernen). Der Pfad kann also wie folgt aussehen: r"C:\Users\MyName\Documents\Document.txt".
+Fügen Sie das Präfix `r` hinzu, um einen Pfad als Zeichenfolge in Python einzufügen. Dies gibt an, dass es sich um eine `raw`-Zeichenfolge handelt und mit Ausnahme von \" keine Escapezeichen verwendet werden (möglicherweise müssen Sie den letzten umgekehrten Schrägstrich im Pfad entfernen). Ihr Pfad könnte also wie folgt aussehen: `r"C:\Users\MyName\Documents\Document.txt"`.
 
 Bei Verwendung von Pfaden in Python empfiehlt es sich, das standardmäßige pathlib-Modul zu verwenden. Auf diese Weise können Sie die Zeichenfolge in ein Rich-Path-Objekt konvertieren, das Pfadbearbeitungen konsistent durchführt, unabhängig davon, ob Sie Schrägstriche oder umgekehrte Schrägstriche verwenden, sodass der Code in verschiedenen Betriebssystemen besser funktioniert.
 

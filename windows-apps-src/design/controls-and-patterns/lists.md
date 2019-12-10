@@ -12,16 +12,16 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4605f759c554c12368325a7c1e42143319eddede
-ms.sourcegitcommit: 503fa613c65236660350794b4f066eccebe9ac8e
+ms.openlocfilehash: 06cd49ce68de6f1c7a7a29b94c80f0a004a2eca3
+ms.sourcegitcommit: 6b29f0cbdc6e66b44150b3b60e95d67e1f7f56bf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74162347"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74478532"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
-Sammlungen und Listen beziehen sich beide auf die Darstellung mehrerer verwandter Datenelemente, die gemeinsam angezeigt werden. Sammlungen können auf mehrere Arten und durch mehrere unterschiedliche Sammlungssteuerelemente dargestellt werden (können auch als Sammlungsansichten bezeichnet werden). Sammlungssteuerelemente zeigen und ermöglichen Interaktionen mit sammlungsbasierten Inhalten wie einer Liste mit Kontakten, einer Liste mit Daten, einer Sammlung von Bildern usw.
+Sowohl Sammlungen als auch Listen beziehen sich auf die Darstellung mehrerer verwandter Datenelemente, die gemeinsam angezeigt werden. Sammlungen können auf mehrere Arten und durch mehrere unterschiedliche Sammlungssteuerelemente dargestellt werden (können auch als Sammlungsansichten bezeichnet werden). Sammlungssteuerelemente zeigen und ermöglichen Interaktionen mit sammlungsbasierten Inhalten wie einer Liste mit Kontakten, einer Liste mit Daten, einer Sammlung von Bildern usw.
 
 > **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [GridView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView), [FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [ItemsRepeater class](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
 

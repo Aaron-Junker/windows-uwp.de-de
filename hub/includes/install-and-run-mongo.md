@@ -5,36 +5,36 @@ ms.author: mattwoj
 ms.date: 10/04/2019
 ms.openlocfilehash: f594600991f08a7dfda784ae127be2e6438dacbd
 ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72314884"
 ---
-So installieren Sie MongoDB:
+So installieren Sie MongoDB
 
-1. Öffnen Sie das WSL-Terminal (d.h. Ubuntu 18,04).
-2. Aktualisieren Sie Ihre Ubuntu-Pakete: `sudo apt update`
-3. Nachdem die Pakete aktualisiert wurden, installieren Sie MongoDB mit: `sudo apt-get install mongodb`
-4. Bestätigen Sie die Installation, und erhalten Sie die Versionsnummer: `mongod --version`
+1. Öffnen Sie das WSL-Terminal (d. h. Ubuntu 18.04).
+2. Aktualisieren Sie Ihre Ubuntu-Pakete: `sudo apt update`.
+3. Nachdem die Pakete aktualisiert wurden, installieren Sie MongoDB wie folgt: `sudo apt-get install mongodb`.
+4. Bestätigen Sie die Installation, und rufen Sie die Versionsnummer ab: `mongod --version`.
 
-Es gibt drei Befehle, die Sie nach der Installation von MongoDB wissen müssen:
+Nach der Installation von MongoDB müssen Sie drei Befehle kennen:
 
-1. `sudo service mongodb status` zum Überprüfen des Status der Datenbank.
-2. `sudo service mongodb start`, um mit der Ausführung der Datenbank zu beginnen.
-3. `sudo service mongodb stop`, um die Ausführung der Datenbank zu verhindern.
-
-> [!NOTE]
-> Möglicherweise wird der Befehl "`sudo systemctl status mongodb`" in Tutorials oder Artikeln angezeigt. In WSL ist `systemd` (ein Dienst Verwaltungssystem unter Linux) nicht enthalten. Stattdessen verwendet Sie sysvinit, um Dienste auf Ihrem Computer zu starten. Sie sollten keinen Unterschied bemerken, aber wenn ein Tutorial die Verwendung von `sudo systemctl` empfiehlt, verwenden Sie stattdessen: `sudo /etc/init.d/`. Beispielsweise wäre `sudo systemctl status mongodb` für WSL `sudo /etc/inid.d/mongodb status`... oder Sie können auch `sudo service mongodb status` verwenden.
-
-### <a name="run-your-mongo-database-in-a-local-server"></a>Ausführen der Mongo-Datenbank auf einem lokalen Server
-
-1. Überprüfen Sie den Status der Datenbank: `sudo service mongodb status` sollte eine [FAIL]-Antwort angezeigt werden, es sei denn, Sie haben die Datenbank bereits gestartet.
-
-2. Starten Sie die Datenbank: `sudo service mongodb start` sollte nun eine [OK]-Antwort angezeigt werden.
-
-3. Stellen Sie sicher, dass Sie eine Verbindung mit dem Datenbankserver herstellen und einen Diagnose Befehl ausführen `mongo --eval 'db.runCommand({ connectionStatus: 1 })'` werden die aktuelle Datenbankversion, die Server Adresse und der Port sowie die Ausgabe des Status-Befehls ausgegeben. Der Wert `1` für das Feld "OK" in der Antwort gibt an, dass der Server funktioniert.
-
-4. Geben Sie Folgendes ein, um die Ausführung des MongoDB-Dienstanbieter anzuhalten: `sudo service mongodb stop`
+1. `sudo service mongodb status` zum Überprüfen des Status Ihrer Datenbank.
+2. `sudo service mongodb start`, um die Ausführung der Datenbank zu starten.
+3. `sudo service mongodb stop`, um die Ausführung der Datenbank zu stoppen.
 
 > [!NOTE]
-> MongoDB verfügt über mehrere Standardparameter, einschließlich der Speicherung von Daten in/Data/DB und der Ausführung auf Port 27017. Außerdem ist `mongod` der Daemon (Host Prozess für die Datenbank), und `mongo` ist die Befehlszeilenshell, die eine Verbindung mit einer bestimmten Instanz von `mongod` herstellt.
+> Möglicherweise wird in Tutorials oder Artikeln der Befehl `sudo systemctl status mongodb` verwendet. Damit das Paket nicht zu groß wird, ist `systemd` (ein Dienstverwaltungssystem unter Linux) in WSL nicht enthalten. Stattdessen wird SysVinit verwendet, um Dienste auf Ihrem Computer zu starten. Sie sollten keinen Unterschied bemerken, aber wenn in einem Tutorial die Verwendung von `sudo systemctl` empfohlen wird, verwenden Sie stattdessen `sudo /etc/init.d/`. Beispiel: `sudo systemctl status mongodb` entspricht in WSL `sudo /etc/inid.d/mongodb status`. Sie können jedoch auch `sudo service mongodb status` verwenden.
+
+### <a name="run-your-mongo-database-in-a-local-server"></a>Ausführen Ihrer Mongo-Datenbank auf einem lokalen Server
+
+1. Überprüfen des Status Ihrer Datenbank: `sudo service mongodb status` Es sollte die Antwort „Fail“ angezeigt werden, sofern Sie die Datenbank noch nicht gestartet haben.
+
+2. Starten Ihrer Datenbank: `sudo service mongodb start` Nun sollte die Antwort „OK“ angezeigt werden.
+
+3. Überprüfen Sie den Zustand, indem Sie eine Verbindung mit dem Datenbankserver herstellen und einen Diagnosebefehl ausführen: `mongo --eval 'db.runCommand({ connectionStatus: 1 })'` Hierdurch werden die aktuelle Datenbankversion, die Serveradresse und der Port sowie die Ausgabe des Statusbefehls ausgegeben. Der Wert `1` für das Feld „ok“ in der Antwort gibt an, dass der Server funktioniert.
+
+4. Wenn Sie die Ausführung des MongoDB-Diensts unterbinden möchten, geben Sie Folgendes ein: `sudo service mongodb stop`
+
+> [!NOTE]
+> MongoDB verfügt über mehrere Standardparameter, darunter die Speicherung von Daten in „/data/db“ und die Ausführung an Port 27017. Außerdem ist `mongod` der Daemon (Hostprozess für die Datenbank), und `mongo` ist die Befehlszeilenshell, die eine Verbindung mit einer bestimmten Instanz von `mongod` herstellt.
