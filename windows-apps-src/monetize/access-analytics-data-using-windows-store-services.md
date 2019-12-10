@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Store-Dienste Microsoft Store-Analyse-API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 71c59049b76219d6f9360748e9ca11ea84542e47
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
+ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259318"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74954064"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Zugreifen auf Analysedaten mit Store-Diensten
 
@@ -89,7 +89,7 @@ Die folgenden Analysemethoden sind für UWP-apps im Partner Center verfügbar.
 |---------------|--------------------|
 | Akquisitionen, Konvertierungen, Installationen und Verwendung |  <ul><li>[App-Käufe erhalten](get-app-acquisitions.md) (Legacy)</li><li>Abrufen von [Trichter Daten](get-acquisition-funnel-data.md) für die APP-Beschaffung (Legacy)</li><li>[App-Konvertierungen nach Kanal erhalten](get-app-conversions-by-channel.md)</li><li>[Add-on-Akquisitionen erhalten](get-in-app-acquisitions.md)</li><li>[Abonnement-Add-on-Käufe erhalten](get-subscription-acquisitions.md)</li><li>[Add-on-Konvertierungen nach Kanal](get-add-on-conversions-by-channel.md)</li><li>[App-Installationen erhalten](get-app-installs.md)</li><li>[Tägliche App-Nutzung erhalten](get-app-usage-daily.md)</li><li>[Monatliche App-Nutzung erhalten](get-app-usage-monthly.md)</li></ul> |
 | App-Fehler | <ul><li>[Fehler Berichterstattungs Daten erhalten](get-error-reporting-data.md)</li><li>[Details zu einem Fehler in Ihrer APP erhalten](get-details-for-an-error-in-your-app.md)</li><li>[Stapel Überwachung für einen Fehler in Ihrer APP erhalten](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Herunterladen der CAB-Datei für einen Fehler in Ihrer APP](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| Aufschluss | <ul><li>[Erhalten von Insights-Daten für Ihre APP](get-insights-data-for-your-app.md)</li></ul>  |
+| Erkenntnisse | <ul><li>[Erhalten von Insights-Daten für Ihre APP](get-insights-data-for-your-app.md)</li></ul>  |
 | Bewertungen und Prüfungen | <ul><li>[APP-Bewertungen erhalten](get-app-ratings.md)</li><li>[App-Reviews erhalten](get-app-reviews.md)</li></ul> |
 | In-App-Werbung und Anzeigenkampagnen | <ul><li>[Anzeigen von Leistungsdaten](get-ad-performance-data.md)</li><li>[Leistungsdaten der Werbekampagne erhalten](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -102,7 +102,7 @@ Die folgenden Analysemethoden stehen für die Verwendung durch Entwicklerkonten 
 | Installiert |  <ul><li>[Installieren von Desktop Anwendungen](get-desktop-app-installs.md)</li></ul> |
 | Blöcke |  <ul><li>[Aktualisieren Sie upgradeblöcke für Ihre Desktop Anwendung.](get-desktop-block-data.md)</li><li>[Aktualisierungs Block Details für Ihre Desktop Anwendung](get-desktop-block-data-details.md)</li></ul> |
 | Anwendungsfehler |  <ul><li>[Get-Fehlerberichts Daten für Ihre Desktop Anwendung](get-desktop-application-error-reporting-data.md)</li><li>[Details zu einem Fehler in der Desktop Anwendung erhalten](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Stapel Überwachung für einen Fehler in der Desktop Anwendung erhalten](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Herunterladen der CAB-Datei für einen Fehler in der Desktop Anwendung](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| Aufschluss | <ul><li>[Erhalten von Insights-Daten für Ihre Desktop Anwendung](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| Erkenntnisse | <ul><li>[Erhalten von Insights-Daten für Ihre Desktop Anwendung](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Methoden für Xbox Live-Dienste
 
@@ -113,15 +113,6 @@ Die folgenden zusätzlichen Methoden stehen für Entwicklerkonten mit Spielen zu
 | Allgemeine Analysen |  <ul><li>[Erhalten von Xbox Live Analytics-Daten](get-xbox-live-analytics.md)</li><li>[Erhalten von Xbox Live-Erstellungs Daten](get-xbox-live-achievements-data.md)</li><li>[Online-Daten zur gleichzeitigen Verwendung von Xbox Live](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | Integritätsanalyse |  <ul><li>[Erhalten von Xbox Live Health-Daten](get-xbox-live-health-data.md)</li></ul> |
 | Community-Analyse |  <ul><li>[Get Xbox Live Game Hub-Daten](get-xbox-live-game-hub-data.md)</li><li>[Xbox Live Club-Daten erhalten](get-xbox-live-club-data.md)</li><li>[Xbox Live-multiplayerdaten erhalten](get-xbox-live-multiplayer-data.md)</li></ul>  |
-
-### <a name="methods-for-xbox-one-games"></a>Methoden für Xbox One-Spiele
-
-Die folgenden zusätzlichen Methoden können von Entwickler Konten mit Xbox One-spielen verwendet werden, die über das Xbox Developer Portal (XDP) erfasst wurden und im XDP-Analyse Dashboard verfügbar sind.
-
-| Szenario       | Methoden      |
-|---------------|--------------------|
-| Käufe |  <ul><li>[Holen Sie sich die Xbox One-Spiele](get-xbox-one-game-acquisitions.md)</li><li>[Holen Sie sich eine Get-on-Übernahme von Xbox One](get-xbox-one-add-on-acquisitions.md)</li></ul> |
-| Fehler |  <ul><li>[Fehler Berichterstattungs Daten für Ihr Xbox One-Spiel](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[Details zu einem Fehler in Ihrem Xbox One-Spiel](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[Erhalten Sie die Stapel Überwachung für einen Fehler in Ihrem Xbox One-Spiel.](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[Herunterladen der CAB-Datei für einen Fehler in Ihrem Xbox One-Spiel](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>Methoden für Hardware und Treiber
 
