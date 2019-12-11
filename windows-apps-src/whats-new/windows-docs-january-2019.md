@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Neues, Update, Features, Entwicklerleitfäden, Windows 1
 ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac5f7e058a616117e73defde2c48bf4c66f68d2e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
+ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259743"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902472"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Neues in der Windows-Entwicklerdokumentation im Januar 2019
 
@@ -22,7 +22,7 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 
 ### <a name="windows-development-on-microsoft-learn"></a>Windows-Entwicklung bei Microsoft Learn
 
-Microsoft Learn bietet neue praktische Lern- und Schulungsmöglichkeiten für Microsoft-Entwickler. Wenn du dich für die Entwicklung von Windows-Apps interessierst, sieh dir [unseren neuen Lernpfad](https://docs.microsoft.com/learn/paths/develop-windows10-apps/) an. Dort findest du eine umfassende Einführung in die Plattform, in die Tools und in die Entwicklung deiner ersten Apps.
+Microsoft Learn bietet neue praktische Lern- und Schulungsmöglichkeiten für Microsoft-Entwickler. Wenn du dich für die Entwicklung von Windows-Apps interessierst, sieh dir [unseren neuen Lernpfad](/learn/paths/develop-windows10-apps/) an. Dort findest du eine umfassende Einführung in die Plattform, in die Tools und in die Entwicklung deiner ersten Apps.
 
 ![Abbildung: Lernpfad für die Windows-Entwicklung](images/windows-learn.png)
 
@@ -32,7 +32,7 @@ Microsoft Learn bietet neue praktische Lern- und Schulungsmöglichkeiten für Mi
 
 ### <a name="msix-modification-packages"></a>MSIX-Änderungspakete
 
-In der Version 1809 von Windows 10 wurde die Unterstützung von [MSIX-Änderungspaketen](https://docs.microsoft.com/windows/msix/modification-package-1809-update) verbessert. Änderungspakete können nun registrierungsbasierte Plug-Ins und entsprechende Anpassungen enthalten. Dadurch kann eine über MSIX bereitgestellte Anwendung eine virtuelle Registrierung verwenden und wie erwartet ausgeführt werden.
+In der Version 1809 von Windows 10 wurde die Unterstützung von [MSIX-Änderungspaketen](/windows/msix/modification-package-1809-update) verbessert. Änderungspakete können nun registrierungsbasierte Plug-Ins und entsprechende Anpassungen enthalten. Dadurch kann eine über MSIX bereitgestellte Anwendung eine virtuelle Registrierung verwenden und wie erwartet ausgeführt werden.
 
 ![MSIX-Änderungspakete: Erstellung](images/msix-modification-package.png)
 
@@ -42,13 +42,13 @@ Die UX-Frameworks WPF, Windows Forms und WinUI sind jetzt für Open-Source-Beitr
 
 ### <a name="progressive-web-apps-for-xbox"></a>Progressive Web-Apps für Xbox
 
-Mit [progressiven Web-Apps für Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations) kannst du eine Webanwendung erweitern und als Xbox One-App über den Microsoft Store verfügbar machen. Dabei kannst du weiterhin deine vorhandenen Frameworks, dein vorhandenes CDN und dein vorhandenes Server-Back-End verwenden. Die Vorgehensweise zum Packen von PWAs für Xbox One entspricht größtenteils der Vorgehensweise für Windows. Es gibt jedoch einige entscheidende Unterschiede, die in diesem Leitfaden erläutert werden.
+Mit [progressiven Web-Apps für Xbox One](/microsoft-edge/progressive-web-apps/xbox-considerations) kannst du eine Webanwendung erweitern und als Xbox One-App über den Microsoft Store verfügbar machen. Dabei kannst du weiterhin deine vorhandenen Frameworks, dein vorhandenes CDN und dein vorhandenes Server-Back-End verwenden. Die Vorgehensweise zum Packen von PWAs für Xbox One entspricht größtenteils der Vorgehensweise für Windows. Es gibt jedoch einige entscheidende Unterschiede, die in diesem Leitfaden erläutert werden.
 
 ### <a name="windows-machine-learning"></a>Machine Learning unter Windows
 
-Wir haben die [Landing Page für WinML-APIs](https://docs.microsoft.com/windows/ai/api-reference) umstrukturiert und eine neue Dokumentation für den benutzerdefinierten WinML-Operator und für native APIs hinzugefügt.
+Wir haben die [Landing Page für WinML-APIs](/windows/ai/api-reference) umstrukturiert und eine neue Dokumentation für den benutzerdefinierten WinML-Operator und für native APIs hinzugefügt.
 
-Unter [Trainieren eines Modells mit PyTorch](https://docs.microsoft.com/windows/ai/train-model-pytorch) erfährst du, wie du ein Modell unter Verwendung des PyTorch-Frameworks trainierst (entweder lokal oder in der Cloud). Dieses Modell kannst du dann als ONNX-Datei herunterladen und in deinen WinML-Anwendungen verwenden.
+Unter [Trainieren eines Modells mit PyTorch](/windows/ai/train-model-pytorch) erfährst du, wie du ein Modell unter Verwendung des PyTorch-Frameworks trainierst (entweder lokal oder in der Cloud). Dieses Modell kannst du dann als ONNX-Datei herunterladen und in deinen WinML-Anwendungen verwenden.
 
 ![WinML-Grafik](images/winml-graphic.png)
 
@@ -56,15 +56,15 @@ Unter [Trainieren eines Modells mit PyTorch](https://docs.microsoft.com/windows/
 
 ### <a name="choose-your-platform"></a>Auswählen Ihrer Plattform
 
-Du möchtest eine neue Desktopanwendung erstellen? Auf unserer überarbeiteten Seite [Auswählen Ihrer App-Plattform](https://docs.microsoft.com/windows/desktop/choose-your-technology) findest du ausführliche Beschreibungen und Gegenüberstellungen der Plattformen UWP, WPF und Windows Forms sowie weitere Informationen zur Win32-API.
+Du möchtest eine neue Desktopanwendung erstellen? Auf unserer überarbeiteten Seite [Auswählen Ihrer App-Plattform](/windows/desktop/choose-your-technology) findest du ausführliche Beschreibungen und Gegenüberstellungen der Plattformen UWP, WPF und Windows Forms sowie weitere Informationen zur Win32-API.
 
 ### <a name="faqs-on-win32-webview"></a>Häufig gestellte Fragen zu Win32 WebView
 
-Im Abschnitt [Häufig gestellte Fragen](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) findest du sowohl Antworten auf allgemeine Fragen zur Verwendung von Microsoft Edge-WebView in Desktopanwendungen als auch Links zu Beispielen und weiteren Ressourcen.
+Im Abschnitt [Häufig gestellte Fragen](/windows/communitytoolkit/controls/wpf-winforms/webview#frequently-asked-questions-faqs) findest du sowohl Antworten auf allgemeine Fragen zur Verwendung von Microsoft Edge-WebView in Desktopanwendungen als auch Links zu Beispielen und weiteren Ressourcen.
 
 ### <a name="japanese-era-change"></a>Änderung der japanischen Zeitrechnung
 
-Unter [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära](../design/globalizing/japanese-era-change.md) erfährst du, wie du deine Windows-Anwendung für die Änderung der japanischen Zeitrechnung vorbereitest, die am 1. Mai 2019 stattfindet. [Diese Seite ist auch auf Japanisch verfügbar](https://docs.microsoft.com/ja-jp/windows/uwp/design/globalizing/japanese-era-change).
+Unter [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära](../design/globalizing/japanese-era-change.md) erfährst du, wie du deine Windows-Anwendung für die Änderung der japanischen Zeitrechnung vorbereitest, die am 1. Mai 2019 stattfindet. [Diese Seite ist auch auf Japanisch verfügbar](/windows/uwp/design/globalizing/japanese-era-change).
 
 ## <a name="videos"></a>Videos
 
@@ -82,9 +82,10 @@ In der Videoreihe „One Dev Question“ beantworten langjährige Microsoft-Entw
 
 Raymond Chen:
 
-* [Warum gibt es „Programme“ und „Programme (x86)“?](https://youtu.be/N7o9eJpFYco)
+* [Warum gibt es „Programme“ und „Programme (x86)“?](https://youtu.be/qRb6otsHG5c)
+* [Wie war Ihr erstes Vorstellungsgespräch bei Microsoft?](https://youtu.be/MfzzbNp8kfw)
 
 Larry Osterman:
 
-* [Warum ist COM so kompliziert?](https://youtu.be/-gkXAV-StVA )
-* [Wie war das erste Vorstellungsgespräch bei Microsoft?](https://youtu.be/qRb6otsHG5c)
+* [Warum ist COM so kompliziert?](https://youtu.be/-gkXAV-StVA)
+* [Wie war das erste Vorstellungsgespräch bei Microsoft?](https://youtu.be/N7o9eJpFYco)

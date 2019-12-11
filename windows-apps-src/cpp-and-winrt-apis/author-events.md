@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, Ereignis
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d512faccfa318156fb0dc28d3f804b53f0fe3d
-ms.sourcegitcommit: 102fdfdf32ba12a8911018d234d71d67ebef61ce
+ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
+ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551664"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830786"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen in C++/WinRT
 
@@ -253,8 +253,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Parametrisierte Delegaten, einfache Signale und Rückrufe in einem Projekt
-
-Wenn dein Ereignis nicht binärdateiübergreifend, sondern nur intern innerhalb deines C++/WinRT-Projekts verwendet wird, verwendest du zwar weiterhin die Strukturvorlage [**winrt::event**](/uwp/cpp-ref-for-winrt/event), parametrisierst sie aber mit der Windows-Runtime-fremden C++/WinRT-Strukturvorlage [**winrt::delegate&lt;... T&gt;** ](/uwp/cpp-ref-for-winrt/delegate). Dabei handelt es sich um einen effizienten Delegaten mit Verweiszählung. Er unterstützt eine beliebige Anzahl von Parametern, und diese sind nicht auf Windows-Runtime-Typen beschränkt.
+Wenn Sie Ereignisse benötigen, die im Rahmen Ihres Visual Studio-Projekts intern sind (nicht Binary-übergreifend) und nicht auf Windows Runtime-Typen eingeschränkt, können Sie trotzdem die Klassenvorlage [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\> verwenden. Verwenden Sie einfach [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) anstelle eines tatsächlichen Windows Runtime-Delegattyps, da **winrt::delegate** auch Parameter unterstützt, die nicht aus Windows Runtime stammen.
 
 Das folgende Beispiel zeigt zuerst eine Delegatsignatur, die keine Parameter akzeptiert (also im Prinzip ein einfaches Signal), und anschließend eine, die eine Zeichenfolge akzeptiert.
 

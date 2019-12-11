@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f3a2575b17cc4228d7c4db273845478aecf65f29
-ms.sourcegitcommit: f0936ce8e88d78b1af99998794a8765094f6a487
+ms.openlocfilehash: f46d6ba99d4342e1e4fe7a9926082a5981fd690a
+ms.sourcegitcommit: 11c5cb559c949b6fe645499c2265434885882d8e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72915108"
+ms.lasthandoff: 12/01/2019
+ms.locfileid: "74666909"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design-System für Ersteller von Windows-Apps
 
@@ -112,7 +112,7 @@ UWP-Apps können auf einer Vielzahl von Windows-basierten Geräten ausgeführt w
     :::column span="2":::
 **Optimierung für die passende Eingabe**
 
-UWP-Apps unterstützen automatisch gängige Maus-, Tastatur-, Stift- und Touch-Interaktionen &mdash; Sie müssen sich nicht extra darum kümmern. Aber Sie können Ihre Apps um eine optimierte Unterstützung für bestimmte Eingabemöglichkeiten (z. B. Stift und Surface Dial) erweitern.
+UWP-Apps unterstützen automatisch gängige Maus-, Tastatur-, Stift- und Touch-Interaktionen. Sie brauchen sich nicht eigens darum zu kümmern. Aber wenn Sie möchten, können Sie Ihre Apps um optimierte Unterstützung für bestimmte Eingabemöglichkeiten erweitern (z. B. Stift und Surface Dial).
 
 [Mehr über Eingaben und Interaktionen](/windows/uwp/design/input/input-primer)
 :::row-end:::
