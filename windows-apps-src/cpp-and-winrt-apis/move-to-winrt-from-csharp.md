@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, portieren, migrieren, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: a63d38db613ebe6425a05ed20563405242ffd441
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328859"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958960"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Umstellen von C# auf C++/WinRT
 
@@ -264,7 +264,7 @@ C++/CX und C# lösen Ausnahmen aus, wenn du versuchst, ein Unboxing eines NULL-Z
 | Wenn „o“ NULL ist | `System.NullReferenceException` | Absturz |
 | Wenn „o“ kein geboxter int-Wert ist | `System.InvalidCastException` | Absturz |
 | Unboxing für „int“, Fallback bei NULL; Absturz in allen anderen Fällen | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
-| Unboxing für „int“ (falls möglich); Fallback in allen anderen Fällen | `var box = o as int?;`<br>`i = box != null ? box.Value : fallback;` | `i = unbox_value_or<int>(o, fallback);` |
+| Unboxing für „int“ (falls möglich); Fallback in allen anderen Fällen | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
 ### <a name="boxing-and-unboxing-a-string"></a>Boxing und Unboxing von string-Elementen
 
@@ -274,24 +274,23 @@ Der ABI-Typ [**HSTRING**](/windows/win32/winrt/hstring) ist ein Zeiger auf ein a
 
 C# stellt ein string-Element der Windows-Runtime als Referenztyp dar, C++/WinRT dagegen als Werttyp. Das bedeutet, dass eine geboxte NULL-Zeichenfolge unterschiedliche Darstellungen aufweisen kann, je nachdem, wie du dorthin gelangt bist.
 
+| Verhalten | C# | C++/WinRT|
+|-|-|-|
+| Deklarationen | `object o;`<br>`string s;` | `IInspectable o;`<br>`hstring s;` |
+| Kategorie des string-Typs | Verweistyp | Werttyp |
+| **HSTRING** mit NULL-Wert wird dargestellt als | `""` | `hstring{}` |
+| Sind NULL und `""` identisch? | Nein | Ja |
+| Gültigkeit von NULL | `s = null;`<br>`s.Length` löst NullReferenceException aus | `s = hstring{};`<br>`s.size() == 0` (gültig) |
+| Wenn Sie einem Objekt eine NULL-Zeichenfolge zuweisen | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| Wenn Sie einem Objekt `""` zuweisen | `o = "";`<br>`o != null` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
+
+Grundlegendes Boxing und Unboxing
+
 | Vorgang | C# | C++/WinRT|
 |-|-|-|
-| Kategorie des string-Typs | Verweistyp | Werttyp |
-| **HSTRING** mit NULL-Wert wird dargestellt als | `""` | `hstring{ nullptr }` |
-| Sind NULL und `""` identisch? | Nein | Ja |
-| Gültigkeit von NULL | `s = null;`<br>`s.Length` löst **NullReferenceException** aus | `s = nullptr;`<br>`s.size() == 0` (gültig) |
-| Boxing eines string-Elements | `o = s;` | `o = box_value(s);` |
-| Wenn `s` gleich `null` | `o = (string)null;`<br>`o == null` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
-| Wenn `s` gleich `""` | `o = "";`<br>`o != null;` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Boxing eines string-Elements unter Beibehaltung von NULL | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Boxing eines string-Elements erzwingen | `o = PropertyValue.CreateString(s);` | `o = box_value(s);` |
-| Unboxing eines bekannten string-Elements | `s = (string)o;` | `s = unbox_value<hstring>(o);` |
-| Wenn `o` NULL ist | `s == null; // not equivalent to ""` | Absturz |
-| Wenn `o` kein geboxter string-Wert ist | `System.InvalidCastException` | Absturz |
-| Unboxing für „string“, Fallback bei NULL; Absturz in allen anderen Fällen | `s = o != null ? (string)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Unboxing für „string“ (falls möglich); Fallback in allen anderen Fällen | `var s = o as string ?? fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
-
-In den beiden oben genannten Fällen *Unboxing mit Fallback* ist es möglich, dass ein Boxing eines string-Elements mit NULL-Wert erzwungen wurde. In diesem Fall wird das Fallback nicht verwendet. Der Ergebniswert ist eine leere Zeichenfolge, denn diese war enthalten.
+| Boxing eines string-Elements | `o = s;`<br>Eine leere Zeichenfolge wird zu einem Nicht-NULL-Objekt. | `o = box_value(s);`<br>Eine leere Zeichenfolge wird zu einem Nicht-NULL-Objekt. |
+| Unboxing eines bekannten string-Elements | `s = (string)o;`<br>Ein NULL-Objekt wird zu einer NULL-Zeichenfolge.<br>InvalidCastException, falls keine Zeichenfolge. | `s = unbox_value<hstring>(o);`<br>Absturz eines NULL-Objekts.<br>Absturz, falls keine Zeichenfolge. |
+| Unboxing einer möglichen Zeichenfolge | `s = o as string;`<br>Ein NULL-Objekt oder eine Nicht-Zeichenfolge wird zu einer NULL Zeichenfolge.<br><br>ODER<br><br>`s = o as string ?? fallback;`<br>NULL oder eine Nicht-Zeichenfolge wird zu einem Fallback.<br>Leere Zeichenfolge beibehalten. | `s = unbox_value_or<hstring>(o, fallback);`<br>NULL oder eine Nicht-Zeichenfolge wird zu einem Fallback.<br>Leere Zeichenfolge beibehalten. |
 
 ## <a name="derived-classes"></a>Abgeleitete Klassen
 

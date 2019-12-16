@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 92088906078a3a705e5fae052a50fc914561c77c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
+ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393461"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74958970"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -468,24 +468,23 @@ C++/CX stellt ein string-Element der Windows-Runtime als Referenztyp dar, C++/Wi
 
 Darüber hinaus erlaubt C++/CX das Dereferenzieren eines **String^** -Elements mit NULL-Wert, woraufhin dieses Element sich wie die Zeichenfolge `""` verhält.
 
-| Vorgang | C++/CX | C++/WinRT|
+| Verhalten | C++/CX | C++/WinRT|
 |-|-|-|
+| Deklarationen | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
 | Kategorie des string-Typs | Verweistyp | Werttyp |
 | **HSTRING** mit NULL-Wert wird dargestellt als | `(String^)nullptr` | `hstring{}` |
 | Sind NULL und `""` identisch? | Ja | Ja |
-| Gültigkeit von NULL | `s = nullptr;`<br>`s->Length == 0` (gültig) | `s = nullptr;`<br>`s.size() == 0` (gültig) |
-| Boxing eines string-Elements | `o = s;` | `o = box_value(s);` |
-| Wenn `s` gleich `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
-| Wenn `s` gleich `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| Boxing eines string-Elements unter Beibehaltung von NULL | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| Boxing eines string-Elements erzwingen | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| Unboxing eines bekannten string-Elements | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| Wenn `o` NULL ist | `s == nullptr; // equivalent to ""` | Absturz |
-| Wenn `o` kein geboxter string-Wert ist | `Platform::InvalidCastException` | Absturz |
-| Unboxing für „string“, Fallback bei NULL; Absturz in allen anderen Fällen | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| Unboxing für „string“ (falls möglich); Fallback in allen anderen Fällen | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
+| Gültigkeit von NULL | `s = nullptr;`<br>`s->Length == 0` (gültig) | `s = hstring{};`<br>`s.size() == 0` (gültig) |
+| Wenn Sie einem Objekt eine NULL-Zeichenfolge zuweisen | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| Wenn Sie einem Objekt `""` zuweisen | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
 
-In den beiden oben genannten Fällen *Unboxing mit Fallback* ist es möglich, dass ein Boxing eines string-Elements mit NULL-Wert erzwungen wurde. In diesem Fall wird das Fallback nicht verwendet. Der Ergebniswert ist eine leere Zeichenfolge, denn diese war enthalten.
+Grundlegendes Boxing und Unboxing
+
+| Vorgang | C++/CX | C++/WinRT|
+|-|-|-|
+| Boxing eines string-Elements | `o = s;`<br>Eine leere Zeichenfolge wird zu einem nullptr. | `o = box_value(s);`<br>Eine leere Zeichenfolge wird zu einem Nicht-NULL-Objekt. |
+| Unboxing eines bekannten string-Elements | `s = (String^)o;`<br>Ein NULL-Objekt wird zu einer leeren Zeichenfolge.<br>InvalidCastException, falls keine Zeichenfolge. | `s = unbox_value<hstring>(o);`<br>Absturz eines NULL-Objekts.<br>Absturz, falls keine Zeichenfolge. |
+| Unboxing einer möglichen Zeichenfolge | `s = dynamic_cast<String^>(o);`<br>Ein NULL-Objekt oder eine Nicht-Zeichenfolge wird zu einer leeren Zeichenfolge. | `s = unbox_value_or<hstring>(o, fallback);`<br>NULL oder eine Nicht-Zeichenfolge wird zu einem Fallback.<br>Leere Zeichenfolge beibehalten. |
 
 ## <a name="concurrency-and-asynchronous-operations"></a>Parallelität und asynchrone Vorgänge
 
