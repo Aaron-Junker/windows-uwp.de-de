@@ -4,17 +4,17 @@ title: Datenbindung im Detail
 description: Die Datenbindung ist eine Methode, mit der die Benutzeroberfläche Ihrer App Daten anzeigen und diese Daten optional synchronisieren kann.
 ms.date: 10/05/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: c9218fe2b74fe9a550cd347f72083f090bd48f85
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2ed94dd54c58c1ae1bd27238b6033cdbf00359b4
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255353"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302674"
 ---
 # <a name="data-binding-in-depth"></a>Datenbindung im Detail
 
@@ -147,7 +147,7 @@ public class HostViewModel : INotifyPropertyChanged
     public void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         // Raise the PropertyChanged event, passing the name of the property whose value has changed.
-        this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
 ```
@@ -224,7 +224,7 @@ public class HostViewModel : BindableBase
 ```
 
 > [!NOTE]
-> Für C++/WinRT wird jede Lauf Zeit Klasse, die Sie in der Anwendung deklarieren, die von einer Basisklasse abgeleitet wird, als *Zusammensetz* Bare Klasse bezeichnet. Für zusammensetzbare Klassen gelten bestimmte Einschränkungen. Damit eine Anwendung die Tests des [Zertifizierungskits für Windows-Apps](../debug-test-perf/windows-app-certification-kit.md) besteht, das von Visual Studio sowie vom Microsoft Store zur Überprüfung von Übermittlungen verwendet wird, und erfolgreich in den Microsoft Store aufgenommen werden kann, muss eine zusammensetzbare Klasse letztendlich von einer Windows-Basisklasse abgeleitet sein. Das bedeutet, dass es sich am Stamm der Vererbungshierarchie um einen Klassentyp aus einem Windows.*-Namespace handeln muss. Wenn du eine Laufzeitklasse von einer Basisklasse ableiten musst, um beispielsweise eine Klasse vom Typ &mdash;BindableBase**zur Ableitung deiner Ansichtsmodelle zu implementieren, kannst du**&mdash;Windows.UI.Xaml.DependencyObject[** als Grundlage für die Ableitung verwenden.
+> Für C++/WinRT wird jede Lauf Zeit Klasse, die Sie in der Anwendung deklarieren, die von einer Basisklasse abgeleitet wird, als *Zusammensetz* Bare Klasse bezeichnet. Für zusammensetzbare Klassen gelten bestimmte Einschränkungen. Damit eine Anwendung die Tests des [Zertifizierungskits für Windows-Apps](../debug-test-perf/windows-app-certification-kit.md) besteht, das von Visual Studio sowie vom Microsoft Store zur Überprüfung von Übermittlungen verwendet wird, und erfolgreich in den Microsoft Store aufgenommen werden kann, muss eine zusammensetzbare Klasse letztendlich von einer Windows-Basisklasse abgeleitet sein. Das bedeutet, dass es sich am Stamm der Vererbungshierarchie um einen Klassentyp aus einem Windows.*-Namespace handeln muss. Wenn du eine Laufzeitklasse von einer Basisklasse ableiten musst, um beispielsweise eine Klasse vom Typ **BindableBase** zur Ableitung deiner Ansichtsmodelle zu implementieren, kannst du [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject) als Grundlage für die Ableitung verwenden.
 
 Das Auslösen des **PropertyChanged**-Ereignisses mit dem Argument [**String.Empty**](https://docs.microsoft.com/dotnet/api/system.string.empty) oder **null** gibt an, dass alle Eigenschaften, die keine Indexereigenschaften sind, für das Objekt erneut gelesen werden sollen. Sie können das-Ereignis aufweisen, um anzugeben, dass Indexer-Eigenschaften für das Objekt geändert wurden, indem Sie für bestimmte Indexer (wobei *Indexer* den Indexwert ist) oder den Wert "Item\[\]" für alle Indexer *\]\[verwenden* .
 
@@ -330,7 +330,7 @@ Wenn dies erledigt ist, können wir uns das Markup, das das Bindungsobjekt dekla
 
 Beachten Sie den Wert, den wir für **Path** angeben. Dieser Wert wird im Kontext der Seite selbst interpretiert, und in diesem Fall beginnt der Pfad mit dem Verweis auf die **ViewModel** -Eigenschaft, die wir soeben zur **MainPage** -Seite hinzugefügt haben. Diese Eigenschaft gibt eine **HostViewModel**-Instanz zurück, und so können wir damit wir dieses Objekt mit einem Punkt verknüpfen, um auf die **HostViewModel.NextButtonText**-Eigenschaft zuzugreifen. Außerdem geben wir **Mode** an, um die Standardeinstellung für einmaliges Binden [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) zu überschreiben.
 
-Die [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)-Eigenschaft unterstützt eine Vielzahl von Syntaxoptionen zum Binden geschachtelter Eigenschaften, angefügter Eigenschaften sowie von Ganzzahl- und Zeichenfolgenindexern. Weitere Informationen finden Sie unter [Property-path-Syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax). Die Bindung an Zeichenfolgenindexer hat dieselbe Wirkung wie die Bindung an dynamische Eigenschaften, ohne [**ICustomPropertyProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ICustomPropertyProvider) implementieren zu müssen. Informationen zu weiteren Einstellungen finden Sie unter [{x:Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
+Die [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)-Eigenschaft unterstützt eine Vielzahl von Syntaxoptionen zum Binden geschachtelter Eigenschaften, angefügter Eigenschaften sowie von Ganzzahl- und Zeichenfolgenindexern. Weitere Informationen finden Sie unter [PropertyPath-Syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax). Die Bindung an Zeichenfolgenindexer hat dieselbe Wirkung wie die Bindung an dynamische Eigenschaften, ohne [**ICustomPropertyProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ICustomPropertyProvider) implementieren zu müssen. Informationen zu weiteren Einstellungen finden Sie unter [{x:Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
 
 Um zu veranschaulichen, dass die **hostviewmodel. nextbuttontext** -Eigenschaft tatsächlich Observable ist, fügen Sie der Schaltfläche einen **Click** -Ereignishandler hinzu, und aktualisieren Sie den Wert von " **hostviewmodel. nextbuttontext**". Erstellen Sie, führen Sie aus, und klicken Sie auf die Schaltfläche, um den Wert der **Inhalts** Aktualisierung der Schaltfläche anzuzeigen.
 
@@ -440,7 +440,7 @@ In einem [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.D
 > [!NOTE]
 > Standardmäßig werden Änderungen an [**TextBox. Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) an eine bidirektionale gebundene Quelle gesendet, wenn das [**Textfeld**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) den Fokus verliert. Damit Änderungen nach jedem Tastaturanschlag des Benutzers gesendet werden, legen Sie **UpdateSourceTrigger** auf **PropertyChanged** für die Bindung im Markup fest. Sie können auch vollständig steuern, wann Änderungen an die Quelle gesendet werden, indem Sie **UpdateSourceTrigger** auf **Explicit** festlegen. Sie behandeln dann Ereignisse für das Textfeld (in der Regel [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)), rufen [**GetBindingExpression**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.getbindingexpression) am Ziel auf, um ein [**BindingExpression**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.bindingexpression)-Objekt abzurufen, und rufen zum Schluss [**BindingExpression.UpdateSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.bindingexpression.updatesource) auf, um die Datenquelle programmgesteuert zu aktualisieren.
 
-Die [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)-Eigenschaft unterstützt eine Vielzahl von Syntaxoptionen zum Binden geschachtelter Eigenschaften, angefügter Eigenschaften sowie von Ganzzahl- und Zeichenfolgenindexern. Weitere Informationen finden Sie unter [Property-path-Syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax). Die Bindung an Zeichenfolgenindexer hat dieselbe Wirkung wie die Bindung an dynamische Eigenschaften, ohne [**ICustomPropertyProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ICustomPropertyProvider) implementieren zu müssen. Die [**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname)-Eigenschaft ist hilfreich für eine Element-an-Element-Bindung. Die [**RelativeSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.relativesource)-Eigenschaft hat mehrere Funktionen. Eine davon ist, dass sie eine leistungsfähigere Alternative zur Vorlagenbindung innerhalb von [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) ist. Informationen zu anderen Einstellungen finden Sie unter [{Binding}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) und der [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)-Klasse.
+Die [**Path**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.path)-Eigenschaft unterstützt eine Vielzahl von Syntaxoptionen zum Binden geschachtelter Eigenschaften, angefügter Eigenschaften sowie von Ganzzahl- und Zeichenfolgenindexern. Weitere Informationen finden Sie unter [PropertyPath-Syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax). Die Bindung an Zeichenfolgenindexer hat dieselbe Wirkung wie die Bindung an dynamische Eigenschaften, ohne [**ICustomPropertyProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.ICustomPropertyProvider) implementieren zu müssen. Die [**ElementName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.elementname)-Eigenschaft ist hilfreich für eine Element-an-Element-Bindung. Die [**RelativeSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.relativesource)-Eigenschaft hat mehrere Funktionen. Eine davon ist, dass sie eine leistungsfähigere Alternative zur Vorlagenbindung innerhalb von [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) ist. Informationen zu anderen Einstellungen finden Sie unter [{Binding}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) und der [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding)-Klasse.
 
 ## <a name="what-if-the-source-and-the-target-are-not-the-same-type"></a>Was geschieht, wenn die Quelle und das Ziel nicht den gleichen Typ haben?
 
@@ -596,7 +596,7 @@ MainPage.xaml
 
 ## <a name="event-binding-and-icommand"></a>Ereignisbindung und ICommand
 
-[{b:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) unterstützt ein Feature namens „Ereignisbindung“. Mit diesem Feature können Sie den Handler für ein Ereignis mit einer Bindung angeben, wobei es sich zusätzlich zum Behandeln von Ereignissen mit einer Methode in der CodeBehind-Datei um eine weitere Option handelt. Angenommen, Sie haben eine **RootFrame**-Eigenschaft für Ihre **MainPage**-Klasse.
+[{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) unterstützt das Feature „Ereignisbindung“. Mit diesem Feature können Sie den Handler für ein Ereignis mit einer Bindung angeben, wobei es sich zusätzlich zum Behandeln von Ereignissen mit einer Methode in der CodeBehind-Datei um eine weitere Option handelt. Angenommen, Sie haben eine **RootFrame**-Eigenschaft für Ihre **MainPage**-Klasse.
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -815,7 +815,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | Bei {x:Bind}: Benennen Sie das Element, und verwenden Sie den Namen in Path. | 
 | RelativeSource: TemplatedParent | Nicht erforderlich | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Mit {x:Bind} TargetType in ControlTemplate wird die Bindung an das übergeordnete Element der Vorlage angegeben. Für "{Binding}" kann eine reguläre Vorlagen Bindung in Steuerelement Vorlagen für die meisten Verwendungen verwendet werden. Verwenden Sie jedoch „TemplatedParent“, wenn Sie einen Konverter oder bidirektionale Bindungen verwenden müssen. | 
 | Quelle | Nicht erforderlich | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | Für {x:Bind} können Sie das benannte Element direkt verwenden, eine Eigenschaft oder einen statischen Pfad verwenden. | 
-| Modus | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | „Mode“ kann „OneTime“, „OneWay“ oder „TwoWay“ sein. Standardwert für {x:Bind} ist „OneTime“; Standardwert für {Binding} ist „OneWay“. | 
+| „Modus“ | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | „Mode“ kann „OneTime“, „OneWay“ oder „TwoWay“ sein. Standardwert für {x:Bind} ist „OneTime“; Standardwert für {Binding} ist „OneWay“. | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger kann Default, LostFocus oder PropertyChanged sein. {X:Bind} unterstützt kein „UpdateSourceTrigger=Explicit”. {x:Bind} verwendet das PropertyChanged-Verhalten in allen Fällen, außer bei „TextBox.Text“, bei dem es das LostFocus-Verhalten nutzt. | 
 
 

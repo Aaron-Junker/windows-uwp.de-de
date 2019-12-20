@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 16afad7724afeea50d379692f0755593e43709bb
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734825"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302594"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren ihrer Desktop-app in Windows 10 und UWP
 
@@ -1376,10 +1376,4 @@ Erstellen Sie einfach ein Windows-App-Paket für ihre Win32-app. Fügen Sie dann
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Antworten auf Ihre Fragen**
-
 Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Feedback geben oder Funktions Vorschläge machen**
-
-Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

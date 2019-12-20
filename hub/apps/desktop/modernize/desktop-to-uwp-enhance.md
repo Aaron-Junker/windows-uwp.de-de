@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ca9e91233206f0e97d17fdbdd7b0fd09a2897cd8
-ms.sourcegitcommit: 3710117f24adb8555aa94b372db814e5d30ae45a
+ms.openlocfilehash: 78d9760c5ef21b29d09babaace0f4379b6a51209
+ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73427091"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75302604"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>UWP-APIs in Desktop-Apps aufzurufen
 
@@ -247,18 +247,12 @@ Die einfachste Möglichkeit zum Hinzufügen von Laufzeitüberprüfungen zum Code
 
 ## <a name="related-samples"></a>Verwandte Beispiele
 
-* [Hallo Welt Beispiel](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
+* [Beispiel „Hello World“](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample)
 * [Sekundäre Kachel](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Store-API-Beispiel](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample)
 * [WinForms-Anwendung, die eine UWP-Updatetask implementiert](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample)
 * [Desktop-App-Bridge zu UWP-Beispielen](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
-## <a name="support-and-feedback"></a>Support und Feedback
-
-**Antworten auf Ihre Fragen**
+## <a name="find-answers-to-your-questions"></a>Finden Sie Antworten auf Ihre Fragen
 
 Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
-
-**Feedback geben oder Funktions Vorschläge machen**
-
-Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
