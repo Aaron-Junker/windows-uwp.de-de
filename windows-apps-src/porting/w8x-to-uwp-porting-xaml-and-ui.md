@@ -4,14 +4,14 @@ title: Portieren von Windows-Runtime 8.x-XAML und -UI zu UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 19e754fd6a52880c7bc636818acaeda815f9da16
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 879dee0c8c4c3ad9004c11fa488d32eae8936510
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259104"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684656"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Portieren von Windows-Runtime 8.x-XAML und -UI zu UWP
 
@@ -109,20 +109,20 @@ Unten sind einige speziellere Beispiele für Änderungen an Steuerelementen ange
 | **MessageDialog** | Wenn Sie **MessageDialog** verwenden, sollten Sie stattdessen ggf. das flexiblere [**ContentDialog**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)-Element nutzen. Informationen hierzu erhalten Sie auch im Beispiel [XAML-UI-Grundlagen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics). |
 | **ListPickerFlyout**, **PickerFlyout**  | **Listpickerflyout** und **pickerflyout** sind für eine Windows 10-App veraltet. Verwenden Sie für ein einzelnes Auswahlflyout das [**MenuFlyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)-Element und bei komplexeren Oberflächen das [**Flyout**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)-Element. |
 | [**PasswordBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | Die [**PasswordBox. ispasswordrevealbuttonaktivierte**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) Eigenschaft ist in einer Windows 10-App veraltet, und die Einstellung hat keine Auswirkungen. Verwenden Sie stattdessen [**PasswordBox. passwordrevealmode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) , das standardmäßig **Peek** ist (in dem ein Eye-Symbol angezeigt wird, z. b. in einer Windows-Runtime 8. x-APP). Weitere Informationen finden Sie unter [Richtlinien für Kennwortfelder](https://docs.microsoft.com/windows/uwp/controls-and-patterns/password-box). |
-| [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | Das [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)-Steuerelement ist jetzt universell. Das heißt, die Verwendung ist nicht mehr nur auf mobile Geräte beschränkt. |
+| [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) | Das [**Pivot**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)-Steuerelement ist jetzt universell. Das heißt, seine Verwendung ist nicht mehr nur auf mobile Geräte beschränkt. |
 | [**SearchBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SearchBox) | Obwohl [**SearchBox**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.searchbox) in der universellen Gerätefamilie implementiert ist, ist es auf mobilen Geräten nicht voll funktionsfähig. Weitere Informationen finden Sie unter [SearchBox eingestellt zugunsten von AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox). |
 | **SemanticZoom** | Informationen zu **SemanticZoom** finden Sie unter [Änderungen an „SemanticZoom“](#semanticzoom-changes). |
 | [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)  | Einige Standardeigenschaften von [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) haben sich geändert. [**Horizontalscrollmode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode) ist **Auto**, [**verticalscrollmode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollmode) ist **Auto**, und [**ZoomMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.zoommode) ist **deaktiviert**. Wenn die neuen Standardwerte für Ihre App nicht geeignet sind, können Sie sie entweder in einem Stil oder als lokale Werte für das Steuerelement selbst ändern.  |
 | [**Textfeld**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | In einer Windows-Runtime 8. x-APP ist die Rechtschreibprüfung für ein [**Textfeld**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)standardmäßig deaktiviert. In einer Windows Phone Store-App und in einer Windows 10-APP ist Sie standardmäßig aktiviert. |
 | [**Textfeld**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Die Standardschriftgröße für ein [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element hat sich von 11 in 15 geändert. |
-| [**Textfeld**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Der Standardwert von [**TextBox.TextReadingOrder**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) wurde von **Default** in **DetectFromContent** geändert. Falls Sie dies nicht wünschen, können Sie **UseFlowDirection** verwenden. **Default** ist veraltet. |
+| [**Textfeld**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | Der Standardwert von [**TextBox.TextReadingOrder**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.textreadingorder) wurde von **Default** in **DetectFromContent** geändert. Falls Sie dies nicht wünschen, können Sie **UseFlowDirection** verwenden. **Default** ist überholt. |
 | Verschiedene | Die Akzentfarbe gilt für eine Windows Phone Store-Apps und für Windows 10-apps, aber nicht für die Windows-Runtime von 8. x-apps.  |
 
 Weitere Informationen zu Steuerelementen für UWP-Apps finden Sie unter [Steuerelemente nach Funktion](https://docs.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function), [Liste der Steuerelemente](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/) und [Richtlinien für Steuerelemente](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/index).
 
 ##  <a name="design-language-in-windows10"></a>Entwurfs Sprache in Windows 10
 
-Es gibt einige kleine, aber wichtige Unterschiede in der Entwurfs Sprache zwischen universellen 8,1-apps und Windows 10-apps. Alle Details finden Sie unter [Design](https://developer.microsoft.com/en-us/windows/apps/design). Trotz der Änderungen bei der Entwurfssprache gelten nach wie vor dieselben Designprinzipien: Gestalten Sie Ihre App mit Liebe zum Detail, versuchen Sie aber, alles möglichst einfach zu halten, indem Sie sich auf den Inhalt, nicht auf das Chrom konzentrieren, visuelle Elemente weitgehend reduzieren und für die digitale Welt authentisch bleiben. Nutzen Sie insbesondere bei der Typografie eine visuelle Hierarchie. Entwerfen Sie Ihre App basierend auf einem Raster, und erwecken Sie Ihre Benutzeroberflächen mit flüssigen Animationen zum Leben.
+Es gibt einige kleine, aber wichtige Unterschiede in der Entwurfs Sprache zwischen universellen 8,1-apps und Windows 10-apps. Alle Details finden Sie unter [Design](https://developer.microsoft.com/windows/apps/design). Trotz der Änderungen bei der Entwurfssprache gelten nach wie vor dieselben Designprinzipien: Gestalten Sie Ihre App mit Liebe zum Detail, versuchen Sie aber, alles möglichst einfach zu halten, indem Sie sich auf den Inhalt, nicht auf das Chrom konzentrieren, visuelle Elemente weitgehend reduzieren und für die digitale Welt authentisch bleiben. Nutzen Sie insbesondere bei der Typografie eine visuelle Hierarchie. Entwerfen Sie Ihre App basierend auf einem Raster, und erwecken Sie Ihre Benutzeroberflächen mit flüssigen Animationen zum Leben.
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>Effektive Pixel, Abstand zum Bildschirm und Skalierungsfaktoren
 
@@ -187,7 +187,7 @@ ListViewItemPresenter-Element mit überlagertem Kontrollkästchen
 
 In der folgenden Tabelle werden die Änderungen an den visuellen Zuständen und Gruppen visueller Zustände in der [**ListViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem)-Steuerelementvorlage und der [**GridViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem)-Steuerelementvorlage beschrieben.
 
-| 8.1                 |                         | Windows 10        |                     |
+| 8.1                 |                         | Windows-10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
 |                     | Normal                  |                   | Normal              |
@@ -247,7 +247,7 @@ Die Entwurfs Sprache wurde für Windows 10 entwickelt, und folglich haben sich b
 
 In anderen Fällen werden die Ressourcenschlüssel nicht mehr unterstützt. Der XAML-Markup-Editor in Visual Studio hebt Verweise auf Ressourcenschlüssel hervor, die nicht aufgelöst werden können. Der XAML-Markup-Editor unterstreicht z. B. einen Verweis auf den Stilschlüssel `ListViewItemTextBlockStyle` mit einer roten Wellenlinie. Wird dieser Fehler nicht behoben, wird die App sofort beendet, wenn Sie versuchen, sie im Emulator oder auf dem Gerät bereitzustellen. Daher ist es wichtig, die Richtigkeit des XAML-Markups sicherzustellen. Sie werden feststellen, dass sich solche Fehler mit Visual Studio hervorragend abfangen lassen.
 
-Für weiterhin unterstützte Schlüssel bedeuten Änderungen der Entwurfssprache, dass sich die Eigenschaften geändert haben, die von einigen Stilen festgelegt werden. Beispielsweise legt `TitleTextBlockStyle` **FontSize** in einer Windows-Runtime 8. x-APP und 18.14 px in einer Windows Phone Store-App auf 14.667 px fest. Aber im gleichen Stil wird **FontSize** auf eine viel größere Zahl von rund um die Uhr in einer Windows 10-App festgelegt. Überprüfen Sie Ihre Entwürfe und Layouts, und verwenden Sie die passenden Stile an den richtigen Stellen. Weitere Informationen finden Sie unter [Richtlinien für Schriftarten](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) und [Entwerfen von UWP-Apps](https://developer.microsoft.com/en-us/windows/apps/design).
+Für weiterhin unterstützte Schlüssel bedeuten Änderungen der Entwurfssprache, dass sich die Eigenschaften geändert haben, die von einigen Stilen festgelegt werden. Beispielsweise legt `TitleTextBlockStyle` **FontSize** in einer Windows-Runtime 8. x-APP und 18.14 px in einer Windows Phone Store-App auf 14.667 px fest. Aber im gleichen Stil wird **FontSize** auf eine viel größere Zahl von rund um die Uhr in einer Windows 10-App festgelegt. Überprüfen Sie Ihre Entwürfe und Layouts, und verwenden Sie die passenden Stile an den richtigen Stellen. Weitere Informationen finden Sie unter [Richtlinien für Schriftarten](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) und [Entwerfen von UWP-Apps](https://developer.microsoft.com/windows/apps/design).
 
 Im Anschluss finden Sie die vollständige Liste der nicht mehr unterstützten Schlüssel.
 
@@ -438,7 +438,7 @@ Wenn die app in einer Windows-Runtime 8. x-APP deaktiviert und erneut aktiviert 
 
 In einer Windows Phone Store-App und in einer Windows 10-APP wird die Zoomansicht verworfen, wenn die Schaltfläche "zurück" gedrückt wird. Bei einer Windows-Runtime 8. x-APP gibt es keine integrierte Schaltflächen-Schaltfläche, daher trifft die Frage nicht zu.
 
-## <a name="settings"></a>Einstellungen
+## <a name="settings"></a>„Einstellungen“
 
 Die **settingspane** -Klasse Windows-Runtime 8. x ist für Windows 10 nicht geeignet. Zusätzlich zur Erstellung einer Einstellungsseite sollten Sie Benutzern stattdessen die Möglichkeit geben, von der App aus auf die Seite zuzugreifen. Es wird empfohlen, diese Seite mit App-Einstellungen auf der obersten Ebene als letztes angeheftetes Element im Navigationsbereich verfügbar zu machen. Hier sehen Sie jedoch den vollständigen Satz von Optionen.
 

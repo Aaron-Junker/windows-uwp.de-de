@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Win32 C++ WRL-apps lokale Popupbenachrichtigungen zu senden und verarbeiten den Benutzer auf den Toast.
+Description: Erfahren Sie, C++ wie Win32-WRL-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
 title: Senden von Popupbenachrichtigungen über C++ WRL-Apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, win32, Desktop, Popupbenachrichtigungen, Popup senden, lokale Popupbenachrichtigungen senden, Desktop Bridge, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: af6c4392d97bdbf06c3e185b8a1c0235225bfe5a
-ms.sourcegitcommit: 81021b7930905beb67383a08b09520cf95c68fd9
+ms.openlocfilehash: abd3fc88f2ecacd0146a9f3a88a3240630078454
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940313"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684201"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden von Popupbenachrichtigungen über C++ WRL-Apps
 
@@ -22,7 +22,7 @@ Desktop-Apps (Desktop-Brücke und klassische Win32) können interaktive Popupben
 > Wenn Sie eine UWP-App entwickeln, finden Sie Informationen in der [UWP-Dokumentation](send-local-toast.md). Bei anderen Desktop Sprachen finden Sie Informationen unter [Desktop C#](send-local-toast-desktop.md).
 
 
-## <a name="step-1-enable-the-windows-10-sdk"></a>Schritt 1: Aktivieren des Windows 10 SDK
+## <a name="step-1-enable-the-windows-10-sdk"></a>Schritt 1: Aktivieren von Windows 10 SDK
 
 Wenn Sie Windows 10 SDK nicht für Ihre Win32-App aktiviert haben, müssen Sie dies zuerst tun. Es sind einige wichtige Schritte erforderlich...
 
@@ -38,14 +38,14 @@ Fügen Sie unter **Linker-> Eingabe**`runtimeobject.lib` den **zusätzlichen Abh
 Unter **Allgemein**, stellen Sie sicher, dass die **Windows SDK-Version** auf 10.0 oder höher festgelegt ist (nicht Windows 8.1).
 
 
-## <a name="step-2-copy-compat-library-code"></a>Schritt 2: Compat-Bibliothekscode kopieren
+## <a name="step-2-copy-compat-library-code"></a>Schritt 2: Kopieren des Compat-Bibliothekscodes
 
 Kopieren Sie [DesktopNotificationManagerCompat.h](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.h) und [DesktopNotificationManagerCompat.cpp](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.cpp) von GitHub-Datei in Ihr Projekt. Die Compat-Bibliothek abstrahiert einen Großteil der Komplexität der Desktop-Benachrichtigungen. Die folgenden Anweisungen erfordern die Compat-Bibliothek.
 
 Wenn Sie vorkompilierte Header verwenden, stellen Sie sicher, dass `#include "stdafx.h"` als erste Zeile in der Datei DesktopNotificationManagerCompat.cpp erscheint.
 
 
-## <a name="step-3-include-the-header-files-and-namespaces"></a>Schritt 3: Enthalten Sie die Headerdateien und namespaces
+## <a name="step-3-include-the-header-files-and-namespaces"></a>Schritt 3: Fügen Sie Headerdateien und Namespaces hinzu
 
 Fügen Sie die Headerdatei der Compat-Bibliothek und die Headerdatei und den Namespaces hinzu, die im Zusammenhang mit UWP-Popup-APIs verwendet werden.
 
@@ -60,9 +60,9 @@ using namespace Microsoft::WRL;
 ```
 
 
-## <a name="step-4-implement-the-activator"></a>Schritt 4: Implementieren Sie die Aktivierung
+## <a name="step-4-implement-the-activator"></a>Schritt 4: Implementieren des Aktivators
 
-Sie müssen einen Handler für den Toast-Aktivierung implementieren, sodass klickt der Benutzer auf Ihre Toast, Ihre app etwas durchführen kann. Dies ist erforderlich für das Popup, damit es im Info-Center beibehalten wird (da auf das Popup Tage später geklickt werden kann, wenn die App geschlossen ist). Diese Klasse kann an eine beliebige Stelle in Ihrem Projekt platziert werden.
+Sie müssen einen Handler für die Toast Aktivierung implementieren, damit Ihre APP etwas Unternehmen kann, wenn der Benutzer auf den Popup klickt. Dies ist erforderlich für das Popup, damit es im Info-Center beibehalten wird (da auf das Popup Tage später geklickt werden kann, wenn die App geschlossen ist). Diese Klasse kann an eine beliebige Stelle in Ihrem Projekt platziert werden.
 
 Implementieren Sie die **INotificationActivationCallback**-Schnittstelle wie folgt, einschließlich der UUID, und rufen Sie auch **CoCreatableClass** auf, um die Klasse als COM-erstellbar zu kennzeichnen. Erstellen Sie mithilfe einer der vielen online GUID-Generatoren eine eindeutige GUID für die UUID. Durch diese GUID CLSID (Klassen-ID) weiß das Info-Center, welche Klasse für COM aktiviert werden soll.
 
@@ -87,7 +87,7 @@ CoCreatableClass(NotificationActivator);
 ```
 
 
-## <a name="step-5-register-with-notification-platform"></a>Schritt 5: Registrieren bei benachrichtigungsplattform
+## <a name="step-5-register-with-notification-platform"></a>Schritt 5: Registrieren mit der Benachrichtigungsplattform
 
 Anschließend müssen Sie eine Registrierung mit der Benachrichtigungsplattform durchführen. Es sind unterschiedliche Schritte erforderlich, je nachdem, ob Sie die Desktop-Brücke oder klassische Win32 verwenden. Wenn Sie beide unterstützen, müssen Sie beide Schritte durchführen (der Code bleibt allerdings gleich, die Bibliothek führt die Verzweigung für Sie durch!).
 
@@ -143,11 +143,11 @@ Wenn Sie eine klassische Win32 verwenden (oder wenn Sie beide Modi unterstützen
 
 Wählen Sie einen eindeutigen AUMID, der Ihrer Win32-App identifiziert. Dies geschieht in der Regel in Form von [Firmenname].[AppName], es sollte allerdings in allen Apps eindeutig sein (fügen Sie Ziffern am Ende hinzu).
 
-#### <a name="step-51-wix-installer"></a>Schritt 5.1: WiX-Installationsprogramms
+#### <a name="step-51-wix-installer"></a>Schritt 5.1: WiX Installer
 
 Wenn Sie WiX als Installer verwenden, bearbeiten Sie die **Product.wxs**-Datei, um dem Startmenü zwei Verknüpfungseigenschaften hinzuzufügen, wie unten dargestellt. Stellen Sie sicher, dass Ihre GUID aus Schritt 4 # in `{}` eingeschlossen ist, wie unten dargestellt.
 
-**Product.WXS**
+**Product. wxs**
 
 ```xml
 <Shortcut Id="ApplicationStartMenuShortcut" Name="Wix Sample" Description="Wix Sample" Target="[INSTALLFOLDER]WixSample.exe" WorkingDirectory="INSTALLFOLDER">
@@ -165,7 +165,7 @@ Wenn Sie WiX als Installer verwenden, bearbeiten Sie die **Product.wxs**-Datei, 
 > Um Benachrichtigungen tatsächlich verwenden zu können, müssen Sie Ihrer App durch den Installer einmal vor dem Debuggen installieren, damit die Verknüpfung auf dem Startmenü mit AUMID und CLSID vorhanden ist. Nachdem die Verknüpfung auf dem Startmenü vorhanden ist, können Sie mithilfe von F5 in Visual Studio debuggen.
 
 
-#### <a name="step-52-register-aumid-and-com-server"></a>Schritt 5.2: Registrieren Sie die AUMID und COM-server
+#### <a name="step-52-register-aumid-and-com-server"></a>Schritt 5.2: Registrieren des AUMID und COM-Servers
 
 Rufen Sie unabhängig vom Installer im App Startcode (vor dem Aufrufen der Benachrichtigungs-APIs), die **RegisterAumidAndComServer**-Methode auf, und geben Sie die Benachrichtigungs-Aktivator-Klasse von Schritt 4 und die oben verwendete AUMID an.
 
@@ -179,7 +179,7 @@ Wenn Desktop-Brücke und klassisches Win32 unterstützt werden, können Sie dies
 Mit dieser Methode können Sie Compat-APIs zum Senden und Verwalten von Benachrichtigungen aufrufen, ohne ständig die AUMID angeben zu müssen. Es fügt ebenfalls den LocalServer32-Schlüssel für den COM-Server hinzu.
 
 
-## <a name="step-6-register-com-activator"></a>Schritt 6: Registrieren von COM-Aktivierung
+## <a name="step-6-register-com-activator"></a>Schritt 6: Registrieren des COM-Aktivators
 
 Für Desktop-Brücken und klassische Win32-Apps müssen Sie Ihren Benachrichtigung-Aktivatortyp registrieren, damit Sie Popupaktivierungen behandeln können.
 
@@ -191,7 +191,7 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 ```
 
 
-## <a name="step-7-send-a-notification"></a>Schritt 7: Senden einer Benachrichtigung
+## <a name="step-7-send-a-notification"></a>Schritt 7: Senden einer Benachrichtigung
 
 Das Senden einer Benachrichtigung ist für UWP-Apps identisch, außer dass Sie **DesktopNotificationManagerCompat** zum Erstellen eines **ToastNotifier** verwenden. Die Compat-Bibliothek behandelt den Unterschied zwischen Desktop-Brücke und klassischer Win32 automatisch, damit Sie keinen Code verzweigen müssen. Für klassisches Win32 speichert die Compat-Bibliothek Ihre AUMID, die Sie beim Aufrufen von **RegisterAumidAndComServer** bereitgestellt haben, damit Sie sich nicht die AUMID kümmern müssen, wann Sie diese bereitstellen und wann nicht.
 
@@ -416,13 +416,13 @@ Wenn Sie zahlreiche `unresolved external symbol` Kompilierungsfehler erhalten, h
 
 Wenn Sie Windows 8.1 oder niedriger unterstützen, sollten Sie zur Laufzeit überprüfen, ob Sie Windows 10 ausführen, bevor Sie eine **DesktopNotificationManagerCompat**-API aufrufen oder ToastGeneric-Popupbenachrichtigungen senden.
 
-Mit Windows 8 wurden Popupbenachrichtigungen eingeführt, allerdings verwendet es die [älteren Popupvorlagen](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh761494(v=win.10)) wie z. B. ToastText01. Die Aktivierung wurde vom **Activated**-Ereignis im Speicher von der **ToastNotification**-Klasse behandelt, da Popups nur als kurze Popups angezeigt wurden, die nicht beibehalten wurden. Windows 10 führte [interaktive ToastGeneric-Popups](adaptive-interactive-toasts.md) ein sowie das Info-Center, in dem Benachrichtigungen für mehrere Tage beibehalten werden. Die Einführung des Info-Centers erforderte die Einführung eines COM-Aktivators, damit Ihr Popups auch noch einige Tage nach dem Erstellen aktiviert werden können.
+Mit Windows 8 wurden Popupbenachrichtigungen eingeführt, allerdings verwendet es die [älteren Popupvorlagen](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)) wie z. B. ToastText01. Die Aktivierung wurde vom **Activated**-Ereignis im Speicher von der **ToastNotification**-Klasse behandelt, da Popups nur als kurze Popups angezeigt wurden, die nicht beibehalten wurden. Windows 10 führte [interaktive ToastGeneric-Popups](adaptive-interactive-toasts.md) ein sowie das Info-Center, in dem Benachrichtigungen für mehrere Tage beibehalten werden. Die Einführung des Info-Centers erforderte die Einführung eines COM-Aktivators, damit Ihr Popups auch noch einige Tage nach dem Erstellen aktiviert werden können.
 
 | Betriebssystem | ToastGeneric | COM-Aktivator | Ältere Popupvorlagen |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | Unterstützt | Unterstützt | Unterstützt (aktiviert den COM-Server nicht) |
-| Windows 8.1 / 8 | Nicht zutreffend | Nicht zutreffend | Unterstützt |
-| Windows 7 und niedriger | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
+| Windows-10 | Unterstützt | Unterstützt | Unterstützt (aktiviert den COM-Server nicht) |
+| Windows 8.1 / 8 | NICHT ZUTREFFEND | NICHT ZUTREFFEND | Unterstützt |
+| Windows 7 und niedriger | NICHT ZUTREFFEND | NICHT ZUTREFFEND | NICHT ZUTREFFEND |
 
 Um zu überprüfen, ob Sie Windows 10 ausführen, geben Sie den `<VersionHelpers.h>` Header an und überprüfen Sie die **IsWindows10OrGreater**-Methode. Wenn „true” zurückgegeben wird, rufen Sie weiterhin alle in dieser Dokumentation beschriebenen Methoden auf. 
 
@@ -438,11 +438,11 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-**FEST: App nicht nach dem Klicken auf die Toast Fokus**: In Builds 15063 und früher wurden nicht Foreground-Rechte für Ihre Anwendung übertragen werden, wenn wir den COM-Server aktiviert. Aus diesem Grund führte Ihre App einfach einen Flash aus, bei dem Versuch, sie in den Vordergrund zu verschieben. Es gibt hierfür keine Problemumgehung. Wir haben dies in Builds 16299 und höher behoben.
+**FIXED: Die App hat nach dem Klicken auf die Popupbenachrichtigung keinen Fokus**: In Build 15063 und früher wurden die Vordergrundrechte nicht auf Ihre Anwendung übertragen, wenn wir den COM-Server aktivierten. Aus diesem Grund führte Ihre App einfach einen Flash aus, bei dem Versuch, sie in den Vordergrund zu verschieben. Es gibt hierfür keine Problemumgehung. Wir haben dies in Builds 16299 und höher behoben.
 
 
 ## <a name="resources"></a>Ressourcen
 
-* [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/desktop-toasts)
-* [Toastbenachrichtigungen aus desktop-apps](toast-desktop-apps.md)
-* [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)
+* [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/desktop-toasts)
+* [Popup Benachrichtigungen aus Desktop-Apps](toast-desktop-apps.md)
+* [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)

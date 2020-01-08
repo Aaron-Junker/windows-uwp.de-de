@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d36368fab267370e2301e52731d99bc7b146fbd
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fd33720255a04ffd8669673f027973afb4369086
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258249"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684209"
 ---
 # <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
@@ -24,7 +24,7 @@ Integrieren Sie Spracherkennung und Text-zu-Sprache (auch als Text-to-Speech, TT
 **TTS:** TTS verwendet ein Sprachsynthesemodul (Sprache), um eine Textzeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z. B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
 
 **Andere sprachrelevante Komponenten:** 
-**Cortana** in Windows-Anwendungen nutzt angepasste Sprachbefehle (gesprochen oder eingegeben), um Ihre App im Vordergrund zu starten (die App erhält wie beim Starten über das Startmenü den Fokus) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, es werden aber Ergebnisse aus der App angezeigt). Weitere Hinweise, um App-Funktionen in der [Cortana](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd)-UI verfügbar machen, finden Sie in den **Richtlinien zu Cortana-Sprachbefehlen**.
+**Cortana** in Windows-Anwendungen nutzt angepasste Sprachbefehle (gesprochen oder eingegeben), um Ihre App im Vordergrund zu starten (die App erhält wie beim Starten über das Startmenü den Fokus) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, es werden aber Ergebnisse aus der App angezeigt). Weitere Hinweise, um App-Funktionen in der **Cortana**-UI verfügbar machen, finden Sie in den [Richtlinien zu Cortana-Sprachbefehlen](https://docs.microsoft.com/cortana/voice-commands/vcd).
 
 ## <a name="speech-interaction-design"></a>Integrieren der Spracherkennung
 
@@ -179,7 +179,7 @@ Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwe
 
 Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
-## <a name="testing"></a>Testen
+## <a name="testing"></a>Testing
 
 Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z. B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
 

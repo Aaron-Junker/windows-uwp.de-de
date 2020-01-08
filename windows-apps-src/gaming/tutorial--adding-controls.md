@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Steuerelemente, Eingabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2b7031bf8afb047fcfc869e23ee1c398218af8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: edc790ba949010fb1975317c5113ca02744889a0
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258430"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684566"
 ---
 # <a name="add-controls"></a>Hinzufügen von Steuerelementen
 
@@ -82,7 +82,7 @@ Der vollständige Code für [**InitWindow**](https://github.com/Microsoft/Window
 
 Um festzulegen, ob das Spiel auf Eingabe warten soll, verfügt die **MoveLookController**-Klasse unabhängig vom Steuerungstyp über drei Controllerzustände:
 
-Status | Beschreibung
+Bundesland/Kanton | Beschreibung
 :----- | :-------
 **Keine** | Dies ist der Initialisierungszustand für den Controller. Das Spiel erwartet keine Controllereingabe und die Eingabe wird ignoriert.
 **WaitForInput** | Der Controller wartet auf die Bestätigung der Nachricht des Spielers über das Spiel, entweder mit einem Mausklick, einem Touchereignis oder der Menütaste auf einem Gamepad.
@@ -160,7 +160,7 @@ Jetzt wollen wir uns etwas ausführlicher mit der Implementierung der drei Steue
 
 Wenn Mausbewegungen erkannt werden, sollen diese Bewegungen zum Ermitteln des neuen Neigungs- und Schwenkwinkels der Kamera verwendet werden. Hierzu implementieren wir relative Maussteuerungen, bei denen nicht die absoluten x-y-Pixelkoordinaten der Bewegung aufgezeichnet werden, sondern die relative Distanz der Mausbewegung (also das Delta zwischen Start und Ende der Bewegung) erfasst wird.
 
-Dazu ermitteln wir die Änderung der X-Koordinate (horizontale Bewegung) und der Y-Koordinate (vertikale Bewegung), indem wir die Felder [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) und **MouseDelta::Y** für das vom [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta)-Ereignis zurückgegebene [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved)-Argumentobjekt überprüfen.
+Dazu ermitteln wir die Änderung der X-Koordinate (horizontale Bewegung) und der Y-Koordinate (vertikale Bewegung), indem wir die Felder [**MouseDelta::X**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDelta) und **MouseDelta::Y** für das vom [**MouseMoved**](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved)-Ereignis zurückgegebene [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://docs.microsoft.com/uwp/api/windows.devices.input.mouseeventargs.mousedelta)-Argumentobjekt überprüfen.
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -459,7 +459,7 @@ Dieses Spiel hat das folgende Steuerelementlayout für Tastatur und Maus.
 Benutzereingabe | Aktion
 :------- | :--------
 W | Spieler vorwärts
-A | Spieler nach links
+Eine | Spieler nach links
 S | Spieler rückwärts
 D | Spieler nach rechts
 X | Ansicht nach oben
@@ -484,7 +484,7 @@ Die Behandlung der Maus unterscheidet sich etwas von der der Fingereingabesteuer
 
 Dies erfolgt in der [**OnPointerPressed**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L179-L313)-Methode des **MoveLookController**.
 
-In dieser Methode überprüfen wir, welche Art von Zeigegerät verwendet wird durch Verwendung der [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Input.PointerDeviceType)-Enumeration. Wenn das Spiel **aktiv** ist und **PointerDeviceType** nicht **Touch** ist, ist dies die Mauseingabe.
+In dieser Methode überprüfen wir, welche Art von Zeigegerät verwendet wird durch Verwendung der [`Windows::Devices::Input::PointerDeviceType`](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDeviceType)-Enumeration. Wenn das Spiel **aktiv** ist und **PointerDeviceType** nicht **Touch** ist, ist dies die Mauseingabe.
 
 ```cpp
     case MoveLookControllerState::Active:

@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86-emulation auf ARM, problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 20aa5943fc1f3f0176cde33983da1fceca8a49ba
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: a71f33438a336aba67afbb30b19987b0e0aef83b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282352"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683933"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>Problembehandlung bei x86-Desktop-Apps
 >[!IMPORTANT]
@@ -20,7 +20,7 @@ Für den Fall, dass eine x86-Desktop-App nicht wie auf einem x86-Computer funkti
 
 |Problem|Lösung|
 |-----|--------|
-| Ihre App verwendet einen Treiber, der nicht für ARM entwickelt wurde. | Kompilieren Sie Ihren x86-Treiber neu zu ARM64. Siehe [Entwickeln von ARM64-Treibern mit WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers). |
+| Ihre App verwendet einen Treiber, der nicht für ARM entwickelt wurde. | Kompilieren Sie Ihren x86-Treiber neu zu ARM64. Siehe [Entwickeln von ARM64-Treibern mit WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers). |
 | Ihre App ist nur für x64 verfügbar. | Wenn Sie für den Microsoft Store entwickeln, übermitteln Sie eine ARM-Version Ihrer App. Weitere Informationen finden Sie unter [App-Paketarchitekturen](/windows/msix/package/device-architecture). Wenn Sie ein Win32-Entwickler sind, empfehlen wie, dass Sie Ihre App für ARM64 neu kompilieren. Weitere Informationen finden Sie unter [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). |
 | Ihre App verwendet eine Version von OpenGL höher als 1.1 oder erfordert hardwarebeschleunigte OpenGL. | Verwenden Sie den DirectX-Modus der App, wenn er verfügbar ist. x86 Apps mit DirectX 9, DirectX 10, DirectX 11 und DirectX 12 funktionieren auf ARM. Weitere Informationen finden Sie unter [DirectX-Grafiken und -Spiele](https://docs.microsoft.com/windows/desktop/directx). |
 | Ihre x86-App funktioniert nicht wie erwartet. | Versuchen Sie es mit der Problembehandlung für die Programmkompatibilität, indem Sie die Schritte unter [Problembehandlung für die Programmkompatibilität auf ARM](apps-on-arm-program-compat-troubleshooter.md) befolgen. Weitere Schritte zur Problembehandlung finden Sie im Artikel [Problembehandlung bei x86 Apps auf ARM](apps-on-arm-troubleshooting-x86.md). |
@@ -39,11 +39,11 @@ Eine App kann Registrierungsschlüssel unter der nativen Registrierungsansicht p
 ## <a name="drivers"></a>Treiber 
 Alle Kernelmodustreiber, [User-Mode Driver Framework (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf)-Treiber und Druckertreiber müssen entsprechend der Architektur des Betriebssystems kompiliert werden. Wenn eine x86-Anwendung über einen Treiber verfügt, muss dieser Treiber für ARM64 neu kompiliert werden. Die x86-App funktioniert möglicherweise problemlos unter Emulation, ihr Treiber muss jedoch für ARM64 neu kompiliert werden, und App-Funktionen, die von diesem Treiber abhängen, stehen nicht zur Verfügung. Weitere Informationen zum Kompilieren des Treibers für ARM64 finden Sie unter [Entwickeln von ARM64-Treibern mit WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers).
 
-## <a name="shell-extensions"></a>-Shellerweiterungen 
+## <a name="shell-extensions"></a>-Shell-Erweiterungen 
 Apps, die versuchen, Windows-Komponenten zu verknüpfen oder ihre DLLs in Windows-Prozesse zu laden, müssen diese DLLs neu kompilieren, damit sie der Architektur des Systems entsprechen, d.h. ARM64. Diese werden in der Regel von Eingabemethoden-Editoren (IMEs), Hilfstechnologien und Shellerweiterungs-Apps verwendet (z. b. zum Anzeigen von Cloud-Speicher Symbolen im Explorer oder einem Kontextmenü mit der rechten Maustaste). Weitere Informationen zum Neukompilieren von Apps oder DLLs für ARM64 finden Sie im Blogbeitrag der [Early preview of Visual Studio support for Windows 10 on ARM development](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/). 
 
 ## <a name="debugging"></a>Debuggen
-Wenn Sie das Verhalten Ihrer App genauer untersuchen möchten, lesen Sie den Artikel [Debugging on ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64). Darin erfahren Sie Details über Tools und Strategien zum Debuggen unter ARM.
+Wenn Sie das Verhalten Ihrer App genauer untersuchen möchten, lesen Sie den Artikel [Debugging on ARM](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64). Darin erfahren Sie Details über Tools und Strategien zum Debuggen unter ARM.
 
 ## <a name="virtual-machines"></a>Virtuelle Computer
 Die Windows-Hypervisor-Plattform wird auf der Qualcomm Snapdragon 835 Mobile PC-Plattform nicht unterstützt. Daher funktioniert das Ausführen von virtuellen Computern mit Hyper-V nicht. Wir investieren weiterhin in diese Technologien auf zukünftigen Qualcomm-Chipsätzen. 
@@ -51,4 +51,4 @@ Die Windows-Hypervisor-Plattform wird auf der Qualcomm Snapdragon 835 Mobile PC-
 ## <a name="dynamic-code-generation"></a>Dynamische Code Generierung
 X86-Desktop-Apps werden auf ARM64 durch das System emuliert, das ARM64-Anweisungen zur Laufzeit erzeugt. Dies bedeutet, dass eine x86-Desktop-App das generieren oder Ändern dynamischer Code im Prozess verhindert, dass diese APP nicht als x86 auf ARM64 ausgeführt werden kann. 
 
-Dies ist eine Sicherheits Entschärfung, die einige apps bei Ihrem Prozess mithilfe der [setprocessentschärationpolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) -API mit dem `ProcessDynamicCodePolicy`-Flag aktivieren. Diese Entschärfungs Richtlinie muss deaktiviert werden, damit Sie auf ARM64 erfolgreich als x86-Prozess ausgeführt werden kann. 
+Dies ist eine Sicherheits Entschärfung, die einige apps bei Ihrem Prozess mithilfe der [setprocessentschärationpolicy](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) -API mit dem `ProcessDynamicCodePolicy`-Flag aktivieren. Diese Entschärfungs Richtlinie muss deaktiviert werden, damit Sie auf ARM64 erfolgreich als x86-Prozess ausgeführt werden kann. 

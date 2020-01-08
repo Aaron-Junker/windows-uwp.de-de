@@ -6,14 +6,14 @@ label: Interaction primer
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f9aab8c4b627b9a4952e7e3e292f1e4b528f992
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b9fbe76244d37bda69a1737e04f7172a64b3af44
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258391"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684224"
 ---
 # <a name="interaction-primer"></a>Einführung in die Interaktion
 
@@ -25,14 +25,14 @@ Die UWP verwendet ein intelligentes, kontextbezogenes Interaktionssystem, mit de
 
 Machen Sie sich mit den verschiedenen Arten von Eingabegeräten sowie ihren Verhaltensweisen, Möglichkeiten und Einschränkungen in Verbindung mit bestimmten Formfaktoren vertraut. Dies erleichtert Ihnen die Entscheidung, ob die Steuerelemente und Angebote der Plattform für die App ausreichend sind oder ob Sie angepasste Funktionen für die Benutzerinteraktion bereitstellen müssen.
 
-## <a name="gaze"></a>Blickeingabe
+## <a name="gaze"></a>Anvisieren
 
 Mit dem **Windows 10-Update April 2018** haben wir die Unterstützung für die Blickeingabe mit Eye- und Head-Tracking-Eingabegeräten eingeführt. 
 
 > [!NOTE]
-> Die Unterstützung für Eye Tracking-Hardware wurde mit dem **Windows 10 Fall Creators Update** zusammen mit der [Augensteuerung](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen verwenden können, um den Bildschirmzeiger zu steuern, Text über die Bildschirmtastatur einzugeben und mit Personen über Text-zu-Sprache zu kommunizieren.
+> Die Unterstützung für Eye Tracking-Hardware wurde mit dem **Windows 10 Fall Creators Update** zusammen mit der [Augensteuerung](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen verwenden können, um den Bildschirmzeiger zu steuern, Text über die Bildschirmtastatur einzugeben und mit Personen über Text-zu-Sprache zu kommunizieren.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 - Tablet
 - PCs und Laptops
@@ -49,7 +49,7 @@ Verfolgen Sie den Blick, die Aufmerksamkeit und die Präsenz eines Benutzers anh
 
 Mit dem **Windows 10 Anniversary Update** haben wir eine neue Kategorie von Eingabegeräten eingeführt: Windows Wheel. Surface Dial ist das erste Angebot dieser Art.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 - Tablet
 - PCs und Laptops
@@ -66,14 +66,14 @@ Der Formfaktor von Surface Dial entspricht einer Drehaktion (oder -geste). Surfa
 
 In Windows 10 können Sie mit der **Cortana** -Erweiterbarkeit Sprachbefehle von einem Benutzer verarbeiten und Ihre Anwendung starten, um eine einzelne Aktion auszuführen.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox
+-   Xbox-Taste
 -   HoloLens
 
 ![Cortana](images/input-interactions/icons-cortana01.png)
@@ -97,14 +97,14 @@ Die Spracherkennung kann den Haupteingabetyp je nach Gerät in vielen Fällen er
 
 Mit Text-zu-Sprache (auch als TTS oder Sprachsynthese bezeichnet) werden Informationen oder Anweisungen an den Benutzer ausgegeben.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox
+-   Xbox-Taste
 -   HoloLens
 
 ![Spracherkennung](images/input-interactions/icons-speech01.png)
@@ -148,7 +148,7 @@ Ein (Eingabe-)Stift kann ähnlich wie eine Maus als pixelgenaues Zeigegerät ver
 
 In diesem Text beziehen wir uns auf aktive Stifte, die umfangreiche Eingabedaten liefern und in erster Linie für präzise Freihandeingaben und für zeigebasierte Interaktionen verwendet werden.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   Smartphones und Phablets
 -   Tablet
@@ -175,7 +175,7 @@ Sie müssen stiftspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unt
 
 Bei der Toucheingabe können mit einem oder mehreren Fingern ausgeführte Gesten verwendet werden, um die direkte Manipulation von UI-Elementen (wie etwa Verschieben, Drehen, Ändern der Größe oder Bewegen) zu emulieren. Außerdem können die Gesten auch als alternative Eingabemethode (ähnlich einer Maus- oder Stifteingabe) oder als ergänzende Eingabemethode (zum Modifizieren anderer Eingaben; also beispielsweise zum Verwischen eines mit einem Stift gezeichneten Freihandstrichs) verwendet werden. Diese berührungsbasierte Bedienung wird von Benutzern unter Umständen als natürlicher wahrgenommen als die symbolbasierte Interaktion auf einem Bildschirm.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   Smartphones und Phablets
 -   Tablet
@@ -210,7 +210,7 @@ Im Allgemeinen weist die Toucheingabe folgende Merkmale auf:
 
 Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigergeräts (beispielsweise eine Maus). Durch diese Kombination ist das Touchpad sowohl für eine toucheingabeoptimierte Benutzeroberfläche als auch für die kleineren Ziele von Produktivitäts-Apps geeignet.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   PCs und Laptops
 -   IoT
@@ -236,14 +236,14 @@ Eine Tastatur ist das Haupteingabegerät für Text und häufig unentbehrlich fü
 
 Mit [Continuum for Phone](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), einem neuen Benutzeroberflächen für kompatible Windows 10 Mobile-Geräte, können Benutzer ihre Telefone mit einer Maus und Tastatur verbinden, damit ihre Telefone wie ein Laptop funktionieren.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox
+-   Xbox-Taste
 -   HoloLens
 
 ![Tastatur](images/input-interactions/icons-keyboard01.png)
@@ -274,7 +274,7 @@ Im Allgemeinen weist eine Tastatur folgende Merkmale auf:
 
 Eine Maus eignet sich am besten für Produktivitäts-Apps und Benutzeroberflächen mit hoher Dichte, bei denen Benutzerinteraktionen beim Zielen und bei der Befehlseingabe Pixelgenauigkeit erfordern.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   Smartphones und Phablets
 -   Tablet
@@ -301,11 +301,11 @@ Sie müssen mausspezifische Benutzeroberflächenbefehle (oder Angebote) zur Unte
 
 Eine Geste ist jede Art von Benutzerbewegung, die als Steuerungs- oder Interaktionseingabe für eine Anwendung erkannt wird. Es gibt verschiedene Arten von Gesten – von der einfachen Geste, die dazu dient, mit der Hand etwas auf dem Bildschirm zu verwenden, über spezifische, erlernte Bewegungsmuster bis hin zu langen Bewegungsabläufen des gesamten Körpers. Beachten Sie beim Entwerfen benutzerdefinierter Gesten, dass diese in anderen Regionen/Kulturkreisen unter Umständen eine andere Bedeutung haben.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   PCs und Laptops
 -   IoT
--   Xbox
+-   Xbox-Taste
 -   HoloLens
 
 ![Geste](images/input-interactions/icons-gesture01.png)
@@ -329,11 +329,11 @@ Aufgrund der Konvergenz von durch Windows unterstützten Interaktionsumgebungen 
 
 Ein Gamepad/Controller ist ein sehr spezielles Gerät und kommt in der Regel bei Spielen zum Einsatz. Es wird jedoch auch zum Emulieren einfacher Tastatureingaben sowie für eine tastaturähnliche UI-Navigation verwendet.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   PCs und Laptops
 -   IoT
--   Xbox
+-   Xbox-Taste
 
 ![Controller](images/input-interactions/icons-controller01.png)
 
@@ -346,14 +346,14 @@ Spielen und Interaktionen mit einer speziellen Konsole.
 
 Durch die Berücksichtigung so vieler Benutzer und Geräte wie möglich und den Entwurf Ihrer App für die Kompatibilität mit möglichst vielen Eingabearten (Gesten, Spracherkennung, Toucheingabe, Touchpad, Maus und Tastatur) maximieren Sie die Flexibilität, Benutzerfreundlichkeit und Barrierefreiheit Ihrer Apps.
 
-### <a name="device-support"></a>Unterstützung von Geräten
+### <a name="device-support"></a>Geräteunterstützung
 
 -   Smartphones und Phablets
 -   Tablet
 -   PCs und Laptops
 -   Surface Hub
 -   IoT
--   Xbox
+-   Xbox-Taste
 -   HoloLens
 
 ![Mehrfacheingaben](images/input-interactions/icons-inputdevices03-vertical.png)

@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, Trailer, Video, Screenshot, Bild, Symbol, Store-Eintrag, Store-Eintragsbilder
 ms.localizationpriority: medium
-ms.openlocfilehash: 25dd6ffe698ae8141a02381d5ca45df31377599b
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125235"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684611"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>App-Screenshots, -Bilder und -Trailer
 
@@ -170,7 +170,7 @@ Es gibt weitere Anforderungen je nach Typ der Datei.
 
 | Video | Audio |
 | --- | --- |
-| <ul><li>Codec: [H. 264](https://docs.microsoft.com/en-us/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressiver Scan (kein Interlacing)</li><li>High Profile</li><li>2 aufeinanderfolgende B-Frames</li><li>Geschlossene GOP. GOP der Hälfte der Bildfrequenz</li><li>CABAC</li><li>50 MB/s </li><li>Farbraum: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Kanäle: Stereo oder Surround-Sound</li><li>Samplingrate: 48 KHz</li><li>Audiobitrate: 384 KB/s für Stereo, 512 KB/s für Surround-Sound</li></ul> |
+| <ul><li>Codec: [H. 264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressiver Scan (kein Interlacing)</li><li>High Profile</li><li>2 aufeinanderfolgende B-Frames</li><li>Geschlossene GOP. GOP der Hälfte der Bildfrequenz</li><li>CABAC</li><li>50 MB/s </li><li>Farbraum: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Kanäle: Stereo oder Surround-Sound</li><li>Samplingrate: 48 KHz</li><li>Audiobitrate: 384 KB/s für Stereo, 512 KB/s für Surround-Sound</li></ul> |
 
 > [!WARNING]
 > Kunden hören möglicherweise keine Audiodaten für MP4-Dateien, die mit anderen Codecs als AVC1 codiert sind.

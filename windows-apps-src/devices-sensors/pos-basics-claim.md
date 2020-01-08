@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Point Of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f3fc2b2aa10fedf143c55158e521b2c1cd5b75d
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: bc3a8afbc0d3ca4655e0b1745090db633bcd92b7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816691"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684677"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Point of Service-geräteanspruch und Aktivieren des Modells
 
@@ -81,7 +81,7 @@ Im folgenden Beispiel ist gezeigt, wie Sie ein Strichcodescanner-Gerät beanspru
 
 > [!Warning]
 > Ein Anspruch kann unter den folgenden Umständen verloren gehen:
-> 1. Eine andere App hat einen Anspruch auf dasselbe Gerät angefordert, und Ihre App hat kein **RetainDevice** in Reaktion auf das Ereignis **ReleaseDeviceRequested** ausgestellt.  (Weitere Informationen finden Sie im Abschnitt [Anspruchsaushandlung](#Claim-negotiation) weiter unten).
+> 1. Eine andere App hat einen Anspruch auf dasselbe Gerät angefordert, und Ihre App hat kein **RetainDevice** in Reaktion auf das Ereignis **ReleaseDeviceRequested** ausgestellt.  (Weitere Informationen finden Sie im Abschnitt [Anspruchsaushandlung](#claim-negotiation) weiter unten).
 > 2. Ihre App wurde unterbrochen, was dazu geführt hat, dass das Geräteobjekt geschlossen wurde und der Anspruch daher nicht mehr gültig ist. (Weitere Informationen finden Sie unter [Lebenszyklus von Geräteobjekten](pos-basics-deviceobject.md#device-object-lifecycle).)
 
 

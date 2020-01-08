@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 802a7a925a08dde94ab59d79e01df94fbbcf495d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 34bc609d06705f1dfa6a5c7370ce6022ae9c3ff8
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258037"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684245"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Verwenden des Multilingual App Toolkit 4.0
 
@@ -26,24 +26,24 @@ Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2019 inte
 
 ## <a name="how-to-use-the-toolkit"></a>So verwenden Sie das Toolkit
 
-### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Schritt 1. Entwerfen Sie Ihre App im Hinblick auf Globalisierung und Lokalisierung.
+### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Schritt 1 Entwerfen Sie Ihre App im Hinblick auf Globalisierung und Lokalisierung.
 
 Bevor Sie MAT effektiv nutzen können, muss Ihre App lokalisierbar sein. Insbesondere sollten zu Ihrem Projekt eine oder mehrere Ressourcendateien (.resw) gehören, die die Zeichenfolgen Ihrer App in der Standardsprache enthalten. Details dazu finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](../../app-resources/localize-strings-ui-manifest.md). Sobald Sie damit fertig sind, können mit dem Toolkit zusätzliche Sprachen schnell und einfach hinzugefügt werden.
 
-Die Vorteile von Globalisierung und Lokalisierung sowie die Begriffe &mdash;Globalisierung **,** Lokalisierbarkeit **, und** Lokalisierung**werden unter**Globalisierung und Lokalisierung&mdash; erläutert.
+Die Vorteile von Globalisierung und Lokalisierung sowie die Begriffe **Globalisierung**, **Lokalisierbarkeit**, und **Lokalisierung** werden unter [Globalisierung und Lokalisierung](globalizing-portal.md) erläutert.
 
 Siehe auch [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) und [App lokalisierbar machen](prepare-your-app-for-localization.md).
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Schritt 2. Laden Sie das Multilingual App Toolkit 4.0 herunter, und installieren Sie es.
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Schritt 2 Laden Sie das Multilingual App Toolkit 4.0 herunter, und installieren Sie es.
 
 Das Multilingual App Toolkit 4.0 (MAT) besteht aus zwei Teilen. Zu jedem Teil gehört ein eigenes Installationsprogramm.
 
 - [Mehrsprachige App-Toolkit 4,0-Erweiterung für Visual Studio 2017 und](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)höher. Diese enthält die Matte 4,0-Erweiterung für Visual Studio 2019 in Form eines VSIX-Installers.
-- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). Enthält das eigenständige Multilingual Editor-Tool aus MAT 4.0 in Form eines MSI-Installationsprogramms. Zudem ist die MAT 4.0-Erweiterung für Visual Studio 2015 und für Visual Studio 2013 enthalten
+- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit). Enthält das eigenständige Multilingual Editor-Tool aus MAT 4.0 in Form eines MSI-Installationsprogramms. Zudem ist die MAT 4.0-Erweiterung für Visual Studio 2015 und für Visual Studio 2013 enthalten
 
 Wenn Sie Visual Studio 2017 oder Visual Studio 2019 verwenden, laden Sie beide Installer herunter, und führen Sie Sie nacheinander aus. Wenn Sie Visual Studio 2015 oder Visual Studio 2013 verwenden, laden Sie das MSI-Installationsprogramm herunter und führen es aus.
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Schritt 3. Aktivieren Sie das Multilingual App Toolkit für Ihr Projekt
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Schritt 3 Aktivieren Sie das Multilingual App Toolkit für Ihr Projekt
 
 Bevor Sie mit der Lokalisierung der App beginnen können, muss das MAT für Ihr Projekt aktiviert werden. So aktivieren Sie das Toolkit:
 
@@ -53,7 +53,7 @@ Bevor Sie mit der Lokalisierung der App beginnen können, muss das MAT für Ihr 
 
 Warten Sie, bis im Ausgabefenster (das die Ausgabe des Multilingual App Toolkit enthält) die Nachricht `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>` angezeigt wird. Sobald diese Meldung erscheint, kann MAT verwendet werden.
 
-### <a name="step-4-add-languages-to-your-project"></a>Schritt 4. Fügen Sie Ihrem Projekt Sprachen hinzu.
+### <a name="step-4-add-languages-to-your-project"></a>Schritt 4 Fügen Sie Ihrem Projekt Sprachen hinzu.
 
 Führen Sie die folgenden Schritte aus, um Ihrem Projekt Sprachen hinzuzufügen.
 
@@ -69,13 +69,13 @@ Das Toolkit führt daraufhin Folgendes aus:
 
 Wenn Sie eine Ressourcendatei für Standardsprachen (.resx) hinzufügen/entfernen oder eine Zeichenfolge in einer Ressourcendatei für Standardsprachen (.resx) hinzufügen/entfernen, müssen Sie das Projekt neu erstellen, um die XLF-Dateien erneut zu synchronisieren. Dadurch wird sichergestellt, dass die XLF-Dateien die Gesamtmenge der Zeichenfolgen in der Standardsprache enthalten.
 
-Installierte Übersetzungsanbieter wie das &mdash;Microsoft-Sprachenportal[ oder ](https://www.microsoft.com/Language/)Microsoft Translator[ können zum Übersetzen der Ressourcen Ihrer App verwendet werden. Wenn ein Anbieter eine bestimmte Sprache unterstützt, wird das Symbol des Anbieters im Dialogfeld „Übersetzungssprachen” neben dem Namen der Sprache angezeigt.
+Installierte Übersetzungsanbieter wie das [Microsoft-Sprachenportal](https://www.microsoft.com/Language/) oder [Microsoft Translator](https://www.microsofttranslator.com/) können zum Übersetzen der Ressourcen Ihrer App verwendet werden. Wenn ein Anbieter eine bestimmte Sprache unterstützt, wird das Symbol des Anbieters im Dialogfeld „Übersetzungssprachen” neben dem Namen der Sprache angezeigt.
 
 Im Dialogfeld "Übersetzungssprachen" wird für alle vorhandenen XLF-basierten Sprachen, die vom Toolkit erkannt werden, das Auswahlkontrollkästchen aktiviert, um anzuzeigen, dass die Sprache bereits im Projekt enthalten ist.
 
 Sobald eine Sprache zum Projekt hinzugefügt wurde, kann sie nicht einfach dadurch entfernt werden, dass Sie das Kontrollkästchen im Dialogfeld „Übersetzungssprachen” deaktivieren. Klicken Sie zum Entfernen einer Sprache mit der rechten Maustaste auf die sprachspezifische XLF-Datei, und wählen Sie **Löschen**. Nach Ihrer Bestätigung wird auch die zugehörige Ressourcendatei (.resw) gelöscht.
 
-### <a name="step-5-test-your-app-using-pseudo-language"></a>Schritt 5. Testen Sie Ihre App mit Pseudosprache.
+### <a name="step-5-test-your-app-using-pseudo-language"></a>Schritt 5 Testen Sie Ihre App mit Pseudosprache.
 
 Pseudosprache ist eine künstliche Modifikation des Softwareprodukts, die eine echte Sprachlokalisierung simulieren soll, aber für Muttersprachler lesbar bleibt. Bei einer Pseudoübersetzung werden Zeichen ersetzt und die Länge der Ressourcenzeichenfolge erweitert, um mögliche Lokalisierungsprobleme oder Fehler früh im Projektzyklus und vor Beginn der Lokalisierung zu erkennen.
 
@@ -95,14 +95,14 @@ Im folgenden Textbeispiel „Hello World” wird die Pseudoübersetzung erweiter
 
 `"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"`
 
-### <a name="step-6-translate-your-app-into-selected-languages"></a>Schritt 6. Übersetzen Sie Ihre App in die ausgewählten Sprachen.
+### <a name="step-6-translate-your-app-into-selected-languages"></a>Schritt 6 Übersetzen Sie Ihre App in die ausgewählten Sprachen.
 
 Das Multilingual App Toolkit ist in den Erstellungsprozess integriert. Bei einer Erstellung werden der XLF-Datei für die betreffende Sprache automatisch aktualisierte Zeichenfolgen hinzugefügt.
 Nachdem Sie Ihre App mit der Pseudosprache getestet haben, gibt es drei Optionen, Ihre App für die Veröffentlichung in andere Sprachen zu übersetzen.
 
 #### <a name="option-1-translate-the-strings-yourself"></a>Option 1: Übersetzen Sie die Zeichenfolgen selbst.
 
-Sie können den Multilingual Editor verwenden, um Zeichenfolgen einzeln zu übersetzen. Wie bereits erwähnt, ist er im [MSI-Installationsprogramm](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit) enthalten.
+Sie können den Multilingual Editor verwenden, um Zeichenfolgen einzeln zu übersetzen. Wie bereits erwähnt, ist er im [MSI-Installationsprogramm](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit) enthalten.
 
 - Klicken Sie mit der rechten Maustaste auf die XLF-Datei, die Sie übersetzen möchten.
 - Klicken Sie auf **Öffnen mit...** , und wählen Sie den Multilingual Editor. Sie können auch auf **Als Standard festlegen** klicken.
@@ -154,11 +154,11 @@ Sie und Ihre Übersetzer können den Status von Übersetzungen im Mehrsprachen-E
 
 Erstellen Sie Ihr Projekt neu, um zu bewirken, dass die übersetzten Zeichenfolgen in die Ressourcendatei (.resw) kopiert werden, die der gerade bearbeiteten XLF-Datei entspricht.
 
-### <a name="step-7-upload-your-app-to-the-microsoft-store"></a>Schritt 7. Laden Sie Ihre App in den Microsoft Store hoch.
+### <a name="step-7-upload-your-app-to-the-microsoft-store"></a>Schritt 7 Laden Sie Ihre App in den Microsoft Store hoch.
 
 Vor dem Start des Zertifizierungsprozesses für den Microsoft Store müssen Sie die Datei `<project-name>.qps-ploc.xlf` aus dem Projekt entfernen. Zum Ermitteln potenzieller Lokalisierungsprobleme oder -fehler wird Pseudosprache verwendet. Diese ist jedoch keine gültige Sprache für den Microsoft Store. Falls sie nicht entfernt wird, tritt beim Zertifizierungsprozess für den Microsoft Store ein Fehler auf.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
 * [Globalisierung und Lokalisierung](globalizing-portal.md)
@@ -169,7 +169,7 @@ Vor dem Start des Zertifizierungsprozesses für den Microsoft Store müssen Sie 
 ## <a name="downloads"></a>Downloads
 
 * [Mehrsprachiges App-Toolkit 4,0. vsix-Installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [Mehrsprachiges App-Toolkit 4,0. MSI-Installer](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [Mehrsprachiges App-Toolkit 4,0. MSI-Installer](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>Übersetzungsdienste
 

@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 341d46879895da221e3a17ba88f28fd22e7c5e27
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9e0991a8a06054b6136dfc1fd65c15dbeb66e6fd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258097"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684263"
 ---
 # <a name="make-your-app-localizable"></a>App lokalisierbar machen
 
@@ -80,14 +80,14 @@ Gegen informelle Angaben in Zeichenfolgen ist nichts einzuwenden. Sie können en
 
 Nehmen Sie ein Pseudolokalisierung Ihrer App vor, um Lokalisierungsprobleme zu erkennen. Pseudolokalisierung ist eine Art von Lokalisierungstestlauf oder Offenlegungstest. Sie erstellen eine Reihe von Ressourcen, die nicht wirklich übersetzt werden, sondern nur übersetzt aussehen. Ihre Zeichenfolgen sind beispielsweise etwa 40 % länger als in der Standardsprache, und sie enthalten Trennzeichen, sodass Sie auf einen Blick erkennen können, ob sie in der Benutzeroberfläche abgeschnitten wurden.
 
-## <a name="deployment-considerations"></a>Bereitstellungs Überlegungen
+## <a name="deployment-considerations"></a>Bereitstellungsaspekte
 
 Wenn Sie eine App installieren, die lokalisierte Sprach Daten enthält, werden Sie möglicherweise feststellen, dass nur die Standardsprache für die app verfügbar ist, auch wenn Sie anfänglich Ressourcen für mehrere Sprachen eingefügt haben. Dies liegt daran, dass der Installationsvorgang so optimiert ist, dass nur Sprachressourcen installiert werden, die der aktuellen Sprache und Kultur des Geräts entsprechen. Wenn Ihr Gerät für en-US konfiguriert ist, werden daher nur die Sprachressourcen von en-US mit Ihrer APP installiert.
 
 > [!NOTE]
 > Es ist nicht möglich, nach der Erstinstallation zusätzliche Sprachunterstützung für Ihre APP zu installieren. Wenn Sie nach der Installation einer APP die Standardsprache ändern, verwendet die APP weiterhin nur die ursprünglichen Sprachressourcen.
 
-Wenn Sie sicherstellen möchten, dass nach der Installation alle Sprachressourcen verfügbar sind, erstellen Sie eine Konfigurationsdatei für das App-Paket, mit der angegeben wird, dass während der Installation bestimmte Ressourcen erforderlich sind (einschließlich der Sprachressourcen). Diese optimierte Installationsfunktion wird automatisch aktiviert, wenn die appxbundle-Datei Ihrer Anwendung während der Paket Erstellung generiert wird. Weitere Informationen finden Sie unter [sicherstellen, dass Ressourcen auf einem Gerät installiert sind, unabhängig davon, ob Sie von einem Gerät benötigt werden](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)).
+Wenn Sie sicherstellen möchten, dass nach der Installation alle Sprachressourcen verfügbar sind, erstellen Sie eine Konfigurationsdatei für das App-Paket, mit der angegeben wird, dass während der Installation bestimmte Ressourcen erforderlich sind (einschließlich der Sprachressourcen). Diese optimierte Installationsfunktion wird automatisch aktiviert, wenn die appxbundle-Datei Ihrer Anwendung während der Paket Erstellung generiert wird. Weitere Informationen finden Sie unter [sicherstellen, dass Ressourcen auf einem Gerät installiert sind, unabhängig davon, ob Sie von einem Gerät benötigt werden](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140)).
 
 Optional können Sie die. appxbundle-Generierung deaktivieren, wenn Sie Ihre APP packen, um sicherzustellen, dass alle Ressourcen installiert sind (nicht nur eine Teilmenge). Dies wird jedoch nicht empfohlen, da dadurch die Installationszeit der APP erhöht werden kann.
 
@@ -180,7 +180,7 @@ Die Sortierung folgt dem **regionalen Format der Systemsteuerung**:
   - Furigana aktiviert ist, wird „希蒼“ unter „の“ einsortiert.
   - Wenn Furigana fehlt, wird „希蒼“ unter „漢字“ sortiert.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
 - [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)

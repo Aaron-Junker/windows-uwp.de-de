@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie Benachrichtigungen im Info-Center mithilfe von Sammlungen zu gruppieren.
+Description: Erfahren Sie, wie Sie Benachrichtigungen im Aktions Center mithilfe von Sammlungen gruppieren.
 title: Popupsammlungen
 label: Toast Collections
 template: detail.hbs
@@ -7,21 +7,21 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Benachrichtigungen, Sammlungen, Sammlung, Gruppenbenachrichtigungen, Gruppieren von Benachrichtigungen, gruppieren, organisieren, Info-Center, Popup
 ms.localizationpriority: medium
-ms.openlocfilehash: 71d5edb662b180571aa10f8a7b0ad533cf28a689
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 19fc1ed49fe5a3ea7d628684226b960ef2bc0732
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320786"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684180"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Gruppieren von Popupbenachrichtigungen mit Sammlungen
 Verwenden Sie Sammlungen, um Ihre App-Popups im Info-Center zu organisieren. Mithilfe von Sammlungen können Benutzer Informationen im Info-Center leichter finden und Entwickler können ihre Benachrichtigungen besser verwalten.  Die folgenden APIs ermöglichen das Entfernen, Erstellen und Aktualisieren von Benachrichtigungssammlungen.
 
 > [!IMPORTANT]
-> **Erfordert Creators Update**: Sie müssen SDK 15063 ausgerichtet und Build 15063 oder höher, um den Toast Sammlungen ausgeführt werden. Zugehörige APIs: [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection) und [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Erfordert Creators Update**: Sie müssen als Ziel das SDK 15063 angeben und Build 15063 oder höher ausführen, um Popupbenachrichtigungen zu verwenden. Zugehörige APIs: [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection) und [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 Sie sehen das folgende Beispiel einer Messaging-App, die die Benachrichtigungen basierend auf der Chatgruppe trennt. Jeder Titel (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Team Chat) ist eine separate Sammlung.  Beachten Sie, wie die Benachrichtigungen unterschiedlich gruppiert werden, als wären sie von einer separaten App, obwohl sie alle Benachrichtigungen von derselben App sind.  Wenn Sie Benachrichtigungen auf raffiniertere Art organisieren möchten, lesen Sie [Popup-Header](toast-headers.md).  
-![Auflistungsbeispiel für die mit zwei verschiedenen Gruppen von Benachrichtigungen](images/toast-collection-example.png)
+![Sammlungs Beispiel mit zwei verschiedenen Gruppen von Benachrichtigungen](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>Erstellen von Sammlungen
 Bei der Erstellung jeder Sammlung müssen Sie einen Anzeigenamen und ein Symbol angeben, die als Teil des Sammlungstitels im Info-Center angezeigt werden, wie in der Abbildung oben dargestellt. Sammlungen erfordern außerdem ein Start-Argument, damit die App zur richtigen Stelle in der App navigieren kann, wenn ein Benutzer auf den Titel der Sammlung klickt.  
@@ -186,8 +186,8 @@ Sie können beim Entwerfen Ihrer Sammlungen das Tool [Notifications Visualizer](
 ## <a name="other-details"></a>Weitere Details
 Die Popupsammlungen, die Sie erstellen, werden auch in den Benachrichtigungseinstellungen des Benutzers angezeigt.  Benutzer können die Einstellungen für jede einzelne Sammlung umschalten, um diese Untergruppen zu aktivieren oder zu deaktivieren.  Wenn Benachrichtigungen auf der obersten Ebene für die App deaktiviert werden, werden auch alle Sammlungsbenachrichtigungen deaktiviert.  Jede Sammlung zeigt standardmäßig drei Benachrichtigungen im Info-Center an. Der Benutzer kann sie erweitern, um bis zu 20 Benachrichtigungen anzuzeigen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Inhalt der Popupbenachrichtigung](adaptive-interactive-toasts.md)
-* [Toast-Header](toast-headers.md)
-* [Benachrichtigungsbibliothek auf GitHub (Teil der Windows-Community-Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Popup Inhalt](adaptive-interactive-toasts.md)
+* [Popup Header](toast-headers.md)
+* [Benachrichtigungs Bibliothek auf GitHub (Teil des Windows Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

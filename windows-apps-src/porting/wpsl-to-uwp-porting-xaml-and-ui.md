@@ -4,14 +4,14 @@ title: Portieren von Windows Phone Silverlight-XAML und-Benutzeroberfläche auf 
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eeb8cb8a8b71123c3a5a94eea316621e5f93fe8e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259072"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684623"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portieren von Windows Phone Silverlight-XAML und-Benutzeroberfläche auf UWP
 
@@ -205,7 +205,7 @@ Weitere Informationen zu UWP-Steuerelementen finden Sie unter [Steuerelemente na
 
 ##  <a name="design-language-in-windows10"></a>Entwurfs Sprache in Windows 10
 
-Es gibt einige Unterschiede in der Entwurfs Sprache zwischen Windows Phone Silverlight-apps und Windows 10-apps. Alle Details finden Sie unter [Design](https://developer.microsoft.com/en-us/windows/apps/design). Trotz der Änderungen bei der Entwurfssprache gelten nach wie vor dieselben Designprinzipien: Gestalten Sie Ihre App mit Liebe zum Detail, versuchen Sie aber, alles möglichst einfach zu halten, indem Sie sich auf den Inhalt, nicht auf das Chrom konzentrieren, visuelle Elemente weitgehend reduzieren und für die digitale Welt authentisch bleiben. Nutzen Sie insbesondere bei der Typografie eine visuelle Hierarchie. Entwerfen Sie Ihre App basierend auf einem Raster, und erwecken Sie Ihre Benutzeroberflächen mit flüssigen Animationen zum Leben.
+Es gibt einige Unterschiede in der Entwurfs Sprache zwischen Windows Phone Silverlight-apps und Windows 10-apps. Alle Details finden Sie unter [Design](https://developer.microsoft.com/windows/apps/design). Trotz der Änderungen bei der Entwurfssprache gelten nach wie vor dieselben Designprinzipien: Gestalten Sie Ihre App mit Liebe zum Detail, versuchen Sie aber, alles möglichst einfach zu halten, indem Sie sich auf den Inhalt, nicht auf das Chrom konzentrieren, visuelle Elemente weitgehend reduzieren und für die digitale Welt authentisch bleiben. Nutzen Sie insbesondere bei der Typografie eine visuelle Hierarchie. Entwerfen Sie Ihre App basierend auf einem Raster, und erwecken Sie Ihre Benutzeroberflächen mit flüssigen Animationen zum Leben.
 
 ## <a name="localization-and-globalization"></a>Lokalisierung und Globalisierung
 
@@ -313,7 +313,7 @@ Der Text (bzw. die Typografie) ist ein wichtiger Aspekt einer UWP-App. Beim Port
 
 System TextBlock-Stile für Windows 10-apps
 
-In einer Windows Phone Silverlight-APP ist die Standardschrift Familie "mengoe WP". In einer Windows 10-APP ist die Standardschrift Familie Segoe UI. Daher kann die Schriftartmetrik in Ihrer App Unterschiede aufweisen. Wenn Sie das Aussehen Ihrer Windows Phone Silverlight-Text reproduzieren möchten, können Sie Ihre eigenen Metriken mithilfe von Eigenschaften wie [**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) und [**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)festlegen. Weitere Informationen finden Sie unter [Richtlinien für Schriftarten](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) und [Entwerfen von UWP-Apps](https://developer.microsoft.com/en-us/windows/apps/design).
+In einer Windows Phone Silverlight-APP ist die Standardschrift Familie "mengoe WP". In einer Windows 10-APP ist die Standardschrift Familie Segoe UI. Daher kann die Schriftartmetrik in Ihrer App Unterschiede aufweisen. Wenn Sie das Aussehen Ihrer Windows Phone Silverlight-Text reproduzieren möchten, können Sie Ihre eigenen Metriken mithilfe von Eigenschaften wie [**LineHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) und [**LineStackingStrategy**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)festlegen. Weitere Informationen finden Sie unter [Richtlinien für Schriftarten](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts) und [Entwerfen von UWP-Apps](https://developer.microsoft.com/windows/apps/design).
 
 ## <a name="theme-changes"></a>Designänderungen
 
@@ -393,6 +393,6 @@ In Ihrer UWP-App können Sie eine Mindestgröße (Breite und Höhe) mit imperati
 
 Das nächste Thema ist [Portieren: E/A, Gerät und App-Modell](wpsl-to-uwp-input-and-sensors.md).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Namespace-und Klassen Zuordnungen](wpsl-to-uwp-namespace-and-class-mappings.md)
