@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ece54ef17c97b1cb16b3f0a706c86eb2858556
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6ab5b2ec13e0de3d234fafc6c1a32e10d35aed4f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257856"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681941"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests im Zertifizierungskit für Windows-Apps
 
@@ -149,7 +149,7 @@ Die BinScope-Tests des Analyzers für Binärdateien prüfen, ob folgende sicherh
 
 ### <a name="binscope-binary-analyzer-tests"></a>BinScope-Tests des Analyzers für Binärdateien
 
-Die [BinScope-Tests des Analyzers für Binärdateien](https://www.microsoft.com/en-us/download/details.aspx?id=44995) untersuchen die Binärdateien der App auf Code- und Erstellungsmerkmale, die die App weniger anfällig für Angriffe oder für die Verwendung als Angriffsmittel machen.
+Die [BinScope-Tests des Analyzers für Binärdateien](https://www.microsoft.com/download/details.aspx?id=44995) untersuchen die Binärdateien der App auf Code- und Erstellungsmerkmale, die die App weniger anfällig für Angriffe oder für die Verwendung als Angriffsmittel machen.
 
 Die BinScope-Tests des Analyzers für Binärdateien prüfen, ob die sicherheitsrelevanten Features korrekt verwendet werden:
 
@@ -172,13 +172,13 @@ Das AllowPartiallyTrustedCallersAttribute-Attribut (kurz: APTCA-Attribut) ermög
 
 Verwenden Sie das APTCA-Attribut nur dann für Assemblys mit starkem Namen, falls dies für das Projekt erforderlich ist und die Risiken bekannt sind. Falls das Attribut erforderlich ist, stellen Sie sicher, dass alle APIs durch geeignete Sicherheitsanforderungen für den Codezugriff geschützt sind. APTCA hat keine Auswirkung, wenn die Assembly Teil einer UWP-App (Universelle Windows-Plattform) ist.
 
-**Rede**
+**Hinweise**
 
 Dieser Test wird nur für verwalteten Code (C#, .NET usw.) ausgeführt.
 
 ### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/SAFESEH Ausnahme Behandlungs Schutz
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim SafeSEHCheck-Test.
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** SafeSEHCheck Test failed (Fehler beim SafeSEHCheck-Test).
 
 Ein Ausnahmehandler wird ausgeführt, wenn in der App eine Ausnahmebedingung auftritt – beispielsweise bei einem Fehler aufgrund einer Division durch Null. Da die Adresse des Ausnahmehandlers beim Aufrufen einer Funktion im Stapel gespeichert wird, besteht das Risiko eines Pufferüberlaufangriffs, sollte Schadsoftware den Stapel überschreiben.
 
@@ -186,7 +186,7 @@ Ein Ausnahmehandler wird ausgeführt, wenn in der App eine Ausnahmebedingung auf
 
 Aktivieren Sie beim Erstellen der App die Option "/SAFESEH" im Linker-Befehl. Diese Option ist in den Veröffentlichungskonfigurationen von Visual Studio standardmäßig aktiviert. Vergewissern Sie sich, dass diese Option in den Erstellungsanweisungen für alle alle ausführbaren Module Ihrer App aktiviert ist.
 
-**Rede**
+**Hinweise**
 
 Für 64-Bit-Binärdateien oder für Binärdateien für den ARM-Chipsatz wird dieser Test nicht ausgeführt, da hier keine Ausnahmehandleradressen im Stapel gespeichert werden.
 
@@ -200,7 +200,7 @@ Dieser Test stellt sicher, dass die App keinen Code ausführt, der in einem Date
 
 Aktivieren Sie beim Erstellen der App die Option „/NXCOMPAT“ im Linker-Befehl. Diese Option ist in Linker-Versionen mit Unterstützung der Datenausführungsverhinderung (Data Execution Prevention, DEP) standardmäßig aktiviert.
 
-**Rede**
+**Hinweise**
 
 Wir empfehlen, Apps auf einer DEP-fähigen CPU zu testen und alle DEP-bedingten Fehler zu beheben.
 
@@ -214,7 +214,7 @@ Die Zufallsgestaltung des Adressraumlayouts (Address Space Layout Randomization,
 
 Aktivieren Sie beim Erstellen der App die Option "/DYNAMICBASE" im Linker-Befehl. Vergewissern Sie sich, dass auch alle von der App verwendeten Module diese Linker-Option verwenden.
 
-**Rede**
+**Hinweise**
 
 ASLR hat in der Regel keine Auswirkungen auf die Leistung. In einigen Szenarios ist auf 32-Bit-Systemen aber eine geringfügige Leistungsverbesserung zu beobachten. Es ist möglich, dass sich die Leistung bei einem stark belasteten System verschlechtert, bei dem viele Bilder an vielen unterschiedlichen Speicherbereichen geladen sind.
 
@@ -230,7 +230,7 @@ Binärdateien mit beschreibbaren Abschnitten, die als freigegeben gekennzeichnet
 
 Entfernen Sie sämtliche freigegebenen Abschnitte aus der App, und erstellen Sie freigegebene Speicherobjekte, indem Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) mit den passenden Sicherheitsattributen aufrufen und die App dann neu erstellen.
 
-**Rede**
+**Hinweise**
 
 Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen geschrieben wurden, z. B. mit C oder C++.
 
@@ -246,7 +246,7 @@ Wenn der Test für eine systemeigene ausführbare Datei nicht erfolgreich ist, s
 
 Wenn eine verwaltete ausführbare Datei den Test nicht bestanden hat, stellen Sie sicher, dass Sie den neuesten Compiler und Linker (z. b. Microsoft Visual Studio) zum Erstellen der UWP-App verwendet haben.
 
-**Rede**
+**Hinweise**
 
 Dieser Test wird für alle EXE-Dateien und nicht verwalteten DLLs ausgeführt.
 
@@ -260,7 +260,7 @@ Ein portierbares ausführbares Image (Portable Executable, PE) besteht diesen Te
 
 Führen Sie die Importtabelle nicht in einem Abschnitt mit ausführbarem Code zusammen. Stellen Sie sicher, dass das Kennzeichen */merge* des Visual C++-Linkers nicht so eingestellt ist, dass der Abschnitt „.rdata“ in einem Codeabschnitt zusammengeführt wird.
 
-**Rede**
+**Hinweise**
 
 Dieser Test wird für den gesamten Binärcode ausgeführt, außer für ausschließlich verwaltete Assemblys.
 
@@ -274,7 +274,7 @@ Mit dieser Überprüfung können Sie sicherstellen, dass eine Binärdatei keine 
 
 Stellen Sie sicher, dass die Binärdatei nicht über einen beschreibbaren oder ausführbaren Abschnitt verfügt und dass der *sectionalignment* -Wert der Binärdatei mindestens gleich seiner *Seiten\-Größe*ist.
 
-**Rede**
+**Hinweise**
 
 Dieser Test wird für alle EXE-Dateien und systemeigenen, nicht verwalteten DLLs ausgeführt.
 
@@ -665,7 +665,7 @@ Wenn für Apps im Manifest keine Hintergrundaufgabe angegeben ist, gilt der Test
 Aktualisieren Sie den JavaScript-Hintergrundcode so, dass „Close()” richtig aufgerufen wird.
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Tests der Windows Desktop Bridge-App](windows-desktop-bridge-app-tests.md)
 * [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)

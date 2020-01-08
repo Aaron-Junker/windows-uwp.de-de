@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Monetisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 132f8c1d0ff314b794cc8464ec69cdf84f6a5f3b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: baef3750b8dc076fd78c239cfc61662256e57c14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258480"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685255"
 ---
 #  <a name="monetization-for-games"></a>Monetarisierung für Spiele
 
@@ -53,7 +53,7 @@ Bei In-Game-Käufen handelt es sich um Produkte, die in einem Spiel gekauft werd
 
 Sie können zwei Arten von Add-Ons im Store erstellen: _Gebrauchsgüter_ oder _Verbrauchsartikel_. Gebrauchsgüter sind Elemente, die bis zu ihrem Ablauf für einen angegebenen Zeitraum erhalten bleiben und nur einmal erworben werden können. Verbrauchsartikel sind Elemente, die gekauft und immer wieder verwendet werden können.
 
-Beim Erstellen von Verbrauchsartikeln entscheiden Sie, wie Sie sie nachverfolgen möchten, d. h. ob sie &mdash;vom Entwickler verwaltet_oder_vom Store verwaltet_ werden. (Dieses Feature ist ab Windows 10, Version 1607, verfügbar). Mit einem vom Entwickler verwalteten nutzbaren sind Sie dafür verantwortlich, den Saldo des Elements für den Spieler zu verfolgen. mit einem nutzbaren Speicher, der vom Speicher verwaltet wird, verfolgt das Microsoft Store den Saldo des Elements. Weitere Informationen finden Sie unter [Übersicht über Endverbraucher-Add-Ons](https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases).
+Beim Erstellen von Verbrauchsartikeln entscheiden Sie, wie Sie sie nachverfolgen möchten, d. h. ob sie _vom Entwickler verwaltet_ oder _vom Store verwaltet_ werden. (Dieses Feature ist ab Windows 10, Version 1607, verfügbar). Mit einem vom Entwickler verwalteten nutzbaren sind Sie dafür verantwortlich, den Saldo des Elements für den Spieler zu verfolgen. mit einem nutzbaren Speicher, der vom Speicher verwaltet wird, verfolgt das Microsoft Store den Saldo des Elements. Weitere Informationen finden Sie unter [Übersicht über Endverbraucher-Add-Ons](https://docs.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases).
 
 ### <a name="create-in-game-purchases"></a>Erstellen von In-Game-Käufen
 
@@ -206,10 +206,10 @@ Smaato ermöglicht die Integration von Banneranzeigen in UWP-Apps und -Spiele. L
 Mit AdDuplex können Sie Banner- oder Interstitialanzeigen in Ihrem Spiel implementieren.
 
 Weitere Informationen zum Integrieren von AdDuplex direkt in ein Windows 10-XAML-Projekt finden Sie auf der AdDuplex-Website:
-* Banneranzeigen: [Windows 10 SDK für XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
-* Interstitielle Anzeigen: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage) (Implementierung und Verwendung von AdDuplex-Interstitialanzeigen in Windows 10-XAML-Projekten)
+* Banneranzeigen: [Windows 10 SDK für XAML](https://adduplex.zendesk.com/hc/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
+* Interstitielle Anzeigen: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage](https://adduplex.zendesk.com/hc/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage) (Implementierung und Verwendung von AdDuplex-Interstitialanzeigen in Windows 10-XAML-Projekten)
 
-Informationen zum Integrieren des AdDuplex SDK in Windows 10-UWP-Spiele, die mit Unity erstellt wurden, finden Sie unter [Windows 10 SDK for Unity apps installation and usage](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage) (Windows 10 SDK für Unity-Apps: Installation und Nutzung).
+Informationen zum Integrieren des AdDuplex SDK in Windows 10-UWP-Spiele, die mit Unity erstellt wurden, finden Sie unter [Windows 10 SDK for Unity apps installation and usage](https://adduplex.zendesk.com/hc/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage) (Windows 10 SDK für Unity-Apps: Installation und Nutzung).
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>Maximieren des Potenzials Ihres Spiels über Anzeigenkampagnen
 

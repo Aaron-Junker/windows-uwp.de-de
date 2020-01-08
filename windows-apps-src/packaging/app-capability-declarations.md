@@ -4,15 +4,15 @@ title: Deklarationen von App-Funktionen
 description: Funktionen müssen im Paket Manifest Ihrer Windows-App deklariert werden, um auf bestimmte API oder Ressourcen wie Bilder, Musik oder Geräte wie die Kamera oder das Mikrofon zuzugreifen.
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ab930505d705f48034a7526765e2d0c3f6751e09
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2e08b35d95ca472c7e1d3afa1219ed72eb3aac2d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260178"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685195"
 ---
 # <a name="app-capability-declarations"></a>Deklarationen von App-Funktionen
 
@@ -83,7 +83,7 @@ Gerätefunktionen ermöglichen Ihrer App den Zugriff auf Peripheriegeräte und i
 | **Optische Festplatte** | Die **optical**-Gerätefunktion ermöglicht Apps den Zugriff auf Funktionen für optische Laufwerke (z. B. für CDs, DVDs und Blu-Rays).<br/>Für diese Funktion sind einige APIs aus dem [**Windows.Devices.Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom)-Namespace erforderlich. |
 | **Bewegungsaktivität** | Mit der **activity**-Gerätefunktion können Apps die aktuelle Bewegung des Geräts erkennen.<br/>Für diese Funktion sind einige APIs aus dem [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)-Namespace erforderlich. |
 | **Serielle Kommunikation** | Die **serialcommunication**-Gerätefunktion ermöglicht den Zugriff auf APIs im Namespace Windows.Devices.SerialCommunication. Dadurch kann eine Windows-App mit einem Gerät zu kommunizieren, das einen seriellen Anschluss oder eine Abstraktion eines seriellen Anschlusses verfügbar macht. Für diese Funktion sind die APIs im [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication)-Namespace erforderlich. |
-| **Eye Tracker** | Mit der **gazeInput**-Funktion können Apps erkennen, wo der Benutzer innerhalb der Anwendungsgrenzen hinschaut, wenn ein kompatibles Eye-Tracking-Gerät angeschlossen ist. Diese Funktion ist erforderlich, um einige APIs im [**Windows. Devices. Input. Preview**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview) -Namespace zu verwenden. |
+| **Eye Tracker** | Mit der **gazeInput**-Funktion können Apps erkennen, wo der Benutzer innerhalb der Anwendungsgrenzen hinschaut, wenn ein kompatibles Eye-Tracking-Gerät angeschlossen ist. Diese Funktion ist erforderlich, um einige APIs im [**Windows. Devices. Input. Preview**](https://docs.microsoft.com/uwp/api/windows.devices.input.preview) -Namespace zu verwenden. |
 | **GPIO, I2C, SPI und PWM** | Die Geräte Funktion " **lowlevel** " ermöglicht den Zugriff auf GPIO, I2C, SPI und PWM-Geräte. Diese Funktion ist für die Verwendung der APIs in den folgenden Namespaces erforderlich: [**Windows. Devices. GPIO**](https://docs.microsoft.com/uwp/api/windows.devices.gpio), [**Windows. Devices. I2C**](https://docs.microsoft.com/uwp/api/windows.devices.i2c), [**Windows. Devices. SPI**](https://docs.microsoft.com/uwp/api/windows.devices.spi),[**Windows. Devices. PWM**](https://docs.microsoft.com/uwp/api/windows.devices.pwm).<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
 
 
@@ -255,7 +255,7 @@ Um eine benutzerdefinierte Funktion zu deklarieren, ändern Sie die Quelldatei f
 > [!NOTE]
 > Alle **customcapability** -Elemente müssen **nach allen Funktions Elementen und** vor allen [devicecapability](#device-capabilities) -Elementen unter dem Knoten **Funktionen** im Paket Manifest stehen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Übermittlungs Optionen](../publish/manage-submission-options.md)
 * [Angeben von Funktionen in einem Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)

@@ -4,14 +4,14 @@ title: Einrichten von Windows 10 auf Mac
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 55165e0369c6bda64c19dc384c5c2addf224b8ba
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b8ff6d6b3b15992f0598bfb371e6bfb1023d6dc1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259118"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685004"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Einrichten von Windows 10 auf Mac
 
@@ -24,7 +24,7 @@ Sie sind bereit zum Entwickeln universeller Windows-Apps, haben aber keinen PC z
 
 **Beachten** Sie  Sie ein Start fähiges Windows 10-Image auf einem Datenträger oder einem USB-Speicherstick benötigen. Wenn Sie MSDN-Abonnent sind, können Sie das Image aus dem Center mit Downloads für MSDN-Abonnenten herunterladen. Wenn Sie kein Abonnent sind, kann das Installationsprogramm vom [Microsoft Store](https://www.microsoft.com/store/apps)erworben werden. Sie können es auch [hier](https://www.microsoft.com/software-download/windows10) herunterladen. Das ist hilfreich, wenn Sie Windows bereits verwenden und ein Upgrade ausführen möchten.
 
-Sobald Windows ausgeführt wird, können Sie die neueste Version von Visual Studio über [Entwickler Downloads für Windows 10](https://developer.microsoft.com/en-us/windows/downloads) installieren und mit dem Schreiben von apps beginnen!
+Sobald Windows ausgeführt wird, können Sie die neueste Version von Visual Studio über [Entwickler Downloads für Windows 10](https://developer.microsoft.com/windows/downloads) installieren und mit dem Schreiben von apps beginnen!
 
 **Hinweis**  Wenn Sie die Verwendung der Visual Studio-Geräte Emulatoren planen, **müssen** Sie eine 64-Bit-Version (x64) von Windows 10 pro oder höher installieren. Leider unterstützen einige ältere Macs 64-Bit-Versionen von Windows nicht. Auf dieser[Supportseite von Apple](https://support.apple.com/kb/HT5634)können Sie nachsehen, ob Ihre Hardware kompatibel ist.
 

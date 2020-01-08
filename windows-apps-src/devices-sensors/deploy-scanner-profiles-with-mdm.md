@@ -4,23 +4,23 @@ description: Strichcodescanner-Profile können mit einem MDM-Server bereitgestel
 ms.assetid: 99ED3BD8-022C-40C2-9C65-F599186548FE
 ms.date: 09/26/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e92c4c715608f9ae36adb3a67beec8002083542f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f537833385582678b215804cac9a16002618c7e4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370279"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684825"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a>Bereitstellen von Strichcodescanner-Profilen mit MDM
 
-**Beachten Sie**  dieses Feature erfordert Windows 10 Mobile oder höher.
+**Hinweis**  für dieses Feature ist Windows 10 Mobile oder höher erforderlich.
 
-Strichcodescanner-Profile können mit einem MDM-Server bereitgestellt werden. Verwenden Sie zum Bereitstellen der Profile *OemProfile* in die [EnterpriseExtFileSystem CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp) , platzieren Sie sie in der \\Daten\\SharedData\\OEM\\ Öffentliche\\Profilordner. Diese Scannerprofile können dann durch Treiberhersteller verwendet werden, um Einstellungen zu konfigurieren, die nicht auf der API-Oberfläche verfügbar sind.
+Strichcodescanner-Profile können mit einem MDM-Server bereitgestellt werden. Verwenden Sie zum Bereitstellen der Profile *oemprofile* im [enterpricextfile System-CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp) , um Sie im Ordner \\Data\\shareddata\\OEM\\Public\\Profile zu platzieren. Diese Scannerprofile können dann durch Treiberhersteller verwendet werden, um Einstellungen zu konfigurieren, die nicht auf der API-Oberfläche verfügbar sind.
 
 Microsoft definiert die Einzelheiten eines Scannerprofils und seine Implementierung nicht.
 
-## <a name="related-topics"></a>Verwandte Themen
-- [EnterpriseExtFileSystem CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp)
-- [Barcode Scanner-geräteunterstützung](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)
+## <a name="related-topics"></a>Zugehörige Themen
+- [Enterpricextfile System-CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp)
+- [Geräte Unterstützung für Barcode Scanner](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)

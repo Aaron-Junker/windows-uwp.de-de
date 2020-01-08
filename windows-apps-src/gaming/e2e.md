@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Spiele, Entwickeln von Spielen
 ms.localizationpriority: medium
-ms.openlocfilehash: c05a973dc9a954569531be6e0fea212135532b84
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a348393a02bab946a128babefc07dc48faea6cd1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258508"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685074"
 ---
 # <a name="windows-10-game-development-guide"></a>Handbuch zur Entwicklung von Spielen unter Windows 10
 
@@ -50,7 +50,7 @@ In diesem Handbuch finden Sie immer wieder direkte Links zu relevanten Dokumenta
     </colgroup>
     <tr>
         <td>Hauptportal für Windows Dev Center</td>
-        <td><a href="https://developer.microsoft.com/windows">Windows dev Center</a></td>
+        <td><a href="https://developer.microsoft.com/windows">Windows Developer Center</a></td>
     </tr>
     <tr>
         <td>Entwickeln von Windows-Apps</td>
@@ -113,7 +113,7 @@ Microsoft bietet ebenfalls mehrere Entwicklerprogramme an, die Sie bei der Entwi
 
 Microsoft bietet mehrere Entwicklerprogramme an, die Sie bei der Entwicklung und Veröffentlichung von Windows-Spielen unterstützen. Erwägen Sie, an einem Entwicklerprogramm teilzunehmen, wenn Sie Spiele für Xbox One entwickeln möchten und Xbox Live-Features in Ihrem Spiel integrieren möchten. Wenn Sie ein Spiel in der Microsoft Store veröffentlichen möchten, müssen Sie auch ein Entwicklerkonto im [Partner Center](https://partner.microsoft.com/dashboard) erstellen.
 
-#### <a name="xbox-live-creators-program"></a>Xbox Live Creators-Programm
+#### <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
 
 Mit dem Xbox Live Creators-Programm kann jeder Xbox Live in seine Titel integrieren und sie auf Xbox One und Windows 10 veröffentlichen. Wir haben einen vereinfachten Zertifizierungsprozess ohne Konzeptgenehmigung außerhalb der standardmäßigen [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies).
 
@@ -127,7 +127,7 @@ Treten Sie dem [ID@Xbox](https://www.xbox.com/Developers/id) bei, wenn Sie Zugri
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Xbox Live Creators-Programm</td>
+        <td>Xbox Live Creators Program</td>
         <td><a href="https://developer.microsoft.com/games/xbox/xboxlive/creator">Erfahren Sie mehr über das Xbox Live Creators-Programm</a></td>
     </tr>
 </table>
@@ -246,15 +246,15 @@ In Entwicklerforen können Entwickler Fragen zur Spieleentwicklung stellen und b
     </colgroup>
     <tr>
         <td>Veröffentlichen von apps und spielen Entwickler Foren</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Veröffentlichen und anzeigen in apps</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsapps">Veröffentlichen und anzeigen in apps</a></td>
     </tr>
     <tr>
         <td>Entwicklerforum für UWP-Apps</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop">Entwickeln von universelle Windows-Plattform-apps</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop">Entwickeln von universelle Windows-Plattform-apps</a></td>
     </tr>
     <tr>
         <td>Entwicklerforen für Desktopanwendungen</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev">Foren zu Windows-Desktop Anwendungen</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev">Foren zu Windows-Desktop Anwendungen</a></td>
     </tr>
     <tr>
         <td>Microsoft Store-Spiele mit DirectX (archivierte Forenbeiträge)</td>
@@ -270,7 +270,7 @@ In Entwicklerforen können Entwickler Fragen zur Spieleentwicklung stellen und b
     </tr>
     <tr>
         <td>Azure-Plattform-Foren</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform">Azure-Forum</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/home?category=windowsazureplatform">Azure-Forum</a></td>
     </tr>
     <tr>
         <td>Xbox Live-Forum</td>
@@ -306,7 +306,7 @@ Entwicklerblogs sind eine weitere praktische Ressource für topaktuelle Informat
     </tr>
     <tr>
         <td>Blogs zu Visual Studio-Entwicklertools</td>
-        <td><a href="https://devblogs.microsoft.com/visualstudio/">Entwicklertools Blogs</a></td>
+        <td><a href="https://devblogs.microsoft.com/visualstudio/">Blogs zu Entwicklertools</a></td>
     </tr>
     <tr>
         <td>Somasegars-Blog zu Entwicklertools</td>
@@ -322,7 +322,7 @@ Entwicklerblogs sind eine weitere praktische Ressource für topaktuelle Informat
     </tr>
     <tr>
         <td>Teamblog zu Visual C++-Tools</td>
-        <td><a href="https://devblogs.microsoft.com/cppblog/">Blog C++ des visuellen Teams</a></td>
+        <td><a href="https://devblogs.microsoft.com/cppblog/">Blog des Visual C++-Teams</a></td>
     </tr>
     <tr>
         <td>Blog des PIX-Teams</td>
@@ -370,7 +370,7 @@ Diese drei GDC 2015-Videos vermitteln einen guten Überblick über die Entwickl
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">Entwickeln von Spielen für Windows 10</a></td>
     </tr>
     <tr>
-        <td>Spielerlebnis unter Windows 10 (Video)</td>
+        <td>Spielerlebnis unter Windows 10 (Video)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10">Spiele-Consumer-Benutzeroberflächen unter Windows 10</a></td>
     </tr>
     <tr>
@@ -488,7 +488,7 @@ Die HyperText Markup Language (HTML) ist eine häufig verwendete Markup-Sprache 
 
 #### <a name="combining-presentation-technologies"></a>Kombinieren von Darstellungstechnologien
 
-Die Microsoft DirectX Graphic Infrastructure (DXGI) bietet Interoperabilität und Kompatibilität über mehrere Arten von Grafiktechnologie hinweg. Für Hochleistungsgrafiken können Sie XAML und DirectX kombinieren, indem Sie XAML für Menüs und andere einfache UI-Elemente und DirectX für das Rendern von komplexen 2D- und 3D-Szenen nutzen. DXGI sorgt auch für Kompatibilität zwischen Direct2D, Direct3D, DirectWrite, DirectCompute und der Microsoft Media Foundation.
+Die Microsoft DirectX Graphic Infrastructure (DXGI) bietet Interoperabilität und Kompatibilität mit mehreren Arten von Grafiktechnologien. Für Hochleistungsgrafiken können Sie XAML und DirectX kombinieren, indem Sie XAML für Menüs und andere einfache UI-Elemente und DirectX für das Rendern von komplexen 2D- und 3D-Szenen nutzen. DXGI sorgt auch für Kompatibilität zwischen Direct2D, Direct3D, DirectWrite, DirectCompute und der Microsoft Media Foundation.
 
 <table>
     <colgroup>
@@ -508,7 +508,7 @@ Die Microsoft DirectX Graphic Infrastructure (DXGI) bietet Interoperabilität un
 
 #### <a name="c"></a>C++
 
-C++/CX ist eine Sprache mit hoher Leistung und geringerem Mehraufwand, die eine starke Kombination aus Geschwindigkeit, Kompatibilität und Plattformzugriff bietet. C++/CX erleichtert Ihnen die Nutzung aller nützlichen Gaming-Features unter Windows 10, z. B. DirectX und Xbox Live. Außerdem können Sie vorhandenen C++-Code und die dazugehörigen Bibliotheken verwenden. Mit C++/CX wird schneller, systemeigener Code erstellt, bei dem kein Aufwand für die Garbage Collection anfällt. So kann Ihr Spiel mit einer hohen Leistung und einem geringen Stromverbrauch aufwarten und somit auch eine längere Akkulaufzeit ermöglichen. Verwenden Sie C++/CX mit DirectX oder XAML, oder erstellen Sie ein Spiel mit einer Kombination aus beidem.
+C++/CX ist eine effiziente Hochleistungssprache und bietet eine erstklassige Mischung aus Geschwindigkeit, Kompatibilität und Plattformzugriff. C++/CX erleichtert Ihnen die Nutzung aller nützlichen Gaming-Features unter Windows 10, z. B. DirectX und Xbox Live. Außerdem können Sie vorhandenen C++-Code und die dazugehörigen Bibliotheken verwenden. Mit C++/CX wird schneller, systemeigener Code erstellt, bei dem kein Aufwand für die Garbage Collection anfällt. So kann Ihr Spiel mit einer hohen Leistung und einem geringen Stromverbrauch aufwarten und somit auch eine längere Akkulaufzeit ermöglichen. Verwenden Sie C++/CX mit DirectX oder XAML, oder erstellen Sie ein Spiel mit einer Kombination aus beidem.
 
 <table>
     <colgroup>
@@ -517,7 +517,7 @@ C++/CX ist eine Sprache mit hoher Leistung und geringerem Mehraufwand, die eine 
     </colgroup>
     <tr>
         <td>Referenz und Übersichten für C++/CX</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Visuelle C++ Sprachreferenz (C++/CX)</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Sprachreferenz zu Visual C++ (C++-CX)</a></td>
     </tr>
     <tr>
         <td>Visual C++-Programmieranleitung und -Referenz</td>
@@ -528,7 +528,7 @@ C++/CX ist eine Sprache mit hoher Leistung und geringerem Mehraufwand, die eine 
 
 #### <a name="c"></a>C#
 
-C# (sprich: „C sharp“) ist eine moderne, innovative Sprache, die einfach, leistungsstark, typsicher und objektorientiert ist. C# ermöglicht eine schnelle Entwicklung, während gleichzeitig die Vertrautheit und Ausdruckskraft von Sprachen im C-Stil gewahrt bleibt. Obwohl C# einfach zu verwenden ist, verfügt die Sprache über viele moderne Sprachfeatures wie Polymorphie, Delegate, Lambda-Elemente, Abschlüsse, Iteratormethoden, Kovarianz und LINQ-Ausdrücke (Language-Integrated Query). C# ist eine ausgezeichnete Wahl, wenn Sie XAML verwenden möchten, schnell mit der Entwicklung Ihres Spiels beginnen möchten oder bereits über C#-Erfahrung verfügen. C# wird vorrangig mit XAML genutzt. Wenn Sie also DirectX verwenden möchten, entscheiden Sie sich besser für C++, oder schreiben Sie einen Teil des Spiels als C++-Komponente, die mit DirectX interagieren kann. Eine weitere Alternative wäre [Win2D](https://github.com/Microsoft/Win2D) – eine Direct2D-Grafikbibliothek im unmittelbaren Modus für C# und C++.
+C# (sprich: „C sharp“) ist eine moderne, innovative Programmiersprache, die einfach, leistungsstark, typsicher und objektorientiert ist. C# ermöglicht eine schnelle Entwicklung, während gleichzeitig die Vertrautheit und Ausdruckskraft von Sprachen im C-Stil gewahrt bleibt. Obwohl C# einfach zu verwenden ist, verfügt die Sprache über viele moderne Sprachfeatures wie Polymorphie, Delegate, Lambda-Elemente, Abschlüsse, Iteratormethoden, Kovarianz und LINQ-Ausdrücke (Language-Integrated Query). C# ist eine ausgezeichnete Wahl, wenn Sie XAML verwenden möchten, schnell mit der Entwicklung Ihres Spiels beginnen möchten oder bereits über C#-Erfahrung verfügen. C# wird vorrangig mit XAML genutzt. Wenn Sie also DirectX verwenden möchten, entscheiden Sie sich besser für C++, oder schreiben Sie einen Teil des Spiels als C++-Komponente, die mit DirectX interagieren kann. Eine weitere Alternative wäre [Win2D](https://github.com/Microsoft/Win2D) – eine Direct2D-Grafikbibliothek im unmittelbaren Modus für C# und C++.
 
 <table>
     <colgroup>
@@ -562,7 +562,7 @@ Bei Windows-JavaScript-Apps kann auf einfache und intuitive Weise auf die leistu
 
 #### <a name="use-windows-runtime-components-to-combine-languages"></a>Verwenden von Windows-Runtime-Komponenten zum Kombinieren von Sprachen
 
-Mit der universellen Windows-Plattform ist es leicht möglich, Komponenten zu kombinieren, die in unterschiedlichen Programmiersprachen geschrieben wurden. Erstellen Sie Windows-Runtime Komponenten C++in C#-,-oder-Visual Basic, und rufen Sie Sie dann C#über C++JavaScript,, oder Visual Basic auf. Dies ist eine hervorragende Möglichkeit, wenn Sie Teile des Spiels in der Sprache Ihrer Wahl programmieren möchten. Über Komponenten können Sie außerdem externe Bibliotheken nutzen, die nur in einer bestimmten Programmiersprache verfügbar sind, oder auch älteren Code, den Sie bereits geschrieben haben.
+Mit der universellen Windows-Plattform lassen sich problemlos Komponenten in unterschiedlichen Programmiersprachen kombinieren. Erstellen Sie Windows-Runtime Komponenten C++in C#-,-oder-Visual Basic, und rufen Sie Sie dann C#über C++JavaScript,, oder Visual Basic auf. Dies ist eine hervorragende Möglichkeit, wenn Sie Teile des Spiels in der Sprache Ihrer Wahl programmieren möchten. Über Komponenten können Sie außerdem externe Bibliotheken nutzen, die nur in einer bestimmten Programmiersprache verfügbar sind, oder auch älteren Code, den Sie bereits geschrieben haben.
 
 <table>
     <colgroup>
@@ -894,7 +894,7 @@ Entwicklern, die bereits über ein Spiel verfügen, stehen zahlreiche Ressourcen
     </tr>
     <tr>
         <td>Portieren eines Xbox-Spiels zu einer UWP-App (Universelle Windows-Plattform)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Portieren von Xbox One auf Windows 10 UWP</a></td>
+        <td><a href="https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx">Portieren von Xbox One auf Windows 10 UWP</a></td>
     </tr>
     <tr>
         <td>Portieren von DirectX 9 zu DirectX 11</td>
@@ -1026,7 +1026,7 @@ Hier finden Sie einige Links, die Sie beim Wechsel von Windows-Desktop-Spielen z
     </tr>
     <tr>
         <td>Nicht unterstützte CRT-Funktionen in UWP</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">In universelle Windows-Plattform-apps nicht unterstützte CRT-Funktionen</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/crt-functions-not-supported-in-universal-windows-platform-apps">In Apps für die universelle Windows-Plattform nicht unterstützte CRT-Funktionen</a></td>
     </tr>
     <tr>
         <td>Alternativen zu Windows-APIs</td>
@@ -1070,7 +1070,7 @@ Zusätzlich zum UX-Design müssen Sie sich auch mit dem Gameplay-Design auseinan
     </colgroup>
     <tr>
         <td>UWP-Gestaltungsgrundlagen und -richtlinien</td>
-        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">Gestalten von UWP-Apps</a></td>
+        <td><a href="https://developer.microsoft.com/windows/apps/design">Gestalten von UWP-Apps</a></td>
     </tr>
     <tr>
         <td>Gestalten für App-Lebenszykluszustände</td>
@@ -1311,7 +1311,7 @@ Dies sind einige zusätzliche DirectX-Dokumentationen, die von externen Partnern
 </table>
 
 
-## <a name="production"></a>Produktion
+## <a name="production"></a>Production um
 
 
 Ihr Studio ist jetzt vollständig eingebunden und beginnt mit dem Produktionszyklus, wobei die Arbeiten auf die einzelnen Teammitglieder aufgeteilt werden. Der Prototyp wird optimiert, überarbeitet und erweitert, um ein vollständiges Spiel zu erhalten.
@@ -1397,7 +1397,7 @@ Das Windows Performance Toolkit (WPT) besteht aus Leistungsüberwachungstools, d
     </colgroup>
     <tr>
         <td>Leistungstest für Ihren Code</td>
-        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Cloudbasierte Auslastungs Tests</a></td>
+        <td><a href="https://azure.microsoft.com/services/devops/test-plans/">Cloudbasierte Auslastungstests</a></td>
     </tr>
     <tr>
         <td>Erhalten Sie Xbox-Konsolentypen mithilfe der Geräteinformationen für Spiele</td>
@@ -1519,7 +1519,7 @@ Entwickeln Sie Windows-Spiele für den weltweiten Markt, und erfahren Sie mehr �
 
 Die folgenden Handbücher und Informationen sorgen für eine möglichst reibungslose Veröffentlichung und Übermittlung.
 
-### <a name="publishing"></a>Veröffentlichung
+### <a name="publishing"></a>Publishing
 
 Sie verwenden [Partner Center](https://partner.microsoft.com/dashboard) zum Veröffentlichen und Verwalten von Spielpaketen.
 
@@ -1534,7 +1534,7 @@ Sie verwenden [Partner Center](https://partner.microsoft.com/dashboard) zum Ver�
     </tr>
     <tr>
         <td>Partner Center Advanced Publishing (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Leitfaden für die erweiterte Veröffentlichung von Partner Center</a></td>
+        <td><a href="https://developer.xboxlive.com/windows/documentation/Pages/home.aspx">Leitfaden für die erweiterte Veröffentlichung von Partner Center</a></td>
     </tr>
     <tr>
         <td>Verwenden von Azure Active Directory (AAD) zum Hinzufügen von Benutzern zu Ihrem Partner Center-Konto</td>
@@ -1646,7 +1646,7 @@ Wer glaubt, sich nach dem Abschluss der Entwicklung und der Auslieferung eines S
     </colgroup>
     <tr>
         <td>Partner Center-Analyse</td>
-        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analysieren der APP-Leistung</a></td>
+        <td><a href="https://docs.microsoft.com/windows/uwp/publish/analytics">Analysieren der App-Leistung</a></td>
     </tr>
     <tr>
         <td>Hier erfahren Sie, wie Ihre Kunden mit der Xbox-Features in Ihrem Spiel interagieren</td>
@@ -1739,7 +1739,7 @@ Zum Aktualisieren Ihres veröffentlichten Spiels übermitteln Sie ein neues App-
 
 ## <a name="adding-xbox-live-to-your-game"></a>Hinzufügen von Xbox Live zu Ihrem Spiel
 
-Xbox Live ist ein erstklassiges Gaming-Netzwerk, das Millionen von Spielern weltweit verbindet. Entwickler haben Zugriff auf Xbox Live-Features, die die Spielerzielgruppe steigern, einschließlich Xbox Live, Bestenlisten, Cloudspeicherungen, Spielehubs, Clubs, Party-Chat, Game DVR und mehr.
+Xbox Live ist ein erstklassiges Gamingnetzwerk, das Millionen von Spielern weltweit verbindet. Entwickler haben Zugriff auf Xbox Live-Features, die die Spielerzielgruppe steigern, einschließlich Xbox Live, Bestenlisten, Cloudspeicherungen, Spielehubs, Clubs, Party-Chat, Game DVR und mehr.
 
 > [!Note]
 > Wenn Sie Xbox Live aktivierte Titel entwickeln möchten, stehen Ihnen verschiedene Optionen zur Verfügung. Informationen zu den verschiedenen Programmen finden Sie unter [Übersicht über das Entwickler-Programm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
@@ -1855,7 +1855,7 @@ Xbox Live ist ein erstklassiges Gaming-Netzwerk, das Millionen von Spielern welt
 </table>
 
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
 <table>
     <colgroup>
@@ -1863,7 +1863,7 @@ Xbox Live ist ein erstklassiges Gaming-Netzwerk, das Millionen von Spielern welt
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Entwicklung von Spielen (Video)</td>
+        <td>Videos zur Entwicklung von Spielen</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/gaming/game-development-videos">Videos aus wichtigen Konferenzen wie GDC und Build</a></td>
     </tr>
     <tr>

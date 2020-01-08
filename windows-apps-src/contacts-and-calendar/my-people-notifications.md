@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f1c19f62482dc28bc067adb2e60b2c6fafa509
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061896"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683498"
 ---
 # <a name="my-people-notifications"></a>Meine Kontakte – Benachrichtigungen
 
@@ -20,8 +20,8 @@ ms.locfileid: "73061896"
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="how-it-works"></a>Funktionsweise
 
@@ -67,7 +67,7 @@ Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
 
 Darüber hinaus muss der Knoten der obersten Ebene Popups **hint-people**-Parameter enthalten, um den Absender-Kontakt anzugeben. Dieser Parameter kann folgende Werte haben:
 
-+ **E-Mail Adresse** 
++ **E-Mail-Adresse** 
     + z. B. ` mailto:johndoe@mydomain.com `
 + **Telefonnummer** 
     + z. B. Tel:888-888-8888
@@ -75,7 +75,7 @@ Darüber hinaus muss der Knoten der obersten Ebene Popups **hint-people**-Parame
     + z. B. remoteid:1234
 
 > [!NOTE]
-> Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
+> Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
 > Falls die Stabilität und Eindeutigkeit der von Ihrer App verwendeten Remote-IDs nicht gewährleistet ist, können Sie allen Ihren [RemoteIdHelper](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass) mithilfe der später in diesem Thema beschriebenen -Klasse ein eindeutiges Tag hinzufügen, bevor Sie die Remote-IDs dem System hinzufügen. Alternativ können Sie auch ganz auf die Verwendung der RemoteId-Eigenschaft verzichten und stattdessen eine benutzerdefinierte erweiterte Eigenschaft erstellen, um die Remote-IDs für Ihre Kontakte zu speichern.
 
 Neben der zweiten Bindung und der Nutzlast müssen Sie eine weitere Nutzlast in die erste Bindung für das Fallback-Popup aufnehmen. Die Benachrichtigung verwendet diese, wenn sie gezwungen ist, zu einem regulären Popup zurückzukehren (wird am [Ende dieses Artikels](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast) näher erläutert).
@@ -93,7 +93,7 @@ Hier ist ein Beispiel für das Erstellen einer Benachrichtigung für „Meine Ko
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
         </binding>
     </visual>
 </toast>
@@ -113,8 +113,8 @@ Hier ist ein Beispiel, wie man eine „Meine Kontakte”-Benachrichtigung mit ei
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
-                spritesheet-src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
+            <image src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
+                spritesheet-src="https://docs.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
                 spritesheet-height='80' spritesheet-fps='25' spritesheet-startingFrame='15'/>
         </binding>
     </visual>
@@ -154,4 +154,4 @@ Wenn eine Benachrichtigung für „Meine Kontakte” erneut auf eine Popupbenach
 + [Beispiel für meine Personen Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Unterstützung für meine Personen hinzufügen](my-people-support.md)
 + [Adaptive Popup Benachrichtigungen](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [Klasse "-Benachrichtigungs Klasse"](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
++ [Klasse "-Benachrichtigungs Klasse"](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)

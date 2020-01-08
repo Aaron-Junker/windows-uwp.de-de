@@ -5,14 +5,14 @@ title: Herstellen einer Verbindung mit Remotekameras
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 253eea00ba6c4188197224111909c28a53932b88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c7b876cff994f775b770d22c103d27271047b269
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257349"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683633"
 ---
 # <a name="connect-to-remote-cameras"></a>Herstellen einer Verbindung mit Remotekameras
 
@@ -33,9 +33,9 @@ Die [**devicewatcher**](https://docs.microsoft.com/uwp/api/windows.devices.enume
 > Die Hilfsmethode " [**mediaframesourcegroup. getdeviceselector**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) " gibt eine AQS-Zeichenfolge zurück, mit der lokal verbundene und Remote Netzwerkkameras überwacht werden. Wenn Sie nur Netzwerkkameras überwachen möchten, sollten Sie die oben gezeigte AQS-Zeichenfolge verwenden.
 
 
-Wenn Sie den zurückgegebenen **devicewatcher** starten, indem Sie die [**Start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start) -Methode aufrufen, wird das [**hinzugefügte**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) Ereignis für jede derzeit verfügbare Netzwerkkamera erhoben. Bis Sie den Watcher durch Aufrufen von [**Beenden**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)beenden, wird das **hinzugefügte** Ereignis ausgelöst, wenn neue Netzwerkkamera Geräte verfügbar werden und das [**entfernte**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.devicewatcher.removed) Ereignis ausgelöst wird, wenn ein Kamera Gerät nicht mehr verfügbar ist.
+Wenn Sie den zurückgegebenen **devicewatcher** starten, indem Sie die [**Start**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.start) -Methode aufrufen, wird das [**hinzugefügte**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added) Ereignis für jede derzeit verfügbare Netzwerkkamera erhoben. Bis Sie den Watcher durch Aufrufen von [**Beenden**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.stop)beenden, wird das **hinzugefügte** Ereignis ausgelöst, wenn neue Netzwerkkamera Geräte verfügbar werden und das [**entfernte**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed) Ereignis ausgelöst wird, wenn ein Kamera Gerät nicht mehr verfügbar ist.
 
-Die Ereignis Argumente, die an die **hinzugefügten** und **entfernten** Ereignishandler übergeben werden, sind ein Objekt vom Typ " [**toviceinformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) " bzw. " [**toviceinformationupdate**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.deviceinformationupdate) ". Jedes dieser Objekte verfügt über eine **ID** -Eigenschaft, bei der es sich um den Bezeichner der Netzwerkkamera handelt, für die das Ereignis ausgelöst wurde. Übergeben Sie diese ID an die [**mediaframesourcegroup. fromittel Async**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) -Methode, um ein [**mediaframesourcegroup**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) -Objekt abzurufen, das Sie zum Abrufen von Frames von der Kamera verwenden können.
+Die Ereignis Argumente, die an die **hinzugefügten** und **entfernten** Ereignishandler übergeben werden, sind ein Objekt vom Typ " [**toviceinformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation) " bzw. " [**toviceinformationupdate**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationupdate) ". Jedes dieser Objekte verfügt über eine **ID** -Eigenschaft, bei der es sich um den Bezeichner der Netzwerkkamera handelt, für die das Ereignis ausgelöst wurde. Übergeben Sie diese ID an die [**mediaframesourcegroup. fromittel Async**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) -Methode, um ein [**mediaframesourcegroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync) -Objekt abzurufen, das Sie zum Abrufen von Frames von der Kamera verwenden können.
 
 ## <a name="remote-camera-pairing-helper-class"></a>Hilfsklasse für Remote Kamera Kopplung
 
@@ -46,7 +46,7 @@ Außerdem wird in diesem Beispiel das [**devicewatcher. aktualisierte**](https:/
 [!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Kamera](camera.md)
 * [Einfaches Foto, Video und Audioerfassung mit mediacapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)

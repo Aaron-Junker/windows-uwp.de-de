@@ -3,14 +3,14 @@ title: Freigeben von „Meine Kontakte”
 description: Erläutert das Hinzufügen von Support für das Freigeben von „Meine Kontakte”
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0549aa1e20d8ed787eed550f4a7e7171a812831
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: ff37a243f88bdd378998070f58ec35196c62a6cf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820188"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683488"
 ---
 # <a name="my-people-sharing"></a>Freigeben von „Meine Kontakte”
 
@@ -20,15 +20,15 @@ Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakte
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Übersicht
 
 Es gibt drei Schritte, die Sie ausführen müssen, um die Anwendung als Freigabeziel für „Meine Kontakte” zu verwenden:
 
-1. [Unterstützung für die "sharetarget" aktivierungskontrakt im Anwendungsmanifest deklariert werden.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Kommentieren Sie die Kontakte, die die Benutzer freigeben können, um Ihre App ein.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Deklarieren Sie die Unterstützung für den sharetarget-Aktivierungs Vertrag in Ihrem Anwendungs Manifest.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Kommentieren Sie die Kontakte, die die Benutzer für die Verwendung Ihrer APP freigeben können.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. Unterstützen Sie mehrere Instanzen der Anwendung, die zur gleichen Zeit ausgeführt werden.  Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren und diese auch für andere Personen freigeben können. Sie können diese in mehreren Freigabefenstern gleichzeitig verwenden. Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Wenn Sie dies getan haben, wird die Anwendung als Freigabeziel im Freigabefenster „Meine Kontakte” angezeigt, das auf zwei Arten gestartet werden kann:
@@ -75,7 +75,7 @@ Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Si
 </Applications>
 ```
 
-Dieser Code fügt Unterstützung für alle Dateien und Daten-Formate hinzu. Sie können allerdings auch angeben, welche Arten von Dateien und Datenformate unterstützt werden (weitere Details finden Sie unter [ShareTarget Klassendokumentation](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)).
+Dieser Code fügt Unterstützung für alle Dateien und Daten-Formate hinzu. Sie können allerdings auch angeben, welche Arten von Dateien und Datenformate unterstützt werden (weitere Details finden Sie unter [ShareTarget Klassendokumentation](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)).
 
 ## <a name="annotating-contacts"></a>Kontakte mit Kommentaren versehen
 
@@ -103,11 +103,11 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivierbaren Klassen-ID. Um den Paketfamiliennamen zu such, öffnen Sie **Package.appxmanifest** mithilfe des Standard-Editors und suchen Sie auf der Registerkarte "Verpacken". Hier ist "App" die aktivierbare Klasse, die der Zielfreigabeansicht entspricht.
+Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivierbaren Klassen-ID. Um Ihren Paketfamilienname zu suchen, öffnen Sie **Package.appxmanifest** mithilfe des Standard-Editors, und suchen Sie den Namen auf der Registerkarte "Verpacken". Hier entspricht "App" der aktivierbaren Klassen der Zielfreigabeansicht.
 
 ## <a name="running-as-a-my-people-share-target"></a>Ausführung als Freigabeziel für „Meine Kontakte”
 
-Zum Ausführen der App müssen Sie die [OnShareTargetActivated](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_)-Methode in der App-Hauptklasse außer Kraft setzen, um die Zielfreigabeaktivierung behandeln zu können. Die [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties)-Eigenschaft enthält die Kontakte, die freigegeben werden, oder leer bleiben, wenn es sich um einen standardmäßigen Freigabevorgang handelt (und nicht eine Freigabe für „Meine Kontakte”).
+Zum Ausführen der App müssen Sie die [OnShareTargetActivated](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_)-Methode in der App-Hauptklasse außer Kraft setzen, um die Zielfreigabeaktivierung behandeln zu können. Die [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties)-Eigenschaft enthält die Kontakte, die freigegeben werden, oder leer bleiben, wenn es sich um einen standardmäßigen Freigabevorgang handelt (und nicht eine Freigabe für „Meine Kontakte”).
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
-+ [Hinzufügen von Meine Benutzer zu unterstützen.](my-people-support.md)
-+ ["Sharetarget"-Klasse](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
-+ [Wenden Sie sich an Karte-integrationsbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
+## <a name="see-also"></a>Weitere Informationen:
++ [Unterstützung für meine Personen hinzufügen](my-people-support.md)
++ [Sharetarget-Klasse](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
++ [Beispiel für eine Kontaktkarten Integration](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

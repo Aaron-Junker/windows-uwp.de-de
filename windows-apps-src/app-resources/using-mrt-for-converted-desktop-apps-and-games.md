@@ -1,20 +1,20 @@
 ---
 title: Verwenden von MRT für konvertierte Desktop-Apps und -Spiele
-description: Indem Sie Ihre .NET- oder Win32-App oder Ihr Spiel als AppX-Paket verpacken, können Sie das Ressourcenverwaltungssystem nutzen, um App-Ressourcen zu laden, die auf den Laufzeitkontext zugeschnitten sind. In diesem Thema werden die erforderlichen Techniken detailliert beschrieben.
+description: Indem Sie Ihre .NET- oder Win32-App oder Ihr Spiel als AppX-Paket verpacken, können Sie das Ressourcenverwaltungssystem nutzen, um App-Ressourcen zu laden, die auf den Laufzeitkontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, mrt, pri. Ressourcen, Spiele, Centennial, Desktop App Converter, mui, Satellitenassembly
 ms.localizationpriority: medium
-ms.openlocfilehash: 3367cfafb2f3a8e307fd26dc6d6c19f1ece0d17e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0425e7bb00e4a5be848443aa278ebaad1706cb30
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254752"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683913"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>Verwenden des Ressourcenverwaltungssystem für Windows 10 in älteren Apps oder Spielen
 
-Apps und Spiele für .NET und Win32 werden häufig in verschiedene Sprachen übersetzt, um die Anzahl potenzieller Märkte zu vergrößern. Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md). Indem Sie Ihre .net-oder Win32-APP oder Ihr Spiel als msix-oder AppX-Paket Verpacken, können Sie das Ressourcen Verwaltungs System zum Laden von App-Ressourcen nutzen, die auf den Lauf Zeit Kontext zugeschnitten sind. In diesem Thema werden die erforderlichen Techniken detailliert beschrieben.
+Apps und Spiele für .NET und Win32 werden häufig in verschiedene Sprachen übersetzt, um die Anzahl potenzieller Märkte zu vergrößern. Weitere Informationen zu einer Werterhöhung Ihrer App durch Lokalisierung finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md). Indem Sie Ihre .net-oder Win32-APP oder Ihr Spiel als msix-oder AppX-Paket Verpacken, können Sie das Ressourcen Verwaltungs System zum Laden von App-Ressourcen nutzen, die auf den Lauf Zeit Kontext zugeschnitten sind. In diesem Thema werden die Techniken detailliert beschrieben.
 
 Es gibt viele Möglichkeiten zum Lokalisieren einer herkömmlichen Win32-Anwendung, aber unter Windows 8 wurde ein neues [Ressourcenverwaltungssystem](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10)) eingeführt, das sich für alle Programmiersprachen und alle Anwendungstypen eignet und Funktionalität für mehr als eine einfache Lokalisierung bereitstellt. Dieses System wird im vorliegenden Artikel als „MRT” bezeichnet. Früher bedeutete dies „Modern Resource Technology“. Der Bestandteil „Modern“ wird jedoch nicht mehr verwendet. Der Ressourcen-Manager ist möglicherweise auch unter den Namen MRM (Modern Resource Manager, moderner Ressourcen-Manager) oder PRI (Package Resource Index, Paketressourcenindex) bekannt.
 
@@ -26,24 +26,24 @@ In vielen Fällen können Sie Ihre vorhandenen Lokalisierungsformate und Ihren Q
 
 <table>
 <tr>
-<th>Aufgabe</th>
+<th>Beruflich</th>
 <th>Vorteil</th>
 <th>Geschätzte Kosten</th>
 </tr>
 <tr>
 <td>Lokalisieren des Paket Manifests</td>
 <td>Kaum Arbeitsaufwand erforderlich, damit der lokalisierte Inhalt in der Windows-Shell und im Microsoft Store angezeigt wird</td>
-<td>Klein</td>
+<td>Gering</td>
 </tr>
 <tr>
 <td>Verwenden von MRT zum Erkennen und Suchen von Ressourcen</td>
 <td>Voraussetzung für die Verringerung der Download- und Installationsgrößen; automatischer Fallback für Sprachen</td>
-<td>Mittel</td>
+<td>Medium (Mittel)</td>
 </tr>
 <tr>
 <td>Erstellen von Ressourcenpaketen</td>
 <td>Letzter Schritt für die Verringerung der Download- und Installationsgrößen</td>
-<td>Klein</td>
+<td>Gering</td>
 </tr>
 <tr>
 <td>Migrieren von MRT-Ressourcenformaten und APIs</td>
@@ -148,7 +148,7 @@ Wenn Sie das Paket manuell erstellen möchten, müssen Sie eine Verzeichnisstruk
 </Package>
 ```
 
-Weitere Informationen zur Paket Manifest-Datei und zum Paket Layout finden Sie unter [App-Paket Manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest).
+Weitere Informationen zur Paket Manifest-Datei und zum Paket Layout finden Sie unter [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest).
 
 Wenn Sie Visual Studio verwenden, um ein neues Projekt zu erstellen und Ihren vorhandenen Code zu migrieren, finden Sie weitere Informationen unter [Erstellen einer "Hello, World"-App](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). Sie können Ihren vorhandenen Code in das neue Projekt einschließen, aber Sie müssen wahrscheinlich bedeutende Codeänderungen vornehmen (insbesondere in der Benutzeroberfläche), um als reine UWP-app ausgeführt werden zu können. Diese Änderungen werden in diesem Dokument nicht behandelt.
 
@@ -310,7 +310,7 @@ Nachdem die PRI-Datei jetzt erstellt wurde, können Sie das Paket erstellen und 
     > [!IMPORTANT]
     > Wenn Sie ein Signaturzertifikat manuell erstellen, stellen Sie sicher, dass Sie die Dateien in einem anderen Verzeichnis als das Quell Projekt oder die Paketquelle platzieren. andernfalls wird es möglicherweise als Teil des Pakets eingeschlossen, einschließlich des privaten Schlüssels!
 
-3. Verwenden Sie zum Signieren des Pakets den folgenden Befehl. Beachten Sie, dass der im Element `Publisher` der Datei `Identity` angegebene `AppxManifest.xml` mit dem `Subject` des Zertifikats übereinstimmen muss (hierbei handelt es sich **nicht** um das Element `<PublisherDisplayName>`; dieses ist der lokalisierte Anzeigename, der den Benutzern angezeigt wird). Ersetzen Sie wie gewohnt die `contoso_demo...`-Dateinamen mit den Namen für Ihr Projekt, und (**sehr wichtig**) stellen Sie sicher, dass die `.pfx`-Datei sich nicht im aktuellen Verzeichnis befindet (andernfalls wäre sie als Teil Ihres Pakets erstellt worden, einschließlich des privaten Signaturschlüssels!):
+3. Verwenden Sie zum Signieren des Pakets den folgenden Befehl. Beachten Sie, dass der im Element `Identity` der Datei `AppxManifest.xml` angegebene `Publisher` mit dem `Subject` des Zertifikats übereinstimmen muss (hierbei handelt es sich **nicht** um das Element `<PublisherDisplayName>`; dieses ist der lokalisierte Anzeigename, der den Benutzern angezeigt wird). Ersetzen Sie wie gewohnt die `contoso_demo...`-Dateinamen mit den Namen für Ihr Projekt, und (**sehr wichtig**) stellen Sie sicher, dass die `.pfx`-Datei sich nicht im aktuellen Verzeichnis befindet (andernfalls wäre sie als Teil Ihres Pakets erstellt worden, einschließlich des privaten Signaturschlüssels!):
 
     ```CMD
     signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx
@@ -349,7 +349,7 @@ Verwenden von Windows Explorer:
 3. Wählen Sie `Local Machine` und klicken Sie `Next`
 4. Akzeptieren Sie die Eingabeaufforderung für Administratorrechte der Benutzerkontensteuerung, sofern diese angezeigt wird, und klicken Sie auf `Next`
 5. Geben Sie ggf. das Kennwort für den privaten Schlüssel ein, und klicken Sie auf `Next`
-6. `Place all certificates in the following store` auswählen
+6. Wählen Sie`Place all certificates in the following store`
 7. Klicken Sie auf `Browse`, und wählen Sie den Ordner `Trusted People` (**nicht** „Vertrauenswürdige Herausgeber”)
 8. Klicken Sie auf `Next` und dann auf `Finish`
 
@@ -431,13 +431,13 @@ Dadurch wird eine PRI-Datei erstellt, die alle angegebenen Sprachen enthält, di
 Zum Testen der neuen lokalisierten Änderungen müssen Sie einfach eine neue bevorzugte UI-Sprache zu Windows hinzufügen. Es ist nicht erforderlich, Language Packs herunterzuladen, das System neu zu starten, oder die gesamte Windows-UI in einer fremden Sprache anzuzeigen. 
 
 1. Führen Sie die `Settings`-App aus (`Windows + I`).
-2. Gehe zu `Time & language`
-3. Gehe zu `Region & language`
-4. Klicken Sie auf `Add a language`
+2. Wechseln Sie zu `Time & language`.
+3. Wechseln Sie zu `Region & language`.
+4. Klicken Sie auf `Add a language`.
 5. Geben (oder wählen) Sie die gewünschte Sprache ein (z. B. `Deutsch` oder `German`)
  * Wenn untergeordnete Sprachen vorhanden sind, wählen Sie die gewünschte Sprache aus (z. B. `Deutsch / Deutschland`)
 6. Wählen Sie die neue Sprache in der Liste der Sprachen aus.
-7. Klicken Sie auf `Set as default`
+7. Klicken Sie auf `Set as default`.
 
 Öffnen Sie nun das Startmenü und suchen Sie Ihre Anwendung, und die lokalisierten Werte für die ausgewählte Sprache (andere Apps können auch lokalisiert angezeigt werden) sollten angezeigt werden. Wenn Sie den lokalisierten Namen nicht sofort sehen, warten Sie einige Minuten, bis der Cache des Startmenüs aktualisiert wird. Um auf Ihre Muttersprache zurückzuwechseln, stellen Sie sie als Standardsprache in der Liste der Sprachen ein. 
 
@@ -541,11 +541,11 @@ Die Anwendung kann z. B. die Win32-API `GetUserPreferredUILanguages`, die CRT-F
 
 Das Wechseln zwischen Codes für die Verwendung von MRT zum Suchen von Ressourcen ist nicht schwierig. Es erfordert die Verwendung einer Handvoll von WinRT-Typen und ein paar Codezeilen. Die Haupttypen, die Sie verwenden werden, lauten wie folgt:
 
-* [ResourceContext](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), das den derzeit aktiven Satz von Qualifiziererwerten enthält (Sprache, Skalierungsfaktor usw.).
-* [ResourceManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemanager), (die WinRT-Version, nicht die .NET-Version) der den Zugriff auf alle Ressourcen aus der PRI-Datei ermöglicht.
-* [ResourceMap](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcemap), die eine bestimmte Teilmenge der Ressourcen in der PRI-Datei (in diesem Beispiel stehen die dateibasierten Ressourcen im Vergleich zu den Zeichenfolgenressourcen) darstellt.
-* [NamedResource](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), die eine logische Ressource mit allen möglichen Kandidaten darstellt.
-* [ResourceCandidate](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), die eine konkrete Kandidatenressource darstellt. 
+* [ResourceContext](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), das den derzeit aktiven Satz von Qualifiziererwerten enthält (Sprache, Skalierungsfaktor usw.).
+* [ResourceManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemanager), (die WinRT-Version, nicht die .NET-Version) der den Zugriff auf alle Ressourcen aus der PRI-Datei ermöglicht.
+* [ResourceMap](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcemap), die eine bestimmte Teilmenge der Ressourcen in der PRI-Datei (in diesem Beispiel stehen die dateibasierten Ressourcen im Vergleich zu den Zeichenfolgenressourcen) darstellt.
+* [NamedResource](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource), die eine logische Ressource mit allen möglichen Kandidaten darstellt.
+* [ResourceCandidate](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core.resourcecandidate), die eine konkrete Kandidatenressource darstellt. 
 
 In Pseudocode würden Sie eine bestimmte Ressource würden Sie wie folgt einen gegebenen Ressourcen-Dateinamen (z. B. `UICommands\ui.txt` im obigen Beispiel) auflösen:
 
@@ -724,7 +724,7 @@ Jetzt, da Sie über ein umfangreiches Paket verfügen, das alle Ressourcen enth�
 
 Um das Bündel-Generator-Tool zu verwenden, muss die für das Paket erstellte PRI-Konfigurationsdatei manuell aktualisiert werden, um den Abschnitt `<packaging>` zu entfernen.
 
-Wenn Sie Visual Studio verwenden, [Stellen Sie sicher, dass Ressourcen auf einem Gerät installiert sind, unabhängig davon, ob Sie von einem Gerät benötigt werden](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140)) , um Informationen dazu zu erhalten, wie Sie alle Sprachen in das Hauptpaket erstellen, indem Sie die Dateien `priconfig.packaging.xml` und `priconfig.default.xml`erstellen.
+Wenn Sie Visual Studio verwenden, [Stellen Sie sicher, dass Ressourcen auf einem Gerät installiert sind, unabhängig davon, ob Sie von einem Gerät benötigt werden](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140)) , um Informationen dazu zu erhalten, wie Sie alle Sprachen in das Hauptpaket erstellen, indem Sie die Dateien `priconfig.packaging.xml` und `priconfig.default.xml`erstellen.
 
 Wenn Sie Dateien manuell bearbeiten, gehen Sie folgendermaßen vor: 
 
@@ -807,6 +807,6 @@ signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appxbundl
 
 Dadurch wird eine signierte `.appxbundle` Datei erstellt, die das Hauptpaket sowie alle sprachspezifischen Ressourcen Pakete enthält. Wie bei einer Paketdatei werden durch Doppelklicken auf diese Datei die App und alle relevanten Sprachpakete installiert, abhängig von den Windows-Spracheinstellungen des Benutzers.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](tailor-resources-lang-scale-contrast.md)

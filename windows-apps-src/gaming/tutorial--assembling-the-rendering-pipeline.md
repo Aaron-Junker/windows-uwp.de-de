@@ -6,16 +6,16 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Rendern
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eeb515f07d9bc2e48ba97f6ef4d71afd0226ace
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8daf07d08dd760da680044938e9a6601e41108d3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367731"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685020"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>Rendering-Framework I: Einführung in das Rendering
 
-Mittlerweile wissen Sie, wie ein Spiel für die universelle Windows-Plattform (UWP) aufgebaut sein muss, damit es verwendet werden kann, und wie Sie einen Zustandsautomaten zum Behandeln des Spielablaufs definieren. Jetzt erfahren Sie, wie Sie die Rendering-Framework zusammenstellen. Sehen wir uns, wie das Beispielspiel auf die game-Szene mit Direct3D 11 (bekannt als DirectX 11) gerendert wird.
+Mittlerweile wissen Sie, wie ein Spiel für die universelle Windows-Plattform (UWP) aufgebaut sein muss, damit es verwendet werden kann, und wie Sie einen Zustandsautomaten zum Behandeln des Spielablaufs definieren. Jetzt erfahren Sie, wie Sie die Rendering-Framework zusammenstellen. Sehen wir uns an, wie das Beispiel Spiel die Spieleszene mithilfe von Direct3D 11 (häufig als DirectX 11 bezeichnet) rendert.
 
 >[!Note]
 >Wenn Sie den neuesten Code für dieses Beispiel noch nicht heruntergeladen haben, wechseln Sie zu [Direct3D-Spielbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel gehört zu einer großen Sammlung von UWP-Featurebeispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter [Abrufen der UWP-Beispiele von GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
@@ -36,9 +36,9 @@ Um ein einfaches Rendering-Framework einzurichten, und die Grafikausgabe für ei
 
 In diesem Artikel wird erläutert, wie Grafiken mit Schritt 1 bis 3 gerendert werden.
 
-[Rendering-Framework II: Rendern von Spielen](tutorial-game-rendering.md) deckt Schritt 2; einrichten, der Rendering-Framework und wie die Daten vorbereitet sind, vor dem Rendering kann der Fall sein.
+[Rendering-Framework II: Spiel-Rendering](tutorial-game-rendering.md) erklärt Schritt 2: wie Rendering-Framework eingerichtet und Daten vorbereitet werden, bevor das Rendering möglich ist.
 
-## <a name="get-started"></a>Beginnen
+## <a name="get-started"></a>„Erste Schritte“
 
 Bevor Sie beginnen, sollten Sie sich mit den grundlegenden Grafik- und Rendering-Konzepten vertraut machen. Wenn Sie noch nie mit Direct3D und Rendering gearbeitet haben, finden Sie unter [Begriffe und Konzepte](#terms-and-concepts) eine kurze Beschreibung der Grafik- und Rendering-Terminologie, die in diesem Artikel verwendet werden.
 
@@ -50,7 +50,7 @@ In diesem Teil des Lernprogramms konzentrieren wir uns auf das Rendering von 3D-
 
 Um auf die Hardware für das Rendern zuzugreifen, finden Sie im UWP-Framework-Artikel unter [__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method) weitere Informationen.
 
-Die __stellen\_freigegebene Funktion__Siehe [unten](#appinitialize-method), dient zum Erstellen einer __freigegebenen\_Ptr__ zu [ __DX::D EviceResources__](#dxdeviceresources), Zugriff auf das Gerät bereit. 
+Die __Funktion "Make\_Shared__" (wie [unten](#appinitialize-method)gezeigt) wird verwendet, um eine frei __gegebene\_PTR__ für [__DX::D eviceresources__](#dxdeviceresources)zu erstellen, die auch Zugriff auf das Gerät ermöglicht. 
 
 In Direct3D 11 dient ein [Gerät](#device) zum Zuordnen und zerstören von Objekten, um Grundtypen zu rendern und mit der Grafikkarte über die Grafiktreiber zu kommunizieren.
 
@@ -75,7 +75,7 @@ Die Spieleszene muss gerendert werden, wenn das Spiel gestartet wird. Die Anweis
 
 Der einfache Fluss ist:
 1. __Update__
-2. __Rendern__
+2. __Darstellung__
 3. __Vorhanden__
 
 ### <a name="gamemainrun-method"></a>GameMain::Run-Methode
@@ -122,7 +122,7 @@ void GameMain::Run()
 }
 ```
 
-### <a name="update"></a>Update/Aktualisieren
+### <a name="update"></a>die Registerkarte „Update“
 
 Weitere Informationen über das Aktualisieren der Spielzustände finden Sie im Artikel [Spielablaufverwaltung](tutorial-game-flow-management.md) der [__App:: Update__ und __GameMain::Update__](tutorial-game-flow-management.md#appupdate-method)-Methode.
 
@@ -130,7 +130,7 @@ Weitere Informationen über das Aktualisieren der Spielzustände finden Sie im A
 
 Das Rendern wird durch Aufrufen der [__GameRenderer::Render__](#gamerendererrender-method)-Methode im __GameMain::Run__ implementiert.
 
-Wenn [Stereorendering](#stereo-rendering) aktiviert ist, gibt es zwei Renderingdurchgänge: einen für das rechte Auge und einen für das linke Auge. In jeder Renderingdurchlauf binden wir das Renderziel und die Ansicht der tiefenschablone auf dem Gerät. Wir löschen danach die Tiefenschablonen-Ansicht.
+Wenn [Stereorendering](#stereo-rendering) aktiviert ist, gibt es zwei Renderingdurchgänge: einen für das rechte Auge und einen für das linke Auge. Bei jedem Renderingdurchlauf binden wir das Renderziel und die Ansicht der tiefen Schablone an das Gerät. Wir löschen danach die Tiefenschablonen-Ansicht.
 
 > [!Note]
 > Stereorendering kann mit anderen Methoden wie z. B. einem einzigen Stereo-Durchlauf mit Vertex-Instanzerstellung oder Geometry-Shader erzielt werden. Die beiden Renderingdurchgangs-Methoden sind langsamer, aber einfacher zum Stereo-Rendering.
@@ -146,10 +146,10 @@ In diesem Beispielspiel verwendet der Renderer ein Standard-Vertex-Layout für a
 
 Legen Sie den Direct3D-Kontext fest, um ein Eingabevertex-Layout zu verwenden. Eingabevertex-Objekte beschreiben das Streamen der Vertexpufferdaten in die [Renderingpipeline](#rendering-pipeline). 
 
-Wir legen Sie als Nächstes den Direct3D-Kontext, die zuvor definierten Konstantenpuffer verwendet, mit denen die [Vertex-Shader](#vertex-shaders-and-pixel-shaders) Phase pipeline und die [Pixel-Shader](#vertex-shaders-and-pixel-shaders) pipeline-Phase. 
+Als nächstes legen wir den Direct3D-Kontext so fest, dass die zuvor definierten Konstanten Puffer verwendet werden, die von der [Vertex-Shader](#vertex-shaders-and-pixel-shaders) -Pipeline Stufe und der [Pixelshader](#vertex-shaders-and-pixel-shaders) -Pipeline Phase verwendet werden. 
 
 > [!Note]
-> Finden Sie unter [Rendering-Framework II: Rendern von Spielen](tutorial-game-rendering.md) für Weitere Informationen über die Definition der Konstante Puffer.
+> Weitere Informationen zur Definition der Konstantenpuffer finden Sie unter [Rendering-Framework II: Spiel-Rendering](tutorial-game-rendering.md).
 
 Da das gleiche Eingabelayout und der Satz von Konstantenpuffern für alle Shader in der Pipeline verwendet wird, wird es einmal pro Frame festgelegt.
 
@@ -334,14 +334,14 @@ void GameRenderer::Render()
 
 Beim Rendern der Szene durchlaufen Sie alle Objekte, die gerendert werden müssen. Die folgenden Schritte werden für jedes Objekt (Grundtyp) wiederholt.
 
-* Aktualisieren Sie den Konstantenpuffer (__m\_ConstantBufferChangesEveryPrim__) mit des Modells des [globale Transformationsmatrix](#world-transform-matrix) und wesentliche Informationen.
-* Die __m\_ConstantBufferChangesEveryPrim__ Parameter für jedes Objekt enthält.  Beinhaltet das Objekt für die globale Transformationsmatrix sowie die grundlegenden Eigenschaften wie Farbe und Glanzlichterexponenten für die Berechnung der Beleuchtung.
+* Aktualisieren Sie den konstanten Puffer (__m\_constantbufferchangeseveryprim__) mit der [World Transformation Matrix](#world-transform-matrix) und den Material Informationen des Modells.
+* Der __m-\_constantbufferchangeseveryprim__ enthält Parameter für jedes Objekt.  Beinhaltet das Objekt für die globale Transformationsmatrix sowie die grundlegenden Eigenschaften wie Farbe und Glanzlichterexponenten für die Berechnung der Beleuchtung.
 * Legen Sie den Direct3D-Kontext für das Eingabevertex-Layout für die Gitterobjektdaten fest, das in die Eingabeassemblerphase (IA)-Phase der [Renderingpipeline](#rendering-pipeline) gestreamt werden soll
 * Legen Sie den Direct3D-Kontext für den [Indexpuffer](#index-buffer) in der IA-Phase fest. Geben Sie die Grundtyp-Informationen an: Typ, Datenreihenfolge.
-* Übermitteln Sie einen Draw-Aufruf zum Zeichnen des indizierten, nicht instanziierten Grundtyps. Die __GameObject::Render__-Methode aktualisiert den [Grundtypkonstantenpuffer](#constant-buffer-or-shader-constant-buffer) mit den spezifischen Daten eines Grundtyps. Dadurch erfolgt ein __DrawIndexed__-Aufruf für den Kontext, um die Geometrie jedes Grundtyps zu zeichnen. Durch diesen Draw-Aufruf werden Befehle und Daten in die Warteschlange der GPU eingereiht (entsprechend der Parametrisierung durch die Konstantenpufferdaten). Jeder Draw-Aufruf führt den Vertex-Shader einmal pro Vertex, und klicken Sie dann die [Pixel-Shader](#vertex-shaders-and-pixel-shaders) einmal für jedes Pixel der einzelnen Dreiecke in der Primitive. Die Texturen sind Teil des Zustands, den der Pixelshader für das Rendering verwendet.
+* Übermitteln Sie einen Draw-Aufruf zum Zeichnen des indizierten, nicht instanziierten Grundtyps. Die __GameObject::Render__-Methode aktualisiert den [Grundtypkonstantenpuffer](#constant-buffer-or-shader-constant-buffer) mit den spezifischen Daten eines Grundtyps. Dadurch erfolgt ein __DrawIndexed__-Aufruf für den Kontext, um die Geometrie jedes Grundtyps zu zeichnen. Durch diesen Draw-Aufruf werden Befehle und Daten in die Warteschlange der GPU eingereiht (entsprechend der Parametrisierung durch die Konstantenpufferdaten). Jeder Draw-Aufruf führt den Vertex-Shader einmal pro Scheitelpunkt aus, und der [Pixel-Shader](#vertex-shaders-and-pixel-shaders) einmal für jedes Pixel jedes Dreiecks im primitiven. Die Texturen sind Teil des Zustands, den der Pixelshader für das Rendering verwendet.
 
 Gründe für die Verwendung mehrerer Konstantenpuffer:
-    * Im Spiel werden mehrere Konstantenpuffer verwendet; diese müssen aber nur einmal pro Grundtyp aktualisiert werden. Sie können sich die Konstantenpuffer als Eingabe für die für jeden Grundtyp ausgeführten Shader vorstellen. Einige Daten sind statisch (__m\_ConstantBufferNeverChanges__); einige Daten sind über den Frame Konstanten (__m\_ConstantBufferChangesEveryFrame__), wie Sie die Position der Kamera und einige Daten bezieht sich auf den Grundtyp, wie seine Farbe und Texturen (__m\_ConstantBufferChangesEveryPrim__)
+    * Im Spiel werden mehrere Konstantenpuffer verwendet; diese müssen aber nur einmal pro Grundtyp aktualisiert werden. Sie können sich die Konstantenpuffer als Eingabe für die für jeden Grundtyp ausgeführten Shader vorstellen. Einige Daten sind statisch (__m\_constantbufferneverchanges__); einige Daten sind über dem Frame konstant (__m\_constantbufferchangeseveryframe__), wie die Position der Kamera. einige Daten sind für die primitive spezifisch, wie Farbe und Texturen (__m\_constantbufferchangeseveryprim__).
     * Der Spielrenderer teilt diese Eingaben in verschiedene Konstantenpuffer auf, um die von CPU und GPU verwendete Speicherbandbreite zu optimieren. Durch diesen Ansatz lässt sich auch die Datenmenge minimieren, die von der GPU nachverfolgt werden muss. Die GPU verfügt über eine große Befehlswarteschlange und dieser Befehl bei jedem Aufruf von __Draw__ zusammen mit den dazugehörigen Daten in die Warteschlange eingereiht wird. Wenn das Spiel den Grundtypkonstantenpuffer aktualisiert und den nächsten __Draw__-Befehl ausgibt, fügt der Grafiktreiber diesen Befehl und die dazugehörigen Daten der Warteschlange hinzu. Zeichnet das Spiel 100 Grundtypen, kann die Warteschlange 100 Kopien der Konstantenpufferdaten enthalten. Um die an die GPU gesendete Datenmenge zu minimieren, wird im Spiel ein separater Grundtypkonstantenpuffer verwendet, der nur die Aktualisierungen für jeden Grundtyp enthält.
 
 #### <a name="gameobjectrender-method"></a>GameObject::Render-Methode
@@ -473,7 +473,7 @@ void DX::DeviceResources::Present()
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Artikel wird erläutert, wie Grafiken auf dem Bildschirm gerendert werden sowie eine kurze Beschreibung für die Rendering-Terminologie. Weitere Informationen zum Rendern in das [Rendering-Framework II: Rendern von Spielen](tutorial-game-rendering.md) Dokument aus, und erfahren Sie, wie die Daten, die erforderlich sind, vor dem Rendern vorbereiten.
+In diesem Artikel wird erläutert, wie Grafiken auf dem Bildschirm gerendert werden sowie eine kurze Beschreibung für die Rendering-Terminologie. Weitere Informationen über das Rendern finden Sie im Artikel [Rendering-Framework II: Spiel-Rendering](tutorial-game-rendering.md). Hier erfahren Sie, wie Sie die Daten vor dem Rendern vorbereiten.
 
 ## <a name="terms-and-concepts"></a>Begriffe und Konzepte
 
@@ -490,11 +490,11 @@ Szenen- und Objekt-Informationen werden von der Rendering-Framework verwendet, u
 Im Prozess der Renderingpipeline werden die 3D-Szenen-Informationen zu einem Bild auf dem Bildschirm übersetzt. In Direct3D 11 ist diese Pipeline programmierbar. Sie können die Phasen zur Unterstützung der Rendering-Anforderungen anpassen. Stufen, die allgemeine Shaderkerne bereitstellen, sind mit der HLSL-Programmiersprache programmierbar. Dies ist auch als Grafikrenderingpipeline oder einfach Pipeline bekannt.
 
 Um diese Pipeline erstellen zu können, müssen Sie damit vertraut sein:
-* [HLSL](#HLSL). Wir empfehlen die Verwendung von HLSL-Shader Model 5.1 und höher für UWP-DirectX-Spiele.
-* [Shader](#Shaders)
-* [Vertex-Shader und Pixel-Shader](#vertext-shaders-pixel-shaders)
-* [Shader-Stufen](#shader-stages)
-* [Verschiedene Shader-Dateiformate](#various-shader-file-formats)
+* [HLSL](#hlsl). Wir empfehlen die Verwendung von HLSL-Shader Model 5.1 und höher für UWP-DirectX-Spiele.
+* [Shader](#shaders)
+* [Vertex-Shader und Pixel-Shader](#vertex-shaders-and-pixel-shaders)
+* [Shaderphasen](#shader-stages)
+* [Verschiedene shaderdateiformate](#various-shader-file-formats)
 
 Weitere Informationen finden Sie unter [Understand the Direct3D 11 rendering pipeline](https://docs.microsoft.com/windows/desktop/direct3dgetstarted/understand-the-directx-11-2-graphics-pipeline) und [Grafik-Pipeline](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline).
 
@@ -537,7 +537,7 @@ Direct3D 11 ist eine Reihe von APIs, mit deren Hilfe wir Grafiken für Grafik-i
 
 Für diejenigen, die noch nie damit gearbeitet haben, können Sie sich Ressourcen (auch bekannt als Geräteressourcen) als Informationen vorstellen, um ein Objekt wie Textur, Position, Farbe zu rendern. Ressourcen stellen Daten für die Pipeline bereit und definieren, was während der Szene gerendert wird. Ressourcen können von Ihren Spielmedien geladen oder zur Laufzeit dynamisch erstellt werden.
 
-Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-[Pipeline](#rendering-pipeline) zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (wie z. B. Input-Geometrie, Shader-Ressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: Puffer und Textur. Bis zu 128 Ressourcen können für jede Pipeline-Phase aktiv sein. Weitere Informationen finden Sie unter [Ressourcen](../graphics-concepts/resources.md).
+Eine Ressource ist ein Bereich im Speicher, auf den die Direct3D-[Pipeline](#rendering-pipeline) zugreifen kann. Damit die Pipeline effizient auf den Speicher zugreifen kann, müssen für die Pipeline bereitgestellte Daten (etwa Eingabegeometrie, Shaderressourcen und Texturen) in einer Ressource gespeichert werden. Es gibt zwei Arten von Ressourcen, aus denen alle Direct3D-Ressourcen abgeleitet sind: Puffer und Textur. Für jede Pipelinephase können bis zu 128 Ressourcen aktiv sein. Weitere Informationen finden Sie unter [Ressourcen](../graphics-concepts/resources.md).
 
 #### <a name="subresource"></a>Unterressourcen
 
@@ -549,7 +549,7 @@ Eine Tiefenschablonenressource stellt das Format und den Puffer zur Speicherung 
 
 Tiefeninformationen steuern, welche Bereiche von Polygonen dargestellt werden. Schabloneninformationen steuern, welche Pixel maskiert werden. Es kann verwendet werden, um Spezialeffekte zu erzeugen, da es bestimmt, ob ein Pixel gezeichnet oder nicht gezeichnet wird. Es setzt das Bit auf 1 oder 0. 
 
-Weitere Informationen finden Sie in den folgenden Themen: [Ansicht der tiefenschablone](../graphics-concepts/depth-stencil-view--dsv-.md), [Tiefenpuffer](../graphics-concepts/depth-buffers.md), und [Stencilpuffer](../graphics-concepts/stencil-buffers.md).
+Weitere Informationen finden Sie unter: [Tiefenschablonenansicht](../graphics-concepts/depth-stencil-view--dsv-.md), [Tiefenpuffer](../graphics-concepts/depth-buffers.md), und [Schablonen-Puffer](../graphics-concepts/stencil-buffers.md).
 
 #### <a name="render-target"></a>Renderziel
 
@@ -561,13 +561,13 @@ Jedes Renderziel sollte auch eine entsprechende Tiefenschablonenansicht haben, d
 
 Für Benutzer, die mit Direct3D 11 nicht vertraut sind, ist dies ein Gerät zum Zuordnen und zerstören von Objekten, um Grundtypen zu rendern und mit der Grafikkarte über die Grafiktreiber zu kommunizieren. 
 
-Oder präzise ausgedrückt: Direct3D-Gerät ist die Komponente zum Rendern von Direct3D. Ein Gerät kapselt und speichert den Renderstatus, führt Transformationen und Beleuchtungsvorgänge aus, und rastert ein Bild zu einer Oberfläche. Weitere Informationen finden Sie unter [Geräte](../graphics-concepts/devices.md)
+Oder präzise ausgedrückt: Direct3D-Gerät ist die Komponente zum Rendern von Direct3D. Ein Gerät kapselt und speichert den Renderstatus, führt Transformationen und Beleuchtungsvorgänge aus und rastert ein Bild auf einer Oberfläche. Weitere Informationen finden Sie unter [Geräte](../graphics-concepts/devices.md)
 
 Ein Gerät wird durch die [ID3D11Device](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11device)-Schnittstelle dargestellt. In anderen Worten: die ID3D11Device-Schnittstelle stellt eine virtuelle Grafikkarte dar und wird verwendet, um die Ressourcen zu erstellen, die das Gerät besitzt. 
 
 Beachten Sie, dass es verschiedene Versionen von ID3D11Device gibt, [ID3D11Device5](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11device5) ist die neueste Version und fügt neue Informationen zum ID3D11Device4 hinzu. Weitere Informationen zur Kommunikation zwischen Direct3D mit der zugrunde liegenden Hardware finden Sie unter [Windows Device Driver Model (WDDM)-Architektur](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture).
 
-Jede Anwendung muss mindestens ein Gerät haben, die meisten Apps erstellen nur ein Gerät. Erstellen Sie ein Gerät für eine der die Hardwaretreiber, die auf Ihrem Computer installiert ist, durch den Aufruf __D3D11CreateDevice__ oder __D3D11CreateDeviceAndSwapChain__ und geben Sie den Treibertyp mit der D3D\_ Treiber\_Typflag. Jedes Gerät kann einen oder mehrere Gerätekontexte benutzen, je nach Bedarf der gewünschten Funktion. Weitere Informationen finden Sie unter [D3D11CreateDevice-Funktion](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice).
+Jede Anwendung muss mindestens ein Gerät haben, die meisten Apps erstellen nur ein Gerät. Erstellen Sie ein Gerät für einen der Hardwaretreiber, die auf Ihrem Computer installiert sind. Rufen Sie hierzu __D3D11CreateDevice__ oder __D3D11CreateDeviceAndSwapChain__ auf, und geben Sie den Treibertyp mit dem Flag "D3D\_Driver\_Type" an Jedes Gerät kann einen oder mehrere Gerätekontexte benutzen, je nach Bedarf der gewünschten Funktion. Weitere Informationen finden Sie unter [D3D11CreateDevice-Funktion](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice).
 
 #### <a name="device-context"></a>Gerätekontext
 
@@ -577,7 +577,7 @@ Direct3D 11 implementiert zwei Arten von Gerätekontexten, eins für das sofort
 
 Die __ID3D11DeviceContext__-Schnittstellen haben unterschiedliche Versionen; __ID3D11DeviceContext4__ fügt neue Methoden zu __ID3D11DeviceContext3__ hinzu.
 
-Hinweis: __ID3D11DeviceContext4__ wird in das Windows 10 Creators Update eingeführt und ist die neueste Version von der __ID3D11DeviceContext__ Schnittstelle. Anwendungen für das Windows 10 Creators Update sollten diese Schnittstelle anstelle von früheren Versionen verwenden. Weitere Informationen finden Sie unter [ID3D11DeviceContext4](https://docs.microsoft.com/windows/desktop/api/d3d11_3/nn-d3d11_3-id3d11devicecontext4).
+Hinweis: __ID3D11DeviceContext4__ wird im Windows 10 Creators Update eingeführt und ist die neueste Version der __ID3D11DeviceContext__-Schnittstelle. Anwendungen für das Windows 10 Creators Update sollten diese Schnittstelle anstelle von früheren Versionen verwenden. Weitere Informationen finden Sie unter [ID3D11DeviceContext4](https://docs.microsoft.com/windows/desktop/api/d3d11_3/nn-d3d11_3-id3d11devicecontext4).
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
@@ -587,7 +587,7 @@ Die __DX::DeviceResources__-Klasse befindet sich in der __DeviceResources.cpp__/
 
 Eine Pufferressource ist eine Sammlung vollständig typisierter Daten, die zu Elementen gruppiert werden. Verwenden Sie Puffer zum Speichern von Daten, wie Positionsvektoren, normale Vektoren, Texturkoordinaten in einem Vertexpuffer, Indexe in einem Indexpuffer oder den Gerätezustand. Pufferelemente können gepackte Datenwerten (wie R8G8B8A8-Oberflächenwerte), einzelne 8-Bit-Ganzahlen oder vier 32-Bit-Gleitkommawerte enthalten.
 
-Es gibt drei Arten von Puffer verfügbar: Vertexpuffer, Indexpuffer und Konstantenpuffer.
+Es sind drei Arten von Puffern verfügbar: Vertex-Puffer, Indexpuffer und Konstantenpuffer.
 
 #### <a name="vertex-buffer"></a>Vertexpuffer
 
@@ -616,7 +616,7 @@ Weitere Informationen zu finden Sie unter [Einführung in Puffer in Direct3D 11]
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) ist ein neues Subsystem, das mit Windows Vista eingeführt wurde, die einige der Aufgaben auf niedriger Ebene kapselt, die Direct3D 10, benötigt 10.1, 11 und 11.1. Bei Verwendung von DXGI in einer Multithread-Anwendung ist besondere Vorsicht geboten, um sicherzustellen, dass keine Deadlocks auftreten. Weitere Informationen finden Sie unter [DirectX Graphics Infrastructure (DXGI): Best Practices-Multithreading](https://docs.microsoft.com/windows/desktop/direct3darticles/dxgi-best-practices)
+Microsoft DirectX Graphics Infrastructure (DXGI) ist ein neues Subsystem, das mit Windows Vista eingeführt wurde und einige der Low-Level-Aufgaben kapselt, die von Direct3D 10, 10,1, 11 und 11,1 benötigt werden. Bei Verwendung von DXGI in einer Multithread-Anwendung ist besondere Vorsicht geboten, um sicherzustellen, dass keine Deadlocks auftreten. Weitere Informationen finden Sie unter [DirectX Graphics Infrastructure (DXGI): Best Practices – Multithreading](https://docs.microsoft.com/windows/desktop/direct3darticles/dxgi-best-practices)
 
 ### <a name="feature-level"></a>Featureebene
 
@@ -624,9 +624,9 @@ Die Featureebene ist ein Konzept, das in Direct3D 11 eingeführt wurde, um die 
 
 Jede Grafikkarte implementiert eine gewisse DirectX-Funktion, abhängig von den installierten GPUs. In früheren Versionen von Microsoft Direct3D konnten Sie die Version der implementierten Direct3D-Grafikkarte sehen und die Anwendung entsprechend programmieren. 
 
-Mit der Featureebene können Sie bei der Erstellung eines Geräts versuchen, ein Gerät für die Featureebene zu erstellen, die Sie anfordern möchten. Wenn die Geräteerstellung funktioniert, ist die Featureebene vorhanden, andernfalls wird die Featureebene von der Hardware nicht unterstützt. Sie können entweder versuchen, ein Gerät auf einer niedrigeren Featureebene neu zu erstellen oder Sie können die Anwendung beenden. Z. B. die 12\_0 Funktionsebene erfordert Direct3D 11.3 oder Direct3D 12- und Shader Model 5.1. Weitere Informationen finden Sie unter [Direct3D-Funktionsebenen: Übersicht über die für jede Funktion](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
+Mit der Featureebene können Sie bei der Erstellung eines Geräts versuchen, ein Gerät für die Featureebene zu erstellen, die Sie anfordern möchten. Wenn die Geräteerstellung funktioniert, ist die Featureebene vorhanden, andernfalls wird die Featureebene von der Hardware nicht unterstützt. Sie können entweder versuchen, ein Gerät auf einer niedrigeren Featureebene neu zu erstellen oder Sie können die Anwendung beenden. Beispielsweise erfordert die Funktionsebene "12\_0" Direct3D 11,3 oder Direct3D 12 und das Shader-Modell 5,1. Weitere Informationen finden Sie unter [Direct3D-Featureebenen: Übersicht über jede Featureebene](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
 
-Verwenden die Funktionsebenen, können Sie eine Anwendung entwickeln, für die Direct3D 9, Microsoft Direct3D 10 und Direct3D 11 und führen Sie anschließend auf 9, 10 oder 11-Hardware (mit einigen Ausnahmen). Weitere Informationen finden Sie unter [Direct3D-Featureebenen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
+Mithilfe von featurestufen können Sie eine Anwendung für Direct3D 9, Microsoft Direct3D 10 oder Direct3D 11 entwickeln und dann auf der Hardware mit 9, 10 oder 11 ausführen (mit einigen Ausnahmen). Weitere Informationen finden Sie unter [Direct3D-Featureebenen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro).
 
 ### <a name="stereo-rendering"></a>Stereorendering
 
@@ -650,10 +650,10 @@ Dabei gilt Folgendes:
 * M(Model-to-World) ist eine Transformationsmatrix für die Modellkoordinaten in Spielweltkoordinaten, auch bekannt als die [World transform matrix](#world-transform-matrix). Diese Matrix wird vom Grundtyp bereitgestellt.
 * M(world-to-view) ist eine Transformationsmatrix für die Weltkoordinaten in Spielansichtskoordinaten, auch bekannt als die [Ansichtstransformationsmatrix](#view-transform-matrix).
     * Diese Matrix wird von der Ansichtsmatrix der Kamera bereitgestellt. Es wird durch die Position der Kamera und die Blickvektoren definiert (der Vektor "anschauen", der von der Kamera in die Szene weist, und der Vektor "nach oben schauen" senkrecht zur Szene).
-    * Im Beispielspiel __m\_ViewMatrix__ Ansichtstransformationsmatrix und wird mit __Camera::SetViewParams__ 
+    * Im Beispiel Spiel ist __m\_ViewMatrix__ die Transformationsmatrix der Sicht und wird mithilfe von __Kamera:: setviewparametriams__ berechnet. 
 * M(view-to-device) ist eine Transformationsmatrix für die Ansichtskoordinaten in Gerätekoordinaten, auch bekannt als die [Projektstransformationsmatrix](#projection-transform-matrix).
     * Diese Matrix wird von der Projektion der Kamera bereitgestellt. Es enthält Informationen darüber, wie dieser Platz tatsächlich in der endgültigen Szene sichtbar ist. Das Blickfeld (FoV), das Seitenverhältnis und die Clippingebenen definieren die Projektionstransformationsmatrix.
-    * Im Beispielspiel __m\_ProjectionMatrix__ Transformation definiert, zu die Koordinaten der Projektion mit berechnet __Camera::SetProjParams__ (für Stereo Projektion, Sie verwenden zwei Projektion Matrizen: eine für jede Einblick in die.) 
+    * Im Sample-Spiel definiert __m\_ProjectionMatrix__ die Transformation zu den Projektions Koordinaten, die mithilfe von __Kamera:: setprojparser__ berechnet werden (bei der Stereo Projektion verwenden Sie zwei Projektions Matrizen: einen für jede Ansicht des Auges). 
 
 Der Shadercode in VertexShader.hlsl wird mit diesen Vektoren und Matrizen aus den Konstantenpuffern geladen und führt diese Transformation für jeden Vertex aus.
 

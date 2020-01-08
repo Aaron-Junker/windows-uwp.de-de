@@ -1,172 +1,172 @@
 ---
-title: Voice aktiviert Shell (VES) auf der Xbox
-description: Erfahren Sie, wie Ihre UWP-apps auf der Xbox Voice Unterstützung hinzugefügt.
+title: Voice-aktivierte Shell (VES) auf Xbox
+description: Erfahren Sie, wie Sie Ihre UWP-apps auf Xbox Unterstützung für sprach Steuerelemente hinzufügen.
 ms.date: 10/19/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Xbox, Spracherkennung und Sprache aktiviert-shell
-ms.openlocfilehash: ea51216c804754e98c3bac459b79fb75dd9369cc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+keywords: Windows 10, UWP, Xbox, Speech, Voice-aktivierte Shell
+ms.openlocfilehash: f51ec2c93a904893dc337545f634d04affde10fd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596055"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685180"
 ---
-# <a name="using-speech-to-invoke-ui-elements"></a>Verwendung der Spracherkennung zum Aufrufen des UI-Elemente
+# <a name="using-speech-to-invoke-ui-elements"></a>Verwenden von Sprache zum Aufrufen von UI-Elementen
 
-Voice aktiviert Shell (VES) ist eine Erweiterung für Windows Sprachplattform, mit dem Sie eine erstklassige Sprache-Umgebung in apps, können Benutzer zum Sprache aufrufen auf dem Bildschirm Steuerelemente und zum Einfügen von Text über Diktat. VES zielt darauf ab, um eine gemeinsame End-to-End finden Sie unter It-Say-It-Erfahrung auf allen Windows-Shells und Geräten, mit minimalem Aufwand, die vom app-Entwickler bereitzustellen.  Um dies zu erreichen, nutzt es Microsoft Speech-Plattform und der Benutzeroberflächenautomatisierung (UIA)-Framework.
+Voice-aktivierte Shell (VES) ist eine Erweiterung der Windows-Sprachplattform, die eine erstklassige Sprachdarstellung innerhalb von apps ermöglicht, sodass Benutzersprache zum Aufrufen von Bildschirm Steuerelementen und zum Einfügen von Text per Diktat verwenden können. VES ist bestrebt, eine gängige End-to-End-See-it-IT-Darstellung für alle Windows-Shells und-Geräte zu bieten, wobei der minimale Aufwand für App-Entwickler erforderlich ist.  Um dies zu erreichen, nutzt es die Microsoft Speech Platform und das UI Automation-Framework (UIA).
 
-## <a name="user-experience-walkthrough"></a>Exemplarische Vorgehensweise für Benutzer ##
-Im folgenden einen Überblick darüber, was ein Benutzer bei der Verwendung von VES auf der Xbox auftreten würden, und sie sollten zum legen Sie den Kontext vor dem Einstieg in die Details der Funktionsweise von VES.
+## <a name="user-experience-walkthrough"></a>Exemplarische Vorgehensweise zur Benutzer Darstellung ##
+Im folgenden finden Sie eine Übersicht über die Möglichkeiten eines Benutzers bei der Verwendung von VES auf Xbox. Außerdem sollte er den Kontext vor dem Einstieg in die Details zur Funktionsweise von ven unterstützen.
 
-- Benutzer auf der Xbox-Konsole aktiviert und möchte, durchsuchen ihre apps auch etwas von Interesse sind:
+- Der Benutzer schaltet die Xbox-Konsole ein und möchte seine apps durchsuchen, um etwas Interessantes zu finden:
 
         User: "Hey Cortana, open My Games and Apps"
 
-- Benutzer bleibt in aktiv überwacht Modus (ALM), was bedeutet, dass die Konsole jetzt eine Überwachung für den Benutzer ein Steuerelement aufzurufen, die auf dem Bildschirm sichtbar ist, ohne zu sagen, "Hey Cortana" jedes Mal.  Benutzer kann jetzt zum Anzeigen von apps und scrollen Sie durch die app-Liste wechseln:
+- Der Benutzer befindet sich im aktiven Lesemodus (ALM), was bedeutet, dass die Konsole jetzt den Benutzer abhört, ein Steuerelement aufzurufen, das auf dem Bildschirm sichtbar ist, ohne dass Sie jedes Mal "Hey Cortana" sagen müssen.  Der Benutzer kann jetzt zum Anzeigen von apps wechseln und in der APP-Liste einen Bildlauf durchführen
 
         User: "applications"
 
-- Um die Ansicht zu scrollen, kann Benutzer einfach sagen:
+- Zum Scrollen der Ansicht kann der Benutzer einfach Folgendes sagen:
 
         User: "scroll down"
 
-- Benutzer wird die werbegrafik, für die app, die sie interessiert sind, aber vergessen den Namen an.  Benutzer fragt nach Voice Tipp Bezeichnungen angezeigt werden:
+- Der Benutzer sieht die Box-Art für die APP, an der er interessiert ist, aber den Namen vergessen hat.  Der Benutzer fordert die Anzeige von sprach Tipp Bezeichnungen an:
 
         User: "show labels"
 
-- Nun, da sie was Sie sagen ist, kann die app gestartet werden:
+- Nun ist klar, was Sie sagen können: die APP kann gestartet werden:
 
         User: "movies and TV"
 
-- Zum Beenden der aktiven Empfangsmodus mitteilt Benutzer, Xbox, deren Überwachung beendet:
+- Um den Modus für aktive Überwachung zu beenden, teilt der Benutzer der Xbox mit, das lauschen anzuhalten
 
         User: "stop listening"
 
-- Eine neue active lauschende Sitzung kann später mit gestartet werden:
+- Später kann eine neue aktive Überwachungs Sitzung mit folgenden Aktionen gestartet werden:
 
         User: "Hey Cortana, make a selection" or "Hey Cortana, select"
 
-## <a name="ui-automation-dependency"></a>UI-Automatisierung-Abhängigkeit ##
-VES ist ein Benutzeroberflächenautomatisierungs-Client und basiert auf Informationen, die von der app über die Benutzeroberflächenautomatisierungs-Anbietern verfügbar gemacht werden. Dies ist die gleiche Infrastruktur, die bereits von der Sprachausgabe-Funktion auf Windows-Plattformen verwendet wird.  Automatisierung der Benutzeroberfläche ermöglicht den programmgesteuerten Zugriff auf Elemente der Benutzeroberfläche, einschließlich des Namens des Steuerelements, dessen Typ und welche implementiert Steuerelementmuster es.  Wenn die Benutzeroberfläche in der app geändert wird, wird VES UIA-Update-Ereignisse zu reagieren und erneut analysieren die aktualisierte Benutzeroberflächenautomatisierungs-Struktur, um alle verwertbare Elemente zu suchen, verwenden diese Informationen, um eine spracherkennungsgrammatik zu erstellen. 
+## <a name="ui-automation-dependency"></a>UI-Automatisierungs Abhängigkeit ##
+VES ist ein Benutzeroberflächenautomatisierungs-Client und basiert auf Informationen, die von der APP über seine Benutzeroberflächenautomatisierungs-Anbieter verfügbar gemacht Dies ist die gleiche Infrastruktur, die bereits von der Funktion "Sprachausgabe" auf Windows-Plattformen verwendet wird.  Die Benutzeroberflächen Automatisierung ermöglicht den programmgesteuerten Zugriff auf Benutzeroberflächen Elemente, einschließlich des Namens des Steuer Elements, seines Typs und der von ihm implementierten Steuerelement Muster.  Wenn sich die Benutzeroberfläche in der app ändert, reagiert VES auf UIA-Aktualisierungs Ereignisse und analysiert die aktualisierte Benutzeroberflächenautomatisierungs-Struktur erneut, um alle umsetzbaren Elemente zu finden. diese Informationen werden verwendet, um eine sprach Erkennungs Grammatik zu erstellen. 
 
-Alle UWP-apps haben Zugriff auf die UI-Automatisierungsframework und verfügbar machen Informationen über die Benutzeroberfläche, die unabhängig von den Grafik-Framework, die sie bei (XAML, DirectX/Direct3D, Xamarin, usw.) erstellt werden.  In einigen Fällen, wie XAML ein Großteil der Schwerstarbeit erfolgt durch das Framework verringert erheblich den Arbeitsaufwand beim Microsoft-Sprachausgabe und VES zu unterstützen.
+Alle UWP-apps haben Zugriff auf das Benutzeroberflächenautomatisierungs-Framework und können Informationen über die Benutzeroberfläche unabhängig von dem Grafik Framework verfügbar machen, auf dem Sie basieren (XAML, DirectX/Direct3D, xamarin usw.).  In einigen Fällen, wie z. b. XAML, erfolgt der größte Teil der Arbeit durch das Framework
 
-Weitere Informationen zur Automatisierung der Benutzeroberfläche finden Sie unter [Grundlagen der Benutzeroberflächenautomatisierung](https://msdn.microsoft.com/en-us/library/ms753107(v=vs.110).aspx "Grundlagen der Benutzeroberflächenautomatisierung").
+Weitere Informationen zur Benutzeroberflächen Automatisierung finden Sie unter [Grundlagen der Benutzeroberflächen Automatisierung](https://msdn.microsoft.com/library/ms753107(v=vs.110).aspx "Grundlagen der Benutzeroberflächenautomatisierung").
 
-## <a name="control-invocation-name"></a>Aufrufs Steuerelementname ##
-VES setzt die folgende Heuristik, um zu bestimmen, was einen Ausdruck, um bei der Spracherkennung wie der Name des Steuerelements zu registrieren (d.h. was der Benutzer muss zum Aufrufen des Steuerelements sprechen).  Dies ist auch der Ausdruck, der in der Voice-QuickInfo-Bezeichnung angezeigt wird.
+## <a name="control-invocation-name"></a>Name des Steuerungs aufnamens ##
+Ves verwendet die folgende heuristische, um zu bestimmen, welcher Ausdruck mit der Spracherkennung als Name des Steuer Elements registriert werden soll (d. h., was der Benutzer zum Aufrufen des Steuer Elements sprechen muss).  Dies ist auch der Ausdruck, der in der Sprech Tip Bezeichnung angezeigt wird.
 
-Die Quelle des Namens in der Reihenfolge ihrer Priorität:
+Quelle des Namens in der Prioritäts Reihenfolge:
 
-1. Wenn das Element verfügt über eine `LabeledBy` angefügte Eigenschaft VES verwenden die `AutomationProperties.Name` mit dieser textbezeichnung.
-2. `AutomationProperties.Name` des-Elements.  In XAML, die der Textinhalt des Steuerelements verwendet werden, als der Standardwert für `AutomationProperties.Name`.
-3. Wenn das Steuerelement ein ListItem oder eine Schaltfläche, VES sucht das erste untergeordnete Element mit einer gültigen `AutomationProperties.Name`.
+1. Wenn das Element über eine `LabeledBy` angefügte Eigenschaft verfügt, verwendet Ves die `AutomationProperties.Name` dieser Text Bezeichnung.
+2. `AutomationProperties.Name` des Elements.  In XAML wird der Text Inhalt des Steuer Elements als Standardwert für `AutomationProperties.Name`verwendet.
+3. Wenn das Steuerelement ein ListItem oder eine Schaltfläche ist, sucht Ves nach dem ersten untergeordneten Element mit einem gültigen `AutomationProperties.Name`.
 
-## <a name="actionable-controls"></a>Aktionen erfordernde Steuerelemente ##
-VES berücksichtigt ein Steuerelements Handlungsbedarf, wenn sie eine der folgenden Steuerelementmuster für Benutzeroberflächenautomatisierung implementiert:
+## <a name="actionable-controls"></a>Handlungsfähige Steuerelemente ##
+Ves betrachtet, dass ein Steuerelement handlungsfähig ist, wenn eines der folgenden Automatisierungs Steuerelement Muster implementiert wird:
 
-- **"InvokePattern"** (z. b. Schaltfläche ") – Stellt Steuerelemente, die initiieren oder eine einzelne, eindeutige Aktion und Zustand nach der Aktivierung nicht beibehalten.
+- **InvokePattern** (z. b. Button): stellt Steuerelemente dar, die eine einzelne, eindeutige Aktion initiieren oder ausführen und den Zustand bei der Aktivierung nicht beibehalten.
 
-- **TogglePattern** (z. b. Das Kontrollkästchen) – stellt ein Steuerelement, das eine Reihe von Zuständen durchlaufen und verwaltet einen einmal festgelegten Zustand werden kann.
+- **TogglePattern** (z. b. Kontrollkästchen): stellt ein Steuerelement dar, das eine Reihe von Zuständen durchlaufen und einen Zustand beibehalten kann, sobald er festgelegt ist.
 
-- **"SelectionItemPattern"** (z. b. Kombinationsfeld) – stellt ein Steuerelement, das als Container für eine Auflistung von untergeordneten, auswählbaren Elementen dient.
+- **SelectionItemPattern** (z. b. Kombinations Feld): stellt ein Steuerelement dar, das als Container für eine Auflistung von auswählbaren untergeordneten Elementen fungiert.
 
-- **ExpandCollapsePattern** (z. b. Kombinationsfeld) - Steuerelemente, die zum Anzeigen von Inhalt erweitert bzw. reduziert werden, um Inhalte auszublenden darstellt.
+- **Expandredusepattern** (z. b. Kombinations Feld): stellt Steuerelemente dar, die visuell erweitert werden, um Inhalt anzuzeigen und zu reduzieren, um Inhalt auszublenden
 
-- **ScrollPattern** (z. b. Die Liste) – Stellt Steuerelemente, die als scrollbare Container für eine Auflistung von untergeordneten Elementen dienen.
+- **ScrollPattern** (z. b. List): stellt Steuerelemente dar, die als scrollbare Container für eine Auflistung von untergeordneten Elementen fungieren.
 
 ## <a name="scrollable-containers"></a>Scrollbare Container ##
-Für bildlauffähigen Container, die den überwacht das ScrollPattern, VES für Voice unterstützen Befehle wie "einen Bildlauf nach links", "Bildlauf nach rechts" usw., und scrollen wird mit den entsprechenden Parametern aufgerufen werden, wenn der Benutzer einen der folgenden Befehle auslöst.  Scroll-Befehle werden anhand des Werts des eingefügt, die `HorizontalScrollPercent` und `VerticalScrollPercent` Eigenschaften.  Z. B. wenn `HorizontalScrollPercent` ist größer als 0, "einen Bildlauf nach links" hinzugefügt wird, wenn dieser Wert ist kleiner als 100 "Bildlauf nach rechts" hinzugefügt werden, und so weiter.
+Für Bild lauffähige Container, die das ScrollPattern unterstützen, lauscht VES auf Sprachbefehle wie "Scroll Left", "Scroll right" usw. und führt einen Bildlauf mit den entsprechenden Parametern aus, wenn der Benutzer einen dieser Befehle auslöst.  Scrollbefehle werden basierend auf dem Wert der Eigenschaften `HorizontalScrollPercent` und `VerticalScrollPercent` eingefügt.  Wenn `HorizontalScrollPercent` beispielsweise größer als 0 ist, wird "Scroll Left" hinzugefügt, wenn es kleiner als 100 ist, "Scroll right" hinzugefügt wird usw.
 
-## <a name="narrator-overlap"></a>Überlappung der Sprachausgabe ##
-Die Sprachausgabe-Anwendung ist auch ein Benutzeroberflächenautomatisierungs-Client und verwendet die `AutomationProperties.Name` Eigenschaft als eine der Quellen für den Text für das aktuell ausgewählte Benutzeroberflächenelement gelesen.  Um eine verbesserte Barrierefreiheit viele app benutzererfahrung haben Entwickler zum Überladen von neu sortiert die `Name` Eigenschaft mit dem lange beschreibenden Text mit dem Ziel der Bereitstellung Weitere Informationen und Kontext, wenn Sie von der Sprachausgabe gelesen.  Dies führt jedoch einen Konflikt zwischen den zwei Funktionen: VES benötigt kurze Ausdrücke, die übereinstimmen oder weitestgehend entsprechen den sichtbaren Text des Steuerelements bei Vorteile der Microsoft-Sprachausgabe aus länger, aussagekräftigeren Ausdrücken, um eine bessere Kontext anzugeben.
+## <a name="narrator-overlap"></a>Sprachausgabe Überlappung ##
+Die Sprachausgabe Anwendung ist auch ein Benutzeroberflächenautomatisierungs-Client und verwendet die `AutomationProperties.Name`-Eigenschaft als eine der Quellen für den Text, den Sie für das aktuell ausgewählte UI-Element liest.  Um eine bessere Barrierefreiheits Funktion bereitzustellen, haben viele App-Entwickler die `Name`-Eigenschaft mit langem beschreibenden Text überladen, der beim Lesen durch die Sprachausgabe Weitere Informationen und Kontext bereitstellt.  Dies verursacht jedoch einen Konflikt zwischen den beiden Features: Ves benötigt kurze Ausdrücke, die mit dem sichtbaren Text des Steuer Elements übereinstimmen oder genau übereinstimmen, während die Sprachausgabe von längeren, aussagekräftigeren Ausdrücken profitiert, um einen besseren Kontext zu bieten.
 
-Um dies zu beheben, beginnend mit Windows 10 Creators Update, Microsoft-Sprachausgabe wurde aktualisiert außerdem den `AutomationProperties.HelpText` Eigenschaft.  Wenn diese Eigenschaft nicht leer ist, wird die Sprachausgabe seinen Inhalt zusätzlich zu sprechen `AutomationProperties.Name`.  Wenn `HelpText` ist leer, Sprachausgabe liest nur den Inhalt des Namens.  Dies ermöglicht mehr beschreibende Zeichenfolgen, bei Bedarf verwendet werden soll, jedoch behält einen kürzeren, Speech Recognition Anzeigenamen-Ausdruck in der `Name` Eigenschaft.
+Um dieses Problem zu beheben, wurde mit Windows 10 Creators Update die Sprachausgabe aktualisiert, um auch die `AutomationProperties.HelpText`-Eigenschaft zu überprüfen.  Wenn diese Eigenschaft nicht leer ist, spricht der Sprachausgabe Inhalt zusätzlich zu `AutomationProperties.Name`.  Wenn `HelpText` leer ist, liest die Sprachausgabe nur den Inhalt des Namens.  Dies ermöglicht es, dass bei Bedarf längere beschreibende Zeichen folgen verwendet werden, behält aber einen kürzeren Ausdrucks Erkennungs Ausdruck in der `Name`-Eigenschaft bei.
 
 ![](images/ves_narrator.jpg)
 
-Weitere Informationen finden Sie unter [-Eigenschaften für die Unterstützung von Eingabehilfen in der Benutzeroberfläche](https://msdn.microsoft.com/en-us/library/ff400332(vs.95).aspx "-Eigenschaften für die Unterstützung von Eingabehilfen in der Benutzeroberfläche").
+Weitere Informationen finden Sie [unter Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche](https://msdn.microsoft.com/library/ff400332(vs.95).aspx "Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche").
 
-## <a name="active-listening-mode-alm"></a>Aktiven Empfangsmodus (ALM) ##
-### <a name="entering-alm"></a>Eingeben von ALM ###
-Auf der Xbox lauscht VES nicht ständig die Spracheingabe.  Der Benutzer muss überwacht Aktivmodus explizit mit den Worten eingeben:
+## <a name="active-listening-mode-alm"></a>Aktiver Überwachungsmodus (ALM) ##
+### <a name="entering-alm"></a>Wechseln in Alm ###
+Auf der Xbox lauscht VES nicht ständig auf Spracheingaben.  Der Benutzer muss den aktiven Lesemodus explizit eingeben, indem er Folgendes sagt:
 
-- "Hey Cortana", "Select", oder
-- "Hey Cortana", "Erstellen eines Auswahl"
+- "Hallo Cortana, Select" oder
+- "Hallo Cortana, treffen Sie eine Auswahl"
 
-Es gibt mehrere andere Cortana-Befehle, die auch den Benutzer in aktiven Lauschen nach Abschluss wird z. B. "Hey Cortana, melden Sie sich" oder "Hey Cortana, wechseln Sie Home" zu verlassen. 
+Es gibt mehrere andere Cortana-Befehle, die den Benutzer auch aktiv überwachen, wenn der Abschluss abgeschlossen ist, z. b. "Hey Cortana, Sign in" oder "Hey Cortana, Go Home". 
 
-ALM eingeben, müssen die folgende Auswirkungen:
+Die Eingabe von Alm hat die folgenden Auswirkungen:
 
-- In der oberen rechten Ecke, die dem Benutzer mitteilt, dass sie sagen können, was sie sehen, wird das Cortana-Overlay angezeigt.  Während der Benutzer erweitern, werden auch an diesem Speicherort Ausdruck-Fragmente, die von der Spracherkennung erkannt werden angezeigt.
-- VES analysiert die UIA-Struktur, sucht nach allen umsetzbare-Steuerelementen, den Text in die spracherkennungsgrammatik registriert und startet eine kontinuierliche Lausch-Sitzung.
+- Die Cortana-Überlagerung wird in der oberen rechten Ecke angezeigt, und der Benutzer wird darüber informiert, was Sie sehen.  Während der Benutzer spricht, werden auch Ausdrucks Fragmente, die von der Spracherkennung erkannt werden, an dieser Stelle angezeigt.
+- Ves analysiert die UIA-Struktur, sucht alle handlungsfähigen Steuerelemente, registriert Ihren Text in der sprach Erkennungs Grammatik und startet eine fortlaufende Überwachungs Sitzung.
 
     ![](images/ves_overlay.png)
 
-### <a name="exiting-alm"></a>Beenden von ALM ###
-Das System bleibt in ALM, die während der Benutzer mit der Benutzeroberfläche, über Sprachbefehle interagiert.  Es gibt zwei Möglichkeiten, um ALM zu beenden:
+### <a name="exiting-alm"></a>Alm wird beendet ###
+Das System bleibt in Alm, während der Benutzer mit der Benutzeroberfläche über die Stimme interagiert.  Es gibt zwei Möglichkeiten, Alm zu beenden:
 
-- Benutzer ausdrücklich darauf hinweist, "stop überwacht", oder
-- Ein Timeout tritt auf, wenn es gibt keine positive allgemein anerkannt innerhalb von 17 Sekunden ALM eingeben oder seit der letzten positiven Erkennung
+- Der Benutzer hat explizit Folgendes gesagt: "lauschen Abbrechen", oder
+- Ein Timeout tritt auf, wenn innerhalb von 17 Sekunden nach der Aktivierung von Alm oder seit der letzten positiven Erkennung keine positive Kennung vorhanden ist.
 
 ## <a name="invoking-controls"></a>Aufrufen von Steuerelementen ##
-Im ALM, die der Benutzer interagieren kann, mit der Benutzeroberfläche, über Sprachbefehle.  Wenn die Benutzeroberfläche (mit Name-Eigenschaften, die mit dem Text angezeigt) ordnungsgemäß konfiguriert ist, sollte die Stimme für Aktionen mit, dass eine nahtlose und natürliche-Erlebnis.  Der Benutzer sollte sein nur sagen, was sie auf dem Bildschirm sehen können.
+In Alm kann der Benutzer mithilfe von Voice mit der Benutzeroberfläche interagieren.  Wenn die Benutzeroberfläche ordnungsgemäß konfiguriert ist (mit namens Eigenschaften, die mit dem sichtbaren Text übereinstimmen), sollte die Verwendung von Voice zum Ausführen von Aktionen eine nahtlose, natürliche Oberfläche sein  Der Benutzer sollte in der Lage sein, nur zu sagen, was er auf dem Bildschirm angezeigt wird.
 
-## <a name="overlay-ui-on-xbox"></a>Überlagern Sie die UI für Xbox ##
-Der Name VES leitet für ein Steuerelement möglicherweise anders als die tatsächliche sichtbaren Text auf der Benutzeroberfläche.  Dies liegt möglicherweise aufgrund der `Name` Eigenschaft des Steuerelements oder der angefügte `LabeledBy` Element explizit in eine andere Zeichenfolge festgelegt.  Oder das Steuerelement keine GUI-Text, jedoch nur ein Symbol oder Bild-Element.
+## <a name="overlay-ui-on-xbox"></a>Overlay-Benutzeroberfläche auf Xbox ##
+Der Name des-Steuer Elements, das für ein Steuerelement abgeleitet ist, kann sich von dem tatsächlich sichtbaren Text in der Benutzeroberfläche  Dies kann darauf zurückzuführen sein, dass die `Name`-Eigenschaft des Steuer Elements oder das angefügte `LabeledBy` Element explizit auf eine andere Zeichenfolge festgelegt wird.  Oder das Steuerelement verfügt über keinen GUI-Text, sondern nur über ein Symbol oder Bildelement.
 
-In diesen Fällen benötigen Benutzer eine Möglichkeit festzustellen, was muss gesagt werden, um z. B. ein Steuerelement aufzurufen.  Aus diesem Grund können einmal im aktiv überwacht, Voice-Tipps angezeigt werden davon die Rede "Beschriftungen anzeigen".  Dadurch Voice QuickInfo-Bezeichnungen auf jede umsetzbare Steuerelement angezeigt werden.
+In diesen Fällen benötigen Benutzer eine Möglichkeit, um zu sehen, was zu sagen ist, um ein solches Steuerelement aufzurufen.  Aus diesem Grund können Sie nach dem aktiven lauschen die sprach Tipps anzeigen, indem Sie "Bezeichnungen anzeigen" sagen.  Dies bewirkt, dass Sprech Tip Bezeichnungen oberhalb jedes umsetzbaren Steuer Elements angezeigt werden.
 
-Es gibt ein Limit von 100 Bezeichnungen, so verfügt die Benutzeroberfläche der app besser umsetzbare Steuerelemente als 100 gibt es einige, die keine Stimme Tipp Bezeichnungen angezeigt werden.  Die Bezeichnungen ausgewählt werden in diesem Fall ist nicht deterministisch, wie sie die Struktur und die Zusammensetzung des die aktuelle UI abhängt erster in der UIA-Struktur aufgelistet.
+Es gibt ein Limit von 100 Bezeichnungen. wenn die Benutzeroberfläche der APP mehr handlungsfähige Steuerelemente als 100 hat, gibt es einige, für die keine sprach Tipp Bezeichnungen angezeigt werden.  Die Bezeichnungen, die in diesem Fall ausgewählt werden, sind nicht deterministisch, da Sie von der Struktur und der Komposition der aktuellen Benutzeroberfläche als erste in der UIA-Struktur aufgezählt sind.
 
-Nach der Voice-QuickInfo-Bezeichnungen angezeigt werden, dass es gibt keinen Befehl zum Ausblenden, werden sie sichtbar bleiben, bis einer der folgenden Ereignisse auftreten:
+Wenn die Bezeichnungen der Sprech Tip angezeigt werden, gibt es keinen Befehl, Sie auszublenden. Sie bleiben sichtbar, bis eines der folgenden Ereignisse eintritt:
 
-- der Benutzer ruft ein Steuerelement
-- Benutzer navigiert, Weg von die aktuelle Szene
-- Benutzer angezeigt wird, "Lauschen" stop "
-- Timeout des aktiven Empfangsmodus
+- Benutzer ruft ein Steuerelement auf.
+- der Benutzer navigiert von der aktuellen Szene.
+- der Benutzer sagt: "lauschen nicht mehr"
+- Timeout für aktiven Lesemodus
 
-## <a name="location-of-voice-tip-labels"></a>Position von Bezeichnungen für Voice-Tipp ##
-Voice-QuickInfo-Bezeichnungen werden innerhalb des Steuerelements BoundingRectangle horizontal und vertikal zentriert werden.  Wenn Steuerelemente klein und eng gruppierten sind, können die Bezeichnungen überschneiden sich/werden von anderen Benutzern verborgen und VES versucht, mithilfe von Push übertragen diese Bezeichnungen voneinander entfernt sind, trennen Sie diese, und stellen Sie sicher, sie werden angezeigt.  Dies ist jedoch nicht garantiert, 100 % der Zeit funktioniert.  Bei eine sehr hart umkämpften Benutzeroberfläche wird es vermutlich führen einige Bezeichnungen, die von anderen verdeckt wird. Überprüfen Sie Ihre Benutzeroberfläche mit "Beschriftungen anzeigen" um sicherzustellen, dass ausreichend Speicherplatz für die Sichtbarkeit der Voice-Tipp vorhanden ist.
+## <a name="location-of-voice-tip-labels"></a>Speicherort der Sprech Tip Bezeichnungen ##
+Sprach Tipp Bezeichnungen werden horizontal und vertikal innerhalb des boundingrechteck des Steuer Elements zentriert.  Wenn die Steuerelemente klein und eng gruppiert sind, können sich die Bezeichnungen von anderen überlappen bzw. durch andere verdeckt werden, und Ves versucht, diese Bezeichnungen zu trennen, um Sie zu trennen und sicherzustellen, dass Sie sichtbar sind  Es ist jedoch nicht garantiert, dass 100% der Fälle funktionieren.  Wenn eine stark überfüllte Benutzeroberfläche vorliegt, führt dies wahrscheinlich dazu, dass einige Bezeichnungen von anderen Personen verdeckt werden. Überprüfen Sie Ihre Benutzeroberfläche mit "Bezeichnungen anzeigen", um sicherzustellen, dass ausreichend Platz für die Sichtbarkeit von sprach Tipps vorliegt.
 
 ![](images/ves_labels.png)
 
-## <a name="combo-boxes"></a>Kombinationsfelder ##
-Wenn das Kombinationsfeld für jedes einzelne Element im Kombinationsfeld erweitert wird, ruft eine eigene Stimme QuickInfo-Bezeichnung, und diese werden häufig dazu auf vorhandene Steuerelemente hinter der Dropdown-Liste.  Vermeiden von einem überladen und verwirrend Muddle Bezeichnungen (, in denen werden elementbezeichnungen für Kombinationsfeld-Feld mit den Bezeichnungen der hinter das Kombinationsfeld-Steuerelemente und optional) Wenn das Kombinationsfeld nur die Bezeichnungen erweitert wird, für dessen untergeordnete Elemente angezeigt werden;  Alle anderen Voice QuickInfo-Bezeichnungen werden ausgeblendet.  Der Benutzer kann dann wählen Sie eine der Dropdown-Elemente oder "Schließen" im Kombinationsfeld.
+## <a name="combo-boxes"></a>Kombinations Felder ##
+Wenn ein Kombinations Feld erweitert wird, erhält jedes einzelne Element im Kombinations Feld eine eigene voicetip-Bezeichnung, und häufig werden diese auf der Grundlage vorhandener Steuerelemente hinter der Dropdown Liste angezeigt.  Um zu vermeiden, dass eine Übersichtlichkeit und eine verwirrende Muddle von Bezeichnungen angezeigt werden (wobei Kombinations Feld-Element Bezeichnungen mit den Bezeichnungen der Steuerelemente hinter dem Kombinations Feld gemischt werden), werden nur die Bezeichnungen für die untergeordneten Elemente angezeigt, wenn ein Kombinations Feld erweitert wird.  alle anderen sprach Tipp Bezeichnungen werden ausgeblendet.  Der Benutzer kann dann entweder eines der Dropdown Elemente auswählen oder das Kombinations Feld "Schließen".
 
-- Bezeichnungen in reduzierten Kombinationsfelder angezeigt:
+- Bezeichnungen auf reduzierten Kombinations Feldern:
 
     ![](images/ves_combo_closed.png)
 
-- Bezeichnungen in erweiterten Kombinationsfeld:
+- Beschriftungen im erweiterten Kombinations Feld:
 
     ![](images/ves_combo_open.png)
 
 
-## <a name="scrollable-controls"></a>Bildlauffähigen Steuerelementen ##
-Für bildlauffähigen Steuerelementen werden die Sprach-Tipps für die Bildlauf-Befehle für jeden der Ränder des Steuerelements zentriert werden soll.  Voice-Tipps werden nur angezeigt werden, für den Bildlauf-Anweisungen, die eine Aktion, z. B. wenn ein vertikaler Bildlauf nicht verfügbar ist, "einen Bildlauf nach oben" und "einen Bildlauf nach unten" wird nicht angezeigt wird.  Wenn mehrere der bildlauffähigen Bereiche vorhanden sind verwendet VES Ordnungszahlen zur Unterscheidung zwischen ihnen (z. b. "Führen Sie einen Bildlauf rechten 1", "Scrollen rechten 2" usw.).
+## <a name="scrollable-controls"></a>Scrollbare Steuerelemente ##
+Bei Bild lauffähigen Steuerelementen werden die sprach Tipps für die scrollbefehle auf die einzelnen Ränder des Steuer Elements zentriert.  Sprach Tipps werden nur für die ausführbaren Bild Laufrichtungen angezeigt, z. b. Wenn ein vertikaler Bildlauf nicht verfügbar ist, wird der Bildlauf nach oben und der Bildlauf nach unten nicht angezeigt.  Wenn mehrere Bild lauffähige Bereiche vorhanden sind, werden durch ordinale für die Unterscheidung zwischen Ihnen (z. b. "Scroll Right 1", "Scroll Right 2" usw.).
 
 ![](images/ves_scroll.png) 
 
 ## <a name="disambiguation"></a>Mehrdeutigkeitsvermeidung ##
-Wenn mehrere UI-Elemente den gleichen Namen aufweisen, oder die Spracherkennung, mehrere Kandidaten abgeglichen, wird die VES zur mehrdeutigkeitsvermeidung Modus versetzt.  In diesem Modus Voice-Tipp werden Bezeichnungen angezeigt werden für die Elemente beteiligt, damit der Benutzer das richtige Abonnement auswählen kann. Der Benutzer kann aus dem zur mehrdeutigkeitsvermeidung Modus abbrechen, indem Sie sagen, "Abbrechen".
+Wenn mehrere Benutzeroberflächen Elemente denselben Namen aufweisen oder die Spracherkennung mit mehreren Kandidaten übereinstimmt, wechselt Ves in den disambialisierungsmodus.  In diesem Modus werden voicetip-Bezeichnungen für die beteiligten Elemente angezeigt, sodass der Benutzer das richtige Element auswählen kann. Der Benutzer kann den disambitätsmodus abbrechen, indem er "Abbrechen" sagt.
 
 Zum Beispiel:
 
-- Im aktiven überwacht Modus, bevor Sie zur mehrdeutigkeitsvermeidung; Benutzer sagt, "Bin ich nicht eindeutig":
+- Im aktiven Empfangsmodus, vor der Eindeutigkeit; der Benutzer sagt: "ist ich mehrdeutig":
 
     ![](images/ves_disambig1.png) 
 
-- Beide Schaltflächen übereinstimmen; zur Klärung Schritte:
+- Beide Schaltflächen stimmen überein. Eindeutigkeit gestartet:
 
     ![](images/ves_disambig2.png) 
 
-- Mit Aktion klicken Sie auf, wenn "2 auswählen" ausgewählt wurde:
+- Die Click-Aktion wird angezeigt, wenn "Select 2" ausgewählt wurde:
 
     ![](images/ves_disambig3.png) 
  
-## <a name="sample-ui"></a>Beispiel-UI ##
-Hier ist ein Beispiel für eine XAML-basierte Benutzeroberfläche, AutomationProperties.Name auf verschiedene Weise festlegen:
+## <a name="sample-ui"></a>Beispielbenutzeroberfläche ##
+Im folgenden finden Sie ein Beispiel für eine XAML-basierte Benutzeroberfläche, in der die AutomationProperties.Name auf verschiedene Weise festgelegt wird:
 
     <Page
         x:Class="VESSampleCSharp.MainPage"
@@ -199,26 +199,26 @@ Hier ist ein Beispiel für eine XAML-basierte Benutzeroberfläche, AutomationPro
     </Page>
 
 
-Verwenden das obige Beispiel hier ist wie die Benutzeroberfläche mit und ohne Voice Tipp Bezeichnungen dargestellt wird.
+Das obige Beispiel zeigt, wie die Benutzeroberfläche mit und ohne sprach Tipp Bezeichnungen aussieht.
  
-- Im aktiven überwacht Modus ohne Bezeichnung angezeigt:
+- Im aktiven Empfangsmodus ohne angezeigte Bezeichnungen:
 
     ![](images/ves_alm_nolabels.png) 
 
-- Im aktiven überwacht Modus wird nach dem Benutzer, "Bezeichnungen anzeigen", sagt:
+- Im aktiven Lesemodus, nachdem der Benutzer "Bezeichnungen anzeigen" angezeigt hat:
 
     ![](images/ves_alm_labels.png) 
 
-Im Fall von `button1`, füllt XAML automatisch die `AutomationProperties.Name` Eigenschaft mithilfe von Text aus dem sichtbaren Text-Inhalt des Steuerelements.  Daher ist es eine Stimme QuickInfo-Bezeichnung, obwohl es keine explizite `AutomationProperties.Name` festgelegt.
+Im Fall von `button1`füllt XAML die `AutomationProperties.Name`-Eigenschaft automatisch mit Text aus dem sichtbaren Text Inhalt des Steuer Elements auf.  Aus diesem Grund gibt es auch dann eine Sprech Tip Bezeichnung, wenn kein expliziter `AutomationProperties.Name` festgelegt ist.
 
-Mit `button2`, legen wir explizit den `AutomationProperties.Name` auf einen anderen als den Text des Steuerelements.
+Mit `button2`legen wir die `AutomationProperties.Name` explizit auf einen anderen Wert als den Text des Steuer Elements fest.
 
-Mit `comboBox`, verwendet der `LabeledBy` -Eigenschaft zum Verweisen auf `label1` als Quelle für die Automatisierung `Name`, und klicken Sie in `label1` legen wir die `AutomationProperties.Name` auf eine natürlichere Ausdruck als was auf dem Bildschirm gerendert wird ("Day of Week" eher als "Select Tag der Woche").
+Mit `comboBox`haben wir die Eigenschaft `LabeledBy` verwendet, um als Quelle der Automatisierungs `Name`auf `label1` zu verweisen. in `label1` wir die `AutomationProperties.Name` auf einen natürlicheren Ausdruck festgelegt, der nicht auf dem Bildschirm gerendert wird ("Wochentag" statt "Tag der Woche auswählen").
 
-Schließlich `button3`, VES holt die `Name` aus dem ersten untergeordneten Element seit `button3` selbst verfügt nicht über eine `AutomationProperties.Name` festgelegt.
+Zum Schluss greift mit `button3`die `Name` vom ersten untergeordneten Element ab, da für `button3` selbst kein `AutomationProperties.Name` festgelegt ist.
 
-## <a name="see-also"></a>Siehe auch
-- [Grundlagen der Benutzeroberflächenautomatisierung](https://msdn.microsoft.com/en-us/library/ms753107(v=vs.110).aspx "Grundlagen der Benutzeroberflächenautomatisierung")
-- [Eigenschaften für die Unterstützung von Eingabehilfen in der Benutzeroberfläche](https://msdn.microsoft.com/en-us/library/ff400332(vs.95).aspx "-Eigenschaften für die Unterstützung von Eingabehilfen in der Benutzeroberfläche")
+## <a name="see-also"></a>Weitere Informationen:
+- [Grundlagen der Benutzeroberflächenautomatisierung](https://msdn.microsoft.com/library/ms753107(v=vs.110).aspx "Grundlagen der Benutzeroberflächenautomatisierung")
+- [Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche](https://msdn.microsoft.com/library/ff400332(vs.95).aspx "Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche")
 - [Häufig gestellte Fragen](frequently-asked-questions.md)
 - [UWP auf Xbox One](index.md)

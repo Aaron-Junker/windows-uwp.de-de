@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Video, Planer, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a214288c778505d16707fd64391a9b8cedbbb32
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6178758cd67471d56b1d65e293104e987e81fb9b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260358"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681921"
 ---
 # <a name="show-ads-in-video-content"></a>Anzeigen von Werbung in Videoinhalten
 
@@ -70,7 +70,7 @@ Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürz
     > [!NOTE]
     > Diese Zeile muss im Abschnitt `<head>` nach der Datei „main.js“ platziert werden. Andernfalls tritt bei der Erstellung des Projekts ein Fehler auf.
 
-6.  Fügen Sie der Datei „main.js“ des Projekts Code hinzu, mit dem ein neues **AdScheduler**-Objekt erstellt wird. Übergeben Sie den **MediaPlayer**, mit dem Ihre Videoinhalte gehostet werden. Der Code muss so angeordnet werden, dass er nach [WinJS.UI.processAll](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh440975) ausgeführt wird.
+6.  Fügen Sie der Datei „main.js“ des Projekts Code hinzu, mit dem ein neues **AdScheduler**-Objekt erstellt wird. Übergeben Sie den **MediaPlayer**, mit dem Ihre Videoinhalte gehostet werden. Der Code muss so angeordnet werden, dass er nach [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975) ausgeführt wird.
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 

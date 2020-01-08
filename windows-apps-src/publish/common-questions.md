@@ -4,14 +4,14 @@ title: Häufige Fragen zu Anzeigenkampagnen
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6875f5b06bbd253b7fe80fbc53936fe0dcf1a6b9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c44f93676fd0324ef82ad7b33832bb6653409cda
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597065"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685166"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Häufige Fragen zu Anzeigenkampagnen
 
@@ -37,11 +37,11 @@ Wenn Sie eine der Standardanzeigenvorlagen verwenden, können Sie die Größe, d
 
 ### <a name="where-will-my-ad-appear"></a>Wo erscheint meine Anzeige?
 
-Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemversion Ihrer App entsprechen. Sie können diese Eigenschaften festlegen, wenn Sie Ihre app in den Microsoft Store veröffentlichen. Für „universelle” Kampagnen werden Ihre Anzeigen auch in MSN.com, Outlook.com, Skype und anderen Microsoft-Premium-Eigenschaften angezeigt.
+Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemversion Ihrer App entsprechen. Diese Eigenschaften legen Sie fest, wenn Sie Ihre APP im Microsoft Store veröffentlichen. Für „universelle” Kampagnen werden Ihre Anzeigen auch in MSN.com, Outlook.com, Skype und anderen Microsoft-Premium-Eigenschaften angezeigt.
 
 Anzeigenkampagnen werden derzeit in folgenden Ländern und Regionen unterstützt:
 
-Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Vereinigtes Königreich, Guatemala, Haiti, Honduras, Hongkong, Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vietnam.
+Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Großbritannien, Guatemala, Haiti, Honduras, Hongkong, Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vietnam.
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>Welche Sprachen werden für Anzeigenkampagnen unterstützt?
 
@@ -59,5 +59,5 @@ Wenn Sie nicht warten möchten, bis die Abrechnung erstellt wird, können Sie Ih
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>Wie kann ich eine Kreditkarte löschen oder die Details einer Kreditkarte bearbeiten?
 
-Wechseln Sie zu <http://commerce.microsoft.com>, melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Konto und die erforderlichen Änderungen vorzunehmen.
+Wechseln Sie zu [https://commerce.microsoft.com](https://commerce.microsoft.com), melden Sie sich mit Ihren Microsoft-Konto Anmelde Informationen an, und nehmen Sie die erforderlichen Änderungen vor.
 

@@ -4,15 +4,15 @@ title: Koppeln von Geräten
 description: Einige Geräte müssen gekoppelt werden, bevor sie verwendet werden können. Der Windows.Devices.Enumeration-Namespace unterstützt drei verschiedene Verfahren zum Koppeln von Geräten
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 85d42e69b376e2f3f455e44eb1dce3d41e890971
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1dbf843d9a45cbf31e5ec5c1a538e6e5e2b53ee2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258650"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684685"
 ---
 # <a name="pair-devices"></a>Koppeln von Geräten
 
@@ -20,7 +20,7 @@ ms.locfileid: "74258650"
 
 **Wichtige APIs**
 
-- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Einige Geräte müssen gekoppelt werden, bevor sie verwendet werden können. Der [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-Namespace unterstützt drei verschiedene Verfahren zum Koppeln von Geräten:
 
@@ -46,7 +46,7 @@ Bei einer einfachen Kopplung versucht Ihre Anwendung, das Geräte über die [**W
 
 Zum Durchführen der einfachen Kopplung müssen Sie zuerst das [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt für das betreffende Gerät abrufen. Nach Erhalt dieses Objekts interagieren Sie mit der [**DeviceInformation.Pairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing)-Eigenschaft, bei der es sich um ein [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing)-Objekt handelt. Rufen Sie einfach [**DeviceInformationPairing.PairAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformationpairing.pairasync) auf, um zu versuchen, die Kopplung durchzuführen. Sie müssen das Ergebnis abwarten (**await**), um der App Zeit für den Versuch zu geben, die Kopplungsaktion auszuführen. Das Ergebnis der Kopplungsaktion wird zurückgegeben, und falls keine Fehler zurückgegeben werden, wird das Gerät gekoppelt.
 
-Bei Verwendung der einfachen Kopplung haben Sie außerdem Zugriff auf weitere Informationen zum Kopplungsstatus des Geräts. Beispielsweise kennen Sie den Kopplungsstatus ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.IsPaired)) und wissen, ob das Gerät gekoppelt werden kann ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.CanPair)). Dies sind beides Eigenschaften des [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing)-Objekts. Bei Verwendung der automatischen Kopplung haben Sie nur dann Zugriff auf diese Informationen, wenn Sie das relevante [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt abrufen.
+Bei Verwendung der einfachen Kopplung haben Sie außerdem Zugriff auf weitere Informationen zum Kopplungsstatus des Geräts. Beispielsweise kennen Sie den Kopplungsstatus ([**IsPaired**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.IsPaired)) und wissen, ob das Gerät gekoppelt werden kann ([**CanPair**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.CanPair)). Dies sind beides Eigenschaften des [**DeviceInformationPairing**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.pairing)-Objekts. Bei Verwendung der automatischen Kopplung haben Sie nur dann Zugriff auf diese Informationen, wenn Sie das relevante [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekt abrufen.
 
 ## <a name="custom-pairing"></a>Benutzerdefinierte Kopplung
 

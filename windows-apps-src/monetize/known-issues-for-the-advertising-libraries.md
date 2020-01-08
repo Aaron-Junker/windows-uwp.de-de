@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Bekannte Probleme, Problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 51192e13c63bf3141989cfbf5d9ebd7fbaf13641
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6701ff346f41352a108922f82da82fbf52fd7402
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260245"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685092"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Bekannte Probleme und Informationen zur Problembehandlung von Anzeigen in Apps
 
@@ -46,7 +46,7 @@ Es gibt viele Gründe, warum möglicherweise keine Anzeigen angezeigt werden, ei
 
 * Wenn Sie in der letzten halben Stunde eine neue Anzeigeneinheiten-ID erstellt haben, wird eine Anzeige möglicherweise erst angezeigt, wenn der Server neue Daten durch das System propagiert hat. Vorhandene IDs, die zuvor bereits Anzeigen angezeigt haben, sollten Anzeigen sofort anzeigen.
 
-Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/en-us/windows/support). Wählen Sie auf dieser Seite die Option **kontaktieren Sie uns**.
+Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/windows/support). Wählen Sie auf dieser Seite die Option **kontaktieren Sie uns**.
 
 Sie können auch im [Forum](https://go.microsoft.com/fwlink/?LinkID=401264) eine Frage stellen.
 

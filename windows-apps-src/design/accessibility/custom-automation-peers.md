@@ -6,14 +6,14 @@ label: Custom automation peers
 template: detail.hbs
 ms.date: 07/13/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f3f409116cc904d9cef5bc3960b90225ed3b5721
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e82a48b774913279ada67adc7e2ce1c5c75d0b31
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257767"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683823"
 ---
 # <a name="custom-automation-peers"></a>Benutzerdefinierte Automatisierungs-Peers  
 
@@ -112,7 +112,7 @@ In der Regel wird Benutzeroberflächenautomatisierungs-Client-Code, der auf eine
 <span id="ONCREATEAUTOMATIONPEER"/>
 
 ## <a name="oncreateautomationpeer"></a>OnCreateAutomationPeer  
-Alle Klassen, die von [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) abgeleitet werden, enthalten die geschützte virtuelle Methode [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer). Die Objektinitialisierungssequenz für Automatisierungspeers ruft **OnCreateAutomationPeer** auf, um das Automatisierungspeerobjekt für jedes Steuerelement abzurufen und so einen Benutzeroberflächenautomatisierungs-Baum zur Laufzeitverwendung zu erstellen. Der Benutzeroberflächenautomatisierungs-Code kann den Peer verwenden, um Informationen über die Merkmale und Features eines Steuerelements abzurufen und mithilfe der Steuerelementmuster die interaktive Verwendung des Steuerelements zu simulieren. Ein benutzerdefiniertes Steuerelement, das Automatisierung unterstützt, muss **OnCreateAutomationPeer** überschreiben und eine Instanz der Klasse zurückgeben, die von [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) abgeleitet wird. Wenn beispielsweise ein benutzerdefiniertes Steuerelement von der Klasse [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) abgeleitet wird, sollte das von **OnCreateAutomationPeer** zurückgegebene Objekt von [**ButtonBaseAutomationPeer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.peers.buttonbaseautomationpeer) abgeleitet werden.
+Alle Klassen, die von [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) abgeleitet werden, enthalten die geschützte virtuelle Methode [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer). Die Objektinitialisierungssequenz für Automatisierungspeers ruft **OnCreateAutomationPeer** auf, um das Automatisierungspeerobjekt für jedes Steuerelement abzurufen und so einen Benutzeroberflächenautomatisierungs-Baum zur Laufzeitverwendung zu erstellen. Der Benutzeroberflächenautomatisierungs-Code kann den Peer verwenden, um Informationen über die Merkmale und Features eines Steuerelements abzurufen und mithilfe der Steuerelementmuster die interaktive Verwendung des Steuerelements zu simulieren. Ein benutzerdefiniertes Steuerelement, das Automatisierung unterstützt, muss **OnCreateAutomationPeer** überschreiben und eine Instanz der Klasse zurückgeben, die von [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) abgeleitet wird. Wenn beispielsweise ein benutzerdefiniertes Steuerelement von der Klasse [**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) abgeleitet wird, sollte das von **OnCreateAutomationPeer** zurückgegebene Objekt von [**ButtonBaseAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.buttonbaseautomationpeer) abgeleitet werden.
 
 Wenn Sie eine benutzerdefinierte Steuerelementklasse schreiben und außerdem einen neuen Automatisierungspeer bereitstellen möchten, sollten Sie die [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer)-Methode für das benutzerdefinierte Steuerelement überschreiben, sodass eine neue Instanz Ihres Peers zurückgegeben wird. Die Peerklasse muss direkt oder indirekt von [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) abgeleitet werden.
 
@@ -536,7 +536,7 @@ Darüber hinaus sollten Peers mit Ausnahmen, die sie über die Peerunterstützun
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Verwandte Themen  
+## <a name="related-topics"></a>Zugehörige Themen  
 * [Bedienungshilfen](accessibility.md)
 * [XAML-Barrierefreiheits Beispiel](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
 * [**FrameworkElementAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer)

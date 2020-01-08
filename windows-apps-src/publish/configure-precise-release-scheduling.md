@@ -1,86 +1,324 @@
 ---
-Description: Sie können das genaue Datum und die Uhrzeit festlegen, zu der Ihre APP im Store verfügbar werden soll, sodass Sie mehr Flexibilität und Daten für verschiedene Märkte anpassen können.
-title: Genaue Releaseplanung konfigurieren
+Description: Sie können das exakte Datum und die exakte Uhrzeit festlegen, an dem bzw. zu der Ihre App im Store verfügbar werden soll. Damit haben Sie mehr Flexibilität und die Möglichkeit, das Datum für verschiedene Märkte anzupassen.
+title: Konfigurieren des genauen Veröffentlichungszeitplans
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, Zeitplan, Veröffentlichungsdatum, Datumsangaben, starten
+keywords: Windows 10, UWP, Zeitplan, Veröffentlichung, Datum, starten
 ms.localizationpriority: medium
-ms.openlocfilehash: ec9ee00aaa350fc48185cc6328674ac2d8f62ea5
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: eebd98d8e1ce39ef8d9876ab4749bcc76012f9fa
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690353"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685139"
 ---
-# <a name="configure-precise-release-scheduling"></a>Genaue Releaseplanung konfigurieren
+# <a name="configure-precise-release-scheduling"></a>Konfigurieren des genauen Veröffentlichungszeitplans
 
-Im Abschnitt " **Zeitplan** " auf der Seite " [Preise und Verfügbarkeit](set-app-pricing-and-availability.md) " können Sie das genaue Datum und die Uhrzeit festlegen, zu der Ihre APP im Store verfügbar sein soll. Dadurch erhalten Sie mehr Flexibilität und können Datumsangaben für verschiedene Märkte anpassen.
+Im Abschnitt **Zeitplan** auf der Seite [Preise und Verfügbarkeit](set-app-pricing-and-availability.md) können Sie das genaue Datum und die genaue Uhrzeit festlegen, an dem bzw. zu der Ihre App im Store verfügbar gemacht werden soll, was Ihnen mehr Flexibilität und das Anpassen des Datums für verschiedene Märkte ermöglicht.
 
 > [!NOTE]
-> Obwohl sich dieses Thema auf apps bezieht, verwendet die Releaseplanung für Add-on-Übermittlungen denselben Prozess.
+> Obwohl dieses Thema auf Apps verweist, verwendet der Veröffentlichungszeitplan für die Add-On-Übermittlungen das gleiche Verfahren.
 
-Außerdem können Sie ein Datum festlegen, an dem das Produkt nicht mehr im Store verfügbar sein soll. Beachten Sie, dass das Produkt nicht mehr über das Suchen oder Durchsuchen im Store gefunden werden kann, aber jeder Kunde mit einem direkten Link kann die Store-Auflistung des Produkts sehen. Sie können Sie nur herunterladen, wenn Sie das Produkt bereits besitzen, oder wenn Sie über einen [Werbe Code](generate-promotional-codes.md) verfügen und ein Windows 10-Gerät verwenden.
+Sie können darüber hinaus ein Datum festlegen, ab dem das Produkt nicht mehr im Store verfügbar sein soll. Beachten Sie, dass dies bedeutet, dass das Produkt nicht mehr im Store durch Suchen oder beim Surfen gefunden werden kann. Aber alle Kunden mit einem direkten Link können den Store-Eintrag des Produkts anzeigen. Sie können es nur herunterladen, wenn sie das Produkt bereits besitzen oder einen [Werbecode](generate-promotional-codes.md) haben und ein Windows 10-Gerät verwenden.
 
-Standardmäßig (es sei denn, Sie haben eine der Optionen **diese app verfügbar, aber nicht in den Store** -Optionen im Bereich " [Sichtbarkeit](choose-visibility-options.md#discoverability) " ausgewählt), ist Ihre APP für Kunden verfügbar, sobald Sie die Zertifizierung übergibt und die Veröffentlichung abzuschließen. ESS. Um andere Datumsangaben auszuwählen, wählen Sie **Optionen anzeigen** aus, um diesen Abschnitt zu erweitern.
+Standardmäßig (es sei denn, Sie haben eine der Optionen für **Make this app available but not discoverable in the Store** im Abschnitt [Sichtbarkeit](choose-visibility-options.md#discoverability) ausgewählt) wird Ihre App für Kunden zur Verfügung gestellt, sobald sie die Zertifizierung bestanden und den Veröffentlichungsprozess abgeschlossen hat. Um ein anderes Datum auszuwählen, wählen Sie **Optionen anzeigen**, um diesen Abschnitt zu erweitern.
 
-Beachten Sie, dass Sie keine Daten im Zeit **Plan** Bereich konfigurieren können, wenn Sie eine der Optionen zum **Bereitstellen dieser app verfügbar, aber nicht auffallen in den Speicher** Optionen im [Sichtbarkeits](choose-visibility-options.md#discoverability) Abschnitt ausgewählt haben, da Ihre APP nicht freigegeben werden kann. Kunden, daher gibt es kein Veröffentlichungsdatum, das konfiguriert werden kann.
+Beachten Sie, dass Sie Datumsangaben im Abschnitt **Zeitplan** nicht konfigurieren können, wenn Sie eine der Optionen für **Make this app available but not discoverable in the Store** im Abschnitt [Sichtbarkeit](choose-visibility-options.md#discoverability) ausgewählt haben, da ihre App nicht für Kunden veröffentlicht wird. Daher muss kein Veröffentlichungsdatum konfiguriert werden.
 
 > [!IMPORTANT]
-> Die Datumsangaben, die Sie im Abschnitt Zeitplan angeben, gelten nur für Kunden unter Windows 10.
+> Das im Abschnitt "Zeitplan" angegebene Datum gilt nur für Kunden unter Windows 10.
 >
 >Wenn Ihre zuvor veröffentlichte App frühere Betriebssystemversionen unterstützt, werden alle von Ihnen ausgewählten **Erfassungs** Datumsangaben nicht für diese Kunden angewendet. Sie können die APP weiterhin abrufen (es sei denn, Sie übermitteln ein Update mit einer neuen Auswahl im Bereich " [Sichtbarkeit](choose-visibility-options.md#discoverability) ", oder wenn Sie auf der Seite " **App-Übersicht** " die Option "App nicht **verfügbar** " auswählen).
 
+## <a name="base-schedule"></a>Basiszeitplan
 
-## <a name="base-schedule"></a>Basis Zeitplan
+Die für den Basiszeitplan getroffene Auswahl gilt für alle Märkte, in denen Ihre App verfügbar ist, es sei denn, Sie fügen später ein Datum für bestimmte Märkte (oder Marktgruppen) durch die Auswahl von [Customize for specific markets](#customize-the-schedule-for-specific-markets) hinzu.
 
-Die Auswahl, die Sie für den Basis Zeitplan treffen, gilt für alle Märkte, in denen Ihre app verfügbar ist, es sei denn, Sie fügen später Datumsangaben für bestimmte Märkte (oder Markt Gruppen) hinzu, indem Sie [für bestimmte Märkte anpassen](#customize-the-schedule-for-specific-markets)auswählen.
+Sie sehen hier zwei Optionen: **Release** und **Stop acquisition**. 
 
-Hier werden zwei Optionen angezeigt: **Release** und **Beendigung des Erwerbs**. 
+## <a name="release"></a>Version
 
-## <a name="release"></a>Release
-
-In der **Dropdown** -Dropdown-Datei können Sie festlegen, wann Ihre APP im Store verfügbar sein soll. Dies bedeutet, dass die APP im Store durchsuchen oder durchsuchen sichtbar ist und dass Kunden ihre Store-Auflistung anzeigen und die APP erwerben können.
+In der Dropdownliste **Release** können Sie festlegen, wann Ihre App im Store verfügbar sein soll. Dies bedeutet, dass die App im Store durch Suchen oder beim Surfen gefunden werden kann und dass Kunden den Store-Eintrag anzeigen und die App erwerben können.
 
 >[!NOTE]
-> Nachdem Ihre App veröffentlicht wurde und im Store verfügbar ist, können Sie kein **Veröffentlichungs** Datum mehr auswählen (da die APP bereits freigegeben wurde).
+> Nachdem Ihre App veröffentlicht und im Store verfügbar gemacht wurde, können Sie kein Datum für **Release** mehr auswählen (da die App bereits veröffentlicht worden ist).
 
-Hier sind die Optionen aufgeführt, die Sie für den **releasezeitplan** eines Produkts konfigurieren können:
-- **so bald wie möglich**: das Produkt wird veröffentlicht, sobald es zertifiziert und veröffentlicht wurde. Dies ist die Standardoption.
-- **an**: das Produkt wird am ausgewählten Zeitpunkt (Datum und Uhrzeit) veröffentlicht. Außerdem haben Sie zwei Möglichkeiten:
-   - **UTC**: die Zeit, die Sie auswählen, wird als UTC-Zeit (Universal koordinierte Zeit) verwendet, sodass die APP gleichzeitig zur gleichen Zeit veröffentlicht wird.
-   - **Lokal**: die ausgewählte Zeit wird in jeder mit einem Markt verknüpften Zeitzone verwendet. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone enthalten, nur eine Zeitzone in diesem Markt verwendet wird. Für den USA wird die Zeitzone Eastern verwendet. Eine umfassende Liste der Zeitzonen wird weiter unten auf dieser Seite angezeigt.)
-- **nicht geplant**: die APP ist im Store nicht verfügbar. Wenn Sie diese Option auswählen, können Sie die APP später im Store verfügbar machen, indem Sie eine neue Übermittlung erstellen und eine der anderen Optionen auswählen.
+Hier sind die Optionen, die Sie für den **Releasezeitplan** eines Produkts konfigurieren können:
+- **so bald wie möglich**: Das Produkt wird sofort nach der Zertifizierung und Veröffentlichung verfügbar gemacht. Dies ist die Standardoption.
+- **at**: Das Produkt wird am ausgewählten Datum und zur ausgewählten Uhrzeit verfügbar gemacht. Ihnen stehen zwei zusätzliche Optionen zur Auswahl:
+   - **UTC**: Die ausgewählte Zeit ist UTC-Zeit (Universal Coordinated Time, Koordinierte Weltzeit), damit die App überall zur gleichen Zeit verfügbar gemacht wird.
+   - **Lokal**: Die ausgewählte Zeit ist die in jeder Zeitzone für einen Markt verwendete Uhrzeit. (Beachten Sie, dass für Märkte, die mehr als eine Zeitzone umfassen, nur eine Zeitzone in diesem Markt verwendet wird. Für den USA wird die Zeitzone Eastern verwendet. Eine umfassende Liste der Zeitzonen wird weiter unten auf dieser Seite angezeigt.)
+- **nicht geplant**: Die App wird nicht im Store verfügbar sein. Wenn Sie diese Option auswählen, können Sie die App im Store später zur Verfügung stellen, indem Sie eine neue Übermittlung erstellen und eine der anderen Optionen auswählen.
 
+## <a name="stop-acquisition"></a>Beenden des Erwerbs
 
-## <a name="stop-acquisition"></a>Erwerb beendet
+Im Dropdownmenü **Stop acquisition** können Sie ein Datum und eine Uhrzeit festlegen, an dem bzw. zu der neue Kunden die App nicht mehr im Store erwerben oder ihren Eintrag anzeigen dürfen. Dies kann nützlich sein, wenn Sie präzise steuern möchten, wann eine App neuen Kunden nicht mehr angeboten wird, z. B. wenn Sie die Verfügbarkeit zwischen mehr als einer Ihrer Apps koordinieren.
 
-In der Dropdown Liste für das **Beenden der Erfassung** können Sie ein Datum und eine Uhrzeit festlegen, an denen Sie verhindern können, dass neue Kunden Sie aus dem Store abrufen oder deren Liste ermitteln können. Dies kann hilfreich sein, wenn Sie genau steuern möchten, wann eine APP neuen Kunden nicht mehr angeboten wird, z. b. Wenn Sie die Verfügbarkeit zwischen mehr als einer Ihrer Apps koordinieren.
+Die Standardeinstellung für **Stop acquisition** ist "Never". Wählen Sie zum Ändern in der Dropdownliste **at** aus, und geben Sie wie oben beschrieben Datum und Uhrzeit ein. Am ausgewählten Datum und zur ausgewählten Uhrzeit können Kunden die App nicht mehr erwerben.
 
-Standard **mäßig ist die Einstellung für** den Abruf Vorgang auf nie festgelegt. Um dies zu ändern, wählen Sie in der Dropdown-Dropdown Option **in** aus, und geben Sie wie oben beschrieben ein Datum und eine Uhrzeit an Wenn Sie das Datum und die Uhrzeit auswählen, können Kunden die APP nicht mehr erwerben.
-
-Es ist wichtig zu verstehen, dass diese Option die gleichen Auswirkungen hat wie das Auswählen der sichtbaren APP, die im Bereich " [Sichtbarkeit](choose-visibility-options.md#discoverability) " **aber nicht verfügbar** ist  **auflisten, aber Sie können Sie nur herunterladen, wenn Sie zuvor das Produkt besaßen, oder einen Werbe Code haben und ein Windows 10-Gerät verwenden.** Um den neuen Kunden eine APP vollständig zu beenden, klicken Sie auf der Seite App-Übersicht auf **App nicht verfügbar machen** . Weitere Informationen finden Sie unter [Entfernen einer App aus dem Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+Es ist wichtig zu verstehen, dass diese Option die gleichen Auswirkungen hat wie das auswählen, dass **diese APP erkennbar** ist, aber im [Sichtbarkeits](choose-visibility-options.md#discoverability) Abschnitt nicht verfügbar ist, und die Auswahl von **Übernahme aufheben: jeder Kunde mit einem direkten Link kann die Store-Auflistung des Produkts anzeigen, aber Sie kann nur heruntergeladen werden, wenn Sie zuvor das Produkt besaßen, oder ein Windows 10-Gerät verwendet wird.** Wenn Sie eine App überhaupt nicht mehr für Kunden anbieten möchten, klicken Sie in der App-Übersicht auf **Make app unavailable**. Weitere Informationen finden Sie unter [Entfernen einer App aus dem Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 > [!TIP]
-> Wenn Sie ein Datum auswählen, an dem der **Erwerb beendet**werden soll, und später entscheiden, dass Sie die APP wieder verfügbar machen möchten, können Sie eine neue Übermittlung erstellen und die **Beendigung** des Abrufs wieder in **nie**ändern. Die APP wird wieder verfügbar, nachdem die aktualisierte Übermittlung veröffentlicht wurde.
+> Wenn Sie ein Datum auswählen, um **den Erwerb zu beenden**, und später feststellen, dass Sie die App wieder verfügbar machen möchten, können Sie eine neue Übermittlung erstellen und für **Stop acquisition** wieder **Never** festlegen. Die App wird wieder verfügbar, nachdem Ihre aktualisierte Übermittlung veröffentlicht wurde.
 
 ## <a name="customize-the-schedule-for-specific-markets"></a>Anpassen des Zeitplans für bestimmte Märkte 
 
-Standardmäßig gelten die oben ausgewählten Optionen für alle Märkte, in denen Ihre APP angeboten wird. Um den Preis für bestimmte Märkte anzupassen, klicken Sie auf **für bestimmte Märkte anpassen**. Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem alle Märkte aufgelistet werden, in denen Sie Ihre APP zur Verfügung stellen. Wenn Sie Märkte im Abschnitt " [Märkte](define-pricing-and-market-selection.md) " ausgeschlossen haben, werden diese Märkte nicht angezeigt. 
+Die oben ausgewählten Optionen gelten standardmäßig für alle Märkte, in denen Ihre App angeboten wird. Wenn Sie den Preis für die einzelnen Märkte anpassen möchten, klicken Sie auf **Customize for specific markets**. Das Popupfenster **Market selection** wird mit allen Märkten angezeigt, in denen Sie Ihre App verfügbar machen möchten. Wenn Sie Märkte im Abschnitt [Märkte](define-pricing-and-market-selection.md) ausgeschlossen haben, werden diese Märkte hier nicht angezeigt. 
 
-Um einen Zeitplan für einen Markt hinzuzufügen, wählen Sie ihn aus, und klicken Sie auf **Speichern**. Anschließend werden die gleichen **Freigabe** -und **Erfassungs** Optionen angezeigt, die oben beschrieben werden, aber die von Ihnen vorgestellte Auswahl gilt nur für diesen Markt.
+Um einen Zeitplan für einen Markt hinzuzufügen, wählen Sie ihn aus, und klicken Sie auf **Speichern**. Sie sehen dann die gleichen Optionen **Release** und **Stop acquisition** wie oben beschrieben, aber die getroffene Auswahl wird nur auf diesen Markt angewendet.
 
-Um einen Zeitplan hinzuzufügen, der auf mehrere Märkte angewendet wird, erstellen Sie eine *Marktgruppe*. Wählen Sie hierzu die Märkte aus, die Sie einschließen möchten, und geben Sie dann einen Namen für die Gruppe ein. (Dieser Name dient nur zu Ihrer Referenz und ist für keine Kunden sichtbar.) Wenn Sie z. b. eine Marktgruppe für Nordamerika erstellen möchten, können Sie " **Kanada**", " **Mexiko**" und " **USA**" auswählen und **Nordamerika** oder einen anderen von Ihnen gewählten Namen benennen. Wenn Sie mit dem Erstellen Ihrer Marktgruppe fertig sind, klicken Sie auf **Speichern**. Anschließend werden die gleichen **Freigabe** -und **Erfassungs** Optionen angezeigt, die oben beschrieben werden, aber die von Ihnen vorgestellte Auswahl gilt nur für diese Marktgruppe.
+Um einen Zeitplan hinzuzufügen, der für mehrere Märkte gilt, erstellen Sie eine *Marktgruppe*. Dazu wählen Sie die Märkte aus, die Sie aufnehmen möchten, und geben einen Namen für die Gruppe ein. (Dieser Name dient nur zu Referenzzwecken und ist nicht für alle Kunden sichtbar.) Beispiel: Wenn Sie eine Marktgruppe für Nordamerika erstellen möchten, können Sie **Kanada**, **Mexiko** und **USA** auswählen und sie **Nordamerika** nennen oder einen anderen Namen auswählen. Wenn Sie Ihre Marktgruppe erstellt haben, klicken Sie auf **Speichern**. Sie sehen dann die gleichen Optionen **Release** und **Stop acquisition** wie oben beschrieben, aber die getroffene Auswahl wird nur auf diese Marktgruppe angewendet.
 
-Wenn Sie einen benutzerdefinierten Zeitplan für einen zusätzlichen Markt oder eine zusätzliche Marktgruppe hinzufügen möchten, klicken Sie einfach auf **für bestimmte Märkte anpassen** , und wiederholen Sie diese Schritte. Um die in einer Marktgruppe enthaltenen Märkte zu ändern, wählen Sie den Namen aus. Um den benutzerdefinierten Zeitplan für eine Marktgruppe (oder einen einzelnen Markt) zu entfernen, klicken Sie auf **Entfernen**.
+Um einen benutzerdefinierten Zeitplan für einen zusätzlichen Markt oder eine weitere Marktgruppe hinzuzufügen, klicken Sie einfach erneut auf **Customize for specific markets**, und wiederholen Sie diese Schritte. Wählen Sie zum Ändern der in einer Marktgruppe enthaltenen Märkte den Namen aus. Um den benutzerdefinierten Zeitplan für eine Marktgruppe (oder einen einzelnen Markt) zu entfernen, klicken Sie auf **Entfernen**.
 
 > [!NOTE]
-> Ein Markt darf nicht mehr als einer der Markt Gruppen angehören, die Sie im Abschnitt " **Zeitplan** " verwenden. 
+> Ein Markt kann nicht zu mehr als einer der Marktgruppen gehören, die Sie im Abschnitt **Zeitplan** verwenden. 
 
 ## <a name="global-time-zones"></a>Globale Zeitzonen
 
 Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zeitzonen auf den einzelnen Märkten verwendet werden. wenn ihre Übermittlung z. b. die lokale Zeit (z. b. das Release um 1Am lokal) verwendet, können Sie herausfinden, welche Zeit auf den einzelnen Märkten veröffentlicht wird. Dies ist besonders hilfreich bei Märkten, die mehr als einmal z haben. eines, z. b. Kanada.
 
-<a name="market--time-zone"></a>Markt: Zeitzone
-==================
-Afghanistan: (UTC + 04:30) Kabul Albanien: (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb Algerien: (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb American Samoa: (UTC + 13:00) Samoa Andorra: (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb Angola: (UTC + 01:00) West Central Afrika Anguilla: (UTC-04:00) Atlantik-Zeit (Kanada) Antarktis: (UTC + 12:00) Auckland, Wellington Antigua und Barbuda: (UTC-04:00) Atlantik-Zeit (Kanada) Argentinien: (UTC-03:00) Stadt von Buenos Aires Armenien: (UTC + 04:00) Abu Dhabi, Muscat Aruba: ( UTC-04:00-Atlantik-Zeit (Kanada) Australien: (UTC + 10:00) Canberra, Melbourne, Sydney Österreich: (UTC + 01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien Aserbaidschan: (UTC + 04:00) Baku Bahamas, The: (UTC-05:00) Eastern Time (USA & Kanada) Bahrain: (UTC + 04:00) Abu Dhabi, Muscat Bangladesch: (UTC + 06:00) Dhaka Barbados: (UTC-04:00) Atlantik-Zeit (Kanada) Belarus: (UTC + 03:00) Minsk Belgien: (UTC + 01:00) Brüssel, Kopenhagen, Madrid, Paris Belize: (UTC-06:00) Central Time (USA & Kanada) Benin: (UTC + 01:00) USA, Westen-Mitte Afrika: (UTC-04:00) Atlantik-Zeit (Kanada) Bhutan: (UTC + 06:00) Dhaka Bolivarian Republik Venezuela: (UTC-04:00) Caracas Bolivien: (UTC-04:00) Georgetown, La Paz, Manaus, San Juan Bonaire, St Eustatius und Saba: (UTC-04:00) Atlantik-Zeit (Kanada) Bosnien und Herzegowina: (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb Botswana: (UTC + 01:00) West-Zentralafrika Bouvet-Insel: (UTC + 00:00) Monrovia, Reykjavik Brasilien: (UTC-03:00) Brasilien, Britisches Territorium: (UTC + 06:00) Dhaka britische Jungferninseln: (UTC-04:00) Atlantik-Zeit (Kanada) Brunei: (UTC + 08:00) unkutsk Bulgarien: (UTC + 02:00) Chisinau Burkina Faso: (UTC + 00:00) Monrovia, Reykjavik Burundi: (UTC + 02:00) Harare, Pretoria CÃ ́te Ivoire: (UTC + 00:00) Monrovia, Reykjavik Kambodscha: (UTC + 07:00) Bangkok, Hanoi, Jakarta Kamerun: (UTC + 01:00) West-Zentralafrika, Kanada: (UTC-05:00) Eastern Time (USA & Kanada) Kap Verde: (UTC-01:00) Cabo Verde ist.
-Cayman Islands: (UTC-05:00) Eastern Time (US & Canada) Central African Republic: (UTC+01:00) West Central Africa Chad: (UTC+01:00) West Central Africa Chile: (UTC-04:00) Santiago China: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi Christmas Island: (UTC+07:00) Krasnoyarsk Cocos (Keeling) Islands: (UTC+06:30) Yangon (Rangoon) Colombia: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Comoros: (UTC+03:00) Nairobi Congo: (UTC+01:00) West Central Africa Congo (DRC): (UTC+01:00) West Central Africa Cook Islands: (UTC-10:00) Hawaii Costa Rica: (UTC-06:00) Central Time (US & Canada) Croatia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb CuraÃ§ao: (UTC-04:00) Cuiaba Cyprus: (UTC+02:00) Chisinau Czech Republic: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Denmark: (UTC+01:00) Brussels, Copenhagen, Madrid, Paris Djibouti: (UTC+03:00) Nairobi Dominica: (UTC-04:00) Atlantic Time (Canada) Dominican Republic: (UTC-04:00) Atlantic Time (Canada) Ecuador: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Egypt: (UTC+02:00) Chisinau El Salvador: (UTC-06:00) Central Time (US & Canada) Equatorial Guinea: (UTC+01:00) West Central Africa Eritrea: (UTC+03:00) Nairobi Estonia: (UTC+02:00) Chisinau Ethiopia: (UTC+03:00) Nairobi Falkland Islands (Islas Malvinas): (UTC-04:00) Santiago Faroe Islands: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Fiji: (UTC+12:00) Fiji Finland: (UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius France: (UTC+01:00) Brussels, Copenhagen, Madrid, Paris French Guiana: (UTC-03:00) Cayenne, Fortaleza French Polynesia: (UTC-10:00) Hawaii French Southern and Antarctic Lands: (UTC+05:00) Ashgabat, Tashkent Gabon: (UTC+01:00) West Central Africa Gambia, The: (UTC+00:00) Monrovia, Reykjavik Georgia: (UTC-05:00) Eastern Time (US & Canada) Germany: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Ghana: (UTC+00:00) Monrovia, Reykjavik Gibraltar: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Greece: (UTC+02:00) Athens, Bucharest Greenland: (UTC+00:00) Monrovia, Reykjavik Grenada: (UTC-04:00) Atlantic Time (Canada) Guadeloupe: (UTC-04:00) Atlantic Time (Canada) Guam: (UTC+10:00) Guam, Port Moresby Guatemala: (UTC-06:00) Central Time (US & Canada) Guernsey: (UTC+00:00) Monrovia, Reykjavik Guinea: (UTC+00:00) Monrovia, Reykjavik Guinea-Bissau: (UTC+00:00) Monrovia, Reykjavik Guyana: (UTC-04:00) Atlantic Time (Canada) Haiti: (UTC-05:00) Eastern Time (US & Canada) Heard Island and McDonald Islands: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Holy See (Vatican City): (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Honduras: (UTC-06:00) Central Time (US & Canada) Hong Kong SAR: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi Hungary: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Iceland: (UTC+00:00) Monrovia, Reykjavik India: (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi Indonesia: (UTC+07:00) Bangkok, Hanoi, Jakarta Iraq: (UTC+04:00) Abu Dhabi, Muscat Ireland: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Israel: (UTC+02:00) Jerusalem Italy: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Jamaica: (UTC-05:00) Eastern Time (US & Canada) Japan: (UTC+09:00) Osaka, Sapporo, Tokyo Jersey: (UTC+00:00) Monrovia, Reykjavik Jordan: (UTC+02:00) Chisinau Kazakhstan: (UTC+05:00) Ashgabat, Tashkent Kenya: (UTC+03:00) Nairobi Kiribati: (UTC+14:00) Kiritimati Island Korea: (UTC+09:00) Seoul Kuwait: (UTC+04:00) Abu Dhabi, Muscat Kyrgyzstan: (UTC+06:00) Astana Laos: (UTC+07:00) Bangkok, Hanoi, Jakarta Latvia: (UTC+02:00) Chisinau Lebanon: (UTC+02:00) Chisinau Lesotho: (UTC+02:00) Harare, Pretoria Liberia: (UTC+00:00) Monrovia, Reykjavik Libya: (UTC+02:00) Chisinau Liechtenstein: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Lithuania: (UTC+02:00) Chisinau Luxembourg: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Macao SAR: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi Macedonia, FYROM: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Madagascar: (UTC+03:00) Nairobi Malawi: (UTC+02:00) Harare, Pretoria Malaysia: (UTC+08:00) Kuala Lumpur, Singapore Maldives: (UTC+05:00) Ashgabat, Tashkent Mali: (UTC+00:00) Monrovia, Reykjavik Malta: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Man, Isle of: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Marshall Islands: (UTC+12:00) Petropavlovsk-Kamchatsky - Old Martinique: (UTC-04:00) Atlantic Time (Canada) Mauritania: (UTC+00:00) Monrovia, Reykjavik Mauritius: (UTC+04:00) Port Louis Mayotte: (UTC+03:00) Nairobi Mexico: (UTC-06:00) Guadalajara, Mexico City, Monterrey Micronesia: (UTC+10:00) Guam, Port Moresby Moldova: (UTC+02:00) Chisinau Monaco: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Mongolia: (UTC+07:00) Krasnoyarsk Montenegro: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Montserrat: (UTC-04:00) Atlantic Time (Canada) Morocco: (UTC+01:00) Casablanca Mozambique: (UTC+02:00) Harare, Pretoria Myanmar: (UTC+06:30) Yangon (Rangoon) Namibia: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Nauru: (UTC+12:00) Petropavlovsk-Kamchatsky - Old Nepal: (UTC+05:45) Kathmandu Netherlands: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna New Caledonia: (UTC+11:00) Solomon Is., New Caledonia New Zealand: (UTC+12:00) Auckland, Wellington Nicaragua: (UTC-06:00) Central Time (US & Canada) Niger: (UTC+01:00) West Central Africa Nigeria: (UTC+01:00) West Central Africa Niue: (UTC+13:00) Samoa Norfolk Island: (UTC+11:00) Solomon Is., New Caledonia Northern Mariana Islands: (UTC+10:00) Guam, Port Moresby Norway: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Oman: (UTC+04:00) Abu Dhabi, Muscat Pakistan: (UTC+05:00) Islamabad, Karachi Palau: (UTC+09:00) Osaka, Sapporo, Tokyo Palestinian Authority: (UTC+02:00) Chisinau Panama: (UTC-05:00) Eastern Time (US & Canada) Papua New Guinea: (UTC+10:00) Vladivostok Paraguay: (UTC-04:00) Asuncion Peru: (UTC-05:00) Bogota, Lima, Quito, Rio Branco Philippines: (UTC+08:00) Kuala Lumpur, Singapore Pitcairn Islands: (UTC-08:00) Pacific Time (US & Canada) Poland: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Portugal: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Qatar: (UTC+04:00) Abu Dhabi, Muscat Reunion: (UTC+04:00) Port Louis Romania: (UTC+02:00) Chisinau ROW: (UTC-07:00) Mountain Time (US & Canada) Russia: (UTC+03:00) Moscow, St. Petersburg Rwanda: (UTC+02:00) Harare, Pretoria SÃ£o TomÃ© and PrÃ­ncipe: (UTC+00:00) Monrovia, Reykjavik Saint BarthÃ©lemy: (UTC+04:00) Yerevan Saint Helena, Ascension and Tristan da Cunha: (UTC+00:00) Dublin, Edinburgh, Lisbon, London Saint Kitts and Nevis: (UTC-04:00) Atlantic Time (Canada) Saint Lucia: (UTC-04:00) Atlantic Time (Canada) Saint Martin (French Part): (UTC-04:00) Atlantic Time (Canada) Saint Pierre and Miquelon: (UTC-02:00) Mid-Atlantic - Old Saint Vincent and the Grenadines: (UTC-04:00) Atlantic Time (Canada) Samoa: (UTC+13:00) Samoa San Marino: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Saudi Arabia: (UTC+03:00) Kuwait, Riyadh Senegal: (UTC+00:00) Monrovia, Reykjavik Serbia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Seychelles: (UTC+04:00) Abu Dhabi, Muscat Sierra Leone: (UTC+00:00) Monrovia, Reykjavik Singapore: (UTC+08:00) Kuala Lumpur, Singapore Sint Maarten (Dutch Part): (UTC-04:00) Atlantic Time (Canada) Slovakia: (UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague Slovenia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Solomon Islands: (UTC+11:00) Solomon Is., New Caledonia Somalia: (UTC+03:00) Nairobi South Africa: (UTC+02:00) Harare, Pretoria South Georgia and the South Sandwich Islands: (UTC-02:00) Mid-Atlantic - Old Spain: (UTC+01:00) Brussels, Copenhagen, Madrid, Paris Sri Lanka: (UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi Suriname: (UTC-03:00) Cayenne, Fortaleza Svalbard and Jan Mayen: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Swaziland: (UTC+02:00) Harare, Pretoria Sweden: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Switzerland: (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna Taiwan: (UTC+08:00) Taipei Tajikistan: (UTC+05:00) Ashgabat, Tashkent Tanzania: (UTC+03:00) Nairobi Thailand: (UTC+07:00) Bangkok, Hanoi, Jakarta Timor-Leste: (UTC+09:00) Seoul Togo: (UTC+00:00) Monrovia, Reykjavik Tokelau: (UTC+13:00) Nuku'alofa Tonga: (UTC+13:00) Nuku'alofa Trinidad and Tobago: (UTC-04:00) Atlantic Time (Canada) Tunisia: (UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb Turkey: (UTC+03:00) Istanbul Turkmenistan: (UTC+05:00) Ashgabat, Tashkent Turks and Caicos Islands: (UTC-05:00) Eastern Time (US & Canada) Tuvalu: (UTC+12:00) Petropavlovsk-Kamchatsky - Old U.S. Minor Outlying Islands: (UTC+13:00) Samoa U.S. Virgin Islands: (UTC-04:00) Atlantic Time (Canada) Uganda: (UTC+03:00) Nairobi Ukraine: (UTC+02:00) Chisinau United Arab Emirates: (UTC+04:00) Abu Dhabi, Muscat United Kingdom: (UTC+00:00) Dublin, Edinburgh, Lisbon, London United States: (UTC-05:00) Eastern Time (US & Canada) Uruguay: (UTC-03:00) Brasilia Uzbekistan: (UTC+05:00) Ashgabat, Tashkent Vanuatu: (UTC+11:00) Solomon Is., New Caledonia Vietnam: (UTC+07:00) Bangkok, Hanoi, Jakarta Wallis and Futuna: (UTC+12:00) Petropavlovsk-Kamchatsky - Old Western Sahara (Disputed): (UTC+00:00) Dublin, Edinburgh, Lisbon, London Yemen: (UTC+04:00) Abu Dhabi, Muscat Zambia: (UTC+02:00) Harare, Pretoria Zimbabwe: (UTC+02:00) Harare, Pretoria
+| Markt | Zeitzone |
+|--------|-----------|
+| Afghanistan  |  (UTC+04:30) Kabul |
+| Albanien  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Algerien  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Amerikanisch-Samoa  |  (UTC+13:00) Samoa |
+| Andorra  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Angola  |  (UTC+01:00) West-Zentralafrika |
+| Anguilla  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Antarktis  |  (UTC+12:00) Auckland, Wellington |
+| Antigua und Barbuda  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Argentinien  |  (UTC-03:00) Buenos Aires Stadt |
+| Armenien  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Aruba  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Australien  |  (UTC+10:00) Canberra, Melbourne, Sydney |
+| Österreich  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Aserbeidschan  |  (UTC+04:00) Baku |
+| Bahamas  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Bahrain  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Bangladesch  |  (UTC+06:00) Dhaka |
+| Barbados  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Belarus  |  (UTC+03:00) Minsk |
+| Belgien  |  (UTC+01:00) Brüssel, Kopenhagen, Madrid, Paris |
+| Belize  |  (UTC-06:00) Central Time (USA & Kanada) |
+| Benin  |  (UTC+01:00) West-Zentralafrika |
+| Bermuda  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Bhutan  |  (UTC+06:00) Dhaka |
+| Bolivarische Republik Venezuela  |  (UTC-04:00) Caracas |
+| Bolivien  |  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan |
+| Bonaire, St. Eustatius und Saba  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Bosnien und Herzegowina  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Botsuana  |  (UTC+01:00) West-Zentralafrika |
+| Bouvetinsel  |  (UTC+00:00) Monrovia, Reykjavik |
+| Brasilien  |  (UTC-03:00) Brasília |
+| Britisches Territorium im Indischen Ozean  |  (UTC+06:00) Dhaka |
+| Britische Jungferninseln  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Brunei  |  (UTC+08:00) Irkutsk |
+| Bulgarien  |  (UTC+02:00) Chisinau |
+| Burkina Faso  |  (UTC+00:00) Monrovia, Reykjavik |
+| Burundi  |  (UTC+02:00) Harare, Pretoria |
+| CÃ ́te Ivoire  |  (UTC+00:00) Monrovia, Reykjavik |
+| Kambodscha  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Kamerun  |  (UTC+01:00) West-Zentralafrika |
+| Kanada  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Republik Cabo Verde  |  (UTC-01:00) Cabo Verde Is. |
+| Kaimaninseln  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Zentralafrikanische Republik  |  (UTC+01:00) West-Zentralafrika |
+| Tschad  |  (UTC+01:00) West-Zentralafrika |
+| Chile  |  (UTC-04:00) Santiago |
+| China  |  (UTC+08:00) Beijing, Chongqing, Hongkong, Ürümqi |
+| Weihnachtsinsel  |  (UTC+07:00) Krasnojarsk |
+| Kokosinseln  |  (UTC+06:30) Yangon (Rangun) |
+| Kolumbien  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Komoren  |  (UTC+03:00) Nairobi |
+| Kongo  |  (UTC+01:00) West-Zentralafrika |
+| Kongo, Demokratische Republik  |  (UTC+01:00) West-Zentralafrika |
+| Cookinseln  |  (UTC-10:00) Hawaii |
+| Costa Rica  |  (UTC-06:00) Central Time (USA & Kanada) |
+| Kroatien  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Curraã, AO  |  (UTC-04:00) Cuiabá |
+| Zypern  |  (UTC+02:00) Chisinau |
+| Tschechische Republik  |  (UTC+01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
+| Dänemark  |  (UTC+01:00) Brüssel, Kopenhagen, Madrid, Paris |
+| Dschibuti  |  (UTC+03:00) Nairobi |
+| Dominica  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Dominikanische Republik  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Ecuador  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Ägypten  |  (UTC+02:00) Chisinau |
+| El Salvador  |  (UTC-06:00) Central Time (USA & Kanada) |
+| Äquatorialguinea  |  (UTC+01:00) West-Zentralafrika |
+| Eritrea  |  (UTC+03:00) Nairobi |
+| Estland  |  (UTC+02:00) Chisinau |
+| Äthiopien  |  (UTC+03:00) Nairobi |
+| Falklandinseln (Malwinen)  |  (UTC-04:00) Santiago |
+| Färöer  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| Fidschi  |  (UTC+12:00) Fidschi |
+| Finnland  |  (UTC+02:00) Helsinki, Kiew, Riga, Sofia, Tallinn, Wilna |
+| Frankreich  |  (UTC+01:00) Brüssel, Kopenhagen, Madrid, Paris |
+| Französisch-Guyana  |  (UTC-03:00) Cayenne, Fortaleza |
+| Französisch-Polynesien  |  (UTC-10:00) Hawaii |
+| Französische Süd- und Antarktisgebiete  |  (UTC+05:00) Aschgabat, Taschkent |
+| Gabun  |  (UTC+01:00) West-Zentralafrika |
+| Gambia  |  (UTC+00:00) Monrovia, Reykjavik |
+| Georgien  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Deutschland  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Ghana  |  (UTC+00:00) Monrovia, Reykjavik |
+| Gibraltar  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Griechenland  |  (UTC+02:00) Athen, Bukarest |
+| Grönland  |  (UTC+00:00) Monrovia, Reykjavik |
+| Grenada  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Guadeloupe  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Guam  |  (UTC+10:00) Guam, Port Moresby |
+| Guatemala  |  (UTC-06:00) Central Time (USA & Kanada) |
+| Guernsey  |  (UTC+00:00) Monrovia, Reykjavik |
+| Guinea  |  (UTC+00:00) Monrovia, Reykjavik |
+| Guinea-Bissau  |  (UTC+00:00) Monrovia, Reykjavik |
+| Guyana  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Haiti  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Heard und McDonaldinseln  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Heiliger Stuhl (Vatikanstadt)  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Honduras  |  (UTC-06:00) Central Time (USA & Kanada) |
+| Hongkong SAR  |  (UTC+08:00) Beijing, Chongqing, Hongkong, Ürümqi |
+| Ungarn  |  (UTC+01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
+| Island  |  (UTC+00:00) Monrovia, Reykjavik |
+| Indien  |  (UTC+05:30) Chennai, Kolkata, Mumbai, Neu-Delhi |
+| Indonesien  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Irak  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Irland  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| Israel  |  (UTC+02:00) Jerusalem |
+| Italien  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Jamaika  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Japan  |  (UTC+09:00) Osaka, Sapporo, Tokio |
+| Jersey  |  (UTC+00:00) Monrovia, Reykjavik |
+| Jordanien  |  (UTC+02:00) Chisinau |
+| Kasachstan  |  (UTC+05:00) Aschgabat, Taschkent |
+| Kenia  |  (UTC+03:00) Nairobi |
+| Kiribati  |  (UTC+14:00) Kiritimati-Insel |
+| Korea, Republik  |  (UTC+09:00) Seoul |
+| Kuwait  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Kirgisistan  |  (UTC+06:00) Astana |
+| Laos  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Lettland  |  (UTC+02:00) Chisinau |
+| Libanon  |  (UTC+02:00) Chisinau |
+| Lesotho  |  (UTC+02:00) Harare, Pretoria |
+| Liberia  |  (UTC+00:00) Monrovia, Reykjavik |
+| Libyen  |  (UTC+02:00) Chisinau |
+| Liechtenstein  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Litauen  |  (UTC+02:00) Chisinau |
+| Luxemburg  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Macau SAR  |  (UTC+08:00) Beijing, Chongqing, Hongkong, Ürümqi |
+| Mazedonien (ehem. jugoslawische Republik Mazedonien)  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Madagaskar  |  (UTC+03:00) Nairobi |
+| Malawi  |  (UTC+02:00) Harare, Pretoria |
+| Malaysia  |  (UTC+08:00) Kuala Lumpur, Singapur |
+| Malediven  |  (UTC+05:00) Aschgabat, Taschkent |
+| Mali  |  (UTC+00:00) Monrovia, Reykjavik |
+| Malta  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Man, Isle of  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| Marshallinseln  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
+| Martinique  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Mauretanien  |  (UTC+00:00) Monrovia, Reykjavik |
+| Mauritius  |  (UTC+04:00) Port Louis |
+| Mayotte  |  (UTC+03:00) Nairobi |
+| Mexiko  |  (UTC-06:00) Guadalajara, Mexiko-Stadt, Monterrey |
+| Mikronesien  |  (UTC+10:00) Guam, Port Moresby |
+| Republik Moldau  |  (UTC+02:00) Chisinau |
+| Monaco  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Mongolei  |  (UTC+07:00) Krasnojarsk |
+| Montenegro  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Montserrat  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Marokko  |  (UTC+01:00) Casablanca |
+| Mosambik  |  (UTC+02:00) Harare, Pretoria |
+| Myanmar  |  (UTC+06:30) Yangon (Rangun) |
+| Namibia  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Nauru  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
+| Nepal  |  (UTC+05:45) Katmandu |
+| Niederlande  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Neukaledonien  |  (UTC+11:00) Salomonen, Neukaledonien |
+| Neuseeland  |  (UTC+12:00) Auckland, Wellington |
+| Nicaragua  |  (UTC-06:00) Central Time (USA & Kanada) |
+| Niger  |  (UTC+01:00) West-Zentralafrika |
+| Nigeria  |  (UTC+01:00) West-Zentralafrika |
+| Niue  |  (UTC+13:00) Samoa |
+| Norfolkinsel  |  (UTC+11:00) Salomonen, Neukaledonien |
+| Nördliche Marianen  |  (UTC+10:00) Guam, Port Moresby |
+| Norwegen  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Oman  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Pakistan  |  (UTC+05:00) Islamabad, Karatschi |
+| Palau  |  (UTC+09:00) Osaka, Sapporo, Tokio |
+| Palästinensische Behörde  |  (UTC+02:00) Chisinau |
+| Panama  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Papua-Neuguinea  |  (UTC+10:00) Wladiwostok |
+| Paraguay  |  (UTC-04:00) Asunción |
+| Peru  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
+| Philippinen  |  (UTC+08:00) Kuala Lumpur, Singapur |
+| Pitcairninseln  |  (UTC-08:00) Pacific Time (USA und Kanada) |
+| Polen  |  (UTC+01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
+| Portugal  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| Katar  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Réunion  |  (UTC+04:00) Port Louis |
+| Rumänien  |  (UTC+02:00) Chisinau |
+| ROW  |  (UTC-07:00) Mountain Time (USA und Kanada) |
+| Russische Föderation  |  (UTC+03:00) Moskau, St. Petersburg |
+| Ruanda  |  (UTC+02:00) Harare, Pretoria |
+| SÃ £ o TomÃ © und prãncipe  |  (UTC+00:00) Monrovia, Reykjavik |
+| St. BarthÃ © lemy  |  (UTC+04:00) Eriwan |
+| St. Helena, Ascension und Tristan da Cunha  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| St. Kitts und Nevis  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| St. Lucia  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Saint-Martin (französischer Teil)  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| St. Pierre und Miquelon  |  (UTC-02:00) Mittelatlantik – Alt |
+| St. Vincent und die Grenadinen  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Samoa  |  (UTC+13:00) Samoa |
+| San Marino  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Saudi-Arabien  |  (UTC+03:00) Kuwait, Riad |
+| Senegal  |  (UTC+00:00) Monrovia, Reykjavik |
+| Serbien  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Seychellen  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Sierra Leone  |  (UTC+00:00) Monrovia, Reykjavik |
+| Singapur  |  (UTC+08:00) Kuala Lumpur, Singapur |
+| St. Maarten (niederländischer Teil)  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Slowakei  |  (UTC+01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
+| Slowenien  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Salomonen  |  (UTC+11:00) Salomonen, Neukaledonien |
+| Somalia  |  (UTC+03:00) Nairobi |
+| Südafrika  |  (UTC+02:00) Harare, Pretoria |
+| Südgeorgien und die Südlichen Sandwichinseln  |  (UTC-02:00) Mittelatlantik – Alt |
+| Spanien  |  (UTC+01:00) Brüssel, Kopenhagen, Madrid, Paris |
+| Sri Lanka  |  (UTC+05:30) Chennai, Kolkata, Mumbai, Neu-Delhi |
+| Suriname  |  (UTC-03:00) Cayenne, Fortaleza |
+| Svalbard und Jan Mayen  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Swasiland  |  (UTC+02:00) Harare, Pretoria |
+| Schweden  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Schweiz  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Taiwan  |  (UTC+08:00) Taipeh |
+| Tadschikistan  |  (UTC+05:00) Aschgabat, Taschkent |
+| Tansania  |  (UTC+03:00) Nairobi |
+| Thailand  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Timor-Leste  |  (UTC+09:00) Seoul |
+| Togo  |  (UTC+00:00) Monrovia, Reykjavik |
+| Tokelau  |  (UTC+13:00) Nuku'alofa |
+| Tonga  |  (UTC+13:00) Nuku'alofa |
+| Trinidad und Tobago  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Tunesien  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
+| Türkei  |  (UTC+03:00) Istanbul |
+| Turkmenistan  |  (UTC+05:00) Aschgabat, Taschkent |
+| Turks- und Caicosinseln  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Tuvalu  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
+| Kleinere Amerikanische Überseeinseln  |  (UTC+13:00) Samoa |
+| Amerikanische Jungferninseln  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Uganda  |  (UTC+03:00) Nairobi |
+| Ukraine  |  (UTC+02:00) Chisinau |
+| Vereinigte Arabische Emirate  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Vereinigtes Königreich  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| USA  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Uruguay  |  (UTC-03:00) Brasília |
+| Usbekistan  |  (UTC+05:00) Aschgabat, Taschkent |
+| Vanuatu  |  (UTC+11:00) Salomonen, Neukaledonien |
+| Vietnam  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
+| Wallis und Futuna  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
+| Westliche Sahara (umstritten)  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| Jemen  |  (UTC+04:00) Abu Dhabi, Maskat |
+| Sambia  |  (UTC+02:00) Harare, Pretoria |
+| Simbabwe  |  (UTC+02:00) Harare, Pretoria |

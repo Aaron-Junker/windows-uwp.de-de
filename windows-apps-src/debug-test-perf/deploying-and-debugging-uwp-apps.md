@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, debuggen, testen, leistung
 ms.localizationpriority: medium
-ms.openlocfilehash: cdfcdfddb2b595a589c70d1facc24559c63b98da
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254792"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683853"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>Bereitstellen und Debuggen von UWP-Apps
 
@@ -98,7 +98,7 @@ Weitere Informationen finden Sie im [Visual Studio Download Center](https://visu
 
 ## <a name="passing-command-line-debug-arguments"></a>Übergeben von Debugargumenten in der Befehlszeile
 
-In Visual Studio 2019 können Sie Befehlszeilen-debugargumente übergeben, wenn Sie mit dem Debuggen von UWP-Anwendungen beginnen. Sie können auf die Debugargumente für die Befehlszeile mit dem *Args*-Parameter in der **OnLaunched**-Methode der [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application)-Klasse zugreifen. Öffnen Sie die Projekteigenschaften, und navigieren Sie zur Registerkarte **Debuggen**, um Debugargumente für die Befehlszeile anzugeben.
+In Visual Studio 2019 können Sie Befehlszeilen-debugargumente übergeben, wenn Sie mit dem Debuggen von UWP-Anwendungen beginnen. Sie können auf die Debugargumente für die Befehlszeile mit dem *Args*-Parameter in der **OnLaunched**-Methode der [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application)-Klasse zugreifen. Öffnen Sie die Projekteigenschaften, und navigieren Sie zur Registerkarte **Debuggen**, um Debugargumente für die Befehlszeile anzugeben.
 
 > [!NOTE]
 > Diese Registerkarte ist in Visual Studio 2017 (Version 15.1) für C#, VB und C++ verfügbar. JavaScript ist in späteren Versionen verfügbar. Debugargumente in der Befehlszeile sind für alle Bereitstellungstypen mit Ausnahme des Simulators verfügbar.
@@ -111,7 +111,7 @@ Für C++- und JS-UWP-Projekte wird das Feld **Befehlszeilenargumente** in den **
 
 ![C++- und JS-Befehlszeilenargumente](images/command-line-arguments-cpp.png)
 
-Nach dem Festlegen der Befehlszeilenargumente können Sie auf den Wert des Arguments in der **OnLaunched**-Methode der App zugreifen. Die [Args**des**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)LaunchActivatedEventArgs-Objekts enthalten die **Arguments**-Eigenschaft, deren Wert auf den Text im Feld **Befehlszeilenargumente** festgelegt ist.
+Nach dem Festlegen der Befehlszeilenargumente können Sie auf den Wert des Arguments in der **OnLaunched**-Methode der App zugreifen. Die *Args* des [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)-Objekts enthalten die **Arguments**-Eigenschaft, deren Wert auf den Text im Feld **Befehlszeilenargumente** festgelegt ist.
 
 ![C++- und JS-Befehlszeilenargumente](images/command-line-arguments-debugging.png)
 
@@ -139,7 +139,7 @@ Um die erweiterten Remotebereitstellungsoptionen verwenden zu können, müssen f
 
 - Wenn Visual Studio 2015 Update 3 oder ein späteres Visual Studio-Release mit Windows 10 Tools 1.4.1 oder höher installiert ist (einschließlich des Windows 10 Anniversary Update SDK), wird empfohlen, dass Sie die neueste Version von Visual Studio mit Updates verwenden, um sicherzustellen, dass Sie alle neueste Entwicklungs-und Sicherheitsfeatures.
 - Ziel ist ein Xbox-Remotegerät mit Windows 10 Anniversary Update oder ein PC mit Windows 10 Creators Update.
-- Verwenden des universellen Authentifizierungsmodus
+- Der universelle Authentifizierungsmodus muss verwendet werden.
 
 ### <a name="properties-pages"></a>Eigenschaftenseiten
 
@@ -211,7 +211,7 @@ Sie können die folgenden Bereitstellungsoptionen auf der Eigenschaftenseite **D
   - Aktivieren Sie C# auf der Eigenschaften Seite für und Visual Basic **Debuggen** das Kontrollkästchen **eigenen Code beim Starten nicht starten, sondern Debuggen** .
   - Legen Sie den Wert **Anwendung starten** auf der Eigenschaftenseite **Debuggen** für JavaSCript und C++ auf **Ja** fest.
 
-## <a name="symbols"></a>Symbole
+## <a name="symbols"></a>Sonderzeichen
 
 Symboldateien enthalten eine Vielzahl von Daten, die sehr hilfreich beim Debuggen von Code sind (z. B. Variablen, Funktionsnamen und Adressen von Einsprungspunkten). Mit diesen Daten können Sie die Ausnahmen und Ausführungsreihenfolge von Aufruflisten besser überblicken. Über den [Microsoft-Symbolserver](https://msdl.microsoft.com/download/symbols) stehen Symbole für die meisten Windows-Varianten zur Verfügung. Für schnellere Offline-Lookups können Sie jedoch auch unter [Herunterladen von Windows-Symbolpaketen](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols) heruntergeladen werden.
 
@@ -219,7 +219,7 @@ Wählen Sie zum Festlegen von Symboloptionen für Visual Studio **Extras > Optio
 
 ![Dialogfeld „Optionen“](images/gs-debug-uwp-apps-004.png)
 
-Legen Sie die [Sympath](#windbg)-Variable auf dem Speicherort des Symbolpakets fest, um die Symbole in einer Debugsitzung mit **WinDbg** zu laden. Der folgende Befehl lädt beispielsweise Symbole vom Microsoft-Symbolserver und speichert sie dann im Verzeichnis C:\Symbols zwischen:
+Legen Sie die **Sympath**-Variable auf dem Speicherort des Symbolpakets fest, um die Symbole in einer Debugsitzung mit [WinDbg](#windbg) zu laden. Der folgende Befehl lädt beispielsweise Symbole vom Microsoft-Symbolserver und speichert sie dann im Verzeichnis C:\Symbols zwischen:
 
 ```cmd
 .sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols
@@ -248,7 +248,7 @@ Einer der am häufigsten in WinDbg verwendeten Befehle ist `!analyze -v`. Er wir
 
 Eine vollständige Liste aller WinDbg-Befehle finden Sie unter [Debuggerbefehle](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Test- und Debugtools für die Prozesslebensdauer-Verwaltung (PLM)](testing-debugging-plm.md)
 - [Debugging, Tests und Leistung](index.md)

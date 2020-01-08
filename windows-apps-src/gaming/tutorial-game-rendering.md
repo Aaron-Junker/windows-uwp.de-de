@@ -6,14 +6,14 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Rendern
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b44558232247de969f22d5767a16d921cfbf252
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 324aff61057103d5aed00e455a7f2a8d0cfe83b4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367571"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684935"
 ---
-# <a name="rendering-framework-ii-game-rendering"></a>Rendering-Framework II: Rendern von Spielen
+# <a name="rendering-framework-ii-game-rendering"></a>Rendering-Framework II: Spiel-Rendering
 
 In [Rendering-Framework I](tutorial--assembling-the-rendering-pipeline.md) haben wir behandelt, wie wir Szeneninformationen erfassen und auf dem Bildschirm anzeigen. Jetzt gehen wir einen Schritt zurück und erläutern, wie Sie die Daten für das Rendering vorbereiten.
 
@@ -25,10 +25,10 @@ In [Rendering-Framework I](tutorial--assembling-the-rendering-pipeline.md) haben
 Kurze Zusammenfassung des Ziels dieses Abschnitts: Es soll vermittelt werden, wie Sie ein einfaches Rendering-Framework einrichten, um die Grafikausgabe für ein UWP-DirectX-Spiel anzuzeigen. Dazu sind drei Schritte erforderlich.
 
  1. Einrichten einer Verbindung zur Grafikschnittstelle
- 2. Vorbereitung: Erstellen Sie die Ressourcen, die wir die Grafiken gezeichnet werden soll müssen.
- 3. Zeigen Sie die Grafiken an: Den Frame zu rendern
+ 2. Vorbereitung: Erstellen der Ressourcen, die zum Zeichnen der Grafiken benötigt werden
+ 3. Anzeigen die Grafiken: Rendern des Frames
 
-[Rendering-Framework I: Einführung in Rendering](tutorial--assembling-the-rendering-pipeline.md) erläutert, wie Grafiken gerendert werden, deckt die Schritte 1 und 3. 
+[Rendering-Framework I: Einführung in das Rendering](tutorial--assembling-the-rendering-pipeline.md) erläutert, wie Grafiken gerendert werden. Behandelt werden die Schritte 1 und 3. 
 
 In diesem Artikel wird erläutert, wie Sie andere Teile dieses Frameworks einrichten und die erforderlichen Daten vorbereiten, bevor das Rendern (Schritt 2 des Prozesses) ausgeführt werden kann.
 
@@ -41,15 +41,15 @@ Hier einige Konzepte, die Sie verwenden können, um den Renderer für Ihr Spiel 
 * Konstantenpuffer sind in dieser Klasse definiert, um verschiedene Daten aufzunehmen, die zum Rendern benötigt werden.
     * Durch die Verwendung mehrerer Konstantenpuffer für unterschiedliche Häufigkeiten kann die Menge an Daten reduziert werden, die pro Frame an die GPU gesendet werden müssen. In diesem Beispiel werden die Konstanten basierend auf der Häufigkeit, mit der sie aktualisiert werden müssen, auf verschiedene Puffer verteilt. Dies ist die empfohlene Methode für die Direct3D-Programmierung. 
     * In diesem Beispielspiel sind 4 Konstantenpuffer definiert.
-        1. __m\_ConstantBufferNeverChanges__ enthält die Beleuchtungsparameter. Es wird einmal in der Methode __FinalizeCreateGameDeviceResources__ festgelegt und ändert sich nie wieder.
-        2. __m\_ConstantBufferChangeOnResize__ die Projektionsmatrix enthält. Die Projektionsmatrix hängt von der Größe und dem Seitenverhältnis des Fensters ab. Sie wird in [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) festgelegt und aktualisiert, nachdem Ressourcen in die Methode [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) geladen wurden. Beim Rendern in 3D wird sie auch zweimal pro Frame geändert.
-        3. __m\_ConstantBufferChangesEveryFrame__ enthält die Ansichtsmatrix. Diese Matrix hängt von der Kameraposition und der Blickrichtung (der Projektionsnormalen) ab und ändert sich einmal pro Frame in __Render__-Methode. Dies wurde weiter oben erläutert __Rendering-Framework I: Einführung in Rendering__unter der [ __GameRenderer::Render__ Methode](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
-        4. __m\_ConstantBufferChangesEveryPrim__ enthält die Modell-Matrix und Material-Eigenschaften, der jeden Primitiv. Die Modellmatrix transformiert Scheitelpunkte aus lokalen Koordinaten in globale Koordinaten. Diese Konstanten gelten speziell für die einzelnen Grundtypen und werden für jeden Draw-Aufruf aktualisiert. Dies wurde weiter oben erläutert __Rendering-Framework I: Einführung in Rendering__unter der [primitiven Textrendering](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering).
+        1. __m\_constantbufferneverchanges__ enthält die Beleuchtungs Parameter. Es wird einmal in der Methode __FinalizeCreateGameDeviceResources__ festgelegt und ändert sich nie wieder.
+        2. __m\_constantbufferchangeonresize__ enthält die Projektions Matrix. Die Projektionsmatrix hängt von der Größe und dem Seitenverhältnis des Fensters ab. Sie wird in [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) festgelegt und aktualisiert, nachdem Ressourcen in die Methode [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) geladen wurden. Beim Rendern in 3D wird sie auch zweimal pro Frame geändert.
+        3. __m\_constantbufferchangeseveryframe__ enthält die Ansichts Matrix. Diese Matrix hängt von der Kameraposition und der Blickrichtung (der Projektionsnormalen) ab und ändert sich einmal pro Frame in __Render__-Methode. Dies wurde in __Rendering-Framework I: Einführung in das Rendering__ in Verbindung mit der Methode [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) bereits erläutert.
+        4. __m\_constantbufferchangeseveryprim__ enthält die Modell Matrix-und Materialeigenschaften der einzelnen primitiven. Die Modellmatrix transformiert Scheitelpunkte aus lokalen Koordinaten in globale Koordinaten. Diese Konstanten gelten speziell für die einzelnen Grundtypen und werden für jeden Draw-Aufruf aktualisiert. Dies wurde in __Rendering-Framework I: Einführung in das Rendering__ unter [Rendern der Grundtypen](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering) bereits erläutert.
 * Shaderressourcenobjekte, die Texturen für die Grundtypen enthalten, werden in dieser Klasse ebenfalls definiert.
     * Einige Texturen sind vordefiniert ([DDS](https://docs.microsoft.com/windows/desktop/direct3ddds/dx-graphics-dds-pguide) ist ein Dateiformat, das zum Speichern von komprimierten und unkomprimierten Texturen verwendet werden kann. DDS-Texturen werden für die Wände und den Boden der Welt sowie für die Munitionskugeln verwendet.)
-    * In diesem Beispiel spielen Ressourcenobjekte Shader sind: __m\_SphereTexture__, __m\_CylinderTexture__, __m\_CeilingTexture__, __m\_FloorTexture__, __m\_WallsTexture__.
+    * In diesem Spielbeispiel lauten Shader-Ressourcen Objekte: __m\_spheretexture__, __m\_zylindridertexture__, __m\_ceilingtexture__, __m\_floortexture__, __m\_wallstexture__.
 * Shaderobjekte werden in dieser Klasse zur Berechnung der Grundtypen und Texturen definiert. 
-    * In diesem Beispiel spielen die Shader-Objekte sind __m\_VertexShader__, __m\_VertexShaderFlat__, und __m\_PixelShader__, __m\_PixelShaderFlat__.
+    * In diesem Spielbeispiel lauten die Shader-Objekte __m\_Vertexshader__, __m\_vertexshaderflat__und __m\_Pixel Shader__, __m\_pixelshaderflat__.
     * Der Vertexshader verarbeitet die Grundtypen und die grundlegende Beleuchtung. Der Pixelshader (auch als Fragmentshader bezeichnet) verarbeitet die Texturen und alle pixelgenauen Effekte.
     * Es existieren zwei Versionen dieser Shader (regulär und flach) zum Rendern verschiedener Grundtypen. Die flachen Versionen sind wesentlich einfacher und bieten weder Glanzlichter noch Pixelbeleuchtungseffekte. Sie werden für die Wände verwendet und beschleunigen das Rendern auf Geräten mit geringerer Leistung.
 
@@ -157,8 +157,8 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 
 Im Spielbeispiel (und in der Vorlage __DirectX 11-App (Universal Windows)__ von Visual Studio) wird das Erstellen und Laden von Spielressourcen mithilfe dieser beiden Methoden implementiert, die vom __GameRenderer__-Konstruktor aufgerufen werden. :
 
-* [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
+* [__Createdevicedependentresources__](#createdevicedependentresources-method)
+* [__Createwindowsizedependentresources__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>CreateDeviceDependentResources-Methode
 
@@ -168,7 +168,7 @@ Im Spielbeispiel werden diese Operationen der Szenenobjekte stattdessen auf die 
 
 Was übernimmt diese Methode in diesem Spielbeispiel?
 
-* Variablen instanziiert (__m\_GameResourcesLoaded__ = False und __m\_LevelResourcesLoaded__ = False), der angibt, ob es sich bei Ressourcen geladen wurden, bevor Sie fortfahren Weiter zum Rendern, da es asynchron geladen werden. 
+* Instanziierte Variablen (__m\_gameresourcesloaded__ = false und __m\_levelresourcesloaded__ = false), die angeben, ob Ressourcen geladen wurden, bevor Sie zum Rendering verschoben werden, da Sie asynchron geladen werden. 
 * Da HUD- und Overlay-Rendering in separaten Klassenobjekten erfolgt, rufen Sie hier die Methoden __GameHud::CreateDeviceDependentResources__ und __GameInfoOverlay::CreateDeviceDependentResources__ auf.
 
 Hier der vollständige Code für __GameRenderer::CreateDeviceDependentResources__.
@@ -241,7 +241,7 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="creategamedeviceresourcesasync-method"></a>CreateGameDeviceResourcesAsync-Methode
 
-__CreateGameDeviceResourcesAsync__ aufgerufen wird die __GameMain__ Konstruktormethode in der __erstellen\_Aufgabe__ Schleife, da es spielen Ressourcen asynchron geladen werden.
+__Creategamedeviceresourcesasync__ wird von der __gamemain__ -Konstruktormethode in der __Create\_-Task__ Schleife aufgerufen, da wir Spiel Ressourcen asynchron laden.
         
 __CreateDeviceResourcesAsync__ ist eine Methode, die als gesonderte Reihe asynchroner Aufgaben ausgeführt wird, um die Spielressourcen zu laden. Da sie in einem gesonderten Thread ausgeführt werden soll, kann sie nur auf die Direct3D 11-Gerätemethoden (definiert in __ID3D11Device__) und nicht auf die Gerätekontextmethoden (definiert in __ID3D11DeviceContext__) zugreifen, führt also keinerlei Rendering aus.
 
@@ -254,13 +254,13 @@ Prinzip:
 * Verwenden Sie diese Methode zum Laden von Texturen (z. B. die DDS-Dateien) und Shaderinformationen (z. B. die CSO-Dateien) in die [Shader](tutorial--assembling-the-rendering-pipeline.md#shaders).
 
 Verwendungszweck dieser Methode:
-* Erstellen Sie die 4 [Konstantenpuffer](tutorial--assembling-the-rendering-pipeline.md#buffer): __m\_ConstantBufferNeverChanges__, __m\_ConstantBufferChangeOnResize__, __m \_ConstantBufferChangesEveryFrame__, __m\_ConstantBufferChangesEveryPrim__
+* Erstellen Sie die 4 [Konstanten Puffer](tutorial--assembling-the-rendering-pipeline.md#buffer): __m\_constantbufferneverchanges__, __m\_constantbufferchangeonresize__, __m\_constantbufferchangeseveryframe__, __m\_constantbufferchangeseveryprim__
 * Erstellen eines [sampler-state](tutorial--assembling-the-rendering-pipeline.md#sampler-state)-Objekts, das Samplinginformationen für eine Textur kapselt
 * Erstellen einer Aufgabengruppe, die alle asynchronen Aufgaben enthält, die von der Methode erstellt wurden. Die Methode wartet auf den Abschluss dieser asynchronen Aufgaben und ruft dann __FinalizeCreateGameDeviceResources__ auf.
 * Erstellen eines Lademoduls mithilfe von [Basic Loader](tutorial--assembling-the-rendering-pipeline.md#basicloader). Fügen Sie die asynchronen Ladevorgänge des Lademoduls als Aufgaben in die zuvor erstellte Aufgabengruppe ein.
 * Methoden wie __BasicLoader::LoadShaderAsync__ and  __BasicLoader::LoadTextureAsync__ dienen zum Laden von:
     * kompilierten Shaderobjekten (VertextShader.cso, VertexShaderFlat.cso, PixelShader.cso, and PixelShaderFlat.cso). Weitere Informationen finden Sie unter [Verschiedene Shader-Dateiformate](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats).
-    * Spielen Sie bestimmte Texturen (Medienobjekte\\seafloor.dds, metal_texture.dds, cellceiling.dds, cellfloor.dds, cellwall.dds).
+    * Spiele spezifische Texturen (Assets\\seeloor. DDS, metal_texture. DDS, cellceiling. DDS, cellfloor. DDS, cellwall. DDS).
 
 ```cpp
 task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
@@ -297,7 +297,7 @@ task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
     D3D11_SAMPLER_DESC sampDesc;
 
     // ZeroMemory fills a block of memory with zeros. 
-    // For API ref, go to: https://msdn.microsoft.com/en-us/library/windows/desktop/aa366920(v=vs.85).aspx
+    // For API ref, go to: https://msdn.microsoft.com/library/windows/desktop/aa366920(v=vs.85).aspx
     ZeroMemory(&sampDesc, sizeof(sampDesc));
 
     sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
@@ -363,8 +363,8 @@ Die Methode __FinalizeCreateGameDeviceResources__ wird aufgerufen, nachdem alle 
 __FinalizeCreateGameDeviceResources__ und [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) teilen übereinstimmende Teile des Codes für folgende Aufgaben:
 * Verwenden Sie __SetProjParams__, um sicherzustellen, dass die Kamera mit der richtigen Projektionsmatrix arbeitet. Weitere Informationen finden Sie unter [Kamera und Koordinatenraum](tutorial--assembling-the-rendering-pipeline.md#camera-and-coordinate-space).
 * Behandeln Sie die Rotation des Bildschirms durch Rechtsmultiplikation der 3D-Rotationsmatrix mit der Projektionsmatrix der Kamera. Aktualisieren Sie dann den __ConstantBufferChangeOnResize__-Konstantenpuffer mit der resultieRendern Projektionsmatrix.
-* Legen Sie die __m\_GameResourcesLoaded__ __booleschen__ globale Variable, um anzugeben, dass die Ressourcen in den Puffern bereit für den nächsten Schritt jetzt geladen werden. Wir haben diese Variable zu Beginn in der __GameRenderer__-Konstruktormethode über die __GameRenderer::CreateDeviceDependentResources__-Methode mit __FALSE__ initialisiert. 
-* Wenn dies __m\_GameResourcesLoaded__ ist __"true"__ , die szeneobjekte rendern kann stattfinden. Dies wurde im behandelt die __Rendering-Framework I: Einführung in Rendering__ Artikel unter [ __GameRenderer::Render Methode__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method).
+* Legen Sie die globale Variable __m\_gameresourcesloaded__ als __boolesche__ Variable fest, um anzugeben, dass die Ressourcen nun in den Puffern geladen sind und für den nächsten Schritt bereit sind. Wir haben diese Variable zu Beginn in der __GameRenderer__-Konstruktormethode über die __GameRenderer::CreateDeviceDependentResources__-Methode mit __FALSE__ initialisiert. 
+* Wenn dieses __m-\_gameresourcesloaded__ auf __true__festgelegt ist, kann das Rendering der Scene-Objekte stattfinden. Dies wurde erläutert im Artikel __Rendering-Framework I: Einführung in das Rendering__ in Verbindung mit der Methode [__GameRenderer::Render__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) bereits erläutert.
 
 ```cpp
 // When creating this sample game using the DirectX 11 App template, this method needs to be created.
@@ -581,7 +581,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>CreateWindowSizeDependentResource-Methode
 
-CreateWindowSizeDependentResources-Methoden werden jedes Mal aufgerufen, wenn sich Fenstergröße, Ausrichtung, Stereorendering oder die Auflösung ändert. Im Beispielspiel aktualisiert die Projektionsmatrix in __ConstantBufferChangeOnResize__.
+CreateWindowSizeDependentResources-Methoden werden jedes Mal aufgerufen, wenn sich Fenstergröße, Ausrichtung, Stereorendering oder die Auflösung ändert. Im Beispiel Spiel wird die Projektions Matrix in __constantbufferchangeonresize__aktualisiert.
 
 Fenstergrößenressourcen werden auf folgende Weise aktualisiert: 
 * Das App-Framework erhält eines von mehreren möglichen Ereignissen, die auf eine Änderung des Fensterstatus hinweisen. 

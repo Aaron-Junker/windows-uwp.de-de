@@ -3,14 +3,14 @@ title: Support für Meine Kontakte zu einer Anwendung hinzufügen
 description: Erläutert, wie Sie einer Anwendung Support für „Meine Kontakte” hinzufügen, und wie Sie Kontakte auf der Startseite anheften und entfernen
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba05e958a8746874becd4cfa17ec0e8f255ff00
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9e58334dafa35004080b7ed109fa90e253399040
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255138"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683478"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>Support für Meine Kontakte zu einer Anwendung hinzufügen
 
@@ -23,15 +23,15 @@ Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakte
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
-+ Sie sollten über Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache verfügen. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
++ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## <a name="overview"></a>Übersicht
 
 Es gibt drei Dinge, die durchgeführt werden müssen, damit die Anwendung das Feature„ Meine Kontakte” verwenden kann:
 
-1. [Deklarieren Sie die Unterstützung für den sharetarget-Aktivierungs Vertrag in Ihrem Anwendungs Manifest.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Kommentieren Sie die Kontakte, die die Benutzer für die Verwendung Ihrer APP freigeben können.](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [Deklarieren Sie die Unterstützung für den sharetarget-Aktivierungs Vertrag in Ihrem Anwendungs Manifest.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [Kommentieren Sie die Kontakte, die die Benutzer für die Verwendung Ihrer APP freigeben können.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  Unterstützen Sie mehrere Instanzen Ihrer Anwendung, die zur gleichen Zeit ausgeführt werden. Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren, während Sie diese im Kontaktbereich verwenden.  Sie können diese sogar in mehreren Kontaktlisten gleichzeitig verwenden.  Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
 
 Wenn Sie dies getan haben, wird die Anwendung in der Kontaktliste für Kontakte mit Kommentaren angezeigt.
@@ -172,7 +172,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-Wenn Ihre Anwendung mit diesem Vertrag aktiviert ist, erhält sie ein [ContactPanelActivatedEventArgs-Objekt](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Dieses enthält die ID des Kontakts, mit dem Ihre Anwendung zu interagieren versucht und ein [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel)-Objekt. Sie sollten einen Verweis auf dieses ContactPanel-Objekt beibehalten, der die Interaktion mit der Liste ermöglicht.
+Wenn Ihre Anwendung mit diesem Vertrag aktiviert ist, erhält sie ein [ContactPanelActivatedEventArgs-Objekt](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs).  Dieses enthält die ID des Kontakts, mit dem Ihre Anwendung zu interagieren versucht und ein [ContactPanel](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpanel)-Objekt. Sie sollten einen Verweis auf dieses ContactPanel-Objekt beibehalten, der die Interaktion mit der Liste ermöglicht.
 
 Das ContactPanel-Objekt verfügt über zwei Ereignisse, auf die Ihre Anwendung hören soll:
 + Das **LaunchFullAppRequested**-Ereignis wird gesendet, wenn der Benutzer das Element der Benutzeroberfläche aufgerufen hat, das anfordert, dass die vollständige Anwendung in einem eigenen Fenster gestartet wird.  Ihre Anwendung ist für ihren Start verantwortlich und übergibt dabei alle erforderlichen Kontexte.  Sie können nach Ihren eigenen Wünschen durchführen (z. B. per Protokollstart).
@@ -182,13 +182,13 @@ Mit dem ContactPanel-Objekt können Sie ebenfalls die Hintergrundfarbe des Heade
 
 ## <a name="supporting-notification-badging"></a>Unterstützung von Benachrichtigungssignalen
 
-Wenn Sie möchten, dass auf der Taskleiste angeheftete Kontakte ein Signal erhalten, wenn neue Benachrichtigungen von Ihrer App für diese Person eintreffen, müssen die **Hint-Personen**-Parameter in den [Popupbenachrichtigungen](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) und [Meine Kontakte – Benachrichtigungen](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications) einbezogen werden.
+Wenn Sie möchten, dass auf der Taskleiste angeheftete Kontakte ein Signal erhalten, wenn neue Benachrichtigungen von Ihrer App für diese Person eintreffen, müssen die **Hint-Personen**-Parameter in den [Popupbenachrichtigungen](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) und [Meine Kontakte – Benachrichtigungen](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-notifications) einbezogen werden.
 
 ![Benachrichtigung für „Meine Kontakte”](images/my-people-badging.png)
 
 Um einen Kontakt zu benachrichtigen, muss der Knoten der obersten Ebene Popups hint-people-Parameter enthalten, um den Absender-Kontakt oder andere Kontakte anzugeben. Dieser Parameter kann folgende Werte haben:
-+ **E-Mail Adresse** 
-    + z. B. mailto:johndoe@mydomain.com
++ **E-Mail-Adresse** 
+    + z. B. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](mailto:johndoe@mydomain.com)
 + **Telefonnummer** 
     + z. B. Tel:888-888-8888
 + **Remote-ID** 
@@ -206,12 +206,12 @@ Hier ist ein Beispiel, wie Sie eine Popupbenachrichtigung für eine bestimmte Pe
 ```
 
 > [!NOTE]
-> Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
+> Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
 > Falls die Stabilität und Eindeutigkeit der von Ihrer App verwendeten Remote-IDs nicht gewährleistet ist, können Sie allen Ihren RemoteIdHelper mithilfe der später in diesem Thema beschriebenen -Klasse ein eindeutiges Tag hinzufügen, bevor Sie die Remote-IDs dem System hinzufügen. Alternativ können Sie auch ganz auf die Verwendung der RemoteId-Eigenschaft verzichten und stattdessen eine benutzerdefinierte erweiterte Eigenschaft erstellen, um die Remote-IDs für Ihre Kontakte zu speichern.
 
 ## <a name="the-pinnedcontactmanager-class"></a>Die PinnedContactManager-Klasse
 
-Der [PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) verwaltet, welche Kontakte an die Taskleiste angeheftet werden. Mit dieser Klasse können Sie Kontakte anheften und lösen, bestimmen, ob der Kontakt hinzugefügt wird und ob das Anheften auf eine bestimmte Fläche vom System unterstützt wird, auf dem die Anwendung zurzeit ausgeführt wird.
+Der [PinnedContactManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) verwaltet, welche Kontakte an die Taskleiste angeheftet werden. Mit dieser Klasse können Sie Kontakte anheften und lösen, bestimmen, ob der Kontakt hinzugefügt wird und ob das Anheften auf eine bestimmte Fläche vom System unterstützt wird, auf dem die Anwendung zurzeit ausgeführt wird.
 
 Sie können das Objekt mit PinnedContactManager mithilfe der **GetDefault**- Methode abrufen:
 
@@ -257,5 +257,5 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [Channel 9-Video zum Hinzufügen von Support für meine Personen zu einer Anwendung](https://channel9.msdn.com/Events/Build/2017/P4056)
 + [Beispiel für die Integration von meine Personen](https://github.com/tonyPendolino/MyPeopleBuild2017)
 + [Beispiel für eine Kontaktkarte](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [Dokumentation der pinnedcontactmanager-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [Verbinden der App mit Aktionen auf einer Visitenkarte](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [Dokumentation der pinnedcontactmanager-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Verbinden der App mit Aktionen auf einer Visitenkarte](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/integrating-with-contacts)

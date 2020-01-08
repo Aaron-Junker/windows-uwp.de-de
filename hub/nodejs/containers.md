@@ -8,24 +8,24 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 16b1421606d3c8271141256b80ae2600ec9ca49d
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: 9467224814b1e26f18031662f5e8d994a8fae1ac
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72315124"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683673"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>Einstieg in die Verwendung von Docker-Containern mit Node. js
 
 Eine Schritt-für-Schritt-Anleitung für den Einstieg in die Verwendung von Docker-Containern mit ihren Node. js-apps.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 In dieser Anleitung wird davon ausgegangen, dass Sie bereits die Schritte zum [Einrichten der Node. js-Entwicklungsumgebung mit WSL 2](./setup-on-wsl2.md)abgeschlossen haben, einschließlich:
 
 - Installieren Sie Windows 10 Insider Preview Build 18932 oder höher.
 - Aktivieren Sie das WSL 2-Feature unter Windows.
-- Installieren Sie eine Linux-Distribution (Ubuntu 18,04 für unsere Beispiele). Dies können Sie mit `wsl lsb_release -a` überprüfen.
+- Installieren Sie eine Linux-Distribution (Ubuntu 18,04 für unsere Beispiele). Dies können Sie mit `wsl lsb_release -a`überprüfen.
 - Stellen Sie sicher, dass die Ubuntu 18,04-Distribution im WSL 2-Modus ausgeführt wird. (WSL kann Verteilungen im v1-oder V2-Modus ausführen.) Sie können dies überprüfen, indem Sie PowerShell öffnen und Folgendes eingeben: `wsl -l -v`.
 - Legen Sie mithilfe von PowerShell Ubuntu 18,04 als Standardverteilung fest, mit: `wsl -s ubuntu 18.04`.
 
@@ -59,18 +59,18 @@ Installieren und Ausführen von Docker Desktop WSL 2 Tech Preview:
 
 6. Öffnen Sie eine Befehlszeile (WSL oder PowerShell), und geben Sie Folgendes ein, um zu bestätigen, dass docker installiert ist und die Versionsnummer anzeigt: `docker --version`
 
-7. Überprüfen Sie, ob die Installation ordnungsgemäß funktioniert, indem Sie ein einfaches integriertes docker-Image ausführen: `docker run hello-world`
+7. Testen Sie, ob die Installation ordnungsgemäß funktioniert, indem Sie ein einfaches integriertes docker-Image ausführen: `docker run hello-world`
 
 Hier finden Sie einige docker-Befehle, die Sie kennen sollten:
 
-- Auflisten der Befehle, die in der Docker-CLI verfügbar sind, indem Sie Folgendes eingeben: `docker`
+- Auflisten der Befehle, die in der Docker-CLI verfügbar sind, durch Eingabe von: `docker`
 - Auflisten von Informationen für einen bestimmten Befehl mit: `docker <COMMAND> --help`
-- Listen Sie die Docker-Images auf Ihrem Computer auf (genau das Hello-World-Image an diesem Punkt), mit: `docker image ls --all`
+- Listen Sie die Docker-Images auf Ihrem Computer auf (genau das Hello-World-Image an diesem Punkt): `docker image ls --all`
 - Auflisten der Container auf dem Computer mit: `docker container ls --all`
 - Auflisten der Docker-System Statistiken und-Ressourcen (CPU & Arbeitsspeicher), die Ihnen im WSL 2-Kontext zur Verfügung stehen, mit: `docker info`
 - Anzeigen, wo docker derzeit ausgeführt wird, mit: `docker context ls`
 
-Sie sehen, dass es zwei Kontexte gibt, die Docker in--`default` (der klassische docker-Daemon) und `wsl` (unsere Empfehlung bei Verwendung der Technical Preview) ausführt. (Auch der Befehl "`ls`" ist für `list` kurz und kann austauschbar verwendet werden.)
+Sie können sehen, dass docker in--`default` (der klassische docker-Daemon) und `wsl` ausgeführt wird (unsere Empfehlung mithilfe der Technical Preview). (Der `ls`-Befehl ist auch für `list` kurz und kann austauschbar verwendet werden.)
 
 ![Docker-Anzeige Kontext in PowerShell](../images/docker-context.png)
 
@@ -87,11 +87,11 @@ Die Docker-Erweiterung vereinfacht die Erstellung, Verwaltung und Bereitstellung
 
     ![Docker-Erweiterung auf vs Code in Remote-WSL](../images/docker-vscode-extension.png)
 
-Wenn Sie die Docker-Erweiterung auf vs Code installieren, können Sie nun eine Liste der im nächsten Abschnitt verwendeten `Dockerfile`-Befehle mit der Verknüpfung verwenden: `Ctrl+Space`
+Wenn Sie die Docker-Erweiterung auf vs Code installieren, können Sie nun eine Liste der im nächsten Abschnitt verwendeten `Dockerfile` Befehle mit der Verknüpfung verwenden: `Ctrl+Space`
 
 Erfahren Sie mehr über die [Arbeit mit docker in vs Code](https://code.visualstudio.com/docs/azure/docker).
 
-## <a name="create-a-container-image-with-dockerfile"></a>Erstellen eines Container Images mit dockerfile
+## <a name="create-a-container-image-with-dockerfile"></a>Erstellen eines Containerimages mit DockerFile
 
 Ein **Container Image** speichert den Anwendungscode, die Bibliotheken, die Konfigurationsdateien, die Umgebungsvariablen und die Laufzeit. Durch die Verwendung eines Bilds wird sichergestellt, dass die Umgebung in Ihrem Container standardisiert ist und nur die erforderlichen Komponenten zum Erstellen und Ausführen der Anwendung enthält.
 
@@ -101,7 +101,7 @@ Wir erstellen ein Container Image mithilfe der nächsten. js-APP, die im [Webfra
 
 1. Öffnen Sie die Next. js-app in vs Code (stellen Sie sicher, dass die Remote-WSL-Erweiterung ausgeführt wird, wie in der unteren linken grünen Registerkarte angezeigt). Öffnen Sie das in vs Code integrierte WSL-Terminal ( **> Terminal anzeigen**), und stellen Sie sicher, dass der Terminal Pfad auf das nächste. js-Projektverzeichnis verweist (d.h. `~/NextProjects/my-next-app$`).
 
-2. Erstellen Sie im Stammverzeichnis des Projekts "Next. js" eine neue Datei namens "`Dockerfile`", und fügen Sie Folgendes hinzu:
+2. Erstellen Sie im Stammverzeichnis des Projekts "Next. js" eine neue Datei mit dem Namen `Dockerfile`, und fügen Sie Folgendes hinzu:
 
     ```docker
     # Specifies where to get the base image (Node v12 in our case) and creates a new container for it
@@ -127,23 +127,23 @@ Wir erstellen ein Container Image mithilfe der nächsten. js-APP, die im [Webfra
     CMD [ "npm", "start" ]
     ```
 
-3. Um das docker-Image zu erstellen, führen Sie den folgenden Befehl im Stammverzeichnis Ihres Projekts aus (ersetzen Sie jedoch `<your_docker_username>` durch den Benutzernamen, den Sie auf dem docker-Hub erstellt haben): `docker build -t <your_docker_username>/my-nextjs-app .`
+3. Um das docker-Image zu erstellen, führen Sie den folgenden Befehl im Stammverzeichnis Ihres Projekts aus (ersetzen Sie `<your_docker_username>` jedoch durch den Benutzernamen, den Sie auf dem docker-Hub erstellt haben): `docker build -t <your_docker_username>/my-nextjs-app .`
 
 > [!NOTE]
-> Docker muss mit WSL Tech Preview ausgeführt werden, damit dieser Befehl funktioniert. Eine Erinnerung zum Starten von Docker finden Sie im [Schritt #4](#install-docker-desktop-wsl-2-tech-preview) des Abschnitts "Installation". Das Flag "`-t`" gibt den Namen des zu erstellenden Bilds an, in unserem Fall "My-nextjs-App: v1". Es wird empfohlen, beim Erstellen eines Images immer [eine Version # für Ihre Tagnamen zu verwenden](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) . Stellen Sie sicher, dass Sie den Zeitraum am Ende des Befehls einschließen, der angibt, dass das aktuelle Arbeitsverzeichnis zum Suchen und Kopieren der Builddateien für die nächste js-App verwendet werden soll.
+> Docker muss mit WSL Tech Preview ausgeführt werden, damit dieser Befehl funktioniert. Eine Erinnerung zum Starten von Docker finden Sie im [Schritt #4](#install-docker-desktop-wsl-2-tech-preview) des Abschnitts "Installation". Das `-t`-Flag gibt den Namen des zu erstellenden Bilds an, in unserem Fall "My-nextjs-App: v1". Es wird empfohlen, beim Erstellen eines Images immer [eine Version # für Ihre Tagnamen zu verwenden](https://medium.com/@mccode/the-misunderstood-docker-tag-latest-af3babfd6375) . Stellen Sie sicher, dass Sie den Zeitraum am Ende des Befehls einschließen, der angibt, dass das aktuelle Arbeitsverzeichnis zum Suchen und Kopieren der Builddateien für die nächste js-App verwendet werden soll.
 
-4. Geben Sie den folgenden Befehl ein, um das neue docker-Image Ihrer Next. js-app in einem Container auszuführen: `docker run -d -p 3333:3000 <your_docker_username>/my-nextjs-app:v1`
+4. Um dieses neue docker-Image Ihrer Next. js-app in einem Container auszuführen, geben Sie den folgenden Befehl ein: `docker run -d -p 3333:3000 <your_docker_username>/my-nextjs-app:v1`
 
-5. Das Flag "`-p`" bindet den Port "3000" (den Port, auf dem die APP im Container ausgeführt wird) an den lokalen Port "3333" auf Ihrem Computer. Sie können nun den Webbrowser auf [http://localhost:3333](http://localhost:3333) verweisen und die serverseitige gerenderte Next. js-Anwendung anzeigen, die als docker ausgeführt wird. Container Image.
+5. Mit dem `-p`-Flag wird der Port "3000" (der Port, auf dem die APP im Container ausgeführt wird) an den lokalen Port "3333" auf dem Computer gebunden. Sie können nun den Webbrowser auf [http://localhost:3333](http://localhost:3333) verweisen und die serverseitige gerenderte Next. js-Anwendung anzeigen, die als docker-Container Image ausgeführt wird.
 
 > [!TIP]
-> Wir haben unser Container Image mit `FROM node:12` erstellt, das auf das auf dem docker-Hub gespeicherte Standard Image für Node. js, Version 12, verweist. Dieses node. js-Standard Image basiert auf einem Debian/Ubuntu Linux-System, und es gibt viele verschiedene Node. js-Images, aus denen Sie auswählen können, und Sie sollten die Verwendung von etwas einfacheres oder an Ihre Anforderungen angepasst haben. Weitere Informationen finden Sie in der [node. js-Image Registrierung auf dem docker-Hub](https://hub.docker.com/_/node/).
+> Wir haben unser Container Image mithilfe `FROM node:12` erstellt, das auf das auf dem docker-Hub gespeicherte Standard Image für Node. js, Version 12, verweist. Dieses node. js-Standard Image basiert auf einem Debian/Ubuntu Linux-System, und es gibt viele verschiedene Node. js-Images, aus denen Sie auswählen können, und Sie sollten die Verwendung von etwas einfacheres oder an Ihre Anforderungen angepasst haben. Weitere Informationen finden Sie in der [node. js-Image Registrierung auf dem docker-Hub](https://hub.docker.com/_/node/).
 
-## <a name="upload-your-container-image-to-a-repository"></a>Hochladen Ihres Container Images in ein Repository
+## <a name="upload-your-container-image-to-a-repository"></a>Hochladen des Containerimages in ein Repository
 
 In einem **containerrepository** wird das Container Image in der Cloud gespeichert. Häufig enthält ein containerrepository tatsächlich eine Auflistung verwandter Images, z. b. unterschiedlicher Versionen, die alle für die einfache Einrichtung und schnelle Bereitstellung verfügbar sind. In der Regel können Sie über sichere HTTPS-Endpunkte auf Images in containerepositorys zugreifen, sodass Sie Images über eine beliebige System-, Hardware-oder VM-Instanz abrufen, pushen oder verwalten können.
 
-Eine **Container Registrierung**hingegen speichert eine Sammlung von Depots sowie Indizes, Zugriffs Steuerungs Regeln und API-Pfade. Diese können öffentlich oder privat gehostet werden. [Docker Hub](https://hub.docker.com/) ist eine Open-Source-docker-Registrierung, die standardmäßig beim Ausführen von `docker push`-und `docker pull`-Befehlen verwendet wird. Es ist für öffentliche Repositorys kostenlos und erfordert eine Gebühr für private Repositorys.
+Eine **Container Registrierung**hingegen speichert eine Sammlung von Depots sowie Indizes, Zugriffs Steuerungs Regeln und API-Pfade. Diese können öffentlich oder privat gehostet werden. [Docker Hub](https://hub.docker.com/) ist eine Open-Source-docker-Registrierung, die beim Ausführen von `docker push`-und `docker pull`-Befehlen standardmäßig verwendet wird. Es ist für öffentliche Repositorys kostenlos und erfordert eine Gebühr für private Repositorys.
 
 So laden Sie das neue Container Image in ein Repository hoch, das auf dem docker-Hub gehostet wird:
 
@@ -155,27 +155,27 @@ So laden Sie das neue Container Image in ein Repository hoch, das auf dem docker
 
 4. Sie können Ihr Repository nun auf dem docker-Hub anzeigen, eine Beschreibung eingeben und Ihr GitHub-Konto (wenn Sie möchten) verknüpfen, indem Sie Folgendes besuchen: https://cloud.docker.com/repository/list
 
-5. Sie können auch eine Liste Ihrer aktiven docker-Container anzeigen, indem Sie Folgendes ausführen: `docker container ls` (oder `docker ps`).
+5. Sie können auch eine Liste Ihrer aktiven docker-Container anzeigen: `docker container ls` (oder `docker ps`)
 
 6. Sie sollten sehen, dass der Container "My-nextjs-App: v1" auf Port 3333-> 3000/TCP aktiv ist. Sie können auch Ihre "Container-ID" sehen, die hier aufgeführt ist. Geben Sie den folgenden Befehl ein, um die Ausführung des Containers anzuhalten: `docker stop <container ID>`
 
-7. Wenn ein Container angehalten wurde, sollte er in der Regel ebenfalls entfernt werden. Durch das Entfernen eines Containers werden alle Ressourcen bereinigt, die er verlässt. Nachdem Sie einen Container entfernt haben, gehen alle Änderungen, die Sie in seinem Bild Dateisystem vorgenommen haben, dauerhaft verloren. Sie müssen ein neues Image erstellen, das Änderungen darstellt. Um den Container zu entfernen, verwenden Sie den folgenden Befehl: `docker rm <container ID>`
+7. In der Regel sollte ein Container, sobald er beendet wurde, auch entfernt werden. Durch das Entfernen eines Containers werden alle Ressourcen, die er hinterlässt, bereinigt. Nachdem Sie einen Container entfernt haben, gehen alle Änderungen, die Sie in seinem Bild Dateisystem vorgenommen haben, dauerhaft verloren. Sie müssen ein neues Image erstellen, das Änderungen darstellt. Um den Container zu entfernen, verwenden Sie den folgenden Befehl: `docker rm <container ID>`
 
 Erfahren Sie mehr über das entwickeln [einer containerisierten Webanwendung mit docker](https://docs.microsoft.com/learn/modules/intro-to-containers/).
 
-## <a name="deploy-to-azure-container-registry"></a>In Azure Container Registry bereitstellen
+## <a name="deploy-to-azure-container-registry"></a>Bereitstellung in einer Containerregistrierung
 
-[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) (ACR) ermöglicht Ihnen das Speichern, verwalten und schützen ihrer Container Images in privaten, authentifizierten und Depots. Mit docker-Standard Befehlen kompatibel, kann ACR wichtige Aufgaben für Sie wie die Überwachung und Wartung von Containersystem, Kopplung mit [Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes) , mit der Erstellung skalierbarer Orchestrierungs Systeme verarbeiten. Bedarfs gesteuertes erstellen oder vollständiges Automatisieren von Builds mit Triggern, wie z. b. Quell Code Commits und Basis Image Aktualisierungen. ACR nutzt auch das große Azure-cloudnetzwerk, um Netzwerk Latenz, globale bereit Stellungen zu verwalten und eine nahtlose Native Benutzerumgebung für alle Benutzer zu erstellen, die [Azure App Service](https://docs.microsoft.com/azure/app-service/) (für Webhosting, Mobile Back-Ends, Rest-APIs) oder [andere Azure-Clouddienste verwenden. ](https://azure.microsoft.com/product-categories/containers/).
+[**Azure Container Registry**](https://azure.microsoft.com/services/container-registry/) (ACR) ermöglicht Ihnen das Speichern, verwalten und schützen ihrer Container Images in privaten, authentifizierten und Depots. Mit docker-Standard Befehlen kompatibel, kann ACR wichtige Aufgaben für Sie wie die Überwachung und Wartung von Containersystem, Kopplung mit [Kubernetes](https://docs.microsoft.com/azure/aks/intro-kubernetes) , mit der Erstellung skalierbarer Orchestrierungs Systeme verarbeiten. Erstellen Sie bedarfsgesteuerte oder voll automatisierte Builds mit Triggern wie etwa Quellcode-Commits und Basisimage-Aktualisierungen. ACR nutzt auch das große Azure-cloudnetzwerk, um die Netzwerk Latenz, globale bereit Stellungen und eine nahtlose native Umgebung für alle Benutzer zu erstellen, die [Azure App Service](https://docs.microsoft.com/azure/app-service/) (für Webhosting, Mobile Back-Ends, Rest-APIs) oder [andere Azure-Clouddienste](https://azure.microsoft.com/product-categories/containers/)verwenden.
 
 > [!IMPORTANT]
-> Sie benötigen ein eigenes Azure-Abonnement, um einen Container in Azure bereitzustellen, und Sie erhalten möglicherweise eine Abrechnung. Wenn Sie noch nicht über ein Azure-Abonnement verfügen, [Erstellen Sie ein kostenloses Konto](https://azure.microsoft.com/free/) , bevor Sie beginnen.
+> Sie benötigen ein eigenes Azure-Abonnement, um einen Container in Azure bereitzustellen, und Sie erhalten möglicherweise eine Abrechnung. Wenn Sie nicht bereits ein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto erstellen](https://azure.microsoft.com/free/), bevor Sie beginnen.
 
-Hilfe zum Erstellen eines Azure Container Registry und zum Bereitstellen des App-Container Images finden Sie in der Übung: Stellen [Sie ein docker-Image für eine Azure-Container Instanz](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance)bereit.
+Hilfe zum Erstellen eines Azure Container Registry und zum Bereitstellen des App-Container Images finden Sie unter Übung: bereitstellen [eines docker-Images für eine Azure-Container Instanz](https://docs.microsoft.com/learn/modules/intro-to-containers/7-exercise-deploy-docker-image-to-container-instance).
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
-- [Node. js in Azure](https://azure.microsoft.com/en-us/develop/nodejs/)
-- Schnellstart [Erstellen einer Node. js-Web-App in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
+- [Node.js auf Azure](https://azure.microsoft.com/develop/nodejs/)
+- Schnellstart: [Erstellen einer Node. js-Web-App in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)
 - Online Kurs: [Verwalten von Containern in Azure](https://docs.microsoft.com/learn/paths/administer-containers-in-azure/)
 - Verwenden von vs Code: [Arbeiten mit docker](https://code.visualstudio.com/docs/azure/docker)
-- Docker-Dokumentation: [Docker Desktop WSL 2 Tech Preview](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)
+- Docker-Dokumentation: [docker Desktop WSL 2 Tech Preview](https://docs.docker.com/docker-for-windows/wsl-tech-preview/)

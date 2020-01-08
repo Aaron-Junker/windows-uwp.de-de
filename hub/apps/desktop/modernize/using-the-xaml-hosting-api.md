@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdcef66dc1f0026ff369eeb3f3c7881385d6e5ba
-ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
+ms.openlocfilehash: 9e4fdc8366e26bcd7e106bf070cb42ed2cd1a49f
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "71339295"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683683"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
 
@@ -22,7 +22,7 @@ Ab Windows 10, Version 1903, können nicht-UWP-Desktop-Apps C++ (einschließlich
 Die UWP-XAML-Hosting-API stellt die Grundlage für einen umfassenderen Satz von Steuerelementen dar, die wir bereitstellen, damit Entwickler eine fließende Benutzeroberfläche für Desktop-Apps ohne UWP bereitstellen können. Diese Funktion wird als *XAML-Inseln*bezeichnet. Eine Übersicht über diese Funktion finden Sie unter [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)](xaml-islands.md).
 
 > [!NOTE]
-> Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem im Repository " [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) ", und lassen Sie Ihre Kommentare dort ablegen. Wenn Sie Ihr Feedback lieber privat einreichen möchten, können Sie es an XamlIslandsFeedback@microsoft.com senden. Ihre Einblicke und Szenarios sind für uns äußerst wichtig.
+> Wenn Sie Feedback zu XAML-Inseln haben, erstellen Sie ein neues Problem im Repository " [Microsoft. Toolkit. Win32](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues) ", und lassen Sie Ihre Kommentare dort ablegen. Wenn Sie Ihr Feedback lieber privat einreichen möchten, können Sie es an XamlIslandsFeedback@microsoft.comsenden. Ihre Einblicke und Szenarios sind für uns äußerst wichtig.
 
 ## <a name="should-you-use-the-uwp-xaml-hosting-api"></a>Sollten Sie die UWP-XAML-Hosting-API verwenden?
 
@@ -119,7 +119,7 @@ In diesem Abschnitt werden Sie durch den Prozess der Verwendung der UWP-XAML-Hos
 
 3. Installieren Sie das nuget-Paket [Microsoft. Windows. cppwinrt](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) :
 
-    1. Klicken Sie mit der rechten Maustaste auf das Projekt in **Projektmappen-Explorer** und wählen Sie **nuget-Pakete verwalten**.
+    1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.
     2. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Windows. cppwinrt](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) , und installieren Sie die neueste Version dieses Pakets.
 
 4. Installieren Sie das nuget-Paket " [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) ":
@@ -133,9 +133,9 @@ Der grundlegende Prozess der Verwendung der XAML-Hosting-API zum Hosten eines UW
 
 1. Initialisieren Sie das UWP-XAML-Framework für den aktuellen Thread, bevor Ihre APP eines der [Windows. UI. XAML. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) -Objekte erstellt, die Sie hosten wird. Es gibt mehrere Möglichkeiten, dies zu tun, je nachdem, wann das [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) -Objekt erstellt werden soll, das die Steuerelemente hostet.
 
-    * Wenn Ihre Anwendung das **desktopwindowxamlsource** -Objekt erstellt, bevor Sie eines der **Windows. UI. XAML. UIElement** -Objekte erstellt, die es hostet, wird dieses Framework für Sie initialisiert, wenn Sie das  **Desktopwindowxamlsource** -Objekt. In diesem Szenario müssen Sie keinen eigenen Code hinzufügen, um das Framework zu initialisieren.
+    * Wenn Ihre Anwendung das **desktopwindowxamlsource** -Objekt erstellt, bevor Sie eines der **Windows. UI. XAML. UIElement** -Objekte erstellt, das gehostet wird, wird dieses Framework für Sie initialisiert, wenn Sie das **desktopwindowxamlsource** -Objekt instanziieren. In diesem Szenario müssen Sie keinen eigenen Code hinzufügen, um das Framework zu initialisieren.
 
-    * Wenn die Anwendung jedoch die **Windows. UI. XAML. UIElement** -Objekte erstellt, bevor das **desktopwindowxamlsource** -Objekt erstellt wird, das Sie hostet, muss Ihre Anwendung die statische [ Windowsxamlmanager. initializeforcurrentthread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) -Methode, um das UWP-XAML-Framework explizit zu initialisieren, bevor die **Windows. UI. XAML. UIElement** -Objekte instanziiert werden. Diese Methode sollte in der Regel von Ihrer Anwendung aufgerufen werden, wenn das übergeordnete UI-Element, das **desktopwindowxamlsource** hostet, instanziiert wird.
+    * Wenn die Anwendung jedoch die **Windows. UI erstellt. XAML. UIElement** -Objekte bevor das **desktopwindowxamlsource** -Objekt erstellt wird, das Sie hostet, muss Ihre Anwendung die statische [windowsxamlmanager. initializeforcurrentthread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) -Methode aufrufen, um das UWP-XAML-Framework explizit zu initialisieren, bevor die **Windows. UI. XAML** Diese Methode sollte in der Regel von Ihrer Anwendung aufgerufen werden, wenn das übergeordnete UI-Element, das **desktopwindowxamlsource** hostet, instanziiert wird.
 
     > [!NOTE]
     > Diese Methode gibt ein [windowsxamlmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) -Objekt zurück, das einen Verweis auf das UWP-XAML-Framework enthält. Sie können in einem bestimmten Thread beliebig viele **windowsxamlmanager** -Objekte erstellen. Da jedes Objekt jedoch einen Verweis auf das UWP-XAML-Framework enthält, sollten Sie die Objekte verwerfen, um sicherzustellen, dass XAML-Ressourcen schließlich freigegeben werden.
@@ -283,7 +283,7 @@ Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben beschrie
     }
     ```
 
-4. Kopieren Sie den folgenden Code nach dem vorherigen Abschnitt. Dieser Code definiert die [Fenster Prozedur](https://docs.microsoft.com/en-us/windows/win32/learnwin32/writing-the-window-procedure) für das Fenster.
+4. Kopieren Sie den folgenden Code nach dem vorherigen Abschnitt. Dieser Code definiert die [Fenster Prozedur](https://docs.microsoft.com/windows/win32/learnwin32/writing-the-window-procedure) für das Fenster.
 
     ```cppwinrt
     LRESULT CALLBACK WindowProc(HWND hWnd, UINT messageCode, WPARAM wParam, LPARAM lParam)
@@ -397,11 +397,11 @@ Damit Tastatureingaben für jede XAML-Insel ordnungsgemäß behandelt werden, mu
 
   * **WPF:** Die APP kann **pretranslatemess** aus dem Ereignishandler für das [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) -Ereignis aufrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) im Windows Community Toolkit.
 
-  * **Windows Forms:** Die APP kann **pretranslatemess** aus einer außer Kraft setzung für die [Control. PreProcessMessage](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control.preprocessmessage) -Methode abrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) im Windows Community Toolkit.
+  * **Windows Forms:** Die APP kann **pretranslatemess** aus einer außer Kraft setzung für die [Control. PreProcessMessage](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.preprocessmessage) -Methode abrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) im Windows Community Toolkit.
 
 ### <a name="keyboard-focus-navigation"></a>Tastaturfokus Navigation
 
-Wenn der Benutzer die Benutzeroberflächen Elemente in der Anwendung über die Tastatur navigiert (z. b. durch Drücken der **Tab** -Taste oder der Richtung/Pfeiltaste), müssen Sie den Fokus Programm gesteuert auf das **desktopwindowxamlsource** -Objekt verschieben. Wenn die Tastaturnavigation des Benutzers die **desktopwindowxamlsource**erreicht, verschieben Sie den Fokus auf das erste [Windows. UI. XAML. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) -Objekt in der Navigations Reihenfolge für Ihre Benutzeroberfläche, und verschieben Sie den Fokus weiter auf Folgendes **: Windows. UI. XAML. UIElement** -Objekte, während der Benutzer die Elemente durchläuft, und verschieben Sie dann den Fokus aus **desktopwindowxamlsource** und in das übergeordnete UI-Element zurück.  
+Wenn der Benutzer die Benutzeroberflächen Elemente in der Anwendung über die Tastatur navigiert (z. b. durch Drücken der **Tab** -Taste oder der Richtung/Pfeiltaste), müssen Sie den Fokus Programm gesteuert auf das **desktopwindowxamlsource** -Objekt verschieben. Wenn die Tastaturnavigation des Benutzers die **desktopwindowxamlsource**erreicht, verschieben Sie den Fokus auf das erste [Windows. UI. XAML. UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) -Objekt in der Navigations Reihenfolge für die Benutzeroberfläche, verschieben Sie den Fokus auf die folgenden **Windows. UI. XAML. UIElement** -Objekte, während der Benutzer die Elemente durchläuft, und verschieben Sie dann den Fokus aus **desktopwindowxamlsource** und in das übergeordnete UI  
 
 Die UWP-XAML-Hosting-API bietet verschiedene Typen und Member, die Sie beim Ausführen dieser Aufgaben unterstützen.
 
@@ -421,9 +421,9 @@ Beispiele für die Vorgehensweise im Kontext einer funktionierenden Beispielanwe
 
 Wenn der Benutzer die Größe des übergeordneten Elements der Benutzeroberfläche ändert, müssen Sie alle notwendigen Layoutänderungen verarbeiten, um sicherzustellen, dass Ihre UWP-Steuerelemente erwartungsgemäß angezeigt werden. Hier sind einige wichtige Szenarien, die berücksichtigt werden müssen.
 
-* Wenn die C++ Anwendung in einer Win32-Anwendung die WM_SIZE-Nachricht verarbeitet, kann Sie die gehostete XAML-Insel mithilfe der [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) -Funktion neu positionieren. Ein Beispiel finden Sie in der Codedatei " [SampleApp. cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
+* Wenn die C++ Anwendung in einer Win32-Anwendung die WM_SIZE Nachricht verarbeitet, kann Sie die gehostete XAML-Insel mithilfe der [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) -Funktion neu positionieren. Ein Beispiel finden Sie in der Codedatei " [SampleApp. cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
 
-* Wenn das übergeordnete Element der Benutzeroberfläche die Größe des rechteckigen Bereichs abrufen muss, der für das **Windows. UI. XAML. UIElement** erforderlich ist, das Sie auf dem **desktopwindowxamlsource**-Element gehostet haben, müssen Sie die [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) -Methode von **Windows. UI. XAML. UIElement aufzurufen.** . Zum Beispiel:
+* Wenn das übergeordnete Element der Benutzeroberfläche die Größe des rechteckigen Bereichs abrufen muss, der für das **Windows. UI. XAML. UIElement** erforderlich ist, das Sie auf dem **desktopwindowxamlsource**-Element gehostet haben, müssen Sie die [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) -Methode von **Windows. UI. XAML. UIElement**aufzurufen. Zum Beispiel:
 
     * In einer WPF-Anwendung können Sie dies über die " [accessreoverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) "-Methode von [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) tun, der " **desktopwindowxamlsource**" hostet. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) im Windows Community Toolkit.
 
@@ -452,7 +452,7 @@ Fügen Sie Ihrem Projekt ein paralleles Assemblymanifest hinzu, und [legen Sie d
 </assembly>
 ```
 
-## <a name="troubleshooting"></a>Problembehandlung
+## <a name="troubleshooting"></a>Fehlerbehebung
 
 ### <a name="error-using-uwp-xaml-hosting-api-in-a-uwp-app"></a>Fehler beim Verwenden der UWP-XAML-Hosting-API in einer UWP-App
 
@@ -476,9 +476,9 @@ Fügen Sie Ihrem Projekt ein paralleles Assemblymanifest hinzu, und [legen Sie d
 
 | Problem | Auflösung |
 |-------|------------|
-| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "die attachdewindow-Methode konnte nicht ausgeführt werden, da das angegebene HWND von einem anderen Fenster der obersten Ebene abgeleitet ist als das HWND, das zuvor an attachtewindow im gleichen Thread weitergegeben wurde." | Dieser Fehler zeigt an, dass die Anwendung die **idesktopwindowxamlsourcenative:: attachdewindow** -Methode aufgerufen hat und ihr das HWND eines Fensters, das von einem anderen Fenster der obersten Ebene abweicht, als ein Fenster, das Sie in einem vorherigen Aufruf dieser Methode angegeben haben, an Sie übermittelt hat. im gleichen Thread.</p></p>Nachdem die Anwendung " **attachtewindow** " für einen bestimmten Thread aufgerufen hat, können alle anderen [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) -Objekte im gleichen Thread nur an Fenster angefügt werden, bei denen es sich um nachfolgende Elemente desselben Fensters der obersten Ebene handelt, die im ersten Aufruf von weitergegeben wurden. **AttachTo Window**. Wenn alle **desktopwindowxamlsource** -Objekte für einen bestimmten Thread geschlossen sind, kann die nächste **desktopwindowxamlsource** wieder an jedes Fenster angefügt werden.</p></p>Um dieses Problem zu beheben, schließen Sie entweder alle **desktopwindowxamlsource** -Objekte, die an andere Fenster der obersten Ebene in diesem Thread gebunden sind, oder erstellen Sie einen neuen Thread für diese **desktopwindowxamlsource**. |
+| Ihre APP empfängt eine **COMException** mit der folgenden Meldung: "die attachdewindow-Methode konnte nicht ausgeführt werden, da das angegebene HWND von einem anderen Fenster der obersten Ebene abgeleitet ist als das HWND, das zuvor an attachtewindow im gleichen Thread weitergegeben wurde." | Dieser Fehler zeigt an, dass die Anwendung die **idesktopwindowxamlsourcenative:: attachdewindow** -Methode aufgerufen und das HWND eines Fensters an das Fenster weitergeleitet hat, das von einem anderen Fenster der obersten Ebene abgeleitet ist als ein Fenster, das Sie in einem vorherigen Aufruf dieser Methode im gleichen Thread angegeben haben.</p></p>Nachdem die Anwendung " **attachdewindow** " für einen bestimmten Thread aufgerufen hat, können alle anderen [desktopwindowxamlsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) -Objekte im gleichen Thread nur an Fenster angefügt werden, die nachfolgende Elemente desselben Fensters der obersten Ebene sind, das beim ersten Aufruf von " **AttachTo Window**" weitergegeben wurde. Wenn alle **desktopwindowxamlsource** -Objekte für einen bestimmten Thread geschlossen sind, kann die nächste **desktopwindowxamlsource** wieder an jedes Fenster angefügt werden.</p></p>Um dieses Problem zu beheben, schließen Sie entweder alle **desktopwindowxamlsource** -Objekte, die an andere Fenster der obersten Ebene in diesem Thread gebunden sind, oder erstellen Sie einen neuen Thread für diese **desktopwindowxamlsource**. |
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [UWP-Steuerelemente in Desktop Anwendungen](xaml-islands.md)
 * [C++Beispiel für Win32-XAML-Inseln](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)

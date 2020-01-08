@@ -1,22 +1,22 @@
 ---
-Description: Der Bericht zu den im Partner Center können Sie sehen, wie Kunden Ihre app verwenden.
+Description: Mit dem Verwendungs Bericht in Partner Center können Sie sehen, wie Kunden Ihre APP verwenden.
 title: Nutzungsbericht
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, Uwp, Verwendung, benutzerdefiniertes Ereignis, Bericht, Telemetrie, Benutzersitzungen
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f368e5af13628d5330ab96ab3b7675de410505
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: 45f42b7cf31eb0c22ef68ef9191d773f9044421e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788207"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685112"
 ---
 # <a name="usage-report"></a>Nutzungsbericht
 
 
-Die **Nutzung** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) können Sie sehen, wie Kunden unter Windows 10 (einschließlich Xbox) Ihrer app verwenden, und zeigt Informationen zu benutzerdefinierten Ereignissen, die Sie definiert haben. Sie können diese Daten anzeigen, im Partner Center oder [Bericht herunterladen](download-analytic-reports.md) offline anzeigen.
+Der **Verwendungs** Bericht in [Partner Center](https://partner.microsoft.com/dashboard) zeigt Ihnen, wie Kunden auf Windows 10 (einschließlich Xbox) Ihre APP verwenden, und zeigt Informationen über benutzerdefinierte Ereignisse an, die Sie definiert haben. Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterladen, um den Bericht](download-analytic-reports.md) offline anzuzeigen.
 
 
 ## <a name="apply-filters"></a>Anwenden von Filtern
@@ -25,9 +25,9 @@ Im oberen Bereich der Seite können Sie den Zeitraum auswählen, für den die Da
 
 Sie können ebenfalls **Filter** erweitern, um Daten auf dieser Seite nach Paketversion, Markt und/oder Gerätetyp zu filtern.
 
--   **Paketversion**: Die Standardeinstellung ist **alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
--   **Markt**: Der Standardfilter ist **alle Märkte**, aber Sie können die Daten auf eine oder mehrere einschränken.
--   **Gerätetyp**: Die Standardeinstellung ist **alle**, aber Sie können auch Daten für nur einen bestimmten Gerätetyp (PC, Konsole, Tablet, usw.) angezeigt.
+-   **Paketversion**: Die Standardeinstellung ist **Alle**. Wenn Ihre App mehr als ein Paket enthält, können Sie hier ein bestimmtes Paket auswählen.
+-   **Markt**: der Standardfilter lautet **Alle Märkte**, aber Sie können die Daten auf einen oder mehrere Märkte begrenzen.
+-   **Gerätetyp**: Die Standardeinstellung ist **Alle**, Sie können jedoch festlegen, dass nur Daten für einen bestimmten Gerätetyp (PC, Konsole, Tablet etc.) angezeigt werden.
 
 Die Informationen in allen unten angezeigten Diagrammen spiegelt den Zeitraum und die ausgewählten Filter wider (mit Ausnahme von **Neue Benutzer** im Diagramm **Nutzung**, das nicht angezeigt wird, wenn keine Filter ausgewählt sind). In einigen Abschnitten können Sie zusätzliche Filter anwenden.
 
@@ -35,23 +35,23 @@ Die Informationen in allen unten angezeigten Diagrammen spiegelt den Zeitraum un
 > Dieser Bericht enthält nur Nutzungsdaten von Kunden unter Windows 10 (inklusive Xbox), die die Bereitstellung von Telemetriedaten nicht deaktiviert haben. Die Nutzungsdaten für Xbox-Spiele werden unabhängig von der Anmeldung des Kunden bei Xbox Live angezeigt. 
 
 
-## <a name="usage"></a>Verwendung
+## <a name="usage"></a>Usage
 
 Das Diagramm **Nutzung** zeigt im Detail, wie Kunden Ihre App über den ausgewählten Zeitraum verwenden. In diesem Diagramm werden individuelle Benutzer Ihrer App oder Benutzersitzungen nicht einzeln nachverfolgt (d. h., ein Benutzer wird in diesem Diagramm unabhängig davon dargestellt, ob er Ihre App nur einmal oder mehrmals verwendet hat).
 
-In diesem Diagramm verfügt über separate Registerkarten, die Sie anzeigen können, mit der Nutzung von Tag oder Woche (je nach der Dauer, die Sie ausgewählt haben).
+Dieses Diagramm enthält separate Registerkarten, die Sie anzeigen können, wobei die Nutzung nach Tag oder Woche (abhängig von der von Ihnen ausgewählten Dauer) angezeigt wird.
 
-- **Benutzer**: Zeigt die Gesamtanzahl der **benutzersitzungen** über den ausgewählten Zeitraum an. Jede Benutzersitzung stellt einen unterschiedlichen Zeitraum dar und beginnt, wenn die App gestartet wird (Prozessbeginn) und endet bei Prozessende oder nach einer bestimmten Zeit der Inaktivität. Aus diesem Grund kann ein einzelner Kunde mehrere Benutzersitzungen am gleichen Tag oder in der gleichen Woche haben. Die Gesamtanzahl der **aktiven Benutzer** (alle Kunden, die die App an diesem Tag oder in dieser Woche nutzen) und **neuen Benutzer** (ein Kunde, der Ihre App das erste Mal an diesem Tag oder in der Woche nutzt) wird ebenfalls angezeigt. Wenn Sie Filter auf der Seite angewendet haben, werden **neue Benutzer** in diesem Diagramm nicht angezeigt.
-- **Geräte**: Zeigt die Anzahl der täglichen Geräte, die von allen Benutzern Interaktion mit Ihrer app verwendet.
-- **Dauer**: Zeigt die gesamten Engagement-Stunden (Stunden, in denen ein Benutzer Ihre app aktiv verwendet wird).
-- **Engagement**: Zeigt die durchschnittliche Engagement Minuten pro Benutzer (durchschnittliche Dauer der Sitzung des Benutzers). 
-- **Aufbewahrung**: Zeigt die Gesamtanzahl der **täglich aktive Benutzer/MAU** (aktive Benutzer/monatlich aktive Benutzer/Tag) über den ausgewählten Zeitraum an.
-- **Churn Prediction**: Zeigt, wie viele Benutzer, die wir Vorhersagen wahrscheinlich beenden werden, anhand Ihrer app in Kürze mit ihre letzte Nutzung.
+- **Benutzer**: Zeigt die Gesamtanzahl der **Benutzersitzungen** über den ausgewählten Zeitraum an. Jede Benutzersitzung stellt einen unterschiedlichen Zeitraum dar und beginnt, wenn die App gestartet wird (Prozessbeginn) und endet bei Prozessende oder nach einer bestimmten Zeit der Inaktivität. Aus diesem Grund kann ein einzelner Kunde mehrere Benutzersitzungen am gleichen Tag oder in der gleichen Woche haben. Die Gesamtanzahl der **aktiven Benutzer** (alle Kunden, die die App an diesem Tag oder in dieser Woche nutzen) und **neuen Benutzer** (ein Kunde, der Ihre App das erste Mal an diesem Tag oder in der Woche nutzt) wird ebenfalls angezeigt. Wenn Sie Filter auf der Seite angewendet haben, werden **neue Benutzer** in diesem Diagramm nicht angezeigt.
+- **Geräte**: Zeigt die Anzahl der täglichen Geräte an, die von allen Benutzern zur Interaktion mit Ihrer App verwendet werden.
+- **Dauer**: Zeigt die Gesamtanzahl der aktiven Stunden an (Stunden, in denen ein Benutzer aktiv Ihrer App verwendet).
+- **Engagement**: zeigt die durchschnittlichen Engagement-Minuten pro Benutzer an (durchschnittliche Dauer aller Benutzersitzungen). 
+- **Beibehaltung**: Zeigt die Gesamtanzahl der **DAU/MAU** (tägliche aktive Benutzer/monatliche aktive Benutzer) über den ausgewählten Zeitraum an.
+- **Vorhersage**der Abwanderung: zeigt an, wie viele Benutzer Ihre APP wahrscheinlich bald nicht mehr verwenden, basierend auf Ihrer aktuellen Nutzung.
 
-Wenn die **30D** Zeitraum ausgewählt ist, wird möglicherweise beim Anzeigen von Kreis Marker angezeigt der **Benutzer**, **Geräte**, oder **Dauer** Registerkarten. Dies eine erhebliche Leistungssteigerung darstellen, oder verringern Sie in einem angegebenen Wert, den wir glauben, dass Sie wissen möchten. Das Datum, die auf dem der Kreis angezeigt wird, stellt das Ende der Woche, die in der wir eine beträchtliche Zunahme oder verringern, die im Vergleich zu die Woche vor, die erkannt dar. Zeigen Sie auf den Kreis, um weitere Details zu Änderungen anzuzeigen.  
+Wenn der Zeitraum von **30D** ausgewählt ist, werden möglicherweise Kreis Markierungen angezeigt, wenn die Registerkarten **Benutzer**, **Geräte**oder **Dauer** angezeigt werden. Diese stellen eine beträchtliche Zunahme oder Abnahme in einem bestimmten Wert dar, über den wir denken, dass Sie wissen möchten. Das Datum, an dem der Kreis angezeigt wird, steht für das Ende der Woche, an dem im Vergleich zur Woche vor der Woche eine beträchtliche Zunahme oder Abnahme festgestellt wurde. Zeigen Sie auf den Kreis, um weitere Details zu den Änderungen anzuzeigen.  
 
 > [!TIP]
-> Sehen Sie weitere Informationen zu wesentlichen Änderungen in den letzten 30 Tagen in den [Insights-Bericht](insights-report.md).
+> Sie können in den letzten 30 Tagen im [Insights-Bericht](insights-report.md)weitere Einblicke in Bezug auf bedeutende Änderungen anzeigen.
 
 
 ## <a name="user-sessions"></a>Benutzersitzungen
@@ -74,7 +74,7 @@ Genau wie im Diagramm **Benutzersitzungen** stellen die Infos eine Sitzung des B
 
 Das Diagramm **Benutzerdefinierte Ereignisse** zeigt, wie häufig die für Ihre App definierten benutzerdefinierten Ereignisse insgesamt aufgetreten sind. Dazu können mehrere Vorkommen für denselben Kunden gehören. Mithilfe der Filter können Sie die benutzerdefinierten Ereignisse auswählen, für die Daten angezeigt werden sollen.
 
-Benutzerdefinierte Ereignisse werden unter Verwendung der [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/en-us/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Methode im [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) implementiert.
+Benutzerdefinierte Ereignisse werden unter Verwendung der [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Methode im [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) implementiert.
 
 Weitere Informationen finden Sie unter [Protokollieren benutzerdefinierter Ereignisse für Dev Center](../monetize/log-custom-events-for-dev-center.md).
 

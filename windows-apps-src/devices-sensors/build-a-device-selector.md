@@ -4,14 +4,14 @@ title: Erstellen einer Geräteauswahl
 description: Durch das Erstellen einer Geräteauswahl können Sie die Geräte begrenzen, die Sie beim Auflisten von Geräten durchsuchen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d31eeefffca1320f3222ce25cfb7678178d4ab
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 67d83a66687bb8719dc374a2a8a3e30eaac82c71
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370392"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684833"
 ---
 # <a name="build-a-device-selector"></a>Erstellen einer Geräteauswahl
 
@@ -19,7 +19,7 @@ ms.locfileid: "66370392"
 
 **Wichtige APIs**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**Windows. Devices. Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
 
 Durch das Erstellen einer Geräteauswahl können Sie die Geräte begrenzen, die Sie beim Auflisten von Geräten durchsuchen. Auf diese Weise erhalten Sie lediglich die relevanten Ergebnisse, und die Leistung des Systems wird optimiert. In den meisten Szenarien erhalten Sie eine Geräteauswahl von einem Gerätestapel. Beispielsweise können Sie [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.usb.usbdevice.getdeviceselector) für Geräte verwenden, die über USB erkannt werden. Diese Geräteauswahl gibt eine AQS-Zeichenfolge (Advanced Query Syntax) zurück. Wenn Sie mit dem AQS-Format nicht vertraut sind, erhalten Sie weitere Informationen unter [Programmgesteuerte Verwendung der erweiterten Abfragesyntax](https://docs.microsoft.com/windows/desktop/search/-search-3x-advancedquerysyntax).
 
@@ -36,7 +36,7 @@ Bei Verwendung der [**Windows.Devices.Enumeration**](https://docs.microsoft.com/
 
 Die [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-APIs enthalten eine Canonical AQS-Syntax, die jedoch nicht alle Operatoren unterstützt. Eine Liste der beim Erstellen der Filterzeichenfolge verfügbaren Eigenschaften finden Sie unter [Geräteinformationseigenschaften](device-information-properties.md).
 
-**Vorsicht**  benutzerdefinierte Eigenschaften, die definiert sind, mit der `{GUID} PID` Format kann nicht verwendet werden, wenn Ihre AQS Filterzeichenfolge erstellen. Dies liegt daran, dass der Eigenschaftstyp vom bekannten Eigenschaftennamen abgeleitet wird.
+**Vorsicht**  benutzerdefinierte Eigenschaften, die mit dem `{GUID} PID` Format definiert werden, können beim Erstellen der AQS-Filter Zeichenfolge nicht verwendet werden. Dies liegt daran, dass der Eigenschaftstyp vom bekannten Eigenschaftennamen abgeleitet wird.
 
  
 
@@ -44,25 +44,25 @@ Die folgende Tabelle enthält die AQS-Operatoren mit den von ihnen unterstützte
 
 | Operator                       | Unterstützte Typen                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **COP\_EQUAL**                 | String, Boolean, GUID, UInt16, UInt32                                       |
-| **COP\_NOTEQUAL**              | String, Boolean, GUID, UInt16, UInt32                                       |
-| **COP\_"LESSTHAN"**              | UInt16, UInt32                                                              |
-| **COP\_"GREATERTHAN"**           | UInt16, UInt32                                                              |
-| **COP\_LESSTHANOREQUAL**       | UInt16, UInt32                                                              |
-| **COP\_GREATERTHANOREQUAL**    | UInt16, UInt32                                                              |
-| **COP\_WERT\_ENTHÄLT**       | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
-| **COP\_WERT\_NOTCONTAINS**    | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
-| **COP\_WERT\_"STARTSWITH"**     | Zeichenfolge                                                                      |
-| **COP\_WERT\_"ENDSWITH"**       | Zeichenfolge                                                                      |
-| **COP\_DOSWILDCARDS**          | Nicht unterstützt.                                                               |
-| **COP\_WORD\_EQUAL**           | Nicht unterstützt.                                                               |
-| **COP\_WORD\_"STARTSWITH"**      | Nicht unterstützt.                                                               |
-| **COP\_ANWENDUNG\_BESTIMMTE** | Nicht unterstützt.                                                               |
+| **COP-\_gleich**                 | String, Boolean, GUID, UInt16, UInt32                                       |
+| **COP\_NotEqual**              | String, Boolean, GUID, UInt16, UInt32                                       |
+| **COP\_LessThan**              | UInt16, UInt32                                                              |
+| **COP\_GreaterThan**           | UInt16, UInt32                                                              |
+| **COP\_LessThanOrEqual**       | UInt16, UInt32                                                              |
+| **COP\_GreaterThanOrEqual**    | UInt16, UInt32                                                              |
+| **\_Wert für Cop-\_enthält**       | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
+| **COP-\_Wert\_Notare**    | String, String Array, Boolean Array, GUID Array, UInt16 Array, UInt32 Array |
+| **COP\_Wert\_starttwith**     | Zeichenfolge                                                                      |
+| **COP-\_Wert\_EndsWith**       | Zeichenfolge                                                                      |
+| **COP-\_doswildcards**          | Nicht unterstützt.                                                               |
+| **COP\_Wort\_gleich**           | Nicht unterstützt.                                                               |
+| **COP\_Word\_startzwith**      | Nicht unterstützt.                                                               |
+| **COP\_Anwendung\_spezifisch** | Nicht unterstützt.                                                               |
 
 
-> **Tipp**  können Sie angeben, **NULL** für **COP\_gleich** oder **COP\_NOTEQUAL**. Dies führt zu einer Eigenschaft ohne Wert oder ohne vorhandenen Wert. Geben Sie im AQS, **NULL** mit leeren Klammern \[ \].
+> **Tipp**  Sie können **null** für **Cop\_gleich** oder **Cop\_NotEqual**angeben. Dies führt zu einer Eigenschaft ohne Wert oder ohne vorhandenen Wert. In AQS geben Sie mithilfe leerer Klammern \[\]**null** an.
 
-> **Wichtige**  bei Verwendung der **COP\_Wert\_CONTAINS** und **COP\_Wert\_NOTCONTAINS** Operatoren Sie verhalten sich anders mit Zeichenfolgen und Zeichenfolgen-Arrays. Im Falle einer Zeichenfolge führt das System eine Suche ohne Berücksichtigung der Groß-/Kleinschreibung durch, um festzustellen, ob das Gerät die angegebene Zeichenfolge als Teilzeichenfolge enthält. Im Falle eines Zeichenfolgenarrays werden Teilzeichenfolgen nicht gesucht. Mit dem Zeichenfolgenarray wird das Array durchsucht, um festzustellen, ob es die gesamte angegebene Zeichenfolge enthält. Es ist nicht möglich, ein Zeichenfolgenarray zu durchsuchen, um festzustellen, ob die Elemente im Array eine Teilzeichenfolge enthalten.
+> **Wichtig**  bei der Verwendung des **Cop-\_Werts\_enthält und enthält** **\_Wert\_Notare** -Operatoren unterschiedlich verhalten sich mit Zeichen folgen und Zeichen folgen Arrays. Im Falle einer Zeichenfolge führt das System eine Suche ohne Berücksichtigung der Groß-/Kleinschreibung durch, um festzustellen, ob das Gerät die angegebene Zeichenfolge als Teilzeichenfolge enthält. Im Falle eines Zeichenfolgenarrays werden Teilzeichenfolgen nicht gesucht. Mit dem Zeichenfolgenarray wird das Array durchsucht, um festzustellen, ob es die gesamte angegebene Zeichenfolge enthält. Es ist nicht möglich, ein Zeichenfolgenarray zu durchsuchen, um festzustellen, ob die Elemente im Array eine Teilzeichenfolge enthalten.
 
 Wenn keine einzelne AQS-Filterzeichenfolge erstellt werden kann, die den richtigen Ergebnisbereich herausfiltert, können Sie Ihre Ergebnisse nach Erhalt filtern. In diesem Fall wird jedoch empfohlen, die Ergebnisse der anfänglichen AQS-Filterzeichenfolge so weit wie möglich einzuschränken, wenn Sie sie für [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-APIs bereitstellen. Dadurch wird die Leistung der Anwendung verbessert.
 
@@ -70,38 +70,38 @@ Wenn keine einzelne AQS-Filterzeichenfolge erstellt werden kann, die den richtig
 
 Die folgenden Beispiele veranschaulichen, wie die AQS-Syntax verwendet werden kann, um die aufzulistenden Geräte einzuschränken. Alle diese Filterzeichenfolgen werden mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) kombiniert, um einen vollständigen Filter zu erstellen. Wenn keine Art angegeben ist, wird **DeviceInterface** als Standardart verwendet.
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, die die Schnittstellenklasse für die Audioaufzeichnung enthalten und derzeit aktiviert sind. **=** Übersetzung in **COP\_gleich**.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, die die Schnittstellenklasse für die Audioaufzeichnung enthalten und derzeit aktiviert sind. **=** in **Cop\_entspricht**.
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, die mindestens eine Hardware-ID von „GenCdRom“ aufweisen. **~~** Übersetzung in **COP\_Wert\_CONTAINS**.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, die mindestens eine Hardware-ID von „GenCdRom“ aufweisen. **~~** in den **Cop-\_Wert**übersetzt, der\_enthält.
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **DeviceContainer** kombiniert wird, listet er alle Objekte auf, die einen Modellnamen aufweisen, der die Teilzeichenfolge „Microsoft“ enthält. **~~** Übersetzung in **COP\_Wert\_CONTAINS**.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **DeviceContainer** kombiniert wird, listet er alle Objekte auf, die einen Modellnamen aufweisen, der die Teilzeichenfolge „Microsoft“ enthält. **~~** in den **Cop-\_Wert**übersetzt, der\_enthält.
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, deren Name mit der Teilzeichenfolge „Microsoft“ beginnt. **~&lt;** Übersetzung in **COP\_"StartsWith"** .
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **DeviceInterface** kombiniert wird, listet er alle Objekte auf, deren Name mit der Teilzeichenfolge „Microsoft“ beginnt. **~&lt;** in **Cop\_Start mit**übersetzt.
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die eine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **&lt;&gt;\[\]** Übersetzung in **COP\_NOTEQUALS** in Kombination mit einem **NULL** Wert.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die eine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **&lt;&gt;\[\]** mit einem **null** -Wert in **Cop\_NotEquals** übersetzt.
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die keine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **=\[\]** Übersetzung in **COP\_gleich** in Kombination mit einem **NULL** Wert.
+Wenn dieser Filter zusammen mit einer [**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)-Aufzählung vom Typ **Device** kombiniert wird, listet er alle Objekte auf, für die keine **System.Devices.IpAddress**-Eigenschaft festgelegt wurde. **=\[\]** in **Cop\_ist gleich** kombiniert mit einem **null** -Wert.
 
 ``` syntax
 System.Devices.IpAddress:=[]

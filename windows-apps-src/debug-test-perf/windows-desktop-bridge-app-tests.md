@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: dcdac5130af673d1b0d1ab1a9713902e9ab22830
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ec780253deb170c5dde1828add366907c403f100
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257818"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681901"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests für Windows Desktop Bridge-Apps
 
-[Desktop Bridge-apps](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) sind Windows-Desktop Anwendungen, die mithilfe der [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop)in universelle Windows-Plattform-Apps (UWP) konvertiert werden. Nach der Konvertierung wird die Windows-Desktopanwendung gepackt, gewartet und als UWP-App-Paket (eine APPX- oder APPXBUNDLE-Datei) für Windows 10 Desktop bereitgestellt.
+[Desktop Bridge-apps](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) sind Windows-Desktop Anwendungen, die mithilfe der [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)in universelle Windows-Plattform-Apps (UWP) konvertiert werden. Nach der Konvertierung wird die Windows-Desktopanwendung gepackt, gewartet und als UWP-App-Paket (eine APPX- oder APPXBUNDLE-Datei) für Windows 10 Desktop bereitgestellt.
 
 ## <a name="required-versus-optional-tests"></a>Obligatorische im Vergleich zu optionalen Tests
 Optionale Tests für Windows Desktop Bridge-Apps dienen nur zu Informationszwecken und werden nicht verwendet, um Ihre APP während Microsoft Store Onboarding auszuwerten. Es wird empfohlen, diese Testergebnisse zu untersuchen, um bessere Qualitäts-apps zu entwickeln Die gesamten Kriterien für die Aufnahme in den Windows Store werden von den obligatorischen Tests und nicht von den optionalen Tests bestimmt.
@@ -107,7 +107,7 @@ Ihre App wird ggf. nicht ordnungsgemäß installiert, wenn die im App-Manifest d
 **Test Details**  
 Prüft die im App-Manifest definierten Ressourcen, um sicherzustellen, dass sie vorhanden und gültig sind.
 
-**Korrekturmaßnahme**  
+**Korrekturmaßnahme**:  
 Orientieren Sie sich an der folgenden Tabelle.
 
 Fehlermeldung | Anmerkungen
@@ -122,9 +122,9 @@ Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer defini
 Das Paket enthält keine Datei „resources.pri”.  | Wenn das App-Manifest lokalisierbaren Inhalt enthält, müssen Sie sicherstellen, dass das Paket der App eine gültige Datei „resources.pri“ enthält. 
 Die Datei „resources.pri“ muss eine Ressourcenzuordnung enthalten, bei der der Name dem Paketnamen „{vollständiger Paketname}“ entspricht.  | Dieser Fehler wird angezeigt, wenn das Manifest geändert wird und der Name der Ressourcenzuordnung in „resources.pri“ dem Paketnamen im Manifest nicht mehr entspricht. In der tatsächlichen Meldung enthält „{vollständiger Paketname}“ den Paketnamen, den „resources.pri“ enthalten muss. Um diesen Fehler zu beheben, müssen Sie die Datei „resources.pri“ neu erstellen. Am besten erstellen Sie dazu das App-Paket neu. 
 Für die Datei „resources.pri“ darf „Automatisch zusammenführen“ nicht aktiviert sein.  | „MakePRI.exe“ unterstützt eine Option mit dem Namen AutoMerge. Der Standardwert von AutoMerge ist Aus. Bei Aktivierung führt AutoMerge die App-Sprachpaketressourcen in einer einzelnen Datei „resources.pri“ zur Laufzeit zusammen. Dies wird für apps, die Sie über die Microsoft Store verteilen möchten, nicht empfohlen. Die Ressourcen. pri einer APP, die über den Microsoft Store verteilt wird, muss sich im Stammverzeichnis des App-Pakets befinden und alle sprach Verweise enthalten, die von der App unterstützt werden. 
-Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.  | Weitere Informationen finden Sie unter [App-Paketanforderungen](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt, und {number} enthält die maximale Länge. 
+Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.  | Weitere Informationen finden Sie unter [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt, und {number} enthält die maximale Länge. 
 Die Zeichenfolge „{string}“ darf keine führenden/nachgestellten Leerzeichen enthalten.  | Das Schema für die Elemente im App-Manifest lässt führende oder nachgestellte Leerzeichen nicht zu. In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt. Stellen Sie sicher, dass keiner der lokalisierten Werte der Manifestfelder in „resources.pri“ führende oder nachgestellte Leerzeichen enthält. 
-Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).  | Weitere Informationen finden Sie unter [App-Paketanforderungen](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). 
+Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).  | Weitere Informationen finden Sie unter [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). 
 In der Datei „resources.pri” ist keine Standardressource angegeben.  | Weitere Informationen finden Sie im Handbuch unter [App-Ressourcen](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). In der Standardbuildkonfiguration nimmt Visual Studio nur Bildressourcen mit der Skalierung 200 % in das App-Paket auf, wenn ein Bündel generiert wird, andere Ressourcen werden im Ressourcenpaket abgelegt. Stellen Sie sicher, dass Sie entweder Bildressourcen mit der Skalierung 200 % einschließen oder Ihr Projekt für die Aufnahme der vorhandenen Ressourcen konfigurieren. 
 In der Datei „resources.pri“ ist kein Ressourcenwert angegeben.  | Stellen Sie sicher, dass für das App-Manifest gültige Ressourcen in „resources.pri“ definiert sind. 
 Die Bilddatei „{Dateiname}“ muss kleiner als 204.800 Bytes sein.  | Verringern Sie die Größe der angegebenen Bilder. 
@@ -150,7 +150,7 @@ Ersetzen Sie Standardbilder durch eigene Bilder, die über Aussagekraft für Ihr
 Apps müssen ein korrekt formatiertes App-Manifest besitzen.
 
 **Test Details**  
-Überprüft das App-Manifest, um sicherzustellen, dass der Inhalt der Beschreibung in den [App-Paketanforderungen](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements) entspricht. Die folgenden Überprüfungen werden in diesem Test ausgeführt:
+Überprüft das App-Manifest, um sicherzustellen, dass der Inhalt der Beschreibung in den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) entspricht. Die folgenden Überprüfungen werden in diesem Test ausgeführt:
 * **Dateierweiterungen und Protokolle**  
 Ihre App kann die Dateitypen deklarieren, denen sie zugeordnet werden kann. Eine Deklaration über eine große Anzahl von ungewöhnlichen Dateitypen sorgt für eine schlechtere Benutzeroberfläche. Mit diesem Test wird die Anzahl von Dateierweiterungen beschränkt, die einer App zugeordnet werden können.
 * **Framework-Abhängigkeits Regel**  
@@ -158,8 +158,8 @@ Mit diesem Test wird die Anforderung durchgesetzt, dass die Apps geeignete Abhä
 * **Überprüfung der prozessübergreifenden Kommunikation (IPC)**  
 Dieser Test setzt die Anforderung durch, dass Desktop-Brücke-Apps außerhalb des App-Containers nicht mit Desktopkomponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen `DesktopApplicationPath` angeben, bestehen diesen Test nicht.  
 
-**Korrekturmaßnahme**  
-Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements) ab.
+**Korrekturmaßnahme**:  
+Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) ab.
 
 
 #### <a name="32-application-count"></a>3.2 Anzahl der Anwendungen
@@ -284,6 +284,6 @@ Signaturdateien für privaten Code sollten privat bleiben, da sie im Fall einer 
 Entfernen Sie alle Signaturschlüssel für privaten Code (wie z. B. PFX- und SNK-Dateien) aus dem Paket.
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)

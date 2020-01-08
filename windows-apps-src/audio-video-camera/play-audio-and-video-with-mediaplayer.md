@@ -4,14 +4,14 @@ description: In diesem Artikel erfahren Sie, wie Sie in Ihrer universellen Windo
 title: Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
-ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
+ms.openlocfilehash: a53c03c10089856cfd738a5c071c37502a34e9a5
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486432"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683623"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“
 
@@ -20,9 +20,9 @@ In diesem Artikel erfahren Sie, wie Sie in Ihrer universellen Windows-App mithil
 Dieser Artikel erläutert die Features von **MediaPlayer**, die von einer typischen App zur Medienwiedergabe verwendet werden. Beachten Sie, dass **MediaPlayer** die [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource)-Klasse als Container für alle Medienelemente verwendet. Diese Klasse ermöglicht Ihnen das Laden und Wiedergeben von Medien aus verschiedenen Quellen – z. B. aus lokalen Dateien, Speicherdatenströmen und Netzwerkquellen – über die gleiche Schnittstelle. Verschiedene Klassen auf höherer Ebene arbeiten ebenfalls mit **MediaSource**, z. B. [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) und [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList). Sie stellen erweiterte Features bereit wie Wiedergabelisten und die Möglichkeit, Medienquellen mit mehreren Audio-, Video- und Metadatentiteln zu verwalten, Weitere Informationen zu **MediaSource** und verwandten APIs finden Sie unter [Medienelemente, Wiedergabelisten und Titel](media-playback-with-mediasource.md).
 
 > [!NOTE] 
-> Windows 10 N- und Windows 10 KN-Editionen enthalten nicht die für die Verwendung von **MediaPlayer** für die Wiedergabe erforderlichen Medienfunktionen. Diese Features können manuell installiert werden. Weitere Informationen finden Sie unter [Media Feature Pack für Windows 10 N- und Windows 10 KN-Editionen](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
+> Windows 10 N- und Windows 10 KN-Editionen enthalten nicht die für die Verwendung von **MediaPlayer** für die Wiedergabe erforderlichen Medienfunktionen. Diese Features können manuell installiert werden. Weitere Informationen finden Sie unter [Media Feature Pack für Windows 10 N- und Windows 10 KN-Editionen](https://support.microsoft.com/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions).
 
-## <a name="play-a-media-file-with-mediaplayer"></a>Wiedergeben einer Mediendatei mit „MediaPlayer“  
+## <a name="play-a-media-file-with-mediaplayer"></a>Wiedergeben einer Mediendatei mit MediaPlayer  
 Die grundlegende Medienwiedergabe mit **MediaPlayer** ist sehr einfach zu implementieren. Erstellen Sie zunächst eine neue Instanz der **MediaPlayer**-Klasse. In Ihrer App können mehrere **MediaPlayer**-Instanzen gleichzeitig aktiv sein. Legen Sie dann für die [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source)-Eigenschaft des Players ein Objekt fest, welches die [**IMediaPlaybackSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.IMediaPlaybackSource) implementiert, z. B. eine [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource), ein [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) oder eine [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList). In diesem Beispiel wird ein **MediaSource**-Objekt aus einer Datei im lokalen Speicher der App erstellt. Anschließend wird aus der Quelle ein **MediaPlaybackItem**-Objekt erstellt und der **Source**-Eigenschaft des Players zugewiesen.
 
 Anders als **MediaElement** startet **MediaPlayer** nicht standardmäßig automatisch mit der Wiedergabe. Sie können die Wiedergabe starten, indem Sie [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.play) aufrufen, für die [**AutoPlay**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.autoplay) -Eigenschaft „true“ festlegen oder warten, bis der Benutzer die Wiedergabe mit den integrierten Media-Steuerelementen startet.
@@ -104,7 +104,7 @@ Deklarieren Sie als Nächstes ein **Rect**-Objekt, welches das aktuelle Zoom-Que
 
 [!code-cs[DeclareSourceRect](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareSourceRect)]
 
-Der **ManipulationDelta**-Handler passt die Skalierung oder die Übersetzung des Zoom-Rechtecks an. Ist der Deltawert für die Skalierung nicht 1, bedeutet dies, dass der Benutzer eine Zwei-Finger-Zoom-Geste ausgeführt hat. Wenn der Wert größer als 1 ist, muss das Quellrechteck verkleinert werden, um den Inhalt zu vergrößern. Wenn der Wert kleiner als 1 ist, sollte das Quellrechteck vergrößert werden, um den Inhalt zu verkleinern. Vor Festlegen der neuen Skalierungswerte wird das resultierende Rechteck überprüft, um sicherzustellen, dass es vollständig innerhalb der Grenzen von (0,0,1,1) liegt.
+Der **ManipulationDelta**-Handler passt die Skalierung oder die Übersetzung des Zoom-Rechtecks an. Ist der Deltawert für die Skalierung nicht 1, bedeutet dies, dass der Benutzer eine Zwei-Finger-Zoom-Geste ausgeführt hat. Wenn der Wert größer als 1 ist, muss das Quellrechteck verkleinert werden, um den Inhalt zu vergrößern. Wenn der Wert kleiner als 1 ist, sollte das Quellrechteck zum Verkleinern größer gemacht werden. Vor dem Festlegen der neuen Skalierungswerte, wird das resultierende Rechteck überprüft, um sicherzustellen, dass es vollständig innerhalb der Grenzen der (0,0,1,1) liegt.
 
 Wenn der Skalierungswert 1 ist, wird die Übersetzungsgeste behandelt. Das Rechteck wird wie folgt übersetzt: Anzahl der Pixel in der Geste geteilt durch die Breite und Höhe des Steuerelements. Wieder wird das resultierende Rechteck überprüft, um sicherzustellen, dass es innerhalb der Grenzen von (0,0,1,1) liegt.
 
@@ -143,7 +143,7 @@ Das folgende Beispiel zeigt, wie Sie mit einem **MediaTimelineController** zwei 
 
 [!code-cs[SetTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetTimelineController)]
 
-**Achtung** Die [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager)-Klasse stellt eine automatische Integration zwischen **MediaPlayer** und den Steuerelementen für den Systemmedientransport (System Media Transport Controls, SMTC) bereit. Diese automatische Integration kann jedoch nicht für Media Player verwendet werden, die über eine **MediaTimelineController**-Klasse gesteuert werden. Daher müssen Sie vor dem Festlegen des Zeitachsencontrollers des Players den Befehlsmanager des Media Players deaktivieren. Bei unterlassen, führt zu einer Ausnahme mit der folgenden Meldung ausgelöst wird: "Die Anfügen der Datenträger-Zeitachsen-Controller ist aufgrund des aktuellen Status des Objekts blockiert." Weitere Informationen zur Integration des Media Players in die SMTC finden Sie unter [Integration in die Steuerelemente für den Systemmedientransport](integrate-with-systemmediatransportcontrols.md). Auch wenn Sie eine **MediaTimelineController**-Klasse verwenden, können Sie die SMTC weiterhin manuell steuern. Weitere Informationen finden Sie unter [Manuelle Steuerung der Steuerelemente für den Systemmedientransport](system-media-transport-controls.md).
+**Achtung** Die [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager)-Klasse stellt eine automatische Integration zwischen **MediaPlayer** und den Steuerelementen für den Systemmedientransport (System Media Transport Controls, SMTC) bereit. Diese automatische Integration kann jedoch nicht für Media Player verwendet werden, die über eine **MediaTimelineController**-Klasse gesteuert werden. Daher müssen Sie vor dem Festlegen des Zeitachsencontrollers des Players den Befehlsmanager des Media Players deaktivieren. Andernfalls wird eine Ausnahme mit der Benachrichtigung ausgelöst, dass das Anfügen des Medienzeitachsencontrollers im aktuellen Objektzustand blockiert wird. Weitere Informationen zur Integration des Media Players in die SMTC finden Sie unter [Integration in die Steuerelemente für den Systemmedientransport](integrate-with-systemmediatransportcontrols.md). Auch wenn Sie eine **MediaTimelineController**-Klasse verwenden, können Sie die SMTC weiterhin manuell steuern. Weitere Informationen finden Sie unter [Manuelle Steuerung der Steuerelemente für den Systemmedientransport](system-media-transport-controls.md).
 
 Nachdem Sie eine **MediaTimelineController**-Klasse einem oder mehreren Media Player zugewiesen haben, können Sie den Wiedergabestatus mit den vom Controller bereitgestellten Methoden steuern. Im folgenden Beispiel wird [**Start**](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontroller.start) aufgerufen, um die Wiedergabe aller zugeordneten Media Player zu Beginn des Mediums zu starten.
 
@@ -189,7 +189,7 @@ Beachten Sie: Wird der Offsetwert eines Players einer negativen Wiedergabepositi
 ## <a name="play-spherical-video-with-mediaplayer"></a>Wiedergeben von sphärischen Videos mit MediaPlayer
 Ab Windows 10 Version 1703 unterstützt **MediaPlayer** equirektanguläre Projektionen für kugelförmige Videowiedergabe. **MediaPlayer** unterscheidet sphärische Videoinhalte nicht von anderen und spielt das Video ab, sofern die Video-Codierung unterstützt wird. Falls das sphärische Video einen Metadatentag enthält, der für das Video equirektanguläre Projektion fordert, kann **MediaPlayer** das Video mithilfe dieser Sichtfeld- und Ausrichtungsinformationen wiedergeben. Dies ermöglicht Szenarien wie Virtual-Reality-Videowiedergabe durch Anzeigebrillen oder einfache Bildschwenks innerhalb des sphärischen Videoinhalt durch Maus- oder Tastatureingaben des Benutzers.
 
-Für sphärische Videowiedergaben befolgen Sie die zuvor in diesem Artikel beschriebenen Schritte für die Videowiedergabe. Die einen zusätzliche Schritt registrieren Sie einen Handler für ist das [ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) Ereignis. Dieses Ereignis bietet Ihnen die Möglichkeit, Parameter für die sphärische Videowiedergabe zu aktivieren und zu steuern.
+Für sphärische Videowiedergaben befolgen Sie die zuvor in diesem Artikel beschriebenen Schritte für die Videowiedergabe. Der einzige zusätzliche Schritt ist die Registrierung eines Handlers für das [**Media Player. mediageöffnete**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) -Ereignis. Dieses Ereignis bietet Ihnen die Möglichkeit, Parameter für die sphärische Videowiedergabe zu aktivieren und zu steuern.
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 
@@ -228,10 +228,10 @@ Nachdem alle erforderlichen Objekte instanziiert sind, wird **CopyFrameToVideoSu
 
 Weitere Informationen zu Win2D finden Sie im [Win2D-Repository auf GitHub](https://github.com/Microsoft/Win2D). Um den oben gezeigten Beispielcode zu testen, müssen Sie Ihrem Projekt das Win2D-NuGet-Paket mit folgenden Anweisungen hinzufügen.
 
-**Auf das Win2D-NuGet-Paket Ihrem Projekt Effekt hinzufügen**
+**So fügen Sie das nuget-Paket "Win2D" Ihrem Effekt Projekt hinzu**
 
 1.  Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr Projekt und wählen Sie **NuGet-Pakete verwalten**.
-2.  Wählen Sie oben im Fenster die Registerkarte **Durchsuchen** aus.
+2.  Klicken Sie oben im Fenster auf die Registerkarte **Durchsuchen**.
 3.  Geben Sie im Suchfeld **Win2D** ein.
 4.  Wählen Sie **Win2D.uwp** und anschließend im rechten Bereich **Installieren** aus.
 5.  Im Dialogfeld **Änderungen überprüfen** wird das zu installierende Paket angezeigt. Klicken Sie auf **OK**.
@@ -256,11 +256,11 @@ Der Benutzer kann entscheiden, ob er die Wiedergabe anhalten oder fortsetzen mö
 
 [!code-cs[ButtonUserClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetButtonUserClick)]
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Medienwiedergabe](media-playback.md)
-* [Medienobjekte, Wiedergabelisten und Spuren](media-playback-with-mediasource.md)
-* [Integrieren Sie in die System-Media-Transport-Steuerelemente](integrate-with-systemmediatransportcontrols.md)
-* [Erstellen Sie, Planen Sie und verwalten Sie Datenträger Pausen](create-schedule-and-manage-media-breaks.md)
+* [Medienelemente, Wiedergabelisten und Spuren](media-playback-with-mediasource.md)
+* [Integrieren in die Sytem-Medien Transport Steuerelemente](integrate-with-systemmediatransportcontrols.md)
+* [Erstellen, planen und Verwalten von Medien Umbrüchen](create-schedule-and-manage-media-breaks.md)
 * [Wiedergeben von Medien im Hintergrund](background-audio.md)
 
 

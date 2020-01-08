@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 4772edb9c99426396b7fa3a8734e2f45391c3a0f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 346639a222228ce74d68735d2223815585d1ca08
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257837"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681911"
 ---
 # <a name="windows-app-certification-kit"></a>Zertifizierungskit für Windows-Apps
 
 
 
-Wenn Sie Ihre APP in [Windows zertifizieren](https://msdn.microsoft.com/windows/desktop/jj134964.aspx) oder für [die Veröffentlichung auf die Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions)vorbereiten möchten, sollten Sie Sie zuerst lokal überprüfen und testen. In diesem Thema wird gezeigt, wie Sie das [zertifizierungskit für Windows-apps](https://msdn.microsoft.com/en-US/windows/apps/bg127575) installieren und ausführen, um sicherzustellen, dass Ihre APP sicher und effizient
+Wenn Sie Ihre APP in [Windows zertifizieren](https://docs.microsoft.com/windows/win32/win_cert/windows-certification-portal) oder für [die Veröffentlichung auf die Microsoft Store](https://docs.microsoft.com/windows/uwp/publish/app-submissions)vorbereiten möchten, sollten Sie Sie zuerst lokal überprüfen und testen. In diesem Thema wird gezeigt, wie Sie das [zertifizierungskit für Windows-apps](https://developer.microsoft.com/windows/develop/app-certification-kit) installieren und ausführen, um sicherzustellen, dass Ihre APP sicher und effizient
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -92,7 +92,7 @@ Die Eigenschaften des Computers, auf dem der Test ausgeführt wird, können die 
 
 Da Computer mit geringem Energieverbrauch weiterentwickelt werden, können sich die Leistungsmerkmale im Laufe der Zeit ändern. Informieren Sie sich in den aktuellsten [Microsoft Store Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies) , und testen Sie Ihre APP mit der aktuellsten Version des zertifizierungskit für Windows-apps, um sicherzustellen, dass Ihre APP die neuesten Leistungsanforderungen erfüllt.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Windows App Certification Kit-Tests](windows-app-certification-kit-tests.md)
 * [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)

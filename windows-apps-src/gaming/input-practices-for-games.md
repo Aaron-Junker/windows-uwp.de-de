@@ -6,18 +6,18 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634945"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684983"
 ---
 # <a name="input-practices-for-games"></a>Eingabemethoden für Spiele
 
 Auf dieser Seite werden Muster und Verfahren zur effizienten Verwendung von Eingabegeräten in Spielen für die universelle Windows-Plattform (UWP) beschrieben.
 
-Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
+Auf dieser Seite lernen Sie:
 
 * Nachverfolgen von Spielern und den von ihnen aktuell verwendeten Eingabe- und Navigationsgeräten
 * Erkennen von Tastenübergängen (von „Gedrückt“ zu „Losgelassen“ oder von „Losgelassen“ zu „Gedrückt“)
@@ -41,7 +41,7 @@ Während jeder Controllertyp eine Liste der verbundenen Domänencontroller enth�
 
 Was geschieht jedoch, wenn der Spieler den Controller trennt oder einen neuen installiert? Sie müssen diese Ereignisse behandeln, und die Liste entsprechend zu aktualisieren. Weitere Informationen finden Sie unter [Hinzufügen und Entfernen von Gamepads](gamepad-and-vibration.md#adding-and-removing-gamepads) (jeder Controllertyp hat einen ähnlichen Namensabschnitt für sein eigenes Thema).
 
-Da die hinzugefügten und entfernten Ereignisse asynchron ausgelöst werden, könnten Sie beim Umgang mit der Liste der Domänencontroller falsche Ergebnisse erhalten. Wenn Sie daher auf die Liste der Domänencontroller zugreifen, sperren Sie diese, damit nur ein Thread zu jedem Zeitpunkt darauf zugreifen kann. Dies kann mit [Concurrency Runtime](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime) geschehen, insbesondere der [Critical_section-Klasse](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class)im **&lt;ppl.h&gt;**.
+Da die hinzugefügten und entfernten Ereignisse asynchron ausgelöst werden, könnten Sie beim Umgang mit der Liste der Domänencontroller falsche Ergebnisse erhalten. Wenn Sie daher auf die Liste der Domänencontroller zugreifen, sperren Sie diese, damit nur ein Thread zu jedem Zeitpunkt darauf zugreifen kann. Dies kann mit [Concurrency Runtime](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime) geschehen, insbesondere der [Critical_section-Klasse](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class)im **&lt;ppl.h&gt;** .
 
 Die Liste der angeschlossenen Controller ist anfänglich leer, und dauert ein oder zwei Sekunden zum Auffüllen. Wenn Sie daher nur den aktuellen Gamepad der Startmethode zuweisen, ist dieser **null**!
 
@@ -164,9 +164,9 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 }
 ```
 
-## <a name="tracking-users-and-their-devices"></a>Nachverfolgen von Benutzern und ihren Geräten
+## <a name="tracking-users-and-their-devices"></a>Nachverfolgen von Benutzern und Geräten
 
-Alle Eingabegeräte sind einem [Benutzer](https://docs.microsoft.com/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Da sich Benutzer nach Belieben an- und abmelden können, ist es normal, dass sich andere Benutzer auf einem mit dem System verbundenen Eingabegerät anmelden, nachdem sich ein vorheriger Benutzer abgemeldet hat. Wenn sich ein Benutzer an- oder abmeldet, wird das [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged)-Ereignis ausgelöst. Sie können einen Ereignishandler für dieses Ereignis registrieren, um Spieler und die von ihnen verwendeten Geräte nachzuverfolgen.
+Alle Eingabegeräte sind einem [Benutzer](https://docs.microsoft.com/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Da sich Benutzer nach Belieben an- und abmelden können, ist es normal, dass sich andere Benutzer auf einem mit dem System verbundenen Eingabegerät anmelden, nachdem sich ein vorheriger Benutzer abgemeldet hat. Wenn sich ein Benutzer an- oder abmeldet, wird das [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged)-Ereignis ausgelöst. Sie können für diesen Fall einen Ereignishandler registrieren, um die Spieler und von ihnen verwendeten Geräte nachzuverfolgen.
 
 Die Benutzeridentität dient auch dazu, Eingabegeräte einem [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) zuzuordnen.
 
@@ -231,7 +231,7 @@ Diese beiden Funktionen leiten zuerst den booleschen Zustand der Tastenauswahl v
 
 ## <a name="detecting-complex-button-arrangements"></a>Erkennen komplexer Tastenanordnungen
 
-Jede Taste eines Eingabegeräts liefert einen digitalen Wert, der angibt, ob sie im gedrückten Zustand (unten) oder losgelassenen Zustand (oben) ist. Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Lesen bestimmter Tastenwerte wird eine bitweise Maskierung verwendet, um die für Sie relevanten Werte zu isolieren. Eine Taste ist gedrückt (unten), wenn ihr Bit entsprechend festgelegt ist, andernfalls ist sie losgelassen (oben).
+Jede Taste eines Eingabegeräts liefert einen digitalen Wert, der angibt, ob sie im gedrückten Zustand (unten) oder losgelassenen Zustand (oben) ist. Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Ablesen bestimmter Tasten wird eine bitweise Maskierung verwendet, um die relevanten Werte zu isolieren. Eine Taste ist gedrückt (unten), wenn ihr Bit entsprechend festgelegt ist, andernfalls ist sie losgelassen (oben).
 
 So wird der Gedrückt- oder Losgelassen-Zustand für einzelne Tasten bestimmt; hier anhand von Gamepads, aber das gleiche Prinzip gilt ebenso für andere Eingabegeräte wie Arcade-Joysticks, Rennlenkräder usw.
 
@@ -294,17 +294,17 @@ if (buttonArrangement == buttonSelection)
 }
 ```
 
-Die Formel kann zum Testen einer beliebigen Anzahl von Tasten in einer beliebigen Anordnung ihrer Zustände verwendet werden.
+Diese Formel kann zum Testen beliebig vieler Tasten, Anordnungen und Zustände verwendet werden.
 
 ## <a name="get-the-state-of-the-battery"></a>Abrufen des Akkustatus
 
-Für alle Gamecontroller, die die [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo)-Benutzeroberfläche implementieren, rufen Sie [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) auf der Controllerinstanz auf, um ein [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport)-Objekt mit Informationen zum Akku im Controller zu erhalten. Sie erhalten Eigenschaften wie die Rate, mit der der Akku geladen wird ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), die geschätzte Energiekapazität eines neuen Akkus ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)), und die vollständige Energieeffizienz des aufgeladenen aktuellen Akkus ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
+Für alle Gamecontroller, die die [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo)-Benutzeroberfläche implementieren, rufen Sie [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) auf der Controllerinstanz auf, um ein [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport)-Objekt mit Informationen zum Akku im Controller zu erhalten. Sie erhalten Eigenschaften wie die Rate, mit der der Akku geladen wird ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), die geschätzte Energiekapazität eines neuen Akkus ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)), und die vollständige Energieeffizienz des aufgeladenen aktuellen Akkus ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)).
 
 Für Gamecontroller, die detaillierte Berichte für den Akku unterstützen, erhalten Sie diese und weitere Informationen zum Akku, wie unter [Abrufen von Akkuinformationen](../devices-sensors/get-battery-info.md) aufgeführt. Die meisten Gamecontroller unterstützen jedoch nicht die Akkuberichtsstufe und verwenden kostengünstige Hardware. Für diese Domänencontroller müssen Sie Folgendes bedenken:
 
 * **ChargeRateInMilliwatts** und **DesignCapacityInMilliwattHours** müssen immer **NULL** sein.
 
-* Sie erhalten den Prozentsatz des Akkus durch die Berechnung von [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. Sollten Sie die Werte dieser Eigenschaften ignorieren und nur mit den berechneten Prozentsätzen arbeiten.
+* Sie erhalten den Prozentsatz des Akkus durch die Berechnung von [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. Sollten Sie die Werte dieser Eigenschaften ignorieren und nur mit den berechneten Prozentsätzen arbeiten.
 
 * Der Prozentsatz der vorherigen Aufzählungszeichen ist immer einer der folgenden:
 
@@ -315,8 +315,8 @@ Für Gamecontroller, die detaillierte Berichte für den Akku unterstützen, erha
 
 Wenn Ihr Code eine Aktion (z. B. das Zeichnen der UI) basierend auf dem Prozentsatz der verbleibende Akkulebensdauer ausführt, stellen Sie sicher, dass er den oben genannten Werten entspricht. Wenn Sie beispielsweise den Spieler warnen möchten, dass der Controller-Akku fast leer ist, wenn dieser 10 % erreicht.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-* [Windows.System.User-Klasse](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Windows.Gaming.Input.IGameController-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.GamepadButtons-Enumeration](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows. System. User-Klasse](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [Windows. Gaming. Input. igamecontroller-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows. Gaming. Input. gamepadbuttons-Aufzählung](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)

@@ -1,19 +1,19 @@
 ---
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
 description: Mit den Windows.Media.Transcoding-APIs können Sie Videodateien von einem Format in ein anderes transcodieren.
-title: Transkodieren von Mediendateien
+title: Transcodieren von Mediendateien
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 17eaa79a65bb19156efd230a3442cfde059e5503
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38aef2779908e173712bda0f35ca9e0651fb786b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360598"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683873"
 ---
-# <a name="transcode-media-files"></a>Transkodieren von Mediendateien
+# <a name="transcode-media-files"></a>Transcodieren von Mediendateien
 
 
 
@@ -43,28 +43,28 @@ Die [**MediaEncodingProfile**](https://docs.microsoft.com/uwp/api/Windows.Media.
 
 Methode  |Profil  |
 ---------|---------|
-[**CreateAlac**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createalac)     |Apple Lossless Audio Codec (ALAC)-Audio         |
-[**CreateFlac**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createflac)     |Free Lossless Audio Codec (FLAC)-Audio.         |
+[**In der Systemsteuerung**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createalac)     |Apple Lossless Audio Codec (ALAC)-Audio         |
+[ **"Kreateflac"** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createflac)     |Free Lossless Audio Codec (FLAC)-Audio.         |
 [**CreateM4a**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createm4a)     |AAC-Audio (M4A)         |
 [**CreateMp3**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3)     |MP3-Audio         |
-[**CreateWav**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createwav)     |WAV-Audio         |
-[**CreateWmv**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createwmv)     |Windows Media Audio (WMA)         |
+[ **"Kreatewav"** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createwav)     |WAV-Audio         |
+[ **"Kreatewmv"** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createwmv)     |Windows Media Audio (WMA)         |
 
 ### <a name="methods-for-creating-audio--video-encoding-profiles"></a>Methoden zum Erstellen von Audio-/Videocodierungsprofilen
 
 Methode  |Profil  |
 ---------|---------|
-[**CreateAvi**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createavi) |AVI |
-[**CreateHevc**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createhevc) |High Efficiency Video Coding (HEVC)-Video, auch als H.265-Video bezeichnet |
+[ **"Kreateavi"** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createavi) |AVI |
+[ **"Erker"** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createhevc) |High Efficiency Video Coding (HEVC)-Video, auch als H.265-Video bezeichnet |
 [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) |MP4-Video (H.264-Video und AAC-Audio) |
-[**CreateWmv**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createwmv) |Windows Media Video (WMV) |
+[ **"Kreatewmv"** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createwmv) |Windows Media Video (WMV) |
 
 
 Der folgende Code erstellt ein Profil für MP4-Video:
 
 [!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
 
-Die statische [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)-Methode erstellt ein MP4-Codierungsprofil. Der Parameter für diese Methode gibt die Zielauflösung für das Video an. In diesem Fall bedeutet [**VideoEncodingQuality.hd720p**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingQuality): 1280 x 720 Pixel mit 30 Bildern pro Sekunde. ("720p" steht für 720 progressive Scanzeilen pro Frame). Die anderen Methoden zum Erstellen von vordefinierten Profile, die alle folgen diesem Muster.
+Die statische [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)-Methode erstellt ein MP4-Codierungsprofil. Der Parameter für diese Methode gibt die Zielauflösung für das Video an. In diesem Fall bedeutet [**VideoEncodingQuality.hd720p**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.VideoEncodingQuality): 1280 x 720 Pixel mit 30 Bildern pro Sekunde. („720p“ steht für 720 progressive Scanlinien pro Frame.) Dieses Muster gilt auch für die anderen Methoden zum Erstellen vordefinierter Profile.
 
 Alternativ können Sie mit der [**MediaEncodingProfile.CreateFromFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createfromfileasync)-Methode ein Profil erstellen, das einer vorhandenen Mediendatei entspricht. Wenn Sie die genauen gewünschten Codierungseinstellungen kennen, können Sie auch ein neues [**MediaEncodingProfile**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile)-Objekt erstellen und die Profildetails ausfüllen.
 
@@ -82,13 +82,13 @@ Sie können Reaktionsereignisse registrieren, wenn sich der Fortschritt der asyn
 
 
 ## <a name="encode-a-metadata-stream"></a>Codieren Sie einen Metadatenstrom
-Ab Windows 10, Version 1803, können Sie von zeitgesteuerten Metadaten beim einschließen beim Transcodieren von Mediendateien. Im Gegensatz zu den video transcodieren Profil vorstehenden Beispielen das Verwenden der integrierten mediencodierung Erstellungsmethoden, wie z. B. [ **MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4), Sie müssen manuell erstellen, die Metadaten-Codierung das Profil, das den Typ der Metadaten unterstützen, die Sie codieren.
+Ab Windows 10, Version 1803, können Sie zeitgesteuerte Metadaten einschließen, wenn Sie Mediendateien transcodieren. Im Gegensatz zu den oben genannten Video-Transcodierung-Beispielen, in denen die integrierten Methoden zum Erstellen von Medien Codierungs Profilen wie [**mediaencodingprofile. CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)verwendet werden, müssen Sie das metadatencodierungsprofil manuell erstellen, um den Typ der Metadaten zu unterstützen, die Sie codieren
 
-Dieser erste Schritt beim Erstellen von einem Metadaten-Incoding-Profil ist die Erstellung einer [**TimedMetadataEncodingProperties**] Objekt, das beschreibt, die Codierung der Metadaten zu transcodierende. Die Untertyp-Eigenschaft ist eine GUID, die den Typ der Metadaten angibt. Die Codierung Details für jeden Metadatentyp ist eine proprietäre und wird nicht von Windows bereitgestellt. In diesem Beispiel wird die GUID für GoPro Metadaten (Gprs) verwendet. Als Nächstes [ **SetFormatUserData** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) wird aufgerufen, um ein binäres Blob, beschreibt das Stream-Format, das für die Metadaten-Format festgelegt. Als Nächstes wird ein **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) wird von der Codierung Eigenschaften mit Getter, erstellt und ein Track-Bezeichnung und den Namen einer Anwendung Lesen des Datenstroms Endcoded Metadatenstreams identifizieren ermöglichen, und optional der Name des Datenstroms in der Benutzeroberfläche angezeigt. 
+Der erste Schritt beim Erstellen eines metadatenincodierprofils ist das Erstellen eines [**TimedMetadataEncodingProperties**]-Objekts, das die Codierung der zu transcodierten Metadaten beschreibt. Die SubType-Eigenschaft ist eine GUID, die den Typ der Metadaten angibt. Die Codierungs Details für jeden Metadatentyp sind proprietär und werden nicht von Windows bereitgestellt. In diesem Beispiel wird die GUID für GoPro Metadata (GPRS) verwendet. Als nächstes wird [**setformatuserdata**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) aufgerufen, um ein binäres Blob von Daten festzulegen, das das für das Metadatenformat spezifische Datenstrom Format beschreibt. Als nächstes wird ein **TimedMetadataStreamDescriptor**-Objekt (https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) aus den Codierungs Eigenschaften erstellt, und eine Titel Bezeichnung und ein Titel geben an, dass eine Anwendung, die den endcodierten Stream liest, den Metadatenstream identifizieren und optional den Datenstrom Namen in der Benutzeroberfläche anzeigen kann. 
  
 [!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
-Nach dem Erstellen der **TimedMetadataStreamDescriptor**, können Sie erstellen eine **MediaEncodingProfile** , beschreibt das Video, Audio und Metadaten in der Datei codiert werden. Die **TimedMetadataStreamDescriptor** erstellt im letzten Beispiel wird in dieser Beispiel-Hilfsfunktion übergeben und hinzugefügt wird die **MediaEncodingProfile** durch Aufrufen von [  **SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks).
+Nachdem Sie das **TimedMetadataStreamDescriptor**erstellt haben, können Sie ein **mediaencodingprofile** erstellen, das Video, Audiodaten und Metadaten beschreibt, die in der Datei codiert werden sollen. Der **TimedMetadataStreamDescriptor** , der im letzten Beispiel erstellt wurde, wird an diese Beispiel-Hilfsfunktion geleitet und dem **mediaencodingprofile** durch Aufrufen von [**SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)hinzugefügt.
 
 [!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
  

@@ -6,19 +6,19 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe, Registrierung, benutzerdefiniert
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c1f0d8c9fac09d071d158563c964c6a598e073
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: bfce7503efd88a7a05a0471667953e287262bc35
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714059"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684919"
 ---
 # <a name="registry-data-for-game-controllers"></a>Registrierungsdaten für Spielecontroller
 
 > [!NOTE]
 > Dieses Thema für Hersteller von Windows 10-kompatiblen Spielecontroller vorgesehen und gilt nicht für die meisten Entwickler.
 
-Der [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input) ermöglicht unabhängigen Hardwareanbietern (IHVs) das Hinzufügen von Daten an die PC-Registrierung, damit ihre Geräte als [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.flightstick) und [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) entsprechend angezeigt werden. Alle IHVs sollten diese Daten für ihre kompatiblen Controller hinzufügen. Auf diese Weise können alle UWP-Spiele (und alle Desktop-Spiele, die WinRT-API verwenden) Ihren Spielecontroller unterstützen.
+Der [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input) ermöglicht unabhängigen Hardwareanbietern (IHVs) das Hinzufügen von Daten an die PC-Registrierung, damit ihre Geräte als [Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad), [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel), [ArcadeSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick), [FlightSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) und [UINavigationControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller) entsprechend angezeigt werden. Alle IHVs sollten diese Daten für ihre kompatiblen Controller hinzufügen. Auf diese Weise können alle UWP-Spiele (und alle Desktop-Spiele, die WinRT-API verwenden) Ihren Spielecontroller unterstützen.
 
 ## <a name="mapping-scheme"></a>Zuordnungsschema
 
@@ -31,19 +31,19 @@ In der folgenden Tabelle wird der erwartete Werte im Stammverzeichnis des Gerät
 <table>
     <tr>
         <th>Name</th>
-        <th>Typ</th>
+        <th>Geben Sie in das Suchfeld auf der Taskleiste</th>
         <th>Erforderlich?</th>
         <th>Info</th>
     </tr>
     <tr>
-        <td>Disabled</td>
+        <td>Deaktiviert</td>
         <td>DWORD</td>
         <td>Nein</td>
         <td>
-            <p>Gibt an, dass dieses Gerät deaktiviert werden soll.</p>
+            <p>Gibt an, dass dieses bestimmte Gerät deaktiviert werden soll.</p>
             <ul>
-                <li><b>0</b>: Gerät ist nicht deaktiviert werden.</li>
-                <li><b>1</b>: Gerät wurde deaktiviert.</li>
+                <li><b>0</b>: Das Gerät ist nicht deaktiviert.</li>
+                <li><b>1</b>: Das Gerät ist deaktiviert.</li>
             </ul>
         </td>
     </tr>
@@ -70,60 +70,60 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>Menü</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="18" style="vertical-align: middle;">Siehe <a href="#button-mapping">Tastenzuordnung</a></td>
     </tr>
     <tr>
-        <td>Ansicht</td>
-        <td>Ja</td>
+        <td>„Ansicht”</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
-        <td>A</td>
-        <td>Ja</td>
+        <td>Eine</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>B</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>X</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>„Y“ zugeordnet ist</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>LeftShoulder</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>RightShoulder</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>LeftThumbstickButton</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>RightThumbstickButton</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>DPadRight</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Paddle1</td>
@@ -143,28 +143,28 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>LeftTrigger</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="6" style="vertical-align: middle;">Siehe <a href="#axis-mapping">Achsenzuordnung</a></td>
     </tr>
     <tr>
         <td>RightTrigger</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>LeftThumbstickX</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>LeftThumbstickY</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>RightThumbstickX</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>RightThumbstickY</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
 </table>
 
@@ -183,12 +183,12 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>PreviousGear</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="30" style="vertical-align: middle;">Siehe <a href="#button-mapping">Tastenzuordnung</a></td>
     </tr>
     <tr>
         <td>NextGear</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>DPadUp</td>
@@ -304,16 +304,16 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>Rad</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="5" style="vertical-align: middle;">Siehe <a href="#axis-mapping">Achsenzuordnung</a></td>
     </tr>
     <tr>
         <td>Drosselung</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Bremse</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Kupplung</td>
@@ -325,7 +325,7 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>MaxWheelAngle</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Siehe <a href="#properties-mapping">Eigenschaften zuordnen</a></td>
     </tr>
 </table>
@@ -342,52 +342,52 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>Action1</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="12" style="vertical-align: middle;">Siehe <a href="#button-mapping">Tastenzuordnung</a></td>
     </tr>
     <tr>
         <td>Action2</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Action3</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Action4</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Action5</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Action6</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Special1</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Special2</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>StickUp</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>StickDown</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>StickLeft</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>StickRight</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
 </table>
 
@@ -403,33 +403,33 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>FirePrimary</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="2" style="vertical-align: middle;">Siehe <a href="#button-mapping">Tastenzuordnung</a></td>
     </tr>
     <tr>
         <td>FireSecondary</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Roll</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="4" style="vertical-align: middle;">Siehe <a href="#axis-mapping">Achsenzuordnung</a></td>
     </tr>
     <tr>
         <td>Nickwinkel</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Schwenken</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Drosselung</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>HatSwitch</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Siehe <a href="#switch-mapping">Switch-Zuordnung</a></td>
     </tr>
 </table>
@@ -446,36 +446,36 @@ Die folgende Tabelle enthält die erforderlichen und optionalen Unterschlüssel 
     </tr>
     <tr>
         <td>Menü</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td rowspan="24" style="vertical-align: middle;">Siehe <a href="#button-mapping">Tastenzuordnung</a></td>
     </tr>
     <tr>
-        <td>Ansicht</td>
-        <td>Ja</td>
+        <td>„Ansicht”</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Annehmen</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Abbrechen</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>PrimaryUp</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>PrimaryDown</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>PrimaryLeft</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>PrimaryRight</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
     </tr>
     <tr>
         <td>Context1</td>
@@ -555,7 +555,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>Quelle</th>
         <th>Wertname</th>
         <th>Werttyp</th>
         <th>Erforderlich?</th>
@@ -565,14 +565,14 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
         <td>Schaltfläche</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Index in der <b>RawGameController</b>-Tastenarray.</td>
     </tr>
     <tr>
         <td rowspan="4" style="vertical-align: middle;">Achse</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Index in der <b>RawGameController</b>-Achsenarray.</td>
     </tr>
     <tr>
@@ -584,37 +584,37 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Taste zuzuo
     <tr>
         <td>ThresholdPercent</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Gibt die Achsenposition an, von der der zugeordnete Wert der Taste zwischen dem gedrückten und losgelassenen Zustand wechselt. Der gültige Wertebereich liegt zwischen 0 bis 100. Die Taste gilt als gedrückt, wenn der Achsenwert größer als oder gleich diesem Wert ist.</td>
     </tr>
     <tr>
         <td>DebouncePercent</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>
             <p>Definiert die Größe eines Fensters um den <b>ThresholdPercent</b>-Wert, der verwendet wird, um den Zustand der gemeldeten Taste zu entprellen. Der gültige Wertebereich liegt zwischen 0 bis 100. Statusübergänge der Tasten können nur auftreten, wenn der Achsenwert den oberen oder unteren Rand der Entprellfenster überschreitet. Ist beispielsweise der <b>ThresholdPercent</b>-Wert 50 und der <b>DebouncePercent</b>-Wert 10, liegt die Entprellgrenze bei 45 % und 55 % für den gesamten Achsenwert. Die Taste kann nicht zum gedrückten Zustand übergehen, bis der Achsenwert 55 % oder höher erreicht, und es kann nicht in den endgültigen Zustand übergehen, bis der Achsenwert 45 % oder darunter erreicht.</p>
             <p>Die berechneten Entprellfenstergrenzen liegen zwischen 0 % und 100 %. Z. B. ergibt eine Schwellenwert von 5 % und ein Entprellfenster von 20 % eine Entprellfenstergrenze von 0 % und 15 %. Der Zustand der Taste für einen Achsenwerte von 0 % und 100 % ist immer als gedrückt oder losgelassen gemeldet, unabhängig von den Schwellen- und Entprellwerten.</p>
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
+        <td rowspan="3" style="vertical-align: middle;">Ändern Sie die Option</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Index im <b>RawGameController</b>-Switcharray.</td>
     </tr>
     <tr>
         <td>SwitchPosition</td>
         <td>REG_SZ</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>
             <p>Gibt die Switchposition an, die bewirkt, dass die zugeordnete Schaltfläche meldet, dass darauf geklickt wird. Die Positionswerte können eine der folgenden Zeichenfolgen sein:</p>
             <ul>
-                <li>Nach oben</li>
+                <li>Oben</li>
                 <li>UpRight</li>
                 <li>Nach rechts</li>
                 <li>DownRight</li>
-                <li>Nach unten</li>
+                <li>Unten</li>
                 <li>DownLeft</li>
                 <li>Nach links</li>
                 <li>UpLeft</li>
@@ -635,7 +635,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>Quelle</th>
         <th>Wertname</th>
         <th>Werttyp</th>
         <th>Erforderlich?</th>
@@ -645,7 +645,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
         <td rowspan="2" style="vertical-align: middle;">Schaltfläche</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>
             <p>Index des <b>RawGameController</b>-Tastenarrays, das als zugeordneter unidirektionaler Achsenwert übersetzt wird.</p>
             <table>
@@ -703,7 +703,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
         <td rowspan="2" style="vertical-align: middle;">Achse</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Index in der <b>RawGameController</b>-Achsenarray.</td>
     </tr>
     <tr>
@@ -713,24 +713,24 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
         <td>Gibt an, dass der zugeordnete Achsenwert umgekehrt werden soll, bevor es zurückgegeben wird.</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
+        <td rowspan="3" style="vertical-align: middle;">Ändern Sie die Option</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>Index im <b>RawGameController</b>-Switcharray.
     </tr>
     <tr>
         <td>MaxValueSwitchPosition</td>
         <td>REG_SZ</td>
-        <td>Ja</td>
+        <td>„Ja“</td>
         <td>
             <p>Eine der folgenden Zeichenfolgen:</p>
             <ul>
-                <li>Nach oben</li>
+                <li>Oben</li>
                 <li>UpRight</li>
                 <li>Nach rechts</li>
                 <li>DownRight</li>
-                <li>Nach unten</li>
+                <li>Unten</li>
                 <li>DownLeft</li>
                 <li>Nach links</li>
                 <li>UpLeft</li>
@@ -742,7 +742,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Nach oben</td>
+                    <td>Oben</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
@@ -750,7 +750,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Nach unten</td>
+                    <td>Unten</td>
                     <td>0.0</td>
                 </tr>
             </table>
@@ -768,7 +768,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>Nach oben</td>
+                    <td>Oben</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
@@ -784,7 +784,7 @@ Die folgende Tabelle listet die Werte, die benötigt werden, um eine Achse zuzuo
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>Nach unten</td>
+                    <td>Unten</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -806,7 +806,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
 
 <table>
     <tr>
-        <th>Source</th>
+        <th>Quelle</th>
         <th>Wertname</th>
         <th>Werttyp</th>
         <th>Wert-Info</th>
@@ -820,7 +820,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>"TwoWay"</b>, <b>FourWay</b>, oder <b>EightWay</b>
+        <td><b>TwoWay</b>, <b>Fourway</b>oder <b>eightway</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,7 +898,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">Schalter</td>
+        <td rowspan="3" style="vertical-align: middle;">Ändern Sie die Option</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Index im <b>RawGameController</b>-Switcharray.
@@ -936,7 +936,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>Nach oben</td>
+                    <td>Oben</td>
                     <td>3</td>
                     <td>0</td>
                 </tr>
@@ -956,7 +956,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
                     <td>5</td>
                 </tr>
                 <tr>
-                    <td>Nach unten</td>
+                    <td>Unten</td>
                     <td>7</td>
                     <td>4</td>
                 </tr>
@@ -966,7 +966,7 @@ Switchpositionen können entweder aus einer Reihe von Tasten im Array der Tasten
 
 #### <a name="buttonindex-values"></a>*ButtonIndex values
 
-\*ButtonIndex Werte indiziert, in der **RawGameController**der Schaltfläche "-Array:
+\*ButtonIndex Values Index in das Schaltflächen Array **rawgamecontroller**:
 
 <table>
     <tr>
@@ -1047,7 +1047,7 @@ Hierbei handelt es sich um statische Zuordnungswerte für verschiedene Zuordnung
 
 ## <a name="labels"></a>Beschriftungen
 
-Beschriftungen sollten unter dem **Beschriftungen**-Schlüssel unter dem Stammverzeichnis des Geräts vorhanden sein. **Bezeichnungen** 3 Unterschlüssel haben: **Schaltflächen**, **Achsen**, und **Switches**.
+Beschriftungen sollten unter dem **Beschriftungen**-Schlüssel unter dem Stammverzeichnis des Geräts vorhanden sein. **Beschriftungen** können 3 Unterschlüssel enthalten: **Tasten**, **Achsen**, und **Switches**.
 
 ### <a name="button-labels"></a>Schaltflächenbeschriftungen
 
@@ -1079,7 +1079,7 @@ Die Bezeichnungen sollten in folgender Reihenfolge unter dem **Schaltflächen**-
     </tr>
     <tr>
         <td>Button1</td>
-        <td>Ansicht</td>
+        <td>„Ansicht”</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1117,7 +1117,7 @@ Die Bezeichnungen sollten in folgender Reihenfolge unter dem **Schaltflächen**-
 
 ### <a name="axis-labels"></a>Achsenbeschriftung
 
-Der **Achsen**-Schlüssel ordnet jeder der Achsenpositionen des **RawGameControllers** -Achsenarrays zu einer der aufgeführten Beschriftungen der [GameControllerButtonLabel-Enumeration](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) hinzu, genau wie die Beschriftungen der Tasten. Sehen Sie das Beispiel unter [Schaltflächenbeschriftungen](#button-labels).
+Der **Achsen**-Schlüssel ordnet jeder der Achsenpositionen des **RawGameControllers** -Achsenarrays zu einer der aufgeführten Beschriftungen der [GameControllerButtonLabel-Enumeration](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) hinzu, genau wie die Beschriftungen der Tasten. Sehen Sie das Beispiel unter [Schaltflächenbeschriftungen](#button-labels).
 
 ### <a name="switch-labels"></a>Switch-Beschriftungen
 
@@ -1345,8 +1345,8 @@ Windows Registry Editor Version 5.00
 "Invert" = dword:00000000
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
-* [Windows.Gaming.Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows. Gaming. Input-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows. Gaming. Input. Custom-Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF-Dateien](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

@@ -1,37 +1,36 @@
 ---
 Description: Erfahren Sie, wie App-Pakete für Ihre Kunden verfügbar gemacht werden und bestimmte Paketszenarien verwaltet werden.
-title: Leitfaden für die App-Paketverwaltung
+title: Leitfaden für die Verwaltung von App-Paketen
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f514177ad5de7774e6926165435fd3b2d7b5e1f7
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 9f5caa2610e19234cfd83119d570f858c540b401
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468937"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685136"
 ---
-# <a name="guidance-for-app-package-management"></a>Leitfaden für die App-Paketverwaltung
+# <a name="guidance-for-app-package-management"></a>Leitfaden für die Verwaltung von App-Paketen
 
 Erfahren Sie, wie App-Pakete für Ihre Kunden verfügbar gemacht werden und bestimmte Paketszenarien verwaltet werden.
 
--   [Betriebssystemversionen und Package-distribution](#os-versions-and-package-distribution)
--   [Hinzufügen von Paketen für Windows 10 auf eine zuvor veröffentlichte app](#adding-packages-for-windows-10-to-a-previously-published-app)
--   [Verwalten der Kompatibilität von Paketen für Windows Phone 8.1](#maintaining-package-compatibility-for-windows-phone-81)
--   [Entfernen einer app aus dem Store](#removing-an-app-from-the-store)
--   [Entfernen von Paketen für eine zuvor unterstützt Gerätefamilie](#removing-packages-for-a-previously-supported-device-family)
+-   [Betriebssystemversionen und Paketverteilung](#os-versions-and-package-distribution)
+-   [Hinzufügen von Paketen für Windows 10 zu einer zuvor veröffentlichten App](#adding-packages-for-windows-10-to-a-previously-published-app)
+-   [Entfernen einer App aus dem Store](#removing-an-app-from-the-store)
+-   [Entfernen von Paketen für eine zuvor unterstützte Gerätefamilie](#removing-packages-for-a-previously-supported-device-family)
 
 
 ## <a name="os-versions-and-package-distribution"></a>Betriebssystemversionen und Paketverteilung
 
 Auf unterschiedlichen Betriebssystemen können unterschiedliche Pakettypen ausgeführt werden. Wenn mindestens zwei Pakete auf dem Gerät eines Kunden ausgeführt werden können, stellt der Microsoft Store die beste verfügbare Übereinstimmung bereit.
 
-Im Allgemeinen können höhere Betriebssystemversionen Pakete ausführen, die auf frühere Betriebssystemversionen für dieselbe Gerätefamilie abzielen. Windows 10-Geräte können alle vorherige unterstützte Betriebssystemversionen (pro-Gerätefamilie) ausführen. Windows 10-desktop-Geräte können apps ausgeführt werden, die für Windows 8.1 oder Windows 8 erstellt wurden. Windows 10 mobile-Geräten können apps, die für Windows Phone 8.1, Windows Phone 8 und sogar Windows Phone erstellt wurden ausführen 7.x. Jedoch erhalten Kunden unter Windows 10, wenn die app auf UWP-Paketen, die für die entsprechenden Gerätefamilie enthalten nicht nur diese Pakete.
+Im Allgemeinen können höhere Betriebssystemversionen Pakete ausführen, die auf frühere Betriebssystemversionen für dieselbe Gerätefamilie abzielen. Auf Windows 10-Geräten können alle früheren unterstützten Betriebssystemversionen (pro Gerätefamilie) ausgeführt werden. Windows 10-Desktop Geräte können apps ausführen, die für Windows 8.1 oder Windows 8 erstellt wurden. Windows 10 Mobile-Geräte können apps ausführen, die für Windows Phone 8,1, Windows Phone 8 und sogar Windows Phone 7. x erstellt wurden. Kunden unter Windows 10 erhalten diese Pakete jedoch nur dann, wenn die APP keine UWP-Pakete enthält, die auf die jeweilige Gerätefamilie abzielen.
 
 > [!IMPORTANT]
-> Ab 31. Oktober 2018 keine Produkte neu erstellten Pakete mit dem Ziel Windows 8.x/Windows enthalten Phone 8.x oder früher. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> Ab dem 31. Oktober 2018 können neu erstellte Produkte keine Pakete enthalten, die auf Windows 8. x/Windows Phone 8. x oder früher abzielen. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 
 ## <a name="removing-an-app-from-the-store"></a>Entfernen einer App aus dem Store
@@ -45,30 +44,30 @@ Diese Option hat dieselbe Wirkung, als ob Sie eine Übermittlung erstellt haben 
 
 Beachten Sie, dass Kunden, die die App bereits besitzen, sie weiterhin verwenden und neu herunterladen können (und sogar Updates erhalten können, wenn Sie zu einem späteren Zeitpunkt neue Pakete übermitteln).
 
-Nach der Bereitstellung der app nicht verfügbar ist, werden weiterhin es im Partner Center angezeigt. Wenn Sie die App Kunden erneut anbieten möchten, klicken Sie in der App-Übersicht auf **Make app available**. Nach dem Bestätigen ist die App für Neukunden innerhalb weniger Stunden verfügbar (es sei denn, es liegen Einschränkungen durch Einstellungen in der letzten Übermittlung vor).
+Nachdem Sie die APP nicht verfügbar gemacht haben, wird Sie weiterhin im Partner Center angezeigt. Wenn Sie die App Kunden erneut anbieten möchten, klicken Sie in der App-Übersicht auf **Make app available**. Nach dem Bestätigen ist die App für Neukunden innerhalb weniger Stunden verfügbar (es sei denn, es liegen Einschränkungen durch Einstellungen in der letzten Übermittlung vor).
 
 > [!NOTE]
-> Wenn die App verfügbar bleiben, neuen Kunden mit bestimmten Betriebssystemversionen jedoch nicht mehr angeboten werden soll, können Sie eine neue Übermittlung erstellen und alle Pakete für die Betriebssystemversion entfernen, unter der Sie neue Verkäufe verhindern möchten. Wenn Sie Pakete für Windows Phone 8.1 und Windows 10 bisher und nicht die app an neuen Kunden, die unter Windows Phone 8.1 Angebot behalten möchten, entfernen Sie alle Ihre Windows Phone 8.1-Pakete z. B. von der Einreichung. Nachdem das Update veröffentlicht wurde, kann keine neuen Kunden unter Windows Phone 8.1 zum Beschaffen der app, obwohl Sie weiterhin Kunden, die es noch nutzen können). Die app wird jedoch weiterhin für Neukunden unter Windows 10 verfügbar sein.
+> Wenn die App verfügbar bleiben, neuen Kunden mit bestimmten Betriebssystemversionen jedoch nicht mehr angeboten werden soll, können Sie eine neue Übermittlung erstellen und alle Pakete für die Betriebssystemversion entfernen, unter der Sie neue Verkäufe verhindern möchten. Wenn Sie z. b. bereits Pakete für Windows Phone 8,1 und Windows 10 hatten und die APP den neuen Kunden auf Windows Phone 8,1 nicht weiter anbieten möchten, entfernen Sie alle Ihre Windows Phone 8,1-Pakete aus der Übermittlung. Nachdem das Update veröffentlicht wurde, können keine neuen Kunden auf Windows Phone 8,1 die APP erwerben, auch wenn Kunden, die Sie bereits besitzen, Sie weiterhin verwenden können. Die APP steht jedoch weiterhin für neue Kunden unter Windows 10 zur Verfügung.
 
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Entfernen von Paketen für eine zuvor unterstützte Gerätefamilie
 
-Wenn Sie alle Pakete für eine bestimmte entfernen [Gerätefamilie](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) , dass Ihre app zuvor werden Sie aufgefordert unterstützt um zu bestätigen, dass dies beabsichtigt ist, bevor Sie Ihre Änderungen speichern können, auf, die **Pakete** Seite.
+Wenn Sie alle Pakete für eine bestimmte [Gerätefamilie](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) entfernen, die zuvor von ihrer App unterstützt wurde, werden Sie aufgefordert, zu bestätigen, dass dies beabsichtigt ist, bevor Sie die Änderungen auf der Seite " **Pakete** " speichern können.
 
-Wenn Sie eine Einsendung, die alle Pakete entfernt, die auf eine Gerätefamilie ausgeführt werden konnte, die Ihre app zuvor unterstützt veröffentlichen, werden neue Kunden nicht zum Beschaffen der app auf diese Gerätefamilie können. Sie können jederzeit ein weiteres Update veröffentlichen, um erneut Pakete für diese Gerätefamilie anzubieten.
+Wenn Sie eine Übermittlung veröffentlichen, mit der alle Pakete entfernt werden, die auf einer Gerätefamilie ausgeführt werden können, die von Ihrer APP zuvor unterstützt wurde, können neue Kunden die APP nicht mehr auf dieser Gerätefamilie erwerben. Sie können jederzeit ein weiteres Update veröffentlichen, um erneut Pakete für diese Gerätefamilie anzubieten.
 
 Hinweis: Auch wenn Sie alle Pakete entfernen, die eine bestimmte Gerätefamilie unterstützen, können vorhandene Kunden, die die App auf diesem Gerätetyp bereits installiert haben, diese weiterhin verwenden und erhalten alle Updates, die Sie später zur Verfügung stellen.
 
 
 <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
 
-## <a name="adding-packages-for-windows10-to-a-previously-published-app"></a>Hinzufügen von Paketen für Windows 10 auf eine zuvor veröffentlichte app
+## <a name="adding-packages-for-windows10-to-a-previously-published-app"></a>Hinzufügen von Paketen für Windows 10 zu einer zuvor veröffentlichten App
 
-Wenn Sie in der Store-app verfügen, die nur die Pakete für Windows enthalten 8.x bzw. Windows Phone 8.x, und Sie möchten, aktualisieren Sie Ihre app für Windows 10, erstellen eine neue Eingabe aus, und fügen Ihrem UWP .msixupload oder .appxupload-Pakete während der die [Pakete](upload-app-packages.md) Schritt. Nachdem Ihre app den Zertifizierungsprozess durchläuft, ist das UWP-Paket auch für neue Übernahmen von Kunden unter Windows 10 verfügbar.
+Wenn Sie über eine APP im Store verfügen, in der nur Pakete für Windows 8. x und/oder Windows Phone 8. x enthalten sind, und Sie Ihre APP für Windows 10 aktualisieren möchten, erstellen Sie eine neue Übermittlung, und fügen Sie Ihr UWP. msixupload-oder. appxupload-Paket [während des Paket](upload-app-packages.md) Schritts hinzu. Nachdem Ihre APP den Zertifizierungsprozess durchlaufen hat, steht das UWP-Paket auch für neue Akquisitionen von Kunden unter Windows 10 zur Verfügung.
 
 > [!NOTE]
-> Sobald ein Kunde auf Windows 10 Ihre UWP-Paket abruft, können nicht Sie Kunden zurücksetzen, an der Verwendung eines Pakets für alle vorherigen Betriebssystemversion. 
+> Nachdem ein Kunde unter Windows 10 das UWP-Paket abgerufen hat, können Sie diesen Kunden nicht mehr für eine frühere Betriebssystemversion zurücksetzen. 
 
-Beachten Sie, dass die Versionsnummer der Windows 10-Pakete höher als die für alle Windows 8, Windows 8.1 und/oder Windows Phone 8.1-Pakete sein muss, die Sie verwendet haben. Weitere Informationen finden Sie unter [Paketversionsnummern](package-version-numbering.md).
+Beachten Sie, dass die Versionsnummer Ihrer Windows 10-Pakete höher sein muss als die für alle Windows 8-, Windows 8.1-und Windows Phone 8,1-Pakete, die Sie verwendet haben. Weitere Informationen finden Sie unter [Paketversionsnummern](package-version-numbering.md).
 
 Weitere Informationen zum Verpacken von UWP-Apps für den Store finden Sie unter [Verpacken von Apps](../packaging/index.md).
