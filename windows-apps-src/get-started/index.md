@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: Erste Schritte, Windows 10, UWP, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 7439d437dda69bf235bd8681751617b2982be394
-ms.sourcegitcommit: 2d3a7d18edf2715987b26d1b5341ec88eefc99ec
+ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74898525"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684893"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps
 
@@ -47,7 +47,7 @@ ms.locfileid: "74898525"
                         </div>
                     </div>
                     <div class="cardText">
-                    <h3>Einrichten</h3>
+                    <h3>Vorbereiten</h3>
                     <p>Mit Visual Studio Community und dem Windows 10 SDK erhalten Sie alles, was Sie zum Entwickeln herausragender Apps benötigen – kostenlos!</p>
                     <ul>
                         <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Herunterladen der Tools und des SDK</a></li>
@@ -67,7 +67,7 @@ ms.locfileid: "74898525"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Beginnen Sie mit der Codierung</h3>
+                        <h3>Beginnen mit der Codierung</h3>
                         <p>Ob Sie ein erfahrener Entwickler sind oder Ihrer erste App entwickeln – hier sammeln Sie praktische Erfahrungen mit der Windows 10-Plattform und der Dokumentation.</p>
                         <ul>
                             <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Beginnen Sie mit der Codierung</a></li>
@@ -132,7 +132,7 @@ ms.locfileid: "74898525"
                     </div>
                 </div>
                 <div class="cardText">
-                    <h3>Neuigkeiten:</h3>
+                    <h3>Neues</h3>
                     <p>Erweitern Sie Ihre Möglichkeiten, und entdecken Sie die neusten Ergänzungen für Windows 10.</p>
                     <br>
                     <p><a href="//developer.microsoft.com/windows/windows-10-for-developers">Highlights der aktuellen Version von Windows 10</a></p>
@@ -223,7 +223,7 @@ ms.locfileid: "74898525"
                 <div class="card">
                     <div class="cardText">
                         <h3>Noch keine Erfahrung auf dem Gebiet der Entwicklung?</h3>
-                        <p><a href="//docs.microsoft.com/en-us/learn/browse/?products=windows&resource_type=module">Windows auf Microsoft Learn</a></p>
+                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows auf Microsoft Learn</a></p>
                         </div>
                     </div>
                 </div>

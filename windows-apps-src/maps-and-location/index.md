@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Karte, Position, Kartendienste
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a27eeeb9aa7349e532dcd76e5b7a7176ac20c08
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7f39e365cd15a10f775a89cf32747b4bf0bbd87a
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259349"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685065"
 ---
 # <a name="maps-and-location-overview"></a>Übersicht über Karten und Position
 
@@ -51,7 +51,7 @@ Fügen Sie Ihrer App mithilfe der APIs aus dem [**Windows.Services.Maps**](https
 | [Anzeigen von interessanten Orten (POI) auf einer Karte](display-poi.md) | Hinzufügen interessanter Orte (POI) mit Ortsmarken, Bildern, Formen und XAML-UI-Elementen auf einer Karte. |
 | [Anzeigen von Routen und Wegbeschreibungen](routes-and-directions.md) | Fordern Sie Routen und Wegbeschreibungen an, und zeigen Sie sie in Ihrer App an. |
 | [Durchführen der Geocodierung und umgekehrten Geocodierung](geocoding.md) | Sie konvertieren Adressen in geografische Standorte (Geocodierung) und geografische Standorte in Adressen (umgekehrte Geocodierung), indem Sie die Methoden der [**MapLocationFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapLocationFinder)-Klasse im [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)-Namespace aufrufen. |
-| [Suchen und Herunterladen von Kartenpaketen für die Offlineverwendung](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| In der Vergangenheit musste Ihre App Benutzer an die Einstellungs-App weiterleiten, damit sie Offlinekarten herunterladen konnten. Nun können Sie Klassen im Namespace [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) nutzen, um heruntergeladene Pakete in einem bestimmten Bereich (basierend auf einer [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)- oder [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)-Klasse) zu finden. <br> Sie können auch den Downloadstatus eines Kartenpakets überprüfen sowie einen Download starten, ohne dass der Benutzer die App verlassen muss. <br> Beispiele dazu finden Sie im Referenzinhalt und im [UWP-Kartenbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
+| [Suchen und Herunterladen von Kartenpaketen für die Offlineverwendung](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| In der Vergangenheit musste Ihre App Benutzer an die Einstellungs-App weiterleiten, damit sie Offlinekarten herunterladen konnten. Nun können Sie Klassen im Namespace [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps) nutzen, um heruntergeladene Pakete in einem bestimmten Bereich (basierend auf einer [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)- oder [GeoboundingBox](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geoboundingbox)-Klasse) zu finden. <br> Sie können auch den Downloadstatus eines Kartenpakets überprüfen sowie einen Download starten, ohne dass der Benutzer die App verlassen muss. <br> Beispiele dazu finden Sie im Referenzinhalt und im [UWP-Kartenbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
 
 ## <a name="get-the-users-location"></a>Abrufen des Benutzerstandorts
 
@@ -72,7 +72,7 @@ Ihre App kann die Windows-Karten-App starten, wie hier veranschaulicht, um besti
 
 ![Ein Beispiel der Windows-Karten-App.](images/mapnyc.png)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Beispiel für UWP-Karte](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [UWP-Geolocation-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)

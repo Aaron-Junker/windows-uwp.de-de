@@ -1,19 +1,19 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows 10-Apps und Apps für die Universelle Windows-Plattform (UWP).
-title: Unternehmen
+title: Enterprise
 ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 152a1bf2a751c2d2c78818b85868bfea3be911ac
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e005d388e15efe10bede88e77c3ca021b0acad6b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259644"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684943"
 ---
-# <a name="enterprise"></a>Unternehmen
+# <a name="enterprise"></a>Enterprise
 
 Dieser Artikel enthält eine Übersicht über die wichtigsten Unternehmensfeatures, die von der Universellen Windows-Plattform (UWP) für Windows 10-Apps bereitgestellt werden. Ein Video, in dem einige dieser Features vorgestellt werden, finden Sie unter [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502) (Schnelles Erstellen von Branchenanwendungen mit UWP und Visual Studio).
 
@@ -41,7 +41,7 @@ Mit den neuen Steuerelementen [MenuBar](/windows/uwp/design/controls-and-pattern
 
 ### <a name="controls-to-support-enterprise-scenarios"></a>Steuerelemente zur Unterstützung von Unternehmensszenarien
 
-[DataGridView](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid) ermöglicht das flexible Anzeigen einer Sammlung mit Daten in Zeilen und Spalten.
+[DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) ermöglicht das flexible Anzeigen einer Sammlung mit Daten in Zeilen und Spalten.
 
 [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) ermöglicht eine Hierarchieauflistung mit Knoten, die das Aus- und Einblenden von geschachtelten Elementen erlauben. Das Steuerelement kann verwendet werden, um eine Ordnerstruktur oder geschachtelte Beziehungen zwischen Elementen in der Benutzeroberfläche zu veranschaulichen.
 
@@ -80,7 +80,7 @@ Weitere Informationen finden Sie unter [Teilen von Code zwischen einer Desktop-A
 
 Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) speichern und abrufen.
 
-Informationen hierzu finden Sie unter [Verwenden einer SQL Server-Datenbank in einer UWP-App](https://docs.microsoft.com/en-us/windows/uwp/data-access/sql-server-databases).
+Informationen hierzu finden Sie unter [Verwenden einer SQL Server-Datenbank in einer UWP-App](https://docs.microsoft.com/windows/uwp/data-access/sql-server-databases).
 
 <a id="MSIX" />
 
@@ -104,7 +104,7 @@ Windows 10 umfasst eine Suite mit Sicherheitsfeatures für App-Entwickler zum S
 |-------|-------------|
 | [Einführung in die Entwicklung sicherer Windows-Apps](https://docs.microsoft.com/windows/uwp/security/intro-to-secure-windows-app-development) | Dieser einführende Artikel erläutert verschiedene Windows-Sicherheitsfeatures, die auf verschiedenen Stufen verfügbar sind, d. h. Authentifizierung, In-Flight-Daten und At-Rest-Daten. Außerdem wird hier beschrieben, wie Sie diese Stufen in Ihren Apps integrieren können. Er umfasst eine Vielzahl an Themen und enthält in erster Linie weitere Informationen für App-Architekten zu den Windows-Features, die die Entwicklung von Universellen Windows-Plattform-Apps beschleunigen. |
 | [Authentifizierung und Benutzeridentität](https://docs.microsoft.com/windows/uwp/security/authentication-and-user-identity) | UWP-Apps verfügen über verschiedene Optionen zur Benutzerauthentifizierung, die in diesem Artikel beschrieben werden. Für Unternehmen wird dringend das neue Microsoft Passport-Feature empfohlen. Microsoft Passport ersetzt Kennwörter mit der sicheren zweistufigen Authentifizierung (Two-Factor Authentication, 2FA), indem vorhandene Anmeldeinformationen überprüft und gerätespezifische Anmeldeinformationen erstellt werden, die eine Benutzergeste (entweder Biometrie- oder PIN-basiert) schützen, und schafft so eine bequeme und sichere Umgebung. |
-| [Kryptografie](https://docs.microsoft.com/windows/uwp/security/cryptography) | Der Abschnitt „Kryptografie“ bietet eine Übersicht über die für UWP-Apps verfügbaren Kryptografie-Features. Die Artikel reichen von einführenden exemplarischen Vorgehensweisen zum einfachen Verschlüsseln sensibler Daten bis hin zu erweiterten Themen, z. B. Bearbeiten von kryptografischen Schlüsseln und Arbeiten mit MACs, Hashes und Signaturen. |
+| [Kryptografie](https://docs.microsoft.com/windows/uwp/security/cryptography) | Der Abschnitt „Kryptografie“ bietet eine Übersicht über die für UWP-Apps verfügbaren Kryptografie-Features. Die Artikel reichen von einführenden exemplarischen Vorgehensweisen zum einfachen Verschlüsseln sensibler Daten bis hin zu erweiterten Themen, z.B. Bearbeiten von kryptografischen Schlüsseln und Arbeiten mit MACs, Hashes und Signaturen. |
 | [Windows Information Protection (WIP)](wip-hub.md) | Dies ist ein Übersichtsthema mit umfassenden Informationen für Entwickler zum Zusammenhang zwischen der Windows Information Protection (WIP) und Dateien, Puffern, der Zwischenablage, dem Netzwerk, Hintergrundaufgaben und dem Schutz von Daten bei Sperre. |
 
 ## <a name="data-binding-and-databases"></a>Datenbindung und Datenbanken
@@ -119,7 +119,7 @@ Die Datenbindung ist eine Methode, mit der die Benutzeroberfläche Ihrer App Dat
 
 ## <a name="networking-and-data-serialization"></a>Netzwerke und Datenserialisierung
 
-Branchenspezifische Apps müssen häufig mit Daten auf einer Vielzahl von anderen Systemen kommunizieren oder diese speichern. Dies erfolgt i. d. R. durch Herstellen einer Verbindung mit einem Netzwerkdienst (mithilfe von Protokollen wie REST oder SOAP) und durch anschließendes Serialisieren bzw. Deserialisieren von Daten in ein gemeinsames Format. Die Arbeit mit Netzwerken und die Datenserialisierung in UWP-Apps sind mit WPF-, WinForms- und ASP.NET-Anwendungen vergleichbar. Weitere Informationen finden Sie in den folgenden Artikeln.
+Branchenspezifische Apps müssen häufig mit Daten auf einer Vielzahl von anderen Systemen kommunizieren oder diese speichern. Dies erfolgt in der Regel durch Herstellen einer Verbindung mit einem Netzwerkdienst (mithilfe von Protokollen wie REST oder SOAP) und durch anschließendes Serialisieren bzw. Deserialisieren von Daten in ein gemeinsames Format. Die Arbeit mit Netzwerken und die Datenserialisierung in UWP-Apps sind mit WPF-, WinForms- und ASP.NET-Anwendungen vergleichbar. Weitere Informationen finden Sie in den folgenden Artikeln.
 
 | Thema | Beschreibung |
 |-------|-------------|
@@ -130,22 +130,22 @@ Branchenspezifische Apps müssen häufig mit Daten auf einer Vielzahl von andere
 
 ## <a name="devices"></a>Geräte
 
-Für die Integration in branchenspezifischen Tools, z. B. Drucker, Strichcodescanner oder Smartcardleser, ist es möglicherweise erforderlich, externe Geräte oder Sensoren in Ihrer App zu integrieren. Hier folgen einige Beispiele zu Features, die Sie mithilfe der in diesem Abschnitt beschriebenen Technologie zur App hinzufügen können.
+Für die Integration in branchenspezifischen Tools, z.B. Drucker, Strichcodescanner oder Smartcardleser, ist es möglicherweise erforderlich, externe Geräte oder Sensoren in Ihrer App zu integrieren. Hier folgen einige Beispiele zu Features, die Sie mithilfe der in diesem Abschnitt beschriebenen Technologie zur App hinzufügen können.
 
 | Thema  | Beschreibung |
 |--------|-------------|
 | [Auflisten von Geräten](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices) | In diesem Artikel wird erläutert, wie mit dem [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-Namespace nach Geräten gesucht werden kann, die intern mit dem System verbunden, extern verbunden oder über Drahtlos- oder Netzwerkprotokolle entdeckt werden können. Beginnen Sie mit diesem Artikel, wenn Sie eine App erstellen, die mit Geräten arbeitet. |
-| [Drucken und Scannen](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | Beschreibt das Drucken und Scannen von Ihrer App aus, z. B. Herstellen einer Verbindung und Arbeiten mit Unternehmensgeräten wie POS-Systemen (Point-of-Sale), Belegdruckern und Einzugsscannern mit hoher Kapazität. |
+| [Drucken und Scannen](https://docs.microsoft.com/windows/uwp/devices-sensors/printing-and-scanning) | Beschreibt das Drucken und Scannen von Ihrer App aus, z.B. Herstellen einer Verbindung und Arbeiten mit Unternehmensgeräten wie POS-Systemen (Point-of-Sale), Belegdruckern und Einzugsscannern mit hoher Kapazität. |
 | [Bluetooth](https://docs.microsoft.com/windows/uwp/devices-sensors/bluetooth) | Neben herkömmlichen Bluetooth-Verbindungen zum Senden und Empfangen von Daten oder Steuern von Geräten kann unter Windows 10 Bluetooth Low Energy (BTLE) zum Senden oder Empfangen von Beacons im Hintergrund verwendet werden. Verwenden Sie diese zum Anzeigen von Benachrichtigungen oder Aktivieren von Funktionen, wenn sich ein Benutzer in der Nähe eines bestimmten Orts befindet oder diesen verlässt. |
 | [Im Unternehmen freigegebener Speicher](enterprise-shared-storage.md) | Erfahren Sie, wie Daten in Gerätesperrszenarien innerhalb derselben App zwischen App-Instanzen oder zwischen Apps freigegeben werden können. |
 
 ## <a name="device-targeting"></a>Ausrichten an Geräte
 
-Viele Benutzer bringen in der heutigen Zeit ihre eigenen Telefone oder Tablets zur Arbeit mit, die unterschiedliche Formfaktoren und Bildschirmgrößen aufweisen. Mit der Universellen Windows-Plattform (UWP) können Sie branchenspezifische Apps entwickeln, die problemlos auf allen Arten von Geräten ausgeführt werden können, u. a. Desktop-PCs und PPI-Displays, und können so die Reichweite Ihrer Apps und die Effizienz des Codes maximieren.
+Viele Benutzer bringen in der heutigen Zeit ihre eigenen Telefone oder Tablets zur Arbeit mit, die unterschiedliche Formfaktoren und Bildschirmgrößen aufweisen. Mit der Universellen Windows-Plattform (UWP) können Sie branchenspezifische Apps entwickeln, die problemlos auf allen Arten von Geräten ausgeführt werden können, u.a. Desktop-PCs und PPI-Displays, und können so die Reichweite Ihrer Apps und die Effizienz des Codes maximieren.
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Anleitung für UWP-Apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | In dieser Anleitung können Sie sich mit der UWP-Plattform unter Windows 10 vertraut machen. Sie erhalten u. a. Informationen dazu, was eine Gerätefamilie ist, wie Sie entscheiden, auf welche Ihre Apps abzielen sollen, Informationen zu neuen UI-Steuerelementen und Bereichen, mit denen Sie Ihre Benutzeroberfläche für verschiedene Geräte-Formfaktoren anpassen können, sowie zur für Ihre App verfügbaren API-Oberfläche und wie Sie diese steuern können. |
+| [Anleitung für UWP-Apps](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) | In dieser Anleitung können Sie sich mit der UWP-Plattform unter Windows 10 vertraut machen. Sie erhalten u.a. Informationen dazu, was eine Gerätefamilie ist, wie Sie entscheiden, auf welche Ihre Apps abzielen sollen, Informationen zu neuen UI-Steuerelementen und Bereichen, mit denen Sie Ihre Benutzeroberfläche für verschiedene Geräte-Formfaktoren anpassen können, sowie zur für Ihre App verfügbaren API-Oberfläche und wie Sie diese steuern können. |
 | [Adaptives XAML-UI-Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | Dieses Codebeispiel zeigt die möglichen Layoutoptionen und Steuerelemente für Ihre App, unabhängig von der Art des Geräts, und veranschaulicht eine Interaktion mit den Bereichen, um das gewünschte Layout zu erzielen. Neben der Reaktion der Steuerelemente und der App selbst auf verschiedene Formfaktoren, werden die verschiedenen Methoden zum Erzielen einer adaptiven Benutzeroberfläche aufgezeigt. |
 | [Xamarin-Thema](/xamarin/) | Xamarin für Telefone |
 
@@ -168,7 +168,7 @@ Es stehen verschiedene Optionen für die Verteilung von Apps für die Benutzer i
 
 ## <a name="patterns-and-practices"></a>Muster und Methoden
 
-Eine Codebasis für umfangreiche Apps im Unternehmen kann schwer zu handhaben sein. Prism ist ein Framework zum Erstellen von lose gekoppelten, verwaltbaren und testbaren XAML-Anwendungen in WPF, der Universellen Windows-Plattform unter Windows 10 und in Xamarin Forms. Prism stellt eine Implementierung einer Sammlung von Entwurfsmustern bereit, die beim Schreiben von gut strukturierten und verwaltbaren XAML-Anwendungen hilfreich sind, u. a. MVVM, Einfügen von Abhängigkeiten, Befehle und EventAggregator.
+Eine Codebasis für umfangreiche Apps im Unternehmen kann schwer zu handhaben sein. Prism ist ein Framework zum Erstellen von lose gekoppelten, verwaltbaren und testbaren XAML-Anwendungen in WPF, der Universellen Windows-Plattform unter Windows 10 und in Xamarin Forms. Prism stellt eine Implementierung einer Sammlung von Entwurfsmustern bereit, die beim Schreiben von gut strukturierten und verwaltbaren XAML-Anwendungen hilfreich sind, u.a. MVVM, Einfügen von Abhängigkeiten, Befehle und EventAggregator.
 
 Weitere Informationen zu Prism finden Sie im [GitHub-Repository](https://github.com/PrismLibrary/Prism).
 

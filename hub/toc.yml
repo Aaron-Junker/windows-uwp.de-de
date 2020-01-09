@@ -66,7 +66,7 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
     - name: Fluent Design-System
       href: apps/fluent-design-system.md
-    - name: Bedienungshilfen
+    - name: Eingabehilfen
       href: apps/accessibility.md
     - name: Features und Technologien
       href: apps/features-and-technologies.md
@@ -96,8 +96,10 @@
       items:
         - name: Übersicht
           href: nodejs/index.yml
-        - name: Einrichten Ihrer Entwicklungsumgebung
+        - name: Setup mit WSL2 (Linux)
           href: nodejs/setup-on-wsl2.md
+        - name: Setup mit Windows (Einsteiger)
+          href: nodejs/setup-on-windows.md
         - name: Erste Schritte für Einsteiger
           href: nodejs/beginners.md
         - name: Erste Schritte mit Webframeworks
