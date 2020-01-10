@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node. js, Windows 10, Microsoft, Learning NodeJS, Node on Windows, Node on WSL, Node on Linux on Windows, install Node on Windows, NodeJS with vs Code, Develop with Node on Windows, Develop with NodeJS on Windows, install Node on WSL, NodeJS on Windows Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: e5875f0bf7ce73d3615aa131d57c2384c73dd8a1
-ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
+ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
+ms.sourcegitcommit: cf4bf0ab4ea9019c1edc2bb96387ce6cedbe91dd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72517838"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75835379"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten der Node. js-Entwicklungsumgebung mit WSL 2
 
@@ -50,17 +50,17 @@ Im folgenden finden Sie eine Schritt-für-Schritt-Anleitung, die Sie beim Einric
 
 ## <a name="install-a-linux-distribution"></a>Installieren einer Linux-Distribution
 
-Es stehen mehrere Linux-Distributionen zur Verfügung, die auf WSL ausgeführt werden können. Sie können Ihre Favoriten in der Microsoft Store finden und installieren. Wir empfehlen, mit [Ubuntu 18,04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) zu beginnen, da es aktuell, beliebt und gut unterstützt wird.
+Mehrere Linux-Distributionen sind zur Ausführung unter dem WSL verfügbar. Sie können Ihre bevorzugte Version im Microsoft Store suchen und installieren. Es wird empfohlen, mit [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) zu beginnen, da es aktuell und beliebt ist und gut unterstützt wird.
 
-1. Öffnen Sie diesen [Ubuntu 18,04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) -Link, öffnen Sie den Microsoft Store, und wählen Sie **Get**aus. *(Dieser Download ist recht umfangreich und kann einige Zeit in Anspruch nehmen.)*
+1. Öffnen Sie den Link [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q), öffnen Sie den Microsoft Store, und wählen Sie **Abrufen** aus. *(Dies ist ein ziemlich großer Download, und die Installation kann eine Weile dauern.)*
 
-2. Nachdem der Download abgeschlossen ist, wählen Sie **starten** von der Microsoft Store oder starten aus, indem Sie im **Startmenü** "Ubuntu 18,04 LTS" eingeben.
+2. Wählen Sie nach Abschluss des Downloads die Option **Starten** im Microsoft Store aus, oder geben Sie „Ubuntu 18.04 LTS“ im **Startmenü** ein.
 
-3. Wenn Sie die Verteilung zum ersten Mal ausführen, werden Sie aufgefordert, einen Kontonamen und ein Kennwort zu erstellen. Anschließend werden Sie standardmäßig automatisch als dieser Benutzer angemeldet. Sie können einen beliebigen Benutzernamen und ein Kennwort auswählen. Sie haben keinen Einfluss auf den Windows-Benutzernamen.
+3. Sie werden aufgefordert, einen Kontonamen und das Kennwort zu erstellen, wenn Sie die Distribution zum ersten Mal ausführen. Anschließend werden Sie standardmäßig automatisch als dieser Benutzer angemeldet. Sie können einen beliebigen Benutzernamen und ein Kennwort auswählen. Sie müssen sich nicht an Ihrem Windows-Benutzernamen orientieren.
 
     ![Linux-Distributionen im Microsoft Store](../images/store-linux-distros.png)
 
-Sie können die Linux-Distribution, die Sie zurzeit verwenden, überprüfen, indem Sie Folgendes eingeben: `lsb_release -dc`. Verwenden Sie zum Aktualisieren der Ubuntu-Distribution: `sudo apt update && sudo apt upgrade`. Wir empfehlen, regelmäßig zu aktualisieren, um sicherzustellen, dass Sie über die neuesten Pakete verfügen Dieses Update wird von Windows nicht automatisch verarbeitet. Links zu anderen verfügbaren Linux-Distributionen, die im Microsoft Store verfügbar sind, finden Sie unter [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+Sie können die derzeit verwendete Linux-Distribution überprüfen, indem Sie Folgendes eingeben: `lsb_release -dc`. Verwenden Sie `sudo apt update && sudo apt upgrade`, um die Ubuntu-Distribution zu aktualisieren. Eine regelmäßige Aktualisierung empfiehlt sich, um sicherzustellen, dass Sie über die neuesten Pakete verfügen. Dieses Update wird unter Windows nicht automatisch verarbeitet. Links zu anderen im Microsoft Store verfügbaren Linux-Distributionen sowie Informationen zu alternativen Installationsmethoden oder zur Problembehandlung finden Sie unter [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 ## <a name="install-wsl-2"></a>Installieren von WSL 2
 
@@ -84,7 +84,7 @@ Es gibt mehrere Möglichkeiten, Node. js zu installieren. Es wird empfohlen, ein
 
 1. Öffnen Sie die Befehlszeile von Ubuntu 18,04.
 2. Installieren Sie curl (ein Tool zum Herunterladen von Inhalten aus dem Internet in der Befehlszeile) mit: `sudo apt-get install curl`
-3. Installieren Sie NVM mit: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
+3. Installieren Sie NVM mit: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
 4. Geben Sie zum Überprüfen der Installation Folgendes ein: `command -v nvm`... Dies sollte "NVM" zurückgeben, wenn Sie den Befehl "Befehl wurde nicht gefunden" oder gar keine Antwort erhalten, schließen Sie das aktuelle Terminal, öffnen Sie es erneut, und versuchen Sie es noch mal. [Weitere Informationen finden Sie im GitHub-Repository NVM](https://github.com/nvm-sh/nvm).
 5. Listet die Versionen von Knoten auf, die derzeit installiert sind (sollte an diesem Punkt "None" lauten): `nvm ls`
 
@@ -103,8 +103,8 @@ Es gibt mehrere Möglichkeiten, Node. js zu installieren. Es wird empfohlen, ein
 > Wenn Sie "NVM" verwenden, um Node. js und NPM zu installieren, müssen Sie nicht den Befehl "sudo" verwenden, um neue Pakete zu installieren.
 
 > [!NOTE]
-> Zum Zeitpunkt der Veröffentlichung war NVM v 0.34.0 die aktuellste verfügbare Version. Sie können die [GitHub-Projektseite für die neueste Version von NVM](https://github.com/nvm-sh/nvm)überprüfen und den obigen Befehl so anpassen, dass Sie die neueste Version enthält.
-Durch die Installation der neueren Version von NVM mithilfe von cURL wird die ältere Version ersetzt, sodass die Version des Knotens, den Sie für die Installation von NVM verwendet haben, intakt ist. Beispiel: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash`
+> Zum Zeitpunkt der Veröffentlichung war NVM v 0.35.2 die aktuellste verfügbare Version. Sie können die [GitHub-Projektseite für die neueste Version von NVM](https://github.com/nvm-sh/nvm)überprüfen und den obigen Befehl so anpassen, dass Sie die neueste Version enthält.
+Durch die Installation der neueren Version von NVM mithilfe von cURL wird die ältere Version ersetzt, sodass die Version des Knotens, den Sie für die Installation von NVM verwendet haben, intakt ist. Beispiel: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
 ## <a name="alternative-version-managers"></a>Alternative Versions-Manager
 
@@ -131,12 +131,12 @@ Terminal basierte Text-Editoren (vim, emacs, Nano) sind ebenfalls hilfreich, um 
 
 So installieren Sie vs Code und die Remote-WSL-Erweiterung:
 
-1. [Laden Sie vs Code für Windows herunter, und installieren Sie](https://code.visualstudio.com)es. VS Code ist auch für Linux verfügbar, aber das Windows-Subsystem für Linux unterstützt keine GUI-apps, daher müssen wir es unter Windows installieren. Keine Sorge, Sie können mit der Remote-WSL-Erweiterung weiterhin in Ihre Linux-Befehlszeile und-Tools integrieren.
+1. [Laden Sie VS Code für Windows herunter, und installieren Sie es.](https://code.visualstudio.com) VS Code ist auch für Linux verfügbar. Da das Windows-Subsystem für Linux jedoch keine GUI-Apps unterstützt, muss VS Code unter Windows installiert werden. Die Integration in die Befehlszeile und die Tools von Linux ist jedoch durch Verwendung der Erweiterung „Remote – WSL“ problemlos möglich.
 
-2. Installieren Sie die [Remote-WSL-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) auf vs Code. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung und übernimmt die Kompatibilität und das richtige für Sie. [Weitere Informationen](https://code.visualstudio.com/docs/remote/remote-overview).
+2. Installieren Sie die [Erweiterung „Remote – WSL“](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) in VS Code. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung, während die Verarbeitung der Kompatibilität und der Pfadzuordnung automatisch erfolgt. [Weitere Informationen](https://code.visualstudio.com/docs/remote/remote-overview).
 
 > [!IMPORTANT]
-> Wenn Sie bereits vs Code installiert haben, müssen Sie sicherstellen, dass Sie über die [Version 1,35](https://code.visualstudio.com/updates/v1_35) oder höher verfügen, um die [Remote-WSL-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)installieren zu können. Es wird nicht empfohlen, WSL in vs Code ohne die Remote-WSL-Erweiterung zu verwenden, da Sie die Unterstützung für automatisches vervollständigen, Debuggen, linting usw. verlieren. Spaß Fakt: Diese WSL-Erweiterung wird in $Home/.vscode-Server/Extensions. installiert.
+> Wenn Sie VS Code bereits installiert haben, müssen Sie sicherstellen, dass Sie über das [Release vom Mai (1.35)](https://code.visualstudio.com/updates/v1_35) oder höher verfügen, um die [Erweiterung „Remote – WSL“](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) installieren zu können. Es wird nicht empfohlen, WSL in vs Code ohne die Remote-WSL-Erweiterung zu verwenden, da Sie die Unterstützung für automatisches vervollständigen, Debuggen, linting usw. verlieren. Spaß Fakt: Diese WSL-Erweiterung wird in $Home/.vscode-Server/Extensions. installiert.
 
 ### <a name="helpful-vs-code-extensions"></a>Hilfreiche vs Code Erweiterungen
 
@@ -161,7 +161,7 @@ Einige zusätzliche Erweiterungen, die Sie berücksichtigen sollten, sind u. A.:
 
 - [Debugger für Chrome](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code): Nachdem Sie die Entwicklung auf dem Server mit Node. js abgeschlossen haben, müssen Sie die Clientseite entwickeln und testen. Diese Erweiterung integriert ihren vs Code-Editor in ihren Chrome-Browser-Debugdienst, sodass Dinge etwas effizienter werden.
 - [Keymaps von anderen Editoren](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads): Diese Erweiterungen können Ihre Umgebung zu Hause machen, wenn Sie von einem anderen Text-Editor wechseln (z. b. Atom, Sublime, vim, emacs, Notepad + + usw.).
-- [Einstellungs Synchronisierung](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): ermöglicht die Synchronisierung Ihrer vs Code Einstellungen über verschiedene Installationen hinweg mithilfe von github. Wenn Sie auf unterschiedlichen Computern arbeiten, können Sie Ihre Umgebung auf diese Weise konsistent halten.
+- [Einstellungs Synchronisierung](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): ermöglicht die Synchronisierung Ihrer vs Code Einstellungen über verschiedene Installationen hinweg mithilfe von github. Wenn Sie auf verschiedenen Computern arbeiten, können Sie die Umgebung auf diese Weise konsistent halten.
 
 ## <a name="install-windows-terminal-optional"></a>Installieren des Windows-Terminals (optional)
 
@@ -175,9 +175,9 @@ Das neue Windows-Terminal ermöglicht mehrere Registerkarten (schnelles Umschalt
 
 ## <a name="set-up-git-optional"></a>Einrichten von git (optional)
 
-Wenn Sie beabsichtigen, mit anderen zusammenzuarbeiten oder das Projekt auf einem Open-Source-Standort (wie GitHub) zu hosten, unterstützt vs Code die [Versionskontrolle mit git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). Auf der Registerkarte Quell Code Verwaltung in vs Code werden alle Änderungen nachverfolgt, und es werden allgemeine git-Befehle (Add, Commit, Push, Pull) direkt in die Benutzeroberfläche integriert.
+Wenn Sie beabsichtigen, mit anderen zusammenzuarbeiten oder das Projekt auf einem Open-Source-Standort (wie GitHub) zu hosten, unterstützt vs Code die [Versionskontrolle mit git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). Auf der Registerkarte „Quellcodeverwaltung“ in VS Code werden alle Änderungen nachverfolgt und gängige Git-Befehle („Add“, „Commit“, „Push“, „Pull“) direkt in die Benutzeroberfläche integriert.
 
-1. Git wird mit dem Windows-Subsystem für Linux-Distributionen installiert. Sie müssen jedoch ihre git-Konfigurationsdatei einrichten. Geben Sie hierzu im Terminal Folgendes ein: `git config --global user.name "Your Name"` und dann `git config --global user.email "youremail@domain.com"`. Wenn Sie noch nicht über ein git-Konto verfügen, können Sie sich [für ein Konto auf GitHub registrieren](https://github.com/join). Wenn Sie noch nie mit git gearbeitet haben, können Ihnen [GitHub-Leitfäden](https://guides.github.com/) beim Einstieg helfen. Wenn Sie Ihre git-Konfiguration bearbeiten müssen, können Sie dies mit einem integrierten Text-Editor wie Nano: `nano ~/.gitconfig`tun.
+1. Git wird mit dem Windows-Subsystem für Linux-Distributionen installiert. Sie müssen jedoch ihre git-Konfigurationsdatei einrichten. Geben Sie hierzu im Terminal Folgendes ein: `git config --global user.name "Your Name"` und dann `git config --global user.email "youremail@domain.com"`. Wenn Sie noch nicht über ein git-Konto verfügen, können Sie sich [für ein Konto auf GitHub registrieren](https://github.com/join). Wenn Sie noch nie zuvor mit Git gearbeitet haben, können Sie [GitHub-Leitfäden](https://guides.github.com/) für den Einstieg nutzen. Wenn Sie Ihre git-Konfiguration bearbeiten müssen, können Sie dies mit einem integrierten Text-Editor wie Nano: `nano ~/.gitconfig`tun.
 
 2. Es wird empfohlen, Ihren Knoten Projekten eine [gitignore-Datei](https://help.github.com/en/articles/ignoring-files) hinzuzufügen. Hier finden Sie [die gitignore-Standardvorlage von GitHub für Node. js](https://github.com/github/gitignore/blob/master/Node.gitignore). Wenn Sie [ein neues Repository mithilfe der GitHub-Website erstellen](https://help.github.com/articles/create-a-repo), sind Kontrollkästchen verfügbar, mit denen Sie Ihr Repository mit einer Infodatei, einer gitignore-Datei für Node. js-Projekte und Optionen zum Hinzufügen einer Lizenz bei Bedarf initialisieren können.
 
