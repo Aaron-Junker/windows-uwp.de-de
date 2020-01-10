@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ae67e5d4d6da3cc9716c5f0efd276023bae9af0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 48fea83560655b02909b302225f44fa3e9713f00
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258379"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684495"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>Hinzufügen von InkToolbar zu einer App für die Universelle Windows-Plattform (UWP)
 
@@ -87,7 +87,7 @@ Wenn Sie eine Freihandsymbolleiste zu Ihrer App hinzufügen, können Sie Standar
 
 Geben Sie den Standort und die Ausrichtung der Symbolleiste explizit über die Eigenschaften [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) und [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) an.
 
-| Standard | Explizit |
+| Standardwert | Explizit |
 | --- | --- |
 | ![Standardstandort und -ausrichtung der Freihandsymbolleiste](./images/ink/location-default-small.png) | ![Explizite Angabe für Standort und Ausrichtung der Freihandsymbolleiste](./images/ink/location-explicit-small.png) |
 | *Standard Speicherort und Ausrichtung der Windows Ink-Symbolleiste* | *Explizite Position und Ausrichtung der Windows Ink-Symbolleiste* |
@@ -172,7 +172,7 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
 
     1. Fügen Sie zwei boolesche Eigenschaften zur Klasse InkToolbarSnippetHostViewModel hinzu: **LeftHandedLayout** (dieselbe Funktion wie im vorherigen Beispiel reinen XAML-Beispiel) und **PortraitLayout** (Ausrichtung des Geräts).
         >[!NOTE] 
-        > Die Eigenschaft PortraitLayout ist einstellbar und enthält die Definition für das Ereignis [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
+        > Die Eigenschaft PortraitLayout ist einstellbar und enthält die Definition für das Ereignis [PropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged).
 
         ```csharp
         public bool LeftHandedLayout
@@ -214,7 +214,7 @@ Sie können auch eine Bindung verwenden, um nach Aktualisierungen der Benutzerob
     1. Fügen Sie zwei neue Klassen zum Converters-Ordner hinzu (für dieses Beispiel nennen wir diese **HorizontalAlignmentFromHandednessConverter.cs** und **VerticalAlignmentFromAppViewConverter.cs**).
     1. Fügen Sie die Namespaces `using Windows.UI.Xaml` und `using Windows.UI.Xaml.Data` zu jeder Datei hinzu.
     1. Ändern Sie jede Klasse in `public`, und geben Sie an, dass damit die [IValueConverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter)-Schnittstelle implementiert wird.
-    1. Fügen Sie die Methoden [Convert](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) und [ConvertBack](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) zu jeder Datei hinzu, wie hier gezeigt (die ConvertBack-Methode wird nicht implementiert).
+    1. Fügen Sie die Methoden [Convert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) und [ConvertBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) zu jeder Datei hinzu, wie hier gezeigt (die ConvertBack-Methode wird nicht implementiert).
         - HorizontalAlignmentFromHandednessConverter positioniert die Freihandsymbolleiste auf der rechten Seite der App für Rechtshänder und auf der linken Seite der App für Linkshänder.
         ```csharp
         using System;

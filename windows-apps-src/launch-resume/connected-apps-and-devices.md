@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP, verbundene Geräte, Remote Systeme, Rom, Project Rom
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: b989f5c115ef5c8555f8cb48ac43f2d50a9d830c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 742ef56165ea26df3a03d54e99a17d2a00908cb6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260516"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684453"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>Verbundene Apps und Geräte (Projekt „Rome”)
 
-In diesem Abschnitt wird erläutert, wie Sie Apps über Geräte und Plattformen mithilfe von [Project Rom](https://developer.microsoft.com/en-us/windows/project-rome)verbinden können. Um zu erfahren, wie Sie Project Rom in einem plattformübergreifenden Szenario implementieren, besuchen Sie die [Hauptseite der Dokumente für Project Rom](https://docs.microsoft.com/en-us/windows/project-rome/).
+In diesem Abschnitt wird erläutert, wie Sie Apps über Geräte und Plattformen mithilfe von [Project Rom](https://developer.microsoft.com/windows/project-rome)verbinden können. Um zu erfahren, wie Sie Project Rom in einem plattformübergreifenden Szenario implementieren, besuchen Sie die [Hauptseite der Dokumente für Project Rom](https://docs.microsoft.com/windows/project-rome/).
 
 Die meisten Benutzer verfügen über mehrere Geräte, wobei sie häufig eine Aktivität auf einem Gerät beginnen und auf einem anderen Gerät abschließen. Dazu müssen Apps geräte- und plattformübergreifend sein. Project Rom ermöglicht Ihnen das Ermitteln von Remote Geräten, das Starten einer APP auf einem Remote Gerät und das kommunizieren mit einem App Service auf einem Remote Gerät.
 

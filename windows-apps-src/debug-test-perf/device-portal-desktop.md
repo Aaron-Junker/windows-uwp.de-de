@@ -1,21 +1,21 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Geräteportal für Windows-Desktop
-description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
+description: Hier erfahren Sie, wie das Windows Device Portal die Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
 ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräte Portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f25e882f53bb4f673aa5003495f37d553208721
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282001"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681971"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
-Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit Ihrem Desktop interagieren. Sie haben im Device Portal folgende Möglichkeiten:
+Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit Ihrem Desktop interagieren. Sie haben im Geräteportal folgende Möglichkeiten:
 - Anzeigen und Bearbeiten einer Liste laufender Prozesse
 - Installieren, Löschen, Starten und Beenden von Apps
 - Ändern von WLAN-Profilen und Anzeigen der Signalstärke und der ipconfig
@@ -62,28 +62,28 @@ Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführlic
 - Datei-Explorer
 - Laufende Prozesse
 - Leistung
-- Debugging
+- Debugprotokolle
 - Ereignisablaufverfolgung für Windows (ETW)
 - Leistungsüberwachung
 - Geräte-Manager
-- Netzwerk
+- -Netzwerk
 - Absturzdaten
 - Features
 - Mixed Reality
 - Streaming Install-Debugger
-- Speicherort
+- Pfad
 - Entwurf
 
 ## <a name="more-device-portal-options"></a>Weitere Optionen für das Geräteportal
 
 ### <a name="registry-based-configuration-for-device-portal"></a>Registrierungsbasierte Konfiguration für das Geräteportal
 
-Wenn Sie Portnummern für Device Portal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
+Wenn Sie Portnummern für Geräteportal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
 
 - Unter `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`: ein erforderliches DWORD. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
     - `HttpPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Geräteportal nach HTTP-Verbindungen lauscht.    
-    - `HttpsPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
+    - `HttpsPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Geräteportal nach HTTPS-Verbindungen lauscht.
     
 Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderung deaktivieren:
 - `UseDefaultAuthorizer` - `0` deaktiviert, `1` aktiviert ist.  
@@ -103,7 +103,7 @@ Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderun
     - Auf diese Weise können Sie Ihr eigenes SSL-Zertifikat installieren, um die SSL-Warnseite zu reparieren, die normalerweise im Geräteportal angezeigt wird. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - Führen Sie eine eigenständige Version des Geräteportals mit einer bestimmten Konfiguration und sichtbaren Debug-Meldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-    - Lesen Sie den [Artikel im MSDN Magazine](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx) mit Details darüber, wie Sie es als „System” ausführen können, um Ihr gepacktes Plugin vollständig zu testen.
+    - Lesen Sie den [Artikel im MSDN Magazine](https://msdn.microsoft.com/magazine/mt826332.aspx) mit Details darüber, wie Sie es als „System” ausführen können, um Ihr gepacktes Plugin vollständig zu testen.
 
 ## <a name="common-errors-and-issues"></a>Häufige Fehler und Probleme
 
@@ -129,7 +129,7 @@ Dieser Fehler wird möglicherweise angezeigt, wenn die Entwickler Pakete nicht i
 
 Dieser Fehler wird möglicherweise angezeigt, wenn Sie über eine getaktete Internetverbindung verfügen. Sie können die Entwickler Pakete nicht über eine getaktete Verbindung herunterladen.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen:
 
 * [Übersicht über das Windows-Geräte Portal](device-portal.md)
 * [Referenz zur kernapi des Geräte Portals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

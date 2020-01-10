@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, UWP, erweiterte Ausführung, minimiert, ExtendedExecutionSession, Hintergrundaufgabe, Anwendungslebenszyklus, Sperrbildschirm
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d2c9937b02d60bb8509aedaf6277512a4e0c4a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fdb47a7c57ff8ef719b819253ab768c0d836be14
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371425"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684553"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>Verschieben der angehaltenen App mithilfe der erweiterten Ausführung
 
@@ -23,7 +23,7 @@ Es gibt Fälle, in denen eine App bei einer Minimierung möglicherweise weiter a
 
 Wenn eine App weiter ausgeführt muss, kann sie entweder vom Betriebssystem weiter ausgeführt werden, oder sie kann die weitere Ausführung anfordern. Wenn beispielsweise im Hintergrund Audioinhalte wiedergegeben werden, kann das Betriebssystem eine App weiter ausführen, wenn Sie diese Schritte für [Medienwiedergabe im Hintergrund](../audio-video-camera/background-audio.md) ausführen. Andernfalls müssen Sie manuell mehr Zeit anfordern. Sie erhalten möglicherweise mehrere Minuten Zeit für die Ausführung im Hintergrund, aber Sie müssen jederzeit auf die Verarbeitung der widerrufenen Sitzung vorbereitet sein. Diese Einschränkungen für die Lebenszykluszeit einer Anwendung sind deaktiviert, während sie unter einem Debugger ausgeführt wird. Aus diesem Grund ist es wichtig, Extended Execution und andere Tools zum Verschieben von App-Aussetzungen nur zu testen, wenn die App nicht unter einem Debugger ausgeführt wird, oder die in Visual Studio verfügbaren Lifecycle Events zu verwenden. 
  
-Um mehr Zeit für das Ausführen eines Vorgangs im Hintergrund anzufordern, erstellen Sie eine [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession). Die Art der von Ihnen erstellten **ExtendedExecutionSession** wird durch den [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) festgelegt, den Sie während des Erstellens angeben. Es gibt drei **ExtendedExecutionReason** Enum-Werte: **Nicht angegeben, handelt es sich bei LocationTracking** und **SavingData**. Es kann jeweils nur eine **ExtendedExecutionSession** angefordert werden. Wenn Sie versuchen, eine neue Sitzung zu erstellen, während eine genehmigte Sitzungsanforderung aktiv ist, wird die Ausnahme 0x8007139F vom **ExtendedExecutionSession**-Konstruktor ausgelöst, die besagt, dass die Gruppe oder Ressource nicht den richtigen Status zum Ausführen der angeforderten Operation aufweist. Verwenden Sie [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) und [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) nicht. Sie erfordern eingeschränkte Funktionen und sind nicht zur Verwendung in Store-Anwendungen verfügbar.
+Um mehr Zeit für das Ausführen eines Vorgangs im Hintergrund anzufordern, erstellen Sie eine [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession). Die Art der von Ihnen erstellten **ExtendedExecutionSession** wird durch den [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) festgelegt, den Sie während des Erstellens angeben. Es gibt drei Enumerationswerte für **ExtendedExecutionReason**: **Unspecified, LocationTracking** und **SavingData**. Es kann jeweils nur eine **ExtendedExecutionSession** angefordert werden. Wenn Sie versuchen, eine neue Sitzung zu erstellen, während eine genehmigte Sitzungsanforderung aktiv ist, wird die Ausnahme 0x8007139F vom **ExtendedExecutionSession**-Konstruktor ausgelöst, die besagt, dass die Gruppe oder Ressource nicht den richtigen Status zum Ausführen der angeforderten Operation aufweist. Verwenden Sie [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) und [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason) nicht. Sie erfordern eingeschränkte Funktionen und sind nicht zur Verwendung in Store-Anwendungen verfügbar.
 
 ## <a name="run-while-minimized"></a>Ausführen bei Minimierung
 
@@ -61,7 +61,7 @@ Der Zustand **Angehalten** ist die letzte Phase während des App-Lebenszyklus, i
 
 Es gibt drei grundsätzliche Interaktionen mit erweiterten Ausführungssitzungen: Anfordern, Löschen und Sperren.  Das Anfordern wird im folgenden Codeausschnitt gezeigt.
 
-### <a name="request"></a>Anforderung
+### <a name="request"></a>Anfordern
 
 ```csharp
 var newSession = new ExtendedExecutionSession();
@@ -81,7 +81,7 @@ switch (result)
         break;
 }
 ```
-[Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
+[Siehe Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
 
 Durch Aufrufen von **RequestExtensionAsync** wird durch das Betriebssystem geprüft, ob der Benutzer Hintergrundaktivitäten für die App genehmigt hat und ob das System über genügend Ressourcen verfügt, um die Hintergrundausführung zu aktivieren. Pro App wird jeweils nur eine Sitzung genehmigt, sodass weitere Aufrufe von **RequestExtensionAsync** dazu führen, dass die Sitzung abgelehnt wird.
 
@@ -119,7 +119,7 @@ private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventAr
     });
 }
 ```
-[Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
+[Siehe Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
 
 ### <a name="dispose"></a>Löschen
 
@@ -140,7 +140,7 @@ void ClearExtendedExecution(ExtendedExecutionSession session)
     }
 }
 ```
-[Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
+[Siehe Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
 
 Für eine App kann jeweils nur eine **ExtendedExecutionSession** aktiv sein. Viele Apps verwenden asynchrone Aufgaben, um komplexe Vorgänge ausführen, die Zugriff auf Ressourcen wie Speicher, Netzwerk oder netzwerkbasierte Dienste erfordern. Wenn ein Vorgang mehrere asynchrone Vorgänge erfordert, um abgeschlossen zu werden, muss der Zustand jeder dieser Aufgaben berücksichtigt werden, bevor **ExtendedExecutionSession** gelöscht wird und die App angehalten werden kann. Dies erfordert eine Verweiszählung der Anzahl der Aufgaben, die weiter ausgeführt werden. Erst wenn dieser Wert null erreicht, kann die Sitzung gelöscht werden.
 
@@ -247,7 +247,7 @@ static class ExtendedExecutionHelper
     }
 }
 ```
-[Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
+[Siehe Codebeispiel](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>Gute Nutzung von Ressourcen durch Ihre App
 
@@ -255,13 +255,13 @@ Das Optimieren von Arbeitsspeicher und Energieverbrauch Ihrer App ist der Schlü
 
 Um zu ermitteln, ob der Benutzer die Hintergrundaktivität Ihrer App begrenzt hat, verwenden Sie [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager). Achten Sie auf die Akkunutzung, und führen Sie Ihre App nur dann im Hintergrund aus, wenn dies zum Ausführen einer vom Benutzer gewünschten Aktion notwendig ist.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 [Beispiel für erweiterte Ausführung](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [Anwendungslebenszyklus](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
-[App Lifecycle - Keep Apps Alive with Background Tasks and Extended Execution](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
+[App Lifecycle - Keep Apps Alive with Background Tasks and Extended Execution](https://msdn.microsoft.com/magazine/mt590969.aspx)
 [Geben Sie Speicher frei, wenn Ihre App in den Hintergrund verschoben wird](https://docs.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
-[Übertragungen im Hintergrund](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
-[Akku Bewusstsein und Hintergrundaktivität](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
-[MemoryManager-Klasse](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
+[Hintergrund Übertragungen](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
+[Akku Bewusstsein und Hintergrund Aktivität](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[Memorymanager-Klasse](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
 [Wiedergeben von Medien im Hintergrund](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

@@ -9,16 +9,16 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c2d05c87f4f7b6164afe1fcbcb62323eef3bdf1
-ms.sourcegitcommit: 5f80bfc3ba04ad0a0853f83917d6a0ef3da24fa3
+ms.openlocfilehash: d180621736e79daec91a11a6932e80633962d6c7
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72302249"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684523"
 ---
 # <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
-Windows wird auf der ganzen Welt in verschiedenen Märkten und von Anwendern unterschiedlicher Kulturen, Herkunft und Sprachen verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehr als eine Sprache. Ihre App wird also auf Konfigurationen ausgeführt, die viele Systemeinstellungen für Sprache, Region und Kultur beinhalten. Sie können die Marktchancen Ihrer App erweitern, indem Sie mithilfe von *Globalisierung* und *Lokalisierung* eine variable App entwickeln.
+Windows wird auf der ganzen Welt von Anwendern unterschiedlicher Sprachen, Kulturen und Herkunft verwendet. Ihre Benutzer sprechen eine Vielzahl verschiedener Sprachen in vielen verschiedenen Ländern und Regionen. Einige Benutzer sprechen mehrere Sprachen. Ihre App wird also auf Konfigurationen ausgeführt, die viele Systemeinstellungen für Sprache, Region und Kultur beinhalten. Sie können die Marktchancen Ihrer App erweitern, indem Sie mithilfe von *Globalisierung* und *Lokalisierung* eine variable App entwickeln.
 
 Das folgende Video enthält eine kurze Einführung dazu, wie Sie Ihre App für die weltweite Verbreitung vorbereiten: [Einführung in die Globalisierung und Lokalisierung](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
@@ -38,7 +38,7 @@ Ihr Code muss in allen Kulturen, für die Sie Ihre App vorgesehen haben, gleich 
 - Sortierregeln
 
 >[!NOTE]
-> Eine Liste der unterstützten Gebiets Schema Namen in der Windows-Betriebssystemversion finden Sie in der Spalte Sprachtag der Tabelle in [Anhang a: Produktverhalten](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in der [Referenz zur Windows-Sprach Code Kennung (LCID)](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
+> Eine Liste der unterstützten Gebiets Schema Namen in der Windows-Betriebssystemversion finden Sie in der Spalte Sprachtag der Tabelle in [Anhang a: Produktverhalten](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in der [Referenz zur Windows-Sprach Code Kennung (LCID)](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
 
 **Lokalisierbarkeit** ist das Ergebnis des Prozess der Vorbereitung der Lokalisierung einer globalisierten App und/oder der Überprüfung, ob die App für die Lokalisierung bereit ist. Die korrekte Herstellung der Lokalisierbarkeit einer App bedeutet, dass der spätere Lokalisierungsprozess keine funktionalen Mängel in der App aufdeckt. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist.
 

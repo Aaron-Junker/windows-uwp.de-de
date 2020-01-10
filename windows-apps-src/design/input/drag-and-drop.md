@@ -1,29 +1,29 @@
 ---
 description: In diesem Artikel erfahren Sie, wie Sie Ihrer UWP-App (Universelle Windows-Plattform) Drag & Drop hinzufügen.
-title: Drag & Drop
+title: Drag &amp; Drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d713efd9deeffa0856a5d1dbc92688c229288e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fec8ef45cff07d7a092fd46bd2d960bfcaf0c50a
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363579"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684512"
 ---
-# <a name="drag-and-drop"></a>Drag & Drop
+# <a name="drag-and-drop"></a>Drag &amp; Drop
 
 Drag&Drop ist eine intuitive Methode zum Übertragen von Daten in einer Anwendung oder zwischen Anwendungen auf dem Windows-Desktop. Per Drag&Drop können Benutzer Daten zwischen Anwendungen oder innerhalb einer Anwendung mit einer Standardgeste übertragen (Drücken, Halten und Ziehen mit dem Finger bzw. Drücken und Ziehen mit der Maus oder einem Stift.)
 
-> **Wichtige APIs:** ["CanDrag"-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag), ["AllowDrop"-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 
+> **Wichtige APIs**: [CanDrag property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag), [AllowDrop property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) 
 
 Die Ziehquelle, d. h die Anwendung oder der Bereich, in der bzw. dem die Ziehbewegung ausgelöst wird, stellt die zu übertragenden Daten bereit, indem ein Datenpaketobjekt gefüllt wird, das Standarddatenformate enthalten kann, einschließlich Text, RTF, HTML, Bitmaps, Speicherelemente oder benutzerdefinierte Datenformate. Die Quelle gibt auch die Art von Vorgängen an, die unterstützt werden: Kopieren, Verschieben oder Verknüpfen. Wenn der Zeiger losgelassen wird, werden die Daten abgelegt. Das Ablageziel, d. h. die Anwendung oder der Bereich unter dem Zeiger, verarbeitet das Datenpaket und gibt den ausgeführten Vorgangstyp zurück.
 
 Während des Drag&Drop-Vorgangs stellt die Ziehbenutzeroberfläche eine visuelle Anzeige des stattfindenden Drag&Drop-Vorgangstyps bereit. Dieses visuelle Feedback wird anfangs von der Quelle bereitgestellt, kann aber von den Zielen geändert werden, wenn der Mauszeiger über diese bewegt wird.
 
-Modernes Drag&Drop ist auf allen Geräten verfügbar, die UWP unterstützen. Es ermöglicht Datenübertragungen zwischen oder innerhalb von jeder Art von Anwendung, einschließlich klassischen Windows-Apps. Der Schwerpunkt dieses Artikels liegt jedoch auf der XAML-API für modernes Drag&Drop. Nach der Implementierung stehen Drag & Drop-Vorgänge für sämtliche Richtungen (App zu App, App zu Desktop und Desktop zu App) zur Verfügung.
+Modernes Drag&Drop ist auf allen Geräten verfügbar, die UWP unterstützen. Es ermöglicht Datenübertragungen zwischen oder innerhalb von jeder Art von Anwendung, einschließlich klassischen Windows-Apps. Der Schwerpunkt dieses Artikels liegt jedoch auf der XAML-API für modernes Drag&Drop. Nach der Implementierung stehen Drag&Drop-Vorgänge für sämtliche Richtungen (App zu App, App zu Desktop und Desktop zu App) zur Verfügung.
 
 Nachfolgend finden Sie ein Überblick darüber, was Sie tun müssen, um Drag&Drop in Ihrer App zu aktivieren:
 
@@ -57,7 +57,7 @@ Für andere Inhalte müssen Sie die Ereignisse **DragStarted** und **DragComplet
 
 ## <a name="enable-dropping"></a>Aktivieren des Ablegens
 
-Das folgende Markup veranschaulicht, wie Sie mithilfe von [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) in XAML einen bestimmten Bereich der App als gültig für Dropvorgänge festlegen. Wenn ein Benutzer versucht, Elemente an anderer Stelle abzulegen, wird dies vom System nicht zugelassen. Wenn Benutzer die Möglichkeit haben sollen, Elemente an einer beliebigen Stelle Ihrer App abzulegen, legen Sie den gesamten Hintergrund als Dropziel fest.
+Das folgende Markup veranschaulicht, wie Sie mithilfe von [**AllowDrop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop) in XAML einen bestimmten Bereich der App als gültig für Dropvorgänge festlegen. Wenn ein Benutzer versucht, Elemente an anderer Stelle abzulegen, wird dies vom System nicht zugelassen. Wenn Benutzer die Möglichkeit haben sollen, Elemente an einer beliebigen Stelle Ihrer App abzulegen, legen Sie den gesamten Hintergrund als Drop-Ziel fest.
 
 [!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
@@ -98,25 +98,25 @@ Das System zeigt automatisch die entsprechenden Animationen zum Ablegen in einen
 
 ## <a name="implementing-custom-drag-and-drop"></a>Implementieren von benutzerdefiniertem Drag&Drop
 
-Die [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Klasse übernimmt die meiste Arbeit bei der Implementierung von Drag&Drop für Sie. Aber wenn Sie möchten, können Sie Ihre eigene Version implementieren, indem Sie mithilfe der APIs in der [Windows.ApplicationModel.DataTransfer.DragDrop.Core Namespace](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core).
+Die [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)-Klasse übernimmt die meiste Arbeit bei der Implementierung von Drag&Drop für Sie. Wenn Sie möchten, können Sie Ihre eigene Version implementieren, indem Sie die APIs im [Windows. applicationmodel. datatransfer. DragDrop. Core-Namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)verwenden.
 
-| Funktionalität | WinRT-API |
+| Funktion | WinRT-API |
 | --- | --- |
-|  Aktivieren des Ziehens | [CoreDragOperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
+|  Aktivieren des Ziehens | [Coredragoperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 |  Erstellen eines Datenpakets | [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
-| Übergeben des Ziehens an die Shell  | [CoreDragOperation.StartAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
-| Empfangen des Drops von der Shell  | [CoreDragDropManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[ICoreDropOperationTarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
+| Übergeben des Ziehens an die Shell  | [Coredragoperation. startasync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
+| Empfangen des Drops von der Shell  | [Coredragdropmanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[Icoredropoperationtarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
 
 
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen:
 
 * [App-zu-App-Kommunikation](index.md)
 * [AllowDrop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.allowdrop)
-* [CanDrag](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)
+* [Kerzen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.candrag)
 * [DragOver](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
-* [AcceptedOperation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
-* ["DataView"](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
-* [DragUIOverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
+* [Akzeptedoperation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation)
+* [DataView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.dataview)
+* [Draguioverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.draguioverride)
 * [Drop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
-* [IsDragSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)
+* [Isdragsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)
