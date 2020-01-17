@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cc5f10ba23c942851f34ef64afd887d265dba1
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 824cdb74a809ae3f9ae2ed202a9889535021f711
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259780"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684727"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Neuerungen in der Windows-Entwicklerdokumentation im August 2017
 
@@ -41,7 +41,7 @@ Mithilfe der [Game Mode](https://docs.microsoft.com/previous-versions/windows/de
 Die [Microsoft Store-Übermittlungs-API](../monetize/create-and-manage-submissions-using-windows-store-services.md) ermöglicht Ihnen jetzt, [Videotrailer](../monetize/manage-app-submissions.md#trailer-object) und [Spieloptionen](../monetize/manage-app-submissions.md#gaming-options-object) mit Ihrer App zu übermitteln.
 
 
-## <a name="developer-guidance"></a>Erläuterungen für Entwickler
+## <a name="developer-guidance"></a>Entwicklerleitfäden
 
 ### <a name="data-schemas-for-store-products"></a>Datenschemas für Store-Produkte
 
@@ -57,7 +57,7 @@ Im Artikel [Erweitern Ihrer Desktopanwendung mit modernen UWP-Komponenten](https
 
 ### <a name="getting-started-with-point-of-service"></a>Erste Schritte mit Point Of Service-Geräten
 
-Wir haben den neuen Leitfaden [Erste Schritte mit Point Of Service-Geräten](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-get-started) hinzugefügt. Er umfasst Themen wie Geräteenumeration, Überprüfen von Gerätefunktionen, Anfordern von Geräten und die gemeinsame Nutzung von Geräten. 
+Wir haben den neuen Leitfaden [Erste Schritte mit Point Of Service-Geräten](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started) hinzugefügt. Er umfasst Themen wie Geräteenumeration, Überprüfen von Gerätefunktionen, Anfordern von Geräten und die gemeinsame Nutzung von Geräten. 
 
 ### <a name="xbox-live"></a>Xbox Live
 
@@ -73,7 +73,7 @@ Weitere Informationen zu den Programmen und Features für Xbox Live-Entwickler f
 
 ### <a name="mixed-reality"></a>Mixed Reality
 
-Für [Microsoft HoloLens: Kurs 250](https://developer.microsoft.com/en-us/windows/mixed-reality/mixed_reality_250) wurde eine Reihe von neuen Videolernprogrammen veröffentlicht. Sie finden in diesen Videokursen Informationen zum Erstellen gemeinsamer Erfahrungen auf Mixed Reality-Geräten. Vorausgesetzt wird, dass Sie die Tools bereits installiert haben und mit den Grundlagen der Entwicklung für Mixed Reality vertraut sind.
+Für [Microsoft HoloLens: Kurs 250](https://developer.microsoft.com/windows/mixed-reality/mixed_reality_250) wurde eine Reihe von neuen Videolernprogrammen veröffentlicht. Sie finden in diesen Videokursen Informationen zum Erstellen gemeinsamer Erfahrungen auf Mixed Reality-Geräten. Vorausgesetzt wird, dass Sie die Tools bereits installiert haben und mit den Grundlagen der Entwicklung für Mixed Reality vertraut sind.
 
 ### <a name="narrator-and-dev-mode"></a>Sprachausgabe und Entwicklermodus
 

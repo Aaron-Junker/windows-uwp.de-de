@@ -1,17 +1,17 @@
 ---
 title: Was ist eine App der universellen Windows-Plattform (UWP)?
-description: Erfahren Sie mehr über Apps für die Universelle Windows-Plattform (UWP), die auf einer Vielzahl von Geräten unter Windows 10 ausgeführt werden können.
+description: Erfahren Sie mehr über Apps für die universelle Windows-Plattform (UWP), die auf einer Vielzahl von Geräten unter Windows 10 ausgeführt werden können.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, universell
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b0d226a9492a2218edf20e68b8216ea513ca12a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fdb06581639391c09c445c8497f67af28a8405df
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260538"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685011"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
@@ -56,13 +56,13 @@ Benutzeroberflächenelemente reagieren auf die Größe und DPI-Auflösung des Bi
 
 ![Windows-Geräte](images/1894834-hig-device-primer-01-500.png)
 
-Windows unterstützt Sie mit folgenden Features, Ihre UI auf mehrere Geräte auszurichten:
+Windows hilft Ihnen mit folgenden Features, Ihre UI auf mehrere Geräte auszurichten:
 
 - Universelle Steuerelemente und Layoutpanels unterstützen Sie bei der Optimierung Ihrer Benutzeroberfläche für die Bildschirmauflösung des Geräts. Beispielsweise werden Steuerelemente wie Schaltflächen und Schieberegler automatisch an die Bildschirmgröße und DPI-Dichte des Geräts angepasst. Layoutpanels helfen, das Layout von Inhalten basierend auf der Bildschirmgröße anzupassen. Die adaptive Skalierung sorgt dafür, dass die Auflösung und DPI-Unterschiede geräteübergreifend berücksichtigt werden.
 - Dank der allgemeinen Verarbeitung von Eingaben können Eingaben per Touchgeste, Stift, Maus, Tastatur oder Controller erfolgen (z. B. Microsoft Xbox-Controller).
 - Tools unterstützen Sie bei der Entwicklung von Benutzeroberflächen, die sich an verschiedene Bildschirmauflösungen anpassen.
 
-Einige Aspekte der App-UI Ihrer App werden automatisch auf allen Geräten angepasst. Das Design der Benutzererfahrung Ihrer App muss jedoch möglicherweise angepasst werden, je nachdem, auf welchem Gerät die App ausgeführt wird. Eine Foto-App könnte die Benutzeroberfläche beispielsweise anpassen, wenn sie auf einem kleinen Handheld-Gerät ausgeführt wird, um sicherzustellen, dass sie optimal mit einer Hand bedient werden kann. Wenn eine Foto-App auf einem Desktopcomputer ausgeführt wird, sollte sich die Benutzeroberfläche anpassen, um die zusätzliche Bildschirmfläche zu nutzen.
+Einige Aspekte der UI Ihrer App werden automatisch auf allen Geräten angepasst. Das Design der Benutzererfahrung Ihrer App muss jedoch möglicherweise angepasst werden, je nachdem, auf welchem Gerät die App ausgeführt wird. Eine Foto-App könnte die Benutzeroberfläche beispielsweise anpassen, wenn sie auf einem kleinen Handheld-Gerät ausgeführt wird, um sicherzustellen, dass sie optimal mit einer Hand bedient werden kann. Wenn eine Foto-App auf einem Desktopcomputer ausgeführt wird, sollte sich die Benutzeroberfläche anpassen, um die zusätzliche Bildschirmfläche zu nutzen.
 
 ## <a name="theres-one-store-for-all-devices"></a>Ein Store für alle Geräte
 
@@ -70,11 +70,11 @@ Ihre App wird in einem Store für allgemeine Apps für Windows 10-Geräte wie P
 
 Da UWP-Apps und [Application Insights](https://azure.microsoft.com/services/application-insights/) integriert sind, stehen detaillierte Telemetrie- und Analysedaten zur Verfügung. Das Tool hilft, das Benutzerverhalten zu analysieren und Ihre Apps zu optimieren.
 
-### <a name="monetize-your-app"></a>Monetisierung Ihrer App
+### <a name="monetize-your-app"></a>Monetarisieren Ihrer App
 
 Sie können wählen, wie Sie Ihre App gewinnbringend nutzen. Es gibt eine Reihe von Möglichkeiten, mit Ihren Apps Geld zu verdienen. Sie müssen nur die für Sie am besten geeignete Methode auswählen, beispielsweise:
 
-- Ein bezahlter Download ist die einfachste Möglichkeit. Geben Sie einfach nur den Preis an.
+- Ein kostenpflichtiger Download ist die einfachste Möglichkeit. Geben Sie einfach nur den Preis an.
 - Mit Testversionen können Benutzer Ihre App vor dem Kauf ausprobieren. Dies verbessert gegenüber den herkömmlicheren „Freemium“-Optionen die Auffindbarkeit und erhöht die Anzahl der Abschlüsse.
 - Angebotspreise bieten Anreize für Benutzer.
 - Darüber hinaus sind In-App-Käufe und -Anzeigen verfügbar.
@@ -107,7 +107,7 @@ UWP-Apps verwenden die Windows-Runtime, die native, vom Betriebssystem bereitges
 
 ## <a name="links-to-help-you-get-going"></a>Links für die ersten Schritte
 
-### <a name="get-set-up"></a>Einrichten
+### <a name="get-set-up"></a>Vorbereiten
 
 Navigieren Sie zu [Vorbereiten](get-set-up.md), um die erforderlichen Tools herunterzuladen und mit dem Erstellen von Apps zu beginnen, und [schreiben Sie Ihre erste App](your-first-app.md).
 
@@ -115,15 +115,15 @@ Navigieren Sie zu [Vorbereiten](get-set-up.md), um die erforderlichen Tools heru
 
 Das Entwurfssystem von Microsoft heißt Fluent. Das Fluent Design System stellt eine Reihe von UWP-Funktionen in Kombination mit bewährten Methoden für die Erstellung von Apps bereit, die auf allen Windows-basierten Gerätetypen eine optimale Leistung bieten. Fluent-Umgebungen sind anpassungsfähig und überzeugen auf Geräten wie Tablets, Laptops, PCs, TV- und Virtual-Reality-Geräten durch eine intuitive Bedienung. Weitere Informationen zum Fluent Design System finden Sie unter [Das Fluent Design System für UWP-Apps](https://docs.microsoft.com/windows/uwp/design/fluent-design-system).
 
-Zu einem guten [Design](http://design.windows.com/) gehören nicht nur das Erscheinungsbild und die Funktionalität einer App, sondern auch die Entscheidung darüber, wie Benutzer mit der App interagieren. Die Benutzerfreundlichkeit spielt eine große Rolle bei der Beurteilung, wie gerne Benutzer Ihre App verwenden. Sparen Sie daher nicht an diesem Schritt. [Designgrundlagen](https://developer.microsoft.com/en-us/windows/apps/design) bieten eine Einführung in den Entwurf von UWP-Apps (Universelle Windows-Plattform). Unter [Einführung in universelle Windows-Plattform-Apps (UWP) für Designer](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro) finden Sie Informationen zum Entwerfen von UWP-Apps, die Benutzer begeistern. Bevor Sie mit dem Schreiben von Code beginnen, lesen Sie die Informationen unter [Einführung der Geräte](../design/devices/index.md). Diese helfen Ihnen dabei, die Interaktionsmöglichkeiten Ihrer App für alle in Frage kommenden Formfaktoren zu durchdenken.
+Zu einem guten [Design](http://design.windows.com/) gehören nicht nur das Erscheinungsbild und die Funktionalität einer App, sondern auch die Entscheidung darüber, wie Benutzer mit der App interagieren. Die Benutzerfreundlichkeit spielt eine große Rolle bei der Beurteilung, wie gerne Benutzer Ihre App verwenden. Sparen Sie daher nicht an diesem Schritt. [Designgrundlagen](https://developer.microsoft.com/windows/apps/design) bieten eine Einführung in den Entwurf von UWP-Apps (Universelle Windows-Plattform). Unter [Einführung in universelle Windows-Plattform-Apps (UWP) für Designer](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro) finden Sie Informationen zum Entwerfen von UWP-Apps, die Benutzer begeistern. Bevor Sie mit dem Schreiben von Code beginnen, lesen Sie die Informationen unter [Einführung der Geräte](../design/devices/index.md). Diese helfen Ihnen dabei, die Interaktionsmöglichkeiten Ihrer App für alle in Frage kommenden Formfaktoren zu durchdenken.
 
-Zusätzlich zur Interaktion auf verschiedenen Geräten sollten Sie [Ihre App planen](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app), um die Vorteile verschiedener Geräte optimal zu nutzen. Zum Beispiel:
+Zusätzlich zur Interaktion auf verschiedenen Geräten sollten Sie [Ihre App planen](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app), um die Vorteile verschiedener Geräte optimal zu nutzen. Beispiel:
 
 - Entwerfen Sie Ihren Workflow anhand von [Navigationsdesigngrundlagen für UWP-Apps](https://docs.microsoft.com/windows/uwp/layout/navigation-basics), damit die App auf dem Bildschirm eines mobilen Geräts genauso gut funktioniert wie auf Geräten mit mittelgroßem und großem Bildschirm. [Erstellen Sie das Layout der Benutzeroberfläche](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design), um unterschiedliche Bildschirmgrößen und Auflösungen zu berücksichtigen.
 
 - Achten Sie darauf, wie Sie verschiedene Eingabearten umsetzen können. In den [Richtlinien für Interaktionen](https://docs.microsoft.com/windows/uwp/design/layout/index) finden Sie Informationen darüber, wie Benutzer anhand von Features wie [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines), [Sprache](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions), [Toucheingaben](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction), der [Touch-Bildschirmtastatur](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) und vielem mehr mit Ihrer App interagieren.  In den [Richtlinien für Text und Texteingabe](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls) finden Sie Informationen für eine herkömmlichere Benutzerumgebung.
 
-### <a name="add-services"></a>Dienste hinzufügen
+### <a name="add-services"></a>Hinzufügen von Diensten
 
 - Verwenden Sie [Clouddienste](https://azure.microsoft.com/documentation/services/cloud-services) für die Synchronisierung auf allen Geräten.
 - Erfahren Sie, wie Sie eine [Verbindung mit Webdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10)) zur Unterstützung der App-Benutzerumgebung herstellen.

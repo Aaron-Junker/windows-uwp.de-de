@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364757"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684395"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -99,7 +99,7 @@ Sie können die **ItemsSource**-Eigenschaft auch an eine Sammlung in XAML binden
 ```
 
 ### <a name="itemtemplate"></a>ItemTemplate
-Um anzugeben, wie ein Datenelement visualisiert wird, legen Sie die [**ItemTemplate** ](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)-Eigenschaft auf eine [ **DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate)- oder [ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)-Instanz fest, die Sie definiert haben. Die Datenvorlage definiert, wie die Daten visualisiert werden. Standardmäßig wird das Element in der Ansicht mit einer **TextBlock**-Instanz angezeigt, für die die Zeichenfolgendarstellung des Datenobjekts verwendet wird.
+Um anzugeben, wie ein Datenelement visualisiert wird, legen Sie die [**ItemTemplate**](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)-Eigenschaft auf eine [**DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate)- oder [ **DataTemplateSelector**](/uwp/api/windows.ui.xaml.controls.datatemplateselector)-Instanz fest, die Sie definiert haben. Die Datenvorlage definiert, wie die Daten visualisiert werden. Standardmäßig wird das Element in der Ansicht mit einer **TextBlock**-Instanz angezeigt, für die die Zeichenfolgendarstellung des Datenobjekts verwendet wird.
 
 In der Regel möchten Sie jedoch eine ansprechendere Darstellung Ihrer Daten anzeigen, indem Sie eine Vorlage verwenden, in der das Layout und das Aussehen der Steuerelemente definiert sind, in denen Sie ein einzelnes Elements anzeigen. Die Steuerelemente, die Sie in der Vorlage verwenden, können an die Eigenschaften eines Datenobjekts gebunden sein oder statischen Inhalt haben, der intern definiert ist.
 
@@ -264,7 +264,7 @@ Elemente, die von [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepea
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) ordnet Elemente in einer einzelnen Zeile an, die Sie horizontal oder vertikal ausrichten können.
 
-Sie können die [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing)-Eigenschaft festlegen, um den Abstand zwischen Elementen anzupassen. „Spacing“ wird in der Richtung angewendet, die durch die Ausrichtung ([Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation)) des Layouts angegeben ist.
+Sie können die [Spacing](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing)-Eigenschaft festlegen, um den Abstand zwischen Elementen anzupassen. „Spacing“ wird in der Richtung angewendet, die durch die Ausrichtung ([Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation)) des Layouts angegeben ist.
 
 ![Abstand für StackLayout](images/stack-layout.png)
 
@@ -300,7 +300,7 @@ Sie können die [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridla
 
 In dieser Liste sind die verfügbaren Werte aufgeführt. Für die Definitionen wird für **Orientation** der Wert **Horizontal** als Standardwert angenommen.
 
-- **Keine**: Zusätzlicher Platz am Ende der Zeile wird nicht verwendet. Dies ist der Standardwert.
+- **None**: Zusätzlicher Platz am Ende der Zeile wird nicht verwendet. Dies ist der Standardwert.
 - **Fill**: Den Elementen wird zusätzliche Breite zugewiesen, um den verfügbaren Platz vollständig zu nutzen (Höhe bei vertikalem Layout).
 - **Uniform**: Den Elementen wird zusätzliche Breite zugewiesen, um den verfügbaren Platz vollständig zu nutzen, sowie zusätzliche Höhe, um das Seitenverhältnis beizubehalten (Höhe und Breite werden bei vertikaler Anordnung getauscht).
 
@@ -642,6 +642,12 @@ In diesem Beispiel wird veranschaulicht, wie Sie eine Liste von gruppierten Elem
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+
+<Page.Resources>
+    <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+</Page.Resources>
+
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
@@ -650,7 +656,7 @@ In diesem Beispiel wird veranschaulicht, wie Sie eine Liste von gruppierten Elem
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
-          TextBlock Text="{x:Bind AppTitle}"/>
+          <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
           <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
@@ -663,10 +669,11 @@ In diesem Beispiel wird veranschaulicht, wie Sie eine Liste von gruppierten Elem
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-Dieses Beispiel zeigt ein Layout für eine App, in der es verschiedene Kategorien gibt, die mit der Benutzereinstellung geändert werden können und als horizontal scrollende Listen angezeigt werden (siehe Abbildung).
+Die folgende Abbildung zeigt das grundlegende Layout, das auf Grundlage des obigen Beispiels erstellt wurde.
 
 ![Geschachteltes Layouts mit „ItemsRepeater“-Steuerelement](images/items-repeater-nested-layout.png)
+
+Das nächste Beispiel zeigt ein Layout für eine App, in der es verschiedene Kategorien gibt, die mit der Benutzereinstellung geändert werden können und als horizontal scrollende Listen angezeigt werden. Das Layout dieses Beispiels wird auch in der obigen Abbildung dargestellt.
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -777,7 +784,7 @@ Der [XYFocusKeyboardNavigation-Modus](/uwp/api/windows.ui.xaml.input.xyfocuskeyb
 > [!NOTE]
 > „ItemsRepeater“ merkt sich nicht automatisch das letzte fokussierte Element.  Dies bedeutet, dass ein Benutzer, wenn er UMSCHALT+TAB verwendet, möglicherweise zum letzten realisierten Element gelangt.
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>Ankündigen von „Element _X_ von _Y_“ in Sprachausgaben
+### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>Ankündigen von „Element _X_ von _Y_“ in Sprachausgaben
 
 Sie müssen das Festlegen der entsprechenden Automatisierungseigenschaften verwalten, z. B. die Werte für **PositionInSet** und **SizeOfSet**, und sicherstellen, dass sie auf dem neuesten Stand bleiben, wenn Elemente hinzugefügt, verschoben, entfernt usw. werden.
 

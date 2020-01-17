@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, erste App, C#, C++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: f386de7ebf9aae2f49a2709d8c1c8ce2595cbf1d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260525"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685153"
 ---
 # <a name="create-your-first-app"></a>Erstellen Ihrer ersten App
 
@@ -61,7 +61,7 @@ Nutzen Sie Ihre Webkenntnisse, um Apps mit HTML5, CSS3 und JavaScript zu erstell
 Erweitern Sie Ihre JavaScript- und HTML-Kenntnisse über UWP hinaus, um Web-Apps zu erstellen oder die virtuelle Realität im Web mit WebVR zu erkunden.
 
 * [Dokumentation für Microsoft Edge-Entwickler](https://docs.microsoft.com/microsoft-edge/)
-* [Verwenden von WebVR mit Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [Verwenden von WebVR mit Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Web-Apps können einfach als gehostete Web-App-Pakete in das UWP-Framework eingefügt und im Microsoft Store beworben werden.
 

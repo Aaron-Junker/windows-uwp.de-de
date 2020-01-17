@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 799913688f04421cae6b47f0d4b7db2fb1074ed4
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: de7a430248841722aedd960cd485ea24499fdd00
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061929"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684273"
 ---
 # <a name="web-view"></a>Webansicht
 
@@ -152,7 +152,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** – Tritt ein, nachdem die Webansicht das Laden des aktuellen Inhalts beendet hat oder ein Navigationsfehler aufgetreten ist. Um festzustellen, ob ein Navigationsfehler aufgetreten ist, überprüfen Sie die [IsSuccess](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess)-Eigenschaft und die [WebErrorStatus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus)-Eigenschaft der [WebViewNavigationCompletedEventArgs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs)-Klasse. 
+**NavigationCompleted** – tritt ein, nachdem die Webansicht das Laden des aktuellen Inhalts beendet hat oder ein Navigationsfehler aufgetreten ist. Um festzustellen, ob ein Navigationsfehler aufgetreten ist, überprüfen Sie die [IsSuccess](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess)-Eigenschaft und die [WebErrorStatus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus)-Eigenschaft der [WebViewNavigationCompletedEventArgs](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs)-Klasse. 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -171,7 +171,7 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 }
 ```
 
-Ähnliche Ereignisse treten für jeden **iframe** im Webansichtsinhalt in der gleichen Reihenfolge auf: 
+Ähnliche Ereignisse treten für jeden **iframe** im Webansichtsinhalt in der gleichen Reihenfolge ein: 
 - [FrameNavigationStarting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framenavigationstarting) – tritt ein, bevor ein Frame in einer Webansicht zu neuem Inhalt navigiert. 
 - [FrameContentLoading](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framecontentloading) – tritt ein, nachdem ein Frame in der Webansicht mit dem Laden neuer Inhalte begonnen hat. 
 - [FrameDOMContentLoaded](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.framedomcontentloaded) – tritt ein, nachdem ein Frame in der Webansicht die Analyse seines aktuellen HTML-Inhalts beendet hat. 
@@ -185,7 +185,7 @@ Bei der Ausführung von Skripts scheint die App nicht mehr zu reagieren. Das [Lo
 
 Das Webansichtssteuerelement kann keine beliebigen Dateitypen hosten. Wenn versucht wird, Inhalte zu laden, die von der Webansicht nicht gehostet werden können, tritt das [UnviewableContentIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified)-Ereignis ein. Sie können das Ereignis behandeln und den Benutzer benachrichtigen oder die Datei mithilfe der [Launcher](https://docs.microsoft.com/uwp/api/Windows.System.Launcher)-Klasse an einen externen Browser oder eine andere App umleiten.
 
-Entsprechend tritt das [UnsupportedUriSchemeIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsupportedurischemeidentified)-Ereignis ein, wenn ein nicht unterstütztes URI-Schema wie „fbconnect://“ oder „mailto://“ im Webinhalt aufgerufen wird. Sie können das Ereignis so behandeln, dass es ein benutzerdefiniertes Verhalten zeigt, anstatt dem Standard-Systemstartprogramm das Starten des URIs zu erlauben.
+Entsprechend tritt das [UnsupportedUriSchemeIdentified](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsupportedurischemeidentified)-Ereignis ein, wenn ein nicht unterstütztes URI-Schema wie „fbconnect://“ oder „mailto://“ im Webinhalt aufgerufen wird. Sie können das Ereignis so behandeln, dass es ein benutzerdefiniertes Verhalten zeigt, anstatt dem Standard-Systemstartprogramm das Starten des URI zu erlauben.
 
 [UnsafeContentWarningDisplayingevent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying) tritt ein, wenn die Webansicht eine Warnungsseite für Inhalte anzeigt, die vom SmartScreen-Filter als unsicher gemeldet wurden. Wenn sich der Benutzer entscheidet, die Navigation fortzusetzen, wird bei einer späteren Navigation zu der Seite weder die Warnung angezeigt noch das Ereignis ausgelöst.
 
@@ -251,7 +251,7 @@ Sie können mit dem Inhalt der Webansicht interagieren, indem Sie mithilfe der [
 
 Verwenden Sie zum Aufrufen von JavaScript im Webansichtsinhalt die [InvokeScriptAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.invokescriptasync)-Methode. Das aufgerufene Skript kann nur Zeichenfolgenwerte zurückgeben. 
 
-Wenn der Inhalt einer Webansicht namens `webView1` eine Funktion namens `setDate` enthält, die drei Parameter akzeptiert, können Sie sie wie folgt aufrufen. 
+Wenn der Inhalt einer Webansicht mit dem Namen `webView1` eine Funktion mit dem Namen `setDate` enthält, die drei Parameter akzeptiert, können Sie sie wie folgt aufrufen. 
 
 ```csharp
 string[] args = {"January", "1", "2000"};
@@ -261,7 +261,7 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 
 Sie können **InvokeScriptAsync** mit der JavaScript-Funktion **eval** verwenden, um Inhalt in die Webseite einzufügen.
 
-In diesem Fall wird der Text eines XAML-Textfeld (`nameTextBox.Text`) in ein div-Element einer in `webView1` gehosteten HTML-Seite geschrieben. 
+In diesem Fall wird der Text eines XAML-Textfelds (`nameTextBox.Text`) in ein div-Element einer in `webView1` gehosteten HTML-Seite geschrieben. 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -277,7 +277,7 @@ Damit eine externe Webseite das **ScriptNotify**-Ereignis beim Aufrufen von „w
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Zugreifen auf die Windows-Runtime in einer Webansicht
 
-Sie können die [AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject)-Methode verwenden, um eine Instanz einer systemeigenen Klasse aus einer Komponente für Windows-Runtime in den JavaScript-Kontext der Webansicht einzufügen. Dadurch wird der vollständige Zugriff auf die systemeigenen Methoden, Eigenschaften und Ereignisse des Objekts im JavaScript-Inhalt der betreffenden Webansicht gewährleistet. Die Klasse muss mit dem [AllowForWeb](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.AllowForWebAttribute)-Attribut versehen werden. 
+Sie können die [AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject)-Methode verwenden, um eine Instanz einer systemeigenen Klasse aus einer Komponente für Windows-Runtime in den JavaScript-Kontext der Webansicht einzufügen. Dadurch wird der vollständige Zugriff auf die nativen Methoden, Eigenschaften und Ereignisse des Objekts im JavaScript-Inhalt der betreffenden Webansicht gewährleistet. Die Klasse muss mit dem [AllowForWeb](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.AllowForWebAttribute)-Attribut versehen werden. 
 
 Durch den folgenden Code wird beispielsweise eine Instanz von `MyClass` eingefügt, die aus einer Komponente für Windows-Runtime in eine Webansicht importiert wurde.
 
@@ -293,7 +293,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 Weitere Informationen finden Sie unter [WebView.AddWebAllowedObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.addweballowedobject). 
 
-Zusätzlich kann vertrauenswürdigem JavaScript-Inhalt in einer Webansicht gestattet werden, direkt auf Windows-Runtime-APIs zuzugreifen. Dadurch werden leistungsfähige systemeigene Funktionen für in einer Webansicht gehostete Web-Apps bereitgestellt. Um dieses Feature zu aktivieren, muss der URI für vertrauenswürdigen Inhalt in der ApplicationContentUriRules-Whitelist der App in „Package.appxmanifest“ aufgeführt sein, wobei WindowsRuntimeAccess ausdrücklich auf „all“ festgelegt ist. 
+Zusätzlich kann vertrauenswürdigem JavaScript-Inhalt in einer Webansicht gestattet werden, direkt auf Windows-Runtime-APIs zuzugreifen. Dadurch werden leistungsfähige native Funktionen für in einer Webansicht gehostete Web-Apps bereitgestellt. Um dieses Feature zu aktivieren, muss der URI für vertrauenswürdigen Inhalt in der ApplicationContentUriRules-Whitelist der App in „Package.appxmanifest“ aufgeführt sein, wobei WindowsRuntimeAccess ausdrücklich auf „all“ festgelegt ist. 
 
 Dieses Beispiel zeigt einen Abschnitt des App-Manifests. Hier wird einem lokalen URI Zugriff auf die Windows-Runtime gewährt. 
 
@@ -321,7 +321,7 @@ Verwenden Sie zum Abrufen eines Vorschaubilds des aktuellen Webansichtsinhalts d
 
 ### <a name="threading-behavior"></a>Threadingverhalten
 
-Webansichtsinhalte werden auf Geräten der Desktopgerätefamilie standardmäßig im UI-Thread und auf allen anderen Geräten in anderen Bereichen gehostet. Sie können die statische [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode)-Eigenschaft verwenden, um das Standardthreadingverhalten für den aktuellen Client abzufragen. Wenn erforderlich, können Sie dieses Verhalten mit dem [WebView(WebViewExecutionMode)](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.webview.-ctor#Windows_UI_Xaml_Controls_WebView__ctor_Windows_UI_Xaml_Controls_WebViewExecutionMode_)-Konstruktor überschreiben. 
+Webansichtsinhalte werden auf Geräten der Desktopgerätefamilie standardmäßig im UI-Thread und auf allen anderen Geräten in anderen Bereichen gehostet. Sie können die statische [WebView.DefaultExecutionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.defaultexecutionmode)-Eigenschaft verwenden, um das Standardthreadingverhalten für den aktuellen Client abzufragen. Wenn erforderlich, können Sie dieses Verhalten mit dem [WebView(WebViewExecutionMode)](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.webview.-ctor#Windows_UI_Xaml_Controls_WebView__ctor_Windows_UI_Xaml_Controls_WebViewExecutionMode_)-Konstruktor überschreiben. 
 
 > **Note**&nbsp;&nbsp;Beim Hosten von Inhalten im UI-Thread mobiler Geräte können Leistungsprobleme auftreten. Wenn Sie DefaultExecutionMode ändern, sollten Sie die Leistung deshalb auf allen Zielgeräten testen.
 
@@ -336,8 +336,8 @@ Eine Webansicht, die Inhalte nicht im UI-Thread hostet, ist nicht mit übergeord
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [WebView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)

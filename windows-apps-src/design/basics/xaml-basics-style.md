@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f2c63c90170a633ae718db618c502efa41fb3f7d
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680766"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684125"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
@@ -30,7 +30,7 @@ Die PhotoLab-App besteht aus zwei Hauptseiten:
 **DetailPage.xaml** zeigt ein einzelnes Foto, nachdem es ausgewählt wurde. Über ein Flyout-Menü kann das Foto bearbeitet, umbenannt und gespeichert werden.
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-create-a-fancy-slider-control"></a>Teil 1: Erstellen eines schicken Schiebereglers  
+## <a name="part-1-create-a-fancy-slider-control"></a>Teil 1: Erstellen eines schicken Schiebereglers  
 
 Die universelle Windows-Plattform (UWP) bietet eine Reihe von Möglichkeiten, mit denen du die Darstellung deiner App anpassen kannst – von Schriftarten über Typografieeinstellungen bis hin zu Farben, Farbverläufen und Weichzeichnereffekten. 
 
@@ -55,7 +55,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an. Wenn du
 
 3. Verwende ein Polygonelement, um eine Hintergrundform für den Belichtungsschieberegler zu erstellen.
 
-    Im [Namespace „Windows.XAML.Ui.Shapes“](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) stehen sieben Formen zur Auswahl. Es gibt eine Ellipse, ein Rechteck und einen sogenannten Pfad, mit dem du eine beliebige Form zeichnen kannst (ja, sogar ein Einhorn). 
+    Im [Namespace „Windows.XAML.Ui.Shapes“](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes) stehen sieben Formen zur Auswahl. Es gibt eine Ellipse, ein Rechteck und einen sogenannten Pfad, mit dem du eine beliebige Form zeichnen kannst (ja, sogar ein Einhorn). 
     
     <!-- TODO reduce size -->
     ![Ein Einhorn](../basics/images/xaml-basics/unicorn.png)
@@ -107,7 +107,7 @@ Der Schieberegler für die Belichtung passt die Belichtung des Bilds an. Wenn du
         Maximum="2" />
     ```
 
-    Hinweise:
+    Anmerkungen:
     * Wie du anhand des umgebenden XAML-Codes siehst, befinden sich diese Elemente in einem Raster. Wir haben das Polygon in der gleichen Zeile platziert wie den Belichtungsschieberegler (Grid.Row="2"), sodass sie an derselben Stelle angezeigt werden. Wir haben das Polygon vor dem Schieberegler platziert, damit der Schieberegler über der Form gerendert wird.
     * Für das Polygon haben wir „Stretch” auf „Fill“ und „HorizontalAlignment” auf „Stretch“ festgelegt, damit das Dreieck so angepasst wird, dass es den verfügbaren Platz ausfüllt. Wenn sich die Breite des Schiebereglers ändert, wird das Polygon entsprechend vergrößert oder verkleinert. 
 
@@ -177,7 +177,7 @@ Herzlichen Glückwunsch! Der erste Teil ist geschafft. Falls du an einer Stelle 
 
 Einer der Vorteile von XAML-Stilen besteht darin, dass sie den Programmieraufwand erheblich verringern und die Aktualisierung der App-Darstellung deutlich vereinfachen.
 
-Um einen Stil zu definieren, wird der Eigenschaft [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) eines Elements, in dem sich das zu gestaltende Steuerelement befindet, ein Element vom Typ [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) hinzugefügt.  Wenn du deinen Stil der Eigenschaft **Page.Resources** hinzufügst, stehen deine Stile für die gesamte Seite zur Verfügung. Wenn du deinen Stil der Eigenschaft **Application.Resources** in der Datei „App.xaml“ hinzufügst, steht der Stil für die gesamte App zur Verfügung.
+Um einen Stil zu definieren, wird der Eigenschaft [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) eines Elements, in dem sich das zu gestaltende Steuerelement befindet, ein Element vom Typ [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) hinzugefügt.  Wenn du deinen Stil der Eigenschaft **Page.Resources** hinzufügst, stehen deine Stile für die gesamte Seite zur Verfügung. Wenn du deinen Stil der Eigenschaft **Application.Resources** in der Datei „App.xaml“ hinzufügst, steht der Stil für die gesamte App zur Verfügung.
 
 Du kannst benannte Stile und allgemeine Stile erstellen. Ein benannter Stil muss explizit auf bestimmte Steuerelemente angewendet werden. Ein allgemeiner Stil wird auf alle Steuerelemente angewendet, die dem angegebenen Zieltyp (**TargetType**) entsprechen. 
 

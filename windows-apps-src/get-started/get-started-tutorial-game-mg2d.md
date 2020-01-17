@@ -6,28 +6,28 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ddc46c80c0ed9a9999ec7c8e67ab9034803a3d
-ms.sourcegitcommit: deb1cdecf34feaa92b0342adc61a5d08f3f10687
+ms.openlocfilehash: 4300bdc0224a18874a7ff9153195f81f8bb8d101
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68332826"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685049"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>Erstellen eines UWP-Spiels in MonoGame-2D
 
 ## <a name="a-simple-2d-uwp-game-for-the-microsoft-store-written-in-c-and-monogame"></a>Ein einfaches 2D-UWP-Spiel für den Microsoft Store, geschrieben in C# und MonoGame
 
 
-![Sprite-Blatt für laufenden Dino](images/JS2D_0.png)
+![Sprite-Blatt für laufenden Dinosaurier](images/JS2D_0.png)
 
 ## <a name="introduction"></a>Einführung
 
 MonoGame ist ein einfaches Framework für die Spieleentwicklung. In diesem Tutorial lernen Sie die Grundlagen der Entwicklung von Spielen in MonoGame kennen und erfahren, wie Sie Inhalte laden, Sprites zeichnen und animieren und Benutzereingaben verarbeiten. Außerdem werden einige erweiterte Konzepte wie die Erkennung von Kollisionen und die Skalierung für Bildschirme mit hoher DPI-Auflösung besprochen. Dieses Tutorial dauert 30 bis 60 Minuten.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-+   Windows 10 und Microsoft Visual Studio 2019.  [Klicken Sie hier, um zu erfahren, wie Sie Visual Studio einrichten](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++   Windows 10 und Microsoft Visual Studio 2019.  [Klicken Sie hier, um zu erfahren, wie Sie Visual Studio einrichten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
 + Das .NET-Desktop-Entwicklungsframework. Wenn Sie das Framework noch nicht installiert haben, können Sie dies nachholen, indem Sie den Visual Studio-Installer erneut ausführen und Ihre Installation von Visual Studio 2019 anpassen.
-+   Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. [Klicken Sie hier, um Informationen zum Einstieg in C# zu erhalten](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++   Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. [Klicken Sie hier, um Informationen zum Einstieg in C# zu erhalten](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 +   Kenntnisse der grundlegenden Konzepte der Informatik, wie Klassen, Methoden und Variablen, sind ebenfalls von Vorteil.
 
 ## <a name="why-monogame"></a>Warum MonoGame?
@@ -692,10 +692,10 @@ Nun sind wir fertig! Starten Sie das Spiel erneut. Wenn Sie die oben beschrieben
 ## <a name="publish-to-the-microsoft-store"></a>Veröffentlichen im Microsoft Store
 Da wir dieses Spiel als UWP-App erstellt haben, können Sie dieses Projekt im Microsoft Store veröffentlichen. Dazu müssen Sie einige Voraussetzungen erfüllen.
 
-Sie müssen als Windows-Entwickler [registriert](https://developer.microsoft.com/en-us/store/register) sein.
+Sie müssen als Windows-Entwickler [registriert](https://developer.microsoft.com/store/register) sein.
 
-Sie müssen die [Prüfliste für die App-Übermittlung](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions) verwenden.
+Sie müssen die [Prüfliste für die App-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions) verwenden.
 
-Die App muss zur [Zertifizierung](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process) eingereicht werden.
+Die App muss zur [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
 
 Weitere Informationen findest du unter [Veröffentlichen von Windows-Apps und -Spielen](https://docs.microsoft.com/windows/uwp/publish/).

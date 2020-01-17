@@ -1,17 +1,17 @@
 ---
 description: Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind.
-title: Schwache Verweise in C++/WinRT
+title: Starke und schwache Verweise in C++/WinRT
 ms.date: 05/16/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, Projektion, stark, schwach, Verweis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3ad6bb9a98b0fe2a699580001698740e44cea14f
-ms.sourcegitcommit: cba3ba9b9a9f96037cfd0e07d05bd4502753c809
+ms.openlocfilehash: 781b63f9f32a0fdf7edee6479b60fd82822cc745
+ms.sourcegitcommit: e1bd1d9b2598e40b5d788338a07e12f4e4c58495
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2019
-ms.locfileid: "67870320"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75585393"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++/WinRT
 

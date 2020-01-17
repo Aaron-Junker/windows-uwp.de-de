@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0810365eeb0023a31862d31213862e2b3bce8db8
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930348"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685084"
 ---
 # <a name="reveal-highlight"></a>Reveal Highlight
 
@@ -23,7 +23,7 @@ ms.locfileid: "70930348"
 
 Reveal Highlight ist ein Lichteffekt, der interaktive Elemente wie z.B. Befehlsleisten hervorhebt, wenn der Benutzer den Mauszeiger in deren Nähe bewegt. 
 
-> **Wichtige APIs:** [„RevealBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [„RevealBackgroundBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [„RevealBorderBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [„RevealBrushHelper“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [„VisualState“-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **Wichtige APIs:** [„RevealBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [„RevealBackgroundBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [„RevealBorderBrush“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [„RevealBrushHelper“-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [„VisualState“-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>Funktionsweise
 Reveal Highlight hebt interaktive Elemente hervor, indem der Container des Elements hervorgehoben wird, wenn sich der Mauszeiger nähert, wie in der folgenden Abbildung gezeigt wird:
@@ -278,7 +278,7 @@ Wenn Sie „Reveal” für ein benutzerdefiniertes Steuerelement oder ein Steuer
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="reveal-and-the-fluent-design-system"></a>„Reveal” und das Fluent Design-System
 

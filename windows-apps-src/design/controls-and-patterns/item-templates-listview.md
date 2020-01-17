@@ -5,21 +5,21 @@ template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: 491489c0a6462c1bcbee2015027403ae359c47a2
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 9328c3f156acd13fd8947e01e924bf0d6849c0a6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282272"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684405"
 ---
 # <a name="item-templates-for-list-view"></a>Elementvorlagen für Listenansicht
 
-Die Elementvorlagen in diesem Abschnitt können Sie mit einem [**ListView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement verwenden. Mithilfe dieser Vorlagen erhalten Sie das Erscheinungsbild gängiger App-Typen. 
+Die Elementvorlagen in diesem Abschnitt können Sie mit einem [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)-Steuerelement verwenden. Mithilfe dieser Vorlagen erhalten Sie das Erscheinungsbild gängiger App-Typen. 
 
 Zur Veranschaulichung der Datenbindung werden über diese Vorlagen **ListViewItems** an die Recording-Beispielklasse aus der [Datenbindungsübersicht](../../data-binding/data-binding-quickstart.md) gebunden.
 
 > [!NOTE] 
-> Wenn ein **DataTemplate**-Element mehrere Steuerelemente enthält (z. B. mehr als einen einzelnen **TextBlock**), stammt der Name zur Verwendung durch Screenreader-Software derzeit von .ToString() für das Element. Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.automationproperties) im Stammelement von **DataTemplate** festlegen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Übersicht über die Barrierefreiheit](../accessibility/accessibility-overview.md).
+> Wenn ein **DataTemplate**-Element mehrere Steuerelemente enthält (z. B. mehr als einen einzelnen **TextBlock**), stammt der Name zur Verwendung durch Screenreader-Software derzeit von .ToString() für das Element. Zur Vereinfachung können Sie stattdessen [**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) im Stammelement von **DataTemplate** festlegen. Weitere Informationen zur Barrierefreiheit finden Sie unter [Übersicht über die Barrierefreiheit](../accessibility/accessibility-overview.md).
 
 ## <a name="single-line-list-item"></a>Einzeiliges Listenelement
 Verwenden Sie diese Vorlage, um eine Liste von Elementen mit einem Bild und einzeiligem Text anzuzeigen.
@@ -129,7 +129,7 @@ Verwenden Sie diese Vorlage, um eine Liste von Elementen mit Text in definierten
 ```
 
 ## <a name="related-articles"></a>Verwandte Artikel
-- [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.listview)
+- [ListView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
 - [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md)
 - [Übersicht über die Barrierefreiheit](../accessibility/accessibility-overview.md)
 - [Beispiel für ListView und GridView (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

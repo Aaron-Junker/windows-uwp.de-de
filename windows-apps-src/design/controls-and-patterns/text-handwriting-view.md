@@ -11,18 +11,18 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ec78498cc3941c3c03b33d8c3ab55b40c100a7ea
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 9b9d409718a157c55b28fdb3ccaa28caaa295adf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062071"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684286"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Texteingabe mit der Handschriftansicht
 
 ![Textfeld wird erweitert, wenn mit einem Stift darauf getippt wird](images/handwritingview/handwritingview2.gif)
 
-Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von UWP-Textsteuerelementen wie [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) und von diesen abgeleiteten Steuerelementen (wie [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)) unterstützt werden.
+Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von UWP-Textsteuerelementen wie [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) und von diesen abgeleiteten Steuerelementen (wie [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)) unterstützt werden.
 
 ## <a name="overview"></a>Übersicht
 
@@ -50,7 +50,7 @@ Die integrierte Handschriftansicht ist standardmäßig aktiviert.
 
 Möglicherweise möchten Sie die Handschriftansicht deaktivieren, wenn Sie bereits eine vergleichbare Freihand-zu-Text-Funktion in der Anwendung bereitgestellt haben oder wenn sich die Texteingabeerfahrung auf bestimmte Formatierungen oder Sonderzeichen (z. B. Tabulatorzeichen) stützt, die bei Freihandeingabe nicht verfügbar sind.
 
-In diesem Beispiel deaktivieren wir die Handschriftansicht, indem die [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled)-Eigenschaft des [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox)-Steuerelements auf „false“ festgelegt wird. Alle Textsteuerelemente, die die Handschriftansicht unterstützen, unterstützen eine ähnliche Eigenschaft.
+In diesem Beispiel deaktivieren wir die Handschriftansicht, indem die [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled)-Eigenschaft des [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)-Steuerelements auf „false“ festgelegt wird. Alle Textsteuerelemente, die die Handschriftansicht unterstützen, unterstützen eine ähnliche Eigenschaft.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -67,7 +67,7 @@ Die Handschriftansicht befindet sich über dem zugrunde liegenden Textsteuerelem
 
 Die UI der Anwendung wird nicht automatisch umbrochen, um das größere Steuerelement aufzunehmen. Daher bewirkt das System möglicherweise, dass die Ansicht wichtige UI-Elemente verdeckt.
 
-Hier wird erläutert, wie mit der [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment)-Eigenschaft einer [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) angegeben wird, mit welchem Anker das zugrunde liegende Textsteuerelement die Handschriftansicht ausrichtet.
+Hier wird erläutert, wie mit der [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment)-Eigenschaft einer [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) angegeben wird, mit welchem Anker das zugrunde liegende Textsteuerelement die Handschriftansicht ausrichtet.
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -107,7 +107,7 @@ Benutzer können aus einer vordefinierten Sammlung von handschriftlichen Schrift
 
 Ihre App kann auf diese Einstellung zugreifen und die ausgewählte Schriftart für den erkannten Text im Textsteuerelement verwenden.
 
-In diesem Beispiel wird auf das [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)-Ereignis einer [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) überwacht, und die vom Benutzer ausgewählte Schriftart wird angewendet, wenn die Textänderung aus der HandwritingView stammt (andernfalls wird eine Standardschriftart angewendet).
+In diesem Beispiel wird auf das [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)-Ereignis einer [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) überwacht, und die vom Benutzer ausgewählte Schriftart wird angewendet, wenn die Textänderung aus der HandwritingView stammt (andernfalls wird eine Standardschriftart angewendet).
 
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -121,7 +121,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 ## <a name="access-the-handwritingview-in-composite-controls"></a>Zugreifen auf die HandwritingView in zusammengesetzten Steuerelementen
 
-Zusammengesetzte Steuerelemente, die die Steuerelemente [TextBox](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.textbox) oder [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) verwenden, z. B. [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox), unterstützen ebenfalls eine [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview).
+Zusammengesetzte Steuerelemente, die die Steuerelemente [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) oder [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) verwenden, z. B. [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox), unterstützen ebenfalls eine [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview).
 
 Verwenden Sie zum Aufrufen der [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) in einem zusammengesetzten Steuerelement die [VisualTreeHelper](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper)-API.
 

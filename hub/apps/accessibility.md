@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, Erstellen barrierefreier Win32-Apps, Erstellen barrierefreier UWP-Apps, Erstellen barrierefreier WPF-Apps, Erstellen barrierefreier WinForms-Apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 76bbd3f0e04bbb2f729ad0950bae190b2fffb6ac
-ms.sourcegitcommit: 6e7665b457ec4585db19b70acfa2554791ad6e10
+ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987195"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681891"
 ---
 # <a name="accessibility-in-windows-10"></a>Barrierefreiheit unter Windows 10
 
@@ -135,7 +135,7 @@ Laden Sie vollständige Windows-Beispiele herunter, die verschiedene Barrierefre
 
 :::row:::
    :::column:::
-      [Codebeispielbrowser](https://docs.microsoft.com/en-us/samples/browse/)
+      [Codebeispielbrowser](https://docs.microsoft.com/samples/browse/)
 
       Der neue Beispielebrowser ersetzt den MSDN-Codekatalog.
    :::column-end:::

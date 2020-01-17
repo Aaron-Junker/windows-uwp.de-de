@@ -5,16 +5,16 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fa773cdb174369e14c12c4f805f3a57e2ff6eef
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258829"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684742"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Juli 2017
 
-Die Entwicklerdokumentation für die Windows-Plattform wird ständig mit Informationen über neue Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden und Codebeispiele wurden erst kürzlich bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
+Die Windows-Entwicklerdokumentation wird ständig mit Informationen zu neuen Features aktualisiert, die Entwickler für die Windows-Plattform nutzen können. Die folgenden Featureübersichten, Entwicklerleitfäden und Codebeispiele wurden erst kürzlich bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
 
 Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/windows/downloads#_blank) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/your-first-app.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
@@ -94,7 +94,7 @@ Mit [Freigeben für „Meine Kontakte”](../contacts-and-calendar/my-people-sha
 
 Die neue TaskbarManager-Klasse ist für [Windows-Insider](https://insider.windows.com/) in SDK Preview-Builds verfügbar. Sie können Benutzer damit auffordern, [Ihre App an die Taskleiste anzuheften](../design/shell/pin-to-taskbar.md).
 
-## <a name="developer-guidance"></a>Erläuterungen für Entwickler
+## <a name="developer-guidance"></a>Entwicklerleitfäden
 
 ### <a name="media-playback"></a>Medienwiedergabe
 
@@ -106,7 +106,7 @@ Der Artikel [Verarbeiten von Medienframes mit MediaFrameReader](../audio-video-c
 
 ### <a name="scoped-search"></a>Begrenzter Suchbereich
 
-Der [konzeptionellen UWP-Dokumentation](../get-started/universal-application-platform-guide.md) und der [API-Referenz](https://docs.microsoft.com/en-us/uwp/api/) auf „docs.microsoft.com“ wurde der Bereich „UWP” hinzugefügt. Sofern dieser Bereich nicht deaktiviert ist, geben Suchvorgänge in diesen Umgebungen nur UWP-Dokumente zurück.
+Der [konzeptionellen UWP-Dokumentation](../get-started/universal-application-platform-guide.md) und der [API-Referenz](https://docs.microsoft.com/uwp/api/) auf „docs.microsoft.com“ wurde der Bereich „UWP” hinzugefügt. Sofern dieser Bereich nicht deaktiviert ist, geben Suchvorgänge in diesen Umgebungen nur UWP-Dokumente zurück.
 
 ![Begrenzter Suchbereich](images/scoped-search.png)
 
@@ -130,14 +130,14 @@ Testen Sie Ihre Windows-App, um sicherzustellen, dass sie korrekt auf Geräten u
 
 ## <a name="videos"></a>Videos
 
-### <a name="accessibility"></a>Bedienungshilfen
+### <a name="accessibility"></a>Eingabehilfen
 
-Durch Bedienungshilfen in Ihren Apps erreichen Sie viel größere Zielgruppen. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility), und erfahren Sie dann mehr über das [Entwickeln von Apps mit Barrierefreiheit](https://developer.microsoft.com/en-us/windows/accessible-apps).
+Durch Bedienungshilfen in Ihren Apps erreichen Sie viel größere Zielgruppen. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility), und erfahren Sie dann mehr über das [Entwickeln von Apps mit Barrierefreiheit](https://developer.microsoft.com/windows/accessible-apps).
 
 ### <a name="payments-request-api"></a>Payments Request-API
 
 Die Payment Request-API ermöglicht Kunden und Verkäufern eine nahtlose, verbesserte Onlineverkaufsabwicklung. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API), und lesen Sie anschließend die [Payment Request-Dokumentation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API).
 
-### <a name="windows-10-iot-core"></a>Windows 10 IoT Core
+### <a name="windows-10-iot-core"></a>Windows 10 IoT Core
 
-Windows 10 IoT Core und die Universelle Windows-Plattform ermöglichen, schnell Prototypen und Projekte mit unterschiedlichen Komponenten zu erstellen. Ein Beispiel ist diese Tür, die Ihr Haustier erkennt. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core), und erfahren Sie dann mehr über [erste Schritte mit Windows 10 IoT Core](https://developer.microsoft.com/en-us/windows/iot).
+Windows 10 IoT Core und die Universelle Windows-Plattform ermöglichen, schnell Prototypen und Projekte mit unterschiedlichen Komponenten zu erstellen. Ein Beispiel ist diese Tür, die Ihr Haustier erkennt. [Sehen Sie sich das Video an](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core), und erfahren Sie dann mehr über [erste Schritte mit Windows 10 IoT Core](https://developer.microsoft.com/windows/iot).

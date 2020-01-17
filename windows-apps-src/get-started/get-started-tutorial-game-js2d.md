@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 343fa50dbe9a0574914dc96b9fac450475a69b0a
-ms.sourcegitcommit: 87ddc67d31668a6351206bda3546ffbabb7b4551
+ms.openlocfilehash: b2b60354acb2c3d97ced3dce0b3fb7f6d97ac35d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807844"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684775"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Erstellen eines UWP-Spiels in JavaScript
 
@@ -166,7 +166,7 @@ Jetzt sorgen wir dafür, dass sich die Wolken bewegen. Das Geheimnis für die Be
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">Sieh dir den Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a> (CreateJS – Animieren von Wolken) von Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) auf <a href="https://codepen.io">CodePen</a> an.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-  Der Code dazu ist bereits in der Datei **main.js** vorhanden, die von der CreateJS-Bibliothek „EaselJS“ bereitgestellt wird. Es sieht ungefähr so aus:
+  Der Code dazu ist bereits in der Datei **main.js** vorhanden, die von der CreateJS-Bibliothek „EaselJS“ bereitgestellt wird. Er sieht ungefähr so aus:
 
 ```
     // Set up the game loop and keyboard handler.
@@ -260,7 +260,7 @@ Nachdem du nun über eine UWP-App verfügst, kannst du sie im Microsoft Store ve
 
 Dieser Prozess umfasst mehrere Schritte.
 
-1. Du musst als Windows-Entwickler [registriert](https://developer.microsoft.com/en-us/store/register) sein.
+1. Du musst als Windows-Entwickler [registriert](https://developer.microsoft.com/store/register) sein.
 2. Du musst die [Prüfliste für die App-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions) verwenden.
 3. Die App muss zur [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process) eingereicht werden.
 

@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0801ba9036f69aef340881b9c92807e80af6b09f
-ms.sourcegitcommit: e43bc20c2f6e9375f61931c2fce95f06fd1f31df
+ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70212071"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684595"
 ---
 # <a name="app-icons-and-logos"></a>App-Symbole und Logos 
 
@@ -29,7 +29,7 @@ Jede App hat ein Symbol/Logo, das sie darstellt, und dieses Symbol wird an mehre
         * Im Microsoft Store
     :::column-end:::
     :::column:::
-        ![windows 10 start and tiles](images/assetguidance01.jpg)
+        ![Starten von Windows 10 und Kacheln](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
@@ -75,7 +75,7 @@ Da App-Symbolressourcen Bitmaps sind und Bitmaps sich nicht gut skalieren lassen
 
 „Wie gebe ich Bilder für den Eintrag meiner App im Microsoft Store an?“
 
-Standardmäßig verwenden wir einige der Bilder aus Ihren Paketen im Store, wie in der Tabelle am Anfang dieser Seite beschrieben (zusammen mit anderen [Bildern, die Sie während des Übermittlungsprozesses bereitstellen](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)). Sie haben jedoch die Möglichkeit, zu verhindern, dass der Store die Logobilder verwendet, die in den Paketen Ihrer App enthalten sind, wenn Ihr Eintrag für Kunden mit Windows 10 (einschließlich Xbox) angezeigt wird, und können den Store dazu zwingen, dass stattdessen nur Bilder verwendet werden, die Sie hochladen. Dies bietet Ihnen mehr Kontrolle über die Darstellung Ihrer App auf verschiedenen Anzeigegeräten im Store. (Beachten Sie, dass, wenn Ihr Produkt frühere Betriebssystemversionen unterstützt, diesen Kunden eventuell weiterhin Bilder aus Ihren Paketen angezeigt werden können, selbst wenn Sie diese Option verwenden.) Sie können dies im Abschnitt **Store-Logos** des Schritts **Store-Eintrag** des Übermittlungsprozesses erledigen.
+Standardmäßig verwenden wir einige der Bilder aus Ihren Paketen im Store, wie in der Tabelle am Anfang dieser Seite beschrieben (zusammen mit anderen [Bildern, die Sie während des Übermittlungsprozesses bereitstellen](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)). Sie haben jedoch die Möglichkeit, zu verhindern, dass der Store die Logobilder verwendet, die in den Paketen Ihrer App enthalten sind, wenn Ihr Eintrag für Kunden mit Windows 10 (einschließlich Xbox) angezeigt wird, und können den Store dazu zwingen, dass stattdessen nur Bilder verwendet werden, die Sie hochladen. Dies bietet Ihnen mehr Kontrolle über die Darstellung Ihrer App auf verschiedenen Anzeigegeräten im Store. (Beachten Sie, dass, wenn Ihr Produkt frühere Betriebssystemversionen unterstützt, diesen Kunden eventuell weiterhin Bilder aus Ihren Paketen angezeigt werden können, selbst wenn Sie diese Option verwenden.) Sie können dies im Abschnitt **Store-Logos** des Schritts **Store-Eintrag** des Übermittlungsprozesses erledigen.
 
 ![Angeben von Store-Logos während des App-Übermittlungsprozesses](images/app-icons/storelogodisplay.png)
 
@@ -133,15 +133,15 @@ So starten Sie den Manifest-Designer
         2. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei „Package.appxmanifest“.
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![Der Manifest-Designer in Visual Studio 2019](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio displays the Manifest Designer.
+            In Visual Studio wird der Manifest-Designer angezeigt.
     :::column-end:::
     :::column:::
-            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
+            ![Die Registerkarte „Visuelle Assets“](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -149,7 +149,7 @@ So starten Sie den Manifest-Designer
         3. Klicken Sie auf die Registerkarte **Visuelle Assets**.
     :::column-end:::
     :::column:::
-        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![Die Registerkarte „Visuelle Assets“](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
@@ -165,7 +165,7 @@ So generieren Sie alle Ressourcen gleichzeitig
 1. Klicken Sie auf die **...**  neben dem Feld **Quelle**, und wählen Sie das Bild aus, das Sie verwenden möchten. Wenn Sie ein Bitmap-Bild verwenden, stellen Sie sicher, dass es mindestens 400 x 400 Pixel groß ist, damit Sie ein scharfes Ergebnisse erhalten. Vektorbasierte Bilder funktionieren am besten. Visual Studio gestattet Ihnen die Verwendung von Adobe Illustrator (AI)- und PDF-Dateien. 
 2. (Optional.) Konfigurieren Sie im Abschnitt **Anzeigeeinstellungen** diese Optionen:
 
-    a.  **Kurzname**:  Geben Sie einen Kurznamen für Ihre App an.
+    ein.  **Kurzname**:  Geben Sie einen Kurznamen für Ihre App an.
 
     b.  **Name anzeigen**: Geben Sie an, ob der Kurzname auf mittelgroßen, breiten oder großen Kacheln angezeigt werden soll. 
 
@@ -204,7 +204,7 @@ Zusätzlich zu den Standard-Skalierungsfaktorgrößen („Square44x44Logo.scale-
 Dies ist die Liste der Ressourcen in Zielgrößen:
 
 
-| Ressourcengröße | Dateinamenbeispiel                  |
+| Ressourcengröße | Beispiel für Dateinamen                  |
 |------------|------------------------------------|
 | 16x16\*    | Square44x44Logo.targetsize-16.png  |
 | 24x24\*    | Square44x44Logo.targetsize-24.png  |
@@ -212,7 +212,7 @@ Dies ist die Liste der Ressourcen in Zielgrößen:
 | 48x48\*    | Square44x44Logo.targetsize-48.png  |
 | 256x256\*  | Square44x44Logo.targetsize-256.png |
 | 20 x 20      | Square44x44Logo.targetsize-20.png  |
-| 30 x 30      | Square44x44Logo.targetsize-30.png  |
+| 30 x 30      | Square44x44Logo.targetsize-30.png  |
 | 36 x 36      | Square44x44Logo.targetsize-36.png  |
 | 40 x 40      | Square44x44Logo.targetsize-40.png  |
 | 60 x 60      | Square44x44Logo.targetsize-60.png  |

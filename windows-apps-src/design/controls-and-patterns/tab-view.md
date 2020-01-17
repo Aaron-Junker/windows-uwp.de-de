@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: acad94c0697f930235af809cc3e2826e4c5befde
-ms.sourcegitcommit: f0588a086cf2499968bf03b10c6bce5f518e90cb
+ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71144960"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684296"
 ---
 # <a name="tabview"></a>TabView
 
@@ -31,7 +31,7 @@ TabView bietet Dokumentregisterkarten für UWP-Apps. Verwenden Sie unter den fol
 - Benutzer können Dokumente oder Webseiten direkt auf Registerkarten öffnen.
 - Benutzer können Registerkarten mithilfe von Drag & Drop zwischen Fenstern verschieben.
 
-Wenn eine TabView für Ihre App nicht geeignet ist, sollten Sie Steuerelemente wie [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot) oder [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview) verwenden.
+Wenn eine TabView für Ihre App nicht geeignet ist, sollten Sie Steuerelemente wie [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) oder [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) verwenden.
 
 ## <a name="anatomy"></a>Aufbau
 
@@ -91,7 +91,7 @@ Anstatt dass Registerkarten eine eigene Zeile unter der Titelleiste eines Fenste
 
 Da ein Benutzer ein Fenster anhand seiner Titelleiste ziehen kann, um das Fenster neu zu positionieren, ist es wichtig, dass die Titelleiste nicht vollständig mit Registerkarten ausgefüllt ist. Daher müssen Sie bei der Anzeige von Registerkarten in einer Titelleiste einen Teil der Titelleiste angeben, der als ziehbarer Bereich reserviert werden soll. Wenn Sie keinen ziehbaren Bereich angeben, wird die gesamte Titelleiste ziehbar, was verhindert, dass Ihre Registerkarten Eingabeereignisse empfangen. Wenn Ihre TabView in der Titelleiste eines Fensters angezeigt wird, sollten Sie immer einen TabStripFooter in Ihre TabView aufnehmen und diesen als ziehbaren Bereich markieren.
 
-Weitere Informationen finden Sie unter [Anpassen der Titelleiste](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar).
+Weitere Informationen finden Sie unter [Anpassen der Titelleiste](https://docs.microsoft.com/windows/uwp/design/shell/title-bar).
 
 ![Registerkarten in der Titelleiste](images/tabview/tab-extend-to-title.png)
 
@@ -293,6 +293,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [MasterDetails](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview)
-- [Pivot](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
+- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
+- [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)

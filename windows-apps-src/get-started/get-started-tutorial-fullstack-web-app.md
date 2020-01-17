@@ -5,12 +5,12 @@ keywords: Gehostete Web-App, HWA, REST-API, einseitige App, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5195cc3ed84116797c0b424a637c255b082386
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281863"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684784"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>Erstellen einer Single-Page-Web-App mit REST API-Back-End
 
@@ -32,7 +32,7 @@ Wenn die folgenden Ressourcen nicht bereits auf deinem Computer installiert sind
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
-Wenn du die letzten Schritte zum Hosten deines API-Diensts und der Gedächtnisspiel-App auf Microsoft Azure abschließen möchtest, musst du [ein kostenloses Azure-Konto erstellen](https://azure.microsoft.com/en-us/free/), sofern du dies noch nicht getan hast.
+Wenn du die letzten Schritte zum Hosten deines API-Diensts und der Gedächtnisspiel-App auf Microsoft Azure abschließen möchtest, musst du [ein kostenloses Azure-Konto erstellen](https://azure.microsoft.com/free/), sofern du dies noch nicht getan hast.
 
 Wenn du den Azure-Teil auslassen (oder verschieben) möchtest, kannst du einfach die letzten Abschnitte der Teile I und II auslassen, die das Hosten in Azure und das Verpacken deiner App für den Microsoft Store behandeln. Der API-Dienst und die von dir erstellte Web-App werden weiterhin lokal auf deinem Computer ausgeführt (über `http://localhost:8000` bzw. `http://localhost:3000`).
 
@@ -290,7 +290,7 @@ Hier sind einige nützliche Ressourcen für weiterführende Schritte:
 
  - [Erweitertes Node.js-Debugging mit Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Dokumente für Azure Web + Mobil](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Dokumente für Azure Web + Mobil](https://docs.microsoft.com/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB-Dokumente](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -490,7 +490,7 @@ if (cardsFlipped == gameBoardSize) {
 Wenn die Anzahl der aufgedeckten Karten der Größe des Spiels entspricht (z. B. `cardsFlipped == gameBoardSize`), gibt es keine weiteren aufzudeckenden Karten, und der Benutzer hat das Spiel gewonnen. Wir fügen `div` einige einfache HTML-Codezeilen mit `id="game-board"` hinzu, damit der Benutzer weiß, dass er gewonnen hat und erneut spielen kann.  
 
 ### <a name="3-create-the-user-interface"></a>3. Erstellen der Benutzeroberfläche 
-Jetzt sehen wir uns diesen Code in Aktion an, indem wir die Benutzeroberfläche erstellen. In diesem Tutorial verwenden wir das Vorlagenmodul [Pug](https://pugjs.org/) (ehemals Jade).  *Pug* ist eine saubere Syntax zum Schreiben von HTML-Code mit Berücksichtigung von Leerzeichen. Hier sehen Sie ein Beispiel. 
+Jetzt sehen wir uns diesen Code in Aktion an, indem wir die Benutzeroberfläche erstellen. In diesem Tutorial verwenden wir das Vorlagenmodul [Pug](https://pugjs.org/) (ehemals Jade).  *Pug* ist eine saubere Syntax zum Schreiben von HTML-Code mit Berücksichtigung von Leerzeichen. Hier ist ein Beispiel. 
 
 ```
 body
@@ -616,7 +616,7 @@ Durch das Hinzufügen einer Aufdeckbewegung mit [CSS-Transformationen](https://d
     Wenn ein Benutzer nun auf eine Karte klickt, wird die Karte um 180 Grad gedreht.
 
 ### <a name="6-test-and-play"></a>6. Testen und Spielen
-Gratulation! Du hast die Web-App erfolgreich erstellt. Testen wir sie nun. 
+Herzlichen Glückwunsch! Du hast die Web-App erfolgreich erstellt. Testen wir sie nun. 
 
 1. Öffne eine Eingabeaufforderung im Arbeitsspeicherverzeichnis, und gib den folgenden Befehl ein: `npm start`.
 
@@ -634,8 +634,8 @@ Du kannst deine App jetzt in Azure (oder in einem anderen Cloudhostingdienst) zu
 
 Hier siehst du die grundlegenden Schritte für die Veröffentlichung im Microsoft Store:
 
- 1. Erstellen eines [Windows-Entwicklerkontos](https://developer.microsoft.com/en-us/store/register)
- 2. Verwenden der [Prüfliste](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions) für die App-Übermittlung
+ 1. Erstellen eines [Windows-Entwicklerkontos](https://developer.microsoft.com/store/register)
+ 2. Verwenden der [Prüfliste](https://docs.microsoft.com/windows/uwp/publish/app-submissions) für die App-Übermittlung
  3. Übermitteln deiner App für die [Zertifizierung](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
 
 Hier sind einige nützliche Ressourcen für weiterführende Schritte:

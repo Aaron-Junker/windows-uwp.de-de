@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: ff071a2a98c533ad7c089b28165f026de00ba68f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319096"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683993"
 ---
 # <a name="forms"></a>Formulare
 Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 
@@ -26,7 +26,7 @@ Ein Formular ist eine spezielle Seite zum Erfassen von Dateneingaben, die eindeu
 - Ändern von App-Einstellungen, z. B. Datenschutz- oder Anzeigeoptionen
 - Teilnehmen an einer Umfrage
 - Kaufen eines Artikels
-- Feedback bereitstellen
+- Feedback
 
 ## <a name="types-of-forms"></a>Arten von Formularen
 
@@ -57,8 +57,8 @@ Diese Art von Formular bietet Benutzern eine größere Flexibilität hinsichtlic
 
 Befolgen Sie die nachstehenden Empfehlungen für das Entwerfen von Formularlayouts, um die Benutzerfreundlichkeit zu steigern und sicherzustellen, dass Benutzer die richtigen Informationen eingeben können. 
 
-### <a name="labels"></a>Beschriftungen
-[Beschriftungen](labels.md) sollten linksbündig ausgerichtet und über dem Steuerelement platziert sein. Viele Steuerelemente verfügen über eine integrierte Header-Eigenschaft zum Anzeigen der Beschriftung. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element verwenden.
+### <a name="labels"></a>Bezeichnungen
+[Beschriftungen](labels.md) sollten linksbündig ausgerichtet und über dem Steuerelement platziert sein. Viele Steuerelemente verfügen über eine integrierte Header-Eigenschaft zum Anzeigen der Beschriftung. Für Steuerelemente ohne Header-Eigenschaft oder zum Beschriften von Steuerelementgruppen können Sie stattdessen ein [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Element verwenden.
 
 Beschriften Sie beim [Entwerfen für Barrierefreiheit](../accessibility/accessibility.md) alle einzelnen Steuerelemente und Steuerelementgruppen, damit diese sowohl für Benutzer als auch für die Sprachausgabe eindeutig sind. 
 
@@ -108,7 +108,7 @@ Benutzer können über die Eingabe von [Tabstopps](../input/keyboard-interaction
 Eingabesteuerelemente sind Elemente der Benutzeroberfläche, über die Benutzer Informationen in Formulare eingeben können. Nachfolgend sind einige gängige Steuerelemente aufgeführt, die Formularen hinzugefügt werden können, sowie Angaben zu ihrer Verwendung.
 
 ### <a name="text-input"></a>Texteingabe
-Steuerelement | Verwendung | Beispiel
+Control | Verwendung | Beispiel
  - | - | -
 [TextBox](text-box.md) | Erfassen einer oder mehrerer Textzeilen | Namen, formfreie Antworten oder Feedback
 [PasswordBox](password-box.md) | Erfassen privater Daten durch Verbergen der Zeichen | Kennwörter, Sozialversicherungsnummern (SSN), PINs, Kreditkarteninformationen 
@@ -116,7 +116,7 @@ Steuerelement | Verwendung | Beispiel
 [RichEditBox](rich-edit-box.md) | Bearbeiten von Textdateien mit formatiertem Text, Links und Bildern | Hochladen von Dateien, Vorschau und Bearbeiten in der App
 
 ### <a name="selection"></a>Auswahl
-Steuerelement | Verwendung | Beispiel
+Control | Verwendung | Beispiel
 - | - | - 
 | [CheckBox](checkbox.md) | Aktivieren oder Deaktivieren eines oder mehrerer Aktionselemente | Akzeptieren von Geschäftsbedingungen, Hinzufügen von optionalen Elementen, Auswählen aller zutreffenden Optionen
 [RadioButton](radio-button.md) | Auswählen einer Option aus mindestens zwei Auswahlmöglichkeiten | Auswählen von Typ, Versandart usw.
@@ -125,21 +125,21 @@ Steuerelement | Verwendung | Beispiel
 > **Hinweis**: Wenn fünf oder mehr Auswahlelemente vorhanden sind, verwenden Sie ein Listensteuerelement.
 
 ### <a name="lists"></a>Listen
-Steuerelement | Verwendung | Beispiel
+Control | Verwendung | Beispiel
 - | - | -
 [ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Starten im kompakten Modus und Erweitern, um die Liste der auswählbaren Elemente anzuzeigen | Auswählen aus einer langen Liste von Elementen, z. B. Status oder Länder
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Kategorisieren von Elementen und Zuweisen von Gruppenüberschriften, Verschieben von Elementen per Drag & Drop, Überprüfen von Inhalten und Neuanordnen von Elementen | Bilden einer Rangfolge für Optionen
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Anordnen und Durchsuchen von bildbasierten Sammlungen | Auswählen eines Fotos, einer Farbe oder Anzeigedesigns
 
 ### <a name="numeric-input"></a>Numerische Eingabe
-Steuerelement | Verwendung | Beispiel
+Control | Verwendung | Beispiel
 - | - | -
 [Schieberegler](slider.md) | Auswählen einer Zahl aus einem Bereich von fortlaufenden numerischen Werten | Prozentsätze, Lautstärke, Wiedergabegeschwindigkeit
 [Rating](rating.md) | Bewerten mit Sternen | Kundenfeedback
 
 ### <a name="date-and-time"></a>Datum und Uhrzeit
 
-Steuerelement | Verwendung 
+Control | Verwendung 
 - | - 
 [CalendarView](calendar-view.md) | Auswählen eines einzelnen Datums oder eines Datumsbereichs aus einem immer sichtbaren Kalender 
 [CalendarDatePicker](calendar-date-picker.md) | Auswählen eines einzelnen Datums aus einem kontextbezogenen Kalender 
@@ -236,6 +236,6 @@ In diesem Beispiel werden zusätzlich zu Eingabesteuerelementen das [Pivot](pivo
 ## <a name="customer-orders-database-sample"></a>Beispieldatenbank für Kundenaufträge
 ![Screenshot von Datenbank für Kundenaufträge](images/customerorderform.png) Eine Beschreibung, wie Sie Formulareingaben mit einer **Azure**-Datenbank verbinden, sowie ein vollständig implementiertes Formular finden Sie im Beispiel zur App [Datenbank für Kundenaufträge](https://github.com/Microsoft/Windows-appsample-customers-orders-database).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 - [Eingabesteuerelemente](controls-and-events-intro.md)
 - [Typografie](../style/typography.md)

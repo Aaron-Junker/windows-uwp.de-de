@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c04725fed4ab9d5d2158f2f892af038aefc8fd
-ms.sourcegitcommit: 807dadf5eceb576aba3ad898a6e9bf12129e94a4
+ms.openlocfilehash: b9c5348063f277d4d76cbea120689328bcc217b1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72680753"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684151"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>Tutorial: Erstellen von adaptiven Layouts
 
@@ -30,7 +30,7 @@ Die **Detailseite** zeigt ein einzelnes Foto an, nachdem es ausgewählt wurde. �
 
 * Visual Studio 2019: [Visual Studio 2019 Community herunterladen (kostenlos)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK (10.0.15063.468 oder höher):  [Das aktuelle Windows SDK herunterladen (kostenlos)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Emulator für Windows Mobile: [Windows 10 Mobile-Emulator herunterladen (kostenlos)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Emulator für Windows Mobile: [Windows 10 Mobile-Emulator herunterladen (kostenlos)](https://developer.microsoft.com/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>Teil 0: Startcode von Github holen
 
@@ -45,7 +45,7 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
     **Wenn Sie mit GitHub nicht vertraut sind:**
     
-    a. Klicken Sie auf **Download ZIP**, und speichern Sie die Datei lokal. Es wird eine ZIP-Datei heruntergeladen, die alle benötigten Projektdateien enthält.
+    ein. Klicken Sie auf **Download ZIP**, und speichern Sie die Datei lokal. Es wird eine ZIP-Datei heruntergeladen, die alle benötigten Projektdateien enthält.
 
     b. Entpacken Sie die Datei. Verwenden Sie den Datei-Explorer, um zu der gerade heruntergeladenen ZIP-Datei zu navigieren, klicken Sie mit der rechten Maustaste darauf und wählen Sie **Alle extrahieren...** aus. 
 
@@ -53,13 +53,13 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
     **Wenn Sie mit GitHub vertraut sind:**
 
-    a. Klonen Sie den Master-Branch des Repositorys lokal.
+    ein. Klonen Sie den Master-Branch des Repositorys lokal.
 
     b. Wechseln Sie zum `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout`-Verzeichnis.
 
 3. Öffnen Sie das Projekt durch einen Klick auf `Photolab.sln`.
 
-## <a name="part-1-run-the-mobile-emulator"></a>Teil 1: Ausführen des Mobile-Emulators
+## <a name="part-1-run-the-mobile-emulator"></a>Teil 1: Ausführen des Mobile-Emulators
 
 Stellen Sie sicher, dass Ihre Lösungsplattform in der Visual Studio-Symbolleiste auf x86 oder x64 und nicht ARM festgelegt ist, und ändern Sie Ihr Zielgerät vom lokalen Computer auf einen der Mobile-Emulatoren, die Sie installiert haben (z. B. Mobile Emulator 10.0.15063 WVGA 5 Zoll 1 GB). Führen Sie die Fotogalerie-App im ausgewählten Mobile Emulator durch Drücken von **F5** aus.
 

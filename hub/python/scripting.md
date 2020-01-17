@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python-Systemverwaltung, Python-Dateiautomatisierung, Python-Skripts unter Windows, Einrichten von Python unter Windows, Python-Entwicklerumgebung unter Windows, Python-Entwicklungsumgebung unter Windows, Python mit PowerShell, Python-Skripts für Dateisystemtasks
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3f8a17de8121fed27e69442d5560f702a04c8e42
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72314864"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683653"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Erste Schritte bei der Verwendung von Python unter Windows für Skripts und Automatisierung
 
@@ -24,7 +24,7 @@ Im Folgenden finden Sie eine Schritt-für-Schritt-Anleitung für das Einrichten 
 
 ## <a name="set-up-your-development-environment"></a>Einrichten der Entwicklungsumgebung
 
-Wenn Sie Python zum Schreiben von Skripts verwenden, die Dateisystemvorgänge ausführen, sollten Sie [Python aus dem Microsoft Store installieren](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Bei der Installation über den Microsoft Store wird der grundlegende Python3-Interpreter verwendet, jedoch werden zusätzlich zur Bereitstellung automatischer Updates Ihre PATH-Einstellungen für den aktuellen Benutzer eingerichtet (sodass kein Administratorzugriff erforderlich ist).
+Wenn Sie Python zum Schreiben von Skripts verwenden, die Dateisystemvorgänge ausführen, sollten Sie [Python aus dem Microsoft Store installieren](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab). Bei der Installation über den Microsoft Store wird der grundlegende Python3-Interpreter verwendet, jedoch werden zusätzlich zur Bereitstellung automatischer Updates Ihre PATH-Einstellungen für den aktuellen Benutzer eingerichtet (sodass kein Administratorzugriff erforderlich ist).
 
 Wenn Sie Python zur **Webentwicklung** unter Windows verwenden, empfehlen wir eine andere Einrichtung mithilfe des Windows-Subsystems für Linux. Eine exemplarische Vorgehensweise finden Sie in unserem Handbuch: [Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows](./web-frameworks.md). Wenn Sie noch nicht mit Python vertraut sind, testen Sie unser Handbuch: [Erste Schritte bei der Verwendung von Python unter Windows für Anfänger](./beginners.md). Für einige erweiterte Szenarien (wenn es z. B. erforderlich ist, auf installierte Python-Dateien zuzugreifen oder sie zu ändern, Kopien von Binärdateien zu erstellen oder Python-DLLs direkt zu erstellen) sollten Sie ein bestimmtes Python-Release direkt unter [python.org](https://www.python.org/downloads/) herunterladen oder eine [Alternative](https://www.python.org/download/alternatives) installieren, z. B. Anaconda, Jython, PyPy, WinPython, IronPython usw. Dies wird nur empfohlen, wenn Sie ein versierter Python-Programmierer sind und bestimmte Gründe für die Auswahl einer alternativen Implementierung haben.
 
@@ -48,7 +48,7 @@ Laden Sie VS Code für Windows herunter, und folgen Sie den Installationsanweis
 
 ## <a name="install-the-microsoft-python-extension"></a>Installieren der Microsoft Python-Erweiterung
 
-Sie müssen die Microsoft Python-Erweiterung installieren, um die Features der VS Code-Unterstützung nutzen zu können. [Weitere Informationen](https://code.visualstudio.com/docs/languages/python).
+Sie müssen die Microsoft Python-Erweiterung installieren, um die Features der VS Code-Unterstützung nutzen zu können. [Weitere Informationen](https://code.visualstudio.com/docs/languages/python)
 
 1. Öffnen Sie das Fenster der VS Code-Erweiterungen, indem Sie **STRG+UMSCHALT+X** drücken (oder navigieren Sie im Menü zu **Ansicht** > **Erweiterungen**).
 
@@ -174,7 +174,7 @@ Beginnen wir mit einem einfachen Skript, das eine Verzeichnisstruktur durchläuf
 
 11. Verwenden Sie Python, um das Dateisystemverzeichnis in eine eigene Textdatei auszugeben, indem Sie diesen Befehl direkt in Ihrem PowerShell-Terminal eingeben: `python3 list-directory-contents.py > food-directory.txt`.
 
-Gratulation! Sie haben soeben ein automatisiertes Systemverwaltungsskript geschrieben, das das erstellte Verzeichnisse und die erstellten Dateien liest und mit Python die Verzeichnisstruktur anzeigt und anschließend in eine eigene Textdatei ausgibt.
+Herzlichen Glückwunsch! Sie haben soeben ein automatisiertes Systemverwaltungsskript geschrieben, das das erstellte Verzeichnisse und die erstellten Dateien liest und mit Python die Verzeichnisstruktur anzeigt und anschließend in eine eigene Textdatei ausgibt.
 
 ## <a name="example-script-to-modify-all-files-in-a-directory"></a>Beispielskript zum Ändern aller Dateien in einem Verzeichnis
 

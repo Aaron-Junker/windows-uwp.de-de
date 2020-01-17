@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Anleitungen für Entwickler, Windows 1
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c92de1901c9cc67a30f495e34289bac5d7d2b94
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f4e9ce391aa485e681fc198e14fe3374edb72aa1
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258797"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684709"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Juli 2018
 
@@ -29,14 +29,14 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 Lesen Sie unsere PWA-Leitfäden, um folgende Aufgaben zu erledigen:
 
 * [Erstellen einer einfachen Web-App als PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
-* [Verbessern Ihrer PWA mit der Windows-Runtime](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features)
+* [Verbessern Ihrer PWA mit der Windows-Runtime](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 * [Veröffentlichen Ihrer PWA im Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)
 
 ### <a name="notepad"></a>Editor
 
 Verfügbar in Windows 10 Insider Preview Build 17713 [wurde Editor mit vielen neuen Features aktualisiert](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/). Zoomen, rollierendes Suchen/Ersetzen und Unterstützung für Zeilenenden im Unix/Linux- (LF) und Macintosh-Format (CR) sind jetzt für [Windows-Insider](https://insider.windows.com/) verfügbar. 
 
-## <a name="developer-guidance"></a>Erläuterungen für Entwickler
+## <a name="developer-guidance"></a>Entwicklerleitfäden
 
 ### <a name="design-landing-page"></a>Entwurfsstartseite
 

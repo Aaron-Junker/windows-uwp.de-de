@@ -5,12 +5,12 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dcbeffc7e3db8f3df9c197e8c388f30faf7ad03d
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369511"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685238"
 ---
 # <a name="best-practices-for-writing-to-files"></a>Bewährte Methoden zum Schreiben in Dateien
 
@@ -44,7 +44,7 @@ Ein [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storage
 Dieses Konzept zu verstehen, ist hilfreich bei der Ausführung von E/A mit einer **StorageFile**. So stellt beispielsweise der Abschnitt [Schreiben in eine Datei](quickstart-reading-and-writing-files.md#writing-to-a-file) drei Möglichkeiten zum Schreiben in eine Datei vor:
 
 * Mithilfe der [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync)-Methode.
-* Durch das Erstellen eines Puffers mit anschließendem Aufrufen der [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync)-Methode.
+* Durch das Erstellen eines Puffers mit anschließendem Aufrufen der [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync)-Methode.
 * Das Modell aus vier Schritten, bei dem ein Stream verwendet wird:
   1. [Öffnen](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) Sie die Datei, um einen Stream abzurufen.
   2. [Rufen Sie](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) einen Ausgabestream ab.
@@ -82,7 +82,7 @@ Diese Tabelle enthält allgemeine Fehlercodes, die bei App-Entwicklern auftreten
 |  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19–20  |  Die ursprüngliche Datei (file.txt) konnte nicht ersetzt werden, weil sie verwendet wird. Ein anderer Prozess oder Vorgang hat auf die Datei zugreifen können, bevor sie ersetzt werden konnte.  |  Wiederholen Sie den Vorgang.</br>Stellen Sie sicher, dass der Zugriff auf die Datei synchronisiert wird.  |
 |  ERROR_DISK_FULL (0x80070070)  |  7, 14, 16, 20  |  Das transaktive Modell erstellt eine zusätzliche Datei, die zusätzlichen Speicherplatz belegt.  |    |
 |  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  Dies kann Infolge von mehreren ausstehenden E/A-Vorgängen oder großen Dateien geschehen.  |  Möglicherweise lässt sich der Fehler mit einem präziseren Ansatz durch Kontrolle des Streams lösen.  |
-|  E_FAIL (0x80004005) |  Beliebig  |  Sonstiges  |  Wiederholen Sie den Vorgang. Wenn er weiterhin fehlschlägt, könnte ein Plattformfehler vorliegen, und die App sollte beendet werden, weil sie sich in einem inkonsistenten Zustand befindet. |
+|  E_FAIL (0x80004005) |  Any  |  Verschiedenes  |  Wiederholen Sie den Vorgang. Wenn er weiterhin fehlschlägt, könnte ein Plattformfehler vorliegen, und die App sollte beendet werden, weil sie sich in einem inkonsistenten Zustand befindet. |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>Weitere Überlegungen zu Dateizuständen, die zu Fehlern führen können
 
@@ -194,6 +194,6 @@ else
 
 Der [Blog „Parallel Programming with .NET“ (Parallele Programmierung mit .NET)](https://devblogs.microsoft.com/pfxteam/) ist eine hervorragende Ressource für Anleitungen zur parallelen Programmierung. Insbesondere wird im [Beitrag zu „AsyncReaderWriterLock“](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) beschrieben, wie der exklusive Zugriff auf eine Datei für Schreibvorgänge erhalten bleibt, während der gleichzeitige Lesezugriff erlaubt wird. Denken Sie daran, dass sich die Serialisierung von E/A auf die Leistung auswirkt.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 * [Erstellen, Schreiben und Lesen einer Datei](quickstart-reading-and-writing-files.md)

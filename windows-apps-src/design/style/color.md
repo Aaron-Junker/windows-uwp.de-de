@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: efe67707edc5f556301ded466f3f2919ec04873e
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.openlocfilehash: 7ab504657ae5e3142eb7db1d9517a013e9aaf5f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153723"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684583"
 ---
 # <a name="color"></a>Farbe
 
@@ -219,13 +219,13 @@ Weitere Informationen zum Formatieren von Steuerelementen finden Sie unter [XAML
 
 ## <a name="color-api"></a>Color-API
 
-Es gibt verschiedene APIs, mit denen Sie Ihrer App Farbe hinzufügen können. Dies ist zunächst die [**Colors**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors)-Klasse, die eine umfangreiche Liste vordefinierter Farben implementiert. Darauf kann mithilfe der XAML-Eigenschaften automatisch zugegriffen werden. Im folgenden Beispiel erstellen wir eine Schaltfläche und legen die Farbeigenschaften für Hintergrund und Vordergrund auf Mitglieder der **Colors**-Klasse fest.
+Es gibt verschiedene APIs, mit denen Sie Ihrer App Farbe hinzufügen können. Dies ist zunächst die [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors)-Klasse, die eine umfangreiche Liste vordefinierter Farben implementiert. Darauf kann mithilfe der XAML-Eigenschaften automatisch zugegriffen werden. Im folgenden Beispiel erstellen wir eine Schaltfläche und legen die Farbeigenschaften für Hintergrund und Vordergrund auf Mitglieder der **Colors**-Klasse fest.
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-Sie können Ihre eigenen Farben aus RGB- und Hex-Werten mithilfe der [**Color**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.color)-Struktur in XAML erstellen.
+Sie können Ihre eigenen Farben aus RGB- und Hex-Werten mithilfe der [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.color)-Struktur in XAML erstellen.
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
@@ -240,9 +240,9 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 Die Buchstaben "Argb" stehen für „Alpha“ (Deckkraft), „Rot“, „Grün“ und „Blau“ – die vier Komponenten einer Farbe. Jedes Argument kann zwischen 0 und 255 liegen. Sie können den ersten Wert wahlweise weglassen und erhalten so eine standardmäßige Deckkraft von 255 oder 100 % undurchsichtig.
 
 > [!Note]
-> Wenn Sie C++ verwenden, müssen Sie Farben mit der [**ColorHelper**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colorhelper)-Klasse erstellen.
+> Wenn Sie C++ verwenden, müssen Sie Farben mit der [**ColorHelper**](https://docs.microsoft.com/uwp/api/windows.ui.colorhelper)-Klasse erstellen.
 
-Am häufigsten wird **Color** als ein Argument für den Pinsel [**SolidColorBrush**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.solidcolorbrush) verwendet, der zum Zeichnen von UI-Elementen in einer Volltonfarbe verwendet werden kann. Diese Pinsel werden in der Regel in einem [**ResourceDictionary**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary) definiert, sodass sie für mehrere Elemente wiederverwendet werden können.
+Am häufigsten wird **Color** als ein Argument für den Pinsel [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush) verwendet, der zum Zeichnen von UI-Elementen in einer Volltonfarbe verwendet werden kann. Diese Pinsel werden in der Regel in einem [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) definiert, sodass sie für mehrere Elemente wiederverwendet werden können.
 
 ```xaml
 <ResourceDictionary>
@@ -267,9 +267,9 @@ Zusätzlich zum Definieren Ihrer eigenen Farben in Ihrer App können Sie auch mi
 ### <a name="how-to-use-colorpaletteresources"></a>Verwenden von „ColorPaletteResources“
 
 „ColorPaletteResources“ ist eine API, die das System informiert, für welche Ressourcen wo ein Gültigkeitsbereich festgelegt wird. Für „ColorPaletteResources“ muss ein [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute) angegeben werden, der einer der drei folgenden Werte sein kann:
-- Standard
+- Standardwert
   * Zeigt Ihre Farbänderungen im Design [Hell](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) und [Dunkel](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme).
-- Hell
+- Leicht
   * Zeigt Ihre Farbänderungen nur im [Design „Hell“](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme).
 - Dunkel
   * Zeigt Ihre Farbänderungen nur im [Design „Dunkel“](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme).
@@ -404,7 +404,7 @@ Jetzt können alle Ressourcen, Designs und benutzerdefinierten Farben in einem e
 </ColorPaletteResources>
 ```
 
-## <a name="usability"></a>Nutzbarkeit
+## <a name="usability"></a>Benutzerfreundlichkeit
 
 :::row:::
     :::column:::

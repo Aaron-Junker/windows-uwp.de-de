@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: dc696c9a57e84e2caade6a2623a72a6048b65621
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 9fb08278391118215063c293b71ffde1ed4443b8
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319106"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684115"
 ---
 # <a name="teaching-tip"></a>Unterrichtstipp
 
@@ -71,11 +71,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Save automatically"
             Subtitle="When you save your file to OneDrive, we save your changes as you go - so you never have to.">
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -106,10 +106,10 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to.">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 In diesem Beispiel befindet sich TeachingTip in der Elementstruktur anstatt in ResourceDictionary oder im zugrunde liegenden Code. Dies hat keine Auswirkungen auf das Verhalten; TeachingTip wird nur beim Öffnen angezeigt und nimmt keinen Layoutplatz in Anspruch.
@@ -120,7 +120,7 @@ In diesem Beispiel befindet sich TeachingTip in der Elementstruktur anstatt in R
 
 Der Unterrichtstipp repliziert das [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)-Platzierungsverhalten des Flyouts mit der Eigenschaft „TeachingTipPlacementMode“. Der Standardmodus für die Platzierung versucht, einen zielgerichteten Unterrichtstipp über dem Ziel zu platzieren, während ein nicht zielgerichteter Unterrichtstipp in der Mitte unter dem XAML-Stamm platziert wird. So wie beim Flyout wird automatisch ein anderer Platzierungsmodus ausgewählt, wenn der bevorzugte Platzierungsmodus nicht genug Platz für die Anzeige des Unterrichtstipps lässt. 
 
-Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( https://docs.microsoft.com/en-us/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
+Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
 
 Ein zielgerichteter Unterrichtstipp, bei dem PreferredPlacement auf „BottomLeft“ festgelegt ist, erscheint mit der Spitze zentriert am unteren Rand des Ziels, und der Text des Unterrichtstipps wird nach links verschoben.
 
@@ -128,12 +128,12 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
             PreferredPlacement="BottomLeft">
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -147,11 +147,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomLeft">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![Eine Beispiel-App mit einem Unterrichtstipp in der unteren linken Ecke Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.). Rechts oben im Unterrichtstipp gibt es eine Schaltfläche zum Schließen.](../images/teaching-tip-non-targeted-preferred-placement.png)
@@ -164,7 +164,7 @@ Das folgende Diagramm zeigt das Ergebnis aller 13 PreferredPlacement-Modi, die f
 
 ### <a name="add-a-placement-margin"></a>Hinzufügen eines Platzierungsrands  
 
-Mithilfe der PlacementMargin-Eigenschaft kannst du steuern, wie weit ein zielgerichteter Unterrichtstipp vom Ziel entfernt ist und wie weit ein nicht zielgerichteter Unterrichtstipp von den Rändern des XAML-Stamms entfernt ist. PlacementMargin verfügt wie [Margin](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.margin) über vier Werte (left, right, top und bottom), sodass nur die relevanten Werte verwendet werden. PlacementMargin.Left gilt beispielsweise, wenn sich der Tipp links vom Ziel oder am linken Rand des XAML-Stamms befindet.
+Mithilfe der PlacementMargin-Eigenschaft kannst du steuern, wie weit ein zielgerichteter Unterrichtstipp vom Ziel entfernt ist und wie weit ein nicht zielgerichteter Unterrichtstipp von den Rändern des XAML-Stamms entfernt ist. PlacementMargin verfügt wie [Margin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin) über vier Werte (left, right, top und bottom), sodass nur die relevanten Werte verwendet werden. PlacementMargin.Left gilt beispielsweise, wenn sich der Tipp links vom Ziel oder am linken Rand des XAML-Stamms befindet.
 
 Das folgende Beispiel zeigt einen nicht zielgerichtete Tipp, bei dem die PlacementMargin-Werte „Left“/“Top“/“Right“/“Bottom“ jeweils auf 80 festgelegt sind.
 
@@ -172,12 +172,12 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomLeft"
     PlacementMargin="80">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![Eine Beispiel-App, bei der der Unterrichtstipp zur unteren rechten Ecke hin platziert ist, sich aber nicht vollständig dort befindet. Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.). Rechts oben im Unterrichtstipp gibt es eine Schaltfläche zum Schließen.](../images/teaching-tip-placement-margin.png)
@@ -191,7 +191,7 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to.">
@@ -199,7 +199,7 @@ XAML
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
                     <TextBlock>You can change your tip preferences in <Hyperlink NavigateUri="app:/item/SettingsPage">Settings</Hyperlink> if you change your mind.</TextBlock>
                 </StackPanel>
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -218,7 +218,7 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources> 
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
@@ -229,7 +229,7 @@ XAML
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
                     <TextBlock>You can change your tip preferences in <Hyperlink NavigateUri="app:/item/SettingsPage">Settings</Hyperlink> if you change your mind.</TextBlock>
                 </StackPanel>
-        </controls:TeachingTip>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -244,14 +244,14 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources> 
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to.">
-            <controls:TeachingTip.HeroContent>
+            <muxc:TeachingTip.HeroContent>
                 <Image Source="Assets/cloud.png" />
-            </controls:TeachingTip.HeroContent>
-        </controls:TeachingTip>
+            </muxc:TeachingTip.HeroContent>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -266,14 +266,14 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
-        <controls:TeachingTip x:Name="AutoSaveTip"
+        <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
-            <controls:TeachingTip.IconSource>
-                <controls:SymbolIconSource Symbol="Save" />
-            </controls:TeachingTip.IconSource>
-        </controls:TeachingTip>
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Save" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Button.Resources>
 </Button>
 ```
@@ -290,11 +290,11 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     IsLightDismissEnabled="True">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![Eine Beispiel-App mit einem einfach ausblendbaren Unterrichtstipp in der unteren rechten Ecke Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.).](../images/teaching-tip-light-dismiss.png)
@@ -309,13 +309,13 @@ XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save" />
 
-<controls:TeachingTip x:Name="AutoSaveTip"
+<muxc:TeachingTip x:Name="AutoSaveTip"
     Title="Saving automatically"
     Subtitle="We save your changes as you go - so you never have to."
     PreferredPlacement="BottomRight"
     PlacementMargin="-80,-50,0,0"
     ShouldConstrainToRootBounds="False">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 ![Eine Beispiel-App mit einem Unterrichtstipp außerhalb der unteren rechten Ecke Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.). Rechts oben im Unterrichtstipp gibt es eine Schaltfläche zum Schließen.](../images/teaching-tip-escape-xaml-root.png)
@@ -328,11 +328,11 @@ Das Schließen-Ereignis kann verwendet werden, um das Schließen eines Unterrich
 
 XAML
 ```XAML
-<controls:TeachingTip x:Name="EnableNewSettingsTip"
+<muxc:TeachingTip x:Name="EnableNewSettingsTip"
     Title="New ways to protect your privacy!"
     Subtitle="Please close this tip and review our updated privacy policy and privacy settings."
     Closing="OnTipClosing">
-</controls:TeachingTip>
+</muxc:TeachingTip>
 ```
 
 C#
@@ -359,13 +359,13 @@ public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
 
 ### <a name="related-articles"></a>Verwandte Artikel 
 
-* [Dialogfelder und Flyouts](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
+* [Dialogfelder und Flyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
 
 ### <a name="recommendations"></a>Empfehlungen
 * Tipps sind dauerhaft und dürfen keine Informationen oder Optionen enthalten, die für die Nutzung einer Anwendung von entscheidender Bedeutung sind. 
 * Versuche, Unterrichtstipps nicht zu häufig anzuzeigen. Unterrichtstipps werden dann am ehesten beachtet, wenn sie während langer Sitzungen oder über mehrere Sitzungen hinweg gestaffelt angezeigt werden.    
 * Außerdem sollten sie kompakt und gut verständlich sein. Untersuchungen zeigen, dass Benutzer im Durchschnitt nur drei bis fünf Wörter lesen und zwei bis drei Wörter erfassen, wenn sie entscheiden, ob sie mit einem Tipp interagieren.
-* Der Zugriff auf Gamepads ist bei einem Unterrichtstipp nicht garantiert. Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( https://docs.microsoft.com/en-us/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
+* Der Zugriff auf Gamepads ist bei einem Unterrichtstipp nicht garantiert. Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
 * Wenn du einen Unterrichtstipp aktivierst, um den XAML-Stamm zu umgehen, solltest du auch die Eigenschaft „IsLightDismissEnabled“ aktivieren und den PreferredPlacement-Modus recht mittig im XAML-Stamm festlegen. 
 
 ### <a name="reconfiguring-an-open-teaching-tip"></a>Neukonfiguration eines geöffneten Unterrichtstipps

@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e454bed6dc1a9429fe313e305dc9ba818d86e765
-ms.sourcegitcommit: 802699ce8d21e7fa4639f0b19b1c5b6c46c2c727
+ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835640"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684106"
 ---
 # <a name="buttons"></a>Schaltflächen
 
@@ -28,9 +28,9 @@ Eine Schaltfläche ermöglicht dem Benutzer das unmittelbare Auslösen einer Akt
 
 Das [Extensible Application Markup Language (XAML)](../../xaml-platform/xaml-overview.md)-Framework stellt ein standardmäßiges Schaltflächen-Steuerelement sowie verschiedene spezialisierte Schaltflächen-Steuerelemente bereit.
 
-Steuerelement | Beschreibung
+Control | Beschreibung
 ------- | -----------
-[Button](/uwp/api/windows.ui.xaml.controls.button) | Eine Schaltfläche, die eine sofortige Aktion auslöst. Kann mit einem [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis oder einer [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)-Bindung verwendet werden.
+[Schaltfläche](/uwp/api/windows.ui.xaml.controls.button) | Eine Schaltfläche, die eine sofortige Aktion auslöst. Kann mit einem [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis oder einer [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)-Bindung verwendet werden.
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | Eine Schaltfläche, die im gedrückten Zustand fortlaufend ein [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignis auslöst.
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | Eine Schaltfläche, die wie ein Link formatiert ist und für die Navigation verwendet wird. Weitere Informationen zu Hyperlinks finden unter [Hyperlinks](hyperlinks.md).
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | Eine Schaltfläche mit einem Chevron zum Öffnen eines angefügten Flyouts.
@@ -129,7 +129,7 @@ Wenn Sie mit einem Finger oder Stift auf ein **Button**-Steuerelement tippen ode
 
 Sie können für **Button**-Objekte generell keine [PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)-Ereignisse auf niedriger Ebene verarbeiten, da diese stattdessen mit dem **Click**-Verhalten konfiguriert sind. Weitere Informationen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
-Sie können durch Ändern der [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode)-Eigenschaft festlegen, wie eine Schaltfläche das **Click**-Ereignis auslöst. Der **ClickMode**-Standardwert ist **Release**, Sie können den **ClickMode** einer Schaltfläche jedoch auch auf **Hover** oder **Press** festlegen. Wenn als **ClickMode**-Wert **Hover** festgelegt ist, kann das **Click**-Ereignis nicht über die Tastatur oder durch Berührung ausgelöst werden.
+Sie können durch Ändern der [ClickMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.clickmode)-Eigenschaft festlegen, wie eine Schaltfläche das **Click**-Ereignis auslöst. Der **ClickMode**-Standardwert ist **Release**, Sie können den **ClickMode** einer Schaltfläche jedoch auch auf **Hover** oder **Press** festlegen. Wenn als **ClickMode**-Wert **Hover** festgelegt ist, kann das **Click**-Ereignis nicht über die Tastatur oder durch Berührung ausgelöst werden.
 
 
 ### <a name="button-content"></a>Inhalt von Schaltflächen
@@ -217,7 +217,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>Erstellen einer Dropdown-Schaltfläche
 
-> **DropDownButton** erfordert die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) oder Windows 10, Version 1809 (SDK 17763) oder höher. Sie können das neueste SDK von [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) herunterladen. Frühere SDKs können Sie von [Windows SDK und Emulator-Archiv](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive) herunterladen.
+> **DropDownButton** erfordert die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) oder Windows 10, Version 1809 (SDK 17763) oder höher. Sie können das neueste SDK von [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) herunterladen. Frühere SDKs können Sie von [Windows SDK und Emulator-Archiv](https://developer.microsoft.com/windows/downloads/sdk-archive) herunterladen.
 
 Ein [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) ist eine Schaltfläche mit einem Chevron als visueller Indikator, mit dem angezeigt wird, dass ein angefügtes Flyout mit weiteren Optionen vorhanden ist. Es weist dasselbe Verhalten wie ein standardmäßiges **Button**-Steuerelement mit einem Flyout auf; lediglich die Darstellung ist anders.
 
@@ -278,7 +278,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 ## <a name="create-a-split-button"></a>Erstellen einer unterteilten Schaltfläche
 
  > [!IMPORTANT]
- > **SplitButton** erfordert die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) oder Windows 10, Version 1809 (SDK 17763) oder höher. Sie können das neueste SDK von [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) herunterladen. Frühere SDKs können Sie von [Windows SDK und Emulator-Archiv](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive) herunterladen.
+ > **SplitButton** erfordert die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) oder Windows 10, Version 1809 (SDK 17763) oder höher. Sie können das neueste SDK von [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) herunterladen. Frühere SDKs können Sie von [Windows SDK und Emulator-Archiv](https://developer.microsoft.com/windows/downloads/sdk-archive) herunterladen.
 
 Ein [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)-Steuerelement weist zwei Teile auf, die separat aufgerufen werden können. Ein Teil verhält sich wie eine Standardschaltfläche und bewirkt, dass sofort eine Aktion aufgerufen wird. Mit dem anderen Teil wird ein Flyout mit zusätzlichen Optionen aufgerufen, aus denen der Benutzer wählen kann.
 
@@ -388,7 +388,7 @@ public sealed partial class MainPage : Page
 ## <a name="create-a-toggle-split-button"></a>Erstellen einer unterteilten Umschaltfläche
 
 > [!NOTE]
-> **ToggleSplitButton** erfordert die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) oder Windows 10, Version 1809 (SDK 17763) oder höher. Sie können das neueste SDK von [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) herunterladen. Frühere SDKs können Sie von [Windows SDK und Emulator-Archiv](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive) herunterladen.
+> **ToggleSplitButton** erfordert die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) oder Windows 10, Version 1809 (SDK 17763) oder höher. Sie können das neueste SDK von [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) herunterladen. Frühere SDKs können Sie von [Windows SDK und Emulator-Archiv](https://developer.microsoft.com/windows/downloads/sdk-archive) herunterladen.
 
 Ein [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)-Steuerelement weist zwei Teile auf, die separat aufgerufen werden können. Ein Teil verhält sich wie eine Umschaltfläche, mit der eine Option aktiviert oder deaktiviert werden kann. Mit dem anderen Teil wird ein Flyout mit zusätzlichen Optionen aufgerufen, aus denen der Benutzer wählen kann.
 
@@ -548,7 +548,7 @@ Wenn in Ihrem Layout nur eine einzige Schaltfläche benötigt wird, sollten Sie 
 
 ## <a name="back-buttons"></a>Zurück-Schaltflächen
 
-Die Zurück-Schaltfläche ist ein durch das System bereitgestelltes UI-Element, das die Rückwärtsnavigation über den Back-Stapel oder den Navigationsverlauf des Benutzers ermöglicht. Sie müssen keine eigene Zurück-Schaltfläche erstellen, aber unter Umständen ist etwas Aufwand erforderlich, um eine gute Rückwärtsnavigation zu ermöglichen. Weitere Informationen finden Sie im Artikel [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
+Die Zurück-Schaltfläche ist ein durch das System bereitgestelltes Benutzeroberflächenelement, das die Rückwärtsnavigation über den Back-Stapel oder den Navigationsverlauf des Benutzers ermöglicht. Sie müssen keine eigene Zurück-Schaltfläche erstellen, aber unter Umständen ist etwas Aufwand erforderlich, um eine gute Rückwärtsnavigation zu ermöglichen. Weitere Informationen finden Sie im Artikel [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen

@@ -5,12 +5,12 @@ keywords: Neuigkeiten, Update, Features, Entwicklerleitfäden, Windows 10, Deze
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 17238dd886b76e16b0fe63151a73d4a3a5c23704
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259759"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684753"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Dezember 2017
 
@@ -22,7 +22,7 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality: Handbuch für Fans
 
-Für Mixed Reality-Interessierte werden im Handbuch für Fans ([Enthusiast's Guide](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)) die wichtigsten Fragen zu Windows Mixed Reality beantwortet. 
+Für Mixed Reality-Interessierte werden im Handbuch für Fans ([Enthusiast's Guide](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/)) die wichtigsten Fragen zu Windows Mixed Reality beantwortet. 
 
 Das Handbuch enthält Folgendes: 
 - Häufig gestellte Fragen vor dem Kauf 
@@ -44,7 +44,7 @@ Füge auf Geräten, die Interaktionen per Toucheingabe unterstützen, die Tastat
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitselement (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](https://docs.microsoft.com/collaborate/).
+Das „Microsoft Collaborate”-Portal enthält Tools und Dienste, um die Zusammenarbeit der Entwickler im Microsoft-Ökosystem durch die Freigabe von Engineering Systems-Arbeitselement (Fehler, Features usw.) und die Verteilung von Inhalten (Builds, Dokumente, Spezifikationen) zu optimieren. [Weitere Informationen](https://docs.microsoft.com/collaborate/)
 
 ![Microsoft Collaborate in Partner Center](images/microsoft_collaborate_screenshot.PNG)
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b9d8d8a381c0fce186b39853f57d35c1dce4b8f8
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 0b7c21e5e6305c7b2941b46db562c93da0fdfe39
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63773375"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684387"
 ---
 # <a name="masterdetails-pattern"></a>Master/Details-Muster
 
@@ -21,7 +21,7 @@ ms.locfileid: "63773375"
 
 Das Master/Details-Muster verfügt über einen Masterbereich (in der Regel mit einer [Listenansicht](lists.md)) und einen Detailbereich für Inhalte. Wenn ein Element in der Masterliste ausgewählt wird, wird der Detailbereich aktualisiert. Dieses Muster wird häufig für E-Mails und Adressbücher verwendet.
 
-> **Wichtige APIs:** [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+> **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Beispiel für das Master/Details-Muster](images/HIGSecOne_MasterDetail.png)
 
@@ -40,12 +40,12 @@ Beim Implementieren des Master/Details-Musters ist es ratsam, je nach Größe de
 | Verfügbare Fensterbreite | Empfohlenes Format |
 |------------------------|-------------------|
 | 320 Epx - 640 Epx        | Gestapelt           |
-| 641 Epx oder breiter       | Nebeneinander      |
+| 641 Epx oder breiter       | Parallel      |
 
  
 ## <a name="stacked-style"></a>Gestapeltes Format
 
-Im gestapelten Format ist jeweils nur ein Bereich sichtbar: die Master- oder der Detailbereich.
+Im gestapelten Format ist jeweils nur ein Bereich sichtbar: der Master- oder der Detailbereich.
 
 ![Master/Details im Stapelmodus](images/patterns-md-stacked.png)
 
@@ -88,7 +88,7 @@ Um ein Master/Details-Muster für jede Bildschirmgröße zu implementieren, erst
 ![Adaptives Master/Details-Layout](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>Erstellen eines adaptiven Master/Detail-Musters
-Definiere zum Erstellen eines adaptiven Layouts verschiedene [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate)-Elemente für deine Benutzeroberfläche, und deklariere Haltepunkte für die verschiedenen Zustände mit [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+Definiere zum Erstellen eines adaptiven Layouts verschiedene [**VisualStates**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate)-Elemente für deine Benutzeroberfläche, und deklariere Haltepunkte für die verschiedenen Zustände mit [**AdaptiveTriggers**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
@@ -104,5 +104,5 @@ In den folgenden Beispielen implementierst du das Master/Details-Muster mit adap
 - [Listen](lists.md)
 - [Suche](search.md)
 - [App- und Befehlsleisten](app-bars.md)
-- [ListView-Klasse](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [SplitView-Klasse](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
+- [ListView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [SplitView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)

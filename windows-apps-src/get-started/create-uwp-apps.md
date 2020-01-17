@@ -5,14 +5,14 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d52429d4d91aa646f19aad5444f895f71504de
-ms.sourcegitcommit: 7791596c25baf9d222729e057ecdf81b45a59f0c
+ms.openlocfilehash: 85795ceccdde1ab49c0b6af65bf0299514879e6c
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71205927"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75685224"
 ---
-# <a name="start-coding"></a>Beginnen Sie mit der Codierung
+# <a name="start-coding"></a>Beginnen mit der Codierung
 
 ![Erstellen der App](images/build-your-app.png)
 
@@ -58,8 +58,8 @@ Wenn Sie unsere Lernpfade bereits erkundet haben oder an einem Thema interessier
 | Bereich | Beschreibung |
 | --- | --- |
 | **Neuigkeiten** | Mit jedem wichtigen Update von Windows 10 wird unsere Dokumentation um neue Anleitungen erweitert. Diese Dokumentation enthält Informationen zu Features und Anleitungen für Entwickler, die wir für jede Version hinzugefügt haben, sowie Listen mit neuen APIs: </br>   [Neuigkeiten für Entwickler in der aktuellen Windows 10-Version](../whats-new/windows-10-version-latest.md) </br> Wir aktualisieren unsere Dokumentation aber nicht nur mit den Hauptversionen. Es werden laufend neue Informationen hinzugefügt, die Sie erkunden können, und wir halten Sie zu Folgenden auf dem Laufenden: </br>   [Neuigkeiten in der Dokumentation](../whats-new/windows-docs-latest.md) |
-| **Design und UI** | Alle Informationen zur visuellen Darstellung und Benutzeroberfläche Ihrer App sind in diesem Bereich der Dokumentation enthalten. Wenn Sie an den Besonderheiten der XAML-Markupsprache interessiert sind oder Ihrer Dokumentation lediglich ein einheitliches Erscheinungsbild verleihen möchten, sollten Sie hier beginnen: </br>   [Designgrundlagen für UWP-Apps](../design/basics/index.md) |
-| **Entwickeln von Apps** | Wenn Sie detaillierte Informationen zu einem bestimmten Windows 10-Feature wünschen oder einfach nur daran interessiert sind, was in der UWP-Entwicklung möglich ist, lesen Sie diesen Bereich unserer Dokumentation: </br>   [UWP-App-Features](../develop/index.md) </br> Die API-Referenz für Windows 10-Apps ist in einer verwandten Dokumentation enthalten, die Sie hier finden: </br>   [Namespaces der universellen Windows-Plattform](https://docs.microsoft.com/en-us/uwp/api/) </br>   [Datei- und XML-Schemas](https://docs.microsoft.com/uwp/schemas/) |
+| **Design und Benutzeroberfläche** | Alle Informationen zur visuellen Darstellung und Benutzeroberfläche Ihrer App sind in diesem Bereich der Dokumentation enthalten. Wenn Sie an den Besonderheiten der XAML-Markupsprache interessiert sind oder Ihrer Dokumentation lediglich ein einheitliches Erscheinungsbild verleihen möchten, sollten Sie hier beginnen: </br>   [Designgrundlagen für UWP-Apps](../design/basics/index.md) |
+| **Entwickeln von Apps** | Wenn Sie detaillierte Informationen zu einem bestimmten Windows 10-Feature wünschen oder einfach nur daran interessiert sind, was in der UWP-Entwicklung möglich ist, lesen Sie diesen Bereich unserer Dokumentation: </br>   [UWP-App-Features](../develop/index.md) </br> Die API-Referenz für Windows 10-Apps ist in einer verwandten Dokumentation enthalten, die Sie hier finden: </br>   [Namespaces der universellen Windows-Plattform](https://docs.microsoft.com/uwp/api/) </br>   [Datei- und XML-Schemas](https://docs.microsoft.com/uwp/schemas/) |
 | **Entwickeln von Spielen** | Diese Dokumentation enthält Informationen zum Entwickeln von Spielen für Windows oder Xbox. Dazu gehören Setupanweisungen, Entwicklerprogramme und Anweisungen zum Programmieren mit DirectX- oder Xbox-Features. </br>   [Erste Schritte mit der Spieleentwicklung](../gaming/getting-started.md) |
 | **Veröffentlichen** | Diese Dokumentation enthält Informationen darüber, wie Sie Ihre App im Windows Store veröffentlichen – mit Details zur Einreichung der App über die Preisgestaltung bis hin zur Werbung und Kundenbindung: </br>   [Veröffentlichen einer App im Windows Store](../publish/index.md) |
 
@@ -67,8 +67,8 @@ Wenn Sie unsere Lernpfade bereits erkundet haben oder an einem Thema interessier
 
 Für einige spezielle Windows 10-Plattformen, beispielsweise für die Webentwicklung oder Mixed Reality, steht eine eigene Dokumentation zur Verfügung. Erkunden Sie diese Dokumentationen, wenn Sie daran interessiert sind, eine App mit diesen Features zu entwickeln:
 
-| Dokumentation | Beschreibung |
+| Docs | Beschreibung |
 | --- | --- |
 | **Microsoft Azure** | Informationen zur Cloudentwicklung und zu Microsoft Azure finden Sie der [Microsoft Azure-Entwicklerdokumentation](https://docs.microsoft.com/azure/). |
 | **Webentwicklung** | Informationen zu Microsoft Edge, WebVR und anderen Windows-Webentwicklungsfeatures finden Sie in der [Microsoft Edge-Entwicklerdokumentation](https://docs.microsoft.com/microsoft-edge/). |
-| **Windows Mixed Reality** | Mixed Reality verbindet Inhalte der realen Welt und virtuelle Inhalte zu Umgebungen, in denen physische und digitale Objekte nebeneinander existieren. Informationen zum Erstellen von Apps für Microsoft HoloLens und andere immersive Headsets finden Sie in der [Dokumentation für Windows Mixed Reality](https://docs.microsoft.com/en-us/windows/mixed-reality/).|
+| **Windows Mixed Reality** | Mixed Reality verbindet Inhalte der realen Welt und virtuelle Inhalte zu Umgebungen, in denen physische und digitale Objekte nebeneinander existieren. Informationen zum Erstellen von Apps für Microsoft HoloLens und andere immersive Headsets finden Sie in der [Dokumentation für Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/).|

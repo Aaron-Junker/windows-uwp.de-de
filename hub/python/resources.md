@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Microsoft, Windows 10, Tutorials, Onlinekurse, Blogs, Veranstaltungen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8870c1e269eb2c5f049c5431d6360e8c11570c0b
-ms.sourcegitcommit: 4cb3ee28baa8020ec925b0bdd896ab197a1ddadb
+ms.openlocfilehash: 24bda3a9eb76dac2e584540161e551ce6bb7ff4e
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74309172"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683663"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>Ressourcen für die Entwicklung mit Python unter Windows
 
@@ -41,13 +41,13 @@ Eine Liste mit Links, die für Python-Entwickler empfohlen werden, die auf Compu
 
 - [Python-API-Browser:](https://docs.microsoft.com/python/api/?view=azure-python) Ihre zentrale Anlaufstelle für alle Python-basierten APIs von Microsoft.
 
-- [Azure-Codebeispiele mit Python:](https://azure.microsoft.com/en-us/resources/samples/?platform=python&sort=0) Erfahren Sie, wie Sie mithilfe von Python-Code mit Azure-Diensten interagieren.
+- [Azure-Codebeispiele mit Python:](https://azure.microsoft.com/resources/samples/?platform=python&sort=0) Erfahren Sie, wie Sie mithilfe von Python-Code mit Azure-Diensten interagieren.
 
 - [Python und Visual Studio Code:](https://code.visualstudio.com/docs/languages/python) Eine Übersicht über die Verwendung von Python mit VS Code.
 
 ## <a name="online-courses"></a>Onlinekurse
 
-- [Einführung in Python auf Microsoft Learn:](https://docs.microsoft.com/en-us/learn/modules/intro-to-python/) Testen Sie die interaktive Microsoft Learn-Plattform, und gewinnen Sie Erfahrungspunkte für den Abschluss dieses Moduls mit Grundlagen zum Schreiben von einfachem Python-Code, zum Deklarieren von Variablen und zum Arbeiten mit Konsoleneingaben und -ausgaben. Die interaktive Sandboxumgebung ist ein idealer Ausgangspunkt für Benutzer, die noch keine Python-Entwicklungsumgebung eingerichtet haben.
+- [Einführung in Python auf Microsoft Learn:](https://docs.microsoft.com/learn/modules/intro-to-python/) Testen Sie die interaktive Microsoft Learn-Plattform, und gewinnen Sie Erfahrungspunkte für den Abschluss dieses Moduls mit Grundlagen zum Schreiben von einfachem Python-Code, zum Deklarieren von Variablen und zum Arbeiten mit Konsoleneingaben und -ausgaben. Die interaktive Sandboxumgebung ist ein idealer Ausgangspunkt für Benutzer, die noch keine Python-Entwicklungsumgebung eingerichtet haben.
 
 - [Python bei Pluralsight: 8 Kurse, 29 Stunden:](https://app.pluralsight.com/paths/skills/python) Der Python-Lernpfad bei Pluralsight bietet Onlinekurse, die eine Vielzahl von Themen im Zusammenhang mit Python abdecken, einschließlich eines Tools, mit dem Sie Ihre Fähigkeiten messen und Lücken finden können.
 
