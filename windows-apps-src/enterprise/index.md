@@ -2,26 +2,28 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: Diese Roadmap enthält eine Übersicht über wichtige Unternehmensfeatures für Windows 10-Apps und Apps für die Universelle Windows-Plattform (UWP).
 title: Enterprise
-ms.date: 08/30/2018
+ms.date: 01/16/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e005d388e15efe10bede88e77c3ca021b0acad6b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 0a95529f40ef5bb1cbf112c91c385e6621620a01
+ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684943"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125683"
 ---
 # <a name="enterprise"></a>Enterprise
 
 Dieser Artikel enthält eine Übersicht über die wichtigsten Unternehmensfeatures, die von der Universellen Windows-Plattform (UWP) für Windows 10-Apps bereitgestellt werden. Ein Video, in dem einige dieser Features vorgestellt werden, finden Sie unter [Rapidly Construct LOB Applications with UWP and Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502) (Schnelles Erstellen von Branchenanwendungen mit UWP und Visual Studio).
 
+## <a name="feature-highlights"></a>Featurehighlights
+
 <a id="template-studio" />
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio ist eine Visual Studio 2017- und Visual Studio 2019-Erweiterung, die mit einer assistentenbasierten Oberfläche die Erstellung neuer UWP-Apps (Universelle Windows-Plattform) beschleunigt. Das resultierende UWP-Projekt ist wohlgeformter lesbarer Code, der die neuesten Windows 10-Features enthält und dabei bewährte Muster und bewährte Methoden implementiert.
+Windows Template Studio ist eine Visual Studio 2019-Erweiterung, die mit einer assistentenbasierten Oberfläche die Erstellung neuer UWP-Apps (Universelle Windows-Plattform) beschleunigt. Das resultierende UWP-Projekt ist wohlgeformter lesbarer Code, der die neuesten Windows 10-Features enthält und dabei bewährte Muster und bewährte Methoden implementiert.
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
@@ -58,9 +60,9 @@ Informationen hierzu finden Sie unter [Windows UI Library (Preview Version)](htt
 
 <a id="xaml-islands" />
 
-### <a name="uwp-controls-in-desktop-applications"></a>UWP-Steuerelemente in Desktopanwendungen
+### <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>UWP-Steuerelemente in Desktopanwendungen (XAML-Inseln)
 
-Windows 10 ermöglicht Ihnen jetzt die Verwendung von UWP-Steuerelementen in WPF-, Windows Forms- und C++-Win32-Desktopanwendungen. Dies bedeutet, dass Sie das Aussehen, das Erscheinungsbild und die Funktionalität Ihrer vorhandenen Desktopanwendungen mit den aktuellen Windows 10-Benutzeroberflächenfeatures erweitern können, die nur über UWP-Steuerelemente verfügbar sind, z. B. Windows Ink und Steuerelemente, die das Fluent Design-System unterstützen. Dieses Feature wird als „XAML-Inseln“ bezeichnet.
+Windows 10 ermöglicht Ihnen jetzt die Verwendung von UWP-Steuerelementen in WPF-, Windows Forms- und C++-Win32-Desktopanwendungen mithilfe eines Features namens *XAML-Inseln*. Dies bedeutet, dass Sie das Aussehen, das Erscheinungsbild und die Funktionalität Ihrer vorhandenen Desktopanwendungen mit den aktuellen Windows 10-Benutzeroberflächenfeatures erweitern können, die nur über UWP-Steuerelemente verfügbar sind, z. B. Windows Ink und Steuerelemente, die das Fluent Design-System unterstützen. Dieses Feature wird als „XAML-Inseln“ bezeichnet.
 
 Informationen hierzu finden Sie unter [UWP-Steuerelemente in Desktopanwendungen](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls).
 
@@ -86,9 +88,7 @@ Informationen hierzu finden Sie unter [Verwenden einer SQL Server-Datenbank in e
 
 ### <a name="msix-deployment"></a>MSIX-Bereitstellung
 
-MSIX ist das moderne Paketformat für alle Windows-Apps. Beim MSIX-Paket wird die Funktionalität von vorhandenen App-Paketen und Installationsdateien beibehalten, und es werden neue, moderne Verpackungs- und Bereitstellungsfeatures für Win32-, WPF- und Windows Forms-Apps ermöglicht.
-
-MSIX ist ein Paketformat, das auf Sicherheit, Schutz und Zuverlässigkeit ausgelegt ist und auf einer Kombination aus .msi-, .appx-, App-V- und ClickOnce-Installationstechnologien basiert.
+MSIX ist ein Paketformat für Windows-Apps, das die besten Features von MSI, AppX, App-V und ClickOnce kombiniert, um eine moderne und zuverlässige Paketerstellung für alle Windows-Apps zu ermöglichen. Beim MSIX-Paket wird die Funktionalität von vorhandenen App-Paketen und Installationsdateien beibehalten, und es werden moderne Verpackungs- und Bereitstellungsfeatures für Win32-, WPF- und Windows Forms-Apps ermöglicht. 
 
 ![Symbol „MSIX“](images/MSIX-App-Package.ico)
 
@@ -151,11 +151,12 @@ Viele Benutzer bringen in der heutigen Zeit ihre eigenen Telefone oder Tablets z
 
 ## <a name="deployment"></a>Bereitstellung
 
-Es stehen verschiedene Optionen für die Verteilung von Apps für die Benutzer in Ihrer Organisation zur Verfügung. Sie können Microsoft Store für Unternehmen oder die vorhandene mobile Geräteverwaltung nutzen oder Apps auf Geräte querladen. Sie können Ihre Apps auch der Öffentlichkeit zur Verfügung stellen, indem Sie sie im Microsoft Store veröffentlichen.
+Es stehen verschiedene Optionen für die Verteilung von Apps für die Benutzer in Ihrer Organisation mithilfe von MSIX-Paketen zur Verfügung. Sie können eine auf dem App-Installer basierende Bereitstellung konfigurieren, Geräteverwaltungstools wie Microsoft Endpoint Configuration Manager und Microsoft Intune verwenden, im Microsoft Store für Unternehmen veröffentlichen oder Apps Geräte querladen. Sie können Ihre Apps auch der Öffentlichkeit zur Verfügung stellen, indem Sie sie im Microsoft Store veröffentlichen.
 
 | Thema | Beschreibung |
 |-------|-------------|
-| [Verteilen von branchenspezifischen Apps an Unternehmen](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Über den Microsoft Store für Unternehmen können Sie branchenspezifische Apps direkt für Unternehmen veröffentlichen, damit diese Volumenlizenzen erwerben können, ohne die Apps allgemein zur Verfügung zu stellen. |
+| [MSIX-Dokumentation](https://docs.microsoft.com/windows/msix/) | MSIX ist ein Paketformat für Windows-Apps, das die besten Features von MSI, AppX, App-V und ClickOnce kombiniert, um eine moderne und zuverlässige Paketerstellung zu ermöglichen. |
+| [Verteilen von branchenspezifischen Apps an Unternehmen](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | Informieren Sie sich über die Optionen für die Verteilung von Branchenanwendungen, ohne die Apps der Öffentlichkeit auf breiter Basis zugänglich zu machen, z. B. der auf App-Installer basierenden Bereitstellung, Microsoft Endpoint Configuration Manager und Microsoft Intune sowie der Veröffentlichung im Microsoft Store für Unternehmen. |
 | [Querladen von Apps](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | Wenn Sie eine App querladen, stellen Sie ein signiertes App-Paket auf einem Gerät bereit. Das Signieren, Hosten und Bereitstellen dieser Apps wird beibehalten. Der Prozess zum Querladen von Apps ist für Windows 10 optimiert.             |
 | [Veröffentlichen von Apps im Microsoft Store](https://developer.microsoft.com/store/publish-apps) | Im einheitlichen Microsoft Store können Sie Ihre gesamten Apps für alle Windows-Geräte verwalten und veröffentlichen. Passen Sie die Verfügbarkeit Ihrer App mit marktspezifischen Preisen, Steuerelementen für Verteilung und Sichtbarkeit und weiteren Optionen an. |
 
