@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6387cc75047371666ac55b9fb70ae73d3e4c4d64
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: c67d359120b738458d7397c9558f19b4794888f6
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302664"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123842"
 ---
 # <a name="launch-the-windows-settings-app"></a>Starten der Einstellungs-App von Windows
 
@@ -85,7 +85,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Einrichten von Windows Hello | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
 | Registerkarte | ms-settings:yourinfo |
 
-## <a name="apps"></a>Apps
+## <a name="apps"></a>Apps-
 
 |Einstellungsseite| URI |
 |-------------|-----|
@@ -138,7 +138,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Cursor & Zeiger | MS-Settings: easeofakcess-currsorandpointersize |
 | „Anzeige“ | ms-settings:easeofaccess-display |
 | Augensteuerung | ms-settings:easeofaccess-eyecontrol |
-| Schriften | ms-settings:fonts |
+| Fonts | ms-settings:fonts |
 | Hoher Kontrast | ms-settings:easeofaccess-highcontrast |
 | Tastatur | ms-settings:easeofaccess-keyboard |
 | Bildschirmlupe | ms-settings:easeofaccess-magnifier |
@@ -217,7 +217,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Taskleiste | ms-settings:taskbar |
 | „Designs“ | ms-settings:themes |
 
-## <a name="phone"></a>Telefone
+## <a name="phone"></a>Anschluss
 
 |Einstellungsseite| URI |
 |-------------|-----|
@@ -243,17 +243,18 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Eyetracker | ms-settings:privacy-eyetracker (Eyetracker-Hardware erforderlich) |
 | Feedback und Diagnose | ms-settings:privacy-feedback |
 | Dateisystem | ms-settings:privacy-broadfilesystemaccess |
-| „Allgemein“ | ms-settings:privacy-general |
+| „Allgemein“ | MS-Settings: Privacy oder MS-Settings: Privacy (allgemein) |
+| Eingabe & Eingabe |ms-settings:privacy-speechtyping |
 | Pfad | ms-settings:privacy-location |
-| Nachrichten | ms-settings:privacy-messaging |
+| Messaging | ms-settings:privacy-messaging |
 | Mikrofon | ms-settings:privacy-microphone |
 | Bewegung | ms-settings:privacy-motion |
 | Benachrichtigungen | ms-settings:privacy-notifications |
 | Weitere Geräte | ms-settings:privacy-customdevices |
-| Bilder | ms-settings:privacy-pictures |
 | Telefonanrufe | MS-Settings: Privacy-phonecalls |
+| Bilder | ms-settings:privacy-pictures |
 | Funkempfang | ms-settings:privacy-radios |
-| Spracherkennung, Freihand und Eingabe |ms-settings:privacy-speechtyping |
+| Spracherkennung | MS-Settings: Privacy-Speech |
 | Aufgaben | ms-settings:privacy-tasks |
 | Videos | ms-settings:privacy-videos |
 | Sprach Aktivierung | MS-Settings: Privacy-voiceactivation |
@@ -272,7 +273,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 
 |Einstellungsseite| URI |
 |-------------|-----|
-| Info | ms-settings:about |
+| Informationen zu | ms-settings:about |
 | Erweiterte Anzeigeeinstellungen | ms-settings:display-advanced (nur verfügbar auf Geräten, die erweiterte Anzeigeeinstellungen) |
 | App-Volumen und Geräteeinstellungen | MS-Settings: apps-Volume (**in Windows 10, Version 1903 hinzugefügt**)|
 | Stromsparmodus | ms-settings:batterysaver (nur verfügbar auf Geräten mit Akku, z. B. Tablets) |
@@ -287,20 +288,20 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Verschlüsselung | ms-settings:deviceencryption |
 | Fokus-Assist | ms-settings:quiethours <br> ms-settings:quietmomentshome |
 | Einstellungen für Grafiken | ms-settings:display-advancedgraphics (nur verfügbar auf Geräten, die erweiterte Anzeigeeinstellungen) |
-| Nachrichten | ms-settings:messaging |
+| Messaging | ms-settings:messaging |
 | Multitasking | ms-settings:multitasking |
 | Einstellungen „Nachtmodus” | ms-settings:nightlight |
-| Telefone | ms-settings:phone-defaultapps |
+| Anschluss | ms-settings:phone-defaultapps |
 | Projektion auf diesen PC | ms-settings:project |
 | Gemeinsame Erfahrung | ms-settings:crossdevice |
 | Tablet-Modus | ms-settings:tabletmode |
 | Taskleiste | ms-settings:taskbar |
 | Benachrichtigungen & Infos | ms-settings:notifications |
 | Remotedesktop | Einstellungen „Remotedesktop” |
-| Telefone | MS-Settings: Phone (**veraltet in Windows 10, Version 1809 und**höher) |
+| Anschluss | MS-Settings: Phone (**veraltet in Windows 10, Version 1809 und**höher) |
 | Ein/Aus und Standbymodus | ms-settings:powersleep |
 | Sound | MS-Settings: Sound |
-| Speicher | ms-settings:storagesense |
+| „Speicher“. | ms-settings:storagesense |
 | Speicheroptimierung | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>Zeit und Sprache
@@ -333,7 +334,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
 | Windows-Update – Updateverlauf anzeigen | ms-settings:windowsupdate-history |
 
-## <a name="user--accounts"></a>Benutzerkonten
+## <a name="user-accounts"></a>Benutzerkonten
 
 |Einstellungsseite| URI |
 |-------------|-----|
