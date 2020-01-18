@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Mobilfunkanbieter, mobile Abrechnung, Abrechnung über den Mobilfunkanbieter
 ms.localizationpriority: medium
-ms.openlocfilehash: 606267080ced6ea8dd41f8f05ddcdee4d33b00f2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: af682d2a17e10bf1c3b3cdcb3485315a6972eb9f
+ms.sourcegitcommit: e38946d8228293fca7d6c2b4d66e8e8f0d349e92
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259967"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76258355"
 ---
 # <a name="mobile-operator-billing"></a>Abrechnung über den Mobilfunkanbieter
 
@@ -44,6 +44,7 @@ Die Abrechnung über den Mobilfunkanbieter wird aktuell von den folgenden Mobilf
 | Polen               | Orange, Play                                            |
 | Singapur            | M1 Limited, Starhub                                     |
 | Slowakei             | Slovak Telekom                                          |
+| Südafrika         | Vodacom                                                 |
 | Spanien                | Orange                                                  |
 | Schweden               | Telenor, 3                                              |
 | Schweiz          | Swisscom, Sunrise                                       |

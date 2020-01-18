@@ -1,19 +1,19 @@
 ---
-Description: Die Auszahlungsübersicht enthält Details zu den mit Ihren Apps und Add-Ons erzielten Erlösen. Sie werden auch darüber informiert, wann Sie Zahlungen erhalten und wie hoch diese Zahlungen sind.
-title: Auszahlungsübersicht
+Description: In den Auszahlungs Berichten werden Details zu den Kosten angezeigt, die Sie mit ihren apps und Add-ons erworben haben. Sie werden auch darüber informiert, wann Sie Zahlungen erhalten und wie hoch diese Zahlungen sind.
+title: Auszahlungsberichte
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
 keywords: Windows 10 UWP, Auszahlungszusammenfassung, Anweisung, Zahlungen, Einnahmen, Auszahlung, Einnahmen
 ms.localizationpriority: medium
-ms.openlocfilehash: aff36ace40317ff0b2ff54a8ca75381fe2c24a4e
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: f4d8727a48cd68b304d515fe34082b4c4f632b4b
+ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684994"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265053"
 ---
-# <a name="payout-summary"></a>Auszahlungsübersicht
+# <a name="payout-reports"></a>Auszahlungsberichte
 
 Die **Zahlungsübersicht** enthält Einzelheiten zu dem Betrag, den Sie mit Ihrem Angebot eingenommen haben. Sie werden auch darüber informiert, wann Sie Zahlungen erhalten und wie hoch diese Zahlungen sind.
 
@@ -22,12 +22,23 @@ Wenn Sie Produkte im Azure Marketplace verkaufen, werden Ihnen in der **Auszahlu
 > [!NOTE]
 > Qualifiziert für eine Auszahlung sind Beträge, die den [Zahlungsschwellenwert](payment-thresholds-methods-and-timeframes.md) von 50 US-Dollar erreichen. Weitere Informationen zum Schwellenwert für die Zahlung finden Sie auf dieser Seite, und lesen Sie die App-Entwickler Vereinbarung.
 
+> [!NOTE]
+> Wenden Sie sich an den Support, wenn Sie [nach Unterstützung](https://developer.microsoft.com/windows/support)bezüglich der Auszahlungen suchen möchten, einschließlich der Konfiguration von Auszahlungs Konten, fehlender Auszahlungen, dem Aufbewahren von Auszahlungen oder sonstigen anderen.
+
 ## <a name="access-the-payout-summary-pages"></a>Zugreifen auf die Auszahlungs Zusammenfassungs Seiten
 
 So öffnen Sie eine der Auszahlungs Zusammenfassungs Seiten:
 
-1. Wählen Sie in der oberen rechten Ecke das Symbol Money aus.
-2. Wählen Sie Zahlungen, Transaktionsverlauf oder Daten exportieren aus.
+1. Wählen Sie in der oberen rechten Ecke das Auszahlungs Symbol aus.
+2. Wählen Sie Transaktionsverlauf, Zahlungen oder Daten exportieren aus.
+
+## <a name="transaction-history-page"></a>Seite "Transaktionsverlauf"
+
+Auf dieser Seite werden alle individuellen Einnahmen angezeigt, einschließlich des Datums, des Typs und des Erwerbs für jede. Sie können einen Zeitraum auswählen, der angezeigt werden soll. Außerdem können Sie nach Registrierungs-ID, Programm, Zahlungs-ID, erzahltyp, Hebel und Status filtern. Daten sind für das aktuelle Geschäftsjahr (1. Juli – 30. Juni) und die letzten beiden Geschäftsjahre verfügbar.
+
+Wählen Sie den Pfeil nach unten auf der rechten Seite der Seite aus, um weitere Details zu einem Erwerbs Bereich anzuzeigen. Dadurch werden der Hebel, der Umsatz und das Produkt angezeigt. Wenn eine dieser Daten aus irgendeinem Grund nicht verfügbar ist, Sie aber darauf zugreifen müssen, wenden Sie sich an den [Support](https://developer.microsoft.com/windows/support). Wenn das Ergebnis einer Anpassung und nicht einer Transaktion entspricht, werden die Produktfelder nicht angezeigt.
+
+Um Transaktionsdaten auf dieser Seite zu exportieren, verwenden Sie die Seite **Daten exportieren** .
 
 ## <a name="payments-page"></a>Seite "Zahlungen"
 
@@ -78,7 +89,9 @@ Anmerkungen:
 - Die Seite "Daten exportieren" wird nicht eigenständig aktualisiert. Möglicherweise müssen Sie die Seite manuell aktualisieren, um die neuesten Daten anzuzeigen.
 - Der Filter führt möglicherweise zu einem Fehler, der nicht verfügbar ist. Dies bedeutet wahrscheinlich, dass Sie den Standard Zeitraum in drei Monaten ausgewählt haben und dann eine Zahlungs-ID aus einem Verdienst außerhalb dieses Zeitraums ausgewählt haben. Erweitern Sie den Zeitraum, und versuchen Sie es noch mal.
 
-## <a name="payment-download-export"></a>Zahlungs Download Export
+## <a name="payments"></a>Zahlungen
+
+![Exportieren von Zahlungen](images/pc-export-payments.png)
 
 Mit dieser Option können Sie die Zahlungen, die Sie in Ihrer Bank für ein bestimmtes Programm erhalten haben, sowie die zugehörigen Steuern und den aggregierten Erwerbs Betrag herunterladen. Dieser Bericht wird für viele Partner Center-Programme verwendet, sodass einige Spalten für den Bericht möglicherweise nicht zutreffend sind. Diese Spalten sind unten markiert.
 
@@ -95,13 +108,15 @@ Mit dieser Option können Sie die Zahlungen, die Sie in Ihrer Bank für ein best
 | servicefeetax            | Gesamtmenge der servicefeetax in "Pay-to-Currency" für das Programm/die "participantid" (gilt nur für Store-Programme und Azure Marketplace) |
 | totalpayment             | Gesamtzahlung in der lokalen Währung ohne die zurück Haltungs Steuern und einschließlich der Umsatzsteuer (falls zutreffend) für die Programm/participantid   |
 | currencyCode             | Bezahlen an Währungscode                                                                                                                      |
-| PaymentMethod            | Die Methode, mit der der Partner bezahlt wird, z. b. elektronischer Bank Transfer, Bonitäts Hinweis                                                             |
+| PaymentMethod            | Die Methode, mit der der Partner bezahlt wird, z. b. elektronischer Bank Transfer, Bonitäts Hinweis                                                     |
 | PaymentID                | Eindeutige ID für die Zahlung. Diese Zahl ist normalerweise in der Bank-Anweisung sichtbar. (gilt nur für SAP-Zahlungen)              |
 | paymentStatus            | Zahlungsstatus                                                                                                                            |
 | paymentStatusDescription | Benutzerfreundliche Beschreibung des Zahlungsstatus                                                                                                    |
 | paymentdate              | Die Datums Zahlung wurde von Microsoft gesendet.                                                                                                      |
 
-## <a name="transaction-history-download-export"></a>Download des exportierten Transaktionsverlaufs
+## <a name="transaction-history"></a>Transaktionsverlauf
+
+![Transaktionsverlauf exportieren](images/pc-export-transaction.png)
 
 Mit dieser Option können Sie jedes auf der Seite Transaktionsverlauf gelaufene Element auf der Seite Transaktionsverlauf herunterladen, den Typ, das Datum, die zugehörige Transaktions Menge, den Kunden, das Produkt und andere Transaktionsdetails, die für Ihre Programme gelten, erwerben.
 
@@ -122,7 +137,7 @@ Mit dieser Option können Sie jedes auf der Seite Transaktionsverlauf gelaufene 
 | lever                          | Geschäftsregel für die Einnahme                                                                                                  | Alle                                                            |
 | earningrate                    | Auf den Transaktionsbetrag angewendete Incentive-Rate zum Generieren einer Einnahme                                                                      | Alle                                                            |
 | quantity                       | Abhängig vom Programm. Gibt die in Rechnung gestellte Menge für Transaktionsprogramme an                                                            | Alle                                                            |
-| quantityType                   | Gibt den Typ der Menge an, z. b. berechnete Menge, Mau                                                                                     | Alle                                                            |
+| quantityType                   | Gibt den Typ der Menge an, z. b. berechnete Menge, Mau                                                                             | Alle                                                            |
 | earningType                    | Gibt an, ob es sich um eine Gebühr, einen Rabatt, Coop, Verkauf usw. handelt.                                                                                          | Alle                                                            |
 | earningamount                  | Einnahmebetrag in der ursprünglichen Transaktionswährung                                                                                      | Alle                                                            |
 | earningAmountUSD               | Einnahmebetrag in US-Dollar                                                                                                                    | Alle                                                            |
@@ -177,3 +192,46 @@ Mit dieser Option können Sie jedes auf der Seite Transaktionsverlauf gelaufene 
 | Mandanten-ID                       |                                                                                                                                          | Incentive-Programme                                             |
 | externalReferenceId            | Eindeutige ID für das Programm                                                                                                        | Direct Pay-Programme (Incentive und Store)                      |
 | externalReferenceIdLabel       | Beschriftung der eindeutigen ID                                                                                                                  | Direct Pay-Programme (Incentive und Store)                      |
+
+## <a name="historical-statements"></a>Verlaufs Anweisungen
+
+![Exportieren von Verlaufs Anweisungen](images/pc-export-statements.png)
+
+Der Transaktionsverlauf von vor dem 1 2019 wird separat behandelt. -Anweisungen verwenden die folgenden Felder anstelle der aktuellen Felder.
+
+> [!NOTE]
+> Der Legacy Transaktionsverlauf verfügt über eine Spalte mit dem Namen "reserviert", die der Spalte "Gewinn" im modernen Verlauf entspricht, mit dem Unterschied, dass der gesamte Gewinn mit Status = "Payment sent" ausgeschlossen wird.
+
+> [!NOTE]
+> Filter (3M, 6M, 12M usw.) gelten nicht für den Abschnitt mit den **historischen Anweisungen** .
+
+| Name des Felds              | Beschreibung                                                                                                                                                             |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Umsatzquelle          | Die Quelle der Umsätze, basierend auf dem Transaktionsort (z. B. Microsoft Store, Windows Phone Store, Microsoft Store 8, Werbung usw.).                  |
+| Bestellnummer                | Eindeutiger Bezeichner für die Bestellung. Anhand dieser ID können Sie kaufbezogene Transaktionen und die entsprechenden Transaktionen, die sich nicht auf Käufe beziehen (z. B. Erstattungen, Rückvergütungen usw.), ermitteln. Beide Arten von Transaktionen besitzen die gleiche Bestell-ID. Im Fall einer aufgeteilten Belastung, bei der mehrere Zahlungsmethoden für einen einzelnen Einkauf verwendet wurden, können Sie die kaufbezogenen Transaktionen verknüpfen. |
+| Transaktions-ID          | Eindeutige Transaktions-ID.                                                                                                                                          |
+| Datum/Uhrzeit der Transaktion   | Das Datum und die Uhrzeit der Transaktion (UTC).                                                                                                                       |
+| Übergeordnete Produkt-ID       | Eindeutige übergeordnete Produkt-ID. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet die ID des übergeordneten Produkts „Produkt-ID“.                                |
+| Produkt-ID              | Eindeutige Produkt-ID.                                                                                                                                              |
+| Name des übergeordneten Produkts     | Name des übergeordneten Produkts. Hinweis: Wenn für die Transaktion kein übergeordnetes Produkt vorhanden ist, lautet der Name des übergeordneten Produkts „Produktname“.                                  |
+| Produktname            | Name des Produkts.                                                                                                                                                    |
+| Produkttyp            | Art des Produkts (z. B. App, Add-On, Spiel usw.)                                                                                                                       |
+| Anzahl                | Wenn die Umsatzquelle „Microsoft Store für Unternehmen“ ist, gibt die Menge die Anzahl der erworben Lizenzen an. Für alle anderen Umsatzquellen ist die Menge immer 1. Hinweis: Auch wenn eine Transaktion in zwei Positionen unterteilt wird, weil zwei verschiedene Zahlungsmethoden verwendet wurden, wird für jede Position die Menge 1 angezeigt. |
+| Transaktionstyp        | Art der Transaktion (z. B. Einkauf, Erstattung, Rückbuchung, Ausgleich usw.)                                                                                              |
+| Zahlungsmethode          | Kundenzahlungsmittel, das für die Transaktion verwendet wird (z. B. Kreditkarte, Mobilfunkanbieterrechnung, PayPal usw.)                                                               |
+| Land/Region        | Land/Region, in dem die Transaktion durchgeführt wurde.                                                                                                                          |
+| Lokaler Anbieter/Verkäufer | Eingetragener lokaler Anbieter/Verkäufer.                                                                                                                                        |
+| Transaktionswährung    | Währung der Transaktion.                                                                                                                                            |
+| Transaktionsbetrag      | Betrag der Transaktion.                                                                                                                                              |
+| Bezahlte Steuern            | Höhe der bezahlten Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer).                                                                                                                  |
+| Nettoeinnahmen            | Transaktionsbetrag minus bezahlter Steuern.                                                                                                                                   |
+| Store-Gebühr               | Der Prozentsatz der Nettoeinnahmen, die von Microsoft als Gebühr für das Verfügbarmachen der App oder des Add-Ons im Store erhoben wird                                                      |
+| App-Erlöse            | Nettoeinnahmen abzüglich der Store-Gebühr.                                                                                                                                       |
+| Einbehaltene Steuern          | Höhe der einbehaltenen Einkommensteuer. (Nicht enthalten in der **reservierten** .csv-Datei.)                                                                                                |
+| Auszahlung                 | App-Erlöse abzüglich aller geltenden Steuereinbehaltungen (Betrag angezeigt in Transaktionswährung). (Nicht enthalten in der **reservierten** .csv-Datei.)                               |
+| Wechselkurs                 | Wechselkurs für die Umrechnung der Transaktionswährung in die Auszahlungswährung.                                                                                         |
+| Auszahlungswährung        | Währung der Auszahlung.                                                                                                                                       |
+| Umgerechnete Auszahlung       | Basierend auf dem Wechselkurs in die Auszahlungswährung umgerechneter Auszahlungsbetrag.                                                                                                         |
+| Steuerzahlungsmodell         | Für die Überweisung von Steuern (Verkaufssteuer, Gebrauchssteuer, Umsatzsteuer oder Waren-/Dienstleistungssteuer) zuständige Partei.                                                                                                   |
+| Qualifikationsdatum/Uhrzeit   | Datum und Uhrzeit, an dem/zu der der Transaktionserlös zur Auszahlung qualifiziert wird (UTC). Wenn eine Auszahlung erstellt wird, enthält diese Transaktionserlöse, die einen Qualifizierungszeitpunkt enthalten, der vor dem Erstellungsdatum der Auszahlung liegt. (Nur enthalten in der **reservierten** .csv-Datei.) |
+| Gebühren                 | Zeigt eine Aufschlüsselung aller Gebührendetails, aggregiert in der Spalte „Transaktionsbetrag“. (Nur für Azure Marketplace; nicht enthalten in der **reservierten** .csv-Datei.) |
