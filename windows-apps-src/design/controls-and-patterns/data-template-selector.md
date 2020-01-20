@@ -7,12 +7,12 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: anawish
-ms.openlocfilehash: 956ac13dcdc1a2e6367e590bb8885c8722f41e2c
-ms.sourcegitcommit: cb7f80100c99d4b6466a819bea191006ec3d616c
+ms.openlocfilehash: d388e1f4b3f1b1be4e265185934a02b6ccd20064
+ms.sourcegitcommit: 87c20c6a40ed54e086adbe80caa509d851f54f57
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73640877"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76123852"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>Datenvorlagenauswahl: Formatieren von Elementen basierend auf ihren Eigenschaften
 
@@ -31,7 +31,7 @@ Das angepasste Design von Sammlungssteuerelementen wird von einem [DataTemplate]
 
 Im Allgemeinen sollten Sie nicht jedem Element in einem ListView- oder GridView-Steuerelement ein vollkommen anderes Layout/Format zuweisen. Dies wäre eine schlechte Verwendung der Datenvorlagenauswahl und wirkt sich negativ auf die Leistung aus.
 
-Bestimmte Elemente der visuellen Darstellung eines Listenelements können mithilfe von nur einer Datenvorlage gesteuert werden, indem bestimmte Eigenschaften gebunden werden. Beispielsweise können Elemente jeweils unterschiedliche Symbole aufweisen, indem sie an eine Symbolquelleigenschaft in der Datenvorlage gebunden werden und jedem Element ein anderer Wert für diese Symbolquelleigenschaft zugewiesen wird. Dadurch wird eine bessere Leistung erzielt als bei Verwendung von „DataTemplateSelector“.
+Bestimmte Elemente der visuellen Darstellung eines Listenelements können mithilfe von nur einer Datenvorlage gesteuert werden, indem bestimmte Eigenschaften gebunden werden. Beispielsweise können Elemente jeweils ein unterschiedliches Symbol aufweisen, indem sie an eine Symbolquelleigenschaft in der Datenvorlage gebunden werden und jedem Element ein anderer Wert für diese Symbolquelleigenschaft zugewiesen wird. Dadurch wird eine bessere Leistung erzielt als bei Verwendung von „DataTemplateSelector“.
 
 ## <a name="when-to-use-a-datatemplateselector"></a>Wann „DataTemplateSelector“ verwendet werden sollte
 

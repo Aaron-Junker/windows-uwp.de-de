@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, Winrt, COM, Komponente, Klasse, Schnittstelle
 ms.localizationpriority: medium
-ms.openlocfilehash: bb28ec7afa22f81033bfce2aff530119e53a4b91
-ms.sourcegitcommit: 7585bf66405b307d7ed7788d49003dc4ddba65e6
+ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
+ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660149"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75928816"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Verwenden von COM-Komponenten mit C++/WinRT
 
@@ -18,7 +18,7 @@ Sie können die Möglichkeiten der [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/i
 
 Am Ende dieses Themas finden Sie eine vollständige Quellcodeauflistung für eine minimale Direct2D-Anwendung. Wir greifen Ausschnitte aus diesem Code heraus und verwenden sie, um das Nutzen von COM-Komponenten mithilfe von C++/WinRT unter Verwendung verschiedener Möglichkeiten der C++/WinRT-Bibliothek zu veranschaulichen.
 
-## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>Intelligente COM-Zeiger ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>Intelligente COM-Zeiger ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 Beim Programmieren mit COM arbeiten Sie direkt mit Schnittstellen statt mit Objekten (das trifft auch hinter den Kulissen auf Windows Runtime-APIs zu, die eine Weiterentwicklung von COM darstellen). Um beispielsweise eine Funktion einer COM-Klasse aufzurufen, aktivieren Sie die Klasse, erhalten eine Schnittstelle zurück und rufen dann Funktionen auf dieser Schnittstelle auf. Um auf den Status eines Objekts zuzugreifen, greifen Sie nicht direkt auf seine Datenmember zu; stattdessen rufen Sie Accessor- und Mutatorfunktionen auf einer Schnittstelle auf.
 
@@ -81,7 +81,7 @@ DWriteCreateFactory(
     reinterpret_cast<IUnknown**>(dwriteFactory2.put()));
 ```
 
-## <a name="re-seat-a-winrtcomptr"></a>Neuzuweisen eines **winrt::com_ptr**
+## <a name="re-seat-a-winrtcom_ptr"></a>Neuzuweisen eines **winrt::com_ptr**
 
 > [!IMPORTANT]
 > Wenn Sie über einen [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) verfügen, der bereits zugewiesen ist (sein interner nackter Zeiger hat bereits ein Ziel), und Sie möchten ihn neu zuweisen, sodass er auf ein anderes Objekt verweist, müssen Sie ihm zuerst `nullptr` zuweisen &mdash; wie im Codebeispiel oben gezeigt. Wenn Sie das versäumen, bringt Ihnen ein bereits zugewiesener **com_ptr** das Problem zu Bewusstsein (wenn Sie [**com_ptr::put**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptr_put-function) oder [**com_ptr::put_void**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrput_void-function) aufrufen), indem er behauptet, dass sein interner Zeiger nicht NULL ist.
@@ -169,7 +169,11 @@ Verwenden Sie alternativ [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#co
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>Vollständige Quellcodeauflistung einer minimalen Direct2D-Anwendung
 
-Wenn Sie dieses Codebeispiel erstellen und ausführen möchten, erstellen Sie zunächst in Visual Studio eine neue **Core App (C++/WinRT)** . `Direct2D` ist ein sinnvoller Name für das Projekt, Sie können aber auch jeden gewünschten anderen verwenden. Öffnen Sie `App.cpp`, löschen Sie den gesamten Inhalt, und fügen Sie das unten aufgeführte Listing ein.
+Wenn Sie dieses Codebeispiel erstellen und ausführen möchten, erstellen Sie zunächst in Visual Studio eine neue **Core App (C++/WinRT)** . `Direct2D` ist ein sinnvoller Name für das Projekt, Sie können aber auch jeden gewünschten anderen verwenden.
+
+Öffnen Sie `pch.h`, und fügen Sie `#include <unknwn.h>` unmittelbar nach dem Einschließen von `windows.h` hinzu.
+
+Öffnen Sie `App.cpp`, löschen Sie den gesamten Inhalt, und fügen Sie das unten aufgeführte Listing ein.
 
 Der Code unten verwendet wo immer möglich die Funktion [winrt::com_ptr::capture function](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcapture-function). `WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
 
@@ -491,7 +495,7 @@ Wie Sie sehen können, bietet C++/WinRT sowohl für das Implementieren als auch 
 
 ## <a name="avoiding-namespace-collisions"></a>Vermeiden von Namespacekonflikten
 
-Wie aus der Codeauflistung in diesem Thema zu ersehen ist, werden in C++/WinRT häufig using-Direktiven verwendet. In einigen Fällen kann dies jedoch dazu führen, dass in den globalen Namespace Namen importiert werden, die miteinander in Konflikt stehen. Hier sehen Sie ein Beispiel.
+Wie aus der Codeauflistung in diesem Thema zu ersehen ist, werden in C++/WinRT häufig using-Direktiven verwendet. In einigen Fällen kann dies jedoch dazu führen, dass in den globalen Namespace Namen importiert werden, die miteinander in Konflikt stehen. Hier ist ein Beispiel.
 
 C++/WinRT enthält einen Typ mit dem Namen [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown), während in COM ein Typ mit dem Namen [ **::IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) definiert ist. Betrachten Sie folgenden Code in einem C++/WinRT-Projekt, das COM-Header verwendet.
 
