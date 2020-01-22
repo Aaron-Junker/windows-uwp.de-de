@@ -127,7 +127,7 @@ Control | Verwendung | Beispiel
 ### <a name="lists"></a>Listen
 Control | Verwendung | Beispiel
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Starten im kompakten Modus und Erweitern, um die Liste der auswählbaren Elemente anzuzeigen | Auswählen aus einer langen Liste von Elementen, z. B. Status oder Länder
+[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Starten im kompakten Modus und Erweitern, um die Liste der auswählbaren Elemente anzuzeigen | Auswählen aus einer langen Liste von Elementen, z. B. Status oder Länder/Regionen
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Kategorisieren von Elementen und Zuweisen von Gruppenüberschriften, Verschieben von Elementen per Drag & Drop, Überprüfen von Inhalten und Neuanordnen von Elementen | Bilden einer Rangfolge für Optionen
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Anordnen und Durchsuchen von bildbasierten Sammlungen | Auswählen eines Fotos, einer Farbe oder Anzeigedesigns
 

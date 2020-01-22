@@ -76,7 +76,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Kongo, Demokratische Republik                      | Ja               | Ja                                      | Ja    | Nein              |
 | Kongo, Republik               | Ja               | Ja                                      | Ja    | Nein              |
 | Costa Rica                       | Ja               | Ja                                      | Ja    | Ja             |
-| Elfenbeinküste                    | Ja               | Ja                                      | Ja    | Nein              |
+| Côte d’Ivoire                    | Ja               | Ja                                      | Ja    | Nein              |
 | Kroatien                          | Ja               | Ja                                      | Ja    | Nein              |
 | Zypern                           | Ja               | Ja                                      | Ja    | Ja             |
 | Tschechische Republik                   | Ja               | Ja                                      | Ja    | Ja             |
