@@ -62,7 +62,7 @@ ms.locfileid: "71705566"
 <p>Anforderungen zur Plattformunterstützung zu den Anforderungen zur Geräteunterstützung in Abschnitt 10.4.1 hinzugefügt.</p>
 <p>Abschnitt 10.3.3 mit ausführlichen Anforderungen an Geschenkgutscheine entfernt.</p>
 <p>Abschnitt 10.4.4 mit Anforderungen zur Schaltfläche „Zurück“ vereinfacht.</p>
-<p>Abschnitt 10.5.1 aktualisiert; Anforderungen an Gerätestandort in neuen Abschnitt 10.5.7 verschoben; Produkte für Edge-Erweiterungen und Desktop-Brücke um Anforderung an Datenschutzerklärung aktualisiert.</p>
+<p>Abschnitt 10.5.1 aktualisiert; Anforderungen an Gerätestandort in neuen Abschnitt 10.5.7 verschoben; Produkte für Microsoft Edge-Erweiterungen und Desktop-Brücke um Anforderung an Datenschutzerklärung aktualisiert.</p>
 <p>Abschnitt 10.5.6 hinzugefügt, um Anforderungen für die Verwendung der Microsoft-Identifikationsauthentifizierung zu spezifizieren.</p>
 <p>Abschnitt 10.5.7 hinzugefügt, um Anforderungen an Gerätestandort zu spezifizieren, einschließlich der Zustimmung zur Verwendung von Standortdaten.</p>
 <p>Abschnitt 10.8.2 aktualisiert, um Anforderungen für den Empfang von Spenden von Nutzern hinzuzufügen.</p>
@@ -136,7 +136,7 @@ ms.locfileid: "71705566"
 <p>Aktualisierung des Abschnitts „Nutzbarkeit“ (10.4.2) zur Verdeutlichung der Anforderungen</p>
 <p>Aktualisierung des Abschnitts „Persönliche Daten“ (10.5) mit der Beschreibung der Beteiligten, denen persönliche Informationen offengelegt werden (in 10.5.1 und 10.5.2) sowie Ergänzung um die Abschnitte 10.5.4 und 10.5.5</p>
 <p>Aktualisierung des Abschnitts „Finanztransaktionen“ (10.8) mit der Ergänzung der virtuellen Währung und des Abschnitts 10.8.1, aus dem der Aktivierungszeitraum für die Implementierung von MS IAP für digitale Waren entfernt wurde.</p>
-<p>Hinzugefügt: Edge-Erweiterungen (10.12)</p>
+<p>Hinzugefügt: Microsoft Edge-Erweiterungen (10.12)</p>
 <p>Hinzugefügt: Xbox One (10.13)</p>
 <p>Aktualisierung des Abschnitts „Anstößiger Inhalt“ (11.5); dieser gilt nun explizit für Metadaten und umfasst sensible Inhalte.</p>
 <p>Aktualisierung der Verhaltensregeln; explizit eingeschlossen ist nun der unberechtigte Zugriff auf persönliche Informationen bzw. deren unberechtigte Nutzung.</p></td>

@@ -1,19 +1,19 @@
 ---
 description: In diesem Artikel wird beschrieben, wie Sie die XAML-Benutzeroberfläche C++ von UWP in Ihrer Desktop-Win32-App
 title: Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, Win32, XAML-Inseln
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9e4fdc8366e26bcd7e106bf070cb42ed2cd1a49f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683683"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520425"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
 
@@ -55,7 +55,7 @@ Wählen Sie eine der folgenden Optionen aus, um Ihr Projekt für die Bereitstell
     1. Installieren Sie das SDK für Windows 10, Version 1903 (Version 10.0.18362) oder eine spätere Version.
     2. Verpacken Sie Ihre APP in einem msix-Paket, indem Sie der Projekt Mappe ein [Windows-Anwendungs](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) Paket hinzufügen und C++einen Verweis auf das/Win32-Projekt hinzufügen.
 
-* **Installieren Sie das Paket "Microsoft. Toolkit. Win32. UI. SDK**". Wenn Sie Ihre APP nicht in einem msix-Paket verpacken möchten, können Sie [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0-preview7 oder höher) installieren. Dieses Paket enthält mehrere Build-und Lauf Zeit Objekte, die es ermöglichen, dass XAML-Inseln in der App funktionieren. Stellen Sie sicher, dass die Option **Vorabversion einschließen** ausgewählt ist, damit Sie die neuesten Vorschau Versionen dieses Pakets anzeigen können.
+* **Installieren Sie das Paket "Microsoft. Toolkit. Win32. UI. SDK**". Wenn Sie Ihre APP nicht in einem msix-Paket verpacken möchten, können Sie [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0 oder höher) installieren. Dieses Paket enthält mehrere Build-und Lauf Zeit Objekte, die es ermöglichen, dass XAML-Inseln in der App funktionieren.
 
 > [!NOTE]
 > In früheren Versionen dieser Anweisungen haben Sie das `maxversiontested`-Element einem Anwendungs Manifest in Ihrem Projekt hinzugefügt. Solange Sie eine der oben aufgeführten Optionen verwenden, müssen Sie dieses Element nicht mehr dem Manifest hinzufügen.
@@ -125,7 +125,7 @@ In diesem Abschnitt werden Sie durch den Prozess der Verwendung der UWP-XAML-Hos
 4. Installieren Sie das nuget-Paket " [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) ":
 
     1. Vergewissern Sie sich, dass im Fenster **nuget-Paket-Manager** die Option **Vorabversion einschließen** ausgewählt ist.
-    2. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) , und installieren Sie Version v 6.0.0-preview7 (oder höher) dieses Pakets.
+    2. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) , und installieren Sie Version v 6.0.0 (oder höher) dieses Pakets.
 
 ### <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>Verwenden der XAML-Hosting-API zum Hosten eines UWP-Steuer Elements
 

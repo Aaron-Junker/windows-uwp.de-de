@@ -1,19 +1,19 @@
 ---
 description: In diesem Artikel wird veranschaulicht, wie Sie ein benutzerdefiniertes UWP-Steuerelement in einer WPF-App mit XAML-Inseln hosten.
 title: Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln, benutzerdefinierte Steuerelemente, Benutzer Steuerelemente, Host Steuerelemente
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: af8ef4d8fb8661e4a8f2d6b1fb98dd19cbd567c1
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 4fb6e2d4fc13d90ec69f962e69b1ee8cb5c1361c
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302524"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520395"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
@@ -53,9 +53,9 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 5. Vergewissern Sie sich, dass im Fenster **nuget-Paket-Manager** die Option **Vorabversion einschließen** ausgewählt ist.
 
-6. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Toolkit. WPF. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) (Version v 6.0.0-preview7 oder höher), und installieren Sie das Paket. Dieses Paket enthält alles, was Sie benötigen, um das **windowsxamlhost** -Steuerelement zum Hosten eines UWP-Steuer Elements zu verwenden, einschließlich anderer verwandter nuget-Pakete.
+6. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Toolkit. WPF. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) (Version v 6.0.0 oder höher), und installieren Sie das Paket. Dieses Paket enthält alles, was Sie benötigen, um das **windowsxamlhost** -Steuerelement zum Hosten eines UWP-Steuer Elements zu verwenden, einschließlich anderer verwandter nuget-Pakete.
     > [!NOTE]
-    > Windows Forms-apps müssen das [Microsoft. Toolkit. Forms. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) -Paket (Version v 6.0.0-preview7 oder höher) verwenden.
+    > Windows Forms-apps müssen das [Microsoft. Toolkit. Forms. UI. xamlhost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) -Paket (Version v 6.0.0 oder höher) verwenden.
 
 7. Konfigurieren Sie die Lösung so, dass Sie auf eine bestimmte Plattform wie x86 oder x64 ausgerichtet ist. Benutzerdefinierte UWP-Steuerelemente werden in Projekten, die auf **CPU**ausgerichtet sind, nicht unterstützt
 
@@ -70,7 +70,7 @@ Fügen Sie als nächstes der gleichen Projekt Mappe wie das WPF-Projekt ein UWP-
 
 1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten Projekt Mappe, und wählen Sie -> **Neues Projekt** **Hinzufügen** .
 2. Fügen Sie der Projektmappe ein **Leere App (Universal Windows)** -Projekt hinzu. Stellen Sie sicher, dass die Zielversion und die Mindestversion auf **Windows 10, Version 1903** oder höher, festgelegt sind.
-3. Installieren Sie im UWP-App-Projekt das nuget-Paket [Microsoft. Toolkit. Win32. UI. xamlapplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (Version v 6.0.0-preview7 oder höher).
+3. Installieren Sie im UWP-App-Projekt das nuget-Paket [Microsoft. Toolkit. Win32. UI. xamlapplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (Version v 6.0.0 oder höher).
 4. Öffnen Sie die Datei " **app. XAML** ", und ersetzen Sie den Inhalt dieser Datei durch den folgenden XAML-Code. Ersetzen Sie `MyUWPApp` durch den Namespace des UWP-App-Projekts.
 
     ```xml
@@ -200,13 +200,11 @@ Wenn Sie bereits über ein benutzerdefiniertes Steuerelement verfügen, können 
 
 In der Vergangenheit wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen der UWP-Steuerelemente der ersten Partei aus der Windows SDK in einem nuget-Paket verteilt werden, das nicht an Windows SDK Releases gebunden ist. Diese Bibliothek enthält auch neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der Roadmap für die [WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) .
 
-In diesem Abschnitt wird veranschaulicht, wie Sie ein UWP-Steuerelement aus der WinUI-Bibliothek dem Benutzer Steuerelement hinzufügen, damit Sie dieses Steuerelement in Ihrer WPF-App hosten können 
+In diesem Abschnitt wird veranschaulicht, wie Sie ein UWP-Steuerelement aus der WinUI-Bibliothek dem Benutzer Steuerelement hinzufügen, damit Sie dieses Steuerelement in Ihrer WPF-App hosten können
 
-1. Installieren Sie im UWP-App-Projekt die neueste Vorabversion des nuget-Pakets " [Microsoft. UI. XAML](https://www.nuget.org/packages/Microsoft.UI.Xaml) ".
-    > [!NOTE]
-    > Stellen Sie sicher, dass Sie die neueste Version der *vorab* Version installieren. Zurzeit funktionieren nur vorab Versionen dieses Pakets, wenn Sie Ihre APP in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken.
+1. Installieren Sie im UWP-App-Projekt die neueste Version des nuget-Pakets " [Microsoft. UI. XAML](https://www.nuget.org/packages/Microsoft.UI.Xaml) ".
 
-2. Fügen Sie in der Datei app. XAML in diesem Projekt dem `<xaml:Application>`-Element das folgende untergeordnete-Element hinzu.
+2. Fügen Sie in der Datei app. XAML in diesem Projekt dem `<xaml:XamlApplication>`-Element das folgende untergeordnete-Element hinzu.
 
     ```xml
     <Application.Resources>
@@ -229,7 +227,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie ein UWP-Steuerelement aus der 
     </xaml:XamlApplication>
     ```
 
-3. Installieren Sie im UWP-Klassen Bibliotheksprojekt die neueste Vorabversion des nuget-Pakets " [Microsoft. UI. XAML](https://www.nuget.org/packages/Microsoft.UI.Xaml) " (die Version, die Sie im UWP-App-Projekt installiert haben).
+3. Installieren Sie im UWP-Klassen Bibliotheksprojekt die neueste Version des nuget-Pakets " [Microsoft. UI. XAML](https://www.nuget.org/packages/Microsoft.UI.Xaml) " (die Version, die Sie im UWP-App-Projekt installiert haben).
 
 4. Öffnen Sie im gleichen Projekt die XAML-Datei für das Benutzer Steuerelement, und fügen Sie die folgende Namespace Deklaration dem `<UserControl>`-Element hinzu.
 
@@ -289,20 +287,7 @@ Die folgenden Anweisungen zeigen, wie Sie alle Komponenten in der Projekt Mappe 
 
     3. Speichern Sie die Projektdatei und schließen Sie sie.
 
-4. Bearbeiten Sie das Paket Manifest, um auf das richtige Standard-Begrüßungsbildschirm Bild zu verweisen. Diese Problem Umgehung ist zurzeit erforderlich, um WPF-apps zu verpacken, die benutzerdefinierte UWP-Steuerelemente
-
-    1. Klicken Sie im Paket Erstellungs Projekt mit der rechten Maustaste auf die Datei **Package. appxmanifest** , und klicken Sie dann auf **Code anzeigen**.
-    2. Suchen Sie das folgende-Element in der Datei.
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.png" />```
-
-    3. Ändern Sie dieses Element in:
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.scale-200.png" />```
-
-    4. Speichern Sie die Datei " **Package. appxmanifest** ", und schließen Sie Sie.
-
-5. Bearbeiten Sie die WPF-Projektdatei. Diese Änderungen sind zurzeit zum Verpacken von WPF-apps erforderlich, die benutzerdefinierte UWP-Steuerelemente hosten
+4. Bearbeiten Sie die WPF-Projektdatei. Diese Änderungen sind zurzeit zum Verpacken von WPF-apps erforderlich, die benutzerdefinierte UWP-Steuerelemente hosten
 
     1. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den WPF-Projekt Knoten, und wählen Sie **Projekt entladen**aus.
     2. Klicken Sie mit der rechten Maustaste auf den Projekt Knoten WPF, und wählen Sie **Bearbeiten**.
@@ -317,9 +302,9 @@ Die folgenden Anweisungen zeigen, wie Sie alle Komponenten in der Projekt Mappe 
     4. Speichern Sie die Projektdatei und schließen Sie sie.
     5. Klicken Sie mit der rechten Maustaste auf den Projekt Knoten WPF, und wählen Sie **Projekt erneut laden**
 
-6. Erstellen Sie das Verpackungsprojekt, und führen Sie es aus. Vergewissern Sie sich, dass WPF ausgeführt wird und das benutzerdefinierte UWP-Steuerelement erwartungsgemäß angezeigt wird.
+5. Erstellen Sie das Verpackungsprojekt, und führen Sie es aus. Vergewissern Sie sich, dass WPF ausgeführt wird und das benutzerdefinierte UWP-Steuerelement erwartungsgemäß angezeigt wird.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [UWP-Steuerelemente in Desktop Anwendungen](xaml-islands.md)
 * [Windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

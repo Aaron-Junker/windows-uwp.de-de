@@ -2,27 +2,27 @@
 description: In diesem Tutorial wird veranschaulicht, wie Sie UWP-XAML-Benutzeroberflächen hinzufügen, msix-Pakete erstellen und andere moderne Komponenten in Ihre WPF-App integrieren.
 title: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 ms.topic: article
-ms.date: 08/15/2019
+ms.date: 01/10/2010
 ms.author: mcleans
 author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 943b2d90564dc059ed487c1f7fb7b89e689681bb
-ms.sourcegitcommit: 8cbc9ec62a318294d5acfea3dab24e5258e28c52
+ms.openlocfilehash: 1ed4fa54b9987ef0ab5f3dd89aa9d11a00ae695c
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70911581"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520435"
 ---
-# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
+# <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP InkCanvas-Steuer Elements mithilfe von XAML-Inseln
 
-Dies ist der zweite Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden [Sie unter Tutorial: Modernisieren einer WPF-](modernize-wpf-tutorial.md)app. In diesem Artikel wird davon ausgegangen, dass Sie [Teil 1](modernize-wpf-tutorial-1.md)bereits abgeschlossen haben.
+Dies ist der zweite Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden Sie unter [Tutorial: modernisieren einer WPF-App](modernize-wpf-tutorial.md). In diesem Artikel wird davon ausgegangen, dass Sie [Teil 1](modernize-wpf-tutorial-1.md)bereits abgeschlossen haben.
 
 Im fiktiven Szenario dieses Lernprogramms möchte das Entwicklungsteam von "Configuration Manager" die Unterstützung digitaler Signaturen der App "kostenpflichtige app" für die kostenpflichtige app hinzufügen. Das UWP **InkCanvas** -Steuerelement ist eine gute Option für dieses Szenario, da es digitale Freihand-und Ki-Funktionen unterstützt, wie z. b. die Fähigkeit, Text und Formen zu erkennen. Zu diesem Zweck verwenden Sie das in der Windows Community Toolkit verfügbare [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) -UWP-Steuerelement. Dieses Steuerelement umschließt die-Schnittstelle und die Funktionalität des UWP **InkCanvas** -Steuer Elements für die Verwendung in einer WPF-App. Weitere Informationen zu umschließenen UWP-Steuerelementen finden Sie unter [Host UWP-XAML-Steuerelemente in Desktop-Apps (XAML-Inseln)](xaml-islands.md).
 
 > [!NOTE]
-> In diesem Tutorial hostet die WPF-App nur UWP-Steuerelemente von erst Anbietern aus der Windows SDK. Um andere XAML-Insel Szenarios einschließlich benutzerdefinierter UWP-Steuerelemente zu unterstützen, muss das App- `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` Projekt Zugriff auf eine Instanz der-Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das WPF-Projekt (oder Windows Forms) hinzuzufügen und die `App` Standardklasse in diesem Projekt zu überarbeiten. Da dieser Schritt für das grundlegende Szenario zum Hosting von UWP-Steuerelementen von erst Anbietern aus der Windows SDK nicht erforderlich ist, wird dieser Schritt in diesem Tutorial ausgelassen. Weitere Informationen finden Sie in [diesem Artikel](host-standard-control-with-xaml-islands.md).
+> In diesem Tutorial hostet die WPF-App nur UWP-Steuerelemente von erst Anbietern aus der Windows SDK. Um andere XAML-Insel Szenarios einschließlich benutzerdefinierter UWP-Steuerelemente zu unterstützen, muss das App-Projekt Zugriff auf eine Instanz der `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication`-Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das WPF-Projekt (oder Windows Forms) hinzuzufügen und die Standard `App` Klasse in diesem Projekt zu überarbeiten. Da dieser Schritt für das grundlegende Szenario zum Hosting von UWP-Steuerelementen von erst Anbietern aus der Windows SDK nicht erforderlich ist, wird dieser Schritt in diesem Tutorial ausgelassen. Ausführlichere Informationen finden Sie in [diesem Artikel](host-standard-control-with-xaml-islands.md).
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>Konfigurieren des Projekts für die Verwendung von XAML-Inseln
 
@@ -32,10 +32,10 @@ Vor dem Hinzufügen eines **InkCanvas** -Steuer Elements zur APP für die kosten
 
     ![Menü "nuget-Pakete verwalten" in Visual Studio](images/wpf-modernize-tutorial//ManageNuGetPackages.png)
 
-2. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Wählen Sie die Option **Vorabversion einschließen** aus, suchen Sie `Microsoft.Toolkit.Wpf.UI.Controls` nach dem Paket, und installieren Sie die neueste Vorschauversion des Pakets, das in den Ergebnissen angezeigt wird. Stellen Sie sicher, dass Sie Version 6.0.0-preview7 oder eine höhere Version installieren.
+2. Klicken Sie im Fenster **nuget-Paket-Manager** auf **Durchsuchen**. Suchen Sie nach dem `Microsoft.Toolkit.Wpf.UI.Controls` Paket, und installieren Sie die Version 6.0.0 oder eine höhere Version.
 
     > [!NOTE]
-    > Dieses Paket enthält die gesamte erforderliche Infrastruktur zum Hosting von UWP-XAML-Inseln in einer WPF-App, einschließlich des mit **InkCanvas** umschließenden UWP-Steuer Elements. Ein ähnliches Paket namens `Microsoft.Toolkit.Forms.UI.Controls` ist für Windows Forms-apps verfügbar.
+    > Dieses Paket enthält die gesamte erforderliche Infrastruktur zum Hosting von UWP-XAML-Inseln in einer WPF-App, einschließlich des mit **InkCanvas** umschließenden UWP-Steuer Elements. Ein ähnliches Paket mit dem Namen `Microsoft.Toolkit.Forms.UI.Controls` ist für Windows Forms-apps verfügbar.
 
 3. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Add-> Neues Element**aus.
 
@@ -48,7 +48,7 @@ Vor dem Hinzufügen eines **InkCanvas** -Steuer Elements zur APP für die kosten
     <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
     ```
 
-6. Suchen Sie in der Manifest-Datei nach dem `<application>` folgenden kommentierten Element.
+6. Suchen Sie in der Manifest-Datei nach folgendem kommentierten `<application>` Element.
 
     ```xml
     <!--
@@ -71,7 +71,7 @@ Vor dem Hinzufügen eines **InkCanvas** -Steuer Elements zur APP für die kosten
     </application>
     ```
 
-8. Speichern und schließen Sie `app.manifest` die Datei.
+8. Speichern und schließen Sie die `app.manifest`-Datei.
 
 9. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **contosoaufwendungen. Core** , und wählen Sie **Eigenschaften**aus.
 
@@ -110,7 +110,7 @@ Nachdem Sie Ihr Projekt für die Verwendung von UWP-XAML-Inseln konfiguriert hab
             Background="{StaticResource HorizontalBackground}">
     ```
 
-4. Suchen Sie in der Datei " **expensdetail. XAML** " `</Grid>` das schließende Tag, das `<!-- Chart -->` dem Kommentar unmittelbar vorangestellt ist. Fügen Sie den folgenden XAML-Code direkt `</Grid>` vor dem Endtag hinzu. Dieser XAML-Code fügt ein **InkCanvas** -Steuerelement hinzu (vorangestellt das **Toolkit** -Schlüsselwort, das Sie zuvor als Namespace definiert haben) und einen einfachen **TextBlock** , der als Header für das Steuerelement fungiert.
+4. Suchen Sie in der Datei " **expensdetail. XAML** " das schließende `</Grid>`-Tag, das dem `<!-- Chart -->` Kommentar unmittelbar vorangestellt ist. Fügen Sie den folgenden XAML-Code direkt vor dem schließenden `</Grid>`-Tag hinzu. Dieser XAML-Code fügt ein **InkCanvas** -Steuerelement hinzu (vorangestellt das **Toolkit** -Schlüsselwort, das Sie zuvor als Namespace definiert haben) und einen einfachen **TextBlock** , der als Header für das Steuerelement fungiert.
 
     ```xml
     <TextBlock Text="Signature:" FontSize="16" FontWeight="Bold" Grid.Row="5" />
@@ -136,9 +136,9 @@ Nachdem Sie Ihr Projekt für die Verwendung von UWP-XAML-Inseln konfiguriert hab
     using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
     ```
 
-10. Suchen Sie `ExpenseDetail()` den-Konstruktor.
+10. Suchen Sie den `ExpenseDetail()`-Konstruktor.
 
-11. Fügen Sie nach der `InitializeComponent()` -Methode die folgende Codezeile hinzu, und speichern Sie die Codedatei.
+11. Fügen Sie nach der `InitializeComponent()`-Methode die folgende Codezeile hinzu, und speichern Sie die Codedatei.
 
     ```csharp
     Signature.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
@@ -154,4 +154,4 @@ Nachdem Sie Ihr Projekt für die Verwendung von UWP-XAML-Inseln konfiguriert hab
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-An dieser Stelle im Tutorial haben Sie ein UWP-Steuerelement " **InkCanvas** " zu der App "appto-Ausgaben" hinzugefügt. Sie sind nun für [Teil 3 bereit: Fügen Sie ein UWP CalendarView-Steuerelement mithilfe von](modernize-wpf-tutorial-3.md)XAML-Inseln hinzu.
+An dieser Stelle im Tutorial haben Sie ein UWP-Steuerelement " **InkCanvas** " zu der App "appto-Ausgaben" hinzugefügt. Sie sind jetzt bereit für [Teil 3: Hinzufügen eines UWP CalendarView-Steuer Elements mithilfe von XAML-Inseln](modernize-wpf-tutorial-3.md).

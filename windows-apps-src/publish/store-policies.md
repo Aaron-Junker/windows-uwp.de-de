@@ -54,7 +54,7 @@ Feedback zu den Richtlinien ist jederzeit willkommen. Veröffentlichen Sie hierz
 - [10.9 Benachrichtigungen](#109-notifications)
 - [10.10 Werbung – Verhaltensregeln und Inhalt](#1010-advertising-conduct-and-content)
 - [10.11 Mobilfunk-Tarifpläne (Voice)](#1011-mobile-voice-plans)
-- [10.12 Edge-Erweiterungen](#1012-edge-extensions)
+- [10.12 Microsoft Edge-Erweiterungen](#1012-edge-extensions)
 - [10.13 Spiele und Xbox](#1013-gaming-and-xbox)
 - [10.14 Kontotyp](#1014-account-type)
 
@@ -315,9 +315,9 @@ Wenn Ihr Produkt für Kinder unter 13 Jahren ausgelegt ist (gemäß Definition 
 
 Über Ihr Produkt dürfen keine Mobilfunk-Tarifpläne (Voice) verkauft, verlinkt oder anderweitig beworben werden.
 
-### <a name="1012-edge-extensions"></a>10.12 Edge-Erweiterungen
+### <a name="1012-edge-extensions"></a>10.12 Microsoft Edge-Erweiterungen
 
-Für Edge-Erweiterungen gelten die folgenden zusätzlichen Anforderungen:
+Für Microsoft Edge-Erweiterungen gelten die folgenden zusätzlichen Anforderungen:
 
 - Die Erweiterung muss einen einzigen Zweck mit eng begrenzter Funktionalität verfolgen, der klar in der Produktbeschreibung erläutert wird.
 - Die Erweiterung darf personenbezogene Daten nur im Rahmen einer deutlich offengelegten, für den Nutzer sichtbaren Funktion erfassen.

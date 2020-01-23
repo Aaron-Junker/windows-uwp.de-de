@@ -54,7 +54,7 @@ Die folgenden Animationen werden in der Animationsbibliothek bereitgestellt. Kli
 -   [Zeiger hoch-/Herunterskalieren](#pointer-up-down): Erhalten visuelles Feedback zu einem tippen oder klicken Sie auf eine Kachel aus.
 -   [Neupositionieren](#reposition): Verschiebt ein Element in eine neue Position.
 -   [Ein-/ausblenden-Popup](#show-hide-popup): Zeigt die kontextbezogene Benutzeroberfläche für die Ansicht.
--   [Ein-/ausblenden Edge UI](#show-hide-edge-ui): Edge-basierte Benutzeroberfläche, einschließlich der großen UI wie z. B. einen Bereich, in oder aus der Sicht die Folien.
+-   [Ein-/ausblenden Microsoft Edge UI](#show-hide-edge-ui): Microsoft Edge-basierte Benutzeroberfläche, einschließlich der großen UI wie z. B. einen Bereich, in oder aus der Sicht die Folien.
 -   [Listenelement Änderungen](#list-item-changes): Hinzufügt oder löscht ein Element aus einer Liste oder Neuordnung der Elemente.
 -   [Drag & Drop](#drag-drop): Erhalten visuelles Feedback während eines Drag & Drop-Vorgangs.
 

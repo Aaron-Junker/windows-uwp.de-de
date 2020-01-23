@@ -46,7 +46,7 @@ Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmran
 
 **Für Entwickler**
 * [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animieren von Edge-basierte Benutzeroberfläche](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
+* [Animieren von Microsoft Edge-basierter Benutzeroberfläche](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
 * [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**EdgeUIThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 * [**PaneThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)

@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 79edf30733f7bca443c5fd12103fbd5d93909732
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1642f8ccc989ce224ff0b3250fa1b79c954167b1
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258069"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520415"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Benutzerprofilsprachen und App-Manifest-Sprachen verstehen
 Ein Windows-Benutzer kann mit **Einstellungen** > **Zeit und Sprache** > **und Region und Sprache** eine geordnete Liste der bevorzugten Anzeigesprachen oder nur eine bevorzugte Anzeigesprache konfigurieren. Zu einer Sprache kann es eine regionale Variante geben. Zum Beispiel können Sie u. a. ein Spanisch wählen, das entweder in Spanien, in Mexiko oder in den USA gesprochen wird.
@@ -150,35 +150,35 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 <tr>
 <td align="left">Englisch (GB) (Standard); Deutsch (Deutschland)</td>
 <td align="left">Englisch (GB)</td>
-<td align="left">keine</td>
+<td align="left">Keiner</td>
 <td align="left">Englisch (GB)</td>
 <td align="left">UI: Englisch (GB)<br>Datum/Uhrzeit/Zahlen: Englisch (GB)</td>
 </tr>
 <tr>
 <td align="left">Deutsch (Deutschland) (Standard); Französisch (Frankreich); Italienisch (Italien)</td>
 <td align="left">Französisch (Österreich)</td>
-<td align="left">keine</td>
+<td align="left">Keiner</td>
 <td align="left">Französisch (Österreich)</td>
 <td align="left">UI: Französisch (Frankreich) (Fallback aus Französisch (Österreich))<br>Datum/Uhrzeit/Zahlen: Französisch (Österreich)</td>
 </tr>
 <tr>
 <td align="left">Englisch (US) (Standard); Französisch (Frankreich); Englisch (GB)</td>
 <td align="left">Englisch (Kanada); Französisch (Kanada)</td>
-<td align="left">keine</td>
+<td align="left">Keiner</td>
 <td align="left">Englisch (Kanada); Französisch (Kanada)</td>
 <td align="left">UI: Englisch (USA) (Fallback aus Englisch (Kanada))<br>Datum/Uhrzeit/Zahlen: Englisch (Kanada)</td>
 </tr>
 <tr>
 <td align="left">Spanisch (Spanien) (Standard); Spanisch (Mexiko); Spanisch (Lateinamerika); Portugiesisch (Brasilien)</td>
 <td align="left">Englisch (USA)</td>
-<td align="left">keine</td>
+<td align="left">Keiner</td>
 <td align="left">Spanisch (Spanien)</td>
 <td align="left">UI: Spanisch (Spanien) (verwendet „Standard“ da kein Fallback für Englisch verfügbar ist)<br>Datum/Uhrzeit/Zahlen Spanisch (Spanien)</td>
 </tr>
 <tr>
 <td align="left">Katalanisch (Standard); Spanisch (Spanien); Französisch (Frankreich)</td>
 <td align="left">Katalanisch; Französisch (Frankreich)</td>
-<td align="left">keine</td>
+<td align="left">Keiner</td>
 <td align="left">Katalanisch; Französisch (Frankreich)</td>
 <td align="left">UI: Vorwiegend Katalanisch, etwas Französisch (Frankreich), da nicht alle Zeichenfolgen in Katalanisch vorhanden sind<br>Datum/Uhrzeit/Zahlen: Katalanisch</td>
 </tr>
@@ -193,7 +193,7 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 </table>
 
 >[!NOTE]
-> Eine Liste der von Microsoft verwendeten Standard Codes für Länder und Regionen finden Sie in der [Liste offizieller Länder/](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)Regionen.
+> Eine Liste der von Microsoft verwendeten Standard Codes für Länder und Regionen finden Sie in der [Liste offizieller Länder/](/windows/uwp/publish/supported-languages)Regionen.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Globalizationpreferences. Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
@@ -207,7 +207,7 @@ Die folgende Tabelle enthält Beispiele für die Elemente, die dem Benutzer unte
 * [Globalizationpreferences. homegeocregion](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
 * [Geografische Region](/uwp/api/windows.globalization.geographicregion?branch=live)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Bcp-47-Sprachtag](https://tools.ietf.org/html/bcp47)
 * [IANA-sprachsubtag-Registrierung](https://www.iana.org/assignments/language-subtag-registry)
 * [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
