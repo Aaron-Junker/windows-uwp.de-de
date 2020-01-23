@@ -7,19 +7,18 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f33e2f10686edf149feb11e317a10e535685ef19
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.openlocfilehash: 4678565547616c0cee4a7961cb4a0c95fc03241b
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74902534"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520455"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>Design-Toolkits und Beispiele für UWP-Apps
 
 ![Designgrundlagen](../images/downloads-2x.png)
 
-Design- und UI-bezogene Downloads für Fluent Design/UWP-Apps. Zusätzliche Tools wie beispielsweise Visual Studio finden Sie auf der <a href="https://developer.microsoft.com/windows/downloads">Hauptseite für Downloads</a>. 
-
+Design- und UI-bezogene Downloads für Fluent Design/UWP-Apps. Zusätzliche Tools wie beispielsweise Visual Studio finden Sie auf der <a href="https://developer.microsoft.com/windows/downloads">Hauptseite für Downloads</a>.
 
 ## <a name="design-toolkits"></a>Design-Toolkits
 
@@ -60,11 +59,6 @@ v1705, Mai 2017<br>
 <a href="https://aka.ms/adobephotoshoptoolkit">Herunterladen</a>
     :::column-end:::
     :::column:::
-![Hero-Bild](images/framer.png)
-<b>Framer-Toolkit</b><br>
-(Dieses Toolkit wird nicht mehr unterstützt.)<br/>
-v1806, Juni 2018<br>
-<a href="https://github.com/Microsoft/windows-framer-toolkit">Herunterladen</a>
     :::column-end:::
 :::row-end:::
 
@@ -87,7 +81,7 @@ Hilfsfunktionen, benutzerdefinierte Steuerelemente und App-Dienste<br />
     :::column-end:::
 :::row-end:::
 
-## <a name="fonts"></a>Schriftarten
+## <a name="fonts"></a>Fonts
 
 * <a href="https://aka.ms/SegoeFonts">Symbolschriftarten Segoe UI und MDL2 (nur Mac)</a>
 * <a href="https://aka.ms/hololensiconfont">Hololens-Symbolschriftart (nur Windows)</a>
