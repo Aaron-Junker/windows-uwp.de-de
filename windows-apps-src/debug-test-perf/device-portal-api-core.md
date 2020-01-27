@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräte Portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 86724b084edb9350adfd2ed2623623d255302b70
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
+ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683458"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955309"
 ---
 # <a name="device-portal-core-api-reference"></a>Referenz zu Kern-APIs des Geräteportals
 
@@ -1226,7 +1226,7 @@ Mit dem folgenden Anforderungsformat können Sie die CrashControl-Fehlerüberpr�
 
 **Antwort**
 
-Die Antwort enthält die CrashControl-Einstellungen. Weitere Informationen zu CrashControl finden Sie im Artikel [](https://technet.microsoft.com/library/cc951703.aspx). Die Vorlage für die Antwort lautet wie folgt.
+Die Antwort enthält die CrashControl-Einstellungen. Weitere Informationen zu [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) finden Sie im Artikel. Die Vorlage für die Antwort lautet wie folgt.
 ```json
 {
     "autoreboot": bool (0 or 1),
@@ -2003,7 +2003,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| Name | (**erforderlich**) Der neue Name für den Computer. |
+| Name | (**erforderlich**) Der neue Name für den Computer. Dieser sollte base64-codiert sein. |
 
 **Anforderungsheader**
 

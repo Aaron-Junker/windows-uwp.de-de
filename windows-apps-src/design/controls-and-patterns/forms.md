@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683993"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520445"
 ---
 # <a name="forms"></a>Formulare
 Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 
@@ -127,7 +127,7 @@ Control | Verwendung | Beispiel
 ### <a name="lists"></a>Listen
 Control | Verwendung | Beispiel
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | Starten im kompakten Modus und Erweitern, um die Liste der auswählbaren Elemente anzuzeigen | Auswählen aus einer langen Liste von Elementen, z. B. Status oder Länder/Regionen
+[ComboBox](combo-box.md) | Starten im kompakten Modus und Erweitern, um die Liste der auswählbaren Elemente anzuzeigen | Auswählen aus einer langen Liste von Elementen, z. B. Status oder Länder/Regionen
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | Kategorisieren von Elementen und Zuweisen von Gruppenüberschriften, Verschieben von Elementen per Drag & Drop, Überprüfen von Inhalten und Neuanordnen von Elementen | Bilden einer Rangfolge für Optionen
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | Anordnen und Durchsuchen von bildbasierten Sammlungen | Auswählen eines Fotos, einer Farbe oder Anzeigedesigns
 

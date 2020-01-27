@@ -2,22 +2,22 @@
 description: In diesem Tutorial wird veranschaulicht, wie Sie UWP-XAML-Benutzeroberflächen hinzufügen, msix-Pakete erstellen und andere moderne Komponenten in Ihre WPF-App integrieren.
 title: Verpacken und Bereitstellen mit MSIX
 ms.topic: article
-ms.date: 06/27/2019
+ms.date: 01/23/2020
 ms.author: mcleans
 author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 6f5c01b23f02bb9c116ddaaec698612aa539539d
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 27906d9d389c065ab1fdf7124151cd1915f850eb
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979352"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76726013"
 ---
-# <a name="part-5-package-and-deploy-with-msix"></a>Teil 5: Verpacken und Bereitstellen mit MSIX
+# <a name="part-5-package-and-deploy-with-msix"></a>Teil 5: Verpacken und Bereitstellen mit msix
 
-Dies ist der letzte Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden [Sie unter Tutorial: Modernisieren einer WPF-](modernize-wpf-tutorial.md)app. In diesem Artikel wird davon ausgegangen, dass Sie [Teil 4](modernize-wpf-tutorial-4.md)bereits abgeschlossen haben.
+Dies ist der letzte Teil eines Tutorials, in dem veranschaulicht wird, wie eine WPF-Beispiel-Desktop-App mit dem Namen "ca Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App finden Sie unter [Tutorial: modernisieren einer WPF-App](modernize-wpf-tutorial.md). In diesem Artikel wird davon ausgegangen, dass Sie [Teil 4](modernize-wpf-tutorial-4.md)bereits abgeschlossen haben.
 
 In [Teil 4](modernize-wpf-tutorial-4.md) haben Sie gelernt, dass einige WinRT-APIs, einschließlich der Benachrichtigungs-API, eine Paket Identität erfordern, bevor Sie in einer App verwendet werden können. Sie können die Paket Identität abrufen, indem Sie die Kosten für " [msix](https://docs.microsoft.com/windows/msix)", das in Windows 10 eingeführte Verpackungs Format zum Packen und Bereitstellen von Windows-Anwendungen, verpacken. Msix bietet Entwicklern und IT-Experten Vorteile, einschließlich der folgenden:
 
@@ -36,11 +36,11 @@ Visual Studio 2019 bietet eine einfache Möglichkeit zum Packen einer Desktop An
 
     ![Neues Projekt hinzufügen](images/wpf-modernize-tutorial/AddNewProject.png)
 
-3. Suchen Sie im Dialogfeld **Neues Projekt hinzufügen** nach, `packaging`wählen Sie die Projektvorlage Projektvorlage für **Windows-Anwendungspakete** in der C# Kategorie aus, und klicken Sie auf **weiter**.
+3. Suchen Sie im Dialogfeld **Neues Projekt hinzufügen** nach `packaging`, wählen Sie die Projektvorlage Projektvorlage für **Windows-Anwendungspakete** in der C# Kategorie aus, und klicken Sie auf **weiter**.
 
-    ![Paketerstellungsprojekt für Windows-Anwendungen](images/wpf-modernize-tutorial/WAP.png)
+    ![Windows-anwendungspaketierungs Projekt](images/wpf-modernize-tutorial/WAP.png)
 
-4. Benennen Sie das neue `ContosoExpenses.Package` Projekt, und klicken Sie auf **Erstellen**.
+4. Benennen Sie das neue Projekt `ContosoExpenses.Package`, und klicken Sie auf **Erstellen**.
 
 5. Wählen Sie **Windows 10, Version 1903 (10,0; Build 18362)** für die **Zielversion** und die **Mindestversion** , und klicken Sie auf **OK**.
 
@@ -54,42 +54,12 @@ Visual Studio 2019 bietet eine einfache Möglichkeit zum Packen einer Desktop An
 
 8. Klicken Sie mit der rechten Maustaste auf das Projekt **condesoaufwands. Package** , und wählen Sie **als Startprojekt festlegen**aus.
 
-9. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Projekt Knoten **condesoaufwendungen. Paket** , und wählen Sie **Projektdatei bearbeiten**aus.
-
-10. Suchen Sie das `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />`-Element in der Datei.
-
-11. Ersetzen Sie dieses Element durch den folgenden XML-Code.
-
-    ``` xml
-    <ItemGroup>
-        <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-        <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-        <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-        <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-        <Implicit>true</Implicit>
-        </SDKReference>
-    </ItemGroup>
-    <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-    <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-        <ItemGroup>
-        <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-        <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-        <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-            <SourceProject></SourceProject>
-            <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-        </_FilteredNonWapProjProjectOutput>
-        </ItemGroup>
-    </Target>
-    ```
-
-12. Speichern Sie die Projektdatei, und schließen Sie Sie.
-
-13. Drücken Sie **F5** , um die APP im Debugger zu starten.
+9. Drücken Sie **F5** , um die APP im Debugger zu starten.
 
 An diesem Punkt können Sie einige Änderungen bemerken, die darauf hinweisen, dass die App nun als verpackt ausgeführt wird:
 
 - Das Symbol in der Taskleiste oder im Startmenü ist nun das Standard Objekt, das in jedem Windows- **Anwendungspaket**enthalten ist.
-- Wenn Sie mit der rechten Maustaste auf die Anwendung **condesospesen. Package** im Startmenü klicken, werden Optionen angezeigt, die in der Regel für apps reserviert sind, die vom Microsoft Store heruntergeladen werden, z. b. **App-Einstellungen**, **Rate und Überprüfung** und **Freigabe.** .
+- Wenn Sie mit der rechten Maustaste auf die im Startmenü aufgelistete Anwendung **condesospw. Package** klicken, werden Ihnen Optionen angezeigt, die in der Regel für apps reserviert sind, die aus dem Microsoft Store heruntergeladen wurden, z.b. **App-Einstellungen**, **Rate und Überprüfung** und **Freigabe**.
 
     ![Conum-Ausgaben im Startmenü](images/wpf-modernize-tutorial/StartMenu.png)
 
@@ -99,7 +69,7 @@ An diesem Punkt können Sie einige Änderungen bemerken, die darauf hinweisen, d
 
 Nachdem Sie die APP für die kostenpflichtige Geräteverwaltung mit msix verpackt haben, können Sie das Benachrichtigungs Szenario testen, das am Ende von [Teil 4](modernize-wpf-tutorial-4.md)nicht funktionierte.
 
-1. Wählen Sie in der APP für die kostenpflichtige app einen Mitarbeiter aus der Liste aus, und klicken Sie dann auf die Schaltfläche **neue Ausgaben hinzufügen** . 
+1. Wählen Sie in der APP für die kostenpflichtige app einen Mitarbeiter aus der Liste aus, und klicken Sie dann auf die Schaltfläche **neue Ausgaben hinzufügen** .
 2. Vervollständigen Sie alle Felder im Formular, und klicken Sie auf **Speichern**.
 3. Vergewissern Sie sich, dass eine Betriebssystem Benachrichtigung angezeigt wird.
 

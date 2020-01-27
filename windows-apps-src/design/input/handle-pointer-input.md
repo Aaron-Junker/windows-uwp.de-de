@@ -8,12 +8,12 @@ keywords: Stift, Maus, Touchpad, Toucheingabe, Zeiger, Eingabe, Benutzerinterakt
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f3d5480c0fa12366afe02cc31cdb994fdd4a842
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 97c4941a6ec694b3bb23864ede3119d6f76113d2
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257901"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725993"
 ---
 # <a name="handle-pointer-input"></a>Behandeln von Zeigereingaben
 
@@ -33,12 +33,10 @@ Bei den meisten Interaktionsfunktionen ist typischerweise der Benutzer involvier
 
 > [!NOTE]
 > Gerätespezifische Informationen werden auch von den HID-Rohdaten weitergeleitet, falls dies für die App erforderlich ist.
- 
 
 Jeder Eingabepunkt (oder Kontakt) in dem Eingabestapel wird durch ein [**Pointer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer)-Objekt dargestellt, das über den [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)-Parameter in den verschiedenen Zeigerereignishandlern zur Verfügung gestellt wird. Bei Verwendung mehrerer Stifte oder der Mehrfingereingabe wird jeder Kontakt als separater Eingabezeiger behandelt.
 
 ## <a name="pointer-events"></a>Zeigerereignisse
-
 
 Zeigerereignisse machen grundlegende Informationen wie den Typ des Eingabegeräts und den Erkennungszustand (im Bereich oder bei Kontakt) sowie erweiterte Informationen wie Position, Druck und Kontaktgeometrie verfügbar. Darüber hinaus sind auch bestimmte gerätespezifische Eigenschaften verfügbar, z. B. welche Maustaste ein Benutzer gedrückt hat oder ob die Radiergummispitze des Zeichenstifts verwendet wird. Wenn die App zwischen Eingabegeräten und ihren Funktionen unterscheiden muss, finden Sie entsprechende Informationen unter [Erkennen von Eingabegeräten](identify-input-devices.md).
 
@@ -46,7 +44,6 @@ UWP-Apps können die folgenden Zeigerereignisse überwachen:
 
 > [!NOTE]
 > Schränken Sie Zeigereingaben auf ein bestimmtes UI-Element ein, indem Sie [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer) für dieses Element in einem Zeigerereignishandler aufrufen. Wenn ein Zeiger von einem Element erfasst wurde, empfängt nur dieses Objekt die Zeigereingabeereignisse, auch wenn sich der Mauszeiger aus dem Begrenzungsbereich des Objekts heraus bewegt. Die Option [**IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact) (gedrückte Maustaste, Touch oder Stift in Kontakt) muss „true“ sein, damit **CapturePointer** erfolgreich ausgeführt werden kann.
- 
 
 <table>
 <colgroup>
@@ -196,7 +193,7 @@ Im Folgenden ist der XAML-Code (Extensible Application Markup Language) für die
 
 In den meisten Fällen wird empfohlen, Zeigerinformationen über die [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) des Ereignishandlers abzurufen.
 
-Sollte das Ereignisargument die erforderlichen Zeigerdetails nicht liefern, können Sie über die Methoden [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) und [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) von [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) auf die von einem [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)-Objekt bereitgestellten erweiterten Zeigerdaten zugreifen.
+Sollte das Ereignisargument die erforderlichen Zeigerdetails nicht liefern, können Sie über die Methoden [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) und [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) von [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) auf die von einem [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)-Objekt bereitgestellten erweiterten Zeigerdaten zugreifen.
 
 Der folgende Code richtet das globale Verzeichnisobjekt für die Verfolgung jedes aktiven Zeigers ein und identifiziert die verschiedenen Zeigerereignislistener für das Zielobjekt.
 

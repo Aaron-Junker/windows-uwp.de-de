@@ -1,0 +1,183 @@
+---
+title: Sprache, Stimme und Konversation in Windows 10
+description: Auf dieser Seite finden Sie Informationen zu den ersten Schritten bei der Entwicklung von sprachfähigen Windows-apps.
+ms.topic: article
+ms.date: 09/12/2019
+keywords: Sprache in Windows 10, Speech, Voice, Conversation, Win32 Speech apps, UWP Speech apps, WPF Speech apps, WinForms Speech apps
+ms.author: kbridge
+author: Karl-Bridge-Microsoft
+ms.openlocfilehash: 7ac8d782591ce8f3716e491714c4cbf241e80b6c
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76726550"
+---
+# <a name="speech-voice-and-conversation-in-windows-10"></a>Sprache, Stimme und Konversation in Windows 10
+
+![Sprach herabbild](images/hero-speech-composite-small.png)
+
+Die Sprache kann eine effektive, natürliche und angenehme Methode für die Interaktion von Benutzern mit Ihren Windows-Anwendungen sein, die auf der Maus, Tastatur, Toucheingabe, dem Controller oder Gesten basiert, um traditionelle Interaktionen zu ergänzen oder sogar zu ersetzen.
+
+Sprachbasierte Funktionen, wie z. b. Spracherkennung, Diktat, Sprachsynthese (auch bekannt als Text-zu-Sprache oder TTS) und einschließende sprach-Assistenten (z. b. Cortana oder Alexa) können barrierefreie und inklusivbenutzer Umgebungen bereitstellen, die es Benutzern ermöglichen, Ihre Anwendungen können nicht ausreichen, wenn andere Eingabegeräte nicht ausreichen.
+
+Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklungs Frameworks Spracherkennung, Sprachsynthese und Unterstützung von Konversation für Entwickler bereitstellen, die Windows-Anwendungen erstellen.
+
+## <a name="platform-specific-documentation"></a>Plattformspezifische Dokumentation
+
+:::row:::
+   :::column:::
+      ![Universelle Windows-Plattform (UWP)](images/platform-uwp.png)
+
+      **Universelle Windows-Plattform (UWP)**
+
+      Erstellen Sie sprach fähige apps auf der modernen Plattform für Windows 10-Anwendungen und-Spiele auf allen Windows-Geräten (einschließlich PCs, Smartphones, Xbox One, hololens usw.), und veröffentlichen Sie Sie auf dem Microsoft Store.
+
+      [Sprachinteraktionen](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
+
+      [Spracherkennung](https://docs.microsoft.com/windows/uwp/design/input/speech-recognition)
+
+      [Kontinuierliches Diktieren](https://docs.microsoft.com/windows/uwp/design/input/enable-continuous-dictation)
+
+      [Sprachsynthese](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
+
+      [Konversations-Agents](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
+
+      [Cortana-Sprachbefehle](https://docs.microsoft.com/cortana/voice-commands/vcd)
+   :::column-end:::
+   :::column:::
+      ![Win32-Plattform-Apps](images/platform-win32.png)
+
+      **Win32-Plattform**
+
+      Entwickeln Sie sprach aktivierte Anwendungen für Windows Desktop und Windows Server mithilfe der hier bereitgestellten Tools, Informationen und Beispiel-Engines und Anwendungen.
+
+      [Microsoft Speech Platform-Software Development Kit (SDK) (Version 11)](https://www.microsoft.com/download/details.aspx?id=27226)
+      
+      [Microsoft Speech SDK, Version 5,1](https://www.microsoft.com/download/details.aspx?id=10121)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      ![.NET](images/platform-dotnet.png)
+
+      **.NET Framework**
+
+      Entwickeln Sie barrierefreie Apps und Tools auf der bekannten Plattform für verwaltete Windows-Anwendungen mit einem XAML-UI-Modell und dem .NET Framework.
+
+      [Programmier Handbuch für System. Speech für .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+   :::column-end:::
+   :::column:::
+      ![Azure-Sprachdienste](images/platform-azure-speech.png)
+
+      **Azure-Sprachdienste**
+
+      Entwerfen, erstellen und testen Sie barrierefreie Websites mit Azure Speech Services.
+
+      [Sprache für Text](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
+
+      [Text-zu-Sprache](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
+      
+      [Sprachübersetzung](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
+
+      [Voice-First Virtual Assistenten](https://docs.microsoft.com/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      **Legacy Features**
+
+      Ältere, veraltete und/oder nicht unterstützte Versionen der Microsoft-Sprachtechnologie.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Microsoft-Agent](https://docs.microsoft.com/windows/win32/lwef/microsoft-agent)
+
+      [Microsoft Speech Application Software Development Kit (sasdk) Version 1,0](https://www.microsoft.com/download/details.aspx?id=2200)
+   :::column-end:::
+   :::column:::
+      [Microsoft Speech API (SAPI) 5,3](https://docs.microsoft.com/previous-versions/windows/desktop/ms723627(v=vs.85))
+
+      [Microsoft Speech API (SAPI) 5,4](https://docs.microsoft.com/previous-versions/windows/desktop/ee125663(v=vs.85))
+
+      [Das Bing-Spracheingabe Erkennungs Steuerelement](https://docs.microsoft.com/previous-versions/bing/speech/dn434583(v%3dmsdn.10))
+   :::column-end:::
+:::row-end:::
+
+## <a name="samples"></a>Beispiele
+
+Laden Sie vollständige Windows-Beispiele herunter, die verschiedene Barrierefreiheitsfeatures und -funktionen veranschaulichen, und führen Sie sie aus.
+
+:::row:::
+   :::column:::
+      [Codebeispielbrowser](https://docs.microsoft.com/samples/browse/?term=speech)
+
+      Der neue Beispiel Browser (ersetzt die MSDN Code Gallery).
+   :::column-end:::
+   :::column:::
+      [Klassische Windows-Beispiele auf GitHub](https://github.com/microsoft/Windows-classic-samples/search?q=speech&unscoped_q=speech)
+
+      Diese Beispiele veranschaulichen die Funktionalität und das Programmiermodell für Windows und Windows Server. 
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [UWP-Beispiele (Universelle Windows-Plattform) auf GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=speech&unscoped_q=speech)
+
+      Diese Beispiele veranschaulichen die API-Verwendungsmuster für die Universelle Windows-Plattform (UWP) im Windows Software Development Kit (SDK) für Windows 10.
+   :::column-end:::
+   :::column:::
+      [XAML-Steuerelementekatalog](https://github.com/microsoft/Xaml-Controls-Gallery)
+
+      Diese App zeigt die verschiedenen XAML-Steuerelemente, die im Fluent Design-System unterstützt werden.
+   :::column-end:::
+:::row-end:::
+
+## <a name="videos"></a>Videos
+
+Verschiedene Videos zum Erstellen von Windows-Anwendungen, die sprach Interaktionen einschließen.
+
+:::row:::
+   :::column:::
+      **Cortana und Sprachplattform im Detail**
+   :::column-end:::
+   :::column:::
+      **Cortana-Erweiterbarkeit in universellen Windows-apps**
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/3-716/player]
+   :::column-end:::
+   :::column:::
+      > [!VIDEO https://channel9.msdn.com/Events/Build/2015/2-691/player]
+   :::column-end:::
+:::row-end:::
+
+## <a name="other-resources"></a>Weitere Ressourcen
+
+:::row:::
+   :::column:::
+      **Blogs und Neuigkeiten**
+
+      Die neuesten aus der Welt der Microsoft-Sprache.
+   :::column-end:::
+   :::column:::
+      **Community und Support**
+
+      , Wo Windows-Entwickler und-Benutzer zusammenarbeiten und kennenlernen.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column:::
+      [Nachrichten](https://news.microsoft.com/?s=speech)
+
+      [Sprachblogs](https://blogs.windows.com/windowsdeveloper/?s=speech)
+   :::column-end:::
+   :::column:::
+      [Windows-Community-Speech](https://community.windows.com/search?q=speech)
+
+      [Entwickler Forum für Windows Speech](https://social.msdn.microsoft.com/Forums/home?filter=alltypes&sort=firstpostdesc&searchTerm=speech)
+   :::column-end:::
+:::row-end:::

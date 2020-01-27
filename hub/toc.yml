@@ -68,6 +68,8 @@
       href: apps/fluent-design-system.md
     - name: Eingabehilfen
       href: apps/accessibility.md
+    - name: Speech
+      href: apps/speech.md
     - name: Features und Technologien
       href: apps/features-and-technologies.md
     - name: Neueste Aktualisierungen der Dokumentation
