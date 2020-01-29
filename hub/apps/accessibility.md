@@ -6,16 +6,16 @@ ms.date: 09/12/2019
 keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, Erstellen barrierefreier Win32-Apps, Erstellen barrierefreier UWP-Apps, Erstellen barrierefreier WPF-Apps, Erstellen barrierefreier WinForms-Apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681891"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725933"
 ---
 # <a name="accessibility-in-windows-10"></a>Barrierefreiheit unter Windows 10
 
-![hero-accessibility-bar-smaller.png](images/hero-accessibility-bar-smaller.png)
+![Heroabbildung Barrierefreiheit](images/hero-accessibility-bar-smaller.png)
 
 ## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>Integrieren Sie Barrierefreiheit in Ihre Anwendungen, um Menschen mit unterschiedlichsten Fähigkeiten zu unterstützen
 
@@ -256,7 +256,6 @@ Verschiedene Videos, in denen erläutert wird, wie Sie barrierefreie Windows-Anw
       [Blogs zur Automatisierung der Windows-Benutzeroberfläche](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
-
 :::row:::
    :::column span="3":::
       **Community und Support**
