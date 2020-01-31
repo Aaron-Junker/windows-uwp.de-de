@@ -1,19 +1,19 @@
 ---
 description: In diesem Artikel wird beschrieben, wie Sie die XAML-Benutzeroberfläche C++ von UWP in Ihrer Desktop-Win32-App
 title: Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, Win32, XAML-Inseln
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 7574fb5920433f894819ffd3d94e31fef03d30b3
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520425"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814030"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
 
@@ -95,9 +95,9 @@ Die Art und Weise, in der Sie die UWP-XAML-Hosting-API in Ihrem Code verwenden, 
 
 In den folgenden Beispielen wird gezeigt, wie die UWP-XAML-Hosting C++ -API in einer Win32-App verwendet wird:
 
-* [Einfaches Beispiel für eine XAML-Insel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp). Dieses Beispiel veranschaulicht eine grundlegende Implementierung des Hostings eines UWP-Steuer Elements C++ in einer nicht verpackten Win32-app (d. h. eine APP, die nicht in ein msix-Paket integriert ist).
+* [Einfaches Beispiel für eine XAML-Insel](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App). Dieses Beispiel veranschaulicht eine grundlegende Implementierung des Hostings eines UWP-Steuer Elements C++ in einer nicht verpackten Win32-app (d. h. eine APP, die nicht in ein msix-Paket integriert ist).
 
-* [XAML-Insel mit benutzerdefiniertem Steuerelement Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App). Dieses Beispiel veranschaulicht eine komplette Implementierung des Hostings eines benutzerdefinierten UWP-Steuer Elements C++ in einer nicht verpackten Win32-App sowie die Handhabung anderer Verhaltensweisen wie Tastatureingaben und Fokus Navigation. 
+* [XAML-Insel mit benutzerdefiniertem Steuerelement Beispiel](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32). Dieses Beispiel veranschaulicht eine komplette Implementierung des Hostings eines benutzerdefinierten UWP-Steuer C++ Elements in einer APP mit gepackten Win32-App sowie die Handhabung anderer Verhaltensweisen wie Tastatureingaben und Fokus Navigation.
 
 ### <a name="wpf-and-windows-forms"></a>WPF und Windows Forms
 
@@ -109,7 +109,7 @@ Das [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/contro
 
 ## <a name="host-a-standard-uwp-control"></a>Hosten eines UWP-Standard Steuer Elements
 
-In diesem Abschnitt werden Sie durch den Prozess der Verwendung der UWP-XAML-Hosting-API zum Hosten eines UWP-Standard Steuer Elements (d. h. eines Steuer Elements, das von C++ der Windows SDK-oder WinUI-Bibliothek bereitgestellt wird) in einer neuen Win32 Der Code basiert auf dem [einfachen XAML-Insel Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp), und in diesem Abschnitt werden einige der wichtigsten Teile des Codes erläutert. Wenn Sie über ein vorhandenes C++ Win32-App-Projekt verfügen, können Sie diese Schritte und Codebeispiele für Ihr Projekt anpassen.
+In diesem Abschnitt werden Sie durch den Prozess der Verwendung der UWP-XAML-Hosting-API zum Hosten eines UWP-Standard Steuer Elements (d. h. eines Steuer Elements, das von C++ der Windows SDK-oder WinUI-Bibliothek bereitgestellt wird) in einer neuen Win32 Der Code basiert auf dem [einfachen XAML-Insel Beispiel](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App), und in diesem Abschnitt werden einige der wichtigsten Teile des Codes erläutert. Wenn Sie über ein vorhandenes C++ Win32-App-Projekt verfügen, können Sie diese Schritte und Codebeispiele für Ihr Projekt anpassen.
 
 ### <a name="configure-the-project"></a>Konfigurieren des Projekts
 
@@ -119,7 +119,7 @@ In diesem Abschnitt werden Sie durch den Prozess der Verwendung der UWP-XAML-Hos
 
 3. Installieren Sie das nuget-Paket [Microsoft. Windows. cppwinrt](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) :
 
-    1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.
+    1. Klicken Sie mit der rechten Maustaste auf das Projekt in **Projektmappen-Explorer** und wählen Sie **nuget-Pakete verwalten**.
     2. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Windows. cppwinrt](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) , und installieren Sie die neueste Version dieses Pakets.
 
 4. Installieren Sie das nuget-Paket " [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) ":
@@ -341,9 +341,8 @@ Die folgenden Schritte und Codebeispiele veranschaulichen, wie der oben beschrie
 Ausführliche Beispiele für diese Aufgaben finden Sie in den folgenden Code Dateien:
 
 * **C++Win32**
-  * Weitere Informationen finden Sie in der Datei " [hellowindowsdesktop. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_SimpleApp/Win32DesktopApp/HelloWindowsDesktop.cpp) " im [einfachen XAML-Insel Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_SimpleApp).
-  * Informationen finden Sie in der [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) -Datei auf der [XAML-Insel mit benutzerdefiniertem Steuerelement Sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
-
+  * Weitere Informationen finden Sie in der Datei " [hellowindowsdesktop. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) ".
+  * Weitere Informationen finden Sie in der [xamlbridge. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) -Datei.
 * **WPF:** Weitere Informationen finden Sie in den Dateien [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) und [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) im Windows Community Toolkit.  
 
 * **Windows Forms:** Weitere Informationen finden Sie in den Dateien [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) und [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) im Windows Community Toolkit.
@@ -358,27 +357,29 @@ Um ein benutzerdefiniertes UWP-Steuerelement zu hosten, benötigen Sie die folge
 
 * **Das benutzerdefinierte UWP-Steuer**Element. Sie benötigen den Quellcode für das benutzerdefinierte UWP-Steuerelement, das Sie hosten möchten, damit Sie es mit Ihrer APP kompilieren können. In der Regel wird das benutzerdefinierte Steuerelement in einem UWP-Klassen Bibliotheksprojekt definiert, auf das Sie in C++ derselben Projekt Mappe wie das Win32-Projekt verweisen.
 
-* **Ein UWP-App-Projekt, das ein xamlapplication-Objekt definiert**. Das C++ Win32-Projekt muss Zugriff auf eine Instanz der `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Dieser Typ fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung. Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das C++ Win32-Projekt hinzuzufügen und die Standard `App` Klasse in diesem Projekt zu überarbeiten.
+* **Ein UWP-App-Projekt, das ein xamlapplication-Objekt definiert**. Das C++ Win32-Projekt muss über Zugriff auf eine Instanz der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse verfügen, die vom Windows Community Toolkit bereitgestellt wird. Dieser Typ fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung.
+
+  Die empfohlene Vorgehensweise besteht darin, ein **leeres App-Projekt (Universal Windows)** zur gleichen Projekt Mappe wie das C++ Win32-Projekt hinzuzufügen, die Standard `App` Klasse in diesem Projekt zu überarbeiten, um von `XamlApplication`abzuleiten, und dann eine Instanz dieses Objekts im Code für den C++ Einstiegspunkt für ihre Win32-APP zu erstellen.
+
   > [!NOTE]
   > Die Projekt Mappe kann nur ein Projekt enthalten, das ein `XamlApplication` Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP verwenden dasselbe `XamlApplication` Objekt. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die in der XAML-Insel als Host-UWP-Steuerelemente verwendet werden.
 
 Führen Sie die folgenden allgemeinen Schritte aus, um C++ ein benutzerdefiniertes UWP-Steuerelement in einer Win32-APP zu
 
-1. Fügen Sie in der Projekt Mappe C++ , die das Win32-Desktop-App-Projekt enthält, ein Projekt für eine **leere app (Universal Windows)** hinzu, und konfigurieren Sie es, indem Sie die ausführlichen Anweisungen in [diesem Abschnitt](host-custom-control-with-xaml-islands.md#create-a-xamlapplication-object-in-a-uwp-app-project) in der zugehörigen exemplarischen Vorgehensweise zu
+1. Fügen Sie in der Projekt Mappe C++ , die das Win32-Desktop-App-Projekt enthält, ein **leeres App-Projekt (Universal Windows)** hinzu, und definieren Sie eine `XamlApplication` Klasse, indem Sie die ausführlichen Anweisungen in [diesem Abschnitt](host-custom-control-with-xaml-islands.md#define-a-xamlapplication-class-in-a-uwp-app-project) in der zugehörigen exemplarischen Vorgehensweise zu WPF befolgen. 
 
 2. Fügen Sie in der gleichen Projekt Mappe das Projekt hinzu, das den Quellcode für das benutzerdefinierte UWP-XAML-Steuerelement enthält (in der Regel ein UWP-Klassen Bibliotheksprojekt), und erstellen Sie das Projekt.
 
 3. Fügen Sie im UWP-App-Projekt einen Verweis auf das UWP-Klassen Bibliotheksprojekt hinzu.
 
-4. Fügen Sie C++ in Ihrem Win32-Projekt einen Verweis auf das UWP-App-Projekt und das UWP-Klassen Bibliotheksprojekt in der Projekt Mappe hinzu.
+4. In Ihrem C++ Win32-Projekt:
+
+  * Fügen Sie einen Verweis auf das UWP-App-Projekt und das UWP-Klassen Bibliotheksprojekt in der Projekt Mappe hinzu.
+  * Erstellen Sie in der `WinMain`-Funktion oder einem anderen Code für den Einstiegspunkt eine Instanz der `XamlApplication`-Klasse, die Sie zuvor im UWP-App-Projekt definiert haben. Beispielsweise finden Sie [diese Codezeile](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Desktop_Win32App/DesktopWin32App/DesktopWin32App.cpp#L46) aus dem C++ Win32-Beispiel in den [Beispielen für die XAML-Inseln](https://github.com/microsoft/Xaml-Islands-Samples).
 
 5. Befolgen Sie den im Abschnitt [Verwenden der XAML-Hosting-API zum Hosten eines UWP-Steuer](#use-the-xaml-hosting-api-to-host-a-uwp-control) Elements beschriebenen Prozess zum Hosten des benutzerdefinierten Steuer Elements in einer XAML-Insel in Ihrer APP. Weisen Sie eine Instanz des benutzerdefinierten Steuer Elements zu, um die [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) -Eigenschaft des **desktopwindowxamlsource** -Objekts im Code zu hosten.
 
-Ein vollständiges Beispiel für eine C++ Win32-Anwendung finden Sie in den folgenden Projekten auf der [XAML-Insel mit benutzerdefiniertem Steuerelement Sample](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App):
-
-* [SampleUserControl](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleUserControl): dieses Projekt implementiert ein benutzerdefiniertes UWP-XAML-Steuerelement mit dem Namen `MyUserControl`, das ein Textfeld, mehrere Schaltflächen und ein Kombinations Feld enthält.
-* [Myapp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/MyApp): Dies ist ein UWP-App-Projekt mit den oben beschriebenen Änderungen.
-* [Samplecppapp](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp): Dies ist das C++ Win32-App-Projekt, das das benutzerdefinierte UWP-XAML-Steuerelement in einer XAML-Insel hostet.
+Ein vollständiges Beispiel für eine C++ Win32-Anwendung finden Sie im [XAML C++ -Insel-Win32-Beispiel](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Desktop_Win32App).
 
 ## <a name="handle-keyboard-layout-and-dpi"></a>Behandeln von Tastatur, Layout und dpi
 
@@ -393,7 +394,7 @@ Die folgenden Abschnitte enthalten Anleitungen und Links zu Codebeispielen zum B
 
 Damit Tastatureingaben für jede XAML-Insel ordnungsgemäß behandelt werden, muss die Anwendung alle Windows-Meldungen an das UWP-XAML-Framework übergeben, damit bestimmte Nachrichten ordnungsgemäß verarbeitet werden können. Wandeln Sie das **desktopwindowxamlsource** -Objekt für jede XAML-Insel in eine **IDesktopWindowXamlSourceNative2** -com-Schnittstelle ein, um dies zu erreichen. Rufen Sie dann die **pretranslatemess Age** -Methode dieser Schnittstelle auf, und übergeben Sie die aktuelle Nachricht.
 
-  * Win32:: die APP kann **pretranslatemess** direkt in der Hauptnachrichten Schleife aufzurufen. **C++** Ein Beispiel finden Sie in der Datei " [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp#L6) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).
+  * Win32:: die APP kann **pretranslatemess** direkt in der Hauptnachrichten Schleife aufzurufen. **C++** Ein Beispiel finden Sie in der Datei " [xamlbridge. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16) ".
 
   * **WPF:** Die APP kann **pretranslatemess** aus dem Ereignishandler für das [ComponentDispatcher. ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) -Ereignis aufrufen. Ein Beispiel finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) im Windows Community Toolkit.
 
@@ -411,7 +412,7 @@ Die UWP-XAML-Hosting-API bietet verschiedene Typen und Member, die Sie beim Ausf
 
 Beispiele für die Vorgehensweise im Kontext einer funktionierenden Beispielanwendung finden Sie in den folgenden Code Dateien:
 
-  * /Win32: Weitere Informationen finden Sie in der Datei " [xamlbridge. cpp](https://github.com/marb2000/XamlIslands/blob/master/1903_Samples/CppWinRT_Win32_App/SampleCppApp/XamlBridge.cpp) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/1903_Samples/CppWinRT_Win32_App).  **C++**
+  * /Win32: Weitere Informationen finden Sie in der Datei " [xamlbridge. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) ".  **C++**
 
   * **WPF:** Weitere Informationen finden Sie in der Datei [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs) im Windows Community Toolkit.  
 
@@ -421,7 +422,7 @@ Beispiele für die Vorgehensweise im Kontext einer funktionierenden Beispielanwe
 
 Wenn der Benutzer die Größe des übergeordneten Elements der Benutzeroberfläche ändert, müssen Sie alle notwendigen Layoutänderungen verarbeiten, um sicherzustellen, dass Ihre UWP-Steuerelemente erwartungsgemäß angezeigt werden. Hier sind einige wichtige Szenarien, die berücksichtigt werden müssen.
 
-* Wenn die C++ Anwendung in einer Win32-Anwendung die WM_SIZE Nachricht verarbeitet, kann Sie die gehostete XAML-Insel mithilfe der [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) -Funktion neu positionieren. Ein Beispiel finden Sie in der Codedatei " [SampleApp. cpp](https://github.com/marb2000/XamlIslands/blob/master/19H1_Insider_Samples/CppWin32App_With_Island/SampleCppApp/SampleApp.cpp#L191) " im [ C++ Win32-Beispiel](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island).
+* Wenn die C++ Anwendung in einer Win32-Anwendung die WM_SIZE Nachricht verarbeitet, kann Sie die gehostete XAML-Insel mithilfe der [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) -Funktion neu positionieren. Ein Beispiel finden Sie in der Codedatei [SampleApp. cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) .
 
 * Wenn das übergeordnete Element der Benutzeroberfläche die Größe des rechteckigen Bereichs abrufen muss, der für das **Windows. UI. XAML. UIElement** erforderlich ist, das Sie auf dem **desktopwindowxamlsource**-Element gehostet haben, müssen Sie die [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) -Methode von **Windows. UI. XAML. UIElement**aufzurufen. Zum Beispiel:
 
@@ -480,5 +481,5 @@ Fügen Sie Ihrem Projekt ein paralleles Assemblymanifest hinzu, und [legen Sie d
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-* [UWP-Steuerelemente in Desktop Anwendungen](xaml-islands.md)
-* [C++Beispiel für Win32-XAML-Inseln](https://github.com/marb2000/XamlIslands/tree/master/19H1_Insider_Samples/CppWin32App_With_Island)
+* [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)](xaml-islands.md)
+* [C++Beispiel für Win32-XAML-Inseln](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)
