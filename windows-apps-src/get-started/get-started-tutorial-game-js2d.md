@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: b2b60354acb2c3d97ced3dce0b3fb7f6d97ac35d
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 92a1567fe72d46e53bf218c033fc59e8c98a2981
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684775"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929271"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>Erstellen eines UWP-Spiels in JavaScript
 
@@ -165,7 +165,6 @@ Wenn du die App erneut ausführst (durch Drücken von F5), siehst du, dass unser
 Jetzt sorgen wir dafür, dass sich die Wolken bewegen. Das Geheimnis für die Bewegung der Wolken – und aller anderen Elemente – ist die Einrichtung einer [Ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html)-Funktion, die wiederholt mehrmals pro Sekunde aufgerufen wird. Bei jedem Aufruf dieser Funktion wird die Grafik an einem etwas anderen Ort neu gezeichnet.
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">Sieh dir den Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a> (CreateJS – Animieren von Wolken) von Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) auf <a href="https://codepen.io">CodePen</a> an.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
   Der Code dazu ist bereits in der Datei **main.js** vorhanden, die von der CreateJS-Bibliothek „EaselJS“ bereitgestellt wird. Er sieht ungefähr so aus:
 
 ```
