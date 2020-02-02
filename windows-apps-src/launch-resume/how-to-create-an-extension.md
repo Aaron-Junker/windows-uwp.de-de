@@ -1,37 +1,36 @@
 ---
 title: Erstellen und Hosten einer App-Erweiterung
-description: Schreiben und Hosten Sie die App-Erweiterungen der universellen Windows-Plattform (UWP), mit denen Sie Ihre App über Pakete erweitern können, die Benutzer aus dem Microsoft Store installieren können.
+description: Schreiben und Hosten Sie App-Erweiterungen, die es Ihnen ermöglichen, Ihre APP über Pakete zu erweitern, die Benutzer über die Microsoft Store installieren können.
 keywords: App-Erweiterung, App-Dienst, Hintergrund
-ms.date: 10/05/2017
+ms.date: 01/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cb5395238ad6813556b7ae254ca4a86bc8f5b28
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: d315fb89f38e517e61194adf5b75a28b4675de9c
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282393"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929275"
 ---
 # <a name="create-and-host-an-app-extension"></a>Erstellen und Hosten einer App-Erweiterung
 
-In diesem Artikel wird erläutert, wie Sie eine UWP-App-Erweiterung erstellen und in einer UWP-App hosten.
+In diesem Artikel erfahren Sie, wie Sie eine Windows 10-App-Erweiterung erstellen und in einer APP hosten. App-Erweiterungen werden in UWP-apps und [gepackten Desktop-Apps](/windows/apps/desktop/modernize/#msix-packages)unterstützt.
 
-Dieser Artikel wird zusammen mit einem Codebeispiel angezeigt:
-- Laden Sie [Math Extension-Codebeispiel](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)herunter und entzippen Sie die Dateien.
+Um zu veranschaulichen, wie eine APP-Erweiterung erstellt wird, verwendet dieser Artikel Paket Manifest-XML und Code Ausschnitte aus dem [Codebeispiel für die mathematische Erweiterung](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/MathExtensionSample). Bei diesem Beispiel handelt es sich um eine UWP-APP, aber die im Beispiel gezeigten Funktionen gelten auch für gepackte Desktop-Apps. Befolgen Sie diese Anweisungen für die ersten Schritte mit dem Beispiel:
+
+- Herunterladen und Entpacken des Code Beispiels für die [mathematische Erweiterung](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip).
 - Öffnen Sie in Visual Studio 2019 mathextensionsample. sln. Legen Sie den Buildtyp auf x86 fest (**Build** > **Konfigurationsmanager**, ändern Sie dann **Plattform** auf **x86** für beide Projekte).
-- Stellen Sie die Lösung bereit: **Erstellen**Sie  > -**Lösung**bereitstellen.
+- Stellen Sie die Lösung bereit: **Build** > **Lösung bereitstellen**.
 
 ## <a name="introduction-to-app-extensions"></a>Einführung in App-Erweiterungen
 
-In einer App für die Universelle Windows-Plattform (UWP) stellen Erweiterungen Funktionen bereit, die mit Plug-Ins, Add-Ins und Add-Ons auf anderen Plattformen vergleichbar sind. Microsoft Edge-Erweiterungen sind beispielsweise UWP-App-Erweiterungen. UWP-App-Erweiterungen wurden in der Windows 10 Anniversary-Edition (Version 1607, Build 10.0.14393) eingeführt.
+In Windows 10 bieten App-Erweiterungen ähnliche Funktionen wie Plug-ins, Add-Ins und Add-ons auf anderen Plattformen. App-Erweiterungen wurden in der Windows 10 Anniversary Edition (Version 1607, Build 10.0.14393) eingeführt.
 
-UWP-App-Erweiterungen sind UWP-Apps mit einer Erweiterungsdeklaration, die ihnen ermöglicht, Inhalte und Bereitstellungsereignisse mit einer Host-App zu teilen. Eine App-Erweiterung stellt mehrere Erweiterungen bereit.
+App-Erweiterungen sind UWP-Apps oder gepackte Desktop-Apps mit einer Erweiterungs Deklaration, die es Ihnen ermöglichen, Inhalts-und Bereitstellungs Ereignisse mit einer Host-App freizugeben. Eine App-Erweiterung stellt mehrere Erweiterungen bereit.
 
-Da App-Erweiterungen UWP-Apps sind, sind sie auch voll funktionsfähige Apps, Host-Erweiterungen und bieten Erweiterungen für andere Apps an – ohne dabei separate App-Pakete zu erstellen.
+Da es sich bei App-Erweiterungen lediglich um UWP-Apps oder gepackte Desktop-Apps handelt, kann es sich auch um voll funktionsfähige apps, Host Erweiterungen und Erweiterungen für andere apps handeln, ohne dass separate App-Pakete erstellt werden müssen.
 
-Wenn Sie einen App-Erweiterungshost erstellen, bieten Sie die Möglichkeit, ein Ökosystem in Ihrer App zu entwickeln, in dem anderen Entwickler Ihre App auf für Sie möglicherweise unerwartet Weise oder mit unerwarteten Ressourcen verbessern können. Beachten Sie Microsoft Office Erweiterungen, Visual Studio-Erweiterungen, Browser Erweiterungen usw. Diese sorgen für eine umfangreichere Umgebung für apps, die über die Funktionen hinausgehen, mit denen Sie ausgeliefert wurden. Erweiterungen können der App mehr Wert und eine längere Lebensdauer bieten.
-
-**Übersicht**
+Wenn Sie einen App-Erweiterungshost erstellen, bieten Sie die Möglichkeit, ein Ökosystem in Ihrer App zu entwickeln, in dem anderen Entwickler Ihre App auf für Sie möglicherweise unerwartet Weise oder mit unerwarteten Ressourcen verbessern können. Denken Sie an Erweiterungen für Microsoft Office, Visual Studio oder für Browser. Diese erstellen attraktivere Umgebungen für Apps, die die Funktionen übersteigen, die ursprünglich im Lieferumfang enthalten waren. Erweiterungen können der App mehr Wert und eine längere Lebensdauer bieten.
 
 Allgemein gesagt, muss zum Einrichten einer App-Erweiterungsbeziehung folgendes ausgeführt werden:
 
@@ -395,7 +394,7 @@ Wenn Sie nach der Entwicklung eines Erweiterungshosts diesen testen möchten, um
 - Führen Sie den Host aus, und stellen Sie dann eine Erweiterungs-App bereit, die ungültige Inhalte oder Eigenschaften hat
     - Erkennt der Host den ungültigen Inhalt und behandelt ihn ordnungsgemäß?
 
-## <a name="design-considerations"></a>Überlegungen zum Entwurf
+## <a name="design-considerations"></a>Entwurfsüberlegungen
 
 - Stellen Sie Benutzeroberflächen bereit, die dem Benutzer anzeigen, welche Erweiterungen zur Verfügung stehen, und ermöglichen Sie ihnen, diese zu aktivieren oder zu deaktivieren. Sie können außerdem Glyphen für Erweiterungen hinzufügen, die nicht mehr verfügbar sind, wenn das Paket offline geschaltet wurde usw. hinzufügen.
 - Geben Sie dem Benutzer an, wo die Erweiterungen erhalten werden können. Ihre Seite der Erweiterung kann möglicherweise eine Suchabfrage des Microsoft Store bereitstellen, die eine Liste der Erweiterungen anbietet, die mit Ihrer App verwendet werden können.
@@ -407,7 +406,7 @@ Der Hauptunterschied zwischen [optionalen Paketen](/windows/msix/package/optiona
 
 App-Erweiterungen sind Teil eines offenen Ökosystems. Wenn Ihre App-Erweiterungen hosten kann, kann jeder Benutzer eine Erweiterung für den Host schreiben, solange er die Methode des Übergebens und Empfangens von Informationen aus der Erweiterung verwendet. Dies unterscheidet sich von optionalen Paketen, die Teil eines geschlossenen Ökosystem sind. Dort entscheidet der Herausgeber, wer ein optionales Paket erstellen darf, das mit der App verwendet werden kann.
 
-App-Erweiterungen sind unabhängige Pakete und eigenständige Apps. Sie dürfen keine Abhängigkeit in puncto Bereitstellung auf einer anderen App besitzen. Bei optionalen Paketen ist das primäre Pakets erforderlich und diese können nicht ohne ausgeführt werden.
+App-Erweiterungen sind unabhängige Pakete und eigenständige Apps. Sie dürfen keine Abhängigkeit in puncto Bereitstellung auf einer anderen App besitzen. Optionale Pakete erfordern das primäre Paket und können nicht ohne das Paket ausgeführt werden.
 
 Ein Erweiterungspaket für ein Spiel wäre ein guter Kandidat für ein optionales Paket, da es eng mit dem Spiel verbunden ist und nicht unabhängig auf dem Spiel ausgeführt werden kann. Erweiterungspakete sollten nicht von beliebigen Entwickler im Ökosystem erstellt werden.
 
@@ -417,7 +416,7 @@ Hätte das gleiche Spiel anpassbare UI-Add-Ons oder Designs, wäre eine App-Erwe
 
 Dieses Thema stellt eine Einführung zur App-Erweiterungen bereit. Die wichtigsten Punkte sind die Erstellung des Hosts und das Markieren in der Datei "Package.appxmanifest", das Erstellen der Erweiterung und das Markieren als solche in der Datei "Package.appxmanifest", festzulegen, wie die Erweiterung implementiert wird (z. B. als App-Dienst, als Hintergrundaufgaben oder anderweitig), zu definieren, wie der Host mit den Erweiterungen kommunizieren soll, und das Verwenden der [AppExtensions API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) für den Zugriff und das Verwalten der Erweiterungen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Einführung in App-Erweiterungen](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [Build 2016-Sitzung zu app-Erweiterungen](https://channel9.msdn.com/Events/Build/2016/B808)
