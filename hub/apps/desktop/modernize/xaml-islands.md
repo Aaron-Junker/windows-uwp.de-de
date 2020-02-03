@@ -1,19 +1,19 @@
 ---
 description: Diese Anleitung hilft Ihnen, Fluent-basierte UWP-UIs direkt in einer WPF- oder Windows Forms-Anwendung zu erstellen.
 title: UWP-Steuerelemente in Desktopanwendungen
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 95fbfc9aa988330fb21713651687690fa769b99f
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 96705faff278c4cab31e0ab271bc31d08261401b
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520405"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814010"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)
 
@@ -127,4 +127,5 @@ Hier finden Sie den aktuellen Status der mit XAML Islands zusammenhängenden Fea
 Weitere Hintergrundinformationen und Tutorials zur Verwendung von XAML Islands finden Sie in den folgenden Artikeln und Ressourcen:
 
 * [Tutorial Modernisieren einer WPF-App](modernize-wpf-tutorial.md): Dieses Tutorial enthält schrittweise Anleitungen zum Verwenden der umschließenden Steuerelemente und Hoststeuerelemente im Windows Community Toolkit zum Hinzufügen von UWP-Steuerelementen zu einer vorhandenen WPF-Branchenanwendung. Dieses Tutorial enthält den vollständigen Code für die WPF-Anwendung sowie ausführliche Anweisungen zu den einzelnen Schritten in diesem Prozess.
+* [Codebeispiele für XAML-Inseln](https://github.com/microsoft/Xaml-Islands-Samples): Dieses Repository enthält Windows Forms-, WPF- und C++/Win32-Beispiele, die die Verwendung von XAML-Inseln demonstrieren.
 * [XAML Islands v1 – Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): In diesem Blogbeitrag werden viele häufig gestellte Fragen zu XAML Islands erläutert und eine ausführliche Entwicklungsroadmap zur Verfügung gestellt.

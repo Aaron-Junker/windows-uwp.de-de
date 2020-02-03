@@ -7,16 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 24c7bd8828ec036135233f569ee7add5d39ffb32
+ms.sourcegitcommit: 136416e8e2eb0565bb6eb99e42482c1723ccb8c7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684296"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890425"
 ---
 # <a name="tabview"></a>TabView
 
 Das TabView-Steuerelement bietet eine Möglichkeit, eine Reihe von Registerkarten und deren jeweiligen Inhalt anzuzeigen. TabViews sind nützlich, um mehrere Seiten (oder Dokumente) mit Inhalten anzuzeigen und geben einem Benutzer die Möglichkeit, neue Registerkarten neu anzuordnen, zu öffnen oder zu schließen.
+
+> **Wichtige APIs:** [TabView-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ![Beispiel für eine TabView](images/tabview/tab-introduction.png)
 
@@ -25,7 +27,7 @@ Das TabView-Steuerelement bietet eine Möglichkeit, eine Reihe von Registerkarte
 Im Allgemeinen gibt es für Benutzeroberflächen mit Registerkarten zwei verschiedene Stile, die sich in Funktion und Aussehen unterscheiden: **Statische Registerkarten** sind die Arten von Registerkarten, die sich häufig in Fenstern für Einstellungen finden. Sie enthalten eine festgelegte Anzahl von Seiten in einer festgelegten Reihenfolge, die in der Regel vordefinierte Inhalte enthalten.
 **Dokumentregisterkarten** sind die Arten von Registerkarten, die in einem Browser enthalten sind, z.B. in Microsoft Edge. Benutzer können Registerkarten erstellen, entfernen und neu anordnen, Registerkarten zwischen Fenstern verschieben und den Inhalt von Registerkarten ändern.
 
-TabView bietet Dokumentregisterkarten für UWP-Apps. Verwenden Sie unter den folgenden Umständen eine TabView:
+[TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) bietet Dokumentregisterkarten für UWP-Apps. Verwenden Sie unter den folgenden Umständen eine TabView:
 
 - Benutzer können Registerkarten dynamisch öffnen, schließen oder neu anordnen.
 - Benutzer können Dokumente oder Webseiten direkt auf Registerkarten öffnen.
@@ -35,21 +37,21 @@ Wenn eine TabView für Ihre App nicht geeignet ist, sollten Sie Steuerelemente w
 
 ## <a name="anatomy"></a>Aufbau
 
-Die folgende Abbildung zeigt die Bestandteile des TabView-Steuerelements. Das TabStrip-Element weist eine Kopf- und Fußzeile auf, aber im Gegensatz zu einem Dokument befinden sich die Kopf- und Fußzeile des TabStrips jeweils ganz links und ganz rechts auf dem TabStrip.
+Die folgende Abbildung zeigt die Bestandteile des [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview)-Steuerelements. Das TabStrip-Element weist eine Kopf- und Fußzeile auf, aber im Gegensatz zu einem Dokument befinden sich die Kopf- und Fußzeile des TabStrips jeweils ganz links und ganz rechts auf dem TabStrip.
 
 ![Aufbau des TabView-Steuerelements](images/tabview/tab-view-anatomy.png)
 
-Die nächste Abbildung zeigt die Bestandteile des TabViewItem-Steuerelements. Beachten Sie, dass der Inhalt zwar innerhalb des TabView-Steuerelements angezeigt wird, der Inhalt aber tatsächlich ein Teil von TabViewItem ist.
+Die nächste Abbildung zeigt die Bestandteile des [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)-Steuerelements. Beachten Sie, dass der Inhalt zwar innerhalb des TabView-Steuerelements angezeigt wird, der Inhalt aber tatsächlich ein Teil von TabViewItem ist.
 
 ![Aufbau des TabViewItem-Steuerelements](images/tabview/tab-control-anatomy.png)
 
 ### <a name="create-a-tab-view"></a>Erstellen einer Registerkartenansicht
 
-Dieses Beispiel erstellt eine einfache TabView zusammen mit Ereignishandlern, um das Öffnen und Schließen von Registerkarten zu unterstützen.
+Dieses Beispiel erstellt eine einfache [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) zusammen mit Ereignishandlern, um das Öffnen und Schließen von Registerkarten zu unterstützen.
 
 ```xaml
 <TabView AddTabButtonClick="Tabs_AddTabButtonClick"
-            TabCloseRequested="Tabs_TabCloseRequested" />
+         TabCloseRequested="Tabs_TabCloseRequested" />
 ```
 
 ```csharp
@@ -77,7 +79,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 ## <a name="behavior"></a>Verhalten
 
-Es gibt eine Reihe von Möglichkeiten, die Funktionalität einer TabView zu nutzen oder zu erweitern.
+Es gibt eine Reihe von Möglichkeiten, die Funktionalität einer [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) zu nutzen oder zu erweitern.
 
 ### <a name="bind-tabitemssource-to-a-tabviewitemcollection"></a>Binden von TabItemsSource an eine TabViewItemCollection
 
@@ -89,7 +91,7 @@ Es gibt eine Reihe von Möglichkeiten, die Funktionalität einer TabView zu nutz
 
 Anstatt dass Registerkarten eine eigene Zeile unter der Titelleiste eines Fensters belegen, können Sie beides im gleichen Bereich zusammenführen. Dies spart vertikalen Platz für Ihre Inhalte und verleiht Ihrer App ein modernes Erscheinungsbild.
 
-Da ein Benutzer ein Fenster anhand seiner Titelleiste ziehen kann, um das Fenster neu zu positionieren, ist es wichtig, dass die Titelleiste nicht vollständig mit Registerkarten ausgefüllt ist. Daher müssen Sie bei der Anzeige von Registerkarten in einer Titelleiste einen Teil der Titelleiste angeben, der als ziehbarer Bereich reserviert werden soll. Wenn Sie keinen ziehbaren Bereich angeben, wird die gesamte Titelleiste ziehbar, was verhindert, dass Ihre Registerkarten Eingabeereignisse empfangen. Wenn Ihre TabView in der Titelleiste eines Fensters angezeigt wird, sollten Sie immer einen TabStripFooter in Ihre TabView aufnehmen und diesen als ziehbaren Bereich markieren.
+Da ein Benutzer ein Fenster anhand seiner Titelleiste ziehen kann, um das Fenster neu zu positionieren, ist es wichtig, dass die Titelleiste nicht vollständig mit Registerkarten ausgefüllt ist. Daher müssen Sie bei der Anzeige von Registerkarten in einer Titelleiste einen Teil der Titelleiste angeben, der als ziehbarer Bereich reserviert werden soll. Wenn Sie keinen ziehbaren Bereich angeben, wird die gesamte Titelleiste ziehbar, was verhindert, dass Ihre Registerkarten Eingabeereignisse empfangen. Wenn Ihre TabView in der Titelleiste eines Fensters angezeigt wird, sollten Sie immer einen [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) in Ihre [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) aufnehmen und diesen als ziehbaren Bereich markieren.
 
 Weitere Informationen finden Sie unter [Anpassen der Titelleiste](https://docs.microsoft.com/windows/uwp/design/shell/title-bar).
 
@@ -98,7 +100,7 @@ Weitere Informationen finden Sie unter [Anpassen der Titelleiste](https://docs.m
 ```xaml
 <Page>
     <TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <TabViewItem Icon="Home" Header="Home" IsCloseable="False" />
+        <TabViewItem Icon="Home" Header="Home" IsClosable="False" />
         <TabViewItem Icon="Document" Header="Document 1" />
         <TabViewItem Icon="Document" Header="Document 2" />
         <TabViewItem Icon="Document" Header="Document 3" />
@@ -147,7 +149,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 ### <a name="control-overflow-behavior"></a>Steuerelement-Überlaufverhalten
 
-Wenn die Anzahl der Registerkarten in der Registerkartenleiste zunimmt, können Sie die Anzeige der Registerkarten steuern, indem Sie TabView.TabWidthMode festlegen.
+Wenn die Anzahl der Registerkarten in der Registerkartenleiste zunimmt, können Sie die Anzeige der Registerkarten steuern, indem Sie [TabView.TabWidthMode](/uwp/api/microsoft.ui.xaml.controls.tabview.tabwidthmode) festlegen.
 
 | TabWidthMode-Wert | Verhalten                                                                                                                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -160,15 +162,15 @@ Unabhängig davon, welchen Wert Sie auswählen, kann es vorkommen, dass es zu vi
 
 Die meisten Benutzer sind mit der Verwendung von Dokumentregisterkarten einfach deshalb vertraut, weil sie einen Webbrowser verwenden. Wenn sie Dokumentregisterkarten in Ihrer App verwenden, steuert ihre Erfahrung ihre Erwartungen, wie sich die Registerkarten verhalten sollten.
 
-Unabhängig davon, wie der Benutzer mit einer Reihe von Dokumentregisterkarten interagiert, sollte es immer eine aktive Registerkarte geben. Wenn der Benutzer die ausgewählte Registerkarte schließt oder die ausgewählte Registerkarte in ein anderes Fenster verschiebt, sollte eine andere Registerkarte zur aktiven Registerkarte werden. TabView versucht dies automatisch, indem die nächste Registerkarte ausgewählt wird. Wenn es einen guten Grund gibt, warum Ihre App ein TabView-Element mit einer nicht ausgewählten Registerkarte zulassen sollte, ist der Inhaltsbereich der TabView einfach leer.
+Unabhängig davon, wie der Benutzer mit einer Reihe von Dokumentregisterkarten interagiert, sollte es immer eine aktive Registerkarte geben. Wenn der Benutzer die ausgewählte Registerkarte schließt oder die ausgewählte Registerkarte in ein anderes Fenster verschiebt, sollte eine andere Registerkarte zur aktiven Registerkarte werden. [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) versucht dies automatisch, indem die nächste Registerkarte ausgewählt wird. Wenn es einen guten Grund gibt, warum Ihre App ein TabView-Element mit einer nicht ausgewählten Registerkarte zulassen sollte, ist der Inhaltsbereich der TabView einfach leer.
 
 ## <a name="keyboard-navigation"></a>Navigation mithilfe der Tastatur
 
-TabView unterstützt standardmäßig viele gängige Navigationsszenarien mit der Tastatur. In diesem Abschnitt werden die integrierten Funktionen erläutert und Empfehlungen für zusätzliche Funktionen gegeben, die für einige Apps hilfreich sein können.
+[TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) unterstützt standardmäßig viele gängige Navigationsszenarien mit der Tastatur. In diesem Abschnitt werden die integrierten Funktionen erläutert und Empfehlungen für zusätzliche Funktionen gegeben, die für einige Apps hilfreich sein können.
 
 ### <a name="tab-and-cursor-key-behavior"></a>Verhalten der TAB- und CURSORTASTEN
 
-Wenn der Fokus in den TabStrip-Bereich bewegt wird, erhält das ausgewählte TabViewItem den Fokus. Der Benutzer kann dann mit den NACH-LINKS- und NACH-RECHTS-TASTEN den Fokus (nicht die Auswahl) auf andere Registerkarten im TabStrip-Element verschieben. Der Pfeiltastenfokus ist im TabStrip-Element und in der Schaltfläche zum Hinzufügen von Registerkarten „(+)“ eingeschlossen, falls vorhanden. Um den Fokus aus dem TabStrip-Bereich zu verschieben, kann der Benutzer die TAB-TASTE drücken, die den Fokus auf das nächste Element verschiebt, das den Fokus erhalten kann.
+Wenn der Fokus in den _TabStrip_-Bereich bewegt wird, erhält das ausgewählte [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) den Fokus. Der Benutzer kann dann mit den NACH-LINKS- und NACH-RECHTS-TASTEN den Fokus (nicht die Auswahl) auf andere Registerkarten im TabStrip-Element verschieben. Der Pfeiltastenfokus ist im TabStrip-Element und in der Schaltfläche zum Hinzufügen von Registerkarten „(+)“ eingeschlossen, falls vorhanden. Um den Fokus aus dem TabStrip-Bereich zu verschieben, kann der Benutzer die TAB-TASTE drücken, die den Fokus auf das nächste Element verschiebt, das den Fokus erhalten kann.
 
 Verschieben des Fokus über die TAB-TASTE
 
@@ -188,18 +190,18 @@ Verwenden Sie die Pfeiltasten, um den Fokus zu verschieben, und drücken Sie dan
 
 ### <a name="shortcuts-for-selecting-adjacent-tabs"></a>Tastenkombinationen zum Auswählen angrenzender Registerkarten
 
-STRG+TAB wählt das nächste TabViewItem aus. STRG+UMSCHALT+TAB wählt das vorherige TabViewItem aus. Zu diesem Zweck wird die Registerkartenliste „in einer Schleife durchlaufen“, sodass die Auswahl der nächsten Registerkarte, während die letzte Registerkarte ausgewählt ist, dazu führt, dass die erste Registerkarte ausgewählt wird.
+STRG+TAB wählt das nächste [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) aus. STRG+UMSCHALT+TAB wählt das vorherige TabViewItem aus. Zu diesem Zweck wird die Registerkartenliste „in einer Schleife durchlaufen“, sodass die Auswahl der nächsten Registerkarte, während die letzte Registerkarte ausgewählt ist, dazu führt, dass die erste Registerkarte ausgewählt wird.
 
 ### <a name="closing-a-tab"></a>Schließen einer Registerkarte
 
-Durch Drücken von STRG+F4 wird das TabCloseRequested-Ereignis ausgelöst. Behandeln Sie das Ereignis, und schließen Sie gegebenenfalls die Registerkarte.
+Durch Drücken von STRG+F4 wird das [TabCloseRequested](/uwp/api/microsoft.ui.xaml.controls.tabview.tabcloserequested)-Ereignis ausgelöst. Behandeln Sie das Ereignis, und schließen Sie gegebenenfalls die Registerkarte.
 
 ### <a name="keyboard-guidance-for-app-developers"></a>Tastaturhinweise für App-Entwickler
 
 Einige Anwendungen erfordern möglicherweise eine erweiterte Tastatursteuerung. Erwägen Sie, die folgenden Tastenkombinationen zu implementieren, wenn sie für Ihre Anwendung geeignet sind.
 
 > [!WARNING]
-> Wenn Sie einer vorhandenen Anwendung eine TabView hinzufügen, haben Sie möglicherweise bereits Tastenkombinationen erstellt, die den Tastenkombinationen der empfohlenen TabView-Tastenkombinationen zugeordnet sind. In diesem Fall müssen Sie sich überlegen, ob Sie Ihre vorhandenen Tastenkombinationen beibehalten oder dem Benutzer eine intuitive Registerkarten-Benutzeroberfläche bieten möchten.
+> Wenn Sie einer vorhandenen Anwendung eine [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) hinzufügen, haben Sie möglicherweise bereits Tastenkombinationen erstellt, die den Tastenkombinationen der empfohlenen TabView-Tastenkombinationen zugeordnet sind. In diesem Fall müssen Sie sich überlegen, ob Sie Ihre vorhandenen Tastenkombinationen beibehalten oder dem Benutzer eine intuitive Registerkarten-Benutzeroberfläche bieten möchten.
 
 - STRG+T sollte eine neue Registerkarte öffnen. Im Allgemeinen wird auf dieser Registerkarte ein vordefiniertes Dokument angezeigt, oder sie wird leer erstellt, wobei der Inhalt auf einfache Weise ausgewählt werden kann. Wenn der Benutzer Inhalte für eine neue Registerkarte auswählen muss, sollte das Steuerelement für die Inhaltsauswahl den Eingabefokus besitzen.
 - STRG+W sollte die ausgewählte Registerkarte schließen. Denken Sie daran, dass TabView die nächste Registerkarte automatisch auswählt.
@@ -210,7 +212,7 @@ Einige Anwendungen erfordern möglicherweise eine erweiterte Tastatursteuerung. 
 
 ### <a name="implement-browser-style-keyboarding-behavior"></a>Implementieren von Tasaturverhalten im Browserstil
 
-In diesem Beispiel werden einige der oben genannten Empfehlungen für ein TabView-Element implementiert. Insbesondere werden in diesem Beispiel STRG+T, STRG+W, STRG+1 bis STRG+8 und STRG+9 implementiert.
+In diesem Beispiel werden einige der oben genannten Empfehlungen für ein [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview)-Element implementiert. Insbesondere werden in diesem Beispiel STRG+T, STRG+W, STRG+1 bis STRG+8 und STRG+9 implementiert.
 
 ```xaml
 <controls:TabView x:Name="TabRoot">

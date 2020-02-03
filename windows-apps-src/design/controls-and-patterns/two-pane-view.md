@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b3d12f2aad1d5dffbbad0790e5940699536daf0b
-ms.sourcegitcommit: e6a435716799c7bb192b3d5c4d3b8295ec3911d4
+ms.openlocfilehash: 67b97aec970cc655700729743f10c63c666ab0a6
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549705"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929260"
 ---
 # <a name="two-pane-view"></a>Ansicht mit zwei Bereichen
 
@@ -238,8 +238,8 @@ Die Ansicht mit zwei Bereichen wird im „Tall“-Modus angezeigt, wenn eine ein
 Wenn die Ansicht mit zwei Bereichen im Querformat-Modus angezeigt wird, bestimmt die TallLayout-Eigenschaft, was angezeigt werden soll:
 
 - **SinglePane** – Ein einzelnes Fenster (wie durch „PanePriority“ bestimmt). Der Bereich nimmt die gesamte Größe von „TwoPaneView“ in Anspruch (d. h. seine Größe wird in beiden Richtungen mit der Sternvariablen angepasst).
-- **TopBottom** – Bereich 1 oben, Bereich 2 rechts. Die Größe beider Bereiche wird horizontal mit der Sternvariablen angepasst, die Höhe von Bereich 1 wird automatisch festgelegt und die Höhe von Bereich 2 wird mit der Sternvariablen angepasst.
-- **BottomTop** – Bereich 1 rechts, Bereich 2 links. Die Größe beider Bereiche wird horizontal mit der Sternvariablen angepasst, die Höhe von Bereich 2 wird automatisch festgelegt und die Höhe von Bereich 1 wird mit der Sternvariablen angepasst.
+- **TopBottom** – Bereich 1 oben, Bereich 2 unten. Die Größe beider Bereiche wird horizontal mit der Sternvariablen angepasst, die Höhe von Bereich 1 wird automatisch festgelegt und die Höhe von Bereich 2 wird mit der Sternvariablen angepasst.
+- **BottomTop** – Bereich 1 unten, Bereich 2 oben. Die Größe beider Bereiche wird horizontal mit der Sternvariablen angepasst, die Höhe von Bereich 2 wird automatisch festgelegt und die Höhe von Bereich 1 wird mit der Sternvariablen angepasst.
 
 Die Standardeinstellung ist **TopBottom**.
 
