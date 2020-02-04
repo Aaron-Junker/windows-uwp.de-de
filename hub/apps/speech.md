@@ -52,9 +52,9 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       Entwickeln Sie sprach aktivierte Anwendungen für Windows Desktop und Windows Server mithilfe der hier bereitgestellten Tools, Informationen und Beispiel-Engines und Anwendungen.
 
-      [Microsoft Speech Platform-Software Development Kit (SDK) (Version 11)](https://www.microsoft.com/download/details.aspx?id=27226)
+      [Microsoft Speech Platform – Software Development Kit (SDK) (Version 11)](https://www.microsoft.com/download/details.aspx?id=27226)
       
-      [Microsoft Speech SDK, Version 5,1](https://www.microsoft.com/download/details.aspx?id=10121)
+      [Microsoft Speech SDK, Version 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -65,7 +65,7 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       Entwickeln Sie barrierefreie Apps und Tools auf der bekannten Plattform für verwaltete Windows-Anwendungen mit einem XAML-UI-Modell und dem .NET Framework.
 
-      [Programmier Handbuch für System. Speech für .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [System.Speech-Programmierhandbuch für .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Azure-Sprachdienste](images/platform-azure-speech.png)

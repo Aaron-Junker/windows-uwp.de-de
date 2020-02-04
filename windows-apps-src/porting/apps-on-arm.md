@@ -43,7 +43,7 @@ Zusätzlich zu UWP-apps kann Windows 10 auf Arm auch Ihre x86-Win32-apps unverä
 |[Problembehandlung bei Arm-apps auf Arm](apps-on-arm-troubleshooting-arm32.md)|Häufige Probleme mit ARM32-und ARM64-Apps bei der Ausführung auf Arm und deren Behebung. |
 |[Problembehandlung für die Programmkompatibilität auf ARM](apps-on-arm-program-compat-troubleshooter.md)|Anleitung zum Anpassen der Kompatibilitätseinstellungen, wenn Ihre App auf ARM nicht korrekt funktioniert. |
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 |Thema | Beschreibung |
 |-----|-----|
 |[Entwickeln von ARM64-Treibern mit dem WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|Anleitung zum Erstellen eines ARM64-Treibers. |
