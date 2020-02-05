@@ -4,14 +4,14 @@ title: xBind-Markuperweiterung
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 10f601b29ff441fe8cec9261d7751ba525c7f52b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8008c652dea89b42185c9fb1d9ac42e96f16a117
+ms.sourcegitcommit: 5af282fb230765a7225e138d99e9cb1b60bf7238
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258748"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77012048"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind}-Markuperweiterung
 
@@ -48,7 +48,7 @@ Die von **{x:Bind}** und **{Binding}** erstellten Bindungsobjekte sind von der F
 
 | Begriff | Beschreibung |
 |------|-------------|
-| _PropertyPath_ | Eine Zeichenfolge, die den Eigenschaftspfad für die Bindung angibt. Weitere Informationen finden Sie unten im Abschnitt [Eigenschaftspfad](#property-path). |
+| _propertyPath_ | Eine Zeichenfolge, die den Eigenschaftspfad für die Bindung angibt. Weitere Informationen finden Sie unten im Abschnitt [Eigenschaftspfad](#property-path). |
 | _bindingproperties_ |
 | _propName_=_Wert_\[, _propName_=_Wert_\]* | Mindestens eine Bindungseigenschaft, die mithilfe einer Name-Wert-Paarsyntax angegeben wird. |
 | _propName_ | Der Zeichenfolgenname der für das Binding-Objekt festzulegenden Eigenschaft. Beispiel: „Konverter“. |
@@ -94,7 +94,7 @@ Wenn die Datenquelle eine Auflistung ist, kann der Eigenschaftspfad Elemente in 
 
 Um einen Indexer verwenden zu können, muss das Modell **IList&lt;T&gt;** oder **IVector&lt;T&gt;** für den Typ der Eigenschaft implementieren, die indiziert werden soll. (Beachten Sie, dass die Indexer-Syntax von Iread onlylist&lt;t&gt; und ivectorview&lt;t&gt; nicht unterstützt wird.) Wenn der Typ der indizierten Eigenschaft " **INotifyCollectionChanged** " oder " **iobservablevector** " unterstützt und die Bindung OneWay oder TwoWay ist, registriert Sie diese Schnittstellen und lauscht auf Änderungs Benachrichtigungen. Die Änderungserkennungslogik wird basierend auf allen Auflistungsänderungen aktualisiert, auch wenn sie keine Auswirkungen auf den entsprechenden indizierten Wert hat. Dies geschieht, da die Überwachungslogik für alle Instanzen der Auflistung identisch ist.
 
-Wenn die Datenquelle ein Wörterbuch oder eine Karte ist, kann der Eigenschaftspfad Elemente in der Auflistung anhand ihres Zeichenfolgennamens angeben. Beispielsweise **&lt;TextBlock Text = "{x:Bind Players\[' John Smith '\]"/&gt;** nach einem Element im Wörterbuch mit dem Namen "John Smith". Der Name muss in Anführungszeichen gesetzt werden. Dabei können einfache oder doppelte Anführungszeichen verwendet werden. Das Caret-Symbol (^) kann als Escapezeichen für Anführungszeichen innerhalb von Zeichenfolgen verwendet werden. Es ist normalerweise am einfachsten, Anführungszeichen zu verwenden, die von denen für das XAML-Attribut verwendeten abweichen. (Beachten Sie, dass die Indexer-Syntax von Iread onlydictionary&lt;t&gt; und imapview&lt;t&gt; nicht unterstützt wird.)
+Wenn die Datenquelle ein Wörterbuch oder eine Karte ist, kann der Eigenschaftspfad Elemente in der Auflistung anhand ihres Zeichenfolgennamens angeben. Beispielsweise **&lt;TextBlock Text = "{x:Bind Players\[' John Smith '\]}"/&gt;** nach einem Element im Wörterbuch mit dem Namen "John Smith". Der Name muss in Anführungszeichen gesetzt werden. Dabei können einfache oder doppelte Anführungszeichen verwendet werden. Das Caret-Symbol (^) kann als Escapezeichen für Anführungszeichen innerhalb von Zeichenfolgen verwendet werden. Es ist normalerweise am einfachsten, Anführungszeichen zu verwenden, die von denen für das XAML-Attribut verwendeten abweichen. (Beachten Sie, dass die Indexer-Syntax von Iread onlydictionary&lt;t&gt; und imapview&lt;t&gt; nicht unterstützt wird.)
 
 Um einen Zeichenfolgen-Indexer verwenden zu können, muss das Modell **IDictionary&lt;string, T&gt;** oder **IMap&lt;string T&gt;** für den Typ der Eigenschaft implementieren, die indiziert werden soll. Wenn der Typ der indizierten Eigenschaft **IObservableMap** unterstützt und die Bindung OneWay oder TwoWay ist, wird er registriert und überwacht Benachrichtigungen auf diesen Schnittstellen. Die Änderungserkennungslogik wird basierend auf allen Auflistungsänderungen aktualisiert, auch wenn sie keine Auswirkungen auf den entsprechenden indizierten Wert hat. Dies geschieht, da die Überwachungslogik für alle Instanzen der Auflistung identisch ist.
 
