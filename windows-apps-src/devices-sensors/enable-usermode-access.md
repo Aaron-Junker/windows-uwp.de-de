@@ -1,28 +1,28 @@
 ---
-title: Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
-description: In diesem Lernprogramm wird der Benutzermoduszugriff auf GPIO, I2C, SPI und UART auf Windows 10 beschrieben.
+title: Aktivieren des benutzermoduszugriffs auf GPIO, I2C und SPI
+description: In diesem Tutorial wird beschrieben, wie Sie den Benutzermodus-Zugriff auf GPIO, I2C, SPI und UART unter Windows 10 aktivieren.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1356003c86040cfa51872b802ba070a685789b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 08c802154180f5577c43a3ad5f349f53e3d9b5d3
+ms.sourcegitcommit: 20ee991a1cf87ef03c158cd3f38030c7d0e483fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281843"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037900"
 ---
-# <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>Aktivieren des Benutzermoduszugriffs auf GPIO, I2C und SPI
+# <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>Aktivieren des benutzermoduszugriffs auf GPIO, I2C und SPI
 
-Windows 10 enthält neue APIs für den Zugriff auf GPIO, I2C, SPI und UART direkt aus Benutzermodus. Platinen für die Entwicklung, z. B. Raspberry Pi 2, zeigen eine Teilmenge dieser Verbindungen, mit denen Benutzer ein grundlegendes Berechnungsmodell mit benutzerdefiniertem Schaltkreis auf eine bestimmte Anwendung erweitern können. Diese Low-Level Busse werden in der Regel mit nur einer Teilmenge der GPIO-Pins und -Busse in den Headern für andere wichtige integrierte Funktionen freigegeben. Um die Systemstabilität zu erhalten, ist es erforderlich, anzugeben, welche Pins und Busse zur Änderung durch Benutzermodusanwendungen sicher sind.
+Windows 10 enthält neue APIs für den direkten Zugriff aus dem Benutzermodus der allgemeinen Eingabe-/Ausgabe-/Ausgabe-(GPIO), der interintegrierten Verbindung (I2C), der SPI (Serial Peripherie Interface) und der universellen asynchronen Empfänger Übertragung (UART). Entwicklungs Boards, wie z. b. Raspberry Pi 2, machen eine Teilmenge dieser Verbindungen verfügbar, mit der Sie ein basiscomputemodul mit benutzerdefiniertem elektrischen Schaltungen erweitern können, um eine bestimmte Anwendung zu adressieren. Diese Low-Level Busse werden in der Regel mit nur einer Teilmenge der GPIO-Pins und -Busse in den Headern für andere wichtige integrierte Funktionen freigegeben. Um die Systemstabilität aufrechtzuerhalten, müssen Sie angeben, welche Pins und Busse für die Änderung durch Benutzermodusanwendungen sicher sind.
 
-In diesem Dokument wird beschrieben, wie diese Konfiguration in ACPI angegeben wird, und es enthält Tools, um zu überprüfen, dass die Konfiguration richtig angegeben wurde.
+In diesem Dokument wird beschrieben, wie Sie diese Konfiguration in Advanced Configuration and Power Interface (ACPI) angeben und Tools bereitstellen, um zu überprüfen, ob die Konfiguration ordnungsgemäß angegeben wurde.
 
 > [!IMPORTANT]
-> Die Zielgruppe für dieses Dokument sind UEFI- und ACPI-Entwickler. Grundkenntnisse mit ACPI, dem Erstellen von ASL und SpbCx/GpioClx werden angenommen.
+> Die Zielgruppe für dieses Dokument ist Unified Extensible Firmware Interface (UEFI) und ACPI-Entwickler. Es wird davon ausgegangen, dass Sie sich mit ACPI, der Erstellung der ACPI-Quellsprache (ASL) und spbcx/gpioclx vertraut machen.
 
-Benutzermoduszugriff auf Low-Level-Busse unter Windows wird über die vorhandenen `GpioClx`- und `SpbCx`-Frameworks konfiguriert. Ein neuer Treiber namens *RhProxy*, für Windows IoT Core und Windows Enterprise verfügbar, macht die `GpioClx`- und `SpbCx`-Ressourcen für den Benutzermodus verfügbar. Um die APIs zu aktivieren, muss ein Geräteknoten für rhproxy in Ihren ACPI-Tabellen für die einzelnen GPIO- und SPB-Ressourcen deklariert werden, die für den Benutzermodus verfügbar gemacht werden soll. Dieses Dokument führt Sie durch die Erstellung und Überprüfung von ASL.
+Der Zugriff auf den Benutzermodus auf Low-Level-Busse unter Windows erfolgt durch die vorhandenen `GpioClx`-und `SpbCx`-Frameworks. Ein neuer Treiber namens *rhproxy*, der unter Windows IOT Core und Windows Enterprise verfügbar ist, macht `GpioClx`-und `SpbCx`-Ressourcen für den Benutzermodus verfügbar. Um die APIs zu aktivieren, muss ein Geräteknoten für rhproxy in ihren ACPI-Tabellen mit allen GPIO-und SPB-Ressourcen deklariert werden, die für den Benutzermodus verfügbar gemacht werden sollen. Dieses Dokument führt Sie durch die Erstellung und Überprüfung von ASL.
 
 ## <a name="asl-by-example"></a>ASL anhand eines Beispiels
 
@@ -41,7 +41,7 @@ Device(RHPX)
 * _CID – Compatible Id. Muss “MSFT8000” sein.
 * _UID – Eindeutige ID. Auf 1 festlegen.
 
-Als Nächstes deklarieren wir alle GPIO- und SPB-Ressourcen, die für den Benutzermodus verfügbar gemacht werden soll. Die Reihenfolge, in der Ressourcen deklariert werden, ist wichtig, da Ressourcenindizes verwendet werden, um Ressourcen Eigenschaften zuordnen. Sind mehrere I2C- oder SPI-Busse verfügbar gemacht, gilt der erste deklarierte Bus als „Standard“-Bus für diesen Typ und ist die Instanz, die durch die `GetDefaultAsync()`-Methoden der [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) und [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) zurückgegeben wird.
+Als nächstes deklarieren wir jede der GPIO-und SPB-Ressourcen, die für den Benutzermodus verfügbar gemacht werden sollen. Die Reihenfolge, in der Ressourcen deklariert werden, ist wichtig, da Ressourcenindizes verwendet werden, um Ressourcen Eigenschaften zuordnen. Sind mehrere I2C- oder SPI-Busse verfügbar gemacht, gilt der erste deklarierte Bus als „Standard“-Bus für diesen Typ und ist die Instanz, die durch die `GetDefaultAsync()`-Methoden der [Windows.Devices.I2c.I2cController](https://docs.microsoft.com/uwp/api/windows.devices.i2c.i2ccontroller) und [Windows.Devices.Spi.SpiController](https://docs.microsoft.com/uwp/api/windows.devices.spi.spicontroller) zurückgegeben wird.
 
 ### <a name="spi"></a>SPI
 
@@ -208,7 +208,7 @@ Die folgenden Felder sind Platzhalter für Werte, die vom Benutzer zur Laufzeit 
 
 ### <a name="gpio"></a>GPIO
 
-Als Nächstes deklarieren wir die GPIO-Pins, die für den Benutzermodus verfügbar gemacht werden. Wir bieten die folgenden Richtlinien für die Entscheidung an, welche Pins verfügbar gemacht werden:
+Im nächsten Schritt deklarieren wir alle GPIO-Pins, die für den Benutzermodus verfügbar gemacht werden. Wir bieten die folgenden Richtlinien für die Entscheidung an, welche Pins verfügbar gemacht werden:
 
 * Deklarieren Sie alle Pins in verfügbar gemachten Headern.
 * Deklarieren Sie Pins, die mit integrierten Funktionen wie Schaltflächen und LEDs verbunden sind.
@@ -254,10 +254,10 @@ Die SupportedDriveModes-Eigenschaft gibt an, welche Laufwerkmodi vom GPIO-Contro
 
 | Flagwert | Laufwerkmodus | Beschreibung |
 |------------|------------|-------------|
-| 0 x 1        | InputHighImpedance | Der Pin unterstützt eine hohe Impedanzeingabe, die dem Wert „PullNone“ in ACPI entspricht. |
+| 0x1        | InputHighImpedance | Der Pin unterstützt eine hohe Impedanzeingabe, die dem Wert „PullNone“ in ACPI entspricht. |
 | 0x2        | InputPullUp | Der Pin unterstützt einen integrierten Pull-Up-Widerstand, der dem Wert „PullUp“ in ACPI entspricht. |
-| 0 x 4        | InputPullDown | Der Pin unterstützt einen integrierten Pull-Down-Widerstand, der dem Wert „PullDown“ in ACPI entspricht. |
-| 0 x 8        | OutputCmos | Der Pin unterstützt sowohl die Generierung von starken Höhen als auch die von starken Tiefen (im Gegensatz zu einem offenen Ausgleich). |
+| 0x4        | InputPullDown | Der Pin unterstützt einen integrierten Pull-Down-Widerstand, der dem Wert „PullDown“ in ACPI entspricht. |
+| 0x8        | OutputCmos | Der Pin unterstützt sowohl die Generierung von starken Höhen als auch die von starken Tiefen (im Gegensatz zu einem offenen Ausgleich). |
 
 InputHighImpedance und OutputCmos werden von fast allen GPIO-Controllern unterstützt. Wenn die SupportedDriveModes-Eigenschaft nicht angegeben wird, ist dies die Standardeinstellung.
 
@@ -294,9 +294,9 @@ Wählen Sie das Schema für die Nummerierung, das am kompatibelsten mit der ver�
 
 ### <a name="uart"></a>UART
 
-Wenn Ihre UART-Treiber `SerCx` oder `SerCx2` verwendet, können Sie Rhproxy verwenden, um den Treiber für den Benutzermodus verfügbar zu machen. UART-Treiber, die eine Geräteschnittstelle vom Typ `GUID_DEVINTERFACE_COMPORT` erstellen, müssen nicht Rhproxy verwenden. Der Posteingangstreiber `Serial.sys` gehört dazu.
+Wenn Ihr UART-Treiber `SerCx` oder `SerCx2`verwendet, können Sie rhproxy verwenden, um den Treiber für den Benutzermodus verfügbar zu machen. UART-Treiber, die eine Geräteschnittstelle vom Typ `GUID_DEVINTERFACE_COMPORT` erstellen, müssen nicht Rhproxy verwenden. Der Posteingangstreiber `Serial.sys` gehört dazu.
 
-Um den `SerCx`-Stil UART für den Benutzermodus verfügbar zu machen, deklarieren Sie eine `UARTSerialBus`-Ressource wie folgt.
+Um eine UART im `SerCx`-Stil für den Benutzermodus verfügbar zu machen, deklarieren Sie eine `UARTSerialBus` Ressource wie folgt.
 
 ```cpp
 // Index 2
@@ -325,7 +325,7 @@ Die zugehörigen Anzeigenamendeklaration ist:
 Package(2) { "bus-UART-UART2", Package() { 2 }},
 ```
 
-Dies weist dem Controller den Anzeigenamen „UART2“ zu. Dabei handelt es sich um den Bezeichner, den Benutzer verwenden, um im Benutzermodus auf den Bus zuzugreifen.
+Dadurch wird dem Controller der Anzeige Name "UART2" zugewiesen, der der Bezeichner ist, den Benutzer für den Zugriff auf den Bus aus dem Benutzermodus verwenden.
 
 ## <a name="runtime-pin-muxing"></a>Runtime-Pin-Muxing
 
@@ -655,14 +655,14 @@ Wenn Sie bereit sind, Rhproxy zu testen, ist die folgende schrittweise Anleitung
 1. Kompilieren und laden Sie Ihren rhproxy-Knoten mithilfe `ACPITABL.dat`
 1. Überprüfen Sie, ob der `rhproxy`-Geräteknoten vorhanden ist.
 1. Überprüfen Sie, dass `rhproxy` geladen ist und startet
-1. Stellen Sie sicher, dass die erwarteten Geräte für den Benutzermodus verfügbar gemacht werden
+1. Überprüfen, ob die erwarteten Geräte dem Benutzermodus ausgesetzt sind
 1. Stellen Sie sicher, dass Sie mit jedem Gerät über die Befehlszeile interagieren können
 1. Stellen Sie sicher, dass Sie mit jedem Gerät über die UWP-App interagieren können
 1. Führen Sie HLK-Tests aus
 
 ### <a name="verify-controller-drivers"></a>Überprüfen Sie die Controller-Treiber
 
-Da „rhproxy” andere Geräte im System für den Benutzermodus verfügbar macht, funktioniert es nur, wenn diese Geräte bereits verwendet werden. Der erste Schritt besteht darin, zu überprüfen, ob die Geräte – die I2C, SPI, GPIO-Controller, die Sie verfügbar machen möchten – bereits funktionieren.
+Da rhproxy andere Geräte im System im Benutzermodus verfügbar macht, funktioniert es nur, wenn diese Geräte bereits funktionsfähig sind. Der erste Schritt besteht darin, zu überprüfen, ob die Geräte – die I2C, SPI, GPIO-Controller, die Sie verfügbar machen möchten – bereits funktionieren.
 
 Führen Sie an einer Eingabeaufforderung Folgendes aus
 
@@ -740,9 +740,9 @@ Wenn die Ausgabe angibt, dass rhproxy gestartet wurde, wurde rhproxy geladen und
 * Problem 51 – `CM_PROB_WAITING_ON_DEPENDENCY` -Das System startet rhproxy nicht, da eine der Abhängigkeiten nicht geladen wurde. Dies bedeutet, dass die Ressourcen auf rhproxy auf einen ungültigen ACPI-Knoten hinweisen, oder dass die Zielgeräte nicht gestartet wurden. Überprüfen Sie zunächst, dass alle Geräte erfolgreich ausgeführt werden (siehe 'Überprüfen Sie die Controller-Treiber' weiter oben). Überprüfen Sie dann Ihre ASL, und stellen Sie sicher, dass alle Ressourcen Pfade (z. b. `\_SB.I2C1`) korrekt sind und auf gültige Knoten in Ihrem DSDT zeigen.
 * Problem 10: `CM_PROB_FAILED_START` -Rhproxy konnte nicht gestartet werden, wahrscheinlich aufgrund eines Ressourceananalyseproblems. Überprüfen Sie die ASL und Ressourceindizes in der DSD, und stellen Sie sicher, dass die GPIO-Ressourcen in zunehmender Pin-Reihenfolge angegeben werden.
 
-### <a name="verify-that-the-expected-devices-are-exposed-to-usermode"></a>Stellen Sie sicher, dass die erwarteten Geräte für den Benutzermodus verfügbar gemacht werden
+### <a name="verify-that-the-expected-devices-are-exposed-to-user-mode"></a>Überprüfen, ob die erwarteten Geräte dem Benutzermodus ausgesetzt sind
 
-Wenn rhproxy ausgeführt wird, sollte es Geräte-Schnittstellen erstellt haben, auf die vom Benutzermodus zugegriffen werden kann. Wir verwenden einige Befehlszeilentools zum Aufzählen von Geräten und sehen, ob sie vorhanden sind.
+Nachdem rhproxy ausgeführt wird, sollten nun Geräteschnittstellen erstellt werden, auf die der Benutzermodus zugreifen kann. Wir verwenden einige Befehlszeilentools zum Aufzählen von Geräten und sehen, ob sie vorhanden sind.
 
 Klonen Sie das [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) Repository, und erstellen Sie die Beispiele für `GpioTestTool`, `I2cTestTool`, `SpiTestTool`und `Mincomm`. Kopieren Sie die Tools auf Ihr Testgerät, und verwenden Sie die folgenden Befehle zur Auflistung der Geräte.
 
@@ -854,7 +854,7 @@ Klicken Sie auf „Ausgewählte ausführen“. Weitere Dokumentation zu jedem Te
 | MinComm (seriell) | https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## <a name="apendix"></a>Anhang
+## <a name="appendix"></a>Anhang
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>Anhang A – Raspberry Pi-ASL-Verzeichnis
 
