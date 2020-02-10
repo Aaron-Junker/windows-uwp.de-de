@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: d5014532be613e8284a1e2d6496f71b9f2b8e892
+ms.sourcegitcommit: 5002836b3c8d3e0f2970da1333ec8f42da861ae3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468985"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071252"
 ---
 # <a name="dialog-controls"></a>Dialogfeld-Steuerelemente
 
@@ -284,7 +284,7 @@ private async void DisplayNoWifiDialog()
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [QuickInfos](../tooltips.md)

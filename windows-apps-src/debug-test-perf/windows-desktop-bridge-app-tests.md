@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: ec780253deb170c5dde1828add366907c403f100
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681901"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089406"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests für Windows Desktop Bridge-Apps
 
@@ -43,7 +43,7 @@ Konvertierte Desktopanwendungen können um eine große Palette von UWP-APIs (Uni
 Sie finden unter [Desktop-zu-UWP-Brücke: App-Erweiterungen](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) eine Erläuterung für diese Erweiterungen und ihre ordnungsgemäße Verwendung. 
 
 ### <a name="3-debug-configuration-test"></a>3. Test der Debugkonfiguration
-Dieser Test stellt sicher, dass es sich bei der App nicht um einen Debugbuild handelt.
+Mit diesem Test wird überprüft, ob die msix-oder AppX-Datei kein Debugbuild ist.
  
 **Hintergrund**  
 Um für die Microsoft Store zertifiziert zu werden, dürfen apps nicht für das Debuggen kompiliert werden, und Sie dürfen nicht auf Debugversionen einer ausführbaren Datei verweisen. Darüber hinaus müssen Sie den Code für die App optimiert erstellen, damit dieser Test bestanden wird.
@@ -107,10 +107,10 @@ Ihre App wird ggf. nicht ordnungsgemäß installiert, wenn die im App-Manifest d
 **Test Details**  
 Prüft die im App-Manifest definierten Ressourcen, um sicherzustellen, dass sie vorhanden und gültig sind.
 
-**Korrekturmaßnahme**:  
+**Korrekturmaßnahme**  
 Orientieren Sie sich an der folgenden Tabelle.
 
-Fehlermeldung | Anmerkungen
+Fehlermeldung | Comments
 --------------|---------
 Das Bild "{Bildname}" definiert sowohl einen Scale- als auch einen TargetSize-Qualifizierer. Es darf jedoch jeweils nur ein Qualifizierer definiert sein. | Sie können Bilder für unterschiedliche Auflösungen anpassen. In der tatsächlichen Meldung enthält „{image name}“ den Namen des Bilds mit dem Fehler. Stellen Sie sicher, dass für jedes Bild entweder „Scale” oder „TargetSize” als Qualifizierer definiert ist. 
 Das Bild "{Bildname}" überschreitet die Größenbeschränkung von {Größenangabe}.  | Stellen Sie sicher, dass alle Bilder der App den Größenbeschränkungen entsprechen. In der tatsächlichen Meldung enthält „{image name}“ den Namen des Bilds mit dem Fehler. 
@@ -158,7 +158,7 @@ Mit diesem Test wird die Anforderung durchgesetzt, dass die Apps geeignete Abhä
 * **Überprüfung der prozessübergreifenden Kommunikation (IPC)**  
 Dieser Test setzt die Anforderung durch, dass Desktop-Brücke-Apps außerhalb des App-Containers nicht mit Desktopkomponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen `DesktopApplicationPath` angeben, bestehen diesen Test nicht.  
 
-**Korrekturmaßnahme**:  
+**Korrekturmaßnahme**  
 Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) ab.
 
 
@@ -284,6 +284,6 @@ Signaturdateien für privaten Code sollten privat bleiben, da sie im Fall einer 
 Entfernen Sie alle Signaturschlüssel für privaten Code (wie z. B. PFX- und SNK-Dateien) aus dem Paket.
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)

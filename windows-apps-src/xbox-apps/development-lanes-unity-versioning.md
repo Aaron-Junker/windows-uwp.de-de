@@ -4,12 +4,12 @@ description: Versionsverwaltung für Ihr Unity-UWP.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 064eaf42fe7d664be273cd7e2222fa5d90be1a11
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b98fba394fb326d60451f07938504e99a92d764d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57608865"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089486"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: Versionskontrolle für Ihr UWP-Projekt
 
@@ -17,7 +17,7 @@ Sie haben Ihr Unity-Spiel für Xbox noch immer nicht in die universelle Windows-
 
 Es gibt verschiedene Gründe dafür, Teile Ihres generierten UWP-Verzeichnisses der Versionskontrolle hinzuzufügen. Hierzu zählt unter anderem das Hinzufügen von Abhängigkeiten (z. B. Xbox Live SDK).  Dieses Szenario wird in diesem Lernprogramm als Beispiel herangezogen und hilft Ihnen hoffentlich dabei, die individuellen Anforderungen Ihres Projekts zu erfüllen.
 
-***Haftungsausschluss: Wir verwenden Git als unsere Version Control-Lösung.  Wenn sich Ihre unterscheidet, sollte die Konzepte weiterhin übersetzt werden.***
+***Haftungsausschluss: Wir verwenden git als Lösung für die Versionskontrolle.  Wenn Sie sich unterscheiden, sollten die Konzepte weiterhin übersetzt werden.***
 
 Zur Erinnerung: Das Verzeichnis für unser Spiel ***ScrapyardPhoenix*** sieht aktuell wie folgt aus:
 
@@ -29,7 +29,7 @@ Und unser UWP-Verzeichnis sieht wie folgt aus:
 
 In diesem Verzeichnis interessiert uns nur der Ordner ***ScrapyardPhoenix*** (Name Ihres Spiels).  Alles andere ist für unsere Versionskontrolle nicht relevant.
 
-***Mit eine gitignore-Datei wird ist nicht vertraut?  Finden Sie unter [Gitignore](https://git-scm.com/docs/gitignore).***
+***Sie sind nicht vertraut, was eine gitignore-Datei ist?  Weitere Informationen finden Sie unter [gitignore](https://git-scm.com/docs/gitignore).***
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -51,19 +51,19 @@ Wir möchten einige unterschiedliche Dateien und Ordner aus dem Ordner **UWP/Scr
 
 ## <a name="folders"></a>Ordner  
 
-`Assets` | ***Umfassen*** | Enthält Microsoft Store-images  
-`Data`   | ***Ignorieren Sie*** | In denen kompiliert Unity für Ihr Projekts (im Hintergrund, Shadern, Skripts, Prefabs usw.).  
-`Dependencies` | ***Umfassen*** | Dieser Ordner ist, die ich erstellt habe alle UWP-Abhängigkeiten (z. B. XboxLiveSDK.dll) beibehalten möchten  
-`Properties` | ***Umfassen*** | Enthält erweiterte Einstellungen, die vom Entwickler geändert werden können  
-`Unprocessed` | ***Ignorieren Sie*** | Enthält Unity `.dll` und `.pdb` Dateien  
+`Assets` | ***einschließen*** | Enthält Microsoft Store Bilder  
+`Data`   | ***ignorieren*** | Wenn Unity das Projekt in kompiliert (Szenen, Shader, Skripts, Prefabs usw.)  
+`Dependencies` | ***einschließen*** | Dieser Ordner wurde erstellt, um alle UWP-Abhängigkeiten beizubehalten (z. b. "xboxlivesdk. dll").  
+`Properties` | ***einschließen*** | Enthält erweiterte Einstellungen, die vom Entwickler geändert werden können.  
+`Unprocessed` | ***ignorieren*** | Enthält Unity-`.dll` und `.pdb` Dateien  
 
 ## <a name="files"></a>Dateien  
 
-`App.cs` | ***Umfassen*** | Der Einstiegspunkt für Ihre UWP-Anwendung. Dies kann geändert und mit anderen Quelldateien erweitert  
-`Package.appxmanifest` | ***Umfassen*** | App-Paket-manifest-Source-Datei für Ihre AppX  
-`project.json` | ***Umfassen*** | Beschreibt die NuGet-Pakete Ihrem `*.csproj` hängt  
-`ScrapyardPhoenix.csproj` | ***Umfassen*** | Beschreibt Ihre UWP-Build-Ziel an. Wenn Sie zusätzliche Abhängigkeiten hinzufügen, die sich in Ihre UWP-Projekt dieses `*.csproj` -Datei enthält diese Informationen  
-`ScrapyardPhoenix.csproj.user` | ***Ignorieren Sie*** | Diese Datei enthält lokale Benutzerinformationen
+`App.cs` | ***einschließen*** | Einstiegspunkt für Ihre UWP-Anwendung Diese kann geändert und mit anderen Quelldateien erweitert werden.  
+`Package.appxmanifest` | ***einschließen*** | App-Paket Manifest-Quelldatei für das msix-oder AppX-Paket  
+`project.json` | ***einschließen*** | Beschreibt die nuget-Pakete, von denen Ihre `*.csproj` abhängig ist.  
+`ScrapyardPhoenix.csproj` | ***einschließen*** | Beschreibt das UWP-Buildziel. Wenn Sie dem UWP-Projekt weitere Abhängigkeiten hinzufügen, enthält diese `*.csproj` Datei diese Informationen.  
+`ScrapyardPhoenix.csproj.user` | ***ignorieren*** | Diese Datei enthält lokale Benutzerinformationen.
 
 ## <a name="resulting-gitignore"></a>Resultierende GITIGNORE-Datei
 

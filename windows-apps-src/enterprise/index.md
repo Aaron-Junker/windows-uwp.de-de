@@ -6,12 +6,12 @@ ms.date: 01/16/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a95529f40ef5bb1cbf112c91c385e6621620a01
-ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
+ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125683"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089466"
 ---
 # <a name="enterprise"></a>Enterprise
 

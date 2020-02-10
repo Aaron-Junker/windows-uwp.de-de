@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ab5b2ec13e0de3d234fafc6c1a32e10d35aed4f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681941"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089426"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests im Zertifizierungskit für Windows-Apps
 
@@ -62,7 +62,7 @@ Die Informationen zur Betriebssystemversion weisen die Verwendung der Microsoft 
 
 Das Zertifizierungskit für Windows-Apps verwendet „HighVersionLie“, um zu ermitteln, wie die App die Betriebssystemversion prüft. Wenn die App abstürzt, besteht sie diesen Test nicht.
 
-### <a name="corrective-action"></a>Maßnahme
+### <a name="corrective-action"></a>Korrekturmaßnahme
 
 Apps sollten dies anhand von API-Funktionen zur Versionsabfrage überprüfen. Weitere Informationen finden Sie unter [Version des Betriebssystems](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version).
 
@@ -78,13 +78,13 @@ Windows-Apps können einen Prozess registrieren, der im Hintergrund ausgeführt 
 
 Die App wird gestartet und angehalten, und der Teil der App, der sich nicht im Hintergrund befindet, wird beendet. Anschließend werden die Hintergrundaufgaben im Zusammenhang mit dieser App abgebrochen. Der Zustand der App wird überprüft, und wenn die App noch ausgeführt, besteht sie diesen Test nicht.
 
-### <a name="corrective-action"></a>Maßnahme
+### <a name="corrective-action"></a>Korrekturmaßnahme
 
 Fügen Sie Ihrer App den Abbruchhandler hinzu. Weitere Informationen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 ## <a name="app-count"></a>App-Anzahl
 
-Dieser Test stellt sicher, dass ein App-Paket (APPX, App-Bündel) genau eine Anwendung enthält. Dies wurde im Kit zu einem eigenständigen Test geändert.
+Dadurch wird überprüft, ob ein App-Paket (. msix,. AppX oder App Bundle) eine Anwendung enthält. Dies wurde im Kit zu einem eigenständigen Test geändert.
 
 ### <a name="background"></a>Hintergrund
 
@@ -92,11 +92,11 @@ Dieser Test wurde gemäß der Store-Richtlinie implementiert.
 
 ### <a name="test-details"></a>Testdetails
 
-Für Windows Phone 8.1-Apps wird mit dem Test geprüft, ob die Gesamtzahl der APPX-Pakete im Bündel kleiner als &lt; 512 ist, ob nur ein Hauptpaket im Bündel vorhanden ist und ob die Architektur des Hauptpakets im Bündel als ARM oder neutral gekennzeichnet ist.
+Bei Windows Phone 8,1-Apps überprüft der Test, ob die Gesamtzahl der AppX-Pakete im Paket &lt; 512 ist, dass im Bündel nur ein Hauptpaket vorhanden ist und dass die Architektur des Haupt Pakets im Paket als Arm oder neutral markiert ist.
 
 Für Windows 10-Apps wird mit dem Test geprüft, ob die Revisionsnummer in der Version des Bündels auf 0 festgelegt ist.
 
-### <a name="corrective-action"></a>Maßnahme
+### <a name="corrective-action"></a>Korrekturmaßnahme
 
 Stellen Sie sicher, dass App-Paket und -Bündel die weiter oben in den Testdetails angegebenen Anforderungen erfüllen.
 
@@ -126,7 +126,7 @@ Apps müssen ein korrekt formatiertes App-Manifest besitzen.
 
     Dieser Test erzwingt die Anforderung, dass UWP-apps nicht außerhalb des App-Containers mit Desktop Komponenten kommunizieren. Die prozessübergreifende Kommunikation ist nur für quergeladene Apps vorgesehen. Apps, die für [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) den Namen „DesktopApplicationPath“ angeben, bestehen diesen Test nicht.
 
-### <a name="corrective-action"></a>Maßnahme
+### <a name="corrective-action"></a>Korrekturmaßnahme
 
 Gleichen Sie das App-Manifest mit den [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements) ab.
 
@@ -172,13 +172,13 @@ Das AllowPartiallyTrustedCallersAttribute-Attribut (kurz: APTCA-Attribut) ermög
 
 Verwenden Sie das APTCA-Attribut nur dann für Assemblys mit starkem Namen, falls dies für das Projekt erforderlich ist und die Risiken bekannt sind. Falls das Attribut erforderlich ist, stellen Sie sicher, dass alle APIs durch geeignete Sicherheitsanforderungen für den Codezugriff geschützt sind. APTCA hat keine Auswirkung, wenn die Assembly Teil einer UWP-App (Universelle Windows-Plattform) ist.
 
-**Hinweise**
+**Rede**
 
 Dieser Test wird nur für verwalteten Code (C#, .NET usw.) ausgeführt.
 
 ### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/SAFESEH Ausnahme Behandlungs Schutz
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** SafeSEHCheck Test failed (Fehler beim SafeSEHCheck-Test).
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim SafeSEHCheck-Test.
 
 Ein Ausnahmehandler wird ausgeführt, wenn in der App eine Ausnahmebedingung auftritt – beispielsweise bei einem Fehler aufgrund einer Division durch Null. Da die Adresse des Ausnahmehandlers beim Aufrufen einer Funktion im Stapel gespeichert wird, besteht das Risiko eines Pufferüberlaufangriffs, sollte Schadsoftware den Stapel überschreiben.
 
@@ -186,7 +186,7 @@ Ein Ausnahmehandler wird ausgeführt, wenn in der App eine Ausnahmebedingung auf
 
 Aktivieren Sie beim Erstellen der App die Option "/SAFESEH" im Linker-Befehl. Diese Option ist in den Veröffentlichungskonfigurationen von Visual Studio standardmäßig aktiviert. Vergewissern Sie sich, dass diese Option in den Erstellungsanweisungen für alle alle ausführbaren Module Ihrer App aktiviert ist.
 
-**Hinweise**
+**Rede**
 
 Für 64-Bit-Binärdateien oder für Binärdateien für den ARM-Chipsatz wird dieser Test nicht ausgeführt, da hier keine Ausnahmehandleradressen im Stapel gespeichert werden.
 
@@ -200,13 +200,13 @@ Dieser Test stellt sicher, dass die App keinen Code ausführt, der in einem Date
 
 Aktivieren Sie beim Erstellen der App die Option „/NXCOMPAT“ im Linker-Befehl. Diese Option ist in Linker-Versionen mit Unterstützung der Datenausführungsverhinderung (Data Execution Prevention, DEP) standardmäßig aktiviert.
 
-**Hinweise**
+**Rede**
 
 Wir empfehlen, Apps auf einer DEP-fähigen CPU zu testen und alle DEP-bedingten Fehler zu beheben.
 
 ### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>Adressraum Layout Randomization
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** DBCheck Test failed (Fehler beim DBCheck-Test.)
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim DBCheck-Test.
 
 Die Zufallsgestaltung des Adressraumlayouts (Address Space Layout Randomization, ASLR) lädt ausführbare Bilder in unvorhersehbare Speicherbereiche. Dadurch wird eine größere Hürde für Schadsoftware geschaffen, die erwartet, dass ein Programm an einer bestimmten virtuellen Adresse geladen wird. Ihre App und alle von der App verwendeten Komponenten müssen über ASLR-Unterstützung verfügen.
 
@@ -214,7 +214,7 @@ Die Zufallsgestaltung des Adressraumlayouts (Address Space Layout Randomization,
 
 Aktivieren Sie beim Erstellen der App die Option "/DYNAMICBASE" im Linker-Befehl. Vergewissern Sie sich, dass auch alle von der App verwendeten Module diese Linker-Option verwenden.
 
-**Hinweise**
+**Rede**
 
 ASLR hat in der Regel keine Auswirkungen auf die Leistung. In einigen Szenarios ist auf 32-Bit-Systemen aber eine geringfügige Leistungsverbesserung zu beobachten. Es ist möglich, dass sich die Leistung bei einem stark belasteten System verschlechtert, bei dem viele Bilder an vielen unterschiedlichen Speicherbereichen geladen sind.
 
@@ -222,7 +222,7 @@ Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen ge
 
 ### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>Frei gegebener PE-Abschnitt lesen/schreiben
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** SharedSectionsCheck Test failed (Fehler beim SharedSectionsCheck-Test).
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim SharedSectionsCheck-Test.
 
 Binärdateien mit beschreibbaren Abschnitten, die als freigegeben gekennzeichnet sind, stellen eine Sicherheitsbedrohung dar. Erstellen Sie keine Apps mit freigegebenen beschreibbaren Abschnitten, wenn dies nicht notwendig ist. Verwenden Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile), um ein freigegebenes Speicherobjekt zu erstellen, das korrekt gesichert ist.
 
@@ -230,13 +230,13 @@ Binärdateien mit beschreibbaren Abschnitten, die als freigegeben gekennzeichnet
 
 Entfernen Sie sämtliche freigegebenen Abschnitte aus der App, und erstellen Sie freigegebene Speicherobjekte, indem Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) mit den passenden Sicherheitsattributen aufrufen und die App dann neu erstellen.
 
-**Hinweise**
+**Rede**
 
 Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen geschrieben wurden, z. B. mit C oder C++.
 
 ### <a name="appcontainercheck"></a>AppContainerCheck
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** AppContainerCheck Test failed (Fehler beim AppContainerCheck-Test).
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim AppContainerCheck-Test.
 
 Der AppContainerCheck-Test prüft, ob das **appcontainer**-Bit im PE-Header einer ausführbaren Binärdatei gesetzt ist. Für Apps muss das **appcontainer**-Bit für alle EXE-Dateien und nicht verwalteten DLLs gesetzt sein, damit diese korrekt ausgeführt werden.
 
@@ -246,13 +246,13 @@ Wenn der Test für eine systemeigene ausführbare Datei nicht erfolgreich ist, s
 
 Wenn eine verwaltete ausführbare Datei den Test nicht bestanden hat, stellen Sie sicher, dass Sie den neuesten Compiler und Linker (z. b. Microsoft Visual Studio) zum Erstellen der UWP-App verwendet haben.
 
-**Hinweise**
+**Rede**
 
 Dieser Test wird für alle EXE-Dateien und nicht verwalteten DLLs ausgeführt.
 
 ### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span id="binscope-7"></span>Executableimportscheck
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** ExecutableImportsCheck Test failed (Fehler beim ExecutableImportsCheck-Test).
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim ExecutableImportsCheck-Test.
 
 Ein portierbares ausführbares Image (Portable Executable, PE) besteht diesen Test nicht, wenn es in einen Abschnitt mit ausführbaren Code eingefügt wurde. Dies kann auftreten, wenn Sie für das PE-Image das Zusammenführen von „.rdata“ ermöglicht haben, indem Sie das Kennzeichen */merge* des Visual C++-Linkers auf */merge:.rdata=.text* festgelegt haben.
 
@@ -260,7 +260,7 @@ Ein portierbares ausführbares Image (Portable Executable, PE) besteht diesen Te
 
 Führen Sie die Importtabelle nicht in einem Abschnitt mit ausführbarem Code zusammen. Stellen Sie sicher, dass das Kennzeichen */merge* des Visual C++-Linkers nicht so eingestellt ist, dass der Abschnitt „.rdata“ in einem Codeabschnitt zusammengeführt wird.
 
-**Hinweise**
+**Rede**
 
 Dieser Test wird für den gesamten Binärcode ausgeführt, außer für ausschließlich verwaltete Assemblys.
 
@@ -274,7 +274,7 @@ Mit dieser Überprüfung können Sie sicherstellen, dass eine Binärdatei keine 
 
 Stellen Sie sicher, dass die Binärdatei nicht über einen beschreibbaren oder ausführbaren Abschnitt verfügt und dass der *sectionalignment* -Wert der Binärdatei mindestens gleich seiner *Seiten\-Größe*ist.
 
-**Hinweise**
+**Rede**
 
 Dieser Test wird für alle EXE-Dateien und systemeigenen, nicht verwalteten DLLs ausgeführt.
 
@@ -325,7 +325,7 @@ Stellen Sie sicher, dass die App als Releasebuild und nicht als Debugbuild kompi
 
 Die App muss schnell auf Benutzerinteraktionen und Systembefehle reagieren, um Benutzern eine schnelle und flüssige Benutzeroberfläche zu bieten.
 
-Die Eigenschaften des Computers, auf dem der Test ausgeführt wird, können die Testergebnisse beeinflussen. Die Schwellenwerte des Leistungstests für die App-Zertifizierung sind so festgelegt, dass Computer mit geringem Energieverbrauch die Erwartungen der Kunden an eine schnelle und flüssige Benutzeroberfläche erfüllen. Um die Leistung Ihrer App zu ermitteln, empfehlen wir, die App auf einem PC mit geringem Energieverbrauch (z. B. einem PC mit Intel Atom-Prozessor) bei einer Auflösung von mindestens 1366 x 768 und mit einem herkömmlichen Festplattenlaufwerk (im Gegensatz zu einem Festkörperlaufwerk) zu testen.
+Die Merkmale des Computers, auf dem der Test ausgeführt wird, können die Testergebnisse beeinflussen. Die Schwellenwerte des Leistungstests für die App-Zertifizierung sind so festgelegt, dass Computer mit geringem Energieverbrauch die Erwartungen der Kunden an eine schnelle und flüssige Benutzeroberfläche erfüllen. Um die Leistung Ihrer App zu ermitteln, empfehlen wir, die App auf einem PC mit geringem Energieverbrauch (z. B. einem PC mit Intel Atom-Prozessor) bei einer Auflösung von mindestens 1366 x 768 und mit einem herkömmlichen Festplattenlaufwerk (im Gegensatz zu einem Festkörperlaufwerk) zu testen.
 
 ### <a name="bytecode-generation"></a>Generierung von Bytecode
 
@@ -335,7 +335,7 @@ Als Leistungsoptimierungsmaßnahme zum Beschleunigen der JavaScript-Ausführungs
 
 Die App-Bereitstellung wird daraufhin überprüft, ob alle JS-Dateien in Bytecode konvertiert wurden.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Wenn bei diesem Test Fehler ermittelt werden, sollten Sie bei der Behandlung dieses Problems folgende Schritte berücksichtigen:
 
@@ -352,7 +352,7 @@ Beim Verwenden von Bindungen sollte WinJS.Binding.optimizeBindingReferences auf 
 
 Überprüfen Sie den Wert von "WinJS.Binding.optimizeBindingReferences".
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Legen Sie „WinJS.Binding.optimizeBindingReferences“ im JavaScript der App auf **true** fest.
 
@@ -366,12 +366,12 @@ Die App wird ggf. nicht installiert, wenn die im App-Manifest deklarierten Zeich
 
 Prüft die im App-Manifest definierten Ressourcen, um sicherzustellen, dass sie vorhanden und gültig sind.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Orientieren Sie sich an der folgenden Tabelle.
 
 <table>
-<tr><th>Fehlermeldung</th><th>Anmerkungen</th></tr>
+<tr><th>Fehlermeldung</th><th>Comments</th></tr>
 <tr><td>
 <p>Das Bild "{Bildname}" definiert sowohl einen Scale- als auch einen TargetSize-Qualifizierer. Es darf jedoch jeweils nur ein Qualifizierer definiert sein.</p>
 </td><td>
@@ -521,7 +521,7 @@ HTML-, CSS- und JavaScript-Dateien müssen im UTF-8-Format codiert sein und übe
 
 Testet den Inhalt der App-Pakete, um sicherzustellen, dass darin die richtige Dateicodierung verwendet wird.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Öffnen Sie die betroffene Datei, und wählen Sie in Visual Studio im Menü **Datei** die Option **Speichern unter**. Wählen Sie neben der Schaltfläche **Speichern** das Dropdownsteuerelement aus, und wählen Sie **Mit Codierung speichern** aus. Wählen Sie im Dialogfeld mit den erweiterten Speicheroptionen die Option **Unicode (UTF-8 mit Signatur)** aus, und klicken Sie auf **OK**.
 
@@ -541,7 +541,7 @@ Da Benutzer die Grafikhardware auf Ihrem Gerät nach der Installation der App ä
 
 Der Test überprüft, ob die apps auf Featureebene 9\-1 korrekt dargestellt werden.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Stellen Sie sicher, dass Ihre APP auf Direct3D Featureebene 9\-1 korrekt gerendert wird, auch wenn Sie davon ausgehen, dass Sie auf einer höheren Funktionsebene ausgeführt wird Weitere Informationen finden Sie unter [Entwickeln für unterschiedliche Direct3D-Featureebenen](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx).
 
@@ -557,7 +557,7 @@ Wenn von der App auf ihrem jeweiligen Direct3D-Gerät [**Trim**](https://docs.mi
 
 Apps werden auf die Einhaltung der d3d-Anforderungen überprüft. Außerdem wird sichergestellt, dass Apps beim Anhalterückruf (Suspend) eine neue [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)-API aufrufen.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Von der App sollte die [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)-API für ihre [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3)-Schnittstelle vor jedem Anhaltevorgang aufgerufen werden.
 
@@ -616,7 +616,7 @@ Bei diesem Test werden die Binärdateien in einem App-Paket auf Architekturkonfl
 
 Es wird überprüft, ob die Bitanzahl jeder einzelnen Datei im PE-Header korrekt ist, wenn Querverweise mit der Prozessorarchitekturdeklaration des App-Pakets eingerichtet werden.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Befolgen Sie diese Richtlinien, um sicherzustellen, dass Ihr App-Paket nur Dateien enthält, die von der im App-Manifest angegebenen Architektur unterstützt werden:
 
@@ -642,7 +642,7 @@ Betriebssystemkomponenten (einschließlich der Eincheck Vorgänge, wwahost usw.)
 
 Mit dieser Option wird überprüft, ob der Pfad im App-Installationsverzeichnis den maximalen\-Pfad überschreitet.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Verwenden Sie eine kürzere Verzeichnisstruktur bzw. kürzere Dateinamen.
 
@@ -660,12 +660,12 @@ Apps mit JavaScript-Hintergrundaufgaben müssen "Close()" als letzte Anweisung d
 
 Wenn für Apps im Manifest keine Hintergrundaufgabe angegeben ist, gilt der Test als bestanden. Andernfalls wird beim Testen die JavaScript-Hintergrundaufgabendatei analysiert, die im App-Paket angegeben ist, und nach einer Close()-Anweisung gesucht. Wird diese gefunden, gilt der Test als bestanden. Falls nicht, gilt der Test als nicht bestanden.
 
-### <a name="corrective-action"></a>Maßnahmen
+### <a name="corrective-action"></a>Maßnahme
 
 Aktualisieren Sie den JavaScript-Hintergrundcode so, dass „Close()” richtig aufgerufen wird.
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Tests der Windows Desktop Bridge-App](windows-desktop-bridge-app-tests.md)
 * [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)

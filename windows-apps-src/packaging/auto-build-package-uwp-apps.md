@@ -3,15 +3,15 @@ title: Einrichten automatisierter Builds für UWP-Apps
 description: Erfahren Sie, wie Sie automatisierte Builds konfigurieren, um Pakete zum Querladen oder zum Übermitteln an den Store zu erzeugen.
 ms.date: 07/17/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d38464a26af0df03c1aa381b16fbddf1de55cc
-ms.sourcegitcommit: e0644abf76a2535ea24758d1904ff00dfcd86a51
+ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72008046"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089496"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>Einrichten automatisierter Builds für UWP-Apps
 
@@ -62,7 +62,7 @@ steps:
 
 ```
 
-Die Standardvorlage versucht, das Paket mit dem Zertifikat zu signieren, das in der CSPROJ-Datei angegeben ist. Wenn Sie das Paket während des Builds signieren möchten, müssen Sie Zugriff auf den privaten Schlüssel haben. Andernfalls können Sie die Signierung deaktivieren, indem Sie den Parameter `/p:AppxPackageSigningEnabled=false` dem Abschnitt "`msbuildArgs`" in der YAML-Datei hinzufügen.
+Die Standardvorlage versucht, das Paket mit dem Zertifikat zu signieren, das in der CSPROJ-Datei angegeben ist. Wenn Sie das Paket während des Builds signieren möchten, müssen Sie Zugriff auf den privaten Schlüssel haben. Andernfalls können Sie die Signierung deaktivieren, indem Sie den Parameter `/p:AppxPackageSigningEnabled=false` dem Abschnitt `msbuildArgs` in der YAML-Datei hinzufügen.
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>Fügen Sie das Projekt Zertifikat der Bibliothek für sichere Dateien hinzu.
 
@@ -93,13 +93,13 @@ Mit diesem Task werden alle Lösungen, die sich im Arbeitsordner befinden, in Bi
 |--------------------|---------|---------------|
 | AppxPackageDir | $(Build.ArtifactStagingDirectory)\AppxPackages | Definiert den Ordner, in dem die generierten Artefakte gespeichert werden. |
 | AppxBundlePlatforms | $(Build.BuildPlatform) | Ermöglicht es Ihnen, die Plattformen zu definieren, die in das Paket eingeschlossen werden sollen. |
-| AppxBundle | Always | Erstellt ein. msixbundle/. appxbundle mit den msix-/AppX-Dateien für die angegebene Plattform. |
-| UapAppxPackageBuildMode | StoreUpload | Generiert die. msixupload/. appxupload-Datei und den Ordner **_Test** für Sideloading. |
-| UapAppxPackageBuildMode | CI | Generiert nur die. msixupload/. appxupload-Datei. |
-| UapAppxPackageBuildMode | Sideloadonly | Generiert nur den Ordner **_Test** für Sideload. |
+| AppxBundle | Immer | Erstellt ein. msixbundle/. appxbundle mit den msix-/AppX-Dateien für die angegebene Plattform. |
+| UapAppxPackageBuildMode | StoreUpload | Generiert die. msixupload/. appxupload-Datei und den **_Test** Ordner für das Sideloading. |
+| UapAppxPackageBuildMode | Konfigurationselement | Generiert nur die. msixupload/. appxupload-Datei. |
+| UapAppxPackageBuildMode | Sideloadonly | Generiert nur den **_Test** Ordner für das Sideload. |
 | Appxpackagesigningenabled | true | Aktiviert die Paket Signatur. |
 | PackageCertificateThumbprint | Zertifikatfingerabdruck | Dieser Wert **muss** dem Fingerabdruck im Signaturzertifikat entsprechen oder eine leere Zeichenfolge sein. |
-| PackageCertificateKeyFile | Pfad | Der Pfad zu dem Zertifikat, das verwendet werden soll. Dies wird aus den Metadaten der sicheren Datei abgerufen. |
+| PackageCertificateKeyFile | Path | Der Pfad zu dem Zertifikat, das verwendet werden soll. Dies wird aus den Metadaten der sicheren Datei abgerufen. |
 | PackageCertificatePassword | Kennwort | Das Kennwort für den privaten Schlüssel im Zertifikat. Es wird empfohlen, dass Sie Ihr Kennwort in [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates) speichern und das Kennwort mit der [Variablen Gruppe](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)verknüpfen. Sie können die Variable an dieses Argument übergeben. |
 
 ### <a name="configure-the-build"></a>Konfigurieren des Builds
@@ -148,7 +148,7 @@ Aktualisieren Sie anschließend die vsbuild-Aufgabe, um auf das Signaturzertifik
 
 ### <a name="review-parameters"></a>Parameter überprüfen
 
-Die Parameter, die mit der Syntax von `$()` definiert werden, sind in der Builddefinition definierte Variablen, die in anderen Buildsystemen geändert werden.
+Bei den mit der `$()`-Syntax definierten Parametern handelt es sich um Variablen, die in der Builddefinition definiert sind, und in anderen Buildsystemen.
 
 ![Standardvariablen](images/building-screen5.png)
 
@@ -176,7 +176,7 @@ Die generierten Artefakte werden in der Option **Artefakte** der Seite Builderge
 
 ![Artefakte](images/building-screen6.png)
 
-Da wir das `UapAppxPackageBuildMode`-Argument auf `StoreUpload` festgelegt haben, enthält der artefaktordner das Paket für die Übermittlung an den Speicher (. msixupload/. appxupload). Beachten Sie, dass Sie auch ein reguläres App-Paket (. msix/. AppX) oder eine APP Bundle (. msixbundle/. appxbundle/) an den Speicher übermitteln können. Für die Zwecke dieses Artikels verwenden wir die appxupload-Datei.
+Da wir das `UapAppxPackageBuildMode`-Argument auf `StoreUpload`festgelegt haben, enthält der artefaktordner das Paket für die Übermittlung an den Speicher (. msixupload/. appxupload). Beachten Sie, dass Sie auch ein reguläres App-Paket (. msix/. AppX) oder eine APP Bundle (. msixbundle/. appxbundle/) an den Speicher übermitteln können. Für die Zwecke dieses Artikels verwenden wir die appxupload-Datei.
 
 ## <a name="address-bundle-errors"></a>Adress Bündel Fehler
 
@@ -184,14 +184,14 @@ Wenn Sie Ihrer Projekt Mappe mehrere UWP-Projekte hinzufügen und dann versuchen
 
   `MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "AppOne.UnitTests_0.1.2595.0_x86.appx" and package full name "8ef641d1-4557-4e33-957f-6895b122f1e6_0.1.2595.0_x86__scrj5wvaadcy6" is not valid in the bundle because it has a different package family name than other packages in the bundle`
 
-Dieser Fehler tritt auf, da auf Projektmappenebene nicht eindeutig ist, welche App im Bündel enthalten sein soll. Um dieses Problem zu beheben, öffnen Sie jede Projektdatei, und fügen Sie am Ende des ersten `<PropertyGroup>`-Elements die folgenden Eigenschaften hinzu.
+Dieser Fehler tritt auf, da auf Projektmappenebene nicht eindeutig ist, welche App im Bündel enthalten sein soll. Um dieses Problem zu beheben, öffnen Sie jede Projektdatei, und fügen Sie am Ende des ersten `<PropertyGroup>` Elements die folgenden Eigenschaften hinzu.
 
-|**Projekt**|**Eigenschaften**|
+|**Projekte**|**Eigenschaften**|
 |-------|----------|
 |App|`<AppxBundle>Always</AppxBundle>`|
-|UnitTests|`<AppxBundle>Never</AppxBundle>`|
+|Einheitentests|`<AppxBundle>Never</AppxBundle>`|
 
-Entfernen Sie dann das MSBuild-Argument `AppxBundle` aus dem Buildschritt.
+Entfernen Sie dann das `AppxBundle` MSBuild-Argument aus dem Buildschritt.
 
 ## <a name="related-topics"></a>Verwandte Themen
 

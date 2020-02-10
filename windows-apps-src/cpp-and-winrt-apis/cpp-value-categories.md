@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, Verschieben, Weiterleiten, Wertekategorien, Verschiebesemantik, perfekte Weiterleitung, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a11d7763c33df6733a8dbf78392d27417e7cf18d
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 1312b84ded26859cd4b83ffbe3e8a75bfdef6950
+ms.sourcegitcommit: 20ee991a1cf87ef03c158cd3f38030c7d0e483fa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270210"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037880"
 ---
 # <a name="value-categories-and-references-to-them"></a>Wertekategorien und zugehörige Verweise
 In diesem Thema werden die verschiedenen Kategorien von Werten (und Verweisen auf Werte) beschrieben, die in C++ vorhanden sind. Sicherlich haben Sie bereits von *lvalues* und *rvalues* gehört, der in diesem Artikel erläuterte Zusammenhang ist Ihnen jedoch möglicherweise neu. Außerdem gibt es noch andere Arten von Werten.
@@ -58,7 +58,7 @@ Ein lvalue hingegen kann nicht verschoben werden, wie in dieser Abbildung verans
 Ein lvalue kann nicht verschoben werden. Es *gibt* jedoch eine Art von glvalue (alle Werte mit einer Identität), der verschoben werden kann &mdash; wenn Sie diesen Vorgang bewusst ausführen (und u. a. darauf achten, nach dem Verschieben nicht mehr darauf zuzugreifen) &mdash; hierbei handelt es sich um den xvalue. Wir kommen auf dieses Konzept im Folgenden noch einmal zurück, wenn wir uns einen Gesamtüberblick über Wertekategorien verschaffen.
 
 ## <a name="rvalue-references-and-reference-binding-rules"></a>rvalue-Verweise und Verweis-Bindungsregeln
-Dieser Abschnitt enthält die Syntax für einen Verweis auf einen rvalue. Bisher liegt noch kein erschöpfendes Thema zum Verschieben und Weiterleiten vor; hier werden jedoch Probleme behandelt, die durch rvalue-Verweise behandelt werden. Bevor wir rvalue-Verweise betrachten, müssen wir uns eingehender `T&`&mdash;mit dem beschäftigen, was wir eingangs einfach als „Verweis“ bezeichnet haben. Tatsächlich handelt es sich um einen „lvalue (non-const)-Verweis“, der auf einen Wert verweist, in den der Benutzer des Verweises schreiben kann.
+Dieser Abschnitt enthält die Syntax für einen Verweis auf einen rvalue. Bisher liegt noch kein erschöpfendes Thema zum Verschieben und Weiterleiten vor, aber es kann festgestellt werden, dass rvalue-Verweise einen erforderlichen Bestandteil der Lösung dieser Probleme darstellen. Bevor wir rvalue-Verweise betrachten, müssen wir uns eingehender `T&`&mdash;mit dem beschäftigen, was wir eingangs einfach als „Verweis“ bezeichnet haben. Tatsächlich handelt es sich um einen „lvalue (non-const)-Verweis“, der auf einen Wert verweist, in den der Benutzer des Verweises schreiben kann.
 
 ```cppwinrt
 template<typename T> T& get_by_lvalue_ref() { ... } // Get by lvalue (non-const) reference.

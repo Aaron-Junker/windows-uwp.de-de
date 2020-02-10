@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8f22761bf535f13ae0686a9b180ee810fba61028
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 35ddf17d121a06e453e9b51e023e859f0c1cd0ab
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814000"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089346"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
@@ -34,7 +34,7 @@ Um ein benutzerdefiniertes UWP-Steuerelement in einer WPF-App (oder Windows Form
     Die empfohlene Vorgehensweise ist das Hinzufügen eines **leeren App-Projekts (Universal Windows)** zur gleichen Projekt Mappe wie das WPF-oder Windows Forms Projekt, das Überarbeiten der standardmäßigen `App` Klasse in diesem Projekt zur Ableitung von `XamlApplication`und das anschließende Erstellen einer Instanz dieses Objekts im Code für den Einstiegspunkt für Ihre APP.
 
     > [!NOTE]
-    > Die Projekt Mappe kann nur ein Projekt enthalten, das ein `XamlApplication` Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP verwenden dasselbe `XamlApplication` Objekt. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die in der XAML-Insel als Host-UWP-Steuerelemente verwendet werden.
+    > Die Projekt Mappe kann nur ein Projekt enthalten, das ein `XamlApplication` Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP verwenden dasselbe `XamlApplication` Objekt. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die als Host für UWP-Steuerelemente auf der XAML-Insel verwendet werden.
 
 ## <a name="create-a-wpf-project"></a>Erstellen eines WPF-Projekts
 
@@ -285,7 +285,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie ein UWP-Steuerelement aus der 
 
 ## <a name="package-the-app"></a>Verpacken der APP
 
-Sie können die WPF-App optional in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. Msix ist die moderne App-Verpackungstechnologie für Windows und basiert auf einer Kombination aus MSI-, AppX-, App-V-und ClickOnce-Installationstechnologien.
+Sie können die WPF-App optional in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. Msix ist die moderne App-Paket Technologie für Windows und basiert auf einer Kombination aus MSI-, AppX-, App-V-und ClickOnce-Installationstechnologien.
 
 Die folgenden Anweisungen zeigen, wie Sie alle Komponenten in der Projekt Mappe in einem msix-Paket Verpacken, indem Sie das [Windows-Anwendungs](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) Paket in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn Sie die WPF-App in einem msix-Paket verpacken möchten. Beachten Sie, dass diese Schritte derzeit einige Problem Umgehungen für das Szenario des Hostings benutzerdefinierter UWP-Steuerelemente beinhalten.
 
@@ -310,8 +310,8 @@ Die folgenden Anweisungen zeigen, wie Sie alle Komponenten in der Projekt Mappe 
 
 4. Erstellen Sie das Verpackungsprojekt, und führen Sie es aus. Vergewissern Sie sich, dass WPF ausgeführt wird und das benutzerdefinierte UWP-Steuerelement erwartungsgemäß angezeigt wird.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)](xaml-islands.md)
 * [Codebeispiele für XAML-Inseln](https://github.com/microsoft/Xaml-Islands-Samples)
-* [Windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)
+* [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

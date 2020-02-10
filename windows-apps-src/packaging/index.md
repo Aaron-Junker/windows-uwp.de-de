@@ -6,19 +6,19 @@ ms.date: 07/22/2019
 ms.topic: article
 keywords: Windows 10, UWP, packen
 ms.localizationpriority: medium
-ms.openlocfilehash: d067511e4ceb5aaf072aabf8f74ccf186a7787dc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: bb772007cd5c4391634f9df6ba0b6d2037a7b5de
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682672"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089476"
 ---
 # <a name="packaging-apps"></a>Packen von Apps
 
 Dieser Abschnitt enthält Artikel oder verweist auf Artikel zum Packen von UWP-Apps (Universal Windows Platform, Universelle Windows-Plattform) in MSIX- und AppX-App-Paketen für Bereitstellung und Installation. Einige dieser Links verweisen auf relevante Artikel in der [MSIX-Dokumentation](https://docs.microsoft.com/windows/msix/).
 
 > [!NOTE]
-> Das ursprüngliche App-Paketformat für UWP-Apps in Windows 10 hieß AppX. Ab Windows 10, Version 1809 wurde dieses Paketformat in MSIX umbenannt und erweitert, um alle Arten von Windows-Apps zu unterstützen, darunter beispielsweise .NET- und C++/Win32-Desktop-Apps. Die Unterstützung für MSIX wird auch auf frühere Windows-Versionen ausgedehnt. Weitere Informationen finden Sie in der [MSIX-Dokumentation ](https://docs.microsoft.com/windows/msix/).
+> Das ursprüngliche App-Paketformat für UWP-Apps in Windows 10 war AppX. Ab Windows 10, Version 1809 wurde dieses Paketformat in MSIX umbenannt und erweitert, um alle Arten von Windows-Apps zu unterstützen, darunter beispielsweise .NET- und C++/Win32-Desktop-Apps. Die Unterstützung für MSIX wird auch auf frühere Windows-Versionen ausgedehnt. Weitere Informationen finden Sie in der [MSIX-Dokumentation ](https://docs.microsoft.com/windows/msix/).
 
 | Thema | Beschreibung |
 |-------|-------------|

@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, UWP, Windows Forms, WPF, XAML-Inseln
+keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: de84cbb2e1927d9426eefaaf7b0d70d604427da1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683813"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089306"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Tutorial: modernisieren einer WPF-App 
 
@@ -51,7 +51,7 @@ In diesem Tutorial verbessern Sie die Kosten für die Zusammenarbeit mit den neu
 * Integrieren Sie Adaptive Karten und Windows 10-Benachrichtigungen in die app.
 * Packen Sie die APP mit msix, und richten Sie eine CI/CD-Pipeline für Azure devops ein, damit Sie automatisch neue Versionen der APP an Tester und Benutzer übermitteln können, sobald Sie verfügbar ist.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 Zum Ausführen dieses Tutorials müssen auf dem Entwicklungs Computer die folgenden Komponenten installiert sein:
 
@@ -61,7 +61,7 @@ Zum Ausführen dieses Tutorials müssen auf dem Entwicklungs Computer die folgen
 
 Stellen Sie sicher, dass Sie die folgenden Workloads und optionalen Features mit Visual Studio 2019 installieren:
 
-* .NET Desktopentwicklung
+* .Net-Desktop Entwicklung
 * Entwicklung für die universelle Windows-Plattform
 * Windows 10 SDK (10.0.18362.0 oder höher)
 
@@ -74,7 +74,7 @@ Bevor Sie mit dem Tutorial beginnen, laden Sie den Quellcode für die APP für d
 3. Öffnen Sie Visual Studio 2019, und doppelklicken Sie auf die Datei **c:\winappsmodernizationworkshop\lab\exercise1\01-start\contosoexpenses\contosoexpenses.sln** , um die Projekt Mappe zu öffnen.
 4. Stellen Sie sicher, dass Sie das WPF-Projekt für die Zusammenarbeit **mit dem Projekt** von "Build" erstellen, ausführen und Debuggen können.
 
-## <a name="get-started"></a>„Erste Schritte“
+## <a name="get-started"></a>Erste Schritte
 
 Nachdem Sie den Quellcode für die Beispiel-App für die Zusammenarbeit mit der kostenpflichtigen Seite erstellt haben und Sie sich vergewissern können, dass Sie ihn in Visual Studio erstellen können, können Sie das Tutorial starten:
 
@@ -98,7 +98,7 @@ In Zukunft werden die meisten neuen Features von Windows 10 über WinRT-APIs ver
 
 ### <a name="msix-packaging"></a>Msix-Paket Erstellung
 
-[Msix](/windows/msix/) (früher als AppX bezeichnet) ist das moderne Verpackungs Modell für Windows-apps. Msix unterstützt sowohl UWP-Apps als auch Desktop-Apps, die mithilfe von Technologien wie Win32, WPF, Windows Forms, Java, Elektronen und mehr aufgebaut werden. Wenn Sie eine Desktop-app in einem msix-Paket Verpacken, können Sie die APP auf dem Microsoft Store veröffentlichen. Ihre Desktop-App erhält bei der Installation auch die Paket Identität, sodass Ihre Desktop-App einen breiteren Satz von WinRT-APIs verwenden kann.
+[Msix](/windows/msix/) ist das moderne Paket Erstellungs Modell für Windows-apps. Msix unterstützt sowohl UWP-Apps als auch Desktop-Apps, die mithilfe von Technologien wie Win32, WPF, Windows Forms, Java, Elektronen und mehr aufgebaut werden. Wenn Sie eine Desktop-app in einem msix-Paket Verpacken, können Sie die APP auf dem Microsoft Store veröffentlichen. Ihre Desktop-App erhält bei der Installation auch die Paket Identität, sodass Ihre Desktop-App einen breiteren Satz von WinRT-APIs verwenden kann.
 
 Weitere Informationen finden Sie in den folgenden Artikeln:
 
