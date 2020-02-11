@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Sammlungs-API, Produkte anzeigen
 ms.localizationpriority: medium
-ms.openlocfilehash: c071ca83381e47664e44ef506927c82a4687992d
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 0f6976f8161089be1f907d85e7373fc0f3474c62
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867715"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77112240"
 ---
 # <a name="query-for-products"></a>Produktabfrage
 
@@ -20,7 +20,7 @@ Verwenden Sie diese Methode in der Microsoft Store-Sammlungs-API, um alle Produk
 
 Diese Methode ist so konzipiert, dass sie von Ihrem Dienst als Reaktion auf eine Nachricht von Ihrer App aufgerufen wird. Der Dienst sollte nicht nach einem regelmäßigen Zeitplan alle Benutzer abfragen.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 
 Zur Verwendung dieser Methode benötigen Sie:
@@ -43,41 +43,41 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 
 | Header         | Typ   | Beschreibung                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Autorisierung  | String | Erforderlich. Das Azure AD Zugriffs Token im Formular **Träger** &lt; *Token*&gt;.                           |
-| Host           | String | Muss auf den Wert **collections.mp.microsoft.com** festgelegt werden.                                            |
+| Autorisierung  | string | Erforderlich Das Azure AD Zugriffs Token **im Formular** Bearer&lt;*Token*&gt;.                           |
+| Host           | string | Muss auf den Wert **collections.mp.microsoft.com** festgelegt werden.                                            |
 | Content-Length | number | Die Länge des Anforderungstexts.                                                                       |
-| Content-Type   | String | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
+| Inhaltstyp   | string | Gibt den Anforderungs- und Antworttyp an. Derzeit wird als einziger Wert **application/json** unterstützt. |
 
 
 ### <a name="request-body"></a>Anforderungstext
 
 | Parameter         | Typ         | Beschreibung         | Erforderlich |
 |-------------------|--------------|---------------------|----------|
-| beneficiaries     | UserIdentity auflisten&lt;& gt | Eine Liste von UserIdentity-Objekten, die die Benutzer darstellen, die für Produkte abgefragt werden. Weitere Informationen finden Sie in der folgenden Tabelle.    | Ja      |
-| continuationToken | String       | Bei mehreren Produktgruppen gibt der Antworttext ein Fortsetzungstoken zurück, sobald das Seitenlimit erreicht ist. Geben Sie das Fortsetzungstoken hier bei nachfolgenden Aufrufen an, um die verbleibenden Produkte abzurufen.       | Nein       |
+| beneficiaries     | Auflisten&lt;UserIdentity&gt; | Eine Liste von UserIdentity-Objekten, die die Benutzer darstellen, die für Produkte abgefragt werden. Weitere Informationen finden Sie in der folgenden Tabelle.    | Ja      |
+| continuationToken | string       | Bei mehreren Produktgruppen gibt der Antworttext ein Fortsetzungstoken zurück, sobald das Seitenlimit erreicht ist. Geben Sie das Fortsetzungstoken hier bei nachfolgenden Aufrufen an, um die verbleibenden Produkte abzurufen.       | Nein       |
 | maxPageSize       | number       | Die maximale Anzahl von Produkten, die in einer Antwort zurückgegeben werden sollen. Der standardmäßige Höchstwert ist 100.                 | Nein       |
-| modifiedAfter     | DATETIME     | Falls angegeben, gibt der Dienst nur Produkte zurück, die nach diesem Datum geändert wurden.        | Nein       |
-| parentProductId   | String       | Falls angegeben, gibt der Dienst nur Add-Ons zurück, die der angegebenen App entsprechen.      | Nein       |
+| modifiedAfter     | datetime     | Falls angegeben, gibt der Dienst nur Produkte zurück, die nach diesem Datum geändert wurden.        | Nein       |
+| parentProductId   | string       | Falls angegeben, gibt der Dienst nur Add-Ons zurück, die der angegebenen App entsprechen.      | Nein       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | Falls angegeben, gibt der Dienst nur Produkte für die angegebenen Produkt-SKU-Paare zurück. Weitere Informationen finden Sie in der folgenden Tabelle.      | Nein       |
-| productTypes      | Listen&lt;Zeichenfolge&gt;       | Gibt an, welche Produkttypen in den Abfrage Ergebnissen zurückgegeben werden sollen. Unterstützte Produkttypen sind **Application**, **Durable** und **UnmanagedConsumable**.     | Ja       |
-| validityType      | String       | Bei Festlegung auf **Alle** werden alle Produkte für einen Benutzer, einschließlich abgelaufener Elemente, zurückgegeben. Bei Festlegung auf **Valid** werden nur Produkte zurückgegeben, die zum aktuellen Zeitpunkt gültig sind (aktiver Status, Startdatum &lt; Istdatum und Enddatum &gt; Istdatum). | Nein       |
+| productTypes      | Liste&lt;Zeichenfolge&gt;       | Gibt an, welche Produkttypen in den Abfrage Ergebnissen zurückgegeben werden sollen. Unterstützte Produkttypen sind **Application**, **Durable** und **UnmanagedConsumable**.     | Ja       |
+| validityType      | string       | Bei Festlegung auf **Alle** werden alle Produkte für einen Benutzer, einschließlich abgelaufener Elemente, zurückgegeben. Bei Festlegung auf **Valid** werden nur Produkte zurückgegeben, die zum aktuellen Zeitpunkt gültig sind (aktiver Status, Startdatum &lt; Istdatum und Enddatum &gt; Istdatum). | Nein       |
 
 
 Das UserIdentity-Objekt enthält die folgenden Parameter.
 
 | Parameter            | Typ   |  Beschreibung      | Erforderlich |
 |----------------------|--------|----------------|----------|
-| identityType         | String | Gibt den Zeichenfolgenwert **b2b** an.    | Ja      |
-| identityValue        | String | Der [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, für den Sie Produkte abfragen möchten.  | Ja      |
-| localTicketReference | String | Der angeforderte Bezeichner für die zurückgegebenen Produkte. Die zurückgegebenen Elemente im Antworttext verfügen über ein übereinstimmendes *localTicketReference*-Element. Es wird empfohlen, denselben Wert als *userId*-Anspruch im Microsoft Store-ID-Schlüssel zu verwenden. | Ja      |
+| identityType         | string | Gibt den Zeichenfolgenwert **b2b** an.    | Ja      |
+| identityValue        | string | Der [Microsoft Store-ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4), der die Identität des Benutzers darstellt, für den Sie Produkte abfragen möchten.  | Ja      |
+| localTicketReference | string | Der angeforderte Bezeichner für die zurückgegebenen Produkte. Die zurückgegebenen Elemente im Antworttext verfügen über ein übereinstimmendes *localTicketReference*-Element. Es wird empfohlen, denselben Wert als *userId*-Anspruch im Microsoft Store-ID-Schlüssel zu verwenden. | Ja      |
 
 
 Das ProductSkuId-Objekt enthält die folgenden Parameter.
 
 | Parameter | Typ   | Beschreibung          | Erforderlich |
 |-----------|--------|----------------------|----------|
-| productId | String | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für ein [Produkt](in-app-purchases-and-trials.md#products-skus-and-availabilities) im Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für ein Produkt ist 9NBLGGH42CFD. | Ja      |
-| skuID     | String | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für die [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) eines Produkts im Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für eine SKU ist 0010.       | Ja      |
+| productId | string | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für ein [Produkt](in-app-purchases-and-trials.md#products-skus-and-availabilities) im Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für ein Produkt ist 9NBLGGH42CFD. | Ja      |
+| skuID     | string | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für die [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) eines Produkts im Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für eine SKU ist 0010.       | Ja      |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
@@ -119,36 +119,36 @@ Content-Type: application/json
 
 | Parameter         | Typ                     | Beschreibung          | Erforderlich |
 |-------------------|--------------------------|-----------------------|----------|
-| continuationToken | String                   | Bei mehreren Produktgruppen wird dieses Token zurückgegeben, sobald das Seitenlimit erreicht ist. Sie können dieses Fortsetzungstoken in nachfolgenden Aufrufen angeben, um verbleibende Produkte abzurufen. | Nein       |
-| items             | CollectionItemContractV6 | Ein Array von Produkten für den angegebenen Benutzer. Weitere Informationen finden Sie in der folgenden Tabelle.        | Nein       |
+| continuationToken | string                   | Bei mehreren Produktgruppen wird dieses Token zurückgegeben, sobald das Seitenlimit erreicht ist. Sie können dieses Fortsetzungstoken in nachfolgenden Aufrufen angeben, um verbleibende Produkte abzurufen. | Nein       |
+| Elemente             | CollectionItemContractV6 | Ein Array von Produkten für den angegebenen Benutzer. Weitere Informationen finden Sie in der folgenden Tabelle.        | Nein       |
 
 
 Das CollectionItemContractV6-Objekt enthält die folgenden Parameter.
 
 | Parameter            | Typ               | Beschreibung            | Erforderlich |
 |----------------------|--------------------|-------------------------|----------|
-| acquiredDate         | DATETIME           | Das Datum, an dem der Benutzer den Artikel erworben hat.                  | Ja      |
-| campaignId           | String             | Die Kampagnen-ID, die beim Kauf dieses Artikels angegeben wurde.                  | Nein       |
-| devOfferId           | String             | Die Angebots-ID aus einem In-App-Kauf.              | Nein       |
-| endDate              | DATETIME           | Das Enddatum des Artikels.              | Ja      |
-| fulfillmentData      | String             | Nicht zutreffend         | Nein       |
-| inAppOfferToken      | String             | Die vom Entwickler angegebene Produkt-ID-Zeichenfolge, die dem Element in Partner Center zugewiesen wird. Ein Beispiel für eine Produkt-ID ist *product123*. | Nein       |
-| itemId               | String             | Eine ID zur Unterscheidung dieses Sammlungselements von anderen Artikeln des Benutzers. Diese ID ist pro Produkt eindeutig.   | Ja      |
-| localTicketReference | String             | Die ID der zuvor bereitgestellten *localTicketReference* im Anforderungstext.                  | Ja      |
-| modifiedDate         | DATETIME           | Das Datum, an dem dieser Artikel zuletzt geändert wurde.              | Ja      |
-| orderId              | String             | Die Auftrags-ID, mit der dieser Artikel erworben wurde (sofern angegeben).              | Nein       |
-| orderLineItemId      | String             | Die Position des Auftrags, für den dieser Artikel erworben wurde (sofern vorhanden).              | Nein       |
-| ownershipType        | String             | Die Zeichenfolge *OwnedByBeneficiary*.   | Ja      |
-| productId            | String             | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für das [Produkt](in-app-purchases-and-trials.md#products-skus-and-availabilities) aus dem Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für ein Produkt ist 9NBLGGH42CFD.          | Ja      |
-| productType          | String             | Einer der folgenden Produkttypen: **Anwendung**, **Durable**und **unmanagedconsudbar**.        | Ja      |
-| purchasedCountry     | String             | Nicht zutreffend   | Nein       |
+| acquiredDate         | datetime           | Das Datum, an dem der Benutzer den Artikel erworben hat.                  | Ja      |
+| campaignId           | string             | Die Kampagnen-ID, die beim Kauf dieses Artikels angegeben wurde.                  | Nein       |
+| devOfferId           | string             | Die Angebots-ID aus einem In-App-Kauf.              | Nein       |
+| endDate              | datetime           | Das Enddatum des Artikels.              | Ja      |
+| fulfillmentData      | string             | N/V         | Nein       |
+| inAppOfferToken      | string             | Die vom Entwickler angegebene Produkt-ID-Zeichenfolge, die dem Element in Partner Center zugewiesen wird. Ein Beispiel für eine Produkt-ID ist *product123*. | Nein       |
+| itemId               | string             | Eine ID zur Unterscheidung dieses Sammlungselements von anderen Artikeln des Benutzers. Diese ID ist pro Produkt eindeutig.   | Ja      |
+| localTicketReference | string             | Die ID der zuvor bereitgestellten *localTicketReference* im Anforderungstext.                  | Ja      |
+| modifiedDate         | datetime           | Das Datum, an dem dieser Artikel zuletzt geändert wurde.              | Ja      |
+| orderId              | string             | Die Auftrags-ID, mit der dieser Artikel erworben wurde (sofern angegeben).              | Nein       |
+| orderLineItemId      | string             | Die Position des Auftrags, für den dieser Artikel erworben wurde (sofern vorhanden).              | Nein       |
+| ownershipType        | string             | Die Zeichenfolge *OwnedByBeneficiary*.   | Ja      |
+| productId            | string             | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für das [Produkt](in-app-purchases-and-trials.md#products-skus-and-availabilities) aus dem Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für ein Produkt ist 9NBLGGH42CFD.          | Ja      |
+| productType          | string             | Einer der folgenden Produkttypen: **Application**, **Durable** oder **UnmanagedConsumable**.        | Ja      |
+| purchasedCountry     | string             | N/V   | Nein       |
 | purchaser            | IdentityContractV6 | Die Identität des Artikelkäufers (sofern vorhanden). Details zu diesem Objekt finden Sie weiter unten.        | Nein       |
 | quantity             | number             | Die Artikelmenge. Derzeit beträgt die Menge immer 1.      | Nein       |
-| skuId                | String             | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für die [Produkt-SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) aus dem Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für eine SKU ist 0010.     | Ja      |
-| skuType              | String             | Der SKU-Typ. Mögliche Werte sind **Trial**, **Full** und **Rental**.        | Ja      |
-| startDate            | DATETIME           | Das Datum, ab dem der Artikel gültig ist.       | Ja      |
-| status               | String             | Der Status des Elements. Mögliche Werte sind **Active**, **Expired**, **Revoked** und **Banned**.    | Ja      |
-| tags                 | String             | Nicht zutreffend    | Ja      |
+| skuId                | string             | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) für die [Produkt-SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) aus dem Microsoft Store-Katalog. Ein Beispiel für eine Store-ID für eine SKU ist 0010.     | Ja      |
+| skuType              | string             | Der SKU-Typ. Mögliche Werte sind **Trial**, **Full** und **Rental**.        | Ja      |
+| startDate            | datetime           | Das Datum, ab dem der Artikel gültig ist.       | Ja      |
+| Status               | string             | Der Status des Elements. Mögliche Werte sind **Active**, **Expired**, **Revoked** und **Banned**.    | Ja      |
+| tags                 | string             | N/V    | Ja      |
 | transactionId        | guid               | Die aus dem Artikelkauf resultierende Transaktions-ID. Kann verwendet werden, um zu melden, dass der Artikelkauf abgewickelt wurde.      | Ja      |
 
 
@@ -156,8 +156,8 @@ Das IdentityContractV6-Objekt enthält die folgenden Parameter.
 
 | Parameter     | Typ   | Beschreibung                                                                        | Erforderlich |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| identityType  | String | Enthält den Wert *pub*.                                                      | Ja      |
-| identityValue | String | Der Zeichenfolgenwert von *publisherUserId* aus dem angegebenen Microsoft Store-ID-Schlüssel. | Ja      |
+| identityType  | string | Enthält den Wert *pub*.                                                      | Ja      |
+| identityValue | string | Der Zeichenfolgenwert von *publisherUserId* aus dem angegebenen Microsoft Store-ID-Schlüssel. | Ja      |
 
 
 ### <a name="response-example"></a>Antwortbeispiel
