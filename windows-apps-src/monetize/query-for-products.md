@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store-Sammlungs-API, Produkte anzeigen
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6976f8161089be1f907d85e7373fc0f3474c62
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: a5a986896ca3b2585590e11d17219106a9043204
+ms.sourcegitcommit: 2747d9266e1678fca96d3822ce47499ca91a2c70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77112240"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252284"
 ---
 # <a name="query-for-products"></a>Produktabfrage
 
@@ -59,7 +59,7 @@ Weitere Informationen finden Sie unter [Verwalten von Produktansprüchen aus ein
 | modifiedAfter     | datetime     | Falls angegeben, gibt der Dienst nur Produkte zurück, die nach diesem Datum geändert wurden.        | Nein       |
 | parentProductId   | string       | Falls angegeben, gibt der Dienst nur Add-Ons zurück, die der angegebenen App entsprechen.      | Nein       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | Falls angegeben, gibt der Dienst nur Produkte für die angegebenen Produkt-SKU-Paare zurück. Weitere Informationen finden Sie in der folgenden Tabelle.      | Nein       |
-| productTypes      | Liste&lt;Zeichenfolge&gt;       | Gibt an, welche Produkttypen in den Abfrage Ergebnissen zurückgegeben werden sollen. Unterstützte Produkttypen sind **Application**, **Durable** und **UnmanagedConsumable**.     | Ja       |
+| productTypes      | Liste&lt;Zeichenfolge&gt;       | Gibt an, welche Produkttypen in den Abfrage Ergebnissen zurückgegeben werden sollen. Unterstützte Produkttypen sind **Application**, **Durable**, **Game**und **unmanagedconsubar**.     | Ja       |
 | validityType      | string       | Bei Festlegung auf **Alle** werden alle Produkte für einen Benutzer, einschließlich abgelaufener Elemente, zurückgegeben. Bei Festlegung auf **Valid** werden nur Produkte zurückgegeben, die zum aktuellen Zeitpunkt gültig sind (aktiver Status, Startdatum &lt; Istdatum und Enddatum &gt; Istdatum). | Nein       |
 
 
