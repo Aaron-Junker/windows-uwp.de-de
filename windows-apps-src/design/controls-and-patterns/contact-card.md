@@ -94,7 +94,7 @@ Verwenden Sie die Visitenkarte, wenn Kontaktinformationen zu einem Kontakt angez
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
-4. Rufen Sie das [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt auf, das angezeigt werden soll. In diesem Beispiel wird lediglich ein einfacher Kontakt erstellt, der Code sollte jedoch ein tatsächlicher Kontakt abrufen. 
+4. Rufen Sie das [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt auf, das angezeigt werden soll. In diesem Beispiel wird lediglich ein einfacher Kontakt erstellt, Ihr Code sollte jedoch einen echten Kontakt abrufen. 
 
     ```csharp
                 // Retrieve the contact to display
