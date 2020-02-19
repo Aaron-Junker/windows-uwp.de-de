@@ -2,18 +2,21 @@
 Description: Sie können Ad-Kampagnen im Partner Center erstellen, um Ihre APP zu bewerben und die Benutzerbasis Ihrer APP zu erweitern.
 title: Erstellen einer Anzeigenkampagne für Ihre App
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeige, Kampagne, bewerben
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5d23a502c5517193956da6c57efe1eb668e0f0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e804260a312c963c380f4d09b00cc276b385c2ff
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260018"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463722"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>Erstellen einer Anzeigenkampagne für Ihre App
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Sie können Ad-Kampagnen im [Partner Center](https://partner.microsoft.com/dashboard) erstellen, um Ihre APP zu bewerben und Ihre Benutzerbasis zu vergrößern. Standardmäßig wählen wir die Zielgruppe für Ihre Werbeeinblendungen basierend auf den Einstellungen für Ihre APP im Partner Center aus, aber optional können Sie auch eine eigene Zielgruppe definieren. Außerdem können Sie einen Standardsatz von Anzeigenvorlagen verwenden oder eigene Anzeigenentwürfe hochladen. Weitere Informationen zur Anzeigenkampagnen finden Sie unter [Allgemeine Fragen zu Anzeigenkampagnen](common-questions.md).
 

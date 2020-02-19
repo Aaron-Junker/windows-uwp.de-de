@@ -2,22 +2,25 @@
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: Erfahren Sie mehr über die unterstützten Größen für Banneranzeigen.
 title: Unterstützte Größen für Banneranzeigen
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Größen, Banner
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd21be7f0e1f05e1fe4de07053cb18ee5048c6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c3836c2d4b0c7f522db936906e2eae3ed2862b68
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613845"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463892"
 ---
 # <a name="supported-banner-ad-sizes"></a>Unterstützte Größen für Banneranzeigen
 
-Die folgenden Größen für Banneranzeigen werden für universelle Windows Platform (UWP) Apps unterstützt. Bei der Instanziierung Ihre **adcontrol-Element** Objekt in Ihrer app, stellen Sie sicher, dass Sie die Eigenschaften für Breite und Höhe entsprechend einem dieser unterstützten Größen festlegen.
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
-Größen sind die Breite X Höhe.
+Die folgenden Größen für Banneranzeigen werden für universelle Windows Platform (UWP) Apps unterstützt. Wenn Sie das **adcontrol** -Objekt in der APP instanziieren, stellen Sie sicher, dass die Eigenschaften Width und Height auf eine dieser unterstützten Größen festgelegt sind.
+
+Größen sind Breite x Höhe.
 
 * 160 x 600
 * 300 x 50
@@ -28,7 +31,7 @@ Größen sind die Breite X Höhe.
 * 728 x 90
 
 > [!NOTE]
-> Für optimale Ergebnisse wird empfohlen, mithilfe der folgenden Größen für Windows 10 Mobile-Geräte: 300 x 50, 320 x 50 und 640 × 100.
+> Um eine optimale Benutzererfahrung bereitzustellen, empfehlen wir die Verwendung der folgenden Größen für Windows 10 Mobile-Geräte: 300 x 50, 320 x 50 und 640 x 100.
 
 Die folgende Tabelle enthält Beispiele, die jede Banner Ad-Größe veranschaulichen.
 

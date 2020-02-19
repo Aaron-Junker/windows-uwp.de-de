@@ -2,30 +2,33 @@
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Erfahren Sie mehr über Lösungen für allgemeine Entwicklungsprobleme mit den Microsoft Advertising-Bibliotheken in JavaScript/HTML-Apps.
 title: Handbuch zur Problembehandlung für HTML und JavaScript
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, AdControl, Problembehandlung, HTML, Javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fb804c312962fc349607b9d55176bfd7279cf8e9
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57633235"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463792"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Handbuch zur Problembehandlung für HTML und JavaScript
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Microsoft Advertising-Bibliotheken in JavaScript/HTML-Apps.
 
 * [HTML](#html)
-  * [Adcontrol-Element nicht angezeigt](#html-notappearing)
-  * [Blackbox blinkt und ausgeblendet wird](#html-blackboxblinksdisappears)
-  * [Anzeigen, die nicht aktualisiert](#html-adsnotrefreshing)
+  * [Adcontrol wird nicht angezeigt.](#html-notappearing)
+  * [Schwarze Felder blinkt und verschwinden](#html-blackboxblinksdisappears)
+  * [Werbung wird nicht aktualisiert](#html-adsnotrefreshing)
 
-* [JavaScript](#js)
-  * [Adcontrol-Element nicht angezeigt](#js-adcontrolnotappearing)
-  * [Blackbox blinkt und ausgeblendet wird](#js-blackboxblinksdisappears)
-  * [Anzeigen, die nicht aktualisiert](#js-adsnotrefreshing)
+* [Ja](#js)
+  * [Adcontrol wird nicht angezeigt.](#js-adcontrolnotappearing)
+  * [Schwarze Felder blinkt und verschwinden](#js-blackboxblinksdisappears)
+  * [Werbung wird nicht aktualisiert](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -33,7 +36,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="adcontrol-not-appearing"></a>AdControl wird nicht angezeigt
 
-1.  Stellen Sie sicher, dass die **Internet (Client)**-Funktion in „Package.appxmanifest“ ausgewählt ist.
+1.  Stellen Sie sicher, dass die **Internet (Client)** -Funktion in „Package.appxmanifest“ ausgewählt ist.
 
 2.  Stellen Sie sicher, dass der JavaScript-Verweis vorhanden ist. Ohne den Verweis ad.js im Abschnitt &lt;head&gt; (nach dem Verweis default.js) kann **AdControl** nicht angezeigt werden, und während der Erstellung tritt ein Fehler auf.
 
@@ -46,7 +49,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     </head>
     ```
 
-3.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und die Ad-Einheit-ID, die Sie im Partner Center zu erhalten. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
+3.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen mit der Anwendungs-ID und der Ad Unit ID identisch sein, die Sie im Partner Center abgerufen haben. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -223,7 +226,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="adcontrol-not-appearing"></a>AdControl wird nicht angezeigt
 
-1.  Stellen Sie sicher, dass die **Internet (Client)**-Funktion in „Package.appxmanifest“ ausgewählt ist.
+1.  Stellen Sie sicher, dass die **Internet (Client)** -Funktion in „Package.appxmanifest“ ausgewählt ist.
 
 2.  Stellen Sie sicher, dass **AdControl** instanziiert ist. Wenn **AdControl** nicht instanziiert ist, ist es nicht verfügbar.
 
@@ -271,7 +274,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     });  
     ```
 
-4.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen übereinstimmen, die Anwendungs-ID und die Ad-Einheit-ID, die Sie im Partner Center zu erhalten. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
+4.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen mit der Anwendungs-ID und der Ad Unit ID identisch sein, die Sie im Partner Center abgerufen haben. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript

@@ -1,19 +1,22 @@
 ---
 description: Hier erfahren Sie, wie Sie Ihre App aktualisieren, damit Sie die neuesten unterstützten Microsoft Advertising-Bibliotheken verwenden können und Ihre App weiterhin Banneranzeigen erhält.
 title: Verwenden Sie die neuesten Werbe Bibliotheken für Bannerwerbung.
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, AdControl, AdMediatorControl, Migrieren
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ac8499e673cacad897455c7065dd3386103406
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: a8ccc8e9c76fc0f16bcdfc619d8048307fdfbc57
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735045"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463882"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>Aktualisieren Ihrer App auf die neuesten Advertising-Bibliotheken für Banneranzeigen
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Am dem 1. April 2017 werden Banneranzeigen nicht mehr für Apps bereitgestellt, die nicht unterstützte Advertising-SDK-Versionen verwenden. Bei Verwendung von **AdControl** zum Anzeigen von Banneranzeigen in Ihrer universellen Windows-Plattform-App (UWP), verwenden Sie die Informationen in diesem Artikel, um herauszufinden, ob Sie eine nicht unterstützte Advertising-SDK verwenden und migrieren Sie Ihre App zu einem unterstützten SDK.
 
@@ -36,7 +39,7 @@ Wenn Sie über eine App verfügen (bereits im Store oder noch in Entwicklung), d
 > [!NOTE]
 > Wenn Ihre App bereits [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (für UWP-Apps) verwendet müssen für Ihre App keine weiteren Änderungen vorgenommen werden.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 * Der komplette Quellcode und Visual Studio-Projektdateien für Ihre App, die **AdControl** verwendet.
 * Das APPX-Paket für Ihre App.

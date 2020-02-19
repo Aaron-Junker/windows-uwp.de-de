@@ -1,18 +1,21 @@
 ---
 description: Mit dem Microsoft-Anzeigenvermittlungsdienst können Sie Ihren Anzeigenumsatz und Funktionalitäten zur App-Bewerbung durch die Darstellung von Anzeigen aus mehreren Anzeigennetzwerken verbessern.
 title: Microsoft-Anzeigenvermittlungsdienst
-ms.date: 06/05/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Anzeigenvermittlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 700a80aff4c991f4fa3bff681ba995b113025fec
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ad2f60b6b87f81df44bc2f875a722a9e36fdd170
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259325"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463982"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft-Anzeigenvermittlungsdienst
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Wenn Sie das [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) verwenden, um [Anzeigen in Ihren Apps anzuzeigen](display-ads-in-your-app.md), können Sie optional den Microsoft-Anzeigenvermittlungsdienst nutzen, um Ihren Anzeigenumsatz zu maximieren. In diesem Artikel wird eine Übersicht über den Anzeigenvermittlungsdienst und seine Ziele bereitgestellt.
 

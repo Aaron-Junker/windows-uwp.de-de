@@ -1,18 +1,21 @@
 ---
 description: Erfahren Sie, wie Sie native Anzeigen zu Ihrer UWP-App hinzufügen.
 title: Native Anzeigen
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Ad-Steuerelement, native Anzeige
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c174dc682af27a4811a44c826c572f91ec1f06
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7a2022db39c27453dd3c1e9e1eb63914b25a637b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260218"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463932"
 ---
 # <a name="native-ads"></a>Native Anzeigen
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Eine native Anzeige ist ein komponentenbasiertes Anzeigenformat, in denen jedes Element der Anzeige (wie Titel, Bild, Beschreibung und Handlungsaufforderungstext) als einzelnes Element übermittelt wird, das Sie in Ihre App integrieren können. Sie können diese Elemente mit eigenen Schriftarten, Farben, Animationen und andere Komponenten der Benutzeroberfläche in Ihrer App integrieren und so eine Benutzerfunktionalität schaffen, die perfekt in das Erscheinungsbild Ihrer App passt und hohe Einnahmen mit Anzeigen generieren.
 
@@ -21,7 +24,7 @@ Für Werbekunden bieten native anzeigen perfekte Platzierungen, da Anzeigen-Umge
 > [!NOTE]
 > Native Anzeigen werden derzeit nur für XAML-basierte UWP-Apps für Windows 10 unterstützt. Die Unterstützung für UWP-Apps mit HTML und JavaScript ist für eine zukünftige Version des Microsoft Advertising-SDK geplant.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 * Installieren Sie das [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) mit Visual Studio 2015 oder einer neueren Version von Visual Studio. Installationsanweisungen finden Sie in [diesem Artikel](install-the-microsoft-advertising-libraries.md).
 
@@ -33,12 +36,12 @@ Befolgen Sie diesen Anweisungen, um eine native Anzeige in Ihrer App zu integrie
     > [!NOTE]
     > Wenn Sie ein vorhandenes Projekt verwenden, öffnen Sie die Datei "Package.appxmanifest" in Ihrem Projekt, und stellen sicher, dass die **Internet (Client)** -Funktion aktiviert ist. Ihre App benötigt diese Funktion, um Testanzeigen und Live-Werbung zu erhalten.
 
-2. Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **x86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
+2. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **X86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 3. Hinzufügen eines Verweises auf die Microsoft Advertising-SDK in Ihrem Projekt:
 
     1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
-    2.  Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising-SDK für XAML** (Version 10.0).
+    2.  Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising SDK für XAML** (Version 10.0).
     3.  Klicken Sie im **Verweis-Manager** auf „OK“.
 
 4. Fügen Sie in der geeigneten Codedatei in Ihrer App (z. B. in „MainPage.xaml.cs“ oder einer Codedatei für eine andere Seite) den folgenden Namespaceverweis hinzu.
@@ -109,7 +112,7 @@ Nachdem Sie bestätigt, dass der Implementierung der nativen Anzeige erfolgreich
 
 1.  Stellen Sie sicher, dass die Implementierung der nativen Anzeigen den [Richtlinien für native Anzeigen](ui-and-user-experience-guidelines.md#guidelines-for-native-ads) folgt.
 
-2.  Wechseln Sie in Partner Center zur Seite [in-App-ADS](../publish/in-app-ads.md) , und [Erstellen Sie eine Ad-Einheit](set-up-ad-units-in-your-app.md#live-ad-units). Geben Sie als Einheitentyp **Native** an. Notieren Sie die Anzeigeneinheits-ID und die Anwendungs-ID.
+2.  Wechseln Sie in Partner Center zur Seite [in-App-ADS](../publish/in-app-ads.md) , und [Erstellen Sie eine Ad-Einheit](set-up-ad-units-in-your-app.md#live-ad-units). Geben Sie als Einheitentyp **Native** an. Notieren Sie sich die Anzeigeneinheits-ID und die Anwendungs-ID.
     > [!NOTE]
     > Die Anwendungs-IDs für Test-Anzeigeneinheiten und Live-UWP-Anzeigeneinheiten besitzen unterschiedliche Formate. Testanwendungs-ID sind GUIDs. Wenn Sie eine Live-UWP-Ad-Einheit in Partner Center erstellen, entspricht der Wert der Anwendungs-ID für die Ad-Einheit immer der Speicher-ID für Ihre APP (ein Beispiel für eine Store-ID sieht wie 9nblggh4r315 aus).
 

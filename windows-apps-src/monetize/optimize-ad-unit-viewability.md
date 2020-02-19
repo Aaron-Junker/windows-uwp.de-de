@@ -1,34 +1,37 @@
 ---
 description: Erfahren Sie, wie Sie die Sichtbarkeit Ihrer Anzeigeneinheiten verbessern können.
 title: Optimieren der Sichtbarkeit von Anzeigeneinheiten
-ms.date: 05/07/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Richtlinien, Sichtbarkeit
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6996b656c9bf161538e286dc4c2d63c1d2840bc8
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662265"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463942"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>Optimieren der Sichtbarkeit von Anzeigeneinheiten
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Die [Bericht zur Anzeigenleistung](../publish/advertising-performance-report.md) enthält Messwerte zur Sichtbarkeit für Ihre Anzeigeneinheiten. Die Sichtbarkeit ist ein wichtiger Messwert, da sich die Werbeindustrie eher auf sichtbare Impressionen konzentriert als auf nur gelieferte. Werbekunden neigen dazu, für sichtbare Impressionen zu bieten, da diese eine höhere Wahrscheinlichkeit besitzen, von Nutzern wahrgenommen werden.  
 
 In Übereinstimmung mit den IAB-Richtlinien zur Sichtbarkeit wird eine Banner-Anzeigenimpression als sichtbar gezählt, wenn sie die folgenden Kriterien erfüllt:
 
-* Pixel-Anforderung: Größer als oder gleich 50 % der Pixel in der Ankündigung wurden auf den sichtbaren Bereich der app.
-* Anforderungen an die: Die Zeit, die die Pixel-Anforderungen erfüllt werden, war größer als oder gleich 1 Sekunde continuous, Post Ad rendern.
+* Pixel-Anforderung: Mindestens 50% der Pixel in der Anzeige befanden sich im sichtbaren Bereich der App.
+* Zeitliche Anforderung: Die Pixelanforderung wurde nach dem Rendern mindestens eine Sekunde lang kontinuierlich erfüllt.
 
 Eine Videoanzeigenimpression wird als sichtbar gezählt, wenn sie die folgenden Kriterien erfüllt:
 
-* Pixel-Anforderung: Größer als oder gleich 50 % der Pixel in der Ankündigung wurden auf den sichtbaren Teil der app.
-* Anforderungen an die: Das Video erfüllt die Anforderung Pixel und zwei Sekunden lang die kontinuierliche Post Ad Rendern wiedergegeben.
+* Pixel-Anforderung: Mindestens 50% der Pixel in der Anzeige befanden sich im sichtbaren Teil der App.
+* Zeitliche Anforderung: Das Video hat die Pixel-Anforderung erfüllt und wurde nach dem Rendern mindestens zwei Sekunde lang kontinuierlich wiedergegeben.
 
 Die Sichtbarkeit wird anhand der folgenden Formel berechnet:
 
-**Viewability = [Ansicht Eindrücke] * 100 / [gesamt anzeigenaufrufe]**
+**Viewability = [sichtbare Eindrücke] * 100/[Gesamtzahl der werbeeindrücke]**
 
 ## <a name="guidelines-to-improve-ad-unit-viewability"></a>Richtlinien zur Verbesserung der Sichtbarkeit von Anzeigeneinheiten
 

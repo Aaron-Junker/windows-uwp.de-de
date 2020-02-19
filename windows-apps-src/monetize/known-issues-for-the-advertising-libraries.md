@@ -2,18 +2,21 @@
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Erfahren Sie mehr über bekannte Probleme mit der aktuellen Version der Microsoft Advertising-SDK.
 title: Bekannte Probleme und Informationen zur Problembehandlung von Anzeigen in Apps
-ms.date: 04/16/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Bekannte Probleme, Problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 6701ff346f41352a108922f82da82fbf52fd7402
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 34c07a46d31ddf6c8f5b56ffd19059b4d225a72c
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685092"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463962"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Bekannte Probleme und Informationen zur Problembehandlung von Anzeigen in Apps
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Erfahren Sie in diesem Thema mehr über bekannte Probleme mit der aktuellen Version des Microsoft Advertising-SDKs. Weitere Erläuterungen zur Problembehandlung finden Sie unter folgenden Themen.
 
@@ -32,7 +35,7 @@ Wenn es einen **lastError** aus der vorherigen Anzeigenanforderung gibt, wird da
 
 Auf Telefonen (oder Emulatoren), die über Softwareschaltflächen für **Zurück**, **Start** und **Suche** anstelle von Hardwaretasten verfügen, werden die Countdown-Timer und Klickschaltflächen für Interstitialanzeigen möglicherweise verdeckt.
 
-## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Vor Kurzem erstellte Anzeigen werden Ihrer App nicht bereitgestellt
+## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>Vor kurzem erstellte Anzeigen werden Ihrer App nicht bereitgestellt
 
 Wenn Sie vor kurzem (weniger als einem Tag) eine Anzeige erstellt haben, ist diese möglicherweise nicht sofort verfügbar. Wenn die Anzeige hinsichtlich ihrer redaktionellen Inhalte genehmigt wurde, wird sie bereitgestellt, nachdem der Anzeigenserver sie verarbeitet hat und die Anzeige als Bestand verfügbar ist.
 
@@ -52,7 +55,7 @@ Sie können auch im [Forum](https://go.microsoft.com/fwlink/?LinkID=401264) eine
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>In Ihrer App werden Testanzeigen anstelle von Liveanzeigen angezeigt.
 
-Testanzeigen können angezeigt werden, auch wenn Sie Liveanzeigen erwarten. Dies kann in den folgenden Szenarien vorkommen:
+Testanzeigen können angezeigt werden, auch wenn Sie Liveanzeigen erwarten. Dies kann in den folgenden Situationen geschehen:
 
 * Unsere Werbeplattform kann die Liveanwendungs-ID nicht überprüfen oder finden, die im Store verwendet wird. Wenn eine Anzeigeneinheit von einem Benutzer erstellt wird, kann in diesem Fall der Status als live (Nicht-Test) beginnen, jedoch innerhalb von 6 Stunden nach der ersten Anzeigenanforderung in den Teststatus wechseln. Er wechselt zurück zum Livestatus, wenn es 10 Tage keine Anforderungen von Test-Apps gibt.
 

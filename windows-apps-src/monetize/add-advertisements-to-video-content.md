@@ -2,18 +2,21 @@
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: Hier erfahren Sie, wie Sie die AdScheduler-Klasse verwenden, um Anzeigen in Videoinhalten anzuzeigen.
 title: Anzeigen von Werbung in Videoinhalten
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Video, Planer, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6178758cd67471d56b1d65e293104e987e81fb9b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: ea3287af2164457f37b5f148289d4d9f9b833595
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681921"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463464"
 ---
 # <a name="show-ads-in-video-content"></a>Anzeigen von Werbung in Videoinhalten
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie die **AdScheduler**-Klasse zum Anzeigen von Videoinhalten in einer App für die universelle Windows-Plattform (UWP) verwenden, die mit JavaScript und HTML geschrieben wurde.
 
@@ -24,7 +27,7 @@ In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie die **AdSc
 
 Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürzer als zehn Minuten (kurzes Format) oder länger als zehn Minuten (langes Format) ist. Die Einrichtung des letzteren Formats für den Dienst ist zwar komplizierter, aber es besteht eigentlich kein Unterschied darin, wie der clientseitige Code geschrieben wird. Wenn **AdScheduler** eine VAST-Nutzlast mit einer einzelnen Werbeanzeige anstelle eines Manifests empfängt, wird dies so behandelt, als ob das Manifest eine einzelne Pre-Roll-Anzeige (eine Unterbrechung bei 00:00) aufgerufen hat.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 * Installieren Sie das [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) mit Visual Studio 2015 oder einer neueren Version.
 
@@ -47,12 +50,12 @@ Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürz
 
 1. Öffnen Sie in Visual Studio Ihr Projekt, oder erstellen Sie ein neues Projekt.
 
-2. Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **x86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf die Microsoft Advertising-Bibliotheken hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
+2. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **X86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf die Microsoft Advertising-Bibliotheken hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 3. Fügen Sie Ihrem Projekt einen Verweis auf die Bibliothek **Microsoft Advertising SDK für JavaScript** hinzu.
 
     1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
-    2. Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising-SDK für JavaScript** (Version 10.0).
+    2. Erweitern Sie im **Verweis-Manager** den Knoten **Universal Windows**, klicken Sie auf **Erweiterungen**, und wählen Sie dann das Kontrollkästchen neben **Microsoft Advertising SDK für JavaScript** (Version 10.0).
     3. Klicken Sie im **Verweis-Manager** auf „OK“.
 
 4.  Fügen Sie dem Projekt die Datei „AdScheduler.js“ hinzu:

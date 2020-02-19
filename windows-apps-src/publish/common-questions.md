@@ -2,18 +2,21 @@
 Description: Häufige Fragen zu Anzeigenkampagnen
 title: Häufige Fragen zu Anzeigenkampagnen
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c44f93676fd0324ef82ad7b33832bb6653409cda
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: be6759ea808e230d3cf504caf03763123babd870
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685166"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463732"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Häufige Fragen zu Anzeigenkampagnen
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 ### <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>Wie viel kostet eine Anzeige für meine App?
 

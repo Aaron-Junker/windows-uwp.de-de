@@ -2,21 +2,21 @@
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: Überprüfen Sie die Versionshinweise für die Microsoft Advertising-Bibliotheken.
 title: Versionshinweise für die Advertising-Bibliotheken
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Versionshinweise
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d3554620cde44fc9907845a7765d023e1ed03e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50eea90dcf8ed59f420953eec5da5b7a0fe6b4b2
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260210"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463912"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Versionshinweise für die Advertising-Bibliotheken
 
-
-
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Dieser Abschnitt enthält Versionshinweise für die aktuelle Version der Microsoft Advertising-Bibliotheken. Diese Bibliotheken unterstützen XAML-und JavaScript/HTML-Apps für Windows 10, Windows 8.1 Windows Phone 8,1 und Windows Phone 8.
 
@@ -31,7 +31,7 @@ Vor der Installation der neuesten Microsoft Advertising-SDK wird dringend empfoh
 
 ## <a name="target-architecture-specific-build-outputs"></a>Zielarchitekturspezifische Buildausgabe
 
-Wenn Sie die Microsoft Advertising-Bibliotheken verwenden, können Sie in Ihrem Projekt als Ziel nicht **Any CPU** angeben. Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, wird in Ihrem Projekt eine Warnung ausgegeben, sobald Sie einen Verweis auf die Microsoft Advertising-Bibliotheken hinzufügen. Um diese Warnung zu entfernen, müssen Sie eine architekturspezifische Buildausgabe verwenden (beispielsweise **x86**) und das Projekt entsprechend aktualisieren. Weitere Informationen finden Sie unter [Bekannte Probleme](known-issues-for-the-advertising-libraries.md).
+Wenn Sie die Microsoft Advertising-Bibliotheken verwenden, können Sie in Ihrem Projekt nicht das Ziel **Any CPU** angeben. Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, wird in Ihrem Projekt eine Warnung ausgegeben, sobald Sie einen Verweis auf die Microsoft Advertising-Bibliotheken hinzufügen. Um diese Warnung zu entfernen, müssen Sie eine architekturspezifische Buildausgabe verwenden (beispielsweise **x86**) und das Projekt entsprechend aktualisieren. Weitere Informationen finden Sie unter [Bekannte Probleme](known-issues-for-the-advertising-libraries.md).
 
 ## <a name="c-support"></a>C++-Unterstützung
 

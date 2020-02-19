@@ -2,18 +2,21 @@
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Erfahren Sie mehr über die Installation des Microsoft Advertising-SDK.
 title: Installieren des Microsoft Advertising-SDK
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Installieren, SDK, Werbebibliotheken
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f3b63ac40041b93372544d586d3feb23940fccc5
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260271"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463386"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installieren des Microsoft Advertising-SDK
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Zum Anzeigen von UWP-Apps unter Windows 10, installieren Sie das [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK). Dieses SDK ist eine Erweiterung von Visual Studio 2015 und späteren Versionen.
 
@@ -80,9 +83,9 @@ So installieren Sie das Microsoft Advertising-SDK für ein bestimmtes UWP-Projek
 
 Folgen Sie nach der Installation des Microsoft Advertising-SDK diesen Anweisungen, um einen Verweis auf das SDK in Ihrem Projekt zu erstellen und die Werbe-APIs zu verwenden.
 
-1. Öffnen Sie das Projekt in Visual Studio.
+1. Öffnen Sie Ihr Projekt in Visual Studio.
     > [!NOTE]
-    > Sollte in Ihrem Projekt die Zielplattform **Any CPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **x86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
+    > Sollte in Ihrem Projekt die Zielplattform **ANYCPU** definiert sein, müssen Sie eine architekturspezifische Buildausgabe verwenden (z. B. **X86**) und das Projekt entsprechend aktualisieren. Sollte in Ihrem Projekt die Zielplattform **Jede CPU** definiert sein, können Sie bei den folgenden Schritten keinen Verweis auf das Microsoft Advertising-SDK hinzufügen. Weitere Informationen finden Sie unter [Referenzfehler, die durch die Ausrichtung auf eine beliebige CPU (Any CPU) in Ihrem Projekt verursacht werden](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 2. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise**, und wählen Sie **Verweis hinzufügen...** aus.
 

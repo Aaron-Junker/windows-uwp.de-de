@@ -2,18 +2,21 @@
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Verwenden Sie die exemplarischen Vorgehensweisen in diesem Abschnitt, um zu erfahren, wie Sie Banneranzeigen, Interstitialwerbung und native Anzeigen mithilfe der Microsoft Advertising-SDK hinzufügen.
 title: Implementieren von Werbung in der App
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, exemplarische Vorgehensweisen
 ms.localizationpriority: medium
-ms.openlocfilehash: 63fec919f089dcf90b251334740c7a965bb36b78
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 83ba6729230b77dc4a3ae97abffe24a3623c4c3d
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260309"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463772"
 ---
 # <a name="implement-ads-in-your-app"></a>Implementieren von Werbung in der App
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 In diesem Abschnitt wird erläutert, wie Sie Banneranzeigen, Interstitialwerbung und native Anzeigen mithilfe der Microsoft Advertising-SDK hinzufügen. Vollständige Beispielprojekte finden Sie unter den [Anzeigenbeispielen auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 

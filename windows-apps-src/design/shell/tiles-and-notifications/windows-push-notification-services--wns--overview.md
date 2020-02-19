@@ -5,33 +5,33 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 965d823f48cacf4af4999e45ffd02f421c8927e7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1f53dd0538e4564c50fb5cbcb6986f5cf9661cae
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259702"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463814"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)
  
 
-Mithilfe des Windows-Pushbenachrichtigungsdiensts (WNS) können Drittanbieterentwickler Popup-, Kachel-, Signalupdates und unformatierte Updates von ihren eigenen Clouddiensten aus senden. Dadurch steht ein Mechanismus zur Verfügung, mit dem Sie Ihren Benutzern auf energieeffiziente und verlässliche Weise neue Updates bereitstellen können.
+Mit dem Windows Push Notification Services (WNS) können Entwickler von Drittanbietern Popup-, Kachel-, Badge-und rohupdates von Ihrem eigenen clouddienst senden. Dadurch steht ein Mechanismus zur Verfügung, mit dem Sie Ihren Benutzern auf energieeffiziente und verlässliche Weise neue Updates bereitstellen können.
 
-## <a name="how-it-works"></a>Funktionsweise
+## <a name="how-it-works"></a>So funktioniert's
 
 
 Das folgende Diagramm gibt Aufschluss über den vollständigen Datenfluss beim Senden einer Pushbenachrichtigung. Er umfasst die folgenden Schritte:
 
-1.  Ihre App fordert einen Pushbenachrichtigungskanal von der universellen Windows-Plattform an.
+1.  Ihre APP fordert von WNS einen pushbenachrichtigungskanal an.
 2.  Windows fordert WNS zum Erstellen eines Benachrichtigungskanals auf. Dieser Kanal wird an das aufrufende Gerät in Form eines URIs (Uniform Resource Identifier) zurückgegeben.
-3.  Windows gibt den URI des Benachrichtigungskanals an Ihre App zurück.
+3.  Der Benachrichtigungs Kanal-URI wird von WNS an Ihre APP zurückgegeben.
 4.  Ihre App sendet den URI an Ihren eigenen Clouddienst. Dann speichern Sie den URI in Ihrem eigenen Clouddienst, damit Sie auf den URI zugreifen können, wenn Sie Benachrichtigungen senden. Der URI ist eine Schnittstelle zwischen Ihrer App und Ihrem Dienst. Es liegt in Ihrer Verantwortung, diese Schnittstelle mit sicheren Webstandards zu implementieren.
 5.  Wenn Ihr Clouddienst über ein zu sendendes Update verfügt, benachrichtigt er WNS über den Kanal-URI. Zu diesem Zweck wird eine HTTP POST-Anforderung (einschließlich der Benachrichtigungsnutzlast) über SSL (Secure Sockets Layer) ausgegeben. Dieser Schritt erfordert eine Authentifizierung.
 6.  WNS empfängt die Anforderung und leitet die Benachrichtigung an das entsprechende Gerät weiter.
 
-![WNS-Datenflussdiagramm für Pushbenachrichtigungen](images/wns-diagram-01.png)
+![WNS-Datenflussdiagramm für Pushbenachrichtigungen](images/wns-diagram-01.jpg)
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>Registrieren Ihrer App und Empfangen der Anmeldeinformationen für Ihren Clouddienst
 
@@ -68,7 +68,7 @@ Im Anschluss finden Sie eine Übersicht über die Informationskette:
 1.  Der Clouddienst sendet seine Anmeldeinformationen per HTTPS und gemäß OAuth 2.0-Protokoll an WNS. Dadurch wird der Dienst gegenüber WNS authentifiziert.
 2.  Bei erfolgreicher Authentifizierung gibt WNS ein Zugriffstoken zurück. Dieses Zugriffstoken wird bis zu seinem Ablauf in allen weiteren Benachrichtigungsanforderungen verwendet.
 
-![WNS-Diagramm für Clouddienstauthentifizierung](images/wns-diagram-02.png)
+![WNS-Diagramm für Clouddienstauthentifizierung](images/wns-diagram-02.jpg)
 
 Im Rahmen der Authentifizierung gegenüber WNS übermittelt der Clouddienst eine HTTP-Anforderung per SSL (Secure Sockets Layer). Die Parameter werden im Format „application/x-www-for-urlencoded” angegeben. Geben Sie die Paket-sid im Feld "Client\_ID" und ihren geheimen Schlüssel im Feld "Client\_Geheimnis" an. Ausführliche Informationen zur Syntax finden Sie in der Referenz zur [Zugriffstokenanforderung](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)).
 
@@ -137,7 +137,7 @@ Das weiter oben beschriebene Zugriffstoken kann für mehrere Benachrichtigungsan
 
 Dieses Diagramm veranschaulicht den Datenfluss:
 
-![WNS-Diagramm für das Senden einer Benachrichtigung](images/wns-diagram-03.png)
+![WNS-Diagramm für das Senden einer Benachrichtigung](images/wns-diagram-03.jpg)
 
 ### <a name="important-notes"></a>Wichtige Hinweise
 
@@ -163,7 +163,7 @@ Während eines aktiven Börsenhandelstags können Sie beispielsweise die Gültig
 Der Stromsparmodus schränkt Hintergrundaktivitäten auf dem Gerät ein und verlängert dadurch die Akkulaufzeit. Windows 10 ermöglicht dem Benutzer, den Akku Schoner so festzulegen, dass er automatisch eingeschaltet wird, wenn der Akku unter einen angegebenen Schwellenwert sinkt. Wenn der Stromsparmodus aktiviert ist, ist der Empfang von Pushbenachrichtigungen deaktiviert, um Energie zu sparen. Es gibt allerdings einige Ausnahmen. Die folgenden Windows 10-Akku Einstellungen (in der App " **Einstellungen** ") ermöglichen es Ihrer APP, Pushbenachrichtigungen zu empfangen, auch wenn Akku Schoner eingeschaltet ist.
 
 -   **Im Stromsparmodus Pushbenachrichtigungen von jeder App zulassen**: Alle Apps können Pushbenachrichtigungen empfangen, wenn der Stromsparmodus aktiviert ist. Beachten Sie, dass diese Einstellung nur für Windows 10 für Desktop Editionen (Home, pro, Enterprise und Education) gilt.
--   **Immer zugelassen**: Bestimmte Apps können im Hintergrund ausgeführt werden, wenn der Stromsparmodus aktiviert ist, und dabei Pushbenachrichtigungen empfangen. Die Liste wird manuell vom Benutzer verwaltet.
+-   **Immer zugelassen**: Bestimmte Apps können im Hintergrund ausgeführt werden, wenn der Stromsparmodus aktiviert ist. Dies beinhaltet auch den Empfang von Pushbenachrichtigungen. Die Liste wird manuell vom Benutzer verwaltet.
 
 Es ist nicht möglich, den Status dieser beiden Einstellungen zu überprüfen, Sie können aber den Status des Stromsparmodus feststellen. In Windows 10 können Sie die Eigenschaft " [**energysaverstatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) " verwenden, um den Akku Status zu überprüfen. Ihre App kann auch mithilfe des [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged)-Ereignisses Änderungen des Stromsparmodus überwachen.
 

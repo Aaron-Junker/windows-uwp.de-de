@@ -2,18 +2,21 @@
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Erfahren Sie mehr über UI- und Benutzererfahrungsrichtlinien in App-Anzeigen.
 title: Richtlinien für die Benutzeroberfläche und Benutzerumgebung für Anzeigen
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Richtlinien, bewährte Methoden
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2ce51f1ec99b080de6483b1d703492050c7a434c
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320676"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463922"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>Richtlinien für die Benutzeroberfläche und Benutzerumgebung für Anzeigen
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Dieser Artikel enthält Richtlinien für die Bereitstellung hervorragender Umgebungen mit Banneranzeigen, Interstitialanzeigen und nativen Anzeigen in Ihren Apps. Allgemeine Informationen zur Gestaltung des Erscheinungsbilds für Apps finden Sie unter [Design und UI](https://developer.microsoft.com/windows/apps/design).
 
@@ -71,13 +74,13 @@ Dieser Abschnitt enthält Beispiele für Szenarien mit Banneranzeigen, die einen
 
 * Beliebig geartetes Umgehen des integrierten minimalen Zeitgebers für die Aktualisierung der Banneranzeigen, einschließlich (aber nicht beschränkt auf) Austauschen von [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)-Objekten oder Erzwingen einer Seitenaktualisierung ohne Eingreifen des Benutzers.
 
-* Mithilfe von live-Ad-Einheiten (d. h. Ad Einheiten, die Sie von Partner Center abrufen) während der Entwicklung und Tests, oder in einem Emulator.
+* Verwenden von Live-Ad-Einheiten (d. h. Ad-Einheiten, die Sie aus Partner Center abrufen) während der Entwicklung und Tests oder in einem Emulator.
 
 * Schreiben oder Verteilen von Code, der Anzeigendienste auf andere Weise aufruft als die Microsoft Advertising-Bibliotheken, die im Zusammenhang mit Ihrer App ausgeführt werden.
 
 * Interagieren mit nicht dokumentierten Schnittstellen oder untergeordneten Objekten, die von den Microsoft Advertising-Bibliotheken erstellt wurden, z. B. **WebView** oder **MediaElement**.
 
-* Platzieren Werbeanzeigen, in einer Viewbox, um die Größe der anzeigen zu reduzieren, um weitere Werbung auf einer Seite als normal zulassen.
+* Platzieren von Werbeeinblendungen in eine Viewbox, um die Größe der Werbeeinblendungen zu verringern.
 
 <span id="interstitialbestpractices10" />
 
@@ -157,7 +160,7 @@ Dieser Abschnitt enthält Beispiele für Szenarien mit Interstitialanzeigen, die
 
 * Das Anfordern von Interstitialanzeigen, nur um eine Sicherungsanzeige für eine Wasserfallfolge von Anzeigen zu erhalten. Wenn Sie eine Interstitialanzeige anfordern und anschließend das [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready)-Ereignis erhalten, muss die nächste Interstitialanzeige in Ihrer App die Anzeige sein, die für die Anzeige über die Methode [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) bereit ist.
 
-* Mithilfe von live-Ad-Einheiten (d. h. Ad Einheiten, die Sie von Partner Center abrufen) während der Entwicklung und Tests, oder in einem Emulator.
+* Verwenden von Live-Ad-Einheiten (d. h. Ad-Einheiten, die Sie aus Partner Center abrufen) während der Entwicklung und Tests oder in einem Emulator.
 
 * Schreiben oder Verteilen von Code, der Anzeigendienste auf andere Weise aufruft als die Microsoft Advertising-Bibliotheken, die im Zusammenhang mit Ihrer App ausgeführt werden.
 
@@ -187,7 +190,7 @@ Sie müssen mindestens folgenden Elemente der native Anzeigenelemente für den B
     * Der *unterstützt von*-Text (verfügbar in der **SponsoredBy**-Eigenschaft). Dieser Text wird vom Werbepartner bereitgestellt.
     * Als Alternative zum *unterstützt von*-Text können Sie einige andere Text anzeigen, die die native Anzeige vom Rest der App abgrenzen (z. B. „Gesponsert Inhalt“, „Werbeinhalte“, „Empfohlene Inhalte“).
 
-### <a name="user-experience"></a>Benutzererfahrung
+### <a name="user-experience"></a>Benutzeroberfläche
 
 Ihre native Anzeige sollte von den restlichen Ihrer App klar abgegrenzt werden und mit einem Rand versehentliche Klicks verhindern. Verwenden Sie Rahmen, andere Hintergründen und andere UI-Elemente, um die Inhalte vom Rest der App zu trennen. Bedenken Sie, dass versehentlich Anzeigen-Klicks auf lange Sicht nicht für den Umsatz mit Anzeigen oder Ihre Endbenutzererfahrung von Vorteil sind.
 

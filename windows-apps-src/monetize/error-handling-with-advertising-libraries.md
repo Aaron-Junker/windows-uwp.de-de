@@ -2,18 +2,21 @@
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: Hier erfahren Sie, wie Sie mit Fehlern umgehen, die in den Microsoft Advertising-Bibliotheken von der AdControl-Klasse generiert werden.
 title: Behandeln von Fehlern bei Anzeigen
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeige, Werbung, Fehlerbehandlung, Javascript, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b98dc583b8f7d77aa582b4c69b87c726a83129
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1804bc6b44069dccdd92d0a33fcfd48567363a33
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371811"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463842"
 ---
 # <a name="handle-ad-errors"></a>Behandeln von Fehlern bei Anzeigen
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
 
 Die einzelnen Klassen [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol), [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) und [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) verfügen über ein **ErrorOccurred**-Ereignis, das ausgelöst wird, wenn ein Fehler im Zusammenhang mit Anzeigen auftritt. Der App-Code kann dieses Ereignis behandeln und die Eigenschaften von [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) und [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) des Ereignisarguments untersuchen, um die Ursache des Fehlers zu bestimmen.
 
