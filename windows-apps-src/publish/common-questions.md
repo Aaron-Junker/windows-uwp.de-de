@@ -8,7 +8,7 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: be6759ea808e230d3cf504caf03763123babd870
 ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/19/2020
 ms.locfileid: "77463732"
@@ -44,7 +44,7 @@ Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemver
 
 Anzeigenkampagnen werden derzeit in folgenden Ländern und Regionen unterstützt:
 
-Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Großbritannien, Guatemala, Haiti, Honduras, Hongkong, Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vietnam.
+Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Guatemala, Haiti, Honduras, Hongkong, Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vereinigtes Königreich, Vietnam.
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>Welche Sprachen werden für Anzeigenkampagnen unterstützt?
 
