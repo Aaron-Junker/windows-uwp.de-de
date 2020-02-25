@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e7524605847009dae415d93794658dd08a79a3
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 0c86290c9765eba5186e777f8de7b3b86967be9e
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089396"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521341"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -20,7 +20,7 @@ Windows 10 und die Universelle Windows-Plattform (UWP) verfügen über viele Fe
 In diesem Artikel werden die Features von Windows 10 und der UWP beschrieben, die Sie derzeit in Ihren Desktop-Apps verwenden können. Ein Tutorial, das das Modernisieren einer vorhandenen App veranschaulicht, sodass sie viele der in diesem Artikel beschriebenen Features verwendet, finden Sie in Gestalt des Tutorials [Modernisieren einer WPF-App](modernize-wpf-tutorial.md).
 
 > [!NOTE]
-> Benötigen Sie Hilfe beim Migrieren Ihrer Desktop-Apps zu Windows 10? Mit dem Dienst [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) erhalten Entwickler, die ihre Apps zu Windows 10 portieren, direkten kostenlosen Support. Dieses Programm ist für alle ISVs und berechtigten Unternehmen verfügbar. Weitere Informationen zur Berechtigung und zum Programm selbst finden Sie unter [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure). [Senden Sie Ihre Anfrage](https://aka.ms/DesktopAppAssureRequest), um zu beginnen.
+> Benötigen Sie Hilfe beim Migrieren Ihrer Desktop-Apps zu Windows 10? Mit dem Dienst [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) erhalten Entwickler, die ihre Apps zu Windows 10 portieren, direkten kostenlosen Support. Dieses Programm ist für alle ISVs und berechtigten Unternehmen verfügbar. Weitere Informationen zur Berechtigung und zum Programm selbst finden Sie unter [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). [Senden Sie Ihre Anfrage](https://fasttrack.microsoft.com/dl/daa), um zu beginnen.
 
 ## <a name="msix-packages"></a>MSIX-Pakete
 
