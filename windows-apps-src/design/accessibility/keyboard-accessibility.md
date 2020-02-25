@@ -1,21 +1,21 @@
 ---
 Description: Wenn Ihre App keine barrierefreie Bedienung mit der Tastatur ermöglicht, können Benutzer, die blind oder in ihrer Beweglichkeit eingeschränkt sind, Schwierigkeiten bei der Verwendung Ihrer App haben oder Ihre App möglicherweise überhaupt nicht nutzen.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
-title: Barrierefreiheit bei Tastaturnavigation
+title: Barrierefreiheit der Tastaturnavigation
 label: Keyboard accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50b9f2a30f529e78773bc40671c9541ff2687b64
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257751"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521231"
 ---
-# <a name="keyboard-accessibility"></a>Barrierefreiheit bei Tastaturnavigation  
+# <a name="keyboard-accessibility"></a>Barrierefreiheit der Tastaturnavigation  
 
 
 
@@ -250,4 +250,4 @@ Tastenkombinationen sind für Windows Phone-Apps in der Regel nicht relevant, da
 * [Bedienungshilfen](accessibility.md)
 * [Tastatur Interaktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [Beispiel für eine Berührungs Tastatur](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML-Barrierefreiheits Beispiel](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML-Barrierefreiheits Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

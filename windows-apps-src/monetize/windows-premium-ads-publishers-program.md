@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung
 ms.localizationpriority: medium
-ms.openlocfilehash: ba5708b953efff3b4a7c52286ae1a74c43d3d211
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 06421b92106baec5a846db5fc7adf8ef3b742bff
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463752"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507074"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Programm für Herausgeber von Windows Premium-Anzeigen
 
 >[!WARNING]
-> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Als Teil unserer fortlaufenden Bemühungen, Windows-Entwicklern dabei zu helfen, ihre Apps durch Anzeigen zu monetarisieren, bieten wir das [Programm für Herausgeber von Windows Premium-Anzeigen](https://www.windowspremiumapps.com) an. Dies ist eine kuratierte Sammlung von Apps und Spielen mit Anzeigen, die in Bezug auf Nutzung, Interaktion und Erfahrung die beste Leistung bieten. Diese Apps und Spiele sind Anzeigbarkeits-zertifiziert und haben eine global verteilte Zielgruppe identifizierbarer Benutzer, die besonders engagiert sind.
 

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be47e5edeee0d00843d06297857f39977e085f4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258953"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507144"
 ---
 # <a name="vat-info"></a>Umsatzsteuerinfo
 
@@ -21,7 +21,7 @@ Wenn Sie während der Partner Center-Registrierung eine Umsatzsteuer-ID angeben 
 ## <a name="understanding-vat-numbers"></a>Grundlagen der Steuernummern
 
 
-Eine Umsatzsteuernummer ist eine ID, die für Länder oder Regionen in der EU verwendet wird Weitere Informationen erhalten Sie auf der offiziellen [VIES-Website](https://go.microsoft.com/fwlink/p/?LinkId=181246) der EU.
+Eine Umsatzsteuernummer ist eine ID, die für Länder oder Regionen in der EU verwendet wird Weitere Informationen erhalten Sie auf der offiziellen [VIES-Website](http://ec.europa.eu/taxation_customs/vies/vieshome.do) der EU.
 
 ## <a name="accepted-formats-for-vat-numbers"></a>Gültige Formate für Umsatzsteuernummern
 
@@ -98,7 +98,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Beispiel: 12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Frankreich</td><td data-th="VAT info">
+<tr><td data-th="Country/region">France</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 11 Ziffern</li>
 <li>Code für Land/Region: FR</li>
@@ -106,7 +106,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Hinweis: kann beliebige Buchstaben mit Ausnahme von I und Q als erstes oder zweites Zeichen oder als erstes und zweites Zeichen gefolgt von 9 Ziffern enthalten.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Deutschland</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 9 Ziffern</li>
 <li>Code für Land/Region: DE</li>
@@ -234,7 +234,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Hinweis: Die letzten beiden Zeichen müssen „01“ sein.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Vereinigtes Königreich</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Großbritannien</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 9 oder 12 Ziffern</li>
 <li>Code für Land/Region: GB</li>

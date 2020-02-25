@@ -6,21 +6,21 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, exemplarische Vorgehensweisen
 ms.localizationpriority: medium
-ms.openlocfilehash: 57ea70e25b81c44107a9a8dbc6a11e1215b94f17
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 30fc18be85c13838c380bd607544f6c4327ca2d4
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463412"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507154"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>Bewährte Methoden für Anzeigen in Apps
 
 >[!WARNING]
-> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Die Artikel in diesem Abschnitt enthalten Richtlinien für die Benutzerumgebung und Richtlinien für die Fehlerbehandlung von Banneranzeigen, Interstitialwerbung und nativen Anzeigen in Ihren UWP-Apps.
 
-## <a name="in-this-section"></a>In diesem Abschnitt
+## <a name="in-this-section"></a>Inhalt dieses Abschnitts
 
 |  Thema    | Beschreibung |               
 |----------|-------|

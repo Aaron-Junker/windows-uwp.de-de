@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d39d2f094dd85c29b51a19e1affcf0d292183ede
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fa9ba2b8c9b327a51218dfc5f100c147f2d566e8
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257777"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521261"
 ---
 # <a name="expose-basic-accessibility-information"></a>Verfügbarmachen von grundlegenden Informationen zur Barrierefreiheit  
 
@@ -134,21 +134,21 @@ Der Name zur Verwendung durch Screenreader-Software soll keine vollständige Bes
 ## <a name="testing-accessibility-early-and-often"></a>Frühzeitiges und häufiges Testen der Barrierefreiheit  
 Der beste Ansatz beim Implementieren der Unterstützung der Sprachausgabe besteht letztlich darin, die App selbst mit einer Sprachausgabe zu testen. So können Sie sehen, wie sich die Sprachausgabe verhält und welche grundlegenden Barrierefreiheitsinformationen in der App fehlen. Anschließend können Sie die Benutzeroberfläche oder Eigenschaftswerte der Benutzeroberflächenautomatisierung entsprechend anpassen. Weitere Informationen finden Sie unter [Barrierefreiheitstests](accessibility-testing.md).
 
-Eines der Tools, das Sie zum Testen der Barrierefreiheit verwenden können, heißt **EH-Viewer**. Das Tool **AccScope** ist besonders nützlich, weil Sie visuelle Darstellungen Ihrer UI anzeigen können, mit denen anhand einer Automatisierungsstruktur verdeutlicht wird, wie Ihre App mit Hilfstechnologie angezeigt wird. Es ist beispielsweise ein Sprachausgabemodus vorhanden, in dem Sie sehen, wie die Sprachausgabe Text aus der App abruft und die Elemente in der UI organisiert. AccScope ist so konzipiert, dass das Tool während des gesamten Entwicklungszyklus einer App verwendet werden kann und nützlich ist. Dies gilt auch für die Phase des vorläufigen Entwurfs. Weitere Informationen finden Sie unter [AccScope](https://docs.microsoft.com/windows/desktop/WinAuto/accscope).
+Eines der Tools, das Sie zum Testen der Barrierefreiheit verwenden können, heißt **EH-Viewer**. Das Tool **AccScope** ist besonders nützlich, weil Sie visuelle Darstellungen Ihrer UI anzeigen können, mit denen anhand einer Automatisierungsstruktur verdeutlicht wird, wie Ihre App mit Hilfstechnologie angezeigt wird. Es ist beispielsweise ein Sprachausgabemodus vorhanden, in dem Sie sehen, wie die Sprachausgabe Text aus der App abruft und die Elemente in der UI organisiert. EH-Viewer ist so konzipiert, dass das Tool während des gesamten Entwicklungszyklus einer App verwendet werden kann und nützlich ist. Dies gilt auch für die Phase des vorläufigen Entwurfs. Weitere Informationen finden Sie unter [AccScope](https://docs.microsoft.com/windows/desktop/WinAuto/accscope).
 
 <span id="Accessible_names_from_dynamic_data"/>
 <span id="accessible_names_from_dynamic_data"/>
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>Namen zur Verwendung durch Bildschirmleseprogramme aus dynamischen Daten  
-Windows unterstützt viele Steuerelemente, mit denen durch ein als *Datenbindung* bezeichnetes Feature Werte aus einer zugeordneten Datenquelle angezeigt werden können. Wenn Sie Listen mit Datenelementen auffüllen, müssen Sie nach dem Auffüllen der anfänglichen Liste möglicherweise eine Technik verwenden, die Namen zur Verwendung durch Screenreader-Software für datengebundene Listenelemente festlegt. Weitere Informationen finden Sie unter „Szenario 4“ im [XAML-Beispiel für Barrierefreiheit](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d).
+Windows unterstützt viele Steuerelemente, mit denen durch ein als *Datenbindung* bezeichnetes Feature Werte aus einer zugeordneten Datenquelle angezeigt werden können. Wenn Sie Listen mit Datenelementen auffüllen, müssen Sie nach dem Auffüllen der anfänglichen Liste möglicherweise eine Technik verwenden, die Namen zur Verwendung durch Screenreader-Software für datengebundene Listenelemente festlegt. Weitere Informationen finden Sie unter „Szenario 4“ im [XAML-Beispiel für Barrierefreiheit](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
 <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"/>
 
 ## <a name="accessible-names-and-localization"></a>Namen zur Verwendung durch Bildschirmleseprogramme und Lokalisierung  
-Um sicherzustellen, dass der Name zur Verwendung durch Screenreader-Software auch ein lokalisiertes Element ist, sollten Sie lokalisierbare Zeichenfolgen mithilfe entsprechender Techniken als Ressourcen speichern und dann mit [x:Uid-Direktiven](https://docs.microsoft.com/windows/uwp/xaml-platform/x-uid-directive) werten auf die Ressourcenverbindungen verweisen. Wenn der Name zur Verwendung durch Screenreader-Software aus einer explizit festgelegten [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft stammt, muss die dort angegebene Zeichenfolge ebenfalls lokalisierbar sein.
+Um sicherzustellen, dass der Name zur Verwendung durch Screenreader-Software auch ein lokalisiertes Element ist, sollten Sie lokalisierbare Zeichenfolgen mithilfe entsprechender Techniken als Ressourcen speichern und dann mit [x:Uid-Direktiven](https://docs.microsoft.com/windows/uwp/xaml-platform/x-uid-directive)-Werten auf die Ressourcenverbindungen verweisen. Wenn der Name zur Verwendung durch Screenreader-Software aus einer explizit festgelegten [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft stammt, muss die dort angegebene Zeichenfolge ebenfalls lokalisierbar sein.
 
 Beachten Sie, dass angefügte Eigenschaften, z. B. die [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties)-Eigenschaften, eine spezielle Qualifizierungssyntax für den Ressourcennamen verwenden. Die Ressource verweist dann so auf die angefügte Eigenschaft, wie diese auf ein bestimmtes Element angewendet wurde. Der Ressourcenname für die [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft, die auf ein UI-Element mit dem Namen `MediumButton` angewendet wurde, lautet beispielsweise wie folgt: `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`.
 
@@ -157,5 +157,5 @@ Beachten Sie, dass angefügte Eigenschaften, z. B. die [**AutomationProperties*
 ## <a name="related-topics"></a>Verwandte Themen  
 * [Bedienungshilfen](accessibility.md)
 * [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
-* [XAML-Barrierefreiheits Beispiel](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML-Barrierefreiheits Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [Testen der Barrierefreiheit](accessibility-testing.md)

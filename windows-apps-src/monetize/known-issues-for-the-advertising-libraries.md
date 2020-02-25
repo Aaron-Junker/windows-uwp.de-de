@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Bekannte Probleme, Problembehandlung
 ms.localizationpriority: medium
-ms.openlocfilehash: 34c07a46d31ddf6c8f5b56ffd19059b4d225a72c
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: f39d8512398c43ea65037de82434e3740bac7ff2
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463962"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506734"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>Bekannte Probleme und Informationen zur Problembehandlung von Anzeigen in Apps
 
 >[!WARNING]
-> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://aka.ms/ad-monetization-shutdown)
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Erfahren Sie in diesem Thema mehr über bekannte Probleme mit der aktuellen Version des Microsoft Advertising-SDKs. Weitere Erläuterungen zur Problembehandlung finden Sie unter folgenden Themen.
 
@@ -51,7 +51,7 @@ Es gibt viele Gründe, warum möglicherweise keine Anzeigen angezeigt werden, ei
 
 Wenn Sie in der App Testanzeigen sehen können, funktioniert Ihr Code und kann Anzeigen anzeigen. Bei Problemen wenden Sie sich an den [Produktsupport](https://developer.microsoft.com/windows/support). Wählen Sie auf dieser Seite die Option **kontaktieren Sie uns**.
 
-Sie können auch im [Forum](https://go.microsoft.com/fwlink/?LinkID=401264) eine Frage stellen.
+Sie können auch im [Forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps) eine Frage stellen.
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>In Ihrer App werden Testanzeigen anstelle von Liveanzeigen angezeigt.
 
@@ -94,7 +94,7 @@ Die Festlegung von Rahmeneigenschaften, die **AdControl** von seiner übergeordn
 
 ## <a name="more-information"></a>Weitere Informationen
 
-Weitere Informationen zu den neuesten bekannten Problemen im Zusammenhang mit den Microsoft Advertising-SDKs finden Sie im [Forum](https://go.microsoft.com/fwlink/?LinkID=401264). Dort können Sie auch Fragen veröffentlichen.
+Weitere Informationen zu den neuesten bekannten Problemen im Zusammenhang mit den Microsoft Advertising-SDKs finden Sie im [Forum](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps). Dort können Sie auch Fragen veröffentlichen.
 
  
 

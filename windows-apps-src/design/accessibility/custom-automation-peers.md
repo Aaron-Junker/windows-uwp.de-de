@@ -1,21 +1,21 @@
 ---
 Description: Beschreibt das Konzept von Automatisierungspeers für die Microsoft-Benutzeroberflächenautomatisierung und erläutert, wie Sie eine Unterstützung der Benutzeroberflächenautomatisierung für eine eigene benutzerdefinierte UI-Klasse bereitstellen können.
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
-title: Benutzerdefinierte Automatisierungs-Peers
+title: Benutzerdefinierte Automatisierungspeers
 label: Custom automation peers
 template: detail.hbs
 ms.date: 07/13/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e82a48b774913279ada67adc7e2ce1c5c75d0b31
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: ca361c7097c7b0decc9491f06673cf87f398875a
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683823"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521241"
 ---
-# <a name="custom-automation-peers"></a>Benutzerdefinierte Automatisierungs-Peers  
+# <a name="custom-automation-peers"></a>Benutzerdefinierte Automatisierungspeers  
 
 Beschreibt das Konzept von Automatisierungspeers für die Microsoft-Benutzeroberflächenautomatisierung und erläutert, wie Sie eine Unterstützung der Benutzeroberflächenautomatisierung für eine eigene benutzerdefinierte UI-Klasse bereitstellen können.
 
@@ -25,7 +25,7 @@ Die Benutzeroberflächenautomatisierung ermöglicht nicht nur Anwendungen für d
 
 Es gibt zwei unterschiedliche Zielgruppen, von denen das Benutzeroberflächenautomatisierungs-Framework verwendet wird.
 
-* **Benutzeroberflächenautomatisierungs-*Clients*** rufen Benutzeroberflächenautomatisierungs-APIs auf, um Informationen über die gesamte Benutzeroberfläche zu erhalten, die dem Benutzer gegenwärtig angezeigt wird. Beispielsweise fungiert eine Hilfstechnologie wie etwa eine Bildschirmsprachausgabe als Benutzeroberflächenautomatisierungs-Client. Die Benutzeroberfläche wird als Struktur aus verwandten Automatisierungselementen dargestellt. Der Benutzeroberflächenautomatisierungs-Client benötigt u. U. Informationen zu jeweils nur einer App oder aber zur gesamten Struktur. Vom Benutzeroberflächenautomatisierungs-Client können Benutzeroberflächenautomatisierungs-APIs zum Navigieren in der Struktur und zum Lesen oder Ändern von Informationen in den Automatisierungselementen verwendet werden.
+* **Benutzeroberflächenautomatisierungs-*Clients*** rufen Benutzeroberflächenautomatisierungs-APIs auf, um Informationen über die gesamte Benutzeroberfläche zu erhalten, die dem Benutzer gegenwärtig angezeigt wird. Beispielsweise fungiert eine Hilfstechnologie wie etwa eine Bildschirmsprachausgabe als Benutzeroberflächenautomatisierungs-Client. Die Benutzeroberfläche wird als Struktur aus verwandten Automatisierungselementen dargestellt. Der Benutzeroberflächenautomatisierungs-Client benötigt u. U. Informationen zu jeweils nur einer App oder aber zur gesamten Struktur. Der Benutzeroberflächenautomatisierungs-Client kann mithilfe von Benutzeroberflächenautomatisierungs-APIs in der Struktur navigieren und Informationen in den Automatisierungselementen lesen oder ändern.
 * **Benutzeroberflächenautomatisierungs-*Anbieter*** bringen Informationen in den Benutzeroberflächenautomatisierungs-Baum ein. Dies erfolgt durch die Implementierung von APIs, die die Elemente in der Benutzeroberfläche verfügbar machen, die von ihnen als Teil der App eingeführt wurden. Wenn Sie ein neues Steuerelement erstellen, sollten Sie jetzt als Teilnehmer des Benutzeroberflächenautomatisierungs-Anbieterszenarios fungieren. Als Anbieter sollten Sie aus Gründen der Barrierefreiheit und zu Testzwecken sicherstellen, dass alle Benutzeroberflächenautomatisierungs-Clients das Benutzeroberflächenautomatisierungs-Framework für die Interaktion mit Ihrem Steuerelement nutzen können.
 
 Gewöhnlich sind im Benutzeroberflächenautomatisierungs-Framework parallele APIs vorhanden: eine API für Benutzeroberflächenautomatisierungs-Clients und eine andere API mit einem ähnlichen Namen für Benutzeroberflächenautomatisierungs-Anbieter. In diesem Thema geht es hauptsächlich um die APIs für den Benutzeroberflächenautomatisierungs-Anbieter und speziell um die Klassen und Schnittstellen, die eine Anbietererweiterbarkeit in diesem Benutzeroberflächenframework ermöglichen. Gelegentlich werden auch von Benutzeroberflächenautomatisierungs-Clients verwendete Benutzeroberflächenautomatisierungs-APIs angesprochen, um eine andere Perspektive zu bieten oder in einer Suchtabelle einen Vergleich von Client- und Anbieter-APIs zu veranschaulichen. Weitere Informationen zur Clientperspektive finden Sie im [Programmierhandbuch für Benutzeroberflächenautomatisierungs-Clients](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-clientportal).
@@ -275,7 +275,7 @@ protected override string GetClassNameCore()
 
 Einige Hilfstechnologien verwenden den Wert [**GetAutomationControlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltype) direkt, wenn sie Merkmale der Elemente eines Benutzeroberflächenautomatisierungs-Baums angeben, um zusätzliche Informationen über das **Name**-Element der Benutzeroberflächenautomatisierung hinaus bereitzustellen. Wenn sich Ihr Steuerelement erheblich von dem Steuerelement unterscheidet, von dem Sie ableiten, und Sie einen anderen Steuerelementtyp melden möchten als den, der durch die vom Steuerelement verwendete Basispeerklasse gemeldet wird, müssen Sie einen Peer implementieren und in Ihrer Implementierung des Peers [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) überschreiben. Dies ist besonders wichtig, wenn Sie von einer allgemeinen Basisklasse wie [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) oder [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) ableiten, in der der Peer keine genauen Informationen über den Steuerelementtyp liefert.
 
-Ihre Implementierung von [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) beschreibt Ihr Steuerelement, indem ein [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)-Wert zurückgegeben wird. Obwohl Sie **AutomationControlType.Custom** zurückgeben können, sollten Sie einen der spezifischeren Steuerelementtypen zurückgeben, wenn dieser die Hauptszenarien Ihres Steuerelements genauer beschreibt. Hier ein Beispiel dazu.
+Ihre Implementierung von [**GetAutomationControlTypeCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) beschreibt Ihr Steuerelement, indem ein [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)-Wert zurückgegeben wird. Obwohl Sie **AutomationControlType.Custom** zurückgeben können, sollten Sie einen der spezifischeren Steuerelementtypen zurückgeben, wenn dieser die Hauptszenarien Ihres Steuerelements genauer beschreibt. Hier sehen Sie ein Beispiel.
 
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
@@ -318,7 +318,7 @@ Unter [**Windows.UI.Xaml.Automation.Provider**](https://docs.microsoft.com/uwp/a
 
 Ein Peer kann melden, dass er mehrere Muster unterstützt. In diesem Fall sollte die Überschreibung eine Rückgabepfadlogik für jeden unterstützten [**PatternInterface**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.PatternInterface)-Wert enthalten und den Peer bei jeder Übereinstimmung zurückgeben. Es wird erwartet, dass der Aufrufer jeweils nur eine Schnittstelle anfordert und dass der Aufrufer entscheiden kann, ob eine Umwandlung für die erwartete Schnittstelle durchgeführt wird.
 
-Im Folgenden finden Sie ein Beispiel für eine [**GetPatternCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpatterncore)-Überschreibung für einen benutzerdefinierten Peer. Der Peer meldet, dass die beiden Muster [**IRangeValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IRangeValueProvider) und [**IToggleProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IToggleProvider) unterstützt werden. Bei dem hier verwendeten Steuerelement handelt es sich um ein Steuerelement zum Anzeigen von Medien, das als Vollbild (Umschaltmodus) dargestellt werden kann und über eine Fortschrittsleiste verfügt, auf der Benutzer eine Position (das Bereichssteuerelement) auswählen können. Dieser Code stammt aus dem [XAML-Beispiel für Barrierefreiheit](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d).
+Im Folgenden finden Sie ein Beispiel für eine [**GetPatternCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getpatterncore)-Überschreibung für einen benutzerdefinierten Peer. Der Peer meldet, dass die beiden Muster [**IRangeValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IRangeValueProvider) und [**IToggleProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IToggleProvider) unterstützt werden. Bei dem hier verwendeten Steuerelement handelt es sich um ein Steuerelement zum Anzeigen von Medien, das als Vollbild (Umschaltmodus) dargestellt werden kann und über eine Fortschrittsleiste verfügt, auf der Benutzer eine Position (das Bereichssteuerelement) auswählen können. Dieser Code stammt aus dem [XAML-Beispiel für Barrierefreiheit](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample).
 
 
 ```csharp
@@ -406,7 +406,7 @@ Die Basisimplementierung von [**FrameworkElementAutomationPeer**](https://docs.m
 * [**HasKeyboardFocusCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.haskeyboardfocuscore): wird basierend auf den Eigenschaften [**focusstate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.focusstate) und [**isaktivides**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) Besitzers ausgewertet. Elemente, die keine Steuerelemente sind, geben stets **false** zurück.
 * [**IsEnabledCore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.isenabledcore): wird basierend auf der [**isaktivierten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) Eigenschaft des Besitzers ausgewertet, wenn es sich um ein [**Steuer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)Element handelt. Elemente, die keine Steuerelemente sind, geben stets **true** zurück. Dies bedeutet nicht, dass der Besitzer im herkömmlichen Sinn einer Interaktion aktiviert wird, sondern dass der Peer aktiviert wird, obwohl der Besitzer nicht über die Eigenschaft **IsEnabled** verfügt.
 * [**Iskeyboardfoclaufablecore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.iskeyboardfocusablecore): gibt **true** zurück, wenn der Besitzer ein [**Steuer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)Element ist. Andernfalls ist Sie **false**.
-* [**Isoffscreencore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.isoffscreencore): eine [**Sichtbarkeit**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) [**von reduziert für das**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visibility) Owner-Element oder eine der übergeordneten Elemente entspricht einem **true** -Wert für [**IsOffscreen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.isoffscreen). Ausnahme: ein [**Popup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)-Objekt kann sichtbar sein, auch wenn dies nicht auf dessen übergeordneten Elemente zutrifft.
+* [**Isoffscreencore**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.isoffscreencore): eine [**Sichtbarkeit**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) [**von reduziert für das**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visibility) Owner-Element oder eine der übergeordneten Elemente entspricht einem **true** -Wert für [**IsOffscreen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.isoffscreen). Ausnahme: Ein [**Popup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)-Objekt kann sichtbar sein, auch wenn dies nicht auf seine übergeordneten Elemente zutrifft.
 * [**SetFocus Core**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.setfocuscore): Ruft den [**Fokus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.focus)auf.
 * [**GetParent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.automationpeer.getparent): Ruft [**FrameworkElement. Parent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.parent) vom Besitzer auf und sucht den entsprechenden Peer. Da es sich hier nicht um ein Überschreibungspaar mit einer Core-Methode handelt, können Sie dieses Verhalten nicht ändern.
 
@@ -536,9 +536,9 @@ Darüber hinaus sollten Peers mit Ausnahmen, die sie über die Peerunterstützun
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Zugehörige Themen  
+## <a name="related-topics"></a>Verwandte Themen  
 * [Bedienungshilfen](accessibility.md)
-* [XAML-Barrierefreiheits Beispiel](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML-Barrierefreiheits Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [**FrameworkElementAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer)
 * [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
 * [**OnCreateAutomationPeer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.oncreateautomationpeer)

@@ -1,6 +1,6 @@
 ---
 Description: Erfahren Sie, wie Sie einer nicht verpackten Desktop-App Identität zuweisen, damit Sie moderne Windows 10-Funktionen in diesen Apps verwenden können.
-title: Gewähren von Identitäten für nicht gepackte Desktop-Apps
+title: Identitätszuweisen für nicht verpackte Desktop-Apps
 ms.date: 10/25/2019
 ms.topic: article
 keywords: Windows 10, Desktop, Package, Identity, msix, Win32
@@ -8,14 +8,14 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f355bba3087f58ed20800052371804048bc0006c
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73145615"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521351"
 ---
-# <a name="grant-identity-to-non-packaged-desktop-apps"></a>Gewähren von Identitäten für nicht gepackte Desktop-Apps
+# <a name="grant-identity-to-non-packaged-desktop-apps"></a>Identitätszuweisen für nicht verpackte Desktop-Apps
 
 <!--
 > [!NOTE]
@@ -50,7 +50,7 @@ Ein *Paket* mit geringer Dichte enthält ein Paket Manifest, aber keine anderen 
 
 Zur Unterstützung von Paketen mit geringer Dichte unterstützt das Paket Manifest-Schema nun ein optionales **\<\>** -Element unter dem [ **\<-Eigenschaften\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) Element. Dadurch kann das Paket Manifest auf Inhalte außerhalb des Pakets an einem bestimmten Speicherort auf dem Datenträger verweisen.
 
-Wenn Sie z. b. über Ihre vorhandene, nicht gepackte Desktop-App verfügen, die die ausführbare App der APP und andere Inhalte in c:\programme\mydesktopapp installiert\, können Sie ein Paket mit geringer Dichte erstellen, das den\<"" **zugeordnet ist\>** -Element im Manifest. Während des Installationsvorgangs für Ihre APP oder beim ersten Ausführen Ihrer Apps können Sie das Paket mit geringer Dichte installieren und c:\programme\mydesktopapp\ als externen Speicherort deklarieren, der von Ihrer APP verwendet wird.
+Wenn Sie z. b. über Ihre vorhandene, nicht gepackte Desktop-App verfügen, die die ausführbare APP und andere Inhalte in "c:\programme\mydesktopapp" installiert\, können Sie ein Paket mit geringer Dichte erstellen, das das **\<"Zuge\>** "-Element im Manifest enthält. Während des Installationsvorgangs für Ihre APP oder beim ersten Ausführen Ihrer Apps können Sie das Paket mit geringer Dichte installieren und c:\programme\mydesktopapp\ als externen Speicherort deklarieren, der von Ihrer APP verwendet wird.
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>Erstellen eines Paket Manifests für das sparsespaket
 
@@ -61,7 +61,7 @@ Stellen Sie sicher, dass das Paket Manifest die folgenden Elemente enthält:
 * Ein [ **\<Identity\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) -Element, das die Identitäts Attribute für Ihre Desktop-App beschreibt.
 * Ein **\<\>** -Element unter dem [ **\<-Eigenschaften\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties) Element. Diesem Element sollte der Wert `true`zugewiesen werden, mit dem das Paket Manifest auf Inhalte außerhalb des Pakets an einem bestimmten Speicherort auf dem Datenträger verweisen kann. In einem späteren Schritt geben Sie den Pfad für den externen Speicherort an, wenn Sie Ihr sparsepaket bei Code registrieren, der in Ihrem Installer oder in der app ausgeführt wird. Alle Inhalte, auf die Sie im Manifest verweisen, die sich nicht im Paket selbst befinden, sollten am externen Speicherort installiert werden.
 * Das **MinVersion** -Attribut des [ **\<targetdevicefamily-\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) Elements sollte auf `10.0.19000.0` oder eine spätere Version festgelegt werden.
-* Die Attribute **TrustLevel = mediumil** und **runtimebehavior = Win32App** der [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) -Element deklarieren, dass die dem sparsepaket zugeordnete Desktop-App mit einem standardmäßigen nicht verpackten Desktop ausgeführt wird. App ohne Registrierung und Dateisystemvirtualisierung und andere Lauf Zeit Änderungen.
+* Die Attribute **Trust Level = mediumil** und **runtimebehavior = Win32App** der [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) -Element deklarieren, dass die Desktop-App, die dem Sparse-Paket zugeordnet ist, ähnlich wie eine standardmäßige, nicht gepackte Desktop-app ausgeführt wird, ohne dass Registrierung und Datei Systemvirtualisierung und andere Lauf Zeit Änderungen vorgenommen werden.
 
 Das folgende Beispiel zeigt den gesamten Inhalt eines Pakets mit geringer Dichte (appxmanifest. Xml). Dieses Manifest enthält eine `windows.sharetarget` Erweiterung, die eine Paket Identität erfordert.
 
@@ -196,7 +196,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## <a name="sample"></a>Beispiel
 
-Eine voll funktionsfähige Beispiel-APP, die veranschaulicht, wie die Paket Identität einer Desktop-App mithilfe eines sparsepakets erteilt wird, finden Sie unter [https://aka.ms/sparsepkgsample](https://aka.ms/sparsepkgsample). Weitere Informationen zum Aufbau und zur Ausführung des Beispiels finden Sie in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+Eine voll funktionsfähige Beispiel-APP, die veranschaulicht, wie die Paket Identität einer Desktop-App mithilfe eines sparsepakets erteilt wird, finden Sie unter [https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages). Weitere Informationen zum Aufbau und zur Ausführung des Beispiels finden Sie in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 Dieses Beispiel umfasst Folgendes:
 

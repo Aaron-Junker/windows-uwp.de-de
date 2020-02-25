@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7f794cc6f23cf3f4beaf5bc3c9558ceaf2ccc8a6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257793"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521312"
 ---
 # <a name="accessible-text-requirements"></a>Anforderungen für barrierefreien Text  
 
@@ -126,7 +126,7 @@ Verwenden Sie nach Möglichkeit keinen Text in Grafiken. Text, den Sie der in de
 
 Benutzer können Schwierigkeiten beim Lesen von Text in einer APP haben, wenn die Schriftarten einfach zu klein sind. Stellen Sie daher sicher, dass jeder Text in Ihrer Anwendung eine sinnvolle Größe ist.
 
-Nachdem Sie den offensichtlichen Vorgang durchgeführt haben, enthält Windows verschiedene Tools und Einstellungen für die Barrierefreiheit, die Benutzer nutzen und ihren eigenen Anforderungen und Vorlieben zum Lesen von Text anpassen können. Dazu zählen:
+Nachdem Sie den offensichtlichen Vorgang durchgeführt haben, enthält Windows verschiedene Tools und Einstellungen für die Barrierefreiheit, die Benutzer nutzen und ihren eigenen Anforderungen und Vorlieben zum Lesen von Text anpassen können. Dazu gehören:
 
 * Das Bildschirm Vergrößerungs Tool, das einen ausgewählten Bereich der Benutzeroberfläche vergrößert. Sie sollten sicherstellen, dass das Layout des Texts in der APP die Verwendung der Bildschirmlupe nicht erschwert.
 * Globale Skalierungs-und Auflösungseinstellungen in **Einstellungen-> System > Anzeige > Skalierung und Layout**. Welche Größen Anpassungsoptionen verfügbar sind, kann variieren, je nachdem, welche Möglichkeiten das Anzeigegerät hat.
@@ -186,6 +186,6 @@ Diese Typen verfügen über eine **IsTextScaleFactorEnabled**-Eigenschaft:
 * [Text Skalierung](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [Bedienungshilfen](accessibility.md)
 * [Grundlegende Informationen zur Barrierefreiheit](basic-accessibility-information.md)
-* [Beispiel für XAML-Textanzeige](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
-* [Beispiel für XAML-Textbearbeitung](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-* [XAML-Barrierefreiheits Beispiel](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 
+* [Beispiel für XAML-Textanzeige](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
+* [Beispiel für XAML-Textbearbeitung](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
+* [XAML-Barrierefreiheits Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) 

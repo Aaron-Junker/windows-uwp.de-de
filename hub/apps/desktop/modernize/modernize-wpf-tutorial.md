@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089306"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521284"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Tutorial: modernisieren einer WPF-App 
 
@@ -69,7 +69,7 @@ Stellen Sie sicher, dass Sie die folgenden Workloads und optionalen Features mit
 
 Bevor Sie mit dem Tutorial beginnen, laden Sie den Quellcode für die APP für die kostenpflichtige app-Ausgabe herunter, und stellen Sie sicher, dass Sie den Code in Visual Studio erstellen können.
 
-1. Laden Sie den Quellcode der APP von der Registerkarte **Releases** im anwendungsrepository " [appconsult winappsmodernisierungsrepository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)" herunter. Der direkte Link ist [https://aka.ms/wamwc](https://aka.ms/wamwc).
+1. Laden Sie den Quellcode der APP von der Registerkarte **Releases** im anwendungsrepository " [appconsult winappsmodernisierungsrepository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)" herunter. Der direkte Link ist [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
 2. Öffnen Sie die ZIP-Datei, und extrahieren Sie den gesamten Inhalt in das Stammverzeichnis des Laufwerks **C:\\** . Es wird ein Ordner mit dem Namen **c:\winappsmodernizationworkshop**erstellt.
 3. Öffnen Sie Visual Studio 2019, und doppelklicken Sie auf die Datei **c:\winappsmodernizationworkshop\lab\exercise1\01-start\contosoexpenses\contosoexpenses.sln** , um die Projekt Mappe zu öffnen.
 4. Stellen Sie sicher, dass Sie das WPF-Projekt für die Zusammenarbeit **mit dem Projekt** von "Build" erstellen, ausführen und Debuggen können.
