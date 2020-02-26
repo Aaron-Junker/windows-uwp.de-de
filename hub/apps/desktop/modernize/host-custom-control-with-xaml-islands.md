@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 35ddf17d121a06e453e9b51e023e859f0c1cd0ab
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: b6bd46bcdec639cee2bc867c2c4e71cccbb13cfb
+ms.sourcegitcommit: a2a3c887f6da47a6638ce5286199ea31ee7780e4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089346"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77606689"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
@@ -91,7 +91,7 @@ Fügen Sie als nächstes der gleichen Projekt Mappe wie das WPF-Projekt ein UWP-
     ```csharp
     namespace MyUWPApp
     {
-        sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
+        public sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
         {
             public App()
             {
@@ -305,7 +305,7 @@ Die folgenden Anweisungen zeigen, wie Sie alle Komponenten in der Projekt Mappe 
         </PropertyGroup>
         ```
 
-    4. Speichern Sie die Projektdatei, und schließen Sie Sie.
+    4. Speichere die Projektdatei und schließe sie dann.
     5. Klicken Sie mit der rechten Maustaste auf den Projekt Knoten WPF, und wählen Sie **Projekt erneut laden**
 
 4. Erstellen Sie das Verpackungsprojekt, und führen Sie es aus. Vergewissern Sie sich, dass WPF ausgeführt wird und das benutzerdefinierte UWP-Steuerelement erwartungsgemäß angezeigt wird.
