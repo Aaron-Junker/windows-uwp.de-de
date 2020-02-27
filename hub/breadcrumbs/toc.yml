@@ -6,7 +6,7 @@
       tocHref: /windows/
       topicHref: /windows/
       items:
-        - name: Apps
+        - name: Apps-
           tocHref: /windows/apps/
           topicHref: /windows/apps/
           items:
@@ -16,6 +16,9 @@
             - name: Modernisieren von Desktop-Apps
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize/
+            - name: Verarbeiten von EWT-Ablaufverfolgungen in .NET
+              tocHref: /windows/apps/trace-processing/
+              topicHref: /windows/apps/trace-processing/overview
         - name: Entwicklungsumgebung
           tocHref: /windows/dev-environment/
           topicHref: /windows/dev-environment/

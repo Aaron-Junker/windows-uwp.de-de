@@ -71,7 +71,27 @@
     - name: Speech
       href: apps/speech.md
     - name: Features und Technologien
-      href: apps/features-and-technologies.md
+      items:
+        - name: Übersicht
+          href: apps/features-and-technologies.md
+        - name: Verarbeiten von EWT-Ablaufverfolgungen in .NET
+          items:
+            - name: Übersicht
+              href: apps/trace-processing/overview.md
+            - name: Verarbeiten der ersten Ablaufverfolgung
+              href: apps/trace-processing/quickstart.md
+            - name: Zugreifen auf Ablaufverfolgungsdaten
+              href: apps/trace-processing/tutorial.md
+            - name: Erweitern von TraceProcessor
+              href: apps/trace-processing/extensibility.md
+            - name: Hochladen von Symbolen
+              href: apps/trace-processing/symbols.md
+            - name: Verwenden von Streaming
+              href: apps/trace-processing/streaming.md
+            - name: Beispiele
+              href: 'https://github.com/microsoft/eventtracing-processing-samples'
+            - name: Verweis
+              href: apps/trace-processing/reference.md
     - name: Neueste Aktualisierungen der Dokumentation
       href: apps/whats-new/latest-doc-updates.md
 - name: Erstellen mit Windows
