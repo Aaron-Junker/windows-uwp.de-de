@@ -5,14 +5,14 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: 1283a6b183673cbfb0d3d27290fc24ae6b020302
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: bc2ec3035e097a8cab15b556d1b1793385b8aeb9
+ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629072"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705755"
 ---
-# <a name="process-event-tracing-for-windows-etw-traces-in-net"></a>Ablauf Verfolgungen für die Verarbeitung der Ereignis Ablauf Verfolgung für Windows (ETW) in .net
+# <a name="process-etw-traces-in-net"></a>Verarbeiten von etw-Ablauf Verfolgungen in .net
 
 Die [Ereignis Ablauf Verfolgung für Windows (Event Tracing for Windows, etw)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal) ist ein leistungsfähiges System für die Ablauf Verfolgungs Sammlung, das im Windows-Betriebssystem Windows verfügt über eine umfassende Integration in etw, einschließlich Daten zum Systemverhalten für Ereignisse wie Kontextwechsel, Speicher Belegung, Prozesserstellung und-Ende sowie viele weitere. Die systemweiten Daten, die über etw verfügbar sind, eignen sich gut für die End-to-End-Leistungsanalyse oder andere Fragen, die die Interaktion zwischen vielen Komponenten im gesamten System erfordern.
 
@@ -28,7 +28,7 @@ In dieser Übersicht haben Sie erfahren, was .net traceprocessing ist.
 
 Der nächste Schritt ist die [Verarbeitung der ersten Ablauf Verfolgung](quickstart.md).
 
-## <a name="in-this-section"></a>Inhalt dieses Abschnitts
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Zugreifen auf Ablauf Verfolgungs Daten](tutorial.md)
 * [Traceprocessor erweitern](extensibility.md)
