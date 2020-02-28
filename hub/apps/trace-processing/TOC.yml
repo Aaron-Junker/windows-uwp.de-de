@@ -1,0 +1,19 @@
+- name: .NET TraceProcessing-Dokumentation
+  href: index.yml
+  items:
+    - name: Übersicht
+      href: overview.md
+    - name: Verarbeiten der ersten Ablaufverfolgung
+      href: quickstart.md
+    - name: Zugreifen auf Ablaufverfolgungsdaten
+      href: tutorial.md
+    - name: Erweitern von TraceProcessor
+      href: extensibility.md
+    - name: Hochladen von Symbolen
+      href: symbols.md
+    - name: Verwenden von Streaming
+      href: streaming.md
+    - name: Beispiele
+      href: 'https://github.com/microsoft/eventtracing-processing-samples'
+    - name: Verweis
+      href: reference.md
