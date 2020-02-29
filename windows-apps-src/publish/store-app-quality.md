@@ -1,18 +1,17 @@
 ---
 title: App-Qualität
 description: Es ist für Kunden und Entwickler gleichermaßen wichtig, dass Apps aus dem Store komfortabel, unterhaltend und sinnvoll sind. Um Entwicklern dabei zu helfen, dieses Ziel zu erreichen, haben wir hier einige der wichtigsten Faktoren für die App-Qualität zusammengestellt.
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 07/25/2017
 ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: 550ffeac8912769fc7e319d819f4de67f6d36cf1
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826417"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607253"
 ---
 # <a name="app-quality"></a>App-Qualität
 
@@ -66,7 +65,7 @@ In der **Beschreibung** können Sie die wichtigsten Features Ihrer App vorstelle
 
 Wenn Sie an Downloads verdienen möchten, dann betonen Sie die beeindruckenden, unterhaltsamen oder nützlichen Merkmale der App.
 
-- Sorgen Sie für dauerhaften Wert. Zum Beispiel:
+- Sorgen Sie für dauerhaften Wert. Beispiel:
     - Bietet Ihre Koch-App genügend Rezepte, damit Kunden veranlasst werden, sie mehr als einmal zu verwenden?
     - Wird Ihre Sport-App regelmäßig mit aktuellen Statistiken über die Mannschaft aktualisiert, oder enthält sie nur eine statische Auflistung von Ergebnissen?
     - Bietet Ihr Spiel einen interessanten Spielverlauf und unterschiedliche Ergebnisse?
@@ -86,7 +85,7 @@ Kunden wissen es zu schätzen, wenn Sie auf ihr Feedback und ihre Anforderungen 
 - Weitere Informationen finden Sie unter [Kundenkontakt intensivieren](https://developer.microsoft.com/store/engage).
 
 
-### <a name="see-also"></a>Weitere Informationen
+### <a name="see-also"></a>Siehe auch
 
 - [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)
 - [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)

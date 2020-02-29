@@ -1,18 +1,17 @@
 ---
 title: Microsoft Store-Richtlinien
 description: Produkte im Store müssen unsere Zertifizierungsstandards erfüllen, für Kunden wirklich hilfreich und ansprechend sein sowie gut in den Store passen.
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 5086353adbc07e265f02e12f998ae655cd512d48
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258978"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607250"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
@@ -474,7 +473,7 @@ Benutzergenerierte Inhalte sind Inhalte, die Benutzer zu einer App oder einem Pr
 ---
 <sup>1</sup>„Store“ oder „Microsoft Store“ bezeichnet unabhängig vom Namen eine im Besitz von Microsoft befindliche und von Microsoft betriebene Plattform, über die Apps für Kunden angeboten und von diesen erworben werden können. Sofern nicht anders angegeben, umfasst der Begriff Store den Microsoft Store, den Windows Store, den Xbox-Store, den Microsoft Store für Unternehmen und den Microsoft Store für Bildungseinrichtungen.
 
-### <a name="see-also"></a>Weitere Informationen
+### <a name="see-also"></a>Siehe auch
 
 - [Änderungsverlauf für Microsoft Store-Richtlinien](store-policies-change-history.md)
 - [Richtlinien und Verhaltensregeln für den Microsoft Store](store-policies-and-code-of-conduct.md)

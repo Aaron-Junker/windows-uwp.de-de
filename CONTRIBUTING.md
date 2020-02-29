@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414060"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521221"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Beitragen zur UWP-Konzeptdokumentation
 
@@ -56,4 +56,4 @@ Die zugewiesenen Prüfer können deinen Pull Request genehmigen, ablehnen oder m
 
 Wenn du Feedback zur Dokumentation abgeben möchtest, anstatt sie selbst zu bearbeiten, kannst du [ein Problem im öffentlichen Repository erstellen](https://github.com/MicrosoftDocs/windows-uwp/issues). Wähle die Registerkarte **Issues** (Probleme) und anschließend die Schaltfläche **New issue** (Neues Problem) aus. Vergiss nicht, den Titel des Themas und die URL für die Seite anzugeben. Dein Problem wird Mitgliedern des UWP-Dokumentationsteams zur Überprüfung zugewiesen.
 
-* Für interne Probleme steht das [WDG-Inhaltsanforderungstool](https://aka.ms/pubrequest) zur Verfügung.
+* Für interne Probleme steht das [WDG-Inhaltsanforderungstool](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx) zur Verfügung.
