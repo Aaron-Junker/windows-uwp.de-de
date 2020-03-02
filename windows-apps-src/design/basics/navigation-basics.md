@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6290b142eee4aff7287b9542b645df89164d173b
-ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
+ms.openlocfilehash: 137dbfe6471ee4d42e2a34e24512bdb658e985d0
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286941"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463762"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>Navigationsdesigngrundlagen für UWP-Apps
 
@@ -27,17 +27,17 @@ Bei der Navigation müssen zahlreiche Entscheidungen getroffen werden. Wir haben
 
 :::row:::
     :::column:::
-        ![navigation example 1](images/nav/nav-1.svg)
+        ![Navigationsbeispiel 1](images/nav/nav-1.svg)
 
 Wir können festlegen, dass Benutzer eine Reihe von Seiten in der vorgegebenen Reihenfolge durchlaufen müssen.
     :::column-end:::
     :::column:::
-        ![navigation example 2](images/nav/nav-2.svg)
+        ![Navigationsbeispiel 2](images/nav/nav-2.svg)
 
 Wie können ein Menü bereitstellen, über das Benutzer direkt zu einer beliebigen Seite gelangen.
     :::column-end:::
     :::column:::
-        ![navigation example 3](images/nav/nav-3.svg)
+        ![Navigationsbeispiel 3](images/nav/nav-3.svg)
 
 Wir können alles auf einer einzelnen Seite platzieren Filtermechanismen für die Inhalte bereitstellen.
     :::column-end:::
@@ -67,16 +67,16 @@ Weniger Navigationselemente vereinfachen den Entscheidungsprozess von Benutzern.
 
 :::row:::
     :::column:::
-        ![do example](images/nav/do.svg)
+        ![Positives Beispiel](images/nav/do.svg)
 
-        ![navview good](images/nav/navview-good.svg)
+        ![Navigationsansicht gut](images/nav/navview-good.svg)
 
 Darstellung von Navigationselementen in einem vertrauten Navigationsmenü
     :::column-end:::
     :::column:::
-        ![don't example](images/nav/dont.svg)
+        ![Negatives Beispiel](images/nav/dont.svg)
 
-        ![navview bad](images/nav/navview-bad.svg)
+        ![Navigationsansicht schlecht](images/nav/navview-bad.svg)
 
 Überforderung der Benutzer durch zahlreiche Navigationsoptionen
     :::column-end:::
@@ -106,10 +106,10 @@ Nachdem du nun mit allgemeinen Navigationsprinzipien vertraut bist, beschäftige
 
 :::row:::
     :::column:::
-        ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
+        ![In einer flachen Struktur angeordnete Seiten](images/nav/flat-lateral-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Flat/lateral
+        ### <a name="flatlateral"></a>Flach/lateral
 
 In einer flachen/lateralen Struktur sind die Seiten nebeneinander angeordnet. Sie können in beliebiger Reihenfolge von einer Seite zur nächsten wechseln.
 
@@ -125,10 +125,10 @@ Die Verwendung einer flachen Struktur empfiehlt sich in folgenden Fällen:
 
 :::row:::
     :::column:::
-        ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
+        ![In einer Hierarchie angeordnete Seiten](images/nav/hierarchical-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Hierarchical
+        ### <a name="hierarchical"></a>Hierarchisch
 
 In einer hierarchischen Struktur werden Seiten in einer baumartigen Struktur angeordnet. Jede untergeordnete Seite hat genau ein übergeordnetes Element. Ein übergeordnetes Element kann jedoch eine oder mehrere untergeordnete Seiten haben. Um eine untergeordnete Seite aufzurufen, durchlaufen Sie das übergeordnete Element.
 
@@ -145,10 +145,10 @@ Eine hierarchische Struktur empfiehlt sich in folgenden Fällen:
 
 :::row:::
     :::column:::
-        ![an app with a hybrid structure](images/nav/combining-structures.svg)
+        ![App mit einer Hybridstruktur](images/nav/combining-structures.svg)
     :::column-end:::
     :::column span="2":::
-        ### Combining structures
+        ### <a name="combining-structures"></a>Kombinieren von Strukturen
 
 Sie müssen sich nicht zwischen den beiden Strukturen entscheiden: In vielen gut gestalteten Apps wird eine Kombination aus beiden Strukturen verwendet. Eine App kann flache Strukturen für übergeordnete Seiten verwenden, die in beliebiger Reihenfolge angezeigt werden können, und hierarchische Strukturen für Seiten mit komplexeren Beziehungen.
 
@@ -165,7 +165,7 @@ Nachdem du dich für eine Seitenstruktur entschieden hast, musst du dir überleg
 
 :::row:::
     :::column:::
-        ![Frame image](images/nav/thumbnail-frame.svg)
+        ![Abbildung: Frame](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
         [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
@@ -175,29 +175,41 @@ Für Apps mit mehreren Seiten wird fast immer ein Frame verwendet. Eine App verf
 
 :::row:::
     :::column:::
-        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![Abbildung: Registerkarten und Pivotbereiche](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
+        [**Obere Navigation**](../controls-and-patterns/navigationview.md)
 
-Zeigt eine horizontale Liste mit Links zu Seiten auf der gleichen Ebene an. Das Steuerelement [NavigationView](../controls-and-patterns/navigationview.md) implementiert die Muster für die obere Navigation und die Registerkarten.
+Zeigt eine horizontale Liste mit Links zu Seiten auf der gleichen Ebene an. Das Steuerelement [NavigationView](../controls-and-patterns/navigationview.md) implementiert die Muster für die obere Navigation.
         
 Die obere Navigation kann in folgenden Fällen verwendet werden:
 
 - Wenn du alle Navigationsoptionen auf dem Bildschirm anzeigen möchtest
 - Wenn du mehr Platz für den Inhalt deiner App benötigst
 - Wenn sich deine Navigationskategorien nicht eindeutig durch Symbole darstellen lassen
-        
-Registerkarten können in folgenden Fällen verwendet werden:
-
-- Wenn Navigationsverlauf und Seitenzustand erhalten bleiben sollen
-- Wenn du erwartest, dass Benutzer häufig zwischen Registerkarten wechseln
 
 :::row-end:::
 
 :::row:::
     :::column:::
-         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![Abbildung: Registerkarten und Pivotbereiche](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+    :::column span="2":::
+        [**Registerkarten**](../controls-and-patterns/tab-view.md)
+
+Zeigt einen horizontalen Satz von Registerkarten und deren jeweiligen Inhalt an. Die Registerkarte [TabView](../controls-and-patterns/tab-view.md) ist nützlich, um mehrere Seiten (oder Dokumente) anzuzeigen und dem Benutzer die Möglichkeit zu geben, Registerkarten neu anzuordnen, zu öffnen oder zu schließen.
+    
+Registerkarten können in folgenden Fällen verwendet werden:
+
+- Benutzer sollen Registerkarten dynamisch öffnen, schließen oder neu anordnen können.
+- Sie erwarten, dass möglicherweise eine große Anzahl von Registerkarten gleichzeitig geöffnet sind.
+- Benutzer sollen Registerkarten auf einfache Weise zwischen Fenstern in Ihrer Anwendung, die mit Registerkarten verwendet, verschieben können, ähnlich wie bei Webbrowsern wie Microsoft Edge.
+
+:::row-end:::
+
+:::row:::
+    :::column:::
+         ![Abbildung: Registerkarten und Pivotbereiche](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
         :::column span="2":::
     [**Pivot**](../controls-and-patterns/pivot.md)
@@ -213,10 +225,10 @@ Pivot kann in folgenden Fällen verwendet werden:
 
 :::row:::
     :::column:::
-        ![navview image](images/nav/thumbnail-navview.svg)
+        ![Abbildung: Navigationsansicht](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
-        [**Left navigation**](../controls-and-patterns/navigationview.md)
+        [**Linke Navigation**](../controls-and-patterns/navigationview.md)
 
 Zeigt eine vertikale Liste mit Links zu übergeordneten Seiten an. Zu verwenden in folgenden Fällen:
         
@@ -228,10 +240,10 @@ Zeigt eine vertikale Liste mit Links zu übergeordneten Seiten an. Zu verwenden 
         
 :::row:::
     :::column:::
-        ![Master details image](images/nav/thumbnail-master-detail.svg)
+        ![Abbildung: Master/Details](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**Master/details**](../controls-and-patterns/master-details.md)
+        [**Master/Details**](../controls-and-patterns/master-details.md)
 
 Zeigt eine Liste (Masteransicht) mit Elementen an. Durch Auswählen eines Elements wird die entsprechende Seite im Detailbereich angezeigt. Zu verwenden in folgenden Fällen:
         
@@ -243,7 +255,7 @@ Das Master/Details-Muster eignet sich sehr gut für E-Mail-Postfächer, Kontaktl
 
 :::row:::
     :::column:::
-        ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![Abbildung: Hyperlinks und Schaltflächen](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     :::column span="2":::
         [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
