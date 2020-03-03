@@ -1,19 +1,19 @@
 ---
 Description: Erfahren Sie, wie Sie einer nicht verpackten Desktop-App Identität zuweisen, damit Sie moderne Windows 10-Funktionen in diesen Apps verwenden können.
 title: Identitätszuweisen für nicht verpackte Desktop-Apps
-ms.date: 10/25/2019
+ms.date: 02/28/2020
 ms.topic: article
 keywords: Windows 10, Desktop, Package, Identity, msix, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
+ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521351"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78222026"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Identitätszuweisen für nicht verpackte Desktop-Apps
 
@@ -137,7 +137,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>Fügen Sie die Metadaten der Paket Identität Ihrem Desktop Anwendungs Manifest hinzu.
 
-Sie müssen auch ein paralleles [Anwendungs Manifest](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) mit ihrer Desktop-App einschließen und ein **\<msix-\>** Element mit Attributen einschließen, die die Identitäts Attribute Ihrer APP deklarieren. Die Werte dieser Attribute werden vom Betriebssystem verwendet, um die Identität ihrer APP zu ermitteln, wenn die ausführbare Datei gestartet wird.
+Sie müssen auch ein paralleles [Anwendungs Manifest](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) mit ihrer Desktop-App einschließen und ein [&lt;msix-&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix) Element mit Attributen einschließen, die die Identitäts Attribute Ihrer APP deklarieren. Die Werte dieser Attribute werden vom Betriebssystem verwendet, um die Identität ihrer APP zu ermitteln, wenn die ausführbare Datei gestartet wird.
 
 Das folgende Beispiel zeigt ein paralleles Anwendungs Manifest mit einem **\<msix\>** -Element.
 
