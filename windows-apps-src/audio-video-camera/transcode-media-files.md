@@ -1,19 +1,19 @@
 ---
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
 description: Mit den Windows.Media.Transcoding-APIs können Sie Videodateien von einem Format in ein anderes transcodieren.
-title: Transcodieren von Mediendateien
+title: Transkodieren von Mediendateien
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 38aef2779908e173712bda0f35ca9e0651fb786b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 58cc932ee8801835c44282de159900e3bb167e01
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683873"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256163"
 ---
-# <a name="transcode-media-files"></a>Transcodieren von Mediendateien
+# <a name="transcode-media-files"></a>Transkodieren von Mediendateien
 
 
 
@@ -79,22 +79,5 @@ Erstellen Sie zum Transcodieren der Datei ein neues [**MediaTranscoder**](https:
 Sie können Reaktionsereignisse registrieren, wenn sich der Fortschritt der asynchronen [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync)-Klasse ändert. Diese Ereignisse sind Teil des asynchronen Programmierungsframeworks für Apps für die universelle Windows-Plattform (UWP) und nicht für die Transcodierungs-API spezifisch.
 
 [!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
-
-
-## <a name="encode-a-metadata-stream"></a>Codieren Sie einen Metadatenstrom
-Ab Windows 10, Version 1803, können Sie zeitgesteuerte Metadaten einschließen, wenn Sie Mediendateien transcodieren. Im Gegensatz zu den oben genannten Video-Transcodierung-Beispielen, in denen die integrierten Methoden zum Erstellen von Medien Codierungs Profilen wie [**mediaencodingprofile. CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)verwendet werden, müssen Sie das metadatencodierungsprofil manuell erstellen, um den Typ der Metadaten zu unterstützen, die Sie codieren
-
-Der erste Schritt beim Erstellen eines metadatenincodierprofils ist das Erstellen eines [**TimedMetadataEncodingProperties**]-Objekts, das die Codierung der zu transcodierten Metadaten beschreibt. Die SubType-Eigenschaft ist eine GUID, die den Typ der Metadaten angibt. Die Codierungs Details für jeden Metadatentyp sind proprietär und werden nicht von Windows bereitgestellt. In diesem Beispiel wird die GUID für GoPro Metadata (GPRS) verwendet. Als nächstes wird [**setformatuserdata**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) aufgerufen, um ein binäres Blob von Daten festzulegen, das das für das Metadatenformat spezifische Datenstrom Format beschreibt. Als nächstes wird ein **TimedMetadataStreamDescriptor**-Objekt (https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) aus den Codierungs Eigenschaften erstellt, und eine Titel Bezeichnung und ein Titel geben an, dass eine Anwendung, die den endcodierten Stream liest, den Metadatenstream identifizieren und optional den Datenstrom Namen in der Benutzeroberfläche anzeigen kann. 
- 
-[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
-
-Nachdem Sie das **TimedMetadataStreamDescriptor**erstellt haben, können Sie ein **mediaencodingprofile** erstellen, das Video, Audiodaten und Metadaten beschreibt, die in der Datei codiert werden sollen. Der **TimedMetadataStreamDescriptor** , der im letzten Beispiel erstellt wurde, wird an diese Beispiel-Hilfsfunktion geleitet und dem **mediaencodingprofile** durch Aufrufen von [**SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)hinzugefügt.
-
-[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
- 
-
- 
-
-
 
 
