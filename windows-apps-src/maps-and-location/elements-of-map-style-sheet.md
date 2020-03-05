@@ -7,12 +7,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Karten, Karten-Stylesheet
 ms.localizationpriority: medium
-ms.openlocfilehash: 723426b4affec4251f26485ac7ecc1fca307c102
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: b59e8c3c6d9c4c299e441964be1afb4e02051e23
+ms.sourcegitcommit: 5264d7499ddbe21199a63d74a294206069f90f8b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867702"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78287446"
 ---
 # <a name="map-style-sheet-reference"></a>Karten-Stylesheet-Referenz
 
@@ -56,7 +56,7 @@ In der folgenden Tabelle wird das Zeichen „>” verwendet, um Ebenen in der Ei
 |---------|----------------------|
 |  1703   | Creators Update      |
 |  1709   | Fall Creators Update |
-|  1803   | Update April 2018    |
+|  1803   | Update vom April 2018    |
 |  1809   | Update vom Oktober 2018  |
 |  1903   | Update vom Mai 2019      |
 
@@ -191,7 +191,7 @@ In der folgenden Tabelle wird das Zeichen „>” verwendet, um Ebenen in der Ei
 | >>>>> countryRegionCapital         | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die die Hauptstadt von Ländern oder Regionen darstellen |
 | > > > > majorpopulatedplace           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbole, die die Größe des großen aufgefüllten Platzes darstellen. |
 | > > > > minorpopulatedplace           | [Pointstyle](#pointstyle) |      |      |      |      |  ✔   | Symbole, die die Größe des geringfügigen aufgefüllten Platzes darstellen. |
-| >>> roadShield                     | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeichen, die die Bezeichnung einer Straße darstellen (Beispiel: I-5). Verwenden Sie nur Palettenwerte, wenn Sie die **ImageFamily**-Eigenschaft des Einstellungseintrags auf einen Wert von *Palette* festlegen. |
+| >>> roadShield                     | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Zeichen, die die Bezeichnung einer Straße darstellen (zum Beispiel: I-5). Verwenden Sie nur Palettenwerte, wenn Sie die **ImageFamily**-Eigenschaft des Einstellungseintrags auf einen Wert von *Palette* festlegen. |
 | >>> roadExit                       | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Ausfahrten, in der Regel aus einer Autobahn mit Zugangsüberwachungssystem, darstellen |
 | >>> transit                        | [Pointstyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Symbole, die Bushaltestellen, Zughaltestellen, Flughäfen usw. darstellen |
 | >> political                       | [Borderedmapelement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Politische Gebiete, wie Länder, Regionen und Staaten |
@@ -243,7 +243,7 @@ In diesem Abschnitt werden die Eigenschaften beschrieben, die Sie für die Eintr
 
 | Eigenschaft                     | Typ    | Beschreibung                                                                                                           |
 |------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------|
-| version                      | Zeichenfolge  | Version des zu verwendenden Stylesheets. Wird für die Anwendbarkeit verwendet. „1.0” als Standard, „1. *” für zusätzliche geringfügige Featureupdates |
+| version                      | String  | Version des zu verwendenden Stylesheets. Wird für die Anwendbarkeit verwendet. „1.0” als Standard, „1. *” für zusätzliche geringfügige Featureupdates |
 
 <a id="settings" />
 
@@ -255,14 +255,12 @@ In diesem Abschnitt werden die Eigenschaften beschrieben, die Sie für die Eintr
 | buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Texturen auf symbolischen 3D-Gebäuden, die über Texturen verfügen, angezeigt werden sollen oder nicht |
 | fogColor                     | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert des Distanznebels, der im 3D-Steuerelement angezeigt wird |
 | glowColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert, der für glänzende Beschriftungen und Symbole angewendet werden kann |
-| imageFamily                  | Zeichenfolge  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Name der Bildzusammenstellung, die für dieses Format verwendet werden soll. Legen Sie diesen Wert auf *Default* für Zeichen fest, die feste Farben verwenden, die auf den Zeichen in der realen Welt basieren. Legen Sie diesen Wert auf *Palette* für Zeichen fest, die über die Palette konfigurierbare Farben verwenden. |
+| imageFamily                  | String  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Name der Bildzusammenstellung, die für dieses Format verwendet werden soll. Legen Sie diesen Wert auf *Default* für Zeichen fest, die feste Farben verwenden, die auf den Zeichen in der realen Welt basieren. Legen Sie diesen Wert auf *Palette* für Zeichen fest, die über die Palette konfigurierbare Farben verwenden. |
 | landColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert von Landflächen, bevor etwas darauf gezeichnet wird |
 | logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Elemente mit einer **Organization**-Eigenschaft die entsprechenden Logos zeichnen oder ein allgemeines Symbol verwenden sollen |
 | officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Elemente, die über eine offizielle Farbeigenschaft verfügen (wie Transitlinien in China), in dieser Farbe gezeichnet werden sollen. Deaktivieren Sie diesen Wert beispielsweise für Schwarz-Weiß-Karten. |
 | rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Raster Bereiche gezeichnet werden sollen, in denen Sie über eine bessere Darstellung als Vektoren (Japan und Korea) verfügen. |
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Schattierungen für Erhöhungen auf der Karte gezeichnet werden sollen |
-| shadedReliefDarkColor        | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der dunklen Seite des schattierten Reliefs.  Der Alpha-Kanal stellt den maximalen Alpha Wert dar. |
-| shadedReliefLightColor       | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der hellen Seite des schattierten Reliefs.  Der Alpha-Kanal stellt den maximalen Alpha Wert dar. |
 | ShadowColor                  | Farbe   |      |      |      |  ✔   |  ✔   | Die Farbe des Schattens hinter Symbolen, die Schatten verwenden. |
 | spaceColor                   | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert für den Bereich um die Karte herum |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob die ursprünglichen Farben in der SVG verwendet werden sollen, anstatt den Paletteneintrag für Farben in einem Bild zu suchen. |
@@ -275,8 +273,8 @@ In diesem Abschnitt werden die Eigenschaften beschrieben, die Sie für die Eintr
 |------------------------------|---------|------|------|------|------|------|-------------|
 | backgroundScale              | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Betrag, um den das Hintergrundelement eines Symbols skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
 | fillColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe, die für das Füllen von Polygonen, den Hintergrund von Punktsymbolen und für die Mitte von geteilten Linien verwendet wird |
-| fontFamily                   | Zeichenfolge  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| FontWeight                   | Zeichenfolge  |      |      |      |      |  ✔   | Die Dichte einer Schriftart in Bezug auf die Helligkeit oder die schwere haftigkeit der Striche. "**Light**", "**Normal**", "**Semibold**" und "**Bold**" können festgelegt werden. |
+| fontFamily                   | String  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
+| FontWeight                   | String  |      |      |      |      |  ✔   | Die Dichte einer Schriftart in Bezug auf die Helligkeit oder die schwere haftigkeit der Striche. "**Light**", "**Normal**", "**Semibold**" und "**Bold**" können festgelegt werden. |
 | iconColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe der Glyphe, die in der Mitte eines Punktsymbols angezeigt wird |
 | iconScale                    | Gleitkomma   |      |  ✔   |  ✔   |  ✔   |  ✔   | Betrag, um den die Glyphe eines Symbols skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
 | labelColor                   | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
@@ -284,7 +282,7 @@ In diesem Abschnitt werden die Eigenschaften beschrieben, die Sie für die Eintr
 | labelScale                   | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die Standardgröße von Beschriftungen skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
 | labelVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
 | overwriteColor               | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Führt das Überschreiben von **StrokeColor** mit dem Alphawert von **FillColor** aus, anstatt eine Mischung der beiden Farben zu verwenden |
-| scale                        | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die gesamte Größe des Punkts skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
+| Dezimalstellen                        | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die gesamte Größe des Punkts skaliert wird. Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
 | strokeColor                  | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe, die für die Kontur von Polygonen, die Kontur von Punktsymbolen und die Farbe von Linien verwendet werden soll |
 | strokeWidthScale             | Gleitkomma   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der Wert, um den die Strichstärke von Linien skaliert wird Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
 | visible                      | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
@@ -311,8 +309,8 @@ Diese Eigenschaftengruppe erbt von der [MapElement](#mapelement)-Eigenschaftengr
 | Eigenschaft                     | Typ    | 1703 | 1709 | 1803 | 1809 | 1903 | Beschreibung |
 |------------------------------|---------|------|------|------|------|------|-------------|
 | shadowvisible                | Bool    |      |      |      |      |  ✔   | Das Flag, das angibt, ob der Schatten des Symbols sichtbar sein soll. |
-| Shape-Hintergrund             | Zeichenfolge  |      |      |      |      |  ✔   | Form, die als Hintergrund des Symbols verwendet werden soll, und ersetzt jede beliebige Form, die dort vorhanden ist. |
-| Form Symbol                   | Zeichenfolge  |      |      |      |      |  ✔   | Form, die als Vordergrund Symbol des Symbols verwendet werden soll, und ersetzt jede beliebige Form, die dort vorhanden ist. |
+| Shape-Hintergrund             | String  |      |      |      |      |  ✔   | Form, die als Hintergrund des Symbols verwendet werden soll, und ersetzt jede beliebige Form, die dort vorhanden ist. |
+| Form Symbol                   | String  |      |      |      |      |  ✔   | Form, die als Vordergrund Symbol des Symbols verwendet werden soll, und ersetzt jede beliebige Form, die dort vorhanden ist. |
 | stemAnchorRadiusScale        | Gleitkomma   |      |      |  ✔   |  ✔   |  ✔   | Betrag, um den der Ankerpunkt eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Größe. |
 | stemColor                    | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Die Farbe des Schafts unten an einem Symbol im 3D-Modus |
 | stemHeightScale              | Gleitkomma   |      |      |  ✔   |  ✔   |  ✔   | Betrag, um den die Länge eines Symbolschafts skaliert werden soll.  Verwenden Sie z. B. *1* für die Standardgröße und *2* für die doppelte Länge. |

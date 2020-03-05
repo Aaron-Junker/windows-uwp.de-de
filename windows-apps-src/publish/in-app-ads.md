@@ -4,16 +4,19 @@ title: In-App-Anzeigen
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.date: 03/25/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e12641695dd72cddcfb6b51f6cd2f20fa66ddf41
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 96994566d19e03f1d85b751242331f04fef098ad
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258997"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290344"
 ---
 # <a name="in-app-ads"></a>In-App-Anzeigen
+
+>[!WARNING]
+> Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 Verwenden Sie **die Seite** &gt; **in-App-Werbeeinblendungen** in [Partner Center](https://partner.microsoft.com/dashboard) , um Ad-Einheiten für Folgendes zu erstellen und zu verwalten:
 
@@ -56,7 +59,7 @@ Nachdem Sie die neue Ad-Einheit erstellt haben, wird Sie in der Tabelle Verfügb
 
 ## <a name="review-and-edit-ad-units"></a>Überprüfen und Bearbeiten von Anzeigeneinheiten
 
-Nachdem Sie Ad-Einheiten für eine oder mehrere apps in Ihrem Konto erstellt haben, werden diese Ad-Einheiten in einer Tabelle am unteren Rand der Seite **Monetize** &gt; **in-App-Werbung** angezeigt. Diese Tabelle zeigt die **Anwendungs-ID** und **Anzeigeneinheits-ID** für jede Anzeigeneinheit zusammen mit anderen Informationen an. Zum Einblenden von Anzeigen in Ihrer App müssen Sie diese Werte in Ihrem Code verwenden. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in Ihrer App](../monetize/set-up-ad-units-in-your-app.md).
+Nachdem Sie Ad-Einheiten für eine oder mehrere apps in Ihrem Konto erstellt haben, werden diese Ad-Einheiten in einer Tabelle am unteren Rand der Seite **Monetize** &gt; **in-App-Werbung** angezeigt. Diese Tabelle zeigt die **Anwendungs-ID** und **Anzeigeneinheits-ID** für jede Anzeigeneinheit zusammen mit anderen Informationen an. Zum Einblenden von Anzeigen in Ihrer App müssen Sie diese Werte in Ihrem Code verwenden. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](../monetize/set-up-ad-units-in-your-app.md).
 
 * Wenn Ihre App [Banneranzeigen](../monetize/banner-ads.md) anzeigt, weisen Sie diese Werte den Eigenschaften [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) und [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) Ihres [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)-Objekts hinzu.
 * Wenn Ihre App [Interstitialwerbung](../monetize/interstitial-ads.md) anzeigt, übergeben Sie diese Werte an die [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad)-Method Ihres [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad)-Objekts.
@@ -144,8 +147,8 @@ Die verfügbaren Anzeigennetzwerke schalten Anzeigen in allen [unterstützten M�
 
 |  Anzeigennetzwerk  |  Unterstützte Märkte  |
 |--------------|---------------------|
-| Revcontent | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Vereinigtes Königreich, USA  |
-| Smaato | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Vereinigtes Königreich, USA |
+| Revcontent | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Großbritannien, USA  |
+| Smaato | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Großbritannien, USA |
 | Smartclip | Österreich, Belgien, Dänemark, Finnland, Deutschland, Italien, Niederlande, Norwegen, Schweden, Schweiz  |
 | Unterton | USA |
 
