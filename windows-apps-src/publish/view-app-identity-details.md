@@ -4,14 +4,14 @@ title: Anzeigen von Details zur App-Identität
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259888"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853257"
 ---
 # <a name="view-app-identity-details"></a>Anzeigen von Details zur App-Identität
 
