@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
 ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270113"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853389"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -275,7 +275,7 @@ Wenn du ein Ereignis mit der Memberfunktion eines Objekts oder im Rahmen einer L
 * [Funktion „winrt::implements::get_weak“](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [Funktion „winrt::implements::get_strong“](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Erstellen von Ereignissen in C++/WinRT](author-events.md)
 * [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md)
 * [Starke und schwache Verweise in C++/WinRT](weak-references.md)

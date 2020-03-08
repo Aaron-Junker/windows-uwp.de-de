@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, Märkte, Länder, Regionen
 ms.localizationpriority: medium
 ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787118"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852838"
 ---
 # <a name="define-market-selection"></a>Festlegen der Marktauswahl
 
 
 Der Microsoft Store erreicht Kunden in über 200 Ländern und Regionen in aller Welt. Sie können die Märkte auswählen, in denen Sie Ihre App anbieten möchten, und haben die Option zum Anpassen vieler Features für [Preise und Verfügbarkeit](set-app-pricing-and-availability.md) pro Markt oder Gruppe von Märkten.
 
-Informationen, um Ihre app geeignet für Kunden auf der ganzen Welt zu machen, finden Sie unter [Richtlinien für die Globalisierung](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) und [stellen Sie Ihre app lokalisierbar](../design/globalizing/prepare-your-app-for-localization.md).
+Informationen, die Ihnen helfen, Ihre APP für Kunden auf der ganzen Welt geeignet zu machen, finden Sie unter [Richtlinien für die Globalisierung](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) und [machen der APP lokalisierbar](../design/globalizing/prepare-your-app-for-localization.md).
 
 > [!NOTE]
 > Obwohl dieses Thema auf Apps verweist, verwendet die Markauswahl für die Add-On-Übermittlungen das gleiche Verfahren.
@@ -34,19 +34,19 @@ Standardmäßig werden alle Märkte ausgewählt. Sie können die Auswahl einzeln
 Beachten Sie, dass Ihre Auswahl hier nur für neue Käufe gilt. Wenn ein Benutzer die App bereits in einem bestimmten Markt hat und Sie später diesen Markt entfernen, können die Personen, die die App in diesem Markt bereits haben, sie weiterhin verwenden, sie erhalten jedoch nicht die von Ihnen übermittelten Updates. Außerdem können keine neuen Kunden in diesem Markt Ihre App beziehen.
 
 > [!IMPORTANT]
-> Es ist Ihre Aufgabe, die alle lokalen rechtlichen Anforderungen erfüllen, auch wenn diese Anforderungen nicht hier oder im Partner Center aufgelistet sind.
+> Es liegt in ihrer Verantwortung, alle lokalen rechtlichen Anforderungen zu erfüllen, auch wenn diese Anforderungen nicht hier oder im Partner Center aufgeführt sind.
 
 Bestimmte Apps werden u. U. aufgrund von örtlich geltenden Gesetzen und Beschränkungen oder anderen Faktoren in bestimmten Märkten nicht angeboten, obwohl Sie alle Märkte ausgewählt haben. Außerdem haben einige Märkte möglicherweise spezifische Anforderungen für Altersfreigaben. Wenn Ihre App diese Anforderungen nicht erfüllt, können wir sie auf diesem Markt nicht anbieten. Weitere Informationen finden Sie unter [Altersfreigaben](age-ratings.md).
 
 > [!NOTE]
-> Für zuvor veröffentlichte apps, die auf Windows 8 oder Windows 8.1-Pakete enthalten sind, werden einige einzelne Märkte als eine einzelne "Weltweit" Markt behandelt. Weitere Informationen finden Sie unter [Märkte "Restliche Welt" für Windows 8.x](#rest-of-world-markets-for-windows-8x).
+> Für zuvor veröffentlichte apps mit Paketen, die auf Windows 8 oder Windows 8.1 abzielen, werden einige einzelne Märkte als ein einzelner "Rest der Welt"-Markt behandelt. Weitere Informationen finden Sie unter [Märkte "Restliche Welt" für Windows 8.x](#rest-of-world-markets-for-windows-8x).
 
 Außerdem sehen Sie ein Kontrollkästchen, mit dem Sie angeben können, ob Ihre App in Märkten angeboten werden soll, die der Store in Zukunft vielleicht hinzufügt. Wenn Sie diese Option aktiviert lassen und wir später neue Märkte hinzufügen, werden der Basispreis und das Datum der allgemeinen Verfügbarkeit für die Übermittlung für Ihre App in diesen Märkten verwendet. Wenn Sie dies nicht möchten, können Sie dieses Kontrollkästchen deaktivieren. In diesem Fall werden wir Ihre App nicht in zukünftigen Märkten aufführen (Sie können sie jedoch später noch jederzeit hinzufügen).
  
 
-## <a name="microsoft-store-consumer-markets"></a>Microsoft Store-Verbraucher-Märkte
+## <a name="microsoft-store-consumer-markets"></a>Microsoft Store Verbrauchermärkte
 
-Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märkte eintragen. Die Märkte mit einem Sternchen unterstützen die Microsoft Store für Xbox One; sehen Sie **Xbox** neben ihrem Namen in der **Markt Auswahl** Popup-Fenster.
+Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märkte eintragen. Die Märkte mit einem Sternchen unterstützen die Microsoft Store auf Xbox One. Sie sehen **Xbox** neben ihren Namen im Popup Fenster für die **Markt Auswahl** .
 
 
 <table>
@@ -73,7 +73,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Aruba</td>
     <td>Australien</td>
     <td>Österreich</td>
-    <td>Aserbeidschan</td>
+    <td>Aserbaidschan</td>
   </tr>
   <tr>
     <td>Bahamas</td>
@@ -97,7 +97,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Bosnien und Herzegowina</td>
     <td>Botsuana</td>
     <td>Bouvetinsel</td>
-    <td>Brazilien</td>
+    <td>Brasilien</td>
   </tr>
   <tr>
     <td>Britisches Territorium im Indischen Ozean</td>
@@ -173,7 +173,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
   </tr>
   <tr>
     <td>Gambia</td>
-    <td>Georgien</td>
+    <td>Georgia</td>
     <td>Deutschland *</td>
     <td>Ghana</td>
   </tr>
@@ -244,7 +244,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Macau SAR</td>
   </tr>
   <tr>
-    <td>Nordmazedonien</td>
+    <td>Mazedonien, ehemalige jugoslawische Republik</td>
     <td>Madagaskar</td>
     <td>Malawi</td>
     <td>Malaysia</td>
@@ -388,8 +388,8 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Tuvalu</td>
   </tr>
   <tr>
-    <td>USA Kleinere Amerikanische Überseeinseln</td>
-    <td>USA Jungferninseln</td>
+    <td>Kleinere Amerikanische Überseeinseln</td>
+    <td>Amerikanische Jungferninseln</td>
     <td>Uganda</td>
     <td>Ukraine</td>
   </tr>
@@ -428,13 +428,13 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 
 &nbsp;
 
-| Land/Region       | Zahlungsmethode  | Regulierung zur Markterweiterung | Datum des Inkrafttretens |
+| Land/Region       | Zahlungsweise  | Regulierung zur Markterweiterung | Gültig ab |
 |----------------------|-----------------|-------------------------------|----------------|
 | Argentinien            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Australien            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Österreich              | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Belgien              | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Brazilien               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Brasilien               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Kanada               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Chile                | Geschenkkarte       | 2,24 %                         | März 2016     |
 | China                | Geschenkkarte       | 2,24 %                         | März 2016     |
@@ -442,8 +442,8 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Tschechische Republik       | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Dänemark              | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Finnland              | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Frankreich               | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Deutschland              | Geschenkkarte       | 2,24 %                         | März 2016     |
+| France               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Germany              | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Griechenland               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Hongkong            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Ungarn              | Geschenkkarte       | 2,24 %                         | März 2016     |
@@ -457,7 +457,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Neuseeland          | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Polen               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Portugal             | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Russland               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Russische Föderation               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Saudi-Arabien         | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Singapur            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Slowakei             | Geschenkkarte       | 2,24 %                         | März 2016     |
@@ -467,18 +467,18 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Schweden               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Schweiz          | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Taiwan               | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Turkei               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Türkei               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Vereinigte Arabische Emirate | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Vereinigtes Königreich       | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Großbritannien       | Geschenkkarte       | 2,24 %                         | März 2016     |
 | USA        | Geschenkkarte       | 2,24 %                         | März 2016     |
 
  
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Märkte "Restliche Welt" für Windows 8.x
 
-Wenn Ihre app zuvor veröffentlichte Pakete für Windows enthält 8.x, es ist wichtig zu beachten, dass eine Anzahl von Märkte behandelt werden, als ein einzelnes "weltweit"-Marktplatz für Kunden, die mit dem Store auf Windows 8.x, obwohl sie als einzelne Märkte angezeigt werden im Partner Center.
+Wenn Ihre zuvor veröffentlichte App Pakete enthält, die auf Windows 8. x abzielen, ist es wichtig zu wissen, dass eine Reihe von Märkten für Kunden, die den Store unter Windows 8. x verwenden, als einzelner "Rest der Welt"-Markt behandelt werden, auch wenn Sie als einzelne Märkte angezeigt werden. im Partner Center.
 
-Wenn Sie die Standardauswahl für den Markt lassen, wenn Sie Ihre app übermitteln, Sie müssen keine Gedanken, und Ihre Anwendung kann für alle möglichen Märkte zur Verfügung. Allerdings, wenn Sie bestimmte Märkte ausschließen möchten, behalten Sie denken Sie daran, die mit Ausnahme auch nur eine der folgenden "Weltweit" Märkte Maßnahmen, die Ihre app in nicht verfügbar sein werden *alle* von der "weltweit" Märkte für Kunden mit Windows 8 oder Windows 8.1.
+Wenn Sie beim Übermitteln Ihrer APP die standardmäßige Markt Auswahl belassen, müssen Sie sich nicht darum kümmern, und Ihre APP steht allen möglichen Märkten zur Verfügung. Wenn Sie jedoch bestimmte Märkte ausschließen möchten, sollten Sie Bedenken, dass Ihre APP für Kunden mit Windows 8 oder Windows 8.1 in *keinem* der "restlichen Welt"-Märkte verfügbar ist, wenn Sie auch nur einen dieser "Rest der Welt" ausschließen.
 
 Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
 
@@ -499,7 +499,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Antigua und Barbuda</td>
     <td>Armenien</td>
     <td>Aruba</td>
-    <td>Aserbeidschan</td>
+    <td>Aserbaidschan</td>
   </tr>
   <tr>
     <td>Bahamas</td>
@@ -574,7 +574,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Gambia</td>
   </tr>
   <tr>
-    <td>Georgien</td>
+    <td>Georgia</td>
     <td>Ghana</td>
     <td>Gibraltar</td>
     <td>Grönland</td>
@@ -613,7 +613,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macau SAR</td>
-    <td>Nordmazedonien</td>
+    <td>Mazedonien, ehemalige jugoslawische Republik</td>
   </tr>
   <tr>
     <td>Madagaskar</td>
@@ -714,8 +714,8 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
   <tr>
     <td>Tuvalu</td>
     <td>Uganda</td>
-    <td>USA Kleinere Amerikanische Überseeinseln</td>
-    <td>USA Jungferninseln</td>
+    <td>Kleinere Amerikanische Überseeinseln</td>
+    <td>Amerikanische Jungferninseln</td>
   </tr>
   <tr>
     <td>Usbekistan</td>
@@ -738,4 +738,4 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
 </table>
 
 > [!NOTE]
-> Eine Liste der Länder und Regionen, in dem Sie für ein Entwicklerkonto registrieren können, finden Sie unter [Kontotypen, Standorte und Gebühren](account-types-locations-and-fees.md).
+> eine Liste der Länder und Regionen, in denen Sie sich für ein Entwicklerkonto registrieren können, finden Sie unter [Konto Typen, Standorte und Gebühren](account-types-locations-and-fees.md).

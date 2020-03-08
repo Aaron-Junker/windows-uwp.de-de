@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684623"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853157"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>Portieren von Windows Phone Silverlight-XAML und-Benutzeroberfläche auf UWP
 
@@ -30,7 +30,7 @@ Eine allgemeinere Methode zum Auffinden des UWP-Typs, der einem Windows Phone Si
 ## <a name="xaml-namespace-prefix-declarations"></a>XAML-Namespacepräfixdeklarationen
 
 
-Falls Sie in Ihren Ansichten Instanzen von benutzerdefinierten Typen verwenden – vielleicht eine Ansichtsmodellinstanz oder einen Wertkonverter –, enthält Ihr XAML-Markup XAML-Namespacepräfixdeklarationen. Die Syntax dieser Elemente unterscheidet sich zwischen Windows Phone Silverlight und UWP. Einige Beispiele:
+Falls Sie in Ihren Ansichten Instanzen von benutzerdefinierten Typen verwenden – vielleicht eine Ansichtsmodellinstanz oder einen Wertkonverter –, enthält Ihr XAML-Markup XAML-Namespacepräfixdeklarationen. Die Syntax dieser Elemente unterscheidet sich zwischen Windows Phone Silverlight und UWP. Dies sind einige Beispiele:
 
 ```xml
     xmlns:ContosoTradingCore="clr-namespace:ContosoTradingCore;assembly=ContosoTradingCore"
@@ -196,7 +196,7 @@ Windows Phone Silverlight-Apps verwenden Steuerelemente, die im **Microsoft. Pho
 | ControlTiltEffect.TiltEffect-Klasse | Animationen aus der UWP-Animationsbibliothek sind in die Standardstile der allgemeinen Steuerelemente integriert. Siehe [Animieren von Zeigeraktionen](https://docs.microsoft.com/previous-versions/windows/apps/jj649432(v=win.10)). |
 | LongListSelector mit gruppierten Daten | Der Windows Phone Silverlight longlistselector kann auf zwei Arten verwendet werden, die zusammen verwendet werden können. Erstens kann es nach einem Schlüssel gruppierte Daten anzeigen, z. B. eine nach dem Anfangsbuchstaben gruppierte Liste mit Namen. Zweitens kann es zwischen zwei semantischen Ansichten „zoomen“: der gruppierten Liste von Elementen (z. B. Namen) und einer Liste, die nur die Gruppenschlüssel selbst enthält (z. B. Anfangsbuchstaben). Bei der UWP können Sie gruppierte Daten mit den [Richtlinien für Listenansicht- und Rasteransichtsteuerelementen anzeigen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists). |
 | LongListSelector mit flachen Daten | Aus Leistungsgründen wird im Fall von sehr langen Listen die Option longlistselector anstelle eines Windows Phone Silverlight-Listen Felds auch für flache, nicht gruppierte Daten empfohlen. In einer UWP-App werden [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) für lange Elementlisten bevorzugt, unabhängig davon, ob die Daten gruppiert werden können. |
-| Panorama | Das Windows Phone Silverlight-Panorama Steuerelement wird den [Richtlinien für Hub-Steuerelemente in Windows-Runtime 8. x-apps](https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub) und Richtlinien für das Hub-Steuerelement zugeordnet. <br/> Beachten Sie, dass ein Panorama-Steuerelement aus dem letzten Abschnitt in den ersten Abschnitt umbricht und dass das Hintergrundbild im Parallaxmodus relativ zu den Abschnitten verschoben wird. [Hub](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub)-Abschnitte brechen nicht um, und es wird kein Parallax-Modus verwendet. |
+| Panorama | Das Windows Phone Silverlight-Panorama Steuerelement wird den [Richtlinien für Hub-Steuerelemente in Windows-Runtime 8. x-apps](https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub) und Richtlinien für das Hub-Steuerelement zugeordnet. <br/> Beachten Sie, dass ein Panorama-Steuerelement aus dem letzten Abschnitt in den ersten Abschnitt umbricht und dass das Hintergrundbild im Parallaxmodus relativ zu den Abschnitten verschoben wird. [Hub](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub)-Abschnitte brechen nicht um, und es wird kein Parallaxmodus verwendet. |
 | Pivot | Die UWP-Entsprechung des Windows Phone Silverlight Pivot-Steuer Elements ist [Windows. UI. XAML. Controls. Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot). Es ist für alle Gerätefamilien verfügbar. |
 
 **Beachten Sie**   der visuelle Zustand "pointerover" in benutzerdefinierten Stilen/Vorlagen in Windows 10-apps, aber nicht in Windows Phone Silverlight-apps relevant ist. Es gibt andere Gründe, warum Ihre vorhandenen benutzerdefinierten Stile/Vorlagen für Windows 10-Apps möglicherweise nicht geeignet sind, einschließlich der von Ihnen verwendeten Systemressourcen Schlüssel, Änderungen an den verwendeten visuellen Zustands Sätzen und Leistungsverbesserungen der Standard Stile/-Vorlagen von Windows 10. Es wird empfohlen, dass Sie eine neue Kopie der Standardvorlage eines Steuer Elements für Windows 10 bearbeiten und dann die Stil-und Vorlagen Anpassungen erneut anwenden.
@@ -309,7 +309,7 @@ Die Taskleiste (festgelegt im XAML-Markup mit `shell:SystemTray.IsVisible`) hei�
 
 Der Text (bzw. die Typografie) ist ein wichtiger Aspekt einer UWP-App. Beim Portieren ist es ratsam, das grafische Design Ihrer Ansichten noch einmal darauf zu prüfen, ob es zur neuen Entwurfssprache passt. Verwenden Sie die folgenden Abbildungen, um nach verfügbaren UWP- **TextBlock**-Systemstilen zu suchen. Suchen Sie diejenigen, die den Windows Phone Silverlight-Stilen entsprechen, die Sie verwendet haben. Alternativ können Sie eigene universelle Stile erstellen und die Eigenschaften aus den Windows Phone Silverlight-System Stilen in diese kopieren.
 
-![textblock-Systemstile für Windows 10-Apps](images/label-uwp10stylegallery.png)
+![system textblock styles foder windows 10 apps](images/label-uwp10stylegallery.png)
 
 System TextBlock-Stile für Windows 10-apps
 
@@ -393,6 +393,6 @@ In Ihrer UWP-App können Sie eine Mindestgröße (Breite und Höhe) mit imperati
 
 Das nächste Thema ist [Portieren: E/A, Gerät und App-Modell](wpsl-to-uwp-input-and-sensors.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Namespace-und Klassen Zuordnungen](wpsl-to-uwp-namespace-and-class-mappings.md)

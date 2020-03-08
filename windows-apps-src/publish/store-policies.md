@@ -7,18 +7,18 @@ keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
-ms.translationtype: HT
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77607250"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853442"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store-Richtlinien
 
 
-**Dokumentversion: 7.12**
+**Dokument Version: 7,12**
 
-**Dokumentdatum: 1. Oktober 2019**
+**Dokument Datum: 1. Oktober 2019**
 
 > [!NOTE]
 > Eine Zusammenfassung der zuletzt vorgenommenen Änderungen an dieser Vereinbarung finden Sie im Abschnitt [Änderungsverlauf](store-policies-change-history.md).
@@ -38,7 +38,7 @@ Ihre Produkte prägen die Erfahrungen mehrerer hundert Millionen Kunden. Wie sin
 Feedback zu den Richtlinien ist jederzeit willkommen. Veröffentlichen Sie hierzu einfach einen Kommentar in unserem [Forum](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore). Wir lassen keinen Kommentar unbeachtet.
 
 
-## <a name="table-of-contents"></a>Inhalt
+## <a name="table-of-contents"></a>Inhaltsverzeichnis
 
 **Produktrichtlinien:**
 
@@ -314,9 +314,9 @@ Wenn Ihr Produkt für Kinder unter 13 Jahren ausgelegt ist (gemäß Definition 
 
 Über Ihr Produkt dürfen keine Mobilfunk-Tarifpläne (Voice) verkauft, verlinkt oder anderweitig beworben werden.
 
-### <a name="1012-edge-extensions"></a>10.12 Microsoft Edge-Erweiterungen
+### <a name="1012-edge-extensions"></a>10.12 Edge-Erweiterungen
 
-Für Microsoft Edge-Erweiterungen gelten die folgenden zusätzlichen Anforderungen:
+Für Edge-Erweiterungen gelten die folgenden zusätzlichen Anforderungen:
 
 - Die Erweiterung muss einen einzigen Zweck mit eng begrenzter Funktionalität verfolgen, der klar in der Produktbeschreibung erläutert wird.
 - Die Erweiterung darf personenbezogene Daten nur im Rahmen einer deutlich offengelegten, für den Nutzer sichtbaren Funktion erfassen.

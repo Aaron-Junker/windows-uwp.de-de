@@ -7,11 +7,11 @@ ms.topic: article
 keywords: uwp, in-app-käufe, IAPs, add-ons, testversionen, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 03bd2740022864008e87b448682c1025c46d2f2d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260291"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852780"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>In-App-Käufe und Testversionen mit dem Windows.ApplicationModel.Store-Namespace
 
@@ -36,7 +36,7 @@ Weitere Informationen zu den allgemeinen Aufgaben, die Sie mit **CurrentApp** un
 |----------------------------|-----------------------------|
 | [Ausschließen oder Beschränken von Features in einer Testversion](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | Durch einen kostenlose, zeitlich begrenzte Testversion Ihrer App mit eingeschränkten Features können Sie Ihre Kunden motivieren, auf die Vollversion Ihrer App zu aktualisieren. |
 | [Aktivieren von In-App-Produktkäufen](enable-in-app-product-purchases.md)      |  Sie können unabhängig davon, ob Ihre App kostenlos oder kostenpflichtig ist, Inhalte, andere Apps oder neue App-Funktionen (wie das Freischalten des nächsten Levels eines Spiels) direkt in der App verkaufen. Hier zeigen wir Ihnen, wie Sie diese Produkte in Ihrer App aktivieren können.  |
-| [Unterstützen von Käufen konsumierbarer In-App-Produkte](enable-consumable-in-app-product-purchases.md)      | Sie können In-App-Käufe von konsumierbaren Produkten – Artikel, die gekauft, verwendet und wieder gekauft werden können – über die Store-Handelsplattform anbieten, um den Kunden beim Kauf Stabilität und Zuverlässigkeit zu bieten. Dies ist besonders nützlich für Dinge wie spielinterne Währungen (Gold, Münzen usw.), die gekauft und dann zum Erwerben bestimmter Power-Ups verwendet werden können. |
+| [Unterstützen von Käufen konsumierbarer In-App-Produkte](enable-consumable-in-app-product-purchases.md)      | Sie können In-App-Käufe von Endverbraucherprodukten – Artikel, die gekauft, verwendet und wieder gekauft werden können – über die Store-Handelsplattform anbieten, um Kunden beim Kauf Stabilität und Zuverlässigkeit zu bieten. Dies ist besonders nützlich für Dinge wie spielinterne Währungen (Gold, Münzen usw.), die gekauft und dann zum Erwerben bestimmter Power-Ups verwendet werden können. |
 | [Verwalten eines großen Katalogs von in-App-Produkten](manage-a-large-catalog-of-in-app-products.md)      |   Wenn Ihre App einen großen In-App-Produktkatalog enthält, können Sie optional das in diesem Thema beschriebene Verfahren zum Verwalten des Katalogs ausführen.    |
 | [Verwenden von Bestätigungen zum Überprüfen von Produkt Käufen](use-receipts-to-verify-product-purchases.md)      |   Jede Microsoft Store-Transaktion, die zu einem erfolgreichen Produktkauf führt, kann optional einen Transaktionsbeleg zurückgeben, der dem Kunden Informationen zum aufgelisteten Produkt und zu den Kosten bereitstellt. Der Zugriff auf diese Informationen unterstützt Szenarien, in denen Ihre App überprüfen muss, ob ein Benutzer Ihre App erworben oder im Microsoft Store In-App-Produkte gekauft hat. |
 
@@ -355,7 +355,7 @@ In diesem Abschnitt werden die Elemente und Attribute in der WindowsStoreProxy.x
 
 Das Stammelement dieser Datei ist das **CurrentApp**-Element, das die aktuelle App darstellt. Dieses Element enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  |  Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  |  Beschreibung   |
 |-------------|------------|--------|--------|
 |  [Listinginformation](#listinginformation)  |    Ja        |  1  |  Enthält Daten aus dem App Eintrag.            |
 |  [Licenseinformation](#licenseinformation)  |     Ja       |   1    |   Beschreibt die Lizenzen, die für diese App verfügbar sind, und ihre dauerhaften Add-Ons.     |
@@ -370,7 +370,7 @@ Dieses Element enthält Daten aus dem App Eintrag. **ListingInformation** ist ei
 
 **ListingInformation** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  |  Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  |  Beschreibung   |
 |-------------|------------|--------|--------|
 |  [App](#app-child-of-listinginformation)  |    Ja   |  1   |    Stellt Daten zur App bereit.         |
 |  [Produkt](#product-child-of-listinginformation)  |    Nein  |  0 oder mehr   |      Beschreibt ein Add-On für die App.     |     |
@@ -383,7 +383,7 @@ Dieses Element beschreibt die App-Lizenz. **App** ist ein erforderliches unterge
 
 **App** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  | Beschreibung   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    Ja   |  1   |   Die GUID, die die App im Store identifiziert. Dies kann eine beliebige GUID für Tests sein.        |
 |  **LinkUri**  |    Ja  |  1   |    Der URI der Eintragsseite im Store. Dies kann ein beliebiger URI für Tests sein.         |
@@ -399,7 +399,7 @@ Dieses Element stellt Informationen zur App für ein bestimmtes Land oder eine b
 
 **MarketData** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  | Beschreibung   |
 |-------------|------------|--------|--------|
 |  **Name**  |    Ja   |  1   |   Der Name der App in diesem Land/dieser Region.        |
 |  **Beschreibung**  |    Ja  |  1   |      Die Beschreibung der App für dieses Land/diese Region.       |
@@ -435,7 +435,7 @@ Dieses Element stellt Informationen zum Add-On für ein bestimmtes Land oder ein
 
 **MarketData** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  | Beschreibung   |
 |-------------|------------|--------|--------|
 |  **Name**  |    Ja   |  1   |   Der Name des Add-Ons in diesem Land/dieser Region.        |
 |  **Sonderpreis**  |    Ja  |  1   |     Der Preis des Add-Ons in diesem Land/dieser Region.        |
@@ -460,7 +460,7 @@ Dieses Element beschreibt die Lizenzen, die für diese App und deren dauerhafte 
 
 **LicenseInformation** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  | Beschreibung   |
 |-------------|------------|--------|--------|
 |  [App](#app-child-of-licenseinformation)  |    Ja   |  1   |    Beschreibt die App-Lizenz.         |
 |  [Produkt](#product-child-of-licenseinformation)  |    Nein  |  0 oder mehr   |      Beschreibt den Lizenzstatus eines dauerhaften Add-Ons in der App.         |   |
@@ -469,10 +469,10 @@ Die folgende Tabelle zeigt, wie Sie einige häufige Bedingungen simulieren, inde
 
 |  Zu simulierende Bedingung  |  IsActive  |  IsTrial  | ExpirationDate   |
 |-------------|------------|--------|--------|
-|  Vollständig lizenziert  |    Wahr   |  Falsch  |    Nicht vorhanden. Es kann vorhanden sein und ein späteres Datum angeben. Es wird jedoch empfohlen, das Element nicht in die XML-Datei einzuschließen. Wenn es vorhanden ist und ein Datum in der Vergangenheit angibt, wird **IsActive** ignoriert und als „false“ bewertet.          |
-|  Im Testzeitraum  |    Wahr  |  Wahr   |      &lt;Datum/Uhrzeit in der Zukunft&gt; Dieses Element muss vorhanden sein, da **IsTrial** Wahr ist. Sie können eine Website aufrufen, die die aktuelle koordinierte Weltzeit (UTC) anzeigt, um festzustellen, auf wie weit in der Zukunft dies festgelegt werden muss, um den gewünschten verbleibenden Testzeitraum zu erhalten.         |
-|  Abgelaufene Testversion  |    Falsch  |  Wahr   |      &lt;Datum/Uhrzeit in der Vergangenheit&gt; Dieses Element muss vorhanden sein, da **IsTrial** Wahr ist. Sie können eine Website aufrufen, die die aktuelle koordinierte Weltzeit (UTC) anzeigt, um festzustellen, was in UTC Vergangenheit ist.         |
-|  Ungültig  |    Falsch  | Falsch       |     &lt;Jeder Wert oder ausgelassen&gt;          |  |
+|  Vollständig lizenziert  |    true   |  false  |    Nicht vorhanden. Es kann vorhanden sein und ein späteres Datum angeben. Es wird jedoch empfohlen, das Element nicht in die XML-Datei einzuschließen. Wenn es vorhanden ist und ein Datum in der Vergangenheit angibt, wird **IsActive** ignoriert und als „false“ bewertet.          |
+|  Im Testzeitraum  |    true  |  true   |      &lt;Datum/Uhrzeit in der Zukunft&gt; Dieses Element muss vorhanden sein, da **IsTrial** Wahr ist. Sie können eine Website aufrufen, die die aktuelle koordinierte Weltzeit (UTC) anzeigt, um festzustellen, auf wie weit in der Zukunft dies festgelegt werden muss, um den gewünschten verbleibenden Testzeitraum zu erhalten.         |
+|  Abgelaufene Testversion  |    false  |  true   |      &lt;Datum/Uhrzeit in der Vergangenheit&gt; Dieses Element muss vorhanden sein, da **IsTrial** Wahr ist. Sie können eine Website aufrufen, die die aktuelle koordinierte Weltzeit (UTC) anzeigt, um festzustellen, was in UTC Vergangenheit ist.         |
+|  Ungültig  |    false  | false       |     &lt;Jeder Wert oder ausgelassen&gt;          |  |
 
 <span id="app-child-of-licenseinformation"/>
 
@@ -482,7 +482,7 @@ Dieses Element beschreibt die App-Lizenz. **App** ist ein erforderliches unterge
 
 **App** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  | Beschreibung   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Ja   |  1   |    Beschreibt den aktuellen Lizenzstatus der App. Der Wert **true** gibt an, dass die Lizenz gültig ist. Der Wert **false** gibt an, dass die Lizenz ungültig ist. Normalerweise lautet dieser Wert **true**, unabhängig davon, ob die App einen Testmodus hat oder nicht.  Legen Sie diesen Wert auf **false** fest, um zu testen, wie sich Ihre App verhält, wenn die Lizenz ungültig ist.           |
 |  **Istrial**  |    Ja  |  1   |      Beschreibt den aktuellen Testversionsstatus der App. Der Wert **true** gibt an, dass die App während des Testzeitraums verwendet wird. Der Wert **false** gibt an, dass die App keine Testversion ist, entweder weil die App gekauft wurde oder weil der Testzeitraum abgelaufen ist.         |
@@ -496,7 +496,7 @@ Dieses Element beschreibt den Lizenzstatus eines dauerhaften Add-Ons in der App.
 
 **Product** enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  | Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  | Beschreibung   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Ja   |  1     |    Beschreibt den aktuellen Lizenzstatus des Add-Ons. Der Wert **true** gibt an, dass das Add-On verwendet werden kann. Der Wert **false** gibt an, dass das Add-On nicht verwendet werden kann oder nicht gekauft wurde.           |
 |  **ExpirationDate**  |    Nein   |  0 oder 1     |     Das Datum, an dem das Add-On abläuft, angegeben in der koordinierten Weltzeit (UTC). Das Datum muss ausgedrückt werden als: yyyy-mm-ddThh:mm:ss.ssZ. Beispielsweise würde 05:00 Uhr am 19. Januar 2015 als 2015-01-19T05:00:00.00Z angegeben. Wenn dieses Element vorhanden ist, hat das Add-On ein Ablaufdatum. Wenn es nicht vorhanden ist, läuft das Add-On nicht ab.  |  
