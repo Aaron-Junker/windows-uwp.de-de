@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Azure AD-Anwendung, AAD, Benutzer, Gruppe, mehrere Benutzer, mehrere Benutzer
 ms.localizationpriority: medium
 ms.openlocfilehash: 41467f51e02f3cc700e3759f33d6fd6eea3ac7a6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260079"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852555"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>Hinzufügen von Benutzern, Gruppen und Azure AD Anwendungen zu Ihrem Partner Center-Konto
 
@@ -83,13 +83,13 @@ Wenn Sie mit einem Manager-Konto angemeldet sind, das auch über [globale Admini
 > Sie müssen auf Ihrem Azure AD-Mandanten mit einem globalen Administratorkonto angemeldet sein, um externe Benutzer einzuladen.
 
 1.  Wählen Sie auf der Seite **Benutzer** (unter **Kontoeinstellungen**) die Option **Benutzer hinzufügen**aus, und wählen Sie dann **Benutzer per e-Mail einladen**aus.
-1.  Geben Sie eine oder mehrere E-Mail-Adressen ein (bis zu zehn), die durch Kommas oder Semikolons getrennt sind.
+1.  Geben Sie eine oder mehrere E-Mails Adressen (bis zu zehn) mit Kommata oder Semikola als Trennzeichen ein.
 2.  Geben Sie im Abschnitt **Rollen** an, welche [Rollen oder angepassten Berechtigungen](set-custom-permissions-for-account-users.md) Sie für den ausgewählten Benutzer wünschen.
 3.  Klicken Sie auf **Speichern**.
 
 Die von Ihnen eingeladenen Benutzer erhalten eine E-Mail-Einladung für Ihr Konto. Es wird ein neues [Gastbenutzer](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)-Konto für sie in Ihrem Azure AD-Mandanten erstellt. Jeder Benutzer muss die Einladung annehmen, bevor er auf Ihr Konto zugreifen kann.
 
-Um die Einladung erneut zu senden, suchen Sie den Benutzer auf Ihrer **Benutzer**-Seite heraus, und wählen Sie seine E-Mail-Adresse (oder den Text **Einladung ausstehend**) aus. Klicken Sie anschließend am unteren Rand der Seite auf **Einladung senden**.
+Um die Einladung erneut zu senden, suchen Sie den Benutzer auf Ihrer **Benutzer**-Seite heraus, und wählen Sie seine E-Mail-Adresse (oder den Text **Einladung ausstehend**) aus. Klicken Sie dann am unteren Rand der Seite, auf **Einladung senden**.
 
 > [!IMPORTANT]
 > Externe Benutzer, die Sie einladen, Ihrem Partner Center-Konto beizutreten, können dieselben Rollen und Berechtigungen wie andere Benutzer zuweisen. Allerdings können externe Benutzern bestimmte Aufgaben in Visual Studio wie z. B. das Assoziieren einer App mit dem Store oder das Erstellen von Paketen zum Hochladen in den Store nicht durchführen. Wenn ein Benutzer diese Aufgaben durchführen muss, wählen Sie **Erstellen von neuen Benutzern** anstelle von **externe Benutzer einladen**. (Wenn Sie diese Benutzer nicht dem vorhandenen Azure AD-Mandanten hinzufügen möchten, können Sie [einen neuen Mandanten erstellen](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account), und anschließend für sie neue Benutzerkonten im Mandanten erstellen.) 
@@ -145,11 +145,11 @@ Wenn Sie Partner Center Zugriff auf eine neue Gruppe gewähren möchten, können
 Sie können zulassen, dass Anwendungen oder Dienste, die Teil des Azure AD Ihrer Organisation sind, auf Ihr Partner Center-Konto zugreifen können. Diese Benutzerkonten für die Azure AD-Anwendung können zum Aufrufen der über [Microsoft Store Services](../monetize/using-windows-store-services.md) bereitgestellten REST-APIs genutzt werden.
 
 
-### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>Hinzufügen von Azure AD-Anwendungen aus dem Verzeichnis Ihrer Organisation
+### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>Hinzufügen von Azure AD-Apps aus Verzeichnis der Organisation
 
 1.  1.  Wählen Sie das Zahnrad Symbol (in der Nähe der oberen rechten Ecke von Partner Center) aus, und wählen Sie dann **Entwicklereinstellungen**aus. Wählen Sie im Menü " **Einstellungen** " die Option **Benutzer**aus.
 2. Wählen Sie auf der Seite **Benutzer** **Azure AD-Anwendungen hinzufügen** aus.
-3.  Wählen Sie eine oder mehrere Azure AD-Anwendungen aus der angezeigten Liste aus. Mithilfe des Suchfelds können Sie nach bestimmten Azure AD-Apps suchen.
+3.  Wählen Sie eine oder Azure AD-Anwendungen aus der angezeigten Liste aus. Mithilfe des Suchfelds können Sie nach bestimmten Azure AD-Apps suchen.
     > [!TIP]
     > Wenn Sie mehr als eine Azure AD Anwendung auswählen, die Sie Ihrem Partner Center-Konto hinzufügen möchten, müssen Sie Ihnen dieselbe Rolle oder einen Satz benutzerdefinierter Berechtigungen zuweisen. Wiederholen Sie zum Hinzufügen mehrerer Azure AD-Anwendungen mit anderen Rollenberechtigungen die unten beschriebenen Schritte für alle Rollen oder benutzerdefinierten Berechtigungen.
 
@@ -181,7 +181,7 @@ Nachdem Sie eine Azure AD-Anwendung hinzugefügt oder erstellt haben, können Si
 
 ### <a name="manage-keys-for-an-azure-ad-application"></a>Verwalten von Schlüsseln für eine Azure AD-App
 
-Wenn die Azure AD-App Daten in Microsoft Azure AD liest und schreibt, benötigt sie einen Schlüssel. Sie können Schlüssel für eine Azure AD Anwendung erstellen, indem Sie die zugehörigen Informationen im Partner Center bearbeiten. Sie können auch Schlüssel entfernen, die nicht mehr benötigt werden.
+Wenn die Azure AD-Anwendung Daten in Microsoft Azure AD liest und schreibt, benötigt sie einen Schlüssel. Sie können Schlüssel für eine Azure AD Anwendung erstellen, indem Sie die zugehörigen Informationen im Partner Center bearbeiten. Sie können auch Schlüssel entfernen, die nicht mehr benötigt werden.
 
 1.  Wählen Sie auf der Seite **Benutzer** (unter **Kontoeinstellungen**) den Namen der Azure AD Anwendung aus.
     > [!TIP]

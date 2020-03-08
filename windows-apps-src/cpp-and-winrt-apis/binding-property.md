@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Eigenschaft
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: eb683734801c1de5977db70e626609cf7e5b7654
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70304523"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853281"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft
 Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Eigenschaften in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und XAML-Steuerelemente an sie bindest (Hintergrundinformationen findest Du unter [Datenbindung](/windows/uwp/data-binding)).
@@ -234,7 +234,7 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-Rufe in `\Bookstore\Bookstore\MainPage.cpp` [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (mit dem Implementierungstyp) auf, um „m_mainViewModel“ eine neue Instanz des projizierten Typs zuzuweisen. Weise einen Anfangswert für den Buchtitel zu. Implementiere den Accessor für die Eigenschaft „MainViewModel“. Aktualisiere zum Schluss den Buchtitel im Ereignishandler der Schaltfläche. Entferne auch die Eigenschaft **MyProperty**.
+Rufe in `\Bookstore\Bookstore\MainPage.cpp`[**winrt::make**](/uwp/cpp-ref-for-winrt/make) (mit dem Implementierungstyp) auf, um „m_mainViewModel“ eine neue Instanz des projizierten Typs zuzuweisen. Weise einen Anfangswert für den Buchtitel zu. Implementiere den Accessor für die Eigenschaft „MainViewModel“. Aktualisiere zum Schluss den Buchtitel im Ereignishandler der Schaltfläche. Entferne auch die Eigenschaft **MyProperty**.
 
 ```cppwinrt
 // MainPage.cpp
@@ -352,6 +352,6 @@ Verwende `x:Bind` beim Binden an einen booleschen Typ.
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make) (Funktionsvorlage „winrt::make“)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)
 * [Erstellen von APIs mit C++/WinRT](author-apis.md)
