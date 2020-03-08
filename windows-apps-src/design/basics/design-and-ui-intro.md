@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281793"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853207"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Einführung in das UWP-App-Design
 
@@ -104,7 +104,7 @@ Die UWP-Entwurfsplattform bietet eine Reihe allgemeiner Steuerelemente, die auf 
 
 Eine vollständige Liste der UWP-Steuerelemente und der möglichen Muster findest du im [Abschnitt zu Steuerelementen und Mustern](../controls-and-patterns/index.md).
 
-## <a name="style"></a>Format
+## <a name="style"></a>Stil
 
 Allgemeine Steuerelemente übernehmen automatisch das Systemdesign und die Akzentfarbe, funktionieren mit allen Eingabetypen und werden auf allen Geräten ordnungsgemäß skaliert. Sie sind also adaptiv, intuitiv und ansprechend und spiegeln somit das Fluent Design-System wider. Allgemeine Steuerelemente nutzen Licht, Bewegung und Tiefe in ihren Standardstilen. Durch die Verwendung dieser Steuerelemente integrierst du also unser Fluent Design-System in deine App.
 
@@ -144,7 +144,7 @@ UWP-Apps basieren auf intelligenten Interaktionen. Sie können sie ausgehend von
 
 UWP skaliert deine App zwar automatisch für verschiedene Geräte, du kannst aber auch [deine UWP-App für bestimmte Geräte optimieren](../devices/index.md).
 
-## <a name="usability"></a>Nutzbarkeit
+## <a name="usability"></a>Benutzerfreundlichkeit
 
 <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
 
