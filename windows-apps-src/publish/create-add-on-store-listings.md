@@ -7,23 +7,23 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 43782a1a5d26ba84fe53f6c164a944fa357edfb1
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787023"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852779"
 ---
 # <a name="create-add-on-store-listings"></a>Erstellen von Store-Einträgen für Add-Ons
 
-Beim Übermitteln eines Add-Ons im [Partner Center](https://partner.microsoft.com/dashboard), die Informationen, die Sie, in angeben der **Store-Angebote** Schritt für Ihre Kunden angezeigt, wenn sie die Option zum Abrufen Ihrer Add-On-angezeigt wird. Verfassen Sie die Informationen zu den Store-Einträgen mit besonderer Sorgfalt, um den Kunden das Add-On in ansprechender Weise zu präsentieren. Sie können angepasste Store-Einträge für verschiedene Sprachen bereitstellen.
+Wenn Sie ein Add-on in [Partner Center](https://partner.microsoft.com/dashboard)einreichen, werden die Informationen, die Sie im Schritt **Store-Einträge** bereitstellen, für Ihre Kunden angezeigt, wenn die Option zum Abrufen des Add-Ins angezeigt wird. Verfassen Sie die Informationen zu den Store-Einträgen mit besonderer Sorgfalt, um den Kunden das Add-On in ansprechender Weise zu präsentieren. Sie können angepasste Store-Einträge für verschiedene Sprachen bereitstellen.
 
 > [!TIP]
-> Sie können auch [importieren und Exportieren von Store-Angebote](import-and-export-store-listings.md) für das Add-on aus, wenn Sie, geben Ihre Auflistung Informationen offline in eine CSV-Datei, anstatt durch Angabe dieser Informationen direkt in Partner Center möchten. Dies kann besonders dann hilfreich sein, wenn Sie Einträge in viele Sprachen erstellen. Sie können jedoch immer eingeben, Ihre Informationen direkt in [Partner Center](https://partner.microsoft.com/dashboard) statt mit der Import/Export-Funktion.
+> Sie können auch Speicher Listen für das Add-on [importieren und exportieren](import-and-export-store-listings.md) , wenn Sie Ihre Auflistungs Informationen offline in eine CSV-Datei eingeben möchten, anstatt diese Informationen direkt im Partner Center bereitzustellen. Dies kann besonders dann hilfreich sein, wenn Sie Einträge in viele Sprachen erstellen. Allerdings können Sie Ihre Informationen jederzeit direkt in [Partner Center](https://partner.microsoft.com/dashboard) eingeben, anstatt das Import-/Export-Feature zu verwenden.
 
 
 ## <a name="store-listing-languages"></a>Sprachen für Store-Einträge
 
-Bevor Sie Informationen zu den Store-Einträgen eingeben können, müssen Sie mindestens eine [Sprache](supported-languages.md) angeben. Sie müssen die Seite **Store-Eintrag** für mindestens eine Sprache ausfüllen. Es wird empfohlen, erstellen Store-Angebote für jede Sprache Ihrer app unterstützt.
+Bevor Sie Informationen zu den Store-Einträgen eingeben können, müssen Sie mindestens eine [Sprache](supported-languages.md) angeben. Sie müssen die Seite **Store-Eintrag** für mindestens eine Sprache ausfüllen. Wir empfehlen, für jede Sprache, die ihre App unterstützt, Speicher Listen zu erstellen.
 
 Klicken Sie im Abschnitt **Store-Eintrag** der Add-On-Übermittlung auf **Sprachen hinzufügen/entfernen**, und klicken Sie auf der nächsten Seite auf **Manage languages**. Aktivieren Sie die Kontrollkästchen für die Sprachen, die Sie hinzufügen möchten, und klicken Sie dann auf **Aktualisieren**. Die ausgewählten Sprachen werden im Abschnitt **Store listing languages** der Seite angezeigt.
 
@@ -41,7 +41,7 @@ Sie müssen hier einen Titel angeben, der Ihren Kunden für dieses Add-On als Na
 
 Wenn Sie mehr Informationen als nur einen Titel anzeigen möchten, können Sie hier bis zu 200 Zeichen eingeben. Dieses Feld ist optional.
 
-## <a name="icon"></a>Icon
+## <a name="icon"></a>Symbol
 
 Sie können auch ein Bild bereitstellen, das dem Kunden angezeigt wird. Dabei muss es sich um eine PNG-Datei mit exakt 300 x 300 Pixeln handeln.
 
