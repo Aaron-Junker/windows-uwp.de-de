@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, Spiele, Eingabe
 ms.localizationpriority: medium
 ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684983"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853055"
 ---
 # <a name="input-practices-for-games"></a>Eingabemethoden für Spiele
 
 Auf dieser Seite werden Muster und Verfahren zur effizienten Verwendung von Eingabegeräten in Spielen für die universelle Windows-Plattform (UWP) beschrieben.
 
-Auf dieser Seite lernen Sie:
+Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
 * Nachverfolgen von Spielern und den von ihnen aktuell verwendeten Eingabe- und Navigationsgeräten
 * Erkennen von Tastenübergängen (von „Gedrückt“ zu „Losgelassen“ oder von „Losgelassen“ zu „Gedrückt“)
@@ -164,9 +164,9 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 }
 ```
 
-## <a name="tracking-users-and-their-devices"></a>Nachverfolgen von Benutzern und Geräten
+## <a name="tracking-users-and-their-devices"></a>Nachverfolgen von Benutzern und ihren Geräten
 
-Alle Eingabegeräte sind einem [Benutzer](https://docs.microsoft.com/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Da sich Benutzer nach Belieben an- und abmelden können, ist es normal, dass sich andere Benutzer auf einem mit dem System verbundenen Eingabegerät anmelden, nachdem sich ein vorheriger Benutzer abgemeldet hat. Wenn sich ein Benutzer an- oder abmeldet, wird das [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged)-Ereignis ausgelöst. Sie können für diesen Fall einen Ereignishandler registrieren, um die Spieler und von ihnen verwendeten Geräte nachzuverfolgen.
+Alle Eingabegeräte sind einem [Benutzer](https://docs.microsoft.com/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Da sich Benutzer nach Belieben an- und abmelden können, ist es normal, dass sich andere Benutzer auf einem mit dem System verbundenen Eingabegerät anmelden, nachdem sich ein vorheriger Benutzer abgemeldet hat. Wenn sich ein Benutzer an- oder abmeldet, wird das [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged)-Ereignis ausgelöst. Sie können einen Ereignishandler für dieses Ereignis registrieren, um Spieler und die von ihnen verwendeten Geräte nachzuverfolgen.
 
 Die Benutzeridentität dient auch dazu, Eingabegeräte einem [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) zuzuordnen.
 
@@ -231,7 +231,7 @@ Diese beiden Funktionen leiten zuerst den booleschen Zustand der Tastenauswahl v
 
 ## <a name="detecting-complex-button-arrangements"></a>Erkennen komplexer Tastenanordnungen
 
-Jede Taste eines Eingabegeräts liefert einen digitalen Wert, der angibt, ob sie im gedrückten Zustand (unten) oder losgelassenen Zustand (oben) ist. Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Ablesen bestimmter Tasten wird eine bitweise Maskierung verwendet, um die relevanten Werte zu isolieren. Eine Taste ist gedrückt (unten), wenn ihr Bit entsprechend festgelegt ist, andernfalls ist sie losgelassen (oben).
+Jede Taste eines Eingabegeräts liefert einen digitalen Wert, der angibt, ob sie im gedrückten Zustand (unten) oder losgelassenen Zustand (oben) ist. Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Lesen bestimmter Tastenwerte wird eine bitweise Maskierung verwendet, um die für Sie relevanten Werte zu isolieren. Eine Taste ist gedrückt (unten), wenn ihr Bit entsprechend festgelegt ist, andernfalls ist sie losgelassen (oben).
 
 So wird der Gedrückt- oder Losgelassen-Zustand für einzelne Tasten bestimmt; hier anhand von Gamepads, aber das gleiche Prinzip gilt ebenso für andere Eingabegeräte wie Arcade-Joysticks, Rennlenkräder usw.
 
@@ -294,7 +294,7 @@ if (buttonArrangement == buttonSelection)
 }
 ```
 
-Diese Formel kann zum Testen beliebig vieler Tasten, Anordnungen und Zustände verwendet werden.
+Die Formel kann zum Testen einer beliebigen Anzahl von Tasten in einer beliebigen Anordnung ihrer Zustände verwendet werden.
 
 ## <a name="get-the-state-of-the-battery"></a>Abrufen des Akkustatus
 
@@ -315,7 +315,7 @@ Für Gamecontroller, die detaillierte Berichte für den Akku unterstützen, erha
 
 Wenn Ihr Code eine Aktion (z. B. das Zeichnen der UI) basierend auf dem Prozentsatz der verbleibende Akkulebensdauer ausführt, stellen Sie sicher, dass er den oben genannten Werten entspricht. Wenn Sie beispielsweise den Spieler warnen möchten, dass der Controller-Akku fast leer ist, wenn dieser 10 % erreicht.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 * [Windows. System. User-Klasse](https://docs.microsoft.com/uwp/api/windows.system.user)
 * [Windows. Gaming. Input. igamecontroller-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
