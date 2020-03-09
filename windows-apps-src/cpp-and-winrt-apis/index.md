@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329576"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852489"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -79,6 +79,6 @@ C++/WinRT arbeitet besser und erzeugt kleinere Binärdateien als jede andere Spr
 ## <a name="important-apis"></a>Wichtige APIs
 * [winrt-Namespace](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
