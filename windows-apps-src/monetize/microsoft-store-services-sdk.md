@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 679dde6802a2c0d27444fbcda040f2ba19039457
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259269"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852794"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Kundengewinnung mit Microsoft Store Services SDK
 
@@ -35,7 +35,7 @@ Das Microsoft Store Services SDK unterstützt derzeit die folgenden Szenarien f�
 
 <span id="prerequisites" />
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 Das Microsoft Store Services SDK erfordert:
 
@@ -44,7 +44,7 @@ Das Microsoft Store Services SDK erfordert:
 
 <span id="install" />
 
-## <a name="install-the-sdk"></a>Installieren des SDK
+## <a name="install-the-sdk"></a>Installieren des SDKs
 
 Es gibt zwei Optionen zum Installieren des Microsoft Store Services SDKs auf Ihrem Entwicklungscomputer:
 
@@ -113,7 +113,7 @@ So installieren Sie das Microsoft Store Services SDK-Bibliotheken über NuGet:
 
 Befolgen Sie nach der Installation des Microsoft Store Services SDKs über das MSI-Installationsprogramm oder NuGet diese Instruktionen, um in Ihrem UWP-Projekt auf die SDK-Assemblys zu verweisen.
 
-1. Öffnen Sie das Projekt in Visual Studio.
+1. Öffnen Sie Ihr Projekt in Visual Studio.
     > [!NOTE]
     > Wenn Ihr Projekt eine JavaScript-App ist, die auf eine beliebige CPU (**Any CPU**) zielt, aktualisieren Sie es so, dass es eine architekturspezifische Ausgabe verwendet (zum Beispiel **x86**).
 

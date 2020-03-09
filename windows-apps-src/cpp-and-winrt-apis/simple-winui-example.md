@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d0066abb2a6eb15f1d31aaf930ed2c0f0faf81a
-ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
+ms.openlocfilehash: aadf177bc4a44f67550dba1f6f706525b8460857
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68372718"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256173"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek
 
@@ -21,7 +21,9 @@ Dieses Thema führt durch den Prozess zum Hinzufügen einer einfachen Unterstüt
 
 ## <a name="create-a-blank-app-hellowinuicppwinrt"></a>Erstellen einer leeren App (HelloWinUICppWinRT)
 
-Erstelle in Visual Studio ein neues Projekt anhand der Projektvorlage **Leere App (C++/WinRT)** , und nenne es *HelloWinUICppWinRT*.
+Erstelle in Visual Studio ein neues Projekt anhand der Projektvorlage **Leere App (C++/WinRT)** . Stelle sicher, dass du die Vorlage **(C++/WinRT)** und nicht die Vorlage **(Universelles Windows)** verwendest.
+
+Nenne das neue Projekt *HelloWinUICppWinRT* und deaktiviere **Legen Sie die Projektmappe und das Projekt im selben Verzeichnis ab** (damit die Ordnerstruktur mit der exemplarischen Vorgehensweise übereinstimmt).
 
 ## <a name="install-the-microsoftuixaml-nuget-package"></a>Installieren des Microsoft.UI.Xaml-NuGet-Pakets
 
@@ -39,7 +41,7 @@ Klicke auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, gib 
 
 ## <a name="add-a-winui-control-to-mainpage"></a>Hinzufügen eines WinUI-Steuerelements zu MainPage
 
-Öffne als Nächstes `MainPage.xaml`. Im vorhandenen öffnenden **Application**-Tag befinden sich bereits einige XML-Namespacedeklarationen. Füge die XML-Namespacedeklaration `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"` hinzu. Füge dann das folgende Markup zwischen den vorhandenen öffnenden und schließenden **Page**-Tags ein. Damit wird das vorhandene **StackPanel**-Element überschrieben.
+Öffne als Nächstes `MainPage.xaml`. Im vorhandenen öffnenden **Seite**-Tag befinden sich bereits einige XML-Namespacedeklarationen. Füge die XML-Namespacedeklaration `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"` hinzu. Füge dann das folgende Markup zwischen den vorhandenen öffnenden und schließenden **Page**-Tags ein. Damit wird das vorhandene **StackPanel**-Element überschrieben.
 
 ```xaml
 <muxc:NavigationView PaneTitle="Welcome">
@@ -47,11 +49,11 @@ Klicke auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, gib 
 </muxc:NavigationView>
 ```
 
-## <a name="edit-mainpageh-and-cpp-as-necessary"></a>Bearbeiten von „MainPage.h“ und „MainPage.cpp“ nach Bedarf
+## <a name="edit-mainpagecpp-and-h-as-necessary"></a>Bearbeiten von „MainPage.cpp“ und „.h“ nach Bedarf
 
-Wenn Sie einem C++/WinRT-Projekt ein NuGet-Paket hinzufügen (z. B. das Paket **Microsoft.UI.Xaml**, das Sie zuvor hinzugefügt haben), generieren die Tools einen Satz von Projektionsheadern im Ordner `\Generated Files\winrt` des Projekts. Wenn Sie diese Headerdateien in das Projekt einbinden möchten, damit Verweise auf diese neuen Typen aufgelöst werden, müssen Sie sie einschließen.
+Lösche in `MainPage.cpp` den Code in deiner Implementierung von **MainPage::ClickHandler**, da sich *myButton* nicht mehr im XAML-Markup befindet.
 
-Bearbeiten Sie also in `MainPage.h` die Includes, sodass sie wie in der folgenden Auflistung aussehen. Wenn Sie WinUI von mehreren XAML-Seiten verwenden möchten, können Sie die vorkompilierte Headerdatei öffnen (in der Regel `pch.h`) und sie stattdessen dort einfügen.
+Bearbeite in `MainPage.h` die Include-Elemente, sodass sie wie in der folgenden Auflistung aussehen. Wenn Sie WinUI von mehreren XAML-Seiten verwenden möchten, können Sie die vorkompilierte Headerdatei öffnen (in der Regel `pch.h`) und sie stattdessen dort einfügen.
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -59,11 +61,13 @@ Bearbeiten Sie also in `MainPage.h` die Includes, sodass sie wie in der folgende
 #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
 ```
 
-Zum Schluss löschst du in `MainPage.cpp` den Code in deiner Implementierung von **MainPage::ClickHandler**, da sich *myButton* nicht mehr im XAML-Markup befindet.
+Erstelle jetzt das Projekt.
 
-Jetzt kannst du das Projekt kompilieren und ausführen.
+Wenn du einem C++/WinRT-Projekt ein NuGet-Paket hinzufügst (z. B. das Paket **Microsoft.UI.Xaml**, das du zuvor hinzugefügt hast) und das Projekt erstellst, generieren die Tools einen Satz von Projektionsheaderdateien im Ordner `\Generated Files\winrt` des Projekts. Wenn du die exemplarische Vorgehensweise befolgt hast, besitzt du jetzt einen Ordner `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Die Änderung, die du oben an `MainPage.h` vorgenommen hast, bewirkt, dass diese Projektionsheaderdateien in dein Projekt aufgenommen werden. Und das ist notwendig, damit Verweise auf Typen im NuGet-Paket aufgelöst werden.
+
+Jetzt kannst du das Projekt ausführen.
 
 ![Screenshot: einfache C++/WinRT-Windows-UI-Beispielbibliothek](images/winui.png)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Erste Schritte mit der Windows-UI-Beispielbibliothek](/uwp/toolkits/winui/getting-started)
