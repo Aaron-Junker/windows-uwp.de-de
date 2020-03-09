@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683643"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852540"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>Laden von Bildern und Ressourcen mit Anpassung an Skalierung, Design, hohen Kontrast usw.
 Ihre App kann Bild-Ressourcendateien mit Bildern (und andere Ressourcendateien) laden, die speziell auf den [Skalierungsfaktor für die Anzeige](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), das Design, den hohen Kontrast und anderen Laufzeitkontexte angepasst wurden Auf diese Bilder kann im imperativen Code oder im XAML-Markup verwiesen werden, z. B. als **Quellen**-Eigenschaft eines **Bildes**. Sie können auch in Ihrer App-Paketmanifest-Quelldatei erscheinen (in der Datei `Package.appxmanifest`), z. B. als Wert für das App-Symbol auf der Registerkarte „Visuelle Anlagen” des Manifest-Designers von Visual Studio, oder auf Ihren Kacheln und Popups. Mithilfe von Qualifizierern in den Dateinamen Ihrer Bilder und optional durch das dynamische Laden mithilfe des [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), können Sie die am besten geeignete Bilddatei aufrufen, die den Laufzeiteinstellungen des Benutzers am besten für die Anzeige, das Design, den hohen Kontrast, die Sprache und anderen Kontexten entsprechen.
@@ -208,7 +208,7 @@ private void RefreshUIImages()
 * [Resourcecontext. setglobalqualifiervalue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Passen Sie Ihre Ressourcen für Sprache, Skalierung und andere Qualifizierer an.](tailor-resources-lang-scale-contrast.md)
 * [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
 * [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md)
