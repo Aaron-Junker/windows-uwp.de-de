@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Entwicklerkonto, individuell, Unternehmen, geschäftlich
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260053"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853490"
 ---
 # <a name="account-types-locations-and-fees"></a>Kontotypen, Standorte und Gebühren
 
@@ -59,7 +59,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Armenien                           | 19 USD              | 99 USD           |  
 | Australien                         | 21 AUD              | 110 AUD          |  
 | Österreich                           | 14 EUR              | 75 EUR           |  
-| Aserbeidschan                        | 19 USD              | 99 USD           |  
+| Aserbaidschan                        | 19 USD              | 99 USD           |  
 | Bahamas                       | 19 USD              | 99 USD           |  
 | Bahrain                           | 7 BHD               | 38 BHD           |  
 | Bangladesch                        | 1468 BDT            | 7600 BDT         |  
@@ -88,7 +88,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Kolumbien                          | 36543 COP           | 180000 COP       |  
 | Komoren                           | 19 USD              | 99 USD           |  
 | Kongo                             | 19 USD              | 99 USD           |  
-| Kongo (DRK)                       | 19 USD              | 99 USD           |  
+| Kongo, Demokratische Republik                       | 19 USD              | 99 USD           |  
 | Costa Rica                        | 9578 CRC            | 49725 CRC        |  
 | Côte d'Ivoire                     | 19 USD              | 99 USD           |  
 | Kroatien                           | 107 HRK             | 500 HRK          |  
@@ -108,11 +108,11 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Färöer                     | 19 USD              | 99 USD           |  
 | Fidschi                              | 19 USD              | 99 USD           |  
 | Finnland                           | 14 EUR              | 75 EUR           |  
-| Frankreich                            | 14 EUR              | 75 EUR           |  
+| France                            | 14 EUR              | 75 EUR           |  
 | Gabun                             | 19 USD              | 99 USD           |  
 | Gambia                        | 19 USD              | 99 USD           |  
-| Georgien                           | 19 USD              | 99 USD           |  
-| Deutschland                           | 14 EUR              | 75 EUR           |  
+| Georgia                           | 19 USD              | 99 USD           |  
+| Germany                           | 14 EUR              | 75 EUR           |  
 | Ghana                             | 19 USD              | 99 USD           |  
 | Griechenland                            | 14 EUR              | 75 EUR           |  
 | Grönland                         | 19 USD              | 99 USD           |  
@@ -123,7 +123,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Guyana                            | 19 USD              | 99 USD           |  
 | Haiti                             | 19 USD              | 99 USD           |  
 | Honduras                          | 19 USD              | 99 USD           |  
-| Hongkong SAR                     | 147 HKD             | 760 HKD          |  
+| Hongkong (SAR)                     | 147 HKD             | 760 HKD          |  
 | Ungarn                           | 4237 HUF            | 18800 HUF        |  
 | Island                           | 2319 ISK            | 11929 ISK        |
 | Indien                             | 1201 INR            | 4500 INR         |  
@@ -138,7 +138,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Kasachstan                        | 2897 KZT            | 15038 KZT        |  
 | Kenia                             | 1900 KES            | 9999 KES         |  
 | Kiribati                          | 19 USD              | 99 USD           |  
-| Korea, Republik                             | 21216 KRW           | 108000 KRW       |  
+| Korea                             | 21216 KRW           | 108000 KRW       |  
 | Kuwait                            | 5 KWD               | 28 KWD           |  
 | Kirgisistan                        | 19 USD              | 99 USD           |  
 | Laos                              | 19 USD              | 99 USD           |  
@@ -150,7 +150,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Liechtenstein                     | 17 CHF              | 93 CHF           |  
 | Litauen                         | 14 EUR              | 75 EUR           |  
 | Luxemburg                        | 14 EUR              | 75 EUR           |  
-| Macau (SAR)                         | 19 USD              | 99 USD           |  
+| Macau SAR                         | 19 USD              | 99 USD           |  
 | Mazedonien (ehem. jugoslawische Republik Mazedonien)                 | 19 USD              | 99 USD           |  
 | Madagaskar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
@@ -230,7 +230,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Uganda                            | 19 USD              | 99 USD           |  
 | Ukraine                           | 156 UAH             | 800 UAH          |  
 | Vereinigte Arabische Emirate              | 19 USD              | 99 USD           |  
-| Vereinigtes Königreich                    | 12 GBP              | 65 GBP           |  
+| Großbritannien                    | 12 GBP              | 65 GBP           |  
 | USA                     | 19 USD              | 99 USD           |  
 | Uruguay                           | 19 USD              | 99 USD           |  
 | Usbekistan                        | 19 USD              | 99 USD           |  
