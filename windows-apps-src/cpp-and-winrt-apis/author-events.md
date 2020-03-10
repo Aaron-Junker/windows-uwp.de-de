@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, Ereignis
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830786"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853282"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen in C++/WinRT
 
@@ -291,7 +291,7 @@ Die Signatur für einen Ereignishandlerdelegaten muss aus zwei Parametern besteh
 
 Diese Richtlinien gelten möglicherweise nicht, wenn du eine interne API entwirfst. Interne APIs werden Laufe der Zeit allerdings häufig zu öffentlichen APIs.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Erstellen von APIs mit C++/WinRT](author-apis.md)
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)
 * [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](handle-events.md)

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: 412bf5bb90e1167d118699fbf71d0e6864ae79bd
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72586719"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853267"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
@@ -304,9 +304,9 @@ Sie können dies zur Kompilierzeit mit diesem Code bestätigen.
 static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISample>);
 ```
 
-| Vorgang | Vorgehensweise | Anmerkungen |
+| Vorgang | Vorgehensweise | Hinweise |
 |-|-|-|
-| **ISample\***  aus **winrt::Sample** extrahieren | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* ist noch Besitzer des Objekts. |
+| **ISample\*** aus **winrt::Sample** extrahieren | `p = reinterpret_cast<ISample*>(get_abi(s));` | *s* ist noch Besitzer des Objekts. |
 | **ISample\*** von **winrt::Sample** trennen | `p = reinterpret_cast<ISample*>(detach_abi(s));` | *s* ist nicht mehr Besitzer des Objekts. |
 | **ISample\*** in ein neues **winrt::Sample** übertragen | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | *s* wird Besitzer des Objekts. |
 | **ISample\*** in **winrt::Sample** einfügen | `*put_abi(s) = p;` | *s* wird Besitzer des Objekts. Objekte, die zuvor im Besitz von *s* waren, gehen verloren (wird beim Debuggen bestätigt). |
@@ -333,7 +333,7 @@ GUID abiguid;
 
 ## <a name="interoperating-with-the-abis-hstring"></a>Interaktion mit dem HSTRING der ABI
 
-Die folgende Tabelle zeigt Konvertierungen zwischen **winrt::hstring** und [ **HSTRING**](/windows/win32/winrt/hstring), sowie andere Vorgänge. Setzen Sie für den Code in der Tabelle diese Deklarationen voraus.
+Die folgende Tabelle zeigt Konvertierungen zwischen **winrt::hstring** und [**HSTRING**](/windows/win32/winrt/hstring), sowie andere Vorgänge. Setzen Sie für den Code in der Tabelle diese Deklarationen voraus.
 
 ```cppwinrt
 winrt::hstring s;
@@ -342,7 +342,7 @@ HSTRING h;
 void GetString(_Out_ HSTRING* value);
 ```
 
-| Vorgang | Vorgehensweise | Anmerkungen |
+| Vorgang | Vorgehensweise | Hinweise |
 |-|-|-|
 | **HSTRING** aus **hstring** extrahieren | `h = static_cast<HSTRING>(get_abi(s));` | *s* ist noch Besitzer der Zeichenfolge. |
 | **HSTRING** von **hstring** trennen | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | *s* ist nicht mehr Besitzer der Zeichenfolge. |

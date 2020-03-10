@@ -12,11 +12,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66364107"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853516"
 ---
 # <a name="xaml-theme-resources"></a>XAML-Designressourcen
 
@@ -65,7 +65,7 @@ Das XAML-Framework stellt eine Gruppe von benannten [Color](/uwp/api/Windows.UI.
 
 Diese Tabelle enthält den Schlüssel, den einfachen Namen und die Zeichenfolgendarstellung der Farbe (mit dem \#aarrggbb-Format) für die Ressourcen „Light“ und „Dark“, die vom XAML-Framework bereitgestellt werden. Der Schlüssel wird verwendet, um auf die Ressource in einer App zu verweisen. Der einfache Name für hell/dunkel dient als Teil der Pinselbenennungskonvention, die später erläutert wird.
 
-| Schlüssel                             | Einfacher Name für hell/dunkel | Hell      | Dunkel       |
+| Schlüssel                             | Einfacher Name für hell/dunkel | Leicht      | Dunkel       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -94,32 +94,32 @@ Diese Tabelle enthält den Schlüssel, den einfachen Namen und die Zeichenfolgen
 
 :::row:::
     :::column:::
-        #### Light theme
+        #### <a name="light-theme"></a>Helles Design
     :::column-end:::
     :::column:::
-        #### Dark theme
-    :::column-end:::
-:::row-end:::
-
-#### <a name="base"></a>Base
-
-:::row:::
-    :::column:::
-        ![The base light theme](images/themes/light-base.png)
-    :::column-end:::
-    :::column:::
-        ![The base dark theme](images/themes/dark-base.png)
+        #### <a name="dark-theme"></a>Dunkles Design
     :::column-end:::
 :::row-end:::
 
-#### <a name="alt"></a>Alternativ
+#### <a name="base"></a>Basis
 
 :::row:::
     :::column:::
-        ![The alt light theme](images/themes/light-alt.png)
+        ![Das helle Basisdesign](images/themes/light-base.png)
     :::column-end:::
     :::column:::
-        ![The alt dark theme](images/themes/dark-alt.png)
+        ![Das dunkle Basisdesign](images/themes/dark-base.png)
+    :::column-end:::
+:::row-end:::
+
+#### <a name="alt"></a>ALT-Taste
+
+:::row:::
+    :::column:::
+        ![Das helle Alternativdesign](images/themes/light-alt.png)
+    :::column-end:::
+    :::column:::
+        ![Das dunkle Alternativdesign](images/themes/dark-alt.png)
     :::column-end:::
 :::row-end:::
 
@@ -127,10 +127,10 @@ Diese Tabelle enthält den Schlüssel, den einfachen Namen und die Zeichenfolgen
 
 :::row:::
     :::column:::
-        ![The list light theme](images/themes/light-list.png)
+        ![Das helle Listendesign](images/themes/light-list.png)
     :::column-end:::
     :::column:::
-        ![The list dark theme](images/themes/dark-list.png)
+        ![Das dunkle Listendesign](images/themes/dark-list.png)
     :::column-end:::
 :::row-end:::
 
@@ -138,10 +138,10 @@ Diese Tabelle enthält den Schlüssel, den einfachen Namen und die Zeichenfolgen
 
 :::row:::
     :::column:::
-        ![The chrome light theme](images/themes/light-chrome.png)
+        ![Das helle Chromdesign](images/themes/light-chrome.png)
     :::column-end:::
     :::column:::
-        ![The chrome dark theme](images/themes/dark-chrome.png)
+        ![Das dunkle Chromdesign](images/themes/dark-chrome.png)
     :::column-end:::
 :::row-end:::
 
@@ -156,7 +156,7 @@ Diese Tabelle enthält die systemweiten Farben, die XAML als Ressourcenobjekte a
 | SystemColorButtonFaceColor    | **Text der Schaltfläche** (Hintergrund)   | Hintergrund               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **Text der Schaltfläche** (Vordergrund)   | Vordergrund               | \#FF000000      |
 | SystemColorGrayTextColor      | **Deaktivierter Text**              | Deaktiviert                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **Ausgewählter Text** (Hintergrund) | Hervorheben                | \#FF3399FF      |
+| SystemColorHighlightColor     | **Ausgewählter Text** (Hintergrund) | Markierung                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **Ausgewählter Text** (Vordergrund) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **Hyperlinks**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **Hintergrund**                 | PageBackground           | \#FFFFFFFF      |
@@ -191,7 +191,7 @@ Wenn dieser Pinsel auf ein XAML-Element angewendet wird, wird die Farbe zur Lauf
 
 | Design        | Einfacher Farbname | Farbressource             | Laufzeitwert                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Hell        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| Leicht        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
 | Dunkel         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
 | HighContrast | Hintergrund        | SystemColorButtonFaceColor | Die in den Einstellungen für den Hintergrund der Schaltfläche angegebene Farbe. |
 
@@ -396,13 +396,13 @@ Hier ist ein [Schaltflächen](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml
         Click="Button_Click"/>
 ```
 
-Es sieht ungefähr so aus:
+Er sieht ungefähr so aus:
 
 ![Eine Schaltfläche, die wie Text aussieht](images/styles-textblock-button-style.png)
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**: [Schaltfläche](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
 Diese [Formatvorlage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) stellt eine vollständige Vorlage für ein [Schaltflächen](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Die Standardgröße ist 40 x 40 Pixel. Um die Formatvorlage anzupassen, können Sie die Eigenschaften [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) und andere für Ihr **Schaltflächen**-Element explizit festlegen oder eine abgeleitete Formatvorlage mithilfe von [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) erstellen.
 
@@ -412,13 +412,13 @@ Hier ist ein [Schaltflächen](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
 ```
 
-Es sieht ungefähr so aus:
+Er sieht ungefähr so aus:
 
 ![Eine als Zurückschaltfläche formatierte Schaltfläche](images/styles-back-button-normal.png)
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType**: [Schaltfläche](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
 Diese [Formatvorlage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) stellt eine vollständige Vorlage für ein [Schaltflächen](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)-Element bereit, bei der es sich um die Navigationsschaltfläche „Zurück“ für eine Navigations-App handeln kann. Sie ähnelt **NavigationBackButtonNormalStyle**, aber die Größe beträgt 30x30 Pixel.
 

@@ -9,11 +9,11 @@ keywords: Python, Windows 10, Microsoft, Python unter Windows, Python-Web mit WS
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
-ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881293"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853077"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows
 
@@ -56,7 +56,7 @@ Durch Verwendung von Visual Studio Code können Sie [IntelliSense](https://code.
 
 1. [Laden Sie VS Code für Windows herunter, und installieren Sie es.](https://code.visualstudio.com) VS Code ist auch für Linux verfügbar. Da das Windows-Subsystem für Linux jedoch keine GUI-Apps unterstützt, muss VS Code unter Windows installiert werden. Die Integration in die Befehlszeile und die Tools von Linux ist jedoch durch Verwendung der Erweiterung „Remote – WSL“ problemlos möglich.
 
-2. Installieren Sie die [Erweiterung „Remote – WSL“](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) in VS Code. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung, während die Verarbeitung der Kompatibilität und der Pfadzuordnung automatisch erfolgt. [Weitere Informationen](https://code.visualstudio.com/docs/remote/remote-overview).
+2. Installieren Sie die [Erweiterung „Remote – WSL“](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) in VS Code. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung, während die Verarbeitung der Kompatibilität und der Pfadzuordnung automatisch erfolgt. [Weitere Informationen](https://code.visualstudio.com/docs/remote/remote-overview)
 
 > [!IMPORTANT]
 > Wenn Sie VS Code bereits installiert haben, müssen Sie sicherstellen, dass Sie über das [Release vom Mai (1.35)](https://code.visualstudio.com/updates/v1_35) oder höher verfügen, um die [Erweiterung „Remote – WSL“](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) installieren zu können. Es wird davon abgeraten, WSL in VS Code ohne die Erweiterung „Remote – WSL“ zu verwenden, da dann keine Unterstützung für automatisches Vervollständigen, Debuggen, Linting usw. vorhanden ist. Hinweis: Diese WSL-Erweiterung wird unter „$HOME/.vscode-server/extensions“ installiert.
@@ -72,7 +72,7 @@ Wir erstellen nun ein neues Projektverzeichnis im Linux-Dateisystem (Ubuntu), in
 ![Ubuntu-Terminal](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> Beachten Sie bei der Verwendung des Windows-Subsystems für Linux (WSL) unbedingt, dass **Sie nun in zwei unterschiedlichen Dateisystemen** arbeiten: 1) im Windows-Dateisystem und 2) im Linux-Dateisystem (WSL), in diesem Beispiel Ubuntu. Es ist daher darauf zu achten, wo Sie Pakete installieren und Dateien speichern. Sie können eine Version eines Tools oder Pakets im Windows-Dateisystem und eine andere Version im Linux-Dateisystem installieren. Die Aktualisierung des Tools im Windows-Dateisystem wirkt sich nicht auf das Tool im Linux-Dateisystem aus und umgekehrt. Mit WSL werden die lokalen Festplattenlaufwerke auf dem Computer unter dem Ordner `/mnt/<drive>` in der Linux-Distribution eingebunden. Das Windows-Laufwerk C: wird beispielsweise unter `/mnt/c/` eingebunden. Sie können auf die Windows-Dateien über das Ubuntu-Terminal zugreifen und Linux-Apps und -Tools für diese Dateien verwenden und umgekehrt. Es wird empfohlen, für die Python-Webentwicklung das Linux-Dateisystem zu verwenden, da ein Großteil der Webtools ursprünglich für Linux geschrieben wurde und in einer Linux-Produktionsumgebung bereitgestellt wird. Außerdem wird so vermieden, dass sich die Dateisystemsemantik vermischt (z. B. muss unter Windows für Dateinamen die Groß- und Kleinschreibung nicht berücksichtigt werden). Jedoch kann in WSL nun zwischen dem Linux- und dem Windows-System gewechselt werden, sodass Sie Ihre Dateien in beiden Systemen hosten können. [Weitere Informationen](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/). Wir freuen uns auch, mitteilen zu können, dass [WSL2 in Kürze für Windows verfügbar ist](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) und weitreichende Verbesserungen bietet. Sie können es [nun im Windows Insiders-Build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install) testen.
+> Beachten Sie bei der Verwendung des Windows-Subsystems für Linux (WSL) unbedingt, dass **Sie nun in zwei unterschiedlichen Dateisystemen** arbeiten: 1) im Windows-Dateisystem und 2) im Linux-Dateisystem (WSL), in diesem Beispiel Ubuntu. Es ist daher darauf zu achten, wo Sie Pakete installieren und Dateien speichern. Sie können eine Version eines Tools oder Pakets im Windows-Dateisystem und eine andere Version im Linux-Dateisystem installieren. Die Aktualisierung des Tools im Windows-Dateisystem wirkt sich nicht auf das Tool im Linux-Dateisystem aus und umgekehrt. Mit WSL werden die lokalen Festplattenlaufwerke auf dem Computer unter dem Ordner `/mnt/<drive>` in der Linux-Distribution eingebunden. Das Windows-Laufwerk C: wird beispielsweise unter `/mnt/c/` eingebunden. Sie können auf die Windows-Dateien über das Ubuntu-Terminal zugreifen und Linux-Apps und -Tools für diese Dateien verwenden und umgekehrt. Es wird empfohlen, für die Python-Webentwicklung das Linux-Dateisystem zu verwenden, da ein Großteil der Webtools ursprünglich für Linux geschrieben wurde und in einer Linux-Produktionsumgebung bereitgestellt wird. Außerdem wird so vermieden, dass sich die Dateisystemsemantik vermischt (z. B. muss unter Windows für Dateinamen die Groß- und Kleinschreibung nicht berücksichtigt werden). Jedoch kann in WSL nun zwischen dem Linux- und dem Windows-System gewechselt werden, sodass Sie Ihre Dateien in beiden Systemen hosten können. [Weitere Informationen](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/) Wir freuen uns auch, mitteilen zu können, dass [WSL2 in Kürze für Windows verfügbar ist](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) und weitreichende Verbesserungen bietet. Sie können es [nun im Windows Insiders-Build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install) testen.
 
 ## <a name="install-python-pip-and-venv"></a>Installieren von Python, pip und venv
 
@@ -99,7 +99,7 @@ Die Verwendung virtueller Umgebungen wird als bewährte Methode für Python-Entw
 
 ## <a name="open-a-wsl---remote-window"></a>Öffnen eines Fensters der Erweiterung „Remote – WSL“
 
-In VS Code wird mit der (zuvor installierten) Erweiterung „Remote – WSL“ das Linux-Subsystem als Remoteserver behandelt. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung. [Weitere Informationen](https://code.visualstudio.com/docs/remote/wsl). 
+In VS Code wird mit der (zuvor installierten) Erweiterung „Remote – WSL“ das Linux-Subsystem als Remoteserver behandelt. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung. [Weitere Informationen](https://code.visualstudio.com/docs/remote/wsl) 
 
 1. Öffnen Sie den Projektordner in VS Code über das Ubuntu-Terminal, indem Sie `code .` eingeben (mit „.“ wird in VS Code angegeben, dass der aktuelle Ordner zu öffnen ist).
 
@@ -115,7 +115,7 @@ In VS Code wird mit der (zuvor installierten) Erweiterung „Remote – WSL“ 
 
 ## <a name="install-the-microsoft-python-extension"></a>Installieren der Microsoft Python-Erweiterung
 
-Sie müssen alle VS Code-Erweiterungen für die Erweiterung „Remote – WSL“ installieren. Erweiterungen, die in VS Code bereits lokal installiert wurden, sind nicht automatisch verfügbar. [Weitere Informationen](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions).
+Sie müssen alle VS Code-Erweiterungen für die Erweiterung „Remote – WSL“ installieren. Erweiterungen, die in VS Code bereits lokal installiert wurden, sind nicht automatisch verfügbar. [Weitere Informationen](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions)
 
 1. Öffnen Sie das Fenster der VS Code-Erweiterungen, indem Sie **STRG+UMSCHALT+X** drücken (oder navigieren Sie im Menü zu **Ansicht** > **Erweiterungen**).
 
