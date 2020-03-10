@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816673"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853387"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 
@@ -246,7 +246,7 @@ auto resume_foreground(...) noexcept
 
 Das aktuelle Verhalten im Vergleich zum vorherigen Verhalten entspricht dem Unterschied zwischen [**PostMessage**](/windows/win32/api/winuser/nf-winuser-postmessagew) und [**SendMessage**](/windows/win32/api/winuser/nf-winuser-sendmessage) in der Win32-Anwendungsentwicklung. **PostMessage** fügt die Aufgabe in die Warteschlange ein und entlädt dann den Stapel, ohne auf den Abschluss der Aufgabe zu warten. Das Entladen des Stapels kann von wesentlicher Bedeutung sein.
 
-Die **winrt::resume_foreground**-Funktion hat zunächst nur den [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) (an ein [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) gebunden) unterstützt, der vor Windows 10 eingeführt wurde. Wir haben seitdem einen flexibleren und effizienteren Verteiler eingeführt: [ **DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Sie können eine **DispatcherQueue** für eigene Zwecke erstellen. Sehen Sie sich diese einfache Konsolenanwendung an.
+Die **winrt::resume_foreground**-Funktion hat zunächst nur den [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) (an ein [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) gebunden) unterstützt, der vor Windows 10 eingeführt wurde. Wir haben seitdem einen flexibleren und effizienteren Verteiler eingeführt: [**DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). Sie können eine **DispatcherQueue** für eigene Zwecke erstellen. Sehen Sie sich diese einfache Konsolenanwendung an.
 
 ```cppwinrt
 using namespace Windows::System;
@@ -844,6 +844,6 @@ property_value.GetInt32Array(my_array); // Unbox back into an array.
 * [winrt::get_progress_token](/uwp/cpp-ref-for-winrt/get-progress-token)
 * [winrt::resume_foreground](/uwp/cpp-ref-for-winrt/resume-foreground)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Parallelität und asynchrone Vorgänge](concurrency.md)
 * [Verarbeiten von Ereignissen über Delegaten in C++/WinRT](handle-events.md)

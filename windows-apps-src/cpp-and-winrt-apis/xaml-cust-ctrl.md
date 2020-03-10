@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, benutze
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6acbd62a8fa75eefb39598dd5bbb6ec1270388c4
-ms.sourcegitcommit: cc9f5a16386be78c12821a975e43497a0693abba
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72578173"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853388"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT
 
@@ -194,6 +194,6 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [Klasse „FrameworkElement“](/uwp/api/windows.ui.xaml.frameworkelement)
 * [Klasse „UIElement“](/uwp/api/windows.ui.xaml.uielement)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates)
 * [Benutzerdefinierte Abhängigkeitseigenschaften](/windows/uwp/xaml-platform/custom-dependency-properties)
