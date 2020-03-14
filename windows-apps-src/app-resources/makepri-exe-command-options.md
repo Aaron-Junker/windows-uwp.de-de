@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: 638de4d2795b3b248edfdcc35dc72fa21d31fc3b
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089320"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209866"
 ---
 # <a name="makepriexe-command-line-options"></a>Befehlszeilenoptionen für „MakePri.exe“
 
@@ -458,7 +458,7 @@ Und hier ein Beispiel für Inhalte einer Zuordnungsdatei für ein Ressourcenpake
 
 ## <a name="output-summary"></a>Ausgabezusammenfassung
 
-Wenn Ressourcenpakete erstellt werden, ist die Ausgabezusammenfassung von MakePRI.exe ausführlicher. Hier ist ein Beispiel.
+Wenn Ressourcenpakete erstellt werden, ist die Ausgabezusammenfassung von MakePRI.exe ausführlicher. Hier sehen Sie ein Beispiel.
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack

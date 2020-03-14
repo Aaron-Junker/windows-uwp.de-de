@@ -1,21 +1,21 @@
 ---
 title: Anzeigen von interessanten Orten (POI) auf einer Karte
-description: Mit Markiernadeln, Bildern, Formen und XAML-UI-Elementen können Sie interessante Orte (Points of Interest, POI) auf einer Karte hinzufügen.
+description: Mit Ortsmarken, Bildern, Formen und XAML-UI-Elementen können Sie interessante Orte (Points of Interest, POI) auf einer Karte hinzufügen.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, karten, standort, ortsmarken
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf8009232dbe3afcab2af28b76785fb261200f7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259376"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210296"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>Anzeigen von interessanten Orten (POI) auf einer Karte
 
-Mit Markiernadeln, Bildern, Formen und XAML-UI-Elementen können Sie interessante Orte (Points of Interest, POI) auf einer Karte hinzufügen. Ein POI ist ein Punkt auf der Karte, der Orte angibt, die von Interesse sind. Beispiele sind die Position eines Geschäfts, eines Orts oder eines Freundes.
+Mit Ortsmarken, Bildern, Formen und XAML-UI-Elementen können Sie interessante Orte (Points of Interest, POI) auf einer Karte hinzufügen. Ein POI ist ein Punkt auf der Karte, der Orte angibt, die von Interesse sind. Beispiele sind die Position eines Geschäfts, eines Orts oder eines Freundes.
 
 Wenn Sie mehr über das Anzeigen von POIs in Ihrer App erfahren möchten, laden Sie das folgende Beispiel aus dem [Windows-universal-samples-Repository](https://github.com/Microsoft/Windows-universal-samples) auf GitHub herunter: [Universal Windows Platform (UWP)-Kartenbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
 
@@ -30,7 +30,7 @@ Wenn Sie eine große Anzahl von Elementen auf der Karte platzieren möchten, sol
 
 ## <a name="add-a-pushpin"></a>Hinzufügen einer Markiernadel
 
-Verwenden Sie die Klasse [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), um Bilder wie eine Markiernadel mit optionalem Text auf der Karte anzuzeigen. Sie können das Standardbild akzeptieren oder mit der [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)-Eigenschaft ein benutzerdefiniertes Bild bereitstellen. Die folgende Abbildung zeigt das Standardbild für ein **MapIcon** ohne festgelegten Wert für die Eigenschaft [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) mit einem kurzen Titel, einem langen Titel und einem sehr langen Titel.
+Verwenden Sie die Klasse [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), um Bilder wie eine Ortsmarke mit optionalem Text auf der Karte anzuzeigen. Sie können das Standardbild akzeptieren oder mit der [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)-Eigenschaft ein benutzerdefiniertes Bild bereitstellen. Die folgende Abbildung zeigt das Standardbild für ein **MapIcon** ohne festgelegten Wert für die Eigenschaft [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) mit einem kurzen Titel, einem langen Titel und einem sehr langen Titel.
 
 ![Beispiel für MapIcon mit Titeln unterschiedlicher Länge](images/mapctrl-mapicons.png)
 
@@ -87,7 +87,7 @@ Berücksichtigen Sie beim Arbeiten mit der [**MapIcon**](https://docs.microsoft.
 -   Die [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)-Eigenschaft unterstützt eine maximale Bildgröße von 2048 x 2048 Pixeln.
 -   Standardmäßig wird die Anzeige des Bilds für das Kartensymbol nicht garantiert. Es wird möglicherweise ausgeblendet, wenn es andere Elemente oder Bezeichnungen auf der Karte verdeckt. Damit es sichtbar bleibt, legen Sie die [**CollisionBehaviorDesired**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.collisionbehaviordesired)-Eigenschaft des Kartensymbols auf [**MapElementCollisionBehavior.RemainVisible**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior) fest.
 -   Die Anzeige des optionalen [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) für [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) wird nicht garantiert. Wenn der Text nicht angezeigt wird, verkleinern Sie die Ansicht, indem Sie den Wert der [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel)-Eigenschaft von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) verringern.
--   Wenn Sie ein [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)-Bild anzeigen, das auf eine bestimmte Position auf der Karte hinweist, z. B. eine Ortsmarkierung oder ein Pfeil, sollten Sie in Erwägung ziehen, den Wert der [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.normalizedanchorpoint)-Eigenschaft auf den ungefähren Standort des Zeigers auf dem Bild festzulegen. Wenn Sie den Wert von **NormalizedAnchorPoint** beim Standardwert (0, 0) belassen, der die obere linke Ecke des Bilds darstellt, führen Änderungen am [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) der Karte möglicherweise dazu, dass das Bild auf eine andere Position zeigt.
+-   Wenn Sie ein [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)-Bild anzeigen, das auf eine bestimmte Position auf der Karte hinweist, z. B. eine Ortsmarkierung oder ein Pfeil, sollten Sie in Erwägung ziehen, den Wert der [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.normalizedanchorpoint)-Eigenschaft auf den ungefähren Standort des Zeigers auf dem Bild festzulegen. Wenn Sie den Wert von **NormalizedAnchorPoint** beim Standardwert (0, 0) belassen, der die obere linke Ecke des Bilds darstellt, führen Änderungen am [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) der Karte möglicherweise dazu, dass das Bild auf eine andere Position zeigt.
 -   Wenn Sie [Altitude](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.basicgeoposition) und [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.AltitudeReferenceSystem) nicht explizit festlegen, wird [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) auf der Oberfläche platziert.
 
 ## <a name="add-a-3d-pushpin"></a>Hinzufügen einer 3D-Markiernadel
@@ -186,7 +186,7 @@ Der [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xa
 
 ## <a name="add-a-shape"></a>Hinzufügen einer Form
 
-Mithilfe der Klasse [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) können Sie eine Multipoint-Form auf der Karte anzeigen. Im folgenden Beispiel (aus dem [UWP-Kartenbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)) wird ein rotes Feld mit blauem Rahmen auf der Karte angezeigt.
+Mithilfe der Klasse [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) können Sie eine Form mit mehreren Punkten auf der Karte anzeigen. Im folgenden Beispiel (aus dem [Beispiel zu UWP-Karten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)) wird ein rotes Feld mit blauem Rahmen auf der Karte angezeigt.
 
 ```csharp
 public void HighlightArea()
@@ -409,7 +409,7 @@ var pikePlaceIcon = new MapIcon
 myMap.MapElements.Add(pikePlaceIcon);
 ```
 
-Sie können diesen Ansatz weiterhin verwenden, doch werden Ihnen dann einige der Vorteile des neuen Kartenschichtenmodells nicht zur Verfügung stehen. Durch die Gruppierung der Elemente in Schichten können Sie jede davon unabhängig bearbeiten. Beispielsweise hat jede Ebene einen eigenen Satz an Ereignissen, sodass Sie auf ein Ereignis in einer bestimmten Ebene antworten und eine Aktion ausführen, die speziell für das Ereignis gilt.
+Sie können diesen Ansatz weiterhin verwenden, doch werden Ihnen dann einige der Vorteile des neuen Kartenschichtenmodells nicht zur Verfügung stehen. Durch die Gruppierung der Elemente in Schichten können Sie jede davon unabhängig bearbeiten. Beispielsweise verfügt jede Ebene über einen eigenen Satz an Ereignissen, sodass Sie auf ein Ereignis in einer bestimmten Ebene antworten und eine Aktion ausführen können, die speziell für das Ereignis gilt.
 
 Zudem können Sie XAML direkt an eine [MapLayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maplayer) binden. Das ist mit der [MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)-Sammlung nicht möglich.
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Lokalisierbarkeit, Lokalisierung, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852539"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209836"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“
 Entwerfen Sie Ihre App so, dass die Layouts und Schriften mehrerer Sprachen unterstützen – beispielsweise auch den Textfluss von rechts nach links (right-to-left, RTL). Die Textflussrichtung ist die Richtung, in der ein Text geschrieben und angezeigt wird, und die UI-Elemente auf der Seite werden entsprechend gelesen.

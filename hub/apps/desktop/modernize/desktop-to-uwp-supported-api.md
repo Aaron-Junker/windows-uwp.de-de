@@ -10,11 +10,11 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302534"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209666"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>Für Desktop-Apps verfügbare UWP-APIs
 
@@ -22,7 +22,7 @@ Desktop-Apps können eine große Bandbreite an universelle Windows-Plattform-API
 
 Viele UWP-APIs erfordern, dass die [Paket Identität](modernize-packaged-apps.md) in einer Desktop-App verwendet wird. Die meisten UWP-APIs funktionieren gut für apps, die über die Paket Identität verfügen. Allerdings sind einige Featurebereiche noch nicht vollständig getestet oder funktionieren derzeit noch nicht wie vorgesehen.
 
-| Featurebereich | Details |
+| Bereich "Funktionen" | Details |
 |--------------|---------|
 | Termine, Kontakte und E-Mails | Derzeit werden nicht alle APIs unterstützt. |
 | Authentifizierung und Benutzeridentität | Derzeit werden nicht alle APIs unterstützt. |
@@ -33,11 +33,11 @@ Viele UWP-APIs erfordern, dass die [Paket Identität](modernize-packaged-apps.md
 | Kryptografie | Derzeit werden nicht alle APIs unterstützt. |
 | Geolocation | Derzeit werden nicht alle APIs unterstützt. |
 | Datei- und Ordnerauswahl | Apps mit Identität haben vollen Zugriff auf das Dateisystem und benötigen keine UWP-Picker. |
-| Media | Derzeit werden nicht alle APIs unterstützt. |
+| Medien | Derzeit werden nicht alle APIs unterstützt. |
 | Point of Service (POS) | Derzeit werden nicht alle APIs unterstützt. |
 | Smartcards | Derzeit werden nicht alle APIs unterstützt. |
 | PlayReady | Derzeit werden nicht alle APIs unterstützt. |
-| „VPN“ | Derzeit werden nicht alle APIs unterstützt. |
+| VPN | Derzeit werden nicht alle APIs unterstützt. |
 | Brieftasche | Desktop-Apps können erst dann auf Mobilgeräten ausgeführt werden, wenn Sie vollständig auf UWP portiert werden. |
 | XAML-UI | Windows 10, Version 1809 und frühere Versionen unterstützen nicht das Hosting von UWP-XAML-Inhalten in Desktop-Apps. Ab Windows 10, Version 1903, können Sie [XAML-Inseln](xaml-islands.md) verwenden, um UWP-XAML-Inhalte zu hosten.  |
 
@@ -383,4 +383,4 @@ APIs, die über die [dualapipartition](https://docs.microsoft.com/uwp/api/Window
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Haben Sie Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) fragen.

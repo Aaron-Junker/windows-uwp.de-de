@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853387"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209255"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 

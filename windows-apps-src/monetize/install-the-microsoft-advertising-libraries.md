@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Anzeigen, Werbung, Installieren, SDK, Werbebibliotheken
 ms.localizationpriority: medium
 ms.openlocfilehash: 109ddbd3551dbd4304b86e56ace40f39e1b71211
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853107"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209636"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installieren des Microsoft Advertising-SDK
 

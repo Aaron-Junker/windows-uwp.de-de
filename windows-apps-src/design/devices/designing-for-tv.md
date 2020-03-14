@@ -14,17 +14,17 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616655"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209996"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Entwerfen für Xbox und Fernsehgeräte
 
 Entwerfen Sie Ihre App für die Universelle Windows-Plattform (UWP) so, dass sie auf Xbox One- und Fernsehbildschirmen gut aussieht und optimal funktioniert.
 
-Finden Sie unter [Gamepad und Remotesteuerung Interaktionen](../input/gamepad-and-remote-interactions.md) Anleitung zur Interaktion-Funktionalität in UWP-Anwendungen in der *10-Fuß* auftreten.
+Unter [Gamepad-und Remote Steuerungs Interaktionen](../input/gamepad-and-remote-interactions.md) finden Sie Anleitungen zur Interaktion bei UWP-Anwendungen mit der *10-Fuß-* Erfahrung.
 
 ## <a name="overview"></a>Übersicht
 
@@ -54,7 +54,7 @@ Ordnen Sie Inhalte so an, dass Verschiebungen auf dem Bildschirm konsistent und 
 
 ![Xbox One-Film-App](images/designing-for-tv/xbox-movies-app.png)
 
-_**Alle Filme im Screenshot gezeigten sind auf Microsoft Movies & TV-verfügbar.**_  
+_**Alle im Screenshot gezeigten Filme sind in Microsoft Movies & TV verfügbar.**_  
 
 ### <a name="captivating"></a>Fesselnd
 
@@ -68,22 +68,22 @@ Da Sie nun mit den Grundsätzen eines guten UWP-App-Designs für die 10-Fuß-Erf
 
 | Feature        | Beschreibung           |
 | -------------------------------------------------------------- |--------------------------------|
-| [Größe der UI-element](#ui-element-sizing)  | Die Universelle Windows-Plattform verwendet [Skalierung und effektive Pixel](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), um die Benutzeroberfläche gemäß dem Anzeigeabstand zu skalieren. Wenn Sie verstehen, wie Sie Größen anpassen und auf Ihre Benutzeroberfläche anwenden, hilft Ihnen dies, Ihre App für die 10-Fuß-Umgebung zu optimieren.  |
-|  [TV-Safe-Bereich](#tv-safe-area) | Die UWP vermeidet automatisch und standardmäßig die Anzeige von Benutzeroberflächenelementen in nicht fernsehsicheren Bereichen (nahe dem Bildschirmrand). Dies führt jedoch zu einem „Schachteleffekt“, so dass die Benutzeroberfläche einem Briefkastenschlitz ähnelt. Damit Ihre App auf Fernsehgeräten wirklich immersiv ist, müssen Sie diese so anpassen, dass sie sich auf Fernsehgeräten, die dies unterstützen, bis zu den Rändern erweitert wird. |
-| [Farben](#colors)  |  Die UWP unterstützt Farbdesigns. Daher wird eine App, die das Systemdesign berücksichtigt, auf Xbox One standardmäßig auf **dark** festgelegt. Wenn Ihre App ein bestimmtes Farbdesign verwendet, sollten Sie daran denken, dass sich einige Farben nicht gut für Fernsehbildschirme eignen und daher vermieden werden sollten. |
+| [Größe des Benutzeroberflächen Elements](#ui-element-sizing)  | Die Universelle Windows-Plattform verwendet [Skalierung und effektive Pixel](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), um die Benutzeroberfläche gemäß dem Anzeigeabstand zu skalieren. Wenn Sie verstehen, wie Sie Größen anpassen und auf Ihre Benutzeroberfläche anwenden, hilft Ihnen dies, Ihre App für die 10-Fuß-Umgebung zu optimieren.  |
+|  [TV-sicherer Bereich](#tv-safe-area) | Die UWP vermeidet automatisch und standardmäßig die Anzeige von Benutzeroberflächenelementen in nicht fernsehsicheren Bereichen (nahe dem Bildschirmrand). Dies führt jedoch zu einem „Schachteleffekt“, so dass die Benutzeroberfläche einem Briefkastenschlitz ähnelt. Damit Ihre App auf Fernsehgeräten wirklich immersiv ist, müssen Sie diese so anpassen, dass sie sich auf Fernsehgeräten, die dies unterstützen, bis zu den Rändern erweitert wird. |
+| [Ellen](#colors)  |  Die UWP unterstützt Farbdesigns. Daher wird eine App, die das Systemdesign berücksichtigt, auf Xbox One standardmäßig auf **dark** festgelegt. Wenn Ihre App ein bestimmtes Farbdesign verwendet, sollten Sie daran denken, dass sich einige Farben nicht gut für Fernsehbildschirme eignen und daher vermieden werden sollten. |
 | [Sound](../style/sound.md)    | Sounds spielen bei der 10 Fuß-Erfahrung eine wichtige Rolle. Sie helfen den Benutzern sich zu vertiefen und liefern Feedback. Die UWP bietet Funktionen, mit denen Sounds für allgemeine Steuerelemente automatisch aktiviert werden, wenn die App auf Xbox One ausgeführt wird. Erfahren Sie mehr über die in der Universellen Windows-Plattform integrierte Unterstützung von Sound, und erfahren Sie, wie Sie davon profitieren.    |
-| [Richtlinien für die UI-Steuerelemente](#guidelines-for-ui-controls)  |  Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten gut funktionieren. Wenn diese jedoch auf Fernsehgeräten verwendet werden, müssen bestimmte Aspekte berücksichtigt werden. Informieren Sie sich über einige bewährte Methoden für die Verwendung dieser Steuerelemente beim Entwerfen für die 10 Fuß-Erfahrung. |
-| [Benutzerdefinierten visuellen Zustand Trigger für Xbox](#custom-visual-state-trigger-for-xbox) | Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, einen benutzerdefinierten *visuellen Zustandsauslöser* zu verwenden, um das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. |
+| [Richtlinien für UI-Steuerelemente](#guidelines-for-ui-controls)  |  Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten gut funktionieren. Wenn diese jedoch auf Fernsehgeräten verwendet werden, müssen bestimmte Aspekte berücksichtigt werden. Informieren Sie sich über einige bewährte Methoden für die Verwendung dieser Steuerelemente beim Entwerfen für die 10 Fuß-Erfahrung. |
+| [Benutzerdefinierter visueller Status-Auslösung für Xbox](#custom-visual-state-trigger-for-xbox) | Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, einen benutzerdefinierten *visuellen Zustandsauslöser* zu verwenden, um das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. |
 
-Neben den obigen Entwurf und die Überlegungen zum Layout, es gibt diverse [Gamepad und Remotesteuerung Interaktion](../input/gamepad-and-remote-interactions.md) Optimierungen, Sie beim Erstellen Ihrer app sollten.
+Zusätzlich zu den vorangehenden Entwurfs-und layoutüberlegungen gibt es eine Reihe von Optimierungs Optimierungen für [Gamepad und Remote Steuerung](../input/gamepad-and-remote-interactions.md) , die Sie beim Erstellen Ihrer APP berücksichtigen sollten.
 
 | Feature        | Beschreibung           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY Fokusnavigation und Interaktion](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY-Fokusnavigation** ermöglicht es dem Benutzer, um die UI Ihrer app zu navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
-| [Mausmodus](../input/gamepad-and-remote-interactions.md#mouse-mode)|XY-Fokusnavigation ist es nicht zweckmäßig oder möglich, für einige Typen von Anwendungen, z. B. Zuordnungen oder Zeichnen und apps zu zeichnen. In diesen Fällen **mausmodus** können Benutzer navigieren frei mit einer Gamepad oder die Remotesteuerung, wie eine Maus auf einem PC.|
-| [Visuelle Fokuselement](../input/gamepad-and-remote-interactions.md#focus-visual)  | Das visuelle Fokuselement ist ein Rahmen, der das derzeit fokussierte Element der Benutzeroberfläche werden hervorgehoben. Dadurch wird den Benutzer die Benutzeroberfläche schnell zu identifizieren, sie Navigieren durch oder interagieren.  |
-| [Fokus engagement](../input/gamepad-and-remote-interactions.md#focus-engagement) | Fokus Engagement erfordert, dass den Benutzer drückt die **ein/Select** Schaltfläche auf einem Gamepad oder die Remotesteuerung, wenn ein UI-Element den Fokus besitzt, um damit zu interagieren. |
-| [Hardwaretasten](../input/gamepad-and-remote-interactions.md#hardware-buttons) | Geben Sie den Gamepad und Remotesteuerung sehr unterschiedliche Schaltflächen und Konfigurationen. |
+| [XY-Fokus Navigation und-Interaktion](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | Die **XY-Fokus Navigation** ermöglicht dem Benutzer, um die Benutzeroberfläche Ihrer APP zu navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
+| [Mausmodus](../input/gamepad-and-remote-interactions.md#mouse-mode)|Die XY-Fokus Navigation ist für einige Arten von Anwendungen, z. b. Karten oder das Zeichnen und Zeichnen von apps, nicht praktikabel oder sogar möglich. In diesen Fällen ermöglicht der **Maus Modus** Benutzern, mit einem Gamepad oder einer Remote Steuerung wie der Maus auf einem PC frei zu navigieren.|
+| [Fokus Visualisierung](../input/gamepad-and-remote-interactions.md#focus-visual)  | Das visuelle Fokus Element ist ein Rahmen, der das aktuell fokussierte Benutzeroberflächen Element hervorhebt. Dadurch kann der Benutzer schnell die Benutzeroberfläche identifizieren, durch die Sie navigieren oder mit der Sie interagieren.  |
+| [Fokus Einbindung](../input/gamepad-and-remote-interactions.md#focus-engagement) | Der Fokus Engagement erfordert, dass der Benutzer die **A/Select-** Schaltfläche in einem Gamepad oder der Remote Steuerung drückt, wenn ein Benutzeroberflächen Element den Fokus besitzt, um damit zu interagieren. |
+| [Hardwaretasten](../input/gamepad-and-remote-interactions.md#hardware-buttons) | Das Gamepad und die Remote Steuerung bieten sehr unterschiedliche Schaltflächen und Konfigurationen. |
 
 > [!NOTE]
 > Die meisten Codeausschnitte in diesem Thema wurden in XAML/C# verfasst. Die Grundsätze und Konzepte gelten jedoch für alle UWP-Apps. Wenn Sie eine HTML/JavaScript-UWP-App für Xbox entwickeln, steht Ihnen die hervorragende [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki)-Bibliothek auf GitHub zur Verfügung.
@@ -130,8 +130,8 @@ Um Ihre Benutzeroberfläche zu vereinfachen, sollten Benutzer nicht mehr als **s
 
 Wenden Sie die folgenden Faustregeln an, damit Ihre Benutzeroberfläche aus der Entfernung erkennbar ist:
 
-* Haupttext und Lesen von Inhalten: 15 Epx minimum
-* Kein kritisches Text und zusätzliche Inhalte: 12 Epx minimum
+* Haupttext und Lesen von Inhalten: mindestens 15 epx
+* Nicht kritische Texte und ergänzende Inhalte: mindestens 12 epx
 
 Wenn Sie in der Benutzeroberfläche einen größeren Text verwenden, sollten Sie eine Größe wählen, die die verfügbare Bildschirmfläche nicht zu sehr begrenzt, indem sie Platz beansprucht, der potenziell von anderen Inhalten ausgefüllt werden kann.
 
@@ -163,7 +163,7 @@ Der nicht fernsehsichere Bereich wird in der folgenden Abbildung durch den blaue
 
 Sie können für den Hintergrund eine statische Farbe, eine Designfarbe oder ein Bild verwenden, wie in den folgenden Codeausschnitten gezeigt.
 
-### <a name="theme-color"></a>Designfarbe
+### <a name="theme-color"></a>Farbdesign
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -241,7 +241,7 @@ Mit dem folgenden Codeausschnitt wird dieser Effekt erzielt:
 
 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) ist ein weiteres Beispiel für einen Bereich, der häufig in der Nähe eines oder mehrerer Ränder der App positioniert ist. Daher sollte dessen Hintergrund auf Fernsehbildschirmen bis an die Ränder des Bildschirms erweitert werden. In der Regel gibt es auf der rechten Seite die Schaltfläche **Mehr** (dargestellt durch „...“), die weiter im fernsehsicheren Bereich angezeigt werden sollte. Im Folgenden finden Sie einige unterschiedliche Strategien, um die gewünschten Interaktionen und visuellen Effekte zu erzielen.
 
-**Option 1**: Ändern der `CommandBar` Hintergrundfarbe auf transparente oder die gleiche Farbe wie der Hintergrund:
+**Option 1**: Ändern der `CommandBar`-Hintergrundfarbe in transparent oder in die Farbe des Seitenhintergrunds:
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ Mit dem folgenden Codeausschnitt wird dieser Effekt erzielt:
 
 Hierdurch sieht die `CommandBar` aus, als ob sie auf dem gleichen Hintergrund wie der Rest der Seite angezeigt wird, sodass sich der Hintergrund nahtlos bis an den Rand des Bildschirms erstreckt.
 
-**Option 2**: Fügen Sie ein Hintergrundrechteck, dessen Füllung die gleiche Farbe hat, wie die `CommandBar` im Hintergrund, und es liegen unter der `CommandBar` und auf den Rest der Seite:
+**Option 2**: Hinzufügen eines Hintergrund-Rechtecks, dessen Füllung die gleiche Farbe wie der `CommandBar`-Hintergrund hat und das unten der `CommandBar` und über dem Rest der Seite liegt:
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -333,7 +333,7 @@ Sie platzieren den zuvor angezeigten Codeausschnitt entweder in die Seitenressou
 > [!NOTE]
 > Dieser Codeausschnitt gilt speziell für `ListView`-Elemente. Legen Sie bei einem `GridView`-Stil das [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)-Attribut für [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) und [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) auf `GridView` fest.
 
-Genauer abgestufte Steuerung, wie Elemente in der Ansicht, aktualisiert werden, wenn die Anwendung, Version 1803 abzielt oder höher, können Sie verwenden die [UIElement.BringIntoViewRequested Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested). Können Sie es in Einfügen der [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) für die **ListView**/**GridView** abzufangen, bevor Sie die interne **ScrollViewer** der Fall ist, wie in den folgenden Codeausschnitten:
+Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können es in [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit das **ListView** -/**GridView** es vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -450,7 +450,7 @@ Es empfiehlt sich, die Beschriftungen rechts neben den Symbolen auf einer [Comma
 
 Durch das Festlegen dieser Eigenschaft werden die Beschriftungen immer angezeigt. Dies ist bei einer 10-Fuß-Erfahrung vorteilhaft, denn es minimiert die Anzahl der durch den Benutzer erforderlichen Klicks. Auch für andere Gerätetypen ist dies ein hervorragendes Konzept.
 
-### <a name="tooltip"></a>QuickInfo
+### <a name="tooltip"></a>Tooltip
 
 Das Steuerelement [QuickInfo](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) wurde eingeführt, um zusätzliche Informationen in der Benutzeroberfläche anzeigen zu können, wenn der Benutzer mit der Maus auf ein Element zeigt oder mit dem Finger auf ein Element tippt und den Finger darauf hält. Für Gamepad und Remote wird `Tooltip` kurz nachdem das Element den Fokus erhält angezeigt, bleibt für einen kurzen Zeitraum auf dem Bildschirm und verschwindet dann. Dieses Verhalten könnte ablenkend wirken, wenn zu viele `Tooltip`-Elemente verwendet werden. Versuchen Sie, `Tooltip`-Elemente bei Entwürfen für Fernsehgeräte zu vermeiden.
 
@@ -462,13 +462,13 @@ Zwar funktionieren die Standard-UWP-Schaltflächen sehr gut auf TV-Bildschirmen,
 
 Eine geschachtelte Benutzeroberfläche (User Interface, UI) verfügt über geschachtelte Elemente mit ausführbaren Aktionen, die in einem Container eingeschlossen sind, sodass sowohl die geschachtelten Elemente als auch die Container unabhängig voneinander den Fokus erhalten können.
 
-Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung besteht in geschachtelten Elemente der Benutzeroberfläche platziert eine `ContextFlyout`.
+Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung ist das Platzieren von eingefügten Benutzeroberflächen Elementen in einer `ContextFlyout`.
 
 Weitere Informationen zur geschachtelten UI finden Sie unter [Geschachtelte UI bei Listenelementen](../controls-and-patterns/nested-ui.md).
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-Das [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig*. Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der [TransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Eigenschaft von `MediaPlayerElement` für das `MediaTransportControls`-Element Folgendes fest: `IsCompact="False"`.
+Das [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig*. Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der `IsCompact="False"`TransportControls`MediaTransportControls`-Eigenschaft von [ für das ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Element Folgendes fest: `MediaPlayerElement`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -566,6 +566,6 @@ Beim Entwerfen für die 10 Fuß-Erfahrung müssen einige besondere Punkte berüc
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Gerät Primer für apps der universellen Windows-Plattform (UWP)](index.md)
-- [Gamepad und Remotesteuerung Interaktionen](../input/gamepad-and-remote-interactions.md)
+- [Geräte Einführung für universelle Windows-Plattform-Apps (UWP)](index.md)
+- [Interaktionen mit Gamepad und Fernbedienung](../input/gamepad-and-remote-interactions.md)
 - [Sound in UWP-apps](../style/sound.md)

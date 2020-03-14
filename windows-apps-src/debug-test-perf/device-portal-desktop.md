@@ -1,21 +1,21 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Geräteportal für Windows-Desktop
-description: Hier erfahren Sie, wie das Windows Device Portal die Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
+description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
 ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräte Portal
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681971"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210186"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
-Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit Ihrem Desktop interagieren. Sie haben im Geräteportal folgende Möglichkeiten:
+Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit Ihrem Desktop interagieren. Sie haben im Device Portal folgende Möglichkeiten:
 - Anzeigen und Bearbeiten einer Liste laufender Prozesse
 - Installieren, Löschen, Starten und Beenden von Apps
 - Ändern von WLAN-Profilen und Anzeigen der Signalstärke und der ipconfig
@@ -62,28 +62,28 @@ Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführlic
 - Datei-Explorer
 - Laufende Prozesse
 - Leistung
-- Debugprotokolle
+- Debuggen
 - Ereignisablaufverfolgung für Windows (ETW)
 - Leistungsüberwachung
 - Geräte-Manager
-- -Netzwerk
+- Netzwerk
 - Absturzdaten
 - Features
 - Mixed Reality
 - Streaming Install-Debugger
-- Pfad
+- Location
 - Entwurf
 
 ## <a name="more-device-portal-options"></a>Weitere Optionen für das Geräteportal
 
 ### <a name="registry-based-configuration-for-device-portal"></a>Registrierungsbasierte Konfiguration für das Geräteportal
 
-Wenn Sie Portnummern für Geräteportal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
+Wenn Sie Portnummern für Device Portal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
 
 - Unter `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`: ein erforderliches DWORD. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
-    - `HttpPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Geräteportal nach HTTP-Verbindungen lauscht.    
-    - `HttpsPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Geräteportal nach HTTPS-Verbindungen lauscht.
+    - `HttpPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Device Portal nach HTTP-Verbindungen lauscht.    
+    - `HttpsPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
     
 Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderung deaktivieren:
 - `UseDefaultAuthorizer` - `0` deaktiviert, `1` aktiviert ist.  
@@ -129,7 +129,7 @@ Dieser Fehler wird möglicherweise angezeigt, wenn die Entwickler Pakete nicht i
 
 Dieser Fehler wird möglicherweise angezeigt, wenn Sie über eine getaktete Internetverbindung verfügen. Sie können die Entwickler Pakete nicht über eine getaktete Verbindung herunterladen.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 * [Übersicht über das Windows-Geräte Portal](device-portal.md)
 * [Referenz zur kernapi des Geräte Portals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

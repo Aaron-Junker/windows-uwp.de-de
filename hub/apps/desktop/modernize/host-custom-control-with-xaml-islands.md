@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b6bd46bcdec639cee2bc867c2c4e71cccbb13cfb
-ms.sourcegitcommit: a2a3c887f6da47a6638ce5286199ea31ee7780e4
+ms.openlocfilehash: d881fc42e453e2ace0a44543c3e204aa154958b7
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77606689"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209796"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
@@ -29,9 +29,7 @@ Um ein benutzerdefiniertes UWP-Steuerelement in einer WPF-App (oder Windows Form
 
 * **Das benutzerdefinierte UWP-Steuer**Element. Sie benötigen den Quellcode für das benutzerdefinierte UWP-Steuerelement, das Sie hosten möchten, damit Sie es mit Ihrer APP kompilieren können. In der Regel wird das benutzerdefinierte Steuerelement in einem UWP-Klassen Bibliotheksprojekt definiert, auf das Sie in derselben Projekt Mappe wie das WPF-oder Windows Forms-Projekt verweisen.
 
-* **Ein UWP-App-Projekt, das eine Stamm Anwendungsklasse definiert, die von xamlapplication abgeleitet**ist. Ihr WPF-oder Windows Forms Projekt muss Zugriff auf eine Instanz der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Dieses Objekt fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung.
-
-    Die empfohlene Vorgehensweise ist das Hinzufügen eines **leeren App-Projekts (Universal Windows)** zur gleichen Projekt Mappe wie das WPF-oder Windows Forms Projekt, das Überarbeiten der standardmäßigen `App` Klasse in diesem Projekt zur Ableitung von `XamlApplication`und das anschließende Erstellen einer Instanz dieses Objekts im Code für den Einstiegspunkt für Ihre APP.
+* **Ein UWP-App-Projekt, das eine Stamm Anwendungsklasse definiert, die von xamlapplication abgeleitet**ist. Ihr WPF-oder Windows Forms Projekt muss Zugriff auf eine Instanz der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Die empfohlene Vorgehensweise besteht darin, dieses Objekt in einem separaten UWP-App-Projekt zu definieren, das zur Lösung für Ihre WPF-oder Windows Forms-App gehört. Dieses Objekt fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung.
 
     > [!NOTE]
     > Die Projekt Mappe kann nur ein Projekt enthalten, das ein `XamlApplication` Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP verwenden dasselbe `XamlApplication` Objekt. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die als Host für UWP-Steuerelemente auf der XAML-Insel verwendet werden.
@@ -69,7 +67,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Definieren einer xamlapplication-Klasse in einem UWP-App-Projekt
 
-Fügen Sie als nächstes der gleichen Projekt Mappe wie das WPF-Projekt ein UWP-App-Projekt hinzu. Die Standard `App` Klasse in diesem Projekt wird so überarbeitet, dass Sie von der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse abgeleitet wird, die vom Windows Community Toolkit bereitgestellt wird. Weitere Informationen zum Zweck dieser Klasse finden Sie in [diesem Abschnitt](#required-components).
+Fügen Sie als nächstes der Projekt Mappe ein UWP-App-Projekt hinzu, und überarbeiten Sie die Standard `App` Klasse in diesem Projekt, um Sie von der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse abzuleiten, die vom Windows Community Toolkit bereitgestellt wird. Ihre APP verwendet diese Klasse als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung.
 
 1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten Projekt Mappe, und wählen Sie -> **Neues Projekt** **Hinzufügen** .
 2. Fügen Sie der Projektmappe ein **Leere App (Universal Windows)** -Projekt hinzu. Stellen Sie sicher, dass die Zielversion und die Mindestversion auf **Windows 10, Version 1903** oder höher, festgelegt sind.
@@ -107,7 +105,7 @@ Fügen Sie als nächstes der gleichen Projekt Mappe wie das WPF-Projekt ein UWP-
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>Instanziieren Sie das xamlapplication-Objekt im Einstiegspunkt der WPF-App.
 
-Fügen Sie als nächstes Code zum Einstiegspunkt für Ihre WPF-App hinzu, um eine Instanz der `App`-Klasse zu erstellen, die Sie soeben im UWP-Projekt definiert haben (Dies ist die Klasse, die jetzt von `XamlApplication`abgeleitet ist). Weitere Informationen zum Zweck dieses Objekts finden Sie in [diesem Abschnitt](#required-components).
+Fügen Sie als nächstes Code zum Einstiegspunkt für Ihre WPF-App hinzu, um eine Instanz der `App`-Klasse zu erstellen, die Sie soeben im UWP-Projekt definiert haben (Dies ist die Klasse, die jetzt von `XamlApplication`abgeleitet ist). Dieses Objekt fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung.
 
 1. Klicken Sie im WPF-Projekt mit der rechten Maustaste auf den Projekt Knoten, wählen Sie -> **Neues Element** **Hinzufügen** aus, und wählen Sie dann **Klasse**aus. Benennen Sie die **Klasse,** und klicken Sie auf **Hinzufügen**.
 

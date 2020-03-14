@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, In-app-käufe, IAPs-add-ons, Testversionen, verbrauchbar, dauerhaft, abonnement
 ms.localizationpriority: medium
 ms.openlocfilehash: 5396a8a6f02271647eb16d469853241b5717bd6e
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340285"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209776"
 ---
 # <a name="in-app-purchases-and-trials"></a>In-App-Käufe und Testversionen
 
@@ -227,9 +227,9 @@ Führen Sie die folgenden Schritte durch, um ein **StoreContext**-Objekt in eine
 
 Jedes Produkt im Store verfügt über mindestens eine *SKU*, und jede SKU verfügt über mindestens eine *Verfügbarkeit*. Diese Konzepte werden von den meisten Entwicklern in Partner Center abstrahiert, und die meisten Entwickler definieren niemals SKUs oder Verfügbarkeit für Ihre apps oder Add-ons. Da jedoch das Objektmodell für Store-Produkte im **Windows.Services.Store**-Namespace SKUs und Verfügbarkeiten umfasst, können Grundkenntnisse zu diesen Konzepten für einige Szenarien hilfreich sein.
 
-| Objekt |  Beschreibung  |
+| Object |  Beschreibung  |
 |---------|-------------------|
-| Produkt  |  Ein *Produkt* stellt alle im Store verfügbaren Produkttypen dar, einschließlich der Apps und Add-Ons. <p/><p/> Jedes Produkt im Store verfügt über ein entsprechendes [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) Objekt. Diese Klasse stellt Eigenschaften für den Zugriff auf Daten bereit, z. B. die Store-ID des Produkts, die Bilder und Videos für den Store-Eintrag sowie Preisinformationen. Sie stellt außerdem Methoden bereit, mit denen Sie das Produkt kaufen können. |
+| Product  |  Ein *Produkt* stellt alle im Store verfügbaren Produkttypen dar, einschließlich der Apps und Add-Ons. <p/><p/> Jedes Produkt im Store verfügt über ein entsprechendes [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) Objekt. Diese Klasse stellt Eigenschaften für den Zugriff auf Daten bereit, z. B. die Store-ID des Produkts, die Bilder und Videos für den Store-Eintrag sowie Preisinformationen. Sie stellt außerdem Methoden bereit, mit denen Sie das Produkt kaufen können. |
 | SKU |  Eine *SKU* ist eine bestimmte Version eines Produkts mit eigener Beschreibung, Preis und anderen eindeutigen Produktdetails. Jede App und jedes Add-On verfügt über eine Standard-SKU. Die meisten Entwickler verfügen nur dann über mehrere SKUs für eine App, wenn sie eine Vollversion der App und eine Testversion veröffentlichen (im Store-Katalog ist jede dieser Versionen eine andere SKU derselben App). <p/><p/> Einige Herausgeber können ihre eigenen SKUs definieren. Ein großer Spieleherausgeber kann z. B. ein Spiel mit einer SKU, die grünes Blut zeigt, in Märkten veröffentlichen, in denen kein rotes Blut zulässig ist, und eine andere SKU für rotes Blut in allen anderen Märkten. Alternativ kann ein Herausgeber, der digitale Videoinhalte verkauft, zwei SKUs für ein Video veröffentlichen, eine SKU für eine HD-Version und eine andere SKU für die SD-Version. <p/><p/> Jede SKU im Store verfügt über ein entsprechendes [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) Objekt. Jedes [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) hat eine [Skus](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.skus)-Eigenschaft, mit der Sie auf die SKUs für das Produkt zugreifen können. |
 | Verfügbarkeit  |  Eine *Verfügbarkeit* ist eine bestimmte Version einer SKU mit eigenen eindeutigen Preisinformationen. Jede SKU verfügt über eine Standardverfügbarkeit. Einige Herausgeber können eigene Verfügbarkeiten zum Vorstellen unterschiedlicher Preisoptionen für eine bestimmte SKU definieren. <p/><p/> Jede Verfügbarkeit im Store verfügt über ein entsprechendes [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) Objekt. Jede [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) verfügt über eine [Availabilities](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.availabilities)-Eigenschaft, mit der Sie auf die Verfügbarkeiten für die SKU zugreifen können. Für die meisten Entwickler verfügt jede SKU über eine einzelne Standardverfügbarkeit.  |
 
@@ -247,7 +247,7 @@ Die Store-ID eines Produkts im Store ist eine zwölfstellige alphanumerische Zei
 
 Für Produkte mit SKUs und Verfügbarkeiten haben die SKUs und Verfügbarkeiten außerdem eigene Store-IDs in verschiedenen Formaten.
 
-| Objekt |  Store-ID-Format  |
+| Object |  Store-ID-Format  |
 |---------|-------------------|
 | SKU |  Die SKU-ID für eine SKU hat das Format ```<product Store ID>/xxxx```, wobei ```xxxx``` eine vierstellige alphanumerische Zeichenfolge ist, die eine SKU für das Produkt identifiziert. Beispiel: ```9NBLGGH4R315/000N```. Diese ID wird von der [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid)-Eigenschaft eines [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku)-Objekts zurückgegeben und mitunter als die *SKU-Store-ID* bezeichnet. |
 | Verfügbarkeit  |  Die Store-ID für eine Verfügbarkeit hat das Format ```<product Store ID>/xxxx/yyyyyyyyyyyy```, wobei ```xxxx``` eine vierstellige alphanumerische Zeichenfolge ist, die eine SKU für das Produkt identifiziert, und ```yyyyyyyyyyyy``` eine zwölfstellige alphanumerische Zeichenfolge, die eine Verfügbarkeit für die SKU identifiziert. Beispiel: ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. Diese ID wird von der [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid)-Eigenschaft eines [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability)-Objekts zurückgegeben und mitunter als die *Verfügbarkeits-Store-ID* bezeichnet.  |
@@ -270,7 +270,7 @@ Wenn Ihre App den **Windows.Services.Store**-Namespace verwendet, können Sie di
 
 ### <a name="apps-that-use-the-windowsapplicationmodelstore-namespace"></a>Apps, die den Windows.ApplicationModel.Store-Namespace verwenden
 
-Wenn Ihre APP den **Windows. applicationmodel. Store** -Namespace verwendet, müssen Sie die Produkt-ID verwenden, die Sie einem Add-on im Partner Center für die meisten Vorgänge zuweisen. Zum Beispiel:
+Wenn Ihre APP den **Windows. applicationmodel. Store** -Namespace verwendet, müssen Sie die Produkt-ID verwenden, die Sie einem Add-on im Partner Center für die meisten Vorgänge zuweisen. Beispiel:
 
 * Verwenden Sie die Produkt-ID zum Identifizieren der [ProductListing](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting), die das Add-On darstellt oder der [ProductLicense](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense) die die Lizenz Ihres Add-Ons darstellt. Die Produkt-ID wird über die Eigenschaften [ProductListing.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.ProductId) und [ProductLicense.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense.ProductId) verfügbar gemacht.
 

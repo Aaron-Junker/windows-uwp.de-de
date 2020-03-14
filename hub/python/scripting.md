@@ -9,11 +9,11 @@ keywords: Python, Windows 10, Microsoft, Python-Systemverwaltung, Python-Dateia
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853167"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79208995"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>Erste Schritte bei der Verwendung von Python unter Windows für Skripts und Automatisierung
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Spieleinstellungen, Anzeigemodus, Systemanforderungen, Hardwareanforderungen, Mindestanforderungen an die Hardware, empfohlene Hardware, Datenschutzrichtlinie, Kontaktinformationen für den Support, App-Website, Supportinformationen
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bc1283560334d2eac97fd358feabfca0f411014
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320043"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210756"
 ---
 # <a name="enter-app-properties"></a>Eingeben von App-Eigenschaften
 
@@ -58,7 +58,7 @@ Geben Sie die URL der Webseite ein, auf der Ihre Kunden Support für die App erh
 
 ## <a name="game-settings"></a>Einstellungen für Spiele
 
-Dieser Abschnitt wird nur angezeigt, wenn Sie als Kategorie des Produkts **Spiele** ausgewählt haben. Hier können Sie angeben, welche Features von Ihrem Spiel unterstützt werden. Die Informationen, die Sie in diesem Abschnitt bieten erscheint auf des Produkts Store auflisten.
+Dieser Abschnitt wird nur angezeigt, wenn Sie als Kategorie des Produkts **Spiele** ausgewählt haben. Hier können Sie angeben, welche Features von Ihrem Spiel unterstützt werden. Die Informationen, die Sie in diesem Abschnitt angeben, werden in der Store-Liste des Produkts angezeigt.
 
 Wenn Ihr Spiel eine Multiplayer-Option unterstützt, müssen Sie die minimale und maximale Anzahl der Spieler für eine Sitzung angeben. Sie können nicht mehr als 1.000 minimale oder maximale Spieler eingeben.
 
@@ -92,13 +92,13 @@ Wenn Sie eine Auswahl für **Mindesthardwareanforderungen** treffen, werden dies
 
 Das Verhalten für Kunden variiert abhängig von den spezifischen Anforderungen und der Windows-Version des Kunden:
 
-- **Für Kunden mit Windows 10, Version 1607 oder höher:**
+- **Für Kunden unter Windows 10, Version 1607 oder höher:**
      - Alle Mindest- und empfohlenen Anforderungen werden im Store-Eintrag angezeigt.
      - Der Store überprüft alle Mindestanforderungen und zeigt eine Warnung für Kunden an, deren Gerät die Anforderungen nicht erfüllt.
-- **Für Kunden in früheren Versionen von Windows 10:**
+- **Für Kunden mit früheren Versionen von Windows 10:**
      - Für die meisten Kunden werden alle Mindest- und empfohlenen Hardwareanforderungen im Store-Eintrag angezeigt (Kunden mit älteren Versionen des Store-Clients werden jedoch nur die Mindesthardwareanforderungen angezeigt).
      - Der Store versucht, Elemente zu überprüfen, die Sie als **Mindesthardwareanforderungen** kennzeichnen, mit Ausnahme von **Speicher**, **DirectX**, **Videospeicher**, **Grafiken** und **Prozessor**. Diese Optionen werden nicht überprüft, und Kunden mit Geräten, die diese Anforderungen nicht erfüllen, wird keine Warnung angezeigt. 
-- **Für Kunden in Windows 8.x und früher oder Windows Phone 8.x und früher:**
+- **Für Kunden unter Windows 8. x und früher oder Windows Phone 8. x und früher:**
      - Wenn Sie das Feld **Mindesthardwareanforderungen** für **Touchscreen** aktivieren, wird diese Anforderung im Store-Eintrag Ihrer App angezeigt und Kunden auf Geräten ohne Touchscreen wird eine Warnung angezeigt, wenn sie versuchen, die App herunterladen. Es werden keine weiteren Anforderungen überprüft oder in Ihrem Store-Eintrag angezeigt.
 
 Zusätzlich wird empfohlen, der App Laufzeitprüfungen für die angegebene Hardware hinzuzufügen, da vom Store nicht immer erkannt werden kann, ob ein Kundengerät über das ausgewählte Feature verfügt, sodass Kunden die App trotz der Warnung herunterladen können. Wenn Sie verhindern möchten, dass Ihre UWP-App auf ein Gerät heruntergeladen wird, das die Mindestanforderungen für die Arbeitsspeicherkapazität oder DirectX-Ebene nicht erfüllt, können Sie die Mindestanforderungen in der [Datei StoreManifest XML](https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root).

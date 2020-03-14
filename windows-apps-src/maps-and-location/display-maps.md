@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, karten, standort, kartensteuerelement, kartenansichten
 ms.localizationpriority: medium
 ms.openlocfilehash: cc12f6c9b9177bce9a91288fdd2c43c118be5f61
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260431"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210306"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten
 
@@ -85,16 +85,16 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 ## <a name="display-map-in-a-control"></a>Anzeigen eines Kartensteuerelements
 
-Verwenden Sie ein Kartensteuerelement, um in Ihrer App reichhaltige und anpassbare Kartendaten anzuzeigen. Mithilfe des Kartensteuerelements können Straßenkarten, Luftbilder, 3D-Ansichten, Wegbeschreibungen, Suchergebnisse und Verkehrsinformationen angezeigt werden. In einer Karte können Sie die Position des Benutzers, Wegbeschreibungen und interessante Orte anzeigen. Zudem kann eine Karte 3D-Luftbilder, Streetside-Ansichten, Verkehrsinformationen, öffentliche Verkehrsmittel und lokale Unternehmen enthalten.
+Verwenden Sie ein Kartensteuerelement, um in Ihrer App reichhaltige und anpassbare Kartendaten anzuzeigen. Mithilfe des Kartensteuerelements können Straßenkarten, Luftbilder, 3D-Ansichten, Wegbeschreibungen, Suchergebnisse und Verkehrsinformationen angezeigt werden. In einer Karte können Sie die Position des Benutzers, Wegbeschreibungen und interessante Orte anzeigen. Zudem kann eine Karte 3D-Luftbilder, Streetside-Ansichten, den Verkehr, öffentliche Verkehrsmittel und lokale Unternehmen enthalten.
 
-Verwenden Sie ein Kartensteuerelement, wenn Sie in Ihrer App eine Karte benötigen, auf der Benutzer App-spezifische oder allgemeine geografische Informationen anzeigen können. Wenn die App ein Kartensteuerelement enthält, müssen Benutzer die App nicht verlassen, um diese Informationen zu erhalten.
+Verwenden Sie ein Kartensteuerelement, wenn Sie in Ihrer App eine Karte benötigen, auf der Benutzer App-spezifische oder allgemeine geografische Informationen anzeigen können. Wenn die App ein Kartensteuerelement enthält, müssen Benutzer die App für diese Informationen nicht verlassen.
 
 > [!NOTE]
 >Wenn es Ihnen nichts ausmacht, dass Benutzer dafür die App verlassen, können Sie diese Informationen auch mit der Windows-Karten-App bereitstellen. Ihre App kann die Windows-Karten-App starten, um bestimmte Karten, Wegbeschreibungen und Suchergebnisse anzuzeigen. Weitere Informationen finden Sie unter [Starten der Windows-Karten-App](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app).
 
 ### <a name="add-a-map-control-to-your-app"></a>Hinzufügen eines Kartensteuerelements zu einer App
 
-Zeigen Sie eine Karte über eine XAML-Seite durch Hinzufügen eines [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) an. Um **MapControl** zu verwenden, müssen Sie den Namespace [**Windows.UI.Xaml.Controls.Maps**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps) in der XAML-Seite oder im Code deklarieren. Wenn Sie das Steuerelement der Toolbox entnehmen, wird die Namespacedeklaration automatisch hinzugefügt. Wenn Sie **MapControl** manuell zur XAML-Seite hinzufügen, müssen Sie die Namespacedeklaration oben auf der Seite manuell hinzufügen.
+Zeigen Sie eine Karte auf einer XAML-Seite durch Hinzufügen eines [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) an. Um **MapControl** zu verwenden, müssen Sie den Namespace [**Windows.UI.Xaml.Controls.Maps**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps) in der XAML-Seite oder im Code deklarieren. Wenn Sie das Steuerelement der Toolbox entnehmen, wird die Namespacedeklaration automatisch hinzugefügt. Wenn Sie **MapControl** manuell zur XAML-Seite hinzufügen, müssen Sie die Namespacedeklaration oben auf der Seite manuell hinzufügen.
 
 Das folgende Beispiel zeigt ein einfaches Kartensteuerelement. Außerdem wird die Karte so konfiguriert, dass Toucheingaben möglich sind und gleichzeitig die Steuerelemente für Zoom und Neigung angezeigt werden.
 
@@ -419,7 +419,7 @@ private async void display3DLocation()
 ## <a name="get-info-about-locations"></a>Informationen über Standorte abrufen
 
 
-Rufen Sie Informationen zu Standorten auf der Karte ab, indem Sie die folgenden Methoden von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) aufrufen.
+Rufen Sie Informationen zu Positionen auf der Karte ab, indem Sie die folgenden Methoden von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) aufrufen.
 
 -   [**Trygetlocationfromuffset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getlocationfromoffset) -Methode: der geografische Speicherort, der dem angegebenen Punkt im Viewport des Karten Steuer Elements entspricht, wird abgerufen.
 -   [**Gedeffsetfromlocation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.getoffsetfromlocation) -Methode: der Punkt im Viewport des Karten Steuer Elements, das dem angegebenen geografischen Standort entspricht, wird abgerufen.
@@ -429,7 +429,7 @@ Rufen Sie Informationen zu Standorten auf der Karte ab, indem Sie die folgenden 
 ## <a name="handle-interaction-and-changes"></a>Behandeln von Interaktionen und Änderungen
 
 
-Sie verarbeiten Benutzereingabegesten auf der Karte, indem Sie die folgenden Ereignisse von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) behandeln. Rufen Sie Informationen zum geografischen Standort auf der Karte und der physischen Position im Viewport ab, an der die Geste ausgeführt wurde, indem Sie die Werte der [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapinputeventargs.location)-Eigenschaft und der [**Position**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapinputeventargs.position)-Eigenschaft von [**MapInputEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) überprüfen.
+Sie behandeln Benutzereingabegesten auf der Karte, indem Sie die folgenden Ereignisse von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) behandeln. Rufen Sie Informationen zum geografischen Standort auf der Karte und der physischen Position im Viewport ab, an der die Geste ausgeführt wurde, indem Sie die Werte der [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapinputeventargs.location)-Eigenschaft und der [**Position**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapinputeventargs.position)-Eigenschaft von [**MapInputEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) überprüfen.
 
 -   [**Maptippt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.maptapped)
 -   [**Mapdoublegetappt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapdoubletapped)

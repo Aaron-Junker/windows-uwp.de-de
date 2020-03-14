@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, Desktop-Brücke, sekundäre Kacheln, anheften, Anheften, Schnellstart, Codebeispiel, Beispiel, Sekundärkachel, Desktopanwendung, Win32, Winforms, WPF
 ms.localizationpriority: medium
 ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340400"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209916"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Sekundäre Kacheln von der Desktopanwendung anheften
 
@@ -22,7 +22,7 @@ Dank der [Desktop-Brück](https://developer.microsoft.com/windows/bridges/deskto
 ![Screenshot von sekundären Kacheln](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **Fall Creators Update erforderlich**: Sie müssen das SDK 16299 als Ziel festlegen und Build 16299 oder höher ausführen, um sekundäre Kacheln aus Desktop Bridge-apps anzuheften.
+> **Erfordert das Fall Creators Update**: Sie müssen als Ziel das SDK 16299 angeben und Build 16299 oder höher ausführen, um sekundäre Kacheln von Desktop-Brücke-Apps anzuheften.
 
 Das Hinzufügen einer sekundären Kachel aus Ihrer WPF- oder WinForms-Anwendung ist einer reinen UWP-App sehr ähnlich. Der einzige Unterschied besteht darin, dass Sie das Hauptfenster-Handle (HWND) angeben müssen. Der Grund dafür ist, dass Windows beim Anheften einer Kachel ein modales Dialogfeld anzeigt, das den Benutzer auffordert zu bestätigen, dass er die Kachel anheften möchte. Wenn die Desktop-Anwendung das SecondaryTile-Objekt nicht mit dem Besitzerfenster konfigurieren, kann Windows nicht feststellen, wo das Dialogfeld gezeichnet werden soll und der Vorgang schlägt fehl.
 
@@ -90,7 +90,7 @@ bool isPinned = await tile.RequestCreateAsync();
 ## <a name="send-tile-notifications"></a>Senden von Kachelbenachrichtigungen
 
 > [!IMPORTANT]
-> **Erfordert die Version 17134,81 oder höher von April 2018**: Sie müssen Build 17134,81 oder höher ausführen, um Kachel-oder Badge-Benachrichtigungen von Desktop Bridge-apps an sekundäre Kacheln zu senden. Vor diesem x.81-Wartungsupdate würde beim Senden von Kachel- oder Signalbenachrichtigungen für sekundäre Kacheln von Desktop-Brücke-Apps die Ausnahme 0x80070490 *Element nicht gefunden* auftreten.
+> **Erfordert April 2018 Version 17134.81 oder höher**: Sie müssen Build 17134.81 oder höher ausführen, um Kachel- oder Signalbenachrichtigungen für sekundäre Kacheln von Desktop-Brücke-Apps zu senden. Vor diesem x.81-Wartungsupdate würde beim Senden von Kachel- oder Signalbenachrichtigungen für sekundäre Kacheln von Desktop-Brücke-Apps die Ausnahme 0x80070490 *Element nicht gefunden* auftreten.
 
 Das Senden von Kachel- oder Signalbenachrichtigungen ist identisch wie bei UWP-Apps. Weitere Informationen finden Sie unter [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md).
 

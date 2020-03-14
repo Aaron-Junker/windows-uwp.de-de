@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d6e8704d61589731f09de7c16b0eae987d593968
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.openlocfilehash: 4bc474c3414969f27468a8daf262df0ae6e3b57e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853017"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209786"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines UWP-Standard Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
@@ -31,12 +31,10 @@ Wenn Sie ein UWP-Steuerelement in einer WPF-App (oder Windows Forms) hosten möc
 
 * **Das Projekt und den Quellcode für Ihre APP**. Die Verwendung des [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuer Elements zum Hosten von standardmäßigen UWP-Steuerelementen von erst Anbietern wird in Apps unterstützt, die auf die .NET Framework oder .net Core 3 abzielen.
 
-* **Ein UWP-App-Projekt, das eine Stamm Anwendungsklasse definiert, die von xamlapplication abgeleitet**ist. Ihr WPF-oder Windows Forms Projekt muss Zugriff auf eine Instanz der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Dieses Objekt fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung.
-
-    Die empfohlene Vorgehensweise ist das Hinzufügen eines **leeren App-Projekts (Universal Windows)** zur gleichen Projekt Mappe wie das WPF-oder Windows Forms Projekt, das Überarbeiten der standardmäßigen `App` Klasse in diesem Projekt zur Ableitung von `XamlApplication`und das anschließende Erstellen einer Instanz dieses Objekts im Code für den Einstiegspunkt für Ihre APP.
+* **Ein UWP-App-Projekt, das eine Stamm Anwendungsklasse definiert, die von xamlapplication abgeleitet**ist. Ihr WPF-oder Windows Forms Projekt muss Zugriff auf eine Instanz der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse haben, die vom Windows Community Toolkit bereitgestellt wird. Die empfohlene Vorgehensweise besteht darin, dieses Objekt in einem separaten UWP-App-Projekt zu definieren, das zur Lösung für Ihre WPF-oder Windows Forms-App gehört. Dieses Objekt fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis der Anwendung.
 
     > [!NOTE]
-    > Obwohl diese Komponente nicht für triviale XAML-Insel Szenarios erforderlich ist, wie z. b. das Hosting eines UWP-Steuer Elements eines ersten Anbieters, benötigt Ihre APP dieses `XamlApplication` Objekt, um alle XAML-Insel Szenarios zu unterstützen, einschließlich des Hostings benutzerdefinierter UWP Daher empfiehlt es sich, in jeder Projekt Mappe, in der Sie XAML-Inseln verwenden, immer ein `XamlApplication`-Objekt zu definieren.
+    > Obwohl das `XamlApplication` Objekt nicht zum Hosting eines UWP-Steuer Elements eines ersten Anbieters erforderlich ist, benötigt Ihre APP dieses Objekt, um die gesamte Palette von XAML-Insel Szenarios zu unterstützen, einschließlich des Hostings benutzerdefinierter UWP-Steuerelemente Daher empfiehlt es sich, in jeder Projekt Mappe, in der Sie XAML-Inseln verwenden, immer ein `XamlApplication`-Objekt zu definieren.
 
     > [!NOTE]
     > Die Projekt Mappe kann nur ein Projekt enthalten, das ein `XamlApplication` Objekt definiert. Alle benutzerdefinierten UWP-Steuerelemente in Ihrer APP verwenden dasselbe `XamlApplication` Objekt. Das Projekt, das das `XamlApplication` Objekt definiert, muss Verweise auf alle anderen UWP-Bibliotheken und-Projekte enthalten, die zum Hosten von UWP-Steuerelementen auf der XAML-Insel verwendet werden.
@@ -69,7 +67,10 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Definieren einer xamlapplication-Klasse in einem UWP-App-Projekt
 
-Fügen Sie als nächstes der gleichen Projekt Mappe wie das WPF-Projekt ein UWP-App-Projekt hinzu. Die Standard `App` Klasse in diesem Projekt wird so überarbeitet, dass Sie von der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse abgeleitet wird, die vom Windows Community Toolkit bereitgestellt wird. Weitere Informationen zum Zweck dieser Klasse finden Sie in [diesem Abschnitt](#required-components).
+Fügen Sie als nächstes der Projekt Mappe ein UWP-App-Projekt hinzu, und überarbeiten Sie die Standard `App` Klasse in diesem Projekt, um Sie von der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse abzuleiten, die vom Windows Community Toolkit bereitgestellt wird.
+
+> [!NOTE]
+> Obwohl dieser Schritt nicht erforderlich ist, um ein UWP-Steuerelement eines ersten Anbieters zu Hosting, benötigt Ihre APP das `XamlApplication` Objekt, um alle XAML-Insel Szenarios zu unterstützen, einschließlich des Hostings benutzerdefinierter UWP-Steuerelemente. Daher empfiehlt es sich, in jeder Projekt Mappe, in der Sie XAML-Inseln verwenden, immer ein `XamlApplication`-Objekt zu definieren.
 
 1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten Projekt Mappe, und wählen Sie -> **Neues Projekt** **Hinzufügen** .
 2. Fügen Sie der Projektmappe ein **Leere App (Universal Windows)** -Projekt hinzu. Stellen Sie sicher, dass die Zielversion und die Mindestversion auf **Windows 10, Version 1903** oder höher, festgelegt sind.
@@ -107,7 +108,7 @@ Fügen Sie als nächstes der gleichen Projekt Mappe wie das WPF-Projekt ein UWP-
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>Instanziieren Sie das xamlapplication-Objekt im Einstiegspunkt der WPF-App.
 
-Fügen Sie als nächstes Code zum Einstiegspunkt für Ihre WPF-App hinzu, um eine Instanz der `App`-Klasse zu erstellen, die Sie soeben im UWP-Projekt definiert haben (Dies ist die Klasse, die jetzt von `XamlApplication`abgeleitet ist). Weitere Informationen zum Zweck dieses Objekts finden Sie in [diesem Abschnitt](#required-components).
+Fügen Sie als nächstes Code zum Einstiegspunkt für Ihre WPF-App hinzu, um eine Instanz der `App`-Klasse zu erstellen, die Sie soeben im UWP-Projekt definiert haben (Dies ist die Klasse, die jetzt von `XamlApplication`abgeleitet ist).
 
 1. Klicken Sie im WPF-Projekt mit der rechten Maustaste auf den Projekt Knoten, wählen Sie -> **Neues Element** **Hinzufügen** aus, und wählen Sie dann **Klasse**aus. Benennen Sie die **Klasse,** und klicken Sie auf **Hinzufügen**.
 

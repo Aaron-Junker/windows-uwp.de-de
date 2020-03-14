@@ -3,14 +3,14 @@ Description: Verwenden Sie Layoutpanels, um UI-Elemente in Ihrer App anzuordnen 
 title: Layoutpanels für UWP-Apps (Apps für die Universelle Windows-Plattform)
 ms.date: 04/02/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340121"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210206"
 ---
 # <a name="layout-panels"></a>Layoutpanels
 
@@ -182,13 +182,13 @@ In diesem Beispiel funktioniert die Festlegung der Größe wie folgt:
 
 Verteilen Sie den Platz innerhalb einer Spalte oder Zeile mit der automatischen Größenanpassung **Auto** oder per Größenanpassung mit Sternvariablen. Verwenden Sie die automatische Größenanpassung, damit die Größe von UI-Elementen entsprechend ihren Inhalten oder der Größe des übergeordneten Containers geändert wird. Sie können die automatische Größenanpassung auch für die Zeilen und Spalten eines Rasters verwenden. Um die automatische Größenanpassung zu verwenden, legen Sie für „Height“ und/oder „Width“ von UI-Elementen **Auto** fest.
 
-Die proportionale Größenanpassung, die auch als *Größenanpassung mit Sternvariable* bezeichnet wird, wird zum gleichmäßigen Aufteilen des verfügbaren Platzes auf die Zeilen und Spalten eines Rasters verwendet. In XAML werden Stern Werte als \* (oder *n* \* für gewichtete Stern Größen) ausgedrückt. Um beispielsweise anzugeben, dass eine Spalte fünfmal größer als die zweite Spalte in einem 2-Spalten-Layout ist, verwenden Sie "\*5" und\*"" für die [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) -Eigenschaften in den [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) -Elementen.
+Die proportionale Größenanpassung, die auch als *Größenanpassung mit Sternvariable* bezeichnet wird, wird zum gleichmäßigen Aufteilen des verfügbaren Platzes auf die Zeilen und Spalten eines Rasters verwendet. In XAML werden Stern Werte als \* ausgedrückt (oder *n*\* für gewichtete Stern Größen). Um beispielsweise anzugeben, dass eine Spalte fünfmal größer als die zweite Spalte in einem 2-Spalten-Layout ist, verwenden Sie "5\*" und "\*" für die [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) -Eigenschaften in den [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) -Elementen.
 
 In diesem Beispiel wird die feste, automatische und proportionale Größenanpassung in einem [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) mit 4 Spalten kombiniert.
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
-Column_1 | **Automatisch** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
+Column_1 | **Auto** | Die Breite der Spalte wird entsprechend ihres Inhalts angepasst.
 Column_2 | * | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_2 ist nur halb so breit wie Column_4.
 Column_3 | **44** | Die Spalte ist 44 Pixel breit.
 Column_4 | **2**\* | Nach dem Berechnen der Spalten mit automatischer Breite erhält diese Spalte einen Teil der verbleibenden Breite. Column_4 ist doppelt so breit wie Column_2.
@@ -274,4 +274,4 @@ Es gibt verschiedene spezielle Panels, die nur als [**ItemsPanel**](https://docs
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.

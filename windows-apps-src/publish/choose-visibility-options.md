@@ -1,23 +1,23 @@
 ---
-Description: Legen Sie Einschränkungen auf wie Ihre app ermittelt und erworben haben, einschließlich, ob Ihre app in den Store zu finden oder finden Sie in die Auflistung überhaupt Store werden kann.
-title: Sichtbarkeitsoptionen auswählen
+Description: Legen Sie Einschränkungen fest, wie Ihre APP ermittelt und abgerufen werden kann. dazu gehört auch, ob Personen Ihre APP im Store finden oder Ihre Store-Liste anzeigen können.
+title: Auswählen von Sichtbarkeitsoptionen
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Sichtbarkeit, private Zielgruppe, verfügbar, sichtbar
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c78b8c7a84c6bdaedb58055d8b36883c6a61607
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787161"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210436"
 ---
-# <a name="choose-visibility-options"></a>Sichtbarkeitsoptionen auswählen
+# <a name="choose-visibility-options"></a>Auswählen von Sichtbarkeitsoptionen
 
 
 Im Abschnitt **Sichtbarkeit** der [Seite „Preise und Verfügbarkeit“](set-app-pricing-and-availability.md) können Sie Einschränkungen dafür festlegen, wie die App gefunden und erworben werden kann. Dadurch haben Sie die Möglichkeit festzulegen, ob Benutzer Ihre App im Store finden können oder den Store-Eintrag überhaupt sehen können.
 
-Es gibt zwei separate Abschnitte, in dem Abschnitt der Sichtbarkeit aus: **Zielgruppe** und **Erkennbarkeit**. 
+Es gibt zwei separate Bereiche innerhalb des Abschnitts „Sichtbarkeit”: **Zielgruppe** und **Erkennbarkeit** . 
 
 ## <a name="audience"></a>Zielgruppe
 
@@ -49,16 +49,16 @@ Wenn Sie die App für eine öffentliche Zielgruppe an einem bestimmten Datum und
 Wenn Sie kein Datum und keine Uhrzeit angeben, an denen Ihre App für die öffentliche Zielgruppe zur Verfügung gestellt wird, können Sie dies später tun, indem Sie eine neue Übermittlung erstellen und Ihre Zielgruppe von **private Zielgruppe** auf **öffentliche Zielgruppe** festlegen. Wenn Sie dies tun, sollten Sie bedenken, das Ihre App möglicherweise einen zusätzlichen Zertifizierungsprozess durchlaufen muss. Sie sollten darauf vorbereitet sein, alle neuen Zertifizierungsprobleme zu beheben, die auftreten können. 
 
 Hier sind einige wichtige Aspekte, die Sie beachten sollten, wenn Ihre App an eine private Zielgruppe vertrieben wird:
-- Personen in Ihrer privaten Zielgruppe sind in der Lage, sich die App über ein direktes Link zum Store-Eintrag Ihrer App zu holen, wobei sie sich mit ihrem Microsoft-Konto anmelden müssen, um die App anzuzeigen. Dieser Link wird bereitgestellt, wenn Sie **private Zielgruppe** auswählen. Sie finden es auch auf der Seite [App-Identität](view-app-identity-details.md) unter **URL, wenn die App nur für bestimmte Personen sichtbar ist (erfordert Authentifizierung)**. Stellen Sie sicher dass Ihre Tester diesen Link erhalten, und nicht die reguläre URL für Ihren Store-Eintrag.  
+- Personen in Ihrer privaten Zielgruppe sind in der Lage, sich die App über ein direktes Link zum Store-Eintrag Ihrer App zu holen, wobei sie sich mit ihrem Microsoft-Konto anmelden müssen, um die App anzuzeigen. Dieser Link wird bereitgestellt, wenn Sie **private Zielgruppe** auswählen. Sie finden es auch auf der Seite [App-Identität](view-app-identity-details.md) unter **URL, wenn die App nur für bestimmte Personen sichtbar ist (erfordert Authentifizierung)** . Stellen Sie sicher dass Ihre Tester diesen Link erhalten, und nicht die reguläre URL für Ihren Store-Eintrag.  
 - Wenn Sie nicht die Option unter **Auffindbarkeit** auswählen, wodurch dies verhindert wird, sind Personen Ihrer privaten Zielgruppen in der Lage, Ihre App zu finden, indem Sie diese unter Microsoft Store-App suchen. Der Webeintrag ist allerdings nicht über die Suche auffindbar, auch nicht für Personen in dieser Gruppe. 
-- Sie können nicht das [Datum der Veröffentlichung im Abschnitt Zeitplan konfigurieren](configure-precise-release-scheduling.md) auf der **Seite „Preise und Verfügbarkeit“**, da Ihre App nicht für Kunden außerhalb Ihrer privaten Zielgruppe veröffentlicht wird.
+- Sie können nicht das [Datum der Veröffentlichung im Abschnitt Zeitplan konfigurieren](configure-precise-release-scheduling.md) auf der **Seite „Preise und Verfügbarkeit“** , da Ihre App nicht für Kunden außerhalb Ihrer privaten Zielgruppe veröffentlicht wird.
 - Jede andere vorgenommene Auswahl gilt für Personen in dieser Zielgruppe. Wenn Sie beispielsweise einen anderen Preis als **Kostenlos** auswählen, müssen Personen in Ihrer privaten Zielgruppe den Preis zahlen, um die App zu erwerben. 
 - Wenn Sie unterschiedliche Pakete an andere Personen in Ihrer privaten Zielgruppe verteilen möchten, können Sie nach der ersten Übermittlung [Flight-Pakete](package-flights.md) verwenden, um andere Paketupdates an einen Teil Ihrer privaten Zielgruppe zu verteilen. Sie können weitere bekannte Benutzergruppen erstellen, die bestimmen, wer ein bestimmtes Flight-Paket erhalten soll.
 - Sie können die Mitgliedschaft der bekannten Benutzergruppe(n) in Ihrer privaten Zielgruppe bearbeiten. Denken Sie beim Entfernen einer Person jedoch daran, dass Sie, wenn Sie eine Person entfernen, die Ihre App bereits heruntergeladen hat und die vorher in der Gruppe war, sie immer noch in der Lage ist, die App zu verwenden, auch wenn sie keine Updates mehr erhält (es sei denn, Sie wählen **öffentliche Zielgruppe** zu einem späteren Zeitpunkt aus).
 - Ihre App ist unabhängig von den Lizenzierungseinstellungen Ihrer Organisation nicht über den Microsoft Store für Unternehmen und/oder über den Microsoft Store für Bildungseinrichtungen verfügbar, auch nicht für Personen in Ihrer privaten Zielgruppe.
 - Während der Store garantiert, dass Ihre App nur für Personen mit einem Microsoft-Konto sichtbar ist, die Sie Ihrer privaten Zielgruppe hinzugefügt haben, kann nicht verhindert werden, dass diese Benutzer Informationen oder Screenshots außerhalb Ihrer privaten Zielgruppe freigeben. Wenn Ihnen Vertraulichkeit wichtig ist, achten Sie darauf, dass Ihre private Zielgruppe nur Personen enthält, denen Sie vertrauen können, dass Sie keine Details zu Ihrer App mit anderen teilen.
 - Stellen Sie sicher, dass Ihre Tester wissen, wie Sie Ihnen Feedback erteilen können. Sie möchten wahrscheinlich nicht, dass Feedback im Feedback-Hub gegeben wird, da jeder andere Kunde ihr Feedback sehen kann. Erwägen Sie einen Link für Feedback via E-Mail oder auf andere Weise.
-- Alle Rezensionen von Personen in Ihrer privaten Zielgruppe stehen zur Anzeige zur Verfügung. Allerdings sind diese Rezensionen nicht im App Store-Eintrag sichtbar, auch nachdem Ihre Übermittlung als **öffentliche Zielgruppe** festgelegt wird. Erhalten Sie Berichte, die von Ihrer privaten Zielgruppe geschrieben werden, anhand der [überprüft der Berichts](reviews-report.md), jedoch nicht diese Daten herunterladen oder verwenden Sie die [Microsoft Store-Textanalyse-API](../monetize/access-analytics-data-using-windows-store-services.md) programmgesteuert auf diese Berichte zugreifen.
+- Alle Rezensionen von Personen in Ihrer privaten Zielgruppe stehen zur Anzeige zur Verfügung. Allerdings sind diese Rezensionen nicht im App Store-Eintrag sichtbar, auch nachdem Ihre Übermittlung als **öffentliche Zielgruppe** festgelegt wird. Sie können von Ihrer privaten Zielgruppe geschriebene Überprüfungen lesen, indem Sie den [Bericht Reviews](reviews-report.md)anzeigen, aber Sie können diese Daten nicht herunterladen oder die [Microsoft Store Analytics-API](../monetize/access-analytics-data-using-windows-store-services.md) verwenden, um Programm gesteuert auf diese Überprüfungen zuzugreifen.
 - Wenn Sie die App von **Private Zielgruppe** auf **Öffentliche Zielgruppe** ändern, ist das angezeigte **Veröffentlichungsdatum** im Store-Eintrag das Datum der ersten Veröffentlichung an die öffentliche Zielgruppe.
 
 ## <a name="discoverability"></a>Erkennbarkeit
@@ -71,7 +71,7 @@ Die Auswahl im Abschnitt **Auffindbarkeit** gibt an, wie Kunden Ihre App finden 
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>Dieses Produkt im Store verfügbar und sichtbar machen
 
-Dies ist die Standardoption. Lassen Sie diese Option ausgewählt, wenn Sie Ihre app in der Store für Kunden, Suchen über direkten Link der app und/oder die anderen Methoden, einschließlich suchen, durchsuchen und Aufnahme in zusammengestellten Listen aufgeführt werden soll. 
+Dies ist die Standardoption. Lassen Sie diese Option aktiviert, wenn Sie möchten, dass Ihre APP im Store aufgelistet wird, damit Kunden Sie über den direkten Link der APP und/oder über andere Methoden finden können, einschließlich suchen, durchsuchen und einschließen in zusammengestellter Listen. 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>Dieses Produkt im Store verfügbar aber nicht sichtbar machen
 
@@ -86,8 +86,8 @@ Sie müssen auch eine der folgenden Optionen wählen, um zu bestimmen, wie Ihre 
 >[!IMPORTANT]
 > Diese Optionen beschränken die Betriebssystemversionen, unter denen Kunden Ihre App erwerben können. Lesen Sie die Beschreibungen sorgfältig, um sicherzustellen, dass Sie wissen, welche Betriebssystemversionen unterstützt werden. 
 
-- **Direkter Link: Jeder Kunde mit einem direkten Link zu den produktanforderungen Angebot können Sie herunterladen, außer für Windows 8.x.** Jeder Kunde, der zum Eintrag Ihrer App über einen direkten Link gelangt, kann sie auf Geräten unter Windows 10 oder Windows Phone 8.1 und früher (aber nicht auf Geräten mit Windows 8.x) herunterladen.
-- **Beenden Sie die Übernahme: Jeder Kunde mit einem direkten Link sehen des Produkts Store auflisten, aber sie können nur heruntergeladen, wenn sie im Besitz des Produkts vor, oder haben einen Angebotscode und Windows 10-Gerät verwenden.** Selbst wenn ein Kunde einen direkten Link besitzt, kann er die App nur herunterladen, wenn er einen [Werbecode](generate-promotional-codes.md) besitzt und ein Windows 10-Gerät verwendet. Wenn ein Kunde einen Werbecode hat, kann er den Code verwenden, um Ihre App kostenlos (nur unter Windows 10) zu erhalten, obwohl Sie sie nicht für andere Kunden anbieten. Abgesehen von der Verwendung eines Werbecodes gibt es keine Möglichkeit für andere Benutzer, Ihre App zu erhalten.
+- **Nur direkter Link: jeder Kunde, der über einen direkten Link zur Produkt Auflistung verfügt, kann ihn herunterladen, mit Ausnahme von Windows 8. x.** Jeder Kunde, der zum Eintrag Ihrer App über einen direkten Link gelangt, kann sie auf Geräten unter Windows 10 oder Windows Phone 8.1 und früher (aber nicht auf Geräten mit Windows 8.x) herunterladen.
+- **Übernahme aufheben: jeder Kunde mit einem direkten Link kann die Store-Auflistung des Produkts sehen, Sie kann ihn jedoch nur herunterladen, wenn er sich zuvor im Besitz des Produkts befand, oder einen Werbe Code hat und ein Windows 10-Gerät verwendet.** Selbst wenn ein Kunde einen direkten Link besitzt, kann er die App nur herunterladen, wenn er einen [Werbecode](generate-promotional-codes.md) besitzt und ein Windows 10-Gerät verwendet. Wenn ein Kunde einen Werbecode hat, kann er den Code verwenden, um Ihre App kostenlos (nur unter Windows 10) zu erhalten, obwohl Sie sie nicht für andere Kunden anbieten. Abgesehen von der Verwendung eines Werbecodes gibt es keine Möglichkeit für andere Benutzer, Ihre App zu erhalten.
 
 > [!TIP]
 > Wenn Sie eine App überhaupt nicht mehr für neue Kunden anbieten möchten, klicken Sie in der Übersicht auf **Make app unavailable**. Nachdem Sie bestätigt haben, dass die App nicht mehr verfügbar sein soll, wird sie innerhalb weniger Stunden nicht mehr im Store angezeigt, und neue Kunden haben keine Möglichkeit, sie herunterzuladen (es sei denn, Sie verfügen über einen [Werbecode](generate-promotional-codes.md) und verfügen über ein Windows 10-Gerät). Diese Aktion überschreibt die Auswahl **Sichtbarkeit** in Ihrer Übermittlung. Falls Sie die App für neue Kunden wieder verfügbar machen möchten (über die Auswahl **Sichtbarkeit**), können Sie jederzeit in der App-Übersicht auf **Make app available** klicken. Weitere Informationen finden Sie unter [Entfernen einer App aus dem Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).

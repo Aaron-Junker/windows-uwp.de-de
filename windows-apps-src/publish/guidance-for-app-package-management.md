@@ -1,19 +1,19 @@
 ---
 Description: Erfahren Sie, wie App-Pakete für Ihre Kunden verfügbar gemacht werden und bestimmte Paketszenarien verwaltet werden.
-title: Leitfaden für die Verwaltung von App-Paketen
+title: Leitfaden für die App-Paketverwaltung
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f5caa2610e19234cfd83119d570f858c540b401
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685136"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210196"
 ---
-# <a name="guidance-for-app-package-management"></a>Leitfaden für die Verwaltung von App-Paketen
+# <a name="guidance-for-app-package-management"></a>Leitfaden für die App-Paketverwaltung
 
 Erfahren Sie, wie App-Pakete für Ihre Kunden verfügbar gemacht werden und bestimmte Paketszenarien verwaltet werden.
 

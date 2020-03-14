@@ -7,14 +7,14 @@ template: detail.hbs
 isNew: true
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 440f758e5db8bd77d3f26290eb59d7684e5f87a3
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867650"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210026"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interaktionen mit Gamepad und Fernbedienung
 
@@ -22,9 +22,9 @@ ms.locfileid: "68867650"
 
 ***Viele Interaktions Umgebungen werden von Gamepad, Remote Steuerung und Tastatur gemeinsam genutzt.***
 
-Erstellen Sie Interaktions Umgebungen in ihren universelle Windows-Plattform Anwendungen (UWP), die sicherstellen, dass Ihre APP sowohl über herkömmliche Eingabetypen von PCs, Laptops, Tablets (Maus, Tastatur, berühren usw.) als auch über die Eingabetypen verwendbar und zugänglich ist. typisch für die TV-und Xbox *-10-Fuß-* Darstellung, wie z. b. Gamepad und Remote Steuerung.
+Erstellen Sie Interaktionen in ihren universelle Windows-Plattform Anwendungen (UWP), die sicherstellen, dass Ihre APP sowohl über herkömmliche Eingabetypen von PCs, Laptops, Tablets (Maus, Tastatur, Toucheingabe usw.) als auch über die Eingabetypen, die typisch für die TV-und Xbox *-10-Fuß-* Erfahrung sind, genutzt werden können, wie z. b. Gamepad und Remote Steuerung.
 
-Eine allgemeine Entwurfs Anleitung für UWP-Anwendungen finden Sie unter [Entwerfen für Xbox und TV](../devices/designing-for-tv.md) .
+Eine allgemeine Entwurfs Anleitung für UWP-Anwendungen finden *Sie unter* [Entwerfen für Xbox und TV](../devices/designing-for-tv.md) .
 
 ## <a name="overview"></a>Übersicht
 
@@ -51,7 +51,7 @@ Im folgenden finden Sie einige weitere Möglichkeiten zum Optimieren Ihrer APP f
 | [Mausmodus](#mouse-mode)|Die XY-Fokus Navigation ist für einige Arten von Anwendungen, z. b. Karten oder das Zeichnen und Zeichnen von apps, nicht praktikabel oder sogar möglich. In diesen Fällen ermöglicht der **Maus Modus** Benutzern, mit einem Gamepad oder einer Remote Steuerung wie der Maus auf einem PC frei zu navigieren.|
 | [Fokus Visualisierung](#focus-visual)  | Das visuelle Fokus Element ist ein Rahmen, der das aktuell fokussierte Benutzeroberflächen Element hervorhebt. Dadurch kann der Benutzer schnell die Benutzeroberfläche identifizieren, durch die Sie navigieren oder mit der Sie interagieren.  |
 | [Fokus Einbindung](#focus-engagement) | Der Fokus Engagement erfordert, dass der Benutzer die **A/Select-** Schaltfläche in einem Gamepad oder der Remote Steuerung drückt, wenn ein Benutzeroberflächen Element den Fokus besitzt, um damit zu interagieren. |
-| [Hardware Schaltflächen](#hardware-buttons) | Das Gamepad und die Remote Steuerung bieten sehr unterschiedliche Schaltflächen und Konfigurationen. |
+| [Hardwaretasten](#hardware-buttons) | Das Gamepad und die Remote Steuerung bieten sehr unterschiedliche Schaltflächen und Konfigurationen. |
 
 ## <a name="gamepad-and-remote-control"></a>Gamepad und Remotesteuerung
 
@@ -100,7 +100,7 @@ Die UWP ordnet automatisch das vorhandene Tastatureingabeverhalten den Gamepad- 
 | EINGABETASTE                 | A/Auswahl-Taste                       |
 | Beenden                | B/Zurück-Taste*                        |
 
-\*Wenn weder das [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) -Ereignis noch das [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) -Ereignis für die B-Schaltfläche von der APP behandelt wird, wird das [systemnavigationmanager. backangeforderten](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) -Ereignis ausgelöst, was zu einer rückwärts Navigation innerhalb der APP führen sollte. Dieses Verhalten müssen Sie allerdings selbst implementieren, wie im folgenden Codeausschnitt gezeigt:
+\*wenn weder das [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) -Ereignis noch das [KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) -Ereignis für die B-Schaltfläche von der APP behandelt wird, wird das [systemnavigationmanager. backangeforderten](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested) -Ereignis ausgelöst, was zu einer rückwärts Navigation innerhalb der APP führen sollte. Dieses Verhalten müssen Sie allerdings selbst implementieren, wie im folgenden Codeausschnitt gezeigt:
 
 ```csharp
 // This code goes in the MainPage class
@@ -155,21 +155,21 @@ Beschleunigertasten sind Tasten, die für die schnellere Navigation in einer Ben
 
 Die folgende Tabelle zeigt die in die UWP integrierte Beschleunigerunterstützung sowie die Unterstützung, die von Ihnen selbst implementiert werden kann. Nutzen Sie diese Verhaltensweisen in Ihrer benutzerdefinierten Benutzeroberfläche, um eine konsistente und benutzerfreundliche Benutzeroberfläche bereitzustellen.
 
-| Interaktion   | Tastatur/Maus   | Gamepad      | Integriert für:  | Empfohlen für: |
+| Interaktiv   | Tastatur/Maus   | Gamepad      | Integriert für:  | Empfohlen für: |
 |---------------|------------|--------------|----------------|------------------|
 | Bild auf/Bild ab  | Bild auf/Bild ab | Linker/rechter Trigger | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den vertikalen Bildlauf unterstützen
-| Seite nach links/rechts | None | Linker/rechter Bumper | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den horizontalen Bildlauf unterstützen
-| Vergrößern/Verkleinern        | STRG +/- | Linker/rechter Trigger | None | `ScrollViewer`, Ansichten, die das Zoomen und verkleinern unterstützen |
-| Navigationsbereich öffnen/schließen | None | Ansicht | Keine | Navigationsbereiche |
+| Seite nach links/rechts | Keine | Linker/rechter Bumper | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox), [ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase), [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), `ScrollViewer`, [Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector), [LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector), [FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | Ansichten, die den horizontalen Bildlauf unterstützen
+| Vergrößern/Verkleinern        | STRG +/- | Linker/rechter Trigger | Keine | `ScrollViewer`, Ansichten, die das Zoomen und verkleinern unterstützen |
+| Navigationsbereich öffnen/schließen | Keine | Anzeigen | Keine | Navigationsbereiche |
 | Suchen | Keine | Y-Taste | Keine | Verknüpfung mit der Hauptsuchfunktion in der App |
-| [Kontextmenü öffnen](#commandbar-and-contextflyout) | Rechtsklick | Menü-Taste | [Contextflyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Kontextmenüs |
+| [Kontextmenü öffnen](#commandbar-and-contextflyout) | Klicken Sie mit der rechten Maustaste auf | Menü-Taste | [Contextflyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | Kontextmenüs |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY-Fokusnavigation und -interaktion
 
 Wenn Ihre App die korrekte Fokusnavigation für Tastaturen unterstützt, wird dies gut auf Gamepads und Fernbedienungen übertragen.
 Die Pfeiltastennavigation ist dem **Steuerkreuz** und dem **linken Stick** auf Gamepads zugeordnet. Interaktionen mit Benutzeroberflächenelementen sind der Taste **Eingabe/Auswahl** zugeordnet (siehe [Gamepad und Fernbedienung](#gamepad-and-remote-control)).
 
-Viele Ereignisse und Eigenschaften werden von der Tastatur und dem Gamepad verwendet. Beide lösen die Ereignisse `KeyDown` und `KeyUp` aus, und beide navigieren nur zu Steuerelementen mit den Eigenschaften `IsTabStop="True"` und `Visibility="Visible"`. Designanleitungen für die Tastaturnutzung finden Sie unter [Tastaturinteraktionen](../input/keyboard-interactions.md).
+Viele Ereignisse und Eigenschaften werden von der Tastatur und dem Gamepad verwendet. Beide lösen die Ereignisse &mdash; und `KeyDown` aus, und beide navigieren nur zu Steuerelementen mit den Eigenschaften `KeyUp` und `IsTabStop="True"`. Designanleitungen für die Tastaturnutzung finden Sie unter [Tastaturinteraktionen](../input/keyboard-interactions.md).
 
 Wenn die Tastaturunterstützung ordnungsgemäß implementiert ist, wird Ihre App angemessen funktionieren. Es sind jedoch möglicherweise zusätzliche Arbeiten erforderlich, um jedes Szenario zu unterstützen. Bedenken Sie die spezifischen Anforderungen Ihrer App, um die bestmögliche Benutzererfahrung bereitzustellen.
 
@@ -195,7 +195,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 Es gibt drei Hauptursachen für die fehlerhafte Funktion der XY-Navigation:
 
 * Die [IsTabStop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istabstop)- oder [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)-Eigenschaft ist falsch festgelegt.
-* Das Steuerelement mit dem Fokus ist größer, als Sie denken. Die XY-Navigation arbeitet mit der Gesamtgröße des Steuerelements ([ActualWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) und [ActualHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)) und nicht nur mit dem Teil des Steuerelements, das etwas darstellt.
+* Das Steuerelement mit dem Fokus ist größer, als Sie denken. Die XY-Navigation arbeitet mit der Gesamtgröße des Steuerelements (&mdash;ActualWidth[ und ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth)ActualHeight[) und nicht nur mit dem Teil des Steuerelements, das etwas darstellt.
 * Ein Steuerelement, das den Fokus erhalten kann, befindet sich über einem anderen Steuerelement. Die XY-Navigation unterstützt keine überlappenden Steuerelemente.
 
 Wenn die XY-Navigation nach dem Beheben dieser drei Probleme noch immer nicht wie erwartet funktioniert, kann das Element, das den Fokus erhalten soll, mit der in [Überschreiben der Standardnavigation](#overriding-the-default-navigation) beschriebenen Methode manuell festgelegt werden.
@@ -284,15 +284,15 @@ Durch das einfache Neuanordnen der Benutzeroberfläche, sodass sich nicht notwen
 
 ### <a name="commandbar-and-contextflyout"></a>CommandBar und ContextFlyout
 
-Beachten Sie bei der Verwendung einer [Befehlsleiste](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)das Problem des Bildlaufs durch eine Liste, wie unter [Problem erwähnt: Benutzeroberflächen Elemente, die nach einer langen Bildlauf-Liste/einem Raster](#problem-ui-elements-located-after-long-scrolling-list-grid) Die folgende Abbildung zeigt ein Benutzeroberflächenlayout mit `CommandBar` am Ende einer Liste/eines Rasters. Der Benutzer müsste einen Bildlauf ganz nach unten durch die Liste/das Rasters ausführen, um zu `CommandBar` zu gelangen.
+Bei Verwendung einer [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) müssen Sie das Problem hinsichtlich Bildläufen durch Listen berücksichtigen, wie in [Problem: Benutzeroberflächenelemente nach langen bildlauffähigen Listen/Rastern](#problem-ui-elements-located-after-long-scrolling-list-grid) beschrieben. Die folgende Abbildung zeigt ein Benutzeroberflächenlayout mit `CommandBar` am Ende einer Liste/eines Rasters. Der Benutzer müsste einen Bildlauf ganz nach unten durch die Liste/das Rasters ausführen, um zu `CommandBar` zu gelangen.
 
 ![CommandBar am unteren Ende einer Liste/eines Rasters](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-Was geschieht, wenn Sie `CommandBar` das *über* der Liste/dem Raster platzieren? Auch wenn ein Benutzer, der einen Bildlauf nach unten durch die Liste/das Raster ausführt, einen Bildlauf zurück nach oben ausführen müsste, um zu `CommandBar` zu gelangen, bedeutet dies etwas weniger Navigationsaufwand als bei der vorherigen Konfiguration. Beachten Sie, dass dies voraussetzt, dass sich der anfängliche Fokus Ihrer App neben oder oberhalb von `CommandBar` befindet. Dieser Ansatz funktioniert weniger gut, wenn sich der anfängliche Fokus unterhalb der Liste/des Rasters befindet. Wenn diese `CommandBar`-Elemente globale Aktionselemente sind, auf die nicht sehr häufig zugegriffen werden muss (beispielsweise eine **Sync**-Schaltfläche), ist es möglicherweise zulässig, diese oberhalb der Liste/des Rasters zu platzieren.
+Was geschieht, wenn Sie die `CommandBar` *über* der Liste/dem Raster ablegen? Auch wenn ein Benutzer, der einen Bildlauf nach unten durch die Liste/das Raster ausführt, einen Bildlauf zurück nach oben ausführen müsste, um zu `CommandBar` zu gelangen, bedeutet dies etwas weniger Navigationsaufwand als bei der vorherigen Konfiguration. Beachten Sie, dass dies voraussetzt, dass sich der anfängliche Fokus Ihrer App neben oder oberhalb von `CommandBar` befindet. Dieser Ansatz funktioniert weniger gut, wenn sich der anfängliche Fokus unterhalb der Liste/des Rasters befindet. Wenn diese `CommandBar`-Elemente globale Aktionselemente sind, auf die nicht sehr häufig zugegriffen werden muss (beispielsweise eine **Sync**-Schaltfläche), ist es möglicherweise zulässig, diese oberhalb der Liste/des Rasters zu platzieren.
 
 Zwar ist das vertikale Stapeln der `CommandBar`-Elemente nicht möglich, die Platzierung gegen die Bildlaufrichtung (etwa links oder rechts von einer vertikal laufenden Liste oder über/unter einer horizontal laufenden Liste) ist eine weitere Option, die Sie nutzen können, wenn dies gut zu Ihrem Benutzeroberflächenlayout passt.
 
-Wenn Ihre App eine `CommandBar` umfasst, auf deren Elemente die Benutzer zugreifen müssen, sollten Sie diese Elemente möglicherweise innerhalb einer [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft platzieren und sie aus der `CommandBar` entfernen. `ContextFlyout`ist eine Eigenschaft von " [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) " und ist das [Kontextmenü](../controls-and-patterns/dialogs-and-flyouts/index.md) , das diesem Element zugeordnet ist. Wenn Sie auf einem PC mit der rechten Maustaste auf ein Element mit einem `ContextFlyout` klicken, wird das Kontextmenü eingeblendet. Auf Xbox One geschieht dies beim Drücken der **Menü**-Taste, während ein entsprechendes Element den Fokus hat.
+Wenn Ihre App eine `CommandBar` umfasst, auf deren Elemente die Benutzer zugreifen müssen, sollten Sie diese Elemente möglicherweise innerhalb einer [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft platzieren und sie aus der `CommandBar` entfernen. `ContextFlyout` ist eine Eigenschaft von " [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) " und ist das [Kontextmenü](../controls-and-patterns/dialogs-and-flyouts/index.md) , das diesem Element zugeordnet ist. Wenn Sie auf einem PC mit der rechten Maustaste auf ein Element mit einem `ContextFlyout` klicken, wird das Kontextmenü eingeblendet. Auf Xbox One geschieht dies beim Drücken der **Menü**-Taste, während ein entsprechendes Element den Fokus hat.
 
 ### <a name="ui-layout-challenges"></a>Herausforderungen beim UI-Layout
 
@@ -311,13 +311,13 @@ Nachfolgend sehen Sie eine fiktive Immobilien-App, die eine Liste zum Verkauf st
 
 ![Fiktive Immobilien-App](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### Problem: Elemente der Benutzeroberfläche, die sich nach langer Bildlauf-Liste<a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### Problem: UI-Elemente, die sich hinter einer langen Bildlaufliste oder einem Raster befinden <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
 Die [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) der Eigenschaften in der folgenden Abbildung ist eine sehr lange Bildlaufliste. Wenn [Engagement](#focus-engagement)*nicht* für die `ListView` erforderlich ist, wenn der Benutzer zu der Liste navigiert, wird der Fokus auf das erste Element in der Liste gesetzt. Damit der Benutzer zur Schaltfläche **Zurück** oder **Weiter** gelangen kann, muss er alle Elemente der Liste durchlaufen. In Fällen wie diese, bei denen der Benutzer die gesamte Liste mühsam durchlaufen muss – d.h. wenn die Liste ganz einfach zu lang ist, um noch akzeptablen Benutzerkomfort zu ermöglichen – sollten Sie andere Optionen erwägen.
 
 ![Immobilien-App: Eine Liste mit 50 Elementen erfordert 51 Klicks, bis die Schaltflächen am Ende erreicht sind](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
-#### <a name="solutions"></a>Projektmappen
+#### <a name="solutions"></a>Lösungen
 
 **Neuanordnung der Benutzeroberfläche<a name="ui-rearrange"></a>**
 
@@ -333,14 +333,14 @@ Ist die Aktivierung *erforderlich*, wird die gesamte `ListView` zu einem einzige
 
 ![Immobilien-App: Einstellen der Aktivierung als erforderlich, damit die Schaltflächen „Zurück/Weiter“ mit nur einem Klick erreicht werden können](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
-#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problem: ScrollViewer ohne Fokus nutzbare Elemente
+#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problem: ScrollViewer ohne fokussierbare Elemente
 
 Da die XY-Fokusnavigation darauf basiert, dass jeweils zu einem fokussierbaren UI-Element navigiert wird, kann ein [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) ohne fokussierbare Elemente (etwa einer, der, wie der in diesem Beispiel, nur Text enthält) ein Szenario verursachen, in dem der Benutzer nicht alle Inhalte in dem `ScrollViewer` anzeigen kann.
 Lösungen für dieses und ähnliche Szenarien finden Sie unter [Fokusaktivierung](#focus-engagement).
 
-![Real Estate-App: ScrollViewer nur mit Text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
+![Immobilien-App: ScrollViewer mit lediglich Text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
-#### <a name="problem-free-scrolling-ui"></a>Problem: Benutzeroberfläche mit freiem Bildlauf
+#### <a name="problem-free-scrolling-ui"></a>Problem: UI mit freiem Bildlauf
 
 Wenn Ihre App eine UI mit freiem Bildlauf benötigt, etwa eine Zeichenoberfläche oder, wie in diesem Beispiel, eine Karte, ist die XY-Fokus-Navigation ganz einfach nicht geeignet.
 In solchen Fällen können Sie den [Mausmodus](#mouse-mode) aktivieren, damit der Benutzer in einem UI-Element frei navigieren kann.
@@ -423,7 +423,7 @@ Wenn eine Seite die Eigenschaft `RequiresPointer="WhenFocused"` besitzt, wird de
 Beim Anzeigen von Videos oder anderen Arten von Vollbildinhalten empfiehlt es sich in der Regel, den Cursor auszublenden, um den Benutzer nicht abzulenken. Dieses Szenario liegt vor, wenn der Rest der App den Mausmodus verwendet, dieser aber beim Anzeigen von Vollbildinhalten deaktiviert werden soll. Platzieren Sie hierzu den Vollbildinhalt in einem eigenen `Page`-Objekt, und führen Sie die folgenden Schritte aus.
 
 1. Legen Sie im `App`-Objekt Folgendes fest: `RequiresPointerMode="WhenRequested"`.
-2. Legen Sie in jedem `Page`-Objekt (*mit Ausnahme des Vollbild-`Page`-Objekts*) Folgendes fest: `RequiresPointer="WhenFocused"`.
+2. Legen Sie in jedem `Page`-Objekt (*mit Ausnahme des Vollbild-* -Objekts`Page`) Folgendes fest: `RequiresPointer="WhenFocused"`.
 3. Legen Sie für das Vollbild-`Page`-Objekt Folgendes fest: `RequiresPointer="Never"`.
 
 Dadurch wird der Cursor nicht angezeigt, wenn Inhalte im Vollbildmodus angezeigt werden.
@@ -450,7 +450,7 @@ Eine Fokusanzeige sollte stets auf dem Bildschirm sichtbar sein, damit Benutzer 
 
 Eine Ausnahme von dieser Regel wären die Vollbild-Funktionen wie das Abspielen von Videos oder das Anzeigen von Bildern. In diesen Fällen sollte die Fokusanzeige nicht sichtbar sein.
 
-### <a name="reveal-focus"></a>Reveal-Fokus
+### <a name="reveal-focus"></a>Reveal Focus
 
 Reveal-focus sind Lichteffekte, die den Rahmen des fokussierbaren Elementes animieren, wenn der Benutzer den Fokus des Gamepad oder der Tastatur darauf lenken. Durch die Animation des Scheins um den Rand der fokussierten Elemente, gibt Reveal-Focus dem Benutzer ein besseres Verständnis, wo der Fokus liegt und wohin der Fokus geht.
 
@@ -510,7 +510,7 @@ Ein anderer Ansatz zur Lösung dieses Problems besteht darin, für den `Slider` 
 
 Wenn der `Slider` Fokusaktivierung erfordert, kann der Benutzer einfach zur Schaltfläche auf der rechten Seite gelangen, indem er auf dem Steuerkreuz (D-Pad)/dem linken Stick zweimal rechts drückt. Diese Lösung ist hervorragend geeignet, da sie keine Benutzeroberflächenanpassung erfordert und das erwartete Verhalten erzeugt.
 
-### <a name="items-controls"></a>Elementsteuerelemente
+### <a name="items-controls"></a>ItemsControl-Elemente
 
 Abgesehen vom [Slider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)-Steuerelement gibt es weitere Steuerelemente, für die Sie möglicherweise eine Aktivierung anfordern sollten, wie beispielsweise:
 
@@ -538,9 +538,9 @@ Dadurch können Benutzer die `ListView` schnell überspringen, indem sie einfach
 
 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) unterscheidet sich etwas von diesen Steuerelementen. Es weist spezifische Besonderheiten auf, die Sie berücksichtigen müssen. Wenn Sie ein `ScrollViewer`-Steuerelement mit fokussierbarem Inhalt besitzen, können Sie standardmäßig durch Navigieren zum `ScrollViewer`-Steuerelement durch dessen fokussierbare Elemente navigieren. Wie in einer `ListView`, müssen Sie einen Bildlauf über alle Elemente ausführen, um von `ScrollViewer` weg zu navigieren.
 
-Wenn `ScrollViewer`*keine* fokussierbaren Inhalte besitzt, also beispielsweise lediglich Text enthält, können Sie `IsFocusEngagementEnabled="True"` festlegen, sodass Benutzer `ScrollViewer` mithilfe der **A/Auswahl**-Taste aktivieren können. Nach der Aktivierung können sie mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf durch den Text ausführen und anschließend die **B/Back**-Taste (Zurück-Taste) drücken, um das Steuerelement zu deaktivieren, wenn sie den Vorgang abgeschlossen haben.
+Wenn `ScrollViewer`*keine* fokussierbaren Inhalte besitzt, also beispielsweise lediglich Text enthält, können Sie &mdash; festlegen, sodass Benutzer &mdash; mithilfe der `IsFocusEngagementEnabled="True"`A/Auswahl`ScrollViewer`-Taste aktivieren können. Nach der Aktivierung können sie mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf durch den Text ausführen und anschließend die **B/Back**-Taste (Zurück-Taste) drücken, um das Steuerelement zu deaktivieren, wenn sie den Vorgang abgeschlossen haben.
 
-Ein weiterer Ansatz besteht darin, `IsTabStop="True"` für `ScrollViewer` festzulegen, damit der Benutzer das Steuerelement nicht aktivieren muss. Er kann in diesem Fall einfach den Fokus auf das Steuerelement setzen und anschließend mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf ausführen, wenn es innerhalb von `ScrollViewer` keine fokussierbaren Elemente gibt.
+Ein weiterer Ansatz besteht darin, `IsTabStop="True"` für `ScrollViewer` festzulegen, damit der Benutzer das Steuerelement nicht aktivieren muss. Er kann in diesem Fall einfach den Fokus auf das Steuerelement setzen und anschließend mit dem &mdash;Steuerkreuz (D-Pad)/linken Stick**einen Bildlauf ausführen, wenn es innerhalb von** keine fokussierbaren Elemente gibt.
 
 ### <a name="focus-engagement-defaults"></a>Standardeinstellungen in Bezug auf die Fokusaktivierung
 
@@ -548,14 +548,14 @@ Einige Steuerelemente führen häufig genug dazu, dass Benutzer in einem Steuere
 
 | Steuerelement               | Standardeinstellung in Bezug auf die Fokusaktivierung  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | On                        |
-| FlipView              | Off                       |
-| GridView              | Off                       |
-| ListBox               | Off                       |
-| ListView              | Off                       |
-| ScrollViewer          | Off                       |
-| SemanticZoom          | Off                       |
-| Slider                | On                        |
+| CalendarDatePicker    | Ein                        |
+| FlipView              | Aus                       |
+| GridView              | Aus                       |
+| ListBox               | Aus                       |
+| ListView              | Aus                       |
+| ScrollViewer          | Aus                       |
+| SemanticZoom          | Aus                       |
+| Schieberegler                | Ein                        |
 
 Alle anderen UWP-Steuerelemente zeigen keine Änderungen in Bezug auf Verhalten oder Anzeige, wenn `IsFocusEngagementEnabled="True"` festgelegt wird.
 

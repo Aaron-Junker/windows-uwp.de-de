@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Popupbenachrichtigungen, interaktive Popups, adaptive Popups, Popup-Inhalt, Nutzlast des Popups
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125249"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209856"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
@@ -85,10 +85,10 @@ ToastContent content = new ToastContent()
 
 Hier sehen Sie eine visuelle Darstellung des Inhalts des Popups:
 
-![Aufbau einer Popupbenachrichtigung](images/adaptivetoasts-structure.jpg)
+![Struktur der Popupbenachrichtigung](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Visuelles Element
+## <a name="visual"></a>Visual
 
 Jedes Popup muss ein visuelles Element angeben, in dem Sie eine generische Popupbindung angeben müssen, die Text, Bilder und vieles mehr enthalten kann. Diese Elemente werden auf verschiedenen Windows-Geräten wie Desktops, Smartphones, Tablets und Xbox wiedergegeben.
 
@@ -405,7 +405,7 @@ Schaltflächen können die folgenden verschiedenen Aktionen ausführen...
 
 -   Aktivieren der App im Vordergrund mit einem Argument, das zum Navigieren zu einer bestimmten Seite bzw. einem bestimmten Kontext verwendet werden kann
 -   Aktivieren der Hintergrundaufgabe der App für eine schnelle Antwort oder ein ähnliches Szenario
--   Aktivieren einer anderen App per Protokollstart
+-   Aktivieren einer anderen App per Protokollstart.
 -   Ausführen einer System Aktion, z. b. das Zurückstellen oder verwerfen der Benachrichtigung.
 
 > [!NOTE]
@@ -799,7 +799,7 @@ Gehen Sie wie folgt vor, um die Systemaktionen zum erneuten Erinnern und Schlie�
     -   Wenn Sie keine Zeichenfolge angeben, werden automatisch lokalisierte Zeichen folgen für "zurückstellen" und "verwerfen" verwendet.
 -   Geben Sie optional die **SelectionBoxId** an:
     -   Wenn Sie nicht möchten, dass der Benutzer ein Intervall für das erneute Erinnern auswählen kann, sondern das erneute Erinnern an die Benachrichtigung nur einmal in einem vom System definierten (in allen Betriebssystemen einheitlichen) Zeitintervall erfolgt, legen Sie keinen Wert für &lt;input&gt; fest.
-    -   Wenn Sie Intervalle für das erneute Erinnern angeben möchten:
+    -   Wenn Sie mögliche Intervalle für das erneute Erinnern bereitstellen möchten:
         -   Geben Sie **SelectionBoxId** in der Aktion für das erneute Erinnern an
         -   Stimmen Sie die ID der Eingabe auf den Wert für **SelectionBoxId** der Aktion für das erneute Erinnern ab
         -   Legen Sie für den Wert von **ToastSelectionBoxItem** eine positive ganze Zahl (nonNegativeInteger) fest, die dem Intervall für das erneute Erinnern in Minuten entspricht.

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Trailer, Video, Screenshot, Bild, Symbol, Store-Eintrag, Store-Eintragsbilder
 ms.localizationpriority: medium
 ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684611"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210896"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>App-Screenshots, -Bilder und -Trailer
 
@@ -197,7 +197,7 @@ Im Folgenden finden Sie einige Tipps, die Sie beim Entwerfen Ihres Bilds beachte
 - Vermeiden Sie das Anzeigen der Benutzeroberfläche Ihrer App, und verwenden Sie keine Bilder für bestimmte Geräte.
 - Vermeiden Sie politische und nationale Designs, Flaggen oder religiöse Symbole.
 - Fügen Sie keine Bilder von taktlosen Gesten, Nacktheit, Glücksspiel, Währung, Drogen, Tabakprodukte oder Alkohol hinzu.
-- Verwenden Sie keine Bilder mit Waffen, die auf den Benutzer gerichtet sind, oder übermäßige Gewalt und Blut.
+- Verwenden Sie keine Bilder mit Waffen, die auf den Benutzer gerichtet sind, oder übermäßiger Gewalt und Blut.
 
 Durch das Bereitstellen des Bilds können wir es für Vermarktungsmöglichkeiten in Betracht ziehen. Dies garantiert nicht, dass die App präsentiert wird. Weitere Informationen finden Sie unter [Einfaches Bewerben Ihrer App](make-your-app-easier-to-promote.md).
 

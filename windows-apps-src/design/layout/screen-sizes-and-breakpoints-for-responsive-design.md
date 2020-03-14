@@ -3,17 +3,17 @@ title: Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design
 description: Anstatt Ihre Benutzeroberfläche für die vielen Geräte im gesamten Windows 10-Ökosystem zu optimieren, empfehlen wir, ein Design für einige Schlüsselbreiten (sogenannte Breakpoints) zu erstellen.
 ms.date: 08/30/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258191"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210176"
 ---
-#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Breakpoints
+#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
 
 UWP-Apps können auf jedem Gerät mit Windows 10 ausgeführt werden – z. B. Telefone, Tablets, Desktops, Fernseher und mehr. Bei einer großen Anzahl von Geräte Zielen und Bildschirmgrößen im Windows 10-Ökosystem sollten Sie nicht die Benutzeroberfläche für jedes Gerät optimieren, sondern für einige Schlüsselkategorien (auch als "Breakpoints" bezeichnet) entwerfen: 
 - Klein (kleiner als 640 Pixel)
@@ -23,7 +23,7 @@ UWP-Apps können auf jedem Gerät mit Windows 10 ausgeführt werden – z. B. Te
 > [!TIP]
 > Beim Entwerfen für bestimmte Breakpoints sollten Sie den für Ihre App verfügbaren Bildschirmbereich (App-Fenster) berücksichtigen, nicht die Bildschirmgröße. Wenn die App im Vollbildmodus läuft, hat das App-Fenster die gleiche Größe wie der Bildschirm, aber wenn die App nicht im Vollbildmodus ist, ist das Fenster kleiner als der Bildschirm.
 
-## <a name="breakpoints"></a>Breakpoints
+## <a name="breakpoints"></a>Haltepunkte
 Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 
 ![Reaktionsfähige Designbreakpoints](images/breakpoints/size-classes.svg)
@@ -32,8 +32,8 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 <thead>
 <tr class="header">
 <th align="left">Größenklasse</th>
-<th align="left">Breakpoints</th>
-<th align="left">Typische Bildschirmgröße (diagonal)</th>
+<th align="left">Haltepunkte</th>
+<th align="left">Normale Bildschirmgröße (diagonal)</th>
 <th align="left">Geräte</th>
 <th align="left">Fenstergrößen</th>
 </tr>
@@ -55,7 +55,7 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 </tr>
 <tr class="even">
 <td style="vertical-align:top;">Groß</td>
-<td style="vertical-align:top;">1008 Pixel oder mehr</td>
+<td style="vertical-align:top;">1008 Pixel oder größer</td>
 <td style="vertical-align:top;">13&quot; und größer</td>
 <td style="vertical-align:top;">PCs, Laptops, Surface Hubs</td>
 <td style="vertical-align:top;">1024 x 640, 1366 x 768, 1920 x 1080</td>

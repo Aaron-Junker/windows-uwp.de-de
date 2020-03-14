@@ -12,11 +12,11 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.openlocfilehash: 449f0c81bdd54d99ef0977ca1c9b6ba10ba5eae7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258356"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210106"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -58,7 +58,7 @@ Hier sind die Geräte und die Tools, die in diesem Thema erläutert werden:
 | Gerät/Tool                       | Beschreibung     |
 |-----------------------------------|-----------------|
 |Tastatur (Hardware und Software)   |Neben der Standard Hardware Tastatur unterstützen UWP-Anwendungen zwei Software-Tastaturen: die [touchtastatur (oder Software)](#software-keyboard) und die [Bildschirmtastatur](#on-screen-keyboard).|
-|Gamepad und Fernbedienung         |Xbox-Gamepad und -Fernbedienung sind grundlegende Eingabegeräte im [10-Fuß-Bereich](../devices/designing-for-tv.md). Ausführliche Informationen zur UWP-Unterstützung für Gamepad und Fernbedienung finden Sie unter [Interaktionen mit Gamepad und Fernbedienung](gamepad-and-remote-interactions.md).|
+|Gamepad und Remotesteuerung         |Xbox-Gamepad und -Fernbedienung sind grundlegende Eingabegeräte im [10-Fuß-Bereich](../devices/designing-for-tv.md). Ausführliche Informationen zur UWP-Unterstützung für Gamepad und Fernbedienung finden Sie unter [Interaktionen mit Gamepad und Fernbedienung](gamepad-and-remote-interactions.md).|
 |Bildschirmleseprogramme (Sprachausgabe)          |Die Sprachausgabe ist ein integriertes Bildschirmleseprogramm für Windows, das eindeutige Interaktion und Funktionalität bietet, aber dennoch auf der einfachen Tastaturnavigation und -eingabe basiert. Weitere Informationen zur Sprachausgabe finden Sie unter [Erste Schritte mit Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator).|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>Benutzerdefinierte Erfahrungen und effiziente Tastaturfunktionen
@@ -260,7 +260,7 @@ Tastenkombinationen mit der STRG-Taste weisen die folgenden Merkmale auf:
 -   Sie sind in der gesamten Anwendung wirksam, wenn Sie unterstützt werden.
 -   Sie sollten konsistent zugewiesen werden, wenn Sie gespeichert und nicht direkt dokumentiert werden.
 
-#### <a name="access-keys"></a>Zugriffstasten
+#### <a name="access-keys"></a>Zugriffsschlüssel
 
 Auf der Seite [Tastenkombinationen mit der STRG-Taste](access-keys.md) finden Sie umfassendere Informationen zur Unterstützung von Tastenkombinationen mit der STRG-Taste mit UWP.
 
@@ -270,7 +270,7 @@ Zugriffstasten weisen die folgenden Merkmale auf:
 -   Sie verwenden ALT und eine alphanumerische Taste.
 -   Sie dienen in erster Linie der Barrierefreiheit.
 -   Sie werden direkt in der Benutzeroberfläche, neben dem Steuerelement, über [wichtige Tipps](access-keys.md)dokumentiert.
--   Sie wirken sich nur auf das aktuelle Fenster aus und navigieren zum entsprechenden Menü- oder Steuerelement.
+-   Sie wirken sich nur auf das aktuelle Fenster aus und navigieren zum entsprechenden Menüelement oder Steuerelement.
 -   Zugriffsschlüssel sollten nach Möglichkeit konsistent den häufig verwendeten Befehlen (insbesondere "Commit"-Schaltflächen) zugewiesen werden.
 -   Sie sind lokalisiert.
 
@@ -282,13 +282,13 @@ In der folgenden Tabelle finden Sie eine kleine Stichprobe häufig verwendeter T
 |--------------------------------------|--------------------------------------------------|
 | Alle auswählen                           | STRG+A                                           |
 | Fortlaufend auswählen                  | UMSCHALT+Pfeiltaste                                  |
-| Speichern                                 | STRG+S                                           |
+| Speichern                                 | Strg+S                                           |
 | Suchen                                 | STRG+F                                           |
-| Drucken                                | STRG+P                                           |
+| Drucken                                | Strg+P                                           |
 | Kopieren                                 | STRG+C                                           |
 | Ausschneiden                                  | STRG+X                                           |
 | Einfügen                                | STRG+V                                           |
-| Rückgängig machen                                 | STRG+Z                                           |
+| Rückgängig                                 | STRG+Z                                           |
 | Nächste Registerkarte                             | STRG+TAB                                         |
 | Registerkarte schließen                            | STRG+F4 oder STRG+W                                |
 | Semantischer Zoom                        | STRG+PLUS-TASTE oder STRG+MINUS-TASTE                                 |
@@ -404,9 +404,9 @@ Im Folgenden finden Sie einige wichtige Zuordnungen zwischen Tastatur, Gamepad u
 |---------------|-------------------------------------|---------------------|
 | LEERTASTE         | A-Taste                            | Auswahltaste       |
 | EINGABETASTE         | A-Taste                            | Auswahltaste       |
-| ESCAPE-TASTE        | B-TASTE                            | Zurück-Schaltfläche         |
-| POS1/ENDE      | n. v.                                 | n. v.                 |
-| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | n. v.                 |
+| Beenden        | B-Taste                            | Schaltfläche "Zurück"         |
+| POS1/ENDE      | N/V                                 | N/V                 |
+| Bild AUF/BILD AB  | Auslösertaste für vertikalen Bildlauf, Bumper-Taste für horizontalen Bildlauf   | N/V                 |
 
 Einige der wichtigsten Unterschiede, die Sie beim Entwerfen Ihrer UWP-App für die Verwendung mit Gamepad und Fernbedienung beachten sollten, sind:
 -   Die Texteingabe erfordert, dass der Benutzer A drückt, um ein Textsteuerelement zu aktivieren.
@@ -527,9 +527,9 @@ Bei der Softwaretastatur handelt es sich um eine Tastatur auf dem Bildschirm, di
 
 Abhängig vom Gerät wird die Softwaretastatur angezeigt, wenn ein Textfeld oder ein anderes bearbeitbares Textsteuerelement im Fokus steht, oder wenn der Benutzer sie über das **Benachrichtigungs-Center**manuell aktiviert.
 
-![Symbol der Bildschirmtastatur im Benachrichtigungs-Center](images/keyboard/touch-keyboard-notificationcenter.png)
+![Symbol der Touch-Bildschirmtastatur im Benachrichtigungs-Center](images/keyboard/touch-keyboard-notificationcenter.png)
 
-Wenn Ihre App den Fokus programmgesteuert auf ein Texteingabesteuerelement festlegt, wird die Bildschirmtastatur nicht aufgerufen. Dadurch wird unerwartetes, nicht direkt vom Benutzer ausgelöstes Verhalten verhindert. Allerdings wird die Tastatur automatisch ausgeblendet, wenn der Fokus programmgesteuert auf ein nicht textuelles Eingabesteuerelement bewegt wird.
+Wenn Ihre App den Fokus programmgesteuert auf ein Texteingabesteuerelement festlegt, wird die Touch-Bildschirmtastatur nicht aufgerufen. Dadurch wird unerwartetes, nicht direkt vom Benutzer ausgelöstes Verhalten verhindert. Allerdings wird die Tastatur automatisch ausgeblendet, wenn der Fokus programmgesteuert auf ein nicht textuelles Eingabesteuerelement bewegt wird.
 
 Die Bildschirmtastatur bleibt in der Regel sichtbar, während der Benutzer zwischen Steuerelementen in einem Formular navigiert. Dieses Verhalten kann je nach den anderen Steuerelementtypen innerhalb des Formulars variieren.
 
@@ -550,11 +550,11 @@ Im Folgenden finden Sie eine Liste der nicht bearbeitbaren Steuerelemente, die i
 
 Hier finden Sie einige Beispiele für verschiedene Modi der Touch-Bildschirmtastatur. Das erste Bild zeigt das Standardlayout, das zweite das Daumenlayout. (Letzteres ist unter Umständen nicht in allen Sprachen verfügbar.)
 
-![Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
+![Touch-Bildschirmtastatur mit Standardlayout](images/keyboard/default.png)
 
 ***Die Touchscreen-Tastatur im standardlayoutmodus***
 
-![Bildschirmtastatur mit erweitertem Layout](images/keyboard/extendedview.png)
+![Touch-Bildschirmtastatur mit erweitertem Layout](images/keyboard/extendedview.png)
 
 ***Die Touchscreen-Tastatur im erweiterten Layoutmodus***
 

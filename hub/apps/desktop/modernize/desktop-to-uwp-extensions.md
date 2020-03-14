@@ -9,11 +9,11 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302594"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209716"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren ihrer Desktop-app in Windows 10 und UWP
 
@@ -245,7 +245,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Kategorie | Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |Verb |Der Name, der im Kontextmenü des Datei-Explorers angezeigt wird. Diese Zeichenfolge kann mithilfe von ```ms-resource``` lokalisiert werden.|
-|Id |Die eindeutige ID des Verbs. Wenn es sich bei Ihrer Anwendung um eine UWP-App handelt, wird Sie als Teil ihrer Aktivierungs Ereignis Argumente an Ihre APP übermittelt, sodass Sie die Auswahl des Benutzers entsprechend behandeln kann. Wenn es sich bei Ihrer Anwendung um eine APP mit vollständiger Vertrauenswürdigkeit handelt, empfängt Sie stattdessen Parameter (siehe das nächste Aufzählungs Zeichen). |
+|ID |Die eindeutige ID des Verbs. Wenn es sich bei Ihrer Anwendung um eine UWP-App handelt, wird Sie als Teil ihrer Aktivierungs Ereignis Argumente an Ihre APP übermittelt, sodass Sie die Auswahl des Benutzers entsprechend behandeln kann. Wenn es sich bei Ihrer Anwendung um eine APP mit vollständiger Vertrauenswürdigkeit handelt, empfängt Sie stattdessen Parameter (siehe das nächste Aufzählungs Zeichen). |
 |Parameter |Die Liste mit Argumentparametern und -werten für das Verb. Wenn es sich bei Ihrer Anwendung um eine APP mit vollständiger Vertrauenswürdigkeit handelt, werden diese Parameter als Ereignis Argumente an die Anwendung übermittelt, wenn die Anwendung aktiviert wird. Sie können das Verhalten Ihrer Anwendung auf der Grundlage verschiedener Aktivierungs Verben anpassen. Wenn eine Variable einen Dateipfad enthalten kann, schließen Sie den Parameterwert in Anführungszeichen. Dadurch werden jegliche Probleme vermieden, die in Fällen auftreten, bei denen der Pfad Leerzeichen enthält. Wenn Ihre Anwendung eine UWP-APP ist, können Sie keine Parameter übergeben. Die App empfängt stattdessen die ID (siehe das vorherige Aufzählungszeichen).|
 |Erweitert |Gibt an, dass das Verb nur angezeigt werden soll, wenn der Benutzer zum Anzeigen des Kontextmenüs **UMSCHALT** gedrückt hält, bevor er mit der rechten Maustaste auf die Datei klickt. Dieses Attribut ist optional und wird standardmäßig auf den Wert **false** gesetzt (z. b. immer das Verb anzeigen), wenn es nicht aufgeführt ist. Dieses Verhalten muss für jedes Verb einzeln angegeben werden – mit Ausnahme von „Öffnen“: Bei diesem Verb ist der Wert immer **False**.|
 
@@ -374,7 +374,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |-------|-------------|
 |Kategorie |Immer ``windows.firewallRules``|
 |Ausführbare Datei |Der Name der ausführbaren Datei, die Sie der Liste der Firewallausnahmen hinzufügen möchten. |
-|Direction |Gibt an, ob die Regel eine ein- oder ausgehende Regel ist. |
+|Richtung |Gibt an, ob die Regel eine ein- oder ausgehende Regel ist. |
 |IPProtocol |Das Kommunikationsprotokoll |
 |LocalPortMin |Die untere Portnummer in einer Auswahl von lokalen Portnummern. |
 |LocalPortMax |Die höchste Portnummer in einer Auswahl von lokalen Portnummern. |
@@ -702,7 +702,7 @@ Die vollständige Schemareferenz finden Sie [hier](https://docs.microsoft.com/uw
 |Kategorie |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateityp Zuordnung. Sie können diesen Namen verwenden, um Dateitypen zu organisieren und zu gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen enthalten. |
 |FileType |Die relevanten Dateierweiterungen. |
-|value |Ein gültiger [Art-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|Wert |Ein gültiger [Art-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>Beispiel
 
@@ -922,7 +922,7 @@ Registrieren Sie die Handler, die Sie in Ihrer Anwendung implementieren. Sie kö
 |ThumbnailProviderHandler Clsid |Die Klassen-ID der Anwendung, die den thumbnailproviderhandler implementiert. Das System verwendet diese Klassen-ID, um Miniaturansichten für Cloud-Dateien anzufordern. |
 |ExtendedPropertyHandler Clsid |Die Klassen-ID der Anwendung, die den extendedpropertyhandler implementiert.  Das System verwendet diese Klassen-ID, um erweiterte Eigenschaften für eine Cloud-Datei anzufordern. |
 |Verb |Der Name, der im Kontextmenü des Datei-Explorers für Dateien angezeigt wird, die von Ihrem Clouddienst bereitgestellt werden. |
-|Id |Die eindeutige ID des Verbs. |
+|ID |Die eindeutige ID des Verbs. |
 
 #### <a name="example"></a>Beispiel
 
@@ -1104,7 +1104,7 @@ Benutzer können die Startaufgabe Ihrer App manuell mithilfe des Task-Managers d
 |Kategorie |Immer ``windows.startupTask``.|
 |Ausführbare Datei |Der relative Pfad der ausführbaren Datei, die gestartet werden soll. |
 |TaskId |Ein eindeutiger Bezeichner Ihrer Aufgabe. Mithilfe dieses Bezeichners kann die Anwendung die APIs in der [Windows. applicationmodel. startuptask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) -Klasse aufrufen, um einen Starttask Programm gesteuert zu aktivieren oder zu deaktivieren. |
-|Enabled |Gibt an, ob die Aufgabe erst aktiviert oder deaktiviert gestartet wird. Aktivierte Aufgaben werden bei der nächsten Anmeldung des Benutzers ausgeführt (es sei denn, der Benutzer deaktiviert sie). |
+|Aktiviert |Gibt an, ob die Aufgabe erst aktiviert oder deaktiviert gestartet wird. Aktivierte Aufgaben werden bei der nächsten Anmeldung des Benutzers ausgeführt (es sei denn, der Benutzer deaktiviert sie). |
 |DisplayName |Der Name der Aufgabe, die im Task-Manager angezeigt wird. Sie können diese Zeichenfolge mit ```ms-resource``` lokalisieren. |
 
 #### <a name="example"></a>Beispiel
@@ -1294,7 +1294,7 @@ Die vollständige Schemareferenz finden Sie [hier](/uwp/schemas/appxpackage/uapm
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.sharedFonts``.
-|Datei |Die Datei mit der Schriftart, die Sie teilen möchten. |
+|File |Die Datei mit der Schriftart, die Sie teilen möchten. |
 
 #### <a name="example"></a>Beispiel
 
@@ -1340,7 +1340,7 @@ Starten Sie einen vertrauenswürdigen Win32-Prozess.
 |Name |Beschreibung |
 |-------|-------------|
 |Kategorie |Immer ``windows.fullTrustProcess``.
-|Gruppen-ID |Eine Zeichenfolge, die eine Reihe von Parametern identifiziert, die an die ausführbare Datei übergeben werden sollen. |
+|GroupID |Eine Zeichenfolge, die eine Reihe von Parametern identifiziert, die an die ausführbare Datei übergeben werden sollen. |
 |Parameter |Parameter, die an die ausführbare Datei übergeben werden sollen. |
 
 #### <a name="example"></a>Beispiel
@@ -1376,4 +1376,4 @@ Erstellen Sie einfach ein Windows-App-Paket für ihre Win32-app. Fügen Sie dann
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Haben Sie Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) fragen.

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598625"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209946"
 ---
 # <a name="resource-management-system"></a>Ressourcenverwaltungssystem
 Das Ressourcenverwaltungssystem verfügt sowohl über Buildzeit- als auch über Laufzeitfeatures. Während der Buildzeit erstellt das System einen Index aller verschiedenen Varianten der Ressourcen, die mit Ihrer App gepackt sind. Dieser ebenfalls im App-Paket enthaltene Index ist der Package Resource Index oder kurz PRI. Zur Laufzeit erkennt das System die momentan geltenden Benutzer- und Computereinstellungen, fragt die Informationen im PRI ab und lädt automatisch die Ressourcen, die für diese Einstellungen am besten geeignet sind.
@@ -24,7 +24,7 @@ Jedes App-Paket muss einen binären Index der App-Ressourcen enthalten. Dieser I
 - Die Datei „resources.pri” im Stammverzeichnis eines Pakets wird beim Instanziieren von [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) automatisch geladen.
 - PRI-Dateien können mit dem Tool [MakePRI.exe](compile-resources-manually-with-makepri.md) erstellt und gesichert werden.
 - Für typische App-Entwicklungen benötigen Sie MakePRI.exe nicht, da es bereits in den Visual Studio-Kompilierungsworkflow integriert ist. Und Visual Studio unterstützt das Bearbeiten von PRI-Dateien in einer dedizierten Benutzeroberfläche. Ihre Lokalisierer und die von ihnen verwendeten Tools sind jedoch möglicherweise auf MakePRI.exe angewiesen.
-- Jede PRI-Datei enthält eine benannte Sammlung von Ressourcen, die als Ressourcenzuordnung bezeichnet wird. Wenn eine PRI-Datei aus einem Paket geladen wird, wird der Name der Ressourcenzuordnung darauf überprüft, ob sich eine Übereinstimmung mit dem Namen der Paketidentität ergibt.
+- Jede PRI-Datei enthält eine benannte Auflistung von Ressourcen, die als Ressourcenzuordnung bezeichnet wird. Wenn eine PRI-Datei aus einem Paket geladen wird, wird der Name der Ressourcenzuordnung darauf überprüft, ob sich eine Übereinstimmung mit dem Namen der Paketidentität ergibt.
 - PRI-Dateien sind reine Datendateien, die das Portable Executable (PE)-Format nicht verwenden. Sie wurden als Ressourcenformat für Windows speziell als reine Datendateien konzipiert. Sie ersetzen Ressourcen, die im Win32-App-Modell in DLLs enthalten waren.
 - Die maximale Größe für eine PRI-Datei beträgt 64 KB.
 
@@ -62,7 +62,7 @@ Ressourcenkandidaten werden anhand eines bestimmten [**ResourceContext**](/uwp/a
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)
-* [Ressourcen-Manager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
+* [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen

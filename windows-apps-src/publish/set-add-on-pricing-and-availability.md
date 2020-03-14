@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Add-Ons, IAP, Preis
 ms.localizationpriority: medium
 ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
-ms.translationtype: MT
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788273"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210996"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Festlegen der Preise und Verfügbarkeit von Add-Ons
 
-Beim Übermitteln eines Add-Ons im [Partner Center](https://partner.microsoft.com/dashboard), der Optionen auf der **Preise und Verfügbarkeit** Seite, wie sehr zur Belastung der Kunden für das Add-on und wie es für Kunden angeboten werden soll.
+Wenn Sie ein Add-on im [Partner Center](https://partner.microsoft.com/dashboard)einreichen, legen die Optionen auf der Seite **Preise und Verfügbarkeit** fest, wie viel Kunden für Ihr Add-on abgerechnet werden und wie es für Kunden angeboten werden soll.
 
 ## <a name="markets"></a>Märkte
 
@@ -33,8 +33,8 @@ Die Standardoption ist **Can be displayed in the parent product’s Store listin
 
 Wählen Sie für Add-Ons, die Sie nicht allgemein verfügbar machen möchten, **Hidden in the Store** und eine der folgenden Optionen aus:
 
--   **Zum Kauf von innerhalb des übergeordneten Produkts nur zur Verfügung**: Bei Auswahl dieser Option kann Kunden innerhalb Ihrer app das Add-on kaufen, aber das Add-on werden nicht angezeigt, in Ihrer app-Store-Auflistung oder den Store erkannt werden können. Verwenden Sie diese Option nur, wenn das Angebot nicht allgemein verfügbar ist, z. B. im Anfangszeitraum interner Tests.
--   **Beenden Sie die Übernahme: Jeder Kunde mit einem direkten Link sehen des Produkts Store auflisten, aber sie können nur heruntergeladen, wenn sie im Besitz des Produkts vor, oder haben einen Angebotscode und Windows 10-Gerät verwenden. Dieses Add-on wird nicht angezeigt, in der übergeordneten Produkt Auflistung**: Diese Option bedeutet, dass das Add-On nicht im App-Eintrag angezeigt wird und nicht von neuen Kunden erworben werden kann. Allerdings **diese Option ist nicht für Kunden, die für Windows 8.1 oder früher unterstützt**. Wenn Ihre zuvor veröffentlichte app auf Windows 8.1 oder früher ist, werden das Add-on weiterhin zum Kauf an die Kunden zur Verfügung. Um zu beenden, bietet das Add-on für Kunden, die für Windows 8.1 oder früher, müssen Sie zum Aktualisieren Ihrer app, um den Code zu entfernen, der das Add-on bietet, und klicken Sie dann eine neue Eingabe für die app veröffentlichen. Dies wird empfohlen, auch wenn Ihre app als Ziel Windows 8.1 oder früher nicht. Es ist eine bessere benutzererfahrung für Ihre Kunden, wenn Sie noch nie ein Add-on, die Sie sich entschieden haben bieten, um nicht zur Verfügung steht.
+-   **Nur für den Kauf über das übergeordnete Produkt verfügbar: Wenn**Sie diese Option auswählen, können alle Kunden das Add-on innerhalb Ihrer APP erwerben, aber das Add-on wird nicht in der Store-Auflistung Ihrer App angezeigt, oder Sie kann im Store nicht gefunden werden. Verwenden Sie diese Option nur, wenn das Angebot nicht allgemein verfügbar ist, z. B. im Anfangszeitraum interner Tests.
+-   **Beenden des Erwerbs: Alle Kunden mit einem direkten Link können den Produkt-Store-Eintrag sehen, aber sie können ihn nur herunterladen, wenn sie das Produkts vorher erworben haben oder einen Werbecode und ein Windows 10-Gerät verwenden. Dieses Add-On wird nicht im übergeordneten Produkteintrag angezeigt**: Wenn Sie diese Option auswählen, wird das Add-On nicht im App Eintrag angezeigt, und neuen Kunden können das Add-On nicht erwerben. **Diese Option wird jedoch für Kunden unter Windows 8.1 oder früher nicht unterstützt**. Wenn Ihre bereits veröffentlichte App auf Windows 8.1 oder früher verfügbar ist, ist das Add-on weiterhin für den Erwerb an diese Kunden verfügbar. Sie müssen Ihre APP aktualisieren, um den Code zu entfernen, der das Add-on anbietet, und dann eine neue Übermittlung für die APP veröffentlichen, um das Add-on für Kunden auf Windows 8.1 oder früher nicht mehr anbieten zu können. Dies wird auch dann empfohlen, wenn Ihre APP Windows 8.1 oder früher nicht als Zielversion gilt. Es ist eine bessere Erfahrung für Ihre Kunden, wenn Ihnen nie ein Add-on angeboten wird, das Sie für die Nichtverfügbarkeit ausgewählt haben.
     
  > [!NOTE] 
  > Das Auswählen der Option **Beenden des Erwerbs** und/oder das Übermitteln eines App-Updates, durch das das Add-On aus dem Code der App entfernt wird, wirkt sich nicht auf Kunden aus, die das Add-On bereits erworben haben, und zwar unabhängig von ihrem Betriebssystem.
@@ -49,12 +49,12 @@ Weitere Informationen finden Sie unter [Konfigurieren des genauen Veröffentlich
 
 ## <a name="pricing"></a>Preise
 
-Müssen Sie einem Grundpreis für das Add-on auswählen (es sei denn, die Sie ausgewählt haben die **beenden Übernahme** option die **Sichtbarkeit** Abschnitt). Die Standardauswahl ist **Free**, sodass, wenn Sie Geld für das Add-on berechnen, achten Sie darauf, dass Sie eine der Preis verfügbare Tarife (Beginn um.99 US-Dollar) auswählen möchten.
+Sie müssen einen Basispreis für das Add-on auswählen (es sei denn, Sie haben im Bereich " **Sichtbarkeit** " die Option zum **Abbrechen der Übernahme** ausgewählt). Die Standardauswahl ist **kostenlos**. Wenn Sie also Geld für das Add-on berechnen möchten, stellen Sie sicher, dass Sie einen der verfügbaren Preisstufen (beginnend bei. 99 USD) auswählen.
 
 Sie können auch Preisänderungen planen, um das Datum und die Uhrzeit anzugeben, an dem bzw. zu der sich der Preis Ihrer Add-On ändern soll. Darüber hinaus haben Sie die Möglichkeit, diese Änderungen für bestimmte Märkte anzupassen. 
 
 > [!TIP]
-> Für die Abonnement-Add-Ons kann nicht nach dem Veröffentlichen des Add-Ons, entweder durch Auswählen von einem höheren Grundpreis in einer späteren Übermittlung oder durch Planen von preisänderungen, die der Preis steigt den Preis ausgelöst. Sie können einen niedrigeren Preis – mit einer der folgenden Methoden auswählen, aber nach der Preis gesenkt werden, ist nicht möglich, die höher als der neue Preis auslösen. Aus diesem Grund ist es besonders wichtig, um sicherzustellen, dass Sie den entsprechenden Tarif für die Abonnement-Add-Ons auswählen. 
+> Bei Add-ons für Abonnements können Sie den Preis nach der Veröffentlichung des Add-ons nicht erhöhen, indem Sie entweder einen höheren Basispreis in einer späteren Übermittlung auswählen oder eine Preisänderung planen, die den Preis erhöht. Sie können einen niedrigeren Preis mithilfe einer dieser Methoden auswählen, aber sobald der Preis gesenkt wird, können Sie ihn nicht mehr als diesen neuen Preis erhöhen. Aus diesem Grund ist es besonders wichtig, sicherzustellen, dass Sie die richtige Preisstufe für Abonnement-Add-ons auswählen. 
 
 Weitere Informationen finden Sie unter [Festlegen und Planen von App-Preisen](set-and-schedule-app-pricing.md).
 
