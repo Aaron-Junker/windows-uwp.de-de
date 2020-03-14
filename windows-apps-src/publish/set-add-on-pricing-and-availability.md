@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Add-Ons, IAP, Preis
 ms.localizationpriority: medium
-ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
-ms.translationtype: HT
+ms.openlocfilehash: 803164c395602313bcb84331e30376efd6832731
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210996"
+ms.locfileid: "79295723"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>Festlegen der Preise und Verfügbarkeit von Add-Ons
 
@@ -37,7 +37,7 @@ Wählen Sie für Add-Ons, die Sie nicht allgemein verfügbar machen möchten, **
 -   **Beenden des Erwerbs: Alle Kunden mit einem direkten Link können den Produkt-Store-Eintrag sehen, aber sie können ihn nur herunterladen, wenn sie das Produkts vorher erworben haben oder einen Werbecode und ein Windows 10-Gerät verwenden. Dieses Add-On wird nicht im übergeordneten Produkteintrag angezeigt**: Wenn Sie diese Option auswählen, wird das Add-On nicht im App Eintrag angezeigt, und neuen Kunden können das Add-On nicht erwerben. **Diese Option wird jedoch für Kunden unter Windows 8.1 oder früher nicht unterstützt**. Wenn Ihre bereits veröffentlichte App auf Windows 8.1 oder früher verfügbar ist, ist das Add-on weiterhin für den Erwerb an diese Kunden verfügbar. Sie müssen Ihre APP aktualisieren, um den Code zu entfernen, der das Add-on anbietet, und dann eine neue Übermittlung für die APP veröffentlichen, um das Add-on für Kunden auf Windows 8.1 oder früher nicht mehr anbieten zu können. Dies wird auch dann empfohlen, wenn Ihre APP Windows 8.1 oder früher nicht als Zielversion gilt. Es ist eine bessere Erfahrung für Ihre Kunden, wenn Ihnen nie ein Add-on angeboten wird, das Sie für die Nichtverfügbarkeit ausgewählt haben.
     
  > [!NOTE] 
- > Das Auswählen der Option **Beenden des Erwerbs** und/oder das Übermitteln eines App-Updates, durch das das Add-On aus dem Code der App entfernt wird, wirkt sich nicht auf Kunden aus, die das Add-On bereits erworben haben, und zwar unabhängig von ihrem Betriebssystem.
+ > Wenn Sie die Option zum **Beenden der Übernahme** auswählen und/oder ein App-Update übermitteln, das das Add-on aus Ihrer APP entfernt, wird verhindert, dass Kunden das Add-on verwenden, wenn Sie es bereits erworben haben. Vorhandene Abonnements können nicht erneuert werden und anschließend abgebrochen werden, nachdem der aktuelle Begriff beendet wurde.
 
 
 ## <a name="schedule"></a>Zeitplan
