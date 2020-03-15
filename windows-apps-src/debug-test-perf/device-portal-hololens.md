@@ -1,19 +1,19 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Geräteportal für HoloLens
+title: Device Portal für HoloLens
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal für HoloLens Ihr HoloLens-Gerät per Fernzugriff konfigurieren und verwalten können.
 ms.date: 01/03/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräte Portal
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a9cdf03aa574ea0762d73514a209367f27822ba
-ms.sourcegitcommit: 33fcf67cf96ce8574df2e50cafc4ca7c18234c4b
+ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
+ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76530782"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401969"
 ---
-# <a name="device-portal-for-hololens"></a>Geräteportal für HoloLens
+# <a name="device-portal-for-hololens"></a>Device Portal für HoloLens
 
 
 ## <a name="set-up-device-portal-on-hololens"></a>Einrichten des Geräteportals für HoloLens
@@ -22,7 +22,7 @@ ms.locfileid: "76530782"
 
 1. Schalten Sie die HoloLens ein, und setzen Sie sie auf.
 2. Führen Sie die [Start Bewegung](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture) oder die [aufblüteschlange](https://developer.microsoft.com/mixed-reality#Bloom) für hololens (1st Gen) aus, um das Hauptmenü zu starten.
-3. Schauen Sie sich die Kachel " **Einstellungen** " an, und führen Sie die [Tasten](https://developer.microsoft.com/mixed-reality#Press_and_release) Kombination auf hololens (1. Gen) aus, oder wählen Sie Sie in hololens 2 aus, indem [Sie sie berühren oder einen Hand Strahl verwenden](https://docs.microsoft.com/hololens/hololens2-basic-usage). Die app "Einstellungen" wird gestartet, nachdem Sie Sie ausgewählt haben.
+3. Schauen Sie sich die Kachel " **Einstellungen** " an, und führen Sie die [Tap](https://developer.microsoft.com/mixed-reality#Press_and_release) -Geste auf hololens (1. Gen) aus, oder wählen Sie Sie in hololens 2 aus, indem [Sie sie berühren oder ein Hand Strahl](https://docs.microsoft.com/hololens/hololens2-basic-usage) Die app "Einstellungen" wird gestartet, nachdem Sie Sie ausgewählt haben.
 4. Wählen Sie das Menüelement **Aktualisieren** aus.
 5. Wählen Sie das Menüelement **Für Entwickler** aus.
 6. Aktivieren Sie den **Entwicklermodus**.
@@ -84,7 +84,7 @@ Jede HoloLens generiert ein eindeutiges selbstsigniertes Zertifikat für die SSL
 
 ## <a name="device-portal-pages"></a>Seiten des Geräteportals 
 
-### <a name="home"></a>„Startseite“, 
+### <a name="home"></a>Startseite 
 
 Die Geräteportalsitzung beginnt auf der Startseite. Der Zugriff auf andere Seiten erfolgt über die Navigationsleiste links von der Startseite.
 
@@ -101,7 +101,7 @@ Auf der Startseite werden die folgenden Informationen angezeigt:
 - **Gerätestatus**: Überwacht die Integrität des Geräts und meldet schwerwiegende Fehler.
 - **Windows-Informationen**: Zeigt den Namen der HoloLens und die derzeit installierte Version von Windows an.
 - **Einstellungen**: Dieser Abschnitt enthält die folgenden Einstellungen:
-    - **IPD**: Legt den Pupillenabstand (Interpupillary Distance, IPD) fest. Dies ist der Abstand in Millimeter zwischen dem Mittelpunkt der Pupillen des Benutzers, wenn dieser geradeaus schaut. Die Einstellung wird sofort wirksam. Der Standardwert wurde beim Einrichten des Geräts automatisch berechnet.
+    - **IPD**: Legt den Pupillenabstand (Interpupillary Distance, IPD) fest. Dies ist der Abstand in Millimeter zwischen dem Mittelpunkt der Pupillen des Benutzers, wenn dieser geradeaus schaut. Die Einstellung wird sofort wirksam. Der Standardwert wurde beim Einrichten des Geräts automatisch berechnet. **Nur für hololens (1 St Gen) gültig, hololens 2 berechnet die augenposition.** 
     - **Gerätename**: Weisen Sie der HoloLens einen Namen zu. Nach dem Ändern dieses Werts müssen Sie das Gerät neu starten, damit er wirksam wird. Nach dem Klicken auf „Speichern“ wird ein Dialogfeld mit der Frage angezeigt, ob Sie das Gerät sofort oder später neu starten möchten.
     - **Standbymoduseinstellungen**: Hier legen Sie die Wartezeit fest, bevor das Gerät in den Ruhezustand wechselt, wenn es angeschlossen ist und wenn es mit Akkustrom betrieben wird.
 
@@ -116,7 +116,7 @@ Auf der Seite „3D View“ können Sie erkennen, wie die HoloLens Ihre Umgebung
 - **Boden anzeigen**: Zeigt eine schachbrettartige Bodenfläche an.
 - **Frustum anzeigen**: Zeigt das Ansichts-Frustum an.
 - **Stabilisierungsebene anzeigen**: Zeigt die Ebene an, die von der HoloLens für die Bewegungsstabilisierung verwendet wird.
-- **Gitter anzeigen**: Zeigt das Surface-Mapping-Gitter an, das die Umgebung darstellt.
+- **Show mesh**: Zeigt das Surface-Mapping-Gitter an, das die Umgebung darstellt.
 - **Details anzeigen**: Zeigt die Änderung von Handpositionen, der Kopfdrehungsquaternionen und des Geräteursprungsvektors in Echtzeit an.
 - **Vollbildschaltfläche**: Mit dieser Schaltfläche wird die Seite „3D View“ im Vollbildmodus angezeigt. Drücken Sie die ESC-Taste, um die Vollbildansicht zu beenden.
 
@@ -126,10 +126,10 @@ Auf der Seite „3D View“ können Sie erkennen, wie die HoloLens Ihre Umgebung
 
 Auf der Seite „Mixed Reality Capture“ können Sie Mediendatenströme von der HoloLens speichern.
 - Einstellungen: Steuern Sie die erfassten Mediendatenströme durch Aktivieren der folgenden Einstellungen: „Holograms“ erfasst den holografischen Anteil des Videodatenstroms. Hologramme werden in Mono und nicht in Stereo gerendert.
-- **PV-Kamera**: Erfasst den Videodatenstrom der Foto-/Videokamera.
+- **PV camera**: Erfasst den Videodatenstrom der Foto-/Videokamera.
 - **Mic Audio**: Erfasst Audioaufnahmen vom Mikrofonarray.
 - **App Audio**: Erfasst Audioaufnahmen von der derzeit ausgeführten App.
-- **Qualität der Live-Vorschau**: Wählen Sie die Bildschirmauflösung, Bildfrequenz und Streamingrate für die Live-Vorschau aus.
+- **Live preview quality**: Wählen Sie die Bildschirmauflösung, Bildfrequenz und Streamingrate für die Live-Vorschau aus.
 
 - Klicken oder tippen Sie auf die Schaltfläche „Live preview“, um den Aufnahmedatenstrom anzuzeigen. Mit „Stop live preview“ wird der Aufnahmedatenstrom beendet.
 - Klicken oder tippen Sie auf „Aufzeichnen“, um die Aufzeichnung des Mixed-Reality-Datenstroms mit den angegebenen Einstellungen zu starten. Mit „Aufnahme beenden“ wird die Aufzeichnung beendet und gespeichert.
@@ -145,7 +145,7 @@ Das Tool „Systemleistung“ der HoloLens bietet drei zusätzliche Metriken, di
 Die folgenden Metriken sind verfügbar:
 - **SoC Power**: Sofortige Nutzung des System-on-a-Chip-Stroms, gemittelt über eine Minute.
 - **Systemstromversorgung**: Sofortige Nutzung des Systemstroms, gemittelt über eine Minute.
-- **Bildfrequenz**: Bilder pro Sekunde, übersprungene VBlanks pro Sekunde und aufeinanderfolgende übersprungene VBlanks
+- **Framerate**: Bilder pro Sekunde, übersprungene VBlanks pro Sekunde und aufeinanderfolgende übersprungene VBlanks
 
 ### <a name="app-crash-dumps-page"></a>Seite „App Crash Dumps“ 
 
@@ -162,7 +162,7 @@ Beachten Sie, dass die App auch dann beim Starten ausgeführt wird, wenn der Kio
 ### <a name="simulation"></a>Simulation 
 
 Ermöglicht Ihnen das Aufzeichnen und Wiedergeben von Eingabedaten für Testzwecke.
-- **Erfassungsraum**: Wird verwendet, um eine Datei für einen simulierten Raum herunterzuladen, die das Spatial-Mapping-Gitter für die Umgebung des Benutzers enthält. Benennen Sie den Raum, und klicken Sie auf „Aufnahme“, um die Daten als XEF-Datei auf dem PC zu speichern. Diese Raumdatei kann in den HoloLens-Emulator geladen werden.
+- **Capture room**: Wird verwendet, um eine Datei für einen simulierten Raum herunterzuladen, die das Spatial-Mapping-Gitter für die Umgebung des Benutzers enthält. Benennen Sie den Raum, und klicken Sie auf „Aufnahme“, um die Daten als XEF-Datei auf dem PC zu speichern. Diese Raumdatei kann in den HoloLens-Emulator geladen werden.
 - **Aufzeichnung**: Markieren Sie die aufzuzeichnenden Datenströme, benennen Sie die Aufzeichnung, und klicken oder tippen Sie auf „Aufzeichnen“, um die Aufzeichnung zu starten. Führen Sie mit der HoloLens Aktionen aus, und klicken Sie dann auf „Beenden“, um die Daten als XEF-Datei auf dem PC zu speichern. Diese Datei kann im HoloLens-Emulator oder auf dem Gerät geladen werden.
 - **Wiedergabe**: Klicken oder tippen Sie auf „Upload recording“, um auf dem PC eine XEF-Datei auszuwählen und die Daten an die HoloLens zu senden.
 - **Steuerungsmodus**: Wählen Sie in der Dropdownliste „Standard“ oder „Simulation“ aus, und klicken oder tippen Sie auf die Schaltfläche „Festlegen“, um den Modus der HoloLens auszuwählen. Durch Auswahl von „Simulation“ werden die realen Sensoren auf der HoloLens deaktiviert und stattdessen hochgeladene simulierte Daten verwendet. Wenn Sie zu „Simulation“ wechseln, reagiert die HoloLens nicht auf den realen Benutzer, bis Sie zurück zu „Standard“ wechseln.
@@ -174,7 +174,7 @@ Sendet die Tastatureingabe vom Remotecomputer an die HoloLens.
 
 Klicken oder tippen Sie auf den Bereich unter „Virtual keyboard“, um das Senden von Tastatureingaben an die HoloLens zu aktivieren. Geben Sie im Textfeld „Eingabetext“ Text ein, und klicken oder tippen Sie auf „Senden“, um die Tastatureingaben an die aktive App zu senden.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 * [Übersicht über das Windows-Geräte Portal](device-portal.md)
 * [Geräteportal Kern-API-Referenz](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (APIs für alle Windows 10-Geräte)
