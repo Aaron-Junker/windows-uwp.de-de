@@ -4,25 +4,25 @@ title: Benutzerdefinierte Abhängigkeitseigenschaften
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.date: 07/12/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 796ee7ed1454515817f5fc994ccb9242d2a2918c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: eadb0d1547387789fc202b833294e761f2faf22c
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259871"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79448590"
 ---
 # <a name="custom-dependency-properties"></a>Benutzerdefinierte Abhängigkeitseigenschaften
 
 Hier wird erläutert, wie Sie eigene Abhängigkeitseigenschaften für eine Windows-Runtime-App mit C++, C# oder Visual Basic verwenden können. Wir zählen mögliche Gründen für die Erstellung benutzerdefinierter Abhängigkeitseigenschaften durch App-Entwickler und Komponentenautoren auf. Des Weiteren beschreiben wir die Implementierungsschritte für eine benutzerdefinierte Abhängigkeitseigenschaft sowie einige bewährte Methoden, die die Leistung, Benutzerfreundlichkeit und Vielseitigkeit der Abhängigkeitseigenschaft verbessern.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 Wir gehen davon aus, dass Sie die [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md) bereits gelesen haben und dass Sie Abhängigkeitseigenschaften aus der Perspektive eines Konsumenten von bestehenden Abhängigkeitseigenschaften verstehen. Für ein besseres Verständnis der in diesem Thema aufgeführten Beispiele sollten Sie XAML verstehen und wissen, wie eine einfache Windows-Runtime-App mit C++, C# oder Visual Basic geschrieben wird.
 
@@ -40,7 +40,7 @@ Abhängigkeitseigenschaften haben für gewöhnlich eine Wrapperimplementierung. 
 
 Wenn Sie eine benutzerdefinierte Abhängigkeitseigenschaft selbst implementieren und diese veröffentlichen und leicht auffindbar machen möchten, definieren Sie auch die Eigenschaftenwrapper. Eigenschaftenwrapper sind des Weiteren nützlich für die Berichterstattung über grundlegende Informationen der Abhängigkeitseigenschaft für Betrachtungen und statische Analysen. Der Wrapper befindet sich insbesondere dort, wo Sie Attribute platzieren, beispielsweise [**ContentPropertyAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.ContentPropertyAttribute).
 
-## <a name="when-to-implement-a-property-as-a-dependency-property"></a>Wann sollten Sie eine Eigenschaft als Abhängigkeitseigenschaft implementieren?
+## <a name="when-to-implement-a-property-as-a-dependency-property"></a>Wann sollte eine Eigenschaft als Abhängigkeitseigenschaft implementiert werden?
 
 Wenn Sie eine öffentliche Lese-/Schreibeigenschaft in eine Klasse implementieren und die Klasse von [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) abgeleitet ist, können Sie Ihre Eigenschaft als Abhängigkeitseigenschaft nutzen. In einigen Fällen ist die typische Methode, Ihre Eigenschaft mit einem privaten Feld abzusichern, angemessen. Das Definieren Ihrer benutzerdefinierten Eigenschaft als Abhängigkeitseigenschaft ist nicht immer notwendig oder angemessen. Die Entscheidung hängt von den Szenarien ab, die Ihre Eigenschaft unterstützen soll.
 
@@ -421,7 +421,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## <a name="best-practices"></a>Bewährte Verfahren
+## <a name="best-practices"></a>Empfohlene Methoden
 
 Berücksichtigen Sie die folgenden Überlegungen als bewährte Methoden, wenn Sie Ihre benutzerdefinierte Abhängigkeitseigenschaft festlegen.
 
@@ -441,7 +441,7 @@ Sie können Klassenkonstruktoren verwenden, um erste Werte für eine Abhängigke
 
 Bei Abhängigkeitseigenschaften vom Typ "Sammlung" sind einige zusätzliche Implementierungsaspekte zu beachten.
 
-Abhängigkeitseigenschaften des Sammlungstyps sind in der Windows-Runtime-API vergleichsweise selten. In den meisten Fällen können Sie Sammlungen verwenden, deren Elemente eine [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)-Unterklasse sind. Die Sammlungseigenschaft selbst wird jedoch als herkömmliche CLR- oder eine C++-Eigenschaft implementiert. Das ist darauf zurückzuführen, dass sich Sammlungen nicht unbedingt für herkömmliche Szenarien eignen, bei denen Abhängigkeitseigenschaften involviert sind. Zum Beispiel:
+Abhängigkeitseigenschaften des Sammlungstyps sind in der Windows-Runtime-API vergleichsweise selten. In den meisten Fällen können Sie Sammlungen verwenden, deren Elemente eine [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)-Unterklasse sind. Die Sammlungseigenschaft selbst wird jedoch als herkömmliche CLR- oder eine C++-Eigenschaft implementiert. Das ist darauf zurückzuführen, dass sich Sammlungen nicht unbedingt für herkömmliche Szenarien eignen, bei denen Abhängigkeitseigenschaften involviert sind. Beispiel:
 
 - Sie animieren für gewöhnlich keine Sammlung.
 - Sie füllen die Elemente einer Sammlung für gewöhnlich nicht vorher mit Stilen oder einer Vorlage aus.
@@ -472,12 +472,12 @@ Hier gilt der allgemeine Grundsatz, dass Klassenkonstruktoren keine virtuellen M
 
 ### <a name="registering-the-dependency-properties-for-ccx-apps"></a>Registrieren der Abhängigkeitseigenschaften für C++/CX-Apps
 
-Die Implementierung für das Registrieren einer Eigenschaft in C++/CX ist schwieriger als für C#, zum einen aufgrund der Aufteilung in Kopfzeile und Implementierungsdatei und zum anderen, weil die Initialisierung im Stammbereich der Implementierungsdatei nicht empfohlen wird. (Visual C++ Component Extensions (C++/CX) fügt statischen initialisierercode aus dem Stamm Bereich direkt in **DllMain**ein C# , wohingegen Compiler die statischen Initialisierer den Klassen zuweisen und somit **DllMain** -Probleme bei der Lade Sperre vermeiden.). Die bewährte Methode besteht hier im Deklarieren einer Hilfsfunktion, die die gesamte Registrierung von Abhängigkeitseigenschaften für eine Klasse durchführt, d. h. eine Funktion pro Klasse. Für jede benutzerdefinierte Klasse, die Ihre App nutzt, müssen Sie dann auf die Hilfsregistrierungsfunktion verweisen, die von den einzelnen benutzerdefinierten Klassen jeweils verfügbar gemacht wird, die Sie verwenden möchten. Rufen Sie jede Hilfsregistrierungsfunktion einmalig als Teil des [**Application constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) vor `InitializeComponent` auf. Dieser Konstruktor wird nur ausgeführt, wenn wirklich zum ersten Mal auf die App verwiesen wir. Er wird nicht erneut ausgeführt, wenn beispielsweise eine angehaltene App fortgesetzt wird. Wie im vorherigen C++-Registrierungsbeispiel gezeigt, ist auch die **nullptr**-Überprüfung jedes [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)-Aufrufs wichtig, da hierdurch sichergestellt wird, dass kein Aufrufer der Funktion die Eigenschaft zweimal registrieren kann. Bei einem zweiten Registrierungsaufruf würde Ihre App ohne eine solche Überprüfung wahrscheinlich abstürzen, da der Eigenschaftsname doppelt vorhanden wäre. Dieses Implementierungsmuster können Sie im [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e) im Code für die C++/CX-Version des Beispiels sehen.
+Die Implementierung für das Registrieren einer Eigenschaft in C++/CX ist schwieriger als für C#, zum einen aufgrund der Aufteilung in Kopfzeile und Implementierungsdatei und zum anderen, weil die Initialisierung im Stammbereich der Implementierungsdatei nicht empfohlen wird. (Visual C++ Component Extensions (C++/CX) fügt statischen initialisierercode aus dem Stamm Bereich direkt in **DllMain**ein C# , wohingegen Compiler die statischen Initialisierer den Klassen zuweisen und somit **DllMain** -Probleme bei der Lade Sperre vermeiden.). Die bewährte Methode besteht hier im Deklarieren einer Hilfsfunktion, die die gesamte Registrierung von Abhängigkeitseigenschaften für eine Klasse durchführt, d. h. eine Funktion pro Klasse. Für jede benutzerdefinierte Klasse, die Ihre App nutzt, müssen Sie dann auf die Hilfsregistrierungsfunktion verweisen, die von den einzelnen benutzerdefinierten Klassen jeweils verfügbar gemacht wird, die Sie verwenden möchten. Rufen Sie jede Hilfsregistrierungsfunktion einmalig als Teil des [**Application constructor**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.-ctor) (`App::App()`) vor `InitializeComponent` auf. Dieser Konstruktor wird nur ausgeführt, wenn wirklich zum ersten Mal auf die App verwiesen wir. Er wird nicht erneut ausgeführt, wenn beispielsweise eine angehaltene App fortgesetzt wird. Wie im vorherigen C++-Registrierungsbeispiel gezeigt, ist auch die **nullptr**-Überprüfung jedes [**Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)-Aufrufs wichtig, da hierdurch sichergestellt wird, dass kein Aufrufer der Funktion die Eigenschaft zweimal registrieren kann. Bei einem zweiten Registrierungsaufruf würde Ihre App ohne eine solche Überprüfung wahrscheinlich abstürzen, da der Eigenschaftsname doppelt vorhanden wäre. Dieses Implementierungsmuster können Sie im [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample) im Code für die C++/CX-Version des Beispiels sehen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 - [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
 - [**DependencyProperty. Register**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyproperty.register)
 - [Übersicht über Abhängigkeitseigenschaften](dependency-properties-overview.md)
-- [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [XAML-Beispiel für Benutzer und benutzerdefinierte Steuerelemente](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
  

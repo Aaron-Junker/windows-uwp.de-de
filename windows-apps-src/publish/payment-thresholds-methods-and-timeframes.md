@@ -1,21 +1,21 @@
 ---
 Description: Die geschätzte Zeit bis zum Übertragen von Zahlungen, geltende Zahlungsschwellenwerte und Microsoft-Marketplaces, von denen Sie Zahlungen erhalten können, sind von Land/Region und Zahlungskontotyp abhängig.
 title: Zahlungsschwellenwerte, Methoden und Zeiträume
-ms.date: 10/18/2018
+ms.date: 03/16/2020
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcaedb87111d8d55a3d082adc8fdbd8a5096747
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.openlocfilehash: 45a491364a4b1f406169cba76b7e7ea1ded00886
+ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495701"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79434217"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Zahlungsschwellenwerte, Methoden und Zeiträume
 
-Die geschätzte Zeit zur Übertragung Zahlungen und Marketplaces von Microsoft aus denen Sie Zahlungen erhalten können, kann je nach Land/Region und Auszahlung Kontentyp variieren. In diesem Thema wird beschrieben, die Zahlungsmethoden in jedem Land/Region unterstützt wird.
+Die geschätzte Zeit für die Übertragung von Zahlungen und die Microsoft-Markt Orte, von denen Sie die Zahlungen erhalten können, können je nach Land/Region und Auszahlungs Kontotyp variieren. In diesem Thema werden die in den einzelnen Ländern bzw. Regionen unterstützten Zahlungsmethoden beschrieben.
 
 Für alle angegebenen Länder/Regionen werden ACH/SEPA oder Überweisungen verwendet, um unsere Zahlungen zu übermitteln. Darüber hinaus unterstützen einige Länder/Regionen PayPal als Zahlungsmethode.
 
@@ -26,7 +26,7 @@ In der Regel senden wir Zahlungen, die in einem bestimmten Monat fällig sind, b
 > [!NOTE]
 > Die unten angegebene Anzahl von Tagen ist ungefähr. Eine Zahlung kann mehr oder weniger Zeit benötigen.
 
-| Zahlungsmethode     | Anzahl von Tagen, um das Zahlungskonto zu erreichen     |
+| Zahlungsweise     | Anzahl von Tagen, um das Zahlungskonto zu erreichen     |
 |--------------------|--------------------------------------------|
 | PayPal             | 1 Werktag                             |
 | ACH/SEPA           | 2 bis 3 Werktage                          |
@@ -37,9 +37,9 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 ## <a name="payment-methods-in-countriesregions"></a>Zahlungsmethoden in Ländern/Regionen
 
 > [!NOTE]
-> Schwellenwerte für die Zahlung in allen Regionen ist 50 US-Dollar.
+> Zahlungs Schwellenwerte in allen Regionen sind $50 USD.
 
-| Land                          | Azure Marketplace | Store, Werbung, Mixer und Minecraft | Office | PayPal-Zahlungen |
+| Land                          | Azure Marketplace | Store, Werbung, Mixer und minecraft | Office | PayPal-Zahlungen |
 |----------------------------------|-------------------|------------------------------------------|--------|-----------------|
 | Afghanistan                      | Ja               | Ja                                      | Nein     | Nein              |
 | Albanien                          | Ja               | Ja                                      | Ja    | Ja             |
@@ -51,7 +51,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Armenien                          | Ja               | Ja                                      | Nein     | Nein              |
 | Australien                        | Ja               | Ja                                      | Ja    | Ja             |
 | Österreich                          | Ja               | Ja                                      | Ja    | Ja             |
-| Aserbeidschan                       | Ja               | Ja                                      | Ja    | Nein              |
+| Aserbaidschan                       | Ja               | Ja                                      | Ja    | Nein              |
 | Bahrain                          | Ja               | Ja                                      | Ja    | Ja             |
 | Bangladesch                       | Ja               | Ja                                      | Ja    | Nein              |
 | Belarus                          | Ja               | Ja                                      | Ja    | Nein              |
@@ -60,7 +60,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Bolivien                          | Ja               | Ja                                      | Ja    | Nein              |
 | Bosnien und Herzegowina           | Ja               | Ja                                      | Ja    | Ja             |
 | Botsuana                         | Ja               | Ja                                      | Nein     | Ja             |
-| Brazilien                           | Ja               | Ja                                      | Ja    | Ja             |
+| Brasilien                           | Ja               | Ja                                      | Ja    | Ja             |
 | Bulgarien                         | Ja               | Ja                                      | Ja    | Ja             |
 | Burkina Faso                     | Ja               | Ja                                      | Ja    | Nein              |
 | Burundi                          | Ja               | Ja                                      | Ja    | Nein              |
@@ -74,9 +74,9 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Kolumbien                         | Ja               | Ja                                      | Ja    | Ja             |
 | Komoren                          | Ja               | Ja                                      | Nein     | Nein              |
 | Kongo, Demokratische Republik                      | Ja               | Ja                                      | Ja    | Nein              |
-| Kongo, Republik               | Ja               | Ja                                      | Ja    | Nein              |
+| Republik Kongo               | Ja               | Ja                                      | Ja    | Nein              |
 | Costa Rica                       | Ja               | Ja                                      | Ja    | Ja             |
-| Côte d’Ivoire                    | Ja               | Ja                                      | Ja    | Nein              |
+| Côte d ' Ivoire                    | Ja               | Ja                                      | Ja    | Nein              |
 | Kroatien                          | Ja               | Ja                                      | Ja    | Nein              |
 | Zypern                           | Ja               | Ja                                      | Ja    | Ja             |
 | Tschechische Republik                   | Ja               | Ja                                      | Ja    | Ja             |
@@ -91,9 +91,9 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Äthiopien                         | Ja               | Ja                                      | Ja    | Nein              |
 | Fidschi                     | Ja               | Ja                                      | Nein     | Nein              |
 | Finnland                          | Ja               | Ja                                      | Ja    | Ja             |
-| Frankreich                           | Ja               | Ja                                      | Ja    | Ja             |
-| Georgien                          | Ja               | Ja                                      | Ja    | Ja             |
-| Deutschland                          | Ja               | Ja                                      | Ja    | Ja             |
+| France                           | Ja               | Ja                                      | Ja    | Ja             |
+| Georgia                          | Ja               | Ja                                      | Ja    | Ja             |
+| Germany                          | Ja               | Ja                                      | Ja    | Ja             |
 | Ghana                            | Ja               | Ja                                      | Ja    | Nein              |
 | Griechenland                           | Ja               | Ja                                      | Ja    | Ja             |
 | Guatemala                        | Ja               | Ja                                      | Ja    | Ja             |
@@ -124,7 +124,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Liechtenstein                    | Ja               | Ja                                      | Ja    | Ja             |
 | Litauen                        | Ja               | Ja                                      | Ja    | Nein              |
 | Luxemburg                       | Ja               | Ja                                      | Ja    | Ja             |
-| Nordmazedonien                        | Nein                | Ja                                      | Ja    | Nein              |
+| EJR Mazedonien                        | Nein                | Ja                                      | Ja    | Nein              |
 | Madagaskar                       | Ja               | Ja                                      | Ja    | Nein              |
 | Malawi                           | Ja               | Ja                                      | Ja    | Ja             |
 | Malaysia                         | Ja               | Ja                                      | Ja    | Ja             |
@@ -138,7 +138,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Marokko                          | Ja               | Ja                                      | Ja    | Nein              |
 | Mosambik                       | Ja               | Ja                                      | Ja    | Ja             |
 | Nepal                            | Ja               | Ja                                      | Ja    | Nein              |
-| Niederlande, die                 | Ja               | Ja                                      | Ja    | Ja             |
+| Niederlande, der                 | Ja               | Ja                                      | Ja    | Ja             |
 | Neuseeland                      | Ja               | Ja                                      | Ja    | Ja             |
 | Nicaragua                        | Ja               | Ja                                      | Ja    | Ja             |
 | Niger                            | Ja               | Ja                                      | Ja    | Nein              |
@@ -155,7 +155,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Puerto Rico                      | Nein                | Nein                                       | Ja    | Nein              |
 | Katar                            | Ja               | Ja                                      | Ja    | Ja             |
 | Rumänien                          | Ja               | Ja                                      | Ja    | Nein              |
-| Russland                           | Ja               | Ja                                      | Nein     | Ja             |
+| Russische Föderation                           | Ja               | Ja                                      | Nein     | Ja             |
 | Ruanda                           | Ja               | Ja                                      | Ja    | Nein              |
 | St. Vincent und die Grenadinen | Nein                | Ja                                      | Nein     | Nein              |
 | Saudi-Arabien                     | Ja               | Ja                                      | Ja    | Ja             |
@@ -180,12 +180,12 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Tonga                            | Ja               | Ja                                      | Nein     | Nein              |
 | Trinidad und Tobago              | Ja               | Ja                                      | Ja    | Ja             |
 | Tunesien                          | Ja               | Ja                                      | Ja    | Nein              |
-| Turkei                           | Ja               | Ja                                      | Ja    | Nein              |
+| Türkei                           | Ja               | Ja                                      | Ja    | Nein              |
 | Turkmenistan                     | Ja               | Ja                                      | Nein     | Nein              |
 | Uganda                           | Ja               | Ja                                      | Ja    | Nein              |
 | Ukraine                          | Ja               | Ja                                      | Nein     | Nein              |
 | Vereinigte Arabische Emirate             | Ja               | Ja                                      | Ja    | Ja             |
-| Vereinigtes Königreich                   | Ja               | Ja                                      | Ja    | Ja             |
+| Großbritannien                   | Ja               | Ja                                      | Ja    | Ja             |
 | USA                    | Ja               | Ja                                      | Ja    | Ja             |
 | Uruguay                          | Ja               | Ja                                      | Ja    | Ja             |
 | Usbekistan                       | Ja               | Ja                                      | Nein     | Nein              |

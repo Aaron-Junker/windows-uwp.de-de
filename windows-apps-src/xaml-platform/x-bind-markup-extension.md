@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8fda22a565972e4157777c1db537a8f8d9ba20
-ms.sourcegitcommit: 20af365ce85d3d7d3a8d07c4cba5d0f1fbafd85d
+ms.openlocfilehash: d148df8de9086aaaec004525c3ee4865e4320c4e
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77034001"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79453360"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind}-Markuperweiterung
 
@@ -30,7 +30,7 @@ Die von **{x:Bind}** und **{Binding}** erstellten Bindungsobjekte sind von der F
 
 -   [{x:Bind}-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
--   [Beispiel für XAML-UI-Grundlagen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+-   [XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## <a name="xaml-attribute-usage"></a>XAML-Attributsyntax
 
@@ -85,8 +85,7 @@ So sucht **Text="{x:Bind Employee.FirstName}"** z. B. auf einer Seite nach einem
 
 Für C++/CX kann **{x:Bind}** keine Bindungen an private Felder und Eigenschaften im Seiten- oder Datenmodell durchführen – Sie benötigen eine öffentliche Eigenschaft, damit die Bindung möglich ist. Der Oberflächenbereich für die Bindung muss als CX-Klassen/-Schnittstellen verfügbar gemacht werden, damit die relevanten Metadaten abgerufen werden können. Das **\[bindbare\]** Attribut sollte nicht benötigt werden.
 
-Mit **x:Bind** müssen Sie **ElementName=xxx** nicht als Teil des Bindungsausdrucks verwenden. Stattdessen können Sie den Namen des Elements als ersten Teil des Pfads für die Bindung verwenden, da benannte Elemente Felder innerhalb der Seite oder des Benutzer Steuer Elements werden, die die Stamm Bindungs Quelle darstellen. 
-
+Mit **x:Bind** müssen Sie **ElementName=xxx** nicht als Teil des Bindungsausdrucks verwenden. Stattdessen können Sie den Namen des Elements als ersten Teil des Pfads für die Bindung verwenden, da benannte Elemente Felder innerhalb der Seite oder des Benutzer Steuer Elements werden, die die Stamm Bindungs Quelle darstellen.
 
 ### <a name="collections"></a>Auflistungen
 
@@ -104,10 +103,80 @@ Zum Binden an [angefügte Eigenschaften](./attached-properties-overview.md)müss
 
 ### <a name="casting"></a>Umwandlung
 
-Kompilierte Bindungen sind stark typisiert und lösen den Typ der einzelnen Schritte in einem Pfad auf. Wenn der zurückgegebene Typ nicht über den Member verfügt, erzeugt er zur Kompilierzeit einen Fehler. Sie können eine Umwandlung angeben, um der Bindung den tatsächlichen Typ des Objekts mitzuteilen. Im folgenden Fall ist **obj** eine Eigenschaft eines Typobjekts, enthält aber ein Textfeld, sodass wir **Text="{x:Bind ((TextBox)obj).Text}"** oder **Text="{x:Bind obj.(TextBox.Text)}"** verwenden können.
+Kompilierte Bindungen sind stark typisiert und lösen den Typ der einzelnen Schritte in einem Pfad auf. Wenn der zurückgegebene Typ nicht über den Member verfügt, erzeugt er zur Kompilierzeit einen Fehler. Sie können eine Umwandlung angeben, um der Bindung den tatsächlichen Typ des Objekts mitzuteilen.
+
+Im folgenden Fall ist **obj** eine Eigenschaft eines Typobjekts, enthält aber ein Textfeld, sodass wir **Text="{x:Bind ((TextBox)obj).Text}"** oder **Text="{x:Bind obj.(TextBox.Text)}"** verwenden können.
+
 Das Feld **groups3** in **Text = "{x:Bind ((Data: sampledatagroup) groups3\[0\]). Title} "** ist ein Wörterbuch von Objekten, sodass Sie es in" **Daten: sampledatagroup**"umwandeln müssen. Beachten Sie die Verwendung des **data:** -XML-Namespacepräfix für die Zuordnung des Objekttyps zu einem Code-Namespace, der nicht Teil des Standard-XAML-Namespace ist.
 
 _Hinweis: die C#Umwandlungs Syntax im-Format ist flexibler als die Syntax der angefügten Eigenschaft, und es wird die empfohlene Syntax in Zukunft angezeigt._
+
+#### <a name="pathless-casting"></a>Pfadlose Umwandlung
+
+Der Native Bindungs Parser stellt kein Schlüsselwort bereit, um `this` als Funktionsparameter darzustellen, aber es unterstützt die Pfad lose Umwandlung (z. b. `{x:Bind (x:String)}`), die als Funktionsparameter verwendet werden kann. Daher ist `{x:Bind MethodName((namespace:TypeOfThis))}` eine gültige Methode für die Durchführung von Konzepten, die `{x:Bind MethodName(this)}`konzeptionell äquivalent sind.
+
+Beispiel:
+
+`Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}"`
+
+```xaml
+<Page
+    x:Class="AppSample.MainPage"
+    ...
+    xmlns:local="using:AppSample">
+
+    <Grid>
+        <ListView ItemsSource="{x:Bind Songs}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:SongItem">
+                    <TextBlock
+                        Margin="12"
+                        FontSize="40"
+                        Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+```
+
+```csharp
+namespace AppSample
+{
+    public class SongItem
+    {
+        public string TrackName { get; private set; }
+        public string ArtistName { get; private set; }
+
+        public SongItem(string trackName, string artistName)
+        {
+            ArtistName = artistName;
+            TrackName = trackName;
+        }
+    }
+
+    public sealed partial class MainPage : Page
+    {
+        public List<SongItem> Songs { get; }
+        public MainPage()
+        {
+            Songs = new List<SongItem>()
+            {
+                new SongItem("Track 1", "Artist 1"),
+                new SongItem("Track 2", "Artist 2"),
+                new SongItem("Track 3", "Artist 3")
+            };
+
+            this.InitializeComponent();
+        }
+
+        public static string GenerateSongTitle(SongItem song)
+        {
+            return $"{song.TrackName} - {song.ArtistName}";
+        }
+    }
+}
+```
 
 ## <a name="functions-in-binding-paths"></a>Funktionen in Bindungspfaden
 
