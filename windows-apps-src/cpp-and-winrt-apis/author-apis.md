@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Implementierung, implementieren, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701487"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209275"
 ---
 # <a name="author-apis-with-cwinrt"></a>Erstellen von APIs mit C++/WinRT
 
@@ -32,7 +32,7 @@ In beiden Fällen wird der Typ, der Ihre C++/WinRT-APIs implementiert, als *Impl
 Das einfachste Szenario ist die Implementierung einer Windows-Runtime-Schnittstelle für die lokale Nutzung. Sie benötigen keine Laufzeitklasse, sondern nur eine normale C++-Klasse. Beispielsweise können Sie eine App rund um [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) schreiben.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) finden Sie unter [Visual Studio-Unterstützung für C++/ WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 In Visual Studio zeigt die Projektvorlage **Visual C++**  > **Windows Universal** > **Core App (C++/WinRT)** das **CoreApplication**-Muster. Das Muster beginnt mit der Übergabe einer Implementierung von [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) an [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
@@ -114,7 +114,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ...
 ```
 
-Da Ihr **App**-Typ *eine* **IFrameworkViewSource** ist, können Sie einfach ein solches Element an **Run** übergeben.
+Da dein **App**-Typ  *ein* **IFrameworkViewSource**-Element ist, kannst du einfach einen an **Run** übergeben.
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -314,9 +314,9 @@ Die **MyType**-Klasse ist nicht Teil der Projektion, sondern die Implementierung
 Falls Sie ein Interface-Objekt haben und wissen, dass es sich um eine Schnittstelle für Ihre Implementierung handelt, können Sie mit der Funktionsvorlage [**from_abi**](/uwp/cpp-ref-for-winrt/get-self) zur Implementierung zurückkehren. Auch hier handelt es sich um eine Technik, die virtuelle Funktionsaufrufe vermeidet und Sie direkt die Implementierung nutzen lässt.
 
 > [!NOTE]
-> Wenn die Windows SDK-Version 10.0.17763.0 (Windows 10, Version 1809) oder höher nicht installiert ist, müssen Sie [**winrt::from_abi** ](/uwp/cpp-ref-for-winrt/from-abi) anstelle von [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) aufrufen.
+> Wenn die Windows SDK-Version 10.0.17763.0 (Windows 10, Version 1809) oder höher nicht installiert ist, müssen Sie [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi) anstelle von [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) aufrufen.
 
-Hier sehen Sie ein Beispiel. Ein weiteres Beispiel ist unter [Implementieren der benutzerdefinierten **BgLabelControl**-Steuerelementklasse](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class) verfügbar.
+Hier ist ein Beispiel. Ein weiteres Beispiel ist unter [Implementieren der benutzerdefinierten **BgLabelControl**-Steuerelementklasse](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class) verfügbar.
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -459,7 +459,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 ...
 ```
 
-Der Konstruktor der Basisklasse erwartet ein **ToggleButton**-Element. Und **MySpecializedToggleButton** *ist ein* **ToggleButton**-Element.
+Der Konstruktor der Basisklasse erwartet ein **ToggleButton**-Element. Und **MySpecializedToggleButton***ist eine***Umschalttaste**.
 
 Bis Sie die oben beschriebene Änderung vornehmen (um den Konstruktorparameter an die Basisklasse weiterzugeben), wird der Compiler Ihren Konstruktor markieren und darauf hinweisen, dass es (in diesem Fall) keinen geeigneten Standardkonstruktor für einen Typ namens **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;** gibt. Das ist die Basisklasse der Basisklasse Ihres Implementierungstyps.
 
@@ -468,7 +468,7 @@ Bis Sie die oben beschriebene Änderung vornehmen (um den Konstruktorparameter a
 Wie Sie weiter oben in diesem Thema gesehen haben, ist eine C++/WinRT-Laufzeitklasse in Form mehrerer C++Klassen in mehreren Namespaces vorhanden. Deshalb hat der Name **MyRuntimeClass** im **winrt::MyProject**-Namespace eine andere Bedeutung als im **winrt::MyProject::implementation**-Namespace. Achten Sie auf den Namespace im aktuellen Kontext, und verwenden Sie dann Namespacepräfixe, wenn Sie einen Namen aus einem anderen Namespace benötigen. Lassen Sie uns die betreffenden Namespaces genauer betrachten.
 
 - **winrt::MyProject**. Dieser Namespace enthält projizierte Typen. Ein Objekt eines projizierten Typs ist ein Proxy und im Grunde lediglich ein intelligenter Zeiger auf ein Unterstützungsobjekt. Dabei kann das Unterstützungsobjekt in Ihrem Projekt oder in einer anderen Kompilierungseinheit implementiert werden.
-- **winrt::MyProject::implementation**. Dieser Namespace enthält Implementierungstypen. Ein Objekt eines Implementierungstyps ist kein Zeiger, sondern ein Wert – ein vollständiges C++-Stapelobjekt. Erstellen Sie Implementierungstypen nicht direkt. Rufen Sie stattdessen [ **winrt::make**](/uwp/cpp-ref-for-winrt/make) auf, und übergeben Sie den Implementierungstyp als Vorlagenparameter. Weiter oben in diesem Thema wurden Beispiele für die Verwendung von **winrt::make** gezeigt, und [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) enthält ein weiteres Beispiel. Siehe auch [Diagnostizieren direkter Zuordnungen](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
+- **winrt::MyProject::implementation**. Dieser Namespace enthält Implementierungstypen. Ein Objekt eines Implementierungstyps ist kein Zeiger, sondern ein Wert – ein vollständiges C++-Stapelobjekt. Erstellen Sie Implementierungstypen nicht direkt. Rufen Sie stattdessen [**winrt::make**](/uwp/cpp-ref-for-winrt/make) auf, und übergeben Sie den Implementierungstyp als Vorlagenparameter. Weiter oben in diesem Thema wurden Beispiele für die Verwendung von **winrt::make** gezeigt, und [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) enthält ein weiteres Beispiel. Siehe auch [Diagnostizieren direkter Zuordnungen](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc).
 - **winrt::MyProject::factory_implementation**. Dieser Namespace enthält Factorys. Ein Objekt in diesem Namespace unterstützt [**IActivationFactory**](/windows/win32/api/activation/nn-activation-iactivationfactory).
 
 In dieser Tabelle ist die minimale Namespacequalifikation aufgeführt, die in unterschiedlichen Kontexten verwendet werden muss.
@@ -489,20 +489,20 @@ In dieser Tabelle ist die minimale Namespacequalifikation aufgeführt, die in un
 
 In der folgenden Tabelle werden C++/-WinRT-Funktionen, die einen Typ erwarten, sowie der erwartete Typ (projizierter Typ, Implementierungstyp oder beide Typen) aufgeführt.
 
-|Feature|Akzeptierter Typ|Anmerkungen|
+|Feature|Akzeptierter Typ|Hinweise|
 |-|-|-|
 |`T` (stellt einen intelligenten Zeiger dar)|Projiziert|Siehe den Hinweis in [Namespaces: projizierte Typen, Implementierungstypen und Factorys](#namespaces-projected-types-implementation-types-and-factories) zur irrtümlichen Verwendung des Implementierungstyps.|
-|`agile_ref<T>`|Beide|Wenn Sie den Implementierungstyp verwenden, muss das Konstruktorargument `com_ptr<T>` lauten.|
+|`agile_ref<T>`|Both|Wenn Sie den Implementierungstyp verwenden, muss das Konstruktorargument `com_ptr<T>` lauten.|
 |`com_ptr<T>`|Implementierung|Die Verwendung des projizierten Typs generiert den Fehler `'Release' is not a member of 'T'`.|
-|`default_interface<T>`|Beide|Wenn Sie den Implementierungstyp verwenden, wird die erste implementierte Schnittstelle zurückgegeben.|
+|`default_interface<T>`|Both|Wenn Sie den Implementierungstyp verwenden, wird die erste implementierte Schnittstelle zurückgegeben.|
 |`get_self<T>`|Implementierung|Die Verwendung des projizierten Typs generiert den Fehler `'_abi_TrustLevel': is not a member of 'T'`.|
-|`guid_of<T>()`|Beide|Gibt die GUID der Standardschnittstelle zurück.|
+|`guid_of<T>()`|Both|Gibt die GUID der Standardschnittstelle zurück.|
 |`IWinRTTemplateInterface<T>`<br>|Projiziert|Bei Verwendung des Kompilierungstyps wird der Code kompiliert, dies ist jedoch ein Fehler. Siehe den Hinweis in [Namespaces: projizierte Typen, Implementierungstypen und Factorys.](#namespaces-projected-types-implementation-types-and-factories)|
 |`make<T>`|Implementierung|Bei Verwendung des projizierten Typs wird der folgende Fehler generiert: `'implements_type': is not a member of any direct or indirect base class of 'T'`|
-| `make_agile(T const&amp;)`|Beide|Wenn Sie den Implementierungstyp verwenden, muss das Argument `com_ptr<T>` lauten.|
+| `make_agile(T const&amp;)`|Both|Wenn Sie den Implementierungstyp verwenden, muss das Argument `com_ptr<T>` lauten.|
 | `make_self<T>`|Implementierung|Bei Verwendung des projizierten Typs wird der folgende Fehler generiert: `'Release': is not a member of any direct or indirect base class of 'T'`|
 | `name_of<T>`|Projiziert|Wenn Sie den Implementierungstyp verwenden, erhalten Sie die GUID der Standardschnittstelle in Form einer Zeichenfolge.|
-| `weak_ref<T>`|Beide|Wenn Sie den Implementierungstyp verwenden, muss das Konstruktorargument `com_ptr<T>` lauten.|
+| `weak_ref<T>`|Both|Wenn Sie den Implementierungstyp verwenden, muss das Konstruktorargument `com_ptr<T>` lauten.|
 
 ## <a name="opt-in-to-uniform-construction-and-direct-implementation-access"></a>Aktivieren von einheitlicher Konstruktion und direktem Implementierungszugriff
 
@@ -741,15 +741,15 @@ namespace winrt::MyNamespace::implementation
 Dafür ist erforderlich, dass alle Member der Klassenhierarchie den gleichen Rückgabewert und die gleichen Parametertypen der **OnNavigatedFrom**-Methode akzeptieren. Andernfalls sollte die oben genannte Version als virtuelle Methode verwendet und die Alternativen umschlossen werden.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [winrt::com_ptr-Strukturvorlage](/uwp/cpp-ref-for-winrt/com-ptr)
+* [Strukturvorlage „winrt::com_ptr“](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from-Funktion](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrcopy_from-function)
 * [winrt::from_abi-Funktionsvorlage](/uwp/cpp-ref-for-winrt/from-abi)
 * [winrt::get_self-Funktionsvorlage](/uwp/cpp-ref-for-winrt/get-self)
-* [winrt::implements-Strukturvorlage](/uwp/cpp-ref-for-winrt/implements)
+* [Strukturvorlage „winrt::implements“](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make-Funktionsvorlage](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self-Funktionsvorlage](/uwp/cpp-ref-for-winrt/make-self)
 * [winrt::Windows::Foundation::IUnknown::as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)
 * [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

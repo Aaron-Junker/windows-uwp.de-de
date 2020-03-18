@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, Einführung
 ms.localizationpriority: medium
 ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255099"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209135"
 ---
 # <a name="introduction-to-cwinrt"></a>Einführung in C++/WinRT
 &nbsp;
@@ -44,7 +44,7 @@ Es wird empfohlen, die aktuelle Version der [C++/WinRT Visual Studio Extension (
 
 Die Visual Studio-Projektvorlagen für C++/WinRT werden in den nachfolgenden Abschnitten beschrieben. Beim Erstellen eines neuen C++/WinRT-Projekts mit installierter aktueller Version der VSIX-Erweiterung wird vom neuen C++/WinRT-Projekt automatisch das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) installiert. Das **Microsoft.Windows.CppWinRT**-NuGet-Paket bietet C++/WinRT-Build-Unterstützung (MSBuild-Eigenschaften und -Ziele), wodurch Ihr Projekt zwischen einem Entwicklungscomputer und einem Build-Agent (auf dem nur das NuGet-Paket, nicht aber die VSIX-Erweiterung installiert ist) portiert werden kann.
 
-Sie können ein vorhandenes Projekt auch konvertieren, indem Sie das **Microsoft.Windows.CppWinRT**-NuGet-Paket manuell installieren. Öffnen Sie nach dem Installieren der bzw. Aktualisieren auf die aktuelle Version der VSIX-Erweiterung das vorhandene Projekt in Visual Studio, und klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **Installieren**, um das Paket für das Projekt zu installieren. Sobald Sie das Paket hinzugefügt haben, steht Ihnen die C++/WinRT MSBuild-Unterstützung für das Projekt zur Verfügung, einschließlich des Aufrufs des `cppwinrt.exe`-Tools.
+Sie können ein vorhandenes Projekt auch konvertieren, indem Sie das **Microsoft.Windows.CppWinRT**-NuGet-Paket manuell installieren. Öffnen Sie nach dem Installieren der bzw. Aktualisieren auf die aktuelle Version der VSIX-Erweiterung das vorhandene Projekt in Visual Studio, und klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten**. \> **Durchsuchen**, geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **Installieren**, um das Paket für das Projekt zu installieren. Sobald Sie das Paket hinzugefügt haben, steht Ihnen die C++/WinRT MSBuild-Unterstützung für das Projekt zur Verfügung, einschließlich des Aufrufs des `cppwinrt.exe`-Tools.
 
 > [!IMPORTANT]
 > Wenn Sie über Projekte verfügen, die mit einer VSIX-Version vor 1.0.190128.4 erstellt (bzw. für die Arbeit mit einer solchen Version aktualisiert) wurden, lesen Sie den Abschnitt [Frühere Versionen der VSIX-Erweiterung](#earlier-versions-of-the-vsix-extension). Dieser Abschnitt enthält wichtige Informationen zur Konfiguration Ihrer Projekte. Diese benötigen Sie zum Aktualisieren auf die aktuelle Version der VSIX-Erweiterung.
@@ -110,7 +110,7 @@ Wenn Ihr Projekt mit einer Version der VSIX-Erweiterung vor 1.0.181002.2 erstell
 ...
 ```
 
-Sie können das Projekt manuell aktualisieren, indem Sie das **Microsoft.Windows.CppWinRT**-NuGet-Paket installieren. Öffnen Sie nach dem Installieren der bzw. Aktualisieren auf die aktuelle Version der VSIX-Erweiterung das Projekt in Visual Studio, und klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **Installieren**, um das Paket für das Projekt zu installieren.
+Sie können das Projekt manuell aktualisieren, indem Sie das **Microsoft.Windows.CppWinRT**-NuGet-Paket installieren. Öffnen Sie nach dem Installieren der bzw. Aktualisieren auf die aktuelle Version der VSIX-Erweiterung das Projekt in Visual Studio, und klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten**. \> **Durchsuchen**, geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **Installieren**, um das Paket für das Projekt zu installieren.
 
 ### <a name="created-with-or-upgraded-to-between-101810022-and-101901283"></a>Erstellt mit oder aktualisiert auf eine Version zwischen 1.0.181002.2 und 1.0.190128.3
 Wenn das Projekt mit einer Version der VSIX-Erweiterung zwischen 1.0.181002.2 und 1.0.190128.3 (einschließlich) erstellt wurde, wurde das **Microsoft.Windows.CppWinRT**-NuGet-Paket automatisch von der Projektvorlage im Projekt installiert. Möglicherweise haben Sie auch ein älteres Projekt für die Verwendung einer Version der VSIX-Erweiterung in diesem Bereich aktualisiert. Falls dies zutrifft, ist &mdash; da die Build-Unterstützung in Versionen der VSIX-Erweiterung in diesem Bereich gegeben war &mdash; für Ihr aktualisiertes Projekt das **Microsoft.Windows.CppWinRT**-NuGet-Paket installiert, möglicherweise aber auch nicht installiert.
@@ -124,7 +124,7 @@ Wie bereits erwähnt, muss in einem C++/WinRT-Projekt nun das NuGet-Paket instal
 
 Da das `<CppWinRTEnabled>`-Element nun veraltet ist, können Sie optional `.vcxproj` bearbeiten und das Element löschen. Dies ist nicht unbedingt erforderlich, jedoch möglich.
 
-Wenn Ihr `.vcxproj` `<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>` enthält, können Sie es entfernen, sodass das Erstellen möglich ist, ohne dass die C++/WinRT-VSIX-Erweiterung installiert ist.
+Wenn Ihr `.vcxproj``<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>` enthält, können Sie es entfernen, sodass das Erstellen möglich ist, ohne dass die C++/WinRT-VSIX-Erweiterung installiert ist.
 
 ## <a name="sdk-support-for-cwinrt"></a>SDK-Unterstützung für C++/WinRT
 Obgleich nur aus Kompatibilitätsgründen, enthält das Windows SDK ab Version 10.0.17134.0 (Windows 10, Version 1803) eine headerdateibasierte C++-Standardbibliothek für die Verwendung von Erstanbieter-Windows-APIs (Windows-Runtime-APIs in Windows-Namespaces). Diese Header befinden sich im Ordner `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt`. Ab Windows SDK-Version 10.0.17763.0 (Windows 10, Version 1809) werden diese Header automatisch im Ordner *$(GeneratedFilesDir)* Ihres Projekts generiert.
@@ -145,7 +145,7 @@ Sie können in Ihrer C++/WinRT-Programmierung Standard-C++-Sprachfunktionen sowi
 * [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt-Namespace](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 * [Erste Schritte mit C++/WinRT](get-started.md)

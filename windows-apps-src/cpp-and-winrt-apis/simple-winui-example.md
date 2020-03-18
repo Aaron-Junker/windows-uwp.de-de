@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: aadf177bc4a44f67550dba1f6f706525b8460857
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: 0dce8e7ea08b18921f228b3da2e679a9edb02228
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256173"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79200978"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek
 
@@ -53,7 +53,7 @@ Klicke auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, gib 
 
 Lösche in `MainPage.cpp` den Code in deiner Implementierung von **MainPage::ClickHandler**, da sich *myButton* nicht mehr im XAML-Markup befindet.
 
-Bearbeite in `MainPage.h` die Include-Elemente, sodass sie wie in der folgenden Auflistung aussehen. Wenn Sie WinUI von mehreren XAML-Seiten verwenden möchten, können Sie die vorkompilierte Headerdatei öffnen (in der Regel `pch.h`) und sie stattdessen dort einfügen.
+Bearbeite in `MainPage.h` die Include-Elemente, sodass sie wie in der folgenden Auflistung aussehen.
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -63,7 +63,10 @@ Bearbeite in `MainPage.h` die Include-Elemente, sodass sie wie in der folgenden 
 
 Erstelle jetzt das Projekt.
 
-Wenn du einem C++/WinRT-Projekt ein NuGet-Paket hinzufügst (z. B. das Paket **Microsoft.UI.Xaml**, das du zuvor hinzugefügt hast) und das Projekt erstellst, generieren die Tools einen Satz von Projektionsheaderdateien im Ordner `\Generated Files\winrt` des Projekts. Wenn du die exemplarische Vorgehensweise befolgt hast, besitzt du jetzt einen Ordner `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Die Änderung, die du oben an `MainPage.h` vorgenommen hast, bewirkt, dass diese Projektionsheaderdateien in dein Projekt aufgenommen werden. Und das ist notwendig, damit Verweise auf Typen im NuGet-Paket aufgelöst werden.
+Wenn du einem C++/WinRT-Projekt ein NuGet-Paket hinzufügst (z. B. das Paket **Microsoft.UI.Xaml**, das du zuvor hinzugefügt hast) und das Projekt erstellst, generieren die Tools einen Satz von Projektionsheaderdateien im Ordner `\Generated Files\winrt` des Projekts. Wenn du die exemplarische Vorgehensweise befolgt hast, besitzt du jetzt einen Ordner `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Die Bearbeitung, die Sie oben an `MainPage.h` vorgenommen haben, bewirkt, dass diese Projektionsheaderdateien für WinUI für **MainPage** sichtbar werden. Und das ist notwendig, damit der Verweis in **MainPage** auf den Typ **Microsoft::UI::Xaml::Controls::NavigationView** aufgelöst wird.
+
+> [!IMPORTANT]
+> In einer realen Anwendung sollen die Headerdateien der WinUI-Projektion für *alle* XAML-Seiten in Ihrem Projekt sichtbar sein, nicht nur für **MainPage**. In diesem Fall würden Sie die Include-Elemente der beiden WinUI-Projektionsheaderdateien in Ihre vorkompilierte Headerdatei (normalerweise `pch.h`) verschieben. Dann werden Verweise auf Typen im NuGet-Paket überall in Ihrem Projekt aufgelöst. Für eine minimale, einseitige Anwendung wie die, die in dieser exemplarischen Vorgehensweise erstellt wird, ist es nicht notwendig, `pch.h` zu verwenden, sondern es reicht, die Header in `MainPage.h` einzufügen.
 
 Jetzt kannst du das Projekt ausführen.
 

@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: 6a0307833e996a5faba558631062c94efca3b75d
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958970"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935364"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -21,14 +21,14 @@ In diesem Thema wird veranschaulicht, wie du den Code in einem [C++/CX](/cpp/cpp
 Es ist möglich, dass du deinen C++/CX-Code nach und nach in C++/WinRT-Code portierst. C++/CX- und C++/WinRT-Code kann in demselben Projekt gleichzeitig vorhanden sein, mit Ausnahme von XAML-Compilerunterstützung und der Windows-Runtime-Komponenten. Für diese beiden Ausnahmen musst du dich in einem Projekt entweder für C++/CX oder C++/WinRT entscheiden.
 
 > [!IMPORTANT]
-> Wenn in deinem Projekt eine XAML-Anwendung erstellt wird, besteht ein von uns empfohlener Workflow darin, zuerst mit einer der C++/WinRT-Projektvorlagen (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)) ein neues Projekt in Visual Studio zu erstellen. Beginne dann damit, den Quellcode und das Markup aus dem C++/CX-Projekt zu kopieren. Du kannst **Projekt** \> **Neues Element hinzufügen...** verwenden, um neue XAML-Seiten hinzuzufügen. \> **Visual C++**  > **Leere Seite (C++/WinRT)** .
+> Wenn in deinem Projekt eine XAML-Anwendung erstellt wird, besteht ein von uns empfohlener Workflow darin, zuerst mit einer der C++/WinRT-Projektvorlagen (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)) ein neues Projekt in Visual Studio zu erstellen. Beginne dann damit, den Quellcode und das Markup aus dem C++/CX-Projekt zu kopieren. Du kannst **Projekt** \> **Neues Element hinzufügen** verwenden, um neue XAML-Seiten hinzuzufügen. \> **Visual C++**  > **Leere Seite (C++/WinRT)** .
 >
 > Alternativ kannst du eine Windows-Runtime-Komponente nutzen, um beim Portieren Code aus dem XAML-C++/CX-Projekt auszuklammern. Verschiebe entweder so viel C++/CX-Code wie möglich in eine Komponente, und ändere anschließend das XAML-Projekt in C++/WinRT. Oder behalte für das XAML-Projekt C++/CX bei, erstelle eine neue C++/WinRT-Komponente, und beginne damit, C++/CX-Code aus dem XAML-Projekt in die Komponente zu portieren. Außerdem kannst du auch ein C++/CX-Komponentenprojekt neben einem C++/WinRT-Komponentenprojekt innerhalb derselben Lösung verwenden, auf beide aus deinem Anwendungsprojekt verweisen und nach und nach das Portieren von einem zum anderen durchführen. Weitere Informationen zur Verwendung der beiden Sprachprojektionen in demselben Projekt findest du unter [Interoperabilität zwischen C++/WinRT und C++/CX](interop-winrt-cx.md).
 
 > [!NOTE]
 > Sowohl [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) als auch das Windows SDK deklarieren Typen im Stammnamespace **Windows**. Ein Windows-Typ, der in C++/WinRT projiziert wird, verfügt über den gleichen vollqualifizierten Namen wie der Windows-Typ, befindet sich aber im C++-**winrt**-Namespace. Diese unterschiedlichen Namespaces ermöglichen die Portierung von C++/CX zu C++/WinRT nach deinem eigenen Tempo.
 
-Unter Berücksichtigung der oben erwähnten Ausnahmen ist der erste Schritt beim Portieren eines C++/CX-Projekts zu C++/WinRT das manuelle Hinzufügen von C++/WinRT-Unterstützung (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installiere zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in deinem Projekt. Öffnen Sie das Projekt in Visual Studio, klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, und gib **Microsoft.Windows.CppWinRT** in das Suchfeld ein. Wähle das Element in den Suchergebnissen aus, und klicke dann auf **Installieren**, um das Paket für das Projekt zu installieren. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für C++/CX im Projekt deaktiviert wird. Es empfiehlt sich, die Unterstützung deaktiviert zu lassen, damit beim Ermitteln und Portieren deiner Abhängigkeiten aus C++/CX Buildmeldungen als Hilfe angezeigt werden. Du kannst die Unterstützung auch wieder aktivieren (in den Projekteigenschaften, **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden** \> **Ja (/ZW)** ) und das Portieren nach und nach durchführen.
+Unter Berücksichtigung der oben erwähnten Ausnahmen ist der erste Schritt beim Portieren eines C++/CX-Projekts zu C++/WinRT das manuelle Hinzufügen von C++/WinRT-Unterstützung (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installiere zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in deinem Projekt. Öffne das Projekt in Visual Studio, klicke auf **Projekt** \> **NuGet-Pakete verwalten**. \> **Durchsuchen**, gib oder füge **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wähle das Element in den Suchergebnissen aus, und klicke dann auf **Installieren**, um das Paket für das Projekt zu installieren. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für C++/CX im Projekt deaktiviert wird. Es empfiehlt sich, die Unterstützung deaktiviert zu lassen, damit beim Ermitteln und Portieren deiner Abhängigkeiten aus C++/CX Buildmeldungen als Hilfe angezeigt werden. Du kannst die Unterstützung auch wieder aktivieren (in den Projekteigenschaften, **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden** \> **Ja (/ZW)** ) und das Portieren nach und nach durchführen.
 
 Alternativ dazu kannst du die mithilfe der Eigenschaftenseite für das C++/WinRT-Projekt in Visual Studio die folgende Eigenschaft zu deiner `.vcxproj`-Datei hinzufügen. Eine Liste mit ähnlichen Anpassungsoptionen (um das Verhalten des Tools `cppwinrt.exe` zu optimieren) findest du in der [Infodatei](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) zum Microsoft.Windows.CppWinRT-NuGet-Paket.
 
@@ -246,7 +246,7 @@ private:
 };
 ```
 
-Ein C++/WinRT-Objekt ist ein Wert. Folglich kannst du es im Stapel oder als Feld eines Objekts zuweisen. Du verwendest *niemals* `ref new` (oder `new`), um ein C++/WinRT-Objekt zuzuordnen. Im Hintergrund wird dennoch **RoActivateInstance** aufgerufen.
+Ein C++/WinRT-Objekt ist ein Wert. Folglich kannst du es im Stapel oder als Feld eines Objekts zuweisen. Du verwendest *niemals*`ref new` (oder `new`), um ein C++/WinRT-Objekt zuzuordnen. Im Hintergrund wird dennoch **RoActivateInstance** aufgerufen.
 
 ```cppwinrt
 using namespace winrt::Windows::Storage::Streams;
@@ -309,7 +309,18 @@ C++Sammlungstypen verwenden den Standardkonstruktor, was zu einer unbeabsichtigt
 | Array aus leeren Verweisen | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | Koppeln | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-Für das Erstellen eines Arrays aus leeren Verweisen gibt es keine Kurzschreibweise. Du musst `nullptr` für jedes Element im Array wiederholen. Wenn zu wenige „nullptr“ vorhanden sind, werden die zusätzlichen Elemente standardmäßig konstruiert.
+### <a name="more-about-collections-of-empty-references"></a>Weitere Informationen zu Sammlungen leerer Verweise
+
+Wenn du über ein **Platform::Array\^** -Element in C++ verfügst (siehe [Port **Platform:: Array\^** ](#port-platformarray)), kannst du es in ein **std::vector**-Element in C++/WinRT portieren (tatsächlich in jeden beliebigen zusammenhängenden Container), anstatt es als Array zu belassen. Die Auswahl von **std::vector** bietet Vorteile.
+
+Während es beispielsweise eine Kurzform für die Erstellung eines Vektors von leeren Verweisen mit fester Größe gibt (siehe Tabelle oben), gibt es keine solche Kurzform für die Erstellung eines *Arrays* von leeren Verweisen. Du musst `nullptr` für jedes Element im Array wiederholen. Wenn zu wenige „nullptr“ vorhanden sind, werden die zusätzlichen Elemente standardmäßig konstruiert.
+
+Einen Vektor kannst du bei der Initialisierung mit leeren Verweisen füllen (wie in der obigen Tabelle), oder du kannst ihn nach der Initialisierung mit einem Code wie diesem mit leeren Verweisen füllen.
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### <a name="more-about-the-stdmap-example"></a>Weitere Informationen zum **std::map**-Beispiel
 
@@ -531,7 +542,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>Portieren von **Platform::Array\^**
 
-Du kannst eine Initialisierungsliste, ein **std::array**-Element oder ein **std::vector**-Element verwenden. Weitere Informationen und Codebeispiele findest du unter [Standard-Initialisierungslisten](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) und [Standard-Arrays und -Vektoren](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
+In Fällen, in denen C++/CX die Verwendung eines Arrays erfordert, erlaubt C++/WinRT die Verwendung eines beliebigen zusammenhängenden Containers. Unter [Auswirkungen des Standardkonstruktors auf Sammlungen](#how-the-default-constructor-affects-collections) wird erläutert, warum **std::vector** eine gute Wahl ist.
+
+Wenn du also ein **Platform::Array\^** -Element in C++/CX verwendest, gehören die Verwendung einer Initialisiererliste, eines **std::array**- oder **std::vector**-Elements zu deinen Portierungsoptionen. Weitere Informationen und Codebeispiele findest du unter [Standard-Initialisierungslisten](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists) und [Standard-Arrays und -Vektoren](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors).
 
 ### <a name="port-platformexception-to-winrthresult_error"></a>Portieren von **Platform::Exception\^** zu **winrt::hresult_error**
 
@@ -553,7 +566,7 @@ catch (winrt::hresult_error const& ex)
 
 C++/WinRT stellt die hier angegebenen Ausnahmeklassen bereit.
 
-| Ausnahmentyp | Basisklasse | HRESULT |
+| Ausnahmetyp | Basisklasse | HRESULT |
 | ---- | ---- | ---- |
 | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) | | Aufruf von [**hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) |
 | [**winrt::hresult_access_denied**](/uwp/cpp-ref-for-winrt/error-handling/hresult-access-denied) | **winrt::hresult_error** | E_ACCESSDENIED |
@@ -646,7 +659,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT unterstützt auch [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) für eine begrenzte Anzahl von Typen. Du musst Überladungen für alle zusätzlichen Typen hinzufügen, für die du eine Stringification durchführen möchtest.
 
-| Sprache | Stringification von „int“ | Stringification von „enum“ |
+| Language | Stringification von „int“ | Stringification von „enum“ |
 | - | - | - |
 | C++/CX | `String^ result = "hello, " + intValue.ToString();` | `String^ result = "status: " + status.ToString();` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |
@@ -712,7 +725,7 @@ In den unten stehenden Beispielen ist *ws* eine Variable des Typs **std::wstring
 * [Struktur „winrt::hstring“](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt-Namespace](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Erstellen von Ereignissen in C++/WinRT](author-events.md)
 * [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md)

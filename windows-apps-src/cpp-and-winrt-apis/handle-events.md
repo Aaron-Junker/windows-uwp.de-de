@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.openlocfilehash: 664f6799d3bb6f848243820ec46e655262e8c1a7
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853389"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295713"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -38,6 +38,9 @@ Ein einfaches Beispiel ist die Behandlung des Klickereignisses einer Schaltfläc
 ```
 
 ```cppwinrt
+// MainPage.h
+void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
 // MainPage.cpp
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
 {
@@ -59,6 +62,22 @@ MainPage::MainPage()
 
 > [!IMPORTANT]
 > Beim Registrieren des Delegaten wird im obigen Codebeispiel ein unformatierter Zeiger vom Typ *this* übergeben, der auf das aktuelle Objekt verweist. In [Wenn Sie eine Memberfunktion als Stellvertretung verwenden](weak-references.md#if-you-use-a-member-function-as-a-delegate) wird beschrieben, wie Sie einen starken oder schwachen Verweis auf das aktuelle Objekt erstellen.
+
+Hier ist ein Beispiel, das eine statische Memberfunktion verwendet; beachten Sie die einfachere Syntax.
+
+```cppwinrt
+// MainPage.h
+static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
+// MainPage.cpp
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    Button().Click( MainPage::ClickHandler );
+}
+void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+```
 
 Ein Handler vom Typ **RoutedEventHandler** kann auch noch auf andere Weise erstellt werden. Der folgende Syntaxblock stammt aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). (Wähle rechts oben auf dieser Webseite im Dropdownmenü **Sprache** die Option *C++/WinRT* aus.) Beachte die verschiedenen Konstruktoren: Einer akzeptiert eine Lambda-Funktion, ein anderer eine freie Funktion und ein weiterer (der oben verwendete) ein Objekt sowie eine Pointer-to-Member-Funktion.
 

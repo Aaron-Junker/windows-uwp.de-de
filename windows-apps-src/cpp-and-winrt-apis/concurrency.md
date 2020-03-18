@@ -5,18 +5,19 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: 06fadae3e33da3289726f45e7222617d51843015
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 949f8c407e0a49c87cbb45c01117a7e2e1525010
+ms.sourcegitcommit: 5f22e596443ff4645ebf68626d8a4d275d8a865f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816678"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083177"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Parallelität und asynchrone Vorgänge mit C++/WinRT
 
-In diesem Thema wird beschrieben, wie Sie asynchrone Windows-Runtime-Objekte mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) erstellen und nutzen können.
+> [!IMPORTANT]
+> In diesem Thema werden die Konzepte der *Coroutinen* und `co_await` vorgestellt, die Sie sowohl in Ihren UI- *als auch* in Ihren Nicht-UI-Anwendungen verwenden sollten. Der Einfachheit halber zeigen die meisten Codebeispiele in diesem Einführungsthema Projekte der **Windows-Konsolenanwendung (C++/WinRT)** . Die späteren Codebeispiele in diesem Thema verwenden zwar Coroutinen, aber der Einfachheit halber verwenden die Konsolenanwendungsbeispiele auch weiterhin den blockierenden **get**-Funktionsaufruf kurz vor dem Beenden, sodass die Anwendung nicht beendet wird, bevor der Druck der Ausgabe abgeschlossen ist. Dies (die blockierende **get**-Funktion aufrufen) werden Sie nicht von einem UI-Thread aus tun. Stattdessen verwenden Sie die `co_await`-Anweisung. Die Techniken, die Sie in Ihren UI-Anwendungen verwenden, werden im Thema [Erweiterte Parallelität und Asynchronie](concurrency-2.md) beschrieben.
 
-Nachdem Sie dieses Thema gelesen haben, finden Sie weitere Szenarios unter [Erweiterte Parallelität und Asynchronie](concurrency-2.md).
+In diesem Einführungsthema werden einige der Möglichkeiten beschrieben, wie Sie asynchrone Windows-Runtime-Objekte mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) erstellen und nutzen können. Lesen Sie nach der Lektüre dieses Themas insbesondere für Techniken, die Sie in Ihren UI-Anwendungen verwenden, auch [Erweiterte Parallelität und Asynchronie](concurrency-2.md).
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>Asynchrone Vorgänge und „Async“-Funktionen der Windows-Runtime
 
@@ -29,7 +30,9 @@ Jede Windows-Runtime-API, deren Ausführung länger als 50 Millisekunden dauern
 
 Jeder dieser asynchronen Vorgangstypen wird auf einen entsprechenden Typ im C++/WinRT-Namespace **winrt::Windows::Foundation** projiziert. C++/WinRT enthält außerdem eine interne Await-Adapter-Struktur. Sie verwenden diese Struktur nicht direkt, können dank ihr aber eine `co_await`-Anweisung schreiben, um kooperativ auf das Ergebnis einer Funktion zu warten, die einen dieser asynchronen Vorgangstypen zurückgibt. Zudem können Sie eigene Coroutinen schreiben, die diese Typen zurückgeben.
 
-Ein Beispiel für eine asynchrone Windows-Funktion ist [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync). Diese Funktion gibt ein asynchrones Vorgangsobjekt vom Typ [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) zurück. Sehen wir uns einige Möglichkeiten an (&mdash;zuerst blockierende und dann nicht blockierende&mdash;), wie Sie eine solche API mit C++/WinRT aufrufen können.
+Ein Beispiel für eine asynchrone Windows-Funktion ist [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync). Diese Funktion gibt ein asynchrones Vorgangsobjekt vom Typ [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) zurück.
+
+Sehen wir uns einige Möglichkeiten an (&mdash;zuerst blockierende und dann nicht blockierende&mdash;), wie Sie eine solche API mit C++/WinRT aufrufen können. Nur zur Veranschaulichung der Grundgedanken werden wir in den nächsten Codebeispielen ein Projekt der **Windowskonsolenanwendung (C++/WinRT)** verwenden. Techniken, die für eine UI-Anwendung besser geeignet sind, werden unter [Erweiterte Parallelität und Asynchronie](concurrency-2.md) behandelt.
 
 ## <a name="block-the-calling-thread"></a>Blockieren des aufrufenden Threads
 
@@ -111,6 +114,8 @@ Eine Coroutine ist eine Funktion, die angehalten und fortgesetzt werden kann. We
 Sie können eine Coroutine in anderen Coroutinen zusammenfassen. Alternativ können Sie zum Blockieren **get** aufrufen und auf ihren Abschluss warten (und, sofern vorhanden, das Ergebnis abrufen). Sie können sie auch an eine andere Programmiersprache übergeben, die die Windows-Runtime unterstützt.
 
 Es ist auch möglich, die Completed- und/oder Progress-Ereignisse von asynchronen Aktionen und Vorgängen mit Delegaten zu verarbeiten. Details und Codebeispiele finden Sie unter [Delegattypen für asynchrone Aktionen und Vorgänge](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
+
+Wie Sie sehen können, verwenden wir im obigen Codebeispiel weiterhin den blockierenden **get**-Funktionsaufruf kurz vor dem Beenden des **main**-Abschnitts. Aber nur, damit die Anwendung nicht beendet wird, bevor der Druck der Ausgabe abgeschlossen ist.
 
 ## <a name="asynchronously-return-a-windows-runtime-type"></a>Asynchrone Rückgabe eines Windows-Runtime-Typs
 
@@ -293,7 +298,7 @@ Siehe [Starke und schwache Verweise in C++/WinRT](/windows/uwp/cpp-and-winrt-api
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed-Klasse](/uwp/api/windows.web.syndication.syndicationfeed)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Erweiterte Parallelität und Asynchronie](concurrency-2.md)
 * [Verarbeiten von Ereignissen über Delegaten in C++/WinRT](handle-events.md)
 * [C++-Standarddatentypen und C++/WinRT](std-cpp-data-types.md)

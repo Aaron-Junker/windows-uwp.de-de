@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e93a1806d1d2add4b3b1c3ee02417a43d574d3c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319392"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209035"
 ---
 # <a name="media-player"></a>Media Player
 
@@ -91,7 +91,7 @@ Das Layout mit doppelzeiligen Steuerelementen (siehe unten) wird für die meiste
 
 Das [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) ist automatisch in die Medientransportsteuerelemente des Systems integriert. Die Medientransportsteuerelemente des Systems sind die Steuerelemente, die angezeigt werden, wenn Hardwaretasten für Medien betätigt werden, z. B. die Medientasten auf Tastaturen. Weitere Informationen finden Sie unter [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls).
 
-> **Hinweis**&nbsp;&nbsp;[MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) wird nicht automatisch in die Medientransportsteuerelemente des Systems integriert. Sie müssen die Verbindung daher selbst herstellen. Weitere Informationen finden Sie unter [Steuerelemente für den Systemmedientransport](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls).
+> **Hinweis**&nbsp;&nbsp; [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) wird nicht automatisch in die Medientransportsteuerelemente des Systems integriert. Sie müssen die Verbindung daher selbst herstellen. Weitere Informationen finden Sie unter [Steuerelemente für den Systemmedientransport](https://docs.microsoft.com/windows/uwp/audio-video-camera/system-media-transport-controls).
 
 
 ### <a name="set-the-media-source"></a>Festlegen der Medienquelle
@@ -392,7 +392,7 @@ Die Standardsteuerelemente wurden für die Medienwiedergabe optimiert. Sie könn
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für XAML Controls Gallery:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
