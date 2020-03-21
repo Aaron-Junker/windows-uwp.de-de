@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, Winrt, COM, Komponente, Klasse, Schnittstelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
-ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
+ms.openlocfilehash: 4a9bdfcee8811e52587eb4fcd59913a731b799a2
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75928816"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79511003"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Verwenden von COM-Komponenten mit C++/WinRT
 
@@ -18,7 +18,7 @@ Sie können die Möglichkeiten der [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/i
 
 Am Ende dieses Themas finden Sie eine vollständige Quellcodeauflistung für eine minimale Direct2D-Anwendung. Wir greifen Ausschnitte aus diesem Code heraus und verwenden sie, um das Nutzen von COM-Komponenten mithilfe von C++/WinRT unter Verwendung verschiedener Möglichkeiten der C++/WinRT-Bibliothek zu veranschaulichen.
 
-## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>Intelligente COM-Zeiger ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptr"></a>Intelligente COM-Zeiger ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 Beim Programmieren mit COM arbeiten Sie direkt mit Schnittstellen statt mit Objekten (das trifft auch hinter den Kulissen auf Windows Runtime-APIs zu, die eine Weiterentwicklung von COM darstellen). Um beispielsweise eine Funktion einer COM-Klasse aufzurufen, aktivieren Sie die Klasse, erhalten eine Schnittstelle zurück und rufen dann Funktionen auf dieser Schnittstelle auf. Um auf den Status eines Objekts zuzugreifen, greifen Sie nicht direkt auf seine Datenmember zu; stattdessen rufen Sie Accessor- und Mutatorfunktionen auf einer Schnittstelle auf.
 
@@ -127,7 +127,7 @@ Sie können die [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-fun
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>COM-Funktionen, die einen **IUnknown**-Schnittstellenzeiger annehmen
 
-Sie können die freie Funktion [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) aufrufen, um Ihren **com_ptr** einer Funktion zu übergeben, die einen **IUnknown**-Schnittstellenzeiger annimmt.
+Sie können die freie Funktion [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) aufrufen, um Ihren **com_ptr** einer Funktion zu übergeben, die einen **IUnknown**-Schnittstellenzeiger annimmt.
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
