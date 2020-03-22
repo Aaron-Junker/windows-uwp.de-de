@@ -3,19 +3,18 @@ author: knicholasa
 description: Z-Tiefe, relative Tiefe und Schatten sind zwei Möglichkeiten, um Tiefe in Ihre APP zu integrieren, damit Benutzer sich auf natürliche und effiziente Weise fokussieren können.
 title: Z-Tiefe und Schatten für UWP-apps
 template: detail.hbs
-ms.author: nichola
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9197be38d1edfdad41a434132f318cdf3f45ea
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282415"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081387"
 ---
 # <a name="z-depth-and-shadow"></a>Z-Tiefe und Schatten
 
@@ -39,7 +38,7 @@ Wenn Sie Standard Steuerelemente verwenden, werden die themeshadow-Schatten auto
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-Der themeshadow-Typ kann auf jedes XAML-Element angewendet werden, um die Schatten entsprechend der x-, y-und z-Koordinaten entsprechend zu zeichnen. Themeshadow passt sich auch automatisch an andere Umgebungs Spezifikationen an:
+Der [themeshadow](/uwp/api/windows.ui.xaml.media.themeshadow) -Typ kann auf jedes XAML-Element angewendet werden, um die Schatten entsprechend der x-, y-und z-Koordinaten entsprechend zu zeichnen. Themeshadow passt sich auch automatisch an andere Umgebungs Spezifikationen an:
 
 - Passt sich an die Änderungen an Beleuchtung, Benutzer Design, App-Umgebung und Shell an.
 - Wendet Schatten auf Elemente automatisch basierend auf Ihrer z-Tiefe an. 
@@ -73,7 +72,7 @@ Häufig ist es der Fall, dass die Benutzeroberfläche Ihrer APP ein Popup für S
 
 Themeshadow wandelt Schatten in einem beliebigen XAML-Element in einem [Popup](/uwp/api/windows.ui.xaml.controls.primitives.popup)automatisch um. Sie wandelt Schatten in den Hintergrund Inhalt der APP und alle anderen geöffneten Popups darunter um.
 
-Um themeshadow mit Popups zu verwenden, verwenden Sie die `Shadow`-Eigenschaft, um einen themeshadow auf ein XAML-Element anzuwenden. Erhöhen Sie dann das Element aus anderen dahinter liegenden Elementen, z. b. durch die Verwendung der z-Komponente der `Translation`-Eigenschaft.
+Um themeshadow mit Popups zu verwenden, verwenden Sie die `Shadow`-Eigenschaft, um einen themeshadow auf ein XAML-Element anzuwenden. Erhöhen Sie dann das Element aus anderen dahinter liegenden Elementen, z. b. mithilfe der z-Komponente der `Translation`-Eigenschaft.
 Bei der meisten Popup-Benutzeroberfläche ist die empfohlene Standard Erhöhung relativ zum Inhalt der APP im Hintergrund 32 effektive Pixel.
 
 Dieses Beispiel zeigt ein Rechteck in einem Popup, das einen Schatten in den Hintergrund Inhalt der APP und alle anderen Popups hinter ihm wirft:
@@ -115,7 +114,7 @@ Wenn der Standard Schatten im Inhalt des Steuer Elements nicht korrekt aussieht,
 
 Im Allgemeinen empfehlen wir Ihnen, sich sorgfältig mit der Verwendung von Schatten zu beschäftigen und deren Verwendung auf Fälle zu beschränken, in denen es eine sinnvolle visuelle Hierarchie einführt. Wir bieten jedoch eine Möglichkeit, einen Schatten von einem beliebigen Benutzeroberflächen Element zu umwandeln, wenn Sie über erweiterte Szenarien verfügen, die dies erfordern.
 
-Zum Umwandeln eines Schattens aus einem XAML-Element, das sich nicht in einem Popup befindet, müssen Sie explizit die anderen Elemente angeben, die den Schatten in der `ThemeShadow.Receivers`-Auflistung empfangen können. Empfänger dürfen in der visuellen Struktur kein Vorgänger des-Zauberers sein.
+Zum Umwandeln eines Schattens aus einem XAML-Element, das sich nicht in einem Popup befindet, müssen Sie explizit die anderen Elemente angeben, die den Schatten in der `ThemeShadow.Receivers` Auflistung empfangen können. Empfänger dürfen in der visuellen Struktur kein Vorgänger des-Zauberers sein.
 
 Dieses Beispiel zeigt zwei Rechtecke, die Schatten in ein Raster hinter Ihnen umwandeln:
 
@@ -160,7 +159,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 ## <a name="which-shadow-should-i-use"></a>Welchen Schatten sollte ich verwenden?
 
 | Eigenschaft | ThemeShadow | DropShadow |
-| - | - | - | - |
+| - | - | - |
 | **Min SDK** | Windows 10, Version 1903 | 14393 |
 | **Anpassbarkeit** | Ja | Nein |
 | **Instan** | Nein | Ja |
