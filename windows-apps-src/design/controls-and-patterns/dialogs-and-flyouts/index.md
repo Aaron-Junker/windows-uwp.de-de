@@ -11,21 +11,18 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 37ab62a6e6c2e294e8d6b5222eab4a1a9ae25a2e
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867441"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081009"
 ---
 # <a name="dialogs-and-flyouts"></a>Dialogfelder und Flyouts
 
-
-
 Dialogfelder und Flyouts sind vorübergehende UI-Elemente, die angezeigt werden, wenn Ereignisse Benachrichtigungen, Genehmigungen oder zusätzliche Informationen vom Benutzer erfordern.
 
-> **Wichtige APIs:** [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-
+> **Plattform-APIs:** [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 :::row:::
     :::column:::
@@ -59,7 +56,7 @@ Angesichts der Tatsache, dass Dialogfelder im Gegensatz zu Flyouts Interaktionen
     :::column:::
    <p><b>Fälle, in denen ein Dialogfeld verwendet werden sollte:</b> <br/>
 <ul>
-<li>Für wichtige Informationen, die der Benutzer vor dem Fortsetzen lesen und bestätigen <b>muss</b>. Dazu gehören:
+<li>Für wichtige Informationen, die der Benutzer vor dem Fortsetzen lesen und bestätigen <b>muss</b>. Beispiele:
 <ul>
   <li>Die Sicherheit des Benutzers ist möglicherweise gefährdet.</li>
   <li>Der Benutzer möchte eine wertvolle Ressource endgültig ändern.</li>
@@ -103,7 +100,7 @@ Informationen finden Sie im [Artikel zu Flyouts](flyouts.md).
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> oder <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in Aktion zu sehen.</p>
     <ul>

@@ -8,22 +8,22 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ecf82294614114e711483dfdc58cfad36591369
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319559"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081711"
 ---
-# <a name="controls-for-uwp-apps"></a>Steuerelemente für UWP-Apps 
+# <a name="controls-for-uwp-apps"></a>Steuerelemente für UWP-Apps
 
 ![Steuerelemente](../images/controls-2x.png)
 
 In der UWP-App-Entwicklung ist ein <i>Steuerelement</i> ein UI-Element, das Inhalte anzeigt oder Interaktionen ermöglicht. Steuerelemente sind die Bausteine der Benutzeroberfläche. Ein <i>Muster</i> ist eine Anleitung zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen.
 
-Wir stellen Ihnen mehr als 45 Steuerelemente bereit, angefangen bei einfachen Schaltflächen bis hin zu leistungsstarken Datensteuerelementen wie der Rasteransicht.  Diese Steuerelemente sind Teil des Fluent Design-Systems und können Ihnen bei der Erstellung einer ansprechenden, skalierbaren UI helfen, die auf allen Geräten und Bildschirmgrößen großartig aussieht. 
+Wir stellen Ihnen mehr als 45 Steuerelemente bereit, angefangen bei einfachen Schaltflächen bis hin zu leistungsstarken Datensteuerelementen wie der Rasteransicht.  Diese Steuerelemente sind Teil des Fluent Design-Systems und können Ihnen bei der Erstellung einer ansprechenden, skalierbaren UI helfen, die auf allen Geräten und Bildschirmgrößen großartig aussieht.
 
-Die Artikel in diesem Abschnitt enthalten Designrichtlinien und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App. 
+Die Artikel in diesem Abschnitt enthalten Designrichtlinien und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App.
 
 ## <a name="intro"></a>Einführung
 
@@ -41,85 +41,92 @@ Das XAML-Framework bietet zahlreiche Anpassungsmöglichkeiten für die App-Darst
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>Abrufen der Windows-UI-Bibliothek
-Einige Steuerelemente sind nur in der Windows-UI-Bibliothek verfügbar. Informationen dazu, wie Sie diese abrufen, finden Sie im Artikel mit der [Übersicht über die Windows-UI-Bibliothek und Installationsanweisungen](/uwp/toolkits/winui/).
 
-## <a name="alphabetical-index"></a>Alphabetischer Index 
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Einige Steuerelemente sind nur in der Windows-UI-Bibliothek (WinUI) verfügbar. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures enthält. Informationen dazu, wie Sie diese abrufen, finden Sie im Artikel mit der [Übersicht über die Windows-UI-Bibliothek und Installationsanweisungen](/uwp/toolkits/winui/).<br/>Ab WinUI 2.2 wurde das Standardformat für viele Steuerelemente dahin gehend aktualisiert, dass abgerundete Ecken verwendet werden. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). |
 
-Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach Funktionen sortierte Liste finden Sie unter <a href="controls-by-function.md">Index der Steuerelemente nach Funktion</a>.)
+## <a name="alphabetical-index"></a>Alphabetischer Index
 
-<div style="column-count: 2; column-gap: 40px; margin-top: 40px;" >
-<ul style="margin-top: 0px; padding-top: 0px; list-style-type: none;">
-<li style="list-style-type: none;"><a href="auto-suggest-box.md">Feld mit automatischen Vorschlägen</a></li>
+Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach Funktionen sortierte Liste finden Sie unter [Index der Steuerelemente nach Funktion](controls-by-function.md).)
 
-<li style="list-style-type: none;"><a href="app-bars.md">Balken</a></li>
+:::row:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="buttons.md">Schaltflächen</a></li>
+- Animierter visueller Player (siehe [Lottie](/windows/communitytoolkit/animations/lottie)) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Feld mit automatischen Vorschlägen](auto-suggest-box.md)
+- [Schaltfläche](buttons.md)
+- [Kalenderdatumsauswahl](calendar-date-picker.md)
+- [Kalenderansicht](calendar-view.md)
+- [Kontrollkästchen](checkbox.md)
+- [Farbauswahl](color-picker.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Kombinationsfeld](combo-box.md)
+- [Befehlsleiste](app-bars.md)
+- [Befehlsleistenflyout](command-bar-flyout.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Visitenkarte](contact-card.md)
+- [Inhaltsdialogfeld](dialogs-and-flyouts/dialogs.md)
+- [Inhaltslink](content-links.md)
+- [Kontextmenü](menus.md)
+- [Datumsauswahl](date-picker.md)
+- [Dialogfelder und Flyouts](dialogs-and-flyouts/index.md)
+- [Dropdownschaltfläche](buttons.md#create-a-drop-down-button) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Flip-Ansicht](flipview.md)
+- [Flyout](dialogs-and-flyouts/flyouts.md)
+- [Formular](forms.md) (Muster)
+- [Rasteransicht](listview-and-gridview.md)
+- [Link](hyperlinks.md)
+- [Linkschaltfläche](hyperlinks.md#create-a-hyperlinkbutton)
+- [Bilder und Bildpinsel](images-imagebrushes.md)
+- [Steuerelemente für Freihandeingaben](inking-controls.md)
+- [Listenansicht](listview-and-gridview.md)
+- [Kartensteuerelement](../../maps-and-location/controls-map.md)
+- [Master/Details](master-details.md) (Muster)
+- [Medienwiedergabe](media-playback.md)
+- [Menüleiste](menus.md#create-a-menu-bar) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Menüflyout](menus.md)
+- [Navigationsansicht](navigationview.md) ![WinUI-Logo](images/winui-logo-16x16.png)
 
-<li style="list-style-type: none;"><a href="checkbox.md">Kontrollkästchen </a></li>
+    :::column-end:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="color-picker.md">Farbauswahl</a></li>
+- [Nummernfeld](number-box.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Parallaxansicht](..\motion\parallax.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Kennwortfeld](password-box.md)
+- [Person](person-picture.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Pivot](pivot.md)
+- [Statusanzeige](progress-controls.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Statuskreis](progress-controls.md)
+- [Optionsfeld](radio-button.md)
+- [Bewertungssteuerelement](rating.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Wiederholungsschaltfläche](buttons.md#create-a-repeat-button)
+- [Rich-Edit-Feld](rich-edit-box.md)
+- [Rich-Text-Block](rich-text-block.md)
+- [Bildlaufanzeige](scroll-controls.md)
+- [Suchen](search.md) (Muster)
+- [Semantischer Zoom](semantic-zoom.md)
+- [Formen](shapes.md)
+- [Schieberegler](slider.md)
+- [Unterteilte Schaltfläche](buttons.md#create-a-split-button) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Geteilte Ansicht](split-view.md)
+- [Wischen-Steuerelement](swipe.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Registerkartenansicht](tab-view.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Unterrichtstipp](dialogs-and-flyouts/teaching-tip.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Textblock](text-block.md)
+- [Textfeld](text-box.md)
+- [Uhrzeitauswahl](time-picker.md)
+- [Umschalter](toggles.md)
+- [Umschalter](buttons.md)
+- [Unterteilte Umschaltfläche](buttons.md#create-a-toggle-split-button)
+- [QuickInfos](tooltips.md)
+- [Strukturansicht](tree-view.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Ansicht mit zwei Bereichen](two-pane-view.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Webansicht](web-view.md)
 
-<li style="list-style-type: none;"><a href="contact-card.md">Visitenkarte</a></li>
-
-<li style="list-style-type: none;"><a href="date-and-time.md">Datums- und Uhrzeitsteuerelemente</a></li>
-
-<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">Dialogfelder und Flyouts</a></li>
-
-<li style="list-style-type: none;"><a href="flipview.md">Flip-Ansicht</a></li>
-
-<li style="list-style-type: none;"><a href="forms.md">Formulare</a></li>
-
-<li style="list-style-type: none;"><a href="hyperlinks.md">Hyperlinks</a></li>
-
-<li style="list-style-type: none;"><a href="images-imagebrushes.md">Bilder und Bildpinsel</a></li>
-
-<li style="list-style-type: none;"><a href="inking-controls.md">Steuerelemente für Freihandeingaben</a></li>
-
-<li style="list-style-type: none;"><a href="lists.md">Listen</a></li>
-
-<li style="list-style-type: none;"><a href="../../maps-and-location/controls-map.md">Kartensteuerelement</a></li>
-
-<li style="list-style-type: none;"><a href="master-details.md">Master/Details</a></li>
-
-<li style="list-style-type: none;"><a href="media-playback.md">Medienwiedergabe</a></li>
-
-<li style="list-style-type: none;"><a href="menus.md">Menüs und Kontextmenüs</a></li>
-
-<li style="list-style-type: none;"><a href="navigationview.md">Navigationsansicht</a></li>
-
-<li style="list-style-type: none;"><a href="person-picture.md">Bild einer Person</a></li>
-
-<li style="list-style-type: none;"><a href="pivot.md">Pivot</a></li>
-
-<li style="list-style-type: none;"><a href="progress-controls.md">Statussteuerelemente</a></li>
-
-<li style="list-style-type: none;"><a href="radio-button.md">Optionsfeld</a></li>
-
-<li style="list-style-type: none;"><a href="rating.md">Bewertungssteuerelement</a></li>
-
-<li style="list-style-type: none;"><a href="scroll-controls.md">Steuerelemente für Bildlauf und Schwenken</a></li>
-
-<li style="list-style-type: none;"><a href="search.md">Suche</a></li>
-
-<li style="list-style-type: none;"><a href="semantic-zoom.md">Semantischer Zoom</a></li>
-
-<li style="list-style-type: none;"><a href="shapes.md">Formen</a></li>
-
-<li style="list-style-type: none;"><a href="slider.md">Schieberegler</a></li>
-
-<li style="list-style-type: none;"><a href="split-view.md">Geteilte Ansicht</a></li>
-
-<li style="list-style-type: none;"><a href="text-controls.md">Textsteuerelemente</a></li>
+    :::column-end:::
+:::row-end:::
 
 
-<li style="list-style-type: none;"><a href="toggles.md">Ein-/Ausschalten</a></li>
-<li style="list-style-type: none;"><a href="tooltips.md">QuickInfos</a></li>
 
-<li style="list-style-type: none;"><a href="tree-view.md">Strukturansicht</a></li>
-
-<li style="list-style-type: none;"><a href="web-view.md">Webansicht</a></li>
-</ul>
-</div>
 
 ## <a name="xaml-controls-gallery"></a>XAML-Steuerelementekatalog
 
@@ -133,6 +140,4 @@ Rufen Sie die _XAML-Steuerelementekatalog_-App aus dem Microsoft Store ab, um d
 
 ## <a name="additional-controls"></a>Zusätzliche Steuerelemente
 
-Zusätzliche Steuerelemente für die UWP-Entwicklung werden von Unternehmen wie <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> und <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> bereitgestellt. Diese Steuerelemente bieten zusätzliche Unterstützung für Unternehmen und .NET-Entwickler, indem sie die Steuerelemente des Standardsystems um benutzerdefinierte Steuerelemente und Dienste erweitern.  
-
-Wenn Sie mehr über diese Steuerelemente erfahren möchten, sehen Sie sich auf GitHub das Beispiel <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customer Orders Database</a> (Datenbank für Kundenaufträge) an. In diesem Beispiel werden das Rastersteuerelement und die Validierung der Dateneingabe von Telerik verwendet, die Teil der UI für die UWP-Suite sind. Die UI für die UWP-Suite besteht aus einer Sammlung von über 20 Steuerelementen, die als Open-Source-Projekt über die .NET Foundation verfügbar sind.
+Zusätzliche Steuerelemente für die UWP-Entwicklung werden von Unternehmen wie <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> und <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> bereitgestellt. Diese Steuerelemente bieten zusätzliche Unterstützung für Unternehmen und .NET-Entwickler, indem sie die Steuerelemente des Standardsystems um benutzerdefinierte Steuerelemente und Dienste erweitern.

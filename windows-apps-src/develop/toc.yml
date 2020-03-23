@@ -22,7 +22,7 @@
           items:
             - name: Tutorial „Kundendatenbank“ – App-Struktur
               href: ../enterprise/customer-database-app-structure.md
-    - name: Progressive Web Apps
+    - name: Progressive Web-Apps
       href: /microsoft-edge/progressive-web-apps
 - name: 'Audio, Video und Kamera'
   href: ../audio-video-camera/index.md
@@ -299,7 +299,7 @@
           href: ../debug-test-perf/loose-file-registration.md
         - name: Betatests
           href: ../debug-test-perf/beta-testing.md
-        - name: Windows Device Portal
+        - name: Windows-Geräteportal
           href: ../debug-test-perf/device-portal.md
           items:
             - name: Geräteportal für Desktop
@@ -453,7 +453,7 @@
                   href: ../monetize/html-and-javascript-troubleshooting-guide.md
                 - name: 'XAML- und C#-Handbuch zur Problembehandlung'
                   href: ../monetize/xaml-and-c-troubleshooting-guide.md
-            - name: Versionshinweise
+            - name: Anmerkungen zu dieser Version
               href: ../monetize/release-notes-for-the-advertising-libraries.md
             - name: Programm für Herausgeber von Windows Premium-Anzeigen
               href: ../monetize/windows-premium-ads-publishers-program.md
@@ -724,7 +724,7 @@
           href: ../monetize/retail-demo-experience.md
         - name: Vereinfachen von Zahlungen mit der Payment Request-API
           href: ../monetize/payment-request.md
-    - name: Verpacken von Apps
+    - name: Packen von Apps
       items:
         - name: Übersicht
           href: ../packaging/index.md
@@ -743,9 +743,9 @@
       items:
         - name: Einführung
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: Beginnen
+        - name: Erste Schritte
           href: ../cpp-and-winrt-apis/get-started.md
-        - name: 'Neuigkeiten:'
+        - name: Neues
           href: ../cpp-and-winrt-apis/news.md
         - name: Häufig gestellte Fragen
           href: ../cpp-and-winrt-apis/faq.md
@@ -1024,7 +1024,7 @@
               href: ../contacts-and-calendar/my-people-notifications.md
         - name: Auswählen von Kontakten
           href: ../contacts-and-calendar/selecting-contacts.md
-        - name: Senden von E-Mails
+        - name: E-Mail senden
           href: ../contacts-and-calendar/sending-email.md
         - name: Senden einer SMS
           href: ../contacts-and-calendar/sending-an-sms-message.md
@@ -1099,7 +1099,7 @@
               href: ../devices-sensors/pos-get-started.md
         - name: Hardwaresupport
           href: ../devices-sensors/pos-device-support.md
-        - name: Strichcodescanner
+        - name: Barcodescanner
           href: ../devices-sensors/pos-barcodescanner.md
           items:
             - name: Konfigurieren eines Strichcodescanners
@@ -1354,6 +1354,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: Erstellen und Hosten einer App-Erweiterung
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: Erstellen gehosteter Apps
+              href: ../launch-resume/hosted-apps.md
         - name: Unterstützen Ihrer App mit Hintergrundaufgaben
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:
@@ -1428,9 +1430,9 @@
           href: ../threading-async/best-practices-for-using-the-thread-pool.md
         - name: 'Aufrufen asynchroner APIs in C# oder Visual Basic'
           href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
-        - name: Erstellen einer regelmäßigen Arbeitsaufgabe
+        - name: Erstellen ein regelmäßiges Arbeitselement
           href: ../threading-async/create-a-periodic-work-item.md
-        - name: Senden einer Arbeitsaufgabe an den Threadpool
+        - name: Senden ein Arbeitselement an den Threadpool
           href: ../threading-async/submit-a-work-item-to-the-thread-pool.md
         - name: Timergesteuertes Übermitteln einer Arbeitsaufgabe
           href: ../threading-async/use-a-timer-to-submit-a-work-item.md
