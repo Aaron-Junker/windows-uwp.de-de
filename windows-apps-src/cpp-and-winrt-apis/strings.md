@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Zeichenfolge
 ms.localizationpriority: medium
-ms.openlocfilehash: 004aa3e267bab86527ac3d5c3fe0383ccd4ad904
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 1771c3754e8e9580514f646ae8589b1982911fc7
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844310"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79448563"
 ---
 # <a name="string-handling-in-cwinrt"></a>Behandeln von Zeichenfolgen in C++/WinRT
 
@@ -159,23 +159,25 @@ Wie du vielleicht schon bemerkt hast, wird von C++/WinRT-Eingabeparametern, die 
 Dadurch kannst du die Besonderheiten der Windows-Runtime-Zeichenfolgenverwaltung weitgehend ignorieren und effizient arbeiten, ohne dir neues Wissen anzueignen. Das ist angesichts der intensiven Nutzung von Zeichenfolgen in der Windows-Runtime ein bedeutender Vorteil.
 
 ## <a name="formatting-strings"></a>Formatieren von Zeichenfolgen
-Eine Möglichkeit zum Formatieren von Zeichenfolgen ist **std::wstringstream**. Im folgenden Beispiel wird eine einfache Meldung der Debugablaufverfolgung formatiert und angezeigt:
+Eine Möglichkeit zum Formatieren von Zeichenfolgen ist **std::wostringstream**. Im folgenden Beispiel wird eine einfache Meldung der Debugablaufverfolgung formatiert und angezeigt:
 
 ```cppwinrt
 #include <sstream>
+#include <winrt/Windows.UI.Input.h>
+#include <winrt/Windows.UI.Xaml.Input.h>
 ...
-void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
+void MainPage::OnPointerPressed(winrt::Windows::UI::Xaml::Input::PointerRoutedEventArgs const& e)
 {
-    float2 const point = args.CurrentPoint().Position();
-    std::wstringstream wstringstream;
-    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
-    ::OutputDebugString(wstringstream.str().c_str());
+    winrt::Windows::Foundation::Point const point{ e.GetCurrentPoint(nullptr).Position() };
+    std::wostringstream wostringstream;
+    wostringstream << L"Pointer pressed at (" << point.X << L"," << point.Y << L")" << std::endl;
+    ::OutputDebugString(wostringstream.str().c_str());
 }
 ```
 
 ## <a name="the-correct-way-to-set-a-property"></a>Die richtige Vorgehensweise zum Festlegen einer Eigenschaft
 
-Sie können eine Eigenschaft festlegen, indem Sie einen Wert an eine Setter-Funktion übergeben. Hier sehen Sie ein Beispiel.
+Sie können eine Eigenschaft festlegen, indem Sie einen Wert an eine Setter-Funktion übergeben. Hier ist ein Beispiel.
 
 ```cppwinrt
 // The right way to set the Text property.
@@ -190,6 +192,6 @@ myTextBlock.Text() = L"Hello!";
 ```
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Struktur „winrt::hstring“](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
 * [Funktion „winrt::to_hstring“](/uwp/cpp-ref-for-winrt/to-hstring)
 * [Funktion „winrt::to_string“](/uwp/cpp-ref-for-winrt/to-string)

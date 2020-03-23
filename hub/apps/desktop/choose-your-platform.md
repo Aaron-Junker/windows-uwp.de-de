@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: d0d87f8e4b6524471ff5e2ada9012a22641b06d7
-ms.sourcegitcommit: ddf0137929945eddf01041a81aa4d26038e70f46
+ms.openlocfilehash: bf8a5970d1999427023592f919ef0b92737fa934
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74392093"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510983"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -26,9 +26,13 @@ Wenn Sie eine neue Desktop Anwendung für Windows-PCs erstellen möchten, müsse
 
 Mit all diesen Anwendungsplattformen können Sie Desktop-Apps wie Word, Excel und Photoshop erstellen, die auf dem klassischen Windows-Desktop ausgeführt werden, und die spezifischen Features dieser Umgebung in vollem Umfang nutzen. Einigen dieser Plattformen sind jedoch spezifische Merkmale gemein, und sie eignen sich besser für bestimmte Arten von Anwendungen:
 
-* **UWP, WPF und Windows Forms**. Diese Plattformen bieten verwaltete Laufzeitumgebungen (die Windows-Runtime für UWP und .NET für Windows Forms und WPF) mit vielen Vorteilen, insbesondere in den Bereichen der Entwicklerproduktivität, der ausgereiften und anpassbaren Benutzeroberfläche und der Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
+* **UWP**. Diese Plattform bietet ein gemeinsames Typensystem, APIs und Anwendungsmodell für alle Geräte, auf denen Windows 10 ausgeführt wird. UWP-Anwendungen können native oder verwaltete Anwendungen sein. 
 
-* **Win32 API**. Die Win32-API (auch als Windows-API bezeichnet) ist die ursprüngliche Plattform für native C/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Sie bietet eine erstklassige Entwicklungsumgebung ohne Abhängigkeit von einer verwalteten Laufzeitumgebung wie .NET und WinRT. Dadurch ist die Win32-API die Plattform der Wahl für Anwendungen, die das höchste Maß an Leistung und den direkten Zugriff auf die Systemhardware benötigen.
+* **WPF und Windows Forms**. Diese Plattformen bieten ein gemeinsames Typensystem, APIs und Anwendungsmodell für verwaltete Anwendungen unter .NET.
+
+* **Win32 API**. Die Win32-API (auch als Windows-API bezeichnet) ist die ursprüngliche Plattform für native C/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Dadurch ist die Win32-API die Plattform der Wahl für Anwendungen, die das höchste Maß an Leistung und den direkten Zugriff auf die Systemhardware benötigen.
+
+Sowohl UWP als auch .NET sind eng in Visual Studio integriert. Dies bietet zahlreiche Vorteile, insbesondere in den Bereichen Entwicklerproduktivität, komplexer und anpassbarer Benutzeroberflächen und Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
 
 In diesem Artikel werden diese Plattformen ausführlicher beschrieben, damit Sie die beste Lösung für Ihre Anwendung ermitteln können. 
 
@@ -44,7 +48,7 @@ Nicht nur können Sie UWP zum Erstellen von Desktopanwendungen für Windows-PCs 
 Weitere Informationen zu UWP finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte](/windows/uwp/get-started/)
-* [Design und UI](/windows/uwp/design/)
+* [Design und Benutzeroberfläche](/windows/uwp/design/)
 * [Technologien und Features](/windows/uwp/develop/)
 * [API-Referenz](/uwp/)
 * [Beispiele](https://github.com/Microsoft/Windows-universal-samples)
@@ -86,7 +90,7 @@ Hier finden Sie einige Highlights der Win32-API mit C++, die Ihnen die Erstellun
 * Effiziente und sichere Container und Algorithmen.
 * DirectX, insbesondere Direct3D und DirectCompute (Hinweis: UWP bietet ebenfalls DirectX-Interoperabilität).
 
-Weitere Informationen finden Sie in den folgenden Artikeln:
+Weitere Informationen findest du in den folgenden Artikeln:
 
 * [Erste Schritte](/windows/win32/desktop-programming/)
 * [Erstellen Ihrer ersten Win32- und C++-App](/windows/win32/learnwin32/learn-to-program-for-windows/)
@@ -100,7 +104,7 @@ In der folgenden Tabelle werden die verschiedenen Merkmale von Windows Forms, WP
 
 | Funktion oder Szenario  |    UWP     |      WPF     |   Windows Forms  |
 |--------|--------|--------|--------|
-| **Unterstützte Versionen**      |  Windows 10   |  Windows 7 und höher |  Windows 7 und höher  |
+| **Unterstützte Versionen**      |  Windows 10   |  Windows 7 und höher |  Windows 7 und höher  |
 | **Sprachen**      |   C\#, C++/WinRT, C++/CX, VB, JavaScript   |  C\#, C++/CLI (verwaltete Erweiterungen für C++), F\#, VB |  C\#, C++/CLI (verwaltete Erweiterungen für C++), F\#, VB   |
 | **Benutzeroberflächenlaufzeit** |    Nativ (C++/WinRT und C++/CX) und verwaltet (.NET Native)  |  Verwaltet (.NET Framework und .NET Core 3) |   Verwaltet (.NET Framework und .NET Core 3)   |
 | **Open Source** | [Ja (nur Windows-Benutzeroberflächenbibliothek)](https://github.com/Microsoft/microsoft-ui-xaml)  |  [Ja (nur .NET Core)](https://github.com/dotnet/wpf) | [Ja (nur .NET Core)](https://github.com/dotnet/winforms)  |

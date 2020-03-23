@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Layout, Formular
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9542151a8104ade77d8311ed1f16eba2809ecf7a
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
+ms.sourcegitcommit: ea058c804637319f18801447fd0f7e38ce17b801
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163690"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79543973"
 ---
 # <a name="create-and-customize-a-form"></a>Erstellen und Anpassen eines Formulars
 
 Wenn Sie eine App erstellen, die umfangreiche Informationen von Benutzern abfragt, werden Sie wahrscheinlich ein Formular erstellen, das sich einfach ausfüllen lässt. In diesem Artikel erfahren Sie, wie Sie ein nützliches und stabiles Formular erstellen.
 
-Dies ist kein Tutorial. Wenn Sie ein Tutorial suchen, sehen Sie sich unser [Tutorial zu adaptiven Layouts](../design/basics/xaml-basics-adaptive-layout.md) an, in dem Sie schrittweise Anleitungen finden.
+Dieser Artikel ist kein Tutorial. Wenn Sie ein Tutorial suchen, sehen Sie sich unser [Tutorial zu adaptiven Layouts](../design/basics/xaml-basics-adaptive-layout.md) an, in dem Sie schrittweise Anleitungen finden.
 
 Wir erläutern, welche **XAML-Steuerelemente** in ein Formular gehören, wie diese am besten auf der Seite angeordnet werden und wie Sie Ihr Formular optimal an unterschiedliche Bildschirmgrößen anpassen. Da es in einem Formular jedoch um die relative Position visueller Elemente geht, lassen Sie uns zunächst das Seitenlayout mit XAML besprechen.
 
