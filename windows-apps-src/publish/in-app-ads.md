@@ -147,8 +147,8 @@ Die verfügbaren Anzeigennetzwerke schalten Anzeigen in allen [unterstützten M�
 
 |  Anzeigennetzwerk  |  Unterstützte Märkte  |
 |--------------|---------------------|
-| Revcontent | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Großbritannien, USA  |
-| Smaato | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Großbritannien, USA |
+| Revcontent | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Vereinigtes Königreich, USA  |
+| Smaato | Brasilien, Kanada, Frankreich, Deutschland, Italien, Japan, Spanien, Vereinigtes Königreich, USA |
 | Smartclip | Österreich, Belgien, Dänemark, Finnland, Deutschland, Italien, Niederlande, Norwegen, Schweden, Schweiz  |
 | Unterton | USA |
 

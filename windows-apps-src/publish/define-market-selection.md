@@ -244,7 +244,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Macau SAR</td>
   </tr>
   <tr>
-    <td>Mazedonien, ehemalige jugoslawische Republik</td>
+    <td>Nordmazedonien</td>
     <td>Madagaskar</td>
     <td>Malawi</td>
     <td>Malaysia</td>
@@ -613,7 +613,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macau SAR</td>
-    <td>Mazedonien, ehemalige jugoslawische Republik</td>
+    <td>Nordmazedonien</td>
   </tr>
   <tr>
     <td>Madagaskar</td>

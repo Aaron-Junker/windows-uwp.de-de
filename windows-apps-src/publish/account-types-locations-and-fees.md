@@ -151,7 +151,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Litauen                         | 14 EUR              | 75 EUR           |  
 | Luxemburg                        | 14 EUR              | 75 EUR           |  
 | Macau SAR                         | 19 USD              | 99 USD           |  
-| Mazedonien (ehem. jugoslawische Republik Mazedonien)                 | 19 USD              | 99 USD           |  
+| Nordmazedonien                 | 19 USD              | 99 USD           |  
 | Madagaskar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaysia                          | 62 MYR              | 300 MYR          |  

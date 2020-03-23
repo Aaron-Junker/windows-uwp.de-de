@@ -127,7 +127,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Zentralafrikanische Republik  |  (UTC + 01:00) West-Zentralafrika |
 | Tschad  |  (UTC + 01:00) West-Zentralafrika |
 | Chile  |  (UTC-04:00) Santiago |
-| China  |  (UTC + 08:00) Peking, Chongqing, Hongkong, urumschlag |
+| China  |  (UTC + 08:00) Peking (Beijing), Chongqing, Hongkong, Ürümqi |
 | Weihnachtsinsel  |  (UTC + 07:00) Krasnojarsk |
 | Kokosinseln  |  (UTC + 06:30) Yangon (Rangoon) |
 | Kolumbien  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
@@ -179,7 +179,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Heard und McDonaldinseln  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
 | Heiliger Stuhl (Vatikanstadt)  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Honduras  |  (UTC-06:00) Zentralzeit (USA & Kanada) |
-| Hongkong (SAR)  |  (UTC + 08:00) Peking, Chongqing, Hongkong, urumschlag |
+| Hongkong (SAR)  |  (UTC + 08:00) Peking (Beijing), Chongqing, Hongkong, Ürümqi |
 | Ungarn  |  (UTC + 01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
 | Island  |  (UTC + 00:00) Monrovia, Reykjavik |
 | Indien  |  (UTC + 05:30) Chennai, Kolkata, Mumbai, New Delhi |
@@ -207,8 +207,8 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Liechtenstein  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Litauen  |  (UTC + 02:00) Chisinau |
 | Luxemburg  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
-| Macau SAR  |  (UTC + 08:00) Peking, Chongqing, Hongkong, urumschlag |
-| Mazedonien (ehem. jugoslawische Republik Mazedonien)  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
+| Macau SAR  |  (UTC + 08:00) Peking (Beijing), Chongqing, Hongkong, Ürümqi |
+| Nordmazedonien  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Madagaskar  |  (UTC + 03:00) Hauptsitz |
 | Malawi  |  (UTC + 02:00) Harare, Pretoria |
 | Malaysia  |  (UTC + 08:00) Kuala Lumpur, Singapur |
