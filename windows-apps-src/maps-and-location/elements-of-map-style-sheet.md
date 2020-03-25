@@ -7,12 +7,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Karten, Karten-Stylesheet
 ms.localizationpriority: medium
-ms.openlocfilehash: b59e8c3c6d9c4c299e441964be1afb4e02051e23
-ms.sourcegitcommit: 5264d7499ddbe21199a63d74a294206069f90f8b
+ms.openlocfilehash: b2e6e57721a5667a9ca38b21eee2a618353cd30b
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78287446"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218560"
 ---
 # <a name="map-style-sheet-reference"></a>Karten-Stylesheet-Referenz
 
@@ -56,7 +56,7 @@ In der folgenden Tabelle wird das Zeichen „>” verwendet, um Ebenen in der Ei
 |---------|----------------------|
 |  1703   | Creators Update      |
 |  1709   | Fall Creators Update |
-|  1803   | Update vom April 2018    |
+|  1803   | Update April 2018    |
 |  1809   | Update vom Oktober 2018  |
 |  1903   | Update vom Mai 2019      |
 
@@ -263,6 +263,7 @@ In diesem Abschnitt werden die Eigenschaften beschrieben, die Sie für die Eintr
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob Schattierungen für Erhöhungen auf der Karte gezeichnet werden sollen |
 | ShadowColor                  | Farbe   |      |      |      |  ✔   |  ✔   | Die Farbe des Schattens hinter Symbolen, die Schatten verwenden. |
 | spaceColor                   | Farbe   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Der ARGB-Farbwert für den Bereich um die Karte herum |
+| terrainflat                  | Bool    |      |      |      |      |      | Ein Flag, das angibt, ob das Gelände auf der Karte flach (deaktiviert) sein soll. |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | Ein Flag, das angibt, ob die ursprünglichen Farben in der SVG verwendet werden sollen, anstatt den Paletteneintrag für Farben in einem Bild zu suchen. |
 
 <a id="mapelement" />

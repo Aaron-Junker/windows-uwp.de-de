@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4bc474c3414969f27468a8daf262df0ae6e3b57e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 3f2a0a6ee6b22fa7d08e7fc746c4ec2ad4ebffa7
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209786"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218590"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines UWP-Standard Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
-In diesem Artikel werden zwei Möglichkeiten zum Hosten eines standardmäßigen UWP-Steuer Elements (d. h. eines UWP-Steuer Elements eines ersten Anbieters durch die Windows SDK-oder WinUI-Bibliothek) in einer WPF-App mithilfe von [XAML-Inseln](xaml-islands.md)veranschaulicht:
+In diesem Artikel werden zwei Möglichkeiten zum Hosten eines standardmäßigen UWP-Steuer Elements (d. h. eines UWP-Steuer Elements von Windows SDK) in einer WPF-App mithilfe von [XAML-Inseln](xaml-islands.md)veranschaulicht:
 
 * Es wird gezeigt, wie Sie ein UWP-Steuerelement [InkCanvas](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [inktoolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) mithilfe von [umschließenden Steuerelementen](xaml-islands.md#wrapped-controls) im Windows Community Toolkit hosten. Diese Steuerelemente wrappen die Schnittstelle und Funktionalität eines kleinen Satzes nützlicher UWP-Steuerelemente. Sie können Sie direkt der Entwurfs Oberfläche Ihres WPF-oder Windows Forms Projekts hinzufügen und diese dann wie jedes andere WPF-oder Windows Forms-Steuerelement im Designer verwenden.
 
@@ -291,6 +291,9 @@ Nachdem Sie der App nun die umschlenenen UWP-Steuerelemente [InkCanvas](https://
 Sie können die WPF-App optional in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. Msix ist die moderne App-Paket Technologie für Windows und basiert auf einer Kombination aus MSI-, AppX-, App-V-und ClickOnce-Installationstechnologien.
 
 Die folgenden Anweisungen zeigen, wie Sie alle Komponenten in der Projekt Mappe in einem msix-Paket Verpacken, indem Sie das [Windows-Anwendungs](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) Paket in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn Sie die WPF-App in einem msix-Paket verpacken möchten.
+
+> [!NOTE]
+> Wenn Sie die Anwendung nicht in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung packen, muss auf Computern, auf denen Ihre APP ausgeführt wird, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
 1. Fügen Sie der Projekt Mappe ein neues [Windows-Anwendungspaket](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts die Option **Windows 10, Version 1903 (10,0; Build 18362)** für die **Zielversion** und die **Mindestversion**.
 

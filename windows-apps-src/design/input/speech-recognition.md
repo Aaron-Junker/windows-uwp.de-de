@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1979e16853fc288b83f5e4216c970440300fc597
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258318"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218380"
 ---
 # <a name="speech-recognition"></a>Spracherkennung
 
@@ -208,7 +208,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 ## <a name="recognize-speech-input"></a>Erkennen von Spracheingabe
 
-Mit einer *Einschränkung* werden die Wörter und Wortgruppen (Vokabular) definiert, die eine App bei der Spracheingabe erkennt. Einschränkungen sind der Kern der Spracherkennung und verleihen Ihrer App mehr Kontrolle über die Genauigkeit der Spracherkennung.
+Mit einer *Einschränkung* werden die Wörter und Wortgruppen (Vokabular) definiert, die eine App bei der Spracheingabe erkennt. Einschränkungen sind der Kern der Spracherkennung und weisen der App eine bessere Kontrolle über die Genauigkeit der Spracherkennung zu.
 
 Sie können die folgenden Einschränkungs Typen zum Erkennen von Spracheingaben verwenden.
 
@@ -220,7 +220,8 @@ Die Standardgrammatik der Freitext-Diktierfunktion erkennt die meisten Wörter u
 
 Die Grammatik für die Websuche enthält wie die Diktiergrammatik eine große Anzahl von Wörtern und Ausdrücken, die Benutzer sagen können. Sie ist allerdings für die Erkennung von Begriffen optimiert, die beim Suchen im Web häufig verwendet werden.
 
-**Beachten Sie**  da die vordefinierten Diktat-und websuchgrammatiken groß sein können und weil Sie online sind (nicht auf dem Gerät), ist die Leistung möglicherweise nicht so schnell wie bei einer benutzerdefinierten Grammatik, die auf dem Gerät installiert ist.     
+> [!NOTE]
+> , da vordefinierte Diktat-und websuchgrammatiken groß sein können, und da Sie Online (nicht auf dem Gerät) sind, ist die Leistung möglicherweise nicht so schnell wie bei einer auf dem Gerät installierten benutzerdefinierten Grammatik.     
 
 Diese vordefinierten Grammatiken können zum Erkennen von bis zu zehn Sekunden Spracheingabe verwendet werden. Sie müssen dazu keinen Code selbst erstellen. Sie erfordern jedoch eine Netzwerkverbindung.
 

@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d881fc42e453e2ace0a44543c3e204aa154958b7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: b1ac53e0a6b6e01cd2129e2b1893f91fae2ef0fe
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209796"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218600"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App mithilfe von XAML-Inseln
 
-In diesem Artikel wird veranschaulicht, wie das [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement im Windows Community Toolkit zum Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App verwendet wird, die auf .net Core 3 ausgerichtet ist. Das benutzerdefinierte Steuerelement enthält mehrere UWP-Steuerelemente von erst Anbietern aus dem Windows SDK und bindet eine Eigenschaft in einem der UWP-Steuerelemente an eine Zeichenfolge in der WPF-App. In diesem Artikel wird auch veranschaulicht, wie Sie ein UWP-Steuerelement einer ersten Partei aus der [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/)hosten.
+In diesem Artikel wird veranschaulicht, wie das [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement im Windows Community Toolkit zum Hosten eines benutzerdefinierten UWP-Steuer Elements in einer WPF-App verwendet wird, die auf .net Core 3 ausgerichtet ist. Das benutzerdefinierte Steuerelement enthält mehrere UWP-Steuerelemente von erst Anbietern aus dem Windows SDK und bindet eine Eigenschaft in einem der UWP-Steuerelemente an eine Zeichenfolge in der WPF-App. In diesem Artikel wird auch veranschaulicht, wie Sie ein UWP-Steuerelement auch über die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/)hosten.
 
 Obwohl in diesem Artikel beschrieben wird, wie Sie dies in einer WPF-APP tun, ist der Prozess bei einer Windows Forms-App ähnlich. Eine Übersicht über das Hosting von UWP-Steuerelementen in WPF und Windows Forms-apps finden Sie in [diesem Artikel](xaml-islands.md#wpf-and-windows-forms-applications).
 
@@ -231,7 +231,7 @@ Wenn Sie bereits über ein benutzerdefiniertes Steuerelement verfügen, können 
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Hinzufügen eines Steuer Elements aus der WinUI-Bibliothek zum benutzerdefinierten Steuerelement
 
-In der Vergangenheit wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen der UWP-Steuerelemente der ersten Partei aus der Windows SDK in einem nuget-Paket verteilt werden, das nicht an Windows SDK Releases gebunden ist. Diese Bibliothek enthält auch neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der Roadmap für die [WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) .
+In der Vergangenheit wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von UWP-Steuerelementen aus dem Windows SDK in einem nuget-Paket verteilt werden, das nicht an Windows SDK Releases gebunden ist. Diese Bibliothek enthält auch neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der Roadmap für die [WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md) .
 
 In diesem Abschnitt wird veranschaulicht, wie Sie ein UWP-Steuerelement aus der WinUI-Bibliothek dem Benutzer Steuerelement hinzufügen, damit Sie dieses Steuerelement in Ihrer WPF-App hosten können
 
@@ -286,6 +286,9 @@ In diesem Abschnitt wird veranschaulicht, wie Sie ein UWP-Steuerelement aus der 
 Sie können die WPF-App optional in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. Msix ist die moderne App-Paket Technologie für Windows und basiert auf einer Kombination aus MSI-, AppX-, App-V-und ClickOnce-Installationstechnologien.
 
 Die folgenden Anweisungen zeigen, wie Sie alle Komponenten in der Projekt Mappe in einem msix-Paket Verpacken, indem Sie das [Windows-Anwendungs](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) Paket in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn Sie die WPF-App in einem msix-Paket verpacken möchten. Beachten Sie, dass diese Schritte derzeit einige Problem Umgehungen für das Szenario des Hostings benutzerdefinierter UWP-Steuerelemente beinhalten.
+
+> [!NOTE]
+> Wenn Sie die Anwendung nicht in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung packen, muss auf Computern, auf denen Ihre APP ausgeführt wird, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
 1. Fügen Sie der Projekt Mappe ein neues [Windows-Anwendungspaket](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts die Option **Windows 10, Version 1903 (10,0; Build 18362)** für die **Zielversion** und die **Mindestversion**.
 

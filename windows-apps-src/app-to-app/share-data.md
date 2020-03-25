@@ -6,17 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 08dbe9ed7aaa732172d488712aa47d6d3631508a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2be088edd732a22acb11be5fc209ff25c84bae17
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317704"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218350"
 ---
 # <a name="share-data"></a>Freigeben von Daten
 
 
 In diesem Artikel wird erläutert, wie der Freigabe-Vertrag in einer UWP-App (Universelle Windows-Plattform) unterstützt wird. Der Freigabe-Vertrag ist eine einfache Möglichkeit, Daten wie z. B. Text, Links, Fotos und Videos schnell für andere Apps freizugeben. Ein Benutzer möchte beispielsweise mit einer App für ein soziales Netzwerk eine Webseite mit seinen Freunden teilen, oder er möchte in einer Notiz-App einen Link für eine spätere Verwendung speichern.
+
+> [!NOTE]
+> Die Codebeispiele in diesem Artikel sind für UWP-apps geschrieben. WPF-, Windows Forms- C++und/Win32-Desktop-Apps müssen die [idatatransfermanagerinterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) -Schnittstelle verwenden, um das [datatransfermanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) -Objekt für ein bestimmtes Fenster zu erhalten. Weitere Informationen finden Sie im Beispiel zu [sharesource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) .
 
 ## <a name="set-up-an-event-handler"></a>Einrichten eines Ereignishandlers
 
@@ -32,8 +35,8 @@ Wenn ein [**DataRequested**](https://docs.microsoft.com/uwp/api/windows.applicat
 
 Sie können verschiedene Arten von Daten freigeben, einschließlich:
 
--   Nur-Text
--   URIs (Uniform Resource Identifiers)
+-   Unverschlüsselter Text
+-   Uniform Resource Identifiers (URIs)
 -   HTML
 -   Formatierter Text
 -   Bitmaps
@@ -44,7 +47,7 @@ Das [**DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationMode
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## <a name="set-properties"></a>Festlegen von Eigenschaften
+## <a name="set-properties"></a>Eigenschaften festlegen
 
 Beim Verpacken von Daten für die Freigabe können Sie eine Vielzahl von Eigenschaften angeben, die weitere Informationen zum freigegebenen Inhalt enthalten. Mit diesen Eigenschaften kann die Benutzererfahrung für Ziel-Apps verbessert werden. Die Angabe einer Beschreibung kann beispielsweise nützlich sein, wenn der Benutzer Inhalte für mehrere Apps freigibt. Eine Miniaturansicht beim Freigeben eines Bilds oder eines Links für eine Webseite stellt eine visuelle Referenz für den Benutzer dar. Weitere Informationen finden Sie unter [**DataPackagePropertySet**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet).
 
@@ -98,10 +101,10 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 * [App-zu-App-Kommunikation](index.md)
 * [Empfangen von Daten](receive-data.md)
 * [DataPackage](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackage)
-* [DataPackagePropertySet](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackagepropertyset)
-* [DataRequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest)
+* [Datapackagepropertyset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackagepropertyset)
+* [Datarequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest)
 * [DataRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested)
-* [FailWithDisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
-* [ShowShareUi](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)
+* [Failwithdisplaytext](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
+* [Showshareui](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)
  
 

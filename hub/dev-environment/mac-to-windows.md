@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac zu Windows, Tastenkombination für Tastenkombinationen, Wechsel von UNIX zu Windows, Übergang von Mac zu Windows, Unterstützung der Umstellung von MacBook auf die Oberfläche, Verwendung von Windows für einen Macintosh-Benutzer, Wechsel von Macintosh zu Windows, Hilfe beim Ändern von Entwicklungsumgebungen, Mac OS X zu Windows, Hilfe Wechsel von Mac zu PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a4e71143730184db094df2a7e8f1416cbaf244c4
-ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
+ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881272"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218440"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Leitfaden zum Ändern der Entwicklungsumgebung von Mac zu Windows
 
@@ -24,23 +24,25 @@ Bei der APP-Entwicklung wäre das nächste Äquivalent zu Xcode [Visual Studio](
 
 ## <a name="keyboard-shortcuts"></a>Tastenkombinationen
 
-| **Vorgang** | **Mac** | **Windows** |
+| **Betriebs** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| „Kopieren“ | Befehl + C | STRG+C |
+| Kopieren | Befehl + C | STRG+C |
 | Ausschneiden | Befehl + X | STRG+X |
 | Einfügen | Befehl + V | STRG+V |
-| Rückgängig machen | Befehl + Z | STRG+Z |
-| Speichern | Befehl + S | STRG+S |
-| Öffnen Sie den | Befehl + O | STRG+O |
+| Rückgängig | Befehl + Z | STRG+Z |
+| Speichern | Befehl + S | Strg+S |
+| Öffnen | Befehl + O | Strg+O |
 | Computer sperren | Befehl + Steuerung + Q | WindowsKey + L |
 | Desktop anzeigen | Befehl + F3 | WindowsKey + D |
+| Dateibrowser öffnen | Befehl + N | WindowsKey + E |
 | Minimieren von Fenstern | Befehl + M | WindowsKey + M |
-| Suche | Befehl + Leertaste | WindowsKey |
+| Suchen | Befehl + Leertaste | WindowsKey |
 | Aktives Fenster schließen | Befehl + W | Steuerelement + W |
 | Aktuellen Task wechseln | Befehl + Tab | ALT+TAB |
+| Maximieren eines Fensters im Vollbildmodus | Control + Command + F | WindowsKey + nach oben |
 | Bildschirm speichern (Screenshot) | Befehl + Umschalt + 3 | WindowsKey + UMSCHALT + S |
 | Fenster speichern | Befehl + Umschalt + 4 | WindowsKey + UMSCHALT + S |
-| Element Informationen oder Eigenschaften anzeigen | Befehl + I | ALT+EINGABE |
+| Element Informationen oder Eigenschaften anzeigen | Befehl + I | ALT+EINGABETASTE |
  | Alle Elemente auswählen | Befehl + A | STRG+A |
 | Wählen Sie mehr als ein Element in einer Liste aus (nicht zusammenhängend). | , Und klicken Sie dann auf die einzelnen Elemente. | Steuerelement, und klicken Sie dann auf jedes Element |
 | Sonderzeichen eingeben | Option + Zeichen Taste | ALT + Zeichen Taste|
@@ -49,17 +51,17 @@ Bei der APP-Entwicklung wäre das nächste Äquivalent zu Xcode [Visual Studio](
 
 Hinweis: für einige dieser Verknüpfungen ist eine "Genauigkeits Trackpad" erforderlich, z. b. die Trackpad-Geräte auf Surface-Geräten und andere Laptops von Drittanbietern.
 
- **Vorgang** | **Mac** | **Windows** |
+ **Betriebs** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
 | Scroll | Vertikaler Schwenken mit zwei Fingern | Vertikaler Schwenken mit zwei Fingern |
 | Zoom | Zwei Finger ein-und ausgehend | Zwei Finger ein-und ausgehend |
 | Rückwärts-und Vorwärtsbewegung zwischen Ansichten | Zwei Finger seitwärts schwenken | Zwei Finger seitwärts schwenken |
 | Virtuelle Arbeitsbereiche wechseln | Vier Finger seitwärts schwenken | Vier Finger seitwärts schwenken |
 | Zurzeit geöffnete apps anzeigen | Vier Finger nach oben schwenken | Drei Finger nach oben schwenken |
-| Wechseln zwischen Apps | n. v. | Langsamste drei Finger seitwärts schwenken |
+| Wechseln zwischen Apps | N/V | Langsamste drei Finger seitwärts schwenken |
 | Zum Desktop wechseln | Verteilen von vier Fingern | Drei Finger schwenken nach unten |
 | Cortana/Aktions Center öffnen | Zwei Finger Folie von rechts | Drei Finger Tippen |
-| Zusätzliche Informationen öffnen | Drei Finger Tippen | n. v. |
+| Zusätzliche Informationen öffnen | Drei Finger Tippen | N/V |
 |Launchpad anzeigen/app starten | Mit vier Fingern | Tippen Sie mit vier Fingern |
 
 Hinweis: Trackpad-Optionen können auf beiden Plattformen konfiguriert werden.
@@ -80,15 +82,19 @@ Die Windows-Befehlszeile akzeptiert DOS-Befehle und ist das am häufigsten verwe
 
 3. Windows-Subsystem für Linux (WSL)
 
-Mit WSL können Sie eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass Sie *bash** oder eine andere Shell ausführen können, abhängig von der Auswahl und der spezifischen installierten Linux-Distribution. Mithilfe von WSL wird die Art der Umgebung bereitgestellt, die den Mac-Benutzern am meisten vertraut ist. Beispielsweise können Sie die Dateien in einem aktuellen Verzeichnis und **nicht in der** Windows- Befehlszeile auflisten. Weitere Informationen zum Installieren und Verwenden von WSL finden Sie im [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+Mit WSL können Sie eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass Sie *bash** oder eine andere Shell ausführen können, abhängig von der Auswahl und der spezifischen installierten Linux-Distribution. Mithilfe von WSL wird die Art der Umgebung bereitgestellt, die den Mac-Benutzern am meisten vertraut ist. Beispielsweise können Sie die Dateien in einem aktuellen Verzeichnis und **nicht in der** Windows- **dir** Befehlszeile auflisten. Weitere Informationen zum Installieren und Verwenden von WSL finden Sie im [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+
+4. Windows-Terminal (Vorschau)
+
+Das Windows-Terminal ist eine Anwendung, die Befehlszeilen Tools und Shells aus einer Reihe von Quellen kombiniert, einschließlich der herkömmlichen Windows-Befehlszeile, PowerShell und des Windows-Subsystems für Linux. Obwohl es sich zurzeit noch in der Vorschau Phase befindet, enthält es eine Reihe nützlicher Features, wie z. b. Unterstützung für mehrere Registerkarten, geteilte Bereiche, benutzerdefinierte Designs und Stile sowie vollständige Unicode-Unterstützung. Das Windows-Terminal kann mithilfe der [Microsoft Store unter Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)installiert werden.
 
 ## <a name="apps-and-utilities"></a>Apps und Hilfsprogramme
 
  **App** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Einstellungen und Einstellungen | System Einstellungen | „Einstellungen“ |
+| Einstellungen und Einstellungen | System Einstellungen | Einstellungen |
 | Task-Manager | Aktivitätsmonitor | Task-Manager |
 | Datenträger Formatierung | Datenträger Dienstprogramm | Datenträgerverwaltung |
 | Text Bearbeitung | TextEdit | Editor |
-| Ereignisanzeige | Console | Ereignisanzeige |
+| Ereignisanzeige | Konsole | Ereignisanzeige |
 | Suchen nach Dateien/apps | Befehl + Leertaste | Windows-Taste |

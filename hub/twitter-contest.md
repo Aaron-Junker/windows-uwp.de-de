@@ -6,12 +6,12 @@ ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.date: 03/19/2020
-ms.openlocfilehash: ae86947b461e3fb748b67043827ffeebfc5cb0d2
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2a7a5983dcc7e330a30cf53b93c73f36f811d17d
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108103"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218470"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>Tragen Sie zu Windows docs bei, und geben Sie ein, um etwas zu gewinnen.
 
@@ -27,7 +27,7 @@ Folgendes ist erforderlich:
     - **Windows-Hardware Entwickler** - [Tools und Treiber](https://docs.microsoft.com/windows-hardware/drivers/)
 3. Nehmen Sie Korrekturen an einer Dokumentationsseite vor, indem Sie oben auf der Seite die Schaltfläche **Bearbeiten** auswählen. Dadurch gelangen Sie zur markdown-Quelldatei in GitHub.
 4. Nachdem die Änderungen vorgenommen wurden. Datei ihren Pull Request (PR).
-5. Besuchen Sie das [@WindowsDocs](https://twitter.com/WindowsDocs) Twitter-Konto, und Antworten Sie auf den Wettbewerbsbeitrag mit einem Link zu Ihrem PR.
+5. Antworten Sie auf den [@WindowsDocs-Wettbewerbsbeitrag](https://twitter.com/WindowsDocs/status/1242088720209268736) mit einem Link zu Ihrem PR.
 
 Vielen Dank für Ihre Mitwirkenden!
 
