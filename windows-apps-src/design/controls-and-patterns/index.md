@@ -1,29 +1,29 @@
 ---
-description: Hier finden Sie einen Designleitfaden und Codierungsanweisungen zum Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App. Sie finden mehr als 45 leistungsstarke Steuerelemente für die Verwendung mit Ihrer App.
-title: UWP-Steuerelemente und -Muster – Entwicklung von Windows-Apps
-keywords: UWP-Steuerelemente, Benutzeroberfläche, App-Steuerelemente
+description: Hier finden Sie einen Designleitfaden und Codierungsanweisungen zum Hinzufügen von Steuerelementen und Mustern zu Ihrer Windows-App. Sie finden mehr als 45 leistungsstarke Steuerelemente für die Verwendung mit Ihrer App.
+title: Windows-Steuerelemente und -Muster – Entwicklung von Windows-Apps
+keywords: UWP-Steuerelemente, Benutzeroberfläche, App-Steuerelemente, Windows-Steuerelemente
 label: Controls & patterns
 template: detail.hbs
-ms.date: 11/16/2017
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081711"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218450"
 ---
-# <a name="controls-for-uwp-apps"></a>Steuerelemente für UWP-Apps
+# <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
 
 ![Steuerelemente](../images/controls-2x.png)
 
-In der UWP-App-Entwicklung ist ein <i>Steuerelement</i> ein UI-Element, das Inhalte anzeigt oder Interaktionen ermöglicht. Steuerelemente sind die Bausteine der Benutzeroberfläche. Ein <i>Muster</i> ist eine Anleitung zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen.
+In der Windows-App-Entwicklung ist ein <i>Steuerelement</i> ein UI-Element, das Inhalte anzeigt oder Interaktionen ermöglicht. Steuerelemente sind die Bausteine der Benutzeroberfläche. Ein <i>Muster</i> ist eine Anleitung zum Kombinieren verschiedener Steuerelemente, um etwas Neues zu erstellen.
 
 Wir stellen Ihnen mehr als 45 Steuerelemente bereit, angefangen bei einfachen Schaltflächen bis hin zu leistungsstarken Datensteuerelementen wie der Rasteransicht.  Diese Steuerelemente sind Teil des Fluent Design-Systems und können Ihnen bei der Erstellung einer ansprechenden, skalierbaren UI helfen, die auf allen Geräten und Bildschirmgrößen großartig aussieht.
 
-Die Artikel in diesem Abschnitt enthalten Designrichtlinien und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer UWP-App.
+Die Artikel in diesem Abschnitt enthalten Designrichtlinien und Codierungsanweisungen für das Hinzufügen von Steuerelementen und Mustern zu Ihrer Windows-App.
 
 ## <a name="intro"></a>Einführung
 
@@ -140,4 +140,4 @@ Rufen Sie die _XAML-Steuerelementekatalog_-App aus dem Microsoft Store ab, um d
 
 ## <a name="additional-controls"></a>Zusätzliche Steuerelemente
 
-Zusätzliche Steuerelemente für die UWP-Entwicklung werden von Unternehmen wie <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> und <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> bereitgestellt. Diese Steuerelemente bieten zusätzliche Unterstützung für Unternehmen und .NET-Entwickler, indem sie die Steuerelemente des Standardsystems um benutzerdefinierte Steuerelemente und Dienste erweitern.
+Zusätzliche Steuerelemente für die Windows-Entwicklung werden von Unternehmen wie <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>, <a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> und <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> bereitgestellt. Diese Steuerelemente bieten zusätzliche Unterstützung für Unternehmen und .NET-Entwickler, indem sie die Steuerelemente des Standardsystems um benutzerdefinierte Steuerelemente und Dienste erweitern.

@@ -22,12 +22,22 @@
           items:
             - name: Übersicht
               href: apps/desktop/modernize/xaml-islands.md
-            - name: Hosten eines UWP-Standardsteuerelements in einer WPF-App
-              href: apps/desktop/modernize/host-standard-control-with-xaml-islands.md
-            - name: Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App
-              href: apps/desktop/modernize/host-custom-control-with-xaml-islands.md
-            - name: Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App
-              href: apps/desktop/modernize/using-the-xaml-hosting-api.md
+            - name: XAML Islands in WPF- und Windows Forms-Apps
+              items:
+                - name: Hosten eines UWP-Standardsteuerelements
+                  href: apps/desktop/modernize/host-standard-control-with-xaml-islands.md
+                - name: Hosten eines benutzerdefinierten UWP-Steuerelements
+                  href: apps/desktop/modernize/host-custom-control-with-xaml-islands.md
+            - name: XAML Islands in C++ Win32-Apps
+              items:
+                - name: Verwenden der UWP-XAML-Hosting-API
+                  href: apps/desktop/modernize/using-the-xaml-hosting-api.md
+                - name: Hosten eines UWP-Standardsteuerelements
+                  href: apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                - name: Hosten eines benutzerdefinierten UWP-Steuerelements
+                  href: apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                - name: Erweiterte Szenarios
+                  href: apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
         - name: Verwenden der visuellen Ebene (Windows.UI.Composition)
           items:
             - name: Übersicht

@@ -1,28 +1,28 @@
 ---
-description: Erfahren Sie, wie Sie eine UWP-App entwerfen und kodieren, die eine einfache Navigation besitzt und auf vielen Geräten und Bildschirmen verschiedener Größen großartig aussieht.
+description: Erfahren Sie, wie Sie eine Windows-App entwerfen und kodieren, die eine einfache Navigation besitzt und auf vielen Geräten und Bildschirmen verschiedener Größen großartig aussieht.
 title: Designgrundlagen
-keywords: Layout von UWP-Apps, universelle Windows-Plattform, App-Design, Schnittstelle
-ms.date: 03/07/2018
+keywords: Layout von UWP-Apps, Universelle Windows-Plattform, App-Design, Benutzeroberfläche, Layout von Windows-Apps
+ms.date: 03/23/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 78462d5d29ebcc31792aa46da7657c57fb960e13
-ms.sourcegitcommit: f0f933d5cf0be734373a7b03e338e65000cc3d80
+ms.openlocfilehash: fdedd400928a32ae44a1e88b8e0159d7b36473f2
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65984113"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218510"
 ---
-# <a name="design-basics-for-uwp-apps"></a>Designgrundlagen für UWP-Apps
+# <a name="design-basics-for-windows-apps"></a>Designgrundlagen für Windows-Apps
 
 ![Symbol für Designgrundlagen](../images/basics-2x.png)
 
-Der Designleitfaden für die universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Es handelt sich dabei nicht um eine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich an unser Fluent Design-System sowie die Bedürfnisse unserer App-Entwicklungs-Community anzupassen. 
+Der Designleitfaden für Windows ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Es handelt sich dabei nicht um eine Liste von Vorschriften, sondern ein lebendiges Dokument, das entwickelt wurde, um sich an unser Fluent Design-System sowie die Bedürfnisse unserer App-Entwicklungs-Community anzupassen. 
 
 ## <a name="overview"></a>Übersicht
 
-[**Einführung in das UWP-App-Design**](design-and-ui-intro.md)
+[**Einführung in das Design von Windows-Apps**](design-and-ui-intro.md)
 
-Hier finden Sie eine Einführung in die UWP-Features sowie bewährte Methoden für die Erstellung von Apps, die sich auf allen Arten von Windows-basierten Geräten wunderbar skalieren lassen.
+Hier finden Sie eine Einführung in die Windows-App-Features sowie bewährte Methoden für die Erstellung von Apps, die sich auf allen Arten von Windows-basierten Geräten wunderbar skalieren lassen.
 
 [**Fluent Design-System**](/windows/apps/fluent-design-system)
 
@@ -32,7 +32,7 @@ Unsere Ziele und Prinzipien für die Erstellung adaptiver, intuitiver und anspre
 
 [**Navigationsgrundlagen**](navigation-basics.md)
 
-Die Navigation in UWP-Apps basiert auf einem flexiblen Modell aus Navigationsstrukturen, Navigationselementen und Funktionen auf Systemebene. Dieser Artikel führt Sie in diese Komponenten ein und zeigt, wie Sie diese gemeinsam verwenden, um eine gute Navigationsumgebung zu erstellen.
+Die Navigation in Windows-Apps basiert auf einem flexiblen Modell aus Navigationsstrukturen, Navigationselementen und Funktionen auf Systemebene. Dieser Artikel führt Sie in diese Komponenten ein und zeigt, wie Sie diese gemeinsam verwenden, um eine gute Navigationsumgebung zu erstellen.
 
 [**Befehlsgrundlagen**](commanding-basics.md)
 
@@ -57,4 +57,4 @@ Versehen Sie die Bildbearbeitungsanwendung mit einem adaptiven Layout.
 
 [**3. Erstellen eigener Stile**](xaml-basics-style.md)
 
-Gestalten Sie unsere UWP-Steuerelemente nach Ihren Vorstellungen, indem Sie benutzerdefinierte Stile erstellen.
+Gestalten Sie unsere Windows-Steuerelemente nach Ihren Vorstellungen, indem Sie benutzerdefinierte Stile erstellen.

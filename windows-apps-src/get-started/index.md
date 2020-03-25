@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: Erste Schritte, Windows 10, UWP, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9183d9e2134d376400d2d6b85901477ff7b27413
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684893"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218580"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps
 
@@ -30,7 +30,7 @@ ms.locfileid: "75684893"
                         <h3>Informationen zu Windows 10-Apps</h3>
                         <p>Mit Windows 10 und der universellen Windows-Plattform können Sie Apps erstellen, die auf allen Windows-Gerätetypen einwandfrei funktionieren und aussehen, oder vorhandene Apps mit modernen Funktionen aktualisieren.</p>
                         <ul>
-                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Was ist eine UWP-App?</a></li>
+                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Was ist eine Windows-App?</a></li>
                         </ul>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ ms.locfileid: "75684893"
                     <h3>Beispiele</h3>
                     <p>Machen Sie sich mit der Windows 1010-Plattform vertraut, und sehen Sie sich APIs in Aktion an.</p>
                     <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Verwenden der UWP-Apps-Beispiele</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Beispiele für die Verwendung von Windows-Apps</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">Datenbank für Kundenaufträge</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">Quizspiel (Project Rome)</a></p>
                     <p><a href="//developer.microsoft.com/windows/samples">Portal für Windows-Codebeispiele</a></p>
