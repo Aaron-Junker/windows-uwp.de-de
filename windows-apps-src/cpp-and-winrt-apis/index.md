@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 5f76f093724788dbf7d32133acaf2e16e933b166
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79208796"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290042"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -59,10 +59,11 @@ C++/WinRT arbeitet besser und erzeugt kleinere Binärdateien als jede andere Spr
 | [Übergabe von Parametern in die ABI-Grenze](pass-parms-to-abi.md) | C++/WinRT vereinfacht die Übergabe von Parametern in die ABI-Grenze, indem automatische Konvertierungen für gängige Fälle bereitgestellt werden. |
 | [Verwenden von COM-Komponenten mit C++/WinRT](consume-com.md) | In diesem Thema wird anhand eines vollständigen Direct2D-Codebeispiels verdeutlicht, wie Sie C++/WinRT für die Nutzung von COM-Klassen und -Schnittstellen verwenden. |
 | [Erstellen von COM-Komponenten mit C++/WinRT](author-coclasses.md) | C++/WinRT dient Ihnen als Hilfe beim Erstellen von klassischen COM-Komponenten, wie dies auch für Windows-Runtime-Klassen der Fall ist. |
-| [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md) | In diesem Thema wird gezeigt, wie Sie C++/CX-Code zum entsprechenden Äquivalent in C++/WinRT portieren. |
-| [Interoperabilität zwischen C++/WinRT und C++/CX](interop-winrt-cx.md) | In diesem Thema werden zwei Hilfsfunktionen gezeigt, die verwendet werden können, um zwischen [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)- und C++/WinRT-Objekten zu konvertieren. |
-| [Umstellen von WRL auf C++/WinRT](move-to-winrt-from-wrl.md) | In diesem Thema wird gezeigt, wie Sie Code der [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) zum entsprechenden Äquivalent in C++/WinRT portieren. |
-| [Umstellen von C# auf C++/WinRT](move-to-winrt-from-csharp.md) | In diesem Thema wird gezeigt, wie Sie C#-Code zum äquivalenten Code in C++/WinRT portieren. |
+| [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md) | In diesem Thema werden die technischen Details der Portierung von Quellcode in einem [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)-Projekt zum entsprechenden Äquivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) beschrieben. |
+| [Interoperabilität zwischen C++/WinRT und C++/CX](interop-winrt-cx.md) | In diesem Thema werden zwei Hilfsfunktionen für die Konvertierung zwischen [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)- und [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Objekten gezeigt. |
+| [Umstellen von WRL auf C++/WinRT](move-to-winrt-from-wrl.md) | In diesem Thema wird gezeigt, wie Sie Code der [C++-Vorlagenbibliothek für Windows-Runtime (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) zum entsprechenden Äquivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) portieren. |
+| [Beispiel für die Portierung der Zwischenablage von C# in C++/WinRT –eine Fallstudie](clipboard-to-winrt-from-csharp.md) | Dieses Thema enthält eine Fallstudie für das Portieren einer der [UWP-App-Beispiele (Universal Windows Platform)](https://github.com/microsoft/Windows-universal-samples) von [C#](/visualstudio/get-started/csharp) nach [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). |
+| [Umstellen von C# auf C++/WinRT](move-to-winrt-from-csharp.md) | In diesem Thema werden die technischen Details der Portierung des Quellcodes in einem [C#](/visualstudio/get-started/csharp)-Projekt zum entsprechenden Äquivalent in [C++/WinRT-](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) beschrieben. |
 | [Interoperabilität zwischen C++/WinRT und der ABI](interop-winrt-abi.md) | Dieses Thema zeigt, wie man zwischen Application Binary Interface (ABI) und C++/WinRT-Objekten konvertiert. |
 | [Starke und schwache Verweise in C++/WinRT](weak-references.md) | Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit der Bedeutung und dem Unterschied zwischen starken und schwachen Verweisen vertraut sind. |
 | [Agile Objekte](agile-objects.md) | Ein agiles Objekt ist ein Objekt, auf das von jedem Thread aus zugegriffen werden kann. Ihre C++/WinRT-Typen sind standardmäßig agil, aber Sie können diese Option auch deaktivieren. |
