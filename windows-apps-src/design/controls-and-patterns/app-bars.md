@@ -13,18 +13,18 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5fd3408657047c3d1d102c65f6264954983134
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: c32b60b3d9e717a916b5424f3b8bd78102439f30
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257742"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081971"
 ---
 # <a name="command-bar"></a>Befehlsleiste
 
 Über Befehlsleisten können Benutzer auf häufig verwendete Befehle in Ihrer App komfortabel zugreifen. Befehlsleisten ermöglichen den Zugriff auf Befehle auf App-Ebene oder seitenspezifische Befehle und können bei jedem Navigationsmuster verwendet werden.
 
-> **Wichtige APIs:** [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
+> **Plattform-APIs:** [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ![Beispiel für eine Befehlsleiste mit Symbolen](images/controls_appbar_icons.png)
 
@@ -40,7 +40,7 @@ Das CommandBar-Steuerelement ist ein allgemeines, flexibles und kleines Steuerel
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/CommandBar">die App zu öffnen und „CommandBar“ in Aktion zu sehen</a>.</p>
     <ul>
@@ -277,7 +277,7 @@ Befehlsleisten können auf Bildschirmen mit einzelner Ansicht (linkes Beispiel) 
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 - [Beispiel für XAML-Befehle](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>Verwandte Artikel

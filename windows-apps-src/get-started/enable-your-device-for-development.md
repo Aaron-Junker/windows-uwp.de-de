@@ -6,12 +6,12 @@ keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät
 ms.date: 04/09/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a2d1719379302dd8e996c37e05d7ddaf35a0cf18
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4b360f75ccf08d9cc00eeba2948215b7240627a8
+ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258417"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320415"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -121,7 +121,7 @@ Die SSH-Anmeldung erfolgt über das Konto „DevToolsUser“, das ein Kennwort z
 #### <a name="caveats-for-ssh-usage"></a>Tipps für die SSH-Verwendung
 Da der vorhandene SSH-Server in Windows noch nicht mit dem Protokoll kompatibel ist, ist für die Verwendung eines SFTP- oder SSH-Clients möglicherweise eine spezielle Konfiguration erforderlich.  Das SFTP-Subsystem wird mit der Version 3 oder einer älteren Version betrieben, weshalb jeder Client, der eine Verbindung herstellen möchte, für einen älteren Server konfiguriert werden muss.  Auf älteren Geräten verwendet der SSH-Server `ssh-dss` für die Authentifizierung mit öffentlichem Schlüssel, was unter OpenSSH veraltet ist.  Für die Verbindungsherstellung mit solchen Geräten muss der SSH-Client manuell konfiguriert werden, um `ssh-dss` zu akzeptieren.  
 
-### <a name="device-discovery"></a>Gerätesuche
+### <a name="device-discovery"></a>Geräteermittlung
 
 Wenn Sie die Gerätesuche aktivieren, ist Ihr Gerät über mDNS für andere Geräte im Netzwerk sichtbar.  Dieses Feature ermöglicht auch das Abrufen der SSH-PIN zur Kopplung mit dem Gerät durch Betätigen der Schaltfläche „Koppeln“, die nach Aktivierung der Gerätesuche verfügbar gemacht wird.  Die folgende PIN-Eingabeaufforderung muss auf dem Bildschirm angezeigt werden, um die erste Bereitstellung von Visual Studio für das Gerät abzuschließen:  
 
@@ -134,7 +134,7 @@ Die Gerätesuche sollte nur aktiviert werden, wenn das Gerät ein Bereitstellung
  Auf der Desktopgerätefamilie finden Sie auf der Einstellungsseite **Für Entwickler** Verknüpfungen zu den Einstellungen, die Sie zum Optimieren Ihres PCs für Entwicklungsaufgaben verwenden können. Für jede Einstellung können Sie das Kontrollkästchen aktivieren und auf **Übernehmen** klicken, oder Sie können auf den Link **Einstellungen anzeigen** klicken, um die Einstellungsseite für diese Option zu öffnen.
 
 
-## <a name="notes"></a>Anmerkungen
+## <a name="notes"></a>Hinweise
 In früheren Versionen von Windows 10 Mobile enthielt das Menü „Entwicklereinstellungen“ die Option „Absturzabbilder”.  Diese Option wurde in das [Geräteportal](../debug-test-perf/device-portal.md) verschoben, damit sie nicht nur über USB, sondern auch per Remotezugriff verwendet werden kann.  
 
 Es gibt verschiedene Tools, mit denen du eine App von einem Windows 10-PC aus auf einem Windows 10-Gerät bereitstellen kannst. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden. Bei beiden Methoden wird lediglich das App-Paket (APPX-/APPXBUNDLE-Datei) installiert. Zertifikate werden nicht installiert.
@@ -193,7 +193,7 @@ Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Gerät
 
     -   **Installation aller vertrauenswürdigen Apps zulassen**
 
-    - ODER
+    oder
 
     Bearbeiten Sie zum Aktivieren des Entwicklermodus die Richtlinien, um beide zu aktivieren:
 
@@ -207,26 +207,30 @@ Sie können mithilfe von „gpedit.msc“ die Gruppenrichtlinien für die Gerät
 1.  Führen Sie **regedit** aus.
 2.  Legen Sie diesen DWORD-Wert auf 1 fest, um das Querladen zu aktivieren.
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowAllTrustedApps`
 
-    - ODER
+    oder
 
     Um den Entwicklermodus zu aktivieren, legen Sie diese DWORD-Werte auf 1 fest:
 
-    -   `HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense`
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowDevelopmentWithoutDevLicense`
 
 **Aktivieren des Geräts mithilfe von PowerShell**
 
 1.  Führen Sie PowerShell mit Administratorrechten aus.
 2.  Führen Sie zum Aktivieren des Querladens diesen Befehl aus:
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+    ```
 
-    - ODER
+    oder
 
     Führen Sie zum Aktivieren des Entwicklermodus diesen Befehl aus:
 
-    -   `PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"`
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+    ```
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>Aktualisieren Ihres Geräts von Windows 8.1 auf Windows 10
 

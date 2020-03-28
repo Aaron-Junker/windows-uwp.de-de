@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6c3ec487871d18a7142489802b801120f5e7ed
-ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
+ms.openlocfilehash: e4a0a2d532341e76d6ff74dda9b6b6a8638c77fd
+ms.sourcegitcommit: b398966fc052b232e03f2e32512a48d3a4444b8c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79038138"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367680"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS) 
 
@@ -42,13 +42,13 @@ Jede App verfügt über einen eigenen Satz von Anmeldeinformationen für den zug
 Bevor Sie Benachrichtigungen über WNS senden können, muss Ihre APP beim Partner Center-Dashboard registriert werden. Dadurch erhalten Sie die Anmeldeinformationen für Ihre App, mit denen sich Ihr Clouddienst gegenüber WNS authentifizieren kann. Diese Anmeldeinformationen bestehen aus einer Paket-Sicherheits-ID (Security Identifier, SID) und einem geheimen Schlüssel. Melden Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard)an, um diese Registrierung durchzuführen. Nachdem Sie die App erstellt haben, finden Sie weitere Informationen unter [Product Management-WNS/mpns](https://apps.dev.microsoft.com/) für instranunctions zum Abrufen der Anmelde Informationen (wenn Sie die Live Services-Lösung verwenden möchten, folgen Sie dem Link **Live Services-Website** auf dieser Seite).
 
 So registrieren Sie sich:
-1.  Wechseln Sie zur Seite "Windows Store-Apps" im Partner Center, und melden Sie sich mit Ihrem persönlichen Microsoft-Konto an (z. b. johndoe@outlook.com, janedoe@xboxlive.com).
-2.  Nachdem Sie sich angemeldet haben, klicken Sie auf den Link Dashboard.
-3.  Wählen Sie auf dem Dashboard neue APP erstellen aus.
+1.    Wechseln Sie zur Seite "Windows Store-Apps" im Partner Center, und melden Sie sich mit Ihrem persönlichen Microsoft-Konto an (z. b. johndoe@outlook.com, janedoe@xboxlive.com).
+2.    Nachdem Sie sich angemeldet haben, klicken Sie auf den Link Dashboard.
+3.    Wählen Sie auf dem Dashboard neue APP erstellen aus.
 
 ![WNS-App-Registrierung](../images/wns-create-new-app.png)
 
-4.  Erstellen Sie Ihre APP, indem Sie einen APP-Namen reservieren. Geben Sie einen eindeutigen Namen für Ihre APP an. Geben Sie den Namen ein, und klicken Sie auf die Schaltfläche Product Name reservieren Wenn der Name verfügbar ist, ist er für Ihre APP reserviert. Nachdem Sie einen Namen für Ihre APP erfolgreich reserviert haben, können die anderen Details geändert werden, wenn Sie dies zu diesem Zeitpunkt auswählen.
+4.    Erstellen Sie Ihre APP, indem Sie einen APP-Namen reservieren. Geben Sie einen eindeutigen Namen für Ihre APP an. Geben Sie den Namen ein, und klicken Sie auf die Schaltfläche Product Name reservieren Wenn der Name verfügbar ist, ist er für Ihre APP reserviert. Nachdem Sie einen Namen für Ihre APP erfolgreich reserviert haben, können die anderen Details geändert werden, wenn Sie dies zu diesem Zeitpunkt auswählen.
 
 ![WNS-Reserve Produktname](../images/wns-reserve-poduct-name.png)
  
@@ -56,24 +56,24 @@ So registrieren Sie sich:
 
 Wenn Sie einen Namen für die APP reserviert haben, hat der Windows Store ihre zugehörigen Anmelde Informationen erstellt. Außerdem wurden zugeordnete Identitäts Werte – Name und Verleger – zugewiesen, die in der Manifest-Datei Ihrer APP (Package. appxmanifest) vorhanden sein müssen. Wenn Sie Ihre APP bereits in den Windows Store hochgeladen haben, werden diese Werte automatisch dem Manifest hinzugefügt. Wenn Sie Ihre APP nicht hochgeladen haben, müssen Sie die Identitäts Werte manuell zum Manifest hinzufügen.
 
-1.  Wählen Sie den Dropdown Pfeil "Product Management" aus.
+1.    Wählen Sie den Dropdown Pfeil "Product Management" aus.
 
 ![WNS-Produktverwaltung](../images/wns-product-management.png)
 
-2.  Wählen Sie in der Dropdown Liste Product Management den Link WNS/mpns aus.
+2.    Wählen Sie in der Dropdown Liste Product Management den Link WNS/mpns aus.
 
 ![WNS-Produktmanagement fortgesetzt](../images/wns-product-management2.png)
  
-3.  Klicken Sie auf der Seite WNS/mpns auf den Link Live Services-Site, der im Abschnitt Windows Push Notification Services (WNS) und Microsoft Azure Mobile Services gefunden wurde.
+3.    Klicken Sie auf der Seite WNS/mpns auf den Link Live Services-Site, der im Abschnitt Windows Push Notification Services (WNS) und Microsoft Azure Mobile Services gefunden wurde.
 
 ![WNS-Live Dienste](../images/wns-live-services-page.png)
  
-4.  Im Anwendungs Registrierungs Portal (zuvor auf der Seite Live Services-Seite) finden Sie ein Identitätselement, das Sie in das Manifest Ihrer APP einschließen können. Dies schließt die geheimen App-Schlüssel, die paketsicherheitskennung und die Anwendungs Identität ein. Öffnen Sie das Manifest in einem Text-Editor, und fügen Sie dieses Element hinzu, wie die Seite anweist.   
+4.    Im Anwendungs Registrierungs Portal (zuvor auf der Seite Live Services-Seite) finden Sie ein Identitätselement, das Sie in das Manifest Ihrer APP einschließen können. Dies schließt die geheimen App-Schlüssel, die paketsicherheitskennung und die Anwendungs Identität ein. Öffnen Sie das Manifest in einem Text-Editor, und fügen Sie dieses Element hinzu, wie die Seite anweist.    
 
 > [!NOTE]
 > Wenn Sie mit einem Aad-Konto angemeldet sind, müssen Sie sich an den Microsoft-Konto Besitzer wenden, der die APP registriert hat, um die zugehörigen geheimen App-Schlüssel zu erhalten. Wenn Sie Hilfe beim Auffinden dieser Kontaktperson benötigen, klicken Sie auf das Zahnrad in der rechten oberen Ecke des Bildschirms, und klicken Sie dann auf Entwicklereinstellungen, und die e-Mail-Adresse der Person, die die APP mit Ihrem Microsoft-Konto erstellt hat, wird dort
  
-5.  Laden Sie die SID und den geheimen Client Schlüssel auf Ihren cloudserver hoch.
+5.    Laden Sie die SID und den geheimen Client Schlüssel auf Ihren cloudserver hoch.
 
 > [!Important]
 > Die SID und der geheime Client Schlüssel sollten sicher gespeichert werden, und der Zugriff darauf erfolgt über den clouddienst. Durch die Offenlegung oder den Diebstahl dieser Informationen kann es einem Angreifer ermöglichen, Benachrichtigungen ohne Ihre Berechtigung oder Ihr Wissen an Ihre Benutzer zu senden.
@@ -180,6 +180,7 @@ Dieses Diagramm veranschaulicht den Datenfluss:
 -   Mit einem Zugriffstoken kann der Clouddienst nur Benachrichtigungen an genau die App senden, für die das Token erstellt wurde. Ein einzelnes Zugriffstoken kann nicht dazu verwendet werden, Benachrichtigungen an mehrere Apps zu senden. Unterstützt Ihr Clouddienst also mehrere Apps, muss er das korrekte Zugriffstoken für die jeweilige App angeben, wenn er eine Benachrichtigung per Push an die einzelnen Kanal-URIs übermittelt.
 -   Ist das Gerät offline, speichert WNS standardmäßig für jede App bis zu fünf Kachelbenachrichtigungen (bei aktivierter Warteschlange, ansonsten nur eine), eine Signalbenachrichtigung für jeden Kanal-URI und keine unformatierten Benachrichtigungen. Dieses standardmäßige Zwischenspeicherungsverhalten kann über den [X-WNS-Cache-Policy-Header](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) geändert werden. Beachten Sie, dass Popupbenachrichtigungen nie gespeichert werden, wenn das Gerät offline ist.
 -   In Szenarien mit personalisiertem Benachrichtigungsinhalt für den Benutzer empfiehlt WNS, dass der Clouddienst die Updates umgehend nach Eingang übermittelt. Beispiele für ein solches Szenario wären Feedupdates für soziale Medien, Chateinladungen, Benachrichtigungen über neue Nachrichten oder Warnungen. Als Alternative ist auch denkbar, dass das gleiche allgemeine Update häufig an eine große Untergruppe von Benutzern gesendet wird (beispielsweise Wetterinfos, Börsendaten oder Nachrichten). Gemäß den WNS-Richtlinien muss der zeitliche Abstand zwischen diesen Updates mindestens 30 Minuten betragen. Häufigere Routineupdates werden vom Endbenutzer oder von WNS unter Umständen als Missbrauch wahrgenommen.
+-   Die Windows-Benachrichtigungs Plattform unterhält eine regelmäßige Datenverbindung mit WNS, um den Socket aktiv und fehlerfrei zu halten. Wenn keine Anwendungen Benachrichtigungs Kanäle anfordern oder verwenden, wird der Socket nicht erstellt.
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>Ablauf der Kachel- und Signalbenachrichtigungen
 

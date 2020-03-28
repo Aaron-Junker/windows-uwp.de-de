@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python unter Windows, Python-Web mit WSL, Python-Web-App mit Windows-Subsystem für Linux, Python-Webentwicklung unter Windows, Flask-App unter Windows, Django-App unter Windows, Python-Web, Flask-Webentwicklung unter Windows, Django-Webentwicklung unter Windows, Windows-Webentwicklung mit Python, VS Code Python-Webentwicklung, Remote-WSL-Erweiterung, Ubuntu, WSL, venv, PIP, Microsoft Python-Erweiterung, Python unter Windows ausführen, Python unter Windows verwenden, mit Python unter Windows erstellen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 8cbc8343764e4de57bd418ecdb36bd606b037c68
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79208975"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218480"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows
 
@@ -325,7 +325,7 @@ Herzlichen Glückwunsch, Sie haben eine Flask-Webanwendung mithilfe von Visual S
 
 16. Speichern Sie alle geänderten Dateien.
 
-17. Führen Sie im VS Code-Terminal den Entwicklungsserver mit `python manage.py runserver` aus, und öffnen Sie `http://127.0.0.1:8000/` in einem Browser, um die Seite anzuzeigen, auf der „Hello, Django“ ausgegeben wird.
+17. Führen Sie im VS Code-Terminal den Entwicklungsserver mit `python3 manage.py runserver` aus, und öffnen Sie `http://127.0.0.1:8000/` in einem Browser, um die Seite anzuzeigen, auf der „Hello, Django“ ausgegeben wird.
 
 Herzlichen Glückwunsch, Sie haben eine Django-Webanwendung mithilfe von Visual Studio Code und des Windows-Subsystems für Linux erstellt! Ein ausführlicheres Tutorial unter Verwendung von VS Code und Django finden Sie im [Tutorial zu Django in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-django).
 

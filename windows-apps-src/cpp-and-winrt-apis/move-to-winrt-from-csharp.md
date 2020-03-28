@@ -1,20 +1,20 @@
 ---
-description: In diesem Thema wird gezeigt, wie Sie C#-Code zum äquivalenten Code in C++/WinRT portieren.
+description: In diesem Thema werden die technischen Details der Portierung des Quellcodes in einem [C#](/visualstudio/get-started/csharp)-Projekt zum entsprechenden Äquivalent in [C++/WinRT-](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) beschrieben.
 title: Umstellen von C# auf C++/WinRT
 ms.date: 07/15/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, portieren, migrieren, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 17900829388bfe0b3cc325e27d0807b139ccaa27
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: f7cd35dbf211b14dfb886fc9ba4305cd7ce56e5e
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958960"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290055"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Umstellen von C# auf C++/WinRT
 
-In diesem Thema wird veranschaulicht, wie du den Code in einem [C#](/visualstudio/get-started/csharp)-Projekt in den entsprechenden Code in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) portierst.
+In diesem Thema werden die technischen Details der Portierung des Quellcodes in einem [C#](/visualstudio/get-started/csharp)-Projekt zum entsprechenden Äquivalent in [C++/WinRT-](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) beschrieben.
 
 ## <a name="register-an-event-handler"></a>Registrieren eines Ereignishandlers
 
@@ -193,7 +193,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT unterstützt auch [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) für eine begrenzte Anzahl von Typen. Du musst Überladungen für alle zusätzlichen Typen hinzufügen, für die du eine Stringification durchführen möchtest.
 
-| Sprache | Stringification von „int“ | Stringification von „enum“ |
+| Language | Stringification von „int“ | Stringification von „enum“ |
 | - | - | - |
 | C# | `string result = "hello, " + intValue.ToString();`<br>`string result = $"hello, {intValue}";` | `string result = "status: " + status.ToString();`<br>`string result = $"status: {status}";` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |
@@ -290,7 +290,7 @@ Grundlegendes Boxing und Unboxing
 |-|-|-|
 | Boxing eines string-Elements | `o = s;`<br>Eine leere Zeichenfolge wird zu einem Nicht-NULL-Objekt. | `o = box_value(s);`<br>Eine leere Zeichenfolge wird zu einem Nicht-NULL-Objekt. |
 | Unboxing eines bekannten string-Elements | `s = (string)o;`<br>Ein NULL-Objekt wird zu einer NULL-Zeichenfolge.<br>InvalidCastException, falls keine Zeichenfolge. | `s = unbox_value<hstring>(o);`<br>Absturz eines NULL-Objekts.<br>Absturz, falls keine Zeichenfolge. |
-| Unboxing einer möglichen Zeichenfolge | `s = o as string;`<br>Ein NULL-Objekt oder eine Nicht-Zeichenfolge wird zu einer NULL Zeichenfolge.<br><br>ODER<br><br>`s = o as string ?? fallback;`<br>NULL oder eine Nicht-Zeichenfolge wird zu einem Fallback.<br>Leere Zeichenfolge beibehalten. | `s = unbox_value_or<hstring>(o, fallback);`<br>NULL oder eine Nicht-Zeichenfolge wird zu einem Fallback.<br>Leere Zeichenfolge beibehalten. |
+| Unboxing einer möglichen Zeichenfolge | `s = o as string;`<br>Ein NULL-Objekt oder eine Nicht-Zeichenfolge wird zu einer NULL Zeichenfolge.<br><br>oder<br><br>`s = o as string ?? fallback;`<br>NULL oder eine Nicht-Zeichenfolge wird zu einem Fallback.<br>Leere Zeichenfolge beibehalten. | `s = unbox_value_or<hstring>(o, fallback);`<br>NULL oder eine Nicht-Zeichenfolge wird zu einem Fallback.<br>Leere Zeichenfolge beibehalten. |
 
 ## <a name="derived-classes"></a>Abgeleitete Klassen
 
@@ -335,7 +335,7 @@ Weitere Informationen sowie Codebeispiele findest du unter [Verwenden von Objekt
 * [Funktionsvorlage „winrt::single_threaded_observable_vector“](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
 * [winrt-Namespace](/uwp/cpp-ref-for-winrt/winrt)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [C#-Tutorials](/visualstudio/get-started/csharp)
 * [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
 * [Datenbindung im Detail](/windows/uwp/data-binding/data-binding-in-depth)

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 57639fc370ed7e10a427af4808e2a8a6de91b554
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
+ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257706"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80301509"
 ---
 # <a name="controls-by-function"></a>Steuerelemente nach Funktion
 
@@ -100,7 +100,7 @@ Ein Steuerelement, das auf Benutzereingaben reagiert und ein **Click**-Ereignis 
         Click="Button_Click" />
 ```
 
-Referenz: [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
+Referenz: [Schaltfläche](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 
 
 Design und Vorgehensweise: [Leitfaden für Schaltflächen-Steuerelement](buttons.md) 
 
@@ -313,7 +313,7 @@ Design und Vorgehensweise: Richtlinien für QuickInfos
 
 ## <a name="images"></a>Abbilder
 
-### <a name="image"></a>Bild
+### <a name="image"></a>Abbild
 Ein Steuerelement, das ein Bild darstellt.
 
 ```xaml
@@ -724,10 +724,10 @@ Beispielcode: [Beispiel für XAML-Text](https://code.msdn.microsoft.com/windowsa
 ### <a name="text-box"></a>Textfeld
 Ein einzeiliges oder mehrzeiliges Nur-Text-Feld.
 
-![Textfeldsteuerelement](images/controls/text-box.png) 
+![Textfeldsteuerelement](images/controls/text-box.png)
 
 ```xaml
-<TextBox x:Name="textBox1" Text="I am a TextBox" 
+<TextBox x:Name="textBox1" Text="I am a Text Box."
          TextChanged="TextBox_TextChanged"/>
 ```
 
@@ -779,9 +779,9 @@ Ein Steuerelement, das eine Inlineliste mit Elementen darstellt, aus der ein Ben
 ```xaml
 <ListBox x:Name="listBox1" Width="100"
          SelectionChanged="ListBox_SelectionChanged">
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
+    <x:String>List item 1</x:String>
+    <x:String>List item 2</x:String>
+    <x:String>List item 3</x:String>
 </ListBox>
 ```
 
