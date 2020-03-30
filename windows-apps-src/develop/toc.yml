@@ -160,6 +160,8 @@
           href: ../app-to-app/receive-data.md
         - name: Kopieren und Einfügen
           href: ../app-to-app/copy-and-paste.md
+    - name: 'Prozessübergreifende Kommunikation (Interprocess Communication, IPC)'
+      href: ../communication/interprocess-communication.md
     - name: Netzwerk- und Webdienste
       href: ../networking/index.md
       items:
