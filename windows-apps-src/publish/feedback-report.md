@@ -4,16 +4,19 @@ title: Feedbackbericht
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 47eb494ac1b61caac0549f89254ae5d60a7ddf4c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50ffec5beafd88ddc852e4d9b2fb995fb12bd939
+ms.sourcegitcommit: 56d777134bc85f049e281e34660de612ac938a01
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259020"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80417437"
 ---
 # <a name="feedback-report"></a>Feedbackbericht
+
+> [!WARNING]
+> Als veraltet markierte Feedback Berichte ab dem 15. April 2020 wird dieser Bericht nach dem 15. April 2020 nicht mehr unterstützt. Die Daten in diesem Bericht werden nach diesem Datum nicht mehr aktualisiert, und der Bericht wird in Zukunft ohne vorherige Ankündigung entfernt. Sie können weiterhin Feedback von ihren Kunden direkt im Feedback-Hub anzeigen.
 
 Der **Feedback Bericht** in Partner Center ermöglicht Ihnen das Anzeigen der Probleme, Vorschläge und upstimmen, die Ihre Windows 10-Kunden über den FeedHub übermittelt haben. Sie können diese Daten im Partner Center anzeigen oder die Daten exportieren, um Sie offline anzuzeigen.
 
@@ -50,7 +53,7 @@ Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite mit d
 
 Im Bericht finden Sie das jeweilige Feedback von Ihren Kunden. Links neben dem Feedbacktext jedes Elements wird angezeigt, wie oft das Feedback von anderen Kunden im Feedback-Hub bewertet wurde. Sie können das Feedback auf drei Arten sortieren:
 
-- **Zustimmung** (Standard): Zeigt Feedback, das von anderen Kunden bewertet wurde, beginnend mit dem Feedback, das die meisten Zustimmungen erhalten hat.
+- **Upvoted** (Standard): Zeigt Feedback, das von anderen Kunden bewertet wurde, beginnend mit dem Feedback, das die meisten Upvotes erhalten hat.
 - **Populär**: Zeigt Feedback, das von anderen Kunden in den letzten sieben Tagen bewertet wurde, beginnend mit dem Feedback, das die letzte Aktivität aufweist.
 - **Aktuellste**: Zeigt sämtliches Feedback, beginnend mit dem zuletzt abgegebenen Feedback an.
 
