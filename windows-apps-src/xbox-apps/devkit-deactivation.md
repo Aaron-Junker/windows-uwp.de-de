@@ -3,15 +3,15 @@ title: Deaktivierung des Xbox One-Entwicklermodus
 description: In diesem Artikel wird das Deaktivieren des Entwicklermodus beschrieben.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6e7b96e3b8b0cd6f47fdd97008aa8d90dc032fc4
+ms.sourcegitcommit: bee98f7a468c97c707de76afc14e1707c25f74f4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651775"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80531462"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Deaktivierung des Xbox One-Entwicklermodus
 
@@ -43,7 +43,7 @@ Die bevorzugte Methode zum Deaktivieren des Entwicklermodus ist die Verwendung d
   
     ![Deaktivieren der Konsole](images/deactivation-app.png)
 
-Weitere Informationen zur **DevMode-Aktivierungs-App** finden Sie unter [Aktivierung des Xbox One-Entwicklermodus](devkit-activation.md). 
+Weitere Informationen zur [DevMode-Aktivierungs-App](devkit-activation.md) finden Sie unter **Aktivierung des Xbox One-Entwicklermodus**. 
 
 ## <a name="reset-your-console"></a>Zurücksetzen der Konsole
 
@@ -70,11 +70,11 @@ Führen Sie zum Zurücksetzen der Konsole die folgenden Schritte aus:
    
     ![Reset and remove everything](images/devkit-deactivation-4.png)
 
-## <a name="deactivate-your-console-using-partner-center"></a>Deaktivieren Sie die Konsole mit der Partner Center
+## <a name="deactivate-your-console-using-partner-center"></a>Deaktivieren der Konsole mithilfe von Partner Center
 
-Wenn Sie auf der Konsole aus irgendeinem Grund nicht möglich sind, können Sie auch den Entwicklermodus auf Ihrer Konsole deaktivieren, über Partner Center.
+Wenn Sie aus irgendeinem Grund auf Ihre Konsole nicht zugreifen können, können Sie auch den Entwicklermodus in der Konsole mithilfe von Partner Center deaktivieren.
 
-1. Navigieren Sie zu der [verwalten deiner Xbox One Konsolen](https://partner.microsoft.com/xboxdevices) Seite im Partner Center. Sie können zur Anmeldung aufgefordert werden.
+1. Navigieren Sie in Partner Center zur Seite [Xbox One-Konsolen verwalten](https://partner.microsoft.com/xboxconfig/devices) . Möglicherweise werden Sie aufgefordert, sich anzumelden.
 
 2. Suchen Sie in der Liste der Konsolen die Konsole, die Sie deaktivieren möchten, anhand der Seriennummer, Konsolen-ID oder Geräte-ID.  
 

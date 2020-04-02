@@ -2,16 +2,16 @@
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Eröffnen eines Entwicklerkontos
 description: Im folgenden finden Sie eine Übersicht darüber, wie Sie sich für ein Windows-Entwicklerkonto für Microsoft Store und andere Microsoft-Programme im Partner Center registrieren.
-ms.date: 10/31/2018
+ms.date: 3/30/2020
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d00fcee11b8cf813144a6f8ea021dc40829056d2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0ab3dcc5f774de6bd7ce422ecdcec61b26cc9a4b
+ms.sourcegitcommit: 9aef3bc26a56b8d266b3089d509f79b119234b6f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259953"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538199"
 ---
 # <a name="opening-a-developer-account"></a>Eröffnen eines Entwicklerkontos
 
@@ -24,6 +24,9 @@ In diesem Artikel wird beschrieben, wie Sie sich für ein Windows-Entwicklerkont
 
 > [!NOTE]
 > In einigen Fällen kann es vorkommen, dass die Bildschirme und Felder, die Sie bei der Registrierung für ein Entwicklerkonto anzeigen, von den in den folgenden Schritten beschriebenen Änderungen geringfügig abweichen. Die grundlegenden Informationen und der Prozess entsprechen jedoch den in diesen Schritten beschriebenen Schritten.
+
+> [!NOTE]
+> Es gibt ein bekanntes Problem, bei dem Benutzer in manchen Gebiets Schemas die Registrierung nicht abschließen können. Es wird empfohlen, dass Sie das Gebiets Schema-Tag Ihres Browsers manuell in **en-US** ändern, wenn Sie den Registrierungsvorgang auf Partner.Microsoft.com beginnen.
 
 1.  Wechseln Sie zur [Registrierungsseite](https://developer.microsoft.com/store/register) , und klicken Sie auf **registrieren**.
 2.  Wenn Sie noch nicht mit einem Microsoft-Konto angemeldet sind, melden Sie sich jetzt an, oder erstellen Sie ein neues Microsoft-Konto. Die Microsoft-Konto, die Sie hier verwenden, verwenden Sie, um sich bei Ihrem Entwicklerkonto anzumelden.
