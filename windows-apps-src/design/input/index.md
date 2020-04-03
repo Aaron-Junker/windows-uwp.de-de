@@ -3,21 +3,21 @@ description: Optimieren Sie Ihre App für Stift, Surface Dial und andere Eingabe
 title: Eingabe und Interaktionen
 keywords: App-Eingaben, Anpassen einer UWP-Anwendung
 label: Input and interactions
-layout: LandingPage
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 12ca16eea1bb3b5ced72add427333e7e5988f876
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: c2d7db47a0731323cbbb45c471428a2496f8d479
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065286"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614942"
 ---
-![Symbol für Eingaben](../images/inputs-2x.png)
 # <a name="input-and-interactions"></a>Eingabe und Interaktionen
+
+![Symbol für Eingaben](../images/inputs-2x.png)
 
 <!-- <div>
   <img src="images/keyboard/keyboard-hero.jpg" alt="" />
@@ -28,109 +28,54 @@ UWP-Apps verarbeiten automatisch eine Vielzahl von Eingaben und können auf zahl
 
 Die Design- und Codierungsanweisungen in diesem Abschnitt unterstützen Sie beim Anpassen Ihrer UWP-App für bestimmte Eingabetypen.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2" >
-                        <a href="input-primer.md">
-                            <img src="images/input-interactions/icons-inputdevices03.png" alt=" " style="display: block; width: 100%; height: auto;" />
-                            </a>
-                        </div>
-                    </div>  -->
-                    <div class="cardText">
-                        <h3><a href="input-primer.md">Einführung in die Eingabe</a></h3>
-                        <p>Machen Sie sich mit den verschiedenen Arten von Eingabegeräten sowie ihren Verhaltensweisen, Möglichkeiten und Einschränkungen in Verbindung mit bestimmten Formfaktoren vertraut.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <!-- <div class="cardImageOuter">
-                        <div class="cardImage" style="background-color: #f2f2f2">
-                        <a href="identify-input-devices.md">
-                            <img src="images/landing-page/fluentdesign-app-sm.png" alt=" " style="display: block; width: 100%; height: auto;"/>
-                            </a>
-                        </div>
-                    </div> -->
-                    <div class="cardText">
-                        <h3><a href="gaze-interactions.md">NEU! Eingabe über Anvisieren</a></h3>
-                        <p>Sie können den Blick eines Benutzers anhand von Position und Bewegung von Augen und Kopf verfolgen.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="input-primer.md">Einführung in die Eingabe</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Machen Sie sich mit den verschiedenen Arten von Eingabegeräten sowie ihren Verhaltensweisen, Möglichkeiten und Einschränkungen in Verbindung mit bestimmten Formfaktoren vertraut.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="gaze-interactions.md">Eingabe über Anvisieren</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Sie können den Blick eines Benutzers anhand von Position und Bewegung von Augen und Kopf verfolgen.</p>
+    :::column-end:::
+:::row-end:::
 
 <!-- 
 ## Input primer
 
 See our <b>[Input primer](index.md)</b> to familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. -->
 
+:::row:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Eingabe</h2>
+        <a href="/windows/uwp/design/input/identify-input-devices">Identifizieren von Eingabegeräten</a><br/>
+        <a href="/windows/uwp/design/input/handle-pointer-input">Zeiger</a><br/>
+        <a href="/windows/uwp/design/input/pen-and-stylus-interactions">Stift und Windows Ink</a><br/>
+        <a href="/windows/uwp/design/input/touch-interactions">Toucheingabe</a><br/>
+        <a href="/windows/uwp/design/input/mouse-interactions">Maus</a><br/>
+        <a href="/windows/uwp/design/input/keyboard-interactions">Tastatur</a><br/>
+        <a href="/windows/uwp/design/input/gamepad-and-remote-interactions">Gamepad und Fernbedienung</a><br/>
+        <a href="/windows/uwp/design/input/touchpad-interactions">Touchpad</a><br/>
+        <a href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a><br/>
+        <a href="/windows/uwp/design/input/multiple-input-design-guidelines">Mehrere Eingaben</a><br/>
+        <a href="/windows/uwp/design/input/input-injection">Eingabeeinfügung</a><br/>
+        <a href="/windows/uwp/design/input/custom-text-input">Benutzerdefinierte Texteingabe</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Interaktionen</h2>
+        <a href="/windows/uwp/design/input/drag-and-drop">Drag & Drop</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-panning">Schwenken</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-rotation">Drehung</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-textselection">Auswählen von Text und Bildern</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-targeting">Zielbestimmung</a><br/>
+        <a href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visuelles Feedback</a><br/>
+    :::column-end:::
+    :::column:::
+        <h2 style="margin-top: 10px; margin-bottom: 0px">Sprache und KI</h2>
+        <a href="/windows/uwp/design/input/speech-interactions">Spracherkennung</a><br/>
+        <a href="/windows/uwp/design/input/cortana-interactions">Cortana</a><br/>
+    :::column-end:::
+:::row-end:::
 
-<ul class="panelContent cardsL" style="margin-left: 1px">
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Input</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/identify-input-devices">Identifizieren von Eingabegeräten</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Zeiger</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Stift und Windows Ink</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Toucheingabe</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">Maus</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">Tastatur</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Gamepad und Fernbedienung</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Touchpad</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Mehrere Eingaben</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/input-injection">Eingabeeinfügung</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Benutzerdefinierte Texteingabe</a></p>                        
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>  
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Interaktionen</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Drag & Drop</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Schwenken</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">Drehung</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">Auswählen von Text und Bildern</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">Zielbestimmung</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visuelles Feedback</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>
-    <li>              
-        <div style="display:block" class="cardSize">
-            <div style="display:block" class="cardPadding">
-                <div style="display:block" class="card">
-                    <div style="display:block" class="cardText">
-                        <h3>Sprache und KI</h3>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Spracherkennung</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Cortana</a></p>  
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </li>            
-       
-</ul>
 
 <!-- <div class="side-by-side">
 <div class="side-by-side-content">

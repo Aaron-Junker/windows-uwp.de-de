@@ -74,6 +74,10 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
         - name: Identitätszuweisen für nicht verpackte Desktop-Apps
           href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: "Entwickeln für Windows\_10"
+      items:
+        - name: "Windows\_10X Dev FAQ"
+          href: apps/10x/faq.md
     - name: Fluent Design-System
       href: apps/fluent-design-system.md
     - name: Eingabehilfen

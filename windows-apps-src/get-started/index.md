@@ -1,245 +1,98 @@
 ---
-layout: LandingPage
 description: Erste Schritte mit der universellen Windows-Plattform (UWP) und der App-Entwicklung für Windows 10
 title: Erste Schritte mit der universellen Windows-Plattform (UWP)
 ms.date: 03/23/2018
 ms.topic: article
 keywords: Erste Schritte, Windows 10, UWP, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 9183d9e2134d376400d2d6b85901477ff7b27413
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 39f45b7604e71c4b57439f8c3e89548614758484
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218580"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614983"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Erste Schritte mit Windows 10-Apps
 
-<p>Entwickeln Sie Apps, die auf allen Windows 10-Geräten funktionieren, oder optimieren Sie Ihre vorhandenen Apps mit neuen und aktualisierten Features.</p>  
-<ul class="cardsK panelContent">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/biztalk-developer-documentation-1.svg" alt="Overview illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Informationen zu Windows 10-Apps</h3>
-                        <p>Mit Windows 10 und der universellen Windows-Plattform können Sie Apps erstellen, die auf allen Windows-Gerätetypen einwandfrei funktionieren und aussehen, oder vorhandene Apps mit modernen Funktionen aktualisieren.</p>
-                        <ul>
-                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Was ist eine Windows-App?</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                    <h3>Vorbereiten</h3>
-                    <p>Mit Visual Studio Community und dem Windows 10 SDK erhalten Sie alles, was Sie zum Entwickeln herausragender Apps benötigen – kostenlos!</p>
-                    <ul>
-                        <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Herunterladen der Tools und des SDK</a></li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage bgdAccent1">
-                            <img src="/media/illustrations/team-services-dev-ops-test.svg" alt="Code illustration" data-linktype="external" class="x-hidden-focus">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Beginnen mit der Codierung</h3>
-                        <p>Ob Sie ein erfahrener Entwickler sind oder Ihrer erste App entwickeln – hier sammeln Sie praktische Erfahrungen mit der Windows 10-Plattform und der Dokumentation.</p>
-                        <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Beginnen Sie mit der Codierung</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-<ul class="panelContent cardsF">
-  <li>
-    <div class="cardSize">
-        <div class="cardPadding">
-            <div class="card">
-                <div class="cardImageOuter">
-                    <div class="cardImage">
-                        <img src="/media/common/i_tasks.svg" alt="Tutorials icon"/>
-                    </div>
-                </div>
-                <div class="cardText">
-                    <h3>Lernprogramme</h3>
-                    <p>Suchen Sie nach einer Anleitung zur Lernerfahrung? Diese Tutorials unterstützen Sie.</p>
-                    <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Grundlagen der Benutzeroberfläche</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">Datenbindung</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">Benutzerdefinierte Stile</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </li>
-  <li>
-    <div class="cardSize">
-        <div class="cardPadding">
-            <div class="card">
-                <div class="cardImageOuter">
-                    <div class="cardImage">
-                        <img src="/media/common/i_code-samples.svg" alt="Samples icon"/>
-                    </div>
-                </div>
-                <div class="cardText">
-                    <h3>Beispiele</h3>
-                    <p>Machen Sie sich mit der Windows 1010-Plattform vertraut, und sehen Sie sich APIs in Aktion an.</p>
-                    <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Beispiele für die Verwendung von Windows-Apps</a></p>
-                    <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">Datenbank für Kundenaufträge</a></p>
-                    <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">Quizspiel (Project Rome)</a></p>
-                    <p><a href="//developer.microsoft.com/windows/samples">Portal für Windows-Codebeispiele</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </li>
-  <li>
-    <div class="cardSize">
-        <div class="cardPadding">
-            <div class="card">
-                <div class="cardImageOuter">
-                    <div class="cardImage">
-                        <img src="/media/common/i_whats-new.svg" alt="Whats New icon"/>
-                    </div>
-                </div>
-                <div class="cardText">
-                    <h3>Neues</h3>
-                    <p>Erweitern Sie Ihre Möglichkeiten, und entdecken Sie die neusten Ergänzungen für Windows 10.</p>
-                    <br>
-                    <p><a href="//developer.microsoft.com/windows/windows-10-for-developers">Highlights der aktuellen Version von Windows 10</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">Neuigkeiten für Entwickler in Windows 10</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </li>
-</ul>
-    <ul class="cardsY panelContent featuredContent">
-       <li>
-            <a href="//developer.microsoft.com/windows/apps/design">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_digital-art.svg" src="/media/common/i_digital-art.svg" alt="Icon of tablet and pen" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Design und Benutzeroberfläche (UI)</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="//docs.microsoft.com/uwp/">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/common/i_api.svg" src="/media/common/i_api-reference.svg" alt="Reference icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>API-Referenz</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="//developer.microsoft.com/windows/bridges">
-                <div class="cardSize">
-                    <div class="cardPadding">
-                        <div class="card">
-                            <div class="cardImageOuter">
-                                <div class="cardImage">
-                                    <img data-hoverimage="/media/hubs/windows/win_try-windows.svg" src="/media/hubs/windows/win_try-windows.png" alt="Windows icon" />
-                                </div>
-                            </div>
-                            <div class="cardText">
-                                <h3>Portieren einer App nach Windows</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-    </ul>
-</div>
-<hr />
-<ul class="panelContent cardsW">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Entwicklungstools</h3>
-                        <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
-                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows-Community-Toolkit</a></p>
-                        <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtuelle Computer.</a></p>
-                        <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu unter Windows</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Noch keine Erfahrung auf dem Gebiet der Entwicklung?</h3>
-                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows auf Microsoft Learn</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Erkunden Sie zugehörige Dokumente.</h3>
-                        <p><a href="//docs.microsoft.com/dotnet/csharp/">C#-Handbuch</a></p>
-                        <p><a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+Entwickeln Sie Apps, die auf allen Windows 10-Geräten funktionieren, oder optimieren Sie Ihre vorhandenen Apps mit neuen und aktualisierten Features.
+
+<br/>
+
+:::row:::
+    :::column:::
+        <img src="https://docs.microsoft.com/media/illustrations/biztalk-developer-documentation-1.svg" alt="Overview illustration" />
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Informationen zu Windows 10-Apps</h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Mit Windows 10 und der universellen Windows-Plattform können Sie Apps erstellen, die auf allen Windows-Gerätetypen einwandfrei funktionieren und aussehen, oder vorhandene Apps mit modernen Funktionen aktualisieren.</p>
+        <br>
+        <a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Was ist eine Windows-App?</a><br/>
+        <a href="//developer.microsoft.com/windows/apps/design">Design und Benutzeroberfläche</a><br/>
+    :::column-end:::
+    :::column:::
+        <img src="https://docs.microsoft.com/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Vorbereiten</h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Mit Visual Studio Community und dem Windows 10 SDK erhalten Sie alles, was Sie zum Entwickeln herausragender Apps benötigen – kostenlos!</p>
+        <br>
+        <a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Herunterladen der Tools und des SDK</a><br/>
+    :::column-end:::
+    :::column:::
+        <img src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" alt="Code illustration" />
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Beginnen mit der Codierung</h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Ob Sie ein erfahrener Entwickler sind oder Ihrer erste App entwickeln – hier sammeln Sie praktische Erfahrungen mit der Windows 10-Plattform und der Dokumentation.</p>
+        <br>
+        <a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Beginnen Sie mit der Codierung</a><br/>
+        <a href="//docs.microsoft.com/uwp/">API-Referenz</a><br/>
+    :::column-end:::
+:::row-end:::
+
+<br/>
+
+:::row:::
+    :::column:::
+        <img src="https://docs.microsoft.com/media/illustrations/biztalk-get-started-get-started.svg" alt="Tutorials illustration" />
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Lernprogramme</h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Suchen Sie nach einer Anleitung zur Lernerfahrung? Diese Tutorials unterstützen Sie.</p>
+        <br>
+        <a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui">Grundlagen der Benutzeroberfläche</a><br/>
+        <a href="//docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding">Datenbindung</a><br/>
+        <a href="//docs.microsoft.com/windows/uwp/design/basics/xaml-basics-style">Benutzerdefinierte Stile</a><br/>
+    :::column-end:::
+    :::column:::
+        <img src="https://docs.microsoft.com/media/illustrations/biztalk-get-started-scenarios.svg" alt="Samples illustration" />
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Beispiele</h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Machen Sie sich mit der Windows 1010-Plattform vertraut, und sehen Sie sich APIs in Aktion an.</p>
+        <br>
+        <a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">Beispiele für die Verwendung von Windows-Apps</a><br/>
+        <a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">Datenbank für Kundenaufträge</a><br/>
+        <a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">Quizspiel (Project Rome)</a><br/>
+        <a href="//developer.microsoft.com/windows/samples">Portal für Windows-Codebeispiele</a><br/>
+    :::column-end:::
+    :::column:::
+        <img src="https://docs.microsoft.com/media/illustrations/ms365enterprise-partner-news-2.svg" alt="What's new illustration" />
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Neues</h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Erweitern Sie Ihre Möglichkeiten, und entdecken Sie die neusten Ergänzungen für Windows 10.</p>
+        <br>
+        <a href="//developer.microsoft.com/windows/windows-10-for-developers">Highlights der aktuellen Version von Windows 10</a><br/>
+        <a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">Neuigkeiten für Entwickler in Windows 10</a><br/>
+    :::column-end:::
+:::row-end:::
+
+<br/>
+
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Entwicklungstools</h3>
+        <a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a><br/>
+        <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows-Community-Toolkit</a><br/>
+        <a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtuelle Computer.</a><br/>
+        <a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu unter Windows</a><br/>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Noch keine Erfahrung auf dem Gebiet der Entwicklung?</h3>
+        <a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows auf Microsoft Learn</a><br/>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px">Erkunden Sie zugehörige Dokumente.</h3>
+        <a href="//docs.microsoft.com/dotnet/csharp/">C#-Handbuch</a><br/>
+        <a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a><br/>
+    :::column-end:::
+:::row-end:::

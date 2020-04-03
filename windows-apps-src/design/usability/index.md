@@ -2,18 +2,17 @@
 description: Erfahren Sie, wie Sie Ihre App inklusiv entwickeln und für Personen auf der ganzen Welt zugänglich machen.
 keywords: Eingabehilfen für UWP-Apps, Globalisierung, Apps mit inklusivem Design, Anforderungen für App-Eingabehilfen
 title: Benutzerfreundlichkeit in UWP-Apps – Entwicklung von Windows-Apps
-layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: a6912932b7ad71fd3d04c038eab7e0aa4dd6cb11
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c725839a29c093c78eb977538da4c43d906051c6
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076391"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614953"
 ---
 # <a name="usability-for-uwp-apps"></a>Benutzerfreundlichkeit in UWP-Apps
 
@@ -21,7 +20,7 @@ Es sind die Kleinigkeiten und Details, die eine gute Benutzerumgebung zu einer w
 
 Mit den Design- und Codierungsanweisungen in diesem Abschnitt können Sie Ihre UWP-App inklusiver gestalten, indem Sie Features für Barrierefreiheit hinzufügen, Globalisierung und Lokalisierung ermöglichen, das Anpassen der Benutzeroberfläche durch die Benutzer zulassen und im Bedarfsfall Hilfe für Benutzer bereitstellen.
 
-## <a name="accessibility"></a>Bedienungshilfen
+## <a name="accessibility"></a>Eingabehilfen
 
 Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch von Menschen verwendet werden kann, bei denen bestimmte Beeinträchtigungen die Nutzung herkömmlicher Benutzeroberflächen verhindern oder erschweren. Für bestimmte Situationen gelten gesetzlich vorgeschriebene Vorgaben im Hinblick auf Barrierefreiheit. Es wird jedoch empfohlen, die Barrierefreiheit unabhängig von gesetzlichen Anforderungen zu berücksichtigen, um sicherzustellen, dass Ihre Apps die größtmögliche Benutzergruppe erreichen.
 
@@ -179,13 +178,24 @@ Bei der Barrierefreiheit geht es darum, die App so zu gestalten, dass sie auch v
 
 Mithilfe von App-Einstellungen kann der Benutzer Ihre App anpassen und entsprechend den eigenen Anforderungen und Wünschen optimieren. Die Bereitstellung der richtigen Einstellungen und ihr ordnungsgemäßes Speichern können eine großartige Benutzerumgebung sogar noch weiter verbessern.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/guidelines-for-app-settings.md">Richtlinien</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/store-and-retrieve-app-data.md">Speichern und Abrufen von App-Daten</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Hier erfahren Sie, wie Sie lokale, Roaming- und temporäre App-Daten speichern und abrufen können.</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/guidelines-for-app-settings.md">Richtlinien</a></b><br/>Bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.</p>
+<p><b><a href="../app-settings/guidelines-for-app-settings.md">Guidelines</a></b><br/>Best practices for creating and displaying app settings.</p>
                     </div>
                 </div>
             </div>
@@ -196,13 +206,13 @@ Mithilfe von App-Einstellungen kann der Benutzer Ihre App anpassen und entsprech
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/store-and-retrieve-app-data.md">Speichern und Abrufen von App-Daten</a></b><br/>Hier erfahren Sie, wie Sie lokale, Roaming- und temporäre App-Daten speichern und abrufen können.</p>
+<p><b><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></b><br/>How to store and retrieve local, roaming, and temporary app data.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
-</ul>
+</ul> -->
 
 ## <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
@@ -213,13 +223,34 @@ Windows wird auf der ganzen Welt von Anwendern unterschiedlicher Sprachen, Kultu
 ## <a name="in-app-help"></a>In-App-Hilfe
 Unabhängig davon, wie optimal Sie Ihre App gestaltet haben, werden einige Benutzer etwas zusätzliche Hilfe benötigen.
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/guidelines-for-app-help.md">Anleitungen für die App-Hilfe</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Anwendungen können sehr komplex sein, und Sie können die Erfahrung für die Benutzer durch Bereitstellen einer effektiven Hilfe erheblich verbessern.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/instructional-ui.md">Selbsterklärende UI</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">Manchmal kann es hilfreich sein, Anleitungen bereitzustellen, um Benutzern die Funktionen in Ihrer App zu demonstrieren, die möglicherweise nicht offensichtlich sind, z. B. bestimmte Touchinteraktionen. In diesen Fällen müssen Sie Anleitungen auf der Benutzeroberfläche für die Benutzer bereitstellen, damit sie diese Funktionen, die sie möglicherweise übersehen haben, finden und nutzen können.</p>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/in-app-help.md">In-App-Hilfe</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">In den meisten Fällen empfiehlt es sich, dass die Hilfe innerhalb der App angezeigt wird, wenn der Benutzer sie anzeigen möchte. Beachten Sie beim Erstellen der In-App-Hilfe die folgenden Anleitungen.</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/external-help.md">Externe Hilfe</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">In den meisten Fällen empfiehlt es sich, dass die Hilfe innerhalb der App angezeigt wird, wenn der Benutzer sie anzeigen möchte. Beachten Sie beim Erstellen der In-App-Hilfe die folgenden Anleitungen.</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/guidelines-for-app-help.md">Anleitungen für die App-Hilfe</a></b><br/>Anwendungen können sehr komplex sein, und Sie können die Erfahrung für die Benutzer durch Bereitstellen einer effektiven Hilfe erheblich verbessern.
+<p><b><a href="../in-app-help/guidelines-for-app-help.md">Guidelines for app help</a></b><br/>Applications can be complex, and providing effective help for your users can greatly improve their experience.
 </p>
                     </div>
                 </div>
@@ -231,7 +262,7 @@ Unabhängig davon, wie optimal Sie Ihre App gestaltet haben, werden einige Benut
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/instructional-ui.md">Benutzeroberfläche mit Anweisungen</a></b><br/>Manchmal kann es hilfreich sein, Anleitungen bereitzustellen, um Benutzern die Funktionen in Ihrer App zu demonstrieren, die möglicherweise nicht offensichtlich sind, z. B. bestimmte Touchinteraktionen. In diesen Fällen müssen Sie Anleitungen auf der Benutzeroberfläche für die Benutzer bereitstellen, damit sie diese Funktionen, die sie möglicherweise übersehen haben, finden und nutzen können.</p>
+<p><b><a href="../in-app-help/instructional-ui.md">Instructional UI</a></b><br/>Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
                     </div>
                 </div>
             </div>
@@ -242,7 +273,7 @@ Unabhängig davon, wie optimal Sie Ihre App gestaltet haben, werden einige Benut
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/in-app-help.md">In-App-Hilfe</a></b><br/>In den meisten Fällen empfiehlt es sich, dass die Hilfe innerhalb der App angezeigt wird, wenn der Benutzer sie anzeigen möchte. Beachten Sie beim Erstellen der In-App-Hilfe die folgenden Anleitungen.</p>
+<p><b><a href="../in-app-help/in-app-help.md">In-app help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
@@ -253,11 +284,11 @@ Unabhängig davon, wie optimal Sie Ihre App gestaltet haben, werden einige Benut
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/external-help.md">Externe Hilfe</a></b><br/>In den meisten Fällen empfiehlt es sich, dass die Hilfe innerhalb der App angezeigt wird, wenn der Benutzer sie anzeigen möchte. Beachten Sie beim Erstellen der In-App-Hilfe die folgenden Anleitungen.</p>
+<p><b><a href="../in-app-help/external-help.md">External help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>        
-</ul>
+</ul> -->
 
