@@ -12,18 +12,20 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ab37c49115acbccaf81725b74def85891fd73219
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: ac195916e76ad7b3f03adc39a293422d0d58f7a4
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735065"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614083"
 ---
 # <a name="parallax"></a>Parallax
 
 Parallax ist ein visueller Effekt, bei dem sich Elemente, die näher am Betrachter liegen, schneller als Elemente im Hintergrund bewegen. Parallax erzeugt ein Gefühl von Tiefe, Perspektive und Bewegung. In einer UWP-App können Sie das ParallaxView-Steuerelement verwenden, um einen Parallax-Effekt zu erzeugen.  
 
-> **Wichtige APIs**: [ParallaxView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [VerticalShift-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift-Eigenschaft](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **APIs für die Windows-Benutzeroberflächen Bibliothek:** parameterxview- [Klasse](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview), [verticalshift-Eigenschaft](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift), [horizontalshift-Eigenschaft](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+>
+> **Plattform-APIs**: parametal [View-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [verticalshift-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift), [horizontalshift-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>Beispiele
 
@@ -47,7 +49,7 @@ Parallax ist ein visueller Effekt, bei dem sich Elemente, die näher am Betracht
 
 ## <a name="how-it-works-in-a-user-interface"></a>Funktionsweise in einer Benutzeroberfläche
 
-In einer Benutzeroberfläche lassen sich Parallax-Effekte erzeugen, indem bei einem Bildlauf oder Schwenken der Benutzeroberfläche verschiedene Objekte unterschiedlich schnell bewegt werden. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Um dies zu veranschaulichen, sehen wir uns zwei Inhaltsebenen an, eine Liste und ein Hintergrundbild.  Die Liste befindet sich über dem Hintergrundbild. Dadurch wird bereits der Eindruck vermittelt, dass die Liste sich näher am Betrachter befindet.  Um jetzt den Parallax-Effekt zu erzielen, soll sich das Objekt, welches uns am nächsten liegt, „schneller” bewegen als das Objekt, welches weiter entfernt ist.  Wenn der Benutzer einen Bildlauf in der Oberfläche durchführt, bewegt sich die Liste schneller als das Hintergrundbild, wodurch eine Illusion von Tiefe erzeugt wird.
+In einer Benutzeroberfläche lassen sich Parallax-Effekte erzeugen, indem bei einem Bildlauf oder Schwenken der Benutzeroberfläche verschiedene Objekte unterschiedlich schnell bewegt werden. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Um dies zu veranschaulichen, betrachten wir zwei Inhalts Ebenen, eine Liste und ein Hintergrundbild.  Die Liste befindet sich über dem Hintergrundbild. Dadurch wird bereits der Eindruck vermittelt, dass die Liste sich näher am Betrachter befindet.  Um den Teil der Wirkung zu erzielen, soll das Objekt, das uns am nächsten geht, "schneller" als das Objekt, das sich weiter entfernt.  Wenn der Benutzer einen Bildlauf in der Oberfläche durchführt, bewegt sich die Liste schneller als das Hintergrundbild, wodurch eine Illusion von Tiefe erzeugt wird.
 
  ![Beispiel für Parallaxe mit einer Liste und einem Hintergrundbild](images/_Parallax_v2.gif)
 
@@ -80,7 +82,7 @@ In diesem Beispiel wird ein Parallax-Effekt für eine Liste erstellt:
        <x:String>Item 2</x:String> 
        <x:String>Item 3</x:String> 
        <x:String>Item 4</x:String> 
-       <x:String>Item 5</x:String>  
+       <x:String>Item 5</x:String>     
        <x:String>Item 6</x:String> 
        <x:String>Item 7</x:String> 
        <x:String>Item 8</x:String> 
@@ -98,9 +100,9 @@ In diesem Beispiel wird ein Parallax-Effekt für eine Liste erstellt:
        <x:String>Item 21</x:String>        
     </ListView>
 </Grid>
-``` 
+```    
 
-ParallaxView passt die Größe des Bilds automatisch an den entsprechenden Parallax-Vorgang an. Sie müssen sich also keine Sorgen machen, dass das Bild beim Bildlauf aus dem Sichtfeld verschwindet.
+Die "Parser"-Sicht passt automatisch die Größe des Bilds an, sodass es für den unter-und-Vorgang funktioniert, sodass Sie sich keine Gedanken machen müssen, dass das Bild nicht mehr in der Ansicht angezeigt wird.
 
 ## <a name="customizing-the-parallax-effect"></a>Anpassen des Parallax-Effekts 
 
@@ -117,7 +119,7 @@ Die vollständige Liste der Methoden zum Anpassen von Parallax finden Sie in der
 
 - Verwenden Sie Parallax in Listen mit einem Hintergrundbild
 - Verwenden Sie Parallax gegebenenfalls in ListViewItems, wenn ListViewItems ein Bild enthalten.
-- Verwenden Sie es nicht überall. Eine übermäßige Verwendung kann den Effekt verringern.
+- Nicht überall verwenden, die über Auslastung kann seine Auswirkung verringern
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
