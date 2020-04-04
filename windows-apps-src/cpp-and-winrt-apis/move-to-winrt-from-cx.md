@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: a554a46d73053c2b6a01a0b10dbc78c87b743052
-ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.openlocfilehash: c5f8b9548bba704a7035b014ca3728db8bcbcc16
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80290032"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662405"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>Umstellen von C++/CX auf C++/WinRT
 
@@ -30,7 +30,7 @@ Es ist möglich, dass du deinen C++/CX-Code nach und nach in C++/WinRT-Code port
 
 Unter Berücksichtigung der oben erwähnten Ausnahmen ist der erste Schritt beim Portieren eines C++/CX-Projekts zu C++/WinRT das manuelle Hinzufügen von C++/WinRT-Unterstützung (siehe [Visual Studio-Unterstützung für C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Installiere zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in deinem Projekt. Öffne das Projekt in Visual Studio, klicke auf **Projekt** \> **NuGet-Pakete verwalten**. \> **Durchsuchen**, gib oder füge **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wähle das Element in den Suchergebnissen aus, und klicke dann auf **Installieren**, um das Paket für das Projekt zu installieren. Eine Auswirkung dieser Änderung ist, dass die Unterstützung für C++/CX im Projekt deaktiviert wird. Es empfiehlt sich, die Unterstützung deaktiviert zu lassen, damit beim Ermitteln und Portieren deiner Abhängigkeiten aus C++/CX Buildmeldungen als Hilfe angezeigt werden. Du kannst die Unterstützung auch wieder aktivieren (in den Projekteigenschaften, **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden** \> **Ja (/ZW)** ) und das Portieren nach und nach durchführen.
 
-Alternativ dazu kannst du die mithilfe der Eigenschaftenseite für das C++/WinRT-Projekt in Visual Studio die folgende Eigenschaft zu deiner `.vcxproj`-Datei hinzufügen. Eine Liste mit ähnlichen Anpassungsoptionen (um das Verhalten des Tools `cppwinrt.exe` zu optimieren) findest du in der [Infodatei](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing) zum Microsoft.Windows.CppWinRT-NuGet-Paket.
+Alternativ dazu kannst du die mithilfe der Eigenschaftenseite für das C++/WinRT-Projekt in Visual Studio die folgende Eigenschaft zu deiner `.vcxproj`-Datei hinzufügen. Eine Liste mit ähnlichen Anpassungsoptionen (um das Verhalten des Tools `cppwinrt.exe` zu optimieren) findest du in der [Infodatei](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing) zum Microsoft.Windows.CppWinRT-NuGet-Paket.
 
 ```xml
 <syntaxhighlight lang="xml">
