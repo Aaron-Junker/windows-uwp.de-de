@@ -7,20 +7,26 @@ ms.topic: article
 keywords: Windows 10, UWP
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c7bd8828ec036135233f569ee7add5d39ffb32
-ms.sourcegitcommit: 136416e8e2eb0565bb6eb99e42482c1723ccb8c7
+ms.openlocfilehash: ce9e3775f4b0f78d17f0ffdf3d6381f2e8a233d9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890425"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081531"
 ---
 # <a name="tabview"></a>TabView
 
 Das TabView-Steuerelement bietet eine Möglichkeit, eine Reihe von Registerkarten und deren jeweiligen Inhalt anzuzeigen. TabViews sind nützlich, um mehrere Seiten (oder Dokumente) mit Inhalten anzuzeigen und geben einem Benutzer die Möglichkeit, neue Registerkarten neu anzuordnen, zu öffnen oder zu schließen.
 
-> **Wichtige APIs:** [TabView-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
-
 ![Beispiel für eine TabView](images/tabview/tab-introduction.png)
+
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TabView** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Windows-UI-Bibliotheks-APIs:** [TabView-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem-Klasse](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 

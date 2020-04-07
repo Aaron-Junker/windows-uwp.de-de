@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, Winrt, COM, Komponente, Klasse, Schnittstelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9bdfcee8811e52587eb4fcd59913a731b799a2
-ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
+ms.openlocfilehash: 6a286056fc0c44d01482e23e52df0fa80eca0515
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79511003"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218520"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Verwenden von COM-Komponenten mit C++/WinRT
 
@@ -127,14 +127,7 @@ Sie können die [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-fun
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>COM-Funktionen, die einen **IUnknown**-Schnittstellenzeiger annehmen
 
-Sie können die freie Funktion [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) aufrufen, um Ihren **com_ptr** einer Funktion zu übergeben, die einen **IUnknown**-Schnittstellenzeiger annimmt.
-
-```cppwinrt
-winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
-    ...
-    winrt::get_unknown(CoreWindow::GetForCurrentThread()),
-    ...));
-```
+Sie können die freie Funktion [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) aufrufen, um Ihren **com_ptr** einer Funktion zu übergeben, die einen **IUnknown**-Schnittstellenzeiger annimmt. Ein Codebeispiel finden Sie in diesem Thema.
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>Übergabe und Rückgabe von intelligenten COM-Zeigern
 
@@ -171,7 +164,7 @@ Verwenden Sie alternativ [**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#co
 
 Wenn Sie dieses Codebeispiel erstellen und ausführen möchten, erstellen Sie zunächst in Visual Studio eine neue **Core App (C++/WinRT)** . `Direct2D` ist ein sinnvoller Name für das Projekt, Sie können aber auch jeden gewünschten anderen verwenden.
 
-Öffnen Sie `pch.h`, und fügen Sie `#include <unknwn.h>` unmittelbar nach dem Einschließen von `windows.h` hinzu.
+Öffnen Sie `pch.h`, und fügen Sie `#include <unknwn.h>` unmittelbar nach dem Einschließen von `windows.h` hinzu. Dies liegt daran, dass wir [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) verwenden. Es empfiehlt sich, `#include <unknwn.h>` explizit immer aufzunehmen, wenn du **winrt::get_unknown** verwendest, auch wenn dieser Header bereits in einem anderen Header enthalten ist.
 
 Öffnen Sie `App.cpp`, löschen Sie den gesamten Inhalt, und fügen Sie das unten aufgeführte Listing ein.
 

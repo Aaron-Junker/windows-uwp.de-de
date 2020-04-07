@@ -4,11 +4,11 @@ title: Geräteportal für Mobilgeräte
 description: Hier erfahren Sie, wie Sie mit dem Windows Device Portal Ihr mobiles Gerät per Fernzugriff konfigurieren und verwalten können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Geräte Portal
+keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
 ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/11/2019
 ms.locfileid: "72281890"
@@ -25,15 +25,15 @@ Informationen zum Aktivieren des Entwicklermodus finden Sie unter [Aktivieren Ih
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>Aktivieren der Geräteermittlung und -kopplung
 
-Damit Sie eine Verbindung mit Device Portal herstellen können, müssen Sie in den Einstellungen Ihres Telefons die Geräteermittlung und Device Portal aktivieren. Auf diese Weise können Sie Ihr Telefon mit einem PC oder einem anderen Windows 10-Gerät koppeln. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden.
+Damit du eine Verbindung mit dem Geräteportal herstellen kannst, musst du in den Einstellungen deines Telefons die Geräteermittlung und das Geräteportal aktivieren. Auf diese Weise können Sie Ihr Telefon mit einem PC oder einem anderen Windows 10-Gerät koppeln. Beide Geräte müssen über eine kabelgebundene oder drahtlose Verbindung mit dem gleichen Subnetz des Netzwerks verbunden sein oder über USB verbunden werden.
 
 Wenn Sie das erste Mal eine Verbindung mit dem Geräteportal herstellen, werden Sie aufgefordert, einen sechsstelligen Sicherheitscode einzugeben (mit Beachtung der Groß- und Kleinschreibung). Dadurch wird sichergestellt, dass Sie Zugriff auf das Smartphone haben, und Sie werden vor Angriffen geschützt. Tippen Sie auf Ihrem Smartphone auf die Schaltfläche „Koppeln“, um den Code zu generieren und anzuzeigen. Geben Sie dann die sechs Zeichen in das Textfeld im Browser ein.
 
 ![Einstellungen für die Geräteerkennung im Entwicklermodus](images/device-portal/mob-dev-mode-pairing.png)
 
-Sie können zwischen 3 Möglichkeiten zum Herstellen einer Verbindung mit dem Geräte Portal wählen: USB, lokaler Host und über das lokale Netzwerk (einschließlich VPN und Tethering).
+Du kannst unter drei Möglichkeiten zum Herstellen einer Verbindung mit dem Geräteportal auswählen: USB, über einen lokalen Host und über das lokale Netzwerk (einschließlich VPN und Tethering).
 
-**Zum Herstellen einer Verbindung mit dem Geräte Portal**
+**So stellst du eine Verbindung mit dem Geräteportal her**
 
 1. Geben Sie in Ihrem Browser die hier angegebene Adresse für den verwendeten Verbindungstyp ein.
 
@@ -49,7 +49,7 @@ Sie können zwischen 3 Möglichkeiten zum Herstellen einer Verbindung mit dem Ge
 
     Verwenden Sie diese Adresse, um die Verbindung über ein lokales Netzwerk herzustellen.
 
-    Die IP-Adresse des Smartphones wird in den Geräteportaleinstellungen auf dem Telefon angezeigt. Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich. Der Hostname (bearbeitbar in Settings > System > About) kann auch für den Zugriff auf das Geräte Portal im lokalen Netzwerk verwendet werden (z. b. http://Phone360), was für Geräte nützlich ist, die Netzwerke oder IP-Adressen häufig ändern oder freigegeben werden müssen. 
+    Die IP-Adresse des Smartphones wird in den Geräteportaleinstellungen auf dem Telefon angezeigt. Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich. Der Hostname (kann in „Einstellungen“ > „System“ > „Info“ bearbeitet werden) kann auch für den Zugriff auf das Geräteportal im lokalen Netzwerk verwendet werden (Beispiel: http://Phone360) ). Dies ist hilfreich, wenn Netzwerke oder IP-Adressen von Geräten häufig geändert werden oder freigegeben werden müssen. 
 
 2. Tippen Sie auf Ihrem Smartphone auf die Schaltfläche „Koppeln“, um den Code zu generieren und anzuzeigen.
 
@@ -83,5 +83,5 @@ Das Geräteportal für mobile Geräte enthält den Standardsatz der Seiten. Ausf
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Übersicht über das Windows-Geräte Portal](device-portal.md)
-* [Referenz zur kernapi des Geräte Portals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Übersicht über das Windows-Geräteportal](device-portal.md)
+* [Referenz zur Kern-API des Geräteportals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

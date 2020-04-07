@@ -10,25 +10,35 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cc29260f5891cda74879618b59bb3762b7f18
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: edeebf177cf438931bb318ea19cd292a9c9b27c0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690412"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081601"
 ---
 # <a name="rating-control"></a>Bewertungssteuerelement
 
 Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Abgeben von Bewertungen, die den Grad der Zufriedenheit mit Inhalten und Diensten widerspiegeln. Benutzer können per Toucheingabe, Stift, Maus, Gamepad und Tastatur mit dem Bewertungssteuerelement interagieren. Die Anleitungen zeigen, wie die Funktionen des Bewertungssteuerelements verwendet werden, um Flexibilität und Anpassung bereitzustellen.
 
-> **Wichtige APIs:** [RatingControl-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+![Beispiel für Bewertungssteuerelement](images/rating_rs2_doc_ratings_intro.png)
+
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **RatingControl** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Windows-UI-Bibliotheks-APIs:** [RatingControl-Klasse](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
+>
+> **Plattform-APIs:** [RatingControl-Klasse](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## <a name="examples"></a>Beispiele
 
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/RatingControl">die App zu öffnen und RatingControl in Aktion zu sehen</a>.</p>
     <ul>
@@ -38,8 +48,6 @@ Das Bewertungssteuerelement ermöglicht Benutzern das Anzeigen und Abgeben von B
 </td>
 </tr>
 </table>
-
-![Beispiel für Bewertungssteuerelement](images/rating_rs2_doc_ratings_intro.png)
 
 ### <a name="editable-rating-with-placeholder-value"></a>Bearbeitbare Bewertung mit Platzhalterwert
 
@@ -73,7 +81,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ### <a name="read-only-rating-mode"></a>Schreibgeschützter Bewertungsmodus
 
-Manchmal müssen Sie Bewertungen von sekundärem Inhalt anzeigen, z. B. Bewertungen, die in empfohlenem Inhalt angezeigt werden, oder wenn eine Liste von Kommentaren und die entsprechenden Bewertungen angezeigt werden. In diesem Fall sollte der Benutzer die Bewertung nicht bearbeiten können. Daher können Sie für das Steuerelement den schreibgeschützten Modus festlegen.
+Manchmal müssen Sie Bewertungen von sekundärem Inhalt anzeigen, z. B. Bewertungen, die in empfohlenem Inhalt angezeigt werden, oder wenn eine Liste von Kommentaren und die entsprechenden Bewertungen angezeigt werden. In diesem Fall sollte der Benutzer die Bewertung nicht bearbeiten können. Daher kannst du für das Steuerelement den schreibgeschützten Modus festlegen.
 Das Bewertungssteuerelement sollte auch dann im schreibgeschützten Modus verwendet werden, wenn es in sehr großen virtualisierten Listen mit Inhalt, für UI-Design und aus Leistungsgründen eingesetzt wird.
 
 ![Schreibgeschützte lange Liste](images/rating_rs2_doc_reviews.png)

@@ -12,23 +12,26 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: cf4e9885fdb17780c176e2740101a0cd530328ec
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364294"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081547"
 ---
 # <a name="sliders"></a>Schieberegler
 
- 
-
 Ein Schieberegler ist ein Steuerelement, über das der Benutzer aus einer Reihe von Werten auswählen kann, indem er ein Schiebereglersteuerelement über einen Bereich verschiebt.
-
-> **Wichtige APIs:** [Slider-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [Value-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [ValueChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![Schiebereglersteuerelement](images/controls/slider.png)
 
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [Slider-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider), [Value-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value), [ValueChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -40,27 +43,27 @@ Verwenden Sie einen Schieberegler nicht für binäre Einstellungen. Verwenden Si
 
 Hier sind einige weitere Faktoren, die Sie bei der Entscheidung für oder gegen die Verwendung eines Schiebereglers berücksichtigen sollten:
 
--   **Handelt es sich bei der Einstellung um eine relative Anzahl?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md) oder ein [Listenfeld](lists.md).
--   **Handelt es sich bei der Einstellung um einen exakten, bekannten numerischen Wert?** Wenn ja, verwenden Sie ein numerisches [Textfeld](text-box.md).
--   **Wäre es für Benutzer hilfreich, sofort Feedback zur Auswirkung von Einstellungsänderungen zu erhalten?** Wenn ja, verwenden Sie einen Schieberegler. Beispielsweise können Benutzer eine Farbe leichter auswählen, wenn sie sofort sehen, wie sich Änderungen an den Werten für Farbton, Sättigung oder Leuchtdichte auswirken.
--   **Weist die Einstellung einen Bereich aus vier oder mehr Werten auf?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md).
--   **Können Benutzer den Wert ändern?** Schieberegler dienen zur Benutzerinteraktion. Wenn der Wert in keinem Fall von Benutzern geändert werden kann, verwenden Sie stattdessen schreibgeschützten Text.
+- **Handelt es sich bei der Einstellung um eine relative Anzahl?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md) oder ein [Listenfeld](lists.md).
+- **Handelt es sich bei der Einstellung um einen exakten, bekannten numerischen Wert?** Wenn ja, verwenden Sie ein numerisches [Textfeld](text-box.md).
+- **Wäre es für Benutzer hilfreich, sofort Feedback zur Auswirkung von Einstellungsänderungen zu erhalten?** Wenn ja, verwenden Sie einen Schieberegler. Beispielsweise können Benutzer eine Farbe leichter auswählen, wenn sie sofort sehen, wie sich Änderungen an den Werten für Farbton, Sättigung oder Leuchtdichte auswirken.
+- **Weist die Einstellung einen Bereich aus vier oder mehr Werten auf?** Ist dies nicht der Fall, verwenden Sie stattdessen [Optionsfelder](radio-button.md).
+- **Können Benutzer den Wert ändern?** Schieberegler dienen zur Benutzerinteraktion. Wenn der Wert in keinem Fall von Benutzern geändert werden kann, verwenden Sie stattdessen schreibgeschützten Text.
 
 Wenn Sie zwischen einem Schieberegler und einem numerischen Textfeld entscheiden, verwenden Sie in folgenden Fällen ein numerisches Textfeld:
 
--   Der auf dem Bildschirm verfügbare Platz ist knapp.
--   Benutzer möchten wahrscheinlich lieber die Tastatur verwenden.
+- Der auf dem Bildschirm verfügbare Platz ist knapp.
+- Benutzer möchten wahrscheinlich lieber die Tastatur verwenden.
 
 Verwenden Sie in folgenden Fällen einen Schieberegler:
 
--   Benutzer profitieren von sofortigem Feedback.
+- Benutzer profitieren von sofortigem Feedback.
 
 ## <a name="examples"></a>Beispiele
 
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/Slider">die App zu öffnen und den Schieberegler in Aktion zu sehen</a>.</p>
     <ul>
@@ -152,7 +155,7 @@ Die Bereichsrichtung ist die Richtung, in der Sie den Schieberegler bewegen, wen
 -   Zeigen Sie Teilstriche und eine Wertbeschriftung an, wenn die Benutzer den genauen Wert der ausgewählten Einstellung erfahren sollen, ohne mit dem Steuerelement zu interagieren. Andernfalls können Sie die QuickInfo für den Wert verwenden, um den genauen Wert anzuzeigen.
 -   Zeigen Sie immer Teilstriche an, wenn Schrittpunkte nicht offensichtlich sind. Wenn der Schieberegler beispielsweise 200 Pixel breit ist und 200 Andockpunkte hat, können Sie die Teilstriche ausblenden, da die Benutzer das Andockverhalten nicht bemerken. Wenn aber nur zehn Andockpunkte vorhanden sind, zeigen Sie Teilstriche an.
 
-### <a name="labels"></a>Beschriftungen
+### <a name="labels"></a>Bezeichnungen
 
 -   **Schiebereglerbeschriftungen**
 
@@ -176,7 +179,7 @@ Die Bereichsrichtung ist die Richtung, in der Sie den Schieberegler bewegen, wen
 
     -   Wenn Sie eine Wertbeschriftung benötigen, zeigen Sie sie unter dem Schieberegler an.
     -   Zentrieren Sie den Text relativ zum Steuerelement, und schließen Sie die Einheiten ein (beispielsweise Pixel).
-    -   Da der Schiebereglerziehpunkt beim Streichen verdeckt ist, sollten Sie in Erwägung ziehen, den aktuellen Wert auf andere Art und Weise anzuzeigen, und zwar mit einer Beschriftung oder einem anderen visuellen Effekt. Eine Schieberegler-Einstellungstextgröße könnte einigen Beispieltext auf die richtige Größe neben dem Schieberegler rendern.
+    -   Da der Schiebereglerziehpunkt beim Streichen verdeckt ist, solltest du in Erwägung ziehen, den aktuellen Wert auf andere Art und Weise anzuzeigen, und zwar mit einer Beschriftung oder einem anderen visuellen Effekt. Eine Schieberegler-Einstellungstextgröße könnte einigen Beispieltext auf die richtige Größe neben dem Schieberegler rendern.
 
 ### <a name="appearance-and-interaction"></a>Erscheinungsbild und Interaktion
 
@@ -184,12 +187,12 @@ Eine Schieberegler besteht aus einer Spur und einem Ziehpunkt. Bei der Spur hand
 
 Ein Schieberegler weist ein großes Berührungsziel auf. Ein Schieberegler sollte möglichst weit genug vom Rand des Displays positioniert werden, um eine zugängliche Berührung zu gewährleisten.
 
-Ziehen Sie beim Entwerfen eines benutzerdefinierten Schiebereglers Möglichkeiten zum übersichtlichen Darstellen aller für den Benutzer erforderlichen Informationen in Betracht. Verwenden Sie eine Wertbeschriftung, wenn der Benutzer die Einheiten verstehen muss, um die Einstellung nachvollziehen zu können. Suchen Sie nach kreativen Möglichkeiten, um diese Werte grafisch darzustellen. Beispielsweise könnte ein Schieberegler, über den die Lautstärke geregelt wird, am Minimum-Ende des Schiebereglers eine Lautsprechergrafik ohne Schallwellen und am Maximum-Ende eine Lautsprechergrafik mit Schallwellen anzeigen.
+Ziehe beim Entwerfen eines benutzerdefinierten Schiebereglers Möglichkeiten zum übersichtlichen Darstellen aller für den Benutzer erforderlichen Informationen in Betracht. Verwenden Sie eine Wertbeschriftung, wenn der Benutzer die Einheiten verstehen muss, um die Einstellung nachvollziehen zu können. Suchen Sie nach kreativen Möglichkeiten, um diese Werte grafisch darzustellen. Beispielsweise könnte ein Schieberegler, über den die Lautstärke geregelt wird, am Minimum-Ende des Schiebereglers eine Lautsprechergrafik ohne Schallwellen und am Maximum-Ende eine Lautsprechergrafik mit Schallwellen anzeigen.
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
-## <a name="related-topics"></a>Verwandte Themen
-- [Umschalter](toggles.md)
+## <a name="related-topics"></a>Zugehörige Themen
+- [Umschaltfläche](toggles.md)
 - [Slider-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)

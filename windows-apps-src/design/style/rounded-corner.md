@@ -4,12 +4,12 @@ description: Erfahren Sie mehr zu den Grundsätzen abgerundeter Ecken, Entwurfsa
 ms.date: 10/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Eckradius, gerundet
-ms.openlocfilehash: 84cd27bf8c65ed65a6ee2b0f044e0ffb3ef86bf0
-ms.sourcegitcommit: 49af415e4eefea125c023b7071adaa5dc482e223
+ms.openlocfilehash: a83473b5ad836633bc195aa2b5afe87fa092e0ee
+ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74799924"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320425"
 ---
 # <a name="corner-radius"></a>Eckradius
 
@@ -180,9 +180,21 @@ Wenn Sie die Rundung aller Steuerelemente in einem bestimmten Bereich ändern m�
 
 Sie können die [CornerRadius](/uwp/api/windows.ui.xaml.controls.control.cornerradius)-Eigenschaften von Steuerelementen direkt ändern, wenn Sie die Rundung nur für eine Anzahl ausgewählter Steuerelemente ändern möchten.
 
-|Standard | Geänderte Eigenschaft |
+|Standardwert | Geänderte Eigenschaft |
 |:-- |:-- |
 |![DefaultCheckBox](images/rounded-corner/default-checkbox.png)| ![CustomCheckBox](images/rounded-corner/custom-checkbox.png)|
 |`<CheckBox Content="Checkbox"/>` | `<CheckBox Content="Checkbox" CornerRadius="5"/> ` |
 
 Nicht alle Steuerelemente reagieren mit geänderter Darstellung der Ecken auf die Änderung der `CornerRadius`-Eigenschaft. Um sicherzustellen, dass das Steuerelement, dessen Ecken Sie abrunden möchten, in der erwarteten Weise auf die geänderte `CornerRadius`-Eigenschaft reagiert, überprüfen Sie zuerst, ob sich die globalen Ressourcen `ControlCornerRadius` oder `OverlayCornerRadius` auf das fragliche Steuerelement auswirken. Ist dies nicht der Fall, überprüfen Sie, ob das Element, das Sie runden möchten, überhaupt Ecken aufweist. Viele unserer Steuerelemente rendern tatsächlich keine Kanten und können die `CornerRadius`-Eigenschaften daher nicht ordnungsgemäß nutzen.
+
+### <a name="basing-custom-styles-on-winui"></a>Benutzerdefinierte Formatvorlagen basierend auf WinUI
+
+Du kannst deine benutzerdefinierten Formatvorlagen basierend auf den WinUI-Formatvorlagen für abgerundete Ecken erstellen, indem du das richtige `BasedOn`-Attribut in deiner Formatvorlage angibst. Um beispielsweise eine benutzerdefinierte Formatvorlage basierend auf dem WinUI-Schaltflächenstil zu erstellen, gehst du folgendermaßen vor:
+
+```xaml
+<Style x:Key="MyCustomButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
+   ...
+</Style>
+```
+
+Im Allgemeinen folgen die WinUI-Steuerelementstile einer konsistenten Namenskonvention: „DefaultXYZStyle“, wobei „XYZ“ für den Namen des Steuerelements steht. Für eine vollständige Referenz kannst du die XAML-Dateien im WinUI-Repository durchsuchen.

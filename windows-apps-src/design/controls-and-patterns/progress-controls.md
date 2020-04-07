@@ -12,24 +12,26 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e5ff5d0e9172432110d60a007228e59e48785b9
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.openlocfilehash: 66dc74e73207feb9b155adffc116f857dcb3027d
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830808"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081628"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
 Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mit langer Laufzeit ausgeführt wird. Dies kann bedeuten, dass der Benutzer bei Anzeigen der Statusanzeige nicht mit der App interagieren kann. Je nach verwendetem Indikator wird auch die Länge der Wartezeit angegeben.
 
-| **Plattform-APIs** | **Windows-UI-Bibliotheks-APIs** |
-| - | - |
-| [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive) | [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate-Eigenschaft](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate) |
+**Abrufen der Windows-UI-Bibliothek**
 
-| **Abrufen der Windows-UI-Bibliothek** |
-| - |
-| Dieses Steuerelement ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ProgressBar** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Windows-UI-Bibliotheks-APIs:** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate-Eigenschaft](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate)
+>
+> **Plattform-APIs:** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
 > Es gibt zwei Versionen des ProgressBar-Steuerelements: eine in der Plattform, dargestellt durch den Windows.UI.XAML-Namespace; die andere in der Bibliothek der Windows-Benutzeroberfläche, im Microsoft.UI.XAML-Namespace. Zwar ist die API für ProgressBar identisch, die Darstellung des Steuerelements unterscheidet sich jedoch zwischen diesen beiden Versionen. In diesem Dokument werden Abbildungen der neueren Version aus der Windows-Benutzeroberflächenbibliothek gezeigt.
@@ -72,7 +74,7 @@ Ein Statussteuerelement ist zudem schreibgeschützt und nicht interaktiv. Dies b
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> oder <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> in Aktion zu sehen.</p>
     <ul>
@@ -112,7 +114,7 @@ Es ist nicht immer klar erkennbar, welches Steuerelement oder welcher Status (be
 
 -   **Wartet die App darauf, dass der Benutzer eine Aufgabe ausführt?**
 
-    In diesem Fall verwenden Sie ein ProgressRing-Steuerelement, um den Benutzer auf eine unbestimmte Wartezeit hinzuweisen.
+    In diesem Fall verwendest du ein ProgressRing-Steuerelement, um den Benutzer auf eine unbestimmte Wartezeit hinzuweisen.
 
 -   **Schlüsselwörter**
 
@@ -159,7 +161,7 @@ Wenn die Dauer des Vorgangs nicht bekannt ist, verwenden Sie ein unbestimmtes Pr
 
 ![Beispiel für ein unbestimmtes ProgressRing-Steuerelement](images/PR_IndeterminateExample.png)
 
-Unbestimmte ProgressRing-Elemente werden verwendet, wenn jegliche Benutzerinteraktion mit der App ausgesetzt ist oder die App auf eine Benutzereingabe wartet, um den Vorgang fortzusetzen. Das „Anmelden...“- Beispiel oben ist ein optimales Szenario für das ProgressRing-Steuerelement, da der Benutzer die App erst weiterverwenden kann, nachdem der Anmeldevorgang abgeschlossen ist.
+Unbestimmte ProgressRing-Elemente werden verwendet, wenn jegliche Benutzerinteraktion mit der App ausgesetzt ist oder die App auf eine Benutzereingabe wartet, um den Vorgang fortzusetzen. Das Beispiel „Anmelden...“ ist ein optimales Szenario für das ProgressRing-Steuerelement, da der Benutzer die App erst weiterverwenden kann, nachdem der Anmeldevorgang abgeschlossen ist.
 
 ## <a name="customizing-a-progress-control"></a>Anpassen eines Statussteuerelements
 

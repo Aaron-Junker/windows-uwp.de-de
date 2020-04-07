@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 320586fb8fe7f71eaea2d4b12c0dd731a1f721db
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793797"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080972"
 ---
 # <a name="flyouts"></a>Flyouts
 
@@ -24,20 +24,26 @@ Ein Flyout ist ein einfach ausblendbarer Container, der beliebige Benutzeroberfl
 
 ![In einem Flyout geschachteltes Kontextmenü](../images/flyout-nested.png)
 
-> **Wichtige APIs:** [Flyout-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](../images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [Flyout-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
 * Verwenden Sie keine Flyouts anstelle von [QuickInfos](../tooltips.md) oder [Kontextmenüs](../menus.md). Verwenden Sie QuickInfos, um kurze Beschreibungen anzuzeigen, die nach einer festgelegten Zeit ausgeblendet werden. Verwenden Sie ein Kontextmenü für kontextbezogene Aktionen im Zusammenhang mit UI-Elementen (beispielsweise Kopieren und Einfügen).
 
-Empfehlungen dazu, wann ein Flyout und wann ein Dialogfeld (ein ähnliches Steuerelement) verwendet werden sollte, finden Sie unter [Dialogfelder und Flyouts](index.md). 
+Empfehlungen dazu, wann ein Flyout und wann ein Dialogfeld (ein ähnliches Steuerelement) verwendet werden sollte, finden Sie unter [Dialogfelder und Flyouts](index.md).
 
 ## <a name="examples"></a>Beispiele
 
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> oder <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in Aktion zu sehen.</p>
     <ul>
@@ -74,7 +80,7 @@ In diesem Beispiel wird einem Bild ein einfaches Flyout hinzugefügt. Wenn der B
   <FlyoutBase.AttachedFlyout>
     <Flyout>
       <TextBlock Text="This is some text in a flyout."  />
-    </Flyout>        
+    </Flyout>
   </FlyoutBase.AttachedFlyout>
 </Image>
 ````
@@ -121,7 +127,7 @@ In den vorherigen Beispielen wurden die Flyouts inline definiert. Sie können ei
 ````csharp
 private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 {
-    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);  
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
 }
 ````
 
@@ -157,10 +163,10 @@ Einfach ausblendbare Steuerelemente wie Flyouts erhalten den Tastatur- bzw. Game
 
 ## <a name="light-dismiss-behavior"></a>Verhalten für einfaches Ausblenden
 Flyouts können schnell mit einer einfachen Ausblendaktion geschlossen werden. Dazu zählen:
--   Tippen außerhalb des Flyouts
--   Drücken der ESC-TASTE auf der Tastatur
--   Drücken der Schaltfläche „Zurück“ des Systems (Hardware oder Software)
--   Drücken der B-TASTE auf dem Gamepad
+-    Tippen außerhalb des Flyouts
+-    Drücken der ESC-TASTE auf der Tastatur
+-    Drücken der Schaltfläche „Zurück“ des Systems (Hardware oder Software)
+-    Drücken der B-TASTE auf dem Gamepad
 
 Wird das Ausblenden durch Tippen vorgenommen, wird die Geste in der Regel absorbiert und nicht an die zugrunde liegende Benutzeroberfläche übergegeben. Ist beispielsweise hinter einem geöffneten Flyout eine Schaltfläche sichtbar, wird durch einfaches Tippen durch den Benutzer das Flyout ausgeblendet, ohne jedoch diese Schaltfläche zu aktivieren. Um die Schaltfläche zu drücken, ist ein weiteres Tippen erforderlich.
 
@@ -177,7 +183,7 @@ Im folgenden Beispiel werden alle drei Schaltflächen in der Favoritenleiste dur
                 OverlayInputPassThroughElement="{x:Bind FavoritesBar}">
             <StackPanel>
                 <HyperlinkButton Content="Washington Trails Association"/>
-                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>  
+                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>
             </StackPanel>
         </Flyout>
     </Page.Resources>
@@ -188,7 +194,7 @@ Im folgenden Beispiel werden alle drei Schaltflächen in der Favoritenleiste dur
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="FavoritesBar" Orientation="Horizontal">
-            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>  
+            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>
             <Button x:Name="Folder1" Content="Travel" Flyout="{StaticResource TravelFlyout}"/>
             <Button x:Name="Folder2" Content="Entertainment" Click="Folder2_Click"/>
         </StackPanel>
@@ -210,7 +216,7 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [QuickInfos](../tooltips.md)

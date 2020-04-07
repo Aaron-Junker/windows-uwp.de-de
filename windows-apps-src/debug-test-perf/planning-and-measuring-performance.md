@@ -4,11 +4,11 @@ title: Planen der Leistung
 description: Benutzer erwarten, dass ihre Apps zuverlässig und reibungslos funktionieren und den Akku nicht übermäßig beanspruchen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 59397f12ec66bfa2864d830eaf80a9dcaaf06592
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74257879"
@@ -31,14 +31,14 @@ Es ist besser, ein erstes Ziel festzulegen und es später zu überdenken, anstat
 
 Überlegen Sie sich die zulässigen Bereiche für die verstrichene Zeit (*Interaktionsklassen*), die für Benutzer erforderlich ist, um ihre Aufgaben in der App zu erledigen. Weisen Sie jeder Interaktionsklasse eine Bezeichnung, eine Benutzerwahrnehmung sowie eine ideale und eine maximale Dauer zu. Hier sind einige Empfehlungen.
 
-| Bezeichnung der Interaktionsklasse | Benutzerwahrnehmung                 | Ideal            | Maximal          | Beispiele                                                                     |
+| Bezeichnung der Interaktionsklasse | Benutzerwahrnehmung                 | Ideal            | Maximum          | Beispiele                                                                     |
 |-------------------------|---------------------------------|------------------|------------------|------------------------------------------------------------------------------|
 | Fast                    | Minimal erkennbare Verzögerung      | 100 Millisekunden | 200 Millisekunden | App-Leiste aufrufen; Schaltfläche betätigen (erste Reaktion)                        |
 | Standard                 | Zügig, aber nicht schnell             | 300 Millisekunden | 500 Millisekunden | Größe ändern; semantischer Zoom                                                        |
 | Dynamisch              | Nicht zügig, aber dynamisch | 500 Millisekunden | 1 Sekunde         | Zu einer anderen Seite navigieren; angehaltene App fortsetzen          |
-| Launch                  | Nicht flüssig          | 1 Sekunde         | 3 Sekunden        | App zum ersten Mal starten oder App aufrufen, nachdem sie zuvor beendet wurde |
+| Starten                  | Nicht flüssig          | 1 Sekunde         | 3 Sekunden        | App zum ersten Mal starten oder App aufrufen, nachdem sie zuvor beendet wurde |
 | Kontinuierlich              | Wird nicht mehr als dynamisch wahrgenommen      | 500 Millisekunden | 5 Sekunden        | Datei aus dem Internet herunterladen                                            |
-| Träge                 | Lang; Benutzer könnte Interesse verlieren    | 500 Millisekunden | 10 Sekunden       | Mehrere Apps aus dem Store installieren                                         |
+| Träge                 | Lang; Benutzer könnte Interesse verlieren    | 500 Millisekunden | 10 Sekunden       | Mehrere Apps aus dem Store installieren                                         |
 
  
 
@@ -79,12 +79,12 @@ Zu den bestimmten messbaren Zielen hinsichtlich der Effizienz für Ihre App geh�
 
 Sie können jetzt die Leistungsziele verwenden, um den Entwurf Ihrer App zu beeinflussen. Nachdem der Benutzer bei der Verwendung der Beispiel-App für Lebensmittel und Gastronomie zur Rezeptseite navigiert ist, können Sie festlegen, dass [Elemente inkrementell aktualisiert](optimize-gridview-and-listview.md#update-items-incrementally) werden, damit der Name des Rezepts zuerst gerendert, die Anzeige der Zutaten zurückgestellt und die Anzeige der Abbildungen noch weiter zurückgestellt wird. Dadurch bleiben die Reaktionsfähigkeit und eine flüssige Benutzeroberfläche bei der Verschiebung bzw. beim Bildlauf erhalten, wobei das Rendering mit höchster Genauigkeit dann stattfindet, nachdem sich die Interaktion auf ein Tempo verlangsamt hat, bei dem der UI-Thread mithalten kann. Im Folgenden sind einige Aspekte aufgeführt, die auch berücksichtigt werden sollten.
 
-**Angetan**
+**Benutzeroberfläche**
 
 -   Optimieren Sie die zum Analysieren und Laden erforderliche Zeit sowie die Effizienz für jede Seite der Benutzeroberfläche Ihrer App (insbesondere die Ausgangsseite), indem Sie das [XAML-Markup optimieren](optimize-xaml-loading.md). Stellen Sie kurz gesagt das Laden der Benutzeroberfläche und des Codes zurück, bis dies erforderlich ist.
 -   Weisen Sie allen [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)- und [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)-Elementen dieselbe Größe zu, und verwenden Sie möglichst viele [ListView- und GridView-Optimierungsverfahren](optimize-gridview-and-listview.md).
 -   Deklarieren Sie die Benutzeroberfläche in Form von Markup, das vom Framework geladen und in Blöcken wiederverwendet werden kann, anstatt sie zwingend in Code zu erstellen.
--   Erstellen Sie UI-Elemente mit Verzögerung, bis der Benutzer sie benötigt. Siehe unter [**x:Load**](../xaml-platform/x-load-attribute.md)-Attribut.
+-   Erstelle Benutzeroberflächenelemente mit Verzögerung, bis der Benutzer sie benötigt. Siehe unter [**x:Load**](../xaml-platform/x-load-attribute.md)-Attribut.
 -   Bevorzugen Sie Designübergänge und -animationen vor Storyboardanimationen. Weitere Informationen finden Sie unter [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview). Bedenken Sie, dass Storyboardanimationen kontinuierliche Aktualisierungen auf dem Bildschirm erfordern und die CPU und Grafikpipeline auslasten. Führen Sie keine Animationen aus, wenn der Benutzer nicht mit der App interagiert, um den Stromverbrauch zu verringern.
 -   Von Ihnen geladene Bilder sollten dabei eine Größe aufweisen, die für die jeweilige Ansicht geeignet ist. Verwenden Sie deshalb die [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync)-Methode.
 
@@ -102,7 +102,7 @@ Sie können jetzt die Leistungsziele verwenden, um den Entwurf Ihrer App zu beei
 -   Speichern Sie Inhalte, für die der Zugriff aufwendig ist, nach Möglichkeit im Cache. Weitere Informationen finden Sie unter den Eigenschaften [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) und [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings).
 -   Zeigen Sie für Cachefehler so schnell wie möglich eine Platzhalter-UI an, die angibt, dass die App weiterhin Inhalte lädt. Führen Sie den Übergang von Platzhaltern zu Liveinhalten so durch, dass Benutzer sich nicht gestört fühlen. Ändern Sie z. B. nicht die Position der Inhalte unter dem Finger oder Mauszeiger des Benutzers, während von der App Liveinhalte geladen werden.
 
-**App-Start und-Fortsetzung**
+**Starten und Fortsetzen von Apps**
 
 -   Verzögern Sie den Begrüßungsbildschirm der App, und erweitern Sie diesen Begrüßungsbildschirm nur, wenn dies notwendig ist. Weitere Informationen finden Sie unter [Schaffen einer schnellen und flüssigen App-Starterfahrung](https://blogs.msdn.com/b/windowsappdev/archive/2012/05/21/creating-a-fast-and-fluid-app-launch-experience.aspx) und [Längere Anzeige des Begrüßungsbildschirms](https://docs.microsoft.com/windows/uwp/launch-resume/create-a-customized-splash-screen).
 -   Deaktivieren Sie Animationen, die direkt nach dem Schließen des Begrüßungsbildschirms erscheinen, da dies lediglich als Verlängerung des Startzeitraums der App angesehen wird.
@@ -165,19 +165,19 @@ Verwenden Sie diese Verfahren und Tools zum Testen, wie Ihre App gegenüber den 
 -   Führen Sie den Test für eine Vielzahl von Hardwarekonfigurationen durch, einschließlich All-in-One- und Desktop-PCs, Laptops, Ultrabooks und Tablets sowie anderer mobiler Geräte.
 -   Führen Sie die Tests für eine Vielzahl von Bildschirmgrößen durch. Bei breiteren Bildschirmen kann zwar mehr Inhalt angezeigt werden, die Darstellung dieses zusätzlichen Inhalts kann sich jedoch negativ auf die Leistung auswirken.
 -   Schließen Sie so viele Testvariablen wie möglich aus.
-    -   Deaktivieren Sie auf dem Testgerät die Hintergrund-Apps. Wählen Sie hierzu in Windows im Startmenü die Option **Einstellungen** &gt; **Personalisierungs** &gt; **Sperrbildschirm**aus. Wählen Sie jede aktive App aus, und wählen Sie dann **Keine**.
+    -   Deaktivieren Sie auf dem Testgerät die Hintergrund-Apps. Wählen dazu in Windows im Startmenü **Einstellungen** &gt; **Personalisierung** &gt; **Sperrbildschirm** aus. Wählen Sie jede aktive App aus, und wählen Sie dann **Keine**.
     -   Kompilieren Sie Ihre App in systemeigenen Code, indem Sie sie in der Releasekonfiguration erstellen, bevor sie auf dem Testgerät bereitgestellt wird.
     -   Um sicherzustellen, dass die automatische Wartung keinen Einfluss auf die Leistung des Testgeräts hat, lösen Sie es manuell aus und warten Sie, bis der Vorgang abgeschlossen ist. Suchen Sie in Windows im Startmenü nach **Sicherheit und Wartung**. Wählen Sie im Bereich **Wartung** unter **Automatische Wartung** die Option **Wartung starten** aus, und warten Sie, bis sich der Status **Wartung wird durchgeführt** ändert.
     -   Führen Sie die App mehrmals aus, um zufällige Testvariablen so gut es geht auszuschließen und dadurch konsistente Messungen zu ermöglichen.
 -   Führen Sie Tests zur verringerten Leistungsverfügbarkeit durch. Das Gerät der Benutzer weist möglicherweise eine deutlich geringere Leistung als das Entwicklungssystem auf. Windows wurde unter Berücksichtigung von Geräten mit niedrigem Stromverbrauch, z. B. mobile Geräte, konzipiert. Apps, die auf der Plattform ausgeführt werden, sollten sicherstellen, dass sie auch auf diesen Geräten ordnungsgemäß ausgeführt werden können. Sie können davon ausgehen, dass ein energiesparendes Gerät ungefähr viermal langsamer ist als ein Desktop-PC. Legen Sie Ihre Ziele entsprechend fest.
 -   Verwenden Sie eine Kombination von Tools wie Microsoft Visual Studio und Windows Performance Analyzer, um die App-Leistung zu messen. Visual Studio stellt eine Analyse bereit, die auf die App ausgerichtet ist, beispielsweise die Quellcodeverknüpfung. Windows Performance Analyzer bietet dagegen eine systemorientierte Analyse, beispielsweise die Bereitstellung von Systeminfos, Infos zu Touchmanipulationsereignissen sowie Infos zur Datenträger-E/A und Grafikprozessorauslastung (GPU). Beide Tools können Ablaufverfolgungsdateien sammeln und exportieren und freigegebene sowie Post-Mortem-Traces erneut öffnen.
--   Bevor Sie Ihre APP zur Zertifizierung an den Store übermitteln, müssen Sie die leistungsbezogenen Testfälle, die im Abschnitt "Leistungstests" der [Windows-zertifizierungskit-Tests](windows-app-certification-kit-tests.md) und im Abschnitt "Leistung und Stabilität" der [UWP-App-Testfälle](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10))beschrieben werden, in Ihre Testpläne integrieren.
+-   Bevor Sie Ihre App zur Zertifizierung an den Store übermitteln, sollten Sie die leistungsbezogenen Testfälle in Ihre Testpläne integrieren, so wie im Abschnitt „Leistungstests“ unter [Tests im Zertifizierungskit für Windows-Apps](windows-app-certification-kit-tests.md) und im Abschnitt „Leistung und Stabilität“ unter [Testfälle für UWP-Apps](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10)) beschrieben.
 
 Weitere Informationen finden Sie unter diesen Ressourcen und Tools zur Profilerstellung.
 
 -   [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
 -   [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
--   [Analysieren der Leistung mit den Visual Studio-Diagnosetools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)
+-   [Analysieren der Leistung mithilfe von Visual Studio-Diagnosetools](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)
 -   Die „//build/“-Sitzung [XAML-Leistung](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   Die „//build/“-Sitzung [Neue XAML-Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 

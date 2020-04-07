@@ -4,14 +4,14 @@ title: Betatests
 description: Betatests bieten Ihnen die Möglichkeit zum Verbessern Ihrer App anhand des Feedbacks von Personen außerhalb Ihres App-Entwicklungsteams, die die noch nicht freigegebene App auf ihren eigenen Geräten testen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eca388b37cc95803b7ecb94bc0b0b5b990f5de3
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57654105"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63798243"
 ---
 # <a name="beta-testing"></a>Betatests
 
@@ -32,7 +32,7 @@ Mit Betatests können Sie folgende Aktionen ausführen:
 -   Ihre App auf einer Vielzahl von Geräten testen
 -   Leistungsprobleme und andere Fehler aufdecken, die Sie möglicherweise andernfalls nicht gefunden haben
 -   Realistische Informationen zum Verbessern der Benutzerfreundlichkeit erhalten
--   Empfangen von Feedback ohne Auswirkungen auf die öffentliche Bewertungen in der Microsoft Store.
+-   Feedback ohne Auswirkungen auf die öffentlichen Bewertungen im Microsoft Store erhalten.
 
 ## <a name="when-to-beta-test"></a>Gründe für Betatests
 
@@ -40,7 +40,7 @@ Idealerweise führen Sie Betatests in der letzten Testphase durch, bevor Sie Ihr
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In [Partner Center](https://partner.microsoft.com/dashboard), können Sie beschränken Verteilung Ihrer apps an nur Ihre Tester, unabhängig davon, welche Betriebssysteme für Ihre app ausgerichtet ist. Es ist nicht erforderlich, eine separate Version der App mit separatem Namen und separater Paketidentität zu erstellen. Sie können Ihre Tests durchführen, dann eine neue Einreichung erstellen, wenn Sie dazu bereit sind, die App für alle Benutzer zur Verfügung zu stellen. (Selbstverständlich können Sie bei Bedarf auch eine separate App zum Testen erstellen. Stellen Sie in diesem Fall sicher, dass Sie ihr einen anderen als den endgültigen öffentlichen App-Namen zuzuweisen.)
+Im [Partner Center](https://partner.microsoft.com/dashboard) kannst du die Verteilung deiner Apps auf deine Tester beschränken, unabhängig davon, auf welche Betriebssysteme deine App ausgerichtet ist. Es ist nicht erforderlich, eine separate Version der App mit separatem Namen und separater Paketidentität zu erstellen. Sie können Ihre Tests durchführen, dann eine neue Einreichung erstellen, wenn Sie dazu bereit sind, die App für alle Benutzer zur Verfügung zu stellen. (Selbstverständlich können Sie bei Bedarf auch eine separate App zum Testen erstellen. Stellen Sie in diesem Fall sicher, dass Sie ihr einen anderen als den endgültigen öffentlichen App-Namen zuzuweisen.)
 
 Informationen zum Übermitteln Ihrer App an den Store für Betatests finden Sie unter [Betatests und zielgerichtete Verteilung](../publish/beta-testing-and-targeted-distribution.md).
 

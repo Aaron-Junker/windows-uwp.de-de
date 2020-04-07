@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0821ebaa300d6641cf4efe8f96f1ae8878877a88
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258135"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081572"
 ---
 # <a name="semantic-zoom"></a>Semantischer Zoom
 
@@ -39,7 +39,7 @@ Bei der Anzeige eines Adressbuchs kann der Benutzer beispielsweise schnell zum B
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
-Verwenden Sie das Steuerelement **SemanticZoom**, wenn Sie einen gruppierten Datensatz anzeigen müssen, der so groß ist, dass er auf einer oder zwei Seiten nicht ganz angezeigt werden kann.
+Verwende das Steuerelement **SemanticZoom**, wenn du einen gruppierten Datensatz anzeigen musst, der so groß ist, dass er auf einer oder zwei Seiten nicht ganz angezeigt werden kann.
 
 Der semantische Zoom ist nicht mit dem optischen Zoom zu verwechseln. Sie zeigen zwar das gleiche Interaktions- und Grundverhalten (d. h. sie zeigen je nach Zoomfaktor mehr oder weniger Details an), der optische Zoom betrifft jedoch die Größenanpassung für einen Inhaltsbereich oder ein Objekt wie etwa ein Foto. Informationen zu einem Steuerelement, das optisches Zooming durchführt, finden Sie im Artikel über das Steuerelement [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
@@ -48,7 +48,7 @@ Der semantische Zoom ist nicht mit dem optischen Zoom zu verwechseln. Sie zeigen
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/SemanticZoom">die App zu öffnen und SemanticZoom in Aktion zu sehen</a>.</p>
     <ul>

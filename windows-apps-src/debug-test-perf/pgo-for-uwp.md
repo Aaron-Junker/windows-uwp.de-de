@@ -1,12 +1,12 @@
 ---
 title: Ausführung der Profile Guided Optimization (PGO) auf Universal Windows Platform- (UWP) Apps
-description: Eine Schritt-für-Schritt-Anleitung zum Anwenden der Profil gesteuerten Optimierung (PGO) auf universelle Windows-Plattform-Apps (UWP).
+description: Eine schrittweise Anleitung zum Anwenden von Profile Guided Optimization (PGO) auf Universellen Windows-Plattform-Apps (UWP).
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
 ms.openlocfilehash: c784812d2e070aba0857cb84e5729b1426717b8d
 ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 10/30/2019
 ms.locfileid: "73062369"
@@ -17,7 +17,7 @@ Dieses Thema enthält eine schrittweise Anleitung zum Anwenden von Profile Guide
 
 Im folgenden finden eine grundlegende exemplarische Vorgehensweise für die Anwendung von PGO für die Standard-DirectX 11-App (UWP)-Vorlage mit Visual Studio 2015 Update 3.
  
-Die Screenshots in diesem Leitfaden basieren auf dem folgenden neuen Projekt: ![Dialog](images/pgo-001.png) "Neues Projekt".
+Die Bildschirmfotos in dieser Anleitung basieren auf dem folgenden neuen Projekt: ![Dialogfeld „Neues Projekt“](images/pgo-001.png)
 
 So wenden Sie PGO auf die DirectX 11-App-Vorlage an:
 
@@ -67,9 +67,9 @@ So wenden Sie PGO auf die DirectX 11-App-Vorlage an:
   pgosweep.exe App1.exe "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!1.pgc"
   ```
  
-  Die weitere Sammlung könnte auch `App1!CoreScenario.pgc`, `App1!UseCase5.pgc` u. dgl. sein. Wenn die .pgc-Dateien auf diese Weise benannt werden und sich zusammen mit der .pgd-Datei am Build-Speicherort befinden, werden Sie bei der Verknüpfung in Schritt 9 automatisch verknüpft.
+  Weitere Erfassungen können auch `App1!CoreScenario.pgc`, `App1!UseCase5.pgc` usw. sein. Wenn die .pgc-Dateien auf diese Weise benannt werden und sich zusammen mit der .pgd-Datei am Build-Speicherort befinden, werden Sie bei der Verknüpfung in Schritt 9 automatisch verknüpft.
  
-8. OPTIONAL: Standardmäßig werden alle .pgc-Dateien, die wie in Schritt 7 angegeben benannt und neben der .pgd-Datei abgelegt sind, bei der Verknüpfung zusammengeführt und gleich gewichtet, Sie können jedoch weiter steuern, wie bestimmte Durchläufe gewichtet werden. Zu diesem Zweck verwenden Sie das **pgomgr.exe**-Tool, das sich im selben Ordner befindet, in dem Sie zuerst die Kopie von `pgort140.dll` gefunden haben. Um beispielsweise den `CoreScenario`-Durchlauf mit der dreifachen Priorität anderer Durchläufe zusammenzuführen, kann der folgende Befehl verwendet werden:
+8. OPTIONAL: Standardmäßig werden alle .pgc-Dateien, die wie in Schritt 7 angegeben benannt und neben der .pgd-Datei abgelegt sind, bei der Verknüpfung zusammengeführt und gleich gewichtet, Sie können jedoch weiter steuern, wie bestimmte Durchläufe gewichtet werden. Zu diesem Zweck verwenden Sie das **pgomgr.exe**-Tool, das sich im selben Ordner befindet, in dem Sie zuerst die Kopie von `pgort140.dll` gefunden haben. Um beispielsweise den `CoreScenario`-Durchlauf mit der dreifachen Priorität anderer Durchläufe zusammenzuführen, kann der folgende Befehl verwendet werden:
  
  ```
  pgomgr.exe -merge:3 "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!CoreScenario.pgc" "C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd"
@@ -81,7 +81,7 @@ So wenden Sie PGO auf die DirectX 11-App-Vorlage an:
  
 10. Nachdem das Projekt erstellt wurde, ruft der Linker pgomgr.exe zur Zusammenführung aller `<PGDName>!*.pgc`-Datei in die .pgd-Datei mit dem Standard-Gewicht 1 auf, und die resultierende Anwendung wird auf der Grundlage der Profilierungsdaten optimiert.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 - [Leistung](performance-and-xaml-ui.md)
 
  

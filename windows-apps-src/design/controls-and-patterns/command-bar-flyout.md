@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f4d2443370d285322e94c4ca21e7d616f96794b7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257735"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081958"
 ---
 # <a name="command-bar-flyout"></a>Befehlsleisten-Flyout
 
@@ -25,17 +25,24 @@ ms.locfileid: "74257735"
 
 ![Erweitertes Befehlsleisten-Text-Flyout](images/command-bar-flyout-header.png)
 
-> Für CommandBarFlyout ist Windows 10 Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher oder die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) erforderlich.
-
-> - **Plattform-APIs:** [CommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton-Klasse](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton-Klasse](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator-Klasse](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **Windows-UI-Bibliotheks-APIs:** [CommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
-
 Wie [CommandBar](app-bars.md) verfügt auch CommandBarFlyout über die Eigenschaften **PrimaryCommands** und **SecondaryCommands**, über die Sie Befehle hinzufügen können. Sie können Befehle in einer oder beiden Sammlungen platzieren. Wann und wie die primären und sekundären Befehle angezeigt werden, hängt vom Anzeigemodus ab.
 
 Das Befehlsleisten-Flyout verfügt über zwei Anzeigemodi: *Reduziert* und *Erweitert*.
 
-- Im reduzierten Modus werden nur die primären Befehle angezeigt. Wenn das Befehlsleisten-Flyout über primäre und sekundäre Befehle verfügt, wird eine Schaltfläche zum Anzeigen weiterer Befehle angezeigt, die durch Auslassungspunkte \[•••\] dargestellt wird. Über diese erhält der Benutzer durch Wechseln in den erweiterten Modus Zugriff auf die sekundären Befehle.
+- Im reduzierten Modus werden nur die primären Befehle angezeigt. Wenn das Befehlsleisten-Flyout über primäre und sekundäre Befehle verfügt, wird eine Schaltfläche zum Anzeigen weiterer Befehle angezeigt, die durch Auslassungspunkte \[***\] dargestellt wird. Über diese erhält der Benutzer durch Wechseln in den erweiterten Modus Zugriff auf die sekundären Befehle.
 - Im erweiterten Modus werden die primären und die sekundären Befehle angezeigt. (Wenn das Steuerelement nur über sekundäre Elemente verfügt, werden diese ähnlich wie beim Steuerelement MenuFlyout angezeigt.)
+
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **CommandBarFlyout** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+>**Windows-UI-Bibliotheks-APIs:** [CommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>
+>**Plattform-APIs:** [CommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout), [AppBarButton-Klasse](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton-Klasse](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator-Klasse](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>
+> Für CommandBarFlyout ist Windows 10 Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher oder die [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) erforderlich.
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -56,7 +63,7 @@ Zum Anzeigen von Befehlen in einem Kontextmenü können Sie CommandBarFlyout ode
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/CommandBarFlyout">die App zu öffnen und CommandBarFlyout in Aktion zu sehen</a>.</p>
     <ul>
@@ -386,8 +393,8 @@ In der folgenden Tabelle sind die in TextCommandBarFlyout enthaltenen Befehle au
 
 | Befehl | Wird angezeigt ... |
 | ------- | -------- |
-| Bold | wenn das Steuerelement nicht schreibgeschützt ist (nur RichEditBox). |
-| Italic | wenn das Steuerelement nicht schreibgeschützt ist (nur RichEditBox). |
+| Fett | wenn das Steuerelement nicht schreibgeschützt ist (nur RichEditBox). |
+| Kursiv | wenn das Steuerelement nicht schreibgeschützt ist (nur RichEditBox). |
 | Underline | wenn das Steuerelement nicht schreibgeschützt ist (nur RichEditBox). |
 | Korrektur | wenn IsSpellCheckEnabled auf **true** festgelegt und Text mit Rechtschreibfehlern ausgewählt ist. |
 | Ausschneiden | wenn das Steuerelement nicht schreibgeschützt ist und Text ausgewählt ist. |
@@ -405,7 +412,7 @@ TextCommandBarFlyout kann nicht angepasst werden und wird von jedem Textsteuerel
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 - [Beispiel für XAML-Befehle](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>Verwandte Artikel

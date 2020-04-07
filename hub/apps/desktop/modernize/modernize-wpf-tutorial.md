@@ -1,6 +1,6 @@
 ---
-description: In diesem Tutorial wird veranschaulicht, wie Sie UWP-XAML-Benutzeroberflächen hinzufügen, msix-Pakete erstellen und andere moderne Komponenten in Ihre WPF-App integrieren.
-title: 'Tutorial: modernisieren einer WPF-App'
+description: In diesem Tutorial wird veranschaulicht, wie du UWP-XAML-Benutzeroberflächen hinzufügst, MSIX-Pakete erstellst und weitere moderne Komponenten in deine WPF-App integrierst.
+title: 'Tutorial: Modernisieren einer WPF-App'
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
@@ -10,120 +10,120 @@ ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
 ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/21/2020
 ms.locfileid: "77521284"
 ---
-# <a name="tutorial-modernize-a-wpf-app"></a>Tutorial: modernisieren einer WPF-App 
+# <a name="tutorial-modernize-a-wpf-app"></a>Tutorial: Modernisieren einer WPF-App 
 
-Es gibt viele Möglichkeiten, vorhandene Desktop-Apps zu [modernisieren](index.md) , indem die neuesten Windows-Features in den vorhandenen Quellcode integriert werden, anstatt die apps von Grund auf neu zu schreiben. In diesem Tutorial werden verschiedene Möglichkeiten zum modernisieren einer vorhandenen WPF-Branchen-App mithilfe der folgenden Features erläutert:
+Es gibt zahlreiche Möglichkeiten, vorhandene Desktop-Apps durch Integration der neuesten Windows-Features in den vorhandenen Quellcode zu [modernisieren](index.md), statt die Apps von Grund auf neu zu schreiben. In diesem Tutorial werden verschiedene der Möglichkeiten untersucht, um eine vorhandene WPF-Branchen-App unter Verwendung dieser Features zu modernisieren:
 
 * .NET Core 3
-* UWP-XAML-Steuerelemente mit XAML-Inseln
-* Adaptive Karten und Windows 10-Benachrichtigungen
+* UWP-XAML-Steuerelementen mit XAML Islands
+* Adaptive Karten und Windows 10-Benachrichtigungen
 * MSIX-Bereitstellung
 
-Dieses Lernprogramm erfordert die folgenden Entwicklungsfähigkeiten:
+Für dieses Tutorial sind die folgenden Entwicklungskenntnisse erforderlich:
 
-* Erfahren Sie, wie Sie Windows-Desktop-Apps mit WPF entwickeln.
-* Grundlegende Kenntnisse C# von und XAML.
-* Grundlegende Kenntnisse der UWP.
+* Erfahrung in der Entwicklung von Windows-Desktop-Apps mit WPF
+* Grundkenntnisse in C# und XAML
+* Grundkenntnisse in UWP
 
 ## <a name="overview"></a>Übersicht
 
-Dieses Tutorial enthält den Code für eine einfache WPF-Branchen-App mit dem Namen "" mit der Bezeichnung "" von "". Im fiktiven Szenario des Tutorials ist die Conto-Kosten eine interne APP, die von Managern von congeso Corporation verwendet wird, um die von ihren Berichten gesendeten Ausgaben nachzuverfolgen. Die Vorgesetzten sind nun mit Touchscreen-fähigen Geräten ausgestattet, und Sie möchten die APP für die kostenpflichtige app ohne Maus oder Tastatur verwenden. Leider ist die aktuelle Version der APP nicht Berührungs freundlich.
+In diesem Tutorial wird der Code für eine einfache WPF-Branchen-App namens „Contoso Expenses“ bereitgestellt. Im fiktionalen Szenario des Tutorials ist Contoso Expenses eine App, die von leitenden Mitarbeitern der Contoso Corporation verwendet wird, um die von den unterstellten Mitarbeitern eingereichten Spesen nachzuverfolgen. Die leitenden Mitarbeiter sind mit Touchgeräten ausgestattet und möchten die Contoso Expenses-App ohne Maus oder Tastatur verwenden. Leider unterstützt die aktuelle Version der App keine Touchfunktionalität.
 
-In diesem Fall möchte ich diese APP mit neuen Windows-Features modernisieren, damit Mitarbeiter kosteneffizientere Berichte erstellen können. Viele der Features können problemlos implementiert werden, indem eine neue UWP-App aufgebaut wird. Allerdings ist die vorhandene App komplex und ist das Ergebnis von vielen Jahren der Entwicklung durch verschiedene Teams. Daher ist es keine Option, Sie von Grund auf neu zu schreiben. Das Team sucht nach dem besten Ansatz zum Hinzufügen neuer Features zur vorhandenen CodeBase.
+Contoso möchte der bestehenden App neue Windows-Features hinzufügen, um die Benutzerfreundlichkeit beim Erstellen von Spesenberichten zu erhöhen. Viele der Features könnten durch das Entwickeln einer neuen UWP-App problemlos implementiert werden. Die vorhandene App ist jedoch komplex und das Ergebnis jahrelanger Arbeit durch verschiedene Teams. Deshalb stellt eine von Grund auf mit neuen Technologie entwickelte App keine Option dar. Das Team sucht nach dem besten Ansatz, der vorhandenen Codebasis neue Features hinzuzufügen.
 
-Zu Beginn des Tutorials hat die Kosten für die Zusammenarbeit von "4.7.2" auf den .NET Framework und verwendet die folgenden Bibliotheken von Drittanbietern:
+Zu Beginn des Tutorials ist die Contoso Expenses-App für .NET Framework 4.7.2 konzipiert und verwendet die folgenden Drittanbieterbibliotheken:
 
-* MVVM Light, eine grundlegende Implementierung für das MVVM-Muster.
-* Unity, ein Container für die Abhängigkeitsinjektion.
-* Litedb, eine eingebettete nosql-Lösung zum Speichern der Daten.
-* Bogus, ein Tool zum Generieren gefälschter Daten.
+* MVVM Light – eine Basisimplementierung für das MVVM-Muster.
+* Unity – ein Container für die Abhängigkeitseinschleusung.
+* LiteDb – eine eingebettete NoSQL-Projektmappe zum Speichern der Daten.
+* Bogus – ein Tool zum Generieren von Pseudodaten.
 
-In diesem Tutorial verbessern Sie die Kosten für die Zusammenarbeit mit den neuen Windows-Features:
+Im Tutorial erweiterst du die Contoso Expenses-App mit neuen Windows-Features:
 
-* Migrieren einer vorhandenen WPF-App zu .net Core 3,0. Dadurch werden in Zukunft neue und wichtige Szenarien geöffnet.
-* Verwenden Sie XAML-Inseln, um die umschließbaren Steuerelemente **InkCanvas** und **mapcontrol** im Windows Community Toolkit zu hosten.
-* Verwenden Sie XAML-Inseln zum Hosten beliebiger Standard-UWP-XAML-Steuerelemente (in diesem Fall eine **calendardview**).
-* Integrieren Sie Adaptive Karten und Windows 10-Benachrichtigungen in die app.
-* Packen Sie die APP mit msix, und richten Sie eine CI/CD-Pipeline für Azure devops ein, damit Sie automatisch neue Versionen der APP an Tester und Benutzer übermitteln können, sobald Sie verfügbar ist.
+* Migrieren einer vorhandenen WPF-App zu .NET Core 3.0, um künftig neue und wichtige Szenarien unterstützen zu können
+* Verwenden von XAML Islands zum Hosten der umschlossenen Steuerelemente **InkCanvas** und **MapControl**, die vom Windows-Community-Toolkit bereitgestellt werden
+* Verwenden von XAML Islands zum Hosten eines beliebigen UWP-XAML-Standardsteuerelements (in diesem Fall **CalendardView**)
+* Integrieren adaptiver Karten und Windows 10-Benachrichtigungen in die App
+* Packen der App mit MSIX und Einrichten einer CI/CD-Pipeline in Azure DevOps, um bei Verfügbarkeit automatisch neue App-Versionen für Tester und Benutzer bereitzustellen
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
-Zum Ausführen dieses Tutorials müssen auf dem Entwicklungs Computer die folgenden Komponenten installiert sein:
+Um dieses Tutorial zu bearbeiten, müssen auf deinem Entwicklungscomputer die folgenden erforderlichen Komponenten installiert sein:
 
-* Windows 10, Version 1903 (Build 18362) oder eine höhere Version.
-* [Visual Studio 2019](https://www.visualstudio.com).
-* [.Net Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0) (installieren Sie die neueste Version).
+* Windows 10, Version 1903 (Build 18362) oder eine höhere Version
+* [Visual Studio 2019](https://www.visualstudio.com)
+* [.NET Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0) (installiere die aktuelle Version)
 
-Stellen Sie sicher, dass Sie die folgenden Workloads und optionalen Features mit Visual Studio 2019 installieren:
+Installiere die folgenden Workloads und optionalen Features mit Visual Studio 2019:
 
-* .Net-Desktop Entwicklung
+* .NET-Desktopentwicklung
 * Entwicklung für die universelle Windows-Plattform
-* Windows 10 SDK (10.0.18362.0 oder höher)
+* Windows 10 SDK (10.0.18362.0 oder höher)
 
-## <a name="get-the-contoso-expenses-sample-app"></a>Holen Sie sich die Beispiel-App für die kostenpflichtige app
+## <a name="get-the-contoso-expenses-sample-app"></a>Herunterladen der Contoso Expenses-Beispiel-App
 
-Bevor Sie mit dem Tutorial beginnen, laden Sie den Quellcode für die APP für die kostenpflichtige app-Ausgabe herunter, und stellen Sie sicher, dass Sie den Code in Visual Studio erstellen können.
+Bevor du mit dem Tutorial beginnst, lade dir den Quellcode für die Contoso Expenses-App herunter, und stelle sicher, dass du den Code in Visual Studio kompilieren kannst.
 
-1. Laden Sie den Quellcode der APP von der Registerkarte **Releases** im anwendungsrepository " [appconsult winappsmodernisierungsrepository](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)" herunter. Der direkte Link ist [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
-2. Öffnen Sie die ZIP-Datei, und extrahieren Sie den gesamten Inhalt in das Stammverzeichnis des Laufwerks **C:\\** . Es wird ein Ordner mit dem Namen **c:\winappsmodernizationworkshop**erstellt.
-3. Öffnen Sie Visual Studio 2019, und doppelklicken Sie auf die Datei **c:\winappsmodernizationworkshop\lab\exercise1\01-start\contosoexpenses\contosoexpenses.sln** , um die Projekt Mappe zu öffnen.
-4. Stellen Sie sicher, dass Sie das WPF-Projekt für die Zusammenarbeit **mit dem Projekt** von "Build" erstellen, ausführen und Debuggen können.
+1. Lade den Quellcode für die App über die Registerkarte **Releases** des [AppConsult-WinAppsModernizationWorkshop-Repositorys](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop) herunter. Der direkte Link lautet [https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases).
+2. Öffne die ZIP-Datei, und extrahiere sämtliche Inhalte in den Stamm deines **C:\\** -Laufwerks. Es wird ein Ordner namens **C:\WinAppsModernizationWorkshop** erstellt.
+3. Öffne Visual Studio 2019, und doppelklicke auf die Datei **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln**, um die Projektmappe zu öffnen.
+4. Stelle sicher, dass du das Contoso Expenses-WPF-Projekt kompilieren, ausführen und debuggen kannst, indem du auf die Schaltfläche **Starten** klickst oder STRG+F5 drückst.
 
 ## <a name="get-started"></a>Erste Schritte
 
-Nachdem Sie den Quellcode für die Beispiel-App für die Zusammenarbeit mit der kostenpflichtigen Seite erstellt haben und Sie sich vergewissern können, dass Sie ihn in Visual Studio erstellen können, können Sie das Tutorial starten:
+Nachdem du nun über den Quellcode für die Contoso Expenses-Beispiel-App verfügst und bestätigt hast, dass eine Kompilierung in Visual Studio möglich ist, kannst du mit dem Tutorial beginnen:
 
-* [Teil 1: Migrieren der apptoso-Ausgaben-APP zu .net Core 3](modernize-wpf-tutorial-1.md)
-* [Teil 2: Hinzufügen eines UWP InkCanvas-Steuer Elements mithilfe von XAML-Inseln](modernize-wpf-tutorial-2.md)
-* [Teil 3: Hinzufügen eines UWP CalendarView-Steuer Elements mithilfe von XAML-Inseln](modernize-wpf-tutorial-3.md)
-* [Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und-Benachrichtigungen](modernize-wpf-tutorial-4.md)
-* [Teil 5: Verpacken und Bereitstellen mit msix](modernize-wpf-tutorial-5.md)
+* [Teil 1: Migrieren der Contoso Expenses-App zu .NET Core 3](modernize-wpf-tutorial-1.md)
+* [Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands](modernize-wpf-tutorial-2.md)
+* [Teil 3: Hinzufügen eines UWP-CalendarView-Steuerelements mithilfe von XAML Islands](modernize-wpf-tutorial-3.md)
+* [Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und -Benachrichtigungen](modernize-wpf-tutorial-4.md)
+* [Teil 5: Packen und Bereitstellen mit MSIX](modernize-wpf-tutorial-5.md)
 
-## <a name="important-concepts"></a>Wichtige Konzepte
+## <a name="important-concepts"></a>Liste wichtiger Konzepte
 
-Die folgenden Abschnitte enthalten Hintergrundinformationen zu einigen der wichtigsten Konzepte, die in diesem Tutorial erläutert werden. Wenn Sie mit diesen Konzepten bereits vertraut sind, können Sie diesen Abschnitt überspringen.
+Die folgenden Abschnitte enthalten Hintergrundinformationen zu einigen der wichtigsten Konzepte, die in diesem Tutorial erläutert werden. Wenn du bereits mit diesen Konzepten vertraut bist, kannst du diesen Abschnitt überspringen.
 
 ### <a name="universal-windows-platform-uwp"></a>Universelle Windows-Plattform (UWP)
 
-In Windows 8 hat Microsoft ein neues Framework namens "Windows-Runtime (WinRT)" eingeführt. Im Gegensatz zum .NET Framework ist WinRT eine native Ebene von APIs, die direkt für apps verfügbar gemacht werden. WinRT führte auch sprach Projektionen ein, bei denen es sich um Ebenen handelt, die oberhalb der Laufzeit hinzugefügt wurden, um Entwicklern die C# Interaktion mit der Anwendung zu C++ermöglichen, und zwar zusätzlich zu. Projektionen ermöglichen Entwicklern das Erstellen von apps, die auf WinRT basieren und dieselben C# und XAML-Kenntnisse nutzen, die Sie beim Erstellen von apps mit dem .NET Framework erworben haben. 
+In Windows 8 hat Microsoft ein neues Framework namens Windows-Runtime (WinRT) eingeführt. Im Gegensatz zum .NET Framework ist WinRT eine native Ebene mit APIs, die Apps direkt verfügbar gemacht werden. Mit WinRT wurden auch Sprachprojektionen eingeführt, bei denen es sich um Ebenen handelt, die zusätzlich zur Runtime hinzugefügt werden, damit Entwickler neben C++ auch mit Sprachen wie C# und JavaScript interagieren können. Projektionen ermöglichen es Entwicklern, Anwendungen basierend auf WinRT zu erstellen und dabei das C#- und XAML-Wissen zu nutzen, das sie bei der Entwicklung mit dem .NET Framework erworben haben. 
 
-In Windows 10 hat Microsoft die [universelle Windows-Plattform (UWP)](/windows/uwp/get-started/universal-application-platform-guide)eingeführt, die auf WinRT basiert. Das wichtigste Feature von UWP ist, dass es einen gemeinsamen Satz von APIs für jede Geräteplattform bietet: unabhängig davon, ob die APP auf einem Desktop, auf einer Xbox One oder in einem hololens ausgeführt wird, können Sie dieselben APIs verwenden.
+In Windows 10 hat Microsoft die [universelle Windows-Plattform (Universal Windows Platform, UWP)](/windows/uwp/get-started/universal-application-platform-guide) eingeführt, die auf WinRT basiert. Das wichtigste Merkmal von UWP ist, dass es einen gemeinsamen Satz von APIs für alle Geräteplattformen bietet: Unabhängig davon, ob die App auf einem Desktop, einer Xbox One oder einem HoloLens-Gerät ausgeführt wird, können die gleichen APIs genutzt werden.
 
-In Zukunft werden die meisten neuen Features von Windows 10 über WinRT-APIs verfügbar gemacht, einschließlich Features wie Timeline, Project Rom und Windows Hello.
+In Zukunft werden die meisten neuen Windows 10-Features über WinRT-APIs verfügbar gemacht, darunter beispielsweise Zeitachse, Project Rome und Windows Hello.
 
-### <a name="msix-packaging"></a>Msix-Paket Erstellung
+### <a name="msix-packaging"></a>MSIX-Paketerstellung
 
-[Msix](/windows/msix/) ist das moderne Paket Erstellungs Modell für Windows-apps. Msix unterstützt sowohl UWP-Apps als auch Desktop-Apps, die mithilfe von Technologien wie Win32, WPF, Windows Forms, Java, Elektronen und mehr aufgebaut werden. Wenn Sie eine Desktop-app in einem msix-Paket Verpacken, können Sie die APP auf dem Microsoft Store veröffentlichen. Ihre Desktop-App erhält bei der Installation auch die Paket Identität, sodass Ihre Desktop-App einen breiteren Satz von WinRT-APIs verwenden kann.
+[MSIX](/windows/msix/) ist das moderne Paketerstellungsmodell für Windows-Apps. MSIX unterstützt sowohl UWP-Apps als auch die Erstellung von Desktop-Apps mit Technologien wie Win32, WPF, Windows Forms, Java, Electron und anderen. Wenn du eine Desktop-App als MSIX-Paket packst, kannst du deine App im Microsoft Store veröffentlichen. Deine Desktop-App kann bei der Installation auch eine Paketidentität abrufen, wodurch sie eine größere Anzahl von WinRT-APIs nutzen kann.
 
-Weitere Informationen finden Sie in den folgenden Artikeln:
+Weitere Informationen findest du in diesen Artikeln:
 
-* [Verpacken von Desktop Anwendungen](/windows/uwp/porting/desktop-to-uwp-root)
-* [Im Hintergrund ihrer gepackten Desktop Anwendung](/windows/uwp/porting/desktop-to-uwp-behind-the-scenes)
+* [Packen von Desktopanwendungen](/windows/uwp/porting/desktop-to-uwp-root)
+* [Hintergrundinformationen zu deiner gepackten Desktopanwendung](/windows/uwp/porting/desktop-to-uwp-behind-the-scenes)
 
-### <a name="xaml-islands"></a>XAML-Inseln
+### <a name="xaml-islands"></a>XAML Islands
 
-Ab Windows 10, Version 1903, können Sie UWP-Steuerelemente in nicht-UWP-Desktop-Apps mithilfe eines Features namens *XAML-Inseln*hosten. Diese Funktion ermöglicht es Ihnen, das Aussehen, das Gefühl und die Funktionalität Ihrer vorhandenen Desktop-Apps mit den neuesten Windows 10-Benutzeroberflächen Features zu verbessern, die nur über UWP-Steuerelemente zur Verfügung stehen. Dies bedeutet, dass Sie UWP-Funktionen wie z. b. Windows Ink und Steuerelemente verwenden können, die das fließende Entwurfs System in Ihren vorhandenen C++ WPF-, Windows Forms-und Win32-apps unterstützen.
+Ab Windows 10, Version 1903, kannst du mithilfe eines Features namens *XAML Islands* UWP-Steuerelemente auch in anderen als UWP-Desktop-Apps hosten. Mit diesem Feature kannst du Aussehen, Verhalten und Funktionalität deiner vorhandenen Desktop-Apps mit den aktuellen Features der Windows 10-Benutzeroberfläche erweitern, die nur in Form von UWP-Steuerelementen verfügbar sind. Dies bedeutet, dass du UWP-Features, wie etwa Windows Ink, und Steuerelemente mit Unterstützung des Fluent Design-Systems in deinen vorhandenen WPF-, Windows Forms- und C++-Win32-Apps nutzen kannst.
 
-Weitere Informationen finden Sie unter [UWP-Steuerelemente in Desktop Anwendungen (XAML-Inseln)](/windows/uwp/xaml-platform/xaml-host-controls). Dieses Tutorial führt Sie durch den Prozess der Verwendung von zwei verschiedenen Typen von XAML-Steuerelementen:
+Weitere Informationen findest du unter [Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls). Dieses Tutorial führt dich durch die Vorgehensweise zur Verwendung von zwei verschiedenen Arten von XAML Islands-Steuerelementen:
 
-* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) und [mapcontrol](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) im Windows Community Toolkit. Diese WPF-Steuerelemente wrappen die-Schnittstelle und die Funktionalität der entsprechenden UWP-Steuerelemente und können wie jedes andere WPF-Steuerelement im Visual Studio-Designer verwendet werden.
+* Die [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)- und [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol)-Steuerelemente im Windows-Community-Toolkit. Diese WPF-Steuerelemente kapseln Schnittstelle und Funktionalität der entsprechenden UWP-Steuerelemente und können wie jedes andere WPF-Steuerelement im Visual Studio-Designer verwendet werden.
 
-* Das UWP- [Kalenderansicht](/windows/uwp/design/controls-and-patterns/calendar-view) -Steuerelement. Dabei handelt es sich um ein Standardmäßiges UWP-Steuerelement, das Sie mit dem [windowsxamlhost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) -Steuerelement im Windows Community Toolkit hosten werden.
+* Das UWP-Steuerelement [CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view). Hierbei handelt es sich um ein UWP-Standardsteuerelement, das du mithilfe des [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements im Windows-Community-Toolkit hostest.
 
 ### <a name="net-core-3"></a>.NET Core 3
 
-[.Net Core](https://docs.microsoft.com/dotnet/core/) ist ein Open-Source-Framework, das eine plattformübergreifende, einfache und leicht erweiterbare Version der vollständigen .NET Framework implementiert. Im Vergleich zum vollständigen .NET Framework ist die .net Core-Startzeit viel schneller, und viele der APIs wurden optimiert.
+[.NET Core](https://docs.microsoft.com/dotnet/core/) ist ein Open Source-Framework, das eine plattformübergreifende, schlanke und leicht zu erweiternde Version des vollständigen .NET Framework implementiert. Im Vergleich zum vollständigen .NET Framework ist die Startzeit von .NET Core deutlich kürzer, und viele der APIs wurden optimiert.
 
-In den ersten Releases von .net Core war der Schwerpunkt auf der Unterstützung von Web-oder Back-End-apps. Mit .net Core können Sie problemlos skalierbare Web-Apps oder APIs erstellen, die unter Windows, Linux oder in microservice-Architekturen wie docker-Containern gehostet werden können.
+Während der ersten Releases lag der Schwerpunkt von .NET Core auf der Unterstützung von Web- oder Back-End-Apps. Mit .NET Core kannst du problemlos skalierbare Web-Apps oder APIs erstellen, die unter Windows, Linux oder in Microservice-Architekturen wie Docker-Containern gehostet werden können.
 
-.Net Core 3 ist die neueste Version von .net Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Sie können neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 bestimmt sind.
+.NET Core 3 ist die neueste Version von .NET Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Du kannst ab sofort neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 entwickelt wurden.
 
 > [!NOTE]
-> WPF und Windows Forms werden nicht plattformübergreifend entwickelt, und Sie können keine WPF-oder-Windows Forms unter Linux und MacOS ausführen. Die Benutzeroberflächen Komponenten von WPF und Windows Forms sind weiterhin vom Windows-Renderingsystem abhängig.
+> WPF und Windows Forms sind nicht plattformübergreifend, und es ist nicht möglich, WPF oder Windows Forms unter Linux und macOS auszuführen. Die Benutzeroberflächenkomponenten von WPF und Windows Forms hängen weiterhin vom Windows-Renderingsystem ab.
 
-Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+Weitere Informationen findest du unter [Neuerungen in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).

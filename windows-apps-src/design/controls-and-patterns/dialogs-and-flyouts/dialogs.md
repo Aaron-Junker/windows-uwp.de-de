@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d5014532be613e8284a1e2d6496f71b9f2b8e892
-ms.sourcegitcommit: 5002836b3c8d3e0f2970da1333ec8f42da861ae3
+ms.openlocfilehash: 00c51fed9f2d327afe6f493891b2744243501ea1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071252"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080962"
 ---
 # <a name="dialog-controls"></a>Dialogfeld-Steuerelemente
 
@@ -25,21 +25,26 @@ Dialogfeld-Steuerelemente sind modale Benutzeroberflächenüberlagerungen, die k
 
 ![Beispiel für ein Dialogfeld](../images/dialogs/dialog_RS2_delete_file.png)
 
+**Abrufen der Windows-UI-Bibliothek**
 
-> **Wichtige APIs:** [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+|  |  |
+| - | - |
+| ![WinUI-Logo](../images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
 Verwenden Sie Dialogfelder, um Benutzern wichtige Informationen mitzuteilen oder deren Bestätigung bzw. zusätzliche Informationen anzufordern, bevor eine Aktion abgeschlossen werden kann.
 
-Empfehlungen dazu, wann ein Dialogfeld und wann ein Flyout (ein ähnliches Steuerelement) verwendet werden sollte, finden Sie unter [Dialogfelder und Flyouts](index.md). 
+Empfehlungen dazu, wann ein Dialogfeld und wann ein Flyout (ein ähnliches Steuerelement) verwendet werden sollte, finden Sie unter [Dialogfelder und Flyouts](index.md).
 
 ## <a name="examples"></a>Beispiele
 
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> oder <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in Aktion zu sehen.</p>
     <ul>
@@ -66,7 +71,7 @@ Empfehlungen dazu, wann ein Dialogfeld und wann ein Flyout (ein ähnliches Steue
     - Stellen Sie sicher, dass der Text der Aktionsschaltflächen kurz ist. Kurze Anweisungen ermöglichen dem Benutzer, eine Entscheidung schnell und zuverlässig zu treffen.
     - Zusätzlich zur sicheren, nicht-destruktiven Aktion können Sie dem Benutzer optional eine oder zwei Aktionsschaltflächen anzeigen, die im Zusammenhang mit der Hauptanweisung stehen. Diese „bestätigenden“ Aktionsschaltflächen unterstreichen den Hauptgrund des Dialogfelds. Verwenden Sie die PrimaryButton- und SecondaryButton-APIs, um diese „bestätigenden“ Aktionen hinzufügen.
     - Die „bestätigenden“ Aktionsschaltflächen sollten als die am weitesten links stehenden Schaltflächen angezeigt werden. Die sichere, nicht-destruktive Aktion sollte als die am weitesten rechts stehende Schaltfläche angezeigt werden.
-    - Sie können optional eine der drei Schaltflächen als Standardschaltfläche des Dialogfelds festlegen. Verwenden Sie die DefaultButton-API, um eine der Schaltflächen abzugrenzen.  
+    - Sie können optional eine der drei Schaltflächen als Standardschaltfläche des Dialogfelds festlegen. Verwenden Sie die DefaultButton-API, um eine der Schaltflächen abzugrenzen.
 -   Verwenden Sie Dialogfelder nicht für kontextbezogene Fehler, die sich auf eine bestimmte Stelle auf der Seite beziehen, beispielsweise Validierungsfehler (wie in Kennwortfeldern). Verwenden Sie die Canvas der App selbst zum Anzeigen von Inlinefehlern.
 - Verwenden Sie die [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), um Ihre Dialogfeldumgebung zu erstellen. Verwenden Sie nicht die veraltete MessageDialog-API.
 
@@ -212,7 +217,7 @@ Sie können optional eine der drei Schaltflächen als Standardschaltfläche fest
 - die Schaltfläche auf die EINGABETASTE automatisch reagiert
     - Wenn der Benutzer auf der Tastatur die EINGABETASTE drückt, wird der mit der Standardschaltfläche verknüpfte Click-Handler ausgelöst und „ContentDialogResult“ gibt den mit der Standardschaltfläche verknüpften Wert zurück.
     - Hat der Benutzer den Tastaturfokus auf ein Steuerelement gelegt, das für die EINGABETASTE zuständig ist, reagiert die Standardschaltfläche nicht, wenn diese Taste gedrückt wird.
-- die Schaltfläche den Fokus automatisch erhält, wenn das Dialogfeld geöffnet wird – es sei denn, der Inhalt des Dialogfelds enthält eine fokussierbare UI
+- Die Schaltfläche erhält den Fokus automatisch, wenn das Dialogfeld geöffnet wird – es sei denn, der Inhalt des Dialogfelds enthält eine fokussierbare Benutzeroberfläche.
 
 Verwenden Sie die „ContentDialog.DefaultButton“-Eigenschaft, um die Standardschaltfläche anzugeben. Standardmäßig wird keine Standardschaltfläche festgelegt.
 
@@ -236,8 +241,8 @@ private async void DisplaySubscribeDialog()
 ```
 
 ## <a name="confirmation-dialogs-okcancel"></a>Bestätigungsdialogfelder (OK/Abbrechen)
-In einem Bestätigungsdialogfeld können Benutzer bestätigen, dass sie eine Aktion ausführen möchten. Sie können die Aktion bestätigen oder den Vorgang abbrechen.  
-Ein typisches Bestätigungsdialogfeld verfügt über zwei Schaltflächen: eine Schaltfläche zur Bestätigung („OK“) und eine Schaltfläche zum Abbrechen.  
+In einem Bestätigungsdialogfeld können Benutzer bestätigen, dass sie eine Aktion ausführen möchten. Sie können die Aktion bestätigen oder den Vorgang abbrechen.
+Ein typisches Bestätigungsdialogfeld verfügt über zwei Schaltflächen: eine Schaltfläche zur Bestätigung („OK“) und eine Schaltfläche zum Abbrechen.
 
 <ul>
     <li>

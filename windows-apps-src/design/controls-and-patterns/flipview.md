@@ -11,21 +11,24 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6031878b9189ca3794e2a9c68c85b76e5d21a7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ef17fdc69f7a9f25831c5c17419768ff32874f80
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257441"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080940"
 ---
 # <a name="flip-view"></a>Flip-Ansicht
 
- 
-
 Verwenden Sie eine Flip-Ansicht zum Durchsuchen von Bildern oder anderen Elementen in einer Sammlung, z. B. von Fotos in einem Album oder von Elementen auf einer Seite mit Produktdetails, wobei jeweils ein Bild gescannt wird. Bei Geräten mit Touchscreen erfolgt die Navigation durch die Sammlung mit einer Wischbewegung über ein Element. Bei Verwendung mit einer Maus werden beim Zeigen mit der Maus Navigationsschaltflächen angezeigt. Bei Verwendung einer Tastatur erfolgt die Navigation durch die Sammlung mithilfe der Pfeiltasten.
 
-> **Wichtige APIs:** [Klasse „FlipView“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview), [Eigenschaft „ItemsSource“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Eigenschaft „ItemTemplate“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+**Abrufen der Windows-UI-Bibliothek**
 
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [Klasse „FlipView“](/uwp/api/windows.ui.xaml.controls.flipview), [Eigenschaft „ItemsSource“](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Eigenschaft „ItemTemplate“](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -36,7 +39,7 @@ Die Flip-Ansicht ist zum Durchblättern von Bildern in kleinen bis mittelgroßen
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Falls die App <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> installiert ist, klicke <a href="xamlcontrolsgallery:/item/FlipView">hier</a>, um die App zu öffnen und „FlipView“ in Aktion zu sehen.</p>
     <ul>

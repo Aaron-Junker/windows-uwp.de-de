@@ -1,24 +1,24 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: Bewährte Methoden für die Startleistung der App
+title: Bewährte Methoden für die Leistung Ihrer App beim Starten
 description: Erstellen Sie UWP-Apps (Universelle Windows-Plattform) mit optimalen Startzeiten, indem Sie die Vorgehensweise bei Start und Aktivierung optimieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254686"
 ---
-# <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Startleistung der App
+# <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Leistung Ihrer App beim Starten
 
 
 Erstellen Sie UWP-Apps (Universelle Windows-Plattform) mit optimalen Startzeiten, indem Sie die Vorgehensweise bei Start und Aktivierung optimieren.
 
-## <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Startleistung der App
+## <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Leistung Ihrer App beim Starten
 
 Benutzer nehmen die Schnelligkeit (oder die Langsamkeit) einer App teilweise auch anhand des Umstands wahr, wie lange der Start der App dauert. Für die Zwecke dieses Themas legen wir Folgendes fest: Die Startzeit einer App beginnt, wenn der Benutzer die Anwendung startet, und sie endet, wenn der Benutzer auf sinnvolle Weise mit der App interagieren kann. Dieser Abschnitt enthält Vorschläge, wie Sie beim Starten Ihrer App eine bessere Leistung erzielen können.
 
@@ -32,7 +32,7 @@ Sie sollten die Messungen natürlich so durchführen, dass die Messergebnisse de
 
 Im folgenden Verfahren wird beschrieben, wie Sie „Ngen.exe“ zum Vorkompilieren Ihrer App ausführen.
 
-**So führen Sie "ngen. exe" aus**
+**So führst du „Ngen.exe“ aus**
 
 1.  Führen Sie Ihre App mindestens einmal aus, um sicherzustellen, dass Sie von „Ngen.exe“ erkannt wird.
 2.  Öffnen Sie die **Aufgabenplanung**, indem Sie eine der folgenden Aktionen ausführen:
@@ -54,7 +54,7 @@ Wenn Sie Ihre App erneut kompilieren, wird das systemeigene Bild nicht mehr verw
 
 ### <a name="defer-work-as-long-as-possible"></a>Verzögern Sie die Arbeit möglichst lange
 
-Um die Startzeit Ihrer App zu verbessern, führen Sie nur die Arbeit aus, die unbedingt erforderlich ist, damit der Benutzer die Interaktion mit der App beginnen kann. Dies kann besonders hilfreich sein, wenn Sie das Laden zusätzlicher Assemblys verzögern können. Die Common Language Runtime (CLR) lädt eine Assembly, wenn sie das erste Mal verwendet wird. Wenn Sie die Anzahl der geladenen Assemblys minimieren können, können Sie möglicherweise die Startzeit Ihrer App beschleunigen und ihren Speicherverbrauch optimieren.
+Um die Startzeit Ihrer App zu verbessern, führst du nur die Arbeit aus, die unbedingt erforderlich ist, damit der Benutzer die Interaktion mit der App beginnen kann. Dies kann besonders hilfreich sein, wenn Sie das Laden zusätzlicher Assemblys verzögern können. Die Common Language Runtime (CLR) lädt eine Assembly, wenn sie das erste Mal verwendet wird. Wenn Sie die Anzahl der geladenen Assemblys minimieren können, können Sie möglicherweise die Startzeit Ihrer App beschleunigen und ihren Speicherverbrauch optimieren.
 
 ### <a name="do-long-running-work-independently"></a>Separates Erledigen langer Abläufe
 
@@ -357,10 +357,10 @@ Das PageStackEntry-Element enthält auch den Parameter, der an die Frame.Navigat
 
 Daher ist es ratsam, die Navigationsparameter klein zu halten und die Größe des BackStack-Elements zu beschränken. Das BackStack-Element ist ein standardmäßiger Vektor (IList in C#, Platform::Vector in C++/CX) und kann daher gekürzt werden, indem einfach Einträge entfernt werden.
 
-**Zwischenspeichern von Seiten**. Wenn Sie mit der Frame.Navigate-Methode auf eine Seite navigieren, wird standardmäßig eine neue Instanz der Seite instanziiert. Wenn Sie mit Frame.GoBack dann wieder zurück auf die vorherige Seite navigieren, wird analog dazu eine neue Instanz der vorherigen Seite zugeordnet.
+**Zwischenspeichern von Seiten**: Wenn Sie mit der Frame.Navigate-Methode auf eine Seite navigieren, wird standardmäßig eine neue Instanz der Seite instanziiert. Wenn Sie mit Frame.GoBack dann wieder zurück auf die vorherige Seite navigieren, wird analog dazu eine neue Instanz der vorherigen Seite zugeordnet.
 
 „Frame“ verfügt aber über die Möglichkeit einer optionalen Zwischenspeicherung von Seiten, mit der diese Instanziierungen vermieden werden können. Verwenden Sie die Page.NavigationCacheMode-Eigenschaft, um eine Seite in den Cache einzufügen. Wenn Sie diesen Modus auf „Required“ festlegen, wird das Zwischenspeichern der Seite erzwungen. Bei der Einstellung „Enabled“ ist die Zwischenspeicherung zulässig. Standardmäßig beträgt die Cachegröße zehn Seiten, aber dies kann mit der Frame.CacheSize-Eigenschaft überschrieben werden. Alle Seiten mit der Einstellung „Required“ werden zwischengespeichert, und wenn weniger Seiten als mit „CacheSize Required“ festgelegt vorhanden sind, können auch Seiten mit der Einstellung „Enabled“ zwischengespeichert werden.
 
 Das Zwischenspeichern kann zu einer Verbesserung der Leistung beitragen, indem Instanziierungen vermieden werden. So wird die gesamte Navigationsleistung verbessert. Das Zwischenspeichern kann sich auch negativ auf die Leistung auswirken, indem zu viel zwischengespeichert und dadurch der Arbeitssatz beeinträchtigt wird.
 
-Aus diesem Grund ist sollten Sie das Zwischenspeichern von Seiten so einzusetzen, wie es für Ihre Anwendung am besten geeignet ist. Stellen Sie sich beispielsweise vor, dass Sie über eine App verfügen, bei der eine Liste mit Elementen in einem Frame angezeigt wird. Wenn Sie auf ein Element tippen, wird für den Frame die Navigation auf eine Detailseite des Elements durchgeführt. Für die Seite mit der Liste empfiehlt sich normalerweise eine Zwischenspeicherung. Falls die Detailseite für alle Elemente gleich ist, kann sie auch zwischengespeichert werden. Wenn die Detailseite eher abwechslungsreich gestaltet ist, kann es besser sein, sie nicht zwischenzuspeichern.
+Aus diesem Grund solltest du das Zwischenspeichern von Seiten so einsetzen, wie es für deine Anwendung am besten geeignet ist. Stellen Sie sich beispielsweise vor, dass Sie über eine App verfügen, bei der eine Liste mit Elementen in einem Frame angezeigt wird. Wenn Sie auf ein Element tippen, wird für den Frame die Navigation auf eine Detailseite des Elements durchgeführt. Für die Seite mit der Liste empfiehlt sich normalerweise eine Zwischenspeicherung. Falls die Detailseite für alle Elemente gleich ist, kann sie auch zwischengespeichert werden. Wenn die Detailseite eher abwechslungsreich gestaltet ist, kann es besser sein, sie nicht zwischenzuspeichern.

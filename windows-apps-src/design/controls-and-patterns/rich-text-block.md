@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f8298456b3c297994d6aa11d815a6b46ba7ff4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 9f90ce11c9a35200121722f3b0a0ac7d7047e819
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340360"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081560"
 ---
 # <a name="rich-text-block"></a>Rich-Text-Block
 
@@ -24,13 +24,13 @@ ms.locfileid: "71340360"
 
 Rich-Text-Blöcke bieten verschiedene Features für erweitertes Textlayout, die Sie verwenden können, wenn Sie Unterstützung für Absätze, Inline-UI-Elemente oder komplexe Textlayouts benötigen.
 
-> **Wichtige APIs:** [RichTextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **Plattform-APIs:** [RichTextBlock-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [RichTextBlockOverflow-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow), [Paragraph-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph), [Typography-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
 Verwenden Sie **RichTextBlock**, wenn Sie Unterstützung für mehrere Absätze, mehrspaltige oder andere komplexe Textlayouts oder Inline-UI-Elemente wie Bilder benötigen.
 
-Verwenden Sie **TextBlock** zur Anzeige der überwiegenden Menge an schreibgeschütztem Text in Ihrer App. Sie können es zum Anzeigen von einzeiligem oder mehrzeiligem Text, Inlinelinks und Text mit Formatierung, z. B. fett, kursiv oder unterstrichen, verwenden. TextBlock stellt ein einfacheres Inhaltsmodell bereit. Daher ist er in der Regel einfacher zu verwenden und bietet eine bessere Leistung beim Rendern von Text als RichTextBlock. Er wird für den meisten UI-Text in Apps bevorzugt. Sie können zwar Zeilenumbrüche in den Text einfügen, jedoch ist TextBlock zum Anzeigen eines einzelnen Absatzes vorgesehen und unterstützt keinen Texteinzug.
+Verwenden Sie **TextBlock** zur Anzeige der überwiegenden Menge an schreibgeschütztem Text in Ihrer App. Sie können es zum Anzeigen von einzeiligem oder mehrzeiligem Text, Inlinelinks und Text mit Formatierung, z. B. fett, kursiv oder unterstrichen, verwenden. TextBlock stellt ein einfacheres Inhaltsmodell bereit. Daher ist er in der Regel einfacher zu verwenden und bietet eine bessere Leistung beim Rendern von Text als RichTextBlock. Er wird für den meisten UI-Text in Apps bevorzugt. Du kannst zwar Zeilenumbrüche in den Text einfügen, jedoch ist TextBlock zum Anzeigen eines einzelnen Absatzes vorgesehen und unterstützt keinen Texteinzug.
 
 Weitere Informationen zur Auswahl des passenden Textsteuerelements finden Sie im Artikel [Textsteuerelemente](text-controls.md).
 
@@ -39,7 +39,7 @@ Weitere Informationen zur Auswahl des passenden Textsteuerelements finden Sie im
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/RichTextBlock">die App zu öffnen und RichTextBlock in Aktion zu sehen</a>.</p>
     <ul>

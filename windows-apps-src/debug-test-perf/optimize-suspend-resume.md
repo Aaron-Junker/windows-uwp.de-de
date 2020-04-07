@@ -4,11 +4,11 @@ title: Optimieren von Anhalten/Fortsetzen
 description: Erstellen Sie Apps für die universelle Windows-Plattform (UWP), die die Verwendung des Prozesslebensdauer-Systems optimieren und nach dem Anhalten oder Beenden effizient fortgesetzt werden.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71339575"
@@ -64,7 +64,7 @@ Als Serialisierungstechnologien für .NET-Apps stehen die Klassen [**System.Xml.
 
 Aus Leistungsgründen empfehlen wir die Verwendung der [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer)-Klasse. Die **XmlSerializer**-Klasse zeichnet sich durch die schnellste Serialisierung und Deserialisierung sowie durch einen geringen Speicherbedarf aus. **XmlSerializer** ist nur in wenigen Bereichen mit .NET Framework verknüpft. Im Vergleich zu den anderen Serialisierungstechnologien müssen daher für die Verwendung von **XmlSerializer** weniger Module in Ihre App geladen werden.
 
-[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) vereinfacht das Serialisieren von benutzerdefinierten Klassen, obwohl dies eine größere Auswirkung auf die Leistung hat als **XmlSerializer**. Wenn Sie eine bessere Leistung benötigen, denken Sie über einen Wechsel nach. Generell sollten Sie nur ein Serialisierungsprogramm laden und **XmlSerializer** vorziehen, falls Sie nicht die Funktionen eines anderen Serialisierungsprogramms benötigen.
+[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) erleichtert die Serialisierung von benutzerdefinierten Klassen, obwohl es nicht so leistungsfähig wie **XmlSerializer** ist. Wenn Sie eine bessere Leistung benötigen, denken Sie über einen Wechsel nach. Generell sollten Sie nur ein Serialisierungsprogramm laden und **XmlSerializer** vorziehen, falls Sie nicht die Funktionen eines anderen Serialisierungsprogramms benötigen.
 
 ### <a name="reduce-memory-footprint"></a>Verringern des Speicherbedarfs
 
@@ -83,9 +83,9 @@ Die Ausführung einer angehaltenen App kann fortgesetzt werden, wenn sie vom Ben
 
 Bei den meisten Apps ist keine Behandlung des [**Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming)-Ereignisses erforderlich. Bei der App-Reaktivierung besitzen die Variablen und Objekte exakt den gleichen Zustand wie beim Anhalten der App. Behandeln Sie das **Resuming**-Ereignis nur dann, wenn Sie Daten oder Objekte aktualisieren müssen, die sich nach dem Anhalten der App möglicherweise geändert haben. Beispiele wären etwa Inhalte (z. B. aktualisierte Feeddaten), nicht mehr aktuelle Netzwerkverbindungen oder die Wiederherstellung des Zugriffs ein Gerät (etwa eine Webcam).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Richtlinien für die APP Suspend und Resume](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [Richtlinien für das Anhalten und Fortsetzen von Apps](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

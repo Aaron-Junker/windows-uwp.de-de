@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 07da54dddfffe082aa5633ac8eac3f342aaa6a5c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302714"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081514"
 ---
 # <a name="text-box"></a>Textfeld
 
@@ -24,7 +24,13 @@ Mit dem TextBox-Steuerelement können Benutzer Text in eine App eingeben. Es wir
 
 TextBox bietet eine Reihe von Features, mit denen die Texteingabe vereinfacht werden kann. Es enthält ein bekanntes integriertes Kontextmenü, das das Kopieren und Einfügen von Text unterstützt. Über die Schaltfläche „Alles löschen” können Benutzer den gesamten eingegebenen Text schnell löschen. Es bietet außerdem eine integrierte Rechtschreibprüfung, die standardmäßig aktiviert ist.
 
-> **Wichtige APIs:** [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [Text-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [TextBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox), [Text-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -45,7 +51,7 @@ Weitere Informationen zur Auswahl des passenden Textsteuerelements finden Sie im
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/TextBox">die App zu öffnen und TextBox in Aktion zu sehen</a>.</p>
     <ul>

@@ -1,16 +1,16 @@
 ---
-description: In diesem Thema werden zwei Hilfsfunktionen für die Konvertierung zwischen C++/CX- und C++/WinRT-Objekten gezeigt.
+description: In diesem Thema werden zwei Hilfsfunktionen für die Konvertierung zwischen [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)- und [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Objekten gezeigt.
 title: Interoperabilität zwischen C++/WinRT und C++/CX
 ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b0c676276fa0974144f03b12c3037a42069641
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 0e54937391d3317f1b37415036aabc88a6cfaa41
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270062"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290022"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>Interoperabilität zwischen C++/WinRT und C++/CX
 
@@ -18,7 +18,7 @@ Strategien für das schrittweise Portieren von Code aus deinem [ C++/CX](/cpp/cp
 
 In diesem Thema werden zwei Hilfsfunktionen gezeigt, die du für Konvertierungen zwischen C++/CX- und C++/WinRT-Objekten innerhalb des gleichen Projekts verwenden kannst. Sie ermöglichen die Interoperabilität zwischen Code mit den beiden Sprachprojektionen. Du kannst sie aber auch verwenden, um deinen Code von C++/CX in C++/WinRT zu portieren.
 
-## <a name="fromcx-and-tocx-functions"></a>Funktionen „from_cx“ und „to_cx“
+## <a name="from_cx-and-to_cx-functions"></a>Funktionen „from_cx“ und „to_cx“
 Die folgende Hilfsfunktion konvertiert ein C++/CX-Objekt in ein äquivalentes C++/WinRT-Objekt. Die Funktion wandelt ein C++/CX-Objekt in den zugrundeliegenden [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)-Schnittstellenzeiger um. Anschließend wird [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) für diesen Zeiger aufgerufen, um die Standardschnittstelle des C++/WinRT-Objekts abzufragen. **QueryInterface** ist das Äquivalent der Windows-Runtime-ABI (Application Binary Interface) für die C++/CX-Erweiterung „safe_cast“. Die Funktion [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) ruft schließlich die Adresse des zugrundeliegenden **IUnknown**-Schnittstellenzeigers eines C++/WinRT-Objekts ab, damit er auf einen anderen Wert festgelegt werden kann.
 
 ```cppwinrt
@@ -52,7 +52,7 @@ Das Szenario einer schrittweisen Portierung von Code aus einem C++/CX-Projekt in
 Dieses Beispielprojekt veranschaulicht auch die Verwendung von Namespacealiasen für die verschiedenen Codeinseln, um mit potenziellen Namespacekonflikten zwischen der C++/WinRT-Projektion und der C++/CX-Projektion umzugehen.
 
 - Erstelle ein Projekt vom Typ **Visual C++** \> **Windows Universal** > **Core-App (C++/WinRT)** .
-- Lege in den Projekteigenschaften Folgendes fest: **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden**  \> **Ja (/ZW)** . Dadurch wird die Projektunterstützung für C++/CX aktiviert.
+- Lege in den Projekteigenschaften Folgendes fest: **C/C++** \> **Allgemein** \> **Windows-Runtime-Erweiterung verwenden** \> **Ja (/ZW)** . Dadurch wird die Projektunterstützung für C++/CX aktiviert.
 - Ersetze den Inhalt von `App.cpp` durch das folgende Codelisting:
 
 `WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
@@ -260,6 +260,6 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 * [Funktion „winrt::get_abi“](/uwp/cpp-ref-for-winrt/get-abi)
 * [Funktion „winrt::put_abi“](/uwp/cpp-ref-for-winrt/put-abi)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Umstellen von C++/CX auf C++/WinRT](move-to-winrt-from-cx.md)

@@ -11,21 +11,28 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b791768d4ccd78b46fef2d4e494ce06ef9f6ca6a
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: f287f738c39e21ea76ff2595cc34ac715a1b52ca
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062217"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081199"
 ---
 # <a name="color-picker"></a>Farbauswahl
 
 Mithilfe eines Farbwählers können Benutzer Farben suchen und auswählen. Standardmäßig können sie durch die Farben eines Farbspektrums navigieren oder eine bestimmte Farbe in einem Textfeld des Typs „Rot-Grün-Blau (RGB)“, „Wert für Farbton/Sättigung“ oder „Hexadezimal“ angeben.
 
-> **Wichtige APIs:** [ColorPicker-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
-
 ![Ein Standard-Farbwähler](images/color-picker-default.png)
 
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ColorPicker** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Windows-UI-Bibliotheks-APIs:** [ColorPicker-Klasse](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [Color-Eigenschaft](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
+>
+> **Plattform-APIs:** [ColorPicker-Klasse](/uwp/api/windows.ui.xaml.controls.colorpicker), [Color-Eigenschaft](/uwp/api/windows.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -38,7 +45,7 @@ Falls Ihre App zum Zeichnen oder für andere stiftbasierte Aufgaben gedacht ist,
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ColorPicker">die App zu öffnen und ColorPicker in Aktion zu sehen</a>.</p>
     <ul>

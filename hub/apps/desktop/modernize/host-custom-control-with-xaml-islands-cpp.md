@@ -1,89 +1,89 @@
 ---
-description: In diesem Artikel wird veranschaulicht, wie ein benutzerdefiniertes UWP C++ -Steuerelement in einer Win32-App mithilfe der XAML-Hosting-API gehostet wird.
-title: Hosten eines benutzerdefinierten UWP- C++ Steuer Elements in einer Win32-App mithilfe der XAML-Hosting-API
+description: Dieser Artikel veranschaulicht, wie ein benutzerdefiniertes UWP-Steuerelement mithilfe der XAML-Hosting-API in einer C++-Win32-App gehostet wird.
+title: Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App unter Verwendung der XAML-Hosting-API
 ms.date: 03/23/2020
 ms.topic: article
-keywords: Windows 10, UWP, C++, Win32, XAML-Inseln, benutzerdefinierte Steuerelemente, Benutzer Steuerelemente, Host Steuerelemente
+keywords: Windows 10, UWP, C++, Win32, XAML Islands, benutzerdefinierte Steuerelemente, Benutzersteuerelemente, Hosten von Steuerelementen
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 2f34c9c56cf9db5dfcfd702b97f2d34273b86e6a
 ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "80226314"
 ---
-# <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP- C++ Steuer Elements in einer Win32-App
+# <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App
 
-In diesem Artikel wird die Verwendung der [UWP-XAML-Hosting-API](using-the-xaml-hosting-api.md) zum Hosten eines benutzerdefinierten UWP-XAML-Steuer Elements in einer neuen C++ Win32-App veranschaulicht. Wenn Sie über ein vorhandenes C++ Win32-App-Projekt verfügen, können Sie diese Schritte und Codebeispiele für Ihr Projekt anpassen.
+Dieser Artikel veranschaulicht die Verwendung der [XAML-Hosting-API](using-the-xaml-hosting-api.md) zum Hosten eines benutzerdefinierten UWP-XAML-Steuerelements in einer neuen C++-Win32-App. Wenn du über ein vorhandenes C++-Win32-Projekt verfügst, kannst du diese Schritte und Codebeispiele für dein Projekt anpassen.
 
-Um ein benutzerdefiniertes UWP-XAML-Steuerelement zu hosten, erstellen Sie die folgenden Projekte und Komponenten im Rahmen dieser exemplarischen Vorgehensweise:
+Um ein benutzerdefiniertes UWP-XAML-Steuerelement zu hosten, erstellst du im Rahmen dieser exemplarischen Vorgehensweise die folgenden Projekte und Komponenten:
 
-* **Windows-Desktop Anwendungsprojekt**. Dieses Projekt implementiert eine native C++ Win32-Desktop-App. Fügen Sie diesem Projekt Code hinzu, der die UWP-XAML-Hosting-API zum Hosten eines benutzerdefinierten UWP-XAML-Steuer Elements verwendet.
+* **Projekt für eine Windows-Desktopanwendung**. Dieses Projekt implementiert eine native C++-Win32-Desktop-App. Du fügst diesem Projekt Code hinzu, der die XAML-Hosting-API zum Hosten eines benutzerdefinierten UWP-XAML-Steuerelements verwendet.
 
-* **UWP-APP-C++Projekt (/WinRT)** . Dieses Projekt implementiert ein benutzerdefiniertes UWP-XAML-Steuerelement. Außerdem implementiert es einen stammmetadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen im Projekt.
+* **UWP-App-Projekt (C++/WinRT)** . Dieses Projekt implementiert ein benutzerdefiniertes UWP-XAML-Steuerelement. Darüber hinaus implementiert es einen Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in das Projekt.
 
-## <a name="requirements"></a>Voraussetzungen
+## <a name="requirements"></a>Anforderungen
 
-* Visual Studio 2019 Version 16.4.3 oder höher.
-* Windows 10, Version 1903 SDK (Version 10.0.18362) oder höher.
-* [/WinRT Visual Studio-Erweiterung (VSIX) mit Visual Studio installiert. C++](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) C++/WinRT ist eine vollständig standardisierte, moderne C++17 Sprachprojektion für Windows-Runtime-(WinRT)-APIs, die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet. Weitere Informationen finden [ C++](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)Sie unter/WinRT.
+* Visual Studio 2019, Version 16.4.3 oder höher.
+* SDK-Version 10.0.18362 für Windows 10, Version 1903 oder höher.
+* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), installiert mit Visual Studio. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als eine auf Headerdateien basierende Bibliothek implementiert ist und erstklassigen Zugriff auf die moderne Windows-API bietet. Weitere Informationen findest du unter [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
 
-## <a name="create-a-desktop-application-project"></a>Erstellen eines Desktop Anwendungs Projekts
+## <a name="create-a-desktop-application-project"></a>Erstellen eines Desktopanwendungsprojekts
 
-1. Erstellen Sie in Visual Studio ein neues **Windows-Desktop Anwendungs** Projekt mit dem Namen **MyDesktopWin32App**. Diese Projektvorlage ist unter den **C++** Projekt filtern, **Windows**und **Desktop** verfügbar.
+1. Erstelle in Visual Studio ein neues Projekt **Windows-Desktopanwendung** mit dem Namen **MyDesktopWin32App**. Diese Projektvorlage steht unter den Projektfiltern **C++** , **Windows** und **Desktop** zur Verfügung.
 
-2. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektmappenknoten, klicken Sie auf Projekt Mappe **neu**zuweisen, wählen Sie die Version **10.0.18362.0** oder höher aus, und klicken Sie dann auf **OK**.
+2. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, klicke auf **Projektmappe neu zuweisen**, wähle **10.0.18362.0** oder eine höhere SDK-Version aus, und klicke dann auf **OK**.
 
-3. Installieren Sie das nuget-Paket [Microsoft. Windows. cppwinrt](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) , um die Unterstützung für [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis) im Projekt zu aktivieren:
+3. Installiere das NuGet-Paket [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), um die Unterstützung für [C++/WinRT](/windows/uwp/cpp-and-winrt-apis) in deinem Projekt zu aktivieren:
 
-    1. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **MyDesktopWin32App** , und wählen Sie **nuget-Pakete verwalten**.
-    2. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Windows. cppwinrt](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) , und installieren Sie die neueste Version dieses Pakets.
+    1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **MyDesktopWin32App**, und wähle **NuGet-Pakete verwalten** aus.
+    2. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), und installiere die neueste Version dieses Pakets.
 
-4. Installieren Sie im Fenster **nuget-Pakete verwalten** die folgenden zusätzlichen nuget-Pakete:
+4. Installiere im Fenster **NuGet-Pakete verwalten** die folgenden zusätzlichen NuGet-Pakete:
 
-    * [Microsoft. Toolkit. Win32. UI. SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v 6.0.0 oder höher). Dieses Paket enthält mehrere Build-und Lauf Zeit Objekte, die es ermöglichen, dass XAML-Inseln in der App funktionieren.
-    * [Microsoft. Toolkit. Win32. UI. xamlapplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (Version v 6.0.0 oder höher).
-    * [Microsoft. vcrtforwarders. 140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
+    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v6.0.0 oder höher). Dieses Paket stellt verschiedene Ressourcen für Kompilier- und Laufzeit bereit, um XAML Islands in deiner App zu aktivieren.
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (Version v6.0.0 oder höher).
+    * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
-5. Erstellen Sie die Lösung, und vergewissern Sie sich, dass Sie erfolgreich erstellt wurde
+5. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
 
 ## <a name="create-a-uwp-app-project"></a>Erstellen eines UWP-App-Projekts
 
-Fügen Sie als nächstes der Projekt Mappe ein UWP-App-Projekt **C++(/WinRT)** hinzu, und nehmen Sie einige Konfigurationsänderungen an diesem Projekt vor. Später in dieser exemplarischen Vorgehensweise fügen Sie diesem Projekt Code hinzu, um ein benutzerdefiniertes UWP-XAML-Steuerelement zu implementieren und eine Instanz der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse zu definieren, die vom Windows Community Toolkit bereitgestellt wird. Ihre APP verwendet diese Klasse als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen.
+Als Nächstes fügst du deiner Projektmappe ein **UWP (C++/WinRT)** -App-Projekt hinzu und nimmst einige Konfigurationsänderungen an diesem Projekt vor. Später in dieser exemplarischen Vorgehensweise fügst du diesem Projekt Code hinzu, um ein benutzerdefiniertes UWP-XAML-Steuerelement zu implementieren und eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse zu definieren, die durch das Windows-Community-Toolkit bereitgestellt wird. Deine App verwendet diese Klasse als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in das Projekt.
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten Projekt Mappe, und wählen Sie -> **Neues Projekt** **Hinzufügen** .
+1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Hinzufügen** -> **Neues Projekt** aus.
 
-2. Fügen Sie der Projekt Mappe ein **leeres App-ProjektC++(/WinRT)** hinzu. Benennen Sie das Projekt **myuwpapp** , und stellen Sie sicher, dass die Zielversion und die Mindestversion auf **Windows 10, Version 1903** oder höher, festgelegt sind.
+2. Füge deiner Projektmappe ein Projekt vom Typ **Leere App (C++/WinRT)** hinzu. Gibt dem Projekt den Namen **MyUWPApp**, und stelle sicher, dass sowohl die Zielversion als auch die mindestens erforderliche Version auf **Windows 10, Version 1903** oder höher festgelegt ist.
 
-3. Installieren Sie das nuget-Paket [Microsoft. Toolkit. Win32. UI. xamlapplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) im **myuwpapp** -Projekt:
+3. Installiere im **MyUWPApp**-Projekt das NuGet-Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication):
 
-    1. Klicken Sie mit der rechten Maustaste auf das Projekt **myuwpapp** , und wählen Sie **nuget-Pakete verwalten**.
-    2. Wählen Sie die Registerkarte **Durchsuchen** aus, suchen Sie nach dem Paket [Microsoft. Toolkit. Win32. UI. xamlapplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) , und installieren Sie v 6.0.0 oder eine spätere Version dieses Pakets.
+    1. Klicke mit der rechten Maustaste auf das **MyUWPApp**-Projekt, und wähle **NuGet-Pakete verwalten** aus.
+    2. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication), und installiere Version v6.0.0 dieses Pakets oder eine höhere Version.
 
-4. Klicken Sie mit der rechten Maustaste auf den Knoten **myuwpapp** , und wählen Sie **Eigenschaften**. Legen Sie auf der Seite **Allgemeine Eigenschaften** ->  **C++/WinRT** die folgenden Eigenschaften fest, und klicken Sie **dann auf über**nehmen.
+4. Klicke mit der rechten Maustaste auf den **MyUWPApp**-Knoten, und wähle **Eigenschaften** aus. Lege auf der Seite **Allgemeine Eigenschaften** -> **C++/WinRT** die folgenden Eigenschaften fest, und klicke dann auf **Anwenden**.
 
-    * Legen Sie **Ausführlichkeit** auf **Normal**fest.
-    * Legen **Sie** die Einstellung auf **Nein**fest.
+    * Lege den Wert für **Ausführlichkeit** auf **Normal** fest.
+    * Lege **Optimiert** auf **Nein** fest.
 
-    Wenn Sie den Vorgang abgeschlossen haben, sollte die Seite Eigenschaften wie folgt aussehen.
+    Anschließend sollte die Eigenschaftenseite wie folgt aussehen.
 
-    ![C++/WinRT-Projekteigenschaften](images/xaml-islands/xaml-island-cpp-1.png)
+    ![Eigenschaften des C++/WinRT-Projekts](images/xaml-islands/xaml-island-cpp-1.png)
 
-5. Legen Sie im Eigenschaften Fenster auf der Seite **Konfigurations Eigenschaften** -> **Allgemein** den **Konfigurationstyp** auf **dynamische Bibliothek (dll**-Datei) fest, und klicken Sie dann auf **OK** , um das Eigenschaften Fenster zu schließen.
+5. Lege auf der Seite **Konfigurationseigenschaften** -> **Allgemein** des Eigenschaftenfensters die Einstellung **Konfigurationstyp** auf **Dynamische Bibliothek (.dll)** fest, und klicke dann auf **OK**, um das Eigenschaftenfenster zu schließen.
 
     ![Allgemeine Projekteigenschaften](images/xaml-islands/xaml-island-cpp-2.png)
 
-6. Fügen Sie dem Projekt **myuwpapp** eine ausführbare Platzhalter Datei hinzu. Diese ausführbare Datei für den Platzhalter ist erforderlich, damit Visual Studio die erforderlichen Projektdateien generiert und das Projekt ordnungsgemäß erstellt.
+6. Füge dem Projekt **MyUWPApp** eine ausführbare Platzhalterdatei hinzu. Diese ausführbare Platzhalterdatei wird für Visual Studio benötigt, um die erforderlichen Projektdateien zu generieren und das Projekt ordnungsgemäß zu kompilieren.
 
-    1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projekt Knoten **myuwpapp** , und wählen Sie -> **Neues Element** **Hinzufügen** aus.
-    2. Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf der linken Seite auf **Hilfsprogramm** , und wählen Sie dann **Textdatei (. txt)** aus. Geben Sie den Namen **Platzhalter. exe** ein, und klicken Sie auf **Hinzufügen**
+    1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **MyUWPApp**, und wähle **Hinzufügen** -> **Neues Element** aus.
+    2. Klicke im Dialogfeld **Neues Element hinzufügen** auf der linken Seite auf **Hilfsprogramm**, und wähle **Textdatei (.txt)** aus. Gib den Namen **placeholder.exe** ein, und klicke auf **Hinzufügen**.
       ![Hinzufügen einer Textdatei](images/xaml-islands/xaml-island-cpp-3.png)
-    3. Wählen Sie in **Projektmappen-Explorer**die Datei **Platzhalter. exe** aus. Stellen Sie im **Eigenschaften** Fenster sicher, dass die **Content** -Eigenschaft auf **true**festgelegt ist.
-    4. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Datei **Package. appxmanifest** im Projekt **myuwpapp** , wählen Sie **Öffnen mit**aus, und wählen Sie dann **XML (Text)-Editor**aus, und klicken Sie auf **OK**.
-    5. Suchen Sie das **&lt;Application&gt;** -Element, und ändern Sie das Attribut der **ausführbaren Datei** in den Wert `placeholder.exe`. Wenn Sie den Vorgang abgeschlossen haben, sollte das **&lt;Anwendungs&gt;** -Element in etwa wie folgt aussehen.
+    3. Wähle im **Projektmappen-Explorer** die Datei **placeholder.exe** aus. Vergewissere dich im Fenster **Eigenschaften**, dass die Eigenschaft **Content** auf **True** festgelegt ist.
+    4. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei **Package.appxmanifest** im Projekt **MyUWPApp**, wähle **Öffnen mit** und **XML (Text)-Editor** aus, und klicke auf **OK**.
+    5. Suche nach dem Element **&lt;Application&gt;** , und ändere das Attribut **Executable** in den Wert `placeholder.exe`. Anschließend sollte das Element **&lt;Application&gt;** in etwa wie folgt aussehen.
 
         ```xml
         <Application Id="App" Executable="placeholder.exe" EntryPoint="MyUWPApp.App">
@@ -96,11 +96,11 @@ Fügen Sie als nächstes der Projekt Mappe ein UWP-App-Projekt **C++(/WinRT)** h
         </Application>
         ```
 
-    6. Speichern und schließen Sie die Datei " **Package. appxmanifest** ".
+    6. Speichere und schließe die Datei **Package.appxmanifest**.
 
-7. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten **myuwpapp** , und wählen Sie **Projekt entladen**aus.
-8. Klicken Sie mit der rechten Maustaste auf den Knoten **myuwpapp** , und wählen Sie **myuwpapp. vcxproj bearbeiten**aus.
-9. Suchen Sie das `<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />`-Element, und ersetzen Sie es durch den folgenden XML-Code. Mit diesem XML werden direkt vor dem-Element mehrere neue Eigenschaften hinzugefügt.
+7. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Knoten **MyUWPApp**, und wähle **Projekt entladen** aus.
+8. Klicke mit der rechten Maustaste auf den Knoten **MyUWPApp**, und wähle **MyUWPApp.vcxproj bearbeiten** aus.
+9. Suche nach dem Element `<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />`, und ersetze es durch den folgenden XML-Ausschnitt. Hierdurch werden direkt vor dem Element verschiedene neue Eigenschaften hinzugefügt.
 
     ```xml
     <PropertyGroup Label="Globals">
@@ -112,15 +112,15 @@ Fügen Sie als nächstes der Projekt Mappe ein UWP-App-Projekt **C++(/WinRT)** h
     <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
     ```
 
-10. Speichern und schließen Sie die Projektdatei.
-11. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten **myuwpapp** , und wählen Sie **Projekt erneut laden**aus.
+10. Speichere und schließe die Projektdatei.
+11. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Knoten **MyUWPApp**, und wähle **Projekt erneut laden** aus.
 
-## <a name="configure-the-solution"></a>Konfigurieren der Lösung
+## <a name="configure-the-solution"></a>Konfigurieren der Projektmappe
 
-In diesem Abschnitt aktualisieren Sie die Projekt Mappe, die beide Projekte enthält, um Projekt Abhängigkeiten und Buildeigenschaften zu konfigurieren, die für die ordnungsgemäße Erstellung der Projekte erforderlich sind.
+In diesem Abschnitt aktualisierst du die Projektmappe, die beide Projekte enthält, um Projektabhängigkeiten zu konfigurieren und Eigenschaften zu erstellen, die zum ordnungsgemäßen Kompilieren der Projekte erforderlich sind.
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Projektmappenknoten, und fügen Sie eine neue XML-Datei mit dem Namen **Solution.**
-2. Fügen Sie den folgenden XML-Code in die Datei " **Solution.** die"
+1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und füge eine neue XML-Datei namens **Solution.props** hinzu.
+2. Füge der Datei **Solution.props** den folgenden XML-Ausschnitt hinzu.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -133,29 +133,29 @@ In diesem Abschnitt aktualisieren Sie die Projekt Mappe, die beide Projekte enth
     </Project>
     ```
 
-3. Klicken Sie im Menü **Ansicht** auf **Eigenschaften-Manager** (abhängig von der Konfiguration kann dies in der **Ansicht** -> **anderen Fenstern**angezeigt werden).
-4. Klicken Sie im **Eigenschaften-Manager** Fenster mit der rechten Maustaste auf **MyDesktopWin32App** , und wählen Sie **vorhandenes Eigenschaften Blatt hinzufügen**aus. Navigieren Sie zu **der soeben** hinzugefügten Projektmappendatei, und klicken Sie auf **Öffnen**.
-5. Wiederholen Sie den vorherigen Schritt, um die Datei " **Solution.** -Eigenschaften" dem Projekt **myuwpapp** im **Eigenschaften-Manager** Fenster hinzuzufügen.
-6. Schließen Sie das Fenster **Eigenschaften-Manager** .
-7. Vergewissern Sie sich, dass die Eigenschaften Blatt Änderungen ordnungsgemäß gespeichert wurden. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **MyDesktopWin32App** , und wählen Sie **Eigenschaften**aus. Klicken Sie auf **Konfigurations Eigenschaften** -> **genneral**, und vergewissern Sie sich, dass das **Ausgabeverzeichnis** und die **zwischen Verzeichnis** Eigenschaften die Werte aufweisen, die Sie der Projektmappendatei "Projekt Mappe **.** Sie können auch das gleiche für das Projekt **myuwpapp** bestätigen.
+3. Klicke im Menü **Ansicht** auf **Eigenschaften-Manager** (je nach Konfiguration kann dieser Punkt sich auch unter **Ansicht** -> **Weitere Fenster** befinden).
+4. Klicke im Fenster **Eigenschaften-Manager** mit der rechten Maustaste auf **MyDesktopWin32App**, und wähle **Vorhandenes Eigenschaftenblatt hinzufügen** aus. Navigiere zur gerade hinzugefügten Datei **Solution.props**, und klicke auf **Öffnen**.
+5. Wiederhole die vorherigen Schritte, um die Datei **Solution.props** dem Projekt **MyUWPApp** im Fenster **Eigenschaften-Manager** hinzuzufügen.
+6. Schließe das Fenster **Eigenschaften-Manager**.
+7. Vergewissere dich, dass die Änderungen am Eigenschaftenblatt erfolgreich gespeichert wurden. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **MyDesktopWin32App** und dann auf **Eigenschaften**. Klicke auf **Konfigurationseigenschaften** -> **Allgemein**, und vergewissere dich, dass die Eigenschaften **Ausgabeverzeichnis** und **Zwischenverzeichnis** die Werte enthalten, die du der Datei **Solution.props** hinzugefügt hast. Führe die gleiche Überprüfung für das Projekt **MyUWPApp** durch.
     ![Projekteigenschaften](images/xaml-islands/xaml-island-cpp-4.png)
 
-8. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Knoten Projekt Mappe, und wählen Sie **Projekt Abhängigkeiten**. Stellen Sie sicher, dass in der Dropdown Liste **Projekte** die Option **MyDesktopWin32App** ausgewählt ist, und wählen Sie in der Liste **abhängig von** die Option **myuwpapp** aus.
-    ![Projekt Abhängigkeiten](images/xaml-islands/xaml-island-cpp-5.png)
+8. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Projektabhängigkeiten** aus. Stelle sicher, dass in der Dropdownliste **Projekte** der Eintrag **MyDesktopWin32App** ausgewählt ist, und wähle in der Liste **Abhängigkeiten** den Eintrag **MyUWPApp** aus.
+    ![Projektabhängigkeiten](images/xaml-islands/xaml-island-cpp-5.png)
 
-9. Klicken Sie auf **OK**.
+9. Klicke auf **OK**.
 
 ## <a name="add-code-to-the-uwp-app-project"></a>Hinzufügen von Code zum UWP-App-Projekt
 
-Nun können Sie dem Projekt **myuwpapp** Code hinzufügen, um die folgenden Aufgaben auszuführen:
+Jetzt kannst du Code zum Projekt **MyUWPApp** hinzufügen, um diese Aufgaben auszuführen:
 
-* Implementieren eines benutzerdefinierten UWP-XAML-Steuer Elements. Später in dieser exemplarischen Vorgehensweise fügen Sie Code hinzu, der dieses Steuerelement im **MyDesktopWin32App** -Projekt hostet.
-* Definieren Sie einen Typ, der von der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse im Windows Community Toolkit abgeleitet ist. Diese Klasse fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen.
+* Implementieren eines benutzerdefinierten UWP-XAML-Steuerelements. Später in dieser exemplarischen Vorgehensweise fügst du Code hinzu, mit dem dieses Steuerelement im Projekt **MyDesktopWin32App** gehostet wird.
+* Definieren eines Typs, der von der Klasse [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) aus dem Windows-Community-Toolkit abgeleitet ist. Diese Klasse fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen.
 
-### <a name="define-a-custom-uwp-xaml-control"></a>Definieren eines benutzerdefinierten UWP-XAML-Steuer Elements
+### <a name="define-a-custom-uwp-xaml-control"></a>Definieren eines benutzerdefinierten UWP-XAML-Steuerelements
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf **myuwpapp** , und wählen Sie -> **Neues Element** **Hinzufügen** aus. Wählen Sie im linken Bereich den Knoten **visuell C++**  aus, wählen Sie **leeres BenutzerC++Steuerelement (/WinRT)** , benennen Sie es **MyUserControl**, und klicken Sie auf **Hinzufügen**.
-2. Ersetzen Sie im XAML-Editor den Inhalt der Datei **MyUserControl. XAML** durch den folgenden XAML-Code, und speichern Sie die Datei.
+1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf **MyUWPApp**, und wähle **Hinzufügen** -> **Neues Element** aus. Wähle im linken Bereich **Visual C++** aus, klicke auf **Leeres Benutzersteuerelement (C++/WinRT)** , gib ihm den Namen **MyUserControl**, und klicke auf **Hinzufügen**.
+2. Ersetze im XAML-Editor die Inhalte der Datei **MyUserControl.xaml** durch den folgenden XAML-Ausschnitt, und speichere die Datei.
 
     ```xml
     <UserControl
@@ -179,18 +179,18 @@ Nun können Sie dem Projekt **myuwpapp** Code hinzufügen, um die folgenden Aufg
     </UserControl>
     ```
 
-### <a name="define-a-xamlapplication-class"></a>Definieren einer xamlapplication-Klasse
+### <a name="define-a-xamlapplication-class"></a>Definieren einer XamlApplication-Klasse
 
-Überarbeiten Sie als nächstes die Standard- **App** -Klasse im Projekt **myuwpapp** so, dass Sie von der [Microsoft. Toolkit. Win32. UI. xamlhost. xamlapplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) -Klasse abgeleitet wird, die vom Windows Community Toolkit bereitgestellt wird. Später in dieser exemplarischen Vorgehensweise aktualisieren Sie das Desktop Projekt, um eine Instanz dieser Klasse als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen zu erstellen.
+Als Nächstes überarbeitest du die **App**-Standardklasse im Projekt **MyUWPApp**, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Später in dieser exemplarischen Vorgehensweise aktualisierst du das Desktopprojekt, um eine Instanz dieser Klasse als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen zu definieren.
 
   > [!NOTE]
-  > Jede Projekt Mappe, die XAML-Inseln verwendet, kann nur ein Projekt enthalten, das ein `XamlApplication` Objekt definiert. Alle benutzerdefinierten UWP-XAML-Steuerelemente in Ihrer APP haben dasselbe `XamlApplication` Objekt. 
+  > Jede Projektmappe mit Verwendung von XAML Islands kann nur ein Projekt enthalten, das ein `XamlApplication`-Objekt definiert. Alle benutzerdefinierten UWP-XAML-Steuerelemente in deiner App nutzen gemeinsam dasselbe `XamlApplication`-Objekt. 
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Datei " **MainPage. XAML** " im Projekt **myuwpapp** . Klicken Sie auf **Entfernen** und dann auf **Löschen** , um diese Datei aus dem Projekt zu löschen.
-2. Erweitern Sie im Projekt **myuwpapp** die Datei **app. XAML** .
-3. Ersetzen Sie den Inhalt der Dateien **app. XAML**, **app. cpp**, **app. h**und **app. idl** durch den folgenden Code.
+1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei **MainPage.xaml** im Projekt **MyUWPApp**. Klicke auf **Entfernen** und dann auf **Löschen**, um diese Datei endgültig aus dem Projekt zu löschen.
+2. Erweitere im Projekt **MyUWPApp** die Datei **App.xaml**.
+3. Ersetze die Inhalte der Dateien **App.xaml**, **App.cpp**, **App.h** und **App.idl** durch den folgenden Code.
 
-    * **App. XAML**:
+    * **App.xaml**:
 
         ```xml
         <Toolkit:XamlApplication
@@ -202,7 +202,7 @@ Nun können Sie dem Projekt **myuwpapp** Code hinzufügen, um die folgenden Aufg
         </Toolkit:XamlApplication>
         ```
 
-    * **App. idl**:
+    * **App.idl**:
 
         ```IDL
         namespace MyUWPApp
@@ -215,7 +215,7 @@ Nun können Sie dem Projekt **myuwpapp** Code hinzufügen, um die folgenden Aufg
         }
         ```
 
-    * **App. h**:
+    * **App.h**:
 
         ```cpp
         #pragma once
@@ -238,7 +238,7 @@ Nun können Sie dem Projekt **myuwpapp** Code hinzufügen, um die folgenden Aufg
         }
         ```
 
-    * **App. cpp**:
+    * **App.cpp**:
 
         ```cpp
         #include "pch.h"
@@ -260,8 +260,8 @@ Nun können Sie dem Projekt **myuwpapp** Code hinzufügen, um die folgenden Aufg
         }
         ```
 
-4. Fügen Sie dem Projekt **myuwpapp** eine neue Header Datei mit dem Namen **app. base. h**hinzu.
-5. Fügen Sie den folgenden Code in die Datei " **app. base. h** " ein, speichern Sie die Datei, und schließen Sie Sie.
+4. Füge dem Projekt **MyUWPApp** eine neue Headerdatei namens **app.base.h** hinzu.
+5. Füge der Datei **app.base.h** den folgenden Code hinzu, speichere und schließe die Datei.
 
     ```cpp
     #pragma once
@@ -300,32 +300,32 @@ Nun können Sie dem Projekt **myuwpapp** Code hinzufügen, um die folgenden Aufg
     }
     ```
 
-6. Erstellen Sie die Lösung, und vergewissern Sie sich, dass Sie erfolgreich erstellt wurde
+6. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
 
-## <a name="configure-the-desktop-project-to-consume-custom-control-types"></a>Konfigurieren des Desktop Projekts für die Nutzung benutzerdefinierter Steuerelement Typen
+## <a name="configure-the-desktop-project-to-consume-custom-control-types"></a>Konfigurieren des Desktopprojekts zur Verwendung benutzerdefinierter Steuerelementtypen
 
-Bevor die **MyDesktopWin32App** -App ein benutzerdefiniertes UWP-XAML-Steuerelement in einer XAML-Insel hosten kann, muss Sie so konfiguriert werden, dass Sie benutzerdefinierte Steuerelement Typen aus dem Projekt **myuwpapp** verwendet Hierfür gibt es zwei Möglichkeiten, und Sie können eine der beiden Optionen auswählen, wenn Sie diese exemplarische Vorgehensweise durcharbeiten.
+Bevor die App **MyDesktopWin32App** ein benutzerdefiniertes UWP-XAML-Steuerelement in XAML Islands hosten kann, muss sie zur Nutzung benutzerdefinierter Steuerelementtypen aus dem Projekt **MyUWPApp** konfiguriert werden. Es gibt hierfür zwei Möglichkeiten, und du kannst dich in dieser exemplarischen Vorgehensweise für eine dieser Optionen entscheiden.
 
-### <a name="option-1-package-the-app-using-msix"></a>Option 1: Verpacken der APP mit msix
+### <a name="option-1-package-the-app-using-msix"></a>Option 1: Packen der App mit MSIX
 
-Sie können die app in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. Msix ist die moderne App-Paket Technologie für Windows und basiert auf einer Kombination aus MSI-, AppX-, App-V-und ClickOnce-Installationstechnologien.
+Du kannst die App für in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) die Bereitstellung packen. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
 
-1. Fügen Sie der Projekt Mappe ein neues [Windows-Anwendungspaket](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wenn Sie das Projekt erstellen, benennen Sie es **MyDesktopWin32Project** , und wählen Sie **Windows 10, Version 1903 (10,0; Build 18362)** für die **Zielversion** und die **Mindestversion**.
+1. Füge deiner Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Benenne das Projekt beim Erstellen als **MyDesktopWin32Project**, und wähle **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
 
-2. Klicken Sie im Paket Projekt mit der rechten Maustaste auf den Knoten **Anwendungen** , und wählen Sie **Verweis hinzufügen**aus. Aktivieren Sie in der Liste der Projekte das Kontrollkästchen neben dem **MyDesktopWin32App** -Projekt, und klicken Sie auf **OK**.
-    ![Verweis Projekt](images/xaml-islands/xaml-island-cpp-6.png)
+2. Klicke im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wähle **Verweis hinzufügen** aus. Aktiviere in der Liste der Projekte das Kontrollkästchen neben dem Projekt **MyDesktopWin32App**, und klicke auf **OK**.
+    ![Verweis auf Projekt](images/xaml-islands/xaml-island-cpp-6.png)
 
 > [!NOTE]
-> Wenn Sie die Anwendung nicht in einem [msix-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung packen, muss auf Computern, auf denen Ihre APP ausgeführt wird, [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
+> Wenn du deine Anwendung nicht in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung packst, muss auf Computern zur Ausführung deiner App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
-### <a name="option-2-create-an-application-manifest"></a>Option 2: Erstellen eines Anwendungs Manifests
+### <a name="option-2-create-an-application-manifest"></a>Option 2: Erstellen eines Anwendungsmanifest
 
-Sie können Ihrer APP ein [Anwendungs Manifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) hinzufügen.
+Du kannst deiner App ein [Anwendungsmanifest](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) hinzufügen.
 
-1. Klicken Sie mit der rechten Maustaste auf das Projekt **MyDesktopWin32App** , und wählen Sie -> **Neues Element** **Hinzufügen** 
-2. Klicken Sie im Dialogfeld **Neues Element hinzufügen** im linken Bereich auf **Web** , und wählen Sie dann **XML-Datei (. Xml)** aus. 
-3. Nennen Sie die neue Datei **app. Manifest** , und klicken Sie auf **Hinzufügen**.
-4. Ersetzen Sie den Inhalt der neuen Datei durch den folgenden XML-Code. Dieses XML registriert benutzerdefinierte Steuerelement Typen im **myuwpapp** -Projekt.
+1. Klicke mit der rechten Maustaste auf das Projekt **MyDesktopWin32App**, und wähle **Hinzufügen** -> **Neues Element** aus. 
+2. Klicke im Dialogfeld **Neues Element hinzufügen** im linken Bereich auf **Web**, und wähle **XML-Datei (.xml)** aus. 
+3. Gib der neuen Datei den Namen **app.manifest**, und klicke auf **Hinzufügen**.
+4. Ersetze den Inhalt der Datei durch den folgenden XML-Ausschnitt. Hierdurch werden benutzerdefinierte Steuerelementtypen im Projekt **MyUWPApp** registriert.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -350,15 +350,15 @@ Sie können Ihrer APP ein [Anwendungs Manifest](https://docs.microsoft.com/windo
     </assembly>
     ```
 
-## <a name="configure-additional-desktop-project-properties"></a>Zusätzliche Desktop Projekteigenschaften konfigurieren
+## <a name="configure-additional-desktop-project-properties"></a>Konfigurieren zusätzlicher Eigenschaften für das Desktopprojekt
 
-Aktualisieren Sie als nächstes das **MyDesktopWin32App** -Projekt, um ein Makro für zusätzliche include-Verzeichnisse zu definieren und zusätzliche Eigenschaften zu konfigurieren.
+Als Nächstes aktualisierst du dein Projekt **MyDesktopWin32App**, um ein Makro für zusätzliche Includeverzeichnisse zu definieren und zusätzliche Eigenschaften zu konfigurieren.
 
-1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **MyDesktopWin32App** , und wählen Sie **Projekt entladen**aus.
+1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **MyDesktopWin32App** und dann auf **Projekt entladen**.
 
-2. Klicken Sie mit der rechten Maustaste auf **MyDesktopWin32App (entladen)** , und wählen Sie **MyDesktopWin32App. vcxproj bearbeiten**aus.
+2. Klicke mit der rechten Maustaste auf **MyDesktopWin32App (Entladen)** , und wähle **MyDesktopWin32App.vcxproj bearbeiten** aus.
 
-3. Fügen Sie den folgenden XML-Code direkt vor dem schließenden `</Project>` Tag am Ende der Datei hinzu. Speichern und schließen Sie dann die Datei.
+3. Füge den folgenden XML-Ausschnitt direkt vor dem schließenden `</Project>`-Tag am Ende der Datei ein. Speichere und schließe die Datei anschließend.
 
     ```xml
       <!-- Configure these for your UWP project -->
@@ -374,25 +374,25 @@ Aktualisieren Sie als nächstes das **MyDesktopWin32App** -Projekt, um ein Makro
       <!-- End Section-->
     ```
 
-4. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf **MyDesktopWin32App (entladen)** , und wählen Sie **Projekt erneut laden**aus.
+4. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf **MyDesktopWin32App (Entladen)** , und wähle **Projekt erneut laden** aus.
 
-5. Klicken Sie mit der rechten Maustaste auf **MyDesktopWin32App**, wählen Sie **Eigenschaften**aus, und klicken Sie im linken Bereich auf den Knoten **C/C++**  . Vergewissern Sie sich, dass das **zusätzliche include-Verzeichnisse** -Makro aus der Projektdatei Änderung definiert wurde, die Sie im vorherigen Schritt vorgenommen haben.
-    ![C/C++ Projekteinstellungen](images/xaml-islands/xaml-island-cpp-7.png)
+5. Klicke mit der rechten Maustaste auf **MyDesktopWin32App**, wähle **Eigenschaften** aus, und klicke im linken Bereich auf den Knoten **C/C++** . Vergewissere dich, dass das Makro **Additional Include Directories** über die im vorherigen Schritt durchgeführten Projektdateiänderungen definiert wurde.
+    ![Einstellungen für C/C++-Projekt](images/xaml-islands/xaml-island-cpp-7.png)
 
-6. Erweitern Sie im Dialogfeld **Eigenschaften Seiten** die Option **Manifest-Tool** -> **Eingabe und Ausgabe**. Legen Sie die Eigenschaft **dpi** -Wert auf **pro Monitor mit hoher dpi**-Wert fest. Wenn Sie diese Eigenschaft nicht festlegen, kann es in bestimmten Szenarien mit hoher dpi-Wert zu einem Manifest-Konfigurationsfehler kommen.
-    ![C/C++ Projekteinstellungen](images/xaml-islands/xaml-island-cpp-8.png)
+6. Erweitere im Dialogfeld **Eigenschaftenseiten** die Einträge **Manifesttool** -> **Eingabe und Ausgabe**. Lege die Eigenschaft **DPI** auf **Hohe DPI-Werte pro Monitor** fest. Wenn du diese Eigenschaft nicht festlegst, kommt es in bestimmten Szenarien mit hohem DPI-Wert möglicherweise zu einem Manifestkonfigurationsfehler.
+    ![Einstellungen für C/C++-Projekt](images/xaml-islands/xaml-island-cpp-8.png)
 
-## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>Hosten des benutzerdefinierten UWP-XAML-Steuer Elements im Desktop Projekt
+## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>Hosten des benutzerdefinierten UWP-XAML-Steuerelements im Desktopprojekt
 
-Schließlich können Sie dem **MyDesktopWin32App** -Projekt Code hinzufügen, um das benutzerdefinierte UWP-XAML-Steuerelement zu hosten, das Sie zuvor im **myuwpapp** -Projekt definiert haben.
+Schließlich kannst du den Code zum Projekt **MyDesktopWin32App** hinzufügen, um das zuvor im Projekt **MyUWPApp** definierte benutzerdefinierte UWP-XAML-Steuerelement zu hosten.
 
-1. Öffnen Sie im **MyDesktopWin32App** -Projekt die Datei " **Framework. h** ", und kommentieren Sie die folgende Codezeile aus. Speichern Sie die Datei, wenn Sie fertig sind.
+1. Öffne im Projekt **MyDesktopWin32App** die Datei **framework.h**, und kommentiere die folgende Codezeile aus. Speichere die Datei anschließend.
 
     ```cpp
     #define WIN32_LEAN_AND_MEAN
     ```
 
-2. Öffnen Sie die Datei " **MyDesktopWin32App. h** ", und ersetzen Sie den Inhalt dieser Datei durch den folgenden C++Code, um auf die erforderlichen/WinRT-Header Dateien zu verweisen. Speichern Sie die Datei, wenn Sie fertig sind.
+2. Öffne die Datei **MyDesktopWin32App.h**, und ersetze deren Inhalte durch den folgenden Code, um auf erforderliche C++/WinRT-Headerdateien zu verweisen. Speichere die Datei anschließend.
 
     ```cpp
     #pragma once
@@ -415,7 +415,7 @@ Schließlich können Sie dem **MyDesktopWin32App** -Projekt Code hinzufügen, um
     using namespace Windows::UI::Xaml::Controls;
     ```
 
-3. Öffnen Sie die Datei " **MyDesktopWin32App. cpp** ", und fügen Sie den folgenden Code zum Abschnitt "`Global Variables:`" hinzu.
+3. Öffne die Datei **MyDesktopWin32App.cpp**, und füge den folgenden Code im Abschnitt `Global Variables:` ein.
 
     ```cpp
     winrt::MyUWPApp::App hostApp{ nullptr };
@@ -423,13 +423,13 @@ Schließlich können Sie dem **MyDesktopWin32App** -Projekt Code hinzufügen, um
     winrt::MyUWPApp::MyUserControl _myUserControl{ nullptr };
     ```
 
-4. Fügen Sie in derselben Datei dem Abschnitt `Forward declarations of functions included in this code module:` den folgenden Code hinzu.
+4. Füge in derselben Datei den folgenden Code zum Abschnitt `Forward declarations of functions included in this code module:` hinzu.
 
     ```cpp
     void AdjustLayout(HWND);
     ```
 
-5. Fügen Sie in derselben Datei direkt nach dem `TODO: Place code here.` Kommentar in der `wWinMain`-Funktion den folgenden Code hinzu.
+5. Füge ebenfalls in derselben Datei den folgenden Code direkt nach dem `TODO: Place code here.`-Kommentar in der `wWinMain`-Funktion ein.
 
     ```cpp
     // TODO: Place code here.
@@ -438,7 +438,7 @@ Schließlich können Sie dem **MyDesktopWin32App** -Projekt Code hinzufügen, um
     _desktopWindowXamlSource = winrt::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource{};
     ```
 
-6. Ersetzen Sie in derselben Datei die Standard `InitInstance`-Funktion durch den folgenden Code.
+6. Ersetze in derselben Datei die `InitInstance`-Standardfunktion durch den folgenden Code.
 
     ```cpp
     BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
@@ -475,7 +475,7 @@ Schließlich können Sie dem **MyDesktopWin32App** -Projekt Code hinzufügen, um
     }
     ```
 
-7. Fügen Sie in der gleichen Datei die folgende neue Funktion am Ende der Datei hinzu.
+7. Füge in derselben Datei die folgende neue Funktion am Ende der Datei hinzu.
 
     ```cpp
     void AdjustLayout(HWND hWnd)
@@ -492,7 +492,7 @@ Schließlich können Sie dem **MyDesktopWin32App** -Projekt Code hinzufügen, um
     }
     ```
 
-8. Suchen Sie in derselben Datei die `WndProc`-Funktion. Ersetzen Sie den Standard `WM_DESTROY` Handler in der Switch-Anweisung durch den folgenden Code.
+8. Suche in derselben Datei nach der `WndProc`-Funktion. Ersetze den `WM_DESTROY`-Standardhandler in der switch-Anweisung durch den folgenden Code.
 
     ```cpp
     case WM_DESTROY:
@@ -508,25 +508,25 @@ Schließlich können Sie dem **MyDesktopWin32App** -Projekt Code hinzufügen, um
         break;
     ```
 
-9. Speichern Sie die Datei.
-10. Erstellen Sie die Lösung, und vergewissern Sie sich, dass Sie erfolgreich erstellt wurde
+9. Speichere die Datei.
+10. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
 
-## <a name="test-the-app"></a>Testen der APP
+## <a name="test-the-app"></a>Testen der App
 
-Führen Sie die Lösung aus, und vergewissern Sie sich, dass **MyDesktopWin32App** mit dem folgenden Fenster geöffnet wird
+Führe die Projektmappe aus, und vergewissere dich, dass **MyDesktopWin32App** mit dem folgenden Fenster geöffnet wird.
 
 ![MyDesktopWin32App-App](images/xaml-islands/xaml-island-cpp-9.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Viele Desktop Anwendungen, die XAML-Inseln hosten, müssen zusätzliche Szenarios verarbeiten, um eine reibungslose Benutzer Leistung zu gewährleisten. Beispielsweise müssen Desktop Anwendungen möglicherweise Tastatureingaben in XAML-Inseln verarbeiten, die Navigation zwischen XAML-Inseln und anderen Benutzeroberflächen Elementen und Layoutänderungen steuern.
+Viele Desktopanwendungen, die XAML Islands hosten, müssen zusätzliche Szenarien verarbeiten, um ein reibungsloses Benutzererlebnis zu gewährleisten. Beispielsweise müssen Desktopanwendungen möglicherweise Tastatureingaben in XAML Islands verarbeiten, den Navigationsfokus zwischen XAML Islands und anderen Benutzeroberflächenelementen verlagern und Layoutänderungen unterstützen.
 
-Weitere Informationen zur Behandlung dieser Szenarien und Zeiger auf Verwandte Codebeispiele finden Sie unter [Erweiterte Szenarien für XAML-Inseln C++ in Win32-apps](advanced-scenarios-xaml-islands-cpp.md).
+Weitere Informationen zum Handhaben dieser Szenarien und Verweise auf entsprechende Codebeispiele findest du unter [Erweiterte Szenarien für XAML Islands in C++-Win32-Apps](advanced-scenarios-xaml-islands-cpp.md).
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML-Inseln)](xaml-islands.md)
-* [Verwenden der UWP-XAML-Hosting- C++ API in einer Win32-App](using-the-xaml-hosting-api.md)
-* [Hosten eines UWP-Standard Steuer C++ Elements in einer Win32-App](host-standard-control-with-xaml-islands-cpp.md)
-* [Erweiterte Szenarien für XAML-Inseln C++ in Win32-apps](advanced-scenarios-xaml-islands-cpp.md)
-* [Codebeispiele für XAML-Inseln](https://github.com/microsoft/Xaml-Islands-Samples)
+* [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
+* [Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App](using-the-xaml-hosting-api.md)
+* [Hosten eines UWP-Standardsteuerelements in einer C++-Win32-App](host-standard-control-with-xaml-islands-cpp.md)
+* [Erweiterte Szenarien für XAML Islands in C++-Win32-Apps](advanced-scenarios-xaml-islands-cpp.md)
+* [XAML Islands-Codebeispiele](https://github.com/microsoft/Xaml-Islands-Samples)
