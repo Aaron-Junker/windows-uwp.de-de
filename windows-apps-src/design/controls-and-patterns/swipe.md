@@ -11,18 +11,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a9ff0acd46ef7efa92239b0a3ef07b507850a66
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081521"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614093"
 ---
 # <a name="swipe"></a>Swipe
 
 Wischgestenbasierte Befehle sind ein Beschleuniger für Kontextmenüs. Benutzer können damit per Toucheingabe leicht häufig verwendete Aktionen ausführen, ohne Zustände innerhalb der App ändern zu müssen.
 
-> **Wichtige APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Windows-UI-Bibliotheks-APIs:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+>
+> **Plattform-APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![Helles Design für Ausführen und Einblenden](images/LightThemeSwipe.png)
 

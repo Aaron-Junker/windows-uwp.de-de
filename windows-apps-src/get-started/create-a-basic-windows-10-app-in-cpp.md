@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 13e6f4ac59a99463cd891e936f51449baf4ea7c2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
+ms.sourcegitcommit: fc5db2e26db65be025e9f62044b4d29bb1744f8d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259539"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80524082"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>Erstellen der App „Hello World“ in C++/CX
 
@@ -45,7 +45,7 @@ Wenn du bereits Windows-Desktop-Apps mit C++ programmiert hast, werden dir einig
 
 -   Sie erstellen weiterhin Apps, die mit dem Visual C++-Compiler in systemeigenem Computercode kompiliert werden. UWP-Apps in C++/CX können in einer verwalteten Runtimeumgebung nicht ausgeführt werden.
 
-### <a name="whats-new"></a>Das ist neu:
+### <a name="whats-new"></a>Neuigkeiten
 
 -   Die Designprinzipien für UWP- und universelle Windows-Apps unterscheiden sich erheblich von denen für Desktop-Apps. Der Schwerpunkt liegt nicht mehr auf Fensterrahmen, Bezeichnungen, Dialogfeldern usw. Der Inhalt steht im Vordergrund. Eindrucksvolle universelle Windows-Apps folgen diesen Prinzipien schon mit Beginn der Planungsphase.
 
@@ -202,7 +202,7 @@ MainPage::MainPage()
 
 Lassen Sie uns der App einige Inhalte hinzufügen.
 
-**Schritt 1: Anpassen der Startseite**
+**Schritt 1: Anpassen der Startseite**
 
 1.  Öffnen Sie im **Projektmappen-Explorer** die Datei „MainPage.xaml.cs“.
 2.  Erstellen Sie Steuerelemente für die Benutzeroberfläche, indem Sie den folgenden XAML-Code direkt vor dem schließenden Tag zum [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Stammelement hinzufügen. Er enthält ein [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) mit einem [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), in dem der Benutzer zur Eingabe seines Namens aufgefordert wird, ein [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element, in das der Name eingegeben wird, sowie ein [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)- und ein weiteres **TextBlock**-Element.

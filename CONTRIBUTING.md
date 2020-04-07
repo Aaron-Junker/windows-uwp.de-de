@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 5340c8375be9cf33a8f56fdba7bd36e9743767ab
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521221"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482310"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Beitragen zur UWP-Konzeptdokumentation
 
@@ -22,7 +22,7 @@ Wenn du **kein** Microsoft-Mitarbeiter bist, kannst du für deine Beiträge das 
 
 Wenn du dich bereits im öffentlichen Inhaltsrepository befindest, navigiere zunächst zu der Datei, die du ändern möchtest. Wähle dort über dem angezeigten Inhalt das Stiftsymbol aus, um mit der Bearbeitung zu beginnen.
 
-Falls du gerade eine Seite von „docs.microsoft.com“ betrachtest, kannst du alternativ auch rechts oben auf der Seite auf die Schaltfläche **Bearbeiten** klicken. Dadurch gelangst du zur entsprechenden Quelldatei im Repository.
+Wenn Sie eine Seite in [docs.microsoft.com](https://docs.microsoft.com) anzeigen, können Sie alternativ die Schaltfläche **Bearbeiten** oben rechts auf der Seite auswählen. Dadurch gelangst du zur entsprechenden Quelldatei im Repository.
 
 Wenn du mit der Bearbeitung beginnst, forkt GitHub das offizielle Repository automatisch in dein persönliches GitHub-Konto, in dem du dann die gewünschten Änderungen vornehmen kannst. Anschließend musst du einen Pull Request an den Branch **docs** übermitteln.
 

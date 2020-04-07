@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d6bafc9a21e3950974615078af24989aab7da9e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1cf9d4866ddb72da0a284bcdcff07e3420f2880e
+ms.sourcegitcommit: 4657ac3be576b1d6dcd938d73a2f6a7e060ab17b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259183"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80404917"
 ---
 # <a name="networking-basics"></a>Netzwerkgrundlagen
 Aktionen, die Sie für eine netzwerkfähige App ausführen müssen.
@@ -460,11 +460,11 @@ Ein Server benötigt möglicherweise zusätzlich zur TLS/SSL-Verschlüsselung ei
 
 Wenn die erste Anforderung vom Client nicht diesen Wert enthält oder einen Wert bereitstellt, der vom Server nicht erwartet wird, tritt ein WebSocket-Handshakefehler auf, und der Server sendet den erwarteten Wert an den Client.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Authentifizierung
 So werden beim Herstellen einer Verbindung über das Netzwerk die Authentifizierungsanmeldeinformationen bereitgestellt.
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>Bereitstellen eines Clientzertifikats mit der StreamSocket-Klasse
-Die [**Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)-Klasse unterstützt die Verwendung von SSL/TLS zum Authentifizieren des Servers, mit dem die App kommuniziert. In bestimmten Fällen muss auch die App selbst mit einem TLS-Clientzertifikat am Server authentifiziert werden. In Windows 10 können Sie ein Clientzertifikat zu dem [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl)-Objekt bereitstellen (dies muss festgelegt werden, bevor der TLS-Handshake gestartet wird). Wenn der Server das Clientzertifikat anfordert, reagiert Windows mit dem bereitgestellten Zertifikat.
+Die [**Windows.Networking.Sockets.StreamSocket**](/uwp/api/windows.networking.sockets.streamsocket)-Klasse unterstützt die Verwendung von SSL/TLS zum Authentifizieren des Servers, mit dem die App kommuniziert. In bestimmten Fällen muss auch die App selbst mit einem TLS-Clientzertifikat am Server authentifiziert werden. In Windows 10 können Sie ein Clientzertifikat zu dem [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl)-Objekt bereitstellen (dies muss festgelegt werden, bevor der TLS-Handshake gestartet wird). Wenn der Server das Clientzertifikat anfordert, reagiert Windows mit dem bereitgestellten Zertifikat.
 
 Hier ist ein Codeausschnitt, in dem die Implementierung dazu dargestellt wird:
 
@@ -506,5 +506,5 @@ Die Netzwerk-APIs unterstützen verschiedene Methoden zum Abrufen der detaillier
 -   Einige APIs bieten eine Hilfsmethode, die den **HRESULT**-Wert der Ausnahme in einen Enumerationswert konvertiert.
 -   Andere APIs bieten eine Methode zum Abrufen des tatsächlichen **HRESULT**-Werts.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Verbesserungen bei der Netzwerk-API unter Windows 10](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
