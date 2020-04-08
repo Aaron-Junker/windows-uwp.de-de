@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 351e234577b1a07b33bdcdbb92642c3697342503
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 31b3bcc2388a98941fc5e8aa44d18beee53de5c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163700"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081096"
 ---
 # <a name="combo-box-and-list-box"></a>Kombinationsfeld und Listenfeld
 
@@ -23,11 +23,17 @@ Verwenden Sie ein Kombinationsfeld (auch als Dropdownliste bezeichnet), um eine 
 
 Wenn das Kombinationsfeld geschlossen ist, wird entweder die aktuelle Auswahl angezeigt oder das Feld ist leer, wenn kein Element ausgewählt ist. Wenn der Benutzer das Kombinationsfeld erweitert, wird die Liste der auswählbaren Elemente angezeigt.
 
-> **Wichtige APIs:** [ComboBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable-Eigenschaft](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted-Ereignis](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
-Kombinationsfeld im kompakten Zustand mit einer Überschrift
-
 ![Beispiel für eine Dropdownliste im kompakten Zustand](images/combo_box_collapsed.png)
+
+> _Kombinationsfeld im kompakten Zustand mit einer Überschrift._
+
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [ComboBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable-Eigenschaft](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text-Eigenschaft](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted-Ereignis](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -41,7 +47,7 @@ Kombinationsfeld im kompakten Zustand mit einer Überschrift
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ComboBox">die App zu öffnen und ComboBox in Aktion zu sehen</a>.</p>
     <ul>
@@ -100,7 +106,7 @@ public MainPage()
 
 ### <a name="item-selection"></a>Elementauswahl
 
-Wie ListView und GridView ist auch ComboBox von [Selector](/uwp/api/windows.ui.xaml.controls.primitives.selector) abgeleitet, sodass Sie die Auswahl eines Benutzers auf die gleiche Standardmethode abrufen können.
+Wie ListView und GridView ist auch ComboBox von [Selector](/uwp/api/windows.ui.xaml.controls.primitives.selector) abgeleitet, sodass du die Auswahl eines Benutzers auf die gleiche Standardmethode abrufen kannst.
 
 Sie können das ausgewählte Element des Kombinationsfelds mithilfe der [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)-Eigenschaft und den Index des ausgewählten Elements mithilfe der [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)-Eigenschaft abrufen oder festlegen.
 
@@ -210,7 +216,7 @@ Im folgenden Beispiel ist ein einfaches bearbeitbares Kombinationsfeld dargestel
 
 ### <a name="text-submitted"></a>Übermittelter Text
 
-Das Ereignis [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) kann so verarbeitet werden, dass es mit dem vom Benutzer eingegebenen Wert verwendet wird. Im Ereignishandler überprüfen Sie normalerweise, ob der vom Benutzer eingegebene Wert gültig ist, und verwenden dann den Wert in der App. Je nach Fall können Sie den Wert auch zur späteren Verwendung der Liste mit Optionen des Kombinationsfelds hinzufügen.
+Das Ereignis [TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) kann so verarbeitet werden, dass es mit dem vom Benutzer eingegebenen Wert verwendet wird. Im Ereignishandler überprüfen Sie normalerweise, ob der vom Benutzer eingegebene Wert gültig ist, und verwenden dann den Wert in der App. Je nach Fall kannst du den Wert auch zur späteren Verwendung der Liste mit Optionen des Kombinationsfelds hinzufügen.
 
 Das Ereignis TextSubmitted tritt ein, wenn folgende Bedingungen erfüllt sind:
 
@@ -240,13 +246,13 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 {
     if (byte.TryParse(e.Text, out double newValue))
     {
-        // Update the app’s font size.
+        // Update the app's font size.
         _fontSize = newValue;
     }
     else
     {
         // If the item is invalid, reject it and revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         sender.Text = sender.SelectedValue.ToString();
         e.Handled = true;
     }
@@ -279,7 +285,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
     else
     {
         // If the item is invalid, reject it but do not revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         e.Handled = true;
     }
 }

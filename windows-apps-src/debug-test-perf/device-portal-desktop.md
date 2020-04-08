@@ -4,18 +4,18 @@ title: Geräteportal für Windows-Desktop
 description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows 10, UWP, Geräte Portal
+keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
 ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/13/2020
 ms.locfileid: "79210186"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
-Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit Ihrem Desktop interagieren. Sie haben im Device Portal folgende Möglichkeiten:
+Im Windows-Geräteportal kannst du Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit deinem Desktop interagieren. Sie haben im Device Portal folgende Möglichkeiten:
 - Anzeigen und Bearbeiten einer Liste laufender Prozesse
 - Installieren, Löschen, Starten und Beenden von Apps
 - Ändern von WLAN-Profilen und Anzeigen der Signalstärke und der ipconfig
@@ -24,45 +24,45 @@ Im Windows-Geräteportal können Sie Diagnoseinformationen anzeigen und über HT
 - Sammeln von ETW-Ablaufverfolgungen 
 - Bearbeiten des isolierten Speichers quergeladener Apps
 
-## <a name="set-up-device-portal-on-windows-desktop"></a>Einrichten von des Geräteportals unter Windows-Desktop
+## <a name="set-up-device-portal-on-windows-desktop"></a>Einrichten des Geräteportals unter Windows-Desktop
 
-### <a name="turn-on-developer-mode"></a>Entwicklermodus aktivieren
+### <a name="turn-on-developer-mode"></a>Aktivieren des Entwicklermodus
 
-Ab Windows 10, Version 1607, sind einige der neueren Funktionen für den Desktop nur verfügbar, wenn der Entwicklermodus aktiviert ist. Informationen zum Aktivieren des Entwicklermodus finden Sie unter [Aktivieren Ihres Geräts für die Entwicklung](../get-started/enable-your-device-for-development.md).
+Ab Windows 10, Version 1607, sind einige der neueren Funktionen für den Desktop nur verfügbar, wenn der Entwicklermodus aktiviert ist. Informationen zum Aktivieren des Entwicklermodus findest du unter [Aktivieren Ihres Geräts für die Entwicklung](../get-started/enable-your-device-for-development.md).
 
 > [!IMPORTANT]
-> In manchen Fällen wird der Entwicklermodus aufgrund von Problemen mit dem Netzwerk oder der Kompatibilität nicht ordnungsgemäß installiert. Lesen Sie den [entsprechenden Abschnitt von „Aktivieren Sie Ihr Gerät für die Entwicklung”](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package), um Hilfe bei der Behebung dieser Probleme zu erhalten.
+> In manchen Fällen wird der Entwicklermodus aufgrund von Problemen mit dem Netzwerk oder der Kompatibilität nicht ordnungsgemäß installiert. Lies den [entsprechenden Abschnitt von „Aktivieren Sie Ihr Gerät für die Entwicklung”](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package), um Hilfe bei der Behebung dieser Probleme zu erhalten.
 
-### <a name="turn-on-device-portal"></a>Geräteportal einschalten
+### <a name="turn-on-device-portal"></a>Aktivieren des Geräteportals
 
-Sie können das Geräteportal im Bereich **Für Entwickler** unter **Einstellungen** aktivieren. Wenn Sie es aktivieren, müssen Sie auch einen entsprechenden Benutzernamen und ein Kennwort erstellen. Verwenden Sie nicht Ihr Microsoft-Konto oder andere Windows-Anmeldeinformationen. 
+Du kannst das Geräteportal im Bereich **Für Entwickler** unter **Einstellungen** aktivieren. Wenn du es aktivierst, musst du auch einen entsprechenden Benutzernamen und ein Kennwort erstellen. Verwenden Sie nicht Ihr Microsoft-Konto oder andere Windows-Anmeldeinformationen. 
 
-![Geräteportal-Abschnitt der Einstellungen-App](images/device-portal/device-portal-desk-settings.png) 
+![Geräteportalabschnitt der Einstellungen-App](images/device-portal/device-portal-desk-settings.png) 
 
-Nachdem Geräteportal aktiviert wurde, werden unten im Abschnitt Links angezeigt. Beachten Sie die Portnummer am Ende der aufgeführten URLs: Diese Nummer wird zufällig generiert, wenn Geräteportal aktiviert ist, sollte aber zwischen den Neustarts des Desktops konsistent bleiben. 
+Sobald das Geräteportal aktiviert ist, werden unten im Abschnitt Links angezeigt. Beachte die Portnummer am Ende der aufgeführten URLs: Diese Nummer wird zufällig generiert, wenn das Geräteportal aktiviert ist, sollte aber zwischen den Neustarts des Desktops konsistent bleiben. 
 
 Diese Links bieten zwei Möglichkeiten, sich mit dem Geräteportal zu verbinden: über das lokale Netzwerk (einschließlich VPN) oder über den lokalen Host.
 
-### <a name="connect-to-device-portal"></a>Mit dem Geräteportal verbinden
+### <a name="connect-to-device-portal"></a>Verbinden mit dem Geräteportal
 
-Um eine Verbindung über einen lokalen Host herzustellen, öffnen Sie ein Browserfenster und geben Sie die hier angezeigte Adresse für den von Ihnen verwendeten Verbindungstyp ein.
+Um eine Verbindung über einen lokalen Host herzustellen, öffne ein Browserfenster und gib die hier angezeigte Adresse für den von dir verwendeten Verbindungstyp ein.
 
 * Localhost: `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
 * Lokales Netzwerk: `https://<IP address of the desktop>:<PORT>`
 
 Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich.
 
-Sie können die Authentifizierung deaktivieren, wenn Sie Geräteportal in einer geschützten Umgebung verwenden, z. B. in einem Testlabor, in dem Sie allen im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse Ihres Computers kennt, kann sich verbinden und es steuern.
+Du kannst die Authentifizierung deaktivieren, wenn du das Geräteportal in einer geschützten Umgebung verwendest, z. B. in einem Testlabor, in dem du allen im lokalen Netzwerk vertraust, keine persönlichen Informationen auf dem Gerät gespeichert hast und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse deines Computers kennt, kann sich verbinden und ihn steuern.
 
 ## <a name="device-portal-content-on-windows-desktop"></a>Geräteportal-Inhalte auf dem Windows-Desktop
 
-Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführliche Beschreibungen finden Sie unter [Übersicht über das Windows-Geräteportal](device-portal.md).
+Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführliche Beschreibungen findest du unter [Übersicht über das Windows-Geräteportal](device-portal.md).
 
 - App-Manager
 - Datei-Explorer
 - Laufende Prozesse
 - Leistung
-- Debuggen
+- Debugprotokolle
 - Ereignisablaufverfolgung für Windows (ETW)
 - Leistungsüberwachung
 - Geräte-Manager
@@ -71,7 +71,7 @@ Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführlic
 - Features
 - Mixed Reality
 - Streaming Install-Debugger
-- Location
+- Speicherort
 - Entwurf
 
 ## <a name="more-device-portal-options"></a>Weitere Optionen für das Geräteportal
@@ -81,55 +81,55 @@ Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführlic
 Wenn Sie Portnummern für Device Portal auswählen möchten (z. B. 80 und 443), können Sie die folgenden Registrierungsschlüssel festlegen:
 
 - Unter `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`: ein erforderliches DWORD. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
-    - `HttpPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Device Portal nach HTTP-Verbindungen lauscht.    
-    - `HttpsPort`: ein erforderliches DWORD. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
+    - `UseDynamicPorts`: Ein erforderlicher DWORD-Wert. Legen Sie den Wert auf 0 fest, um die von Ihnen ausgewählten Portnummern beizubehalten.
+    - `HttpPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, an der Device Portal nach HTTP-Verbindungen lauscht.    
+    - `HttpsPort`: Ein erforderlicher DWORD-Wert. Enthält die Portnummer, an der Device Portal nach HTTPS-Verbindungen lauscht.
     
-Unter dem gleichen regkey-Pfad können Sie auch die Authentifizierungsanforderung deaktivieren:
-- `UseDefaultAuthorizer` - `0` deaktiviert, `1` aktiviert ist.  
+Unter dem gleichen regkey-Pfad kannst du auch die Authentifizierungsanforderung deaktivieren:
+- `UseDefaultAuthorizer` - `0` für deaktiviert, `1` für aktiviert.  
     - Dies steuert sowohl die grundlegende Authentifizierungsanforderung für jede Verbindung als auch die Weiterleitung von HTTP nach HTTPS.  
     
 ### <a name="command-line-options-for-device-portal"></a>Befehlszeilenoptionen für das Geräteportal
-Über eine administrative Eingabeaufforderung können Sie Teile des Geräteportal aktivieren und konfigurieren. Um den aktuellen Satz von Befehlen anzuzeigen, die für Ihren Build unterstützt werden, können Sie ausführen `webmanagement /?`
+Über eine administrative Eingabeaufforderung kannst du Teile des Geräteportal aktivieren und konfigurieren. Um den neuesten Satz von Befehlen zu sehen, die von deinem Build unterstützt werden, kannst du `webmanagement /?` ausführen.
 
 - `sc start webmanagement` oder `sc stop webmanagement` 
-    - Schalten Sie den Dienst ein oder aus. Dazu muss ebenfalls der Entwicklermodus aktiviert sein. 
+    - Schalte den Dienst ein oder aus. Dazu muss ebenfalls der Entwicklermodus aktiviert sein. 
 - `-Credentials <username> <password>` 
-    - Legen Sie einen Benutzernamen und ein Passwort für das Geräteportal fest. Der Benutzername muss den Standard Authentifizierungs Standards entsprechen und darf daher keinen Doppelpunkt enthalten (:) und sollten aus standardmäßigen ASCII-Zeichen bestehen, z. b. [a-Za-z0-9], da Browser den vollständigen Zeichensatz nicht auf eine standardmäßige Weise analysieren.  
+    - Lege einen Benutzernamen und ein Kennwort für das Geräteportal fest. Der Benutzername muss den Basic-Auth-Standards entsprechen, darf also keinen Doppelpunkt (:) enthalten und sollte aus Standard-ASCII-Zeichen wie z. B. [a-z, A-Z, 0-9] aufgebaut sein, da Browser standardmäßig nicht den gesamten Zeichensatz verarbeiten.  
 - `-DeleteSSL` 
-    - Dadurch wird der für HTTPS-Verbindungen verwendete SSL-Zertifikat-Cache zurückgesetzt. Wenn Sie auf TLS-Verbindungsfehler stoßen, die nicht umgangen werden können (im Gegensatz zur erwarteten Zertifikatswarnung), kann diese Option das Problem für Sie beheben. 
+    - Dadurch wird der für HTTPS-Verbindungen verwendete SSL-Zertifikat-Cache zurückgesetzt. Wenn du auf TLS-Verbindungsfehler stößt, die nicht umgangen werden können (im Gegensatz zur erwarteten Zertifikatswarnung), kann diese Option das Problem für dich beheben. 
 - `-SetCert <pfxPath> <pfxPassword>`
-    - Weitere Informationen finden Sie unter [Bereitstellen eines Geräteportals mit einem benutzerdefinierten SSL-Zertifikat](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-ssl).  
-    - Auf diese Weise können Sie Ihr eigenes SSL-Zertifikat installieren, um die SSL-Warnseite zu reparieren, die normalerweise im Geräteportal angezeigt wird. 
+    - Weitere Informationen findest du unter [Bereitstellen eines Geräteportals mit einem benutzerdefinierten SSL-Zertifikat](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-ssl).  
+    - Auf diese Weise kannst du dein eigenes SSL-Zertifikat installieren, um die SSL-Warnseite zu reparieren, die normalerweise im Geräteportal angezeigt wird. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
-    - Führen Sie eine eigenständige Version des Geräteportals mit einer bestimmten Konfiguration und sichtbaren Debug-Meldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-    - Lesen Sie den [Artikel im MSDN Magazine](https://msdn.microsoft.com/magazine/mt826332.aspx) mit Details darüber, wie Sie es als „System” ausführen können, um Ihr gepacktes Plugin vollständig zu testen.
+    - Führe eine eigenständige Version des Geräteportals mit einer bestimmten Konfiguration und sichtbaren Debugmeldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
+    - Lies den [Artikel im MSDN Magazine](https://msdn.microsoft.com/magazine/mt826332.aspx) mit Details darüber, wie du es als „System” ausführen kannst, um dein gepacktes Plugin vollständig zu testen.
 
 ## <a name="common-errors-and-issues"></a>Häufige Fehler und Probleme
 
-Im folgenden finden Sie einige häufige Fehler, die beim Einrichten des Geräte Portals auftreten können.
+Im folgenden findest du einige häufige Fehler, die beim Einrichten des Geräteportals auftreten können.
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbs_e_invalid_windows_update_count"></a>Windowsupdatesearch gibt eine ungültige Anzahl von Updates zurück (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT).
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbs_e_invalid_windows_update_count"></a>WindowsUpdateSearch gibt eine ungültige Anzahl von Updates zurück (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT).
 
-Dieser Fehler kann auftreten, wenn Sie versuchen, die Entwickler Pakete in einem vorab Release von Windows 10 zu installieren. Diese FOD-Pakete (Feature-on-Demand) werden auf Windows Update gehostet. Wenn Sie Sie herunterladen, müssen Sie sich für das flighting entscheiden. Wenn Ihre Installation nicht für die richtige Build-und Ring Kombination aktiviert ist, kann die Nutzlast nicht heruntergeladen werden. Überprüfen Sie Folgendes:
+Dieser Fehler kann auftreten, wenn du versuchst, die Entwicklerpakete in einem Vorabversionsbuild von Windows 10 zu installieren. Diese FOD-Pakete (Feature-on-Demand) werden auf Windows Update gehostet. Wenn du sie in Vorabversionsbuilds herunterlädst, musst du dich für das Flighting entscheiden. Wenn deine Installation nicht für das Flighting für die richtige Build-and-Ring-Kombination aktiviert ist, kann die Nutzlast nicht heruntergeladen werden. Überprüfe Folgendes gründlich:
 
-1. Navigieren Sie zu **Einstellungen > aktualisieren Sie & Sicherheit > Windows Insider-Programm** , und vergewissern Sie sich, dass im Abschnitt **Windows Insider-Konto** die richtigen Kontoinformationen angezeigt werden. Wenn dieser Abschnitt nicht angezeigt wird, wählen Sie **Windows Insider-Konto verknüpfen**, Ihr e-Mail-Konto hinzufügen aus, und vergewissern Sie sich, dass es unter der Überschrift **Windows Insider-Konto** angezeigt wird (möglicherweise müssen Sie ein zweites Mal ein **Windows Insider-Konto verknüpfen** , um ein neu hinzugefügtes Konto zu verknüpfen).
+1. Navigiere zu **Einstellungen > Update und Sicherheit > Windows Insider-Programm**, und vergewissere dich, dass der **Windows-Insider-Konto**-Abschnitt die richtigen Kontoinformationen enthält. Wenn dieser Abschnitt nicht angezeigt wird, wähle **Windows-Insider-Konto verknüpfen** aus, füge dein E-Mail-Konto hinzu und bestätige, dass es in der **Windows-Insider-Konto**-Überschrift angezeigt wird (möglicherweise musst du **Windows-Insider-Konto verknüpfen** ein zweites Mal auswählen, um tatsächlich ein neu hinzugefügtes Konto zu verknüpfen).
  
-2. Stellen **Sie unter welche Art von Inhalt möchten Sie erhalten?** sicher, dass die **aktive Windows-Entwicklung** ausgewählt ist.
+2. Stelle unter **Welche Inhalte möchten Sie erhalten?** sicher, dass **Aktive Entwicklung von Windows** ausgewählt ist.
  
-3. Stellen **Sie unter welches Tempo möchten Sie neue Builds erhalten?** sicher, dass **Windows Insider fast** ausgewählt ist.
+3. Stelle unter **In welchem Intervall möchten Sie neue Builds erhalten?** sicher, dass **Windows-Insider: schnell** ausgewählt ist.
  
-4. Sie sollten jetzt in der Lage sein, die fods zu installieren. Wenn Sie sich vergewissert haben, dass Sie mit Windows Insider fast arbeiten und die fods weiterhin nicht installieren können, geben Sie bitte Feedback, und fügen Sie die Protokolldateien unter " **c:\Windows\Logs\CBS**" an.
+4. Du solltest jetzt FoDs installieren können. Wenn du dich vergewissert hast, dass du mit „Windows-Insider: schnell“ arbeitest und die FoDs weiterhin nicht installieren kannst, gib bitte Feedback, und füge die Protokolldateien unter **C:\Windows\Logs\CBS** an.
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>SC StartService: Fehler bei OpenService 1060: der angegebene Dienst ist nicht als installierter Dienst vorhanden.
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC] StartService: OpenService FAILED 1060: Der angegebene Dienst ist nicht als installierter Dienst vorhanden.
 
-Dieser Fehler wird möglicherweise angezeigt, wenn die Entwickler Pakete nicht installiert sind. Ohne die Entwickler Pakete gibt es keinen Webverwaltungsdienst. Versuchen Sie erneut, die Entwickler Pakete zu installieren.
+Dieser Fehler wird möglicherweise angezeigt, wenn die Entwicklerpakete nicht installiert sind. Ohne die Entwicklerpakete gibt es keinen Webverwaltungsdienst. Versuche erneut, die Entwicklerpakete zu installieren.
 
 ### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>CBS kann den Download nicht starten, da sich das System im getakteten Netzwerk (CBS_E_METERED_NETWORK) befindet.
 
-Dieser Fehler wird möglicherweise angezeigt, wenn Sie über eine getaktete Internetverbindung verfügen. Sie können die Entwickler Pakete nicht über eine getaktete Verbindung herunterladen.
+Dieser Fehler wird möglicherweise angezeigt, wenn du über eine getaktete Internetverbindung verfügst. Du kannst die Entwicklerpakete nicht über eine getaktete Verbindung herunterladen.
 
 ## <a name="see-also"></a>Siehe auch
 
-* [Übersicht über das Windows-Geräte Portal](device-portal.md)
-* [Referenz zur kernapi des Geräte Portals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Übersicht über das Windows-Geräteportal](device-portal.md)
+* [Referenz zur Kern-API des Geräteportals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

@@ -1,16 +1,15 @@
 ---
 title: Befehle in UWP-Apps (Universelle Windows-Plattform)
 description: In diesem Artikel wird beschrieben, wie die XamlUICommand-Klasse und die StandardUICommand-Klasse (zusammen mit der ICommand-Schnittstelle) verwendet werden, um Befehle über verschiedene Steuerelementtypen freizugeben und zu verwalten, und zwar unabhängig vom verwendeten Geräte- und Eingabetyp.
-author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: cd34c9444c68b8e959f449124fe4ae294ec14fc4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257709"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081746"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in UWP-Apps (Universelle Windows-Plattform), die StandardUICommand, XamlUICommand und ICommand verwenden
 
@@ -63,7 +62,7 @@ In der nachstehenden Tabelle sind einige typische Befehle für Sammlungen sowie 
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Element löschen      | Kontextmenü   | Hoverschaltfläche      | ENTF-TASTE              | Löschen per Wischen   |
 | Element kennzeichnen        | Kontextmenü   | Hoverschaltfläche      | STRG+UMSCHALT+G         | Kennzeichnen per Wischen     |
-| Daten aktualisieren     | Kontextmenü   | N/V               | F5-TASTE               | Aktualisierung durch Ziehen   |
+| Daten aktualisieren     | Kontextmenü   | NICHT ZUTREFFEND               | F5-TASTE               | Aktualisierung durch Ziehen   |
 | Element als Favorit speichern | Kontextmenü   | Hoverschaltfläche      | F-TASTE, STRG+S            | Als Favorit speichern per Wischen |
 
 **Stellen Sie stets ein Kontextmenü bereit** Wir empfehlen, alle relevanten kontextbezogenen Befehle in einem traditionellen Kontextmenü oder in CommandBarFlyout einzuschließen, da beide für sämtliche Eingabetypen unterstützt werden. Wenn ein Befehl beispielsweise nur während eines Mauszeiger-Hoverereignisses verfügbar gemacht wird, kann er nicht auf einem reinen Toucheingabegerät verwendet werden.
@@ -1100,7 +1099,7 @@ Verfolgen Sie beim Erstellen von Befehlen für Ihre UWP-Apps folgende Ansätze:
 
 Ein komplettes Beispiel, das eine Implementierung von [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) und [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) veranschaulicht, finden Sie im Beispiel zum [XAML-Steuerelementekatalog](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Steuerelemente und Muster für UWP-Apps](index.md)
 

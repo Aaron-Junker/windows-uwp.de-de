@@ -1,100 +1,100 @@
 ---
 title: Hilfe beim Wechsel von Mac (Unix) zu Windows
-description: Eine Anleitung, die Sie beim Übergang von einem Mac (Unix) zu einer Windows-Entwicklungsumgebung unterstützt, einschließlich Tastenkombinationen und einer kurzen Übersicht über die Unterschiede zwischen Mac und Windows.
+description: Eine Anleitung, die dich beim Übergang von einer Mac-Entwicklungsumgebung (Unix) zu einer Windows-Entwicklungsumgebung unterstützt, einschließlich Tastenkombinationszuordnung und einer kurzen Übersicht über die Unterschiede zwischen Mac und Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 ms.technology: windows-nodejs
-keywords: Mac zu Windows, Tastenkombination für Tastenkombinationen, Wechsel von UNIX zu Windows, Übergang von Mac zu Windows, Unterstützung der Umstellung von MacBook auf die Oberfläche, Verwendung von Windows für einen Macintosh-Benutzer, Wechsel von Macintosh zu Windows, Hilfe beim Ändern von Entwicklungsumgebungen, Mac OS X zu Windows, Hilfe Wechsel von Mac zu PC
+keywords: Mac zu Windows, Tastenkombinationszuordnung, Wechsel von UNIX zu Windows, Umstellung von Mac auf Windows, Unterstützung des Wechsels von MacBook zu Surface, Verwendung von Windows für einen Macintosh-Benutzer, Wechsel von Macintosh zu Windows, Unterstützung der Änderung von Entwicklungsumgebungen, Mac OS X zu Windows, Unterstützung des Wechsels von Mac zu PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
 ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/24/2020
 ms.locfileid: "80218440"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Leitfaden zum Ändern der Entwicklungsumgebung von Mac zu Windows
 
-Die folgenden Tipps und Steuerelement äquivalente sollten Sie bei der Umstellung zwischen einer Mac-und Windows-Entwicklungsumgebung (oder einer WSL/Linux) unterstützen.
+Die folgenden Tipps und Steuerelementäquivalente sollten dich beim Wechsel von einer Mac- zu einer Windows-Entwicklungsumgebung (oder WSL/Linux) unterstützen.
 
-Bei der APP-Entwicklung wäre das nächste Äquivalent zu Xcode [Visual Studio](https://visualstudio.microsoft.com). Es gibt auch eine Version von [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/), wenn Sie jemals wieder zurückkehren müssen. Für die plattformübergreifende Code Bearbeitung (und eine große Anzahl von Plug-ins) ist [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) die häufigste Wahl.
+Das nächste Äquivalent zu Xcode bei der App-Entwicklung ist [Visual Studio](https://visualstudio.microsoft.com). Es gibt auch eine Version von [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/) für den Fall, dass du zurückkehren möchtest. Für die plattformübergreifende Quellcodebearbeitung (und eine große Anzahl von Plug-Ins) ist [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) die beliebteste Wahl.
 
 ## <a name="keyboard-shortcuts"></a>Tastenkombinationen
 
-| **Betriebs** | **Mac** | **Windows** |
+| **Vorgang** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Kopieren | Befehl + C | STRG+C |
-| Ausschneiden | Befehl + X | STRG+X |
-| Einfügen | Befehl + V | STRG+V |
-| Rückgängig | Befehl + Z | STRG+Z |
-| Speichern | Befehl + S | Strg+S |
-| Öffnen | Befehl + O | Strg+O |
-| Computer sperren | Befehl + Steuerung + Q | WindowsKey + L |
-| Desktop anzeigen | Befehl + F3 | WindowsKey + D |
-| Dateibrowser öffnen | Befehl + N | WindowsKey + E |
-| Minimieren von Fenstern | Befehl + M | WindowsKey + M |
-| Suchen | Befehl + Leertaste | WindowsKey |
-| Aktives Fenster schließen | Befehl + W | Steuerelement + W |
-| Aktuellen Task wechseln | Befehl + Tab | ALT+TAB |
-| Maximieren eines Fensters im Vollbildmodus | Control + Command + F | WindowsKey + nach oben |
-| Bildschirm speichern (Screenshot) | Befehl + Umschalt + 3 | WindowsKey + UMSCHALT + S |
-| Fenster speichern | Befehl + Umschalt + 4 | WindowsKey + UMSCHALT + S |
-| Element Informationen oder Eigenschaften anzeigen | Befehl + I | ALT+EINGABETASTE |
- | Alle Elemente auswählen | Befehl + A | STRG+A |
-| Wählen Sie mehr als ein Element in einer Liste aus (nicht zusammenhängend). | , Und klicken Sie dann auf die einzelnen Elemente. | Steuerelement, und klicken Sie dann auf jedes Element |
-| Sonderzeichen eingeben | Option + Zeichen Taste | ALT + Zeichen Taste|
+| Kopieren | COMMAND+C | STRG+C |
+| Ausschneiden | COMMAND+X | STRG+X |
+| Einfügen | COMMAND+V | STRG+V |
+| Rückgängig machen | COMMAND+Z | STRG+Z |
+| Speichern | COMMAND+S | STRG+S |
+| Öffnen Sie den | COMMAND+O | STRG+O |
+| Computer sperren | COMMAND+STRG+Q | WINDOWS-TASTE+L |
+| Desktop anzeigen | COMMAND+F3 | WINDOWS-TASTE+D |
+| Dateibrowser öffnen | COMMAND+N | WINDOWS-TASTE+E |
+| Fenster minimieren | COMMAND+M | WINDOWS-TASTE+M |
+| Suchen | COMMAND+LEERTASTE | WINDOWS-TASTE |
+| Aktives Fenster schließen | COMMAND+W | STRG+W |
+| Aktuelle Aufgabe wechseln | COMMAND+TAB | ALT+TAB |
+| Fenster zu Vollbild maximieren | STRG+COMMAND+F | WINDOWS-TASTE+NACH OBEN |
+| Bildschirm speichern (Screenshot) | COMMAND+UMSCHALT+3 | WINDOWS-TASTE+UMSCHALT+S |
+| Fenster speichern | COMMAND+UMSCHALT+4 | WINDOWS-TASTE+UMSCHALT+S |
+| Elementinformationen oder -eigenschaften anzeigen | COMMAND+I | ALT+EINGABE |
+ | Alle Elemente auswählen | COMMAND+A | STRG+A |
+| Mehrere (nicht zusammenhängende) Elemente in einer Liste auswählen | COMMAND gedrückt halten und auf die einzelnen Elemente klicken | STRG gedrückt halten und auf die einzelnen Elemente klicken |
+| Sonderzeichen eingeben | OPTION+Zeichentaste | ALT+Zeichentaste|
 
 ## <a name="trackpad-shortcuts"></a>Trackpad-Tastenkombinationen
 
-Hinweis: für einige dieser Verknüpfungen ist eine "Genauigkeits Trackpad" erforderlich, z. b. die Trackpad-Geräte auf Surface-Geräten und andere Laptops von Drittanbietern.
+Hinweis: Einige dieser Tastenkombinationen erfordern ein „Präzisionstrackpad“, z. B. die Trackpads auf Surface-Geräten und einigen anderen Laptops von Drittanbietern.
 
- **Betriebs** | **Mac** | **Windows** |
+ **Vorgang** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Scroll | Vertikaler Schwenken mit zwei Fingern | Vertikaler Schwenken mit zwei Fingern |
-| Zoom | Zwei Finger ein-und ausgehend | Zwei Finger ein-und ausgehend |
-| Rückwärts-und Vorwärtsbewegung zwischen Ansichten | Zwei Finger seitwärts schwenken | Zwei Finger seitwärts schwenken |
-| Virtuelle Arbeitsbereiche wechseln | Vier Finger seitwärts schwenken | Vier Finger seitwärts schwenken |
-| Zurzeit geöffnete apps anzeigen | Vier Finger nach oben schwenken | Drei Finger nach oben schwenken |
-| Wechseln zwischen Apps | N/V | Langsamste drei Finger seitwärts schwenken |
-| Zum Desktop wechseln | Verteilen von vier Fingern | Drei Finger schwenken nach unten |
-| Cortana/Aktions Center öffnen | Zwei Finger Folie von rechts | Drei Finger Tippen |
-| Zusätzliche Informationen öffnen | Drei Finger Tippen | N/V |
-|Launchpad anzeigen/app starten | Mit vier Fingern | Tippen Sie mit vier Fingern |
+| Scroll | Mit zwei Fingern vertikal wischen | Mit zwei Fingern vertikal wischen |
+| Zoom | Mit zwei Fingern vergrößern oder verkleinern | Mit zwei Fingern vergrößern oder verkleinern |
+| Zwischen Ansichten rückwärts und vorwärts wischen | Mit zwei Fingern seitwärts wischen | Mit zwei Fingern seitwärts wischen |
+| Virtuelle Arbeitsbereiche wechseln | Mit vier Fingern seitwärts wischen | Mit vier Fingern seitwärts wischen |
+| Zurzeit geöffnete Apps anzeigen | Mit vier Fingern aufwärts wischen | Mit drei Fingern aufwärts wischen |
+| Zwischen Apps wechseln | NICHT ZUTREFFEND | Langsam mit drei Fingern seitwärts wischen |
+| Zum Desktop wechseln | Vier Finger spreizen | Mit drei Finger nach unten wischen |
+| Cortana/Aktions-Center öffnen | Zwei Finger von rechts ziehen | Mit drei Fingern tippen |
+| Zusätzliche Informationen öffnen | Mit drei Fingern tippen | NICHT ZUTREFFEND |
+|Launchpad anzeigen/App starten | Mit vier Fingern drücken | Mit vier Fingern tippen |
 
-Hinweis: Trackpad-Optionen können auf beiden Plattformen konfiguriert werden.
+Hinweis: Trackpadoptionen können auf beiden Plattformen konfiguriert werden.
 
 ## <a name="terminal-and-shell"></a>Terminal und Shell
 
-Windows stellt verschiedene Alternativen zum Terminal Emulator des Macs bereit.
+Windows stellt verschiedene Alternativen zum Mac-Terminalemulator bereit.
 
 1. Die Windows-Befehlszeile
 
-Die Windows-Befehlszeile akzeptiert DOS-Befehle und ist das am häufigsten verwendete Befehlszeilen Tool unter Windows. Um es zu öffnen, drücken Sie **WindowsKey + R** , um das Feld **Ausführen** zu öffnen, geben Sie dann **cmd** ein, und klicken Sie dann auf **OK**. Um eine Administrator Befehlszeile zu öffnen, geben Sie **cmd** ein, und drücken **Sie STRG + UMSCHALT + Eingabe**Taste.
+Die Windows-Befehlszeile akzeptiert DOS-Befehle und ist das am häufigsten verwendete Befehlszeilentool unter Windows. So öffnest du sie: Drücke **WINDOWS-TASTE+R**, um das Feld **Ausführen** zu öffnen, gib **cmd** ein und klicke dann auf **OK**. Um eine Administratorbefehlszeile zu öffnen, gib **cmd** ein und drücke dann **STRG+UMSCHALT+EINGABETASTE**.
 
 2. PowerShell
 
-[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6) ist eine "PowerShell ist eine aufgabenbasierte Befehlszeilenshell und Skriptsprache, die auf .NET basiert. Mit PowerShell können Systemadministratoren und Power-Benutzer schnell Aufgaben automatisieren, die Betriebssysteme verwalten. Dies bedeutet, dass es sich um eine sehr leistungsfähige Befehlszeile handelt, die von Systemadministratoren besonders beliebt ist.
+[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6) ist eine aufgabenbasierte Befehlszeilenshell und Skriptsprache, die auf .NET basiert. Mit PowerShell können Systemadministratoren und Poweruser schnell Aufgaben automatisieren, die Betriebssysteme verwalten. Mit anderen Worten: Es ist eine sehr leistungsfähige Befehlszeile, die besonders bei Systemadministratoren beliebt ist.
 
 Übrigens ist PowerShell [auch für Mac verfügbar](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6).
 
 3. Windows-Subsystem für Linux (WSL)
 
-Mit WSL können Sie eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass Sie *bash** oder eine andere Shell ausführen können, abhängig von der Auswahl und der spezifischen installierten Linux-Distribution. Mithilfe von WSL wird die Art der Umgebung bereitgestellt, die den Mac-Benutzern am meisten vertraut ist. Beispielsweise können Sie die Dateien in einem aktuellen Verzeichnis und **nicht in der** Windows- **dir** Befehlszeile auflisten. Weitere Informationen zum Installieren und Verwenden von WSL finden Sie im [Windows-Subsystem für Linux-Installationshandbuch für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+Mit WSL kannst du eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass du abhängig von der Auswahl und der spezifischen installierten Linux-Distribution *bash** oder eine andere Shell ausführen kannst. Mithilfe von WSL wird eine Umgebung bereitgestellt, die Mac-Benutzern sehr vertraut ist. Beispielsweise werden Dateien in einem aktuellen Verzeichnis mit **ls** aufgelistet, nicht wie in der Windows-Befehlszeile mit **dir**. Weitere Informationen zum Installieren und Verwenden von WSL findest du in [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
-4. Windows-Terminal (Vorschau)
+4. Windows Terminal (Vorschau)
 
-Das Windows-Terminal ist eine Anwendung, die Befehlszeilen Tools und Shells aus einer Reihe von Quellen kombiniert, einschließlich der herkömmlichen Windows-Befehlszeile, PowerShell und des Windows-Subsystems für Linux. Obwohl es sich zurzeit noch in der Vorschau Phase befindet, enthält es eine Reihe nützlicher Features, wie z. b. Unterstützung für mehrere Registerkarten, geteilte Bereiche, benutzerdefinierte Designs und Stile sowie vollständige Unicode-Unterstützung. Das Windows-Terminal kann mithilfe der [Microsoft Store unter Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)installiert werden.
+Windows Terminal ist eine Anwendung, die Befehlszeilentools und Shells aus einer Reihe von Quellen kombiniert, einschließlich der herkömmlichen Windows-Befehlszeile, PowerShell und des Windows-Subsystems für Linux. Obwohl sie sich zurzeit noch in der Vorschauphase befindet, enthält sie bereits eine Reihe nützlicher Features wie z. B. Unterstützung mehrerer Registerkarten, geteilte Bereiche, benutzerdefinierte Designs und Stile sowie vollständige Unicodeunterstützung. Windows Terminal kann über den [Microsoft Store unter Windows 10](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) installiert werden.
 
 ## <a name="apps-and-utilities"></a>Apps und Hilfsprogramme
 
  **App** | **Mac** | **Windows** |
 |---------------|--------------------|---------------------|
-| Einstellungen und Einstellungen | System Einstellungen | Einstellungen |
+| Einstellungen und Präferenzen | Systemeinstellungen | Settings |
 | Task-Manager | Aktivitätsmonitor | Task-Manager |
-| Datenträger Formatierung | Datenträger Dienstprogramm | Datenträgerverwaltung |
-| Text Bearbeitung | TextEdit | Editor |
+| Datenträgerformatierung | Datenträgerhilfsprogramm | Datenträgerverwaltung |
+| Textbearbeitung | TextEdit | Editor |
 | Ereignisanzeige | Konsole | Ereignisanzeige |
-| Suchen nach Dateien/apps | Befehl + Leertaste | Windows-Taste |
+| Dateien/Apps suchen | COMMAND+LEERTASTE | WINDOWS-TASTE |
