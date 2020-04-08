@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2f34c9c56cf9db5dfcfd702b97f2d34273b86e6a
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80226314"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482640"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App
 
@@ -29,7 +29,7 @@ Um ein benutzerdefiniertes UWP-XAML-Steuerelement zu hosten, erstellst du im Rah
 
 * Visual Studio 2019, Version 16.4.3 oder höher.
 * SDK-Version 10.0.18362 für Windows 10, Version 1903 oder höher.
-* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), installiert mit Visual Studio. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als eine auf Headerdateien basierende Bibliothek implementiert ist und erstklassigen Zugriff auf die moderne Windows-API bietet. Weitere Informationen findest du unter [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
+* [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), installiert mit Visual Studio. C++/WinRT ist eine vollständig standardisierte, moderne C++17-Programmiersprache für Windows-Runtime-APIs (WinRT), die als headerdateibasierte Bibliothek implementiert ist und Ihnen einen erstklassigen Zugriff auf die moderne Windows-API bietet. Weitere Informationen findest du unter [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/).
 
 ## <a name="create-a-desktop-application-project"></a>Erstellen eines Desktopanwendungsprojekts
 
@@ -45,20 +45,20 @@ Um ein benutzerdefiniertes UWP-XAML-Steuerelement zu hosten, erstellst du im Rah
 4. Installiere im Fenster **NuGet-Pakete verwalten** die folgenden zusätzlichen NuGet-Pakete:
 
     * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (Version v6.0.0 oder höher). Dieses Paket stellt verschiedene Ressourcen für Kompilier- und Laufzeit bereit, um XAML Islands in deiner App zu aktivieren.
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (Version v6.0.0 oder höher).
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (Version v6.0.0 oder höher). Mit diesem Paket wird die [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse definiert, die du später in dieser exemplarischen Vorgehensweise verwendest.
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140).
 
 5. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
 
 ## <a name="create-a-uwp-app-project"></a>Erstellen eines UWP-App-Projekts
 
-Als Nächstes fügst du deiner Projektmappe ein **UWP (C++/WinRT)** -App-Projekt hinzu und nimmst einige Konfigurationsänderungen an diesem Projekt vor. Später in dieser exemplarischen Vorgehensweise fügst du diesem Projekt Code hinzu, um ein benutzerdefiniertes UWP-XAML-Steuerelement zu implementieren und eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse zu definieren, die durch das Windows-Community-Toolkit bereitgestellt wird. Deine App verwendet diese Klasse als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in das Projekt.
+Als Nächstes fügst du deiner Projektmappe ein **UWP (C++/WinRT)** -App-Projekt hinzu und nimmst einige Konfigurationsänderungen an diesem Projekt vor. Später in dieser exemplarischen Vorgehensweise fügst du diesem Projekt Code hinzu, um ein benutzerdefiniertes UWP-XAML-Steuerelement zu implementieren und eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse zu definieren. 
 
 1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Hinzufügen** -> **Neues Projekt** aus.
 
 2. Füge deiner Projektmappe ein Projekt vom Typ **Leere App (C++/WinRT)** hinzu. Gibt dem Projekt den Namen **MyUWPApp**, und stelle sicher, dass sowohl die Zielversion als auch die mindestens erforderliche Version auf **Windows 10, Version 1903** oder höher festgelegt ist.
 
-3. Installiere im **MyUWPApp**-Projekt das NuGet-Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication):
+3. Installiere im **MyUWPApp**-Projekt das NuGet-Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication). Mit diesem Paket wird die [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse definiert, die du später in dieser exemplarischen Vorgehensweise verwendest.
 
     1. Klicke mit der rechten Maustaste auf das **MyUWPApp**-Projekt, und wähle **NuGet-Pakete verwalten** aus.
     2. Wähle die Registerkarte **Durchsuchen** aus, suche nach dem Paket [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication), und installiere Version v6.0.0 dieses Pakets oder eine höhere Version.
@@ -143,14 +143,14 @@ In diesem Abschnitt aktualisierst du die Projektmappe, die beide Projekte enthä
 8. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Projektabhängigkeiten** aus. Stelle sicher, dass in der Dropdownliste **Projekte** der Eintrag **MyDesktopWin32App** ausgewählt ist, und wähle in der Liste **Abhängigkeiten** den Eintrag **MyUWPApp** aus.
     ![Projektabhängigkeiten](images/xaml-islands/xaml-island-cpp-5.png)
 
-9. Klicke auf **OK**.
+9. Klicken Sie auf **OK**.
 
 ## <a name="add-code-to-the-uwp-app-project"></a>Hinzufügen von Code zum UWP-App-Projekt
 
 Jetzt kannst du Code zum Projekt **MyUWPApp** hinzufügen, um diese Aufgaben auszuführen:
 
 * Implementieren eines benutzerdefinierten UWP-XAML-Steuerelements. Später in dieser exemplarischen Vorgehensweise fügst du Code hinzu, mit dem dieses Steuerelement im Projekt **MyDesktopWin32App** gehostet wird.
-* Definieren eines Typs, der von der Klasse [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) aus dem Windows-Community-Toolkit abgeleitet ist. Diese Klasse fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen.
+* Definieren eines Typs, der von der Klasse [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) aus dem Windows-Community-Toolkit abgeleitet ist.
 
 ### <a name="define-a-custom-uwp-xaml-control"></a>Definieren eines benutzerdefinierten UWP-XAML-Steuerelements
 
@@ -181,7 +181,7 @@ Jetzt kannst du Code zum Projekt **MyUWPApp** hinzufügen, um diese Aufgaben aus
 
 ### <a name="define-a-xamlapplication-class"></a>Definieren einer XamlApplication-Klasse
 
-Als Nächstes überarbeitest du die **App**-Standardklasse im Projekt **MyUWPApp**, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Später in dieser exemplarischen Vorgehensweise aktualisierst du das Desktopprojekt, um eine Instanz dieser Klasse als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen zu definieren.
+Als Nächstes überarbeitest du die **App**-Standardklasse im Projekt **MyUWPApp**, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread. Später in dieser exemplarischen Vorgehensweise aktualisierst du das Desktopprojekt, um eine Instanz dieser Klasse zu erstellen.
 
   > [!NOTE]
   > Jede Projektmappe mit Verwendung von XAML Islands kann nur ein Projekt enthalten, das ein `XamlApplication`-Objekt definiert. Alle benutzerdefinierten UWP-XAML-Steuerelemente in deiner App nutzen gemeinsam dasselbe `XamlApplication`-Objekt. 
@@ -508,7 +508,7 @@ Schließlich kannst du den Code zum Projekt **MyDesktopWin32App** hinzufügen, u
         break;
     ```
 
-9. Speichere die Datei.
+9. Speichern Sie die Datei.
 10. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
 
 ## <a name="test-the-app"></a>Testen der App
@@ -523,7 +523,7 @@ Viele Desktopanwendungen, die XAML Islands hosten, müssen zusätzliche Szenarie
 
 Weitere Informationen zum Handhaben dieser Szenarien und Verweise auf entsprechende Codebeispiele findest du unter [Erweiterte Szenarien für XAML Islands in C++-Win32-Apps](advanced-scenarios-xaml-islands-cpp.md).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
 * [Verwenden der UWP-XAML-Hosting-API in einer C++-Win32-App](using-the-xaml-hosting-api.md)

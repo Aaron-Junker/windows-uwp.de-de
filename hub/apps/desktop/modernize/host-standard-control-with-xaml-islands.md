@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3f2a0a6ee6b22fa7d08e7fc746c4ec2ad4ebffa7
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218590"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482507"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines UWP-Standardsteuerelements in einer WPF-App unter Verwendung von XAML Islands
 
@@ -31,7 +31,7 @@ Um ein UWP-Steuerelement in einer WPF-App (oder einer Windows Forms-App) zu host
 
 * **Projekt- und Quellcode für deine App**. Die Verwendung des [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)-Steuerelements zum Hosten von UWP-Originalsteuerelementen wird in Apps für die Zielplattformen .NET Framework und .NET Core 3 unterstützt.
 
-* **UWP-App-Projekt mit Definition einer Stammanwendungsklasse, die von XamlApplication abgeleitet ist**. Dein WPF- oder Windows Forms-Projekt muss Zugriff auf eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse haben, die durch das Windows-Community-Toolkit bereitgestellt wird. Die empfohlene Vorgehensweise hierfür besteht darin, dieses Objekt in einem separaten UWP-App-Projekt zu definieren, das nicht Bestandteil der Projektmappe für deine WPF- oder Windows Forms-App ist. Dieses Objekt fungiert als Stamm-Metadatenanbieter zum Laden von Metadaten für benutzerdefinierte UWP-XAML-Typen in Assemblys im aktuellen Verzeichnis deiner Anwendung.
+* **UWP-App-Projekt mit Definition einer Stammanwendungsklasse, die von XamlApplication abgeleitet ist**. Dein WPF- oder Windows Forms-Projekt muss Zugriff auf eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse haben, die durch das Windows-Community-Toolkit bereitgestellt wird, sodass benutzerdefinierte UWP XAML-Steuerelemente ermittelt und geladen werden können. Die empfohlene Vorgehensweise hierfür besteht darin, dieses Objekt in einem separaten UWP-App-Projekt zu definieren, das nicht Bestandteil der Projektmappe für deine WPF- oder Windows Forms-App ist. 
 
     > [!NOTE]
     > Wenngleich das `XamlApplication`-Objekt nicht zum Hosten eines UWP-Erstanbietersteuerelements erforderlich ist, benötigt deine App dieses Objekt, um die ganze Bandbreite an XAML Islands-Szenarien zu unterstützen, einschließlich des Hostings benutzerdefinierter UWP-Steuerelemente. Deshalb wird empfohlen, dass du immer ein `XamlApplication`-Objekt in einer Projektmappe definierst, in der du XAML Islands verwendest.
@@ -67,7 +67,7 @@ Befolge vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen und 
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Definieren einer XamlApplication-Klasse in einem UWP-App-Projekt
 
-Als Nächstes fügst du deiner Projektmappe ein UWP-App-Projekt hinzu und überarbeitest die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird.
+Als Nächstes fügst du deiner Projektmappe ein UWP-App-Projekt hinzu und überarbeitest die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread.
 
 > [!NOTE]
 > Wenngleich dieser Schritt zum Hosten eines UWP-Erstanbietersteuerelements nicht erforderlich ist, benötigt deine App das `XamlApplication`-Objekt, um die ganze Bandbreite an XAML Islands-Szenarien zu unterstützen, einschließlich des Hostings benutzerdefinierter UWP-Steuerelemente. Deshalb wird empfohlen, dass du immer ein `XamlApplication`-Objekt in einer Projektmappe definierst, in der du XAML Islands verwendest.
@@ -309,7 +309,7 @@ Die folgenden Anweisungen veranschaulichen, wie du alle Komponenten in der Proje
 
 5. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissere dich, dass die WPF-App ausgeführt und das benutzerdefinierte UWP-Steuerelement wie erwartet angezeigt wird.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
 * [XAML Islands-Codebeispiele](https://github.com/microsoft/Xaml-Islands-Samples)
