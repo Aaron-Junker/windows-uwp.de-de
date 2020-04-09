@@ -1,22 +1,22 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-title: Optimieren von Interop für UWP-Komponenten
-description: Erstellen Sie UWP (Universelle Windows-Plattform)-Apps, die UWP-Komponenten verwenden und mit systemeigenen und verwalteten Typen zusammenarbeiten, und vermeiden Sie gleichzeitig Probleme mit der Interoperabilitätsleistung.
+title: Optimieren der Interop für UWP-Komponenten
+description: Erstellen Sie UWP (Universelle Windows-Plattform)-Apps, die UWP-Komponenten verwenden, mit systemeigenen und verwalteten Typen zusammenarbeiten und gleichzeitig Probleme mit der Interopleistung vermeiden.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc68520bbf83ec637c0814c333dfada2f974d1e
 ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/03/2019
 ms.locfileid: "74735005"
 ---
-# <a name="uwp-components-and-optimizing-interop"></a>UWP-Komponenten und Optimieren der Interoperabilität
+# <a name="uwp-components-and-optimizing-interop"></a>UWP-Komponenten und Optimieren der Interop
 
 
-Erstellen Sie UWP (Universelle Windows-Plattform)-Apps, die UWP-Komponenten verwenden und mit systemeigenen und verwalteten Typen zusammenarbeiten, und vermeiden Sie gleichzeitig Probleme mit der Interoperabilitätsleistung.
+Erstellen Sie UWP (Universelle Windows-Plattform)-Apps, die UWP-Komponenten verwenden, mit systemeigenen und verwalteten Typen zusammenarbeiten und gleichzeitig Probleme mit der Interopleistung vermeiden.
 
 ## <a name="best-practices-for-interoperability-with-uwp-components"></a>Bewährte Methoden für die Interoperabilität mit UWP-Komponenten
 
@@ -30,7 +30,7 @@ Die UWP verfügt über eine Bibliothek mit Typen, auf die in allen Sprachen zuge
 
 Wenn Sie eine UWP-App in C# oder Visual Basic entwickeln, verwenden Sie als API-Gruppen am häufigsten UWP-APIs und die .NET-APIs für UWP-Apps. In UWP definierte Typen sind normalerweise in Namespaces enthalten, die mit „Windows“ beginnen. .NET-Typen sind in Namespaces enthalten, die mit „System“ beginnen. Es gibt jedoch Ausnahmen. Die Verwendung der Typen in .NET für UWP-Apps erfordert keine Interoperabilität. Wenn Sie in einem Bereich, in dem die UWP verwendet wird, eine schlechte Leistung feststellen, können Sie stattdessen möglicherweise .NET für UWP-Apps verwenden, um eine bessere Leistung zu erzielen.
 
-**Beachten** Sie   die meisten UWP-Komponenten, die mit Windows 10 ausgeliefert werden C++ , in implementiert werden, sodass Sie Interoperabilitäts C# Grenzen überschreiten, wenn Sie Sie von oder Visual Basic verwenden. Stellen Sie daher wie immer sicher, dass Sie Ihre App messen, um festzustellen, ob sich die Verwendung der UWP-Komponenten auf die Leistung Ihrer App auswirkt, bevor Sie in Änderungen an Ihrem Code investieren.
+**Hinweis**   Die meisten der im Lieferumfang von Windows 10 enthaltenen UWP-Komponenten sind in C++ implementiert, sodass du Interoperabilitätsgrenzen überschreitest, wenn du sie in C# oder Visual Basic verwenden. Stellen Sie daher wie immer sicher, dass Sie Ihre App messen, um festzustellen, ob sich die Verwendung der UWP-Komponenten auf die Leistung Ihrer App auswirkt, bevor Sie in Änderungen an Ihrem Code investieren.
 
 Wenn in diesem Thema von „UWP-Komponenten” die Rede ist, sind Komponenten gemeint, die in einer anderen Sprache als C# oder Visual Basic geschrieben sind.
 

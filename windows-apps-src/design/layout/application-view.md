@@ -1,22 +1,22 @@
 ---
-Description: Verwenden Sie die applicationview-Klasse, um verschiedene Teile der app in separaten Fenstern anzuzeigen.
-title: Verwenden der applicationview-Klasse zum Anzeigen sekundärer Fenster für eine APP
+Description: Verwende die ApplicationView-Klasse, um verschiedene Teile der App in separaten Fenstern anzuzeigen.
+title: Verwenden der ApplicationView-Klasse zum Anzeigen sekundärer Fenster für eine App
 ms.date: 07/19/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a89596979f84c1ec4d698d14deacf8f852a7fbd
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74258194"
 ---
-# <a name="show-multiple-views-with-applicationview"></a>Anzeigen mehrerer Ansichten mit applicationview
+# <a name="show-multiple-views-with-applicationview"></a>Anzeigen mehrerer Ansichten mit ApplicationView
 
-Sie können Ihren Benutzern zu mehr Produktivität verhelfen, indem Sie ihnen ermöglichen, unabhängige Teile der App in separaten Fenstern anzuzeigen. Wenn Sie für eine App mehrere Fenster erstellen, verhält sich jedes Fenster anders. Auf der Taskleiste wird jedes Fenster separat angezeigt. Die Benutzer können App-Fenster unabhängig voneinander verschieben, deren Größe ändern, Fenster anzeigen und ausblenden und zwischen App-Fenstern wechseln, als würde es sich um separate Apps handeln. Jedes Fenster agiert in seinem eigenen Thread.
+Du kannst deinen Benutzern zu mehr Produktivität verhelfen, indem du ihnen ermöglichst, unabhängige Teile der App in separaten Fenstern anzuzeigen. Wenn Sie für eine App mehrere Fenster erstellen, verhält sich jedes Fenster anders. Auf der Taskleiste wird jedes Fenster separat angezeigt. Die Benutzer können App-Fenster unabhängig voneinander verschieben, deren Größe ändern, Fenster anzeigen und ausblenden und zwischen App-Fenstern wechseln, als würde es sich um separate Apps handeln. Jedes Fenster agiert in seinem eigenen Thread.
 
-> **Wichtige APIs**: [**ApplicationViewSwitcher**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+> **Wichtige APIs:** [**ApplicationViewSwitcher**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher), [**CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
 
 ## <a name="what-is-a-view"></a>Was ist eine Ansicht?
 
@@ -30,7 +30,7 @@ Entsprechend umschließt das XAML-Framework das [**CoreWindow**](https://docs.mi
 
 ## <a name="show-a-new-view"></a>Anzeigen einer neuen Ansicht
 
-Während jedes App-Layout einzigartig ist, empfehlen wir Ihnen, eine Schaltfläche für ein „Neues Fenster” an einem geeigneten Ort zu platzieren, wie etwa die obere rechte Ecke des Inhalts, der in einem neuen Fenster geöffnet werden kann. Erwägen Sie außerdem, die Kontextmenüoption „In einem neuen Fenster öffnen” einzufügen.
+Während jedes App-Layout einzigartig ist, empfehlen wir dir, eine Schaltfläche für ein „Neues Fenster” an geeigneter Stelle zu platzieren, wie etwa in der rechten oberen Ecke des Inhalts, der in einem neuen Fenster geöffnet werden kann. Erwäge außerdem, die Kontextmenüoption „In einem neuen Fenster öffnen“ einzufügen.
 
 Sehen wir uns die Schritte zum Erstellen einer neuen Ansicht an. Die neue Ansicht wird hier als Reaktion auf das Anklicken einer Schaltfläche gestartet.
 
@@ -53,7 +53,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**So zeigen Sie eine neue Ansicht an**
+**So zeigst du eine neue Ansicht an**
 
 1.  Rufen Sie [**CoreApplication.CreateNewView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) auf, um ein neues Fenster und einen Thread für den anzuzeigenden Inhalt zu erstellen.
 
@@ -73,9 +73,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     Mithilfe der [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)-Methode können Sie die Arbeit am UI-Thread für die neue Ansicht planen. Mithilfe eines [Lambdaausdrucks](https://msdn.microsoft.com/library/bb397687.aspx) übergeben Sie eine Funktion als Argument an die **RunAsync**-Methode. Die in der Lambdafunktion ausgeführten Arbeiten finden im Thread der neuen Ansicht statt.
 
-    In XAML fügen Sie der [**Content**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)-Eigenschaft von [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) in der Regel einen [**Frame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content) hinzu und navigieren dann den **Frame** zu einer XAML-[**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), auf der Sie den App-Inhalt definiert haben. Weitere Informationen zu Frames und Seiten finden Sie unter [Peer-to-Peer-Navigation zwischen zwei Seiten](../basics/navigate-between-two-pages.md).
+    In XAML fügen Sie der [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.content)-Eigenschaft von [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) in der Regel einen [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) hinzu und navigieren dann den **Frame** zu einer XAML-[**Seite**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page), auf der Sie den App-Inhalt definiert haben. Weitere Informationen zu Frames und Seiten findest du unter [Peer-zu-Peer-Navigation zwischen zwei Seiten](../basics/navigate-between-two-pages.md).
 
-    Nachdem das neue [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) aufgefüllt wurde, müssen Sie dieActivate[ **-Methode von** Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate) aufrufen, um das **Window** später anzuzeigen. Diese Arbeit findet im Thread der neuen Ansicht statt, sodass das neue **Window** aktiviert ist.
+    Nachdem das neue [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) aufgefüllt wurde, müssen Sie die [**Activate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.activate)-Methode von **Window** aufrufen, um das **Window** später anzuzeigen. Diese Arbeit findet im Thread der neuen Ansicht statt, sodass das neue **Window** aktiviert ist.
 
     Schließlich rufen Sie die [**Id**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.id) der neuen Ansicht ab, die Sie später zum Anzeigen der Ansicht verwenden. Auch diese Arbeit wird im Thread der neuen Ansicht erledigt, sodass [**ApplicationView.GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) die **Id** der neuen Ansicht abruft.
 
@@ -105,7 +105,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Die erste Ansicht, die beim Starten der App erstellt wird, wird als *Hauptansicht* bezeichnet. Diese Ansicht ist in der [**CoreApplication.MainView**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.mainview)-Eigenschaft gespeichert und ihre [**IsMain**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.ismain)-Eigenschaft ist „true“. Diese Ansicht wird nicht von Ihnen, sondern von der App erstellt. Der Thread der Hauptansicht dient als Manager für die App und alle App-Aktivierungsereignisse werden in diesem Thread übermittelt.
 
-Wenn sekundäre Ansichten geöffnet sind, kann das Fenster der Hauptansicht ausgeblendet werden, z. B. durch Klicken auf die Schaltfläche „Schließen“ (X) in der Fenstertitelleiste. Der Thread bleibt jedoch aktiv. Durch Aufrufen von [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) im [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) der Hauptansicht wird eine **InvalidOperationException** ausgelöst. (Verwenden Sie [**Application.Exit**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit), um Ihre App zu schließen.) Sobald der Thread der Hauptansicht beendet wird, wird die App geschlossen.
+Wenn sekundäre Ansichten geöffnet sind, kann das Fenster der Hauptansicht ausgeblendet werden, z. B. durch Klicken auf die Schaltfläche „Schließen“ (X) in der Fenstertitelleiste. Der Thread bleibt jedoch aktiv. Durch Aufrufen von [**Close**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.close) im [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) der Hauptansicht wird eine **InvalidOperationException** ausgelöst. (Verwende [**Application.Exit**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.exit), um deine App zu schließen.) Sobald der Thread der Hauptansicht beendet wurde, wird die App geschlossen.
 
 ## <a name="secondary-views"></a>Sekundäre Ansichten
 
@@ -117,7 +117,7 @@ Andere Ansichten sind sekundäre Ansichten. Dies schließt auch Ansichten ein, d
 
 ## <a name="switch-from-one-view-to-another"></a>Wechseln zwischen Ansichten
 
-Erwägen Sie, den Benutzern eine Möglichkeit zur Navigation von einem sekundären Fenster zurück zum Hauptfenster anzubieten. Verwenden Sie dazu die [**ApplicationViewSwitcher.SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync)-Methode. Sie rufen diese Methode über den Thread des Fensters auf, von dem aus Sie wechseln, und übergeben die Ansichts-ID des Fensters, zu dem Sie wechseln.
+Erwäge, den Benutzern eine Möglichkeit zur Navigation von einem sekundären Fenster zurück zum Hauptfenster anzubieten. Verwenden Sie dazu die [**ApplicationViewSwitcher.SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync)-Methode. Sie rufen diese Methode über den Thread des Fensters auf, von dem aus Sie wechseln, und übergeben die Ansichts-ID des Fensters, zu dem Sie wechseln.
 
 ```csharp
 await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
@@ -125,9 +125,9 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 Wenn Sie [**SwitchAsync**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitcher.switchasync) verwenden, können Sie auswählen, ob das erste Fenster geschlossen und aus der Taskleiste entfernt werden soll, indem Sie den Wert von [**ApplicationViewSwitchingOptions**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitchingOptions) angeben.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-- [Mehrere Ansichten anzeigen](show-multiple-views.md)
-- [Mehrere Ansichten mit appwindow anzeigen](app-window.md)
-- [Applicationviewswitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-- ["Kreatenewview"](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+- [Anzeigen mehrerer Ansichten](show-multiple-views.md)
+- [Anzeigen mehrerer Ansichten mit AppWindow](app-window.md)
+- [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
+- [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)

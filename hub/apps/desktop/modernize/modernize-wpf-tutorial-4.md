@@ -1,45 +1,45 @@
 ---
-description: Dieses Tutorial veranschaulicht das Hinzufügen von UWP XAML-Benutzeroberflächen, MSIX-Pakete erstellen und andere moderne Komponenten in Ihrer WPF-Anwendung integrieren.
-title: Hinzufügen von Windows 10-Benutzeraktivitäten und Benachrichtigungen
+description: In diesem Tutorial wird veranschaulicht, wie du UWP-XAML-Benutzeroberflächen hinzufügst, MSIX-Pakete erstellst und weitere moderne Komponenten in deine WPF-App integrierst.
+title: Hinzufügen von Windows 10-Benutzeraktivitäten und -Benachrichtigungen
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: Windows 10, Uwp, Windows Forms, Wpf, XAML-Inseln
+keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 8443ac25ba678986046b967a90a8899eaffb76aa
 ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67420120"
 ---
-# <a name="part-4-add-windows-10-user-activities-and-notifications"></a>Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und Benachrichtigungen
+# <a name="part-4-add-windows-10-user-activities-and-notifications"></a>Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und -Benachrichtigungen
 
-Dies ist der vierte Teil eines Tutorials, die zeigt, wie Sie eine Beispiel WPF-desktop-app mit dem Namen Contoso-Ausgaben zu modernisieren. Eine Übersicht über das Tutorial, Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-app, finden Sie unter [Lernprogramm: Modernisieren von WPF-app](modernize-wpf-tutorial.md). In diesem Artikel wird vorausgesetzt, Sie haben bereits abgeschlossen [Teil 3](modernize-wpf-tutorial-3.md).
+Dies ist der vierte Teil eines Tutorials, in dem das Modernisieren der WPF-Beispiel-Desktop-App Contoso Expenses veranschaulicht wird. Eine Übersicht über das Tutorial, die Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App findest du unter [Tutorial: Modernisieren einer WPF-App](modernize-wpf-tutorial.md). In diesem Artikel wird davon ausgegangen, dass du [Teil 3](modernize-wpf-tutorial-3.md) bereits abgeschlossen hast.
 
-In den vorherigen Teilen dieses Tutorials haben Sie, dass die app mithilfe von XAML-Inseln UWP XAML-Steuerelemente hinzugefügt. Als eine nach Produkt dieser, aktiviert Sie auch die app alle WinRT-APIs aufrufen. Dies eröffnet die Möglichkeit für die app viele andere Features von Windows 10, nicht nur UWP XAML-Steuerelemente verwenden.
+In den vorherigen Abschnitten dieses Tutorials hast du der App mithilfe von XAML Islands UWP-XAML-Steuerelemente hinzugefügt. Als Nebeneffekt hast du der App auch ermöglicht, jede beliebige WinRT-API aufzurufen. Dies eröffnet der App die Möglichkeit, viele andere Features von Windows 10 zu nutzen, nicht nur die UWP XAML-Steuerelemente.
 
-Das Contoso-Entwicklungsteam hat beschlossen im fiktiven Szenario in diesem Tutorial zwei neue Features der app hinzu: Aktivitäten und Benachrichtigungen. Dieser Teil des Tutorials zeigt, wie diese Funktionen implementiert wird.
+Im fiktiven Szenario dieses Tutorials hat das Entwicklungsteam von Contoso beschlossen, der App zwei neue Features hinzuzufügen: Aktivitäten und Benachrichtigungen. In diesem Teil des Tutorials wird gezeigt, wie diese Features implementiert werden.
 
-## <a name="add-a-user-activity"></a>Fügen Sie eine Benutzeraktivität
+## <a name="add-a-user-activity"></a>Hinzufügen einer Benutzeraktivität
 
-In Windows 10 können apps vom Benutzer z. B. das Öffnen einer Datei oder das Anzeigen einer bestimmten Seite ausgeführten Aktivitäten nachverfolgen. Diese Aktivitäten werden dann über ein Feature in Windows 10, Version 1803, der Zeitachse zur Verfügung gestellt Dadurch kann den Benutzer schnell wechseln zurück zu der Vergangenheit und Fortsetzen einer Aktivität, die sie vorher gestartet.
+Unter Windows 10 können Apps die vom Benutzer ausgeführten Aktivitäten wie das Öffnen einer Datei oder das Anzeigen einer bestimmten Seite nachverfolgen. Diese Aktivitäten werden dann über die Zeitachse zur Verfügung gestellt, ein Feature, das in der Windows 10-Version 1803 eingeführt wurde und dem Benutzer ermöglicht, schnell in die Vergangenheit zurückzugehen und eine zuvor begonnene Aktivität fortzusetzen.
 
-![Abbildung der Zeitachse für Windows](images/wpf-modernize-tutorial/WindowsTimeline.png)
+![Abbildung der Windows-Zeitachse](images/wpf-modernize-tutorial/WindowsTimeline.png)
 
-Benutzeraktivitäten werden nachverfolgt mithilfe [Microsoft Graph](https://developer.microsoft.com/graph/). Wenn Sie eine Windows 10-app erstellen, müssen Sie jedoch nicht direkt mit der REST-Endpunkte, die von Microsoft Graph bereitgestellte interagieren. Stattdessen können Sie einen geeigneten Satz von WinRT-APIs verwenden. Wir werden diese WinRT-APIs in der Contoso-Ausgaben-app verwenden, zum Nachverfolgen jedes Mal, wenn der Benutzer eine Ausgabe in der app öffnet und mit Adaptive Cards zu verwenden, um Benutzern die Erstellung die Aktivität zu aktivieren.
+Benutzeraktivitäten werden mithilfe von [Microsoft Graph](https://developer.microsoft.com/graph/) nachverfolgt. Wenn du jedoch eine Windows 10-App entwickelst, musst du nicht direkt mit den REST-Endpunkten von Microsoft Graph interagieren. Stattdessen kannst du einen praktischen Satz von WinRT-APIs verwenden. Wir verwenden diese WinRT-APIs in der App Contoso Expenses, um jedes Mal zu verfolgen, wenn der Benutzer eine Ausgabe innerhalb der App öffnet. Außerdem nutzen wir adaptive Karten, um Benutzern das Erstellen der Aktivität zu ermöglichen.
 
-### <a name="introduction-to-adaptive-cards"></a>Einführung in mit Adaptive Cards
+### <a name="introduction-to-adaptive-cards"></a>Einführung in adaptive Karten
 
-Dieser Abschnitt enthält eine kurze Übersicht über [mit Adaptive Cards](https://docs.microsoft.com/adaptive-cards/). Wenn Sie diese Informationen nicht benötigen, können Sie diesen Schritt überspringen und direkt auf die [hinzufügen eine Adaptive Card](#add-an-adaptive-card) Anweisungen.
+Dieser Abschnitt enthält eine kurze Einführung in [adaptive Karten](https://docs.microsoft.com/adaptive-cards/). Wenn du diese Informationen nicht benötigst, kannst du sie überspringen und direkt zu den Anweisungen zum [Hinzufügen einer adaptiven Karte](#add-an-adaptive-card) wechseln.
 
-Mit Adaptive Cards können Entwickler Inhalt in ein gebräuchlicher und konsistenter Weise auszutauschen. Eine Adaptive Card wird durch eine JSON-Nutzlast beschrieben, die den Inhalt, definiert, der z. Text, Bilder, Aktionen und vieles mehr b.
+Mit adaptiven Karten können Entwickler Karteninhalte auf einheitliche Weise austauschen. Eine adaptive Karte wird durch eine JSON-Nutzlast beschrieben, die ihren Inhalt definiert, der Text, Bilder, Aktionen und mehr umfassen kann.
 
-Eine Adaptive Card definiert nur den Inhalt und nicht die visuelle Darstellung des Inhalts. Die Plattform, der die Adaptive Card empfangen wird, kann den Inhalt mit den am besten geeigneten Stil zu rendern. Stellt die Möglichkeit dar, die mit Adaptive Cards dienen [einen Renderer](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started), in der Lage, zu der JSON-Nutzlast und in nativen Benutzeroberfläche konvertieren ist. Beispielsweise kann die Benutzeroberfläche XAML für eine WPF oder UWP-app AXML für eine Android-app oder HTML für eine Website oder einem Bot Chat sein.
+Eine adaptive Karte definiert lediglich den Inhalt und nicht die visuelle Darstellung des Inhalts. Die Plattform, auf der die adaptive Karte empfangen wird, kann den Inhalt mit dem am besten geeigneten Layout rendern. Adaptive Karten werden durch [ einen Renderer](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started) gestaltet, der in der Lage ist, die JSON-Nutzlast in eine native Benutzeroberfläche zu konvertieren. Die Benutzeroberfläche kann beispielsweise XAML für eine WPF- oder UWP-Anwendung, AXML für eine Android-Anwendung oder HTML für eine Website oder einen Botchat sein.
 
-Hier ist ein Beispiel für eine einfache Adaptive Card-Nutzlast.
+Hier ist ein Beispiel der Nutzlast einer einfachen adaptiven Karte.
 
 ```json
 {
@@ -133,42 +133,42 @@ Hier ist ein Beispiel für eine einfache Adaptive Card-Nutzlast.
 }
 ```
 
-Die folgende Abbildung zeigt, wie dieses JSON auf verschiedene Arten von ta Teams-Kanal, Cortana und eine Windows-Benachrichtigung gerendert wird.
+Das folgende Bild zeigt, wie dieser JSON-Codeausschnitt durch einen Teams-Kanal, Cortana und eine Windows-Benachrichtigung auf unterschiedliche Weise gerendert wird.
 
-![Adaptive Card renderingbilds](images/wpf-modernize-tutorial/AdaptiveCards.png)
+![Abbildung des Renderings einer adaptiven Karte](images/wpf-modernize-tutorial/AdaptiveCards.png)
 
-Mit Adaptive Cards spielen eine wichtige Rolle in der Zeitachse, da es die Möglichkeit besteht, die Windows Aktivitäten rendert. Jede Miniaturansicht in der Zeitachse angezeigt wird, tatsächlich eine Adaptive Card. Wenn Sie vorhaben, um die Aktivität eines Benutzers in Ihrer app zu erstellen, werden Sie aufgefordert, geben Sie eine Adaptive Card aus, um ihn zu rendern.
+Adaptive Karten spielen eine wichtige Rolle für die Zeitachse, da sie bestimmen, wie Windows Aktivitäten rendert. Jede auf der Zeitachse angezeigte Miniaturansicht ist im Grunde eine adaptive Karte. Wenn du also eine Benutzeraktivität innerhalb deiner App erstellst, wirst du gebeten, eine adaptive Karte bereitzustellen, um sie zu rendern.
 
 > [!NOTE]
-> Eine hervorragende Möglichkeit, den Entwurf eine Adaptive Card Brainstorming verwendet [online Designer](https://adaptivecards.io/designer/). Sie haben die Möglichkeit, entwerfen die Karte mit Bausteinen (Bildern, Texten, Spalten usw.) und den entsprechenden JSON-Code zu erhalten. Nachdem Sie eine Vorstellung von den endgültigen Entwurf haben, können Sie eine Bibliothek namens [mit Adaptive Cards](https://www.nuget.org/packages/AdaptiveCards/) zu zum Erstellen Ihrer Adaptive Card mit vereinfachen C# Klassen anstelle reiner JSON-Code, die möglicherweise schwer zu debuggen und zu erstellen.
+> Eine gute Möglichkeit, das Design einer adaptiven Karte zu entwerfen, stellt der [Online-Designer](https://adaptivecards.io/designer/) dar. Du hast die Möglichkeit, die Karte mit Bausteinen (Bildern, Texten, Spalten usw.) zu gestalten und den entsprechenden JSON-Code abzurufen. Sobald du eine Vorstellung vom endgültigen Design hast, kannst du eine Bibliothek namens [Adaptive Karten](https://www.nuget.org/packages/AdaptiveCards/) verwenden. Damit wird es einfacher, deine adaptive Karte unter Verwendung von C#-Klassen anstatt von einfachem JSON-Code zu entwickeln, der schwer zu debuggen und zu kompilieren sein kann.
 
-### <a name="add-an-adaptive-card"></a>Fügen Sie eine Adaptive Card
+### <a name="add-an-adaptive-card"></a>Hinzufügen einer adaptiven Karte
 
-1. Klicken Sie mit der rechten Maustaste auf die **ContosoExpenses.Core** Projekt im Projektmappen-Explorer, und wählen **NuGet-Pakete verwalten**.
+1. Klicke im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **ContosoExpenses.Core**, und wähle **NuGet-Pakete verwalten** aus.
 
-2. In der **NuGet Package Manager** Fenster, klicken Sie auf **Durchsuchen**. Suchen Sie nach der `Newtonsoft.Json` Packen und installieren Sie die neueste verfügbare Version. Dies ist eine beliebte JSON-Bearbeitung-Bibliothek, die Sie verwenden, um Mainipulate helfen, die JSON-Zeichenfolgen mit Adaptive Cards erforderlich.
+2. Klicke im Fenster **NuGet-Paket-Manager** auf **Durchsuchen**. Suche das Paket `Newtonsoft.Json`, und installiere die neueste verfügbare Version. Dies ist eine beliebte Bibliothek zur Bearbeitung von JSON, mit deren Hilfe du die von adaptiven Karten benötigten JSON-Zeichenfolgen bearbeiten kannst.
 
-    ![NewtonSoft.Json NuGet-Paket](images/wpf-modernize-tutorial/JsonNetNuGet.png)
+    ![NuGet-Paket NewtonSoft.Json](images/wpf-modernize-tutorial/JsonNetNuGet.png)
 
     > [!NOTE]
-    > Bei der Installation nicht die `Newtonsoft.Json` separat Verpacken, die mit Adaptive Cards-Bibliothek verweist eine ältere Version von der `Newtonsoft.Json` Paket, das .NET Core 3.0 nicht unterstützt.
+    > Wenn du das Paket `Newtonsoft.Json` nicht separat installierst, verweist die Bibliothek „Adaptive Karten“ auf eine ältere Version des Pakets `Newtonsoft.Json`, das .NET Core 3.0 nicht unterstützt.
 
-2. In der **NuGet Package Manager** Fenster, klicken Sie auf **Durchsuchen**. Suchen Sie nach der `AdaptiveCards` Packen und installieren Sie die neueste verfügbare Version.
+2. Klicke im Fenster **NuGet-Paket-Manager** auf **Durchsuchen**. Suche das Paket `AdaptiveCards`, und installiere die neueste verfügbare Version.
 
-    ![Adaptive Cards NuGet-Paket](images/wpf-modernize-tutorial/AdaptiveCardsNuGet.png)
+    ![NuGet-Paket „Adaptive Karten“](images/wpf-modernize-tutorial/AdaptiveCardsNuGet.png)
 
-3. In **Projektmappen-Explorer**, mit der rechten Maustaste die **ContosoExpenses.Core** Projekts **hinzufügen ->-Klasse**. Nennen Sie die Klasse **TimelineService.cs** , und klicken Sie auf **OK**.
+3. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **ContosoExpenses.Core**, und wähle **Hinzufügen > Klasse** aus. Nenne die Klasse **TimelineService.cs**, und klicke auf **OK**.
 
-4. In der **TimelineService.cs** Datei, fügen Sie die folgenden Anweisungen am Anfang der Datei.
+4. Füge am Anfang der Datei **TimelineService.cs** die folgenden Anweisungen hinzu.
 
     ```csharp
     using AdaptiveCards;
     using ContosoExpenses.Data.Models;
     ```
 
-5. Ändern der Namespace deklariert wird, in der Datei aus `ContosoExpenses.Core` zu `ContosoExpenses`.
+5. Ändere den in der Datei deklarierten Namespace von `ContosoExpenses.Core` in `ContosoExpenses`.
 
-5. Fügen Sie die folgende Methode der `TimelineService` Klasse.
+5. Füge der `TimelineService`-Klasse die folgende Methode hinzu.
 
    ```csharp
     private string BuildAdaptiveCard(Expense expense)
@@ -229,22 +229,22 @@ Mit Adaptive Cards spielen eine wichtige Rolle in der Zeitachse, da es die Mögl
     }
     ```
 
-#### <a name="about-the-code"></a>Zum code
+#### <a name="about-the-code"></a>Informationen zum Code
 
-Diese Methode empfängt ein **Expense** Objekt mit der alle Informationen zu den Aufwand zum Rendern und erstellt ein neues **AdaptiveCard** Objekt. Die Methode hinzugefügt die Karte Folgendes:
+Diese Methode empfängt ein **Expense**-Objekt mit allen Informationen zur zu rendernden Ausgabe und erstellt ein neues **AdaptiveCard**-Objekt. Die Methode fügt der Karte Folgendes hinzu:
 
-- Ein Titel, der die Beschreibung der Ausgaben verwendet.
-- Ein Bild, das Contoso-Logo handelt.
-- Die Menge der Ausgaben.
-- Das Datum der Ausgaben.
+- Einen Titel, der die Beschreibung der Ausgabe verwendet.
+- Ein Bild, bei dem es sich um das Contoso-Logo handelt.
+- Den Betrag der Ausgabe.
+- Das Datum der Ausgabe.
 
-Die letzten 3 Elemente werden in zwei verschiedenen Spalten geteilt, damit das Contoso-Logo und die Details zu den Aufwand nebeneinander platziert werden können. Nachdem das Objekt erstellt wurde, gibt die Methode die entsprechende JSON-Zeichenfolge mithilfe von der **ToJson** Methode.
+Die letzten drei Elemente sind in zwei Spalten aufgeteilt, sodass das Contoso-Logo und die Angaben zu den Ausgaben nebeneinander platziert werden können. Nachdem das Objekt erstellt wurde, gibt die Methode die entsprechende JSON-Zeichenfolge mithilfe der **ToJson**-Methode zurück.
 
-### <a name="define-the-user-activity"></a>Definieren Sie die Aktivitäten von Benutzern
+### <a name="define-the-user-activity"></a>Definieren der Benutzeraktivität
 
-Nun, da Sie die Adaptive Card definiert haben, können Sie eine darauf basierende Benutzeraktivität erstellen.
+Nachdem du die adaptive Karte definiert hast, kannst du nun eine Benutzeraktivität auf Basis dieser Karte erstellen.
 
-1. Fügen Sie die folgenden Anweisungen am Anfang **TimelineService.cs** Datei:
+1. Füge am Anfang der Datei **TimelineService.cs** die folgenden Anweisungen hinzu:
 
     ```csharp
     using Windows.ApplicationModel.UserActivities;
@@ -253,9 +253,9 @@ Nun, da Sie die Adaptive Card definiert haben, können Sie eine darauf basierend
     ```
 
     > [!NOTE]
-    > Hierbei handelt es sich um UWP-Namespaces. Diese aufgelöst werden, da die `Microsoft.Toolkit.Wpf.UI.Controls` NuGet-Paket, das Sie in Schritt 2 installiert, enthält einen Verweis auf die `Microsoft.Windows.SDK.Contracts` Verpacken, wodurch die **ContosoExpenses.Core** Projekt zu verweisen, WinRT-APIs, obwohl es sich um eine .NET ist 3-Core-Projekt.
+    > Dabei handelt es sich um UWP-Namespaces. Diese werden aufgelöst, weil das NuGet-Paket `Microsoft.Toolkit.Wpf.UI.Controls`, das du in Schritt 2 installiert hast, einen Verweis auf das Paket `Microsoft.Windows.SDK.Contracts` enthält. Dies ermöglicht dem Projekt **ContosoExpenses.Core**, auf WinRT-APIs zu verweisen, obwohl es sich um ein .NET Core 3-Projekt handelt.
 
-2. Fügen Sie die folgenden Felddeklarationen, die `TimelineService` Klasse.
+2. Füge der `TimelineService`-Klasse die folgenden Felddeklarationen hinzu.
 
     ```csharp
     private UserActivityChannel _userActivityChannel;
@@ -263,7 +263,7 @@ Nun, da Sie die Adaptive Card definiert haben, können Sie eine darauf basierend
     private UserActivitySession _userActivitySession;
     ```
 
-3. Fügen Sie die folgende Methode der `TimelineService` Klasse.
+3. Füge der `TimelineService`-Klasse die folgende Methode hinzu.
 
     ```csharp
     public async Task AddToTimeline(Expense expense)
@@ -284,40 +284,40 @@ Nun, da Sie die Adaptive Card definiert haben, können Sie eine darauf basierend
     }
     ```
 
-4. Speichern Sie die Änderungen an **TimelineService.cs**.
+4. Speichere die Änderungen an **TimelineService.cs**.
 
-#### <a name="about-the-code"></a>Zum code
+#### <a name="about-the-code"></a>Informationen zum Code
 
-Die `AddToTimeline` Methode ruft zunächst ab einem **UserActivityChannel** -Objekt, das zum Speichern der Benutzeraktivitäten erforderlich ist. Es erstellt einen neuen Benutzer Aktivität mithilfe der **GetOrCreateUserActivityAsync** Methode, die einen eindeutigen Bezeichner benötigt. Auf diese Weise, wenn eine Aktivität vorhanden ist, kann die app es aktualisieren; Andernfalls wird eine neue erstellt. Der Bezeichner, der übergeben hängt davon ab, von der Art der Anwendung, die Sie erstellen:
+Die `AddToTimeline`-Methode ruft zunächst ein **UserActivityChannel**-Objekt ab, das zum Speichern von Benutzeraktivitäten erforderlich ist. Dann erstellt sie eine neue Benutzeraktivität mit der **GetOrCreateUserActivityAsync**-Methode, die einen eindeutigen Bezeichner erfordert. Auf diese Weise kann die App, wenn eine Aktivität bereits vorhanden ist, diese aktualisieren. Andernfalls wird eine neue Aktivität erstellt. Der zu übergebende Bezeichner hängt von der Art der Anwendung ab, die du entwickelst:
 
-* Sollten Sie immer die gleiche Aktivität zu aktualisieren, sodass Zeitachse nur der aktuellste Auftrag angezeigt wird, können Sie einen festen Bezeichner (z. B. **Ausgaben**).
-* Wenn Sie jede Aktivität als eine andere nachverfolgen möchten, damit Zeitachse, die alle von ihnen angezeigt werden, können Sie einen dynamischen Bezeichner.
+* Wenn du immer dieselbe Aktivität aktualisieren möchtest, sodass auf der Zeitachse nur die jüngste Aktivität angezeigt wird, kannst du einen festen Bezeichner verwenden (z. B. **Expenses**).
+* Wenn du jede Aktivität einzeln so verfolgen möchten, dass auf der Zeitachse alle Aktivitäten angezeigt werden, kannst du einen dynamischen Bezeichner verwenden.
 
-In diesem Szenario die app wird überwacht jede geöffnete Kosten als ein anderer Benutzer-Aktivität, damit der Code jede ID erstellt, mit dem Schlüsselwort **Expense -** gefolgt von der eindeutigen Expense-ID.
+In diesem Szenario verfolgt die App alle geöffneten Ausgaben als unterschiedliche Benutzeraktivitäten, sodass der Code jeden Bezeichner mit dem Schlüsselwort **Expense-** , gefolgt von der eindeutigen Ausgaben-ID, erstellt.
 
-Nachdem die Methode erstellt eine **UserActivity** Objekt, das Objekt mit den folgenden Informationen aufgefüllt:
+Nachdem die Methode ein **UserActivity**-Objekt erstellt hat, füllt sie das Objekt mit den folgenden Informationen auf:
 
-* Ein **ActivationUri** , die aufgerufen wird, klickt der Benutzer auf die Aktivität in der Zeitachse. Der Code verwendet ein benutzerdefiniertes Protokoll namens **Contosoexpenses** , die die app wird später behandelt.
-* Die **VisualElements** -Objekt, das einen Satz von Eigenschaften enthält, die die visuelle Darstellung der Aktivität zu definieren. Dieser Code legt die **DisplayText** (Dies ist der auf den Eintrag in der Zeitachse angezeigte Titel) und die **Content**. 
+* Einem **ActivationUri**, der aufgerufen wird, wenn der Benutzer auf der Zeitachse auf die Aktivität klickt. Im Code wird ein benutzerdefiniertes Protokoll namens **contosoexpenses** verwendet, das die Anwendung später verarbeiten wird.
+* Dem Objekt **VisualElements**, das eine Reihe von Eigenschaften enthält, die die visuelle Darstellung der Aktivität definieren. Dieser Code legt **DisplayText** (Anzeigetext des Titels, der über dem Eintrag auf der Zeitachse angezeigt wird) und **Content** (Inhalt) fest. 
 
-Dies ist, in denen die Adaptive Karte, die Sie zuvor definiert eine Rolle spielt. Die app übergibt die Adaptive Card Sie entworfen, dass an die Methode oben als Inhalt. Windows 10 verwendet jedoch ein anderes Objekt zur Darstellung einer Karte im Vergleich zu dem die `AdaptiveCards` NuGet-Paket. Aus diesem Grund erstellt die Methode die Karte mithilfe der **CreateAdaptiveCardFromJson** Methode verfügbar gemacht werden, indem die **AdaptiveCardBuilder** Klasse. Nachdem der Benutzeraktivität die Methode erstellt wurde, speichert die Aktivität und erstellt eine neue Sitzung.
+Hier spielt die von dir zuvor definierte adaptive Karte eine Rolle. Die App gibt die von dir zuvor entworfene adaptive Karte als Inhalt an die Methode weiter. Allerdings verwendet Windows 10 zur Darstellung einer Karte ein anderes Objekt als das vom NuGet-Paket `AdaptiveCards` verwendete. Daher erstellt die Methode die Karte neu, indem sie die Methode **CreateAdaptiveCardFromJson** verwendet, die durch die **AdaptiveCardBuilder**-Klasse verfügbar gemacht wird. Nachdem die Methode die Benutzeraktivität erstellt hat, speichert sie die Aktivität und erstellt eine neue Sitzung.
 
-Klickt ein Benutzer auf eine Aktivität in der Zeitachse der **Contosoexpenses: / /** Protokoll aktiviert und die URL enthält die Informationen, die die app den ausgewählten Aufwand abrufen muss. Als eine optionale Aufgabe könnten Sie die protokollaktivierung implementieren, damit, dass die Anwendung richtig reagiert, wenn der Benutzer die Zeitachse verwendet.
+Wenn ein Benutzer auf der Zeitachse auf eine Aktivität klickt, wird das Protokoll **contosoexpenses://** aktiviert. Die URL enthält die Informationen, die die App zum Abrufen der ausgewählten Ausgabe benötigt. Als optionale Aufgabe kannst du die Protokollaktivierung implementieren, sodass die Anwendung ordnungsgemäß reagiert, wenn der Benutzer die Zeitachse verwendet.
 
-### <a name="integrate-the-application-with-timeline"></a>Integrieren Sie die Anwendung in der Zeitachse
+### <a name="integrate-the-application-with-timeline"></a>Integrieren der Anwendung in die Zeitachse
 
-Nun, dass Sie mit der Zeitachse eine Klasse, die interagiert erstellt haben, können wir starten, verwenden, um die Benutzeroberfläche der Anwendung zu verbessern. Der beste Ort zum Verwenden der **AddToTimeline** Methode verfügbar gemacht werden, indem die **TimelineService** Klasse ist, wenn der Benutzer auf die Detailseite des Aufwand öffnet.
+Nachdem du nun eine Klasse erstellt hast, die mit der Zeitachse interagiert, können wir damit beginnen, sie zum Verbessern der Benutzeroberfläche der Anwendung zu verwenden. Die beste Stelle für die Verwendung der **AddToTimeline**-Methode, die durch die **TimelineService**-Klasse verfügbar gemacht wird, ist, wenn der Benutzer die Detailseite einer Ausgabe öffnet.
 
-1. In der **ContosoExpenses.Core** projizieren, erweitern Sie die **ViewModels** Ordner, und Öffnen der **ExpenseDetailViewModel.cs** Datei. Dies ist das "ViewModel", die die Ausgaben Detailfenster unterstützt.
+1. Erweitere im Projekt **ContosoExpenses.Core** den Ordner **ViewModels**, und öffne die Datei **ExpenseDetailViewModel.cs**. Dies ist das ViewModel zur Unterstützung des Fensters mit den Details zur Ausgabe.
 
-2. Suchen Sie den öffentlichen Konstruktor, der die **ExpenseDetailViewModel** Klasse und fügen Sie den folgenden Code am Ende des Konstruktors. Wenn der Expense-Fenster geöffnet wird, ruft die Methode die **AddToTimeline** Methode und übergeben Sie die aktuelle Kosten. Die **TimelineService** Klasse verwendet diese Informationen, um eine Benutzeraktivität, die mit den Ausgabeinformationen zu erstellen.
+2. Wechsle zum öffentlichen Konstruktor der **ExpenseDetailViewModel**-Klasse, und füge am Ende des Konstruktors den folgenden Code hinzu. Immer wenn das Ausgabenfenster geöffnet wird, ruft die Methode die **AddToTimeline**-Methode auf und übergibt die aktuelle Ausgabe. Die **TimelineService**-Klasse nutzt diese Informationen, um eine Benutzeraktivität unter Verwendung der Ausgabeninformationen zu erstellen.
 
     ```csharp
     TimelineService timeline = new TimelineService();
     timeline.AddToTimeline(expense);
     ```
 
-    Wenn Sie fertig sind, sollte der Konstruktor wie folgt aussehen.
+    Wenn du fertig bis, sollte der Konstruktor so aussehen.
 
     ```csharp
     public ExpensesDetailViewModel(IDatabaseService databaseService, IStorageService storageService)
@@ -334,42 +334,42 @@ Nun, dass Sie mit der Zeitachse eine Klasse, die interagiert erstellt haben, kö
     }
     ```
 
-3. Drücken Sie F5, um die app im Debugger ausführen. Wählen Sie einen Mitarbeiter aus der Liste aus, und wählen Sie dann eine Ausgabe. Beachten Sie auf der Detailseite die Beschreibung des den Aufwand, der das Datum und der Menge.
+3. Drücke F5, um die App zu kompilieren und im Debugger auszuführen. Wähle einen Mitarbeiter in der Liste und dann eine Ausgabe aus. Achte auf der Detailseite auf die Beschreibung der Ausgabe, das Datum und den Betrag.
 
-4. Drücken Sie **Start + Registerkarte** Zeitachse zu öffnen.
+4. Drücke **START+TAB**, um die Zeitachse zu öffnen.
 
-5. Bildlauf nach unten in der Liste der aktuell geöffneten Anwendungen, bis Sie sehen, dass im Abschnitt **heute bereits**. In diesem Abschnitt werden einige der neuesten Benutzeraktivitäten. Klicken Sie auf die **finden Sie alle Aktivitäten** link die **heute bereits** Überschrift.
+5. Scrolle in der Liste der derzeit geöffneten Anwendungen nach unten, bis du den Abschnitt mit dem Titel **Vor ein paar Stunden** siehst. In diesem Abschnitt werden einige der jüngsten Benutzeraktivitäten angezeigt. Klicke neben der Überschrift **Vor ein paar Stunden** auf **Alle Aktivitäten anzeigen**.
 
-6. Überprüfen Sie, ob eine neue Karte mit den Informationen über die Kosten, die Sie gerade in der Anwendung ausgewählt haben.
+6. Bestätige, dass du eine neue Karte mit den Informationen zu den soeben in der Anwendung ausgewählten Ausgabe siehst.
 
-    ![Zeitachse der Contoso-Ausgaben](images/wpf-modernize-tutorial/ContosoExpensesTimeline.png)
+    ![Zeitachse von Contoso Expenses](images/wpf-modernize-tutorial/ContosoExpensesTimeline.png)
 
-7. Wenn Sie jetzt andere Ausgaben öffnen, sehen Sie eine neue Karten, die als Benutzeraktivitäten hinzugefügt wird. Denken Sie daran, dass der Code verwendet einen anderen Bezeichner für jede Aktivität, damit sie eine Karte für jede Ausgabe erstellt, öffnen Sie in der app.
+7. Wenn du jetzt andere Ausgaben öffnest, siehst du, dass neue Karten als Benutzeraktivitäten hinzugefügt werden. Denke daran, dass der Code für jede Aktivität einen anderen Bezeichner verwendet, sodass für jede Ausgabe, die du in der App öffnest, eine Karte erstellt wird.
 
-8. Schließen Sie die App.
+8. Schließe die App.
 
-## <a name="add-a-notification"></a>Fügen Sie eine Benachrichtigung hinzu
+## <a name="add-a-notification"></a>Hinzufügen einer Benachrichtigung
 
-Das zweite Feature, das Contoso-Entwicklungsteam hinzufügen möchte, wird eine Benachrichtigung, die dem Benutzer angezeigt wird, wenn eine neue Ausgabe in der Datenbank gespeichert ist. Zu diesem Zweck können Sie das System integrierte Benachrichtigungen in Windows 10 nutzen, die für Entwickler über WinRT-APIs verfügbar gemacht wird. Diese Benachrichtigungssystem hat viele Vorteile:
+Das zweite Feature, das das Contoso-Entwicklungsteam hinzufügen möchte, ist eine Benachrichtigung, die dem Benutzer angezeigt wird, wenn eine neue Ausgabe in der Datenbank gespeichert wird. Dazu kannst du das in Windows 10 integrierte Benachrichtigungssystem nutzen, das Entwicklern über WinRT-APIs zur Verfügung steht. Dieses Benachrichtigungssystem hat zahlreiche Vorteile:
 
-- Benachrichtigungen sind konsistent mit dem Rest des Betriebssystems.
-- Aktionen erfordernde sind.
-- Sie erhalten im Info-Center gespeichert, damit sie später überprüft werden können.
+- Benachrichtigungen sind mit dem Rest des Betriebssystems konsistent.
+- Sie sind umsetzbar.
+- Sie werden im Info-Center gespeichert, damit sie später überprüft werden können.
 
-So fügen Sie eine Benachrichtigung an die app hinzu:
+So fügst du der App eine Benachrichtigung hinzu
 
-1. In **Projektmappen-Explorer**, mit der rechten Maustaste die **ContosoExpenses.Core** Projekts **hinzufügen ->-Klasse**. Nennen Sie die Klasse **NotificationService.cs** , und klicken Sie auf **OK**.
+1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **ContosoExpenses.Core**, und wähle **Hinzufügen > Klasse** aus. Nenne die Klasse **NotificationService.cs**, und klicke auf **OK**.
 
-2. In der **NotificationService.cs** Datei, fügen Sie die folgenden Anweisungen am Anfang der Datei.
+2. Füge am Anfang der Datei **NotificationService.cs** die folgenden Anweisungen hinzu.
 
     ```csharp
     using Windows.Data.Xml.Dom;
     using Windows.UI.Notifications;
     ```
 
-3. Ändern der Namespace deklariert wird, in der Datei aus `ContosoExpenses.Core` zu `ContosoExpenses`.
+3. Ändere den in der Datei deklarierten Namespace von `ContosoExpenses.Core` in `ContosoExpenses`.
 
-4. Fügen Sie die folgende Methode der `NotificationService` Klasse.
+4. Füge der `NotificationService`-Klasse die folgende Methode hinzu.
 
     ```csharp
     public void ShowNotification(string description, double amount)
@@ -391,18 +391,18 @@ So fügen Sie eine Benachrichtigung an die app hinzu:
     }
     ```
 
-    Popupbenachrichtigungen werden durch eine XML-Nutzlast dargestellt, die z. Text, Bilder, Aktionen und vieles mehr b. Sie finden alle unterstützten Elemente [hier](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema). Dieser Code verwendet ein sehr einfaches Schema mit zwei Textzeilen: der Titel und Text. Nachdem der Code die XML-Nutzlast definiert und sie in lädt einer **XmlDocument** Objekt, es dient als Wrapper für die XML-Code in eine **ToastNotification** Objekt aus, und es wird veranschaulicht, indem eine der **ToastNotificationManager** Klasse.
+    Popupbenachrichtigungen werden durch eine XML-Nutzlast dargestellt, die Text, Bilder, Aktionen und vieles mehr enthalten kann. [Hier](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema) findest du alle unterstützten Elemente. Dieser Code verwendet ein sehr einfaches Schema mit zwei Textzeilen: Titel und Textkörper. Nachdem der Code die XML-Nutzlast definiert und in ein **XmlDocument**-Objekt geladen hat, umschließt er den XML-Code in einem **ToastNotification**-Objekt und zeigt es mithilfe der **ToastNotificationManager**-Klasse an.
 
-5. In der **ContosoExpenses.Core** projizieren, erweitern Sie die **ViewModels** Ordner, und Öffnen der **AddNewExpenseViewModel.cs** Datei. 
+5. Erweitere im Projekt **ContosoExpenses.Core** den Ordner **ViewModels**, und öffne die Datei **AddNewExpenseViewModel.cs**. 
 
-6. Suchen Sie die `SaveExpenseCommand` -Methode, die ausgelöst wird, wenn der Benutzer auf die Schaltfläche drückt, um eine neue Ausgaben zu speichern. Fügen Sie den folgenden Code an diese Methode einfach nach dem Aufruf der `SaveExpense` Methode.
+6. Wechsle zur `SaveExpenseCommand`-Methode, die ausgelöst wird, wenn der Benutzer auf die Schaltfläche klickt, um eine neue Ausgabe zu speichern. Füge den folgenden Code dieser Methode direkt nach dem Aufruf der `SaveExpense`-Methode hinzu.
 
     ```csharp
     NotificationService notificationService = new NotificationService();
     notificationService.ShowNotification(expense.Description, expense.Cost);
     ```
 
-    Wenn Sie fertig sind, die `SaveExpenseCommand` Methode sollte wie folgt aussehen.
+    Wenn du fertig bis, sollte die `SaveExpenseCommand`-Methode so aussehen.
 
     ```csharp
     private RelayCommand _saveExpenseCommand;
@@ -441,14 +441,14 @@ So fügen Sie eine Benachrichtigung an die app hinzu:
     }
     ```
 
-7. Drücken Sie F5, um die app im Debugger ausführen. Wählen Sie einen Mitarbeiter aus der Liste aus, und klicken Sie dann auf die **Hinzufügen von neuen Ausgaben** Schaltfläche. Füllen Sie alle Felder in der Form, und drücken Sie **speichern**.
+7. Drücke F5, um die App zu kompilieren und im Debugger auszuführen. Wähle einen Mitarbeiter in der Liste aus, und klicke dann auf die Schaltfläche **Add new expense** (Neue Ausgabe hinzufügen). Fülle alle Felder im Formular aus, und klicke auf **Speichern**.
 
-8. Sie erhalten die folgende Ausnahme aus.
+8. Du erhältst die folgende Ausnahme.
 
-    ![Toast-Benachrichtigungsfehler](images/wpf-modernize-tutorial/ToastNotificationError.png)
+    ![Fehler bei Popupbenachrichtigung](images/wpf-modernize-tutorial/ToastNotificationError.png)
 
-Diese Ausnahme wird durch die Tatsache verursacht, die Contoso-Ausgaben-app noch Paketidentität keine. Einige WinRT-APIs, die Benachrichtigungen-API, einschließlich erfordern Paketidentität, bevor sie in einer app verwendet werden können. UWP-apps erhalten Paketidentität standardmäßig, da sie nur über MSIX-Pakete verteilt werden können. Andere Arten von Windows-apps, einschließlich der WPF-apps können auch über MSIX Pakete zum Abrufen der Paketidentität bereitgestellt werden. Der nächste Teil des in diesem Tutorial wird hierzu untersuchen.
+Diese Ausnahme wird dadurch verursacht, dass die App Contoso Expenses noch keine Paketidentität hat. Einige WinRT-APIs (einschließlich der Benachrichtigungs-API) erfordern eine Paketidentität, bevor sie in einer App verwendet werden können. UWP-Apps erhalten standardmäßig eine Paketidentität, da sie nur über MSIX-Pakete verteilt werden können. Andere Typen von Windows-Apps, einschließlich WPF-Apps, können ebenfalls über MSIX-Pakete bereitgestellt werden, um eine Paketidentität zu erhalten. Im nächsten Teil dieses Tutorials erfährst du, wie das geht.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-An diesem Punkt in diesem Tutorial wurde erfolgreich hinzugefügt haben eine Benutzeraktivität der app, die in Windows-Zeitachse integriert ist, und Sie haben auch eine Benachrichtigung an die app, die ausgelöst wird, wenn Benutzer eine neue Ausgabe erstellen hinzugefügt. Die Benachrichtigung funktioniert jedoch noch nicht, da der app Paketidentität verwenden Sie die API-Benachrichtigungen erforderlich sind. Weitere Informationen zum Erstellen eines MSIX-Pakets für die app Paketidentität zu erhalten und andere Bereitstellung profitieren, finden Sie unter [Teil 5: Packen und Bereitstellen mit MSIX](modernize-wpf-tutorial-5.md).
+An dieser Stelle im Tutorial hast du erfolgreich eine Benutzeraktivität zur App hinzugefügt, die in die Windows-Zeitachse integriert ist. Außerdem hast du der App eine Benachrichtigung hinzugefügt, die ausgelöst wird, wenn Benutzer eine neue Ausgabe erstellen. Die Benachrichtigung funktioniert jedoch noch nicht, da die Anwendung zur Verwendung der Benachrichtigungs-API eine Paketidentität erfordert. Informationen dazu, wie ein MSIX-Paket für die Anwendung so erstellt wird, dass es eine Paketidentität erhält, und du in den Genuss anderer Bereitstellungsvorteile kommst, findest du in [Teil 5: Packen und Bereitstellen mit MSIX](modernize-wpf-tutorial-5.md).
