@@ -1,71 +1,71 @@
 ---
-title: Seitenlayout für UWP-apps
-description: Wenn Sie Ihre APP entwerfen, müssen Sie zuerst die Layoutstruktur in Erwägung gezogen. In diesem Artikel wird die allgemeine Struktur von grundlegenden Seitenlayouts behandelt, einschließlich der Benutzeroberflächen Elemente, die Sie benötigen, und des Orts, an dem Sie sich auf einer Seite befinden sollten. In UWP-apps enthält jede Seite in der Regel Navigations-, Befehls-und Inhaltselemente.
+title: Seitenlayout für UWP-Apps
+description: Beim Entwurf deiner App musst du zuerst die Layoutstruktur berücksichtigen. In diesem Artikel wird die allgemeine Struktur von grundlegenden Seitenlayouts behandelt, einschließlich der erforderlichen Benutzeroberflächenelemente und der Positionen, an denen diese sich auf einer Seite befinden sollten. In UWP-Apps weist jede Seite in der Regel Navigations-, Befehls- und Inhaltselemente auf.
 ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 localizationpriority: medium
 ms.openlocfilehash: 7333cebc945715412e3ff1140ca26e1ed5368704
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75684539"
 ---
 # <a name="page-layout"></a>Seitenlayout
 
-In UWP-apps enthält jede [**Seite**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) in der Regel Navigations-, Befehls-und Inhaltselemente. 
+In UWP-Apps weist jede [**Seite**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) in der Regel Navigations-, Befehls- und Inhaltselemente auf. 
 
-Ihre APP kann mehrere Seiten umfassen: Wenn ein Benutzer eine UWP-App aufruft, erstellt der Anwendungscode einen [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) , der innerhalb des [**Fensters**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window)der Anwendung platziert werden soll. Der Frame kann dann zwischen den [**Seiten**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) Instanzen der Anwendung [Navigieren](../basics/navigate-between-two-pages.md) . 
+Deine App kann mehrere Seiten umfassen: Wenn ein Benutzer eine UWP-App startet, erstellt der Anwendungscode einen [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame), der im [**Fenster**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) der Anwendung platziert wird. Der Frame kann dann zwischen den [**Seiteninstanzen**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) der Anwendung [navigieren](../basics/navigate-between-two-pages.md). 
 
-Die meisten Seiten folgen einer gemeinsamen Layoutstruktur, und in diesem Artikel wird erläutert, welche Benutzeroberflächen Elemente Sie benötigen und wo Sie sich auf einer Seite befinden sollten. 
+Die meisten Seiten folgen einer allgemeinen Layoutstruktur, und in diesem Artikel werden die erforderlichen Benutzeroberflächenelemente und deren Positionen auf einer Seite behandelt. 
 
 ![Seitenstruktur](images/page-components.svg)
 
 ## <a name="navigation"></a>Navigation
-Ihr App-Layout beginnt mit dem von Ihnen gewählten Navigations Modell, das definiert, wie die Benutzer zwischen den Seiten in der APP navigieren. In diesem Artikel werden zwei allgemeine Navigationsmuster erläutert: Linker Navigationsbereich und oberster Navigationsbereich. Anleitungen zum Auswählen von anderen Navigationsoptionen finden Sie unter [Grundlagen des Navigations Entwurfs für UWP-apps](../basics/navigation-basics.md).
+Dein App-Layout beginnt mit dem ausgewählten Navigationsmodell. Dieses definiert, wie die Benutzer in der App zwischen Seiten navigieren. In diesem Artikel werden zwei gebräuchliche Navigationsmuster erläutert: der linke Navigationsbereich und der obere Navigationsbereich. Anleitungen zum Auswählen anderer Navigationsoptionen findest du unter [Navigationsdesigngrundlagen für UWP-Apps](../basics/navigation-basics.md).
 
-![obere und linke Navigationsmuster](images/top-left-nav.svg)
+![Navigationsmuster oben und links](images/top-left-nav.svg)
 
 ### <a name="left-nav"></a>Linker Navigationsbereich
-Der linke Navigationsbereich oder [das Navigations](../controls-and-patterns/navigationview.md) Bereichs Muster ist im Allgemeinen für die Navigation auf App-Ebene reserviert und ist auf der höchsten Ebene innerhalb der app vorhanden. Dies bedeutet, dass es immer sichtbar und verfügbar sein sollte. Wir empfehlen den linken Navigationsbereich, wenn mehr als fünf Navigationselemente oder mehr als fünf Seiten in ihrer app vorhanden sind. Das Navigationsbereichs Muster enthält normalerweise Folgendes:
+Der linke Navigationsbereich oder das Muster [Navigationsbereich](../controls-and-patterns/navigationview.md) ist im Allgemeinen für die Navigation auf App-Ebene reserviert und liegt auf der obersten Ebene innerhalb der App, sodass er immer sichtbar und verfügbar sein sollte. Wir empfehlen den linken Navigationsbereich, wenn deine App mehr als fünf Navigationselemente oder mehr als fünf Seiten enthält. Das Muster „Navigationsbereich“ enthält normalerweise Folgendes:
 - Navigationselemente
 - Einstiegspunkt in App-Einstellungen
 - Einstiegspunkt in Kontoeinstellungen
 
-Das [navigationview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) -Steuerelement implementiert das linke Navigationsmuster für UWP.
+Das Steuerelement [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) implementiert das Muster des linken Navigationsbereichs für UWP.
 
 Wenn ein Navigationselement ausgewählt ist, sollte der Frame zur Seite des ausgewählten Elements navigieren.
 
 ![Navigationsbereich erweitert](images/navview-expanded.svg)
 
-Die Menü Schaltfläche ermöglicht es Benutzern, den Navigationsbereich zu erweitern und zu reduzieren. Wenn die Bildschirmgröße größer als 640 PX ist, wird durch Klicken auf die Menü Schaltfläche der Navigationsbereich auf einen Balken reduziert.
+Die Schaltfläche „Menü“ ermöglicht Benutzern, den Navigationsbereich zu erweitern und zu reduzieren. Wenn die Bildschirmgröße 640 px übersteigt, wird durch Klicken auf die Schaltfläche „Menü“ der Navigationsbereich auf eine Leiste reduziert.
 
-![Navigationsbereich Compact](images/navview-compact.svg)
+![Navigationsbereich kompakt](images/navview-compact.svg)
 
-Wenn die Bildschirmgröße kleiner als 640 PX ist, wird der Navigationsbereich vollständig reduziert.
+Wenn die Bildschirmgröße kleiner als 640 px ist, wird der Navigationsbereich vollständig reduziert.
 
-![minimaler Navigationsbereich](images/navview-minimal.svg)
+![Navigationsbereich minimiert](images/navview-minimal.svg)
 
-### <a name="top-nav"></a>Obere Navigationsleiste
+### <a name="top-nav"></a>Oberer Navigationsbereich
 
-Der obere Navigationsbereich kann auch als Navigation auf oberster Ebene fungieren. Während der linke Navigationsbereich redusible ist, ist der obere Navigationsbereich immer sichtbar. Das [navigationview](../controls-and-patterns/navigationview.md) -Steuerelement implementiert das oberste Navigations-und Registerkarten Muster für UWP.
+Der obere Navigationsbereich kann ebenfalls als Navigation auf oberster Ebene dienen. Während der linke Navigationsbereich reduziert werden kann, ist der obere Navigationsbereich immer sichtbar. Das Steuerelement [NavigationView](../controls-and-patterns/navigationview.md) implementiert die Muster des oberen Navigationsbereichs und der Registerkarten für UWP.
 
-![obere Navigation](images/pivot-large.svg)
+![Oberer Navigationsbereich](images/pivot-large.svg)
 
 ## <a name="command-bar"></a>Befehlsleiste
 
-Als nächstes können Sie Benutzern einen einfachen Zugriff auf die gängigsten Aufgaben Ihrer APP bereitstellen. Eine [Befehlsleiste](../controls-and-patterns/app-bars.md) kann Zugriff auf Befehle auf App-oder Seitenebene bereitstellen, und Sie kann mit jedem beliebigen Navigationsmuster verwendet werden.
+Als Nächstes solltest du Benutzern einen einfachen Zugriff auf die am häufigsten verwendete Aufgaben in deiner App ermöglichen. Eine [Befehlsleiste](../controls-and-patterns/app-bars.md) ermöglicht den Zugriff auf Befehle auf App-Ebene oder Seitenebene und kann bei jedem Navigationsmuster verwendet werden.
 
-![Befehls leisten Platzierung im oberen Bereich ](images/app-bar-desktop.svg)
+![Platzierung der Befehlsleiste im oberen Bereich ](images/app-bar-desktop.svg)
 
-Die Befehlsleiste kann oben oder unten auf der Seite platziert werden, je nachdem, welcher Wert für Ihre APP am besten geeignet ist.
+Die Befehlsleiste kann oben oder unten auf der Seite platziert werden, je nachdem, welche Position für deine App am besten geeignet ist.
 
-![Platzierung der Befehlsleiste am unteren Rand](images/app-bar-mobile.svg)
+![Platzierung der Befehlsleiste im unteren Bereich](images/app-bar-mobile.svg)
 
 ## <a name="content"></a>Inhalt
 
-Schließlich variiert der Inhalt von APP zu app stark, sodass Sie Inhalte auf viele verschiedene Arten präsentieren können. Hier werden einige gängige Seitenmuster beschrieben, die Sie möglicherweise in Ihrer APP verwenden möchten. Viele Apps verwenden einige oder alle dieser gängigen Seitenmuster, um verschiedene Arten von Inhalten anzuzeigen. Gleichermaßen können Sie diese Muster so kombinieren, dass Sie für Ihre APP optimiert werden.
+Außerdem variiert der Inhalt von App zu App stark, sodass du Inhalte auf viele verschiedene Arten präsentieren kannst. Hier werden einige gängige Seitenmuster beschrieben, die du für deine App in Erwägung ziehen kannst. Viele Apps verwenden einige oder alle dieser gängigen Seitenmuster, um verschiedene Arten von Inhalten anzuzeigen. Ebenso kannst du diese Muster auch kombinieren, um sie für deine App zu optimieren.
 
 ## <a name="landing"></a>Angebotsseite (Landing-Page)
 
@@ -91,8 +91,8 @@ Das [Master/Detail](../controls-and-patterns/master-details.md)-Modell besteht a
 Ein [Formular](../controls-and-patterns/forms.md) ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Die meisten, wenn nicht alle Apps, verwenden eine Art Formular für Einstellungsseiten, Anmeldeportale, Feedback-Hubs, Kontoerstellung oder andere Zwecke. 
 
 ## <a name="sample-apps"></a>Beispiel-Apps
-Wenn Sie sehen möchten, wie diese Muster implementiert werden können, sehen Sie sich unsere [UWP-Beispiel-apps](https://developer.microsoft.com/windows/samples)an:
-- [Buildcast-Video Player](https://github.com/Microsoft/BuildCast)
+Ein Beispiel für die Implementierung dieser Muster findest du in unseren [UWP-Beispiel-Apps](https://developer.microsoft.com/windows/samples):
+- [Videoplayer BuildCast](https://github.com/Microsoft/BuildCast)
 - [Lunch Scheduler](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
 - [Coloring Book](https://github.com/Microsoft/Windows-appsample-coloringbook)
-- [Kunden bestellen Datenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+- [Kundenauftragsdatenbank](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

@@ -8,21 +8,18 @@ author: mcleanbyron
 keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 945cc2f1cf225c194e5820990bdbeda584069e4c
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 6bb90fb9cbe7c9f54f60fd1920f0e73e174a3772
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814040"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482584"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>Teil 2: Hinzufügen eines UWP-InkCanvas-Steuerelements mithilfe von XAML Islands
 
 Dies ist der zweite Teil eines Tutorials, in dem das Modernisieren der WPF-Beispiel-Desktop-App Contoso Expenses veranschaulicht wird. Eine Übersicht über das Tutorial, die Voraussetzungen und Anweisungen zum Herunterladen der Beispiel-App findest du unter [Tutorial: Modernisieren einer WPF-App](modernize-wpf-tutorial.md). In diesem Artikel wird davon ausgegangen, dass du [Teil 1](modernize-wpf-tutorial-1.md) bereits abgeschlossen hast.
 
 Im fiktiven Szenario dieses Tutorials möchte das Contoso-Entwicklungsteam der App Contoso Expenses Unterstützung für digitale Signaturen hinzufügen. Das UWP-Steuerelement **InkCanvas** ist eine großartige Option für dieses Szenario, da es Freihandschrift und KI-gestützte Funktionen wie die Fähigkeit zur Erkennung von Text und Formen unterstützt. Dazu verwendest du das mit [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) umschlossene UWP-Steuerelement, das im Windows Community Toolkit verfügbar ist. Dieses Steuerelement umschließt die Schnittstelle und Funktionalität des UWP-Steuerelements **InkCanvas** zur Verwendung in einer WPF-App. Weitere Details zu umschlossenen UWP-Steuerelementen findest du unter [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md).
-
-> [!NOTE]
-> In diesem Tutorial hostet die WPF-App nur UWP-Steuerelemente von Erstanbietern aus dem Windows SDK. Daher werden in diesem Tutorial die Schritte zum Definieren einer Instanz der Klasse [Microsoft.Toolkit.Win32.UI.XamlHost.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) wie hier [ beschrieben](host-standard-control-with-xaml-islands.md#required-components) ausgelassen.
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>Konfigurieren des Projekts für die Verwendung von XAML Islands
 

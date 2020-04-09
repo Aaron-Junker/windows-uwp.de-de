@@ -7,26 +7,30 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f289b21980e2a77fd8669c39750e9b989aa742
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3b7eb2aa8f753c3e8b956ed722d1f807362bc204
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684395"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081720"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
 Verwenden Sie ein [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)-Steuerelement, um benutzerdefinierte Sammlungsoberflächen mit einem flexiblen Layoutsystem, benutzerdefinierten Ansichten und Virtualisierung zu erstellen.
 
-Im Gegensatz zu [ListView](/uwp/api/windows.ui.xaml.controls.listview) stellt [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) keine umfassende Benutzeroberfläche bereit– „ItemsRepeater“ hat keine Standardbenutzeroberfläche und stellt keine Richtlinien hinsichtlich Fokus, Auswahl, oder Benutzerinteraktion bereit. Stattdessen ist das Steuerelement ein Baustein, den Sie dazu verwenden können, Ihre eigenen einzigartigen sammlungsbasierten Oberflächen und benutzerdefinierten Steuerelemente zu erstellen. Weil es keine integrierte Richtlinien hat, können Sie Richtlinien zuordnen, um die von Ihnen geforderte Benutzeroberfläche zu erstellen. Beispielsweise können Sie das zu verwendende Layout, die Tastaturunterstützungsrichtlinie, die Auswahlrichtlinie usw. definieren.
+Im Gegensatz zu [ListView](/uwp/api/windows.ui.xaml.controls.listview) stellt [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) keine umfassende Benutzeroberfläche bereit– „ItemsRepeater“ hat keine Standardbenutzeroberfläche und stellt keine Richtlinien hinsichtlich Fokus, Auswahl, oder Benutzerinteraktion bereit. Stattdessen ist das Steuerelement ein Baustein, den du dazu verwenden kannst, deine eigenen einzigartigen sammlungsbasierten Oberflächen und benutzerdefinierten Steuerelemente zu erstellen. Weil es keine integrierte Richtlinien hat, können Sie Richtlinien zuordnen, um die von Ihnen geforderte Benutzeroberfläche zu erstellen. Beispielsweise können Sie das zu verwendende Layout, die Tastaturunterstützungsrichtlinie, die Auswahlrichtlinie usw. definieren.
 
 Vom Konzept her können Sie sich [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) als einen datengesteuerten Bereich statt als ein vollständiges Steuerelement wie „ListView“ vorstellen. Sie geben eine Sammlung von anzuzeigenden Datenelementen, eine Elementvorlage, über die ein Benutzeroberflächenelement für jedes Datenelement generiert wird, und ein Layout an, das die Größe und die Position der Elemente bestimmt. „ItemsRepeater“ erstellt dann anhand der Datenquelle untergeordnete Elemente und zeigt diese entsprechend der Elementvorlage und dem Layout an. Die angezeigten Elemente müssen nicht homogen sein, da „ItemsRepeater“ Inhalte, die den Datenelementen entsprechen, anhand von Kriterien laden kann, die Sie in einer Datenvorlagenauswahl angeben.
 
-| **Abrufen der Windows-UI-Bibliothek** |
-| - |
-| Dieses Steuerelement ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+**Abrufen der Windows-UI-Bibliothek**
 
-> **Wichtige APIs:** [ItemsRepeater-Klasse](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer-Klasse](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ItemsRepeater** ist in der Bibliothek „Windows UI“ enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für UWP-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **APIs der Bibliothek „Windows UI“** [ItemsRepeater-Klasse](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+>
+> **Plattform-APIs:** [ScrollViewer-Klasse](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -46,7 +50,7 @@ Sowohl [ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol) als auch �
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um die App zu öffnen und <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> in Aktion zu sehen.</p>
     <ul>
@@ -203,7 +207,7 @@ In dieser Liste sind die verfügbaren Schnittstellen aufgeführt und ist beschri
 
     Hiermit wird es dem Steuerelement, wie bei der **INotifyCollectionChanged**-Schnittstelle, ermöglicht, auf Änderungen in der Datenquelle zu überwachen und zu reagieren.
 
-    **Warnung**: „Windows.Foundation.IObservableVector\<T>“ unterstützt keine Aktion für Verschieben (Move-Aktion). Dies kann dazu führen, dass die Benutzeroberfläche für ein Element ihren visuellen Zustand verliert.  Zum Beispiel ergibt sich für ein Element, das derzeit ausgewählt ist oder den Fokus hat, dass es den Fokus verliert und nicht länger ausgewählt ist, wenn das Verschieben durch ein Entfernen (Remove) gefolgt von einem Hinzufügen (Add) erfolgt.
+    **Warnung**: Windows.Foundation.IObservableVector\<T> unterstützt keine Aktion zum Verschieben (Move-Aktion). Dies kann dazu führen, dass die Benutzeroberfläche für ein Element ihren visuellen Zustand verliert.  Beispiel: Ein Element, das derzeit ausgewählt ist oder den Fokus hat, verliert den Fokus verliert und ist nicht mehr ausgewählt, wenn das Verschieben durch ein Entfernen (Remove) gefolgt von einem Hinzufügen (Add) erfolgt.
 
     „Platform.Collections.Vector\<T>“ verwendet „IObservableVector\<T>“ und hat dieselbe Einschränkung. Muss eine Move-Aktion unterstützt werden, verwenden Sie die **INotifyCollectionChanged**-Schnittstelle.  Die .NET-Klasse „ObservableCollection\<T>“ verwendet **INotifyCollectionChanged**.
 

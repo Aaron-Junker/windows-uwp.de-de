@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0d12b3b043546cd908fb474fa8ca9656d8dc56e
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100852"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081704"
 ---
 # <a name="navigation-view"></a>Navigationsansicht
 
@@ -25,7 +25,13 @@ Mit dem NavigationView-Steuerelement wird die Navigation auf oberster Ebene für
 ![Navigation „oben“](images/nav-view-header.png)<br/>
 _Navigationsansicht unterstützt die Anordnung von Bereichen bzw. Menüs sowohl „oben“ als auch „links“_
 
-> **Plattform-APIs**: [Windows.UI.Xaml.Controls.NavigationView-Klasse](/uwp/api/windows.ui.xaml.controls.navigationview)
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **NavigationView** ist in der Bibliothek „Windows UI“ enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [Windows.UI.Xaml.Controls.NavigationView-Klasse](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > **Windows-UI-Bibliotheks-APIs**: [Microsoft.UI.Xaml.Controls.NavigationView-Klasse](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
@@ -46,7 +52,7 @@ Weitere Navigationsmuster findest du unter [Navigationsdesigngrundlagen](../basi
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/XAML-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td><img src="images/XAML-controls-gallery-app-icon-sm.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>Wenn du die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert hast, kannst du <a href="xamlcontrolsgallery:/item/NavigationView">hier klicken, um die App zu öffnen und NavigationView in Aktion zu sehen</a>.</p>
     <ul>
@@ -83,7 +89,7 @@ Wir empfehlen die Navigation _oben_, wenn Folgendes gilt:
 
 :::row:::
     :::column:::
-    ### <a name="left"></a>Nach links
+    ### <a name="left"></a>Links
     Der Bereich wird erweitert und links vom Inhalt angeordnet.</br>
     `PaneDisplayMode="Left"`
     :::column-end:::
@@ -119,7 +125,7 @@ Wir empfehlen die Navigation _links_, wenn Folgendes gilt:
     :::column-end:::
 :::row-end:::
 
-### <a name="auto"></a>Auto
+### <a name="auto"></a>Automatisch
 
 Standardmäßig ist „PaneDisplayMode“ auf „Auto“ festgelegt. Im Modus „Auto“ wird die Navigationsansicht von „LeftMinimal“ (wenn das Fenster schmal ist) in „LeftCompact“ und dann in „Left“ geändert, wenn das Fenster breiter wird. Weitere Informationen findest du im Abschnitt zum [adaptiven Verhalten](#adaptive-behavior).
 
@@ -250,7 +256,7 @@ Wir empfehlen, Ränder für deinen Inhaltsbereich auf 12 Pixel festzulegen, wen
 
 Standardmäßig ändert die Navigationsansicht je nach verfügbarem Platz auf dem Bildschirm automatisch den Anzeigemodus. Die Eigenschaften [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) und [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) geben die Haltepunkte an, an denen sich der Anzeigemodus ändert. Du kannst diese Werte ändern, um das Verhalten des adaptiven Anzeigemodus anzupassen.
 
-### <a name="default"></a>Standard
+### <a name="default"></a>Standardwert
 
 Wenn PaneDisplayMode auf den Standardwert **Auto** festgelegt ist, wird beim adaptiven Verhalten Folgendes angezeigt:
 
@@ -379,12 +385,12 @@ Du kannst die Zurück-Schaltfläche ausblenden oder deaktivieren, indem du diese
 
 :::row:::
     :::column:::
-        ![Navigation view back button in the left navigation pane](images/leftnav-back.png)<br/>
-        _The back button in the left navigation pane_
+        ![Schaltfläche „Zurück“ der Navigationsansicht im linken Navigationsbereich](images/leftnav-back.png)<br/>
+        _Schaltfläche „Zurück“ im linken Navigationsbereich_
     :::column-end:::
     :::column:::
-        ![Navigation view back button in the top navigation pane](images/topnav-back.png)<br/>
-        _The back button in the top navigation pane_
+        ![Schaltfläche „Zurück“ der Navigationsansicht im oberen Navigationsbereich](images/topnav-back.png)<br/>
+        _Schaltfläche „Zurück“ im oberen Navigationsbereich_
     :::column-end:::
 :::row-end:::
 
@@ -658,7 +664,7 @@ In dieser Tabelle ist angegeben, welche Designressource in den unterschiedlichen
 
 | Anzeigemodus | Designressource |
 | ------------ | -------------- |
-| Nach links | NavigationViewExpandedPaneBackground |
+| Links | NavigationViewExpandedPaneBackground |
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
 | Oben | NavigationViewTopPaneBackground |
 
@@ -733,7 +739,7 @@ Um die Position des Kopfzeilenbereichs von NavigationView genauer anzupassen, ü
 
 Diese Themenressource ändert den Rand um [NavigationView.Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.header).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [NavigationView-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [Master/Details](master-details.md)

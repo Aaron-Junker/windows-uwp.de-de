@@ -3,87 +3,87 @@ title: Bereitstellen einer App über die Registrierung loser Dateien
 description: In dieser Anleitung wird veranschaulicht, wie Sie das Layout für lose Dateien verwenden, um Windows 10-Apps zu überprüfen und freizugeben, ohne diese zu verpacken.
 ms.date: 06/01/2018
 ms.topic: article
-keywords: Windows 10, UWP, Geräte Portal, App-Manager, Bereitstellung, SDK
+keywords: Windows 10, UWP, Geräteportal, App-Manager, Bereitstellung, SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bf3dab97be67a3b97aca4b3132bd9fe18691d15
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75681931"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>Bereitstellen einer App über die Registrierung loser Dateien 
 
-In dieser Anleitung wird veranschaulicht, wie Sie das Layout für lose Dateien verwenden, um Windows 10-Apps zu überprüfen und freizugeben, ohne diese zu verpacken. Das Registrieren von locker-Datei Layouts ermöglicht Entwicklern, Ihre apps schnell zu überprüfen, ohne die apps Verpacken und installieren zu müssen. 
+In dieser Anleitung wird veranschaulicht, wie Sie das Layout für lose Dateien verwenden, um Windows 10-Apps zu überprüfen und freizugeben, ohne diese zu verpacken. Das Registrieren von losen Dateilayouts ermöglicht Entwicklern, ihre Apps schnell zu überprüfen, ohne die Apps packen und installieren zu müssen. 
 
-## <a name="what-is-a-loose-file-layout"></a>Was ist ein loses Datei Layout?
+## <a name="what-is-a-loose-file-layout"></a>Was ist ein loses Dateilayout?
 
-Das lose Datei Layout ist einfach das Platzieren von App-Inhalten in einem Ordner, anstatt den Verpackungsprozess durchlaufen zu müssen. Der Inhalt des Pakets ist "locker" in einem Ordner verfügbar und nicht gepackt. 
+Ein loses Dateilayout ist ganz einfach das Platzieren von App-Inhalten in einem Ordner, anstatt den Packprozess durchlaufen zu müssen. Der Inhalt des Pakets wird „lose“ in einem Ordner verfügbar gemacht und nicht gepackt. 
 
 > [!WARNING]
-> Eine lose dateilayoutregistrierung ist für Entwickler und Designer, die Ihre apps während der aktiven Entwicklung schnell validieren können. Diese Vorgehensweise sollte nicht verwendet werden, um die APP zu "Dogfood" oder zu fliegen. Es wird empfohlen, die abschließende Überprüfung für eine APP mit einem vertrauenswürdigen Zertifikat durchzuführen, die mit einem vertrauenswürdigen Zertifikat signiert ist. 
+> Über die Registrierung eines losen Dateilayouts können Entwickler und Designer ihre Apps während der aktiven Entwicklung schnell validieren. Dieses Konzept sollte nicht dazu verwendet werden, die App als „Dogfood“ oder Flight bereitzustellen. Es wird empfohlen, die abschließende Überprüfung mit einer gepackten App durchzuführen, die mit einem vertrauenswürdigen Zertifikat signiert wurde. 
 
-## <a name="advantages-of-loose-file-registration"></a>Vorteile der locker-Datei Registrierung
+## <a name="advantages-of-loose-file-registration"></a>Vorteile der Registrierung loser Dateien
 
-- **Schnelle Überprüfung** : da die APP-Dateien bereits entpackt sind, können Benutzer schnell das lose Datei Layout registrieren und die app starten. Ebenso wie eine reguläre App kann der Benutzer die APP so verwenden, wie er entworfen wurde. 
-- **Einfache in-Network-Verteilung** : Wenn sich die lockeren Dateien auf einer Netzwerkfreigabe anstatt auf einem lokalen Laufwerk befinden, können Entwickler den Speicherort der Netzwerkfreigabe an andere Benutzer senden, die Zugriff auf das Netzwerk haben, und Sie können das lose Datei Layout registrieren und die app ausführen. Dadurch können mehrere Benutzer die APP gleichzeitig validieren. 
-- **Zusammenarbeit** : die lose Datei Registrierung ermöglicht Entwicklern und Designern, weiterhin an visuellen Objekten zu arbeiten, während die APP registriert ist. Benutzern werden diese Änderungen angezeigt, wenn Sie die app starten. Beachten Sie, dass Sie statische Assets nur auf diese Weise ändern können. Wenn Sie Code oder dynamisch erstellte Inhalte ändern müssen, müssen Sie die APP erneut kompilieren.
+- **Schnelle Überprüfung:** Da die App-Dateien bereits entpackt sind, können Benutzer das lose Dateilayout schnell registrieren und die App starten. Genau wie bei einer normalen App kann der Benutzer die App gemäß ihrem Entwurf verwenden. 
+- **Einfache Verteilung im Netzwerk:** Wenn sich die losen Dateien in einer Netzwerkfreigabe befinden und nicht auf einem lokalen Laufwerk, können Entwickler den Netzwerkfreigabe-Speicherort an andere Benutzer senden, die Zugriff auf das Netzwerk haben, und sie können das lose Dateilayout registrieren und die App ausführen. Dadurch können mehrere Benutzer die App gleichzeitig validieren. 
+- **Zusammenarbeit:** Die Registrierung loser Dateien ermöglicht Entwicklern und Designern, weiterhin an visuellen Objekten zu arbeiten, nachdem die App registriert wurde. Benutzer sehen diese Änderungen, wenn sie die App starten. Beachte, dass du auf diese Weise nur statische Objekte ändern kannst. Wenn du Code oder dynamisch erstellte Inhalte änderst, musst du die App neu kompilieren.
 
-## <a name="how-to-register-a-loose-file-layout"></a>Registrieren eines losen Datei Layouts
+## <a name="how-to-register-a-loose-file-layout"></a>Registrieren eines losen Dateilayouts
 
-Windows bietet mehrere Entwicklertools zum Registrieren von lockeren Datei Layouts auf lokalen und Remote Geräten. Sie können aus `WinDeployAppCmd` (Windows SDK Tool), Windows-Geräte Portal, PowerShell und [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network)auswählen. Im folgenden wird erläutert, wie Sie mit diesen Tools lose Dateien registrieren. Stellen Sie zunächst sicher, dass Sie das Setup befolgen:
+Windows bietet mehrere Entwicklertools zum Registrieren von losen Dateilayouts auf lokalen und Remotegeräten. Du kannst zwischen `WinDeployAppCmd` (Windows SDK-Tool), Windows-Geräteportal, PowerShell und [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network) auswählen. Im Folgenden wird erläutert, wie du mit diesen Tools lose Dateien registrierst. Stelle zunächst sicher, dass du über das folgende Setup verfügst:
 
-- Ihre Geräte müssen auf dem Windows 10 Creators Update (Build 14965) oder höher ausgeführt werden.
-- Sie müssen den [Entwicklermodus](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) und die [Geräte](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery) Ermittlung auf allen Geräten aktivieren.
+- Auf deinen Geräten muss Windows 10 Creators Update (Build 14965) oder höher ausgeführt werden.
+- Du musst den [Entwicklermodus](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) und die [Geräteerkennung](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery) auf allen Geräten aktivieren.
 
 > [!IMPORTANT]
-> Die lose Datei Registrierung ist nur auf Geräten verfügbar, die das SMB-Protokoll (Network Share) unterstützen: Desktop und Xbox. 
+> Die Registrierung loser Dateien ist nur auf Geräten verfügbar, die das SMB-Protokoll für Netzwerkfreigaben unterstützen: Desktop und Xbox. 
 
-### <a name="register-with-windeployappcmd"></a>Registrieren bei windeployappcmd
+### <a name="register-with-windeployappcmd"></a>Registrieren mit WinDeployAppCmd
 
-Wenn Sie die SDK-Tools verwenden, die dem Windows 10 Creators Update (Build 14965) oder höher entsprechen, können Sie den `WinDeployAppCmd`-Befehl in einer Eingabeaufforderung verwenden.
+Wenn du die SDK-Tools für das Windows 10 Creators Update (Build 14965) oder höher verwendest, kannst du den Befehl `WinDeployAppCmd` in einer Eingabeaufforderung verwenden.
 
 ```cmd
 WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Address> -pin <target machine PIN>
 ```
 
-**Netzwerkpfad** – der Pfad zu den lockeren Dateien der app.
+**Netzwerkpfad:** Pfad zu den losen Dateien der App.
 
-**IP-Adresse** – die IP-Adresse des Ziel Computers.
+**IP-Adresse:** IP-Adresse des Zielcomputers.
 
-**PIN des Ziel** Computers – ggf. eine PIN zum Herstellen einer Verbindung mit dem Zielgerät. Wenn eine Authentifizierung erforderlich ist, werden Sie aufgefordert, die Option `-pin` erneut zu versuchen. Weitere Informationen zum erhalten einer PIN finden Sie unter [Device Discovery](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery) .
+**PIN des Zielcomputers:** PIN, sofern zum Herstellen einer Verbindung mit dem Zielgerät erforderlich. Wenn eine Authentifizierung erforderlich ist, wirst du aufgefordert, den Versuch mit der Option `-pin` zu wiederholen. Weitere Informationen zum Erhalten einer PIN findest du unter [Geräteerkennung](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery).
 
-### <a name="windows-device-portal"></a>Windows Geräteportal
+### <a name="windows-device-portal"></a>Windows-Geräteportal
 
-Das Windows-Geräte Portal ist auf allen Windows 10-Geräten verfügbar und wird von Entwicklern verwendet, um Ihre Arbeit zu testen und zu überprüfen. Mit der Browser-UX und den Rest-Endpunkten werden alle Zielgruppen der Entwickler Community genutzt. Weitere Informationen zum Geräte Portal finden Sie in der [Übersicht über das Windows-Geräte Portal](device-portal.md).
+Das Windows-Geräteportal ist auf allen Windows 10-Geräten verfügbar und wird von Entwicklern verwendet, um ihre Arbeit zu testen und zu validieren. Mit der Browserbenutzeroberfläche und den REST-Endpunkten wendet es sich an alle Zielgruppen der Entwicklercommunity. Weitere Informationen zum Geräteportal findest du unter [Übersicht über das Windows-Geräteportal](device-portal.md).
 
-Führen Sie die folgenden Schritte aus, um das Layout der losen Datei im Geräte Portal zu registrieren.
+Führe die folgenden Schritte aus, um das lose Dateilayout im Geräteportal zu registrieren.
 
-1. Stellen Sie eine Verbindung mit dem Geräte Portal her, indem Sie die Schritte im Abschnitt **Setup** der [Übersicht über das Windows-Geräte Portal](device-portal.md)ausführen.
-1. Wählen Sie auf der Registerkarte Apps-Manager die Option **von Netzwerkfreigabe registrieren aus**.
-1. Geben Sie den Netzwerkfreigabe Pfad zum Layout der losen Datei ein. 
-1. Wenn das Hostgerät keinen Zugriff auf die Netzwerkfreigabe hat, wird eine Eingabeaufforderung zur Eingabe der erforderlichen Anmelde Informationen angezeigt.
-1. Nachdem die Registrierung fertiggestellt wurde, können Sie die app starten.
+1. Stelle über die Schritte im Abschnitt **Setup** der [Übersicht über das Windows-Geräteportal](device-portal.md) eine Verbindung mit dem Geräteportal her.
+1. Wähle auf der Registerkarte „Apps Manager“ die Option **Aus Netzwerk registrieren** aus.
+1. Gib den Netzwerkfreigabepfad zum losen Dateilayout ein. 
+1. Wenn das Hostgerät keinen Zugriff auf die Netzwerkfreigabe hat, wird eine Aufforderung zum Eingeben der erforderlichen Anmeldeinformationen angezeigt.
+1. Nach Abschluss der Registrierung kannst du die App starten.
 
-Auf der Seite App-Manager des Geräte Portals können Sie auch optionale locker-Datei Layouts für Ihre Haupt-App registrieren, indem Sie das Kontrollkästchen **Ich möchte optionale Pakete angeben** aktivieren und dann die Netzwerkfreigabe Pfade der optionalen apps angeben. 
+Auf der Seite „Apps Manager“ des Geräteportals kannst du auch optional lose Dateilayouts für deine Haupt-App registrieren. Aktiviere dazu das Kontrollkästchen **I want to specify optional packages** (Ich möchte optionale Pakete angeben), und gib dann die Netzwerkfreigabepfade der optionalen Apps an. 
 
 ### <a name="powershell"></a>PowerShell 
 
-Mit Windows PowerShell können Sie auch locker-Datei Layouts registrieren, jedoch nur auf dem lokalen Gerät. Wenn Sie ein Layout auf einem Remote Gerät registrieren müssen, müssen Sie eine der anderen Methoden verwenden. 
+Du kannst auch mit Windows PowerShell lose Dateilayouts registrieren, jedoch nur auf dem lokalen Gerät. Wenn du ein Layout auf einem Remotegerät registrieren möchtest, musst du eine der anderen Methoden verwenden. 
 
-Um das Layout der losen Datei zu registrieren, starten Sie PowerShell, und geben Sie Folgendes ein.
+Um das lose Dateilayout zu registrieren, starte PowerShell, und gib Folgendes ein.
 
 ```PowerShell
 Add-AppxPackage -Register <path to manifest file>
 ```
 
-## <a name="troubleshooting"></a>Fehlerbehebung
+## <a name="troubleshooting"></a>Problembehandlung
 
 ### <a name="mapped-network-drives"></a>Zugeordnete Netzwerklaufwerke
-Derzeit werden zugeordnete Netzwerklaufwerke für locker-Datei Registrierungen nicht unterstützt. Verweisen Sie auf das zugeordnete Laufwerk mit dem vollständigen Netzwerkfreigabe Pfad.
+Derzeit werden zugeordnete Netzwerklaufwerke für Registrierungen loser Dateien nicht unterstützt. Verweise mit dem vollständigen Netzwerkfreigabepfad auf das zugeordnete Laufwerk.
 
 ### <a name="registration-failure"></a>Registrierungsfehler
-Das Gerät, auf dem die Registrierung stattfindet, muss auf das Datei Layout zugreifen können. Wenn das Datei Layout auf einer Netzwerkfreigabe gehostet wird, stellen Sie sicher, dass das Gerät Zugriff hat. 
+Das Gerät, auf dem die Registrierung stattfindet, muss auf das Dateilayout zugreifen können. Wenn das Dateilayout auf einer Netzwerkfreigabe gehostet wird, stelle sicher, dass das Gerät Zugriff hat. 
 
-### <a name="modifications-to-visual-assets-arent-being-loaded-in-the-app"></a>Änderungen an visuellen Objekten werden nicht in der App geladen. 
-Die APP lädt Ihre visuellen Objekte zum Zeitpunkt der Startzeit. Wenn nach dem Starten der APP Änderungen an den visuellen Objekten vorgenommen wurden, müssen Sie die APP erneut starten, um die neuesten Änderungen anzuzeigen.
+### <a name="modifications-to-visual-assets-arent-being-loaded-in-the-app"></a>Änderungen an visuellen Objekten werden nicht in die App geladen. 
+Die App lädt ihre visuellen Objekte zum Startzeitpunkt. Wenn nach dem Starten der App Änderungen an den visuellen Objekten vorgenommen werden, musst du die App erneut starten, um die aktuellen Änderungen anzuzeigen.

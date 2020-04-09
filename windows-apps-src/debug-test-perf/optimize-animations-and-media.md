@@ -4,11 +4,11 @@ title: Optimieren von Animationen, Medien und Bildern
 description: Erstellen Sie UWP-Apps (Universelle Windows-Plattform) mit flüssigen Animationen, hoher Bildfrequenz und leistungsstarker Medienaufzeichnung und -wiedergabe.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 579772bba55c93de38c3c43538ad14253dbc2572
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71339899"
@@ -37,8 +37,8 @@ Alle diese Animationsarten sind garantiert unabhängig:
 
     -   [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)
     -   [**Transform3D**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.transform3d)
-    -   [**Projektion**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection)
-    -   [**Techno**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
+    -   [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection)
+    -   [**Clip**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip)
 
 Abhängige Animationen wirken sich auf das Layout aus und können nicht ohne zusätzliche Angaben aus dem UI-Thread berechnet werden. Abhängige Animationen umfassen Änderungen an Eigenschaften wie [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) und [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height). Abhängige Animationen werden standardmäßig nicht ausgeführt und erfordern die Zustimmung des App-Entwicklers. Werden sie aktiviert, laufen sie flüssig ab, solange der UI-Thread nicht blockiert wird. Ist das Framework oder die App dagegen stark mit anderen Vorgängen des UI-Threads ausgelastet, beginnen die Animationen zu ruckeln.
 
@@ -54,7 +54,7 @@ Webinhalte innerhalb eines [**WebView**](https://docs.microsoft.com/uwp/api/Wind
 
 Auch das Animieren eines [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)-Objekts ist nicht empfehlenswert. Abgesehen von den Leistungsbeeinträchtigungen kann dies im wiedergegebenen Videoinhalt zu Bildstörungen und anderen Artefakten führen.
 
-> **Beachten Sie**   die Empfehlungen in diesem Artikel für **mediaplayerelement** auch für [**Media Element**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)gelten. **MediaPlayerElement** ist nur in Windows 10, Version 1607 verfügbar. Wenn Sie daher eine App für eine frühere Version von Windows verwenden, müssen Sie **MediaElement** verwenden.
+> **Hinweis:**    Die Empfehlungen in diesem Artikel für **MediaPlayerElement** gelten auch für [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement). **MediaPlayerElement** ist nur in Windows 10, Version 1607 verfügbar. Wenn Sie daher eine App für eine frühere Version von Windows verwenden, müssen Sie **MediaElement** verwenden.
 
 ### <a name="use-infinite-animations-sparingly"></a>Setzen Sie Endlosanimationen sparsam ein.
 
@@ -66,7 +66,7 @@ Das Hinzufügen eines Handlers für [**CompositionTarget.Rendering**](https://do
 
 Der [**Windows.UI.Xaml.Media.Animation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation)-Namespace umfasst eine Bibliothek mit schnellen Hochleistungsanimationen, deren Erscheinungsbild mit anderen Windows-Animation konsistent ist. Die relevanten Klassen enthalten „Design“ in ihrem Namen und werden in [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview) beschrieben. Diese Bibliothek unterstützt viele gängige Animationsszenarien, z. B. die Animation der ersten Ansicht einer App oder die Erstellung von Zustands- und Inhaltsübergängen. Wir empfehlen, die Animationsbibliothek so oft wie möglich zu nutzen, um die Leistung und Konsistenz für UWP-UI zu verbessern.
 
-> **Beachten Sie**   die Animations Bibliothek nicht alle möglichen Eigenschaften animieren kann. Informationen zu XAML-Szenarien, bei denen die Animationsbibliothek nicht verwendet werden kann, finden Sie unter [Storyboardanimationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
+> **Hinweis:**    Von der Animationsbibliothek können nicht alle möglichen Eigenschaften animiert werden. Informationen zu XAML-Szenarien, bei denen die Animationsbibliothek nicht verwendet werden kann, finden Sie unter [Storyboardanimationen](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations).
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>Eigenständiges Animieren von CompositeTransform3D-Eigenschaften
@@ -197,7 +197,7 @@ In den oben genannten Szenarien ist das Festlegen einer expliziten Decodierungsg
 
 Fügen Sie stets ein [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)-Objekt an die Live-Struktur an, bevor Sie die Quelle festlegen. Dies erfolgt jedes Mal automatisch, wenn ein Bildelement oder ein Pinsel im Markupcode angegeben wird. Beispiele finden Sie weiter unten im Abschnitt „Live-Struktur-Beispiele“. Vermeiden Sie beim Festlegen einer Datenstromquelle stets die Verwendung von [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource), und verwenden Sie stattdessen [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync). Zudem ist es sinnvoll, das Ausblenden von Bildinhalten (entweder durch eine Deckkraft von null oder die Sichtbarkeitseinstellung „collapsed“) zu vermeiden, während Sie darauf warten, dass das [**ImageOpened**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened)-Ereignis ausgelöst wird. Wägen Sie Ihre Entscheidung ab. Sie können in diesem Fall die Vorteile der automatischen Decodierung in der richtigen Größe nicht nutzen. Wenn Ihre App Bilder anfänglich ausblenden muss, sollte nach Möglichkeit auch die Decodierungsgröße explizit festgelegt werden.
 
-**Livebaum-Beispiele**
+**Livestrukturbeispiele**
 
 Beispiel 1 (gut): URI (Uniform Resource Identifier) in Markup angegeben.
 
@@ -219,7 +219,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Beispiel 2: Code Behind (schlecht) – festlegen der UriSource des BitmapImage, bevor es mit der Struktur verbunden wird.
+Beispiel 2 – CodeBehind (schlecht): Festlegen der UriSource von BitmapImage, bevor es mit der Struktur verbunden wird.
 
 ```csharp
 var bitmapImage = new BitmapImage();
@@ -259,11 +259,11 @@ Die [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 Die [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)-Klasse, die Quellinformationen bereitstellt, kann auch für ein benutzerdefiniertes [**IWICBitmap**](https://docs.microsoft.com/windows/desktop/api/wincodec/nn-wincodec-iwicbitmap)-Objekt konfiguriert werden. Dadurch wird ein erneut ladbarer Sicherungsspeicher bereitgestellt, mit dem die App Arbeitsspeicher nach Bedarf neu zuordnen kann. Dies ist ein erweiterter C++-Anwendungsfall.
 
-Ihre App sollte [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) und [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) für die Interoperabilität mit anderen WinRT-APIs verwenden, die Bilder produzieren und nutzen. Zudem sollte die App beim Laden von nicht komprimierten Bilddaten anstelle vonWriteableBitmap[**die**SoftwareBitmapSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap)-Klasse verwenden.
+Ihre App sollte [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) und [**SoftwareBitmapSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) für die Interoperabilität mit anderen WinRT-APIs verwenden, die Bilder produzieren und nutzen. Zudem sollte die App beim Laden von nicht komprimierten Bilddaten anstelle von [**WriteableBitmap**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.WriteableBitmap) die **SoftwareBitmapSource**-Klasse verwenden.
 
 ### <a name="use-getthumbnailasync-for-thumbnails"></a>Verwenden von „GetThumbnailAsync“ für Miniaturansichten
 
-Ein Anwendungsfall für die Bildskalierung ist die Erstellung von Miniaturansichten. Sie könnten kleine Bildversionen zwar auch mit [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) und [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) bereitstellen, aber die Universelle Windows-Plattform (UWP) bietet noch effizientere APIs zum Abrufen von Miniaturansichten. [**Getthumbnailasync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) stellt die Miniaturansichten für Images bereit, bei denen das Dateisystem bereits zwischengespeichert ist. Dadurch erhalten Sie eine noch bessere Leistung als bei den XAML-APIs, da das Bild weder geöffnet noch decodiert werden muss.
+Ein Anwendungsfall für die Bildskalierung ist die Erstellung von Miniaturansichten. Sie könnten kleine Bildversionen zwar auch mit [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) und [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) bereitstellen, aber die Universelle Windows-Plattform (UWP) bietet noch effizientere APIs zum Abrufen von Miniaturansichten. [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) stellt die Miniaturansichten für Bilder bereit, bei denen das Dateisystem bereits zwischengespeichert wurde. Dadurch erhalten Sie eine noch bessere Leistung als bei den XAML-APIs, da das Bild weder geöffnet noch decodiert werden muss.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

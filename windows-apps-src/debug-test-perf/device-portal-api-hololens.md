@@ -4,14 +4,14 @@ title: Referenz zu Geräteportal-APIs für HoloLens
 description: Hier erhalten Sie Informationen zu den HoloLens-REST-APIs für das Windows Device Portal, die Sie für den Zugriff auf die Daten und die programmatische Steuerung des Geräts verwenden können.
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Device-portal
+keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb068908adf6d6c40a50cee3aececba1861ee8
-ms.sourcegitcommit: 81511fddf1393dffcfc069c769bb149da99529b1
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59013337"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63801382"
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>Referenz zu Geräteportal-APIs für HoloLens
 
@@ -283,7 +283,7 @@ Mit dem folgenden Anforderungsformat können Sie den Wärmestatus des Geräts ab
 
 In der folgenden Tabelle werden die möglichen Werte angegeben.
 
-| Wert | Beschreibung |
+| Value | Beschreibung |
 | --- | --- |
 | 1 | Normal |
 | 2 | Normal Auslastung |
@@ -392,7 +392,7 @@ Mit dem folgenden Anforderungsformat können Sie eine WebSocket-Verbindung für 
 
 - Standardstatuscodes
 
-### <a name="get-the-simulation-mode"></a>Wurde der Simulationsmodus abrufen
+### <a name="get-the-simulation-mode"></a>Abrufen des Simulationsmodus
 
 **Anforderung**
 
@@ -423,7 +423,7 @@ Mit dem folgenden Anforderungsformat können Sie den Simulationsmodus abrufen.
 
 - Standardstatuscodes
 
-### <a name="set-the-simulation-mode"></a>Legen Sie den Simulationsmodus
+### <a name="set-the-simulation-mode"></a>Festlegen des Simulationsmodus
 
 **Anforderung**
 
@@ -887,7 +887,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 | hands   | (**siehe unten**) Legen Sie diesen Wert auf 1 fest, um anzugeben, dass das System Handdaten aufzeichnen soll. |
 | spatialMapping   | (**siehe unten**) Legen Sie diesen Wert auf 1 fest, um anzugeben, dass das System Spatial-Mapping-Daten aufzeichnen soll. |
 | environment   | (**siehe unten**) Legen Sie diesen Wert auf 1 fest, um anzugeben, dass das System Umgebungsdaten aufzeichnen soll. |
-| name   | (**erforderlich**) Der Name der Aufzeichnung. |
+| Name   | (**erforderlich**) Der Name der Aufzeichnung. |
 | singleSpatialMappingFrame   | (**optional**) Legen Sie diesen Wert auf 1 fest, um anzugeben, dass nur ein einzelner Spatial-Mapping-Frame aufgezeichnet werden soll. |
 
 Für diese Parameter muss genau einer der folgenden Parameter auf 1 festgelegt werden: *head*, *hands*, *spatialMapping* oder *environment*.

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: e1e4874051554a8b725c7921a60a2c2429b18bc1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364032"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081456"
 ---
 # <a name="tooltips"></a>QuickInfos
 
@@ -25,7 +25,13 @@ Eine QuickInfo ist eine kurze Beschreibung, die mit einem anderen Steuerelement 
 
 ![Eine QuickInfo](images/controls/tool-tip.png)
 
-> **Wichtige APIs:** [ToolTip-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+**Abrufen der Windows-UI-Bibliothek**
+
+|  |  |
+| - | - |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Plattform-APIs:** [ToolTip-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -59,7 +65,7 @@ Wann sollten Sie eine QuickInfo verwenden? Orientieren Sie sich an folgenden Fra
 <table>
 <th align="left">XAML-Steuerelementekatalog<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ToolTip">die App zu öffnen und ToolTip in Aktion zu sehen</a>.</p>
     <ul>
@@ -125,7 +131,7 @@ Verwenden Sie die Eigenschaft [Placement](/uwp/api/windows.ui.xaml.controls.tool
 </Image>
 ```
 
-Wenn eine QuickInfo den Inhalt verdeckt, auf den sie sich bezieht, können Sie ihre Position mit der neuen **PlacementRect**-Eigenschaft genau festlegen. PlacementRect verankert die Position der QuickInfo und fungiert zudem als Bereich, der von der QuickInfo nicht verdeckt wird, vorausgesetzt, der Platz auf dem Bildschirm reicht aus, um die QuickInfo außerhalb dieses Bereichs zu zeichnen. Sie können den Ursprung des Rechtecks in Bezug auf den Eigentümer der QuickInfo sowie Höhe und Breite des Ausschlussbereichs angeben. Die [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement)-Eigenschaft legt fest, ob die QuickInfo über, unter, links oder rechts von PlacementRect gezeichnet wird. 
+Wenn eine QuickInfo den Inhalt verdeckt, auf den sie sich bezieht, können Sie ihre Position mit der neuen **PlacementRect**-Eigenschaft genau festlegen. PlacementRect verankert die Position der QuickInfo und bildet außerdem einen Bereich, der von der QuickInfo nicht verdeckt wird, sofern der Platz auf dem Bildschirm ausreicht, um die QuickInfo außerhalb dieses Bereichs zu zeichnen. Du kannst den Ursprung des Rechtecks in Bezug auf den Eigentümer der QuickInfo sowie Höhe und Breite des Ausschlussbereichs angeben. Die [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement)-Eigenschaft legt fest, ob die QuickInfo über, unter, links oder rechts von PlacementRect gezeichnet wird. 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

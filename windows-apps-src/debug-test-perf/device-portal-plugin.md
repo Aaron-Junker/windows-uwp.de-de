@@ -1,31 +1,31 @@
 ---
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
-title: Schreiben eines benutzerdefinierten Plug-Ins für das Device Portal
-description: Hier erfahren Sie, wie Sie eine UWP-App schreiben, die mit dem Windows Device Portal eine Webseite hostet und Diagnoseinformationen bereitstellt.
+title: Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
+description: Erfahre, wie du eine UWP-App schreibst, die mit dem Windows-Geräteportal eine Webseite hostet und Diagnoseinformationen bereitstellt.
 ms.date: 03/24/2017
 ms.topic: article
-keywords: Windows 10, UWP, Geräte Portal
+keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
 ms.openlocfilehash: 4881fe961979243849728d3f835c449e0f71f4b4
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75683843"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
 
-Hier erfahren Sie, wie Sie eine UWP-App schreiben, die mit dem Windows Device Portal eine Webseite hostet und Diagnoseinformationen bereitstellt.
+Erfahre, wie du eine UWP-App schreibst, die mit dem Windows-Geräteportal eine Webseite hostet und Diagnoseinformationen bereitstellt.
 
-Ab dem Creators Update können Sie im Device Portal die Diagnoseschnittstellen Ihrer App hosten. Dieser Artikel beschreibt die drei Teile, die zum Erstellen eines DevicePortalProvider für Ihre App erforderlich sind – die Appxmanifest-Änderungen, das Einrichten der App-Verbindung zum Device Portal-Dienst und das Behandeln einer eingehenden Anforderung. Eine Beispiel-App wird auch bereitgestellt, um den Einstieg zu erleichtern (in Kürze verfügbar). 
+Seit dem Creators Update kannst du die Diagnoseschnittstellen deiner App im Geräteportal hosten. In diesem Artikel werden die drei Aspekte beschrieben, die zum Erstellen eines DevicePortalProvider für deine App erforderlich sind: die appxmanifest-Änderungen, das Einrichten der App-Verbindung mit dem Geräteportal-Dienst und das Behandeln eingehender Anforderungen. Eine Beispiel-App wird auch bereitgestellt, um den Einstieg zu erleichtern (in Kürze verfügbar). 
 
 ## <a name="create-a-new-uwp-app-project"></a>Erstellen eines neuen UWP-App-Projekts
 In dieser Anleitung erstellen wir der Einfachheit halber alles in einer Projektmappe.
 
-Erstellen Sie in Microsoft Visual Studio 2019 ein neues UWP-App-Projekt. Wechseln Sie zu Datei > Neues > Projekt, und wählen Sie leere app (Windows C#Universal) für aus, und klicken Sie dann auf Weiter. Im Dialogfeld Neues Projekt konfigurieren. Nennen Sie das Projekt "deviceportalprovider", und klicken Sie dann auf erstellen. Diese App soll den App-Dienst enthalten. Stellen Sie sicher, dass Sie "Windows 10 Creators Update" auswählen (10,0; Build 15063) "zur Unterstützung von.  Möglicherweise müssen Sie Visual Studio aktualisieren oder das neue SDK installieren – Details dazu finden Sie [hier](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
+Erstelle in Microsoft Visual Studio 2019 ein neues UWP-App-Projekt. Wechsele zu „Datei“ > „Neu“ > „Projekt“, wähle „Leere App (Universelles Windows: C#)“ aus, und klicke dann auf „Weiter“. Konfiguriere dein neues Projekt im Dialogfeld. Benenne das Projekt mit „DevicePortalProvider“, und klicke dann auf „Erstellen“. Diese App enthält später den App-Dienst. Du musst zur Unterstützung unbedingt „Windows 10 Creators Update (10.0; Build 15063)“ auswählen.  Möglicherweise musst du Visual Studio aktualisieren oder das neue SDK installieren. Details dazu findest du [hier](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
 
-## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>Hinzufügen der devicePortalProvider-Erweiterung zur package.appxmanifest-Datei
-Sie müssen der *package.appxmanifest*-Datei Code hinzufügen, damit Sie Ihre App als Device Portal-Plug-In nutzen können. Fügen Sie zunächst die folgenden Namespace-Definitionen am Beginn der Datei ein. Fügen Sie auch das `IgnorableNamespaces`-Attribut hinzu.
+## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>Hinzufügen der devicePortalProvider-Erweiterung zur Datei „package.appxmanifest“
+Du musst in der Datei *package.appxmanifest* Code hinzufügen, damit deine App als Geräteportal-Plug-In genutzt werden kann. Füge zunächst die folgenden Namespacedefinitionen am Beginn der Datei ein. Füge sie auch dem `IgnorableNamespaces`-Attribut hinzu.
 
 ```xml
 <Package
@@ -36,7 +36,7 @@ Sie müssen der *package.appxmanifest*-Datei Code hinzufügen, damit Sie Ihre Ap
     ...
 ```
 
-Um zu deklarieren, dass die App ein Device Portal-Anbieter ist, müssen Sie einen App-Dienst und eine neue Device Portal-Anbietererweiterung, die den Dienst verwendet, hinzufügen. Fügen Sie dem `Extensions`-Element unter `Application` die Erweiterungen windows.appService und windows.devicePortalProvider hinzu. Stellen Sie sicher, dass die `AppServiceName`-Attribute in allen Erweiterungen übereinstimmen. Damit wird dem Device Portal-Dienst mitgeteilt, dass dieser App-Dienst zur Behandlung von Anforderungen für den Ereignishandler-Namespace gestartet werden kann. 
+Um zu deklarieren, dass die App ein Geräteportal-Anbieter ist, musst du einen App-Dienst und eine neue Geräteportal-Anbietererweiterung erstellen, die den Dienst verwendet. Füge dem `Extensions`-Element unter `Application` die Erweiterungen windows.appService und windows.devicePortalProvider hinzu. Stelle sicher, dass die `AppServiceName`-Attribute in allen Erweiterungen übereinstimmen. Damit wird dem Geräteportal-Dienst mitgeteilt, dass dieser App-Dienst zur Behandlung von Anforderungen an den Handlernamespace gestartet werden kann. 
 
 ```xml
 ...   
@@ -60,9 +60,9 @@ Um zu deklarieren, dass die App ein Device Portal-Anbieter ist, müssen Sie eine
 ...
 ```
 
-Das `HandlerRoute`-Attribut verweist auf den REST-Namespace, der von Ihrer App in Anspruch genommen wird. Alle HTTP-Anforderungen für diesen Namespace (implizit gefolgt von einem Platzhalter), die der Device Portal-Dienst empfängt, werden zur Behandlung an Ihre App gesendet. In diesem Fall wird jede erfolgreich authentifizierte HTTP-Anforderung für `<ip_address>/MyNamespace/api/*` an Ihre App gesendet. Konflikte zwischen Handler-Routen werden anhand einer Überprüfung nach dem Prinzip „die längste gewinnt“ aufgelöst: die Route mit der größten Übereinstimmung mit den Anforderungen wird ausgewählt. Eine Anforderung für „/MyNamespace/api/foo“ wird also z. B. dem Anbieter „/MyNamespace/api“ anstatt „/MyNamespace“ zugeordnet.  
+Das `HandlerRoute`-Attribut verweist auf den REST-Namespace, der von deiner App beansprucht wird. Alle HTTP-Anforderungen für diesen Namespace (implizit gefolgt von einem Platzhalter), die der Geräteportal-Dienst empfängt, werden zur Verarbeitung an deine App gesendet. In diesem Fall wird jede erfolgreich authentifizierte HTTP-Anforderung für `<ip_address>/MyNamespace/api/*` an deine App gesendet. Konflikte zwischen Handlerrouten werden anhand einer Überprüfung nach dem Prinzip „die längste gewinnt“ aufgelöst: Die Route mit der größten Übereinstimmung mit den Anforderungen wird ausgewählt. Eine Anforderung für „/MyNamespace/api/foo“ wird also z. B. dem Anbieter „/MyNamespace/api“ und nicht „/MyNamespace“ zugeordnet.  
 
-Damit dies ausgeführt werden kann, sind zwei neue Funktionen erforderlich. Diese Funktionen müssen ebenfalls der *package.appxmanifest*-Datei hinzugefügt werden.
+Dazu sind zwei neue Funktionen erforderlich. Diese Funktionen müssen auch der Datei *package.appxmanifest* hinzugefügt werden.
 
 ```xml
 ...
@@ -75,10 +75,10 @@ Damit dies ausgeführt werden kann, sind zwei neue Funktionen erforderlich. Dies
 ```
 
 > [!NOTE]
-> Die Funktion „devicePortalProvider” ist eingeschränkt („rescap”), das heißt, Sie müssen zuerst die Zustimmung vom Store erhalten, bevor Sie Ihre App dort veröffentlichen können. Dies hindert Sie jedoch nicht daran, Ihre App lokal per Querladen zu testen. Weitere Informationen zu eingeschränkten Funktionen finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+> Die Funktion „devicePortalProvider“ ist eingeschränkt („rescap“), das heißt, du musst zuerst die Zustimmung vom Store erhalten, bevor du deine App dort veröffentlichen kannst. Dies hindert dich jedoch nicht daran, deine App lokal per Querladen zu testen. Weitere Informationen zu eingeschränkten Funktionen findest du unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
 ## <a name="set-up-your-background-task-and-winrt-component"></a>Einrichten der Hintergrundaufgabe und der WinRT-Komponente
-Um die Device Portal-Verbindung einzurichten, muss Ihre App eine App-Dienstverbindung aus dem Device Portal-Dienst mit der in Ihrer App ausgeführten Instanz des Device Portal herstellen. Fügen Sie zu diesem Zweck Ihrer Anwendung eine neue WinRT-Komponente mit einer Klasse hinzu, die [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask) implementiert.
+Um die Geräteportal-Verbindung einzurichten, muss deine App eine App-Dienstverbindung vom Geräteportal-Dienst mit der in deiner App ausgeführten Instanz des Geräteportals herstellen. Füge deiner Anwendung zu diesem Zweck eine neue WinRT-Komponente mit einer Klasse hinzu, die [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask) implementiert.
 
 ```csharp
 namespace MySampleProvider {
@@ -88,7 +88,7 @@ namespace MySampleProvider {
     }
 ```
 
-Stellen Sie sicher, dass der Name mit dem Namespace und dem Klassennamen übereinstimmt, die von AppService EntryPoint („MySampleProvider.SampleProvider”) eingerichtet wurden. Wenn Sie die erste Anforderung an Ihren Device Portal-Anbieter richten, speichert das Device Portal die Anforderung, startet die Hintergrundaufgabe Ihrer App, ruft die Methode **Run** auf und übergibt eine [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Damit richtet Ihre App dann eine [**DevicePortalConnection**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection)-Instanz ein.
+Stelle sicher, dass der Name mit dem Namespace und dem Klassennamen übereinstimmt, die von AppService EntryPoint („MySampleProvider.SampleProvider“) eingerichtet wurden. Wenn du die erste Anforderung an deinen Geräteportal-Anbieter richtest, speichert das Geräteportal die Anforderung, startet die Hintergrundaufgabe deiner App, ruft die Methode **Run** auf und übergibt eine [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance). Damit richtet deine App dann eine [**DevicePortalConnection**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection)-Instanz ein.
 
 ```csharp
 // Implement background task handler with a DevicePortalConnection
@@ -108,10 +108,10 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-Es gibt zwei Ereignisse, die von der APP behandelt werden müssen, um die Anforderungs Verarbeitungs Schleife abzuschließen: **Closed**, für den Fall, dass der Geräte Portal Dienst heruntergefahren wird und Anforderer [**empfangen**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)wird, der eingehende HTTP-Anforderungen durchsucht und die Hauptfunktionalität des Geräte Portal Anbieters bereitstellt. 
+Es gibt zwei Ereignisse, die von der App behandelt werden müssen, um die Anforderungsverarbeitungsschleife abzuschließen: **Closed**, wenn der Geräteportal-Dienst heruntergefahren wird, und [**RequestReceived**](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), bei dem eingehende HTTP-Anforderungen angezeigt und die Hauptfunktionen des Geräteportal-Anbieters bereitgestellt werden. 
 
-## <a name="handle-the-requestreceived-event"></a>Behandeln des „RequestReceived“-Ereignisses
-Das **RequestReceived**-Ereignis wird einmal für jede HTTP-Anforderung ausgelöst, die für die angegebene Handler-Route Ihres Plug-Ins erfolgt. Die Anforderungsbehandlungsschleife für Device Portal-Anbieter ähnelt der in NodeJS Express: die Anforderungs- und Antwortobjekte werden zusammen mit dem Ereignis bereitgestellt, und der Handler reagiert, indem er das Antwortobjekt ausfüllt. In Device Portal-Anbietern verwenden das **RequestReceived**-Ereignis und seine Handler [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage)- und [**HttpResponseMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httpresponsemessage)-Objekte.   
+## <a name="handle-the-requestreceived-event"></a>Behandeln des RequestReceived-Ereignisses
+Das **RequestReceived**-Ereignis wird einmal für jede HTTP-Anforderung ausgelöst, die für die angegebene Handlerroute deines Plug-Ins erfolgt. Die Anforderungsbehandlungsschleife für Geräteportal-Anbieter ähnelt der in NodeJS Express: Die Anforderungs- und Antwortobjekte werden zusammen mit dem Ereignis bereitgestellt, und der Handler antwortet, indem er das Antwortobjekt ausfüllt. Bei Geräteportal-Anbietern verwenden das **RequestReceived**-Ereignis und seine Handler [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httprequestmessage)- und [**HttpResponseMessage**](https://docs.microsoft.com/uwp/api/windows.web.http.httpresponsemessage)-Objekte.   
 
 ```csharp
 // Sample RequestReceived echo handler: respond with an HTML page including the query and some additional process information. 
@@ -136,18 +136,18 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
 }
 ```
 
-In diesem Beispiel für einen Anforderungshandler rufen wir zunächst die Anforderungs- und Antwortobjekte aus dem *Args*-Parameter ab, erstellen dann eine Zeichenfolge mit der Anforderungs-URL und einige weitere HTML-Formatierungen. Dies wird in das Antwortobjekt als [**HttpStringContent**](https://docs.microsoft.com/uwp/api/windows.web.http.httpstringcontent)-Instanz eingefügt. Andere [**IHttpContent**](https://docs.microsoft.com/uwp/api/windows.web.http.ihttpcontent)-Klassen, z. B. diejenigen für „String” und „Buffer”, sind ebenfalls zulässig.
+In diesem Beispiel für einen Anforderungshandler rufen wir zunächst die Anforderungs- und Antwortobjekte aus dem Parameter *args* ab, erstellen dann eine Zeichenfolge mit der Anforderungs-URL und einige weitere HTML-Formatierungen. Dies wird als [**HttpStringContent**](https://docs.microsoft.com/uwp/api/windows.web.http.httpstringcontent)-Instanz in das Antwortobjekt eingefügt. Andere [**IHttpContent**](https://docs.microsoft.com/uwp/api/windows.web.http.ihttpcontent)-Klassen, z. B. diejenigen für „String“ und „Buffer“, sind ebenfalls zulässig.
 
-Die Antwort wird dann als HTTP-Antwort festgelegt und der Statuscode 200 (OK) zugeordnet. In dem Browser, der den ursprünglichen Aufruf vorgenommen hat, sollte dies wie erwartet gerendert werden. Wenn der **RequestReceived**-Ereignishandler zurückkehrt, wird die Antwortnachricht automatisch an den Benutzer-Agent zurückgegeben: es ist keine zusätzliche „send“-Methode erforderlich.
+Die Antwort wird dann als HTTP-Antwort festgelegt und dem Statuscode 200 (OK) zugeordnet. Sie sollte in dem Browser, der den ursprünglichen Aufruf vorgenommen hat, wie erwartet gerendert werden. Wenn der **RequestReceived**-Ereignishandler fertig ist, wird die Antwortnachricht automatisch an den Benutzer-Agent zurückgegeben: Es ist keine zusätzliche send-Methode erforderlich.
 
-![Antwortnachricht des Device Portal](images/device-portal/plugin-response-message.png)
+![Antwortnachricht des Geräteportals](images/device-portal/plugin-response-message.png)
 
 ## <a name="providing-static-content"></a>Bereitstellen von statischem Inhalt
-Statischer Inhalt kann direkt aus einem Ordner in Ihrem Paket bereitgestellt werden. Dadurch können Sie Ihrem Anbieter sehr einfach eine Benutzeroberfläche hinzufügen.  Die einfachste Möglichkeit zur Bereitstellung von statischem Inhalt ist, einen Inhaltsordner in Ihrem Projekt zu erstellen, der einer URL zugeordnet werden kann.
+Statischer Inhalt kann direkt aus einem Ordner in deinem Paket bereitgestellt werden. Dadurch kannst du deinem Anbieter sehr einfach eine Benutzeroberfläche hinzufügen.  Die einfachste Möglichkeit zur Bereitstellung von statischem Inhalt ist, einen Inhaltsordner in deinem Projekt zu erstellen, dem eine URL zugeordnet werden kann.
 
-![Statischer Inhaltsordner im Device Portal](images/device-portal/plugin-static-content.png)
+![Statischer Inhaltsordner im Geräteportal](images/device-portal/plugin-static-content.png)
  
-Fügen Sie dann Ihrem **RequestReceived**-Ereignishandler einen Routenereignishandler hinzu, der statische Inhaltsrouten erkennt und eine Anforderung entsprechend zuordnet.  
+Füge dann deinem **RequestReceived**-Ereignishandler einen Routenhandler hinzu, der statische Inhaltsrouten erkennt und eine Anforderung entsprechend zuordnet.  
 
 ```csharp
 if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
@@ -167,36 +167,36 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
     }
 }
 ```
-Stellen Sie sicher, dass alle Dateien in dem Inhaltsordner als „Inhalt“ gekennzeichnet sind und im Eigenschaftenmenü von Visual Studio auf „Kopieren, wenn neuer“ oder „Immer kopieren“ festgelegt sind.  Damit stellen Sie sicher, dass die Dateien sich bei der Bereitstellung in Ihrem AppX-Paket befinden.  
+Stelle sicher, dass alle Dateien in dem Inhaltsordner auch als „Inhalt“ gekennzeichnet und im Eigenschaftenmenü von Visual Studio auf „Kopieren, wenn neuer“ oder „Immer kopieren“ festgelegt sind.  Damit stellst du sicher, dass die Dateien sich bei der Bereitstellung in deinem AppX-Paket befinden.  
 
-![Konfigurieren des Kopierens statischer Inhaltsdateien](images/device-portal/plugin-file-copying.png)
+![Konfigurieren des Kopierens von Dateien mit statischem Inhalt](images/device-portal/plugin-file-copying.png)
 
-## <a name="using-existing-device-portal-resources-and-apis"></a>Verwenden vorhandener Device Portal-Ressourcen und APIs
-Statischer, von einem Device Portal-Anbieter bereitgestellter Inhalt wird auf demselben Port wie der Kerndienst des Device Portal bereitgestellt.  Dies bedeutet, dass Sie mit einfachen `<link>`- und `<script>`-Tags im HTML-Code auf das im Device Portal vorhandene JS und CSS verweisen können. Im Allgemeinen empfehlen wir die Verwendung von *rest.js*, das alle Kern-REST-APIs des Device Portal in einem geeigneten webbRest-Objekt einschließt, und die *common.css*-Datei, mit der Sie Ihren Inhalt entsprechend der Device Portal-Benutzeroberfläche formatieren können. Ein Beispiel hierzu finden Sie auf der *index.html*-Seite in der Beispiel-App. Hier werden mit *rest.js* der Name des Geräts und die ausgeführten Prozesse von Device Portal abgerufen. 
+## <a name="using-existing-device-portal-resources-and-apis"></a>Verwenden vorhandener Geräteportal-Ressourcen und -APIs
+Statischer Inhalt, wird von einem Geräteportal-Anbieter an demselben Port wie der Kerndienst des Geräteportals verarbeitet.  Dies bedeutet, dass du mit einfachen `<link>`- und `<script>`-Tags im HTML-Code auf vorhandene JS- und CSS-Inhalte im Geräteportal verweisen kannst. Im Allgemeinen empfehlen wir die Verwendung von *rest.js*, das alle Kern-REST-APIs des Geräteportals in einem geeigneten webbRest-Objekt umschließt, und der Datei *common.css*, mit der du deinen Inhalt entsprechend der Benutzeroberfläche des Geräteportals formatieren kannst. Ein Beispiel hierzu findest du im Beispiel auf der Seite *index.html*. Hier werden mit *rest.js* der Name des Geräts und die ausgeführten Prozesse vom Geräteportal abgerufen. 
 
-![Ausgabe des Device Portal-Plug-Ins](images/device-portal/plugin-output.png)
+![Ausgabe des Geräteportal-Plug-Ins](images/device-portal/plugin-output.png)
  
-Wichtig: Bei Verwendung der HttpPost/DeleteExpect200-Methoden für webbRest erfolgt die [CSRF-Behandlung](https://docs.microsoft.com/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) automatisch, wodurch Ihre Webseite zustandsverändernde REST-APIs aufrufen kann.  
+Wichtig: Bei Verwendung der HttpPost-/DeleteExpect200-Methoden für webbRest erfolgt die [CSRF-Behandlung](https://docs.microsoft.com/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) automatisch, sodass deine Webseite zustandsverändernde REST-APIs aufrufen kann.  
 
 > [!NOTE] 
-> Der statische, im Device Portal enthaltene Inhalt kann Änderungen unterworfen sein. APIs werden im Allgemeinen nicht häufig geändert, aber es kann vorkommen, insbesondere können die Dateien *common.js* und *controls.js* Änderungen unterworfen sein. Daher sollte Ihr Anbieter diese Dateien nicht verwenden. 
+> Der statische Inhalt im Geräteportal kann Breaking Changes unterliegen. APIs werden im Allgemeinen nicht sehr häufig geändert, aber es kann vorkommen – insbesondere in den Dateien *common.js* und *controls.js*. Daher sollte dein Anbieter diese Dateien nicht verwenden. 
 
-## <a name="debugging-the-device-portal-connection"></a>Debuggen der Device Portal-Verbindung
-Um die Hintergrundaufgabe zu debuggen, müssen Sie die Art und Weise ändern, wie Visual Studio Ihren Code ausführt. Führen Sie die folgenden Schritte für das Debuggen einer App-Dienstverbindung aus, um zu überprüfen, wie Ihr Anbieter die HTTP-Anforderungen behandelt:
+## <a name="debugging-the-device-portal-connection"></a>Debuggen der Geräteportal-Verbindung
+Um deine Hintergrundaufgabe zu debuggen, musst du die Art und Weise ändern, wie Visual Studio deinen Code ausführt. Führe die folgenden Schritte für das Debuggen einer App-Dienstverbindung aus, um zu überprüfen, wie dein Anbieter die HTTP-Anforderungen behandelt:
 
-1.  Wählen Sie im Debuggermenü die DevicePortalProvider-Eigenschaften aus. 
-2.  Aktivieren Sie auf der Registerkarte „Debuggen“ im Abschnitt „Startaktion“ das Kontrollkästchen „Eigenen Code zunächst nicht starten, sondern debuggen“.  
+1.  Wähle im Menü „Debuggen“ die DevicePortalProvider-Eigenschaften aus. 
+2.  Aktiviere auf der Registerkarte „Debuggen“ im Abschnitt „Startaktion“ das Kontrollkästchen „Eigenen Code zunächst nicht starten, sondern debuggen“.  
 ![Versetzen des Plug-Ins in den Debugmodus](images/device-portal/plugin-debug-mode.png)
-3.  Setzen Sie in der RequestReceived-Handlerfunktion einen Haltepunkt.
-![Haltepunkt beim requestempfangenden Handler](images/device-portal/plugin-requestreceived-breakpoint.png)
+3.  Platziere einen Haltepunkt in der RequestReceived-Handlerfunktion.
+![Haltepunkt beim requestreceived-Handler](images/device-portal/plugin-requestreceived-breakpoint.png)
 > [!NOTE] 
-> Stellen Sie sicher, dass die Build-Architektur genau mit der Architektur des Ziels übereinstimmt. Wenn Sie einen 64-Bit-PC verwenden, müssen Sie einen AMD64-Build bereitstellen. 
-4.  Drücken Sie F5, um Ihre App bereitzustellen.
-5.  Deaktivieren Sie das Device Portal, und aktivieren Sie es wieder, damit es Ihre App findet (nur erforderlich, wenn Sie Ihr App-Manifest ändern – ansonsten können Sie einfach erneut bereitstellen und diesen Schritt überspringen). 
-6.  Öffnen Sie in Ihrem Browser den Namespace des Anbieters, und der Haltepunkt sollte erreicht werden.
+> Stelle sicher, dass die Buildarchitektur genau mit der Zielarchitektur übereinstimmt. Wenn du einen 64-Bit-PC verwendest, musst du die Bereitstellung auch mit einem AMD64-Build durchführen. 
+4.  Drücke F5, um deine App bereitzustellen.
+5.  Deaktiviere das Geräteportal, und aktiviere es erneut, damit es deine App findet (dies ist nur bei Änderungen am App-Manifest erforderlich – andernfalls kannst du einfach eine erneute Bereitstellung durchführen und diesen Schritt überspringen). 
+6.  Öffne in deinen Browser den Namespace des Anbieters. Der Haltepunkt sollte nun erreicht werden.
 
 ## <a name="related-topics"></a>Zugehörige Themen
-* [Übersicht über das Windows-Geräte Portal](device-portal.md)
+* [Übersicht über das Windows-Geräteportal](device-portal.md)
 * [Erstellen und Verwenden eines App-Diensts](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 
 

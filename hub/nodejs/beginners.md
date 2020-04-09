@@ -1,152 +1,152 @@
 ---
-title: Einstieg in die Verwendung von nodejs unter Windows für Einsteiger
-description: Eine Anleitung für Einsteiger bei den ersten Schritten mit der Node. js-Entwicklung unter Windows.
+title: Erste Schritte bei der Verwendung von Node.js unter Windows für Anfänger
+description: Eine Anleitung für Anfänger mit den ersten Schritten der Node.js-Entwicklung unter Windows.
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
-keywords: NodeJS, Node. js, Windows 10, Microsoft, Learning NodeJS, Node on Windows, Node on Windows für Einsteiger, entwickeln mit Node on Windows, Entwickler mit NodeJS unter Windows
+keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von NodeJS, Node unter Windows, Node unter Windows für Anfänger, Entwickeln mit Node unter Windows, Entwickler mit Node.js unter Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 433eb5701696f590f10d8b3276481098b9ec073d
 ms.sourcegitcommit: 8f9cea69f33b06166fec22677eaa43466352c14d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/04/2020
 ms.locfileid: "75657082"
 ---
-# <a name="get-started-using-nodejs-on-windows-for-beginners"></a>Einstieg in die Verwendung von Node. js unter Windows für Einsteiger
+# <a name="get-started-using-nodejs-on-windows-for-beginners"></a>Erste Schritte bei der Verwendung von Node.js unter Windows für Anfänger
 
-Wenn Sie mit der Verwendung von Node. js noch nicht vertraut sind, erhalten Sie in diesem Handbuch einen Einstieg in einige Grundlagen.
+Wenn du noch nicht mit der Verwendung von Node.js vertraut bist, findest du in dieser Anleitung einige Grundlagen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-In dieser Anleitung wird davon ausgegangen, dass Sie die Schritte zum [Einrichten der Node. js-Entwicklungsumgebung auf](./setup-on-windows.md)systemeigenen Fenstern bereits abgeschlossen haben, einschließlich:
+In dieser Anleitung wird davon ausgegangen, dass du bereits die Schritte zum [Einrichten der Node.js-Entwicklungsumgebung nativ unter Windows](./setup-on-windows.md) abgeschlossen hast. Dazu gehören:
 
-- Installieren Sie einen Node. js-Versions-Manager.
-- Installieren Sie Visual Studio Code.
+- Installieren eines Node.js-Versions-Managers
+- Installieren von Visual Studio Code
 
-Die direkte Installation von Node. js unter Windows ist die einfachste Möglichkeit, um mit der Ausführung grundlegender Node. js-Vorgänge mit einer minimalen Menge an Einrichtung zu beginnen.
+Die direkte Installation von Node.js unter Windows stellt die einfachste Möglichkeit dar, mit minimalen Einrichtungsaufwand mit der Ausführung grundlegender Node.js-Vorgänge zu beginnen.
 
-Wenn Sie bereit sind, Node. js zum Entwickeln von Anwendungen für die Produktion zu verwenden, was in der Regel die Bereitstellung auf einem Linux-Server umfasst, empfiehlt es sich, die [node. js-Entwicklungsumgebung mit WSL2 einzurichten](./setup-on-wsl2.md). Obwohl es möglich ist, Web-Apps auf Windows-Servern bereitzustellen, ist es viel häufiger, [Linux-Server zum Hosten Ihrer Node. js-apps zu verwenden](https://azure.microsoft.com/develop/nodejs/).
+Wenn du bereit bist, Node.js zum Entwickeln von Anwendungen für die Produktion zu verwenden (in der Regel mit Bereitstellung auf einem Linux-Server), empfiehlt es sich, eine [Node.js-Entwicklungsumgebung mit WSL 2](./setup-on-wsl2.md) einzurichten. Obwohl es möglich ist, Web-Apps auf Windows-Servern bereitzustellen, wird viel häufiger ein [Linux-Server zum Hosten von Node.js-Apps](https://azure.microsoft.com/develop/nodejs/) verwendet.
 
 ## <a name="types-of-nodejs-applications"></a>Typen von Node.js-Anwendungen
 
-Node. js ist eine JavaScript-Laufzeit, die primär zum Erstellen von Webanwendungen verwendet wird. Anders ausgedrückt: Es handelt sich um eine serverseitige Implementierung von JavaScript, mit der das Back-End einer Anwendung geschrieben wird. (Obwohl viele Node. js-Frameworks auch das Front-End verarbeiten können.) Im folgenden finden Sie einige Beispiele für das, was Sie mit Node. js erstellen können.
+Node.js ist eine JavaScript-Runtime, die primär zum Erstellen von Webanwendungen verwendet wird. Anders ausgedrückt: Es handelt sich um eine serverseitige Implementierung von JavaScript, mit der das Back-End einer Anwendung geschrieben wird. (Viele Node.js-Frameworks können jedoch auch das Front-End bereitstellen.) Im Folgenden findest du einige Beispiele, was du mit Node.js erstellen kannst.
 
-- **Single-Page-Apps (Spas)** : Hierbei handelt es sich um Web-Apps, die in einem Browser funktionieren. Sie müssen eine Seite nicht jedes Mal erneut laden, wenn Sie Sie zum erhalten neuer Daten verwenden. Einige Beispiele für Spas sind soziale Netzwerk-apps, e-Mail-oder Karten-apps, Online Text-oder Zeichnungs Tools usw.
-- **Echt Zeit-apps (Real-Time apps, RTAS)** : Dies sind Web-Apps, die es Benutzern ermöglichen, Informationen zu erhalten, sobald Sie von einem Autor veröffentlicht werden, anstatt zu verlangen, dass der Benutzer (oder die Software) in regelmäßigen Abständen eine Quelle auf Aktualisierungen überprüft. Einige Beispiele für RTAS sind Instant Messaging-Apps oder Chaträume, Online-Multiplayerspiele, die im Browser, online Kollaborations Dokumente, communityspeicher, Videokonferenz-apps usw. abgespielt werden können.
-- **Datenstreaminganwendungen**: Hierbei handelt es sich um apps (oder Dienste), die Daten/Inhalt beim Eintreffen (oder beim Erstellen) senden, während die Verbindung geöffnet bleibt, um weiterhin weitere Daten, Inhalte oder Komponenten nach Bedarf herunterzuladen. Einige Beispiele hierfür sind Video-und Audiostreaming-apps.
-- **Rest-APIs**: Dies sind Schnittstellen, die Daten für die Web-App einer anderen Person bereitstellen, mit der Sie interagieren. Ein Kalender-API-Dienst könnte z. b. Datums-und Uhrzeitwerte für einen Konzert Veranstaltungsort bereitstellen, der von der lokalen Ereignis Website einer anderen Person verwendet werden kann.
-- **Serverseitige gerenderte Apps (SSRS)** : diese Web-Apps können sowohl auf dem Client (in Ihrem Browser/am Front-End) als auch auf dem Server (dem Back-End) ausgeführt werden. Dadurch können Seiten, die dynamisch angezeigt werden sollen (HTML für HTML-Code generieren), Inhalte enthalten, die nicht bekannt sind, wenn Sie verfügbar sind. Diese werden häufig als "isomorphe" oder "universelle" Anwendungen bezeichnet. SSRS verwendet Spa-Methoden, da Sie nicht jedes Mal neu geladen werden müssen, wenn Sie Sie verwenden. SSRS bieten jedoch einige Vorteile, die für Sie von Bedeutung sein können, z. b. das Erstellen von Inhalten auf Ihrer Website in Google-Suchergebnissen und das Bereitstellen eines Vorschau Images, wenn Verknüpfungen zu Ihrer APP auf sozialen Medien wie Twitter oder Facebook freigegeben werden. Der potenzielle Nachteil ist, dass ein Node. js-Server ständig ausgeführt wird. In den Beispielen kann eine Social Network-APP, die Ereignisse unterstützt, die Benutzer in den Suchergebnissen und sozialen Medien anzeigen möchten, von der SSR profitieren, während eine e-Mail-app in Ordnung sein kann. Sie können auch auf dem Server gerenderte No-Spa-apps ausführen. Dies ist ein Beispiel für einen WordPress-Blog. Wie Sie sehen können, können Dinge kompliziert werden, Sie müssen lediglich entscheiden, was wichtig ist.
-- **Befehlszeilen Tools**: Diese ermöglichen es Ihnen, sich wiederholende Aufgaben zu automatisieren und dann das Tool über das riesige Node. js-Ökosystem zu verteilen. Ein Beispiel für ein Befehlszeilen Tool ist curl, das für die Client-URL steht und zum Herunterladen von Inhalten aus einer Internet-URL verwendet wird. cURL wird häufig verwendet, um z. b. Node. js oder, in unserem Fall einen Node. js-Versions-Manager, zu installieren.
-- **Hardware Programmierung**: bei Verwendung von Web-Apps ist Node. js für IOT-Anwendungen immer beliebter, wie z. b. das Sammeln von Daten von Sensoren, Beacons, Sendern, Motoren oder anderen, die große Datenmengen generieren. Mithilfe von Node. js können Sie die Datensammlung aktivieren, diese Daten analysieren, zwischen einem Gerät und einem Server hin-und herkommunizieren und auf der Grundlage der Analyse Maßnahmen ergreifen. NPM enthält mehr als 80 Pakete für Arduino-Controller, Raspberry Pi, Intel IOT Edison, verschiedene Sensoren und Bluetooth-Geräte.
+- **Single-Page-Apps (SPA):** Dies sind Web-Apps, die in einem Browser funktionieren. Du musst die Seite dann nicht jedes Mal neu laden, wenn du neue Daten abrufen möchtest. Einige Beispiele für SPAs sind Apps sozialer Netzwerke, E-Mail- oder Karten-Apps, Onlinetext- oder -zeichnungstools usw.
+- **Echtzeit-Apps (RTAs):** Dies sind Web-Apps, die es Benutzern ermöglichen, Informationen zu erhalten, sobald sie von einem Autor veröffentlicht werden. Der Benutzer (oder die Software) muss die Quelle somit nicht regelmäßig auf Aktualisierungen überprüfen. Einige Beispiele für RTAs sind Instant Messaging-Apps oder Chaträume, Online-Multiplayerspiele, die im Browser gespielt werden, Dokumente zur Onlinezusammenarbeit, Communityspeicher, Videokonferenz-Apps usw.
+- **Datenstreaming-Apps:** Dies sind Apps (oder Dienste), die Daten/Inhalte beim Eintreffen (oder Erstellen) senden, während die Verbindung geöffnet bleibt, um weiterhin Daten, Inhalte oder Komponenten nach Bedarf herunterzuladen. Einige Beispiele hierfür sind Video- und Audiostreaming-Apps.
+- **REST-APIs:** Dies sind Schnittstellen, die Daten für die Web-App einer anderen Person bereitstellen und mit ihr interagieren. Ein Kalender-API-Dienst könnte beispielsweise Datums- und Uhrzeitwerte für einen Konzertveranstaltungsort bereitstellen, der von der lokalen Veranstaltungswebsite einer anderen Person verwendet werden kann.
+- **Serverseitig gerenderte Apps (SSRs):** Diese Web-Apps können sowohl auf dem Client (im Browser/am Front-End) als auch auf dem Server (am Back-End) ausgeführt werden. Dadurch können dynamische Seiten (für die HTML generiert wird) beliebige bekannte Inhalte anzeigen und noch nicht bekannte Inhalte sofort anzeigen, wenn sie verfügbar werden. Diese Apps werden häufig als „isomorphe“ oder „universelle“ Anwendungen bezeichnet. SSRs verwenden SPA-Methoden, da sie nicht jedes Mal neu geladen werden müssen, wenn du sie verwendest. SSRs bieten jedoch einige Vorteile, die für dich wichtig sein könnten, z. B. das Verfügbarmachen von Inhalten auf deiner Website in Google-Suchergebnissen und das Bereitstellen eines Vorschaubilds, wenn Links zu deiner App in sozialen Medien wie Twitter oder Facebook geteilt werden. Ein potenzieller Nachteil ist, dass ständig ein Node.js-Server ausgeführt werden muss. Beispiele sind eine App für ein soziales Netzwerk, die Ereignisse unterstützt, die Benutzern in den Suchergebnissen angezeigt werden sollen. Soziale Medien profitieren eher von SSRs, während für eine E-Mail-App auch eine SPA ausreichend ist. Du kannst auch auf dem Server gerenderte Apps ausführen, die keine SPAs sind, z. B. einen WordPress-Blog. Wie du siehst, kann es schnell kompliziert werden, sodass du herausfinden musst, was für dich wichtig ist.
+- **Befehlszeilentools:** Diese ermöglichen dir, sich wiederholende Aufgaben zu automatisieren und dein Tool dann über das riesige Node.js-Ökosystem zu verteilen. Ein Beispiel für ein Befehlszeilentool ist cURL – eine Abkürzung für Client-URL –, das zum Herunterladen von Inhalten von einer Internet-URL verwendet wird. cURL wird häufig verwendet, um z. B. Node.js oder in unserem Fall einen Node.js-Versions-Manager zu installieren.
+- **Hardwareprogrammierung:** Node.js ist zwar nicht so beliebt wie Web-Apps, aber die Beliebtheit von Node.js steigt gerade bei IoT-Anwendungsfällen, wie z. B. dem Sammeln von Daten von Sensoren, Signalen, Sendern, Motoren und allem, was große Datenmengen generiert. Node.js ermöglicht das Erfassen von Daten, das Analysieren dieser Daten, die Kommunikation zwischen einem Gerät und einem Server und das Ausführen von Maßnahmen auf der Grundlage der Analyse. npm enthält mehr als 80 Pakete für Arduino-Controller, Raspberry Pi, Intel IoT Edison, verschiedene Sensoren und Bluetooth-Geräte.
 
-## <a name="try-using-nodejs-in-vs-code"></a>Verwenden Sie Node. js in vs Code
+## <a name="try-using-nodejs-in-vs-code"></a>Testen von Node.js in VS Code
 
-1. Öffnen Sie die Befehlszeile (Eingabeaufforderung, PowerShell oder was Sie bevorzugen), und erstellen Sie ein neues Verzeichnis: `mkdir HelloNode`, und geben Sie dann das Verzeichnis ein: `cd HelloNode`
+1. Öffne die Befehlszeile (Eingabeaufforderung, PowerShell oder was du bevorzugst), erstelle ein neues Verzeichnis mit `mkdir HelloNode`, und wechsele dann in das Verzeichnis (`cd HelloNode`).
 
-2. Erstellen Sie eine JavaScript-Datei mit dem Namen "App. js" und einer Variablen mit dem Namen "msg" in: `echo var msg > app.js`
+2. Erstelle eine JavaScript-Datei mit dem Namen „app.js“ und der enthaltenen Variable „msg“: `echo var msg > app.js`
 
-3. Öffnen Sie das Verzeichnis und die Datei "App. js" in vs Code:: `code .`
+3. Öffne das Verzeichnis und die Datei „app.js“ in VS Code: `code .`
 
-4. Fügen Sie eine einfache Zeichen folgen Variable ("Hallo Welt") hinzu, und senden Sie dann den Inhalt der Zeichenfolge an die Konsole, indem Sie diese in der Datei "App. js" eingeben:
+4. Füge eine einfache Zeichenfolgenvariable („Hello World“) hinzu, und sende dann den Inhalt der Zeichenfolge an die Konsole, indem du Folgendes in die Datei „app.js“ eingibst:
 
     ```js
     var msg = 'Hello World';
     console.log(msg);
     ```
 
-5. So führen Sie die Datei "App. js" mit "Node. js" aus. Öffnen Sie das Terminal direkt innerhalb vs Code, indem Sie > **Terminal** **anzeigen** auswählen (oder drücken Sie STRG + ', indem Sie das Graviszeichen-Zeichen verwenden). Wenn Sie das Standard Terminal ändern müssen, klicken Sie auf das Dropdown Menü, und wählen Sie **Standardshell auswählen**aus.
+5. Führe folgende Schritte aus, um die Datei „app.js“ mit Node.js auszuführen. Öffne das Terminal in VS Code durch Auswählen von **Anzeigen** > **Terminal** (oder Drücken von STRG+` (Graviszeichen)). Wenn du das Standardterminal ändern möchtest, wähle das Dropdownmenü und dann **Standardshell auswählen** aus.
 
-6. Geben Sie im Terminal Folgendes ein: `node app.js`. Die Ausgabe sollte angezeigt werden: "Hallo Welt".
+6. Gib Folgendes im Terminal ein: `node app.js`. Die folgende Ausgabe sollte angezeigt werden: „Hello World“.
 
 > [!NOTE]
-> Beachten Sie, dass beim Eingeben von `console` in der Datei "App. js" vs Code unterstützte Optionen im Zusammenhang mit dem [`console`](https://developer.mozilla.org/docs/Web/API/Console) Objekt angezeigt wird, die Sie aus der Verwendung von IntelliSense auswählen können. Experimentieren Sie mit IntelliSense, und verwenden Sie andere [JavaScript-Objekte](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects).
+> Beachte, dass VS Code beim Eingeben von `console` in der Datei „app.js“ unterstützte Optionen für das [`console`](https://developer.mozilla.org/docs/Web/API/Console)-Objekt anzeigt, die du mithilfe von IntelliSense auswählen kannst. Experimentiere mit IntelliSense anhand von anderen [JavaScript-Objekten](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects).
 
 > [!TIP]
-> Testen Sie das neue [Windows-Terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) , wenn Sie beabsichtigen, mehrere Befehlszeilen (Ubuntu, PowerShell, Windows-Eingabeaufforderung usw.) zu verwenden, oder wenn Sie [Ihr Terminal anpassen](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)möchten, einschließlich Text, Hintergrundfarben, Tastenkombinationen, mehreren Fensterbereichen usw.
+> Probiere auch das neue [Windows-Terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) aus, wenn du mehrere Befehlszeilen (Ubuntu, PowerShell, Windows-Eingabeaufforderung usw.) verwenden oder [das Terminal anpassen](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md) möchtest (einschließlich Text, Hintergrundfarben, Tastenkombinationen, mehrere Fensterbereiche usw.).
 
-## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>Einrichten eines einfachen Web-App-Frameworks mit Express
+## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>Einrichten eines grundlegenden Web-App-Frameworks mithilfe von Express
 
-Express ist ein minimales, flexibles und optimiertes Node.js-Framework, das die Entwicklung einer Web-App vereinfacht, die mehrere Typen von Anforderungen wie GET, PUT, POST und DELETE verarbeiten kann. Express enthält einen Anwendungsgenerator, der automatisch eine Dateiarchitektur für Ihre App erstellt.
+Express ist ein minimales, flexibles und optimiertes Node.js-Framework für eine vereinfachte Entwicklung von Web-Apps, die mehrere Arten von Anforderungen wie GET, PUT, POST und DELETE verarbeiten können. Express bietet einen Anwendungsgenerator, der automatisch eine Dateiarchitektur für deine App erstellt.
 
-So erstellen Sie ein Projekt mit "Express. js":
+So erstellst du ein Projekt mit Express.js
 
-1. Öffnen Sie die Befehlszeile (Eingabeaufforderung, PowerShell oder je nachdem, was Sie bevorzugen).
-2. Neuen Projektordner erstellen: `mkdir ExpressProjects` und dieses Verzeichnis eingeben: `cd ExpressProjects`
-3. Verwenden Sie Express, um eine HelloWorld-Projektvorlage zu erstellen: `npx express-generator HelloWorld --view=pug`
+1. Öffne eine Befehlszeile (Eingabeaufforderung, PowerShell oder was du bevorzugst).
+2. Erstelle mit `mkdir ExpressProjects` einen neuen Projektordner, und wechsele mit `cd ExpressProjects` in das Verzeichnis.
+3. Erstelle mit Express eine HelloWorld-Projektvorlage: `npx express-generator HelloWorld --view=pug`
 
 >[!NOTE]
-> Wir verwenden den Befehl "`npx`" hier, um das Express. js-Knoten Paket auszuführen, ohne es tatsächlich zu installieren (oder durch temporäres installieren, je nachdem, wie Sie es sich vorstellen möchten). Wenn Sie versuchen, den `express` Befehl zu verwenden oder die Version von Express zu überprüfen, die mit: `express --version`installiert wurde, erhalten Sie eine Antwort, dass Express nicht gefunden werden kann. Wenn Sie Express Global installieren möchten, damit es immer wieder verwendet werden kann, verwenden Sie Folgendes: `npm install -g express-generator`. Mithilfe `npm list`können Sie eine Liste der Pakete anzeigen, die von NPM installiert wurden. Sie werden nach der Tiefe (Anzahl der geschachtelten Verzeichnisebenen) aufgelistet. Pakete, die Sie installiert haben, liegen auf Ebene 0. Die Abhängigkeiten dieses Pakets liegen auf Ebene 1, weitere Abhängigkeiten auf Ebene 2 usw. Weitere Informationen finden Sie [unter Differenz zwischen NPX und NPM?](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) auf StackOverflow.
+> Wir verwenden hier den Befehl `npx`, um das Node-Paket von Express.js auszuführen, ohne es tatsächlich zu installieren (bzw. durch temporäres Installieren, je nach Betrachtungsweise). Wenn du versuchst, den Befehl `express` zu verwenden oder die installierte Version von Express mit `express --version` zu überprüfen, erhältst du als Antwort, dass Express nicht gefunden werden kann. Wenn du Express global installieren möchtest, um es immer wieder verwenden zu können, verwendest du `npm install -g express-generator`. Mithilfe von `npm list` kannst du eine Liste der Pakete anzeigen, die von npm installiert wurden. Sie werden nach Tiefe (der Anzahl der geschachtelten Verzeichnisse) aufgelistet. Die von dir installierten Pakete haben die Tiefe 0. Die Abhängigkeiten des Pakets haben die Tiefe 1, weitere Abhängigkeiten die Tiefe 2 usw. Weitere Informationen findest du unter [Difference between npx and npm?](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) (Unterschiede zwischen npx und npm) auf Stack Overflow.
 
-4. Überprüfen Sie die in Express enthaltenen Dateien und Ordner, indem Sie das Projekt in vs Code öffnen, und zwar mit: `code .`
+4. Untersuche die in Express enthaltenen Dateien und Ordner, indem du das Projekt in VS Code öffnest: `code .`
 
-   Die Dateien, die Express generiert, erstellen eine Web-App mithilfe einer bestimmten Architektur, die zuerst etwas überwältigend erscheinen mag. Im Fenster "vs Code- **Explorer** " (STRG + UMSCHALT + E zum anzeigen) sehen Sie, dass die folgenden Dateien und Ordner generiert wurden:
+   Die von Express generierten Dateien erstellen eine Web-App mit einer Architektur, die zunächst etwas überwältigend wirken kann. Du kannst im Fenster des VS Code-**Explorers** (angezeigt mit STRG+UMSCHALT+E) erkennen, dass die folgenden Dateien und Ordner erstellt wurden:
 
-   - `bin`. Enthält die ausführbare Datei, die Ihre App startet. Startet einen Server (an Port 3000, wenn keine Alternative angegeben wird) und richtet eine grundlegende Fehlerbehandlung ein. 
-   - `public`. Enthält alle öffentlich zugänglichen Dateien einschließlich JavaScript-Dateien, CSS-Stylesheets, Schriftartdateien, Bildern und allen anderen Ressourcen, die Benutzer benötigen, wenn sie eine Verbindung mit Ihrer Website herstellen.
-   - `routes`. Enthält alle Routenhandler für die Anwendung. Zwei Dateien, `index.js` und `users.js`, werden in diesem Ordner automatisch generiert, um als Beispiele zum Aussondern der Routenkonfiguration Ihrer Anwendung zu dienen.
-   - `views`. Enthält die Dateien, die von Ihrer Vorlagen-Engine verwendet werden. Express ist dazu konfiguriert, hier nach einer übereinstimmenden Ansicht zu suchen, wenn die Rendermethode aufgerufen wird. Die Standardvorlagen-Engine ist Jade, aber sie wurde von Pug abgelöst, daher haben wir das `--view`-Flag verwendet, um die Anzeige-Engine (Vorlagen-Engine) zu ändern. Sie können die `--view`-Flagoptionen und andere mittels `express --help` anzeigen.
-   - `app.js`. Der Startpunkt der App. Sie lädt alles und beginnt, Benutzeranforderungen zu verarbeiten. Im Grunde hält sie alle verschiedenen Teile wie ein Klebstoff zusammen.
-   - `package.json`. Sie enthält Projektbeschreibung, Skripts-Manager und App-Manifest. Ihr Hauptzweck ist, die Abhängigkeiten Ihrer App und ihre jeweiligen Versionen nachzuverfolgen.
+   - `bin`. Enthält die ausführbare Datei, mit der die App gestartet wird. Sie startet einen Server (an Port 3000, wenn keine andere Angabe erfolgt) und richtet die grundlegende Fehlerbehandlung ein. 
+   - `public`. Enthält alle Dateien, auf die öffentlich zugegriffen wird, einschließlich JavaScript-Dateien, CSS-Stylesheets, Schriftartdateien, Bilder und aller anderen Ressourcen, die Benutzer benötigen, wenn sie eine Verbindung mit deiner Website herstellen.
+   - `routes`. Enthält alle Routenhandler für die Anwendung. In diesem Ordner werden automatisch die beiden Dateien `index.js` und `users.js` generiert, die als Beispiele für das Trennen der Routenkonfiguration deiner Anwendung dienen.
+   - `views`. Enthält die Dateien, die von deiner Vorlagen-Engine verwendet werden. Express ist so konfiguriert, dass es hier nach einer übereinstimmenden Ansicht sucht, wenn die Methode zum Rendern aufgerufen wird. Die Standardvorlagen-Engine ist Jade, aber Jade wurde zugunsten von Pug als veraltet markiert. Daher haben wir das `--view`-Flag verwendet, um die Ansichts-Engine (Vorlagen-Engine) zu ändern. Du kannst die Optionen für das `--view`-Flag und andere mithilfe von `express --help` anzeigen.
+   - `app.js`. Der Ausgangspunkt deiner App. Damit wird alles geladen und damit begonnen, Benutzeranforderungen zu beantworten. Dies ist im Grunde der Klebstoff, der alle Teile miteinander verbindet.
+   - `package.json`. Enthält die Projektbeschreibung, den Skript-Manager und das App-Manifest. Der Hauptzweck besteht darin, die Abhängigkeiten der App und ihre jeweiligen Versionen zu verfolgen.
 
-5. Sie müssen nun die von Express verwendeten Abhängigkeiten installieren, um Ihre HelloWorld Express-App zu erstellen und auszuführen (die Pakete, die für Aufgaben wie das Ausführen des Servers verwendet werden, wie in der `package.json`-Datei definiert). Öffnen Sie in vs Code Ihr Terminal, indem Sie > **Terminal** **anzeigen** auswählen (oder drücken Sie Strg + ", verwenden Sie das Graviszeichen-Zeichen). Stellen Sie sicher, dass Sie sich noch im Projektverzeichnis" HelloWorld "befinden. Installieren Sie die Express-Paketabhängigkeiten mit:
+5. Du musst nun die von Express verwendeten Abhängigkeiten installieren, um deine Express-App „HelloWorld“ zu erstellen und auszuführen (die Pakete, die für Aufgaben wie das Ausführen des Servers verwendet werden, wie in der Datei `package.json` definiert). Öffne in VS Code ein Terminal, indem du **Anzeigen** > **Terminal** auswählst (oder drücke STRG+` (Graviszeichen)). Achte darauf, dass du dich weiterhin im Projektverzeichnis „HelloWorld“ befindest. Installiere die Express-Paketabhängigkeiten mit:
 
 ```bash
 npm install
 ```
 
-6. An diesem Punkt haben Sie das Framework für eine mehrseitige Web-App mit Zugriff auf eine Vielzahl von APIs und nützliche HTTP-Methoden und Middleware eingerichtet, was das Erstellen einer stabilen API erleichtert. Starten Sie die Express-App auf einem virtuellen Server, indem Sie Folgendes eingeben:
+6. An diesem Punkt hast du das Framework für eine Web-App mit mehreren Seiten eingerichtet, die Zugriff auf eine Vielzahl von APIs und HTTP-Hilfsprogrammmethoden und Middleware hat, sodass es einfacher ist, eine robuste API zu erstellen. Starte die Express-App auf einem virtuellen Server, indem du Folgendes eingibst:
 
 ```bash
 npx cross-env DEBUG=HelloWorld:* npm start
 ```
 
 > [!TIP]
-> Der `DEBUG=myapp:*` Teil des obigen Befehls bedeutet, dass Sie Node. js mitteilen, dass Sie die Protokollierung zu Debuggingzwecken aktivieren möchten. Denken Sie daran, "MyApp" durch ihren APP-Namen zu ersetzen. Sie finden ihren APP-Namen in der `package.json`-Datei unter der Eigenschaft "Name". Mit `npx cross-env` wird die `DEBUG`-Umgebungsvariable in einem beliebigen Terminal festgelegt, aber Sie können Sie auch mit der Terminal spezifischen Methode festlegen. Der `npm start` Befehl teilt NPM mit, die Skripts in ihrer `package.json`-Datei auszuführen.
+> Mit dem Teil `DEBUG=myapp:*` im obigen Befehl teilst du Node.js mit, dass du die Protokollierung zu Debuggingzwecken aktivieren möchtest. Denke daran, „myapp“ durch den Namen deiner App zu ersetzen. Du findest den App-Namen in der Datei `package.json` unter der name-Eigenschaft. Mit `npx cross-env` wird die Umgebungsvariable `DEBUG` in einem beliebigen Terminal festgelegt, du kannst sie auch über die jeweilige Vorgehensweise deines Terminals festlegen. Der Befehl `npm start` teilt npm mit, die Skripts in deiner Datei `package.json` auszuführen.
 
-7. Sie können jetzt die laufende App anzeigen, indem Sie einen Webbrowser öffnen und zu " **localhost: 3000** " navigieren.
+7. Du kannst jetzt die ausgeführte App anzeigen, indem du einen Webbrowser öffnest und zu **localhost:3000** navigierst.
 
-   ![Screenshot einer im Browser ausgeführten Express-App](../images/express-app.png)
+   ![Screenshot der in einem Browser ausgeführten Express-App](../images/express-app.png)
 
-8. Nun, da ihre HelloWorld-Express-App lokal in Ihrem Browser ausgeführt wird, versuchen Sie, eine Änderung vorzunehmen, indem Sie den Ordner "Views" im Projektverzeichnis öffnen und die Datei "index. pug" auswählen. Nachdem Sie geöffnet haben, ändern Sie `h1= title` in `h1= "Hello World!"` und klicken Sie auf **Speichern** (STRG + S). Zeigen Sie Ihre Änderung an, indem Sie die URL " **localhost: 3000** " in Ihrem Webbrowser aktualisieren.
+8. Nun, da deine Express-App „HelloWorld“ lokal in einem Browser ausgeführt wird, solltest du versuchen, eine Änderung vorzunehmen. Öffne dazu den Ordner „views“ im Projektverzeichnis, und wähle die Datei „index.pug“ aus. Ändere nach dem Öffnen `h1= title` in `h1= "Hello World!"`, und wähle dann **Speichern** (STRG+S) aus. Zeige die Änderung an, indem du die URL **localhost:3000** in deinem Webbrowser aktualisierst.
 
-9. Geben Sie in Ihrem Terminal Folgendes ein, um die Ausführung ihrer Express-App zu verhindern: **STRG + C**
+9. Gib in deinem Terminal Folgendes ein, um die Ausführung der Express-App zu beenden: **STRG+C**
 
 ## <a name="try-using-a-nodejs-module"></a>Verwenden eines Node.js-Moduls
 
-Node.js verfügt über viele Tools zur Entwicklung serverseitiger Web-Apps – einige sind integriert und viele weitere über npm verfügbar. Diese Module können bei zahlreichen Aufgaben hilfreich sein:
+Node.js verfügt über Tools, die dich beim Entwickeln von serverseitigen Web-Apps unterstützen. Einige von ihnen sind integriert und viele weitere über npm verfügbar. Diese Module helfen bei vielen Aufgaben:
 
 |Tool               |Verwendung                                                                                                  |
 |:----------------- |:---------------------------------------------------------------------------------------------------------|
-|gm, sharp          |Bildbearbeitung, einschließlich Bearbeitung, Größenänderung, Komprimierung usw., direkt in Ihrem JavaScript-Code |
+|gm, sharp          |Bildanpassung, einschließlich Bearbeitung, Größenänderung, Komprimierung usw., direkt im JavaScript-Code |
 |PDFKit             |PDF-Generierung                                                                                            |
 |validator.js       |Zeichenfolgenvalidierung                                                                                         |
 |imagemin, UglifyJS2|Minimierung                                                                                              |
-|spritesmith        |Sprite-Sheet-Generierung                                                                                   |
+|spritesmith        |Sprite-Blattgenerierung                                                                                   |
 |winston            |Protokollierung                                                                                                  |
-|commander.js       |Erstellung von Befehlszeilenanwendungen                                                                       |
+|commander.js       |Erstellen von Befehlszeilenanwendungen                                                                       |
 
-Wir verwenden das integrierte BS-Modul, um einige Informationen zum Betriebssystem Ihres Computers abzurufen:
+Verwenden wir nun das integrierte Betriebssystemmodul, um einige Informationen zum Betriebssystem deines Computers abzurufen:
 
-1) Öffnen Sie in der Befehlszeile die Node. js-CLI. Die `>`-Eingabeaufforderung wird angezeigt, dass Sie Node. js nach der Eingabe von: `node`
+1) Öffne an der Befehlszeile die Node.js-Befehlszeilenschnittstelle. Nach der Eingabe von `node` wird die Eingabeaufforderung `>` angezeigt. Sie gibt an, dass du Node.js verwendest.
 
-2) Geben Sie Folgendes ein, um das Betriebssystem zu identifizieren, das Sie zurzeit verwenden (damit eine Antwort zurückgegeben werden kann, in der Sie wissen, dass Sie Windows verwenden): `os.platform()`
+2) Gib Folgendes ein, um das Betriebssystem zu identifizieren, das du zurzeit verwendest (als Antwort sollte zurückgegeben werden, dass du unter Windows arbeitest): `os.platform()`
 
-3) Geben Sie Folgendes ein, um die Architektur Ihrer CPU zu überprüfen: `os.arch()`
+3) Gib Folgendes ein, um die CPU-Architektur zu überprüfen: `os.arch()`
 
-4) Geben Sie Folgendes ein, um die auf Ihrem System verfügbaren CPUs anzuzeigen: `os.cpus()`
+4) Gib Folgendes ein, um die auf deinem System verfügbaren CPUs anzuzeigen: `os.cpus()`
 
-5) Verlassen Sie die Node.js-Befehlszeilenschnittstelle durch Eingeben von `.exit` oder zweimaliges Auswählen von STRG+C.
+5) Verlasse die Node.js-Befehlszeilenschnittstelle, indem du `.exit` eingibst oder zweimal STRG+C drückst.
 
    > [!TIP]
-   > Sie können das Modul Node. js OS zum Überprüfen der Plattform und zum Zurückgeben einer plattformspezifischen Variablen verwenden: Win32/. bat für die Windows-Entwicklung, Darwin/. sh für Mac/UNIX, Linux, SunOS usw. (z. b. `var isWin = process.platform === "win32";`).
+   > Du kannst das Betriebssystemmodul von Node.js z. B. verwenden, um die Plattform zu überprüfen und eine plattformspezifische Variable zurückzugeben: „Win32/.bat“ für die Windows-Entwicklung, „darwin/.sh“ unter Mac/UNIX, Linux, SunOS usw. (z. B. `var isWin = process.platform === "win32";`).
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In dieser Anleitung haben Sie einige grundlegende Informationen zu den Möglichkeiten von Node. js kennengelernt, die Verwendung der Node. js-Befehlszeile in vs Code ausprobiert, eine einfache Web-App mit Express. js erstellt und diese lokal in Ihrem Webbrowser ausgeführt und dann einige der integrierten Node. js-Module ausprobiert. Weitere Informationen zum Installieren und verwenden einiger gängiger Node. js-Webframe Works finden Sie in der nächsten Anleitung, in der "Next. js" (ein auf dem Server gerendertes Webframework basierend auf der Reaktion), "nuxt. js" (ein auf Vue basierendes Server gerendertes Webframework) und "Gatsby (a statisch gerendertes Webframework basierend auf der Reaktion). Sie können auch überspringen, um zu erfahren, wie Sie mit MongoDb-oder PostgreSQL-Datenbanken oder docker-Containern arbeiten.
+In dieser Anleitung hast du einige grundlegende Informationen zu den Möglichkeiten von Node.js kennengelernt. Du hast die Verwendung der Node.js-Befehlszeile in VS Code ausprobiert, mit Express.js eine einfache Web-App erstellt und diese lokal in deinem Webbrowser ausgeführt und dann einige der integrierten Node.js-Module ausprobiert. Weitere Informationen zum Installieren und Verwenden einiger gängiger Node.js-Webframeworks findest du in der nächsten Anleitung zu Next.js (ein auf dem Server gerendertes Webframework auf der Grundlage von React), Nuxt.js (ein auf dem Server gerendertes Webframework auf der Grundlage von Vue) und Gatsby (ein statisch gerendertes Webframework auf der Grundlage von React). Du kannst auch direkt mit der Verwendung von MongoDB- oder PostgreSQL-Datenbanken oder Docker-Containern fortfahren.
 
-- [Einstieg in Node. js-Webframe Works unter Windows](./web-frameworks.md)
-- [Einstieg in das Verbinden von Node. js-apps mit einer Datenbank](./databases.md)
-- [Einstieg in die Verwendung von Docker-Containern mit Node. js](./containers.md)
+- [Erste Schritte mit Node.js-Webframeworks unter Windows](./web-frameworks.md)
+- [Erste Schritte beim Verbinden von Node.js-Apps mit einer Datenbank](./databases.md)
+- [Erste Schritte bei der Verwendung von Docker-Containern mit Node.js](./containers.md)

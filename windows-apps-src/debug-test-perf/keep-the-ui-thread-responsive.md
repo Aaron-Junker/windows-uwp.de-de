@@ -4,11 +4,11 @@ title: Aufrechterhalten der Reaktionsfähigkeit des UI-Threads
 description: Benutzer erwarten, dass eine App beim Durchführen einer Berechnung reaktionsfähig bleibt, unabhängig vom jeweiligen Computertyp.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b9a129e8b780e85df2c38c50ab712641d3849a34
 ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71339854"
@@ -22,16 +22,16 @@ Ihre App ist ereignisgesteuert, was bedeutet, dass Ihr Code in Reaktion auf ein 
 
 Sie müssen den UI-Thread verwenden, um fast alle Änderungen am UI-Thread vorzunehmen, einschließlich der Erstellung von UI-Typen und des Zugriffs auf ihre Member. Sie können die UI nicht aus einem Hintergrundthread aktualisieren, können jedoch mit [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) eine Nachricht posten, damit der Code dort ausgeführt wird.
 
-> **Beachten Sie**  die einzige Ausnahme ist, dass es einen separaten Renderthread gibt, der Änderungen an der Benutzeroberfläche anwenden kann, die sich nicht auf die Behandlung von Eingaben oder das grundlegende Layout auswirken Viele Animationen und Übergänge, die sich nicht auf das Layout auswirken, können z. B. auf diesem Renderthread ausgeführt werden.
+> **Hinweis:**    Der einzige Unterschied besteht darin, dass es einen separaten Renderthread gibt, der UI-Änderungen ohne Auswirkungen auf die Eingabeverarbeitung oder auf das Basislayout anwenden kann. Viele Animationen und Übergänge, die sich nicht auf das Layout auswirken, können z. B. auf diesem Renderthread ausgeführt werden.
 
 ## <a name="delay-element-instantiation"></a>Verzögern der Element-Instanziierung
 
 Einige der langsamsten Phasen in einer App können der Start und das Wechseln zwischen Ansichten sein. Machen Sie sich nicht mehr Arbeit als nötig, um die Benutzeroberfläche anzuzeigen, die dem Benutzer zuerst angezeigt wird. Erstellen Sie beispielsweise nicht die Benutzeroberfläche für die schrittweise offengelegte Benutzeroberfläche und den Inhalt von Popups.
 
--   Verwenden Sie [x:Load attribute](../xaml-platform/x-load-attribute.md) oder [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute), um Elemente verzögert zu instanziieren.
+-   Verwende [x:Load attribute](../xaml-platform/x-load-attribute.md) oder [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute), um Elemente verzögert zu instanziieren.
 -   Fügen Sie programmgesteuerte Elemente nach Bedarf in der Struktur ein.
 
-[**Coredispatcher. runidleasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) -Warteschlangen funktionieren, damit der UI-Thread verarbeitet wird, wenn er nicht ausgelastet ist.
+[**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync)-Warteschlangen eignen sich für die Verarbeitung des UI-Threads, wenn er nicht aktiv ist.
 
 ## <a name="use-asynchronous-apis"></a>Verwenden von asynchronen APIs
 
@@ -41,7 +41,7 @@ Zur Verbesserung der Reaktionsfähigkeit der App stellt die Plattform asynchrone
 
 Schreiben Sie Ereignishandler, die schnell zurückgegeben werden. In Fällen, in denen umfassende Arbeiten vorgenommen werden müssen, sollten Sie sie in einem Hintergrundthread planen und zurückgeben.
 
-Mit dem Operator **await** in C#, dem Operator **Await** in Visual Basic oder mit Delegaten in C++ können Sie Arbeit auch asynchron planen. Dies garantiert jedoch nicht, dass die geplante Arbeit in einem Hintergrundthread ausgeführt wird. Viele der UWP-APIs planen für Sie die Arbeit im Hintergrundthread, wenn Sie Ihren App-Code jedoch nur mit **await** oder einem Delegaten aufrufen, führen Sie diesen Delegaten oder diese Methode in einem UI-Thread aus. Wenn Sie Ihren App-Code in einem Hintergrundthread ausführen möchten, müssen Sie dies explizit angeben. In C# und Visual Basic können Sie dies erreichen, indem Sie Code an " [**Task. Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run)" übergeben.
+Mit dem Operator **await** in C#, dem Operator **Await** in Visual Basic oder mit Delegaten in C++ können Sie Arbeit auch asynchron planen. Dies garantiert jedoch nicht, dass die geplante Arbeit in einem Hintergrundthread ausgeführt wird. Viele der UWP-APIs planen für Sie die Arbeit im Hintergrundthread, wenn Sie Ihren App-Code jedoch nur mit **await** oder einem Delegaten aufrufen, führen Sie diesen Delegaten oder diese Methode in einem UI-Thread aus. Wenn Sie Ihren App-Code in einem Hintergrundthread ausführen möchten, müssen Sie dies explizit angeben. In C# und Visual Basic kannst du dies erreichen, indem du Code an [**Task.Run**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run) übergibst.
 
 Denken Sie daran, dass nur aus dem UI-Thread auf UI-Elemente zugegriffen werden kann. Verwenden Sie den UI-Thread für den Zugriff auf UI-Elemente vor dem Starten der Hintergrundverarbeitung und/oder der Verwendung von [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) oder [**CoreDispatcher.RunIdleAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runidleasync) im Hintergrundthread.
 
@@ -101,8 +101,8 @@ public class AsyncExample
 
 In diesem Beispiel wird der `NextMove_Click`-Handler bei **await** zurückgegeben, damit der UI-Thread reaktionsfähig bleibt. Die Ausführung wird jedoch in diesem Handler fortgesetzt, nachdem `ComputeNextMove` abgeschlossen ist (in einem Hintergrundthread ausgeführt). Der restliche Code im Handler aktualisiert die UI mit den Ergebnissen.
 
-> **Beachten Sie**  es auch eine [**Thread Pool**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool) -und [**threadpooltimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) -API für die UWP gibt, die für ähnliche Szenarien verwendet werden kann. Weitere Informationen finden Sie unter [Threading und asynchrone Programmierung](https://docs.microsoft.com/windows/uwp/threading-async/index).
+> **Hinweis:**    Es gibt auch eine [**ThreadPool**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool)- und eine [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer)-API für UWP, die für ähnliche Szenarien verwendet werden können. Weitere Informationen finden Sie unter [Threading und asynchrone Programmierung](https://docs.microsoft.com/windows/uwp/threading-async/index).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Benutzerdefinierte Benutzerinteraktionen](https://docs.microsoft.com/windows/uwp/design/layout/index)

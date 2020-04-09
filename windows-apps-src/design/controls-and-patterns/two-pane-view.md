@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a070a72324408746f67b8814554160a76ee0ce4
-ms.sourcegitcommit: e4b48989c91cd77ba73c90d9eb9cd67b88d52f21
+ms.openlocfilehash: 19b473ea964ee9c6cb82098e142f066258bcf30b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79191661"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081441"
 ---
 # <a name="two-pane-view"></a>Ansicht mit zwei Bereichen
 
@@ -25,13 +25,15 @@ Das TwoPaneView-Steuerelement funktioniert zwar auf allen Windows-Geräten, ist 
 > [!NOTE]
 > Ein _Dual-Screen-Gerät_ oder Doppelbildschirm-Gerät ist ein besonderer Gerätetyp mit einzigartigen Funktionen. Es ist nicht gleichbedeutend mit einem Desktopgerät mit mehreren Monitoren. Weitere Informationen zu Dual-Screen-Geräten finden Sie unter [Einführung zu Dual-Screen-Geräten](/dual-screen/introduction). (Weitere Informationen zu Möglichkeiten, wie du deine App für mehrere Monitore optimieren kannst, findest du unter [Anzeigen mehrerer Ansichten](/windows/uwp/design/layout/show-multiple-views).)
 
-| Abrufen der Windows-UI-Bibliothek |
-| - |
-| Dieses Steuerelement ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+**Abrufen der Windows-UI-Bibliothek**
 
-| Plattform-APIs | Windows-UI-Bibliotheks-APIs |
+|  |  |
 | - | - |
-| [TwoPaneView-Klasse](/uwp/api/windows.ui.xaml.controls.twopaneview) | [TwoPaneView-Klasse](/uwp/api/microsoft.ui.xaml.controls.twopaneview) |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TwoPaneView** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+
+> **Windows-UI-Bibliotheks-APIs:** [TwoPaneView-Klasse](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+>
+> **Plattform-APIs:** [TwoPaneView-Klasse](/uwp/api/windows.ui.xaml.controls.twopaneview)
 
 In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt:
 
@@ -73,7 +75,7 @@ Diese Abbildungen zeigen eine App, die auf einem Einzelbildschirm und einem Dopp
 
 Die Ansicht mit zwei Bereichen verfügt über zwei getrennte Bereiche für Ihren Inhalt. Dabei werden Größe und Anordnung der Bereiche abhängig von dem im Fenster verfügbaren Platz angepasst. Die möglichen Bereichslayouts werden durch die [TwoPaneViewMode](/uwp/api/microsoft.ui.xaml.controls.twopaneviewmode)-Enumeration definiert:
 
-| Enum-Wert | Beschreibung |
+| Enum-Wert&nbsp; | Beschreibung |
 | - | - |
 | `SinglePane` | Es wird nur ein Bereich angezeigt, wie durch die Eigenschaft [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) angegeben. |
 | `Wide` | Die Bereiche werden nebeneinander angezeigt, oder es wird ein einzelner Bereich angezeigt, wie in der Eigenschaft [WideModeConfiguration](/uwp/api/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration) angegeben. |
