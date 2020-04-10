@@ -181,6 +181,8 @@
           href: ../networking/web-feeds.md
         - name: Hintergrundübertragungen
           href: ../networking/background-transfers.md
+    - name: Freigeben von benannten Objekten
+      href: ../communication/sharing-named-objects.md
 - name: Daten und Dateien
   items:
     - name: App-Ressourcen
