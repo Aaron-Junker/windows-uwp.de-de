@@ -1,7 +1,7 @@
 ---
 author: knicholasa
-description: Z-Tiefe, relative Tiefe und Schatten sind zwei Möglichkeiten, um Tiefe in Ihre APP zu integrieren, damit Benutzer sich auf natürliche und effiziente Weise fokussieren können.
-title: Z-Tiefe und Schatten für UWP-apps
+description: Z-Tiefe oder relative Tiefe und Schatten sind zwei Möglichkeiten, Tiefeninformationen in Ihre App einzubeziehen, um den Benutzern ein natürliches und effizientes Fokussieren zu ermöglichen.
+title: Z-Tiefe und Schatten für UWP-Apps
 template: detail.hbs
 ms.date: 04/19/2019
 ms.topic: article
@@ -11,71 +11,71 @@ pm-contact: chigy
 ms.localizationpriority: medium
 ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
 ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/21/2020
 ms.locfileid: "80081387"
 ---
 # <a name="z-depth-and-shadow"></a>Z-Tiefe und Schatten
 
-![Ein GIF, das vier graue Rechtecke anzeigt, die diagonal gestapelt sind. Der GIF wird so animiert, dass Schatten angezeigt und ausgeblendet werden.](images/elevation-shadow/shadow.gif)
+![Ein GIF, das vier graue Rechtecke zeigt, die diagonal übereinander gestapelt sind. Das GIF ist animiert, sodass die Schatten erscheinen und verschwinden.](images/elevation-shadow/shadow.gif)
 
-Durch das Erstellen einer visuellen Hierarchie von Elementen in der Benutzeroberfläche ist die Benutzeroberfläche leicht zu scannen und zu überprüfen, worauf Sie sich konzentrieren müssen. Die Erhöhung der Rechte für die Verwendung von SELECT-Elementen Ihrer Benutzeroberfläche wird häufig verwendet, um eine solche Hierarchie in Software zu erzielen. In diesem Artikel wird erläutert, wie Sie mithilfe von z-Tiefe und Schatten Erweiterungen in einer UWP-app erstellen.
+Das Erstellen einer visuellen Hierarchie in Ihrer Benutzeroberfläche macht es einfach, die Benutzeroberfläche zu durchsuchen und transportiert die Information, was wichtig ist und beachtet werden muss. Hervorhebung, das In-den-Vordergrund-Stellen bestimmter Elemente Ihrer Benutzeroberfläche, wird häufig verwendet, um eine solche Hierarchie in Software zu erreichen. In diesem Artikel wird das Erstellen von Hervorhebung in einer UWP-App mithilfe von Z-Tiefe und Schatten erörtert.
 
-Z-Tiefe ist ein Begriff, der bei 3D-App-Erstellern verwendet wird, um den Abstand zwischen zwei Oberflächen entlang der z-Achse anzugeben. Es zeigt, wie ein Objekt für den Viewer geschlossen wird. Betrachten Sie es als ähnliches Konzept für x/y-Koordinaten, aber in der z-Richtung.
+Z-Tiefe ist ein Begriff, der von 3D-App-Entwicklern verwendet wird, um den Abstand zwischen zwei Oberflächen entlang der Z-Achse anzugeben. Er veranschaulicht, wie nah ein Objekt dem Beobachter ist. Stellen Sie es sich als ein ähnliches Konzept wie x/y-Koordinaten vor, aber in der Z-Richtung.
 
-## <a name="why-use-z-depth"></a>Gründe für die Verwendung von z-Tiefe
+## <a name="why-use-z-depth"></a>Gründe für die Verwendung von Z-Tiefe
 
-In der physischen Welt konzentrieren wir uns auf Objekte, die sich näher an uns befinden. Wir können diesen räumlichen Instinkt auch auf die digitale Benutzeroberfläche anwenden. Wenn Sie z. b. ein Element näher an den Benutzer weitergeben, konzentriert sich der Benutzer instinktiv auf das-Element. Durch das Verschieben von UI-Elementen in der z-Achse können Sie eine visuelle Hierarchie zwischen Objekten einrichten, sodass Benutzer die Aufgaben auf natürliche und effiziente Weise in der app ausführen können.
+In der physischen Welt neigen wir dazu, auf die Objekte zu fokussieren, die uns näher sind. Wir können diesen räumlichen Instinkt ebenfalls auf digitale Benutzeroberflächen anwenden. Wenn Sie beispielsweise ein Element näher an den Benutzer heranbringen, wird der Benutzer instinktiv auf das Element fokussieren. Durch das nähere Heranrücken von Elementen der Benutzeroberfläche auf der Z-Achse können Sie eine visuelle Hierarchie unter Objekten erstellen, was es Benutzern erleichtert, Aufgaben in deiner App natürlich und effizient abzuschließen.
 
 ## <a name="what-is-shadow"></a>Was ist Schatten?
 
-Shadow ist eine Methode, mit der ein Benutzer eine Erhöhung der Rechte wahrnimmt Ein Licht oberhalb eines erhöhten Objekts erstellt einen Schatten auf der-Oberfläche unten. Je höher das Objekt ist, desto größer und weicher der Schatten wird. Erweiterte Objekte in der Benutzeroberfläche benötigen keine Schatten, aber Sie können die Darstellung der Erhöhung erhöhen.
+Schatten sind eine Art, wie Benutzer Hervorhebung wahrnehmen. Licht oberhalb eines hervorgehobenen Objekts schafft einen Schatten auf der Oberfläche darunter. Je höher das Objekt, desto größer und weicher wird der Schatten. Hervorgehobene Objekte auf Ihrer Benutzeroberfläche müssen keine Schatten aufweisen, sie unterstützen aber den Eindruck von Hervorhebung.
 
-In UWP-apps sollten Schatten in gezielter und nicht in ästhetischer Weise verwendet werden. Durch die Verwendung zu vieler Schatten wird die Fähigkeit des Schattens, den Benutzer zu fokussieren, verringert oder vermieden.
+In UWP-Apps sollten Schatten eher in zweckmäßiger statt in ästhetischer Weise verwendet werden. Die Verwendung zu vieler Schatten schwächt die Funktion von Schatten, den Benutzer zu leiten, oder beseitigt sie gar ganz.
 
-Wenn Sie Standard Steuerelemente verwenden, werden die themeshadow-Schatten automatisch in die Benutzeroberfläche integriert. Sie können jedoch mit der themeshadow-oder der DropShadow-API Schatten in Ihre Benutzeroberfläche einschließen. 
+Wenn Sie Standardsteuerelemente verwenden, werden Schatten automatisch in Ihre Benutzeroberfläche einbezogen. Sie können Schatten jedoch manuell in Ihre Benutzeroberfläche einbeziehen, indem Sie die APIs ThemeShadow oder DropShadow verwenden. 
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-Der [themeshadow](/uwp/api/windows.ui.xaml.media.themeshadow) -Typ kann auf jedes XAML-Element angewendet werden, um die Schatten entsprechend der x-, y-und z-Koordinaten entsprechend zu zeichnen. Themeshadow passt sich auch automatisch an andere Umgebungs Spezifikationen an:
+Der [ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow)-Typ kann auf jedes XAML-Element angewendet werden, um auf der Grundlage der x-, y- und z-Koordinaten passende Schatten zu zeichnen. ThemeShadow passt sich außerdem automatisch an andere Umgebungsspezifikationen an:
 
-- Passt sich an die Änderungen an Beleuchtung, Benutzer Design, App-Umgebung und Shell an.
-- Wendet Schatten auf Elemente automatisch basierend auf Ihrer z-Tiefe an. 
-- Behält Elemente beim Verschieben und Ändern der Erhöhung der Rechte bei.
-- Hält Schatten in der gesamten und in allen Anwendungen einheitlich.
+- Passt sich an Änderungen von Beleuchtung, Benutzerdesign, App-Umgebung und Shell an.
+- Wendet Schatten automatisch auf Elemente auf der Grundlage ihrer Z-Tiefe an. 
+- Hält Elemente bei Bewegungen und Änderungen der Hervorhebung synchron.
+- Hält Schatten innerhalb der Anwendung und anwendungsübergreifend konsistent.
 
-Im folgenden wird erläutert, wie themeshadow für ein menuflyout implementiert wurde. Menuflyout verfügt über eine integrierte Oberfläche, bei der die Haupt Oberfläche auf 32 px erhöht wird, und jedes zusätzliche kaskadierende Menü wird geöffnet + 8px über dem Menü, von dem es geöffnet wird.
+Hier sehen Sie, wie ThemeShadow für ein MenuFlyout implementiert wurde. MenuFlyout weist eine integrierte Benutzererfahrung auf, bei der die Hauptoberfläche auf 32 Pixel angehoben ist und jedes weitere kaskadierende Menü 8 Pixel oberhalb des Menüs geöffnet wird, aus dem es sich öffnet.
 
-![Ein Screenshot von themeshadow, der auf ein menuflyout mit drei geöffneten, geöffnetten Menüs angewendet wird. Im ersten Menü wird der Wert 32px erhöht, und jedes nachfolgende Menü, das im vorherigen Menü geöffnet wird, wird um 8px erhöht, sodass es einen eindeutigen Schatten im Hintergrund hinterlässt.](images/elevation-shadow/themeshadow-menuflyout.png)
+![Screenshot von ThemeShadow, angewendet auf ein MenuFlyout mit drei geöffneten verschachtelten Menüs. Das erste Menü ist auf 32 Pixel angehoben, und jedes nachfolgende Menü, das sich aus dem vorherigen Menü öffnet, ist um weitere 8 Pixel hervorgehoben, sodass es einen deutlichen Schatten auf dem Hintergrund hinterlässt.](images/elevation-shadow/themeshadow-menuflyout.png)
 
-### <a name="themeshadow-in-common-controls"></a>Themeshadow in allgemeinen Steuerelementen
+### <a name="themeshadow-in-common-controls"></a>ThemeShadow in allgemeinen Steuerelementen
 
-Die folgenden allgemeinen Steuerelemente verwenden automatisch themeshadow zum Umwandeln von Shadowing aus 32px, sofern nicht anders angegeben:
+Die folgenden allgemeinen Steuerelemente verwenden automatisch ThemeShadow, um Schatten von 32 Pixel Tiefe zu werfen, sofern nichts anderes angegeben ist:
 
-- [Kontextmenü](../controls-and-patterns/menus.md), [Befehlsleiste](../controls-and-patterns/app-bars.md), [Befehls leisten-Flyout](../controls-and-patterns/command-bar-flyout.md), [Menüleiste](../controls-and-patterns/menus.md#create-a-menu-bar)
-- [Dialoge und Flyouts](../controls-and-patterns/dialogs.md) (Dialog bei 64px)
+- [Kontextmenü](../controls-and-patterns/menus.md), [Befehlsleiste](../controls-and-patterns/app-bars.md), [Befehlsleisten-Flyout](../controls-and-patterns/command-bar-flyout.md), [MenuBar](../controls-and-patterns/menus.md#create-a-menu-bar)
+- [Dialogfelder und Flyouts](../controls-and-patterns/dialogs.md) (Dialogfeld bei 64 Pixel)
 - [NavigationView](../controls-and-patterns/navigationview.md)
-- [ComboBox](../controls-and-patterns/combo-box.md), [Dropdown Button, SplitButton,](../controls-and-patterns/buttons.md) UMSCHALT Fläche
-- [Lehr Tipp](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
+- [ComboBox](../controls-and-patterns/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls-and-patterns/buttons.md)
+- [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
 - [AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) 
-- [Kalender/Datum/Uhrzeit-Picker](../controls-and-patterns/date-and-time.md)
-- [QuickInfo (](../controls-and-patterns/tooltips.md) 16px)
-- [Medien Transport-Steuer](../controls-and-patterns/media-playback.md#media-transport-controls)Element, [inktoolbar](../controls-and-patterns/inking-controls.md)
+- [Auswahlsteuerelemente für Kalender, Datum und Uhrzeit](../controls-and-patterns/date-and-time.md)
+- [QuickInfo](../controls-and-patterns/tooltips.md) (16 Pixel)
+- [Medientransport-Steuerelement](../controls-and-patterns/media-playback.md#media-transport-controls), [InkToolbar](../controls-and-patterns/inking-controls.md)
 - [Verbundene Animationen](../motion/connected-animation.md)
 
-Hinweis: Flyouts wenden bei der Kompilierung für Windows 10, Version 1903 oder ein neueres SDK nur themeshadow an.
+Hinweis: Für Flyouts wird ThemeShadow nur beim Kompilieren für Windows 10, Version 1903, oder ein neueres SDK angewendet.
 
-### <a name="themeshadow-in-popups"></a>Themeshadow in Popups
+### <a name="themeshadow-in-popups"></a>ThemeShadow in Popups
 
-Häufig ist es der Fall, dass die Benutzeroberfläche Ihrer APP ein Popup für Szenarien verwendet, in denen Sie die Aufmerksamkeit des Benutzers und die schnelle Aktion benötigen. Diese Beispiele sind hervorragend, wenn Schatten verwendet werden soll, um die Hierarchie in der Benutzeroberfläche Ihrer APP zu erstellen.
+Häufig verwenden Benutzeroberflächen von Apps ein Popup in Szenarien, in denen die Aufmerksamkeit des Benutzers und ein schnelles Eingreifen erforderlich sind. Dies sind tolle Beispiele dafür, wann Schatten verwendet werden sollten, um eine Hierarchie in der Benutzeroberfläche Ihrer App zu erstellen.
 
-Themeshadow wandelt Schatten in einem beliebigen XAML-Element in einem [Popup](/uwp/api/windows.ui.xaml.controls.primitives.popup)automatisch um. Sie wandelt Schatten in den Hintergrund Inhalt der APP und alle anderen geöffneten Popups darunter um.
+ThemeShadow wirft automatisch Schatten, wenn es auf ein beliebiges XAML-Element in einem [Popup](/uwp/api/windows.ui.xaml.controls.primitives.popup) angewendet wird. Es wirft Schatten auf die Hintergrundinhalte der App hinter ihm und alle anderen geöffneten Popups unter ihm.
 
-Um themeshadow mit Popups zu verwenden, verwenden Sie die `Shadow`-Eigenschaft, um einen themeshadow auf ein XAML-Element anzuwenden. Erhöhen Sie dann das Element aus anderen dahinter liegenden Elementen, z. b. mithilfe der z-Komponente der `Translation`-Eigenschaft.
-Bei der meisten Popup-Benutzeroberfläche ist die empfohlene Standard Erhöhung relativ zum Inhalt der APP im Hintergrund 32 effektive Pixel.
+Um ThemeShadow für Popups einzusetzen, verwenden Sie die `Shadow`-Eigenschaft, um einen ThemeShadow auf ein XAML-Element anzuwenden. Heben Sie anschließend das Element gegenüber anderen Elementen hinter ihm hervor, beispielsweise mithilfe der z-Komponente der `Translation`-Eigenschaft.
+Für den größten Teil von Popup-UI beträgt die empfohlene Standardhervorhebung relativ zum Inhalt des App-Hintergrunds 32 effektive Pixel.
 
-Dieses Beispiel zeigt ein Rechteck in einem Popup, das einen Schatten in den Hintergrund Inhalt der APP und alle anderen Popups hinter ihm wirft:
+Dieses Beispiel zeigt ein Rechteck in einem Popup, das einen Schatten auf den App-Hintergrundinhalt und alle anderen Popups hinter ihm wirft:
 
 ```xaml
 <Popup>
@@ -94,11 +94,11 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 ![Ein einzelnes rechteckiges Popup mit einem Schatten.](images/elevation-shadow/PopupRectangle.png)
 
-### <a name="disabling-default-themeshadow-on-custom-flyout-controls"></a>Deaktivieren von Standard-themeshadow für benutzerdefinierte Flyout-Steuerelemente
+### <a name="disabling-default-themeshadow-on-custom-flyout-controls"></a>Deaktivieren von standardmäßigem ThemeShadow für benutzerdefinierte Flyout-Steuerelemente
 
-Steuerelemente, die auf [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [datepickerflyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [menuflyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) oder [timepickerflyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) basieren, verwenden automatisch themeshadow zum Umwandeln eines Schattens.
+Steuerelemente, die auf [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout), [DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout), [MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) oder [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) basieren, verwenden automatisch ThemeShadow, um einen Schatten zu werfen.
 
-Wenn der Standard Schatten im Inhalt des Steuer Elements nicht korrekt aussieht, können Sie ihn deaktivieren, indem Sie die [isdefaultshadowenabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) -Eigenschaft auf `false` für den zugehörigen flyoutpresenter festlegen:
+Wenn der Standardschatten auf dem Inhalt Ihres Steuerelements nicht richtig aussieht, können Sie es deaktivieren, indem Sie die [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled)-Eigenschaft für den zugeordneten FlyoutPresenter auf `false` festlegen:
 
 ```xaml
 <Flyout>
@@ -110,13 +110,13 @@ Wenn der Standard Schatten im Inhalt des Steuer Elements nicht korrekt aussieht,
 </Flyout>
 ```
 
-### <a name="themeshadow-in-other-elements"></a>Themeshadow in anderen Elementen
+### <a name="themeshadow-in-other-elements"></a>ThemeShadow in anderen Elementen
 
-Im Allgemeinen empfehlen wir Ihnen, sich sorgfältig mit der Verwendung von Schatten zu beschäftigen und deren Verwendung auf Fälle zu beschränken, in denen es eine sinnvolle visuelle Hierarchie einführt. Wir bieten jedoch eine Möglichkeit, einen Schatten von einem beliebigen Benutzeroberflächen Element zu umwandeln, wenn Sie über erweiterte Szenarien verfügen, die dies erfordern.
+Im Allgemeinen empfehlen wir Ihnen, sich sorgfältig mit der Verwendung von Schatten zu beschäftigen und ihren Einsatz auf Fälle zu beschränken, in denen sie zu einer sinnvollen visuellen Hierarchie führen. Wir bieten aber eine Möglichkeit, jedes beliebige UI-Element einen Schatten werfen zu lassen, falls das für erweiterte Szenarien erforderlich sein sollte.
 
-Zum Umwandeln eines Schattens aus einem XAML-Element, das sich nicht in einem Popup befindet, müssen Sie explizit die anderen Elemente angeben, die den Schatten in der `ThemeShadow.Receivers` Auflistung empfangen können. Empfänger dürfen in der visuellen Struktur kein Vorgänger des-Zauberers sein.
+Um einen Schatten von einem XAML-Element werfen zu lassen, das sich nicht in einem Popup befindet, müssen Sie explizit die anderen Elemente angeben, die den Schatten in der `ThemeShadow.Receivers`-Sammlung empfangen können. Als Empfänger kommt kein Vorgänger des werfenden Elements in der visuellen Baumstruktur in Frage.
 
-Dieses Beispiel zeigt zwei Rechtecke, die Schatten in ein Raster hinter Ihnen umwandeln:
+Dieses Beispiel zeigt zwei Rechtecke, die Schatten auf ein Raster hinter ihnen werfen:
 
 ```xaml
 <Grid>
@@ -140,33 +140,33 @@ Rectangle1.Translation += new Vector3(0, 0, 16);
 Rectangle2.Translation += new Vector3(120, 0, 32);
 ```
 
-![Zwei Türkis Rechtecke nebeneinander, beides mit Schatten.](images/elevation-shadow/SharedShadow.png)
+![Zwei türkisfarbene Rechtecke nebeneinander, beide mit Schatten.](images/elevation-shadow/SharedShadow.png)
 
-### <a name="performance-best-practices-for-themeshadow"></a>Bewährte Methoden für die Leistung von themeshadow
+### <a name="performance-best-practices-for-themeshadow"></a>Bewährte Methoden zur Leistungssteigerung für ThemeShadow
 
-1. Das System legt ein Limit von 5 "Caster-Empfänger"-Paaren fest und deaktiviert den Schatten, wenn dies überschritten wird. Halten Sie sich an das vom System erzwungene Limit von 5 "Caster-Empfänger"-Paaren.
+1. Für das System ist ein Grenzwert von 5 Werfer-Empfänger-Paaren festgelegt, und Schatten werden deaktiviert, wenn dieser Wert überschritten wird. Halten Sie sich an den vom System durchgesetzten Grenzwert von 5 Werfer-Empfänger-Paaren.
 
-2. Beschränken Sie die Anzahl der benutzerdefinierten Empfänger Elemente auf den minimal erforderlichen Wert.
+2. Schränken Sie die Anzahl der benutzerdefinierten Empfängerelemente auf das erforderliche Minimum ein.
 
-3. Wenn sich mehrere Empfänger Elemente in derselben Höhe befinden, versuchen Sie, diese zu kombinieren, indem Sie stattdessen ein einzelnes übergeordnetes Element als Ziel verwenden.
+3. Wenn sich mehrere Empfängerelemente auf der gleichen Hervorhebungsstufe befinden, versuchen Sie, sie zu kombinieren, indem Sie stattdessen ein einzelnes übergeordnetes Element anzielen.
 
-4. Wenn mehrere Elemente denselben Typ von Schatten in dieselben Empfänger Elemente umwandeln, fügen Sie den Schatten als freigegebene Ressource hinzu, und verwenden Sie Sie erneut.
+4. Wenn mehrere Elemente die gleiche Art Schatten auf die gleichen Empfängerelemente werfen, fügen Sie den Schatten als freigegebene Ressource hinzu, und verwenden Sie ihn erneut.
 
 ## <a name="drop-shadow"></a>Schlagschatten
 
-"DropShadow" reagiert nicht automatisch auf seine Umgebung und verwendet keine Lichtquellen. Beispiele für Implementierungen finden Sie in der [DropShadow-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
+DropShadow reagiert nicht automatisch auf seine Umgebung und verwendet keine Lichtquellen. Beispielimplementierungen finden Sie in der [DropShadow-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow).
 
-## <a name="which-shadow-should-i-use"></a>Welchen Schatten sollte ich verwenden?
+## <a name="which-shadow-should-i-use"></a>Welchen Schatten soll ich verwenden?
 
 | Eigenschaft | ThemeShadow | DropShadow |
 | - | - | - |
-| **Min SDK** | Windows 10, Version 1903 | 14393 |
-| **Anpassbarkeit** | Ja | Nein |
-| **Instan** | Nein | Ja |
-| **Helle Quelle** | Automatisch (standardmäßig Global, kann jedoch pro App überschrieben werden) | Keine |
+| **Min SDK** | Windows 10, Version 1903 | 14393 |
+| **Anpassungsfähigkeit** | Ja | Nein |
+| **Benutzerdefinierte Anpassung** | Nein | Ja |
+| **Lichtquelle** | Automatisch (standardmäßig global, kann jedoch pro App überschrieben werden) | Keine |
 | **In 3D-Umgebungen unterstützt** | Ja | Nein |
 
-- Beachten Sie, dass der Zweck von Shadow darin besteht, eine sinnvolle Hierarchie und nicht als einfache visuelle Behandlung bereitzustellen.
-- Im Allgemeinen wird die Verwendung von themeshadow empfohlen, das sich automatisch an seine Umgebung anpasst.
-- Wenn Sie Bedenken bezüglich der Leistung haben, begrenzen Sie die Anzahl der Schatten, verwenden Sie eine andere visuelle Behandlung, oder verwenden Sie DropShadow.
-- Wenn Sie über komplexere Szenarien verfügen, um eine visuelle Hierarchie zu erreichen, sollten Sie die Verwendung anderer visueller Behandlungen (z. b. Farbe) in Erwägung gezogen Wenn Schatten erforderlich ist, verwenden Sie DropShadow.
+- Beachten Sie, dass der Zweck von Schatten darin besteht, eine sinnvolle Hierarchie zu schaffen, keine einfache visuelle Bereicherung.
+- Im allgemeinen empfehlen wir die Verwendung von ThemeShadow, das sich automatisch an seine Umgebung anpasst.
+- Bei Bedenken hinsichtlich der Leistung schränken Sie die Anzahl der Schatten ein, verwenden Sie eine andere visuelle Darstellung, oder verwenden Sie DropShadow.
+- Wenn Sie visuelle Hierarchie in komplexeren Szenarien schaffen müssen, erwägen Sie die Verwendung anderer visueller Darstellungen (beispielsweise Farbe). Wenn Schatten erforderlich ist, verwenden Sie DropShadow.

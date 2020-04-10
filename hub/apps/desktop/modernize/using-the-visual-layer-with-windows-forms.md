@@ -1,92 +1,92 @@
 ---
 title: Verwenden der visuellen Ebene mit Windows Forms
-description: Erlernen Sie die Vorgehensweisen für die Verwendung der Visual Layer-APIs in Kombination mit vorhandenen Windows Forms Inhalt, um erweiterte Animationen und Effekte zu erstellen.
+description: Lernen Sie Methoden für die Verwendung der APIs der visuellen Ebene in Kombination mit vorhandenen Windows Forms-Inhalten kennen, um Animationen und hochwertige Effekte zu erzeugen.
 ms.date: 03/18/2019
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: 9da9dee48beef6e3c1cd38ffbe9761ed89fd940d
 ms.sourcegitcommit: 93d0b2996b4742b33cd6d641e036f42672cf5238
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/23/2019
 ms.locfileid: "69999638"
 ---
 # <a name="using-the-visual-layer-with-windows-forms"></a>Verwenden der visuellen Ebene mit Windows Forms
 
-Sie können Windows-Runtime Kompositions-APIs (auch als [visuelle Schicht](/windows/uwp/composition/visual-layer)bezeichnet) in Ihren Windows Forms-Apps verwenden, um moderne Benutzeroberflächen zu erstellen, die für Windows 10-Benutzer sorgen.
+Sie können in Ihren Windows Forms-Apps die Composition-APIs von Windows-Runtime (die auch als [visuelle Ebene](/windows/uwp/composition/visual-layer) bezeichnet werden) verwenden, um moderne Umgebungen für Windows 10-Benutzer zu erstellen.
 
-Den gesamten Code für dieses Tutorial finden Sie auf GitHub: [Windows Forms hellocomposition-Beispiel](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/HelloComposition).
+Den gesamten Code für dieses Tutorial finden Sie auf GitHub: [Windows Forms-HelloComposition-Beispiel](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/HelloComposition).
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
-Die UWP-Hosting-API verfügt über diese Voraussetzungen.
+Für die UWP hostende API gelten diese Voraussetzungen.
 
-- Wir gehen davon aus, dass Sie mit der APP-Entwicklung über Windows Forms und UWP vertraut sind. Weitere Informationen:
+- Es wird davon ausgegangen, dass Sie mit der App-Entwicklung mit Win32 und UWP vertraut sind. Weitere Informationen:
   - [Erste Schritte mit Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms)
-  - [Einstieg in Windows 10-apps](/windows/uwp/get-started/)
-  - [Verbessern Sie Ihre Desktop Anwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
-- .NET Framework 4.7.2 oder höher
-- Windows 10, Version 1803 oder höher
-- Windows 10 SDK 17134 oder höher
+  - [Erste Schritte mit Windows 10-Apps](/windows/uwp/get-started/)
+  - [Verbessern Ihrer Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
+- .NET Framework 4.7.2 oder höher
+- Windows 10 Version 1803 oder höher
+- Windows 10 SDK ab 17134
 
-## <a name="how-to-use-composition-apis-in-windows-forms"></a>Verwenden von Kompositions-APIs in Windows Forms
+## <a name="how-to-use-composition-apis-in-windows-forms"></a>Verwenden der Composition-APIs in Windows Forms
 
-In diesem Tutorial erstellen Sie eine einfache Windows Forms-Benutzeroberfläche und fügen ihr animierte Kompositions Elemente hinzu. Die Windows Forms-und Kompositions Komponenten sind einfach gehalten, aber der gezeigte Interop-Code ist unabhängig von der Komplexität der Komponenten identisch. Die fertige App sieht wie folgt aus.
+In diesem Tutorial erstellen Sie eine einfache Benutzeroberfläche für eine Windows Forms-App und fügen ihr animierte Composition-Elemente hinzu. Sowohl die Windows Forms- als auch die Composition-Komponenten sind einfach gehalten, aber der gezeigte Interoperabilitätscode ist unabhängig von der Komplexität der Komponenten identisch. Die fertige App sieht wie folgt aus.
 
-![Die Benutzeroberfläche der laufenden app](images/visual-layer-interop/wf-comp-interop-app-ui.png)
+![Benutzeroberfläche der laufenden App](images/visual-layer-interop/wf-comp-interop-app-ui.png)
 
-## <a name="create-a-windows-forms-project"></a>Erstellen eines Windows Forms Projekts
+## <a name="create-a-windows-forms-project"></a>Erstellen eines Windows Forms-Projekts
 
-Der erste Schritt besteht darin, das Windows Forms App-Projekt zu erstellen, das eine Anwendungs Definition und das Hauptformular für die Benutzeroberfläche enthält.
+Der erste Schritt besteht darin, das Projekt für die Windows Forms-App zu erstellen. Dazu gehören eine Anwendungsdefinition und das Hauptformular für die Benutzeroberfläche.
 
-So erstellen Sie ein neues Windows Forms-Anwendungsprojekt C# in Visual mit dem Namen " _hellocomposition_":
+So erstellen Sie ein neues Windows Forms-Anwendungsprojekt in Visual C# namens _HelloComposition_:
 
-1. Öffnen Sie Visual Studio, und wählen Sie **Datei** > **neu** > **Projekt**aus.<br/>Das Dialogfeld " **Neues Projekt** " wird geöffnet.
-1. Erweitern Sie unter der Kategorie **installiert** den **Knoten C# visuelle** Knoten, und wählen Sie dann **Windows-Desktop**aus.
-1. Wählen Sie die Vorlage **Windows Forms app (.NET Framework)** aus.
-1. Geben Sie den Namen _hellocomposition ein,_ wählen Sie Framework **.NET Framework 4.7.2**aus, und klicken Sie dann auf **OK**.
+1. Öffnen Sie Visual Studio, und wählen Sie **Datei** > **Neu** > **Projekt** aus.<br/>Das Dialogfeld **Neues Projekt** wird geöffnet.
+1. Erweitern Sie unter der Kategorie **Installiert** den Knoten **Visual C#** , und wählen Sie dann **Windows-Desktop** aus.
+1. Wählen Sie die Vorlage **Windows Forms-App (.NET Framework)** aus.
+1. Geben Sie den Namen _HelloComposition_ ein, wählen Sie als Framework **.NET Framework 4.7.2** aus, und klicken Sie dann auf **OK**.
 
-Visual Studio erstellt das Projekt und öffnet den Designer für das Standard Anwendungsfenster mit dem Namen Form1.cs.
+Visual Studio erstellt das Projekt und öffnet den Designer für das Standardanwendungsfenster „Form1.cs“.
 
-## <a name="configure-the-project-to-use-windows-runtime-apis"></a>Konfigurieren des Projekts für die Verwendung Windows-Runtime APIs
+## <a name="configure-the-project-to-use-windows-runtime-apis"></a>Konfigurieren des Projekts für die Verwendung der Windows-Runtime-APIs
 
-Wenn Sie in Ihrer Windows Forms-APP Windows-Runtime (WinRT)-APIs verwenden möchten, müssen Sie das Visual Studio-Projekt für den Zugriff auf die Windows-Runtime konfigurieren. Außerdem werden Vektoren von den Kompositions-APIs ausgiebig verwendet, sodass Sie die für die Verwendung von Vektoren erforderlichen Verweise hinzufügen müssen.
+Wenn Sie in Ihrer Windows Forms-App die Windows-Runtime-APIs (WinRT) verwenden möchten, müssen Sie das Visual Studio-Projekt für den Zugriff auf die Windows-Runtime konfigurieren. Außerdem werden Vektoren von den Composition-APIs ausgiebig verwendet, sodass Sie die für die Verwendung von Vektoren erforderlichen Verweise hinzufügen müssen.
 
-Nuget-Pakete sind verfügbar, um beide Anforderungen zu erfüllen. Installieren Sie die neuesten Versionen dieser Pakete, um dem Projekt die erforderlichen Verweise hinzuzufügen.  
+Für diese beiden Anforderungen sind NuGet-Pakete verfügbar. Installieren Sie die neuesten Versionen dieser Pakete, um dem Projekt die erforderlichen Verweise hinzuzufügen.  
 
-- [Microsoft. Windows. SDK. Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (erfordert das Standardformat für die Paketverwaltung, das auf packagereferenziert ist.)
-- [System. Numerics. Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
+- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (erfordert die Festlegung des Standardformats für die Paketverwaltung auf „PackageReference“)
+- [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
 
 > [!NOTE]
-> Es wird empfohlen, die nuget-Pakete zu verwenden, um Ihr Projekt zu konfigurieren. Sie können jedoch die erforderlichen Verweise manuell hinzufügen. Weitere Informationen finden Sie unter [Erweitern der Desktop Anwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). In der folgenden Tabelle werden die Dateien angezeigt, denen Sie Verweise hinzufügen müssen.
+> Es wird empfohlen, die NuGet-Pakete für die Konfiguration Ihres Projekts zu verwenden. Sie können die erforderlichen Verweise jedoch auch manuell hinzufügen. Weitere Informationen finden Sie unter [Verbessern der Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). In der folgenden Tabelle werden die Dateien angezeigt, denen Sie Verweise hinzufügen müssen.
 
-|Datei|Speicherort|
+|File|Speicherort|
 |--|--|
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Programme (x86) \Windows kits\10\references\<*SDK Version*> \Windows.Foundation.UniversalApiContract\<*Version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Programme (x86) \Windows kits\10\references\<*SDK Version*> \Windows.Foundation.FoundationContract\<*Version*>|
-|System. Numerics. Vectors. dll|C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics.Vectors\v4.0_4.0.0.0__b03f5f7f11d50a3a|
-|System. Numerics. dll|C:\Programme (x86) \Reference assemblies\microsoft\framework\.NETFramework\v4.7.2|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Programme (x86)\Windows Kits\10\References\<*SDK-Version*>\Windows.Foundation.UniversalApiContract\<*Version*>|
+|Windows.Foundation.FoundationContract.winmd|C:\Programme (x86)\Windows Kits\10\References\<*SDK-Version*>\Windows.Foundation.FoundationContract\<*Version*>|
+|System.Numerics.Vectors.dll|C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics.Vectors\v4.0_4.0.0.0__b03f5f7f11d50a3a|
+|System.Numerics.dll|C:\Programme (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2|
 
-## <a name="create-a-custom-control-to-manage-interop"></a>Erstellen eines benutzerdefinierten Steuer Elements zum Verwalten von Interop
+## <a name="create-a-custom-control-to-manage-interop"></a>Erstellen eines benutzerdefinierten Steuerelements zum Verwalten der Interoperabilität
 
-Zum Hosten von Inhalten, die Sie mit der visuellen Ebene erstellen, erstellen Sie ein benutzerdefiniertes Steuerelement, das von [Control](/dotnet/api/system.windows.forms.control)abgeleitet Dieses Steuerelement ermöglicht Ihnen den Zugriff auf ein Fenster [handle](/dotnet/api/system.windows.forms.control.handle), das Sie benötigen, um den Container für den Inhalt der visuellen Ebene zu erstellen.
+Zum Hosten von Inhalten, die Sie mit der visuellen Ebene erstellen, müssen Sie ein benutzerdefiniertes Steuerelement erstellen, das von [Control](/dotnet/api/system.windows.forms.control) abgeleitet ist. Dieses Steuerelement gibt Ihnen Zugriff auf ein [Fensterhandle](/dotnet/api/system.windows.forms.control.handle), das Sie benötigen, um den Container für die Inhalte der visuellen Ebene zu erstellen.
 
-Hier führen Sie den größten Teil der Konfiguration für das Hosting von Kompositions-APIs aus. In diesem Steuerelement verwenden Sie " [PInvoke" (Platform invoations Dienste)](/cpp/dotnet/calling-native-functions-from-managed-code) und [COM-Interop](/dotnet/api/system.runtime.interopservices.comimportattribute) , um Kompositions-APIs in Ihre Windows Forms-APP zu bringen. Weitere Informationen über PInvoke und COM-Interop finden Sie unter [Interoperation mit nicht verwaltetem Code](/dotnet/framework/interop/index).
+In dieser führen Sie den größten Teil der Konfiguration für das Hosting von Composition-APIs aus. Sie verwenden in diesem Steuerelement [Platform Invocation Services (PInvoke)](/cpp/dotnet/calling-native-functions-from-managed-code) und [COM Interop](/dotnet/api/system.runtime.interopservices.comimportattribute), um Composition-APIs in Ihre Windows Forms-App einzubinden. Weitere Informationen zu PInvoke und COM-Interop finden Sie unter [Interoperation mit nicht verwaltetem Code](/dotnet/framework/interop/index).
 
 > [!TIP]
-> Überprüfen Sie ggf. den vollständigen Code am Ende des Tutorials, um sicherzustellen, dass sich der gesamte Code bei der Durchführung des Tutorials an den richtigen Stellen befindet.
+> Überprüfen Sie bei Bedarf am Ende des Tutorials den vollständigen Code, um sicherzustellen, dass sich der gesamte Code während des Durcharbeitens an den richtigen Stellen befindet.
 
-1. Fügen Sie dem Projekt, das von [Control](/dotnet/api/system.windows.forms.control)abgeleitet ist, eine neue benutzerdefinierte Steuerelement Datei hinzu.
-    - Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt _hellocomposition_ .
-    - Wählen Sie im Kontextmenü die Option**Neues Element** **Hinzufügen** > ... aus.
-    - Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **benutzerdefiniertes Steuer**Element.
-    - Benennen Sie das Steuerelement _CompositionHost.cs_, und klicken Sie auf **Hinzufügen**. CompositionHost.cs wird im Designansicht geöffnet.
+1. Fügen Sie Ihrem Projekt eine neue benutzerdefinierte Steuerelementdatei hinzu, die von [Control](/dotnet/api/system.windows.forms.control) abgeleitet ist.
+    - Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt _HelloComposition_.
+    - Wählen Sie im Kontextmenü **Hinzufügen** > **Neues Element...** aus.
+    - Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Benutzerdefiniertes Steuerelement** aus.
+    - Benennen Sie das Steuerelement _CompositionHost.cs_, und klicken Sie dann auf **Hinzufügen**. CompositionHost.cs wird in der Entwurfsansicht geöffnet.
 
-1. Wechseln Sie zur Code Ansicht für CompositionHost.cs, und fügen Sie der-Klasse den folgenden Code hinzu.
+1. Wechseln Sie zur Codeansicht für CompositionHost.cs, und fügen Sie der-Klasse den folgenden Code hinzu.
 
     ```csharp
     // Add
@@ -114,7 +114,7 @@ Hier führen Sie den größten Teil der Konfiguration für das Hosting von Kompo
 
 1. Fügen Sie dem Konstruktor Code hinzu.
 
-    Im Konstruktor werden die Methoden _initializecoredispatcher_ und _initcomposition_ aufgerufen. Sie erstellen diese Methoden in den nächsten Schritten.
+    Im Konstruktor rufen Sie die Methoden _InitializeCoreDispatcher_ und _InitComposition_ auf. Sie erstellen diese Methoden in den nächsten Schritten.
 
     ```csharp
     public CompositionHost()
@@ -132,8 +132,8 @@ Hier führen Sie den größten Teil der Konfiguration für das Hosting von Kompo
     }
     ```
 
-1. Initialisieren Sie einen Thread mit einem [coredispatcher](/uwp/api/windows.ui.core.coredispatcher). Der kerndispatcher ist für die Verarbeitung von Fenster Meldungen und das Verteilen von Ereignissen für WinRT-APIs zuständig. Neue Instanzen von **Compositor** müssen in einem Thread erstellt werden, der über einen coredispatcher verfügt.
-    - Erstellen Sie eine Methode mit dem Namen _initializecoredispatcher_ , und fügen Sie Code hinzu, um die Verteiler-Warteschlange einzurichten.
+1. Initialisieren Sie einen Thread mit einem [CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher). Der CoreDispatcher ist für die Verarbeitung von Fenstermeldungen und das Verteilen von Ereignissen für WinRT-APIs zuständig. Neue Instanzen von **Compositor** müssen in einem Thread erstellt werden, der über einen CoreDispatcher verfügt.
+    - Erstellen Sie eine Methode mit dem Namen _InitializeCoreDispatcher_, und fügen Sie Code zum Einrichten der Verteilerwarteschlange hinzu.
 
     ```csharp
     // Add
@@ -152,7 +152,7 @@ Hier führen Sie den größten Teil der Konfiguration für das Hosting von Kompo
     }
     ```
 
-    - Die Verteiler-Warteschlange erfordert eine PInvoke-Deklaration. Platzieren Sie diese Deklaration am Ende des Codes für die-Klasse. (Dieser Code wird in einer Region abgelegt, um den Klassen Code sauber zu halten.)
+    - Die Verteilerwarteschlange erfordert eine PInvoke-Deklaration. Fügen Sie diese Deklaration am Ende des Codes für die Klasse ein. (Wir platzieren diesen Code innerhalb eines Bereichs, um den Klassencode ordentlich zu halten.)
 
     ```csharp
     #region PInvoke declarations
@@ -211,9 +211,9 @@ Hier führen Sie den größten Teil der Konfiguration für das Hosting von Kompo
     #endregion PInvoke declarations
     ```
 
-    Sie haben nun die Verteiler Warteschlange vorbereitet und können damit beginnen, Kompositions Inhalte zu initialisieren und zu erstellen.
+    Damit ist die Verteilerwarteschlange vorbereitet, und Sie können damit beginnen, Composition-Inhalte zu initialisieren und zu erstellen.
 
-1. Initialisieren Sie den [Compositor](/uwp/api/windows.ui.composition.compositor). Der Compositor ist eine Factory, die eine Vielzahl von Typen im [Windows. UI. Composition](/uwp/api/windows.ui.composition) -Namespace erstellt, der die visuelle Schicht, das Effekte System und das Animationssystem umfasst. Die Compositor-Klasse verwaltet auch die Lebensdauer von Objekten, die aus der Factory erstellt wurden.
+1. Initialisieren Sie den [Compositor](/uwp/api/windows.ui.composition.compositor). Der Compositor ist eine Factory, die eine Vielzahl von Typen im Namespace [Windows.UI.Composition](/uwp/api/windows.ui.composition) erstellt. Dazu gehören z. B. die visuelle Ebene, das Effektsystem und das Animationssystem. Die Compositor-Klasse verwaltet auch die Lebensdauer von Objekten, die von der Factory erstellt wurden.
 
     ```csharp
     private void InitComposition(IntPtr hwndHost)
@@ -236,7 +236,7 @@ Hier führen Sie den größten Teil der Konfiguration für das Hosting von Kompo
     }
     ```
 
-    - **Icompositor desktopinterop** und **icompositiontarget** erfordern com-Importe. Platzieren Sie diesen Code nach der _compositionhost_ -Klasse, aber innerhalb der Namespace Deklaration.
+    - **ICompositorDesktopInterop** und **ICompositionTarget** erfordern COM-Importe. Platzieren Sie diesen Code nach der _CompositionHost_-Klasse, aber noch innerhalb der Namespacedeklaration.
 
     ```csharp
     #region COM Interop
@@ -285,29 +285,29 @@ Hier führen Sie den größten Teil der Konfiguration für das Hosting von Kompo
     #endregion COM Interop
     ```
 
-## <a name="create-a-custom-control-to-host-composition-elements"></a>Erstellen eines benutzerdefinierten Steuer Elements zum Hosten von Kompositions Elementen
+## <a name="create-a-custom-control-to-host-composition-elements"></a>Erstellen eines benutzerdefinierten Steuerelements zum Hosten von Kompositionselementen
 
-Es empfiehlt sich, den Code, der die Kompositions Elemente generiert und verwaltet, in einem separaten Steuerelement zu platzieren, das von compositionhost abgeleitet ist. Dadurch bleibt der Interop-Code, den Sie in der Klasse compositionhost erstellt haben, wiederverwendbar.
+Es empfiehlt sich, den Code, der die Kompositionselemente generiert und verwaltet, in einem separaten Steuerelement zu platzieren, das von CompositionHost abgeleitet ist. Dadurch bleibt der Interop-Code, den Sie in der CompositionHost-Klasse erstellt haben, wiederverwendbar.
 
-Hier erstellen Sie ein benutzerdefiniertes Steuerelement, das von compositionhost abgeleitet ist. Dieses Steuerelement wird der Visual Studio-Toolbox hinzugefügt, sodass Sie es dem Formular hinzufügen können.
+Hier erstellen Sie ein benutzerdefiniertes Steuerelement, das von CompositionHost abgeleitet ist. Dieses Steuerelement wird der Visual Studio-Toolbox hinzugefügt, sodass Sie es dem Formular hinzufügen können.
 
-1. Fügen Sie dem Projekt, das von compositionhost abgeleitet wird, eine neue benutzerdefinierte Steuerelement Datei hinzu.
-    - Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt _hellocomposition_ .
-    - Wählen Sie im Kontextmenü die Option**Neues Element** **Hinzufügen** > ... aus.
-    - Klicken Sie im Dialogfeld **Neues Element hinzufügen** auf **benutzerdefiniertes Steuer**Element.
-    - Benennen Sie das Steuerelement _CompositionHostControl.cs_, und klicken Sie auf **Hinzufügen**. CompositionHostControl.cs wird im Designansicht geöffnet.
+1. Fügen Sie Ihrem Projekt eine neue benutzerdefinierte Steuerelementdatei hinzu, die von CompositionHost abgeleitet ist.
+    - Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt _HelloComposition_.
+    - Wählen Sie im Kontextmenü **Hinzufügen** > **Neues Element...** aus.
+    - Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Benutzerdefiniertes Steuerelement** aus.
+    - Benennen Sie das Steuerelement _CompositionHostControl.cs_, und klicken Sie dann auf **Hinzufügen**. CompositionHostControl.cs wird in der Entwurfsansicht geöffnet.
 
-1. Legen Sie im Bereich Eigenschaften für die CompositionHostControl.cs-Entwurfs Ansicht die **BackColor** -Eigenschaft auf **ControlLight**fest.
+1. Legen Sie im Eigenschaftsbereich der Entwurfsansicht von CompositionHostControl.cs die Eigenschaft **BackColor** auf **ControlLight** fest.
 
-    Das Festlegen der Hintergrundfarbe ist optional. Hier wird das benutzerdefinierte Steuerelement im Formular Hintergrund angezeigt.
+    Das Festlegen der Hintergrundfarbe ist optional. Wir nehmen es an dieser Stelle vor, damit Sie Ihr benutzerdefiniertes Steuerelement vor dem Formularhintergrund sehen können.
 
-1. Wechseln Sie zur Code Ansicht für CompositionHostControl.cs, und aktualisieren Sie die Klassen Deklaration, sodass Sie von compositionhost abgeleitet wird.
+1. Wechseln Sie zur Codeansicht für CompositionHostControl.cs, und aktualisieren Sie die Klassendeklaration, sodass sie von CompositionHost abgeleitet wird.
 
     ```csharp
     class CompositionHostControl : CompositionHost
     ```
 
-1. Aktualisieren Sie den Konstruktor, um den Basiskonstruktor aufzurufen.
+1. Aktualisieren Sie den Konstruktor, sodass er den Basiskonstruktor aufruft.
 
     ```csharp
     public CompositionHostControl() : base()
@@ -316,15 +316,15 @@ Hier erstellen Sie ein benutzerdefiniertes Steuerelement, das von compositionhos
     }
     ```
 
-### <a name="add-composition-elements"></a>Kompositions Elemente hinzufügen
+### <a name="add-composition-elements"></a>Hinzufügen von Composition-Elementen
 
-Nachdem Sie die Infrastruktur eingerichtet haben, können Sie der App-Benutzeroberfläche nun Kompositions Inhalte hinzufügen.
+Nachdem Sie die Infrastruktur eingerichtet haben, können Sie der Benutzeroberfläche der App jetzt Composition-Inhalte hinzufügen.
 
-In diesem Beispiel fügen Sie der compositionhostcontrol-Klasse Code hinzu, mit dem ein einfaches [spritevisual](/uwp/api/windows.ui.composition.spritevisual)erstellt und animiert wird.
+In diesem Beispiel fügen Sie Code zur CompositionHostControl-Klasse hinzu, der ein einfaches [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) (Quadrat) erstellt und animiert.
 
-1. Fügen Sie ein Kompositions Element hinzu.
+1. Fügen Sie ein Composition-Element hinzu.
 
-    Fügen Sie in CompositionHostControl.cs diese Methoden der compositionhostcontrol-Klasse hinzu.
+    Fügen Sie in „CompositionHostControl.cs“ der CompositionHostControl-Klasse diese Methoden hinzu.
 
     ```csharp
     // Add
@@ -362,27 +362,27 @@ In diesem Beispiel fügen Sie der compositionhostcontrol-Klasse Code hinzu, mit 
     }
     ```
 
-## <a name="add-the-control-to-your-form"></a>Fügen Sie das Steuerelement zum Formular hinzu.
+## <a name="add-the-control-to-your-form"></a>Hinzufügen des Steuerelements zum Formular
 
-Nachdem Sie nun über ein benutzerdefiniertes Steuerelement zum Hosten von Kompositions Inhalten verfügen, können Sie es der App-Benutzeroberfläche hinzufügen. Hier fügen Sie eine Instanz des compositionhostcontrol-Steuer Elements hinzu, das Sie im vorherigen Schritt erstellt haben. Compositionhostcontrol wird der Visual Studio-Toolbox unter  **_Project Name_ Components**automatisch hinzugefügt.
+Da Sie jetzt über ein benutzerdefiniertes Steuerelement zum Hosten von Composition-Inhalten verfügen, können Sie es der Benutzeroberfläche der App hinzufügen. Hier fügen Sie eine Instanz des CompositionHostControl hinzu, das Sie im vorherigen Schritt erstellt haben. CompositionHostControl wird der Visual Studio-Toolbox automatisch unter dem **_Projektnamen_ Components** hinzugefügt.
 
-1. Fügen Sie der Benutzeroberfläche in der Entwurfs Ansicht Form1.cs eine Schaltfläche hinzu.
+1. Fügen Sie der Benutzeroberfläche in der Entwurfsansicht von Form1.CS eine Schaltfläche hinzu.
 
-    - Ziehen Sie eine Schaltfläche aus der Toolbox auf Form1. Platzieren Sie ihn in der oberen linken Ecke des Formulars. (Sehen Sie sich das Bild am Anfang des Tutorials an, um die Platzierung der Steuerelemente zu überprüfen.)
-    - Ändern Sie im Eigenschaften Bereich die **Text** -Eigenschaft von _Button1_ in _Add Composition Element_.
-    - Ändern Sie die Größe der Schaltfläche, damit der gesamte Text angezeigt wird.
+    - Ziehen Sie eine Schaltfläche aus der Toolbox auf Form1. Platzieren Sie sie in der oberen linken Ecke des Formulars. (Sehen Sie sich die Abbildung am Anfang des Tutorials an, um die Platzierung der Steuerelemente zu überprüfen.)
+    - Ändern Sie im Bereich „Eigenschaften“ die **Text**-Eigenschaft von _button1_ in _Composition-Element hinzufügen_.
+    - Ändern Sie die Größe der Schaltfläche, sodass der gesamte Text angezeigt wird.
 
-    (Weitere Informationen finden [Sie unter Vorgehensweise: Hinzufügen von Steuer](/dotnet/framework/winforms/controls/how-to-add-controls-to-windows-forms)Elementen zu Windows Forms.)
+    (Weitere Informationen finden Sie unter [Gewusst wie: Hinzufügen von Steuerelementen zu Windows Forms](/dotnet/framework/winforms/controls/how-to-add-controls-to-windows-forms).)
 
-1. Fügen Sie der Benutzeroberfläche ein compositionhostcontrol-Steuerelement hinzu.
+1. Fügen Sie der Benutzeroberfläche ein CompositionHostControl-Steuerelement hinzu.
 
-    - Ziehen Sie ein compositionhostcontrol aus der Toolbox auf Form1. Platzieren Sie es rechts von der Schaltfläche.
-    - Ändern Sie die Größe des compositionhost, sodass er den Rest des Formulars füllt.
+    - Ziehen Sie ein CompositionHostControl-Steuerelement aus der Toolbox auf Form1. Platzieren Sie es rechts neben der Schaltfläche.
+    - Ändern Sie die Größe des CompositionHost, sodass er den Rest des Formulars ausfüllt.
 
-1. Behandeln Sie das Click-Ereignis der Schaltfläche.
+1. Behandeln Sie das Schaltflächen-Klickereignis.
 
-   - Klicken Sie im Bereich Eigenschaften auf den Blitz, um zur Ansicht Ereignisse zu wechseln.
-   - Wählen Sie in der Liste Ereignisse das **Click** -Ereignis aus, geben Sie *Button_Click*ein, und drücken Sie die EINGABETASTE.
+   - Klicken Sie im Eigenschaftsbereich auf den Gewitterblitz, um zur Ereignisansicht zu wechseln.
+   - Wählen Sie in der Ereignisliste das **Click**-Ereignis aus, geben Sie *Button_Click* ein, und drücken Sie die EINGABETASTE.
    - Dieser Code wird in Form1.cs hinzugefügt:
 
     ```csharp
@@ -392,9 +392,9 @@ Nachdem Sie nun über ein benutzerdefiniertes Steuerelement zum Hosten von Kompo
     }
     ```
 
-1. Fügen Sie Code zum Click-Handler der Schaltfläche hinzu, um neue Elemente zu erstellen.
+1. Fügen Sie dem Schaltflächen-Klick-Handler Code hinzu, um neue Elemente zu erstellen.
 
-    - Fügen Sie in Form1.cs dem *Button_Click* -Ereignishandler, den Sie zuvor erstellt haben, Code hinzu. Dieser Code ruft _CompositionHostControl1. AddElement_ auf, um ein neues Element mit einer zufällig generierten Größe und einem zufällig generierten Offset zu erstellen. (Die Instanz von compositionhostcontrol wurde automatisch mit dem Namen _compositionHostControl1_ benannt, als Sie Sie auf das Formular gezogen haben.)
+    - Fügen Sie in Form1.cs dem *Button_Click*-Ereignishandler, den Sie zuvor erstellt haben, Code hinzu. Mit diesem Code wird _CompositionHostControl1.AddElement_ aufgerufen, um ein neues Element mit einer zufällig generierten Größe und einem Zufallsoffset zu erstellen. (Die Instanz von CompositionHostControl wurde automatisch mit dem Namen _CompositionHostControl1_ benannt, als Sie sie auf das Formular gezogen haben.)
 
     ```csharp
     // Add
@@ -410,23 +410,23 @@ Nachdem Sie nun über ein benutzerdefiniertes Steuerelement zum Hosten von Kompo
     }
     ```
 
-Nun können Sie Ihre Windows Forms-app erstellen und ausführen. Wenn Sie auf die Schaltfläche klicken, sollten die animierten Quadrate der Benutzeroberfläche hinzugefügt werden.
+Jetzt können Sie die Windows Forms-App kompilieren und ausführen. Wenn Sie auf die Schaltfläche klicken, sollten der Benutzeroberfläche die animierten Quadrate hinzugefügt werden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Ein ausführeres Beispiel, das auf derselben Infrastruktur aufbaut, finden Sie im Beispiel [Windows Forms Visual Layer-Integration](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/VisualLayerIntegration) auf GitHub.
+Ein ausführlicheres Beispiel, das auf der gleichen Infrastruktur aufbaut, finden Sie unter [Windows Forms Visual layer integration sample](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/VisualLayerIntegration) (Beispiel für die Integration der visuellen Windows Forms-Ebene) auf GitHub.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- Ersten Schritte [mit Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms) NET
-- Interoperabilität [mit nicht verwaltetem Code](/dotnet/framework/interop/) NET
-- Einstieg [in Windows 10-apps](/windows/uwp/get-started/) UWP
-- [Verbessern Sie Ihre Desktop Anwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) UWP
-- [Windows. UI. Composition-Namespace](/uwp/api/windows.ui.composition) UWP
+- [Erste Schritte mit Windows Forms](/dotnet/framework/winforms/getting-started-with-windows-forms) (.NET)
+- [Interoperation mit nicht verwaltetem Code](/dotnet/framework/interop/) (.NET)
+- [Erste Schritte mit Windows 10-Apps](/windows/uwp/get-started/) (UWP)
+- [Verbessern Ihrer Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Windows.UI.Composition-Namespace](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>Vollständiger Code
 
-Im folgenden finden Sie den gesamten Code für dieses Tutorial.
+Dies ist der vollständige Code für dieses Tutorial.
 
 ### <a name="form1cs"></a>Form1.cs
 

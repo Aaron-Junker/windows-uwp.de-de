@@ -1,22 +1,22 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Referenz zu Kern-APIs des Geräteportals
+title: Referenz zu Kern-APIs des Device Portal
 description: Hier erhalten Sie Informationen zu den Kern-REST-APIs für das Windows Device Portal, die Sie für den Zugriff auf die Daten und die programmatische Steuerung des Geräts verwenden können.
 ms.custom: 19H1
 ms.date: 04/19/2019
 ms.topic: article
-keywords: Windows 10, UWP, Geräte Portal
+keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
 ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/15/2020
 ms.locfileid: "75955309"
 ---
-# <a name="device-portal-core-api-reference"></a>Referenz zu Kern-APIs des Geräteportals
+# <a name="device-portal-core-api-reference"></a>Referenz zu Kern-APIs des Device Portal
 
-Alle Geräteportal-Funktionen basieren auf REST-APIs, die Entwickler direkt aufrufen können, um auf Ressourcen zuzugreifen und ihre Geräte programmgesteuert zu steuern.
+Alle Funktionen im Geräteportal basieren auf REST-APIs, die Entwickler direkt aufrufen können, um auf Ressourcen zuzugreifen und ihre Geräte programmgesteuert zu steuern.
 
 ## <a name="app-deployment"></a>App-Bereitstellung
 
@@ -36,7 +36,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| package   | (**erforderlich**) Der Dateiname des zu installierenden Pakets. |
+| Paket   | (**erforderlich**) Der Dateiname des zu installierenden Pakets. |
 
 **Anforderungsheader**
 
@@ -49,7 +49,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -62,8 +62,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -73,7 +73,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 **Anforderung**
 
-Sie können eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) installieren, indem Sie das folgende Anfrageformat verwenden.
+Mit dem folgenden Anforderungsformat kannst du eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) installieren.
 
 | Methode      | Anforderungs-URI |
 | :------     | :------ |
@@ -85,20 +85,20 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| package   | (**erforderlich**) Die Dateinamen der zu installierenden Pakete. |
+| Paket   | (**Erforderlich:** ) Die Dateinamen der zu installierenden Pakete. |
 
 **Anforderungsheader**
 
 - Keine
 
 **Anforderungstext** 
-- Fügen Sie „.opt” zu den optionalen Paketdateinamen hinzu, wenn Sie diese als Parameter angeben: „foo.appx.opt” oder „bar.appxbundle.opt”. 
+- Füge Dateinamen optionaler Pakete „.opt“ hinzu, wenn du sie als Parameter angibst, z. B. „foo.appx.opt“ oder „bar.appxbundle.opt“. 
 - Die APPX- oder APPXBUNDLE-Datei sowie alle von der App benötigten Abhängigkeiten. 
 - Das Zertifikat zum Signieren der App, wenn es sich um ein IoT- oder Windows-Desktop-Gerät handelt. Bei anderen Plattformen ist das Zertifikat nicht erforderlich. 
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -111,8 +111,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -151,7 +151,7 @@ Mithilfe des folgenden Anforderungsformats können Sie eine App in einem losen O
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -163,18 +163,18 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-### <a name="register-a-related-set-in-loose-file-folders"></a>Verwandte Gruppe in losen Dateiordnern registrieren
+### <a name="register-a-related-set-in-loose-file-folders"></a>Registrieren einer verwandten Gruppe in losen Dateiordnern
 
 **Anforderung**
 
-Sie können eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) in losen Ordnern registrieren, indem Sie das folgende Anfrageformat verwenden.
+Mit dem folgenden Anforderungsformat kannst du eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/) in losen Ordnern registrieren.
 
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -212,7 +212,7 @@ Sie können eine [verwandte Gruppe](https://blogs.msdn.microsoft.com/appinstalle
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -224,8 +224,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -255,7 +255,7 @@ Mit dem folgenden Anforderungsformat können Sie den Status einer derzeit ausgef
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -268,8 +268,8 @@ Diese API hat die folgenden erwarteten Statuscodes:
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -289,7 +289,7 @@ Mit dem folgenden Anforderungsformat können Sie eine App deinstallieren.
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| package   | (**Erforderlich**) PackageFullName (von GET /api/app/packagemanager/packages) der Ziel-App |
+| Paket   | (**Erforderlich**) PackageFullName (von GET /api/app/packagemanager/packages) der Ziel-App |
 
 **Anforderungsheader**
 
@@ -301,21 +301,21 @@ Mit dem folgenden Anforderungsformat können Sie eine App deinstallieren.
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -371,21 +371,21 @@ Die Antwort enthält eine Liste der installierten Pakete mit zugehörigen Detail
     },...
 ]}
 ```
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -399,7 +399,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat können Sie eine Liste der auf dem Computer installierten Bluetooth-Geräte abrufen. Dies kann auch auf eine WebSocket-Verbindung mit denselben JSON-Daten aktualisiert werden.
+Mit dem folgenden Anforderungsformat kannst du eine Liste der auf dem Computer installierten Bluetooth-Geräte abrufen. Dies kann auch mit denselben JSON-Daten zu einer WebSocket-Verbindung aktualisiert werden.
  
 | Methode        | Anforderungs-URI |
 | :------          | :------ |
@@ -435,19 +435,19 @@ Die Antwort enthält ein JSON-Array von Bluetooth-Geräten, die mit dem Gerät v
     },...
 ]}
 ```
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode | Beschreibung |
 | :------             | :------ |
-| 200              | „OK“ aus |
+| 200              | OK |
 | 4XX              | Fehlercodes |
 | 5XX              | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -469,8 +469,8 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| ID            | (**erforderlich**) Die Geräte-ID für das Bluetooth-Gerät; muss Base64-codiert sein. |
-| Bundesland/Kanton         | (**erforderlich**) Dies kann `"On"` oder `"Off"`sein. |
+| ID            | (**Erforderlich:** ) Die Geräte-ID für das Bluetooth-Gerät; muss Base64-codiert sein. |
+| Bundesland/Kanton         | (**Erforderlich:** ) Dies kann `"On"` oder `"Off"` sein. |
 
 **Anforderungsheader**
 
@@ -482,28 +482,28 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode | Beschreibung |
 | :------             | :------ |
-| 200              | „OK“ aus |
+| 200              | OK |
 | 4XX              | Fehlercodes |
 | 5XX              | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### <a name="get-a-list-of-paired-bluetooth-devices"></a>Eine Liste mit gekoppelten Bluetooth-Geräten erhalten
+### <a name="get-a-list-of-paired-bluetooth-devices"></a>Abrufen einer Liste mit gekoppelten Bluetooth-Geräten
 
 **Anforderung**
 
-Sie können eine Liste der derzeit gekoppelten Bluetooth-Geräte mit folgendem Anforderungs Format erhalten. Dies kann auf eine WebSocket-Verbindung mit denselben JSON-Daten aktualisiert werden. Während der Lebensdauer der WebSocket-Verbindung kann sich die Geräteliste ändern. Jedes Mal, wenn ein Update vorhanden ist, wird eine komplette Liste der Geräte über die WebSocket-Verbindung gesendet.
+Mit dem folgenden Anforderungsformat kannst du eine Liste der derzeit gekoppelten Bluetooth-Geräte abrufen. Dies kann mit denselben JSON-Daten zu einer WebSocket-Verbindung aktualisiert werden. Die Geräteliste kann sich während der Lebensdauer der WebSocket-Verbindung ändern. Bei jedem Update wird eine vollständige Liste der Geräte über die WebSocket-Verbindung gesendet.
 
 | Methode        | Anforderungs-URI       |
 | :---          | :---              |
@@ -524,7 +524,7 @@ Sie können eine Liste der derzeit gekoppelten Bluetooth-Geräte mit folgendem A
 
 **Antwort**
 
-Die Antwort enthält ein JSON-Array von Bluetooth-Geräten, die derzeit paarweise gekoppelt sind.
+Die Antwort enthält ein JSON-Array von Bluetooth-Geräten, die derzeit gekoppelt sind.
 ```json
 {"PairedDevices": [
     {
@@ -534,14 +534,14 @@ Die Antwort enthält ein JSON-Array von Bluetooth-Geräten, die derzeit paarweis
     },...
 ]}
 ```
-Das Feld *audioconnectionstatus* ist vorhanden, wenn das Gerät für Audiodaten auf diesem System verwendet werden kann. (Richtlinien und optionale Komponenten können dies beeinflussen.) *Audioconnectionstatus* ist entweder "verbunden" oder "getrennt".
+Das Feld *AudioConnectionStatus* ist vorhanden, wenn das Gerät auf diesem System für Audiodaten verwendet werden kann. (Dies kann durch Richtlinien und optionale Komponenten beeinflusst werden.) Der *AudioConnectionStatus* ist entweder „Verbunden“ oder „Getrennt“.
 
 ---
-### <a name="get-a-list-of-available-bluetooth-devices"></a>Eine Liste der verfügbaren Bluetooth-Geräte erhalten
+### <a name="get-a-list-of-available-bluetooth-devices"></a>Abrufen einer Liste mit verfügbaren Bluetooth-Geräten
 
 **Anforderung**
 
-Sie können eine Liste der Bluetooth-Geräte, die für die Kopplung verfügbar sind, mithilfe des folgenden Anforderungs Formats erhalten. Dies kann auf eine WebSocket-Verbindung mit denselben JSON-Daten aktualisiert werden. Während der Lebensdauer der WebSocket-Verbindung kann sich die Geräteliste ändern. Jedes Mal, wenn ein Update vorhanden ist, wird eine komplette Liste der Geräte über die WebSocket-Verbindung gesendet.
+Mit dem folgenden Anforderungsformat kannst du eine Liste der für die Kopplung verfügbaren Bluetooth-Geräte abrufen. Dies kann mit denselben JSON-Daten zu einer WebSocket-Verbindung aktualisiert werden. Die Geräteliste kann sich während der Lebensdauer der WebSocket-Verbindung ändern. Bei jedem Update wird eine vollständige Liste der Geräte über die WebSocket-Verbindung gesendet.
 
 | Methode        | Anforderungs-URI          |
 | :---          | :---                 |
@@ -577,7 +577,7 @@ Die Antwort enthält ein JSON-Array von Bluetooth-Geräten, die derzeit für die
 
 **Anforderung**
 
-Stellt eine Verbindung mit dem Gerät her, wenn das Gerät für Audiodaten auf diesem System verwendet werden kann. (Richtlinien und optionale Komponenten können dies beeinflussen.)
+Stellt eine Verbindung mit dem Gerät her, sofern das Gerät für Audiodaten auf diesem System verwendet werden kann. (Dies kann durch Richtlinien und optionale Komponenten beeinflusst werden.)
 
 | Methode       | Anforderungs-URI           |
 | :---         | :---                  |
@@ -587,7 +587,7 @@ Stellt eine Verbindung mit dem Gerät her, wenn das Gerät für Audiodaten auf d
 
 | URI-Parameter | Beschreibung |
 | :---          | :--- |
-| ID            | (**erforderlich**) Die Zuordnungs Endpunkt-ID für das Bluetooth-Gerät und muss base64-codiert sein. |
+| ID            | (**Erforderlich:** ) Die Zuordnungsendpunkt-ID für das Bluetooth-Gerät; muss Base64-codiert sein. |
 
 **Anforderungsheader**
 
@@ -599,29 +599,29 @@ Stellt eine Verbindung mit dem Gerät her, wenn das Gerät für Audiodaten auf d
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode | Beschreibung |
 | :---             | :--- |
-| 200              | „OK“ aus |
+| 200              | OK |
 | 4XX              | Fehlercodes |
 | 5XX              | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
 
 ---
-### <a name="disconnect-a-bluetooth-device"></a>Verbindung mit einem Bluetooth-Gerät trennen
+### <a name="disconnect-a-bluetooth-device"></a>Trennen eines Bluetooth-Geräts
 
 **Anforderung**
 
-Die Verbindung des Geräts wird getrennt, wenn das Gerät für Audiodaten auf diesem System verwendet werden kann. (Richtlinien und optionale Komponenten können dies beeinflussen.)
+Trennt die Verbindung des Geräts, sofern das Gerät für Audiodaten auf diesem System verwendet werden kann. (Dies kann durch Richtlinien und optionale Komponenten beeinflusst werden.)
 
 | Methode       | Anforderungs-URI              |
 | :---         | :---                     |
@@ -631,7 +631,7 @@ Die Verbindung des Geräts wird getrennt, wenn das Gerät für Audiodaten auf di
 
 | URI-Parameter | Beschreibung |
 | :---          | :--- |
-| ID            | (**erforderlich**) Die Zuordnungs Endpunkt-ID für das Bluetooth-Gerät und muss base64-codiert sein. |
+| ID            | (**Erforderlich:** ) Die Zuordnungsendpunkt-ID für das Bluetooth-Gerät; muss Base64-codiert sein. |
 
 **Anforderungsheader**
 
@@ -643,19 +643,19 @@ Die Verbindung des Geräts wird getrennt, wenn das Gerät für Audiodaten auf di
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode | Beschreibung |
 | :---             | :--- |
-| 200              | „OK“ aus |
+| 200              | OK |
 | 4XX              | Fehlercodes |
 | 5XX              | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -702,29 +702,29 @@ Die Antwort enthält ein JSON-Array von Geräten, die mit dem Gerät verbunden s
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
 
-### <a name="get-data-on-connected-usb-deviceshubs"></a>Daten auf verbundenen USB-Geräte/Hubs abrufen
+### <a name="get-data-on-connected-usb-deviceshubs"></a>Abrufen von Daten von verbundenen USB-Geräten/Hubs
 
 **Anforderung**
 
-Sie können eine Liste von USB-Deskriptoren für verbundene USB-Geräte und Hubs erhalten, indem Sie das folgende Anfrageformat verwenden.
+Mit dem folgenden Anforderungsformat kannst du eine Liste von USB-Deskriptoren für verbundene USB-Geräte und Hubs abrufen.
 
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -762,7 +762,7 @@ Die Antwort ist ein JSON-Objekt, das die DeviceID für das USB-Gerät zusammen m
 }
 ```
 
-**Beispiel Rückgabe Daten**
+**Beispiel für Rückgabedaten**
 ```json
 {
     "DeviceList": [{
@@ -789,18 +789,18 @@ Die Antwort ist ein JSON-Objekt, das die DeviceID für das USB-Gerät zusammen m
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -809,7 +809,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 <hr>
 
-### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>Abrufen der Liste aller Absturzabbilder für Apps
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>Abrufen der Liste alle Absturzabbilder für Apps
 
 **Anforderung**
 
@@ -836,20 +836,20 @@ Mit dem folgenden Anforderungsformat können Sie die Liste aller verfügbaren Ab
 
 Die Antwort enthält eine Liste der Absturzabbilder für jede quergeladene Anwendung.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile (im Windows-Insider-Programm)
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -889,20 +889,20 @@ Die Antwort weist das folgende Format auf.
 {"CrashDumpEnabled": bool}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile (im Windows-Insider-Programm)
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -938,20 +938,20 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile (im Windows-Insider-Programm)
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -986,20 +986,20 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile (im Windows-Insider-Programm)
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -1037,20 +1037,20 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Die Antwort enthält eine Absturzabbilddatei. Sie können die Absturzabbilddatei mit WinDbg oder Visual Studio untersuchen.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile (im Windows-Insider-Programm)
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -1085,18 +1085,18 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile (im Windows-Insider-Programm)
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -1137,17 +1137,17 @@ Die Antwort enthält eine Liste der Minidumpdateinamen und die Größen dieser D
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -1184,19 +1184,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Die Antwort enthält die Speicherabbilddatei. Sie können diese Datei mithilfe von WinDbg untersuchen.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -1236,29 +1236,29 @@ Die Antwort enthält die CrashControl-Einstellungen. Weitere Informationen zu [C
 }
 ```
 
-**Dumptypen**
+**Abbildtypen**
 
 0: Deaktiviert
 
-1: Vollständiges Speicherabbild (sammelt den gesamten verwendeten Arbeitsspeicher)
+1: Vollständiges Speicherabbild (erfasst den gesamten verwendeten Arbeitsspeicher)
 
 2: Kernelspeicherabbild (ignoriert den Benutzermodusspeicher)
 
-3: Eingeschränktes Kernelminiabbild
+3: Eingeschränkter Kernelminidump
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -1290,19 +1290,19 @@ Mit dem folgenden Anforderungsformat können Sie ein Live-Kernelspeicherabbild a
 
 Die Antwort enthält das vollständige Kernelmodus-Speicherabbild. Sie können diese Datei mithilfe von WinDbg untersuchen.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -1338,19 +1338,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Die Antwort enthält die Prozesssicherung. Sie können diese Datei mit WinDbg oder Visual Studio untersuchen.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -1387,19 +1387,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -1435,20 +1435,20 @@ Mit dem folgenden Anforderungsformat können Sie eine Echtzeit-ETW-Sitzung erste
 
 Die Antwort enthält die ETW-Ereignisse von den aktivierten Anbietern.  ETW-WebSocket-Befehle finden Sie unten. 
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -1457,7 +1457,7 @@ Diese Befehle werden vom Client an den Server gesendet.
 
 | Befehl | Beschreibung |
 | :----- | :----- |
-| Anbieter *{guid}* aktivieren *{level}* | Den durch *{guid}* (ohne Klammern) markierten Anbieter auf der angegebenen Ebene aktivieren. *{level}* ist ein **int** zwischen 1 (am wenigsten detailliert) und 5 (ausführlich). |
+| Anbieter *{guid}* aktivieren *{level}* | Den durch *{guid}* (ohne Klammern) markierten Anbieter auf der angegebenen Ebene aktivieren. *{level}* ist ein **int** von 1 (am wenigsten detailliert) bis 5 (ausführlich). |
 | Anbieter *{guid}* deaktivieren | Den durch *{guid}* (ohne Klammern) markierten Anbieter deaktivieren. |
 
 Diese Antworten werden vom Server an den Client gesendet. Diese werden als Text gesendet, und erhalten Sie das folgende Format durch eine JSON-Analyse.
@@ -1538,18 +1538,18 @@ Die Antwort enthält die Liste der ETW-Anbieter. Diese Liste enthält den Anzeig
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -1591,28 +1591,28 @@ Mit dem folgenden Anforderungsformat können Sie die registrierten Anbieter aufl
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 - Standardstatuscodes
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="location"></a>Pfad
+## <a name="location"></a>Speicherort
 
 <hr>
 
-### <a name="get-location-override-mode"></a>Abrufen der Position „Override mode”
+### <a name="get-location-override-mode"></a>Abrufen des Überschreibungsmodus für den Standort
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat können Sie die HTTPS-Anforderungen für den Gerätespeicherstapel-Außerkraftsetzungsstatus abrufen. Der Entwicklermodus muss aktiv sein, damit dieser Aufruf erfolgreich ist.
+Mit dem folgenden Anforderungsformat kannst du den Überschreibungsstatus für den Gerätestandortstapel abrufen. Damit dieser Aufruf erfolgreich ausgeführt werden kann, muss der Entwicklermodus aktiv sein.
  
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -1633,35 +1633,35 @@ Mit dem folgenden Anforderungsformat können Sie die HTTPS-Anforderungen für de
 
 **Antwort**
 
-Die Antwort enthält den Außerkraftsetzungsstatus des Geräts im folgenden Format. 
+Die Antwort enthält den Überschreibungsstatus des Geräts im folgenden Format. 
 
 ```json
 {"Override" : bool}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-|  200 | „OK“ aus | 
+|  200 | OK | 
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
-### <a name="set-location-override-mode"></a>Festlegen der Position „Override mode”
+### <a name="set-location-override-mode"></a>Festlegen des Überschreibungsmodus für den Standort
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat können Sie die HTTPS-Anforderungen für den Gerätespeicherstapel-Außerkraftsetzungsstatus festlegen. Wenn aktiviert, ermöglicht die Speicherstapelposition das Einfügen einer Position. Der Entwicklermodus muss aktiv sein, damit dieser Aufruf erfolgreich ist.
+Mit dem folgenden Anforderungsformat kannst du den Überschreibungsstatus für den Gerätestandortstapel festlegen. Bei Aktivierung ermöglicht der Standortstapel das Einfügen einer Position. Damit dieser Aufruf erfolgreich ausgeführt werden kann, muss der Entwicklermodus aktiv sein.
 
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -1684,35 +1684,35 @@ Mit dem folgenden Anforderungsformat können Sie die HTTPS-Anforderungen für de
 
 **Antwort**
 
-Die Antwort enthält den Außerkraftsetzungsstatus des Geräts im folgenden Format. 
+Die Antwort enthält den Überschreibungsstatus, auf den das Gerät festgelegt wurde, im folgenden Format. 
 
 ```json
 {"Override" : bool}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
-### <a name="get-the-injected-position"></a>Die eingefügte Position abrufen
+### <a name="get-the-injected-position"></a>Abrufen der eingefügten Position
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat können Sie die HTTPS-Anforderungen für den eingefügten (unzulässigen) Speicherort abrufen. Ein eingefügter Speicherort muss festgelegt werden, oder es wird ein Fehler ausgelöst.
+Mit dem folgenden Anforderungsformat kannst du den eingefügten (gespooften) Gerätestandort abrufen. Es muss ein eingefügter Standort festgelegt sein, andernfalls wird ein Fehler ausgelöst.
  
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -1742,29 +1742,29 @@ Die Antwort enthält die aktuell eingefügten Breiten- und Längengradwerte im f
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 |  HTTP-Statuscode      | Beschreibung | 
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
-### <a name="set-the-injected-position"></a>Die eingefügte Position festlegen
+### <a name="set-the-injected-position"></a>Festlegen der eingefügten Position
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat können Sie die HTTPS-Anforderungen für den eingefügten (unzulässigen) Speicherort festlegen. Der „Override mode” des Speicherorts muss zunächst auf dem Gerät aktiviert sein und der festgelegte Speicherort muss ein gültiger Speicherort sein, oder es wird ein Fehler ausgelöst.
+Mit dem folgenden Anforderungsformat kannst du den eingefügten (gespooften) Gerätestandort festlegen. Der Überschreibungsmodus für den Standort muss zunächst auf dem Gerät aktiviert werden, und der festgelegte Standort muss gültig sein, andernfalls wird ein Fehler ausgelöst.
 
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -1790,7 +1790,7 @@ Mit dem folgenden Anforderungsformat können Sie die HTTPS-Anforderungen für de
 
 **Antwort**
 
-Die Antwort enthält den festgelegten Speicherort im folgenden Format. 
+Die Antwort enthält den festgelegten Standort im folgenden Format. 
 
 ```json
 {
@@ -1799,21 +1799,21 @@ Die Antwort enthält den festgelegten Speicherort im folgenden Format.
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -1854,21 +1854,21 @@ Die Antwort enthält den Namen des Computers im folgenden Format.
 {"ComputerName": string}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -1911,21 +1911,21 @@ Die Antwort enthält die Betriebssysteminformationen im folgenden Format.
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -1966,21 +1966,21 @@ Die Antwort enthält die Gerätefamilie (SKU – Desktop, Xbox, usw.).
 
 „DeviceType“ sieht wie folgt aus: „Windows.Xbox“, „Windows.Desktop“ usw. 
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -2015,19 +2015,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -2037,11 +2037,11 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 <hr>
 
-### <a name="get-the-active-user"></a>Aktiven Benutzer ermitteln
+### <a name="get-the-active-user"></a>Abrufen des aktiven Benutzers
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat können Sie den Namen des aktiven Gerätebenutzers abrufen.
+Mit dem folgenden Anforderungsformat kannst du den Namen des aktiven Gerätebenutzers abrufen.
  
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -2081,19 +2081,19 @@ Bei Misserfolg:
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -2146,20 +2146,20 @@ Die Antwort enthält eine Liste der Prozesse mit Details für jeden Prozess. Die
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -2225,27 +2225,27 @@ Die Antwort enthält die Leistungsstatistik für das System, z. B. CPU- und GPU-
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="power"></a>„Ein/Aus“
+## <a name="power"></a>Leistung
 
 <hr>
 
@@ -2288,20 +2288,20 @@ Die Informationen zum aktuellen Akkustatus werden im folgenden Format zurückgeg
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -2337,19 +2337,19 @@ Das aktive Energieschema hat das folgende Format.
 {"ActivePowerScheme": string (guid of scheme)}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -2381,19 +2381,19 @@ Eine vollständige Liste der verfügbaren Energiezustände ist auf einzelne Anwe
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -2428,19 +2428,19 @@ Die Informationen zum Energiezustand haben die folgende Vorlage.
 {"LowPowerState" : false, "LowPowerStateAvailable" : true }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -2475,19 +2475,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -2522,17 +2522,17 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -2564,19 +2564,19 @@ Mit dem folgenden Anforderungsformat können Sie einen Bericht zur Ruhezustandsu
 
 Die Antwort ist eine Datei mit der Ruhezustandsuntersuchung. 
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -2616,19 +2616,19 @@ Die Liste der verfügbaren Berichte hat die folgende Vorlage.
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
@@ -2660,24 +2660,24 @@ Mit dem folgenden Anforderungsformat können Sie die Transformation der Ruhezust
 
 Die Antwort enthält die Transformation der Ruhezustandsuntersuchung.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * IoT
 
 <hr>
 
-## <a name="remote-control"></a>Fernbedienung
+## <a name="remote-control"></a>Remotesteuerung
 
 <hr>
 
@@ -2706,19 +2706,19 @@ Mit dem folgenden Anforderungsformat können Sie den Zielcomputer neu starten.
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -2749,21 +2749,21 @@ Mit dem folgenden Anforderungsformat können Sie den Zielcomputer herunterfahren
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -2791,7 +2791,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 | URI-Parameter | Beschreibung |
 | :---          | :--- |
 | appid   | (**erforderlich**) Die PRAID für die App, die gestartet werden soll. Dieser Wert sollte hex64-codiert sein. |
-| package   | (**erforderlich**) Der vollständige Name für das App-Paket, das Sie starten möchten. Dieser Wert sollte hex64-codiert sein. |
+| Paket   | (**erforderlich**) Der vollständige Name für das App-Paket, das Sie starten möchten. Dieser Wert sollte hex64-codiert sein. |
 
 **Anforderungsheader**
 
@@ -2803,21 +2803,21 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -2840,7 +2840,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :---          | :--- |
-| package   | (**erforderlich**) Der vollständige Name des App-Pakets, das Sie beenden möchten. Dieser Wert sollte hex64-codiert sein. |
+| Paket   | (**erforderlich**) Der vollständige Name des App-Pakets, das Sie beenden möchten. Dieser Wert sollte hex64-codiert sein. |
 | forcestop   | (**optional**) Der Wert **yes** gibt an, dass das Beenden sämtlicher Prozesse erzwungen werden soll. |
 
 **Anforderungsheader**
@@ -2853,31 +2853,31 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-### <a name="kill-process-by-pid"></a>Prozess per PID beenden
+### <a name="kill-process-by-pid"></a>Beenden eines Prozesses anhand der PID
 
 **Anforderung**
 
-Mit dem folgenden Anforderungsformat können Sie einen Prozess beenden.
+Mit dem folgenden Anforderungsformat kannst du einen Prozess beenden.
  
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -2890,7 +2890,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| pid   | (**erforderlich**) Die eindeutige Prozess-ID für den zu beendenden Prozess. |
+| pid   | (**Erforderlich:** ) Die eindeutige Prozess-ID des zu beendenden Prozesses. |
 
 **Anforderungsheader**
 
@@ -2902,25 +2902,25 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="networking"></a>-Netzwerk
+## <a name="networking"></a>Netzwerk
 
 <hr>
 
@@ -2991,21 +2991,21 @@ Die Antwort enthält die IP-Konfiguration in der folgenden Vorlage.
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -3015,7 +3015,7 @@ Diese API hat die folgenden erwarteten Statuscodes:
 
 **Anforderung**
 
-Legt die IPv4-Konfiguration mit statischer IP-Adresse und DNS fest. Wenn keine statische IP-Adresse angegeben wird, wird DHCP aktiviert. Wenn eine statische IP-Adresse angegeben wird, muss auch DNS angegeben werden.
+Legt die IPv4-Konfiguration mit statischer IP-Adresse und DNS fest. Wenn keine statische IP-Adresse angegeben wurde, wird DHCP aktiviert. Wenn eine statische IP-Adresse angegeben wird, muss auch DNS angegeben werden.
  
 | Methode      | Anforderungs-URI |
 | :------     | :----- |
@@ -3026,14 +3026,14 @@ Legt die IPv4-Konfiguration mit statischer IP-Adresse und DNS fest. Wenn keine s
 
 | URI-Parameter | Beschreibung |
 | :---          | :--- |
-| AdapterName | (**erforderlich**) Die GUID der Netzwerkschnittstelle. |
-| IPAddress | Die statische IP-Adresse, die festgelegt werden soll. |
-| Subnetmask | (**erforderlich** , wenn *IPAddress* nicht NULL ist) Die statische Subnetzmaske. |
-| DefaultGateway | (**erforderlich** , wenn *IPAddress* nicht NULL ist) Das statische Standard Gateway. |
-| Primarydns | (**erforderlich** , wenn *IPAddress* nicht NULL ist) Das statische primäre DNS, das festgelegt werden soll. |
-| Secondaydns | (**erforderlich** , wenn *primarydns* nicht NULL ist) Das statische sekundäre DNS, das festgelegt werden soll. |
+| AdapterName | (**Erforderlich:** ) Die GUID der Netzwerkschnittstelle. |
+| IPAddress | Die festzulegende statische IP-Adresse. |
+| SubnetMask | (**Erforderlich**, wenn *IPAddress* nicht NULL ist:) Die statische Subnetzmaske. |
+| DefaultGateway | (**Erforderlich**, wenn *IPAddress* nicht NULL ist:) Das statische Standardgateway. |
+| PrimaryDNS | (**Erforderlich**, wenn *IPAddress* nicht NULL ist:) Das statische primäre DNS, das festgelegt werden soll. |
+| SecondayDNS | (**Erforderlich**, wenn *PrimaryDNS* nicht NULL ist:) Das statische sekundäre DNS, das festgelegt werden soll. |
 
-Aus Gründen der Übersichtlichkeit: um eine Schnittstelle auf DHCP festzulegen, serialisieren Sie nur die `AdapterName` auf dem Netzwerk:
+Aus Gründen der Übersichtlichkeit solltest du zum Festlegen einer Schnittstelle auf DHCP nur den `AdapterName` der Verbindung serialisieren:
 
 ```json
 {
@@ -3051,21 +3051,21 @@ Aus Gründen der Übersichtlichkeit: um eine Schnittstelle auf DHCP festzulegen,
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -3114,21 +3114,21 @@ Eine Liste der verfügbaren Drahtlosschnittstellen mit Details im folgenden Form
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -3151,7 +3151,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| interface   | (**erforderlich**) Die GUID für die Netzwerkschnittstelle, die zum Suchen nach Drahtlosnetzwerken verwendet werden soll, ohne Klammern. |
+| Schnittstelle   | (**erforderlich**) Die GUID für die Netzwerkschnittstelle, die zum Suchen nach Drahtlosnetzwerken verwendet werden soll, ohne Klammern. |
 
 **Anforderungsheader**
 
@@ -3185,21 +3185,21 @@ Die Liste der an der angegebenen *interface* gefundenen Drahtlosnetzwerke. Diese
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -3222,10 +3222,10 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| interface   | (**erforderlich**) Die GUID für die Netzwerkschnittstelle, die zum Herstellen der Verbindung mit dem Netzwerk verwendet werden soll. |
+| Schnittstelle   | (**erforderlich**) Die GUID für die Netzwerkschnittstelle, die zum Herstellen der Verbindung mit dem Netzwerk verwendet werden soll. |
 | op   | (**erforderlich**) Gibt die durchzuführende Aktion an. Mögliche Werte sind „connect“ und „disconnect“.|
-| ssid   | (**Erforderlich, wenn *op* == connect**) Die SSID des Netzwerks, mit dem die Verbindung hergestellt werden soll. |
-| key   | (**Erforderlich, wenn *op* == connect und Netzwerk erfordert Authentifizierung**) Der gemeinsam verwendete Schlüssel. |
+| ssid   | (**erforderlich, wenn *op* == connect**) Die SSID des Netzwerks, mit dem die Verbindung hergestellt werden soll. |
+| key   | (**Erforderlich, wenn *op* == connect und Netzwerk Authentifizierung erfordert**:) Der gemeinsam verwendete Schlüssel. |
 | createprofile | (**erforderlich**) Erstellen Sie ein Profil für das Netzwerk auf dem Gerät.  Dadurch stellt das Gerät künftig automatisch eine Verbindung zum Netzwerk her. Dies kann **ja** oder **nein** sein. |
 
 **Anforderungsheader**
@@ -3238,19 +3238,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -3273,7 +3273,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 | URI-Parameter | Beschreibung |
 | :------          | :------ |
-| interface   | (**erforderlich**) Die GUID der Netzwerkschnittstelle, die dem zu löschenden Profil zugeordnet ist. |
+| Schnittstelle   | (**erforderlich**) Die GUID der Netzwerkschnittstelle, die dem zu löschenden Profil zugeordnet ist. |
 | Profil   | (**erforderlich**) Der Name des zu löschenden Profils. |
 
 **Anforderungsheader**
@@ -3286,19 +3286,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -3342,19 +3342,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 - Antwort enthält die angeforderte Datei. 
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3398,19 +3398,19 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3457,19 +3457,19 @@ Die WER-Berichte in folgendem Format.
 ]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3513,20 +3513,20 @@ Der Status der WPR-Sitzung im folgenden Format.
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3570,20 +3570,20 @@ Beim Start gibt diese API den Status der WPR-Sitzung im folgenden Format zurück
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3614,22 +3614,22 @@ Mit dem folgenden Anforderungsformat können Sie eine WPR-Start-Ablaufverfolgung
 
 **Antwort**
 
--  Keine  **Hinweis** Hierbei handelt es sich um einen Vorgang mit langer Ausführungsdauer.  Er wird wieder verfügbar, wenn der ETL-Schreibvorgang auf der Festplatte abgeschlossen ist.
+-  Keine.  **Hinweis:** Hierbei handelt es sich um einen zeitintensiven Vorgang.  Er wird wieder verfügbar, wenn der ETL-Schreibvorgang auf der Festplatte abgeschlossen ist.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3673,20 +3673,20 @@ Beim Start gibt diese API den Status der WPR-Sitzung im folgenden Format zurück
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3717,22 +3717,22 @@ Mit dem folgenden Anforderungsformat können Sie eine WPR-Ablaufverfolgungssitzu
 
 **Antwort**
 
-- Keine  **Hinweis** Hierbei handelt es sich um einen Vorgang mit langer Ausführungsdauer.  Er wird wieder verfügbar, wenn der ETL-Schreibvorgang auf der Festplatte abgeschlossen ist.  
+- Keine.  **Hinweis:** Hierbei handelt es sich um einen zeitintensiven Vorgang.  Er wird wieder verfügbar, wenn der ETL-Schreibvorgang auf der Festplatte abgeschlossen ist.  
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3772,20 +3772,20 @@ Der Status der WPR-Ablaufverfolgungssitzung im folgenden Format.
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3830,20 +3830,20 @@ Die Liste mit den abgeschlossenen Ablaufverfolgungssitzungen wird im folgenden F
 }]}
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3880,20 +3880,20 @@ Im Anforderungs-URI kann der folgende zusätzliche Parameter angegeben werden:
 
 - Gibt die ETL-Ablaufverfolgungsdatei zurück.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3930,20 +3930,20 @@ Im Anforderungs-URI kann der folgende zusätzliche Parameter angegeben werden:
 
 - Gibt die ETL-Ablaufverfolgungsdatei zurück.
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
 * IoT
 
@@ -3976,7 +3976,7 @@ Anzeigen der derzeit für das Gerät angewendeten Tags.  Diese werden über DNS-
 
 - Keine
 
-**Antwort** Die derzeit angewendeten Tags im folgenden Format: 
+**Antwort** Die derzeit angewendeten Tags im folgenden Format. 
 ```json
  {
     "tags": [
@@ -3987,21 +3987,21 @@ Anzeigen der derzeit für das Gerät angewendeten Tags.  Diese werden über DNS-
 }
 ```
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 5XX | Serverfehler |
 
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -4033,21 +4033,21 @@ Löschen aller Tags derzeit von DNS-SD angekündigten Tags.
 **Antwort**
  - Keine
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 5XX | Serverfehler |
 
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -4081,20 +4081,20 @@ Löschen eines derzeit von DNS-SD angekündigten Tags.
 **Antwort**
  - Keine
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
  
@@ -4128,21 +4128,21 @@ Hinzufügen eines Tags zur DNS-SD-Ankündigung.
 **Antwort**
  - Keine
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 401 | Überlauf des Tagbereichs.  Tritt auf, wenn das vorgeschlagene Tag zu lang für den resultierenden DNS-SD-Dienstdatensatz ist. |
 
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
-* Xbox-Taste
+* Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -4180,7 +4180,7 @@ Abrufen einer Liste zugänglicher Ordner der obersten Ebene.
     "folder1",...
 ]}
 ```
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -4194,9 +4194,9 @@ Diese API hat die folgenden erwarteten Statuscodes:
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
-* Xbox-Taste
+* Xbox
 * IoT
 
 <hr>
@@ -4217,8 +4217,8 @@ Abrufen einer Liste von Dateien in einem Ordner.
 | URI-Parameter | Beschreibung |
 | :------     | :----- |
 | knownfolderid | (**Erforderlich**) Das Verzeichnis auf oberster Ebene, das die Liste der Dateien enthalten soll. Verwenden Sie **LocalAppData** für den Zugriff auf quergeladene Apps. |
-| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData**) Der vollständige Name des Pakets der App, für die Sie sich interessieren. |
-| path | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
+| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData:** ) Der vollständige Name des gewünschten Pakets der App. |
+| Pfad | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
 
 **Anforderungsheader**
 
@@ -4242,22 +4242,22 @@ Abrufen einer Liste von Dateien in einem Ordner.
     },...
 ]}
 ```
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |
+| 200 | OK |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
-* Xbox-Taste
+* Xbox
 * IoT
 
 <hr>
@@ -4278,8 +4278,8 @@ Abrufen einer Datei aus einem bekannten Ordner oder aus „appLocalData“
 | :------     | :----- |
 | knownfolderid | (**Erforderlich**) Das Verzeichnis auf oberster Ebene, in das Sie Dateien herunterladen möchten. Verwenden Sie **LocalAppData** für den Zugriff auf quergeladene Apps. |
 | Dateiname | (**Erforderlich**) Der Name der Datei, die heruntergeladen wird. |
-| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData**) Der vollständige Name des Pakets, für das Sie sich interessieren. |
-| path | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
+| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData:** ) Der vollständige Name des gewünschten Pakets. |
+| Pfad | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
 
 **Anforderungsheader**
 
@@ -4291,7 +4291,7 @@ Abrufen einer Datei aus einem bekannten Ordner oder aus „appLocalData“
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
@@ -4304,9 +4304,9 @@ Diese API hat die folgenden erwarteten Statuscodes:
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
-* Xbox-Taste
+* Xbox
 * IoT
 
 <hr>
@@ -4329,8 +4329,8 @@ Umbenennen einer Datei in einem Ordner.
 | knownfolderid | (**Erforderlich**) Das übergeordnete Verzeichnis, in dem sich die Datei befindet. Verwenden Sie **LocalAppData** für den Zugriff auf quergeladene Apps. |
 | Dateiname | (**Erforderlich**) Der ursprüngliche Name der umzubenennenden Datei. |
 | newfilename | (**erforderlich**) Der neue Name der Datei.|
-| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData**) Der vollständige Name des Pakets der App, für die Sie sich interessieren. |
-| path | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
+| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData:** ) Der vollständige Name des gewünschten Pakets der App. |
+| Pfad | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
 
 **Anforderungsheader**
 
@@ -4344,22 +4344,22 @@ Umbenennen einer Datei in einem Ordner.
 
 - Keine
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |. Datei umbenannt
+| 200 | OK |. Datei umbenannt
 | 404 | Datei nicht gefunden |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
-* Xbox-Taste
+* Xbox
 * IoT
 
 <hr>
@@ -4380,8 +4380,8 @@ Löschen einer Datei in einem Ordner.
 | :------     | :----- |
 | knownfolderid | (**Erforderlich**) Das Verzeichnis auf oberster Ebene, in dem Sie Dateien löschen möchten. Verwenden Sie **LocalAppData** für den Zugriff auf quergeladene Apps. |
 | Dateiname | (**erforderlich**) Der Name der zu löschenden Datei. |
-| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData**) Der vollständige Name des Pakets der App, für die Sie sich interessieren. |
-| path | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
+| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData:** ) Der vollständige Name des gewünschten Pakets der App. |
+| Pfad | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
 
 **Anforderungsheader**
 
@@ -4395,22 +4395,22 @@ Löschen einer Datei in einem Ordner.
 
 - Keine 
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |. Die Datei wird gelöscht. |
+| 200 | OK |. Die Datei wird gelöscht. |
 | 404 | Datei nicht gefunden |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
-* Xbox-Taste
+* Xbox
 * IoT
 
 <hr>
@@ -4430,8 +4430,8 @@ Hochladen einer Datei in einen Ordner.  Dadurch wird eine vorhandene Datei mit d
 | URI-Parameter | Beschreibung |
 | :------     | :----- |
 | knownfolderid | (**Erforderlich**) Das Verzeichnis auf oberster Ebene, in das Sie Dateien hochladen möchten. Verwenden Sie **LocalAppData** für den Zugriff auf quergeladene Apps. |
-| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData**) Der vollständige Name des Pakets der App, für die Sie sich interessieren. |
-| path | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
+| packagefullname | (**Erforderlich, wenn *knownfolderid* == LocalAppData:** ) Der vollständige Name des gewünschten Pakets der App. |
+| Pfad | (**Optional**) Das Unterverzeichnis in dem oben angegebenen Ordner oder Paket. |
 
 **Anforderungsheader**
 
@@ -4443,20 +4443,20 @@ Hochladen einer Datei in einen Ordner.  Dadurch wird eine vorhandene Datei mit d
 
 **Antwort**
 
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 | HTTP-Statuscode      | Beschreibung |
 | :------     | :----- |
-| 200 | „OK“ aus |. Die Datei wird hochgeladen |
+| 200 | OK |. Die Datei wird hochgeladen |
 | 4XX | Fehlercodes |
 | 5XX | Fehlercodes |
 
 **Verfügbare Gerätefamilien**
 
 * Windows Mobile
-* Windows-Desktop
+* Windows Desktop
 * HoloLens
-* Xbox-Taste
+* Xbox
 * IoT

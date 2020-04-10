@@ -1,14 +1,14 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: Optimieren des XAML-Layouts
-description: Layout kann ein kostspieliger Teil einer XAML-app werden &\#8212; in CPU-Auslastung und Aufwand. Hier sind einige einfache Schritte, mit denen Sie die Layoutleistung Ihrer XAML-App verbessern können.
+description: Das Layout kann einen aufwendigen Teil einer XAML-App darstellen, sowohl hinsichtlich der CPU-Nutzung als auch der Beanspruchung des Arbeitsspeichers. Hier sind einige einfache Schritte, mit denen Sie die Layoutleistung Ihrer XAML-App verbessern können.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 92dca27a4cfb02f5d1bcb722683eca89ec16a6d6
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66362221"
@@ -18,7 +18,7 @@ ms.locfileid: "66362221"
 
 **Wichtige APIs**
 
--   [**Bereich**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+-   [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 Unter Layout wird das Definieren der visuellen Struktur der Benutzeroberfläche verstanden. Der primäre Mechanismus zum Beschreiben des Layouts in XAML sind Bereiche, d. h. Containerobjekte, mit denen Sie UI-Elemente positionieren und anzuordnen können. Das Layout kann sowohl bezüglich der CPU-Auslastung als auch des Aufwands ein ressourcenintensiver Teil einer XAML-App sein. Hier sind einige einfache Schritte, mit denen Sie die Layoutleistung Ihrer XAML-App verbessern können.
 
@@ -42,7 +42,7 @@ Beachten Sie die folgende Benutzeroberfläche.
 
 In diesen Beispielen werden drei Methoden zur Implementierung der gleichen Benutzeroberfläche gezeigt. Die einzelnen Implementierungsoptionen resultieren in nahezu identischen Pixeln auf dem Bildschirm, unterscheidet sich jedoch grundlegend in den Implementierungsdetails.
 
-Option 1: Geschachtelte [ **StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) Elemente
+Option 1: Geschachtelte [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)-Elemente
 
 Obwohl dieses Modell am einfachsten ist, werden darin 5 Bereichselemente verwendet, was zu erheblichem Mehraufwand führt.
 
@@ -70,7 +70,7 @@ Obwohl dieses Modell am einfachsten ist, werden darin 5 Bereichselemente verwend
 </StackPanel>
 ```
 
-Option 2: Ein einzelnes [ **Raster**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
+Option 2: Ein einzelnes [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Element
 
 Das [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Element erhöht die Komplexität, jedoch wird nur ein einzelnes Bereichselement verwendet.
 
@@ -103,7 +103,7 @@ Das [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 </Grid>
 ```
 
-Option 3: Ein einzelnes [ **"relativepanel"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel):
+Option 3: Ein einzelnes [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)-Element:
 
 Dieser einzelne Bereich ist etwas komplexer als die Verwendung der geschachtelten Bereiche, aber möglicherweise leichter zu verstehen und zu verwalten als ein [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Element.
 
@@ -134,7 +134,7 @@ Wie die folgenden Beispiele zeigen, gibt es viele Möglichkeiten, die gleiche Be
 
 Eine allgemeine UI-Anforderung ist ein Layout, in dem Elemente einander überlappen. In der Regel werden Abstand, Rand, Ausrichtung und Transformationen verwendet, um Elementen in dieser Weise zu positionieren. Das [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Steuerelement in XAML wurde zur Verbesserung der Layoutleistung für sich überschneidende Elemente optimiert.
 
-**Wichtige**  um die Verbesserung zu anzuzeigen, verwenden Sie eine einzelne Zelle [ **Raster**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid). Definieren Sie weder [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) noch [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
+**Wichtig**   Um eine Verbesserung festzustellen, verwende ein einzelliges [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Element. Definieren Sie weder [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) noch [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions).
 
 ### <a name="examples"></a>Beispiele
 
@@ -160,7 +160,7 @@ Eine allgemeine UI-Anforderung ist ein Layout, in dem Elemente einander überlap
 
 ## <a name="use-a-panels-built-in-border-properties"></a>Verwenden der integrierten Rahmeneigenschaften von Bereichen
 
-[**Raster**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [ **StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [ **"relativepanel"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel), und [  **ContentPresenter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter) Steuerelemente verfügen über integrierte Border-Eigenschaften, mit denen Sie einen Rahmen um diese ohne eine zusätzliche zeichnen [ **Rahmen** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) Element Ihre XAML. Die neuen Eigenschaften, die den integrierten Rahmen zu unterstützen sind: **BorderBrush**, **BorderThickness**, **CornerRadius**, und **Padding**. Jede davon ist eine [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)-Eigenschaft, sodass sie mit Bindungen und Animationen verwendet werden können. Sie sind als vollständiger Ersatz für ein separates **Border**-Element konzipiert.
+Die Steuerelemente [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid), [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel), [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) und [**ContentPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter) haben integrierte Rahmeneigenschaften, mit denen du einen Rahmen um sie herum zeichnen kannst, ohne XAML ein zusätzliches [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)-Element hinzufügen zu müssen. Die neuen Eigenschaften, die den integrierten Rahmen unterstützen sind: **BorderBrush**, **BorderThickness**, **CornerRadius** und **Padding**. Jede davon ist eine [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)-Eigenschaft, sodass sie mit Bindungen und Animationen verwendet werden können. Sie sind als vollständiger Ersatz für ein separates **Border**-Element konzipiert.
 
 Wenn Ihre Benutzeroberfläche über [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)-Elemente um Bereiche verfügt, verwenden Sie stattdessen den integrierten Rahmen. Dadurch wird ein zusätzliches Element in der Layoutstruktur Ihrer App eingespart. Wie bereits erwähnt, kann die Struktur dadurch deutlich vereinfacht werden, insbesondere bei einer UI mit sich wiederholenden Elementen.
 
@@ -175,11 +175,11 @@ Wenn Ihre Benutzeroberfläche über [**Border**](https://docs.microsoft.com/uwp/
 
 ## <a name="use-sizechanged-events-to-respond-to-layout-changes"></a>Verwendung von **SizeChanged**-Ereignissen infolge von Layoutänderungen
 
-Die [ **"FrameworkElement"** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) Klasse macht zwei ähnliche Ereignisse für die Reaktion auf Änderungen am Layout: [**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) und [ **SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Möglicherweise verwenden Sie eines dieser Ereignisse, um Benachrichtigungen zu empfangen, wenn ein Element während des Layouts geändert wird. Die Semantik der beiden Ereignisse unterscheiden sich, und es gibt wichtige Leistungsaspekte, die bei der Auswahl zu berücksichtigen sind.
+Die [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)-Klasse umfasst zwei ähnliche Ereignisse für die Reaktion auf Layoutänderungen: [**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) und [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged). Möglicherweise verwenden Sie eines dieser Ereignisse, um Benachrichtigungen zu empfangen, wenn ein Element während des Layouts geändert wird. Die Semantik der beiden Ereignisse unterscheiden sich, und es gibt wichtige Leistungsaspekte, die bei der Auswahl zu berücksichtigen sind.
 
 Wenn eine gute Leistung Priorität hat, ist [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) fast immer die richtige Wahl. **SizeChanged** hat eine intuitive Semantik. Es wird während des Layouts ausgelöst, wenn die Größe des [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)-Objekts aktualisiert wurde.
 
-[**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) wird auch ausgelöst, während des Layouts, verfügt aber über globale Semantik – es wird für jedes Element ausgelöst, wenn ein Element aktualisiert wird. Es ist üblich, Ereignishandler nur lokal zu verarbeiten, wodurch der Code häufiger als nötig ausgeführt wird. Verwenden Sie **LayoutUpdated** nur, wenn Sie wissen müssen, wann ein Element ohne Größenänderung neu angeordnet wird (was ungewöhnlich ist).
+[**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) wird auch während des Layouts ausgelöst, hat aber eine globale Semantik. Es wird für jedes Element ausgelöst, sobald ein Element aktualisiert wird. Es ist üblich, Ereignishandler nur lokal zu verarbeiten, wodurch der Code häufiger als nötig ausgeführt wird. Verwenden Sie **LayoutUpdated** nur, wenn Sie wissen müssen, wann ein Element ohne Größenänderung neu angeordnet wird (was ungewöhnlich ist).
 
 ## <a name="choosing-between-panels"></a>Auswahl von Bereichen
 
