@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c6995ab6116d4e3bda8e21c397ab3b4985732763
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
+ms.sourcegitcommit: 252dbf4483d58dd7093a79726a29923109eebee5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77639767"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696632"
 ---
 # <a name="acrylic-material"></a>Acryl-Material
 
@@ -76,15 +76,6 @@ Die auffälligste Eigenschaft von Acryl ist seine Transparenz. Es gibt zwei Acry
 Bei Verwendung von In-App-Acryl auf Navigationsoberflächen sollten Sie erwägen, den Inhalt unter dem Acrylbereich auszudehnen, um den Flow in Ihrer App zu verbessern. „NavigationView“ erledigt dies automatisch für Sie. Um einen Streifenbildungseffekt zu vermeiden, versuchen Sie nicht, mehrere Acrylelemente Rand an Rand zu platzieren, da dies zu einem unerwünschten Rand zwischen den beiden weichgezeichneten Oberflächen führen kann. Acryl ist ein Tool zum Erzeugen von visueller Harmonie in Ihren Designs, bei inkorrekter Verwendung können sich jedoch visuelle Störungen ergeben.
 
 Berücksichtigen Sie die folgenden Verwendungsmuster, um zu entscheiden, wie sich Acryl am besten in Ihre App integrieren lässt:
-
-### <a name="horizontal-navigation-or-commanding"></a>Horizontale Navigation oder Steuerung
-
-Wenn sich „NavigationView“ in Ihrer App nicht verwenden lässt und Sie Acryl selbst hinzufügen möchten, empfehlen wir die Verwendung von relativ durchscheinendem Acryl mit einer Farbton-Deckkraft von 60 %.
- - Wenn der Bereich als Überlagerung von anderen Inhalten der App geöffnet wird, sollte dies [60 % In-App-Acryl](#acrylic-theme-resources) sein.
-
-![Karten-App mit horizontaler In-App-Steuerung](images/Maps_In_App_Acrylic_1.png)
-
-Zusätzlich erhält Ihre App dadurch, dass sich Ihr Inhalt unter dem oben liegenden Acryl ausdehnt oder scrollt, eine immersivere und nahtlosere Erfahrung.
 
 ### <a name="vertical-panes"></a>Vertikale Bereiche
 
@@ -202,7 +193,7 @@ Sie können dem Acryl Ihrer App einen Farbton hinzufügen, um das Branding anzuz
 
 Um einen Acrylpinsel hinzuzufügen, definieren Sie die Ressourcen für das dunkle und das helle Design und für das Design mit hohem Kontrast. Beachten Sie, dass wir bei hohem Kontrast die Verwendung eines „SolidColorBrush“ mit demselben X:Key wie für den dunklen/hellen AcrylicBrush empfehlen.
 
-> [!Note] 
+> [!Note]
 > Wenn Sie keinen „TintLuminosityOpacity“-Wert angeben, passt das System seinen Wert automatisch auf Grundlage Ihrer Werte für „TintColor“ und „TintOpacity“ an.
 
 ```xaml
