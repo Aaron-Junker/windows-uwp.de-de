@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ab62a6e6c2e294e8d6b5222eab4a1a9ae25a2e
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: c61d1478c38df315a3fe3c20151de8c2bfbca4e2
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081009"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123567"
 ---
 # <a name="dialogs-and-flyouts"></a>Dialogfelder und Flyouts
 
@@ -24,15 +24,12 @@ Dialogfelder und Flyouts sind vorübergehende UI-Elemente, die angezeigt werden,
 
 > **Plattform-APIs:** [ContentDialog-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-:::row:::
-    :::column:::
 **Dialogs**
 
 ![Beispiel für ein Dialogfeld](../images/dialogs/dialog_RS2_delete_file.png)
 
 Dialogfelder sind modale Benutzeroberflächenüberlagerungen, die kontextbezogene App-Informationen enthalten. Dialogfelder blockieren Interaktionen mit dem App-Fenster, bis sie explizit geschlossen werden. Sie verlangen häufig eine Aktion vom Benutzer.
-    :::column-end:::
-    :::column::: 
+
 **Flyouts**
 
 ![Flyout-Beispiel](../images/flyout-example2.png)
@@ -40,9 +37,6 @@ Dialogfelder sind modale Benutzeroberflächenüberlagerungen, die kontextbezogen
 Ein Flyout ist ein einfaches kontextbezogenes Popupmenü zum Anzeigen der Benutzeroberfläche, die im Zusammenhang mit den Aktionen des Benutzers steht. Es umfasst die Platzierungs- und Größenlogik und kann dazu verwendet werden, ein sekundäres Steuerelement oder weitere Einzelheiten zu einem Element anzuzeigen.
 
 Im Gegensatz zu einem Dialogfeld kann ein Flyout durch Tippen oder Klicken auf eine Stelle außerhalb des Flyouts schnell geschlossen werden. Das Drücken der ESC- oder Zurück-Taste sowie das Ändern der Größe des App-Fensters oder der Ausrichtung des Geräts haben denselben Effekt.
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -52,8 +46,6 @@ Wenn ein Dialogfeld oder Flyout eingesetzt werden soll, müssen Sie sich für ei
 
 Angesichts der Tatsache, dass Dialogfelder im Gegensatz zu Flyouts Interaktionen blockieren, sollten Dialogfelder auf Situationen beschränkt bleiben, in denen der Benutzer unterbrochen werden soll, um sich auf eine bestimmte Information oder die Beantwortung einer Frage zu konzentrieren. Flyouts hingegen können verwendet werden, wenn Sie auf etwas aufmerksam machen möchten, das der Benutzer jedoch ignorieren kann.
 
-:::row:::
-    :::column:::
    <p><b>Fälle, in denen ein Dialogfeld verwendet werden sollte:</b> <br/>
 <ul>
 <li>Für wichtige Informationen, die der Benutzer vor dem Fortsetzen lesen und bestätigen <b>muss</b>. Beispiele:
@@ -69,17 +61,14 @@ Angesichts der Tatsache, dass Dialogfelder im Gegensatz zu Flyouts Interaktionen
 <li>Fragen, wenn dem Benutzer eine blockierende Frage gestellt werden muss, z. B. wenn die App nicht im Auftrag des Benutzers eine Auswahl treffen kann. Eine blockierende Frage kann nicht ignoriert oder verschoben werden und sollte dem Benutzer klar definierte Auswahlmöglichkeiten bieten.</li>
 </ul>
 </p>
-    :::column-end:::
-    :::column:::
+
+
    <p><b>Fälle, in denen ein Flyout verwendet werden sollte:</b> <br/>
 <ul>
 <li>Erfassen zusätzlicher Informationen, die erforderlich sind, bevor eine Aktion abgeschlossen werden kann.</li>
 <li>Anzeigen von Informationen, die nur vorübergehend relevant sind. So können Sie z. B. in einer Fotogalerie-App ein Flyout einsetzen, damit eine große Version des Bilds angezeigt wird, wenn der Benutzer auf eine Miniaturansicht klickt.</li>
 <li>Anzeigen weiterer Informationen, z. B. von Details oder ausführlicheren Beschreibungen eines Elements auf der Seite.</li>
 </ul></p>
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>Möglichkeiten, die Verwendung von Dialogfeldern und Flyouts zu vermeiden
 
