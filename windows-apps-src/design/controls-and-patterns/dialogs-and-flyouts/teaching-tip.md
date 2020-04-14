@@ -2,7 +2,7 @@
 Description: Ein Unterrichtstipp ist ein semipersistentes und inhaltsreiches Flyout, das Kontextinformationen bereitstellt.
 title: Unterrichtstipps
 template: detail.hbs
-ms.date: 04/19/2019
+ms.date: 04/01/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: yulikl
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 6276ef9bcb6b01fd557057d3d36939350314015b
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 06734c854f0097db5fa96e35d4123dde8bda8a95
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081052"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614138"
 ---
 # <a name="teaching-tip"></a>Unterrichtstipp
 
@@ -27,16 +27,20 @@ Ein Unterrichtstipp ist möglicherweise einfach ausblendbar oder erfordert expli
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](../images/winui-logo-64x64.png) | Das Steuerelement **TeachingTip** ist in der Bibliothek „Windows UI“ enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](../images/winui-logo-64x64.png) | Das Steuerelement **TeachingTip** erfordert die Windows-UI-Bibliothek. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **APIs der Bibliothek „Windows UI“** [TeachingTip-Klasse](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+
+> [!TIP]
+> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
 Verwende ein **TeachingTip**-Steuerelement, um die Aufmerksamkeit eines Benutzers auf neue oder wichtigen Updates und Features zu lenken, ihn an Optionen zu erinnern, die nicht zwingend erforderlich sind, aber die Benutzung optimieren, oder ihm zu erläutern, wie eine Aufgabe abgeschlossen werden soll.
 
 Da Unterrichtstipps vorübergehend sind, sind sie nicht das empfohlene Steuerelement, um Benutzer auf Fehler oder wichtige Statusänderungen hinzuweisen.
-
 
 ## <a name="examples"></a>Beispiele
 
@@ -68,14 +72,12 @@ Ein Unterrichtstipp erfordert es möglicherweise, dass der Benutzer ihn über di
 
 ![Eine Beispiel-App mit einem einfach ausblendbaren Unterrichtstipp in der unteren rechten Ecke Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.).](../images/teaching-tip-light-dismiss.png)
 
-
 ### <a name="create-a-teaching-tip"></a>Erstellen eines Unterrichtstipps
 
 Dies ist die XAML für ein zielgerichtetes Unterrichtstipp-Steuerelement, das das standardmäßige Aussehen von TeachingTip mit Titel und Untertitel veranschaulicht.
 Beachte dabei, dass der Unterrichtstipp an einer beliebigen Stelle in der Elementstruktur oder im zugrunde liegenden Code angezeigt werden kann. Im folgenden Beispiel befindet er sich in ResourceDictionary.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -87,8 +89,7 @@ XAML
 </Button>
 ```
 
-C#
-```C#
+```csharp
 public MainPage()
 {
     this.InitializeComponent();
@@ -109,8 +110,7 @@ Dies ist das Ergebnis, wenn die Seite mit der Schaltfläche und dem Unterrichtst
 
 Nicht alle Tipps beziehen sich auf ein Element auf dem Bildschirm. Für diese Szenarien wird die Zieleigenschaft nicht festgelegt, und der Unterrichtstipp wird stattdessen relativ zu den Rändern des XAML-Stamms angezeigt. Allerdings kann bei einem Unterrichtstipp die Spitze entfernt werden, während die Platzierung in Bezug zum Element der Benutzeroberfläche durch Festlegen der TailVisibility-Eigenschaft auf „Collapsed“ beibehalten wird. Das folgende Beispiel zeigt einen nicht zielgerichteten Unterrichtstipp.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -131,8 +131,7 @@ Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest d
 
 Ein zielgerichteter Unterrichtstipp, bei dem PreferredPlacement auf „BottomLeft“ festgelegt ist, erscheint mit der Spitze zentriert am unteren Rand des Ziels, und der Text des Unterrichtstipps wird nach links verschoben.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -147,11 +146,9 @@ XAML
 
 ![Eine Beispiel-App mit der Schaltfläche „Save“ (Speichern), auf die ein Unterrichtstipp verweist, darunter in der linken Ecke Der Tipptitel lautet „Saving automatically“ (Automatisch speichern) und der Untertitel lautet „We save your changes as you go - so you never have to.“ (Wir speichern deine Änderungen während der Arbeit, damit du das nicht tun musst.). Rechts oben im Unterrichtstipp gibt es eine Schaltfläche zum Schließen.](../images/teaching-tip-targeted-preferred-placement.png)
 
-
 Ein nicht zielgerichteter Unterrichtstipp, bei dem PreferredPlacement auf „BottomLeft“ festgelegt ist, wird unten links im XAML-Stamm angezeigt.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -175,8 +172,7 @@ Mithilfe der PlacementMargin-Eigenschaft kannst du steuern, wie weit ein zielger
 
 Das folgende Beispiel zeigt einen nicht zielgerichteten Tipp, bei dem die PlacementMargin-Werte „Left“/„Top“/„Right“/„Bottom“ jeweils auf 80 festgelegt sind.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -194,8 +190,7 @@ XAML
 
 Mithilfe der Content-Eigenschaft kannst du Inhalt zu einem Unterrichtstipp hinzufügen. Wenn mehr Inhalte angezeigt werden sollen, als die Größe eines Lerntipps zulässt, wird automatisch eine Bildlaufleiste aktiviert, damit ein Benutzer im Inhaltsbereich einen Bildlauf durchführen kann.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -221,8 +216,7 @@ Standardmäßig wird neben dem Titel eines Unterrichtstipps die Schaltfläche �
 
 Eine Schaltfläche für benutzerdefinierte Aktionen kann durch Festlegen der ActionButtonContent-Eigenschaft hinzugefügt werden (und optional den Eigenschaften „ActionButtonCommand“ und „ActionButtonCommandParameter“).
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -230,7 +224,7 @@ XAML
             Title="Saving automatically"
             Subtitle="We save your changes as you go - so you never have to."
             ActionButtonContent="Disable"
-            ActionButtonCommand="DisableAutoSave"
+            ActionButtonCommand="{x:Bind DisableAutoSaveCommand}"
             CloseButtonContent="Got it!">
                 <StackPanel>
                     <CheckBox x:Name="HideTipsCheckBox" Content="Don't show tips at start up" IsChecked="{x:Bind HidingTips, Mode=TwoWay}" />
@@ -247,8 +241,7 @@ XAML
 
 Mithilfe der Eigenschaft „HeroContent“ kannst du randlose Inhalte zu einem Unterrichtstipp hinzufügen. Die Platzierung des Hero-Inhalts kann mit der Eigenschaft „HeroContentPlacement“ auf oben oder unten in einem Unterrichtstipp festgelegt werden.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -269,8 +262,7 @@ XAML
 
 Neben dem Titel und dem Untertitel kannst du mithilfe der Eigenschaft „IconSource“ ein Symbol hinzufügen. Die empfohlene Symbolgröße ist u. a. 16 px, 24 px und 32 px.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save">
     <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -293,8 +285,7 @@ Die Funktion zum einfachen Ausblenden ist standardmäßig deaktiviert, kann aber
 
 Die Schließen-Schaltfläche wird aus einem einfach ausblendbaren Unterrichtstipp automatisch entfernt, damit dieses Verhalten für die Benutzer offensichtlich ist.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -308,12 +299,11 @@ XAML
 
 ### <a name="escaping-the-xaml-root-bounds"></a>Umgehen der Begrenzungen des XAML-Stamms
 
-Unter Windows 19H1 und höher kann ein Unterrichtstipp die Begrenzungen des XAML-Stamms und des Bildschirms umgehen. Verwende hierfür die Eigenschaft „ShouldConstrainToRootBounds“. Wenn diese Eigenschaft aktiviert ist, bleibt der Unterrichtstipp nicht innerhalb der Begrenzungen des XAML-Stamms und wird immer dem festgelegten PreferredPlacement-Modus entsprechend platziert. Aktiviere die Eigenschaft „IsLightDismissEnabled“, und lege den PreferredPlacement-Modus relativ mittig im XAML-Stamm fest, um die größtmögliche Benutzerfreundlichkeit sicherzustellen.
+Ab Windows 10, Version 1903 (Build 18362), kann ein Unterrichtstipp die Begrenzungen des XAML-Stamms und des Bildschirms verlassen, indem die Eigenschaft `ShouldConstrainToRootBounds` festgelegt wird. Wenn diese Eigenschaft aktiviert ist, bleibt der Unterrichtstipp nicht innerhalb der Begrenzungen des XAML-Stamms und wird immer dem festgelegten `PreferredPlacement`-Modus entsprechend platziert. Aktiviere die Eigenschaft `IsLightDismissEnabled`, und lege den `PreferredPlacement`-Modus relativ mittig im XAML-Stamm fest, um die größtmögliche Benutzerfreundlichkeit sicherzustellen.
 
 In früheren Versionen von Windows wird diese Eigenschaft ignoriert, und der Unterrichtstipp bleibt immer innerhalb der Begrenzungen des XAML-Stamms.
 
-XAML
-```XAML
+```xaml
 <Button x:Name="SaveButton" Content="Save" />
 
 <muxc:TeachingTip x:Name="AutoSaveTip"
@@ -331,10 +321,10 @@ XAML
 
 Das Schließen-Ereignis kann verwendet werden, um das Schließen eines Unterrichtstipps abzubrechen und/oder zu verzögern. Dadurch kannst du den Unterrichtstipp offen lassen oder etwas Zeit einräumen, damit eine Aktion oder eine benutzerdefinierte Animation ausgeführt wird. Wenn das Schließen eines Unterrichtstipps abgebrochen wird, wechselt IsOpen wieder zu „true“, während der Verzögerung wird jedoch die Einstellung „false“ beibehalten. Programmgesteuertes Schließen kann auch abgebrochen werden.
 
-**Hinweis: Wenn keine Platzierungsoption es erlaubt, dass ein Unterrichtstipp vollständig angezeigt wird, durchläuft dieser seinen Ereignislebenszyklus, um ein Schließen zu erzwingen, wenn auf keine Schließen-Schaltfläche zugegriffen werden kann. Wenn die App das Schließen-Ereignis abbricht, bleibt der Unterrichtstipp u. U. offen, wenn auf keine Schließen-Schaltfläche zugegriffen werden kann.**
+> [!NOTE]
+> Wenn keine Platzierungsoption es erlaubt, dass ein Unterrichtstipp vollständig angezeigt wird, durchläuft dieser seinen Ereignislebenszyklus, um ein Schließen zu erzwingen, wenn auf keine Schließen-Schaltfläche zugegriffen werden kann. Wenn die App das Schließen-Ereignis abbricht, bleibt der Unterrichtstipp u. U. offen, wenn auf keine Schließen-Schaltfläche zugegriffen werden kann.
 
-XAML
-```XAML
+```xaml
 <muxc:TeachingTip x:Name="EnableNewSettingsTip"
     Title="New ways to protect your privacy!"
     Subtitle="Please close this tip and review our updated privacy policy and privacy settings."
@@ -342,18 +332,18 @@ XAML
 </muxc:TeachingTip>
 ```
 
-C#
-```C#
-public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
+```csharp
+private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventArgs args)
 {
-    if (args.Reason == TeachingTipCloseReason.CloseButton)
+    if (args.Reason == muxc.TeachingTipCloseReason.CloseButton)
     {
         using(args.GetDeferral())
         {
-            bool success = await UpdateUserSettings(User thisUsersID);
+            bool success = UpdateUserSettings(User thisUsersID);
             if(!success)
             {
-                //We were not able to update the settings! Don't close the tip and display the reason why.
+                // We were not able to update the settings!
+                // Don't close the tip and display the reason why.
                 args.Cancel = true;
                 ShowLastErrorMessage();
             }
@@ -362,19 +352,18 @@ public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
 }
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="recommendations"></a>Empfehlungen
 
-### <a name="related-articles"></a>Verwandte Artikel
-
-* [Dialogfelder und Flyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
-
-### <a name="recommendations"></a>Empfehlungen
 * Tipps sind dauerhaft und dürfen keine Informationen oder Optionen enthalten, die für die Nutzung einer Anwendung von entscheidender Bedeutung sind.
 * Versuche, Unterrichtstipps nicht zu häufig anzuzeigen. Unterrichtstipps werden dann am ehesten beachtet, wenn sie während langer Sitzungen oder über mehrere Sitzungen hinweg gestaffelt angezeigt werden.
 * Außerdem sollten sie kompakt und gut verständlich sein. Untersuchungen zeigen, dass Benutzer im Durchschnitt nur drei bis fünf Wörter lesen und zwei bis drei Wörter erfassen, wenn sie entscheiden, ob sie mit einem Tipp interagieren.
 * Der Zugriff auf Gamepads ist bei einem Unterrichtstipp nicht garantiert. Weitere Informationen zu Anwendungen, die Gamepadeingaben vorhersagen, findest du unter [Gamepad und Fernbedienung]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction). Es wird empfohlen, den Zugriff des Gamepads auf alle Unterrichtstipps mit allen möglichen Konfigurationen der Benutzeroberfläche einer App zu testen.
 * Wenn du einen Unterrichtstipp aktivierst, um den XAML-Stamm zu umgehen, solltest du auch die Eigenschaft „IsLightDismissEnabled“ aktivieren und den PreferredPlacement-Modus recht mittig im XAML-Stamm festlegen.
 
-### <a name="reconfiguring-an-open-teaching-tip"></a>Neukonfiguration eines geöffneten Unterrichtstipps
+## <a name="reconfiguring-an-open-teaching-tip"></a>Neukonfiguration eines geöffneten Unterrichtstipps
 
 Manche Inhalte und Eigenschaften können neu konfiguriert werden, wenn der Unterrichtstipp geöffnet ist, und werden sofort wirksam. Andere Inhalte und Eigenschaften wie etwa die Symboleigenschaft, die Aktions- und Schließen-Schaltfläche und die Neukonfiguration zwischen einfachem Ausblenden und explizitem Ausblenden erfordern es, dass der Unterrichtstipp geschlossen und wieder geöffnet wird, damit die Änderungen der entsprechenden Eigenschaften wirksam werden. Wenn du das Ausblendverhalten von manuellem Ausblenden in einfaches Ausblenden änderst, während ein Unterrichtstipp geöffnet ist, wird die Schließen-Schaltfläche entfernt, bevor das einfache Ausblenden aktiviert wird, und der Tipp kann auf dem Bildschirm verbleiben.
+
+## <a name="related-articles"></a>Verwandte Artikel
+
+* [Dialogfelder und Flyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
