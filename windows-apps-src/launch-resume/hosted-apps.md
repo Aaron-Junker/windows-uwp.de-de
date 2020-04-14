@@ -1,25 +1,25 @@
 ---
 Description: Erfahren Sie, wie Sie eine gehostete app erstellen, die die ausführbaren Attribute, den Einstiegspunkt und die Runtime-Attribute einer Host-App erbt.
-title: Erstellen von gehosteten apps
+title: Erstellen gehosteter Apps
 ms.date: 01/28/2020
 ms.topic: article
-keywords: Windows 10, Desktop, Package, Identity, msix, Win32
+keywords: Windows 10, Desktop, Paket, Identität, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 870042f3a7737e5caf646d4d14ffd49af39a079f
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: a3017073b15ea18214e9c78263fb212bb192132b
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108143"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266928"
 ---
-# <a name="create-hosted-apps"></a>Erstellen von gehosteten apps
+# <a name="create-hosted-apps"></a>Erstellen gehosteter Apps
 
 Ab Windows 10, Version 2004, können Sie *gehostete Apps*erstellen. Eine gehostete App nutzt dieselbe ausführbare Datei und Definition wie eine übergeordnete *Host* -APP, sieht aber wie eine separate App auf dem System aus.
 
-Gehostete Apps sind nützlich für Szenarien, in denen eine Komponente (z. b. eine ausführbare Datei oder eine Skriptdatei) sich wie die Windows 10-App Verhalten soll. die Komponente benötigt jedoch einen Host Prozess, um ausgeführt werden zu können. Beispielsweise könnte ein PowerShell-oder Python-Skript als gehostete App übermittelt werden, für die ein Host installiert werden muss, um ausgeführt werden zu können. Eine gehostete App kann über eine eigene Start Kachel, eine eigene Identität und eine umfassende Integration in Windows 10-Features wie Hintergrundaufgaben, Benachrichtigungen, Kacheln und Freigabe Ziele verfügen.
+Gehostete Apps sind nützlich für Szenarien, in denen eine Komponente (z. b. eine ausführbare Datei oder eine Skriptdatei) sich wie eine eigenständige Windows 10-App Verhalten soll. die Komponente benötigt jedoch einen Host Prozess, um ausgeführt werden zu können. Beispielsweise könnte ein PowerShell-oder Python-Skript als gehostete App übermittelt werden, für die ein Host installiert werden muss, um ausgeführt werden zu können. Eine gehostete App kann über eine eigene Start Kachel, eine eigene Identität und eine umfassende Integration in Windows 10-Features wie Hintergrundaufgaben, Benachrichtigungen, Kacheln und Freigabe Ziele verfügen.
 
 Die Funktion "gehostete Apps" wird von mehreren Elementen und Attributen im Paket Manifest unterstützt, die einer gehosteten App ermöglichen, eine ausführbare Datei und eine Definition in einem Host-App-Paket zu verwenden. Wenn ein Benutzer die gehostete App ausführt, wird die ausführbare Datei des Hosts automatisch von dem Betriebssystem unter der Identität der gehosteten App gestartet. Der Host kann dann visuelle Assets, Inhalte oder Aufrufe von APIs als gehostete App laden. Die gehostete APP erhält die Schnittmenge der Funktionen, die zwischen dem Host und der gehosteten App deklariert werden. Dies bedeutet, dass eine gehostete APP nicht mehr Funktionen anfordern kann, als Sie vom Host bereitstellt wird.
 
