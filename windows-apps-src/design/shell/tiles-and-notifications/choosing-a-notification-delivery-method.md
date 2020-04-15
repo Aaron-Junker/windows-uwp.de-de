@@ -1,19 +1,19 @@
 ---
-Description: Dieser Artikel behandelt die vier Benachrichtigungsoptionen &\#8212; lokal, geplant, regelmäßig, und drücken Sie &\#8212; die Bereitstellung von Kachel-und signalaktualisierungen und Popupbenachrichtigungen Benachrichtigungsinhalt.
+Description: In diesem Artikel werden die vier Benachrichtigungs Optionen &\#8212, local, scheduled, periodisch und Push &\#8212 beschrieben, die Kachel-und Badge-Updates und Popup Benachrichtigungs Inhalt bereitzustellen.
 title: Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ea41a509b1673b7c4f5812d34db93dd6b0c93e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 80a06f5199c49f5fcd7a08dc9c9baef18ee19db9
+ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365944"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81385849"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 
@@ -27,10 +27,10 @@ In diesem Artikel werden die vier Benachrichtigungsoptionen – lokal, geplant, 
 
 Es gibt vier Mechanismen, die von einer App zum Übermitteln einer Benachrichtigung verwendet werden können:
 
--   **Local**
--   **Geplant**
--   **Periodic**
--   **Pushbenachrichtigungen**
+-   **Nah**
+-   **Findet**
+-   **Regelmäßige**
+-   **Push**
 
 In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
 
@@ -103,8 +103,8 @@ Es empfiehlt sich, die Kachel beim ersten Start der App lokal zu aktualisieren (
 
 Auch wenn die API-Aufrufe lokal erfolgen, können die Benachrichtigungen auf Webbilder verweisen. Wenn das Webbild nicht zum Download verfügbar oder beschädigt ist oder nicht den Bildspezifikationen entspricht, reagieren Kacheln und Popups unterschiedlich:
 
--   Kacheln: Das Update wird nicht angezeigt.
--   Popupbenachrichtigung: Die Benachrichtigung wird angezeigt, aber Ihr Image wird gelöscht.
+-   Kacheln: Die Aktualisierung wird nicht angezeigt.
+-   Popup: Die Benachrichtigung wird angezeigt, das Bild wird jedoch gelöscht.
 
 Standardmäßig laufen lokale Popupbenachrichtigungen in drei Tagen und lokale Kachelbenachrichtigungen niemals ab. Es wird empfohlen, diese Standardeinstellungen mit einer expliziten Ablaufzeit zu überschreiben, die für Ihre Benachrichtigungen sinnvoll ist. (Die Ablaufzeit von Benachrichtigungen beträgt maximal drei Tage.) 
 
@@ -112,7 +112,7 @@ Weitere Informationen finden Sie in folgenden Themen:
 
 -   [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
 -   [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md)
--   [Codebeispiele für die universelle Windows-Plattform (UWP) Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>Geplante Benachrichtigungen
 
@@ -125,7 +125,8 @@ Geplante Benachrichtigungen laufen standardmäßig drei Tage nach Zustellung ab.
 
 Weitere Informationen finden Sie in folgenden Themen:
 
--   [Codebeispiele für die universelle Windows-Plattform (UWP) Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Planen einer Popup Benachrichtigung](scheduled-toast.md)
+-   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>Periodische Benachrichtigungen
 
@@ -139,7 +140,7 @@ Regelmäßige Benachrichtigungen laufen standardmäßig drei Tage nach der Abfra
 Weitere Informationen finden Sie in folgenden Themen:
 
 -   [Übersicht über regelmäßige Benachrichtigungen](periodic-notification-overview.md)
--   [Codebeispiele für die universelle Windows-Plattform (UWP) Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="push-notifications"></a>Pushbenachrichtigungen
 
@@ -150,11 +151,11 @@ Für Pushbenachrichtigungen ist ein Cloud-Dienst erforderlich, der Pushbenachric
 
 Pushbenachrichtigungen laufen standardmäßig drei Tage nach Empfang durch das Gerät ab. Diese Standardeinstellung kann bei Bedarf mit einer expliziten Ablaufzeit überschrieben werden. (Für Popups gilt eine maximale Ablaufzeit von drei Tagen.)
 
-Weitere Informationen finden Sie in den folgenden Themen:
+Weitere Informationen finden Sie unter:
 
 -   [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 -   [Richtlinien für Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
--   [Codebeispiele für die universelle Windows-Plattform (UWP) Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## <a name="related-topics"></a>Verwandte Themen
@@ -166,7 +167,7 @@ Weitere Informationen finden Sie in den folgenden Themen:
 * [Richtlinien für Popupbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [Übersicht über regelmäßige Benachrichtigungen](periodic-notification-overview.md)
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
-* [Universelle Windows-Plattform (UWP) Benachrichtigungen Codebeispiele auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [Universelle Windows-Plattform (UWP)-Benachrichtigungs Codebeispiele auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
