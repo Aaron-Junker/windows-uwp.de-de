@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e95a9a1f6a0d34e377f48c5b19497eb638fb186e
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.openlocfilehash: c130505ec79ca83698fd79df26464969afe79c36
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893470"
 ---
 # <a name="list-view-and-grid-view"></a>Listenansicht und Rasteransicht
 
@@ -36,7 +36,7 @@ Diese beiden Steuerelemente eignen sich für viele Anwendungsfälle, funktionier
 ## <a name="differences-between-listview-and-gridview"></a>Unterschiede zwischen ListView und GridView
 
 ### <a name="listview"></a>ListView
-ListView zeigt Daten vertikal in einer einzelnen Spalte an. ListView eignet sich besser für Elemente, deren Schwerpunkt auf Text liegt, und für Sammlungen, die von oben nach unten gelesen werden sollen (d.h. alphabetisch sortiert sind). Zu den gängigen Anwendungsfällen für ListView gehören Listen von Nachrichten und Suchergebnissen.
+ListView zeigt Daten vertikal in einer einzelnen Spalte an. ListView eignet sich besser für Elemente, deren Schwerpunkt auf Text liegt, und für Sammlungen, die von oben nach unten gelesen werden sollen (d.h. alphabetisch sortiert sind). Zu den gängigen Anwendungsfällen für ListView gehören Listen von Nachrichten und Suchergebnissen. Für Sammlungen, die in mehreren Spalten oder in einem Tabellenformat angezeigt werden müssen, sollte _nicht_ ListView, sondern stattdessen ein [DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid)-Steuerelement verwendet werden.
 
 ![Eine Listenansicht mit gruppierten Daten](images/listview-grouped-example-resized-final.png)
 
@@ -212,7 +212,7 @@ Eine Datenvorlage in einer ListView oder GridView definiert, wie die Elemente/Da
 In der Regel möchten Sie jedoch eine ansprechendere Darstellung Ihrer Daten anzeigen. Um genau anzugeben, wie Elemente in der ListView/GridView angezeigt werden, erstellen Sie eine [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate). Der XAML-Code in der DataTemplate definiert das Layout und die Darstellung von Steuerelementen, die zum Anzeigen eines einzelnen Elements verwendet werden. Die Steuerelemente im Layout können an Eigenschaften eines Datenobjekts gebunden werden. Es ist auch möglich, statischen Inhalt intern zu definieren. 
 
 > [!NOTE]
-> Wenn Sie die [x:Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in DataTemplate verwenden, müssen Sie DataType (`x:DataType`) für DataTemplate angeben.
+> Wenn Sie die [x:Bind-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in DataTemplate verwenden, müssen Sie den Datentyp (`x:DataType`) für „DataTemplate“ angeben.
 
 #### <a name="simple-listview-data-template"></a>Einfache ListView-Datenvorlage
 In diesem Beispiel ist das Datenelement eine einfache Zeichenfolge. Eine DataTemplate wird inline innerhalb der ListView-Definition definiert, um links neben der Zeichenfolge ein Bild einzufügen und die Zeichenfolge blaugrün anzuzeigen. Dies ist die gleiche ListView, unter Verwendung von Methode 1 und Option 1 (oben angeführt) erstellt.
@@ -378,11 +378,11 @@ In der folgenden Tabelle werden die Arten gezeigt, wie Benutzer mit einer Listen
 
 Um diese Interaktion zu ermöglichen: | Verwenden Sie diese Einstellungen: | Behandeln Sie dieses Ereignis: | Verwenden Sie diese Eigenschaft zum Abrufen des ausgewählten Elements:
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Keine Interaktion | [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**, [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | N/V | N/V 
+Keine Interaktion | [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode) = **None**, [IsItemClickEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.isitemclickenabled) = **False** | NICHT ZUTREFFEND | NICHT ZUTREFFEND 
 Einzelauswahl | SelectionMode = **Single**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem), [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)  
 Mehrfachauswahl | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
 Erweiterte Auswahl | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) | [SelectedItems](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.selecteditems)  
-Klicken Sie | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | N/V 
+Klicken Sie im Menüband auf | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.itemclick) | NICHT ZUTREFFEND 
 
 > **Hinweis**&nbsp;&nbsp;Ab Windows 10 können Sie IsItemClickEnabled aktivieren, um ein ItemClick-Ereignis auszulösen, während SelectionMode ebenfalls auf Single, Multiple oder Extended festgelegt ist. Wenn Sie dies tun, wird zuerst das ItemClick-Ereignis und anschließend das SelectionChanged-Ereignis ausgelöst. In einigen Fällen, wenn Sie beispielsweise zu einer anderen Seite im ItemClick-Ereignishandler navigieren, wird das SelectionChanged-Ereignis nicht ausgelöst, und das Element wird nicht ausgewählt.
 
@@ -602,7 +602,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 Informationen zum Ändern der Darstellung ausgewählter Elemente finden Sie unter [Elementcontainer und Vorlagen](item-containers-templates.md).
 
-### <a name="drag-and-drop"></a>Drag & Drop
+### <a name="drag-and-drop"></a>Drag &amp; Drop
 
 ListView- und GridView-Steuerelemente unterstützen Drag & Drop für Elemente innerhalb von ihnen und zwischen ihnen und anderen ListView- und GridView-Steuerelementen. Weitere Informationen zur Implementierung des Musters für Drag & Drop finden Sie unter [Drag & Drop](../input/drag-and-drop.md).
 
@@ -610,7 +610,7 @@ ListView- und GridView-Steuerelemente unterstützen Drag & Drop für Elemente in
 
 - [XAML-Beispiel für ListView und GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) – Veranschaulicht die ListView- und GridView-Steuerelementen.
 - [XAML-Drag & Drop-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop) – Veranschaulicht Drag & Drop mit dem ListView-Steuerelement.
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

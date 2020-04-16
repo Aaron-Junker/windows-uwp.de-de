@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e198e65052e9ef79ee38863260bce1c1f798ba38
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081735"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893480"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
@@ -38,6 +38,8 @@ Entwurfsrichtlinien, Funktionen und Beispiele für jedes Steuerelement findest d
 Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) bietet integrierte Stile und Interaktionen. Um jedoch die visuelle Darstellung Ihrer Sammlungsansicht und der darin enthaltenen Elemente weiter anzupassen, wird ein [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) verwendet. Ausführliche Informationen zu Datenvorlagen und zum Anpassen der Darstellung einer Sammlungsansicht findest du auf der Seite [Elementcontainer und -vorlagen](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates).
 
 Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) verfügt außerdem über ein integriertes Verhalten, das die Auswahl einzelner oder mehrerer Elemente ermöglicht. Weitere Informationen findest du unter [Übersicht über Auswahlmodi](selection-modes.md).
+
+Eines der Szenarien, die in diesem Artikel nicht behandelt werden, ist das Anzeigen von Sammlungen in einer Tabelle oder über mehrere Spalten. Wenn du eine Sammlung in diesem Format anzeigen möchten, bietet es sich an, das [DataGrid-Steuerelement](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) aus dem [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) zu verwenden. 
 
 > **Windows 10 Fall Creators Update – Verhaltensänderung**: Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
 > Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die [ScrollViewer-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 93badc28c9c4fa1684836fc4a883e54661e8d4dc
+ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80482640"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80986973"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App
 
@@ -54,7 +54,7 @@ Um ein benutzerdefiniertes UWP-XAML-Steuerelement zu hosten, erstellst du im Rah
 
 Als Nächstes fügst du deiner Projektmappe ein **UWP (C++/WinRT)** -App-Projekt hinzu und nimmst einige Konfigurationsänderungen an diesem Projekt vor. Später in dieser exemplarischen Vorgehensweise fügst du diesem Projekt Code hinzu, um ein benutzerdefiniertes UWP-XAML-Steuerelement zu implementieren und eine Instanz der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse zu definieren. 
 
-1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Hinzufügen** -> **Neues Projekt** aus.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wählen Sie **Hinzufügen** -> **Neues Projekt** aus.
 
 2. Füge deiner Projektmappe ein Projekt vom Typ **Leere App (C++/WinRT)** hinzu. Gibt dem Projekt den Namen **MyUWPApp**, und stelle sicher, dass sowohl die Zielversion als auch die mindestens erforderliche Version auf **Windows 10, Version 1903** oder höher festgelegt ist.
 
@@ -377,9 +377,11 @@ Als Nächstes aktualisierst du dein Projekt **MyDesktopWin32App**, um ein Makro 
 4. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf **MyDesktopWin32App (Entladen)** , und wähle **Projekt erneut laden** aus.
 
 5. Klicke mit der rechten Maustaste auf **MyDesktopWin32App**, wähle **Eigenschaften** aus, und klicke im linken Bereich auf den Knoten **C/C++** . Vergewissere dich, dass das Makro **Additional Include Directories** über die im vorherigen Schritt durchgeführten Projektdateiänderungen definiert wurde.
+
     ![Einstellungen für C/C++-Projekt](images/xaml-islands/xaml-island-cpp-7.png)
 
 6. Erweitere im Dialogfeld **Eigenschaftenseiten** die Einträge **Manifesttool** -> **Eingabe und Ausgabe**. Lege die Eigenschaft **DPI** auf **Hohe DPI-Werte pro Monitor** fest. Wenn du diese Eigenschaft nicht festlegst, kommt es in bestimmten Szenarien mit hohem DPI-Wert möglicherweise zu einem Manifestkonfigurationsfehler.
+
     ![Einstellungen für C/C++-Projekt](images/xaml-islands/xaml-island-cpp-8.png)
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>Hosten des benutzerdefinierten UWP-XAML-Steuerelements im Desktopprojekt

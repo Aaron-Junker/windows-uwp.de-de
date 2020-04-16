@@ -4,12 +4,12 @@ description: In diesem Artikel wird beschrieben, wie die XamlUICommand-Klasse un
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081746"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123602"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in UWP-Apps (Universelle Windows-Plattform), die StandardUICommand, XamlUICommand und ICommand verwenden
 
@@ -37,7 +37,7 @@ Befehle können in einem bestimmten Kontext der App ausgeführt werden (z. B. L
 
 In der folgenden Abbildung sind zwei Befehlsschnittstellen (eine [CommandBar](app-bars.md) und ein unverankertes, kontextbezogenes [CommandBarFlyout](command-bar-flyout.md)) dargestellt, die einige Befehle gemeinsam nutzen.
 
-![Befehlsleiste in Microsoft Fotos](images/control-examples/command-bar-photos.png)<br>*Befehlsleiste in Microsoft Fotos*
+![Erweiterte Befehlsleiste](images/control-examples/command-bar-photos.png)<br>*Befehlsleiste*
 
 ![Kontextmenü in der Microsoft Fotos-Galerie](images/ContextMenu_example.png)<br>*Kontextmenü in der Microsoft Fotos-Galerie*
 
