@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Steuern, IRS, Bundessteuerbehörde der USA (IRS), Steuern, Einkommensteuer, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 55143f109398aae1988b7ac0d060cda138e7e48e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e01e1615cb05ab7b0f3d3fa12861e46b231642a8
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258969"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545070"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Kennenlernen der von Microsoft ausgestellten IRS-Steuerformulare
 
@@ -44,7 +44,7 @@ Die Steuerformulare werden von den folgenden Adressen an Sie gesendet:
 <tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Corporation über Microsoft Irland, das als qualifizierter Vermittler für Microsoft Corporation fungiert)</td><td>Ein Microsoft-Ort<br>Süd&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irland</td></tr>
 <tr><td>Lip</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online Inc. über Microsoft Irland, das als Auszahlungs-Agent für Microsoft Online Inc. fungiert)</td><td>Ein Microsoft-Ort<br>Süd&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irland</td></tr>
 <tr><td>Werbung</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
-<tr><td colspan="3">* Die Bürger der folgenden Länder/Regionen, die Werbeeinnahmen verdienen, werden über Microsoft Ireland Operations Limited bezahlt: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechische Republik, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, Isle of man, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich</td></tr>
+<tr><td colspan="3">* Die Bürger der folgenden Länder, die Werbeeinnahmen verdienen, werden über Microsoft Ireland Operations Limited bezahlt: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechien, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, China, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>Für Entwickler in den USA
@@ -67,7 +67,7 @@ Ich habe mindestens $600 Zahlungen im Zusammenhang mit den App-Verkäufen von Mi
     <td valign="top"><b>1099-MISC</b>:<br>Zahlende Instanz: Microsoft Corporation<br>EIN: * * * * * 4442<br><br><b>Wichtig</b>: bestimmte Geschäftseinheiten empfangen unabhängig von den von Microsoft empfangenen Zahlungs Beträgen nicht 1099-Misc-Formulare.  Weitere Informationen erhalten Sie bei Ihrem Steuerberater.</td>
   </tr>
   <tr>
-    <td valign="top">Keiner der oben genannten Gründe.</td>
+    <td valign="top">Keine der Antworten oben trifft zu.</td>
     <td valign="top">Keine</td>
   </tr>
   <tr>

@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Zeitplan, Veröffentlichung, Datum, starten
 ms.localizationpriority: medium
-ms.openlocfilehash: eebd98d8e1ce39ef8d9876ab4749bcc76012f9fa
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 98f4ca9cb1b0b9bf2178fc0b80d0819e15448d24
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210386"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545040"
 ---
 # <a name="configure-precise-release-scheduling"></a>Konfigurieren des genauen Veröffentlichungszeitplans
 
@@ -76,7 +76,7 @@ Um einen benutzerdefinierten Zeitplan für einen zusätzlichen Markt oder eine w
 
 ## <a name="global-time-zones"></a>Globale Zeitzonen
 
-Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zeitzonen auf den einzelnen Märkten verwendet werden. wenn ihre Übermittlung z. b. die lokale Zeit (z. b. das Release um 1Am lokal) verwendet, können Sie herausfinden, welche Zeit auf den einzelnen Märkten veröffentlicht wird. Dies ist besonders hilfreich bei Märkten, die mehr als einmal z haben. eines, z. b. Kanada.
+Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zeitzonen auf den einzelnen Märkten verwendet werden. wenn ihre Übermittlung z. b. die lokale Zeit (z. b. das Release um 1Am lokal) verwendet, können Sie herausfinden, welche Zeit auf den einzelnen Märkten veröffentlicht wird. Dies ist besonders hilfreich bei Märkten, die über mehr als eine Zeitzone wie Kanada verfügen.
 
 | Markt | Zeitzone |
 |--------|-----------|
@@ -94,7 +94,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Aruba  |  (UTC-04:00) Atlantik Zeit (Kanada) |
 | Australien  |  (UTC + 10:00) Canberra, Melbourne, Sydney |
 | Österreich  |  (UTC + 01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
-| Aserbaidschan  |  (UTC + 04:00) Baku |
+| Aserbeidschan  |  (UTC + 04:00) Baku |
 | Bahamas  |  (UTC-05:00) Eastern Time (USA & Kanada) |
 | Bahrain  |  (UTC + 04:00) Abu Dhabi, Muskat |
 | Bangladesch  |  (UTC + 06:00) Kas |
@@ -127,7 +127,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Zentralafrikanische Republik  |  (UTC + 01:00) West-Zentralafrika |
 | Tschad  |  (UTC + 01:00) West-Zentralafrika |
 | Chile  |  (UTC-04:00) Santiago |
-| China  |  (UTC + 08:00) Peking (Beijing), Chongqing, Hongkong, Ürümqi |
+| China  |  (UTC + 08:00) Peking, Chongqing, Hongkong, urumschlag |
 | Weihnachtsinsel  |  (UTC + 07:00) Krasnojarsk |
 | Kokosinseln  |  (UTC + 06:30) Yangon (Rangoon) |
 | Kolumbien  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
@@ -139,7 +139,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Kroatien  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Curraã, AO  |  (UTC-04:00) Cuiabá |
 | Zypern  |  (UTC + 02:00) Chisinau |
-| Tschechische Republik  |  (UTC + 01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
+| Tschechische  |  (UTC + 01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
 | Dänemark  |  (UTC + 01:00) Brüssel, Kopenhagen, Madrid, Paris |
 | Dschibuti  |  (UTC + 03:00) Hauptsitz |
 | Dominica  |  (UTC-04:00) Atlantik Zeit (Kanada) |
@@ -155,14 +155,14 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Färöer  |  (UTC + 00:00) Dublin, Edinburgh, Lissabon, London |
 | Fidschi  |  (UTC + 12:00) Abschloss |
 | Finnland  |  (UTC + 02:00) Helsinki, Kiew, Riga, Sofia, Tallinn, Vilnius |
-| France  |  (UTC + 01:00) Brüssel, Kopenhagen, Madrid, Paris |
+| Frankreich  |  (UTC + 01:00) Brüssel, Kopenhagen, Madrid, Paris |
 | Französisch-Guyana  |  (UTC-03:00) Cayenne, Fortaleza |
 | Französisch-Polynesien  |  (UTC-10:00) IRONMAN |
 | Französische Süd- und Antarktisgebiete  |  (UTC + 05:00) Ashgabat, Tashkent |
 | Gabun  |  (UTC + 01:00) West-Zentralafrika |
 | Gambia  |  (UTC + 00:00) Monrovia, Reykjavik |
-| Georgia  |  (UTC-05:00) Eastern Time (USA & Kanada) |
-| Germany  |  (UTC + 01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
+| Georgien  |  (UTC-05:00) Eastern Time (USA & Kanada) |
+| Deutschland  |  (UTC + 01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
 | Ghana  |  (UTC + 00:00) Monrovia, Reykjavik |
 | Gibraltar  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Griechenland  |  (UTC + 02:00) Athen, Bukarest |
@@ -179,7 +179,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Heard und McDonaldinseln  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
 | Heiliger Stuhl (Vatikanstadt)  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Honduras  |  (UTC-06:00) Zentralzeit (USA & Kanada) |
-| Hongkong (SAR)  |  (UTC + 08:00) Peking (Beijing), Chongqing, Hongkong, Ürümqi |
+| Hongkong (SAR)  |  (UTC + 08:00) Peking, Chongqing, Hongkong, urumschlag |
 | Ungarn  |  (UTC + 01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
 | Island  |  (UTC + 00:00) Monrovia, Reykjavik |
 | Indien  |  (UTC + 05:30) Chennai, Kolkata, Mumbai, New Delhi |
@@ -195,7 +195,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Kasachstan  |  (UTC + 05:00) Ashgabat, Tashkent |
 | Kenia  |  (UTC + 03:00) Hauptsitz |
 | Kiribati  |  (UTC + 14:00) Kiritimati-Insel |
-| Korea  |  (UTC + 09:00) Seoul |
+| Korea, Republik  |  (UTC + 09:00) Seoul |
 | Kuwait  |  (UTC + 04:00) Abu Dhabi, Muskat |
 | Kirgisistan  |  (UTC + 06:00) Astana |
 | Laos  |  (UTC + 07:00) Bangkok, Hanoi, Jakarta |
@@ -207,8 +207,8 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Liechtenstein  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Litauen  |  (UTC + 02:00) Chisinau |
 | Luxemburg  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
-| Macau SAR  |  (UTC + 08:00) Peking (Beijing), Chongqing, Hongkong, Ürümqi |
-| Nordmazedonien  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
+| Macau SAR  |  (UTC + 08:00) Peking, Chongqing, Hongkong, urumschlag |
+| Mazedonien (ehem. jugoslawische Republik Mazedonien)  |  (UTC + 01:00) Sarajevo, Skopje, Warschau, Zagreb |
 | Madagaskar  |  (UTC + 03:00) Hauptsitz |
 | Malawi  |  (UTC + 02:00) Harare, Pretoria |
 | Malaysia  |  (UTC + 08:00) Kuala Lumpur, Singapur |

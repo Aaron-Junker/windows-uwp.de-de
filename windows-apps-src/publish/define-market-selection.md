@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Märkte, Länder, Regionen
 ms.localizationpriority: medium
-ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 0b1a51a98746594a8563de2f309bec9cb5dda0b3
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210966"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545050"
 ---
 # <a name="define-market-selection"></a>Festlegen der Marktauswahl
 
@@ -73,7 +73,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Aruba</td>
     <td>Australien</td>
     <td>Österreich</td>
-    <td>Aserbaidschan</td>
+    <td>Aserbeidschan</td>
   </tr>
   <tr>
     <td>Bahamas</td>
@@ -139,7 +139,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Kroatien</td>
     <td>Curaçao</td>
     <td>Zypern</td>
-    <td>Tschechische Republik *</td>
+    <td>Tschechische *</td>
   </tr>
   <tr>
     <td>Dänemark *</td>
@@ -173,7 +173,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
   </tr>
   <tr>
     <td>Gambia</td>
-    <td>Georgia</td>
+    <td>Georgien</td>
     <td>Deutschland *</td>
     <td>Ghana</td>
   </tr>
@@ -244,7 +244,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Macau SAR</td>
   </tr>
   <tr>
-    <td>Nordmazedonien</td>
+    <td>Mazedonien, ehemalige jugoslawische Republik</td>
     <td>Madagaskar</td>
     <td>Malawi</td>
     <td>Malaysia</td>
@@ -428,7 +428,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 
 &nbsp;
 
-| Land/Region       | Zahlungsweise  | Regulierung zur Markterweiterung | Gültig ab |
+| Land/Region       | Zahlungsmethode  | Regulierung zur Markterweiterung | Datum des Inkrafttretens |
 |----------------------|-----------------|-------------------------------|----------------|
 | Argentinien            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Australien            | Geschenkkarte       | 2,24 %                         | März 2016     |
@@ -439,11 +439,11 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Chile                | Geschenkkarte       | 2,24 %                         | März 2016     |
 | China                | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Kolumbien             | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Tschechische Republik       | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Tschechische              | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Dänemark              | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Finnland              | Geschenkkarte       | 2,24 %                         | März 2016     |
-| France               | Geschenkkarte       | 2,24 %                         | März 2016     |
-| Germany              | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Frankreich               | Geschenkkarte       | 2,24 %                         | März 2016     |
+| Deutschland              | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Griechenland               | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Hongkong            | Geschenkkarte       | 2,24 %                         | März 2016     |
 | Ungarn              | Geschenkkarte       | 2,24 %                         | März 2016     |
@@ -476,7 +476,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Märkte "Restliche Welt" für Windows 8.x
 
-Wenn Ihre zuvor veröffentlichte App Pakete enthält, die auf Windows 8. x abzielen, ist es wichtig zu wissen, dass eine Reihe von Märkten für Kunden, die den Store unter Windows 8. x verwenden, als einzelner "Rest der Welt"-Markt behandelt werden, auch wenn Sie als einzelne Märkte angezeigt werden. im Partner Center.
+Wenn Ihre zuvor veröffentlichte App Pakete enthält, die auf Windows 8. x abzielen, ist es wichtig zu wissen, dass eine Reihe von Märkten für Kunden, die den Store unter Windows 8. x verwenden, als einzelner "Rest der Welt"-Markt behandelt werden, auch wenn Sie im Partner Center als einzelne Märkte angezeigt werden.
 
 Wenn Sie beim Übermitteln Ihrer APP die standardmäßige Markt Auswahl belassen, müssen Sie sich nicht darum kümmern, und Ihre APP steht allen möglichen Märkten zur Verfügung. Wenn Sie jedoch bestimmte Märkte ausschließen möchten, sollten Sie Bedenken, dass Ihre APP für Kunden mit Windows 8 oder Windows 8.1 in *keinem* der "restlichen Welt"-Märkte verfügbar ist, wenn Sie auch nur einen dieser "Rest der Welt" ausschließen.
 
@@ -499,7 +499,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Antigua und Barbuda</td>
     <td>Armenien</td>
     <td>Aruba</td>
-    <td>Aserbaidschan</td>
+    <td>Aserbeidschan</td>
   </tr>
   <tr>
     <td>Bahamas</td>
@@ -574,7 +574,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Gambia</td>
   </tr>
   <tr>
-    <td>Georgia</td>
+    <td>Georgien</td>
     <td>Ghana</td>
     <td>Gibraltar</td>
     <td>Grönland</td>
@@ -613,7 +613,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Liberia</td>
     <td>Liechtenstein</td>
     <td>Macau SAR</td>
-    <td>Nordmazedonien</td>
+    <td>Mazedonien, ehemalige jugoslawische Republik</td>
   </tr>
   <tr>
     <td>Madagaskar</td>

@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Mobilfunkanbieter, mobile Abrechnung, Abrechnung über den Mobilfunkanbieter
 ms.localizationpriority: medium
-ms.openlocfilehash: af682d2a17e10bf1c3b3cdcb3485315a6972eb9f
-ms.sourcegitcommit: e38946d8228293fca7d6c2b4d66e8e8f0d349e92
+ms.openlocfilehash: 77e157698203b5f55c3fd2ce9dd59e8c94051f5b
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76258355"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545030"
 ---
 # <a name="mobile-operator-billing"></a>Abrechnung über den Mobilfunkanbieter
 
@@ -31,7 +31,7 @@ Die Abrechnung über den Mobilfunkanbieter wird aktuell von den folgenden Mobilf
 | Österreich              | Hutchison 3G Österreich, A1 Telekom, T-Mobile/tele.ring  |
 | Belgien              | Base, Proximus                                          |
 | Kanada               | Telus                                                   |
-| Tschechische Republik       | T-Mobile                                                |
+| Tschechische              | T-Mobile                                                |
 | Dänemark              | 3, TDC / YouSee, Telenor, Telia                         |
 | Finnland              | DNA, Elisa                                              |
 | Frankreich               | Orange                                                  |
@@ -52,7 +52,7 @@ Die Abrechnung über den Mobilfunkanbieter wird aktuell von den folgenden Mobilf
 | Türkei               | Turkcell                                                |
 | Vereinigte Arabische Emirate | Etisalat                                                |
 | USA        | Sprint, Verizon                                         |
-| Vereinigtes Königreich       | O2, 3 UK, EE                                            |
+| Großbritannien       | O2, 3 UK, EE                                            |
 
  
 

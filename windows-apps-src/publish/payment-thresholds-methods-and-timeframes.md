@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a491364a4b1f406169cba76b7e7ea1ded00886
-ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
+ms.openlocfilehash: e9a6ce5dac2e6a8480b3c6e95472b437ad6f947c
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79434217"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545010"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Zahlungsschwellenwerte, Methoden und Zeiträume
 
@@ -26,7 +26,7 @@ In der Regel senden wir Zahlungen, die in einem bestimmten Monat fällig sind, b
 > [!NOTE]
 > Die unten angegebene Anzahl von Tagen ist ungefähr. Eine Zahlung kann mehr oder weniger Zeit benötigen.
 
-| Zahlungsweise     | Anzahl von Tagen, um das Zahlungskonto zu erreichen     |
+| Zahlungsmethode     | Anzahl von Tagen, um das Zahlungskonto zu erreichen     |
 |--------------------|--------------------------------------------|
 | PayPal             | 1 Werktag                             |
 | ACH/SEPA           | 2 bis 3 Werktage                          |
@@ -51,7 +51,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Armenien                          | Ja               | Ja                                      | Nein     | Nein              |
 | Australien                        | Ja               | Ja                                      | Ja    | Ja             |
 | Österreich                          | Ja               | Ja                                      | Ja    | Ja             |
-| Aserbaidschan                       | Ja               | Ja                                      | Ja    | Nein              |
+| Aserbeidschan                       | Ja               | Ja                                      | Ja    | Nein              |
 | Bahrain                          | Ja               | Ja                                      | Ja    | Ja             |
 | Bangladesch                       | Ja               | Ja                                      | Ja    | Nein              |
 | Belarus                          | Ja               | Ja                                      | Ja    | Nein              |
@@ -79,7 +79,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Côte d ' Ivoire                    | Ja               | Ja                                      | Ja    | Nein              |
 | Kroatien                          | Ja               | Ja                                      | Ja    | Nein              |
 | Zypern                           | Ja               | Ja                                      | Ja    | Ja             |
-| Tschechische Republik                   | Ja               | Ja                                      | Ja    | Ja             |
+| Tschechische                          | Ja               | Ja                                      | Ja    | Ja             |
 | Dänemark                          | Ja               | Ja                                      | Ja    | Ja             |
 | Dominica                         | Ja               | Ja                                      | Nein     | Ja             |
 | Dominikanische Republik               | Ja               | Ja                                      | Ja    | Ja             |
@@ -91,9 +91,9 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Äthiopien                         | Ja               | Ja                                      | Ja    | Nein              |
 | Fidschi                     | Ja               | Ja                                      | Nein     | Nein              |
 | Finnland                          | Ja               | Ja                                      | Ja    | Ja             |
-| France                           | Ja               | Ja                                      | Ja    | Ja             |
-| Georgia                          | Ja               | Ja                                      | Ja    | Ja             |
-| Germany                          | Ja               | Ja                                      | Ja    | Ja             |
+| Frankreich                           | Ja               | Ja                                      | Ja    | Ja             |
+| Georgien                          | Ja               | Ja                                      | Ja    | Ja             |
+| Deutschland                          | Ja               | Ja                                      | Ja    | Ja             |
 | Ghana                            | Ja               | Ja                                      | Ja    | Nein              |
 | Griechenland                           | Ja               | Ja                                      | Ja    | Ja             |
 | Guatemala                        | Ja               | Ja                                      | Ja    | Ja             |

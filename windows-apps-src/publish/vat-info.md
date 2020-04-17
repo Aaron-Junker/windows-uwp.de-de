@@ -4,14 +4,14 @@ title: Umsatzsteuerinfo
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 1c8521ef2988e2108dbbd619812bfde26cecc81b
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507144"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545080"
 ---
 # <a name="vat-info"></a>Umsatzsteuerinfo
 
@@ -70,7 +70,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Beispiel: 12345678, 123456789 oder 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Tschechische Republik</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Tschechische</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 8, 9 oder 10 Ziffern</li>
 <li>Code für Land/Region: CZ</li>
@@ -98,7 +98,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Beispiel: 12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">France</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Frankreich</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 11 Ziffern</li>
 <li>Code für Land/Region: FR</li>
@@ -106,7 +106,7 @@ Beachten Sie, dass Microsoft keine Steuertipps gibt und die folgende Tabelle nur
 <li>Hinweis: kann beliebige Buchstaben mit Ausnahme von I und Q als erstes oder zweites Zeichen oder als erstes und zweites Zeichen gefolgt von 9 Ziffern enthalten.</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Deutschland</td><td data-th="VAT info">
 <ul>
 <li>Umsatzsteuernummernformat: 9 Ziffern</li>
 <li>Code für Land/Region: DE</li>

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Entwicklerkonto, individuell, Unternehmen, geschäftlich
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: a7ab3d40b48caecc82fafef4df964b7a1dbf8071
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210906"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545090"
 ---
 # <a name="account-types-locations-and-fees"></a>Kontotypen, Standorte und Gebühren
 
@@ -59,7 +59,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Armenien                           | 19 USD              | 99 USD           |  
 | Australien                         | 21 AUD              | 110 AUD          |  
 | Österreich                           | 14 EUR              | 75 EUR           |  
-| Aserbaidschan                        | 19 USD              | 99 USD           |  
+| Aserbeidschan                        | 19 USD              | 99 USD           |  
 | Bahamas                       | 19 USD              | 99 USD           |  
 | Bahrain                           | 7 BHD               | 38 BHD           |  
 | Bangladesch                        | 1468 BDT            | 7600 BDT         |  
@@ -93,7 +93,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Côte d'Ivoire                     | 19 USD              | 99 USD           |  
 | Kroatien                           | 107 HRK             | 500 HRK          |  
 | Zypern                            | 14 EUR              | 75 EUR           |  
-| Tschechische Republik                    | 365 CZK             | 1720 CZK         |  
+| Tschechische                           | 365 CZK             | 1720 CZK         |  
 | Dänemark                           | 106 DKK             | 530 DKK          |  
 | Dschibuti                          | 19 USD              | 99 USD           | 
 | Dominica                          | 19 USD              | 99 USD           | 
@@ -108,11 +108,11 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Färöer                     | 19 USD              | 99 USD           |  
 | Fidschi                              | 19 USD              | 99 USD           |  
 | Finnland                           | 14 EUR              | 75 EUR           |  
-| France                            | 14 EUR              | 75 EUR           |  
+| Frankreich                            | 14 EUR              | 75 EUR           |  
 | Gabun                             | 19 USD              | 99 USD           |  
 | Gambia                        | 19 USD              | 99 USD           |  
-| Georgia                           | 19 USD              | 99 USD           |  
-| Germany                           | 14 EUR              | 75 EUR           |  
+| Georgien                           | 19 USD              | 99 USD           |  
+| Deutschland                           | 14 EUR              | 75 EUR           |  
 | Ghana                             | 19 USD              | 99 USD           |  
 | Griechenland                            | 14 EUR              | 75 EUR           |  
 | Grönland                         | 19 USD              | 99 USD           |  
@@ -138,7 +138,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Kasachstan                        | 2897 KZT            | 15038 KZT        |  
 | Kenia                             | 1900 KES            | 9999 KES         |  
 | Kiribati                          | 19 USD              | 99 USD           |  
-| Korea                             | 21216 KRW           | 108000 KRW       |  
+| Korea, Republik                             | 21216 KRW           | 108000 KRW       |  
 | Kuwait                            | 5 KWD               | 28 KWD           |  
 | Kirgisistan                        | 19 USD              | 99 USD           |  
 | Laos                              | 19 USD              | 99 USD           |  
@@ -151,7 +151,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Litauen                         | 14 EUR              | 75 EUR           |  
 | Luxemburg                        | 14 EUR              | 75 EUR           |  
 | Macau SAR                         | 19 USD              | 99 USD           |  
-| Nordmazedonien                 | 19 USD              | 99 USD           |  
+| Mazedonien (ehem. jugoslawische Republik Mazedonien)                 | 19 USD              | 99 USD           |  
 | Madagaskar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaysia                          | 62 MYR              | 300 MYR          |  
