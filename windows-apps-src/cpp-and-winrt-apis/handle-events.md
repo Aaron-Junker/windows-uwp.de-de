@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: 664f6799d3bb6f848243820ec46e655262e8c1a7
-ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.openlocfilehash: fa97c99f14eee1cb76148c717b1e126a3f406fd1
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295713"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266918"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -218,7 +218,7 @@ Wenn Sie beim Registrieren eines Delegaten [**winrt::auto_revoke**](/uwp/cpp-ref
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>Delegattypen für asynchrone Aktionen und Vorgänge
 
-In den obigen Beispielen wird der Delegattyp **RoutedEventHandler** verwendet. Es gibt aber natürlich noch viele andere Delegattypen. Asynchrone Aktionen und Vorgänge (mit und ohne Fortschritt) verfügen beispielsweise über Abschluss- und/oder Fortschrittsereignisse, die Delegaten des entsprechenden Typs erwarten. So erfordert etwa das Fortschrittsereignis eines asynchronen Vorgangs mit Fortschritt (sprich: jegliche Implementierung von [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)) einen Delegaten vom Typ [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Im Anschluss findest du ein Codebeispiel für die Erstellung eines solchen Delegattyps mit einer Lambda-Funktion. Das Beispiel veranschaulicht auch die Erstellung eines Delegaten vom Typ [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler).
+In den obigen Beispielen wird der Delegattyp **RoutedEventHandler** verwendet. Es gibt aber natürlich noch viele andere Delegattypen. Asynchrone Aktionen und Vorgänge (mit und ohne Fortschritt) verfügen beispielsweise über Abschluss- und/oder Fortschrittsereignisse, die Delegaten des entsprechenden Typs erwarten. So erfordert etwa das Fortschrittsereignis eines asynchronen Vorgangs mit Fortschritt (sprich: jegliche Implementierung von [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)) einen Delegaten vom Typ [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Im Anschluss findest du ein Codebeispiel für die Erstellung eines solchen Delegattyps mit einer Lambda-Funktion. Das Beispiel veranschaulicht auch die Erstellung eines Delegaten vom Typ [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler).
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
