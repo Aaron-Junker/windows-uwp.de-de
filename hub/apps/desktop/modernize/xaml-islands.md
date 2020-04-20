@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 0f596047cfdd01fcfca568ea1c63b1e2cc14c272
-ms.sourcegitcommit: 1670eec29b4360ec37cde2910b76078429273cb0
+ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
+ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80329507"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81441865"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)
 
@@ -148,6 +148,8 @@ In den folgenden Abschnitten werden Einschränkungen und Problemumgehungen für 
 :no_entry_sign: Texteingabe in der Handschriftansicht. Weitere Informationen zu diesem Feature findest du in [diesem Artikel](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view).
 
 :no_entry_sign: Textsteuerelemente, die die Inhaltslinks `@Places` und `@People` verwenden. Weitere Informationen zu diesem Feature findest du in [diesem Artikel](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
+
+:no_entry_sign: XAML-Inseln unterstützen nicht das Hosting eines [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)-Elements, das ein Steuerelement enthält, das Texteingaben annimmt, z. B. ein [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)-, [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)- oder [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)-Element. Wenn Sie dies verwenden, reagiert das Eingabesteuerelement auf Tastenanschläge nicht ordnungsgemäß. Um eine ähnliche Funktionalität mit einer XAML-Insel zu erreichen, empfiehlt es sich, ein [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)-Element zu hosten, das das Eingabesteuerelement enthält.
 
 ### <a name="window-host-context-for-xaml-islands"></a>Fensterhostkontext für XAML Islands
 

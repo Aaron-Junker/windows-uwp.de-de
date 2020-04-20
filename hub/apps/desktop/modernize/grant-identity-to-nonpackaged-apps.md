@@ -8,25 +8,20 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b77cc7b2f39a987df4c832f7a8daeb7e2722def
-ms.sourcegitcommit: f2f61a43f5bc24b829e8db679ffaca3e663c00e9
+ms.openlocfilehash: d997c6109256974f17bc0f86a518e34ef55960a7
+ms.sourcegitcommit: ecd7bce5bbe15e72588937991085dad6830cec71
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588708"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81224273"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Identitätszuweisen für nicht verpackte Desktop-Apps
 
-<!--
-> [!NOTE]
-> The features described in this article require Windows 10 Insider Preview Build 10.0.19000.0 or a later release.
--->
-
 Viele Windows 10-Erweiterbarkeitsfeatures erfordern, dass [Paketidentität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) von Nicht-UWP-Desktop-Apps verwendet wird, einschließlich Hintergrundaufgaben, Benachrichtigungen, Live-Kacheln und Freigabezielen. Für diese Szenarien erfordert das Betriebssystem eine Identität, damit es den Aufrufer der entsprechenden API identifizieren kann.
 
-In Betriebssystemversionen vor Windows 10 Insider Preview Build 10.0.19000.0 besteht die einzige Möglichkeit, einer Desktop-App eine Identität zu gewähren, darin, [sie in einem signierten MSIX-Paket zu verpacken](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). Für diese Apps wird die Identität im Paketmanifest angegeben, und die Identitätsregistrierung wird von der MSIX-Bereitstellungspipeline auf den Informationen im Manifest basierend behandelt. Alle Inhalte, auf die im Paketmanifest verwiesen wird, sind im MSIX-Paket vorhanden.
+In Betriebssystemversionen vor Windows 10, Version 2004, besteht die einzige Möglichkeit, einer Desktop-App eine Identität zu gewähren, darin, [sie in einem signierten MSIX-Paket zu verpacken](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root). Für diese Apps wird die Identität im Paketmanifest angegeben, und die Identitätsregistrierung wird von der MSIX-Bereitstellungspipeline auf den Informationen im Manifest basierend behandelt. Alle Inhalte, auf die im Paketmanifest verwiesen wird, sind im MSIX-Paket vorhanden.
 
-Ab Windows 10 Insider Preview Build 10.0.19000.0 kannst du Desktop-Apps, die nicht in einem MSIX-Paket verpackt sind, durch Erstellen und Registrieren eines *Sparse Package* mit deiner App eine Paketidentität gewähren. Diese Unterstützung ermöglicht Desktop-Apps, die noch nicht für die MSIX-Paketerstellung zur Bereitstellung geeignet sind, Windows 10-Erweiterbarkeitsfeatures zu verwenden, die eine Paketidentität erfordern. Weitere Hintergrundinformationen findest du in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+Ab Windows 10, Version 2004, kannst du Desktop-Apps, die nicht in einem MSIX-Paket verpackt sind, durch Erstellen und Registrieren eines *Sparse Package* mit deiner App eine Paketidentität gewähren. Diese Unterstützung ermöglicht Desktop-Apps, die noch nicht für die MSIX-Paketerstellung zur Bereitstellung geeignet sind, Windows 10-Erweiterbarkeitsfeatures zu verwenden, die eine Paketidentität erfordern. Weitere Hintergrundinformationen findest du in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 Befolge diese Schritte, um ein Sparse Package zu erstellen und zu registrieren, das deiner Desktop-App eine Paketidentität gewährt.
 
@@ -162,9 +157,9 @@ Das parallele Anwendungsmanifest muss sich im selben Verzeichnis wie die ausfüh
 
 ## <a name="register-your-sparse-package-at-run-time"></a>Registrieren des Sparse Package zur Runtime
 
-Um deiner Desktop-App eine Paketidentität zu gewähren, muss deine App das Sparse Package mithilfe der [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)-Klasse registrieren. Du kannst deiner App Code hinzufügen, um das Sparse Package zu registrieren, wenn sie zum ersten Mal ausgeführt wird, oder du kannst Code ausführen, um das Paket zu registrieren, während die Desktop-App installiert wird (wenn du z. B. MSI zum Installieren der Desktop-App verwendest, kannst du diesen Code über eine benutzerdefinierte Aktion ausführen).
+Um deiner Desktop-App eine Paketidentität zu gewähren, muss deine App das Sparse Package mithilfe der **AddPackageByUriAsync**-Methode der [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)-Klasse registrieren. Diese Methode steht ab Windows 10, Version 2004, zur Verfügung. Du kannst deiner App Code hinzufügen, um das Sparse Package zu registrieren, wenn sie zum ersten Mal ausgeführt wird, oder du kannst Code ausführen, um das Paket zu registrieren, während die Desktop-App installiert wird (wenn du z. B. MSI zum Installieren der Desktop-App verwendest, kannst du diesen Code über eine benutzerdefinierte Aktion ausführen).
 
-Im folgenden Beispiel wird veranschaulicht, wie das Sparse Package registriert wird. Dieser Code erstellt ein **AddPackageOptions**-Objekt, das den Pfad zum externen Speicherort enthält, an dem das Paketmanifest auf Inhalte außerhalb des Pakets verweisen kann. Anschließend übergibt der Code dieses Objekt an die **PackageManager.AddPackageByUriAsync**-Methode, um das Sparse Package zu registrieren. Diese Methode empfängt auch den Speicherort des signierten Sparse Package als URI. Ein ausführlicheres Beispiel findest du in der `StartUp.cs`-Codedatei im entsprechenden [Beispiel](#sample).
+Im folgenden Beispiel wird veranschaulicht, wie das Sparse Package registriert wird. Dieser Code erstellt ein **AddPackageOptions**-Objekt, das den Pfad zum externen Speicherort enthält, an dem das Paketmanifest auf Inhalte außerhalb des Pakets verweisen kann. Anschließend übergibt der Code dieses Objekt an die **AddPackageByUriAsync**-Methode, um das Sparse Package zu registrieren. Diese Methode empfängt auch den Speicherort des signierten Sparse Package als URI. Ein ausführlicheres Beispiel findest du in der `StartUp.cs`-Codedatei im entsprechenden [Beispiel](#sample).
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)
