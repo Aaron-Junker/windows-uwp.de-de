@@ -124,7 +124,7 @@ Die Länder/Regionen, in denen diese Zahlungsmethoden für die einzelnen Märkte
 | Liechtenstein                    | Ja               | Ja                                      | Ja    | Ja             |
 | Litauen                        | Ja               | Ja                                      | Ja    | Nein              |
 | Luxemburg                       | Ja               | Ja                                      | Ja    | Ja             |
-| EJR Mazedonien                        | Nein                | Ja                                      | Ja    | Nein              |
+| Nordmazedonien                        | Nein                | Ja                                      | Ja    | Nein              |
 | Madagaskar                       | Ja               | Ja                                      | Ja    | Nein              |
 | Malawi                           | Ja               | Ja                                      | Ja    | Ja             |
 | Malaysia                         | Ja               | Ja                                      | Ja    | Ja             |
