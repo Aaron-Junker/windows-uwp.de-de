@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cb1ac05bdc5dcaaf31074f1b89e5bbb35e4f850d
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68682725"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>Herunterladen und Installieren von Paketupdates aus dem Store
@@ -461,6 +461,6 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 }
 ```
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Optionale Pakete und die Erstellung zugehöriger Sets](/windows/msix/package/optional-packages)

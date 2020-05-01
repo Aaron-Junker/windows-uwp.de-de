@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e3e29dabf074eab59f6c788c139524f7dc2474df
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67318316"
 ---
 # <a name="audio-video-and-camera"></a>Audio, Video und Kamera
@@ -39,7 +39,7 @@ Dieser Abschnitt stellt Informationen zum Erstellen von Apps für die universell
 | [Abfragen von installierten Codecs](codec-query.md) | Hier wird gezeigt, wie Sie die auf einem Gerät installierten Audio- und Video-Encoder bzw. -Decoder abfragen können. |
 | [Bildschirmaufnahme](screen-capture.md) | Erläutert die Verwendung des [Windows.Graphics.Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture) zum Abrufen von Frames aus einer Anzeige oder einem Anwendungsfenster, um Videostreams oder Momentaufnahmen für die Entwicklung gemeinsamer und interaktiver Benutzeroberflächen zu erstellen. |
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 - [Entwickeln von UWP-Apps](https://docs.microsoft.com/windows/uwp/develop/)
 
  

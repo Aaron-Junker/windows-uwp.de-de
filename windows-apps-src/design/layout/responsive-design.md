@@ -9,10 +9,10 @@ keywords: Windows 10, UWP
 localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: f688522ec8970b1e3570610663f5a3e6cae65793
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867414"
 ---
 # <a name="responsive-design-techniques"></a>Reaktionsfähige Designtechniken
@@ -90,7 +90,7 @@ Sie können die Architektur Ihrer App reduzieren oder erweitern, um eine bessere
 
 ![ein Beispiel für das erneute Erstellen der Architektur einer Benutzeroberfläche](images/rsp-design/rspd-rearchitect.gif)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Bildschirmgrößen und Haltepunkte](screen-sizes-and-breakpoints-for-responsive-design.md)
 - [Dynamische Layouts mit XAML](layouts-with-xaml.md)

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339575"
 ---
 # <a name="optimize-suspendresume"></a>Optimieren von Anhalten/Fortsetzen
@@ -83,7 +83,7 @@ Die Ausführung einer angehaltenen App kann fortgesetzt werden, wenn sie vom Ben
 
 Bei den meisten Apps ist keine Behandlung des [**Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming)-Ereignisses erforderlich. Bei der App-Reaktivierung besitzen die Variablen und Objekte exakt den gleichen Zustand wie beim Anhalten der App. Behandeln Sie das **Resuming**-Ereignis nur dann, wenn Sie Daten oder Objekte aktualisieren müssen, die sich nach dem Anhalten der App möglicherweise geändert haben. Beispiele wären etwa Inhalte (z. B. aktualisierte Feeddaten), nicht mehr aktuelle Netzwerkverbindungen oder die Wiederherstellung des Zugriffs ein Gerät (etwa eine Webcam).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Richtlinien für das Anhalten und Fortsetzen von Apps](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  

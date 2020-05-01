@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, UWP, MySQL, Datenbank
 ms.localizationpriority: medium
 ms.openlocfilehash: bfed9c0a0c4198095b9be48fe71832bdfca67718
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67713791"
 ---
 # <a name="use-a-mysql-database"></a>Verwenden einer MySQL-Datenbank
@@ -17,7 +17,7 @@ Dieser Artikel enthält die erforderlichen Schritte zur Verwendung einer MySQL-D
 
 ## <a name="set-up-your-solution"></a>Einrichten der Lösung
 
-Um Ihre App direkt mit einer MySQL-Datenbank zu verbinden, stellen Sie sicher, dass für die Mindestversion Ihres Projekts das Fall Creators Update (Build 16299) festgelegt ist.  Sie finden diese Informationen auf der Eigenschaftenseite des UWP-Projekts.
+Um Ihre App direkt mit einer MySQL-Datenbank zu verbinden, stellen Sie sicher, dass für die Mindestversion Ihres Projekts das Fall Creators Update (Build 16299) festgelegt ist.  Diese Information findest du auf der Eigenschaftenseite deines UWP-Projekts.
 
 ![Abbildung des Eigenschaftenbereichs in Visual Studio mit dem Fall Creators Update als festgelegter Ziel- und Mindestversion](images/min-version-fall-creators.png)
 

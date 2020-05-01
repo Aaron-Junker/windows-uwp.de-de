@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a734c5cbf95bb7ddfad9199c5d1a983c10650e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66369995"
 ---
 # <a name="devices-sensors-and-power"></a>Geräte, Sensoren und Leistung
@@ -28,7 +28,7 @@ Damit Ihren Benutzern umfangreiche Einsatzmöglichkeiten geboten werden können,
 | [Aktivieren des Benutzermoduszugriffs für Windows IoT](enable-usermode-access.md) | In diesem Lernprogramm wird der Benutzermoduszugriff auf GPIO, I2C, SPI und UART auf Windows 10 IoT Core beschrieben. |
 | [Auflisten von Geräten](enumerate-devices.md) | Der Enumeration-Namespace ermöglicht die Suche nach Geräten, die intern mit dem System verbunden, extern verbunden oder über Drahtlos- oder Netzwerkprotokolle erkannt werden können. |
 | [Koppeln von Geräten](pair-devices.md) | Einige Geräte müssen gekoppelt werden, bevor sie verwendet werden können. Der [<strong>Windows.Devices.Enumeration</strong>](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)-Namespace unterstützt drei verschiedene Verfahren zum Koppeln von Geräten: |
-| [Point of Service (POS)](point-of-service.md) | In diesem Abschnitt wird die Interaktion mit Point Of Service-Peripheriegeräten wie etwa Strichcodescannern, Belegdruckern, Kassenschubladen usw. beschrieben. | 
+| [Point of Service](point-of-service.md) | In diesem Abschnitt wird die Interaktion mit Point Of Service-Peripheriegeräten wie etwa Strichcodescannern, Belegdruckern, Kassenschubladen usw. beschrieben. | 
 | [Sensoren](sensors.md) | Mithilfe von Sensoren können Apps die Beziehung zwischen einem Gerät und der physischen Umgebung ermitteln. Sensoren können für die App die Richtung, Ausrichtung und Bewegung des Geräts erfassen. |
 | [Bluetooth](bluetooth.md) | Dieser Abschnitt enthält Artikel zur Bluetooth-Integration in UWP-Apps (Universelle Windows-Plattform). Dies umfasst u. a. die Verwendung von RFCOMM-, GATT- und LE (Low Energy)-Ankündigungen. | 
 | [Drucken und Scannen](printing-and-scanning.md) | In diesem Abschnitt wird das Drucken und Scannen aus Ihrer Universellen Windows-App beschrieben. | 

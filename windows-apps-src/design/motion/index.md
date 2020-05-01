@@ -13,10 +13,10 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867404"
 ---
 # <a name="motion-for-uwp-apps"></a>Bewegung für UWP-Apps
@@ -42,7 +42,7 @@ In einer App sind fließende Bewegungen wichtig. Sie geben intelligentes Feedbac
 
 ## <a name="fluent-motion-principles"></a>Prinzipien fließender Bewegungen
 
-### <a name="physical"></a>Physikalisch
+### <a name="physical"></a>Physisch
 
 Bewegte Objekte verhalten sich wie Objekte in der realen Welt. Fließende, dynamische Bewegungen ermöglichen eine natürliche Verwendung der Benutzeroberfläche und verleihen ihr eine persönliche Note, durch die eine gewisse emotionale Verbindung entsteht.
 
@@ -74,21 +74,21 @@ Dank intelligenter Bewegung erhält der Benutzer eine Rückmeldung, die sich an 
 
 :::row:::
     :::column:::
-### <a name="timing-and-easingtiming-and-easingmd"></a>[Timing und Beschleunigung](timing-and-easing.md)
+### <a name="timing-and-easing"></a>[Timing und Beschleunigung](timing-and-easing.md)
 Timing und Beschleunigung sind wichtige Elemente, um die Bewegung von Objekten natürlich erscheinen zu lassen, die in die Benutzeroberfläche hineinkommen, sie verlassen oder sich darin bewegen.
     :::column-end:::
     :::column:::
-### <a name="directionality-and-gravitydirectionality-and-gravitymd"></a>[Richtung und Schwerkraft](directionality-and-gravity.md)
+### <a name="directionality-and-gravity"></a>[Richtung und Schwerkraft](directionality-and-gravity.md)
 Richtungssignale festigen das mentale Modell der Erlebnisse, die ein Benutzer auf einer Oberfläche macht. Eine gerichtete Bewegung unterliegt Kräften – z.B. der Schwerkraft –, die die Natürlichkeit der Bewegung verstärken.
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-### <a name="page-transitionspage-transitionsmd"></a>[Seitenübergänge](page-transitions.md)
+### <a name="page-transitions"></a>[Seitenübergänge](page-transitions.md)
 Seitenübergänge dienen der Navigation, wenn Benutzer zwischen Seiten in einer App wechseln, und liefern Feedback über die Beziehung zwischen Seiten. Mithilfe von Seitenübergängen wissen Benutzer immer, an welcher Stelle der Navigationshierarchie sie sich gerade befinden.
     :::column-end:::
     :::column:::
-### <a name="connected-animationconnected-animationmd"></a>[Verbundene Animationen](connected-animation.md)
+### <a name="connected-animation"></a>[Verbundene Animationen](connected-animation.md)
 Mit verbundenen Animationen können Sie dynamische und ansprechende Navigationsfunktionen erstellen, indem Sie den Übergang eines Elements zwischen zwei verschiedenen Ansichten animieren.
     :::column-end:::
 :::row-end:::

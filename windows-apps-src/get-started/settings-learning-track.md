@@ -7,10 +7,10 @@ keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Einstellungen, Einstellung
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66370496"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>Speichern und Laden von Einstellungen in einer UWP-App
@@ -51,9 +51,9 @@ composite["FontSize"] = 11;
 roamingSettings.Values["RoamingFontInfo"] = composite;
  ```
 
-Speichern Sie eine Einstellung auf dem lokalen Gerät, indem Sie zuerst mit `Windows.Storage.ApplicationData.Current.LocalSettings` einen **ApplicationDataContainer** für den lokalen Einstellungsdatenspeicher abrufen. Schlüssel-Wert-Wörterbuchpaare, die Sie dieser Instanz zuweisen, werden im lokalen Datenspeicher für Geräteeinstellungen gespeichert.
+Speichern Sie eine Einstellung auf dem lokalen Gerät, indem Sie zuerst mit **einen**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings` für den lokalen Einstellungsdatenspeicher abrufen. Schlüssel-Wert-Wörterbuchpaare, die Sie dieser Instanz zuweisen, werden im lokalen Datenspeicher für Geräteeinstellungen gespeichert.
 
-Roamingeinstellungen werden nach einem ähnlichen Muster gespeichert. Rufen Sie zunächst mit `Windows.Storage.ApplicationData.Current.RoamingSettings` einen **ApplicationDataContainer** für den Roaming-Einstellungsdatenspeicher ab. Weisen Sie dieser Instanz dann Schlüssel-Wert-Paare zu.  Die Schlüssel-Wert-Paare werden automatisch zwischen Geräten übertragen (Roaming).
+Roamingeinstellungen werden nach einem ähnlichen Muster gespeichert. Rufen Sie zunächst mit **einen**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings` für den Roaming-Einstellungsdatenspeicher ab. Weisen Sie dieser Instanz dann Schlüssel-Wert-Paare zu.  Die Schlüssel-Wert-Paare werden automatisch zwischen Geräten übertragen (Roaming).
 
 Im obigen Codeausschnitt werden in **ApplicationDataCompositeValue** mehrere Schlüssel-Wert-Paare gespeichert. Zusammengesetzte Werte sind nützlich, um sicherzustellen, dass mehrere zusammengehörende Einstellungen synchron bleiben. Beim Speichern von **ApplicationDataCompositeValue** werden die Werte als Einheit bzw. unteilbar gespeichert und geladen. Auf diese Weise bleiben zusammengehörende Einstellungen synchron, da sie beim Roaming als Einheit und nicht einzeln übertragen werden.
 
@@ -74,9 +74,9 @@ if (composite != null)
 }
 ```
 
-Laden Sie eine Einstellung vom lokalen Gerät, indem Sie zuerst mit `Windows.Storage.ApplicationData.Current.LocalSettings` eine **ApplicationDataContainer**-Instanz für den lokalen Einstellungsdatenspeicher abrufen. Verwenden Sie diese dann zum Abrufen von Schlüssel-Wert-Paaren.
+Laden Sie eine Einstellung vom lokalen Gerät, indem Sie zuerst mit **eine**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings`-Instanz für den lokalen Einstellungsdatenspeicher abrufen. Verwenden Sie diese dann zum Abrufen von Schlüssel-Wert-Paaren.
 
-Roamingeinstellungen werden nach einem ähnlichen Muster geladen. Rufen Sie zunächst mit `Windows.Storage.ApplicationData.Current.RoamingSettings` eine **ApplicationDataContainer**-Instanz aus dem Roaming-Einstellungsdatenspeicher ab. Greifen Sie auf Schlüssel-Wert-Paare dieser Instanz zu. Wenn die Daten noch nicht per Roaming auf das Gerät übertragen wurden, auf dem Sie auf die Einstellungen zugreifen, erhalten Sie einen **ApplicationDataContainer** mit dem Wert „null”. Daher enthält der obige Beispielcode die Überprüfung `if (composite != null)`.
+Roamingeinstellungen werden nach einem ähnlichen Muster geladen. Rufen Sie zunächst mit **eine**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings`-Instanz aus dem Roaming-Einstellungsdatenspeicher ab. Greifen Sie auf Schlüssel-Wert-Paare dieser Instanz zu. Wenn die Daten noch nicht per Roaming auf das Gerät übertragen wurden, auf dem Sie auf die Einstellungen zugreifen, erhalten Sie einen **ApplicationDataContainer** mit dem Wert „null”. Daher enthält der obige Beispielcode die Überprüfung `if (composite != null)`.
 
 ## <a name="useful-apis-and-docs"></a>Nützliche APIs und Dokumente
 

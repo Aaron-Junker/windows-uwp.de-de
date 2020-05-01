@@ -1,4 +1,4 @@
-# [Windows 10 auf ARM](/windows/arm)
+# [Windows 10 auf ARM](/windows/arm)
 ## [Windows 10-Apps auf ARM](/windows/uwp/porting/apps-on-arm)
 ### [Funktionsweise der x86-Emulation auf ARM](/windows/uwp/porting/apps-on-arm-x86-emulation)
 ### [Problembehandlung für x86-Apps auf ARM](/windows/uwp/porting/apps-on-arm-troubleshooting-x86)

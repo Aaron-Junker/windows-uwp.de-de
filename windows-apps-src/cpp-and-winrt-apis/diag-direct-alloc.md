@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, direkt, stapel, zuweisungen, projiziert, implementierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fe8ff6653b8655ee25cd9adc0c11acb22d42a11
-ms.sourcegitcommit: 4e74c920f1fef507c5cdf874975003702d37bcbb
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68372791"
 ---
 # <a name="diagnosing-direct-allocations"></a>Diagnostizieren direkter Zuordnungen
@@ -124,7 +124,7 @@ Das bedeutet, dass wir einige geringfügige Einschränkungen für die Implementi
 
 Zunächst ist die virtuelle Funktion nur in Debugbuilds vorhanden. Dies bedeutet, dass die Erkennung die Größe der vtable in Ihren optimierten Builds nicht beeinträchtigt.
 
-Zweitens: Da die abgeleitete Klasse, die **winrt::make** verwendet, `final` ist, erfolgt jede Devirtualisierung, die der Optimierer möglicherweise ableiten kann, auch dann, wenn Sie sich zuvor entschieden haben, die Implementierungsklasse nicht als `final` zu markieren. Das stellt also eine Verbesserung dar. Der Nachteil ist, dass Ihre Implementierung *nicht* `final` sein kann. Dies hat wiederum keine Folgen, da der instanziierte Typ immer `final` ist.
+Zweitens: Da die abgeleitete Klasse, die **winrt::make** verwendet, `final` ist, erfolgt jede Devirtualisierung, die der Optimierer möglicherweise ableiten kann, auch dann, wenn Sie sich zuvor entschieden haben, die Implementierungsklasse nicht als `final` zu markieren. Das stellt also eine Verbesserung dar. Der Nachteil ist, dass Ihre Implementierung *nicht*`final` sein kann. Dies hat wiederum keine Folgen, da der instanziierte Typ immer `final` ist.
 
 Drittens hindert Sie nichts daran, virtuelle Funktionen in ihrer Implementierung als `final` zu markieren. C++/WinRT unterscheidet sich natürlich stark von klassischem COM und Implementierungen wie WRL, bei denen alles an Ihrer Implementierung eher virtuell ist. In C++/WinRT ist die virtuelle Verteilung auf die ABI (Application Binary Interface) beschränkt (die immer `final` ist), und ihre Implementierungsmethoden stützen sich auf die Kompilierzeit oder statische Polymorphie. Dadurch lässt sich eine unnötige Laufzeitpolymorphie vermeiden, und dies bedeutet auch, dass es kaum einen Grund für virtuelle Funktionen in Ihrer C++/WinRT-Implementierung gibt. Das ist ein klarer Vorteil und führt zu besser vorhersagbarem Inlining.
 
@@ -133,9 +133,9 @@ Viertens: Da **winrt::make** eine abgeleitete Klasse einfügt, darf Ihre Impleme
 C++/WinRT verlangt also ein Umdenken gegenüber dem klassischen COM-Code. Das ist durchaus vernünftig, da WinRT eben kein klassisches COM ist. Klassisches COM ist die Assemblysprache der Windows-Runtime. Das ist kein Code, in dem Sie täglich schreiben sollten. Stattdessen legt C++/WinRT Code nahe, der eher modernem C++ als klassischem COM ähnelt.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Funktionsvorlage „winrt::make“](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make function template](/uwp/cpp-ref-for-winrt/make) (Funktionsvorlage „winrt::make“)
 * [winrt::make_self-Funktionsvorlage](/uwp/cpp-ref-for-winrt/make-self)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)
 * [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
