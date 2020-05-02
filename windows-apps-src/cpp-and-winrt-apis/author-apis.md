@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, projiziert, Projektion, Implementierung, implementieren, Laufzeitklasse, Aktivierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: fcdeaec3728306de420baa4a2aea06ef1952641e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209275"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255264"
 ---
 # <a name="author-apis-with-cwinrt"></a>Erstellen von APIs mit C++/WinRT
 
@@ -239,7 +239,7 @@ Wir haben gesehen, dass der Workflow das Deklarieren der Laufzeitklasse und ihre
 Beispiele:
 
 - Sie können Parametertypen lockern. Wenn z. B. in der IDL die Methode eine **SomeClass** akzeptiert, können Sie diese in der Implementierung in **IInspectable** ändern. Dies ist möglich, da jede **SomeClass** an **IInspectable** weitergeleitet werden kann (der umgekehrte Vorgang ist selbstverständlich nicht möglich).
-- Ein kopierbarer Parameter kann nach Wert statt nach Verweis akzeptiert werden. Sie können z. B. `SomeClass` in `SomeClass const&` ändern. Dies ist erforderlich, wenn Sie das Erfassen eines Verweises in einer Coroutine vermeiden müssen (siehe [Parameterübergabe](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
+- Ein kopierbarer Parameter kann nach Wert statt nach Verweis akzeptiert werden. Sie können z. B. `SomeClass const&` in `SomeClass` ändern. Dies ist erforderlich, wenn Sie das Erfassen eines Verweises in einer Coroutine vermeiden müssen (siehe [Parameterübergabe](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)).
 - Sie können den Rückgabewert lockern. Sie können z. B. **void** in [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) ändern.
 
 Die beiden letzten sind sehr hilfreich, wenn Sie einen Handler für asynchrone Ereignisse schreiben.

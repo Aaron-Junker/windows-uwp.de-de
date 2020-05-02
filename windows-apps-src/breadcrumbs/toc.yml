@@ -1,19 +1,19 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: Apps-
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
         - name: UWP
           tocHref: /windows/uwp/
           topicHref: /windows/uwp/index
           items:
-            - name: 'Neuigkeiten:'
+            - name: Neues
               tocHref: /windows/uwp/whats-new/
               topicHref: /windows/uwp/whats-new/windows-10-version-latest
-            - name: Beginnen
+            - name: Erste Schritte
               tocHref: /windows/uwp/get-started/
               topicHref: /windows/uwp/get-started/
             - name: Design und Benutzeroberfläche (UI)
@@ -29,7 +29,7 @@
                 - name: Layout
                   tocHref: /windows/uwp/design/layout/
                   topicHref: /windows/uwp/design/layout/index
-                - name: Format
+                - name: Stil
                   tocHref: /windows/uwp/design/style/
                   topicHref: /windows/uwp/design/style/index
                 - name: Bewegung
@@ -44,11 +44,11 @@
                 - name: Geräte
                   tocHref: /windows/uwp/design/devices/
                   topicHref: /windows/uwp/design/devices/index
-                - name: Nutzbarkeit
+                - name: Benutzerfreundlichkeit
                   tocHref: /windows/uwp/design/usability/
                   topicHref: /windows/uwp/design/usability/index
                   items:
-                    - name: Bedienungshilfen
+                    - name: Eingabehilfen
                       tocHref: /windows/uwp/design/accessibility/
                       topicHref: /windows/uwp/design/accessibility/accessibility
                     - name: App-Einstellungen und Daten
@@ -63,7 +63,7 @@
                 - name: Design-Toolkits
                   tocHref: /windows/uwp/design/downloads/
                   topicHref: /windows/uwp/design/downloads/index
-            - name: Entwicklung
+            - name: Entwickeln
               tocHref: /windows/uwp/develop/
               topicHref: /windows/uwp/develop/index
               items:
@@ -94,7 +94,7 @@
                 - name: 'Geräte, Sensoren und Leistung'
                   tocHref: /windows/uwp/devices-sensors/
                   topicHref: /windows/uwp/devices-sensors/index
-                - name: Unternehmen
+                - name: Enterprise
                   tocHref: /windows/uwp/enterprise/
                   topicHref: /windows/uwp/enterprise/index
                 - name: 'Dateien, Ordner und Bibliotheken'
@@ -121,7 +121,7 @@
                 - name: Netzwerk- und Webdienste
                   tocHref: /windows/uwp/networking/
                   topicHref: /windows/uwp/networking/index
-                - name: Verpacken von Apps
+                - name: Packen von Apps
                   tocHref: /windows/uwp/packaging/
                   topicHref: /windows/uwp/packaging/index
                 - name: "Portieren von Apps auf Windows\_10"

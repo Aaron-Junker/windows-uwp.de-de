@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 26e64c286124537eeb20af6c46f16e83edc88414
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081514"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643727"
 ---
 # <a name="text-box"></a>Textfeld
 
@@ -294,11 +294,11 @@ Weitere Informationen und Beispiele finden Sie unter [Verwenden des Eingabeumfan
 
 - Verwenden Sie eine Gruppe von kurzen einzeiligen Texteingabesteuerelementen fester Größe, um Daten mit einem bestimmten Format einzugeben.
 
-    ![Formatierte Dateneingabe](images/textinput_example_productkey.png)
+    ![Formatierte Dateneingabe](images/textinput-example-productkey.png)
 
 - Verwenden Sie ein einzeiliges, nicht eingeschränktes Texteingabesteuerelement, um Zeichenfolgen einzugeben oder zu bearbeiten, in Kombination mit einer Befehlsschaltfläche, über die die Benutzer gültige Werte auswählen können.
 
-    ![Unterstützte Dateneingabe](images/textinput_example_assisted.png)
+    ![Unterstützte Dateneingabe](images/textinput-example-assisted.png)
 
 ### <a name="multi-line-text-input-controls"></a>Mehrzeilige Texteingabesteuerelemente
 

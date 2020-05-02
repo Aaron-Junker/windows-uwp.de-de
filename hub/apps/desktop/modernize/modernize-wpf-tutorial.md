@@ -9,10 +9,10 @@ keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77521284"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>Tutorial: Modernisieren einer WPF-App 
@@ -121,9 +121,9 @@ Weitere Informationen findest du unter [Hosten von UWP XAML-Steuerelementen in D
 
 Während der ersten Releases lag der Schwerpunkt von .NET Core auf der Unterstützung von Web- oder Back-End-Apps. Mit .NET Core kannst du problemlos skalierbare Web-Apps oder APIs erstellen, die unter Windows, Linux oder in Microservice-Architekturen wie Docker-Containern gehostet werden können.
 
-.NET Core 3 ist die neueste Version von .NET Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Du kannst ab sofort neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 entwickelt wurden.
+.NET Core 3 ist die neueste Version von .NET Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Sie können neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 bestimmt sind.
 
 > [!NOTE]
 > WPF und Windows Forms sind nicht plattformübergreifend, und es ist nicht möglich, WPF oder Windows Forms unter Linux und macOS auszuführen. Die Benutzeroberflächenkomponenten von WPF und Windows Forms hängen weiterhin vom Windows-Renderingsystem ab.
 
-Weitere Informationen findest du unter [Neuerungen in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).

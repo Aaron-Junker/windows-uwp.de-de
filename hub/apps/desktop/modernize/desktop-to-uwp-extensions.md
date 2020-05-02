@@ -9,10 +9,10 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209716"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
@@ -247,7 +247,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 |Verb |Der Name, der im Kontextmenü des Datei-Explorers angezeigt wird. Diese Zeichenfolge kann mithilfe von ```ms-resource``` lokalisiert werden.|
 |Id |Die eindeutige ID des Verbs. Bei UWP-Apps wird sie im Rahmen der Aktivierungsereignisargumente übergeben, um eine ordnungsgemäße Verarbeitung der Benutzerauswahl zu ermöglichen. Bei gepackten, als vollständig vertrauenswürdig eingestuften Apps hingegen werden Parameter übergeben (siehe nächster Punkt in der Auflistung). |
 |Parameter |Die Liste mit Argumentparametern und -werten für das Verb. Wenn deine Anwendung eine als vertrauenswürdig eingestufte gepackte App ist, werden diese Parameter bei der Aktivierung der Anwendung als Ereignisargumente an die Anwendung übergeben. Du kannst das Verhalten deiner App auf Basis anderer Aktivierungsverben anpassen. Wenn eine Variable einen Dateipfad enthalten kann, schließe den Parameterwert in Anführungszeichen ein. So werden Probleme vermieden, die bei Pfaden mit Leerzeichen auftreten können. Wenn deine App eine UWP-App ist, kannst du keine Parameter übergeben. Die App empfängt stattdessen die ID (siehe vorheriger Punkt in der Auflistung).|
-|Erweitert |Gibt an, dass das Verb nur angezeigt werden soll, wenn der Benutzer zum Anzeigen des Kontextmenüs die **UMSCHALTTASTE** gedrückt hält, bevor er mit der rechten Maustaste auf die Datei klickt. Dieses Attribut ist optional und standardmäßig auf den Wert **FALSE** (Verb soll immer angezeigt werden) festgelegt. Dieses Verhalten muss für jedes Verb einzeln angegeben werden – mit Ausnahme von „Öffnen“: Bei diesem Verb lautet der Wert immer **FALSE**.|
+|Erweitert |Gibt an, dass das Verb nur angezeigt werden soll, wenn der Benutzer zum Anzeigen des Kontextmenüs die **UMSCHALTTASTE** gedrückt hält, bevor er mit der rechten Maustaste auf die Datei klickt. Dieses Attribut ist optional und standardmäßig auf den Wert **FALSE** (Verb soll immer angezeigt werden) festgelegt. Dieses Verhalten muss für jedes Verb einzeln angegeben werden – mit Ausnahme von „Öffnen“: Bei diesem Verb ist der Wert immer **False**.|
 
 #### <a name="example"></a>Beispiel
 
@@ -702,7 +702,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 |Kategorie |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |FileType |Die relevanten Dateierweiterungen. |
-|Wert |Ein gültiger [Kind-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|value |Ein gültiger [Kind-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>Beispiel
 
@@ -1040,7 +1040,7 @@ Benutzer und andere Prozesse können einen Alias verwenden, um deine App zu star
 |-------|-------------|
 |Kategorie |Immer ``windows.appExecutionAlias``.
 |Ausführbare Datei |Der relative Pfad zur ausführbaren Datei, die beim Aufrufen des Alias gestartet wird. |
-|Alias |Der Kurzname für deine App. Dieser muss immer auf die Erweiterung „.exe“ enden. Für die einzelnen Anwendungen im Paket kann immer nur ein einzelner App-Ausführungsalias angegeben werden. Wenn sich mehrere Apps mit demselben Alias registrieren, ruft das System die zuletzt registrierte App auf. Wähle deshalb einen eindeutigen Alias, um die Wahrscheinlichkeit einer Überschreibung durch andere Apps möglichst gering zu halten.
+|Alias |Der Kurzname für deine App. Er muss immer mit der Erweiterung „.exe“ enden. Für die einzelnen Anwendungen im Paket kann immer nur einzelner App-Ausführungsalias angegeben werden. Wenn sich mehrere Apps mit dem gleichen Alias registrieren, ruft das System die zuletzt registrierte App auf. Wählen Sie daher einen eindeutigen Alias, um die Wahrscheinlichkeit einer Überschreibung durch andere Apps möglichst gering zu halten.
 |
 
 #### <a name="example"></a>Beispiel
@@ -1077,7 +1077,7 @@ Startaufgaben ermöglichen deiner App das automatische Ausführen einer ausführ
 > [!NOTE]
 > Der Benutzer muss deine App mindestens einmal starten, um diese Startaufgabe zu registrieren.
 
-Deine App kann mehrere Startaufgaben deklarieren. Die Aufgaben werden unabhängig voneinander gestartet. Alle Startaufgaben werden im Task-Manager auf der Registerkarte **Autostart** mit dem Namen aus deinem App-Manifest und dem Symbol deiner App angezeigt. Der Task-Manager analysiert automatisch die Startauswirkungen deiner Aufgaben.
+Deine App kann mehrere Startaufgaben deklarieren. Die Aufgaben werden unabhängig voneinander gestartet. Alle Startaufgaben werden im Task-Manager auf der Registerkarte **Autostart** mit dem Namen aus deinem App-Manifest und dem Symbol deiner App angezeigt. Der Task-Manager analysiert automatisch die Startauswirkungen Ihrer Aufgaben.
 
 Benutzer können die Startaufgabe Ihrer App manuell mithilfe des Task-Managers deaktivieren. Wenn ein Benutzer eine Aufgabe deaktiviert, kannst du sie nicht programmgesteuert reaktivieren.
 
@@ -1376,4 +1376,4 @@ Erstelle einfach ein Windows-App-Paket für deine Win32-App. Füge diese Erweite
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Hast du Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst deine Fragen auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) stellen.
+Haben Sie Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) fragen.

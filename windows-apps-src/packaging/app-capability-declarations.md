@@ -8,10 +8,10 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c05991a0f40e98259f035495367deb47c9b688b8
-ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81441885"
 ---
 # <a name="app-capability-declarations"></a>Deklarationen von App-Funktionen

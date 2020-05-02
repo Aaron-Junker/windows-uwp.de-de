@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
-ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
+ms.openlocfilehash: 32038d6e25ec450dae59d0c1d7e9c8703fdc8018
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80301509"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148733"
 ---
 # <a name="controls-by-function"></a>Steuerelemente nach Funktion
 
@@ -222,7 +222,7 @@ Design und Vorgehensweise: [Kalender-, Datums- und Uhrzeitsteuerelemente](date-a
 ### <a name="date-picker"></a>Datumsauswahl
 Ein Steuerelement, mit dem ein Benutzer ein Datum auswählen kann.
 
-![Datumsauswahlsteuerelement](images/controls/date-picker.png)
+![Datumsauswahlsteuerelement](images/controls_datepicker_expand.png)
 
 ```xaml
 <DatePicker Header="Arrival Date"/>
@@ -235,7 +235,7 @@ Design und Vorgehensweise: [Kalender-, Datums- und Uhrzeitsteuerelemente](date-a
 ### <a name="time-picker"></a>Zeitauswahl
 Ein Steuerelement, mit dem ein Benutzer einen Zeitwert auswählen kann.
 
-![TimePicker-Steuerelement](images/controls/time-picker.png) 
+![TimePicker-Steuerelement](images/controls_timepicker_expand.png)
 
 ```xaml
 <TimePicker Header="Arrival Time"/>

@@ -1,16 +1,16 @@
 ---
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
-title: Tests für Windows Desktop-Brücke-Apps
+title: Tests für Windows Desktop Bridge-Apps
 description: Verwende die integrierten Tests von Desktop-Brücke, um sicherzustellen, dass deine Desktopanwendung für die Konvertierung in eine UWP-App optimiert ist.
 ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089406"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests für Windows Desktop Bridge-Apps
@@ -40,7 +40,7 @@ Dieser Test überprüft die Registrierung des Pakets auf registrierte Dateizuord
 Konvertierte Desktopanwendungen können um eine große Palette von UWP-APIs (Universelle Windows-Plattform) erweitert werden. Dieser Test überprüft, dass die UWP-Binärdateien in der App keine Nicht-UWP-APIs aufrufen. In UWP-Binärdateien ist das Flag **AppContainer** festgelegt.
 
 **Korrekturmaßnahmen**  
-Unter [Desktop-zu-UWP-Brücke: App-Erweiterungen](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) findest du eine Erläuterung dieser Erweiterungen und ihrer ordnungsgemäßen Verwendung. 
+Siehe [Desktop-zu-UWP-Brücke: App-Erweiterungen](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) findest du eine Erläuterung dieser Erweiterungen und ihrer ordnungsgemäßen Verwendung. 
 
 ### <a name="3-debug-configuration-test"></a>3. Test der Debugkonfiguration
 Dieser Test stellt sicher, dass es sich beim MSIX- oder APPX-Paket nicht um einen Debugbuild handelt.
@@ -126,8 +126,8 @@ Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von ma
 Die Zeichenfolge „{string}“ darf keine führenden/nachgestellten Leerzeichen enthalten.  | Das Schema für die Elemente im App-Manifest lässt führende oder nachgestellte Leerzeichen nicht zu. In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt. Stellen Sie sicher, dass keiner der lokalisierten Werte der Manifestfelder in „resources.pri“ führende oder nachgestellte Leerzeichen enthält. 
 Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).  | Weitere Informationen finden Sie unter [App-Paketanforderungen](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements). 
 In der Datei „resources.pri” ist keine Standardressource angegeben.  | Weitere Informationen findest du in der Anleitung unter [App-Ressourcen](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data). In der Standardbuildkonfiguration nimmt Visual Studio nur Bildressourcen mit der Skalierung 200 % in das App-Paket auf, wenn ein Bündel generiert wird, andere Ressourcen werden im Ressourcenpaket abgelegt. Stelle sicher, dass du entweder Bildressourcen mit der Skalierung 200 % einschliest oder dein Projekt für die Aufnahme der vorhandenen Ressourcen konfigurierst. 
-In der Datei „resources.pri“ ist kein Ressourcenwert angegeben.  | Stelle sicher, dass für das App-Manifest gültige Ressourcen in „resources.pri“ definiert sind. 
-Die Größe der Bilddatei {Dateiname} muss unter 204800 Bytes liegen.  | Verringere die Größe der angegebenen Bilder. 
+In der Datei „resources.pri“ ist kein Ressourcenwert angegeben.  | Stellen Sie sicher, dass für das App-Manifest gültige Ressourcen in „resources.pri“ definiert sind. 
+Die Größe der Bilddatei {Dateiname} muss unter 204800 Bytes liegen.  | Verringern Sie die Größe der angegebenen Bilder. 
 Die Datei {Dateiname} darf keinen Abschnitt mit umgekehrter Zuordnung enthalten.  | Die umgekehrte Zuordnung wird zwar während des Debuggens mit F5 in Visual Studio beim Aufrufen von „makepri.exe“ generiert, sie kann jedoch entfernt werden, indem „makepri.exe“ beim Generieren einer PRI-Datei ohne den Parameter „/m“ ausgeführt wird. 
 
 
@@ -251,7 +251,7 @@ Stelle sicher, dass alle Eigenschaften in einer UWP-Klasse eine `get`-Methode au
 * **Speicherort von Typen**  
 Stelle sicher, dass die Metadaten für alle UWP-Typen in der WINMD-Datei enthalten sind, die im App-Paket über den längsten Namen mit Namespaceübereinstimmung verfügt.
 * **Richtige Groß-/Kleinschreibung von Typnamen**  
-Stelle sicher, dass alle UWP-Typen eindeutige Namen ohne Berücksichtigung von Groß-/Kleinschreibung in deinem App-Paket aufweisen. Vergewissere dich außerdem, dass UWP-Typnamen im App-Paket nicht auch als Namespacename verwendet werden.
+Stelle sicher, dass alle UWP-Typen eindeutige Namen ohne Berücksichtigung von Groß-/Kleinschreibung in deinem App-Paket aufweisen. Vergewissern Sie sich außerdem, dass UWP-Typnamen im App-Paket nicht auch als Namespacename verwendet werden.
 * **Richtigkeit von Typnamen**  
 Stelle sicher, dass im globalen Namespace oder im Windows-Namespace der obersten Ebene keine UWP-Typen vorhanden sind.
  

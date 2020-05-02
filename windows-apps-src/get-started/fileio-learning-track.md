@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Dateien, Datei-E/A, Datei lesen, Datei schreiben, Datei erstellen, Text schreiben, Text lesen
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321133"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166246"
 ---
 # <a name="work-with-files"></a>Arbeiten mit Dateien
 
@@ -141,8 +141,8 @@ Hier findest du einen kurzen Überblick über die APIs und andere nützliche Dok
 
 | Codebeispiel | Beschreibung |
 |-----------------|---------------|
-| [Beispiel für Anwendungsdaten](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | Zeigt, wie du mithilfe der Anwendungsdaten-APIs benutzerspezifische Daten speichern und abrufen kannst. |
+| [Beispiel für Anwendungsdaten](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | Zeigt, wie du mithilfe der Anwendungsdaten-APIs benutzerspezifische Daten speichern und abrufen kannst. |
 | [Beispiel zum Dateizugriff](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | Veranschaulicht das Erstellen, Lesen, Schreiben, Kopieren und Löschen einer Datei. |
-| [Beispiel zur Dateiauswahl](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | Zeigt, wie auf Dateien und Ordner zugegriffen werden kann, indem dem Benutzer die Möglichkeit gegeben wird, diese über die Benutzeroberfläche auszuwählen. Außerdem erfährst du hier, wie du eine Datei so speicherst, dass der Benutzer den Namen, Dateityp und Speicherort der zu speichernden Datei angeben kann. |
+| [Beispiel zur Dateiauswahl](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | Zeigt, wie auf Dateien und Ordner zugegriffen werden kann, indem dem Benutzer die Möglichkeit gegeben wird, diese über die Benutzeroberfläche auszuwählen. Außerdem erfährst du hier, wie du eine Datei so speicherst, dass der Benutzer den Namen, Dateityp und Speicherort der zu speichernden Datei angeben kann. |
 | [JSON-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | Veranschaulicht das Codieren und Decodieren von JSON-Objekten (JavaScript Object Notation), Arrays, Zeichenfolgen, Zahlen und booleschen Werten mithilfe des [Windows.Data.Json-Namespace](https://docs.microsoft.com/uwp/api/Windows.Data.Json). |
 | [Weitere Codebeispiele](https://developer.microsoft.com/windows/samples) | Wähle in der Dropdownliste mit den Kategorien die Option **Dateien, Ordner und Bibliotheken** aus. |

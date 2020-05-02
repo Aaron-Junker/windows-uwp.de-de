@@ -5,10 +5,10 @@ ms.date: 10/08/2019
 ms.topic: article
 keywords: Windows 10, UWP, Eckradius, gerundet
 ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
-ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81001477"
 ---
 # <a name="corner-radius"></a>Eckradius
@@ -57,7 +57,7 @@ Die Formatvorlagen mit abgerundeten Ecken werden in drei Bereichen der Steuerele
 - ToggleButton
 - ToggleSplitButton
 
-### <a name="corners-of-flyout-and-overlay-ui-elements"></a>Ecken der Flyout- und Overlay-Elemente der Benutzeroberfläche
+### <a name="corners-of-flyout-and-overlay-ui-elements"></a>Ecken der Flyout- und Overlay-Elemente der Benutzeroberfläche 
 
 - Hierbei kann es sich um vorübergehende Benutzeroberflächenelemente handeln, die nur zeitweilig auf dem Bildschirm angezeigt werden, oder um Elemente, die andere UI-Elemente überlagern, wie TabView-Registerkarten.
 - Der Standardwert des Radius, den wir für diese Benutzeroberflächenelemente verwenden, ist **4 px**.
