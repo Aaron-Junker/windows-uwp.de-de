@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node un
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
-ms.sourcegitcommit: cf4bf0ab4ea9019c1edc2bb96387ce6cedbe91dd
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75835379"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten einer Node.js-Entwicklungsumgebung mit WSL 2

@@ -9,10 +9,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 671f33cf106eabf11b317b00d5c2a6cd9abcf3d0
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66363039"
 ---
 # <a name="intro-to-controls-and-patterns"></a>Einführung in Steuerelemente und Muster
@@ -74,7 +74,7 @@ Mithilfe von Eigenschaften geben Sie das Erscheinungsbild, den Inhalt sowie weit
 Sie können die Größe und die Position des Steuerelements auch automatisch festlegen lassen. In diesem Fall können Sie die von Visual Studio festgelegten Eigenschaften für Größe und Position zurücksetzen.
 
 Zurücksetzen einer Eigenschaft
-1. Klicken Sie im Bereich Eigenschaften auf den Eigenschaftsmarker neben dem Eigenschaftswert. Das Eigenschaftsmenü wird geöffnet.
+1. Klicken Sie im Bereich Eigenschaften auf den Eigenschaftsmarker neben dem Eigenschaftswert. Das Eigenschaftenmenü wird geöffnet.
 2. Klicken Sie im Eigenschaftsmenü auf „Zurücksetzen“.
 
 ![Option „Zurücksetzen“ im Visual Studio-Menü „Eigenschaften“](images/add-controls-property-reset.png)
@@ -141,7 +141,7 @@ Sie können ein Ereignis auch dem zugehörigen Ereignishandler im „CodeBehind�
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 -   [Index der Steuerelemente nach Funktion](controls-by-function.md)
 -   [Windows.UI.Xaml.Controls-Namespace](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)

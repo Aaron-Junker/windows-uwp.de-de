@@ -13,10 +13,10 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63801197"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Kontextbefehle für Sammlungen und Listen
@@ -39,7 +39,7 @@ In der Tabelle unten sind einige typische Befehle für Sammlungen aufgeführt so
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Element löschen      | Kontextmenü   | Hoverschaltfläche      | ENTF-TASTE              | Löschen per Wischen   |
 | Element kennzeichnen        | Kontextmenü   | Hoverschaltfläche      | STRG+UMSCHALT+G         | Kennzeichnen per Wischen     |
-| Daten aktualisieren     | Kontextmenü   | N/V               | F5-TASTE               | Aktualisierung durch Ziehen   |
+| Daten aktualisieren     | Kontextmenü   | NICHT ZUTREFFEND               | F5-TASTE               | Aktualisierung durch Ziehen   |
 | Element als Favorit speichern | Kontextmenü   | Hoverschaltfläche      | F-TASTE, STRG+S            | Als Favorit speichern per Wischen |
 
 
@@ -234,7 +234,7 @@ Kontextmenüs zeigen bei Aufruf durch den Benutzer eine Liste von Befehlen oder 
 
 Benutzer können Kontextmenüs über die folgenden „Kontextaktionen“ aufrufen:
 
-| Input    | Kontextaktion                          |
+| Eingabe    | Kontextaktion                          |
 | -------- | --------------------------------------- |
 | Maus    | Rechtsklick                             |
 | Tastatur | UMSCHALT+F10, Menütaste                  |
@@ -450,7 +450,7 @@ Wie Sie Ihre App für die Stifteingabe optimieren können, erfahren Sie im Artik
 * Implementieren Sie Eingabebeschleuniger für häufig verwendete Befehle. 
 * Verwenden Sie zur Implementierung von Befehlen die [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand). 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [Menüs und Kontextmenüs](menus.md)
 * [Wischen](swipe.md)

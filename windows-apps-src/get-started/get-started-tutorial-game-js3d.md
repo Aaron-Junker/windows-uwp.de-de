@@ -7,10 +7,10 @@ keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67321087"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>Erstellen eines 3D-JavaScript-Spiels mit „three.js“
@@ -638,7 +638,7 @@ Am Ende wenden wir die aktualisierten Werte für `x` und `y` als Übersetzungen 
 
 ---
 
-Gratulation! Du hast nun eine vom Spieler steuerbare Kamera, mit der sich der Spieler bewegen und umsehen kann. Wir können zwar immer noch durch Wände gehen, darum kümmern wir uns aber später. Als Nächstes fügen wir unseren Dinosaurier hinzu.
+Herzlichen Glückwunsch! Du hast nun eine vom Spieler steuerbare Kamera, mit der sich der Spieler bewegen und umsehen kann. Wir können zwar immer noch durch Wände gehen, darum kümmern wir uns aber später. Als Nächstes fügen wir unseren Dinosaurier hinzu.
 
 <iframe height='300' scrolling='no' title='Move around' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Sieh dir bei <a href='https://codepen.io'>CodePen</a> den Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>Move around</a> der Microsoft Edge-Dokumentation (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) an.
 </iframe>

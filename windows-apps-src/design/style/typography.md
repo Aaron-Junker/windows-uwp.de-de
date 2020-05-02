@@ -7,10 +7,10 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282424"
 ---
 # <a name="typography"></a>Typografie
@@ -19,7 +19,7 @@ ms.locfileid: "72282424"
 
 Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient, um Informationen zu vermitteln. Ihr Stil darf diesem Ziel nie im Wege stehen. In diesem Artikel erläutern wir, wie Sie die Typografie in Ihre UWP-App formatieren, damit Benutzer Inhalte schnell und effizient verstehen.
 
-## <a name="font"></a>Font
+## <a name="font"></a>Schriftart
 
 Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es wird empfohlen, wenn möglich, die Standardschriftart für UWP-Apps **Segoe UI** zu verwenden. Sie wurde entwickelt, um eine optimale Lesbarkeit für Größe und Pixeldichte zu wahren, und bietet eine klare, ansprechende und offene Ästhetik, die den Inhalt des Systems ergänzt.
 
@@ -161,7 +161,7 @@ Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](https://docs.micros
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>
@@ -218,7 +218,7 @@ Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](https://docs.micros
 </tbody>
 </table>
 
-## <a name="fonts"></a>Schriftarten
+## <a name="fonts"></a>Fonts
 
 ### <a name="sans-serif-fonts"></a>Serifenlose Schriftarten
 
@@ -234,7 +234,7 @@ Serifenlose Schriftarten eignen sich für Überschriften und UI-Elemente.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>
@@ -277,7 +277,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>
@@ -313,7 +313,7 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 <tr class="header">
 <th align="left">Schriftfamilie</th>
 <th align="left">Stile</th>
-<th align="left">Anmerkungen</th>
+<th align="left">Hinweise</th>
 </tr>
 </thead>
 <tbody>

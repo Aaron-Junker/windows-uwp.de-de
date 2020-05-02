@@ -9,10 +9,10 @@ ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66215189"
 ---
 # <a name="using-the-visual-layer-with-win32"></a>Verwenden der visuellen Ebene mit Win32
@@ -109,7 +109,7 @@ Wir machen diese Klasse zu einem Singleton, um Threadingprobleme zu vermeiden. D
 > [!TIP]
 > Überprüfe bei Bedarf am Ende des Tutorials den vollständigen Code, um sicherzustellen, dass sich der gesamte Code während des Durcharbeitens an den richtigen Stellen befindet.
 
-1. Füge deinem Projekt eine neue Klassendatei hinzu.
+1. Fügen Sie Ihrem Projekt eine neue Klassendatei hinzu.
     - Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt _HelloComposition_.
     - Wähle im Kontextmenü **Hinzufügen** > **Klasse...** aus.
     - Benenne die Klasse im Dialogfeld **Klasse hinzufügen** mit _CompositionHost.cs_, und klicke dann auf **Hinzufügen**.
@@ -382,7 +382,7 @@ Wenn du die App ausführst und auf die Schaltfläche klickst, sollten die animie
 - [Win32-Beispiel HelloComposition (GitHub)](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)
 - [Erste Schritte mit Win32 und C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
 - [Erste Schritte mit Windows 10-Apps](/windows/uwp/get-started/) (UWP)
-- [Verbessern deiner Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Verbessern Ihrer Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
 - [Windows.UI.Composition-Namespace](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>Vollständiger Code

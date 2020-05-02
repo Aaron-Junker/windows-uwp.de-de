@@ -8,10 +8,10 @@ ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f30ba67acc12d622acd09f9fae872ee2058a2f
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66215155"
 ---
 # <a name="using-the-visual-layer-with-wpf"></a>Benutzung der visuellen Ebene mit WPF
@@ -27,8 +27,8 @@ Für die UWP-XAML-Hosting-API gelten die folgenden Voraussetzungen.
 - Es wird davon ausgegangen, dass du mit der App-Entwicklung mit WPF und UWP grundsätzlich vertraut bist. Weitere Informationen:
   - [Erste Schritte (WPF)](/dotnet/framework/wpf/getting-started/)
   - [Erste Schritte mit Windows 10-Apps](/windows/uwp/get-started/)
-  - [Verbessern deiner Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
-- Mindestens .NET Framework 4.7.2
+  - [Verbessern Ihrer Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance)
+- .NET Framework 4.7.2 oder höher
 - Windows 10 Version 1803 oder höher
 - Windows 10 SDK 17134 oder höher
 
@@ -57,13 +57,13 @@ So erstellst du ein neues WPF-Anwendungsprojekt in Visual C# namens _HelloCompo
 
 Wenn du in deiner WPF-App die Windows-Runtime-APIs (WinRT) verwenden möchtest, musst du das Visual Studio-Projekt für den Zugriff auf die Windows-Runtime konfigurieren. Außerdem werden Vektoren von den Composition-APIs ausgiebig verwendet, sodass du die für die Verwendung von Vektoren erforderlichen Verweise hinzufügen musst.
 
-Für diese beiden Anforderungen sind NuGet-Pakete verfügbar. Installiere die neuesten Versionen dieser Pakete, um dem Projekt die erforderlichen Verweise hinzuzufügen.  
+Für diese beiden Anforderungen sind NuGet-Pakete verfügbar. Installieren Sie die neuesten Versionen dieser Pakete, um dem Projekt die erforderlichen Verweise hinzuzufügen.  
 
 - [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) (erfordert die Festlegung des Standardformats für die Paketverwaltung auf „PackageReference“)
 - [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
 
 > [!NOTE]
-> Es wird empfohlen, die NuGet-Pakete für die Konfiguration deines Projekts zu verwenden. Du kannst die erforderlichen Verweise jedoch auch manuell hinzufügen. Weitere Informationen findest du unter [Verbessern der Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). In der folgenden Tabelle werden die Dateien angezeigt, denen du Verweise hinzufügen musst.
+> Es wird empfohlen, die NuGet-Pakete für die Konfiguration Ihres Projekts zu verwenden. Sie können die erforderlichen Verweise jedoch auch manuell hinzufügen. Weitere Informationen finden Sie unter [Verbessern der Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance). In der folgenden Tabelle werden die Dateien angezeigt, denen Sie Verweise hinzufügen müssen.
 
 |File|Speicherort|
 |--|--|
@@ -639,7 +639,7 @@ Ein ausführlicheres Beispiel, das auf der gleichen Infrastruktur aufbaut, finde
 - [Erste Schritte (WPF)](/dotnet/framework/wpf/getting-started/) (.NET)
 - [Interoperation mit nicht verwaltetem Code](/dotnet/framework/interop/) (.NET)
 - [Erste Schritte mit Windows 10-Apps](/windows/uwp/get-started/) (UWP)
-- [Verbessern deiner Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Verbessern Ihrer Desktopanwendung für Windows 10](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
 - [Windows.UI.Composition-Namespace](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>Vollständiger Code

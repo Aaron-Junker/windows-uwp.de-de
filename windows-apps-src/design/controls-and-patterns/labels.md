@@ -1,6 +1,6 @@
 ---
 Description: Verwenden Sie ein Label, um den Benutzer darauf hinzuweisen, was er in ein benachbartes Steuerelement eingeben soll. Sie können auch eine Gruppe verwandter Steuerelemente beschriften oder in der Nähe davon Anweisungstexte anzeigen.
-title: Beschriftungen
+title: Bezeichnungen
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
@@ -12,13 +12,13 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b642f1d6c3f2a04bacdf293858492ea095af1a8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67319522"
 ---
-# <a name="labels"></a>Beschriftungen
+# <a name="labels"></a>Bezeichnungen
 
  
 
@@ -41,7 +41,7 @@ In XAML verfügen zahlreiche Steuerelemente über eine integrierte Header-Eigens
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 * [Beispiel für XAML-Benutzeroberflächengrundlagen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Textsteuerelemente](text-controls.md)
 * [TextBox.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)
 * [PasswordBox.Header-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header)

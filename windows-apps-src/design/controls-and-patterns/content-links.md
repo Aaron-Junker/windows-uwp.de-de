@@ -11,10 +11,10 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68796714"
 ---
 # <a name="content-links-in-text-controls"></a>Links zu Inhalten in Textsteuerelementen
@@ -46,7 +46,7 @@ Unterschiede bei der Verwendung, beim Rendering und beim Verhalten werden in den
 
 | Feature   | RichEditBox | Textblock |
 | --------- | ----------- | ---------- |
-| Verwendungszweck | ContentLinkInfo-Instanz | ContentLink-Textelement |
+| Usage | ContentLinkInfo-Instanz | ContentLink-Textelement |
 | Cursor | Wird durch den Typ des Links zu Inhalten bestimmt, kann nicht geändert werden | Wird durch die Cursor-Eigenschaft bestimmt, standardmäßig **null** |
 | ToolTip | Nicht gerendert | Zeigt sekundären Text an |
 
@@ -154,7 +154,7 @@ Die Ortsauswahl erstellt ContentLinkInfo mit dem URI-Stamm https://maps.windows.
 - Wenn LinkContentKind nicht „Orte“ entspricht, wird versucht, die **Karten**-App am angegebenen Speicherort zu öffnen. Dies kann beispielsweise der Fall sein, wenn Sie die LinkContentKind im ContentLinkChanged-Ereignishandler geändert haben.
 - Wenn der URI nicht in der Karten-App geöffnet werden kann, wird die Karte im Standardbrowser geöffnet. Dies ist in der Regel dann der Fall, wenn die _Apps für Websites_-Einstellungen des Benutzers das Öffnen der URI mit der **Karten**-App nicht zulassen.
 
-##### <a name="people"></a>People
+##### <a name="people"></a>Personen
 
 Die Personenauswahl erstellt eine ContentLinkInfo mit einem Uri, der das **ms-People**-Protokoll verwendet.
 

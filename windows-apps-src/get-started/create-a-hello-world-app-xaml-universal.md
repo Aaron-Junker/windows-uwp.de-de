@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, erste App, Hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 93c78845a218620a8a46fc4439733734099b9853
-ms.sourcegitcommit: 13ce25364201223e21e2e5e89f99bc7aa4d93f56
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73847605"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Erstellen der App „Hello, world“ (XAML)
@@ -168,7 +168,7 @@ Standardmäßig wird die App auf dem lokalen Computer ausgeführt. Das Menü mit
 
 Die App wird in einem Fenster geöffnet. Zuerst wird ein standardmäßiger Begrüßungsbildschirm angezeigt. Der Begrüßungsbildschirm setzt sich aus einem Bild (SplashScreen.png) und einer Hintergrundfarbe (in der Manifestdatei der App angegeben) zusammen.
 
-Nach dem Ausblenden des Begrüßungsbildschirms wird Ihre App angezeigt. Das sieht ungefähr wie folgt aus:
+Nach dem Ausblenden des Begrüßungsbildschirms wird Ihre App angezeigt. Das sieht ungefähr wie folgt aus.
 
 ![Erster App-Bildschirm](images/win10-cs-08.png)
 

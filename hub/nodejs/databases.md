@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node un
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 63c47107538d8744201f83ea1be24cfaf3193f4f
-ms.sourcegitcommit: 60d2d15dd0d365f82e4e90e4bc34b40cf5b4a247
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72517816"
 ---
 # <a name="get-started-using-mongodb-or-postgresql-with-nodejs-on-windows"></a>Erste Schritte bei der Verwendung von MongoDB oder PostgreSQL mit Node.js unter Windows
@@ -21,7 +21,7 @@ Node.js-Anwendungen müssen Daten oftmals dauerhaft speichern, was mithilfe von 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-In dieser Anleitung wird davon ausgegangen, dass Sie bereits die Schritte zum [Einrichten der Node.js-Entwicklungsumgebung mit WSL 2](./setup-on-wsl2.md) abgeschlossen haben. Dazu gehören:
+In dieser Anleitung wird davon ausgegangen, dass du die Schritte zum [Einrichten der Node.js-Entwicklungsumgebung mit WSL 2](./setup-on-wsl2.md) bereits abgeschlossen hast. Dazu gehören:
 
 - Installieren von Windows 10 Insider Preview Build 18932 oder höher
 - Aktivieren des WSL 2-Features unter Windows

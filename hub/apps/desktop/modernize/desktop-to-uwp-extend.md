@@ -8,10 +8,10 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: a38f5fa7f3ef99f5970ec5d476fb65761aa39db4
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75302584"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Erweitern deiner Desktop-App mit modernen UWP-Komponenten
@@ -94,7 +94,7 @@ Diese Abbildung zeigt eine Windows Forms-Anwendung, die eine XAML-basierte, mod
 ![Adaptives Design](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->Dieses Beispiel zeigt eine XAML-Benutzeroberfläche durch Hinzufügen eines UWP-Projekts zur Projektmappe. Dies ist der zuverlässige unterstützte Ansatz, um XAML-Benutzeroberflächen in einer Desktopanwendung anzuzeigen. Die Alternative zu diesem Ansatz besteht darin, der Desktopanwendung UWP-XAML-Steuerelemente mithilfe einer XAML Island direkt hinzuzufügen. XAML Islands sind derzeit als Entwicklervorschau verfügbar. Obwohl wir dich ermutigen möchten, diese jetzt in deinem eigenen Prototypencode zu testen, empfehlen wir nicht, sie zu diesem Zeitpunkt im Produktionscode zu verwenden. Diese APIs und Steuerelemente werden in künftigen Windows-Releases weiter ausreifen und stabilisiert. Weitere Informationen zu XAML Islands findest du unter [UWP-Steuerelemente in Desktopanwendungen](xaml-islands.md).
+>Dieses Beispiel zeigt eine XAML-Benutzeroberfläche durch Hinzufügen eines UWP-Projekts zur Projektmappe. Dies ist der zuverlässige unterstützte Ansatz, um XAML-Benutzeroberflächen in einer Desktopanwendung anzuzeigen. Die Alternative zu diesem Ansatz besteht darin, der Desktopanwendung UWP-XAML-Steuerelemente mithilfe einer XAML Island direkt hinzuzufügen. XAML Islands sind derzeit als Entwicklervorschau verfügbar. Obwohl wir Sie ermutigen möchten, diese jetzt in Ihrem eigenen Prototypencode zu testen, empfehlen wir Ihnen nicht, sie zu diesem Zeitpunkt im Produktionscode zu verwenden. Diese APIs und Steuerelemente werden in künftigen Windows-Releases weiter ausreifen und stabilisiert. Weitere Informationen zu XAML Islands findest du unter [UWP-Steuerelemente in Desktopanwendungen](xaml-islands.md).
 
 ### <a name="the-design-pattern"></a>Das Entwurfsmuster
 
@@ -503,4 +503,4 @@ public void RegisterBackgroundTask(String triggerName)
 
 ## <a name="find-answers-to-your-questions"></a>Antworten auf deine Fragen
 
-Noch Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) fragen.
+Haben Sie Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) fragen.

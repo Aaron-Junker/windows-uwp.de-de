@@ -9,10 +9,10 @@ keywords: Python, Windows 10, Microsoft, pip, py.exe, Dateipfade, PYTHONPATH, Py
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
-ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74663557"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>Häufig gestellte Fragen zum Verwenden von Python unter Windows
@@ -31,7 +31,7 @@ Einige Pakete enthalten nativen Code, für dessen Installation ein C- oder C++-C
 
 Möglicherweise sind auf Ihrem Computer mehrere Python-Versionen installiert, da Sie verschiedene Python-Projekttypen bearbeiten. Da für alle diese Projekttypen der Befehl `python` verwendet wird, ist es möglicherweise nicht offensichtlich, welche Python-Version Sie verwenden. Standardmäßig wird empfohlen, den Befehl `python3` zu verwenden (oder `python3.7`, um eine bestimmte Version auszuwählen).
 
-Mit dem [„py.exe“-Startprogramm](https://docs.python.org/3/using/windows.html#launcher) wird automatisch die neueste installierte Version von Python ausgewählt. Sie können außerdem Befehle wie `py -3.7` verwenden, um eine bestimmte Version auszuwählen, oder `py --list`, um anzuzeigen, welche Versionen verwendet werden können. Das „py.exe“-Startprogramm funktioniert jedoch **NUR**, wenn Sie eine Version von Python verwenden, die über [python.org](https://www.python.org/downloads/windows/) installiert wurde. Wenn Sie Python über den Microsoft Store installieren, ist der Befehl `py` **nicht enthalten**. Für Linux, macOS, WSL und die Microsoft Store-Version von Python sollten Sie den Befehl `python3` (oder `python3.7`) verwenden.
+Mit dem [„py.exe“-Startprogramm](https://docs.python.org/3/using/windows.html#launcher) wird automatisch die neueste installierte Version von Python ausgewählt. Sie können außerdem Befehle wie `py -3.7` verwenden, um eine bestimmte Version auszuwählen, oder `py --list`, um anzuzeigen, welche Versionen verwendet werden können. Das „py.exe“-Startprogramm funktioniert jedoch **NUR**, wenn Sie eine Version von Python verwenden, die über [python.org](https://www.python.org/downloads/windows/) installiert wurde. Wenn Sie Python über den Microsoft Store installieren, ist der Befehl `py`**nicht enthalten**. Für Linux, macOS, WSL und die Microsoft Store-Version von Python sollten Sie den Befehl `python3` (oder `python3.7`) verwenden.
 
 ## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>Warum wird beim Ausführen von „python.exe“ der Microsoft Store geöffnet?
 

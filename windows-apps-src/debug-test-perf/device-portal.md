@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
 ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74254761"
 ---
 # <a name="windows-device-portal-overview"></a>Übersicht über das Windows Device Portal

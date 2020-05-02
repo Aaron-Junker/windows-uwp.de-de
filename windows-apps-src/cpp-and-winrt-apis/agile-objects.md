@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, agil, objekt, agilität, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66360330"
 ---
 # <a name="agile-objects-in-cwinrt"></a>Agile Objekte in C++/WinRT
@@ -87,7 +87,7 @@ Dabei spielt es keine Rolle, wo im variadic-Parameterpaket die Markerstruktur ve
 
 Unabhängig davon, ob Sie die Agilität abwählen, können Sie **IMarshal** selbst implementieren. Beispielsweise können Sie den Marker **winrt::non_agile** verwenden, um die Agilitätsstandardimplementierung zu vermeiden, und **IMarshal** selbst implementieren (um die Marshal-by-Value-Semantik zu unterstützen).
 
-## <a name="agile-references-winrtagileref"></a>Agile-Verweise (winrt::agile_ref)
+## <a name="agile-references-winrtagile_ref"></a>Agile-Verweise (winrt::agile_ref)
 
 Wenn Sie ein Objekt verwenden, das nicht agil ist, Sie es aber in einem potenziell agilen Kontext übergeben müssen, dann ist eine Option die Verwendung der [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)-Strukturvorlage. So erhalten Sie einen agilen Verweis auf eine Instanz eines nicht agilen Typs oder auf eine Schnittstelle eines nicht agilen Objekts.
 
@@ -124,6 +124,6 @@ Der Aufruf [**agile_ref::get**](/uwp/cpp-ref-for-winrt/agile-ref#agile_refget-fu
 * [winrt::Windows::Foundation::IUnknown::as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as-Funktion](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Verstehen und Verwenden von COM-Threadingmodellen](/previous-versions/ms809971(v=msdn.10))

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d8a4c354eff34edb0c97e9d95828d4287f9c4b99
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282489"
 ---
 # <a name="background-transfers"></a>Hintergrundübertragungen
@@ -44,12 +44,12 @@ Obwohl das Feature für die Hintergrundübertragung über eigene Mechanismen zur
 
 Die folgende Tabelle zeigt für jeden [**BackgroundTransferCostPolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy)-Wert, wann Hintergrundübertragungen basierend auf dem aktuellen Status des Telefons zulässig sind. Sie können den aktuellen Status des Telefons auch mithilfe der [**ConnectionCost**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionCost)-Klasse ermitteln.
 
-| Gerätestatus                                                                                                                      | UnrestrictedOnly | Standard | Immer |
+| Gerätestatus                                                                                                                      | UnrestrictedOnly | Standardwert | Immer |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
-| Mit WLAN verbunden                                                                                                                 | Zulassen            | Zulassen   | Zulassen  |
-| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits nicht zu erwarten                                                   | Deny             | Zulassen   | Zulassen  |
-| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits zu erwarten                                                       | Deny             | Deny    | Zulassen  |
-| Getaktete Verbindung, Roaming, unter dem Datenlimit                                                                                     | Deny             | Deny    | Zulassen  |
+| Mit WLAN verbunden                                                                                                                 | Allow            | Allow   | Allow  |
+| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits nicht zu erwarten                                                   | Deny             | Allow   | Allow  |
+| Getaktete Verbindung, kein Roaming, unter dem Datenlimit, Überschreitung des Limits zu erwarten                                                       | Deny             | Deny    | Allow  |
+| Getaktete Verbindung, Roaming, unter dem Datenlimit                                                                                     | Deny             | Deny    | Allow  |
 | Getaktete Verbindung, Roaming, über dem Datenlimit. Dieser Status tritt nur auf, wenn der Benutzer in der Data Sense-Benutzeroberfläche die Option „Datennutzung im Hintergrund einschränken“ aktiviert. | Deny             | Deny    | Deny   |
 
 ## <a name="uploading-files"></a>Hochladen von Dateien

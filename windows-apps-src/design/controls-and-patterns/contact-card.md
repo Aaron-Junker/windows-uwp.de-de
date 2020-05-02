@@ -10,10 +10,10 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 36c8c6248b356bbb17da72b53b0480a27999b875
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257697"
 ---
 # <a name="contact-card"></a>Visitenkarte
@@ -94,7 +94,7 @@ Verwenden Sie die Visitenkarte, wenn Kontaktinformationen zu einem Kontakt angez
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
-4. Rufen Sie das [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt auf, das angezeigt werden soll. In diesem Beispiel wird lediglich ein einfacher Kontakt erstellt, Ihr Code sollte jedoch einen echten Kontakt abrufen. 
+4. Rufen Sie das [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)-Objekt auf, das angezeigt werden soll. In diesem Beispiel wird lediglich ein einfacher Kontakt erstellt, der Code sollte jedoch ein tatsächlicher Kontakt abrufen. 
 
     ```csharp
                 // Retrieve the contact to display

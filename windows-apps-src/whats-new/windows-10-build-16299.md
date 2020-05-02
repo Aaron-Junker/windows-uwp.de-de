@@ -6,10 +6,10 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258886"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Neuigkeiten für Entwickler in Windows 10, Build 16299
@@ -18,7 +18,7 @@ Windows 10 Build 16299 (auch bekannt als Fall Creators Update oder Version 1709)
 
 Dies ist eine Sammlung von neuen und verbesserten Features und Richtlinien, die in dieser Version für Windows-Entwickler interessant sind. Eine vollständige Liste mit neuen Namespaces, die dem Windows SDK hinzugefügt wurden, finden Sie in den [API-Änderungen unter Windows 10, Build 16299](windows-10-build-16299-api-diff.md). Weitere Informationen zu den Highlights von Windows 10 finden Sie unter [Die Highlights in Windows 10](https://developer.microsoft.com/windows/windows-10-for-developers). Darüber hinaus finden Sie unter [Windows Developer Platform-Features](https://developer.microsoft.com/windows/platform/features) eine grobe Übersicht über die früheren und zukünftigen neuen Features der Windows-Plattform.
 
-## <a name="design--ui"></a>Design und UI
+## <a name="design--ui"></a>Design und Benutzeroberfläche
 
 Feature | Beschreibung
  :------ | :------
@@ -45,7 +45,7 @@ Gameüberwachung | Die [GameMonitor-Klasse](https://docs.microsoft.com/uwp/api/w
 TruePlay | [TruePlay](https://docs.microsoft.com/previous-versions//mt808781(v=vs.85)?redirectedfrom=MSDN) bietet Entwicklern einen neuen Satz an Tools, um Täuschungsversuche in ihren PC-Spielen zu vermeiden. Ein Spiel, das mit TruePlay registriert wird, wird in einem geschützten Prozess ausgeführt, das eine Klasse von häufigen Angriffen verringert. Die TruePlay-APIs für die universelle Windows-Plattform (UWP) ermöglichen eine begrenzte Interaktion zwischen Spielen und dem Überwachungssystem der Spiele auf Windows 10-PCs. Diese APIs befinden sich im Header **&lt;gamemonitor.h&gt;** .
 Xbox Live | Wir haben Dokumentationen für Xbox Live-Entwickler hinzugefügt. Die Informationen beziehen sich sowohl auf UWP-Spiele als auch auf Xbox Developer Kit (XDK)-Spiele. </br>* Im [Xbox Live-Entwicklerhandbuch](https://docs.microsoft.com/gaming/xbox-live/index.md) erfahren Sie, wie Sie die Xbox Live-APIs verwenden, um Ihr Spiel in das soziale Xbox Live-Spielenetzwerk zu integrieren. </br>* Im [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) können alle UWP-Spielentwickler für Xbox-Live geeignete Spiele entwickeln und veröffentlichen, sowohl für den PC als auch für Xbox One. </br>* Weitere Informationen über die Programme und Features für Xbox Live-Entwickler finden Sie unter [Programmübersicht für Xbox Live-Entwickler](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md).
 
-## <a name="develop-windows-apps"></a>Entwickeln von Windows-Apps
+## <a name="develop-windows-apps"></a>Windows-Apps entwickeln
 
 Feature | Beschreibung
  :------ | :------

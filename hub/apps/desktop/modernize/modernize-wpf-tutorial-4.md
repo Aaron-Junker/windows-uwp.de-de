@@ -9,10 +9,10 @@ keywords: Windows 10, UWP, Windows Forms, WPF, XAML Islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 8443ac25ba678986046b967a90a8899eaffb76aa
-ms.sourcegitcommit: 1eec0e4fd8a5ba82803fdce6e23fcd01b9488523
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67420120"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>Teil 4: Hinzufügen von Windows 10-Benutzeraktivitäten und -Benachrichtigungen
@@ -346,7 +346,7 @@ Nachdem du nun eine Klasse erstellt hast, die mit der Zeitachse interagiert, kö
 
 7. Wenn du jetzt andere Ausgaben öffnest, siehst du, dass neue Karten als Benutzeraktivitäten hinzugefügt werden. Denke daran, dass der Code für jede Aktivität einen anderen Bezeichner verwendet, sodass für jede Ausgabe, die du in der App öffnest, eine Karte erstellt wird.
 
-8. Schließe die App.
+8. Schließen Sie die App.
 
 ## <a name="add-a-notification"></a>Hinzufügen einer Benachrichtigung
 

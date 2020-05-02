@@ -9,10 +9,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257281"
 ---
 # <a name="images-and-image-brushes"></a>Bilder und Bildpinsel
@@ -44,7 +44,7 @@ Verwenden Sie **ImageBrush**, um ein Image auf ein anderes Objekt anzuwenden. �
 
 ## <a name="create-an-image"></a>Erstellen eines Bilds
 
-### <a name="image"></a>Bild
+### <a name="image"></a>Abbild
 In diesem Beispiel wird die Erstellung eines Bilds unter Verwendung des [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)-Objekts veranschaulicht.
 
 
@@ -80,7 +80,7 @@ Hier ist die Ellipse, die von „ImageBrush“ gezeichnet wurde.
 
 Wenn du den Wert für [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) oder [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) eines Objekts vom Typ **Image** nicht festlegst, wird es mit den von **Source** angegebenen Bilddimensionen angezeigt. Durch das Festlegen von **Width** und **Height** wird ein rechteckiger Bereich erstellt, in dem das Bild angezeigt wird. Mithilfe der [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch)-Eigenschaft kannst du angeben, wie das Bild den enthaltenden Bereich ausfüllen soll. Die Stretch-Eigenschaft akzeptiert die folgenden Werte, die durch die [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch)-Enumeration definiert werden:
 
--   **Keine**: Das Bild wird nicht gestreckt, um den Ausgabebereich auszufüllen. Bei dieser Stretch-Einstellung ist Folgendes zu beachten: Ist das Quellbild größer als der enthaltende Bereich, wird das Bild abgeschnitten, was in der Regel nicht wünschenswert ist, da du anders als bei der bewussten Verwendung von [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) keine Kontrolle über den Anzeigebereich hast.
+-   **None**: Das Bild wird nicht gestreckt, um den Ausgabebereich auszufüllen. Bei dieser Stretch-Einstellung ist Folgendes zu beachten: Ist das Quellbild größer als der enthaltende Bereich, wird das Bild abgeschnitten, was in der Regel nicht wünschenswert ist, da du anders als bei der bewussten Verwendung von [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) keine Kontrolle über den Anzeigebereich hast.
 -   **Uniform**: Das Bild wird auf die Abmessungen der Ausgabe skaliert. Das Seitenverhältnis des Inhalts bleibt jedoch erhalten. Dies ist der Standardwert.
 -   **UniformToFill**: Das Bild wird skaliert, sodass es den Ausgabebereich vollständig ausfüllt, und das ursprüngliche Seitenverhältnis wird beibehalten.
 -   **Fill**: Das Bild wird auf die Abmessungen der Ausgabe skaliert. Da Höhe und Breite des Inhalts unabhängig voneinander dimensioniert werden, wird das ursprüngliche Seitenverhältnis möglicherweise nicht beibehalten. Mit anderen Worten, das Bild wird eventuell verzerrt, um den Ausgabebereich vollständig auszufüllen

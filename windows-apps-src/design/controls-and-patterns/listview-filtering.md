@@ -8,10 +8,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: anawish
 ms.openlocfilehash: 24669b81c244339509e30a43a0da8a2b27e67eeb
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75302654"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>Filtern von Sammlungen und Listen mithilfe von Benutzereingaben
