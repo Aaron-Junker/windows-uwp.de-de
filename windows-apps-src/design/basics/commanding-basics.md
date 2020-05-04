@@ -11,10 +11,10 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6be51c274078d3b8db5ae50033bbf714ec4aa12a
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80081402"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>Befehlsdesigngrundlagen für UWP-Apps
@@ -97,7 +97,7 @@ Bietet Vorschläge, während Benutzer z.B. Daten eingeben oder Abfragen ausführ
 
 Eine vollständige Liste finden Sie unter [Steuerelemente und UI-Elemente](../controls-and-patterns/index.md).
 
-## <a name="place-commands-on-the-right-surface"></a>Platzieren von Befehlen auf der passenden Oberfläche
+## <a name="place-commands-on-the-right-surface"></a> Platzieren von Befehlen auf der passenden Oberfläche
 
 Sie können Befehlselemente auf einer Reihe von Oberflächen in Ihrer App platzieren, einschließlich der App-Canvas oder spezieller Befehlscontainer, wie Befehlsleisten, Befehlsleisten-Flyouts, Menüleisten und Dialoge.
 
@@ -209,7 +209,7 @@ Für Aktionen, die rückgängig gemacht werden können, ist ein einfacher „Rü
 Umbenennen einer Datei
 :::row-end:::
 
-##  <a name="optimize-for-specific-input-types"></a>Optimieren für bestimmte Eingabearten
+##  <a name="optimize-for-specific-input-types"></a> Optimieren für bestimmte Eingabearten
 
 Ausführliche Informationen zum Optimieren der Benutzerfreundlichkeit bei einem bestimmten Eingabetyp oder -gerät finden Sie unter [Einführung in die Interaktion](../input/index.md).
 
