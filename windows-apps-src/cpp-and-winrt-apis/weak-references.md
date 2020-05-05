@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, Projektion, stark, schwach, Verweis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 781b63f9f32a0fdf7edee6479b60fd82822cc745
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: dc991ff485d9e4ba90264e1b8082a40e0f4ab801
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209235"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82267479"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++/WinRT
 
@@ -359,7 +359,7 @@ In der Lambda-Erfassungsklausel wird eine temporäre Variable erstellt, die eine
 
 ## <a name="weak-references-in-cwinrt"></a>Schwache Verweise in C++/WinRT
 
-Oben haben wir die Verwendung schwacher Verweise gesehen. Im Allgemeinen sind sie zum Aufbrechen von Zirkelverweisen zu gebrauchen. Beispielsweise ist der schwache Verweismechanismus bei der nativen Implementierung des XAML-basierten UI-Frameworks aufgrund des historischen Entwurfs des Frameworks in C++/WinRT notwendig, um Zirkelverweise zu verarbeiten. Außerhalb von XAML werden Sie schwache Verweise aber vermutlich nicht verwenden müssen (nicht, dass sie etwas XAML-Spezifisches an sich hätten). Sie sollten vielmehr meistens in der Lage sein, Ihre eigenen C++/WinRT-APIs so zu gestalten, dass Zirkelverweise und schwache Verweise vermieden werden. 
+Oben haben wir die Verwendung schwacher Verweise gesehen. Im Allgemeinen sind sie zum Aufbrechen von Zirkelverweisen zu gebrauchen. Beispielsweise ist der schwache Verweismechanismus bei der nativen Implementierung des XAML-basierten UI-Frameworks &mdash;aufgrund des historischen Entwurfs des Frameworks&mdash; in C++/WinRT notwendig, um Zirkelverweise zu verarbeiten. Außerhalb von XAML werden Sie schwache Verweise aber vermutlich nicht verwenden müssen (nicht, dass sie etwas XAML-Spezifisches an sich hätten). Sie sollten vielmehr meistens in der Lage sein, Ihre eigenen C++/WinRT-APIs so zu gestalten, dass Zirkelverweise und schwache Verweise vermieden werden. 
 
 Bei einem von Ihnen deklarierten Typ ist es für C++/WinRT nicht sofort ersichtlich, ob oder wann schwache Verweise benötigt werden. Daher bietet C++/WinRT für die Strukturvorlage [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) automatisch eine Unterstützung von schwachen Verweisen. Von dieser werden Ihre eigenen C++/WinRT-Typen direkt oder indirekt abgeleitet. Dies kostet Sie nichts, es sei denn, Ihr Objekt wird tatsächlich auf [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) abgefragt. Und Sie können sich explizit [gegen diese Unterstützung](#opting-out-of-weak-reference-support) entscheiden.
 

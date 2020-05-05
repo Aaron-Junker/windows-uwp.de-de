@@ -12,10 +12,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f5d0c2f5c5aa6c5d5bfcaee8e9b0ec14bbcd4ff3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339373"
 ---
 # <a name="control-templates"></a>Steuerelementvorlagen
@@ -172,9 +172,9 @@ Zum besseren Verständnis der Funktionsweise von [**VisualState**](https://docs.
 
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| Zustandsübergänge                     | Folgendes passiert:                                                                                                                                                                                                                                                                                                                                   | CheckBox-Darstellung nach Abschluss des Übergangs |
+| Zustandsübergang                     | Folgendes passiert:                                                                                                                                                                                                                                                                                                                                   | CheckBox-Darstellung nach Abschluss des Übergangs |
 | Von `Unchecked` in `Checked`.       | Der [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Wert des `Checked`-[**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) wird angewendet. Daher hat die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft von `CheckGlyph` den Wert 1.                                                                                                                                                         | Es wird ein „X“ angezeigt.                                |
-| Von `Checked` in `Indeterminate`.   | Der [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Wert des `Indeterminate`-[**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) wird angewendet. Daher hat die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft von `IndeterminateGlyph` den Wert 1. Der **Setter**-Wert von `Checked`-**VisualState** wird entfernt. Daher hat die [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity)-Eigenschaft des `CheckGlyph`-Zustands den Wert 0. | Ein Kreis wird angezeigt.                            |
+| Von `Checked` in `Indeterminate`.   | Der [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Wert des `Indeterminate`-[**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) wird angewendet. Daher hat die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft von `IndeterminateGlyph` den Wert 1. Der **Setter**-Wert von `Checked`-**VisualState** wird entfernt. Daher hat die [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity)-Eigenschaft von `CheckGlyph` den Wert 0. | Ein Kreis wird angezeigt.                            |
 | Von `Indeterminate` in `Unchecked`. | Der [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)-Wert von `Indeterminate`-[**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) wird entfernt. Daher hat die [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity)-Eigenschaft von `IndeterminateGlyph` den Wert 0.                                                                                                                                           | Es wird nichts angezeigt.                             |
 
  

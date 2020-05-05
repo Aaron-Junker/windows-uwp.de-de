@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, UWP, Datei, Eigenschaften
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63799613"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>Schneller Zugriff auf Dateieigenschaften in UWP 
@@ -21,7 +21,7 @@ Voraussetzungen 
 - **Zugriffsberechtigungen für Bibliotheken:**  Der Code in diesen Beispielen erfordert beispielsweise den Zugriff auf die **picturesLibrary**-Funktion, während dein Dateispeicherort einen anderen Zugriffstyp oder keinen Zugriff voraussetzt. Weitere Informationen finden Sie unter [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions). 
 - **Einfache Dateiauflistung:**   In diesem Beispiel werden mit [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) einige erweiterte Auflistungseigenschaften festgelegt. Weitere Informationen dazu, wie du eine einfache Liste von Dateien für ein kleineres Verzeichnis erhältst, findest du unter [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
 
-## <a name="usage"></a>Verwendungszweck  
+## <a name="usage"></a>Usage  
 Viele Apps müssen die Eigenschaften einer Gruppe von Dateien auflisten, müssen aber nicht immer direkt mit den Dateien interagieren. Beispiel: Eine Musik-App spielt (öffnet) immer nur eine Datei ab, sie benötigt aber die Eigenschaften aller Dateien in einem Ordner, damit sie die Songwarteschlange anzeigen oder damit der Benutzer eine gültige Datei für die Wiedergabe auswählen kann. 
 
 Die Beispiele auf dieser Seite sollten nicht in Apps verwendet werden, die die Metadaten jeder Datei modifizieren, oder in Apps, die mit allen resultierenden StorageFiles interagieren (über das Lesen ihrer Eigenschaften hinaus). Weitere Informationen findest du unter [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders). 
@@ -114,7 +114,7 @@ Die resultierenden StorageFile-Dateien enthalten nur die angeforderten Eigenscha
 ## <a name="adding-folders-to-libraries"></a>Hinzufügen von Ordnern zu Bibliotheken 
 Apps können den Benutzer mittels [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync) auffordern, den Speicherort zum Index hinzuzufügen. Ist der Speicherort erst einmal enthalten, wird er automatisch indiziert, und Apps können diese Technik zum Auflisten der Dateien verwenden.
  
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 [QueryOptions-API-Referenz](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [Aufzählen und Abfragen von Dateien und Ordnern](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [Berechtigungen für den Dateizugriff](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  

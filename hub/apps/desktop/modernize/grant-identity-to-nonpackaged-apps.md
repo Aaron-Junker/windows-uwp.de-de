@@ -1,19 +1,19 @@
 ---
 Description: Erfahre, wie du einer nicht verpackten Desktop-App Identität zuweist, damit du moderne Windows 10-Funktionen in diesen Apps verwenden kannst.
 title: Identitätszuweisen für nicht verpackte Desktop-Apps
-ms.date: 02/28/2020
+ms.date: 04/23/2020
 ms.topic: article
 keywords: Windows 10, Desktop, Paket, Identität, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d997c6109256974f17bc0f86a518e34ef55960a7
-ms.sourcegitcommit: ecd7bce5bbe15e72588937991085dad6830cec71
+ms.openlocfilehash: d870c82a3e4a8bc6c2ce923026010eff953eead2
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81224273"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82107713"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>Identitätszuweisen für nicht verpackte Desktop-Apps
 
@@ -43,9 +43,9 @@ Ein *Sparse Package* enthält ein Paketmanifest, aber keine anderen App-Binärda
 
 ### <a name="package-external-location"></a>Speicherort außerhalb des Pakets
 
-Zur Unterstützung von Sparse Packages unterstützt das Paketmanifestschema nun ein optionales **\<AllowExternalContent\>** -Element unter dem [ **\<Properties\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties)-Element. So kann das Paketmanifest auf Inhalte außerhalb des Pakets an einem bestimmten Speicherort auf dem Datenträger verweisen.
+Zur Unterstützung von Sparse Packages unterstützt das Paketmanifestschema nun ein optionales [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent)-Element unter dem [**Properties**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties)-Element. So kann das Paketmanifest auf Inhalte außerhalb des Pakets an einem bestimmten Speicherort auf dem Datenträger verweisen.
 
-Wenn z. B. deine vorhandene nicht gepackte Desktop-App die ausführbare Datei und andere Inhalte in „C:\Programme\MyDesktopApp“ installiert\, kannst du ein Sparse Package erstellen, das das **\<AllowExternalContent\>** -Element in das Manifest einbezieht. Während des Installationsvorgangs für deine App oder beim ersten Ausführen deiner Apps kannst du das Sparse Package installieren und „C:\Programme\MyDesktopApp“ als externen Speicherort deklarieren, der von deiner App verwendet wird.
+Wenn z. B. deine vorhandene nicht gepackte Desktop-App die ausführbare Datei und andere Inhalte in „C:\Programme\MyDesktopApp\,“ installiert kannst du ein Sparse Package erstellen, das das **uap10:AllowExternalContent**-Element in das Manifest einbezieht. Während des Installationsvorgangs für deine App oder beim ersten Ausführen deiner Apps kannst du das Sparse Package installieren und „C:\Programme\MyDesktopApp“ als externen Speicherort deklarieren, der von deiner App verwendet wird.
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>Erstellen eines Paketmanifests für das Sparse Package
 
@@ -53,10 +53,10 @@ Bevor du ein Sparse Package erstellen kannst, musst du zunächst ein [Paketmanif
 
 Stelle sicher, dass das Paketmanifest die folgenden Elemente enthält:
 
-* Ein [ **\<Identity\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)-Element, das die Identitätsattribute für deine Desktop-App beschreibt.
-* Ein **\<AllowExternalContent\>** -Element unter dem [**Properties\<\>** -Element ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Diesem Element sollte der Wert `true` zugewiesen werden, sodass das Paketmanifest auf Inhalte außerhalb des Pakets an einem bestimmten Speicherort auf dem Datenträger verweisen kann. In einem späteren Schritt gibst du den Pfad zu dem externen Speicherort an, wenn du dein Sparse Package über Code registrierst, der im Installer oder in der App ausgeführt wird. Alle nicht im Paket selbst befindlichen Inhalte, auf die du im Manifest verweist, sollten am externen Speicherort installiert werden.
-* Das **MinVersion**-Attribut des [ **\<TargetDeviceFamily\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)-Elements sollte auf `10.0.19000.0` oder eine spätere Version festgelegt werden.
-* Die Attribute **TrustLevel=mediumIL** und **RuntimeBehavior=Win32App** des [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)-Elements deklarieren, dass die Desktop-App, die dem Sparse Package zugeordnet ist, ähnlich wie eine standardmäßige, nicht gepackte Desktop-App ausgeführt wird, ohne Registrierung und Dateisystemvirtualisierung und andere Runtimeänderungen.
+* Ein [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)-Element, das die Identitätsattribute für deine Desktop-App beschreibt.
+* Ein [**uap10:AllowExternalContent**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent)-Element unter dem [**Properties-Element**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties). Diesem Element sollte der Wert `true` zugewiesen werden, sodass das Paketmanifest auf Inhalte außerhalb des Pakets an einem bestimmten Speicherort auf dem Datenträger verweisen kann. In einem späteren Schritt gibst du den Pfad zu dem externen Speicherort an, wenn du dein Sparse Package über Code registrierst, der im Installer oder in der App ausgeführt wird. Alle nicht im Paket selbst befindlichen Inhalte, auf die du im Manifest verweist, sollten am externen Speicherort installiert werden.
+* Das **MinVersion**-Attribut des [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)-Elements sollte auf `10.0.19000.0` oder eine spätere Version festgelegt werden.
+* Die Attribute **TrustLevel=mediumIL** und **RuntimeBehavior=Win32App** des [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)-Elements deklarieren, dass die Desktop-App, die dem Sparse Package zugeordnet ist, ähnlich wie eine standardmäßige, nicht gepackte Desktop-App ausgeführt wird, ohne Registrierung und Dateisystemvirtualisierung und andere Runtimeänderungen.
 
 Das folgende Beispiel zeigt den gesamten Inhalt eines Sparse Package (AppxManifest.xml). Dieses Manifest enthält eine `windows.sharetarget`-Erweiterung, die eine Paketidentität erfordert.
 
@@ -132,9 +132,9 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>Hinzufügen der Paketidentität-Metadaten zu deinem Desktopanwendungsmanifest
 
-Du musst auch ein [paralleles Anwendungsmanifest](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) in deine Desktop-App einschließen sowie ein [&lt;msix&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix)-Element mit Attributen, die die Identitätsattribute deiner App deklarieren. Die Werte dieser Attribute werden vom Betriebssystem verwendet, um die Identität deiner App zu ermitteln, wenn die ausführbare Datei gestartet wird.
+Du musst auch ein [paralleles Anwendungsmanifest](https://docs.microsoft.com/windows/win32/sbscs/application-manifests) in deine Desktop-App einschließen sowie ein [**msix**](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix)-Element mit Attributen, die die Identitätsattribute deiner App deklarieren. Die Werte dieser Attribute werden vom Betriebssystem verwendet, um die Identität deiner App zu ermitteln, wenn die ausführbare Datei gestartet wird.
 
-Das folgende Beispiel zeigt ein paralleles Anwendungsmanifest mit einem **\<msix\>** -Element.
+Das folgende Beispiel zeigt ein paralleles Anwendungsmanifest mit einem **msix**-Element.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -148,16 +148,16 @@ Das folgende Beispiel zeigt ein paralleles Anwendungsmanifest mit einem **\<msix
 </assembly>
 ```
 
-Die Attribute des **\<msix\>** -Elements müssen mit diesen Werten im Paketmanifest für das Sparse Package identisch sein:
+Die Attribute des **msix**-Elements müssen mit diesen Werten im Paketmanifest für das Sparse Package identisch sein:
 
-* Die Attribute **packageName** und **publisher** müssen mit den Attributen **Name** und **Publisher** im [ **\<Identity\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)-Element deines Paketmanifests identisch sein.
-* Das **applicationId**-Attribut muss mit dem **Id**-Attribut des [ **\<Application\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)-Elements im Paketmanifest identisch sein.
+* Die Attribute **packageName** und **publisher** müssen mit den Attributen **Name** und **Publisher** im [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)-Element deines Paketmanifests identisch sein.
+* Das **applicationId**-Attribut muss mit dem **Id**-Attribut des [**Application**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)-Elements im Paketmanifest identisch sein.
 
 Das parallele Anwendungsmanifest muss sich im selben Verzeichnis wie die ausführbare Datei für deine Desktop-App befinden und gemäß der Konvention sollte es denselben Namen wie die ausführbare Datei deiner App mit angefügter Erweiterung `.manifest` haben. Wenn beispielsweise der Name der ausführbaren Datei der App `ContosoPhotoStore` ist, sollte der Dateiname des Anwendungsmanifests `ContosoPhotoStore.exe.manifest` sein.
 
 ## <a name="register-your-sparse-package-at-run-time"></a>Registrieren des Sparse Package zur Runtime
 
-Um deiner Desktop-App eine Paketidentität zu gewähren, muss deine App das Sparse Package mithilfe der **AddPackageByUriAsync**-Methode der [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)-Klasse registrieren. Diese Methode steht ab Windows 10, Version 2004, zur Verfügung. Du kannst deiner App Code hinzufügen, um das Sparse Package zu registrieren, wenn sie zum ersten Mal ausgeführt wird, oder du kannst Code ausführen, um das Paket zu registrieren, während die Desktop-App installiert wird (wenn du z. B. MSI zum Installieren der Desktop-App verwendest, kannst du diesen Code über eine benutzerdefinierte Aktion ausführen).
+Um deiner Desktop-App eine Paketidentität zu gewähren, muss deine App das Sparse Package mithilfe der **AddPackageByUriAsync**-Methode der [**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)-Klasse registrieren. Diese Methode steht ab Windows 10, Version 2004, zur Verfügung. Du kannst deiner App Code hinzufügen, um das Sparse Package zu registrieren, wenn sie zum ersten Mal ausgeführt wird, oder du kannst Code ausführen, um das Paket zu registrieren, während die Desktop-App installiert wird (wenn du z. B. MSI zum Installieren der Desktop-App verwendest, kannst du diesen Code über eine benutzerdefinierte Aktion ausführen).
 
 Im folgenden Beispiel wird veranschaulicht, wie das Sparse Package registriert wird. Dieser Code erstellt ein **AddPackageOptions**-Objekt, das den Pfad zum externen Speicherort enthält, an dem das Paketmanifest auf Inhalte außerhalb des Pakets verweisen kann. Anschließend übergibt der Code dieses Objekt an die **AddPackageByUriAsync**-Methode, um das Sparse Package zu registrieren. Diese Methode empfängt auch den Speicherort des signierten Sparse Package als URI. Ein ausführlicheres Beispiel findest du in der `StartUp.cs`-Codedatei im entsprechenden [Beispiel](#sample).
 
@@ -191,7 +191,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## <a name="sample"></a>Beispiel
 
-Eine voll funktionsfähige Beispiel-App, die veranschaulicht, wie einer Desktop-App die Paketidentität mithilfe eines Sparse Package gewährt wird, findest du unter [https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages). Weitere Informationen zum Erstellen und Ausführen des Beispiels findest du in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
+Das [SparesePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages)-Beispiel enthält eine voll funktionsfähige Beispiel-App, die veranschaulicht, wie einer Desktop-App die Paketidentität mithilfe eines Sparse Package gewährt wird. Weitere Informationen zum Erstellen und Ausführen des Beispiels findest du in [diesem Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97).
 
 Das Beispiel enthält Folgendes:
 

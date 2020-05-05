@@ -5,12 +5,12 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, übergeben, Parameter, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e172fc4dbd5b865add1828a98dc1a030d5dc6f
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844354"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255254"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>Übergabe von Parametern in die ABI-Grenze
 
@@ -25,7 +25,7 @@ Viele Typen sind in synchroner und asynchroner Version verfügbar. C++/WinRT ver
 
 **winrt::param::hstring** vereinfacht die Übergabe von Parametern an APIs, die **HSTRING** unterstützen.
 
-|Typen, die übergeben werden können|Anmerkungen|
+|Typen, die übergeben werden können|Hinweise|
 |-|-|
 |`{}`|Übergibt eine leere Zeichenfolge.|
 |**winrt::hstring**||
@@ -45,7 +45,7 @@ Beachten Sie, dass **std::wstring_view**-Objekte nicht NULL-terminiert sind. In 
 
 Windows-Runtime-Sammlungen sind bereits **IIterable**.
 
-|Typen, die übergeben werden können|Sync|Async|Anmerkungen|
+|Typen, die übergeben werden können|Synchronisierung|Async|Hinweise|
 |-|-|-|-|
 | `nullptr` | Ja | Ja | Sie müssen sicherstellen, dass die zugrunde liegende Methode `nullptr` unterstützt.|
 | **IIterable\<T\>** | Ja | Ja | Oder ein Typ, der sich in ihn konvertieren lässt.|
@@ -81,7 +81,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 Die Implementierung von [**IIterator\<T\>.GetMany(T\[\])** ](/uwp/api/windows.foundation.collections.iiterator-1.getmany) ist effizienter, wenn der Iterator ein `RandomAcessIt` ist. Andernfalls wird der Bereich mehrmals durchlaufen.
 
-|Typen, die übergeben werden können|Sync|Async|Anmerkungen|
+|Typen, die übergeben werden können|Synchronisierung|Async|Hinweise|
 |-|-|-|-|
 | `nullptr` | Ja | Ja | Sie müssen sicherstellen, dass die zugrunde liegende Methode `nullptr` unterstützt.|
 | **IIterable\<IKeyValuePair\<K, V\>\>** | Ja | Ja | Oder ein Typ, der sich in ihn konvertieren lässt.|
@@ -98,7 +98,7 @@ Die Implementierung von [**IIterator\<T\>.GetMany(T\[\])** ](/uwp/api/windows.fo
 
 Sie können mithilfe von [**IVector\<T\>.GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview) eine **IVectorView** aus einem **IVector** abrufen.
 
-|Typen, die übergeben werden können|Sync|Async|Anmerkungen|
+|Typen, die übergeben werden können|Synchronisierung|Async|Hinweise|
 |-|-|-|-|
 | `nullptr` | Ja | Ja | Sie müssen sicherstellen, dass die zugrunde liegende Methode `nullptr` unterstützt.|
 | **IVectorView\<T\>** | Ja | Ja | Oder ein Typ, der sich in ihn konvertieren lässt.|
@@ -115,7 +115,7 @@ Die Version mit doppeltem Iterator kann verwendet werden, um Vektoransichten in 
 
 Sie können mithilfe von **IMap::GetView** eine **IMapView** aus **IMap** abrufen.
 
-|Typen, die übergeben werden können|Sync|Async|Anmerkungen|
+|Typen, die übergeben werden können|Synchronisierung|Async|Hinweise|
 |-|-|-|-|
 | `nullptr` | Ja | Ja | Sie müssen sicherstellen, dass die zugrunde liegende Methode `nullptr` unterstützt.|
 | **IMapView\<K, V\>** | Ja | Ja | Oder ein Typ, der sich in ihn konvertieren lässt.|
@@ -129,7 +129,7 @@ Sie können mithilfe von **IMap::GetView** eine **IMapView** aus **IMap** abrufe
 
 **winrt::param::vector\<T\>** vereinfacht die Übergabe von Parametern an APIs, die **IVector\<T\>** unterstützen.
 
-|Typen, die übergeben werden können|Anmerkungen|
+|Typen, die übergeben werden können|Hinweise|
 |-|-|
 | `nullptr` | Sie müssen sicherstellen, dass die zugrunde liegende Methode `nullptr` unterstützt.|
 | **IVector\<T\>** | Oder ein Typ, der sich in ihn konvertieren lässt.|
@@ -142,7 +142,7 @@ Wenn die Methode den Vektor mutiert, ist die einzige Möglichkeit zum Überwache
 
 **winrt::param::map\<T\>** vereinfacht die Übergabe von Parametern an APIs, die **IMap\<T\>** unterstützen.
 
-|Typen, die übergeben werden können|Anmerkungen|
+|Typen, die übergeben werden können|Hinweise|
 |-|-|
 | `nullptr` | Sie müssen sicherstellen, dass die zugrunde liegende Methode `nullptr` unterstützt.|
 | **IMap\<T\>** | Oder ein Typ, der sich in ihn konvertieren lässt.|
@@ -156,7 +156,7 @@ Wenn die Methode die Karte mutiert, ist die einzige Möglichkeit zum Überwachen
 
 **winrt::array_view\<T\>** befindet sich nicht im **winrt::param**-Namespace, wird jedoch für Parameter verwendet, die Arrays im C-Stil – auch als *konforme Arrays* bezeichnet – sind.
 
-|Typen, die übergeben werden können|Anmerkungen|
+|Typen, die übergeben werden können|Hinweise|
 |-|-|
 | `{}` | Ein leeres Array.|
 | **array** | Ein konformes C-Array (`C array[N];`), wobei **C** in **T** konvertierbar ist und `sizeof(C) == sizeof(T)`. |
@@ -164,3 +164,5 @@ Wenn die Methode die Karte mutiert, ist die einzige Möglichkeit zum Überwachen
 | **std::vector<C>** | Ein C++-**std::vector** von **C**, wobei **C** in **T** konvertierbar ist und `sizeof(C) == sizeof(T)`. |
 | `{ T*, T* }` | Ein Zeigerpaar, das den Bereich [Anfang, Ende) darstellt.|
 | **std::initializer_list\<T\>** ||
+
+Weitere Informationen finden Sie im Blogbeitrag [The various patterns for passing C-style arrays across the Windows Runtime ABI boundary](https://devblogs.microsoft.com/oldnewthing/20200205-00/?p=103398) (Die verschiedenen Muster für die Weitergabe von Arrays im C-Stil über die Windows-Runtime-ABI-Grenze).

@@ -14,10 +14,10 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: c35795eeb6afa32e77acb507c687e334e454d0d5
-ms.sourcegitcommit: e0f6150c8f45b69a3e114d0556c2c3d5aed7238f
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72560803"
 ---
 # <a name="implement-navigation-between-two-pages"></a>Implementieren der Navigation zwischen zwei Seiten
@@ -308,7 +308,7 @@ Zuerst wird in der CodeBehind-Datei „App.xaml“ in der Methode `App.OnLaunche
  
 Die [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)-Methode wird zum Anzeigen von Inhalt im **Frame** verwendet. Standardmäßig lädt diese Methode „MainPage.xaml“. In unserem Beispiel wird `Page1` an die Methode **Navigate** übergeben, sodass durch die Methode `Page1` im **Frame** geladen wird. 
 
-`Page1` ist eine Unterklasse der [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)-Klasse. Die **Page**-Klasse verfügt über eine schreibgeschützte **Frame**-Eigenschaft, die den **Frame** abruft, der **Page** enthält. Wenn der **Click**-Ereignishandler von **HyperlinkButton** `this.Frame.Navigate(typeof(Page2))` in `Page1` aufruft, zeigt das **Frame**-Element den Inhalt von „Page2.xaml“ an.
+`Page1` ist eine Unterklasse der [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)-Klasse. Die **Page**-Klasse verfügt über eine schreibgeschützte **Frame**-Eigenschaft, die den **Frame** abruft, der **Page** enthält. Wenn der **Click**-Ereignishandler von **HyperlinkButton**`this.Frame.Navigate(typeof(Page2))` in `Page1` aufruft, zeigt das **Frame**-Element den Inhalt von „Page2.xaml“ an.
 
 Und wenn eine Seite in den Frame geladen wird, wird sie als [**PageStackEntry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) zu [**BackStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack) oder [**ForwardStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack) des [**Frame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.frame)-Elements hinzugefügt, um die Verwendung von [Verlauf und Rückwärtsnavigation](navigation-history-and-backwards-navigation.md) zu ermöglichen.
 
@@ -318,7 +318,7 @@ Unsere App navigiert zwischen zwei Seiten, sie bietet jedoch noch keine interess
 
 Ersetze in „Page1.xaml“ das zuvor hinzugefügte **HyperlinkButton**-Element durch die folgende [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)-Klasse.
 
-Hier fügen wir eine [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Bezeichnung und ein [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element (`name`) zum Eingeben einer Textzeichenfolge hinzu:
+Hier fügen wir eine [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Bezeichnung und ein [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Element (`name`) zum Eingeben einer Textzeichenfolge hinzu.
 
 ```xaml
 <StackPanel>

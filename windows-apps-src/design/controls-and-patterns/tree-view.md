@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: ab5b509aa69dc54d18ef3643d7ccd46bc2984676
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: 68682d7b47e42995060601f5ae1c9b8d891aa3ff
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614101"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643717"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -472,7 +472,7 @@ Das **TreeView**-Steuerelement unterstützt sowohl die Einzelauswahl als auch di
 
 Wenn die Mehrfachauswahl aktiviert ist, wird ein Kontrollkästchen neben jedem Knoten einer Strukturansicht angezeigt, und ausgewählte Elemente werden hervorgehoben. Ein Benutzer kann ein Element mithilfe eines Kontrollkästchens aktivieren oder deaktivieren. Das Element kann weiterhin aufgerufen werden, indem darauf geklickt wird.
 
-Beim Aktivieren bzw. Deaktivieren eines übergeordneten Knotens werden alle darunter befindlichen untergeordneten Knoten aktiviert bzw. deaktiviert. Wenn einige (jedoch nicht alle) untergeordnete Elemente unter einem übergeordneten Knoten ausgewählt werden, wird das Kontrollkästchen für den übergeordneten Knoten als undefiniert angezeigt (gefüllt mit einem schwarzen Kästchen).
+Beim Aktivieren bzw. Deaktivieren eines übergeordneten Knotens werden alle darunter befindlichen untergeordneten Knoten aktiviert bzw. deaktiviert. Wenn einige (jedoch nicht alle) untergeordnete Elemente unter einem übergeordneten Knoten ausgewählt werden, wird das Kontrollkästchen für den übergeordneten Knoten mit dem Status „Undefiniert“ angezeigt.
 
 ![Mehrfachauswahl in einer Strukturansicht](images/treeview-selection.png)
 

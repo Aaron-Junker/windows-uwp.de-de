@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac zu Windows, Tastenkombinationszuordnung, Wechsel von UNIX zu Windows, Umstellung von Mac auf Windows, Unterstützung des Wechsels von MacBook zu Surface, Verwendung von Windows für einen Macintosh-Benutzer, Wechsel von Macintosh zu Windows, Unterstützung der Änderung von Entwicklungsumgebungen, Mac OS X zu Windows, Unterstützung des Wechsels von Mac zu PC
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 457abcec97247afcc0d63c983c8a6cda2de51c66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218440"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643700"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>Leitfaden zum Ändern der Entwicklungsumgebung von Mac zu Windows
 
@@ -82,7 +82,7 @@ Die Windows-Befehlszeile akzeptiert DOS-Befehle und ist das am häufigsten verwe
 
 3. Windows-Subsystem für Linux (WSL)
 
-Mit WSL kannst du eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass du abhängig von der Auswahl und der spezifischen installierten Linux-Distribution *bash** oder eine andere Shell ausführen kannst. Mithilfe von WSL wird eine Umgebung bereitgestellt, die Mac-Benutzern sehr vertraut ist. Beispielsweise werden Dateien in einem aktuellen Verzeichnis mit **ls** aufgelistet, nicht wie in der Windows-Befehlszeile mit **dir**. Weitere Informationen zum Installieren und Verwenden von WSL findest du in [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+Mit WSL kannst du eine Linux-Shell innerhalb von Windows ausführen. Dies bedeutet, dass du abhängig von der Auswahl und der spezifischen installierten Linux-Distribution **bash** oder eine andere Shell ausführen kannst. Mithilfe von WSL wird eine Umgebung bereitgestellt, die Mac-Benutzern sehr vertraut ist. Beispielsweise werden Dateien in einem aktuellen Verzeichnis mit **ls** aufgelistet, nicht wie in der Windows-Befehlszeile mit **dir**. Weitere Informationen zum Installieren und Verwenden von WSL findest du in [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
 4. Windows Terminal (Vorschau)
 

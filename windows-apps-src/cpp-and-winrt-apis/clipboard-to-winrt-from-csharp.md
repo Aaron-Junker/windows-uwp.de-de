@@ -5,18 +5,18 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C#, Beispiel, Zwischenablage, Fall, Studie
 ms.localizationpriority: medium
-ms.openlocfilehash: ecfbe1831014bce0cb7259c935ab0ae7a8af3de8
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.openlocfilehash: 37c542f6fa4ba84204131f7cac5b7585e196280b
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266938"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166722"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>Portieren des Beispiels „Zwischenablage“ (Clipboard) von C# zu C++/WinRT – eine Fallstudie
 
 Dieses Thema enthält eine Fallstudie für das Portieren einer der [UWP-App-Beispiele (Universal Windows Platform)](https://github.com/microsoft/Windows-universal-samples) von [C#](/visualstudio/get-started/csharp) nach [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). Sie können Praxis und Erfahrung mit dem Portieren sammeln, indem Sie der exemplarischen Vorgehensweise folgen und in deren Verlauf das Beispiel für sich selbst portieren.
 
-Weitere Informationen finden Sie unter [Umstellen von C# auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp), worin eine Reihe von Abschnitten geboten wird, die sich mit bestimmten technischen Details der Portierung von C# zu C++/WinRT beschäftigen.
+Einen umfassenden Katalog der technischen Details der Portierung nach C++/WinRT von C# findest du im begleitenden Thema [Umstellen von C# auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp).
 
 ## <a name="download-and-test-the-clipboard-sample"></a>Herunterladen und Testen des Beispiels „Zwischenablage“
 
@@ -139,7 +139,9 @@ Beachten Sie außerdem, dass **MainPage.Scenarios** eine Sammlung von **Scenario
 
 Fügen wir nun die neuen Typen zur Datei `MainPage.idl` hinzu sowie den neuen Member von **MainPage-** , für dessen Deklaration in IDL wir uns entschieden haben. Gleichzeitig entfernen wir die Platzhaltermember von **MainPage** aus der IDL, die wir durch die Visual Studio-Projektvorlage erhalten haben.
 
-Öffnen Sie also in Ihrem C++/WinRT-Projekt `MainPage.idl`, und bearbeiten Sie sie so, dass sie wie das folgende Listing aussieht. Beachten Sie, dass einer der Bearbeitungen darin besteht, den Namen des Namespace von **Clipboard** in **SDKTemplate** zu ändern. Wenn Sie möchten, können Sie den aktuellen Inhalt Ihrer `MainPage.idl` einfach löschen und das unten stehende Listing einfügen. Eine weitere anzumerkende Änderung ist, dass wir den Namen von **Scenario::ClassType** in **Scenario::ClassName** ändern.
+Öffnen Sie also in Ihrem C++/WinRT-Projekt `MainPage.idl`, und bearbeiten Sie sie so, dass sie wie das folgende Listing aussieht. Beachten Sie, dass einer der Bearbeitungen darin besteht, den Namen des Namespace von **Clipboard** in **SDKTemplate** zu ändern. Be Bedarf kannst du auch den gesamten Inhalt von `MainPage.idl` durch den folgenden Code ersetzen. Eine weitere anzumerkende Änderung ist, dass wir den Namen von **Scenario::ClassType** in **Scenario::ClassName** ändern.
+
+
 
 ```idl
 // MainPage.idl
@@ -559,7 +561,7 @@ void MainPage::UpdateStatus(hstring const& strMessage, SDKTemplate::NotifyType c
 ...
 ```
 
-In C# arbeiten Sie mit geschachtelten Eigenschaften mithilfe der *Punktnotation („dot“)* . Somit kann der C#-Typ **MainPage** mit der Syntax `Dispatcher` auf seine eigene **Dispatcher**-Eigenschaft zugreifen. Außerdem kann C# diesen Wert mithilfe der *Punktnotation* und einer Syntax wie `Dispatcher.HasThreadAccess` noch erweitern. In C++/WinRT werden Eigenschaften als Accessorfunktionen implementiert, sodass sich die Syntax nur dadurch unterscheidet, dass Sie bei jedem Funktionsaufruf Klammern hinzufügen.
+In C# kannst du mithilfe der *Punktnotation („dot“)* mit geschachtelten Eigenschaften arbeiten. Somit kann der C#-Typ **MainPage** mit der Syntax `Dispatcher` auf seine eigene **Dispatcher**-Eigenschaft zugreifen. Außerdem kann C# diesen Wert mithilfe der *Punktnotation* und einer Syntax wie `Dispatcher.HasThreadAccess` noch erweitern. In C++/WinRT werden Eigenschaften als Accessorfunktionen implementiert, sodass sich die Syntax nur dadurch unterscheidet, dass Sie bei jedem Funktionsaufruf Klammern hinzufügen.
 
 |C#|C++/WinRT|
 |-|-|
@@ -1127,7 +1129,7 @@ Es ist sinnvoll, dass du deine Laufzeitklassen in einer einzigen IDL-Datei konso
 
 Dabei sollen auch die automatisch generierte Dummyeigenschaft (`Int32 MyProperty;` und deren Implementierung) aus jedem dieser fünf XAML-Seitentypen entfernt werden.
 
-Füge zunächst dem C++/WinRT-Projekt ein neues **Midl-Datei (.idl)** -Element hinzu. Nenne es `Project.idl`. Lösche den Standardinhalt von `Project.idl`, und füge an dessen Stelle die folgenden Codezeilen ein.
+Füge zunächst dem C++/WinRT-Projekt ein neues **Midl-Datei (.idl)** -Element hinzu. Nenne es `Project.idl`. Ersetze den gesamten Inhalt von `Project.idl` durch folgenden Code:
 
 ```idl
 // Project.idl

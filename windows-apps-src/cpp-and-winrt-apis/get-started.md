@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
 ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74255134"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
@@ -71,7 +71,7 @@ Mit den Standardprojekteinstellungen kommen die enthaltenen Header aus dem Windo
 Die Header enthalten Windows-APIs, die in C++/WinRT projiziert werden. Anders ausgedrückt: Für jeden einzelnen Windows-Typ definiert C++/WinRT ein C++-freundliches Äquivalent (wird als *projizierter Typ* bezeichnet). Ein projizierter Typ verfügt über den gleichen vollqualifizierten Namen wie der Windows-Typ, befindet sich aber im C++/**winrt**-Namespace. Wenn Sie diese in Ihrem vorkompilierten Header platzieren, werden die inkrementellen Buildzeiten reduziert.
 
 > [!IMPORTANT]
-> Wann immer Sie einen Typ aus einem Windows-Namespace verwenden möchten, schließen Sie die entsprechende C++/WinRT-Windows-Namespace-Headerdatei wie oben gezeigt ein. Der *zugehörige* Header ist derjenige mit dem gleichen Namen wie der Namespace des Typs. Um z.B. die C++/WinRT-Projektion für die Laufzeitklasse [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) zu verwenden, fügen Sie Folgendes ein: `#include <winrt/Windows.Foundation.Collections.h>`. Wenn Sie `winrt/Windows.Foundation.Collections.h` einschließen, müssen Sie nicht *außerdem* `winrt/Windows.Foundation.h` einschließen. Jeder C++/WinRT-Projektionsheader schließt automatisch die Headerdatei seines übergeordneten Namespace ein, sodass Sie sie nicht explizit einschließen *müssen*. Es tritt aber auch kein Fehler auf, wenn Sie dies trotzdem tun.
+> Wann immer Sie einen Typ aus einem Windows-Namespace verwenden möchten, schließen Sie die entsprechende C++/WinRT-Windows-Namespace-Headerdatei wie oben gezeigt ein. Der *zugehörige* Header ist derjenige mit dem gleichen Namen wie der Namespace des Typs. Um z.B. die C++/WinRT-Projektion für die Laufzeitklasse [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) zu verwenden, fügen Sie Folgendes ein: `#include <winrt/Windows.Foundation.Collections.h>`. Wenn Sie `winrt/Windows.Foundation.Collections.h` einschließen, müssen Sie nicht *außerdem*`winrt/Windows.Foundation.h` einschließen. Jeder C++/WinRT-Projektionsheader schließt automatisch die Headerdatei seines übergeordneten Namespace ein, sodass Sie sie nicht explizit einschließen *müssen*. Es tritt aber auch kein Fehler auf, wenn Sie dies trotzdem tun.
 
 ```cppwinrt
 using namespace winrt;
@@ -149,7 +149,7 @@ Schließen Sie `winrt/base.h` in `pch.h` ein.
 
 Die C++/WinRT-Sprachprojektion hängt von bestimmten freien (nicht Member-) Funktionen der Windows Runtime und von Einstiegspunkten ab, die eine Verknüpfung mit der [WindowsApp.lib](/uwp/win32-and-com/win32-apis) „Umbrella“-Bibliothek erfordern. In diesem Abschnitt werden drei Verfahren beschrieben, wie die Verknüpfungsanforderung erfüllt werden kann.
 
-Die erste Option besteht darin, Ihrem Visual Studio-Projekt alle C++/WinRT-MSBuild-Eigenschaften und -Ziele hinzuzufügen. Installieren Sie zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in Ihrem Projekt. Öffnen Sie das Projekt in Visual Studio, klicken Sie auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **Installieren**, um das Paket für das Projekt zu installieren.
+Die erste Option besteht darin, Ihrem Visual Studio-Projekt alle C++/WinRT-MSBuild-Eigenschaften und -Ziele hinzuzufügen. Installieren Sie zu diesem Zweck das [Microsoft.Windows.CppWinRT NuGet-Paket](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) in Ihrem Projekt. Öffne das Projekt in Visual Studio, klicke auf **Projekt** \> **NuGet-Pakete verwalten**. \> **Durchsuchen**, geben oder fügen Sie **Microsoft.Windows.CppWinRT** in das Suchfeld ein, wählen Sie das Element in den Suchergebnissen aus, und klicken Sie dann auf **Installieren**, um das Paket für das Projekt zu installieren.
 
 Sie können auch die Verknüpfungseinstellungen des Projekts verwenden, um `WindowsApp.lib` explizit zu verknüpfen. Oder Sie können das im Quellcode erledigen (z.B. in `pch.h`), wie hier gezeigt.
 
@@ -185,7 +185,7 @@ Beachten Sie, dass XAML am besten für Programmiersprachen geeignet ist, die Ref
 * [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
 * [winrt::hresult_error-Struktur](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Fehlerbehandlung bei C++/WinRT](error-handling.md)
 * [Interoperabilität zwischen C++/WinRT und C++/CX](interop-winrt-cx.md)

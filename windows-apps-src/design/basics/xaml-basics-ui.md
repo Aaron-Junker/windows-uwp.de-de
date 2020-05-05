@@ -6,10 +6,10 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c23a9539d0fc3902f715917b380e8b6b3e132c15
-ms.sourcegitcommit: 1d868968297d0d6d02cc38fe84d0a3ab5bccfb60
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68974453"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutorial: Erstellen einer Benutzeroberfläche
@@ -43,7 +43,7 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
     
     **Wenn Sie mit GitHub nicht vertraut sind:**
     
-    a. Wähle **Download ZIP** aus, und speichere die Datei lokal. Mit diesem Schritt wird eine ZIP-Datei heruntergeladen, die alle benötigten Projektdateien enthält.
+    ein. Wähle **Download ZIP** aus, und speichere die Datei lokal. Mit diesem Schritt wird eine ZIP-Datei heruntergeladen, die alle benötigten Projektdateien enthält.
 
     b. Entpacken Sie die Datei. Verwende den Datei-Explorer, um zu der gerade heruntergeladenen ZIP-Datei zu navigieren, klicke mit der rechten Maustaste darauf, und wähle **Alle extrahieren** aus.
 
@@ -51,13 +51,13 @@ Für dieses Tutorial starten Sie mit einer vereinfachten Version des PhotoLab-Be
 
     **Wenn Sie mit GitHub vertraut sind:**
 
-    a. Klonen Sie den Master-Branch des Repositorys lokal.
+    ein. Klonen Sie den Master-Branch des Repositorys lokal.
 
     b. Wechsle zum `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface`-Verzeichnis.
 
 3. Öffne das Projekt, indem du **Photolab.sln** auswählst.
 
-## <a name="part-1-add-a-textblock-control-by-using-xaml-designer"></a>Teil 1: Hinzufügen eines TextBlock-Steuerelements mit XAML-Designer
+## <a name="part-1-add-a-textblock-control-by-using-xaml-designer"></a>Teil 1: Hinzufügen eines TextBlock-Steuerelements mit XAML-Designer
 
 Visual Studio bietet verschiedene Tools zum leichteren Erstellen der XAML-UI. Mit XAML-Designer kannst du Steuerelemente auf die Designoberfläche ziehen und vor dem Ausführen der App anschauen. Im Bereich **Eigenschaften** kannst du alle Eigenschaften des Steuerelements, die im Designer aktiv sind, überprüfen und festlegen. Die Dokumentgliederung zeigt die Struktur über- und untergeordneter Elemente der visuellen XAML-Struktur für deine Benutzeroberfläche. Mit dem XAML-Editor kannst du das XAML-Markup direkt eingeben und ändern.
 
@@ -318,7 +318,7 @@ So fügst du eine Datenvorlage einer Rasteransicht hinzu:
 
 6. Füge dem **Grid**-Layout Steuerelemente hinzu.
 
-    a. Fügen Sie ein **Image**-Steuerelement in die erste Rasterzeile ein. An dieser Stelle wird das Bild angezeigt. Doch im Moment kannst du das Logo des Stores der App als Platzhalter verwenden.
+    ein. Fügen Sie ein **Image**-Steuerelement in die erste Rasterzeile ein. An dieser Stelle wird das Bild angezeigt. Doch im Moment kannst du das Logo des Stores der App als Platzhalter verwenden.
 
     b. Fügen Sie **TextBlock**-Steuerelemente zum Anzeigen des Namens, Dateityps und der Dimensionen des Bilds hinzu. Verwenden Sie hierzu **StackPanel**-Steuerelemente, um die Textblöcke anzuordnen.
 
@@ -383,7 +383,7 @@ Führe jetzt die App aus, um das **GridView**-Steuerelement mit der soeben erste
 
 ## <a name="part-4-modify-the-item-container-style"></a>Teil 4: Ändern des Elementcontainerstils
 
-Eine Steuerelementvorlage für ein Element enthält die optischen Elemente zur Anzeige des Zustands wie Auswahl, Draufzeigen und Fokus. Diese visuellen Elemente werden über oder unter der Datenvorlage gerendert. Hier ändern Sie die **Background**- und **Margin**-Eigenschaften der Steuerelementvorlage, um dem **GridView**-Elemente einen grauen Hintergrund hinzuzufügen.
+Eine Steuerelementvorlage für ein Element enthält die visuellen Elemente zum Anzeigen des Zustands wie Auswahl, Draufzeigen und Fokus. Diese visuellen Elemente werden über oder unter der Datenvorlage gerendert. Hier ändern Sie die **Background**- und **Margin**-Eigenschaften der Steuerelementvorlage, um dem **GridView**-Elemente einen grauen Hintergrund hinzuzufügen.
 
 So änderst du den Elementcontainer:
 

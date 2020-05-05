@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, Lokalisierbarkeit, Lokalisierung, japanisch, Ära
 ms.localizationpriority: high
 ms.openlocfilehash: 7e8250ccae96ed835aba2a2a993fdde9ae31a884
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67714118"
 ---
 # <a name="prepare-your-application-for-the-japanese-era-change"></a>Vorbereiten Ihrer Anwendung auf den Wechsel der japanischen Ära
@@ -140,7 +140,7 @@ Die folgenden APIs werden betroffen sein:
   * [GetCalendarInfoEx-Funktion](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfoex)
   * [GetCalendarInfoW-Funktion](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfow)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 * [Umgang mit Ären im japanischen Kalender](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)
 * [Das Y2K-Phänomen im japanischen Kalender](https://blogs.msdn.microsoft.com/shawnste/2018/04/12/the-japanese-calendars-y2k-moment/)
