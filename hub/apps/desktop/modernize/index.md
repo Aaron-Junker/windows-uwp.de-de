@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c86290c9765eba5186e777f8de7b3b86967be9e
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: b966d00455bce390457e148c60b57296375ac2fa
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521341"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730239"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -36,11 +36,11 @@ Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](/windo
 
 Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
 
-## <a name="uwp-apis"></a>UWP-APIs
+## <a name="windows-runtime-apis"></a>Windows-Runtime-APIs
 
-Sie können viele UWP-APIs direkt in Ihrer WPF-, Windows Forms- oder C++-Win32-Desktop-App aufrufen, um moderne Benutzeroberflächen für Windows 10-Benutzer zu integrieren. Sie können beispielsweise UWP-APIs aufrufen, um Ihrer Desktop-App Popupbenachrichtigungen hinzuzufügen.
+Sie können viele Windows-Runtime-APIs direkt in Ihrer WPF-, Windows Forms- oder C++-Win32-Desktop-App aufrufen, um moderne Benutzeroberflächen für Windows 10-Benutzer zu integrieren. Sie können beispielsweise Windows-Runtime-APIs aufrufen, um Ihrer Desktop-App Popupbenachrichtigungen hinzuzufügen.
 
-Weitere Informationen finden Sie unter [Use UWP APIs in desktop apps](desktop-to-uwp-enhance.md) (Verwenden von UWP-APIs in Desktop-Apps).
+Weitere Informationen finden Sie unter [Verwenden von Windows-Runtime-APIs in Desktop-Apps](desktop-to-uwp-enhance.md).
 
 ## <a name="host-uwp-controls-xaml-islands"></a>Hosten von UWP-Steuerelementen (XAML-Inseln)
 
@@ -50,18 +50,18 @@ Weitere Informationen finden Sie unter [UWP controls in desktop apps](xaml-islan
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>Verwenden der visuellen Ebene in Desktop-Apps
 
-Sie können UWP-APIs jetzt auch in anderen Desktop-Apps als UWP-Apps verwenden, um Aussehen, Handhabung und Funktionalität Ihrer WPF-, Windows Forms- und C++-Win32-Apps zu verbessern, und die aktuellen Features der Windows 10-Benutzeroberfläche nutzen, die nur per UWP verfügbar sind. Dies ist hilfreich, wenn Sie benutzerdefinierte Umgebungen über die integrierten UWP-Steuerelemente hinaus erstellen müssen, die Sie mit XAML-Inseln hosten können.
+Sie können Windows-Runtime-APIs jetzt auch in anderen Desktop-Apps als UWP-Apps verwenden, um Aussehen, Handhabung und Funktionalität Ihrer WPF-, Windows Forms- und C++-Win32-Apps zu verbessern, und die aktuellen Features der Windows 10-Benutzeroberfläche nutzen, die nur per UWP verfügbar sind. Dies ist hilfreich, wenn Sie benutzerdefinierte Umgebungen über die integrierten UWP-Steuerelemente hinaus erstellen müssen, die Sie mit XAML-Inseln hosten können.
 
 Weitere Informationen finden Sie unter [Modernize your desktop app using the Visual layer](visual-layer-in-desktop-apps.md) (Modernisieren Ihrer Desktop-App über die visuelle Ebene).
 
 ## <a name="additional-features-available-to-apps-with-package-identity"></a>Zusätzliche Features für Apps mit Paketidentität
 
-Einige moderne Windows 10-Benutzeroberflächen sind nur in Desktop-Apps verfügbar, die über [Paketidentität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) verfügen. Zu diesen Features gehören bestimmte UWP-APIs, Paketerweiterungen und UWP-Komponenten. Weitere Informationen finden Sie unter [Features that require package identity](modernize-packaged-apps.md) (Features, für die Paketidentität benötigt wird).
+Einige moderne Windows 10-Benutzeroberflächen sind nur in Desktop-Apps verfügbar, die über [Paketidentität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) verfügen. Zu diesen Features gehören bestimmte Windows-Runtime-APIs, Paketerweiterungen und UWP-Komponenten. Weitere Informationen finden Sie unter [Features that require package identity](modernize-packaged-apps.md) (Features, für die Paketidentität benötigt wird).
 
 Es gibt mehrere Möglichkeiten, einer Desktop-App Identität zuzuweisen:
 
 * Verpacken Sie sie in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root). MSIX ist ein modernes App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps, WPF, Windows Forms und Win32-Apps bereitgestellt wird. Dadurch erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
-* Wenn es nicht möglich ist, MSIX-Pakete zur Bereitstellung Ihrer Desktop-App zu erstellen, können Sie ab Windows 10 Insider Preview Build 10.0.19000.0 Paketidentität bereitstellen, indem Sie ein *platzsparendes MSIX-Paket* erstellen, das nur ein Paketmanifest enthält. Weitere Informationen finden Sie unter [Identitätszuweisen für nicht verpackte Desktop-Apps](grant-identity-to-nonpackaged-apps.md).
+* Wenn es nicht möglich ist, MSIX-Pakete zur Bereitstellung Ihrer Desktop-App zu erstellen, können Sie ab Windows 10, Version 2004 Paketidentität bereitstellen, indem Sie ein *platzsparendes MSIX-Paket* erstellen, das nur ein Paketmanifest enthält. Weitere Informationen finden Sie unter [Identitätszuweisen für nicht verpackte Desktop-Apps](grant-identity-to-nonpackaged-apps.md).
 
 <a id="desktop-uwp-controls"/>
 

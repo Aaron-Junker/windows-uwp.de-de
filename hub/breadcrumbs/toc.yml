@@ -1,40 +1,58 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: Apps-
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
-        - name: Apps-
-          tocHref: /windows/apps/
-          topicHref: /windows/apps/
+        - name: Erstellen von Desktop-Apps
+          tocHref: /windows/apps/desktop/
+          topicHref: /windows/apps/desktop/
+        - name: Modernisieren von Desktop-Apps
+          tocHref: /windows/apps/desktop/modernize/
+          topicHref: /windows/apps/desktop/modernize/
           items:
-            - name: Erstellen von Desktop-Apps
-              tocHref: /windows/apps/desktop/
-              topicHref: /windows/apps/desktop/
-            - name: Modernisieren von Desktop-Apps
-              tocHref: /windows/apps/desktop/modernize/
-              topicHref: /windows/apps/desktop/modernize/
-            - name: .NET TraceProcessing
-              tocHref: /windows/apps/trace-processing/
-              topicHref: /windows/apps/trace-processing/overview
-        - name: Entwicklungsumgebung
-          tocHref: /windows/dev-environment/
-          topicHref: /windows/dev-environment/
-          items:
-            - name: Python
-              tocHref: /windows/python/
-              topicHref: /windows/python/
-            - name: Node.js
-              tocHref: /windows/nodejs/
-              topicHref: /windows/nodejs/
-            - name: Mac zu Windows
-              tocHref: /windows/dev-environment/mac-to-windows/
-              topicHref: /windows/dev-environment/mac-to-windows/
-            - name: Entwicklerumgebung
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/about
-            - name: Entwicklerumgebung
-              tocHref: /windows/dev-environment/wsl
-              topicHref: /windows/wsl/wsl2-about
+            - name: Windows-Runtime-APIs aufrufen
+              topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
+            - name: XAML Islands
+              topicHref: /windows/apps/desktop/modernize/xaml-islands
+            - name: Visuelle Ebene
+              topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+            - name: 'Features, für die Paketidentität benötigt wird'
+              topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
+            - name: 'Tutorial: Modernisieren einer WPF-App'
+              topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+        - name: .NET TraceProcessing
+          tocHref: /windows/apps/trace-processing/
+          topicHref: /windows/apps/trace-processing/overview
+        - name: Entwickeln für Windows 10X
+          topicHref: /windows/apps/10x/faq
+        - name: Fluent Design-System
+          topicHref: /windows/apps/fluent-design-system
+        - name: Eingabehilfen
+          topicHref: /windows/apps/accessibility
+        - name: Speech
+          topicHref: /windows/apps/speech
+        - name: Features und Technologien
+          topicHref: /windows/apps/features-and-technologies
+        - name: Neueste Aktualisierungen der Dokumentation
+          topicHref: /windows/apps/whats-new/latest-doc-updates
+    - name: Entwicklungsumgebung
+      tocHref: /windows/dev-environment/
+      topicHref: /windows/dev-environment/
+      items:
+        - name: Python
+          tocHref: /windows/python/
+          topicHref: /windows/python
+        - name: Node.js
+          tocHref: /windows/nodejs/
+          topicHref: /windows/nodejs
+        - name: Android
+          tocHref: /windows/android/
+          topicHref: /windows/android/overview
+        - name: Mac zu Windows
+          topicHref: /windows/dev-environment/mac-to-windows
+        - name: Windows-Subsystem für Linux
+          tocHref: /windows/dev-environment/wsl
+          topicHref: /windows/wsl/about

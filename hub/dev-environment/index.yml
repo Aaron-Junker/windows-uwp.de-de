@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Erstellen mit Windows
+title: Windows-Entwicklungsumgebung
 summary: Richten Sie Ihre Entwicklungsumgebung für die Verwendung von Python, Node.js, dem Windows-Subsystem für Linux, Windows-Terminal, Docker, MongoDB, PostgreSQL und mehr ein.
 metadata:
   author: mattwojo
@@ -9,12 +9,12 @@ metadata:
   ms.date: 09/15/2019
   ms.prod: dev-environment
   ms.topic: landing-page
-  ms.openlocfilehash: aaeb8b3818baf9b02d767222c2144a9066079362
-  ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
+  ms.openlocfilehash: 62e4cc8c5788780988b79d079ff4a6834a525a51
+  ms.sourcegitcommit: 0808a2719c007b3d7f55714e197ad080a1631a57
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72777273"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82630637"
 landingContent:
 - title: Erste Schritte mit Python
   linkLists:
@@ -72,6 +72,34 @@ landingContent:
       url: ../nodejs/web-frameworks.md#get-started-with-nuxtjs
     - text: Einrichten einer Web-App mit Gatsby.js
       url: ../nodejs/web-frameworks.md#get-started-with-gatsbyjs
+- title: Erste Schritte mit Android
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Übersicht über die Android-Entwicklung unter Windows
+      url: ../android/overview.md
+    - text: Vergleich der plattformübergreifenden Frameworks für Android
+      url: ../android/overview.md#cross-platform
+  - linkListType: get-started
+    links:
+    - text: Android (nativ)
+      url: ../android/overview.md#native-android
+    - text: Xamarin.Android
+      url: ../android/xamarin-android.md
+    - text: Xamarin.Forms
+      url: ../android/xamarin-forms.md
+    - text: React Native
+      url: ../android/react-native.md
+    - text: PWA (Cordova, Ionic, PhoneGap)
+      url: ../android/pwa.md
+    - text: Spieleentwicklung
+      url: ../android/overview.md#game-development
+  - linkListType: concept
+    links:
+    - text: Testen auf einem Android-Gerät oder -Emulator
+      url: ../android/emulator.md
+    - text: Aktualisieren der Windows Defender-Einstellungen zur Verbesserung der Leistung
+      url: ../android/defender-settings.md
 - title: Windows-Subsystem für Linux (WSL)
   linkLists:
   - linkListType: overview

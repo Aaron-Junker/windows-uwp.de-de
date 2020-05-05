@@ -1,0 +1,85 @@
+- name: Windows-Entwicklungsumgebung
+  href: index.yml
+  items:
+    - name: Entwickeln mit Python
+      items:
+        - name: Übersicht
+          href: ../python/index.yml
+        - name: Erste Schritte für Einsteiger
+          href: ../python/beginners.md
+        - name: Erste Schritte mit der Webentwicklung
+          href: ../python/web-frameworks.md
+        - name: Erste Schritte mit Automatisierung
+          href: ../python/scripting.md
+        - name: Erste Schritte mit Datenbanken
+          href: ../python/databases.md
+        - name: Häufig gestellte Fragen
+          href: ../python/faqs.md
+        - name: Ressourcen
+          href: ../python/resources.md
+    - name: Entwickeln mit Node.js
+      items:
+        - name: Übersicht
+          href: ../nodejs/index.yml
+        - name: Setup mit WSL2 (Linux)
+          href: ../nodejs/setup-on-wsl2.md
+        - name: Setup mit Windows (Einsteiger)
+          href: ../nodejs/setup-on-windows.md
+        - name: Erste Schritte für Einsteiger
+          href: ../nodejs/beginners.md
+        - name: Erste Schritte mit Webframeworks
+          href: ../nodejs/web-frameworks.md
+        - name: Erste Schritte mit Datenbanken
+          href: ../nodejs/databases.md
+        - name: Erste Schritte mit Containern
+          href: ../nodejs/containers.md
+    - name: Entwickeln mit Android
+      items:
+        - name: Übersicht
+          href: ../android/overview.md
+        - name: Erste Schritte mit Android (nativ)
+          href: ../android/native-android.md
+        - name: Erste Schritte mit plattformübergreifenden Tools
+          items:
+            - name: Xamarin (nativ)
+              href: ../android/xamarin-android.md
+            - name: Xamarin Forms
+              href: ../android/xamarin-forms.md
+            - name: React Native
+              href: ../android/react-native.md
+            - name: 'PWA (Ionic, PhoneGap, Cordova)'
+              href: ../android/pwa.md
+        - name: Defender-Einstellungen zur Verbesserung der Leistung
+          href: ../android/defender-settings.md
+        - name: Testen auf Gerät oder Emulator
+          href: ../android/emulator.md
+    - name: Leitfaden für Mac zu Windows
+      items:
+        - name: Ändern der Entwicklungsumgebung
+          href: mac-to-windows.md
+        - name: Tastenkombinationen
+          href: 'mac-to-windows.md#keyboard-shortcuts'
+        - name: Trackpad-Tastenkombinationen
+          href: 'mac-to-windows.md#trackpad-shortcuts'
+        - name: Terminal und Shell
+          href: 'mac-to-windows.md#terminal-and-shell'
+        - name: Apps und Hilfsprogramme
+          href: 'mac-to-windows.md#apps-and-utilities'
+    - name: Windows-Subsystem für Linux
+      items:
+        - name: Informationen zu WSL
+          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
+        - name: Informationen zu WSL 2
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
+        - name: Gegenüberstellung von WSL 1 und WSL 2
+          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
+        - name: Benutzerkonten und Berechtigungen
+          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
+    - name: Windows-Terminal
+      items:
+        - name: Übersicht
+          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
+        - name: Benutzerhandbuch
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
+        - name: Benutzerdefinierte Einstellungen
+          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'
