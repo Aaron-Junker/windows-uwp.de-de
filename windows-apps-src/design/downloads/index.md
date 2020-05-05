@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9d683b73b64ef1cf2bd8d267aa40e2e1c419ac92
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: aca79bda3b2b92df4e8788adc8a57a5d9c269b49
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218490"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148936"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Design-Toolkits und Beispiele für Windows-Apps
 
@@ -90,10 +90,10 @@ Hilfsfunktionen, benutzerdefinierte Steuerelemente und App-Dienste<br />
 
 :::row:::
     :::column:::
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
+<a href="https://download.microsoft.com/download/B/5/F/B5F22952-44DF-46EC-820B-11951AE01AEC/UWP tile and icon asset generator.zip"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
-      **Kachel- und Symbolgenerator für Adobe Photoshop** Mit diesen Aktionen für Adobe Photoshop werden die 68 empfohlenen Kacheln und Symbole aus nur sieben Dateien erstellt. <br/><a href="https://go.microsoft.com/fwlink/p/?LinkId=760394">Kachel- und Symbolgenerator herunterladen</a></p>
+      **Kachel- und Symbolgenerator für Adobe Photoshop** Mit diesen Aktionen für Adobe Photoshop werden die 68 empfohlenen Kacheln und Symbole aus nur sieben Dateien erstellt. <br/><a href="https://download.microsoft.com/download/B/5/F/B5F22952-44DF-46EC-820B-11951AE01AEC/UWP tile and icon asset generator.zip">Kachel- und Symbolgenerator herunterladen</a></p>
     :::column-end:::
 :::row-end:::
 

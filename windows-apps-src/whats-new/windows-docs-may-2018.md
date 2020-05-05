@@ -6,10 +6,10 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258786"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>Neues in der Windows-Entwicklerdokumentation im Mai 2018
@@ -22,7 +22,7 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 
 ### <a name="motion-in-fluent-design"></a>Bewegung in Fluent Design
 
-Die Verwendung von Bewegung im Fluent Design-System entwickelt sich weiter, und zwar auf der Grundlage von Timing, Geschwindigkeitsverlauf, Direktionalität und Schwerkraft. Die Anwendung dieser Grundlagen erleichtert dem Benutzer die Navigation durch deine App und verbessert das digitale Erlebnis durch die Abbildung der realen Welt. Weitere Informationen dazu findest du in den folgenden Artikeln:
+Die Verwendung von Bewegung im Fluent Design-System entwickelt sich weiter, und zwar auf der Grundlage von Timing, Geschwindigkeitsverlauf, Direktionalität und Schwerkraft. Das Anwenden dieser Grundlagen hilft, den Benutzer durch Ihre Anwendung zu führen, und verbindet ihn mit der digitalen Benutzeroberfläche, indem die natürliche Welt abgebildet wird. Weitere Informationen dazu findest du in den folgenden Artikeln:
 
 * [Die Bewegungsübersicht](../design/motion/index.md) wurde mit diesen Grundlagen aktualisiert.
 * [Bewegung in der Praxis](../design/motion/motion-in-practice.md) enthält Beispiele für die Anwendung dieser Grundlagen in einer App.
@@ -33,7 +33,7 @@ Die Verwendung von Bewegung im Fluent Design-System entwickelt sich weiter, und
 
 ### <a name="fluent-design-updates"></a>Fluent Design-Updates
 
-Visuelle Updates und kleinere Änderungen wurden an den folgenden Fluent Design-Seiten vorgenommen:
+Visuelle Updates und kleinere Änderungen wurden an den folgenden Fluent Design-Seiten vorgenommen:
 
 * [Ausrichtung, Rand, Abstand](../design/layout/alignment-margin-padding.md)
 * [Farbe](../design/style/color.md)
@@ -87,7 +87,7 @@ Optionale Pakete in deiner App können nun ausführbaren C#-Code enthalten. Info
 
 ### <a name="page-transitions"></a>Seitenübergänge
 
-[Seitenübergänge](../design/motion/page-transitions.md) lassen Benutzer zwischen den Seiten einer App navigieren. Sie ermöglichen Benutzern zu verstehen, wo sie sich in der Navigationshierarchie befinden, und bieten Feedback zur Beziehung zwischen den Seiten.
+[Seitenübergänge](../design/motion/page-transitions.md) lassen Benutzer zwischen den Seiten einer App navigieren. Sie ermöglichen Benutzern zu verstehen, wo sie sich in der Navigationshierarchie befinden, und bieten Feedback über die Beziehung zwischen den Seiten.
 
 ### <a name="project-rome"></a>Project Rome
 
@@ -99,7 +99,7 @@ Das Gruppenfeature steht in Windows-Insider-Vorabversionen zur Verfügung. Bei V
 
 ## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
-### <a name="get-started"></a>Beginnen
+### <a name="get-started"></a>Erste Schritte
 
 Unsere ersten Schritte wurden mit neuen Lernpfaden aktualisiert. Diese neuen Themen enthalten Informationen zu einigen allgemeinen Aufgaben für neue Windows 10-Entwickler. Es handelt sich dabei weder um Tutorials noch um geführte exemplarische Vorgehensweisen. Vielmehr erfahren Entwickler hier, wo sie Dokumentationsmaterial finden und wie sie es verwenden. Sieh dir die überarbeitete Seite [Start coding](../get-started/create-uwp-apps.md) (Einstieg in die Programmierung) an, oder erkunde die einzelnen Lernpfade:
 
@@ -122,7 +122,7 @@ Auf der Partner Center-Seite [Benachrichtigungen](../publish/send-push-notifica
 
 ### <a name="cwinrt"></a>C++/WinRT
 
-C++/WinRT ist eine neue Möglichkeit zur Erstellung und Nutzung von Windows-Runtime-APIs. Sie wird ausschließlich in Headerdateien implementiert und bietet komfortablen Zugriff auf moderne App-Features. Wie das funktioniert, erfährst du in [diesem Video](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be). Weitere Informationen erhältst du dann in der [Entwicklerdokumentation](../cpp-and-winrt-apis/index.md).
+C++/WinRT ist eine neue Möglichkeit zur Erstellung und Nutzung von Windows-Runtime-APIs. Sie wird ausschließlich in Headerdateien implementiert und bietet komfortablen Zugriff auf moderne App-Features. Wie das funktioniert, erfahren Sie in [diesem Video](https://www.youtube.com/watch?v=TLSul1XxppA&feature=youtu.be). Weitere Informationen finden Sie dann in der [Entwicklerdokumentation](../cpp-and-winrt-apis/index.md).
 
 ### <a name="multi-instance-uwp-apps"></a>UWP-Apps mit mehreren Instanzen
 
@@ -132,4 +132,4 @@ Unter Windows kannst du jetzt mehrere Instanzen deiner UWP-App ausführen – j
 
 ### <a name="customer-database-tutorial"></a>Tutorial „Kundendatenbank“
 
-In diesem Tutorial wird eine einfache UWP-App zur Verwaltung einer Kundenliste erstellt. Dabei werden praktische Konzepte und Methoden für die Entwicklung in Unternehmen vorgestellt. Du erfährst Schritt für Schritt, wie Elemente der Benutzeroberfläche implementiert und Vorgänge für eine lokale SQLite-Datenbank hinzugefügt werden. Außerdem findest du hier bei Interesse eine allgemeine Anleitung zur Verbindungsherstellung mit einer REST-Remotedatenbank. [Zum Tutorial](../enterprise/customer-database-tutorial.md)
+In diesem Tutorial wird eine einfache UWP-App zur Verwaltung einer Kundenliste erstellt. Dabei werden praktische Konzepte und Methoden für die Entwicklung in Unternehmen vorgestellt. Sie erfahren Schritt für Schritt, wie Elemente der Benutzeroberfläche implementiert und Vorgänge für eine lokale SQLite-Datenbank hinzugefügt werden. Außerdem finden Sie im Tutorial eine allgemeine Anleitung, wie eine Verbindung mit einer REST-Remotedatenbank hergestellt wird, wenn Sie das Thema vertiefen möchten. [Zum Tutorial](../enterprise/customer-database-tutorial.md)

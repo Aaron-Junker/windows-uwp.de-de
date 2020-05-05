@@ -6,15 +6,15 @@ ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cac61f398fff17ecfb824f2d869364097f38d5d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258821"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im Februar 2018
 
-Die Windows-Entwicklerdokumentation wird ständig mit Informationen zu neuen Features aktualisiert, die Entwickler für die Windows-Plattform nutzen können. Die folgenden Featureübersichten, Entwicklerleitfäden und Videos wurden im Januar bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
+Die Entwicklerdokumentation für die Windows-Plattform wird kontinuierlich mit Informationen zu neuen Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden und Videos wurden im Januar bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
 
 Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/windows/downloads#_blank) unter Windows 10 können Sie entweder [eine neue universelle Windows-App erstellen](../get-started/create-uwp-apps.md) oder sich mit der Verwendung von [vorhandenem App-Code unter Windows](../porting/index.md) vertraut machen.
 
@@ -41,9 +41,9 @@ Wir haben unsere Dokumentation zum [XAML-Seitenlayout](../design/layout/layouts-
 
 ### <a name="subscription-add-ons-are-now-available-to-all-developers"></a>Abonnement-Add-Ons sind jetzt für alle Entwickler verfügbar
 
-Erstellen und veröffentlichen Sie Abonnement-Add-Ons, um digitale Produkte in Ihrer App und Ihren Spielen zu verkaufen (z.B. App-Features oder digitale Inhalte), die mit einer automatisierten wiederkehrenden Abrechnung arbeiten. Weitere Details findest du unter [Aktivieren von Abonnement-Add-Ons für die App](../monetize/enable-subscription-add-ons-for-your-app.md).
+Erstellen und veröffentlichen Sie Abonnement-Add-Ons, um digitale Produkte in Ihrer App und Ihren Spielen zu verkaufen (z.B. App-Features oder digitale Inhalte), die mit einer automatisierten wiederkehrenden Abrechnung arbeiten. Weitere Details finden Sie unter [Aktivieren von Abonnement-Add-Ons für die App](../monetize/enable-subscription-add-ons-for-your-app.md).
 
-## <a name="developer-guidance"></a>Entwicklerleitfäden
+## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
 ### <a name="design-basics"></a>Designgrundlagen
 
@@ -69,8 +69,8 @@ Mit dem Xbox Live Creators-Programm können Entwickler ihre UWP-Spiele schnell a
 
 ### <a name="creating-3d-app-launchers-for-windows-mixed-reality"></a>Erstellen von 3D-App-Startprogrammen für Windows Mixed Reality
 
-3D-Startprogramme bieten eine einmalige Möglichkeit für Benutzer, eine volumetrische Darstellung Ihrer App in der Mixed Reality-Heimumgebung darzustellen. [Video ansehen](https://www.youtube.com/watch?v=TxIslHsEXno): Hier findest du Informationen zum Vorbereiten deines 3D-Modells und zum Zuweisen als Startprogramm für deine App. Anschließend empfehlen wir dir das [Lesen der Entwicklerdokumentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers) und [unserer Designrichtlinien](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance), um weitere Informationen zu erhalten.
+3D-Startprogramme bieten eine einmalige Möglichkeit für Benutzer, eine volumetrische Darstellung Ihrer App in der Mixed Reality-Heimumgebung darzustellen. [Video ansehen](https://www.youtube.com/watch?v=TxIslHsEXno) – hier finden Sie Informationen zum Vorbereiten Ihres 3D-Modells und zum Verwenden als Startprogramm für Ihre App. [Lesen Sie die Entwicklerdokumentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers), und [sehen Sie sich unsere Designrichtlinien](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance) an, um weitere Informationen zu erhalten.
 
 ### <a name="motion-controller-tracking"></a>Nachverfolgung des Motion-Controllers
 
-Motion-Controller stellen die Hände des Benutzers in Windows Mixed Reality dar. [Sieh dir das Video an](https://www.youtube.com/watch?v=rkDpRllbLII), um mehr über die Funktionsweise von Motion-Controllern zu erfahren, wenn sie sich innerhalb und außerhalb des Sichtfelds des Mixed Reality-Headsets befinden. [Hier findest du außerdem weitere Informationen zum Nachverfolgen des Controllers](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D).
+Motion-Controller stellen die Hände des Benutzers in Windows Mixed Reality dar. [Sehen Sie sich das Video](https://www.youtube.com/watch?v=rkDpRllbLII) an, und erfahren Sie, wie Motion-Controller funktionieren, wenn sie sich innerhalb und außerhalb des Sichtfelds des Mixed Reality-Kopfhörers befinden, und [lesen Sie hier weitere Informationen zum Nachverfolgen des Controllers.](https://docs.microsoft.com/windows/mixed-reality/motion-controllers#controller_tracking_state%E2%80%9D)

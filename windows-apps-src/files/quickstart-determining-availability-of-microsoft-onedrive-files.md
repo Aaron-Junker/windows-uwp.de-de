@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 36835a198d03a8ad5f5e811a74e120c9bbd25c08
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258588"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>Ermitteln der Verfügbarkeit von Microsoft OneDrive-Dateien
@@ -42,10 +42,10 @@ Mithilfe von [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/wi
 
 | Dateityp                              | Online | Getaktetes Netzwerk        | Offline |
 |-------------------------------------------|--------|------------------------|---------|
-| Lokale Datei                                | True   | True                   | True    |
-| Als "Offline verfügbar" gekennzeichnete OneDrive-Datei | True   | True                   | True    |
-| Als "Nur online verfügbar" gekennzeichnete OneDrive-Datei       | True   | Basierend auf Benutzereinstellungen | False   |
-| Netzwerkdatei                              | True   | Basierend auf Benutzereinstellungen | False   |
+| Lokale Datei                                | Wahr   | Wahr                   | Wahr    |
+| Als "Offline verfügbar" gekennzeichnete OneDrive-Datei | Wahr   | Wahr                   | Wahr    |
+| Als "Nur online verfügbar" gekennzeichnete OneDrive-Datei       | Wahr   | Basierend auf Benutzereinstellungen | False   |
+| Netzwerkdatei                              | Wahr   | Basierend auf Benutzereinstellungen | False   |
 
  
 
@@ -53,7 +53,7 @@ Die folgenden Schritte zeigen, wie festgestellt wird, ob eine Datei momentan ver
 
 1.  Deklarieren Sie eine für die Bibliothek, auf die Sie zugreifen möchten, geeignete Funktion.
 2.  Schließen Sie den [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage)-Namespace ein. Dieser Namespace enthält die Typen zum Verwalten von Dateien, Ordnern und Anwendungseinstellungen. Außerdem enthält er den erforderlichen [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Typ.
-3.  Beschaffen Sie ein [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekt für die gewünschte Datei bzw. die gewünschten Dateien. Wenn Sie eine Bibliothek aufzählen, können Sie zur Durchführung dieses Schritts die [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery)-Methode und dann die [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync)-Methode des sich ergebenden [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult)-Objekts aufrufen. Die **GetFilesAsync**-Methode gibt eine [IReadOnlyList](https://msdn.microsoft.com/library/hh192385.aspx)-Sammlung mit **StorageFile**-Objekten zurück.
+3.  Beschaffen Sie ein [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekt für die gewünschte Datei bzw. die gewünschten Dateien. Wenn Sie eine Bibliothek aufzählen, können Sie zur Durchführung dieses Schritts die [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery)-Methode und dann die [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult)-Methode des sich ergebenden [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync)-Objekts aufrufen. Die **GetFilesAsync**-Methode gibt eine [IReadOnlyList](https://msdn.microsoft.com/library/hh192385.aspx)-Sammlung mit **StorageFile**-Objekten zurück.
 4.  Nachdem Sie den Zugriff auf ein [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekt eingerichtet haben, das die gewünschten Dateien darstellt, spiegelt der Wert der [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)-Eigenschaft wider, ob die Datei verfügbar ist.
 
 Die folgende generische Methode veranschaulicht, wie Sie einen beliebigen Ordner aufzählen und die Sammlung mit [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekten für diesen Ordner zurückgeben. Die aufrufende Methode durchläuft dann die zurückgegebene Sammlung und verweist für jede Datei auf die [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable)-Eigenschaft.

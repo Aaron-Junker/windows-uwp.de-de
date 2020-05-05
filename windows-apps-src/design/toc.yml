@@ -353,11 +353,13 @@
             - name: Popupinhaltsschema
               href: shell/tiles-and-notifications/toast-schema.md
             - name: Senden lokaler Popups
-              href: shell/tiles-and-notifications/send-local-toast.md
               items:
+                - name: UWP-Apps
+                  href: shell/tiles-and-notifications/send-local-toast.md
                 - name: Desktop-Apps
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
                   items:
+                    - name: Übersicht
+                      href: shell/tiles-and-notifications/toast-desktop-apps.md
                     - name: 'C#-Apps'
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL-Apps

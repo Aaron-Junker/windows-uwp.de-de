@@ -12,10 +12,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73061974"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary- und XAML-Ressourcenreferenzen
@@ -49,7 +49,7 @@ XAML-Ressourcen sind Objekte, auf die mehrmals im Markup verwiesen wird. Ressour
 </Page>
 ```
 
-Für dieses Beispiel gilt Folgendes:
+In diesem Beispiel:
 
 -   `<Page.Resources>…</Page.Resources>` – Definiert das Ressourcenverzeichnis.
 -   `<x:String>` – Definiert die Ressource mit dem Schlüssel „greeting“.
@@ -249,7 +249,7 @@ Verwenden Sie die [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml
 
 Bei einem *zusammengeführten Ressourcenverzeichnis* wird ein Ressourcenverzeichnis mit einem anderen kombiniert, meist in einer anderen Datei.
 
-> **Tipp**&nbsp;&nbsp;In Microsoft Visual Studio können Sie eine Ressourcenverzeichnisdatei erstellen, indem Sie im Menü **Projekt** die Option **Hinzufügen &gt; Neues Element… &gt; Ressourcenverzeichnis** verwenden.
+> **Tipp**&nbsp;&nbsp;In Microsoft Visual Studio können Sie eine Ressourcenverzeichnisdatei erstellen, indem Sie im Menü **Projekt&gt; die Option &gt;Hinzufügen**  Neues Element…  **Ressourcenverzeichnis** verwenden.
 
 Hier definieren Sie ein Ressourcenverzeichnis in einer separaten XAML-Datei mit dem Namen „Dictionary1.xaml“.
 

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72281890"
 ---
 # <a name="device-portal-for-mobile"></a>Geräteportal für Mobilgeräte
@@ -31,7 +31,7 @@ Wenn Sie das erste Mal eine Verbindung mit dem Geräteportal herstellen, werden 
 
 ![Einstellungen für die Geräteerkennung im Entwicklermodus](images/device-portal/mob-dev-mode-pairing.png)
 
-Du kannst unter drei Möglichkeiten zum Herstellen einer Verbindung mit dem Geräteportal auswählen: USB, über einen lokalen Host und über das lokale Netzwerk (einschließlich VPN und Tethering).
+Sie haben 3 Möglichkeiten zum Herstellen einer Verbindung mit dem Geräteportal: USB, über einen lokalen Host und über das lokale Netzwerk (einschließlich VPN und Tethering).
 
 **So stellst du eine Verbindung mit dem Geräteportal her**
 
@@ -78,7 +78,7 @@ Das Geräteportal für mobile Geräte enthält den Standardsatz der Seiten. Ausf
 - Leistungsdiagramme
 - Ereignisablaufverfolgung für Windows (ETW)
 - Leistungsüberwachung (WPR) 
-- Geräte
+- -Geräte zu unterstützen
 - Netzwerk
 
 ## <a name="see-also"></a>Siehe auch

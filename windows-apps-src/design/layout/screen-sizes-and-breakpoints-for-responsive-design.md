@@ -1,5 +1,5 @@
 ---
-title: Bildschirmgrößen und Breakpoints für ein reaktionsfähiges Design
+title: Bildschirmgrößen und Haltepunkte für reaktionsfähiges Design
 description: Anstelle einer Optimierung deiner Benutzeroberfläche für die vielen Geräte im gesamten Windows 10-Ökosystem wird empfohlen, ein Design für einige Schlüsselbreiten (sogenannte Breakpoints) zu erstellen.
 ms.date: 08/30/2017
 ms.topic: article
@@ -7,13 +7,13 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79210176"
 ---
-#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Breakpoints
+#  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
 
 UWP-Apps können auf einem beliebigen Gerät mit Windows 10 ausgeführt werden – z. B. Smartphones, Tablets, Desktops, TV-Geräten und mehr. Aufgrund der Vielzahl an Geräten im Windows 10-Ökosystem wird anstelle einer Optimierung deiner Benutzeroberfläche für jedes Gerät empfohlen, ein Design für einige Schlüsselbreiten (sogenannte Breakpoints) zu erstellen: 
 - Klein (unter 640 Pixel)
@@ -33,8 +33,8 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 <tr class="header">
 <th align="left">Größenklasse</th>
 <th align="left">Breakpoints</th>
-<th align="left">Typische Bildschirmgröße (Diagonale)</th>
-<th align="left">Geräte</th>
+<th align="left">Normale Bildschirmgröße (diagonal)</th>
+<th align="left">-Geräte zu unterstützen</th>
 <th align="left">Fenstergrößen</th>
 </tr>
 </thead>
@@ -77,27 +77,27 @@ UWP-Apps skalieren deine Benutzeroberfläche automatisch, um sicherzustellen, da
 ## <a name="general-recommendations"></a>Allgemeine Empfehlungen
 
 ### <a name="small"></a>Klein
-- Lege den linken und den rechten Fensterrand auf 12px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
+- Legen Sie den linken und den rechten Fensterrand auf 12px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
 - Docke die [App-Leisten](../controls-and-patterns/app-bars.md) am unteren Fensterrand an, um bequemer darauf zugreifen zu können.
 - Verwenden jeweils eine Spalte/Region.
-- Verwende ein Symbol zum Darstellen der Suche (kein Suchfeld anzeigen).
-- Verwende den [Navigationsbereich](../controls-and-patterns/navigationview.md) im Überlagerungsmodus, um Platz auf dem Bildschirm zu sparen.
-- Verwende für das [Master/Details-Modell](../controls-and-patterns/master-details.md) den gestapelten Darstellungsmodus, um Platz auf dem Bildschirm zu sparen.
+- Verwenden Sie ein Symbol zum Darstellen der Suche (kein Suchfeld anzeigen).
+- Verwenden Sie den [Navigationsbereich](../controls-and-patterns/navigationview.md) im Überlagerungsmodus, um Platz auf dem Bildschirm zu sparen.
+- Verwenden Sie für das [Master/Details-Modell](../controls-and-patterns/master-details.md) den gestapelten Darstellungsmodus, um Platz auf dem Bildschirm zu sparen.
 
 ### <a name="medium"></a>Medium (Mittel)
-- Lege den linken und den rechten Fensterrand auf 24px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
-- Positioniere Elemente wie [App-Leisten](../controls-and-patterns/app-bars.md) am oberen Rand des App-Fensters.
+- Legen Sie den linken und den rechten Fensterrand auf 24px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
+- Positionieren Sie Elemente wie [App-Leisten](../controls-and-patterns/app-bars.md) am oberen Rand des App-Fensters.
 - Verwende bis zu zwei Spalten/Regionen.
-- Zeige das Suchfeld an.
-- Lege für [Navigationsleiste](../controls-and-patterns/navigationview.md) den Streifenmodus fest, sodass immer ein schmaler Streifen mit Symbolen angezeigt wird.
-- Ziehe weitere Anpassungen für [TV-Umgebungen](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN) in Erwägung.
+- Zeigen Sie das Suchfeld an.
+- Legen Sie für [Navigationsleiste](../controls-and-patterns/navigationview.md) den Streifenmodus fest, sodass immer ein schmaler Streifen mit Symbolen angezeigt wird.
+- Ziehen Sie weitere Anpassungen für [TV-Umgebungen](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN) in Erwägung.
 
 ### <a name="large"></a>Groß
-- Lege den linken und den rechten Fensterrand auf 24px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
-- Positioniere Elemente wie [App-Leisten](../controls-and-patterns/app-bars.md) am oberen Rand des App-Fensters.
+- Legen Sie den linken und den rechten Fensterrand auf 24px fest, um eine visuelle Trennung zwischen dem linken und dem rechten Rand des App-Fensters zu erzielen.
+- Positionieren Sie Elemente wie [App-Leisten](../controls-and-patterns/app-bars.md) am oberen Rand des App-Fensters.
 - Verwende bis zu drei Spalten/Regionen.
-- Zeige das Suchfeld an.
-- Platziere den [Navigationsbereich](../controls-and-patterns/navigationview.md) im angedockten Modus so, dass er immer angezeigt wird.
+- Zeigen Sie das Suchfeld an.
+- Platzieren Sie den [Navigationsbereich](../controls-and-patterns/navigationview.md) im angedockten Modus so, dass er immer angezeigt wird.
 
 >[!TIP] 
 > Mit [**Continuum for Phone**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN) können Benutzer kompatible Windows 10-Mobilgeräte mit einem Bildschirm, einer Maus und einer Tastatur verbinden, um ihr Gerät wie einen Laptop zu nutzen. Berücksichtige diese neue Funktionalität bei der Entwicklung für bestimmte Breakpoints – ein Mobiltelefon gehört nicht immer derselben Größenklasse an.

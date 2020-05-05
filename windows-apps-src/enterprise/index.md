@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089466"
 ---
 # <a name="enterprise"></a>Enterprise
@@ -128,7 +128,7 @@ Branchenspezifische Apps müssen häufig mit Daten auf einer Vielzahl von andere
 | [XML- und SOAP-Serialisierung](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | Bei der XML-Serialisierung werden Objekte in einen XML-Datenstrom konvertiert, der einer bestimmten Sprache der XML-Schemadefinition (XSD) entspricht. Sie können zum Konvertieren zwischen XML und einer stark typisierten Klasse die systemeigene [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument)-Klasse oder eine externe Bibliothek verwenden. |
 | [JSON-Serialisierung](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | Die JSON-Serialisierung (JavaScript Object Notation) ist ein gängiges Format für die Kommunikation mit REST-APIs. [JSON.NET von Newtonsoft](https://www.newtonsoft.com/json) wird vollständig für UWP-Apps unterstützt. |
 
-## <a name="devices"></a>Geräte
+## <a name="devices"></a>-Geräte zu unterstützen
 
 Für die Integration in branchenspezifischen Tools, z.B. Drucker, Strichcodescanner oder Smartcardleser, ist es möglicherweise erforderlich, externe Geräte oder Sensoren in Ihrer App zu integrieren. Hier folgen einige Beispiele zu Features, die Sie mithilfe der in diesem Abschnitt beschriebenen Technologie zur App hinzufügen können.
 

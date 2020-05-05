@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
 ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089426"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Tests im Zertifizierungskit für Windows-Apps
@@ -42,10 +42,10 @@ Stellen Sie sicher, dass die Benutzerkontensteuerung (UAC) auf dem Test-PC aktiv
 
 Führen Sie den Test auf einem PC mit ausreichend großem Bildschirm aus.
 
-Falls die App nicht gestartet werden kann, obwohl die Testplattform die Voraussetzungen für [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) erfüllt, können Sie das Problem mithilfe des Aktivierungsereignisprotokolls beheben. So findest du die Einträge im Ereignisprotokoll:
+Falls die App nicht gestartet werden kann, obwohl die Testplattform die Voraussetzungen für [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) erfüllt, können Sie das Problem mithilfe des Aktivierungsereignisprotokolls beheben. So finden Sie die Einträge im Ereignisprotokoll:
 
 1.  Öffne die Datei „eventvwr.exe“, und navigiere zum Ordner „Application and Services Log\\Microsoft\\Windows\\Immersive-Shell“.
-2.  Filtere die Ansicht entsprechend, um folgende Ereigniskennungen anzuzeigen: 5900–6000.
+2.  Filtern Sie die Ansicht entsprechend, um folgende Ereigniskennungen anzuzeigen: 5900-6000.
 3.  Prüfen Sie die Protokolleinträge, um zu ermitteln, weshalb die App nicht gestartet wurde.
 
 Führen Sie für die Datei mit dem Problem eine Problembehandlung durch, um das Problem zu identifizieren und zu beheben. Erstellen Sie die App neu, und wiederholen Sie den Test. Sie können auch überprüfen, ob im Protokollordner des Zertifizierungskits für Windows-Apps eine Dumpdatei erstellt wurde, die zum Debuggen Ihrer App verwendet werden kann.
@@ -64,7 +64,7 @@ Das Zertifizierungskit für Windows-Apps verwendet „HighVersionLie“, um zu e
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Apps sollten dies anhand von API-Funktionen zur Versionsabfrage überprüfen. Weitere Informationen findest du unter [Version des Betriebssystems](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version).
+Apps sollten dies anhand von API-Funktionen zur Versionsabfrage überprüfen. Weitere Informationen finden Sie unter [Version des Betriebssystems](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version).
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>Überprüfung des Abbruchhandlers für Aufgaben
 
@@ -80,7 +80,7 @@ Die App wird gestartet und angehalten, und der Teil der App, der sich nicht im H
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Fügen Sie Ihrer App den Abbruchhandler hinzu. Weitere Informationen findest du unter [Unterstützen der App mit Hintergrundaufgaben](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
+Fügen Sie Ihrer App den Abbruchhandler hinzu. Weitere Informationen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks).
 
 ## <a name="app-count"></a>App-Anzahl
 
@@ -164,7 +164,7 @@ Die BinScope-Tests des Analyzers für Binärdateien prüfen, ob die sicherheitsr
 
 ### <a name="span-idbinscope-1spanallowpartiallytrustedcallersattribute"></a><span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei APTCACheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** APTCACheck Test failed (Fehler beim APTCACheck-Test.)
 
 Das AllowPartiallyTrustedCallersAttribute-Attribut (kurz: APTCA-Attribut) ermöglicht den Zugriff auf vollständig vertrauenswürdigen Code aus teilweise vertrauenswürdigem Code in signierten Assemblys. Wenn Sie das APTCA-Attribut auf eine Assembly anwenden, können teilweise vertrauenswürdige Aufrufer diese Assembly aufrufen, solange die Assembly besteht. Dies kann ein Sicherheitsrisiko darstellen.
 
@@ -178,13 +178,13 @@ Dieser Test wird nur für verwalteten Code (C#, .NET usw.) ausgeführt.
 
 ### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/SafeSEH-Ausnahmebehandlungsschutz
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei SafeSEHCheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim SafeSEHCheck-Test.
 
 Ein Ausnahmehandler wird ausgeführt, wenn in der App eine Ausnahmebedingung auftritt – beispielsweise bei einem Fehler aufgrund einer Division durch Null. Da die Adresse des Ausnahmehandlers beim Aufrufen einer Funktion im Stapel gespeichert wird, besteht das Risiko eines Pufferüberlaufangriffs, sollte Schadsoftware den Stapel überschreiben.
 
 **Was ist zu tun, wenn deine App diesen Test nicht besteht?**
 
-Aktivieren Sie beim Erstellen der App die Option „/SAFESEH“ im Linker-Befehl. Diese Option ist in den Veröffentlichungskonfigurationen von Visual Studio standardmäßig aktiviert. Vergewissern Sie sich, dass diese Option in den Erstellungsanweisungen für alle alle ausführbaren Module Ihrer App aktiviert ist.
+Aktivieren Sie beim Erstellen der App die Option "/SAFESEH" im Linker-Befehl. Diese Option ist in den Veröffentlichungskonfigurationen von Visual Studio standardmäßig aktiviert. Vergewissern Sie sich, dass diese Option in den Erstellungsanweisungen für alle alle ausführbaren Module Ihrer App aktiviert ist.
 
 **Anmerkungen**
 
@@ -192,7 +192,7 @@ Für 64-Bit-Binärdateien oder für Binärdateien für den ARM-Chipsatz wird die
 
 ### <a name="span-idbinscope-3spandata-execution-prevention"></a><span id="binscope-3"></span>Datenausführungsverhinderung
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei NXCheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** NXCheck Test failed (Fehler beim NXCheck-Test.)
 
 Dieser Test stellt sicher, dass die App keinen Code ausführt, der in einem Datensegment gespeichert ist.
 
@@ -206,13 +206,13 @@ Wir empfehlen, Apps auf einer DEP-fähigen CPU zu testen und alle DEP-bedingten 
 
 ### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>Zufällige Anordnung des Adressraumlayouts
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei DBCheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim DBCheck-Test.
 
-Die Zufällige Anordnung des Adressraumlayouts (Address Space Layout Randomization, ASLR) lädt ausführbare Bilder in unvorhersehbare Speicherbereiche. Dadurch wird eine größere Hürde für Schadsoftware geschaffen, die erwartet, dass ein Programm an einer bestimmten virtuellen Adresse geladen wird. Ihre App und alle von der App verwendeten Komponenten müssen über ASLR-Unterstützung verfügen.
+Die Zufallsgestaltung des Adressraumlayouts (Address Space Layout Randomization, ASLR) lädt ausführbare Bilder in unvorhersehbare Speicherbereiche. Dadurch wird eine größere Hürde für Schadsoftware geschaffen, die erwartet, dass ein Programm an einer bestimmten virtuellen Adresse geladen wird. Ihre App und alle von der App verwendeten Komponenten müssen über ASLR-Unterstützung verfügen.
 
 **Was ist zu tun, wenn deine App diesen Test nicht besteht?**
 
-Aktivieren Sie beim Erstellen der App die Option „/DYNAMICBASE“ im Linker-Befehl. Vergewissern Sie sich, dass auch alle von der App verwendeten Module diese Linker-Option verwenden.
+Aktivieren Sie beim Erstellen der App die Option "/DYNAMICBASE" im Linker-Befehl. Vergewissern Sie sich, dass auch alle von der App verwendeten Module diese Linker-Option verwenden.
 
 **Anmerkungen**
 
@@ -222,7 +222,7 @@ Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen ge
 
 ### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>Lesen/Schreiben des freigegebenen PE-Abschnitts
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei SharedSectionsCheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim SharedSectionsCheck-Test.
 
 Binärdateien mit beschreibbaren Abschnitten, die als freigegeben gekennzeichnet sind, stellen eine Sicherheitsbedrohung dar. Erstellen Sie keine Apps mit freigegebenen beschreibbaren Abschnitten, wenn dies nicht notwendig ist. Verwenden Sie [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) oder [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile), um ein freigegebenes Speicherobjekt zu erstellen, das korrekt gesichert ist.
 
@@ -236,7 +236,7 @@ Dieser Test wird nur für Apps ausgeführt, die in nicht verwalteten Sprachen ge
 
 ### <a name="appcontainercheck"></a>AppContainerCheck
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei AppContainerCheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim AppContainerCheck-Test.
 
 Der AppContainerCheck-Test prüft, ob das **appcontainer**-Bit im PE-Header einer ausführbaren Binärdatei gesetzt ist. Für Apps muss das **appcontainer**-Bit für alle EXE-Dateien und nicht verwalteten DLLs gesetzt sein, damit diese korrekt ausgeführt werden.
 
@@ -252,7 +252,7 @@ Dieser Test wird für alle EXE-Dateien und nicht verwalteten DLLs ausgeführt.
 
 ### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span id="binscope-7"></span>ExecutableImportsCheck
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei ExecutableImportsCheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler beim ExecutableImportsCheck-Test.
 
 Ein portierbares ausführbares Image (Portable Executable, PE) besteht diesen Test nicht, wenn es in einen Abschnitt mit ausführbaren Code eingefügt wurde. Dies kann auftreten, wenn Sie für das PE-Image das Zusammenführen von „.rdata“ ermöglicht haben, indem Sie das Kennzeichen */merge* des Visual C++-Linkers auf */merge:.rdata=.text* festgelegt haben.
 
@@ -266,9 +266,9 @@ Dieser Test wird für den gesamten Binärcode ausgeführt, außer für ausschlie
 
 ### <a name="span-idbinscope-8spanwxcheck"></a><span id="binscope-8"></span>WXCheck
 
-**Fehlermeldung des Zertifizierungskits für Windows-Apps:** Fehler bei Fehler bei WXCheck-Test
+**Fehlermeldung des Zertifizierungskits für Windows-Apps:** WXCheck Test failed (Fehler beim WXCheck-Test).
 
-Mit dieser Überprüfung können Sie sicherstellen, dass eine Binärdatei keine Seiten enthält, die als beschreibbar und ausführbar gekennzeichnet sind. Dieser Fehler kann vorkommen, wenn die Binärdatei einen beschreibbaren und ausführbaren Abschnitt enthält oder wenn *SectionAlignment* der Binärdatei kleiner als *PAGE\-SIZE* ist.
+Mit dieser Überprüfung können Sie sicherstellen, dass eine Binärdatei keine Seiten enthält, die als schreibbar und ausführbar gekennzeichnet sind. Dieser Fehler kann vorkommen, wenn die Binärdatei einen beschreibbaren und ausführbaren Abschnitt enthält oder wenn *SectionAlignment* der Binärdatei kleiner als *PAGE\-SIZE* ist.
 
 **Was ist zu tun, wenn deine App diesen Test nicht besteht?**
 
@@ -278,7 +278,7 @@ Stelle sicher, dass die Binärdatei keinen beschreibbaren oder ausführbaren Abs
 
 Dieser Test wird für alle EXE-Dateien und systemeigenen, nicht verwalteten DLLs ausgeführt.
 
-Eine ausführbare Datei kann einen schreibbaren und ausführbaren Abschnitt enthalten, wenn bei ihrer Erstellung „Bearbeiten und Fortfahren“ aktiviert wurden (/ZI). Bei Deaktivierung von „Bearbeiten und Fortfahren“ ist der ungültige Abschnitt nicht mehr enthalten.
+Eine ausführbare Datei kann einen schreibbaren und ausführbaren Abschnitt enthalten, wenn bei ihrer Erstellung "Bearbeiten und Fortfahren" aktiviert wurden (/ZI). Bei Deaktivierung von „Bearbeiten und Fortfahren“ ist der ungültige Abschnitt nicht mehr enthalten.
 
 *PAGE\-SIZE* ist der Standardwert von *SectionAlignment* für ausführbare Dateien.
 
@@ -292,7 +292,7 @@ Signaturdateien für privaten Code sollten privat bleiben, da sie im Fall einer 
 
 ### <a name="test-details"></a>Testdetails
 
-Überprüft, ob innerhalb des App-Pakets Dateien mit der Erweiterung „.pfx“ oder „.snk“, die darauf hinweisen, dass private Signaturschlüssel verwendet wurden.
+Überprüft, ob innerhalb des App-Pakets Dateien mit der Erweiterung ".pfx" oder ".snk", die darauf hinweisen, dass private Signaturschlüssel verwendet wurden.
 
 ### <a name="corrective-actions"></a>Maßnahmen
 
@@ -346,11 +346,11 @@ Wenn bei diesem Test Fehler ermittelt werden, sollten Sie bei der Behandlung die
 
 ### <a name="optimized-binding-references"></a>Optimierte Bindungsverweise
 
-Beim Verwenden von Bindungen sollte WinJS.Binding.optimizeBindingReferences auf TRUE festgelegt werden, um die Speicherauslastung zu optimieren.
+Beim Verwenden von Bindungen sollte WinJS.Binding.optimizeBindingReferences auf "true" festgelegt werden, um die Speicherauslastung zu optimieren.
 
 ### <a name="test-details"></a>Testdetails
 
-Überprüfen Sie den Wert von „WinJS.Binding.optimizeBindingReferences“.
+Überprüfen Sie den Wert von "WinJS.Binding.optimizeBindingReferences".
 
 ### <a name="corrective-action"></a>Maßnahmen
 
@@ -373,26 +373,26 @@ Orientieren Sie sich an der folgenden Tabelle.
 <table>
 <tr><th>Fehlermeldung</th><th>Kommentare</th></tr>
 <tr><td>
-<p>Das Bild „{Bildname}“ definiert sowohl einen Scale- als auch einen TargetSize-Qualifizierer. Es darf jedoch jeweils nur ein Qualifizierer definiert sein.</p>
+<p>Das Bild "{Bildname}" definiert sowohl einen Scale- als auch einen TargetSize-Qualifizierer. Es darf jedoch jeweils nur ein Qualifizierer definiert sein.</p>
 </td><td>
 <p>Sie können Bilder für unterschiedliche Auflösungen anpassen.</p>
 <p>In der tatsächlichen Meldung enthält „{image name}“ den Namen des Bilds mit dem Fehler.</p>
-<p> Stellen Sie sicher, dass für jedes Bild entweder „Scale“ oder „TargetSize“ als Qualifizierer definiert ist.</p>
+<p> Stellen Sie sicher, dass für jedes Bild entweder „Scale” oder „TargetSize” als Qualifizierer definiert ist.</p>
 </td></tr>
 <tr><td>
-<p>Das Bild „{Bildname}“ überschreitet die Größenbeschränkung von {Größenangabe}.</p>
+<p>Das Bild "{Bildname}" überschreitet die Größenbeschränkung von {Größenangabe}.</p>
 </td><td>
 <p>Stellen Sie sicher, dass alle Bilder der App den Größenbeschränkungen entsprechen.</p>
 <p>In der tatsächlichen Meldung enthält „{image name}“ den Namen des Bilds mit dem Fehler.</p>
 </td></tr>
 <tr><td>
-<p>Das Bild „{Bildname}“ fehlt im Paket.</p>
+<p>Das Bild "{Bildname}" fehlt im Paket.</p>
 </td><td>
 <p>Ein erforderliches Bild fehlt.</p>
-<p>In der tatsächlichen Meldung enthält „{Bildname}“ den Namen des fehlenden Bilds.</p>
+<p>In der tatsächlichen Meldung enthält "{Bildname}“ den Namen des fehlenden Bilds.</p>
 </td></tr>
 <tr><td>
-<p>Das Bild „{Bildname}“ ist keine gültige Bilddatei.</p>
+<p>Das Bild "{Bildname}" ist keine gültige Bilddatei.</p>
 </td><td>
 <p>Stellen Sie sicher, dass alle Bilder der App den Einschränkungen für Dateiformattypen entsprechen.</p>
 <p>In der tatsächlichen Meldung enthält „{image name}“ den Namen des ungültigen Bilds.</p>
@@ -410,12 +410,12 @@ Orientieren Sie sich an der folgenden Tabelle.
 <p>In der tatsächlichen Meldung enthält {Wert} den Namen des ungültigen Farbwerts im Bild.</p>
 </td></tr>
 <tr><td>
-<p>Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale“ und „TargetSize“ nicht angeben. In diesem Fall wird „Scale-100“ verwendet.</p>
+<p>Für das Bild muss mindestens eine Variante ohne TargetSize-Qualifizierer definiert sein. Sie müssen einen Scale-Qualifizierer definieren oder „Scale” und „TargetSize” nicht angeben. In diesem Fall wird „Scale-100” verwendet.</p>
 </td><td>
-<p>Weitere Informationen findest du unter <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Reaktionsfähiges Design für UWP-Apps (Universelle Windows-Plattform) – Grundlagen</a> und <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Reaktionsfähiges Design für UWP-Apps (Universelle Windows-Plattform) – Grundlagen</a> und <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
 </td></tr>
 <tr><td>
-<p>Das Paket enthält keine Datei „resources.pri“.</p>
+<p>Das Paket enthält keine Datei „resources.pri”.</p>
 </td><td>
 <p>Wenn das App-Manifest lokalisierbaren Inhalt enthält, müssen Sie sicherstellen, dass das Paket der App eine gültige Datei „resources.pri“ enthält.</p>
 </td></tr>
@@ -434,7 +434,7 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Die Zeichenfolge „{string}“ entspricht nicht der Längenbeschränkung von maximal {number} Zeichen.</p>
 </td><td>
-<p>Weitere Informationen findest du unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
 <p>In der tatsächlichen Meldung wird „{string}“ durch die Zeichenfolge mit dem Fehler ersetzt, und {number} enthält die maximale Länge.</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ Orientieren Sie sich an der folgenden Tabelle.
 <tr><td>
 <p>Die Zeichenfolge darf nicht leer sein (Länge größer 0 (null)).</p>
 </td><td>
-<p>Weitere Informationen findest du unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">App-Paketanforderungen</a>.</p>
 </td></tr>
 <tr><td>
-<p>In der Datei „resources.pri“ ist keine Standardressource angegeben.</p>
+<p>In der Datei „resources.pri” ist keine Standardressource angegeben.</p>
 </td><td>
-<p>Weitere Informationen findest du unter <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
+<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">Richtlinien für App-Ressourcen</a>.</p>
 <p>In der Standardbuildkonfiguration nimmt Visual Studio nur Bildressourcen mit der Skalierung 200 % in das App-Paket auf, wenn ein Bündel generiert wird, andere Ressourcen werden im Ressourcenpaket abgelegt. Stellen Sie sicher, dass Sie entweder Bildressourcen mit der Skalierung 200 % einschließen oder Ihr Projekt für die Aufnahme der vorhandenen Ressourcen konfigurieren.</p>
 </td></tr>
 <tr><td>
@@ -543,7 +543,7 @@ Bei diesem Test wird überprüft, ob Apps auf der Featureebene 9\-1 richtig ger
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Stelle sicher, dass die App auf der Direct3D-Featureebene 9\-1 richtig gerendert wird. Dies gilt auch, wenn die App für die Ausführung auf einer höheren Featureebene bestimmt ist. Weitere Informationen findest du unter [Entwickeln für unterschiedliche Direct3D-Featureebenen](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx).
+Stelle sicher, dass die App auf der Direct3D-Featureebene 9\-1 richtig gerendert wird. Dies gilt auch, wenn die App für die Ausführung auf einer höheren Featureebene bestimmt ist. Weitere Informationen finden Sie unter [Entwickeln für unterschiedliche Direct3D-Featureebenen](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx).
 
 ### <a name="direct3d-trim-after-suspend"></a>Direct3D-Kürzung nach dem Anhalten
 
@@ -595,11 +595,11 @@ Es wird überprüft, ob die **WINMD**-Dateien im Paket den UWP-Regeln entspreche
 
 ### <a name="corrective-actions"></a>Maßnahmen
 
--   **Test des ExclusiveTo-Attributs:** Stelle sicher, dass von UWP-Klassen keine Schnittstellen implementiert werden, die für eine andere Klasse als „ExclusiveTo“ markiert sind.
--   **Test der Typposition:** Stelle sicher, dass die Metadaten für alle UWP-Typen in der WINMD-Datei enthalten sind, die im App-Paket über den längsten Namen mit Namespaceübereinstimmung verfügt.
--   **Test der Groß-/Kleinschreibung von Typnamen:** Stelle sicher, dass alle UWP-Typen eindeutige Namen ohne Beachtung der Groß-/Kleinschreibung in deinem App-Paket aufweisen. Vergewissern Sie sich außerdem, dass UWP-Typnamen im App-Paket nicht auch als Namespacename verwendet werden.
--   **Test auf Richtigkeit von Typnamen:** Stelle sicher, dass im globalen Namespace oder im Windows-Namespace der obersten Ebene keine UWP-Typen vorhanden sind.
--   **Test auf allgemeine Richtigkeit der Metadaten:** Stelle sicher, dass der zum Generieren deiner Typen verwendete Compiler in Bezug auf die UWP-Spezifikationen auf dem neuesten Stand ist.
+-   **ExclusiveTo-Attributtest:** Stellen Sie sicher, dass von UWP-Klassen keine Schnittstellen implementiert werden, die für eine andere Klasse als „ExclusiveTo” gekennzeichnet sind.
+-   **Test auf Anordnung von Typen:** Stellen Sie sicher, dass die Metadaten für alle UWP-Typen in der WINMD-Datei enthalten sind, die im App-Paket über den längsten Namen mit Namespaceübereinstimmung verfügt.
+-   **Test auf Groß-/Kleinschreibung von Typnamen:** Stellen Sie sicher, dass alle UWP-Typen im App-Paket eindeutige Namen aufweisen, bei denen die Groß-/Kleinschreibung nicht zu berücksichtigen ist. Vergewissern Sie sich außerdem, dass UWP-Typnamen im App-Paket nicht auch als Namespacename verwendet werden.
+-   **Test auf Korrektheit des Typnamens:** Stellen Sie sicher, dass im globalen Namespace oder im Windows-Namespace der obersten Ebene keine UWP-Typen vorhanden sind.
+-   **Test auf Korrektheit der allgemeinen Metadaten:** Stellen Sie sicher, dass der zum Generieren der Typen verwendete Compiler in Bezug auf die UWP-Spezifikationen auf dem neuesten Stand ist.
 -   **Eigenschaftentest:** Stellen Sie sicher, dass alle Eigenschaften einer UWP-Klasse über eine get-Methode verfügen (set-Methoden sind optional). Vergewissern Sie sich, dass der Typ des Rückgabewerts der get-Methode für alle Eigenschaften von UWP-Typen jeweils mit dem Typ des Eingabeparameters der set-Methode übereinstimmt.
 
 ## <a name="package-sanity-tests"></a>Tests für die Paketintegrität
@@ -620,15 +620,15 @@ Es wird überprüft, ob die Bitanzahl jeder einzelnen Datei im PE-Header korrekt
 
 Befolgen Sie diese Richtlinien, um sicherzustellen, dass Ihr App-Paket nur Dateien enthält, die von der im App-Manifest angegebenen Architektur unterstützt werden:
 
--   Wenn die Zielprozessorarchitektur der App den Prozessortyp „Neutral“ aufweist, kann die App keine x86-, x64- oder ARM-Binärdateien oder -Abbilddateien enthalten.
+-   Wenn die Zielprozessorarchitektur der App den Prozessortyp "Neutral" aufweist, kann die App keine x86-, x64- oder ARM-Binärdateien oder -Abbilddateien enthalten.
 
--   Wenn die Zielprozessorarchitektur der App den Prozessortyp „x86“ aufweist, darf das App-Paket nur x86-Binärdateien oder -Abbilddateien enthalten. Wenn das Paket x64- oder ARM-Binärtypen oder -Imagetypen enthält, tritt beim Test ein Fehler auf.
+-   Wenn die Zielprozessorarchitektur der App den Prozessortyp "x86" aufweist, darf das App-Paket nur x86-Binärdateien oder -Abbilddateien enthalten. Wenn das Paket x64- oder ARM-Binärtypen oder -Imagetypen enthält, tritt beim Test ein Fehler auf.
 
--   Wenn die Zielprozessorarchitektur der App den Prozessortyp „x64“ aufweist, muss das App-Paket x64-Binärdateien oder -Abbilddateien enthalten. Beachten Sie, dass das Paket in diesem Fall auch x86-Dateien enthalten kann. Für die Hauptoberfläche der App sollte jedoch die x64-Binärdatei genutzt werden.
+-   Wenn die Zielprozessorarchitektur der App den Prozessortyp "x64" aufweist, muss das App-Paket x64-Binärdateien oder -Abbilddateien enthalten. Beachten Sie, dass das Paket in diesem Fall auch x86-Dateien enthalten kann. Für die Hauptoberfläche der App sollte jedoch die x64-Binärdatei genutzt werden.
 
     Falls das Paket jedoch ARM-Binärdateien oder -Abbilddateien oder ausschließlich x86-Binärdateien oder -Abbilddateien enthält, tritt beim Test ein Fehler auf.
 
--   Wenn die Zielprozessorarchitektur der App den Prozessortyp „ARM“ aufweist, darf das App-Paket nur ARM-Binärdateien oder -Abbilddateien enthalten. Wenn das Paket x64- oder x86-Binärdateien oder -Abbilddateien enthält, tritt beim Test ein Fehler auf.
+-   Wenn die Zielprozessorarchitektur der App den Prozessortyp "ARM" aufweist, darf das App-Paket nur ARM-Binärdateien oder -Abbilddateien enthalten. Wenn das Paket x64- oder x86-Binärdateien oder -Abbilddateien enthält, tritt beim Test ein Fehler auf.
 
 ### <a name="supported-directory-structure-test"></a>Test der unterstützten Verzeichnisstruktur
 
@@ -654,7 +654,7 @@ Mit dem Test der WinJS-Hintergrundaufgabe wird sichergestellt, dass JavaScript-A
 
 ### <a name="background"></a>Hintergrund
 
-Apps mit JavaScript-Hintergrundaufgaben müssen „Close()“ als letzte Anweisung der Hintergrundaufgabe aufrufen. Ist dies bei Apps nicht der Fall, kann das System unter Umständen nicht in den verbundenen Standbymodus zurückkehren, was zu einer schnelleren Entleerung des Akkus führen kann.
+Apps mit JavaScript-Hintergrundaufgaben müssen "Close()" als letzte Anweisung der Hintergrundaufgabe aufrufen. Ist dies bei Apps nicht der Fall, kann das System unter Umständen nicht in den verbundenen Standbymodus zurückkehren, was zu einer schnelleren Entleerung des Akkus führen kann.
 
 ### <a name="test-details"></a>Testdetails
 
@@ -662,7 +662,7 @@ Wenn für Apps im Manifest keine Hintergrundaufgabe angegeben ist, gilt der Test
 
 ### <a name="corrective-action"></a>Maßnahmen
 
-Aktualisieren Sie den JavaScript-Hintergrundcode so, dass „Close()“ richtig aufgerufen wird.
+Aktualisieren Sie den JavaScript-Hintergrundcode so, dass „Close()” richtig aufgerufen wird.
 
 
 ## <a name="related-topics"></a>Verwandte Themen

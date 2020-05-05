@@ -11,10 +11,10 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a2f73fe6280d3a86510ce48f47017dd4897139a
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79208985"
 ---
 # <a name="xaml-styles"></a>XAML-Formatvorlagen
@@ -165,7 +165,7 @@ Das Überschreiben der Systempinsel geschieht gewöhnlich auf App- oder Seiteneb
 </Page.Resources>
 ```
 
-Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Endungen werden auf die ursprünglichen einfachen Formatierungsnamen angewendet: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled** usw. Wenn diese Pinsel ebenfalls geändert werden, wird sichergestellt, dass die Steuerelemente im App-Design einheitlich farbig gestaltet sind.
+Für Zustände wie PointerOver (Mauszeiger über der Schaltfläche), **PointerPressed** (Schaltfläche betätigt) oder Deaktiviert (Schaltfläche erlaubt keine Interaktion). Diese Endungen werden an die ursprünglichen einfachen Formatnahmen angehängt: **ButtonBackgroundPointerOver**, **ButtonForegroundPointerPressed**, **ButtonBorderBrushDisabled** usw. Wenn Sie auch diese Pinsel modifizieren, stellen Sie sicher, dass Ihre Steuerelemente konsistent gemäß dem Thema Ihrer App gestaltet sind.
 
 Die Verwendung dieser Pinselüberschreibungen auf der **App.Resources**-Ebene verändert alle Schaltflächen in der gesamten App und nicht nur auf einer Seite.
 

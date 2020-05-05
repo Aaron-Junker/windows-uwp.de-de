@@ -7,15 +7,15 @@ keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607253"
 ---
 # <a name="app-quality"></a>App-Qualität
 
-Zuletzt aktualisiert: 25. Juli 2017
+Letzte Aktualisierung: 25. Juli 2017
 
 Der Microsoft Store bietet Kunden auf der ganzen Welt eine umfassende und vielseitige Auswahl an Apps. Es ist für Kunden und Entwickler gleichermaßen wichtig, dass Apps aus dem Store komfortabel, unterhaltend und sinnvoll sind. Um Entwicklern dabei zu helfen, dieses Ziel zu erreichen, haben wir hier einige der wichtigsten Faktoren für die App-Qualität zusammengestellt.
 
@@ -65,7 +65,7 @@ In der **Beschreibung** können Sie die wichtigsten Features Ihrer App vorstelle
 
 Wenn Sie an Downloads verdienen möchten, dann betonen Sie die beeindruckenden, unterhaltsamen oder nützlichen Merkmale der App.
 
-- Sorgen Sie für dauerhaften Wert. Beispiel:
+- Sorgen Sie für dauerhaften Wert. Zum Beispiel:
     - Bietet Ihre Koch-App genügend Rezepte, damit Kunden veranlasst werden, sie mehr als einmal zu verwenden?
     - Wird Ihre Sport-App regelmäßig mit aktuellen Statistiken über die Mannschaft aktualisiert, oder enthält sie nur eine statische Auflistung von Ergebnissen?
     - Bietet Ihr Spiel einen interessanten Spielverlauf und unterschiedliche Ergebnisse?

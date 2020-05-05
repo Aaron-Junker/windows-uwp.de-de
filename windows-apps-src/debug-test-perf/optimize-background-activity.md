@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: eb3ff12e4b616edd7b87cab7f13aa060f301fc52
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683833"
 ---
 # <a name="optimize-background-activity"></a>Optimieren von Hintergrundaktivitäten
@@ -61,7 +61,7 @@ Die Systembedingungen müssen erfüllt sein, damit Hintergrundaufgaben ausgefüh
 
 Teste deine App auf realen Geräten, um Szenarien mit hohem Energieverbrauch zu untersuchen. Es ist sinnvoll, Ihre App auf vielen unterschiedlichen Geräten bei aktiviertem und deaktiviertem Stromsparmodus und in Umgebungen mit unterschiedlichen Netzwerksignalstärken zu testen.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [Planen der Leistung](https://docs.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  

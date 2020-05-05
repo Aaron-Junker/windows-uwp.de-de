@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, netzwerk, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: 221ab5e0647fe95e8d715fc320ba2b9c1bee2dfe
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684961"
 ---
 # <a name="websockets"></a>WebSockets
@@ -833,7 +833,7 @@ protected:
 * [WebSocketError.GetStatus](/uwp/api/windows.networking.sockets.websocketerror.getstatus)
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [WebSocket-Protokoll](https://tools.ietf.org/html/rfc6455)
 * [Sockets](sockets.md)
 

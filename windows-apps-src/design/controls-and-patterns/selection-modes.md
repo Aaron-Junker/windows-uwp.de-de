@@ -12,10 +12,10 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b781e6074468fbe73446e4057e36ff31266d05
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72165097"
 ---
 # <a name="selection-mode-overview"></a>Auswahlmodus (Übersicht)
@@ -25,9 +25,9 @@ Mit dem Auswahlmodus können Benutzer ein einzelnes oder mehrere Elemente auswä
 ## <a name="different-selection-modes"></a>Verschiedene Auswahlmodi
 Es gibt drei verschiedene Auswahlmodi:
 
-- Single (Einzelauswahl): Dabei kann der Benutzer jeweils nur ein Element auswählen.
-- Multiple (Mehrfachauswahl): Der Benutzer kann mehrere Elemente ohne Modifizierer auswählen.
-- Extended (Erweiterte Auswahl): Dabei kann der Benutzer mit Zusatztasten mehrere Elemente auswählen, z.B. durch Gedrückthalten der UMSCHALTTASTE.
+- Einzeln: Dabei kann der Benutzer jeweils nur ein Element auswählen.
+- Mehrfach: Der Benutzer kann mehrere Elemente ohne Modifizierer auswählen.
+- Erweitert: Dabei kann der Benutzer mit Zusatztasten mehrere Elemente auswählen, z. B. durch Gedrückthalten der UMSCHALTTASTE.
 
 ## <a name="selection-mode-examples"></a>Beispiele für Auswahlmodi
 ### <a name="here-is-a-listview-with-single-selection-mode-enabled"></a>Im Folgenden findest du eine ListView mit aktiviertem Einzelauswahlmodus.

@@ -9,15 +9,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258113"
 ---
 #  <a name="ui-considerations-for-uwp-devices"></a>Überlegungen zur Benutzeroberfläche für UWP-Geräte
 
-![Geräte](../images/devices-2x.png)
+![-Geräte zu unterstützen](../images/devices-2x.png)
 
 Wenn Sie sich mit den Geräten vertraut machen, die UWP-Apps (Universelle Windows-Plattform) unterstützen, können Sie für jeden Formfaktor die bestmögliche Benutzerfreundlichkeit bieten.
 
@@ -118,7 +118,7 @@ Hinweise zur Benutzeroberfläche
 
 Eingaben
 - Gamepad (z. B. Xbox-Controller)
-- Fernbedienung
+- Remote
 - Sprache (gelegentlich, falls der Kunde Kinect oder ein Headset besitzt)
 
 Typische Gerätefunktionen
@@ -156,7 +156,7 @@ Hinweise zur Benutzeroberfläche
 
 Eingaben
 -   Touch
--   Spracheingabe
+-   Sprache
 
 Typische Gerätefunktionen
 -   Mikrofon
@@ -189,7 +189,7 @@ Hinweise zur Benutzeroberfläche
 Eingaben
 -   Touch
 -   Stift
--   Spracheingabe
+-   Sprache
 -   Tastatur (Bildschirm-/Remotetastatur)
 -   Touchpad (Remote)
 

@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, projiziert, Projizierung, behandeln, Ereignis, Delegat
 ms.localizationpriority: medium
-ms.openlocfilehash: fa97c99f14eee1cb76148c717b1e126a3f406fd1
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.openlocfilehash: eae966c130c52305b53cc4122844aeae49ecab92
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266918"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82267494"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT
 
@@ -79,7 +79,7 @@ MainPage::MainPage()
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
 ```
 
-Ein Handler vom Typ **RoutedEventHandler** kann auch noch auf andere Weise erstellt werden. Der folgende Syntaxblock stammt aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). (Wähle rechts oben auf dieser Webseite im Dropdownmenü **Sprache** die Option *C++/WinRT* aus.) Beachte die verschiedenen Konstruktoren: Einer akzeptiert eine Lambda-Funktion, ein anderer eine freie Funktion und ein weiterer (der oben verwendete) ein Objekt sowie eine Pointer-to-Member-Funktion.
+Ein Handler vom Typ **RoutedEventHandler** kann auch noch auf andere Weise erstellt werden. Der folgende Syntaxblock stammt aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). (Wähle rechts oben auf dieser Webseite im Dropdownmenü *Sprache* die Option **C++/WinRT** aus.) Beachte die verschiedenen Konstruktoren: Einer akzeptiert eine Lambda-Funktion, ein anderer eine freie Funktion und ein weiterer (der oben verwendete) ein Objekt sowie eine Pointer-to-Member-Funktion.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -96,7 +96,7 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 Die Syntax des Funktionsaufrufoperators ist ebenfalls hilfreich. Sie gibt Aufschluss über die benötigten Delegatparameter. Wie du siehst, entspricht in diesem Fall die Syntax des Funktionsaufrufoperators den Parametern unseres Handlers vom Typ **MainPage::ClickHandler**.
 
 > [!NOTE]
-> Navigiere zum Ermitteln der Details eines Ereignisdelegaten sowie der zugehörigen Parameter zunächst zum Dokumentationsthema für das Ereignis. Nehmen wir beispielsweise das [Ereignis „UIElement.KeyDown“](/uwp/api/windows.ui.xaml.uielement.keydown). Rufe dieses Thema auf, und wähle in der Dropdownliste **Sprache** die Option  *C++/WinRT* aus. Der Syntaxblock am Anfang des Themas enthält Folgendes:
+> Navigiere zum Ermitteln der Details eines Ereignisdelegaten sowie der zugehörigen Parameter zunächst zum Dokumentationsthema für das Ereignis. Nehmen wir beispielsweise das [Ereignis „UIElement.KeyDown“](/uwp/api/windows.ui.xaml.uielement.keydown). Rufe dieses Thema auf, und wähle in der Dropdownliste *Sprache* die Option  **C++/WinRT** aus. Der Syntaxblock am Anfang des Themas enthält Folgendes:
 > 
 > ```cppwinrt
 > // Register
@@ -218,7 +218,7 @@ Wenn Sie beim Registrieren eines Delegaten [**winrt::auto_revoke**](/uwp/cpp-ref
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>Delegattypen für asynchrone Aktionen und Vorgänge
 
-In den obigen Beispielen wird der Delegattyp **RoutedEventHandler** verwendet. Es gibt aber natürlich noch viele andere Delegattypen. Asynchrone Aktionen und Vorgänge (mit und ohne Fortschritt) verfügen beispielsweise über Abschluss- und/oder Fortschrittsereignisse, die Delegaten des entsprechenden Typs erwarten. So erfordert etwa das Fortschrittsereignis eines asynchronen Vorgangs mit Fortschritt (sprich: jegliche Implementierung von [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)) einen Delegaten vom Typ [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler). Im Anschluss findest du ein Codebeispiel für die Erstellung eines solchen Delegattyps mit einer Lambda-Funktion. Das Beispiel veranschaulicht auch die Erstellung eines Delegaten vom Typ [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler).
+In den obigen Beispielen wird der Delegattyp **RoutedEventHandler** verwendet. Es gibt aber natürlich noch viele andere Delegattypen. Asynchrone Aktionen und Vorgänge (mit und ohne Fortschritt) verfügen beispielsweise über Abschluss- und/oder Fortschrittsereignisse, die Delegaten des entsprechenden Typs erwarten. So erfordert etwa das Fortschrittsereignis eines asynchronen Vorgangs mit Fortschritt (sprich: jegliche Implementierung von [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)) einen Delegaten vom Typ [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler-2). Im Anschluss findest du ein Codebeispiel für die Erstellung eines solchen Delegattyps mit einer Lambda-Funktion. Das Beispiel veranschaulicht auch die Erstellung eines Delegaten vom Typ [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler-2).
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
@@ -257,7 +257,7 @@ void ProcessFeedAsync()
 Wie im obigen Kommentar zu Coroutinen bereits angedeutet, ist die Verwendung von Coroutinen für dich wahrscheinlich naheliegender als die Verwendung eines Delegaten mit den Abschlussereignissen asynchroner Aktionen und Vorgänge. Ausführlichere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md).
 
 > [!NOTE]
-> Implementiere für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Du kannst entweder einen einzelnen Delegaten für das Abschlussereignis verwenden oder `co_await` dafür ausführen. Ist beides vorhanden, ist der zweite Vorgang nicht erfolgreich.
+> Implementiere für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Du kannst entweder einen einzelnen Delegaten für das Abschlussereignis verwenden oder `co_await` dafür ausführen. Wenn Sie beide Abschlusshandler nutzen, schlägt der zweite fehl.
 
 Wenn du dich für Delegaten und gegen eine Coroutine entscheidest, kannst du eine einfachere Syntax verwenden.
 
@@ -294,7 +294,7 @@ Wenn du ein Ereignis mit der Memberfunktion eines Objekts oder im Rahmen einer L
 * [Funktion „winrt::implements::get_weak“](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function)
 * [Funktion „winrt::implements::get_strong“](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Erstellen von Ereignissen in C++/WinRT](author-events.md)
 * [Parallelität und asynchrone Vorgänge mit C++/WinRT](concurrency.md)
 * [Starke und schwache Verweise in C++/WinRT](weak-references.md)

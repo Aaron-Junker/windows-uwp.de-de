@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, Boxing, Skalarwert
 ms.localizationpriority: medium
 ms.openlocfilehash: 29263260217de154f1a942d37d1e18fece15e3d0
-ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79038093"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing und Unboxing von Skalarwerten für „IInspectable“ mit C++/WinRT
@@ -56,7 +56,7 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 ```
 
 ## <a name="determine-the-type-of-a-boxed-value"></a>Ermitteln der Art eines geschachtelten Werts
-Wenn du einen geschachtelten Wert erhältst und nicht sicher bist, welchen Typ er enthält, kannst du die [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue)-Schnittstelle des geschachtelten Werts abfragen und anschließend **Type** dafür aufrufen. (Der Typ muss bekannt sein, um das Unboxing durchführen zu können.) Codebeispiel:
+Wenn du einen geschachtelten Wert erhältst und nicht sicher bist, welchen Typ er enthält, kannst du die [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue)-Schnittstelle des geschachtelten Werts abfragen und anschließend **Type** dafür aufrufen. (Der Typ muss bekannt sein, um das Unboxing durchführen zu können.) Hier sehen Sie ein Codebeispiel.
 
 `WINRT_ASSERT` ist eine Makrodefinition, die auf [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros) erweitert wird.
 
@@ -70,6 +70,6 @@ WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType:
 ## <a name="important-apis"></a>Wichtige APIs
 * [Schnittstelle „IInspectable“](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
 * [Funktionsvorlage „winrt::box_value“](/uwp/cpp-ref-for-winrt/box-value)
-* [winrt::hstring-Struktur](/uwp/cpp-ref-for-winrt/hstring)
+* [Struktur „winrt::hstring“](/uwp/cpp-ref-for-winrt/hstring)
 * [Funktionsvorlage „winrt::unbox_value“](/uwp/cpp-ref-for-winrt/unbox-value)
 * [Funktionsvorlage „winrt::unbox_value_or“](/uwp/cpp-ref-for-winrt/unbox-value-or)

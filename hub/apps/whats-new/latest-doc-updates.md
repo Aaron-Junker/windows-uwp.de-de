@@ -7,10 +7,10 @@ ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
 ms.openlocfilehash: a1aecb8df18a5826128b7b00cbc7f2ca7b6889f1
-ms.sourcegitcommit: fc5db2e26db65be025e9f62044b4d29bb1744f8d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80524068"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Neueste Aktualisierungen an der Dokumentation für Windows-Entwickler
@@ -30,7 +30,7 @@ Unter anderem wurden diese Themen vor Kurzem umfassend aktualisiert (bis 31. M�
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/faq">Häufig gestellte Fragen zu C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index">C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/news">Neuigkeiten in C++/WinRT</a></li>
-<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/strings">Verarbeitung von Zeichenfolgen in C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/strings">Behandeln von Zeichenfolgen in C++/WinRT</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/design/basics/index">Designgrundlagen</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/design/downloads/index">Design-Toolkits und Beispiele für Windows-Apps</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/design/layout/depth-shadow">Z-Tiefe und Schatten für UWP-Apps</a></li>

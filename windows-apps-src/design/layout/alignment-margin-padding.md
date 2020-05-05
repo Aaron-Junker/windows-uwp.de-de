@@ -7,10 +7,10 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0d7f702d145740703b9fbc4ca2e7fd8eba8957cc
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684461"
 ---
 # <a name="alignment-margin-padding"></a>Ausrichtung, Rand, Abstand
@@ -71,7 +71,7 @@ Im Gegensatz zu Margin ist Padding keine Eigenschaft von FrameworkElement. Es gi
 -   [**Control.Padding:** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding) wird für alle von [**Control**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls) abgeleiteten Klassen vererbt. Nicht alle Steuerelemente weisen Inhalte auf, sodass bei diesen Steuerelementen das Festlegen der Eigenschaft nichts bewirkt. Wenn das Steuerelement einen Rahmen aufweist, gilt der Abstand innerhalb dieses Rahmens.
 -   [**Border.Padding:** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.padding) definiert den Abstand zwischen der von [**BorderThickness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderbrush) gebildeten Rechtecklinie und dem [**Child**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child)-Element.
 -   [**ItemsPresenter.Padding:** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemspresenter.padding) trägt zur Darstellung der Objekte für Elemente in Elementsteuerelementen bei. Dabei wird der angegebene Abstand um die einzelnen Elemente herum platziert.
--   [**TextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) und [**RichTextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding): erweitern den Begrenzungsrahmen um den Text des Textelements. Diese Textelemente weisen keine **Background**-Eigenschaft auf, sodass sie schwierig zu erkennen sein können. Verwende für [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)-Container daher stattdessen [**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin)-Einstellungen.
+-   [**TextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) und [**RichTextBlock.Padding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding): erweitern den Begrenzungsrahmen um den Text des Textelements. Diese Textelemente weisen keine **Background**-Eigenschaft auf, sodass sie schwierig zu erkennen sein können. Verwende für [**Block**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin)-Container daher stattdessen [**Margin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)-Einstellungen.
 
 In allen diesen Fällen weisen Elemente auch eine Margin-Eigenschaft auf. Wenn sowohl Margin als auch Padding angewandt werden, sind sie additiv: Der erkennbare Abstand zwischen einem äußeren Container und beliebigem innerem Inhalt beträgt Margin plus Padding.
 
@@ -103,7 +103,7 @@ Sie müssen nicht jeden Eigenschaftswert einzeln für ein Steuerelement festlege
 
 ![Empfohlene Bundstege](images/12-gutter.svg)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [**FrameworkElement.Height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height)
 * [**FrameworkElement.Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width)
 * [**FrameworkElement.HorizontalAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment)
