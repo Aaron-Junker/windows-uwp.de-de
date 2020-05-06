@@ -10,10 +10,10 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 0b54b04f2f36c2661de8baf58d0da1aec75ae590
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79210146"
 ---
 # <a name="data-binding-in-depth"></a>Datenbindung im Detail
@@ -655,13 +655,13 @@ Darüber hinaus kann der Wert **null** von einem virtualisierten Vektor für ein
 
 Wenn Sie eine flache Sammlung von Elementen aufnehmen (beispielsweise Bücher, dargestellt durch eine **BookSku**-Klasse) und die Elemente mithilfe einer allgemeinen Eigenschaft als Schlüssel gruppieren (beispielsweise der Eigenschaft **BookSku.AuthorName**) werden als Ergebnis gruppierte Daten aufgerufen. Wenn Sie Daten gruppieren, handelt es sich nicht mehr um eine flache Sammlung. Gruppierte Daten sind eine Sammlung von Gruppenobjekten, wobei jedes Gruppenobjekt
 
-- (a) über einen Schlüssel und
-- (b) über eine Sammlung von Elementen verfügt, deren Eigenschaft dem Schlüssel entspricht.
+-  (a) über einen Schlüssel und
+-  (b) über eine Sammlung von Elementen verfügt, deren Eigenschaft dem Schlüssel entspricht.
 
 Im Fall des Beispiels mit den Büchern resultiert die Gruppierung der Bücher nach Autorennamen in einer Sammlung von Autorennamengruppen, wobei jede Gruppe
 
-- a) über einen Schlüssel verfügt, bei dem es sich um den Autorennamen handelt, und
-- b) über eine Sammlung der **BookSku**s verfügt, deren **AuthorName**-Eigenschaft dem Gruppenschlüssel entspricht.
+-  a) über einen Schlüssel verfügt, bei dem es sich um den Autorennamen handelt, und
+-  b) über eine Sammlung der **BookSku**s verfügt, deren **AuthorName**-Eigenschaft dem Gruppenschlüssel entspricht.
 
 In der Regel binden Sie zum Anzeigen einer Sammlung die [**ItemsSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) eines Elementsteuerelements (wie beispielsweise [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) oder [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)) direkt an eine Eigenschaft, die eine Sammlung zurückgibt. Wenn dies eine flache Sammlung von Elementen ist, müssen Sie nichts Besonderes tun. Wenn es sich jedoch um eine Sammlung von Gruppenobjekten handelt (wie bei der Bindung gruppierter Daten), benötigen Sie die Dienste eines Zwischenobjekts, das als [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) bezeichnet wird und sich zwischen dem Elementsteuerelement und der Bindungsquelle befindet. Sie binden die **CollectionViewSource** an die Eigenschaft, die gruppierte Daten zurückgibt, und das Elementsteuerelement an die **CollectionViewSource**. Ein weiterer Vorteil einer **CollectionViewSource** besteht darin, dass sie das aktuelle Element verfolgt, sodass Sie mehr als ein Elementsteuerelement synchron beibehalten können, indem Sie alle Steuerelemente an die gleiche **CollectionViewSource** binden. Sie können über die [**ICollectionView.CurrentItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.icollectionview.currentitem)-Eigenschaft des Objekts, das von der [**CollectionViewSource.View**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.collectionviewsource.view)-Eigenschaft zurückgegeben wird, auch programmgesteuert auf das aktuelle Element zugreifen.
 

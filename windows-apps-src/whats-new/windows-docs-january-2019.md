@@ -6,10 +6,10 @@ ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74902472"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>Neues in der Windows-Entwicklerdokumentation im Januar 2019
@@ -28,7 +28,7 @@ Microsoft Learn bietet neue praktische Lern- und Schulungsmöglichkeiten für Mi
 
 ### <a name="direct-3d-12"></a>Direct3D 12
 
-[Direct3D 12-Renderdurchgänge](/windows/desktop/direct3d12/direct3d-12-render-passes) können die Leistung deines Renderers verbessern, sofern dieser neben anderen Techniken auf TBDR (Tile-Based Deferred Rendering) basiert. Mit dieser Technik kann deine App Reihenfolgeanforderungen für das Ressourcenrendering sowie Datenabhängigkeiten besser erkennen. Dies ermöglicht es deinem Renderer, eine höhere GPU-Effizienz zu erzielen, und verringert den ein- und ausgehenden Datenverkehr außerhalb des Chips.
+[Direct3D 12-Renderdurchgänge](/windows/desktop/direct3d12/direct3d-12-render-passes) können die Leistung Ihres Renderers verbessern, sofern dieser, neben anderen Techniken, auf Tile-Based Deferred Rendering (TBDR) aufsetzt. Mit dieser Technik kann deine App Reihenfolgeanforderungen für das Ressourcenrendering sowie Datenabhängigkeiten besser erkennen. Dies ermöglicht es deinem Renderer, eine höhere GPU-Effizienz zu erzielen, und verringert den ein- und ausgehenden Datenverkehr außerhalb des Chips.
 
 ### <a name="msix-modification-packages"></a>MSIX-Änderungspakete
 
@@ -38,7 +38,7 @@ In der Version 1809 von Windows 10 wurde die Unterstützung von [MSIX-Änderun
 
 ### <a name="open-source-of-wpf-windows-forms-and-winui"></a>Open Source für WPF, Windows Forms und WinUI
 
-Die UX-Frameworks WPF, Windows Forms und WinUI sind jetzt für Open-Source-Beiträge auf GitHub verfügbar. Weitere Informationen und Links findest du im [Blog zur Erstellung von Windows-Apps](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
+Die UX-Frameworks WPF, Windows Forms und WinUI sind jetzt für Open-Source-Beiträge auf GitHub verfügbar. Weitere Informationen und Links finden Sie im [Blog für Windows-App-Entwickler](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97).
 
 ### <a name="progressive-web-apps-for-xbox"></a>Progressive Web-Apps für Xbox
 
@@ -52,7 +52,7 @@ Unter [Trainieren eines Modells mit PyTorch](/windows/ai/train-model-pytorch) er
 
 ![WinML-Grafik](images/winml-graphic.png)
 
-## <a name="developer-guidance"></a>Entwicklerleitfäden
+## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
 ### <a name="choose-your-platform"></a>Auswählen Ihrer Plattform
 
@@ -68,7 +68,7 @@ Unter [Machen Sie Ihre Anwendung startklar für den Wechsel der japanischen Ära
 
 ## <a name="videos"></a>Videos
 
-### <a name="progressive-web-apps"></a>Progressive Web Apps
+### <a name="progressive-web-apps"></a>Progressive Web-Apps
 
 Progressive Web-Apps sind Websites, die in unterschiedlichen Browsern und auf einer Vielzahl von Windows 10-Geräten wie native Apps funktionieren. [Sieh dir das Video an](https://youtu.be/ugAewC3308Y), um mehr zu erfahren, und [lies anschließend die Dokumentation](https://developer.microsoft.com/windows/pwa), um loszulegen.
 
@@ -78,7 +78,7 @@ In unserer [neuen Videoreihe zu Visual Studio Code](https://www.youtube.com/play
 
 ### <a name="one-dev-question"></a>One Dev Question
 
-In der Videoreihe „One Dev Question“ beantworten langjährige Microsoft-Entwickler eine Reihe von Fragen zur Entwicklung, Teamkultur und Geschichte von Windows. Hier sind die neuesten Antworten auf Fragen angegeben.
+In der „One Dev Question“-Videoreihe behandeln langjährige Microsoft-Entwickler eine Reihe von Fragen zur Windows-Entwicklung, -Teamkultur und -Geschichte. Hier sind die neuesten Antworten auf Fragen angegeben.
 
 Raymond Chen:
 

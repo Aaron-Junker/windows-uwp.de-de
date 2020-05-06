@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5340c8375be9cf33a8f56fdba7bd36e9743767ab
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80482310"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>Beitragen zur UWP-Konzeptdokumentation
@@ -54,6 +54,6 @@ Die zugewiesenen Prüfer können deinen Pull Request genehmigen, ablehnen oder m
 
 ## <a name="using-issues-to-provide-feedback-on-uwp-conceptual-documentation"></a>Verwenden von Problemen zum Abgeben von Feedback zur UWP-Konzeptdokumentation
 
-Wenn du Feedback zur Dokumentation abgeben möchtest, anstatt sie selbst zu bearbeiten, kannst du [ein Problem im öffentlichen Repository erstellen](https://github.com/MicrosoftDocs/windows-uwp/issues). Wähle die Registerkarte **Issues** (Probleme) und anschließend die Schaltfläche **New issue** (Neues Problem) aus. Vergiss nicht, den Titel des Themas und die URL für die Seite anzugeben. Dein Problem wird Mitgliedern des UWP-Dokumentationsteams zur Überprüfung zugewiesen.
+Wenn du Feedback zur Dokumentation abgeben möchtest, anstatt sie selbst zu bearbeiten, kannst du [ein Problem im öffentlichen Repository erstellen](https://github.com/MicrosoftDocs/windows-uwp/issues). Wähle die Registerkarte **Issues** (Probleme) und anschließend die Schaltfläche **New issue** (Neues Problem) aus. Stelle sicher, dass du den Titel des Themas und die URL für die Seite angibst. Dein Problem wird Mitgliedern des UWP-Dokumentationsteams zur Überprüfung zugewiesen.
 
 * Für interne Probleme steht das [WDG-Inhaltsanforderungstool](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx) zur Verfügung.

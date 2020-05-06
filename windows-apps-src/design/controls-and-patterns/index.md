@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80218450"
 ---
 # <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
@@ -32,7 +32,7 @@ Allgemeine Anweisungen und Codebeispiele für das Hinzufügen und Formatieren vo
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">Hinzufügen von Steuerelementen und Verarbeiten von Ereignissen</a></b> <br/>
-Es gibt drei wichtige Schritte zum Hinzufügen von Steuerelementen zur App: Hinzufügen eines Steuerelements zu Ihrer App-UI, Festlegen der Eigenschaften für das Steuerelement und Hinzufügen von Code zu den Ereignishandlern des Steuerelements, sodass dieses eine Aktion ausführt.</p>
+Es gibt 3 wichtige Schritte, die Sie ausführen müssen, um Ihrer App Steuerelemente hinzuzufügen: das Hinzufügen eines Steuerelements zu Ihrer App-UI, das Festlegen der Eigenschaften für das Steuerelement und das Hinzufügen von Code zu den Ereignishandlern des Steuerelements, sodass dieses eine Aktion ausführt.</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">Formatieren von Steuerelementen</a></b> <br/>

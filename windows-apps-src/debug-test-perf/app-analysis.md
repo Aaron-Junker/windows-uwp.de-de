@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73062752"
 ---
 # <a name="app-analysis-overview"></a>App-Analyse – Übersicht
@@ -209,7 +209,7 @@ Verwenden Sie „x:Key“ anstelle von „x:Name“, wenn Sie nicht aus CodeBehi
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>Sammlungssteuerelement verwendet ein Panel ohne Virtualisierung
 
-Wenn Sie eine benutzerdefinierte ItemsPanel-Vorlage bereitstellen (siehe ItemsPanel), ist es wichtig, dass Sie ein Virtualisierungspanel wie ItemsWrapGrid oder ItemsStackPanel verwenden. Wenn Sie VariableSizedWrapGrid, WrapGrid oder StackPanel verwenden, erhalten Sie keine Virtualisierung. Darüber hinaus werden die folgenden ListView-Ereignisse nur bei Verwendung von ItemsWrapGrid oder ItemsStackPanel ausgelöst: ChoosingGroupHeaderContainer, ChoosingItemContainer und ContainerContentChanging.
+Wenn Sie eine benutzerdefinierte ItemsPanel-Vorlage bereitstellen (siehe ItemsPanel), ist es wichtig, dass Sie ein Virtualisierungspanel wie ItemsWrapGrid oder ItemsStackPanel verwenden. Wenn Sie VariableSizedWrapGrid, WrapGrid oder StackPanel verwenden, erhalten Sie keine Virtualisierung. Darüber hinaus werden die folgenden ListView-Ereignisse nur ausgelöst, wenn ItemsWrapGrid oder ItemsStackPanel verwendet werden: ChoosingGroupHeaderContainer, ChoosingItemContainer und ContainerContentChanging.
 
 Die UI-Virtualisierung ist die wichtigste Möglichkeit zur Leistungsoptimierung für Sammlungen. Dies bedeutet, dass die Benutzeroberflächenelemente, die die Objekte darstellen, bei Bedarf erstellt werden. Für ein Elementsteuerelement, das an eine Sammlung mit 1.000 Elementen gebunden ist, wäre es eine Verschwendung von Ressourcen, die UI für alle Elemente gleichzeitig zu erstellen. Sie können sowieso nicht alle gleichzeitig angezeigt werden. ListView und GridView (und andere von ItemsControl abgeleitete Standardsteuerelemente) führen die Virtualisierung der Benutzeroberfläche für Sie durch. Wenn Elemente kurz davor sind, per Bildlauf in der Ansicht angezeigt zu werden (einige Seiten davon entfernt), generiert das Framework die Benutzeroberfläche für die Elemente und speichert sie zwischen. Wenn es unwahrscheinlich ist, dass die Elemente erneut angezeigt werden, gibt das Framework den Arbeitsspeicher wieder frei.
 
@@ -227,7 +227,7 @@ Sie verwenden ein Panel, von dem die Virtualisierung nicht unterstützt wird.
 
 Verwenden Sie ein Virtualisierungspanel wie ItemsWrapGrid oder ItemsStackPanel.
 
-## <a name="accessibility-uia-elements-with-no-name"></a>Barrierefreiheit: UIA-Elemente ohne Namen
+## <a name="accessibility-uia-elements-with-no-name"></a>Eingabehilfen: UIA-Elemente ohne Namen
 
 Im XAML-Code können Sie einen Namen angeben, indem Sie „AutomationProperties.Name“ festlegen. Bei vielen Automatisierungspeers wird ein Standardname für UIA angegeben, wenn „AutomationProperties.Name“ nicht festgelegt wurde. 
 
@@ -245,7 +245,7 @@ Legen Sie die AutomationProperties.Name-Eigenschaft im XAML-Code des Steuereleme
 
 In einigen Fällen ist der richtige Anwendungspatch nicht das Angeben eines Namens, sondern das Entfernen des UIA-Elements aus allen Strukturen mit Ausnahme der Raw-Strukturen. Dies kannst du in XAML tun, indem du `AutomationProperties.AccessibilityView = "Raw"` festlegst.
 
-## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Barrierefreiheit: UIA-Elemente mit dem gleichen ControlType sollten nicht den gleichen Namen haben.
+## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>Eingabehilfen: UIA-Elemente mit dem gleichen ControlType sollten nicht den gleichen Namen haben.
 
 Zwei UIA-Elemente mit demselben übergeordneten UIA-Element dürfen nicht den gleichen Namen und ControlType haben. Zwei Steuerelemente können den gleichen Namen haben, wenn sie über unterschiedliche ControlTypes verfügen. 
 

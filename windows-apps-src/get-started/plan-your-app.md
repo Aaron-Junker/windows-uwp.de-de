@@ -7,10 +7,10 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 834bea47a566789926648098086c05c0a47b6065
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74260552"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>Erstellen einer komplexen UWP-App (Universelle Windows-Plattform)
@@ -40,7 +40,7 @@ Nehmen wir beispielsweise an, Sie möchten eine App erstellen, mit der Benutzer 
 
 **Welche Stärken hat Ihre App?** Nehmen Sie sich einen Moment Zeit, um zu überprüfen, ob Ihre Ideenliste ein Szenario enthält, das Sie regelrecht anspringt. Kürzen Sie Ihre Liste auf ein Szenario, auf das Sie sich konzentrieren möchten. Dabei streichen Sie vielleicht viele gute Ideen, doch dadurch machen Sie ein einzelnes Szenario zu einem guten Szenario.
 
-Entscheiden Sie nach der Auswahl eines Szenarios, wie Sie einem durchschnittlichen Benutzer erklären, wodurch sich Ihre App besonders auszeichnet, und schreiben Sie diesen Punkt in einem Satz nieder. Zum Beispiel:
+Entscheiden Sie nach der Auswahl eines Szenarios, wie Sie einem durchschnittlichen Benutzer erklären, wodurch sich Ihre App besonders auszeichnet, und schreiben Sie diesen Punkt in einem Satz nieder. Beispiel:
 
 -   Meine Reise-App zeichnet sich besonders dadurch aus, dass sie Freunde beim gemeinsamen Erstellen von Reiserouten für Gruppenreisen unterstützt.
 -   Meine Fitness-App zeichnet sich besonders dadurch aus, dass sie Trainingsfortschritte verfolgt und Erfolge mit anderen Personen teilt.
@@ -126,7 +126,7 @@ Allgemeine Methoden:
 
 -   **Teilen**  Ermöglichen Sie es Benutzern, App-Inhalte mit anderen Benutzern über andere Apps zu teilen und freigabefähige Inhalte von anderen Benutzern und Apps zu erhalten.
 -   **Wiedergeben auf**  Ermöglichen Sie es Benutzern, Audio-, Videodaten oder Bilder von Ihrer App auf andere Geräte im Heimnetzwerk zu streamen.
--   **Dateiauswahl und Dateiauswahlerweiterungen**  Ermöglichen Sie Benutzern das Laden und Speichern ihrer Dateien im lokalen Dateisystem, auf angeschlossenen Speichervorrichtungen, in Heimnetzgruppen und sogar in anderen Apps. Außerdem können Sie eine Dateiauswahlerweiterung bereitstellen, sodass andere Apps den Inhalt Ihrer App laden können.
+-   **Dateiauswahl und Dateiauswahlerweiterungen:** Ermöglichen Sie Benutzern das Laden und Speichern ihrer Dateien im lokalen Dateisystem, auf angeschlossenen Speichergeräten, in Heimnetzgruppen und sogar in anderen Apps. Außerdem können Sie eine Dateiauswahlerweiterung bereitstellen, sodass andere Apps den Inhalt Ihrer App laden können.
 
 Weitere Informationen finden Sie unter [App-Verträge und Erweiterungen](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10)).
 <!-- Win 8 page. Should have replacement. -->
@@ -155,7 +155,7 @@ Selbstverständlich können Sie eine Reihe von Interaktionen für Touchscreens w
 
 -   **Näherungsbewegungen**  Ermöglichen Sie es Benutzern, mithilfe einer physischen Kopplung eine Verbindung mit Geräten anderer Benutzer herzustellen, die sich in der Nähe befinden (z. B. bei Multiplayer-Spielen). Weitere Informationen hierzu finden Sie unter [Näherung und Kopplung](https://docs.microsoft.com/previous-versions/windows/apps/hh465229(v=win.10)).
 -   **Kameras und externe Speichervorrichtungen**  Verbinden Sie Benutzer mit ihren integrierten oder angeschlossenen Kameras, damit sie chatten, Konferenzen führen, Vlogs aufzeichnen, Profilbilder aufnehmen, die Welt um sich herum dokumentieren oder sonstige Aktivitäten ausführen können, für die Ihre App geeignet ist. Weitere Informationen zum [Zugreifen auf Inhalte auf Wechselspeichermedien](https://docs.microsoft.com/previous-versions/windows/apps/hh465189(v=win.10)).
--   **Beschleunigungsmesser und andere Sensoren**   Geräte sind heutzutage mit einer Reihe von Sensoren ausgestattet. Ihre App kann die Bildschirmhelligkeit basierend auf der Umgebungshelligkeit erhöhen oder verringern, die UI bei Drehung des Bildschirms anpassen oder auf physische Bewegungen reagieren. Weitere Informationen zu [Sensoren](../devices-sensors/sensors.md).
+-   **Beschleunigungsmesser und andere Sensoren:** Geräte sind heutzutage mit einer Reihe von Sensoren ausgestattet. Ihre App kann die Bildschirmhelligkeit basierend auf der Umgebungshelligkeit erhöhen oder verringern, die UI bei Drehung des Bildschirms anpassen oder auf physische Bewegungen reagieren. Weitere Informationen zu [Sensoren](../devices-sensors/sensors.md).
 -   **Geolocation**  Nutzen Sie Geolocation-Informationen aus Standardwebdaten oder von Geolocation-Sensoren, damit Benutzer sich besser zurechtfinden, ihre Position auf einer Karte ermitteln oder Benachrichtigungen über Personen, Aktivitäten und Ziele in der Nähe empfangen können. Weitere Informationen zum [geografischen Standort](https://docs.microsoft.com/previous-versions/windows/apps/hh465139(v=win.10)).
 
 Betrachten Sie noch einmal das Beispiel der Reise-App. Damit sich die App besonders dadurch auszeichnet, dass sie Freunde beim gemeinsamen Erstellen von Reiserouten für Gruppenreisen unterstützt, könnten Sie einige der folgenden Features nutzen:
@@ -226,7 +226,7 @@ Weitere Informationen zur Berücksichtigung unterschiedlicher Bildschirmgrößen
 
 Überlegen Sie, was Benutzer denken, fühlen oder tun sollen, wenn sie Ihre App zum ersten Mal starten. Berücksichtigen Sie dabei ihre besonderen Stärken. Auch wenn Sie keine Gelegenheit dazu haben, den Benutzern persönlich mitzuteilen, wodurch sich Ihre App besonders auszeichnet, können Sie ihnen diese Botschaft vermitteln, wenn Sie einen ersten Eindruck hinterlassen. Nutzen Sie dazu Folgendes:
 
-**Kacheln und Benachrichtigungen**   Die Kachel ist praktisch die Visitenkarte Ihrer App. Was bewegt Benutzer dazu, unter allen anderen Apps auf dem Startbildschirm genau Ihre App zu starten? Stellen Sie sicher, dass die Kachel die Marke der App hervorhebt und zeigt, wodurch sich die App besonders auszeichnet. Nutzen Sie Kachelbenachrichtigungen, sodass Ihre App immer aktuell und relevant wirkt und Benutzer sie immer wieder aufrufen.
+**Kacheln und Benachrichtigungen:** Die Kachel ist das Gesicht Ihrer App. Was bewegt Benutzer dazu, unter allen anderen Apps auf dem Startbildschirm genau Ihre App zu starten? Stellen Sie sicher, dass die Kachel die Marke der App hervorhebt und zeigt, wodurch sich die App besonders auszeichnet. Nutzen Sie Kachelbenachrichtigungen, sodass Ihre App immer aktuell und relevant wirkt und Benutzer sie immer wieder aufrufen.
 
 **Begrüßungsbildschirm**  Der Begrüßungsbildschirm sollte so schnell wie möglich geladen werden und nur bis zur Initialisierung des App-Status sichtbar bleiben. Die optische Gestaltung des Begrüßungsbildschirms sollte dem Charakter Ihrer App entsprechen.
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257868"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148695"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Tests mit dem Emulator für Microsoft Windows 10 Mobile
 
@@ -54,7 +54,7 @@ Der Microsoft-Emulator für Windows 10 Mobile kann keine Apps laden, die für 
 ### <a name="installing"></a>Installieren von
 Der Microsoft-Emulator für Windows 10 Mobile ist im Windows 10-SDK enthalten. Das Windows 10-SDK und der Emulator können zusammen mit Visual Studio installiert werden. Weitere Informationen finden Sie auf der [Downloadseite für Visual Studio](https://developer.microsoft.com/windows/downloads).
 
-Der Microsoft-Emulator für Windows 10 Mobile kann auch über das [Microsoft-Emulator-Setup](https://go.microsoft.com/fwlink/p/?LinkID=615095) installiert werden.
+Der Microsoft-Emulator für Windows 10 Mobile kann auch über das [Microsoft-Emulator-Setup](https://download.microsoft.com/download/E/3/4/E347E8C5-BD79-49AF-941C-D08893A45268/emulator/EmulatorSetup.exe) installiert werden.
 
 ### <a name="uninstalling"></a>Deinstallation
 

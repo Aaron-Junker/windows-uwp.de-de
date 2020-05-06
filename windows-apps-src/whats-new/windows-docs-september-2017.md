@@ -6,15 +6,15 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74734955"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>Neuigkeiten in der Windows-Entwicklerdokumentation im September 2017
 
-Die Windows-Entwicklerdokumentation wird ständig mit Informationen zu neuen Features aktualisiert, die Entwickler für die Windows-Plattform nutzen können. Die folgenden Featureübersichten, Entwicklerleitfäden und Beispiele wurden erst kürzlich bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
+Die Entwicklerdokumentation für die Windows-Plattform wird kontinuierlich mit Informationen zu neuen Features für Entwickler aktualisiert. Die folgenden Featureübersichten, Entwicklerleitfäden und Beispiele wurden erst kürzlich bereitgestellt und enthalten neue oder aktualisierte Informationen für Windows-Entwickler.
 
 Natürlich steht das Fall Creators Update direkt vor der Tür. Weitere umfassende Dokumentation folgt in den kommenden Monaten!
 
@@ -26,7 +26,7 @@ Nach der [Installation der Tools und des SDKs](https://developer.microsoft.com/w
 
 Das Xbox Live Creators-Programm ist jetzt live. Damit kannst du ganz einfach UWP-Spiele erstellen und veröffentlichen, die sowohl auf Windows 10-PCs als auch auf Xbox One-Konsolen ausgeführt werden können. Weitere Informationen findest du unter [Erste Schritte mit dem Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md).
 
-## <a name="developer-guidance"></a>Entwicklerleitfäden
+## <a name="developer-guidance"></a>Erläuterungen für Entwickler
 
 ### <a name="xaml-basics-tutorials"></a>Tutorials zu XAML-Grundlagen
 

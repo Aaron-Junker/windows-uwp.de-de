@@ -6,10 +6,10 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
 ms.openlocfilehash: 048d6fe455f7c3e77922ef8b937a9cb1d6cbb21c
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81266898"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>Parallelität und asynchrone Vorgänge mit C++/WinRT
@@ -109,7 +109,7 @@ int main()
 }
 ```
 
-Eine Coroutine ist eine Funktion, die angehalten und fortgesetzt werden kann. Wenn die `co_await`-Anweisung in der obigen **ProcessFeedAsync**-Coroutine erreicht wird, initiiert die Coroutine asynchron den **RetrieveFeedAsync**-Aufruf. Anschließend hält sie sich sofort selbst an und gibt die Steuerung an den Aufrufer zurück (im obigen Beispiel **main**). **main** kann dann weiter ausgeführt werden, während der Feed abgerufen und ausgegeben wird. Danach (wenn der **RetrieveFeedAsync**-Aufruf abgeschlossen ist) wird die **ProcessFeedAsync**-Coroutine bei der nächsten Anweisung fortgesetzt.
+Eine Coroutine ist eine Funktion, die angehalten und fortgesetzt werden kann. Wenn die **-Anweisung in der obigen** ProcessFeedAsync`co_await`-Coroutine erreicht wird, initiiert die Coroutine asynchron den **RetrieveFeedAsync**-Aufruf. Anschließend hält sie sich sofort selbst an und gibt die Steuerung an den Aufrufer zurück (im obigen Beispiel **main**). **main** kann dann weiter ausgeführt werden, während der Feed abgerufen und ausgegeben wird. Danach (wenn der **RetrieveFeedAsync**-Aufruf abgeschlossen ist) wird die **ProcessFeedAsync**-Coroutine bei der nächsten Anweisung fortgesetzt.
 
 Sie können eine Coroutine in anderen Coroutinen zusammenfassen. Alternativ können Sie zum Blockieren **get** aufrufen und auf ihren Abschluss warten (und, sofern vorhanden, das Ergebnis abrufen). Sie können sie auch an eine andere Programmiersprache übergeben, die die Windows-Runtime unterstützt.
 
@@ -237,7 +237,7 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-In einer Coroutine verläuft die Ausführung synchron bis zum ersten Anhaltepunkt – an diesem wird die Steuerung an den Aufrufer zurückgegeben, und der aufrufende Frame fällt aus dem Gültigkeitsbereich heraus. Bis die Coroutine fortgesetzt wird, kann alles Mögliche mit dem Quellwert passiert sein, auf den ein Verweisparameter verweist. Aus Sicht der Coroutine hat ein Verweisparameter eine unkontrollierte Lebensdauer. Im obigen Beispiel können wir also bis zur `co_await`-Anweisung problemlos auf *value* zugreifen, aber nicht danach. Falls dieser *value* vom Aufrufer zerstört wird, verursacht der anschließende Versuch, in der Coroutine darauf zuzugreifen, eine Beschädigung des Speichers. Wir können *value* nicht sicher an **DoOtherWorkAsync** übergeben, wenn das Risiko besteht, dass diese Funktion dadurch angehalten wird und nach dem Fortsetzen versucht, *value* zu verwenden.
+In einer Coroutine verläuft die Ausführung synchron bis zum ersten Anhaltepunkt – an diesem wird die Steuerung an den Aufrufer zurückgegeben, und der aufrufende Frame fällt aus dem Gültigkeitsbereich heraus. Bis die Coroutine fortgesetzt wird, kann alles Mögliche mit dem Quellwert passiert sein, auf den ein Verweisparameter verweist. Aus Sicht der Coroutine hat ein Verweisparameter eine unkontrollierte Lebensdauer. Im obigen Beispiel können wir also bis zur *-Anweisung problemlos auf* value`co_await` zugreifen, aber nicht danach. Falls dieser *value* vom Aufrufer zerstört wird, verursacht der anschließende Versuch, in der Coroutine darauf zuzugreifen, eine Beschädigung des Speichers. Wir können *value* nicht sicher an **DoOtherWorkAsync** übergeben, wenn das Risiko besteht, dass diese Funktion dadurch angehalten wird und nach dem Fortsetzen versucht, *value* zu verwenden.
 
 Damit die Parameter nach dem Anhalten und Fortsetzen ohne Probleme verwendet werden können, sollten Ihre Coroutinen standardmäßig als Wert zu übergebende Parameter verwenden. Dadurch stellen Sie sicher, dass die Erfassung nach Wert erfolgt und keine Probleme mit der Lebensdauer auftreten. Die Fälle, in denen Sie sicher sind, dass keine Probleme auftreten, und Sie daher von dieser Vorgehensweise abweichen können, sind eher selten.
 
@@ -298,7 +298,7 @@ Siehe [Starke und schwache Verweise in C++/WinRT](/windows/uwp/cpp-and-winrt-api
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed-Klasse](/uwp/api/windows.web.syndication.syndicationfeed)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Erweiterte Parallelität und Asynchronie](concurrency-2.md)
-* [Verarbeiten von Ereignissen über Delegaten in C++/WinRT](handle-events.md)
+* [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](handle-events.md)
 * [C++-Standarddatentypen und C++/WinRT](std-cpp-data-types.md)
