@@ -354,7 +354,7 @@
               href: shell/tiles-and-notifications/toast-schema.md
             - name: Senden lokaler Popups
               items:
-                - name: UWP-Apps
+                - name: Windows-Apps
                   href: shell/tiles-and-notifications/send-local-toast.md
                 - name: Desktop-Apps
                   items:
