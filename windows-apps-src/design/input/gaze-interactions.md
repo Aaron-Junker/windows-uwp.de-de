@@ -1,9 +1,9 @@
 ---
-title: Interaktionen über Anvisieren
-Description: Erfahren Sie, wie Sie Ihre UWP-apps entwerfen und optimieren, um den Benutzern, die sich auf die Überblicks Eingaben von Eye-und Head-Tracker stützen, eine optimale Leistung zu bieten
+title: Blick Interaktionen
+Description: Erfahren Sie, wie Sie Ihre Windows-apps entwerfen und optimieren, um den Benutzern, die sich auf die Überblicks Eingaben von Eye-und Head-Tracker stützen, eine optimale Leistung zu bieten
 label: Gaze interactions
 template: detail.hbs
-keywords: Anvisieren, Eye Tracking, Head Tracking, Anvisierungspunkt, Eingabe, Benutzerinteraktion, Bedienungshilfen, Benutzerfreundlichkeit
+keywords: Blick, Augen Verfolgung, Kopf Nachverfolgung, Blickpunkt, Eingabe, Benutzerinteraktion, Barrierefreiheit, Nutzbarkeit
 ms.date: 05/01/2018
 ms.topic: article
 pm-contact: Jake Cohen
@@ -11,46 +11,46 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6176bdce1a725c1024af9f4ecf0c37cabb0f5376
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 4cfd84d54ecd1425b3b7e66c54c96fbd78c2dd46
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684235"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970125"
 ---
-# <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>Interaktionen via Blick und Eye Tracking in UWP-Apps
+# <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Blick Interaktionen und Eye Tracking in Windows-apps
 
-![Eye Tracking Hero](images/gaze/eyecontrolbanner1.png)
+![Helden der Augen Verfolgung](images/gaze/eyecontrolbanner1.png)
 
-Bieten Sie Unterstützung für die Verfolgung des Blicks, der Aufmerksamkeit und der Anwesenheit eines Benutzers basierend auf der Position und den Bewegungen seiner Augen.
+Unterstützung für die Nachverfolgung der Ansicht, Aufmerksamkeit und Präsenz eines Benutzers basierend auf der Position und Bewegung ihrer Augen.
 
 > [!NOTE]
-> Informationen zur Eingabe via Anvisieren in [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) finden Sie unter [Anvisieren](https://docs.microsoft.com/windows/mixed-reality/gaze).
+> Informationen zu Blick Eingaben in [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/)finden Sie unter [Blick](https://docs.microsoft.com/windows/mixed-reality/gaze).
 
-**Wichtige APIs**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**Wichtige APIs**: [Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [gazedevicepreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [gazepointpreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [gazeinputsourcepreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>Übersicht
 
-Die Eingabe über Anvisieren ist eine tolle Möglichkeit, mit Windows- und UWP-Anwendungen zu interagieren. Sie eignet sich insbesondere als Hilfstechnologe für Benutzer mit neuromuskulären Erkrankungen (z. B. ALS) und anderen Einschränkungen, die mit einer beeinträchtigten Muskel- oder Nervenfunktion einhergehen.
+Die Anzeige von Blick auf die Leistung ist eine leistungsstarke Möglichkeit zur Interaktion und Verwendung von Windows-Anwendungen, die besonders nützlich als Hilfstechnologie für Benutzer mit neuronalen Krankheiten (z. b. als) und anderen Behinderungen mit beeinträchtigtem Muskel-oder Nervenfunktionen sind.
 
-Darüber hinaus bietet die Eingabe über Anvisieren gleichermaßen attraktive Möglichkeiten für Spiele (z. B. Zielbestimmung und Nachverfolgung) und herkömmliche Produktivitätsanwendungen, Kiosks und andere interaktiven Szenarien, bei denen herkömmliche Eingabegeräte (z. B. Tastatur, Maus, Touch) nicht verfügbar sind oder es hilfreich wäre, dass der Benutzer die Hände frei hat für andere Aufgaben (z. B. zum Halten von Einkaufstüten).
+Außerdem bietet die Überblicks Eingabe gleichermaßen überzeugende Möglichkeiten für Spiele (einschließlich Ziel Abruf und-Nachverfolgung) und herkömmlichen Produktivitätsanwendungen, Kiosken und andere interaktive Szenarios, in denen herkömmliche Eingabegeräte (Tastatur, Maus, Fingereingabe) nicht verfügbar sind, oder wenn es hilfreich bzw. hilfreich ist, die Benutzer für andere Aufgaben (z. b. die Aufbewahrung von Einkaufswagen) freizugeben
 
 > [!NOTE]
-> Die Unterstützung für Eye Tracking-Hardware wurde mit dem **Windows 10 Fall Creators Update** zusammen mit der [Augensteuerung](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen verwenden können, um den Bildschirmzeiger zu steuern, Text über die Bildschirmtastatur einzugeben und mit Personen über Text-zu-Sprache zu kommunizieren. Ein Satz von UWP-APIs ([Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) zum Erstellen von Anwendungen, die mit der Eye Tracking-Hardware interagieren können, ist mit dem **Windows 10-Update vom April 2018 (Version 1803, Build 17134)** und neueren Versionen verfügbar.
+> Die Unterstützung für die Eye Tracking-Hardware wurde in **Windows 10 Fall Creators Update** zusammen mit der [Eye Control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen zum Steuern des Bildschirm Zeigers, zum Eingeben mit der Bildschirmtastatur und zum kommunizieren mit Personen mithilfe von Text-zu-Sprache verwenden können. Eine Reihe von Windows-Runtime-APIs ([Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) zum Erstellen von Anwendungen, die mit der Überwachungs Hardware interagieren können, finden Sie unter **Windows 10 April 2018 Update (Version 1803, Build 17134)** und neuer.
 
-## <a name="privacy"></a>„Datenschutz”
+## <a name="privacy"></a>Datenschutz
 
-Aufgrund der potenziell vertraulichen persönlichen Daten, die von Eye Tracking-Geräten gesammelt werden, müssen Sie die `gazeInput`-Funktion im App-Manifest Ihrer UWP-Anwendung deklarieren (siehe den folgenden Abschnitt **Setup**). Sofern deklariert, fordert Windows die Benutzer (bei erstmaliger Ausführung der App) automatisch über ein Dialogfeld auf, ihre Zustimmung zu geben, dass die App mit dem Eye Tracking-Gerät kommuniziert und auf diese Daten zugreift.
+Aufgrund der potenziell sensiblen personenbezogenen Daten, die von Augen Verfolgungs Geräten gesammelt wurden, müssen Sie die `gazeInput` Funktion im App-Manifest Ihrer Anwendung deklarieren (siehe folgenden Abschnitt zum **Setup** ). Wenn Sie deklariert wird, werden Benutzer von Windows automatisch mit einem Zustimmungs Dialogfeld (bei der ersten Durchführung der APP) aufgefordert, bei dem der Benutzer die Berechtigung für die APP erteilen muss, mit dem Auge Verfolgungs Gerät zu kommunizieren und auf diese Daten zuzugreifen.
 
-Wenn Ihre App darüber hinaus Eye Tracking-Daten erfasst, speichert oder überträgt, müssen Sie dies in den Datenschutzbestimmungen für die App darlegen und alle sonstigen Anforderungen an **personenbezogene Informationen** in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) und den [Microsoft Store-Richtlinien ](https://docs.microsoft.com/legal/windows/agreements/store-policies) erfüllen.
+Außerdem müssen Sie, wenn Ihre APP Augen Verfolgungs Daten sammelt, speichert oder überträgt, dies in den Datenschutzbestimmungen Ihrer APP beschreiben und alle anderen Anforderungen für **persönliche Informationen** im [App-Entwickler Vertrag](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) und die Microsoft Store- [Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)einhalten.
 
-## <a name="setup"></a>Setup
+## <a name="setup"></a>Einrichten
 
-Um die APIs für die Eingabe über Anvisieren in Ihrer UWP-App zu verwenden, müssen Sie Folgendes tun: 
+Wenn Sie die Blick Eingabe-APIs in Ihrer Windows-App verwenden möchten, müssen Sie folgende Schritte ausführen: 
 
-- Geben Sie die `gazeInput`-Funktion im Appmanifest an.
+- Geben Sie `gazeInput` die Funktion im App-Manifest an.
 
-    Öffnen Sie die Datei **Package.appxmanifest** mit dem Manifest-Designer von Visual Studio, oder fügen Sie die Funktion manuell hinzu, indem Sie **Code anzeigen** auswählen und die folgende `DeviceCapability` in den Knoten `Capabilities` einfügen:
+    Öffnen Sie die Datei " **Package. appxmanifest** " mit dem Visual Studio-Manifest-Designer, oder fügen Sie die Funktion manuell hinzu, indem `DeviceCapability` Sie **Code anzeigen**auswählen und Folgendes in den `Capabilities` Knoten einfügen:
 
     ```xaml
     <Capabilities>
@@ -58,23 +58,23 @@ Um die APIs für die Eingabe über Anvisieren in Ihrer UWP-App zu verwenden, mü
     </Capabilities>
     ```
 
-- Ein Windows-kompatibles Eye Tracking-Gerät (entweder integriertes Gerät oder Peripheriegerät) muss an Ihr System angeschlossen und eingeschaltet sein.
+- Ein Windows-kompatibles Auge Verfolgungs Gerät, das mit dem System verbunden ist (entweder integriert oder Peripherie) und aktiviert ist.
 
-    Unter [Erste Schritte mit der Augensteuerung in Windows 10](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control#supported-devices ) finden Sie eine Liste der unterstützten Eye Tracking-Geräte.
+    Eine Liste der unterstützten Überwachungsgeräte finden [Sie unter Get Started with Eye Control in Windows 10](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control#supported-devices ) .
 
-## <a name="basic-eye-tracking"></a>Grundlegendes Eye Tracking
+## <a name="basic-eye-tracking"></a>Grundlegende Augen Verfolgung
 
-In diesem Beispiel wird veranschaulicht, wie Sie den Blick der Benutzer in einer UWP-Anwendung verfolgen und eine Timing-Funktion mit grundlegenden Treffertests verwenden, um anzugeben, wie gut sie ihren Blick auf ein bestimmtes Element fokussieren können.
+In diesem Beispiel veranschaulichen wir, wie Sie den Benutzer Blick in einer Windows-App nachverfolgen und eine Zeit Steuerungsfunktion mit grundlegenden Treffer Tests verwenden, um anzugeben, wie gut Sie den Fokus auf ein bestimmtes Element bringen können.
 
-Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich im Viewport der Anwendung befindet, während eine [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) aus dem [Windows-Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) nach dem Zufallsprinzip im Zeichenbereich platziert wird. Wenn der Anvisierungspunkt auf der Fortschrittsleiste erkannt wird, wird ein Timer gestartet und die Fortschrittsleiste wird im Zeichenbereich nach dem Zufallsprinzip verschoben, wenn sie 100 % erreicht.
+Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerhalb des Viewports der Anwendung befindet, während eine [radialprogressbar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) aus dem [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) nach dem Zufallsprinzip in den Zeichenbereich eingefügt wird. Wenn der Fokus Fokus auf der Statusanzeige festgestellt wird, wird ein Timer gestartet, und die Statusleiste wird nach dem Zufallsprinzip in den Zeichenbereich verschoben, wenn die Statusanzeige 100% erreicht.
 
-![Blickverfolgung mit Timer-Beispiel](images/gaze/gaze-input-timed2.gif)
+![Beispiel Überwachung mit Timer](images/gaze/gaze-input-timed2.gif)
 
 *Beispiel Überwachung mit Timer*
 
 **Herunterladen dieses Beispiels aus dem [Beispiel Eingabe Beispiel (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
-1. Zunächst richten wir die Benutzeroberfläche ein (MainPage.xaml).
+1. Zuerst richten wir die Benutzeroberfläche ("MainPage. XAML") ein.
 
     ```xaml
     <Page
@@ -152,9 +152,9 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
     </Page>
     ```
 
-2. Als Nächstes initialisieren wir unsere App.
+2. Als nächstes initialisieren wir unsere app.
 
-    In diesem Codeausschnitt deklarieren wir unsere globalen Objekte und überschreiben das Seitenereignis [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto), um unseren [Gaze Device Watcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) und das Seitenereignis [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) zu starten, um unseren [Gaze Device Watcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) zu beenden.
+    In diesem Code Ausschnitt deklarieren wir unsere globalen Objekte und setzen das [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) -Seiten Ereignis außer Kraft, um unseren Blick auf die [Geräte](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) Überwachung und das [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) -Seiten Ereignis zu überschreiben, um den Überwachungs [Geräte-Watcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)anzuhalten.
 
     ```csharp
     using System;
@@ -231,17 +231,17 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
     }
     ```
 
-3. Als Nächstes fügen wir unsere Gaze Device Watcher-Methoden hinzu. 
+3. Als Nächstes fügen wir unsere "Do Device Watcher"-Methoden hinzu. 
     
-    In `StartGazeDeviceWatcher` rufen wir [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) auf und deklarieren die Ereignislistener des Eye Tracking-Geräts ([DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated) und [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
+    In `StartGazeDeviceWatcher`rufen wir " [devatewatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) " auf und deklarieren die Ereignislistener für das Überwachungs [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated)Gerät ([deviceadded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), Debug-und [deviceremoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
 
-    In `DeviceAdded` überprüfen wir den Status des Eye Tracking-Geräts. Bei einem geeigneten Gerät erhöhen wir die Gerätezahl und aktivieren die Blickverfolgung. Einzelheiten erfahren Sie im nächsten Schritt.
+    In `DeviceAdded`wird der Status des Geräts für die Augen Verfolgung überprüft. Wenn ein funktionierendes Gerät aktiviert ist, wird die Anzahl der Geräte erhöht und die Nachverfolgung des Blicks aktiviert. Weitere Informationen finden Sie im nächsten Schritt.
 
-    In `DeviceUpdated` aktivieren wir außerdem die Blickverfolgung, da dieses Ereignis ausgelöst wird, wenn ein Gerät neu kalibriert wird.
+    In `DeviceUpdated`aktivieren wir auch die Nachverfolgung von Augenblicken, wenn dieses Ereignis ausgelöst wird, wenn ein Gerät neu gestartet wird.
 
-    In `DeviceRemoved` verringern wir die Gerätezahl und entfernen die Gerätereignishandler.
+    In `DeviceRemoved`dekrelieren wir den Geräte Zählers und entfernen die Geräte Ereignishandler.
 
-    In `StopGazeDeviceWatcher` beenden wir den Gaze Device Watcher. 
+    In `StopGazeDeviceWatcher`wird der Blick auf Device Watcher heruntergefahren. 
 
 ```csharp
     /// <summary>
@@ -328,12 +328,12 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
     }
 ```
 
-4. Hier wird überprüft, ob das Gerät in `IsSupportedDevice` funktionsbereit ist. Ist dies der Fall, versuchen Sie, die Blickverfolgung in `TryEnableGazeTrackingAsync` zu aktivieren.
+4. Hier überprüfen wir, ob das Gerät in `IsSupportedDevice` geeignet ist, und wenn dies der Fall ist, versuchen Sie `TryEnableGazeTrackingAsync`, die Blick Verfolgung in zu aktivieren.
 
-    In `TryEnableGazeTrackingAsync` deklarieren wir die Blickereignishandler und rufen [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) auf, um einen Verweis zur Eingabequelle zu erhalten (Aufruf muss über den UI-Thread erfolgen, siehe [Aufrechterhalten der Reaktionsfähigkeit des UI-Threads](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)).
+    In `TryEnableGazeTrackingAsync`deklarieren wir die Ereignishandler für den Blick und rufen " [gazeinputsourcepreview. getforcurrentview ()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) " auf, um einen Verweis auf die Eingabe Quelle zu erhalten (Dies muss im UI-Thread aufgerufen werden. Weitere Informationen finden Sie unter [Keep the UI Thread Reaktions](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)fähig).
 
     > [!NOTE]
-    > Sie sollten [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) nur aufrufen, wenn ein kompatibles Eye Tracking-Gerät angeschlossen ist und für Ihre Anwendung erforderlich ist. Andernfalls ist das Zustimmungsdialogfeld nicht erforderlich.
+    > Sie sollten " [gazeinputsourcepreview. getforcurrentview ()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) " nur aufrufen, wenn ein kompatibles Überwachungsgerät verbunden ist und von Ihrer Anwendung benötigt wird. Andernfalls ist das Zustimmungs Dialogfeld unnötig.
 
 ```csharp
     /// <summary>
@@ -401,11 +401,11 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
     }
 ```
 
-5. Als Nächstes richten wir unsere Blickereignishandler ein.
+5. Als nächstes richten wir unsere Ereignishandler für den Blick ein.
 
-    Wir blenden die Blickverfolgungsellipse in `GazeEntered` und `GazeExited` ein bzw. aus.
+    Wir zeigen die Ellipse der Gaze-Nachverfolgung `GazeEntered` in `GazeExited`bzw. aus.
 
-    In `GazeMoved` verschieben wir unsere Blickverfolgungsellipse basierend auf der [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition), die vom [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) der [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) bereitgestellt wird. Wir verwalten auch den Blickfokus-Timer in der [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar), der die Neupositionierung der Fortschrittsleiste auslöst. Einzelheiten erfahren Sie im nächsten Schritt.
+    In `GazeMoved`verschieben wir unsere Ellipse für die Sichtüberwachung basierend auf der vom [CurrentPoint-Wert von "CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) " des " [gazeenteredprevieweventargs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs)" bereitgestellten " [pipeposition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) " Außerdem wird der Timer-Fokus Zeit Geber auf der [radialprogressbar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar)verwaltet, die die Neupositionierung der Statusanzeige auslöst. Weitere Informationen finden Sie im nächsten Schritt.
 
     ```csharp
     /// <summary>
@@ -497,11 +497,11 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
         }
     }
     ```
-6. Hier folgen schließlich die Methoden zum Verwalten des Blickfokus-Timers für diese App.
+6. Im folgenden finden Sie die Methoden, die zum Verwalten des Fokus Zeit Gebers für den Blick auf diese APP verwendet werden.
 
-    `DoesElementContainPoint` überprüft, ob sich der Mauszeiger über der Statusleiste befindet. Wenn ja, wird der Timer gestartet, und die Statusanzeige wird bei jedem Zeitgebertakt erhöht.
+    `DoesElementContainPoint`überprüft, ob sich der Mauszeiger über der Statusleiste befindet. Wenn dies der Fall ist, wird der Timer des zeitakts gestartet, und die Statusanzeige wird bei jedem Tick-Timer erhöht.
 
-    `SetGazeTargetLocation` legt die Anfangsposition der Statusanzeige fest und verschiebt die Statusanzeige, wenn die Statusanzeige abgeschlossen ist (je nach Fokus Zeit Geber), an einen zufälligen Speicherort.
+    `SetGazeTargetLocation`legt die Anfangsposition der Statusanzeige fest, und wenn die Statusleiste abgeschlossen ist (abhängig vom Timer für den Blickpunkt), wird die Statusanzeige an einen zufälligen Speicherort verschoben.
 
     ```csharp
     /// <summary>
@@ -596,7 +596,7 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
     }
     ```
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 
 ### <a name="resources"></a>Ressourcen
 
@@ -604,4 +604,4 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo der Anvisierungspunkt sich
 
 ### <a name="topic-samples"></a>Themenbeispiele
 
-- [Blick Beispiel (Basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
+- [Blick Beispiel (Standard) (c#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

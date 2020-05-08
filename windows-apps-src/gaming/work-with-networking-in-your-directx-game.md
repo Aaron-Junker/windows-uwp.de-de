@@ -1,19 +1,19 @@
 ---
-title: Networking für Spiele
+title: Netzwerk für Spiele
 description: Erfahren Sie, wie Sie Netzwerkfeatures entwickeln und in ein DirectX-Spiel integrieren.
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Netzwerke, directx
+keywords: Windows 10, UWP, Games, Networking, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 79a1640964902f1effc08196372128bd38bebe2d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2e693016fa6b87f231c1cbbfac4c2e55d44623c9
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258408"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606369"
 ---
-# <a name="networking-for-games"></a>Networking für Spiele
+# <a name="networking-for-games"></a>Netzwerk für Spiele
 
 
 
@@ -77,7 +77,7 @@ Die Netzwerk-APIs unterstützen verschiedene Methoden zum Abrufen der detaillier
 -   Eine Methode zum Abrufen des **HRESULT**-Werts des Fehlers, der die Ausnahme verursacht hat. Die mögliche Liste potenzieller **HRESULT**-Werte ist lang und nicht spezifiziert. Der **HRESULT**-Wert kann abgerufen werden, wenn eine der Netzwerk-APIs verwendet wird.
 -   Eine Hilfsmethode, die den **HRESULT**-Wert in einen Enumerationswert konvertiert. Die Liste der möglichen Enumerationswerte ist spezifiziert und relativ kurz. Eine Hilfsmethode für die Socketklassen ist in [**Windows::Networking::Sockets**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets) verfügbar.
 
-### <a name="exceptions-in-windowsnetworkingsockets"></a>Ausnahmen in "Windows.Networking.Sockets"
+### <a name="exceptions-in-windowsnetworkingsockets"></a>Ausnahmen in „Windows.Networking.Sockets“
 
 Der Konstruktor für die [**HostName**](https://docs.microsoft.com/uwp/api/Windows.Networking.HostName)-Klasse in Verbindung mit Sockets kann eine Ausnahme auslösen, wenn die übergebene Zeichenfolge kein gültiger Hostname ist (enthält Zeichen, die in einem Hostnamen nicht zulässig sind). Wenn eine App vom Benutzer eine Eingabe für das **HostName**-Element einer Peerverbindung zum Spielen erhält, sollte sich der Konstruktor innerhalb eines try/catch-Blocks befinden. Wenn eine Ausnahme ausgelöst wird, kann die App den Benutzer benachrichtigen und einen neuen Hostnamen anfordern.
 
@@ -121,7 +121,7 @@ Der [**Windows.Networking.Sockets**](https://docs.microsoft.com/uwp/api/Windows.
 
 Ein Fehler, der für einen [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)-, [**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket)- oder [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener)-Vorgang auftritt, führt zur Auslösung einer Ausnahme. Die Ursache der Ausnahme ist ein Fehlerwert, der als **HRESULT**-Wert dargestellt wird. Mit der [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus)-Methode wird ein Netzwerkfehler aus einem Socketvorgang in einen [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus)-Enumerationswert konvertiert. Die meisten **SocketErrorStatus**-Enumerationswerte entsprechen einem vom systemeigenen Windows Sockets-Vorgang zurückgegebenen Fehler. Eine App kann nach bestimmten **SocketErrorStatus**-Enumerationswerten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
-Bei Parameterprüfungsfehlern kann eine App den **HRESULT**-Wert aus der Ausnahme auch verwenden, um ausführlichere Informationen zum zugehörigen Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E\_INVALIDARG** zurückgegeben.
+Bei Parameterprüfungsfehlern kann eine App den **HRESULT**-Wert aus der Ausnahme auch verwenden, um ausführlichere Informationen zum zugehörigen Fehler zu erhalten. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Bei den meisten Parameter Validierungs Fehlern lautet der zurückgegebene **HRESULT** **E\_invalidArg**.
 
 Hinzufügen von Code zum Behandeln von Ausnahmen beim Herstellen einer Streamsocketverbindung
 
@@ -222,7 +222,7 @@ using namespace Windows::Networking::Sockets;
 
 ### <a name="exceptions-in-windowswebhttp"></a>Ausnahmen in „Windows.Web.Http“
 
-Der Konstruktor für die [**Windows::Foundation::Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)-Klasse in Verbindung mit [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) kann eine Ausnahme auslösen, wenn die übergebene Zeichenfolge kein gültiger URI ist (enthält Zeichen, die in einem URI nicht zulässig sind). In C++ gibt es keine Methode zum Analysieren einer Zeichenfolge für einen URI. Wenn eine App vom Benutzer eine Eingabe für das **Windows::Foundation::Uri**-Element erhält, sollte sich der Konstruktor innerhalb eines try/catch-Blocks befinden. Wenn eine Ausnahme ausgelöst wird, kann die App den Benutzer benachrichtigen und einen neuen URI anfordern.
+Der Konstruktor für die [**Windows::Foundation::Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri)-Klasse in Verbindung mit [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) kann eine Ausnahme auslösen, wenn die übergebene Zeichenfolge kein gültiger URI ist (enthält Zeichen, die in einem URI nicht zulässig sind). In C++ gibt es keine Methode zum Analysieren einer Zeichenfolge für einen URI. Wenn eine APP Eingaben vom Benutzer für den **Windows:: Foundation:: URI**erhält, sollte sich der Konstruktor in einem try/catch-Block befinden. Wenn eine Ausnahme ausgelöst wird, kann die App den Benutzer benachrichtigen und einen neuen URI anfordern.
 
 Von der App sollte auch überprüft werden, ob das Schema im URI HTTP oder HTTPS lautet, da dies die einzigen von [**Windows::Web::Http::HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) unterstützten Schemas sind.
 
@@ -269,11 +269,11 @@ Hinzufügen von Code zum Überprüfen einer Zeichenfolge für einen URI vom Benu
     // ... Continue with code to execute with a valid URI.
 ```
 
-Der [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/windows.web.http)-Namespace bietet keine Funktion, die die Behandlung von Ausnahmen erleichtert. Eine App, die [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) und andere Klassen in diesem Namespace verwendet, muss daher den **HRESULT**-Wert verwenden.
+Der [**Windows::Web::Http**](https://docs.microsoft.com/uwp/api/windows.web.http)-Namespace bietet keine Funktion, die die Behandlung von Ausnahmen erleichtert. Eine APP, die [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) und andere Klassen in diesem Namespace verwendet, muss also den **HRESULT** -Wert verwenden.
 
 In Apps mit C++ stellt das [**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class)-Objekt einen Fehler während der App-Ausführung dar, wenn eine Ausnahme auftritt. Die [**Platform::Exception::HResult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult)-Eigenschaft gibt den **HRESULT**-Wert zurück, der der jeweiligen Ausnahme zugewiesen ist. Die [**Platform::Exception::Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message)-Eigenschaft gibt die vom System bereitgestellte Zeichenfolge zurück, die dem **HRESULT**-Wert zugeordnet ist. Mögliche **HRESULT**-Werte sind in der Headerdatei *Winerror.h* aufgeführt. Eine App kann nach bestimmten **HRESULT**-Werten filtern, um das App-Verhalten je nach Ausnahmeursache zu ändern.
 
-Für die meisten Parameterüberprüfungsfehler wird der **HRESULT**-Wert **E\_INVALIDARG** zurückgegeben. Bei manchen unzulässigen Methodenaufrufen wird der **HRESULT**-Wert **E\_ILLEGAL\_METHOD\_CALL** zurückgegeben.
+Bei den meisten Parameter Validierungs Fehlern lautet der zurückgegebene **HRESULT** **E\_invalidArg**. Bei manchen unzulässigen Methodenaufrufen wird der **HRESULT**-Wert **E\_ILLEGAL\_METHOD\_CALL** zurückgegeben.
 
 Hinzufügen von Code zum Behandeln von Ausnahmen beim Verwenden von [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) zum Herstellen einer Verbindung mit einem HTTP-Server
 
@@ -365,18 +365,18 @@ using namespace Windows::Web::Http;
 
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 
 **Weitere Ressourcen**
 
-* [Herstellen einer Verbindung mit einem Datagramm-Socket](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
-* [Herstellen einer Verbindung mit einer Netzwerkressource mit einem Stream-Socket](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
+* [Herstellen einer Verbindung mit einem Datagrammsocket](https://docs.microsoft.com/previous-versions/windows/apps/jj635238(v=win.10))
+* [Herstellen einer Verbindung mit einer Netzwerkressource mit einem Streamsocket](https://docs.microsoft.com/previous-versions/windows/apps/jj150599(v=win.10))
 * [Herstellen einer Verbindung mit Netzwerkdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
-* [Herstellen einer Verbindung mit Webdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
+* [Herstellen von Verbindungen mit Webdiensten](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 * [Grundlagen zum Netzwerk](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
-* [Konfigurieren der Netzwerk Isolations Funktionen](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [Aktivieren von Loopback und Debuggen der Netzwerk Isolation](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
+* [So wird's gemacht: Konfigurieren von Netzwerkisolationsfunktionen](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+* [Aktivieren von Loopback und Debuggen der Netzwerkisolation](https://docs.microsoft.com/previous-versions/windows/apps/hh780593(v=win.10))
 
 **Referenz**
 
@@ -389,6 +389,6 @@ using namespace Windows::Web::Http;
 **Beispiele**
 
 * [DatagramSocket-Beispiel](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
-* [HttpClient-Beispiel]( https://go.microsoft.com/fwlink/p/?linkid=242550)
-* [Near-Beispiel](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
+* [HttpClient Sample (HttpClient-Beispiel)]( https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
+* [Näherungsbeispiel](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
 * [Beispiel für StreamSocket](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)

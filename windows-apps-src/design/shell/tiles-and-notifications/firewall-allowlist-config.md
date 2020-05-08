@@ -8,19 +8,19 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, Windows-Benachrichtigungsdienst, Benachrichtigung, Windows, Firewall, Problembehandlung, IP, Datenverkehr, Unternehmen, Netzwerk, IPv4, VIP, FQDN, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e66249c5b44cbfecd81b9238eda2b1e5412b9a
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 7f87dc0cc174a22f474c91a58f3ffeb738822fa8
+ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080664"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82868909"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Unternehmens Firewall-und Proxy Konfigurationen zur Unterstützung von WNS-Datenverkehr
 
 ## <a name="background"></a>Hintergrund
 Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Netzwerk Datenverkehr und Ports. Leider können dadurch auch wichtige Dinge wie die Kommunikation mit dem Windows-Benachrichtigungsdienst blockiert werden. Dies bedeutet, dass alle über WNS gesendeten Benachrichtigungen in bestimmten Netzwerkkonfigurationen abgelegt werden. Um dies zu vermeiden, können Netzwerkadministratoren die Liste der genehmigten WNS-FQDNs oder VIPs zur Ausnahmeliste hinzufügen, damit der WNS-Datenverkehr durch die Firewall geleitet wird. Im folgenden finden Sie weitere Details dazu, wie und was hinzugefügt werden muss, sowie Unterstützung für verschiedene Proxy Typen.
 
-## <a name="proxy-support"></a>Proxy Unterstützung
+## <a name="proxy-support"></a>Proxyunterstützung
 
 > [!Note]
 > Windows-Clients unterstützen **nicht** alle Proxys, die Verbindung mit WNS muss eine direkte Verbindung sein.
@@ -60,6 +60,10 @@ Unabhängig von der Methode, die Sie unten auswählen, müssen Sie Netzwerk Date
         <IpRange Subnet=""/>
         <!-- See the file in Download Center for the complete list of IP ranges -->
     </ClientIPsIPv4>
+    <IdentityServiceDNS>
+        <DNS FQDN="login.microsoftonline.com"/>
+        <DNS FQDN="login.live.com"/>
+    </IdentityServiceDNS>
 </WNSPublicIpAddresses>
 
 ```
@@ -80,12 +84,12 @@ Im folgenden finden Sie Erläuterungen zu den im obigen XML-Code Ausschnitt verw
 Wenn Sie den Legacy-Benachrichtigungsdienst (mpns) verwenden, sind die IP-Adressbereiche, die Sie der Zulassungsliste hinzufügen müssen, im Download Center verfügbar: [öffentliche IP-Adressbereiche des Microsoft-pushbenachrichtigungsdiensts (mpns)](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Schnellstart: Senden einer Pushbenachrichtigung](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
-* [Anfordern, erstellen und Speichern eines Benachrichtigungs Kanals](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [Abfangen von Benachrichtigungen für die Ausführung von Anwendungen](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [Authentifizieren mit dem Windows-pushbenachrichtigungsdienst (WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [PushbenachrichtigungsService Request und Antwortheader](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [So wird's gemacht: Anfordern, Erstellen und Speichern eines Benachrichtigungskanals](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
+* [So wird's gemacht: Abfangen von Benachrichtigungen für ausgeführte Anwendungen](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [So wird's gemacht: Authentifizieren mit dem Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [Anforderungs- und Antwortheader des Pushbenachrichtigungsdiensts](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
 * [Richtlinien und Prüfliste für Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

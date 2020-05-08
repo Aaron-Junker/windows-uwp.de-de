@@ -1,5 +1,5 @@
 ---
-Description: Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten wie Touch, Mouse, Pen/Stift und Touchpad in ihren universelle Windows-Plattform Anwendungen (UWP).
+Description: Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten wie Touch, Mouse, Pen/Stift und Touchpad in Ihren Windows-App-Anwendungen.
 title: Behandeln von Zeigereingaben
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,42 +8,42 @@ keywords: Stift, Maus, Touchpad, Toucheingabe, Zeiger, Eingabe, Benutzerinterakt
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 97c4941a6ec694b3bb23864ede3119d6f76113d2
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: db3b87bd187c64b04615fb6722e4e1f2b666b7dc
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725993"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970065"
 ---
 # <a name="handle-pointer-input"></a>Behandeln von Zeigereingaben
 
-Empfangen, verarbeiten und verwalten Sie Eingabedaten von Zeigegeräten (z. B. Toucheingaben, Maus, Zeichen-/Eingabestift und Touchpad) in Anwendungen für die Universelle Windows-Plattform (UWP).
+Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten (z. b. Touch, Maus, Stift/Stift und Touchpad) in Ihren Windows-App-Anwendungen.
 
 > [!Important]
-> Erstellen Sie benutzerdefinierte Interaktionen nur dann, wenn ein eindeutiger, klar umrissener Bedarf besteht und die von den Plattformsteuerelementen unterstützten Interaktionen Ihr Szenario nicht unterstützen.  
-> Wenn Sie die Interaktionserfahrungen in Ihrer Windows-Anwendung anpassen, erwarten Benutzer, dass sie konsistent, intuitiv und leicht auffindbar sind. Aus diesen Gründen wird empfohlen, Ihre benutzerdefinierten Interaktionen nach denen zu modellieren, die von den [Plattformsteuerelementen](../controls-and-patterns/controls-by-function.md) unterstützt werden. Die Plattformsteuerelemente bieten umfassende Funktionen für UWP-Benutzerinteraktionen (Universelle Windows-Plattform) wie Standardinteraktionen, animierte Physikeffekte, visuelles Feedback und Barrierefreiheit. 
+> Erstellen Sie benutzerdefinierte Interaktionen nur, wenn eine klare, klar definierte Anforderung vorliegt und die von den Platt Form Steuerelementen unterstützten Interaktionen Ihr Szenario nicht unterstützen.  
+> Wenn Sie die Interaktions Umgebungen in Ihrer Windows-Anwendung anpassen, erwarten Benutzer, dass Sie konsistent, intuitiv und auffindbar sind. Aus diesen Gründen wird empfohlen, dass Sie Ihre benutzerdefinierten Interaktionen mit den von den [Platt Form Steuerelementen](../controls-and-patterns/controls-by-function.md)unterstützten Interaktionen modellieren. Die Platt Form Steuerelemente bieten eine vollständige Benutzerinteraktion mit Windows-apps, einschließlich Standard Interaktionen, animierten Physik Effekten, visuellem Feedback und Barrierefreiheit. 
 
 ## <a name="important-apis"></a>Wichtige APIs
 - [Windows.Devices.Input](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
-- [Windows.UI.Xaml.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+- [Windows. UI. XAML. Input](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="pointers"></a>Zeiger
-Bei den meisten Interaktionsfunktionen ist typischerweise der Benutzer involviert, der das Objekt identifizieren muss, mit dem er interagieren möchte, indem er mithilfe von Eingabegeräten wie Toucheingabe, Maus, Zeichen-/Eingabestift und Touchpad darauf zeigt. Da die von diesen Eingabegeräten bereitgestellten HID-Rohdaten (Human Interface Device) viele allgemeine Eigenschaften enthalten, werden die Daten an einen einheitlichen Eingabestapel weitergeleitet und in geräteunabhängigen Zeigerdaten konsolidiert und zur Verfügung gestellt. Ihre UWP-Anwendungen können dann diese Daten ohne Rücksicht auf das verwendete Eingabegerät verwenden.
+Die meisten Interaktionsmöglichkeiten betreffen in der Regel den Benutzer, der das Objekt identifiziert, mit dem Sie interagieren möchten, indem Sie über Eingabegeräte wie Touch, Mouse, Pen/Stift und Touchpad darauf zeigen. Da die von diesen Eingabegeräten bereitgestellten unformatierten Eingabegeräte Daten viele allgemeine Eigenschaften enthalten, werden die Daten herauf gestuft und in einem vereinheitlichten Eingabe Stapel konsolidiert und als geräteunabhängige Zeiger Daten verfügbar gemacht. Ihre Windows-Anwendungen können diese Daten dann nutzen, ohne sich Gedanken über das verwendete Eingabegerät machen zu müssten.
 
 > [!NOTE]
-> Gerätespezifische Informationen werden auch von den HID-Rohdaten weitergeleitet, falls dies für die App erforderlich ist.
+> Gerätespezifische Informationen werden auch aus den unformatierten HID-Daten herauf gestuft, wenn Sie von Ihrer APP benötigt werden.
 
-Jeder Eingabepunkt (oder Kontakt) in dem Eingabestapel wird durch ein [**Pointer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer)-Objekt dargestellt, das über den [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)-Parameter in den verschiedenen Zeigerereignishandlern zur Verfügung gestellt wird. Bei Verwendung mehrerer Stifte oder der Mehrfingereingabe wird jeder Kontakt als separater Eingabezeiger behandelt.
+Jeder Eingabe Punkt (oder Kontakt) im Eingabe Stapel wird durch ein [**Zeiger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer) Objekt dargestellt, das durch den [**pointerroutedebug**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) -Parameter in den verschiedenen Zeiger Ereignis Handlern verfügbar gemacht wird. Im Fall von multistift-oder Multitouch-Eingaben wird jeder Kontakt als eindeutiger Eingabe Zeiger behandelt.
 
 ## <a name="pointer-events"></a>Zeigerereignisse
 
-Zeigerereignisse machen grundlegende Informationen wie den Typ des Eingabegeräts und den Erkennungszustand (im Bereich oder bei Kontakt) sowie erweiterte Informationen wie Position, Druck und Kontaktgeometrie verfügbar. Darüber hinaus sind auch bestimmte gerätespezifische Eigenschaften verfügbar, z. B. welche Maustaste ein Benutzer gedrückt hat oder ob die Radiergummispitze des Zeichenstifts verwendet wird. Wenn die App zwischen Eingabegeräten und ihren Funktionen unterscheiden muss, finden Sie entsprechende Informationen unter [Erkennen von Eingabegeräten](identify-input-devices.md).
+Zeiger Ereignisse machen grundlegende Informationen verfügbar, wie z. b. Eingabe Gerätetyp und Erkennungs Zustand (im Bereich oder in Kontakt) und erweiterte Informationen, wie z. b. Standort, Druck und Kontakt Geometrie. Darüber hinaus sind auch bestimmte gerätespezifische Eigenschaften verfügbar, z. B. welche Maustaste ein Benutzer gedrückt hat oder ob die Radiergummispitze des Zeichenstifts verwendet wird. Wenn die App zwischen Eingabegeräten und ihren Funktionen unterscheiden muss, finden Sie entsprechende Informationen unter [Erkennen von Eingabegeräten](identify-input-devices.md).
 
-UWP-Apps können die folgenden Zeigerereignisse überwachen:
+Windows-Apps können auf die folgenden Zeiger Ereignisse lauschen:
 
 > [!NOTE]
-> Schränken Sie Zeigereingaben auf ein bestimmtes UI-Element ein, indem Sie [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer) für dieses Element in einem Zeigerereignishandler aufrufen. Wenn ein Zeiger von einem Element erfasst wurde, empfängt nur dieses Objekt die Zeigereingabeereignisse, auch wenn sich der Mauszeiger aus dem Begrenzungsbereich des Objekts heraus bewegt. Die Option [**IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact) (gedrückte Maustaste, Touch oder Stift in Kontakt) muss „true“ sein, damit **CapturePointer** erfolgreich ausgeführt werden kann.
+> Beschränken Sie die Zeiger Eingaben auf ein bestimmtes UI-Element, indem Sie [**capturepointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer) für dieses Element innerhalb eines Zeiger Ereignis Handlers aufrufen. Wenn ein-Zeiger von einem-Element aufgezeichnet wird, empfängt nur dieses Objekt Zeiger Eingabeereignisse, auch wenn der Zeiger außerhalb des umgebenden Bereichs des-Objekts bewegt wird. Das [**isincontact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact) -Element (mit der Maus Taste gedrückt, berühren oder Tablettstift) muss "true" sein, damit **capturepointer** erfolgreich ist
 
 <table>
 <colgroup>
@@ -53,13 +53,13 @@ UWP-Apps können die folgenden Zeigerereignisse überwachen:
 <thead>
 <tr class="header">
 <th align="left">Ereignis</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>Pointerabgeb Rochen</strong></a></p></td>
-<td align="left"><p>Tritt auf, wenn ein Zeiger von der Plattform abgebrochen wird. Dies kann unter den folgenden Umständen auftreten.</p>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
+<td align="left"><p>Tritt auf, wenn ein Zeiger von der Plattform abgebrochen wird. Dies kann in den folgenden Situationen vorkommen:</p>
 <ul>
 <li>Touchzeiger werden abgebrochen, wenn ein Zeichenstift innerhalb des Bereichs der Eingabeoberfläche erkannt wird.</li>
 <li>Für mehr als 100 ms wird kein aktiver Kontakt erkannt.</li>
@@ -69,74 +69,74 @@ UWP-Apps können die folgenden Zeigerereignisse überwachen:
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>Pointercapturelost</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein anderes Benutzeroberflächenelement den Zeiger erfasst, der Zeiger freigegeben wurde oder ein anderer Zeiger programmgesteuert erfasst wurde.</p>
 <div class="alert">
-<strong>Beachten Sie</strong>  kein entsprechendes Zeiger Aufzeichnungs Ereignis vorhanden ist.
+<strong>Beachten Sie</strong>  , dass kein entsprechendes Zeiger Erfassungs Ereignis vorhanden ist.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>Pointereingetragen</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger in den Begrenzungsbereich eines Elements eintritt. Dies kann geringfügig anders für Touch-, Touchpad-, Maus- und Stifteingaben passieren.</p>
 <ul>
 <li>Für Toucheingaben ist zur Auslösung dieses Ereignisses eine Fingerkontakt erforderlich, entweder über eine direkte Toucheingabe oder durch Bewegen in den Begrenzungsbereich des Elements.</li>
 <li>Maus und Touchpad haben beide einen Cursor auf dem Bildschirm, der immer sichtbar ist und dieses Ereignis auslöst, auch wenn keine Maus- oder Touchpadtaste gedrückt wird.</li>
-<li>Wie bei der Toucheingabe löst der Stift das Ereignis über eine direkte Stifteingabe oder durch Bewegen in den Begrenzungsbereich des Elements aus. Der Stift verfügt jedoch auch über einen Hoverzustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>), der das Ereignis bei „true“ auslöst.</li>
+<li>Wie bei der Toucheingabe löst der Stift das Ereignis über eine direkte Stifteingabe oder durch Bewegen in den Begrenzungsbereich des Elements aus. Pen hat jedoch auch einen Hover-Zustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der dieses Ereignis auslöst, wenn true.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>Pointerexited</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger den Begrenzungsbereich eines Elements verlässt. Dies kann geringfügig anders für Touch-, Touchpad-, Maus- und Stifteingaben passieren.</p>
 <ul>
 <li>Die Toucheingabe erfordert einen Fingerkontakt und löst dieses Ereignis aus, wenn sich der Mauszeiger aus dem Begrenzungsbereich des Elements heraus bewegt.</li>
 <li>Maus und Touchpad haben beide einen Cursor auf dem Bildschirm, der immer sichtbar ist und dieses Ereignis auslöst, auch wenn keine Maus- oder Touchpadtaste gedrückt wird.</li>
-<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis beim Bewegen aus dem Begrenzungsbereich des Elements heraus aus. Der Stift verfügt jedoch auch über einen Hoverzustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>), der das Ereignis auslöst, wenn sich der Zustand von „true“ in „false“ ändert.</li>
+<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis beim Bewegen aus dem Begrenzungsbereich des Elements heraus aus. Pen hat jedoch auch einen Hover-Zustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der dieses Ereignis auslöst, wenn sich der Status von true in false ändert.</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>Pointerverschoben</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein Zeiger Koordinaten, Schaltflächenzustand, Druck, Neigung oder Kontaktgeometrie (z. B. Breite und Höhe) innerhalb des Begrenzungsbereichs eines Elements ändert. Dies kann geringfügig anders für Touch-, Touchpad-, Maus- und Stifteingaben passieren.</p>
 <ul>
 <li>Die Toucheingabe erfordert einen Fingerkontakt und löst dieses Ereignis nur aus, wenn ein Kontakt innerhalb des Begrenzungsbereichs des Elements besteht.</li>
 <li>Maus und Touchpad haben beide einen Cursor auf dem Bildschirm, der immer sichtbar ist und dieses Ereignis auslöst, auch wenn keine Maus- oder Touchpadtaste gedrückt wird.</li>
-<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis aus, wenn ein Kontakt innerhalb des Begrenzungsbereichs des Elements besteht. Der Stift verfügt jedoch auch über einen Hoverzustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>), der dieses Ereignis bei „true“ und innerhalb des Begrenzungsbereichs des Elements auslöst.</li>
+<li>Wie bei der Toucheingabe löst der Stift dieses Ereignis aus, wenn ein Kontakt innerhalb des Begrenzungsbereichs des Elements besteht. Pen hat jedoch auch einen Hover-Zustand (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">isinrange</a>), der bei true und innerhalb des umgebenden Bereichs des Elements dieses Ereignis auslöst.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>Pointerpressed</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger eine Drückaktion (z. B. eine Fingereingabe, gedrückte Maustaste, Stifteingabe oder gedrückte Touchpadtaste) innerhalb des Begrenzungsbereichs eines Elements angibt.</p>
-<p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> muss aus dem Handler für dieses Ereignis aufgerufen werden.</p></td>
+<p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer">Capturepointer</a> muss vom Handler für dieses Ereignis aufgerufen werden.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>Pointerreleased</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn der Zeiger eine Loslass-Aktion (z. B. ein Finger bewegt sich nach oben, Maustaste, Stift oder Touchpadtaste werden losgelassen) innerhalb des Begrenzungsbereichs eines Elements anzeigt, oder wenn der Zeiger außerhalb des Begrenzungsbereichs erfasst wird.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>Pointerwheelchanged</strong></a></p></td>
-<td align="left"><p>Tritt auf, wenn das Mausrad gedreht wird.</p>
-<p>Die Mauseingabe wird einem einzelnen Zeiger zugeordnet, der bei der ersten Ermittlung einer Mauseingabe zugewiesen wird. Durch das Klicken auf eine Maustaste (links, Mausrad oder rechts) wird über das <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a>-Ereignis eine zweite Zuordnung zwischen dem Zeiger und dieser Taste erstellt.</p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
+<td align="left"><p>Tritt auf, wenn das Mausrad bewegt wird.</p>
+<p>Die Mauseingabe wird einem einzelnen Zeiger zugeordnet, der bei der ersten Ermittlung einer Mauseingabe zugewiesen wird. Wenn Sie auf eine Maustaste klicken (Links, Rad oder rechts), wird eine sekundäre Zuordnung zwischen dem-Zeiger und dieser Schaltfläche durch das <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved">pointermove</a> -Ereignis erstellt.</p></td>
 </tr>
 </tbody>
 </table> 
 
-## <a name="pointer-event-example"></a>Beispiel für Zeigerereignis
+## <a name="pointer-event-example"></a>Beispiel für Zeiger Ereignis
 
-Nachfolgend sehen Sie einige Codeausschnitt aus einer einfachen Zeigerverfolgungs-App, in denen gezeigt wird, wie Ereignisse für mehrere Zeiger überwacht und behandelt und verschiedene Eigenschaften für die verbundenen Zeiger abgerufen werden.
+Im folgenden finden Sie einige Code Ausschnitte aus einer grundlegenden zeigernachverfolgungs-APP, die zeigen, wie Ereignisse für mehrere Zeiger überwacht und behandelt werden und wie verschiedene Eigenschaften für die zugeordneten Zeiger erhalten werden.
 
-![Benutzeroberfläche der Zeigeranwendung](images/pointers/pointers1.gif)
+![Benutzeroberfläche der Zeiger Anwendung](images/pointers/pointers1.gif)
 
 **Herunterladen dieses Beispiels aus dem Beispiel für eine [Zeiger Eingabe (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
 
 ### <a name="create-the-ui"></a>Erstellen der Benutzeroberfläche
 
-In diesem Beispiel wird ein [Rechteck](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) als Objekt verwendet, das Zeigereingaben nutzt. Die Farbe des Ziels ändert sich, wenn sich der Zeigerstatus ändert.
+In diesem Beispiel verwenden wir ein [Rechteck](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) als Objekt, das Zeiger Eingaben verwendet. Die Farbe des Ziels ändert sich, wenn sich der Zeigerstatus ändert.
 
-Details zu jedem Zeiger werden in einem schwebenden [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) angezeigt, der sich mit dem Mauszeiger bewegt. Die Zeigerereignisse selbst werden im [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) rechts neben dem Rechteck gemeldet.
+Details zu den einzelnen Zeigern werden in einem Gleit Komma [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) angezeigt, der dem Zeiger beim Verschieben folgt. Die Zeiger Ereignisse selbst werden im [richtextblock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) auf der rechten Seite des Rechtecks gemeldet.
 
-Im Folgenden ist der XAML-Code (Extensible Application Markup Language) für die Benutzeroberfläche in diesem Beispiel aufgeführt. 
+Dies ist der Extensible Application Markup Language (XAML) für die Benutzeroberfläche in diesem Beispiel. 
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -193,9 +193,9 @@ Im Folgenden ist der XAML-Code (Extensible Application Markup Language) für die
 
 In den meisten Fällen wird empfohlen, Zeigerinformationen über die [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) des Ereignishandlers abzurufen.
 
-Sollte das Ereignisargument die erforderlichen Zeigerdetails nicht liefern, können Sie über die Methoden [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) und [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) von [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) auf die von einem [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)-Objekt bereitgestellten erweiterten Zeigerdaten zugreifen.
+Sollte das Ereignisargument die erforderlichen Zeigerdetails nicht liefern, können Sie über die Methoden [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) und [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) von [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) auf die von einem [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)-Objekt bereitgestellten erweiterten Zeigerdaten zugreifen.
 
-Der folgende Code richtet das globale Verzeichnisobjekt für die Verfolgung jedes aktiven Zeigers ein und identifiziert die verschiedenen Zeigerereignislistener für das Zielobjekt.
+Der folgende Code richtet das globale Dictionary-Objekt für die Nachverfolgung der einzelnen aktiven Zeiger ein und identifiziert die verschiedenen Zeiger Ereignislistener für das Zielobjekt.
 
 ```CSharp
 // Dictionary to maintain information about each active pointer. 
@@ -237,10 +237,10 @@ public MainPage()
 
 Im nächsten Schritt wird UI-Feedback verwendet, um die Verwendung einfacher Zeigerereignishandler zu veranschaulichen.
 
--   Der folgende Handler kontrolliert das [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird zum aktiven Zeigerverzeichnis hinzugefügt, und die Zeigerdetails werden angezeigt.
+-   Dieser Handler verwaltet das [**pointerpressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) -Ereignis. Das Ereignis wird dem Ereignisprotokoll hinzugefügt, der Zeiger wird dem aktiven Zeiger Wörterbuch hinzugefügt, und die Zeiger Details werden angezeigt.
 
     > [!NOTE]
-    > [**Pointerpressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) -und [**pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) -Ereignisse treten nicht immer paarweise auf. Die App sollte auf jedes Ereignis lauschen und dieses behandeln, das einen Zeiger nach unten beenden könnte (beispielsweise [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) und [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).      
+    > [**Pointerpressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) -und [**pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) -Ereignisse treten nicht immer paarweise auf. Ihre APP sollte auf jedes Ereignis lauschen und dieses behandeln, das möglicherweise einen Zeiger abschließt (z. b. " [**pointerexited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)", " [**pointerabgeb Rochen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)" und " [**pointercapturelost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)").      
 
 ```csharp
 /// <summary>
@@ -282,7 +282,7 @@ void Target_PointerPressed(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   Der folgende Handler kontrolliert das [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird zur Zeigerauflistung hinzugefügt, und die Zeigerdetails werden angezeigt.
+-   Dieser Handler verwaltet das Ereignis [**pointereingetragen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) . Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird zur Zeigerauflistung hinzugefügt, und die Zeigerdetails werden angezeigt.
 
 ```csharp
 /// <summary>
@@ -319,7 +319,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   Der folgende Handler kontrolliert das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, und die Zeigerdetails werden aktualisiert.
+-   Dieser Handler verwaltet das [**pointerverschoderte**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, und die Zeigerdetails werden aktualisiert.
 
     > [!Important]
     > Die Mauseingabe wird einem einzelnen Zeiger zugeordnet, der bei der ersten Ermittlung einer Mauseingabe zugewiesen wird. Durch das Klicken auf eine Maustaste (links, Mausrad oder rechts) wird über das [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)-Ereignis eine zweite Zuordnung zwischen dem Zeiger und dieser Taste erstellt. Das [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)-Ereignis wird nur ausgelöst, wenn dieselbe Maustaste losgelassen wird (dem Zeiger kann erst eine andere Taste zugeordnet werden, wenn dieses Ereignis abgeschlossen ist). Aufgrund dieser exklusiven Zuordnung werden Klicks auf andere Maustasten über das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)-Ereignis geleitet.     
@@ -369,7 +369,7 @@ private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   Der folgende Handler kontrolliert das [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird zum Zeigerarray hinzugefügt (sofern erforderlich), und die Zeigerdetails werden angezeigt.
+-   Dieser Handler verwaltet das [**pointerwheelchanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) -Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird zum Zeigerarray hinzugefügt (sofern erforderlich), und die Zeigerdetails werden angezeigt.
 
 ```csharp
 /// <summary>
@@ -399,7 +399,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   Der folgende Handler kontrolliert das [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)-Ereignis, bei dem der Kontakt mit dem Digitalisierungsgerät beendet wird. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus der Zeigerauflistung entfernt, und die Zeigerdetails werden aktualisiert.
+-   Dieser Handler verwaltet das [**pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) -Ereignis, bei dem der Kontakt mit dem Digitalisierer beendet wird. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus der Zeigerauflistung entfernt, und die Zeigerdetails werden aktualisiert.
 
 ```csharp
 /// <summary>
@@ -451,7 +451,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   Der folgende Handler kontrolliert das [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)-Ereignis (wenn der Kontakt mit dem Digitizer beibehalten wird). Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
+-   Dieser Handler verwaltet das Ereignis " [**pointerexited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) " (bei Beibehaltung des Kontakts mit dem Digitalisierer). Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
 
 ```csharp
 /// <summary>
@@ -486,7 +486,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   Der folgende Handler kontrolliert das [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
+-   Dieser Handler verwaltet das Ereignis " [**pointerabgeb Rochen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) ". Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
 
 ```csharp
 /// <summary>
@@ -525,10 +525,10 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   Der folgende Handler kontrolliert das [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)-Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
+-   Dieser Handler verwaltet das [**pointercapturelost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) -Ereignis. Das Ereignis wird zum Ereignisprotokoll hinzugefügt, der Zeiger wird aus dem Zeigerarray entfernt, und die Zeigerdetails werden aktualisiert.
 
     > [!NOTE]
-    > [**Pointercapturelost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) kann anstelle von [**pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)auftreten. Die Zeigererfassung kann aus verschiedenen Gründen verloren gehen, darunter eine Benutzerinteraktion, die programmgesteuerte Erfassung von einem anderen Zeiger, das Aufrufen von [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
+    > [**Pointercapturelost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) kann anstelle von [**pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)auftreten. Die Zeiger Erfassung kann aus verschiedenen Gründen verloren gehen, einschließlich der Benutzerinteraktion, der programmgesteuerten Erfassung eines anderen Zeigers, dem Aufrufen von [**pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
 
 ```csharp
 /// <summary>
@@ -569,7 +569,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>Abrufen von Zeigereigenschaften
 
-Wie bereits erwähnt, müssen Sie die erweiterten Zeigerinformationen von einem [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)-Objekt abrufen, das über die Methoden [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) und [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) von [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) bereitgestellt wird. Die folgenden Codeausschnitte zeigen, wie.
+Wie bereits erwähnt, müssen Sie die erweiterten Zeigerinformationen von einem [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)-Objekt abrufen, das über die Methoden [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) und [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) von [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) bereitgestellt wird. Die folgenden Code Ausschnitte zeigen, wie Sie sehen.
 
 -   Zuerst wird ein neues [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)-Objekt für jeden Zeiger erstellt.
 
@@ -676,28 +676,28 @@ String QueryPointer(PointerPoint ptrPt)
 ```
 
 ## <a name="primary-pointer"></a>Primärer Zeiger
-Einige Geräte wie ein Touch-Digitizer oder Touchpad unterstützen mehr als der typische einzelne Zeiger einer Maus oder ein Stift (in den meisten Fällen, da der Surface Hub zwei Stifteingaben unterstützt). 
+Einige Eingabegeräte, z. b. ein Touch-Digitalisierungs Modul oder Touchpad, unterstützen mehr als den typischen einzelnen Zeiger einer Maus oder eines Stifts (in den meisten Fällen, da das Surface Hub zwei Stift Eingaben unterstützt). 
 
-Verwenden Sie die schreibgeschützte Eigenschaft **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** der **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** -Klasse, um einen einzelnen primären Zeiger zu identifizieren und zu unterscheiden (der primäre Zeiger ist immer der erste Zeiger, der während einer Eingabesequenz erkannt wird). 
+Verwenden Sie die schreibgeschützte **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** -Eigenschaft der **[pointerpointerproperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** -Klasse, um einen einzelnen primären Zeiger zu identifizieren und zu unterscheiden (der primäre Zeiger ist immer der erste Zeiger, der während einer Eingabe Sequenz erkannt wird). 
 
-Durch die Identifizierung des primären Zeigers können Sie diesen verwenden, um Maus- oder Stifteingaben zu emulieren, Interaktionen anzupassen oder eine andere spezifische Funktion oder Benutzeroberfläche bereitzustellen.
+Indem Sie den primären Zeiger identifizieren, können Sie ihn zum Emulieren von Maus-oder Stift Eingaben, Anpassen von Interaktionen oder Bereitstellen anderer spezifischer Funktionen oder Benutzeroberflächen verwenden.
 
 > [!NOTE]
-> Wenn der primäre Zeiger während einer Eingabesequenz freigegeben oder abgebrochen wird bzw. verloren gegangen ist, wird erst ein primärer Eingabezeiger erstellt, wenn eine neue Eingabesequenz initiiert wird (eine Eingabesequenz endet, wenn alle Zeiger freigegeben oder abgebrochen wurden bzw. verloren gegangen sind).
+> Wenn der primäre Zeiger während einer Eingabe Sequenz freigegeben, abgebrochen oder verloren geht, wird erst dann ein primärer Eingabe Zeiger erstellt, wenn eine neue Eingabe Sequenz initiiert wird (eine Eingabe Sequenz endet, wenn alle Zeiger freigegeben, abgebrochen oder verloren gegangen sind).
 
-## <a name="primary-pointer-animation-example"></a>Beispiel für die Animation eines primären Zeigers
+## <a name="primary-pointer-animation-example"></a>Beispiel für eine Animation im primären Zeiger
 
-Die folgenden Codeausschnitte zeigen, wie Sie spezielles visuelles Feedback bereitstellen können, damit ein Benutzer zwischen den Zeigereingaben in Ihrer Anwendung unterscheiden kann.
+Diese Code Ausschnitte zeigen, wie Sie spezielles visuelles Feedback bereitstellen können, um einen Benutzer bei der Unterscheidung zwischen Zeiger Eingaben in der Anwendung zu unterstützen.
 
-Diese bestimmte App verwendet Farbe und Animation, um den primären Zeiger hervorzuheben.
+Diese spezielle App verwendet sowohl Farbe als auch Animation, um den primären Zeiger hervorzuheben.
 
-![Zeigeranwendung mit animiertem visuellem Feedback](images/pointers/pointers-usercontrol-animation.gif)
+![Zeiger Anwendung mit animiertem visuellen Feedback](images/pointers/pointers-usercontrol-animation.gif)
 
 **Herunterladen dieses Beispiels aus dem [Zeiger Eingabe Beispiel (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
 
 ### <a name="visual-feedback"></a>Visuelles Feedback
 
-Wir definieren eine **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** basierend auf einem XAML- **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** -Objekt, die hervorhebt, an welcher Stelle sich jeder Zeiger im Zeichenbereich befindet, und ein **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** verwendet, um die Ellipse zu animieren, die dem primären Zeiger entspricht.
+Wir definieren ein **[UserControl-Steuer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** Element auf Grundlage eines XAML- **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** -Objekts, das hervorhebt, wo sich die einzelnen Zeiger auf der Canvas befinden, und verwendet ein **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** zum Animieren der Ellipse, die dem primär Zeiger entspricht.
 
 **Dies ist der XAML-Code:**
 
@@ -769,7 +769,7 @@ Wir definieren eine **[UserControl](https://docs.microsoft.com/uwp/api/windows.u
 </UserControl>
 ```
 
-Und hier die CodeBehind-Datei:
+Und hier ist der Code Behind:
 ```csharp
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -889,9 +889,9 @@ namespace UWP_Pointers
 ```
 
 ### <a name="create-the-ui"></a>Erstellen der Benutzeroberfläche
-Die Benutzeroberfläche in diesem Beispiel ist auf den **[Eingabezeichenbereich](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** beschränkt, in dem wir alle Zeiger nachverfolgen und die Zeigerindikatoren sowie die primäre Zeigeranimation (falls zutreffend) zusammen mit einer Kopfzeilenleiste wiedergeben, die einen Zeigerzähler und einen primären Zeigerbezeichner enthält.
+Die Benutzeroberfläche in diesem Beispiel ist auf **[den Eingabebereich](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** beschränkt, in dem wir alle Zeiger nachverfolgen und die Zeiger Indikatoren und die primäre Zeiger Animation (falls zutreffend) zusammen mit einer Header Leiste mit einem Zeiger-und einem primär Zeiger Bezeichner darstellen.
 
-Hier ist die MainPage.xaml-Datei:
+Dies ist die Datei "MainPage. XAML":
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -942,24 +942,27 @@ Hier ist die MainPage.xaml-Datei:
 
 ### <a name="handle-pointer-events"></a>Behandeln von Zeigerereignissen
 
-Schließlich definieren wir unsere einfachen Zeigerereignishandler in der CodeBehind-Datei MainPage.xaml.cs. Wir werden den Code hier nicht reproduzieren, da die Grundlagen im vorherigen Beispiel behandelt wurden, aber Sie können das Arbeitsbeispiel unter [Beispiel für Zeigereingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip) herunterladen.
+Schließlich definieren wir die grundlegenden Zeiger Ereignishandler im MainPage.XAML.cs-Code Behind. Der Code wird hier nicht reproduziert, weil die Grundlagen im vorherigen Beispiel behandelt wurden, aber Sie können das Arbeitsbeispiel aus dem Beispiel für eine [Zeiger Eingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)herunterladen.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-**Themen Beispiele**
-* [Beispiel für Zeiger Eingabe (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
-* [Beispiel für Zeiger Eingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
+### <a name="topic-samples"></a>Themenbeispiele
 
-**Weitere Beispiele**
-* [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [Beispiel für Zeiger Eingabe (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
+- [Beispiel für Zeiger Eingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
-**Archivbeispiele**
-* [Eingabe: Beispiel für XAML-Benutzereingabe Ereignisse](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Eingabe: Manipulationen und Gesten (C++) (Beispiel)](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [Eingabe: Beispiel für Berührungs Treffer Tests](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Eingabe: vereinfachtes Ink-Beispiel](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+### <a name="other-samples"></a>Weitere Beispiele
+
+- [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+
+### <a name="archive-samples"></a>Archivbeispiele
+
+- [Eingabe: Beispiel für XAML-Benutzereingabeereignisse](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Eingabe: Beispiel für Gerätefunktionen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Eingabe: Manipulationen und Gesten (Beispiel)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [Eingabe: Beispiel für Fingereingabe-Treffertests](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Eingabe: vereinfachtes Freihandbeispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)

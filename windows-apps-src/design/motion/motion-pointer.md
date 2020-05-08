@@ -1,17 +1,17 @@
 ---
 Description: Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wenn diese auf ein Element tippen.
-title: Animationen für Zeigerklicks in UWP-Apps
+title: Animationen für Zeigerklicks
 ms.assetid: EEB10A2C-629A-4705-8468-4D019D74DDFF
 ms.date: 08/09/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ee87a62796ed51d09d44cabecd0b49873145bd90
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 32c3460b1af226adfa969d02a695f1d6436390be
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366083"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970545"
 ---
 # <a name="pointer-click-animations"></a>Animationen für Zeigerklicks
 
@@ -20,7 +20,7 @@ ms.locfileid: "66366083"
 Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wenn diese auf ein Element tippen. Bei der Animation für „Zeiger nach unten“ wird das gedrückte Element leicht verkleinert und geneigt. Sie wird wiedergegeben, wenn erstmalig auf ein Element getippt wird. Die Animation für „Zeiger nach oben“, mit der der ursprüngliche Zustand des Elements wiederhergestellt wird, wird beim Loslassen des Zeigers wiedergegeben.
 
 
-> **Wichtige APIs:** [**PointerUpThemeAnimation Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [ **PointerDownThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
+> **Wichtige APIs**: [**pointeruppoinmeanimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**pointerdownpoinmeanimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -30,8 +30,8 @@ Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wen
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Die Animation von Zeiger Klicks](https://docs.microsoft.com/previous-versions/windows/apps/jj649432(v=win.10))
-* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [Animieren von Zeigerklicks](https://docs.microsoft.com/previous-versions/windows/apps/jj649432(v=win.10))
+* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**PointerUpThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation)
 * [**PointerDownThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 

@@ -1,30 +1,30 @@
 ---
-Description: Benachrichtigungen, dass die Schnellansicht eine neue universelle Windows-Plattform (UWP)-app in der Store ist, die Entwickler adaptiven Entwurf können live-Kacheln für Windows 10.
+Description: Notifications Visualizer ist eine neue Windows-App im Store, die Entwickler dabei unterstützt, adaptive Live-Kacheln für Windows 10 zu entwerfen.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bb5a450aebdf38f3d4f1a710f3537544dcddd6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c8d355570ef7002d1424457bf29f8161680f2c77
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57616675"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971035"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
  
 
 
-Benachrichtigungen-Schnellansicht ist eine neue app für die universelle Windows-Plattform (UWP) [in den Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , die Entwicklern, die Live-Kacheln adaptive und interaktive Popupbenachrichtigungen für Windows 10 zu entwerfen.
+Die Benachrichtigungs Schnellansicht ist eine neue Windows-App-APP [im Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , die Entwicklern das Entwerfen von adaptiven Live Kacheln und interaktiven Popup Benachrichtigungen für Windows 10 unterstützt.
 
 
 ## <a name="overview"></a>Übersicht
 
-Die App „Notifications Visualizer” bietet beim Bearbeiten der XML-Nutzlast eine sofortige visuelle Vorschau Ihrer Kachel und Popupbenachrichtigung, vergleichbar mit dem XAML-Editor/der Designansicht von Visual Studio. Die App prüft auch auf Fehler. So wird sichergestellt, dass Sie eine gültige Kachel- oder Popupbenachrichtigungsnutzlast erstellen.
+Die Benachrichtigungs Schnellansicht bietet eine sofortige visuelle Vorschau der Kachel und Popup Benachrichtigung, wenn Sie die XML-Nutzlast bearbeiten, ähnlich wie die XAML-Editor-und Entwurfs Ansicht von Visual Studio. Die APP prüft auch auf Fehler, wodurch sichergestellt wird, dass Sie eine gültige Kachel-oder Popup Benachrichtigungs Nutzlast erstellen.
 
 Dieser Screenshot der App zeigt die XML-Nutzlast und die Art und Weise, wie Kachelgrößen auf einem bestimmten Gerät angezeigt werden:
 
@@ -32,19 +32,19 @@ Dieser Screenshot der App zeigt die XML-Nutzlast und die Art und Weise, wie Kach
 
  
 
-Mit Notifications Visualizer können Sie adaptive Kachel-oder Popupnutzlasten erstellen und testen, ohne Ihre App selbst bearbeiten und bereitstellen zu müssen. Nachdem Sie eine Nutzlast mit idealen visuellen Ergebnisse erstellt haben, können Sie sie in Ihre App integrieren. Informationen finden Sie unter [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md) und [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md).
+Mit der Benachrichtigungs Schnellansicht können Sie Adaptive Kachel-und Toast Nutzlasten erstellen und testen, ohne Ihre eigene APP bearbeiten und bereitstellen zu müssen. Nachdem Sie eine Nutzlast mit idealen visuellen Ergebnissen erstellt haben, können Sie diese in Ihre APP integrieren. Weitere Informationen finden Sie unter [Senden einer lokalen Kachel Benachrichtigung](sending-a-local-tile-notification.md) und [Senden eines lokalen](send-local-toast.md) Popups.
 
-**Beachten Sie**    Benachrichtigungen der Schnellansicht-Simulation Starten von Windows-Menü und Popupbenachrichtigungen Benachrichtigungen nicht immer vollkommen genaue und einige erweiterte nutzlasteigenschaften werden nicht unterstützt. Wenn Sie das gewünschte Kachel- oder Popupdesign fertig haben, testen Sie es, indem Sie die Kachel oder Popupbenachrichtigung an das tatsächliche Startmenü anheften, um sicherzustellen, dass es wie gewünscht angezeigt wird.
+**Beachten Sie**    , dass die Simulation der Schnellansicht des Windows-Start Menüs und Popup Benachrichtigungen nicht immer vollständig korrekt ist und einige erweiterte Nutz Last Eigenschaften nicht unterstützt. Wenn Sie über die gewünschte Kachel oder den gewünschten Toast verfügen, testen Sie Sie, indem Sie die Kachel fixieren oder den Popup Pop, um zu überprüfen, ob Sie in ihrer Absicht angezeigt wird.
 
  
 
 ## <a name="features"></a>Features
 
-Notifications Visualizer enthält eine Reihe von Beispielnutzlasten, um zu zeigen, was mit adaptiven Live-Kacheln und interativen Popups möglich ist und um Sie bei den ersten Schritten zu unterstützen. Sie können mit den verschiedenen Textoptionen, Gruppen/Untergruppen, Hintergrundbildern experimentieren und sehen, wie sich die Kachel an verschiedene Geräte und Bildschirme anpasst. Wenn Sie Änderungen vornehmen, können Sie Ihre aktualisierte Nutzlast in einer Datei zur späteren Verwendung speichern.
+Die Benachrichtigungs Schnellansicht enthält eine Reihe von Beispiel Nutzlasten, um zu veranschaulichen, was mit adaptiven Live-Kacheln und interaktiven-Auflistungen möglich ist, um Ihnen den Einstieg zu erleichtern. Sie können mit den verschiedenen Textoptionen, Gruppen/Untergruppen, Hintergrundbildern experimentieren und sehen, wie sich die Kachel an verschiedene Geräte und Bildschirme anpasst. Wenn Sie Änderungen vornehmen, können Sie Ihre aktualisierte Nutzlast in einer Datei zur späteren Verwendung speichern.
 
-Der Editor stellt Fehler und Warnungen in Echtzeit bereit. Wenn Ihre App-Nutzlast beispielsweise größer als 5 KB (eine Plattformbeschränkung) ist, warnt Notifications Visualizer Sie, falls Ihre Nutzlast diese Grenze überschreitet. Sie erhalten Warnungen aufgrund falscher Attributnamen oder Werte, wodurch das Debuggen visueller Probleme erleichtert wird.
+Der Editor stellt Fehler und Warnungen in Echtzeit bereit. Wenn Ihre Nutzlast z. b. größer als 5 KB (eine Platt Form Einschränkung) ist, werden Sie von der Benachrichtigungs Schnellansicht gewarnt, dass die Nutzlast dieses Limit überschreitet. Sie erhalten Warnungen aufgrund falscher Attributnamen oder Werte, wodurch das Debuggen visueller Probleme erleichtert wird.
 
-Sie können Kacheleigenschaften, wie Anzeigename, Farbe, Logos, ShowName und Signalwert, steuern. Anhand dieser Optionen verstehen Sie sofort, wie Ihre Kacheleigenschaften und Kachelbenachrichtigungsnutzlasten interagieren und welche Ergebnisse sie produzieren.
+Sie können Kachel Eigenschaften wie Anzeige Name, Farbe, Logos, ShowName und Badge-Wert steuern. Anhand dieser Optionen verstehen Sie sofort, wie Ihre Kacheleigenschaften und Kachelbenachrichtigungsnutzlasten interagieren und welche Ergebnisse sie produzieren.
 
 Dieser Screenshot der App zeigt den Kachel-Editor:
 
@@ -52,8 +52,8 @@ Dieser Screenshot der App zeigt den Kachel-Editor:
 
  
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Abrufen von Benachrichtigungen Schnellansicht in den Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
+* [Notifications Visualizer aus dem Store herunterladen](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [Erstellen adaptiver Kacheln](create-adaptive-tiles.md)
-* [Interaktive Popups](adaptive-interactive-toasts.md)
+* [Interaktive Fenster](adaptive-interactive-toasts.md)

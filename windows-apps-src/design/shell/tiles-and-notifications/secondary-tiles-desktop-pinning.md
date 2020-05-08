@@ -1,40 +1,40 @@
 ---
-Description: Windows-Desktopanwendungen können sekundäre Kacheln dank der Desktop-Brücke anheften!
-title: Sekundäre Kacheln von der Desktopanwendung anheften
+Description: Dank der Desktop Bridge können Windows-Desktop Anwendungen sekundäre Kacheln anheften.
+title: Heften Sie sekundäre Kacheln aus der Desktop Anwendung
 label: Pin secondary tiles from desktop application
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows 10, Desktop-Brücke, sekundäre Kacheln, anheften, Anheften, Schnellstart, Codebeispiel, Beispiel, Sekundärkachel, Desktopanwendung, Win32, Winforms, WPF
+keywords: Windows 10, Desktop Bridge, sekundäre Kacheln, PIN, Pinning, Schnellstart, Codebeispiel, Beispiel, secondarytile, Desktop Anwendung, Win32, WinForms, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 7ddcd96eadbb6d2edbc3a72fa58ff3cc8931a09b
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209916"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730365"
 ---
-# <a name="pin-secondary-tiles-from-desktop-application"></a>Sekundäre Kacheln von der Desktopanwendung anheften
+# <a name="pin-secondary-tiles-from-desktop-application"></a>Heften Sie sekundäre Kacheln aus der Desktop Anwendung
 
 
-Dank der [Desktop-Brück](https://developer.microsoft.com/windows/bridges/desktop) können Windows-Desktopanwendung (wie Win32, Windows Forms und WPF) sekundäre Kacheln anheften.
+Dank der [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)können Windows-Desktop Anwendungen (z. b. Win32, Windows Forms und WPF) sekundäre Kacheln anheften.
 
-![Screenshot von sekundären Kacheln](images/secondarytiles.png)
+![Screenshot der sekundären Kacheln](images/secondarytiles.png)
 
 > [!IMPORTANT]
-> **Erfordert das Fall Creators Update**: Sie müssen als Ziel das SDK 16299 angeben und Build 16299 oder höher ausführen, um sekundäre Kacheln von Desktop-Brücke-Apps anzuheften.
+> **Erfordert das Fall Creators Update**: Sie müssen das SDK 16299 als Ziel festlegen und Build 16299 oder höher ausführen, um sekundäre Kacheln aus Desktop Bridge-apps anzuheften.
 
-Das Hinzufügen einer sekundären Kachel aus Ihrer WPF- oder WinForms-Anwendung ist einer reinen UWP-App sehr ähnlich. Der einzige Unterschied besteht darin, dass Sie das Hauptfenster-Handle (HWND) angeben müssen. Der Grund dafür ist, dass Windows beim Anheften einer Kachel ein modales Dialogfeld anzeigt, das den Benutzer auffordert zu bestätigen, dass er die Kachel anheften möchte. Wenn die Desktop-Anwendung das SecondaryTile-Objekt nicht mit dem Besitzerfenster konfigurieren, kann Windows nicht feststellen, wo das Dialogfeld gezeichnet werden soll und der Vorgang schlägt fehl.
-
-
-## <a name="package-your-app-with-desktop-bridge"></a>Packen Sie Ihre App mit der Desktop-Brücke
-
-Wenn Sie Ihre App nicht mit der Desktop-Brücke gepackt haben [müssen Sie dies zuerst durchführen](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root), um alle UWP-APIs verwenden zu können.
+Das Hinzufügen einer sekundären Kachel aus Ihrer WPF-oder WinForms-Anwendung ähnelt einer reinen UWP-app. Der einzige Unterschied besteht darin, dass Sie das Hauptfenster handle (HWND) angeben müssen. Dies liegt daran, dass Windows beim anheften einer Kachel ein modales Dialogfeld anzeigt, das den Benutzer auffordert, zu bestätigen, ob die Kachel angeheftet werden soll. Wenn die Desktop Anwendung das secondarytile-Objekt nicht mit dem Besitzer Fenster konfiguriert, weiß Windows nicht, wo das Dialogfeld gezeichnet werden soll, und der Vorgang schlägt fehl.
 
 
-## <a name="enable-access-to-iinitializewithwindow-interface"></a>Aktivieren des Zugriffs auf die IInitializeWithWindow-Schnittstelle
+## <a name="package-your-app-with-desktop-bridge"></a>Verpacken Ihrer APP mit Desktop Bridge
 
-Wenn die Anwendung in einer verwalteten Sprache wie z. B. C# oder Visual Basic geschrieben wurde, deklarieren Sie die IInitializeWithWindow-Schnittstelle im App-Code wie im folgenden C#-Beispiel mit dem [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) und dem Guid-Attribut. In diesem Beispiel wird davon ausgegangen, dass Ihre Codedatei über eine using-Anweisung für den System.Runtime.InteropServices-Namespace verfügt.
+Wenn Sie Ihre APP nicht mit der Desktop Bridge gepackt haben, [müssen Sie dies zunächst tun](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) , bevor Sie eine Windows-Runtime-APIs verwenden können.
+
+
+## <a name="enable-access-to-iinitializewithwindow-interface"></a>Aktivieren des Zugriffs auf die iinitializewithwindow-Schnittstelle
+
+Wenn Ihre Anwendung in einer verwalteten Sprache wie z. b. c# oder Visual Basic geschrieben ist, deklarieren Sie die iinitializewithwindow-Schnittstelle mit dem [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) -und GUID-Attribut im Code der APP, wie im folgenden c#-Beispiel gezeigt. In diesem Beispiel wird davon ausgegangen, dass Ihre Codedatei über eine using-Anweisung für den System.Runtime.InteropServices-Namespace verfügt.
 
 ```csharp
 [ComImport]
@@ -46,12 +46,12 @@ public interface IInitializeWithWindow
 }
 ```
 
-Wenn Sie alternativ C++ verwenden, fügen Sie im Code einen Verweis auf die Headerdatei **shobjidl.h** hinzu. Diese Headerdatei enthält die Deklaration der *IInitializeWithWindow*-Schnittstelle.
+Wenn Sie C++ verwenden, fügen Sie alternativ einen Verweis auf die Header Datei " **shobjidl. h** " in Ihrem Code hinzu. Diese Headerdatei enthält die Deklaration der *IInitializeWithWindow*-Schnittstelle.
 
 
-## <a name="initialize-the-secondary-tile"></a>Initialisieren Sie die sekundäre Kachel
+## <a name="initialize-the-secondary-tile"></a>Initialisieren der sekundären Kachel
 
-Initialisieren Sie ein neues sekundäres Kachelobjekt genau wie in einer normalen UWP-App. Weitere Informationen zum Erstellen und Anheften von Sekundärkacheln finden Sie unter [Sekundäre Kacheln anheften](secondary-tiles-pinning.md).
+Initialisieren Sie ein neues sekundäres Kachel Objekt genau wie bei einer normalen UWP-app. Weitere Informationen zum Erstellen und fixieren sekundärer Kacheln finden Sie unter Anheften von [sekundären Kacheln](secondary-tiles-pinning.md).
 
 ```csharp
 // Initialize the tile with required arguments
@@ -64,9 +64,9 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="assign-the-window-handle"></a>Zuweisen des Fensterhandles
+## <a name="assign-the-window-handle"></a>Fenster Handle zuweisen
 
-Dies ist der wichtigste Schritt für Desktopanwendung. Wandeln Sie das Objekt in ein [IInitializeWithWindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow)-Objekt um. Rufen Sie dann die [IInitializeWithWindow.Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize)-Methode auf, und übergeben Sie das Handle des Fensters, das der Besitzer aller modalen Dialoge sein soll. Im folgenden C#-Beispiel wird gezeigt, wie das Handle des Hauptfensters der App an die Methode übergeben wird.
+Dies ist der wichtigste Schritt für Desktop Anwendungen. Wandeln Sie das Objekt in ein [iinitializewithwindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) -Objekt um. Aufrufen Sie dann die [iinitializewithwindow. Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) -Methode, und übergeben Sie das Handle des Fensters, das Sie als Besitzer für das modale Dialogfeld festlegen möchten. Im folgenden c#-Beispiel wird gezeigt, wie das Handle des Hauptfensters Ihrer APP an die-Methode übergeben wird.
 
 ```csharp
 // Assign the window handle
@@ -77,7 +77,7 @@ initWindow.Initialize(System.Diagnostics.Process.GetCurrentProcess().MainWindowH
 
 ## <a name="pin-the-tile"></a>Anheften der Kachel
 
-Fordern Sie schließlich das Anheften der Kachel wie bei einer normalen UWP-App an.
+Fordern Sie schließlich an, die Kachel wie eine normale UWP-App anzuheften.
 
 ```csharp
 // Pin the tile
@@ -87,12 +87,12 @@ bool isPinned = await tile.RequestCreateAsync();
 ```
 
 
-## <a name="send-tile-notifications"></a>Senden von Kachelbenachrichtigungen
+## <a name="send-tile-notifications"></a>Senden von Kachel Benachrichtigungen
 
 > [!IMPORTANT]
-> **Erfordert April 2018 Version 17134.81 oder höher**: Sie müssen Build 17134.81 oder höher ausführen, um Kachel- oder Signalbenachrichtigungen für sekundäre Kacheln von Desktop-Brücke-Apps zu senden. Vor diesem x.81-Wartungsupdate würde beim Senden von Kachel- oder Signalbenachrichtigungen für sekundäre Kacheln von Desktop-Brücke-Apps die Ausnahme 0x80070490 *Element nicht gefunden* auftreten.
+> **Erfordert die Version 17134,81 oder höher von April 2018**: Sie müssen Build 17134,81 oder höher ausführen, um Kachel-oder Badge-Benachrichtigungen an sekundäre Kacheln von Desktop Bridge-apps zu senden. Vor diesem. 81-Wartungsupdate würde eine Ausnahme 0x80070490- *Element nicht gefunden* auftreten, wenn Kachel-oder Badge-Benachrichtigungen an sekundäre Kacheln von Desktop Bridge-apps gesendet werden.
 
-Das Senden von Kachel- oder Signalbenachrichtigungen ist identisch wie bei UWP-Apps. Weitere Informationen finden Sie unter [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md).
+Das Senden von Kachel-oder Badge-Benachrichtigungen ist identisch mit UWP-apps. Weitere Informationen finden Sie unter [Senden einer lokalen Kachel Benachrichtigung](sending-a-local-tile-notification.md) .
 
 
 ## <a name="resources"></a>Ressourcen
@@ -100,5 +100,5 @@ Das Senden von Kachel- oder Signalbenachrichtigungen ist identisch wie bei UWP-A
 * [Vollständiges Codebeispiel](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Übersicht über sekundäre Kacheln](secondary-tiles.md)
 * [Anheften von sekundären Kacheln (UWP)](secondary-tiles-pinning.md)
-* [Desktop-Brücke](https://developer.microsoft.com/windows/bridges/desktop)
+* [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)
 * [Desktop Bridge-Codebeispiele](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

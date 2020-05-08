@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bc8fecd7a5a1596d074c170d7a7211126e88b8ae
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 67bba732efd199c5093bb75e9b0a2c41b67e568c
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684866"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148573"
 ---
 # <a name="aep-service-class-ids"></a>IDs der AEP-Dienstklasse
 
@@ -29,50 +29,50 @@ App-Entwickler sollten auf Basis der Klassen-IDs erweiterte Abfragesyntaxfilter 
 
 Bluetooth-Dienste zählen zu einem von zwei Protokollen, dem Bluetooth- oder Bluetooth LE-Protokoll. Bezeichner für diese Protokolle:
 
--   Bluetooth-Protokoll-ID: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
--   Bluetooth LE-Protokoll-ID: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
+-   Bluetooth-Protokoll-ID: {e0cbf06c-cd8b-4647-bb8a-263b43f 0F 974}
+-   Bluetooth-Le-Protokoll-ID: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 Das Bluetooth-Protokoll unterstützt verschiedene Dienste, die alle dasselbe grundlegende Format aufweisen. Die ersten vier Ziffern der GUID variieren je nach Dienst, aber alle Bluetooth-GUIDs enden mit **0000-0000-1000-8000-00805F9B34FB**. Der RFCOMM-Dienst weist den Vorspann 0x0003 auf, wodurch sich die vollständige ID **00030000-0000-1000-8000-00805F9B34FB** ergeben würde. Die folgende Tabelle enthält einige allgemeine Bluetooth-Dienste.
 
 | Dienstname                         | GUID                                     |
 |--------------------------------------|------------------------------------------|
-| RFCOMM                               | **00030000-0000-1000-8000-00805-b34fb** |
-| GATT: Warnungsbenachrichtigungsdienst    | **18110000-0000-1000-8000-00805-b34fb** |
-| GATT: E/A für Automatisierung                 | **18150000-0000-1000-8000-00805-b34fb** |
-| GATT: Akkudienst               | **180f 0000-0000-1000-8000-00805, b34fb** |
-| GATT: Blutdruck                | **18100000-0000-1000-8000-00805-b34fb** |
-| GATT: Körperbau              | **181b0000-0000-1000-8000-00805f 9b34fb** |
-| GATT: Verbindungsmanagement               | **181e0000-0000-1000-8000-00805b34fb** |
-| GATT: Fortlaufende Zuckerspiegelüberwachung | **181f 0000-0000-1000-8000-00805f 9b34fb** |
-| GATT: Aktueller Zeitdienst          | **18050000-0000-1000-8000-00805-b34fb** |
-| GATT: Radfahrleistung                 | **18180000-0000-1000-8000-00805-b34fb** |
-| GATT: Radfahrgeschwindigkeit und -frequenz     | **18160000-0000-1000-8000-00805-b34fb** |
-| GATT: Geräteinformationen            | **180a0000-0000-1000-8000-00805b34fb** |
-| GATT: Umgebungsabtastung         | **181a0000-0000-1000-8000-00805b34fb** |
-| GATT: Generischer Zugriff                | **18000000-0000-1000-8000-00805-b34fb** |
-| GATT: Generisches Attribut             | **18010000-0000-1000-8000-00805-b34fb** |
-| GATT: Blutzucker                       | **18080000-0000-1000-8000-00805-b34fb** |
-| GATT: Indikator für den Gesundheitszustand            | **18090000-0000-1000-8000-00805-b34fb** |
-| GATT: Herzfrequenz                    | **180d0000-0000-1000-8000-00805, f 9b34fb** |
-| GATT: Menschliches Schnittstellengerät        | **18120000-0000-1000-8000-00805-b34fb** |
-| GATT: Sofortige Warnung               | **18020000-0000-1000-8000-00805-b34fb** |
-| GATT: Positionierung in Gebäuden            | **18210000-0000-1000-8000-00805-b34fb** |
-| GATT: Internetprotokollunterstützung     | **18200000-0000-1000-8000-00805-b34fb** |
-| GATT: Verbindungsausfall                     | **18030000-0000-1000-8000-00805-b34fb** |
-| GATT: Position und Navigation       | **18190000-0000-1000-8000-00805-b34fb** |
-| GATT: Dienst für nächsten Sommerzeitwechsel       | **18070000-0000-1000-8000-00805-b34fb** |
-| GATT: Dienst für Warnstatus des Mobiltelefons    | **180e0000-0000-1000-8000-00805b34fb** |
-| GATT: Pulsoximeter                | **18220000-0000-1000-8000-00805-b34fb** |
-| GATT: Referenzzeit-Aktualisierungsdienst | **18060000-0000-1000-8000-00805-b34fb** |
-| GATT: Laufgeschwindigkeit und -frequenz     | **18140000-0000-1000-8000-00805-b34fb** |
-| GATT: Abtastparameter               | **18130000-0000-1000-8000-00805-b34fb** |
-| GATT: Tx-Leistung                      | **18040000-0000-1000-8000-00805-b34fb** |
-| GATT: Benutzerdaten                     | **181c0000-0000-1000-8000-00805, f 9b34fb** |
-| GATT: Gewichtsskala                  | **181d0000-0000-1000-8000-00805, f 9b34fb** |
+| RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
+| GATT: Warnungsbenachrichtigungsdienst    | **18110000-0000-1000-8000-00805F9B34FB** |
+| GATT: E/A für Automatisierung                 | **18150000-0000-1000-8000-00805F9B34FB** |
+| GATT: Akkudienst               | **180F0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Blutdruck                | **18100000-0000-1000-8000-00805F9B34FB** |
+| GATT: Körperbau              | **181B0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Verbindungsmanagement               | **181E0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Fortlaufende Zuckerspiegelüberwachung | **181F0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Aktueller Zeitdienst          | **18050000-0000-1000-8000-00805F9B34FB** |
+| GATT: Radfahrleistung                 | **18180000-0000-1000-8000-00805F9B34FB** |
+| GATT: Radfahrgeschwindigkeit und -frequenz     | **18160000-0000-1000-8000-00805F9B34FB** |
+| GATT: Geräteinformationen            | **180A0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Umgebungsabtastung         | **181A0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Generischer Zugriff                | **18000000-0000-1000-8000-00805F9B34FB** |
+| GATT: Generisches Attribut             | **18010000-0000-1000-8000-00805F9B34FB** |
+| GATT: Blutzucker                       | **18080000-0000-1000-8000-00805F9B34FB** |
+| GATT: Indikator für den Gesundheitszustand            | **18090000-0000-1000-8000-00805F9B34FB** |
+| GATT: Herzfrequenz                    | **180D0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Menschliches Schnittstellengerät        | **18120000-0000-1000-8000-00805F9B34FB** |
+| GATT: Sofortige Warnung               | **18020000-0000-1000-8000-00805F9B34FB** |
+| GATT: Positionierung in Gebäuden            | **18210000-0000-1000-8000-00805F9B34FB** |
+| GATT: Internetprotokollunterstützung     | **18200000-0000-1000-8000-00805F9B34FB** |
+| GATT: Verbindungsausfall                     | **18030000-0000-1000-8000-00805F9B34FB** |
+| GATT: Position und Navigation       | **18190000-0000-1000-8000-00805F9B34FB** |
+| GATT: Dienst für nächsten Sommerzeitwechsel       | **18070000-0000-1000-8000-00805F9B34FB** |
+| GATT: Dienst für Warnstatus des Mobiltelefons    | **180E0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Pulsoximeter                | **18220000-0000-1000-8000-00805F9B34FB** |
+| GATT: Referenzzeit-Aktualisierungsdienst | **18060000-0000-1000-8000-00805F9B34FB** |
+| GATT: Laufgeschwindigkeit und -frequenz     | **18140000-0000-1000-8000-00805F9B34FB** |
+| GATT: Abtastparameter               | **18130000-0000-1000-8000-00805F9B34FB** |
+| GATT: Tx-Leistung                      | **18040000-0000-1000-8000-00805F9B34FB** |
+| GATT: Benutzerdaten                     | **181C0000-0000-1000-8000-00805F9B34FB** |
+| GATT: Gewichtsskala                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
  
 
-Eine vollständige Liste der verfügbaren Bluetooth-Dienste finden Sie [hier](https://go.microsoft.com/fwlink/p/?LinkID=619586) und [hier](https://go.microsoft.com/fwlink/p/?LinkID=619587) auf den Bluetooth-Protokoll- und -Dienstseiten. Sie können auch die [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids)-API verwenden, um einige allgemeine GATT-Dienste abzurufen.
+Eine vollständige Liste der verfügbaren Bluetooth-Dienste finden Sie [hier](https://www.bluetooth.org/en-us/specification/assigned-numbers/service-discovery) und [hier](https://go.microsoft.com/fwlink/p/?LinkID=619587) auf den Bluetooth-Protokoll- und -Dienstseiten. Sie können auch die [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids)-API verwenden, um einige allgemeine GATT-Dienste abzurufen.
 
 ## <a name="custom-bluetooth-le-services"></a>Benutzerdefinierte Bluetooth LE-Dienste
 
@@ -82,13 +82,13 @@ Benutzerdefinierte Profile werden mit ihren eigenen definierten GUIDs definiert.
 
 ## <a name="upnp-services"></a>UPnP-Dienste
 
-UPnP-Dienste verwenden die folgende Protokollkennung: {0e261de4-12f0-46e6-91ba-428607ccef64}
+UPnP-Dienste verwenden den folgenden Protokoll Bezeichner: {0e2614-12s0-46e6-91ba-428607ccef64}
 
 In der Regel wird der Name aller UPnP-Dienste mithilfe des in RFC 4122 definierten Algorithmus mit einem Hash in eine GUID verwandelt. In der folgenden Tabelle sind einige in Windows definierte allgemeine UPnP-Dienste aufgeführt.
 
 | Dienstname                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| Verbindungs-Manager                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| Ziel-Editor für Dimensionsverarbeitung                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | AV-Transport                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | Renderingkontrolle                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | Ebene-3-Weiterleitung                 | **97d477fa-o403-577b-a714-b29a9007797f**  |
@@ -105,7 +105,7 @@ In der Regel wird der Name aller UPnP-Dienste mithilfe des in RFC 4122 definiert
 
 ## <a name="wsd-services"></a>WSD-Dienste
 
-WSD-Dienste verwenden die folgende Protokollkennung: {782232aa-a2f9-4993-971b-aedc551346b0}
+Die WSD-Dienste verwenden den folgenden Protokoll Bezeichner: {782232aa-a2s9-4993-971b-aedc551346b0}
 
 In der Regel wird der Name aller WSD-Dienste mithilfe des in RFC 4122 definierten Algorithmus mit einem Hash in eine GUID verwandelt. In der folgenden Tabelle sind einige in Windows definierte allgemeine WSD-Dienste aufgeführt.
 

@@ -13,16 +13,16 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209996"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970725"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Entwerfen für Xbox und Fernsehgeräte
 
-Entwerfen Sie Ihre App für die Universelle Windows-Plattform (UWP) so, dass sie auf Xbox One- und Fernsehbildschirmen gut aussieht und optimal funktioniert.
+Entwerfen Sie Ihre Windows-App-APP so, dass Sie gut aussieht und auf Xbox One-und TV-Bildschirmen gut funktioniert.
 
 Unter [Gamepad-und Remote Steuerungs Interaktionen](../input/gamepad-and-remote-interactions.md) finden Sie Anleitungen zur Interaktion bei UWP-Anwendungen mit der *10-Fuß-* Erfahrung.
 
@@ -66,22 +66,22 @@ Der große Bildschirm bietet äußerst faszinierende Erfahrungen, ähnlich wie e
 
 Da Sie nun mit den Grundsätzen eines guten UWP-App-Designs für die 10-Fuß-Erfahrung vertraut sind, lesen Sie die folgenden Übersicht über die verschiedenen Arten, wie Sie Ihre App optimieren und eine hervorragende Benutzerumgebung bereitstellen können.
 
-| Feature        | Beschreibung           |
+| Funktion        | BESCHREIBUNG           |
 | -------------------------------------------------------------- |--------------------------------|
-| [Größe des Benutzeroberflächen Elements](#ui-element-sizing)  | Die Universelle Windows-Plattform verwendet [Skalierung und effektive Pixel](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), um die Benutzeroberfläche gemäß dem Anzeigeabstand zu skalieren. Wenn Sie verstehen, wie Sie Größen anpassen und auf Ihre Benutzeroberfläche anwenden, hilft Ihnen dies, Ihre App für die 10-Fuß-Umgebung zu optimieren.  |
-|  [TV-sicherer Bereich](#tv-safe-area) | Die UWP vermeidet automatisch und standardmäßig die Anzeige von Benutzeroberflächenelementen in nicht fernsehsicheren Bereichen (nahe dem Bildschirmrand). Dies führt jedoch zu einem „Schachteleffekt“, so dass die Benutzeroberfläche einem Briefkastenschlitz ähnelt. Damit Ihre App auf Fernsehgeräten wirklich immersiv ist, müssen Sie diese so anpassen, dass sie sich auf Fernsehgeräten, die dies unterstützen, bis zu den Rändern erweitert wird. |
-| [Ellen](#colors)  |  Die UWP unterstützt Farbdesigns. Daher wird eine App, die das Systemdesign berücksichtigt, auf Xbox One standardmäßig auf **dark** festgelegt. Wenn Ihre App ein bestimmtes Farbdesign verwendet, sollten Sie daran denken, dass sich einige Farben nicht gut für Fernsehbildschirme eignen und daher vermieden werden sollten. |
+| [Anpassen von Benutzeroberflächenelementen](#ui-element-sizing)  | Die Universelle Windows-Plattform verwendet [Skalierung und effektive Pixel](../basics/design-and-ui-intro.md#effective-pixels-and-scaling), um die Benutzeroberfläche gemäß dem Anzeigeabstand zu skalieren. Wenn Sie verstehen, wie Sie Größen anpassen und auf Ihre Benutzeroberfläche anwenden, hilft Ihnen dies, Ihre App für die 10-Fuß-Umgebung zu optimieren.  |
+|  [Fernsehsicherer Bereich](#tv-safe-area) | Die UWP vermeidet automatisch und standardmäßig die Anzeige von Benutzeroberflächenelementen in nicht fernsehsicheren Bereichen (nahe dem Bildschirmrand). Dies führt jedoch zu einem „Schachteleffekt“, so dass die Benutzeroberfläche einem Briefkastenschlitz ähnelt. Damit Ihre App auf Fernsehgeräten wirklich immersiv ist, müssen Sie diese so anpassen, dass sie sich auf Fernsehgeräten, die dies unterstützen, bis zu den Rändern erweitert wird. |
+| [Farben](#colors)  |  Die UWP unterstützt Farbdesigns. Daher wird eine App, die das Systemdesign berücksichtigt, auf Xbox One standardmäßig auf **dark** festgelegt. Wenn Ihre App ein bestimmtes Farbdesign verwendet, sollten Sie daran denken, dass sich einige Farben nicht gut für Fernsehbildschirme eignen und daher vermieden werden sollten. |
 | [Sound](../style/sound.md)    | Sounds spielen bei der 10 Fuß-Erfahrung eine wichtige Rolle. Sie helfen den Benutzern sich zu vertiefen und liefern Feedback. Die UWP bietet Funktionen, mit denen Sounds für allgemeine Steuerelemente automatisch aktiviert werden, wenn die App auf Xbox One ausgeführt wird. Erfahren Sie mehr über die in der Universellen Windows-Plattform integrierte Unterstützung von Sound, und erfahren Sie, wie Sie davon profitieren.    |
-| [Richtlinien für UI-Steuerelemente](#guidelines-for-ui-controls)  |  Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten gut funktionieren. Wenn diese jedoch auf Fernsehgeräten verwendet werden, müssen bestimmte Aspekte berücksichtigt werden. Informieren Sie sich über einige bewährte Methoden für die Verwendung dieser Steuerelemente beim Entwerfen für die 10 Fuß-Erfahrung. |
-| [Benutzerdefinierter visueller Status-Auslösung für Xbox](#custom-visual-state-trigger-for-xbox) | Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, einen benutzerdefinierten *visuellen Zustandsauslöser* zu verwenden, um das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. |
+| [Richtlinien für Benutzeroberflächensteuerelemente](#guidelines-for-ui-controls)  |  Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten gut funktionieren. Wenn diese jedoch auf Fernsehgeräten verwendet werden, müssen bestimmte Aspekte berücksichtigt werden. Informieren Sie sich über einige bewährte Methoden für die Verwendung dieser Steuerelemente beim Entwerfen für die 10 Fuß-Erfahrung. |
+| [Benutzerdefinierter visueller Zustandsauslöser für Xbox](#custom-visual-state-trigger-for-xbox) | Um Ihre UWP-App an die 10-Fuß-Erfahrung anzupassen, empfehlen wir Ihnen, einen benutzerdefinierten *visuellen Zustandsauslöser* zu verwenden, um das Layout zu ändern, wenn die App erkennt, dass sie auf einer Xbox-Konsole gestartet wurde. |
 
 Zusätzlich zu den vorangehenden Entwurfs-und layoutüberlegungen gibt es eine Reihe von Optimierungs Optimierungen für [Gamepad und Remote Steuerung](../input/gamepad-and-remote-interactions.md) , die Sie beim Erstellen Ihrer APP berücksichtigen sollten.
 
-| Feature        | Beschreibung           |
+| Funktion        | BESCHREIBUNG           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY-Fokus Navigation und-Interaktion](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | Die **XY-Fokus Navigation** ermöglicht dem Benutzer, um die Benutzeroberfläche Ihrer APP zu navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
+| [XY-Fokusnavigation und -interaktion](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | Die **XY-Fokus Navigation** ermöglicht dem Benutzer, um die Benutzeroberfläche Ihrer APP zu navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
 | [Mausmodus](../input/gamepad-and-remote-interactions.md#mouse-mode)|Die XY-Fokus Navigation ist für einige Arten von Anwendungen, z. b. Karten oder das Zeichnen und Zeichnen von apps, nicht praktikabel oder sogar möglich. In diesen Fällen ermöglicht der **Maus Modus** Benutzern, mit einem Gamepad oder einer Remote Steuerung wie der Maus auf einem PC frei zu navigieren.|
-| [Fokus Visualisierung](../input/gamepad-and-remote-interactions.md#focus-visual)  | Das visuelle Fokus Element ist ein Rahmen, der das aktuell fokussierte Benutzeroberflächen Element hervorhebt. Dadurch kann der Benutzer schnell die Benutzeroberfläche identifizieren, durch die Sie navigieren oder mit der Sie interagieren.  |
+| [Fokusanzeige](../input/gamepad-and-remote-interactions.md#focus-visual)  | Das visuelle Fokus Element ist ein Rahmen, der das aktuell fokussierte Benutzeroberflächen Element hervorhebt. Dadurch kann der Benutzer schnell die Benutzeroberfläche identifizieren, durch die Sie navigieren oder mit der Sie interagieren.  |
 | [Fokus Einbindung](../input/gamepad-and-remote-interactions.md#focus-engagement) | Der Fokus Engagement erfordert, dass der Benutzer die **A/Select-** Schaltfläche in einem Gamepad oder der Remote Steuerung drückt, wenn ein Benutzeroberflächen Element den Fokus besitzt, um damit zu interagieren. |
 | [Hardwaretasten](../input/gamepad-and-remote-interactions.md#hardware-buttons) | Das Gamepad und die Remote Steuerung bieten sehr unterschiedliche Schaltflächen und Konfigurationen. |
 
@@ -163,14 +163,14 @@ Der nicht fernsehsichere Bereich wird in der folgenden Abbildung durch den blaue
 
 Sie können für den Hintergrund eine statische Farbe, eine Designfarbe oder ein Bild verwenden, wie in den folgenden Codeausschnitten gezeigt.
 
-### <a name="theme-color"></a>Farbdesign
+### <a name="theme-color"></a>Designfarbe
 
 ```xml
 <Page x:Class="Sample.MainPage"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>Bild
+### <a name="image"></a>Image
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -333,7 +333,7 @@ Sie platzieren den zuvor angezeigten Codeausschnitt entweder in die Seitenressou
 > [!NOTE]
 > Dieser Codeausschnitt gilt speziell für `ListView`-Elemente. Legen Sie bei einem `GridView`-Stil das [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)-Attribut für [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) und [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) auf `GridView` fest.
 
-Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können es in [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit das **ListView** -/**GridView** es vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
+Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können Sie in [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit die **ListView**/-**GridView** Sie vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -383,7 +383,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 ## <a name="colors"></a>Farben
 
-Standardmäßig skaliert die Universelle Windows-Plattform die Farben Ihrer Anwendung auf den TV-sicheren Bereich (siehe [TV-sichere Farben](#tv-safe-colors) für weitere Informationen), so dass Ihre App auf jedem Fernseher gut aussieht. Zusätzlich gibt es jedoch Verbesserungen, die für den Satz der von Ihrer App verwendeten Farben durchführen können, um die visuelle Erfahrung auf Fernsehgeräten zu verbessern.
+Standardmäßig skaliert das universelle Windows-Plattform die Farben Ihrer APP auf den TV-sicheren Bereich. (Weitere Informationen finden Sie unter [TV-sichere Farben](#tv-safe-colors) ), sodass Ihre APP in jedem Fernsehgerät gut aussieht. Außerdem gibt es Verbesserungen, die Sie an der Gruppe von Farben vornehmen können, die Ihre APP verwendet, um die visuelle Darstellung im Fernsehen zu verbessern.
 
 ### <a name="application-theme"></a>Anwendungsdesign
 
@@ -403,7 +403,7 @@ Solange Ihre App diese Akzentfarben über Pinsel oder Farbressourcen aufruft, wi
 
 Beachten Sie auch, dass der Benutzerfarbensatz auf Xbox One nicht identisch mit dem Benutzerfarbensatz auf PCs, Smartphones und anderen Geräten ist.
 
-Solange Ihre App eine Pinselressource wie **SystemControlForegroundAccentBrush** oder eine Farbressource (**SystemAccentColor**) verwendet oder stattdessen Akzentfarben direkt über die [UIColorType.Accent*](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType)-API aufruft, werden diese Farben durch Akzentfarben ersetzt, die für Xbox One geeignet sind. Pinselfarben mit hohem Kontrast werden wie im Fall von PCs und Telefonen aus dem System abgerufen.
+Solange Ihre APP eine Pinsel Ressource wie z. b. **systemcontrolforegroundaccentbrush**oder eine Color-Ressource (**systemaccentcolor**) verwendet oder stattdessen Akzentfarben direkt über die [uicolortype. Akzent *](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) -API aufruft, werden diese Farben durch die auf Xbox One verfügbaren Akzentfarben ersetzt. Pinsel Farben mit hohem Kontrast werden ebenfalls auf der gleichen Weise wie auf einem PC und Telefon vom System abgerufen.
 
 Weitere Informationen zu Akzentfarben im Allgemeinen finden Sie unter [Akzentfarbe](../style/color.md#accent-color).
 
@@ -413,16 +413,16 @@ Beachten Sie bei der Entwicklung von Apps für Fernsehgeräte, dass Farben sehr 
 
 ### <a name="tv-safe-colors"></a>Fernsehsichere Farben
 
-Die RGB-Werte einer Farbe stellen die Intensität für Rot, Grün und Blau dar. Fernseher kommen mit extremen Intensitäten nicht sehr gut zurecht. Sie können einen seltsamen Bandeffekt erzeugen oder auf bestimmten Fernsehern verwaschen erscheinen. Darüber hinaus verursachen Farben mit hoher Intensität möglicherweise ein „Blooming“, d. h., Pixel in der Nähe beginnen, die gleichen Farben aufzurufen. Die Ansichten darüber, was als fernsehsichere Farben gelten kann, gehen zwar auseinander. Im Allgemeinen können Farben mit RGB-Werten zwischen 16 und 235 (oder 10-EB hexadezimal) jedoch sicher für Fernsehgeräte verwendet werden.
+Die RGB-Werte einer Farbe stellen die Intensität für Rot, Grün und Blau dar. Die Fernsehgeräte behandeln keine extrem Intensitäten&mdash;sehr gut, Sie können zu einem ungeraden geblenden Effekt führen oder auf bestimmten Fernsehgeräten ausgewaschen angezeigt werden. Darüber hinaus verursachen Farben mit hoher Intensität möglicherweise ein „Blooming“, d. h., Pixel in der Nähe beginnen, die gleichen Farben aufzurufen. Die Ansichten darüber, was als fernsehsichere Farben gelten kann, gehen zwar auseinander. Im Allgemeinen können Farben mit RGB-Werten zwischen 16 und 235 (oder 10-EB hexadezimal) jedoch sicher für Fernsehgeräte verwendet werden.
 
 ![Fernsehsicherer Farbbereich](images/designing-for-tv/tv-safe-colors-2.png)
 
-In der Vergangenheit mussten Apps auf der Xbox ihre Farben so anpassen, dass sie in diesen „TV-sicheren” Farbbereich fallen. Ab dem Fall Creators Update skaliert Xbox One jedoch automatisch alle Inhalte in den TV-sicheren Bereich. Das bedeutet, dass sich die meisten App-Entwickler nicht mehr um TV-sichere Farben kümmern müssen.
+In der Vergangenheit mussten apps auf der Xbox Ihre Farben so anpassen, dass Sie in diesen "TV-Safe"-Farbbereich fallen. ab dem Fall Creators Update skaliert Xbox One den vollständigen Inhalts Bereich jedoch automatisch in den Bereich TV-sicher. Dies bedeutet, dass sich die meisten App-Entwickler nicht mehr um TV-sichere Farben kümmern müssen.
 
 > [!IMPORTANT]
-> Videoinhalte, die sich bereits im TV-sicheren Farbbereich befinden, haben diesen Farbskalierungseffekt bei der Wiedergabe mit [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) nicht.
+> Bei Video Inhalten, die sich bereits im TV-sicheren Farbbereich befinden, wird dieser Farb Skalierungs Effekt bei der Wiedergabe mit [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)nicht angewendet.
 
-Wenn Sie eine App mit DirectX 11 oder DirectX 12 entwickeln und eine eigene Swap-Kette zum Rendern von UI- oder Video-Inhalten erstellen, können Sie den verwendeten Farbraum angeben, indem Sie [IDXGISwapChain3::SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1) aufrufen.
+Wenn Sie eine APP unter Verwendung von DirectX 11 oder DirectX 12 entwickeln und eine eigene SwapChain zum Rendering der Benutzeroberfläche oder des Videos erstellen, können Sie den von Ihnen verwendeten Farbraum angeben, indem Sie [IDXGISwapChain3:: SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1)aufrufen. Dadurch wird dem System mitgeteilt, ob Farben skaliert werden müssen.
 
 ## <a name="guidelines-for-ui-controls"></a>Richtlinien für Benutzeroberflächensteuerelemente
 
@@ -436,11 +436,11 @@ Ein [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) e
 
 Sie können die [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty)-Eigenschaft auf `true` festlegen, damit Pivots stets die gleiche Position haben und die Kopfzeile des ausgewählten Pivots nicht stets an die erste Position verschoben wird. Dies ist besser für große Geräte mit großen Bildschirmanzeigen wie Fernsehgeräte geeignet, da Kopfzeilenumbrüche Benutzer stark ablenken können. Wenn nicht alle Pivotkopfzeilen gleichzeitig auf den Bildschirm passen, wird eine Bildlaufleiste angezeigt, damit Kunden die restlichen Kopfzeilen sehen. Sie sollten jedoch sicherstellen, dass alle Kopfzeilen auf den Bildschirm passen, um eine optimale Erfahrung bereitzustellen. Weitere Informationen finden Sie unter [Registerkarten und Pivots](/windows/uwp/design/controls-and-patterns/pivot).
 
-### <a name="navigation-pane-a-namenavigation-pane-"></a>Navigationsbereich <a name="navigation-pane" />
+### <a name="navigation-pane"></a>Navigationsbereich<a name="navigation-pane" />
 
 Ein Navigationsbereich (auch *Hamburger-Menü* genannt) ist ein Navigationssteuerelement, das häufig in UWP-Apps verwendet wird. In der Regel handelt es sich um einen Bereich mit mehreren Optionen im Stil eine Liste, mit denen die Benutzer zu anderen Seiten wechseln können. Im Allgemeinen ist dieser Bereich zu Beginn reduziert, um Platz zu sparen. Der Benutzer kann ihn durch Klicken auf eine Schaltfläche öffnen.
 
-Während Nav-Bereiche leicht über die Maus- und Touch-Bedienung genutzt werden können, ist die Bedienung über Gamepads/Fernbedienungen weniger praktisch. Der Benutzer muss hier immer erst zu einer Schaltfläche navigieren, um den jeweiligen Bereich zu öffnen. Aus diesem Grund empfiehlt es sich, den Navigationsbereich über die **Ansicht**-Schaltfläche zu öffnen und dem Benutzer das Öffnen über das Navigieren zum linken Rand der Seite zu ermöglichen. Ein Codebeispiel zum Implementieren dieses Entwurfsmusters finden Sie im Dokument [Programmgesteuerte Fokusnavigation](../input/focus-navigation-programmatic.md#split-view-code-sample). So steht dem Benutzer ein sehr einfacher Zugriff auf die Inhalte des Bereichs zur Verfügung. Weitere Informationen zum Verhalten von Navigationsbereichen auf unterschiedlichen Bildschirmgrößen sowie zu bewährten Vorgehensweisen für die Navigation mit Gamepads/Fernbedienungen finden Sie unter [Navigationsbereiche](../controls-and-patterns/navigationview.md).
+Während Nav-Bereiche leicht über die Maus- und Touch-Bedienung genutzt werden können, ist die Bedienung über Gamepads/Fernbedienungen weniger praktisch. Der Benutzer muss hier immer erst zu einer Schaltfläche navigieren, um den jeweiligen Bereich zu öffnen. Aus diesem Grund empfiehlt es sich, den Navigationsbereich über die **Ansicht**-Schaltfläche zu öffnen und dem Benutzer das Öffnen über das Navigieren zum linken Rand der Seite zu ermöglichen. Ein Code Beispiel zum Implementieren dieses Entwurfs Musters finden Sie Unterprogramm gesteuertes [Fokus Navigations](../input/focus-navigation-programmatic.md#split-view-code-sample) Dokument. So steht dem Benutzer ein sehr einfacher Zugriff auf die Inhalte des Bereichs zur Verfügung. Weitere Informationen zum Verhalten von Navigationsbereichen auf unterschiedlichen Bildschirmgrößen sowie zu bewährten Vorgehensweisen für die Navigation mit Gamepads/Fernbedienungen finden Sie unter [Navigationsbereiche](../controls-and-patterns/navigationview.md).
 
 ### <a name="commandbar-labels"></a>CommandBar-Beschriftungen
 
@@ -450,7 +450,7 @@ Es empfiehlt sich, die Beschriftungen rechts neben den Symbolen auf einer [Comma
 
 Durch das Festlegen dieser Eigenschaft werden die Beschriftungen immer angezeigt. Dies ist bei einer 10-Fuß-Erfahrung vorteilhaft, denn es minimiert die Anzahl der durch den Benutzer erforderlichen Klicks. Auch für andere Gerätetypen ist dies ein hervorragendes Konzept.
 
-### <a name="tooltip"></a>Tooltip
+### <a name="tooltip"></a>QuickInfo
 
 Das Steuerelement [QuickInfo](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) wurde eingeführt, um zusätzliche Informationen in der Benutzeroberfläche anzeigen zu können, wenn der Benutzer mit der Maus auf ein Element zeigt oder mit dem Finger auf ein Element tippt und den Finger darauf hält. Für Gamepad und Remote wird `Tooltip` kurz nachdem das Element den Fokus erhält angezeigt, bleibt für einen kurzen Zeitraum auf dem Bildschirm und verschwindet dann. Dieses Verhalten könnte ablenkend wirken, wenn zu viele `Tooltip`-Elemente verwendet werden. Versuchen Sie, `Tooltip`-Elemente bei Entwürfen für Fernsehgeräte zu vermeiden.
 
@@ -462,13 +462,13 @@ Zwar funktionieren die Standard-UWP-Schaltflächen sehr gut auf TV-Bildschirmen,
 
 Eine geschachtelte Benutzeroberfläche (User Interface, UI) verfügt über geschachtelte Elemente mit ausführbaren Aktionen, die in einem Container eingeschlossen sind, sodass sowohl die geschachtelten Elemente als auch die Container unabhängig voneinander den Fokus erhalten können.
 
-Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung ist das Platzieren von eingefügten Benutzeroberflächen Elementen in einer `ContextFlyout`.
+Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung besteht darin, die in einer `ContextFlyout`eingefügten Benutzeroberflächen Elemente zu platzieren.
 
 Weitere Informationen zur geschachtelten UI finden Sie unter [Geschachtelte UI bei Listenelementen](../controls-and-patterns/nested-ui.md).
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-Das [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig*. Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der `IsCompact="False"`TransportControls`MediaTransportControls`-Eigenschaft von [ für das ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Element Folgendes fest: `MediaPlayerElement`.
+Das [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig*. Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der [TransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Eigenschaft von `MediaPlayerElement` für das `MediaTransportControls`-Element Folgendes fest: `IsCompact="False"`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -484,7 +484,7 @@ Weitere Informationen zum Hinzufügen von Medien zu Ihrer App finden Sie unter [
 
 > ![HINWEIS:] `MediaPlayerElement` steht erst ab der Windows 10-Version 1607 zur Verfügung. Bei Apps für niedrigere Windows 10-Versionen muss stattdessen [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Die hier angegebenen Empfehlungen gelten auch für `MediaElement`, und der Zugriff auf die `TransportControls`-Eigenschaft erfolgt auf die gleiche Weise.
 
-### <a name="search-experience"></a>Suchvorgang
+### <a name="search-experience"></a>Suchoberfläche
 
 Die Suche nach Inhalten ist eine der am häufigsten ausgeführten Funktionen in der 10-Fuß-Erfahrung. Wenn Ihre App eine Suchfunktion zur Verfügung stellt, sollte der Benutzer auf diese schnell über die **Y**-Taste auf dem Gamepad zugreifen können.
 
@@ -566,6 +566,6 @@ Beim Entwerfen für die 10 Fuß-Erfahrung müssen einige besondere Punkte berüc
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Geräte Einführung für universelle Windows-Plattform-Apps (UWP)](index.md)
+- [Geräte Einführung für Windows-app-apps](index.md)
 - [Interaktionen mit Gamepad und Fernbedienung](../input/gamepad-and-remote-interactions.md)
-- [Sound in UWP-apps](../style/sound.md)
+- [Sound in UWP-Apps](../style/sound.md)

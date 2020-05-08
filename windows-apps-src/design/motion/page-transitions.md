@@ -1,25 +1,25 @@
 ---
-Description: Erfahren Sie, wie Seitenübergänge in Ihren UWP-apps verwenden.
-title: Seitenübergänge in UWP-Apps
+Description: Erfahren Sie, wie Sie Seiten Übergänge in Ihren Windows-Apps verwenden.
+title: Seitenübergänge
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9b3244c24ff4fa8e3c85ee9970536b1b35d8efd5
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 6239d8409767cab06d4d2c8c9c3abb9d743ca1c9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444192"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970515"
 ---
 # <a name="page-transitions"></a>Seitenübergänge
 
-Seitenübergänge sind Animationen, die abgespielt werden, wenn Benutzer zwischen Seiten in einer App navigieren und Feedback als Beziehung zwischen Seiten liefern. Seitenübergänge zeigen dem Benutzer, ob er an der Spitze einer Navigationshierarchie steht, zwischen Geschwisterseiten wechselt oder tiefer in die Seitenhierarchie navigiert.
+Seiten Übergänge Navigieren durch Benutzer zwischen Seiten in einer APP und geben Feedback als Beziehung zwischen den Seiten an. Mithilfe von Seiten Übergängen können Benutzer verstehen, ob Sie sich am Anfang einer Navigations Hierarchie befinden, sich zwischen gleich geordneten Seiten bewegen oder tiefer in die Seiten Hierarchie navigieren.
 
-Für die Navigation zwischen Seiten in einer App stehen zwei verschiedene Animationen zur Verfügung: *Seitenaktualisierung* und *Drill*. Sie werden durch Unterklassen von [**NavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo) dargestellt.
+Zwei verschiedene Animationen werden für die Navigation zwischen Seiten in einer APP, *Seiten Aktualisierung* und Drilldown bereit *gestellt und durch*Unterklassen von [**navigationtransitioninfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo)dargestellt.
 
 ## <a name="examples"></a>Beispiele
 
@@ -28,7 +28,7 @@ Für die Navigation zwischen Seiten in einer App stehen zwei verschiedene Animat
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/PageTransition">öffnen Sie die app und Seitenübergänge in Aktion</a>.</p>
+    <p>Wenn Sie die Katalog-App für <strong style="font-weight: semi-bold">XAML</strong> -Steuerelemente installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/PageTransition">die APP zu öffnen und die Seiten Übergänge in Aktion zu sehen</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -37,15 +37,15 @@ Für die Navigation zwischen Seiten in einer App stehen zwei verschiedene Animat
 </tr>
 </table>
 
-## <a name="page-refresh"></a>Seite aktualisieren
+## <a name="page-refresh"></a>Seitenaktualisierung
 
-Die Seitenaktualisierung ist eine Kombination aus einer Folie Animation und eine Überblendung in die Animation für den eingehenden Inhalt. Verwenden Sie die Seitenaktualisierung, wenn der Benutzer an den Anfang eines Navigationsstapels gebracht wird, z. B. beim Navigieren zwischen Registerkarten oder Navigationselementen auf der linken Navigationsleiste.
+Bei der Seiten Aktualisierung handelt es sich um eine Kombination aus einer Bild-auf-Animation und eine einblenden Animation für den eingehenden Inhalt Verwenden Sie die Seiten Aktualisierung, wenn der Benutzer an den Anfang eines Navigations Stapels geht, z. b. durch Navigieren zwischen Registerkarten oder linken Navigationselementen.
 
-Der gewünschte Effekt ist ein Neubeginn für den Benutzer.
+Das gewünschte Gefühl ist, dass der Benutzer schon einmal begonnen hat.
 
-![Seitenaktualisierungsanimation](images/page-refresh.gif)
+![Animation zur Seiten Aktualisierung](images/page-refresh.gif)
 
-Die Seitenaktualisierungsanimation wird durch die Klasse [**EntranceNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo) dargestellt.
+Die Animation zur Seiten Aktualisierung wird durch die [**Klasse "entrancenavigationtransitioninfoclass**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo)" dargestellt.
 
 ```csharp
 // Explicitly play the page refresh animation
@@ -53,17 +53,17 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**Hinweis**: Ein [ **Frame** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) verwendet automatisch die [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) Navigation zwischen zwei Seiten animiert. Standardmäßig ist die Animation eine Seitenaktualisierung.
+**Hinweis**: ein [**Frame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) verwendet automatisch [**navigationdermetransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) , um die Navigation zwischen zwei Seiten zu animieren. Die Animation ist standardmäßig eine Seiten Aktualisierung.
 
 ## <a name="drill"></a>Drill
 
-Verwenden Sie Drill, wenn Benutzer tiefer in eine Anwendung navigieren, z. B. um nach der Auswahl eines Elements weitere Informationen anzuzeigen.
+Verwenden Sie Drill, wenn Benutzer in einer APP tiefer navigieren, z. b. nach dem Auswählen eines Elements Weitere Informationen anzeigen.
 
-Der gewünschte Effekt ist, dass der Benutzer tiefer in die App vorgedrungen ist.
+Das gewünschte Gefühl besteht darin, dass der Benutzer die APP weiter vertieft hat.
 
-![Drill-Animation](images/drill.gif)
+![Drill Animation](images/drill.gif)
 
-Die Drill-Animation wird durch die Klasse [**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) dargestellt.
+Die Drill Animation wird durch die [**drillinnavigationtransitioninfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) -Klasse dargestellt.
 
 ```csharp
 // Play the drill in animation
@@ -72,9 +72,9 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>Horizontale Folie
 
-Verwenden Sie horizontale Folie, um anzuzeigen, dass gleichgeordneten Seiten nebeneinander angezeigt werden. Die [NavigationView](../controls-and-patterns/navigationview.md) Steuerelement wird automatisch diese Animation für Top Nav verwendet, aber wenn Sie Ihren eigenen horizontale Navigationserlebnis erstellen, dann können Sie implementieren horizontale Folie mit SlideNavigationTransitionInfo.
+Verwenden Sie die horizontale Folie, um anzuzeigen, dass neben geordnete Seiten nebeneinander angezeigt werden. Das [navigationview](../controls-and-patterns/navigationview.md) -Steuerelement verwendet diese Animation automatisch für den oberen Navigationsbereich. Wenn Sie jedoch eine eigene horizontale Navigation entwickeln, können Sie eine horizontale Folie mit slidenavigationtransitioninfo implementieren.
 
-Die gewünschte Gefühl ist, dass der Benutzer Navigieren zwischen Seiten, die nebeneinander befinden. 
+Das gewünschte Gefühl ist, dass der Benutzer zwischen Seiten navigiert, die sich nebeneinander befinden. 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -84,24 +84,24 @@ myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { 
 myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft } );
 ```
 
-## <a name="suppress"></a>Unterdrückung
+## <a name="suppress"></a>Suppress
 
-Um die Wiedergabe von Animationen während der Navigation zu vermeiden, verwenden Sie [**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) anstelle anderer **NavigationTransitionInfo**-Subtypen.
+Um die Wiedergabe von Animationen während der Navigation zu vermeiden, verwenden Sie [**suppressnavigationtransitioninfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) anstelle anderer **navigationtransitioninfo** -Untertypen.
 
 ```csharp
 // Suppress the default animation
 myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 ```
 
-Das Unterdrücken der Animation ist hilfreich, wenn Sie Ihre eigenen Übergang mit [verbundenen Animationen](connected-animation.md) erstellen oder das implizite Einblenden/Ausblenden von Animationen nutzen.
+Das Unterdrücken der Animation ist hilfreich, wenn Sie mit [verbundenen Animationen](connected-animation.md) oder impliziten Show/Hide-Animationen einen eigenen Übergang erstellen.
 
 ## <a name="backwards-navigation"></a>Rückwärtsnavigation
 
-Um einen bestimmten Übergang bei der Rückwärtsnavigation darzustellen, verwenden Sie `Frame.GoBack(NavigationTransitionInfo)`.
+Sie können verwenden `Frame.GoBack(NavigationTransitionInfo)` , um einen bestimmten Übergang wiederzugeben, wenn Sie rückwärts navigieren.
 
-Dies kann nützlich sein, wenn Sie das Navigationsverhalten dynamisch an die Bildschirmgröße anpassen – z. B. in einem dynamischen Master/Detail-Szenario.
+Dies kann hilfreich sein, wenn Sie das Navigationsverhalten dynamisch basierend auf der Bildschirmgröße ändern. beispielsweise in einem reaktionsfähigen Master-/Detail-Szenario.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-- [Navigieren Sie zwischen zwei Seiten](../basics/navigate-between-two-pages.md)
-- [Während der Übertragung in UWP-apps](index.md)
+- [Navigieren zwischen zwei Seiten](../basics/navigate-between-two-pages.md)
+- [Bewegung in uwindowswp-apps](index.md)

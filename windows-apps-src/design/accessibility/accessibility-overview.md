@@ -1,23 +1,23 @@
 ---
-Description: Dieser Artikel bietet eine Übersicht über die Konzepte und Technologien in Barrierefreiheitsszenarien für Apps der universellen Windows-Plattform (UWP).
+Description: Dieser Artikel stellt eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheits Szenarien für Windows-apps dar.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Barrierefreiheit im Überblick
 label: Accessibility overview
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 22f614d65728c0f5121cadfdcbfb58a7b817a47d
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 386ea9a5ea9b66b0756963da10f72c3dbed53ff9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521277"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969655"
 ---
 # <a name="accessibility-overview"></a>Barrierefreiheit im Überblick
 
-Dieser Artikel bietet eine Übersicht über die Konzepte und Technologien in Barrierefreiheitsszenarien für Apps der universellen Windows-Plattform (UWP).
+Dieser Artikel stellt eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheits Szenarien für Windows-apps dar.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player]
 
@@ -184,7 +184,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 Weitere Informationen zum Ausweis der Barrierefreiheit und zum Veröffentlichen Ihrer App finden Sie unter [Barrierefreiheit im Store](accessibility-in-the-store.md).
 
 > [!NOTE]
-> Das Deklarieren der App als barrierefrei ist nur für den Microsoft Store relevant.
+> Das Deklarieren der App als verfügbar ist nur für die Microsoft Store relevant.
 
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>
@@ -192,7 +192,7 @@ Weitere Informationen zum Ausweis der Barrierefreiheit und zum Veröffentlichen 
 
 ## <a name="assistive-technology-support-in-custom-controls"></a>Hilfstechnologieunterstützung in benutzerdefinierten Steuerelementen
 
-Beim Erstellen eines benutzerdefinierten Steuerelements empfehlen wir, dass Sie auch eine oder mehrere [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)-Unterklassen implementieren oder erweitern, um Unterstützung für Barrierefreiheit bereitzustellen. In einigen Fällen bietet die Automatisierungsunterstützung für Ihre abgeleitete Klasse eine ausreichende Grundfunktionalität, wenn Sie die gleiche Peerklasse verwenden, die von der Basissteuerungsklasse verwendet wurde. Sie müssen dies jedoch testen. Dennoch wird die Implementierung eines Peers als bewährte Methode empfohlen, damit der Peer den Namen der Klasse Ihrer neuen Steuerelementklasse richtig melden kann. Das Implementieren eines benutzerdefinierten Automatisierungspeers umfasst einige Schritte. Weitere Informationen finden Sie unter [Benutzerdefinierte Automatisierungspeers](custom-automation-peers.md).
+Beim Erstellen eines benutzerdefinierten Steuerelements empfehlen wir, dass Sie auch eine oder mehrere [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)-Unterklassen implementieren oder erweitern, um Unterstützung für Barrierefreiheit bereitzustellen. In einigen Fällen bietet die Automatisierungsunterstützung für Ihre abgeleitete Klasse eine ausreichende Grundfunktionalität, wenn Sie die gleiche Peerklasse verwenden, die von der Basissteuerungsklasse verwendet wurde. Sie müssen dies jedoch testen. Dennoch wird die Implementierung eines Peers als bewährte Methode empfohlen, damit der Peer den Namen der Klasse Ihrer neuen Steuerelementklasse richtig melden kann. Das Implementieren eines benutzerdefinierten Automatisierungspeers umfasst einige Schritte. Weitere Informationen finden Sie unter [benutzerdefinierte Automatisierungs Peers](custom-automation-peers.md).
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -202,10 +202,10 @@ Beim Erstellen eines benutzerdefinierten Steuerelements empfehlen wir, dass Sie 
 
 Auf in einer XAML-Benutzeroberfläche gehostete Microsoft DirectX-Inhalte (mit [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) oder [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) kann standardmäßig nicht direkt zugegriffen werden. Im [Beispiel für SwapChainPanel-Beispiel für DirectX/XAML-Interoperabilität](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) wird veranschaulicht, wie Benutzeroberflächenautomatisierungs-Peers für den gehosteten DirectX-Inhalt erstellt werden. Diese Technik erlaubt den Zugriff auf den gehosteten Inhalt per Benutzeroberflächenautomatisierung.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [**Windows. UI. XAML. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [Entwurf für Barrierefreiheit](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
-* [XAML-Barrierefreiheits Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
-* [Bedienungshilfen](accessibility.md)
+* [Entwerfen für Barrierefreiheit](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [XAML-Beispiel für Barrierefreiheit](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
+* [Barrierefreiheit](accessibility.md)
 * [Einstieg in die Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

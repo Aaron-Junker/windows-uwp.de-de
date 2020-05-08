@@ -1,5 +1,5 @@
 ---
-Description: Gestalten Sie die Benutzerinteraktion mit Ihren Apps für die Universelle Windows-Plattform (UWP) intuitiv und unverwechselbar, und optimieren Sie sie für die Toucheingabe. Dabei sollte die Funktionalität jedoch für alle Eingabegeräte einheitlich sein.
+Description: Erstellen Sie Windows-app-apps mit intuitiver und unterschiedlichen Benutzerinteraktionen, die für Touchpad optimiert sind, aber funktionell auf Eingabegeräten einheitlich sind.
 title: Touchpad-Interaktionen
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,17 +8,17 @@ keywords: Touchpad, PTP, Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 991d85edd9c0a51412d33b48e364974d2095410e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258223"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970235"
 ---
 # <a name="touchpad-design-guidelines"></a>Touchpad-Designrichtlinien
 
 
-Gestalten Sie Ihre App so, dass Benutzer über ein Touchpad mit ihr interagieren können. Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigergeräts (beispielsweise eine Maus). Durch diese Kombination ist das Touchpad sowohl für eine toucheingabeoptimierte Benutzeroberfläche als auch für die kleineren Ziele von Produktivitäts-Apps geeignet.
+Gestalten Sie Ihre App so, dass Benutzer über ein Touchpad mit ihr interagieren können. Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigegeräts (beispielsweise eine Maus). Durch diese Kombination ist das Touchpad sowohl für eine toucheingabeoptimierte Benutzeroberfläche als auch für die kleineren Ziele von Produktivitäts-Apps geeignet.
 
  
 
@@ -29,7 +29,7 @@ Interaktionen per Touchpad erfordern drei Dinge:
 
 -   Ein standardmäßiges Touchpad oder ein Windows-Präzisionstouchpad.
 
-    Präzisionstouchpads sind für UWP-Geräte (Universelle Windows-Plattform) optimiert. Sie ermöglichen es dem System, bestimmte Aspekte der Touchpadverwendung (etwa die Fingerverfolgung und Handflächenerkennung) nativ zu behandeln, um geräteübergreifend eine konsistentere Umgebung zu bieten.
+    Genauigkeits Touchpads sind für Windows-App-Geräte optimiert. Sie ermöglichen es dem System, bestimmte Aspekte der Touchpadverwendung (etwa die Fingerverfolgung und Handflächenerkennung) nativ zu behandeln, um geräteübergreifend eine konsistentere Umgebung zu bieten.
 
 -   Der direkte Kontakt einzelner oder mehrerer Finger auf dem Touchpad.
 -   Bewegung der Berührungskontakte (oder das Fehlen der Bewegung basierend auf einem Zeitschwellenwert).
@@ -40,7 +40,7 @@ Mögliche Eingabedaten des Touchpadsensors:
 -   Erkennung als alternative Eingabemethode, z. B. Maus oder Stift.
 -   Wird zum Ergänzen oder Ändern von Aspekten anderer Eingabemethoden verwendet, z. B. zum Verwischen eines mit einem Stift gezeichneten Freihandstrichs.
 
-Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigergeräts (etwa eine Maus). Dadurch ist das Touchpad sowohl für die berührungsoptimierte Benutzeroberfläche als auch die kleineren Ziele der Produktivitäts-Apps und der Desktopumgebung geeignet. Optimieren Sie das Design Ihrer UWP-App für die Toucheingabe, und profitieren Sie von der standardmäßigen Touchpad-Unterstützung.
+Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigergeräts (etwa eine Maus). Dadurch ist das Touchpad sowohl für die berührungsoptimierte Benutzeroberfläche als auch die kleineren Ziele der Produktivitäts-Apps und der Desktopumgebung geeignet. Optimieren Sie Ihren Windows-App-Entwurf für Touch input, und holen Sie sich standardmäßig Touchpad-Unterstützung
 
 Aufgrund der Konvergenz der Interaktionsformen, die von Touchpads unterstützt werden, empfehlen wir die Verwendung des [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)-Ereignisses, um zusätzlich zur integrierten Unterstützung für die Toucheingabe Benutzeroberflächenbefehle für die Mauseingabe bereitzustellen. Verwenden Sie beispielsweise Zurück- und Weiter-Schaltflächen, mit denen Benutzer sowohl Inhaltsseiten durchblättern als auch Inhalte verschieben können.
 
@@ -55,11 +55,11 @@ Benutzer können viel mehr Gesten und Interaktionsverhalten für Präzisionstouc
 
 ![Einstellungen für ein standardmäßiges Touchpad](images/mouse-touchpad-settings-standard.png)
 
-<sup>Standard\\ Touchpad\\ Einstellungen</sup>
+<sup>Standard\\ Einstellungen für\\ Touchpad</sup>
 
 ![Einstellungen für ein Windows-Präzisionstouchpad](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\-Genauigkeit\\ Touchpad\\ Einstellungen</sup>
+<sup>\\ Touchpad\\ \\ -Einstellungen für Windows Precision</sup>
 
 Im Anschluss folgen einige Beispiele für touchpadoptimierte Gesten zum Ausführen allgemeiner Aufgaben.
 
@@ -71,13 +71,13 @@ Im Anschluss folgen einige Beispiele für touchpadoptimierte Gesten zum Ausführ
 <thead>
 <tr class="header">
 <th align="left">Begriff</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>Tippen mit drei Fingern</p></td>
-<td align="left"><p>Benutzereinstellung für die Suche mit <strong>Cortana</strong> oder die Anzeige des Info-Centers.</p></td>
+<td align="left"><p>Benutzereinstellung für die Suche mit <strong>Cortana</strong> oder die Anzeige des Info-Centers<strong></strong>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Ziehbewegung mit drei Fingern</p></td>
@@ -127,8 +127,8 @@ Weitere Informationen zum Abfragen von Gerätefunktionen finden Sie unter [Ident
 
 
 -   Blenden Sie die für Touchpadinteraktionen spezifische Benutzeroberfläche ein, sobald ein Touchpad-Cursor erkannt wird (durch Bewegungs- oder Zeigeereignisse), um die Funktionalität des Elements verfügbar zu machen. Wenn der Touchpad-Cursor für eine bestimmte Zeit nicht bewegt wird oder der Benutzer eine Toucheingabeinteraktion auslöst, blenden Sie die für Touchpad-Interaktionen spezifische Benutzeroberfläche schrittweise aus. Somit bleibt die Benutzeroberfläche sauber und aufgeräumt.
--   Verwenden Sie nicht den Cursor für Zeigefeedback, das Feedback des Elements reicht aus (siehe Abschnitt „Cursor“ unten).
--   Zeigen Sie kein visuelles Feedback an, wenn ein Element keine Interaktionen unterstützt (z. B. statischer Text).
+-   Verwenden Sie den Cursor nicht, um Feedback zu senden, das vom-Element bereitgestellte Feedback ist ausreichend (Weitere Informationen finden Sie im Abschnitt "Cursor" unten).
+-   Lassen Sie kein visuelles Feedback anzeigen, wenn ein Element keine Interaktionen unterstützt (z. B. statischer Text).
 -   Verwenden Sie keine Fokusrechtecke für Interaktionen per Touchpad. Diese sind ausschließlich für Tastaturinteraktionen vorgesehen.
 -   Zeigen Sie für alle Elemente, die das gleiche Eingabeziel darstellen, das gleiche visuelle Feedback an.
 
@@ -139,7 +139,7 @@ Allgemeine Informationen zum visuellen Feedback finden Sie unter [Richtlinien f�
 
 In Windows Store-Apps sind einige Standardcursor verfügbar, die als Touchpad-Zeiger verwendet werden können. Diese Cursor werden verwendet, um die primäre Aktion eines Elements anzugeben.
 
-Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das Standardbild, das einem Standardcursor zugewiesen ist, jederzeit ändern. UWP-Apps geben über die [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor)-Funktion ein Cursorbild an.
+Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das einem Standardcursor zugewiesene Standardbild jederzeit ändern. UWP-Apps geben ein Cursor Bild über die [**pointercursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) -Funktion an.
 
 Beachten Sie beim Anpassen des Mauszeigers Folgendes:
 
@@ -151,20 +151,19 @@ Beachten Sie beim Anpassen des Mauszeigers Folgendes:
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
+- [Behandeln von Zeigereingaben](handle-pointer-input.md)
+- [Identifizieren von Eingabegeräten](identify-input-devices.md)
 
-* [Behandeln von Zeigereingaben](handle-pointer-input.md)
-* [Identifizieren von Eingabegeräten](identify-input-devices.md)
-**Beispiele**
-* [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Beispiel für Focus-Visuals](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-**Archivbeispiele**
-* [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Eingabe: Beispiel für XAML-Benutzereingabe Ereignisse](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Eingabe: Gesten und Manipulationen mit GestureRecognizer](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
- 
+### <a name="samples"></a>Beispiele
 
+- [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
+### <a name="archive-samples"></a>Archivbeispiele
 
+- [Eingabe: Beispiel für Gerätefunktionen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Eingabe: Beispiel für XAML-Benutzereingabeereignisse](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Eingabe: Gesten und Manipulationen mit GestureRecognizer](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)

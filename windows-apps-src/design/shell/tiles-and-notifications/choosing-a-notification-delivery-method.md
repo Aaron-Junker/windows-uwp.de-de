@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel werden die vier Benachrichtigungs Optionen &\#8212, local, scheduled, periodisch und Push &\#8212 beschrieben, die Kachel-und Badge-Updates und Popup Benachrichtigungs Inhalt bereitzustellen.
+Description: In diesem Artikel werden die vier Benachrichtigungs \#Optionen&8212, local, scheduled, periodisch und \#Push&8212 beschrieben, die Kachel-und Badge-Updates und Popup Benachrichtigungs Inhalte bereitzustellen.
 title: Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 80a06f5199c49f5fcd7a08dc9c9baef18ee19db9
-ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
+ms.openlocfilehash: f1df2048ea54b3ffc7c62270841b2be650bb90ea
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81385849"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970825"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 
@@ -27,9 +27,9 @@ In diesem Artikel werden die vier Benachrichtigungsoptionen – lokal, geplant, 
 
 Es gibt vier Mechanismen, die von einer App zum Übermitteln einer Benachrichtigung verwendet werden können:
 
--   **Nah**
--   **Findet**
--   **Regelmäßige**
+-   **Lokal**
+-   **Geplant**
+-   **Periodisch**
 -   **Push**
 
 In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
@@ -43,8 +43,8 @@ In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Übermittlungsmethode</th>
-<th align="left">Verwendungsart</th>
+<th align="left">Bereitstellungsmethode</th>
+<th align="left">Nutzung</th>
 <th align="left">Beschreibung</th>
 <th align="left">Beispiele</th>
 </tr>
@@ -108,11 +108,11 @@ Auch wenn die API-Aufrufe lokal erfolgen, können die Benachrichtigungen auf Web
 
 Standardmäßig laufen lokale Popupbenachrichtigungen in drei Tagen und lokale Kachelbenachrichtigungen niemals ab. Es wird empfohlen, diese Standardeinstellungen mit einer expliziten Ablaufzeit zu überschreiben, die für Ihre Benachrichtigungen sinnvoll ist. (Die Ablaufzeit von Benachrichtigungen beträgt maximal drei Tage.) 
 
-Weitere Informationen finden Sie in folgenden Themen:
+Weitere Informationen finden Sie in den folgenden Themen:
 
 -   [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
 -   [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md)
--   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Codebeispiele für Windows-App-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>Geplante Benachrichtigungen
 
@@ -123,10 +123,10 @@ Beachten Sie, dass geplante Benachrichtigungen nicht für Signalbenachrichtigung
 
 Geplante Benachrichtigungen laufen standardmäßig drei Tage nach Zustellung ab. Sie können diese Standardeinstellung für die Ablaufzeit für geplante Kachelbenachrichtigungen überschreiben, jedoch nicht die Ablaufzeit für geplante Popups.
 
-Weitere Informationen finden Sie in folgenden Themen:
+Weitere Informationen finden Sie in den folgenden Themen:
 
 -   [Planen einer Popup Benachrichtigung](scheduled-toast.md)
--   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Codebeispiele für Windows-App-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>Periodische Benachrichtigungen
 
@@ -137,10 +137,10 @@ Für periodische Benachrichtigungen muss die App einen Clouddienst hosten, und d
 
 Regelmäßige Benachrichtigungen laufen standardmäßig drei Tage nach der Abfrage ab. Diese Standardeinstellung kann bei Bedarf mit einer anderen Ablaufzeit explizit überschrieben werden.
 
-Weitere Informationen finden Sie in folgenden Themen:
+Weitere Informationen finden Sie in den folgenden Themen:
 
 -   [Übersicht über regelmäßige Benachrichtigungen](periodic-notification-overview.md)
--   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Codebeispiele für Windows-App-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="push-notifications"></a>Pushbenachrichtigungen
 
@@ -151,14 +151,14 @@ Für Pushbenachrichtigungen ist ein Cloud-Dienst erforderlich, der Pushbenachric
 
 Pushbenachrichtigungen laufen standardmäßig drei Tage nach Empfang durch das Gerät ab. Diese Standardeinstellung kann bei Bedarf mit einer expliziten Ablaufzeit überschrieben werden. (Für Popups gilt eine maximale Ablaufzeit von drei Tagen.)
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
 -   [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 -   [Richtlinien für Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
--   [Codebeispiele für die universelle Windows-Plattform (UWP)-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Codebeispiele für Windows-App-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
@@ -167,7 +167,7 @@ Weitere Informationen finden Sie unter:
 * [Richtlinien für Popupbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [Übersicht über regelmäßige Benachrichtigungen](periodic-notification-overview.md)
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
-* [Universelle Windows-Plattform (UWP)-Benachrichtigungs Codebeispiele auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [Codebeispiele für Windows-App-Benachrichtigungen auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  

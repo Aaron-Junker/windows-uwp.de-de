@@ -1,26 +1,26 @@
 ---
-Description: Erfahren Sie, wie Fluent Motion verwendet Zeitsteuerungssystem und Beschleunigungsfunktionen.
-title: Timing und Geschwindigkeitsverlauf – Animation in UWP-Apps
+Description: Erfahren Sie, wie die fließende Bewegung Zeit Steuerungs-und Beschleunigungsfunktionen verwendet.
+title: Timing und Beschleunigung
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b736a10a7284e3cc9aa193e082dc654e908afe40
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 098a75da573a977aa393197a61a62b0337f0dc06
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444171"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970505"
 ---
-# <a name="timing-and-easing"></a>Timing und Geschwindigkeitsverlauf
+# <a name="timing-and-easing"></a>Timing und Beschleunigung
 
-Bewegung basiert zwar auf der realen Welt, aber auch in einem digitalen Medium werden Geschwindigkeit und Leistung erwartet.
+Während Motion in der realen Welt basiert, sind wir auch ein digitales Medium, das eine Erwartung der Geschwindigkeit und Leistung hat.
 
 ## <a name="examples"></a>Beispiele
 
@@ -28,7 +28,7 @@ Bewegung basiert zwar auf der realen Welt, aber auch in einem digitalen Medium w
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>Wenn Sie haben die <strong style="font-weight: semi-bold">XAML-Steuerelementsammlungen</strong> app installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/EasingFunction">öffnen Sie die app, und vereinfachen von Funktionen in Aktion erleben</a>.</p>
+    <p>Wenn die <strong style="font-weight: semi-bold">XAML</strong> -Steuerelement Katalog-App installiert ist, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/EasingFunction">die APP zu öffnen, und sehen Sie sich die Beschleunigungsfunktionen in Aktion an</a></p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -37,78 +37,78 @@ Bewegung basiert zwar auf der realen Welt, aber auch in einem digitalen Medium w
 </tr>
 </table>
 
-## <a name="how-fluent-motion-uses-time"></a>Fluent-Bewegungen und Timing
+## <a name="how-fluent-motion-uses-time"></a>Verwendung von Time in der flüssigen Bewegung
 
-Timing ist ein wichtiges Element, um die Bewegung von Objekten natürlich erscheinen zu lassen, die in die Benutzeroberfläche eintreten, sie verlassen oder sich darin bewegen.
+Die zeitliche Steuerung ist ein wichtiges Element, um Bewegungs Charakter für Objekte zu gestalten, die in der Benutzeroberfläche eintreten, beenden oder verschieben.
 
-1. Objekte oder Szenen, die in das Sichtfeld eintreten, sind schnell und auffällig. Die Animationen für diese Elemente dauern in der Regel längere als die für austretende Elemente, um den hierarchischen Aufbau einer Szene zu ermöglichen.
-1. Objekte oder Szenen, die das Sichtfeld verlassen, sind sehr schnell. Der Benutzer sollte nachvollziehen können, wo die UI verbleibt. Nachdem die UI jedoch geschlossen wurde, sollte sie aus dem Weg gehen.
-1. Objekte, die sich durch eine Szene bewegen, sollten dafür eine Dauer benötigen, die der zurückzulegenden Entfernung entspricht.
+1. Objekte oder Szenen, die in die Ansicht eintreten, sind schnell, werden aber gefeiert. Diese Animationen sind in der Regel länger als die Ende, um eine hierarchische Erstellung einer Szene zu ermöglichen.
+1. Objekte oder Szenen, die die Ansicht verlassen, sind sehr schnell. Der Benutzer sollte wissen können, wohin die Benutzeroberfläche gegangen ist. Nachdem die Benutzeroberfläche verworfen wurde, sollte Sie jedoch Weg kommen.
+1. Objekte, die über eine Szene übertragen werden, sollten eine Dauer aufweisen, die für die Menge der Strecke geeignet ist.
 
-## <a name="timing-in-fluent-motion"></a>Timing für Fluent-Bewegungen
+## <a name="timing-in-fluent-motion"></a>Zeitliche Steuerung in Bewegung
 
-Für das Timing von Fluent-Bewegungen gelten 500 ms (eine halbe Sekunde) als Grundeinheit, da dies die maximale Zeit ist, die ein Benutzer als unmittelbar empfindet.
+Der Zeitpunkt der Bewegung bei der Bewegung verwendet 500 ms (oder eine halbe Sekunde) als Baseline, da dies die maximale Zeitspanne ist, die ein Benutzer als sofort wahrnimmt.
 
-![Favoritenbild](images/time.gif)
+![Herobild](images/time.gif)
 
-### <a name="150ms-exit"></a>**150 ms** (Verlassen)
+### <a name="150ms-exit"></a>**150 ms** (Beenden)
 
 :::row:::
     :::column:::
-Verwenden Sie für Objekte oder Seiten, die die Szene zu beenden oder schließen.
-Sie ermöglicht eine sehr schnelle direktionale Rückmeldung der UI, bei der das Timing die Framerate nicht beeinträchtigt und so eine flüssige Animation unterstützt.
+Verwenden Sie für Objekte oder Seiten, die die Szene beenden oder schließen.
+Ermöglicht ein sehr schnelles direktionales Feedback über das Beenden der Benutzeroberfläche, wobei die zeitliche Steuerung nicht bei der Framerate eine reibungslose Animation bewirkt.
     :::column-end:::
     :::column:::
-        ![150ms motion](images/150msAlt.gif)
+        ![150 ms Bewegung](images/150msAlt.gif)
     :::column-end:::
 :::row-end:::
 
-### <a name="300ms-enter"></a>**300 ms** (Eintreten)
+### <a name="300ms-enter"></a>**300 ms** (EINGABETASTE)
 
 :::row:::
     :::column:::
-Verwenden Sie für Objekte oder Seiten, die die Szene eingeben oder Sie öffnen.
-Dies ist eine angemessene Zeitspanne, um Inhalte zu erkennen, wenn sie in die Szene eintreten.
+Verwenden Sie für Objekte oder Seiten, die in die Szene eintreten oder geöffnet werden.
+Ermöglicht eine angemessene Zeitspanne zum Feiern von Inhalten, während Sie in die Szene gelangt.
     :::column-end:::
     :::column:::
-        ![300ms motion](images/300ms.gif)
+        ![300 ms Bewegung](images/300ms.gif)
     :::column-end:::
 :::row-end:::
 
-### <a name="500ms-move"></a>**≤ 500 ms** (Durchqueren)
+### <a name="500ms-move"></a>**500 ms** (verschieben)
 
 :::row:::
     :::column:::
-Verwenden Sie nach Objekten, die in einer einzigen Szene oder mehrerer Szenen übersetzen. 
+Verwenden Sie für Objekte, die über eine einzelne Szene oder mehrere Szenen übersetzt werden. 
     :::column-end:::
     :::column:::
-        ![500ms motion](images/500ms.gif)
+        ![500 ms Bewegung](images/500ms.gif)
     :::column-end:::
 :::row-end:::
 
-## <a name="easing-in-fluent-motion"></a>Geschwindigkeitsverlauf in Fluent-Bewegungen
+## <a name="easing-in-fluent-motion"></a>Beschleunigung in fließender Bewegung
 
-Die Änderung des Geschwindigkeitsverlaufs ist eine Möglichkeit, die Bewegungsdauer eines Objekts anzupassen. Der Geschwindigkeitsverlauf ist der Leim, der alle Fluent-Bewegungserfahrungen verbindet. Die Verwendung eines Geschwindigkeitsverlaufs kann die Anmutung von Objekten vereinheitlichen, die sich durch das System bewegen. Dies ist eine Möglichkeit zum Simulieren der realen Welt und lässt bewegte Objekte in ihrer Umgebung natürlich aussehen.
+Die Beschleunigung ist eine Möglichkeit, die Geschwindigkeit eines Objekts bei der Übertragung zu verändern. Es ist der Kleber, der alle fließenden Bewegungsmöglichkeiten verbindet. Im Extremfall hilft die im System verwendete Beschleunigung dabei, das physische Gefühl von Objekten zu vereinheitlichen, die im gesamten System verschoben werden. Dies ist eine Möglichkeit, die reale Welt nachzuahmen und die Objekte in Bewegung zu machen, die Sie in Ihrer Umgebung angehören.
 
-![Favoritenbild](images/easing.gif)
+![Herobild](images/easing.gif)
 
-## <a name="apply-easing-to-motion"></a>Anwenden eines Geschwindigkeitsverlaufs auf Bewegungen
+## <a name="apply-easing-to-motion"></a>Beschleunigung auf Bewegung anwenden
 
-Die folgenden Geschwindigkeitsverläufe vermitteln ein natürliches Verhalten und sind die Grundwerte, die wird für Fluent-Bewegungen verwenden.
+Diese Lösungen helfen Ihnen, ein natürlicheres Verhalten zu erreichen, und sind die Baseline, die wir für eine fließende Bewegung verwenden.
 
-Die Codebeispiele zeigen, wie die empfohlene Werte auf Storyboardanimationen (XAML) oder Kompositionsanimationen (C#) angewendet werden.
+In den Codebeispielen wird gezeigt, wie Empfohlene Beschleunigungswerte auf Storyboard-Animationen (XAML) oder Kompositions Animationen (c#) angewendet werden.
 
-### <a name="accelerate-exit"></a>**Beschleunigen** (Verlassen)
+### <a name="accelerate-exit"></a>**Beschleunigung** (Beenden)
 
 :::row:::
     :::column:::
-Verwenden Sie für die Benutzeroberfläche oder Objekte, die die Szene Vorgang beendet werden.
+Verwenden Sie für die Benutzeroberfläche oder Objekte, die die Szene beenden.
 
-Objekte werden unterstützt und Momentum erhalten, bis sie die Escape-Geschwindigkeit erreichen.
-Das resultierende Verhalten ist, dass das Objekt, die am schwersten versucht zu nutzen Sie die Benutzer und Platz für neue Inhalte eingehen.
+Objekte werden eingeschaltet und gewinnen einen Schwung, bis Sie die escapegeschwindigkeit erreichen.
+Das resultierende Gefühl ist, dass das Objekt versucht, die Benutzeroberfläche zu verlassen und Platz für neue Inhalte zu schaffen.
     :::column-end:::
     :::column:::
-        ![accelerate easing](images/accelEase.gif)
+        ![Beschleunigung beschleunigen](images/accelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -137,19 +137,19 @@ _exitAnimation.InsertKeyFrame(1.0f, _endValue, accelerate);
 _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 ```
 
-### <a name="decelerate-enter"></a>**Verlangsamen** (Eintreten)
+### <a name="decelerate-enter"></a>**Verlangsamt** (EINGABETASTE)
 
 :::row:::
     :::column:::
-Verwenden Sie für Objekte oder Eingeben der Szene Benutzeroberfläche navigieren, oder erstellen.
+Verwenden Sie für Objekte oder Benutzeroberflächen, die in die Szene wechseln, entweder Navigieren oder erzeugen.
 
-Nach der Szene, wird das Objekt mit extremer Reibung, erfüllt die verlangsamt, das Objekt wird, das rest.
-Das resultierende Verhalten ist, dass das Objekt aus einer langen Entfernung zurückgelegt mit einer Geschwindigkeit extreme eingegeben und ist schnell und auf einen Rest-Status.
+In der Szene wird das Objekt mit extremer Reibung erreicht, wodurch das Objekt auf Rest verlangsamt wird.
+Das resultierende Gefühl ist, dass das Objekt von einem langen Abstand entfernt und mit extremer Geschwindigkeit eingegeben wurde oder schnell in einen Rest-Zustand zurückkehrt.
 
-Auch wenn es einen Moment an fehlender Reaktionsfähigkeit vorangestellt ist, hat die Geschwindigkeit des eingehenden Objekts die Auswirkungen der empfunden, schnell und reaktionsfähig.
+Auch wenn Ihnen ein Zeitpunkt der nicht Reaktionsfähigkeit vorangestellt ist, hat die Geschwindigkeit des eingehenden Objekts den Effekt, dass es schnell und reaktionsfähig ist.
     :::column-end:::
     :::column:::
-        ![decelerate easing](images/decelEase.gif)
+        ![Beschleunigung verlangsamen](images/decelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -178,17 +178,17 @@ _enterAnimation.InsertKeyFrame(1.0f, _endValue, decelerate);
 _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 ```
 
-### <a name="standard-easing-move"></a>**Standard** (Durchqueren)
+### <a name="standard-easing-move"></a>**Standard** Beschleunigung (verschieben)
 
 :::row:::
     :::column:::
-Dies ist die Baseline, die bei einer parameteränderung der animierten innerhalb des Systems zu vereinfachen.
-Verwenden Sie diesen Standard-Geschwindigkeitsverlauf für Objekte, die auf dem Bildschirm von Status zu Status wechseln, z. B. bei einer einfachen Positionsänderung. Verwenden Sie ihn zudem für Objekte, die sich in der Szene kontinuierlich verändern (Morphing), beispielsweise wachsen.
+Dies ist die grundlegende Beschleunigung für alle animierten Parameteränderungen innerhalb des Systems.
+Verwenden Sie die standardmäßige Beschleunigung für Objekte, die sich auf dem Bildschirm vom Zustand in den Zustand ändern, z. b. eine einfache Positionsänderung Verwenden Sie diese auch für Objekte, die in Szene verwandelt werden, z. b. ein Objekt, das wächst.
 
-Das resultierende Verhalten ist, dass Objekte ändern des Status von A nach B überwinden sind, erstellt von, natürlichen erzwingt.
+Das resultierende Gefühl ist, dass Objekte, die den Zustand von A zu B ändern, von den natürlichen Kräften überwunden und übernommen werden.
     :::column-end:::
     :::column:::
-        ![standard easing](images/standardEase.gif)
+        ![Standard Beschleunigung](images/standardEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -219,5 +219,5 @@ CubicBezierEasingFunction standard =
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Motion-Übersicht](index.md)
-- [Direktionalität und die Schwerkraft](directionality-and-gravity.md)
+- [Übersicht über die Bewegung](index.md)
+- [Richtung und Schwerkraft](directionality-and-gravity.md)

@@ -1,19 +1,19 @@
 ---
 Description: Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlung wie z. B. einem Fotoalbum oder einer Liste mit Suchergebnissen einfügen oder entfernen.
-title: Hinzufügen und Löschen von Animationen in UWP-Apps
+title: Hinzufügen und Löschen von Animationen
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d0dc449c0134799f3de675fff4bdbbda66046be8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4264a9a3a75c076fc033bb98dad45ff8dc99f2ef
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317095"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970285"
 ---
 # <a name="add-and-delete-animations"></a>Hinzufügen und Löschen von Animationen
 
@@ -21,7 +21,7 @@ ms.locfileid: "67317095"
 
 Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlung wie z. B. einem Fotoalbum oder einer Liste mit Suchergebnissen einfügen oder entfernen.
 
-> **Wichtige APIs:** [**AddDeleteThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **Wichtige APIs**: [ **adddeletedermetransition-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -39,8 +39,8 @@ Mit Listenanimationen können Sie einzelne oder mehrere Elemente in einer Sammlu
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animieren von Liste Hinzufügungen und löschungen](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
-* [Schnellstart: Ihre Benutzeroberfläche mit der Bibliothek Animationen animieren](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [Animieren von Hinzufügungen und Löschungen in Listen](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
+* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**AddDeleteThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  

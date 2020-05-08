@@ -1,23 +1,23 @@
 ---
-title: Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox One-Entwicklerprogramm
-description: Beschreibt die bekannten Probleme für UWP im Xbox Developer-Programm.
+title: Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox-Entwicklerprogramm
+description: Listet die bekannten Probleme für die UWP in Xbox Developer Program auf.
 ms.date: 03/29/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 34425a0e754d62a1d9d7716bca3576463aec3ba5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: dbf9d40d4dc2cfedaa78cbca5b16c4cc26d2d4e1
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259730"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730076"
 ---
-# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox One-Entwicklerprogramm
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Bekannte Probleme mit UWP im Zusammenhang mit dem Xbox-Entwicklerprogramm
 
 Dieses Thema beschreibt bekannte Probleme im Zusammenhang mit dem Xbox One-Entwicklerprogramm. Weitere Informationen zu diesem Programm finden Sie unter [UWP auf Xbox](index.md). 
 
-\[Wenn Sie von einem Link in einem API-Referenz Thema hierher gekommen sind und nach universellen Gerätefamilien-API-Informationen suchen, finden Sie weitere Informationen [unter UWP-Features, die noch nicht auf Xbox unterstützt](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)werden.\]
+\[Wenn Sie von einem Link in einem API-Referenz Thema stammen und nach universellen Gerätefamilien-API-Informationen suchen, finden Sie weitere Informationen [unter UWP-Features, die noch nicht auf Xbox unterstützt](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)werden.\]
 
 In der folgenden Liste werden einige bekannte Probleme aufgelistet, die auftreten können. Diese Liste ist jedoch nicht vollständig. 
 
@@ -43,24 +43,24 @@ Zu diesem Zeitpunkt bleibt die Berechtigung so lange _bestehen_, bis Sie den Ben
  
 Es gibt eine weitere Ausnahme, die nur für Kinderkonten verfügbar ist. Bei einem Kinderkonto muss sich ein Elternteil anmelden, um die Berechtigung zu erteilen. In diesem Fall kann der Elternteil die Option **Immer** auswählen, um dem Kind das Starten der App zu erlauben. Diese Ausnahme wird in der Cloud gespeichert und bleibt bestehen, auch wenn sich das Kind abmeldet und wieder anmeldet.
 
-## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a>StorageFile.CopyAsync kopiert verschlüsselte Dateien nicht an ein unverschlüsseltes Ziel. 
+## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a>Storagefile. copyasync kann verschlüsselte Dateien nicht in ein unverschlüsseltes Ziel kopieren. 
 
-Wenn StorageFile.CopyAsync verwendet wird, um eine verschlüsselte Datei an ein Ziel zu kopieren, das nicht verschlüsselt ist, schlägt der Aufruf mit folgender Ausnahme fehl:
+Wenn storagefile. copyasync zum Kopieren einer Datei verwendet wird, die in ein nicht verschlüsseltes Ziel verschlüsselt ist, schlägt der-Befehl mit folgender Ausnahme fehl:
 
 ```
 System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070005)
 ```
 
-Dies kann sich auf Xbox-Entwickler auswirken, die Dateien kopieren möchten, die als Teil ihres App-Pakets an einem anderen Speicherort bereitgestellt werden. Der Grund hierfür ist, dass der Inhalt des Pakets auf einer Xbox im Einzelhandelsmodus verschlüsselt ist, aber im Entwicklermodus nicht. Daher kann die App während der Entwicklungs- und Testphase scheinbar wie erwartet funktionieren, aber dann Fehler aufweisen, sobald sie veröffentlicht und auf einer Einzelhandels-Xbox installiert wurde.
+Dies kann sich auf Xbox-Entwickler auswirken, die Dateien, die als Teil des App-Pakets bereitgestellt werden, an einen anderen Speicherort kopieren möchten. Der Grund hierfür ist, dass der Paket Inhalt auf einer Xbox im Einzelhandels Modus verschlüsselt ist, aber nicht im Entwicklungsmodus. Infolgedessen funktioniert die APP während der Entwicklung und Tests möglicherweise erwartungsgemäß, schlägt jedoch fehl, sobald Sie veröffentlicht und auf einer Einzelhandel-Xbox installiert wurde.
  
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Gesperrte Netzwerkports auf Xbox One
 
 Bindungen an Ports im Bereich [57344, 65535] (einschließlich) sind für Apps für die universelle Windows-Plattform (UWP) auf Xbox One-Geräten nicht möglich. Obwohl die Bindung an diese Ports während der Laufzeit erfolgreich zu sein scheint, kann Netzwerkdatenverkehr im Hintergrund gelöscht werden, bevor er Ihre App erreicht. Ihre App sollte an den Port 0 gebunden werden, wann immer möglich. Dieser ermöglicht dem System die Auswahl des lokalen Ports. Wenn Sie einen bestimmten Port verwenden müssen, muss sich die Portnummer im Bereich [1025, 49151] befinden, und Sie sollten Konflikte mit der IANA-Registrierung überprüfen und vermeiden. Weitere Informationen finden Sie in [Dienstname und Transportprotokoll-Portnummer-Registrierung](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
-## <a name="uwp-api-coverage"></a>UWP-API-Abdeckung
+## <a name="windows-runtime-api-coverage"></a>Windows-Runtime API-Abdeckung
 
-Nicht alle UWP-APIs werden auf Xbox unterstützt. Die Liste der APIs, von denen bekannt ist, dass sie nicht funktionieren, finden Sie in [UWP-Funktionen, die noch nicht auf Xbox One unterstützt werden](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN). Wenn Sie Probleme mit anderen APIs feststellen, melden Sie dies bitte in den Foren. 
+Nicht alle Windows-Runtime-APIs werden auf der Xbox unterstützt. Die Liste der APIs, von denen bekannt ist, dass sie nicht funktionieren, finden Sie in [UWP-Funktionen, die noch nicht auf Xbox One unterstützt werden](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN). Wenn Sie Probleme mit anderen APIs feststellen, melden Sie dies bitte in den Foren. 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>Navigieren zu WDP führt zu einer Zertifikatwarnung
@@ -70,11 +70,11 @@ Sie erhalten eine Warnung zum Zertifikat, das bereitgestellt wurde, ähnlich wie
 ![Warnung zum Sicherheitszertifikat der Website](images/security_cert_warning.jpg)
 
 
-## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a>KnownFolders.MediaServerDevices Einschränkung auf Xbox
+## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a>KnownFolders. mediaserverdevices (Vorbehalte) auf Xbox
 
-Auf dem Desktop sind Medienserver mit dem PC „gekoppelt“, und der Gerätezuordnungsdienst (Device Association Service) verfolgt ständig, welcher der Server aktuell online ist. Mit einer Erstabfrage des Dateisystems kann sofort eine Liste der verbundenen Server zurückgegeben werden, die derzeit online sind.
+Auf dem Desktop werden Medienserver mit dem PC "gekoppelt", und der Geräte Zuordnungs Dienst verfolgt ständig, welche der Server zurzeit online sind, sodass eine anfängliche Dateisystem Abfrage sofort eine Liste der gekoppelten Server zurückgeben kann, die zurzeit online sind.
 
-Auf der Xbox gibt es keine UI, um Server hinzuzufügen oder zu löschen. Deshalb wird die Erstabfrage auf das Dateisystem immer leer sein. Sie müssen eine Abfrage erstellen, das ContentsChanged-Ereignis abonnieren, und die Abfrage bei jeder Benachrichtigung aktualisieren. Die Server werden durchgelassen, und die meisten innerhalb von drei Sekunden erkannt.
+Auf der Xbox gibt es keine Benutzeroberfläche zum Hinzufügen oder Entfernen von Servern. Daher gibt die anfängliche Dateisystem Abfrage immer leer zurück. Sie müssen eine Abfrage erstellen und das Ereignis "contentschge" abonnieren und die Abfrage jedes Mal aktualisieren, wenn Sie eine Benachrichtigung erhalten. Die Server werden in und die meisten innerhalb von 3 Sekunden ermittelt.
 
 Einfacher Beispielcode:
 
@@ -115,6 +115,6 @@ namespace TestDNLA {
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Siehe auch
 - [Häufig gestellte Fragen](frequently-asked-questions.md)
 - [UWP auf Xbox One](index.md)

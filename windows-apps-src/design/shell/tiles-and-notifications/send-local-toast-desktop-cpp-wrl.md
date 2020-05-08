@@ -1,53 +1,53 @@
 ---
-Description: Erfahren Sie, C++ wie Win32-WRL-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
-title: Senden von Popupbenachrichtigungen über C++ WRL-Apps
+Description: Erfahren Sie, wie Win32-C++ WRL-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
+title: Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: Windows 10, UWP, win32, Desktop, Popupbenachrichtigungen, Popup senden, lokale Popupbenachrichtigungen senden, Desktop Bridge, C++, cpp, cplusplus, WRL
+keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, Sparse-Paket, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: abd3fc88f2ecacd0146a9f3a88a3240630078454
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: cc87f9281b9623c1f1b46def8f886cfebeb0438f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684201"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968295"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden von Popupbenachrichtigungen über C++ WRL-Apps
+# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps
 
-Desktop-Apps (Desktop-Brücke und klassische Win32) können interaktive Popupbenachrichtigungen wie Universelle Windows-Plattform (UWP)-Apps senden. Es gibt jedoch einige besondere Schritte für Desktop-Apps mit anderen Aktivierungsschematas und dem potenziellen Mangel der Paketidentität, wenn Sie die Desktop-Brücke nicht verwenden.
+Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-app-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
 
 > [!IMPORTANT]
-> Wenn Sie eine UWP-App entwickeln, finden Sie Informationen in der [UWP-Dokumentation](send-local-toast.md). Bei anderen Desktop Sprachen finden Sie Informationen unter [Desktop C#](send-local-toast-desktop.md).
+> Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop c#](send-local-toast-desktop.md).
 
 
-## <a name="step-1-enable-the-windows-10-sdk"></a>Schritt 1: Aktivieren von Windows 10 SDK
+## <a name="step-1-enable-the-windows-10-sdk"></a>Schritt 1: Aktivieren des Windows 10 SDK
 
-Wenn Sie Windows 10 SDK nicht für Ihre Win32-App aktiviert haben, müssen Sie dies zuerst tun. Es sind einige wichtige Schritte erforderlich...
+Wenn Sie das Windows 10 SDK nicht für ihre Win32-App aktiviert haben, müssen Sie dies zunächst tun. Es gibt einige wichtige Schritte...
 
-1. Hinzufügen von `runtimeobject.lib` auf **Zusätzliche Abhängigkeiten**
-2. Aufrufen von Windows 10 SDK
+1. Zu `runtimeobject.lib` **weiteren Abhängigkeiten** hinzufügen
+2. Windows 10 SDK als Ziel
 
-Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie dann **Eigenschaften** aus.
+Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften**
 
-Wählen Sie im oberen **Konfigurationsmenü** **alle Konfigurationen** aus, damit die folgende Änderung auf das Debuggen und die Freigabe angewendet wird.
+Wählen Sie im **Configuration** Menü der obersten Konfiguration **alle Konfigurationen** aus, sodass die folgende Änderung auf Debug und Release angewendet wird.
 
-Fügen Sie unter **Linker-> Eingabe**`runtimeobject.lib` den **zusätzlichen Abhängigkeiten** hinzu.
+Fügen Sie unter **Linker-> Eingabe**den `runtimeobject.lib` **zusätzlichen Abhängigkeiten**hinzu.
 
-Unter **Allgemein**, stellen Sie sicher, dass die **Windows SDK-Version** auf 10.0 oder höher festgelegt ist (nicht Windows 8.1).
-
-
-## <a name="step-2-copy-compat-library-code"></a>Schritt 2: Kopieren des Compat-Bibliothekscodes
-
-Kopieren Sie [DesktopNotificationManagerCompat.h](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.h) und [DesktopNotificationManagerCompat.cpp](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.cpp) von GitHub-Datei in Ihr Projekt. Die Compat-Bibliothek abstrahiert einen Großteil der Komplexität der Desktop-Benachrichtigungen. Die folgenden Anweisungen erfordern die Compat-Bibliothek.
-
-Wenn Sie vorkompilierte Header verwenden, stellen Sie sicher, dass `#include "stdafx.h"` als erste Zeile in der Datei DesktopNotificationManagerCompat.cpp erscheint.
+Stellen Sie dann unter **Allgemein**sicher, dass die **Windows SDK-Version** auf 10,0 oder höher festgelegt ist (nicht auf Windows 8.1).
 
 
-## <a name="step-3-include-the-header-files-and-namespaces"></a>Schritt 3: Fügen Sie Headerdateien und Namespaces hinzu
+## <a name="step-2-copy-compat-library-code"></a>Schritt 2: Kopieren des Kompatibilitäts-Bibliothekscodes
 
-Fügen Sie die Headerdatei der Compat-Bibliothek und die Headerdatei und den Namespaces hinzu, die im Zusammenhang mit UWP-Popup-APIs verwendet werden.
+Kopieren Sie die Datei [desktopnotificationmanagercompat. h](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.h) und [desktopnotificationmanagercompat. cpp](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.cpp) aus GitHub in Ihr Projekt. Die Kompatibilitäts-Bibliothek abstrahiert einen Großteil der Komplexität von Desktop Benachrichtigungen. Die folgenden Anweisungen erfordern die Kompatibilitäts-Bibliothek.
+
+Wenn Sie vorkompilierte Header verwenden, stellen Sie sicher `#include "stdafx.h"` , dass die erste Zeile der Datei desktopnotificationmanagercompat. cpp ist.
+
+
+## <a name="step-3-include-the-header-files-and-namespaces"></a>Schritt 3: einschließen der Header Dateien und-Namespaces
+
+Schließen Sie die Header Datei der Kompatibilitäts-Bibliothek und die Header Dateien und-Namespaces für die Verwendung der Windows-Popup-APIs ein.
 
 ```cpp
 #include "DesktopNotificationManagerCompat.h"
@@ -60,11 +60,11 @@ using namespace Microsoft::WRL;
 ```
 
 
-## <a name="step-4-implement-the-activator"></a>Schritt 4: Implementieren des Aktivators
+## <a name="step-4-implement-the-activator"></a>Schritt 4: Implementieren Sie den Aktivator.
 
-Sie müssen einen Handler für die Toast Aktivierung implementieren, damit Ihre APP etwas Unternehmen kann, wenn der Benutzer auf den Popup klickt. Dies ist erforderlich für das Popup, damit es im Info-Center beibehalten wird (da auf das Popup Tage später geklickt werden kann, wenn die App geschlossen ist). Diese Klasse kann an eine beliebige Stelle in Ihrem Projekt platziert werden.
+Sie müssen einen Handler für die Toast Aktivierung implementieren, damit Ihre APP etwas Unternehmen kann, wenn der Benutzer auf den Popup klickt. Dies ist erforderlich, damit der Popup im Aktions Center persistent gespeichert wird (da der Popup-Vorgang Tage später angezeigt werden kann, wenn die app geschlossen wird). Diese Klasse kann an beliebiger Stelle in Ihrem Projekt platziert werden.
 
-Implementieren Sie die **INotificationActivationCallback**-Schnittstelle wie folgt, einschließlich der UUID, und rufen Sie auch **CoCreatableClass** auf, um die Klasse als COM-erstellbar zu kennzeichnen. Erstellen Sie mithilfe einer der vielen online GUID-Generatoren eine eindeutige GUID für die UUID. Durch diese GUID CLSID (Klassen-ID) weiß das Info-Center, welche Klasse für COM aktiviert werden soll.
+Implementieren Sie wie unten gezeigt die **inotificationactivationcallback** -Schnittstelle (einschließlich einer UUID), und rufen Sie auch **cokreatableclass** auf, um die Klasse als com-erstellbar zu markieren. Erstellen Sie für Ihre UUID eine eindeutige GUID mit einem der vielen Online-GUID-Generatoren. Diese GUID CLSID (Klassen Bezeichner) gibt an, wie das Aktions Center weiß, welche Klasse für com aktiviert werden soll.
 
 ```cpp
 // The UUID CLSID must be unique to your app. Create a new GUID if copying this code.
@@ -87,22 +87,22 @@ CoCreatableClass(NotificationActivator);
 ```
 
 
-## <a name="step-5-register-with-notification-platform"></a>Schritt 5: Registrieren mit der Benachrichtigungsplattform
+## <a name="step-5-register-with-notification-platform"></a>Schritt 5: Registrieren bei der Benachrichtigungs Plattform
 
-Anschließend müssen Sie eine Registrierung mit der Benachrichtigungsplattform durchführen. Es sind unterschiedliche Schritte erforderlich, je nachdem, ob Sie die Desktop-Brücke oder klassische Win32 verwenden. Wenn Sie beide unterstützen, müssen Sie beide Schritte durchführen (der Code bleibt allerdings gleich, die Bibliothek führt die Verzweigung für Sie durch!).
+Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren. Je nachdem, ob Sie msix/Sparse-Pakete oder klassisches Win32 verwenden, gibt es unterschiedliche Schritte. Wenn Sie beide unterstützen, müssen Sie beide Schritte ausführen (Sie müssen jedoch nicht Ihren Code verzweigen, da die Bibliothek dies für Sie erledigt!).
 
 
-### <a name="desktop-bridge"></a>Desktop-Brücke
+### <a name="msixsparse-package"></a>Msix/sparsespaket
 
-Bei Verwendung der Desktop-Brücke (oder wenn Sie beide Modi unterstützen), fügen Sie Ihrem **Package.appxmanifest** hinzu:
+Fügen Sie in der [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) Datei "Package. [sparse package](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) appxmanifest" in der Datei " **Package. appxmanifest**" Folgendes hinzu:
 
-1. Deklaration für **Xmlns:com**
-2. Deklaration für **xmlns:desktop**
-3. Im **IgnorableNamespaces**-Attribut **com** und **desktop**
-4. **com:Extension** für den COM-Aktivator mithilfe der GUID aus Schritt 4. Stellen Sie sicher, dass `Arguments="-ToastActivated"` hinzugefügt wurde, damit Sie wissen, dass der Start über ein Popup ausgeführt wurde
-5. **desktop:Extension** für **windows.toastNotificationActivation**, um den Popup-Aktivator CLSID zu deklarieren (der GUID aus Schritt #4).
+1. Deklaration für **xmlns: com**
+2. Deklaration für **xmlns: Desktop**
+3. Im **ignorablenamespaces** -Attribut, **com** und **Desktop**
+4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, dass `Arguments="-ToastActivated"` Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
+5. **Desktop: Erweiterung** für **Windows. toastnotificationactivation** zum Deklarieren der Popup-Activator-CLSID (die GUID aus Schritt #4).
 
-**Package.appxmanifest**
+**"Package. appxmanifest"**
 
 ```xml
 <Package
@@ -137,15 +137,15 @@ Bei Verwendung der Desktop-Brücke (oder wenn Sie beide Modi unterstützen), fü
 ```
 
 
-### <a name="classic-win32"></a>Klassisch Win32
+### <a name="classic-win32"></a>Klassisches Win32
 
-Wenn Sie eine klassische Win32 verwenden (oder wenn Sie beide Modi unterstützen), müssen Sie Ihre Anwendungsbenutzermodell-ID (AUMID) und den Popupbenachrichtigungs-Aktivator CLSID (der GUID aus Schritt 4 #) auf der App-Verknüpfung im Startmenü deklarieren.
+Wenn Sie klassisches Win32 verwenden (oder wenn Sie beides unterstützen), müssen Sie die Anwendungs Benutzer Modell-ID (aumid) und die Popup-Activator-CLSID (die GUID aus Schritt #4) in der Verknüpfung ihrer App im Startmenü deklarieren.
 
-Wählen Sie einen eindeutigen AUMID, der Ihrer Win32-App identifiziert. Dies geschieht in der Regel in Form von [Firmenname].[AppName], es sollte allerdings in allen Apps eindeutig sein (fügen Sie Ziffern am Ende hinzu).
+Wählen Sie eine eindeutige aumid aus, mit der ihre Win32-App identifiziert wird. Dies erfolgt in der Regel in der Form [CompanyName]. [AppName], aber Sie möchten sicherstellen, dass dies in allen apps eindeutig ist (Sie können am Ende einige Ziffern hinzufügen).
 
-#### <a name="step-51-wix-installer"></a>Schritt 5.1: WiX Installer
+#### <a name="step-51-wix-installer"></a>Schritt 5,1: WiX-Installer
 
-Wenn Sie WiX als Installer verwenden, bearbeiten Sie die **Product.wxs**-Datei, um dem Startmenü zwei Verknüpfungseigenschaften hinzuzufügen, wie unten dargestellt. Stellen Sie sicher, dass Ihre GUID aus Schritt 4 # in `{}` eingeschlossen ist, wie unten dargestellt.
+Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #4 in `{}` eingeschlossen ist, wie unten gezeigt.
 
 **Product. wxs**
 
@@ -162,28 +162,28 @@ Wenn Sie WiX als Installer verwenden, bearbeiten Sie die **Product.wxs**-Datei, 
 ```
 
 > [!IMPORTANT]
-> Um Benachrichtigungen tatsächlich verwenden zu können, müssen Sie Ihrer App durch den Installer einmal vor dem Debuggen installieren, damit die Verknüpfung auf dem Startmenü mit AUMID und CLSID vorhanden ist. Nachdem die Verknüpfung auf dem Startmenü vorhanden ist, können Sie mithilfe von F5 in Visual Studio debuggen.
+> Um Benachrichtigungen tatsächlich verwenden zu können, müssen Sie die APP zunächst vor dem Debuggen über das Installationsprogramm installieren, damit die Start Verknüpfung mit ihrer aumid und CLSID vorhanden ist. Nachdem die Start Verknüpfung vorhanden ist, können Sie in Visual Studio mit F5 Debuggen.
 
 
-#### <a name="step-52-register-aumid-and-com-server"></a>Schritt 5.2: Registrieren des AUMID und COM-Servers
+#### <a name="step-52-register-aumid-and-com-server"></a>Schritt 5,2: Registrieren von aumid und com-Server
 
-Rufen Sie unabhängig vom Installer im App Startcode (vor dem Aufrufen der Benachrichtigungs-APIs), die **RegisterAumidAndComServer**-Methode auf, und geben Sie die Benachrichtigungs-Aktivator-Klasse von Schritt 4 und die oben verwendete AUMID an.
+Rufen Sie dann unabhängig vom Installationsprogramm im Startcode Ihrer APP (vor dem Aufrufen von Benachrichtigungs-APIs) die **registeraumidandcomserver** -Methode auf, und geben Sie dann die Benachrichtigungs-Activator-Klasse aus Schritt #4 und ihrer zuvor verwendeten aumid an.
 
 ```cpp
-// Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
+// Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
 hr = DesktopNotificationManagerCompat::RegisterAumidAndComServer(L"YourCompany.YourApp", __uuidof(NotificationActivator));
 ```
 
-Wenn Desktop-Brücke und klassisches Win32 unterstützt werden, können Sie diese Methode unabhängig davon aufgerufen. Wenn Sie die Methode mit der Desktop-Brücke ausführen, wird sie sofort zurückgegeben. Sie müssen den Code nicht verzweigen.
+Wenn Sie sowohl das msix/Sparse-Paket als auch das klassische Win32-Paket unterstützen, können Sie diese Methode unabhängig davon aufzurufen. Wenn Sie unter einem msix-oder Sparse-Paket ausführen, wird diese Methode einfach sofort zurückgegeben. Es ist nicht erforderlich, den Code zu verzweigen.
 
-Mit dieser Methode können Sie Compat-APIs zum Senden und Verwalten von Benachrichtigungen aufrufen, ohne ständig die AUMID angeben zu müssen. Es fügt ebenfalls den LocalServer32-Schlüssel für den COM-Server hinzu.
+Diese Methode ermöglicht es Ihnen, die Kompatibilitäts-APIs aufzurufen, um Benachrichtigungen zu senden und zu verwalten, ohne die aumid ständig bereitstellen zu müssen. Außerdem wird der Registrierungsschlüssel LocalServer32 für den com-Server eingefügt.
 
 
-## <a name="step-6-register-com-activator"></a>Schritt 6: Registrieren des COM-Aktivators
+## <a name="step-6-register-com-activator"></a>Schritt 6: com-Aktivierung registrieren
 
-Für Desktop-Brücken und klassische Win32-Apps müssen Sie Ihren Benachrichtigung-Aktivatortyp registrieren, damit Sie Popupaktivierungen behandeln können.
+Sowohl für das msix/Sparse-Paket als auch für klassische Win32-apps müssen Sie den Typ des Benachrichtigungs aktivierers registrieren, damit Sie Popup Aktivierungen verarbeiten können.
 
-Rufen Sie im Startcode Ihrer App, die folgende **RegisterActivator**-Methode auf. Dies muss in der Reihenfolge aufgerufen werden, in der Sie alle Popupaktivierungen erhalten.
+Aufrufen Sie im Startcode Ihrer APP die folgende **registeractivator** -Methode. Dies muss aufgerufen werden, damit Sie beliebige Popup Aktivierungen empfangen können.
 
 ```cpp
 // Register activator type
@@ -193,12 +193,12 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## <a name="step-7-send-a-notification"></a>Schritt 7: Senden einer Benachrichtigung
 
-Das Senden einer Benachrichtigung ist für UWP-Apps identisch, außer dass Sie **DesktopNotificationManagerCompat** zum Erstellen eines **ToastNotifier** verwenden. Die Compat-Bibliothek behandelt den Unterschied zwischen Desktop-Brücke und klassischer Win32 automatisch, damit Sie keinen Code verzweigen müssen. Für klassisches Win32 speichert die Compat-Bibliothek Ihre AUMID, die Sie beim Aufrufen von **RegisterAumidAndComServer** bereitgestellt haben, damit Sie sich nicht die AUMID kümmern müssen, wann Sie diese bereitstellen und wann nicht.
+Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie " **desktopnotificationmanagercompat** " verwenden, um einen " **deastnotifier**" zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Win32, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Win32 speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid zwischen, sodass Sie sich keine Gedanken machen müssen, wann die aumid bereitgestellt oder nicht.
 
-Stellen Sie sicher, dass Sie den unten angezeigten **ToastGeneric** verwenden, da ältere Vorlagen der Windows 8.1 Popupbenachrichtigungen nicht den COM-Benachrichtigungs-Aktivator aktivieren, den Sie in Schritt 4 # erstellt haben.
+Stellen Sie sicher, dass Sie die **toastgeneric** -Bindung wie unten gezeigt verwenden, da die Legacy-Windows 8.1 Popup Benachrichtigungs Vorlagen Ihren in Schritt #4 erstellten com-Benachrichtigungs Aktivator nicht aktivieren.
 
 > [!IMPORTANT]
-> HTTP-Bilder werden nur in Desktop-Brücken-Apps unterstützt, die die Internetfunktion im Manifest haben. Klassische Win32-Apps unterstützen keine HTTP-Bilder. Sie müssen das Bild in die lokalen App-Daten herunterladen und lokal darauf verweisen.
+> Http-Images werden nur in msix/Sparse-Paket-Apps unterstützt, die über die Internetfunktion in ihrem Manifest verfügen. Klassische Win32-apps unterstützen keine http-Bilder. Sie müssen das Image in Ihre lokalen app-Daten herunterladen und lokal darauf verweisen.
 
 ```cpp
 // Construct XML
@@ -229,17 +229,17 @@ if (SUCCEEDED(hr))
 ```
 
 > [!IMPORTANT]
-> Klassische Win32-Apps können keine älteren Popupvorlagen (z. B. ToastText02) verwenden. Die Aktivierung älterer Vorlagen schlägt fehl, wenn die COM-CLSID angegeben wird. Wie oben erwähnt, müssen Sie die Windows 10 ToastGeneric-Vorlagen verwenden.
+> Klassische Win32-Apps können keine Legacy-Popup Vorlagen verwenden (z. b. ToastText02). Die Aktivierung der Legacy Vorlagen schlägt fehl, wenn die com-CLSID angegeben wird. Sie müssen die oben gezeigten Windows 10-Standardvorlagen verwenden.
 
 
 ## <a name="step-8-handling-activation"></a>Schritt 8: Behandeln der Aktivierung
 
-Wenn der Benutzer auf das Popup oder auf Schaltflächen im Popup klickt, wird die **Activate**-Methode Ihre **NotificationActivator**-Klasse aufgerufen.
+Wenn der Benutzer auf den Popup klickt, oder auf die Schaltflächen im Toast, wird die **Aktivierungs** Methode der **notificationactivator** -Klasse aufgerufen.
 
-Innerhalb der Activate-Methode können Sie die Argumente analysieren, die Sie im Popup angegeben haben und die Benutzereingabe abrufen, die der Benutzer eingegeben oder ausgewählt hat und dann entsprechend Ihre App aktivieren.
+Innerhalb der Aktivierungsmethode können Sie die args analysieren, die Sie im Toast angegeben haben, und die Benutzereingabe abrufen, die der Benutzer eingegeben oder ausgewählt hat, und die APP dann entsprechend aktivieren.
 
 > [!NOTE]
-> Die **Activate**-Methode wird in einem separaten Thread aus dem Hauptthread aufgerufen.
+> Die **Aktivierungs** Methode wird in einem Trennzeichen von Ihrem Hauptthread aufgerufen.
 
 ```cpp
 // The GUID must be unique to your app. Create a new GUID if copying this code.
@@ -311,7 +311,7 @@ public:
 CoCreatableClass(NotificationActivator);
 ```
 
-Si sollten in der WinMain-Funktion festlegen, ob Sie über ein Popup oder nicht gestartet werden soll, um einen ordnungsgemäßen Start zu unterstützen, während die App geschlossen ist. Wenn dies von einem Popup gestartet wird, wird ein Start-Argument von "-ToastActivated" gesendet. Sobald dies angezeigt wird, sollten Sie das Ausführen aller normaler Aktivierungscodes beenden, und den Start von **NotificationActivator**-Fenstern zu ermöglichen.
+Wenn Sie das Starten der APP ordnungsgemäß unterstützen möchten, während Ihre APP geschlossen ist, sollten Sie in der WinMain-Funktion bestimmen, ob Sie von einem Toast gestartet werden oder nicht. Wenn Sie von einem Toast aus gestartet wird, wird eine Start-arg von "-toastaktiviert" angezeigt. Wenn dies der Fall ist, sollten Sie den normalen Start Aktivierungscode nicht mehr ausführen und zulassen, dass der **notificationactivator** das Starten von Fenstern bei Bedarf behandelt.
 
 ```cpp
 // Main function
@@ -322,7 +322,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
     HRESULT hr = winRtInitializer;
     if (SUCCEEDED(hr))
     {
-        // Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
+        // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
         hr = DesktopNotificationManagerCompat::RegisterAumidAndComServer(L"WindowsNotifications.DesktopToastsCpp", __uuidof(NotificationActivator));
         if (SUCCEEDED(hr))
         {
@@ -357,27 +357,27 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
 ```
 
 
-### <a name="activation-sequence-of-events"></a>Aktivierungssequenz von Ereignissen
+### <a name="activation-sequence-of-events"></a>Aktivierungs Sequenz von Ereignissen
 
-Die Aktivierungssequenz wie folgt...
+Die Aktivierungs Sequenz lautet wie folgt...
 
-Wenn Ihre App bereits ausgeführt wird:
+Wenn Ihre APP bereits ausgeführt wird:
 
-1. **Activate** in Ihrer **NotificationActivator** wird aufgerufen
+1. " **Aktivieren** " in " **notificationactivator** " wird aufgerufen.
 
-Wenn Ihre App nicht ausgeführt wird:
+Wenn Ihre APP nicht ausgeführt wird:
 
-1. Ihre App wird über eine exe-Datei gestartet, und Sie erhalten ein Befehlszeilenargument von "-ToastActivated"
-2. **Activate** in Ihrer **NotificationActivator** wird aufgerufen
-
-
-### <a name="foreground-vs-background-activation"></a>Vordergrund- und Hintergrundaktivierung
-Für Desktop-Apps erfolgt die Vordergrund und Hintergrundaktivierung genauso – die COM-Aktivierung wird aufgerufen. Je nach dem Code Ihrer App wird entschieden, ob ein Fenster angezeigt wird oder einfach einige Aufgaben ausgeführt werden und die Aktion anschließend beendet wird. Aus diesem Grund ändert die Angabe eines **activationType** im **Hintergrund** Ihres Popup-Inhalts nichts am Verhalten.
+1. Ihre APP wird mit exe gestartet. Sie erhalten die Befehlszeilenargumente "-|" aktiviert ".
+2. " **Aktivieren** " in " **notificationactivator** " wird aufgerufen.
 
 
-## <a name="step-9-remove-and-manage-notifications"></a>Schritt 9: Entfernen und Verwalten von Benachrichtigungen
+### <a name="foreground-vs-background-activation"></a>Vordergrund-vs-Hintergrund Aktivierung
+Bei Desktop-Apps wird die Vordergrund-und Hintergrund Aktivierung identisch behandelt. der com-Activator wird aufgerufen. Es liegt an Ihrem app-Code, zu entscheiden, ob ein Fenster angezeigt werden soll, oder einfach nur einige Aufgaben auszuführen und zu beenden. Wenn Sie also einen **ActivationType** von **Background** in Ihrem Popup Inhalt angeben, ändert sich das Verhalten nicht.
 
-Das Entfernen und Verwalten von Benachrichtigungen ist identisch mit UWP-Apps. Es wird jedoch empfohlen, dass Sie unsere Compat-Bibliothek verwenden, um eine **DesktopNotificationHistoryCompat** zu erhalten, damit Sie sich keine Gedanken über das Bereitstellen der AUMID machen müssen, wenn Sie die klassische Win32 verwenden.
+
+## <a name="step-9-remove-and-manage-notifications"></a>Schritt 9: entfernen und Verwalten von Benachrichtigungen
+
+Das Entfernen und Verwalten von Benachrichtigungen ist identisch mit UWP-apps. Es wird jedoch empfohlen, dass Sie unsere Kompatibilitäts-Bibliothek verwenden, um eine **desktopnotificationhistorycompat** -Klasse zu erhalten, sodass Sie sich keine Gedanken über die Bereitstellung der aumid machen müssen, wenn Sie klassisches Win32 verwenden.
 
 ```cpp
 std::unique_ptr<DesktopNotificationHistoryCompat> history;
@@ -395,36 +395,36 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>Schritt 10: Bereitstellen und Debuggen
 
-Wenn Sie die Desktop-Brücke-App bereitstellen und debuggen möchten, lesen Sie [Ausführen, Debuggen und Testen eine verpackten Desktop-App](/windows/uwp/porting/desktop-to-uwp-debug).
+Informationen zum Bereitstellen und Debuggen Ihrer msix/Sparse-Paket-app finden Sie unter [ausführen, Debuggen und Testen einer gepackten Desktop-App](/windows/uwp/porting/desktop-to-uwp-debug)
 
-Um eine klassische Win32-App bereitzustellen und zu verwalten, müssen Sie Ihrer App durch den Installer einmal vor dem Debuggen installieren, damit die Verknüpfung auf dem Startmenü mit AUMID und CLSID vorhanden ist. Nachdem die Verknüpfung auf dem Startmenü vorhanden ist, können Sie mithilfe von F5 in Visual Studio debuggen.
+Wenn Sie Ihre klassische Win32-App bereitstellen und debuggen möchten, müssen Sie die APP einmal vor dem Debuggen über das Installationsprogramm installieren, damit die Start Verknüpfung mit ihrer aumid und CLSID vorhanden ist. Nachdem die Start Verknüpfung vorhanden ist, können Sie in Visual Studio mit F5 Debuggen.
 
-Wenn Ihre Benachrichtigungen nicht einfach in Ihrer klassische Win32-App angezeigt werden (und keine Ausnahmen ausgelöst werden), bedeutet dies wahrscheinlich, dass die Verknüpfung im Startmenü nicht vorhanden ist (installieren Sie Ihre App über das Installationsprogramm), oder die AUMID, die Sie im Code verwendet haben, nicht der AUMID der Verknüpfung auf dem Startmenü entspricht.
+Wenn Ihre Benachrichtigungen einfach nicht in ihrer klassischen Win32-App angezeigt werden (und keine Ausnahmen ausgelöst werden), bedeutet dies wahrscheinlich, dass die Start Verknüpfung nicht vorhanden ist (installieren Sie Ihre APP über das Installationsprogramm), oder die im Code verwendete aumid stimmt nicht mit der aumid in der Start Verknüpfung.
 
-Wenn Ihre Benachrichtigungen im Info-Center erscheinen aber nicht dort angezeigt werden (verschwinden, nachdem das Popup geschlossen ist) beibehalten werden nicht persistent angezeigt werden, bedeutet dies, dass Sie die den COM-Aktivator nicht ordnungsgemäß implementiert haben.
+Wenn Ihre Benachrichtigungen angezeigt werden, aber nicht im Aktions Center gespeichert sind (verschwindet, nachdem das Popup verworfen wurde), bedeutet dies, dass Sie den com-Activator nicht ordnungsgemäß implementiert haben.
 
-Wenn Sie sowohl Ihre Desktop-Brücke und die klassische Win32-App installiert haben, beachten Sie, dass die App Desktop-Brücke die klassische Win32-App bei der Behandlung von Popup-Aktivierungen ablöst. Dies bedeutet, dass Popups aus der klassische Win32-App beim Klicken auf die Desktop-Brücke-App gestartet werden. Das Deinstallieren der App Desktop-Brücke setzt die Aktivierung auf die klassische Win32-App zurück.
+Wenn Sie sowohl das msix/Sparse-Paket als auch die klassische Win32-App installiert haben, beachten Sie, dass die msix/Sparse-Paket-app die klassische Win32-App ersetzt, wenn Sie Popup Aktivierungen verarbeiten. Dies bedeutet, dass bei einem Klick von der klassischen Win32-App aus der klassischen Win32-App weiterhin die msix/Sparse-Paket-app gestartet wird. Wenn Sie die msix/Sparse-Paket-app deinstallieren, werden die Aktivierungen wieder in der klassischen Win32-APP wieder hergestellt.
 
-Wenn Sie `HRESULT 0x800401f0 CoInitialize has not been called.` erhalten, müssen Sie `CoInitialize(nullptr)` in Ihrer App vor dem Aufrufen der APIs aufrufen.
+Wenn Sie empfangen `HRESULT 0x800401f0 CoInitialize has not been called.`, achten Sie darauf, `CoInitialize(nullptr)` dass Sie in Ihrer APP aufrufen, bevor Sie die APIs aufrufen.
 
-Wenn Sie `HRESULT 0x8000000e A method was called at an unexpected time.` beim Aufrufen der Compat APIs erhalten, bedeutet dies wahrscheinlich, dass Sie die erforderliche Register-Methoden nicht aufgerufen haben (oder bei einer Desktop-Brücke-App, dass Sie derzeit die App nicht unter im Desktop-Brücken-Kontext ausführen).
+Wenn Sie beim `HRESULT 0x8000000e A method was called at an unexpected time.` Aufrufen der compat-APIs empfangen, bedeutet dies wahrscheinlich, dass Sie die erforderlichen Register Methoden nicht aufrufen konnten (oder wenn Sie Ihre APP derzeit nicht im msix/Sparse-Kontext ausführen).
 
-Wenn Sie zahlreiche `unresolved external symbol` Kompilierungsfehler erhalten, haben Sie wahrscheinlich vergessen, `runtimeobject.lib` auf die **zusätzliche Abhängigkeiten** in Schritt 1 hinzuzufügen (oder Sie haben sie nur der Debugkonfiguration und nicht der Releasekonfiguration hinzugefügt).
+Wenn Sie zahlreiche `unresolved external symbol` Kompilierungsfehler erhalten, haben Sie wahrscheinlich `runtimeobject.lib` vergessen, den **zusätzlichen Abhängigkeiten** in Schritt #1 hinzuzufügen (oder Sie haben Sie nur der Debug-Konfiguration und nicht der Releasekonfiguration hinzugefügt).
 
 
-## <a name="handling-older-versions-of-windows"></a>Behandeln von älteren Versionen von Windows
+## <a name="handling-older-versions-of-windows"></a>Umgang mit älteren Versionen von Windows
 
-Wenn Sie Windows 8.1 oder niedriger unterstützen, sollten Sie zur Laufzeit überprüfen, ob Sie Windows 10 ausführen, bevor Sie eine **DesktopNotificationManagerCompat**-API aufrufen oder ToastGeneric-Popupbenachrichtigungen senden.
+Wenn Sie Windows 8.1 oder niedriger unterstützen, sollten Sie zur Laufzeit überprüfen, ob Sie unter Windows 10 ausgeführt werden, bevor Sie eine **desktopnotificationmanagercompat** -API aufrufen oder toastgenerische Toasts senden.
 
-Mit Windows 8 wurden Popupbenachrichtigungen eingeführt, allerdings verwendet es die [älteren Popupvorlagen](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)) wie z. B. ToastText01. Die Aktivierung wurde vom **Activated**-Ereignis im Speicher von der **ToastNotification**-Klasse behandelt, da Popups nur als kurze Popups angezeigt wurden, die nicht beibehalten wurden. Windows 10 führte [interaktive ToastGeneric-Popups](adaptive-interactive-toasts.md) ein sowie das Info-Center, in dem Benachrichtigungen für mehrere Tage beibehalten werden. Die Einführung des Info-Centers erforderte die Einführung eines COM-Aktivators, damit Ihr Popups auch noch einige Tage nach dem Erstellen aktiviert werden können.
+In Windows 8 wurden Popup Benachrichtigungen eingeführt, aber es wurden die Legacy-Popup [Vorlagen](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))wie ToastText01 verwendet. Die Aktivierung wurde vom in-Memory- **aktivierten** Ereignis in der **toastnotification** -Klasse behandelt, da Popups nur kurze Popups waren, die nicht persistent waren. In Windows 10 wurden interaktive Popup- [Auffassungen](adaptive-interactive-toasts.md)eingeführt, und es wurde auch ein Aktions Center eingeführt, in dem Benachrichtigungen mehrere Tage lang aufbewahrt werden. Die Einführung des Aktions Centers erforderte die Einführung eines com-Activators, sodass der Toast Tage nach der Erstellung aktiviert werden kann.
 
-| Betriebssystem | ToastGeneric | COM-Aktivator | Ältere Popupvorlagen |
+| Betriebssystem | Mit dem generischen | COM-Activator | Legacy-Popup Vorlagen |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows-10 | Unterstützt | Unterstützt | Unterstützt (aktiviert den COM-Server nicht) |
-| Windows 8.1 / 8 | NICHT ZUTREFFEND | NICHT ZUTREFFEND | Unterstützt |
-| Windows 7 und niedriger | NICHT ZUTREFFEND | NICHT ZUTREFFEND | NICHT ZUTREFFEND |
+| Windows 10 | Unterstützt | Unterstützt | Unterstützt (com-Server wird jedoch nicht aktiviert) |
+| Windows 8.1/8 | – | – | Unterstützt |
+| Windows 7 und niedriger | – | – | – |
 
-Um zu überprüfen, ob Sie Windows 10 ausführen, geben Sie den `<VersionHelpers.h>` Header an und überprüfen Sie die **IsWindows10OrGreater**-Methode. Wenn „true” zurückgegeben wird, rufen Sie weiterhin alle in dieser Dokumentation beschriebenen Methoden auf. 
+Um zu prüfen, ob Sie unter Windows 10 ausgeführt werden, `<VersionHelpers.h>` schließen Sie den-Header ein, und überprüfen Sie die **IsWindows10OrGreater** -Methode Wenn dies true zurückgibt, rufen Sie weiterhin alle Methoden auf, die in dieser Dokumentation beschrieben werden. 
 
 ```cpp
 #include <VersionHelpers.h>
@@ -438,7 +438,7 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>Bekannte Probleme
 
-**FIXED: Die App hat nach dem Klicken auf die Popupbenachrichtigung keinen Fokus**: In Build 15063 und früher wurden die Vordergrundrechte nicht auf Ihre Anwendung übertragen, wenn wir den COM-Server aktivierten. Aus diesem Grund führte Ihre App einfach einen Flash aus, bei dem Versuch, sie in den Vordergrund zu verschieben. Es gibt hierfür keine Problemumgehung. Wir haben dies in Builds 16299 und höher behoben.
+**Korrigiert: die APP wird nach dem Klicken auf "Toast" nicht fokussiert**: in Builds 15063 und früher wurden keine Vordergrund Rechte an Ihre Anwendung übertragen, als der com-Server aktiviert wurde. Daher würde Ihre APP einfach blinken, wenn Sie versucht haben, Sie in den Vordergrund zu verschieben. Für dieses Problem gibt es keine Problem Umgehung. Wir haben dies in Build 16299 und höher korrigiert.
 
 
 ## <a name="resources"></a>Ressourcen

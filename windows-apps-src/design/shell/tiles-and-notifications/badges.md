@@ -1,21 +1,21 @@
 ---
 Description: Erfahren Sie, wie Sie mithilfe von Kacheln, Signalen, Popups und Benachrichtigungen Einstiegspunkte in Ihre App bereitstellen und Benutzer auf dem neuesten Stand halten können.
-title: Signalbenachrichtigungen für UWP-Apps
+title: Badge-Benachrichtigungen für Windows-apps
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1d3aa9658e8a57a7993eb79d164b1e17ac23b9ac
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320846"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970875"
 ---
-# <a name="badge-notifications-for-uwp-apps"></a>Signalbenachrichtigungen für UWP-Apps
+# <a name="badge-notifications-for-windows-apps"></a>Badge-Benachrichtigungen für Windows-apps
 
  
 
@@ -34,7 +34,7 @@ Benachrichtigungssignale werden unabhängig davon, ob die App gerade ausgeführt
 
 <table>
     <tr>
-        <th>Wert</th>
+        <th>Value</th>
         <th>Badge</th>
         <th>XML</th>
     </tr>
@@ -60,12 +60,12 @@ Anstelle einer Zahl kann in einem Signal eine der nicht erweiterbaren Statusglyp
     <th>XML</th>
 </tr>
 <tr>
-    <td>none</td>
+    <td>Keine</td>
     <td>(Es wird kein Signal angezeigt.)</td>
     <td>`<badge value="none"/>`</td>
 </tr>
 <tr>
-    <td>Aktivität</td>
+    <td>activity</td>
     <td><img src="images/badges/badge-activity.png" alt="Glyph" /></td>
     <td>`<badge value="activity"/>`</td>
 </tr>
@@ -75,7 +75,7 @@ Anstelle einer Zahl kann in einem Signal eine der nicht erweiterbaren Statusglyp
     <td>`<badge value="alarm"/>`</td>
 </tr>
 <tr>
-    <td>Benachrichtigung</td>
+    <td>Warnung</td>
     <td><img src="images/badges/badge-alert.png" alt="Glyph" /></td>
     <td>`<badge value="alert"/>`</td>
 </tr>
@@ -128,7 +128,7 @@ Anstelle einer Zahl kann in einem Signal eine der nicht erweiterbaren Statusglyp
 
 ## <a name="create-a-badge"></a>Erstellen eines Signals
 
-Diese Beispiele zeigen, wie ein Badge-Update zu erstellen.
+In diesen Beispielen wird gezeigt, wie Sie ein Badge-Update erstellen.
 
 ### <a name="create-a-numeric-badge"></a>Erstellen eines numerischen Signals
 
@@ -194,9 +194,9 @@ private void clearBadge()
 }
 ````
 
-## <a name="get-the-sample-code"></a>Beispielcode herunterladen
+## <a name="get-the-sample-code"></a>Laden Sie den Beispielcode herunter
 
-* [Notifications-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Zeigt, wie Sie Live-Kacheln erstellen, Signalupdates senden und Popupbenachrichtigungen anzeigen können. 
+* [Benachrichtigungsbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)<br/> Zeigt, wie Sie Live-Kacheln erstellen, Signalupdates senden und Popupbenachrichtigungen anzeigen können. 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

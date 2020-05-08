@@ -1,26 +1,26 @@
 ---
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Jede Microsoft Store-Transaktion, die zu einem erfolgreichen Produktkauf führt, kann optional einen Transaktionsbeleg zurückgeben.
+description: Jede Microsoft Store Transaktion, die zu einem erfolgreichen Produktkauf führt, kann optional eine Transaktionsbestätigung zurückgeben.
 title: Überprüfen von Produktkäufen anhand von Belegen
 ms.date: 04/16/2018
 ms.topic: article
-keywords: Windows 10, UWP, In-App-Einkäufe, IAPs, Belege, Windows.ApplicationModel.Store
+keywords: Windows 10, UWP, in-App-Käufe, IAPS, Bestätigungen, Windows. applicationmodel. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a26d98de58c954f1bec588b335483de08404862b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ba87de0755469f373f9000f3d96d3021c9197985
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259224"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148888"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Überprüfen von Produktkäufen anhand von Belegen
 
-Jede Microsoft Store-Transaktion, die zu einem erfolgreichen Produktkauf führt, kann optional einen Transaktionsbeleg zurückgeben. Dieser Beleg enthalten Informationen zum gelisteten Produkt und zu den Kosten für den Kunden.
+Jede Microsoft Store Transaktion, die zu einem erfolgreichen Produktkauf führt, kann optional eine Transaktionsbestätigung zurückgeben. Dieser Beleg enthalten Informationen zum gelisteten Produkt und zu den Kosten für den Kunden.
 
-Der Zugriff auf diese Informationen unterstützt Szenarien, in denen Ihre App überprüfen muss, ob ein Benutzer Ihre App oder ein Add-On (auch als In-App-Produkt oder IAP bezeichnet) im Microsoft Store gekauft hat. Das kann zum Beispiel bei einem Spiel der Fall sein, für das Inhalte heruntergeladen werden können. Wenn der Benutzer, der die Spielinhalte gekauft hat, das Spiel auf einem anderen Gerät spielen möchte, müssen Sie überprüfen, ob der Benutzer die Inhalte bereits besitzt. Dies funktioniert so.
+Der Zugriff auf diese Informationen unterstützt Szenarien, in denen Ihre APP überprüfen muss, ob ein Benutzer Ihre APP gekauft hat, oder ob Add-on-Käufe (auch als in-App-Produkt oder IAP bezeichnet) aus dem Microsoft Store durchgeführt wurden. Das kann zum Beispiel bei einem Spiel der Fall sein, für das Inhalte heruntergeladen werden können. Wenn der Benutzer, der die Spielinhalte gekauft hat, das Spiel auf einem anderen Gerät spielen möchte, müssen Sie überprüfen, ob der Benutzer die Inhalte bereits besitzt. Gehen Sie folgendermaßen vor:
 
 > [!IMPORTANT]
-> Dieser Artikel beschreibt, wie Sie Mitglieder des [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)-Namespace verwenden, um einen Beleg für einen In-App-Kauf abzurufen und zu überprüfen. Wenn Sie den [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store)-Namespace -Namespace für In-App-Käufe verwenden (eingeführt in **Windows 10 Anniversary Edition (10.0; Build 14393)** oder einer höheren Version in Visual Studio), müssen Sie beachten, dass dieser Namespace keine API zum Abrufen von Kaufbelegen für In-App-Einkäufe enthält. Sie können jedoch eine REST-Methode in der Microsoft Store-Sammlungs-API verwenden, um Daten für eine Kauftransaktion abzurufen. Weitere Informationen finden Sie unter [Belege für In-App-Käufe](in-app-purchases-and-trials.md#receipts).
+> In diesem Artikel wird gezeigt, wie Sie mithilfe von Membern des [Windows. applicationmodel. Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) -Namespace eine Bestätigung für einen in-App-Einkauf erhalten und validieren. Wenn Sie den [Windows. Services. Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) -Namespace für in-App-Käufe (eingeführt in Windows 10, Version 1607) verwenden und für Projekte mit der Zielversion **Windows 10 Anniversary Edition (10,0;) verfügbar sind Build 14393)** oder eine neuere Version in Visual Studio). dieser Namespace bietet keine API zum erwerben von Kauf Bestätigungen für in-App-Käufe. Sie können jedoch eine Rest-Methode in der Microsoft Store Collection-API verwenden, um Daten für eine Kauftransaktion zu erhalten. Weitere Informationen finden Sie unter [Belege für In-App-Käufe](in-app-purchases-and-trials.md#receipts).
 
 ## <a name="requesting-a-receipt"></a>Anfordern eines Belegs
 
@@ -33,7 +33,7 @@ Der **Windows.ApplicationModel.Store**-Namespace unterstützt verschiedene Mögl
 Ein App-Beleg sieht ungefähr wie folgt aus.
 
 > [!NOTE]
-> Dieses Beispiel ist formatiert, damit das XML lesbar ist. Echte App-Belege enthalten keine Leerzeichen zwischen Elementen.
+> Dieses Beispiel ist so formatiert, dass das XML lesbar ist. Echte App-Bestätigungen enthalten keine Leerzeichen zwischen Elementen.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -60,7 +60,7 @@ Ein App-Beleg sieht ungefähr wie folgt aus.
 Ein Produktbeleg sieht wie folgt aus.
 
 > [!NOTE]
-> Dieses Beispiel ist formatiert, damit das XML lesbar ist. Echte Produkt-Belege enthalten keine Leerzeichen zwischen Elementen.
+> Dieses Beispiel ist so formatiert, dass das XML lesbar ist. Echte produktbestätigungen enthalten keine Leerzeichen zwischen Elementen.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -87,7 +87,7 @@ Sie können beide Belegbeispiele verwenden, um den Überprüfungscode zu testen.
 
 ## <a name="validating-a-receipt"></a>Überprüfen eines Belegs
 
-Um die Authentizität eines Belegs zu überprüfen, muss das Back-End-System (ein Webdienst oder ähnlich) die Belegsignatur mithilfe des öffentlichen Zertifikats überprüfen. Um dieses Zertifikat abzurufen, verwenden Sie die URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```, wobei ```CertificateId``` der **CertificateId**-Wert im Beleg ist.
+Um die Authentizität eines Belegs zu überprüfen, muss das Back-End-System (ein Webdienst oder ähnlich) die Belegsignatur mithilfe des öffentlichen Zertifikats überprüfen. Um dieses Zertifikat zu erhalten, verwenden Sie ```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ```die URL certifikateid ' ' ' ist der **zertifikateid** -Wert in der Bestätigung.
 
 Im Folgenden sehen Sie ein Beispiel für diesen Überprüfungsvorgang. Dieser Code wird in einer .NET Framework-Konsolenanwendung ausgeführt, die einen Verweis auf die **System.Security**-Assembly enthält.
 
@@ -104,20 +104,20 @@ In diesem Abschnitt werden die Elemente und Attribute in einen Beleg beschrieben
 
 Das Stammelement dieser Datei ist das Element **Receipt**, das Informationen zu App- und In-App-Käufen enthält. Dieses Element enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Anzahl  |  Beschreibung   |
+|  Element  |  Erforderlich  |  Menge  |  BESCHREIBUNG   |
 |-------------|------------|--------|--------|
-|  [Appreceipt](#appreceipt)  |    Nein        |  0 oder 1  |  Enthält Kaufinformationen für die aktuelle App.            |
-|  [Productreceipt](#productreceipt)  |     Nein       |  0 oder mehr    |   Enthält Informationen zu einem In-App-Kauf für die aktuelle App.     |
+|  [AppReceipt](#appreceipt)  |    Nein         |  0 oder 1  |  Enthält Kaufinformationen für die aktuelle App.            |
+|  [ProductReceipt](#productreceipt)  |     Nein        |  0 oder mehr    |   Enthält Informationen zu einem In-App-Kauf für die aktuelle App.     |
 |  Signatur  |      Ja      |  1   |   Dieses Element ist ein standardmäßiges [XML-DSIG-Konstrukt](https://www.w3.org/TR/xmldsig-core/). Es enthält ein **SignatureValue**-Element, das die Signatur enthält, die Sie für die Überprüfung des Belegs verwenden können, und ein **SignedInfo**-Element.      |
 
 **Receipt** hat die folgenden Attribute.
 
-|  Attribut  |  Beschreibung   |
+|  Attribut  |  BESCHREIBUNG   |
 |-------------|-------------------|
 |  **Version**  |    Die Versionsnummer des Belegs.            |
 |  **CertificateId**  |     Der Fingerabdruck des Zertifikats, der für die Signierung des Belegs verwendet wurde.          |
-|  **Receiptdate**  |    Das Datum, an dem der Beleg signiert und heruntergeladen wurde.           |  
-|  **Receiptde viceid**  |   Identifiziert das Gerät, das für die Anforderung dieses Belegs verwendet wurde.         |  |
+|  **ReceiptDate**  |    Das Datum, an dem der Beleg signiert und heruntergeladen wurde.           |  
+|  **ReceiptDeviceId**  |   Identifiziert das Gerät, das für die Anforderung dieses Belegs verwendet wurde.         |  |
 
 <span id="appreceipt" />
 
@@ -127,10 +127,10 @@ Dieses Element enthält Kaufinformationen für die aktuelle App.
 
 **AppReceipt** hat die folgenden Attribute.
 
-|  Attribut  |  Beschreibung   |
+|  Attribut  |  BESCHREIBUNG   |
 |-------------|-------------------|
-|  **Name**  |    Identifiziert den Kauf.           |
-|  **AppId**  |     Der Paketfamilienname-Wert, den das Betriebssystem für die App verwendet.           |
+|  **Id**  |    Identifiziert den Kauf.           |
+|  **AppID**  |     Der Paketfamilienname-Wert, den das Betriebssystem für die App verwendet.           |
 |  **LicenseType**  |    **Full**, wenn der Benutzer die Vollversion der App gekauft hat. **Trial**, wenn der Benutzer eine Testversion der App heruntergeladen hat.           |  
 |  **PurchaseDate**  |    Das Datum, an dem die App gekauft wurde.          |  |
 
@@ -142,10 +142,10 @@ Dieses Element enthält Informationen zu einem In-App-Kauf für die aktuelle App
 
 **ProductReceipt** hat die folgenden Attribute.
 
-|  Attribut  |  Beschreibung   |
+|  Attribut  |  BESCHREIBUNG   |
 |-------------|-------------------|
-|  **Name**  |    Identifiziert den Kauf.           |
-|  **AppId**  |     Identifiziert die App, über die der Benutzer den Kauf durchgeführt hat.           |
+|  **Id**  |    Identifiziert den Kauf.           |
+|  **AppID**  |     Identifiziert die App, über die der Benutzer den Kauf durchgeführt hat.           |
 |  **ProductID**  |     Identifiziert das gekaufte Produkt.           |
 |  **ProductType**  |    Legt den Produkttyp fest. Zurzeit wird nur der Wert **Durable** unterstützt.          |  
 |  **PurchaseDate**  |    Das Datum, an dem der Kauf erfolgte.          |  |

@@ -1,86 +1,86 @@
 ---
 Description: Entdecken Sie die verschiedenen Optionen für Desktop-Win32-Apps zum Senden von Popup Benachrichtigungen.
-title: Popupbenachrichtigungen über Desktop-Apps
+title: Popup Benachrichtigungen aus Desktop-Apps
 label: Toast notifications from desktop apps
 template: detail.hbs
 ms.date: 05/01/2018
 ms.topic: article
-keywords: Windows 10, UWP, Win32, Desktop, Popupbenachrichtigungen, Desktop-Brücke, Optionen zum Senden von Popups, COM-Server, COM-Aktivator, COM, gefälschter COM, kein COM, ohne COM, Senden von Popupbenachrichtigungen
+keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Desktop Bridge, msix, sparsesloadpaket, Optionen für das Senden von Toasts, com-Server, com-Activator, com, gefälschtes com, Nein com, ohne com, Send Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 31501d2dc3ac255897e374ca81b05558be7bc2fc
-ms.sourcegitcommit: 545d5d864d89650a00a496ac4e52def9a13b14cd
+ms.openlocfilehash: 020cdeb1aaddac7fe879e91d18e258aea1b387ea
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73560656"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970985"
 ---
-# <a name="toast-notifications-from-desktop-apps"></a>Popupbenachrichtigungen über Desktop-Apps
+# <a name="toast-notifications-from-desktop-apps"></a>Popup Benachrichtigungen aus Desktop-Apps
 
-Desktop-Apps (Desktop-Brücke und klassische Win32) können interaktive Popupbenachrichtigungen wie Universelle Windows-Plattform (UWP)-Apps senden. Es gibt jedoch verschiedene Optionen für Desktop-Apps aufgrund der verschiedenen Aktivierungsschemata.
+Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-app-apps senden. Aufgrund der verschiedenen Aktivierungs Schemas gibt es jedoch einige unterschiedliche Optionen für Desktop-Apps.
 
-In diesem Artikel sind die Optionen zum Senden einer Popupbenachrichtigung unter Windows 10 aufgeführt. Jede Option bietet vollständige Unterstützung für ...
+In diesem Artikel werden die Optionen aufgelistet, die Sie zum Senden einer Popup Benachrichtigung unter Windows 10 haben. Jede Option unterstützt vollständig...
 
-* Beibehaltung im Info-Center
-* Aktivierbar vom Popup und innerhalb des Info-Centers
-* Aktivierbar, während EXE nicht ausgeführt wird
+* Persistente Speicherung im Aktions Center
+* Aktivierbare sowohl im Popup-als auch innerhalb des Aktions Centers
+* Aktivierbar, während ihre exe nicht ausgeführt wird
 
 ## <a name="all-options"></a>Alle Optionen
 
-Die nachfolgende Tabelle enthält die Optionen für die Unterstützung von Popups in Ihrer Desktop-App mit den entsprechenden unterstützten Features. Sie können in der Tabelle die beste Option für Ihr Szenario auswählen.<br/><br/>
+In der folgenden Tabelle werden die Optionen für die Unterstützung von Popups innerhalb Ihrer Desktop-App und die entsprechenden unterstützten Funktionen veranschaulicht. Sie können die Tabelle verwenden, um die beste Option für Ihr Szenario auszuwählen.<br/><br/>
 
-| Option | Visuelle Elemente | Aktionen | Eingaben | Aktiviert im Prozess |
+| Option | Visuelle Objekte | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- | -- |
 | [COM-Activator](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
 | [Keine com/Stub-CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
-## <a name="preferred-option---com-activator"></a>Bevorzugte Option – COM-Aktivator
+## <a name="preferred-option---com-activator"></a>Bevorzugte Option: com-Activator
 
-Dies ist die bevorzugte Option, die sowohl für Desktop-Brücke- als auch klassische Win32-Apps funktioniert und alle Benachrichtigungsfeatures unterstützt. Lassen Sie sich von „COM-Aktivator“ nicht einschüchtern: Wir verfügen über eine Bibliothek [für C#-Apps](send-local-toast-desktop.md) und [C++-Apps](send-local-toast-desktop-cpp-wrl.md), die dies sehr einfach gestalten, selbst wenn Sie zuvor noch niemals einen COM-Server geschrieben haben.<br/><br/>
+Dies ist die bevorzugte Option für Desktop-Apps und unterstützt alle Benachrichtigungs Features. Machen Sie sich keine Angst vor "com Activator". Wir verfügen über eine Bibliothek [für c#](send-local-toast-desktop.md) -und [C++-apps](send-local-toast-desktop-cpp-wrl.md) , die dies sehr einfach macht, auch wenn Sie noch nie einen com-Server geschrieben haben.<br/><br/>
 
-| Visuelle Elemente | Aktionen | Eingaben | Aktiviert im Prozess |
+| Visuelle Objekte | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ✔️ | ✔️ |
 
-Mit der Option des COM-Aktivators können Sie die folgenden Benachrichtigungsvorlagen und Aktivierungstypen in Ihrer App verwenden.<br/><br/>
+Mit der com Activator-Option können Sie die folgenden Benachrichtigungs Vorlagen und Aktivierungs Typen in Ihrer APP verwenden.<br/><br/>
 
-| Vorlage und Aktivierungstyp | Desktop-Brücke | Klassisch Win32 |
+| Vorlage und Aktivierungstyp | Msix/sparsespaket | Klassisches Win32 |
 | -- | -- | -- |
-| ToastGeneric-Vordergrund | ✔️ | ✔️ |
-| ToastGeneric-Hintergrund | ✔️ | ✔️ |
-| ToastGeneric-Protokoll | ✔️ | ✔️ |
-| Ältere Vorlagen | ✔️ | ❌ |
+| Im Vordergrund | ✔️ | ✔️ |
+| Hintergrund | ✔️ | ✔️ |
+| Toastgeneric-Protokoll | ✔️ | ✔️ |
+| Legacy Vorlagen | ✔️ | ❌ |
 
 > [!NOTE]
-> Wenn Sie den COM-Aktivator zu Ihrer vorhandenen Desktop-Brücke-App hinzufügen, aktivieren die Vordergrund/Hintergrund- und älteren Benachrichtigungsaktivierungen nun Ihren COM-Aktivator anstelle der Befehlszeile.
+> Wenn Sie den com-Aktivator zu Ihrer vorhandenen msix/Sparse-Paket-app hinzufügen, aktivieren Vordergrund-/Hintergrund-und Legacy Benachrichtigungs Aktivierungen nun Ihren com-Aktivierer anstelle der Befehlszeile.
 
-Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokalen Popup Benachrichtigung von Desktop- C# apps](send-local-toast-desktop.md) oder [Senden einer lokalen Popup Benachrichtigung von Desktop C++ -WRL-apps](send-local-toast-desktop-cpp-wrl.md).
+Informationen zur Verwendung dieser Option finden Sie unter [Senden einer lokalen Popup Benachrichtigung von Desktop-c#-apps](send-local-toast-desktop.md) oder [Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md).
 
 
-## <a name="alternative-option---no-com--stub-clsid"></a>Alternative Option – kein COM/Stub-CLSID
+## <a name="alternative-option---no-com--stub-clsid"></a>Alternative Option-keine com/Stub-CLSID
 
-Dies ist eine alternative Option, wenn Sie keinen COM-Aktivator implementieren können. Sie müssen dabei allerdings auf neue Features verzichten, wie z. B. die Eingabeunterstützung (Textfelder in Popups) und die Aktivierung im Prozess.<br/><br/>
+Dies ist eine alternative Option, wenn Sie einen com-Activator nicht implementieren können. Sie werden jedoch einige Features Opfern, wie z. b. Eingabe Unterstützung (Textfelder auf den-Auffassungen) und Prozess interne Aktivierung.<br/><br/>
 
-| Visuelle Elemente | Aktionen | Eingaben | Aktiviert im Prozess |
+| Visuelle Objekte | Aktionen | Eingaben | Prozess interne Aktivierung |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ❌ | ❌ |
 
-Wenn Sie klassisches Win32 unterstützen, sind Sie mit dieser Option in Bezug auf die Benachrichtigungsvorlagen und Aktivierungstypen, die Sie verwenden können, viel eingeschränkter (siehe unten).<br/><br/>
+Wenn Sie mit dieser Option klassisches Win32 unterstützen, sind Sie in den Benachrichtigungs Vorlagen und den Aktivierungs Typen, die Sie verwenden können, viel stärker eingeschränkt (siehe unten).<br/><br/>
 
-| Vorlage und Aktivierungstyp | Desktop-Brücke | Klassisch Win32 |
+| Vorlage und Aktivierungstyp | Msix/sparsespaket | Klassisches Win32 |
 | -- | -- | -- |
-| ToastGeneric-Vordergrund | ✔️ | ❌ |
-| ToastGeneric-Hintergrund | ✔️ | ❌ |
-| ToastGeneric-Protokoll | ✔️ | ✔️ |
-| Ältere Vorlagen | ✔️ | ❌ |
+| Im Vordergrund | ✔️ | ❌ |
+| Hintergrund | ✔️ | ❌ |
+| Toastgeneric-Protokoll | ✔️ | ✔️ |
+| Legacy Vorlagen | ✔️ | ❌ |
 
-Für Desktop Bridge-Apps können Sie einfach Popup Benachrichtigungen wie eine UWP-App senden. Wenn der Benutzer auf das Popup klickt, wird Ihre App mit der Befehlszeile gestartet, und zwar mit den Start-Argumenten, die Sie im Popup angegeben haben.
+Für gepackte [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps und apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)mit geringer Dichte verwenden, senden Sie einfach Popup Benachrichtigungen wie eine UWP-app. Wenn der Benutzer auf den Popup klickt, wird die Befehlszeile der APP mit den startargs gestartet, die Sie im Toast angegeben haben.
 
-Richten Sie für klassische Win32-Apps die AUMID so ein, dass Sie Popupbenachrichtigungen versenden können. Geben Sie dann in Ihrer Verknüpfung auch eine CLSID an. Dies kann eine zufällige GUID sein. Fügen Sie nicht den COM-Server/Aktivator hinzu. Sie fügen eine „Stub“-COM-CLSID hinzu, was dazu führt, dass Info-Center die Benachrichtigung beibehält. Beachten Sie, dass Sie nur Protokollaktivierungspopups verwenden können, da die Stub-CLSID die Aktivierung aller anderen Popupaktivierungen unterbricht. Deshalb müssen Sie Ihre App aktualisieren, um die Protokollaktivierung zu unterstützen. Außerdem müssen Sie Ihre eigene App durch das Popupprotokoll aktualisieren.
+Richten Sie für klassische Win32-Apps die aumid so ein, dass Sie die Umfassungen senden können, und geben Sie dann auch eine CLSID für die Verknüpfung an. Dies kann eine beliebige zufällige GUID sein. Fügen Sie den com-Server/-Activator nicht hinzu. Sie fügen eine "Stub"-com-CLSID hinzu, die dazu führt, dass das Aktions Center die Benachrichtigung beibehält. Beachten Sie, dass Sie nur Protokoll Aktivierungs Toasts verwenden können, da die Stub-CLSID die Aktivierung aller anderen Popup Aktivierungen unterbricht. Daher müssen Sie Ihre APP aktualisieren, um die Protokoll Aktivierung zu unterstützen, und das Popups-Protokoll muss Ihre eigene APP aktivieren.
 
 
 ## <a name="resources"></a>Ressourcen
 
-* [Sendet eine lokale Popup Benachrichtigung von Desktop C# -apps.](send-local-toast-desktop.md)
-* [Senden einer lokalen Popup Benachrichtigung von Desktop C++ -WRL-apps](send-local-toast-desktop-cpp-wrl.md)
+* [Lokale Popup Benachrichtigung von Desktop-c#-apps senden](send-local-toast-desktop.md)
+* [Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps](send-local-toast-desktop-cpp-wrl.md)
 * [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)

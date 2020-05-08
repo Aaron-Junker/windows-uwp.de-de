@@ -1,50 +1,50 @@
 ---
-Description: Erfahren Sie, wie eine sekundäre Kachel an Start anheften, aus der UWP-app.
-title: Sekundäre Kacheln an Startmenü anheften
+Description: Erfahren Sie, wie Sie eine sekundäre Kachel anheften, um Ihre Windows-APP zu starten.
+title: Anheften sekundärer Kacheln
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows 10, UWP, sekundäre Kacheln, Anheften, anheften, Schnellstart, Codebeispiel, Beispiel, Sekundärkachel
+keywords: Windows 10, UWP, sekundäre Kacheln, PIN, anheften, Schnellstart, Codebeispiel, Beispiel, "secondarytile"
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: 8c535e7e2abaf68212cb0a2f6daac8741b6548a5
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653155"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971045"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>Sekundäre Kacheln an Startmenü anheften
+# <a name="pin-secondary-tiles-to-start"></a>Anheften sekundärer Kacheln
 
 
-Dieses Thema führt Sie durch die Schritte zum Erstellen einer sekundären Kachel für Ihre UWP-App und Anheften der Kachel an das Startmenü.
+In diesem Thema wird Schritt für Schritt erläutert, wie Sie eine sekundäre Kachel für Ihre Windows-app erstellen und an das Startmenü anheften.
 
-![Screenshot von sekundären Kacheln](images/secondarytiles.png)
+![Screenshot der sekundären Kacheln](images/secondarytiles.png)
 
-Weitere Informationen zum Erstellen und Anheften von Sekundärkacheln finden Sie unter [Übersicht über sekundäre Kacheln](secondary-tiles.md).
+Weitere Informationen zu sekundären Kacheln finden Sie unter [Übersicht über sekundäre Kacheln](secondary-tiles.md).
 
 
-## <a name="add-namespace"></a>Hinzufügen von Namespaces
+## <a name="add-namespace"></a>Namespace hinzufügen
 
-Der Windows.UI. StartScreen-Namespace enthält die SecondaryTile-Klasse.
+Der Windows. UI. Startscreen-Namespace enthält die secondarytile-Klasse.
 
 ```csharp
 using Windows.UI.StartScreen;
 ```
 
 
-## <a name="initialize-the-secondary-tile"></a>Initialisieren Sie die sekundäre Kachel
+## <a name="initialize-the-secondary-tile"></a>Initialisieren der sekundären Kachel
 
 Sekundäre Kacheln bestehen aus einigen wichtigen Komponenten...
 
-* **TileId**: Ein eindeutiger Bezeichner, der Sie die Kachel für die anderen sekundären Kacheln identifizieren kann.
-* **"DisplayName"**: Der Name, den Sie auf der Kachel angezeigt werden sollen.
-* **Argumente**: Die Argumente sollen übergebenen zurück zu Ihrer app klickt der Benutzer auf die Kachel.
-* **Square150x150Logo**: Das erforderliche Logo, das angezeigt wird, auf die mittlere Größe Kachel (und zur Kachel "klein" geändert werden, wenn kein kleines Logo angegeben).
+* **Tileid**: ein eindeutiger Bezeichner, mit dem Sie die Kachel zwischen den anderen sekundären Kacheln identifizieren können.
+* **Display Name**: der Name, der auf der Kachel angezeigt werden soll.
+* **Argumente**: die Argumente, die an die APP zurückgegeben werden sollen, wenn der Benutzer auf die Kachel klickt.
+* **Square150x150Logo**: das erforderliche Logo, das auf der Kachel mit mittlerer Größe angezeigt wird (und die Größe auf Kachel mit geringer Größe geändert wird, wenn kein kleines Logo bereitgestellt wird).
 
-Sie **MÜSSEN** initialisierte Werte für alle oben genannten Eigenschaften anbieten, da andernfalls eine Ausnahme ausgelöst wird.
+Sie **müssen** initialisierte Werte für alle oben genannten Eigenschaften angeben, andernfalls wird eine Ausnahme ausgelöst.
 
-Es gibt eine Vielzahl von Konstruktoren, die Sie verwenden können, das Verwenden des Konstruktors, der TileId, DisplayName, Argumente, Square150x150Logo und DesiredSize annimmt, stellt allerdings sicher, dass Sie alle erforderlichen Eigenschaften festlegen.
+Es gibt eine Vielzahl von Konstruktoren, die Sie verwenden können. Wenn Sie jedoch den Konstruktor verwenden, der die tileid, Display Name, Arguments, square150x150Logo und DesiredSize annimmt, stellen Sie sicher, dass Sie alle erforderlichen Eigenschaften festlegen.
 
 ```csharp
 // Construct a unique tile ID, which you will need to use later for updating the tile
@@ -67,13 +67,13 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="optional-add-support-for-larger-tile-sizes"></a>Optional: Hinzufügen von Unterstützung für größere-Kachel
+## <a name="optional-add-support-for-larger-tile-sizes"></a>Optional: Hinzufügen von Unterstützung für größere Kachel Größen
 
-Wenn Sie vorhaben, umfassende Kachelbenachrichtigungen auf der sekundären Kachel anzuzeigen, sollten Sie dem Anwender ermöglichen, die Breite oder Größe ihrer Kachel zu ändern, damit noch mehr Inhalte angezeigt werden.
+Wenn Sie auf der sekundären Kachel umfassende Kachel Benachrichtigungen anzeigen möchten, können Sie es dem Benutzer ermöglichen, seine Kachel so zu ändern, dass Sie breit oder groß ist, damit Sie noch mehr Inhalte sehen können.
 
-Um breite und große Kachelgrößen zu aktivieren, müssen Sie *Wide310x150Logo* und *Square310x310Logo* angeben. Wenn möglich, sollten Sie ebenfalls *Square71x71Logo* für die kleine Kachelgröße bereitstellen (andernfalls wird die erforderliche Größe Square150x150Logo für die kleine Kachel angewandt).
+Um Breite und große Kachel Größen zu aktivieren, müssen Sie *Wide310x150Logo* und *Square310x310Logo*bereitstellen. Außerdem sollten Sie, wenn möglich, den *Square71x71Logo* für die kleine Kachel Größe angeben (andernfalls wird der erforderliche Square150x150Logo für die kleine Kachel herabgestuft).
 
-Sie können ebenfalls ein eindeutiges *Square44x44Logo* bereitstellen, das optional in der unteren rechten Ecke angezeigt wird, wenn eine Benachrichtigung vorhanden ist. Wenn Sie diese nicht angeben, wird stattdessen *Square44x44Logo* aus der primären Kachel verwendet.
+Sie können auch eine eindeutige *Square44x44Logo*bereitstellen, die optional in der unteren rechten Ecke angezeigt wird, wenn eine Benachrichtigung vorhanden ist. Wenn Sie keinen angeben, wird stattdessen der *Square44x44Logo* von ihrer primären Kachel verwendet.
 
 ```csharp
 // Enable wide and large tile sizes
@@ -88,9 +88,9 @@ tile.VisualElements.Square44x44Logo = new Uri("ms-appx:///Assets/CityTiles/Squar
 ```
 
 
-## <a name="optional-enable-showing-the-display-name"></a>Optional: Aktivieren Sie die Anzeige des Anzeigenamens
+## <a name="optional-enable-showing-the-display-name"></a>Optional: Aktivieren Sie das Anzeigen des anzeigen Amens.
 
-Der Anzeigename wird standardmäßig nicht angezeigt. Um den Anzeigenamen in mittelgroß, breit, groß anzuzeigen, fügen Sie den folgenden Code hinzu.
+Standardmäßig wird der Anzeige Name nicht angezeigt. Fügen Sie den folgenden Code hinzu, um den anzeigen Amen für Mittel/breit/groß anzuzeigen.
 
 ```csharp
 // Show the display name on all sizes
@@ -100,17 +100,17 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
 
 
-## <a name="optional-3d-secondary-tiles"></a>Optional: 3D, sekundäre Kacheln
-Sie können die sekundäre Kachel für Windows Mixed Reality verbessern, indem Sie 3D-Ressourcen hinzufügen. Benutzer können 3D-Kacheln direkt in ihre Windows Mixed Reality Home-Umgebung anstelle des Startmenüs platzieren, wenn sie Ihre App in einer Mixed Reality-Umgebung verwenden. Sie können z. B. 360° Photospheres erstellen, die direkt in einer 360°-Foto-App verknüpft werden oder Ihren Benutzern ermöglichen, ein 3D-Modell eines Stuhls aus einem Möbelkatalog zu platzieren, das eine Seite zu den Optionen für Preise und Farben für das Objekt öffnet, wenn es ausgewählt wird. Informationen zu ersten Schritten finden Sie in der [Mixed Reality-Entwicklerdokumentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).
+## <a name="optional-3d-secondary-tiles"></a>Optional: 3D-sekundäre Kacheln
+Sie können Ihre sekundäre Kachel für Windows Mixed Reality verbessern, indem Sie 3D-Assets hinzufügen. Benutzer können 3D-Kacheln direkt in Ihre Windows Mixed Reality-Startseite anstatt im Startmenü platzieren, wenn Sie Ihre APP in einer gemischten Reality-Umgebung verwenden. Sie können z. b. 360 °-photosphären erstellen, die direkt in eine 360 °-Foto-Viewer-App verweisen, oder Benutzern das Platzieren eines 3D-Modells in einem Möbel Katalog gestatten, der eine Detailseite zu den Preis-und Farboptionen für dieses Objekt öffnet, wenn diese ausgewählt ist. Informationen zu den ersten Schritten finden Sie in der [Mixed Reality-Entwicklerdokumentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).
 
 
 
 ## <a name="pin-the-secondary-tile"></a>Anheften der sekundären Kachel
 
-Fordern Sie schließlich das Anheften der Kachel auf. Beachten Sie, dass dies von einem UI-Thread aufgerufen werden muss. Auf dem Desktop wird ein Dialogfeld angezeigt, das den Benutzer auffordert zu bestätigen, ob er die Kachel anheften möchte.
+Zum Schluss eine Anforderung zum Anheften der Kachel. Beachten Sie, dass dies von einem UI-Thread aufgerufen werden muss. Auf dem Desktop wird ein Dialogfeld angezeigt, in dem der Benutzer gefragt wird, ob er die Kachel anheften möchte.
 
 > [!IMPORTANT]
-> Bei einer Windows-Desktopanwendung, die die Desktop-Brücke verwendet, müssen Sie zuerst einen zusätzlichen Schritt ausführen, wie unter [Anheften ab einer Desktopanwendung](secondary-tiles-desktop-pinning.md) beschrieben
+> Wenn Sie eine Windows-Desktop Anwendung mit der Desktop Bridge sind, müssen Sie zunächst einen zusätzlichen Schritt ausführen, wie unter [Pin aus Desktop Anwendung](secondary-tiles-desktop-pinning.md) beschrieben.
 
 ```csharp
 // Pin the tile
@@ -120,11 +120,11 @@ bool isPinned = await tile.RequestCreateAsync();
 ```
 
 
-## <a name="check-if-a-secondary-tile-exists"></a>Überprüfen Sie, ob eine sekundäre Kachel vorhanden ist
+## <a name="check-if-a-secondary-tile-exists"></a>Überprüfen, ob eine sekundäre Kachel vorhanden ist
 
-Wenn Ihre Benutzer eine Seite in Ihrer App besuchen, die sie bereits auf der Startseite angeheftet haben, möchten Sie stattdessen eine Schaltfläche "Entfernen" anzeigen.
+Wenn Ihr Benutzer eine Seite in Ihrer APP besucht, die bereits an den Start angeheftet wurde, sollten Sie stattdessen die Schaltfläche "lösen" anzeigen.
 
-Daher sollten Sie bei der Auswahl der Schaltfläche, die angezeigt werden soll zunächst überprüfen, ob derzeit deren sekundäre Kachel angeheftet ist.
+Wenn Sie auswählen, welche Schaltfläche angezeigt werden soll, müssen Sie daher zunächst überprüfen, ob die sekundäre Kachel aktuell fixiert ist.
 
 ```csharp
 // Check if the secondary tile is pinned
@@ -136,7 +136,7 @@ bool isPinned = SecondaryTile.Exists(tileId);
 
 ## <a name="unpinning-a-secondary-tile"></a>Lösen einer sekundären Kachel
 
-Wenn die Kachel zurzeit angeheftet ist und der Benutzer klickt auf die Schaltfläche „Lösen”, sollte die Kachel gelöst (gelöscht) werden.
+Wenn die Kachel gerade angeheftet ist und der Benutzer auf die Schaltfläche "lösen" klickt, sollten Sie die Kachel lösen (Löschen).
 
 ```csharp
 // Initialize a secondary tile with the same tile ID you want removed
@@ -149,7 +149,7 @@ await toBeDeleted.RequestDeleteAsync();
 
 ## <a name="updating-a-secondary-tile"></a>Aktualisieren einer sekundären Kachel
 
-Wenn Sie die Logos, Anzeigenamen oder anderen Elementen auf der sekundären Kachel aktualisieren müssen, können Sie *RequestUpdateAsync* verwenden.
+Wenn Sie die Logos, den anzeigen Amen oder etwas anderes auf der sekundären Kachel aktualisieren müssen, können Sie *requestupdateasync*verwenden.
 
 ```csharp
 // Initialize a secondary tile with the same tile ID you want to update
@@ -162,9 +162,9 @@ await tile.UpdateAsync();
 ```
 
 
-## <a name="enumerating-all-pinned-secondary-tiles"></a>Auflisten aller angehefteten sekundären Kacheln
+## <a name="enumerating-all-pinned-secondary-tiles"></a>Auflisten aller fixierten sekundären Kacheln
 
-Wenn Sie alle Kacheln ermitteln müssen, die der Benutzer angeheftet hat, verwenden Sie anstelle von *SecondaryTile.Exists* *SecondaryTile.FindAllAsync()*.
+Wenn Sie alle Kacheln ermitteln müssen, die Ihr Benutzer angeheftet hat, anstatt *secondarytile. vorhanden*zu verwenden, können Sie alternativ *secondarytile. findallasync ()* verwenden.
 
 ```csharp
 // Get all secondary tiles
@@ -172,15 +172,15 @@ var tiles = await SecondaryTile.FindAllAsync();
 ```
 
 
-## <a name="send-a-tile-notification"></a>Senden einer Kachelbenachrichtigungen
+## <a name="send-a-tile-notification"></a>Eine Kachel Benachrichtigung senden
 
-Weitere Informationen zum Anzeigen umfassender Inhalte auf einer Kachel per Kachelbenachrichtigungen finden Sie unter [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md).
+Informationen zum Anzeigen von umfangreichen Inhalten auf der Kachel über Kachel Benachrichtigungen finden Sie unter [Senden einer lokalen Kachel Benachrichtigung](sending-a-local-tile-notification.md).
 
 
 ## <a name="related"></a>Verwandte Themen
 
-* [Übersicht über die sekundäre Kacheln](secondary-tiles.md)
-* [Sekundäre Kacheln Anleitungen](secondary-tiles-guidance.md)
-* [Kachel "-Objekte](app-assets.md)
-* [Kachel "Content-Dokumentation](create-adaptive-tiles.md)
+* [Übersicht über sekundäre Kacheln](secondary-tiles.md)
+* [Leitfaden für sekundäre Kacheln](secondary-tiles-guidance.md)
+* [Kachel Ressourcen](app-assets.md)
+* [Dokumentation zu Kachel Inhalt](create-adaptive-tiles.md)
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)

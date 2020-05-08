@@ -1,28 +1,28 @@
 ---
-Description: Erfahren Sie, wie Fluent Motion verwendet direktionalität und die Schwerkraft.
-title: Direktionalität und Schwerkraft – Animation in UWP-Apps
+Description: Erfahren Sie, wie die fließende Bewegung Direktionalität und Schwerkraft verwendet.
+title: Direktionalität und Schwerkraft-Animation in Windows-apps
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8f1e36f0febeeaac5a12d408d7be8a717f0ab398
-ms.sourcegitcommit: 7c3b88198178d6f6a535f35e1bf8665410d41d92
+ms.openlocfilehash: ddcfac5e36500a8fc6dc41c7c86037f5a1483203
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67569122"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970645"
 ---
 # <a name="directionality-and-gravity"></a>Direktionalität und Schwerkraft
 
-Gerichtete Bewegungen festigen das mentale Modell der Reise, die ein Benutzer auf einer Oberfläche macht. Es ist wichtig, dass jede Bewegungsrichtung sowohl die Kontinuität des Raumes als auch die Integrität der Objekte im Raum unterstützt.
+Direktionale Signale helfen dabei, das geistige Modell der Journey zu verfestigen, die ein Benutzer über Erfahrungen hinweg durchführt. Es ist wichtig, dass die Richtung jeder Bewegung sowohl die Kontinuität des Speicherplatzes als auch die Integrität der Objekte im Raum unterstützt.
 
-Eine gerichtete Bewegung unterliegt Kräften wie beispielsweise der Schwerkraft. Die Anwendung von Kräften auf die Bewegung verstärkt ihre die natürliche Anmutung.
+Die direktionale Bewegung unterliegt den Erzwingung der Kraft haftigkeit Das Anwenden von Erzwingung auf Bewegung stärkt das natürliche Gefühl der Bewegung.
 
 ## <a name="examples"></a>Beispiele
 
@@ -43,80 +43,80 @@ Eine gerichtete Bewegung unterliegt Kräften wie beispielsweise der Schwerkraft.
 
 :::row:::
     :::column:::
-Richtung des Verschiebens entspricht physische Bewegung. Wie in der Natur können sich Objekte entlang jeder Weltachse (X, Y, Z) bewegen. Entsprechend stellen wir uns die Bewegung von Objekten auf dem Bildschirm vor.
-Wenn Sie die Objekte bewegen, vermeiden Sie unnatürlichen Konflikte. Sollten Sie bedenken, in denen Objekte stammen aus und wechseln Sie zu und unterstützen Konstrukte höherer Ebene, die verwendet werden können immer in der Szene, wie z. B. Scroll Richtung oder Layout-Hierarchie.
+Die Richtung der Bewegung entspricht der physischen Bewegung. Ebenso wie in der Natur können-Objekte in jeder Welt Achse-X, Y, Z verschoben werden. So betrachten wir die Bewegung von Objekten auf dem Bildschirm.
+Vermeiden Sie unnatürliche Kollisionen, wenn Sie Objekte verschieben. Beachten Sie, dass Objekte von abgeleitet werden und dass Sie immer Konstrukte höherer Ebene unterstützen, die in der Szene verwendet werden können, z. b. Scrollrichtung oder layouthierarchie.
     :::column-end:::
     :::column:::
-        ![direction backward in](images/Direction.gif)
+        ![Richtung rückwärts in](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
 ## <a name="direction-of-navigation"></a>Navigationsrichtung
 
-Die Navigationsrichtung zwischen den Szenen in Ihrer App ist konzeptionell. Benutzer navigieren vorwärts oder rückwärts. Szenen erscheinen im Blickfeld oder werden ausgeblendet. Die Kombination dieser Konzepte mit physikalischen Bewegungen dient zur Führung des Benutzers.
+Die Navigationsrichtung zwischen den Kulissen in der APP ist konzeptionell. Benutzer navigieren vorwärts und rückwärts. Szenen wechseln in den und aus der Ansicht. Diese Konzepte werden mit physischer Bewegung kombiniert, um den Benutzer zu unterstützen.
 
-Wenn die Navigation ein Objekt von der vorherigen Szene zur neuen Szene bewegt, führt das Objekt auf dem Bildschirm eine einfache Bewegung von A nach B aus. Um sicherzustellen, dass die Bewegung physikalisch real erscheint, werden sowohl der standardmäßige Geschwindigkeitsverlauf als auch die Schwerkraft hinzugefügt.
+Wenn die Navigation bewirkt, dass ein Objekt von der vorherigen Szene zur neuen Szene bewegt wird, führt das-Objekt einen einfachen a-to-B-Verschiebe Vorgang auf dem Bildschirm aus. Um sicherzustellen, dass die Bewegung physischer ist, wird die standardmäßige Beschleunigung sowie das Gefühl der Schwerkraft hinzugefügt.
 
-Für die Rückwärtsnavigation wird die Verschiebung umgekehrt (von B nach A). Wenn der Benutzer zurück navigiert, erwartet er, dass er so schnell wie möglich in den vorherigen Zustand zurückkehrt. Das Timing ist schneller und direkter. Es wird ein sich verlangsamender Geschwindigkeitsverlauf verwendet.
+Bei der rückwärts Navigation wird der Verschiebe Vorgang umgekehrt (B-zu-A). Wenn der Benutzer zurück navigiert, wird erwartet, dass er so bald wie möglich in den vorherigen Zustand zurückversetzt wird. Die zeitliche Steuerung ist schneller, direkter und verwendet die Verlangsamung der Verlangsamung.
 
-Im Folgenden werden diese Prinzipien angewendet, da das ausgewählte Element während der Vorwärts- und Rückwärtsnavigation auf dem Bildschirm sichtbar bleibt.
+Hier werden diese primär Elemente angewendet, wenn das ausgewählte Element während der vorwärts-und rückwärts Navigation auf dem Bildschirm bleibt.
 
 ![UI-Beispiel für kontinuierliche Bewegung](images/continuous3.gif)
 
-Wenn Elemente auf dem Bildschirm durch die Navigation ersetzt werden, ist es wichtig zu zeigen, wohin die Szene führt und woher die neue Szene kommt.
+Wenn die Navigation bewirkt, dass die Elemente auf dem Bildschirm ersetzt werden, ist es wichtig, den Speicherort der beendenden Szene und den Ort der neuen Szene anzuzeigen.
 
 Dies hat mehrere Vorteile:
 
-- Es festigt das mentale Raummodell des Benutzers.
-- Die Dauer der auslaufenden Szene kann genutzt werden, um den Inhalt für die eingehende Szene vorzubereiten.
-- De wahrgenommene Leistung der App wird verbessert.
+- Dadurch wird das geistige Modell des Benutzers für den Bereich gefestigt.
+- Die Dauer der beendenden Szene bietet mehr Zeit für die Vorbereitung von Inhalten, die für die eingehende Szene animiert werden sollen.
+- Dies verbessert die wahrgenommene Leistung der app.
 
-Es sind 4 diskrete Navigationsrichtungen zu berücksichtigen.
+Es gibt vier diskrete Navigations Richtungen, die berücksichtigt werden müssen.
 
 :::row:::
     :::column:::
-**Forward-In** Feiern Sie Inhalte, die die Szene in einer Weise, die nicht mit den ausgehenden Inhalt kollidiert eingeben. Inhalte, die in der Szene verlangsamt wird.
+**Vorwärts** Freuen Sie sich, Inhalte in der Szene so zu feiern, dass Sie nicht mit ausgehenden Inhalten in Konflikt stehen. Der Inhalt wird in die Szene verlangsamt.
     :::column-end:::
     :::column:::
-        ![direction forward in](images/forwardIN.gif)
+        ![Richtung vorwärts in](images/forwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**Forward-Out** Inhalte schnell beendet werden. Objekte außerhalb des Bildschirms beschleunigen.
+**Vorwärts** Der Inhalt wird schnell beendet. Objekte beschleunigen den Bildschirm.
     :::column-end:::
     :::column:::
-        ![direction forward out](images/forwardOUT.gif)
+        ![Vorwärtsrichtung](images/forwardOUT.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**Rückwärts-In** wie Forward-In, jedoch storniert.
+**Rückwärts** Identisch mit vorwärts, aber umgekehrt.
     :::column-end:::
     :::column:::
-        ![direction backward in](images/backwardIN.gif)
+        ![Richtung rückwärts in](images/backwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**Rückwärts-Out** identisch Forward-ausgecheckt wird, jedoch storniert.
+**Rückwärts** skalieren Identisch mit vorwärts, aber umgekehrt.
     :::column-end:::
     :::column:::
-        ![direction backward out](images/backwardOUT.gif)
+        ![Richtung rückwärts ausgehend](images/backwardOUT.gif)
     :::column-end:::
 :::row-end:::
 
-## <a name="gravity"></a>Schwerkraft
+## <a name="gravity"></a>Ernst
 
-Schwerkraft lässt die Darstellung natürlicher wirken. Objekte, die sich auf der Z-Achse bewegen und nicht durch ein On-Screen-Angebot in der Szene verankert sind, können von der Schwerkraft beeinflusst werden. Wenn ein Objekt die Szene verlässt, zieht die Schwerkraft das Objekt herunter, bevor es seine Endgeschwindigkeit erreicht hat, und erzeugt so eine natürliche Krümmung der Bahn, auf dem sich das Objekt bewegt.
+Die Schwerkraft macht Ihre Erfahrungen natürlicher. Objekte, die sich auf der Z-Achse bewegen und nicht durch eine Bildschirm Umgebung an der Szene verankert sind, können durch die Schwerkraft beeinträchtigt werden. Wenn ein Objekt frei von der Szene unterbrochen wird und bevor es die escapegeschwindigkeit erreicht, wird die Schwerkraft auf das Objekt herabgesetzt. dadurch entsteht eine natürlichere Kurve der Objekt Kurve, wenn es verschoben wird.
 
-Schwerkraft wird normalerweise berücksichtigt, wenn ein Objekt von einer Szene zu einer anderen springen muss. Daher verwendet eine verbundene Animationen das Konzept der Schwerkraft.
+Die Schwerkraft ist in der Regel eine Manifeste, wenn ein Objekt von einer Szene in eine andere Aus diesem Grund verwendet die verbundene Animation das Konzept der Schwerkraft.
 
-Im Folgenden wird ein Element aus der oberen Reihe des Gitters durch die Schwerkraft beeinflusst, so dass es leicht fällt, wenn es seinen Platz verlässt und sich nach vorne bewegt.
+Hier ist ein Element in der obersten Zeile des Rasters von der Schwerkraft betroffen, was bewirkt, dass es leicht absinkt, wenn es seine Position verlässt und in den Vordergrund bewegt wird.
 
-![Richtung rückwärts hinein](images/continuity-photos.gif)
+![Richtung rückwärts in](images/continuity-photos.gif)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Motion-Übersicht](index.md)
-- [Zeitsteuerungssystem und vereinfachen der](timing-and-easing.md)
+- [Übersicht über die Bewegung](index.md)
+- [Timing und Beschleunigung](timing-and-easing.md)

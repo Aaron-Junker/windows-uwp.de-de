@@ -4,14 +4,14 @@ description: Weitere Informationen zur Spieleprogrammierung unter Windows finden
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Programmierung
+keywords: Windows 10, UWP, Games, Programmieren
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ecf6e4c28695d789a133c96d6fa04ceb705ef3e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a87b979dc48f8977047599cac6a32ba0d901bd63
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258539"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606359"
 ---
 # <a name="game-programming-resources"></a>Ressourcen für die Spieleprogrammierung
 
@@ -34,15 +34,15 @@ Weitere Informationen zur Spieleprogrammierung unter Windows finden Sie in den f
 ## <a name="blogs"></a>Blogs
 
 
--   [Spiele für Windows und das DirectX SDK]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX-Entwickler Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Shawn Hargreaves Blog]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (Infos zu XNA-Spielen).
+-   [Spiele für Windows und das DirectX SDK]( https://blogs.msdn.com/b/chuckw/)
+-   [Entwicklerblog für DirectX]( https://blogs.msdn.com/b/directx/)
+-   [Shawn Hargreaves Blog]( https://blogs.msdn.com/b/shawnhar/) (Infos zu XNA-Spielen).
 
 ## <a name="toolkits"></a>Toolkits
 
 
--   [DirectX-Toolkit](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [Directxtex-Textur Verarbeitungs Bibliothek](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [DirectX-Toolkit](  https://github.com/Microsoft/DirectXTK)
+-   [DirectXTex-Texturverarbeitungsbibliothek](  https://github.com/Microsoft/DirectXTex)
 -   Microsoft Visual Studio-[Grafikdiagnose](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) – Einfach zu verwendende Windows-Runtime-API für 2D-Grafikrendering im unmittelbaren Modus mit GPU-Beschleunigung.
 -   Der [Winkel für Microsoft Store](https://github.com/microsoft/angle/wiki) -führt OpenGL es-Inhalte unter Windows aus, indem OpenGL es-API-Aufrufe in DirectX 11 API-Aufrufe übersetzt werden.
@@ -50,9 +50,9 @@ Weitere Informationen zur Spieleprogrammierung unter Windows finden Sie in den f
 ## <a name="gdc-2015-game-dev-session-videos"></a>Videos zu GDC 2015-Spieleentwicklersitzungen
 
 
--   [Die Zukunft von Spielen im Microsoft-Ökosystem](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
+-   [Die Zukunft von Spielen beim Microsoft-Ökosystem](https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
 -   [Entwickeln von Spielen für Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10) – Chris Tector, Don Xbox
--   [Erweiterte DirectX 12-Grafiken und Leistung](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
+-   [Erweiterte DirectX 12-Grafiken und Leistung](https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance) – Max McMullen
 -   [Spielerfahrung von Endbenutzern unter Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10) – Bill Schiefelbein
 -   [Neue Möglichkeiten für unabhängige Entwickler](https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers) – Chris Charla
 -   [Entwickeln mit Xbox Live für Windows 10](https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10) – Vijay Gajjala, Brian Tyler
@@ -69,7 +69,7 @@ Weitere Informationen zur Spieleprogrammierung unter Windows finden Sie in den f
 
 
 -   [Einführung in Win2D: Zeichnen mit DirectX in C#](https://channel9.msdn.com/Events/Build/2015/2-631) – Simon Tao
--   [ANGLE: Ausführen von OpenGL ES 2.0-Grafikcode unter Windows](https://channel9.msdn.com/Events/Build/2015/3-686) – Tony Balogh
+-   [ANGLE: Ausführen von OpenGL ES 2.0-Grafikcode unter Windows](https://channel9.msdn.com/Events/Build/2015/3-686) – Tony Balogh
 -   [Erweiterte DirectX12-Grafiken und Leistung](https://channel9.msdn.com/Events/Build/2015/3-673) – Max McMullen
 
 ## <a name="other-resources"></a>Weitere Ressourcen

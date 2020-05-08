@@ -1,35 +1,35 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-title: Senden einer Arbeitsaufgabe mithilfe eines Timers
-description: Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
+title: Timergesteuertes Übermitteln einer Arbeitsaufgabe
+description: Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Timer, Threads
+keywords: Windows 10, UWP, Timer, Threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bd870858bbccffa07b082384ae6ddea987b67f2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1b5c0982c10cde25fc5f61314c540c194d6519a2
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258930"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619334"
 ---
-# <a name="use-a-timer-to-submit-a-work-item"></a>Senden einer Arbeitsaufgabe mithilfe eines Timers
+# <a name="use-a-timer-to-submit-a-work-item"></a>Timergesteuertes Übermitteln einer Arbeitsaufgabe
 
 
 <b>Wichtige APIs</b>
 
--   [**Windows. UI. Core-Namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows. System. Threading-Namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+-   [**Windows.UI.Core-Namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+-   [**Windows.System.Threading-Namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
 
-Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
+Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
 
 ## <a name="create-a-single-shot-timer"></a>Erstellen eines einmaligen Timers
 
 Verwenden Sie die [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Methode, um einen Timer für die Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *delay*-Parameter an, wie lange der Threadpool warten soll, bevor er die Arbeitsaufgabe einem verfügbaren Thread zuweist. Die Verzögerung wird mithilfe einer [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)-Struktur angegeben.
 
-> **Beachten** Sie  Sie " [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) " verwenden können, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
+> **Beachten**  Sie, dass Sie [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) verwenden können, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
 
-Im folgenden Beispiel wird eine Arbeitsaufgabe erstellt, die in drei Minuten ausgeführt wird:
+Im folgenden Beispiel wird ein Arbeitselement erstellt, die in drei Minuten ausgeführt wird:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -87,9 +87,9 @@ Im folgenden Beispiel wird eine Arbeitsaufgabe erstellt, die in drei Minuten aus
 
 ## <a name="provide-a-completion-handler"></a>Bereitstellen eines Abschlusshandlers
 
-Behandeln Sie den Abbruch und Abschluss der Arbeitsaufgabe ggf. mit einem [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler)-Element. Stellen Sie mithilfe der [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Überladung eine zusätzliche Lambda-Funktion bereit. Diese Funktion wird ausgeführt, wenn der Timer abgebrochen oder die Arbeitsaufgabe abgeschlossen wird.
+Behandeln Sie den Abbruch und Abschluss der Arbeitsaufgabe ggf. mit einem [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler)-Element. Stellen Sie mithilfe der [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Überladung eine zusätzliche Lambda-Funktion bereit. Diese Funktion wird ausgeführt, wenn der Timer abgebrochen oder das Arbeitselement abgeschlossen wird.
 
-Das folgende Beispiel erstellt einen Zeitgeber, der die Arbeitsaufgabe sendet, und ruft eine Methode auf, wenn die Arbeitsaufgabe abgeschlossen oder der Zeitgeber abgebrochen wird:
+Das folgende Beispiel erstellt einen Zeitgeber, der das Arbeitselement sendet, und ruft eine Methode auf, wenn das Arbeitselement abgeschlossen oder der Zeitgeber abgebrochen wird:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -205,9 +205,9 @@ Das folgende Beispiel erstellt einen Zeitgeber, der die Arbeitsaufgabe sendet, u
 >         }));
 > ```
 
-## <a name="cancel-the-timer"></a>Abbrechen des Timers
+## <a name="cancel-the-timer"></a>Abbrechen des Zeitgebers
 
-Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird, rufen Sie [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) auf. Der Timer wird abgebrochen, und die Arbeitsaufgabe wird nicht an den Threadpool übermittelt.
+Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird, rufen Sie [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) auf. Der Timer wird abgebrochen, und das Arbeitselement wird nicht an den Threadpool übermittelt.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -221,13 +221,13 @@ Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird,
 
 UWP (Universelle Windows-Plattform)-Apps können **Thread.Sleep** nicht verwenden, da dies den UI-Thread blockieren kann. Verwenden Sie zum Erstellen einer Arbeitsaufgabe stattdessen einen [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer). Dieser Timer verzögert die von der Arbeitsaufgabe ausgeführte Aufgabe, ohne den UI-Thread zu blockieren.
 
-Ein vollständiges Codebeispiel für Arbeitsaufgaben, Arbeitsaufgaben mit Zeitgeber und regelmäßige Arbeitsaufgaben finden Sie im [Beispiel für den Threadpool](https://code.msdn.microsoft.com/windowsapps/Pool-Sample-5aa60454). Das Codebeispiel wurde ursprünglich für Windows 8.1 geschrieben, aber der Code kann in Windows 10 wieder verwendet werden.
+Ein vollständiges Codebeispiel für Arbeitsaufgaben, Arbeitsaufgaben mit Zeitgeber und regelmäßige Arbeitsaufgaben finden Sie im [Beispiel für den Threadpool](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample). Das Codebeispiel wurde ursprünglich für Windows 8.1 geschrieben, der Code kann jedoch für Windows 10 wiederverwendet werden.
 
 Informationen zu Wiederholungstimern finden Sie unter [Erstellen einer regelmäßigen Arbeitsaufgabe](create-a-periodic-work-item.md).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Senden einer Arbeitsaufgabe an den Threadpool](submit-a-work-item-to-the-thread-pool.md)
+* [Senden ein Arbeitselement an den Threadpool](submit-a-work-item-to-the-thread-pool.md)
 * [Bewährte Methoden zum Verwenden des Threadpools](best-practices-for-using-the-thread-pool.md)
 * [Senden einer Arbeitsaufgabe mithilfe eines Timers](use-a-timer-to-submit-a-work-item.md)
  

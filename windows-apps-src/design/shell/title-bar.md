@@ -1,45 +1,45 @@
 ---
-description: Anpassen der Titelleiste einer Desktop-App, damit sie das gleiche Erscheinungsbild wie die App aufweist
+description: Passen Sie die Titelleiste einer Desktop-App so an, dass Sie mit der Persönlichkeit der APP identisch ist.
 title: Anpassen der Titelleiste
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, UWP, Titelleiste
+keywords: Windows 10, UWP, Titelleiste
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 323b9b80a7d0087a07faf34d598f51d643e1324c
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 47db0abfa96ae572c20d6bfd7496d7b5d168ab50
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930334"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968415"
 ---
 # <a name="title-bar-customization"></a>Anpassen der Titelleiste
 
 
 
-Wenn Ihre App in einem Desktop-Fenster ausgeführt wird, können Sie die Titelleisten der Fenster anpassen, damit sie das gleiche Erscheinungsbild wie die App aufweisen Mit den APIs zur Anpassung der Titelleiste können Sie die Farben für die Elemente der Titelleiste angeben, oder Ihren App-Inhalte in den Bereich der Titelleiste anpassen und volle Kontrolle darüber erhalten.
+Wenn Ihre APP in einem Desktop Fenster ausgeführt wird, können Sie die Titelleisten so anpassen, dass Sie der Persönlichkeit ihrer App entsprechen. Mit den Anpassungs-APIs für die Titelleiste können Sie Farben für Titelleisten Elemente angeben oder Ihren app-Inhalt auf den Titelleisten Bereich erweitern und die vollständige Kontrolle über die Anwendung übernehmen.
 
-> **Wichtige APIs:** [Applicationview. TitleBar-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [applicationviewtitlebar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [coreapplicationviewtitlebar-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **Wichtige APIs**: [applicationview. TitleBar-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview), [applicationviewtitlebar-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar), [coreapplicationviewtitlebar-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
-## <a name="how-much-to-customize-the-title-bar"></a>Ausmaße der Anpassung der Titelleiste
+## <a name="how-much-to-customize-the-title-bar"></a>Wie viel Anpassen der Titelleiste
 
-Es gibt zwei Ebenen der Anpassung, die Sie auf der Titelleiste anwenden können.
+Es gibt zwei Anpassungs Ebenen, die Sie auf die Titelleiste anwenden können.
 
-Um einfach die Farbe anzupassen, legen Sie die [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)-Eigenschaften fest, um die Farben anzugeben, die Sie für die Elemente der Titelleiste verwenden möchten. Das System behält in diesem Fall die Verantwortung für alle anderen angezeigten Aspekte der Titelleiste bei wie z. B. den App-Titel zeichnen und verschiebbare Bereiche definieren.
+Für eine einfache Farbanpassung können Sie die [applicationviewtitlebar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) -Eigenschaften festlegen, um die Farben anzugeben, die Sie für Titelleisten Elemente verwenden möchten. In diesem Fall behält das System die Verantwortung für alle anderen Aspekte der Titelleiste bei, wie z. b. das Zeichnen des App-Titels und das Definieren von dragfähigen Bereichen.
 
-Die andere Möglichkeit ist das Ausblenden der Standard-Titelleiste und das Ersetzen durch Ihren eigenen XAML-Inhalt. Sie können z. B. Text, Schaltflächen oder benutzerdefinierte Menüs im Bereich der Titelleiste platzieren. Sie müssen ebenfalls diese Option verwenden, um einen [Acryl](../style/acrylic.md)-Hintergrund in den Bereich der Titelleiste einzufügen.
+Die andere Option besteht darin, die Standard Titelleiste auszublenden und durch ihren eigenen XAML-Inhalt zu ersetzen. Sie können z. b. Text, Schaltflächen oder benutzerdefinierte Menüs im Titelleisten Bereich platzieren. Sie müssen diese Option auch verwenden, um einen [Acryl](../style/acrylic.md) Hintergrund in den Titelleisten Bereich zu erweitern.
 
-Wenn Sie ein umfassendes Anpassen wünschen, sind Sie für das Ablegen von Inhalten im Bereich der Titelleiste verantwortlich, und Sie können Ihren eigenen verschiebbaren Bereich definieren. Die Minimieren-, Maximieren-, Zurück- und Schließ-Schaltflächen sind auch weiterhin verfügbar und vom System verwaltet. Elemente wie z. B. der App-Titel gehören jedoch nicht dazu. Sie müssen diese Elemente selbst und je nach Anforderungen Ihrer App erstellen.
+Wenn Sie sich für eine vollständige Anpassung entscheiden, sind Sie dafür verantwortlich, Inhalte in den Titelleisten Bereich zu versetzen, und Sie können einen eigenen dragfähigen Bereich definieren. Die Schaltflächen "zurück", "Schließen", "minimieren" und "maximieren" sind weiterhin verfügbar und werden vom System verarbeitet, Elemente wie der APP-Titel hingegen nicht. Sie müssen diese Elemente selbst erstellen, wenn Sie von Ihrer APP benötigt werden.
 
 > [!NOTE]
-> Das einfache Anpassen der Farbe ist für UWP-Apps mit XAML, DirectX und HTML verfügbar. Das umfassende Anpassen ist nur für UWP-Apps mit XAML verfügbar.
+> Die einfache Farbanpassung ist für Windows-apps mit XAML, DirectX und HTML verfügbar. Die vollständige Anpassung ist nur für Windows-apps verfügbar, die XAML verwenden.
 
-## <a name="simple-color-customization"></a>Einfaches Anspassen der Farbe
+## <a name="simple-color-customization"></a>Einfache Farbanpassung
 
-Wenn Sie nur die Farben der Titelleiste und keine weitere Aktion anpassen möchten (z. B. Registerkarten in der Titelleiste einfügen) können Sie die Eigenschaften auf der [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) für Ihre App-Fenster festlegen.
+Wenn Sie nur die Titelleisten Farben anpassen möchten und nichts zu tun haben (z. b. das Platzieren von Registerkarten in der Titelleiste), können Sie die Farbeigenschaften auf der [applicationviewtitlebar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar) für das App-Fenster festlegen.
 
-Dieses Beispiel zeigt, wie Sie eine Instanz der ApplicationViewTitleBar aufrufen und die Farbeigenschaften festlegen.
+In diesem Beispiel wird gezeigt, wie eine Instanz von applicationviewtitlebar abgerufen und seine Farbeigenschaften festgelegt werden.
 
 ```csharp
 // using Windows.UI.ViewManagement;
@@ -64,27 +64,27 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 ```
 
 > [!NOTE]
-> Dieser Code kann in die [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)-Methode Ihre App eingefügt werden (_App.xaml.cs_) – nach dem Aufruf von [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) oder auf der ersten Seite Ihrer App.
+> Sie können diesen Code in der [ongestarteten](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) -Methode Ihrer APP (_app.XAML.cs_) nach dem aufgerufenen [Fenster. aktivieren](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate)oder auf der ersten Seite Ihrer APP platzieren.
 
 > [!TIP]
-> Das Windows Community Toolkit enthält Erweiterungen, mit denen Sie diese Farbeigenschaften in XAML festlegen können. Weitere Informationen finden Sie in der [Windows Community Toolkit-Dokumentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
+> Das Windows Community Toolkit bietet Erweiterungen, mit denen Sie diese Farbeigenschaften in XAML festlegen können. Weitere Informationen finden Sie in der [Dokumentation zum Windows Community Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
 
-Es gibt einige Dinge, die beim Festlegen von Farben für Titelleisten beachtet werden müssen:
+Beim Festlegen der Farben der Titelleiste sind einige Punkte zu beachten:
 
-- Die Hintergrundfarbe der Schaltfläche wird nicht auf den Zeigeeffekt und das Gedrückthalten der Schaltfläche "Schließen" angewendet. Die Schaltfläche "Schließen" verwendet immer die systemdefinierte Farbe für diese Zustände.
-- Die Farbeigenschaften der Schaltfläche gelten für die Systemschaltfläche "Zurück", wenn sie verwendet wird. ([Siehe Navigationsverlauf und Rückwärtsnavigation](../basics/navigation-history-and-backwards-navigation.md).)
-- Das Festlegen der Farbeigenschaft auf **null** setzt es auf die Standardfarbe für das System zurück.
-- Sie können keine transparenten Farben festlegen. Die Alpha-Farbkanal wird ignoriert.
+- Die Hintergrundfarbe der Schaltfläche wird nicht auf die Schaltflächen "Schließen" und "gedrückt" angewendet. Die Schaltfläche Schließen verwendet immer die System definierte Farbe für diese Zustände.
+- Die Eigenschaften der Schaltflächen Farbe werden bei der Verwendung auf die zurück-Schaltfläche des Systems angewendet. ([Siehe Navigationsverlauf und rückwärts Navigation](../basics/navigation-history-and-backwards-navigation.md).)
+- Wenn eine Color-Eigenschaft auf **null** festgelegt wird, wird diese auf die Standardsystem Farbe zurückgesetzt.
+- Transparente Farben können nicht festgelegt werden. Der Alphakanal der Farbe wird ignoriert.
 
-Windows bietet dem Benutzer die Möglichkeit, die ausgewählte [Akzentfarbe](https://docs.microsoft.com/windows/uwp/style/color#accent-color) auf die Titelleiste anzuwenden. Wenn Sie eine Titelfarbe festlegen, wird empfohlen, dass Sie alle Farben explizit festlegen. Dadurch wird sichergestellt, dass keine unerwünschten Farbkombinationen erhalten werden, die bei benutzerdefinierten Farbeinstellungen auftreten.
+Windows gibt einem Benutzer die Möglichkeit, die ausgewählte [Akzentfarbe](https://docs.microsoft.com/windows/uwp/style/color#accent-color) auf die Titelleiste anzuwenden. Wenn Sie eine Titelleisten Farbe festlegen, wird empfohlen, alle Farben explizit festzulegen. Dadurch wird sichergestellt, dass aufgrund benutzerdefinierter Farbeinstellungen keine unbeabsichtigten Farbkombinationen vorhanden sind.
 
-## <a name="full-customization"></a>Die umfassende Anpassung
+## <a name="full-customization"></a>Vollständige Anpassung
 
-Wenn Sie die umfassende Anpassung der Titelleiste wünschen, wird Ihr App-Clientbereich über das gesamte Fenster erweitert, einschließlich des Bereichs der Titelleiste. Sie sind für das Zeichnen und die Eingabe-Behandlung für das gesamte Fenster mit Ausnahme der Titelleistenschaltfläche verantwortlich, die auf dem App-Canvas überlagert werden.
+Wenn Sie sich für die vollständige Anpassung der Titelleiste entscheiden, wird der Client Bereich Ihrer APP so erweitert, dass das gesamte Fenster einschließlich der Titelleisten Fläche abgedeckt wird. Sie sind verantwortlich für die Zeichnung und Eingabe Behandlung für das gesamte Fenster außer den Beschriftungs Schaltflächen, die oberhalb der Canvas der APP überlagert werden.
 
-Legen Sie zum Ausblenden der Standard-Titelleiste und zum Erweitern des Inhalts in den Bereich der Titelleiste die [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)-Eigenschaft auf **true** fest.
+Um die Standard Titelleiste auszublenden und ihren Inhalt auf den Titelleisten Bereich zu erweitern, legen Sie die Eigenschaft [coreapplicationviewtitlebar. extendviewindetitlebar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) auf **true**fest.
 
-Dieses Beispiel zeigt, wie Sie die CoreApplicationViewTitleBar erhalten und legen die Eigenschaft ExtendViewIntoTitleBar auf **true** fest. Dies kann in der [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)-Methode der App (_App.xaml.cs_) oder auf der ersten Seite Ihrer App durchgeführt werden.
+In diesem Beispiel wird gezeigt, wie die coreapplicationviewtitlebar abgerufen und die extendviewindetitlebar-Eigenschaft auf **true**festgelegt wird. Dies kann in der [OnStart](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) -Methode Ihrer APP (_app.XAML.cs_) oder auf der ersten Seite Ihrer APP erfolgen.
 
 ```csharp
 // using Windows.ApplicationModel.Core;
@@ -95,13 +95,18 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 ```
 
 > [!TIP]
-> Diese Einstellung wird beibehalten, wenn Ihre App beendet und neu gestartet wird. Wenn Sie in Visual Studio ExtendViewIntoTitleBar auf **true** festlegen und dann die Standardeinstellungen wiederherstellen möchten, sollten Sie es explizit auf **false** festlegen und Ihre App ausführen, um die beibehaltene Einstellung zu überschrieben.
+> Diese Einstellung bleibt erhalten, wenn Ihre APP geschlossen und neu gestartet wird. Wenn Sie in Visual Studio "extendviewindetitlebar" auf " **true**" festlegen und die Standardeinstellung wiederherstellen möchten, sollten Sie diese explizit auf " **false** " festlegen und die app ausführen, um die persistente Einstellung zu überschreiben.
 
-### <a name="draggable-regions"></a>Ziehbare Bereiche
+### <a name="draggable-regions"></a>Dragfähige Regionen
 
-Der ziehbare Bereich der Titelleiste definiert, worauf der Benutzer klicken das Fenster verschieben kann (im Gegensatz zum einfachen Ziehen von Inhalten innerhalb des App-Canvas). Sie geben den ziehbaren Bereich durch Aufrufen der [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar)-Methode und der Übergabe eines UIElements an, das den verschiebbare Bereich definiert. (Das UIElement ist häufig ein Panel, das andere Elemente enthält.)
+Der dragfähige Bereich der Titelleiste definiert, wo der Benutzer klicken und ziehen kann, um das Fenster zu verschieben (im Gegensatz zum einfachen ziehen von Inhalt innerhalb der Canvas der APP). Sie geben den dragfähigen Bereich an, indem Sie die [Window. settitlebar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) -Methode aufrufen und ein UIElement übergeben, das den dragfähigen Bereich definiert. (Das UIElement ist oft ein Panel, das andere Elemente enthält.)
 
-Hier erfahren Sie, wie ein Raster mit Inhalten als ziehbare Region der Titelleiste festgelegt wird. Dieser Code wird XAML und CodeBehind für die erste Seite Ihrer App hinzugefügt. Den vollständigen Code finden Sie im Abschnitt [umfassendes Anpassungsbeispiel](./title-bar.md#full-customization-example).
+So legen Sie ein Inhalts Raster als dragfähigen Titelleisten Bereich fest. Dieser Code wird in XAML und Code Behind für die erste Seite der App angezeigt. Den vollständigen Code finden Sie im Abschnitt [vollständige Anpassung](./title-bar.md#full-customization-example) .
+
+
+> [!IMPORTANT]
+> Standardmäßig sind einige Elemente der Benutzeroberfläche, z. b. Raster, nicht an Treffer Tests beteiligt, wenn Sie nicht über einen Hintergrund Satz verfügen.
+> Damit das Raster `AppTitleBar` im Beispiel unten das ziehen zulässt, müssen wir den Hintergrund auf `Transparent`festlegen.
 
 ```xaml
 <Grid x:Name="AppTitleBar" Background="Transparent">
@@ -141,36 +146,36 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 }
 ```
 
-UIElement (`AppTitleBar`) ist Teil des XAML-Codes für Ihre App. Sie können die Titelleiste entweder in einer Stammseite deklarieren und festlegen, die sich nicht ändert, oder eine Region der Titelleiste auf jeder Seite deklarieren und festlegen, auf die Ihre App navigieren kann. Wenn Sie diese auf jeder Seite festlegen, sollten Sie sicherstellen, dass der ziehbare Bereich konsistent bleibt, wenn ein Benutzer in Ihrer App navigiert.
+Das UIElement (`AppTitleBar`) ist Teil des XAML für Ihre APP. Sie können entweder das Deklarieren und Festlegen der Titelleiste auf einer Stamm Seite, die sich nicht ändert, oder das Deklarieren und Festlegen eines Titelleisten Bereichs auf jeder Seite festlegen, zu der Ihre APP navigieren kann. Wenn Sie es auf jeder Seite festlegen, sollten Sie sicherstellen, dass der dragfähige Bereich konsistent bleibt, wenn ein Benutzer um Ihre APP navigiert.
 
-Rufen Sie SetTitleBar auf, um auf ein neues Titelleisten-Element zu wechseln, während die App ausgeführt wird. Sie können auch **null** als Parameter für SetTitleBar übergeben, um das standardmäßige Ziehverhalten wiederherzustellen. (Siehe "Ziehbarer Standardbereich" für weitere Informationen).
+Sie können settitlebar aufrufen, um zu einem neuen Titelleisten Element zu wechseln, während Ihre APP ausgeführt wird. Sie können auch **null** als Parameter an settitlebar übergeben, um das standardmäßige Zieh Verhalten wiederherzustellen. (Weitere Informationen finden Sie unter "standardmäßige dragfähige Region".)
 
 > [!IMPORTANT]
-> Der ziehbare Bereich muss auf Treffer getestet werden, d. h. Sie müssen für einige Elemente möglicherweise einen transparenten Hintergrundpinsel festlegen. Weitere Informationen finden Sie in den Hinweisen auf [VisualTreeHelper.FindElementsInHostCoordinates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates).
+> Der von Ihnen angegebene dragfähige Bereich muss gedrückt werden, was bedeutet, dass Sie für einige Elemente möglicherweise einen transparenten Hintergrund Pinsel festlegen müssen. Weitere Informationen finden Sie in den Hinweisen zu [VisualTreeHelper. findelta ementsinhostkoordinaten](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) .
 >
->Wenn Sie ein Raster als ziehbare Region definieren, legen Sie z. B. `Background="Transparent"` fest, um es ziehbar zu machen.
+>Wenn Sie z. b. ein Raster als den dragfähigen Bereich definieren, `Background="Transparent"` legen Sie fest, damit es dragfähig ist.
 >
->Dieses Raster wird nicht gezogen (nur die sichtbaren Elemente darin): `<Grid x:Name="AppTitleBar">`.
+>Dieses Raster ist nicht dragfähig (aber sichtbare Elemente darin): `<Grid x:Name="AppTitleBar">`.
 >
->Dieses Raster sieht genauso aus, das gesamte Raster ist allerdings ziehbar: `<Grid x:Name="AppTitleBar" Background="Transparent">`.
+>Dieses Raster sieht identisch aus, aber das gesamte Raster ist dragfähig: `<Grid x:Name="AppTitleBar" Background="Transparent">`.
 
-#### <a name="default-draggable-region"></a>Ziehbarer Standardbereich
+#### <a name="default-draggable-region"></a>Standardmäßige dragfähige Region
 
-Wenn Sie keinen ziehbaren Bereich angeben, wird ein Rechteck, das die Breite des Fensters und die Höhe der Titelleistenschaltfläche hat, am oberen Rand des Fensters positioniert und als ziehbare Standardregion festgelegt.
+Wenn Sie keinen dragfähigen Bereich angeben, wird ein Rechteck, das die Breite des Fensters, die Höhe der Beschriftungs Schaltflächen und die Position am oberen Rand des Fensters ist, als der standardmäßige dragfähige Bereich festgelegt.
 
-Wenn Sie einen verschiebbare Bereich definieren, verkleinert das System die ziehbaren Standardregion auf einen kleinen Bereich der Größe der Titelleistenschaltfläche, der links neben der Titelleistenschaltfläche (oder auf der rechten Seite der Titelleistenschaltfläche auf der linken Seite des Fensters) positioniert wird. Dadurch wird sichergestellt, dass immer ein konsistenter Bereich vorhanden ist, den der Benutzer ziehen kann.
+Wenn Sie einen dragfähigen Bereich definieren, verkleinert das System den standardmäßigen dragfähigen Bereich auf einen kleinen Bereich der Größe einer Titelleisten Schaltfläche, die sich links neben den Beschriftungs Schaltflächen befindet (oder nach rechts, wenn sich die Beschriftungs Schaltflächen auf der linken Seite des Fensters befinden). Dadurch wird sichergestellt, dass immer ein einheitlicher Bereich vorhanden ist, den der Benutzer ziehen kann.
 
-### <a name="system-caption-buttons"></a>System-Titelleistenschaltflächen
+### <a name="system-caption-buttons"></a>System Beschriftung
 
-Das System reserviert die obere linke oder obere rechte Ecke des App-Fensters für die Titelleistenschaltflächen des Systems (Minimieren-, Maximieren-, Zurück- und Schließ-Schaltflächen). Das System behält die Kontrolle über den Titelleistensteuerungsbereich, um die Mindestfunktionen für das Ziehen, Minimieren, Maximieren und Schließen des Fensters zu garantieren. Das System zeichnet die Schaltfläche "Schließen" in der oberen rechten Ecke für von links nach rechts gelesene Sprachen und die linke obere Ecke für von rechts nach links gelesene Sprachen.
+Das System reserviert die obere linke oder obere rechte Ecke des App-Fensters für die Beschriftungs Schaltflächen des Systems (zurück, minimieren, maximieren, schließen). Das System behält die Kontrolle über den Beschriftungs Steuerungs Bereich, um sicherzustellen, dass die minimale Funktionalität zum ziehen, minimieren, maximieren und Schließen des Fensters bereitgestellt wird. Das System zeichnet die Schaltfläche Schließen in der oberen rechten Ecke für Sprachen von links nach rechts und von rechts nach links in der linken oberen Ecke.
 
-Die Größe und Position des Titelleistensteuerungsbereichs wird von der CoreApplicationViewTitleBar-Klasse mitgeteilt, damit Sie das Layout der Titel Ihrer Benutzeroberfläche berücksichtigen können. Die Breite der reservierten Region auf jeder Seite wird durch die [SystemOverlayLeftInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) oder [SystemOverlayRightInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset)-Eigenschaften angegeben und die Höhe wird durch die [Height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height)-Eigenschaft angegeben.
+Die Abmessungen und die Position des Beschriftungs-Steuer Elements werden von der coreapplicationviewtitlebar-Klasse kommuniziert, sodass Sie Sie im Layout Ihrer Titelleisten-Benutzeroberfläche berücksichtigen können. Die Breite des reservierten Bereichs auf jeder Seite wird durch die Eigenschaften [systemoverlayleftinset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) oder [systemoverlayrightinset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) angegeben, und die Höhe wird durch die [height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) -Eigenschaft angegeben.
 
-Sie können Inhalte unter den Titelleistensteuerungsbereich zeichnen, der von diesen Eigenschaften definiert wird wie z. B. Ihren App-Hintergrund, aber Sie sollten kein Benutzeroberflächenelemente dort zeichnen, mit denen der Benutzer interagieren kann. Er erhält keine Eingaben, da die Eingabe für die Titelsteuerungen vom System behandelt werden.
+Sie können Inhalte unterhalb des Überschriften-Steuer Elements zeichnen, das durch diese Eigenschaften definiert ist, wie z. b. den App-Hintergrund. Sie sollten jedoch keine Benutzeroberfläche ablegen, mit der der Benutzer interagieren kann. Er empfängt keine Eingaben, weil Eingaben für die Beschriftungs Steuerelemente vom System behandelt werden.
 
-Sie können das [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged)-Ereignis so festlegen, dass es auf die Änderungen der Größe der Titelleistenschaltfläche reagiert. Dies kann beispielsweise der Fall sein, wenn die Schaltfläche des Systems „Zurück” angezeigt oder ausgeblendet wird. Verwenden Sie dieses Ereignis, um das Positionieren von Benutzeroberflächenelementen zu überprüfen und aktualisieren, die von der Größe der Titelleiste abhängen.
+Sie können das [layoutmetricschge](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) -Ereignis behandeln, um auf Änderungen in der Größe der Beschriftungs Schaltflächen zu reagieren. Dies kann beispielsweise der Fall sein, wenn die Schaltfläche "System zurück" angezeigt wird oder ausgeblendet ist. Behandeln Sie dieses Ereignis, um die Positionierung von Benutzeroberflächen Elementen zu überprüfen und zu aktualisieren, die von der Größe der Titelleiste abhängen.
 
-In diesem Beispiel wird veranschaulicht, wie das Layouts der Titelleiste für Änderungen der Systemschaltflächen wie „Zurück” angezeigt oder ausgeblendet wird. `AppTitleBar`, `LeftPaddingColumn` und`RightPaddingColumn` werden in der zuvor gezeigten XAML deklariert.
+In diesem Beispiel wird gezeigt, wie Sie das Layout Ihrer Titelleiste so anpassen, dass Änderungen wie das Anzeigen oder Ausblenden der System-zurück-Schaltfläche berücksichtigt werden. `AppTitleBar`, `LeftPaddingColumn`und `RightPaddingColumn` werden in der zuvor gezeigten XAML deklariert.
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -191,13 +196,13 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 }
 ```
 
-### <a name="interactive-content"></a>interaktiver Inhalt
+### <a name="interactive-content"></a>Interaktiver Inhalt
 
-Sie können interaktive Steuerelemente, z. B. Schaltflächen, Menüs oder ein Suchfeld im oberen Teil der App festlegen, sodass sie in der Titelleiste angezeigt werden. Es gibt jedoch einige Regeln, die Sie befolgen müssen, um sicherzustellen, dass Ihre interaktiven Elemente Benutzereingaben erhalten.
-- Rufen Sie SetTitleBar auf, um einen Bereich als ziehbare Region der Titelleiste zu definieren. Falls nicht, setzt das System die ziehbare Standardregion am oberen Rand der Seite fest. Das System wird dann alle Benutzereingaben in diesem Bereich behandeln und verhindern, dass Eingaben ihre Steuerelemente erreichen.
-- Legen Sie die interaktiven Steuerelemente am oberen Rand des ziehbaren Bereichs fest, der durch den Aufruf von SetTitleBar (mit einer höheren Z-Reihenfolge) definiert ist. Legen Sie die interaktiven Steuerelemente des UIElements, die als SetTitleBar übergeben wurden, nicht als untergeordnete Elemente fest. Nachdem Sie ein Element an SetTitleBar übergeben haben, behandelt das System es wie die System-Titelleiste und behandelt alle Zeigereingaben auf das Element.
+Sie können interaktive Steuerelemente wie Schaltflächen, Menüs oder ein Suchfeld im oberen Teil der APP platzieren, damit Sie in der Titelleiste angezeigt werden. Es gibt jedoch einige Regeln, die Sie befolgen müssen, um sicherzustellen, dass Ihre interaktiven Elemente Benutzereingaben erhalten.
+- Sie müssen settitlebar aufrufen, um einen Bereich als dragfähigen Titelleisten Bereich zu definieren. Wenn Sie dies nicht tun, legt das System den standardmäßigen dragfähigen Bereich am oberen Rand der Seite fest. Das System verarbeitet dann alle Benutzereingaben in diesem Bereich und hindert Eingaben daran, Ihre Steuerelemente zu erreichen.
+- Platzieren Sie die interaktiven Steuerelemente über dem oberen Rand des dragbaren Bereichs, der durch den Aufrufen von settitlebar (mit einer höheren z-Reihenfolge) definiert wird. Nehmen Sie keine untergeordneten Elemente des UIElement-Elements, das an settitlebar übergeben wird. Nachdem Sie ein Element an settitlebar übergeben haben, behandelt das System es wie die System Titelleiste und verarbeitet alle Zeiger Eingaben für dieses Element.
 
-Hier verfügt das `TitleBarButton`-Element über eine höhere Z-Reihenfolge als `AppTitleBar`, damit es Benutzereingaben empfängt.
+Hier hat das `TitleBarButton` -Element eine höhere z-Reihenfolge `AppTitleBar`als, sodass es Benutzereingaben erhält.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -231,27 +236,27 @@ Hier verfügt das `TitleBarButton`-Element über eine höhere Z-Reihenfolge als 
 </Grid>
 ```
 
-### <a name="transparency-in-caption-buttons"></a>Transparenz in Titelleistenschaltflächen
+### <a name="transparency-in-caption-buttons"></a>Transparenz in Beschriftungs Schaltflächen
 
-Wenn Sie ExtendViewIntoTitleBar auf **true** festlegen, können Sie den Hintergrund der Titelleistenschaltflächen transparent machen, damit der App-Hintergrund durchscheint. Generell wird der Hintergrund auf [Colors.Transparent](https://docs.microsoft.com/uwp/api/windows.ui.colors.Transparent) für vollständigen Transparenz festgelegt. Legen Sie für eine partielle Transparenz den Alpha-Kanal für die [Farbe](https://docs.microsoft.com/uwp/api/windows.ui.color) auf die Eigenschaft fest.
+Wenn Sie "extendviewindetitlebar" auf " **true**" festlegen, können Sie den Hintergrund der Beschriftungs Schaltflächen transparent machen, damit der APP-Hintergrund angezeigt wird. In der Regel legen Sie für vollständige Transparenz den Hintergrund auf [Colors. transparent](https://docs.microsoft.com/uwp/api/windows.ui.colors.Transparent) fest. Legen Sie für Teil Transparenz den Alphakanal für die [Farbe](https://docs.microsoft.com/uwp/api/windows.ui.color) fest, auf die Sie die-Eigenschaft festlegen.
 
-Diese ApplicationViewTitleBar-Eigenschaften können transparent sein:
+Diese applicationviewtitlebar-Eigenschaften können transparent sein:
 
-- ButtonBackgroundColor
-- ButtonHoverBackgroundColor
-- ButtonPressedBackgroundColor
-- ButtonInactiveBackgroundColor
+- Buttonbackgroundcolor
+- Buttonhoverbackgroundcolor
+- Buttonpressedbackgroundcolor
+- Buttoninactivebackgroundcolor
 
-Die Hintergrundfarbe der Schaltfläche wird nicht auf den Zeigeeffekt und das Gedrückthalten der Schaltfläche "Schließen" angewendet. Die Schaltfläche "Schließen" verwendet immer die systemdefinierte Farbe für diese Zustände.
+Die Hintergrundfarbe der Schaltfläche wird nicht auf die Schaltflächen "Schließen" und "gedrückt" angewendet. Die Schaltfläche Schließen verwendet immer die System definierte Farbe für diese Zustände.
 
-Alle anderen Farbeigenschaften werden auch weiterhin den Alphakanal ignorieren. Wenn ExtendViewIntoTitleBar auf **false** festgelegt wird, wird der Alpha-Kanal immer für alle ApplicationViewTitleBar-Farbeigenschaften ignoriert.
+Alle anderen Farbeigenschaften ignorieren weiterhin den Alphakanal. Wenn extendviewindetitlebar auf **false**festgelegt ist, wird der Alphakanal für alle applicationviewtitlebar-Farbeigenschaften immer ignoriert.
 
-### <a name="full-screen-and-tablet-mode"></a>Vollbildschirm- und Tablet-Modus
+### <a name="full-screen-and-tablet-mode"></a>Vollbild-und Tablet-Modus
 
-Wenn Ihre App im _Vollbildmodus_ oder _Tablet-Modus_ ausgeführt wird, blendet das System die Titelleisten- und Untertitel-Steuerungschaltflächen aus. Der Benutzer kann allerdings die Titelleiste aufrufen, um sie als Overlay über der Benutzeroberfläche anzuzeigen.
-Sie können das [CoreApplicationViewTitleBar.IsVisibleChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged)-Ereignis so festlegen, dass Sie benachrichtigt werden, wenn die Titelleiste aufgerufen oder ausgeblendet wird und den benutzerdefinierten Inhalt Ihrer Titelleiste nach Wunsch anzuzeigen oder auszublenden.
+Wenn Ihre APP im _voll Bild_ Modus oder im _Tablet-Modus_ausgeführt wird, blendet das System die Steuer Schaltflächen Titelleiste und Beschriftung aus. Der Benutzer kann jedoch die Titelleiste aufrufen, um ihn als Überlagerung auf der Benutzeroberfläche der APP zu sehen.
+Sie können das [coreapplicationviewtitlebar. isvisiblechanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) -Ereignis behandeln, um benachrichtigt zu werden, wenn die Titelleiste ausgeblendet oder aufgerufen wird. Sie können den benutzerdefinierten Titelleisten Inhalt bei Bedarf ein-oder ausblenden.
 
-In diesem Beispiel wird veranschaulicht, wie IsVisibleChanged zum Einblenden und Ausblenden des oben dargestellten `AppTitleBar`- Elements behandelt wird.
+Dieses Beispiel zeigt, wie isvisiblechanged behandelt wird, um das `AppTitleBar` zuvor gezeigte Element anzuzeigen und auszublenden.
 
 ```csharp
 public MainPage()
@@ -279,9 +284,9 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->Der _Vollbild_ Modus kann nur angezeigt werden, wenn er von Ihrer App unterstützt wird. Weitere Informationen finden Sie unter [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode). Der [_Tablet-Modus_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) ist eine Benutzer Option auf unterstützter Hardware, sodass ein Benutzer eine beliebige App im Tablet-Modus ausführen kann.
+>Der _voll Bild_ Modus kann nur eingegeben werden, wenn er von ihrer App unterstützt wird. Weitere Informationen finden Sie unter [applicationview. isfullscreenmode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) . Der [_Tablet-Modus_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) ist eine Benutzer Option auf unterstützter Hardware, sodass ein Benutzer eine beliebige App im Tablet-Modus ausführen kann.
 
-## <a name="full-customization-example"></a>Umfassendes Anpassungsbeispiel
+## <a name="full-customization-example"></a>Beispiel für vollständige Anpassung
 
 ```xaml
 <Page
@@ -379,11 +384,11 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
-- Machen Sie es offensichtlich, wenn Ihr Fenster aktiv oder inaktiv ist. Ändern Sie mindestens die Farbe von Text, Symbolen und Schaltflächen in der Titelleiste.
-- Definieren Sie einen ziehbaren Bereich am oberen Rand des App-Canvas. Durch das Abstimmen der Platzierung der System-Titelleisten sind diese einfacher zu finden.
-- Definieren Sie einen ziehbaren Bereich, der mit der visuellen Titelleiste (sofern vorhanden) in der App Canvas übereinstimmt.
+- Machen Sie es offensichtlich, wenn Ihr Fenster aktiv oder inaktiv ist. Ändern Sie mindestens die Farbe des Texts, der Symbole und der Schaltflächen in der Titelleiste.
+- Definieren Sie am oberen Rand der APP-Canvas einen dragfähigen Bereich. Das Abgleichen der Platzierung von System Titelleisten erleichtert den Benutzern das Auffinden von.
+- Definieren Sie einen dragfähigen Bereich, der der visuellen Titelleiste (sofern vorhanden) in der Canvas der APP entspricht.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Acrylic](../style/acrylic.md)
+- [Acryl](../style/acrylic.md)
 - [Farbe](../style/color.md)

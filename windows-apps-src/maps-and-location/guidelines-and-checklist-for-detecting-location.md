@@ -4,14 +4,14 @@ title: Richtlinien für Apps mit Standortbestimmung
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Standort, Ort, Karte, Geolocation
+keywords: Windows 10, UWP, Location, map, Geolokation
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab8e91c773990bafd414af1ae3d071ac6142088
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 575974db003048c6a248feab32ddb6c2c8f4f7f7
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259353"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606319"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>Richtlinien für Apps mit Standortbestimmung
 
@@ -21,7 +21,7 @@ ms.locfileid: "74259353"
 **Wichtige APIs**
 
 -   [**Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)
--   [**GeoLocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
+-   [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 In diesem Thema werden Leistungsrichtlinien für Apps beschrieben, für die der Zugriff auf den Standort eines Benutzers erforderlich ist.
 
@@ -45,7 +45,7 @@ In diesem Thema werden Leistungsrichtlinien für Apps beschrieben, für die der 
 
 -   Löschen Sie zwischengespeicherte Standortinformationen, und geben Sie das [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt frei, wenn der Zugriff auf die Standortinformationen vom Benutzer deaktiviert wird.
 
-    Geben Sie das [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt frei, wenn der Benutzer den Zugriff auf Standortinformationen unter „Einstellungen“ deaktiviert. Die APP erhält dann **Zugriff\_verweigerten** Ergebnisse für beliebige Location-API-Aufrufe. Wenn Ihre App Standortdaten (zwischen)speichert, löschen Sie zwischengespeicherte Daten, wenn der Benutzer den Zugriff auf seinen Standort zurücknimmt. Stellen Sie eine Alternativmöglichkeit zur Angabe des Standorts bereit, wenn keine diesbezüglichen Informationen für Positionsdienste verfügbar sind.
+    Geben Sie das [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt frei, wenn der Benutzer den Zugriff auf Standortinformationen unter „Einstellungen“ deaktiviert. Die APP erhält dann **\_Zugriffs Verweigerungs** Ergebnisse für beliebige Location-API-Aufrufe. Wenn Ihre App Standortdaten (zwischen)speichert, löschen Sie zwischengespeicherte Daten, wenn der Benutzer den Zugriff auf seinen Standort zurücknimmt. Stellen Sie eine Alternativmöglichkeit zur Angabe des Standorts bereit, wenn keine diesbezüglichen Informationen für Positionsdienste verfügbar sind.
 
 -   Stellen Sie eine Benutzeroberfläche für das erneute Aktivieren der Positionsdienste bereit. Stellen Sie z. b. eine Schaltfläche Aktualisieren bereit, mit der das [**GeoLocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) -Objekt neu installiert wird, und versuchen Sie erneut, Informationen zum Speicherort
 
@@ -56,7 +56,7 @@ In diesem Thema werden Leistungsrichtlinien für Apps beschrieben, für die der 
 
 **Leistung**
 
--   Verwenden Sie einmalige Standortanforderungen, wenn Ihre App keine Positionsupdates empfangen muss. Beispielsweise muss eine App, die einem Foto ein Tag zum Standort hinzufügt, keine Positionsupdateereignisse empfangen. Sie sollte den Standort stattdessen wie unter [Abrufen der aktuellen Position**beschrieben mit der**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)getGeopositionAsync[](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)-Methode anfordern.
+-   Verwenden Sie einmalige Standortanforderungen, wenn Ihre App keine Positionsupdates empfangen muss. Beispielsweise muss eine App, die einem Foto ein Tag zum Standort hinzufügt, keine Positionsupdateereignisse empfangen. Stattdessen sollte der Speicherort mithilfe von [**getgeopositionasync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)angefordert werden, wie unter [Get Current Location](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)beschrieben.
 
     Bei einer einmaligen Standortanforderung sollten Sie die folgenden Werte festlegen.
 
@@ -65,7 +65,7 @@ In diesem Thema werden Leistungsrichtlinien für Apps beschrieben, für die der 
     -   Legen Sie den Parameter „timeout“ von [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) fest. Diese Einstellung bestimmt, wie lange Ihre App auf eine Position warten kann, bevor ein Fehler zurückgegeben wird. Versuchen Sie, einen Kompromiss zwischen der vom Benutzer wahrgenommenen Reaktionsfähigkeit und der für Ihre App erforderlichen Genauigkeit zu finden.
 -   Verwenden Sie eine fortlaufende Standortsitzung, wenn häufige Aktualisierungen der Position erforderlich sind. Verwenden Sie [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)- und [**statusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignisse, um Bewegungen zu erkennen, die über eine bestimmte Grenze hinausgehen, oder für fortlaufende Positionsupdates.
 
-    Beim Anfordern von Positionsupdates können Sie die von Ihrer App angeforderte Genauigkeit mit [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) oder [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters) angeben. Sie sollten auch die erforderliche Häufigkeit von Positionsupdates angeben (mit [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold) oder [**ReportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval).
+    Beim Anfordern von Positionsupdates können Sie die von Ihrer App angeforderte Genauigkeit mit [**DesiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) oder [**DesiredAccuracyInMeters**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters) angeben. Sie sollten auch die Häufigkeit festlegen, mit der die Standort Aktualisierungen benötigt werden, indem Sie den [**movementthreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold) oder das [**Report Interval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval)verwenden.
 
     -   Geben Sie die Bewegungsgrenze an. Bei einigen Apps sind Positionsupdates nur erforderlich, wenn der Benutzer eine große Entfernung zurückgelegt hat. Eine App, die lokale Nachrichten oder aktuelle Wetterinformationen zur Verfügung stellt, benötigt beispielsweise keine Positionsupdates, es sei denn, der derzeitige Standort des Benutzers liegt in einer anderen Stadt. In diesem Fall sollten Sie die für ein Positionsupdateereignis mindestens erforderliche Entfernung anpassen, indem Sie die [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold)-Eigenschaft festlegen. Dadurch werden [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignisse herausgefiltert. Diese Ereignisse werden dann nur ausgelöst, wenn die Änderung der Position die Bewegungsgrenze überschreitet.
 
@@ -75,7 +75,7 @@ In diesem Thema werden Leistungsrichtlinien für Apps beschrieben, für die der 
 
         Geräte, die Standortdaten bereitstellen, können das von verschiedenen Apps angeforderte Berichtsintervall nachverfolgen und Datenberichte im kürzesten angeforderten Intervall bereitstellen. Dann empfängt die App, die den höchsten Bedarf an Präzision hat, die benötigten Daten. Es ist deshalb möglich, dass die Positionssuche häufiger als von der App angefordert Updates generiert, falls eine andere App häufigere Updates angefordert hat.
 
-        **Beachten** Sie  es nicht sicher ist, dass die Speicherort Quelle die Anforderung für das angegebene Berichts Intervall beachtet. Nicht alle Geräte für die Positionssuche berücksichtigen das Berichtintervall, Sie sollten es jedoch dennoch angeben.
+        **Beachten**  Sie, dass die Standort Quelle die Anforderung für das angegebene Berichts Intervall beachtet. Nicht alle Geräte für die Positionssuche berücksichtigen das Berichtintervall, Sie sollten es jedoch dennoch angeben.
 
     -   Um Energie zu sparen, sollte die [**desiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy)-Eigenschaft festgelegt werden. Damit wird angegeben, ob für die App präzise Daten erforderlich sind. Falls keine Apps präzise Daten benötigen, wird vom System Energie gespart, indem keine GPS-Anbieter aktiviert werden.
 
@@ -92,18 +92,18 @@ In diesem Thema werden Leistungsrichtlinien für Apps beschrieben, für die der 
         -   Möchte der Benutzer seine Position teilen, sollte die App eine Genauigkeit von ungefähr 10 m anfordern.
     -   Verwenden Sie die [**Geocoordinate.accuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.accuracy)-Eigenschaft, wenn für Ihre App bestimmte Genauigkeitsanforderungen gelten. Navigations-Apps sollten z. B. mit der **Geocoordinate.accuracy**-Eigenschaft ermitteln, ob die verfügbaren Standortdaten die Anforderungen der App erfüllen.
 
--   Berücksichtigen Sie die Startverzögerung. Wenn die App zum ersten Mal Standortdaten anfordert, kann während des Startens des Anbieters eine kurze Verzögerung (1 – 2 Sekunden) auftreten. Berücksichtigen Sie dies beim Design der App-Benutzeroberfläche. Beispielsweise können Sie verhindern, dass andere Aufgaben bis zum Abschluss des Aufrufs von [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) blockiert werden.
+-   Berücksichtigen Sie die Startverzögerung. Wenn die App zum ersten Mal Standortdaten anfordert, kann während des Startens des Anbieters eine kurze Verzögerung (1 – 2 Sekunden) auftreten. Berücksichtigen Sie dies beim Design der App-Benutzeroberfläche. Beispielsweise können Sie verhindern, dass andere Aufgaben blockiert werden, die den Abschluss des Aufrufens von [**getgeopositionasync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)ausstehen.
 
 -   Berücksichtigen Sie das Hintergrundverhalten. Falls die App inaktiv und im Hintergrund angehalten ist, empfängt sie keine Positionsupdateereignisse. Beachten Sie dies, wenn Ihre App Positionsupdates durch Protokollierung nachverfolgt. Wenn die App wieder aktiv ist, empfängt sie nur neue Ereignisse. Es werden keine Aktualisierungen abgerufen, die während ihrer Inaktivität stattfanden.
 
--   Verwenden Sie Rohdaten- und Fusionssensoren auf effiziente Art und Weise. Es gibt zwei Sensortypen: *Rohsensoren* und *Fusion-Sensoren*.
+-   Verwenden Sie Rohdaten- und Fusionssensoren auf effiziente Art und Weise. Es gibt zwei Arten von Sensoren: *RAW* und *Fusion*.
 
     -   Zu den Rohdatensensoren zählen Beschleunigungsmesser, Gyrometer und Magnetfeldmesser.
     -   Zu Fusionssensoren zählen Orientierungssensoren, Neigungsmesser und Kompasse. Fusionssensoren erhalten ihre Daten aus einer Kombination aus Rohdatensensoren.
 
-    Die Windows-Runtime-APIs können auf alle diese Sensoren außer dem Magnetometer zugreifen. Fusionssensoren sind genauer und stabiler als Rohdatensensoren, sie benötigen jedoch auch mehr Energie. Verwenden Sie die richtigen Sensoren für den richtigen Zweck. Weitere Informationen finden Sie unter [Sensoren](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors).
+    Mit Ausnahme des Magnetometers können die Windows-Runtime-APIs auf all diese Sensoren zugreifen. Fusionssensoren sind genauer und stabiler als Rohdatensensoren, sie benötigen jedoch auch mehr Energie. Verwenden Sie die richtigen Sensoren für den richtigen Zweck. Weitere Informationen finden Sie unter [Sensoren](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors).
 
-**Verbundener Standby**
+**Verbundener Standbymodus**
 - Wenn sich der PC im Verbindungsstandby befindet, können [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekte immer instanziiert werden. Das **Geolocator**-Objekt findet jedoch keine zu aggregierenden Sensoren, sodass für Aufrufe von [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) nach 7 Sekunden ein Timeout auftritt. [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignislistener werden niemals aufgerufen, und [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignislistener werden einmal mit dem **NoData**-Status aufgerufen.
 
 ## <a name="additional-usage-guidance"></a>Weitere Hinweise zur Verwendung
@@ -115,7 +115,7 @@ Der Benutzer kann die Standortbestimmung mit **Datenschutzeinstellungen für den
 
 -   Gehen Sie wie folgt vor, um das Aktivieren bzw. Deaktivieren der Standortbestimmung durch den Benutzer zu erkennen:
     -   Behandeln Sie das [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignis. Die [**Status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status)-Eigenschaft des Arguments für das **StatusChanged**-Ereignis weist den Wert **Disabled** auf, wenn der Benutzer die Standortdienste deaktiviert.
-    -   Überprüfen Sie die von [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) zurückgegebenen Fehlercodes. Wenn der Benutzer die Standortdienste deaktiviert hat, schlagen Aufrufe von **getgeopositionasync** mit dem Fehler " **Access\_denied** " fehl, und die [**LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus) -Eigenschaft hat den Wert " **deaktiviert**".
+    -   Überprüfen Sie die von [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) zurückgegebenen Fehlercodes. Wenn der Benutzer die Location-Dienste deaktiviert hat, schlagen Aufrufe von **getgeopositionasync** mit einem Fehler vom Typ " **Zugriff\_verweigert** " fehl, und für die [**LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus) -Eigenschaft wurde der Wert **deaktiviert**.
 -   Wenn Standortdaten für Ihre App unbedingt notwendig sind, beispielsweise in einer Karten-App, sollten Sie Folgendes sicherstellen:
     -   Behandeln Sie das [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis, um Updates abzurufen, falls sich der Standort des Benutzers ändert.
     -   Behandeln Sie das [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignis wie oben beschrieben, um Änderungen an den Standorteinstellungen zu erkennen.
@@ -151,21 +151,21 @@ Bei einigen Arten von Apps, beispielsweise Wetter-Apps oder Apps, die lokale Inf
 -   Bei einer Genauigkeit von ungefähr 100 Metern (WiFi-Auflösung) sind die empfangenen Standortdaten halbwegs genau, und es wird empfohlen, Informationen bis hin zur Ebene des Städtenamens anzugeben. Vermeiden Sie es, Stadtteilnamen anzugeben.
 -   Zeigen Sie bei einer Genauigkeit von mehr als einem Kilometer (IP-Auflösung) nur das Bundesland oder den Namen des Landes/der Region an.
 
-### <a name="privacy-considerations"></a>Überlegungen zum Datenschutz
+### <a name="privacy-considerations"></a>Datenschutzaspekte
 
 Der geografische Standort eines Benutzers gehört zu den personenbezogenen Informationen (Personally Identifiable Information, PII). Die folgende Website enthält Richtlinien zum Datenschutz.
 
--   [Microsoft-Datenschutz]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Datenschutz bei Microsoft]( https://www.microsoft.com/privacy/dpd/default.aspx)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Einrichten von Geofence-Bereichen](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
+* [Einrichten eines Geofence befindet](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [Abrufen der aktuellen Position](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
 * [Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [Beispiel für UWP-Speicherort (Geolokation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
+* [UWP – Positionsbeispiel (Geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

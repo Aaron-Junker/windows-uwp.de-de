@@ -1,5 +1,5 @@
 ---
-Description: Identifizieren Sie die Eingabegeräte, die mit einem Gerät für die universelle Windows-Plattform (UWP) verbunden sind, sowie deren Funktionen und Attribute.
+Description: Identifizieren Sie die Eingabegeräte, die mit einem Windows App-Gerät verbunden sind, und identifizieren Sie Ihre Funktionen und Attribute.
 title: Identifizieren von Eingabegeräten
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
@@ -8,26 +8,26 @@ keywords: Gerät, Digitalisierer, Eingabe, Interaktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a17d1f4664326cb54d9c53d828eb372ef93fe4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 792b2f71408928de0278dd0c623f13923a2165a8
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257885"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970025"
 ---
 # <a name="identify-input-devices"></a>Identifizieren von Eingabegeräten
 
 
-Identifizieren Sie die Eingabegeräte, die mit einem Gerät für die universelle Windows-Plattform (UWP) verbunden sind, sowie deren Funktionen und Attribute.
+Identifizieren Sie die Eingabegeräte, die mit einem Windows App-Gerät verbunden sind, und identifizieren Sie Ihre Funktionen und Attribute.
 
-> **Wichtige APIs**: [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **Wichtige APIs**: [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input), [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows. UI. XAML. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>Abrufen von Mauseigenschaften
 
 
 Der [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)-Namespace enthält die [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)-Klasse, mit der Sie die Eigenschaften abrufen können, die von einer oder mehreren angeschlossenen Mäusen bereitgestellt werden. Erstellen Sie einfach ein neues **MouseCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
-**Beachten Sie**  die Werte, die von den hier behandelten Eigenschaften zurückgegeben werden, auf allen erkannten Mäusen basieren: boolesche Eigenschaften geben einen Wert ungleich 0 (null) zurück, wenn mindestens eine Maus eine bestimmte Funktion unterstützt und numerische Eigenschaften den von einer beliebigen Maus verfügbar gemachten maximalen Wert zurückgeben.
+**Beachten Sie**  , dass die Werte, die von den hier beschriebenen Eigenschaften zurückgegeben werden, auf allen erkannten Mäusen basieren: boolesche Eigenschaften geben einen Wert ungleich 0 (null) zurück, wenn mindestens eine Maus eine bestimmte Funktion unterstützt und numerische Eigenschaften den maximal von einer Maus verfügbar gemachten Wert zurückgeben.
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 Der [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)-Namespace enthält die [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities)-Klasse, mit der Sie ermitteln können, ob Touchdigitalisierungsgeräte angeschlossen sind. Erstellen Sie einfach ein neues **TouchCapabilities**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
-**Beachten Sie**  die Werte, die von den hier behandelten Eigenschaften zurückgegeben werden, auf allen erkannten Fingerabdruck-Digitalisierern basieren: boolesche Eigenschaften geben einen Wert ungleich 0 (null) zurück, wenn mindestens ein Digitalisierer eine bestimmte Funktion unterstützt und numerische Eigenschaften den von einem einzelnen Digitalisierer verfügbar gemachten maximalen Wert
+**Beachten Sie**  , dass die Werte, die von den hier erläuterten Eigenschaften zurückgegeben werden, auf allen erkannten Fingerabdruck-Digitalisierern basieren: boolesche Eigenschaften geben einen Wert ungleich 0 (null) zurück, wenn mindestens ein Digitalisierer eine bestimmte Funktion unterstützt und numerische Eigenschaften den von einem einzelnen Digitalisierer
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 Der [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)-Namespace enthält die [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)-Klasse, mit der Sie abrufen können, ob eines der erkannten Geräte Zeigereingaben (Toucheingabe, Stift oder Maus) unterstützt. Erstellen Sie einfach ein neues **PointerDevice**-Objekt, und rufen Sie die benötigten Eigenschaften ab.
 
-**Beachten Sie**  die Werte, die von den hier behandelten Eigenschaften zurückgegeben werden, auf allen erkannten Zeiger Geräten basieren: boolesche Eigenschaften geben einen Wert ungleich 0 (null) zurück, wenn mindestens ein Gerät eine bestimmte Funktion unterstützt und numerische Eigenschaften den Maximalwert zurückgeben, der von einem Zeiger Gerät verfügbar gemacht wird.
+**Beachten Sie**  , dass die Werte, die von den hier behandelten Eigenschaften zurückgegeben werden, auf allen erkannten Zeiger Geräten basieren: boolesche Eigenschaften geben einen Wert ungleich 0 (null) zurück, wenn mindestens ein Gerät eine bestimmte Funktion unterstützt und numerische Eigenschaften den Maximalwert zurückgeben, der von einem einzelnen Zeiger Gerät
 
 Der folgende Code zeigt in einer Tabelle die Eigenschaften und Werte der einzelnen Zeigergeräte an.
 
@@ -176,18 +176,12 @@ private void GetPointerDevices()
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
+### <a name="samples"></a>Beispiele
 
-**Beispiele**
-* [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
-**Archivbeispiele**
-* [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
- 
+### <a name="archive-samples"></a>Archivbeispiele
 
- 
-
-
-
-
+- [Eingabe: Beispiel für Gerätefunktionen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
