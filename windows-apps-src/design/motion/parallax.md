@@ -1,6 +1,6 @@
 ---
-Description: Verwenden Sie das ParallaxView-Steuerelement, um Tiefe und Bewegung zu Ihrer App hinzuzufügen.
-title: Verwenden Sie "Parser", um der APP Tiefe und Bewegung hinzuzufügen.
+Description: Verwenden Sie das Steuerelement "Parser", um der APP Tiefe und Bewegung hinzuzufügen.
+title: Verwenden Sie Parallax, um der App Tiefe und Bewegung hinzuzufügen.
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
@@ -12,16 +12,16 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ac195916e76ad7b3f03adc39a293422d0d58f7a4
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614083"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970495"
 ---
 # <a name="parallax"></a>Parallax
 
-Parallax ist ein visueller Effekt, bei dem sich Elemente, die näher am Betrachter liegen, schneller als Elemente im Hintergrund bewegen. Parallax erzeugt ein Gefühl von Tiefe, Perspektive und Bewegung. In einer UWP-App können Sie das ParallaxView-Steuerelement verwenden, um einen Parallax-Effekt zu erzeugen.  
+"Parser" ist ein visueller Effekt, bei dem Elemente, die näher am Viewer liegen, schneller verschoben werden als Elemente im Hintergrund. "Parser" erstellt ein Gefühl für tiefe, Perspektive und Bewegung. In einer UWP-App können Sie das-Steuerelement "Parser" verwenden, um einen-Effekt zu erzeugen.  
 
 > **APIs für die Windows-Benutzeroberflächen Bibliothek:** parameterxview- [Klasse](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview), [verticalshift-Eigenschaft](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift), [horizontalshift-Eigenschaft](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 >
@@ -34,7 +34,7 @@ Parallax ist ein visueller Effekt, bei dem sich Elemente, die näher am Betracht
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>Wenn Sie die App <strong style="font-weight: semi-bold">XAML-Steuerelementekatalog</strong> installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ParallaxView">die App zu öffnen und ParallaxView in Aktion zu sehen</a>.</p>
+    <p>Wenn Sie die Katalog-App für <strong style="font-weight: semi-bold">XAML</strong> -Steuerelemente installiert haben, klicken Sie hier, um <a href="xamlcontrolsgallery:/item/ParallaxView">die APP zu öffnen, und sehen Sie sich die in Aktion enthaltene Ansicht an</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Beziehen der XAML-Steuerelementekatalog-App (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Abrufen des Quellcodes (GitHub)</a></li>
@@ -43,29 +43,29 @@ Parallax ist ein visueller Effekt, bei dem sich Elemente, die näher am Betracht
 </tr>
 </table>
 
-## <a name="parallax-and-the-fluent-design-system"></a>Parallax und das Fluent Design-System
+## <a name="parallax-and-the-fluent-design-system"></a>"Parser" und "flüssiges Design System"
 
- Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. Parallax ist eine Komponente des Fluent Design-Systems, die Bewegung, Tiefe und Skalierungsmöglichkeiten in Ihre App bringt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design für UWP](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. "Parser" ist eine fließende Entwurfs System Komponente, die Ihre APP um Bewegung, Tiefe und Skalierung erweitert. Weitere Informationen finden Sie in der [Übersicht über das fließende Design](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Funktionsweise in einer Benutzeroberfläche
 
-In einer Benutzeroberfläche lassen sich Parallax-Effekte erzeugen, indem bei einem Bildlauf oder Schwenken der Benutzeroberfläche verschiedene Objekte unterschiedlich schnell bewegt werden. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Um dies zu veranschaulichen, betrachten wir zwei Inhalts Ebenen, eine Liste und ein Hintergrundbild.  Die Liste befindet sich über dem Hintergrundbild. Dadurch wird bereits der Eindruck vermittelt, dass die Liste sich näher am Betrachter befindet.  Um den Teil der Wirkung zu erzielen, soll das Objekt, das uns am nächsten geht, "schneller" als das Objekt, das sich weiter entfernt.  Wenn der Benutzer einen Bildlauf in der Oberfläche durchführt, bewegt sich die Liste schneller als das Hintergrundbild, wodurch eine Illusion von Tiefe erzeugt wird.
+In einer Benutzeroberfläche können Sie einen parameteffekt erstellen, indem Sie unterschiedliche Objekte mit unterschiedlichen Raten verschieben, wenn die Benutzeroberfläche einen Bildlauf durchführt. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> Um dies zu veranschaulichen, betrachten wir zwei Inhalts Ebenen, eine Liste und ein Hintergrundbild.  Die Liste wird auf dem Hintergrundbild platziert. Dadurch wird bereits die Illusion angezeigt, dass die Liste näher am Viewer liegt.  Um den Teil der Wirkung zu erzielen, soll das Objekt, das uns am nächsten geht, "schneller" als das Objekt, das sich weiter entfernt.  Wenn der Benutzer einen Bildlauf zur Schnittstelle durchführt, verschiebt sich die Liste schneller als das Hintergrundbild, was die Illusion von Tiefe erzeugt.
 
  ![Beispiel für Parallaxe mit einer Liste und einem Hintergrundbild](images/_Parallax_v2.gif)
 
  
-## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>Verwenden des ParallaxView-Steuerelements zum Erzeugen eines Parallax-Effekts
+## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>Verwenden des Steuer Elements "parametenxview" zum Erstellen eines-Parametern
 
-Um einen Parallax-Effekt zu erzeugen, verwenden Sie das [ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)-Steuerelement. Dieses Steuerelement verbindet die Bildlaufposition eines Vordergrundelements, z. B. einer Liste, mit einem Hintergrundelement, z. B. einem Bild. Bei einem Bildlauf durch das Vordergrundelement wird das Hintergrundelement animiert, um einen Parallax-Effekt zu erzeugen. 
+Zum Erstellen eines-Parametern verwenden Sie das-Steuerelement " [Parser](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) ". Dieses Steuerelement bindet die Scrollposition eines Vordergrund Elements, z. b. eine Liste, an ein Hintergrund Element, z. b. ein Bild. Wenn Sie einen Bildlauf durch das Vordergrund Element durchführen, animiert es das background-Element, um einen-Effekt zu erzeugen. 
 
-Um das ParallaxView-Steuerelement zu verwenden, stellen Sie ein Quellelement und ein Hintergrundelement bereit und legen für die Eigenschaften [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (für den vertikalen Bildlauf) und/oder [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (für den horizontalen Bildlauf) einen größeren Wert als Null fest. 
-* Die Quelleigenschaft akzeptiert einen Verweis auf das Vordergrundelement. Damit der Parallax-Effekt auftritt, sollte sich im Vordergrund ein [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)- oder ein anderes Element befinden, das ein ScrollViewer-Element enthält, z. B. [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) oder [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox). 
+Wenn Sie das Steuerelement "-Steuerelement" verwenden möchten, geben Sie ein Quell Element, ein Background-Element und die [verticalshift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) -Eigenschaften (für das vertikale Scrollen) und/oder [horizontalshift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (für horizontales Scrollen) auf einen Wert größer als 0 (null) an. 
+* Die Source-Eigenschaft nimmt einen Verweis auf das Vordergrund Element an. Damit der Teil des Parametern auftritt, sollte der Vordergrund ein [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) oder ein Element sein, das einen ScrollViewer enthält, z. b. ein [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) -oder [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)-Element. 
 
-* Um das Hintergrundelement festzulegen, fügen Sie dieses Element als untergeordnetes Element zum ParallaxView-Steuerelement hinzu. Das Hintergrundelement kann ein beliebiges [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) sein, z. B. ein [Bild](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) oder ein Panel, das zusätzliche UI-Elemente enthält. 
+* Um das background-Element festzulegen, fügen Sie dieses Element als untergeordnetes Element des-Steuer Elements "Parser" hinzu. Beim Background-Element kann es sich um ein beliebiges [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)handeln, z. b. ein [Bild](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) oder ein Panel, das zusätzliche Benutzeroberflächen Elemente 
 
-Um einen Parallax-Effekt zu erstellen, muss sich ParallaxView hinter dem Vordergrundelement befinden. Mithilfe des [Raster](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)- und des [Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)-Panels können Sie Elemente übereinanderstapeln, damit sie sich gut mit dem ParallaxView-Steuerelement verwenden lassen.  
+Um einen Teil des Effekts zu erstellen, muss sich die "Parser"-Sicht hinter dem Vordergrund Element befinden. Mit dem [Raster](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) -und dem [Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas) -Panel können Sie Elemente auf der obersten Ebene anlagern, sodass Sie gut mit dem Steuerelement "parameallaxview" funktionieren.  
 
-In diesem Beispiel wird ein Parallax-Effekt für eine Liste erstellt:
+In diesem Beispiel wird ein Teil des Parametern für eine Liste erstellt:
  
 ```xaml
 <Grid>
@@ -104,21 +104,21 @@ In diesem Beispiel wird ein Parallax-Effekt für eine Liste erstellt:
 
 Die "Parser"-Sicht passt automatisch die Größe des Bilds an, sodass es für den unter-und-Vorgang funktioniert, sodass Sie sich keine Gedanken machen müssen, dass das Bild nicht mehr in der Ansicht angezeigt wird.
 
-## <a name="customizing-the-parallax-effect"></a>Anpassen des Parallax-Effekts 
+## <a name="customizing-the-parallax-effect"></a>Anpassen des Parametern 
 
-Mithilfe der Eigenschaften VerticalShift und HorizontalShift können Sie das Ausmaß des Parallax-Effekts steuern.
+Mit den Eigenschaften verticalshift und horizontalshift können Sie den Grad des-Parametern steuern.
 
-* Die VerticalShift-Eigenschaft gibt an, wie weit der Hintergrund während des gesamten Parallax-Vorgangs vertikal verschoben werden soll. Der Wert 0 bedeutet, dass der Hintergrund überhaupt nicht verschoben wird.
-* Die HorizontalShift-Eigenschaft gibt an, wie weit der Hintergrund während des gesamten Parallax-Vorgangs horizontal verschoben werden soll. Der Wert 0 bedeutet, dass der Hintergrund überhaupt nicht verschoben wird.
+* Die verticalshift-Eigenschaft gibt an, wie weit der Hintergrund während des gesamten Parametern vertikal verschoben werden soll. Der Wert 0 bedeutet, dass der Hintergrund überhaupt nicht verschoben wird.
+* Die horizontalshift-Eigenschaft gibt an, wie weit der Hintergrund während des gesamten Parametern horizontal verschoben werden soll. Der Wert 0 bedeutet, dass der Hintergrund überhaupt nicht verschoben wird.
 
-Mit höheren Werten lassen sich dramatischere Effekte erzeugen. 
+Größere Werte führen zu einer größeren Auswirkung. 
 
-Die vollständige Liste der Methoden zum Anpassen von Parallax finden Sie in der ParallaxView-Klasse. 
+Eine umfassende Liste der Möglichkeiten zum Anpassen von "Parser" finden Sie in der Klasse "paramexview". 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
-- Verwenden Sie Parallax in Listen mit einem Hintergrundbild
-- Verwenden Sie Parallax gegebenenfalls in ListViewItems, wenn ListViewItems ein Bild enthalten.
+- Verwenden von "Parser" in Listen mit einem Hintergrundbild
+- Verwenden Sie ggf. die Verwendung von "Parser" in ListViewItems, wenn ListViewItems ein Bild enthalten.
 - Nicht überall verwenden, die über Auslastung kann seine Auswirkung verringern
 
 ## <a name="related-articles"></a>Verwandte Artikel

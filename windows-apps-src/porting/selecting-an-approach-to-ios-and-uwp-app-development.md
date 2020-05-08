@@ -4,14 +4,14 @@ title: Auswählen eines Ansatzes für die Entwicklung von iOS- und UWP-Apps
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260138"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148584"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Auswählen eines Ansatzes für die Entwicklung von iOS- und UWP-Apps
 
@@ -54,21 +54,21 @@ Bei einer vorhandenen iOS-App stehen weniger Optionen zur Verfügung. Es ist jed
 
     Wenn die Kerngeschäftslogik nicht in Objective-C oder Swift, sondern in C++ geschrieben ist, können Sie diesen Code häufig mit geringfügigen Änderungen in Ihrem Projekt verwenden. Anschließend können Sie wie bei anderen Windows-Apps mithilfe von XAML die Benutzeroberfläche definieren und den C++-Code bei Bedarf nutzen.
 
--   [Verwenden von Angle zum Ausführen von OpenGL-es unter Windows](https://github.com/microsoft/angle/wiki)
+-   [Verwenden von ANGLE zum Ausführen von OpenGL ES unter Windows](https://github.com/microsoft/angle/wiki)
 
     Ein Zwischenschritt zum Portieren Ihres OpenGL ES 2.0-Projekts ist die Verwendung von ANGLE. Mit ANGLE können Sie OpenGL ES-Inhalte unter Windows ausführen, indem Sie OpenGL ES-API-Aufrufe in DirectX 11-API-Aufrufe übersetzen.
 
 ## <a name="other-cross-platform-authoring-tools"></a>Andere plattformübergreifende Erstellungstools
 
--   [Gamesalad](https://gamesalad.com/)
+-   [GameSalad](https://gamesalad.com/)
 
     Eine Spielerstellungsumgebung
 
--   [Konstrukt 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://www.scirra.com/)
 
     Eine Spielerstellungsumgebung
 
--   [Titan Studio](https://www.appcelerator.com/platform/titanium-studio/)
+-   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     Eine plattformübergreifende Erstellungsumgebung
 
@@ -76,23 +76,23 @@ Bei einer vorhandenen iOS-App stehen weniger Optionen zur Verfügung. Es ist jed
 
     Eine plattformübergreifende Codebibliothek zur Spritebehandlung und Physikmodellierung
 
--   [Impact. js](https://impactjs.com/)
+-   [Impact.js](https://impactjs.com/)
 
     Eine HTML-basierte Spielbibliothek.
 
--   [Marmelade](http://madewithmarmalade.com/)
+-   [Marmalade](http://madewithmarmalade.com/)
 
     Ein plattformübergreifendes SDK
 
--   [Openfl](https://www.openfl.org/)
+-   [OpenFL](https://www.openfl.org/)
 
     Ein plattformübergreifendes Entwicklungstool
 
--   [Gamemaker](https://www.yoyogames.com/gamemaker/studio)
+-   [GameMaker](https://www.yoyogames.com/gamemaker/studio)
 
     Eine spezielle Entwicklungsumgebung für Spiele
 
--   [Playcanvas](https://playcanvas.com/)
+-   [PlayCanvas](https://playcanvas.com/)
 
     Ein HTML-basiertes Tool für die Spielentwicklung
 

@@ -1,43 +1,43 @@
 ---
-title: Alternative Push-Kanäle, die mithilfe des VAPID auf UWP
-description: Erfahren Sie, wie mithilfe von alternativen Push-Kanälen mit dem VAPID-Protokoll über eine UWP-app
+title: Alternative pushkanäle mit vapid in UWP
+description: Anleitungen zum Verwenden alternativer pushkanäle mit dem vapid-Protokoll aus einer Windows-App
 ms.date: 01/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, WinRT-API, WNS
+keywords: Windows 10, UWP, WinRT-API, WNS
 localizationpriority: medium
-ms.openlocfilehash: 6512eb891967b6c17bc4845d5e47639ae3c97d31
-ms.sourcegitcommit: 0c97c025d751082db3424cb9941bf6688d9b7381
+ms.openlocfilehash: 382dca376e2393d83c2803043b61db76226b3995
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835026"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970865"
 ---
-# <a name="alternate-push-channels-using-vapid-in-uwp"></a>Alternative Push-Kanäle, die mithilfe des VAPID auf UWP 
-Ab dem Fall Creators Update können können UWP-apps VAPID Authentifizierung verwenden, um Pushbenachrichtigungen zu senden.  
+# <a name="alternate-push-channels-using-vapid-in-windows"></a>Alternative pushkanäle mit vapid in Windows 
+Ab dem Fall Creators Update können Windows-Apps die vapid-Authentifizierung verwenden, um Pushbenachrichtigungen zu senden.  
 
 > [!NOTE]
-> Diese APIs sind für Webbrowser vorgesehen, die Kanäle in ihrem Auftrag zu erstellen und Hosten von anderen Websites.  Wenn Sie Webpush Benachrichtigungen zur Web-app hinzufügen möchten, empfehlen wir, dass Sie auf der W3C und WhatWG-Standards für einen Dienst Worker erstellen und Senden einer Benachrichtigung folgen.
+> Diese APIs sind für Webbrowser gedacht, in denen andere Websites gehostet werden und in deren Namen Kanäle erstellt werden.  Wenn Sie Ihrer Web-App webpush-Benachrichtigungen hinzufügen möchten, empfehlen wir Ihnen, die W3C-und die WHATWG-Standards für die Erstellung eines Service Workers und das Senden einer Benachrichtigung zu befolgen.
 
 ## <a name="introduction"></a>Einführung
-Die Einführung von der Web-Push-Standard ermöglicht, dass Websites wie bei apps, die Senden von Benachrichtigungen, auch wenn der Benutzer auf der Website werden nicht mehr reagieren können.
+Durch die Einführung des webpush-Standards können Websites mehr wie apps agieren und Benachrichtigungen senden, auch wenn sich die Benutzer nicht auf der Website befinden.
 
-Das VAPID Authentifizierungsprotokoll wurde entwickelt, um Websites für die Authentifizierung mit Push-Server in einem Anbieter ermöglicht das hostagnostische Weise. Mit aller Hersteller, die mit dem VAPID-Protokoll können Websites Pushbenachrichtigungen senden, ohne Kenntnis des Browsers auf dem er ausgeführt wird. Dies ist eine bedeutende Verbesserung über eine andere Push-Protokoll für jede Plattform implementieren. 
+Das Authentifizierungsprotokoll "vapid" wurde erstellt, um Websites die Authentifizierung mit pushservern auf Hersteller agnostische Weise zu ermöglichen. Bei allen Anbietern, die das vapid-Protokoll verwenden, können Websites Pushbenachrichtigungen senden, ohne den Browser zu kennen, in dem Sie ausgeführt wird. Dies ist eine bedeutende Verbesserung gegenüber der Implementierung eines anderen pushprotokolls für jede Plattform. 
 
-UWP-apps können VAPID zum Senden von Pushbenachrichtigungen mit diesen Vorteilen ebenfalls verwenden. Diese Protokolle können die Entwicklungszeit für neue apps zu speichern und plattformübergreifende Unterstützung für vorhandene apps vereinfachen. Darüber hinaus können Unternehmens-apps oder mittels sideload übertragenen apps jetzt Benachrichtigungen senden, ohne Registrierung in der Microsoft Store. Hoffentlich wird dadurch neue Möglichkeiten zum interagieren mit Benutzern auf allen Plattformen geöffnet.  
+Windows-Apps können mit vapid auch Pushbenachrichtigungen mit diesen Vorteilen senden. Diese Protokolle können Entwicklungszeit für neue apps einsparen und plattformübergreifende Unterstützung für vorhandene apps vereinfachen. Darüber hinaus können Unternehmens-Apps oder Sideload-Apps jetzt Benachrichtigungen senden, ohne sich im Microsoft Store registrieren zu müssen. Hoffentlich werden dadurch neue Möglichkeiten zum Einbinden von Benutzern auf allen Plattformen geöffnet.  
 
 ## <a name="alternate-channels"></a>Alternative Kanäle 
-In UWP sind diese VAPID Kanäle alternativen Kanäle und bieten eine ähnliche Funktionalität in einem Web-Push-Kanal. Sie können Auslösen einer app-Hintergrundaufgabe ausführen, aktivieren Sie die Verschlüsselung von Nachrichten und für mehrere Kanäle, über eine einzige app ermöglichen. Weitere Informationen zu den Unterschieden zwischen den anderen Kanal-Typen finden Sie unter [Auswählen der richtigen Channel](channel-types.md).
+In UWP werden diese vapid-Kanäle als alternative Kanäle bezeichnet und bieten eine ähnliche Funktionalität wie ein webpush-Channel. Sie können eine APP-Hintergrundaufgabe für die Ausführung, die Aktivierung der Nachrichten Verschlüsselung und die Ermöglichung mehrerer Kanäle aus einer einzelnen App auslöst. Weitere Informationen zum Unterschied zwischen den verschiedenen Kanaltypen finden Sie unter [auswählen des richtigen Kanals](channel-types.md).
 
-Mithilfe von anderen Kanälen ist eine hervorragende Möglichkeit, erste Schritte mit Pushbenachrichtigungen zugreifen, wenn Ihre app keinen primären Kanal verwenden kann oder wenn Sie eine Website oder app-Code freigeben möchten. Das Einrichten eines Kanals ist einfach und jemand hat die Web-Push-Standard verwendet oder arbeitet mit Windows-Push-Benachrichtigungen, bevor Sie vertraut.
+Die Verwendung alternativer Kanäle ist eine gute Möglichkeit, um auf Pushbenachrichtigungen zuzugreifen, wenn Ihre APP keinen primären Kanal verwenden kann oder wenn Sie Code zwischen Ihrer Website und App freigeben möchten. Das Einrichten eines Kanals ist einfach und mit jedem vertraut, der zuvor den webpushstandard verwendet oder mit Windows-Pushbenachrichtigungen gearbeitet hat.
 
 ## <a name="code-example"></a>Codebeispiel
 
-Das grundlegende Verfahren zum Einrichten von einen anderen Kanal für UWP-Apps ähnelt das Einrichten eines primären oder sekundären Kanals. Registrieren Sie sich zuerst für einen Kanal mit der [WNS Server](windows-push-notification-services--wns--overview.md). Registrieren Sie anschließend zur Ausführung als Hintergrundaufgabe ausgeführt. Nachdem die Benachrichtigung wird gesendet, und die Hintergrundaufgabe ausgelöst wird, Behandeln des Ereignisses.  
+Der grundlegende Prozess der Einrichtung eines alternativen Kanals für eine Windows-App ähnelt dem Einrichten eines primären oder sekundären Kanals. Registrieren Sie sich zunächst für einen Kanal mit dem [WNS-Server](windows-push-notification-services--wns--overview.md). Registrieren Sie sich dann, um als Hintergrundaufgabe auszuführen. Nachdem die Benachrichtigung gesendet und die Hintergrundaufgabe ausgelöst wurde, behandeln Sie das-Ereignis.  
 
-### <a name="get-a-channel"></a>Abrufen eines Kanals 
-Um einen anderen Kanal zu erstellen, muss die app zwei Informationen angeben: der öffentliche Schlüssel für den Server und den Namen des Kanals wird erstellt. Die Details zu den Server-Schlüsseln finden Sie in der Web-Push-Spezifikation, aber es wird empfohlen, eine standard-Web-Push-Bibliothek auf dem Server, die um die Schlüssel zu generieren.  
+### <a name="get-a-channel"></a>Kanal erhalten 
+Um einen alternativen Kanal zu erstellen, muss die APP zwei Informationen bereitstellen: den öffentlichen Schlüssel für den Server und den Namen des zu erstellenden Kanals. Die Details zu den Server Schlüsseln sind in der webpushspezifikation verfügbar. es wird jedoch empfohlen, eine Standardweb-pushbibliothek auf dem Server zu verwenden, um die Schlüssel zu generieren.  
 
-Die Kanal-ID ist besonders wichtig, da eine app mehrere alternativen Kanäle erstellt werden kann. Jeder Channel muss durch eine eindeutige ID identifiziert werden, die eingeschlossen, mit jeder benachrichtigungsnutzlasten, die diesem Kanal gesendet werden.  
+Die Kanal-ID ist besonders wichtig, da eine APP mehrere alternative Kanäle erstellen kann. Jeder Kanal muss durch eine eindeutige ID identifiziert werden, die in alle an diesem Kanal gesendeten Benachrichtigungs Nutzlasten eingeschlossen wird.  
 
 ```csharp
 private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer applicationServerKey) 
@@ -57,13 +57,13 @@ private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer appli
     AppPassChannelToSite(webChannel.Uri); 
 } 
 ```
-Die app sendet den Kanal Sichern auf einem Server und speichert sie lokal. Speichern lokal die Kanal-ID ermöglicht der app die Unterscheidung zwischen Kanälen und die Kanäle zu erneuern, um diese berichtsserversitzung zu verhindern.
+Die APP sendet den Kanal an den Server zurück und speichert Sie lokal. Wenn die Kanal-ID lokal gespeichert wird, kann die APP zwischen Kanälen unterscheiden und Kanäle erneuern, um zu verhindern, dass Sie abläuft.
 
-Wie jeden anderen Typ von pushbenachrichtigungskanal ablaufen webkanäle. Um zu verhindern, dass Kanäle ablaufen, ohne zu Ihrer app kennen, erstellen Sie einen neuen Kanal, jedes Mal, wenn Ihre app gestartet wird.    
+Wie bei jeder anderen Art von Push-Benachrichtigungs Kanal können Webchannels ablaufen. Wenn Sie verhindern möchten, dass Kanäle ablaufen, ohne dass Ihre APP bekannt ist, erstellen Sie jedes Mal einen neuen Kanal, wenn Ihre APP gestartet wird.    
 
-### <a name="register-for-a-background-task"></a>Registrieren Sie sich für eine Hintergrundaufgabe 
+### <a name="register-for-a-background-task"></a>Registrieren für eine Hintergrundaufgabe 
 
-Sobald Ihre app einen anderen Kanal erstellt wurde, sollten sie registrieren, zum Empfangen von Benachrichtigungen in den Vordergrund oder Hintergrund. Im folgenden Beispiel wird registriert, um das Modell mit einer-Prozess zu verwenden, die Benachrichtigungen im Hintergrund zu erhalten.  
+Nachdem Ihre APP einen alternativen Kanal erstellt hat, sollte Sie sich registrieren, um die Benachrichtigungen entweder im Vordergrund oder im Hintergrund zu empfangen. Im folgenden Beispiel wird registriert, um das Modell mit einem Prozess zu verwenden, um die Benachrichtigungen im Hintergrund zu empfangen.  
 
 ```csharp
 var builder = new BackgroundTaskBuilder(); 
@@ -71,9 +71,9 @@ builder.Name = "Push Trigger";
 builder.SetTrigger(new PushNotificationTrigger()); 
 BackgroundTaskRegistration task = builder.Register(); 
 ```
-### <a name="receive-the-notifications"></a>Empfangen von Benachrichtigungen 
+### <a name="receive-the-notifications"></a>Benachrichtigungen empfangen 
 
-Sobald die app registriert hat, um die Benachrichtigungen zu erhalten, muss sie eingehenden Benachrichtigungen verarbeiten können. Da eine einzelne app mehrere Kanäle registrieren kann, achten Sie darauf, dass Sie die Kanal-ID zu überprüfen, bevor die Verarbeitung der benachrichtigungs.  
+Nachdem die APP für den Empfang der Benachrichtigungen registriert wurde, muss Sie in der Lage sein, eingehende Benachrichtigungen zu verarbeiten. Da eine einzelne APP mehrere Kanäle registrieren kann, sollten Sie die Kanal-ID vor der Verarbeitung der Benachrichtigung überprüfen.  
 
 ```csharp
 protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args) 
@@ -100,18 +100,18 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 } 
 ```
 
-Beachten Sie, dass die Kanal-ID nicht festgelegt werden, wenn die Benachrichtigung von einem primären Kanal stammen, werden.  
+Beachten Sie, dass die Kanal-ID nicht festgelegt wird, wenn die Benachrichtigung von einem primären Kanal stammt.  
 
-## <a name="note-on-encryption"></a>Notieren Sie sich auf die Verschlüsselung 
+## <a name="note-on-encryption"></a>Hinweis zur Verschlüsselung 
 
-Sie können beliebige Verschlüsselungsschema Sie hilfreich für Ihre app finden. In einigen Fällen ist es ausreichend, um auf dem TLS-Standard zwischen dem Server und einem beliebigen Windows-Gerät verlassen. In anderen Fällen kann es das Verschlüsselungsschema des Web-Push, oder ein anderes Schema Ihres Entwurfs mit mehr Sinn.  
+Sie können jedes beliebige Verschlüsselungsschema verwenden, das für Ihre APP nützlicher ist. In einigen Fällen genügt es, sich auf den TLS-Standard zwischen dem Server und jedem Windows-Gerät zu verlassen. In anderen Fällen ist es möglicherweise sinnvoller, das Web-Push-Verschlüsselungsschema oder ein anderes Schema des Entwurfs zu verwenden.  
 
-Wenn Sie eine andere Form der Verschlüsselung verwenden möchten, ist der Schlüssel die Verwendung der unformatierten an. Header-Eigenschaft. Sie enthält alle Verschlüsselung-Header, die in der POST-Anforderung an den Push-Server enthalten sind. Von dort aus kann Ihre app die Schlüssel zum Entschlüsseln der Nachricht verwenden.  
+Wenn Sie eine andere Form der Verschlüsselung verwenden möchten, ist der Schlüssel die Verwendung des RAW-Werts. Headers-Eigenschaft. Sie enthält alle Verschlüsselungs Header, die in der Post-Anforderung an den Push-Server eingeschlossen wurden. Von dort aus kann Ihre APP die Schlüssel verwenden, um die Nachricht zu entschlüsseln.  
 
-## <a name="related-topics"></a>Verwandte Themen
-- [Benachrichtigung Kanaltypen](channel-types.md)
-- [Windows-Pushbenachrichtigungsdienste (WNS)](windows-push-notification-services--wns--overview.md)
-- [PushNotificationChannel-Klasse](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
-- [PushNotificationChannelManager-Klasse](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)
+## <a name="related-topics"></a>Zugehörige Themen
+- [Benachrichtigungskanaltypen](channel-types.md)
+- [Windows-Pushbenachrichtigungsdienst (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
+- [Pushnotificationchannel-Klasse](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
+- [Pushnotificationchannelmanager-Klasse](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)
 
 

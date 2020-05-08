@@ -6,14 +6,14 @@ label: Expose basic accessibility information
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9ba2b8c9b327a51218dfc5f100c147f2d566e8
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 39b019495235ca2ff4bec2f9e6bc1b9230a15599
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521261"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969515"
 ---
 # <a name="expose-basic-accessibility-information"></a>Verfügbarmachen von grundlegenden Informationen zur Barrierefreiheit  
 
@@ -29,11 +29,11 @@ Der Name zur Verwendung durch Screenreader-Software ist eine kurze, beschreibend
 
 In der folgenden Tabelle wird beschrieben, wie Sie für verschiedene Elementtypen in einer XAML-Benutzeroberfläche einen Namen zur Verwendung durch Screenreader-Software definieren oder abrufen.
 
-| Elementtyp | Beschreibung |
+| Elementtyp | BESCHREIBUNG |
 |--------------|-------------|
 | Statischer Text | Für [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) und [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)-Elemente wird automatisch anhand des sichtbaren (inneren) Textes ein Name zur Verwendung durch Screenreader-Software bestimmt. Der gesamte Text im Element wird als Name verwendet. Siehe [Name aus innerem Text](#name_from_inner_text). |
 | Bilder | Das XAML-Element [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) verfügt nicht über ein direktes Gegenstück zum **alt**-HTML-Attribut von **img** und ähnlichen Elementen. Verwenden Sie zum Bereitstellen eines Namens die [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft oder das Untertitelverfahren. Siehe [Namen zur Verwendung durch Bildschirmleseprogramme für Bilder](#images). |
-| Formularelemente | Bei einem Formularelement sollte der Name zur Verwendung durch Screenreader-Software mit der Bezeichnung identisch sein, die für das Element angezeigt wird. Siehe [Bezeichnungen und „LabeledBy“](#labels). |
+| Formularelemente | Bei einem Formularelement sollte der Name zur Verwendung durch Screenreader-Software mit der Bezeichnung identisch sein, die für das Element angezeigt wird. Siehe [Bezeichnungen und LabeledBy](#labels). |
 | Schaltflächen und Links | Standardmäßig basiert der Name zur Verwendung durch Screenreader-Software einer Schaltfläche oder eines Links auf dem sichtbaren Text, wobei ebenfalls die unter [Name aus innerem Text](#name_from_inner_text) beschriebenen Regeln angewendet werden. Verwenden Sie in Fällen, in denen eine Schaltfläche nur ein Bild enthält, die [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft, um eine reine Textentsprechung für die Schaltflächenaktion bereitzustellen. |
 
 Die meisten Containerelemente (z. B. Bereiche) stellen ihren Inhalt nicht als Namen zur Verwendung durch die Sprachausgabe bereit. Dies ist darauf zurückzuführen, dass der Name und die entsprechende Rolle nicht vom Container, sondern vom Elementinhalt gemeldet werden sollen. Das Containerelement kann in einer Darstellung der Microsoft-Benutzeroberflächenautomatisierung melden, dass es ein Element mit untergeordneten Elementen ist, damit es von der Logik der Hilfstechnologie durchlaufen werden kann. Da Benutzer von Hilfstechnologien in der Regel nichts über die Container selbst wissen müssen, werden die meisten Container nicht benannt.
@@ -42,7 +42,7 @@ Die meisten Containerelemente (z. B. Bereiche) stellen ihren Inhalt nicht als N
 <span id="ROLE_VALUE"/>
 
 ## <a name="role-and-value"></a>Rolle und Wert  
-Die Steuerelemente und anderen UI-Elemente des XAML-Vokabulars implementieren im Rahmen ihrer Definitionen Benutzeroberflächenautomatisierungsunterstützung für die Meldung von Rolle und Wert. Sie können sich die Rollen- und Wertinformationen für die Steuerelemente mithilfe von Tools zur Automatisierung von Benutzeroberflächen ansehen oder die Dokumentation für die [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)-Implementierungen jedes Steuerelements lesen. Die verfügbaren Rollen in einem Benutzeroberflächenautomatisierungs-Framework sind in der [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)-Enumeration definiert. Clients zur Benutzeroberflächenautomatisierung, z. B. Hilfstechnologien, können Rolleninformationen per Aufruf von Methoden abrufen, die vom Benutzeroberflächenautomatisierungs-Framework über den **AutomationPeer** des Steuerelements verfügbar gemacht werden.
+Die Steuerelemente und anderen UI-Elemente des XAML-Vokabulars implementieren im Rahmen ihrer Definitionen Benutzeroberflächenautomatisierungsunterstützung für die Meldung von Rolle und Wert. Sie können sich die Rollen- und Wertinformationen für die Steuerelemente mithilfe von Tools zur Automatisierung von Benutzeroberflächen ansehen oder die Dokumentation für die [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)-Implementierungen jedes Steuerelements lesen. Die verfügbaren Rollen in einem Benutzeroberflächenautomatisierungs-Framework sind in der [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)-Enumeration definiert. Benutzeroberflächenautomatisierungs-Clients, z. b. Hilfstechnologien, können Rollen Informationen abrufen, indem Sie Methoden aufrufen, die das Benutzeroberflächenautomatisierungs-Framework mithilfe des **automationpeers**des
 
 Nicht alle Steuerelemente haben einen Wert. Steuerelemente mit einem Wert stellen diese Informationen über die von ihnen unterstützten Peers und Muster für die Benutzeroberflächenautomatisierung bereit. Ein [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)-Formularelement hat z. B. einen Wert. Eine Hilfstechnologie kann ein Client für die Benutzeroberflächenautomatisierung sein und somit erkennen, ob ein Wert vorhanden ist und wie der Wert lautet. In diesem speziellen Fall unterstützt die **TextBox**-Klasse das [**IValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider)-Muster über die [**TextBoxAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer)-Definitionen.
 
@@ -56,7 +56,7 @@ Nicht alle Steuerelemente haben einen Wert. Steuerelemente mit einem Wert stelle
 ## <a name="influencing-the-ui-automation-tree-views"></a>Beeinflussen der UI-Automatisierungsstrukturansichten  
 Das Benutzeroberflächenautomatisierungs-Framework verfügt über ein Konzept mit Strukturansichten, bei dem Benutzeroberflächenautomatisierungsclients die Beziehungen zwischen Elementen in einer UI mithilfe von drei möglichen Ansichten abrufen können: unformatiert, Steuerelement und Inhalt. Die Steuerelementansicht wird häufig von Benutzeroberflächenautomatisierungsclients verwendet, da sie eine gute Darstellung und Organisation der interaktiven Elemente einer UI bietet. Mithilfe von Testtools können Sie in der Regel auswählen, welche Strukturansicht verwendet werden soll, wenn das Tool die Organisation von Elementen darstellt.
 
-Standardmäßig werden alle von der [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)-Klasse abgeleiteten sowie einige andere Elemente in der Steuerelementansicht angezeigt, wenn das Benutzeroberflächenautomatisierungs-Framework die die UI für eine UWP-App (Universelle Windows-Plattform) darstellt. Es kann aber vorkommen, dass ein Element in der Steuerelementansicht aufgrund einer UI-Komposition nicht angezeigt werden soll, bei der das Element Informationen dupliziert oder Informationen darstellt, die für Barrierefreiheitsszenarien unwichtig sind. Ändern Sie mithilfe der angefügten [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty)-Eigenschaft, wie Elemente für die Strukturansicht verfügbar gemacht werden. Wenn Sie ein Element in der **Raw**-Struktur platzieren, melden die meisten Hilfstechnologien dieses Element nicht als Teil ihrer Ansichten. Um Beispiele für die Funktionsweise in vorhandenen Steuerelementen zu erhalten, öffnen Sie die XAML-Entwurfsreferenzdatei „generic.xaml“ in einem Text-Editor und suchen in den Vorlagen nach **AutomationProperties.AccessibilityView**.
+Standardmäßig werden alle von [**Steuer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) Element abgeleiteten Klassen und einige andere Elemente in der Steuerelement Ansicht angezeigt, wenn das Benutzeroberflächenautomatisierungs-Framework die Benutzeroberfläche für eine Windows-App-APP darstellt. Es kann aber vorkommen, dass ein Element in der Steuerelementansicht aufgrund einer UI-Komposition nicht angezeigt werden soll, bei der das Element Informationen dupliziert oder Informationen darstellt, die für Barrierefreiheitsszenarien unwichtig sind. Ändern Sie mithilfe der angefügten [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty)-Eigenschaft, wie Elemente für die Strukturansicht verfügbar gemacht werden. Wenn Sie ein Element in der **Raw**-Struktur platzieren, melden die meisten Hilfstechnologien dieses Element nicht als Teil ihrer Ansichten. Um Beispiele für die Funktionsweise in vorhandenen Steuerelementen zu erhalten, öffnen Sie die XAML-Entwurfsreferenzdatei „generic.xaml“ in einem Text-Editor und suchen in den Vorlagen nach **AutomationProperties.AccessibilityView**.
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>
@@ -64,7 +64,7 @@ Standardmäßig werden alle von der [**Control**](https://docs.microsoft.com/uwp
 ## <a name="name-from-inner-text"></a>Name aus innerem Text  
 Damit bereits in der sichtbaren Benutzeroberfläche vorhandene Zeichenfolgen leichter als Namen zur Verwendung durch Screenreader-Software genutzt werden können, unterstützen die meisten Steuerelemente und anderen UI-Elemente die automatische Bestimmung eines standardmäßigen Namens zur Verwendung durch Screenreader-Software. Dabei basiert der Name auf dem inneren Text im Element oder auf Zeichenfolgenwerten von Inhaltseigenschaften.
 
-* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [**richtextblock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) und **richtextblock** Stufen jeweils den Wert der **Text** -Eigenschaft als den standardmäßigen zugänglichen Namen herauf.
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock), [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) und **RichTextBlock** unterstützen den Wert der **Text**-Eigenschaft als standardmäßigen Namen zur Verwendung durch Screenreader-Software.
 * Jegliche [**ContentControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Unterklassen verwenden eine iterative „ToString“-Technik, um Zeichenfolgen im [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content)-Wert zu finden. Sie unterstützen diese Zeichenfolgen als standardmäßigen Namen für Screenreader-Programme.
 
 > [!NOTE]
@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-Alternativ können Sie eine Textbeschriftung hinzufügen, die in der sichtbaren Benutzeroberfläche angezeigt wird und gleichzeitig als Information zur Barrierefreiheit für die Beschriftung des Bildinhalts dient. Beispiel:
+Alternativ können Sie eine Textbeschriftung hinzufügen, die in der sichtbaren Benutzeroberfläche angezeigt wird und gleichzeitig als Information zur Barrierefreiheit für die Beschriftung des Bildinhalts dient. Hier sehen Sie ein Beispiel:
 
 XAML
 ```xml
@@ -125,14 +125,14 @@ Eine Beschreibung der Barrierefreiheit stellt weitere Informationen zur Barriere
 
 Die Sprachausgabe liest die Beschreibung eines Elements nur vor, wenn der Benutzer mit FESTSTELLTASTE+F weitere Informationen zum Element anfordert.
 
-Der Name zur Verwendung durch Screenreader-Software soll keine vollständige Beschreibung des Steuerelementverhaltens bereitstellen, sondern das Steuerelement identifizieren. Falls für das Steuerelement eine kurze Beschreibung nicht ausreicht, können Sie die angefügte [**AutomationProperties.HelpText**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.helptext)-Eigenschaft zusätzlich zur [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)-Eigenschaft festlegen.
+Der Name zur Verwendung durch Screenreader-Software soll keine vollständige Beschreibung des Steuerelementverhaltens bereitstellen, sondern das Steuerelement identifizieren. Wenn eine kurze Beschreibung für das Steuerelement nicht ausreicht, können Sie zusätzlich zu [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)die angefügte [**AutomationProperties. HelpText**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.helptext) -Eigenschaft festlegen.
 
 <span id="Testing_accessibility_early_and_often"/>
 <span id="testing_accessibility_early_and_often"/>
 <span id="TESTING_ACCESSIBILITY_EARLY_AND_OFTEN"/>
 
 ## <a name="testing-accessibility-early-and-often"></a>Frühzeitiges und häufiges Testen der Barrierefreiheit  
-Der beste Ansatz beim Implementieren der Unterstützung der Sprachausgabe besteht letztlich darin, die App selbst mit einer Sprachausgabe zu testen. So können Sie sehen, wie sich die Sprachausgabe verhält und welche grundlegenden Barrierefreiheitsinformationen in der App fehlen. Anschließend können Sie die Benutzeroberfläche oder Eigenschaftswerte der Benutzeroberflächenautomatisierung entsprechend anpassen. Weitere Informationen finden Sie unter [Barrierefreiheitstests](accessibility-testing.md).
+Der beste Ansatz beim Implementieren der Unterstützung der Sprachausgabe besteht letztlich darin, die App selbst mit einer Sprachausgabe zu testen. So können Sie sehen, wie sich die Sprachausgabe verhält und welche grundlegenden Barrierefreiheitsinformationen in der App fehlen. Anschließend können Sie die Benutzeroberfläche oder Eigenschaftswerte der Benutzeroberflächenautomatisierung entsprechend anpassen. Weitere Informationen finden Sie unter [Barrierefreiheits Tests](accessibility-testing.md).
 
 Eines der Tools, das Sie zum Testen der Barrierefreiheit verwenden können, heißt **EH-Viewer**. Das Tool **AccScope** ist besonders nützlich, weil Sie visuelle Darstellungen Ihrer UI anzeigen können, mit denen anhand einer Automatisierungsstruktur verdeutlicht wird, wie Ihre App mit Hilfstechnologie angezeigt wird. Es ist beispielsweise ein Sprachausgabemodus vorhanden, in dem Sie sehen, wie die Sprachausgabe Text aus der App abruft und die Elemente in der UI organisiert. EH-Viewer ist so konzipiert, dass das Tool während des gesamten Entwicklungszyklus einer App verwendet werden kann und nützlich ist. Dies gilt auch für die Phase des vorläufigen Entwurfs. Weitere Informationen finden Sie unter [AccScope](https://docs.microsoft.com/windows/desktop/WinAuto/accscope).
 
@@ -141,7 +141,7 @@ Eines der Tools, das Sie zum Testen der Barrierefreiheit verwenden können, hei�
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>Namen zur Verwendung durch Bildschirmleseprogramme aus dynamischen Daten  
-Windows unterstützt viele Steuerelemente, mit denen durch ein als *Datenbindung* bezeichnetes Feature Werte aus einer zugeordneten Datenquelle angezeigt werden können. Wenn Sie Listen mit Datenelementen auffüllen, müssen Sie nach dem Auffüllen der anfänglichen Liste möglicherweise eine Technik verwenden, die Namen zur Verwendung durch Screenreader-Software für datengebundene Listenelemente festlegt. Weitere Informationen finden Sie unter „Szenario 4“ im [XAML-Beispiel für Barrierefreiheit](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample).
+Windows unterstützt viele Steuerelemente, mit denen durch ein als *Datenbindung* bezeichnetes Feature Werte aus einer zugeordneten Datenquelle angezeigt werden können. Wenn Sie Listen mit Datenelementen auffüllen, müssen Sie nach dem Auffüllen der anfänglichen Liste möglicherweise eine Technik verwenden, die Namen zur Verwendung durch Screenreader-Software für datengebundene Listenelemente festlegt. Weitere Informationen finden Sie unter "Szenario 4" im [XAML-Barrierefreiheits Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -154,8 +154,8 @@ Beachten Sie, dass angefügte Eigenschaften, z. B. die [**AutomationProperties*
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Verwandte Themen  
-* [Bedienungshilfen](accessibility.md)
+## <a name="related-topics"></a>Zugehörige Themen  
+* [Barrierefreiheit](accessibility.md)
 * [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
-* [XAML-Barrierefreiheits Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
-* [Testen der Barrierefreiheit](accessibility-testing.md)
+* [XAML-Beispiel für Barrierefreiheit](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
+* [Barrierefreiheitstests](accessibility-testing.md)

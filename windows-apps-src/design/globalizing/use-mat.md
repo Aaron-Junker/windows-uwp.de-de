@@ -1,131 +1,131 @@
 ---
-Description: Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2019 integriert, um UWP-apps mit Übersetzungsunterstützung, Übersetzungsdatei Verwaltung und Editor-Tools bereitzustellen.
-title: Verwenden des Multilingual App Toolkit
+Description: Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2019 integriert, um Windows-apps Übersetzungsunterstützung, Übersetzungsdatei Verwaltung und Editor-Tools bereitzustellen.
+title: Verwenden des mehrsprachigen App-Toolkits
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
+keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 34bc609d06705f1dfa6a5c7370ce6022ae9c3ff8
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: f11ee858be112db899e0fd25dd2fe274d5a092fd
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684245"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970965"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>Verwenden des Multilingual App Toolkit 4.0
 
-Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2019 integriert, um UWP-apps mit Übersetzungsunterstützung, Übersetzungsdatei Verwaltung und Editor-Tools bereitzustellen. Hier sind einige der Vorteile des Toolkits.
+Das mehrsprachige App Toolkit (Mat) 4,0 ist in Microsoft Visual Studio 2019 integriert, um Windows-apps Übersetzungsunterstützung, Übersetzungsdatei Verwaltung und Editor-Tools bereitzustellen. Im folgenden finden Sie einige der Wert Angebote des Toolkits.
 
-- Unterstützt Sie beim Verwalten von Ressourcenänderungen und des Übersetzungsstatus während der Entwicklung.
-- Stellt eine UI zum Auswählen von Sprachen anhand von konfigurierten Übersetzungsanbietern bereit.
-- Unterstützt das Standarddateiformat für die Lokalisierung, XLIFF.
-- Stellt eine Engine für eine Pseudosprache bereit, die das Erkennen von Übersetzungsproblemen bei der Entwicklung unterstützt.
-- Stellt eine Verbindung mit dem Microsoft-Sprachportal her, damit schnell auf übersetzte Zeichenfolgen und Terminologie zugegriffen werden kann.
-- Stellt für schnelle Übersetzungsvorschläge eine Verbindung mit Microsoft Translator her.
+- Hilft Ihnen bei der Verwaltung von Ressourcen Änderungen und dem Übersetzungsstatus während der Entwicklung.
+- Stellt eine Benutzeroberfläche zum Auswählen von Sprachen basierend auf konfigurierten Übersetzungs Anbietern bereit.
+- Unterstützt das standardmäßige XLIFF-Dateiformat der Lokalisierung.
+- Stellt eine Pseudo Sprach-Engine zur Verfügung, mit der Übersetzungsprobleme während der Entwicklung identifiziert werden können.
+- Stellt eine Verbindung zum Microsoft-Sprach Portal her, um problemlos auf übersetzte Zeichen folgen und Terminologie zuzugreifen
+- Stellt eine Verbindung mit dem Microsoft Translator für schnelle Übersetzungs Vorschläge her.
 
-## <a name="how-to-use-the-toolkit"></a>So verwenden Sie das Toolkit
+## <a name="how-to-use-the-toolkit"></a>Verwenden des Toolkits
 
-### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Schritt 1 Entwerfen Sie Ihre App im Hinblick auf Globalisierung und Lokalisierung.
+### <a name="step-1-design-your-app-for-globalization-and-localization"></a>Schritt 1: Entwerfen Ihrer APP für Globalisierung und Lokalisierung
 
-Bevor Sie MAT effektiv nutzen können, muss Ihre App lokalisierbar sein. Insbesondere sollten zu Ihrem Projekt eine oder mehrere Ressourcendateien (.resw) gehören, die die Zeichenfolgen Ihrer App in der Standardsprache enthalten. Details dazu finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](../../app-resources/localize-strings-ui-manifest.md). Sobald Sie damit fertig sind, können mit dem Toolkit zusätzliche Sprachen schnell und einfach hinzugefügt werden.
+Bevor Sie die Matte effektiv verwenden können, muss Ihre APP lokalisierbar sein. Insbesondere sollte Ihr Projekt mindestens eine Ressourcen Datei (. resw) enthalten, die die Zeichen folgen ihrer app in der Standardsprache enthält. Weitere Informationen finden Sie unter Lokalisieren von Zeichen folgen [in der Benutzeroberfläche und im App-Paket Manifest](../../app-resources/localize-strings-ui-manifest.md). Nachdem Sie dies getan haben, wird das Hinzufügen zusätzlicher Sprachen durch das Toolkit schnell und einfach.
 
-Die Vorteile von Globalisierung und Lokalisierung sowie die Begriffe **Globalisierung**, **Lokalisierbarkeit**, und **Lokalisierung** werden unter [Globalisierung und Lokalisierung](globalizing-portal.md) erläutert.
+Informationen zu den Werten der Globalisierung und Lokalisierung&mdash;sowie Definitionen der Begriffe **Globalisierung**, **Lokalisier barkeit**und **Lokalisierung**&mdash;finden Sie unter [Globalisierung und Lokalisierung](globalizing-portal.md).
 
-Siehe auch [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) und [App lokalisierbar machen](prepare-your-app-for-localization.md).
+Beachten Sie auch die [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) , und [machen Sie Ihre APP lokalisiert](prepare-your-app-for-localization.md).
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Schritt 2 Laden Sie das Multilingual App Toolkit 4.0 herunter, und installieren Sie es.
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>Schritt 2: Herunterladen und Installieren des mehrsprachigen App-Toolkits 4,0
 
-Das Multilingual App Toolkit 4.0 (MAT) besteht aus zwei Teilen. Zu jedem Teil gehört ein eigenes Installationsprogramm.
+Es gibt zwei Teile des mehrsprachigen App-Toolkits 4,0 (Matt 4,0), die jeweils über einen eigenen Installer verfügen.
 
 - [Mehrsprachige App-Toolkit 4,0-Erweiterung für Visual Studio 2017 und](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)höher. Diese enthält die Matte 4,0-Erweiterung für Visual Studio 2019 in Form eines VSIX-Installers.
-- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit). Enthält das eigenständige Multilingual Editor-Tool aus MAT 4.0 in Form eines MSI-Installationsprogramms. Zudem ist die MAT 4.0-Erweiterung für Visual Studio 2015 und für Visual Studio 2013 enthalten
+- [Mehrsprachiges App-Toolkit 4,0-Editor](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit). Diese enthält das eigenständige Tool für die mehrsprachige Version von Mat 4,0 in Form eines MSI-Installers. Außerdem enthält Sie die Erweiterung "Mat 4,0" für Visual Studio 2015 und für Visual Studio 2013.
 
-Wenn Sie Visual Studio 2017 oder Visual Studio 2019 verwenden, laden Sie beide Installer herunter, und führen Sie Sie nacheinander aus. Wenn Sie Visual Studio 2015 oder Visual Studio 2013 verwenden, laden Sie das MSI-Installationsprogramm herunter und führen es aus.
+Wenn Sie Visual Studio 2017 oder Visual Studio 2019 verwenden, laden Sie beide Installer herunter, und führen Sie Sie nacheinander aus. Wenn Sie Visual Studio 2015 oder Visual Studio 2013 verwenden, laden Sie das MSI-Installationsprogramm herunter, und führen Sie es aus.
 
-### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Schritt 3 Aktivieren Sie das Multilingual App Toolkit für Ihr Projekt
+### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>Schritt 3: Aktivieren Sie das mehrsprachige App-Toolkit für Ihr Projekt.
 
-Bevor Sie mit der Lokalisierung der App beginnen können, muss das MAT für Ihr Projekt aktiviert werden. So aktivieren Sie das Toolkit:
+Die Matte muss für Ihr Projekt aktiviert werden, bevor Sie mit dem Lokalisieren der APP beginnen können. So aktivieren Sie das Toolkit.
 
-- Öffnen Sie die Projektmappe in Visual Studio.
-- Wählen Sie im Projektmappen-Explorer das gewünschte Projekt aus.
-- Wählen Sie im Menü **Extras** **Multilingual App Toolkit** > **Auswahl aktivieren**. 
+- Öffnen Sie die Projekt Mappe in Visual Studio.
+- Wählen Sie das gewünschte Projekt in Projektmappen-Explorer aus.
+- Wählen Sie **im Menü Extras** die Option **mehrsprachiges App-Toolkit** > **Auswahl aktivieren**aus. 
 
-Warten Sie, bis im Ausgabefenster (das die Ausgabe des Multilingual App Toolkit enthält) die Nachricht `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>` angezeigt wird. Sobald diese Meldung erscheint, kann MAT verwendet werden.
+Achten Sie auf die Meldung `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`im Ausgabefenster (Ausgabe des mehrsprachigen App-Toolkits wird angezeigt). Wenn diese Meldung angezeigt wird, kann die Matte verwendet werden.
 
-### <a name="step-4-add-languages-to-your-project"></a>Schritt 4 Fügen Sie Ihrem Projekt Sprachen hinzu.
+### <a name="step-4-add-languages-to-your-project"></a>Schritt 4: Hinzufügen von Sprachen zu Ihrem Projekt
 
 Führen Sie die folgenden Schritte aus, um Ihrem Projekt Sprachen hinzuzufügen.
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektknoten.
-2. Klicken Sie auf **Multilingual App Toolkit** > **Übersetzungssprachen hinzufügen...** .
-3. Wählen Sie im Dialogfeld „Übersetzungssprachen” die Sprachen aus, die sie unterstützen möchten, und klicken Sie dann auf OK.
+2. Klicken Sie auf **mehrsprachige App Toolkit** > **Übersetzungs Sprachen hinzufügen...**.
+3. Wählen Sie im Dialogfeld Übersetzungs Sprachen die Sprache (n) aus, die Sie unterstützen möchten, und klicken Sie auf OK.
 
-Das Toolkit führt daraufhin Folgendes aus:
+Das Toolkit führt diese Aktionen als Reaktion aus.
 
-- Für jede Sprache, die Sie hinzugefügt haben, wird ein neuer Ordner erstellt, benannt nach dem [BCP-47-Sprachtag](https://tools.ietf.org/html/bcp47) der Sprache. In diesem Ordner werden neue Ressourcendateien (.resw) erstellt, die mit denen übereinstimmen, in denen die Zeichenfolgen der Standardsprache enthalten sind.
-- Wenn Sie das erste Mal eine Sprache hinzufügen, wird dem Projekt ein neuer Ordner namens `MultilingualResources` hinzugefügt. Dieser Ordner enthält für jede Sprache eine XLF-Datei. Die XLF-Dateien enthalten eine Übersetzungseinheit für jede Zeichenfolge aus jeder Ressourcendatei (.resw) Ihres Projekts.
-- Im Ausgabefenster wird das Hinzufügen der Sprachen bestätigt.
+- Für jede hinzugefügte Sprache wird ein neuer Ordner mit dem Namen für das [bcp-47-sprach Kennzeichen](https://tools.ietf.org/html/bcp47) der Sprache erstellt. Innerhalb dieses Ordners werden neue Ressourcen Dateien (. resw) erstellt, die den (n) Dateien entsprechen, die die Standardsprachen Zeichenfolgen enthalten.
+- Wenn Sie zum ersten Mal eine Sprache hinzugefügt haben, wird dem Projekt ein neuer `MultilingualResources` Ordner mit dem Namen hinzugefügt. Innerhalb dieses Ordners wird für jede Sprache eine XLF-Datei hinzugefügt. Die XLF-Dateien enthalten eine Übersetzungseinheit für jede Zeichenfolge in jeder Ressourcen Datei (. resw) in Ihrem Projekt.
+- Das Fenster Ausgabe bestätigt das Hinzufügen der hinzugefügten Sprache (en).
 
-Wenn Sie eine Ressourcendatei für Standardsprachen (.resx) hinzufügen/entfernen oder eine Zeichenfolge in einer Ressourcendatei für Standardsprachen (.resx) hinzufügen/entfernen, müssen Sie das Projekt neu erstellen, um die XLF-Dateien erneut zu synchronisieren. Dadurch wird sichergestellt, dass die XLF-Dateien die Gesamtmenge der Zeichenfolgen in der Standardsprache enthalten.
+Wenn Sie eine Standard Sprachressourcen Datei (. resw) hinzufügen oder entfernen oder eine Zeichenfolge in einer Standard Sprachressourcen-Datei (. resw) hinzufügen oder entfernen, erstellen Sie das Projekt neu, um die XLF-Dateien erneut zu synchronisieren. Dadurch wird sichergestellt, dass die XLF-Dateien die Vereinigung der Zeichen folgen in der Standardsprache enthalten.
 
-Installierte Übersetzungsanbieter wie das [Microsoft-Sprachenportal](https://www.microsoft.com/Language/) oder [Microsoft Translator](https://www.microsofttranslator.com/) können zum Übersetzen der Ressourcen Ihrer App verwendet werden. Wenn ein Anbieter eine bestimmte Sprache unterstützt, wird das Symbol des Anbieters im Dialogfeld „Übersetzungssprachen” neben dem Namen der Sprache angezeigt.
+Installierte Übersetzungsanbieter&mdash;wie das [Microsoft-Sprach Portal](https://www.microsoft.com/Language/) und [Microsoft Translator](https://www.microsofttranslator.com/)&mdash;können verwendet werden, um die Ressourcen Ihrer APP zu übersetzen. Wenn ein Anbieter eine bestimmte Sprache unterstützt, wird das Symbol des Anbieters neben dem Sprachnamen im Dialogfeld Übersetzungs Sprachen angezeigt.
 
-Im Dialogfeld "Übersetzungssprachen" wird für alle vorhandenen XLF-basierten Sprachen, die vom Toolkit erkannt werden, das Auswahlkontrollkästchen aktiviert, um anzuzeigen, dass die Sprache bereits im Projekt enthalten ist.
+Im Dialogfeld Übersetzungs Sprachen wird für alle vorhandenen XLF-basierten Sprachen, die vom Toolkit ermittelt werden, das ausgewählte Feld ausgewählt, um anzugeben, dass die Sprache bereits im Projekt enthalten ist.
 
-Sobald eine Sprache zum Projekt hinzugefügt wurde, kann sie nicht einfach dadurch entfernt werden, dass Sie das Kontrollkästchen im Dialogfeld „Übersetzungssprachen” deaktivieren. Klicken Sie zum Entfernen einer Sprache mit der rechten Maustaste auf die sprachspezifische XLF-Datei, und wählen Sie **Löschen**. Nach Ihrer Bestätigung wird auch die zugehörige Ressourcendatei (.resw) gelöscht.
+Nachdem dem Projekt eine Sprache hinzugefügt wurde, kann Sie nicht mehr entfernt werden, indem das Kontrollkästchen im Dialogfeld Übersetzungs Sprachen deaktiviert wird. Um eine Sprache zu entfernen, klicken Sie mit der rechten Maustaste auf die sprachspezifische XLF-Datei, und wählen Sie **Löschen**aus. Wenn Sie bestätigen, wird dadurch auch die zugehörige Ressourcen Datei (. resw) gelöscht.
 
-### <a name="step-5-test-your-app-using-pseudo-language"></a>Schritt 5 Testen Sie Ihre App mit Pseudosprache.
+### <a name="step-5-test-your-app-using-pseudo-language"></a>Schritt 5: Testen Ihrer APP mit Pseudo Sprache
 
-Pseudosprache ist eine künstliche Modifikation des Softwareprodukts, die eine echte Sprachlokalisierung simulieren soll, aber für Muttersprachler lesbar bleibt. Bei einer Pseudoübersetzung werden Zeichen ersetzt und die Länge der Ressourcenzeichenfolge erweitert, um mögliche Lokalisierungsprobleme oder Fehler früh im Projektzyklus und vor Beginn der Lokalisierung zu erkennen.
+Bei der Pseudo Sprache handelt es sich um eine künstliche Änderung des Softwareprodukts, das zum Simulieren der Lokalisierung in der Sprache gedacht ist, aber für Native Referenten lesbar ist. Die Pseudo Übersetzung ersetzt Zeichen und erweitert die Länge der Ressourcen Zeichenfolge, um potenzielle lokalisierbare Probleme oder Fehler zu erkennen, die früh im Projekt Cycle auftreten und bevor die Lokalisierung ernsthaft beginnt.
 
-Führe Sie die folgenden Schritte aus, um eine Pseudolokalisierung vorzunehmen und das Projekt zu testen.
+Führen Sie diese Schritte aus, um das Projekt zu Pseudo lokalisieren und zu testen.
 
-1. Verwenden Sie das Dialogfeld „Übersetzungssprachen”, um Pseudosprache (Pseudo) [qps-ploc] zu Ihrem Projekt hinzuzufügen.
-2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Datei `<project-name>.qps-ploc.xlf` und auf **Multilingual App Toolkit** > **Computerübersetzungen generieren**.
-3. Klicken Sie unter **Einstellungen** > **Zeit und Sprache** > **Region und Sprache** > **Sprachen** auf **Sprache hinzufügen**.
-5. Geben Sie `qps-ploc` im Suchfeld ein.
-6. Klicken Sie zum Hinzufügen auf `English (qps-ploc)`.
-7. Wählen Sie `English (qps-ploc)` aus der Sprachenliste, und klicken Sie auf **Als Standard festlegen**.
-8. Testen Sie Ihre pseudolokalisierte App. Suchen Sie beispielsweise in der Benutzeroberfläche nach Zeichenfolgen, die nicht vollständig angezeigt werden (die Zeichenfolge ist abgeschnitten) oder nach Zeichenfolgen, die nicht übersetzt sind (weil hartcodiert)
+1. Verwenden Sie das Dialogfeld Übersetzungs Sprachen, um dem Projekt Pseudo Sprache (Pseudo) [QPS-ploc] hinzuzufügen.
+2. Klicken Sie in Projektmappen-Explorer `<project-name>.qps-ploc.xlf` mit der rechten Maustaste auf die Datei, und klicken Sie auf **mehrsprachige App Toolkit** > **Computerübersetzung generieren**
+3. Klicken Sie unter **Einstellungen** > **Zeit & sprach** > **Region & sprach** > **Sprachen**auf **Sprache hinzufügen**.
+5. Geben Sie in das Suchfeld `qps-ploc` ein.
+6. Klicken `English (qps-ploc)` Sie, um es hinzuzufügen.
+7. Wählen Sie `English (qps-ploc)` in der Liste Sprache die Option **als Standard festlegen**aus, und klicken Sie darauf.
+8. Testen Sie Ihre Pseudo lokalisierte app. Suchen Sie z. b. nach Problemen mit dem Benutzeroberflächen Layout, bei denen nicht alle Zeichen folgen angezeigt werden (die Zeichenfolge ist abgeschnitten), oder Zeichen folgen, die nicht übersetzt (aber stattdessen hart codiert) werden.
 
-Neben der Ersetzung und Erweiterung von Zeichen stellt das Pseudo-Modul einen eindeutigen Überwachungsbezeichner für jede Ressource bereit. Dieser Bezeichner wird jeder Zeichenfolge vorangestellt und ist in Klammern eingeschlossen `[xxxxx]`. Die Tracker können bei der optischen Überprüfung der Benutzeroberfläche verwendet werden. Sie können dabei helfen, spezifische Ressourcen im Produkt zu finden. Dies gilt insbesondere für mehrfach vorhandene Ressourcen mit ähnlichem oder gleichem Text.
+Zusätzlich zum ersetzen und Erweitern von Zeichen bietet die Pseudo-Engine einen eindeutigen nach Verfolgungs Bezeichner für jede Ressource. Diese Nachverfolgung wird dem Anfang jeder Zeichenfolge vorangestellt und in eckige Klammern `[xxxxx]`eingeschlossen. Sie können diese Tracker während der Prüfung der Tests der visuellen Benutzeroberfläche verwenden. Sie können dabei helfen, bestimmte Ressourcen im Produkt zu ermitteln, insbesondere dann, wenn mehrere Ressourcen über einen ähnlichen oder doppelten Text verfügen.
 
-Im folgenden Textbeispiel „Hello World” wird die Pseudoübersetzung erweitert und nimmt 30 % mehr Platz auf dem Bildschirm ein. Anschließend wird die Ressourcenüberwachung angewendet.
+In dieser "Hello, World!" Textbeispiel: die Pseudo Übersetzung wird um etwa 30 Prozent mehr Bildschirmfläche erweitert und dann die ressourcentracker angewendet.
 
 `"Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"`
 
-### <a name="step-6-translate-your-app-into-selected-languages"></a>Schritt 6 Übersetzen Sie Ihre App in die ausgewählten Sprachen.
+### <a name="step-6-translate-your-app-into-selected-languages"></a>Schritt 6: Übersetzen der app in ausgewählte Sprachen
 
-Das Multilingual App Toolkit ist in den Erstellungsprozess integriert. Bei einer Erstellung werden der XLF-Datei für die betreffende Sprache automatisch aktualisierte Zeichenfolgen hinzugefügt.
-Nachdem Sie Ihre App mit der Pseudosprache getestet haben, gibt es drei Optionen, Ihre App für die Veröffentlichung in andere Sprachen zu übersetzen.
+Das mehrsprachige App-Toolkit ist in den Buildprozess integriert. Während eines Builds werden jeder Sprache. XLF-Datei automatisch aktualisierte Zeichen folgen hinzugefügt.
+Nachdem Sie Ihre APP mit Pseudo Sprache getestet haben, stehen Ihnen drei Optionen zur Verfügung, mit denen Sie Ihre APP für die Veröffentlichung in andere Sprachen übersetzen können.
 
-#### <a name="option-1-translate-the-strings-yourself"></a>Option 1: Übersetzen Sie die Zeichenfolgen selbst.
+#### <a name="option-1-translate-the-strings-yourself"></a>Option 1. Zeichen folgen selbst übersetzen
 
-Sie können den Multilingual Editor verwenden, um Zeichenfolgen einzeln zu übersetzen. Wie bereits erwähnt, ist er im [MSI-Installationsprogramm](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit) enthalten.
+Sie können den mehrsprachigen Editor verwenden, um Zeichen folgen einzeln zu übersetzen. Wie bereits erwähnt, ist dies im [MSI-Installations](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)Programm enthalten.
 
 - Klicken Sie mit der rechten Maustaste auf die XLF-Datei, die Sie übersetzen möchten.
-- Klicken Sie auf **Öffnen mit...** , und wählen Sie den Multilingual Editor. Sie können auch auf **Als Standard festlegen** klicken.
-- Für jede Zeichenfolge wird unter **Quelle** die ursprüngliche Zeichenfolge in der Standardsprache angezeigt. Unter **Übersetzung** geben Sie die Übersetzung der Zeichenfolge in der entsprechenden Sprache für die XLF-Datei ein, die Sie bearbeiten.
-- Wenn Sie fertig sind, speichern und schließen Sie die Datei.
+- Klicken Sie auf **Öffnen mit...** , und wählen Sie mehrsprachige Editor Optional können Sie auf **als Standard festlegen**klicken.
+- Für jede Zeichenfolge zeigt **Quelle** die ursprüngliche Zeichenfolge in der Standardsprache an. Geben Sie in **Translation**die Zeichenfolge in die entsprechende Sprache für die XLF-Datei ein, die Sie bearbeiten.
+- Wenn Sie fertig sind, speichern Sie die Datei, und schließen Sie Sie.
 
-Erstellen Sie Ihr Projekt neu, um zu bewirken, dass die übersetzten Zeichenfolgen in die Ressourcendatei (.resw) kopiert werden, die der gerade bearbeiteten XLF-Datei entspricht.
+Erstellen Sie das Projekt neu, damit die übersetzten Zeichen folgen in die Ressourcen Datei (. resw) kopiert werden, die der XLF-Datei entspricht, die Sie gerade bearbeitet haben.
 
-Sie können auch den Multilingual Editor auch wie folgt starten. Wechseln Sie zum Startmenü, zeigen Sie alle Apps an, öffnen Sie den Ordner mit dem Multilingual App Toolkit, und klicken Sie auf den Multilingual Editor, um ihn zu starten.
+Sie können auch den mehrsprachigen Editor wie diesen starten. Wechseln Sie zu Start, alle apps anzeigen, öffnen Sie den Ordner für mehrsprachige App Toolkit, und klicken Sie auf den mehrsprachigen Editor, um ihn zu starten
 
-#### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>Option 2: Senden Sie die XLF-Dateien zur Übersetzung an einen Drittanbieter.
+#### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>Option 2. Senden der XLF-Dateien an einen Drittanbieter zur Übersetzung
 
-Um die Übersetzungs- und Bearbeitungsaufgaben an Lokalisierer zu übergeben, wählen Sie die gewünschten XLF-Dateien im Projektmappen-Explorer aus. Klicken Sie dann mit der rechten Maustaste darauf und anschließend auf **Multilingual App Toolkit** > **Übersetzungen exportieren...** .
+Um die Übersetzungs-und Bearbeitungs Arbeit an Lokalisierer auszulagern, wählen Sie die gewünschten XLF-Dateien in Projektmappen-Explorer aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **mehrsprachige App-Toolkit** > **Export Übersetzungen exportieren.**
 
-Wählen Sie **Ausgabe: E-Mail-Empfänger** im Dialogfeld „Zeichenfolgenressourcen exportieren”. Wenn Sie dann auf OK klicken, werden Ihre Dateien als ZIP-Datei an eine neue E-Mail angefügt. Wählen Sie **Ausgabe: Speicherort des Dateiordners**, wählen Sie einen Ordner, und klicken Sie auf OK, wählen Sie optional die zu komprimierenden Dateien, klicken Sie erneut auf OK, und Ihre Dateien werden (komprimiert) an dem von Ihnen ausgewählten Speicherort gespeichert, und zwar in einem neuen Ordner, der nach Ihrem Projekt benannt wurde.
+Wählen Sie im Dialogfeld Zeichen folgen Ressourcen exportieren den Eintrag **Ausgabe:** e-Mail-Empfänger aus, und klicken Sie auf OK, und Ihre Dateien werden gezippt und an eine neue e-Mail angehängt. Wählen Sie **Ausgabe: Speicherort des Datei Ordners**, Browser für einen Ordner aus, klicken Sie auf OK, wählen Sie optional für die Dateien aus, die gezippt werden sollen, und klicken Sie erneut auf OK, und Ihre Dateien werden (gezippt und) an dem von Ihnen gewählten Speicherort gespeichert.
 
-Nachdem Ihre Lokalisierer die Übersetzungsarbeiten abgeschlossen und Ihnen die übersetzten XLF-Dateien übermittelt haben, können Sie sie in Ihr Projekt importieren. Wählen Sie die gewünschten XLF-Dateien im Projektmappen-Explorer aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **Multilingual App Toolkit** > **Übersetzungen importieren/wiederverwenden...** . Klicken Sie auf **Hinzufügen**, navigieren Sie zu den XLF- oder ZIP-Dateien, und klicken Sie auf **Importieren**.
+Nachdem Ihre Lokalisierer die Übersetzungsarbeit durchgeführt und Ihnen die übersetzten XLF-Dateien gesendet haben, können Sie Sie in Ihr Projekt importieren. Wählen Sie die gewünschten XLF-Dateien in Projektmappen-Explorer aus, klicken Sie mit der rechten Maustaste darauf, und klicken Sie auf **mehrsprachige App-Toolkit** > **Import/Papier Übersetzung...**. Klicken Sie auf **Hinzufügen**, navigieren Sie zu den XLF-oder ZIP-Dateien, und klicken Sie auf **importieren**.
 
-**Hinweis** Beim Importvorgang wird vor dem eigentlichen Import eine grundlegende Überprüfung durchgeführt. Dadurch wird sichergestellt, dass die Zielkultur in den importierten Dateien mit denen in den vorhandenen XLF-Dateien übereinstimmt.
+**Hinweis** Der Import Vorgang führt vor dem Importieren eine grundlegende Validierung aus. Dadurch wird sichergestellt, dass die Zielkultur Informationen in den importierten Dateien mit der in den vorhandenen XLF-Dateien übereinstimmen.
 
-Erstellen Sie Ihr Projekt neu, um zu bewirken, dass die übersetzten Zeichenfolgen in die Ressourcendatei (.resw) kopiert werden, die der gerade importierten XLF-Datei entspricht.
+Erstellen Sie das Projekt neu, damit die übersetzten Zeichen folgen in die Ressourcen Dateien (. resw) kopiert werden, die den soeben importierten XLF-Dateien entsprechen.
 
-Folgende Drittanbieter bieten Lokalisierungsdienste an und können Ihnen möglicherweise behilflich sein:
+Diese Drittanbieter bieten Lokalisierungsdienste an und sind möglicherweise in der Lage, Sie zu unterstützen.
 
 - [Elanex](https://www.strakertranslations.com/)
 - [Keywords Studios](https://www.keywordsstudios.com/)
@@ -135,36 +135,36 @@ Folgende Drittanbieter bieten Lokalisierungsdienste an und können Ihnen möglic
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]
-> Die obige Liste dient nur zu Informationszwecken und stellt keine Empfehlung dar. Microsoft übernimmt keine Verantwortung oder Garantie bezüglich diesen Anbietern oder ihren Dienstleistungen. Microsoft schließt jegliche Haftung für die Verwendung dieser Anbieter oder Dienste aus. Alle Fragen, Beschwerden oder Ansprüche in Bezug auf solche Anbieter oder deren Dienste müssen an den entsprechenden Anbieter gerichtet werden.
+> Die obige Liste wird nur zu Informationszwecken bereitgestellt und wird nicht unterstützt. Microsoft übernimmt keine Verantwortung oder Garantie bezüglich diesen Anbietern oder ihren Dienstleistungen. Microsoft schließt jegliche Haftung für die Verwendung dieser Anbieter oder Dienste aus. Fragen, Beschwerden oder Ansprüche in Bezug auf solche Anbieter oder deren Dienste müssen an den entsprechenden Anbieter weitergeleitet werden.
 
-#### <a name="option-3-use-the-integrated-translation-services"></a>Option 3. Verwenden Sie die integrierten Übersetzungsdienste.
+#### <a name="option-3-use-the-integrated-translation-services"></a>Option 3. Verwenden der integrierten Übersetzungsdienste
 
-Die Übersetzungsdienste sind in die Entwicklungsumgebung (IDE) von Visual Studio und in den Multilingual Editor integriert. So haben Sie einfachen Zugriff auf die Übersetzungsdienste, während Sie das Produkt entwickeln und die Ressourcen lokalisieren. Für diesen Dienst benötigen Sie ein Azure-Kontoabonnement, wie unter [Microsoft Translator wurde in das Azure-Portal verschoben](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898-microsoft-translator-moves-to-the-azure-portal) beschrieben.
+Übersetzungsdienste sind in die Visual Studio-IDE und in den mehrsprachigen Editor integriert. Dies ermöglicht den einfachen Zugriff auf Übersetzungsdienste während der Entwicklung Ihres Produkts und der Lokalisierung Ihrer Ressourcen. Für diesen Dienst benötigen Sie ein Azure-Konto Abonnement, wie unter [Microsoft Translator wechselt zum Azure-Portal](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898-microsoft-translator-moves-to-the-azure-portal)beschrieben.
 
-Um auf die Übersetzungsdienste in Visual Studio zuzugreifen, wählen Sie im Projektmappen-Explorer mit der rechten Maustaste die gewünschten XLF-Dateien aus, und klicken Sie auf **Computerübersetzungen generieren**.
+Um auf die Übersetzungsdienste in Visual Studio zuzugreifen, klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf eine oder mehrere XLF-Dateien, und klicken Sie dann auf **Computerübersetzung generieren**.
 
-Mit dem Multilingual Editor erhalten Sie die gleiche Übersetzungsunterstützung sowie interaktive Übersetzungsvorschläge, sodass Sie jeweils die Übersetzung wählen können, die am besten zu Ihren Ressourcenzeichenfolgen passt. Anhand der Übersetzungsvorschläge können Sie die Zeichenfolge Ihrem Übersetzungsstil entsprechend überarbeiten.
+Der mehrsprachige Editor bietet dieselbe Übersetzungsunterstützung und fügt interaktive Übersetzungs Vorschläge hinzu, mit denen Sie die Übersetzung auswählen können, die ihren Ressourcen Zeichenfolgen am besten entspricht. Nachdem der Übersetzungs Vorschlag bereitgestellt wurde, können Sie die Zeichenfolge für den Übersetzungsstil optimieren.
 
-Das Multilingual App Toolkit verfügt über zwei Anbieter.
+Zwei Anbieter werden mit dem mehrsprachigen App-Toolkit ausgeliefert.
 
-- Der Anbieter [Microsoft-Sprachportal](https://www.microsoft.com/Language/) ermöglicht die Wiederverwendung von Übersetzungen sowie Terminologieanpassungen. Grundlage hierfür sind Übersetzungen der Benutzeroberflächentexte von Produkten und Diensten von Microsoft.
-- Der Anbieter [Microsoft Translator](https://www.microsofttranslator.com/) bietet maschinelle Übersetzungen nach Bedarf.
+- Der [Microsoft-Sprach Portal](https://www.microsoft.com/Language/) Anbieter ermöglicht die Unterstützung von Übersetzungs-und terminologieübereinstimmungen auf der Grundlage von Übersetzungen des Benutzeroberflächen Texts für Microsoft-Produkte und-Dienste.
+- Der [Microsoft Translator](https://www.microsofttranslator.com/) -Anbieter aktiviert Bedarfs gesteuerte maschinelle Übersetzungsdienste.
 
-Sie und Ihre Übersetzer können den Status von Übersetzungen im Mehrsprachen-Editor verwalten, um unsichere Übersetzungen später zu überarbeiten. Sie können den Status jeder Zeichenfolge auf der Registerkarte **Eigenschaften** festlegen. Statuswerte sind: **Neu**, **Prüfung erforderlich**, **Übersetzt**, **Endgültig** und **Genehmigt**. Der Status wird durch eine Markierung links von der Zeile angezeigt. Wenn für alle Zeilen im Multilingual Editor Grün angezeigt wird, ist die Übersetzung beendet.
+Sie und ihre Konvertierer können den Status von Übersetzungen im mehrsprachigen Editor verwalten, um später unsichere Übersetzungen zu überprüfen. Sie können den Status der einzelnen Zeichen folgen auf der Registerkarte **Eigenschaften** festlegen. Statuswerte lauten: **neu**, **Überprüfung**, **übersetzt**, **endgültig**und **abgemeldet**. Der Indikator links neben der Zeile zeigt den Status an. Wenn alle Zeilen im mehrsprachigen Editor grün angezeigt werden, erfolgt die Übersetzung der Arbeit.
 
-Erstellen Sie Ihr Projekt neu, um zu bewirken, dass die übersetzten Zeichenfolgen in die Ressourcendatei (.resw) kopiert werden, die der gerade bearbeiteten XLF-Datei entspricht.
+Erstellen Sie das Projekt neu, damit die übersetzten Zeichen folgen in die Ressourcen Dateien (. resw) kopiert werden, die den soeben bearbeiteten XLF-Dateien entsprechen.
 
-### <a name="step-7-upload-your-app-to-the-microsoft-store"></a>Schritt 7 Laden Sie Ihre App in den Microsoft Store hoch.
+### <a name="step-7-upload-your-app-to-the-microsoft-store"></a>Schritt 7. Hochladen der app in den Microsoft Store
 
-Vor dem Start des Zertifizierungsprozesses für den Microsoft Store müssen Sie die Datei `<project-name>.qps-ploc.xlf` aus dem Projekt entfernen. Zum Ermitteln potenzieller Lokalisierungsprobleme oder -fehler wird Pseudosprache verwendet. Diese ist jedoch keine gültige Sprache für den Microsoft Store. Falls sie nicht entfernt wird, tritt beim Zertifizierungsprozess für den Microsoft Store ein Fehler auf.
+Bevor Sie den Microsoft Store Zertifizierungsprozess starten, müssen Sie die `<project-name>.qps-ploc.xlf` Datei aus dem Projekt ausschließen. Die Pseudo Sprache wird verwendet, um mögliche Lokalisier barkeits Probleme oder Fehler zu erkennen, aber es handelt sich nicht um eine gültige Microsoft Store Sprache. Wenn Sie nicht entfernt wird, schlägt Ihre APP während des Microsoft Store Zertifizierungsprozesses fehl.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
 * [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
 * [Globalisierung und Lokalisierung](globalizing-portal.md)
-* [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Lokalisier barkeit Ihrer APP](prepare-your-app-for-localization.md)
-* [Bcp-47-Sprachtag](https://tools.ietf.org/html/bcp47)
+* [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
+* [App lokalisierbar machen](prepare-your-app-for-localization.md)
+* [BCP-47-Sprachtag](https://tools.ietf.org/html/bcp47)
 
 ## <a name="downloads"></a>Downloads
 

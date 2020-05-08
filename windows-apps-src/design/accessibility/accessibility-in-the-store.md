@@ -1,27 +1,27 @@
 ---
-Description: Hier werden die Anforderungen beschrieben, die Sie erfüllen müssen, wenn Sie Ihre App für die Universelle Windows-Plattform (UWP) im Microsoft Store als barrierefrei deklarieren möchten.
+Description: Beschreibt die Anforderungen für das Deklarieren Ihrer Windows-App im Microsoft Store als verfügbar.
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: Barrierefreiheit im Store
 label: Accessibility in the Store
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f00bb9449d9e48518d16e08fa6b6665eecd2f85
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ad128aca1a633c5ce33830b5ee9231f7a794a60c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359735"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969675"
 ---
 # <a name="accessibility-in-the-store"></a>Barrierefreiheit im Store  
 
 
 
-Hier werden die Anforderungen beschrieben, die Sie erfüllen müssen, wenn Sie Ihre App für die Universelle Windows-Plattform (UWP) im Microsoft Store als barrierefrei deklarieren möchten.
+Beschreibt die Anforderungen für das Deklarieren Ihrer Windows-App im Microsoft Store als verfügbar.
 
-Während Sie Ihre App zur Zertifizierung an den Microsoft Store übermitteln, können Sie sie als barrierefrei deklarieren. Indem Sie Ihre App als barrierefrei deklarieren, kann sie von Benutzern, die an barrierefreien Apps interessiert sind (z. B. Benutzer mit Sehschwächen), leichter gefunden werden. Benutzer entdecken barrierefreie Apps, indem sie beim Durchsuchen des Microsoft Store den Filter **Barrierefrei** verwenden. Wenn Sie Ihre App als barrierefrei deklarieren, wird der Beschreibung Ihrer App auch das Kennzeichen **Barrierefrei** hinzugefügt.
+Wenn Sie Ihre APP an den Microsoft Store zur Zertifizierung übermitteln, können Sie Ihre APP als verfügbar deklarieren. Indem Sie Ihre App als barrierefrei deklarieren, kann sie von Benutzern, die an barrierefreien Apps interessiert sind (z. B. Benutzer mit Sehschwächen), leichter gefunden werden. Benutzer ermitteln barrierefreie apps, indem Sie den **zugänglichen** Filter verwenden, während Sie die Microsoft Store durchsuchen. Wenn Sie Ihre App als barrierefrei deklarieren, wird der Beschreibung Ihrer App auch das Kennzeichen **Barrierefrei** hinzugefügt.
 
 Indem Sie Ihre App als barrierefrei deklarieren, erklären Sie, dass sie über die [grundlegenden Informationen zur Barrierefreiheit](basic-accessibility-information.md) verfügt, die Benutzer für wichtige Szenarien unter Verwendung einer oder mehrerer der folgenden Dinge benötigen:
 
@@ -47,5 +47,5 @@ Unter [Prüfliste für die Barrierefreiheit](accessibility-checklist.md) werden 
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Verwandte Themen    
-* [Bedienungshilfen](accessibility.md) 
+## <a name="related-topics"></a>Zugehörige Themen    
+* [Barrierefreiheit](accessibility.md) 

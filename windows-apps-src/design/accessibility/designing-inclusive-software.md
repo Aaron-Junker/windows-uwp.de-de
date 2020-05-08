@@ -1,42 +1,42 @@
 ---
-Description: Erfahren Sie mehr über das Entwerfen inklusiver Apps für die Universelle Windows-Plattform (UWP) für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
+Description: Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows app-apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Entwerfen inklusiver Software unter Windows 10
 label: Designing inclusive software
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cc88792e6cfdc581a4c7dc27ecc060cc0000c3
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0f048d9d3541b52994713c8040c451a421df3e0a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317347"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969435"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Entwerfen inklusiver Software für Windows 10  
 
-Erfahren Sie mehr über das Entwerfen inklusiver Apps für die Universelle Windows-Plattform (UWP) für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
+Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows app-apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
 
 Microsoft entwickelt seine Designprinzipien und -verfahren kontinuierlich weiter. Diese informieren über Aussehen, Darstellung, Funktion und Verhalten unserer Umgebungen. Wir erweitern unsere Sichtweise.
 
 Diese neue Designphilosophie heißt inklusives Design. Unser Ziel ist es, Software von Grund auf für alle Arten von Benutzern zu entwickeln. Dies steht im Gegensatz zu der Auffassung, dass Eingabehilfen erst am Ende des Entwicklungsprozesses erstellt werden, um die Anforderungen einer kleinen Gruppe von Benutzern zu erfüllen.
 
-„Wir definieren eine Behinderung als den Konflikt zwischen den Anforderungen einer einzelnen Person und dem angebotenen Dienst, dem angebotenen Produkt oder der angebotenen Umgebung. Jeder Benutzer kann eine Behinderung erleiden. Es ist eine allgemeine menschliche Erfahrung, ausgeschlossen zu werden.“  \- von der [inklusive](https://www.microsoft.com/design/inclusive/) video  
+„Wir definieren eine Behinderung als den Konflikt zwischen den Anforderungen einer einzelnen Person und dem angebotenen Dienst, dem angebotenen Produkt oder der angebotenen Umgebung. Jeder Benutzer kann eine Behinderung erleiden. Es ist eine allgemeine menschliche Erfahrung, ausgeschlossen zu werden.“  \-aus dem [inklusiven](https://www.microsoft.com/design/inclusive/) Video  
 
 Mithilfe des inklusiven Designs werden bessere Produkte für alle erstellt. Es geht darum, die gesamte Bandbreite der menschlichen Vielfalt zu berücksichtigen. Denken Sie an die Bordsteinabsenkungen, die Sie jetzt in den Kreuzungsbereichen der meisten Bürgersteige finden. Diese sind eindeutig zur Verwendung durch Rollstuhlfahrer bestimmt. Aber jetzt werden sie von fast jedem verwendet, einschließlich Personen mit Kinderwägen, Radfahrern und Skateboardern. Sogar Fußgänger verwenden oft Bordsteinabsenkungen, da sie einfach vorhanden und komfortabel sind. Fernbedienungen könnten als Hilfstechnologie (Assistive Technology, AT) für Personen mit körperlichen Einschränkungen betrachtet werden. Es ist heute jedoch fast unmöglich, einen Fernseher ohne Fernbedienung zu kaufen. Bevor Kinder lernen, ihre Schuhe zuzubinden, können sie Schuhe zum Reinschlüpfen oder leicht zu schließende Schuhe tragen. Schuhe, die leicht an- und auszuziehen sind, werden häufig in Kulturen bevorzugt, in denen Schuhe vor dem Betreten eines Hauses ausgezogen werden. Sie sind auch besser für Personen mit Bewegungseinschränkungen an den Händen geeignet, etwa Personen mit Arthritis oder einem vorübergehend gebrochenen Handgelenk.
 
 ## <a name="inclusive-design-principles"></a>Grundlagen des inklusiven Designs  
 Die folgenden 4 Grundsätze gelten für den Wechsel von Microsoft zum inklusiven Design:
 
-**Denken Sie universelle**: Der Schwerpunkt darauf, was Personen vereinheitlicht – Menschen Motivation, Beziehungen und Funktionen. Dies spornt uns an, an die breiteren sozialen Auswirkungen unserer Arbeit zu denken. Das Ergebnis ist eine Umgebung, die zahlreiche Möglichkeiten bietet, damit alle Menschen teilnehmen können.
+**Think Universal (Universalität)**: Wir konzentrieren uns auf das, was Menschen verbindet – menschliche Motivationen, Beziehungen und Fähigkeiten. Dies spornt uns an, an die breiteren sozialen Auswirkungen unserer Arbeit zu denken. Das Ergebnis ist eine Umgebung, die zahlreiche Möglichkeiten bietet, damit alle Menschen teilnehmen können.
 
-**Können sie persönliche**: Als Nächstes Abfrage wir selbst um emotionaler Verbindungen zu erstellen. Zwischenmenschliche Interaktionen können bessere Interaktionen zwischen Menschen und Technologien inspirieren. Die einzigartigen Umstände eines Menschen können ein Design für alle Menschen verbessern. Das Ergebnis ist eine Umgebung, die wirkt, als wäre sie nur für eine einzige Person entwickelt worden.
+**Make it personal (Personalisierung)**: Als Nächstes stellen wir uns der Herausforderung, emotionale Verbindungen herzustellen. Zwischenmenschliche Interaktionen können bessere Interaktionen zwischen Menschen und Technologien inspirieren. Die einzigartigen Umstände eines Menschen können ein Design für alle Menschen verbessern. Das Ergebnis ist eine Umgebung, die wirkt, als wäre sie nur für eine einzige Person entwickelt worden.
 
-**Alles einfacher**: Einfachheit ist das alles verbindende Element. Wenn wir die Umgebung übersichtlicher gestalten, wissen Menschen, was sie als Nächstes tun müssen. Sie sind inspiriert, sich Bereiche zu erschließen, die aufgeräumt, hell und offen sind. Das Ergebnis ist eine ehrliche und zeitlose Umgebung.
+**Keep it simple (Einfachheit)**: Einfachheit ist das alles verbindende Element. Wenn wir die Umgebung übersichtlicher gestalten, wissen Menschen, was sie als Nächstes tun müssen. Sie sind inspiriert, sich Bereiche zu erschließen, die aufgeräumt, hell und offen sind. Das Ergebnis ist eine ehrliche und zeitlose Umgebung.
 
-**Erstellen Sie begeistern**: Ansprechenden Benutzeroberflächen füttern Wunder und Ermittlung. Manchmal ist es Magie. Manchmal ist es ein Detail, das einfach nur richtig ist. Wir entwerfen diese Momente, damit sie sich wie willkommene Änderungen des Tempos anfühlen. Das Ergebnis ist eine Umgebung, die Dynamik und Fluss besitzt.
+**Create delight (Begeisterung)**: Begeisternde Umgebungen rufen Staunen und Entdeckertum hervor. Manchmal ist es Magie. Manchmal ist es ein Detail, das einfach nur richtig ist. Wir entwerfen diese Momente, damit sie sich wie willkommene Änderungen des Tempos anfühlen. Das Ergebnis ist eine Umgebung, die Dynamik und Fluss besitzt.
 
 ## <a name="inclusive-design-users"></a>Benutzer des inklusiven Designs  
 Es gibt im Wesentlichen zwei Arten von Benutzern von Hilfstechnologien (Assistive Technologies, AT):
@@ -46,7 +46,7 @@ Es gibt im Wesentlichen zwei Arten von Benutzern von Hilfstechnologien (Assistiv
 
 Die Mehrzahl der Computerbenutzer (54 Prozent) kennen irgendeine Art von Hilfstechnologie, und 44 Prozent der Computerbenutzer verwenden Hilfstechnologien. Viele von diesen verwenden jedoch keine Hilfstechnologien, die ihnen Vorteile bieten würden (Forrester 2004).  
 
-Eine von Forrester Research im Auftrag von Microsoft 2003-2004 durchgeführte Studie kam zu dem Ergebnis, dass mehr als die Hälfte &mdash; 57 Prozent &mdash; der Computerbenutzer zwischen 18 und 64 Jahren in den Vereinigten Staaten von Hilfstechnologien profitieren könnten. Die Mehrzahl dieser Benutzer gab zwar keine Behinderungen oder Beeinträchtigungen, jedoch bestimmte aufgabenbezogene Schwierigkeiten oder Beeinträchtigungen bei der Verwendung von Computern an. Forrester (2003) finden Sie auch die folgende Anzahl von Benutzern mit dieser bestimmten Probleme: In vier hat es sich um ein visual schwierigkeiten. Einer von vier Benutzern hat Schmerzen in Handgelenken oder Händen. Einer von fünf Benutzern hat Schwierigkeiten beim Hören.  
+Eine 2003-2004-Studie von Microsoft, die von ForresterResearch betrieben wird, hat &mdash; festgestellt &mdash; , dass über eine Hälfte 57 Prozent der Computerbenutzer im USA zwischen den Jahren 18 und 64 von Hilfstechnologien profitieren können. Die Mehrzahl dieser Benutzer gab zwar keine Behinderungen oder Beeinträchtigungen, jedoch bestimmte aufgabenbezogene Schwierigkeiten oder Beeinträchtigungen bei der Verwendung von Computern an. Forrester (2003) ermittelte darüber hinaus die folgenden Zahlen für Benutzer mit spezifischen Schwierigkeiten: Einer von vier Benutzern hat Schwierigkeiten beim Sehen. Einer von vier Benutzern hat Schmerzen in Handgelenken oder Händen. Einer von fünf Benutzern hat Schwierigkeiten beim Hören.  
 
 Abgesehen von permanenten Behinderungen können Schwere und Art der Schwierigkeiten, die eine Person hat, während ihres Lebens unterschiedlich sein. Es gibt keine „normalen“ Menschen. Unsere Fähigkeiten unterliegen ständigen Veränderungen. Margaret Meade sagte einmal: „Wir sind alle einzigartig. Diese Einzigartigkeit ist uns allen gemeinsam.“  
 
@@ -93,19 +93,19 @@ Die aktualisierte Fassung des Abschnitts 508 des Americans with Disability Act 
 #### <a name="color-combinations"></a>Farbkombinationen  
 Ungefähr 7 Prozent der Männer (und weniger als 1 Prozent der Frauen) weisen eine Farbsehschwäche auf. Benutzer mit Farbenblindheit haben Probleme bei der Unterscheidung zwischen bestimmten Farben. Es ist daher wichtig, dass niemals nur Farben verwendet werden, um Status oder Bedeutung in einer Anwendung zu vermitteln. Für dekorative Bilder (wie Symbole oder Hintergründe) sollten Farbkombinationen so gewählt werden, dass die Wahrnehmung des Bilds durch den farbenblinden Benutzer maximiert wird. Wenn Sie Ihre Benutzeroberfläche von Anfang an unter Berücksichtigung dieser Empfehlungen zur Farbgestaltung entwerfen, macht Ihre App bereits wichtige Fortschritte in Richtung eines inklusiven Designs.  
 
-## <a name="summary-mdash-seven-steps-for-inclusive-design"></a>Übersicht: sieben Schritte zum inklusiven Design  
+## <a name="summary-mdash-seven-steps-for-inclusive-design"></a>Zusammen &mdash; Fassung sieben Schritte für inklusives Design  
 Befolgen Sie diese sieben Schritte, um sicherzustellen, dass Ihre Software inklusiv ist.  
 1.  Entscheiden Sie zunächst, ob ein inklusives Design ein wichtiger Aspekt Ihrer Software ist. Wenn dies der Fall ist, informieren Sie sich darüber, wie sie Benutzern in der Praxis helfen kann, zu leben, zu arbeiten und zu spielen, um Anleitungen für Ihr Design zu erhalten.  
 2.  Verwenden Sie wenn möglich die Steuerelemente, die Ihr Framework Ihnen bereitstellt (d. h. Standardsteuerelemente), während Sie Lösungen für Ihre Anforderungen entwickeln, und vermeiden Sie unnötigen Aufwand und unnötige Kosten, um benutzerdefinierte Steuerelemente zu entwickeln.  
 3.  Entwerfen Sie eine logische Hierarchie für Ihr Produkt, und legen Sie fest, an welchen Stellen sich Standardsteuerelemente, mögliche benutzerdefinierte Steuerelemente und der Tastaturfokus in der Benutzeroberfläche befinden.  
 4.  Integrieren Sie nützliche Systemeinstellungen (z. B. Tastaturnavigation, hohen Kontrast und hohe DPI-Auflösung) in Ihr Produkt.  
-5.  Implementieren Sie Ihr Design unter Nutzung des [Microsoft-Hubs für die barrierefreie Entwicklung](https://developer.microsoft.com/windows/accessible-apps) und der Spezifikationen Ihres Frameworks in Bezug auf Barrierefreiheit als Referenzpunkten.  
+5.  Implementieren Sie den Entwurf, indem Sie den [Microsoft-Barrierefreiheits-entwicklerhub](https://developer.microsoft.com/windows/accessible-apps) und die Barrierefreiheits Spezifikation Ihres Frameworks als Bezugspunkt verwenden.  
 6.  Testen Sie Ihr Produkt mit Benutzern mit speziellen Bedürfnissen, um sicherzustellen, dass diese das von Ihnen implementierte inklusive Design nutzen können.  
 7.  Stellen Sie das fertige Produkt bereit, und dokumentieren Sie Ihre Implementierung für Personen, die möglicherweise nach Ihnen am Projekt arbeiten.  
 
-## <a name="related-topics"></a>Verwandte Themen  
-* [Inklusive Entwurf](https://www.microsoft.com/design/inclusive/)
-* [Engineeringsoftware für den Zugriff auf](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft Accessibility Developer hub](https://developer.microsoft.com/windows/accessible-apps)
+## <a name="related-topics"></a>Zugehörige Themen  
+* [Inklusives Design](https://www.microsoft.com/design/inclusive/)
+* [Entwickeln von barrierefreier Software](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Entwickler-Hub für Barrierefreiheit in Microsoft](https://developer.microsoft.com/windows/accessible-apps)
 * [Entwickeln von barrierefreien Windows-Apps](developing-inclusive-windows-apps.md) 
-* [Bedienungshilfen](accessibility.md)
+* [Barrierefreiheit](accessibility.md)

@@ -1,25 +1,25 @@
 ---
-Description: Hier erfahren Sie, wie Sie barrierefreie UWP-Apps für Windows 10 entwickeln, die Tastaturnavigation, Farb- und Kontrasteinstellungen und Unterstützung für Hilfstechnologien enthalten.
+Description: Erfahren Sie, wie Sie barrierefreie Windows-apps entwickeln, die Tastaturnavigation, Farb-und Kontrasteinstellungen sowie Unterstützung für Hilfstechnologien enthalten.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Entwickeln von barrierefreien Windows 10-Apps
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f9d3f20974c1e1ce7ef62c01c26a44d3ff4889
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f3d2866b3e04d2fa531e9bd538badd96205a8c65
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319229"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969425"
 ---
 # <a name="developing-inclusive-windows-apps"></a>Entwickeln von barrierefreien Windows-Apps  
 
-In diesem Artikel wird beschrieben, wie barrierefreie UWP-Apps (Universelle Windows-Plattform) entwickelt werden können. Insbesondere wird vorausgesetzt, dass Sie wissen, wie Sie die logische Hierarchie für Ihre App entwerfen können. Hier erfahren Sie, wie Sie barrierefreie UWP-Apps für Windows 10 entwickeln, die Tastaturnavigation, Farb- und Kontrasteinstellungen und Unterstützung für Hilfstechnologien enthalten.
+In diesem Artikel wird erläutert, wie Sie barrierefreie Windows-app-apps entwickeln. Insbesondere wird vorausgesetzt, dass Sie wissen, wie Sie die logische Hierarchie für Ihre App entwerfen können. Erfahren Sie, wie Sie barrierefreie Windows-apps entwickeln, die Tastaturnavigation, Farb-und Kontrasteinstellungen sowie Unterstützung für Hilfstechnologien enthalten.
 
-Falls noch nicht geschehen, lesen Sie zunächst [Entwerfen von barrierefreier Software](designing-inclusive-software.md).
+Wenn Sie dies noch nicht getan haben, lesen Sie zunächst den Artikel [entwerfen inklusiver Software](designing-inclusive-software.md).
 
 Sie sollten drei Dinge tun, um sicherzustellen, dass Ihre App barrierefrei ist:
 
@@ -32,7 +32,7 @@ Programmgesteuerter Zugriff ist wichtig für die Barrierefreiheit in Apps. Dies 
 
 Weitere Informationen zur Bereitstellung der UI-Elemente Ihrer App für Hilfstechnologien (AT) finden Sie unter [Grundlegende Informationen zur Barrierefreiheit verfügbar machen](basic-accessibility-information.md).
 
-## <a name="keyboard-navigation"></a>Navigation mithilfe der Tastatur  
+## <a name="keyboard-navigation"></a>Tastaturnavigation  
 Für Benutzer, die blind sind oder deren Beweglichkeit eingeschränkt ist, ist die Navigation auf der Benutzeroberfläche mit einer Tastatur äußerst wichtig. Allerdings sollten nur UI-Steuerelemente einen Tastaturfokus erhalten, die eine Benutzerinteraktion erfordern. Komponenten, die keine Aktion erfordern, z. B. statische Bilder, erfordern keinen Tastaturfokus.  
 
 Es ist wichtig, zu beachten, dass im Gegensatz zur Navigation mit einer Maus oder per Fingereingabe die Tastaturnavigation linear ist. Bei der Tastaturnavigation sollten Sie überlegen, wie der Benutzer mit Ihrem Produkt interagiert und was die logische Navigation wird. In westeuropäischen Kulturkreisen liest man von links nach rechts und von oben nach unten. Es ist daher üblich, dieses Muster für die Navigation per Tastatur zu verwenden.  
@@ -76,14 +76,14 @@ Es folgt nun eine gekürzte Version der Prüfliste für die Barrierefreiheit:
 3. Schauen Sie sich die Benutzeroberfläche an, um sicherzustellen, dass der Textkontrast ausreicht, Elemente in Designs mit hohem Kontrast richtig dargestellt werden und Farben korrekt verwendet werden.
 4. Führen Sie Tools zum Testen der Barrierefreiheit aus. Behandeln Sie gemeldete Probleme und überprüfen Sie die Qualität der Sprachausgabe. (Mehr über Testen der Barrierefreiheit erfahren)
 5. Stellen Sie sicher, dass die Einstellungen für das App-Manifest den Richtlinien für Barrierefreiheit entsprechen.
-6. Deklarieren Sie Ihre App im Microsoft Store als barrierefrei. (Siehe das Thema [Eingabehilfen im Store](accessibility-in-the-store.md))
+6. Deklarieren Sie Ihre APP im Microsoft Store als verfügbar. (Siehe das Thema [Eingabehilfen im Store](accessibility-in-the-store.md))
 
 Weitere Details finden Sie im vollständigen Thema [Prüfliste für die Barrierefreiheit](accessibility-checklist.md).
 
-## <a name="related-topics"></a>Verwandte Themen  
+## <a name="related-topics"></a>Zugehörige Themen  
 * [Entwerfen von barrierefreier Software](designing-inclusive-software.md)  
-* [Inklusive Entwurf](https://www.microsoft.com/design/inclusive/)
-* [Barrierefreiheit zu vermeidende Praktiken](practices-to-avoid.md)
-* [Engineeringsoftware für den Zugriff auf](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft Accessibility Developer hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Bedienungshilfen](accessibility.md)
+* [Inklusives Design](https://www.microsoft.com/design/inclusive/)
+* [Nicht empfehlenswerte Praktiken für die Barrierefreiheit](practices-to-avoid.md)
+* [Entwickeln von barrierefreier Software](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Entwickler-Hub für Barrierefreiheit in Microsoft](https://developer.microsoft.com/windows/accessible-apps)
+* [Barrierefreiheit](accessibility.md)

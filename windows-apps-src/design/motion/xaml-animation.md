@@ -4,21 +4,21 @@ title: Übersicht über Animationen
 description: Verwenden Sie die Animationen aus der Windows-Runtime-Animationsbibliothek, um das Windows-Erscheinungsbild in Ihre App zu integrieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 22e035639709005417084d564145d9de218009a8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d6fa8740fba35ae6a50d91846bab79a4858de076
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366686"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970485"
 ---
 # <a name="animations-in-xaml"></a>Animationen in XAML
 
-UWP-Animationen können Ihre App durch Hinzufügen von Bewegung und Interaktivität optimieren. Durch Verwendung der Animationen aus der Windows-Runtime-Animationsbibliothek können Sie das Windows-Erscheinungsbild in Ihre App integrieren. Dieses Thema enthält eine Zusammenfassung der Animationen und Beispiele für typische Szenarien, in denen diese Animationen verwendet werden.
+Animationen können Ihre APP durch Hinzufügen von Bewegung und Interaktivität verbessern. Durch Verwendung der Animationen aus der Windows-Runtime-Animationsbibliothek können Sie das Windows-Erscheinungsbild in Ihre App integrieren. Dieses Thema enthält eine Zusammenfassung der Animationen und Beispiele für typische Szenarien, in denen diese Animationen verwendet werden.
 
 > [!TIP]
-> Die Windows-Runtime-Steuerelemente für XAML umfassen bestimmte Animationen als integrierte Verhaltensweisen, die aus einer Animationsbibliothek stammen. Wenn Sie diese Steuerelemente in einer App verwenden, erreichen Sie das Erscheinungsbild von Animationen, ohne solche selbst programmieren zu müssen.
+> Die Windows-Runtime-Steuerelemente für XAML enthalten bestimmte Arten von Animationen als integrierte Verhalten, die aus einer Animations Bibliothek stammen. Wenn Sie diese Steuerelemente in einer App verwenden, erreichen Sie das Erscheinungsbild von Animationen, ohne solche selbst programmieren zu müssen.
 
 Animationen von der Windows-Runtime-Animationsbibliothek bieten folgende Vorteile:
 
@@ -48,15 +48,15 @@ Das Windows-Runtime-Animationssystem und die Animationsbibliothek können mit de
 
 Die folgenden Animationen werden in der Animationsbibliothek bereitgestellt. Klicken Sie auf den Namen einer Animation, um mehr über die Hauptnutzungsszenarios und ihre Definition zu erfahren und eine Beispielanimation anzuzeigen.
 
--   [Seite Übergang](#page-transition): Erstellt eine Animation Seitenübergänge in einem [ **Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame).
--   [Inhalt und "entrance" Übergang](#content-transition-and-entrance-transition): Führt eine Animation ein Datenelement oder eine Gruppe von Inhalten in oder aus der Sicht.
--   [Ausblenden in/out und Crossfade](#fade-in-out-and-crossfade): Zeigt die vorübergehende Elemente oder Steuerelemente oder aktualisiert einen Inhaltsbereich.
--   [Zeiger hoch-/Herunterskalieren](#pointer-up-down): Erhalten visuelles Feedback zu einem tippen oder klicken Sie auf eine Kachel aus.
--   [Neupositionieren](#reposition): Verschiebt ein Element in eine neue Position.
--   [Ein-/ausblenden-Popup](#show-hide-popup): Zeigt die kontextbezogene Benutzeroberfläche für die Ansicht.
--   [Ein-/ausblenden Microsoft Edge UI](#show-hide-edge-ui): Microsoft Edge-basierte Benutzeroberfläche, einschließlich der großen UI wie z. B. einen Bereich, in oder aus der Sicht die Folien.
--   [Listenelement Änderungen](#list-item-changes): Hinzufügt oder löscht ein Element aus einer Liste oder Neuordnung der Elemente.
--   [Drag & Drop](#drag-drop): Erhalten visuelles Feedback während eines Drag & Drop-Vorgangs.
+-   [Seitenübergang](#page-transition): Animiert Seitenübergänge in einem [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame).
+-   [Inhalts- und Eingangsübergang](#content-transition-and-entrance-transition): blendet eines oder mehrere Inhaltselemente per Animation ein oder aus.
+-   [Ein-, Aus- und Überblenden](#fade-in-out-and-crossfade): Zeigt vorübergehende Elemente oder Steuerelemente an oder aktualisiert einen Inhaltsbereich.
+-   [Zeiger hoch/runter](#pointer-up-down): Gibt visuelles Feedback beim Tippen oder Klicken auf eine Kachel.
+-   [Ändern der Position](#reposition): Verschiebt ein Element an eine neue Position.
+-   [Popup einblenden/ausblenden](#show-hide-popup): Zeigt Kontext-UI oben in der Ansicht an.
+-   [Rand-UI einblenden/ausblenden](#show-hide-edge-ui): Verschiebt UI am Bildschirmrand (auch große UI, z. B. ein Panel) in die oder aus der Ansicht.
+-   [Listenelementänderungen](#list-item-changes): Fügt einer Liste Elemente hinzu, entfernt sie oder ordnet sie neu an.
+-   [Drag & Drop](#drag-drop): gibt visuelles Feedback während eines Drag & Drop-Vorgangs.
 
 ### <a name="page-transition"></a>Seitenübergang
 
@@ -68,7 +68,7 @@ Verwenden Sie Seitenübergänge zum Animieren von Navigation innerhalb einer App
 
 Verwenden Sie Inhaltsübergangsanimationen ([**ContentThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ContentThemeTransition)), um Inhalte in die oder aus der aktuelle(n) Ansicht zu verschieben. Die Inhaltsübergangsanimationen werden z. B. verwendet, um Inhalt anzuzeigen, der beim ersten Laden der Seite noch nicht anzeigebereit war, oder wenn der Inhalt eines Seitenabschnitts geändert wird.
 
-[**EntranceThemeTransition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) stellt eine während der Übertragung, die auf Inhalte anwenden können, wenn eine Seite oder den großen Abschnitt der Benutzeroberfläche zuerst geladen wird. Daher kann der erste Eindruck eines Inhalts anderes Feedback vermitteln als eine Inhaltsänderung. [**EntranceThemeTransition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) entspricht einem [ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) mit den Standardparametern, jedoch außerhalb von verwendet werden kann eine [ **Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame).
+[**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) steht für eine Bewegung, die auf Inhalte angewendet werden kann, wenn eine Seite oder ein großer Teil der UI zum ersten Mal geladen wird. Daher kann der erste Eindruck eines Inhalts anderes Feedback vermitteln als eine Inhaltsänderung. [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) entspricht einer [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) mit den Standardparametern, kann aber außerhalb eines [**Frames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) verwendet werden.
  
  
 <span id="fade-in-out-and-crossfade"/>
@@ -93,7 +93,7 @@ Verwenden Sie die Animationen für das Ändern der Position ([**RepositionThemeA
 
 ### <a name="showhide-popup"></a>Popup einblenden/ausblenden
 
-Verwenden Sie [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation) und [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation), wenn Sie ein [**Popup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) oder ähnliche kontextabhängige UI oben in der aktuellen Ansicht ein- und ausblenden möchten. [**PopupThemeTransition** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition) ist ein Design-Übergang, der hilfreiches Feedback ist, wenn Sie möchten Licht ein Popup zu schließen.
+Verwenden Sie [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation) und [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation), wenn Sie ein [**Popup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup) oder ähnliche kontextabhängige UI oben in der aktuellen Ansicht ein- und ausblenden möchten. [**PopupThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition) ist ein Designübergang, der hilfreiches Feedback bietet, wenn Sie ein Popup einfach ausblenden möchten.
 
 <span id="show-hide-edge-ui"/>
 
@@ -125,14 +125,14 @@ In der folgenden Tabelle werden die Animationen zusammengefasst, die zum Erstell
 
 | UI-Typ | Empfohlene Animation |
 |---------|-----------------------|
-| Dialogfeld | [**FadeInThemeAnimation** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) und [ **FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Flyout | [**PopInThemeAnimation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) und [ **PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| QuickInfo | [**FadeInThemeAnimation** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) und [ **FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
-| Kontextmenü | [**PopInThemeAnimation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) und [ **PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| Dialogfeld | [**FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) und [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Flyout | [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) und [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| QuickInfo | [**FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation) und [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Kontextmenü | [**PopInThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation) und [**PopOutThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | Befehlsleiste | [**EdgeUIThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | Aufgabenbereich oder randbasiertes Panel | [**PaneThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | Inhalt eines UI-Containers | [**ContentThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| Für Steuerelemente oder wenn keine andere Animation zutrifft | [**FadeInThemeAnimation** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) und [ **FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
+| Für Steuerelemente oder wenn keine andere Animation zutrifft | [**FadeInThemeAnimation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) und [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
 
  
 
@@ -291,7 +291,7 @@ Sie können auf ein einzelnes Objekt oder einen Objektcontainer mehrere Übergan
 
 Es stehen verschiedene Übergangseffekte zur Verfügung, um UI-Elemente beim Hinzufügen, Entfernen, Neuanordnen usw. zu animieren. Die Namen dieser APIs enthalten alle „ThemeTransition“:
 
-| API | Beschreibung |
+| API | BESCHREIBUNG |
 |-----|-------------|
 | [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) | Stellt eine Windows-Charakteranimation für die Seitennavigation in einem [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) bereit. |
 | [**AddDeleteThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition) | Stellt animiertes Übergangsverhalten für das Hinzufügen oder Löschen von untergeordneten Objekten oder Inhalten über Steuerelemente bereit. Das betreffende Steuerelement ist dabei typischerweise ein Elementcontainer. |
@@ -349,13 +349,13 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 Anders als Übergangsanimationen besitzt eine Designanimation keinen integrierten Trigger (der Übergang), der sie automatisch ausführt. Verwenden Sie ein [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard), um eine Designanimation bei Definition in XAML zu integrieren. Außerdem können Sie das Standardverhalten der Animation ändern. Sie können z. B. die Geschwindigkeit beim Ausblenden verringern, indem Sie den [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration)-Zeitwert für [**FadeOutThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) erhöhen.
 
-**Beachten Sie**  für Zwecke der grundlegende Animation Verfahren zeigt, verwenden wir app-Code zum Starten der Animation durch Aufrufen der Methoden der [ **Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard). Sie können steuern, wie die **Storyboard** Animationen mithilfe der [ **beginnen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin), [ **beenden**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.stop), [ **Anhalten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.pause), und [ **fortsetzen** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **Storyboard** Methoden. Bibliotheksanimationen werden so jedoch normalerweise nicht in Apps integriert. Integrieren Sie stattdessen Bibliotheksanimationen in die XAML-Stile und -Vorlagen für Steuerelemente oder Elemente. Vorlagen und Ansichtszustände sind etwas komplexer. Die Verwendung von Bibliotheksanimationen in Ansichtszuständen wird jedoch im Thema [Storyboardanimationen für visuelle Zustände](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10)) behandelt.
+**Hinweis**  zur Veranschaulichung grundlegender Animationstechniken verwenden wir app-Code zum Starten der Animation durch Aufrufen von [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)-Methoden. Sie können mit den **Storyboard**-Animationen [**Begin**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.begin), [**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.stop), [**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) und [**Resume** steuern, wie die ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **Storyboard**-Methoden ausgeführt werden. Bibliotheksanimationen werden so jedoch normalerweise nicht in Apps integriert. Integrieren Sie stattdessen Bibliotheksanimationen in die XAML-Stile und -Vorlagen für Steuerelemente oder Elemente. Vorlagen und Ansichtszustände sind etwas komplexer. Die Verwendung von Bibliotheksanimationen in Ansichtszuständen wird jedoch im Thema [Storyboardanimationen für visuelle Zustände](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10)) behandelt.
 
  
 
 Sie können noch eine Reihe weiterer Designanimationen auf UI-Elemente anwenden und so Animationseffekte erreichen. Die Namen dieser APIs enthalten alle „ThemeAnimation“:
 
-| API | Beschreibung |
+| API | BESCHREIBUNG |
 |-----|-------------|
 | [**DragItemThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation) | Stellt die vorkonfigurierte Animation dar, die auf gezogene Elemente angewendet wird. |
 | [**DragOverThemeAnimation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation) | Stellt die vorkonfigurierte Animation dar, die auf Elemente unter gezogenen Elementen angewendet wird. |
@@ -380,7 +380,7 @@ Wenn Designanimationen für Ihre Zwecke nicht ausreichen, können Sie eigene Ani
 
 Damit eine Eigenschaft animiert werden kann, muss es sich um eine *Abhängigkeitseigenschaft* handeln. Weitere Informationen zu Abhängigkeitseigenschaften finden Sie unter [Übersicht über Abhängigkeitseigenschaften](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview). Weitere Informationen zum Erstellen von benutzerdefinierten Storyboardanimationen, u. a. zum Ausrichten und Steuern der Animationen, finden Sie unter [Storyboardanimationen](storyboarded-animations.md).
 
-Der größte Bereich einer App-UI-Definition in XAML, in dem benutzerdefinierte Storyboardanimationen definiert werden, ist das Definieren visueller Zustände für Steuerelemente in XAML. Dies erfolgt entweder beim Erstellen einer neuen Steuerelementklasse oder beim erneuten Erstellen einer Vorlage für ein vorhandenes Steuerelement, das visuelle Zustände in der Steuerelementvorlage aufweist. Weitere Informationen finden Sie unter [Storyboardanimationen für visuelle Zustände](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10)).
+Der größte Bereich einer App-UI-Definition in XAML, in dem benutzerdefinierte Storyboardanimationen definiert werden, ist das Definieren visueller Zustände für Steuerelemente in XAML. Dies erfolgt entweder beim Erstellen einer neuen Steuerelementklasse oder beim erneuten Erstellen einer Vorlage für ein vorhandenes Steuerelement, das visuelle Zustände in der Steuerelementvorlage aufweist. Weitere Informationen finden Sie unter [Storyboarding-Animationen für visuelle Zustände](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10)).
 
  
 

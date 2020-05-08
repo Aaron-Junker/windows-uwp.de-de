@@ -1,5 +1,5 @@
 ---
-Description: Erstellen Sie Apps für die universelle Windows-Plattform (UWP) mit intuitiven und unverwechselbaren Umgebungen für Benutzerinteraktionen, die für die Toucheingabe optimiert sind und deren Funktionalität über alle Eingabegeräte hinweg konsistent ist.
+Description: Erstellen Sie Windows-app-apps mit intuitiver und unterschiedlichen Benutzerinteraktionen, die für die Berührungs Optimierung optimiert sind, aber funktionell auf Eingabegeräten einheitlich sind.
 title: Toucheingabe-Interaktionen
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2277be481326aa5ae5a76c900160108bcd29fb84
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: 99926de0ea26b0cef9184756add777a39330d934
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256143"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970255"
 ---
 # <a name="touch-interactions"></a>Toucheingabe-Interaktionen
 
@@ -22,12 +22,12 @@ Gehen Sie beim Entwerfen Ihrer App davon aus, dass die Benutzer in erster Linie 
 
 Bedenken Sie dabei jedoch, dass eine für Toucheingaben optimierte Benutzeroberfläche einer herkömmlichen Benutzeroberfläche nicht in jedem Fall überlegen ist. Beide haben Vor- und Nachteile, die je nach Technologie oder Anwendung unterschiedlich sein können. Bei der Umstellung auf eine Touch-First-Benutzeroberfläche ist es wichtig, die wesentlichen Unterschiede zwischen Touch, Touchpad, Stift/Stift, Maus und Tastatureingaben zu verstehen.
 
-> **Wichtige APIs**: [**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
+> **Wichtige APIs**: [**Windows. UI. XAML. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input), [**Windows. UI. Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows. Devices. Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
 
 Viele Geräte verfügen über Multitouch-Bildschirme, die eine Eingabe mit einem oder mehreren Fingern (oder Berührungskontakten) unterstützen. Die Berührungskontakte und ihre Bewegung werden als Touchbewegungen und Manipulationen interpretiert, um verschiedene Benutzerinteraktionen zu unterstützen.
 
-Die universelle Windows-Plattform (UWP) bietet eine Reihe unterschiedlicher Mechanismen zur Behandlung von Toucheingaben, mit deren Hilfe Sie eine immersive, benutzerfreundliche Umgebung schaffen können. Im Folgenden behandeln wir die Grundlagen der Toucheingabe in einer UWP-App.
+Die Windows-app enthält eine Reihe von verschiedenen Mechanismen für die Handhabung von Finger Eingaben, sodass Sie eine immersive Benutzererfahrung erstellen können, die Ihre Benutzer zuverlässig durchsuchen können. Hier werden die Grundlagen der Verwendung von Berührungs Eingaben in einer Windows-App behandelt.
 
 Interaktionen per Toucheingabe erfordern drei Dinge:
 
@@ -53,17 +53,17 @@ Mit den einzigartigen und speziellen Interaktionserfahrungen für alle Eingabege
 
 ## <a name="compare-touch-interaction-requirements"></a>Vergleich der Anforderungen für Toucheingabe-Interaktionen
 
-In der folgenden Tabelle sind einige der Unterschiede zwischen den Eingabegeräten aufgeführt, die Sie berücksichtigen sollten, wenn Sie für die Toucheingabe optimierte UWP-Apps entwerfen.
+In der folgenden Tabelle werden einige der Unterschiede zwischen Eingabegeräten angezeigt, die Sie beim Entwerfen von Touchscreen-optimierten Windows-apps berücksichtigen sollten.
 
 <table>
-<tbody><tr><th>Merkmal</th><th>Toucheingabe-Interaktionen</th><th>Interaktionen über Maus, Tastatur oder Zeichen- bzw. Eingabestift</th><th>Touchpad</th></tr>
-<tr><td rowspan="3">Precision</td><td>Der Kontaktbereich einer Fingerspitze ist größer als eine einzige xy-Koordinate. Dadurch erhöht sich die Wahrscheinlichkeit, dass Befehle unbeabsichtigt aktiviert werden.</td><td>Maus und Zeichen- oder Eingabestift liefern eine präzise xy-Koordinate.</td><td>Identisch mit der Maus.</td></tr>
+<tbody><tr><th>Faktor</th><th>Toucheingabe-Interaktionen</th><th>Interaktionen über Maus, Tastatur oder Zeichen- bzw. Eingabestift</th><th>Touchpad</th></tr>
+<tr><td rowspan="3">Genauigkeit</td><td>Der Kontaktbereich einer Fingerspitze ist größer als eine einzige xy-Koordinate. Dadurch erhöht sich die Wahrscheinlichkeit, dass Befehle unbeabsichtigt aktiviert werden.</td><td>Maus und Zeichen- oder Eingabestift liefern eine präzise xy-Koordinate.</td><td>Identisch mit der Maus.</td></tr>
 <tr><td>Die Form des Kontaktbereichs ändert sich während der Bewegung.  </td><td>Mausbewegungen und Striche mit Zeichen- oder Eingabestift liefern eine präzise xy-Koordinate. Die Tastatur hat einen expliziten Fokus.</td><td>Identisch mit der Maus.</td></tr>
 <tr><td>Es gibt keinen Mauscursor, der die Zielbestimmung unterstützt.</td><td>Der Fokus von Mauscursor, Zeichen- oder Eingabestiftcursor und Tastatur unterstützt die Zielbestimmung.</td><td>Identisch mit der Maus.</td></tr>
 <tr><td rowspan="3">Menschliche Anatomie</td><td>Bewegungen mit den Fingerspitzen sind ungenau, da es schwierig ist, mit den Fingern eine lineare Bewegung auszuführen. Dies liegt an der Krümmung der Handgelenke und der Anzahl der an der Bewegung beteiligten Gelenke.</td><td>Es ist leichter, mit der Maus oder mit einem Zeichen- oder Eingabestift eine Bewegung in gerader Linie auszuführen, da die Hand, die diese Geräte steuert, eine kürzere physische Strecke zurücklegen muss als der Cursor auf dem Bildschirm.</td><td>Identisch mit der Maus.</td></tr>
 <tr><td>Manche Bereiche der für die Fingereingabe vorgesehenen Oberfläche eines Anzeigegeräts sind aufgrund der Fingerhaltung und der Tatsache, dass der Benutzer das Gerät halten muss, möglicherweise schwer zu erreichen.</td><td>Maus und Zeichen- oder Eingabestift können alle Bereiche des Bildschirms erreichen, während über die Aktivierreihenfolge der Zugriff auf alle Steuerelemente möglich sein sollte. </td><td>Haltung und Druck der Finger spielen dabei eventuell auch eine Rolle.</td></tr>
 <tr><td>Objekte werden möglicherweise durch mindestens eine Fingerspitze oder die Hand des Benutzers verdeckt. Dies wird als Okklusion bezeichnet.</td><td>Indirekte Eingabegeräte verursachen keine Okklusion.</td><td>Identisch mit der Maus.</td></tr>
-<tr><td>Objektzustand</td><td>Bei der Fingereingabe wird ein Modell mit zwei Zuständen verwendet: Die für die Fingereingabe vorgesehene Oberfläche eines Anzeigegeräts wird entweder berührt (ein) oder nicht berührt (aus). Es gibt keinen Zeigezustand, der zusätzliches visuelles Feedback auslösen kann.</td><td>
+<tr><td>Objektstatus</td><td>Bei der Fingereingabe wird ein Modell mit zwei Zuständen verwendet: Die für die Fingereingabe vorgesehene Oberfläche eines Anzeigegeräts wird entweder berührt (ein) oder nicht berührt (aus). Es gibt keinen Zeigezustand, der zusätzliches visuelles Feedback auslösen kann.</td><td>
 <p>Maus, Zeichen- oder Eingabestift und Tastatur machen ein Modell mit drei Zuständen verfügbar: oben (aus), unten (ein) und Zeigen (Fokus).</p>
 <p>Mit Zeigen können Benutzer QuickInfos zu UI-Elementen erforschen und kennenlernen. Zeigen und Fokus können vermitteln, welche Objekte interaktiv sind, und außerdem die Zielbestimmung erleichtern. 
 </p>
@@ -84,7 +84,7 @@ Das entsprechende visuelle Feedback bei Interaktionen mit ihrer App hilft Benutz
 Visuelles Feedback ist wichtig, wenn der Benutzer die Fingereingabe für Aktivitäten verwendet, bei denen Positionsgenauigkeit gefragt ist. Zeigen Sie immer Feedback an, wenn Toucheingabe erkannt wird, damit der Benutzer die von der App und den Steuerelementen definierten angepassten Zielbestimmungsregeln versteht.
 
 
-## <a name="targeting"></a>Ziel
+## <a name="targeting"></a>Zielgruppenadressierung
 
 Die Zielbestimmung wird durch Folgendes optimiert:
 
@@ -96,7 +96,7 @@ Die Zielbestimmung wird durch Folgendes optimiert:
 
     Der gesamte Kontaktbereich des Fingers wird verwendet, um das wahrscheinlichste Zielobjekt zu ermitteln.
 
--   Scrubbing
+-   Scrubbing (Bereinigung)
 
     Elemente in einer Gruppe können leicht erneut als Ziele bestimmt werden, indem der Finger zwischen ihnen gezogen wird (beispielsweise Optionsfelder). Das aktuelle Element wird aktiviert, wenn der Finger gehoben wird.
 
@@ -109,7 +109,7 @@ Die Zielbestimmung wird durch Folgendes optimiert:
 Berücksichtigen Sie beim Design ungenaue Interaktionen, indem Sie Folgendes verwenden:
 
 -   Andockpunkte, die bei Interaktionen der Benutzer mit dem Inhalt das Anhalten an der gewünschten Position erleichtern.
--   Führungsschienen für die Richtung, die beim vertikalen oder horizontalen Verschieben unterstützen, auch wenn die Hand in einem leichten Bogen bewegt wird. Weitere Informationen finden Sie unter [Anleitungen für das Verschieben](guidelines-for-panning.md).
+-   Direktionale "Rails", die beim vertikalen oder horizontalen Schwenken hilfreich sein können, auch wenn die Hand in einem kleinen Bogen bewegt wird. Weitere Informationen finden Sie unter [Richtlinien für das Schwenken](guidelines-for-panning.md).
 
 ## <a name="occlusion"></a>Okklusion
 
@@ -129,7 +129,7 @@ Okklusion durch Finger und Hand können Sie durch Folgendes vermeiden:
 
 -   Präzision durch Ziehpunkte
 
-    Wenn Präzision erforderlich ist (beispielsweise bei der Textauswahl), stellen Sie versetzte Auswahlziehpunkte bereit, um die Genauigkeit zu verbessern. Weitere Informationen finden Sie unter [Richtlinien für die Text- und Bildauswahl (Windows-Runtime-Apps)](guidelines-for-textselection.md).
+    Wenn Präzision erforderlich ist (beispielsweise bei der Textauswahl), stellen Sie versetzte Auswahlziehpunkte bereit, um die Genauigkeit zu verbessern. Weitere Informationen finden Sie unter [Richtlinien für die Auswahl von Text und Images (Windows-Runtime-Apps)](guidelines-for-textselection.md).
 
 ## <a name="timing"></a>Zeitliche Steuerung
 
@@ -169,7 +169,7 @@ Zoomeinstellungen gelten sowohl für den optischen Zoom (unterstützt vom [**Scr
 
 Verwenden Sie App-Ansichten und -Ereignisse zum Ändern des Verhaltens für Schwenken/Bildlauf und Zoom. Dies kann für eine flüssigere Interaktion sorgen, als dies mit der Behandlung von Zeiger- und Gestikereignissen möglich ist.
 
-Weitere Informationen zu App-Ansichten finden Sie unter [Steuerelemente, Layouts und Text](https://docs.microsoft.com/windows/uwp/design/basics/).
+Weitere Informationen zu app-Ansichten finden Sie unter Steuer [Elemente, Layouts und Text](https://docs.microsoft.com/windows/uwp/design/basics/).
 
 ## <a name="custom-touch-interactions"></a>Benutzerdefinierte Touchinteraktionen
 
@@ -178,11 +178,11 @@ Wenn Sie eine eigene Interaktionsunterstützung implementieren, sollten Sie dara
 
 Zum Bereitstellen von angepasster Toucheingabeunterstützung können Sie verschiedene [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Ereignisse behandeln. Diese Ereignisse sind in drei verschiedene Abstraktionsschichten gruppiert.
 
--   Statische Gestikereignisse werden ausgelöst, wenn eine Interaktion abgeschlossen ist. Zu den Gestikereignissen zählen [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped), [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped), [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped) und [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding).
+-   Statische Gestikereignisse werden ausgelöst, wenn eine Interaktion abgeschlossen ist. Gesten Ereignisse umfassen [**getippt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped), [**Double**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)-, [**righttippt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)und [**halten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding).
 
     Sie können Gestikereignisse für bestimmte Elemente deaktivieren, indem Sie [**IsTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.istapenabled), [**IsDoubleTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled), [**IsRightTapEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) und [**IsHoldingEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.isholdingenabled) auf **false** festlegen.
 
--   Zeigerereignisse wie [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) und [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) bieten Details auf unterer Ebene für alle Touchkontakte einschließlich Zeigerbewegungen und die Möglichkeit, zwischen Drück- und Loslass-Ereignissen zu unterscheiden.
+-   Zeiger Ereignisse, wie z. b. [**pointerpressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) und [**pointerverschiebe**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) , bieten ausführliche Details zu jedem Berührungs Kontakt, einschließlich Zeiger Bewegung und der Möglichkeit, Press-und releaseereignisse zu unterscheiden.
 
     Bei einem Zeiger handelt es sich um eine generische Eingabeart mit einem vereinheitlichten Ereignismechanismus. Er stellt grundlegende Informationen (wie die Bildschirmposition) für die aktive Eingabequelle (Touch, Touchpad, Maus oder Stift) zur Verfügung.
 
@@ -192,15 +192,15 @@ Zum Bereitstellen von angepasster Toucheingabeunterstützung können Sie verschi
 
 Hier sehen Sie den grundlegenden Satz von Touchgesten, die von der UWP unterstützt werden.
 
-| Name           | Typ                 | Beschreibung                                                                            |
+| Name           | Typ                 | BESCHREIBUNG                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | Tippen            | Statische Geste       | Der Bildschirm wird mit einem Finger berührt, und der Finger wird wieder angehoben.                                            |
 | Drücken und Halten | Statische Geste       | Ein Finger berührt den Bildschirm und bleibt auf dem Bildschirm.                                      |
-| Ziehen          | Manipulationsgeste | Mindestens ein Finger berührt den Bildschirm und bewegt sich in die gleiche Richtung.                   |
+| Slide (Folie)          | Manipulationsgeste | Mindestens ein Finger berührt den Bildschirm und bewegt sich in die gleiche Richtung.                   |
 | Swipe          | Manipulationsgeste | Mindestens ein Finger berührt den Bildschirm und bewegt sich um eine kurze Distanz in die gleiche Richtung.  |
 | Drehen           | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und führen eine Kreisbewegung im oder gegen den Uhrzeigersinn aus. |
 | Zusammendrücken          | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und bewegen sich dichter zusammen.                         |
-| Stretch        | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und bewegen sich weiter auseinander.                           |
+| Stretch (Strecken)        | Manipulationsgeste | Mindestens zwei Finger berühren den Bildschirm und bewegen sich weiter auseinander.                           |
 
  
 
@@ -222,16 +222,16 @@ Zeigerereignisse basieren auf einen einzigen Eingabepunkt (Finger, Stiftspitze, 
 
 Nachfolgend finden Sie eine Liste der Zeigerereignisse und der jeweiligen Ereignisargumente.
 
-| Ereignis oder Klasse                                                       | Beschreibung                                                   |
+| Ereignis oder Klasse                                                       | BESCHREIBUNG                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**Pointerpressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | Tritt auf, wenn ein Finger den Bildschirm berührt.               |
-| [**Pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | Tritt auf, wenn dieser Berührungskontakt gelöst wird.                |
-| [**Pointerverschoben**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)                 | Tritt auf, wenn der Mauszeiger über den Bildschirm gezogen wird.         |
-| [**Pointereingetragen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)             | Tritt auf, wenn der Zeiger in den Treffertestbereich eines Elements eintritt. |
-| [**Pointerexited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)               | Tritt auf, wenn der Zeiger aus dem Treffertestbereich eines Elements austritt.  |
-| [**Pointerabgeb Rochen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)           | Tritt auf, wenn ein Touchkontakt nicht normal verloren geht.               |
-| [**Pointercapturelost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)     | Tritt auf, wenn ein Zeiger durch ein anderes Element erfasst wird.    |
-| [**Pointerwheelchanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | Tritt auf, wenn sich der Delta Wert eines Mausrades ändert und wenn das Touchpad fixiert wird.         |
+| [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | Tritt auf, wenn ein Finger den Bildschirm berührt.               |
+| [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | Tritt auf, wenn dieser Berührungskontakt gelöst wird.                |
+| [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)                 | Tritt auf, wenn der Mauszeiger über den Bildschirm gezogen wird.         |
+| [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)             | Tritt auf, wenn der Zeiger in den Treffertestbereich eines Elements eintritt. |
+| [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)               | Tritt auf, wenn der Zeiger aus dem Treffertestbereich eines Elements austritt.  |
+| [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)           | Tritt auf, wenn ein Touchkontakt nicht normal verloren geht.               |
+| [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)     | Tritt auf, wenn ein Zeiger durch ein anderes Element erfasst wird.    |
+| [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | Tritt auf, wenn sich der Delta Wert eines Mausrades ändert und wenn das Touchpad fixiert wird.         |
 | [**Pointerroutedebug-Elemente**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | Stellt Daten für alle Zeigerereignisse bereit.                         |
 
  
@@ -407,7 +407,7 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <a name="manipulation-events"></a>Manipulationsereignisse
+## <a name="manipulation-events"></a>Bearbeitungsereignisse
 
 
 Verwenden Sie Manipulationsereignisse, wenn Sie in Ihrer App Mehrfingereingabe-Interaktionen oder Interaktionen unterstützen müssen, die Geschwindigkeitsdaten erfordern.
@@ -419,19 +419,19 @@ Mithilfe von Manipulationsereignissen können Sie Interaktionen wie Ziehen, Zoom
 
 Nachfolgend finden Sie eine Liste der Manipulationsereignisse und der jeweiligen Ereignisargumente.
 
-| Ereignis oder Klasse                                                                                               | Beschreibung                                                                                                                               |
+| Ereignis oder Klasse                                                                                               | BESCHREIBUNG                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ManipulationStarting-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | Tritt auf, wenn der Bearbeitungsprozessor zuerst erstellt wird.                                                                                  |
-| [**ManipulationStarted-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | Tritt auf, wenn ein Eingabegerät mit der Bearbeitung für das [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) beginnt.                                            |
-| [**ManipulationDelta-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | Tritt auf, wenn ein Eingabegerät bei der Bearbeitung die Position ändert.                                                                      |
+| [**ManipulationStarting-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | Tritt bei der ersten Erstellung des Manipulationsprozessors auf.                                                                                  |
+| [**ManipulationStarted-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | Tritt auf, wenn ein Eingabegerät eine Bearbeitung für das [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)beginnt.                                            |
+| [**ManipulationDelta-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | Tritt ein, wenn sich die Position des Eingabegeräts während einer Bearbeitung ändert.                                                                      |
 | [**ManipulationInertiaStarting-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | Tritt auf, wenn das Eingabegerät während einer Bearbeitung Kontakt mit dem [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Objekt verliert und die Trägheit beginnt. |
-| [**Ereignis "manipulationabgeschlossene"** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | Tritt auf, wenn Bearbeitung und Trägheit für das [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) abgeschlossen sind.                                          |
-| [**Manipulationstartingroutedebug-args**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)               | Stelle Daten für das [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)-Ereignis bereit.                                         |
-| [**Manipulationstartedroutedebug-args**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)                 | Stellt Daten für das [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)-Ereignis bereit.                                           |
-| [**ManipulationDelta taroutedebug-args**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)                     | Stellt Daten für das [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)-Ereignis bereit.                                               |
-| [**Manipulationinertiastartingroutedebug-args**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs) | Stellt Daten für das [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)-Ereignis bereit.                           |
+| [**ManipulationCompleted-Ereignis**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | Tritt auf, wenn Bearbeitung und Trägheit für das [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) abgeschlossen sind.                                          |
+| [**ManipulationStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)               | Stelle Daten für das [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)-Ereignis bereit.                                         |
+| [**ManipulationStartedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)                 | Stellt Daten für das [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)-Ereignis bereit.                                           |
+| [**ManipulationDeltaRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)                     | Stellt Daten für das [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)-Ereignis bereit.                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs) | Stellt Daten für das [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)-Ereignis bereit.                           |
 | [**ManipulationVelocities**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | Beschreibt die Geschwindigkeit, mit der die Bearbeitung stattfindet.                                                                                         |
-| [**Manipulationcompletedroutedebug-args**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | Stellt Daten für das [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)-Ereignis bereit.                                       |
+| [**ManipulationCompletedRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | Stellt Daten für das [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)-Ereignis bereit.                                       |
 
  
 
@@ -456,7 +456,7 @@ Zuerst wird ein [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) mit d
 </Grid>
 ```
 
-Anschließend wird ein globales [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)-Element mit dem Namen `dragTranslation` erstellt, mit dem das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element übersetzt wird. Ein [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)-Ereignislistener wird für das **Rechteck** angegeben, und `dragTranslation` wird zum [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)-Element des **Rechtecks** hinzugefügt.
+Anschließend wird ein globales [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)-Element mit dem Namen `dragTranslation` erstellt, mit dem das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element übersetzt wird. Ein [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) -Ereignislistener ist für das **Rechteck**angegeben `dragTranslation` und wird der [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) des **Rechtecks**hinzugefügt.
 
 ```cpp
 // Global translation transform used for changing the position of 
@@ -574,9 +574,9 @@ End Sub
 ## <a name="routed-events"></a>Routingereignisse
 
 
-Alle hier erwähnten Zeiger-, Gestik- und Manipulationsereignisse werden als *Routingereignisse* implementiert. Folglich kann das Ereignis potenziell auch von Objekten behandelt werden, bei denen es sich nicht um das Objekt handelt, von dem das Ereignis ursprünglich ausgelöst wurde. Von aufeinander folgenden übergeordneten Elementen in einer Objektstruktur (wie etwa den übergeordneten Containern eines [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Elements oder dem [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)-Stammelement Ihrer App) können diese Ereignisse auch dann behandelt werden, wenn sie vom ursprünglichen Element nicht behandelt werden. Umgekehrt gilt: Ein Objekt, von dem das Ereignis nicht behandelt wird, kann das Ereignis als behandelt markieren, damit es keine übergeordneten Elemente mehr erreicht. Weitere Informationen zum Konzept der Routingereignisse sowie zu den Auswirkungen auf die Erstellung von Handlern für Routingereignisse finden Sie unter [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10)).
+Alle hier erwähnten Zeiger-, Gestik- und Manipulationsereignisse werden als *Routingereignisse* implementiert. Folglich kann das Ereignis potenziell auch von Objekten behandelt werden, bei denen es sich nicht um das Objekt handelt, von dem das Ereignis ursprünglich ausgelöst wurde. Von aufeinander folgenden übergeordneten Elementen in einer Objektstruktur (wie etwa den übergeordneten Containern eines [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Elements oder dem [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)-Stammelement Ihrer App) können diese Ereignisse auch dann behandelt werden, wenn sie vom ursprünglichen Element nicht behandelt werden. Umgekehrt gilt: Ein Objekt, von dem das Ereignis nicht behandelt wird, kann das Ereignis als behandelt markieren, damit es keine übergeordneten Elemente mehr erreicht. Weitere Informationen zum Routing Ereignis Konzept und dessen Auswirkungen auf das Schreiben von Handlern für Routing Ereignisse finden Sie unter [Übersicht über Ereignisse und Routing Ereignisse](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10)).
 
-## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
+## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
 
 
 -   Entwerfen Sie Anwendungen mit Toucheingabe als primär erwarteter Eingabemethode.
@@ -587,29 +587,21 @@ Alle hier erwähnten Zeiger-, Gestik- und Manipulationsereignisse werden als *Ro
 -   Verwenden Sie nach Möglichkeit keine zeitlich festgelegten Interaktionen (Beispiel für eine richtige Verwendung: Berühren und Halten).
 -   Verwenden Sie nach Möglichkeit nicht die Anzahl der zu verwendenden Finger, um zwischen den Manipulationen zu unterscheiden.
 
-
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Behandeln von Zeigereingaben](handle-pointer-input.md)
-* [Identifizieren von Eingabegeräten](identify-input-devices.md)
+- [Behandeln von Zeigereingaben](handle-pointer-input.md)
+- [Identifizieren von Eingabegeräten](identify-input-devices.md)
 
-**Beispiele**
+### <a name="samples"></a>Beispiele
 
-* [Beispiel für eine einfache Eingabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [Eingabe Beispiel mit niedriger Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [Beispiel für den Benutzerinteraktionsmodus](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
-**Archivbeispiele**
+### <a name="archive-samples"></a>Archivbeispiele
 
-* [Eingabe: Beispiel für Gerätefunktionen](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [Eingabe: Beispiel für XAML-Benutzereingabe Ereignisse](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [Eingabe: Gesten und Manipulationen mit GestureRecognizer](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
- 
-
- 
-
-
-
-
+- [Eingabe: Beispiel für Gerätefunktionen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [Eingabe: Beispiel für XAML-Benutzereingabeereignisse](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [Eingabe: Gesten und Manipulationen mit GestureRecognizer](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)

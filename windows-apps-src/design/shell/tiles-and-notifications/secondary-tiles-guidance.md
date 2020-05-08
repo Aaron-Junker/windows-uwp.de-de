@@ -1,48 +1,48 @@
 ---
-Description: Hier erfahren Sie, wann und wo sekundäre Kacheln in Ihrer UWP-App verwendet werden sollen.
+Description: Erfahren Sie, wann und wo Sie sekundäre Kacheln in Ihrer Windows-App verwenden sollten.
 title: Entwurfs Leit Faden für sekundäre Kacheln
 label: Secondary tiles
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
-keywords: Windows 10, UWP, sekundäre Kacheln, Richtlinien, Richtlinien, bewährte Methoden
+keywords: Windows 10, UWP, sekundäre Kacheln, Anleitungen, Richtlinien, bewährte Methoden
 ms.localizationpriority: medium
-ms.openlocfilehash: 875513840d8dc752fe336241fa54710aebad6103
-ms.sourcegitcommit: 2d709ddcc31f52d2a4ace1134aea45057d99a615
+ms.openlocfilehash: 400b0d48fd68c720d613325d1938c0c4a70931a7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782596"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971025"
 ---
-# <a name="secondary-tile-guidance"></a>Anleitung für sekundäre Kacheln
+# <a name="secondary-tile-guidance"></a>Leitfaden für sekundäre Kacheln
 
 
-Eine sekundäre Kachel stellt für Benutzer eine einheitliche und effiziente Möglichkeit dar, um vom Startmenü aus direkt auf bestimmte Bereiche innerhalb der App zuzugreifen. Auch wenn Benutzer wählen können, ob eine sekundäre Kachel auf das Startmenü angeheftet werden soll, werden die Anheftbereiche einer App doch vom Entwickler vorgegeben Eine ausführliche Zusammenfassung finden Sie unter [Übersicht über sekundäre Kacheln](secondary-tiles.md). Beachten Sie diese Richtlinien beim Aktivieren von sekundären Kacheln und Entwerfen der entsprechenden UI in der App.
+Eine sekundäre Kachel bietet Benutzern eine konsistente und effiziente Möglichkeit, direkt über das Startmenü auf bestimmte Bereiche innerhalb einer APP zuzugreifen. Obwohl ein Benutzer entscheidet, ob eine sekundäre Kachel an das Startmenü angeheftet werden soll, werden die in einer APP ausstell baren Bereiche vom Entwickler bestimmt. Eine ausführlichere Zusammenfassung finden Sie unter [Übersicht über sekundäre Kacheln](secondary-tiles.md). Beachten Sie diese Richtlinien, wenn Sie sekundäre Kacheln aktivieren und die zugehörige Benutzeroberfläche in Ihrer APP entwerfen.
 
 > [!NOTE]
-> Sekundäre Kacheln können nur vom Benutzer auf dem Startmenü angeheftet werden. Von Apps können sekundäre Kacheln nicht programmgesteuert angeheftet werden. Darüber hinaus steuern Benutzer die Entfernung der Kachel und können eine sekundäre Kachel vom Startmenü oder aus der übergeordneten App entfernen.
+> Nur Benutzer können eine sekundäre Kachel an das Startmenü anheften. Apps können sekundäre Kacheln nicht Programm gesteuert anheften. Benutzer steuern auch das Entfernen von Kacheln und können eine sekundäre Kachel aus dem Startmenü oder innerhalb der übergeordneten App entfernen.
 
 
 ## <a name="recommendations"></a>Empfehlungen
 
-Beachten Sie die folgenden Empfehlungen zur Aktivierung von sekundären Kacheln in Apps:
+Beachten Sie die folgenden Empfehlungen, wenn Sie sekundäre Kacheln in Ihrer APP aktivieren:
 
-* Wenn der Inhalt mit dem Fokus angeheftet werden kann, sollte die App-Leiste eine Schaltfläche „An "Start" anheften” zum Erstellen einer sekundären Kachel für den Benutzer enthalten.
-* Klickt der Benutzer- auf „An "Start" anheften”, sollten Sie sofort die API vom UI-Thread aufrufen, um [die sekundäre Kachel anzuheften](secondary-tiles-pinning.md).
-* Falls der Inhalt mit dem Fokus bereits angeheftet ist, sollte auf der App-Leiste anstelle der Schaltfläche „An "Start" anheften” die Schaltfläche „Von "Start" lösen” angezeigt werden. Die Schaltfläche „Von "Start" lösen” sollte die vorhandene sekundäre Kachel entfernen.
-* Wenn der Inhalt mit dem Fokus nicht angeheftet werden kann, sollte auch die Schaltfläche „An "Start" anheften” nicht zu sehen sein (oder die Schaltfläche „An "Start" anheften” sollte deaktiviert sein).
-* Verwenden Sie die vom System bereitgestellten Symbole für die Schaltflächen „An "Start" anheften” und „Von "Start" lösen” (siehe Member zum Anheften und Lösen unter Windows.UI.Xaml.Controls.Symbol bzw. WinJS.UI.AppBarIcon).
-* Verwenden Sie auch den standardmäßigen Schaltflächentext: "An "Start" anheften" und "Von "Start" lösen". Beim Nutzen der vom System bereitgestellten Glyphen für das Anheften und Lösen müssen Sie den Standardtext überschreiben.
-* Verwenden Sie eine sekundäre Kachel nicht als virtuelle Befehlsschaltfläche, um mit der übergeordneten App zu interagieren, z. B. eine Kachel "Zum nächsten Titel springen".
+* Wenn der Inhalt im Fokus gepingt werden kann, sollte die APP-Leiste eine Schaltfläche "an Start anheften" enthalten, um eine sekundäre Kachel für den Benutzer zu erstellen.
+* Wenn der Benutzer auf "an Start anheften" klickt, sollten Sie sofort die API aus dem UI-Thread aufrufen, um [die sekundäre Kachel](secondary-tiles-pinning.md)anzuheften.
+* Wenn der Inhalt im Fokus bereits angeheftet ist, ersetzen Sie die Schaltfläche "an Start anheften" in der APP-Leiste mit der Schaltfläche "an Start lösen". Mit der Schaltfläche "vom Start lösen" sollte die vorhandene sekundäre Kachel entfernt werden.
+* Wenn der Inhalt im Fokus nicht gepingt werden kann, zeigen Sie die Schaltfläche "an Start anheften" nicht an (oder zeigen Sie die Schaltfläche "an Start anheften" an).
+* Verwenden Sie die vom System bereitgestellten Symbole, um die Schaltflächen "anheften" und "aus Start" zu lösen (Weitere Informationen finden Sie unter PIN und lösen-Member in Windows. UI. XAML. Controls. Symbol oder winjs. UI. appbaricon).
+* Verwenden Sie den Standard Schaltfläche Text: "an Start anheften" und "vom Start lösen". Sie müssen den Standardtext überschreiben, wenn Sie die vom System bereitgestellte PIN verwenden und Symbole lösen.
+* Verwenden Sie keine sekundäre Kachel als virtuelle Befehls Schaltfläche, um mit der übergeordneten APP zu interagieren, z. b. die Kachel "mit nächster Spur überspringen".
 
 
-## <a name="additional-usage-guidance-for-devs"></a>Weitere Richtlinien für Entwickler
+## <a name="additional-usage-guidance-for-devs"></a>Zusätzliche Verwendungs Anleitungen für Entwickler
 
-* Wenn eine App gestartet wird, sollte diese immer ihre sekundären Kacheln aufzählen, um zu überprüfen, ob Kacheln hinzugefügt oder entfernt wurden, ohne dass die App dies erfasst hat. Wenn eine sekundäre Kachel über die App-Leiste auf der Startseite gelöscht wird, entfernt Windows die Kachel einfach. Die App ist jedoch selbst dafür verantwortlich, alle von der sekundären Kachel verwendeten Ressourcen freizugeben. Wenn sekundäre Kacheln über die Cloud kopiert werden, werden aktuelle Kachel- oder Signalbenachrichtigungen der sekundären Kachel, geplante Benachrichtigungen, Pushbenachrichtigungskanäle und bei regelmäßigen Benachrichtigungen verwendete URIs (Uniform Resource Identifier) nicht mit der sekundären Kachel kopiert und müssen neu eingerichtet werden.
-* Eine App sollte sinnvolle, reproduzierbare und eindeutige IDs für sekundäre Kacheln verwenden. Der Gebrauch von vorhersagbaren, für eine App sinnvollen IDs für sekundäre Kacheln erleichtert der App deren Verwendung, wenn diese in einer Neuinstallation auf einem neuen Computer erscheinen.
-  * Zur Laufzeit kann die App abfragen, ob eine bestimmte Kachel vorhanden ist.
-  * Die Plattform für sekundäre Kacheln kann aufgefordert werden, die Gruppe aller sekundären Kacheln zurückzugeben, die zu einer bestimmten App gehören. Wenn für diese Kacheln sinnvolle, eindeutige IDs verwendet werden, kann die App die Gruppe von sekundären Kacheln leichter überprüfen und entsprechende Aktionen ausführen. Bei einer Social-Media-App können mithilfe von IDs beispielsweise einzelne Kontakte angegeben werden, für die Kacheln erstellt wurden.
-* Sekundäre Kacheln sind wie alle Kacheln der Startseite dynamische Flächen, für die regelmäßig Updates mit neuen Inhalten durchgeführt werden können. Sekundäre Kacheln können Benachrichtigungen und Updates mithilfe derselben Mechanismen wie alle anderen Kacheln anzeigen. Lesen Sie dazu [Auswählen einer Methode für die Übermittlung von Benachrichtigungen](choosing-a-notification-delivery-method.md).
+* Wenn eine APP gestartet wird, sollten Sie Ihre sekundären Kacheln immer auflisten, falls es Ergänzungen oder Löschungen gab, von denen Sie nicht wusste. Wenn eine sekundäre Kachel über die APP-Leiste des Start Bildschirms gelöscht wird, wird die Kachel durch Windows einfach entfernt. Die APP selbst ist dafür verantwortlich, alle Ressourcen freizugeben, die von der sekundären Kachel verwendet wurden. Wenn sekundäre Kacheln über die Cloud kopiert werden, werden aktuelle Kachel-oder Badge-Benachrichtigungen auf der sekundären Kachel, geplante Benachrichtigungen, pushbenachrichtigungschannels und URIs (Uniform Resource Identifier), die mit periodischen Benachrichtigungen verwendet werden, nicht mit der sekundären Kachel kopiert und müssen erneut eingerichtet werden.
+* Eine APP sollte für sekundäre Kacheln sinnvolle, neu zu verwendende, eindeutige IDs verwenden. Die Verwendung von vorhersagbaren sekundären Kachel-IDs, die für eine APP von Bedeutung sind, hilft der APP zu verstehen, was mit diesen Kacheln zu tun ist, wenn Sie in einer neuen Installation auf einem neuen Computer
+  * Zur Laufzeit kann die APP Abfragen, ob eine bestimmte Kachel vorhanden ist.
+  * Die sekundäre Kachel Plattform kann aufgefordert werden, den Satz aller sekundären Kacheln zurückzugeben, die zu einer bestimmten app gehören. Die Verwendung aussagekräftiger, eindeutiger IDs für diese Kacheln kann der APP helfen, den Satz sekundärer Kacheln zu untersuchen und entsprechende Aktionen auszuführen. Beispielsweise können IDs für eine Social Media-App einzelne Kontakte identifizieren, für die Kacheln erstellt wurden.
+* Sekundäre Kacheln, wie z. b. alle Kacheln auf dem Start Bildschirm, sind dynamische Outlets, die häufig mit neuem Inhalt aktualisiert werden können. Mithilfe der gleichen Mechanismen wie jede andere Kachel können sekundäre Kacheln Benachrichtigungen und Updates anzeigen. Weitere Informationen finden [Sie unter Auswählen einer Benachrichtigungs Bereitstellungs Methode](choosing-a-notification-delivery-method.md) .
 
 
 ## <a name="related"></a>Verwandte Themen

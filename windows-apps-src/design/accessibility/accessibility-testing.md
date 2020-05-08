@@ -1,23 +1,23 @@
 ---
-Description: Testverfahren, mit denen Sie sicherstellen können, dass Ihre App für die universelle Windows-Plattform (UWP) barrierefrei ist.
+Description: Zu testenden Verfahren, um sicherzustellen, dass auf Ihre Windows-App-App zugegriffen werden kann
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Barrierefreiheitstests
 label: Accessibility testing
 template: detail.hbs
 ms.date: 05/18/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fb9480740746b6e6ec792d4b88f4d84e4acb7c0e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8c5f3a01ae9231bd27208cacff0ee5209c3716b5
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257802"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969685"
 ---
 # <a name="accessibility-testing"></a>Barrierefreiheitstests  
 
-Testverfahren, mit denen Sie sicherstellen können, dass Ihre App für die universelle Windows-Plattform (UWP) barrierefrei ist.
+Zu testenden Verfahren, um sicherzustellen, dass auf Ihre Windows-App-App zugegriffen werden kann
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
@@ -33,16 +33,16 @@ Sie können die Tools zum Testen der Barrierefreiheit entweder über die Eingabe
 <span id="accscope"/>
 <span id="ACCSCOPE"/>
 
-### <a name="accscope"></a>**EH-Viewer (AccScope)**  
+### <a name="accscope"></a>**EH-Viewer**  
 
-Mit dem Tool [**EH-Viewer**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) können Entwickler und Tester die Barrierefreiheit der App während ihrer Entwicklungs- und Entwurfsphase auswerten. Dies wird meist in frühen Prototypphasen und nicht in den letzten Testphasen des Entwicklungszyklus einer App durchgeführt. Das Hauptziel besteht im Testen von Barrierefreiheitsszenarien in Verbindung mit der Sprachausgabe für die App.
+Mit dem [**accscope**](https://docs.microsoft.com/windows/desktop/WinAuto/accscope) -Tool können Entwickler und Tester die Barrierefreiheit Ihrer APP während der Entwicklung und Entwicklung der APP, möglicherweise in früheren prototypphasen, und nicht in den Phasen mit späterer Testphase des Entwicklungsprozesses einer APP evaluieren. Das Hauptziel besteht im Testen von Barrierefreiheitsszenarien in Verbindung mit der Sprachausgabe für die App.
 
 <span id="inspect"/>
 <span id="INSPECT"/>
 
-### <a name="inspect"></a>**Prüfen**  
+### <a name="inspect"></a>**Überprüfen**  
 
-Über [**prüfen**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) ermöglicht es Ihnen, ein beliebiges Benutzeroberflächen Element auszuwählen und seine Barrierefreiheits Daten anzuzeigen. Sie können Eigenschaften und Steuerelementmuster der Microsoft-Benutzeroberflächenautomatisierung anzeigen und die Navigationsstruktur der Automatisierungselemente im Benutzeroberflächenautomatisierungs-Baum testen. Verwenden Sie beim Entwickeln der Benutzeroberfläche **Inspect**, um zu überprüfen, wie die Barrierefreiheitsattribute in der Benutzeroberflächenautomatisierung verfügbar gemacht werden. In einigen Fällen stammen die Attribute aus der Unterstützung der Benutzeroberflächenautomatisierung, die für Standard-XAML-Steuerelemente bereits implementiert wurde. In anderen Fällen stammen die Attribute aus bestimmten Werten, die Sie im XAML-Markup als an [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) angefügte Eigenschaften festgelegt haben.
+Über [**prüfen**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) ermöglicht es Ihnen, ein beliebiges Benutzeroberflächen Element auszuwählen und seine Barrierefreiheits Daten anzuzeigen. Sie können Eigenschaften und Steuerelementmuster der Microsoft-Benutzeroberflächenautomatisierung anzeigen und die Navigationsstruktur der Automatisierungselemente im Benutzeroberflächenautomatisierungs-Baum testen. Verwenden Sie unter **Suchen** während der Entwicklung der Benutzeroberfläche, um zu überprüfen, wie Barrierefreiheits Attribute bei der Benutzeroberflächen Automatisierung In einigen Fällen stammen die Attribute aus der Unterstützung der Benutzeroberflächenautomatisierung, die für Standard-XAML-Steuerelemente bereits implementiert wurde. In anderen Fällen stammen die Attribute aus bestimmten Werten, die Sie in Ihrem XAML-Markup festgelegt haben, als [**AutomationProperties**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties) angefügte Eigenschaften.
 
 Die folgende Abbildung zeigt das [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects)-Tool, mit dem die Benutzeroberflächenautomatisierungseigenschaften des Menübefehls **Bearbeiten** in Editor abgefragt werden.
 
@@ -64,7 +64,7 @@ Die **Benutzeroberflächenautomatisierungs-Überprüfung (UIA Verify)** ist ein 
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
 
 ### <a name="accessible-event-watcher"></a>**Überwachung für barrierefreie Ereignisse**  
-Der [**barrierefreie ereigniswatcher (AccEvent)** ](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) testet, ob die Benutzeroberflächen Elemente einer App bei Änderungen der Benutzeroberfläche ordnungsgemäße Benutzeroberflächenautomatisierungs-und Microsoft Active Accessibility-Ereignisse auslösen. Änderungen an der Benutzeroberfläche können auftreten, wenn sich der Fokus ändert, ein Benutzeroberflächenelement aufgerufen oder ausgewählt wird oder sich sein Zustand oder seine Eigenschaft ändert.
+[              Mit der **Überwachung für barrierefreie Ereignisse (AccEvent)**](https://docs.microsoft.com/windows/desktop/WinAuto/accessible-event-watcher) wird getestet, ob die UI-Elemente einer App korrekte Benutzeroberflächenautomatisierungs- und Microsoft Active Accessibility-Ereignisse auslösen, wenn Änderungen an der Benutzeroberfläche auftreten. Änderungen an der Benutzeroberfläche können auftreten, wenn sich der Fokus ändert, ein Benutzeroberflächenelement aufgerufen oder ausgewählt wird oder sich sein Zustand oder seine Eigenschaft ändert.
 
 > [!NOTE]
 > Die meisten in dieser Dokumentation erwähnten Tools zum Testen der Barrierefreiheit können auf einem PC, aber nicht auf einem Mobiltelefon ausgeführt werden. Sie können einige dieser Tools ausführen, während Sie entwickeln und einen Emulator verwenden, aber die meisten dieser Tools können den Benutzeroberflächenautomatisierungs-Baum im Emulator nicht bereitstellen.
@@ -101,13 +101,13 @@ Verwenden Sie die Systemanzeigeoptionen, die den DPI-Wert der Anzeige anpassen, 
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>Überprüfen der wichtigsten App-Szenarien mit der Sprachausgabe  
-Verwenden Sie die Sprachausgabe, um die Qualität der Bildschirmtexterkennung für Ihre App einzuschätzen.
+Verwenden Sie die Sprachausgabe, um den Bildschirm Lesevorgang für Ihre APP zu testen.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player]
 
-**Gehen Sie folgendermaßen vor, um Ihre APP mit einer Maus und Tastatur zu testen:**
-1.  Starten Sie die Sprachausgabe, indem Sie _Windows-Logo-Taste+STRG+EINGABETASTE_ drücken. In Versionen vor der Version 1607 von Windows 10 verwenden Sie _Windows-Logo-Taste + EINGABETASTE_ zum Starten der Sprachausgabe.
-2.  Bedienen Sie Ihre App über die Tastatur mit der _TAB_-TASTE, den PFEILTASTEN und _FESTSTELLTASTE+PFEILTASTEN_.
+**Gehen Sie wie folgt vor, um Ihre App mithilfe der Sprachausgabe unter Verwendung von Maus und Tastatur zu testen:**
+1.  Starten Sie die Sprachausgabe durch Drücken der _Windows-Taste + STRG + EINGABETASTE_. Verwenden Sie in Versionen vor Windows 10, Version 1607, die _Windows-Taste + EINGABETASTE_ , um die Sprachausgabe zu starten.
+2.  Navigieren Sie mit der _Tab_ -Taste, den Pfeiltasten und der Taste mit den Schlüsseln mit den _Tasten_für die Tastenkombination mit der Tastatur in Ihrer APP.
 3.  Hören Sie sich an, wie die Sprachausgabe Elemente der Benutzeroberfläche vorliest, während Sie die App bedienen, und achten Sie auf Folgendes:
     * Achten Sie bei allen Steuerelementen darauf, dass die Sprachausgabe korrekt für alle sichtbaren Inhalte erfolgt. Stellen Sie zudem sicher, dass die Sprachausgabe jeweils den Namen, alle relevanten Zustände (aktiviert, ausgewählt usw.) und den Typ des Steuerelements (Schaltfläche, Kontrollkästchen, Listenelement usw.) vorliest.
     * Überprüfen Sie bei einem interaktiven Element, ob Sie dessen Aktion per Sprachausgabe aufrufen können, indem Sie _FESTSTELL+EINGABE_ drücken.
@@ -118,17 +118,17 @@ Verwenden Sie die Sprachausgabe, um die Qualität der Bildschirmtexterkennung f�
 
 Ab Windows 10, Version 1607, wurde in der Sprachausgabe ein neuer Entwicklermodus eingeführt. Aktivieren Sie den Entwicklermodus, wenn die Sprachausgabe bereits ausgeführt wird, indem Sie _FESTSTELL+UMSCHALT+F12_ drücken. Bei aktiviertem Entwicklermodus wird der Bildschirm maskiert, und es werden nur die zugänglichen Objekte und der dazugehörige Text hervorgehoben, der für die Sprachausgabe programmgesteuert verfügbar gemacht wird. So erhalten Sie eine gute visuelle Darstellung der Informationen, die für die Sprachausgabe verfügbar sind.
 
-**Gehen Sie folgendermaßen vor, um Ihre APP mit dem Fingerabdruck Modus zu testen:**
+**Gehen Sie wie folgt vor, um Ihre App mithilfe des Toucheingabemodus der Sprachausgabe zu testen:**
 
 > [!NOTE]
 > Die Sprachausgabe wechselt auf Geräten, die mehr als 4 Kontakte unterstützen, automatisch in den Toucheingabemodus. Die Sprachausgabe unterstützt keine Szenarien mit mehreren Monitoren oder Digitalisierungsgeräte mit Multitouch auf dem Hauptbildschirm.
 
 1.  Machen Sie sich mit der Benutzeroberfläche vertraut und nehmen Sie das Layout in Augenschein.
 
-    * **Navigieren Sie durch die Benutzeroberfläche, indem Sie eine Bewegung mit nur einem Finger schwenken.** Wischen Sie nach links oder rechts, um zwischen Elementen hin und her zu wechseln, und nach oben und unten, um die Kategorie der zu durchsuchenden Elemente zu ändern. Zu den Kategorien gehören alle Elemente, Links, Tabellen, Überschriften usw. Das Navigieren per Wischen mit einem Finger gestaltet sich so ähnlich wie das Navigieren mithilfe von _FESTSTELL+PFEILTASTE_.
-    * **Verwenden Sie Registerkarten Gesten, um durch Fokus verwendbare Elemente zu navigieren.** Wenn Sie mit drei Fingern nach rechts oder links wischen, hat dies denselben Effekt wie das Drücken von _TAB_ und _UMSCHALT+TAB_ auf einer Tastatur.
-    * **Untersuchen Sie die Benutzeroberfläche räumlich mit einem einzelnen Finger.** Führen Sie einen Finger nach oben und unten oder links und rechts, um sich von der Sprachausgabe die Elemente unter Ihrem Finger vorlesen zu lassen. Alternativ können Sie auch eine Maus dazu nutzen, da bei ihr dieselbe Zugriffstestlogik zum Einsatz kommt wie beim Ziehen Ihres Fingers.
-    * **Lassen Sie sich das ganze Fenster und alle Inhalte vorlesen, indem Sie mit drei Fingern nach oben wischen**. Diese Bewegung entspricht der Tastenkombination _FESTSTELL+W_.
+    * **Navigieren Sie per Wischbewegung mit einem Finger durch die Benutzeroberfläche.** Wischen Sie nach links oder rechts, um zwischen Elementen hin und her zu wechseln, und nach oben und unten, um die Kategorie der zu durchsuchenden Elemente zu ändern. Zu den Kategorien gehören alle Elemente, Links, Tabellen, Überschriften usw. Die Navigation mit Einzel Fingerbewegungen ähnelt der Navigation mit der FESTSTELL _Taste + Pfeil_.
+    * **Navigieren Sie mit Tippbewegungen durch Elemente, die den Fokus erhalten können.** Ein drei-Finger-Streifen nach rechts oder Links ist identisch mit der Navigation mit _Tab_ und _UMSCHALT + TAB_ auf einer Tastatur.
+    * **Überprüfen Sie die Benutzeroberfläche flächendeckend mit einem Finger.** Führen Sie einen Finger nach oben und unten oder links und rechts, um sich von der Sprachausgabe die Elemente unter Ihrem Finger vorlesen zu lassen. Alternativ können Sie auch eine Maus dazu nutzen, da bei ihr dieselbe Zugriffstestlogik zum Einsatz kommt wie beim Ziehen Ihres Fingers.
+    * **Lassen Sie sich das ganze Fenster und alle Inhalte vorlesen, indem Sie mit drei Fingern eine Wischbewegung nach oben durchführen**. Diese Bewegung entspricht der Tastenkombination _FESTSTELL+W_.
 
     Sollten wichtige Elemente der UI nicht erreichbar sein, liegt vielleicht ein Fehler bei der Barrierefreiheit vor.
 
@@ -159,8 +159,8 @@ Außerdem können Sie testen, ob in der Elementansicht der Benutzeroberflächena
 
 <span id="related_topics"/>
 
-## <a name="related-topics"></a>Verwandte Themen  
-* [Bedienungshilfen](accessibility.md)
+## <a name="related-topics"></a>Zugehörige Themen  
+* [Barrierefreiheit](accessibility.md)
 * [Nicht empfehlenswerte Methoden](practices-to-avoid.md)
 * [Benutzeroberflächenautomatisierung](https://docs.microsoft.com/windows/desktop/WinAuto/entry-uiauto-win32)
 * [Barrierefreiheit in Windows](https://www.microsoft.com/accessibility/)

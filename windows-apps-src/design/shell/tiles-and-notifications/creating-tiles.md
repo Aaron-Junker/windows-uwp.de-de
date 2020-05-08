@@ -1,32 +1,32 @@
 ---
-Description: Eine Kachel ist die Darstellung einer App im Startmenü. Jede App verfügt über eine Kachel. Wenn Sie ein neues App-Projekt für die Universelle Windows-Plattform (UWP) in Microsoft Visual Studio erstellen, enthält es eine Standardkachel, die den Namen und das Logo der App anzeigt.
-title: Kacheln
+Description: Eine Kachel ist die Darstellung einer App im Startmenü. Jede App verfügt über eine Kachel. Wenn Sie ein neues Windows-App-App-Projekt in Microsoft Visual Studio erstellen, enthält es eine Standard Kachel, die den Namen und das Logo Ihrer APP anzeigt.
+title: Kacheln für Windows-apps
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e46d73c91f54b1bb74a70990a238f13ccd47645d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0882ac67766bc2ce037133cf8a39b5393f616e13
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634435"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970995"
 ---
-# <a name="tiles-for-uwp-apps"></a>Kacheln für UWP-Apps
+# <a name="tiles-for-windows-apps"></a>Kacheln für Windows-apps
 
  
 
-Eine *Kachel* ist die Darstellung einer App im Menü „Start“. Jede App verfügt über eine Kachel. Wenn Sie ein neues App-Projekt für die Universelle Windows-Plattform (UWP) in Microsoft Visual Studio erstellen, enthält es eine Standardkachel, die den Namen und das Logo der App anzeigt. Windows zeigt diese Kachel bei der erstmaligen Installation Ihrer App an. Nachdem Ihre App installiert wurde, können Sie den Inhalt der Kachel mithilfe von Benachrichtigungen ändern. Sie können die Kachel zum Beispiel so ändern, dass dem Benutzer neue Informationen angezeigt werden, wie etwa neue Schlagzeilen oder der Betreff der letzten ungelesenen Nachricht.
+Eine *Kachel* ist eine APP-Darstellung im Startmenü. Jede App verfügt über eine Kachel. Wenn Sie ein neues Windows-App-App-Projekt in Microsoft Visual Studio erstellen, enthält es eine Standard Kachel, die den Namen und das Logo Ihrer APP anzeigt.Windows zeigt diese Kachel bei der erstmaligen Installation Ihrer App an. Nachdem Ihre App installiert wurde, können Sie den Inhalt der Kachel mithilfe von Benachrichtigungen ändern. Sie können die Kachel zum Beispiel so ändern, dass dem Benutzer neue Informationen angezeigt werden, wie etwa neue Schlagzeilen oder der Betreff der letzten ungelesenen Nachricht.
 
 ## <a name="configure-the-default-tile"></a>Konfigurieren der Standardkachel
 
 
 Wenn Sie ein neues Projekt in Visual Studio erstellen, wird eine einfache Standardkachel erstellt, die den Namen und das Logo Ihrer App anzeigt.
 
-Um die Kachel zu bearbeiten, doppelklicken Sie auf die Datei **Package.appxmanifest** in Ihrem Haupt-UWP-Projekt, öffnen Sie den Designer (oder klicken Sie mit der rechten Maustaste auf die Datei, und wählen Sie „Code anzeigen” aus).
+Zum Bearbeiten der Kachel Doppelklicken Sie auf die Datei " **Package. appxmanifest** " im Haupt-UWP-Projekt, um den Designer zu öffnen (oder klicken Sie mit der rechten Maustaste auf die Datei, und wählen Sie Code anzeigen
 
 ```XML
   <Applications>
@@ -47,21 +47,21 @@ Um die Kachel zu bearbeiten, doppelklicken Sie auf die Datei **Package.appxmanif
 
 Aktualisieren Sie die folgenden Elemente:
 
--   "DisplayName": Ersetzen Sie diesen Wert mit dem Namen, die auf der Kachel angezeigt werden soll.
--   Kurzname: Da es sich bei begrenzten Platz für Ihren Anzeigenamen auf Kacheln anpassen verfügbar ist, wird empfohlen, dass Sie auch einem Kurznamen angeben, um sicherzustellen, dass den Namen Ihrer app nicht abgeschnitten.
+-   DisplayName: Ersetzen Sie diesen Wert mit dem Namen, der auf der Kachel angezeigt werden soll.
+-   ShortName: Da der Platz für Ihren Anzeigenamen auf Kacheln begrenzt ist, empfehlen wir, auch einen ShortName (Kurznamen) anzugeben, um sicherzustellen, dass der Name Ihrer App nicht abgeschnitten wird.
 -   Logobilder:
 
-    Ersetzen Sie diese Bilder durch eigene. Sie können Bilder für verschiedene visuelle Skalierungen bereitstellen, Sie müssen aber nicht alle bereitstellen. Um sicherzustellen, dass die App auf vielen Geräten gut aussieht, wird empfohlen, skalierte Versionen der Bilder mit jeweils 100 %, 200 % und 400 % bereitzustellen. Weitere Informationen zum Erstellen dieser Ressourcen finden Sie unter [Ressourcen für Kacheln und Symbole](app-assets.md).
+    Ersetzen Sie diese Bilder durch eigene. Sie können Bilder für verschiedene visuelle Skalierungen bereitstellen, Sie müssen aber nicht alle bereitstellen. Um sicherzustellen, dass die App auf vielen Geräten gut aussieht, wird empfohlen, skalierte Versionen der Bilder mit jeweils 100 %, 200 % und 400 % bereitzustellen. Weitere Informationen zum Erstellen dieser Assets finden Sie unter [App-Symbole und-Logos](/windows/uwp/design/style/app-icons-and-logos) .
 
     Skalierte Bilder haben die folgende Benennungskonvention:
     
-    *&lt;Name des Images&gt;* Scale-*&lt;Skalierungsfaktor&gt;*. *&lt;image-Erweiterung&gt;* 
+    *&lt;&gt;* Bildname. Skalierungsfaktor. * &lt;&gt;* *Image Dateierweiterung&gt; &lt;* 
 
-    Zum Beispiel: SplashScreen.scale-100.png
+    Beispiel: SplashScreen. Scale-100. png
 
-    Wenn Sie auf das Bild verweisen, verweisen Sie auf *&lt;Bildname&gt;*.*&lt;Bilddateierweiterung&gt;* („SplashScreen.png“ in diesem Beispiel). Das System wählt aus den bereitgestellten Bildern automatisch das entsprechend skalierte Bild für das Gerät aus.
+    Wenn Sie auf das Image verweisen, verweisen Sie darauf als * &lt;Bildname&gt;*. *Image Dateierweiterung&gt; ("SplashScreen. png" in diesem Beispiel). &lt;* Das System wählt aus den bereitgestellten Bildern automatisch das entsprechend skalierte Bild für das Gerät aus.
 
--   Es wird ausdrücklich empfohlen, Logos für breite und große Kacheln bereitzustellen, damit der Benutzer die Größe der Kachel Ihrer App entsprechend anpassen kann. Erstellen Sie zum Bereitstellen dieser zusätzlichen Bilder ein **DefaultTile**-Element, und verwenden Sie die **Wide310x150Logo**- und **Square310x310Logo**-Attribute, um zusätzliche Bilder anzugeben:
+-   Es wird ausdrücklich empfohlen, Logos für breite und große Kacheln bereitzustellen, damit der Benutzer die Größe der Kachel Ihrer App entsprechend anpassen kann. Um diese zusätzlichen Images bereitzustellen, erstellen Sie ein **defaulttile** -Element, und verwenden Sie die Attribute **Wide310x150Logo** und **Square310x310Logo** , um die zusätzlichen Images anzugeben:
 ```    XML
   <Applications>
         <Application Id="App"
@@ -86,6 +86,6 @@ Aktualisieren Sie die folgenden Elemente:
 ## <a name="use-notifications-to-customize-your-tile"></a>Verwenden von Benachrichtigungen zum Anpassen der Kachel
 
 
-Nachdem Ihre App installiert wurde, können Sie die Kachel mit Benachrichtigungen anpassen. Dies kann entweder beim ersten Start der App oder als Reaktion auf ein Ereignis wie eine Pushbenachrichtigung geschehen.
+Nachdem Ihre App installiert wurde, können Sie die Kachel mit Benachrichtigungen anpassen. Dies ist möglich, wenn Ihre APP zum ersten Mal gestartet wird, oder als Reaktion auf ein Ereignis, z. b. eine Pushbenachrichtigung.
 
-Informationen über das Senden von Kachelbenachrichtigungen finden Sie unter [Senden einer lokalen Kachelbenachrichtigung ](sending-a-local-tile-notification.md).
+Informationen zum Senden von Kachel Benachrichtigungen finden Sie unter [Senden einer lokalen Kachel Benachrichtigung](sending-a-local-tile-notification.md).

@@ -1,88 +1,88 @@
 ---
-Description: Freigeben von Code für eine desktop-Anwendung und einer UWP-app
-title: Freigeben von Code für eine desktop-Anwendung und einer UWP-app
+Description: Teilen von Code zwischen einer Desktop-Anwendung und einer UWP-App
+title: Teilen von Code zwischen einer Desktop-Anwendung und einer UWP-App
 ms.date: 10/03/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 344ee7060edcee3376e271fc21e104490d8724d7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4c07a3bbff4b29d2b59ef7d6d8a5912ce3675a4e
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319712"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730355"
 ---
-# <a name="move-from-a-desktop-application-to-uwp"></a>Verschieben von einer Desktopanwendung für UWP
+# <a name="move-from-a-desktop-application-to-uwp"></a>Wechseln von einer Desktop Anwendung zu einer UWP
 
-Wenn Sie eine vorhandene desktop-Anwendung verfügen, die mithilfe von .NET Framework (einschließlich WPF und Windows Forms) erstellt wurde oder C++ Win32-APIs, gibt es mehrere Möglichkeiten zum Verschieben in die universelle Windows-Plattform (UWP) und Windows 10.
+Wenn Sie über eine vorhandene Desktop Anwendung verfügen, die mit dem .NET Framework (einschließlich WPF-und Windows Forms)-oder C++ Win32-APIs erstellt wurde, haben Sie mehrere Optionen für den Umstieg auf die universelle Windows-Plattform (UWP) und Windows 10.
 
-## <a name="package-your-desktop-application-in-an-msix-package"></a>Packen Sie die desktop-Anwendung in einem Paket MSIX
+## <a name="package-your-desktop-application-in-an-msix-package"></a>Verpacken der Desktop Anwendung in einem msix-Paket
 
-Sie können die desktop-Anwendung in einem Paket MSIX für den Zugriff auf viele weitere Features von Windows 10 verpacken. MSIX ist ein modernes Windows-App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps bereitgestellt wird, z. B. UWP-, WPF-, Windows Forms- und Win32-Apps. Durch das Verpacken Ihrer Windows-Desktop-Apps in MSIX-Paketen erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Sie können die Anwendung, ob Sie den Quellcode haben oder wenn nur eine vorhandene Installationsdatei (z. B. eine MSI- oder App-V-Installer) verpacken. Nachdem Sie Ihre Anwendung gepackt haben, können Sie die UWP-Features wie z. B. Paket Extensions und andere UWP-Komponenten integrieren.
+Sie können Ihre Desktop Anwendung in einem msix-Paket Verpacken, um Zugriff auf viele weitere Windows 10-Funktionen zu erhalten. MSIX ist ein modernes Windows-App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps bereitgestellt wird, z. B. UWP-, WPF-, Windows Forms- und Win32-Apps. Durch das Verpacken Ihrer Windows-Desktop-Apps in MSIX-Paketen erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Sie können Ihre Anwendung Verpacken, unabhängig davon, ob Sie über den Quellcode verfügen oder ob Sie nur über eine vorhandene Installationsdatei verfügen (z. b. einen MSI-oder App-V-Installer). Nachdem Sie die Anwendung Paketieren, können Sie UWP-Funktionen wie Paket Erweiterungen und andere UWP-Komponenten integrieren.
 
-Weitere Informationen finden Sie unter [Packen von desktop-Anwendungen (Desktop-Brücke)](/windows/msix/desktop/desktop-to-uwp-root) und [Features, die Paketidentität erfordern](/windows/apps/desktop/modernize/modernize-packaged-apps).
+Weitere Informationen finden Sie unter [Package Desktop Applications (Desktop Bridge)](/windows/msix/desktop/desktop-to-uwp-root) und [Features, die die Paket Identität erfordern](/windows/apps/desktop/modernize/modernize-packaged-apps).
 
-## <a name="use-uwp-apis"></a>Verwenden von UWP-APIs
+## <a name="use-windows-runtime-apis"></a>Verwenden von Windows-Runtime-APIs
 
-Sie können viele UWP-APIs direkt in Ihrer WPF-, Windows Forms- oder C++-Win32-Desktop-App aufrufen, um moderne Benutzeroberflächen für Windows 10-Benutzer zu integrieren. Sie können beispielsweise UWP-APIs aufrufen, um Ihrer Desktop-App Popupbenachrichtigungen hinzuzufügen.
+Sie können viele Windows-Runtime-APIs direkt in Ihrer WPF-, Windows Forms- oder C++-Win32-Desktop-App aufrufen, um moderne Benutzeroberflächen für Windows 10-Benutzer zu integrieren. Sie können beispielsweise Windows-Runtime-APIs aufrufen, um Ihrer Desktop-App Popupbenachrichtigungen hinzuzufügen.
 
-Weitere Informationen finden Sie unter [Use UWP APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) (Verwenden von UWP-APIs in Desktop-Apps).
+Weitere Informationen finden Sie unter [Verwenden von Windows-Runtime-APIs in Desktop-Apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
-## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>Migrieren von .NET Framework-app in einer UWP-app
+## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>Migrieren einer .NET Framework-APP zu einer UWP-App
 
-Wenn Ihre Anwendung auf .NET Framework ausgeführt wird, können Sie es zu einer UWP-app migrieren, durch die Nutzung von .NET Standard 2.0. Verschieben Sie soviel Code wie möglich in .NET Standard 2.0-Klassenbibliotheken, und klicken Sie dann erstellen Sie eine UWP-app, die von .NET Standard 2.0-Bibliotheken verweist. 
+Wenn die Anwendung auf dem .NET Framework ausgeführt wird, können Sie Sie zu einer UWP-App migrieren, indem Sie .NET Standard 2,0 nutzen. Verschieben Sie so viel Code wie möglich in .NET Standard 2,0-Klassenbibliotheken, und erstellen Sie dann eine UWP-APP, die auf Ihre .NET Standard 2,0-Bibliotheken verweist. 
 
-### <a name="share-code-in-a-net-standard-20-library"></a>Teilen von Code in Bibliotheken für .NET Standard 2.0
+### <a name="share-code-in-a-net-standard-20-library"></a>Freigeben von Code in einer .NET Standard 2,0-Bibliothek
 
-Wenn Ihre Anwendung auf .NET Framework ausgeführt wird, platzieren Sie möglichst viel Code, wie Sie Bibliotheken in .NET Standard 2.0 Klasse können. Solange Ihr Code-APIs verwendet, die standardmäßig definiert sind, können Sie diesen in einer UWP-App wiederverwenden. Es ist einfacher denn je, Code in den Bibliotheken für .NET Standard zu teilen, da viele andere APIs in .NET Standard 2.0 enthalten sind.
+Wenn die Anwendung auf dem .NET Framework ausgeführt wird, platzieren Sie so viel Code wie möglich in .NET Standard 2,0-Klassenbibliotheken. Solange Ihr Code APIs verwendet, die im Standard definiert sind, können Sie Sie in einer UWP-APP wieder verwenden. Es ist einfacher, Code in einer .NET Standard Bibliothek gemeinsam zu nutzen, da so viele weitere APIs in der .NET Standard 2,0 enthalten sind.
 
-Hier ist ein Video, das Sie mehr darüber informiert.
+Im folgenden finden Sie ein Video, das Sie darüber informiert.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
-#### <a name="add-net-standard-libraries"></a>Hinzufügen von Bibliotheken für .NET Standard
+#### <a name="add-net-standard-libraries"></a>.NET Standard Bibliotheken hinzufügen
 
-Fügen Sie der Lösung zunächst eine oder mehrere Klassenbibliotheken für .NET Standard 2.0 hinzu.  
+Fügen Sie der Projekt Mappe zunächst mindestens eine .NET Standard-Klassenbibliothek hinzu.  
 
-![Hinzufügen eines Dotnet-Standardprojekts](images/desktop-to-uwp/dot-net-standard-project-template.png)
+![DotNet-Standard Projekt hinzufügen](images/desktop-to-uwp/dot-net-standard-project-template.png)
 
-Die Anzahl der Bibliotheken, die Sie der Lösung hinzufügen, hängt davon ab, wie Sie Ihren Code organisieren möchten.
+Die Anzahl der Bibliotheken, die Sie Ihrer Projekt Mappe hinzufügen, hängt davon ab, wie Sie Ihren Code organisieren möchten.
 
-Stellen Sie sicher, dass jede Klassenbibliothek auf **.NET Standard 2.0** abzielt.
+Stellen Sie sicher, dass jede Klassenbibliothek auf den **.NET Standard 2,0**abzielt.
 
-![Festlegen von .NET Standard 2.0 als Ziel](images/desktop-to-uwp/target-standard-20.png)
+![Ziel .NET Standard 2,0](images/desktop-to-uwp/target-standard-20.png)
 
-Sie finden diese Einstellung auf den Eigenschaftenseiten des Klassenbibliotheksprojekts.
+Diese Einstellung finden Sie auf den Eigenschaften Seiten des Klassen Bibliotheks Projekts.
 
-Fügen Sie dem Desktopanwendungsprojekt einfach einen Verweis auf das Klassenbibliotheksprojekt hinzu.
+Fügen Sie in Ihrem Desktop Anwendungsprojekt einen Verweis auf das Klassen Bibliotheksprojekt hinzu.
 
-![Verweis auf die Klassenbibliothek](images/desktop-to-uwp/class-library-reference.png)
+![Klassen Bibliotheks Referenz](images/desktop-to-uwp/class-library-reference.png)
 
-Sie können anschließend mit den Tools bestimmen, welcher Teil des Codes dem Standard entspricht. Auf diese Weise können Sie vor dem Verschieben des Code in die Bibliothek entscheiden, welche Teile Sie wiederverwenden können, welche Teile minimal geändert werden müssen und welche Teile anwendungsspezifisch bleiben.
+Verwenden Sie als nächstes die Tools, um zu bestimmen, wie viel Code dem Standard entspricht. Auf diese Weise können Sie vor dem Verschieben von Code in die Bibliothek entscheiden, welche Teile Sie wieder verwenden können, welche Teile minimal geändert werden müssen und welche Teile anwendungsspezifisch bleiben.
 
-#### <a name="check-library-and-code-compatibility"></a>Überprüfen der Kompatibilität für die Bibliothek und den Code
+#### <a name="check-library-and-code-compatibility"></a>Überprüfen der Bibliothek-und Code Kompatibilität
 
-Wir beginnen mit NuGet-Paketen und anderen DLL-Dateien, die Sie von einem Drittanbieter erhalten haben.
+Wir beginnen mit nuget-Paketen und anderen DLL-Dateien, die Sie von einem Drittanbieter erhalten haben.
 
-Wenn Ihre Anwendung diese verwendet, bestimmen Sie, ob sie mit .NET Standard 2.0 kompatibel sind. Sie können dazu eine Visual Studio-Erweiterung oder ein Befehlszeilendienstprogramm verwenden.
+Wenn Sie von Ihrer Anwendung verwendet werden, stellen Sie fest, ob Sie mit dem .NET Standard 2,0 kompatibel sind. Hierfür können Sie eine Visual Studio-Erweiterung oder ein Befehlszeilen-Hilfsprogramm verwenden.
 
-Verwenden Sie die gleichen Tools, um Ihren Code zu analysieren. Laden Sie die Tools hier herunter ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)). Schauen Sie sich dieses Video an, um zu erfahren, wie Sie diese verwenden können.
+Verwenden Sie dieselben Tools, um Ihren Code zu analysieren. Laden Sie die Tools hier herunter ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)), und sehen Sie sich dieses Video an, um zu erfahren, wie Sie es verwenden.
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-Wenn Ihr Code nicht mit dem Standard kompatibel ist, ziehen Sie weitere Möglichkeiten in Betracht, um diesen Code zu implementieren. Öffnen Sie dazu den [.NET API-Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). Sie können diesen Browsers verwenden, um die APIs zu überprüfen, die in .NET Standard 2.0 verfügbar sind. Beschränken Sie die Liste unbedingt auf den .NET Standard 2.0.
+Wenn Ihr Code nicht mit dem Standard kompatibel ist, sollten Sie andere Möglichkeiten in Erwägung nehmen, den Code zu implementieren. Öffnen Sie zunächst den [.NET-API-Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). Sie können diesen Browser zum Überprüfen der APIs verwenden, die in der .NET Standard 2,0 verfügbar sind. Stellen Sie sicher, dass Sie den Bereich der Liste auf den .NET Standard 2,0 festlegen.
 
-![Dot-Net-Option](images/desktop-to-uwp/dot-net-option.png)
+![DotNet-Option](images/desktop-to-uwp/dot-net-option.png)
 
-Ein Teil Ihres Codes ist plattformspezifisch und muss in Ihrem Desktopanwendungsprojekt verbleiben.
+Ein Teil Ihres Codes ist plattformspezifisch und muss in Ihrem Desktop Anwendungsprojekt verbleiben.
 
-#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Beispiel: Migrieren von Datenzugriffscode in einer .NET Standard 2.0-Bibliothek
+#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>Beispiel: Migrieren von Datenzugriffs Code zu einer .NET Standard 2,0-Bibliothek
 
-Nehmen wir an, dass wir eine sehr einfache Windows Forms-Anwendung verfügen, die Kunden unsere Northwind-Beispieldatenbank anzeigt.
+Angenommen, wir verfügen über eine sehr einfache Windows Forms Anwendung, die Kunden aus der Beispieldatenbank Northwind zeigt.
 
 ![Windows Forms-App](images/desktop-to-uwp/win-forms-app.png)
 
-Das Projekt enthält eine Klassenbibliothek für .NET Standard 2.0 mit einer statischen Klasse namens **Northwind**. Wenn wir diesen Code in die **Northwind**-Klasse verschieben, wird er nicht kompiliert, da er die Klassen ``SQLConnection``, ``SqlCommand`` und ``SqlDataReader`` verwendet und diese Klassen in .NET Standard 2.0 nicht verfügbar sind.
+Das Projekt enthält eine .NET Standard 2,0-Klassenbibliothek mit einer statischen Klasse namens **Northwind**. Wenn Sie diesen Code in die **Northwind** -Klasse verschieben, wird er nicht kompiliert, da ``SQLConnection``er ``SqlCommand``die Klassen ``SqlDataReader`` , und verwendet, und die Klassen, die nicht im .NET Standard 2,0 verfügbar sind.
 
 ```csharp
 public static ArrayList GetCustomerNames()
@@ -112,9 +112,9 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-Wir können jedoch den [.NET API-Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) verwenden, um eine Alternative zu finden. Die Klassen ``DbConnection``, ``DbCommand``, und ``DbDataReader`` sind alle in .NET Standard 2.0 verfügbar, sodass wir diese stattdessen verwenden können.  
+Mit dem .net- [API-Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) können Sie jedoch eine Alternative suchen. Die ``DbConnection``Klassen ``DbCommand``, und ``DbDataReader`` sind alle im .NET Standard 2,0 verfügbar, damit wir Sie stattdessen verwenden können.  
 
-Die überarbeitete Version verwendet diese Klassen, um eine Liste der Kunden zu erhalten. Zum Erstellen einer ``DbConnection``-Klasse müssen wir allerdings ein Factoryobjekt übergeben, das wir in der Clientanwendung erstellen.
+Diese überarbeitete Version verwendet diese Klassen, um eine Kundenliste zu erhalten. zum Erstellen ``DbConnection`` einer Klasse müssen wir jedoch ein Factoryobjekt übergeben, das in der Client Anwendung erstellt wird.
 
 ```csharp
 public static ArrayList GetCustomerNames(DbProviderFactory factory)
@@ -145,7 +145,7 @@ public static ArrayList GetCustomerNames(DbProviderFactory factory)
 }
 ```  
 
-In der CodeBehind-Seite von Windows Form können wir einfach eine Factoryinstanz erstellen und Sie diese an unsere Methode übergeben.
+Auf der Code Behind-Seite des Windows-Formulars können Sie einfach eine factoryinstanz erstellen und Sie an unsere Methode übergeben.
 
 ```csharp
 public partial class Customers : Form
@@ -166,31 +166,31 @@ public partial class Customers : Form
 }
 ```
 
-### <a name="create-a-uwp-app"></a>Erstellen einer UWP-app
+### <a name="create-a-uwp-app"></a>Erstellen einer UWP-App
 
-Jetzt können Sie der Lösung eine UWP-App hinzuzufügen.
+Nun können Sie Ihrer Projekt Mappe eine UWP-app hinzufügen.
 
-![Abbildung der Desktop-zu-UWP-Brücke](images/desktop-to-uwp/adaptive-ui.png)
+![Bild für Desktop-zu-UWP-Bridge](images/desktop-to-uwp/adaptive-ui.png)
 
-Sie müssen allerdings noch die Seiten der Benutzeroberfläche in XAML erstellen und den für jedes Gerät oder jede Plattform spezifischen Code schreiben. Wenn Sie damit fertig sind, können Sie den gesamten Umfang der Windows 10-Geräte erreichen und Ihre App-Seiten werden modern dargestellt und eignen sich so gut für unterschiedliche Bildschirmgrößen und -Auflösungen.
+Sie müssen weiterhin UI-Seiten in XAML entwerfen und jeden Geräte-oder plattformspezifischen Code schreiben, aber wenn Sie dies erledigt haben, können Sie die gesamte Breite von Windows 10-Geräten erreichen, und Ihre APP-Seiten haben ein modernes Gefühl, das sich gut an verschiedene Bildschirmgrößen und Auflösungen anpasst.
 
-Ihre App reagiert auf andere Eingabemechanismen als nur Tastatur und Maus, und die Funktionen und Einstellungen sind auf allen Geräten intuitiv. Dies bedeutet, dass Benutzer lernen, Aufgaben nur einmal durchzuführen. Dies funktioniert in vertrauter Art und Weise und ist vom Gerät unabhängig.
+Ihre APP antwortet auf andere Eingabe Mechanismen als nur auf Tastatur und Maus, und Features und Einstellungen werden Geräte übergreifend intuitiv. Dies bedeutet, dass Benutzer sich ein Mal mit der Vorgehensweise vertraut machen, und dann funktioniert Sie in einer sehr vertrauten Weise, unabhängig vom Gerät.
 
-Dies sind nur einige Beispiele für die interessanten Funktionen, die in der UWP enthalten sind. Weitere Informationen finden Sie unter [Erstellen Sie mit Windows herausragende Umgebungen](https://developer.microsoft.com/windows/why-build-for-uwp).
+Dies sind nur einige der in UWP enthaltenen Leckereien. Weitere Informationen finden Sie unter [Erstellen von hervor artigen Erfahrungen mit Windows](https://developer.microsoft.com/windows/why-build-for-uwp).
 
 #### <a name="add-a-uwp-project"></a>Hinzufügen eines UWP-Projekts
 
-Fügen Sie Ihrer Lösung zunächst ein UWP-Projekt hinzu.
+Fügen Sie der Projekt Mappe zunächst ein UWP-Projekt hinzu.
 
 ![UWP-Projekt](images/desktop-to-uwp/new-uwp-app.png)
 
-Fügen Sie dann vom UWP-Projekt einen Verweis auf das Projekt der Bibliothek für .NET Standard 2.0 hinzu.
+Fügen Sie dann im UWP-Projekt einen Verweis auf das .NET Standard 2,0-Bibliotheksprojekt hinzu.
 
-![Verweis auf die Klassenbibliothek](images/desktop-to-uwp/class-library-reference2.png)
+![Klassen Bibliotheks Referenz](images/desktop-to-uwp/class-library-reference2.png)
 
-#### <a name="build-your-pages"></a>Erstellen der Seiten
+#### <a name="build-your-pages"></a>Erstellen Ihrer Seiten
 
-Fügen Sie XAML-Seiten hinzu, und rufen Sie den Code in der Bibliothek für .NET Standard 2.0 auf.
+Fügen Sie XAML-Seiten hinzu, und nennen Sie den Code in Ihrer .NET Standard 2,0-Bibliothek.
 
 ![UWP-App](images/desktop-to-uwp/uwp-app.png)
 
@@ -216,38 +216,38 @@ public sealed partial class MainPage : Page
 }
 ```
 
-Erste Schritte mit UWP finden Sie unter [Was ist eine UWP-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+Informationen zu den ersten Schritten mit UWP finden Sie unter [Was ist eine UWP-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
-### <a name="reach-ios-and-android-devices"></a>Erreichen von iOS- und Android-Geräten
+### <a name="reach-ios-and-android-devices"></a>Erreichen von IOS-und Android-Geräten
 
-Durch das Hinzufügen von Xamarin-Projekten können Sie Android und iOS-Geräten erreichen.  
+Sie können Android-und IOS-Geräte erreichen, indem Sie xamarin-Projekte hinzufügen.  
 
 ![Xamarin-Apps](images/desktop-to-uwp/xamarin-apps.png)
 
-Diese Projekte ermöglichen die Verwendung von C# zur Entwicklung von Android- und iOS-Apps mit Vollzugriff auf plattformspezifische und gerätespezifische APIs. Diese Apps nutzen die plattformspezifische Hardwarebeschleunigung und wurden für die native Leistung kompiliert.
+Mit diesen Projekten können Sie c# verwenden, um Android-und IOS-apps mit Vollzugriff auf plattformspezifische und gerätespezifische APIs zu erstellen. Diese Apps nutzen die plattformspezifische Hardwarebeschleunigung und werden für die native Leistung kompiliert.
 
-Sie haben Zugriff auf das gesamte Spektrum der Funktionen, die von der zugrunde liegenden Plattform und dem Gerät verfügbar gemacht wurden, einschließlich der Plattformfunktionen wie iBeacons und Android Fragments. Sie verwenden standardmäßig native Steuerelemente der Benutzeroberfläche, um Benutzeroberflächen zu erstellen, die dem gewünschten Erscheinungsbild der Benutzer entsprechen.
+Sie haben Zugriff auf das gesamte Spektrum an Funktionen, die von der zugrunde liegenden Plattform und dem Gerät verfügbar gemacht werden, einschließlich plattformspezifischer Funktionen wie ibeacons und Android-Fragmente, und Sie verwenden standardmäßige Native Benutzeroberflächen-Steuerelemente, um Benutzeroberflächen zu erstellen, die die Benutzer erwarten, die Sie erwarten.
 
-Genau wie bei UWPs sind die Kosten für das Hinzufügen einer Android- oder iOS-App niedriger, da Sie die Geschäftslogik in einer Klassenbibliothek für .NET Standard 2.0 wiederverwenden können. Sie müssen allerdings noch die Seiten der Benutzeroberfläche in XAML erstellen und den für jedes Gerät oder jede Plattform spezifischen Code schreiben.
+Ebenso wie uwps sind die Kosten für das Hinzufügen einer Android-oder IOS-App geringer, da Sie die Geschäftslogik in einer .NET Standard 2,0-Klassenbibliothek wieder verwenden können. Sie müssen ihre UI-Seiten in XAML entwerfen und jeden Geräte-oder plattformspezifischen Code schreiben.
 
-#### <a name="add-a-xamarin-project"></a>Hinzufügen eines Xamarin-Projekts
+#### <a name="add-a-xamarin-project"></a>Xamarin-Projekt hinzufügen
 
-Fügen Sie zuerst der Lösung ein **Android**-, **iOS**- oder **plattformübergreifendes** hinzu.
+Fügen Sie Ihrer Projekt Mappe zunächst ein **Android**-, **IOS**-oder Platt **Form übergreifendes** Projekt hinzu.
 
-Sie finden diese Vorlagen im Dialogfeld **Neues Projekt hinzufügen** in der **Visual C#-** -Gruppe.
+Diese Vorlagen finden Sie im Dialogfeld **Neues Projekt hinzufügen** unter der Gruppe **Visual c#** .
 
 ![Xamarin-Apps](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Plattformübergreifende Projekte sind ideal für Apps mit wenigen plattformspezifischen Funktionen. Sie können diese zur Entwicklung einer nativen XAML-basierten Benutzeroberfläche verwenden, die unter iOS, Android und Windows ausgeführt wird. Weitere Informationen finden Sie [hier](https://docs.microsoft.com/xamarin/xamarin-forms/).
+>Plattformübergreifende Projekte eignen sich hervorragend für apps mit wenig plattformspezifischer Funktionalität. Sie können Sie verwenden, um eine native XAML-basierte Benutzeroberfläche zu erstellen, die unter IOS, Android und Windows ausgeführt wird. [Hier](https://docs.microsoft.com/xamarin/xamarin-forms/)erhalten Sie weitere Informationen.
 
-Fügen Sie anschließen von Ihrem Android-, iOS- oder plattformübergreifenden Projekt einen Verweis auf das Klassenbibliotheksprojekt hinzu.
+Fügen Sie dann in Ihrem Android-, IOS-oder plattformübergreifenden Projekt einen Verweis auf das Klassen Bibliotheksprojekt hinzu.
 
-![Verweis auf die Klassenbibliothek](images/desktop-to-uwp/class-library-reference3.png)
+![Klassen Bibliotheks Referenz](images/desktop-to-uwp/class-library-reference3.png)
 
-#### <a name="build-your-pages"></a>Erstellen der Seiten
+#### <a name="build-your-pages"></a>Erstellen Ihrer Seiten
 
-Unser Beispiel zeigt eine Liste der Kunden in einer Android-App.
+In unserem Beispiel wird eine Liste von Kunden in einer Android-App angezeigt.
 
 ![Android-App](images/desktop-to-uwp/android-app.png)
 
@@ -278,14 +278,14 @@ public class MainActivity : ListActivity
 }
 ```
 
-Informationen zu den ersten Schritten mit Android-, iOS- und plattformübergreifenden Projekten finden Sie im [Xamarin-Entwicklerportal](https://docs.microsoft.com/xamarin).
+Informationen zu den ersten Schritten mit Android-, IOS-und plattformübergreifenden Projekten finden Sie im [xamarin-Entwickler Portal](https://docs.microsoft.com/xamarin).
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Hier finden Sie Antworten auf Ihre Fragen**
+**Antworten auf Ihre Fragen**
 
-Haben Sie Fragen? Fragen Sie uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Fragen Sie uns [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).
+Haben Sie Fragen? Fragen Sie uns Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Sie können uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)Fragen.
 
-**Geben Sie Feedback oder Vorschläge für Features**
+**Feedback geben oder Funktions Vorschläge machen**
 
-Weitere Informationen finden Sie unter [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
+Siehe [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).

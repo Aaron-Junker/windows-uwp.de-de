@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c59982c174909a3fb8ab0b21d5dd792969cfeebc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d2b6ba88587f4f536d4fe6fc2750a520166fde18
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259476"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606349"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Behandeln einer abgebrochenen Hintergrundaufgabe
 
 **Wichtige APIs**
 
--   [**Backgroundtaskcanceleabventhandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
--   [**Ibackgroundtaskinstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
--   [**ApplicationData. Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
+-   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
+-   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
+-   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
 
 Hier erfahren Sie, wie Sie eine Hintergrundaufgabe erstellen, die mithilfe des beständigen Speichers Abbruchanforderungen erkennt, die Ausführung beendet und den Abbruch an die App meldet.
 
@@ -38,7 +38,7 @@ Schreiben Sie eine Methode für die Behandlung des Abbruchereignisses.
 > [!NOTE]
 > Für alle Gerätefamilien mit Ausnahme von Desktops können Hintergrundaufgaben beendet werden, wenn der Arbeitsspeicher des Geräts knapp wird. Wenn keine Ausnahme wegen ungenügenden Arbeitsspeichers auftritt oder die APP Sie nicht verarbeitet, wird die Hintergrundaufgabe ohne Warnung und ohne das onabgeb Rochen-Ereignis beendet. Dadurch soll die Benutzerfreundlichkeit der App im Vordergrund sichergestellt werden. Entwerfen Sie die Hintergrundaufgabe so, dass dieses Szenario behandelt werden kann.
 
-Eine **OnCanceled**-Methode erstellen Sie wie folgt. Diese Methode ist der Einstiegspunkt, der von der Windows-Runtime aufgerufen wird, wenn eine Abbruchanforderung für die Hintergrundaufgabe erfolgt.
+Erstellen Sie eine Methode mit dem Namen **onabgeb Rochen** wie folgt. Diese Methode ist der Einstiegspunkt, der von der Windows-Runtime aufgerufen wird, wenn eine Abbruchanforderung für die Hintergrundaufgabe erfolgt.
 
 ```csharp
 private void OnCanceled(
@@ -67,7 +67,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-Fügen Sie der Hintergrundaufgaben Klasse eine Flag-Variable mit dem Namen **\_cancelangeforderten** hinzu. Diese Variable wird verwendet, um anzuzeigen, ob eine Abbruchanforderung erfolgt ist.
+Fügen Sie der Background-Aufgaben Klasse eine Flag-Variable namens ** \_cancelangeforderten** hinzu. Diese Variable wird verwendet, um anzuzeigen, ob eine Abbruchanforderung erfolgt ist.
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-Legen Sie in der **OnCancel-** Methode, die Sie in Schritt 1 erstellt haben, die Flag-Variable **\_cancelangeforderten** auf **true**fest.
+Legen Sie in der **OnCancel-** Methode, die Sie in Schritt 1 erstellt haben, die Flag-Variable ** \_cancelangeforderten** auf **true**fest.
 
-Die vollständige [Hintergrundaufgaben-Beispiel]( https://go.microsoft.com/fwlink/p/?linkid=227509) Methode " **onabgeb Rochen** " **\_** für " **true** " abgebrochen und schreibt eine potenziell nützliche Debugausgabe.
+Die vollständige [Hintergrundaufgaben-Beispiel]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) Methode " ** \_OnCancel"** wird auf " **true** " festgelegt und schreibt eine potenziell nützliche Debugausgabe. **OnCanceled**
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -131,9 +131,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>Behandeln des Abbruchs durch Beenden der Hintergrundaufgabe
 
-Wenn eine Abbruch Anforderung empfangen wird, muss Ihre Methode, die Hintergrundarbeit durchführt, die Arbeit beenden und den Vorgang beenden, indem Sie erkennt, wenn **\_cancelangeforderten** auf **true**festgelegt ist. Für Prozess interne Hintergrundaufgaben bedeutet dies, dass von der **onbackgroundaktivierten** -Methode zurückgegeben wird. Für Out-of-Process-Hintergrundaufgaben bedeutet dies, dass von der **Run** -Methode zurückgegeben wird.
+Wenn eine Abbruch Anforderung empfangen wird, muss Ihre Methode, die Hintergrundarbeit durchführt, die Arbeit beenden und den Vorgang beenden, indem Sie erkennt, wenn ** \_cancelangeforderten** auf **true**festgelegt ist. Für Prozess interne Hintergrundaufgaben bedeutet dies, dass von der **onbackgroundaktivierten** -Methode zurückgegeben wird. Für Out-of-Process-Hintergrundaufgaben bedeutet dies, dass von der **Run** -Methode zurückgegeben wird.
 
-Ändern Sie den Code der Hintergrundaufgabenklasse, um die Kennzeichenvariable zu überprüfen, während die Hintergrundaufgabe ausgeführt wird. Wenn **\_cancelangeforderten** auf true festgelegt wird, wird die Fortsetzung der Arbeit beendet.
+Ändern Sie den Code der Hintergrundaufgabenklasse, um die Kennzeichenvariable zu überprüfen, während die Hintergrundaufgabe ausgeführt wird. Wenn ** \_cancelangeforderten** auf true festgelegt wird, können Sie die Arbeit nicht fortsetzen.
 
 Das [Beispiel für eine Hintergrundaufgabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) schließt eine Prüfung ein, die den periodischen Zeit Geber Rückruf stoppt, wenn der Hintergrund Task abgebrochen wird.
 
@@ -400,9 +400,9 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-- [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb des Prozesses](create-and-register-an-inproc-background-task.md)
+- [Erstellen und registrieren Sie eine Prozess interne Hintergrundaufgabe](create-and-register-an-inproc-background-task.md).
 - [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
 - [Deklarieren von Hintergrundaufgaben im Anwendungsmanifest](declare-background-tasks-in-the-application-manifest.md)
 - [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
