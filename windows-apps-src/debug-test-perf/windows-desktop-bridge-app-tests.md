@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, App-Zertifizierung
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 37c382fb81a4527b730840142643ff72b9020127
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089406"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730296"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Tests für Windows Desktop Bridge-Apps
 
@@ -37,7 +37,7 @@ Digital signierte Dateien werden immer empfohlen. Weitere Informationen findest 
 Dieser Test überprüft die Registrierung des Pakets auf registrierte Dateizuordnungsverben. 
 
 **Testdetails**  
-Konvertierte Desktopanwendungen können um eine große Palette von UWP-APIs (Universelle Windows-Plattform) erweitert werden. Dieser Test überprüft, dass die UWP-Binärdateien in der App keine Nicht-UWP-APIs aufrufen. In UWP-Binärdateien ist das Flag **AppContainer** festgelegt.
+Konvertierte Desktopanwendungen können um eine große Palette von Windows-Runtime-APIs erweitert werden. Dieser Test überprüft, dass die UWP-Binärdateien in der App keine Nicht-Windows-Runtime-APIs aufrufen. In UWP-Binärdateien ist das Flag **AppContainer** festgelegt.
 
 **Korrekturmaßnahmen**  
 Siehe [Desktop-zu-UWP-Brücke: App-Erweiterungen](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) findest du eine Erläuterung dieser Erweiterungen und ihrer ordnungsgemäßen Verwendung. 

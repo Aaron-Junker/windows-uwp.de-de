@@ -1,6 +1,6 @@
 ---
 Description: Gut gestaltete Bewegungen lassen Apps lebhaft und realistisch erscheinen. Helfen Sie Benutzern dabei, Kontextänderungen zu verstehen, und verbinden Sie Interaktionen mit visuellen Übergängen.
-title: Bewegung und Animation in UWP-Apps
+title: Bewegung für Windows-Apps
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
@@ -12,14 +12,14 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 49fc31729bc8f195bacf1d743c570aa5293b33de
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867404"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970335"
 ---
-# <a name="motion-for-uwp-apps"></a>Bewegung für UWP-Apps
+# <a name="motion-for-windows-apps"></a>Bewegung für Windows-Apps
 
 ![Bewegungssymbol](../images/motion-2x.png)
 

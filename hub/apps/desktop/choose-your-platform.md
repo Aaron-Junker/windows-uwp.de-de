@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: bf8a5970d1999427023592f919ef0b92737fa934
-ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
+ms.openlocfilehash: 906126c14dd32a9c0196d53deab5bc36c07f4bef
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79510983"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729846"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -31,6 +31,8 @@ Mit all diesen Anwendungsplattformen können Sie Desktop-Apps wie Word, Excel un
 * **WPF und Windows Forms**. Diese Plattformen bieten ein gemeinsames Typensystem, APIs und Anwendungsmodell für verwaltete Anwendungen unter .NET.
 
 * **Win32 API**. Die Win32-API (auch als Windows-API bezeichnet) ist die ursprüngliche Plattform für native C/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Dadurch ist die Win32-API die Plattform der Wahl für Anwendungen, die das höchste Maß an Leistung und den direkten Zugriff auf die Systemhardware benötigen.
+
+Unter Windows 10 unterstützen alle diese Plattformen die Verwendung der [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui) zum Erstellen ihrer Benutzeroberflächen. WinUI bietet eine Reihe moderner Steuerelemente, einschließlich erweiterter Versionen vorhandener XAML-Steuerelemente und völlig neuer Steuerelemente. WinUI unterstützt auch frühere Versionen von Windows 10, um die Verfügbarkeit zu maximieren.
 
 Sowohl UWP als auch .NET sind eng in Visual Studio integriert. Dies bietet zahlreiche Vorteile, insbesondere in den Bereichen Entwicklerproduktivität, komplexer und anpassbarer Benutzeroberflächen und Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
 
@@ -110,7 +112,7 @@ In der folgenden Tabelle werden die verschiedenen Merkmale von Windows Forms, WP
 | **Open Source** | [Ja (nur Windows-Benutzeroberflächenbibliothek)](https://github.com/Microsoft/microsoft-ui-xaml)  |  [Ja (nur .NET Core)](https://github.com/dotnet/wpf) | [Ja (nur .NET Core)](https://github.com/dotnet/winforms)  |
 | **Unterstützt XAML** |   Ja   |  Ja  |   Nein   |
 | **Stärken**  |  <ul><li>XAML-Markupdateien für Benutzeroberfläche</li><li>Umfassende und anpassbare Benutzeroberfläche</li><li>Ihre vorhandenen Codebasen sind kompatibel mit .NET Standard.</li><li>Unterstützung hoher DPI-Werte</li><li>Unterstützung für mehrere Eingabetypen auf Windows-Geräten (einschließlich Toucheingabe, Stift, Gamepad, Maus und Tastatur)</li><li>Unterstützung für Xbox, HoloLens, das Internet der Dinge (IoT) oder Surface Hub</li><li>Optionale dichte (kompakte) Benutzeroberfläche</li><li>Unterstützung für natives C++</li><li>Optimierte Akkulebensdauer</li><li>Unterstützung moderner Barrierefreiheit (z.B. Bildschirmsprachausgaben)</li><li>Umfassende Textdatenfunktionen (z.B. integrierte Rechtschreibprüfung)</li><li>Unterstützung für Freihandeingaben</li><li>Sichere Ausführung über Anwendungscontainer (nicht vertrauenswürdiger Inhalt z.B. über Sandbox)</li></ul>  |  <ul><li>XAML-Markupdateien für Benutzeroberfläche</li><li>Umfassende und anpassbare Benutzeroberfläche</li><li>Große Sammlung von Steuerelementen von Microsoft und Partnern</li><li>Dichte Benutzeroberfläche</li><li>Unterstützung für Windows 7</li><li>Plattformunterstützung für die Eingabevalidierung</li></ul> | <ul><li>Schnelle Anwendungsentwicklung</li><li>WYSIWYG-Editor zum Entwickeln der Benutzeroberfläche</li><li>Große Sammlung von Steuerelementen von Microsoft und Partnern</li><li>Dichte Benutzeroberfläche</li><li>Unterstützung für Windows 7</li><li>Tastatur- und Mauseingaben</li></ul>          |
-| **Szenarien mit eingeschränkter Unterstützung** |  <ul><li>Unterstützung mehrerer Fenster<sup>1</sup></li><li>Plattformunterstützung für die Eingabevalidierung<sup>1</sup></li><li>Windows 7 wird nicht unterstützt</li><li>Einige UWP-APIs erfordern bestimmte Mindestversionen von Windows 10</li><li>Vollständige Plattformunterstützung und Shellintegration (UWP bietet z.B. derzeit keine Unterstützung für die Integration von Systemleisten oder Vollzugriff auf alle Geräte)</li><li>Direkter Zugriff auf alle Dateien auf dem Datenträger</li><li>ADO.NET</li><li>Vorhandene Codebasis-Klassenbibliotheken, die APIs verwenden, die nicht dem .NET-Standard entsprechen oder nicht mit dem Zertifizierungskit für Windows-Apps kompatibel sind</li><li>Unterstützung für das lokale Netzwerkloopback (d.h., wenn Ihre App mit localhost kommunizieren muss, ohne auf dem Zielgerät eine Loopbackausnahme zu erstellen)</li><li>Intensive Datei-E/A</li></ul>     |  <ul><li>Unterstützung hoher DPI-Werte<sup>2</sup></li><li>Toucheingabe<sup>2</sup></li></ul>  |  <ul><li>Unterstützung hoher DPI-Werte<sup>2</sup></li><li>Toucheingabe<sup>2</sup></li><li>Anpassbare Benutzeroberfläche</li><li>Umfassende Grafiken und Benutzeroberflächen (z.B. Toucheingabe und Animationen)</li><li>Umfassende Abstraktion von Sichten und Datenmodellen</li></ul>    |   |
+| **Szenarien mit eingeschränkter Unterstützung** |  <ul><li>Unterstützung mehrerer Fenster<sup>1</sup></li><li>Plattformunterstützung für die Eingabevalidierung<sup>1</sup></li><li>Windows 7 wird nicht unterstützt</li><li>Einige Windows-Runtime-APIs erfordern bestimmte Mindestversionen von Windows 10</li><li>Vollständige Plattformunterstützung und Shellintegration (UWP bietet z.B. derzeit keine Unterstützung für die Integration von Systemleisten oder Vollzugriff auf alle Geräte)</li><li>Direkter Zugriff auf alle Dateien auf dem Datenträger</li><li>ADO.NET</li><li>Vorhandene Codebasis-Klassenbibliotheken, die APIs verwenden, die nicht dem .NET-Standard entsprechen oder nicht mit dem Zertifizierungskit für Windows-Apps kompatibel sind</li><li>Unterstützung für das lokale Netzwerkloopback (d.h., wenn Ihre App mit localhost kommunizieren muss, ohne auf dem Zielgerät eine Loopbackausnahme zu erstellen)</li><li>Intensive Datei-E/A</li></ul>     |  <ul><li>Unterstützung hoher DPI-Werte<sup>2</sup></li><li>Toucheingabe<sup>2</sup></li></ul>  |  <ul><li>Unterstützung hoher DPI-Werte<sup>2</sup></li><li>Toucheingabe<sup>2</sup></li><li>Anpassbare Benutzeroberfläche</li><li>Umfassende Grafiken und Benutzeroberflächen (z.B. Toucheingabe und Animationen)</li><li>Umfassende Abstraktion von Sichten und Datenmodellen</li></ul>    |   |
 
 <sup>1</sup> Wir haben Features in einer zukünftigen Version von Windows 10 öffentlich angekündigt, die diesem Szenario gerecht werden.
 

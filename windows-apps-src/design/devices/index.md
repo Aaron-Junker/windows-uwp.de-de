@@ -1,6 +1,6 @@
 ---
-Description: Wenn Sie sich mit den Geräten vertraut machen, die UWP-Apps (Universelle Windows-Plattform) unterstützen, können Sie für jeden Formfaktor die bestmögliche Benutzerfreundlichkeit bieten.
-title: Überlegungen zur Benutzeroberfläche für UWP-Geräte
+Description: Wenn Sie sich mit den Geräten vertraut machen, die Windows-Apps unterstützen, können Sie für jeden Formfaktor eine optimale Benutzerumgebung bereitstellen.
+title: Überlegungen zur Benutzeroberfläche für Windows-Geräte
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,18 +8,18 @@ keywords: Gerät, Eingabe, Interaktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 121025dc5e87e7e3953b9517144e36ab382795bb
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258113"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968206"
 ---
-#  <a name="ui-considerations-for-uwp-devices"></a>Überlegungen zur Benutzeroberfläche für UWP-Geräte
+#  <a name="ui-considerations-for-windows-devices"></a>Überlegungen zur Benutzeroberfläche für Windows-Geräte
 
-![-Geräte zu unterstützen](../images/devices-2x.png)
+![Geräte](../images/devices-2x.png)
 
-Wenn Sie sich mit den Geräten vertraut machen, die UWP-Apps (Universelle Windows-Plattform) unterstützen, können Sie für jeden Formfaktor die bestmögliche Benutzerfreundlichkeit bieten.
+Wenn Sie sich mit den Geräten vertraut machen, die Windows-Apps unterstützen, können Sie für jeden Formfaktor eine optimale Benutzerumgebung bereitstellen.
 
 ![Windows-Geräte](images/device-primer/device-primer-ramp.png)
 
@@ -96,7 +96,7 @@ Typische Gerätefunktionen
 
 Die Erfahrung, die Sie machen, wenn Sie auf dem Sofa sitzen und mittels eines Gamepads oder einer Fernbedienung mit Ihrem Fernsehgerät interagieren, wird als **3-Meter-Erfahrung** (10-Fuß-Erfahrung) bezeichnet. Der Name kommt daher, dass sich der Benutzer im Allgemeinen ungefähr 3 Meter (10 Fuß) vom Bildschirm entfernt befindet. Dies stellt eine besondere Herausforderung dar, die beispielsweise bei einer *50-cm-Erfahrung* (2-Fuß-Erfahrung) oder bei der Interaktion mit einem PC nicht vorhanden ist. Wenn Sie eine App für Xbox One oder ein anderes Gerät entwickeln, das an einen Fernsehbildschirm angeschlossen ist und unter Umständen ein Gamepad oder Fernbedienung für die Eingabe verwendet, sollten Sie dies stets bedenken.
 
-Die Schritte beim Entwickeln einer UWP-App für die 3-Meter-Erfahrung unterscheiden sich stark von der Entwicklung für eine der hier aufgeführten Gerätekategorien. Weitere Informationen finden Sie unter [Entwerfen für Xbox und Fernsehgeräte](designing-for-tv.md).
+Die Schritte beim Entwickeln einer Windows-App für die 10-Meter-Erfahrung unterscheiden sich stark von der Entwicklung für eine der hier aufgeführten Gerätekategorien. Weitere Informationen finden Sie unter [Entwerfen für Xbox und Fernsehgeräte](designing-for-tv.md).
 
 Bildschirmgrößen
 - 24 Zoll und größer
