@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 279a02962693d74c8c9ac037c0e3ee08f44a560b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684125"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969096"
 ---
 # <a name="tutorial-create-custom-styles"></a>Tutorial: Erstellen benutzerdefinierter Stile
 
@@ -32,7 +32,7 @@ Die PhotoLab-App besteht aus zwei Hauptseiten:
 
 ## <a name="part-1-create-a-fancy-slider-control"></a>Teil 1: Erstellen eines schicken Schiebereglers  
 
-Die universelle Windows-Plattform (UWP) bietet eine Reihe von Möglichkeiten, mit denen du die Darstellung deiner App anpassen kannst – von Schriftarten über Typografieeinstellungen bis hin zu Farben, Farbverläufen und Weichzeichnereffekten. 
+Die Windows-App bietet eine Reihe von Möglichkeiten, mit denen du die Darstellung deiner App anpassen kannst – von Schriftarten über Typografieeinstellungen bis hin zu Farben, Farbverläufen und Weichzeichnereffekten. 
 
 Im ersten Teil des Tutorials peppen wir einige unserer Steuerelemente für die Fotobearbeitung auf. 
 

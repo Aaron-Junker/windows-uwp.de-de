@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80696632"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968455"
 ---
 # <a name="acrylic-material"></a>Acryl-Material
 
@@ -36,7 +36,7 @@ Acryl im dunklen Design ![Acryl im dunklen Design](images/Acrylic_DarkTheme_Base
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Acryl und das Fluent Design-System
 
- Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Acryl ist eine Komponente des Fluent Design-Systems, die Ihrer App physische Struktur (Material) und Tiefe hinzufügt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design für UWP](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System erstellen Sie moderne Oberflächen, die Licht, Tiefe, Bewegung, Material und Skalierungsmöglichkeiten beinhalten. Acryl ist eine Komponente des Fluent Design-Systems, die Ihrer App physische Struktur (Material) und Tiefe hinzufügt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
 
  ## <a name="video-summary"></a>Videozusammenfassung
 
@@ -102,7 +102,7 @@ Im Modus mit hohem Kontrast wird Benutzern anstelle von Acryl weiterhin die vert
 
 Darüber hinaus werden in den folgenden Fällen nur beim Hintergrund-Acryl Durchsichtigkeit und Textur durch eine Volltonfarbe ersetzt:
  - Bei Deaktivierung eines App-Fensters auf dem Desktop
- - Bei Ausführen der UWP-App auf einem Telefon, der Xbox, HoloLens oder einem Tablet
+ - Bei Ausführen der Windows-App auf einem Telefon, der Xbox, HoloLens oder einem Tablet
 
 ### <a name="legibility-considerations"></a>Hinweise zur Lesbarkeit
 Es muss sichergestellt werden, dass Texte, die in der App dargestellt werden, [die Kontrastverhältnisse erfüllen](../accessibility/accessible-text-requirements.md). Wir haben die Acrylzusammensetzung optimiert, damit Texte in Schwarz oder Weiß mit hoher Farbauflösung oder in Mittelgrau auf Acryl die Kontrastverhältnisse erfüllen. Die von der Plattform bereitgestellten Designressourcen nehmen standardmäßig kontrastierende Färbungen mit 80 % Deckkraft an. Beim Platzieren von Textkörper mit hoher Farbauflösung auf Acryl können Sie die Farbton-Deckkraft verringern und gleichzeitig die Lesbarkeit erhalten. Im dunklen Modus kann die Farbton-Deckkraft 70 % betragen, während das Acryl im hellen Modus ein Kontrastverhältnis von 50 % Deckkraft erfüllt.

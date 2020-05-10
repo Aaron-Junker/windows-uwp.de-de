@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7c21e5e6305c7b2941b46db562c93da0fdfe39
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684387"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970385"
 ---
 # <a name="masterdetails-pattern"></a>Master/Details-Muster
 
@@ -24,6 +24,9 @@ Das Master/Details-Muster verfügt über einen Masterbereich (in der Regel mit e
 > **Wichtige APIs:** [ListView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Beispiel für das Master/Details-Muster](images/HIGSecOne_MasterDetail.png)
+
+> [!TIP]
+> Wenn Sie ein XAML-Steuerelement verwenden möchten, das dieses Muster für Sie implementiert, empfiehlt es sich, das [XAML-Steuerelement „MasterDetailsView“](/windows/communitytoolkit/controls/masterdetailsview) aus dem Windows Community Toolkit zu verwenden.
 
 ## <a name="is-this-the-right-pattern"></a>Ist dies das richtige Muster?
 
@@ -61,7 +64,7 @@ Für die Seite mit der Masteransicht eignet sich ein Steuerelement vom Typ [List
 
 Verwende für die Seite mit der Detailansicht das am besten geeignete [Inhaltselement](../layout/layout-panels.md). Wenn viele separate Felder vorhanden sind, erwäge die Verwendung eines **Rasterlayouts** zum Anordnen der Elemente in einem Formular.
 
-Weitere Informationen zur Navigation zwischen Seiten findest du unter [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
+Weitere Informationen zur Navigation zwischen Seiten findest du unter [Navigationsverlauf und Rückwärtsnavigation für Windows-Apps](../basics/navigation-history-and-backwards-navigation.md).
 
 ## <a name="side-by-side-style"></a>Format mit paralleler Anordnung
 
@@ -98,6 +101,9 @@ In den folgenden Beispielen implementierst du das Master/Details-Muster mit adap
 - [Master/Details-Beispiel für Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [Beispieldatenbank für Kundenbestellung](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS-Reader-Beispiel](https://github.com/Microsoft/Windows-appsample-rssreader)
+
+> [!TIP]
+> Wenn Sie ein XAML-Steuerelement verwenden möchten, das dieses Muster für Sie implementiert, empfiehlt es sich, das [XAML-Steuerelement „MasterDetailsView“](/windows/communitytoolkit/controls/masterdetailsview) aus dem Windows Community Toolkit zu verwenden.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

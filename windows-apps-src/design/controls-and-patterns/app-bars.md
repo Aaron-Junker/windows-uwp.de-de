@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 483e5d33f67ad2cd27403d7a1b229edebedfebb9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 97507e0d9a954bc102bd4d2bcd825369df4cced7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81123636"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970045"
 ---
 # <a name="command-bar"></a>Befehlsleiste
 
@@ -282,5 +282,5 @@ Befehlsleisten können auf Bildschirmen mit einzelner Ansicht (linkes Beispiel) 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Befehlsdesigngrundlagen für UWP-Apps](../basics/commanding-basics.md)
+* [Grundlagen des Befehlsdesigns für Windows-Apps](../basics/commanding-basics.md)
 * [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

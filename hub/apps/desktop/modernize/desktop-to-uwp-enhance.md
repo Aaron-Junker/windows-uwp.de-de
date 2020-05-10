@@ -1,6 +1,6 @@
 ---
-Description: Optimieren Sie Ihre Desktop-Anwendung für Windows 10-Benutzer mithilfe von UWP-APIs (Universal Windows Platform).
-title: Verwenden von UWP-APIs in Desktopanwendungen
+Description: Optimieren Sie Ihre Desktop-Anwendung für Windows 10-Benutzer mithilfe von Windows-Runtime-APIs.
+title: Windows-Runtime-APIs in Desktop-Apps aufrufen
 ms.date: 08/20/2019
 ms.topic: article
 keywords: Windows 10, UWP
@@ -8,24 +8,24 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 78d9760c5ef21b29d09babaace0f4379b6a51209
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 444699c00a17dd90fe4c08c44ff56d540cadb3d6
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302604"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729861"
 ---
-# <a name="call-uwp-apis-in-desktop-apps"></a>Aufrufen von UWP-APIs in Desktop-Apps
+# <a name="call-windows-runtime-apis-in-desktop-apps"></a>Windows-Runtime-APIs in Desktop-Apps aufrufen
 
 Sie können UWP-APIs (Universelle Windows-Plattform) verwenden, um Ihren Desktop-Apps moderne Funktionen für Windows 10-Benutzer hinzuzufügen.
 
-Richten Sie zunächst Ihr Projekt mit den erforderlichen Verweisen ein. Rufen Sie anschließend UWP APIs aus Ihrem Code auf, um Ihrer Desktop-App Windows 10-Funktionen hinzuzufügen. Sie können separate Builds für Windows 10-Benutzer erstellen oder die gleichen Binärdateien für alle Benutzer verteilen – unabhängig davon, welche Version von Windows sie ausführen.
+Richten Sie zunächst Ihr Projekt mit den erforderlichen Verweisen ein. Rufen Sie anschließend Windows-Runtime APIs aus Ihrem Code auf, um Ihrer Desktop-App Windows 10-Funktionen hinzuzufügen. Sie können separate Builds für Windows 10-Benutzer erstellen oder die gleichen Binärdateien für alle Benutzer verteilen – unabhängig davon, welche Version von Windows sie ausführen.
 
-Einige UWP-APIs werden nur in Desktop-Apps unterstützt, die über [Paket-Identität](modernize-packaged-apps.md) verfügen. Weitere Informationen finden Sie unter [Verfügbare UWP-APIs](desktop-to-uwp-supported-api.md).
+Einige Windows-Runtime-APIs werden nur in Desktop-Apps unterstützt, die über [Paket-Identität](modernize-packaged-apps.md) verfügen. Weitere Informationen finden Sie unter [Verfügbare Windows-Runtime-APIs](desktop-to-uwp-supported-api.md).
 
 ## <a name="set-up-your-project"></a>Einrichten Ihres Projekts
 
-Um UWP-APIs zu verwenden, müssen Sie einige Änderungen am Projekt vornehmen.
+Um Windows-Runtime-APIs zu verwenden, müssen Sie einige Änderungen am Projekt vornehmen.
 
 ### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>Ändern eines .NET-Projekts für die Verwendung von Windows Runtime-APIs
 

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081239"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968925"
 ---
 # <a name="check-boxes"></a>Kontrollkästchen
 
@@ -29,7 +29,7 @@ Ein Kontrollkästchen dient zum Aktivieren oder Deaktivieren von Aktionselemente
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „Windows UI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Plattform-APIs:** [CheckBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.CheckBox), [Checked-Ereignis](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked-Eigenschaft](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -89,11 +89,33 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>Binden an „IsChecked“
 
-Mit der [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)-Eigenschaft können Sie den Aktivierungszustand des Kontrollkästchens ermitteln. Der Wert der IsChecked-Eigenschaft kann an einen anderen binären Wert gebunden werden. Da es sich bei „IsChecked“ aber um einen booleschen Wert vom Typ [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1) handelt, müssen Sie einen Wertkonverter verwenden, um sie an einen booleschen Wert zu binden.
+Mit der [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)-Eigenschaft können Sie den Aktivierungszustand des Kontrollkästchens ermitteln. Der Wert der IsChecked-Eigenschaft kann an einen anderen binären Wert gebunden werden.
+Da es sich bei „IsChecked“ aber um einen booleschen Wert vom Typ [Nullable](https://docs.microsoft.com/dotnet/api/system.nullable-1) handelt, müssen Sie entweder eine Umwandlung oder einen Wertkonverter verwenden, um sie an eine boolesche Eigenschaft zu binden. Dies hängt von dem tatsächlich verwendeten Bindungstyp ab. Nachfolgend finden Sie Beispiele für alle möglichen Typen. 
 
 In diesem Beispiel wird die **IsChecked**-Eigenschaft des Kontrollkästchens zum Akzeptieren der Servicebedingungen an die [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)-Eigenschaft der Schaltfläche zum Absenden gebunden. Die Schaltfläche zum Absenden wird nur aktiviert, wenn die Vertragsbedingungen akzeptiert werden.
 
-> Hinweis&nbsp;&nbsp;Wir zeigen hier nur den relevanten Code. Weitere Informationen zu Datenbindungen und Wertkonvertern finden Sie unter [Übersicht "Datenbindung"](../../data-binding/data-binding-quickstart.md).
+#### <a name="using-xbind"></a>Verwenden von „x:Bind“
+
+> Hinweis&nbsp;&nbsp;Wir zeigen hier nur den relevanten Code. Weitere Informationen zur Datenbindung finden Sie unter [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md). Bestimmte {x:Bind}-Informationen (z. B. Umwandlung) werden [hier](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) ausführlich beschrieben.
+
+```xaml
+<StackPanel Grid.Column="2" Margin="40">
+    <CheckBox x:Name="termsOfServiceCheckBox" Content="I agree to the terms of service."/>
+    <Button Content="Submit" 
+            IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay}"/>
+</StackPanel>
+```
+
+Wenn sich das Kontrollkästchen auch im Status **Unbestimmt** befinden kann, verwenden wir die [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue)-Eigenschaft der Bindung, um den booleschen Wert anzugeben, der diesen Zustand darstellt. In diesem Fall möchten wir auch nicht, dass die Schaltfläche „Senden“ aktiviert ist:
+
+```xaml
+<Button Content="Submit" 
+        IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay, FallbackValue=False}"/>
+```
+
+#### <a name="using-xbind-or-binding"></a>Verwenden von „x:Bind“ oder „Binding“
+
+> Hinweis&nbsp;&nbsp;Wir zeigen hier nur den relevanten Code unter Verwendung von {x:Bind}. Im {Binding}-Beispiel würde {x:Bind} durch {Binding} ersetzt. Weitere Informationen zu Datenbindungen, Wertkonvertern und Unterschiede zwischen den Markuperweiterungen {x:Bind} und {Binding} finden Sie unter [Übersicht über Datenbindung](../../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -110,6 +132,7 @@ In diesem Beispiel wird die **IsChecked**-Eigenschaft des Kontrollkästchens zum
                         Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"/>
 </StackPanel>
 ```
+
 
 ```csharp
 public class NullableBooleanToBooleanConverter : IValueConverter

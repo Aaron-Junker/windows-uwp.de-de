@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684595"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971005"
 ---
 # <a name="app-icons-and-logos"></a>App-Symbole und Logos 
 
@@ -185,7 +185,7 @@ Beispiel:
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Beachten Sie, dass Visual Studio das Badgelogo nicht standardmäßig generiert. Der Grund hierfür ist, dass Ihr Badgelogo einzigartig ist und nicht mit Ihren anderen App-Symbolen übereinstimmen sollte. Weitere Informationen finden Sie in dem Artikel [Signalbenachrichtigungen für UWP-Apps](/windows/uwp/design/shell/tiles-and-notifications/badges). 
+Beachten Sie, dass Visual Studio das Badgelogo nicht standardmäßig generiert. Der Grund hierfür ist, dass Ihr Badgelogo einzigartig ist und nicht mit Ihren anderen App-Symbolen übereinstimmen sollte. Weitere Informationen finden Sie in dem Artikel [Signalbenachrichtigungen für Windows-Apps](/windows/uwp/design/shell/tiles-and-notifications/badges). 
 
 
 ## <a name="more-about-app-icon-assets"></a>Weitere Informationen zu App-Symbolressourcen
@@ -253,13 +253,13 @@ Nachfolgend finden Sie die Größenempfehlungen für zielbasierte Ressourcen mit
 
 
 ## <a name="more-about-splash-screen-assets"></a>Weitere Informationen zu Ressourcen für den Begrüßungsbildschirm
-Weitere Informationen zu Begrüßungsbildschirmen finden Sie in dem Artikel [UWP-Begrüßungsbildschirme](/windows/uwp/launch-resume/splash-screens).
+Weitere Informationen zu Begrüßungsbildschirmen finden Sie unter [Begrüßungsbildschirme für Windows-Apps](/windows/uwp/launch-resume/splash-screens).
 
 ## <a name="more-about-badge-logo-assets"></a>Weitere Informationen zu Badgelogoressourcen
 
 Wenn Sie den Asset-Generator verwenden, um alle benötigten Ressourcen zu generieren, gibt es einen Grund, warum er Badgelogos nicht standardmäßig generiert: Sie unterscheiden sich sehr stark von anderen App-Ressourcen. Das Badgelogo ist ein Statusbild, das in Benachrichtigungen und auf den Kacheln der App angezeigt wird. 
 
-Weitere Informationen finden Sie in dem Artikel [Signalbenachrichtigungen für UWP-Apps](/windows/uwp/design/shell/tiles-and-notifications/badges).
+Weitere Informationen finden Sie unter [Signalbenachrichtigungen für Windows-Apps](/windows/uwp/design/shell/tiles-and-notifications/badges).
 
 
 ## <a name="customizing-asset-padding"></a>Anpassen der Abstandsauffüllung von Ressourcen

@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5782c6e9ba42fed07c2b1382f2d17b1d311d0a13
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893460"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970405"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ Vom Konzept her können Sie sich [ItemsRepeater](/uwp/api/microsoft.ui.xaml.cont
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ItemsRepeater** ist in der Bibliothek „Windows UI“ enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für UWP-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ItemsRepeater** ist in der Bibliothek „Windows UI“ enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **APIs der Bibliothek „Windows UI“** [ItemsRepeater-Klasse](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -774,7 +774,7 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>Aktivieren von Barrierefreiheit
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) stellt keine Standardbenutzeroberfläche für Barrierefreiheit bereit. Die Dokumentation zu [Benutzerfreundlichkeit in UWP-Apps](/windows/uwp/design/usability) bietet eine Fülle von Informationen dazu, wie Sie sicherstellen können, dass Ihre App eine inklusive Benutzeroberfläche bereitstellt. Wenn Sie die „ItemsRepeater“-Klasse verwenden, um ein benutzerdefiniertes Steuerelement zu erstellen, sollten Sie die Dokumentation zu [Benutzerdefinierte Automatisierungspeers](/windows/uwp/design/accessibility/custom-automation-peers) lesen.
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) stellt keine Standardbenutzeroberfläche für Barrierefreiheit bereit. Die Dokumentation zu [Benutzerfreundlichkeit in Windows-Apps](/windows/uwp/design/usability) bietet eine Fülle von Informationen dazu, wie Sie sicherstellen können, dass Ihre App eine inklusive Benutzeroberfläche bereitstellt. Wenn Sie die „ItemsRepeater“-Klasse verwenden, um ein benutzerdefiniertes Steuerelement zu erstellen, sollten Sie die Dokumentation zu [Benutzerdefinierte Automatisierungspeers](/windows/uwp/design/accessibility/custom-automation-peers) lesen.
 
 ### <a name="keyboarding"></a>Tastaturunterstützung
 Die Mindesttastaturunterstützung für Fokusbewegung, die „ItemsRepeater“ bietet, basiert auf der zu XAML gehörenden [direktionalen 2D-Navigation für die Tastatur](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard).

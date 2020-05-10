@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d2372044076e1885602dec806df95ad60e789cdd
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364553"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968085"
 ---
 # <a name="nested-ui-in-list-items"></a>Geschachtelte UI bei Listenelementen
 
@@ -56,9 +56,9 @@ Die *primäre Aktion* ist das, was der Benutzer beim Klicken auf ein Element der
 
 ## <a name="options-for-secondary-actions"></a>Optionen für sekundäre Aktionen
 
-Wenn Sie eine Listen-UI erstellen, müssen Sie zunächst sicherstellen, dass Sie alle Eingabemethoden berücksichtigen, die UWP unterstützt. Weitere Informationen zu verschiedenen Arten von Eingaben finden Sie unter [Einführung in Eingaben](../input/index.md).
+Wenn Sie eine Listen-UI erstellen, müssen Sie zunächst sicherstellen, dass Sie alle Eingabemethoden berücksichtigen, die Windows unterstützt. Weitere Informationen zu verschiedenen Arten von Eingaben finden Sie unter [Einführung in Eingaben](../input/index.md).
 
-Nachdem Sie sichergestellt haben, dass Ihre App alle Eingaben unterstützt, die UWP unterstützt, sollten Sie entscheiden, ob die sekundären Aktionen Ihrer App wichtig genug sind, um sie als Abkürzungen in der Hauptliste verfügbar zu machen. Bedenken Sie, dass Ihre Benutzeroberfläche mit jeder weiteren Aktion, die Sie zur Verfügung stellen, komplizierter wird. Möchten Sie die sekundären Aktionen wirklich in der Hauptliste der Benutzeroberfläche verfügbar machen, oder können Sie sie an einer anderen Stelle platzieren?
+Nachdem Sie sichergestellt haben, dass Ihre App alle Eingaben unterstützt, die Windows unterstützt, sollten Sie entscheiden, ob die sekundären Aktionen Ihrer App wichtig genug sind, um sie als Abkürzungen in der Hauptliste verfügbar zu machen. Bedenken Sie, dass Ihre Benutzeroberfläche mit jeder weiteren Aktion, die Sie zur Verfügung stellen, komplizierter wird. Möchten Sie die sekundären Aktionen wirklich in der Hauptliste der Benutzeroberfläche verfügbar machen, oder können Sie sie an einer anderen Stelle platzieren?
 
 Wenn Sie weitere Aktionen in die Hauptlisten-UI aufnehmen möchten, sollten dies Aktionen sein, die jederzeit für alle Eingaben zugänglich sein müssen.
 
@@ -97,7 +97,7 @@ In der Listen-UI in diesen Beispielen ist der Fluss der Elemente tendenziell hor
 
 ## <a name="consider-all-inputs"></a>Berücksichtigen aller Eingaben
 
-Bei der Entscheidung, eine geschachtelte UI zu verwenden, sollten Sie auch die Benutzerfreundlichkeit bei allen Eingabetypen evaluieren. Wie bereits erwähnt eignen sich geschachtelte UIs gut für bestimmte Eingabetypen. Leider gibt es andere Eingabetypen, für die sie nicht so gut geeignet sind. Insbesondere problematisch ist der Zugriff auf geschachtelte UI-Elemente über Tastatur, Controller und bei Eingabe über eine Fernbedienung. Folge unbedingt den Richtlinien unten, um sicherzustellen, dass Ihre UWP-App mit allen Eingabetypen verwendet werden kann.
+Bei der Entscheidung, eine geschachtelte UI zu verwenden, sollten Sie auch die Benutzerfreundlichkeit bei allen Eingabetypen evaluieren. Wie bereits erwähnt eignen sich geschachtelte UIs gut für bestimmte Eingabetypen. Leider gibt es andere Eingabetypen, für die sie nicht so gut geeignet sind. Insbesondere problematisch ist der Zugriff auf geschachtelte UI-Elemente über Tastatur, Controller und bei Eingabe über eine Fernbedienung. Folge unbedingt den Richtlinien unten, um sicherzustellen, dass Ihre Windows-App mit allen Eingabetypen verwendet werden kann.
 
 ## <a name="nested-ui-handling"></a>Behandeln von geschachtelten UIs
 

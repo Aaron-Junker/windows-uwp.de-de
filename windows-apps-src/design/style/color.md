@@ -1,18 +1,18 @@
 ---
-description: Hier erfahren Sie, wie Sie Akzentfarben und Designs in Ihren UWP-Apps verwenden.
-title: Farbe in UWP-Apps
+description: Hier erfahren Sie, wie Sie Akzentfarben und Designs in Ihren Windows-Apps verwenden.
+title: Farbe in Windows-Apps
 ms.date: 04/07/2019
 ms.topic: article
 keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7ab504657ae5e3142eb7db1d9517a013e9aaf5f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684583"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970765"
 ---
 # <a name="color"></a>Farbe
 
@@ -20,7 +20,7 @@ ms.locfileid: "75684583"
 
 Farbe bietet eine intuitive Möglichkeit zur Übermittlung von Informationen an Benutzer in Ihrer App: Mit ihr kann Interaktivität angezeigt, Feedback auf Benutzeraktionen gegeben und Ihrer Benutzeroberfläche ein Gefühl von visueller Kontinuität verliehen werden.
 
-In UWP-Apps werden Farben in erster Linie durch Akzentfarbe und Design bestimmt. In diesem Artikel erläutern wir, wie Sie Farbe in Ihrer App einsetzen können und wie Sie mit Akzentfarben und Designressourcen dafür sorgen, dass Ihre UWP-App in jedem beliebigen Designkontext verwendet werden kann.
+In Windows-Apps werden Farben in erster Linie durch Akzentfarbe und Design bestimmt. In diesem Artikel erläutern wir, wie Sie Farbe in Ihrer App einsetzen können und wie Sie mit Akzentfarben und Designressourcen dafür sorgen, dass Ihre Windows-App in jedem beliebigen Designkontext verwendet werden kann.
 
 ## <a name="color-principles"></a>Farbprinzipien
 
@@ -48,7 +48,7 @@ Achten Sie darauf, wie Farben von Personen aus unterschiedlichen Kulturen interp
 
 ## <a name="themes"></a>Designs
 
-UWP-Apps können ein helles oder dunkles Anwendungsdesign verwenden. Das Design wirkt sich auf die Farben des App-Hintergrunds, Text, Symbole und [allgemeine Steuerelemente](../controls-and-patterns/index.md) aus.
+Windows-Apps können ein helles oder dunkles Anwendungsdesign verwenden. Das Design wirkt sich auf die Farben des App-Hintergrunds, Text, Symbole und [allgemeine Steuerelemente](../controls-and-patterns/index.md) aus.
 
 ### <a name="light-theme"></a>Helles Design
 
@@ -58,7 +58,7 @@ UWP-Apps können ein helles oder dunkles Anwendungsdesign verwenden. Das Design 
 
 ![dunkles Design](images/color/dark-theme.svg)
 
-Das Design Ihrer UWP-App folgt standardmäßig den Designeinstellungen des Benutzers aus den Windows-Einstellungen oder dem Standarddesign des Geräts (d. h. dunkel auf Xbox). Sie können jedoch das Design für Ihre UWP-App festlegen.
+Das Design Ihrer Windows-App folgt standardmäßig den Designeinstellungen des Benutzers aus den Windows-Einstellungen oder dem Standarddesign des Geräts (d. h. dunkel auf Xbox). Sie können jedoch das Design für Ihre Windows-App festlegen.
 
 ### <a name="changing-the-theme"></a>Ändern des Designs
 

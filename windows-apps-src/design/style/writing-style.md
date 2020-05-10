@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867687"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970605"
 ---
 # <a name="writing-style"></a>Schreibstil
 
@@ -103,7 +103,7 @@ Wenden Sie sich direkt an den Benutzer.
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Der Entwurfsleitfaden für die universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Mit den Entwurfsfeatures in jeder UWP-App können Sie Benutzeroberflächen (UI) erstellen, die für eine Vielzahl von Geräten geeignet sind.
+![Richtig](images/do.svg) Der Designleitfaden für die Windows-App ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann. Mit den Entwurfsfeatures in jeder Windows-App können Sie Benutzeroberflächen (UI) erstellen, die für eine Vielzahl von Geräten geeignet sind.
     :::column-end:::
     :::column:::
     :::column-end:::

@@ -1,29 +1,29 @@
 ---
-title: Seitenlayout für UWP-Apps
-description: Beim Entwurf deiner App musst du zuerst die Layoutstruktur berücksichtigen. In diesem Artikel wird die allgemeine Struktur von grundlegenden Seitenlayouts behandelt, einschließlich der erforderlichen Benutzeroberflächenelemente und der Positionen, an denen diese sich auf einer Seite befinden sollten. In UWP-Apps weist jede Seite in der Regel Navigations-, Befehls- und Inhaltselemente auf.
+title: Seitenlayout für Windows-Apps
+description: Beim Entwurf deiner App musst du zuerst die Layoutstruktur berücksichtigen. In diesem Artikel wird die allgemeine Struktur von grundlegenden Seitenlayouts behandelt, einschließlich der erforderlichen Benutzeroberflächenelemente und der Positionen, an denen diese sich auf einer Seite befinden sollten. In Windows-Apps weist jede Seite in der Regel Navigations-, Befehls- und Inhaltselemente auf.
 ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 localizationpriority: medium
-ms.openlocfilehash: 7333cebc945715412e3ff1140ca26e1ed5368704
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3dbdf8d006472c288369fd528e89663aca5a9e10
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684539"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970885"
 ---
 # <a name="page-layout"></a>Seitenlayout
 
-In UWP-Apps weist jede [**Seite**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) in der Regel Navigations-, Befehls- und Inhaltselemente auf. 
+In Windows-Apps weist jede [**Seite**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) in der Regel Navigations-, Befehls- und Inhaltselemente auf. 
 
-Deine App kann mehrere Seiten umfassen: Wenn ein Benutzer eine UWP-App startet, erstellt der Anwendungscode einen [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame), der im [**Fenster**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) der Anwendung platziert wird. Der Frame kann dann zwischen den [**Seiteninstanzen**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) der Anwendung [navigieren](../basics/navigate-between-two-pages.md). 
+Deine App kann mehrere Seiten umfassen: Wenn ein Benutzer eine Windows-App startet, erstellt der Anwendungscode einen [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame), der im [**Fenster**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) der Anwendung platziert wird. Der Frame kann dann zwischen den [**Seiteninstanzen**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) der Anwendung [navigieren](../basics/navigate-between-two-pages.md). 
 
 Die meisten Seiten folgen einer allgemeinen Layoutstruktur, und in diesem Artikel werden die erforderlichen Benutzeroberflächenelemente und deren Positionen auf einer Seite behandelt. 
 
 ![Seitenstruktur](images/page-components.svg)
 
 ## <a name="navigation"></a>Navigation
-Dein App-Layout beginnt mit dem ausgewählten Navigationsmodell. Dieses definiert, wie die Benutzer in der App zwischen Seiten navigieren. In diesem Artikel werden zwei gebräuchliche Navigationsmuster erläutert: der linke Navigationsbereich und der obere Navigationsbereich. Anleitungen zum Auswählen anderer Navigationsoptionen findest du unter [Navigationsdesigngrundlagen für UWP-Apps](../basics/navigation-basics.md).
+Dein App-Layout beginnt mit dem ausgewählten Navigationsmodell. Dieses definiert, wie die Benutzer in der App zwischen Seiten navigieren. In diesem Artikel werden zwei gebräuchliche Navigationsmuster erläutert: der linke Navigationsbereich und der obere Navigationsbereich. Anleitungen zum Auswählen anderer Navigationsoptionen findest du unter [Navigationsdesigngrundlagen für Windows-Apps](../basics/navigation-basics.md).
 
 ![Navigationsmuster oben und links](images/top-left-nav.svg)
 
@@ -91,7 +91,7 @@ Das [Master/Detail](../controls-and-patterns/master-details.md)-Modell besteht a
 Ein [Formular](../controls-and-patterns/forms.md) ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Die meisten, wenn nicht alle Apps, verwenden eine Art Formular für Einstellungsseiten, Anmeldeportale, Feedback-Hubs, Kontoerstellung oder andere Zwecke. 
 
 ## <a name="sample-apps"></a>Beispiel-Apps
-Ein Beispiel für die Implementierung dieser Muster findest du in unseren [UWP-Beispiel-Apps](https://developer.microsoft.com/windows/samples):
+Ein Beispiel für die Implementierung dieser Muster findest du in unseren [Windows-Beispiel-Apps](https://developer.microsoft.com/windows/samples):
 - [Videoplayer BuildCast](https://github.com/Microsoft/BuildCast)
 - [Lunch Scheduler](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
 - [Coloring Book](https://github.com/Microsoft/Windows-appsample-coloringbook)

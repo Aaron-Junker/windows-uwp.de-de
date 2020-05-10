@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, Winrt, COM, Komponente, Klasse, Schnittstelle
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a286056fc0c44d01482e23e52df0fa80eca0515
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218520"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619324"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Verwenden von COM-Komponenten mit C++/WinRT
 
@@ -127,7 +127,13 @@ Sie können die [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-fun
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>COM-Funktionen, die einen **IUnknown**-Schnittstellenzeiger annehmen
 
-Sie können die freie Funktion [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) aufrufen, um Ihren **com_ptr** einer Funktion zu übergeben, die einen **IUnknown**-Schnittstellenzeiger annimmt. Ein Codebeispiel finden Sie in diesem Thema.
+Sie können [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function) verwenden, um Ihren **com_ptr** einer Funktion zu übergeben, die einen **IUnknown**-Schnittstellenzeiger annimmt.
+
+Sie können die freie Funktion [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) verwenden, um die Adresse der zugrunde liegenden Rohdaten-[IUnknown-Schnittstelle](/windows/win32/api/unknwn/nn-unknwn-iunknown) eines Objekts eines projektierten Typs (mit anderen Worten, einen Zeiger darauf) zurückzugeben. Sie können diese Adresse dann an eine Funktion übergeben, die einen **IUnknown-** -Schnittstellenzeiger annimmt.
+
+Informationen zu *projizierten Typen* finden Sie unter [Verwenden von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+
+Ein Codebeispiel für **get_unknown** finden Sie unter [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) oder unter [Vollständige Quellcodeauflistung einer minimalen Direct2D-Anwendung](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) in diesem Thema.
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>Übergabe und Rückgabe von intelligenten COM-Zeigern
 

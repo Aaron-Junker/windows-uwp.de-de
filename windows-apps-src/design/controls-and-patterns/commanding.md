@@ -1,19 +1,19 @@
 ---
-title: Befehle in UWP-Apps (Universelle Windows-Plattform)
+title: Befehle in Windows-Apps
 description: In diesem Artikel wird beschrieben, wie die XamlUICommand-Klasse und die StandardUICommand-Klasse (zusammen mit der ICommand-Schnittstelle) verwendet werden, um Befehle über verschiedene Steuerelementtypen freizugeben und zu verwalten, und zwar unabhängig vom verwendeten Geräte- und Eingabetyp.
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 24df2f6c67fe5a501461d5ce5e9c18a147c54672
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81123602"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968765"
 ---
-# <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in UWP-Apps (Universelle Windows-Plattform), die StandardUICommand, XamlUICommand und ICommand verwenden
+# <a name="commanding-in-windows-app-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in Windows-Apps, die StandardUICommand, XamlUICommand und ICommand verwenden
 
-In diesem Artikel werden Befehle in UWP-Anwendungen (Universelle Windows-Plattform) beschrieben. Insbesondere wird erläutert, wie Sie mit der [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse und der [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse (zusammen mit der ICommand-Schnittstelle) Befehle über verschiedene Steuerelementtypen hinweg freigeben und verwalten, und zwar unabhängig vom verwendeten Geräte- und Eingabetyp.
+In diesem Artikel werden Befehle in Windows-Anwendungen beschrieben. Insbesondere wird erläutert, wie Sie mit der [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse und der [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse (zusammen mit der ICommand-Schnittstelle) Befehle über verschiedene Steuerelementtypen hinweg freigeben und verwalten, und zwar unabhängig vom verwendeten Geräte- und Eingabetyp.
 
 ![Eine Abbildung zur Veranschaulichung einer gängigen Verwendung eines freigegebenen Befehls: mehrere Benutzeroberflächen mit einem Favorit-Befehl](images/commanding/generic-commanding.png)
 
@@ -67,9 +67,9 @@ In der nachstehenden Tabelle sind einige typische Befehle für Sammlungen sowie 
 
 **Stellen Sie stets ein Kontextmenü bereit** Wir empfehlen, alle relevanten kontextbezogenen Befehle in einem traditionellen Kontextmenü oder in CommandBarFlyout einzuschließen, da beide für sämtliche Eingabetypen unterstützt werden. Wenn ein Befehl beispielsweise nur während eines Mauszeiger-Hoverereignisses verfügbar gemacht wird, kann er nicht auf einem reinen Toucheingabegerät verwendet werden.
 
-## <a name="commands-in-uwp-applications"></a>Befehle in UWP-Anwendungen
+## <a name="commands-in-windows-applications"></a>Befehle in Windows-Anwendungen
 
-Es gibt verschiedene Möglichkeiten, Befehle in einer UWP-Anwendung gemeinsam zu nutzen und zu verwalten. Sie können Ereignishandler für Standardinteraktionen wie Click im CodeBehind definieren (dies kann je nach Komplexität der UI recht ineffizient sein), Sie können Ereignislistener für Standardinteraktionen an einen gemeinsam genutzten Handler binden, oder Sie können die Command-Eigenschaft des Steuerelements an eine ICommand-Implementierung binden, die die Befehlslogik beschreibt.
+Es gibt verschiedene Möglichkeiten, Befehle in einer Windows-Anwendung gemeinsam zu nutzen und zu verwalten. Sie können Ereignishandler für Standardinteraktionen wie Click im CodeBehind definieren (dies kann je nach Komplexität der UI recht ineffizient sein), Sie können Ereignislistener für Standardinteraktionen an einen gemeinsam genutzten Handler binden, oder Sie können die Command-Eigenschaft des Steuerelements an eine ICommand-Implementierung binden, die die Befehlslogik beschreibt.
 
 Um umfassende Benutzererfahrungen für alle Befehlsoberflächen effizient und mit minimaler Codeduplizierung bereitzustellen, empfehlen wir, die in diesem Artikel beschriebenen Befehlsbindungsfunktionen zu verwenden (Informationen zum Verarbeiten von Standardereignissen erhalten Sie in den Artikeln zu den einzelnen Ereignissen).
 
@@ -614,7 +614,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ## <a name="command-experiences-using-the-icommand-interface"></a>Befehle, die die ICommand-Schnittstelle verwenden
 
-UWP-Standardsteuerelemente (Schaltfläche, Liste, Auswahl, Kalender, Textvorhersage) stellen die Grundlage für viele gängige Befehle dar. Eine komplette Liste der Steuerelementtypen finden Sie unter [Steuerelemente und Muster für UWP-Apps](index.md).
+UWP-Standardsteuerelemente (Schaltfläche, Liste, Auswahl, Kalender, Textvorhersage) stellen die Grundlage für viele gängige Befehle dar. Eine komplette Liste der Steuerelementtypen finden Sie unter [Steuerelemente und Muster für Windows-Apps](index.md).
 
 Am einfachsten lässt sich eine strukturierte Befehlserfahrung durch Definieren einer Implementierung der ICommand-Schnittstelle einrichten ([Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) für C++ bzw. [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand) für C#).  Diese ICommand-Instanz kann dann an Steuerelemente (z. B. Schaltflächen) gebunden werden.
 
@@ -1087,7 +1087,7 @@ namespace UICommand1
 
 Die Universelle Windows-Plattform stellt ein stabiles und flexibles Befehlssystem dar, mit dem Sie Apps erstellen können, in denen Befehle für unterschiedliche Steuerelementtypen, Geräte und Eingabetypen gemeinsam genutzt und verwaltet werden.
 
-Verfolgen Sie beim Erstellen von Befehlen für Ihre UWP-Apps folgende Ansätze:
+Verfolgen Sie beim Erstellen von Befehlen für Ihre Windows-Apps folgende Ansätze:
 
 - Überwachen und Behandeln von Ereignissen in XAML/CodeBehind
 - Binden an eine Ereignisbehandlungsmethode wie Click
@@ -1101,7 +1101,7 @@ Ein komplettes Beispiel, das eine Implementierung von [XamlUICommand](https://do
 
 ## <a name="see-also"></a>Siehe auch
 
-[Steuerelemente und Muster für UWP-Apps](index.md)
+[Steuerelemente und Muster für Windows-Apps](index.md)
 
 ### <a name="samples"></a>Beispiele
 

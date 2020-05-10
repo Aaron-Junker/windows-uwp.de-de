@@ -6,16 +6,16 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 08853a201eff063b49dcc69d5827c9b54e324b75
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5bcc7d45646651cdb60228a3c08123378eedb960
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684871"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970615"
 ---
 # <a name="control-size-and-density"></a>Größe und Dichte des Steuerelements
 
-Optimieren Sie Ihre UWP (Universal Windows Platform)-Anwendung anhand einer Kombination von Steuerelementgröße und -dichte, und stellen Sie eine Benutzererfahrung bereit, die für die Funktions- und Interaktionsanforderungen der App am besten geeignet ist.
+Optimieren Sie Ihre Windows-App anhand einer Kombination von Steuerelementgröße und -dichte, und stellen Sie eine Benutzererfahrung bereit, die für die Funktions- und Interaktionsanforderungen der App am besten geeignet ist.
 
 Standardmäßig werden UWP-Apps mit einem Layout mit geringer Dichte (bzw. `Standard`) gerendert. Ab WinUI 2.1 wird jedoch auch eine Layoutoption mit hoher Dichte (bzw. `Compact`) für Benutzeroberflächen mit vielfältigen Informationen oder ähnlich spezialisierte Szenarien unterstützt. Dies kann über eine grundlegende Stilressource angegeben werden (siehe Beispiele unten).
 
@@ -44,7 +44,7 @@ Die *Standard-Größenanpassung von Fluent* wurde entwickelt, um ein Gleichgewic
 **Die Standard-Größenanpassung wurde sowohl auf Touch- als auch Zeigereingaben ausgelegt.**
 
 > [!NOTE]
->Weitere Informationen zu effektiven Pixeln und Skalierung finden Sie unter [Einführung in das UWP-App-Design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>Weitere Informationen zu effektiven Pixeln und Skalierung finden Sie unter [Einführung in das Windows-App-Design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > Weitere Informationen zum Skalieren auf der Systemebene finden Sie unter [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md).
 
@@ -96,7 +96,7 @@ In den folgenden Beispielen wird erläutert, wie der `Compact`-Stil auf die Seit
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

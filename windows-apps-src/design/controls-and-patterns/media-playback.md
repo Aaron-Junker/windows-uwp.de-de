@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 49058568acccfa32c9c354a7e2570a5734c0c577
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bc12d76cf34b5a631435a7535567aab0cafb0f44
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081694"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970375"
 ---
 # <a name="media-player"></a>Media Player
 
@@ -396,5 +396,5 @@ Die Standardsteuerelemente wurden für die Medienwiedergabe optimiert. Sie könn
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Befehlsdesigngrundlagen für UWP-Apps](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-- [Grundlagen des Inhaltsdesigns für UWP-Apps](https://docs.microsoft.com/windows/uwp/layout/content-basics)
+- [Grundlagen des Befehlsdesigns für Windows-Apps](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+- [Grundlagen des Inhaltsdesigns für Windows-Apps](https://docs.microsoft.com/windows/uwp/layout/content-basics)

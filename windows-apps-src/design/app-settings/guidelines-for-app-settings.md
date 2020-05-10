@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9c35bc6cfcf36543482bcb42d0ccda7fd3102ac9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72163704"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970035"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
-App-Einstellungen sind die vom Benutzer anpassbaren Teile Ihrer UWP-App (Universelle Windows-Plattform), auf die über eine App-Einstellungenseite zugegriffen wird. Beispielsweise kann ein Benutzer in einer Newsreader-App angeben, welche neuen Quellen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen, und eine Wetter-App könnte dem Benutzer ermöglichen, zwischen Celsius und Fahrenheit zu wählen. Dieser Artikel enthält Empfehlungen und bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.
+App-Einstellungen sind die vom Benutzer anpassbaren Teile Ihrer Windows-App, auf die über eine App-Einstellungenseite zugegriffen wird. Beispielsweise kann ein Benutzer in einer Newsreader-App angeben, welche neuen Quellen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen, und eine Wetter-App könnte dem Benutzer ermöglichen, zwischen Celsius und Fahrenheit zu wählen. Dieser Artikel enthält Empfehlungen und bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.
 
 ## <a name="when-to-provide-a-settings-page"></a>Wann sollte eine Einstellungenseite angegeben werden?
 
@@ -128,7 +128,7 @@ Wenn Sie eine Liste der gewünschten Elemente auf der Seite für App-Einstellung
     - [Optionsfelder](../controls-and-patterns/radio-button.md): Benutzer können aus bis zu fünf zusammenhängenden Optionen, die sich gegenseitig ausschließen, eine auswählen.
     - [Texteingabefeld](../controls-and-patterns/text-block.md): Benutzer können hier Text eingeben. Wählen Sie die Art des Texteingabefelds passend zum Typ des vom Benutzer erhaltenen Texts aus, beispielsweise für E-Mail-Adressen oder Kennwörter.
     - [Hyperlinks](../controls-and-patterns/hyperlinks.md): Benutzer werden zu einer anderen Seite innerhalb der App oder zu einer externen Website weitergeleitet. Wenn ein Benutzer auf einen Hyperlink klickt, wird das Einstellungen-Flyout geschlossen.
-    - [Schaltflächen](../controls-and-patterns/buttons.md): Benutzer können eine Aktion sofort ausführen, ohne das aktuell geöffnete Einstellungen-Flyout zu schließen.
+    - [Schaltflächen](../controls-and-patterns/buttons.md): Benutzer können eine Aktion sofort ausführen, ohne das aktuell geöffnete Einstellungenflyout zu schließen.
 - Wenn eines der Steuerelemente deaktiviert ist, fügen Sie eine beschreibende Meldung hinzu. Platzieren Sie diese Meldung über dem deaktivierten Steuerelement.
 - Zeigen Sie Inhalte und Steuerelemente als einzelnen Block per Animation an, nachdem das Einstellungen-Flyout und die Überschrift eingeblendet wurden. Animieren Sie Inhalte mit der Animation [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) oder [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) mit einem Offset links von 100 Pixel.
 - Verwenden Sie Abschnittsüberschriften, Absätze und Bezeichnungen, um Inhalte ggf. zu organisieren und zu erläutern.

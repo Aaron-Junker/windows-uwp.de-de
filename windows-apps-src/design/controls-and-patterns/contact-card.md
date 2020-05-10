@@ -9,16 +9,16 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 36c8c6248b356bbb17da72b53b0480a27999b875
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257697"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968755"
 ---
 # <a name="contact-card"></a>Visitenkarte
 
-Die Visitenkarte umfasst Kontaktinformationen wie Name, Telefonnummer und Adresse für einen [Kontakt](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (Mechanismus, der in UWP zum Darstellen von Personen und Unternehmen verwendet wird).  Benutzer können Kontaktinformationen in der Visitenkarte auch ändern. Sie können eine kompakte Visitenkarte oder eine vollständige Visitenkarte anzeigen, die zusätzliche Informationen enthält.
+Die Visitenkarte umfasst Kontaktinformationen wie Name, Telefonnummer und Adresse für einen [Kontakt](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (Mechanismus, der in Windows zum Darstellen von Personen und Unternehmen verwendet wird).  Benutzer können Kontaktinformationen in der Visitenkarte auch ändern. Sie können eine kompakte Visitenkarte oder eine vollständige Visitenkarte anzeigen, die zusätzliche Informationen enthält.
 
 > **Wichtige APIs:** [ShowContactCard-Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard), [ShowFullContactCard-Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard), [IsShowContactCardSupported-Methode](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported), [Contact-Klasse](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 

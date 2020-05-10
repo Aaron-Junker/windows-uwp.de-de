@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fa8dd744120d5751dcf8c10a090ccc31094000d2
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 5f3e4eee486edd47901fc2b97a6e10c880cb04b1
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80482505"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606299"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer WPF-App unter Verwendung von XAML Islands
 
@@ -235,7 +235,10 @@ Traditionell wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems 
 
 In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein UWP-Steuerelement aus der WinUI-Bibliothek hinzufügen, sodass Sie dieses Steuerelement in Ihrer WPF-App hosten können.
 
-1. Installieren Sie im UWP-App-Projekt die neueste Version des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets.
+1. Installieren Sie im UWP-App-Projekt die neueste Releaseversion oder Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets.
+
+    > [!NOTE]
+    > Wenn Ihre Desktop-App in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) gepackt ist, können Sie entweder eine Vorabversion oder eine Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NugGet-Pakets verwenden. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, müssen Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
 
 2. Fügen Sie der App.xaml-Datei dieses Projekts dem `<xaml:XamlApplication>`-Element das folgende untergeordnete Element hinzu.
 
@@ -268,7 +271,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein 
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. Fügen Sie in derselben Datei ein `<winui:RatingControl />`-Element als untergeordnetes Element von `<StackPanel>` hinzu. Dieses Element fügt eine Instanz der [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2)-Klasse aus der WinUI-Bibliothek hinzu. Nachdem dieses Element hinzugefügt wurde, sollte das `<StackPanel>` nun ungefähr wie hier aussehen:
+5. Fügen Sie in derselben Datei ein `<winui:RatingControl />`-Element als untergeordnetes Element von `<StackPanel>` hinzu. Dieses Element fügt eine Instanz der [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)-Klasse aus der WinUI-Bibliothek hinzu. Nachdem dieses Element hinzugefügt wurde, sollte das `<StackPanel>` nun ungefähr wie hier aussehen:
 
     ```xml
     <StackPanel Background="LightCoral">

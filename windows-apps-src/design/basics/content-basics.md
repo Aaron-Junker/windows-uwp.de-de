@@ -1,6 +1,6 @@
 ---
-Description: Hier erhalten Sie eine Übersicht über gängige Seitenmuster und UI-Elemente für die Darstellung von Inhalten in Ihrer UWP-App.
-title: Grundlagen des Inhaltsdesigns für UWP-Apps (Universelle Windows-Plattform)
+Description: Hier erhalten Sie eine Übersicht über gängige Seitenmuster und UI-Elemente für die Darstellung von Inhalten in Ihrer Windows-App.
+title: Grundlagen des Inhaltsdesigns für Windows-Apps
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
@@ -9,14 +9,14 @@ ms.date: 12/01/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fdb4f21c2837fdc201d9e9847541cfd2bf728468
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63796275"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969345"
 ---
-# <a name="content-design-basics-for-uwp-apps"></a>Grundlagen des Inhaltsdesigns für UWP-Apps
+# <a name="content-design-basics-for-windows-apps"></a>Grundlagen des Inhaltsdesigns für Windows-Apps
 
 Der Hauptzweck einer App besteht darin, den Zugriff auf Inhalte zu gewähren. Da es Apps für viele verschiedene Zwecke gibt, gibt es Inhalte in vielen Formen: In einer Fotobearbeitungs-App ist das Foto der Inhalt; in einer Reiseanwendung sind es Karten und Informationen über Reiseziele, und so weiter. 
 

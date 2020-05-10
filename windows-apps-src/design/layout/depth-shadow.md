@@ -1,7 +1,7 @@
 ---
 author: knicholasa
 description: Z-Tiefe oder relative Tiefe und Schatten sind zwei Möglichkeiten, Tiefeninformationen in Ihre App einzubeziehen, um den Benutzern ein natürliches und effizientes Fokussieren zu ermöglichen.
-title: Z-Tiefe und Schatten für UWP-Apps
+title: Z-Tiefe und Schatten für Windows-Apps
 template: detail.hbs
 ms.date: 04/19/2019
 ms.topic: article
@@ -9,18 +9,18 @@ ms.custom: 19H1
 keywords: Windows 10, UWP
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2655abd69f0f02efada9de5bab22e463c86b5d7e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081387"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970185"
 ---
 # <a name="z-depth-and-shadow"></a>Z-Tiefe und Schatten
 
 ![Ein GIF, das vier graue Rechtecke zeigt, die diagonal übereinander gestapelt sind. Das GIF ist animiert, sodass die Schatten erscheinen und verschwinden.](images/elevation-shadow/shadow.gif)
 
-Das Erstellen einer visuellen Hierarchie in Ihrer Benutzeroberfläche macht es einfach, die Benutzeroberfläche zu durchsuchen und transportiert die Information, was wichtig ist und beachtet werden muss. Hervorhebung, das In-den-Vordergrund-Stellen bestimmter Elemente Ihrer Benutzeroberfläche, wird häufig verwendet, um eine solche Hierarchie in Software zu erreichen. In diesem Artikel wird das Erstellen von Hervorhebung in einer UWP-App mithilfe von Z-Tiefe und Schatten erörtert.
+Das Erstellen einer visuellen Hierarchie in Ihrer Benutzeroberfläche macht es einfach, die Benutzeroberfläche zu durchsuchen und transportiert die Information, was wichtig ist und beachtet werden muss. Hervorhebung, das In-den-Vordergrund-Stellen bestimmter Elemente Ihrer Benutzeroberfläche, wird häufig verwendet, um eine solche Hierarchie in Software zu erreichen. In diesem Artikel wird das Erstellen von Hervorhebung in einer Windows-App mithilfe von Z-Tiefe und Schatten erörtert.
 
 Z-Tiefe ist ein Begriff, der von 3D-App-Entwicklern verwendet wird, um den Abstand zwischen zwei Oberflächen entlang der Z-Achse anzugeben. Er veranschaulicht, wie nah ein Objekt dem Beobachter ist. Stellen Sie es sich als ein ähnliches Konzept wie x/y-Koordinaten vor, aber in der Z-Richtung.
 
@@ -32,7 +32,7 @@ In der physischen Welt neigen wir dazu, auf die Objekte zu fokussieren, die uns 
 
 Schatten sind eine Art, wie Benutzer Hervorhebung wahrnehmen. Licht oberhalb eines hervorgehobenen Objekts schafft einen Schatten auf der Oberfläche darunter. Je höher das Objekt, desto größer und weicher wird der Schatten. Hervorgehobene Objekte auf Ihrer Benutzeroberfläche müssen keine Schatten aufweisen, sie unterstützen aber den Eindruck von Hervorhebung.
 
-In UWP-Apps sollten Schatten eher in zweckmäßiger statt in ästhetischer Weise verwendet werden. Die Verwendung zu vieler Schatten schwächt die Funktion von Schatten, den Benutzer zu leiten, oder beseitigt sie gar ganz.
+In Windows-Apps sollten Schatten eher in zweckmäßiger statt in ästhetischer Weise verwendet werden. Die Verwendung zu vieler Schatten schwächt die Funktion von Schatten, den Benutzer zu leiten, oder beseitigt sie gar ganz.
 
 Wenn Sie Standardsteuerelemente verwenden, werden Schatten automatisch in Ihre Benutzeroberfläche einbezogen. Sie können Schatten jedoch manuell in Ihre Benutzeroberfläche einbeziehen, indem Sie die APIs ThemeShadow oder DropShadow verwenden. 
 

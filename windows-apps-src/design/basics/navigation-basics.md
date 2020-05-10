@@ -1,6 +1,6 @@
 ---
-Description: Die Navigation in UWP-Apps (Apps für die universelle Windows-Plattform) basiert auf einem flexiblen Modell aus Navigationsstrukturen, Navigationselementen und Funktionen auf Systemebene.
-title: Navigationsgrundlagen für UWP-Apps
+Description: Die Navigation in Windows-Apps basiert auf einem flexiblen Modell aus Navigationsstrukturen, Navigationselementen und Funktionen auf Systemebene.
+title: Navigationsgrundlagen für Windows-Apps
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
@@ -10,14 +10,14 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 137dbfe6471ee4d42e2a34e24512bdb658e985d0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4973ccaf066b2694412f04b09b8725da2fc31c36
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77463762"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969235"
 ---
-# <a name="navigation-design-basics-for-uwp-apps"></a>Navigationsdesigngrundlagen für UWP-Apps
+# <a name="navigation-design-basics-for-windows-apps"></a>Grundlagen des Navigationsdesigns für Windows-Apps
 
 ![Header für Navigationsgrundlagen](images/nav/navigation-basics-header.jpg)
 

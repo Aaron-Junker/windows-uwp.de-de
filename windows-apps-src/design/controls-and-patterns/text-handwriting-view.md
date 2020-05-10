@@ -1,5 +1,5 @@
 ---
-Description: Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von UWP-Textsteuerelementen wie TextBox, RichEditBox (sowie Steuerelementen wie AutoSuggestBox, die eine ähnliche Texteingabeerfahrung bieten) unterstützt werden.
+Description: Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von Windows-Textsteuerelementen wie TextBox, RichEditBox (sowie Steuerelementen wie AutoSuggestBox, die eine ähnliche Texteingabeerfahrung bieten) unterstützt werden.
 title: Texteingabe mit der Handschriftansicht
 label: Text input with the handwriting view
 template: detail.hbs
@@ -11,18 +11,18 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9b9d409718a157c55b28fdb3ccaa28caaa295adf
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ccd21481a8488a101ee79ae0b0224651a94461a7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684286"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82967965"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>Texteingabe mit der Handschriftansicht
 
 ![Textfeld wird erweitert, wenn mit einem Stift darauf getippt wird](images/handwritingview/handwritingview2.gif)
 
-Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von UWP-Textsteuerelementen wie [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) und von diesen abgeleiteten Steuerelementen (wie [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)) unterstützt werden.
+Passen Sie die integrierte Handschriftansicht für Freihandeingaben an Texteingaben an, die von Windows-Textsteuerelementen wie [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox), [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) und von diesen abgeleiteten Steuerelementen (wie [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)) unterstützt werden.
 
 ## <a name="overview"></a>Übersicht
 

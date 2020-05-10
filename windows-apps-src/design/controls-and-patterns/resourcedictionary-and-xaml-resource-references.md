@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2be937646374db3586b1b3bca2df2b99888c831a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73061974"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968135"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary- und XAML-Ressourcenreferenzen
 
@@ -249,7 +249,7 @@ Verwenden Sie die [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml
 
 Bei einem *zusammengeführten Ressourcenverzeichnis* wird ein Ressourcenverzeichnis mit einem anderen kombiniert, meist in einer anderen Datei.
 
-> **Tipp**&nbsp;&nbsp;In Microsoft Visual Studio können Sie eine Ressourcenverzeichnisdatei erstellen, indem Sie im Menü **Projekt&gt; die Option &gt;Hinzufügen**  Neues Element…  **Ressourcenverzeichnis** verwenden.
+> **Tipp**&nbsp;&nbsp;In Microsoft Visual Studio können Sie eine Ressourcenverzeichnisdatei erstellen, indem Sie im Menü **Projekt** die Option **Hinzufügen &gt; Neues Element… &gt; Ressourcenverzeichnis** verwenden.
 
 Hier definieren Sie ein Ressourcenverzeichnis in einer separaten XAML-Datei mit dem Namen „Dictionary1.xaml“.
 
@@ -401,7 +401,7 @@ Für Steuerelementvorlagen ist in der Referenzsuche ein weiterer möglicher Spei
 
 Schlussendlich ist eine Ressourcensuche für Plattformressourcen vorhanden. Plattformressourcen enthalten die Steuerelementvorlagen, die für die einzelnen Designs der System-UI definiert werden und mit deren Hilfe die Standarddarstellung aller Steuerelemente definiert wird, die Sie für die UI in einer Windows-Runtime-App verwenden. Zu den Plattformressourcen zählt auch ein Satz benannter Ressourcen im Zusammenhang mit systemweiter Darstellung und Designs. Diese Ressourcen sind aus technischer Sicht ein [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries)-Element und daher nach dem Laden der App für die XAML- oder Codesuche verfügbar. Die Systemdesignressourcen enthalten z. B. eine Ressource mit dem Namen „SystemColorWindowTextColor“, die eine [Color](https://docs.microsoft.com/uwp/api/Windows.UI.Color)-Definition zum Abgleichen einer App-Textfarbe mit der Textfarbe eines Systemfensters bereitstellt, die vom Betriebssystem und den Benutzereinstellungen stammt. Andere XAML-Stile für Ihre App können auf diesen Stil verweisen, oder Sie können im Code einen Ressourcensuchwert abrufen (und im Beispielfall in **Color** umwandeln).
 
-Weitere Informationen und eine Liste der verfügbaren designspezifischen Ressourcen sowie Systemressourcen für eine UWP-App, die XAML verwendet, finden Sie unter [XAML-Designressourcen](xaml-theme-resources.md).
+Weitere Informationen und eine Liste der verfügbaren designspezifischen Ressourcen sowie Systemressourcen für eine Windows-App, die XAML verwendet, finden Sie unter [XAML-Designressourcen](xaml-theme-resources.md).
 
 Wenn der angeforderte Schlüssel an diesen Speicherorten immer noch nicht gefunden werden kann, tritt für die XAML-Analyse ein Fehler oder eine Ausnahme auf. Unter bestimmten Umständen kann es sich bei der XAML-Analyseausnahme um eine Laufzeitausnahme handeln, die weder von einer XAML-Markupkompilierung, noch von einer XAML-Designumgebung erkannt wird.
 
@@ -471,7 +471,7 @@ Ein XAML-[ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml
 Für erweiterte Szenarien können Sie eine Klasse implementieren, die von dem hier beschriebenen Suchverhalten für XAML-Ressourcenverweise abweicht. Implementieren Sie dazu die [CustomXamlResourceLoader](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader)-Klasse. Sie können dann mit der [CustomResource-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/customresource-markup-extension) statt über [StaticResource](../../xaml-platform/staticresource-markup-extension.md) oder [ThemeResource](../../xaml-platform/themeresource-markup-extension.md) auf dieses Verhalten zugreifen. Die meisten Apps verfügen nicht über Szenarien, für die dies erforderlich ist. Weitere Informationen finden Sie unter [CustomXamlResourceLoader](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader).
 
  
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)
 * [Übersicht über XAML](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)

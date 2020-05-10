@@ -1,16 +1,16 @@
 ---
-Description: Layoutrichtlinien für Formulare in UWP-Apps.
+Description: Layoutrichtlinien für Formulare in Windows-Apps.
 title: Formulare
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Fluent
-ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76520445"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968511"
 ---
 # <a name="forms"></a>Formulare
 Ein Formular ist eine Gruppe von Steuerelementen, die Daten von Benutzern sammeln und übermitteln. Formulare werden in der Regel für Seiten mit Einstellungen und Umfragen, zum Erstellen von Konten und für vieles mehr verwendet. 
@@ -62,7 +62,7 @@ Befolgen Sie die nachstehenden Empfehlungen für das Entwerfen von Formularlayou
 
 Beschriften Sie beim [Entwerfen für Barrierefreiheit](../accessibility/accessibility.md) alle einzelnen Steuerelemente und Steuerelementgruppen, damit diese sowohl für Benutzer als auch für die Sprachausgabe eindeutig sind. 
 
-Verwenden Sie für Schriftschnitte die standardmäßige [UWP-Typhierarchie](../style/typography.md). Verwenden Sie `TitleTextBlockStyle` für Seitentitel, `SubtitleTextBlockStyle` für Gruppenüberschriften und `BodyTextBlockStyle` für Bezeichnungen von Steuerelementen.
+Verwenden Sie für Schriftschnitte die standardmäßige [Windows-Typhierarchie](../style/typography.md). Verwenden Sie `TitleTextBlockStyle` für Seitentitel, `SubtitleTextBlockStyle` für Gruppenüberschriften und `BodyTextBlockStyle` für Bezeichnungen von Steuerelementen.
 
 <div class="mx-responsive-img">
 <table>
@@ -149,7 +149,7 @@ Control | Verwendung
 ### <a name="additional-controls"></a>Zusätzliche Steuerelemente 
 Eine komplette Liste der UWP-Steuerelemente finden Sie unter [Index der Steuerelemente nach Funktion](controls-by-function.md).
 
-Komplexere und benutzerdefinierte Steuerelemente der Benutzeroberfläche finden Sie in UWP-Ressourcen, die von Unternehmen wie [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) und [ActiPro](https://www.actiprosoftware.com/products/controls/universal) bereitgestellt werden.
+Komplexere und benutzerdefinierte Steuerelemente der Benutzeroberfläche finden Sie in Ressourcen, die von Unternehmen wie [Telerik](https://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/uwp-ui-controls), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/), [Infragistics](https://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP) und [ActiPro](https://www.actiprosoftware.com/products/controls/universal) bereitgestellt werden.
 
 ## <a name="one-column-form-example"></a>Beispiel für Formular mit einer Spalte
 In diesem Beispiel werden eine Acrylic-[Master/Detail](master-details.md)-[Listenansicht](lists.md) und ein [NavigationView](navigationview.md)-Steuerelement verwendet.

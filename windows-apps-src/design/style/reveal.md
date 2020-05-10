@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685084"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971075"
 ---
 # <a name="reveal-highlight"></a>Reveal Highlight
 
@@ -282,7 +282,7 @@ Wenn Sie „Reveal” für ein benutzerdefiniertes Steuerelement oder ein Steuer
 
 ## <a name="reveal-and-the-fluent-design-system"></a>„Reveal” und das Fluent Design-System
 
- Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. „Reveal” ist eine Komponente des Fluent Design-Systems, die Ihrer App Lichteffekte hinzufügt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design für UWP](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. „Reveal” ist eine Komponente des Fluent Design-Systems, die Ihrer App Lichteffekte hinzufügt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="related-articles"></a>Verwandte Artikel
 

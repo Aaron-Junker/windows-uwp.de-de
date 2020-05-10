@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ee49b5fe5b5956e9069ea196c4d2e029b3a15763
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7d6ea614a9d85eadfcb807c6e6100dbe15ed0c4
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68729517"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970735"
 ---
 # <a name="show-multiple-views-for-an-app"></a>Anzeigen mehrerer Ansichten für eine App
 
@@ -32,11 +32,11 @@ Es gibt eine Reihe von Szenarien, die von mehreren Ansichten profitieren können
 
 Während jedes App-Layout einzigartig ist, empfehlen wir dir, eine Schaltfläche für ein „Neues Fenster” an geeigneter Stelle zu platzieren, wie etwa in der rechten oberen Ecke des Inhalts, der in einem neuen Fenster geöffnet werden kann. Erwäge außerdem, die Kontextmenüoption [In einem neuen Fenster öffnen](../controls-and-patterns/menus.md) einzufügen.
 
-Weitere Informationen zum Erstellen separaten Instanzen deiner App (anstelle separater Fenster für dieselbe Instanz) findest du unter [Erstellen einer UWP-App mit mehreren Instanzen](../../launch-resume/multi-instance-uwp.md).
+Weitere Informationen zum Erstellen separaten Instanzen deiner App (anstelle separater Fenster für dieselbe Instanz) findest du unter [Erstellen einer Windows-App mit mehreren Instanzen](../../launch-resume/multi-instance-uwp.md).
 
 ## <a name="windowing-hosts"></a>Hosts für Windowing
 
-Es gibt verschiedene Möglichkeiten, wie UWP-Inhalte in einer App gehostet werden können.
+Es gibt verschiedene Möglichkeiten, wie Windows-Inhalte in einer App gehostet werden können.
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
@@ -47,7 +47,7 @@ Es gibt verschiedene Möglichkeiten, wie UWP-Inhalte in einer App gehostet werde
     Informationen zum Verwenden von ApplicationView zum Anzeigen sekundärer Fenster in deiner App findest du unter [Verwenden von ApplicationView](application-view.md).
 - [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-    AppWindow vereinfacht das Erstellen von UWP-Apps mit mehreren Fenstern, da es im selben Benutzeroberflächenthread arbeitet, in dem es erstellt wurde.
+    AppWindow vereinfacht das Erstellen von Windows-Apps mit mehreren Fenstern, da es im selben Benutzeroberflächenthread arbeitet, in dem es erstellt wurde.
 
     Die AppWindow-Klasse und andere APIs im Namespace [WindowManagement](/uwp/api/windows.ui.windowmanagement) sind ab Windows 10 Version 1903 (SDK 18362) verfügbar. Wenn deine App auf frühere Versionen von Windows 10 ausgerichtet ist, musst du sekundäre Fenster mithilfe von ApplicationView erstellen.
 

@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f79b7247a7e1a1889c530a16c280f490db51042e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210176"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970745"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
 
-UWP-Apps können auf einem beliebigen Gerät mit Windows 10 ausgeführt werden – z. B. Smartphones, Tablets, Desktops, TV-Geräten und mehr. Aufgrund der Vielzahl an Geräten im Windows 10-Ökosystem wird anstelle einer Optimierung deiner Benutzeroberfläche für jedes Gerät empfohlen, ein Design für einige Schlüsselbreiten (sogenannte Breakpoints) zu erstellen: 
+Windows-Apps können auf einem beliebigen Gerät mit Windows ausgeführt werden – z. B. Smartphones, Tablets, Desktops, TV-Geräten und mehr. Aufgrund der Vielzahl an Geräten im Windows 10-Ökosystem wird anstelle einer Optimierung deiner Benutzeroberfläche für jedes Gerät empfohlen, ein Design für einige Schlüsselbreiten (sogenannte Breakpoints) zu erstellen: 
 - Klein (unter 640 Pixel)
 - Mittel (641 Pixel bis 1007 Pixel)
 - Groß (1008 Pixel und mehr)
@@ -34,7 +34,7 @@ Diese Tabelle beschreibt die verschiedenen Größenklassen und Breakpoints.
 <th align="left">Größenklasse</th>
 <th align="left">Breakpoints</th>
 <th align="left">Normale Bildschirmgröße (diagonal)</th>
-<th align="left">-Geräte zu unterstützen</th>
+<th align="left">Geräte</th>
 <th align="left">Fenstergrößen</th>
 </tr>
 </thead>

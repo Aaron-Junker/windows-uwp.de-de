@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Erste Schritte, UWP, Windows 10, Lernpfad, Dateien, Datei-E/A, Datei lesen, Datei schreiben, Datei erstellen, Text schreiben, Text lesen
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82166246"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730055"
 ---
 # <a name="work-with-files"></a>Arbeiten mit Dateien
 
@@ -26,7 +26,7 @@ Wir sehen uns Code zum Schreiben und Lesen von Text in einer Datei an, und du er
 Im Anschluss findest du die wichtigsten Typen, die du im Zusammenhang mit dem Lesen und Schreiben von Text aus einer bzw. in eine Datei kennen musst:
 
 - [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) stellt eine Datei dar. Diese Klasse enthält Eigenschaften, die Informationen zur Datei liefern, sowie Methoden zum Erstellen, Öffnen, Kopieren, Löschen und Umbenennen von Dateien.
-Möglicherweise bist du es gewohnt, mit Zeichenfolgenpfaden zu arbeiten. Es gibt zwar einige UWP-APIs, die einen Zeichenfolgenpfad verwenden, in der Regel wird zur Darstellung einer Datei jedoch ein **StorageFile**-Element verwendet, da einige Dateien, mit denen du in UWP arbeitest, unter Umständen keinen oder einen eher unhandlichen Pfad haben. Verwende [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync), um einen Zeichenfolgenpfad in ein **StorageFile**-Element zu konvertieren. 
+Möglicherweise bist du es gewohnt, mit Zeichenfolgenpfaden zu arbeiten. Es gibt zwar einige Windows-Runtime-APIs, die einen Zeichenfolgenpfad verwenden, in der Regel wird zur Darstellung einer Datei jedoch ein **StorageFile**-Element verwendet, da einige Dateien, mit denen du in UWP arbeitest, unter Umständen keinen oder einen eher unhandlichen Pfad haben. Verwende [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync), um einen Zeichenfolgenpfad in ein **StorageFile**-Element zu konvertieren. 
 
 - Mit der Klasse [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) kannst du ganz einfach Text lesen und schreiben. Sie kann auch ein Bytearray oder den Inhalt eines Puffers lesen/schreiben. Diese Klasse ist der Klasse [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) sehr ähnlich. Der Hauptunterschied besteht darin, dass anstelle eines Zeichenfolgenpfads wie bei **PathIO** ein **StorageFile**-Element verwendet wird.
 - [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) stellt einen Ordner (Verzeichnis) dar. Diese Klasse verfügt über Methoden zum Erstellen von Dateien, zum Abfragen des Inhalts eines Ordners und zum Erstellen, Umbenennen und Löschen von Ordnern sowie über Eigenschaften, die Informationen zu einem Ordner bereitstellen. 

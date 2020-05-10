@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4f0814621c67c01d5d1a73235faf02d3d753f2c2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081372"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970055"
 ---
 # <a name="buttons"></a>Schaltflächen
 
@@ -42,7 +42,7 @@ Control | Beschreibung
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** und **ToggleSplitButton** sind in der Windows-UI-Bibliothek enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für UWP-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | **DropDownButton**, **SplitButton** und **ToggleSplitButton** sind in der Windows-UI-Bibliothek enthalten, einem NuGet-Paket mit neuen Steuerelementen und Benutzeroberflächenfeatures für Windows-Apps. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Windows-UI-Bibliotheks-APIs:** [DropDownButton-Klasse](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton-Klasse](/uwp/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton-Klasse](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
 >
@@ -550,7 +550,7 @@ Wenn in Ihrem Layout nur eine einzige Schaltfläche benötigt wird, sollten Sie 
 
 ## <a name="back-buttons"></a>Zurück-Schaltflächen
 
-Die Zurück-Schaltfläche ist ein durch das System bereitgestelltes Benutzeroberflächenelement, das die Rückwärtsnavigation über den Back-Stapel oder den Navigationsverlauf des Benutzers ermöglicht. Sie müssen keine eigene Zurück-Schaltfläche erstellen, aber unter Umständen ist etwas Aufwand erforderlich, um eine gute Rückwärtsnavigation zu ermöglichen. Weitere Informationen finden Sie im Artikel [Navigationsverlauf und Rückwärtsnavigation für UWP-Apps](../basics/navigation-history-and-backwards-navigation.md).
+Die Zurück-Schaltfläche ist ein durch das System bereitgestelltes Benutzeroberflächenelement, das die Rückwärtsnavigation über den Back-Stapel oder den Navigationsverlauf des Benutzers ermöglicht. Sie müssen keine eigene Zurück-Schaltfläche erstellen, aber unter Umständen ist etwas Aufwand erforderlich, um eine gute Rückwärtsnavigation zu ermöglichen. Weitere Informationen finden Sie im Artikel [Navigationsverlauf und Rückwärtsnavigation für Windows-Apps](../basics/navigation-history-and-backwards-navigation.md).
 
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen

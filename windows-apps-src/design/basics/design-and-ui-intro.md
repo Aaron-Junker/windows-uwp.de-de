@@ -1,24 +1,24 @@
 ---
 Description: Die universellen Entwurfsfeatures von UWP-Apps ermöglichen die Erstellung von Apps, die sich problemlos auf verschiedensten Geräten skalieren lassen.
-title: Einführung in das UWP-App-Design (Universelle Windows-Plattform) (Windows-Apps)
+title: Einführung in das Design von Windows-Apps (Windows-Apps)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d0e7ad60e8c709cf4a7b075b1d7307bbd61ed79c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209315"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969355"
 ---
 # <a name="introduction-to-uwp-app-design"></a>Einführung in das UWP-App-Design
 
 ![Exemplarische Beleuchtungs-App](images/introUWP-header.jpg)
 
-Der Designleitfaden für die universelle Windows-Plattform (UWP) ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann.
+Der Designleitfaden für Windows-Apps ist eine Ressource, die Sie beim Entwerfen und Erstellen ansprechender und optimierter Apps unterstützen kann.
 
 Es handelt sich dabei nicht um eine Liste von Vorschriften, sondern um ein lebendiges Dokument, das auf unser dynamisches [Fluent Design-System](/windows/apps/fluent-design-system) sowie auf die Bedürfnisse unserer App-Entwicklercommunity abgestimmt wird.
 

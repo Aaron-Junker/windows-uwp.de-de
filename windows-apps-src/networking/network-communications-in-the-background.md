@@ -6,14 +6,18 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8db29561afa06a2f6a2be67565d59e9387240d1c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 29c6609a2e57abede7fe606be8c028e503270d4c
+ms.sourcegitcommit: f910b29d35ac7afd0b759640bcac1d2fee399b3d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259194"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82973276"
 ---
 # <a name="network-communications-in-the-background"></a>Netzwerkkommunikation im Hintergrund
+
+> [!NOTE]
+> **Einige Informationen beziehen sich auf Vorabversionen, die vor der kommerziellen Freigabe grundlegend geändert werden können. Microsoft übernimmt keine Garantie, weder ausdrücklich noch stillschweigend, für die hier bereitgestellten Informationen.**
+
 Um die Netzwerkkommunikation fortzusetzen, während sie sich nicht im Vordergrund befindet, kann Ihre App Hintergrundaufgaben und eine dieser zwei Optionen verwenden.
 - Socketbroker. Wenn Ihre App Sockets für dauerhafte Verbindungen verwendet, kann sie, sobald sie in den Hintergrund wechselt, den Besitz eines Sockets an einen System-Socketbroker delegieren. Der Broker aktiviert dann Ihre App, wenn Datenverkehr auf dem Socket eintrifft, überträgt den Besitz zurück an Ihre App, und Ihre App verarbeitet den eingehenden Datenverkehr.
 - Steuerkanaltrigger. 
@@ -160,6 +164,10 @@ Stellen Sie zunächst sicher, dass Steuerkanaltrigger korrekt verwendet werden. 
 Wenn Sie WebSockets, [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2), [**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) oder [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient) verwenden, müssen Sie [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) verwenden.
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger mit WebSockets
+
+> [!IMPORTANT]
+> Das in diesem Abschnitt beschriebene Feature (**ControlChannelTrigger mit WebSockets**) wird in Version 10.0.15063.0 des SDK und früher unterstützt. Es wird auch in Vorabversionen der [Windows 10 Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) unterstützt.
+
 Bei Verwendung von [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) oder [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) mit [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) sind einige wichtige Punkte zu berücksichtigen. Bei Verwendung von **MessageWebSocket** oder **StreamWebSocket** mit **ControlChannelTrigger** sollten Sie transportspezifische Verwendungsmuster und bewährte Methoden nutzen. Diese Aspekte beeinflussen, wie Anforderungen für den Paketempfang über **StreamWebSocket** verarbeitet werden. Anforderungen für den Paketempfang über **MessageWebSocket** sind davon nicht betroffen.
 
 Beachten Sie bei Verwendung von [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) oder [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) mit [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) die folgenden Verwendungsmuster und bewährten Methoden:
@@ -171,7 +179,7 @@ Die Verarbeitung von Anforderungen für den Paketempfang über [**StreamWebSocke
 
 Bei Verwendung eines asynchronen Rohmusters kann Windows die [**IBackgroundTask.Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode für die Hintergrundaufgabe für [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) mit der Rückgabe des Empfangsabschlussrückrufs synchronisieren. Die **Run**-Methode wird nach Rückgabe des Abschlussrückrufs aufgerufen. Dies stellt sicher, dass die App die Daten/Fehler vor Aufruf der **Run**-Methode empfängt.
 
-Beachten Sie, dass die App einen weiteren Lesevorgang bereitstellen muss, bevor sie die Steuerung vom Abschlussrückruf zurückgibt. Berücksichtigen Sie außerdem, dass [**DataReader**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) nicht direkt mit dem [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket)- oder [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket)-Transport verwendet werden kann, da hierdurch die oben beschriebene Synchronisierung unterbrochen wird. Die direkte Verwendung der [**DataReader.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)-Methode zusätzlich zum Transport wird nicht unterstützt. Stattdessen kann die von der [**IInputStream.ReadAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IBuffer)-Methode für die [**StreamWebSocket.InputStream**](https://docs.microsoft.com/uwp/api/windows.storage.streams.iinputstream.readasync)-Eigenschaft zurückgegebene [**IBuffer**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket.inputstream)-Schnittstelle später zur weiteren Verarbeitung an die [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.frombuffer)-Methode übergeben werden.
+Beachten Sie, dass die App einen weiteren Lesevorgang bereitstellen muss, bevor sie die Steuerung vom Abschlussrückruf zurückgibt. Berücksichtigen Sie außerdem, dass [**DataReader**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) nicht direkt mit dem [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket)- oder [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket)-Transport verwendet werden kann, da hierdurch die oben beschriebene Synchronisierung unterbrochen wird. Die direkte Verwendung der [**DataReader.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)-Methode zusätzlich zum Transport wird nicht unterstützt. Stattdessen kann die von der [**IInputStream.ReadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.iinputstream.readasync)-Methode für die [**StreamWebSocket.InputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket.inputstream)-Eigenschaft zurückgegebene [**IBuffer**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IBuffer)-Schnittstelle später zur weiteren Verarbeitung an die [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.frombuffer)-Methode übergeben werden.
 
 Im folgenden Beispiel wird ein asynchrones Rohmuster zur Verarbeitung von Lesevorgängen für [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) verwendet.
 

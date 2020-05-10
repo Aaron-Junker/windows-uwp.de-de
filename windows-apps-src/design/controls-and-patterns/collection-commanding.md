@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b97041e305cfaac2a5fe202212741a282dccdb54
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63801197"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968875"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>Kontextbefehle für Sammlungen und Listen
 
@@ -31,7 +31,7 @@ Viele Apps enthalten Sammlungen von Inhalten in Form von Listen, Rastern und Str
 
 ## <a name="creating-commands-for-all-input-types"></a>Erstellen von Befehlen für alle Eingabearten
 
-Benutzer können zur Interaktion mit UWP-Apps eine [Vielzahl unterschiedlicher Geräte und Eingabearten](../devices/index.md) verwenden. Daher sollte Ihre App Befehle sowohl über von der Eingabeart unabhängige Kontextmenüs als auch über eingabeartspezifische Beschleuniger verfügbar machen. Wenn Sie beide Optionen integrieren, können Benutzer Befehle schnell auf Inhalte anwenden, unabhängig von Eingabeart und Gerätetyp.
+Benutzer können zur Interaktion mit Windows-Apps eine [Vielzahl unterschiedlicher Geräte und Eingabearten](../devices/index.md) verwenden. Daher sollte Ihre App Befehle sowohl über von der Eingabeart unabhängige Kontextmenüs als auch über eingabeartspezifische Beschleuniger verfügbar machen. Wenn Sie beide Optionen integrieren, können Benutzer Befehle schnell auf Inhalte anwenden, unabhängig von Eingabeart und Gerätetyp.
 
 In der Tabelle unten sind einige typische Befehle für Sammlungen aufgeführt sowie Möglichkeiten, diese Befehle verfügbar zu machen. 
 
@@ -445,7 +445,7 @@ Wie Sie Ihre App für die Stifteingabe optimieren können, erfahren Sie im Artik
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
-* Stellen Sie sicher, dass Ihre Benutzer auf sämtliche Befehle zugreifen können, und zwar über alle Typen von UWP-Geräten.
+* Stellen Sie sicher, dass Ihre Benutzer auf sämtliche Befehle zugreifen können, und zwar über alle Typen von Windows-Geräten.
 * Integrieren Sie ein Kontextmenü, das alle für ein Sammlungselement verfügbaren Befehle bereitstellt. 
 * Implementieren Sie Eingabebeschleuniger für häufig verwendete Befehle. 
 * Verwenden Sie zur Implementierung von Befehlen die [ICommand-Schnittstelle](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand). 

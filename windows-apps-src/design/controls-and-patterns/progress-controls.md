@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 66dc74e73207feb9b155adffc116f857dcb3027d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 34eca0c822b0da96cae39463777c5c3e9888240c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081628"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970805"
 ---
 # <a name="progress-controls"></a>Statussteuerelemente
 
@@ -27,14 +27,14 @@ Ein Statussteuerelement gibt dem Benutzer eine Rückmeldung, dass ein Vorgang mi
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ProgressBar** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ProgressBar** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Windows-UI-Bibliotheks-APIs:** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate-Eigenschaft](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate)
+> **APIs der Bibliothek „Windows UI“** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
 > **Plattform-APIs:** [ProgressBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive-Eigenschaft](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
-> Es gibt zwei Versionen des ProgressBar-Steuerelements: eine in der Plattform, dargestellt durch den Windows.UI.XAML-Namespace; die andere in der Bibliothek der Windows-Benutzeroberfläche, im Microsoft.UI.XAML-Namespace. Zwar ist die API für ProgressBar identisch, die Darstellung des Steuerelements unterscheidet sich jedoch zwischen diesen beiden Versionen. In diesem Dokument werden Abbildungen der neueren Version aus der Windows-Benutzeroberflächenbibliothek gezeigt.
+> Es gibt zwei Versionen der ProgressBar- und ProgressRing-Steuerelemente: eine in der Plattform, dargestellt durch den Windows.UI.XAML-Namespace; die andere in der Bibliothek der Windows-Benutzeroberfläche, im Microsoft.UI.XAML-Namespace. Obwohl die APIs für ProgressRing und ProgressBar identisch sind, unterscheiden sich beiden Versionen in der Darstellung des Steuerelements. In diesem Dokument werden Abbildungen der neueren Version aus der Windows-Benutzeroberflächenbibliothek gezeigt.
 In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt:
 
 ```xaml
@@ -195,7 +195,7 @@ Standardmäßig ist die Grundfarbe der Statussteuerelemente auf die Akzentfarbe 
 <muxc:ProgressBar Width="100" Foreground="Green"/>
 ```
 
-Durch das Ändern die Vordergrundfarbe des ProgressRing-Elements ändern sich die Farben der Punkte. Die „Foreground“-Eigenschaft des ProgressBar-Elements ändert dann die Füllfarbe der Leiste. Um den ungefüllten Teil der Leiste zu ändern, überschreiben Sie einfach die „Background“-Eigenschaft.
+Durch das Ändern die Vordergrundfarbe des ProgressRing-Elements ändern sich die Füllfarbe des Rings. Die „Foreground“-Eigenschaft des ProgressBar-Elements ändert dann die Füllfarbe der Leiste. Um den ungefüllten Teil der Leiste zu ändern, überschreiben Sie einfach die „Background“-Eigenschaft.
 
 **Anzeigen eines Wartecursors**
 

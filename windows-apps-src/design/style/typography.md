@@ -1,31 +1,31 @@
 ---
 description: Erfahren Sie, wie Sie die Typografie in Ihrer App verwenden, um Benutzern Inhalte leicht verständlich zu machen.
-title: Typografie in UWP-Apps
+title: Typografie in Windows-Apps
 ms.date: 04/06/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72282424"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970625"
 ---
-# <a name="typography"></a>Typografie
+# <a name="typography-in-windows-apps"></a>Typografie in Windows-Apps
 
 ![Herobild](images/header-typography.svg)
 
-Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient, um Informationen zu vermitteln. Ihr Stil darf diesem Ziel nie im Wege stehen. In diesem Artikel erläutern wir, wie Sie die Typografie in Ihre UWP-App formatieren, damit Benutzer Inhalte schnell und effizient verstehen.
+Typografie muss übersichtlich sein, da sie zur visuellen Darstellung von Sprache dient, um Informationen zu vermitteln. Ihr Stil darf diesem Ziel nie im Wege stehen. In diesem Artikel erläutern wir, wie Sie die Typografie in Ihrer Windows-App formatieren, damit Benutzer Inhalte schnell und effizient verstehen.
 
 ## <a name="font"></a>Schriftart
 
-Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es wird empfohlen, wenn möglich, die Standardschriftart für UWP-Apps **Segoe UI** zu verwenden. Sie wurde entwickelt, um eine optimale Lesbarkeit für Größe und Pixeldichte zu wahren, und bietet eine klare, ansprechende und offene Ästhetik, die den Inhalt des Systems ergänzt.
+Verwenden Sie eine Schriftart in der gesamten Benutzeroberfläche Ihrer App. Es wird empfohlen, wenn möglich, die Standardschriftart für Windows-Apps **Segoe UI** zu verwenden. Sie wurde entwickelt, um eine optimale Lesbarkeit für Größe und Pixeldichte zu wahren, und bietet eine klare, ansprechende und offene Ästhetik, die den Inhalt des Systems ergänzt.
 
 ![Beispieltext für die Schriftart „Segoe UI“](images/type/segoe-sample.svg)
 
-Weitere Informationen zum Anzeigen anderer Sprachen als Englisch oder um eine andere Schriftart für Ihre App auszuwählen finden Sie unter [Sprachen](#languages) und [Schriftarten](#fonts) für unsere empfohlenen Schriftarten für UWP-Apps.
+Weitere Informationen zum Anzeigen anderer Sprachen als Englisch oder um eine andere Schriftart für Ihre App auszuwählen finden Sie unter [Sprachen](#languages) und [Schriftarten](#fonts) für unsere empfohlenen Schriftarten für Windows-Apps.
 
 :::row:::
     :::column:::
@@ -46,7 +46,7 @@ Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, 
 
 :::row:::
     :::column:::
-![Richtig](images/do.svg) Folgen Sie der Größenanpassung der UWP-[Typhierarchie](#type-ramp).
+![Richtig](images/do.svg) Folgen Sie der Größenanpassung der Windows-[Typhierarchie](#type-ramp).
     :::column-end:::
     :::column:::
 ![Falsch](images/dont.svg) Verwenden Sie einen Schriftgrad kleiner als 12 Pixel.
@@ -57,7 +57,7 @@ Aufgrund der Funktionsweise der Skalierung, entwerfen Sie in effektiven Pixeln, 
 
 :::row:::
     :::column:::
-Benutzer folgen beim Sichten einer Seite der visuellen Hierarchie: Überschriften fassen Inhalte zusammen, Textkörper enthalten weitere Details. Um eine klare visuelle Hierarchie in Ihrer App zu erstellen, folgen Sie der UWP-Typhierarchie.
+Benutzer folgen beim Sichten einer Seite der visuellen Hierarchie: Überschriften fassen Inhalte zusammen, Textkörper enthalten weitere Details. Um eine klare visuelle Hierarchie in Ihrer App zu erstellen, folgen Sie der Windows-Typhierarchie.
     :::column-end:::
     :::column:::
 ![Textblock-Stile](images/type/type-hierarchy.svg)
@@ -66,7 +66,7 @@ Benutzer folgen beim Sichten einer Seite der visuellen Hierarchie: Überschrifte
 
 ### <a name="type-ramp"></a>Typhierarchie
 
-Die UWP-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitten auf einer Seite her, damit der Benutzer den Inhalt einfach lesen kann. Alle Größen werden in effektiven Pixeln angegeben und sind für UWP-Apps optimiert, die auf allen Geräten ausgeführt werden.
+Die Windows-Typhierarchie stellt wichtige Beziehungen zwischen den Schriftschnitten auf einer Seite her, damit der Benutzer den Inhalt einfach lesen kann. Alle Größen werden in effektiven Pixeln angegeben und sind für UWP-Apps optimiert, die auf allen Geräten ausgeführt werden.
 
 ![Typhierarchie](images/type/type-ramp.png)
 

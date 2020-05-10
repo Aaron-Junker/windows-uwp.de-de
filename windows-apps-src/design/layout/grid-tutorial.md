@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c5eb595f3347eb4670e4f7c0a50aa930341d3e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735035"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970195"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>Tutorial: Verwenden von Grid und StackPanel, um eine einfache Wetter-App zu erstellen
 
@@ -120,6 +120,6 @@ Das war’s! Sie haben das Layout für eine einfache Wetter-App erstellt. Wenn S
 Wenn Sie möchten, können Sie mit dem Layout oben experimentieren und verschiedene Möglichkeiten erkunden, wie Sie Wetterdaten darstellen können.
 
 ## <a name="related-articles"></a>Verwandte Artikel
-Eine Einführung in das Entwerfen von UWP-App-Layouts finden Sie unter [Einführung in das UWP-App-Design](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro).
+Eine Einführung in das Entwerfen von Windows-App-Layouts finden Sie unter [Einführung in das Windows-App-Design](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro).
 
 Informationen zum Erstellen von dynamischen Layouts, die an verschiedene Bildschirmgrößen angepasst werden können, finden Sie unter [Definieren von Seitenlayouts mit XAML](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml).

@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 68ca40a48b8b8d04bcd8b01584856233e9a99e7c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340166"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970205"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel, ein Beispiel für benutzerdefinierte Panels
 
@@ -47,7 +47,7 @@ Unter Berücksichtigung dieser Aspekte ist das hier gezeigte `BoxPanel` für ein
 
 Leiten Sie zunächst aus der [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)-Klasse eine benutzerdefinierte Klasse ab. Die einfachste Methode dafür ist wahrscheinlich, mithilfe der Kontextmenüoptionen **Hinzufügen** | **Neues Element** | **Klasse** für ein Projekt aus dem **5Projektmappen-Explorer** in Microsoft Visual Studio eine separate Codedatei für diese Klasse zu definieren. Benennen Sie die Klasse (und Datei) mit `BoxPanel`.
 
-Die Vorlagendatei für eine Klasse beginnt nicht mit vielen **using**-Anweisungen, weil sie nicht ausschließlich für UWP-Apps (Universelle Windows-Plattform) bestimmt ist. Fügen Sie daher zuerst **using**-Anweisungen hinzu. Die Vorlagendatei beginnt außerdem mit einigen **using**-Anweisungen, die Sie vielleicht nicht benötigen, und die gelöscht werden können. Hier ist eine Liste mit Vorschlägen für **using**-Anweisungen zur Auflösung von Typen, die Sie für einen typischen Code eines benutzerdefinierten Panels benötigen:
+Die Vorlagendatei für eine Klasse beginnt nicht mit vielen **using**-Anweisungen, weil sie nicht ausschließlich für Windows-Apps bestimmt ist. Fügen Sie daher zuerst **using**-Anweisungen hinzu. Die Vorlagendatei beginnt außerdem mit einigen **using**-Anweisungen, die Sie vielleicht nicht benötigen, und die gelöscht werden können. Hier ist eine Liste mit Vorschlägen für **using**-Anweisungen zur Auflösung von Typen, die Sie für einen typischen Code eines benutzerdefinierten Panels benötigen:
 
 ```CSharp
 using System;

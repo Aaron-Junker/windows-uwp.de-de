@@ -1,17 +1,17 @@
 ---
 description: Tipps zum Erstellen von konsistenten, benutzerfreundlichen Apps, die auch Originalität und Kreativität zum Ausdruck bringen
-title: Stil und Konsistenz im Gleichgewicht (UWP-App-Design)
+title: Stil und Konsistenz im Gleichgewicht (Windows-App-Design)
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb511fad1aa4e1605d83090a5e4e8d98efff1be
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0972fcdaba2ed8c1a9a7b3f297302b0b90184bc2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63790661"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970475"
 ---
 # <a name="balancing-style-and-consistency"></a>Stil und Konsistenz im Gleichgewicht
 

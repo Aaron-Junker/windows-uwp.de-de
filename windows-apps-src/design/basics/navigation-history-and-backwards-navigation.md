@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel erfahren Sie, wie Sie die Rückwärtsnavigation zum Durchlaufen des Navigationsverlaufs eines Benutzers in einer UWP-App implementieren.
+Description: In diesem Artikel erfahren Sie, wie Sie die Rückwärtsnavigation zum Durchlaufen des Navigationsverlaufs eines Benutzers in einer Windows-App implementieren.
 title: Navigationsverlauf und Rückwärtsnavigation
 template: detail.hbs
 op-migration-status: ready
@@ -7,18 +7,18 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 05b435eb6f070634507c143bd028d2cb051c97bc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0601aea88d0705377490fb4adf26ce3da9c4e573
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735025"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969146"
 ---
-# <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>Navigationsverlauf und Rückwärtsnavigation für UWP-Apps
+# <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Navigationsverlauf und Rückwärtsnavigation für Windows-Apps
 
 > **Wichtige APIs:** [BackRequested-Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
-Die universelle Windows-Plattform (UWP) enthält ein einheitliches System zur Rückwärtsnavigation, mit dem der Navigationsverlauf des Benutzers innerhalb einer App und je nach Gerät von App zu App durchlaufen werden kann.
+Die Windows-App enthält ein einheitliches System zur Rückwärtsnavigation, mit dem der Navigationsverlauf des Benutzers innerhalb einer App und je nach Gerät von App zu App durchlaufen werden kann.
 
 Um die Rückwärtsnavigation in Ihrer App zu implementieren, platzieren Sie einen [Zurück](#back-button)-Button in der oberen linken Ecke der Benutzeroberfläche Ihrer App. Wenn Ihre App das [NavigationView](../controls-and-patterns/navigationview.md)-Steuerelement verwendet, können Sie die integrierte [Zurück-Schaltfläche von NavigationView](../controls-and-patterns/navigationview.md#backwards-navigation) verwenden.
 

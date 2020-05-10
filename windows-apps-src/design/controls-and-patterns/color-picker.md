@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f287f738c39e21ea76ff2595cc34ac715a1b52ca
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6e7661beb52438640c570e1a5ec4d7f60502e119
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081199"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968895"
 ---
 # <a name="color-picker"></a>Farbauswahl
 
@@ -28,7 +28,7 @@ Mithilfe eines Farbwählers können Benutzer Farben suchen und auswählen. Stand
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ColorPicker** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **ColorPicker** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Windows-UI-Bibliotheks-APIs:** [ColorPicker-Klasse](/uwp/api/microsoft.ui.xaml.controls.colorpicker), [Color-Eigenschaft](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color), [ColorChanged-Ereignis](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >
@@ -220,7 +220,7 @@ Hexadezimalwerte | IsHexInputVisible
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Zeichen- und Eingabestiftinteraktionen in UWP-Apps](../input/pen-and-stylus-interactions.md)
+- [Zeichen- und Eingabestiftinteraktionen in Windows-Apps](../input/pen-and-stylus-interactions.md)
 - [Freihandeingaben](inking-controls.md)
 
 <!--

@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d0c2f5c5aa6c5d5bfcaee8e9b0ec14bbcd4ff3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8ed4515a90df50a1ff8c0d6b82eb8cda5a4a78c9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339373"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968745"
 ---
 # <a name="control-templates"></a>Steuerelementvorlagen
 
@@ -186,7 +186,7 @@ Wenn Sie schnell Designs auf Ihre Steuerelemente anwenden möchten, klicken Sie 
 
 ## <a name="controls-and-accessibility"></a>Steuerelemente und Barrierefreiheit
 
-Beim Erstellen einer neuen Vorlage für ein Steuerelement können Sie zusätzlich zur eventuellen Änderung des Verhaltens und der visuellen Darstellung des Steuerelements auch die Art und Weise ändern, wie sich das Steuerelement selbst für Barrierefreiheits-Frameworks repräsentiert. Die Universelle Windows-Plattform (UWP) unterstützt das Benutzeroberflächenautomatisierungs-Framework von Microsoft für die Barrierefreiheit. Alle Standardsteuerelemente und zugehörigen Vorlagen bieten Unterstützung für allgemeine Steuerelementtypen zur Benutzeroberflächenautomatisierung und Muster, die für den Zweck und die Funktion des Steuerelements geeignet sind. Diese Steuerelementtypen und Muster werden von Benutzeroberflächenautomatisierungs-Clients interpretiert, beispielsweise von Hilfstechnologien, und dies ermöglicht die Zugriffsmöglichkeit auf ein Steuerelement als Bestandteil einer barrierefreien größeren App-UI.
+Beim Erstellen einer neuen Vorlage für ein Steuerelement können Sie zusätzlich zur eventuellen Änderung des Verhaltens und der visuellen Darstellung des Steuerelements auch die Art und Weise ändern, wie sich das Steuerelement selbst für Barrierefreiheits-Frameworks repräsentiert. Die Windows-App unterstützt das Benutzeroberflächenautomatisierungs-Framework von Microsoft für die Barrierefreiheit. Alle Standardsteuerelemente und zugehörigen Vorlagen bieten Unterstützung für allgemeine Steuerelementtypen zur Benutzeroberflächenautomatisierung und Muster, die für den Zweck und die Funktion des Steuerelements geeignet sind. Diese Steuerelementtypen und Muster werden von Benutzeroberflächenautomatisierungs-Clients interpretiert, beispielsweise von Hilfstechnologien, und dies ermöglicht die Zugriffsmöglichkeit auf ein Steuerelement als Bestandteil einer barrierefreien größeren App-UI.
 
 Um die grundlegende Steuerlogik zu trennen und auch einige architekturbezogene Anforderungen der Benutzeroberflächenautomatisierung zu erfüllen, ist die Unterstützung der Barrierefreiheit von Steuerelementklassen in einer separaten Klasse in Form eines Automatisierungspeers enthalten. Die Automatisierungspeers interagieren mitunter mit den Steuerelementvorlagen, weil die Peers von der Existenz bestimmter benannter Teile in den Vorlagen ausgehen, sodass Funktionen wie die Aktivierung von Hilfstechnologien zum Aufrufen von Schaltflächenaktionen möglich sind.
 

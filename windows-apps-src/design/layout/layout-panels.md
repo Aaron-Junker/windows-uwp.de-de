@@ -1,16 +1,16 @@
 ---
 Description: Verwenden Sie Layoutpanels, um UI-Elemente in Ihrer App anzuordnen und zu gruppieren.
-title: Layoutpanels für UWP-Apps (Apps für die Universelle Windows-Plattform)
+title: Layoutpanels für Windows-Apps
 ms.date: 04/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 68aceb1fe4b0136bac9f8ff342f079f0dc23c1c7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210206"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970945"
 ---
 # <a name="layout-panels"></a>Layoutpanels
 
@@ -274,4 +274,4 @@ Es gibt verschiedene spezielle Panels, die nur als [**ItemsPanel**](https://docs
 
 ## <a name="get-the-sample-code"></a>Beispielcode herunterladen
 
-- [Beispiel für einen XAML-Steuerelementekatalog](https://github.com/Microsoft/Xaml-Controls-Gallery) – Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.
+- [Beispiel für einen XAML-Steuerelementekatalog:](https://github.com/Microsoft/Xaml-Controls-Gallery) Hier werden alle XAML-Steuerelemente in einem interaktiven Format dargestellt.

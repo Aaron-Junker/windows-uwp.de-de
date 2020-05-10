@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9896003fb1d55a2dbb57468848edd66a3d8d8d88
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893480"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970395"
 ---
 # <a name="collections-and-lists"></a>Sammlungen und Listen
 
@@ -41,7 +41,7 @@ Jedes dieser Steuerelemente (mit Ausnahme von ItemsRepeater) verfügt außerdem 
 
 Eines der Szenarien, die in diesem Artikel nicht behandelt werden, ist das Anzeigen von Sammlungen in einer Tabelle oder über mehrere Spalten. Wenn du eine Sammlung in diesem Format anzeigen möchten, bietet es sich an, das [DataGrid-Steuerelement](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) aus dem [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) zu verwenden. 
 
-> **Windows 10 Fall Creators Update – Verhaltensänderung**: Beim Schwenken/Bildlauf in der Liste der UWP-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
+> **Windows 10 Fall Creators Update – Verhaltensänderung**: Beim Schwenken/Bildlauf in der Liste der Windows-Apps wird jetzt standardmäßig anstelle des Ausführens der Auswahl ein aktiver Stift verwendet (z. B. Toucheingabe, Touchpad und passiver Stift).
 > Wenn Ihre App vom vorherigen Verhalten abhängig ist, können Sie die Stift-Bildlaufaktionen außer Kraft setzen und auf das vorherige Verhalten zurückzusetzen. Weitere Details finden Sie im API-Referenzthema für die [ScrollViewer-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer).
 
 ## <a name="examples"></a>Beispiele

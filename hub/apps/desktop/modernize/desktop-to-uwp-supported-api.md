@@ -1,6 +1,6 @@
 ---
-Description: Gepackte Desktop-Apps können eine Vielzahl von APIs der universellen Windows-Plattform (UWP) verwenden, selbst wenn sie nicht vollständig in eine UWP-App umgewandelt wurden. In diesem Artikel werden die verfügbaren Klassen aufgelistet, die deine gepackte App verwenden kann.
-title: Für eine gepackte Desktop-App (Desktop-Brücke) verfügbare UWP-APIs
+Description: Gepackte Desktop-Apps können eine Vielzahl von Windows-Runtime-APIs verwenden, selbst wenn sie nicht vollständig in eine UWP-App umgewandelt wurden. In diesem Artikel werden die verfügbaren Klassen aufgelistet, die deine gepackte App verwenden kann.
+title: Für eine gepackte Desktop-App (Desktop-Brücke) verfügbare Windows-Runtime-APIs
 ms.date: 04/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
@@ -9,24 +9,24 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 68c2427fe6b02385325f0f224cc837912621f6bb
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209666"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729850"
 ---
-# <a name="uwp-apis-available-to-desktop-apps"></a>Für Desktop-Apps verfügbare UWP-APIs
+# <a name="windows-runtime-apis-available-to-desktop-apps"></a>Für Desktop-Apps verfügbare Windows-Runtime-APIs
 
 Desktop-Apps können eine Vielzahl von APIs der universellen Windows-Plattform (UWP) verwenden, selbst wenn sie nicht vollständig in eine UWP-App umgewandelt wurden. In diesem Artikel werden die verfügbaren Klassen aufgelistet, die deine Desktop-App verwenden kann.
 
-Viele UWP-APIs benötigen eine [Paketidentität](modernize-packaged-apps.md), um in einer Desktop-App verwendet zu werden. Die meisten UWP-APIs funktionieren gut in Apps, die eine Paketidentität aufweisen. Allerdings sind einige Featurebereiche noch nicht vollständig getestet oder funktionieren derzeit noch nicht wie vorgesehen.
+Viele Windows-Runtime-APIs benötigen eine [Paketidentität](modernize-packaged-apps.md), um in einer Desktop-App verwendet zu werden. Die meisten Windows-Runtime-APIs funktionieren gut in Apps, die eine Paketidentität aufweisen. Allerdings sind einige Featurebereiche noch nicht vollständig getestet oder funktionieren derzeit noch nicht wie vorgesehen.
 
 | Featurebereich | Details |
 |--------------|---------|
 | Termine, Kontakte und E-Mails | Nicht alle APIs werden aktuell unterstützt. |
 | Authentifizierung und Benutzeridentität | Nicht alle APIs werden aktuell unterstützt. |
-| Hintergrundaufgaben | Desktop-Apps können zwar Hintergrundaufgaben registrieren, aber nur vollständig portierte UWP-Apps können <i>als</i> Hintergrundaufgabe ausgeführt werden. Weitere Informationen findest du im [Beispiel für eine Hintergrundaufgabe auf GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
+| Hintergrundaufgaben | Desktop-Apps können zwar Hintergrundaufgaben registrieren, aber nur vollständig portierte UWP-Apps können <i>als</i> Hintergrundaufgabe ausgeführt werden. Weitere Informationen finden Sie in [Beispiel für eine Hintergrundaufgabe auf GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample). |
 | Bluetooth | Nicht alle APIs werden aktuell unterstützt. |
 | Chat und Anrufe | Desktop-Apps können nicht auf mobilen Geräten ausgeführt werden, wenn sie nicht vollständig zu UWP portiert wurden. |
 | Vertragsaktivierung | Nur vollständig portierte UWP-Apps können über einen Vertrag aktiviert werden. |
@@ -45,9 +45,9 @@ Gelegentlich können APIs in diesen Bereichen scheinbar ordnungsgemäß funktion
 
 ## <a name="list-of-apis"></a>Liste der APIs
 
-Nachfolgend findest du eine vollständige Liste der UWP-APIs, die in Desktop-Apps unterstützt werden. Du kannst [nur in Apps mit Paketidentität unterstützte APIs](#new) oder [in allen Desktop-Apps unterstützte APIs](#both) anzeigen.
+Nachfolgend findest du eine vollständige Liste der Windows-Runtime-APIs, die in Desktop-Apps unterstützt werden. Du kannst [nur in Apps mit Paketidentität unterstützte APIs](#new) oder [in allen Desktop-Apps unterstützte APIs](#both) anzeigen.
 
-Beispiele zur Verwendung von UWP-APIs findest du unter [Beispiele zur Desktop-Brücke](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) und in den [App-Beispielen für die universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples) in GitHub. Außerdem enthält dieser Blogbeitrag zum Erstellen einer App für Windows nützliche Informationen: [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) (Aufrufen von Windows 10-APIs aus einer Desktopanwendung).
+Beispiele zur Verwendung von Windows-Runtime-APIs findest du unter [Beispiele zur Desktop-Brücke](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) und in den [App-Beispielen für die universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples) in GitHub. Außerdem enthält dieser Blogbeitrag zum Erstellen einer App für Windows nützliche Informationen: [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) (Aufrufen von Windows 10-APIs aus einer Desktopanwendung).
 
 <a id="new" />
 
