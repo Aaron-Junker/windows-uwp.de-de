@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e151e06f0ebc838671aa1100d96e8e6f14de0739
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bc080a58bc3e381fc26ddcc6a42af28e2dacaa65
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614134"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970445"
 ---
 # <a name="two-pane-view"></a>Ansicht mit zwei Bereichen
 
@@ -29,7 +29,7 @@ Das TwoPaneView-Steuerelement funktioniert zwar auf allen Windows-Geräten, ist 
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TwoPaneView** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TwoPaneView** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Windows-UI-Bibliotheks-APIs:** [TwoPaneView-Klasse](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 

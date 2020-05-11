@@ -1,6 +1,6 @@
 ---
-Description: Bei den Befehlselementen in einer Universellen Windows-Plattform (UWP)-App handelt es sich um die interaktiven Benutzeroberflächenelemente, mit denen der Benutzer Aktionen durchführen kann, um beispielsweise eine E-Mail zu senden, ein Element zu löschen oder ein Formular zu übermitteln.
-title: Befehlsdesigngrundlagen für Apps der universellen Windows-Plattform (UWP)
+Description: Befehlselemente in einer Windows-App sind die interaktiven Benutzeroberflächenelemente, mit denen der Benutzer Aktionen ausführen kann, um beispielsweise eine E-Mail zu senden, ein Element zu löschen oder ein Formular zu übermitteln.
+title: Grundlagen des Befehlsdesigns für Windows-Apps
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
@@ -10,16 +10,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6be51c274078d3b8db5ae50033bbf714ec4aa12a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26d649e5a27ae7eef0131964f5c277f3539da73f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081402"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969375"
 ---
-# <a name="command-design-basics-for-uwp-apps"></a>Befehlsdesigngrundlagen für UWP-Apps
+# <a name="command-design-basics-for-windows-apps"></a>Grundlagen des Befehlsdesigns für Windows-Apps
 
-Bei den *Befehlselementen* in einer Universellen Windows-Plattform (UWP)-App handelt es sich um die interaktiven Benutzeroberflächenelemente, mit denen Benutzer Aktionen durchführen können, um beispielsweise eine E-Mail zu senden, ein Element zu löschen oder ein Formular zu übermitteln. *Befehlsschnittstellen* setzen sich aus gängigen Befehlselementen, den Befehlsoberflächen, von denen sie gehostet werden, den von ihnen unterstützten Interaktionen sowie den gebotenen Erfahrungen zusammen.
+Bei den *Befehlselementen* in einer Windows-App handelt es sich um interaktive Benutzeroberflächenelemente, mit denen Benutzer Aktionen ausführen können, um beispielsweise eine E-Mail zu senden, ein Element zu löschen oder ein Formular zu übermitteln. *Befehlsschnittstellen* setzen sich aus gängigen Befehlselementen, den Befehlsoberflächen, von denen sie gehostet werden, den von ihnen unterstützten Interaktionen sowie den gebotenen Erfahrungen zusammen.
 
 ## <a name="provide-the-best-command-experience"></a>Bieten Sie die beste Benutzerfreundlichkeit für Befehle
 
@@ -33,7 +33,7 @@ Einige gängige Benutzererfahrungen im Zusammenhang mit Befehlen:
 - Öffnen, Speichern und Löschen von Dateien
 - Bearbeiten oder Erstellen von Inhalten
 
-Seien Sie kreativ beim Entwerfen der Benutzererfahrung für Befehle. Wählen Sie aus, welche Eingabegeräte von der App unterstützt werden und wie die App auf jedes Gerät reagiert. Durch Unterstützung der breitesten Palette von Funktionen und Einstellungen machen Sie Ihre Apps so nützlich, portabel und zugänglich wie möglich (weitere Einzelheiten finden Sie unter [Befehlsdesign für Universelle Windows-Plattform (UWP)-Apps](../controls-and-patterns/commanding.md)).
+Seien Sie kreativ beim Entwerfen der Benutzererfahrung für Befehle. Wählen Sie aus, welche Eingabegeräte von der App unterstützt werden und wie die App auf jedes Gerät reagiert. Durch Unterstützung der breitesten Palette von Funktionen und Einstellungen machen Sie Ihre Apps so nützlich, portabel und zugänglich wie möglich (weitere Einzelheiten finden Sie unter [Befehlsdesign für Windows-Apps](../controls-and-patterns/commanding.md)).
 
 
 
@@ -43,7 +43,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="choose-the-right-command-elements"></a>Auswählen der richtigen Befehlselemente
 
-Die Verwendung der richtigen Elemente in einer Befehlsschnittstelle kann den Unterschied zwischen einer intuitiven, benutzerfreundlichen App und einer schwierigen, verwirrenden App bewirken. In der Universellen Windows-Plattform (UWP) ist eine breite Palette von Befehlselementen verfügbar. Dies ist eine Liste mit einigen der gängigsten UWP-Befehlselemente.
+Die Verwendung der richtigen Elemente in einer Befehlsschnittstelle kann den Unterschied zwischen einer intuitiven, benutzerfreundlichen App und einer schwierigen, verwirrenden App bewirken. In der Windows-App ist eine breite Palette von Befehlselementen verfügbar. Dies ist eine Liste mit einigen der gängigsten UWP-Befehlselemente.
 
 :::row:::
     :::column:::
@@ -97,7 +97,7 @@ Bietet Vorschläge, während Benutzer z.B. Daten eingeben oder Abfragen ausführ
 
 Eine vollständige Liste finden Sie unter [Steuerelemente und UI-Elemente](../controls-and-patterns/index.md).
 
-## <a name="place-commands-on-the-right-surface"></a> Platzieren von Befehlen auf der passenden Oberfläche
+## <a name="place-commands-on-the-right-surface"></a>Platzieren von Befehlen auf der passenden Oberfläche
 
 Sie können Befehlselemente auf einer Reihe von Oberflächen in Ihrer App platzieren, einschließlich der App-Canvas oder spezieller Befehlscontainer, wie Befehlsleisten, Befehlsleisten-Flyouts, Menüleisten und Dialoge.
 
@@ -209,7 +209,7 @@ Für Aktionen, die rückgängig gemacht werden können, ist ein einfacher „Rü
 Umbenennen einer Datei
 :::row-end:::
 
-##  <a name="optimize-for-specific-input-types"></a> Optimieren für bestimmte Eingabearten
+##  <a name="optimize-for-specific-input-types"></a>Optimieren für bestimmte Eingabearten
 
 Ausführliche Informationen zum Optimieren der Benutzerfreundlichkeit bei einem bestimmten Eingabetyp oder -gerät finden Sie unter [Einführung in die Interaktion](../input/index.md).
 
