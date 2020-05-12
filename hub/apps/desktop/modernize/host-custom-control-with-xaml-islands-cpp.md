@@ -1,19 +1,19 @@
 ---
 description: Dieser Artikel veranschaulicht, wie ein benutzerdefiniertes UWP-Steuerelement mithilfe der XAML-Hosting-API in einer C++-Win32-App gehostet wird.
 title: Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App unter Verwendung der XAML-Hosting-API
-ms.date: 03/23/2020
+ms.date: 04/07/2020
 ms.topic: article
 keywords: Windows 10, UWP, C++, Win32, XAML Islands, benutzerdefinierte Steuerelemente, Benutzersteuerelemente, Hosten von Steuerelementen
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 93badc28c9c4fa1684836fc4a883e54661e8d4dc
-ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
+ms.openlocfilehash: eac2574d48864ba8b8dc907c8a7ec43ef266358b
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80986973"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606334"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>Hosten eines benutzerdefinierten UWP-Steuerelements in einer C++-Win32-App
 
@@ -512,6 +512,72 @@ Schließlich kannst du den Code zum Projekt **MyDesktopWin32App** hinzufügen, u
 
 9. Speichern Sie die Datei.
 10. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
+
+## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>Hinzufügen eines Steuerelements aus der WinUI-Bibliothek zum benutzerdefinierten Steuerelement
+
+Traditionell wurden UWP-Steuerelemente als Teil des Windows 10-Betriebssystems veröffentlicht und Entwicklern über das Windows SDK zur Verfügung gestellt. Die [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) ist ein alternativer Ansatz, bei dem aktualisierte Versionen von UWP-Steuerelementen aus dem Windows SDK in einem NuGet-Paket verteilt werden, das nicht an Windows SDK-Releases gebunden ist. Diese Bibliothek enthält darüber hinaus neue Steuerelemente, die nicht Teil des Windows SDK und der UWP-Standardplattform sind. Weitere Informationen finden Sie in der [Roadmap für die WinUI-Bibliothek](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md).
+
+In diesem Abschnitt wird veranschaulicht, wie Sie dem Benutzersteuerelement ein UWP-Steuerelement aus der WinUI-Bibliothek hinzufügen, sodass Sie dieses Steuerelement in Ihrer WPF-App hosten können.
+
+1. Installieren Sie im **MyUWPApp**-Projekt die neueste Vorabversion oder Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets.
+
+    > [!NOTE]
+    > Wenn Ihre Desktop-App in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) gepackt ist, können Sie entweder eine Vorabversion oder eine Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NugGet-Pakets verwenden. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, müssen Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
+
+2. Fügen Sie der pch.h-Datei in diesem Projekt die folgenden `#include`-Anweisungen hinzu, und speichern Sie Ihre Änderungen. Diese Anweisungen holen einen erforderlichen Satz von Projektionsheadern aus der WinUI-Bibliothek in Ihr Projekt. Dieser Schritt ist für alle C++/WinRT-Projekte erforderlich, die die WinUI-Bibliothek verwenden. Weitere Informationen finden Sie in [diesem Artikel](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project).
+
+    ```cpp
+    #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
+    #include "winrt/Microsoft.UI.Xaml.Controls.Primitives.h"
+    #include "winrt/Microsoft.UI.Xaml.Media.h"
+    #include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+    ```
+
+3. Fügen Sie der App.xaml-Datei im selben Projekt dem `<xaml:XamlApplication>`-Element das folgende untergeordnete Element hinzu, und speichern Sie Ihre Änderungen.
+
+    ```xml
+    <Application.Resources>
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+    </Application.Resources>
+    ```
+
+    Nachdem dieses Element hinzugefügt wurde, sollte der Inhalt dieser Datei in etwa wie folgt aussehen.
+
+    ```xml
+    <Toolkit:XamlApplication
+        x:Class="MyUWPApp.App"
+        xmlns:Toolkit="using:Microsoft.Toolkit.Win32.UI.XamlHost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:MyUWPApp">
+        <Application.Resources>
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+        </Application.Resources>
+    </Toolkit:XamlApplication>
+    ```
+
+4. Öffnen Sie im gleichen Projekt die MyUserControl.xaml-Datei, und fügen Sie dem `<UserControl>`-Element die folgende Namespacedeklaration hinzu.
+
+    ```xml
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    ```
+
+5. Fügen Sie in derselben Datei ein `<winui:RatingControl />`-Element als untergeordnetes Element von `<StackPanel>` hinzu, und speichern Sie Ihre Änderungen. Dieses Element fügt eine Instanz der [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol -Klasse aus der WinUI-Bibliothek hinzu. Nachdem dieses Element hinzugefügt wurde, sollte das `<StackPanel>` nun ungefähr wie hier aussehen:
+
+    ```xml
+    <StackPanel HorizontalAlignment="Center" Spacing="10" 
+                Padding="20" VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" 
+                       Text="Hello from XAML Islands" FontSize="30" />
+        <TextBlock HorizontalAlignment="Center" Margin="15" TextWrapping="Wrap"
+                       Text="😍❤💋🌹🎉😎�🐱‍👤" FontSize="16" />
+        <Button HorizontalAlignment="Center" 
+                x:Name="Button" Click="ClickHandler">Click Me</Button>
+        <winui:RatingControl />
+    </StackPanel>
+    ```
+
+6. Kompiliere die Projektmappe und stelle sicher, dass der Vorgang erfolgreich war.
 
 ## <a name="test-the-app"></a>Testen der App
 
