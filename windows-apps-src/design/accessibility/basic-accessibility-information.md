@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b019495235ca2ff4bec2f9e6bc1b9230a15599
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ff19eea5a2fa57d4e5b2728ddbd87e5d99ff539a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969515"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234130"
 ---
 # <a name="expose-basic-accessibility-information"></a>Verfügbarmachen von grundlegenden Informationen zur Barrierefreiheit  
 
@@ -56,7 +56,7 @@ Nicht alle Steuerelemente haben einen Wert. Steuerelemente mit einem Wert stelle
 ## <a name="influencing-the-ui-automation-tree-views"></a>Beeinflussen der UI-Automatisierungsstrukturansichten  
 Das Benutzeroberflächenautomatisierungs-Framework verfügt über ein Konzept mit Strukturansichten, bei dem Benutzeroberflächenautomatisierungsclients die Beziehungen zwischen Elementen in einer UI mithilfe von drei möglichen Ansichten abrufen können: unformatiert, Steuerelement und Inhalt. Die Steuerelementansicht wird häufig von Benutzeroberflächenautomatisierungsclients verwendet, da sie eine gute Darstellung und Organisation der interaktiven Elemente einer UI bietet. Mithilfe von Testtools können Sie in der Regel auswählen, welche Strukturansicht verwendet werden soll, wenn das Tool die Organisation von Elementen darstellt.
 
-Standardmäßig werden alle von [**Steuer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) Element abgeleiteten Klassen und einige andere Elemente in der Steuerelement Ansicht angezeigt, wenn das Benutzeroberflächenautomatisierungs-Framework die Benutzeroberfläche für eine Windows-App-APP darstellt. Es kann aber vorkommen, dass ein Element in der Steuerelementansicht aufgrund einer UI-Komposition nicht angezeigt werden soll, bei der das Element Informationen dupliziert oder Informationen darstellt, die für Barrierefreiheitsszenarien unwichtig sind. Ändern Sie mithilfe der angefügten [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty)-Eigenschaft, wie Elemente für die Strukturansicht verfügbar gemacht werden. Wenn Sie ein Element in der **Raw**-Struktur platzieren, melden die meisten Hilfstechnologien dieses Element nicht als Teil ihrer Ansichten. Um Beispiele für die Funktionsweise in vorhandenen Steuerelementen zu erhalten, öffnen Sie die XAML-Entwurfsreferenzdatei „generic.xaml“ in einem Text-Editor und suchen in den Vorlagen nach **AutomationProperties.AccessibilityView**.
+Standardmäßig werden alle von [**Steuer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) Element abgeleiteten Klassen und einige andere Elemente in der Steuerelement Ansicht angezeigt, wenn das Benutzeroberflächenautomatisierungs-Framework die Benutzeroberfläche für eine Windows-APP darstellt. Es kann aber vorkommen, dass ein Element in der Steuerelementansicht aufgrund einer UI-Komposition nicht angezeigt werden soll, bei der das Element Informationen dupliziert oder Informationen darstellt, die für Barrierefreiheitsszenarien unwichtig sind. Ändern Sie mithilfe der angefügten [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty)-Eigenschaft, wie Elemente für die Strukturansicht verfügbar gemacht werden. Wenn Sie ein Element in der **Raw**-Struktur platzieren, melden die meisten Hilfstechnologien dieses Element nicht als Teil ihrer Ansichten. Um Beispiele für die Funktionsweise in vorhandenen Steuerelementen zu erhalten, öffnen Sie die XAML-Entwurfsreferenzdatei „generic.xaml“ in einem Text-Editor und suchen in den Vorlagen nach **AutomationProperties.AccessibilityView**.
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>

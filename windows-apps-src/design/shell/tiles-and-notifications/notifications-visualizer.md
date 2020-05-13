@@ -1,5 +1,5 @@
 ---
-Description: Notifications Visualizer ist eine neue Windows-App im Store, die Entwickler dabei unterstützt, adaptive Live-Kacheln für Windows 10 zu entwerfen.
+Description: Die Benachrichtigungs Schnellansicht ist eine neue Windows-App im Store, die Entwicklern beim Entwerfen adaptiver Live-Kacheln für Windows 10 hilft.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -7,19 +7,19 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d355570ef7002d1424457bf29f8161680f2c77
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5f9dc51a8ba387018a50e95702db1c539e889a5d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971035"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234686"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
  
 
 
-Die Benachrichtigungs Schnellansicht ist eine neue Windows-App-APP [im Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , die Entwicklern das Entwerfen von adaptiven Live Kacheln und interaktiven Popup Benachrichtigungen für Windows 10 unterstützt.
+Die Benachrichtigungs Schnellansicht ist eine neue Windows-APP [im Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) , die Entwicklern das Entwerfen von adaptiven Live Kacheln und interaktiven Popup Benachrichtigungen für Windows 10 unterstützt.
 
 
 ## <a name="overview"></a>Übersicht
@@ -34,7 +34,7 @@ Dieser Screenshot der App zeigt die XML-Nutzlast und die Art und Weise, wie Kach
 
 Mit der Benachrichtigungs Schnellansicht können Sie Adaptive Kachel-und Toast Nutzlasten erstellen und testen, ohne Ihre eigene APP bearbeiten und bereitstellen zu müssen. Nachdem Sie eine Nutzlast mit idealen visuellen Ergebnissen erstellt haben, können Sie diese in Ihre APP integrieren. Weitere Informationen finden Sie unter [Senden einer lokalen Kachel Benachrichtigung](sending-a-local-tile-notification.md) und [Senden eines lokalen](send-local-toast.md) Popups.
 
-**Beachten Sie**    , dass die Simulation der Schnellansicht des Windows-Start Menüs und Popup Benachrichtigungen nicht immer vollständig korrekt ist und einige erweiterte Nutz Last Eigenschaften nicht unterstützt. Wenn Sie über die gewünschte Kachel oder den gewünschten Toast verfügen, testen Sie Sie, indem Sie die Kachel fixieren oder den Popup Pop, um zu überprüfen, ob Sie in ihrer Absicht angezeigt wird.
+**Hinweis**    Die Simulation der Benachrichtigungs Schnellansicht des Windows-Start Menüs und der Popup Benachrichtigungen sind nicht immer vollständig genau, und einige erweiterte Nutz Last Eigenschaften werden nicht unterstützt. Wenn Sie über die gewünschte Kachel oder den gewünschten Toast verfügen, testen Sie Sie, indem Sie die Kachel fixieren oder den Popup Pop, um zu überprüfen, ob Sie in ihrer Absicht angezeigt wird.
 
  
 

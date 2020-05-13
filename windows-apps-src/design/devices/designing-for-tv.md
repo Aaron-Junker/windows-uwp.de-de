@@ -13,16 +13,16 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970725"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234596"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Entwerfen für Xbox und Fernsehgeräte
 
-Entwerfen Sie Ihre Windows-App-APP so, dass Sie gut aussieht und auf Xbox One-und TV-Bildschirmen gut funktioniert.
+Entwerfen Sie Ihre Windows-APP so, dass Sie gut aussieht und gut auf Xbox One-und TV-Bildschirmen funktioniert.
 
 Unter [Gamepad-und Remote Steuerungs Interaktionen](../input/gamepad-and-remote-interactions.md) finden Sie Anleitungen zur Interaktion bei UWP-Anwendungen mit der *10-Fuß-* Erfahrung.
 
@@ -333,7 +333,7 @@ Sie platzieren den zuvor angezeigten Codeausschnitt entweder in die Seitenressou
 > [!NOTE]
 > Dieser Codeausschnitt gilt speziell für `ListView`-Elemente. Legen Sie bei einem `GridView`-Stil das [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)-Attribut für [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) und [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) auf `GridView` fest.
 
-Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können Sie in [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit die **ListView**/-**GridView** Sie vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
+Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können Sie in [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit die **ListView**- / **GridView** Sie vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -413,7 +413,7 @@ Beachten Sie bei der Entwicklung von Apps für Fernsehgeräte, dass Farben sehr 
 
 ### <a name="tv-safe-colors"></a>Fernsehsichere Farben
 
-Die RGB-Werte einer Farbe stellen die Intensität für Rot, Grün und Blau dar. Die Fernsehgeräte behandeln keine extrem Intensitäten&mdash;sehr gut, Sie können zu einem ungeraden geblenden Effekt führen oder auf bestimmten Fernsehgeräten ausgewaschen angezeigt werden. Darüber hinaus verursachen Farben mit hoher Intensität möglicherweise ein „Blooming“, d. h., Pixel in der Nähe beginnen, die gleichen Farben aufzurufen. Die Ansichten darüber, was als fernsehsichere Farben gelten kann, gehen zwar auseinander. Im Allgemeinen können Farben mit RGB-Werten zwischen 16 und 235 (oder 10-EB hexadezimal) jedoch sicher für Fernsehgeräte verwendet werden.
+Die RGB-Werte einer Farbe stellen die Intensität für Rot, Grün und Blau dar. Die Fernsehgeräte behandeln keine extrem Intensitäten sehr gut &mdash; , Sie können zu einem ungeraden geblenden Effekt führen oder auf bestimmten Fernsehgeräten ausgewaschen angezeigt werden. Darüber hinaus verursachen Farben mit hoher Intensität möglicherweise ein „Blooming“, d. h., Pixel in der Nähe beginnen, die gleichen Farben aufzurufen. Die Ansichten darüber, was als fernsehsichere Farben gelten kann, gehen zwar auseinander. Im Allgemeinen können Farben mit RGB-Werten zwischen 16 und 235 (oder 10-EB hexadezimal) jedoch sicher für Fernsehgeräte verwendet werden.
 
 ![Fernsehsicherer Farbbereich](images/designing-for-tv/tv-safe-colors-2.png)
 
@@ -462,7 +462,7 @@ Zwar funktionieren die Standard-UWP-Schaltflächen sehr gut auf TV-Bildschirmen,
 
 Eine geschachtelte Benutzeroberfläche (User Interface, UI) verfügt über geschachtelte Elemente mit ausführbaren Aktionen, die in einem Container eingeschlossen sind, sodass sowohl die geschachtelten Elemente als auch die Container unabhängig voneinander den Fokus erhalten können.
 
-Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung besteht darin, die in einer `ContextFlyout`eingefügten Benutzeroberflächen Elemente zu platzieren.
+Geschachtelte UI eignet sich für einige Eingabetypen, jedoch nicht immer für Gamepads und Fernbedienungen, da diese eine XY-Navigation erfordern. Beachten Sie die unter diesem Thema angeführten Richtlinien, um sicherzustellen, dass die Benutzeroberfläche für die 10-Fuß-Umgebung optimiert ist, und dass die Benutzer mühelos auf alle interaktiven Elemente zugreifen können. Eine gängige Lösung besteht darin, die in einer eingefügten Benutzeroberflächen Elemente zu platzieren `ContextFlyout` .
 
 Weitere Informationen zur geschachtelten UI finden Sie unter [Geschachtelte UI bei Listenelementen](../controls-and-patterns/nested-ui.md).
 
@@ -566,6 +566,6 @@ Beim Entwerfen für die 10 Fuß-Erfahrung müssen einige besondere Punkte berüc
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Geräte Einführung für Windows-app-apps](index.md)
+- [Geräte Einführung für Windows-apps](index.md)
 - [Interaktionen mit Gamepad und Fernbedienung](../input/gamepad-and-remote-interactions.md)
 - [Sound in UWP-Apps](../style/sound.md)

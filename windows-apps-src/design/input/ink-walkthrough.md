@@ -6,19 +6,19 @@ keywords: frei Hand Eingabe, tuorial
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b4dc6fbec0e16428035348114b1b160d50cff0
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: d0df2b531510d86591c44bc69f6ed5c6ad9f200f
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968145"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234622"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Tutorial: unterstützen von Freihand in Ihrer Windows-App
 
 ![Surface-Stift](images/ink/ink-hero-small.png)  
 *Surface-Stift* (zum Kauf im [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b) verfügbar).
 
-In diesem Tutorial wird erläutert, wie Sie eine einfache Windows-App-app erstellen, die das Schreiben und zeichnen mit Windows Ink unterstützt. Wir verwenden Ausschnitte aus einer Beispiel-APP, die Sie von GitHub herunterladen können (siehe [Beispielcode](#sample-code)), um die verschiedenen Features und zugehörigen Windows Ink-APIs (siehe [Komponenten der Windows Ink-Plattform](#components-of-the-windows-ink-platform)), die in jedem Schritt erläutert werden, zu veranschaulichen.
+In diesem Tutorial wird erläutert, wie Sie eine einfache Windows-app erstellen, die das Schreiben und zeichnen mit Windows Ink unterstützt. Wir verwenden Ausschnitte aus einer Beispiel-APP, die Sie von GitHub herunterladen können (siehe [Beispielcode](#sample-code)), um die verschiedenen Features und zugehörigen Windows Ink-APIs (siehe [Komponenten der Windows Ink-Plattform](#components-of-the-windows-ink-platform)), die in jedem Schritt erläutert werden, zu veranschaulichen.
 
 Wir konzentrieren uns auf Folgendes:
 * Hinzufügen grundlegender frei Hand Eingaben
@@ -79,7 +79,7 @@ Nachdem Sie die radialcontroller-Beispiel-App heruntergeladen haben, vergewisser
 3. Drücken Sie F5, um zu kompilieren, bereitzustellen und auszuführen.  
 
    > [!NOTE]
-   > Alternativ können Sie das Menü Element **Debuggen Debuggen** > **starten** auswählen oder die hier angezeigte Schaltfläche **lokaler Computer** ausführen auswählen.
+   > Alternativ können Sie **Debug**  >  das Menü Element**Debuggen Debuggen starten** auswählen oder die hier angezeigte Schaltfläche **lokaler Computer** ausführen auswählen.
    > ![Schaltfläche "Visual Studio Build Project"](images/ink/ink-vsrun-small.png)
 
 Das App-Fenster wird geöffnet, und nachdem ein Begrüßungsbildschirm für einige Sekunden angezeigt wird, sehen Sie diesen ersten Bildschirm.
@@ -112,7 +112,7 @@ Fügen Sie zum Hinzufügen grundlegender Freihand-Funktionen einfach ein [**InkC
 ```
 
 4. Öffnen Sie die Datei "MainPage. XAML".
-5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet\<ist ("!--Schritt 2: Grundlegendes zu InkCanvas-->").
+5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 2: Grundlegendes zu InkCanvas-->").
 6. Entfernen Sie die Auskommentierung der folgenden Zeile.  
 
 ``` xaml
@@ -165,7 +165,7 @@ Wenn Sie einer Freihand-App eine Standard- [**inktoolbar**](https://docs.microso
 
 ### <a name="in-the-sample"></a>Im Beispiel
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet\<ist ("!--Schritt 4: Hinzufügen einer frei Handsymbol Leiste-->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 4: Hinzufügen einer frei Handsymbol Leiste-->").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen.  
 
 ``` xaml
@@ -212,14 +212,14 @@ In diesem Schritt verwenden wir die Handschrifterkennungsfunktionen von Windows 
 > [!NOTE]
 > Die Handschrifterkennung kann über den **Stift & Windows-Ink** -Einstellungen verbessert werden:
 > 1. Öffnen Sie das Startmenü, und wählen Sie **Einstellungen**aus.
-> 2. Wählen Sie im Bildschirm "Einstellungen" die Option **Geräte** > **Stift & Windows**frei.
+> 2. Wählen Sie im Bildschirm "Einstellungen" die Option **Geräte**  >  **Stift & Windows**frei.
 > ![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/ink/ink-settings-small.png)
 > 3. Wählen Sie **Get to Know Your Hand Hand** , um das Dialogfeld für die **Handschrift Personalisierung** zu öffnen
 > ![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet\<ist ("!--Schritt 5: Unterstützung von Handschrifterkennung-->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 5: Unterstützung von Handschrifterkennung-->").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen.  
 
 ``` xaml
@@ -347,7 +347,7 @@ In diesem Beispiel versuchen wir nicht, frei Hand Striche neu zu zeichnen (obwoh
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet\<ist ("!--Schritt 6: Erkennen von Formen-->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 6: Erkennen von Formen-->").
 3. Kommentieren Sie diese Zeile aus.  
 
 ``` xaml
@@ -402,7 +402,7 @@ In diesem Schritt verbinden wir die Schaltflächen " **Speichern** " und " **Lad
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet\<ist ("!--Schritt 7: Speichern und Laden von frei Hand Eingaben->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 7: Speichern und Laden von frei Hand Eingaben->").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen. 
 
 ``` xaml
@@ -464,7 +464,7 @@ Herzlichen Glückwunsch, Sie haben die **Eingabe abgeschlossen: Unterstützung v
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Stift Interaktionen und Windows-Freihand in Windows-apps](pen-and-stylus-interactions.md)
+* [Stiftinteraktionen und Windows Ink in Windows-Apps](pen-and-stylus-interactions.md)
 
 ### <a name="samples"></a>Beispiele
 

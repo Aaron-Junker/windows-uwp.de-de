@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, sparsesloadpakete, c#, C Sharp, Popup Benachrichtigung, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: f177660ce6e367caf69de849839a94472f5343fb
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 679254aa35ea49e72f7feaae02ba0ccbddeafdad
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968285"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233660"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Lokale Popup Benachrichtigung von Desktop-c#-apps senden
 
-Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-app-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie keine msix-oder Sparse-Pakete verwenden.
+Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie keine msix-oder Sparse-Pakete verwenden.
 
 > [!IMPORTANT]
 > Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
@@ -27,7 +27,7 @@ Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/window
 
 Wenn Sie nicht auf die Windows-Runtime-APIs von ihrer Win32-App verwiesen haben, müssen Sie dies zunächst tun.
 
-Installieren Sie einfach `Microsoft.Windows.SDK.Contracts` das [nuget-Paket](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) in Ihrem Projekt. Weitere Informationen zum [Aktivieren von Windows-Runtime APIs finden Sie hier](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+Installieren Sie einfach das `Microsoft.Windows.SDK.Contracts` [nuget-Paket](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) in Ihrem Projekt. Weitere Informationen zum [Aktivieren von Windows-Runtime APIs finden Sie hier](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 
 ## <a name="step-2-copy-compat-library-code"></a>Schritt 2: Kopieren des Kompatibilitäts-Bibliothekscodes
@@ -70,7 +70,7 @@ Fügen Sie in der Datei " **Package. appxmanifest**" Folgendes hinzu, wenn Sie e
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
 3. Im **ignorablenamespaces** -Attribut, **com** und **Desktop**
-4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, dass `Arguments="-ToastActivated"` Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
+4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, `Arguments="-ToastActivated"` dass Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
 5. **Desktop: Erweiterung** für **Windows. toastnotificationactivation** zum Deklarieren der Popup-Activator-CLSID (die GUID aus Schritt #3).
 
 **"Package. appxmanifest"**
@@ -117,7 +117,7 @@ Wählen Sie eine eindeutige aumid aus, mit der ihre Win32-App identifiziert wird
 
 #### <a name="step-41-wix-installer"></a>Schritt 4,1: WiX-Installer
 
-Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #3 in `{}` eingeschlossen ist, wie unten gezeigt.
+Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #3 in eingeschlossen ist, `{}` wie unten gezeigt.
 
 **Product. wxs**
 
@@ -219,7 +219,7 @@ Wenn der Benutzer auf den Popup klickt, wird die **onaktivierte** Methode der **
 Innerhalb der onaktivierten Methode können Sie die args analysieren, die Sie im Toast angegeben haben, und die Benutzereingabe abrufen, die der Benutzer eingegeben oder ausgewählt hat, und die APP dann entsprechend aktivieren.
 
 > [!NOTE]
-> Die **onaktivierte** Methode wird nicht im UI-Thread aufgerufen. Wenn Sie UI-Thread Vorgänge durchführen möchten, müssen Sie den `Application.Current.Dispatcher.Invoke(callback)`Befehl ausführen.
+> Die **onaktivierte** Methode wird nicht im UI-Thread aufgerufen. Wenn Sie UI-Thread Vorgänge durchführen möchten, müssen Sie den Befehl ausführen `Application.Current.Dispatcher.Invoke(callback)` .
 
 ```csharp
 // The GUID must be unique to your app. Create a new GUID if copying this code.
@@ -297,7 +297,7 @@ public class MyNotificationActivator : NotificationActivator
 }
 ```
 
-Um das Starten zu unterstützen, während Ihre APP geschlossen ist, `App.xaml.cs` sollten Sie in der Datei die **OnStartup** -Methode (für WPF-Apps) überschreiben, um zu bestimmen, ob Sie von einem Toast gestartet werden. Wenn Sie von einem Toast aus gestartet wird, wird eine Start-arg von "-toastaktiviert" angezeigt. Wenn Sie dies sehen, sollten Sie den normalen Start Aktivierungscode nicht mehr ausführen und den Start des **onaktivierten** Code Handles zulassen.
+Um das Starten zu unterstützen, während Ihre APP geschlossen ist, sollten Sie in der `App.xaml.cs` Datei die **OnStartup** -Methode (für WPF-Apps) überschreiben, um zu bestimmen, ob Sie von einem Toast gestartet werden. Wenn Sie von einem Toast aus gestartet wird, wird eine Start-arg von "-toastaktiviert" angezeigt. Wenn Sie dies sehen, sollten Sie den normalen Start Aktivierungscode nicht mehr ausführen und den Start des **onaktivierten** Code Handles zulassen.
 
 ```csharp
 protected override async void OnStartup(StartupEventArgs e)

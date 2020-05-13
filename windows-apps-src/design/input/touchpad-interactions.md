@@ -1,5 +1,5 @@
 ---
-Description: Erstellen Sie Windows-app-apps mit intuitiver und unterschiedlichen Benutzerinteraktionen, die für Touchpad optimiert sind, aber funktionell auf Eingabegeräten einheitlich sind.
+Description: Erstellen Sie Windows-apps mit intuitiver und unterschiedlichen Benutzerinteraktionen, die für Touchpad optimiert sind, aber funktionell auf Eingabegeräten einheitlich sind.
 title: Touchpad-Interaktionen
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,12 +8,12 @@ keywords: Touchpad, PTP, Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970235"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234488"
 ---
 # <a name="touchpad-design-guidelines"></a>Touchpad-Designrichtlinien
 
@@ -55,11 +55,11 @@ Benutzer können viel mehr Gesten und Interaktionsverhalten für Präzisionstouc
 
 ![Einstellungen für ein standardmäßiges Touchpad](images/mouse-touchpad-settings-standard.png)
 
-<sup>Standard\\ Einstellungen für\\ Touchpad</sup>
+<sup>Standard \\ Einstellungen für Touchpad \\</sup>
 
 ![Einstellungen für ein Windows-Präzisionstouchpad](images/mouse-touchpad-settings-ptp.png)
 
-<sup>\\ Touchpad\\ \\ -Einstellungen für Windows Precision</sup>
+<sup>\\ \\ Touchpad- \\ Einstellungen für Windows Precision</sup>
 
 Im Anschluss folgen einige Beispiele für touchpadoptimierte Gesten zum Ausführen allgemeiner Aufgaben.
 

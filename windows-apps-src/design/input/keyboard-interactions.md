@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 1d883243b60b2b2693fbf0f21315008e556b5743
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 44cb122f70825df3ceef043d84e57cd077780749
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970755"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234701"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -89,13 +89,13 @@ Eine visuelle Fokus Visualisierung:
 
 Damit ein Steuerelement (einschließlich der Navigationselemente) über die Tastatur verwendet werden kann, muss auf dem Steuerelement der Fokus liegen. Eine Möglichkeit für ein Steuerelement, den Tastaturfokus zu erhalten, besteht darin, ihn über die Registerkarten Navigation zugänglich zu machen, indem er als Tabstopp in der Aktivier Reihenfolge der Anwendung identifiziert
 
-Damit ein Steuerelement in der Aktivier Reihenfolge enthalten ist, muss die [isaktivierte](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) Eigenschaft auf **true** festgelegt werden, und die [istabstopp](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) -Eigenschaft muss auf **true**festgelegt werden.
+Damit ein Steuerelement in der Aktivier Reihenfolge enthalten ist, muss die [isaktivierte](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) Eigenschaft auf **true** festgelegt werden, und die [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) -Eigenschaft muss auf **true**festgelegt werden.
 
-Wenn Sie ein Steuerelement explizit aus der Aktivier Reihenfolge ausschließen möchten, legen Sie die Eigenschaft [istabstopp](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) auf **false**fest.
+Wenn Sie ein Steuerelement explizit aus der Aktivier Reihenfolge ausschließen möchten, legen Sie die Eigenschaft [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) auf **false**fest.
 
-Standardmäßig gibt die Aktivier Reihenfolge die Reihenfolge an, in der Benutzeroberflächen Elemente erstellt werden. Wenn z. b. `StackPanel` ein- `Button`, ein `Checkbox`-und ein `TextBox`-Wert enthält, `Button`ist `Checkbox`die Aktivier Reihenfolge, und `TextBox`.
+Standardmäßig gibt die Aktivier Reihenfolge die Reihenfolge an, in der Benutzeroberflächen Elemente erstellt werden. Wenn z. b. ein `StackPanel` `Button` -, ein `Checkbox` -und ein-Wert enthält, ist die Aktivier `TextBox` Reihenfolge `Button` , `Checkbox` und `TextBox` .
 
-Sie können die Standard Sortierreihenfolge überschreiben, indem Sie die [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) -Eigenschaft festlegen.
+Sie können die Standard Sortierreihenfolge überschreiben, indem Sie die [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) -Eigenschaft festlegen.
 
 #### <a name="tab-order-should-be-logical-and-predictable"></a>Tab-Reihenfolge muss logisch und vorhersagbar sein.
 
@@ -119,7 +119,7 @@ Versuchen Sie, die wichtigsten Befehle, Steuerelemente und Inhalte zuerst in der
 
 Ursprünglicher Fokus gibt das Benutzeroberflächen Element an, das den Fokus erhält, wenn eine Anwendung oder eine Seite zum ersten Mal gestartet oder aktiviert wird. Wenn Sie eine Tastatur verwenden, ist es von diesem Element aus, dass ein Benutzer mit der Interaktion mit der Benutzeroberfläche Ihrer Anwendung beginnt.
 
-Für UWP-apps wird der anfängliche Fokus auf das-Element mit dem höchsten [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) festgelegt, das den Fokus erhalten kann. Untergeordnete Elemente von Container Steuerelementen werden ignoriert. In einer Bindung erhält das erste Element in der visuellen Struktur den Fokus.
+Für UWP-apps wird der anfängliche Fokus auf das-Element mit dem höchsten [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) festgelegt, das den Fokus erhalten kann. Untergeordnete Elemente von Container Steuerelementen werden ignoriert. In einer Bindung erhält das erste Element in der visuellen Struktur den Fokus.
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>Legen Sie den anfänglichen Fokus auf das logischste Element fest.
 
@@ -143,7 +143,7 @@ Standardmäßig folgen UWP-Steuerelemente diesen grundlegenden Tastatur Verhalte
 -   **Tab-Taste** Navigieren zwischen handlungsfähigen/aktiven Steuerelementen in der Aktivier Reihenfolge.
 -   **UMSCHALT + TAB** Navigation Steuerelemente in umgekehrter Aktivier Reihenfolge. Wenn der Benutzer im Steuerelement mithilfe der Pfeiltaste navigiert hat, wird der Fokus auf den letzten bekannten Wert im Steuerelement festgelegt.
 -   **Pfeiltasten** machen eine Steuerelement spezifische "innere Navigation" verfügbar, wenn der Benutzer in "innere Navigation" wechselt, und die Pfeiltasten werden nicht aus einem Steuerelement navigiert. Beispiele hierfür sind:
-    -   Nach-oben/nach-unten- `ListView` Taste Verschiebt den Fokus in und`MenuFlyout`
+    -   Nach-oben/nach-unten-Taste Verschiebt den Fokus in `ListView` und`MenuFlyout`
     -   Aktuell ausgewählte Werte für `Slider` und ändern`RatingsControl`
     -   Einfügemarke in verschieben`TextBox`
     -   Elemente in erweitern/reduzieren`TreeView`
@@ -166,7 +166,7 @@ Wenn Elemente in einer einzelnen Spalte angezeigt werden, navigiert die nach-obe
 
 Durch Definieren eines einzelnen Tabstopps für eine Auflistung verwandter, oder ergänzender Steuerelemente können Sie die Anzahl der allgemeinen Tabstopps in der APP minimieren.
 
-Die folgenden Bilder zeigen z. b. zwei `ListView` gestapelte Steuerelemente. Das Bild auf der linken Seite zeigt die Pfeiltasten Navigation, die mit einem Tabstopp `ListView` zum Navigieren zwischen Steuerelementen verwendet wird, während das Bild auf der rechten Seite anzeigt, wie die Navigation zwischen untergeordneten Elementen einfacher und effizienter gemacht werden kann, da übergeordnete Steuerelemente nicht mit einer Tabulator Taste durchlaufen werden müssen.
+Die folgenden Bilder zeigen z. b. zwei gestapelte Steuer `ListView` Elemente. Das Bild auf der linken Seite zeigt die Pfeiltasten Navigation, die mit einem Tabstopp zum Navigieren zwischen Steuerelementen verwendet wird `ListView` , während das Bild auf der rechten Seite anzeigt, wie die Navigation zwischen untergeordneten Elementen einfacher und effizienter gemacht werden kann, da übergeordnete Steuerelemente nicht mit einer Tabulator Taste durchlaufen werden müssen.
 
 
 <table>
@@ -184,7 +184,7 @@ Wenn ein Steuerelement den Fokus besitzt, kann ein Benutzer damit interagieren u
 
 #### <a name="text-entry"></a>Texteintrag
 
-Für Steuerelemente, die speziell für Texteingaben wie `TextBox` und `RichEditBox`entworfen wurden, werden alle Tastatureingaben für die Eingabe oder Navigation von Text verwendet, der Vorrang vor anderen Tastaturbefehlen hat. Beispielsweise erkennt das Dropdown Menü für ein `AutoSuggestBox` Steuerelement die **Leerzeichen** Taste nicht als Auswahl Befehl.
+Für Steuerelemente, die speziell für Texteingaben wie `TextBox` und entworfen wurden `RichEditBox` , werden alle Tastatureingaben für die Eingabe oder Navigation von Text verwendet, der Vorrang vor anderen Tastaturbefehlen hat. Beispielsweise erkennt das Dropdown Menü für ein `AutoSuggestBox` Steuerelement die **Leerzeichen** Taste nicht als Auswahl Befehl.
 
 ![Text Eintrag](images/keyboard/text-entry.png)
 
@@ -197,9 +197,9 @@ Wenn Sie sich nicht im Texteingabe Modus befinden, ruft die **Leerzeichen** Tast
 #### <a name="enter-key"></a>Eingabetaste
 
 Die **Eingabe** Taste kann eine Reihe von allgemeinen Benutzerinteraktionen ausführen, abhängig vom Steuerelement mit dem Fokus:
--   Aktiviert Befehls Steuerelemente wie z `Button` . `Hyperlink`b. oder. Um Endbenutzer Verwirrung zu vermeiden, aktiviert die **Eingabe** Taste auch Steuerelemente, die wie z. `ToggleButton` b `AppBarToggleButton`. oder aussehen.
--   Zeigt die Auswahl Benutzeroberfläche für Steuerelemente `ComboBox` wie `DatePicker`und an. Die **Eingabe** Taste führt auch einen Commit für die Benutzeroberfläche für die Auswahl aus.
--   Aktiviert Listen Steuerelemente `ListView`, wie `GridView`z. `ComboBox`b., und.
+-   Aktiviert Befehls Steuerelemente wie z `Button` `Hyperlink` . b. oder. Um Endbenutzer Verwirrung zu vermeiden, aktiviert die **Eingabe** Taste auch Steuerelemente, die wie z `ToggleButton` . b `AppBarToggleButton` . oder aussehen.
+-   Zeigt die Auswahl Benutzeroberfläche für Steuerelemente wie `ComboBox` und an `DatePicker` . Die **Eingabe** Taste führt auch einen Commit für die Benutzeroberfläche für die Auswahl aus.
+-   Aktiviert Listen Steuerelemente, wie z `ListView` `GridView` . b., und `ComboBox` .
     -   Die **Eingabe** Taste führt die Auswahl Aktion als **LEERTASTE** für Listen-und Raster Elemente aus, es sei denn, es gibt eine zusätzliche Aktion, die diesen Elementen zugeordnet ist (Öffnen eines neuen Fensters).
     -   Wenn dem Steuerelement eine zusätzliche Aktion zugeordnet ist, führt die **Eingabe** Taste die zusätzliche Aktion aus, und die **Speicherplatz** Taste führt die Auswahl Aktion aus.
 
@@ -210,7 +210,7 @@ Die **Eingabe** Taste kann eine Reihe von allgemeinen Benutzerinteraktionen ausf
 Mit der ESC-Taste kann ein Benutzer eine vorübergehende Benutzeroberfläche Abbrechen (zusammen mit allen laufenden Aktionen in dieser Benutzeroberfläche).
 
 Beispiele für diese Vorgehensweise:
--   Der Benutzer öffnet `ComboBox` einen mit einem ausgewählten Wert und verwendet die Pfeiltasten, um die Fokus Auswahl auf einen neuen Wert zu verschieben. Durch Drücken der ESC-Taste `ComboBox` wird das geschlossen und der ausgewählte Wert auf den ursprünglichen Wert zurückgesetzt.
+-   Der Benutzer öffnet einen `ComboBox` mit einem ausgewählten Wert und verwendet die Pfeiltasten, um die Fokus Auswahl auf einen neuen Wert zu verschieben. Durch Drücken der ESC-Taste wird das geschlossen `ComboBox` und der ausgewählte Wert auf den ursprünglichen Wert zurückgesetzt.
 -   Der Benutzer ruft eine permanente Löschaktion für eine e-Mail auf und wird `ContentDialog` zur Bestätigung der Aktion aufgefordert. Der Benutzer entscheidet, dass dies nicht die beabsichtigte Aktion ist, und drückt die **ESC** -Taste, um das Dialogfeld zu schließen. Wenn die **ESC** -Taste der Schaltfläche **Abbrechen** zugeordnet ist, wird das Dialogfeld geschlossen, und die Aktion wird abgebrochen. Die **ESC** -Taste wirkt sich nur auf die vorübergehende Benutzeroberfläche aus, Sie wird nicht geschlossen, oder Sie Navigieren durch die Benutzeroberfläche der app.
 
 ![ESC-Taste](images/keyboard/esc-key.png)
@@ -220,7 +220,7 @@ Beispiele für diese Vorgehensweise:
 Die **Start** -und **Endschlüssel** ermöglichen einem Benutzer einen Bildlauf zum Anfang oder Ende eines UI-Bereichs.
 
 Beispiele für diese Vorgehensweise:
--   Bei `ListView` - `GridView` und-Steuerelementen verschiebt der- **Start** Schlüssel den Fokus auf das erste Element und führt einen Bildlauf in die Ansicht durch, während die **endtaste** den Fokus auf das letzte Element verschiebt und in die Ansicht übergeht.
+-   Bei `ListView` -und-Steuer `GridView` Elementen verschiebt der- **Start** Schlüssel den Fokus auf das erste Element und führt einen Bildlauf in die Ansicht durch, während die **endtaste** den Fokus auf das letzte Element verschiebt und in die Ansicht übergeht.
 -   Bei einem `ScrollView` Steuerelement führt der **Home** Key einen Bildlauf zum oberen Rand des Bereichs aus, während die **endtaste** zum unteren Rand des Bereichs führt (der Fokus wird nicht geändert).
 
 ![Start-und Endschlüssel](images/keyboard/home-and-end.png)
@@ -229,7 +229,7 @@ Beispiele für diese Vorgehensweise:
 
 Mit den **Seiten** Schlüsseln können Benutzer einen Benutzeroberflächen Bereich in diskreten Inkrementen durchsuchen.
 
-Bei `ListView` -und-Steuer `GridView` Elementen führt die Bild- **auf** -Taste z. b. einen Bildlauf nach oben um eine "Seite" durch (in der Regel die Höhe des Viewports) und verschiebt den Fokus auf den oberen Rand der Region. Alternativ führt die Bild- **ab** -Taste den Bereich durch eine Seite nach unten und verschiebt den Fokus auf den unteren Rand des Bereichs.
+Bei `ListView` -und-Steuerelementen führt die Bild-auf-Taste z. b `GridView` . einen Bildlauf nach oben um eine "Seite" durch (in der Regel die Höhe des Viewports) und verschiebt den Fokus auf den oberen Rand der Region. **Page up** Alternativ führt die Bild- **ab** -Taste den Bereich durch eine Seite nach unten und verschiebt den Fokus auf den unteren Rand des Bereichs.
 
 ![Bild-auf-und Abbild Taste](images/keyboard/page-up-and-down.png)
 
@@ -288,7 +288,7 @@ In der folgenden Tabelle finden Sie eine kleine Stichprobe häufig verwendeter T
 | Kopieren                                 | STRG+C                                           |
 | Ausschneiden                                  | STRG+X                                           |
 | Einfügen                                | STRG+V                                           |
-| Rückgängig                                 | STRG+Z                                           |
+| Rückgängig machen                                 | STRG+Z                                           |
 | Nächste Registerkarte                             | STRG+TAB                                         |
 | Registerkarte schließen                            | STRG + F4 oder STRG + W                                |
 | Semantischer Zoom                        | STRG+PLUS-TASTE oder STRG+MINUS-TASTE                                 |
@@ -307,10 +307,10 @@ Sie können eine Gruppe verwandter oder ergänzender Steuerelemente in einer "St
 
 Benutzer erwarten Unterstützung für die Pfeiltasten Navigation, wenn eine Gruppe ähnlicher, verwandter Steuerelemente in einer Benutzeroberflächen Region vorhanden ist:
 -   `AppBarButtons`in einer`CommandBar`
--   `ListItems`oder `GridItems` innerhalb `ListView` von oder`GridView`
+-   `ListItems`oder `GridItems` innerhalb von `ListView` oder`GridView`
 -   `Buttons`innen`ContentDialog`
 
-UWP-Steuerelemente unterstützen standardmäßig die Navigation per Pfeiltaste. Verwenden `XYFocusKeyboardNavigation="Enabled"` Sie für benutzerdefinierte Layouts und Steuerelement Gruppen, um ein ähnliches Verhalten bereitzustellen.
+UWP-Steuerelemente unterstützen standardmäßig die Navigation per Pfeiltaste. Verwenden Sie für benutzerdefinierte Layouts und Steuerelement Gruppen, `XYFocusKeyboardNavigation="Enabled"` um ein ähnliches Verhalten bereitzustellen.
 
 Fügen Sie Unterstützung für die Pfeiltasten Navigation in Erwägung, wenn Sie die folgenden Steuerelemente verwenden
 
@@ -339,7 +339,7 @@ Abhängig von der Funktionalität und dem Layout Ihrer Anwendung kann die beste 
 
 Barrierefreiheits Benutzer verlassen sich auf gut festgelegte Tastatur Navigationsregeln, die in der Regel keine Pfeiltasten verwenden, um eine Auflistung von Schaltflächen zu navigieren. Allerdings kann es sein, dass Benutzer ohne visuelle Beeinträchtigungen das Verhalten der Natur haben.
 
-Ein Beispiel für das UWP-Standardverhalten ist in diesem `ContentDialog`Fall der. Während Pfeiltasten verwendet werden können, um zwischen Schaltflächen zu navigieren, ist jede Schaltfläche auch ein Tabstopp.
+Ein Beispiel für das UWP-Standardverhalten ist in diesem Fall der `ContentDialog` . Während Pfeiltasten verwendet werden können, um zwischen Schaltflächen zu navigieren, ist jede Schaltfläche auch ein Tabstopp.
 
 ##### <a name="assign-single-tab-stop-to-familiar-ui-patterns"></a>Zuweisen einzelner Tabstopps zu vertrauten UI-Mustern
 
@@ -373,7 +373,7 @@ Zu den Unterschieden zwischen UWP-Tastatur Verhalten und den von der Sprachausga
 
 #### <a name="case-study--autosuggestbox-control"></a>Fallstudie – autovorschlags Box-Steuerelement
 
-Die Such Schaltfläche `AutoSuggestBox` für ist nicht für die Standardtastatur Navigation über Tab-und Pfeiltasten zugänglich, da der Benutzer die **Eingabe** Taste drücken kann, um die Suchabfrage zu übermitteln. Es ist jedoch über die Sprachausgabe zugänglich, wenn der Benutzer die Taste gedrückt + eine Pfeiltaste drückt.
+Die Such Schaltfläche für `AutoSuggestBox` ist nicht für die Standardtastatur Navigation über Tab-und Pfeiltasten zugänglich, da der Benutzer die **Eingabe** Taste drücken kann, um die Suchabfrage zu übermitteln. Es ist jedoch über die Sprachausgabe zugänglich, wenn der Benutzer die Taste gedrückt + eine Pfeiltaste drückt.
 
 ![Tastaturfokus automatisch vorschlagen](images/keyboard/auto-suggest-keyboard.png)
 
@@ -404,7 +404,7 @@ Das folgende Beispiel zeigt einige Schlüssel Zuordnungen zwischen Tastatur, Gam
 |---------------|-------------------------------------|---------------------|
 | LeerZchn         | A-Taste                            | Schaltfläche auswählen       |
 | EINGABETASTE         | A-Taste                            | Schaltfläche auswählen       |
-| Escape        | B-Taste                            | Schaltfläche „Zurück“         |
+| Escape        | B-Taste                            | Zurück-Schaltfläche         |
 | Start/Ende      | –                                 | –                 |
 | Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | –                 |
 
@@ -419,7 +419,7 @@ Einige wichtige Unterschiede, die Sie beim Entwerfen der UWP-App für die Verwen
 
 #### <a name="directional-navigation"></a>Direktionale Navigation
 
-Die direktionale Navigation wird durch eine UWP [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) -Hilfsklasse verwaltet, die den gerichteten Tastatur Schlüssel (Pfeiltaste, D-Pad) übernimmt und versucht, den Fokus in der entsprechenden visuellen Richtung zu verschieben.
+Die direktionale Navigation wird durch eine UWP [Focus Manager](/uwp/api/Windows.UI.Xaml.Input.FocusManager) -Hilfsklasse verwaltet, die den gerichteten Tastatur Schlüssel (Pfeiltaste, D-Pad) übernimmt und versucht, den Fokus in der entsprechenden visuellen Richtung zu verschieben.
 
 Anders als bei der Tastatur wird eine direktionale Navigation in der gesamten Anwendung für Gamepad und Remote Steuerung angewendet, wenn eine APP aus dem [Maus Modus wechselt](gamepad-and-remote-interactions.md#mouse-mode). Ausführlichere Informationen zur direktionalen Navigations Optimierung finden Sie unter [Gamepad-und Remote Steuerungs Interaktionen](gamepad-and-remote-interactions.md) .
 
@@ -501,6 +501,7 @@ Wenn das letzte Element den Fokus besitzt und die nach-unten-Taste gedrückt wir
 
 Es wird empfohlen, dass Sie diese Verhaltensweisen in Ihren benutzerdefinierten Steuerelementen emulieren. Ein Code Beispiel zur Implementierung dieses Verhaltens finden Sie in der [programmatischen Fokus-Navigations](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) Dokumentation.
 
+
 ## <a name="test-your-app"></a>Testen Ihrer App
 
 Testen Sie Ihre APP mit allen unterstützten Eingabegeräten, um sicherzustellen, dass Benutzeroberflächen Elemente auf eine kohärente und intuitive Weise navigiert werden können und dass keine unerwarteten Elemente die gewünschte Aktivier Reihenfolge beeinträchtigen.
@@ -510,6 +511,7 @@ Testen Sie Ihre APP mit allen unterstützten Eingabegeräten, um sicherzustellen
 * [Identifizieren von Eingabegeräten](identify-input-devices.md)
 * [Reagieren auf die Anzeige der Bildschirmtastatur](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+* [Storyboarding-Besonderheiten für navigationview-Steuerelement](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation) 
 
 ## <a name="appendix"></a>Anhang
 
@@ -560,7 +562,7 @@ Hier finden Sie einige Beispiele für verschiedene Modi der Touch-Bildschirmtast
 
 Erfolgreiche Tastaturinteraktionen ermöglichen es Benutzern, einfache App-Szenarien nur über die Tastatur auszuführen; Benutzer können demnach über die Tastatur alle interaktiven Elemente erreichen und Standardfunktionen aktivieren. Eine Reihe von Faktoren kann den Erfolg beeinflussen, z. B. Tastaturnavigation, Tastenkombinationen für die Barrierefreiheit sowie Tastenkombinationen für erfahrene Benutzer.
 
-**Beachten Sie**  , dass die Fingereingabe Tastatur die UMSCHALTTASTE und die meisten Systembefehle nicht unterstützt.
+**Hinweis**    Die Fingereingabe Tastatur unterstützt die UMSCHALTTASTE und die meisten Systembefehle nicht.
 
 #### <a name="on-screen-keyboard"></a>Bildschirmtastatur
 Wie bei der Software Tastatur ist die Bildschirmtastatur eine visuelle Software Tastatur, die Sie anstelle der physischen Tastatur verwenden können, um Daten mithilfe von Toucheingabe, Maus, Stift/Tablettstift oder einem anderen Zeigegerät einzugeben und einzugeben (ein Touchscreen ist nicht erforderlich). Die Bildschirmtastatur ist für Systeme ohne physische Tastatur oder für Benutzer vorgesehen, deren Mobilitätseinschränkungen die Verwendung herkömmlicher physischer Eingabegeräte verhindern. Die Bildschirmtastatur emuliert nahezu alle Funktionen der Hardwaretastatur.

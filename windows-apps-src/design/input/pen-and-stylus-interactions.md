@@ -1,6 +1,6 @@
 ---
-Description: Erstellen Sie Windows-app-apps, die benutzerdefinierte Interaktionen von Stift-und Tablettstiftgeräten unterstützen, einschließlich digitaler Hand Eingaben für das natürliche schreiben und zeichnen.
-title: Stift Interaktionen und Windows-Freihand in Windows-apps
+Description: Erstellen Sie Windows-apps, die benutzerdefinierte Interaktionen von Stift-und Tablettstiftgeräten unterstützen, einschließlich digitaler Hand Eingaben für das natürliche schreiben und zeichnen.
+title: Stiftinteraktionen und Windows Ink in Windows-Apps
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
@@ -8,21 +8,21 @@ keywords: Windows Ink, Windows-Freihandeingabe, DirectInk, InkPresenter, InkCanv
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2cda9b2775ac1e0dca2cd37d1082bc6d75b1bad
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1c9986ee6d4dacc929a8c2d243becf7d5c9d973e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968385"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234902"
 ---
-# <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Stift Interaktionen und Windows-Freihand in Windows-apps
+# <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Stiftinteraktionen und Windows Ink in Windows-Apps
 
 ![Surface-Stift](images/ink/hero-small.png)  
 *Surface-Stift* (zum Kauf im [Microsoft Store](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b) verfügbar).
 
 ## <a name="overview"></a>Übersicht
 
-Optimieren Sie Ihre Windows-App-App für Stift Eingaben, um sowohl Standard [**Zeiger-Geräte**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) Funktionen als auch die beste Windows-Handschrift für Ihre Benutzer bereitzustellen.
+Optimieren Sie Ihre Windows-App für Stift Eingaben, um sowohl Standard [**Zeiger-Geräte**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) Funktionen als auch die beste Windows-Handschrift für Ihre Benutzer bereitzustellen.
 
 > [!NOTE]
 > Der Schwerpunkt dieses Themas liegt auf der Windows Ink-Plattform. Informationen zur allgemeinen Behandlung von Zeigereingaben (ähnlich Maus-, Touch- und Touchpadeingaben) finden Sie unter [Behandeln von Zeigereingaben](handle-pointer-input.md).

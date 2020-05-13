@@ -1,5 +1,5 @@
 ---
-Description: Mit den Kerntext-APIs im Windows. UI. Text. Core-Namespace kann eine Windows-App-App Texteingaben von einem beliebigen Text Dienst empfangen, der auf Windows-Geräten unterstützt wird.
+Description: Mit den Kerntext-APIs im Windows. UI. Text. Core-Namespace kann eine Windows-App Texteingaben von einem beliebigen Text Dienst empfangen, der auf Windows-Geräten unterstützt wird.
 title: Übersicht über benutzerdefinierte Texteingabe
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -8,18 +8,18 @@ keywords: Tastatur, Text, Core-Text, benutzerdefinierter Text, Textdienstframewo
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f42f7da525211442c37d34a2e3ce96ec9f7af568
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bf2fb934d4ae6f2e954cf32e612ebf2b2538d7ce
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970935"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234441"
 ---
 # <a name="custom-text-input"></a>Benutzerdefinierte Texteingabe
 
 
 
-Mit den Kerntext-APIs im [**Windows. UI. Text. Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core) -Namespace kann eine Windows-App-App Texteingaben von einem beliebigen Text Dienst empfangen, der auf Windows-Geräten unterstützt wird. Die APIs sind den [Textdienstframework](https://docs.microsoft.com/windows/desktop/TSF/text-services-framework)-APIs dahingehend ähnlich, dass die App keine detaillierten Kenntnisse über die Textdienste benötigt. Auf diese Weise kann die App Text in einer beliebigen Sprache und von einem beliebigen Eingabegerät empfangen, wie Tastatur, Sprache oder Stift.
+Mit den Kerntext-APIs im [**Windows. UI. Text. Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core) -Namespace kann eine Windows-App Texteingaben von einem beliebigen Text Dienst empfangen, der auf Windows-Geräten unterstützt wird. Die APIs sind den [Textdienstframework](https://docs.microsoft.com/windows/desktop/TSF/text-services-framework)-APIs dahingehend ähnlich, dass die App keine detaillierten Kenntnisse über die Textdienste benötigt. Auf diese Weise kann die App Text in einer beliebigen Sprache und von einem beliebigen Eingabegerät empfangen, wie Tastatur, Sprache oder Stift.
 
 > **Wichtige APIs**: [**Windows. UI. Text. Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core), [**coretexteditcontext**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextEditContext)
 
@@ -56,12 +56,12 @@ Textbereiche und -auswahlen werden anhand der [**CoreTextRange**](https://docs.m
 
 | Feld                  | Datentyp                                                                 | BESCHREIBUNG                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Anzahl** \[von JavaScript\] | **System. Int32** \[.net\] | **Int32** \[C++\] | Die Startposition eines Bereichs ist die Textcursorposition der Anwendung unmittelbar vor dem ersten Zeichen. |
-| **EndCaretPosition**   | **Anzahl** \[von JavaScript\] | **System. Int32** \[.net\] | **Int32** \[C++\] | Die Endposition eines Bereichs ist Textcursorposition der Anwendung unmittelbar nach dem letzten Zeichen.     |
+| **StartCaretPosition** | **Zahl** \[ Ja\] | **System. Int32** \[ .net\] | **Int32** \[ C++\] | Die Startposition eines Bereichs ist die Textcursorposition der Anwendung unmittelbar vor dem ersten Zeichen. |
+| **EndCaretPosition**   | **Zahl** \[ Ja\] | **System. Int32** \[ .net\] | **Int32** \[ C++\] | Die Endposition eines Bereichs ist Textcursorposition der Anwendung unmittelbar nach dem letzten Zeichen.     |
 
  
 
-Im oben gezeigten Textbereich gibt der Bereich \[0, 5\] z. b. das Wort "Hello" an. **StartCaretPosition** muss stets kleiner oder gleich der **EndCaretPosition** sein. Der Bereich \[5, 0\] ist ungültig.
+Im oben gezeigten Textbereich gibt der Bereich \[ 0, 5 z \] . b. das Wort "Hello" an. **StartCaretPosition** muss stets kleiner oder gleich der **EndCaretPosition** sein. Der Bereich \[ 5, 0 \] ist ungültig.
 
 ### <a name="insertion-point"></a>Einfügemarke
 
@@ -73,7 +73,7 @@ Einige Bearbeitungssteuerelemente unterstützen nicht zusammenhängende Auswahle
 
 Betrachten Sie beispielsweise den folgenden Textstream:
 
-![Beispiel für ein Text](images/coretext/stream-2.png) Strom Diagramm gibt es zwei \[Auswahlmöglichkeiten:\] 0 \[, 1 und\]6, 11. Das Bearbeitungs Steuerelement darf nur einen Bericht melden. entweder \[0, 1\] oder \[6, 11\].
+![Beispiel für ein Text Strom Diagramm ](images/coretext/stream-2.png) gibt es zwei Auswahlmöglichkeiten: \[ 0, 1 \] und \[ 6, 11 \] . Das Bearbeitungs Steuerelement darf nur einen Bericht melden. entweder \[ 0, 1 \] oder \[ 6, 11 \] .
 
 ## <a name="working-with-text"></a>Arbeiten mit Text
 
@@ -94,13 +94,13 @@ Ihr Bearbeitungssteuerelement sollte in der Regel Textaktualisierungsanforderung
 2.  Platzieren Sie die Auswahl an der in [**coretexttextupdatingeventargs. newselection**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection)angegebenen Position.
 3.  Benachrichtigen des Systems, dass das Update erfolgreich war, indem [**CoreTextTextUpdatingEventArgs.Result**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) auf [**CoreTextTextUpdatingResult.Succeeded**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingResult) festgelegt wird
 
-Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „d“ eingibt. Die Einfügemarke \[liegt bei 10\], 10.
+Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „d“ eingibt. Die Einfügemarke liegt bei \[ 10, 10 \] .
 
-![Beispiel Text-Stream](images/coretext/stream-3.png) -Diagramm Wenn der Benutzer "d" eingibt, wird ein [**textupdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) -Ereignis mit den folgenden [**coretexttextupdatingeventargs**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) -Daten ausgelöst:
+![Beispiel Text-Stream-Diagramm ](images/coretext/stream-3.png) Wenn der Benutzer "d" eingibt, wird ein [**textupdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) -Ereignis mit den folgenden [**coretexttextupdatingeventargs**](https://docs.microsoft.com/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) -Daten ausgelöst:
 
--   [**Range**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range) = Bereich\[10, 10\]
+-   [**Range**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range)  =  Bereich \[ 10, 10\]
 -   [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.text) = "d"
--   [**NewSelection**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection) = Neuauswahl\[11, 11\]
+-   [**Neuauswahl**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.newselection)  =  \[ 11, 11\]
 
 Wenden Sie in Ihrem Bearbeitungssteuerelement die angegebenen Änderungen an, und legen Sie [**Result**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) auf **Succeeded** fest. Hier sehen Sie den Zustand des Steuerelements, nachdem die Änderungen angewendet wurden.
 
@@ -115,15 +115,15 @@ Angenommen, Sie haben ein Bearbeitungssteuerelement, das nur eine E-Mail-Adresse
 
 Manchmal nimmt das Bearbeitungssteuerelement Änderungen am Text vor, wenn beispielsweise Text eingefügt oder automatische korrigiert wird. In diesen Fällen müssen Sie die Textdienste über diese Änderungen benachrichtigen, indem Sie die [**NotifyTextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged)-Methode aufrufen.
 
-Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „World“ einfügt. Die Einfügemarke \[ist 6,\]6.
+Dies ist beispielsweise der Zustand eines Bearbeitungssteuerelements, bevor der Benutzer „World“ einfügt. Die Einfügemarke ist \[ 6, 6 \] .
 
-![Beispiel Text Datenstrom](images/coretext/stream-5.png) -Diagramm der Benutzer führt die Einfüge Aktion aus, und das Bearbeitungs Steuerelement endet mit folgendem Text:
+![Beispiel Text Datenstrom ](images/coretext/stream-5.png) -Diagramm der Benutzer führt die Einfüge Aktion aus, und das Bearbeitungs Steuerelement endet mit folgendem Text:
 
-![Beispiel eines Textstream](images/coretext/stream-4.png) -Diagramms wenn dies geschieht, sollte [**notifytextchanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) mit den folgenden Argumenten aufgerufen werden:
+![Beispiel eines Textstream-Diagramms ](images/coretext/stream-4.png) Wenn dies geschieht, sollte [**notifytextchanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) mit den folgenden Argumenten aufgerufen werden:
 
--   *modifiedrange* = \[6, 6\]
+-   *modifiedrange*  =  \[ 6, 6\]
 -   *newLength* = 5
--   *Neuauswahl* = \[11, 11\]
+-   *Neuauswahl*  =  \[ 11, 11\]
 
 Es folgt mindestens ein [**TextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textrequested)-Ereignis, das Sie zum Aktualisieren des Texts behandeln, mit dem die Textdienste arbeiten.
 
@@ -131,17 +131,17 @@ Es folgt mindestens ein [**TextRequested**](https://docs.microsoft.com/uwp/api/w
 
 Vielleicht möchten Sie in Ihrem Bearbeitungssteuerelement eine Textaktualisierung überschreiben, um AutoKorrektur-Funktionen bereitzustellen.
 
-Angenommen, Sie haben ein Bearbeitungssteuerelement, das eine Korrekturfunktion bereitstellt, das kontrahierte Schreibweisen formalisiert. Dies ist der Zustand des Bearbeitungssteuerelements, bevor der Benutzer die Leertaste drückt, um die Korrektur auszulösen. Die Einfügemarke \[ist 3,\]3.
+Angenommen, Sie haben ein Bearbeitungssteuerelement, das eine Korrekturfunktion bereitstellt, das kontrahierte Schreibweisen formalisiert. Dies ist der Zustand des Bearbeitungssteuerelements, bevor der Benutzer die Leertaste drückt, um die Korrektur auszulösen. Die Einfügemarke ist \[ 3, 3 \] .
 
-![Beispiel Text Strom Diagramm](images/coretext/stream-6.png) der Benutzer drückt die Leertaste, und ein entsprechendes [**textupdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) -Ereignis wird ausgelöst. Das Bearbeitungssteuerelement akzeptiert die Textaktualisierung. Dies ist der Zustand des Bearbeitungssteuerelements für einen kurzen Moment, bevor die Korrektur abgeschlossen ist. Die Einfügemarke \[ist 4,\]4.
+![Beispiel Text Strom Diagramm ](images/coretext/stream-6.png) der Benutzer drückt die Leertaste, und ein entsprechendes [**textupdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) -Ereignis wird ausgelöst. Das Bearbeitungssteuerelement akzeptiert die Textaktualisierung. Dies ist der Zustand des Bearbeitungssteuerelements für einen kurzen Moment, bevor die Korrektur abgeschlossen ist. Die Einfügemarke ist \[ 4, 4 \] .
 
-![Beispiel-Text Strom](images/coretext/stream-7.png) Diagramm außerhalb des [**textupdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) -Ereignis Handlers führt das Bearbeitungs Steuerelement folgende Korrektur durch. Dies ist der Zustand des Bearbeitungssteuerelements nach Abschluss der Korrektur. Die Einfügemarke \[ist 5,\]5.
+![Beispiel-Text Strom Diagramm ](images/coretext/stream-7.png) außerhalb des [**textupdating**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) -Ereignis Handlers führt das Bearbeitungs Steuerelement folgende Korrektur durch. Dies ist der Zustand des Bearbeitungssteuerelements nach Abschluss der Korrektur. Die Einfügemarke ist \[ 5, 5 \] .
 
-![Beispiel eines Textstream](images/coretext/stream-8.png) -Diagramms wenn dies geschieht, sollte [**notifytextchanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) mit den folgenden Argumenten aufgerufen werden:
+![Beispiel eines Textstream-Diagramms ](images/coretext/stream-8.png) Wenn dies geschieht, sollte [**notifytextchanged**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) mit den folgenden Argumenten aufgerufen werden:
 
--   *modifiedrange* = \[1, 2\]
+-   *modifiedrange*  =  \[ 1, 2\]
 -   *newLength* = 2
--   *newselection* = \[5, 5\]
+-   *Neuauswahl*  =  \[ 5, 5\]
 
 Es folgt mindestens ein [**TextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretexteditcontext.textrequested)-Ereignis, das Sie zum Aktualisieren des Texts behandeln, mit dem die Textdienste arbeiten.
 

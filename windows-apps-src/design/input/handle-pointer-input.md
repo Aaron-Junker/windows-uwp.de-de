@@ -1,5 +1,5 @@
 ---
-Description: Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten wie Touch, Mouse, Pen/Stift und Touchpad in Ihren Windows-App-Anwendungen.
+Description: Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten wie Touch, Mouse, Pen/Stift und Touchpad in Ihren Windows-Anwendungen.
 title: Behandeln von Zeigereingaben
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,16 +8,16 @@ keywords: Stift, Maus, Touchpad, Toucheingabe, Zeiger, Eingabe, Benutzerinterakt
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: db3b87bd187c64b04615fb6722e4e1f2b666b7dc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 609f6f1ad33c3736d9ac99ec40cbbfe7ade9500a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970065"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234825"
 ---
 # <a name="handle-pointer-input"></a>Behandeln von Zeigereingaben
 
-Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten (z. b. Touch, Maus, Stift/Stift und Touchpad) in Ihren Windows-App-Anwendungen.
+Empfangen, verarbeiten und Verwalten von Eingabedaten von Zeige Geräten (z. b. Touch, Maus, Stift/Tablettstift und Touchpad) in Ihren Windows-Anwendungen.
 
 > [!Important]
 > Erstellen Sie benutzerdefinierte Interaktionen nur, wenn eine klare, klar definierte Anforderung vorliegt und die von den Platt Form Steuerelementen unterstützten Interaktionen Ihr Szenario nicht unterstützen.  
@@ -72,7 +72,7 @@ Windows-Apps können auf die folgenden Zeiger Ereignisse lauschen:
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Tritt auf, wenn ein anderes Benutzeroberflächenelement den Zeiger erfasst, der Zeiger freigegeben wurde oder ein anderer Zeiger programmgesteuert erfasst wurde.</p>
 <div class="alert">
-<strong>Beachten Sie</strong>  , dass kein entsprechendes Zeiger Erfassungs Ereignis vorhanden ist.
+<strong>Hinweis</strong>    Es ist kein entsprechendes Zeiger Aufzeichnungs Ereignis vorhanden.
 </div>
 <div>
  
@@ -132,7 +132,7 @@ Im folgenden finden Sie einige Code Ausschnitte aus einer grundlegenden zeigerna
 
 ### <a name="create-the-ui"></a>Erstellen der Benutzeroberfläche
 
-In diesem Beispiel verwenden wir ein [Rechteck](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) als Objekt, das Zeiger Eingaben verwendet. Die Farbe des Ziels ändert sich, wenn sich der Zeigerstatus ändert.
+In diesem Beispiel verwenden wir ein [Rechteck](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) ( `Target` ) als Objekt, das Zeiger Eingaben verwendet. Die Farbe des Ziels ändert sich, wenn sich der Zeigerstatus ändert.
 
 Details zu den einzelnen Zeigern werden in einem Gleit Komma [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) angezeigt, der dem Zeiger beim Verschieben folgt. Die Zeiger Ereignisse selbst werden im [richtextblock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) auf der rechten Seite des Rechtecks gemeldet.
 
@@ -951,7 +951,7 @@ Schließlich definieren wir die grundlegenden Zeiger Ereignishandler im MainPage
 - [Beispiel für Zeiger Eingabe (Basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
 - [Beispiel für Zeiger Eingabe (UserControl mit Animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
-### <a name="other-samples"></a>Weitere Beispiele
+### <a name="other-samples"></a>Andere Beispiele
 
 - [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
 - [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)

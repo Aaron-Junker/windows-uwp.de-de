@@ -6,12 +6,12 @@ keywords: wählen, radiales, Tutorial
 ms.date: 03/11/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74bb75fb6bced451daeb6f03fba78636d0998cec
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3972e04c59748efabd51b423f6f24fc22291a6d1
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970275"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234895"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>Tutorial: unterstützen der Oberflächen Wahl (und anderer radgeräte) in der Windows-App
 
@@ -51,19 +51,19 @@ Der wählwert unterstützt drei grundlegende Gesten:
 ## <a name="set-up-your-devices"></a>Einrichten Ihrer Geräte
 
 1. Stellen Sie sicher, dass Ihr Windows-Gerät eingeschaltet ist.
-2. Wechseln Sie zu **Start**, wählen Sie **Einstellungen** > **Geräte** > **Bluetooth & andere Geräte**aus, und aktivieren Sie dann **Bluetooth** .
+2. Wechseln Sie zu **Start**, wählen Sie **Einstellungen**  >  **Geräte**  >  **Bluetooth & andere Geräte**aus, und aktivieren Sie dann **Bluetooth** .
 3. Entfernen Sie den unteren Rand der Oberfläche, um das Akku Depot zu öffnen, und stellen Sie sicher, dass in zwei AAA-Akkus vorhanden sind.
 4. Wenn die Registerkarte Akku auf der Unterseite des wähles vorhanden ist, entfernen Sie Sie.
 5. Halten Sie die kleine, eingelegte Schaltfläche neben den Akkus gedrückt, bis das Bluetooth-Licht blinkt.
 6. Wechseln Sie zurück zu Ihrem Windows-Gerät, und wählen Sie **Bluetooth oder anderes Gerät hinzufügen**aus.
-7. Wählen Sie im Dialogfeld **Gerät hinzufügen** die Option **Bluetooth** > -**Oberfläche**auswählen aus. Ihre Oberfläche sollte nun eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur, & Stift** auf der Seite **Bluetooth & andere Geräte** Einstellungen hinzugefügt werden.
+7. Wählen Sie im Dialogfeld **Gerät hinzufügen** die Option **Bluetooth**-  >  **Oberfläche**auswählen aus. Ihre Oberfläche sollte nun eine Verbindung herstellen und der Liste der Geräte unter **Maus, Tastatur, & Stift** auf der Seite **Bluetooth & andere Geräte** Einstellungen hinzugefügt werden.
 8. Testen Sie die Auswahl, indem Sie Sie für einige Sekunden drücken und halten, um das integrierte Menü anzuzeigen.
 9. Wenn das Menü nicht auf dem Bildschirm angezeigt wird (die Auswahl muss ebenfalls vibrieren), kehren Sie zu den Bluetooth-Einstellungen zurück, entfernen Sie das Gerät, und versuchen Sie erneut, das Gerät zu verbinden.
 
 > [!NOTE]
 > Radgeräte können über die **Radeinstellungen** konfiguriert werden:
 > 1. Wählen Sie im **Startmenü** die Option **Einstellungen**aus.
-> 2. Wählen Sie **Geräte** > **Rad**aus.    
+> 2. Wählen Sie **Geräte**  >  **Rad**aus.    
 > ![Bildschirm mit Radeinstellungen](images/radialcontroller/wheel-settings.png)
 
 Jetzt sind Sie bereit, dieses Tutorial zu starten. 
@@ -88,7 +88,7 @@ Diese Objekte stellen den größten Teil des radgeräts für Windows-apps bereit
 | Komponente | BESCHREIBUNG |
 | --- | --- |
 | [ **Radialcontroller** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) und Verwandte | Stellt ein radeingabegerät oder ein Zubehör, z. b. die Oberfläche |
-| [**Iradialcontrollerconfigurationinterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop) / [**iradialcontrollerinterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Diese Funktion wird hier nicht behandelt. Weitere Informationen finden Sie im Beispiel für ein [klassisches Windows-Desktop](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Ermöglicht die Interoperabilität mit einer Windows-app. |
+| [**Iradialcontrollerconfigurationinterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  /  [ **Iradialcontrollerinterop**](https://docs.microsoft.com/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>Diese Funktion wird hier nicht behandelt. Weitere Informationen finden Sie im Beispiel für ein [klassisches Windows-Desktop](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController). | Ermöglicht die Interoperabilität mit einer Windows-app. |
 
 ## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
 
@@ -98,7 +98,7 @@ Nachdem Sie die radialcontroller-Beispiel-App heruntergeladen haben, vergewisser
 3. Drücken Sie F5, um zu kompilieren, bereitzustellen und auszuführen. 
 
 > [!NOTE]
-> Alternativ können Sie das Menü Element **Debuggen Debuggen** > **starten** auswählen, oder wählen Sie die Schaltfläche ![ **lokaler Computer** ausführen aus, die hier angezeigt wird: Schaltfläche "Projekt](images/radialcontroller/wheel-vsrun.png)
+> Alternativ können Sie **Debug**  >  das Menü Element**Debuggen Debuggen starten** auswählen, oder wählen Sie die Schaltfläche **lokaler Computer** ausführen aus, die hier angezeigt wird: ![ Schaltfläche "Projekt](images/radialcontroller/wheel-vsrun.png)
 
 Das App-Fenster wird geöffnet, und nachdem ein Begrüßungsbildschirm für einige Sekunden angezeigt wird, sehen Sie diesen ersten Bildschirm.
 
@@ -125,7 +125,7 @@ Nun beginnen wir mit einer grundlegenden Anpassung.
 Fügen Sie zunächst die Benutzeroberfläche für die APP hinzu:
 
 1. Öffnen Sie die Datei MainPage_Basic. XAML.
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet\<ist ("!--Schritt 3: Hinzufügen von Steuerelementen für Wheel Input-->").
+2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 3: Hinzufügen von Steuerelementen für Wheel Input-->").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen.
 
     ```xaml
@@ -346,7 +346,7 @@ Die Oberfläche und andere radgeräte können Benutzern ein haptisches Feedback 
 In diesem Schritt zeigen wir, wie Sie haptisches Feedback anpassen können, indem wir die Schieberegler-und UMSCHALT Steuerelemente zuordnen und diese verwenden, um das Verhalten von haptischem Feedback dynamisch anzugeben. In diesem Beispiel muss der umschaltschalter auf ON festgelegt werden, damit das Feedback aktiviert wird, während der Schieberegler-Wert angibt, wie oft das Click-Feedback wiederholt wird. 
 
 > [!NOTE]
-> Haptisches Feedback kann vom Benutzer auf**der Seite mit** den **Einstellungen** >  für**Geräte** > deaktiviert werden.
+> Haptisches Feedback kann vom Benutzer auf der Seite mit den **Einstellungen**für Geräte deaktiviert werden  >   **Devices**  >  **Wheel** .
 
 1. Öffnen Sie die Datei App.xaml.cs.
 2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("Schritt 6: Anpassen der Geräte Haptik").
@@ -358,7 +358,7 @@ In diesem Schritt zeigen wir, wie Sie haptisches Feedback anpassen können, inde
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. Öffnen Sie die Datei MainPage_Haptics. XAML.
-5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet\<ist ("!--Schritt 6: Anpassen des Geräts-->").
+5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 6: Anpassen des Geräts-->").
 6. Entfernen Sie die Auskommentierung der folgenden Zeilen. (Dieser UI-Code gibt einfach an, welche Haptik Features vom aktuellen Gerät unterstützt werden.)    
 
     ```xaml
@@ -617,7 +617,7 @@ Herzlichen Glückwunsch, Sie haben das Tutorial für die ersten Schritte abgesch
 
 [Surface Dial-Interaktionen](windows-wheel-interactions.md)
 
-### <a name="api-reference"></a>API-Referenz
+### <a name="api-reference"></a>API-Verweis
 
 - [**Radialcontroller** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
 - [**Radialcontrollerbuttonclickedeventargs** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
@@ -638,7 +638,7 @@ Herzlichen Glückwunsch, Sie haben das Tutorial für die ersten Schritte abgesch
 
 [Radialcontroller-Anpassung](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
 
-#### <a name="other-samples"></a>Weitere Beispiele
+#### <a name="other-samples"></a>Andere Beispiele
 [Beispiel für ein Farb Buch](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
 [Universelle Windows-Plattform – Beispiele (C# und C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)

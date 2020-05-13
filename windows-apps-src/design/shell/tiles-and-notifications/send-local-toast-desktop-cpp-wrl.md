@@ -7,16 +7,16 @@ ms.date: 03/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, Sparse-Paket, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: cc87f9281b9623c1f1b46def8f886cfebeb0438f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 3e103c41de7bf169629085fd259e23e17804360d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968295"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234660"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps
 
-Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-app-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
+Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
 
 > [!IMPORTANT]
 > Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop c#](send-local-toast-desktop.md).
@@ -26,14 +26,14 @@ Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/window
 
 Wenn Sie das Windows 10 SDK nicht für ihre Win32-App aktiviert haben, müssen Sie dies zunächst tun. Es gibt einige wichtige Schritte...
 
-1. Zu `runtimeobject.lib` **weiteren Abhängigkeiten** hinzufügen
+1. `runtimeobject.lib`Zu **weiteren Abhängigkeiten** hinzufügen
 2. Windows 10 SDK als Ziel
 
 Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften**
 
 Wählen Sie im **Configuration** Menü der obersten Konfiguration **alle Konfigurationen** aus, sodass die folgende Änderung auf Debug und Release angewendet wird.
 
-Fügen Sie unter **Linker-> Eingabe**den `runtimeobject.lib` **zusätzlichen Abhängigkeiten**hinzu.
+Fügen Sie unter **Linker-> Eingabe** `runtimeobject.lib` den **zusätzlichen Abhängigkeiten**hinzu.
 
 Stellen Sie dann unter **Allgemein**sicher, dass die **Windows SDK-Version** auf 10,0 oder höher festgelegt ist (nicht auf Windows 8.1).
 
@@ -42,7 +42,7 @@ Stellen Sie dann unter **Allgemein**sicher, dass die **Windows SDK-Version** auf
 
 Kopieren Sie die Datei [desktopnotificationmanagercompat. h](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.h) und [desktopnotificationmanagercompat. cpp](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CPP-WRL/DesktopToastsCppWrlApp/DesktopNotificationManagerCompat.cpp) aus GitHub in Ihr Projekt. Die Kompatibilitäts-Bibliothek abstrahiert einen Großteil der Komplexität von Desktop Benachrichtigungen. Die folgenden Anweisungen erfordern die Kompatibilitäts-Bibliothek.
 
-Wenn Sie vorkompilierte Header verwenden, stellen Sie sicher `#include "stdafx.h"` , dass die erste Zeile der Datei desktopnotificationmanagercompat. cpp ist.
+Wenn Sie vorkompilierte Header verwenden, stellen Sie sicher, dass `#include "stdafx.h"` die erste Zeile der Datei desktopnotificationmanagercompat. cpp ist.
 
 
 ## <a name="step-3-include-the-header-files-and-namespaces"></a>Schritt 3: einschließen der Header Dateien und-Namespaces
@@ -99,7 +99,7 @@ Fügen Sie in der [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
 3. Im **ignorablenamespaces** -Attribut, **com** und **Desktop**
-4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, dass `Arguments="-ToastActivated"` Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
+4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, `Arguments="-ToastActivated"` dass Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
 5. **Desktop: Erweiterung** für **Windows. toastnotificationactivation** zum Deklarieren der Popup-Activator-CLSID (die GUID aus Schritt #4).
 
 **"Package. appxmanifest"**
@@ -145,7 +145,7 @@ Wählen Sie eine eindeutige aumid aus, mit der ihre Win32-App identifiziert wird
 
 #### <a name="step-51-wix-installer"></a>Schritt 5,1: WiX-Installer
 
-Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #4 in `{}` eingeschlossen ist, wie unten gezeigt.
+Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #4 in eingeschlossen ist, `{}` wie unten gezeigt.
 
 **Product. wxs**
 
@@ -405,11 +405,11 @@ Wenn Ihre Benachrichtigungen angezeigt werden, aber nicht im Aktions Center gesp
 
 Wenn Sie sowohl das msix/Sparse-Paket als auch die klassische Win32-App installiert haben, beachten Sie, dass die msix/Sparse-Paket-app die klassische Win32-App ersetzt, wenn Sie Popup Aktivierungen verarbeiten. Dies bedeutet, dass bei einem Klick von der klassischen Win32-App aus der klassischen Win32-App weiterhin die msix/Sparse-Paket-app gestartet wird. Wenn Sie die msix/Sparse-Paket-app deinstallieren, werden die Aktivierungen wieder in der klassischen Win32-APP wieder hergestellt.
 
-Wenn Sie empfangen `HRESULT 0x800401f0 CoInitialize has not been called.`, achten Sie darauf, `CoInitialize(nullptr)` dass Sie in Ihrer APP aufrufen, bevor Sie die APIs aufrufen.
+Wenn Sie empfangen `HRESULT 0x800401f0 CoInitialize has not been called.` , achten Sie darauf, dass Sie `CoInitialize(nullptr)` in Ihrer APP aufrufen, bevor Sie die APIs aufrufen.
 
-Wenn Sie beim `HRESULT 0x8000000e A method was called at an unexpected time.` Aufrufen der compat-APIs empfangen, bedeutet dies wahrscheinlich, dass Sie die erforderlichen Register Methoden nicht aufrufen konnten (oder wenn Sie Ihre APP derzeit nicht im msix/Sparse-Kontext ausführen).
+Wenn Sie `HRESULT 0x8000000e A method was called at an unexpected time.` beim Aufrufen der compat-APIs empfangen, bedeutet dies wahrscheinlich, dass Sie die erforderlichen Register Methoden nicht aufrufen konnten (oder wenn Sie Ihre APP derzeit nicht im msix/Sparse-Kontext ausführen).
 
-Wenn Sie zahlreiche `unresolved external symbol` Kompilierungsfehler erhalten, haben Sie wahrscheinlich `runtimeobject.lib` vergessen, den **zusätzlichen Abhängigkeiten** in Schritt #1 hinzuzufügen (oder Sie haben Sie nur der Debug-Konfiguration und nicht der Releasekonfiguration hinzugefügt).
+Wenn Sie zahlreiche `unresolved external symbol` Kompilierungsfehler erhalten, haben Sie wahrscheinlich vergessen, `runtimeobject.lib` den **zusätzlichen Abhängigkeiten** in Schritt #1 hinzuzufügen (oder Sie haben Sie nur der Debug-Konfiguration und nicht der Releasekonfiguration hinzugefügt).
 
 
 ## <a name="handling-older-versions-of-windows"></a>Umgang mit älteren Versionen von Windows
@@ -424,7 +424,7 @@ In Windows 8 wurden Popup Benachrichtigungen eingeführt, aber es wurden die Leg
 | Windows 8.1/8 | – | – | Unterstützt |
 | Windows 7 und niedriger | – | – | – |
 
-Um zu prüfen, ob Sie unter Windows 10 ausgeführt werden, `<VersionHelpers.h>` schließen Sie den-Header ein, und überprüfen Sie die **IsWindows10OrGreater** -Methode Wenn dies true zurückgibt, rufen Sie weiterhin alle Methoden auf, die in dieser Dokumentation beschrieben werden. 
+Um zu prüfen, ob Sie unter Windows 10 ausgeführt werden, schließen Sie den `<VersionHelpers.h>` -Header ein, und überprüfen Sie die **IsWindows10OrGreater** -Methode Wenn dies true zurückgibt, rufen Sie weiterhin alle Methoden auf, die in dieser Dokumentation beschrieben werden. 
 
 ```cpp
 #include <VersionHelpers.h>

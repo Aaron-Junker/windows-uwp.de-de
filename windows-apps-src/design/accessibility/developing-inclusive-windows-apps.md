@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d2866b3e04d2fa531e9bd538badd96205a8c65
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 37fb7cc81d1a86a159526af5d580a02482d13f9a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969425"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233977"
 ---
 # <a name="developing-inclusive-windows-apps"></a>Entwickeln von barrierefreien Windows-Apps  
 
-In diesem Artikel wird erläutert, wie Sie barrierefreie Windows-app-apps entwickeln. Insbesondere wird vorausgesetzt, dass Sie wissen, wie Sie die logische Hierarchie für Ihre App entwerfen können. Erfahren Sie, wie Sie barrierefreie Windows-apps entwickeln, die Tastaturnavigation, Farb-und Kontrasteinstellungen sowie Unterstützung für Hilfstechnologien enthalten.
+In diesem Artikel wird erläutert, wie Sie barrierefreie Windows-apps entwickeln. Insbesondere wird vorausgesetzt, dass Sie wissen, wie Sie die logische Hierarchie für Ihre App entwerfen können. Erfahren Sie, wie Sie barrierefreie Windows-apps entwickeln, die Tastaturnavigation, Farb-und Kontrasteinstellungen sowie Unterstützung für Hilfstechnologien enthalten.
 
 Wenn Sie dies noch nicht getan haben, lesen Sie zunächst den Artikel [entwerfen inklusiver Software](designing-inclusive-software.md).
 
@@ -32,7 +32,7 @@ Programmgesteuerter Zugriff ist wichtig für die Barrierefreiheit in Apps. Dies 
 
 Weitere Informationen zur Bereitstellung der UI-Elemente Ihrer App für Hilfstechnologien (AT) finden Sie unter [Grundlegende Informationen zur Barrierefreiheit verfügbar machen](basic-accessibility-information.md).
 
-## <a name="keyboard-navigation"></a>Tastaturnavigation  
+## <a name="keyboard-navigation"></a>Navigation mithilfe der Tastatur  
 Für Benutzer, die blind sind oder deren Beweglichkeit eingeschränkt ist, ist die Navigation auf der Benutzeroberfläche mit einer Tastatur äußerst wichtig. Allerdings sollten nur UI-Steuerelemente einen Tastaturfokus erhalten, die eine Benutzerinteraktion erfordern. Komponenten, die keine Aktion erfordern, z. B. statische Bilder, erfordern keinen Tastaturfokus.  
 
 Es ist wichtig, zu beachten, dass im Gegensatz zur Navigation mit einer Maus oder per Fingereingabe die Tastaturnavigation linear ist. Bei der Tastaturnavigation sollten Sie überlegen, wie der Benutzer mit Ihrem Produkt interagiert und was die logische Navigation wird. In westeuropäischen Kulturkreisen liest man von links nach rechts und von oben nach unten. Es ist daher üblich, dieses Muster für die Navigation per Tastatur zu verwenden.  

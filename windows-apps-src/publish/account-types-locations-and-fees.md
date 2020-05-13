@@ -4,50 +4,50 @@ title: Kontotypen, Standorte und Gebühren
 description: Wir bieten individuelle Konten für Entwickler und Unternehmenskonten für Entwickler in vielen Ländern und Regionen.
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, Entwicklerkonto, individuell, Unternehmen, geschäftlich
+keywords: Windows 10, UWP, Entwicklerkonto, Einzelpersonen, Unternehmen, Unternehmen
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ab3d40b48caecc82fafef4df964b7a1dbf8071
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: 829bbc857f3856962dfbbbc4bb589fa677b8e264
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545090"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234816"
 ---
 # <a name="account-types-locations-and-fees"></a>Kontotypen, Standorte und Gebühren
 
 Das Windows-Programm im [Partner Center](https://partner.microsoft.com/dashboard) bietet sowohl einzelne als auch Unternehmenskonten in vielen [Ländern und Regionen](#developer-account-and-app-submission-markets). Beide Konto Typen haben Zugriff auf das Veröffentlichen von apps im Store und die Teilnahme an weiteren Microsoft-Programmen.
 
 > [!NOTE]
-> Wenn Sie Ihr Entwicklerkonto öffnen, stellen Sie sicher, dass Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard) mit dem Microsoft-Konto anmelden, das Sie für Ihr Entwicklerkonto verwenden möchten. Sie haben die Möglichkeit, auch später noch [weitere Benutzer zum Konto hinzuzufügen](manage-account-users.md).
+> Wenn Sie Ihr Entwicklerkonto öffnen, stellen Sie sicher, dass Sie sich bei [Partner Center](https://partner.microsoft.com/dashboard) mit dem Microsoft-Konto anmelden, das Sie für Ihr Entwicklerkonto verwenden möchten. Sie können später [Weitere Benutzer zum Konto hinzufügen](manage-account-users.md) .
 
-Zu [Beginn des Registrierungsprozesses](https://developer.microsoft.com/store/register) müssen Sie entscheiden, ob Sie ein individuelles Konto oder ein Unternehmenskonto erstellen möchten. Beide Arten von Konten ermöglichen die Übermittlung von Apps, Spielen, Add-Ins und Diensten.
+Zu [Beginn des Registrierungsprozesses](https://developer.microsoft.com/store/register) müssen Sie entscheiden, ob Sie ein individuelles Konto oder ein Unternehmenskonto erstellen möchten. Mit beiden Konto Typen können Sie apps, Spiele, Add-Ins und Dienste übermitteln.
 
-Unternehmenskonten sind für Organisationen und Unternehmen vorgesehen. Unternehmenskonten müssen zusätzlich [geprüft werden](#account-verification), um sicherzustellen, dass Sie für die Einrichtung des Kontos für Ihr Unternehmen autorisiert sind. Individuelle Konten sind in der Regel für einzelne Entwickler geeignet, die alleine arbeiten, auch wenn Sie die Option haben, weitere Benutzer den verschiedenen Kontotypen hinzuzufügen.
+Unternehmenskonten sind für Organisationen und Unternehmen vorgesehen. Für Unternehmenskonten ist eine höhere über [Prüfung](#account-verification) erforderlich, um zu bestätigen, dass Sie berechtigt sind, das Konto für Ihr Unternehmen einzurichten. Einzelne Konten sind in der Regel für einen einzelnen Entwickler geeignet, der selbst arbeitet, obwohl Sie über die Möglichkeit verfügen, jedem Kontotyp weitere Kontobenutzer hinzuzufügen.
 
 > [!IMPORTANT]
-> Sie können den Kontotyp nicht mehr ändern, nachdem Sie Ihre Wahl getroffen haben. Achten Sie also darauf, dass Sie den richtigen Typ auswählen.
+> Nachdem Sie Ihre Auswahl getroffen haben, können Sie den Kontotyp nicht mehr ändern. Achten Sie daher darauf, den richtigen Typ auszuwählen.
 
 Im Folgenden sind die grundlegenden Unterschiede zwischen den beiden Kontotypen aufgeführt:
 
 | Einzelkonto | Unternehmenskonto |
 |--------------------|-----------------|
-| <ul><li>Kostet ca. 19 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Kürzerer Kontoüberprüfungsprozess</li></ul> | <ul><li>Kostet ca. 99 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Erfordert eine bessere Überprüfung des Kontos</li><li>Erfordert, dass Ihr Unternehmen als solches im Land oder in der Region seiner Niederlassung anerkannt ist</li><li>Übermitteln von Apps mit eingeschränkter Funktionalität (wie in den [Microsoft Store-Richtlinien](store-policies.md#1014-account-type) beschrieben)</li></ul> |
+| <ul><li>Kostet ca. 19 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Kürzerer Konto Überprüfungsprozess</li></ul> | <ul><li>Kostet ca. 99 US-Dollar (einmalige Registrierungsgebühr; der exakte Betrag variiert je nach Land bzw. Region)</li><li>Erfordert eine höhere Kontoüberprüfung</li><li>Erfordert, dass Ihr Unternehmen als solches im Land oder in der Region seiner Niederlassung anerkannt ist</li><li>Kann apps mit eingeschränkter Funktionalität übermitteln (wie in den [Microsoft Store Richtlinien](store-policies.md#1014-account-type)beschrieben)</li></ul> |
 
 Unternehmenskonten sind etwas teurer. Das liegt hauptsächlich daran, dass wir durch einige zusätzliche Schritte sicherstellen, dass Sie von Ihrem Unternehmen autorisiert wurden und zum Einrichten des Kontos berechtigt sind. Gemäß den [Store-Richtlinien](store-policies.md#1014-account-type)können apps mit bestimmten Funktionen, wie z. b. solche, die auf finanzielle Kontoinformationen zugreifen oder die eine Authentifizierung für den Zugriff auf die primäre Funktionalität benötigen (ohne Verwendung eines sicheren dedizierten Drittanbieter-Authentifizierungs Anbieters), nur von Unternehmenskonten veröffentlicht werden.
 
-## <a name="account-verification"></a>Kontobenachrichtigung
+## <a name="account-verification"></a>Kontoüberprüfung
 
-Nach Abschluss der Registrierung durchläuft Ihr Konto den Überprüfungsprozess. Bei individuellen Konten wird sichergestellt, dass der Anzeigename für den Herausgeber nicht bereits von einem anderen Unternehmen verwendet wird. Bei Unternehmenskonten bestätigen unsere Partner Dun & Bradstreet, dass Sie zum Erstellen eines Kontos für Ihr Unternehmen autorisiert sind. Dieser Vorgang kann zwischen wenigen Tagen und mehreren Wochen dauern. Häufig erhält Ihr Unternehmen im Rahmen dieses Prozesses einen Telefonanruf. Stellen Sie daher sicher, dass alle Ihre Kontaktinformationen in den Registrierungsformularen aktuell sind. Sie können keine apps von einem Unternehmens Konto übermitteln, bis die Überprüfung erfolgt ist, aber während Sie warten, können Sie [einen APP-Namen reservieren](create-your-app-by-reserving-a-name.md) , um apps zu entwickeln und zu testen. Außerdem können Sie Ihre Einreichungen vorbereiten.
+Nach Abschluss der Registrierung durchläuft Ihr Konto den Überprüfungsprozess. Bei individuellen Konten wird sichergestellt, dass der Anzeigename für den Herausgeber nicht bereits von einem anderen Unternehmen verwendet wird. Bei Unternehmenskonten bestätigt unser Überprüfungs Partner Dun & Bradstreet, dass Sie berechtigt sind, ein Konto für das Unternehmen zu erstellen, das Sie darstellen. Dieser Vorgang kann einige Tage bis einige Wochen dauern und häufig einen Telefonanruf an Ihr Unternehmen enthalten (stellen Sie also sicher, dass alle Ihre Kontaktinformationen auf dem neuesten Stand sind, wenn Sie die Registrierungsformulare ausfüllen). Sie können keine apps von einem Unternehmens Konto übermitteln, bis die Überprüfung erfolgt ist, aber während Sie warten, können Sie [einen APP-Namen reservieren](create-your-app-by-reserving-a-name.md) , um apps zu entwickeln und zu testen. Außerdem können Sie Ihre Einreichungen vorbereiten.
 
-Sie können den Überprüfungsstatus auf der Seite **Kontoeinstellungen** überprüfen. 
+Sie können den Überprüfungsstatus auf der Seite **Kontoeinstellungen** überprüfen.
 
 ## <a name="developer-account-and-app-submission-markets"></a>Märkte für das Entwicklerkonto und die App-Einreichung
 
 Sie können sich für ein Entwicklerkonto registrieren und Apps einreichen, wenn Sie in einem bzw. einer der im Folgenden aufgeführten Länder oder Regionen leben oder geschäftlich tätig sind.
 
-In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen Kosten für die Registrierung Ihres Entwicklerkontos. Hierbei handelt es sich um eine einmalige Gebühr, es ist keine Verlängerung erforderlich. Beachten Sie, dass die Preise Änderungen unterliegen.
+In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen Kosten für die Registrierung Ihres Entwicklerkontos. Dies ist eine einmalige Gebühr, und es fallen keine Erneuerungs Gebühren an. Beachten Sie, dass sich die unten aufgeführten Preise ändern können.
 
-| Land/Region                    | Individuelle Registrierungskosten | Kosten für die Unternehmensregistrierung |
+| Land/Region                    | Einzelne reg. Gebühr | Company reg. Gebühr |
 |-----------------------------------|---------------------|------------------|
 | Afghanistan                       | 19 USD              | 99 USD           |
 | Albanien                           | 19 USD              | 99 USD           |
@@ -59,7 +59,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Armenien                           | 19 USD              | 99 USD           |  
 | Australien                         | 21 AUD              | 110 AUD          |  
 | Österreich                           | 14 EUR              | 75 EUR           |  
-| Aserbeidschan                        | 19 USD              | 99 USD           |  
+| Aserbaidschan                        | 19 USD              | 99 USD           |  
 | Bahamas                       | 19 USD              | 99 USD           |  
 | Bahrain                           | 7 BHD               | 38 BHD           |  
 | Bangladesch                        | 1468 BDT            | 7600 BDT         |  
@@ -80,23 +80,23 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Cabo Verde                        | 19 USD              | 99 USD           |  
 | Kambodscha                          | 19 USD              | 99 USD           |  
 | Kamerun                          | 19 USD              | 99 USD           |  
-| Kanada                            | 20 CAD              | 99 CAD           |  
+| Canada                            | 20 CAD              | 99 CAD           |  
 | Zentralafrikanische Republik          | 19 USD              | 99 USD           |  
 | Tschad                              | 19 USD              | 99 USD           |  
 | Chile                             | 9776 CLP            | 46000 CLP        |  
 | China                             | 116 CNY             | 600 CNY          |  
 | Kolumbien                          | 36543 COP           | 180000 COP       |  
 | Komoren                           | 19 USD              | 99 USD           |  
-| Kongo                             | 19 USD              | 99 USD           |  
-| Kongo, Demokratische Republik                       | 19 USD              | 99 USD           |  
+| Kongo (Demokratische Republik)                             | 19 USD              | 99 USD           |  
+| Kongo (DRC)                       | 19 USD              | 99 USD           |  
 | Costa Rica                        | 9578 CRC            | 49725 CRC        |  
 | Côte d'Ivoire                     | 19 USD              | 99 USD           |  
 | Kroatien                           | 107 HRK             | 500 HRK          |  
 | Zypern                            | 14 EUR              | 75 EUR           |  
-| Tschechische                           | 365 CZK             | 1720 CZK         |  
+| Tschechien                           | 365 CZK             | 1720 CZK         |  
 | Dänemark                           | 106 DKK             | 530 DKK          |  
-| Dschibuti                          | 19 USD              | 99 USD           | 
-| Dominica                          | 19 USD              | 99 USD           | 
+| Dschibuti                          | 19 USD              | 99 USD           |
+| Dominica                          | 19 USD              | 99 USD           |
 | Dominikanische Republik                | 19 USD              | 99 USD           |  
 | Ecuador                           | 19 USD              | 99 USD           |  
 | Ägypten                             | 133 EGP             | 600 EGP          |  
@@ -120,7 +120,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Guatemala                         | 145 GTQ             | 750 GTQ          |  
 | Guinea                            | 19 USD              | 99 USD           |  
 | Guinea-Bissau                     | 19 USD              | 99 USD           |  
-| Guyana                            | 19 USD              | 99 USD           |  
+| Guayana                            | 19 USD              | 99 USD           |  
 | Haiti                             | 19 USD              | 99 USD           |  
 | Honduras                          | 19 USD              | 99 USD           |  
 | Hongkong (SAR)                     | 147 HKD             | 760 HKD          |  
@@ -134,11 +134,11 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Italien                             | 14 EUR              | 75 EUR           |  
 | Jamaika                           | 19 USD              | 99 USD           |  
 | Japan                             | 1847 JPY            | 9800 JPY         |  
-| Jordanien                            | 13 JOD              | 70 JOD           |  
+| Jordan                            | 13 JOD              | 70 JOD           |  
 | Kasachstan                        | 2897 KZT            | 15038 KZT        |  
 | Kenia                             | 1900 KES            | 9999 KES         |  
 | Kiribati                          | 19 USD              | 99 USD           |  
-| Korea, Republik                             | 21216 KRW           | 108000 KRW       |  
+| Korea                             | 21216 KRW           | 108000 KRW       |  
 | Kuwait                            | 5 KWD               | 28 KWD           |  
 | Kirgisistan                        | 19 USD              | 99 USD           |  
 | Laos                              | 19 USD              | 99 USD           |  
@@ -150,8 +150,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Liechtenstein                     | 17 CHF              | 93 CHF           |  
 | Litauen                         | 14 EUR              | 75 EUR           |  
 | Luxemburg                        | 14 EUR              | 75 EUR           |  
-| Macau SAR                         | 19 USD              | 99 USD           |  
-| Mazedonien (ehem. jugoslawische Republik Mazedonien)                 | 19 USD              | 99 USD           |  
+| Macau (SAR)                         | 19 USD              | 99 USD           |  
 | Madagaskar                        | 19 USD              | 99 USD           |  
 | Malawi                            | 19 USD              | 99 USD           |  
 | Malaysia                          | 62 MYR              | 300 MYR          |  
@@ -176,7 +175,8 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Neuseeland                       | 24 NZD              | 140 NZD          |  
 | Nicaragua                         | 19 USD              | 99 USD           |  
 | Niger                             | 19 USD              | 99 USD           |  
-| Nigeria                           | 3700 NGN            | 19500 NGN        |  
+| Nigeria                           | 3700 NGN            | 19500 NGN        |
+| Nordmazedonien                   | 19 USD              | 99 USD           |    
 | Norwegen                            | 113 NOK             | 580 NOK          |  
 | Oman                              | 7 OMR               | 40 OMR           |  
 | Pakistan                          | 1959 PKR            | 9000 PKR         |  
@@ -190,7 +190,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Portugal                          | 14 EUR              | 75 EUR           |  
 | Katar                             | 69 QAR              | 360 QAR          |  
 | Rumänien                           | 14 EUR              | 75 EUR           |  
-| Russische Föderation                            | 626 RUB             | 3000 RUB         |  
+| Russland                            | 626 RUB             | 3000 RUB         |  
 | Ruanda                            | 19 USD              | 99 USD           |  
 | St. Kitts und Nevis             | 19 USD              | 99 USD           |  
 | St. Lucia                       | 19 USD              | 99 USD           |  
@@ -211,7 +211,7 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Südafrika                      | 193 ZAR             | 700 ZAR          |  
 | Spanien                             | 14 EUR              | 75 EUR           |  
 | Sri Lanka                         | 19 USD              | 99 USD           |  
-| Suriname                          | 19 USD              | 99 USD           |  
+| Surinam                          | 19 USD              | 99 USD           |  
 | Swasiland                         | 19 USD              | 99 USD           |  
 | Schweden                            | 123 SEK             | 700 SEK          |  
 | Schweiz                       | 17 CHF              | 90 CHF           |  
@@ -226,11 +226,11 @@ In der folgenden Tabelle entspricht die **Registrierungsgebühr** den aktuellen 
 | Tunesien                           | 31 TND              | 140 TND          |  
 | Türkei                            | 37 TRY              | 160 TRY          |  
 | Turkmenistan                      | 19 USD              | 99 USD           |  
-| Tuvalu                            | 19 USD              | 99 USD           |  
+| Tuwalu                            | 19 USD              | 99 USD           |  
 | Uganda                            | 19 USD              | 99 USD           |  
 | Ukraine                           | 156 UAH             | 800 UAH          |  
 | Vereinigte Arabische Emirate              | 19 USD              | 99 USD           |  
-| Großbritannien                    | 12 GBP              | 65 GBP           |  
+| United Kingdom                    | 12 GBP              | 65 GBP           |  
 | USA                     | 19 USD              | 99 USD           |  
 | Uruguay                           | 19 USD              | 99 USD           |  
 | Usbekistan                        | 19 USD              | 99 USD           |  

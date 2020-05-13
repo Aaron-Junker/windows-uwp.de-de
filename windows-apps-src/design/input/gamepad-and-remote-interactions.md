@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 207ad9cb3008f1a36402e413b7e246aa2135ae26
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970165"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234674"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interaktionen mit Gamepad und Fernbedienung
 
@@ -22,7 +22,7 @@ ms.locfileid: "82970165"
 
 ***Viele Interaktions Umgebungen werden von Gamepad, Remote Steuerung und Tastatur gemeinsam genutzt.***
 
-Erstellen Sie Interaktions Umgebungen in Ihren Windows-App-Anwendungen, die sicherstellen, dass Ihre APP sowohl über herkömmliche Eingabetypen von PCs, Laptops, Tablets (Maus, Tastatur, Toucheingabe usw.) als auch über die Eingabetypen, die typisch für die TV-und Xbox *-10-Fuß-* Erfahrung sind, genutzt werden können, wie z. b. Gamepad und Remote Steuerung.
+Erstellen Sie Interaktionen in Ihren Windows-Anwendungen, die sicherstellen, dass Ihre APP sowohl über herkömmliche Eingabetypen von PCs, Laptops und Tablets (Maus, Tastatur, Toucheingabe usw.) als auch über die Eingabetypen, die typisch für die TV-und Xbox *-10-Fuß-* Erfahrung sind, genutzt werden können, wie z. b. Gamepad und Remote Steuerung.
 
 Einen allgemeinen Entwurfs Leit Faden für Windows *-* Anwendungen finden Sie unter [Entwerfen für Xbox und TV](../devices/designing-for-tv.md) .
 
@@ -78,16 +78,16 @@ In der folgenden Tabelle werden alle Hardware Schaltflächen aufgelistet, die vo
 | Steuerkreuz (D-Pad)   | Ja       | Ja               |
 | Menü-Taste               | Ja       | Ja               |
 | Ansicht-Taste               | Ja       | Ja               |
-| X- und Y-Tasten           | Ja       | Nein                 |
-| Linker Stick                | Ja       | Nein                 |
-| Rechter Stick               | Ja       | Nein                 |
-| Linke und rechte Schalter   | Ja       | Nein                 |
-| Linke und rechte Bumper    | Ja       | Nein                 |
-| OneGuide-Taste           | Nein         | Ja               |
-| Lautstärke-Taste             | Nein         | Ja               |
-| Kanal-Taste            | Nein         | Ja               |
-| Mediensteuerungs-Tasten     | Nein         | Ja               |
-| Taste zum Stummschalten               | Nein         | Ja               |
+| X- und Y-Tasten           | Ja       | Nein                |
+| Linker Stick                | Ja       | Nein                |
+| Rechter Stick               | Ja       | Nein                |
+| Linke und rechte Schalter   | Ja       | Nein                |
+| Linke und rechte Bumper    | Ja       | Nein                |
+| OneGuide-Taste           | Nein        | Ja               |
+| Lautstärke-Taste             | Nein        | Ja               |
+| Kanal-Taste            | Nein        | Ja               |
+| Mediensteuerungs-Tasten     | Nein        | Ja               |
+| Taste zum Stummschalten               | Nein        | Ja               |
 
 ### <a name="built-in-button-support"></a>Integrierte Tastenunterstützung
 
@@ -169,7 +169,7 @@ Die folgende Tabelle zeigt die in die UWP integrierte Beschleunigerunterstützun
 Wenn Ihre App die korrekte Fokusnavigation für Tastaturen unterstützt, wird dies gut auf Gamepads und Fernbedienungen übertragen.
 Die Pfeiltastennavigation ist dem **Steuerkreuz** und dem **linken Stick** auf Gamepads zugeordnet. Interaktionen mit Benutzeroberflächenelementen sind der Taste **Eingabe/Auswahl** zugeordnet (siehe [Gamepad und Fernbedienung](#gamepad-and-remote-control)).
 
-Viele Ereignisse und Eigenschaften werden sowohl von der Tastatur als auch vom&mdash;Gamepad verwendet `KeyDown` , `KeyUp` sodass beide Ereignisse und Ereignisse ausgelöst werden. beide werden nur zu Steuerelementen `IsTabStop="True"` navigiert, die über die Eigenschaften und `Visibility="Visible"`verfügen. Designanleitungen für die Tastaturnutzung finden Sie unter [Tastaturinteraktionen](../input/keyboard-interactions.md).
+Viele Ereignisse und Eigenschaften werden sowohl von der Tastatur als auch vom Gamepad verwendet &mdash; `KeyDown` , sodass beide Ereignisse und Ereignisse ausgelöst werden `KeyUp` . beide werden nur zu Steuerelementen navigiert, die über die Eigenschaften `IsTabStop="True"` und verfügen `Visibility="Visible"` . Designanleitungen für die Tastaturnutzung finden Sie unter [Tastaturinteraktionen](../input/keyboard-interactions.md).
 
 Wenn die Tastaturunterstützung ordnungsgemäß implementiert ist, wird Ihre App angemessen funktionieren. Es sind jedoch möglicherweise zusätzliche Arbeiten erforderlich, um jedes Szenario zu unterstützen. Bedenken Sie die spezifischen Anforderungen Ihrer App, um die bestmögliche Benutzererfahrung bereitzustellen.
 
@@ -195,8 +195,8 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 Es gibt drei Hauptursachen für die fehlerhafte Funktion der XY-Navigation:
 
 * Die [IsTabStop](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istabstop)- oder [Visibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)-Eigenschaft ist falsch festgelegt.
-* Das Steuerelement, das den Fokus erhält, ist&mdash;tatsächlich größer als Sie denken, dass die XY-Navigation die Gesamtgröße des Steuer Elements ([ActualWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) und [ActualHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)) prüft, nicht nur den Teil des Steuer Elements, der etwas interessantes rendert.
-* Ein Fokussier bares Steuerelement, das auf&mdash;einer anderen XY-Navigation basiert, unterstützt keine Steuerelemente, die überlappen.
+* Das Steuerelement, das den Fokus erhält, ist tatsächlich größer als Sie denken &mdash; , dass die XY-Navigation die Gesamtgröße des Steuer Elements ([ActualWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) und [ActualHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight)) prüft, nicht nur den Teil des Steuer Elements, der etwas interessantes rendert.
+* Ein Fokussier bares Steuerelement, das auf einer anderen &mdash; XY-Navigation basiert, unterstützt keine Steuerelemente, die überlappen.
 
 Wenn die XY-Navigation nach dem Beheben dieser drei Probleme noch immer nicht wie erwartet funktioniert, kann das Element, das den Fokus erhalten soll, mit der in [Überschreiben der Standardnavigation](#overriding-the-default-navigation) beschriebenen Methode manuell festgelegt werden.
 
@@ -313,7 +313,7 @@ Nachfolgend sehen Sie eine fiktive Immobilien-App, die eine Liste zum Verkauf st
 
 #### <a name="problem-ui-elements-located-after-long-scrolling-listgrid"></a>Problem: UI-Elemente, die sich hinter einer langen Bildlaufliste oder einem Raster befinden <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-Die [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) der Eigenschaften in der folgenden Abbildung ist eine sehr lange Bildlaufliste. Wenn [Engagement](#focus-engagement)*nicht* für die `ListView` erforderlich ist, wenn der Benutzer zu der Liste navigiert, wird der Fokus auf das erste Element in der Liste gesetzt. Damit der Benutzer zur Schaltfläche **Zurück** oder **Weiter** gelangen kann, muss er alle Elemente der Liste durchlaufen. In solchen Fällen, in denen der Benutzer die gesamte Liste durchlaufen muss,&mdash;ist es mühsam, wenn die Liste nicht so kurz genug ist, dass diese Benutzer&mdash;Funktion akzeptabel ist, sollten Sie auch andere Optionen in Erwägung gezogen.
+Die [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) der Eigenschaften in der folgenden Abbildung ist eine sehr lange Bildlaufliste. Wenn [Engagement](#focus-engagement)*nicht* für die `ListView` erforderlich ist, wenn der Benutzer zu der Liste navigiert, wird der Fokus auf das erste Element in der Liste gesetzt. Damit der Benutzer zur Schaltfläche **Zurück** oder **Weiter** gelangen kann, muss er alle Elemente der Liste durchlaufen. In solchen Fällen, in denen der Benutzer die gesamte Liste durchlaufen muss, ist es mühsam &mdash; , wenn die Liste nicht so kurz genug ist, dass diese Benutzerfunktion akzeptabel ist, &mdash; sollten Sie auch andere Optionen in Erwägung gezogen.
 
 ![Immobilien-App: Eine Liste mit 50 Elementen erfordert 51 Klicks, bis die Schaltflächen am Ende erreicht sind](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -383,7 +383,7 @@ Das folgende Diagramm zeigt die Tastenzuordnungen für Gamepads/Remotesteuerunge
 > [!NOTE]
 > Der Mausmodus wird nur auf Xbox One mit Gamepad/Fernbedienung unterstützt. Bei anderen Gerätefamilien und Eingabetypen wird er stillschweigend ignoriert.
 
-Verwenden Sie die Eigenschaft [requirespointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer) auf einem Steuerelement oder einer Seite, um den Maus Modus dafür zu aktivieren. Diese Eigenschaft hat drei mögliche Werte: `Never` (Standardwert), `WhenEngaged`und. `WhenFocused`
+Verwenden Sie die Eigenschaft [requirespointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer) auf einem Steuerelement oder einer Seite, um den Maus Modus dafür zu aktivieren. Diese Eigenschaft hat drei mögliche Werte: `Never` (Standardwert), `WhenEngaged` und `WhenFocused` .
 
 ### <a name="activating-mouse-mode-on-a-control"></a>Aktivieren des Mausmodus für ein Steuerelement
 
@@ -401,7 +401,7 @@ Wenn der Benutzer ein Steuerelement mit `RequiresPointer="WhenEngaged"` verwende
 > [!NOTE]
 > Wenn ein Steuerelement bei Verwendung den Mausmodus aktiviert, muss es auch über `IsEngagementRequired="true"` eine Interaktion erfordern. Andernfalls wird der Mausmodus nie aktiviert.
 
-Wenn sich ein Steuerelement im Mausmodus befindet, befinden sich dessen verschachtelte Steuerelemente ebenfalls im Mausmodus. Der angeforderte Modus der untergeordneten Elemente wird&mdash;ignoriert. es ist nicht möglich, dass sich ein übergeordnetes Element im Mausmodus befindet, aber ein untergeordnetes Element ist.
+Wenn sich ein Steuerelement im Mausmodus befindet, befinden sich dessen verschachtelte Steuerelemente ebenfalls im Mausmodus. Der angeforderte Modus der untergeordneten Elemente wird ignoriert &mdash; . es ist nicht möglich, dass sich ein übergeordnetes Element im Mausmodus befindet, aber ein untergeordnetes Element ist.
 
 Darüber hinaus wird der angeforderte Modus eines Steuerelements nur untersucht, wenn es den Fokus erhält. Daher kann der Modus nicht dynamisch geändert werden, während es den Fokus besitzt.
 
@@ -446,7 +446,7 @@ Platzieren Sie den anfänglichen Fokus in Ihrer App möglichst in den Bereich ob
 
 ### <a name="making-focus-clearly-visible"></a>Klare Erkennbarkeit des Fokus
 
-Eine Fokusanzeige sollte stets auf dem Bildschirm sichtbar sein, damit Benutzer Vorgänge an der Stelle fortsetzen können, an der sie aufgehört haben, ohne nach dem Fokus suchen zu müssen. Ebenso sollte immer ein Fokus verwendender Element auf&mdash;dem Bildschirm vorhanden sein. verwenden Sie beispielsweise keine Popups mit nur Text und keinen Fokus nutzbaren Elementen.
+Eine Fokusanzeige sollte stets auf dem Bildschirm sichtbar sein, damit Benutzer Vorgänge an der Stelle fortsetzen können, an der sie aufgehört haben, ohne nach dem Fokus suchen zu müssen. Ebenso sollte immer ein Fokus verwendender Element auf dem Bildschirm vorhanden sein. verwenden Sie beispielsweise keine &mdash; Popups mit nur Text und keinen Fokus nutzbaren Elementen.
 
 Eine Ausnahme von dieser Regel wären die Vollbild-Funktionen wie das Abspielen von Videos oder das Anzeigen von Bildern. In diesen Fällen sollte die Fokusanzeige nicht sichtbar sein.
 
@@ -538,9 +538,9 @@ Dadurch können Benutzer die `ListView` schnell überspringen, indem sie einfach
 
 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) unterscheidet sich etwas von diesen Steuerelementen. Es weist spezifische Besonderheiten auf, die Sie berücksichtigen müssen. Wenn Sie ein `ScrollViewer`-Steuerelement mit fokussierbarem Inhalt besitzen, können Sie standardmäßig durch Navigieren zum `ScrollViewer`-Steuerelement durch dessen fokussierbare Elemente navigieren. Wie in einer `ListView`, müssen Sie einen Bildlauf über alle Elemente ausführen, um von `ScrollViewer` weg zu navigieren.
 
-Wenn der `ScrollViewer` über *keinen* Fokus verwendbaren&mdash;Inhalt verfügt, z. b.,&mdash;wenn er nur `IsFocusEngagementEnabled="True"` Text enthält, können Sie festlegen `ScrollViewer` , sodass der Benutzer den mithilfe der Schaltfläche **A/Select** einbinden kann. Nach der Aktivierung können sie mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf durch den Text ausführen und anschließend die **B/Back**-Taste (Zurück-Taste) drücken, um das Steuerelement zu deaktivieren, wenn sie den Vorgang abgeschlossen haben.
+Wenn der `ScrollViewer` über *keinen* Fokus verwendbaren Inhalt verfügt &mdash; , z. b., wenn er nur Text enthält, &mdash; können Sie festlegen, `IsFocusEngagementEnabled="True"` sodass der Benutzer den `ScrollViewer` mithilfe der Schaltfläche **A/Select** einbinden kann. Nach der Aktivierung können sie mit dem **Steuerkreuz (D-Pad)/linken Stick** einen Bildlauf durch den Text ausführen und anschließend die **B/Back**-Taste (Zurück-Taste) drücken, um das Steuerelement zu deaktivieren, wenn sie den Vorgang abgeschlossen haben.
 
-Ein anderer `IsTabStop="True"` Ansatz wäre die `ScrollViewer` Festlegung von, sodass der Benutzer das Steuer&mdash;Element nicht einbinden muss, um ihn einfach in den Fokus zu versetzen, und dann einen Bildlauf durchführen, indem er das **D-Pad/den linken Strich** verwendet, wenn keine Fokus baren Elemente innerhalb der `ScrollViewer`vorhanden sind.
+Ein anderer Ansatz wäre die Festlegung von `IsTabStop="True"` `ScrollViewer` , sodass der Benutzer das Steuerelement nicht einbinden muss, um &mdash; ihn einfach in den Fokus zu versetzen, und dann einen Bildlauf durchführen, indem er das **D-Pad/den linken Strich** verwendet, wenn keine Fokus baren Elemente innerhalb der vorhanden sind `ScrollViewer` .
 
 ### <a name="focus-engagement-defaults"></a>Standardeinstellungen in Bezug auf die Fokusaktivierung
 
@@ -557,7 +557,7 @@ Einige Steuerelemente führen häufig genug dazu, dass Benutzer in einem Steuere
 | SemanticZoom          | Aus                       |
 | Slider                | Andererseits                        |
 
-Alle anderen Windows-Steuerelemente führen zu keinem Verhalten oder visuellen Änderungen `IsFocusEngagementEnabled="True"`, wenn dies der Fall ist.
+Alle anderen Windows-Steuerelemente führen zu keinem Verhalten oder visuellen Änderungen, wenn dies der Fall ist `IsFocusEngagementEnabled="True"` .
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -566,4 +566,4 @@ Sie können Windows-Anwendungen erstellen, die für ein bestimmtes Gerät oder e
 ## <a name="related-articles"></a>Verwandte Artikel
 
 - [Entwerfen für Xbox und Fernsehgeräte](../devices/designing-for-tv.md)
-- [Geräte Einführung für Windows-app-apps](index.md)
+- [Geräte Einführung für Windows-apps](index.md)

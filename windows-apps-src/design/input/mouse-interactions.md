@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e0591a62134f09c1b3a9d115d038020e95f0c139
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2d6ddf03541e94f89d0950a4f4c03eebaa0e396e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970715"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234476"
 ---
 # <a name="mouse-interactions"></a>Mausinteraktionen
 
-Optimieren Sie den Entwurf Ihrer Windows-App-App für Finger Eingaben, und erhalten Sie standardmäßig grundlegende Mausunterstützung. 
+Optimieren Sie Ihren Windows-App-Entwurf für die Fingereingabe, und erhalten Sie standardmäßig grundlegende Mausunterstützung. 
 
 ![Maus](images/input-patterns/input-mouse.jpg)
 
@@ -59,7 +59,7 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 <td align="left"><p>Rechtsklick, um Auswahl zu treffen und Befehl auszuwählen</p></td>
 <td align="left"><p>Klicken Sie mit der rechten Maustaste, um die Navigationsleiste (sofern verfügbar) und die App-Leiste mit globalen Befehlen anzuzeigen. Klicken Sie mit der rechten Maustaste auf ein Element, um es auszuwählen und die App-Leiste mit Kontextbefehlen für das ausgewählte Element anzuzeigen.</p>
 <div class="alert">
-<strong>Hinweis</strong>  klicken Sie mit der rechten Maustaste, um ein Kontextmenü anzuzeigen, wenn Auswahl-oder App-leisten Befehle keine passenden UI-Verhalten darstellen. Wir empfehlen jedoch ausdrücklich, die App-Leiste für alle Befehlsverhalten zu verwenden.
+<strong>Hinweis</strong>    Klicken Sie mit der rechten Maustaste, um ein Kontextmenü anzuzeigen, wenn Auswahl-oder App-leisten-Befehle keine passenden UI-Verhalten darstellen Wir empfehlen jedoch ausdrücklich, die App-Leiste für alle Befehlsverhalten zu verwenden.
 </div>
 <div>
  

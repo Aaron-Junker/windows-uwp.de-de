@@ -1,5 +1,5 @@
 ---
-description: Beschreibt die erforderlichen Schritte, um sicherzustellen, dass Ihre Windows-App-App verwendbar ist, wenn ein Design mit hohem Kontrast aktiv ist.
+description: Beschreibt die erforderlichen Schritte, um sicherzustellen, dass Ihre Windows-App verwendbar ist, wenn ein Design mit hohem Kontrast aktiv ist.
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: Designs mit hohem Kontrast
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 118f604b8c8c95a863773270825ff4db5c5a1b3a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ce3fe9ea96f4b4ce2f541fb5f7a9682a0dee5e0e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969455"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234030"
 ---
 # <a name="high-contrast-themes"></a>Designs mit hohem Kontrast  
 
@@ -95,7 +95,7 @@ Auf der Seite *Einstellungen > Erleichterte Bedienung > Hoher Kontrast* sind sta
 
 Jede **System Color * Color** -Ressource ist eine Variable, die die Farbe automatisch aktualisiert, wenn der Benutzer Designs mit hohem Kontrast wechselt. Im Folgenden finden Sie Richtlinien für die Verwendung der einzelnen Ressourcen.
 
-Resource | Usage |
+Resource | Verwendung |
 |--------|-------|
 **SystemColorWindowTextColor** | Textkörper, Überschriften, Listen, beliebiger Text, mit dem nicht interagiert werden kann |
 | **SystemColorHotlightColor** | Hyperlinks |
@@ -154,7 +154,7 @@ Später können Sie dann in Ihrer App den Hintergrund festlegen.
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-Beachten Sie, dass ** \{themeresource\} ** zweimal verwendet wird, einmal, um auf **systemcolorwindowcolor** zu verweisen, und wieder, um auf **branddpgebackgroundbrush**zu verweisen. Beide Verweise sind erforderlich, damit zur Laufzeit das korrekte Design in Ihrer App verwendet wird. Dies ist ein guter Zeitpunkt, um die Funktionalität in Ihrer App zu testen. Der Hintergrund des Rasters wird automatisch aktualisiert, wenn Sie zu einem Design mit hohem Kontrast wechseln. Beim Wechseln zwischen verschiedenen Designs mit hohem Kontrast wird er ebenfalls aktualisiert.
+Beachten Sie, dass ** \{ themeresource \} ** zweimal verwendet wird, einmal, um auf **systemcolorwindowcolor** zu verweisen, und wieder, um auf **branddpgebackgroundbrush**zu verweisen. Beide Verweise sind erforderlich, damit zur Laufzeit das korrekte Design in Ihrer App verwendet wird. Dies ist ein guter Zeitpunkt, um die Funktionalität in Ihrer App zu testen. Der Hintergrund des Rasters wird automatisch aktualisiert, wenn Sie zu einem Design mit hohem Kontrast wechseln. Beim Wechseln zwischen verschiedenen Designs mit hohem Kontrast wird er ebenfalls aktualisiert.
 
 ## <a name="when-to-use-borders"></a>Wann sollten Rahmen verwenden werden?
 

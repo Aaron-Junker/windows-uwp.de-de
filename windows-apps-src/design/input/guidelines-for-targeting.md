@@ -8,16 +8,16 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 199c120dcc85e5c113d6d4d529699a3f2fb28aa1
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13737e9aeb906e0430b2a18dd75ae1fce3a75956
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970085"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234583"
 ---
 # <a name="guidelines-for-touch-targets"></a>Richtlinien für Touch-Ziele
 
-Alle interaktiven Benutzeroberflächen Elemente in der Windows-app-Anwendung müssen groß genug sein, damit Benutzer unabhängig vom Gerätetyp oder der Eingabemethode genau darauf zugreifen und diese verwenden können.
+Alle interaktiven Benutzeroberflächen Elemente in Ihrer Windows-Anwendung müssen groß genug sein, damit Benutzer unabhängig vom Gerätetyp oder der Eingabemethode genau darauf zugreifen und diese verwenden können.
 
 Die Unterstützung von Berührungs Eingaben (und die relativ ungenaue Natur des Berührungs Kontakt Bereichs) erfordert weitere Optimierungen in Bezug auf die Zielgröße und das Layout des Steuer Elements, da der größere, komplexere Satz von Eingabedaten, die vom Fingerabdruck-Digitalisierer gemeldet werden, verwendet wird, um das beabsichtigte (oder wahrscheinlichste) Ziel des Benutzers zu bestimmen
 
@@ -32,7 +32,7 @@ In diesem Thema werden diese Standardverhalten beschrieben, damit Sie Ihre APP f
 Die *Standard-Größenanpassung von Fluent* wurde entwickelt, um ein Gleichgewicht zwischen Informationsdichte und Benutzerfreundlichkeit zu schaffen. Effektiv werden alle Elemente auf dem Bildschirm auf einen Zielwert von 40 x 40 effektive Pixel (epx) ausgerichtet, wodurch UI-Elemente an einem Raster ausgerichtet und gemäß der Skalierung auf Systemebene entsprechend skaliert werden.
 
 > [!NOTE]
-> Weitere Informationen zu effektiven Pixeln und zur Skalierung finden [Sie unter Einführung in Windows-App-Design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) .
+> Weitere Informationen zu effektiven Pixeln und Skalierung finden Sie unter [Einführung in das Windows-App-Design](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > Weitere Informationen zum Skalieren auf der Systemebene finden Sie unter [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md).
 

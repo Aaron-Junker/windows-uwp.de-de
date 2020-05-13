@@ -1,5 +1,5 @@
 ---
-Description: Erstellen Sie Windows-app-apps mit intuitiver und unterschiedlichen Benutzerinteraktionen, die für die Berührungs Optimierung optimiert sind, aber funktionell auf Eingabegeräten einheitlich sind.
+Description: Erstellen Sie Windows-apps mit intuitiver und ausgeprägter Benutzerinteraktion, die für die Berührungs Optimierung optimiert sind, aber funktional auf Eingabegeräten einheitlich sind.
 title: Toucheingabe-Interaktionen
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99926de0ea26b0cef9184756add777a39330d934
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e753b5c92dc22f967e2f518e8435d3a4fb41a529
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970255"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234848"
 ---
 # <a name="touch-interactions"></a>Toucheingabe-Interaktionen
 
@@ -192,7 +192,7 @@ Zum Bereitstellen von angepasster Toucheingabeunterstützung können Sie verschi
 
 Hier sehen Sie den grundlegenden Satz von Touchgesten, die von der UWP unterstützt werden.
 
-| Name           | Typ                 | BESCHREIBUNG                                                                            |
+| Name           | type                 | BESCHREIBUNG                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | Tippen            | Statische Geste       | Der Bildschirm wird mit einem Finger berührt, und der Finger wird wieder angehoben.                                            |
 | Drücken und Halten | Statische Geste       | Ein Finger berührt den Bildschirm und bleibt auf dem Bildschirm.                                      |
@@ -456,7 +456,7 @@ Zuerst wird ein [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) mit d
 </Grid>
 ```
 
-Anschließend wird ein globales [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)-Element mit dem Namen `dragTranslation` erstellt, mit dem das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element übersetzt wird. Ein [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) -Ereignislistener ist für das **Rechteck**angegeben `dragTranslation` und wird der [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) des **Rechtecks**hinzugefügt.
+Anschließend wird ein globales [**TranslateTransform**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.TranslateTransform)-Element mit dem Namen `dragTranslation` erstellt, mit dem das [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)-Element übersetzt wird. Ein [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) -Ereignislistener ist für das **Rechteck**angegeben und `dragTranslation` wird der [**RenderTransform**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform) des **Rechtecks**hinzugefügt.
 
 ```cpp
 // Global translation transform used for changing the position of 
@@ -576,7 +576,7 @@ End Sub
 
 Alle hier erwähnten Zeiger-, Gestik- und Manipulationsereignisse werden als *Routingereignisse* implementiert. Folglich kann das Ereignis potenziell auch von Objekten behandelt werden, bei denen es sich nicht um das Objekt handelt, von dem das Ereignis ursprünglich ausgelöst wurde. Von aufeinander folgenden übergeordneten Elementen in einer Objektstruktur (wie etwa den übergeordneten Containern eines [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Elements oder dem [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)-Stammelement Ihrer App) können diese Ereignisse auch dann behandelt werden, wenn sie vom ursprünglichen Element nicht behandelt werden. Umgekehrt gilt: Ein Objekt, von dem das Ereignis nicht behandelt wird, kann das Ereignis als behandelt markieren, damit es keine übergeordneten Elemente mehr erreicht. Weitere Informationen zum Routing Ereignis Konzept und dessen Auswirkungen auf das Schreiben von Handlern für Routing Ereignisse finden Sie unter [Übersicht über Ereignisse und Routing Ereignisse](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10)).
 
-## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
+## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
 
 -   Entwerfen Sie Anwendungen mit Toucheingabe als primär erwarteter Eingabemethode.

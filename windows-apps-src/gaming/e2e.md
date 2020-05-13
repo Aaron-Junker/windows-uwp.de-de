@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Spieleentwicklung
 ms.localizationpriority: medium
-ms.openlocfilehash: de18e77137941acfba6e9cb3fb6421de8fe156f0
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 5f7c124c1d77cbce140cb42cdc07682dad8f78f2
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730253"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280250"
 ---
 # <a name="windows-10-game-development-guide"></a>Handbuch zur Entwicklung von Spielen unter Windows 10
 
@@ -119,7 +119,7 @@ Das Xbox Live Creators-Programm ermöglicht allen Benutzern, Xbox Live in ihren 
 
 Sie können Ihr Spiel im Creators-Programm ohne dediziertes dev-Kit bereitstellen, entwerfen und veröffentlichen. dabei wird nur die Einzelhandels Hardware verwendet. Laden Sie zunächst die Entwickler [Modus-Aktivierungs-App](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) auf Ihrer Xbox One herunter.
 
-Wenn Sie noch mehr über die Xbox Live-Funktionen, dedizierte Marketing-und Entwicklungsunterstützung und die Gelegenheit verfügen möchten, im Hauptspeicher von Xbox One zu finden, [ID@Xbox](https://www.xbox.com/Developers/id) wenden Sie sich auf das Programm an.
+Wenn Sie noch mehr über die Xbox Live-Funktionen, dedizierte Marketing-und Entwicklungsunterstützung und die Gelegenheit verfügen möchten, im Hauptspeicher von Xbox One zu finden, wenden Sie sich auf das [ID@Xbox](https://www.xbox.com/Developers/id) Programm an.
 
 <table>
     <colgroup>
@@ -134,7 +134,7 @@ Wenn Sie noch mehr über die Xbox Live-Funktionen, dedizierte Marketing-und Entw
 
 #### <a name="idxbox"></a>ID@Xbox
 
-Das ID@Xbox Programm unterstützt qualifizierte Spieleentwickler bei der Selbstveröffentlichung in Windows und Xbox One. Wenn Sie für Xbox One entwickeln oder Xbox Live-Features wie Gamerscore, Erfolge und Bestenlisten zu Ihrem Windows 10-Spiel hinzufügen möchten, registrieren Sie sich ID@Xboxmit. Entwickeln Sie ID@Xbox Entwickler, um Tools und Unterstützung zu erhalten, die Sie benötigen, um Ihre Kreativität zu steigern und ihren Erfolg zu maximieren. Es wird empfohlen, dass Sie ID@Xbox zuerst auf anwenden, bevor Sie sich für ein Entwicklerkonto im Partner Center registrieren.
+Das ID@Xbox Programm unterstützt qualifizierte Spieleentwickler bei der Selbstveröffentlichung in Windows und Xbox One. Wenn Sie für Xbox One entwickeln oder Xbox Live-Features wie Gamerscore, Erfolge und Bestenlisten zu Ihrem Windows 10-Spiel hinzufügen möchten, registrieren Sie sich mit ID@Xbox . Entwickeln ID@Xbox Sie Entwickler, um Tools und Unterstützung zu erhalten, die Sie benötigen, um Ihre Kreativität zu steigern und ihren Erfolg zu maximieren. Es wird empfohlen, dass Sie zuerst auf anwenden, bevor Sie sich ID@Xbox für ein Entwicklerkonto im Partner Center registrieren.
 
 <table>
     <colgroup>
@@ -218,7 +218,7 @@ Für Windows 10-Spiele und -Apps stehen zahlreiche Beispiele zur Verfügung, die
     </tr>
     <tr>
         <td>Windows-Spiel Beispiele (MSDN Code Gallery)</td>
-        <td><a href="https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft">Microsoft Store von Spiel Beispielen</a></td>
+        <td><a href="https://docs.microsoft.com/samples/browse/?term=games">Microsoft Store von Spiel Beispielen</a></td>
     </tr>
     <tr>
         <td>JavaScript-Beispiel für 2D-Spiel</td>

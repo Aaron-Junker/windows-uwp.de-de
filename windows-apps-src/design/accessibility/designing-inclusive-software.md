@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows app-apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
+Description: Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows-Apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Entwerfen inklusiver Software unter Windows 10
 label: Designing inclusive software
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f048d9d3541b52994713c8040c451a421df3e0a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969435"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234085"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Entwerfen inklusiver Software für Windows 10  
 
-Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows app-apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
+Erfahren Sie mehr über die Entwicklung eines inklusiven Entwurfs mit Windows-Apps für Windows 10.  Entwerfen und erstellen Sie inklusive Software unter Berücksichtigung der Barrierefreiheit.
 
 Microsoft entwickelt seine Designprinzipien und -verfahren kontinuierlich weiter. Diese informieren über Aussehen, Darstellung, Funktion und Verhalten unserer Umgebungen. Wir erweitern unsere Sichtweise.
 
@@ -46,7 +46,7 @@ Es gibt im Wesentlichen zwei Arten von Benutzern von Hilfstechnologien (Assistiv
 
 Die Mehrzahl der Computerbenutzer (54 Prozent) kennen irgendeine Art von Hilfstechnologie, und 44 Prozent der Computerbenutzer verwenden Hilfstechnologien. Viele von diesen verwenden jedoch keine Hilfstechnologien, die ihnen Vorteile bieten würden (Forrester 2004).  
 
-Eine 2003-2004-Studie von Microsoft, die von ForresterResearch betrieben wird, hat &mdash; festgestellt &mdash; , dass über eine Hälfte 57 Prozent der Computerbenutzer im USA zwischen den Jahren 18 und 64 von Hilfstechnologien profitieren können. Die Mehrzahl dieser Benutzer gab zwar keine Behinderungen oder Beeinträchtigungen, jedoch bestimmte aufgabenbezogene Schwierigkeiten oder Beeinträchtigungen bei der Verwendung von Computern an. Forrester (2003) ermittelte darüber hinaus die folgenden Zahlen für Benutzer mit spezifischen Schwierigkeiten: Einer von vier Benutzern hat Schwierigkeiten beim Sehen. Einer von vier Benutzern hat Schmerzen in Handgelenken oder Händen. Einer von fünf Benutzern hat Schwierigkeiten beim Hören.  
+Eine 2003-2004-Studie von Microsoft, die von ForresterResearch betrieben wird, hat festgestellt, dass über eine Hälfte &mdash; 57 Prozent &mdash; der Computerbenutzer im USA zwischen den Jahren 18 und 64 von Hilfstechnologien profitieren können. Die Mehrzahl dieser Benutzer gab zwar keine Behinderungen oder Beeinträchtigungen, jedoch bestimmte aufgabenbezogene Schwierigkeiten oder Beeinträchtigungen bei der Verwendung von Computern an. Forrester (2003) ermittelte darüber hinaus die folgenden Zahlen für Benutzer mit spezifischen Schwierigkeiten: Einer von vier Benutzern hat Schwierigkeiten beim Sehen. Einer von vier Benutzern hat Schmerzen in Handgelenken oder Händen. Einer von fünf Benutzern hat Schwierigkeiten beim Hören.  
 
 Abgesehen von permanenten Behinderungen können Schwere und Art der Schwierigkeiten, die eine Person hat, während ihres Lebens unterschiedlich sein. Es gibt keine „normalen“ Menschen. Unsere Fähigkeiten unterliegen ständigen Veränderungen. Margaret Meade sagte einmal: „Wir sind alle einzigartig. Diese Einzigartigkeit ist uns allen gemeinsam.“  
 
@@ -93,7 +93,7 @@ Die aktualisierte Fassung des Abschnitts 508 des Americans with Disability Act 
 #### <a name="color-combinations"></a>Farbkombinationen  
 Ungefähr 7 Prozent der Männer (und weniger als 1 Prozent der Frauen) weisen eine Farbsehschwäche auf. Benutzer mit Farbenblindheit haben Probleme bei der Unterscheidung zwischen bestimmten Farben. Es ist daher wichtig, dass niemals nur Farben verwendet werden, um Status oder Bedeutung in einer Anwendung zu vermitteln. Für dekorative Bilder (wie Symbole oder Hintergründe) sollten Farbkombinationen so gewählt werden, dass die Wahrnehmung des Bilds durch den farbenblinden Benutzer maximiert wird. Wenn Sie Ihre Benutzeroberfläche von Anfang an unter Berücksichtigung dieser Empfehlungen zur Farbgestaltung entwerfen, macht Ihre App bereits wichtige Fortschritte in Richtung eines inklusiven Designs.  
 
-## <a name="summary-mdash-seven-steps-for-inclusive-design"></a>Zusammen &mdash; Fassung sieben Schritte für inklusives Design  
+## <a name="summary-mdash-seven-steps-for-inclusive-design"></a>Zusammenfassung &mdash; sieben Schritte für inklusives Design  
 Befolgen Sie diese sieben Schritte, um sicherzustellen, dass Ihre Software inklusiv ist.  
 1.  Entscheiden Sie zunächst, ob ein inklusives Design ein wichtiger Aspekt Ihrer Software ist. Wenn dies der Fall ist, informieren Sie sich darüber, wie sie Benutzern in der Praxis helfen kann, zu leben, zu arbeiten und zu spielen, um Anleitungen für Ihr Design zu erhalten.  
 2.  Verwenden Sie wenn möglich die Steuerelemente, die Ihr Framework Ihnen bereitstellt (d. h. Standardsteuerelemente), während Sie Lösungen für Ihre Anforderungen entwickeln, und vermeiden Sie unnötigen Aufwand und unnötige Kosten, um benutzerdefinierte Steuerelemente zu entwickeln.  

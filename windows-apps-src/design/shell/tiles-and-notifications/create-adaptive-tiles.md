@@ -8,16 +8,16 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b91b5d8ce39f34c6065f6dce61e90a752b36c8ef
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bbc0f23ad712850e565814febe5b7e681e58a85d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971065"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234576"
 ---
 # <a name="create-adaptive-tiles"></a>Erstellen adaptiver Kacheln
 
-Vorlagen für adaptive Kacheln sind ein neues Feature in Windows 10 und ermöglichen den Entwurf eigener Inhalte für Kachelbenachrichtigungen mithilfe einer einfachen, flexiblen Markupsprache, die sich an unterschiedliche Bildschirmdichten anpasst. Dieser Artikel beschreibt, wie Sie adaptive Livekacheln für Ihre App für Ihre Windows-App erstellen. Die vollständige Liste adaptiver Elemente und Attribute finden Sie unter [Adaptives Kachelschema](../tiles-and-notifications/tile-schema.md).
+Vorlagen für adaptive Kacheln sind ein neues Feature in Windows 10 und ermöglichen den Entwurf eigener Inhalte für Kachelbenachrichtigungen mithilfe einer einfachen, flexiblen Markupsprache, die sich an unterschiedliche Bildschirmdichten anpasst. In diesem Artikel erfahren Sie, wie Sie Adaptive Live-Kacheln für Ihre Windows-app erstellen. Die vollständige Liste adaptiver Elemente und Attribute finden Sie unter [Adaptives Kachelschema](../tiles-and-notifications/tile-schema.md).
 
 (Wenn gewünscht, können Sie weiterhin die voreingestellten Vorlagen aus dem [Windows 8-Kachelvorlagenkatalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10)) beim Entwerfen von Benachrichtigungen für Windows 10 verwenden.)
 
@@ -208,7 +208,7 @@ TileContent content = new TileContent()
 
 Sie können das Branding am unteren Rand einer Live-Kachel (den Anzeigenamen und das Cornerlogo) mit dem branding-Attribut in der Benachrichtigungsnutzlast steuern. Mit „none“ wird nichts angezeigt, mit „name“ nur der Name, mit „logo“ nur das Logo, und mit „nameAndLogo“ werden Name und Logo angezeigt.
 
-**Hinweis**  Windows Mobile unterstützt das ecklogo nicht, sodass "Logo" und "nameandlogo" standardmäßig "Name" auf Mobilgeräten sind.
+**Hinweis**    Windows Mobile unterstützt das ecklogo nicht, sodass "Logo" und "nameandlogo" standardmäßig "Name" auf Mobilgeräten sind.
 
  
 
@@ -280,7 +280,7 @@ TileContent content = new TileContent()
 
 Wenn Sie in der Benachrichtigungsnutzlast kein Branding angeben, wird das Branding durch die Eigenschaften der Basiskachel bestimmt. Wenn auf der Basiskachel der Anzeigename dargestellt ist, wird für das Branding standardmäßig „name“ verwendet. Wenn kein Anzeigename vorhanden ist, wird für das Branding standardmäßig „none“ verwendet.
 
-**Beachten Sie**    , dass dies eine Änderung von Windows 8. x ist, bei der das Standard Branding "Logo" war.
+**Hinweis**    Dies ist eine Änderung gegenüber Windows 8. x, bei der das Standard Branding "Logo" war.
 
  
 
@@ -406,7 +406,7 @@ new AdaptiveText()
 
 ![Textstile adaptiver Kacheln](images/adaptive-tiles-textstyles.png)
 
-**Beachten Sie**  , dass der Stil standardmäßig auf Caption festgelegt ist, wenn Hint-Style nicht
+**Hinweis**    Der Stil ist standardmäßig auf Caption festgelegt, wenn Hint-Style nicht angegeben ist.
 
  
 
@@ -414,14 +414,14 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;Text Hint-Style = "\*"/&gt; | Zeichenhöhe               | Schriftbreite |
-| caption                        | 12 effektive Pixel (epx) | Regulär      |
-| body                           | 15 Epx                    | Regulär      |
+| &lt;Text Hint-Style = " \* "/&gt; | Zeichenhöhe               | Schriftbreite |
+| caption                        | 12 effektive Pixel (epx) | Regular     |
+| body                           | 15 Epx                    | Regular     |
 | base                           | 15 Epx                    | Halbfett    |
-| subtitle                       | 20 Epx                    | Regulär      |
+| subtitle                       | 20 Epx                    | Regular     |
 | title                          | 24 Epx                    | Semilight   |
-| subheader                      | 34 Epx                    | Hell       |
-| Header                         | 46 Epx                    | Hell       |
+| subheader                      | 34 Epx                    | Leicht       |
+| Header                         | 46 Epx                    | Leicht       |
 
  
 
@@ -485,7 +485,7 @@ Mit Gruppen können Sie semantisch deklarieren, dass sich Inhalte in der Gruppe 
 
 Um optimale Ergebnisse auf unterschiedlichen Geräten und Bildschirmen zu erzielen, sollten Sie mehrere Gruppen bereitstellen. Mit mehreren Gruppen kann sich die Kachel an größere Bildschirme anpassen.
 
-**Beachten Sie**  , dass das einzige gültige untergeordnete Element einer Gruppe eine Untergruppe ist.
+**Hinweis**    Das einzige gültige untergeordnete Element einer Gruppe ist eine Untergruppe.
 
  
 
@@ -679,7 +679,7 @@ Wenn Ihre erste Spalte 20 % und die zweite Spalte 80 % der gesamten Breite ein
 
 ![Untergruppen mit einer Gesamtgewichtung von 100](images/adaptive-tiles-subgroups03.png)
 
-**Beachten Sie**  , dass zwischen den Spalten automatisch ein 8-Pixel-Rand hinzugefügt wird.
+**Hinweis**    Zwischen den Spalten wird automatisch ein 8-Pixel-Rand hinzugefügt.
 
  
 

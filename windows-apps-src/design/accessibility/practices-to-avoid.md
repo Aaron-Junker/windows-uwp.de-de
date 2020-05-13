@@ -1,5 +1,5 @@
 ---
-Description: Listet die Methoden auf, um zu vermeiden, dass Sie eine barrierefreie Windows-App-app erstellen möchten.
+Description: Listet die Vorgehensweisen auf, um zu vermeiden, dass Sie eine barrierefreie Windows-app erstellen möchten.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: Nicht empfehlenswerte Praktiken für die Barrierefreiheit
 label: Accessibility practices to avoid
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 95c23a00ebc9ee2563340fbd5594d53ac7edb066
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 75dad7eb676bd2d2a9d95fa57122085329e5e144
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970005"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233942"
 ---
 # <a name="accessibility-practices-to-avoid"></a>Nicht empfehlenswerte Praktiken für die Barrierefreiheit
 
-Wenn Sie eine barrierefreie Windows-App-app erstellen möchten, finden Sie in der folgenden Liste mit Vorgehensweisen Weitere Informationen: 
+Wenn Sie eine barrierefreie Windows-app erstellen möchten, sehen Sie sich diese Liste der Vorgehensweisen an, um Folgendes zu vermeiden: 
 
 * **Vermeiden Sie die Erstellung benutzerdefinierter UI-Elemente, wenn Sie die Windows-Standardsteuerelemente** oder Steuerelemente verwenden können, die bereits die Microsoft-Benutzeroberflächenautomatisierung unterstützen. Windows-Standardsteuerelemente sind standardmäßig barrierefrei. Es müssen lediglich einige Barrierefreiheitsattribute hinzugefügt werden, die für die App spezifisch sind. Im Gegensatz dazu ist das Implementieren der [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)-Unterstützung für ein echtes benutzerdefiniertes Steuerelement etwas komplizierter (siehe [Benutzerdefinierte Automatisierungspeers](custom-automation-peers.md)).
 * **Platzieren Sie keinen statischen Text oder andere nicht interaktive Elemente in der Aktivier Reihenfolge** (z. b. durch Festlegen der [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex) -Eigenschaft für ein Element, das nicht interaktiv ist). Nicht interaktive Elemente in der Aktivierreihenfolge verstoßen gegen die Barrierefreiheitsrichtlinien für Tastaturen, da sich durch diese die Effizienz bei der Tastaturnavigation für die Benutzer verringert. In vielen Hilfstechnologien werden die Aktivierreihenfolge und die Möglichkeit, den Fokus auf ein Element zu legen, als Teil der Logik für die Darstellung der App für Benutzer von Hilfstechnologien verwendet. Außerdem können dadurch Benutzer verwirrt werden, die ausschließlich interaktive Elemente in der Aktivierreihenfolge erwarten (Schaltflächen, Kontrollkästchen, Texteingabefelder, Kombinationsfelder, Listen usw.).
