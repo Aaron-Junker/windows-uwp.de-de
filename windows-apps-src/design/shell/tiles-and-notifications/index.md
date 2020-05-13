@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cc182d05b1cc02dd62f66506c12fcfcfc8a03952
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969775"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234466"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Kacheln, Signale und Benachrichtigungen für Windows-Apps
  
@@ -39,7 +39,7 @@ Eine Kachel ist die Darstellung einer App im Startmenü. Jede Windows-App verfü
 | [Erstellen von Kacheln](creating-tiles.md) | Passen Sie die Standardkachel für Ihre App an, und stellen Sie Ressourcen für unterschiedliche Bildschirmgrößen bereit. |
 | [Ressourcen für App-Symbol](app-assets.md) | Ressourcen für App-Symbole, die in einer Vielzahl von Formen innerhalb des Windows 10-Betriebssystems vorkommen, sind die Aushängeschilder für Ihre Windows-App. In diesen Richtlinien wird beschrieben, wo Ressourcen für App-Symbole im System angezeigt werden, und Sie erhalten ausführliche Designtipps zum Erstellen ansprechender Symbole. |
 | [Primäre Kachel-APIs](primary-tile-apis.md) | Fordern Sie den Benutzer auf, die primäre Kachel Ihrer App anzuheften, und überprüfen Sie, ob die primäre Kachel derzeit angeheftet ist. |
-| [Kachelinhalt](create-adaptive-tiles.md) | Kachelbenachrichtigungsinhalt wird mit „Adaptiv“, einem neuen Feature in Windows 10, angegeben, das den Entwurf eigener Inhalte für Kachelbenachrichtigungen mithilfe einer einfachen, flexiblen Markupsprache ermöglicht, die sich an unterschiedliche Bildschirmdichten anpasst. Dieser Artikel beschreibt, wie Sie adaptive Livekacheln für Ihre App für Ihre Windows-App erstellen. |
+| [Kachelinhalt](create-adaptive-tiles.md) | Kachelbenachrichtigungsinhalt wird mit „Adaptiv“, einem neuen Feature in Windows 10, angegeben, das den Entwurf eigener Inhalte für Kachelbenachrichtigungen mithilfe einer einfachen, flexiblen Markupsprache ermöglicht, die sich an unterschiedliche Bildschirmdichten anpasst. Dieser Artikel beschreibt, wie Sie adaptive Live-Kacheln für Ihre App für Ihre Windows-App erstellen. |
 | [Kachelinhaltsschema](../tiles-and-notifications/tile-schema.md) | Im Folgenden werden Elemente und Attribute aufgeführt, mit denen Sie adaptive Kacheln erstellen können. |
 | [Spezielle Kachelvorlagen](special-tile-templates-catalog.md) | Spezielle Kachelvorlagen sind individuelle Vorlagen, die animiert sind oder mit denen Sie Vorgänge durchführen können, die mit adaptiven Kacheln nicht möglich sind. |
 | [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md) | Hier erfahren Sie, wie Sie eine lokale Kachelbenachrichtigung senden und dabei erweiterten dynamischen Inhalt zu Ihrer Live-Kachel hinzufügen. |

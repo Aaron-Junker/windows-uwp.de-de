@@ -546,6 +546,8 @@
           href: accessibility/basic-accessibility-information.md
         - name: Barrierefreiheit der Tastaturnavigation
           href: accessibility/keyboard-accessibility.md
+        - name: Sprachausgaben und Hardwaresystemschaltflächen
+          href: accessibility/system-button-narration.md
         - name: Orientierungspunkte und Überschriften
           href: accessibility/landmarks-and-headings.md
         - name: Designs mit hohem Kontrast
