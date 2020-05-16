@@ -12,18 +12,18 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
+ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081958"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82989802"
 ---
 # <a name="command-bar-flyout"></a>Befehlsleisten-Flyout
 
 Über das Befehlsleisten-Flyout können Sie Benutzern einfachen Zugriff auf häufig verwendete Aufgaben ermöglichen, indem Befehle in einer unverankerten Symbolleiste angezeigt werden, die mit einem Element in der Benutzeroberflächen-Canvas verbunden sind.
 
-![Erweitertes Befehlsleisten-Text-Flyout](images/command-bar-flyout-header.png)
+![Erweitertes Befehlsleisten-Text-Flyout](images/command-bar-flyout-text-full.png)
 
 Wie [CommandBar](app-bars.md) verfügt auch CommandBarFlyout über die Eigenschaften **PrimaryCommands** und **SecondaryCommands**, über die Sie Befehle hinzufügen können. Sie können Befehle in einer oder beiden Sammlungen platzieren. Wann und wie die primären und sekundären Befehle angezeigt werden, hängt vom Anzeigemodus ab.
 
@@ -36,7 +36,7 @@ Das Befehlsleisten-Flyout verfügt über zwei Anzeigemodi: *Reduziert* und *Erwe
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **CommandBarFlyout** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für UWP-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **CommandBarFlyout** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 >**Windows-UI-Bibliotheks-APIs:** [CommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout), [TextCommandBarFlyout-Klasse](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
@@ -417,5 +417,5 @@ TextCommandBarFlyout kann nicht angepasst werden und wird von jedem Textsteuerel
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Befehlsdesigngrundlagen für UWP-Apps](../basics/commanding-basics.md)
+- [Grundlagen des Befehlsdesigns für Windows-Apps](../basics/commanding-basics.md)
 - [CommandBar-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
