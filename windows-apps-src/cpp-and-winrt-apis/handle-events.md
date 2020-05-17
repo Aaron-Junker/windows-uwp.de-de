@@ -79,7 +79,7 @@ MainPage::MainPage()
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
 ```
 
-Ein Handler vom Typ **RoutedEventHandler** kann auch noch auf andere Weise erstellt werden. Der folgende Syntaxblock stammt aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). (Wähle rechts oben auf dieser Webseite im Dropdownmenü *Sprache* die Option **C++/WinRT** aus.) Beachte die verschiedenen Konstruktoren: Einer akzeptiert eine Lambda-Funktion, ein anderer eine freie Funktion und ein weiterer (der oben verwendete) ein Objekt sowie eine Pointer-to-Member-Funktion.
+Ein Handler vom Typ **RoutedEventHandler** kann auch noch auf andere Weise erstellt werden. Der folgende Syntaxblock stammt aus dem Dokumentationsthema für [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler). (Wähle rechts oben auf dieser Webseite im Dropdownmenü **Sprache** die Option *C++/WinRT* aus.) Beachte die verschiedenen Konstruktoren: Einer akzeptiert eine Lambda-Funktion, ein anderer eine freie Funktion und ein weiterer (der oben verwendete) ein Objekt sowie eine Pointer-to-Member-Funktion.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -96,7 +96,7 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 Die Syntax des Funktionsaufrufoperators ist ebenfalls hilfreich. Sie gibt Aufschluss über die benötigten Delegatparameter. Wie du siehst, entspricht in diesem Fall die Syntax des Funktionsaufrufoperators den Parametern unseres Handlers vom Typ **MainPage::ClickHandler**.
 
 > [!NOTE]
-> Navigiere zum Ermitteln der Details eines Ereignisdelegaten sowie der zugehörigen Parameter zunächst zum Dokumentationsthema für das Ereignis. Nehmen wir beispielsweise das [Ereignis „UIElement.KeyDown“](/uwp/api/windows.ui.xaml.uielement.keydown). Rufe dieses Thema auf, und wähle in der Dropdownliste *Sprache* die Option  **C++/WinRT** aus. Der Syntaxblock am Anfang des Themas enthält Folgendes:
+> Navigiere zum Ermitteln der Details eines Ereignisdelegaten sowie der zugehörigen Parameter zunächst zum Dokumentationsthema für das Ereignis. Nehmen wir beispielsweise das [Ereignis „UIElement.KeyDown“](/uwp/api/windows.ui.xaml.uielement.keydown). Rufe dieses Thema auf, und wähle in der Dropdownliste **Sprache** die Option  *C++/WinRT* aus. Der Syntaxblock am Anfang des Themas enthält Folgendes:
 > 
 > ```cppwinrt
 > // Register

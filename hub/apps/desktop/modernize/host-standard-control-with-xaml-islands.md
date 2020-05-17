@@ -48,7 +48,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 2. Vergewissern Sie sich, dass [Paketverweise](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
     1. Klicken Sie in Visual Studio auf **Extras > NuGet-Paket-Manager > Paket-Manager-Einstellungen**.
-    2. Achten Sie darauf, dass die Einstellung **Standardformat für Paketverwaltung** auf **PackageReference** festgelegt ist.
+    2. Stellen Sie sicher, dass die Einstellung **Standardformat für Paketverwaltung** auf **PackageReference** festgelegt ist.
 
 3. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr WPF-Projekt, und wählen Sie **NuGet-Pakete verwalten** aus.
 
@@ -260,7 +260,7 @@ Nachdem du die umschlossenen UWP-Steuerelemente [InkCanvas](https://docs.microso
     using Microsoft.Toolkit.Wpf.UI.XamlHost;
     ```
 
-10. Füge der `ChildChanged`-Klasse die folgende `MainWindow`-Ereignishandlermethode hinzu, und speichere die Codedatei. Wenn das Hoststeuerelement gerendert wurde, wird dieser Ereignishandler ausgeführt und erstellt einen einfachen Ereignishandler für das `SelectedDatesChanged`-Ereignis des Kalendersteuerelements.
+10. Füge der `MainWindow`-Klasse die folgende `ChildChanged`-Ereignishandlermethode hinzu, und speichere die Codedatei. Wenn das Hoststeuerelement gerendert wurde, wird dieser Ereignishandler ausgeführt und erstellt einen einfachen Ereignishandler für das `SelectedDatesChanged`-Ereignis des Kalendersteuerelements.
 
     ```csharp
     private void MyCalendar_ChildChanged(object sender, EventArgs e)

@@ -61,9 +61,9 @@ Ihre App-MRU-Liste wird durch die [**StorageItemMostRecentlyUsedList**](https://
 
 Verwenden Sie die Abrufmethode, die für das abzurufende Element am besten geeignet ist.
 
--   Rufen Sie mit [**GetFileAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) eine Datei als [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync) ab.
--   Rufen Sie mit [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) einen Ordner als [**StorageFolder**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync) ab.
--   Rufen Sie mit [**GetItemAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) ein allgemeines [**IStorageItem**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync)-Element ab, das eine Datei oder einen Ordner darstellen kann.
+-   Rufen Sie mit [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync) eine Datei als [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) ab.
+-   Rufen Sie mit [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync) einen Ordner als [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) ab.
+-   Rufen Sie mit [**GetItemAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync) ein allgemeines [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem)-Element ab, das eine Datei oder einen Ordner darstellen kann.
 
 Im Folgenden erfahren Sie, wie Sie die Datei abrufen können, die gerade hinzugefügt wurde.
 
