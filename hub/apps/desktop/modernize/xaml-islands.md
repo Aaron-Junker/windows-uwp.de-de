@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
-ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
+ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81441865"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606239"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)
 
@@ -129,6 +129,8 @@ In den folgenden Abschnitten werden Einschränkungen und Problemumgehungen für 
 
 ### <a name="supported-only-with-workarounds"></a>Nur mit Problemumgehungen unterstützt
 
+:heavy_check_mark: Das Hosting von UWP-Steuerelementen aus der [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) in einer XAML Islands-Instanz wird im aktuellen Release von XAML Islands bedingt unterstützt. Wenn Ihre Desktop-App ein [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verwendet, können Sie WinUI-Steuerelemente aus einer Vorabversion oder Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets hosten. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, können Sie WinUI-Steuerelemente nur dann hosten, wenn Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
+
 :heavy_check_mark: Um auf das Stammelement einer Struktur von XAML-Inhalten in einer XAML Islands-Instanz zuzugreifen und verwandte Informationen zum Kontext abzurufen, in dem dieser gehostet wird, solltest du nicht die Klassen [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) oder [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) verwenden. Verwende stattdessen die [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot)-Klasse. Weitere Informationen finden Sie in [diesem Abschnitt](#window-host-context-for-xaml-islands).
 
 :heavy_check_mark: Um den [Freigabe-Vertrag](/windows/uwp/app-to-app/share-data) einer WPF-, Windows Forms- oder C++-Win32-App zu unterstützen, muss deine App über Schnittstelle [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) das [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager)-Objekt abrufen, um den Freigabevorgang für ein bestimmtes Fenster zu initiieren. Ein Beispiel, das veranschaulicht, wie diese Schnittstelle in einer WPF-App verwendet wird, findest du im [ShareSource-Beispiel](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
@@ -150,6 +152,8 @@ In den folgenden Abschnitten werden Einschränkungen und Problemumgehungen für 
 :no_entry_sign: Textsteuerelemente, die die Inhaltslinks `@Places` und `@People` verwenden. Weitere Informationen zu diesem Feature findest du in [diesem Artikel](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links).
 
 :no_entry_sign: XAML-Inseln unterstützen nicht das Hosting eines [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)-Elements, das ein Steuerelement enthält, das Texteingaben annimmt, z. B. ein [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)-, [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)- oder [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)-Element. Wenn Sie dies verwenden, reagiert das Eingabesteuerelement auf Tastenanschläge nicht ordnungsgemäß. Um eine ähnliche Funktionalität mit einer XAML-Insel zu erreichen, empfiehlt es sich, ein [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)-Element zu hosten, das das Eingabesteuerelement enthält.
+
+:no_entry_sign: XAML Islands-Instanzen unterstützen derzeit nicht das Anzeigen von SVG-Dateien in einem gehosteten [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)-Steuerelement oder unter Verwendung eines [Windows.UI.Xaml.Media.Imaging.SvgImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)-Objekts. Um dieses Problem zu umgehen, konvertieren Sie die Bilddateien, die Sie anzeigen möchten, in rasterbasierten Formaten wie JPG oder PNG.
 
 ### <a name="window-host-context-for-xaml-islands"></a>Fensterhostkontext für XAML Islands
 
