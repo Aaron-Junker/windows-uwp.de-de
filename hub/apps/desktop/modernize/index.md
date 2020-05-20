@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b966d00455bce390457e148c60b57296375ac2fa
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730239"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579927"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -21,6 +21,17 @@ In diesem Artikel werden die Features von Windows 10 und der UWP beschrieben, d
 
 > [!NOTE]
 > Benötigen Sie Hilfe beim Migrieren Ihrer Desktop-Apps zu Windows 10? Mit dem Dienst [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) erhalten Entwickler, die ihre Apps zu Windows 10 portieren, direkten kostenlosen Support. Dieses Programm ist für alle ISVs und berechtigten Unternehmen verfügbar. Weitere Informationen zur Berechtigung und zum Programm selbst finden Sie unter [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). [Senden Sie Ihre Anfrage](https://fasttrack.microsoft.com/dl/daa), um zu beginnen.
+
+## <a name="windows-ui-library"></a>Windows-UI-Bibliothek
+
+Die Windows-UI-Bibliothek umfasst eine Reihe von NuGet-Paketen, die Steuerelemente und andere Benutzeroberflächenelemente für Windows 10-Apps bereitstellen. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von UWP-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Der Umfang von WinUI hat zugenommen, sodass WinUI heute die Plattform für moderne native Benutzeroberflächen (UI) für mit UWP, .NET und Win32 entwickelte Windows 10-Apps ist.
+
+Sie können WinUI auf folgende Weise in Desktop-Apps einsetzen:
+
+* Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Anwendungen aktualisieren, um [XAML-Inseln](xaml-islands.md) zum Hosten von WinUI 2.x-Steuerelementen in den Apps zu verwenden.
+* Ab [WinUI 3.0 Vorschau 1](../../winui/winui3/index.md) können Sie [.NET- und C++/Win32-Apps erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche](../../winui/winui3/get-started-winui3-for-desktop.md) aufweisen.
+
+Weitere Informationen finden Sie unter [Windows-UI-Bibliothek (WinUI)](../../winui/index.md).
 
 ## <a name="msix-packages"></a>MSIX-Pakete
 
@@ -79,12 +90,6 @@ Es spielt keine Rolle, ob Sie eine UWP-App erstellen, die ausschließlich auf di
 | [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | Sie können ein Kombinationsfeld jetzt so gestalten, dass es bearbeitet werden kann, damit der Benutzer Werte eingeben kann, die unter dem Steuerelement nicht aufgelistet sind.  |
 | [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | Sie können jetzt eine Strukturansicht konfigurieren, um Datenbindung, Elementvorlagen und Drag & Drop zu aktivieren.  |
 | [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   Ermöglicht das flexible Anzeigen einer Sammlung mit Daten in Zeilen und Spalten. Dieses Steuerelement ist im [Windows-Community-Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) enthalten.  |
-
-## <a name="windows-ui-library"></a>Windows-UI-Bibliothek
-
-Die Windows-UI-Bibliothek umfasst eine Reihe von NuGet-Paketen, mit denen neue Steuerelemente und andere Benutzeroberflächenelemente für UWP-Apps bereitgestellt werden. Bibliotheks-APIs der Windows-Benutzeroberfläche funktionieren für frühere Versionen von Windows 10. Ihre App funktioniert also auch, wenn Benutzer nicht die aktuelle Version von Windows 10 ausführen. Auf diese Weise können Sie neue Steuerelemente übernehmen, wenn diese in der Windows-UI-Bibliothek veröffentlicht werden, ohne dass Sie sich darum kümmern müssen, Versionsüberprüfungen oder bedingten XAML-Code einzufügen.
-
-Weitere Informationen finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
 
 ## <a name="other-technologies-for-modern-desktop-apps"></a>Andere Technologien für moderne Desktop-Apps
 

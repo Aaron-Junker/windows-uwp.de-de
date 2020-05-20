@@ -8,38 +8,27 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: 906126c14dd32a9c0196d53deab5bc36c07f4bef
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: c14b092b9cce9ce7e3b180eaedef657e2d3d03db
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729846"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83580007"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
 Wenn Sie eine neue Desktop Anwendung für Windows-PCs erstellen möchten, müssen Sie zuerst entscheiden, welche Anwendungsplattform Sie verwenden möchten. Windows stellt vier Hauptanwendungsplattformen mit jeweils unterschiedlichen Stärken bereit:
 
-* [Universelle Windows-Plattform (UWP)](#uwp)
-* [WPF (.NET)](#wpf)
-* [Windows Forms (.NET)](#windows-forms)
-* [Win32](#win32)
+* [Universelle Windows-Plattform (UWP)](#uwp): Diese Plattform bietet ein gemeinsames Typensystem, APIs und Anwendungsmodell für alle Geräte, auf denen Windows 10 ausgeführt wird. UWP-Anwendungen können native oder verwaltete Anwendungen sein.
+* [WPF](#wpf) und [Windows Forms](#windows-forms): Diese auf .NET basierenden Plattformen bieten ein gemeinsames Typensystem, APIs und ein Anwendungsmodell für verwaltete Anwendungen.
+* [Win32](#win32): Die ursprüngliche Plattform für native C-/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Dadurch ist die Win32-API die Plattform der Wahl für Anwendungen, die das höchste Maß an Leistung und den direkten Zugriff auf die Systemhardware benötigen.
 
-Mit all diesen Anwendungsplattformen können Sie Desktop-Apps wie Word, Excel und Photoshop erstellen, die auf dem klassischen Windows-Desktop ausgeführt werden, und die spezifischen Features dieser Umgebung in vollem Umfang nutzen. Einigen dieser Plattformen sind jedoch spezifische Merkmale gemein, und sie eignen sich besser für bestimmte Arten von Anwendungen:
+Jede dieser Plattformen bietet ein komplettes Benutzeroberflächen-Framework und eine Reihe von Benutzeroberflächen-Steuerelementen, mit denen Desktopanwendungen wie Word, Excel und Photoshop erstellen werden können, die auf dem klassischen Windows-Desktop laufen und die spezifischen Features dieser Umgebung voll ausnutzen können. Unter Windows 10 unterstützen alle diese Plattformen auch die [Windows-UI-Bibliothek (WinUI)](#windows-ui-library) zum Erstellen ihrer Benutzeroberflächen.
 
-* **UWP**. Diese Plattform bietet ein gemeinsames Typensystem, APIs und Anwendungsmodell für alle Geräte, auf denen Windows 10 ausgeführt wird. UWP-Anwendungen können native oder verwaltete Anwendungen sein. 
-
-* **WPF und Windows Forms**. Diese Plattformen bieten ein gemeinsames Typensystem, APIs und Anwendungsmodell für verwaltete Anwendungen unter .NET.
-
-* **Win32 API**. Die Win32-API (auch als Windows-API bezeichnet) ist die ursprüngliche Plattform für native C/C++-Windows-Anwendungen, die direkten Zugriff auf Windows und Hardware erfordern. Dadurch ist die Win32-API die Plattform der Wahl für Anwendungen, die das höchste Maß an Leistung und den direkten Zugriff auf die Systemhardware benötigen.
-
-Unter Windows 10 unterstützen alle diese Plattformen die Verwendung der [Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui) zum Erstellen ihrer Benutzeroberflächen. WinUI bietet eine Reihe moderner Steuerelemente, einschließlich erweiterter Versionen vorhandener XAML-Steuerelemente und völlig neuer Steuerelemente. WinUI unterstützt auch frühere Versionen von Windows 10, um die Verfügbarkeit zu maximieren.
-
-Sowohl UWP als auch .NET sind eng in Visual Studio integriert. Dies bietet zahlreiche Vorteile, insbesondere in den Bereichen Entwicklerproduktivität, komplexer und anpassbarer Benutzeroberflächen und Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
-
-In diesem Artikel werden diese Plattformen ausführlicher beschrieben, damit Sie die beste Lösung für Ihre Anwendung ermitteln können. 
+Einige dieser Plattformen weisen bestimmte Gemeinsamkeiten auf und eignen sich besser für bestimmte Arten von Anwendungen. Beispielsweise sind UWP und .NET umfassend in Visual Studio integriert. Dies bietet zahlreiche Vorteile, insbesondere in den Bereichen Entwicklerproduktivität, komplexer und anpassbarer Benutzeroberflächen und Anwendungssicherheit. Da diese Frameworks visuelle Designer und Benutzeroberflächen-Markup für die schnelle Erstellung von Benutzeroberflächen unterstützen, sind sie für branchenspezifische Anwendungen besonders gut geeignet.
 
 > [!NOTE]
-> Unabhängig davon, welche App-Plattform Sie auswählen, können Sie viele Features der universellen Windows-Plattform (UWP) verwenden, um in Ihrer App unter Windows 10 eine moderne Benutzerumgebung bereitzustellen. Selbst wenn Ihre Desktop-App mithilfe von WPF, Windows Forms oder der Win32-API erstellt wurde, können Sie beispielsweise weiterhin viele Features verwenden, die zuerst mit UWP eingeführt wurden, wie z.B. die MSIX-Paketbereitstellung und UWP-XAML-Steuerelemente. Weitere Informationen finden Sie unter [Modernisieren Ihrer Desktop-Apps](modernize/index.md).
+> Ganz gleich, für welche App-Plattform Sie sich entscheiden, können Sie viele Windows 10-Features nutzen, um Ihre Anwendung modern zu gestalten. Selbst wenn Ihre Desktop-Anwendung z. B. mit WPF, Windows Forms oder der Win32-API entwickelt wurde, können Sie weiterhin mit der Bereitstellung des MSIX-Pakets arbeiten. Weitere Informationen zu allen Möglichkeiten zur Modernisierung Ihrer Desktop-Apps finden Sie unter [Modernisieren Ihrer Desktop-Apps](modernize/index.md).
 
 ## <a name="uwp"></a>UWP
 
@@ -99,6 +88,16 @@ Weitere Informationen findest du in den folgenden Artikeln:
 * [Technologien und Features](/windows/win32/desktop-app-technologies)
 * [API-Referenz](/windows/win32/apiindex/windows-api-list/)
 * [Beispiele](https://github.com/Microsoft/Windows-classic-samples)
+
+## <a name="windows-ui-library"></a>Windows-UI-Bibliothek
+
+Unter Windows 10 unterstützen alle diese wichtigen Desktop-Plattformen auch die [Windows-UI-Bibliothek (WinUI)](../winui/index.md) zum Erstellen ihrer Benutzeroberflächen. WinUI begann als ein Toolkit, das neue und aktualisierte Versionen von UWP-Steuerelementen für UWP-Apps in älteren Versionen von Windows 10 bereitstellte. Der Umfang von WinUI hat zugenommen, sodass WinUI heute die Plattform für moderne native Benutzeroberflächen (UI) für mit UWP, .NET und Win32 entwickelte Windows 10-Apps ist.
+
+Sie können WinUI auf folgende Weise in Desktop-Apps einsetzen:
+
+* UWP-Apps können WinUI-Steuerelemente anstelle der vom Windows SDK bereitgestellten UWP-Steuerelemente nutzen.
+* Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Anwendungen aktualisieren, um [XAML-Inseln](modernize/xaml-islands.md) zum Hosten von WinUI 2.x-Steuerelementen in den Apps zu verwenden.
+* Ab [WinUI 3.0 Vorschau 1](../winui/winui3/index.md) können Sie [.NET- und C++/Win32-Apps erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche](../winui/winui3/get-started-winui3-for-desktop.md) aufweisen.
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>Plattformvergleich: UWP, WPF und Windows Forms
 

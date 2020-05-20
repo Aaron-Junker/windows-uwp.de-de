@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 5a55a1578fba7052396ecec725db2678ea8bd6ff
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74056858"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83580017"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
@@ -62,6 +62,9 @@ In der folgenden Tabelle werden die Plattformen vorgestellt. Einen ausführliche
 </tr>
 </tbody>
 </table>
+
+> [!NOTE]
+> Alle diese Anwendungsplattformen bietet ein komplettes Benutzeroberflächen-Framework und eine Reihe von Benutzeroberflächen-Steuerelementen, mit denen Desktopanwendungen wie Word, Excel und Photoshop erstellen werden können, die auf dem klassischen Windows-Desktop laufen und die spezifischen Features dieser Umgebung voll ausnutzen können. Unter Windows 10 unterstützen alle diese Plattformen auch die Windows-UI-Bibliothek (WinUI) zum Erstellen ihrer Benutzeroberflächen. Weitere Informationen zu WinUI für Desktop-Apps finden Sie in [diesem Abschnitt](choose-your-platform.md#windows-ui-library).
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>Aktualisieren vorhandener Desktop-Apps für Windows 10
 

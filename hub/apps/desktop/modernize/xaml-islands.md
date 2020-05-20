@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 4175fdf2cbb10912c22e0b0058629819c87dbc63
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606239"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579917"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>Hosten von UWP XAML-Steuerelementen in Desktop-Apps (XAML Islands)
 
@@ -129,7 +129,7 @@ In den folgenden Abschnitten werden Einschränkungen und Problemumgehungen für 
 
 ### <a name="supported-only-with-workarounds"></a>Nur mit Problemumgehungen unterstützt
 
-:heavy_check_mark: Das Hosting von UWP-Steuerelementen aus der [WinUI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/) in einer XAML Islands-Instanz wird im aktuellen Release von XAML Islands bedingt unterstützt. Wenn Ihre Desktop-App ein [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verwendet, können Sie WinUI-Steuerelemente aus einer Vorabversion oder Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets hosten. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, können Sie WinUI-Steuerelemente nur dann hosten, wenn Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren.
+:heavy_check_mark: Das Hosting von Steuerelementen aus der [WinUI 2.x-Bibliothek](../../winui/index.md) in einer XAML Islands-Instanz wird im aktuellen Release von XAML Islands bedingt unterstützt. Wenn Ihre Desktop-App ein [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verwendet, können Sie WinUI-Steuerelemente aus einer Vorabversion oder Releaseversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets hosten. Wenn Ihre Desktop-App nicht unter Verwendung von MSIX gepackt ist, können Sie WinUI-Steuerelemente nur dann hosten, wenn Sie eine Vorabversion des [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)-NuGet-Pakets installieren. Unterstützung für das Hosten von Steuerelementen aus der [WinUI 3.0-Bibliothek](../../winui/winui3/index.md) wird in einem späteren Release geboten werden.
 
 :heavy_check_mark: Um auf das Stammelement einer Struktur von XAML-Inhalten in einer XAML Islands-Instanz zuzugreifen und verwandte Informationen zum Kontext abzurufen, in dem dieser gehostet wird, solltest du nicht die Klassen [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow), [ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) oder [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) verwenden. Verwende stattdessen die [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot)-Klasse. Weitere Informationen finden Sie in [diesem Abschnitt](#window-host-context-for-xaml-islands).
 

@@ -1,6 +1,36 @@
 - name: Windows-Entwicklungsumgebung
   href: index.yml
   items:
+    - name: Windows Paket-Manager
+      items:
+        - name: Übersicht
+          href: ../package-manager/index.md
+        - name: Verwenden des Tools „winget“
+          items:
+            - name: Übersicht
+              href: ../package-manager/winget/index.md
+            - name: Befehl „hash“
+              href: ../package-manager/winget/hash.md
+            - name: Befehl „help“
+              href: ../package-manager/winget/help.md
+            - name: Befehl „install“
+              href: ../package-manager/winget/install.md
+            - name: Befehl „search“
+              href: ../package-manager/winget/search.md
+            - name: Befehl „show“
+              href: ../package-manager/winget/show.md
+            - name: Befehl „source“
+              href: ../package-manager/winget/source.md
+            - name: Befehl „validate“
+              href: ../package-manager/winget/validate.md
+        - name: Übermitteln von Paketen
+          items:
+            - name: Übersicht
+              href: ../package-manager/package/index.md
+            - name: Erstellen des Paketmanifests
+              href: ../package-manager/package/manifest.md
+            - name: Übermitteln des Manifests an das Repository
+              href: ../package-manager/package/repository.md
     - name: Entwickeln mit Python
       items:
         - name: Übersicht
