@@ -1,17 +1,17 @@
 ---
 title: Windows 10 Version 1607 API-Änderungen
 description: Entwickler können die folgende Liste nutzen, um neue oder geänderte Namespaces in Windows 10, Versin 1607, zu identifizieren.
-keywords: Neuigkeiten, Update, Aktualisierungen, Windows 10, 1607, 14393, Anniversary
+keywords: Windows 10, 1607, 14393, APIs
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
-ms.openlocfilehash: fa390123389b20564a94d1e59f9248adcf673061
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e634ad41e974a78d02383deb3cb1868f36252702
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66372919"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234784"
 ---
 # <a name="new-apis-in-windows-10-build-14393"></a>Neue APIs in Windows 10, Build 14393
 

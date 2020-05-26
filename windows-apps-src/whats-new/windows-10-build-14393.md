@@ -1,17 +1,17 @@
 ---
 title: Neuigkeiten in Windows 10, Build 14393
 description: Windows 10, Build 14393, und neue Entwicklertools stellen Tools, Features und Umgebungen zur Verfügung, die durch die neue Universelle Windows-Plattform unterstützt werden.
-keywords: Neuigkeiten, was neu ist, Aktualisierung, Updates, Features, neu, Windows 10 1607, Juli, neueste, 14393
+keywords: Windows 10, 1607, 14393
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: 46abd26f2b9814f87980572d9e9a7891e26a2dcb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e3d21531e2fc1b0ec8aee513d5a7b86281232d95
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258896"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234646"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>Neuigkeiten für Entwickler in Windows 10, Build 14393
 

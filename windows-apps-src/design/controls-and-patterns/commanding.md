@@ -4,14 +4,14 @@ description: In diesem Artikel wird beschrieben, wie die XamlUICommand-Klasse un
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 24df2f6c67fe5a501461d5ce5e9c18a147c54672
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968765"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233768"
 ---
-# <a name="commanding-in-windows-app-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in Windows-Apps, die StandardUICommand, XamlUICommand und ICommand verwenden
+# <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Befehle in Windows-Apps, die StandardUICommand, XamlUICommand und ICommand verwenden
 
 In diesem Artikel werden Befehle in Windows-Anwendungen beschrieben. Insbesondere wird erläutert, wie Sie mit der [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand)-Klasse und der [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand)-Klasse (zusammen mit der ICommand-Schnittstelle) Befehle über verschiedene Steuerelementtypen hinweg freigeben und verwalten, und zwar unabhängig vom verwendeten Geräte- und Eingabetyp.
 

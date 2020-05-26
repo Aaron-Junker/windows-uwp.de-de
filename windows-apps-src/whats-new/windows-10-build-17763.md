@@ -1,17 +1,17 @@
 ---
 title: Neuigkeiten in Windows 10, Build 17763
 description: Windows 10, Build 17763, und neue Entwicklertools stellen Tools, Features und Umgebungen zur Verfügung, die durch die neue Universelle Windows-Plattform unterstützt werden.
-keywords: Neuigkeiten, Neuerungen, Aktualisierung, Updates, Features, neu, Windows 10, neueste, Entwickler, 17763
+keywords: Windows 10, 17763, 1809
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d26d88377aec4306ad0711724760ec13e6568d85
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 77b47866bc064baec7c0ecf556eb615f67af0554
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684767"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234384"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Neuigkeiten für Entwickler in Windows 10, Build 17763
 

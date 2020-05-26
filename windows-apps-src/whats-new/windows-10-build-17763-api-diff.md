@@ -1,21 +1,21 @@
 ---
 title: API-Änderungen unter Windows 10, Build 17763
 description: Entwickler können anhand der folgenden Liste neue oder geänderte Namespaces in Windows 10, Build 17763, ermitteln.
-keywords: Neuigkeiten, was ist neu, Updates, Windows 10, neueste, APIs, 17763, Oktober
+keywords: Windows 10, APIs, 17763, 1809
 ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8fd6d2c41cd2f632f22819f452b2f203fd8ac309
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0e21cf153cb86571f83b496461a1da383b387158
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780337"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234790"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Neue APIs in Windows 10, Build 17763
 
-Neue und aktualisierte API-Namespaces wurden Entwicklern in Windows 10, Build 17763 zur Verfügung gestellt (auch als October 2018 Update oder Version 1809 bekannt). Im Anschluss findest du eine vollständige Liste der Dokumentationen, die für in dieser Version hinzugefügte oder geänderte Namespaces veröffentlicht wurden.
+Neue und aktualisierte API-Namespaces wurden Entwicklern in Windows 10, Build 17763 zur Verfügung gestellt (auch als October 2018 Update oder Version 1809 bekannt). Nachstehend findest du eine vollständige Liste der Dokumentationen, die für in dieser Version hinzugefügte oder geänderte Namespaces veröffentlicht wurden.
 
 Informationen zu den APIs, die in der vorherigen Veröffentlichung hinzugefügt wurden, findest du unter [New APIs in the Windows 10 April Update](windows-10-build-17134-api-diff.md) (Neue APIs im Windows 10 April Update).
 

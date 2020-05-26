@@ -1,21 +1,21 @@
 ---
 title: API-Änderungen unter Windows 10, Build 18362
 description: Entwickler können anhand der folgenden Liste neue oder geänderte Namespaces in Windows 10, Build 18362, ermitteln.
-keywords: Neuigkeiten, was ist neu, Updates, Windows 10, neueste, APIs, 18362, Mai
+keywords: Windows 10, APIs, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e230ac2716fc79449197a2f777b9262b2c237fe3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5770ca513f6eb75c6a2c1e9e89aa0b3bc0ffc581
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780361"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233801"
 ---
 # <a name="new-apis-in-windows-10-build-18362"></a>Neue APIs in Windows 10, Build 18362
 
-Neue und aktualisierte API-Namespaces wurden Entwicklern in Windows 10, Build 18362 zur Verfügung gestellt (auch bekannt als SDK-Version 1903). Im Anschluss findest du eine vollständige Liste der Dokumentationen, die für in dieser Version hinzugefügte oder geänderte Namespaces veröffentlicht wurden.
+Neue und aktualisierte API-Namespaces wurden Entwicklern in Windows 10, Build 18362 zur Verfügung gestellt (auch bekannt als SDK-Version 1903). Nachstehend findest du eine vollständige Liste der Dokumentationen, die für in dieser Version hinzugefügte oder geänderte Namespaces veröffentlicht wurden.
 
 Informationen zu den APIs, die in der vorherigen Veröffentlichung hinzugefügt wurden, findest du unter [New APIs in the Windows 10 October Update](windows-10-build-17763-api-diff.md) (Neue APIs im Windows 10 October Update).
 

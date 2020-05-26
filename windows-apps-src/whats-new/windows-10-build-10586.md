@@ -1,17 +1,17 @@
 ---
 title: Neuigkeiten in Windows 10, Build 10586 – November 2015
 description: Windows 10, Build 10586, und neue Entwicklertools stellen die Tools, Features und Umgebungen zur Verfügung, die durch die neue Universelle Windows-Plattform unterstützt werden.
-keywords: Neuigkeiten, was neu ist, Aktualisierung, Updates, Features, neu, Windows 10 1511, November, 10586
+keywords: Features, Windows 10, 1511, 10586
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
-ms.openlocfilehash: af3c078d2e5c1d27e5e6ece8f72b0fa601d6c053
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 14ea5b96c88abeb1586ff8f6695a694b51ee9af0
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259765"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234745"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a>Neuigkeiten für Entwickler in Windows 10, Build 10586
 

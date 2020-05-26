@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2445f1b718532fd0862c276e8fadf12e88fe36ac
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d0834a905c50b92003c3aa78ff8226d35c25e5dd
+ms.sourcegitcommit: ddc65c170834bcce524b5e1d36e6755eae1e3af2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209075"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83729879"
 ---
 # <a name="item-containers-and-templates"></a>Elementcontainer und Vorlagen
 
@@ -313,7 +313,7 @@ Eine Steuerelementvorlage für ein Element enthält die visuellen Elemente zum A
 
 - Draufzeigen: Ein hellgraues Rechteck, das unter der Datenvorlage gezeichnet wird.  
 - Auswahl: Ein hellblaues Rechteck, das unter der Datenvorlage gezeichnet wird. 
-- Tastaturfokus: Ein schwarzweiß gepunkteter Rahmen, der über der Datenvorlage gezeichnet wird. 
+- Tastaturfokus – Ein [Visuelles Fokuselement mit hoher Sichtbarkeit](/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals), das über die Elementvorlage gezeichnet wird.
 
 ![Visuelle Elemente zum Anzeigen des Zustands in Listenansichten](images/listview-state-visuals.png)
 

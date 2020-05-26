@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: aa60db28003c4f231cf36b653c5e69b422978c1a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 28dc4a62bf580da41d424c98c186413dc96a8aae
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340068"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775830"
 ---
 # <a name="transforms-overview"></a>Transformationen – Übersicht
 
@@ -37,6 +37,8 @@ Transformationen lassen sich kombinieren, und dies wird von zwei Windows-Runtime
 Im XAML-Layout werden Transformationen nach Abschluss des Layoutdurchlaufs angewendet. Berechnungen zum verfügbaren Raum und andere Layout-Entscheidungen werden demnach vor der Anwendung der Transformationen durchgeführt. Da das Layout an erster Stelle steht, werden Sie mitunter unerwartete Ergebnisse erhalten, wenn Sie Elemente transformieren, die sich in einer [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)-Zelle oder in einem ähnlichen Layoutcontainer befinden, der Raum im Layout zuordnet. Das transformierte Element wird möglicherweise abgeschnitten oder verdeckt dargestellt, da in einem Bereich gezeichnet wird, für den bei der Raumeinteilung innerhalb des übergeordneten Containers die Abmessungen nach der Transformation nicht berechnet wurden. Experimentieren Sie ggf. mit den Transformationsergebnissen und passen Sie die Einstellungen an. Anstatt beispielsweise auf ein adaptives Layout und eine Größenanpassung mit Sternvariablen zu vertrauen, müssen Sie möglicherweise die **Center**-Eigenschaften ändern oder die Pixelmaße für den Layoutraum deklarieren, um sicherzustellen, dass das übergeordnete Element genügend Platz zuweist.
 
 **Migrationshinweis:**  Windows Presentation Foundation (WPF) besaß die Eigenschaft **LayoutTransform**, die Transformationen vor dem Layoutdurchlauf anwendete. Windows-Runtime-XAML unterstützt jedoch keine **LayoutTransform**-Eigenschaft. (In Microsoft Silverlight war diese Eigenschaft auch nicht vorhanden.)
+
+Als Alternative bietet das Windows-Community Toolkit das [LayoutTransformControl](/windows/communitytoolkit/controls/LayoutTransformControl)-Element, das Matrixtransformationen auf jedes FrameworkElement Ihrer Anwendung anwendet.
 
 ## <a name="span-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanspan-idapplying_a_transform_to_a_ui_elementspanapplying-a-transform-to-a-ui-element"></a><span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Anwenden einer Transformation auf ein UI-Element
 

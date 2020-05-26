@@ -4,12 +4,12 @@ description: Installieren und Verwenden der Windows-UI-Bibliothek.
 ms.topic: reference
 ms.date: 05/08/2020
 keywords: windows 10, uwp, toolkit-sdk
-ms.openlocfilehash: 2205a95dfd342503674662d5cb0e4ed598eda870
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 585475df4138c6a5d4d8b885582137c972a64287
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580407"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775866"
 ---
 # <a name="getting-started-with-the-windows-ui-library"></a>Erste Schritte mit der Windows-UI-Bibliothek
 
@@ -18,7 +18,7 @@ ms.locfileid: "83580407"
 Die Bibliothek ist als NuGet-Paket verfügbar, die zu jedem neuen oder vorhandenen Visual Studio-Projekt hinzugefügt werden kann.
 
 > [!NOTE]
-> Weitere Informationen zum Testen von frühen Vorschauversionen von WinUI 3.0 findest du unter [WinUI 3.0 (Alpha)](../winui3/index.md).
+> Weitere Informationen zum Testen von frühen Vorschauversionen von WinUI 3.0 findest du unter [WinUI 3.0 Preview 1](../winui3/index.md).
 
 ## <a name="download-and-install-the-windows-ui-library"></a>Herunterladen und Installieren der Windows UI-Bibliothek
 
@@ -39,12 +39,12 @@ Optional kannst du „Vorabversion einbeziehen“ markieren, um die neuesten Vor
 
 4. Füge die Ressourcen des Windows UI-Designs (WinUI) deinen App.xaml-Ressourcen hinzu. Dafür gibt es zwei Möglichkeiten, abhängig davon, ob du zusätzliche Anwendungsressourcen verwendest.
 
-    ein. Wenn du keine weiteren Anwendungsressourcen verwendest, füge deiner Application.Resources `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` hinzu: 
+    ein. Wenn du keine weiteren Anwendungsressourcen verwendest, füge deiner Application.Resources `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` hinzu:
 
     ``` XAML
     <Application>
         <Application.Resources>
-            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" /> 
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </Application.Resources>
     </Application>
     ```
@@ -57,7 +57,7 @@ Optional kannst du „Vorabversion einbeziehen“ markieren, um die neuesten Vor
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                </ResourceDictionary.MergedDictionaries> 
+                </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Application.Resources>
     </Application>
@@ -102,6 +102,6 @@ WinUI ist ein Open-Source-Projekt, das auf GitHub gehostet wird.
 
 Wir freuen uns über Fehlerberichte, Featureanforderungen und Communitycodebeiträge im [Repository zur Windows-UI-Bibliothek](https://aka.ms/winui).
 
-## <a name="other-resources"></a>Weitere Ressourcen 
+## <a name="other-resources"></a>Weitere Ressourcen
 
 Wenn du noch nicht mit UWP vertraut bist, empfehlen wir dir, die Seiten [Erste Schritte bei der UWP-Entwicklung](https://developer.microsoft.com/windows/getstarted) im Seiten im Entwicklerportal zu besuchen.

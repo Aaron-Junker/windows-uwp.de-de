@@ -8,72 +8,39 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node in WSL, NodeJS im Windows-Subsystem für Linux
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1ea8973e1db665d1fe66ef6b5f5699319131d605
+ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75835379"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83717129"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten einer Node.js-Entwicklungsumgebung mit WSL 2
 
-Die folgende Schrittanleitung soll dir helfen, deine Node.js-Entwicklungsumgebung mit dem Windows-Subsystem für Linux (WSL) einzurichten. Für diese Anleitung musst du einen Windows-Insider Preview-Build installieren und ausführen, um [WSL 2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) installieren und verwenden zu können. WSL 2 bietet beträchtliche Geschwindigkeits- und Leistungsverbesserungen gegenüber WSL 1, insbesondere in Bezug auf Node.js. Viele der npm-Module und Tutorials für die Node.js-Webentwicklung wurden für Linux-Benutzer geschrieben und verwenden Linux-basierte Paketerstellungs- und Installationstools. Die meisten Web-Apps werden auch unter Linux bereitgestellt, sodass mit WSL 2 die Konsistenz zwischen Entwicklungs- und Produktionsumgebung sichergestellt wird.
+Die folgende Schrittanleitung soll dir helfen, deine Node.js-Entwicklungsumgebung mit dem Windows-Subsystem für Linux (WSL) einzurichten.
+
+Es empfiehlt sich, das aktualisierte WSL 2 zu installieren und auszuführen, um von erheblichen Verbesserungen bei Leistungsgeschwindigkeit und Systemaufrufkompatibilität zu profitieren, einschließlich der Möglichkeit, [Docker Desktop](https://docs.docker.com/docker-for-windows/wsl-tech-preview/#download) auszuführen. Viele der npm-Module und Tutorials für die Node.js-Webentwicklung wurden für Linux-Benutzer geschrieben und verwenden Linux-basierte Paketerstellungs- und Installationstools. Die meisten Web-Apps werden auch unter Linux bereitgestellt, sodass mit WSL 2 die Konsistenz zwischen Entwicklungs- und Produktionsumgebung sichergestellt wird.
 
 > [!NOTE]
 > Wenn du beabsichtigst, Node.js direkt unter Windows zu verwenden oder eine Windows Server-Produktionsumgebung zu verwenden, solltest du dir die Anleitung [Einrichten einer Node.js-Entwicklungsumgebung direkt unter Windows](./setup-on-windows.md) ansehen.
 
-## <a name="install-windows-10-insider-preview-build"></a>Installieren von Windows 10 Insider Preview Build
-
-1. **[Installiere die neueste Version von Windows 10:](https://www.microsoft.com/software-download/windows10)** Wähle **Jetzt aktualisieren** aus, um den Update-Assistenten herunterzuladen. Öffne nach dem Herunterladen den Update-Assistenten, um zu erfahren, ob du die derzeit aktuelle Version von Windows ausführst. Wähle andernfalls im Fenster des Assistenten **Jetzt aktualisieren** aus, um den Computer zu aktualisieren. *(Dieser Schritt ist optional, wenn du eine relativ aktuelle Version von Windows 10 ausführst.)*
-
-    ![Windows Update-Assistent](../images/windows-update-assistant2019.png)
-
-2. **[Wechsele zu „Start“ > „Einstellungen“ > „Windows-Insider-Programm“:](ms-settings:windowsinsider)** Wähle im Fenster „Windows-Insider-Programm“ die Option **Erste Schritte** und dann **Konto verknüpfen** aus.
-
-    ![Einstellungen im Windows-Insider-Programm](../images/windows-insider-program-settings.png)
-
-3. **[Registriere dich als Windows-Insider:](https://insider.windows.com/getting-started/#register)** Wenn du nicht beim Insider-Programm registriert bist, musst du dies mit deinem [Microsoft-Konto](https://account.microsoft.com/account) tun.
-
-    ![Windows-Insider-Registrierung](../images/windows-insider-account.png)
-
-4. Melde dich für **Fast Ring**-Updates oder die Inhalte unter **Skip ahead to the next Windows release** (Zum nächsten Windows-Release springen) an. Bestätige die Angaben, und wähle **Später neu starten** aus. Du musst vor dem Neustart noch einige weitere Einstellungen ändern.
-
-    ![Windows-Insider – Fast Ring](../images/windows-insider-fast.png)
-
-## <a name="enable-windows-subsystem-for-linux-and-virtual-machine-platform"></a>Aktivieren von Windows-Subsystem für Linux und Virtual Machine Platform
-
-1. Suche in den **Windows-Einstellungen** nach **Windows-Features aktivieren oder deaktivieren**.
-2. Nachdem die Liste mit den **Windows-Features** angezeigt wird, scrolle zu **Virtual Machine Platform** und **Windows-Subsystem für Linux**, und vergewissere dich, dass bei beiden Optionen das Kontrollkästchen aktiviert ist. Wähle dann **OK** aus.
-3. Starten Sie den Computer neu, wenn Sie dazu aufgefordert werden.
-
-    ![Aktivieren von Windows-Features](../images/windows-feature-settings.png)
-
-## <a name="install-a-linux-distribution"></a>Installieren einer Linux-Distribution
-
-Mehrere Linux-Distributionen sind zur Ausführung unter dem WSL verfügbar. Sie können Ihre bevorzugte Version im Microsoft Store suchen und installieren. Es wird empfohlen, mit [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) zu beginnen, da es aktuell und beliebt ist und gut unterstützt wird.
-
-1. Öffnen Sie den Link [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q), öffnen Sie den Microsoft Store, und wählen Sie **Abrufen** aus. *(Dies ist ein ziemlich großer Download, und die Installation kann eine Weile dauern.)*
-
-2. Wählen Sie nach Abschluss des Downloads die Option **Starten** im Microsoft Store aus, oder geben Sie „Ubuntu 18.04 LTS“ im **Startmenü** ein.
-
-3. Sie werden aufgefordert, einen Kontonamen und das Kennwort zu erstellen, wenn Sie die Distribution zum ersten Mal ausführen. Anschließend werden Sie standardmäßig automatisch als dieser Benutzer angemeldet. Du kannst beliebige Werte für Benutzername und Kennwort auswählen. Sie müssen sich nicht an Ihrem Windows-Benutzernamen orientieren.
-
-    ![Linux-Distributionen im Microsoft Store](../images/store-linux-distros.png)
-
-Sie können die derzeit verwendete Linux-Distribution überprüfen, indem Sie Folgendes eingeben: `lsb_release -dc`. Verwenden Sie `sudo apt update && sudo apt upgrade`, um die Ubuntu-Distribution zu aktualisieren. Eine regelmäßige Aktualisierung empfiehlt sich, um sicherzustellen, dass Sie über die neuesten Pakete verfügen. Dieses Update wird unter Windows nicht automatisch verarbeitet. Links zu anderen im Microsoft Store verfügbaren Linux-Distributionen sowie Informationen zu alternativen Installationsmethoden oder zur Problembehandlung finden Sie unter [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
-
 ## <a name="install-wsl-2"></a>Installieren von WSL 2
 
-WSL 2 ist eine [neue Version der Architektur](https://docs.microsoft.com/windows/wsl/wsl2-about) in WSL, die zu einer geänderten Interaktion von Linux-Distributionen mit Windows führt und dadurch die Leistung verbessert und eine vollständige Kompatibilität mit Systemaufrufen erreicht.
+Zum Aktivieren und Installieren von WSL 2 folgen Sie den Schritten in der [Dokumentation zur WSL-Installation](https://docs.microsoft.com/windows/wsl/install-win10). Diese Schritte umfassen die Auswahl einer Linux-Verteilung (z. B. Ubuntu).
 
-1. Gib in PowerShell den Befehl `wsl -l` ein, um die Liste der auf dem Computer installierten WSL-Distributionen anzuzeigen. Ubuntu 18.04 sollte in dieser Liste angezeigt werden.
-2. Gib nun den Befehl `wsl --set-version Ubuntu-18.04 2` ein, um für die Ubuntu-Installation die Verwendung von WSL 2 festzulegen.
-3. Überprüfe mit dem folgenden Befehl die WSL-Versionen, die von den einzelnen installierten Distributionen verwendet werden: `wsl --list --verbose` (oder `wsl -l -v`).
+Nachdem Sie WSL 2 und eine Linux-Verteilung installiert haben, öffnen Sie die Linux-Verteilung (sie befindet sich im Windows-Startmenü), und überprüfen Sie die Version und den Codenamen mit dem Befehl `lsb_release -dc`.
 
-    ![Festgelegte Version des Windows-Subsystems für Linux](../images/wsl-versions.png)
+Es empfiehlt sich, die Linux-Verteilung regelmäßig zu aktualisieren, z. B. auch unmittelbar nach der Installation, um sicherzustellen, dass Sie über die neuesten Pakete verfügen. Dieses Update wird unter Windows nicht automatisch verarbeitet. Verwenden Sie den Befehl `sudo apt update && sudo apt upgrade`, um die Verteilung zu aktualisieren.  
 
-> [!TIP]
-> Du kannst eine beliebige Linux-Distribution festlegen, die in WSL 2 installiert ist, und dabei dieselben Anweisungen (für PowerShell) verwenden. Ändere einfach „Ubuntu 18.04“ in den Namen der installierten Distribution, die du als Ziel verwenden möchtest. Du kannst jederzeit zu WSL 1 zurückwechseln, indem du denselben Befehl wie oben ausführst, aber die „2“ durch eine „1“ ersetzt.  Du kannst auch WSL 2 als Standard für alle neu installierten Distributionen festlegen, indem du Folgendes eingibst: `wsl --set-default-version 2`.
+## <a name="install-windows-terminal-optional"></a>Installieren von Windows-Terminal (optional)
+
+Das neue Windows Terminal aktiviert mehrere Registerkarten (schnelles Umschalten zwischen mehreren Linux-Befehlszeilen, Windows-Eingabeaufforderung, PowerShell, Azure CLI usw.) und ermöglicht, benutzerdefinierte Tastenkombinationen zu erstellen (Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, zum Kopieren und Einfügen usw.) sowie die Suchfunktion und benutzerdefinierte Designs zu verwenden (Farbschemata, Schriftschnitte und Schriftgrade, Hintergrundbild/Weichzeichnen/Transparenz). [Weitere Informationen](https://docs.microsoft.com/windows/terminal)
+
+1. Hole dir [Windows-Terminal (Vorschau) im Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): Durch die Installation über den Store werden Updates automatisch durchgeführt.
+
+2. Öffne nach der Installation das Windows-Terminal, und wähle **Einstellungen** aus, um dein Terminal mithilfe der Datei `settings.json` anzupassen.
+
+    ![Windows-Terminal-Einstellungen](../images/windows-terminal-settings.png)
 
 ## <a name="install-nvm-nodejs-and-npm"></a>Installieren von nvm, Node.js und npm
 
@@ -99,8 +66,7 @@ Node.js kann auf unterschiedliche Weise installiert werden. Es wird empfohlen, e
 9. Überprüfe mit `node --version`, ob Node.js installiert ist und die neueste Version aufweist. Überprüfe dann, ob du auch über npm verfügst: `npm --version` (Du kannst auch `which node` oder `which npm` verwenden, um den Pfad anzuzeigen, der für die Standardversionen verwendet wird.)
 10. Um die Version von Node.js zu ändern, die du für ein Projekt verwenden möchtest, erstellst du ein neues Projektverzeichnis `mkdir NodeTest` und wechselst in das Verzeichnis (`cd NodeTest`). Gib dann `nvm use node` ein, und wechsele zur aktuellen Version, oder verwende `nvm use --lts`, um zur LTS-Version zu wechseln. Du kannst auch eine spezifische andere Version verwenden, die du installiert hast, z. B. `nvm use v8.2.1`. (Um alle verfügbaren Versionen von Node.js aufzulisten, verwendest du den Befehl `nvm ls-remote`.)
 
-> [!TIP]
-> Wenn du nvm verwendest, um Node.js und npm zu installieren, musst du nicht den Befehl „sudo“ verwenden, um neue Pakete zu installieren.
+Wenn du nvm verwendest, um Node.js und npm zu installieren, musst du nicht den Befehl „sudo“ verwenden, um neue Pakete zu installieren.
 
 > [!NOTE]
 > Zum Zeitpunkt der Veröffentlichung war nvm Version 0.35.2 die neueste verfügbare Version. Du findest das [neueste nvm-Release auf der GitHub-Projektseite](https://github.com/nvm-sh/nvm). Passe den obigen Befehl so an, dass er die neueste Version enthält.
@@ -162,16 +128,6 @@ Folgende zusätzliche Erweiterungen solltest du ebenfalls in Erwägung ziehen:
 - [Debugger für Chrome:](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code) Nachdem du die serverseitige Entwicklung mit Node.js abgeschlossen hast, musst du die Clientseite entwickeln und testen. Diese Erweiterung integriert deinen VS Code-Editor mit dem Debugdienst deines Chrome-Browsers, sodass du effizienter arbeiten kannst.
 - [Tastaturlayouts anderer Editoren:](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads) Durch diese Erweiterungen wird die Arbeit in deiner Umgebung vereinfacht, wenn du von einem anderen Text-Editor umsteigst (z. B. Atom, Sublime, Vim, emacs, Notepad++ usw.).
 - [Einstellungssynchronisierung:](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) Damit kannst du die VS Code-Einstellungen in verschiedenen Installationen über GitHub synchronisieren. Wenn Sie auf verschiedenen Computern arbeiten, können Sie die Umgebung auf diese Weise konsistent halten.
-
-## <a name="install-windows-terminal-optional"></a>Installieren von Windows-Terminal (optional)
-
-Das neue Windows-Terminal bietet mehrere Registerkarten (schnelles Umschalten zwischen Eingabeaufforderung, PowerShell oder mehreren Linux-Distributionen), benutzerdefinierte Tastenkombinationen (erstelle eigene Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, zum Kopieren und Einfügen usw.), Emojis (☺) und benutzerdefinierte Designs (Farbschemas, Schriftarten und -größen, Hintergrundbilder/Weichzeichnung/Transparenz). [Weitere Informationen](https://devblogs.microsoft.com/commandline/)
-
-1. Hole dir [Windows-Terminal (Vorschau) im Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701): Durch die Installation über den Store werden Updates automatisch durchgeführt.
-
-2. Öffne nach der Installation das Windows-Terminal, und wähle **Einstellungen** aus, um dein Terminal mithilfe der Datei `profile.json` anzupassen. [Erfahre mehr über das Bearbeiten von Windows-Terminal-Einstellungen.](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)
-
-    ![Windows-Terminal-Einstellungen](../images/windows-terminal-settings.png)
 
 ## <a name="set-up-git-optional"></a>Einrichten von Git (optional)
 

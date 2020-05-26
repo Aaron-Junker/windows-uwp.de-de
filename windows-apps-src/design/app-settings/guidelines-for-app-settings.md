@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c35bc6cfcf36543482bcb42d0ccda7fd3102ac9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970035"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233986"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
-App-Einstellungen sind die vom Benutzer anpassbaren Teile Ihrer Windows-App, auf die über eine App-Einstellungenseite zugegriffen wird. Beispielsweise kann ein Benutzer in einer Newsreader-App angeben, welche neuen Quellen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen, und eine Wetter-App könnte dem Benutzer ermöglichen, zwischen Celsius und Fahrenheit zu wählen. Dieser Artikel enthält Empfehlungen und bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.
+App-Einstellungen sind die vom Benutzer anpassbaren Teile Ihrer Windows-App, auf die über die Seite mit Einstellungen einer App zugegriffen werden kann. Beispielsweise kann ein Benutzer in einer Newsreader-App angeben, welche neuen Quellen oder wie viele Spalten auf dem Bildschirm angezeigt werden sollen, und eine Wetter-App könnte dem Benutzer ermöglichen, zwischen Celsius und Fahrenheit zu wählen. Dieser Artikel enthält Empfehlungen und bewährte Methoden für das Erstellen und Anzeigen von App-Einstellungen.
 
 ## <a name="when-to-provide-a-settings-page"></a>Wann sollte eine Einstellungenseite angegeben werden?
 

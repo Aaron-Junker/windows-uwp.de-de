@@ -6,16 +6,16 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5bcc7d45646651cdb60228a3c08123378eedb960
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 634393e700538dc5db43b2d4065c6742fd7673f1
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970615"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234336"
 ---
 # <a name="control-size-and-density"></a>Größe und Dichte des Steuerelements
 
-Optimieren Sie Ihre Windows-App anhand einer Kombination von Steuerelementgröße und -dichte, und stellen Sie eine Benutzererfahrung bereit, die für die Funktions- und Interaktionsanforderungen der App am besten geeignet ist.
+Optimieren Sie Ihre Windows-App mithilfe einer Kombination von Steuerelementgröße und -dichte, und passen Sie die Anwendung so an, dass ihre Funktions- und Interaktionsanforderungen optimal erfüllt werden.
 
 Standardmäßig werden UWP-Apps mit einem Layout mit geringer Dichte (bzw. `Standard`) gerendert. Ab WinUI 2.1 wird jedoch auch eine Layoutoption mit hoher Dichte (bzw. `Compact`) für Benutzeroberflächen mit vielfältigen Informationen oder ähnlich spezialisierte Szenarien unterstützt. Dies kann über eine grundlegende Stilressource angegeben werden (siehe Beispiele unten).
 

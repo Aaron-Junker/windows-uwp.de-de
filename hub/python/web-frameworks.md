@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python unter Windows, Python-Web mit WSL, Python-Web-App mit Windows-Subsystem für Linux, Python-Webentwicklung unter Windows, Flask-App unter Windows, Django-App unter Windows, Python-Web, Flask-Webentwicklung unter Windows, Django-Webentwicklung unter Windows, Windows-Webentwicklung mit Python, VS Code Python-Webentwicklung, Remote-WSL-Erweiterung, Ubuntu, WSL, venv, PIP, Microsoft Python-Erweiterung, Python unter Windows ausführen, Python unter Windows verwenden, mit Python unter Windows erstellen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8cbc8343764e4de57bd418ecdb36bd606b037c68
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3ae3b04738152ff1a142e1599cc05357006456b9
+ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218480"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83717139"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows
 
@@ -25,30 +25,18 @@ Bei der Erstellung von Webanwendungen wird die Installation von Python unter WSL
 
 Wenn Sie Python für andere Vorgänge als die Webentwicklung verwenden, empfiehlt es sich, Python über den Microsoft Store direkt unter Windows 10 zu installieren. WSL unterstützt GUI-Desktops und GUI-Anwendungen nicht (z. B. PyGame, Gnome oder KDE). Installieren und verwenden Sie Python in diesen Fällen direkt unter Windows. Wenn Sie noch nicht mit Python vertraut sind, lesen Sie unsere Anleitung: [Erste Schritte bei der Verwendung von Python unter Windows für Anfänger](./beginners.md). Wenn Sie gängige Aufgaben im Betriebssystem automatisieren möchten, finden Sie entsprechende Informationen in unserer Anleitung [Erste Schritte bei der Verwendung von Python unter Windows für Skripts und Automatisierung](./scripting.md). Für einige erweiterte Szenarien empfiehlt es sich, ein bestimmtes Python-Release direkt unter [python.org](https://www.python.org/downloads/windows/) herunterzuladen oder eine [Alternative](https://www.python.org/download/alternatives) zu installieren, z. B. Anaconda, Jython, PyPy, WinPython, IronPython usw. Dies wird nur empfohlen, wenn Sie ein versierter Python-Programmierer sind und bestimmte Gründe für die Auswahl einer alternativen Implementierung haben.
 
-## <a name="enable-windows-subsystem-for-linux"></a>Aktivieren des Windows-Subsystems für Linux
+## <a name="install-windows-subsystem-for-linux"></a>Installieren des Windows-Subsystems für Linux
 
-WSL ermöglicht Ihnen, eine GNU/Linux-Umgebung – einschließlich der meisten Befehlszeilentools, Hilfsprogramme und Anwendungen – direkt unter Windows auszuführen, unverändert und vollständig in Ihr Windows-Dateisystem und in bevorzugte Tools wie Visual Studio Code integriert. Überprüfen Sie vor dem Aktivieren von WSL, ob Sie die [neueste Version von Windows 10](https://www.microsoft.com/software-download/windows10) installiert haben.
+Mit WSL können Sie eine GNU/Linux-Befehlszeilenumgebung ausführen, die direkt in Windows und Ihre bevorzugten Tools wie Visual Studio Code, Outlook usw. integriert ist.
 
-Zum Aktivieren von WSL auf Ihrem Computer ist Folgendes erforderlich:
+Zum Aktivieren und Installieren von WSL (oder WSL 2, je nach Ihren Bedürfnissen) folgen Sie den Schritten in der [Dokumentation zur WSL-Installation](https://docs.microsoft.com/windows/wsl/install-win10). Diese Schritte umfassen die Auswahl einer Linux-Verteilung (z. B. Ubuntu).
 
-1. Wechseln Sie zum **Startmenü** (Windows-Symbol unten links), geben Sie „Windows-Features aktivieren oder deaktivieren“ ein, und wählen Sie den Link zur **Systemsteuerung** aus, um das Popupmenü **Windows-Features** zu öffnen. Suchen Sie in der Liste den Eintrag „Windows-Subsystem für Linux“, und aktivieren Sie das Kontrollkästchen, um das Feature zu aktivieren.
+Nachdem Sie WSL und eine Linux-Verteilung installiert haben, öffnen Sie die Linux-Verteilung (sie befindet sich im Windows-Startmenü), und überprüfen Sie die Version und den Codenamen mit dem Befehl `lsb_release -dc`.
 
-2. Starten Sie den Computer neu, wenn Sie dazu aufgefordert werden.
-
-## <a name="install-a-linux-distribution"></a>Installieren einer Linux-Distribution
-
-Mehrere Linux-Distributionen sind zur Ausführung unter dem WSL verfügbar. Sie können Ihre bevorzugte Version im Microsoft Store suchen und installieren. Es wird empfohlen, mit [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) zu beginnen, da es aktuell und beliebt ist und gut unterstützt wird.
-
-1. Öffnen Sie den Link [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q), öffnen Sie den Microsoft Store, und wählen Sie **Abrufen** aus. *(Dies ist ein ziemlich großer Download, und die Installation kann eine Weile dauern.)*
-
-2. Wählen Sie nach Abschluss des Downloads die Option **Starten** im Microsoft Store aus, oder geben Sie „Ubuntu 18.04 LTS“ im **Startmenü** ein.
-
-3. Sie werden aufgefordert, einen Kontonamen und das Kennwort zu erstellen, wenn Sie die Distribution zum ersten Mal ausführen. Anschließend werden Sie standardmäßig automatisch als dieser Benutzer angemeldet. Sie können beliebige Werte für Benutzername und Kennwort auswählen. Sie müssen sich nicht an Ihrem Windows-Benutzernamen orientieren.
-
-Sie können die derzeit verwendete Linux-Distribution überprüfen, indem Sie Folgendes eingeben: `lsb_release -d`. Verwenden Sie `sudo apt update && sudo apt upgrade`, um die Ubuntu-Distribution zu aktualisieren. Eine regelmäßige Aktualisierung empfiehlt sich, um sicherzustellen, dass Sie über die neuesten Pakete verfügen. Dieses Update wird unter Windows nicht automatisch verarbeitet. Links zu anderen im Microsoft Store verfügbaren Linux-Distributionen sowie Informationen zu alternativen Installationsmethoden oder zur Problembehandlung finden Sie unter [Windows-Subsystem für Linux: Installationsleitfaden für Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+Es empfiehlt sich, die Linux-Verteilung regelmäßig zu aktualisieren, z. B. auch unmittelbar nach der Installation, um sicherzustellen, dass Sie über die neuesten Pakete verfügen. Dieses Update wird unter Windows nicht automatisch verarbeitet. Verwenden Sie den Befehl `sudo apt update && sudo apt upgrade`, um die Verteilung zu aktualisieren.  
 
 > [!TIP]
-> Sie sollten das neue [Windows-Terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) ausprobieren, wenn Sie mehrere Befehlszeilen (Ubuntu, PowerShell, Windows-Eingabeaufforderung usw.) verwenden oder [das Terminal anpassen](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md) möchten, einschließlich Text, Hintergrundfarben, Tastenbindungen usw.
+> Erwägen Sie [die Installation der neuen Windows-Terminal-Version aus dem Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701), um mehrere Registerkarten zu aktivieren (schnelles Umschalten zwischen mehreren Linux-Befehlszeilen, Windows-Eingabeaufforderung, PowerShell, Azure CLI usw.), benutzerdefinierte Tastenkombinationen zu erstellen (Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, zum Kopieren und Einfügen usw.), die Suchfunktion zu verwenden sowie benutzerdefinierte Designs einzurichten (Farbschemata, Schriftschnitte und Schriftgrade, Hintergrundbild/Weichzeichnen/Transparenz). [Weitere Informationen](https://docs.microsoft.com/windows/terminal)
 
 ## <a name="set-up-visual-studio-code"></a>Einrichten von Visual Studio Code
 
@@ -72,7 +60,7 @@ Wir erstellen nun ein neues Projektverzeichnis im Linux-Dateisystem (Ubuntu), in
 ![Ubuntu-Terminal](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> Beachten Sie bei der Verwendung des Windows-Subsystems für Linux (WSL) unbedingt, dass **Sie nun in zwei unterschiedlichen Dateisystemen** arbeiten: 1) im Windows-Dateisystem und 2) im Linux-Dateisystem (WSL), in diesem Beispiel Ubuntu. Es ist daher darauf zu achten, wo Sie Pakete installieren und Dateien speichern. Sie können eine Version eines Tools oder Pakets im Windows-Dateisystem und eine andere Version im Linux-Dateisystem installieren. Die Aktualisierung des Tools im Windows-Dateisystem wirkt sich nicht auf das Tool im Linux-Dateisystem aus und umgekehrt. Mit WSL werden die lokalen Festplattenlaufwerke auf dem Computer unter dem Ordner `/mnt/<drive>` in der Linux-Distribution eingebunden. Das Windows-Laufwerk C: wird beispielsweise unter `/mnt/c/` eingebunden. Sie können auf die Windows-Dateien über das Ubuntu-Terminal zugreifen und Linux-Apps und -Tools für diese Dateien verwenden und umgekehrt. Es wird empfohlen, für die Python-Webentwicklung das Linux-Dateisystem zu verwenden, da ein Großteil der Webtools ursprünglich für Linux geschrieben wurde und in einer Linux-Produktionsumgebung bereitgestellt wird. Außerdem wird so vermieden, dass sich die Dateisystemsemantik vermischt (z. B. muss unter Windows für Dateinamen die Groß- und Kleinschreibung nicht berücksichtigt werden). Jedoch kann in WSL nun zwischen dem Linux- und dem Windows-System gewechselt werden, sodass Sie Ihre Dateien in beiden Systemen hosten können. [Weitere Informationen](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/) Wir freuen uns auch, mitteilen zu können, dass [WSL2 in Kürze für Windows verfügbar ist](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/) und weitreichende Verbesserungen bietet. Sie können es [nun im Windows Insiders-Build 18917](https://docs.microsoft.com/windows/wsl/wsl2-install) testen.
+> Beachten Sie bei der Verwendung des Windows-Subsystems für Linux (WSL) unbedingt, dass **Sie nun in zwei unterschiedlichen Dateisystemen** arbeiten: 1) im Windows-Dateisystem und 2) im Linux-Dateisystem (WSL), in diesem Beispiel Ubuntu. Es ist daher darauf zu achten, wo Sie Pakete installieren und Dateien speichern. Sie können eine Version eines Tools oder Pakets im Windows-Dateisystem und eine andere Version im Linux-Dateisystem installieren. Die Aktualisierung des Tools im Windows-Dateisystem wirkt sich nicht auf das Tool im Linux-Dateisystem aus und umgekehrt. Mit WSL werden die lokalen Festplattenlaufwerke auf dem Computer unter dem Ordner `/mnt/<drive>` in der Linux-Distribution eingebunden. Das Windows-Laufwerk C: wird beispielsweise unter `/mnt/c/` eingebunden. Sie können auf die Windows-Dateien über das Ubuntu-Terminal zugreifen und Linux-Apps und -Tools für diese Dateien verwenden und umgekehrt. Es wird empfohlen, für die Python-Webentwicklung das Linux-Dateisystem zu verwenden, da ein Großteil der Webtools ursprünglich für Linux geschrieben wurde und in einer Linux-Produktionsumgebung bereitgestellt wird. Außerdem wird so vermieden, dass sich die Dateisystemsemantik vermischt (z. B. muss unter Windows für Dateinamen die Groß- und Kleinschreibung nicht berücksichtigt werden). Jedoch kann in WSL nun zwischen dem Linux- und dem Windows-System gewechselt werden, sodass Sie Ihre Dateien in beiden Systemen hosten können. [Weitere Informationen](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)
 
 ## <a name="install-python-pip-and-venv"></a>Installieren von Python, pip und venv
 
@@ -99,7 +87,7 @@ Die Verwendung virtueller Umgebungen wird als bewährte Methode für Python-Entw
 
 ## <a name="open-a-wsl---remote-window"></a>Öffnen eines Fensters der Erweiterung „Remote – WSL“
 
-In VS Code wird mit der (zuvor installierten) Erweiterung „Remote – WSL“ das Linux-Subsystem als Remoteserver behandelt. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung. [Weitere Informationen](https://code.visualstudio.com/docs/remote/wsl) 
+In VS Code wird mit der (zuvor installierten) Erweiterung „Remote – WSL“ das Linux-Subsystem als Remoteserver behandelt. Dies ermöglicht Ihnen die Verwendung von WSL als integrierte Entwicklungsumgebung. [Weitere Informationen](https://code.visualstudio.com/docs/remote/wsl)
 
 1. Öffnen Sie den Projektordner in VS Code über das Ubuntu-Terminal, indem Sie `code .` eingeben (mit „.“ wird in VS Code angegeben, dass der aktuelle Ordner zu öffnen ist).
 

@@ -1,20 +1,20 @@
 ---
 title: Windows 10 Fall Creators Update API changes
 description: Entwickler können anhand der folgenden Liste neue oder geänderte Namespaces in Windows 10, Build 16299, ermitteln.
-keywords: Neuigkeiten, was ist neu, Updates, Windows 10, 1709, Fall, Creators, APIs, 16299
+keywords: Windows 10, 1709, APIs, 16299
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 25707dfbf6753c51b4cf47bcbe95dc66802ee781
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3acf698ecfa3fdbcde751691049a217a573d4102
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780444"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234716"
 ---
 # <a name="new-apis-in-windows-10-build-16299"></a>Neue APIs in Windows 10, Build 16299
 
-Neue und aktualisierte API-Namespaces wurden Entwicklern in Windows 10 Build 16299 zur Verfügung gestellt (auch als Fall Creators Update oder Version 1709 bekannt). Im Anschluss findest du eine vollständige Liste der Dokumentationen, die für in dieser Version hinzugefügte oder geänderte Namespaces veröffentlicht wurden.
+Neue und aktualisierte API-Namespaces wurden Entwicklern in Windows 10 Build 16299 zur Verfügung gestellt (auch als Fall Creators Update oder Version 1709 bekannt). Nachstehend findest du eine vollständige Liste der Dokumentationen, die für in dieser Version hinzugefügte oder geänderte Namespaces veröffentlicht wurden.
 
 Informationen zu den APIs, die in der vorherigen Veröffentlichung hinzugefügt wurden, findest du unter [Neue APIs im Windows 10 Creators Update](windows-10-build-15063-api-diff.md).
 
