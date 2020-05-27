@@ -3,16 +3,16 @@ title: Versionsanmerkungen zu WinUI
 description: Index der WinUI-Versionsanmerkungen.
 ms.date: 05/08/2020
 ms.topic: reference
-ms.openlocfilehash: 93e98d771eace65f502d77ffe8e1891ab09ff40a
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cf1cf75d7f92107c88f27008bff53c76d37715ec
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580227"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775818"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Versionshinweise zu Windows-UI-Bibliothek 2.x
 
-Die Windows-UI-Bibliothek (WinUI) ist ein Open-Source-Projekt, das auf GitHub gehostet wird. Alle neuen Releases werden aus dem [GitHub-Repository der Windows-UI-Bibliothek](https://aka.ms/winui) erstellt. 
+Die Windows-UI-Bibliothek (WinUI) ist ein Open-Source-Projekt, das auf GitHub gehostet wird. Alle neuen Releases werden aus dem [GitHub-Repository der Windows-UI-Bibliothek](https://aka.ms/winui) erstellt.
 
 Wir freuen uns auch über Fehlerberichte, Featureanforderungen und Communitycodebeiträge im [Repository zur Windows-UI-Bibliothek](https://aka.ms/winui).
 
@@ -49,9 +49,9 @@ Versionsverlauf für das [NuGet-Hauptpaket Microsoft.UI.Xaml](https://www.nuget.
 | [2.4](winui-2.4.md) | Stabil | Mai 2020 | [Versionshinweise](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush)-, [ProgressRing](winui-2.4.md#progressring)-, [TabView-Updates](winui-2.4.md#tabview-updates), [Updates des dunklen Designs für die Familie der TextBox-Steuerelemente](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls), [hierarchische Navigation](winui-2.4.md#hierarchical-navigation),  |
 | [2.3](winui-2.3.md) | Stabil | November 2019 | [Versionshinweise](winui-2.3.md) | [Visuelle Aktualisierung der Statusanzeige](winui-2.3.md#progress-bar-visual-refresh), [NumberBox](winui-2.3.md#numberbox), [RadioButtons](winui-2.3.md#radiobuttons) |
 | [2.2](winui-2.2.md) | Stabil | August 2019 | [Versionshinweise](winui-2.2.md) | [TabView](winui-2.2.md#tabview), [NavigationView-Updates](winui-2.2.md#navigationview-updates), [Visueller Stil-Updates](winui-2.2.md#visual-style-updates)  |
-| [2.1](winui-2.1.md) | Stabil | April 2019 | [Versionshinweise](winui-2.1.md) | Erste Open-Source-Version aus [GitHub](https://github.com/microsoft/microsoft-ui-xaml). <br />[ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
-| [2.0](winui-2.0.md) | Stabil | Oktober 2018 | [Versionshinweise](winui-2.0.md) | Erste Veröffentlichung.<br>Enthält offizielle native Fluent-Steuerelemente und Features für Windows UWP-Apps.  |
+| [2.1](winui-2.1.md) | Stabil | April 2019 | [Versionshinweise](winui-2.1.md) | **Erstes Open-Source-Release** aus [GitHub](https://github.com/microsoft/microsoft-ui-xaml). Enthält [ItemsRepeater](winui-2.1.md#itemsrepeater), [AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer), [TeachingTip](winui-2.1.md#teachingtip), [RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem), [CompactDensity](winui-2.1.md#compactdensity), [Shadows](winui-2.1.md#shadows). |
+| [2.0](winui-2.0.md) | Stabil | Oktober 2018 | [Versionshinweise](winui-2.0.md) | **Erstes Release**. Enthält offizielle native Fluent-Steuerelemente und Features für Windows UWP-Apps.  |
 
-### <a name="winui-3-alpha"></a>WinUI 3 Alpha
+### <a name="winui-3-preview-1"></a>WinUI 3 Preview 1
 
-Informationen zum Testen von frühen Vorschauen von WinUI 3 findest du unter [WinUI 3.0 (Alpha)](../../winui3/index.md).
+Informationen zum Testen von frühen Vorschauversionen von WinUI 3 findest du unter [WinUI 3.0 Preview 1](../../winui3/index.md).

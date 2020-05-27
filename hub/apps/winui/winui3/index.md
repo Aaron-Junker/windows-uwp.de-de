@@ -3,19 +3,19 @@ title: WinUI 3.0 Vorschau 1 (Mai 2020)
 description: Übersicht über die Vorschauversion von WinUI 3.0.
 ms.date: 05/14/2020
 ms.topic: article
-ms.openlocfilehash: 9141fe7ff215f28557020c7f76dd35c3560edfe5
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 3aac14807f8455eb9a9294c40ddc76ddfa224659
+ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580137"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83688490"
 ---
 # <a name="windows-ui-library-30-preview-1-may-2020"></a>Windows-UI-Bibliothek 3.0 Vorschau 1 (Mai 2020)
 
 Die Windows-UI-Bibliothek (WinUI) 3.0 ist ein größeres Update, das WinUI in ein vollständiges UX-Framework für alle Arten von Windows-Apps – von Win32 bis UWP – umgestaltet.
 
 > [!Important]
-> Die WinUI 3.0-Vorschauversion ist für eine frühe Evaluierung und zum Sammeln von Feedback von der Entwicklercommunity vorgesehen. Diese Version darf **NICHT** für Produktions-Apps verwendet werden.
+> Die WinUI 3.0-Vorschauversion ist für eine frühe Evaluierung und zum Sammeln von Feedback von der Entwicklercommunity vorgesehen. Diese Version sollte **NICHT** für Produktions-Apps verwendet werden.
 >
 > **Weitere Informationen findest du unter [Einschränkungen und bekannte Probleme in Vorschauversion 1](#preview-1-limitations-and-known-issues)** .
 ## <a name="new-features-in-winui-30-preview-1"></a>Neue Features in WinUI 3.0 Version 1
@@ -64,12 +64,12 @@ Installiere Visual Studio 2019, Version 16.7 Vorschau 1. Du kannst diese Vers
 
 Bei der Installation von Visual Studio Vorschau musst du die folgenden Workloads einschließen:
 
-- Win32-Entwicklung mit .NET
+- .NET-Desktopentwicklung
 - Entwicklung für die universelle Windows-Plattform
 
 Zum Erstellen von C++-Apps musst du auch die folgenden Workloads einschließen:
 
-- Win32-Entwicklung mit C++
+- Desktopentwicklung mit C++
 - Die optionale Komponente *C++ (v142) UWP-Tools (Universelle Windows-Plattform)* für die UWP-Workload
 
 ### <a name="visual-studio-project-templates"></a>Visual Studio-Projektvorlagen
@@ -99,7 +99,7 @@ Abgesehen von den Einschränkungen und bekannten Problemen, die nachstehend besc
 
 ## <a name="preview-1-limitations-and-known-issues"></a>Einschränkungen und bekannte Probleme in Vorschauversion 1
 
-Das Vorschau 1-Release ist, wie der Name schon sagt, eine Vorschau. Die Szenarien für Win32-Desktop-Apps sind ganz neu, weshalb Fehler, Einschränkungen und Probleme zu erwarten sind .
+Das Vorschau 1-Release ist, wie der Name schon sagt, eine Vorschau. Die Szenarien um Win32-Desktop-Apps sind ganz neu. Es sind Fehler, Einschränkungen und Probleme zu erwarten.
 
 Für WinUI 3.0 Vorschau 1 sind die folgenden Probleme bekannt. Wenn du ein Problem findest, das im Folgenden nicht aufgeführt ist, informiere uns, indem du Feedback zu einem vorhandenen oder neuen Problem im [WinUI-GitHub-Repository](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose) bereitstellst.
 
@@ -133,24 +133,30 @@ WinUI 3.0 Vorschau 1 ist mit PCs kompatibel, auf denen mindestens das Windows�
 - MapControl
 - Hierarchische Navigation mit NavigationView
 - SwapChainPanel unterstützt keine Transparenz
-- In C# musst du `WinRT.WeakReference<T>` anstelle von `System.WeakReference<T>`verwenden
 - Global Reveal nutzt Fallbackverhalten, einen einfarbigen Pinsel
 - XAML Islands werden in diesem Release nicht unterstützt
 - Bibliotheken aus dem Ökosystem von Drittanbietern funktionieren nicht in vollem Umfang
 - IMEs funktionieren nicht
 - Methoden für den Namespace Windows.UI.Text können nicht aufgerufen werden
-  
+
+### <a name="known-issues"></a>Bekannte Probleme
+
+- In C# Desktop-Apps:
+   - Du musst `WinRT.WeakReference<T>` anstelle von `System.WeakReference<T>` für schwache Verweise auf Windows-Objekte (einschließlich XAML-Objekte) verwenden.
+   - Die Strukturen [Point](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point), [Rect](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect), and [Size](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size) verfügen über Member vom Typ „Float“ und nicht „Double“.
+
+
 ## <a name="xaml-controls-gallery-winui-30-preview-1-branch"></a>XAML-Steuerelementkatalog (Branch „WinUI 3.0 Vorschau 1“)
 
-Eine Beispiel-App, die alle WinUI 3.0 Vorschau 1-Steuerelemente und -Features enthält, findest du im [Branch „WinUI 3.0 Vorschau 1“ des XAML-Steuerelementkatalogs](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview1).
+Eine Beispiel-App, die alle WinUI 3.0 Vorschau 1-Steuerelemente und -Features enthält, findest du im [Branch „WinUI 3.0 Vorschau 1“ des XAML-Steuerelementkatalogs](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview).
 
 ![XAML-Steuerelementkatalog-App für WinUI 3.0 Vorschau 1](images/WinUI3XamlControlsGallery.png)<br/>
 *Beispiel der XAML-Steuerelementkatalog-App für WinUI 3.0 Vorschau 1*
 
-Um das Beispiel herunterzuladen, klone den Branch **winui3preview1** mit dem folgenden Befehl:
+Um das Beispiel herunterzuladen, klone den Branch **winui3preview** mit dem folgenden Befehl:
 
-> `git clone --single-branch --branch winui3preview1 https://github.com/microsoft/Xaml-Controls-Gallery.git`
+> `git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git`
 
-Vergewissere dich nach dem Klonen, dass du in der lokalen Git-Umgebung zum Branch **winui3preview1** wechselst:
+Vergewissere dich nach dem Klonen, dass du in der lokalen Git-Umgebung zum Branch **winui3preview** wechselst:
 
-> `git checkout winui3preview1`
+> `git checkout winui3preview`

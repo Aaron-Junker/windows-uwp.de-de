@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 04/15/2020
 keywords: Windows 10, UWP, Toolkit SDK, WinUI, Windows-UI-Bibliothek
 ms.custom: RS5
-ms.openlocfilehash: 9396860ac82db92f9a8f3166662b94f2776fed7d
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: c1828405c424ca54dcb70e587479fd5307b1046d
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580247"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775859"
 ---
 # <a name="windows-ui-library-2x"></a>Windows-UI-Bibliothek 2.x
 
@@ -21,7 +21,7 @@ Die Windows-UI-Bibliothek bietet offizielle native Steuerelemente der Windows-Be
 Abwärtskompatibilität mit früheren Versionen von Windows 10 wird ermöglicht, damit deine App auch funktioniert, wenn Benutzer nicht über das aktuelle Betriebssystem verfügen.
 
 > [!NOTE]
-> Teste [WinUI 3.0 Alpha](../winui3/index.md), ein wichtiges Update für die Windows 10-UI-Plattform, das im Jahr 2020 veröffentlicht werden soll.
+> Teste [WinUI 3.0 Preview 1](../winui3/index.md), ein wichtiges Update für die Windows 10-UI-Plattform, das im Jahr 2020 veröffentlicht werden soll.
 
 ## <a name="features"></a>Features
 
