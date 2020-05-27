@@ -3,15 +3,15 @@ Description: Informationen zu den Steuerformularen, die von Microsoft ausgestell
 title: Kennenlernen der von Microsoft ausgestellten IRS-Steuerformulare
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, Steuern, IRS, Bundessteuerbehörde der USA (IRS), Steuern, Einkommensteuer, 1099
+keywords: Windows 10, UWP, Steuern, IRS, interner Umsatz Dienst, Steuern, Einkommen steuern, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: e01e1615cb05ab7b0f3d3fa12861e46b231642a8
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: ab115b5cb2b64c6f5bd05b166e904773948a876c
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545070"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854706"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Kennenlernen der von Microsoft ausgestellten IRS-Steuerformulare
 
@@ -21,10 +21,10 @@ Nachfolgend erläutern wir diese Formulare eingehender, etwa, wer sie erhält un
 
 ## <a name="types-of-tax-forms"></a>Arten von Steuerformularen
 
-| IRS-Steuerformular | Beschreibung | Verfügbarkeit |
+| IRS-Steuerformular | BESCHREIBUNG | Verfügbarkeit |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | Im Zusammenhang mit Verkaufsaktivitäten und/oder Zahlungen an Sie für die Teilnahme am Microsoft Marketplace | Gedruckte Formulare werden am oder vor dem 31. **Januar**postmarkiert, und PDF-Kopien werden im [Partner Center](https://partner.microsoft.com/dashboard) (in den **Kontoeinstellungen > Steuer Profil**) gleichzeitig zur Verfügung gestellt. |
-|1042-S | Im Zusammenhang mit den Zahlungen an Sie, die der Quellensteuer der USA unterliegen | Gedruckte Formulare werden am oder vor dem 15. **März**postmarkiert, und PDF-Kopien werden in Partner Center (in **Kontoeinstellungen > Steuer Profil**) gleichzeitig verfügbar sein. |
+|1099-MISC, 1099-K | Im Zusammenhang mit Verkaufsaktivitäten und/oder Zahlungen an Sie für die Teilnahme am Microsoft Marketplace | Gedruckte Formulare werden am oder vor dem 31. **Januar**postmarkiert, und PDF-Kopien werden in [Partner Center](https://partner.microsoft.com/dashboard) (in den **Partner Center-Entwicklereinstellungen** unter **Auszahlungs-und Steuer > Auszahlungs-und Steuer profile**) gleichzeitig verfügbar sein. |
+|1042-S | Im Zusammenhang mit Zahlungen, die für Sie durchgeführt werden und die USA der Steuerpflichtige Steuer | Gedruckte Formulare werden am oder vor dem 15. **März**postmarkiert, und PDF-Kopien werden in Partner Center (in den **Partner Center-Entwicklereinstellungen** unter **Auszahlungs-und Steuer > Auszahlungs-und Steuer profile**) gleichzeitig verfügbar sein.  |
 
 > [!NOTE]
 > Die von uns verwendete Adresse in den IRS-Steuerformularen ergibt sich aus der Adresse Ihres [Steuer Profils](setting-up-your-payout-account-and-tax-forms.md#tax-forms). Wenn sich Ihre Adresse geändert hat, aktualisieren Sie die Adresse auch in Ihrem **Steuerprofil**.
@@ -41,8 +41,8 @@ Die Steuerformulare werden von den folgenden Adressen an Sie gesendet:
 **Nicht-US-Bürger:**
 <table>
 <tr><th>Geschäftsgruppe</th><th>Juristische Entität</th><th>Adresse</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Corporation über Microsoft Irland, das als qualifizierter Vermittler für Microsoft Corporation fungiert)</td><td>Ein Microsoft-Ort<br>Süd&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irland</td></tr>
-<tr><td>Lip</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online Inc. über Microsoft Irland, das als Auszahlungs-Agent für Microsoft Online Inc. fungiert)</td><td>Ein Microsoft-Ort<br>Süd&nbsp;County&nbsp;Business&nbsp;Park<br>Leopardstown, Dublin 18 Irland</td></tr>
+<tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Corporation über Microsoft Irland, das als qualifizierter Vermittler für Microsoft Corporation fungiert)</td><td>One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland</td></tr>
+<tr><td>Lip</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online Inc. über Microsoft Irland, das als Auszahlungs-Agent für Microsoft Online Inc. fungiert)</td><td>One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland</td></tr>
 <tr><td>Werbung</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
 <tr><td colspan="3">* Die Bürger der folgenden Länder, die Werbeeinnahmen verdienen, werden über Microsoft Ireland Operations Limited bezahlt: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechien, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, China, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich</td></tr>
 </table>
@@ -55,13 +55,13 @@ Die Steuerformulare werden von den folgenden Adressen an Sie gesendet:
      <th> Ich sollte dieses Formular erhalten</th>
   </tr>
   <tr> 
-     <td valign="top">Ich habe <b>mehr als 200 App-Verkäufe</b> mit einem Gesamtumsatz von <b>mehr als 20.000 US-Dollar</b> im entsprechenden Geschäftsjahr (Verkäufe über den Microsoft Store unter Windows 10 Brasilien und China werden <b>nicht</b> gezählt) getätigt</td>
+     <td valign="top">Ich hatte <b>mehr als 200 App-Verkäufe</b> mit einem Gesamtbetrag dieser Umsätze über <b>$20.000 USD</b> im geltenden Steuerjahr (<b>ohne</b> zählen der Umsätze, die in Brasilien und China durch die Microsoft Store unter Windows 10 getätigt wurden.)</td>
     <td valign="top"><b>1099-K</b>:<br>Einreichende Instanz: Microsoft Corporation<br>EIN: * * * * * 4442<br><br><b>Wichtig</b>: das Formular 1099-K enthält <b>Brutto Kauf</b> Beträge, keine Zahlungen an Sie.</td>
   </tr>
   <tr> 
-     <td valign="top">Ich habe <b>mindestens 10 Dollar an Zahlungen</b> für (i) App-Verkäufe in Brasilien und China über den Microsoft Store auf Windows 10 oder (ii) Verkäufe über den Minecraft Marketplace erhalten.<br>
+     <td valign="top">Ich habe mindestens <b>$10 Zahlungen</b> für (i) app-Verkäufe in Brasilien und China über den Microsoft Store auf Windows 10-oder (II)-Verkäufen im minecraft Marketplace erhalten.<br>
 <br>
-<b>Noch</b><br>
+<b>OR</b><br>
 <br>
 Ich habe mindestens $600 Zahlungen im Zusammenhang mit den App-Verkäufen von Microsoft im geltenden Steuerjahr erhalten (z. b. Anreizzahlungen oder Zahlungen von einem Wettbewerb oder einer Promotion).</td>
     <td valign="top"><b>1099-MISC</b>:<br>Zahlende Instanz: Microsoft Corporation<br>EIN: * * * * * 4442<br><br><b>Wichtig</b>: bestimmte Geschäftseinheiten empfangen unabhängig von den von Microsoft empfangenen Zahlungs Beträgen nicht 1099-Misc-Formulare.  Weitere Informationen erhalten Sie bei Ihrem Steuerberater.</td>
@@ -79,11 +79,11 @@ Ich habe mindestens $600 Zahlungen im Zusammenhang mit den App-Verkäufen von Mi
      <th> Ich sollte dieses Formular erhalten</th>
   </tr>
   <tr> 
-     <td valign="top">Ich habe <b>mindestens 600 US-Dollar an Zahlungen</b> für Anzeigen in Apps im entsprechenden Geschäftsjahr erhalten.</td>
+     <td valign="top">Ich habe mindestens <b>$600 Zahlungen</b> von Werbeeinblendungen in apps im geltenden Steuerjahr erhalten.</td>
     <td valign="top"><b>1099-MISC</b>:<br>Zahlende Instanz: Microsoft Online Inc<br>EIN: * * * * * 0505<br><br><b>Wichtig</b>: bestimmte Geschäftseinheiten empfangen unabhängig von den von Microsoft empfangenen Zahlungs Beträgen nicht 1099-Misc-Formulare.  Weitere Informationen erhalten Sie bei Ihrem Steuerberater.</td>
   </tr>
   <tr> 
-     <td valign="top">Ich habe <b>weniger als 600 US-Dollar an Zahlungen</b> für Anzeigen in Apps entsprechenden Geschäftsjahr erhalten.</td>
+     <td valign="top">Ich habe <b>weniger als $600 bei Zahlungen</b> von Werbeeinblendungen in apps im geltenden Steuerjahr erhalten.</td>
      <td valign="top">Keine</td>
   </tr>
 </table>
@@ -97,25 +97,25 @@ Ich habe mindestens $600 Zahlungen im Zusammenhang mit den App-Verkäufen von Mi
     <td valign="top">Microsoft hat Ihnen mindestens ein Formular 1042-S bereitgestellt, da wir Ihnen Beträge bezahlt haben, die an die Steuerbehörde der USA gemeldet werden müssen und quellensteuerpflichtig sind.  Formular 1042-S wird für diese Meldeanforderung verwendet.</td>
   </tr>
   <tr>
-    <td valign="top"><b>Was soll ich mit den Formularen tun?</b></td>
+    <td valign="top"><b>Was muss ich mit den Formularen tun?</b></td>
     <td valign="top">Im Allgemeinen ist keine spezifische Aktion Ihrerseits erforderlich. Das Formular 1042-S kann hilfreich sein, wenn Sie bei Ihren Steuerbehörden eine beliebige Form eines Steuerkredits beantragen möchten.  Bei Ihren Steuerberatern erhalten Sie weitere Informationen zu diesem Thema.</td>
   </tr>
   <tr>
-    <td valign="top"><b>Warum habe ich bei der Fertigstellung eines W8-Formulars Steuern bei meinen Zahlungen?</b></td>
+    <td valign="top"><b>Warum wurde Steuer auf meine Zahlungen einbehalten, als ich ein Formular W8 ausgefüllt habe?</b></td>
     <td valign="top">Steuern werden in einem der folgenden Fälle einbehalten:<br>
-     1. Sie den Steuer Vertragsabschnitt von W8 nicht ordnungsgemäß durchgeführt haben, oder<br>
-     2. Sie sich in einem Land befinden, das nicht über einen Steuer Vertrag mit der USA verfügt.<br><br>Sie können das Partner Center jederzeit aufrufen, um ein aktualisiertes W8-Formular zu übermitteln.<br><br><b>Hinweis</b>: nicht alle Einkommen unterliegen der Steuerverweigerung.</td>
+     1.Sie haben den Steuer Vertragsabschnitt von W8 nicht ordnungsgemäß vervollständigt, oder<br>
+     2.Sie sind in einem Land ansässig, das nicht über einen Steuer Vertrag mit dem USA verfügt.<br><br>Sie können das Partner Center jederzeit aufrufen, um ein aktualisiertes W8-Formular zu übermitteln.<br><br><b>Hinweis</b>: nicht alle Einkommen unterliegen der Steuerverweigerung.</td>
   </tr>
   <tr>
     <td valign="top"><b>Ich habe ein aktualisiertes W8-Formular mit gültigen Vertragsinformationen übermittelt. Kann Microsoft mir die zurück haltene Frage erstatten?</b></td>
     <td valign="top">Sobald die Steuer einbehalten wurde, kann diese nicht zurückerstattet werden. Besprechen Sie mit Ihren Steuerberatern, ob Sie eine lokale Gutschrift für diese Steuern beantragen können oder ob Sie eine Erstattung von IRS fordern möchten.</td>
   </tr>
   <tr>
-    <td valign="top"><b>Welche Umsätze werden im Formular 1042-S gemeldet?</b></td>
+    <td valign="top"><b>Welche Umsätze werden im Formular 1042-S angegeben?</b></td>
     <td valign="top">Nur Verkäufe an <b>Käufer in den USA, die der Quellensteuer unterliegen,</b> müssen angegeben werden.  Alle anderen Verkäufe müssen nicht angegeben werden.</td>
   </tr>
   <tr>
-    <td valign="top"><b>Warum erhalte ich drei Kopien derselben Form 1042-S in einem Umschlag?</b></td>
+    <td valign="top"><b>Warum habe ich 3 Kopien desselben Formulars 1042-S in einem Umschlag erhalten?</b></td>
     <td valign="top">Die IRS-Bestimmungen erfordern die Bereitstellung von drei Kopien des Formulars:
 <ul>
 <li>Eine für die Unterlagen des Empfängers</li>
@@ -127,4 +127,4 @@ Ich habe mindestens $600 Zahlungen im Zusammenhang mit den App-Verkäufen von Mi
 
 
 > [!NOTE]
-> Bei weiteren Fragen oder Anliegen im Zusammenhang mit **IRS-Steuerformularen** erstellen Sie ein [Supportticket](https://developer.microsoft.com/windows/support). Microsoft kann keine Fragen im Zusammenhang mit Ihren spezifischen Steuerumständen beantworten. Bei diesen Fragen wenden Sie sich an Ihre Steuerexperten.
+> Wenn Sie weitere Fragen oder Probleme im Zusammenhang mit **IRS-Steuerformularen**haben, erstellen Sie ein [Support Ticket](https://developer.microsoft.com/windows/support). Microsoft kann keine Fragen im Zusammenhang mit Ihren spezifischen Steuerumständen beantworten. Bei diesen Fragen wenden Sie sich an Ihre Steuerexperten.

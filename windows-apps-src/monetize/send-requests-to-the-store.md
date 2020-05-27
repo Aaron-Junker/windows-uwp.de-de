@@ -1,40 +1,40 @@
 ---
-Description: Sie können die SendRequestAsync-Methode verwenden, zum Senden von Anforderungen an den Microsoft Store für Vorgänge, die noch nicht über eine API, die im Windows SDK verfügen.
+Description: Sie können die sendrequestasync-Methode verwenden, um Anforderungen an die Microsoft Store für Vorgänge zu senden, für die noch keine API in der Windows SDK verfügbar ist.
 title: Senden von Anforderungen an den Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
-keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
+keywords: Windows 10, UWP, storerequesthelper, sendrequestasync
 ms.localizationpriority: medium
-ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589795"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867330"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Senden von Anforderungen an den Microsoft Store
 
-Ab Windows 10, Version 1607, bietet das Windows SDK im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)-Namespace APIs für Store-bezogene Vorgänge (z. B. In-App-Einkäufe). Obwohl die Dienste, die den Store unterstützen, zwischen den verschiedenen Betriebssystemversionen kontinuierlich aktualisiert, erweitert und verbessert werden, werden neue APIs in der Regel nur bei Hauptversionen des Betriebssystems zum Windows SDK hinzugefügt.
+Ab Windows 10, Version 1607, bietet das Windows SDK APIs für speicherbezogene Vorgänge (z. b. in-App-Käufe) im [Windows. Services. Store](https://docs.microsoft.com/uwp/api/windows.services.store) -Namespace. Obwohl die Dienste, die den Speicher unterstützen, ständig aktualisiert, erweitert und zwischen den Betriebssystemversionen verbessert werden, werden neue APIs in der Regel nur während der Hauptversionen des Betriebssystems dem Windows SDK hinzugefügt.
 
-Unsere [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)-Methode ist eine flexible Lösung zur Bereitstellung neuer Store-Vorgänge für UWP (Universelle Windows-Plattform)-Apps vor der Veröffentlichung einer neuen Windows SDK-Version. Sie können mithilfe dieser Methode Anforderungen an den Windows Store für Vorgänge senden, für die in der neuesten Windows SDK-Version noch keine entsprechende API zur Verfügung steht.
+Wir stellen die [sendrequestasync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) -Methode als flexible Möglichkeit bereit, neue Speichervorgänge für universelle Windows-Plattform-Apps (UWP) verfügbar zu machen, bevor eine neue Version der Windows SDK veröffentlicht wird. Sie können diese Methode zum Senden von Anforderungen an den Store für neue Vorgänge verwenden, für die noch keine entsprechende API in der neuesten Version der Windows SDK verfügbar ist.
 
 > [!NOTE]
-> Die **SendRequestAsync**-Methode ist nur für Apps für Windows 10, Version 1607 oder höher verfügbar. Einige Anforderungen, die von dieser Methode unterstützt werden, werden nur in Versionen nach Windows 10, Version 1607 unterstützt.
+> Die **sendrequestasync** -Methode ist nur für apps verfügbar, die auf Windows 10, Version 1607 oder höher ausgerichtet sind. Einige der Anforderungen, die von dieser Methode unterstützt werden, werden nur in Releases nach Windows 10, Version 1607, unterstützt.
 
-**SendRequestAsync** ist eine statische Methode der [StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper)-Klasse. Um diese Methode aufzurufen, müssen Sie die folgenden Informationen an diese Methode übergeben:
-* Ein [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)-Objekt, das Informationen zum Benutzer bereitstellt, für den Sie den Vorgang ausführen möchten. Weitere Informationen zu diesem Objekt finden Sie unter [Erste Schritte mit der StoreContext-Klasse](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class).
-* Eine Ganzzahl, die die Anforderung identifiziert, die Sie an den Store senden möchten.
-* Wenn die Anforderung keine Argumente unterstützt, können Sie auch eine Zeichenfolge im JSON-Format übergeben, die die Argumente enthält, die zusammen mit der Anforderung übergeben werden sollen.
+**Sendrequestasync** ist eine statische Methode der [storerequesthelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper) -Klasse. Um diese Methode aufzurufen, müssen Sie die folgenden Informationen an die-Methode übergeben:
+* Ein [storecontext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) -Objekt, das Informationen über den Benutzer bereitstellt, für den Sie den Vorgang ausführen möchten. Weitere Informationen zu diesem Objekt finden Sie unter [Get Started with the storecontext Class](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class).
+* Eine ganze Zahl, die die Anforderung identifiziert, die Sie an den Speicher senden möchten.
+* Wenn die Anforderung Argumente unterstützt, können Sie auch eine JSON-formatierte Zeichenfolge übergeben, die die Argumente enthält, die zusammen mit der Anforderung übergeben werden.
 
-Das folgende Beispiel veranschaulicht, wie diese Methode aufgerufen wird. In diesem Beispiel werden using-Anweisungen für die Namespaces **Windows.Services.Store** und **System.Threading.Tasks** benötigt.
+Das folgende Beispiel veranschaulicht, wie die Methode aufgerufen wird. Dieses Beispiel erfordert die Verwendung von-Anweisungen für die Namespaces " **Windows. Services. Store** " und " **System. Threading. Tasks** ".
 
 ```csharp
 public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -45,39 +45,39 @@ public async Task<bool> AddUserToFlightGroup()
 }
 ```
 
-Informationen zu den Anforderungen, die derzeit für die **SendRequestAsync**-Methode verfügbar sind, finden Sie in den folgenden Abschnitten. Dieser Artikel wird aktualisiert, wenn Unterstützung für neue Anforderungen hinzugefügt wird.
+In den folgenden Abschnitten finden Sie Informationen zu den Anforderungen, die derzeit über die **sendrequestasync** -Methode verfügbar sind. Wir aktualisieren diesen Artikel, wenn die Unterstützung für neue Anforderungen hinzugefügt wird.
 
-## <a name="request-for-in-app-ratings-and-reviews"></a>Anfordern von In-App-Bewertungen und Prüfungen für Ihre App
+## <a name="request-for-in-app-ratings-and-reviews"></a>Anfordern von in-App-Bewertungen und-Reviews
 
-Sie können programmgesteuert ein Dialogfeld von Ihrer App aus starten, das Ihre Kunden auffordert, Ihre App zu bewerten und eine Rezension zu senden, indem Sie die Anforderungsganzzahl 16 an die **SendRequestAsync**-Methode übergeben. Weitere Informationen finden Sie unter [Ein Bewertungs- und Rezensionsdialogfeld in Ihrer App anzeigen](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app).
+Sie können Programm gesteuert ein Dialogfeld von ihrer app starten, das Ihren Kunden auffordert, Ihre APP zu bewerten und eine Überprüfung zu übermitteln, indem Sie die ganze Zahl 16 der Anforderung an die **sendrequestasync** -Methode übergeben. Weitere Informationen finden Sie unter [Anzeigen eines Bewertungs-und Überprüfungs Dialogfelds in Ihrer APP](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app).
 
-## <a name="requests-for-flight-group-scenarios"></a>Anforderungen für Test-Flight-Gruppenszenarien
-
-> [!IMPORTANT]
-> Alle in diesem Abschnitt beschriebenen Anforderungen für Test-Flight-Gruppen sind derzeit für die meisten Entwicklerkonten nicht verfügbar. Diese Anforderungen werden fehlschlagen, es sei denn, Ihr Entwicklerkonto wird speziell von Microsoft bereitgestellt.
-
-Die **SendRequestAsync**-Methode unterstützt eine Reihe von Anforderungen für Test-Flight-Gruppenszenarien wie das Hinzufügen von Benutzern oder Geräten zu einer Test-Flight-Gruppe. Um diese Anforderungen zu senden, übergeben Sie den Wert 7 oder 8 an den *RequestKind*-Parameter und die Zeichenfolge im JSON-Format an den *ParametersAsJson*-Parameter, der die Anforderung angibt, die Sie zusammen mit allen zugehörigen Argumenten übermitteln möchten. Diese *RequestKind*-Werte unterscheiden sich folgendermaßen:
-
-|  RequestKind-Wert  |  Beschreibung  |
-|----------------------|---------------|
-|  7                   |  Die Anforderungen werden im Kontext des aktuellen Geräts ausgeführt. Dieser Wert kann nur unter Windows 10, Version 1703 oder höher verwendet werden.  |
-|  8                   |  Die Anforderungen werden im Kontext des Benutzers ausgeführt, der aktuell beim Store angemeldet ist. Dieser Wert kann unter Windows 10, Version 1607 oder höher verwendet werden.  |
-
-Die folgenden Anforderungen für Test-Flight-Gruppen werden derzeit implementiert.
-
-### <a name="retrieve-remote-variables-for-the-highest-ranked-flight-group"></a>Abrufen von Remotevariablen für Test-Flight-Gruppen mit dem höchsten Rang
+## <a name="requests-for-flight-group-scenarios"></a>Anforderungen für fluggruppen Szenarien
 
 > [!IMPORTANT]
-> Diese Anforderung ist derzeit für die meisten Entwicklerkonten nicht verfügbar. Diese Anforderung wird fehlschlagen, es sei denn, Ihr Entwicklerkonto wird speziell von Microsoft bereitgestellt.
+> Alle in diesem Abschnitt beschriebenen fluggruppen Anforderungen sind für die meisten Entwickler Konten zurzeit nicht verfügbar. Diese Anforderungen schlagen fehl, wenn Ihr Entwicklerkonto nicht speziell von Microsoft bereitgestellt wird.
 
-Diese Anforderung ruft die Remotevariablen für die Test-Flight-Gruppe mit dem höchsten Rang für den aktuellen Benutzer oder das aktuelle Gerät ab. Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an die *RequestKind*- und *ParametersAsJson*-Parameter der **SendRequestAsync**-Methode.
+Die **sendrequestasync** -Methode unterstützt eine Reihe von Anforderungen für fluggruppen Szenarien, wie z. b. das Hinzufügen eines Benutzers oder eines Geräts zu einer Fluggruppe. Um diese Anforderungen zu übermitteln, übergeben Sie den Wert 7 oder 8 an den *requestkind* -Parameter zusammen mit einer JSON-formatierten Zeichenfolge an den *parametersasjson* -Parameter, der die Anforderung angibt, die Sie zusammen mit den zugehörigen Argumenten übermitteln möchten. Diese *requestkind* -Werte unterscheiden sich wie folgt.
 
-|  Parameter  |  Beschreibung  |
+|  Anforderungs Kind Wert  |  BESCHREIBUNG  |
 |----------------------|---------------|
-|  *requestKind*                   |  Geben Sie die Ziffer 7 ein, um die Test-Flight-Gruppe mit dem höchsten Rang für das Gerät zurückzugeben, oder geben Sie 8 ein, um die Test-Flight-Gruppe mit dem höchsten Rang für den aktuellen Benutzer und das aktuelle Gerät zurückzugeben. Wir empfehlen die Verwendung des Werts 8 für den *RequestKind*-Parameter, da dieser Wert die Test-Flight-Gruppe mit dem höchsten Rang innerhalb der Mitgliedschaft für den aktuellen Benutzer und das aktuelle Gerät zurückgibt.  |
-|  *parametersAsJson*                   |  Übergeben Sie eine Zeichenfolge im JSON-Format, die die im folgenden Beispiel angezeigten Daten enthält.  |
+|  7                   |  Die Anforderungen werden im Kontext des aktuellen Geräts ausgeführt. Dieser Wert kann nur unter Windows 10, Version 1703 oder höher, verwendet werden.  |
+|  8                   |  Die Anforderungen werden im Kontext des Benutzers ausgeführt, der zurzeit beim Store angemeldet ist. Dieser Wert kann unter Windows 10, Version 1607 oder höher, verwendet werden.  |
 
-Das folgende Beispiel zeigt das Format der JSON-Daten, die an den *ParametersAsJson*-Parameter übergeben werden sollen. Das Feld *type* muss der Zeichenfolge *GetRemoteVariables* zugewiesen werden. Weisen Sie die *ProjectId* Feld auf die ID des Projekts, in dem Sie die remote-Variablen im Partner Center definiert.
+Die folgenden fluggruppen Anforderungen sind zurzeit implementiert.
+
+### <a name="retrieve-remote-variables-for-the-highest-ranked-flight-group"></a>Abrufen von Remote Variablen für die Fluggruppe mit der höchsten Rangfolge
+
+> [!IMPORTANT]
+> Diese Anforderung ist für die meisten Entwickler Konten zurzeit nicht verfügbar. Diese Anforderung schlägt fehl, es sei denn, Ihr Entwicklerkonto wird speziell von Microsoft bereitgestellt.
+
+Mit dieser Anforderung werden die Remote Variablen für die Fluggruppe mit der höchsten Rangfolge für den aktuellen Benutzer oder das aktuelle Gerät abgerufen. Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an die Parameter " *requestkind* " und " *parametersasjson* " der **sendrequestasync** -Methode.
+
+|  Parameter  |  BESCHREIBUNG  |
+|----------------------|---------------|
+|  *requestkind*                   |  Geben Sie 7 an, um die Fluggruppe mit der höchsten Rangfolge für das Gerät zurückzugeben, oder geben Sie 8 an, um die mit der höchsten Rangfolge für den aktuellen Benutzer und das Gerät zurückzugeben. Es wird empfohlen, den Wert 8 für den *requestkind* -Parameter zu verwenden, da dieser Wert für den aktuellen Benutzer und das Gerät die Gruppe mit der höchsten Rangfolge über die Mitgliedschaft zurückgibt.  |
+|  *parametersasjson*                   |  Übergeben Sie eine JSON-formatierte Zeichenfolge, die die im folgenden Beispiel gezeigten Daten enthält.  |
+
+Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*übergeben werden. Das *typanfeld* muss der Zeichenfolge *getremotevariables*zugewiesen werden. Weisen Sie das Feld *ProjectId* der ID des Projekts zu, in dem Sie die Remote Variablen im Partner Center definiert haben.
 
 ```json
 { 
@@ -86,15 +86,15 @@ Das folgende Beispiel zeigt das Format der JSON-Daten, die an den *ParametersAsJ
 }
 ```
 
-Nach Übermittlung dieser Anforderung enthält die [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response)-Eigenschaft des [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult)-Rückgabewerts eine Zeichenfolge im JSON-Format mit den folgenden Feldern:
+Nachdem Sie diese Anforderung gesendet haben, enthält die [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) -Eigenschaft des [storesendrequestresult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) -Rückgabewerts eine JSON-formatierte Zeichenfolge mit den folgenden Feldern.
 
-|  Feld  |  Beschreibung  |
+|  Feld  |  BESCHREIBUNG  |
 |----------------------|---------------|
-|  *Anonyme*                   |  Ein boolescher Wert, wobei **true** angibt, dass die Identität des Benutzers oder Geräts in der Anforderung nicht vorhanden war; **false** bedeutet, dass die Identität des Benutzers oder Geräts in der Anforderung vorhanden war.  |
-|  *name*                   |  Eine Zeichenfolge, die den Namen der Test-Flight-Gruppe mit dem höchsten Rang enthält, der das Gerät oder der Benutzer angehört.  |
-|  *Einstellungen*                   |  Ein Wörterbuch mit Schlüssel-Wert-Paaren, die den Namen und den Wert der Remotevariablen enthalten, die der Entwickler für die Test-Flight-Gruppe konfiguriert hat.  |
+|  *Anonymous*                   |  Ein boolescher Wert, wobei **true** angibt, dass die Benutzer-oder Geräte Identität nicht in der Anforderung enthalten war, und **false** gibt an, dass die Benutzer-oder Geräte Identität in der Anforderung vorhanden war.  |
+|  *name*                   |  Eine Zeichenfolge, die den Namen der Fluggruppe mit der höchsten Rangfolge enthält, zu der das Gerät oder der Benutzer gehört.  |
+|  *settings*                   |  Ein Wörterbuch von Schlüssel-Wert-Paaren, das den Namen und den Wert der Remote Variablen enthält, die der Entwickler für die Fluggruppe konfiguriert hat.  |
 
-Das folgende Beispiel zeigt einen Rückgabewert für diese Anforderung.
+Im folgenden Beispiel wird ein Rückgabewert für diese Anforderung veranschaulicht.
 
 ```json
 { 
@@ -108,19 +108,19 @@ Das folgende Beispiel zeigt einen Rückgabewert für diese Anforderung.
 }
 ```
 
-### <a name="add-the-current-device-or-user-to-a-flight-group"></a>Hinzufügen des aktuellen Geräts oder Benutzers zu einer Test-Flight-Gruppe
+### <a name="add-the-current-device-or-user-to-a-flight-group"></a>Hinzufügen des aktuellen Geräts oder Benutzers zu einer Fluggruppe
 
 > [!IMPORTANT]
-> Diese Anforderung ist derzeit für die meisten Entwicklerkonten nicht verfügbar. Diese Anforderung wird fehlschlagen, es sei denn, Ihr Entwicklerkonto wird speziell von Microsoft bereitgestellt.
+> Diese Anforderung ist für die meisten Entwickler Konten zurzeit nicht verfügbar. Diese Anforderung schlägt fehl, es sei denn, Ihr Entwicklerkonto wird speziell von Microsoft bereitgestellt.
 
-Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an die *RequestKind*- und *ParametersAsJson*-Parameter der **SendRequestAsync**-Methode.
+Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an die Parameter " *requestkind* " und " *parametersasjson* " der **sendrequestasync** -Methode.
 
-|  Parameter  |  Beschreibung  |
+|  Parameter  |  BESCHREIBUNG  |
 |----------------------|---------------|
-|  *requestKind*                   |  Geben Sie den Wert 7 ein, um das Gerät zu einer Test-Flight-Gruppe hinzufügen; geben Sie alternativ den Wert 8 ein, um den Benutzer hinzuzufügen, der derzeit im Store einer Test-Flight-Gruppe angemeldet ist.  |
-|  *parametersAsJson*                   |  Übergeben Sie eine Zeichenfolge im JSON-Format, die die im folgenden Beispiel angezeigten Daten enthält.  |
+|  *requestkind*                   |  Geben Sie 7 an, um das Gerät einer Fluggruppe hinzuzufügen, oder geben Sie 8 an, um den Benutzer, der zurzeit beim Store angemeldet ist, einer Fluggruppe hinzuzufügen.  |
+|  *parametersasjson*                   |  Übergeben Sie eine JSON-formatierte Zeichenfolge, die die im folgenden Beispiel gezeigten Daten enthält.  |
 
-Das folgende Beispiel zeigt das Format der JSON-Daten, die an den *ParametersAsJson*-Parameter übergeben werden sollen. Das Feld *type* muss der Zeichenfolge *AddToFlightGroup* zugewiesen werden. Weisen Sie das Feld *FlightGroupId* der ID der Test-Flight-Gruppe zu, zu der Sie das Gerät oder den Benutzer hinzufügen möchten.
+Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*übergeben werden. Das *typanfeld* muss der Zeichenfolge *adddeflightgroup*zugewiesen werden. Weisen Sie das Feld *flightgroupid* der ID der Fluggruppe zu, der Sie das Gerät oder den Benutzer hinzufügen möchten.
 
 ```json
 { 
@@ -129,21 +129,21 @@ Das folgende Beispiel zeigt das Format der JSON-Daten, die an den *ParametersAsJ
 }
 ```
 
-Wenn ein Fehler bei der Anforderung vorliegt, enthält die [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode)-Eigenschaft des [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult)-Rückgabewerts den Antwortcode.
+Wenn bei der Anforderung ein Fehler auftritt, enthält die [httpstatencode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) -Eigenschaft des Rückgabewerts [storesendrequestresult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) den Antwort Code.
 
-### <a name="remove-the-current-device-or-user-from-a-flight-group"></a>Entfernen des aktuellen Geräts oder Benutzers aus einer Test-Flight-Gruppe
+### <a name="remove-the-current-device-or-user-from-a-flight-group"></a>Aktuelles Gerät oder Benutzer aus einer Fluggruppe entfernen
 
 > [!IMPORTANT]
-> Diese Anforderung ist derzeit für die meisten Entwicklerkonten nicht verfügbar. Diese Anforderung wird fehlschlagen, es sei denn, Ihr Entwicklerkonto wird speziell von Microsoft bereitgestellt.
+> Diese Anforderung ist für die meisten Entwickler Konten zurzeit nicht verfügbar. Diese Anforderung schlägt fehl, es sei denn, Ihr Entwicklerkonto wird speziell von Microsoft bereitgestellt.
 
-Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an die *RequestKind*- und *ParametersAsJson*-Parameter der **SendRequestAsync**-Methode.
+Um diese Anforderung zu senden, übergeben Sie die folgenden Informationen an die Parameter " *requestkind* " und " *parametersasjson* " der **sendrequestasync** -Methode.
 
-|  Parameter  |  Beschreibung  |
+|  Parameter  |  BESCHREIBUNG  |
 |----------------------|---------------|
-|  *requestKind*                   |  Geben Sie den Wert 7 ein, um das Gerät aus einer Test-Flight-Gruppe zu entfernen; geben Sie alternativ den Wert 8 ein, um den Benutzer zu entfernen, der derzeit im Store einer Test-Flight-Gruppe angemeldet ist.  |
-|  *parametersAsJson*                   |  Übergeben Sie eine Zeichenfolge im JSON-Format, die die im folgenden Beispiel angezeigten Daten enthält.  |
+|  *requestkind*                   |  Geben Sie 7 an, um das Gerät aus einer Fluggruppe zu entfernen, oder geben Sie 8 an, um den Benutzer zu entfernen, der derzeit bei dem Store aus einer Fluggruppe angemeldet ist.  |
+|  *parametersasjson*                   |  Übergeben Sie eine JSON-formatierte Zeichenfolge, die die im folgenden Beispiel gezeigten Daten enthält.  |
 
-Das folgende Beispiel zeigt das Format der JSON-Daten, die an den *ParametersAsJson*-Parameter übergeben werden sollen. Das Feld *type* muss der Zeichenfolge *RemoveFromFlightGroup* zugewiesen werden. Weisen Sie das Feld *flightGroupId* der ID der Test-Flight-Gruppe zu, aus der Sie das Gerät oder den Benutzer entfernen möchten.
+Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*übergeben werden. Das *typanfeld* muss der Zeichenfolge *removefromflightgroup*zugewiesen werden. Weisen Sie das Feld *flightgroupid* der ID der Fluggruppe zu, aus der Sie das Gerät oder den Benutzer entfernen möchten.
 
 ```json
 { 
@@ -152,9 +152,9 @@ Das folgende Beispiel zeigt das Format der JSON-Daten, die an den *ParametersAsJ
 }
 ```
 
-Wenn ein Fehler bei der Anforderung vorliegt, enthält die [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode)-Eigenschaft des [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult)-Rückgabewerts den Antwortcode.
+Wenn bei der Anforderung ein Fehler auftritt, enthält die [httpstatencode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) -Eigenschaft des Rückgabewerts [storesendrequestresult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) den Antwort Code.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Zeigen Sie eine Bewertung aus, und überprüfen Sie die Dialogfeld in Ihrer app](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
-* [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)
+* [Anzeigen des Dialog Felds "Bewertung und Überprüfung" in Ihrer APP](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [Sendrequestasync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

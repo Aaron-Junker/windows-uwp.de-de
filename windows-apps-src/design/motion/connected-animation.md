@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 385c11e48695c2486fd5a2b72633923454e2f8ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ad94d7b887e28ac01156592ac47cfc9ac4783193
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970635"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775911"
 ---
 # <a name="connected-animation-for-windows-apps"></a>Verbundene Animation für Windows-apps
 
@@ -55,7 +55,7 @@ In diesem kurzen Video wird eine APP mit einer verbundenen Animation zum Animier
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>Verbundene Animation und das fließende Entwurfs System
 
- Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. Connected Animation ist eine fließende Entwurfs System Komponente, die Bewegung zu Ihrer APP hinzufügt. Weitere Informationen finden Sie in der [Übersicht über das fließende Design](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. Connected Animation ist eine fließende Entwurfs System Komponente, die Bewegung zu Ihrer APP hinzufügt. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="why-connected-animation"></a>Warum verbundene Animation?
 
@@ -101,8 +101,8 @@ Um die verschiedenen Auswirkungen zu erzielen, werden diese Eigenschaften von ei
 | Konfiguration | Respektiert defaultduration? | Respektiert defaulteasingfunction? |
 | - | - | - |
 | Ernst | Ja | Ja* <br/> **Die grundlegende Übersetzung von A in B verwendet diese Beschleunigungs Funktion, aber die "Gravity Dip" hat eine eigene Beschleunigungs Funktion.*  |
-| Direkt | Nein  <br/> *Animiert mehr als 150 ms.*| Nein  <br/> *Verwendet die verlangsamnde Beschleunigungs Funktion.* |
-| Einfach | Ja | Ja |
+| Direkt | No <br/> *Animiert mehr als 150 ms.*| No <br/> *Verwendet die verlangsamnde Beschleunigungs Funktion.* |
+| Basic | Yes | Ja |
 
 ## <a name="how-to-implement-connected-animation"></a>Implementieren einer verbundenen Animation
 
@@ -271,7 +271,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 Verwenden Sie [trystartconnectedanimationasync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync), um eine Animation mit diesem Element als Ziel zu starten, z. b. Wenn Sie aus einer Detailansicht zurück navigieren. Wenn Sie gerade die Datenquelle für ListView geladen haben, wartet trystartconnectedanimationasync, dass die Animation gestartet wird, bis der entsprechende Element Container erstellt wurde.
 
 ```csharp
-private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
+private async void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 {
     ContactsItem item = GetPersistedItem(); // Get persisted item
     if (item != null)

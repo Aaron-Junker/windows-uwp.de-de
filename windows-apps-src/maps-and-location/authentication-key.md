@@ -4,23 +4,20 @@ description: Ihre universelle Windows-App muss authentifiziert werden, bevor sie
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Kartenauthentifizierungsschlüssel, Kartensteuerelement
+keywords: Windows 10, UWP, Karten Authentifizierungsschlüssel, Karten Steuerelement
 ms.localizationpriority: medium
-ms.openlocfilehash: c3bc74d83c3f713149e9001de4ec10fe0a4706de
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ab0d1900398c313021600c18338ecc1201241410
+ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259391"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790997"
 ---
 # <a name="request-a-maps-authentication-key"></a>Anfordern eines Kartenauthentifizierungsschlüssels
 
+Ihre [universelle Windows-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) muss authentifiziert werden, bevor Sie den [**mapcontrol**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) -und den Map-Dienst im [**Windows. Services. Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) -Namespace verwenden kann. Zum Authentifizieren Ihrer App müssen Sie einen Kartenauthentifizierungsschlüssel angeben. In diesem Thema wird beschrieben, wie Sie einen Kartenauthentifizierungsschlüssel vom [Bing Maps Developer Center](https://www.bingmapsportal.com/) anfordern und Ihrer App hinzufügen.
 
-
-
-Ihre [universelle Windows-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) muss authentifiziert werden, bevor sie die [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)-Klasse und Kartendienste im [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps)-Namespace verwenden kann. Zum Authentifizieren Ihrer App müssen Sie einen Kartenauthentifizierungsschlüssel angeben. In diesem Thema wird beschrieben, wie Sie einen Kartenauthentifizierungsschlüssel vom [Bing Maps Developer Center](https://www.bingmapsportal.com/) anfordern und Ihrer App hinzufügen.
-
-**Tipp** Um mehr über die Verwendung von Karten in Ihrer App zu erfahren, können Sie das folgende Beispiel aus den [API-Beispielen für die Universelle Windows-Plattform](https://github.com/Microsoft/Windows-universal-samples) auf GitHub herunterladen.
+**Tipp** Um mehr über das Verwenden von Karten in Ihrer App zu erfahren, laden Sie das folgende Beispiel aus den [API-Beispielen für die universelle Windows-Plattform](https://github.com/Microsoft/Windows-universal-samples) auf GitHub herunter:
 
 -   [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
@@ -31,7 +28,7 @@ Erstellen und verwalten Sie Kartenauthentifizierungsschlüssel für Ihre univers
 
 So erstellen Sie einen neuen Schlüssel
 
-1.  Navigieren Sie in Ihrem Browser zum Info Maps Developer Center ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/)).
+1.  Navigieren Sie in Ihrem Browser zum Entwickler Center von "Info Maps" ( [https://www.bingmapsportal.com](https://www.bingmapsportal.com/) ).
 
 2.  Wenn Sie zum Anmelden aufgefordert werden, geben Sie Ihre Microsoft-Kontoinformationen ein, und klicken Sie auf **Anmelden**.
 
@@ -39,9 +36,9 @@ So erstellen Sie einen neuen Schlüssel
 
 4.  Wenn Sie noch kein Bing Karten-Konto besitzen, erstellen Sie ein neues Bing Karten-Konto. Geben Sie **Kontoname**, **Kontaktname**, **Firmenname**, **E-Mail-Adresse** und **Telefonnummer** ein. Akzeptieren Sie die Nutzungsbedingungen, und klicken Sie auf **Erstellen**.
 
-5.  Klicken Sie im Menü **Mein Konto** auf **Eigene Schlüssel**.
+5.  Klicken Sie im Menü **mein Konto** auf **meine Schlüssel**.
 
-6.  Wenn Sie bereits einen Schlüssel erstellt haben, klicken Sie auf den Link, um einen neuen Schlüssel zu erstellen. “Andernfalls fahren Sie mit dem Formular „Schlüssel erstellen” fort.
+6.  Wenn Sie zuvor einen Schlüssel erstellt haben, klicken Sie auf den Link, um einen neuen Schlüssel zu erstellen. Andernfalls fahren Sie mit dem Formular Create Key fort.
 
 7.  Füllen Sie das Formular **Schlüssel erstellen** aus, und klicken Sie dann auf **Erstellen**.
 
@@ -87,10 +84,10 @@ Um Dienste im [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Win
     MapService.ServiceToken = "abcdef-abcdefghijklmno";
     ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Bing Karten Developer Center](https://www.bingmapsportal.com/)
 * [Beispiel für UWP-Karte](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [Entwurfsrichtlinien für Karten](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015-Video: Nutzen von Zuordnungen und Speicherort über Telefon, Tablet und PC in Ihren Windows-apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Build 2015-Video: Nutzen von Karten und Ortung über Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Beispiel für eine UWP-App mit Verkehrsinformationen](https://github.com/Microsoft/Windows-appsample-trafficapp)
