@@ -7,12 +7,12 @@ keywords: Gerät, Digitalisierer, Eingabe, Interaktion, Injektion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d15305fecb562546bdeaf15c501890151c7dd29a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7bcd63d940e53d90d925f83f27e4c77165a11650
+ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968031"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84124118"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>Simulieren von Benutzereingaben durch Eingabe Injektion
 
@@ -22,7 +22,7 @@ Simulieren und automatisieren Sie Benutzereingaben von Geräten wie Tastatur, Ma
 
 ## <a name="overview"></a>Übersicht
 
-Die Eingabe Injektion ermöglicht der Windows-Anwendung, Eingaben aus einer Vielzahl von Eingabegeräten zu simulieren und diese Eingabe an eine beliebige Stelle zu leiten, auch außerhalb des Client Bereichs der APP (auch bei apps, die mit Administratorrechten ausgeführt werden, z. b. dem Registrierungs-Editor).
+Die Eingabe Injektion ermöglicht der Windows-Anwendung, Eingaben aus einer Vielzahl von Eingabegeräten zu simulieren und diese Eingabe an eine beliebige Stelle zu leiten, auch außerhalb des Client Bereichs der APP (auch für apps, die mit Administrator Rechten ausgeführt werden, z. b. dem Registrierungs-Editor).
 
 Input Injection eignet sich für Windows-apps und-Tools, die Funktionen bereitstellen müssen, die Barrierefreiheit, Tests (Ad-hoc, automatisiert) sowie RAS-und Support Features enthalten.
 
@@ -31,10 +31,10 @@ Input Injection eignet sich für Windows-apps und-Tools, die Funktionen bereitst
 Wenn Sie die eingabeinjection-APIs in Ihrer Windows-App verwenden möchten, müssen Sie dem App-Manifest Folgendes hinzufügen:
 
 1. Klicken Sie mit der rechten Maustaste auf die Datei **Package. appxmanifest** , und wählen Sie **Code anzeigen**
-1. Fügen Sie Folgendes in den `Package` -Knoten ein:
+1. Fügen Sie Folgendes in den- `Package` Knoten ein:
     - `xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"`
     - `IgnorableNamespaces="rescap"`
-1. Fügen Sie Folgendes in den `Capabilities` -Knoten ein:
+1. Fügen Sie Folgendes in den- `Capabilities` Knoten ein:
     - `<rescap:Capability Name="inputInjectionBrokered" />`
 
 ## <a name="duplicate-user-input"></a>Doppelte Benutzereingaben
@@ -51,7 +51,7 @@ In diesem Beispiel wird veranschaulicht, wie die eingabeinjection-APIs ([Windows
 
     Wir haben zwei Raster Bereiche (eine für die Mauseingabe und eine für die eingefügte Fingereingabe), die jeweils vier Schaltflächen enthalten.
       > [!NOTE] 
-      > Dem Raster Hintergrund muss ein Wert zugewiesen werden (`Transparent`in diesem Fall), andernfalls werden keine Zeiger Ereignisse erkannt.
+      > Dem Raster Hintergrund muss ein Wert zugewiesen werden ( `Transparent` in diesem Fall), andernfalls werden keine Zeiger Ereignisse erkannt.
 
     Wenn im Eingabebereich beliebige Mausklicks erkannt werden, wird ein entsprechendes Berührungs Ereignis in den eingabeinjektions Bereich eingefügt. Schaltflächen Klicks aus Eingabe einfügen werden im Titelbereich angezeigt.
 
@@ -253,7 +253,7 @@ In diesem Beispiel wird veranschaulicht, wie die eingabeinjection-APIs ([Windows
 
     Zuerst wird [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) aufgerufen, um das [inputinjetor](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) -Objekt zu instanziieren.
 
-    Dann rufen wir [initializetouchinjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) mit einem [injetedinputvisualizationmode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) von auf `Default`.
+    Dann rufen wir [initializetouchinjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) mit einem [injetedinputvisualizationmode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) von auf `Default` .
 
     Nach dem Berechnen der Einschleusung der Injektion rufen wir " [injetedinputtouchinfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo) " auf, um die Liste der einzufügenden Berührungspunkte zu initialisieren (in diesem Beispiel erstellen wir einen Fingerabdruck, der dem Mauseingabe Zeiger entspricht).
 
