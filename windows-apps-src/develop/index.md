@@ -5,12 +5,12 @@ keywords: UWP App Entwicklung Threading asynchron Plattform Übersicht Portal en
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 233666294555c46b5ba8b1e558eb32d6aed84e2a
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: f969c1c9ea5bb436ebad8d5e0410b6bf553885c0
+ms.sourcegitcommit: d1eba7cf79cd2885b5bf8f5501bc44a569ab9864
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614964"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172602"
 ---
 # <a name="develop-uwp-apps"></a>Entwickeln von UWP-Apps
 
@@ -156,7 +156,7 @@ Anleitungen und Code zum Erstellen von UWP-Apps für Windows 10
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">Plattform</h3>
-        <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT<</a><br/>
+        <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a><br/>
         <a href="/windows/uwp/launch-resume/">Starten, Fortsetzen und Hintergrundaufgaben</a><br/>
         <a href="/windows/uwp/security/">Sicherheit</a><br/>
         <a href="/windows/uwp/threading-async/">Threading und asynchrone Programmierung</a><br/>
