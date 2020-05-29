@@ -6,14 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Karten Authentifizierungsschlüssel, Karten Steuerelement
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0d1900398c313021600c18338ecc1201241410
-ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
+ms.openlocfilehash: 2f4a76edfe5772665564cb8890ffcdf56205a2f7
+ms.sourcegitcommit: d1eba7cf79cd2885b5bf8f5501bc44a569ab9864
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83790997"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172592"
 ---
 # <a name="request-a-maps-authentication-key"></a>Anfordern eines Kartenauthentifizierungsschlüssels
+
+> [!WARNING]
+> Online Maps-Dienste sind unter älteren Versionen von Windows 10 möglicherweise nicht verfügbar. In den folgenden Versionen zeigt mapcontrol möglicherweise keine Zuordnungen mehr und APIs im Windows. Services. Maps-Namespace keine Ergebnisse zurück:
+> - Windows 10, Version 1607 und frühere Versionen: Kartendienste sind ab Oktober 2020 weltweit nicht verfügbar.
+> - Windows 10, Version 1703 und frühere Versionen: Kartendienste sind auf [einigen in China verkauften Geräten](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-mapcontrol-desktop-chinavariantwin10) nicht verfügbar.
 
 Ihre [universelle Windows-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) muss authentifiziert werden, bevor Sie den [**mapcontrol**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) -und den Map-Dienst im [**Windows. Services. Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) -Namespace verwenden kann. Zum Authentifizieren Ihrer App müssen Sie einen Kartenauthentifizierungsschlüssel angeben. In diesem Thema wird beschrieben, wie Sie einen Kartenauthentifizierungsschlüssel vom [Bing Maps Developer Center](https://www.bingmapsportal.com/) anfordern und Ihrer App hinzufügen.
 
