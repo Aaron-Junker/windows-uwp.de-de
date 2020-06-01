@@ -6,12 +6,12 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: edbd11724ed523f7d6efc57af9a8ef3a7e06bf5a
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 5a176c1138ebfe3f3a9eb2cbef02dad745cfe170
+ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824961"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83865017"
 ---
 # <a name="search-command-winget"></a>Befehl „search“ (winget)
 
@@ -49,7 +49,7 @@ Suchzeichenfolgen können mit den folgenden Optionen gefiltert werden.
 | **--id**        |   Schränkt die Suche auf die ID der Anwendung ein. Die ID enthält den Herausgeber und den Anwendungsnamen. |
 | **--name**      |  Schränkt die Suche auf den Namen der Anwendung ein. |
 | **--moniker**  |    Schränkt die Suche auf den angegebenen Moniker ein. |
-|  **--tag**    |  Schränkt die Suche auf die für die Anwendung aufgelisteten Tags ein. |
+| **--tag**    |  Schränkt die Suche auf die für die Anwendung aufgelisteten Tags ein. |
 | **--command**   |   Schränkt die Suche auf den Namen der Anwendung ein. |
 
 Die Zeichenfolge wird als Teilzeichenfolge behandelt. Bei der Suche wird standardmäßig auch die Groß-/Kleinschreibung beachtet. `winget search micro` könnte z. B. Folgendes zurückgeben:
@@ -64,7 +64,7 @@ Der Befehl „search“ unterstützt eine Reihe von Optionen oder Filtern, mit d
 
 | Option  | Beschreibung |
  --------------|-------------|
-| **e, --exact**  |     Verwendet die exakte Zeichenfolge in der Abfrage und berücksichtigt die Groß-/Kleinschreibung. Das Standardverhalten einer Teilzeichenfolge wird nicht verwendet.  |  
+| **-e, --exact**  |     Verwendet die exakte Zeichenfolge in der Abfrage und berücksichtigt die Groß-/Kleinschreibung. Das Standardverhalten einer Teilzeichenfolge wird nicht verwendet.  |  
 | **-n, --count**      |  Schränkt die Ausgabe der Anzeige auf die angegebene Anzahl ein. |
 | **-s, --source**     |  Schränkt die Suche auf die mit [source](source.md) angegebene Quelle ein.  |
 

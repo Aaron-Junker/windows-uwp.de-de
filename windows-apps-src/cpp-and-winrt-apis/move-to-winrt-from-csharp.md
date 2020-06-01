@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, portieren, migrieren, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 804c22b782dada9c0bde3c379ebfe5a37f1dcff9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 38ad2d4f2b0af65424e6d9fa50f2c21b626e1914
+ms.sourcegitcommit: 3125d5e2e32831481790266f44967851585888b3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759937"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172831"
 ---
 # <a name="move-to-cwinrt-from-c"></a>Umstellen von C# auf C++/WinRT
 
@@ -27,7 +27,7 @@ Die Arten der zu erwartenden Portierungsänderungen lassen sich in vier Kategori
 - [**Portieren der Sprachprojektion**](#port-the-language-projection). Die Windows-Runtime (WinRT) wird in verschiedene Programmiersprachen *projiziert*. Jede dieser Sprachprojektionen ist so konzipiert, dass sie idiomatisch an die betreffende Programmiersprache angepasst ist. Für C# werden einige Windows-Runtime-Typen als .NET-Typen projiziert. So wird [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) beispielsweise zurück zu [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1) übersetzt. Ebenfalls werden in C# einige Windows-Runtime-Operationen als praktische C#-Sprachfunktionen projiziert. In C# verwenden Sie beispielsweise die `+=`-Operatorsyntax zum Registrieren eines Ereignisbehandlungsdelegaten. Sie übersetzen also Sprachfeatures wie diese zurück in die grundlegende Operation, die gerade ausgeführt wird (in diesem Beispiel die Ereignisregistrierung).
 - [**Portieren der Sprachsyntax**](#port-language-syntax). Viele dieser Änderungen sind einfache mechanische Umwandlungen, bei denen ein Symbol durch ein anderes ersetzt wird. Zum Beispiel wird ein Punkt (`.`) in einen Doppelpunkt (`::`) geändert.
 - [**Portieren von Sprachprozeduren**](#port-language-procedure). Einige davon können einfache, sich wiederholende Änderungen sein (wie z. B. `myObject.MyProperty` in `myObject.MyProperty()`). Andere benötigen tiefer gehende Änderungen (z. B. die Portierung einer Prozedur, die die Verwendung von **System.Text.StringBuilder** beinhaltet, in eine Prozedur, die die Verwendung von **std::wostringstream** beinhaltet).
-- [**Portieren von Tasks, die spezifisch für C++/WinRT sind**](#porting-tasks-that-are-specific-to-cwinrt). Bestimmte Details der Windows-Runtime werden von C# implizit im Hintergrund erledigt. Diese Details werden explizit in C++/WinRT durchgeführt. Ein Beispiel ist die Verwendung einer `.idl`-Datei, um Ihre Laufzeitklassen zu definieren.
+- [**Portieren zugehöriger Tasks, die spezifisch für C++/WinRT sind**](#porting-related-tasks-that-are-specific-to-cwinrt). Bestimmte Details der Windows-Runtime werden von C# implizit im Hintergrund erledigt. Diese Details werden explizit in C++/WinRT durchgeführt. Ein Beispiel ist die Verwendung einer `.idl`-Datei, um Ihre Laufzeitklassen zu definieren.
 
 Der Rest dieses Themas ist nach dieser Taxonomie gegliedert.
 
@@ -88,6 +88,21 @@ namespace winrt::MyProject::implementation
     }
 };
 ```
+
+Ein letztes Szenario ist eines, in dem das C#-Projekt, das Sie portieren, vom Markup aus an den Ereignishandler *gebunden* wird (mehr Hintergrund zu diesem Szenario finden Sie unter [Funktionen in x:Bind](/windows/uwp/data-binding/function-bindings)).
+
+```xaml
+<Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
+```
+
+Sie können dieses Markup einfach in das einfachere `Click="OpenButton_Click"` ändern. Oder wenn Sie es bevorzugen, können Sie dieses Markup unverändert verwenden. Um dieses Verfahren zu unterstützen, brauchen Sie lediglich den Ereignisbehandler in IDL zu deklarieren.
+
+```idl
+void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
+```
+
+> [!NOTE]
+> Deklarieren Sie die Funktion als `void`, auch wenn Sie sie als [Fire and Forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget) (Auslösen und Vergessen) *implementieren*.
 
 ## <a name="port-language-syntax"></a>Portieren der Sprachsyntax
 
@@ -230,7 +245,7 @@ Für die Erstellung von string-Elementen verfügt C# über einen integrierten [*
 
 Weitere Informationen finden Sie auch unter [Portieren der **BuildClipboardFormatsOutputString**-Methode](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring) und [Portieren der **DisplayChangedFormats**-Methode](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats).
 
-## <a name="porting-tasks-that-are-specific-to-cwinrt"></a>Portieren von Tasks, die spezifisch für C++/WinRT sind
+## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>Portieren zugehöriger Tasks, die spezifisch für C++/WinRT sind
 
 ### <a name="define-your-runtime-classes-in-idl"></a>Definieren Ihrer Laufzeitklassen in IDL
 
@@ -309,7 +324,7 @@ Weitere Informationen sowie Codebeispiele findest du unter [Verwenden von Objekt
 
 ### <a name="making-a-data-source-available-to-xaml-markup"></a>Verfügbarmachen einer Datenquelle für XAML-Markup
 
-In C++/WinRT, Version 2.0.190530.8 und höher erstellt [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) einen Observable-Vektor, der sowohl **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** als auch **IObservableVector\<IInspectable\>** unterstützt. Ein Beispiel finden Sie unter [Portieren der **Scenarios**-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios).
+In C++/WinRT, Version 2.0.190530.8 und höher, erstellt [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) einen Observable-Vektor, der sowohl **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** als auch **IObservableVector\<IInspectable\>** unterstützt. Ein Beispiel finden Sie unter [Portieren der **Scenarios**-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios).
 
 Du kannst deine **Midl-Datei (.idl)** folgendermaßen erstellen (siehe auch [Einbeziehen von Laufzeitklassen in Midl-Dateien (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)).
 

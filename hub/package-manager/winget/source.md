@@ -6,16 +6,19 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f20021a0fa33da862e2361be60b730b041b49
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cb897f25324ab8a516d18f5defe7cffa3e6a0109
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824971"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166248"
 ---
 # <a name="source-command-winget"></a>Befehl „source“ (winget)
 
 [!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
+
+> [!NOTE]
+> Der Befehl **source** ist derzeit nur für die interne Verwendung vorgesehen. Zusätzliche Quellen werden derzeit nicht unterstützt.
 
 Mit dem Befehl **source** des Tools [winget](index.md) verwalten Sie die Repositorys, auf die Windows-Paket-Manager zugreift. Der Befehl **source** erlaubt es, die Repositorys **hinzuzufügen**, **zu entfernen**, **aufzulisten** und **zu aktualisieren**.
 
@@ -70,22 +73,24 @@ Der Unterbefehl **add** unterstützt außerdem den optionalen **type**-Parameter
 
 | Type  | Beschreibung |
 |--------------|-------------|
-| **Microsoft.PreIndexed.Package** | Der Typ der Quelle \<Standard>. |
+| **Microsoft.PreIndexed.Package** | Der Quellentyp \<default>. |
 
 ## <a name="list"></a>list
 
 Mit dem Unterbefehl **list** werden die derzeit aktivierten Quellen aufgezählt. Dieser Unterbefehl gibt auch Details zu einer bestimmten Quelle zurück.
 
-Syntax: `winget list [-n, --name] \<name>`
+Syntax: `winget source list [-n, --name] \<name>`
 
 ### <a name="list-all"></a>list all
 
 Der Unterbefehl **list** ohne weitere Argumente gibt die vollständige Liste der unterstützten Quellen zurück. Beispiel:
 
 ```CMD
-> C:\winget list
-> Current sources:
->     Contoso ->  https://www.contoso.com/cache
+> C:\winget source list
+> Name   Arg
+> -----------------------------------------
+> winget https://winget.azureedge.net/cache
+
 ```
 
 ### <a name="list-source-details"></a>list source details
@@ -111,7 +116,7 @@ Um ausführliche Informationen zur Quelle abzurufen, übergeben Sie den Namen, d
 
 Mit dem Unterbefehl **update** wird eine Aktualisierung einer einzelnen Quelle oder aller Quellen erzwungen.
 
-Syntax: `winget update [-n, --name] \<name>`
+Syntax: `winget source update [-n, --name] \<name>`
 
 ### <a name="update-all"></a>update all
 
@@ -119,7 +124,7 @@ Der Unterbefehl **update** ohne weitere Argumente fordert jedes einzelne Reposit
 
 ### <a name="update-source"></a>Updatequelle
 
-Mit dem Unterbefehl **update** in Kombination mit der Option **--name** kann eine einzelne Quelle angesprochen und aktualisiert werden. Beispiel: `C:\winget update --name contoso`
+Mit dem Unterbefehl **update** in Kombination mit der Option **--name** kann eine einzelne Quelle angesprochen und aktualisiert werden. Beispiel: `C:\winget source update --name contoso`
 
 ## <a name="remove"></a>Entfernen
 

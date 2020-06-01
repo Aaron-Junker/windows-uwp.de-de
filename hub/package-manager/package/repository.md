@@ -6,12 +6,12 @@ ms.author: denelon
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1a8ab3c6a2cc697729fb5551e686a465bf6a0c
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
+ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83825121"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83865027"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Übermitteln des Manifests an das Repository
 
@@ -91,9 +91,9 @@ Nun können Sie das neue Manifest per Push an das Remoterepository übermitteln.
     git commit -m "Submitting  ContosoApp version 1.0.0.yaml"
     ```
 
-3. Übermitteln Sie mit dem `push`-Befehl die Änderungen per Push das Remoterepository.
+3. Übermitteln Sie mit dem `push`-Befehl die Änderungen per Push an das Remoterepository.
     ```CMD
-    `git push`
+    git push
     ```
 
 ### <a name="step-5-create-a-pull-request"></a>Schritt 5: Erstellen einer Pull-Anforderung
@@ -104,7 +104,7 @@ Nachdem Sie Ihre Änderungen per Push übertragen haben, kehren Sie zu [https://
 
 ## <a name="validation-process"></a>Überprüfungsprozess
 
-Beim Erstellen einer Pull Request wird ein Automatisierungsprozess gestartet, der das Manifest validiert und ihre Pull Request verarbeitet. Wir fügen der Pull Request Beschriftungen hinzu, damit Sie den Fortschritt nachverfolgen können.
+Beim Erstellen einer Pull Request wird ein Automatisierungsprozess gestartet, der das Manifest validiert und ihre Pull Request verarbeitet. Wir fügen der Pull-Anforderung Beschriftungen hinzu, damit Sie den Fortschritt nachverfolgen können.
 
 ### <a name="submission-expectations"></a>Erwartungen hinsichtlich der Übermittlung
 

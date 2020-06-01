@@ -6,12 +6,12 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: c903c923a82edc03ffdce9c5790060cb65232cf8
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8c460ccd18bb1bb12e5322e0e08a17edbd9692f7
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824991"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166240"
 ---
 # <a name="install-command-winget"></a>Befehl „install“ (winget)
 
@@ -47,14 +47,33 @@ Mit den Optionen können Sie die Installation an Ihre jeweiligen Anforderungen a
 | **--name**   |  Schränkt die Suche auf den Namen der Anwendung ein. |  
 | **--moniker**   | Schränkt die Suche auf die für die Anwendung aufgelisteten Moniker ein. |  
 | **-v, --version**  |  Hiermit können Sie die zu installierende Version genau angeben. Wenn nicht angegeben, wird mit „latest“ die Anwendung mit der höchsten Version installiert. |  
-| **--tag**   |   Schränkt die Suche auf die für die Anwendung aufgelisteten Tags ein. |  
-| **-s, -source**   |  Schränkt die Suche auf die Quelle mit dem angegebenen Namen ein. Hierauf muss der Name der Quelle folgen. |  
-| **-e, -exact**   |   Verwendet die exakte Zeichenfolge in der Abfrage und berücksichtigt die Groß-/Kleinschreibung. Das Standardverhalten einer Teilzeichenfolge wird nicht verwendet. |  
-| **-i, -interactive** |  Führt den Installer im interaktiven Modus aus. In der Standardbenutzeroberfläche wird der Installationsfortschritt angezeigt. |  
-| **-h, -silent** |  Führt den Installer im unbeaufsichtigten Modus aus. Unterdrückt die gesamte Benutzeroberfläche. In der Standardbenutzeroberfläche wird der Installationsfortschritt angezeigt. |  
+| **-s, --source**   |  Schränkt die Suche auf die Quelle mit dem angegebenen Namen ein. Hierauf muss der Name der Quelle folgen. |  
+| **-e, --exact**   |   Verwendet die exakte Zeichenfolge in der Abfrage und berücksichtigt die Groß-/Kleinschreibung. Das Standardverhalten einer Teilzeichenfolge wird nicht verwendet. |  
+| **-i, --interactive** |  Führt den Installer im interaktiven Modus aus. In der Standardbenutzeroberfläche wird der Installationsfortschritt angezeigt. |  
+| **-h, --silent** |  Führt den Installer im unbeaufsichtigten Modus aus. Unterdrückt die gesamte Benutzeroberfläche. In der Standardbenutzeroberfläche wird der Installationsfortschritt angezeigt. |  
 | **-o, --log**  |  Die Protokollierung wird an eine Protokolldatei weitergeleitet. Sie müssen einen Pfad zu einer Datei angeben, für die Sie über die Schreibberechtigungen verfügen. |
-| **-override** | Eine Zeichenfolge, die direkt an den Installer übergeben wird.    |
-| **-l,--location** |    Gewünschter Installationsort (sofern unterstützt). |
+| **--override** | Eine Zeichenfolge, die direkt an den Installer übergeben wird.    |
+| **-l, --location** |    Gewünschter Installationsort (sofern unterstützt). |
+
+### <a name="example-queries"></a>Beispielabfragen
+
+Im folgenden Beispiel wird eine bestimmte Version einer Anwendung installiert.
+
+```CMD
+winget install powertoys --version 0.15.2
+```
+
+Im folgenden Beispiel wird eine Anwendung über ihre ID installiert.
+
+```CMD
+winget install --id Microsoft.PowerToys
+```
+
+Im folgenden Beispiel wird eine Anwendung nach Version und ID installiert.
+
+```CMD
+winget install --id Microsoft.PowerToys --version 0.15.2
+```
 
 ## <a name="multiple-selections"></a>Mehrfachauswahl
 
@@ -68,11 +87,11 @@ Syntax: `winget install --manifest \<file>`
 
 | Option  | Beschreibung |
 |-------------|-------------|  
-|  **-m,--manifest** | Der Pfad zum Manifest der zu installierenden Anwendung. |
+|  **-m, --manifest** | Der Pfad zum Manifest der zu installierenden Anwendung. |
 
 ### <a name="log-files"></a>Protokolldateien
 
-Die Protokolldateien für winget (sofern Sie nicht umgeleitet werden) befinden sich im folgenden Ordner: ** \%temp%\\AICLI\\ *.log**
+Die Protokolldateien für winget (sofern Sie nicht umgeleitet werden) befinden sich im folgenden Ordner: **\%temp%\\AICLI\\*.log**
 
 ## <a name="related-topics"></a>Zugehörige Themen
 

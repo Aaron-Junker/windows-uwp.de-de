@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, erstellen, Ereignis
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fb9b98ec362b59ad2593bbce24654f1dcfc7638
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fc12bf1abeabd1a1c3cfccfe3c6d3f12ebda65f3
+ms.sourcegitcommit: c4f912ba0313ae49632f81e38d7d2d983ac132ad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209205"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84200779"
 ---
 # <a name="author-events-in-cwinrt"></a>Erstellen von Ereignissen in C++/WinRT
 
@@ -71,6 +71,7 @@ Implementiere in `BankAccount.cpp` die Funktionen, wie im folgenden Codebeispiel
 ```cppwinrt
 // BankAccount.cpp
 ...
+#include "BankAccountWRC.g.cpp"
 namespace winrt::BankAccountWRC::implementation
 {
     winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
@@ -253,7 +254,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 ## <a name="parameterized-delegates-simple-signals-and-callbacks-within-a-project"></a>Parametrisierte Delegaten, einfache Signale und Rückrufe in einem Projekt
-Wenn Sie Ereignisse benötigen, die im Rahmen Ihres Visual Studio-Projekts intern sind (nicht Binary-übergreifend) und nicht auf Windows Runtime-Typen eingeschränkt, können Sie trotzdem die Klassenvorlage [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\> verwenden. Verwenden Sie einfach [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) anstelle eines tatsächlichen Windows Runtime-Delegattyps, da **winrt::delegate** auch Parameter unterstützt, die nicht aus Windows Runtime stammen.
+Wenn Sie Ereignisse benötigen, die im Rahmen Ihres Visual Studio-Projekts intern sind (nicht Binary-übergreifend) und nicht auf Windows-Runtime-Typen eingeschränkt, können Sie trotzdem die Klassenvorlage [**winrt::event**](/uwp/cpp-ref-for-winrt/event)\<Delegate\> verwenden. Verwenden Sie einfach [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) anstelle eines tatsächlichen Windows Runtime-Delegattyps, da **winrt::delegate** auch Parameter unterstützt, die nicht aus Windows Runtime stammen.
 
 Das folgende Beispiel zeigt zuerst eine Delegatsignatur, die keine Parameter akzeptiert (also im Prinzip ein einfaches Signal), und anschließend eine, die eine Zeichenfolge akzeptiert.
 
