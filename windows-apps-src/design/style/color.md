@@ -7,12 +7,15 @@ keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: c87dfbdc00df36c75a5b0b865376af352edcabbb
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970765"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867360"
 ---
 # <a name="color"></a>Farbe
 
@@ -235,6 +238,9 @@ Sie können auch dieselbe Farbe im Code mit der **FromArgb**-Methode erstellen.
 
 ```csharp
 Color LightBlue = Color.FromArgb(255,54,192,255);
+```
+```cppwinrt
+Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255);
 ```
 
 Die Buchstaben "Argb" stehen für „Alpha“ (Deckkraft), „Rot“, „Grün“ und „Blau“ – die vier Komponenten einer Farbe. Jedes Argument kann zwischen 0 und 255 liegen. Sie können den ersten Wert wahlweise weglassen und erhalten so eine standardmäßige Deckkraft von 255 oder 100 % undurchsichtig.

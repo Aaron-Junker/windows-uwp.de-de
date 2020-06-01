@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 299a25bb92c5afdb86ebc1569a1f98916baa3d09
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
+ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233949"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84151949"
 ---
 # <a name="introduction-to-windows-app-design"></a>Einführung in das Design von Windows-Apps
 
@@ -120,7 +120,7 @@ UWP-Apps interagieren mit der allgemeinen Windows-Umgebung über Kacheln und Ben
 
 Kacheln werden im Startmenü sowie beim Start Ihrer App angezeigt und geben einen Einblick in das Geschehen in Ihrer App. Ihr Mehrwert basiert auf dem zugrunde liegenden Inhalt und ihrem Design.
 
-UWP-Apps haben vier Kachelgrößen (klein, mittel, breit und groß), die mit dem Symbol und der Identität der App angepasst werden können. Hinweise zur Gestaltung von Kacheln für Ihre UWP-Apps finden Sie unter [Richtlinien für Kachel- und Symbolelemente](../shell/tiles-and-notifications/app-assets.md).
+UWP-Apps haben vier Kachelgrößen (klein, mittel, breit und groß), die mit dem Symbol und der Identität der App angepasst werden können. Hinweise zur Gestaltung von Kacheln für Ihre UWP-Apps finden Sie unter [Richtlinien für Kachel- und Symbolelemente](../style/app-icons-and-logos.md).
     :::column-end:::
     :::column:::
 ![Kacheln im Startmenü](images/shell.svg)

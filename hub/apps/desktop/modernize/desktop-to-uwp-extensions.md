@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b048de69a8a259509e5a5c54c5f1d61675a25a18
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209716"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854721"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
 
@@ -1372,7 +1372,7 @@ Starte einen Win32-Prozess, der als vollständig vertrauenswürdig eingestuft wi
 
 Diese Erweiterung kann nützlich sein, wenn du eine UWP-Benutzerschnittstelle erstellen möchtest, die auf allen Geräten ausgeführt werden kann, die Komponenten deiner Win32-Anwendung aber weiterhin als vollständig vertrauenswürdig eingestuft werden sollen.
 
-Erstelle einfach ein Windows-App-Paket für deine Win32-App. Füge diese Erweiterung dann der Paketdatei deiner UWP-App hinzu. Diese Erweiterungen gibt an, dass du eine ausführbare Datei im Windows-App-Paket starten möchtest.  Wenn du eine Kommunikation zwischen deiner UWP-App und deiner Win32-App ermöglichen möchtest, kannst du hierzu einen oder mehrere [App-Dienste](/windows/uwp/launch-resume/app-services.md) festlegen. Weitere Informationen zu diesem Szenario findest du [hier](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
+Erstelle einfach ein Windows-App-Paket für deine Win32-App. Füge diese Erweiterung dann der Paketdatei deiner UWP-App hinzu. Diese Erweiterungen gibt an, dass du eine ausführbare Datei im Windows-App-Paket starten möchtest.  Wenn du eine Kommunikation zwischen deiner UWP-App und deiner Win32-App ermöglichen möchtest, kannst du hierzu einen oder mehrere [App-Dienste](/windows/uwp/launch-resume/app-services) festlegen. Weitere Informationen zu diesem Szenario findest du [hier](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
 
 ## <a name="next-steps"></a>Nächste Schritte
 
