@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83579927"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257381"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -74,13 +74,13 @@ Es gibt mehrere Möglichkeiten, einer Desktop-App Identität zuzuweisen:
 * Verpacken Sie sie in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root). MSIX ist ein modernes App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps, WPF, Windows Forms und Win32-Apps bereitgestellt wird. Dadurch erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
 * Wenn es nicht möglich ist, MSIX-Pakete zur Bereitstellung Ihrer Desktop-App zu erstellen, können Sie ab Windows 10, Version 2004 Paketidentität bereitstellen, indem Sie ein *platzsparendes MSIX-Paket* erstellen, das nur ein Paketmanifest enthält. Weitere Informationen finden Sie unter [Identitätszuweisen für nicht verpackte Desktop-Apps](grant-identity-to-nonpackaged-apps.md).
 
-<a id="desktop-uwp-controls"/>
+<a id="desktop-uwp-controls"></a>
 
 ## <a name="uwp-controls-optimized-for-desktop-apps"></a>Für Desktop-Apps optimierte UWP-Steuerelemente
 
 Es spielt keine Rolle, ob Sie eine UWP-App erstellen, die ausschließlich auf die Familie der Desktopgeräte ausgerichtet ist, oder ob Sie UWP-Steuerelemente in einer WPF-, Windows Forms- oder C++-Win32-Desktop-App nutzen möchten: Die folgenden neuen und aktualisierten UWP-Steuerelemente sind für Desktop-optimierte Benutzeroberflächen basierend auf dem [Fluent Design-System](/windows/uwp/design/fluent-design-system/index) ausgelegt. Diese Steuerelemente wurden in Version 1809 von Windows 10 eingeführt (Update vom Oktober 2018 oder Version 10.0.17763).
 
-| Control |  Beschreibung |
+| Steuerelement |  Beschreibung |
 |------ |--------------|
 | [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Eine schnelle und einfache Möglichkeit, eine Reihe von Befehlen für Apps verfügbar zu machen, für die ggf. ein höherer Grad an Organisation und Gruppierung als bei **CommandBar** erforderlich ist. |
 | [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Ein Chevron als visueller Indikator wird angezeigt, um anzugeben, dass ein angefügtes Flyout mit weiteren Optionen vorhanden ist.  |
