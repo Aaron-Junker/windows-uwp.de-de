@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b2371d7a778f8abcfc7d3c57aba5ee85d516d859
-ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
+ms.openlocfilehash: fae8031ec8255cbfef313a9b75f459750be0aee3
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84124124"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257466"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Design-Toolkits und Beispiele für Windows-Apps
 
@@ -78,10 +78,13 @@ Hilfsfunktionen, benutzerdefinierte Steuerelemente und App-Dienste<br />
 <a href="/windows/uwpcommunitytoolkit/getting-started">Installationsanweisungen</a>
     :::column-end:::
     :::column:::
+        ![Windows Template Studio-Miniaturansicht](images/Windows-template-studio.png) <b>Windows Template Studio</b><br>
+        Richten Sie schnell eine UWP-App mit einer assistentenbasierten Benutzeroberfläche ein.<br />
+        <a href="https://aka.ms/wtsinstall">Herunterladen</a>
     :::column-end:::
 :::row-end:::
 
-## <a name="fonts"></a>Fonts
+## <a name="fonts"></a>Schriftarten
 
 * <a href="https://aka.ms/SegoeFonts">Symbolschriftarten Segoe UI und MDL2 (nur Mac)</a>
 * <a href="https://aka.ms/hololensiconfont">Hololens-Symbolschriftart (nur Windows)</a>
