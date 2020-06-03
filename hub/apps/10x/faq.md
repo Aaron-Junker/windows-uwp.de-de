@@ -2,18 +2,22 @@
 Description: Hier finden Sie Antworten auf einige grundlegende Entwickler Fragen zu Windows 10X.
 title: FAQ zu Windows 10X Developer
 ms.topic: article
-ms.date: 04/1/2020
+ms.date: 06/02/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: d168faf16bdd8a88e0cd4c52c680781061bfcf0d
-ms.sourcegitcommit: dadbc20564e4b0c0ecbab5fd5649dbf8ab08095a
+ms.openlocfilehash: 3ba14e33c098d3515522a9a5907065751fafba87
+ms.sourcegitcommit: 13bda6040988461a61b1b5561fde2f7a54835ccd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80581954"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84318236"
 ---
 # <a name="windows-10x-developer-faq"></a>FAQ zu Windows 10X Developer
+
+> [!IMPORTANT]
+> Wir haben kürzlich einige Änderungen an der Priorisierung für Windows 10 und Windows 10 x angekündigt.
+> Diese Ankündigungen enthalten Änderungen der Windows 10X-Formfaktor Prioritäten. [Weitere Informationen finden Sie hier.](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
 
 Windows 10X ist eine Produktlinie in der Windows-Familie, die für die Verwendung auf Dual-Screen-Geräten optimiert ist. Als Entwickler können Sie eine größere Zielgruppe erreichen, indem Sie Ihre APP für Windows 10X optimieren, indem Sie die neuen Features nutzen, die speziell für ein mobiles und zweistufige Zielgruppen spezifisch sind, und gleichzeitig dieselbe Breite an Windows 10-Funktionen und eine umfangreiche Desktop Unterstützung genießen. [Wir haben Windows 10X in späterer 2019 angekündigt](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97), und wir freuen uns, Sie in späterer 2020 zu veröffentlichen.
 
