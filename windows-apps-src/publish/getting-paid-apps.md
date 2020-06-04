@@ -1,69 +1,72 @@
 ---
 Description: Erfahren Sie mehr über das Empfangen von Zahlungen für Ihre apps, Add-ons (in-App-Produkte) und Werbeeinnahmen.
-title: Regelung der Bezahlung
+title: Erhalten der Bezahlung
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.date: 03/05/2019
+ms.date: 05/29/2020
 ms.topic: article
-keywords: Windows 10, UWP, Bezahlung, App-Verkäufe, App-Erlöse, Auszahlung, Store-Gebühr, Auszahlungssperre, Prozentsatz
+keywords: Windows 10, UWP, Zahlungen, App-Verkäufe, App-Verkäufe, Auszahlung, geschäftsgebühr, Auszahlungs Aufbewahrung, Prozentsatz
 ms.localizationpriority: medium
-ms.openlocfilehash: 853554a0a3a0507f1a8b9d8994618d16aa44bccc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5927e6636f1c5a60b4f3453e0493755176c649ad
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259993"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334225"
 ---
-# <a name="getting-paid"></a>Regelung der Bezahlung
+# <a name="getting-paid"></a>Erhalten der Bezahlung
 Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre apps, Add-ons und Werbeeinnahmen.
 
 > [!IMPORTANT]
 > Bevor Sie im Microsoft Store Geld von App-Verkäufen erhalten können, müssen Sie [Ihr Auszahlungs Konto einrichten und die erforderlichen Steuerformulare ausfüllen](setting-up-your-payout-account-and-tax-forms.md).
 
+> [!NOTE]
+> Wenden Sie sich an den Support, wenn Sie [nach Unterstützung](https://developer.microsoft.com/windows/support)bezüglich der Auszahlungen suchen möchten, einschließlich der Konfiguration von Auszahlungs Konten, fehlender Auszahlungen, dem Aufbewahren von Auszahlungen oder sonstigen anderen.
+
 ## <a name="store-fee"></a>Store-Gebühr
 
-Wenn Sie sich [für ein Entwicklerkonto registrieren](https://developer.microsoft.com/store/register), akzeptieren Sie die [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). In dieser Vereinbarung ist die Geschäftsbeziehung zwischen Ihnen und Microsoft in Bezug auf den Verkauf von Apps im Microsoft Store erläutert, einschließlich der Store-Gebühr, die Microsoft für jeden Verkauf erhebt.
+Wenn Sie sich [für ein Entwicklerkonto registrieren](https://developer.microsoft.com/store/register), akzeptieren Sie die [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). In diesem Vertrag wird die Beziehung zwischen Ihnen und Microsoft erläutert, die sich auf das verkaufen von apps im Microsoft Store bezieht, einschließlich der Kosten für den Kauf, den Microsoft für jeden Verkauf berechnet.
 
-Die Gebühren sind in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) offiziell definiert. Lesen Sie bei Fragen immer in diesem Dokument nach.
+Die Gebühren sind in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) offiziell definiert. Schauen Sie sich stets das Dokument an, wenn Fragen auftreten.
 
-Die Microsoft Store-Gebühr gilt für alle vom Microsoft Store erfassten App-Verkäufe einschließlich Add-Ons.
+Die Speicher Gebühr wird auf alle vom Microsoft Store erfassten App-Verkäufe, einschließlich Add-ons, angewendet.
 
 
-## <a name="price-tiers"></a>Preisniveaus
+## <a name="price-tiers"></a>Preisstufen
 
-Das Preisniveau bestimmt den [Verkaufspreis](set-and-schedule-app-pricing.md#base-price) in allen Ländern, in denen Sie Ihre App vertreiben möchten. Sie können auch zusätzliche Preis-Features verwenden, wie z. B. [um in verschiedenen Märkten unterschiedliche Preise zu verlangen](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) oder [Ihre App zum Erwerb anbieten](put-apps-and-add-ons-on-sale.md).
+Die von Ihnen ausgewählten Preisstufen legt den [Verkaufspreis](set-and-schedule-app-pricing.md#base-price) in allen Ländern fest, in denen Sie Ihre APP verteilen möchten. Sie können auch zusätzliche Preis Merkmale nutzen, wie z. b. das [Auswählen verschiedener Preise für verschiedene Märkte](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) oder [das Platzieren Ihrer APP](put-apps-and-add-ons-on-sale.md).
 
-Sie können die App kostenlos anbieten oder einen Preis auswählen, den Kunden zahlen müssen, um die App zu erwerben. Das Preisniveau beginnt bei 0,99 USD und steigen schrittweise (1,09 USD, 1,19 USD, usw.). Die Schritte zwischen den Preisniveaus werden mit der Höhe des Preises größer.
+Sie können die App kostenlos anbieten oder einen Preis auswählen, den Kunden zahlen müssen, um die App zu erwerben. Die Preisstufen beginnen bei 0,99 USD und erhöhen sich dann in weiteren Schritten (1,09 USD, 1,19 USD usw.). Die Schrittweite zwischen den Preisstufen erhöht sich bei zunehmendem Preis.
 
 > [!NOTE] 
-> Diese Preisniveaus gelten auch für alle Add-Ons, die Sie in der App anbieten.
+> Diese Preisstufen gelten auch für alle Add-ons, die Sie in Ihrer APP anbieten.
 
-Jedes Preisniveau hat einen entsprechenden Wert in jeder vom Store angebotenen Währungen. Diese Werte sollten Ihnen helfen, Ihre Apps weltweit zu vergleichbaren Preisen zu verkaufen. Aufgrund von Wechselkursschwankungen kann der genaue Verkaufsbetrag von Währung zu Währung jedoch geringfügig abweichen.
+Jede Preisstufe hat in allen Währungen, die vom Store angeboten werden, einen entsprechenden Wert. Diese Werte sollten Ihnen helfen, Ihre Apps weltweit zu vergleichbaren Preisen zu verkaufen. Aufgrund von Wechselkursänderungen kann der genaue Umsatz jedoch geringfügig von einer Währung zur anderen abweichen.
 
-Sie haben auch die Möglichkeit, einen formfreien Preis Ihrer Wahl in der lokalen Währung für einen bestimmten Markt anzugeben. Dadurch wird der Preis nur angepasst (auch wenn sich der Umrechnungskurs ändert), wenn Sie ein Update mit einem neuen Preis übermitteln. 
+Sie haben auch die Möglichkeit, einen Freiform-Preis Ihrer Wahl in der lokalen Währung eines bestimmten Markts einzugeben. Wenn Sie dies tun, wird der Preis nicht angepasst (auch nicht bei Wechselkursänderungen). Dazu müssen Sie ein Update mit einem neuen Preis übermitteln. 
 
-Beachten Sie, dass der von Ihnen ausgewählte Preis u. U. eine Verkaufs- oder Mehrwertsteuer enthält, die Kunden bezahlen müssen. Weitere Informationen finden Sie unter [Steuerinformationen zu kostenpflichtigen Apps](tax-details-for-paid-apps.md).
-
-
-## <a name="payout-reporting"></a>Auszahlungsberichte
-
-Sie können auf Details zu ihren Zahlungsinformationen zugreifen und Berichte in der **Auszahlungs Zusammenfassung** von [Partner Center](https://partner.microsoft.com/dashboard)herunterladen. Weitere Informationen zu den aufgeführten Details und zu den Kategorien, in die wir Ihre Erlöse einteilen, finden Sie unter [Auszahlungszusammenfassung](payout-summary.md).
+Berücksichtigen Sie, dass der von Ihnen ausgewählte Preis möglicherweise Verkaufs- oder Mehrwertsteuer enthält, die Ihre Kunden bezahlen müssen. Weitere Informationen finden Sie unter [Steuerinformationen zu kostenpflichtigen Apps](tax-details-for-paid-apps.md).
 
 
-## <a name="payout-timeframe"></a>Auszahlungszeitraum
+## <a name="payout-reporting"></a>Zahlungsberichte
 
-Zahlungen erfolgen monatlich (vorausgesetzt, der entsprechende Zahlungsschwellenwert wurde erreicht, und Sie haben die Auszahlung nicht gesperrt, wie unten beschrieben). In der Regel senden wir Zahlungen, die in einem bestimmten Monat fällig sind, bis zum 15. Tag dieses Monats. Beachten Sie, dass Zahlungen in der Regel zwischen drei und zehn zusätzliche Werktage benötigen, um Ihr Konto zu erreichen. Weitere Informationen finden Sie unter [Auszahlungsschwellenwerte, Methoden und Zeiträume](payment-thresholds-methods-and-timeframes.md).
+Sie können auf Details zu ihren Zahlungsinformationen zugreifen und in der **Zahlungsübersicht** im [Partner Center](https://partner.microsoft.com/dashboard) Berichte herunterladen. Weitere Einzelheiten zu den hier gezeigten Informationen und zur Kategorisierung des eingenommenen Betrags finden Sie unter [Zahlungsübersicht](payout-summary.md).
 
 
-##  <a name="payout-hold-status"></a>Auszahlungssperre
+## <a name="payout-timeframe"></a>Zahlungszeitrahmen
 
-Standardmäßig senden wir Zahlungen monatlich, wie oben beschrieben. Sie haben jedoch die Möglichkeit, Ihre Zahlungen für ein Programm auf dem halten zu platzieren, was uns daran hindert, Zahlungen an Ihr Konto zu senden. Wenn Sie Ihre Auszahlungen sperren, zeichnen wir weiterhin alle Ihre Umsätze auf und geben die Details in Ihrer **Auszahlungszusammenfassung** an. Allerdings senden wir so lange keine Zahlungen an Ihr Konto, bis Sie die Sperre entfernen.
+Die Zahlungen erfolgen monatlich (sofern der entsprechende Zahlungsschwellenwert erreicht wurde und Sie Ihre Auszahlung nicht, wie unten beschrieben, zurückgehalten haben). In der Regel senden wir alle in einem Monat fälligen Zahlungen am 15. des Monats. Beachten Sie, dass es in der Regel weitere 3 bis 10 Werktage dauert, bis die Zahlung auf Ihrem Auszahlungskonto eingeht. Weitere Informationen finden Sie unter [Zahlungsschwellenwerte, -methoden und -zeitrahmen](payment-thresholds-methods-and-timeframes.md).
 
-Wechseln Sie zu den **Entwicklereinstellungen**, um Ihre Zahlungen zu speichern. Suchen Sie unter " **Auszahlungs-und Steuer**Profil Zuweisung" im Abschnitt " **Auszahlungs-und Steuer Profil Zuweisung** " das Programm, für das Sie die Zahlungen erhalten möchten. Aktivieren Sie das Kontrollkästchen **meine Zahlung aufbewahren** , um die Zahlungen für dieses Programm zu speichern. Sie können die Auszahlungssperre jederzeit ändern. Beachten Sie jedoch, dass sich Ihre Auswahl auf die nächste monatliche Auszahlung auswirkt. Wenn Sie beispielsweise die April-Auszahlung sperren möchten, sollten Sie die Auszahlungssperre schon vor Ende März auf **Ein** festlegen.
 
-Nachdem Sie den Status der Auszahlungs Aufbewahrung auf ein festgelegt **haben, werden**alle Auszahlungen für dieses Programm angehalten, bis Sie den Schieberegler wieder auf aus-und **ausschalten**. Dann werden Sie im nächsten monatlichen Auszahlungszyklus berücksichtigt (vorausgesetzt, der entsprechende Zahlungsschwellenwert wurde erreicht). Wenn Sie zum Beispiel Ihre Auszahlungen gesperrt haben, aber eine Auszahlung im Juni generieren möchten, sollten Sie die Auszahlungssperre noch vor Ende Mai auf **Aus** setzen.
+##  <a name="payout-hold-status"></a>Aufbewahrungsstatus für Auszahlungen
+
+Standardmäßig senden wir Zahlungen monatlich (wie oben beschrieben). Allerdings haben Sie die Möglichkeit, Ihre Auszahlungen für ein Programm zurückzuhalten, sodass keine Zahlungen an Ihr Konto gesendet werden. Wenn Sie sich dafür entscheiden, Ihre Zahlungen anzuhalten, zeichnen wir weiterhin alle Einnahmen auf, die Sie verdienen, und geben die Details in Ihrer **Auszahlungs Zusammenfassung**an. Allerdings werden wir keine Zahlungen an Ihr Konto senden, bis Sie die Haltesperre aufheben.
+
+Um Ihre Zahlungen zurückzuhalten, wechseln Sie zu **Entwicklereinstellungen**. Suchen Sie unter **Auszahlung und Steuern** im Abschnitt **Auszahlung und Steuerprofilzuweisung** das Programm, für das Zahlungen zurückgehalten werden sollen. Aktivieren Sie das Kontrollkästchen **Meine Zahlung zurückhalten**, um die Zahlungen für dieses Programm zurückzuhalten. Sie können den Aufbewahrungsstatus für Auszahlungen jederzeit ändern, aber beachten Sie, dass sich Ihre Entscheidung auf die nächste monatliche Auszahlung auswirkt. Wenn Sie z. b. die Auszahlung von April halten möchten, stellen Sie sicher, dass der Status der Auszahlungs **Aufbewahrung vor Ende März auf ein** festgelegt ist.
+
+Sobald Sie den Aufbewahrungsstatus für Zahlungen auf **Ein** festgelegt haben, werden alle Auszahlungen für dieses Programm zurückgehalten, bis Sie den Schieberegler wieder auf **Aus** stellen. In diesem Fall sind Sie im nächsten monatlichen Auszahlungszyklus eingeschlossen (vorausgesetzt, alle geltenden Zahlungsschwellenwerte sind erfüllt). Wenn Sie z. b. Ihre Zahlungen angenommen haben, aber im Juni eine Auszahlung generieren möchten, müssen Sie sicherstellen, dass der Status der Auszahlungs Aufbewahrung vor dem Ende des Mai auf **Off** festzulegen.
 
 > [!NOTE]
-> Der **Status Ihrer Auszahlungs Aufbewahrung** gilt für jedes Programm einzeln (Microsoft Store, Werbung, Azure Marketplace usw.). Wenn Sie Zahlungen für all Ihre Programme durchsetzen möchten, müssen Sie die Zahlungen für jedes Programm einzeln aufbewahren.
+> Der **Aufbewahrungsstatus für Zahlungen** gilt individuell für einzelne Programme (Microsoft Store, Werbung, Azure Marketplace usw.). Wenn Sie die Zahlungen für alle Ihre Programme zurückhalten möchten, müssen Sie den Aufbewahrungsstatus für jedes einzelne Programm aktivieren.
 
 
  
