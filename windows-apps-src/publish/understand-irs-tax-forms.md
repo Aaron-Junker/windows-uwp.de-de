@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Steuern, IRS, interner Umsatz Dienst, Steuern, Einkommen steuern, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: ab115b5cb2b64c6f5bd05b166e904773948a876c
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 4a385c9c351dc0bb5db857fe7d1f5f267347f1f1
+ms.sourcegitcommit: 31c925736391ab166c06f34258564b00aeebd83a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854706"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428916"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>Kennenlernen der von Microsoft ausgestellten IRS-Steuerformulare
 
@@ -32,20 +32,21 @@ Nachfolgend erläutern wir diese Formulare eingehender, etwa, wer sie erhält un
 Die Steuerformulare werden von den folgenden Adressen an Sie gesendet:
 
 **US-Bürger:**
-<table>
-<tr><th>Geschäftsgruppe</th><th>Juristische Entität</th><th>Adresse</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>Redmond WA 98052 USA</td></tr>
-<tr><td>Werbung</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
-<table> 
+
+| Geschäftsgruppe         | Juristische Entität          | Adresse                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows, Office, Azure | Microsoft Corporation | One Microsoft Way<br>Redmond, WA 98052 USA        |
+| Werbung            | Microsoft Online Inc. | 6880 Sierra Center Park Way<br>Reno, NV 98511 USA |
 
 **Nicht-US-Bürger:**
-<table>
-<tr><th>Geschäftsgruppe</th><th>Juristische Entität</th><th>Adresse</th></tr>
-<tr><td>Windows, Office, Azure</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Corporation über Microsoft Irland, das als qualifizierter Vermittler für Microsoft Corporation fungiert)</td><td>One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland</td></tr>
-<tr><td>Lip</td><td>Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online Inc. über Microsoft Irland, das als Auszahlungs-Agent für Microsoft Online Inc. fungiert)</td><td>One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland</td></tr>
-<tr><td>Werbung</td><td>Microsoft Online Inc.</td><td>6100 Neil Road<br>Reno, NV 89511 USA</td></tr>
-<tr><td colspan="3">* Die Bürger der folgenden Länder, die Werbeeinnahmen verdienen, werden über Microsoft Ireland Operations Limited bezahlt: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechien, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, China, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich</td></tr>
-</table>
+| Geschäftsgruppe         | Juristische Entität          | Adresse                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows, Office, Azure | Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Corporation über Microsoft Irland, das als qualifizierter Vermittler für Microsoft Corporation fungiert) | One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland|
+| Werbung\*          | Microsoft Ireland Operations Limited (Zahlung erfolgt durch Microsoft Online Inc. über Microsoft Irland, das als Auszahlungs-Agent für Microsoft Online Inc. fungiert) | One Microsoft Place<br>Südcounty- &nbsp; &nbsp; Geschäfts &nbsp; Park<br>Leopardstown, Dublin 18 Irland |
+| Werbung            | Microsoft Online Inc. | 6880 Sierra Center Park Way<br>Reno, NV 98511 USA |
+
+>[!NOTE]
+> \*Die Bürger der folgenden Länder, die Werbeeinnahmen verdienen, werden über Microsoft Ireland Operations Limited bezahlt: Österreich, Belgien, Bulgarien, Kroatien, Zypern, Tschechien, Dänemark, Estland, Finnland, Frankreich, Deutschland, Griechenland, Ungarn, Irland, China, Italien, Lettland, Liechtenstein, Litauen, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Polen, Portugal, Rumänien, Slowakei, Slowenien, Südafrika, Spanien, Schweden, Schweiz, Vereinigtes Königreich
 
 ## <a name="for-developers-located-in-the-united-states"></a>Für Entwickler in den USA
 
