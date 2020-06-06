@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f79b7247a7e1a1889c530a16c280f490db51042e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970745"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262771"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>Bildschirmgrößen und Haltepunkte
 
@@ -98,8 +98,3 @@ UWP-Apps skalieren deine Benutzeroberfläche automatisch, um sicherzustellen, da
 - Verwende bis zu drei Spalten/Regionen.
 - Zeigen Sie das Suchfeld an.
 - Platzieren Sie den [Navigationsbereich](../controls-and-patterns/navigationview.md) im angedockten Modus so, dass er immer angezeigt wird.
-
->[!TIP] 
-> Mit [**Continuum for Phone**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN) können Benutzer kompatible Windows 10-Mobilgeräte mit einem Bildschirm, einer Maus und einer Tastatur verbinden, um ihr Gerät wie einen Laptop zu nutzen. Berücksichtige diese neue Funktionalität bei der Entwicklung für bestimmte Breakpoints – ein Mobiltelefon gehört nicht immer derselben Größenklasse an.
-
-
