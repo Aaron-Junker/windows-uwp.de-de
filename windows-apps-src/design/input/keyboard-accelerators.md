@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2509743bf9e847fb740816e3552f4172cf644c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 694ab7a3897bdf13189d61ab70ed05b9169b834c
+ms.sourcegitcommit: 020d0ff0e5abf46b2ed660eac61251b32bf150bc
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970705"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716038"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
@@ -331,7 +331,7 @@ Es wird empfohlen, Tastaturbeschleuniger in Windows-Anwendungen konsistent zu ma
 
 Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von apps nicht immer möglich.
 
-| **Bearbeitung** | **Allgemeine Tastatur Beschleunigung** |
+| **Bearbeitung läuft** | **Allgemeine Tastatur Beschleunigung** |
 | ------------- | ----------------------------------- |
 | Bearbeitungsmodus starten | STRG + E |
 | Alle Elemente in einem Steuerelement oder Fenster mit Fokus auswählen | STRG+A |
@@ -348,7 +348,7 @@ Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von a
 | Ausgewähltes Element löschen (mit Rückgängigmachen) | ENTF, STRG + D |
 | Ausgewähltes Element löschen (ohne Rückgängigmachen) | UMSCHALT + ENTF |
 | Fett | STRG+B |
-| Unterstrichen | STRG + U |
+| Underline | STRG + U |
 | Kursiv | STRG+I |
 
 | **Navigation** | |
@@ -358,13 +358,13 @@ Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von a
 
 | **Weitere Aktionen** | |
 | ------------- | ----------------------------------- |
-| Favoriten hinzufügen | STRG + D | 
+| Favoriten hinzufügen | STRG+D | 
 | Aktualisieren | F5 oder STRG + R | 
 | Vergrößern | STRG + + | 
 | Verkleinern | STRG +- | 
 | In Standardansicht Zoomen | STRG + 0 | 
 | Speichern | STRG+ S | 
-| Close (Schließen) | STRG + W | 
+| Schließen | STRG + W | 
 | print | STRG+P | 
 
 Beachten Sie, dass einige der Kombinationen für lokalisierte Versionen von Windows nicht gültig sind. Beispielsweise wird in der spanischen Version von Windows STRG + N als fett formatiert anstelle von STRG + B verwendet. Es wird empfohlen, lokalisierte Tastaturbeschleuniger bereitzustellen, wenn die APP lokalisiert wird.
@@ -530,8 +530,8 @@ Da das Ereignis " [Merkmal empfangen](https://docs.microsoft.com/uwp/api/windows
 Die Vorschau Eingabeereignisse werden vor allen anderen Ereignissen ausgelöst. Wenn Sie diese Ereignisse nicht behandeln, wird die Zugriffstaste für das Element, das den Fokus besitzt, ausgelöst, gefolgt vom KeyDown-Ereignis. Beide Ereignisse Blasen bis zur Behandlung.
 
 
-![Key Event Sequence](images/accelerators/accelerators_keyevents.png)
-***Key-Ereignis Sequenz***
+![Key Event Sequence ](images/accelerators/accelerators_keyevents.png)
+ ***Key-Ereignis Sequenz***
 
 Reihenfolge der Ereignisse:
 
@@ -576,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 Es wird empfohlen, alle Tastaturbeschleuniger zu lokalisieren. Dies ist mit der standardmäßigen UWP-Ressourcen Datei (. resw) und dem x:UID-Attribut in den XAML-Deklarationen möglich. In diesem Beispiel lädt der Windows-Runtime die Ressourcen automatisch.
 
-![Lokalisierung der Tastatur Beschleunigung mit UWP-](images/accelerators/accelerators_localization.png)
-Ressourcen Datei***Tastaturbeschleuniger Lokalisierung mit UWP-Ressourcen Datei***
+![Lokalisierung der Tastatur Beschleunigung mit UWP-Ressourcen Datei ](images/accelerators/accelerators_localization.png)
+ ***Tastaturbeschleuniger Lokalisierung mit UWP-Ressourcen Datei***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -602,8 +602,8 @@ void AddAccelerator(
       { 
         Modifiers = keyModifiers, Key = key
       };
-    accelerator.Invoked = handler;
-    this.KeyAccelerators.Add(accelerator);
+    accelerator.Invoked += handler;
+    this.KeyboardAccelerators.Add(accelerator);
   }
 ```
 
