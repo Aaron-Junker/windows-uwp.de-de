@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Windows UI Library, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dce8e7ea08b18921f228b3da2e679a9edb02228
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8242055e3c448e2720226859f2ea10e1ae54794f
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79200978"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437134"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>Eine einfache C++/WinRT-Windows-UI-Beispielbibliothek
 
@@ -49,26 +49,28 @@ Klicke auf **Projekt** \> **NuGet-Pakete verwalten...** \> **Durchsuchen**, gib 
 </muxc:NavigationView>
 ```
 
-## <a name="edit-mainpagecpp-and-h-as-necessary"></a>Bearbeiten von „MainPage.cpp“ und „.h“ nach Bedarf
+## <a name="edit-pchh-as-necessary"></a>Bearbeiten Sie „pch.h" nach Bedarf.
+
+Wenn du einem C++/WinRT-Projekt ein NuGet-Paket hinzufügst (z. B. das Paket **Microsoft.UI.Xaml**, das du zuvor hinzugefügt hast) und das Projekt erstellst, generieren die Tools einen Satz von Projektionsheaderdateien im Ordner `\Generated Files\winrt` des Projekts. Wenn du die exemplarische Vorgehensweise befolgt hast, besitzt du jetzt einen Ordner `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Wenn du diese Headerdateien in das Projekt einbinden möchtest, damit Verweise auf diese neuen Typen aufgelöst werden, kannst du zu deiner vorkompilierten Headerdatei wechseln (normalerweise `pch.h`) und sie einschließen.
+
+Sie brauchen nur die Überschriften für die von Ihnen verwendeten Typen einzubeziehen. Hier finden Sie jedoch ein Beispiel, in dem alle generierten Headerdateien für das **Microsoft.UI.Xaml**-Paket einbezogen werden.
+
+```cppwinrt
+// pch.h
+...
+#include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
+#include "winrt/Microsoft.UI.Xaml.Controls.h"
+#include "winrt/Microsoft.UI.Xaml.Controls.Primitives.h"
+#include "winrt/Microsoft.UI.Xaml.Media.h"
+#include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
+...
+```
+
+## <a name="edit-mainpagecpp"></a>Bearbeiten von „MainPage.cpp“
 
 Lösche in `MainPage.cpp` den Code in deiner Implementierung von **MainPage::ClickHandler**, da sich *myButton* nicht mehr im XAML-Markup befindet.
 
-Bearbeite in `MainPage.h` die Include-Elemente, sodass sie wie in der folgenden Auflistung aussehen.
-
-```cppwinrt
-#include "MainPage.g.h"
-#include "winrt/Microsoft.UI.Xaml.Controls.h"
-#include "winrt/Microsoft.UI.Xaml.XamlTypeInfo.h"
-```
-
-Erstelle jetzt das Projekt.
-
-Wenn du einem C++/WinRT-Projekt ein NuGet-Paket hinzufügst (z. B. das Paket **Microsoft.UI.Xaml**, das du zuvor hinzugefügt hast) und das Projekt erstellst, generieren die Tools einen Satz von Projektionsheaderdateien im Ordner `\Generated Files\winrt` des Projekts. Wenn du die exemplarische Vorgehensweise befolgt hast, besitzt du jetzt einen Ordner `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt`. Die Bearbeitung, die Sie oben an `MainPage.h` vorgenommen haben, bewirkt, dass diese Projektionsheaderdateien für WinUI für **MainPage** sichtbar werden. Und das ist notwendig, damit der Verweis in **MainPage** auf den Typ **Microsoft::UI::Xaml::Controls::NavigationView** aufgelöst wird.
-
-> [!IMPORTANT]
-> In einer realen Anwendung sollen die Headerdateien der WinUI-Projektion für *alle* XAML-Seiten in Ihrem Projekt sichtbar sein, nicht nur für **MainPage**. In diesem Fall würden Sie die Include-Elemente der beiden WinUI-Projektionsheaderdateien in Ihre vorkompilierte Headerdatei (normalerweise `pch.h`) verschieben. Dann werden Verweise auf Typen im NuGet-Paket überall in Ihrem Projekt aufgelöst. Für eine minimale, einseitige Anwendung wie die, die in dieser exemplarischen Vorgehensweise erstellt wird, ist es nicht notwendig, `pch.h` zu verwenden, sondern es reicht, die Header in `MainPage.h` einzufügen.
-
-Jetzt kannst du das Projekt ausführen.
+Jetzt kannst du das Projekt kompilieren und ausführen.
 
 ![Screenshot: einfache C++/WinRT-Windows-UI-Beispielbibliothek](images/winui.png)
 

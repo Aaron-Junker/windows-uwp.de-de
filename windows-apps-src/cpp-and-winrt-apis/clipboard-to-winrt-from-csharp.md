@@ -5,12 +5,12 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, C#, Beispiel, Zwischenablage, Fall, Studie
 ms.localizationpriority: medium
-ms.openlocfilehash: de19d4624cbcf6f102b2eb2067c9f0ff9c583f0b
-ms.sourcegitcommit: 29daa3959304d748e4dec4e6f8e774fade65aa8d
+ms.openlocfilehash: 660eac0cb2b0679815d628f60b77bc5ac01d042f
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851604"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334235"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>Portieren des Beispiels „Zwischenablage“ (Clipboard) von C# zu C++/WinRT – eine Fallstudie
 
@@ -32,10 +32,11 @@ Bei Typen ist es etwas anders. Sie *definieren* einen Typ, indem Sie seinen Name
 
 ## <a name="download-and-test-the-clipboard-sample"></a>Herunterladen und Testen des Beispiels „Zwischenablage“
 
-Besuchen Sie die Webseite des [Beispiels „Zwischenablage“](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/), und klicken Sie auf **ZIP herunterladen**. Entpacken Sie die heruntergeladene Datei, und werfen Sie einen Blick auf die Ordnerstruktur.
+Besuchen Sie die Webseite des [Beispiels „Zwischenablage“](/samples/microsoft/windows-universal-samples/clipboard/), und klicken Sie auf **ZIP herunterladen**. Entpacken Sie die heruntergeladene Datei, und werfen Sie einen Blick auf die Ordnerstruktur.
 
-- Die C#-Version des Beispielquellcodes befindet sich im Ordner mit dem Namen `cs`. Andere von der C#-Version verwendete Dateien befinden sich in den Ordnern `shared` und `SharedContent`.
-- Die C++/WinRT-Version des Beispielquellcodes finden Sie im [Ordner cppwinrt](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) im [Repository des Beispiels](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard) auf GitHub.
+- Die C#-Version des Beispielquellcodes befindet sich im Ordner mit dem Namen `cs`.
+- Die C++/WinRT-Version des Beispielquellcodes befindet sich im Ordner mit dem Namen `cppwinrt`.
+- Andere Dateien (sowohl von der C#-Version als auch von der/WinRT-Version verwendete) befinden sich C++ in den Ordnern `shared` und `SharedContent`.
 
 In der exemplarischen Vorgehensweise in diesem Thema wird gezeigt, wie Sie die C++/WinRT-Version des Beispiels „Clipboard“ neu erstellen können, indem Sie sie aus dem C#-Quellcode portieren. Auf diese Weise können Sie sehen, wie Sie Ihre eigenen C#-Projekte zu C++/WinRT portieren können.
 
@@ -779,7 +780,7 @@ Abgesehen von diesen Elementen befolgen Sie einfach dieselben Anweisungen wie zu
 
 Eine sehr gängige Ursache von Compiler-/Linkerfehlern ist das Vergessen, die C++/WinRT-Headerdateien des Windows-Namespace einzuschließen, die Sie benötigen. Weitere Informationen zu einem möglichen Fehler finden Sie unter [Warum erhalte ich den Fehler „LNK2019: Nicht aufgelöstes externes Symbol“ vom Linker?](/windows/uwp/cpp-and-winrt-apis/faq#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error).
 
-Wenn Sie die exemplarische Vorgehensweise durcharbeiten und **DisplayToast** selbst portieren möchten, können Sie Ihre Ergebnisse mit dem Code in der C++/WinRT-Version des von Ihnen heruntergeladenen Quellcodes für das Beispiel „Zwischenablage“ vergleichen (der sich in [`Windows-universal-samples/Samples/Clipboard/cppwinrt`](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt)`/Clipboard.sln` befindet).
+Wenn Sie die exemplarische Vorgehensweise durcharbeiten und **DisplayToast** selbst portieren möchten, können Sie Ihre Ergebnisse mit dem Code in der C++/WinRT-Version in der von Ihnen heruntergeladenen ZIP-Datei des Quellcodes für das [Beispiel „Zwischenablage“](/samples/microsoft/windows-universal-samples/clipboard/) vergleichen.
 
 #### <a name="enableclipboardcontentchangednotifications"></a>**EnableClipboardContentChangedNotifications**
 
@@ -1048,7 +1049,7 @@ void SampleState::DisplayChangedFormats()
 
 Der Entwurf der oben gezeigten C++/WinRT-Version ist geringfügig ineffizient. Zuerst erstellen wir eine **std::wostringstream**. Wir können aber auch die **BuildClipboardFormatsOutputString**-Methode aufrufen (die wir zuvor portiert haben). Diese Methode erstellt ihre eigene **std::wostringstream**. Außerdem wird ihr Stream in eine **winrt::hstring** umgewandelt und diese zurückgegeben. Wir rufen die [**hstring::c_str**](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function)-Funktion auf, um diese zurückgegebenen **hstring** wieder zurück in eine Zeichenfolge im C-Format umzuwandeln, und anschließend fügen wir diese dann in unseren Stream ein. Es wäre effizienter, nur einen **std::wostringstream** zu erstellen und diesen (bzw. einen Verweis darauf) zu übergeben, damit Methoden Zeichenfolgen direkt einfügen können.
 
-So gehen wir in der C++/WinRT-Version des „Zwischenablage“-Beispiel[quellcodes](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) vor. In diesem Quellcode gibt es eine neue private statische Methode namens **samplestate::AddClipboardFormatsOutputString**, die einen Verweis auf einen Ausgabestream akzeptiert und bearbeitet. Und dann werden die Methoden **SampleState::DisplayChangedFormats** und **SampleState::BuildClipboardFormatsOutputString** neu einbezogen, um diese neue Methode aufzurufen. Dies entspricht funktional den Codelistings in diesem Thema, ist aber effizienter.
+So gehen wir in der C++/WinRT-Version des Quellcodes für das [Beispiel „Zwischenablage“](/samples/microsoft/windows-universal-samples/clipboard/) (in der von Ihnen heruntergeladenen ZIP-Datei) vor. In diesem Quellcode gibt es eine neue private statische Methode namens **samplestate::AddClipboardFormatsOutputString**, die einen Verweis auf einen Ausgabestream akzeptiert und bearbeitet. Und dann werden die Methoden **SampleState::DisplayChangedFormats** und **SampleState::BuildClipboardFormatsOutputString** neu einbezogen, um diese neue Methode aufzurufen. Dies entspricht funktional den Codelistings in diesem Thema, ist aber effizienter.
 
 #### <a name="footer_click"></a>**Footer_Click**
 
@@ -1104,7 +1105,7 @@ In den letzten beiden Zeilen werden Portierungsmuster wiederholt, die uns bereit
 
 #### <a name="handleclipboardchanged"></a>**HandleClipboardChanged**
 
-Am Portieren dieser Methode ist nichts Neues beteiligt. Sie können die Versionen von C# und C++/WinRT im Beispielquellcode vergleichen.
+Am Portieren dieser Methode ist nichts Neues beteiligt. Sie können die C# -und C++/WinRT-Versionen in der von Ihnen heruntergeladenen ZIP-Datei des Quellcodes für das [Beispiel „Zwischenablage“](/samples/microsoft/windows-universal-samples/clipboard/) vergleichen.
 
 #### <a name="onclipboardchanged-and-onwindowactivated"></a>**OnClipboardChanged** und **OnWindowActivated**
 

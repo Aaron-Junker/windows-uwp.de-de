@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a4d0fb13b28babb3d99d0f763d9e7dc6decd2b
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 56104dd5608356b47a405c37eba71e544c5ba23c
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233786"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257431"
 ---
 # <a name="inking-controls"></a>Steuerelemente für Freihandeingaben
 
@@ -72,7 +72,7 @@ Microsoft Edge verwendet „InkCanvas” und „InkToolbar” für **Webseitenno
 
 **Windows Ink-Arbeitsbereich**
 
-Die InkCanvas- und InkToolbar-Steuerelemente werden auch für den **Skizzenblock** und **Bildschirmskizzen** im **Windows Ink-Arbeitsbereich** verwendet.  
+Die InkCanvas- und InkToolbar-Steuerelemente werden auch für **Ausschneiden und skizzieren** im **Windows Ink-Arbeitsbereich** verwendet.  
 ![InkToolbar-Steuerelement im Windows Ink-Arbeitsbereich](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>Erstellen eines InkCanvas- und InkToolbar-Steuerelements
