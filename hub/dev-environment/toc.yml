@@ -1,36 +1,6 @@
 - name: Windows-Entwicklungsumgebung
   href: index.yml
   items:
-    - name: Windows Paket-Manager
-      items:
-        - name: Übersicht
-          href: ../package-manager/index.md
-        - name: Verwenden des Tools „winget“
-          items:
-            - name: Übersicht
-              href: ../package-manager/winget/index.md
-            - name: Befehl „hash“
-              href: ../package-manager/winget/hash.md
-            - name: Befehl „help“
-              href: ../package-manager/winget/help.md
-            - name: Befehl „install“
-              href: ../package-manager/winget/install.md
-            - name: Befehl „search“
-              href: ../package-manager/winget/search.md
-            - name: Befehl „show“
-              href: ../package-manager/winget/show.md
-            - name: Befehl „source“
-              href: ../package-manager/winget/source.md
-            - name: Befehl „validate“
-              href: ../package-manager/winget/validate.md
-        - name: Übermitteln von Paketen
-          items:
-            - name: Übersicht
-              href: ../package-manager/package/index.md
-            - name: Erstellen des Paketmanifests
-              href: ../package-manager/package/manifest.md
-            - name: Übermitteln des Manifests an das Repository
-              href: ../package-manager/package/repository.md
     - name: Entwickeln mit Python
       items:
         - name: Übersicht
@@ -83,6 +53,40 @@
           href: ../android/defender-settings.md
         - name: Testen auf Gerät oder Emulator
           href: ../android/emulator.md
+    - name: Windows Paket-Manager
+      items:
+        - name: Übersicht
+          href: ../package-manager/index.md
+        - name: Verwenden des Tools „winget“
+          items:
+            - name: Übersicht
+              href: ../package-manager/winget/index.md
+            - name: Befehl „hash“
+              href: ../package-manager/winget/hash.md
+            - name: Befehl „help“
+              href: ../package-manager/winget/help.md
+            - name: Befehl „install“
+              href: ../package-manager/winget/install.md
+            - name: Befehl „search“
+              href: ../package-manager/winget/search.md
+            - name: Befehl „show“
+              href: ../package-manager/winget/show.md
+            - name: Befehl „source“
+              href: ../package-manager/winget/source.md
+            - name: Befehl „validate“
+              href: ../package-manager/winget/validate.md
+        - name: Übermitteln von Paketen
+          items:
+            - name: Übersicht
+              href: ../package-manager/package/index.md
+            - name: Erstellen des Paketmanifests
+              href: ../package-manager/package/manifest.md
+            - name: Übermitteln des Manifests an das Repository
+              href: ../package-manager/package/repository.md
+    - name: Windows-Subsystem für Linux
+      href: 'https://docs.microsoft.com/windows/wsl/'
+    - name: Windows-Terminal
+      href: 'https://docs.microsoft.com/windows/terminal/'
     - name: Leitfaden für Mac zu Windows
       items:
         - name: Ändern der Entwicklungsumgebung
@@ -95,21 +99,3 @@
           href: 'mac-to-windows.md#terminal-and-shell'
         - name: Apps und Hilfsprogramme
           href: 'mac-to-windows.md#apps-and-utilities'
-    - name: Windows-Subsystem für Linux
-      items:
-        - name: Informationen zu WSL
-          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
-        - name: Informationen zu WSL 2
-          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
-        - name: Gegenüberstellung von WSL 1 und WSL 2
-          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
-        - name: Benutzerkonten und Berechtigungen
-          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
-    - name: Windows-Terminal
-      items:
-        - name: Übersicht
-          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
-        - name: Benutzerhandbuch
-          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
-        - name: Benutzerdefinierte Einstellungen
-          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'

@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, Zahlungen, App-Verkäufe, App-Verkäufe, Auszahlung, geschäftsgebühr, Auszahlungs Aufbewahrung, Prozentsatz
 ms.localizationpriority: medium
-ms.openlocfilehash: 5927e6636f1c5a60b4f3453e0493755176c649ad
-ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
+ms.openlocfilehash: 0d42677aeda694e2fc8924cee1832b62d98b15e5
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84334225"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746770"
 ---
 # <a name="getting-paid"></a>Erhalten der Bezahlung
 Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre apps, Add-ons und Werbeeinnahmen.
@@ -20,7 +20,7 @@ Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre ap
 > Bevor Sie im Microsoft Store Geld von App-Verkäufen erhalten können, müssen Sie [Ihr Auszahlungs Konto einrichten und die erforderlichen Steuerformulare ausfüllen](setting-up-your-payout-account-and-tax-forms.md).
 
 > [!NOTE]
-> Wenden Sie sich an den Support, wenn Sie [nach Unterstützung](https://developer.microsoft.com/windows/support)bezüglich der Auszahlungen suchen möchten, einschließlich der Konfiguration von Auszahlungs Konten, fehlender Auszahlungen, dem Aufbewahren von Auszahlungen oder sonstigen anderen.
+> Wenn Sie Unterstützung in Bezug auf Auszahlungen benötigen, einschließlich der Konfiguration von Auszahlungskonten, fehlenden Auszahlungen, dem Zurückhalten von Auszahlungen oder sonstigen Fragen, wenden Sie sich [hier](https://developer.microsoft.com/windows/support) an den Support.
 
 ## <a name="store-fee"></a>Store-Gebühr
 
@@ -40,7 +40,7 @@ Sie können die App kostenlos anbieten oder einen Preis auswählen, den Kunden z
 > [!NOTE] 
 > Diese Preisstufen gelten auch für alle Add-ons, die Sie in Ihrer APP anbieten.
 
-Jede Preisstufe hat in allen Währungen, die vom Store angeboten werden, einen entsprechenden Wert. Diese Werte sollten Ihnen helfen, Ihre Apps weltweit zu vergleichbaren Preisen zu verkaufen. Aufgrund von Wechselkursänderungen kann der genaue Umsatz jedoch geringfügig von einer Währung zur anderen abweichen.
+Jede Preisstufe hat in allen Währungen, die vom Store angeboten werden, einen entsprechenden Wert. Diese Werte sollten Ihnen helfen, Ihre Apps weltweit zu vergleichbaren Preisen zu verkaufen. Aufgrund von Wechselkursänderungen kann der genaue Umsatz jedoch geringfügig von einer Währung zur anderen abweichen. Die Wechselkurse werden monatlich berechnet. Je nachdem, wann die Transaktion stattfindet, wird der entsprechende Wechselkurs angewendet. Der Austausch Kurs und der Datumsbereich, für den er erzwungen wurde, werden im Auszahlungsbericht in den Spalten ExchangeRate bzw. exchangeratedate angegeben.
 
 Sie haben auch die Möglichkeit, einen Freiform-Preis Ihrer Wahl in der lokalen Währung eines bestimmten Markts einzugeben. Wenn Sie dies tun, wird der Preis nicht angepasst (auch nicht bei Wechselkursänderungen). Dazu müssen Sie ein Update mit einem neuen Preis übermitteln. 
 

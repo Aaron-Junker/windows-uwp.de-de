@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fae8031ec8255cbfef313a9b75f459750be0aee3
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: 2528ae4dabf072872ce765eb7bfd696c2b29d3f7
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257466"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746780"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>Design-Toolkits und Beispiele für Windows-Apps
 
@@ -45,22 +45,6 @@ v1901, Januar 2019<br>
     :::column-end:::
 :::row-end:::
 
-:::row:::
-    :::column:::
-![Herobild](images/adobe-illustrator.png)
-<b>Adobe Illustrator-Toolkit</b><br>
-v1806, Juni 2018<br>
-<a href="https://aka.ms/adobeillustratortoolkit">Herunterladen</a>
-    :::column-end:::
-    :::column:::
-![Herobild](images/adobe-photoshop.png)
-<b>Adobe Photoshop-Toolkit</b><br>
-v1705, Mai 2017<br>
-<a href="https://aka.ms/adobephotoshoptoolkit">Herunterladen</a>
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
 
 ## <a name="developer-toolkits-and-libraries"></a>Entwicklertoolkits und -bibliotheken
 
@@ -84,7 +68,7 @@ Hilfsfunktionen, benutzerdefinierte Steuerelemente und App-Dienste<br />
     :::column-end:::
 :::row-end:::
 
-## <a name="fonts"></a>Schriftarten
+## <a name="fonts"></a>Fonts
 
 * <a href="https://aka.ms/SegoeFonts">Symbolschriftarten Segoe UI und MDL2 (nur Mac)</a>
 * <a href="https://aka.ms/hololensiconfont">Hololens-Symbolschriftart (nur Windows)</a>

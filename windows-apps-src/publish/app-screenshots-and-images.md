@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, Nachspann, Video, Screenshot, Bild, Symbol, Store-Auflistung, Listen Bilder speichern
 ms.localizationpriority: medium
-ms.openlocfilehash: 7995f7d8539ee5835ee9ae079305731879decc95
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 6a09395a57a83eaa57124173723b96a87d14b3b3
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255184"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746750"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>App-Screenshots, -Bilder und -Trailer
 
@@ -61,7 +61,7 @@ Sie können Store-Logos hochladen, um eine besser angepasste Anzeige im Speicher
 
 Sie können diese Images als PNG-Dateien (nicht größer als 50 MB) bereitstellen, von denen jeder die folgenden Richtlinien befolgt.
 
-### <a name="916-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>9:16 Poster-Grafik (720 x 1080 oder 1440 x 2160 Pixel)
+### <a name="23-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>2:3 Poster-Grafik (720 x 1080 oder 1440 x 2160 Pixel)
 
 Dies wird als hauptlogobild für Kunden auf Windows 10-und Xbox-Geräten verwendet. Daher wird **dringend empfohlen** , dieses Image bereitzustellen, um eine ordnungsgemäße Anzeige sicherzustellen. Ihre Auflistung wird möglicherweise nicht angezeigt, wenn Sie Sie nicht einschließen, und Sie ist nicht mit anderen Listen konsistent, die Kunden beim Durchsuchen des Stores sehen. Dieses Image kann auch in Suchergebnissen oder in editorimage-Auflistungen verwendet werden.
 
@@ -72,7 +72,7 @@ Dieses Bild sollte den Namen Ihrer APP enthalten, und jeder Text im Image sollte
 
 ### <a name="11-box-art-1080-x-1080-or-2160-x-2160-pixels"></a>1:1 Box-Grafik (1080 x 1080 oder 2160 x 2160 Pixel)
 
-Dieses Bild wird möglicherweise auf verschiedenen Store-Seiten für Windows 10 (einschließlich Xbox) angezeigt, und wenn Sie das **9:16 Poster-Grafik** Bild nicht angeben, wird es als Hauptlogo verwendet. Dieses Bild sollte auch den Namen Ihrer APP enthalten. Text Überlagerungen können im unteren Quartal dieses Bilds angezeigt werden. Fügen Sie also keine Text-oder Schlüsselbilder ein. Stellen Sie sicher, dass Sie den Namen Ihrer APP in dieses Image einschließen. 
+Dieses Bild wird möglicherweise auf verschiedenen Store-Seiten für Windows 10 (einschließlich Xbox) angezeigt, und wenn Sie das **2:3 Poster-Grafik** Bild nicht angeben, wird es als Hauptlogo verwendet. Dieses Bild sollte auch den Namen Ihrer APP enthalten. Text Überlagerungen können im unteren Quartal dieses Bilds angezeigt werden. Fügen Sie also keine Text-oder Schlüsselbilder ein. Stellen Sie sicher, dass Sie den Namen Ihrer APP in dieses Image einschließen. 
 
 > [!NOTE]
 > Wenn Ihre APP für Kunden auf der Xbox verfügbar ist, ist dieses Image **erforderlich** und muss den Titel des Produkts enthalten. Der Titel muss in den ersten drei Quartalen des Bilds angezeigt werden, da Text Überlagerungen möglicherweise im unteren Quartal des Bilds angezeigt werden.
@@ -147,7 +147,7 @@ Beachten Sie bei der Bereitstellung Ihrer Nachspann die folgenden Anforderungen:
 - Das Videoformat muss "MOV" oder "MP4" lauten.
 - Die Dateigröße des Nachspann sollte 2 GB nicht überschreiten.
 - Die Videoauflösung muss 1920 x 1080 Pixel betragen.
-- Die Miniaturansicht muss eine PNG-Datei mit einer Auflösung von 1920 x 1080 Pixel oder 3840 x 2160 Pixel sein.
+- Die Miniaturansicht muss eine PNG-Datei mit einer Auflösung von 1920 x 1080 Pixel sein.
 - Der Titel darf nicht länger als 255 Zeichen sein.
 - Nehmen Sie keine Alters Bewertungen in ihren Nachspann vor.
 

@@ -6,18 +6,21 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
-ms.openlocfilehash: 21061105287c97b4a665dad791703dfab2e9ce8f
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 686ed66622efa9c73aa0ed7de64a719d7c441eb4
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233813"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746760"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>Zahlungsschwellenwerte, Methoden und Zeiträume
 
 Die voraussichtliche Zeit zum Überweisen von Zahlungen und die Microsoft-Marketplaces, von denen Sie Zahlungen erhalten können, hängen von Ihrem Land/Ihrer Region und dem Zahlungskontotyp ab. In diesem Thema werden die in den einzelnen Ländern bzw. Regionen unterstützten Zahlungsmethoden beschrieben.
 
 Für ein bestimmtes Land bzw. eine Region verwenden wir entweder ACH/SEPA-Überweisungen oder telegrafische Geldüberweisungen, um unsere Zahlungen zu übermitteln. Darüber hinaus wird in einigen Ländern/Regionen PayPal als Zahlungsmethode unterstützt.
+
+> [!NOTE]
+> Aufgrund von Änderungen an den Devisenkursen kann der genaue Umsatz leicht von einer Währung zu einer anderen variieren. Die Wechselkurse werden monatlich berechnet. Je nachdem, wann die Transaktion stattfindet, wird der entsprechende Wechselkurs angewendet. Der Austausch Kurs und der Datumsbereich, für den er erzwungen wurde, werden im Auszahlungsbericht in den Spalten ExchangeRate bzw. exchangeratedate angegeben.
 
 ## <a name="number-of-days-for-payments-to-reach-payout-account"></a>Anzahl der Tage bis zum Eingang der Zahlungen auf dem Auszahlungskonto
 
@@ -39,16 +42,16 @@ In der Regel senden wir in einem Monat fällige Zahlungen am 15. des Monats, abe
 > [!NOTE]
 > Der Zahlungsschwellenwert in allen Regionen beträgt 50 US-Dollar.
 
-| Country                          | Azure Marketplace | Store, Werbung, Mixer und Minecraft | Office | Zahlungen per PayPal |
+| Land                          | Azure Marketplace | Store, Werbung, Mixer und Minecraft | Office | Zahlungen per PayPal |
 |----------------------------------|-------------------|------------------------------------------|--------|-----------------|
-| Afghanistan                      | Ja               | Ja                                      | Nein     | Nein              |
+| Afghanistan                      | Ja               | Ja                                      | Nein     | Nein               |
 | Albanien                          | Ja               | Ja                                      | Ja    | Ja             |
 | Algerien                          | Ja               | Ja                                      | Ja    | Ja             |
 | Andorra                          | Nein                | Nein                                        | Ja    | Ja             |
 | Angola                           | Ja               | Ja                                      | Ja    | Nein              |
 | Antigua und Barbuda              | Ja               | Ja                                      | Nein     | Ja             |
 | Argentinien                        | Ja               | Ja                                      | Ja    | Ja             |
-| Armenien                          | Ja               | Ja                                      | Nein     | Nein              |
+| Armenien                          | Ja               | Ja                                      | Nein     | Nein               |
 | Australien                        | Ja               | Ja                                      | Ja    | Ja             |
 | Österreich                          | Ja               | Ja                                      | Ja    | Ja             |
 | Aserbaidschan                       | Ja               | Ja                                      | Ja    | Nein              |
@@ -70,9 +73,9 @@ In der Regel senden wir in einem Monat fällige Zahlungen am 15. des Monats, abe
 | Zentralafrikanische Republik         | Ja               | Ja                                      | Ja    | Nein              |
 | Tschad                             | Ja               | Ja                                      | Ja    | Nein              |
 | Chile                            | Ja               | Ja                                      | Ja    | Ja             |
-| China                            | Nein                 | Ja                                      | Ja    | Ja             |
+| China                            | Nein                | Ja                                      | Ja    | Ja             |
 | Kolumbien                         | Ja               | Ja                                      | Ja    | Ja             |
-| Komoren                          | Ja               | Ja                                      | Nein     | Nein              |
+| Komoren                          | Ja               | Ja                                      | Nein     | Nein               |
 | Kongo (DRC)                      | Ja               | Ja                                      | Ja    | Nein              |
 | Republik Kongo               | Ja               | Ja                                      | Ja    | Nein              |
 | Costa Rica                       | Ja               | Ja                                      | Ja    | Ja             |
@@ -119,7 +122,7 @@ In der Regel senden wir in einem Monat fällige Zahlungen am 15. des Monats, abe
 | Kirgisistan                       | Nein                | Nein                                        | Ja    | Nein              |
 | Laos                             | Ja               | Ja                                      | Ja    | Nein              |
 | Lettland                           | Ja               | Ja                                      | Ja    | Nein              |
-| Libanon                          | Ja               | Ja                                      | Nein     | Nein              |
+| Libanon                          | Ja               | Ja                                      | Nein     | Nein               |
 | Liberia                          | Ja               | Ja                                      | Ja    | Nein              |
 | Liechtenstein                    | Ja               | Ja                                      | Ja    | Ja             |
 | Litauen                        | Ja               | Ja                                      | Ja    | Nein              |
@@ -131,7 +134,7 @@ In der Regel senden wir in einem Monat fällige Zahlungen am 15. des Monats, abe
 | Malta                            | Ja               | Ja                                      | Ja    | Ja             |
 | Mauritius                        | Ja               | Ja                                      | Nein     | Ja             |
 | Mexiko                           | Ja               | Ja                                      | Ja    | Ja             |
-| Monaco                           | Ja               | Ja                                      | Nein     | Nein              |
+| Monaco                           | Ja               | Ja                                      | Nein     | Nein               |
 | Mongolei                         | Ja               | Ja                                      | Ja    | Nein              |
 | Montenegro                       | Ja               | Ja                                      | Ja    | Nein              |
 | Marokko                          | Ja               | Ja                                      | Ja    | Nein              |
@@ -155,9 +158,9 @@ In der Regel senden wir in einem Monat fällige Zahlungen am 15. des Monats, abe
 | Puerto Rico                      | Nein                | Nein                                        | Ja    | Nein              |
 | Katar                            | Ja               | Ja                                      | Ja    | Ja             |
 | Rumänien                          | Ja               | Ja                                      | Ja    | Nein              |
-| Russland                           | Ja               | Ja                                      | Nein     | Ja             |
+| Russland                           | Ja               | Ja                                      | Nein      | Ja             |
 | Ruanda                           | Ja               | Ja                                      | Ja    | Nein              |
-| St. Vincent und die Grenadinen | Nein                 | Ja                                      | Nein     | Nein              |
+| St. Vincent und die Grenadinen | Nein                | Ja                                      | Nein     | Nein               |
 | Saudi-Arabien                     | Ja               | Ja                                      | Ja    | Ja             |
 | Senegal                          | Ja               | Ja                                      | Ja    | Nein              |
 | Serbien                           | Ja               | Ja                                      | Ja    | Nein              |
@@ -171,7 +174,7 @@ In der Regel senden wir in einem Monat fällige Zahlungen am 15. des Monats, abe
 | Sri Lanka                        | Ja               | Ja                                      | Ja    | Nein              |
 | Schweden                           | Ja               | Ja                                      | Ja    | Ja             |
 | Schweiz                      | Ja               | Ja                                      | Ja    | Nein              |
-| Taiwan                           | Nein                 | Ja                                      | Ja    | Ja             |
+| Taiwan                           | Nein                | Ja                                      | Ja    | Ja             |
 | Tadschikistan                       | Ja               | Ja                                      | Nein     | Nein              |
 | Tansania                         | Ja               | Ja                                      | Ja    | Nein              |
 | Thailand                         | Ja               | Ja                                      | Ja    | Ja             |
