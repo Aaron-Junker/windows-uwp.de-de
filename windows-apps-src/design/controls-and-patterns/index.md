@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 82e6d91b5a4147237cd04b46dc5b69b8151fece9
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80218450"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978382"
 ---
 # <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
 
@@ -32,7 +32,7 @@ Allgemeine Anweisungen und Codebeispiele für das Hinzufügen und Formatieren vo
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">Hinzufügen von Steuerelementen und Verarbeiten von Ereignissen</a></b> <br/>
-Es gibt 3 wichtige Schritte, die Sie ausführen müssen, um Ihrer App Steuerelemente hinzuzufügen: das Hinzufügen eines Steuerelements zu Ihrer App-UI, das Festlegen der Eigenschaften für das Steuerelement und das Hinzufügen von Code zu den Ereignishandlern des Steuerelements, sodass dieses eine Aktion ausführt.</p>
+Es gibt drei wichtige Schritte zum Hinzufügen von Steuerelementen zur App: Hinzufügen eines Steuerelements zu Ihrer App-UI, Festlegen der Eigenschaften für das Steuerelement und Hinzufügen von Code zu den Ereignishandlern des Steuerelements, sodass dieses eine Aktion ausführt.</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">Formatieren von Steuerelementen</a></b> <br/>
@@ -95,8 +95,8 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 - [Person](person-picture.md) ![WinUI-Logo](images/winui-logo-16x16.png)
 - [Pivot](pivot.md)
 - [Statusanzeige](progress-controls.md) ![WinUI-Logo](images/winui-logo-16x16.png)
-- [Statuskreis](progress-controls.md)
-- [Optionsfeld](radio-button.md)
+- [Statusring](progress-controls.md) ![WinUI-Logo](images/winui-logo-16x16.png)
+- [Optionsfeld](radio-button.md) ![WinUI-Logo](images/winui-logo-16x16.png)
 - [Bewertungssteuerelement](rating.md) ![WinUI-Logo](images/winui-logo-16x16.png)
 - [Wiederholungsschaltfläche](buttons.md#create-a-repeat-button)
 - [Rich-Edit-Feld](rich-edit-box.md)

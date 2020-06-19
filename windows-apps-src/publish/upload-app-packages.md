@@ -6,19 +6,19 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, Upload, Hochladen von Paketen
 ms.localizationpriority: medium
-ms.openlocfilehash: 570ccc1329fd1b2f768ca528b75fe22b982bdaf6
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: 5c3c55d351ebd3b956d57c6c7e623e88e7fa88c1
+ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682624"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84945938"
 ---
 # <a name="upload-app-packages"></a>Hochladen von App-Paketen
 
 Auf der Seite **Pakete** können Sie alle Paketdateien (. msix,. msixupload,. msixbundle,. AppX,. appxupload und/oder. appxbundle) für die APP hochladen, die Sie übermitteln. Sie können alle Pakete für dieselbe App auf dieser Seite hochladen, und wenn ein Kunde Ihre APP herunterlädt, stellt der Store jedem Kunden automatisch das Paket bereit, das für das Gerät am besten geeignet ist. Nachdem Sie Ihre Pakete hochgeladen haben, sehen Sie eine Tabelle, in der angegeben wird, [welche Pakete für bestimmte Windows 10-Gerätefamilien angeboten werden](#device-family-availability) (und ggf. für frühere Betriebssystemversionen).
 
 > [!IMPORTANT]
-> Ab dem 31. Oktober 2018 können neu erstellte Produkte keine Pakete enthalten, die auf Windows 8. x/Windows Phone 8. x oder früher abzielen. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
+> Sie können keine neuen XAP-Pakete mehr hochladen, die mit den Windows Phone 8. x SDK (s) erstellt wurden. Apps, die bereits mit XAP-Paketen im Speicher gespeichert sind, funktionieren weiterhin auf Windows 10 Mobile-Geräten. Weitere Informationen finden Sie in diesem [Blogbeitrag](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store).
 
 Ausführliche Informationen zu Inhalt und Struktur der Pakete finden Sie unter [App-Paketanforderungen](app-package-requirements.md). Außerdem sollten Sie sich darüber informieren, [wie sich Versionsnummern darauf auswirken, welche Pakete an bestimmte Kunden übermittelt werden](package-version-numbering.md) und [wie Pakete für verschiedene Szenarien verwaltet](guidance-for-app-package-management.md)werden.
 
@@ -28,7 +28,7 @@ Ausführliche Informationen zu Inhalt und Struktur der Pakete finden Sie unter [
 Um Pakete hochzuladen, ziehen Sie sie in das Uploadfeld oder klicken Sie, um Ihre Dateien zu durchsuchen. Auf der Seite " **Pakete** " können Sie die Dateien ". msix", ". msixupload", ". msixbundle", ". AppX", ". appxupload" und ". appxbundle" hochladen.
 
 > [!IMPORTANT]
-> Für Windows 10 empfiehlt es sich, die Datei ". msixupload" oder ". appxupload" anstelle von ". msix", ". AppX", ". msixbundle" oder ". appxbundle" hochzuladen.  Weitere Informationen zum Verpacken von UWP-Apps für den Store finden Sie untere [Verpacken von UWP-App mit Visual Studio](/windows/msix/package/packaging-uwp-apps).
+> Für Windows 10 empfiehlt es sich, die Datei ". msixupload" oder ". appxupload" anstelle von ". msix", ". AppX", ". msixbundle" oder ". appxbundle" hochzuladen.  Weitere Informationen zum Packen von UWP-Apps für den Store finden Sie unter [Packen einer UWP-App mit Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 Falls Sie [Flight-Pakete](package-flights.md) für Ihre App erstellt haben, wird eine Dropdownliste mit der Option zum Kopieren von Paketen aus einem Ihrer Flight-Pakete angezeigt. Wählen Sie das Flight-Paket mit den Paketen aus, die Sie übertragen möchten. Anschließend können Sie einige oder alle der Pakete auswählen, um sie in diese Übermittlung aufzunehmen.
 
@@ -37,7 +37,7 @@ Wenn bei der Überprüfung Fehler mit einem Paket erkannt werden, wird eine Meld
 
 ## <a name="device-family-availability"></a>Verfügbarkeit von Gerätefamilien
 
-Nachdem die Pakete erfolgreich hochgeladen wurden, wird im Abschnitt **Gerätefamilienverfügbarkeit** eine Tabelle angezeigt, die angibt, welche Pakete für bestimmte Windows 10-Gerätefamilien (und ggf. für frühere Betriebssystemversionen) angeboten werden. In diesem Abschnitt können Sie auswählen, ob die Übermittlung Kunden mit bestimmten Windows 10-Gerätefamilien angeboten werden soll oder nicht.
+Nachdem die Pakete erfolgreich hochgeladen wurden, wird im Abschnitt **Gerätefamilienverfügbarkeit** eine Tabelle angezeigt, die angibt, welche Pakete für bestimmte Windows 10-Gerätefamilien (und ggf. für frühere Betriebssystemversionen) angeboten werden. In diesem Abschnitt können Sie auch entscheiden, ob Sie die Übermittlung an Kunden in bestimmten Windows 10-Gerätefamilien anbieten möchten.
 
 Weitere Informationen finden Sie unter [Verfügbarkeit von Gerätefamilien](device-family-availability.md).
 
