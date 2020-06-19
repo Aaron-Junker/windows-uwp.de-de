@@ -10,19 +10,19 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 1fb1a971e897bc88d090c589b266542c6de2d1c9
-ms.sourcegitcommit: b432a639fb3d15ebd22d429ccee4dbb03e8550ca
+ms.openlocfilehash: 2c48b4bbfb7fb361b598722d070962db32665042
+ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77778521"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069463"
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
 **Wichtige APIs**
 
 - [**Windows. Devices. Bluetooth**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows. Devices. Bluetooth. RFCOMM**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
+- [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 Dieser Artikel enthält eine Übersicht über Bluetooth RFCOMM in UWP-Apps (Universelle Windows-Plattform) sowie Beispielcode zum Senden oder Empfangen einer Datei.
 
@@ -38,9 +38,9 @@ Ein vollständiges Codebeispiel mit Details über den RFCOMM-Vorgang finden Sie 
 
 ## <a name="send-a-file-as-a-client"></a>Senden einer Datei als Client
 
-Beim Senden einer Datei besteht das einfachste App-Szenario darin, auf Basis eines gewünschten Dienstes eine Verbindung mit einem gekoppelten Gerät herzustellen. Dies umfasst die folgenden Schritte:
+Beim Senden einer Datei besteht das einfachste App-Szenario darin, auf Basis eines gewünschten Dienstes eine Verbindung mit einem gekoppelten Gerät herzustellen. Dieser Vorgang umfasst die folgenden Schritte:
 
-- Verwenden Sie die Funktionen **rfcommdeviceservice. getdeviceselector\*** , um eine AQS-Abfrage zu generieren, die zum Auflisten von gekoppelten Geräte Instanzen des gewünschten Diensts verwendet werden kann.
+- Verwenden Sie die **rfcommdeviceservice. getdeviceselector \* ** -Funktionen, um eine AQS-Abfrage zu generieren, die zum Auflisten von gekoppelten Geräte Instanzen des gewünschten Diensts verwendet werden kann.
 - Wählen Sie ein aufgelistetes Gerät aus, erstellen Sie einen [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService), und lesen Sie bei Bedarf die SDP-Attribute (mit [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) zum Analysieren der Attributdaten).
 - Erstellen Sie einen Socket, und verwenden die Eigenschaften [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) und [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) für [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) und für den Remotegerätedienst mit den entsprechenden Parametern.
 - Folgen die etablierten Datenstrommuster, um Datenblöcke der Datei auszulesen und sie über [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) an das Gerät zu senden.
