@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, DirectX, Laden von Ressourcen
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a779e0d17cdc3f5a11dd720467e3a0572e3c124
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 56eaebfeb6d644c4c15f14f0613b1e3b1781f637
+ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606309"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133993"
 ---
 # <a name="load-resources-in-your-directx-game"></a>Laden von Ressourcen im DirectX-Spiel
 
@@ -50,7 +50,7 @@ Sie können über die folgenden Links auf den vollständigen Code für diese Bei
 <thead>
 <tr class="header">
 <th align="left">Thema</th>
-<th align="left">BESCHREIBUNG</th>
+<th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
@@ -130,7 +130,7 @@ Wenn Ihr Spiel nicht zu komplex aufgebaut ist, können Sie die Ressourcen mit ei
 
 Das eigentliche Spiel sollten jedoch erst richtig gestartet werden, nachdem das asynchrone Laden vollständig abgeschlossen ist! Erstellen Sie eine Methode, mit der angezeigt wird, wann der Ladevorgang abgeschlossen ist, z. B. ein bestimmtes Feld. Verwenden Sie dann die Lambda-Funktionen für die Lademethoden, um den Abschluss des Vorgangs anzuzeigen. Überprüfen Sie die Variable, bevor Sie Komponenten starten, in denen die geladenen Ressourcen verwendet werden.
 
-In diesem Beispiel werden die in „BasicLoader.cpp“ definierten asynchronen Methoden verwendet, um Shader, ein Gitter und eine Textur zu laden, wenn das Spiel gestartet wird. Beachten Sie, dass ein bestimmtes Feld für das Spielobjekt " **m\_loadingcomplete**" festgelegt wird, wenn alle Lade Methoden abgeschlossen sind.
+In diesem Beispiel werden die in „BasicLoader.cpp“ definierten asynchronen Methoden verwendet, um Shader, ein Gitter und eine Textur zu laden, wenn das Spiel gestartet wird. Beachten Sie, dass ein bestimmtes Feld für das Spielobjekt " **m \_ loadingcomplete**" festgelegt wird, wenn alle Lade Methoden abgeschlossen sind.
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-In " **featemesh** " werden die aus der Datei geladenen Bytedaten interpretiert, und es werden ein Vertex-Puffer und ein Index Puffer für das Mesh erstellt, indem die Vertex-und Indexlisten an [**ID3D11Device:: featebuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) übergeben\_und entweder D3D11\_Bind\_\_\_Vertex\_-Puffer oder D3D11 BIND Index Buffer angegeben werden. In **BasicLoader** wird der folgende Code verwendet:
+In " **featemesh** " werden die aus der Datei geladenen Bytedaten interpretiert, und es werden ein Vertex-Puffer und ein Index Puffer für das Mesh erstellt, indem die Vertex-und Indexlisten an [**ID3D11Device:: featebuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) übergeben und entweder D3D11 \_ Bind \_ Vertex- \_ Puffer oder D3D11 \_ Bind \_ Index \_ buffer angegeben werden. In **BasicLoader** wird der folgende Code verwendet:
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -320,14 +320,14 @@ Eine DDS-Datei ist eine Binärdatei mit den folgenden Informationen:
 
 -   Beschreibung der Daten in der Datei
 
-    Die Daten werden mit einer Header Beschreibung mit dem [**DDS\_-Header**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header)beschrieben. das Pixel Format wird mit [**DDS\_Pixel Format**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)definiert. Beachten Sie, dass der **\_DDS-Header** und die **DDS\_-Pixel Format** -Strukturen die veralteten DDSURFACEDESC2-, DDSCAPS2-und ddpixelformat DirectDraw 7-Strukturen ersetzen. Der **DDS\_-Header** ist die binäre Entsprechung von DDSURFACEDESC2 und DDSCAPS2. **DDS\_Pixel Format** ist das binäre Äquivalent von ddpixelformat.
+    Die Daten werden mit einer Header Beschreibung mithilfe des [**DDS- \_ Headers**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header)beschrieben. das Pixel Format wird mit [**DDS \_ Pixel Format**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)definiert. Beachten Sie, dass der **DDS- \_ Header** und die **DDS- \_ Pixel Format** -Strukturen die veralteten DDSURFACEDESC2-, DDSCAPS2-und ddpixelformat DirectDraw 7-Strukturen ersetzen. **DDS \_ Header** ist die binäre Entsprechung von DDSURFACEDESC2 und DDSCAPS2. **DDS \_ Pixel Format** ist das binäre Äquivalent von ddpixelformat.
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    Wenn der Wert von **dwFlags** in [**DDS\_Pixel Format**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat) auf ddpf\_FourCC festgelegt ist und **dwfourcc** auf "DX10" festgelegt ist, wird eine zusätzliche [**DDS\_-Header\_DXT10**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10) -Struktur vorhanden sein, um Textur Arrays oder DXGI-Formate zu verarbeiten, die nicht als RGB-Pixel formatiert werden können, z. b. Gleit Komma Formate, sRGB-Formate Wenn die **DXT10-\_Struktur\_des DDS-Headers** vorhanden ist, sieht die gesamte Daten Beschreibung wie folgt aus.
+    Wenn der Wert von **dwFlags** in [**DDS \_ Pixel Format**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat) auf ddpf FourCC festgelegt ist \_ und **dwfourcc** auf "DX10" festgelegt ist, wird eine zusätzliche [**DDS- \_ Header \_ DXT10**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10) -Struktur vorhanden sein, um Textur Arrays oder DXGI-Formate zu verarbeiten, die nicht als RGB-Pixel formatiert werden können, z. b. Gleit Komma Formate, sRGB-Formate Wenn die ** \_ \_ DXT10** -Struktur des DDS-Headers vorhanden ist, sieht die gesamte Daten Beschreibung wie folgt aus.
 
     ```cpp
     DWORD               dwMagic;
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-In diesem Beispiel verwenden Sie die **basishaderwriter** -Instanz (**m\_basikreaderwriter**), um die angegebene kompilierte Shader-Objektdatei (. CSO) als Bytestream zu lesen. Nach Abschluss der Aufgabe ruft die Lambda-Funktion [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) mit den aus der Datei geladenen Bytedaten auf. In Ihrem Rückruf muss ein Kennzeichen dafür festgelegt werden, dass der Ladevorgang erfolgreich war, und der Code muss dieses Kennzeichen überprüfen, bevor der Shader ausgeführt wird.
+In diesem Beispiel verwenden Sie die **basishaderwriter** -Instanz (**m \_ basikreaderwriter**), um die angegebene kompilierte Shader-Objektdatei (. CSO) als Bytestream zu lesen. Nach Abschluss der Aufgabe ruft die Lambda-Funktion [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader) mit den aus der Datei geladenen Bytedaten auf. In Ihrem Rückruf muss ein Kennzeichen dafür festgelegt werden, dass der Ladevorgang erfolgreich war, und der Code muss dieses Kennzeichen überprüfen, bevor der Shader ausgeführt wird.
 
 Vertex-Shader sind etwas komplexer. Für einen Vertex-Shader laden Sie zusätzlich ein separates Eingabelayout, mit dem die Vertexdaten definiert werden. Mit dem folgenden Code kann ein Vertex-Shader zusammen mit einem benutzerdefinierten Vertexeingabelayout asynchron geladen werden. Achten Sie darauf, dass die aus den Gittern geladenen Vertexinformationen von diesem Eingabelayout richtig dargestellt werden können!
 
@@ -685,12 +685,11 @@ task<void> BasicLoader::LoadShaderAsync(
         }
     });
 }
-
 ```
 
 In diesem Code erstellen Sie den Vertex-Shader per Aufruf von [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader), nachdem Sie die Bytedaten für die CSO-Datei des Vertex-Shaders eingelesen haben. Danach erstellen Sie das Eingabelayout für den Shader in derselben Lambda-Funktion.
 
-Für andere Arten von Shadern, z. B. Geometry- und Hull-Shader, kann ebenfalls eine spezielle Konfiguration erforderlich sein. Den vollständigen Code für verschiedene Methoden zum Laden von Shadern finden Sie unter [Vollständiger Code für BasicLoader](complete-code-for-basicloader.md) und [Beispiel für das Laden der Direct3D-Ressource]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148).
+Für andere Arten von Shadern, z. B. Geometry- und Hull-Shader, kann ebenfalls eine spezielle Konfiguration erforderlich sein. Den vollständigen Code für verschiedene Methoden zum Laden von Shadern finden Sie unter [Vollständiger Code für BasicLoader](complete-code-for-basicloader.md) und [Beispiel für das Laden der Direct3D-Ressource](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B).
 
 ## <a name="remarks"></a>Hinweise
 
@@ -698,7 +697,7 @@ Sie sollten jetzt mit den Methoden zum asynchronen Laden häufig verwendeter Res
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-* [Beispiel für das Laden von Direct3D-Ressourcen]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148)
+* [Beispiel für das Laden von Direct3D-Ressourcen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B)
 * [Vollständiger Code für BasicLoader](complete-code-for-basicloader.md)
 * [Vollständiger Code für BasicReaderWriter](complete-code-for-basicreaderwriter.md)
 * [Vollständiger Code für DDSTextureLoader](complete-code-for-ddstextureloader.md)
