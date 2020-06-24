@@ -4,12 +4,12 @@ description: In diesem Thema werden verschiedene Möglichkeiten für die Durchf�
 ms.date: 03/23/2020
 ms.topic: article
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2407a54439157be16b186b48759746238962f8b4
-ms.sourcegitcommit: 2d375e1c34473158134475af401532cc55fc50f4
+ms.openlocfilehash: 5db029db3ffb538802f39aa616c96dbe75601eac
+ms.sourcegitcommit: bf7d4f6739aeeaac735aae3dd0dcbda63a8c5e69
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888508"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256380"
 ---
 # <a name="interprocess-communication-ipc"></a>Prozessübergreifende Kommunikation (Interprocess Communication, IPC)
 
@@ -29,11 +29,11 @@ App Services werden am besten für die Freigabe kleiner Datenmengen verwendet, b
 
 Gepackte Anwendungen mit der Funktion [runfulltrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) können prozessübergreifende com-Server für IPC über das [Paket Manifest](/uwp/schemas/appxpackage/uapmanifestschema/element-com-extension)registrieren. Dies wird als [Paket-com](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/)bezeichnet.
 
-## <a name="filesystem"></a>Verwendet
+## <a name="filesystem"></a>Dateisystem
 
 ### <a name="broadfilesystemaccess"></a>Broadfilesystemaccess
 
-Paketanwendungen können IPC mithilfe des großen Dateisystems ausführen, indem Sie die eingeschränkte [broadfilesystemaccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations) -Funktion deklarieren.
+Paketanwendungen können IPC mithilfe des großen Dateisystems ausführen, indem Sie die eingeschränkte [broadfilesystemaccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations) -Funktion deklarieren. Diese Funktion gewährt [Windows. Storage](/uwp/api/Windows.Storage) -APIs und [xxxfromapp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) Win32-APIs Zugriff auf das umfangreiche Dateisystem.
 
 Standardmäßig ist IPC über das Dateisystem für gepackte Anwendungen auf die anderen in diesem Abschnitt beschriebenen Mechanismen beschränkt.
 
@@ -80,18 +80,18 @@ Um die Sicherheit und die Netzwerk Isolation aufrechtzuerhalten, werden Loopback
 > [!NOTE]
 > Der Paket Familienname, der zum Identifizieren einer Anwendung in diesen Regeln erforderlich ist, kann während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio gefunden werden, über [Partner Center](/windows/uwp/publish/view-app-identity-details) für Anwendungen, die über das Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
 
-Nicht gepackte Anwendungen und Dienste verfügen über keine Paket Identität und können daher nicht in [loopbackaccessrules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)deklariert werden. Sie können eine gepackte Anwendung so konfigurieren, dass eine Verbindung über Loopback mit nicht verpackten Anwendungen und Diensten über [checknettisolations. exe](/previous-versions/windows/apps/hh780593(v=win.10))hergestellt wird. Dies ist jedoch nur für querladen-oder Debugszenarien möglich, in denen Sie lokalen Zugriff auf den Computer haben und über Administratorrechte verfügen.
+Nicht gepackte Anwendungen und Dienste verfügen über keine Paket Identität und können daher nicht in [loopbackaccessrules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)deklariert werden. Sie können eine gepackte Anwendung so konfigurieren, dass eine Verbindung über Loopback mit nicht verpackten Anwendungen und Diensten über [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))hergestellt wird. Dies ist jedoch nur für querladen-oder Debugszenarien möglich, in denen Sie lokalen Zugriff auf den Computer haben und über Administratorrechte verfügen.
 
 * Alle an Loopback Verbindungen beteiligten Paketanwendungen müssen die `privateNetworkClientServer` Funktion in Ihren [Paket Manifesten](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)deklarieren.
-* Wenn eine gepackte Anwendung eine Verbindung mit einer nicht verpackten Anwendung oder einem Dienst herstellt, führen Sie `CheckNetIsolation.exe LoopbackExempt -a -n=<PACKAGEFAMILYNAME>` aus, um eine Loopback Ausnahme für die gepackte Anwendung hinzuzufügen.
-* Wenn eine nicht gepackte Anwendung oder ein Dienst eine Verbindung mit einer verpackten Anwendung herstellt, führen Sie `CheckNetIsolation.exe LoopbackExempt -is -n=<PACKAGEFAMILYNAME>` aus, damit die gepackte Anwendung eingehende Loopback Verbindungen empfängt.
-    * [Checknettisolations. exe](/previous-versions/windows/apps/hh780593(v=win.10)) muss fortlaufend ausgeführt werden, während die gepackte Anwendung Verbindungen abhört.
-    * Das `-is`-Flag wurde in Windows 10, Version 1607, eingeführt (10,0; Build 14393).
+* Wenn eine gepackte Anwendung eine Verbindung mit einer nicht verpackten Anwendung oder einem Dienst herstellt, führen `CheckNetIsolation.exe LoopbackExempt -a -n=<PACKAGEFAMILYNAME>` Sie aus, um eine Loopback Ausnahme für die gepackte Anwendung hinzuzufügen.
+* Wenn eine nicht gepackte Anwendung oder ein Dienst eine Verbindung mit einer verpackten Anwendung herstellt, führen Sie aus, `CheckNetIsolation.exe LoopbackExempt -is -n=<PACKAGEFAMILYNAME>` damit die gepackte Anwendung eingehende Loopback Verbindungen empfängt.
+    * [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) muss fortlaufend ausgeführt werden, während die gepackte Anwendung auf Verbindungen lauscht.
+    * Das `-is` Flag wurde in Windows 10, Version 1607, eingeführt (10,0; Build 14393).
 
 > [!NOTE]
-> Der Paket Familienname, der für das `-n`-Flag von [checknettisolation. exe](/previous-versions/windows/apps/hh780593(v=win.10)) erforderlich ist, kann während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio gefunden werden, über das [Partner Center](/windows/uwp/publish/view-app-identity-details) für Anwendungen, die über die Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
+> Der Paket Familienname, der für das `-n` Flag von [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) erforderlich ist, kann während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio, über [Partner Center](/windows/uwp/publish/view-app-identity-details) für Anwendungen, die über die Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen gefunden werden.
 
-[Checknettisolation. exe](/previous-versions/windows/apps/hh780593(v=win.10)) ist auch nützlich für das [Debuggen von Problemen mit der Netzwerk Isolation](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues).
+[CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) ist auch für das [Debuggen von Netzwerk Isolations Problemen](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues)nützlich.
 
 ## <a name="pipes"></a>Pipes
 
