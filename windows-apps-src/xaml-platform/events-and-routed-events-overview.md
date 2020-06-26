@@ -1,17 +1,17 @@
 ---
-description: Wir beschreiben das Programmier Konzept von Ereignissen in einer Windows-Runtime-APP, wenn C#Sie, Visual Basic oder C++ Visual Component ExtensionsC++(/CX) als Programmiersprache verwenden, und XAML für Ihre UI-Definition.
+description: Das Programmierkonzept von Ereignissen in einer Windows-Runtime-App bei Verwendung von C#-, Visual Basic- oder Visual C++-Komponentenerweiterungen (C++/CX) als Programmiersprache und XAML für die UI-Definition wird beschrieben
 title: Übersicht über Ereignisse und Routingereignisse
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.date: 07/12/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 044a0e97f51a8e34c5949e789b203abf896f035d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b12854252160eec5f606b20a5ec723df89c81959
+ms.sourcegitcommit: ac4399574f673834ba9c1b8e460e3bdbbc20a983
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258760"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372046"
 ---
 # <a name="events-and-routed-events-overview"></a>Übersicht über Ereignisse und Routingereignisse
 
@@ -19,7 +19,7 @@ ms.locfileid: "74258760"
 - [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)
 - [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs)
 
-Wir beschreiben das Programmier Konzept von Ereignissen in einer Windows-Runtime-APP, wenn C#Sie, Visual Basic oder C++ Visual Component ExtensionsC++(/CX) als Programmiersprache verwenden, und XAML für Ihre UI-Definition. Sie können im Rahmen der Deklarationen für UI-Elemente Handler für Ereignisse in XAML zuweisen. Alternativ können Sie Handler im Code hinzufügen. Die Windows-Runtime unterstützt *Routingereignisse*: Bestimmte Eingabeereignisse und Datenereignisse können von anderen Objekten behandelt werden als dem Objekt, von dem das Ereignis ausgelöst wurde. Routingereignisse sind hilfreich, wenn Sie Steuerelementvorlagen definieren oder Seiten oder Layoutcontainer verwenden.
+Das Programmierkonzept von Ereignissen in einer Windows-Runtime-App bei Verwendung von C#-, Visual Basic- oder Visual C++-Komponentenerweiterungen (C++/CX) als Programmiersprache und XAML für die UI-Definition wird beschrieben Sie können im Rahmen der Deklarationen für UI-Elemente Handler für Ereignisse in XAML zuweisen. Alternativ können Sie Handler im Code hinzufügen. Die Windows-Runtime unterstützt *Routingereignisse*: Bestimmte Eingabeereignisse und Datenereignisse können von anderen Objekten behandelt werden als dem Objekt, von dem das Ereignis ausgelöst wurde. Routingereignisse sind hilfreich, wenn Sie Steuerelementvorlagen definieren oder Seiten oder Layoutcontainer verwenden.
 
 ## <a name="events-as-a-programming-concept"></a>Ereignisse als Programmierkonzept
 
@@ -27,7 +27,7 @@ Grundsätzlich sind Ereigniskonzepte bei der Programmierung einer Windows-Runtim
 
 Wenn Sie C#, Visual Basic oder C++/CX als Programmiersprache verwenden, wird die UI im Markup (XAML) definiert. In der XAML-Markupsyntax ähneln einige der Prinzipien, nach denen UI-Ereignisse zwischen Markupelementen und Laufzeitcodeentitäten verbunden werden, denen anderer Webtechnologien (z. B. ASP.NET oder HTML5).
 
-**Beachten Sie**  der Code, der die Lauf Zeit Logik für eine XAML-definierte Benutzeroberfläche bereitstellt, häufig als *Code Behind* oder die Code-Behind-Datei bezeichnet wird. In den Projektmappenansichten von Microsoft Visual Studio wird diese Beziehung grafisch dargestellt. Dabei ist die CodeBehind-Datei eine abhängige und geschachtelte Datei zu der XAML-Seite, auf die sie sich bezieht.
+**Hinweis**    Der Code, der die Lauf Zeit Logik für eine XAML-definierte Benutzeroberfläche bereitstellt, wird häufig als *Code Behind* oder die Code-Behind-Datei bezeichnet. In den Projektmappenansichten von Microsoft Visual Studio wird diese Beziehung grafisch dargestellt. Dabei ist die CodeBehind-Datei eine abhängige und geschachtelte Datei zu der XAML-Seite, auf die sie sich bezieht.
 
 ## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>Button.Click: Einführung in Ereignisse und XAML
 
@@ -80,13 +80,13 @@ void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, W
 
 In diesem Beispiel basiert die `ShowUpdatesButton_Click`-Methode auf dem [**RoutedEventHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventhandler)-Delegaten. Sie wissen, dass dies der zu verwendende Delegat ist, da Sie den Delegaten in der Syntax für die [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) -Methode sehen.
 
-**Tipp**  Visual Studio bietet eine bequeme Möglichkeit, den Ereignishandler zu benennen und die Handlermethode zu definieren, während Sie XAML bearbeiten. Wenn Sie den Attributnamen des Ereignisses im XAML-Text-Editor bereitstellen, warten Sie einen Moment, bis eine Microsoft IntelliSense-Liste angezeigt wird. Wenn Sie in der Liste auf **&lt;Neuer Ereignishandler&gt;** klicken, schlägt Microsoft Visual Studio einen Methodennamen vor, der auf dem **x:Name** des Elements (oder der Typbezeichnung), dem Ereignisnamen und einem numerischen Suffix basiert. Anschließend können Sie mit der rechten Maustaste auf den ausgewählten Ereignishandler und dann mit der linken Maustaste auf **Zum Ereignishandler navigieren** klicken. Dadurch navigieren Sie direkt zu der neu eingefügten Ereignishandlerdefinition, wie sie in der Code-Editoransicht Ihrer CodeBehind-Datei für die XAML-Seite angezeigt wird. Der Ereignishandler hat bereits die richtige Signatur, einschließlich des *sender*-Parameters und der Ereignisdatenklasse, die von dem Ereignis verwendet wird. Wenn zudem bereits eine Handlermethode mit der richtigen Signatur im CodeBehind vorhanden ist, wird der Name dieser Methode zusammen mit der Option **&lt;Neuer Ereignishandler&gt;** im Auto-Vervollständigen-Dropdown angezeigt. Sie können auch die Tabulatortaste drücken, anstatt auf die IntelliSense-Listenelemente zu klicken.
+**Tipp**    Visual Studio bietet eine bequeme Möglichkeit, den Ereignishandler zu benennen und die Handlermethode zu definieren, während Sie XAML bearbeiten. Wenn Sie den Attributnamen des Ereignisses im XAML-Text-Editor bereitstellen, warten Sie einen Moment, bis eine Microsoft IntelliSense-Liste angezeigt wird. Wenn Sie in der Liste auf ** &lt; neuer Ereignis Handler &gt; ** klicken, wird Microsoft Visual Studio einen Methodennamen vorschlagen, der auf dem **x:Name** (oder Typnamen) des Elements, dem Ereignis Namen und einem numerischen Suffix basiert. Anschließend können Sie mit der rechten Maustaste auf den ausgewählten Ereignishandler und dann mit der linken Maustaste auf **Zum Ereignishandler navigieren** klicken. Dadurch navigieren Sie direkt zu der neu eingefügten Ereignishandlerdefinition, wie sie in der Code-Editoransicht Ihrer CodeBehind-Datei für die XAML-Seite angezeigt wird. Der Ereignishandler hat bereits die richtige Signatur, einschließlich des *sender*-Parameters und der Ereignisdatenklasse, die von dem Ereignis verwendet wird. Wenn eine Handlermethode mit der richtigen Signatur bereits im Code-Behind vorhanden ist, wird der Name der Methode in der Dropdown-Dropdown-Dropdown-Option zusammen mit der ** &lt; neuen Ereignishandler &gt; ** -Option angezeigt. Sie können auch die Tabulatortaste drücken, anstatt auf die IntelliSense-Listenelemente zu klicken.
 
 ## <a name="defining-an-event-handler"></a>Definieren eines Ereignishandlers
 
 Für Objekte, die UI-Elemente darstellen und in XAML deklariert werden, wird Ereignishandlercode in der partiellen Klasse definiert, die als CodeBehind für eine XAML-Seite fungiert. Ereignishandler sind Methoden, die Sie als Teil der Ihrem XAML zugeordneten partiellen Klasse schreiben. Diese Ereignishandler basieren auf den Delegaten, die von einem bestimmten Ereignis verwendet werden. Die Ereignishandlermethoden können öffentlich oder privat sein. Der private Zugriff funktioniert, weil der vom XAML erstellte Handler und die Instanz letztendlich durch die Codegenerierung verbunden werden. Im Allgemeinen wird empfohlen, die Ereignishandlermethoden in der Klasse öffentlich zu machen.
 
-**Hinweis**  Ereignishandler für C++ nicht in partiellen Klassen definiert werden, werden Sie im Header als privates Klassenmember deklariert. Bei den Erstellungsaktionen für ein C++-Projekt wird Code generiert, der das XAML-Typsystem und das CodeBehind-Modell für C++ unterstützt.
+**Hinweis**    Ereignishandler für C++ werden in partiellen Klassen nicht definiert. Sie werden im Header als privates Klassenmember deklariert. Bei den Erstellungsaktionen für ein C++-Projekt wird Code generiert, der das XAML-Typsystem und das CodeBehind-Modell für C++ unterstützt.
 
 ### <a name="the-sender-parameter-and-event-data"></a>Der *sender*-Parameter und Ereignisdaten
 
@@ -98,7 +98,7 @@ Bei einigen Ereignissen ist die Kenntnis der speziellen Eigenschaftswerte der Er
 
 ### <a name="event-handlers-that-use-the-async-pattern"></a>Ereignishandler, die das **async**-Muster verwenden
 
-In einigen Fällen wird die Verwendung von APIs empfohlen, die innerhalb eines Ereignishandlers ein **async**-Muster verwenden. Beispielsweise können Sie einen [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) auf einer [**AppBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) verwenden, um eine Dateiauswahl anzuzeigen und mit dieser zu interagieren. Viele der Dateiauswahl-APIs sind jedoch asynchron. Sie müssen innerhalb eines **async**/awaitable-Bereichs aufgerufen werden. Dies wird vom Compiler erzwungen. Sie können also dem Ereignishandler das **Async** -Schlüsselwort hinzufügen, sodass der Handler jetzt **Async** **void**ist. Nun kann der Ereignishandler **async**/awaitable-Aufrufe ausführen.
+In einigen Fällen wird die Verwendung von APIs empfohlen, die innerhalb eines Ereignishandlers ein **async**-Muster verwenden. Beispielsweise können Sie einen [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) auf einer [**AppBar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBar) verwenden, um eine Dateiauswahl anzuzeigen und mit dieser zu interagieren. Viele der Dateiauswahl-APIs sind jedoch asynchron. Sie müssen innerhalb eines **async**/awaitable-Bereichs aufgerufen werden. Dies wird vom Compiler erzwungen. Sie können dem Ereignishandler das **async**-Schlüsselwort hinzuzufügen, sodass der Handler nun **async** **void** ist. Nun kann der Ereignishandler **async**/awaitable-Aufrufe ausführen.
 
 Ein Beispiel für die Benutzerinteraktions-Ereignisbehandlung mit dem **async**-Muster finden Sie unter [Dateizugriff und -auswahl](https://docs.microsoft.com/previous-versions/windows/apps/jj655411(v=win.10)) (in der Reihe [Erstellen Ihrer ersten Windows-Runtime-App mit C# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10))). Siehe auch [Aufrufen asynchroner APIs in C].
 
@@ -127,7 +127,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**Beachten Sie**  eine ausführlichere Syntax vorhanden ist. 2005 wurde in C# der Rückschluss auf Delegaten als neues Feature eingeführt. Damit kann der Compiler die neue Delegatinstanz ableiten, und die vorherige, einfachere Syntax kann verwendet werden. Die Funktion der ausführlichen Syntax entspricht dem vorherigen Beispiel. Vor der Registrierung wird jedoch explizit eine neue Delegatinstanz erstellt. Der Delegatrückschluss wird somit nicht genutzt. Diese explizite Syntax ist zwar nicht so üblich, aber dennoch in einigen Codebeispielen anzutreffen.
+**Hinweis**    Es ist eine ausführlichere Syntax vorhanden. 2005 wurde in C# der Rückschluss auf Delegaten als neues Feature eingeführt. Damit kann der Compiler die neue Delegatinstanz ableiten, und die vorherige, einfachere Syntax kann verwendet werden. Die Funktion der ausführlichen Syntax entspricht dem vorherigen Beispiel. Vor der Registrierung wird jedoch explizit eine neue Delegatinstanz erstellt. Der Delegatrückschluss wird somit nicht genutzt. Diese explizite Syntax ist zwar nicht so üblich, aber dennoch in einigen Codebeispielen anzutreffen.
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -147,13 +147,13 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**Beachten Sie**  Visual Studio und seine XAML-Entwurfs Oberfläche in der Regel das instanzbehandlungsverfahren anstelle des **Handles** -Schlüssel Worts herauf Stufen. Das Erstellen der Ereignishandlerverknüpfung in XAML ist Teil eines typischen Designer-Entwickler-Workflows, und die **Handles**-Schlüsselworttechnik ist mit dem Verknüpfen der Ereignishandler in XAML nicht kompatibel.
+**Hinweis**    Visual Studio und die zugehörige XAML-Entwurfs Oberfläche Stufen im Allgemeinen das instanzbehandlungsverfahren anstelle des **Handles** -Schlüssel Worts herauf. Das Erstellen der Ereignishandlerverknüpfung in XAML ist Teil eines typischen Designer-Entwickler-Workflows, und die **Handles**-Schlüsselworttechnik ist mit dem Verknüpfen der Ereignishandler in XAML nicht kompatibel.
 
-In C++/CX verwenden Sie auch die **+=** Syntax, aber es gibt Unterschiede in der Grund C# Legenden Form:
+In C++/CX verwenden Sie auch die **+=** Syntax, aber es gibt Unterschiede in der grundlegenden c#-Form:
 
 - Es gibt keinen Rückschluss auf Delegaten. Sie müssen deshalb **ref new** für die Delegatinstanz verwenden.
 - Der Delegatkonstruktor besitzt zwei Parameter und benötigt das Zielobjekt als ersten Parameter. Normalerweise geben Sie **this** an.
-- Der Delegatenkonstruktor erfordert die Methodenadresse als zweiten Parameter, sodass der **&** -Verweisoperator vor dem Methodennamen steht.
+- Der Delegatkonstruktor erfordert die Methoden Adresse als zweiten Parameter, sodass der **&** Verweis Operator dem Methodennamen vorangestellt wird.
 
 ```cppwinrt
 textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
@@ -168,7 +168,7 @@ ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 
 Das Entfernen von Ereignishandlern im Code ist in der Regel nicht erforderlich, auch wenn sie von Ihnen im Code hinzugefügt wurden. Das Verhalten der Objektlebensdauer für die meisten Windows-Runtime-Objekte, z. B. Seiten und Steuerelemente, vernichtet die Objekte, wenn die Verbindung mit dem Haupt-[**Fenster**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) und der dazugehörigen visuellen Struktur getrennt wird. Vorhandene Delegatverweise werden ebenfalls vernichtet. In .NET erfolgt dies durch eine Garbage Collection, und in Windows-Runtime mit C++/CX werden standardmäßig schwache Verweise verwendet.
 
-In einigen seltenen Fällen sollten Ereignishandler explizit entfernt werden. Dazu zählen:
+In einigen seltenen Fällen sollten Ereignishandler explizit entfernt werden. Dazu gehören:
 
 - Für statische Ereignisse hinzugefügte Handler, für die keine konventionelle Garbage Collection durchgeführt werden kann. Die Ereignisse der Klassen [**CompositionTarget**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.CompositionTarget) und [**Clipboard**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.Clipboard) sind Beispiele für statische Ereignisse in der Windows-Runtime-API.
 - Testen Sie Code, wenn Sie Handler sofort entfernen möchten, oder Code, in dem alte und neue Ereignishandler für ein Ereignis zur Laufzeit ausgetauscht werden sollen.
@@ -176,9 +176,9 @@ In einigen seltenen Fällen sollten Ereignishandler explizit entfernt werden. Da
 - Benutzerdefinierte statische Ereignisse
 - Handler für Seitennavigationen
 
-" [**FrameworkElement. entladen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.unloaded) " oder " [**Page. navigatedfrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) " sind mögliche Ereignis Trigger, die geeignete Positionen in der Zustands Verwaltung und der Objekt Lebensdauer aufweisen, sodass Sie diese zum Entfernen von Handlern für andere Ereignisse verwenden können.
+[**FrameworkElement.Unloaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.unloaded) oder [**Page.NavigatedFrom**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) sind mögliche Ereignisauslöser mit entsprechenden Positionen in der Zustandsverwaltung und der Objektlebensdauer, sodass sie zum Entfernen von Handlern für andere Ereignisse verwendet werden können.
 
-Beispielsweise können Sie einen Ereignishandler mit dem Namen **textBlock1\_pointereingegeben** aus dem Zielobjekt **textBlock1** mithilfe dieses Codes entfernen.
+Sie können z. b. einen Ereignishandler mit dem Namen **textBlock1 \_ pointereingegeben** aus dem Zielobjekt **textBlock1** entfernen, indem Sie diesen Code verwenden.
 
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
@@ -200,7 +200,7 @@ Die Windows-Runtime mit C#, Microsoft Visual Basic oder C++/CX unterstützt das 
 - [**Charakteristik empfangen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
 - [**Contextabgeb Rochen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
 - [**Contextrequessiert**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
-- [**Doppelt abgetippt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
 - [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
@@ -209,7 +209,7 @@ Die Windows-Runtime mit C#, Microsoft Visual Basic oder C++/CX unterstützt das 
 - [**Dropdown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**Gettingfocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Gehalten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**Losingfocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -220,19 +220,19 @@ Die Windows-Runtime mit C#, Microsoft Visual Basic oder C++/CX unterstützt das 
 - [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
 - [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
 - [**Nofocus candidatefound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
-- [**Pointerabgeb Rochen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
-- [**Pointercapturelost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
-- [**Pointereingetragen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
-- [**Pointerexited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
-- [**Pointerverschoben**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
-- [**Pointerpressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
-- [**Pointerreleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
-- [**Pointerwheelchanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
-- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
-- [**Pointerwheelchanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**Righttippt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Abgezweigten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
+- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
 Ein Routingereignis ist ein Ereignis, das möglicherweise von einem untergeordneten Objekt an jedes seiner übergeordneten Objekte in der Objektstruktur weitergeleitet (*geroutet*) wird. Die XAML-Struktur Ihrer UI kommt dieser Struktur nahe, wobei der Stamm der Struktur dem Stammelement im XAML entspricht. Die tatsächliche Objektstruktur kann sich von der XAML-Elementschachtelung unterscheiden, da die Objektstruktur keine XAML-Sprachfeatures wie Eigenschaftenelementtags enthält. Routingereignisse durchlaufen die Struktur nach dem *Bubblingkonzept* von untergeordneten XAML-Objektelementen, die das Ereignis auslösen, zu den übergeordneten Objekten, in denen sie enthalten sind. Das Ereignis und seine Ereignisdaten können für mehrere Objekte entlang der Ereignisroute behandelt werden. Wenn kein Element über Handler verfügt, wird die Route u. U. bis zum Stammelement fortgesetzt.
 
@@ -246,13 +246,13 @@ Wenn ein Ereignis entlang einer Route ein Bubbling durchläuft, ist *sender* nic
 
 In einigen Fällen interessieren Sie sich nicht für das *sender*-Objekt, sondern eher dafür, auf welchem der möglichen untergeordneten Objekte sich der Mauszeiger beim Auslösen eines Zeigerereignisses befindet oder welches Objekt in einer größeren UI beim Drücken einer Taste den Fokus hatte. Für diese Fälle können Sie den Wert der [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource)-Eigenschaft verwenden. An allen Punkten in der Route meldet **OriginalSource** das ursprüngliche Objekt, von dem das Ereignis ausgelöst wurde, und nicht das Objekt, dem der Handler angefügt ist. Bei [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)-Eingabeereignissen ist das ursprüngliche Objekt jedoch häufig ein Objekt, das nicht direkt im XAML für die UI-Definition auf Seitenebene sichtbar ist. Stattdessen kann das ursprüngliche Quellobjekt ein Vorlagenteil eines Steuerelements sein. Wenn der Benutzer beispielsweise mit dem Mauszeiger auf die äußere Kante eines [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) zeigt, ist **OriginalSource** für die meisten Zeigerereignissen ein [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)-Vorlagenbestandteil in [**Template**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template), nicht **Button** selbst.
 
-**Tip**  Eingabe Ereignis Blasen ist besonders nützlich, wenn Sie ein Steuerelement mit Vorlagen erstellen. Auf jedes Steuerelement, das eine Vorlage besitzt, kann durch seinen Consumer eine neue Vorlage angewendet werden. Der Consumer, der eine Arbeitsvorlage erneut zu erstellen versucht, kann versehentlich in der Standardvorlage deklarierten Ereignisbehandlungscode entfernen. Sie können dennoch eine Ereignisbehandlung auf Steuerelementebene bereitstellen, indem Sie Handler als Teil der [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)-Überschreibung in der Klassendefinition anfügen. Anschließend können Sie die Eingabeereignisse abfangen, die bei der Instanziierung per Bubbling zum Stamm des Steuerelements weitergeleitet werden.
+**Tipp**    Das Eingabe Ereignis Blasen ist besonders nützlich, wenn Sie ein Steuerelement mit Vorlagen erstellen. Auf jedes Steuerelement, das eine Vorlage besitzt, kann durch seinen Consumer eine neue Vorlage angewendet werden. Der Consumer, der eine Arbeitsvorlage erneut zu erstellen versucht, kann versehentlich in der Standardvorlage deklarierten Ereignisbehandlungscode entfernen. Sie können dennoch eine Ereignisbehandlung auf Steuerelementebene bereitstellen, indem Sie Handler als Teil der [**OnApplyTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)-Überschreibung in der Klassendefinition anfügen. Anschließend können Sie die Eingabeereignisse abfangen, die bei der Instanziierung per Bubbling zum Stamm des Steuerelements weitergeleitet werden.
 
 ### <a name="the-handled-property"></a>Die Eigenschaft **Handled**
 
 Einige Ereignisdatenklassen für bestimmte Routingereignisse enthalten eine Eigenschaft mit dem Namen **Handled**. Beispiele finden Sie unter [**PointerRoutedEventArgs.Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.handled), [**KeyRoutedEventArgs.Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) und [**DragEventArgs.Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.drageventargs.handled). In allen Fällen ist **Handled** eine festlegbare boolesche Eigenschaft.
 
-Wenn die Eigenschaft **Handled** auf **true** festgelegt wird, wirkt sich dies auf das Ereignissystemverhalten aus. Wenn **Handled** auf **true** festgelegt, wird das Routing für die meisten Ereignishandler beendet. Das Ereignis wird nicht über die Route weitergeleitet, um andere angefügte Handler über dieses spezielle Ereignis zu informieren. Was „behandelt“ im Kontext des Ereignisses bedeutet und wie Ihre App auf ein behandeltes Ereignis reagiert, liegt in Ihrem Ermessen. Im Grunde ist **Handled** ein einfaches Protokoll, mit dem im App-Code angegeben werden kann, dass das Auftreten eines Ereignisses nicht per Bubbling an Container weitergeleitet werden muss, da Ihre App-Logik sich um die notwendigen Schritte gekümmert hat. Im Gegensatz dazu müssen Sie jedoch darauf achten, dass Sie keine Ereignisse behandeln, bei denen ein Bubbling auftreten sollte, damit integrierte System- oder Steuerelementverhaltensweisen angewendet werden können. Das Behandeln von Ereignissen auf niedriger Ebene innerhalb der Teile oder Elemente eines Steuerelements eines Auswahlsteuerelements kann z. B. nachteilig sein. Das Auswahlsteuerelement sucht möglicherweise nach Eingabeereignissen, um festzustellen, ob die Auswahl geändert werden muss.
+Wenn die Eigenschaft **Handled** auf **true** festgelegt wird, wirkt sich dies auf das Ereignissystemverhalten aus. Wenn **Handled** auf **true** festgelegt, wird das Routing für die meisten Ereignishandler beendet. Das Ereignis wird nicht über die Route weitergeleitet, um andere angefügte Handler über dieses spezielle Ereignis zu informieren. Was „behandelt“ im Kontext des Ereignisses bedeutet und wie Ihre App auf ein behandeltes Ereignis reagiert, liegt in Ihrem Ermessen. Im Grunde ist **Handled** ein einfaches Protokoll, mit dem im App-Code angegeben werden kann, dass das Auftreten eines Ereignisses nicht per Bubbling an Container weitergeleitet werden muss, da Ihre App-Logik sich um die notwendigen Schritte gekümmert hat. In der Regel müssen Sie jedoch darauf achten, dass Sie keine Ereignisse verarbeiten, die wahrscheinlich Blasen Weise sein sollten, damit das integrierte System oder Steuerelement Verhalten agieren kann. Beispielsweise kann das Verarbeiten von Ereignissen auf niedriger Ebene innerhalb der Teile oder Elemente eines Auswahl Steuer Elements schädlich sein. Das Auswahlsteuerelement sucht möglicherweise nach Eingabeereignissen, um festzustellen, ob die Auswahl geändert werden muss.
 
 Nicht alle Routingereignisse können eine Route auf diese Weise abbrechen, da sie die Eigenschaft **Handled** nicht besitzen. Beispielsweise führen [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus) und [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus) Bubbling aus. Sie führen dieses Bubbling jedoch stets bis zum Stamm aus, und ihre Ereignisdatenklassen besitzen die Eigenschaft **Handled** nicht, die dieses Verhalten beeinflussen kann.
 
@@ -275,14 +275,14 @@ Bestimmte Objekte sind Bestandteil einer Beziehung mit der primären visuellen S
 Das Bestimmen, ob und wo auf der UI ein Element für die Maus-, Touch und Stifteingabe sichtbar ist, wird als *Treffertests* bezeichnet. Bei Toucheingabeaktionen und interaktionsspezifischen Ereignissen oder Manipulationsereignissen, die aus einer Toucheingabeaktion resultieren, muss ein Element bei Treffertests sichtbar sein, damit es der Ereignisquelle entsprechen und das der Aktion zugeordnete Ereignis auslösen kann. Andernfalls durchläuft die Aktion das Element bis zu zugrunde liegenden oder übergeordneten Elementen in der visuellen Struktur, die mit dieser Eingabe interagieren könnte. Treffertests werden von mehreren Faktoren beeinflusst. Sie können jedoch feststellen, ob ein bestimmtes Element Eingabeereignisse auslösen kann, indem Sie die zugehörige Eigenschaft [**IsHitTestVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.ishittestvisible) überprüfen. Diese Eigenschaft gibt nur dann **true** zurück, wenn das Element die folgenden Kriterien erfüllt:
 
 - Der [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility)-Eigenschaftenwert des Elements ist [**Visible**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Visibility).
-- Der Wert der Eigenschaft **Background** oder **Fill** ist nicht **null**. Ein **null** - [**Pinsel**](/uwp/api/Windows.UI.Xaml.Media.Brush) Wert führt zu Transparenz und Treffer Tests. (Wenn Sie ein Element transparent machen und zugleich Treffertests für das Element ermöglichen möchten, verwenden Sie einen [**Transparent**](https://docs.microsoft.com/uwp/api/windows.ui.colors.transparent)-Pinsel anstelle von **null**.)
+- Der Wert der Eigenschaft **Background** oder **Fill** ist nicht **null**. Ein Wert **null für ** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) führt zu Transparenz und Unsichtbarkeit von Treffertests. (Wenn Sie ein Element transparent machen und zugleich Treffertests für das Element ermöglichen möchten, verwenden Sie einen [**Transparent**](https://docs.microsoft.com/uwp/api/windows.ui.colors.transparent)-Pinsel anstelle von **null**.)
 
 **Hinweis**  **Background** und **Fill** werden nicht durch [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) definiert, sondern durch verschiedene abgeleitete Klassen wie [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) und [**Form**](/uwp/api/Windows.UI.Xaml.Shapes.Shape). Die von Ihnen für Vorder- und Hintergrundeigenschaften verwendeten Implikationen von Pinseln sind jedoch für Treffertests und Eingabeereignisse identisch. Dabei ist es unerheblich, welche Unterklasse die Eigenschaften implementiert.
 
 - Wenn das Element ein Steuerelement ist, muss dessen Wert für die Eigenschaft [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)**true** sein.
 - Das Element muss im Layout über reale Dimensionen verfügen. Ein Element, bei dem [**ActualHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualheight) und [**ActualWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 0 sind, kann keine Eingabeereignisse auslösen.
 
-Bei einigen Steuerelementen sind besondere Regeln bezüglich Treffertests zu beachten. Beispielsweise besitzt [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) die Eigenschaft **Background** nicht. Dennoch können innerhalb des gesamten Bereichs der zugehörigen Dimensionen Treffertests ausgeführt werden. [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) -und [**Media Element**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) -Steuerelemente werden über die definierten Rechteck Dimensionen getestet, unabhängig von transparentem Inhalt, wie z. b. Alphakanal in der angezeigten Medien Quelldatei. [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView) -Steuerelemente haben ein spezielles Treffer Testverhalten, da die Eingabe von den gehosteten HTML-und Fire Script-Ereignissen behandelt werden kann.
+Bei einigen Steuerelementen sind besondere Regeln bezüglich Treffertests zu beachten. Beispielsweise besitzt [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) die Eigenschaft **Background** nicht. Dennoch können innerhalb des gesamten Bereichs der zugehörigen Dimensionen Treffertests ausgeführt werden. [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) und [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-Steuerelemente können in den zugehörigen definierten Rechtecksdimensionen auf Treffer getestet werden. Dabei ist es unerheblich, ob in der Medienquelldatei transparente Inhalte wie Alphakanäle angezeigt werden. [**WebView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WebView)-Steuerelemente weisen ein spezielles Treffertestverhalten auf, da die Eingabe durch das gehostete HTML behandelt werden kann und Skriptereignisse auslösen kann.
 
 Für die meisten [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)-Klassen und [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)-Elemente können im eigenen Hintergrund zwar keine Treffertests ausgeführt werden, sie können jedoch dennoch Benutzereingabeereignisse verarbeiten, die von den in ihnen integrierten Elementen weitergeleitet werden.
 
@@ -296,8 +296,8 @@ Eine geringe Anzahl von UI-Elementen unterstützt die *Steuerung*. Die Steuerung
 
 Beim Definieren von benutzerdefinierten Ereignissen hängen die Vorgehensweise beim Hinzufügen des Ereignisses und die Bedeutung für Ihren Klassenentwurf erheblich von der verwendeten Programmiersprache ab.
 
-- Für C# und Visual Basic definieren Sie ein CLR-Ereignis. Sie können das .NET-Standardereignismuster verwenden, es sei denn, Sie verwenden benutzerdefinierte Accessoren (**add**/**remove**). Zusätzliche Tipps:
-    - Für den Ereignishandler empfiehlt sich die Verwendung von [**System.EventHandler<TEventArgs>** ](https://docs.microsoft.com/dotnet/api/system.eventhandler-1), da die Übersetzung in den generischen Windows-Runtime-Ereignisdelegaten [**EventHandler<T>** ](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)integriert ist.
+- Für C# und Visual Basic definieren Sie ein CLR-Ereignis. Sie können das standardmäßige .NET-Ereignis Muster verwenden, sofern Sie keine benutzerdefinierten Accessoren verwenden (**Add** / **Remove**). Zusätzliche Tipps:
+    - Für den Ereignishandler empfiehlt sich die Verwendung von [**System.EventHandler<TEventArgs>**](https://docs.microsoft.com/dotnet/api/system.eventhandler-1), da die Übersetzung in den generischen Windows-Runtime-Ereignisdelegaten [**EventHandler<T>**](https://docs.microsoft.com/uwp/api/windows.foundation.eventhandler)integriert ist.
     - Basieren Sie Ihre Ereignisdatenklasse nicht auf [**System.EventArgs**](https://docs.microsoft.com/dotnet/api/system.eventargs), da dann keine Übersetzung in die Windows-Runtime erfolgt. Verwenden Sie eine vorhandene Ereignisdatenklasse oder gar keine Basisklasse.
     - Wenn Sie benutzerdefinierte Accessoren verwenden, finden Sie weitere Informationen [unter benutzerdefinierte Ereignisse und Ereignisaccessoren in Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh972883(v=vs.140)).
     - Wenn Ihnen das .NET-Standardereignismuster nicht bekannt ist, lesen Sie unter [Definieren von Ereignissen für benutzerdefinierte Silverlight-Klassen](https://docs.microsoft.com/previous-versions/windows/). Dieser Inhalt wurde zwar für Microsoft Silverlight verfasst, stellt aber dennoch einen hilfreichen Überblick über den Code und die Konzepte für das .NET-Standardereignismuster dar.
@@ -308,11 +308,11 @@ Sie können ein benutzerdefiniertes Routingereignis nicht für die Windows-Runti
 
 Das Definieren eines benutzerdefinierten Ereignisses erfolgt in der Regel im Rahmen der Definition eines benutzerdefinierten Steuerelements. Eine Abhängigkeitseigenschaft mit einem Rückruf für Eigenschaftsänderungen ist ein gängiges Muster, genau wie das Definieren eines benutzerdefinierten Ereignisses, das in manchen oder in allen Fällen durch den Abhängigkeitseigenschaftsrückruf ausgelöst wird. Benutzer Ihres Steuerelements haben keinen Zugriff auf den von Ihnen definierten Rückruf für Eigenschaftsänderungen; die beste Methode ist das Bereitstellen eines Benachrichtigungsereignisses. Weitere Informationen finden Sie unter [Benutzerdefinierte Abhängigkeitseigenschaften](custom-dependency-properties.md).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Übersicht über XAML](xaml-overview.md)
-* [Schnellstart: berühren von Eingaben](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))
-* [Tastatur Interaktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
-* [.Net-Ereignisse und-Delegaten](https://msdn.microsoft.com/library/17sde2xt.aspx)
+* [Schnellstart: Fingereingabe](https://docs.microsoft.com/previous-versions/windows/apps/hh465387(v=win.10))
+* [Tastaturinteraktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+* [.NET-Ereignisse und -Delegate](https://msdn.microsoft.com/library/17sde2xt.aspx)
 * [Erstellen von Windows-Runtime-Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
 * [**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)
