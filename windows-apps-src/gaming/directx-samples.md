@@ -1,41 +1,23 @@
 ---
 title: DirectX-Beispiele
-description: DirectX-Spielbeispiele.
+description: DirectX-Spiel Beispiele.
 ms.assetid: a54273f8-1e91-4d02-8762-6eab2f00f7b0
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiel, DirectX, Beispiele, 3D
+keywords: Windows 10, UWP, Game, DirectX, Samples, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d31c6e5b7307c7d93d7c06a0c4ae915ea788655
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94c8b8051211d5f29bc32215b75d49e41feee713
+ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618715"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85409529"
 ---
 # <a name="directx-samples"></a>DirectX-Beispiele
 
-Es gibt einige Spielbeispiele, die mit DirectX entwickelt wurden.
+Dies sind einige Spiele Beispiele, die mit DirectX entwickelt wurden.
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Thema</th>
-<th align="left">Beschreibung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><a href="tutorial--create-your-first-uwp-directx-game.md">Erstellen eines einfachen UWP-Spiels mit DirectX</a></p></td>
-<td align="left"><p>Erstellen Sie ein einfaches Spiel für die universelle Windows-Plattform (UWP) mit DirectX und C++. Diese Tutorials konzentrieren sich auf wichtige Techniken und Überlegungen zur Entwicklung von UWP-DirectX-Spielen.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><a href="developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md">Entwickeln von Marble Maze, eine universelle Windows-Plattform-Spiel in C++ und DirectX</a></p></td>
-<td align="left"><p>Erstellen Sie ein 3D-Spiel, das auf verschiedenen Gerätetypen funktioniert, z. B. auf Tablets, Desktop-PCs und Laptops.</p></td>
-</tr>
-</tbody>
-</table>
+|Thema|Beschreibung|
+|-|-|
+|[Erstellen eines einfachen UWP-Spiels mit DirectX](tutorial--create-your-first-uwp-directx-game.md)|In diesen Tutorials erfahren Sie, wie Sie DirectX und [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) verwenden, um das Basic universelle Windows-Plattform (UWP)-Beispiel Spiel mit dem Namen **Simple3DGameDX**zu erstellen. Dieser Satz von Tutorials konzentriert sich auf die wichtigsten Techniken und Aspekte der UWP DirectX-Spieleentwicklung.|
+|[Entwickeln von *Marble Maze* &mdash; a universelle Windows-Plattform (UWP)-Spiel, das mit C++ for DirectX erstellt wurde](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)|Erstellen Sie ein 3D-Spiel, das auf verschiedenen Arten von Geräten wie Tablets, Desktop-PCs und Laptops funktioniert.|
