@@ -93,7 +93,7 @@
           items:
             - name: Einrichten des Projekts
               href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
-            - name: UWP-Framework
+            - name: UWP-App-Framework
               href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
             - name: Spielablaufverwaltung
               href: ../gaming/tutorial-game-flow-management.md
@@ -173,7 +173,7 @@
               href: ../graphics-concepts/introduction-to-buffers.md
             - name: Indexpuffer
               href: ../graphics-concepts/index-buffers.md
-        - name: '-Geräte zu unterstützen'
+        - name: Geräte
           href: ../graphics-concepts/devices.md
           items:
             - name: Gerätetypen

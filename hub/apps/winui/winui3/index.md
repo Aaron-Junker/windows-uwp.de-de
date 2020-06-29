@@ -3,12 +3,12 @@ title: WinUI 3.0 Vorschau 1 (Mai 2020)
 description: Übersicht über die Vorschauversion von WinUI 3.0.
 ms.date: 05/14/2020
 ms.topic: article
-ms.openlocfilehash: 3aac14807f8455eb9a9294c40ddc76ddfa224659
-ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
+ms.openlocfilehash: cbf61c618685501957e7dec081ae132995f15df5
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83688490"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448380"
 ---
 # <a name="windows-ui-library-30-preview-1-may-2020"></a>Windows-UI-Bibliothek 3.0 Vorschau 1 (Mai 2020)
 
@@ -109,6 +109,7 @@ WinUI 3.0 Vorschau 1 ist mit PCs kompatibel, auf denen mindestens das Windows�
 
 ### <a name="developer-tools"></a>Entwicklungstools
 
+- Zurzeit werden nur C#- und C++ /WinRT-Apps unterstützt.
 - Desktop-Apps unterstützen .NET 5 und C# 8 und müssen gepackt werden
 - UWP-Apps unterstützen .NET Native und C# 7.3
 - IntelliSense ist unvollständig
