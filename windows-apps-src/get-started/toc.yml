@@ -32,4 +32,4 @@
     - name: Erstellen einer komplexen App
       href: ../get-started/plan-your-app.md
 - name: Beispiele für Windows-Apps abrufen
-  href: ../get-started/get-uwp-app-samples.md
+  href: ../get-started/get-app-samples.md

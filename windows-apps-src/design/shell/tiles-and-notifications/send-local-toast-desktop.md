@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, sparsesloadpakete, c#, C Sharp, Popup Benachrichtigung, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: 679254aa35ea49e72f7feaae02ba0ccbddeafdad
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 1d8332745b44bc688fbf2ca7cf3b42cf7300d579
+ms.sourcegitcommit: 179f8098d10e338ad34fa84934f1654ec58161cd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233660"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85717647"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Lokale Popup Benachrichtigung von Desktop-c#-apps senden
 
@@ -23,19 +23,14 @@ Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/window
 > Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
 
 
-## <a name="step-1-enable-the-windows-runtime-apis"></a>Schritt 1: Aktivieren der Windows-Runtime-APIs
+## <a name="step-1-install-the-notifications-library"></a>Schritt 1: Installieren der Benachrichtigungs Bibliothek
 
-Wenn Sie nicht auf die Windows-Runtime-APIs von ihrer Win32-App verwiesen haben, müssen Sie dies zunächst tun.
+Installieren Sie das `Microsoft.Toolkit.Uwp.Notifications` [nuget-Paket](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) in Ihrem Projekt.
 
-Installieren Sie einfach das `Microsoft.Windows.SDK.Contracts` [nuget-Paket](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) in Ihrem Projekt. Weitere Informationen zum [Aktivieren von Windows-Runtime APIs finden Sie hier](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
-
-
-## <a name="step-2-copy-compat-library-code"></a>Schritt 2: Kopieren des Kompatibilitäts-Bibliothekscodes
-
-Kopieren Sie die [Datei DesktopNotificationManagerCompat.cs aus GitHub](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs) in Ihr Projekt. Die Kompatibilitäts-Bibliothek abstrahiert einen Großteil der Komplexität von Desktop Benachrichtigungen. Die folgenden Anweisungen erfordern die Kompatibilitäts-Bibliothek.
+Diese [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) fügt den Kompatibilitäts-Bibliotheks Code zum Arbeiten mit Popup Benachrichtigungen von Desktop-Apps hinzu. Außerdem verweist Sie auf die UWP-sdche und ermöglicht das Erstellen von Benachrichtigungen mit c# anstelle von unformatierten XML-Daten. Der Rest dieses Schnellstarts hängt von der Benachrichtigungs Bibliothek ab.
 
 
-## <a name="step-3-implement-the-activator"></a>Schritt 3: Implementieren Sie den Aktivator.
+## <a name="step-2-implement-the-activator"></a>Schritt 2: Implementieren Sie den Aktivator.
 
 Sie müssen einen Handler für die Toast Aktivierung implementieren, damit Ihre APP etwas Unternehmen kann, wenn der Benutzer auf den Popup klickt. Dies ist erforderlich, damit der Popup im Aktions Center persistent gespeichert wird (da der Popup-Vorgang Tage später angezeigt werden kann, wenn die app geschlossen wird). Diese Klasse kann an beliebiger Stelle in Ihrem Projekt platziert werden.
 
@@ -58,7 +53,7 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-## <a name="step-4-register-with-notification-platform"></a>Schritt 4: Registrieren bei der Benachrichtigungs Plattform
+## <a name="step-3-register-with-notification-platform"></a>Schritt 3: Registrieren bei der Benachrichtigungs Plattform
 
 Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren. Je nachdem, ob Sie msix/Sparse-Pakete oder klassisches Win32 verwenden, gibt es unterschiedliche Schritte. Wenn Sie beide unterstützen, müssen Sie beide Schritte ausführen (Sie müssen jedoch nicht Ihren Code verzweigen, da die Bibliothek dies für Sie erledigt!).
 
@@ -115,7 +110,7 @@ Wenn Sie klassisches Win32 verwenden (oder wenn Sie beides unterstützen), müss
 
 Wählen Sie eine eindeutige aumid aus, mit der ihre Win32-App identifiziert wird. Dies erfolgt in der Regel in der Form [CompanyName]. [AppName], aber Sie möchten sicherstellen, dass dies in allen apps eindeutig ist (Sie können am Ende einige Ziffern hinzufügen).
 
-#### <a name="step-41-wix-installer"></a>Schritt 4,1: WiX-Installer
+#### <a name="step-31-wix-installer"></a>Schritt 3,1: WiX-Installer
 
 Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #3 in eingeschlossen ist, `{}` wie unten gezeigt.
 
@@ -137,7 +132,7 @@ Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei 
 > Um Benachrichtigungen tatsächlich verwenden zu können, müssen Sie die APP zunächst vor dem Debuggen über das Installationsprogramm installieren, damit die Start Verknüpfung mit ihrer aumid und CLSID vorhanden ist. Nachdem die Start Verknüpfung vorhanden ist, können Sie in Visual Studio mit F5 Debuggen.
 
 
-#### <a name="step-42-register-aumid-and-com-server"></a>Schritt 4,2: Registrieren von aumid und com-Server
+#### <a name="step-32-register-aumid-and-com-server"></a>Schritt 3,2: Registrieren von aumid und com-Server
 
 Rufen Sie dann unabhängig vom Installationsprogramm im Startcode Ihrer APP (vor dem Aufrufen von Benachrichtigungs-APIs) die **registeraumidandcomserver** -Methode auf, und geben Sie dann die Benachrichtigungs-Activator-Klasse aus Schritt #3 und ihrer zuvor verwendeten aumid an.
 
@@ -151,7 +146,7 @@ Wenn Sie sowohl das msix/Sparse-Paket als auch das klassische Win32-Paket unters
 Diese Methode ermöglicht es Ihnen, die Kompatibilitäts-APIs aufzurufen, um Benachrichtigungen zu senden und zu verwalten, ohne die aumid ständig bereitstellen zu müssen. Außerdem wird der Registrierungsschlüssel LocalServer32 für den com-Server eingefügt.
 
 
-## <a name="step-5-register-com-activator"></a>Schritt 5: Registrieren des com-Activators
+## <a name="step-4-register-com-activator"></a>Schritt 4: Registrieren des com-Activators
 
 Sowohl für das msix/Sparse-Paket als auch für klassische Win32-apps müssen Sie den Typ des Benachrichtigungs aktivierers registrieren, damit Sie Popup Aktivierungen verarbeiten können.
 
@@ -163,7 +158,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 ```
 
 
-## <a name="step-6-send-a-notification"></a>Schritt 6: Senden einer Benachrichtigung
+## <a name="step-5-send-a-notification"></a>Schritt 5: Senden einer Benachrichtigung
 
 Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschied, dass Sie die **desktopnotificationmanagercompat** -Klasse verwenden, um einen Objekt **-Benachrichtigungs**Dienst zu erstellen. Die Kompatibilitäts-Bibliothek behandelt automatisch den Unterschied zwischen dem msix/Sparse-Paket und dem klassischen Win32, sodass Sie den Code nicht verzweigen müssen. Bei klassischem Win32 speichert die Kompatibilitäts-Bibliothek die von Ihnen beim Aufrufen von **registeraumidandcomserver** bereitgestellte aumid zwischen, sodass Sie sich keine Gedanken machen müssen, wann die aumid bereitgestellt oder nicht.
 
@@ -177,32 +172,13 @@ Stellen Sie sicher, dass Sie den unten gezeigten **Inhalts Inhalt** verwenden (o
 
 ```csharp
 // Construct the visuals of the toast (using Notifications library)
-ToastContent toastContent = new ToastContent()
-{
-    // Arguments when the user taps body of toast
-    Launch = "action=viewConversation&conversationId=5",
-
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Hello world!"
-                }
-            }
-        }
-    }
-};
-
-// Create the XML document (BE SURE TO REFERENCE WINDOWS.DATA.XML.DOM)
-var doc = new XmlDocument();
-doc.LoadXml(toastContent.GetContent());
+ToastContent toastContent = new ToastContentBuilder()
+    .AddToastActivationInfo("action=viewConversation&conversationId=5", ToastActivationType.Foreground)
+    .AddText("Hello world!")
+    .GetToastContent();
 
 // And create the toast notification
-var toast = new ToastNotification(doc);
+var toast = new ToastNotification(toastContent.GetXml());
 
 // And then show it
 DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
@@ -212,7 +188,7 @@ DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 > Klassische Win32-Apps können keine Legacy-Popup Vorlagen verwenden (z. b. ToastText02). Die Aktivierung der Legacy Vorlagen schlägt fehl, wenn die com-CLSID angegeben wird. Sie müssen die oben gezeigten Windows 10-Standardvorlagen verwenden.
 
 
-## <a name="step-7-handling-activation"></a>Schritt 7: Behandeln der Aktivierung
+## <a name="step-6-handling-activation"></a>Schritt 6: Behandeln der Aktivierung
 
 Wenn der Benutzer auf den Popup klickt, wird die **onaktivierte** Methode der **notificationactivator** -Klasse aufgerufen.
 
@@ -345,7 +321,7 @@ Wenn Ihre APP nicht ausgeführt wird:
 Bei Desktop-Apps wird die Vordergrund-und Hintergrund Aktivierung identisch behandelt. der com-Activator wird aufgerufen. Es liegt an Ihrem app-Code, zu entscheiden, ob ein Fenster angezeigt werden soll, oder einfach nur einige Aufgaben auszuführen und zu beenden. Wenn Sie also einen **ActivationType** von **Background** in Ihrem Popup Inhalt angeben, ändert sich das Verhalten nicht.
 
 
-## <a name="step-8-remove-and-manage-notifications"></a>Schritt 8: entfernen und Verwalten von Benachrichtigungen
+## <a name="step-7-remove-and-manage-notifications"></a>Schritt 7: entfernen und Verwalten von Benachrichtigungen
 
 Das Entfernen und Verwalten von Benachrichtigungen ist identisch mit UWP-apps. Es wird jedoch empfohlen, dass Sie unsere Kompatibilitäts-Bibliothek verwenden, um eine **desktopnotificationhistorycompat** -Klasse zu erhalten, sodass Sie sich keine Gedanken über die Bereitstellung der aumid machen müssen, wenn Sie klassisches Win32 verwenden.
 
@@ -358,7 +334,7 @@ DesktopNotificationManagerCompat.History.Clear();
 ```
 
 
-## <a name="step-9-deploying-and-debugging"></a>Schritt 9: Bereitstellen und Debuggen
+## <a name="step-8-deploying-and-debugging"></a>Schritt 8: Bereitstellen und Debuggen
 
 Informationen zum Bereitstellen und Debuggen Ihrer msix-App finden Sie unter [ausführen, Debuggen und Testen einer gepackten Desktop-App](/windows/uwp/porting/desktop-to-uwp-debug)
 
