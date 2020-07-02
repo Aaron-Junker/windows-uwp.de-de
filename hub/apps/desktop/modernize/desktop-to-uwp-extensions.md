@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b048de69a8a259509e5a5c54c5f1d61675a25a18
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: d9f5ca95678a8b31ed53cfdf2c4e6433bca504c8
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854721"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334457"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
 
@@ -36,7 +36,7 @@ Unterstütze die Benutzer bei der Umstellung auf deine gepackte App.
 * [Hinzufügen von Optionen zu den Kontextmenüs von Dateien eines bestimmten Dateityps](#add)
 * [Öffnen bestimmter Dateitypen direkt über eine URL](#open)
 
-<a id="point" />
+<a id="point"></a>
 
 ### <a name="point-existing-start-tiles-and-taskbar-buttons-to-your-packaged-app"></a>Verweis auf die gepackte App mit vorhandenen Startkacheln und Taskleistenschaltflächen
 
@@ -55,7 +55,6 @@ Deine Benutzer haben möglicherweise deine Desktop-Anwendung an die Taskleiste o
         <DesktopApp ShortcutPath="[path]" />
     </DesktopAppMigration>
 </Extension>
-
 ```
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
@@ -93,7 +92,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 
 [WPF-Bildanzeige mit Übergang/Migration/Deinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="make" />
+<a id="make"></a>
 
 ### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>Festlegen deiner gepackten Anwendung zum Öffnen von Dateien anstelle deiner Desktop-App
 
@@ -154,7 +153,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 
 [WPF-Bildanzeige mit Übergang/Migration/Deinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="associate" />
+<a id="associate"></a>
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>Zuordnen einer gepackten Anwendung zu einer Gruppe von Dateitypen
 
@@ -212,7 +211,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 
 [WPF-Bildanzeige mit Übergang/Migration/Deinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="add" />
+<a id="add"></a>
 
 ### <a name="add-options-to-the-context-menus-of-files-that-have-a-certain-file-type"></a>Hinzufügen von Optionen zu den Kontextmenüs von Dateien eines bestimmten Dateityps
 
@@ -279,7 +278,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 
 [WPF-Bildanzeige mit Übergang/Migration/Deinstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<a id="open" />
+<a id="open"></a>
 
 ### <a name="open-certain-types-of-files-directly-by-using-a-url"></a>Öffnen bestimmter Dateitypen direkt über eine URL
 
@@ -341,7 +340,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 * [Erstellen von Firewallausnahmen für deine App](#rules)
 * [Platzieren deiner DLL-Dateien in einem beliebigen Ordner des Pakets](#load-paths)
 
-<a id="rules" />
+<a id="rules"></a>
 
 ### <a name="create-firewall-exception-for-your-app"></a>Erstellen von Firewallausnahmen für deine App
 
@@ -403,7 +402,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 </Package>
 ```
 
-<a id="load-paths" />
+<a id="load-paths"></a>
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>Platzieren deiner DLL-Dateien in einem beliebigen Ordner des Pakets
 
@@ -467,7 +466,7 @@ Unterstütze Benutzer beim Organisieren deiner Dateien und interagiere auf vertr
 * [Angeben eines Kontextmenühandlers für einen Dateityp](#context-menu)
 * [Anzeigen von Dateien aus deinem Clouddienst im Datei-Explorer](#cloud-files)
 
-<a id="define" />
+<a id="define"></a>
 
 ### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>Definieren des Anwendungsverhaltens, wenn Benutzer mehrere Dateien gleichzeitig auswählen und öffnen
 
@@ -541,7 +540,7 @@ Bei gepackten Desktop-Apps stehen die gleichen drei Optionen zur Verfügung wie 
 
 Wenn der Benutzer 15 oder weniger Dateien öffnet, lautet die Standardauswahl des **MultiSelectModel**-Attributs *Player*. Andernfalls lautet der Standardwert *Document*. UWP-Apps werden immer als *Player* gestartet.
 
-<a id="show" />
+<a id="show"></a>
 
 ### <a name="show-file-contents-in-a-thumbnail-image-within-file-explorer"></a>Anzeigen von Dateiinhalten in einem Miniaturbild im Datei-Explorer
 
@@ -604,7 +603,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 </Package>
 ```
 
-<a id="preview" />
+<a id="preview"></a>
 
 ### <a name="show-file-contents-in-the-preview-pane-of-file-explorer"></a>Anzeigen von Dateiinhalten im Vorschaubereich des Datei-Explorers
 
@@ -665,7 +664,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 </Package>
 ```
 
-<a id="enable" />
+<a id="enable"></a>
 
 ### <a name="enable-users-to-group-files-by-using-the-kind-column-in-file-explorer"></a>Ermöglichen der Gruppierung von Dateien mithilfe der Spalte „Art“ im Datei-Explorer
 
@@ -733,7 +732,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 </Package>
 ```
 
-<a id="make-file-properties" />
+<a id="make-file-properties"></a>
 
 ### <a name="make-file-properties-available-to-search-index-property-dialogs-and-the-details-pane"></a>Bereitstellen von Dateieigenschaften für Suche, Index, Eigenschaftendialogfelder und Detailbereich
 
@@ -790,7 +789,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 </Package>
 ```
 
-<a id="context-menu" />
+<a id="context-menu"></a>
 
 ### <a name="specify-a-context-menu-handler-for-a-file-type"></a>Angeben eines Kontextmenühandlers für einen Dateityp
 
@@ -888,7 +887,7 @@ Folge diesen Anweisungen, um deinen Kontextmenühandler zu registrieren.
 </Package>
 ```
 
-<a id="cloud-files" />
+<a id="cloud-files"></a>
 
 ### <a name="make-files-from-your-cloud-service-appear-in-file-explorer"></a>Anzeigen von Dateien aus deinem Clouddienst im Datei-Explorer
 
@@ -951,7 +950,7 @@ Registriere die Handler, die du in deiner Anwendung implementierst. Du kannst au
 </Package>
 ```
 
-<a id="start" />
+<a id="start"></a>
 
 ## <a name="start-your-application-in-different-ways"></a>Starten deiner Anwendung auf unterschiedlicher Weise
 
@@ -961,7 +960,7 @@ Registriere die Handler, die du in deiner Anwendung implementierst. Du kannst au
 * [Ermöglichen des Anwendungsstarts beim Verbinden eines Geräts mit dem Benutzer-PC](#autoplay)
 * [Automatischer Neustart nach dem Empfang eines Updates aus dem Microsoft Store](#updates)
 
-<a id="protocol" />
+<a id="protocol"></a>
 
 ### <a name="start-your-application-by-using-a-protocol"></a>Starten deiner Anwendung über ein Protokoll
 
@@ -1012,7 +1011,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 </Package>
 ```
 
-<a id="alias" />
+<a id="alias"></a>
 
 ### <a name="start-your-application-by-using-an-alias"></a>Starten deiner Anwendung über einen Alias
 
@@ -1068,7 +1067,7 @@ Benutzer und andere Prozesse können einen Alias verwenden, um deine App zu star
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-<a id="executable" />
+<a id="executable"></a>
 
 ### <a name="start-an-executable-file-when-users-log-into-windows"></a>Starten einer ausführbaren Datei, wenn sich Benutzer bei Windows anmelden
 
@@ -1131,7 +1130,7 @@ Benutzer können die Startaufgabe Ihrer App manuell mithilfe des Task-Managers d
  </Package>
 ```
 
-<a id="autoplay" />
+<a id="autoplay"></a>
 
 ### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>Ermöglichen des Anwendungsstarts beim Verbinden eines Geräts mit dem Benutzer-PC
 
@@ -1190,7 +1189,7 @@ Du kannst deine Anwendung als Option für die automatische Wiedergabe anzeigen, 
 </Package>
 ```
 
-<a id="updates" />
+<a id="updates"></a>
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>Automatischer Neustart nach dem Empfang eines Updates aus dem Microsoft Store
 
@@ -1203,7 +1202,7 @@ Jedes aktive Fenster in deiner Anwendung empfängt eine [WM_QUERYENDSESSION](htt
 Wenn jedes aktive Fenster in deiner Anwendung die [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)-Nachricht empfängt, sollte die Anwendung die Daten speichern und herunterfahren.
 
 >[!NOTE]
-Die aktiven Fenster empfangen außerdem die [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close)-Nachricht, falls die Anwendung die [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)-Nachricht nicht verarbeitet.
+> Die aktiven Fenster empfangen außerdem die [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close)-Nachricht, falls die Anwendung die [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession)-Nachricht nicht verarbeitet.
 
 An diesem Punkt hat deine Anwendung 30 Sekunden Zeit, um die eigenen Prozesse zu schließen. Andernfalls wird deren Beendigung durch die Plattform erzwungen.
 
@@ -1217,7 +1216,7 @@ Führe eine Integration in andere Apps durch, starte weitere Prozesse, oder teil
 * [Freigeben von Schriftarten für andere Windows-Anwendungen](#fonts)
 * [Starten eines Win32-Prozesses aus einer UWP-App](#win32-process)
 
-<a id="printing" />
+<a id="printing"></a>
 
 ### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>Anzeigen deiner Anwendung als Druckziel in Anwendungen mit Druckunterstützung
 
@@ -1269,7 +1268,7 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 
 Ein Beispiel zur Verwendung dieser Erweiterung findest du [hier](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF).
 
-<a id="fonts" />
+<a id="fonts"></a>
 
 ### <a name="share-fonts-with-other-windows-applications"></a>Freigeben von Schriftarten für andere Windows-Anwendungen
 
@@ -1317,7 +1316,7 @@ Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapm
 </Package>
 ```
 
-<a id="win32-process" />
+<a id="win32-process"></a>
 
 ### <a name="start-a-win32-process-from-a-universal-windows-platform-uwp-app"></a>Starten eines Win32-Prozesses aus einer UWP-App
 

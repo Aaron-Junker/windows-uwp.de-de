@@ -1,17 +1,15 @@
 ---
 title: Befehl „show“
 description: Dieser Befehl zeigt Details zur angegebenen Anwendung an, u. a. zur Quelle der Anwendung sowie die zugehörigen Metadaten.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df5a5287b6c7a1321025182f7b3f24ed896e76d
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 9443bb31133ee9643571a4861af7027272b35d94
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824981"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334506"
 ---
 # <a name="show-command-winget"></a>Befehl „show“ (winget)
 

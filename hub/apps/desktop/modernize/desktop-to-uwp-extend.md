@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a38f5fa7f3ef99f5970ec5d476fb65761aa39db4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302584"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334552"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>Erweitern deiner Desktop-App mit modernen UWP-Komponenten
 
@@ -25,7 +25,7 @@ In vielen Fällen kannst du die Windows-Runtime-APIs direkt in deiner Desktopanw
 
 Wenn du bereit bist, lass uns anfangen.
 
-<a id="setup" />
+<a id="setup"></a>
 
 ## <a name="first-setup-your-solution"></a>Richte als Erstes deine Projektmappe ein.
 
@@ -110,7 +110,7 @@ Um eine XAML-basierte Benutzeroberfläche anzuzeigen, gehe so vor:
 
 :five: [Anzeigen der gewünschten Seite im UWP-Projekt](#parse)
 
-<a id="solution-setup" />
+<a id="solution-setup"></a>
 
 ### <a name="setup-your-solution"></a>Einrichten deiner Projektmappe
 
@@ -122,7 +122,7 @@ Deine Projektmappe sieht in etwa wie folgt aus:
 
 In diesem Beispiel heißt das Windows Forms-Projekt **Landmarks**. Das UWP-Projekt, das die XAML-Benutzeroberfläche enthält, heißt **MapUI**.
 
-<a id="xaml-UI" />
+<a id="xaml-UI"></a>
 
 ### <a name="create-a-xaml-ui"></a>Erstellen einer XAML-Benutzeroberfläche
 
@@ -171,7 +171,7 @@ Du kannst auch **Package.appxmanifest** im Designer öffnen, die Registerkarte *
 > [!NOTE]
 > Kartensteuerelemente laden Daten aus dem Internet herunter. Wenn du eines verwendest, musst du deinem Manifest auch die Funktion „Internetclient“ hinzufügen.
 
-<a id="start" />
+<a id="start"></a>
 
 ### <a name="start-the-uwp-app"></a>Starten der UWP-App
 
@@ -196,7 +196,7 @@ private async void ShowMap(double lat, double lon)
 }
 ```
 
-<a id="parse" />
+<a id="parse"></a>
 
 ### <a name="parse-parameters-and-show-a-page"></a>Analysieren von Parametern und Anzeigen einer Seite
 
@@ -271,7 +271,7 @@ Um deine Anwendung zu einem Freigabeziel zu machen, gehe wie folgt vor:
 
 :five: [Ändern der Desktopanwendung zum Abrufen der freigegebenen Datei](#modify-desktop)
 
-<a id="share-extension" />
+<a id="share-extension"></a>
 
 Die folgenden Schritte  
 
@@ -299,7 +299,7 @@ Gib den Namen der ausführbaren Datei des UWP-Projekts und der Einstiegspunktkla
 
 Du musst außerdem angeben, welche Arten von Dateien mit deiner App freigegeben werden können. In diesem Beispiel machen wir die Desktopanwendung [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) zu einem Freigabeziel für Bitmapbilder. Daher geben wir `Bitmap` als unterstützten Dateityp an.
 
-<a id="override" />
+<a id="override"></a>
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>Überschreiben des Ereignishandlers OnShareTargetActivated
 
@@ -332,7 +332,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 In diesem Code speichern wir das Bild, das vom Benutzer freigegeben wird, in einem lokalen Speicherordner der Anwendung. Zu einem späteren Zeitpunkt ändern wir die Desktopanwendung so, dass Bilder aus demselben Ordner abgerufen werden. Die Desktopanwendung kann das leisten, da sie im gleichen Paket wie die UWP-Anwendung enthalten ist.
 
-<a id="desktop-extensions" />
+<a id="desktop-extensions"></a>
 
 ### <a name="add-desktop-extensions-to-the-uwp-project"></a>Hinzufügen von Desktoperweiterungen zum UWP-Projekt
 
@@ -340,7 +340,7 @@ Füge die Erweiterung **Windows Desktop Extensions for the UWP** deinem UWP-App-
 
 ![Desktoperweiterung](images/desktop-to-uwp/desktop-extensions.png)
 
-<a id="full-trust" />
+<a id="full-trust"></a>
 
 ### <a name="add-the-full-trust-process-extension"></a>Hinzufügen der voll vertrauenswürdigen Prozesserweiterung
 
@@ -356,7 +356,7 @@ Füge die Erweiterung **Windows Desktop Extensions for the UWP** deinem UWP-App-
 
 Diese Erweiterung ermöglicht es der UWP-Anwendung, die Desktopanwendung zu starten, für die du eine Datei freigeben möchtest. In diesem Beispiel verweisen wir auf die ausführbare Datei der Desktopanwendung [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo).
 
-<a id="modify-desktop" />
+<a id="modify-desktop"></a>
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>Ändern der Desktopanwendung zum Abrufen der freigegebenen Datei
 
@@ -414,7 +414,7 @@ Um einen Hintergrunddienst zu erstellen, gehe folgendermaßen vor:
 
 :three: [Registrieren der Hintergrundaufgabe](#register-background-task)
 
-<a id="implement-task" />
+<a id="implement-task"></a>
 
 ### <a name="implement-the-background-task"></a>Implementieren der Hintergrundaufgabe
 
@@ -455,7 +455,7 @@ public sealed class SiteVerifier : IBackgroundTask
     }
 ```
 
-<a id="configure-background-task" />
+<a id="configure-background-task"></a>
 
 ### <a name="configure-the-background-task"></a>Konfigurieren der Hintergrundaufgabe
 
@@ -473,7 +473,7 @@ Gib den vollqualifizierten Namen der Klasse in der Windows-Runtime-Komponente an
 
 ![Timer-Eigenschaft](images/desktop-to-uwp/background-task-entry-point.png)
 
-<a id="register-background-task" />
+<a id="register-background-task"></a>
 
 ### <a name="register-the-background-task"></a>Registrieren der Hintergrundaufgabe
 
