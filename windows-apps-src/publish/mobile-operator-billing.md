@@ -6,17 +6,17 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, Mobile-Operatoren, Mobile Abrechnung, Abrechnung mobiler Bediener
 ms.localizationpriority: medium
-ms.openlocfilehash: 16783e71a170118f470a351a7f5dc4c2a178405e
-ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
+ms.openlocfilehash: 2be7938faddaf50c96005f32c77f523ebf4061e3
+ms.sourcegitcommit: ae195892efb9d3abd1190776617984d4219c6777
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84334215"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85913236"
 ---
 # <a name="mobile-operator-billing"></a>Abrechnung über den Mobilfunkanbieter
 
 > [!NOTE]
-> Wenden Sie sich an den Support, wenn Sie [nach Unterstützung](https://developer.microsoft.com/windows/support)bezüglich der Auszahlungen suchen möchten, einschließlich der Konfiguration von Auszahlungs Konten, fehlender Auszahlungen, dem Aufbewahren von Auszahlungen oder sonstigen anderen.
+> Wenn Sie Unterstützung in Bezug auf Auszahlungen benötigen, einschließlich der Konfiguration von Auszahlungskonten, fehlenden Auszahlungen, dem Zurückhalten von Auszahlungen oder sonstigen Fragen, wenden Sie sich [hier](https://developer.microsoft.com/windows/support) an den Support.
 
 Der Microsoft Store bietet die Abrechnung mobiler Bediener als Zahlungsmethode für Geräte unter Windows 10, Smartphones mit Windows 10 Mobile und Xbox One-Konsolen. Wenn der Mobile Bediener eines Kunden diese Funktion unterstützt, kann der Kunde die Abrechnung mobiler Bediener als Zahlungsmethode hinzufügen und ihn verwenden, um Einkäufe mithilfe seines mobilen Kontos zu tätigen.
 
@@ -30,7 +30,7 @@ Die Abrechnung mobiler Bediener wird derzeit von diesen mobilen Operatoren unter
 | Land/Region       | Mobilfunkanbieter                                        |
 |----------------------|---------------------------------------------------------|
 | Australien            | Optus                                                   |
-| Österreich              | Hutchison 3G Österreich, a1 Telekom, T-Mobile/Tele. Ring  |
+| Österreich              | A1 Telekom, Hutchison 3G Österreich, T-Mobile/Tele. Ring  |
 | Belgien              | Basis, der Proxy                                          |
 | Canada               | Telus                                                   |
 | Tschechien              | T-Mobile                                                |
@@ -39,7 +39,7 @@ Die Abrechnung mobiler Bediener wird derzeit von diesen mobilen Operatoren unter
 | Frankreich               | Orange                                                  |
 | Deutschland              | O2, Telekom Deutschland, Vodafone                       |
 | Ungarn              | Telenor                                                 |
-| Italien                | Wind, Tre                                               |
+| Italien                | Tre, Wind                                               |
 | Malaysia             | Digi                                                    |
 | Niederlande          | KPN/Telfort                                           |
 | Norwegen               | Telenor/talkmore, Telia/OneCall                     |
@@ -48,10 +48,10 @@ Die Abrechnung mobiler Bediener wird derzeit von diesen mobilen Operatoren unter
 | Slowakei             | Slowakische Telekom                                          |
 | Südafrika         | Vodacom                                                 |
 | Spanien                | Orange                                                  |
-| Schweden               | Telenor, 3                                              |
-| Schweiz          | Swisscom, Sunrise                                       |
+| Schweden               | 3, Telenor                                              |
+| Schweiz          | Sonnenaufgang, Swisscom                                       |
 | Taiwan               | FarEasTone                                              |
 | Türkei               | Turkcell                                                |
 | Vereinigte Arabische Emirate | Etisalat                                                |
 | USA        | Sprint, Verizon                                         |
-| United Kingdom       | O2, 3 UK, EE                                            |
+| Vereinigtes Königreich       | 3 UK, EE, O2, Vodaphone                                 |

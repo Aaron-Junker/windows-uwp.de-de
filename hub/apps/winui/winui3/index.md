@@ -27,7 +27,7 @@ Die Windows-UI-Bibliothek (WinUI) 3.0 ist ein größeres Update, das WinUI in e
 - Verbesserungen und Aktualisierungen für [WebView2](https://docs.microsoft.com/microsoft-edge/hosting/webview2)
   - Unterstützung hoher DPI-Werte
   - Unterstützung des Änderns der Größe und Verschiebens von Fenstern
-  - Für eine neuere Version von Edge aktualisiert
+  - Für eine neuere Version von Microsoft Edge aktualisiert
   - Nicht mehr erforderlich, um auf ein WebView2-spezifisches NuGet-Paket zu verweisen
 - SwapChainPanel
 - Erforderliche Verbesserungen für Open-Source-Migration

@@ -4,22 +4,22 @@ title: Sensorausrichtung
 description: Sensordaten der Klassen Accelerometer, Gyrometer, Compass, Inclinometer und OrientationSensor sind durch ihre Referenzachsen definiert. Diese Achsen werden durch das Querformat des Geräts bestimmt und drehen sich mit dem Gerät, wenn es vom Benutzer gedreht wird.
 ms.date: 05/24/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bfd84cd2f2255138b738ecb6dd7f6dab824d7ec4
-ms.sourcegitcommit: d1ef530ef4dfa34db7bc429ab5a0c19fc405885f
+ms.openlocfilehash: 4659aaba330d3b41451e91e450ff601e3fcf5407
+ms.sourcegitcommit: 42a2d9e47f682ba42d91fed587f4d5924bde9c9a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71247450"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85840764"
 ---
 # <a name="sensor-orientation"></a>Sensorausrichtung
 
-Sensordaten der Klassen [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) und [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) sind durch ihre Referenzachsen definiert. Diese Achsen werden durch den Referenzrahmen des Geräts bestimmt und drehen sich mit dem Gerät, wenn es vom Benutzer gedreht wird. Falls Ihre App die automatische Drehung unterstützt und sie sich selbst entsprechend der Drehung des Geräts neu ausrichtet, müssen Sie die Sensordaten für die Drehung anpassen, bevor Sie sie verwenden.
+Sensordaten der Klassen [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) und [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) sind durch ihre Referenzachsen definiert. Diese Achsen werden durch den Verweis Rahmen des Geräts definiert und drehen sich mit dem Gerät, während der Benutzer Sie einschalten. Falls Ihre App die automatische Drehung unterstützt und sie sich selbst entsprechend der Drehung des Geräts neu ausrichtet, müssen Sie die Sensordaten für die Drehung anpassen, bevor Sie sie verwenden.
 
 ### <a name="important-apis"></a>Wichtige APIs
 
-- [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
 - [**Windows. Devices. Sensors. Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>Bildschirmausrichtung und Geräteausrichtung
@@ -30,15 +30,15 @@ In den folgenden Diagrammen befinden sich sowohl das Gerät als auch die Anzeige
 
 Dieses Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung im [quer](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)Format an.
 
-![Bildschirm- und Geräteausrichtung im Querformat](images/sensor-orientation-a.PNG)
+:::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="Bildschirm- und Geräteausrichtung im Querformat":::
 
 Das nächste Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung in " [landscapeflipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)" an.
 
-![Bildschirm- und Geräteausrichtung im LandscapeFlipped-Format](images/sensor-orientation-b.PNG)
+![Bildschirm- und Geräteausrichtung im LandscapeFlipped-Format](images/sensor-orientation-b-small.jpg)
 
 In diesem abschließenden Diagramm wird die Anzeige Ausrichtung im Querformat dargestellt, während die Geräte Ausrichtung [Landschafts](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)basiert ist.
 
-![Bildschirmausrichtung im Querformat und Geräteausrichtung im LandscapeFlipped-Format](images/sensor-orientation-c.PNG)
+![Bildschirmausrichtung im Querformat und Geräteausrichtung im LandscapeFlipped-Format](images/sensor-orientation-c-small.jpg)
 
 Sie können die Ausrichtungswerte mithilfe der [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation)-Klasse abfragen, indem Sie die [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview)-Methode mit der [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation)-Eigenschaft verwenden. Anschließend können Sie durch einen Vergleich mit der [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)-Enumeration eine Logik erstellen. Bedenken Sie, dass Sie für jede unterstützte Ausrichtung eine Konvertierung der Referenzachsen in die jeweilige Ausrichtung unterstützen müssen.
 
@@ -48,10 +48,10 @@ Hersteller bieten Geräte an, die sowohl für das Quer- als auch das Hochformat 
 
 | Ausrichtung | Für Querformat ausgelegt | Für Hochformat ausgelegt |
 |-------------|-----------------|----------------|
-| **Landschaf** | ![Querformatgerät im Querformat](images/sensor-orientation-0.PNG) | ![Hochformatgerät im Querformat](images/sensor-orientation-1.PNG) |
-| **Hochformat** | ![Querformatgerät im Hochformat](images/sensor-orientation-2.PNG) | ![Hochformatgerät im Hochformat](images/sensor-orientation-3.PNG) |
-| **Landscapeflipped** | ![Querformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-4.PNG) | ![Hochformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-5.PNG) | 
-| **Portraitflipped** | ![Querformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-6.PNG)| ![Hochformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-7.PNG) |
+| **Querformat** | ![Querformatgerät im Querformat](images/sensor-orientation-0-small.jpg) | ![Hochformatgerät im Querformat](images/sensor-orientation-1-small.jpg) |
+| **Hochformat** | ![Querformatgerät im Hochformat](images/sensor-orientation-2-small.jpg) | ![Hochformatgerät im Hochformat](images/sensor-orientation-3-small.jpg) |
+| **LandscapeFlipped** | ![Querformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-4-small.jpg) | ![Hochformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-5-small.jpg) | 
+| **PortraitFlipped** | ![Querformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-6-small.jpg)| ![Hochformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-7-small.jpg) |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>Geräte, die die Anzeige übertragen, und monitorlose Geräte
 
@@ -63,12 +63,12 @@ Außerdem verfügen einige Geräte nicht über eine Anzeige. Die Standardausrich
 
 Die Kompassrichtung hängt von den Referenzachsen ab und ändert sich daher mit der Geräteausrichtung. Sie kompensieren dies entsprechend den Angaben in der folgenden Tabelle (unter der Annahme, dass der Benutzer nach Norden ausgerichtet ist).
 
-| Bildschirmausrichtung | Referenzachse für Kompassrichtung | API-Kompassrichtung bei Ausrichtung nach Norden (auf Querformat ausgelegt) | API-Kompassrichtung bei Ausrichtung nach Norden (auf Hochformat ausgelegt) |Kompensation der Kompassrichtung (auf Querformat ausgelegt) | Kompensation der Kompassrichtung (auf Hochformat ausgelegt) |
+| Bildschirmausrichtung | Referenzachse für Kompassrichtung | API-Kompass-Überschrift, wenn nach Norden (Querformat) | API-Kompass-Überschrift, wenn nach Norden (Hochformat) |Kompensierung der Kompass Überschrift (Querformat zuerst) | Kompensierung der Kompass Überschrift (Hochformat-zuerst) |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
 | Querformat           | -Z | 0   | 270 | Richtung               | (Richtung + 90) % 360  |
-| Hochformat            |  „Y“ zugeordnet ist | 90  | 0   | (Richtung + 270) % 360 |  Richtung              |
+| Hochformat            |  J | 90  | 0   | (Richtung + 270) % 360 |  Richtung              |
 | LandscapeFlipped    |  Z | 180 | 90  | (Richtung + 180) % 360 | (Richtung + 270) % 360 |
-| PortraitFlipped     |  „Y“ zugeordnet ist | 270 | 180 | (Richtung + 90) % 360  | (Richtung + 180) % 360 |
+| PortraitFlipped     |  J | 270 | 180 | (Richtung + 90) % 360  | (Richtung + 180) % 360 |
 
 Ändern Sie die Kompassrichtung entsprechend den Angaben in der Tabelle, um die Richtung korrekt anzuzeigen. Der folgende Codeausschnitt veranschaulicht die Vorgehensweise.
 
@@ -108,12 +108,12 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
 Die folgende Tabelle zeigt, wie Beschleunigungsmesser- und Gyrometerdaten für die Bildschirmausrichtung konvertiert werden.
 
-| Referenzachsen        |  X |  „Y“ zugeordnet ist | Z |
+| Referenzachsen        |  X |  J | Z |
 |-----------------------|----|----|---|
-| **Landschaf**         |  X |  „Y“ zugeordnet ist | Z |
-| **Hochformat**          |  „Y“ zugeordnet ist | -X | Z |
-| **Landscapeflipped**  | -X | -Y | Z |
-| **Portraitflipped**   | -Y |  X | Z |
+| **Querformat**         |  X |  J | Z |
+| **Hochformat**          |  J | -X | Z |
+| **LandscapeFlipped**  | -X | -y | Z |
+| **PortraitFlipped**   | -y |  X | Z |
 
 Das folgende Codebeispiel wendet diese Konvertierungen auf das Gyrometer an.
 
@@ -171,7 +171,11 @@ Im vorangehenden Ausdruck wird das absolute Objekt von den Sensordaten zurückge
 
 | Bildschirmausrichtung  | Drehung gegen den Uhrzeigersinn um Z | Referenzquaternion (Drehung in umgekehrter Richtung) | Referenzdrehungsmatrix (Drehung in umgekehrter Richtung) |
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **Landschaf**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Querformat**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
 | **Hochformat**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
-| **Landscapeflipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **Portraitflipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
+| **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
+
+## <a name="see-also"></a>Siehe auch
+
+[Integrieren von Bewegungs- und Ausrichtungssensoren](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)
