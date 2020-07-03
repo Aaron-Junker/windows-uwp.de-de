@@ -1,17 +1,15 @@
 ---
 title: Übermitteln des Manifests an das Repository
-description: ''
-author: denelon
-ms.author: denelon
+description: Nachdem Sie ein Paketmanifest erstellt, das Ihre Anwendung beschreibt, sind Sie bereit, Ihr Manifest an das Repository von Windows-Paket-Manager zu übermitteln.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
-ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
+ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83865027"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334598"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Übermitteln des Manifests an das Repository
 
@@ -112,7 +110,7 @@ Alle Anwendungsübermittlungen in das Repository von Windows-Paket-Manager müss
 
 * Das Manifest entspricht den [Schemaanforderungen](manifest.md#manifest-contents).
 * Alle URLs im Manifest führen zu sicheren Websites.
-* Installer und Anwendung sind virenfrei.
+* Installer und Anwendung sind virenfrei. Das Paket kann versehentlich als Schadsoftware identifiziert werden. Wenn Sie der Meinung sind, dass es sich um ein falsch positives Ergebnis handelt, können Sie das Installationsprogramm [hierüber](https://www.microsoft.com/wdsi/filesubmission) an das Defender-Team zur Analyse senden.
 * Die Anwendung kann sowohl von Administratoren als auch von Nicht-Administratoren ordnungsgemäß installiert und deinstalliert werden.
 * Der Installer unterstützt nicht interaktive Modi.
 * Alle Manifesteinträge sind genau und nicht irreführend.

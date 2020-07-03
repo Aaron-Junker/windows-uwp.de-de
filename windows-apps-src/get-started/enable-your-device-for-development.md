@@ -6,12 +6,12 @@ keywords: Erste Schritte Entwicklerlizenz Visual Studio, Entwicklerlizenz Gerät
 ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f41c7b706f4c088142a77092cf176ed543e21567
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854776"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448390"
 ---
 # <a name="enable-your-device-for-development"></a>Aktivieren Ihres Geräts für die Entwicklung
 
@@ -39,43 +39,6 @@ Gehe wie folgt vor, um den Entwicklermodus zu aktivieren oder auf andere Einstel
 
 > [!NOTE]
 > Zum Aktivieren des Entwicklermodus benötigst du Administratorzugriff. Falls dein Gerät einer Organisation gehört, ist diese Option möglicherweise deaktiviert.
-
-So sieht die Einstellungsseite auf Desktopgeräten aus:
-
-![Navigieren Sie zu „Einstellungen > Update und Sicherheit“, und wählen Sie „Für Entwickler“ aus, um Ihre Optionen anzuzeigen.](images/devmode-pc-options.png)
-
-## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>Welche Einstellung soll ich auswählen: Querladen von Apps oder Entwicklermodus?
-
-> [!NOTE]
-> Ab Windows-Insider-Build 18956 wurde die Option zum Querladen entfernt, und für den Entwicklermodus gibt es jetzt einen Umschalter. Weitere Informationen zum Querladen finden Sie im nächsten Abschnitt.
-
- Sie können ein Gerät für die Entwicklung oder nur für das Querladen aktivieren.
-
--   *Microsoft Store-Apps* ist die Standardeinstellung. Lass diese Einstellung aktiviert, wenn du keine Apps entwickelst oder spezielle interne Apps verwendest, die von deinem Unternehmen bereitgestellt wurden.
--   *Querladen* dient zum Installieren und anschließenden Ausführen oder Testen einer App, die nicht vom Microsoft Store zertifiziert wurde. Hierzu zählen beispielsweise interne Unternehmens-Apps.
--   Im *Entwicklermodus* können Sie Apps querladen und Apps aus Visual Studio im Debugmodus ausführen.
-
-Standardmäßig können nur UWP-Apps (Universelle Windows-Plattform) aus dem Microsoft Store installiert werden. Wenn Sie diese Einstellungen ändern, um die Entwicklerfeatures zu verwenden, kann hierdurch die Sicherheitsstufe Ihres Geräts geändert werden. Sie sollten keine Apps aus nicht überprüften Quellen installieren.
-
-### <a name="sideload-apps"></a>Querladen von Apps
-
-> [!NOTE]
-> Ab Windows-Insider-Build 18956 ist Querladen standardmäßig aktiviert. Sie können nun ein signiertes MSIX-Paket ohne besondere Konfiguration auf einem Gerät bereitstellen.
-
-Die Einstellung für das Querladen von Apps wird normalerweise von Unternehmen oder Bildungseinrichtungen verwendet, die benutzerdefinierte Apps auf verwalteten Geräten installieren müssen, ohne den Microsoft Store zu nutzen, oder von anderen Benutzern, die Apps aus Microsoft-fremden Quellen ausführen müssen. In diesem Fall erzwingt die Organisation häufig eine Richtlinie, um die Einstellung *UWP-Apps* zu deaktivieren, wie oben in der Abbildung der Einstellungsseite gezeigt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) und [Microsoft Intune-Grundlagen](https://docs.microsoft.com/mem/intune/fundamentals/).
-
-Spezifische Informationen für Gerätefamilien
-
--   Desktopgeräte: Du kannst ein App-Paket (APPX-Datei) sowie sämtliche Zertifikate, die zum Ausführen der App benötigt werden, mithilfe des Windows PowerShell-Skripts installieren, das mit dem Paket erstellt wird („Add-AppDevPackage.ps1“). Weitere Informationen finden Sie unter [Verpacken von UWP-Apps](/windows/msix/package/packaging-uwp-apps).
-
--   Mobilgeräte: Wenn das erforderliche Zertifikat bereits installiert ist, kannst du auf die Datei tippen, um alle APPX-Dateien zu installieren, die du per E-Mail oder auf einer SD-Karte erhalten hast.
-
-
-Das **Querladen von Apps** ist eine sicherere Option als der Entwicklermodus, da Sie Apps ohne vertrauenswürdiges Zertifikat nicht auf dem Gerät installieren können.
-
-> [!NOTE]
-> Achten Sie beim Querladen von Apps darauf, dass diese von einer vertrauenswürdigen Quelle stammen. Wenn du eine quergeladene, nicht vom Microsoft Store zertifizierte App installierst, bestätigst du, dass du über alle erforderlichen Rechte zum Querladen dieser App verfügst und die alleinige Verantwortung für jegliche Schäden trägst, die durch das Installieren und Ausführen dieser App entstehen können. Weitere Informationen findest du in den [Datenschutzbestimmungen](https://privacy.microsoft.com/privacystatement) im Abschnitt „Windows“ &gt; „Microsoft Store“.
-
 
 ### <a name="developer-mode"></a>Entwicklermodus
 
@@ -106,6 +69,26 @@ Gerätespezifische Anweisungen zum Einrichten finden Sie in folgenden Artikeln:
 - [Geräteportal für Xbox](../xbox-apps/device-portal-xbox.md)
 
 Solltest du Probleme beim Aktivieren des Entwicklermodus oder des Geräteportals haben, findest du im Forum [Bekannte Probleme](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) entsprechende Problemumgehungen. Alternativ findest du unter [Fehler beim Installieren des Entwicklermoduspakets](#failure-to-install-developer-mode-package) zusätzliche Details sowie Informationen dazu, welche WSUS-KBs zugelassen werden müssen, um das Entwicklermoduspaket zu entsperren.
+
+### <a name="sideload-apps"></a>Querladen von Apps
+
+> [!NOTE]
+> Ab dem neuesten Windows 10-Update ist das Querladen standardmäßig aktiviert. Sie können nun ein signiertes MSIX-Paket ohne besondere Konfiguration auf einem Gerät bereitstellen. Wenn Sie eine frühere Version von Windows 10 verwenden, erlauben Ihnen Ihre Standardeinstellungen nur das Ausführen von Apps aus dem Microsoft Store, und Sie müssen das Querladen aktivieren, um Apps aus Nicht-Microsoft-Quellen zu installieren.
+
+Die Einstellung für das Querladen von Apps wird normalerweise von Unternehmen oder Bildungseinrichtungen verwendet, die benutzerdefinierte Apps auf verwalteten Geräten installieren müssen, ohne den Microsoft Store zu nutzen, oder von anderen Benutzern, die Apps aus Microsoft-fremden Quellen ausführen müssen. In diesem Fall erzwingt die Organisation häufig eine Richtlinie, um die Einstellung *UWP-Apps* zu deaktivieren, wie oben in der Abbildung der Einstellungsseite gezeigt. Die Organisation stellt außerdem das erforderliche Zertifikat und den Installationsspeicherort zum Querladen von Apps bereit. Weitere Informationen finden Sie in den TechNet-Artikeln [Querladen von Apps in Windows 10](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) und [Microsoft Intune-Grundlagen](https://docs.microsoft.com/mem/intune/fundamentals/).
+
+Spezifische Informationen für Gerätefamilien
+
+-   Desktopgeräte: Du kannst ein App-Paket (APPX-Datei) sowie sämtliche Zertifikate, die zum Ausführen der App benötigt werden, mithilfe des Windows PowerShell-Skripts installieren, das mit dem Paket erstellt wird („Add-AppDevPackage.ps1“). Weitere Informationen finden Sie unter [Verpacken von UWP-Apps](/windows/msix/package/packaging-uwp-apps).
+
+-   Mobilgeräte: Wenn das erforderliche Zertifikat bereits installiert ist, kannst du auf die Datei tippen, um alle APPX-Dateien zu installieren, die du per E-Mail oder auf einer SD-Karte erhalten hast.
+
+
+Das **Querladen von Apps** ist eine sicherere Option als der Entwicklermodus, da Sie Apps ohne vertrauenswürdiges Zertifikat nicht auf dem Gerät installieren können.
+
+> [!NOTE]
+> Achten Sie beim Querladen von Apps darauf, dass diese von einer vertrauenswürdigen Quelle stammen. Wenn du eine quergeladene, nicht vom Microsoft Store zertifizierte App installierst, bestätigst du, dass du über alle erforderlichen Rechte zum Querladen dieser App verfügst und die alleinige Verantwortung für jegliche Schäden trägst, die durch das Installieren und Ausführen dieser App entstehen können. Weitere Informationen findest du in den [Datenschutzbestimmungen](https://privacy.microsoft.com/privacystatement) im Abschnitt „Windows“ &gt; „Microsoft Store“.
+
 
 ### <a name="ssh"></a>SSH
 

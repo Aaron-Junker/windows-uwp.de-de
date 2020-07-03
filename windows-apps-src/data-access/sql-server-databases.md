@@ -1,16 +1,16 @@
 ---
 title: Verwenden einer SQL Server-Datenbank in einer UWP-App
 description: Hier erfährst du, wie du eine SQL Server-Datenbank in einer UWP-App verwendest.
-ms.date: 03/28/2019
+ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, UWP, SQL Server, Datenbank
 ms.localizationpriority: medium
-ms.openlocfilehash: 54907dac63580794b7df42fa2e61162d16be8a1b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d5c5c0f107a9e9a2adb0587b544a2c74b8321886
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302564"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448340"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>Verwenden einer SQL Server-Datenbank in einer UWP-App
 Ihre App kann sich direkt mit einer SQL Server-Datenbank verbinden und dann Daten über Klassen im Namespace [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) speichern und abrufen.
@@ -32,6 +32,9 @@ Um deine App direkt mit einer SQL Server-Datenbank verbinden zu können, muss d
 Aktiviere auf der Registerkarte **Funktionen** das Kontrollkästchen **Unternehmensauthentifizierung**, wenn du zur Authentifizierung deiner SQL Server-Instanz die Windows-Authentifizierung verwendest.
 
 ![Funktion „Unternehmensauthentifizierung“](images/enterprise-authentication.png)
+
+> [!IMPORTANT]
+> Sie müssen auch **Internet (Client & Server)** , **Internet (Client)** sowie **Private Netzwerke (Client & Server)** auswählen, unabhängig davon, ob Sie die Windows-Authentifizierung verwenden oder nicht.
 
 <a id="use-data" />
 

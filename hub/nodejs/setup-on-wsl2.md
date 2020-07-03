@@ -7,13 +7,13 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node in WSL, NodeJS im Windows-Subsystem für Linux
 ms.localizationpriority: medium
-ms.date: 09/19/2019
-ms.openlocfilehash: 1ea8973e1db665d1fe66ef6b5f5699319131d605
-ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
+ms.date: 06/09/2020
+ms.openlocfilehash: 494db609db577bd2b199f828fcf80e80a5c8c624
+ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83717129"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133973"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten einer Node.js-Entwicklungsumgebung mit WSL 2
 
@@ -51,7 +51,12 @@ Node.js kann auf unterschiedliche Weise installiert werden. Es wird empfohlen, e
 
 1. Öffne die Befehlszeile von Ubuntu 18.04.
 2. Installiere cURL (ein Tool zum Herunterladen von Inhalten aus dem Internet an der Befehlszeile) mit `sudo apt-get install curl`.
-3. Installiere nvm mit `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`.
+3. Installiere nvm mit `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`.
+
+> [!NOTE]
+> Zum Zeitpunkt der Veröffentlichung war NVM v0.35.3 die neueste verfügbare Version. Du findest das [neueste nvm-Release auf der GitHub-Projektseite](https://github.com/nvm-sh/nvm). Passe den obigen Befehl so an, dass er die neueste Version enthält.
+Durch die Installation der neueren Version von nvm mithilfe von cURL wird die ältere Version ersetzt. Die Node-Version, die du für die Installation von nvm verwendet hast, bleibt intakt. Beispiel: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
+
 4. Gib zum Überprüfen der Installation Folgendes ein: `command -v nvm`. Dies sollte „nvm“ zurückgeben. Wenn du als Antwort „Befehl nicht gefunden“ oder gar keine Antwort erhältst, schließe das aktuelle Terminal, öffne es erneut, und versuche es noch einmal. [Weitere Informationen findest du im GitHub-Repository zu nvm.](https://github.com/nvm-sh/nvm)
 5. Liste mit `nvm ls` die Versionen von Node auf, die derzeit installiert sind (sollte zu diesem Zeitpunkt keine sein).
 
@@ -67,10 +72,6 @@ Node.js kann auf unterschiedliche Weise installiert werden. Es wird empfohlen, e
 10. Um die Version von Node.js zu ändern, die du für ein Projekt verwenden möchtest, erstellst du ein neues Projektverzeichnis `mkdir NodeTest` und wechselst in das Verzeichnis (`cd NodeTest`). Gib dann `nvm use node` ein, und wechsele zur aktuellen Version, oder verwende `nvm use --lts`, um zur LTS-Version zu wechseln. Du kannst auch eine spezifische andere Version verwenden, die du installiert hast, z. B. `nvm use v8.2.1`. (Um alle verfügbaren Versionen von Node.js aufzulisten, verwendest du den Befehl `nvm ls-remote`.)
 
 Wenn du nvm verwendest, um Node.js und npm zu installieren, musst du nicht den Befehl „sudo“ verwenden, um neue Pakete zu installieren.
-
-> [!NOTE]
-> Zum Zeitpunkt der Veröffentlichung war nvm Version 0.35.2 die neueste verfügbare Version. Du findest das [neueste nvm-Release auf der GitHub-Projektseite](https://github.com/nvm-sh/nvm). Passe den obigen Befehl so an, dass er die neueste Version enthält.
-Durch die Installation der neueren Version von nvm mithilfe von cURL wird die ältere Version ersetzt. Die Node-Version, die du für die Installation von nvm verwendet hast, bleibt intakt. Beispiel: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
 ## <a name="alternative-version-managers"></a>Alternative Versions-Manager
 
@@ -131,11 +132,7 @@ Folgende zusätzliche Erweiterungen solltest du ebenfalls in Erwägung ziehen:
 
 ## <a name="set-up-git-optional"></a>Einrichten von Git (optional)
 
-Wenn du beabsichtigst, zusammen mit anderen zusammenzuarbeiten oder das Projekt an einem Open-Source-Standort (wie GitHub) zu hosten, unterstützt VS Code die [Versionskontrolle mit Git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). Auf der Registerkarte „Quellcodeverwaltung“ in VS Code werden alle Änderungen nachverfolgt und gängige Git-Befehle („Add“, „Commit“, „Push“, „Pull“) direkt in die Benutzeroberfläche integriert.
-
-1. Git wird mit dem Windows-Subsystem für Linux-Distributionen installiert. Du musst jedoch deine Git-Konfigurationsdatei einrichten. Gib dafür am Terminal Folgendes ein: `git config --global user.name "Your Name"` und dann `git config --global user.email "youremail@domain.com"`. Wenn du noch kein Git-Konto hast, kannst du [dich bei GitHub registrieren](https://github.com/join). Wenn Sie noch nie zuvor mit Git gearbeitet haben, können Sie [GitHub-Leitfäden](https://guides.github.com/) für den Einstieg nutzen. Wenn du die Git-Konfiguration bearbeiten möchtest, kannst du dafür einen integrierten Text-Editor wie nano verwenden: `nano ~/.gitconfig`.
-
-2. Es wird empfohlen, deinen Node-Projekten eine Datei [.gitignore](https://help.github.com/en/articles/ignoring-files) hinzuzufügen. Dies ist die [GITIGNORE-Standardvorlage für Node.js von GitHub](https://github.com/github/gitignore/blob/master/Node.gitignore). Wenn du [auf der GitHub-Website ein neues Repository erstellen](https://help.github.com/articles/create-a-repo) möchtest, stehen dir Kontrollkästchen zur Verfügung, mit denen du dein Repository mit einer Infodatei initialisieren, Node.js-Projekte mit einer GITIGNORE-Datei einrichten und mit verschiedenen Optionen bei Bedarf eine Lizenz hinzufügen kannst.
+Informationen zum Einrichten von Git für ein NodeJS-Projekt in WSL finden Sie im Artikel [Erste Schritte mit Git im Windows-Subsystem für Linux](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git) in der WSL-Dokumentation.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

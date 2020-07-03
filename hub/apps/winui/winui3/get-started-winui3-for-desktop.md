@@ -8,25 +8,25 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: ab67507153e0ff7065baffa92ea6ec35aee5b132
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8775113c22716259f9449899b577481738dc6c0f
+ms.sourcegitcommit: da1c0ae251883987f105bc2919b2d67846194bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580767"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85198518"
 ---
 # <a name="get-started-with-winui-30-for-desktop-apps"></a>Erste Schritte mit WinUI 3.0 für Desktop-Apps
 
-WinUI 3.0 Vorschau 1 führt neue Projektvorlagen ein, die es dir ermöglicht, verwaltete C#-/.NET-Desktop-Apps und native C++/Win32-Desktop-Apps mit einer vollständig WinUI-basierten Benutzeroberfläche zu erstellen. Wenn du Apps mit diesen Projektvorlagen erstellst, wird die gesamte Benutzeroberfläche deiner Anwendung mit Hilfe von Fenstern, Steuerelementen und anderen Benutzeroberflächentypen implementiert, die von WinUI 3.0 zur Verfügung gestellt werden. 
+WinUI 3.0 Vorschau 1 führt neue Projektvorlagen ein, die es dir ermöglicht, verwaltete C#-/.NET-Desktop-Apps und native C++/Win32-Desktop-Apps mit einer vollständig WinUI-basierten Benutzeroberfläche zu erstellen. Wenn du Apps mit diesen Projektvorlagen erstellst, wird die gesamte Benutzeroberfläche deiner Anwendung mit Hilfe von Fenstern, Steuerelementen und anderen Benutzeroberflächentypen implementiert, die von WinUI 3.0 zur Verfügung gestellt werden.
 
-WinUI 3.0 Vorschau 1 fügt die folgenden **WinUI in Desktop**-Projektvorlagen in Visual Studio 2019 hinzu:
+WinUI 3.0 Preview 1 fügt Visual Studio 2019 die folgenden Projektvorlagen zum Erstellen von Desktop-Apps hinzu, die WinUI 3.0 verwenden:
 
-* C#-Apps und -Bibliotheken für .NET 5:
-  * Leere App, Gepackt (WinUI in Desktop)
-  * Klassenbibliothek (WinUI in Desktop)
+* Projektvorlagen für C#-Apps und -Bibliotheken für .NET 5:
+  * **Leere App, Gepackt (WinUI in Desktop)**
+  * **Klassenbibliothek (WinUI in Desktop)**
 
-* C++/Win32-Apps:
-  * Leere App, Gepackt (WinUI in Desktop)
+* Projektvorlagen für C++ /Win32-Apps:
+  * **Leere App, Gepackt (WinUI in Desktop)**
 
 Die App-Projektvorlagen generieren ein WinUI-App-Projekt und ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App für die Bereitstellung in ein [MSIX-Paket](https://docs.microsoft.com/windows/msix/overview) umwandelt.
 
@@ -41,6 +41,9 @@ Um die in diesem Artikel beschriebene WinUI 3 für Desktop-Projektvorlagen zu v
 3. Installiere sowohl die x64- als auch die x86-Version von .NET 5 Vorschau 4:
     * x64: [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
     * x86: [https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
+
+    > [!NOTE]
+    > WinUI 3.0 Preview 1 erfordert .NET 5 Preview 4. Spätere Vorschauversionen von .NET 5 werden mit WinUI 3.0 Preview 1 nicht unterstützt.
 
 4. Installiere die VSIX-Erweiterung, die die WinUI 3.0 Vorschau 1-Projektvorlagen für Visual Studio 2019 enthält. Ausführliche Informationen findest du unter [diesen Anweisungen](index.md#visual-studio-project-templates).
 

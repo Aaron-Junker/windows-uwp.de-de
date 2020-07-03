@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 91602c75cdaddc325407529ab4d231db46ecca39
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4249618a4b26fd7e8129547a679c80c5e2ed6903
+ms.sourcegitcommit: a2b340dc3a28e845830eeb9ce00342a3f7351d62
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209145"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85834998"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
@@ -108,6 +108,9 @@ int main()
 
 Die Implementierungen der **as**-Funktionen rufen [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) auf. Wenn du Konvertierungen auf einer niedrigeren Ebene benötigst, die nur [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) aufrufen, kannst du die Hilfsfunktionen [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) und [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) verwenden. Im nächsten Codebeispiel werden dem obigen Codebeispiel diese Konvertierungen auf niedrigerer Ebene hinzugefügt:
 
+> [!IMPORTANT]
+> Bei der Zusammenarbeit mit ABI-Typen ist es entscheidend, dass der verwendete ABI-Typ der Standardschnittstelle des C++/WinRT-Objekts entspricht. Andernfalls werden durch Aufrufe von Methoden für den ABI-Typ am Ende tatsächlich Methoden im gleichen vtable-Slot auf der Standardschnittstelle aufgerufen, mit sehr unerwarteten Ergebnissen. Beachten Sie, dass [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) zur Kompilierungszeit nicht davor schützt, da es **void\*** für alle ABI-Typen verwendet und davon ausgeht, dass der Aufrufer darauf geachtet hat, die Typen nicht falsch abzugleichen. Damit soll vermieden werden, dass C++/WinRT-Header auf ABI-Header verweisen müssen, auch wenn ABI-Typen nie verwendet werden.
+
 ```cppwinrt
 int main()
 {
@@ -117,11 +120,11 @@ int main()
 
     // Convert to an ABI type.
     ptr = nullptr;
-    winrt::copy_to_abi(uri, *ptr.put_void());
+    winrt::copy_to_abi(uriAsIStringable, *ptr.put_void());
 
     // Convert from an ABI type.
     uri = nullptr;
-    winrt::copy_from_abi(uri, ptr.get());
+    winrt::copy_from_abi(uriAsIStringable, ptr.get());
     ptr = nullptr;
 }
 ```
@@ -133,11 +136,11 @@ Hier siehst du weitere ähnliche Low-Level-Konvertierungstechniken, diesmal jedo
 
     // Copy to an owning raw ABI pointer with copy_to_abi.
     abi::IStringable* owning{ nullptr };
-    winrt::copy_to_abi(uri, *reinterpret_cast<void**>(&owning));
+    winrt::copy_to_abi(uriAsIStringable, *reinterpret_cast<void**>(&owning));
 
     // Copy from a raw ABI pointer.
     uri = nullptr;
-    winrt::copy_from_abi(uri, owning);
+    winrt::copy_from_abi(uriAsIStringable, owning);
     owning->Release();
 ```
 
@@ -151,14 +154,14 @@ Für Konvertierungen auf der untersten Ebene, bei denen nur Adressen kopiert wer
     // Lowest-level conversions that only copy addresses
 
     // Convert to a non-owning ABI object with get_abi.
-    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uri)) };
+    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uriAsIStringable)) };
     WINRT_ASSERT(non_owning);
 
     // Avoid interlocks this way.
-    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uri));
-    WINRT_ASSERT(!uri);
-    winrt::attach_abi(uri, owning);
-    WINRT_ASSERT(uri);
+    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uriAsIStringable));
+    WINRT_ASSERT(!uriAsIStringable);
+    winrt::attach_abi(uriAsIStringable, owning);
+    WINRT_ASSERT(uriAsIStringable);
 ```
 
 ## <a name="convert_from_abi-function"></a>Funktion „convert_from_abi“

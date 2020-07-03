@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 80072be15a28883e5d29a7393edd112cf6fa47be
-ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
+ms.openlocfilehash: d5308f49499f4bdec9db0087cef54ac2fa0bb805
+ms.sourcegitcommit: 69b7fe203d8384d0ade37122ae9d2c4568f6d168
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83688498"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267167"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -488,6 +488,10 @@ Wenn die Strukturansicht nicht erkannte Knoten aufweist, werden sie bei der Ausw
 - Wenn ein Benutzer einen übergeordneten Knoten auswählt, werden auch alle erkannten untergeordneten Elemente ausgewählt, die sich unter diesem übergeordneten Element befinden. Wenn alle untergeordneten Knoten ausgewählt werden, wird der übergeordnete Knoten ebenfalls ausgewählt.
 - Bei der **SelectAll**-Methode werden der **SelectedNodes**-Sammlung nur erkannte Knoten hinzugefügt.
 - Wenn ein übergeordneter Knoten mit nicht erkannten untergeordneten Elementen ausgewählt wird, werden die untergeordneten Elemente ausgewählt, sobald sie erkannt werden.
+
+#### <a name="selecteditemselecteditems"></a>SelectedItem/SelectedItems
+
+Beginnend mit WinUI 2.2 verfügt TreeView über die Eigenschaften [SelectedItem-](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) und [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems). Sie können diese Eigenschaften verwenden, um den Inhalt ausgewählter Knoten direkt abzurufen. Wenn die Mehrfachauswahl aktiviert ist, enthält „SelectedItem“ das erste Element in der SelectedItems-Sammlung.
 
 ## <a name="code-examples"></a>Codebeispiele
 

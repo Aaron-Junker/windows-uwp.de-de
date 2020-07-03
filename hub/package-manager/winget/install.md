@@ -1,17 +1,15 @@
 ---
 title: Befehl „install“
 description: Installiert die angegebene Anwendung.
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c460ccd18bb1bb12e5322e0e08a17edbd9692f7
-ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
+ms.openlocfilehash: 5daae6dabee1201dd9df0b83dc56f98b06b15487
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84166240"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334529"
 ---
 # <a name="install-command-winget"></a>Befehl „install“ (winget)
 
@@ -78,6 +76,12 @@ winget install --id Microsoft.PowerToys --version 0.15.2
 ## <a name="multiple-selections"></a>Mehrfachauswahl
 
 Wenn die für **winget** bereitgestellte Abfrage nicht nur eine Anwendung zurückgibt, zeigt **winget** die Ergebnisse der Suche an. Dadurch erhalten Sie zusätzlichen Daten, damit Sie die Suche für einen ordnungsgemäßen Installationsvorgang eingrenzen können.
+
+Der beste Weg, die Auswahl auf eine Datei zu beschränken, ist die Verwendung der **ID** der Anwendung in Kombination mit der Abfrageoption für die **exakte** Übereinstimmung.  Beispiel:
+
+```CMD
+winget install --id Git.Git -e 
+```
 
 ## <a name="local-install"></a>Lokale Installation
 

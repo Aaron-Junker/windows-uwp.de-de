@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1a2b5722ab836e715bce1b4c94fab97e6a28646e
+ms.sourcegitcommit: cee2060bfc8489236e00e5951751bcc5bd632b0a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80482507"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84614910"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>Hosten eines UWP-Standardsteuerelements in einer WPF-App unter Verwendung von XAML Islands
 
@@ -45,7 +45,7 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
 
 1. Erstelle in Visual Studio 2019 ein neues **WPF-App (.NET Framework)** - oder **WPF-App (.NET Core)** -Projekt. Wenn du ein **WPF-App (.NET Core)** -Projekt erstellen möchtest, musst du zunächst die aktuelle Version des [.NET Core 3 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0) installieren.
 
-2. Vergewissern Sie sich, dass [Paketverweise](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
+2. Stelle sicher, dass [Paketverweise](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) aktiviert sind:
 
     1. Klicken Sie in Visual Studio auf **Extras > NuGet-Paket-Manager > Paket-Manager-Einstellungen**.
     2. Stellen Sie sicher, dass die Einstellung **Standardformat für Paketverwaltung** auf **PackageReference** festgelegt ist.
@@ -63,11 +63,11 @@ Befolgen Sie vor dem Einstieg diese Anweisungen, um ein WPF-Projekt zu erstellen
     1. Klicke im **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektmappenknoten, und wähle **Eigenschaften** -> **Konfigurationseigenschaften** -> **Konfigurations-Manager** aus. 
     2. Klicken Sie unter **Aktive Projektmappenplattform** auf **Neu**. 
     3. Wählen Sie im Dialogfeld **Neue Projektmappenplattform** die Option **x64** oder **x86** aus, und klicken Sie auf **OK**. 
-    4. Schließe die geöffneten Dialogfelder.
+    4. Schließen Sie die geöffneten Dialogfelder.
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>Definieren einer XamlApplication-Klasse in einem UWP-App-Projekt
 
-Als Nächstes fügst du deiner Projektmappe ein UWP-App-Projekt hinzu und überarbeitest die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread.
+Als Nächstes fügen Sie Ihrer Projektmappe ein UWP-App-Projekt hinzu und überarbeiten die `App`-Standardklasse in diesem Projekt, um sie von der [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)-Klasse abzuleiten, die im Windows-Community-Toolkit bereitgestellt wird. Diese Klasse unterstützt die [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)-Schnittstelle, mit der deine App Metadaten für benutzerdefinierte UWP-XAML-Steuerelemente in Assemblys im aktuellen Verzeichnis der Anwendung zur Laufzeit ermitteln und laden kann. Diese Klasse initialisiert außerdem das UWP-XAML-Framework für den aktuellen Thread.
 
 > [!NOTE]
 > Wenngleich dieser Schritt zum Hosten eines UWP-Erstanbietersteuerelements nicht erforderlich ist, benötigt deine App das `XamlApplication`-Objekt, um die ganze Bandbreite an XAML Islands-Szenarien zu unterstützen, einschließlich des Hostings benutzerdefinierter UWP-Steuerelemente. Deshalb wird empfohlen, dass du immer ein `XamlApplication`-Objekt in einer Projektmappe definierst, in der du XAML Islands verwendest.
@@ -104,7 +104,10 @@ Als Nächstes fügst du deiner Projektmappe ein UWP-App-Projekt hinzu und übera
 
 6. Lösche die Datei **MainPage.xaml** aus dem UWP-App-Projekt.
 7. Kompiliere das UWP-App-Projekt.
-8. Klicke in deinem WPF-Projekt mit der rechten Maustaste auf den Knoten **Abhängigkeiten**, und füge einen Verweis auf dein UWP-App-Projekt hinzu.
+8. Fügen Sie in Ihrem WPF-Projekt einen Verweis auf Ihr UWP-App-Projekt hinzu. 
+
+    * Wenn Ihr WPF-Projekt auf .NET Core abzielt, klicken Sie mit der rechten Maustaste auf den Knoten **Abhängigkeiten**, und fügen Sie einen Verweis auf Ihr UWP-App-Projekt hinzu. 
+    * Wenn Ihr WPF-Projekt auf das .NET Framework abzielt, klicken Sie mit der rechten Maustaste auf den Projektknoten, wählen Sie **Build-Abhängigkeiten** -> **Projekt-Abhängigkeiten** und dann Ihr UWP-App-Projekt aus.
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>Instanziieren des XamlApplication-Objekts im Einstiegspunkt Ihrer WPF-App
 
@@ -184,7 +187,7 @@ Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, k
 
 4. Speichere die Datei **MainWindow.xaml**.
 
-    Wenn du über ein Gerät mit Unterstützung eines digitalen Stifts verfügst – wie beispielsweise Surface – und du dieses Lab auf einem physischen Computer ausführst, könntest du jetzt die App kompilieren und ausführen und mit dem digitalen Stift auf dem Bildschirm zeichnen. Wenn du jedoch über kein solches Gerät verfügst und versuchst, mit deiner Maus zu zeichnen, geschieht nichts. Dies liegt daran, dass das Steuerelement **InkCanvas** standardmäßig nur für die Eingabe mit einem digitalen Stift aktiviert ist. Dieses Verhalten kannst du jedoch ändern.
+    Wenn du über ein Gerät mit Unterstützung eines digitalen Stifts verfügst – wie beispielsweise Surface – und du dieses Lab auf einem physischen Computer ausführst, könntest du jetzt die App kompilieren und ausführen und mit dem digitalen Stift auf dem Bildschirm zeichnen. Wenn du jedoch über kein solches Gerät verfügst und versuchst, mit deiner Maus zu zeichnen, geschieht nichts. Dies liegt daran, dass das **InkCanvas**-Steuerelement standardmäßig nur für die Eingabe mit einem digitalen Stift aktiviert ist. Dieses Verhalten kannst du jedoch ändern.
 
 5. Öffne die Datei **MainWindow.xaml.cs**.
 
@@ -194,7 +197,7 @@ Nachdem du dein Projekt zur Verwendung von UWP XAML Islands konfiguriert hast, k
     using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
     ```
 
-7. Suche den `MainWindow()`-Konstruktor. Füge nach der `InitializeComponent()`-Methode die folgende Codezeile ein, und speichere die Codedatei.
+7. Suche nach dem `MainWindow()`-Konstruktor. Füge nach der `InitializeComponent()`-Methode die folgende Codezeile ein, und speichere die Codedatei.
 
     ```csharp
     this.myInkCanvas.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
@@ -290,14 +293,14 @@ Nachdem du die umschlossenen UWP-Steuerelemente [InkCanvas](https://docs.microso
 
 Sie können die WPF-App optional in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung verpacken. MSIX ist eine moderne App-Pakettechnologie für Windows, die auf einer Kombination aus MSI-, APPX-, App-V- und ClickOnce-Installationstechnologien basiert.
 
-Die folgenden Anweisungen veranschaulichen, wie du alle Komponenten in der Projektmappe in ein MSIX-Paket einschließen kannst, indem du die Option [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019 verwendest. Diese Schritte sind nur erforderlich, wenn du die WPF-App in einem MSIX-Paket packen möchtest.
+Die folgenden Anweisungen veranschaulichen, wie Sie alle Komponenten in der Projektmappe in ein MSIX-Paket einschließen können, indem Sie die Option [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019 verwenden. Diese Schritte sind nur erforderlich, wenn du die WPF-App in einem MSIX-Paket packen möchtest.
 
 > [!NOTE]
 > Wenn du deine Anwendung nicht in einem [MSIX-Paket](https://docs.microsoft.com/windows/msix) für die Bereitstellung packst, muss auf Computern zur Ausführung deiner App die [Visual C++-Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installiert sein.
 
-1. Füge deiner Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
+1. Fügen Sie Ihrer Projektmappe ein [Paketerstellungsprojekt für Windows-Anwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) hinzu. Wählen Sie beim Erstellen des Projekts **Windows 10, Version 1903 (10.0; Build 18362)** sowohl für **Zielversion** als auch für **Mindestversion** aus.
 
-2. Klicke im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wähle **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das WPF-Projekt in deiner Projektmappe aus, und klicke auf **OK**.
+2. Klicken Sie im Paketprojekt mit der rechten Maustaste auf den Knoten **Anwendungen**, und wählen Sie **Verweis hinzufügen** aus. Wähle in der Liste der Projekte das WPF-Projekt in deiner Projektmappe aus, und klicke auf **OK**.
 
 3. Konfiguriere deine Projektmappe für eine Zielplattform wie beispielsweise x86 oder x64. Dies ist erforderlich, um die WPF-App über „Paketerstellungsprojekt für Windows-Anwendungen“ in einem MSIX-Paket zu packen.
 
@@ -309,7 +312,7 @@ Die folgenden Anweisungen veranschaulichen, wie du alle Komponenten in der Proje
 
 5. Kompiliere das Paketerstellungsprojekt, und führe es aus. Vergewissern Sie sich, dass die WPF-App ausgeführt und das benutzerdefinierte UWP-Steuerelement wie erwartet angezeigt wird.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Hosten von UWP-XAML-Steuerelementen in Desktop-Apps (XAML Islands)](xaml-islands.md)
 * [XAML Islands-Codebeispiele](https://github.com/microsoft/Xaml-Islands-Samples)

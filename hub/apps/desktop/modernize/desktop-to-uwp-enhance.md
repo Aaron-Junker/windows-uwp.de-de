@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 444699c00a17dd90fe4c08c44ff56d540cadb3d6
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
+ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729861"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295537"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>Windows-Runtime-APIs in Desktop-Apps aufrufen
 
@@ -59,16 +59,16 @@ Für .NET-Projekte bestehen zwei Optionen:
 
     ![Dialogfeld „Verweis hinzufügen“](images/desktop-to-uwp/browse-references.png)
 
-2. Fügen Sie einen Verweis auf diese Dateien hinzu.
+2. Fügen Sie allen folgenden Dateien einen Verweis hinzu.
 
     |File|Speicherort|
     |--|--|
-    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.UI.Xaml.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.InteropServices.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
     |windows.winmd|C:\Programme (x86)\Windows Kits\10\UnionMetadata\\<*SDK-Version*>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Programme (x86)\Windows Kits\10\References\\<*Sdk-Version*>\Windows.Foundation.UniversalApiContract\<*Version*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Programme (x86)\Windows Kits\10\References\\<*Sdk-Version*>\Windows.Foundation.FoundationContract\<*Version*>|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Programme (x86)\Windows Kits\10\References\\<*SDK-Version*>\Windows.Foundation.UniversalApiContract\\<*Version*>|
+    |Windows.Foundation.FoundationContract.winmd|C:\Programme (x86)\Windows Kits\10\References\\<*SDK-Version*>\Windows.Foundation.FoundationContract\\<*Version*>|
 
 3. Legen Sie im Fenster **Eigenschaften** das Feld **Lokale Kopie** für jede *WINMD*-Datei auf **Falsch** fest.
 

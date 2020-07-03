@@ -5,12 +5,12 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Eigenschaft
 ms.localizationpriority: medium
-ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 12a20ae3df6ae83723550bf365aadab99b1b3b7b
+ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209195"
+ms.lasthandoff: 06/13/2020
+ms.locfileid: "84756528"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft
 Eine Eigenschaft, die effektiv an ein XAML-Steuerelement gebunden werden kann, wird als *Observable*-Eigenschaft bezeichnet. Dieses Konzept basiert auf dem Softwareentwurfsmuster, das als *Beobachter-Muster* bekannt ist. In diesem Thema erfährst du, wie du beobachtbare Eigenschaften in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) implementierst und XAML-Steuerelemente an sie bindest (Hintergrundinformationen findest Du unter [Datenbindung](/windows/uwp/data-binding)).
@@ -49,14 +49,20 @@ namespace Bookstore
 >
 > In der Anwendung deklarierte Laufzeitklassen, *die von einer Basisklasse abgeleitet sind*, werden als *zusammensetzbare* Klassen bezeichnet. Für zusammensetzbare Klassen gelten bestimmte Einschränkungen. Damit eine Anwendung die Tests des [Zertifizierungskits für Windows-Apps](../debug-test-perf/windows-app-certification-kit.md) besteht, das von Visual Studio sowie vom Microsoft Store zur Überprüfung von Übermittlungen verwendet wird, und erfolgreich in den Microsoft Store aufgenommen werden kann, muss eine zusammensetzbare Klasse letztendlich von einer Windows-Basisklasse abgeleitet sein. Das bedeutet, dass es sich am Stamm der Vererbungshierarchie um einen Klassentyp aus einem Windows.*-Namespace handeln muss. Wenn du eine Laufzeitklasse von einer Basisklasse ableiten musst, um beispielsweise eine Klasse vom Typ **BindableBase** zur Ableitung deiner Ansichtsmodelle zu implementieren, kannst du [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject) als Grundlage für die Ableitung verwenden.
 >
-> Ein Ansichtsmodell ist eine Abstraktion einer Ansicht und somit direkt an die Ansicht (XAML-Markup) gebunden. Ein Datenmodell ist eine Abstraktion von Daten. Es wird nur über deine Ansichtsmodelle genutzt und nicht direkt an XAML gebunden. Du kannst deine Datenmodelle also als C++-Strukturen oder -Klassen deklarieren und nicht als Laufzeitklassen. Sie müssen nicht in MIDL deklariert werden, und du kannst eine beliebige Vererbungshierarchie verwenden.
+> Ein Ansichtsmodell ist eine Abstraktion einer Ansicht und somit direkt an die Ansicht (XAML-Markup) gebunden. Ein Datenmodell ist eine Abstraktion von Daten. Es wird nur über deine Ansichtsmodelle genutzt und nicht direkt an XAML gebunden. Sie können Ihre Datenmodelle also als C++-Strukturen oder -Klassen deklarieren und nicht als Laufzeitklassen. Sie müssen nicht in MIDL deklariert werden, und du kannst eine beliebige Vererbungshierarchie verwenden.
 
 Speichere die Datei, und erstelle das Projekt. Während des Buildprozesses wird das Tool `midl.exe` ausgeführt, um eine Windows-Runtime-Metadatendatei (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) zu erstellen, die die Laufzeitklasse beschreibt. Danach wird das Tool `cppwinrt.exe` ausgeführt, um Quellcodedateien zu generieren, die dich bei der Erstellung und Nutzung deiner Laufzeitklasse unterstützen. Diese Dateien enthalten Stubs zur Implementierung der Laufzeitklasse **BookSku**, die du in deiner IDL deklariert hast. Diese Stubs sind `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` und `BookSku.cpp`.
 
 Klicke mit der rechten Maustaste auf den Projektknoten, und klicke auf **Ordner in Datei-Explorer öffnen**. Dadurch wird der Projektordner im Datei-Explorer geöffnet. Kopiere dort die Stub-Dateien `BookSku.h` und `BookSku.cpp` aus dem Ordner `\Bookstore\Bookstore\Generated Files\sources\` in den Projektordner `\Bookstore\Bookstore\`. Vergewissere dich im **Projektmappen-Explorer**, dass **Alle Dateien anzeigen** aktiviert ist. Klicke mit der rechten Maustaste auf die kopierten Stub-Dateien, und klicke auf **Zu Projekt hinzufügen**.
 
 ## <a name="implement-booksku"></a>Implementieren von **BookSku**
-Als Nächstes öffnen wir `\Bookstore\Bookstore\BookSku.h` und `BookSku.cpp` und implementieren unsere Laufzeitklasse. Füge in `BookSku.h` einen Konstruktor hinzu, der den privaten Member [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) zum Speichern der Titelzeichenfolge sowie einen weiteren Member für das bei einer Titeländerung ausgelöste Ereignis akzeptiert. Nach diesen Änderungen sieht `BookSku.h` wie folgt aus:
+Als Nächstes öffnen wir `\Bookstore\Bookstore\BookSku.h` und `BookSku.cpp` und implementieren unsere Laufzeitklasse. Nehmen Sie diese Änderungen in `BookSku.h` vor.
+
+- Fügen Sie einen Konstruktor hinzu, der den Wert [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) annimmt. Dieser Wert ist die Titelzeichenfolge.
+- Fügen Sie einen privaten Member zum Speichern der Titelzeichenfolge hinzu.
+- Fügen Sie einen weiteren privaten Member für das Ereignis hinzu, das bei einer Änderung des Titels ausgelöst wird.
+
+Nach diesen Änderungen sieht `BookSku.h` wie folgt aus:
 
 ```cppwinrt
 // BookSku.h
@@ -122,7 +128,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-In der Mutatorfunktion **Title** wird überprüft, ob ein Wert festgelegt wird, der sich vom aktuellen Wert unterscheidet. Falls ja, aktualisieren wir den Titel und lösen außerdem das Ereignis [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) mit einem Argument aus, das dem Namen der geänderten Eigenschaft entspricht. Dadurch weiß die Benutzeroberfläche (User Interface, UI), welcher Eigenschaftswert erneut abgefragt werden muss.
+In der Mutatorfunktion **Title** wird überprüft, ob ein Wert festgelegt wird, der sich vom aktuellen Wert unterscheidet. Falls ja, aktualisieren wir anschließend den Titel und lösen außerdem das Ereignis [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) mit einem Argument aus, das dem Namen der geänderten Eigenschaft entspricht. Dadurch weiß die Benutzeroberfläche (User Interface, UI), welcher Eigenschaftswert erneut abgefragt werden muss.
 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>Deklarieren und Implementieren von **BookstoreViewModel**
 Unsere XAML-Hauptseite wird an ein Hauptansichtsmodell gebunden. Dieses Ansichtsmodell erhält mehrere Eigenschaften –unter anderem eine vom Typ **BookSku**. In diesem Schritt deklarieren und implementieren wir unsere Laufzeitklasse für das Hauptansichtsmodell.

@@ -1,17 +1,15 @@
 ---
 title: Erstellen des Paketmanifests
-description: ''
-author: denelon
-ms.author: denelon
+description: Wenn Sie ein Softwarepaket an das Windows-Paket-Manager-Repository übermitteln möchten, erstellen Sie zunächst ein Paketmanifest.
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eceb29abbdc7f765628dbd8dbd6f6d0be21f132
-ms.sourcegitcommit: e2689c72d5b381eafdb1075090d1961f4c1cb37a
+ms.openlocfilehash: 7ecc6687527ca330f466e6a97ef14c0b5c9b56cf
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84055154"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334617"
 ---
 # <a name="create-your-package-manifest"></a>Erstellen des Paketmanifests
 
@@ -58,7 +56,7 @@ License: string # The open source license or copyright.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
   - Arch: string # Enumeration of supported architectures.
-  - URL: string # Path to download installation file.
+  - Url: string # Path to download installation file.
   - Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
@@ -164,6 +162,17 @@ ManifestVersion: 0.1.0
 
 > [!NOTE]
 > Wenn Ihr Installationsprogramm eine EXE-Datei ist und mit Nullsoft oder Inno erstellt wurde, können Sie stattdessen diese Werte angeben. Wird Nullsoft oder Inno angegeben, legt der Client automatisch die Werte „Silent“ (Unbeaufsichtigt) und „Silent with Progress“ (Unbeaufsichtigt mit Statusanzeige) für das Installationsverhalten des Installationsprogramms fest.
+
+## <a name="installer-switches"></a>Installer-Switches
+
+Sie können oft herausfinden, welche automatischen `Switches` für ein Installationsprogramm verfügbar sind, indem Sie ein `-?` über die Befehlszeile an das Installationsprogramm übergeben. Hier sehen Sie einige gebräuchliche automatische `Swtiches`, die für verschiedene Installertypen verwendet werden können.
+
+| Installer | Befehl  | Dokumentation |  
+| :--- | :-- | :--- |  
+| MSI | `/q` | [Befehlszeilenoptionen für MSI](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| InstallShield | `/s`  | [InstallShield-Befehlszeilenparameter](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
+| Inno Setup | `/SILENT or /VERYSILENT` | [Inno Setup-Dokumentation](https://jrsoftware.org/ishelp/) |
+| Nullsoft | `/S` | [Nullsoft-Installer für die Installation/Deinstallation im Hintergrund](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
 
 ## <a name="tips-and-best-practices"></a>Tipps und bewährte Methoden
 
