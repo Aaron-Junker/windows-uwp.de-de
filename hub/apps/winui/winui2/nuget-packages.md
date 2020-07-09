@@ -4,12 +4,12 @@ description: Listet die NuGet-Pakete für die Windows UI-Bibliothek auf
 ms.topic: article
 ms.date: 04/15/2020
 keywords: windows 10, uwp, toolkit-sdk
-ms.openlocfilehash: 2bda405977733a6191c4434fd8bd2c63b2ce10ce
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: fdb11193273f7f6c54ef82076939c033d5a4168c
+ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580707"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85882866"
 ---
 # <a name="windows-ui-library-nuget-packages"></a>NuGet-Pakete der Windows-UI-Bibliothek
 
@@ -25,7 +25,7 @@ NuGet ist ein Standard-Paket-Manager für .NET-Anwendungen, der in Visual Studio
 
 Bei der Suche im Visual Studio-Paket-Manager sollte eine Liste ähnlich der hier abgebildeten angezeigt werden (möglicherweise unterscheiden sich die Versionsnummern, aber die Namen sollten die gleichen sein).
 
-![](images/NugetPackages.png)
+![NuGet-Paket-Manager](images/NugetPackages.png)
 
 ## <a name="update-nuget-packages"></a>Aktualisieren von NuGet-Paketen
 
