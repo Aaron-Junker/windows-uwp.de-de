@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 38e9d49d9ec717bc1d28305d83d12e2696a32b3b
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254686"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492855"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>Bewährte Methoden für die Leistung Ihrer App beim Starten
 
@@ -323,7 +323,7 @@ Bei Apps mit längerer Initialisierungsperiode ist das Anzeigen einer Ladeseite 
 > End Class
 > ```
 
-Ein Beispiel für die Verwendung erweiterter Begrüßungsbildschirme finden Sie im [Beispiel für einen Begrüßungsbildschirm](https://code.msdn.microsoft.com/windowsapps/Splash-screen-sample-89c1dc78).
+Ein Beispiel für die Verwendung erweiterter Begrüßungsbildschirme finden Sie im [Beispiel für einen Begrüßungsbildschirm](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Splash%20screen%20sample%20(Windows%208)).
 
 ### <a name="phase-3"></a>Phase 3
 

@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, Steuerelement, binden, Sammlung
 ms.localizationpriority: medium
-ms.openlocfilehash: a98056190d035910a8ed83d2f37799a98b685ce6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 388e8ebb062dbbb33ffb269f2adcced34a7e577c
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "70304508"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493645"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML-Elementsteuerelemente: Binden an eine C++/WinRT-Sammlung
 
@@ -22,6 +22,7 @@ Zur besseren Nachvollziehbarkeit dieses Themas empfiehlt es sich, zuerst das unt
 > Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](author-apis.md).
 
 ## <a name="what-does-observable-mean-for-a-collection"></a>Was bedeutet *beobachtbar* für eine Sammlung?
+
 Wenn eine Laufzeitklasse, die eine Sammlung darstellt, das Ereignis [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) auslöst, sobald ihr ein Element hinzugefügt oder ein Element daraus entfernt wird, ist die Laufzeitklasse eine beobachtbare Sammlung. Ein XAML-Elementsteuerelement kann an diese Ereignisse gebunden werden und sie behandeln, indem es die aktualisierte Sammlung abruft und sich anschließend selbst aktualisiert, um die aktuellen Elemente anzuzeigen.
 
 > [!NOTE]
@@ -93,6 +94,7 @@ Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> Bookstor
 ```
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>Binden eines Listenfelds an die Eigenschaft **BookSkus**
+
 Öffne `MainPage.xaml`. Darin befindet sich das XAML-Markup für unsere UI-Hauptseite. Füge das folgende Markup innerhalb des gleichen **StackPanel**-Elements hinzu wie die Schaltfläche (**Button**).
 
 ```xaml
@@ -121,9 +123,11 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 Erstelle nun das Projekt, und führe es aus. Klicke auf die Schaltfläche, um den Ereignishandler für **Click** auszuführen. Wir haben gesehen, dass die Implementierung von **Append** ein Ereignis auslöst, um die Benutzeroberfläche darauf hinzuweisen, dass sich die Sammlung geändert hat, und dass das Listenfeld (**ListBox**) die Sammlung erneut abfragt, um ihren eigenen Wert vom Typ **Items** zu aktualisieren. Genau wie zuvor ändert sich der Titel eines der Bücher, und diese Titeländerung wird sowohl auf der Schaltfläche als auch im Listenfeld angezeigt.
 
 ## <a name="important-apis"></a>Wichtige APIs
+
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make) (Funktionsvorlage „winrt::make“)
 
 ## <a name="related-topics"></a>Verwandte Themen
+
 * [Verwenden von APIs mit C++/WinRT](consume-apis.md)
 * [Erstellen von APIs mit C++/WinRT](author-apis.md)

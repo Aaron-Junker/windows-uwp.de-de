@@ -2,14 +2,14 @@
 title: NuGet-Paketliste für die Windows UI-Bibliothek
 description: Listet die NuGet-Pakete für die Windows UI-Bibliothek auf
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit-sdk
-ms.openlocfilehash: fdb11193273f7f6c54ef82076939c033d5a4168c
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: ca3f2915d77bb83f45744e90bd86e82edba013b8
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882866"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492885"
 ---
 # <a name="windows-ui-library-nuget-packages"></a>NuGet-Pakete der Windows-UI-Bibliothek
 
