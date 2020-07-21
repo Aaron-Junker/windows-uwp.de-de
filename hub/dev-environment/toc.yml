@@ -12,7 +12,7 @@
         - name: Erste Schritte mit Automatisierung
           href: ../python/scripting.md
         - name: Erste Schritte mit Datenbanken
-          href: ../python/databases.md
+          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: Häufig gestellte Fragen
           href: ../python/faqs.md
         - name: Ressourcen
@@ -30,7 +30,7 @@
         - name: Erste Schritte mit Webframeworks
           href: ../nodejs/web-frameworks.md
         - name: Erste Schritte mit Datenbanken
-          href: ../nodejs/databases.md
+          href: '.https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: Erste Schritte mit Containern
           href: ../nodejs/containers.md
     - name: Entwickeln mit Android
@@ -92,10 +92,10 @@
         - name: Ändern der Entwicklungsumgebung
           href: mac-to-windows.md
         - name: Tastenkombinationen
-          href: 'mac-to-windows.md#keyboard-shortcuts'
+          href: mac-to-windows.md#keyboard-shortcuts
         - name: Trackpad-Tastenkombinationen
-          href: 'mac-to-windows.md#trackpad-shortcuts'
+          href: mac-to-windows.md#trackpad-shortcuts
         - name: Terminal und Shell
-          href: 'mac-to-windows.md#terminal-and-shell'
+          href: mac-to-windows.md#terminal-and-shell
         - name: Apps und Hilfsprogramme
-          href: 'mac-to-windows.md#apps-and-utilities'
+          href: mac-to-windows.md#apps-and-utilities
