@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fa70346dc6033ac1f879a1c2429c3c4222b8c0ec
-ms.sourcegitcommit: 368660812e143de5def5e5328a2eadb178cd5544
+ms.openlocfilehash: 41f258124824e6dc7d11aae085365e0d50d8a0f2
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85129107"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493265"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Übersicht über Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS) 
 
@@ -86,7 +86,7 @@ Nach erfolgreicher Erstellung eines Kanal-URIs sendet die App den URI zusammen m
 
 ### <a name="important-notes"></a>Wichtige Hinweise
 
--   Wir können nicht garantieren, dass der Benachrichtigungskanal-URI für eine App jederzeit gleich bleibt. Wenn sich der URI ändert, empfehlen wir, die App immer einen neuen Kanal anfordern zu lassen, wenn sie ausgeführt wird und ihren Dienst aktualisiert. Der Entwickler sollte den Kanal-URI niemals ändern und ihn als Blackbox-Zeichenfolge betrachten. Derzeit laufen Kanal-URIs nach 30 Tagen ab. Wenn Ihre App für Windows 10 in regelmäßigen Abständen den Kanal im Hintergrund erneuert, können Sie das [Beispiel für Pushbenachrichtigungen und regelmäßige Benachrichtigungen](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) für Windows 8.1 herunterladen und den Quellcode und/oder das veranschaulichte Muster wiederverwenden.
+-   Wir können nicht garantieren, dass der Benachrichtigungskanal-URI für eine App jederzeit gleich bleibt. Wenn sich der URI ändert, empfehlen wir, die App immer einen neuen Kanal anfordern zu lassen, wenn sie ausgeführt wird und ihren Dienst aktualisiert. Der Entwickler sollte den Kanal-URI niemals ändern und ihn als Blackbox-Zeichenfolge betrachten. Derzeit laufen Kanal-URIs nach 30 Tagen ab. Wenn Ihre App für Windows 10 in regelmäßigen Abständen den Kanal im Hintergrund erneuert, können Sie das [Beispiel für Pushbenachrichtigungen und regelmäßige Benachrichtigungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) für Windows 8.1 herunterladen und den Quellcode und/oder das veranschaulichte Muster wiederverwenden.
 -   Die Schnittstelle zwischen dem Clouddienst und dem der Client-App wird von Ihnen (dem Entwickler) implementiert. Wir empfehlen, die App mit dem eigenen Dienst einen Authentifizierungsprozess durchlaufen zu lassen und die Daten über ein sicheres Protokoll (beispielsweise HTTPS) zu übermitteln.
 -   Der Clouddienst muss stets sicherstellen, dass der Kanal-URI die Domäne „notify.windows.com” verwendet. Der Dienst darf Benachrichtigungen niemals per Push an einen Kanal aus einer anderen Domäne übertragen. Im Falle einer Kompromittierung des Rückrufs für Ihre App könnte ein böswilliger Angreifer einen Kanal-URI übermitteln, um WNS zu täuschen. Ohne die Domäne zu überprüfen, könnte der clouddienst dem Angreifer möglicherweise unwissentlich Informationen offenlegen.
 -   Wenn der Clouddienst versucht, eine Benachrichtigung an einen abgelaufenen Kanal zu senden, wird von WNS der [Antwortcode 410](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) zurückgegeben. Als Reaktion auf diesen Code sollte der Dienst keine Benachrichtigungen mehr an diesen URI senden.
@@ -275,7 +275,7 @@ Dies ist der XAML-Code für das in diesem Beispiel vorgestellte [**ContentDialog
 </ContentDialog>
 ```
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)

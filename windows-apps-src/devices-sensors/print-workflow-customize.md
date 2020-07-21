@@ -1,46 +1,47 @@
 ---
 ms.assetid: 67a46812-881c-404b-9f3b-c6786f39e72b
 title: Anpassen des Druck-Workflows
-description: Erstellen Sie angepasste Druck-Workflows entsprechend den Anforderungen Ihrer Organisation.
-ms.date: 08/10/2017
+description: Erstellen Sie benutzerdefinierte Druck Workflow Umgebungen, um die Anforderungen Ihrer Organisation zu erfüllen.
+ms.date: 07/03/2020
 ms.topic: article
-keywords: Windows 10, Uwp, Drucken
+keywords: Windows 10, UWP, Drucken
 ms.localizationpriority: medium
-ms.openlocfilehash: 96e308793e60c0367c712fb93a5d25a056397568
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 2bcfc5a24ff9202840b59166de625ac619c05670
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653235"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493395"
 ---
 # <a name="customize-the-print-workflow"></a>Anpassen des Druck-Workflows
 
 ## <a name="overview"></a>Übersicht
-Entwickler können den Druck-Workflow durch die Verwendung einer Druck-Workflow-App individuell anpassen. Druck-Workflow-Apps sind UWP-Apps, die die Funktionalität von [Microsoft Store Apps (WSDAs)](https://docs.microsoft.com/windows-hardware/drivers/devapps/) erweitern. Daher ist es hilfreich, sich mit WSDAs vertraut zu machen. 
 
-Ähnlich wie bei WSDAs prüft das System, ob eine Workflow-App mit dem Drucker verknüpft ist, wenn der Benutzer einer Quellanwendung etwas ausdruckt und durch den Druckdialog navigiert. Ist dies der Fall, startet die Druck-Workflow-App (hauptsächlich als Hintergrundaufgabe; mehr dazu weiter unten). Eine Workflow-App ist in der Lage, sowohl das Druckticket (das XML-Dokument, das die Druckereinstellungen für den aktuellen Druckauftrag konfiguriert) als auch den tatsächlich zu druckenden XPS-Inhalt zu ändern. Diese Funktionalität kann optional dem Benutzer zur Verfügung gestellt werden, indem im Prozess eine Benutzeroberfläche gestartet wird. Nach ihrer Arbeit gibt sie den Druckinhalt und das Druckticket an den Treiber weiter.
+Entwickler können die Druck Workflow-Darstellung durch die Verwendung einer Druckworkflow-App anpassen. Beim Drucken von Workflow-apps handelt es sich um UWP-apps, die auf die Funktionen von [Microsoft Store Geräte-Apps (wsdas)](https://docs.microsoft.com/windows-hardware/drivers/devapps/)erweitert werden. Daher ist es hilfreich, sich vor dem Fortfahren mit wsdas vertraut zu machen.
 
-Da es sich um Hintergrund- und Vordergrundkomponenten handelt und der Prozess funktional mit anderen Apps gekoppelt ist, kann eine Druck-Workflow-App für den Druck komplizierter zu implementieren sein als andere Kategorien von UWP-Apps. Es wird empfohlen, sich das [Workflow-App-Beispiel](https://github.com/Microsoft/print-oem-samples) anzusehen, während Sie dieses Handbuch lesen, um besser zu verstehen, wie die verschiedenen Funktionen implementiert werden können. Einige Funktionen, wie z. B. verschiedene Fehlerprüfungen und die Verwaltung der Benutzeroberfläche, fehlen zur Vereinfachung in diesem Handbuch.
+Wie im Fall von wsdas überprüft das System, wenn der Benutzer einer Quell Anwendung einen Text ausgeben und durch das Dialogfeld "Drucken" navigiert, ob eine Workflow-app mit diesem Drucker verknüpft ist. Wenn dies der Fall ist, wird die Druck Workflow-app gestartet (hauptsächlich als Hintergrundaufgabe; Weitere Informationen hierzu finden Sie weiter unten). Eine Workflow-app kann sowohl das Druck Ticket (das XML-Dokument, das die Geräteeinstellungen des Druckers für die aktuelle Druck Aufgabe konfiguriert) als auch den eigentlichen XPS-Inhalt ändern, der gedruckt werden soll. Diese Funktion kann dem Benutzer optional zugänglich gemacht werden, indem eine Benutzeroberfläche in der Mitte des Prozesses gestartet wird. Nachdem die Arbeit ausgeführt wurde, übergibt Sie den Druck Inhalt und das Druck Ticket an den Treiber.
+
+Da Sie Hintergrund-und Vordergrund Komponenten umfasst und funktionell mit anderen apps verbunden ist, kann eine Druck Workflow-app komplizierter zu implementieren sein als andere Kategorien von UWP-apps. Es wird empfohlen, das Workflow- [App-Beispiel](https://github.com/Microsoft/print-oem-samples) zu überprüfen, während Sie dieses Handbuch lesen, um besser zu verstehen, wie die verschiedenen Funktionen implementiert werden können. Einige Features, wie z. b. verschiedene Fehlerüberprüfungen und die Benutzeroberflächen Verwaltung, sind aus Gründen der Einfachheit nicht in diesem Handbuch enthalten.
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Die Workflow-App muss dem Drucksystem den Einstiegspunkt der Workflow-App angeben, damit sie zum richtigen Zeitpunkt gestartet werden kann. Dies geschieht durch Einfügen der folgenden Deklaration in das `Application/Extensions`-Element der *package.appxmanifest*-Datei des UWP-Projekts. 
+Die Workflow-app muss den Einstiegspunkt für das Drucksystem angeben, damit Sie zum richtigen Zeitpunkt gestartet werden kann. Dies erfolgt durch Einfügen der folgenden Deklaration in das `Application/Extensions` -Element der Datei " *Package. appxmanifest* " des UWP-Projekts.
 
 ```xml
 <uap:Extension Category="windows.printWorkflowBackgroundTask"  
     EntryPoint="WFBackgroundTasks.WfBackgroundTask" />
 ```
 
-> [!IMPORTANT] 
-> Es gibt viele Szenarien, in denen das Anpassen des Druck keine Benutzereingaben erfordert. Aus diesem Grund werden standardmäßig Workflow-Apps für den Druck als Hintergrundaufgaben ausgeführt.
+> [!IMPORTANT]
+> Es gibt viele Szenarien, in denen die Druckanpassung keine Benutzereingaben erfordert. Aus diesem Grund werden Workflow-apps drucken als Hintergrundaufgaben standardmäßig ausgeführt.
 
-Wenn eine Workflow-App mit der Quellanwendung verknüpft ist, die den Druckauftrag gestartet hat (siehe dazu weiter unten), prüft das Drucksystem seine Manifestdateien auf einen Einstiegspunkt für die Hintergrundaufgabe.
+Wenn eine Workflow-app mit der Quell Anwendung verknüpft ist, die den Druckauftrag gestartet hat (Weitere Informationen finden Sie weiter unten in diesem Abschnitt), überprüft das Drucksystem seine Manifest-Dateien auf einen Einstiegspunkt für den Hintergrund Task.
 
-## <a name="do-background-work-on-the-print-ticket"></a>Hintergrundarbeiten am Druckticket durchführen
+## <a name="do-background-work-on-the-print-ticket"></a>Hintergrundarbeit mit dem Druck Ticket
 
-Das erste, was das Drucksystem mit der Workflow-App macht, ist die Aktivierung der Hintergrundaufgabe (in diesem Fall die Klasse `WfBackgroundTask` im Namenspace `WFBackgroundTasks`). In der `Run`-Methode der Hintergrundaufgabe sollten Sie die Trigger-Details des als **[PrintWorkflowTriggerDetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)**-Instanz definieren. Damit steht Ihnen die spezielle Funktionalität für eine Hintergrundaufgabe eines Druck-Workflows zur Verfügung. Sie stellt die **[PrintWorkflowSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)**-Eigenschaft bereit, die eine Instanz von **[PrintWorkFlowBackgroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)** ist. Die Session-Klassen des Druck-Workflows – sowohl die Varianten für den Hintergrund als auch für den Vordergrund – steuern die Ablaufschritte der Druck-Workflow-App. 
+Der erste Schritt, den das Drucksystem mit der Workflow-app durchführt, ist die Aktivierung der Hintergrundaufgabe (in diesem Fall die- `WfBackgroundTask` Klasse im- `WFBackgroundTasks` Namespace). In der-Methode der Hintergrundaufgabe `Run` sollten Sie die triggerdetails der Aufgabe als **[printworkflowtriggerdetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)** -Instanz umwandeln. Dadurch wird die besondere Funktionalität für einen Hintergrund Task für den Druck Workflow bereitgestellt. Sie macht die **[printworkflowsession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails.PrintWorkflowSession)** -Eigenschaft verfügbar, bei der es sich um eine Instanz von **[printworkflowbackgroundsession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)** handelt. Workflow-Sitzungs Klassen drucken: sowohl die Hintergrund-als auch die Vorder Grundsorte: Steuern die sequenziellen Schritte der Druck Workflow-app.
 
-Registrieren Sie dann Handler-Methoden für die beiden Ereignisse, die diese Session-Klasse auslösen wird. Diese Methoden werden Sie später definieren.
+Registrieren Sie dann Handlermethoden für die beiden Ereignisse, die von dieser Sitzungs Klasse erhoben werden. Diese Methoden werden später definiert.
 
 ```csharp
 public void Run(IBackgroundTaskInstance taskInstance) {
@@ -66,7 +67,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-Wenn die `Start`-Methode aufgerufen wird, löst der Sitzungsmanager das Ereignis **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** zuerst aus. Dieses Ereignis zeigt allgemeine Informationen über den Druckauftrag sowie das Druckticket an. In dieser Phase kann das Druckticket im Hintergrund bearbeitet werden. 
+Wenn die- `Start` Methode aufgerufen wird, gibt der Sitzungs-Manager zuerst das **[setuprequraise](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.SetupRequested)** -Ereignis aus. Dieses Ereignis macht allgemeine Informationen über die Druck Aufgabe sowie das Druck Ticket verfügbar. Zu diesem Zeitpunkt kann das Druck Ticket im Hintergrund bearbeitet werden.
 
 ```csharp
 private void OnSetupRequested(PrintWorkflowBackgroundSession sessionManager, PrintWorkflowBackgroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -84,43 +85,42 @@ private void OnSetupRequested(PrintWorkflowBackgroundSession sessionManager, Pri
     // ...
 ```
 
-Wichtig ist, dass die App bei der Verarbeitung von **SetupRequested** bestimmt, ob sie eine Vordergrundkomponente startet. Dies kann von einer Einstellung abhängen, die zuvor lokal gespeichert wurde, oder von einem Ereignis, das während der Bearbeitung des Drucktickets aufgetreten ist, oder von einer statischen Einstellung Ihrer speziellen App.
+Wichtig ist, dass es sich bei der Behandlung von **setuprequors** handelt, dass die APP bestimmt, ob eine Vordergrund Komponente gestartet werden soll. Dies kann abhängig von einer Einstellung sein, die zuvor im lokalen Speicher gespeichert wurde, oder einem Ereignis, das während der Bearbeitung des Druck Tickets aufgetreten ist, oder es kann eine statische Einstellung Ihrer speziellen APP sein.
 
 ```csharp
-    // ...
-    
-    if (UIrequested) {
-        printTaskSetupArgs.SetRequiresUI();
+// ...
 
-        // Any data that is to be passed to the foreground task must be stored the app's local storage.
-        // It should be prefixed with the sourceApplicationName string and the SessionId string, so that
-        // it can be identified as pertaining to this workflow app session.
-    }
+if (UIrequested) {
+    printTaskSetupArgs.SetRequiresUI();
 
-    // Complete the deferral taken out at the start of OnSetupRequested
-    setupRequestedDeferral.Complete();
+    // Any data that is to be passed to the foreground task must be stored the app's local storage.
+    // It should be prefixed with the sourceApplicationName string and the SessionId string, so that
+    // it can be identified as pertaining to this workflow app session.
 }
+
+// Complete the deferral taken out at the start of OnSetupRequested
+setupRequestedDeferral.Complete();
 ```
 
-## <a name="do-foreground-work-on-the-print-job-optional"></a>Vordergrundarbeit für den Druckjob verarbeiten (optional)
+## <a name="do-foreground-work-on-the-print-job-optional"></a>Aufgaben im Vordergrund für den Druckauftrag ausführen (optional)
 
-Wurde die Methode **[SetRequiresUI](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** aufgerufen, dann überprüft das Drucksystem die Manifest-Datei für den Einstiegspunkt in die Vordergrund-Anwendung. Das `Application/Extensions`-Element der Datei *package.appxmanifest* muss die folgenden Zeilen haben. Ersetzen Sie den Wert von `EntryPoint` durch den Namen der Vordergrund-App.
+Wenn die **[setrequiresui](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** -Methode aufgerufen wurde, untersucht das Drucksystem die Manifestressource auf den Einstiegspunkt der Vordergrund Anwendung. Das- `Application/Extensions` Element der Datei " *Package. appxmanifest* " muss über die folgenden Zeilen verfügen. Ersetzen Sie den Wert von `EntryPoint` durch den Namen der Vordergrund-app.
 
 ```xml
 <uap:Extension Category="windows.printWorkflowForegroundTask"  
-    EntryPoint="MyWorkFlowForegroundApp.App" /> 
+    EntryPoint="MyWorkFlowForegroundApp.App" />
 ```
 
-Als nächstes ruft das Drucksystem die **OnActivated**-Methode für den angegebenen App-Einsprungspunkt auf. In der **OnActivated**-Methode ihrer _App. xaml.cs_-Datei sollte die Workflow-Anwendung die Aktivierungsart prüfen, um zu überprüfen, ob es sich um eine Workflow-Aktivierung handelt. Wenn ja, kann die Workflow-Anwendung die Aktivierungsargumente in ein **[PrintWorkflowUIActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)**-Objekt umwandeln, das ein **[PrintWorkflowForegroundSession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)**-Objekt als Eigenschaft ausgibt. Dieses Objekt enthält, wie sein Gegenstück im vorherigen Abschnitt, Ereignisse, die vom Drucksystem ausgelöst werden, und Sie können diesen Handler zuordnen. In diesem Fall wird die Ereignisbehandlungsfunktionalität in einer eigenen Klasse namens `WorkflowPage` implementiert.
+Als nächstes Ruft das Drucksystem die **onaktivierte** Methode für den angegebenen app-Einstiegspunkt auf. In der **onaktivierten** -Methode der _app.XAML.cs_ -Datei sollte die Workflow-app die Aktivierungs Art überprüfen, um zu überprüfen, ob es sich um eine Workflow Aktivierung handelt. Wenn dies der Fall ist, kann die Workflow-app die Aktivierungs Argumente in ein **[printworkflowuiactivatedeventargs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)** -Objekt umwandeln, das ein **[printworkflowforegroundsession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)** -Objekt als Eigenschaft verfügbar macht. Dieses Objekt enthält, wie das zugehörige Hintergrund Pendant im vorherigen Abschnitt, Ereignisse, die vom Drucksystem ausgelöst werden, und Sie können diesen Handlern zuweisen. In diesem Fall wird die Ereignis Behandlungs Funktion in einer separaten Klasse namens implementiert `WorkflowPage` .
 
-Zuerst in der Datei _App.xaml.cs_:
+Zuerst in der Datei _app.XAML.cs_ :
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs args){
 
     if (args.Kind == ActivationKind.PrintWorkflowForegroundTask) {
 
-        // the app should instantiate a new UI view so that it can properly handle the case when 
+        // the app should instantiate a new UI view so that it can properly handle the case when
         // several print jobs are active at the same time.
         Frame rootFrame = new Frame();
         if (null == Window.Current.Content)
@@ -151,7 +151,7 @@ protected override void OnActivated(IActivatedEventArgs args){
 }
 ```
 
-Sobald das UI-Ereignis-Handler angehängt und die **OnActivated**-Methode beendet hat, löst das Drucksystem das **[SetupRequested](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)**-Ereignis für das zu behandelnde UI aus. Dieses Ereignis liefert die gleichen Daten wie das Setup-Ereignis der Hintergrundaufgabe, einschließlich der Druckauftragsinfo und des Druckticketdokuments, jedoch ohne die Möglichkeit, den Start eine zusätzlichen UIs anzufordern. In der Datei _WorkflowPage.xaml.cs_:
+Sobald die Benutzeroberfläche über angefügte Ereignishandler verfügt und die **onaktivierte** Methode beendet wurde, gibt das Drucksystem das **[setuprequoniert](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.SetupRequested)** -Ereignis aus, das von der Benutzeroberfläche behandelt werden soll. Dieses Ereignis stellt die gleichen Daten bereit, die das Setup Ereignis für die Hintergrundaufgabe bereitgestellt hat, einschließlich der Informationen zum Druckauftrag und zum Druck Ticket, aber ohne die Möglichkeit, den Start zusätzlicher Benutzeroberflächen anzufordern. In der Datei _WorkflowPage.XAML.cs_ :
 
 ```csharp
 internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, PrintWorkflowForegroundSetupRequestedEventArgs printTaskSetupArgs) {
@@ -166,7 +166,7 @@ internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, Pr
     // the following string should be used when storing data that pertains to this workflow session
     // (such as user input data that is meant to change the print content later on)
     string localStorageVariablePrefix = string.Format("{0}::{1}::", sourceApplicationName, sessionID);
-    
+
     try
     {
         // receive and store user input
@@ -185,9 +185,9 @@ internal void OnSetupRequested(PrintWorkflowForegroundSession sessionManager, Pr
 }
 ```
 
-Als nächstes wird das Drucksystem das **[XpsDataAvailable](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)**-Ereignis für das UI auslösen. Im Handler für dieses Ereignis kann die Workflow-App auf alle dem Setup-Ereignis zur Verfügung stehenden Daten zugreifen und zusätzlich die XPS-Daten direkt lesen, entweder als Raw-Byte-Strom oder als Objektmodell. Der Zugriff auf die XPS-Daten ermöglicht es dem UI, Druckvorschau-Dienste zur Verfügung zu stellen und dem Benutzer zusätzliche Informationen über die Operationen zur Verfügung zu stellen, die die Workflow-App für die Daten ausführen wird. 
+Als nächstes gibt das Drucksystem das **[xpsdataavailable](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession.XpsDataAvailable)** -Ereignis für die Benutzeroberfläche aus. Im Handler für dieses Ereignis kann die Workflow-app auf alle Daten zugreifen, die für das Setup Ereignis verfügbar sind, und Sie kann die XPS-Daten zusätzlich direkt lesen, entweder als Stream von Rohdaten Bytes oder als Objektmodell. Der Zugriff auf die XPS-Daten ermöglicht der Benutzeroberfläche die Bereitstellung von Druckvorschau Diensten und das Bereitstellen zusätzlicher Informationen für den Benutzer über die Vorgänge, die von der Workflow-app für die Daten ausgeführt werden.
 
-Im Rahmen dieses Ereignis-Handlers muss die Workflow-App ein Deferral-Objekt erhalten, wenn sie weiterhin mit dem Benutzer interagieren soll. Ohne eine Verzögerung betrachtet das Drucksystem den UI-Task als erledigt, wenn der **XpsDataAvailable**-Ereignis-Handler beendet wird oder eine asynchrone Methode aufgerufen wird. Wenn die App alle erforderlichen Informationen aus der Interaktion des Benutzers mit dem UI gesammelt hat, sollte sie die Verzögerung abschließen, damit das Drucksystem fortfahren kann.
+Als Teil dieses Ereignis Handlers muss die Workflow-app ein Verzögerungs Objekt abrufen, wenn die Interaktion mit dem Benutzer fortgesetzt wird. Ohne eine Verzögerung betrachtet das Drucksystem die Benutzeroberflächen Aufgabe abgeschlossen, wenn der **xpsdataavailable** -Ereignishandler beendet wird oder eine Async-Methode aufruft. Wenn die APP alle erforderlichen Informationen aus der Interaktion des Benutzers mit der Benutzeroberfläche gesammelt hat, sollte Sie den Verzögerungs Vorgang vervollständigen, damit das Drucksystem dann fortfahren kann.
 
 ```csharp
 internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionManager, PrintWorkflowXpsDataAvailableEventArgs printTaskXpsAvailableEventArgs)
@@ -195,66 +195,66 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
     // Take out a deferral
     Deferral xpsDataAvailableDeferral = printTaskXpsAvailableEventArgs.GetDeferral();
 
-    SpoolStreamContent xpsStream = printTaskXpsAvailableEventArgs.Operation.XpsContent.GetSourceSpoolDataAsStreamContent(); 
- 
-    IInputStream inputStream = xpsStream.GetInputSpoolStream(); 
- 
-    using (var inputReader = new Windows.Storage.Streams.DataReader(inputStream)) 
-    { 
-        // Read the XPS data from input stream 
-        byte[] xpsData = new byte[inputReader.UnconsumedBufferLength]; 
-        while (inputReader.UnconsumedBufferLength > 0) 
-        { 
-            inputReader.ReadBytes(xpsData); 
-            // Do something with the XPS data, e.g. preview 
-            // ...                  
-        } 
-    } 
+    SpoolStreamContent xpsStream = printTaskXpsAvailableEventArgs.Operation.XpsContent.GetSourceSpoolDataAsStreamContent();
+
+    IInputStream inputStream = xpsStream.GetInputSpoolStream();
+
+    using (var inputReader = new Windows.Storage.Streams.DataReader(inputStream))
+    {
+        // Read the XPS data from input stream
+        byte[] xpsData = new byte[inputReader.UnconsumedBufferLength];
+        while (inputReader.UnconsumedBufferLength > 0)
+        {
+            inputReader.ReadBytes(xpsData);
+            // Do something with the XPS data, e.g. preview
+            // ...
+        }
+    }
 
     // Complete the deferral taken out at the start of this method
     xpsDataAvailableDeferral.Complete();
 }
 ```
 
-Zusätzlich bietet die Instanz **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)**, die durch die Ereignisargumente bereitgestellt wird, die Option, den Druckauftrag abzubrechen oder anzuzeigen, dass der Auftrag erfolgreich ist, aber kein Ausgabedruckauftrag erforderlich ist. Dazu wird die **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)**-Methode mit dem Wert **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** aufgerufen.
+Außerdem bietet die **[printworkflowsubmittedoperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** -Instanz, die von den Ereignis Argumenten verfügbar gemacht wird, die Option, den Druckauftrag abzubrechen oder anzugeben, dass der Auftrag erfolgreich ist, aber kein Ausgabe Druckauftrag benötigt wird. Dies erfolgt durch Aufrufen der **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** -Methode mit einem **[printworkflowsubmittedstatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** -Wert.
 
 > [!NOTE]
-> Wenn die Workflow-App den Druckauftrag abbricht, empfiehlt es sich dringend, eine Popup-Benachrichtigung zu senden, aus der hervorgeht, warum der Druckauftrag abgebrochen wurde. 
+> Wenn die Workflow-app den Druckauftrag abbricht, wird dringend empfohlen, eine Popup Benachrichtigung bereitzustellen, die angibt, warum der Auftrag abgebrochen wurde.
 
+## <a name="do-final-background-work-on-the-print-content"></a>Abschließende Hintergrundarbeit am Druck Inhalt
 
-## <a name="do-final-background-work-on-the-print-content"></a>Abschließende Hintergrundarbeiten am Druckinhalt durchführen
+Nachdem die Benutzeroberfläche die Verzögerung im **printtaskxpsdataavailable** -Ereignis abgeschlossen hat (oder wenn der UI-Schritt umgangen wurde), wird das über **[mittelte](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** Ereignis für die Hintergrundaufgabe ausgelöst. Im-Handler für dieses Ereignis kann die Workflow-app Zugriff auf alle Daten erhalten, die vom **xpsdataavailable** -Ereignis bereitgestellt werden. Anders als bei einem der vorangegangenen Ereignisse bietet gesendete **jedoch** auch *Schreib* Zugriff auf den endgültigen Inhalt des Druckauftrags über eine **[printworkflowtarget](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)** -Instanz.
 
-Nachdem das UI die Verzögerung des Ereignisses **PrintTaskXpsDataAvailable** abgeschlossen hat (oder wenn der Schritt des UIs umgangen wurde), löst das Drucksystem das Ereignis **[Submitted](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession.Submitted)** für die Hintergrundaufgabe aus. Im Handler für dieses Ereignis kann die Workflow-App auf alle Daten zugreifen, die das Ereignis **XpsDataAvailable** zur Verfügung stellt. Im Gegensatz zu den vorherigen Ereignissen bietet **Submitted** jedoch auch *Schreibzugriff* auf den Inhalt des endgültigen Druckauftrags über eine **[PrintWorkflowTarget](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)**-Instanz. 
+Das Objekt, das verwendet wird, um die Daten für den endgültigen Druck zu spoolen, hängt davon ab, ob als Rohdaten Strom oder als XPS-Objektmodell auf die Quelldaten zugegriffen wird. Wenn die Workflow-app über einen Bytestream auf die Quelldaten zugreift, wird ein Ausgabe Byte-Stream bereitgestellt, in den die abschließenden Auftragsdaten geschrieben werden. Wenn die Workflow-app über das Objektmodell auf die Quelldaten zugreift, wird ein Dokumentwriter bereitgestellt, um Objekte in den Ausgabe Auftrag zu schreiben. In beiden Fällen sollte die Workflow-app alle Quelldaten lesen, alle erforderlichen Daten ändern und die geänderten Daten in das Ausgabeziel schreiben.
 
-Das Objekt, mit dem die Daten für den endgültigen Druck gespoolt werden, hängt davon ab, ob auf die Quelldaten als Raw-Bity-Strom oder als XPS-Objektmodell zugegriffen wird. Wenn die Workflow-App über einen Byte-Stream auf die Quelldaten zugreift, wird ein Ausgabe-Byte-Stream bereitgestellt, in den die endgültigen Auftragsdaten geschrieben werden. Wenn die Workflow-App über das Objektmodell auf die Quelldaten zugreift, wird ein Document-Writer bereitgestellt, um Objekte in den Ausgabeauftrag zu schreiben. In jedem Fall sollte die Workflow-App alle Quelldaten lesen, die erforderlichen Daten modifizieren und die geänderten Daten in das Ausgabeziel schreiben.
+Wenn die Hintergrundaufgabe das Schreiben der Daten beendet hat, sollte Sie für das entsprechende **printworkflowsubmittedoperation** -Objekt **Complete** aufrufen. Sobald die Workflow-app diesen Schritt abgeschlossen hat und der über **mittelte** Ereignishandler beendet wird, wird die Workflow Sitzung geschlossen, und der Benutzer kann den Status des letzten Druckauftrags über die standardmäßigen Druck Dialogfelder überwachen.
 
-Wenn die Hintergrundaufgabe das Schreiben der Daten beendet hat, sollte sie **Complete** für das entsprechende **PrintWorkflowSubmittedOperation**-Objekt aufrufen. Sobald die Workflow-App diesen Schritt abgeschlossen hat und der Eventhandler **Submitted** beendet wurde, wird die Workflow-Sitzung geschlossen und der Benutzer kann den Status des endgültigen Druckauftrags über die Standard-Druckdialoge überwachen.
+## <a name="final-steps"></a>Abschließende Schritte
 
-## <a name="final-steps"></a>Letzte Schritte
+### <a name="register-the-print-workflow-app-to-the-printer"></a>Registrieren der Druck Workflow-app für den Drucker
 
-### <a name="register-the-print-workflow-app-to-the-printer"></a>Druck-Workflow-App beim Drucker registrieren
+Die Workflow-app ist mit einem Drucker verknüpft, der denselben Typ der Metadatendatei Übermittlung wie für wsdas verwendet. Tatsächlich kann eine einzige UWP-Anwendung sowohl als Workflow-app als auch als wsda fungieren, das Funktionen für Druckaufgaben Einstellungen bereitstellt. Befolgen Sie die entsprechenden [wsda-Schritte zum Erstellen der metadatenzuordnung](https://docs.microsoft.com/windows-hardware/drivers/devapps/step-2--create-device-metadata).
 
-Ihre Workflow-App ist mit einem Drucker verbunden, der die gleiche Art der Übermittlung von Metadaten wie bei WSDAs verwendet. Tatsächlich kann eine einzelne UWP-Anwendung sowohl als Workflow-App als auch als WSDA fungieren, die Druckaufgabeeinstellungen ermöglicht. Führen Sie die entsprechenden [WSDA-Schritte zum Anlegen der Metadaten-Zuordnung](https://docs.microsoft.com/windows-hardware/drivers/devapps/step-2--create-device-metadata) aus.
+Der Unterschied besteht darin, dass wsdas automatisch für den Benutzer aktiviert wird (die APP wird immer gestartet, wenn der Benutzer auf dem zugeordneten Gerät druckt), die Workflow-apps nicht. Sie verfügen über eine separate Richtlinie, die festgelegt werden muss.
 
-Der Unterschied besteht darin, dass WSDAs zwar automatisch für den Benutzer aktiviert werden (die App wird immer gestartet, wenn der Benutzer über das zugehörige Gerät druckt), Workflow-Apps jedoch nicht. Sie haben eine eigene Richtlinie, die festgelegt werden muss.
+### <a name="set-the-workflow-apps-policy"></a>Festlegen der Richtlinie für die Workflow-app
 
-### <a name="set-the-workflow-apps-policy"></a>Festlegen der Richtlinien für die Workflow-App
-Die Workflow-App-Richtlinie wird durch Powershell-Befehle auf dem Gerät festgelegt, das die Workflow-App ausführen soll. Die Befehle Set-Printer, Add-Printer (bestehender Port) und Add-Printer (neuer WSD-Port) werden modifiziert, um das Festen von Workflow-Richtlinien zu ermöglichen. 
-* `Disabled`: Workflow-apps werden nicht aktiviert werden.
-* `Uninitialized`: Workflowanwendungen werden aktiviert, wenn der Workflow DCA im System installiert ist. Wenn die App nicht installiert ist, wird trotzdem gedruckt. 
-* `Enabled`: Workflow-Vertrag wird aktiviert werden, wenn der Workflow DCA im System installiert ist. Wenn die App nicht installiert ist, schlägt das Drucken fehl. 
+Die Workflow-app-Richtlinie wird von PowerShell-Befehlen auf dem Gerät festgelegt, auf dem die Workflow-app ausgeführt werden soll. Die Befehle Set-Printer, Add-Printer (vorhandener Port) und Add-Printer (neuer WSD-Port) werden so geändert, dass Workflow Richtlinien festgelegt werden können.
 
-Mit dem folgenden Befehl wird die Workflow-App auf dem angegebenen Drucker als erforderlich festgelegt.
+* `Disabled`: Workflow-apps werden nicht aktiviert.
+* `Uninitialized`: Workflow-apps werden aktiviert, wenn die Workflow-DCA im System installiert ist. Wenn die APP nicht installiert ist, wird der Druckvorgang trotzdem fortgesetzt.
+* `Enabled`: Der Workflow Vertrag wird aktiviert, wenn die Workflow-DCA im System installiert ist. Wenn die APP nicht installiert ist, tritt beim Drucken ein Fehler auf.
+
+Mit dem folgenden Befehl wird die Workflow-app auf dem angegebenen Drucker benötigt.
+
 ```Powershell
-Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy On
+Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy Enabled
 ```
 
-Ein lokaler Benutzer kann diese Richtlinie auf einem lokalen Drucker ausführen, oder der Druckeradministrator kann diese Richtlinie auf dem Druckerserver ausführen. Die Richtlinie wird dann mit allen Client-Verbindungen synchronisiert. Der Druckeradministrator kann diese Richtlinie immer dann verwenden, wenn ein neuer Drucker hinzugefügt wird.
+Ein lokaler Benutzer kann diese Richtlinie auf einem lokalen Drucker ausführen, oder für die Enterprise-Implementierung kann der Drucker Administrator diese Richtlinie auf dem Drucker Server ausführen. Die Richtlinie wird dann mit allen Clientverbindungen synchronisiert. Der Drucker Administrator kann diese Richtlinie immer dann verwenden, wenn ein neuer Drucker hinzugefügt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Workflow-app-Beispiel](https://github.com/Microsoft/print-oem-samples)
+[Beispiel für Workflow-app](https://github.com/Microsoft/print-oem-samples)
 
-[Windows.Graphics.Printing.Workflow-namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
-
-
+[Windows. Graphics. Printing. Workflow-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)

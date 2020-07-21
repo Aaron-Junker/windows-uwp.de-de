@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: f08c8178781c82e8961fd180d4b75912359b4da9
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: d71cf2289654860b47aef18c117ac9d6d36fab0a
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730277"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493245"
 ---
 # <a name="guidelines-for-globalization"></a>Richtlinien für Globalisierung
 
@@ -41,11 +41,11 @@ Entwerfen und entwickeln Sie Ihre APP so, dass Sie auf Systemen mit unterschiedl
 * [Language. currentinputmethodlanguagetag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
 * [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Empfehlungen für die Zeichen folgen Verwendung](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
 * [Globalisieren von Datums-, Uhrzeit- und Zahlenformaten](use-global-ready-formats.md)
-* [Grundlegendes zu Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md)
+* [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md)
 * [Bcp-47-sprach Tags](https://tools.ietf.org/html/bcp47)
 * [App-Ressourcen und das Ressourcenverwaltungssystem](../../app-resources/index.md)
 * [Wie das Ressourcenverwaltungssystem Sprachtags zuordnet](../../app-resources/how-rms-matches-lang-tags.md)
@@ -55,4 +55,4 @@ Entwerfen und entwickeln Sie Ihre APP so, dass Sie auf Systemen mit unterschiedl
 
 ## <a name="samples"></a>Beispiele
 
-* [Beispiel für Globalisierungseinstellungen](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
+* [Beispiel für Globalisierungseinstellungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208))

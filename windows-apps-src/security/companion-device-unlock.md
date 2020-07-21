@@ -1,25 +1,27 @@
 ---
 title: Windows Hello und entsperren mit begleitenden Geräten
-description: Ein Windows Hello-Begleitgerät ist ein Gerät, das in Verbindung mit dem Windows 10-Desktopgerät zur Verbesserung der Benutzerauthentifizierung verwendet werden kann. Mithilfe des Windows Hello-Begleit Geräte-Frameworks kann ein Begleit Gerät eine umfassende Oberfläche für Windows Hello bereitstellen, auch wenn keine Biometrie verfügbar sind (z. b. wenn der Windows 10-Desktop keine Kamera für Gesichts Authentifizierung oder Fingerabdruckleser hat). beispielsweise).
+description: Ein Windows Hello-Begleitgerät ist ein Gerät, das in Verbindung mit dem Windows 10-Desktopgerät zur Verbesserung der Benutzerauthentifizierung verwendet werden kann. Mithilfe des Windows Hello Companion-Geräte-Frameworks kann ein Begleit Gerät eine umfassende Oberfläche für Windows Hello bereitstellen, auch wenn keine Biometrik verfügbar ist (z. b. wenn der Windows 10-Desktop beispielsweise eine Kamera für die Gesichts Authentifizierung oder Fingerabdruckleser-Gerät fehlt).
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b04ca1b841f72284ccab9df6c0ab1be8adab5c5
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: 1e1e27ad47385b3ded743d39cc6a347cab5960ce
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735125"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493135"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Entsperren von Windows mit Windows Hello-Begleitgeräten (IoT)
 
-Ein Windows Hello-Begleitgerät ist ein Gerät, das in Verbindung mit dem Windows 10-Desktopgerät zur Verbesserung der Benutzerauthentifizierung verwendet werden kann. Mithilfe des Windows Hello-Begleit Geräte-Frameworks kann ein Begleit Gerät eine umfassende Oberfläche für Windows Hello bereitstellen, auch wenn keine Biometrie verfügbar sind (z. b. wenn der Windows 10-Desktop keine Kamera für Gesichts Authentifizierung oder Fingerabdruckleser hat). beispielsweise).
+Ein Windows Hello-Begleitgerät ist ein Gerät, das in Verbindung mit dem Windows 10-Desktopgerät zur Verbesserung der Benutzerauthentifizierung verwendet werden kann. Mithilfe des Windows Hello Companion-Geräte-Frameworks kann ein Begleit Gerät eine umfassende Oberfläche für Windows Hello bereitstellen, auch wenn keine Biometrik verfügbar ist (z. b. wenn der Windows 10-Desktop beispielsweise eine Kamera für die Gesichts Authentifizierung oder Fingerabdruckleser-Gerät fehlt).
 
-> **Hinweis** Microsoft wird in der ersten Hälfte 2020 die API für das Windows Hello Companion-Geräte Framework als veraltet kennzeichnen.
+> [!NOTE]
+> Die API für das Windows Hello Companion-Geräte Framework ist in Windows 10, Version 2004, veraltet.
 
-> **Hinweis** Das Windows Hello-Begleitgeräteframework ist ein spezielles Feature und nicht für alle App-Entwickler verfügbar. Damit dieses Framework verwendet werden kann, muss Ihre App speziell von Microsoft bereitgestellt werden und die eingeschränkte Funktion *SecondaryAuthenticatorFactor* muss im Manifest angegeben sein. Um eine Genehmigung zu erhalten, wenden Sie sich an [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
+> [!NOTE]
+> Das Windows Hello Companion Device-Framework ist ein spezielles Feature, das für alle App-Entwickler nicht verfügbar ist. Damit dieses Framework verwendet werden kann, muss Ihre App speziell von Microsoft bereitgestellt werden und die eingeschränkte Funktion *SecondaryAuthenticatorFactor* muss im Manifest angegeben sein. Wenden Sie sich zum Abrufen der Genehmigung an [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) .
 
 ## <a name="introduction"></a>Einführung
 
@@ -38,7 +40,7 @@ Das Windows Hello-Begleitgeräteframework kann auf unterschiedliche Weise verwen
 
 ### <a name="biometric-enabled-windows-hello-companion-devices"></a>Biometriefähige Windows Hello-Begleitgeräte
 
-Falls das Begleitgerät über Biometrieunterstützung verfügt, ist das [Windows-Biometrieframework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) in manchen Fällen eine bessere Lösung als das Windows Hello-Begleitgeräteframework. Wenden Sie sich an [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com), und wir helfen Ihnen bei der Auswahl des richtigen Ansatzes.
+Falls das Begleitgerät über Biometrieunterstützung verfügt, ist das [Windows-Biometrieframework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) in manchen Fällen eine bessere Lösung als das Windows Hello-Begleitgeräteframework. Wenden Sie sich an, [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) und wir helfen Ihnen bei der Auswahl des richtigen Ansatzes.
 
 ### <a name="components-of-the-solution"></a>Komponenten der Lösung
 
@@ -90,9 +92,9 @@ Im Anschluss sehen Sie einen typischen Benutzerworkflow:
 - Der Benutzer richtet die PIN auf jedem der Windows 10-Zieldesktopgeräte ein, die er mit dem Windows Hello-Begleitgerät entsperren möchte.
 - Der Benutzer führt auf dem Windows 10-Desktopgerät die Windows Hello-Begleitgeräte-App aus, um sein Windows Hello-Begleitgerät bei dem Windows 10-Desktopgerät zu registrieren.
 
-Hinweise:
+Notizen:
 
-- Wir empfehlen die Ermittlung, das herunterladen und das Starten der Windows Hello Companion-Geräte-APP ist optimiert und, wenn möglich, automatisiert (die APP kann z. b. heruntergeladen werden, wenn das Windows Hello Companion-Gerät auf einem NFC-Reader auf einem Windows 10-Desktop Gerät tippt). Seite). Dies ist allerdings Aufgabe des Windows Hello-Begleitgeräts und der Windows Hello-Begleitgeräte-App.
+- Wir empfehlen die Ermittlung, den Download und den Start der Windows Hello Companion device-APP, die optimiert und, wenn möglich, automatisiert ist (z. b. kann die App heruntergeladen werden, wenn das Windows Hello Companion-Gerät auf einem NFC-Reader auf der Windows 10-Desktop Geräteseite tippt). Dies ist allerdings Aufgabe des Windows Hello-Begleitgeräts und der Windows Hello-Begleitgeräte-App.
 - In einer Unternehmensumgebung kann die Windows Hello-Begleitgeräte-App per MDM bereitgestellt werden.
 - Fehlermeldungen, die unter Umständen im Rahmen der Registrierung auftreten, müssen dem Benutzer von der Windows Hello-Begleitgeräte-App angezeigt werden.
 
@@ -130,7 +132,7 @@ Die Hilfsbibliothek für die Windows Hello-Begleitgeräte-App lauscht auf die Ä
 
 Sollten mehrere Windows Hello-Begleitgerät-Hintergrundaufgaben vorhanden sein, wird der PC durch die erste Hintergrundaufgabe entsperrt, die den Authentifizierungsprozess abgeschlossen hat. Alle übrigen Authentifizierungsaufrufe werden vom Begleitgerät-Authentifizierungsdienst ignoriert.
 
-Die Vorgänge aufseiten des Windows Hello-Begleitgeräts werden von der Windows Hello-Begleitgeräte-App abgewickelt und verwaltet. Das Windows Hello-Begleitgeräteframework hat keinen Einfluss auf diesen Teil der Benutzererfahrung. Genauer gesagt informiert der Begleit Authentifizierungs Anbieter die Windows Hello Companion-Geräte-app (über seine Hintergrund-APP) über Statusänderungen in der Anmelde Benutzeroberfläche (z. b. wenn der Sperrbildschirm gerade nicht angezeigt wurde, oder der Benutzer hat einfach den Sperrbildschirm durch Drücken der Leertaste ausgelöst). und es ist die Aufgabe der Windows Hello Companion device-APP, eine solche Umgebung zu entwickeln (z. b. wenn der Benutzer auf die Leertaste stößt und den Bildschirm zum Entsperren entsperrt).
+Die Vorgänge aufseiten des Windows Hello-Begleitgeräts werden von der Windows Hello-Begleitgeräte-App abgewickelt und verwaltet. Das Windows Hello-Begleitgeräteframework hat keinen Einfluss auf diesen Teil der Benutzererfahrung. Genauer gesagt informiert der begleitende Authentifizierungs Anbieter die Windows Hello-Begleit Geräte-app (über seine Hintergrund-APP) über Statusänderungen in der Anmelde Benutzeroberfläche (z. b. der Sperrbildschirm wurde einfach angezeigt, oder der Benutzer hat den Sperrbildschirm durch das Erreichen der Leertaste gedrückt), und es liegt in der Verantwortung der Windows Hello Companion device-APP, eine solche Umgebung zu entwickeln (z. b. Wenn Benutzer die Leertaste drücken und den Bildschirm zum Entsperren aufheben). , suchen Sie nach dem Gerät über USB).
 
 Das Windows Hello-Begleitgeräteframework stellt eine Reihe (lokalisierter) Text- und Fehlermeldungen für die Windows Hello-Begleitgeräte-App zur Verfügung. Diese werden im Vordergrund des Sperrbildschirms (oder auf der Anmeldebenutzeroberfläche) angezeigt. Weitere Informationen finden Sie im Abschnitt „Umgang mit Meldungen und Fehlern“.
 
@@ -168,7 +170,7 @@ Unternehmen stehen zum Steuern des Windows Hello-Begleitgeräteframeworks zwei O
 
 Das Windows Hello-Begleitgeräteframework unterstützt keine zentralisierte Inventarisierung verfügbarer Begleitgeräte und keine Methode zur weiteren Filterung der zulässigen Instanzen eines Windows Hello-Begleitgerätetyps. (So kann beispielsweise nicht festgelegt werden, dass nur Begleitgeräte mit einer Seriennummer zwischen X und Y zulässig sind.) App-Entwickler können solche Funktionen jedoch über einen eigenen Dienst bereitstellen. Ausführlichere Informationen finden Sie im Abschnitt „Roaming, Sperrung und Filterdienst“.
 
-### <a name="revocation"></a>Sperrung
+### <a name="revocation"></a>Widerruf
 
 Die Remoteentfernung eines Begleitgeräts von einem bestimmten Windows 10-Desktopgerät wird vom Windows Hello-Begleitgeräteframework nicht unterstützt. Stattdessen können Benutzer das Windows Hello-Begleitgerät über die auf dem Windows 10-Desktopgerät ausgeführte Windows Hello-Begleitgeräte-App entfernen.
 
@@ -346,7 +348,7 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Authentifizierung
 
 Die Authentifizierung erfordert zwei API-Aufrufe an den Begleitauthentifizierungsdienst: „StartAuthenticationAsync“ und „FinishAuthencationAsync“.
 
@@ -383,14 +385,14 @@ Dank des Windows Hello-Begleitgeräteframeworks kann die Windows Hello-Begleitge
 
 Im Anschluss finden Sie Details zu den einzelnen Zuständen:
 
-| Bundesland                         | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| State                         | BESCHREIBUNG                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation    | Dieses Benachrichtigungs Ereignis für Statusänderungen wird ausgelöst, wenn der Sperrbildschirm herunterläuft (z. b. durch Benutzer angeforderte Fenster + L). Es wird davon abgeraten, Fehlermeldungen in Bezug auf Probleme bei der Suche nach einem Gerät in diesem Zustand anzufordern. Im Allgemeinen empfiehlt es sich, nur dann Meldungen anzuzeigen, wenn das Absichtssignal vorliegt. Die Windows Hello Companion device-app sollte den ersten API-Rückruf für die Authentifizierung in diesem Status durchführen, wenn das begleitende Gerät das beabsichtigte Signal sammelt (z. b. Tippen Sie auf NFC Reader, und drücken Sie eine Schaltfläche auf dem Begleit Gerät oder eine bestimmte Geste, wie z. b. das Klonen ), und die Hintergrundaufgabe der Windows Hello-Geräte-App empfängt einen Hinweis vom Begleit Gerät, dass das beabsichtigte Signal erkannt wurde. Ansonsten gilt: Wenn die Windows Hello-Begleitgeräte-App darauf wartet, dass der Authentifizierungsablauf durch den PC gestartet wird (indem der Benutzer auf dem Sperrbildschirm nach oben wischt oder die LEERTASTE drückt), muss die Windows Hello-Begleitgeräte-App auf den nächsten Zustand (CollectingCredential) warten.   |
-| CollectingCredential          | Dieses Zustandsänderungs-Benachrichtigungsereignis wird ausgelöst, wenn der Benutzer den Laptopdeckel öffnet, eine beliebige Taste auf der Tastatur drückt oder auf dem Sperrbildschirm nach oben wischt. Wenn das Windows Hello Companion-Gerät die oben genannten Aktionen benötigt, um mit dem Erfassen des Intent-Signals zu beginnen, sollte die Windows Hello Companion-Geräte-App mit der Erfassung beginnen (z. b. über ein Popup auf dem Begleit Gerät, in dem gefragt wird, ob der Benutzer den PC entsperren möchte). . Dies ist ein guter Zeitpunkt für die Anzeige von Fehlermeldungen, falls die Windows Hello-Begleitgeräte-App ein Benutzeranwesenheitssignal auf dem Begleitgerät benötigt (etwa durch Eingabe einer PIN auf dem Windows Hello-Begleitgerät).                                                                                                                                                                                                                                                                                                                                             |
+| WaitingForUserConfirmation    | Dieses Benachrichtigungs Ereignis für Statusänderungen wird ausgelöst, wenn der Sperrbildschirm herunterläuft (z. b. durch Benutzer angeforderte Fenster + L). Es wird davon abgeraten, Fehlermeldungen in Bezug auf Probleme bei der Suche nach einem Gerät in diesem Zustand anzufordern. Im Allgemeinen empfiehlt es sich, nur dann Meldungen anzuzeigen, wenn das Absichtssignal vorliegt. Die Windows Hello Companion device-app sollte den ersten API-Rückruf für die Authentifizierung in diesem Status durchführen, wenn das begleitende Gerät das beabsichtigte Signal sammelt (z. b. Tippen Sie auf NFC Reader, drücken Sie eine Schaltfläche auf dem Begleit Gerät oder eine bestimmte Bewegung, wie z. b. das Clapping) Ansonsten gilt: Wenn die Windows Hello-Begleitgeräte-App darauf wartet, dass der Authentifizierungsablauf durch den PC gestartet wird (indem der Benutzer auf dem Sperrbildschirm nach oben wischt oder die LEERTASTE drückt), muss die Windows Hello-Begleitgeräte-App auf den nächsten Zustand (CollectingCredential) warten.   |
+| CollectingCredential          | Dieses Zustandsänderungs-Benachrichtigungsereignis wird ausgelöst, wenn der Benutzer den Laptopdeckel öffnet, eine beliebige Taste auf der Tastatur drückt oder auf dem Sperrbildschirm nach oben wischt. Wenn das Windows Hello Companion-Gerät auf den oben genannten Aktionen basiert, um das beabsichtigte Signal zu erfassen, sollte die Windows Hello Companion-Geräte-App mit der Erfassung beginnen (z. b. über ein Popup auf dem Begleit Gerät, um zu Fragen, ob der Benutzer den PC entsperren möchte). Dies ist ein guter Zeitpunkt für die Anzeige von Fehlermeldungen, falls die Windows Hello-Begleitgeräte-App ein Benutzeranwesenheitssignal auf dem Begleitgerät benötigt (etwa durch Eingabe einer PIN auf dem Windows Hello-Begleitgerät).                                                                                                                                                                                                                                                                                                                                             |
 | SuspendingAuthentication      | Wenn die Windows Hello-Begleitgeräte-App diesen Zustand empfängt, bedeutet das, dass der Begleitauthentifizierungsdienst keine Authentifizierungsanforderungen mehr akzeptiert.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | CredentialCollected           | Dieser Zustand bedeutet, dass eine andere Windows Hello-Begleitgeräte-App die zweite API aufgerufen hat und der Begleitauthentifizierungsdienst die übermittelten Daten überprüft. An diesem Punkt akzeptiert der Begleitauthentifizierungsdienst keine weiteren Authentifizierungsanforderungen, es sei denn, die Überprüfung der aktuell übermittelten Anforderung ist nicht erfolgreich. Die Windows Hello-Begleitgeräte-App sollte auf den nächsten Zustand warten.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | CredentialAuthenticated       | Dieser Zustand bedeutet, dass die übermittelten Anmeldeinformationen akzeptiert wurden. „CredentialAuthenticated“ verfügt über die Geräte-ID des erfolgreichen Windows Hello-Begleitgeräts. Diese muss von der Windows Hello-Begleitgeräte-App überprüft werden, um zu ermitteln, ob das ihr zugeordnete Gerät erfolgreich war. Falls nicht, darf die Windows Hello-Begleitgeräte-App keine nachfolgenden Authentifizierungsabläufe (wie etwa eine Erfolgsmeldung auf dem Begleitgerät oder eine Vibration des Geräts) durchführen. Falls die übermittelten Anmeldeinformationen nicht akzeptiert wurden, ändert sich der Zustand in „CollectingCredential“.                                                                                                                                                                                                                                                                                                                                                                                       |
-| StoppingAuthentication        | Die Authentifizierung war erfolgreich, und dem Benutzer wurde der Desktop angezeigt. Jetzt kann die Beendigung der Hintergrundaufgabe erzwungen werden. Heben Sie vor dem Beenden der Hintergrundaufgabe ausdrücklich die Registrierung des StageEvent-Handlers auf. Dadurch wird die Hintergrundaufgabe schnell beendet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| StoppingAuthentication        | Die Authentifizierung war erfolgreich, und dem Benutzer wurde der Desktop angezeigt. Zeit zum Beenden der Hintergrundaufgabe. Heben Sie die Registrierung des stageevent-Handlers explizit auf, bevor Sie die Hintergrund-Aufgabe beenden. Dadurch kann der Hintergrund Task schnell beendet werden.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 
 
@@ -628,36 +630,36 @@ Windows Hello-Begleitgeräte-Apps können auf der Anmeldebenutzeroberfläche mit
 
 Es gibt zwei Arten von Meldungen: Anleitungen und Fehler.
 
-Anleitungsmeldungen dienen dazu, den Benutzer über die Vorgehensweise zum Starten des Entsperrprozesses zu informieren. Diese Meldungen werden dem Benutzer lediglich einmal (bei der erstmaligen Geräteregistrierung) auf dem Sperrbildschirm angezeigt. Diese Nachrichten werden auch weiterhin auf dem Sperrbildschirm angezeigt.
+Anleitungsmeldungen dienen dazu, den Benutzer über die Vorgehensweise zum Starten des Entsperrprozesses zu informieren. Diese Nachrichten werden dem Benutzer nur einmal auf dem Sperrbildschirm angezeigt, bei der ersten Geräteregistrierung und nie wieder angezeigt. Diese Nachrichten werden weiterhin unter dem Sperrbildschirm angezeigt.
 
-Fehlermeldungen werden immer angezeigt und werden angezeigt, nachdem ein Absichtssignal angezeigt wird. Angesichts der Tatsache, dass vor dem Anzeigen von Meldungen für den Benutzer ein Absichtssignal erfasst werden muss und der Benutzer seine Absicht nur über eines der Windows Hello-Begleitgeräte zum Ausdruck bringt, darf es nicht dazu kommen, dass mehrere Windows Hello-Begleitgeräte um die Anzeige von Fehlermeldungen konkurrieren. Daher pflegt das Windows Hello-Begleitgeräteframework keine Warteschlange. Wenn ein Aufrufer eine Fehlermeldung anfordert, wird sie fünf Sekunden lang angezeigt. Während dieser fünf Sekunden werden alle anderen Anforderungen zum Anzeigen einer Fehlermeldung verworfen. Nach Ablauf der fünf Sekunden hat ein anderer Aufrufer die Möglichkeit, eine Fehlermeldung anzuzeigen. Das Blockieren des Fehlerkanals durch Aufrufer ist nicht zulässig.
+Fehlermeldungen werden immer angezeigt und werden angezeigt, nachdem ein Intent-Signal bereitgestellt wurde. Angesichts der Tatsache, dass vor dem Anzeigen von Meldungen für den Benutzer ein Absichtssignal erfasst werden muss und der Benutzer seine Absicht nur über eines der Windows Hello-Begleitgeräte zum Ausdruck bringt, darf es nicht dazu kommen, dass mehrere Windows Hello-Begleitgeräte um die Anzeige von Fehlermeldungen konkurrieren. Daher pflegt das Windows Hello-Begleitgeräteframework keine Warteschlange. Wenn ein Aufrufer eine Fehlermeldung anfordert, wird sie fünf Sekunden lang angezeigt. Während dieser fünf Sekunden werden alle anderen Anforderungen zum Anzeigen einer Fehlermeldung verworfen. Nach Ablauf der fünf Sekunden hat ein anderer Aufrufer die Möglichkeit, eine Fehlermeldung anzuzeigen. Das Blockieren des Fehlerkanals durch Aufrufer ist nicht zulässig.
 
 Folgende Anleitungs- und Fehlermeldungen stehen zur Verfügung. Der Gerätename ist ein Parameter und wird von der Begleitgeräte-App als Teil von „ShowNotificationMessageAsync“ übergeben.
 
-**Guidance**
+**Leitfaden**
 
 - „Wischen Sie nach oben oder drücken Sie die LEERTASTE, um sich mit *Gerätename* anzumelden.“
-- „Einrichtung des Begleitgeräts. Bitte warten Sie oder verwenden Sie eine andere Anmeldeoption.“
-- „Berühren Sie *Gerätename* zur Anmeldung an das NFC-Lesegerät.“
+- "Einrichten des Begleit Geräts. Bitte warten Sie, oder verwenden Sie eine andere Anmeldeoption. "
+- "Tippen Sie auf den *Gerätenamen* zum NFC-Reader, um sich anzumelden."
 - „*Gerätename* wird gesucht ...“
-- „Schließen Sie *Gerätename* zur Anmeldung an einen USB-Anschluss an.“
+- "Binden Sie den *Gerätenamen* in einen USB-Anschluss ein, um sich anzumelden."
 
-**Mern**
+**Fehler**
 
-- „Anmeldeanweisungen finden Sie auf *Gerätename*.“
-- „Aktivieren Sie Bluetooth, um *Gerätename* für die Anmeldung zu verwenden.“
-- „Aktivieren Sie NFC, um *Gerätename* für die Anmeldung zu verwenden.“
+- "Weitere Informationen finden Sie unter *Gerätename* ."
+- "Aktivieren Sie Bluetooth, um den *Gerätenamen* für die Anmeldung zu verwenden."
+- "NFC aktivieren, um den *Gerätenamen* für die Anmeldung zu verwenden."
 - „Stellen Sie eine WLAN-Verbindung her, um *Gerätename* für die Anmeldung zu verwenden.“
-- „Tippen Sie erneut auf *Gerätename*.“
-- „In Ihrem Unternehmen ist keine Anmeldung mit *Gerätename* möglich. Verwenden Sie eine andere Anmeldeoption.“
-- „Tippen Sie zur Anmeldung auf *Gerätename*.“
+- "Tippen Sie erneut auf *Gerätename* ."
+- "Ihr Unternehmen verhindert die Anmeldung mit dem *Gerätenamen*. Verwenden Sie eine andere Anmeldeoption.“
+- "Tippen Sie auf *Gerätename* , um sich anzumelden."
 - „Legen Sie Ihren Finger zur Anmeldung auf *Gerätename*.“
-- „Wischen Sie zur Anmeldung mit Ihrem Finger über *Gerätename*.“
-- „Anmeldung mit *Gerätename* nicht möglich. Verwenden Sie eine andere Anmeldeoption.“
-- „Es ist ein Fehler aufgetreten. Verwenden Sie eine andere Anmeldeoption, und richten Sie *Gerätename* erneut ein.“
+- "Schwenken Sie den Finger auf den *Gerätenamen* , um sich anzumelden."
+- "Die Anmeldung mit dem *Gerätenamen*war nicht möglich. Verwenden Sie eine andere Anmeldeoption.“
+- „Es ist ein Problem aufgetreten. Verwenden Sie eine andere Anmeldeoption, und richten Sie *Gerätename* erneut ein.“
 - „Versuchen Sie es noch mal.“
 - „Sagen Sie Ihre gesprochene Passphrase in *Gerätename*.“
-- „Bereit für die Anmeldung mit *Gerätename*.“
+- "Bereit für die Anmeldung mit dem *Gerätenamen*".
 - „Verwenden Sie zuerst eine andere Anmeldeoption. Dann können Sie *Gerätename* verwenden, um sich anzumelden.“
 
 ### <a name="enumerating-registered-devices"></a>Aufzählen registrierter Geräte

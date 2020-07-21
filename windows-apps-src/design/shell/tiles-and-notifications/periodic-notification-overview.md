@@ -5,14 +5,14 @@ ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 617b5d013c8452733fae2a1fa7c16180d37fbe57
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 241d59d096775646a5da1301bdd4b44f67c6abf1
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259718"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493415"
 ---
 # <a name="periodic-notification-overview"></a>Übersicht über regelmäßige Benachrichtigungen
  
@@ -25,7 +25,7 @@ Regelmäßige Benachrichtigungen – auch als abgerufene Benachrichtigungen beze
 
 Regelmäßige Benachrichtigungen bieten Ihnen Live-Kachelaktualisierungen mit minimaler Investition in Clouddienst und Client. Sie stellen auch eine gute Methode zum Verteilen desselben Inhalts an eine große Zielgruppe dar.
 
-**Beachten** Sie   Weitere Informationen erhalten Sie durch Herunterladen des Beispiels für [Pushbenachrichtigungen und periodische Benachrichtigungen](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) für Windows 8.1 und wieder verwenden des Quellcodes in Ihrer Windows 10-app.
+**Hinweis**    Weitere Informationen erhalten Sie durch Herunterladen des Beispiels für [Pushbenachrichtigungen und periodische Benachrichtigungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) für Windows 8.1 und wieder verwenden des Quellcodes in Ihrer Windows 10-app.
 
  
 
@@ -48,9 +48,9 @@ Die Antwort des Cloudservers enthält die heruntergeladenen Inhalte. Die von dem
 
 Rufen Sie eine der folgenden Methoden auf, um die Abfrage zu starten:
 
--   [**Startperiodicupdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Kachel)
--   [**Startperiodicupdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Badge)
--   [**Startperiodicupdatebatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Kachel)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Kachel)
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Badge)
+-   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (Kachel)
 
 Wenn Sie eine dieser Methoden aufrufen, wird der URI sofort abgefragt, und die Kachel oder das Signal wird mit den empfangenen Inhalten aktualisiert. Nach der ersten Abfrage stellt Windows weiter im angegebenen Intervall Updates bereit. Die Abfrage wird fortgeführt, bis Sie sie ausdrücklich (mit [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate)) anhalten, die App deinstalliert wird oder, im Falle einer sekundären Kachel, die Kachel entfernt wird. Andernfalls fragt Windows weiterhin Updates für die Kachel oder das Signal ab, auch wenn die App nie wieder gestartet wird.
 
@@ -68,9 +68,9 @@ Wenn Sie eine Startzeit angeben, werden beim ersten Aufruf der Methode sofort In
 
 Der URI wird nur abgefragt, wenn das Geräte online ist. Wenn das Netzwerk verfügbar ist, jedoch keine Verbindung mit dem URI hergestellt werden kann, wird diese Iteration des Abfrageintervalls übersprungen und der URI beim nächsten Intervall erneut abgefragt. Falls ein Abfrageintervall erreicht wird, während das Gerät ausgeschaltet ist oder sich im Standbymodus oder Ruhezustand befindet, wird der URI abgefragt, wenn das Gerät wieder verfügbar ist.
 
-### <a name="handling-app-updates"></a>Behandeln von App-Updates
+### <a name="handling-app-updates"></a>Behandeln von APP-Updates
 
-Wenn Sie ein App-Update, die die Abruf-URI ändert, freigeben, sollten Sie täglich eine [Zeit Hintergrundaufgabe](../../../launch-resume/run-a-background-task-on-a-timer-.md) hinzufügen, das den StartPeriodicUpdate mit den neuen URI aufruft, um sicherzustellen, dass Ihre Kacheln das neue URI verwenden. Andernfalls, wenn Benutzer Ihre App-Updates erhalten, sie aber nicht Ihre App starten, werden ihre Kacheln immer noch die alte URI verwenden, die möglicherweise nicht anzeigt, ob die URI jetzt ungültig ist oder ob die zurückgegebene Nutzlast auf lokale Bilder verweist, die nicht mehr vorhanden sind.
+Wenn Sie ein App-Update freigeben, das Ihren Abruf-URI ändert, sollten Sie einen Hintergrund Task für den täglichen [Zeit Trigger](../../../launch-resume/run-a-background-task-on-a-timer-.md) hinzufügen, der "startperiodicupdate" mit dem neuen URI aufruft, um sicherzustellen, dass Ihre Kacheln den neuen URI verwenden. Wenn Benutzer Ihr App-Update erhalten, aber die APP nicht starten, verwenden Ihre Kacheln weiterhin den alten URI, der möglicherweise nicht angezeigt wird, wenn der URI nun ungültig ist, oder wenn die zurückgegebene Nutzlast auf lokale Images verweist, die nicht mehr vorhanden sind.
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>Ablauf der Kachel- und Signalbenachrichtigungen
 
@@ -79,7 +79,7 @@ Standardmäßig laufen die regelmäßigen Kachel- und Signalbenachrichtigungen d
 
 Ihr Cloud-Dienst legt ein Ablaufdatum und eine Ablaufzeit für eine Benachrichtigung fest, indem der Antwortnutzlast der HTTP-Header "X-WNS-Expires" hinzugefügt wird. Der HTTP-Header „X-WNS-Expires” entspricht dem [HTTP-Datumsformat](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1). Weitere Informationen finden Sie unter [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) oder [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_).
 
-Beispielsweise können Sie während eines aktiven Börsenhandelstags die Gültigkeitsdauer für eine Aktienpreisaktualisierung gegenüber dem Abfrageintervall verdoppeln (wie z. B. eine Stunde nach Empfang bei einer Abfrage zu jeder halben Stunde). Als weiteres Beispiel dient eine News-App, bei der festgestellt wird, dass ein Intervall von einem Tag für eine tägliche Kachelaktualisierung angemessen ist.
+Beispielsweise können Sie während eines aktiven Börsenhandelstags die Gültigkeitsdauer für eine Aktienpreisaktualisierung gegenüber dem Abfrageintervall verdoppeln (z. B. auf eine Stunde nach Empfang bei einer Abfrage zu jeder halben Stunde). Als weiteres Beispiel dient eine News-App, bei der festgestellt wird, dass ein Intervall von einem Tag für eine tägliche Kachelaktualisierung angemessen ist.
 
 ## <a name="periodic-notifications-in-the-notification-queue"></a>Regelmäßige Benachrichtigungen in der Benachrichtigungswarteschlange
 
@@ -90,7 +90,7 @@ Hat die Warteschlange ihre maximale Kapazität von fünf Benachrichtigungen erre
 
 Sie können die Benachrichtigungswarteschlange und Tags verwenden, um eine Vielzahl von Benachrichtigungsszenarien mit großem Funktionsumfang zu implementieren. So kann beispielsweise eine Aktien-App fünf Benachrichtigungen senden – jede für eine andere Aktie und markiert mit dem Aktiennamen. Dadurch enthält die Warteschlange niemals zwei Benachrichtigungen für die gleiche Aktie, wovon eine zwangsläufig nicht mehr aktuell wäre.
 
-Weitere Informationen finden Sie unter [Verwenden der Benachrichtigungswarteschlange](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)).
+Weitere Informationen finden Sie unter [Verwenden der Benachrichtigungs Warteschlange](https://docs.microsoft.com/previous-versions/windows/apps/hh781199(v=win.10)).
 
 ### <a name="enabling-the-notification-queue"></a>Aktivieren der Benachrichtigungswarteschlange
 
@@ -104,6 +104,6 @@ Sie müssen einen eindeutigen URI für jede Benachrichtigung angeben, die Window
 
 
 * [Richtlinien für regelmäßige Benachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
-* [Einrichten regelmäßiger Benachrichtigungen für Ausweise](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
-* [Einrichten regelmäßiger Benachrichtigungen für Kacheln](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [So wird's gemacht: Einrichten regelmäßiger Benachrichtigungen für Signale](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [So wird's gemacht: Einrichten regelmäßiger Benachrichtigungen für Kacheln](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

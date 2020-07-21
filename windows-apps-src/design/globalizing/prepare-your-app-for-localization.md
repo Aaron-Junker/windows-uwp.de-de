@@ -1,58 +1,58 @@
 ---
-Description: Eine lokalisierte App kann in anderen Märkten, Sprachen oder Regionen lokalisiert werden, ohne dass funktionale Mängel in der App auftreten. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist.
+Description: Eine lokalisierte APP ist eine, die auf anderen Märkten, Sprachen oder Regionen lokalisiert werden kann, ohne funktionale Mängel in der APP zu decken. Die wichtigste Eigenschaft einer lokalisierbaren App besteht darin, dass der ausführbare Code ordnungsgemäß von den lokalisierbaren Ressourcen getrennt wurde.
 title: App lokalisierbar machen
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
-keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
+keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0991a8a06054b6136dfc1fd65c15dbeb66e6fd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 8f07e7901bf89ed73087833c92b7a3ba29165fec
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684263"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493445"
 ---
 # <a name="make-your-app-localizable"></a>App lokalisierbar machen
 
-Eine lokalisierte App kann in anderen Märkten, Sprachen oder Regionen verwendet werden, ohne dass funktionale Mängel in der App auftreten. Die wichtigste Eigenschaft einer lokalisierbaren App ist, dass ihr ausführbarer Code sauber von den lokalisierbaren Ressourcen der App getrennt ist. Daher sollten Sie ermitteln, welche Ressourcen Ihrer App lokalisiert werden müssen. Überlegen Sie, was bei einer Lokalisierung für andere Märkte geändert werden muss.
+Eine lokalisierte APP ist eine, die für andere Märkte, Sprachen oder Regionen lokalisiert werden kann, ohne dass funktionale Mängel in der APP nicht abgedeckt werden. Die wichtigste Eigenschaft einer lokalisierbaren App besteht darin, dass der ausführbare Code ordnungsgemäß von den lokalisierbaren Ressourcen getrennt wurde. Sie sollten also festlegen, welche Ressourcen der APP lokalisiert werden müssen. Fragen Sie sich, was geändert werden muss, wenn Ihre APP für andere Märkte lokalisiert werden muss.
 
-Wir empfehlen außerdem, dass Sie sich mit den [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) vertraut machen.
+Außerdem wird empfohlen, sich mit den [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)vertraut zu machen.
 
-## <a name="put-your-strings-into-resources-files-resw"></a>Zeichenfolgen nur in Ressourcendateien (.resw)
+## <a name="put-your-strings-into-resources-files-resw"></a>Einfügen von Zeichen folgen in Ressourcen Dateien (. resw)
 
-Zeichen folgen Literale in Ihrem imperativen Code, XAML-Markup oder im App-Paket Manifest dürfen nicht hart codiert werden. Speichern Sie Ihre Zeichenfolgen stattdessen in Ressourcendateien (.resw), damit sie unabhängig von den Binärdateien Ihrer App-Builds an unterschiedliche lokale Märkte angepasst werden können. Details dazu finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](../../app-resources/localize-strings-ui-manifest.md).
+Zeichen folgen Literale in Ihrem imperativen Code, XAML-Markup oder im App-Paket Manifest dürfen nicht hart codiert werden. Platzieren Sie Ihre Zeichen folgen stattdessen in Ressourcen Dateien (. resw), damit Sie unabhängig von den erstellten Binärdateien Ihrer APP an verschiedene lokale Märkte angepasst werden können. Weitere Informationen finden Sie unter Lokalisieren von Zeichen folgen [in der Benutzeroberfläche und im App-Paket Manifest](../../app-resources/localize-strings-ui-manifest.md).
 
-In diesem Thema erfahren Sie außerdem, wie Sie Kommentare zu Ihrer Standard-Ressourcendatei (.resw) hinzufügen. Zum Beispiel können Sie informelle Anmerkungen in Kommentaren angeben. Um die Kosten zu minimieren, sollten Sie außerdem sicherstellen, dass nur die Zeichenfolgen, die übersetzt werden müssen, an die Übersetzer weitergegeben werden.
+In diesem Thema wird außerdem gezeigt, wie Sie Ihrer Standard Ressourcen Datei (. resw) Kommentare hinzufügen. Wenn Sie z. b. eine informelle Stimme oder einen Farbton annehmen, stellen Sie sicher, dass Sie dies in Kommentaren erläutern. Um die Kosten zu minimieren, stellen Sie außerdem sicher, dass nur die Zeichen folgen, die übersetzt werden müssen
 
-Legen Sie die Standardsprache für Ihre App in der Quelldatei des App-Paketmanifests (die `Package.appxmanifest`-Datei) entsprechend fest. Die Standardsprache wird verwendet, wenn keine der bevorzugten Sprachen des Nutzers eine der von Ihrer App unterstützten Sprache ist. Markieren Sie alle Ihre Ressourcen mit ihrer Sprache (auch die in Ihrer Standardsprache, zum Beispiel `\Assets\en-us\Logo.png`), damit das System feststellen kann, in welcher Sprache die Ressource vorliegt und wie sie in bestimmten Situationen zu verwenden ist.
+Legen Sie die Standardsprache für Ihre APP entsprechend in der Quelldatei für das App-Paket Manifest (die `Package.appxmanifest` Datei) fest. Die Standardsprache bestimmt die Sprache, die verwendet wird, wenn die bevorzugten Sprachen des Benutzers keiner der unterstützten Sprachen Ihrer App entsprechen. Markieren Sie alle Ihre Ressourcen mit ihrer Sprache (z. b. auch die in Ihrer Standardsprache `\Assets\en-us\Logo.png` ), damit das System feststellen kann, in welcher Sprache sich die Ressource befindet und wie Sie in bestimmten Situationen verwendet wird.
 
-## <a name="tailor-your-images-and-other-file-resources-for-language"></a>Anpassen von Bild- und anderen Dateiressourcen an eine Sprache
+## <a name="tailor-your-images-and-other-file-resources-for-language"></a>Anpassen von Images und anderen Datei Ressourcen für die Sprache
 
-Im Idealfall es ist möglich, Bilder zu globalisieren, sodass sie kulturunabhängig sind. Erstellen Sie für alle Bild- und andere Dateiressourcen, bei denen dies nicht möglich ist, so viele verschiedene Varianten, wie Sie benötigen, und fügen Sie die entsprechenden Sprachqualifizierer in ihre Datei- oder Ordnernamen ein. Weitere Informationen über Ressourcenqualifizierer finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)).
+Im Idealfall können Sie Ihre Bilder globalisieren &mdash; , d. h., Sie werden Kultur unabhängig machen. Für alle Images und andere Datei Ressourcen, bei denen dies nicht möglich ist, erstellen Sie beliebig viele verschiedene Varianten, die Sie benötigen, und fügen Sie die entsprechenden sprach Qualifizierer in Ihre Datei-oder Ordnernamen ein. Weitere Informationen finden Sie unter [Anpassen von Ressourcen für Sprache, Skalierung, hohen Kontrast und andere Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md).
 
-Um die Lokalisierungskosten zu minimieren, sollten Sie zunächst keine Texte oder kulturabhängiges Material in Bilder einfügen. Bilder, die in Ihrer Kultur angemessen sind, könnten in anderen Kulturen als anstößig empfunden werden. Vermeiden Sie kulturspezifische Bilder wie Briefkästen, die nicht weltweit verwendet werden. Vermeiden Sie religiöse Symbole, Tiere sowie politische oder geschlechtsspezifische Bilder. Die Anzeige von Haut, Körperteilen oder Gesten kann auch ein sensibles Thema sein. Wenn sich all dies nicht vermeiden lässt, müssen Ihre Bilder durchdacht lokalisiert werden. Wenn die lokalisierte Sprache in eine andere Leserichtung als die ursprüngliche Sprache verläuft, unterstützen symmetrische Bilder und Effekte die Spiegelung besser.
+Um die Lokalisierungskosten zu minimieren, sollten Sie keine Text-und Kultur abhängigen Materialien in Bilder einfügen, damit Sie beginnen können. Ein Image, das in ihrer eigenen Kultur geeignet ist, kann in anderen Kulturen anstößig oder falsch interpretiert werden. Vermeiden Sie die Verwendung kulturspezifischer Bilder, wie z. b. Postfächer, die auf der ganzen Welt nicht häufig vorkommen. Vermeiden Sie religiöse Symbole, Tiere, politische oder geschlechtsspezifische Bilder. Die Anzeige von "Fleisch", "Textteil" oder "Handgesten" kann auch ein sensitiv Thema sein. Wenn Sie nicht alle diese vermeiden können, müssen Ihre Bilder durchdacht lokalisiert werden. Wenn die lokalisierte Sprache in eine andere Leserichtung als die ursprüngliche Sprache verläuft, unterstützen symmetrische Bilder und Effekte die Spiegelung besser.
 
-Vermeiden Sie auch die Verwendung von Text in Bildern sowie Sprache in Audio- und Videodateien.
+Vermeiden Sie außerdem die Verwendung von Text in Bildern und Sprache in Audiodateien und Videodateien.
 
-## <a name="the-use-of-color-in-your-app"></a>Verwendung von Farben in einer App
+## <a name="the-use-of-color-in-your-app"></a>Die Verwendung der Farbe in Ihrer APP
 
-Seien Sie vorsichtig bei der Verwendung von Farben. Die Verwendung von Farbkombinationen, die mit Nationalflaggen oder politischen Bewegungen verbunden sind, kann problematisch sein. Die Farbauswahl muss möglicherweise von Experten der jeweiligen Kultur überprüft werden. Bei der Verwendung von Farbe können auch Probleme mit der Zugänglichkeit auftreten. Wenn Sie Farbe verwenden, um eine Bedeutung zu vermitteln, sollten Sie diese Informationen auch auf andere Weise darstellen, z. B. durch Größe, Form oder Beschriftung.
+Beachten Sie beim Verwenden von Color. Die Verwendung von Farbkombinationen, die mit nationalen Flags oder politischen Bewegungen verknüpft sind, kann problematisch sein. Die Farbauswahl muss möglicherweise von Kulturexperten überprüft werden. Es gibt auch Probleme mit der Barrierefreiheit bei der Verwendung von Color. Wenn Sie Farbe verwenden, um Bedeutungen zu vermitteln, sollten Sie dieselben Informationen auch auf andere Weise übermitteln, z. b. Größe, Form oder Bezeichnung.
 
-## <a name="consider-factoring-your-strings-into-sentences"></a>Lange Zeichenfolgen aufteilen
+## <a name="consider-factoring-your-strings-into-sentences"></a>Berücksichtigen Sie die Umgestaltung der Zeichen folgen in Sätze.
 
-Verwenden Sie Zeichenfolgen geeigneter Länge. Kurze Zeichenfolgen sind leichter zu übersetzen, und sie ermöglichen die Wiederverwendung von Übersetzungen (was Kosten spart, da dieselbe Zeichenfolge nur einmal an den Übersetzer gesendet wird). Zudem werden sehr lange Zeichenfolgen möglicherweise von einigen Lokalisierungstools nicht unterstützt.
+Verwenden Sie entsprechend groß Zeichenfolgen. Kurze Zeichen folgen sind einfacher zu übersetzen, und Sie ermöglichen die Übersetzung der Übersetzung (wodurch Kosten gespart werden, da dieselbe Zeichenfolge mehrmals nicht an den Lokalisierer gesendet wird). Außerdem werden extrem lange Zeichen folgen möglicherweise nicht von Lokalisierungstools unterstützt.
 
-Das Risiko dieser Vorgehensweise besteht darin, dass eine Zeichenfolge in verschiedenen Kontexten wiederverwendet wird. Selbst einfache Wörter wie z. B. &quot;auf&quot; und &quot;aus&quot; werden möglicherweise je nach Kontext unterschiedlich übersetzt. Im Englischen können sich „ein“ und „aus“ auf das Ein- und Ausschalten von Flugzeugmodus, Bluetooth oder Geräten beziehen. Im Italienischen hängt die Übersetzung jedoch davon ab, was ein- und ausgeschaltet wird. Sie müssten für jeden Kontext ein Zeichenfolgenpaar erstellen. Sie können Zeichenfolgen im gleichen Kontext mehrmals verwenden. Sie können z. B. die Zeichenfolge „Volume“ sowohl für Soundeffekte als auch für die Lautstärke von Musik verwenden, da sich beides auf die Intensität von Tönen bezieht. Verwenden Sie dieselbe Zeichenfolge jedoch nicht für Festplattenvolumes, da sich hier Kontext und Bedeutung unterscheiden und das Wort anders übersetzt wird.
+Aber im Spannungsverhältnis zu dieser Richtlinie besteht das Risiko, eine Zeichenfolge in verschiedenen Kontexten wiederzuverwenden. Auch einfache Wörter wie &quot; on &quot; und &quot; Off &quot; können je nach Kontext anders übersetzt werden. Im Englischen können sich „on“ und „off“ auf das Ein- und Ausschalten von Flugzeugmodus, Bluetooth oder Geräten beziehen. Im Italienischen hängt die Übersetzung jedoch davon ab, was ein- und ausgeschaltet wird. Sie müssten für jeden Kontext ein Zeichenfolgenpaar erstellen. Sie können Zeichenfolgen im gleichen Kontext mehrmals verwenden. Sie können z. B. die Zeichenfolge „Volume“ sowohl für Soundeffekte als auch für die Lautstärke von Musik verwenden, da sich beides auf die Intensität von Tönen bezieht. Verwenden Sie dieselbe Zeichenfolge jedoch nicht für Festplattenvolumes, da sich hier Kontext und Bedeutung unterscheiden und das Wort anders übersetzt wird.
 
 Zudem können Zeichenfolgen wie „text“ oder „fas“ in der englischen Sprache als Verb und als Substantiv verwendet werden, was die Übersetzung erschweren kann. Erstellen Sie deshalb jeweils eine getrennte Zeichenfolge für das Verb und das Substantiv. Falls unklar ist, ob es sich um den gleichen Kontext handelt, gehen Sie auf Nummer sicher, und verwenden Sie getrennte Zeichenfolgen.
 
-Kurz gesagt, gliedern Sie die Zeichenfolgen in Teile, die in allen Kontexten verwendbar sind. Es wird Fälle geben, in denen eine Zeichenfolge ein vollständiger Satz sein muss.
+Kurz gesagt: gestalten Sie Ihre Zeichen folgen in Teile, die in allen Kontexten funktionieren. Es gibt Fälle, in denen eine Zeichenfolge einen vollständigen Satz aufweisen muss.
 
 Beachten Sie die folgende Zeichenfolge: "die {0} konnte nicht synchronisiert werden."
 
-Eine Vielzahl von Wörtern könnte {0}ersetzen, z. b. "Termin", "Aufgabe" oder "Dokument". Dieses Beispiel funktioniert zwar in der englischen Sprache, aber nicht in jedem Fall im entsprechenden deutschen Satz (beispielsweise). Sie sehen, dass in den folgenden deutschen Sätzen einige der Wörter in der Vorlagenzeichenfolge („Der“, „Die“, „Das“) zum parametrisierten Wort passen müssen:
+Eine Vielzahl von Wörtern könnte ersetzen {0} , z. b. "Termin", "Aufgabe" oder "Dokument". Obwohl dieses Beispiel für die englische Sprache funktioniert, funktioniert es nicht in allen Fällen für den entsprechenden Satz in, z. b. Deutsch. Sie sehen, dass in den folgenden deutschen Sätzen einige der Wörter in der Vorlagenzeichenfolge („Der“, „Die“, „Das“) zum parametrisierten Wort passen müssen:
 
 | Englisch                                    | Deutsch                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -60,27 +60,27 @@ Eine Vielzahl von Wörtern könnte {0}ersetzen, z. b. "Termin", "Aufgabe" oder "
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-Sehen Sie sich als weiteres Beispiel den Satz "Erinnerung an mich in {0} Minute (n)" an. Während „minute(s)" im Englischen passt, werden in anderen Sprachen möglicherweise unterschiedliche Begriffe verwendet. Auf Polnisch heißt es je nach Kontext „minuta“, „minuty“ oder „minut“.
+Ein weiteres Beispiel ist der Satz "Erinnerung an mich in {0} Minute (n)". Die Verwendung von "Minute (n)" funktioniert in englischer Sprache, aber in anderen Sprachen können andere Begriffe verwendet werden. Auf Polnisch heißt es je nach Kontext „minuta“, „minuty“ oder „minut“.
 
 Lokalisieren Sie den gesamten Satz, statt nur ein einzelnes Wort, um das Problem zu beheben. Auf den ersten Blick wirkt diese Lösung vielleicht nicht ganz so elegant und sieht nach überflüssiger Arbeit aus, die Gründe sprechen jedoch für sich:
 
-- Für alle Sprachen wird eine grammatikalisch korrekte Meldung angezeigt.
-- Übersetzer müssen nicht nachfragen, womit die Zeichenfolge ersetzt werden soll.
+- Für alle Sprachen wird eine entsprechende Meldung angezeigt.
+- Der Konvertierer muss nicht gefragt werden, durch welche Zeichen folgen die Zeichen folgen ersetzt werden.
 - Sie müssen keine kostspielige Codefehlerbehebung implementieren, wenn ein solches Problem in der fertigen App auftaucht.
 
-## <a name="other-considerations-for-strings"></a>Andere Überlegungen für Zeichenfolgen
+## <a name="other-considerations-for-strings"></a>Weitere Überlegungen zu Zeichen folgen
 
-Vermeiden Sie umgangssprachliche Ausdrücke und Metaphern in Zeichenfolgen, die Sie in der Standardsprache zu erstellen. Eine für eine demografische Gruppe (z. B. Kultur oder Alter) spezifische Sprache ist schwer zu übersetzen, da nur Personen aus dieser demografischen Gruppe die Sprache verwenden. Ebenso ergeben Metaphern nicht für alle Personen Sinn. Beispielsweise hat &quot;Bache&quot; (weibliches Wildschwein) für Jäger eine besondere, für andere Personen jedoch keine Bedeutung.
+Vermeiden Sie in den Zeichen folgen, die Sie in Ihrer Standardsprache erstellen, Umgangs-und-Metaphern. Die Sprache für eine demografische Gruppe, z. b. Kultur und Alter, kann schwer zu verstehen oder zu übersetzen sein, da nur Personen in dieser demografischen Gruppe diese Sprache verwenden. Ebenso ergeben Metaphern nicht für alle Personen Sinn. Beispielsweise hat &quot;Bache&quot; (weibliches Wildschwein) für Jäger eine besondere, für andere Personen jedoch keine Bedeutung.
 
-Verwenden Sie keinen technischen Jargon, Abkürzungen oder Akronyme. Fachsprache wird von Fachfremden kaum verstanden und ist schwer zu übersetzen. Im alltäglichen Sprachgebrauch ist diese Terminologie unüblich. Technische Ausdrücke stehen oft in Fehlermeldungen, um Hardware- und Softwareprobleme zu identifizieren, jedoch sollten Sie technische Zeichenfolgen *nur verwenden, wenn der Benutzer sie in dieser Form benötigt, darauf reagieren oder einen Fachmann zur Rate ziehen kann*.
+Verwenden Sie keinen technischen Jargon, Abkürzungen oder Akronyme. Fachsprache wird von Fachfremden kaum verstanden und ist schwer zu übersetzen. Im alltäglichen Sprachgebrauch ist diese Terminologie unüblich. Die technische Sprache wird häufig in Fehlermeldungen angezeigt, um Hardware-und Software Probleme zu identifizieren. Sie sollten jedoch nur dann technische Zeichen folgen haben, *Wenn der Benutzer diese Informationsebene benötigt und entweder eine Aktion durchgeführt oder eine beliebige Person finden kann*.
 
-Gegen informelle Angaben in Zeichenfolgen ist nichts einzuwenden. Sie können entsprechende Kommentare in Ihrer Standard-Ressourcendatei (.resw) verwenden.
+Die Verwendung einer informellen Stimme oder eines Klangs in ihren Zeichen folgen ist eine gültige Wahl. Sie können Kommentare in der Standard Ressourcen Datei (. resw) verwenden, um diese Absicht anzugeben.
 
-## <a name="pseudo-localization"></a>Pseudolokalisierung
+## <a name="pseudo-localization"></a>Pseudo Lokalisierung
 
-Nehmen Sie ein Pseudolokalisierung Ihrer App vor, um Lokalisierungsprobleme zu erkennen. Pseudolokalisierung ist eine Art von Lokalisierungstestlauf oder Offenlegungstest. Sie erstellen eine Reihe von Ressourcen, die nicht wirklich übersetzt werden, sondern nur übersetzt aussehen. Ihre Zeichenfolgen sind beispielsweise etwa 40 % länger als in der Standardsprache, und sie enthalten Trennzeichen, sodass Sie auf einen Blick erkennen können, ob sie in der Benutzeroberfläche abgeschnitten wurden.
+Pseudo Lokalisierung Ihrer APP, um Lokalisier barkeits Probleme zu erkennen. Bei der Pseudo Lokalisierung handelt es sich um eine Art von Lokalisierung und einen Offenlegungs Test. Sie können einen Satz von Ressourcen entwickeln, die nicht wirklich übersetzt werden. Sie sehen nur auf diese Weise. Die Zeichen folgen sind ungefähr 40% länger als in der Standardsprache, und Sie verfügen über Trennzeichen, damit Sie auf einen Blick sehen können, ob Sie auf der Benutzeroberfläche abgeschnitten wurden.
 
-## <a name="deployment-considerations"></a>Bereitstellungsaspekte
+## <a name="deployment-considerations"></a>Überlegungen zur Bereitstellung
 
 Wenn Sie eine App installieren, die lokalisierte Sprach Daten enthält, werden Sie möglicherweise feststellen, dass nur die Standardsprache für die app verfügbar ist, auch wenn Sie anfänglich Ressourcen für mehrere Sprachen eingefügt haben. Dies liegt daran, dass der Installationsvorgang so optimiert ist, dass nur Sprachressourcen installiert werden, die der aktuellen Sprache und Kultur des Geräts entsprechen. Wenn Ihr Gerät für en-US konfiguriert ist, werden daher nur die Sprachressourcen von en-US mit Ihrer APP installiert.
 
@@ -94,47 +94,47 @@ Optional können Sie die. appxbundle-Generierung deaktivieren, wenn Sie Ihre APP
 Deaktivieren Sie die automatische Generierung der appxbundle-Datei, indem Sie das Attribut "App-Bündel generieren" auf "nie" festlegen:
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf den Projektnamen.
-2. Wählen Sie **Store** -> **App-Pakete erstellen..** .
+2. Wählen Sie **Store**  ->  **App-Pakete erstellen... aus.**
 3. Wählen Sie im Dialogfeld **Pakete erstellen** die Option **Ich möchte Pakete zum Hochladen in die Microsoft Store mit einem neuen APP-Namen erstellen** aus, und klicken Sie dann auf **weiter**.
 4. Wählen Sie im Dialogfeld **APP-Namen auswählen** /erstellen einen APP-Namen für das Paket aus.
 5. Legen Sie im Dialogfeld **Pakete auswählen und konfigurieren** die Option **App Bundle generieren** auf **nie**fest.
 
-## <a name="geopolitical-awareness"></a>Geopolitische Rücksichtnahme
+## <a name="geopolitical-awareness"></a>Geopolitisches Bewusstsein
 
-Vermeiden Sie heikle politische Angaben in Karten oder bei Verweisen auf Regionen. Karten können umstrittene regionale oder nationale Grenzen enthalten und sind eine häufige Quelle von politischer Beleidigungen. Achten Sie darauf, dass die Benutzeroberfläche für die Auswahl von Nationen die Formulierung &quot;Land/Region&quot; verwendet. Wenn ein umstrittenes Gebiet in einer Liste mit der Bezeichnung &quot;Länder&quot; (z. B. in einem Adressformular) aufgeführt wird, kann dies zu Problemen führen.
+Vermeiden Sie politische Beleidigungen in Karten oder bei Verweisen auf Regionen. Zuordnungen können umstrittene regionale oder nationale Grenzen umfassen und sind eine häufige Quelle für politische Beleidigung. Achten Sie darauf, dass die Benutzeroberfläche für die Auswahl von Nationen die Formulierung &quot;Land/Region&quot; verwendet. Wenn Sie ein umstrittenes Gebiet in einer Liste mit der Bezeichnung &quot; Länder &quot; &mdash; wie z. b. in einem Adressformular auflisten, &mdash; kann dies einige Benutzer beleidigen
 
-## <a name="language--and-region-changed-events"></a>Ereignisse bei Änderung von Sprache und Region
+## <a name="language--and-region-changed-events"></a>Sprach-und Regions geänderte Ereignisse
 
-Abonnieren Sie Ereignisse, die ausgelöst werden, wenn sich die Standardeinstellungen des Systems für Sprache und Region ändern. Dann können Sie Ressourcen bei Bedarf erneut laden. Weitere Informationen finden Sie unter [Aktualisieren von Zeichenfolgen als Reaktion auf Ereignisse, die durch die Änderung von Qualifiziererwerten ausgelöst werden](../../app-resources/localize-strings-ui-manifest.md#updating-strings-in-response-to-qualifier-value-change-events) und [Aktualisieren von Bilder als Reaktion auf Ereignisse, die durch die Änderung von Qualifiziererwerten ausgelöst werden](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events).
+Abonnieren von Ereignissen, die ausgelöst werden, wenn sich die Sprach-und Regions Einstellungen des Systems ändern. Führen Sie diese Schritte aus, damit Sie ggf. Ressourcen erneut laden können. Weitere Informationen finden Sie unter Aktualisieren von Zeichen folgen als [Reaktion auf Änderungs Ereignisse für Qualifizierer](../../app-resources/localize-strings-ui-manifest.md#updating-strings-in-response-to-qualifier-value-change-events) und [Aktualisieren von Bildern als Reaktion auf Änderungs Ereignisse von Qualifiziererwerten](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events).
 
-## <a name="ensure-the-correct-parameter-order-when-formatting-strings"></a>Sicherstellen der richtigen Parameterreihenfolge beim Formatieren von Zeichenfolgen
+## <a name="ensure-the-correct-parameter-order-when-formatting-strings"></a>Beim Formatieren von Zeichen folgen die richtige Parameterreihenfolge
 
-Gehen Sie nicht davon aus, dass Parameter in allen Sprachen in der gleichen Reihenfolge auftreten. Betrachten Sie z. B. dieses Format.
+Gehen Sie nicht davon aus, dass alle Sprachen Parameter in derselben Reihenfolge Ausdrücken. Nehmen Sie beispielsweise an, dass dieses Format vorliegt.
 
 ```csharp
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-Die Formatzeichenfolge in diesem Beispiel ist für Englisch (USA) richtig. Sie ist jedoch nicht für Deutsch (Deutschland) geeignet, da in dieser Sprache Tag und Monat in umgekehrter Reihenfolge angezeigt werden. Stellen Sie sicher, dass der Übersetzer die Absicht der einzelnen Parameter kennt, damit Sie die Reihenfolge der Format Elemente in der Format Zeichenfolge (z. b. "{1} {0}") entsprechend der Zielsprache umkehren können.
+Die Format Zeichenfolge in diesem Beispiel funktioniert in englischer Sprache (USA). Dies ist beispielsweise für Deutsch (Deutschland) nicht geeignet, wenn der Tag und der Monat in umgekehrter Reihenfolge angezeigt werden. Stellen Sie sicher, dass der Übersetzer die Absicht der einzelnen Parameter kennt, damit Sie die Reihenfolge der Format Elemente in der Format Zeichenfolge (z. b {1} {0} . "") entsprechend der Zielsprache umkehren können.
 
-## <a name="dont-over-localize"></a>Vermeiden Sie eine zu starke Lokalisierung.
+## <a name="dont-over-localize"></a>Nicht über lokalisieren
 
-Übermitteln Sie nur natürliche Sprache an Übersetzer; keine Programmiersprache oder Markup. Ein `<link>`-Tag ist keine natürlicher Sprache. Betrachten Sie die folgenden Beispiel.
+Nur in natürlicher Sprache an Übersetzer senden weder Programmiersprache noch Markup. Ein `<link>` Tag ist keine natürliche Sprache. Beachten Sie diese Beispiele.
 
-| Dies nicht lokalisieren                   | Dies lokalisieren |
+| Nicht lokalisieren                   | Lokalisieren |
 |:--------------------------------------- |:-------------------------- |
-| &lt;link&gt;Nutzungsbedingungen&lt;/link&gt;   | Nutzungsbedingungen               |
-| &lt;link&gt;Datenschutzrichtlinie&lt;/link&gt; | Datenschutzrichtlinie             |
+| &lt;Verknüpfen &gt; der Nutzungsbedingungen &lt; /Link&gt;   | Nutzungsbedingungen               |
+| &lt;Verknüpfen der &gt; Datenschutzrichtlinie &lt; /Link&gt; | Datenschutzrichtlinie             |
 
-Wenn Sie das Tag `<link>` in Ihre Ressourcendatei (.resw) einfügen, wird es wahrscheinlich übersetzt. Dadurch würde das Tag ungültig. Wenn Sie lange Zeichenfolgen haben, die Markup enthalten müssen, um den Kontext zu erhalten und die Reihenfolge zu gewährleisten, machen Sie in Kommentaren deutlich, was nicht zu übersetzen ist.
+`<link>`Wenn Sie das-Tag in ihre Ressourcen Datei (. resw) einschließen, wird es wahrscheinlich auch übersetzt. Dies würde das Tag als ungültig erweisen. Wenn Sie über lange Zeichen folgen verfügen, die Markup einschließen müssen, um den Kontext beizubehalten und die Reihenfolge zu gewährleisten, müssen Sie in den Kommentaren klar werden, was nicht übersetzt werden soll.
 
-## <a name="choose-an-appropriate-translation-approach"></a>Auswahl des richtigen Übersetzungsansatzes
+## <a name="choose-an-appropriate-translation-approach"></a>Auswählen eines geeigneten Übersetzungs Ansatzes
 
 Nachdem die Zeichenfolgen in Ressourcendateien untergliedert wurden, können sie übersetzt werden. Der ideale Zeitpunkt für die Übersetzung ist nach Fertigstellung der Zeichenfolgen im Projekt, was in der Regel gegen Projektende der Fall ist. Der Übersetzungsprozess kann auf unterschiedliche Weise gehandhabt werden. Die Vorgehensweise hängt vom Umfang der zu übersetzenden Zeichenfolgen ab, von der Anzahl der zu übersetzenden Sprachen und wie die Übersetzung erfolgt (intern oder über externe Auftragnehmer).
 
 Berücksichtigen Sie diese Optionen.
 
-- **Die Ressourcen Dateien können übersetzt werden, indem Sie direkt im Projekt geöffnet werden.** Dieser Ansatz funktioniert gut für ein Projekt mit wenigen Zeichenfolgen, die in zwei oder drei Sprachen übersetzt werden müssen. Er könnte sich für Szenarien eignen, in denen ein Entwickler mehrere Sprachen spricht und die Übersetzung übernehmen kann. Dieser Ansatz ist schnell, erfordert keine Tools und minimiert das Risiko von falschen Übersetzungen. Es ist jedoch nicht skalierbar. Insbesondere kann es passieren, das die Ressourcen in verschiedenen Sprachen nicht mehr synchron sind, was eine mangelnde Benutzerfreundlichkeit und Verwaltungsprobleme zur Folge haben kann.
+- **Die Ressourcendateien können zum Übersetzen direkt im Projekt geöffnet werden.** Diese Vorgehensweise eignet sich gut für ein Projekt mit einer kleinen Anzahl von Zeichen folgen, die in zwei oder drei Sprachen übersetzt werden müssen. Er könnte sich für Szenarien eignen, in denen ein Entwickler mehrere Sprachen spricht und die Übersetzung übernehmen kann. Diese Vorgehensweise hat den Vorteil, dass Sie schnell ist, keine Tools erfordert und das Risiko von mierungen minimiert. Es ist jedoch nicht skalierbar. Insbesondere kann es passieren, das die Ressourcen in verschiedenen Sprachen nicht mehr synchron sind, was eine mangelnde Benutzerfreundlichkeit und Verwaltungsprobleme zur Folge haben kann.
 - **Die Zeichen folgen-Ressourcen Dateien befinden sich im XML-oder resjson-Textformat und können daher mithilfe eines beliebigen Text-Editors für die Übersetzung übergeben werden. Die übersetzten Dateien werden dann wieder in das Projekt kopiert.** Bei diesem Ansatz besteht die Gefahr, dass Übersetzer versehentlich die XML-Tags bearbeiten. Andererseits besteht die Möglichkeit, Übersetzungen außerhalb des Microsoft Visual Studio-Projekts durchzuführen. Dieser Ansatz eignet sich gut für Projekte, die nur in wenige Sprachen übersetzt werden. Das XLIFF-Format ist ein XML-Format, das speziell für die Lokalisierung vorgesehen ist. Es sollte zudem von einigen Lokalisierungsanbietern oder -tools unterstützt werden. Sie können mit dem [Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) XLIFF-Dateien aus anderen Ressourcendateien wie „.resw“ oder „.resjson“ generieren.
 
 > [!NOTE]
@@ -142,18 +142,18 @@ Berücksichtigen Sie diese Optionen.
 
 Beachten Sie auch Folgendes:
 
-- **Lokalisierungstools** Es stehen eine Reihe von Lokalisierungstools zum Auswerten von Ressourcen Dateien zur Verfügung, sodass nur die übersetzbaren Zeichen folgen von Konvertierungsprogrammen bearbeitet werden können. Das Risiko, dass ein Übersetzer versehentlich XML-Tags bearbeitet, ist somit geringer. Der Nachteil ist aber, dass neue Tools und Prozesse in den Lokalisierungsprozess eingebunden werden müssen. Ein Lokalisierungstool eignet sich für Projekte mit vielen Zeichenfolgen für wenige Sprachen. Weitere Informationen finden Sie unter [Verwenden des Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
+- **Lokalisierungstools** Es stehen eine Reihe von Lokalisierungstools zum Auswerten von Ressourcen Dateien zur Verfügung, sodass nur die übersetzbaren Zeichen folgen von Konvertierungsprogrammen bearbeitet werden können. Das Risiko, dass ein Übersetzer versehentlich XML-Tags bearbeitet, ist somit geringer. Der Nachteil ist aber, dass neue Tools und Prozesse in den Lokalisierungsprozess eingebunden werden müssen. Ein Lokalisierungs Tool eignet sich gut für Projekte mit einer großen Anzahl von Zeichen folgen, jedoch mit einer kleinen Anzahl von Sprachen. Weitere Informationen finden Sie unter [Verwenden des Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
 - **Lokalisierungsanbieter** Ziehen Sie die Verwendung eines Lokalisierungs Anbieters in Erwägung, wenn Ihre Anwendung umfangreiche Zeichen folgen enthält, die in eine große Anzahl von Sprachen übersetzt werden müssen. Ein Lokalisierungsanbieter kann Sie hinsichtlich der Tools und Prozesse beraten sowie die Ressourcendateien übersetzen. Diese Lösung ist ideal, stellt allerdings auch die teuerste Option dar und kann die Bearbeitungszeit für den übersetzten Inhalt verlängern.
 
-## <a name="keep-access-keys-and-labels-consistent"></a>Zugriffstasten und Beschreibungen konsistent halten
+## <a name="keep-access-keys-and-labels-consistent"></a>Zugriffsschlüssel und Bezeichnungen konsistent halten
 
 Die „Synchronisierung“ der für die Barrierefreiheit verwendeten Zugriffstasten mit der Anzeige der lokalisierten Zugriffstasten stellt eine besondere Herausforderung dar, da beide Zeichenfolgenressourcen in getrennten Abschnitten kategorisiert sind. Stellen Sie für die Bezeichnungszeichenfolge unbedingt Kommentare bereit wie: `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
-## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>Furigana für sortierbare japanische Zeichenfolgen unterstützen
+## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>Unterstützung von Furigana für japanische Zeichen folgen, die sortiert werden können
 
-Japanische Kanji-Zeichen weisen die Besonderheit auf, dass sie je nach Wort und Kontext ihrer Verwendung anders ausgesprochen werden. Bei der Sortierung japanisch bezeichneter Objekte (wie Anwendungsnamen, Dateien, Lieder usw.) führt das zu Problemen. In der Vergangenheit wurde japanisches Kanji normalerweise in einer maschinenlesbaren Anordnung, XJIS genannt, sortiert. Da es sich hierbei um keine phonetische Sortierung handelt, ist sie für menschliche Nutzer leider nicht hilfreich.
+Japanische Kanji-Zeichen verfügen über mehrere Lesevorgänge (Aussprache), je nachdem, in welchem Wort Sie verwendet werden. Bei der Sortierung japanisch bezeichneter Objekte (wie Anwendungsnamen, Dateien, Lieder usw.) führt das zu Problemen. Japanische Kanji haben in der Vergangenheit normalerweise in einer Computer verständlichen Reihenfolge mit dem Namen XJIS sortiert. Da es sich hierbei um keine phonetische Sortierung handelt, ist sie für menschliche Nutzer leider nicht hilfreich.
 
-*Furigana* umgeht dieses Problem, da der Benutzer oder Ersteller die Phonetik für die verwendeten Zeichen angeben kann. Wenn Sie das folgende Verfahren verwenden, um Furigana Ihrem App-Namen hinzuzufügen, können Sie sicherstellen, dass es in der App-Liste an der richtigen Stelle einsortiert ist. Wenn Ihr App-Name Kanji-Zeichen enthält und Furigana nicht bereitgestellt wird, wenn die Benutzeroberflächensprache oder die Sortierreihenfolge auf Japanisch festgelegt ist, versucht Windows, die entsprechende Aussprache zu erstellen. Es ist jedoch möglich, App-Namen mit seltener oder spezieller Schreibweise stattdessen nach einer gebräuchlicheren Schreibweise zu sortieren. Deshalb empfiehlt es sich, bei einer japanischen Anwendung (insbesondere wenn sie Kanji-Zeichen im Namen enthält) im Rahmen der japanischen Lokalisierung eine Furigana-Version des App-Namens bereitzustellen.
+*Furigana* umgeht dieses Problem, indem es dem Benutzer oder dem Ersteller ermöglicht, die Phonetik für die von Ihnen verwendeten Zeichen anzugeben. Wenn Sie das folgende Verfahren zum Hinzufügen von Furigana zum APP-Namen verwenden, können Sie sicherstellen, dass es an der richtigen Stelle in der APP-Liste sortiert ist. Wenn Ihr App-Name Kanji-Zeichen enthält und Furigana nicht bereitgestellt wird, wenn die Benutzeroberflächen Sprache des Benutzers oder die Sortierreihenfolge auf Japanisch festgelegt ist, macht Windows den besten Aufwand, die entsprechende Aussprache zu generieren. Es ist jedoch möglich, App-Namen mit seltener oder spezieller Schreibweise stattdessen nach einer gebräuchlicheren Schreibweise zu sortieren. Daher besteht die bewährte Vorgehensweise für japanische Anwendungen (insbesondere solche, die Kanji-Zeichen in ihren Namen enthalten) darin, eine Furigana-Version Ihres App-namens als Teil des japanischen Lokalisierungsprozesses bereitzustellen.
 
 1. Fügen Sie „ms-resource:Appname“ als Paketanzeigenamen und Anwendungsanzeigenamen hinzu.
 2. Erstellen Sie unter „strings“ den Ordner „ja-JP“, und fügen Sie zwei Ressourcendateien wie folgt hinzu:
@@ -167,27 +167,27 @@ Japanische Kanji-Zeichen weisen die Besonderheit auf, dass sie je nach Wort und 
     ```
 
 3. Unter „Resources.resw“ für „ja-JP“ allgemein: Fügen Sie eine Zeichenfolgenressource für den App-Namen „希蒼“ hinzu.
-4. Unter „Resources.altform-msft-phonetic.resw“ für japanische Furigana-Ressourcen: Fügen Sie einen Furigana-Wert für den App-Namen „のあ“ hinzu.
+4. In Resources. altform-MSFT-Phonetic. resw für japanische Furigana-Ressourcen: Hinzufügen eines Furigana-Werts für appname "のあ"
 
-Der Benutzer kann nach dem App-Namen „希 蒼” sowohl mit dem Furigana-Wert "の あ" (noa) als auch mit dem phonetischen Wert „ま れ あ お” (mare-ao) suchen (mit der Funktion **GetPhonetic** aus dem Eingabemethoden-Editor (IME)).
+Der Benutzer kann mithilfe des Furigana-Werts "のあ" (Noa) und des phonetischen Werts (mithilfe der **GetPhonetic** -Funktion aus dem Eingabemethoden-Editor (IME)) "まれあお" (Stute-AO) nach dem APP-Namen "希蒼" suchen.
 
 Die Sortierung folgt dem **regionalen Format der Systemsteuerung**:
 
-- Wenn unter einem japanischen Benutzergebietsschema
-  - Furigana aktiviert ist, wird „希蒼“ unter „の“ einsortiert.
-  - Wenn Furigana fehlt, wird „希蒼“ unter „ま“ sortiert.
-- Wenn unter einem nicht japanischem Benutzergebietsschema
-  - Furigana aktiviert ist, wird „希蒼“ unter „の“ einsortiert.
-  - Wenn Furigana fehlt, wird „希蒼“ unter „漢字“ sortiert.
+- Unter einem japanischen Benutzer Gebiets Schema
+  - Wenn Furigana aktiviert ist, wird "希蒼" unter "の" sortiert.
+  - Wenn Furigana fehlt, wird "希蒼" unter "ま" sortiert.
+- Unter einem nicht japanischen Benutzer Gebiets Schema
+  - Wenn Furigana aktiviert ist, wird "希蒼" unter "の" sortiert.
+  - Wenn Furigana fehlt, wird "希蒼" unter "漢字" sortiert.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
-- [Richtlinien für die Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
-- [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
+- [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
+- [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)
 - [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md)
 - [Aktualisieren von Bildern als Reaktion auf Änderungs Ereignisse für qualifiziererwert](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
 ## <a name="samples"></a>Beispiele
 
-- [Beispiel für Anwendungs Ressourcen und-Lokalisierung](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
+- [Anwendungsressourcen und Lokalisierung – Beispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Application%20resources%20and%20localization%20sample%20(Windows%208))

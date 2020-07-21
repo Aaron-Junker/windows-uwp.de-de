@@ -4,23 +4,23 @@ title: Erstellen von Store-Einträgen für Apps
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.date: 03/13/2019
 ms.topic: article
-keywords: Windows 10, UWP, Eintrag, Beschreibung, Store-Seite, Versionshinweise, Titel
+keywords: Windows 10, UWP, Auflistung, Beschreibung, Store-Seite, Anmerkungen zu dieser Version, Titel
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e9c7f56dd799b568e12a887355ec19561f207ea
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 6e8ba40129197f77b2bbbd3950a6bcf214bae787
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210376"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493015"
 ---
 # <a name="create-app-store-listings"></a>Erstellen von Store-Einträgen für Apps
 
-Im Abschnitt **Store-Einträge** des [App-Übermittlungsprozesses](app-submissions.md) stellen Sie den Text und die [Bilder](app-screenshots-and-images.md) bereit, die den Kunden im Microsoft Store angezeigt werden, wenn diese Ihre App ansehen.
+Im Abschnitt **Store-Auflistungen** des App-Übermittlungs [Prozesses](app-submissions.md) geben Sie den Text und die [Bilder](app-screenshots-and-images.md) an, die Kunden angezeigt werden, wenn Sie die Liste Ihrer Apps im Microsoft Store anzeigen.
 
-Viele der Felder in einem **Store-Eintrag** sind optional. Es wird jedoch empfohlen, mehrere Bilder und so viele Infos wie möglich bereitzustellen, damit Ihr Eintrag auffällt. Im Schritt **Store-Einträge** sollten Sie mindestens eine Textbeschreibung und mindestens einen [Screenshot](app-screenshots-and-images.md#screenshots) angeben.
+Viele der Felder in einer **Speicher Auflistung** sind optional, aber es wird empfohlen, mehrere Abbilder und so viele Informationen wie möglich bereitzustellen, damit Ihre Auflistung heraus steht. Der als vollständig zu berücksichtigende **Schritt muss** mindestens eine Textbeschreibung und mindestens einen [Screenshot](app-screenshots-and-images.md#screenshots)aufweisen.
 
 > [!TIP]
-> Sie können [Speicher Listen optional importieren und exportieren](import-and-export-store-listings.md) , wenn Sie Ihre Auflistungs Informationen in einer CSV-Datei Offline eingeben möchten, anstatt Informationen bereitzustellen und Dateien direkt in Partner Center hochzuladen. Das Verwenden der Option zum Importieren und Exportieren ist besonders dann hilfreich, wenn Sie Einträge in mehreren Sprachen besitzen, da Sie mehrere Updates auf einmal vornehmen können.
+> Sie können [Speicher Listen optional importieren und exportieren](import-and-export-store-listings.md) , wenn Sie Ihre Auflistungs Informationen in einer CSV-Datei Offline eingeben möchten, anstatt Informationen bereitzustellen und Dateien direkt in Partner Center hochzuladen. Die Verwendung der Import-und Exportoption kann besonders praktisch sein, wenn Sie überlisten in vielen Sprachen verfügen, da Sie mehrere Updates gleichzeitig durchführen können.
 
 Wenn Ihre zuvor veröffentlichte APP Windows 8. x und/oder Windows Phone 8. x oder früher unterstützt, können Sie [plattformspezifische Store-Listen erstellen](create-platform-specific-store-listings.md) , die diesen Kunden angezeigt werden.
 
@@ -29,9 +29,9 @@ Wenn Ihre zuvor veröffentlichte APP Windows 8. x und/oder Windows Phone 8. x od
 Sie müssen die Seite **Store-Eintrag** für mindestens eine Sprache ausfüllen. Es wird empfohlen, einen Store-Eintrag in jeder Sprache bereitzustellen, die Ihre Pakete unterstützen. Sie haben jedoch die Möglichkeit, Sprachen zu entfernen, für die Sie keinen Store-Eintrag bereitstellen möchten. Sie können auch Store-Einträge in zusätzlichen Sprachen bereitstellen, die von Ihren Paketen nicht unterstützt werden.
 
 > [!NOTE]
-> Wenn Ihre Übermittlung bereits Pakete enthält, werden die in Ihren Paketen unterstützten [Sprachen](supported-languages.md) in der Übermittlungsübersicht angezeigt (es sei denn, Sie diese entfernen welche).
+> Wenn Ihre Übermittlung bereits Pakete enthält, werden die in ihren Paketen unterstützten [Sprachen](supported-languages.md) auf der Übersichtsseite für die Übermittlung angezeigt (es sei denn, Sie entfernen Sie).
 
-Klicken Sie zum Hinzufügen oder Entfernen von Sprachen für Ihre Store-Einträge in der Übermittlungsübersicht auf **Add/remove languages**. Wenn Sie bereits Pakete hochgeladen haben, sind die Sprachen dafür im Abschnitt **Languages supported by your packages** aufgeführt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen**. Wenn Sie später eine Sprache angeben möchten, die Sie zuvor aus diesem Abschnitt entfernt haben, können Sie auf **Hinzufügen** klicken.
+Klicken Sie zum Hinzufügen oder Entfernen von Sprachen für Ihre Store-Listen auf der Seite Übersicht über die Übermittlung auf **Sprachen hinzufügen/entfernen** . Wenn Sie bereits Pakete hochgeladen haben, sind die Sprachen dafür im Abschnitt **Languages supported by your packages** aufgeführt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen**. Wenn Sie später eine Sprache angeben möchten, die Sie zuvor aus diesem Abschnitt entfernt haben, können Sie auf **Hinzufügen** klicken.
 
 Im Abschnitt **Additional Store listing languages** können Sie auf **Manage additional languages** klicken, um Sprachen hinzuzufügen oder zu entfernen, die  *nicht* in Ihren Paketen enthalten sind. Aktivieren Sie die Kontrollkästchen für die Sprachen, die Sie hinzufügen möchten, und klicken Sie dann auf **Aktualisieren**. Die ausgewählten Sprachen werden im Abschnitt **Additional Store listing languages** angezeigt. Klicken Sie zum Entfernen einer oder mehrerer dieser Sprachen auf **Entfernen** (oder klicken Sie auf **Manage additional languages**, und deaktivieren Sie die Kontrollkästchen für die Sprachen, die Sie entfernen möchten).
 
@@ -54,98 +54,98 @@ Wenn Sie keine Pakete für die Sprache hochgeladen haben, an der Sie arbeiten, u
 > [!NOTE]
 > Der von Ihnen gewählte **Produktname** gilt nur für die Store-Auflistung in der Sprache, in der Sie arbeiten. Er wirkt sich nicht auf den Namen aus, der angezeigt wird, wenn ein Kunde die APP installiert. Dieser Name stammt aus dem Manifest des Pakets, das installiert wird. Um Verwechslungen zu vermeiden, wird empfohlen, dass die Paket-(e) und Speicher Listen der einzelnen Sprachen denselben Namen verwenden.
 
-## <a name="description"></a>Beschreibung
+## <a name="description"></a>BESCHREIBUNG
 
 Über das Beschreibungsfeld können Sie Ihren Kunden den Zweck der App mitteilen. Dieses Feld ist erforderlich und kann bis zu 10.000 Zeichen reinen Text enthalten.
 
 Tipps zum Erstellen einer aussagekräftigen Beschreibung finden Sie unter [Erstellen einer interessanten App-Beschreibung](write-a-great-app-description.md).
 
-<span id="release-notes" />
+<a name="release-notes"></a>
 
-## <a name="whats-new-in-this-version"></a>Neuigkeiten in dieser Version
+## <a name="whats-new-in-this-version"></a>Neuerungen in dieser Version
 
-Wenn Sie Ihre App erstmalig einrichten, lassen Sie dieses Feld leer. Wenn Sie ein Update für eine vorhandene app ausführen möchten, können Sie den Kunden mitteilen, was sich in der neuesten Version geändert hat. Dieses Feld ist auf 1.500 Zeichen beschränkt. (Dieses Feld hieß zuvor **Anmerkungen zu dieser Version**).
+Wenn Sie Ihre APP zum ersten Mal einreichen, lassen Sie dieses Feld leer. Wenn Sie ein Update für eine vorhandene app ausführen möchten, können Sie den Kunden mitteilen, was sich in der neuesten Version geändert hat. Dieses Feld ist auf 1.500 Zeichen beschränkt. (Zuvor hieß dieses Feld Versions **Hinweise**).
 
 ## <a name="product-features"></a>Produkt Features
 
-Hierbei handelt es sich um kurze Zusammenfassungen der wichtigsten App-Features. Diese werden dem Kunden neben der **Beschreibung** als Aufzählung im Abschnitt der **Funktionen** im Store-Eintrag Ihrer App angezeigt. Die Beschreibung sollte pro Feature nur wenige Wörter (und nicht mehr als 200 Zeichen) enthalten. Sie können bis zu 20 Features hinzufügen.
+Hierbei handelt es sich um kurze Zusammenfassungen der wichtigsten App-Features. Sie werden dem Kunden neben der **Beschreibung**im Abschnitt **Features** der Store-Liste Ihrer APP als Auflistungs Liste angezeigt. Die Beschreibung sollte pro Feature nur wenige Wörter (und nicht mehr als 200 Zeichen) enthalten. Sie können bis zu 20 Features hinzufügen.
 
 > [!NOTE]
 > Diese Features werden in ihrer Store-Auflistung angezeigt. Fügen Sie also keine eigenen Aufzählungen hinzu.
 
 ## <a name="screenshots"></a>Screenshots
 
-Ein Bildschirmfoto ist erforderlich, um Ihre App zu übermitteln. Wir empfehlen, mindestens 4 Screenshots für jeden Gerätetyp hinzuzufügen, die von Ihrer App unterstützt werden, damit Benutzer sehen, wie die App auf ihrem Gerätetyp aussieht.
+Ein Screenshot ist erforderlich, um Ihre APP zu übermitteln. Es wird empfohlen, für jeden Gerätetyp, der von ihrer App unterstützt wird, mindestens vier Screenshots bereitzustellen, damit Benutzer sehen können, wie die APP Ihren Gerätetyp untersucht.
 
 Weitere Informationen finden Sie unter [App-Screenshots und -Bilder](app-screenshots-and-images.md#screenshots).
 
 ## <a name="store-logos"></a>Store-Logos
 
-Store-Logos sind optionale Bilder, die Sie hochladen können, um die Art und Weise zu verbessern, auf die Ihre App für Kunden angezeigt wird. Sie können optional auch angeben, dass nur hier hochgeladene Bilder im Store-Eintrag der App für Kunden auf Windows 10 (einschließlich Xbox) verwendet werden sollen, statt dem Store die Verwendung von Logobildern aus den Paketen Ihrer App zu erlauben.
+Store-Logos sind optionale Images, die Sie hochladen können, um die Art und Weise zu verbessern, wie Ihre APP Kunden angezeigt wird. Sie können optional auch angeben, dass nur Bilder, die Sie hier hochladen, in der Store-Liste Ihrer APP für Kunden auf Windows 10 (einschließlich Xbox) verwendet werden sollen, anstatt dem Store zu gestatten, Logo Bilder aus den Paketen Ihrer APP zu verwenden.
 
 > [!IMPORTANT]
-> Wenn Ihre App Xbox unterstützt oder wenn Windows Phone 8.1 oder frühere Versionen unterstützt werden, müssen Sie hier bestimmte Bilder bereitstellen, damit der Eintrag im Store korrekt angezeigt wird.
+> Wenn Ihre APP Xbox unterstützt oder Windows Phone 8,1 oder früher unterstützt, müssen Sie hier bestimmte Bilder bereitstellen, damit die Auflistung ordnungsgemäß im Store angezeigt wird.
 
 Weitere Informationen finden Sie unter [Store-Logos](app-screenshots-and-images.md#store-logos).
 
 ## <a name="trailers-and-additional-assets"></a>Nachspann und zusätzliche Assets
 
-Sie können zusätzliche Assets für Ihr Produkt übermitteln, einschließlich Video Nachspann und Werbebilder. Diese sind optional, aber es empfiehlt sich, so viele wie möglich hochzuladen. Diese Bilder können Kunden eine bessere Vorstellung davon bieten, worum es sich bei Ihrem Produkt handelt, und den Eintrag ansprechender gestalten.
+Sie können zusätzliche Assets für Ihr Produkt übermitteln, einschließlich Video Nachspann und Werbebilder. Diese sind alle optional, aber es wird empfohlen, dass Sie so viele wie möglich hochladen. Diese Images können Kunden dabei helfen, eine bessere Vorstellung davon zu erhalten, was Ihr Produkt ist, und eine verlockende Auflistung zu erstellen.
 
 Weitere Informationen finden Sie unter Nachspann [und zusätzliche Ressourcen](app-screenshots-and-images.md#trailers-and-additional-assets).
 
-<a id="supplemental-information" />
+<a name="supplemental-information"></a>
 
 ## <a name="supplemental-fields"></a>Ergänzende Felder
 
-Die Felder in diesem Abschnitt sind alle optional. Überprüfen Sie die Informationen unten, um zu bestimmen, ob die Bereitstellung dieser Informationen für Ihre Übermittlung sinnvoll ist. Insbesondere die **Kurzbeschreibung** wird für die meisten Übermittlungen empfohlen. Die anderen Felder unterstützen eine optimale Erfahrung für Ihr Produkt in den verschiedenen Szenarien.
+Die Felder in diesem Abschnitt sind optional. Überprüfen Sie die folgenden Informationen, um zu bestimmen, ob diese Informationen für ihre Übermittlung sinnvoll sind. Insbesondere wird die **kurze Beschreibung** für die meisten Einsendungen empfohlen. Die anderen Felder können Ihnen helfen, eine optimale Leistung für Ihr Produkt in verschiedenen Szenarien zu bieten.
 
-### <a name="short-title"></a>Kurzer Titel
+### <a name="short-title"></a>Kurztitel
 
-Eine kürzere Version des Produktnamens. Wenn vorhanden, kann dieser kürzere Namen anstelle des Produkttitels an verschiedenen Stellen auf Xbox One angezeigt werden (während der Installation, in Ihren Erfolgen usw.).
+Eine kürzere Version des Produkt namens. Falls angegeben, wird dieser kürzere Name möglicherweise an verschiedenen Stellen auf Xbox One (während der Installation, in Errungenschaften usw.) anstelle des vollständigen Titels Ihres Produkts angezeigt.
 
-Dieses Feld ist auf 50 Zeichen beschränkt.
+Dieses Feld hat eine Beschränkung von 50 Zeichen.
 
-### <a name="sort-title"></a>Sortierungstitel
+### <a name="sort-title"></a>Sortier Titel
 
-Wenn Ihr Produkt alphabetisch sortiert oder auf unterschiedliche Weise geschrieben werden kann, können Sie hier eine andere Version eingeben. Dadurch können Kunden das Produkt schnell finden, wenn sie diese Version bei der Suche eingeben.
+Wenn Ihr Produkt alphabetisch oder auf unterschiedliche Weise geschrieben werden kann, können Sie hier eine andere Version eingeben. Dadurch können Kunden Ihr Produkt schneller finden, wenn Sie diese Version in beim Suchen eingeben.
 
-Dieses Feld ist auf 255 Zeichen beschränkt.
+Dieses Feld hat eine Beschränkung von 255 Zeichen.
 
-### <a name="voice-title"></a>Sprachtitel
+### <a name="voice-title"></a>Sprach Titel
 
-Ein alternativer Name für das Produkt, das ggf. als Audio-Erlebnis auf Xbox One verwendet werden kann, wenn Kinect oder ein Kopfhörer genutzt wird.
+Ein alternativer Name für Ihr Produkt, der ggf. in der Audiodarstellung auf Xbox One bei Verwendung von kinect oder einem Headset verwendet werden kann.
 
-Dieses Feld ist auf 255 Zeichen beschränkt.
+Dieses Feld hat eine Beschränkung von 255 Zeichen.
 
 ### <a name="short-description"></a>Kurze Beschreibung
 
-Eine kürzere, ansprechende Beschreibung, die am oberen Rand des Store-Eintrags Ihres Produkts verwendet werden kann. Falls nicht anders angegeben, wird stattdessen der erste Absatz (bis zu 500 Zeichen) Ihrer längeren [Beschreibung](#description) verwendet. Da die Beschreibung auch unter diesem Text angezeigt wird, empfiehlt es sich, eine kurze Beschreibung mit einem anderen Text bereitzustellen, sodass Ihr Store-Eintrag keine Wiederholungen enthält.
+Eine kürzere, einprägsame Beschreibung, die im oberen Bereich der Store-Auflistung Ihres Produkts verwendet werden kann. Wenn keine Angabe erfolgt, wird stattdessen der erste Absatz (bis zu 500 Zeichen) ihrer längeren [Beschreibung](#description) verwendet. Da Ihre Beschreibung auch unterhalb dieses Texts angezeigt wird, empfiehlt es sich, eine kurze Beschreibung mit einem anderen Text bereitzustellen, damit sich Ihre Store-Auflistung nicht wiederholt.
 
-Bei Spielen erscheint die Kurzbeschreibung auch im Abschnitt „Informationen“ im Spiele-Hub auf Xbox One.
+Bei spielen kann die kurze Beschreibung auch im Abschnitt "Informationen" des spielhubs auf Xbox One angezeigt werden.
 
 Um optimale Ergebnisse zu erzielen, behalten Sie die kurze Beschreibung unter 270 Zeichen. Das Feld hat ein Limit von 1000 Zeichen, aber in einigen Ansichten werden nur die ersten 270 Zeichen angezeigt (mit einem Link, der zum Anzeigen der restlichen kurzen Beschreibung verfügbar ist).
 
 ### <a name="additional-system-requirements"></a>Weitere Systemanforderungen
 
-Bei Bedarf können Sie die Hardwarekonfigurationen beschreiben, die für die ordnungsgemäße Funktionsweise der App erforderlich sind, über die Informationen hinaus, die Sie im Abschnitt **Systemanforderungen** unter [App-Eigenschaften](enter-app-properties.md#system-requirements) angegeben haben. Dies ist besonders wichtig, wenn Ihre App Hardware benötigt, die u. U. nicht auf jedem Computer vorhanden ist. Wenn Ihre App beispielsweise nur mit externer USB-Hardware wie z. B. einem 3D-Drucker oder einem Mikrocontroller nur funktionsfähig ist, empfehlen wir, diese hier einzugeben. Die Informationen, die Sie hier eingeben, werden Kunden im Store-Eintrag Ihrer App unter Windows 10, Version 1607 oder höher (einschließlich Xbox), zusammen mit den auf der Eigenschaftenseite des Produkts angegebenen Anforderungen angezeigt.
+Bei Bedarf können Sie die Hardwarekonfigurationen beschreiben, die für die ordnungsgemäße Funktionsweise der App erforderlich sind, über die Informationen hinaus, die Sie im Abschnitt **Systemanforderungen** unter [App-Eigenschaften](enter-app-properties.md#system-requirements) angegeben haben. Dies ist besonders wichtig, wenn Ihre App Hardware benötigt, die u. U. nicht auf jedem Computer vorhanden ist. Wenn Ihre APP z. b. nur ordnungsgemäß mit externer USB-Hardware wie z. b. einem 3D-Drucker oder einem Mikrocontroller funktioniert, empfiehlt es sich, diese hier einzugeben. Die von Ihnen eingegebenen Informationen werden Kunden angezeigt, die die Store-Auflistung Ihrer APP unter Windows 10, Version 1607 oder höher (einschließlich Xbox), zusammen mit den Anforderungen anzeigen, die Sie auf der Eigenschaften Seite des Produkts angegeben haben.
 
-Sie können bis zu 11 Elemente sowohl für **Mindesthardwareanforderungen** als auch für **Empfohlene Hardware** eingeben. Diese werden dem Kunden im Store-Eintrag als Aufzählung angezeigt. Die Beschreibung sollte pro Element nur wenige Wörter (und nicht mehr als 200 Zeichen) enthalten.
+Sie können bis zu 11 Elemente sowohl für **Mindesthardwareanforderungen** als auch für **Empfohlene Hardware** eingeben. Diese werden dem Kunden als aufsortierte Liste in ihrer Store-Auflistung angezeigt. Die Beschreibung sollte pro Element nur wenige Wörter (und nicht mehr als 200 Zeichen) enthalten.
 
 > [!NOTE]
-> Die zusätzlichen Systemanforderungen werden im Store-Eintrag mit Aufzählungszeichen versehen. Fügen Sie daher keine eigenen Aufzählungszeichen hinzu.
+> Ihre zusätzlichen Systemanforderungen werden in ihrer Store-Auflistung angezeigt. Fügen Sie also keine eigenen Aufzählungen hinzu.
 
-<span id="shared-fields" />
+<a name="shared-fields"></a>
 
 ## <a name="additional-information"></a>Zusätzliche Informationen
 
-Mit den unten beschriebenen Elementen können Kunden Ihr Produkt finden und verstehen. (Dieser Abschnitt hieß früher **Freigegebene Felder**).
+Die nachfolgend beschriebenen Elemente helfen Kunden dabei, Ihr Produkt zu ermitteln und zu verstehen. (Dieser Abschnitt wurde früher als frei **gegebene Felder**bezeichnet.)
 
 ### <a name="search-terms"></a>Suchbegriffe
 
-Suchbegriffe (früher als Schlüsselwörter bezeichnet) sind einzelne Wörter oder kurze Ausdrücke, die für Kunden nicht angezeigt werden, jedoch dazu beitragen, dass Ihre App im Store sichtbar ist, wenn Kunden nach dem Begriff suchen. Sie können bis zu 7 Suchbegriffe mit jeweils maximal 30 Zeichen aufnehmen und nicht mehr als 21 separate Wörter für alle Suchbegriffe verwenden.
+Suchbegriffe (früher als Schlüsselwörter bezeichnet) sind einfache Wörter oder kurze Ausdrücke, die Kunden nicht angezeigt werden, aber Sie können dazu beitragen, dass Ihre APP im Store sichtbar ist, wenn die Kunden diese Begriffe durchsuchen. Sie können bis zu 7 Suchbegriffe mit maximal 30 Zeichen einschließen und dürfen nicht mehr als 21 separate Wörter für alle Suchbegriffe verwenden.
 
-Beim Hinzufügen von Suchbegriffen sollten Sie überlegen, mit welchen Begriffen Kunden nach Ihrer App suchen würden, insbesondere, wenn sie nicht im App-Namen vorkommen. Verwenden Sie nur Suchbegriffe, die wirklich für Ihre App relevant sind.
+Berücksichtigen Sie beim Hinzufügen von Suchbegriffen die Wörter, die Kunden bei der Suche nach apps wie Ihrem verwenden können, insbesondere, wenn Sie nicht Teil des App-namens sind. Achten Sie darauf, keine Suchbegriffe zu verwenden, die für Ihre APP nicht relevant sind.
 
 ### <a name="copyright-and-trademark-info"></a>Urheberrecht- und Markeninformationen
 
@@ -159,15 +159,15 @@ Wenn sich Ihre Lizenzbedingungen von den **Standardbedingungen für anwendungsbe
 
 Wenn Sie einen einzelnen URL in dieses Feld eingeben, wird dieser für Kunden als Link angezeigt, auf den sie klicken können, um Ihre zusätzlichen Lizenzbedingungen zu lesen. Dies ist hilfreich, wenn Ihre zusätzlichen Lizenzbedingungen sehr lang sind, oder wenn Sie Links oder Formatierungen in die zusätzlichen Lizenzbedingungen einschließen möchten, auf die geklickt werden kann.
 
-Sie können auch bis zu 10.000 Zeichen Texts in dieses Feld eingeben. Wenn Sie dies tun, werden Kunden die zusätzlichen Lizenzbedingungen als reiner Text angezeigt.
+Sie können in diesem Feld bis zu 10.000 Zeichen Text eingeben. Wenn Sie dies tun, werden Kunden die zusätzlichen Lizenzbedingungen als reiner Text angezeigt.
 
 ### <a name="developed-by"></a>Entwickelt von
 
-Geben Sie hier Text ein, wenn Sie das Feld **Entwickelt von** im Store-Eintrag Ihrer App anzeigen möchten. (Das Feld **Veröffentlicht von** zeigt den mit Ihrem Konto verknüpften Anzeigename des Herausgebers an, wenn Sie einen Wert für das Feld **Veröffentlicht von** angeben.)
+Geben Sie hier Text ein, wenn Sie ein Feld " **entwickelt von** " in die Store-Auflistung Ihrer APP einschließen möchten. (Im Feld **veröffentlicht von** wird der Anzeige Name des Herausgebers aufgelistet, der Ihrem Konto zugeordnet ist, und zwar unabhängig davon, ob Sie einen Wert für das Feld **entwickelt von** bereitstellen.)
 
-Dieses Feld ist auf 255 Zeichen beschränkt.
+Dieses Feld hat eine Beschränkung von 255 Zeichen.
  
-<span id="privacy-policy" />
+<a name="privacy-policy"></a>
 
 > [!NOTE]
-> Die Felder **Datenschutzrichtlinie**, **Website**, und **Supportkontaktinfos** befinden sich jetzt auf der Seite [Eigenschaften](enter-app-properties.md).
+> Die Felder " **Datenschutzrichtlinie**", " **Website**" und "Support" für **Kontaktinformationen** befinden sich jetzt auf der [Eigenschaften](enter-app-properties.md) Seite.

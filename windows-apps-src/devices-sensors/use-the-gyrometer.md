@@ -4,26 +4,26 @@ title: Verwenden des Gyrometers
 description: Hier erfahren Sie, wie Sie mithilfe des Gyrometers Bewegungsänderungen des Benutzers erkennen.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a5898d4157b216175c77356e5a27b4c58d049d9a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259639"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493125"
 ---
 # <a name="use-the-gyrometer"></a>Verwenden des Gyrometers
 
 
 **Wichtige APIs**
 
--   [**Windows. Devices. Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
+-   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
 -   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
-**Blutprobe**
+**Beispiel**
 
--   Eine umfassendere Implementierung finden Sie unter [Beispiel für ein Gyrometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
+-   Eine umfassendere Implementierung finden Sie im Beispiel für das [Gyrometer-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer).
 
 Hier erfahren Sie, wie Sie mithilfe des Gyrometers Bewegungsänderungen des Benutzers erkennen.
 
@@ -31,7 +31,7 @@ Gyrometer und Beschleunigungssensoren ergänzen sich gegenseitig als Spielecontr
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual C#und-Ereignissen vertraut sein.
+Sie sollten mit XAML (Extensible Application Markup Language), Microsoft Visual C# und Ereignissen vertraut sein.
 
 Das verwendete Gerät oder der Emulator muss ein Gyrometer unterstützen.
 
@@ -39,11 +39,11 @@ Das verwendete Gerät oder der Emulator muss ein Gyrometer unterstützen.
 
 Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnitt enthält die Schritte zum Erstellen einer einfachen Gyrometeranwendung. Im zweiten Unterabschnitt wird die erstellte App dann näher erläutert.
 
-###  <a name="instructions"></a>Anweisungen
+###  <a name="instructions"></a>Instructions
 
 -   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
--   Öffnen Sie die Projektdatei „MainPage.xaml.cs“, und ersetzen Sie den vorhandenen Code durch den folgenden Code:
+-   Öffnen Sie die Projektdatei „MainPage.xaml.cs“, und ersetzen Sie den vorhandenen Code durch den folgenden Code.
 
 ```csharp
     using System;
@@ -108,7 +108,7 @@ Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnit
     }
 ```
 
-Ersetzen Sie den Namespace aus dem vorhergehenden Codeausschnitt durch den Namen, den Sie für Ihr Projekt angegeben haben. Wenn Sie z. B. ein Projekt mit dem Namen **GyrometerCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace GyrometerCS`.
+Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen ersetzen, den Sie für Ihr Projekt angegeben haben. Wenn Sie etwa ein Projekt mit dem Namen **GyrometerCS** erstellt haben, ersetzen Sie `namespace App1` durch `namespace GyrometerCS`.
 
 -   Öffnen Sie die Datei „MainPage.xaml“, und ersetzen Sie den ursprünglichen Inhalt durch den folgenden XML-Code.
 
@@ -134,15 +134,15 @@ Ersetzen Sie den Namespace aus dem vorhergehenden Codeausschnitt durch den Namen
     </Page>
 ```
 
-Ersetzen Sie im obigen Codeausschnitt den ersten Teil des Klassennamens durch den Namespace Ihrer App. Wenn Sie z. B. ein Projekt mit dem Namen **GyrometerCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="GyrometerCS.MainPage"`. Außerdem sollten Sie `xmlns:local="using:App1"` durch `xmlns:local="using:GyrometerCS"` ersetzen.
+Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie etwa ein Projekt mit dem Namen **GyrometerCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="GyrometerCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:GyrometerCS"`.
 
--   Drücken Sie F5, oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
+-   Drücken Sie F5, **oder wählen Sie**  >  **Debuggen Debugging starten** aus, um die APP zu erstellen, bereitzustellen und auszuführen
 
 Wenn die App ausgeführt wird, können Sie die Gyrometerwerte ändern, indem Sie das Gerät bewegen oder die Emulatortools verwenden.
 
--   Beenden Sie die App, indem Sie zu Visual Studio zurückkehren und UMSCHALT+F5 drücken oder **Debuggen** > **Debugging beenden** auswählen.
+-   Halten Sie die APP an, indem Sie zu Visual Studio zurückkehren und UMSCHALT + F5 drücken, **oder wählen Sie**  >  **Debuggen Debuggen** , um die APP
 
-###  <a name="explanation"></a>Erläuterung
+###  <a name="explanation"></a>Erklärung
 
 Das vorherige Beispiel zeigt, wie wenig Code Sie schreiben müssen, um Gyrometerangaben in Ihre App zu integrieren.
 
@@ -180,4 +180,4 @@ Die neuen Werte werden in die TextBlock-Elemente des XAML-Projektcodes geschrieb
 
  ## <a name="related-topics"></a>Verwandte Themen
 
-* [Beispiel für Gyrometer](https://code.msdn.microsoft.com/windowsapps/Gyrometer-Sensor-Sample-4fe891d9)
+* [Gyrometerbeispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Gyrometer%20sensor%20sample%20(Windows%208))

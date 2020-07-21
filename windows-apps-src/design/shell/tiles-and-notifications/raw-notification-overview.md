@@ -5,14 +5,14 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b04e48163af47b7e753bc3bc050e44a947b122fc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5eb90e47a1d821c489e06a9ce19c913eb6702767
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259701"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493235"
 ---
 # <a name="raw-notification-overview"></a>Übersicht über unformatierte Benachrichtigungen
 
@@ -36,7 +36,7 @@ Als Beispiel für eine App, die von der Verwendung unformatierter Benachrichtigu
 Alle unformatierten Benachrichtigungen sind Pushbenachrichtigungen. Daher gilt die zum Senden und Empfangen von Pushbenachrichtigungen erforderliche Konfiguration auch für unformatierte Benachrichtigungen:
 
 -   Sie benötigen einen gültigen WNS-Kanal zum Senden von unformatierten Benachrichtigungen. Weitere Informationen zum Anfordern eines Pushbenachrichtigungskanals finden Sie unter [Anfordern, Erstellen und Speichern eines Benachrichtigungskanals](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10)).
--   Die **Internet**-Funktion muss im App-Manifest hinzugefügt werden. Im Manifest-Editor von Microsoft Visual Studio befindet sich diese Option auf der Registerkarte **Funktionen** unter **Internet (Client)** . Weitere Informationen finden Sie unter [**Funktionen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
+-   Die **Internet**-Funktion muss im App-Manifest hinzugefügt werden. Im Manifest-Editor von Microsoft Visual Studio befindet sich diese Option auf der Registerkarte **Funktionen** unter **Internet (Client)**. Weitere Informationen finden Sie unter [**Funktionen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
 
 Für den Textkörper der Benachrichtigung wird ein von der App definiertes Format verwendet. Der Client empfängt die Daten als eine mit Null beendete Zeichenfolge (**HSTRING**), die nur von der App verstanden werden muss.
 
@@ -74,7 +74,7 @@ Eine App kann beide Mechanismen zum Empfangen von unformatierten Benachrichtigun
 
 Ihre App kann über ein Benachrichtigungsübermittlungsereignis ([**PushNotificationReceived**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel.PushNotificationReceived)) unformatierte Benachrichtigungen erhalten, während die App verwendet wird. Wenn der Clouddienst eine unformatierte Benachrichtigung sendet, kann die aktive App die Benachrichtigung empfangen, indem sie das Benachrichtigungsübermittlungsereignis für den Kanal-URI behandelt.
 
-Falls die App nicht aktiv ist und keine [Hintergrundaufgaben](#background-tasks-triggered-by-raw-notifications) verwendet, werden alle an sie gesendeten unformatierten Benachrichtigungen beim Empfang von WNS verworfen. Um zu verhindern, dass Ressourcen des Clouddiensts vergeudet werden, sollten Sie ggf. eine Logik implementieren, mit der der Dienst nachverfolgen kann, ob die App aktiv ist. Für diese Informationen kommen zwei Quellen in Frage: Eine App kann dem Dienst explizit mitteilen, dass sie für den Empfang von Benachrichtigungen bereit ist, und WNS kann dem Dienst mitteilen, wann er die Übermittlung beenden soll.
+Wenn Ihre APP nicht ausgeführt wird und keine [Hintergrundaufgaben](#background-tasks-triggered-by-raw-notifications)verwendet, werden alle an diese APP gesendeten rohbenachrichtigungen von WNS bei der Bestätigung gelöscht. Um zu verhindern, dass Ressourcen des Clouddiensts vergeudet werden, sollten Sie ggf. eine Logik implementieren, mit der der Dienst nachverfolgen kann, ob die App aktiv ist. Für diese Informationen kommen zwei Quellen in Frage: Eine App kann dem Dienst explizit mitteilen, dass sie für den Empfang von Benachrichtigungen bereit ist, und WNS kann dem Dienst mitteilen, wann er die Übermittlung beenden soll.
 
 -   **Die App benachrichtigt den Clouddienst**: Die App kann eine Verbindung mit dem Dienst herstellen, um ihm mitzuteilen, dass sie im Vordergrund ausgeführt wird. Der Nachteil bei diesem Ansatz ist, dass die App u. U. sehr oft eine Verbindung mit dem Dienst herstellt. Der Vorteil ist jedoch, dass der Dienst immer weiß, wann die App für den Empfang eingehender unformatierter Benachrichtigungen bereit ist. Ein weiterer Vorteil: Wenn die App eine Verbindung mit dem Dienst herstellt, kann der Dienst unformatierte Benachrichtigungen an die spezifische Instanz der App senden, anstatt einen Broadcast zu senden.
 -   **Der Clouddienst antwortet auf WNS-Antwortnachrichten**: Der App-Dienst kann anhand der von WNS zurückgegebenen Informationen [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) und [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) feststellen, wann keine unformatierten Benachrichtigungen mehr an die App gesendet werden sollen. Wenn Ihr Dienst eine Benachrichtigung als HTTP-POST an einen Kanal sendet, kann er als Antwort eine der folgenden Nachrichten erhalten:
@@ -104,7 +104,7 @@ Zur Veranschaulichung der Funktionsweise von Hintergrundaufgaben, die durch unfo
 Um eine Hintergrundaufgabe mit einer unformatierten Benachrichtigung auszulösen, muss Ihre App:
 
 1.  die Berechtigung zum Ausführen von Hintergrundaufgaben (die der Benutzer jederzeit widerrufen kann) über [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_) anfordern.
-2.  die Hintergrundaufgabe implementieren. Weitere Informationen finden Sie unter [Unterstützen der App mit Hintergrundaufgaben](../../../launch-resume/support-your-app-with-background-tasks.md).
+2.  die Hintergrundaufgabe implementieren. Weitere Informationen finden [Sie unter unterstützen der APP mit Hintergrundaufgaben](../../../launch-resume/support-your-app-with-background-tasks.md) .
 
 Die Hintergrundaufgabe wird dann jedes Mal als Reaktion auf den [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) aufgerufen, wenn eine unformatierte Benachrichtigung für die App empfangen wird. Die Hintergrundaufgabe interpretiert die App-spezifische Nutzlast der unformatierten Benachrichtigung und führt die entsprechenden Aktionen aus.
 
@@ -113,15 +113,15 @@ Für jede App kann jeweils nur eine Hintergrundaufgabe ausgeführt werden. Wird 
 ## <a name="other-resources"></a>Weitere Ressourcen
 
 
-Weitere Informationen finden Sie unter Herunterladen des Beispiels für unformatierte [Benachrichtigungen](https://code.msdn.microsoft.com/windowsapps/Raw-notifications-sample-3bc28c5d) für Windows 8.1 und das [Beispiel für Pushbenachrichtigungen und periodische Benachrichtigungen](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603) für Windows 8.1 und wieder verwenden Ihres Quellcodes in Ihrer Windows 10-app.
+Weitere Informationen erhalten Sie, indem Sie das [Beispiel für unformatierte Benachrichtigungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Raw%20notifications%20sample%20(Windows%208)) für Windows 8.1 und das [Beispiel für Pushbenachrichtigungen und regelmäßige Benachrichtigungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) für Windows 8.1 herunterladen und den Quellcode in Ihrer Windows 10-App wiederverwenden.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Richtlinien für unformatierte Benachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
-* [Schnellstart: Erstellen und Registrieren einer unformatierten Benachrichtigungs Hintergrundaufgabe](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
-* [Schnellstart: Abfangen von Pushbenachrichtigungen für laufende Apps](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
-* [**Rawnotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
-* [**Backgroundexecutionmanager. requestaccessasync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
+* [Schnellstart: Erstellen und Registrieren einer Hintergrundaufgabe, für die unformatierte Benachrichtigungen verwendet werden](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
+* [Schnellstart: Abfangen von Pushbenachrichtigungen für aktive Apps](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
+* [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
+* [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  
 
  

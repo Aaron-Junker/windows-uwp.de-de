@@ -2,16 +2,16 @@
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: Sensorausrichtung
 description: Sensordaten der Klassen Accelerometer, Gyrometer, Compass, Inclinometer und OrientationSensor sind durch ihre Referenzachsen definiert. Diese Achsen werden durch das Querformat des Geräts bestimmt und drehen sich mit dem Gerät, wenn es vom Benutzer gedreht wird.
-ms.date: 05/24/2017
+ms.date: 07/03/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4659aaba330d3b41451e91e450ff601e3fcf5407
-ms.sourcegitcommit: 42a2d9e47f682ba42d91fed587f4d5924bde9c9a
+ms.openlocfilehash: b61b7bcd18419ec9be719b5f565e5503953be7c3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85840764"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493469"
 ---
 # <a name="sensor-orientation"></a>Sensorausrichtung
 
@@ -26,7 +26,12 @@ Sensordaten der Klassen [**Accelerometer**](https://docs.microsoft.com/uwp/api/W
 
 Um die Referenzachse für Sensoren begreifen zu können, muss zwischen Bildschirmausrichtung und Geräteausrichtung unterschieden werden. Bei der Bildschirmausrichtung handelt es sich um die Richtung, in der Text und Bilder auf dem Bildschirm angezeigt werden, wohingegen es sich bei der Geräteausrichtung um die physische Position des Geräts handelt.
 
-In den folgenden Diagrammen befinden sich sowohl das Gerät als auch die Anzeige Ausrichtung im [quer](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) Format (die angezeigten Sensor Achsen sind spezifisch für die Querformat Ausrichtung), wobei die positive z-Achse vom Gerät erweitert wird.
+> [!NOTE]
+> Die positive z-Achse erweitert den Bildschirm des Geräts, wie in der folgenden Abbildung dargestellt.
+> :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="Z-Achse für Laptop":::
+
+In den folgenden Diagrammen befinden sich sowohl das Gerät als auch die Anzeige Ausrichtung im [quer](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) Format (die angezeigten Sensor Achsen sind spezifisch für Querformat).
+
 
 Dieses Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung im [quer](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)Format an.
 
@@ -34,11 +39,11 @@ Dieses Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung im [qu
 
 Das nächste Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung in " [landscapeflipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)" an.
 
-![Bildschirm- und Geräteausrichtung im LandscapeFlipped-Format](images/sensor-orientation-b-small.jpg)
+:::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="Bildschirm- und Geräteausrichtung im LandscapeFlipped-Format":::
 
 In diesem abschließenden Diagramm wird die Anzeige Ausrichtung im Querformat dargestellt, während die Geräte Ausrichtung [Landschafts](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)basiert ist.
 
-![Bildschirmausrichtung im Querformat und Geräteausrichtung im LandscapeFlipped-Format](images/sensor-orientation-c-small.jpg)
+:::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="Bildschirmausrichtung im Querformat und Geräteausrichtung im LandscapeFlipped-Format":::
 
 Sie können die Ausrichtungswerte mithilfe der [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation)-Klasse abfragen, indem Sie die [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview)-Methode mit der [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation)-Eigenschaft verwenden. Anschließend können Sie durch einen Vergleich mit der [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)-Enumeration eine Logik erstellen. Bedenken Sie, dass Sie für jede unterstützte Ausrichtung eine Konvertierung der Referenzachsen in die jeweilige Ausrichtung unterstützen müssen.
 
@@ -48,10 +53,10 @@ Hersteller bieten Geräte an, die sowohl für das Quer- als auch das Hochformat 
 
 | Ausrichtung | Für Querformat ausgelegt | Für Hochformat ausgelegt |
 |-------------|-----------------|----------------|
-| **Querformat** | ![Querformatgerät im Querformat](images/sensor-orientation-0-small.jpg) | ![Hochformatgerät im Querformat](images/sensor-orientation-1-small.jpg) |
-| **Hochformat** | ![Querformatgerät im Hochformat](images/sensor-orientation-2-small.jpg) | ![Hochformatgerät im Hochformat](images/sensor-orientation-3-small.jpg) |
-| **LandscapeFlipped** | ![Querformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-4-small.jpg) | ![Hochformatgerät in LandscapeFlipped-Ausrichtung](images/sensor-orientation-5-small.jpg) | 
-| **PortraitFlipped** | ![Querformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-6-small.jpg)| ![Hochformatgerät in PortraitFlipped-Ausrichtung](images/sensor-orientation-7-small.jpg) |
+| **Querformat** | :::image type="content" source="images/sensor-orientation-0-small.jpg" alt-text="Querformatgerät im Querformat"::: | :::image type="content" source="images/sensor-orientation-1-small.jpg" alt-text="Hochformatgerät im Querformat"::: |
+| **Hochformat** | :::image type="content" source="images/sensor-orientation-2-small.jpg" alt-text="Querformatgerät im Hochformat"::: | :::image type="content" source="images/sensor-orientation-3-small.jpg" alt-text="Hochformatgerät im Hochformat"::: |
+| **LandscapeFlipped** | :::image type="content" source="images/sensor-orientation-4-small.jpg" alt-text="Querformatgerät in LandscapeFlipped-Ausrichtung"::: | :::image type="content" source="images/sensor-orientation-5-small.jpg" alt-text="Hochformatgerät in LandscapeFlipped-Ausrichtung":::
+| **PortraitFlipped** | :::image type="content" source="images/sensor-orientation-6-small.jpg" alt-text="Querformatgerät in PortraitFlipped-Ausrichtung"::: | :::image type="content" source="images/sensor-orientation-7-small.jpg" alt-text="Hochformatgerät in PortraitFlipped-Ausrichtung"::: |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>Geräte, die die Anzeige übertragen, und monitorlose Geräte
 
@@ -159,13 +164,13 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>Bildschirmausrichtung und Geräteausrichtung
 
-Die [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)-Daten müssen auf andere Weise geändert werden. Betrachten Sie diese verschiedenen Ausrichtungen als Drehungen gegen den Uhrzeigersinn zur Z-Achse, sodass wir die Drehung umkehren müssen, um die Ausrichtung des Benutzers zurückzusetzen. Für Quaterniondaten können wir anhand der eulerschen Formel eine Drehung mit einer Referenzquaternion definieren, und außerdem können wir eine Referenzdrehungsmatrix verwenden.
+Die [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)-Daten müssen auf andere Weise geändert werden. Betrachten Sie diese verschiedenen Ausrichtungen als Drehungen gegen den Uhrzeigersinn zur z-Achse, sodass wir die Drehung umkehren müssen, um die Ausrichtung des Benutzers zurückzusetzen. Für Quaterniondaten können wir anhand der eulerschen Formel eine Drehung mit einer Referenzquaternion definieren, und außerdem können wir eine Referenzdrehungsmatrix verwenden.
 
-![Eulersche Formel](images/eulers-formula.png)
+:::image type="content" source="images/eulers-formula.png" alt-text="Eulersche Formel":::
 
 Um die gewünschte relative Ausrichtung zu erhalten, multiplizieren Sie das Referenzobjekt mit dem absoluten Objekt. Beachten Sie, dass diese Berechnung nicht kommutativ ist.
 
-![Multiplizieren des Referenzobjekts mit dem absoluten Objekt](images/orientation-formula.png)
+:::image type="content" source="images/orientation-formula.png" alt-text="Multiplizieren des Referenzobjekts mit dem absoluten Objekt":::
 
 Im vorangehenden Ausdruck wird das absolute Objekt von den Sensordaten zurückgegeben.
 
@@ -176,6 +181,6 @@ Im vorangehenden Ausdruck wird das absolute Objekt von den Sensordaten zurückge
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1 0 0<br/> 0 0 1]             |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Integrieren von Bewegungs- und Ausrichtungssensoren](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)

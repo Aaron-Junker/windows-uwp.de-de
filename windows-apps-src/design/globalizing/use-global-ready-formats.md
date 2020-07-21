@@ -1,38 +1,38 @@
 ---
-Description: Gestalten Sie Ihre App so, dass sie global einsetzbar ist, indem Sie Datum, Uhrzeit, Telefonnummern und Währungen entsprechend formatieren. Dadurch können Sie Ihre App später zur weltweiten Vermarktung für weitere Kulturkreise, Regionen und Sprachen anpassen.
-title: Globalisieren von Datum, Uhrzeit und Zahlenformaten
+Description: Entwerfen Sie Ihre APP so, dass Sie Global bereit ist, indem Sie Datumsangaben, Uhrzeiten, Zahlen, Telefonnummern und Währungen entsprechend formatieren. Anschließend können Sie Ihre APP später für weitere Kulturen, Regionen und Sprachen auf dem globalen Markt anpassen.
+title: Globalisieren von Datums-, Uhrzeit- und Zahlenformaten
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
-keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
+keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 54846cd350e8f91f7ba664690cfd4dd7e36c129e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 798199269a4fd02eebef7dcd46cd5781ba561250
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258045"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493425"
 ---
-# <a name="globalize-your-datetimenumber-formats"></a>Globalisieren von Datum, Uhrzeit und Zahlenformaten
+# <a name="globalize-your-datetimenumber-formats"></a>Globalisieren von Datums-, Uhrzeit- und Zahlenformaten
 
-Gestalten Sie Ihre App so, dass sie global einsetzbar ist, indem Sie Datum, Uhrzeit, Telefonnummern und Währungen entsprechend formatieren. Dadurch können Sie Ihre App später zur weltweiten Vermarktung für weitere Kulturkreise, Regionen und Sprachen anpassen.
+Entwerfen Sie Ihre APP so, dass Sie Global bereit ist, indem Sie Datumsangaben, Uhrzeiten, Zahlen, Telefonnummern und Währungen entsprechend formatieren. Anschließend können Sie Ihre APP später für weitere Kulturen, Regionen und Sprachen auf dem globalen Markt anpassen.
 
 ## <a name="introduction"></a>Einführung
 
-Wenn Sie bei der Erstellung Ihrer App nicht nur Ihre Sprache und Kultur berücksichtigen, werden nur wenige (oder keine) Probleme auftreten, sobald Sie für Ihre App neue Märkte erschließen. Datumsangaben, Uhrzeiten, Zahlen, Kalender, Währungen, Telefonnummern, Maßeinheiten und Papierformate sind Beispiele für Elemente, die in den verschiedenen Kulturen oder Sprachen anders angezeigt werden können.
+Wenn Sie bei der Erstellung Ihrer APP in großem Umfang als eine Sprache und eine Kultur betrachten, haben Sie weniger (wenn überhaupt) unerwartete Probleme, wenn Ihre APP in neue Märkte wächst. Datumsangaben, Uhrzeiten, Zahlen, Kalender, Währungen, Telefonnummern, Maßeinheiten und Papierformate sind Beispiele für Elemente, die in den verschiedenen Kulturen oder Sprachen anders angezeigt werden können.
 
-Verschiedene Regionen und Kulturen verwenden unterschiedliche Formate für Datum und Uhrzeit. Dazu gehören unterschiedliche Konventionen für die Reihenfolge von Tag und Monat im Datum, für die Trennung von Stunden und Minuten und sogar für das zu verwendende Trennzeichen. Zudem kann das Datum in verschiedenen langen Formaten (Mittwoch, 28. März 2012) oder kurzen Formaten (28.03.12) angezeigt werden, die je nach Kultur variieren können. Und natürlich sind die Namen und Kurzformen für die Wochentage und Monate in jeder Sprache unterschiedlich.
+Für unterschiedliche Regionen und Kulturen werden verschiedene Datums-und Uhrzeit Formate verwendet. Hierzu gehören Konventionen für die Reihenfolge von Tag und Monat im Datum, für die Trennung von Stunden und Minuten in der Zeit und sogar für das, was als Trennzeichen verwendet wird. Außerdem können Datumsangaben in verschiedenen langen Formaten ("Mittwoch, am 28. März 2012") oder in kurzen Formaten ("3/28/12") angezeigt werden, die sich zwischen Kulturen unterscheiden. Und natürlich unterscheiden sich die Namen und Abkürzungen für die Wochentage und Monate des Jahres zwischen den Sprachen.
 
-Sie können eine Vorschau der für verschiedene Sprachen verwendeten Formate anzeigen. Wählen Sie **Einstellungen** > **Zeit und Sprache** > **Region und Sprache**, und klicken Sie auf **Zusätzliche Datums-, Uhrzeit- und Ländereinstellungen** > **Datums-, Uhrzeit- oder Zahlenformat ändern**. Auf der Registerkarte **Formate** wählen Sie eine Sprache aus der Dropdownliste **Format** und erhalten eine Vorschau der Formate in **Beispiele**.
+Sie können eine Vorschau der Formate verwenden, die für verschiedene Sprachen verwendet werden. Wechseln Sie zu **Einstellungen**  >  **Zeit & sprach**  >  **Region & Sprache**, und klicken Sie auf **zusätzliche Datums-, Uhrzeit-und & regionale Einstellungen**  >  **Ändern von Datums-, Uhrzeit-oder Zahlenformaten**. Wählen Sie auf der Registerkarte **Formate** eine Sprache aus der Dropdown-Dropdown- **Datei** aus, und zeigen Sie die Formate in den **Beispielen**an
 
-In diesem Thema werden die Begriffe „Benutzerprofil-Sprachenliste”, „App-Manifest-Sprachenliste” und „App-Laufzeit-Sprachenliste” verwendet. Einzelheiten dazu, was genau diese Begriffe bedeuten und wie sie auf ihre Werte zugreifen können, finden Sie unter [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md).
+In diesem Thema werden die Begriffe "Benutzerprofil-Sprachliste", "App-Manifest-Sprachliste" und "App-Lauf Zeit Sprachliste" verwendet. Ausführliche Informationen dazu, was diese Begriffe bedeuten und wie Sie auf ihre Werte zugreifen, finden Sie Untergrund Legendes zu [Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md).
 
-## <a name="format-dates-and-times-for-the-app-runtime-language-list"></a>Formatieren von Datumsangaben und Uhrzeiten für die App-Laufzeit-Sprachenliste
+## <a name="format-dates-and-times-for-the-app-runtime-language-list"></a>Formatieren von Datums-und Uhrzeitangaben für die Anwendungs-Runtime
 
-Wenn Sie Benutzern erlauben möchten, ein Datum oder eine Uhrzeit auszuwählen, sollten Sie die Standardsteuerelemente für [Kalender, Datum und Uhrzeit](../controls-and-patterns/date-and-time.md) verwenden. Diese verwenden automatisch das beste Datums- und Zeitformat für die App-Laufzeit-Sprachenliste.
+Wenn Sie zulassen möchten, dass Benutzer ein Datum auswählen oder eine Uhrzeit auswählen, verwenden Sie die Standard Steuer [Elemente für Kalender, Datum und Uhrzeit](../controls-and-patterns/date-and-time.md). Diese verwenden automatisch das beste Datums-und Uhrzeit Format für die Sprachliste der APP-Laufzeit.
 
-Zur Anzeige von Datumsangaben oder Uhrzeiten können Sie die Klasse [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) verwenden. Standardmäßig verwendet **DateTimeFormatter** automatisch das beste Datums- und Zeitformat für die App-Laufzeit-Sprachenliste. Der folgende Code formatiert also einen gegebenen **DateTime**-Wert optimal für diese Liste. Nehmen wir zum Beispiel an, dass die App-Manifest-Sprachenliste Englisch (USA) als Standardsprache und zudem Deutsch (Deutschland) enthält. Wenn das aktuelle Datum „Nov 6 2017” ist und die Benutzerprofil-Sprachenliste Deutsch (Deutschland) als erste Sprache enthält, gibt der Formatierer „06.11.2017” zurück. Wenn die Benutzerprofil-Sprachenliste zuerst Englisch (USA) enthält (oder wenn sie weder Englisch noch Deutsch enthält), gibt der Formatierer „11/6/2017” zurück (da „en-US” übereinstimmt oder als Standard verwendet wird) ).
+Wenn Sie Datumsangaben oder Uhrzeiten Selbstanzeigen müssen, können Sie die [**datetimeformatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) -Klasse verwenden. Standardmäßig verwendet **datetimeformatter** automatisch das beste Datums-und Uhrzeit Format für die Sprachliste der APP-Laufzeit. Der folgende Code formatiert einen gegebenen **DateTime** -Wert in der besten Weise für diese Liste. Nehmen Sie beispielsweise an, dass Ihre APP-Manifest-Sprachliste Englisch (USA) enthält. Dies ist auch die Standardeinstellung und Deutsch (Deutschland). Wenn das aktuelle Datum 6 2017 ist und die Benutzerprofil-Sprachliste zuerst Deutsch (Deutschland) enthält, gibt das Formatierer "06.11.2017" an. Wenn die Benutzerprofil-Sprachliste zuerst Englisch (USA) enthält (oder wenn Sie weder Englisch noch Deutsch enthält), gibt der Formatierer "11/6/2017" (da "en-US" übereinstimmt oder als Standard verwendet wird).
 
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
@@ -49,16 +49,16 @@ Zur Anzeige von Datumsangaben oder Uhrzeiten können Sie die Klasse [**DateTimeF
                   "Short Time: " + shortTime;
 ```
 
-Sie können den Code oben auf Ihrem eigenen PC wie folgt testen.
+Sie können den obigen Code auf Ihrem eigenen PC wie folgt testen.
 
-- Stellen Sie sicher, dass die Ressourcendateien in Ihrem Projekt sowohl für „en-US”" als auch für „de-DE” qualifiziert sind (siehe [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md)).
-- Ändern Sie die Benutzerprofil-Sprachenliste unter **Einstellungen** > **Zeit und Sprache** > **Region und Sprache** > **Sprachen**. Fügen Sie Deutsch (Deutschland) als Standardsprache hinzu, und führen Sie den Code erneut aus.
+- Stellen Sie sicher, dass Sie Ressourcen Dateien in Ihrem Projekt für "en-US" und "de-de" qualifiziert haben (Weitere Informationen finden Sie unter [Anpassen von Ressourcen für Sprache, Skalierung, hoher Kontrast und andere Qualifizierer](../../app-resources/tailor-resources-lang-scale-contrast.md)).
+- Ändern Sie die Liste der Benutzerprofil Sprachen in **Einstellungen**  >  **Zeit & sprach**  >  **Region &** Sprachen  >  **Sprachen**. Fügen Sie Deutsch (Deutschland) hinzu, machen Sie die Standardeinstellung, und führen Sie den Code erneut aus.
 
-## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>Formatieren von Datumsangaben und Uhrzeiten für die Benutzerprofil-Sprachenliste
+## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>Formatieren von Datums-und Uhrzeitwerten für die Benutzerprofil Sprache
 
-Denken Sie daran, dass **DateTimeFormatter** standardmäßig die App-Runtime-Sprachenliste übereinstimmt. Daher wird bei der Anzeige einer Zeichenfolge wie „Das Datum ist der &lt;date&gt;” die Sprache dem Datumsformat entsprechen.
+Beachten Sie, dass **datetimeformatter** standardmäßig mit der Sprache der APP-Lauf Zeit Sprache übereinstimmt. Wenn Sie z. b. Zeichen folgen wie "date is &lt; Date &gt; " anzeigen, entspricht die Sprache dem Datumsformat.
 
-Wenn Sie Daten und/oder Uhrzeiten aus irgendeinem Grund nur gemäß der Benutzerprofil-Sprachenliste formatieren möchten, können Sie dies mithilfe von Code wie im folgenden Beispiel tun. Aber in diesem Fall können Sie nicht ausschließen, dass der Benutzer eine Sprache wählt, für die Ihre App keine Zeichenfolgen übersetzt hat. Wenn Ihre App beispielsweise nicht in Deutsch (Deutschland) lokalisiert ist, aber der Benutzer diese Sprache als bevorzugte Sprache auswählt, kann dies zur Anzeige einer Zeichenfolgen wie „Das Datum ist der 06.11.2017” führen.
+Wenn Sie aus irgendeinem Grund Datums-und/oder Uhrzeiten nur entsprechend der Benutzerprofil-Sprachliste formatieren möchten, können Sie dies mithilfe von Code wie dem folgenden Beispiel tun. Wenn Sie dies jedoch tun, wissen Sie, dass der Benutzer eine Sprache auswählen kann, für die Ihre APP nicht übersetzte Zeichen folgen verfügt. Wenn Ihre APP z. b. nicht in Deutsch (Deutschland) lokalisiert ist, aber der Benutzer diese als bevorzugte Sprache auswählt, kann dies dazu führen, dass ganz ungerade aussehende Zeichen folgen wie "das Datum ist 06.11.2017" angezeigt werden.
 
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
@@ -72,9 +72,9 @@ Wenn Sie Daten und/oder Uhrzeiten aus irgendeinem Grund nur gemäß der Benutzer
 
 ## <a name="format-numbers-and-currencies-appropriately"></a>Formatieren Sie Zahlen und Währungen entsprechend
 
-In verschiedenen Kulturen werden Zahlen unterschiedlich formatiert. Formatunterschiede können sich auf Folgendes beziehen: wie viele Dezimalziffern angezeigt werden, welche Zeichen als Dezimaltrennzeichen verwendet werden und welches Währungssymbol verwendet wird. Verwenden Sie Klassen aus dem Namespace [**NumberFormatting**](/uwp/api/windows.globalization.numberformatting?branch=live), um Dezimal-, Prozent- oder Promillezahlen und Währungen anzuzeigen. In den meisten Fällen wird es Ihre Absicht sein, dass diese Formatierungsklassen das beste Format für das Benutzerprofil verwenden. Sie können die Formatierer aber auch verwenden, um eine Währung für eine beliebige Region oder ein beliebiges Format anzuzeigen.
+In verschiedenen Kulturen werden Zahlen unterschiedlich formatiert. Formatunterschiede können sich auf Folgendes beziehen: wie viele Dezimalziffern angezeigt werden, welche Zeichen als Dezimaltrennzeichen verwendet werden und welches Währungssymbol verwendet wird. Verwenden Sie Klassen im Namespace " [**nummeriformatierung**](/uwp/api/windows.globalization.numberformatting?branch=live) ", um Dezimal-, Prozent-oder perpromille Zahlen sowie Währungen anzuzeigen. In den meisten Fällen möchten Sie, dass diese Formatierungs Klassen das beste Format für das Benutzerprofil verwenden. Sie können jedoch die Formatierer verwenden, um eine Währung für eine beliebige Region oder ein beliebiges Format anzuzeigen.
 
-Dieses Beispiel zeigt, wie Währungen sowohl für das Benutzerprofil als auch für ein bestimmtes Währungssystem angezeigt werden.
+Dieses Beispiel zeigt, wie Währungen sowohl für das Benutzerprofil als auch für ein bestimmtes bestimmtes Währungssystem angezeigt werden.
 
 ```csharp
     // This scenario uses the CurrencyFormatter class to format a number as a currency.
@@ -104,23 +104,23 @@ Dieses Beispiel zeigt, wie Währungen sowohl für das Benutzerprofil als auch f�
                     "Formatted Euro (fr-FR defaults): " + currencyValueEuroFR;
 ```
 
-Sie können den nachstehenden Code auf Ihrem PC testen. Ändern Sie dazu Land oder Region unter **Einstellungen** > **Zeit und Sprache** > **Region und Sprache** > **Land oder Region**. Wählen Sie ein Land oder eine Region (z. B. Island), und führen Sie den Code erneut aus.
+Sie können den obigen Code auf Ihrem eigenen PC testen, indem Sie das Land oder die Region in der **Einstellungs**  >  **Zeit & sprach**  >  **Region & Sprachen**  >  **Land oder der Region**ändern. Wählen Sie ein Land oder eine Region (vielleicht Island) aus, und führen Sie den Code erneut aus.
 
 ## <a name="use-a-culturally-appropriate-calendar"></a>Verwenden Sie einen kulturspezifischen Kalender
 
-Der Kalender ist für verschiedene Regionen und Sprachen unterschiedlich. Der gregorianische Kalender ist nicht der Standardkalender für alle Regionen. In einigen Regionen wählen Benutzer möglicherweise alternative Kalender aus, z. B. den japanischen Era-Kalender oder den arabischen Mondkalender. In Datumsangaben und Uhrzeiten im Kalender werden auch verschiedene Zeitzonen und Sommerzeiten berücksichtigt.
+Der Kalender ist für verschiedene Regionen und Sprachen unterschiedlich. Der gregorianische Kalender ist nicht der Standardkalender für alle Regionen. Benutzer in einigen Regionen können alternative Kalender auswählen, z. b. den Kalender des japanischen Zeitraums oder arabische Mondkalender. Datums-und Uhrzeitangaben im Kalender sind auch für unterschiedliche Zeitzonen und Sommerzeit empfindlich.
 
-Um sicherzustellen, dass das bevorzugte Kalenderformat verwendet wird, können Sie die standardmäßigen [Steuerelemente für Kalender, Datum und Uhrzeit](../controls-and-patterns/date-and-time.md) verwenden. Für komplexere Szenarien, in denen direkt mit Vorgängen in Bezug auf das Kalenderdatum gearbeitet werden muss, stellt **Windows.Globalization** eine [**Calendar**](/uwp/api/windows.globalization.calendar?branch=live)-Klasse bereit, die eine passende Kalenderdarstellung für die jeweilige Kultur, Region und den Kalendertyp ermöglicht.
+Um sicherzustellen, dass das bevorzugte Kalender Format verwendet wird, können Sie die Standard Steuer [Elemente für Kalender, Datum und Uhrzeit](../controls-and-patterns/date-and-time.md)verwenden. Bei komplexeren Szenarien, in denen die direkte Verwendung von Vorgängen für Kalenderdaten erforderlich ist, stellt **Windows. Globalization** eine [**Kalender**](/uwp/api/windows.globalization.calendar?branch=live) Klasse bereit, die eine entsprechende Kalenderdarstellung für die angegebene Kultur, Region und den angegebenen Kalendertyp bereitstellt.
 
 ## <a name="format-phone-numbers-appropriately"></a>Formatieren Sie Telefonnummern entsprechend
 
-Telefonnummern werden in verschiedenen Regionen unterschiedlich formatiert. Die Anzahl der Stellen, die Gruppierung der Ziffern und die Bedeutung bestimmter Teile der Telefonnummer variieren zwischen verschiedenen Ländern. Ab Windows 10, Version 1607, können Sie Klassen aus dem Namespace [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) verwenden, um Telefonnummern gemäß der aktuellen Region zu formatieren.
+Telefonnummern werden in verschiedenen Regionen unterschiedlich formatiert. Die Anzahl der Ziffern, die Art und Weise, wie die Ziffern gruppiert werden, und die Bedeutung bestimmter Teile der Telefonnummer variieren zwischen den Ländern. Ab Windows 10, Version 1607, können Sie Klassen im [**phonenumberformatierung**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) -Namespace verwenden, um die Telefonnummern für den aktuellen Bereich entsprechend zu formatieren.
 
 [**Phonenumberinfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) analysiert eine Zeichenfolge mit Ziffern und ermöglicht Ihnen Folgendes: bestimmen Sie, ob die Ziffern eine gültige Telefonnummer in der aktuellen Region sind. Vergleicht zwei Zahlen auf Gleichheit. und, um die verschiedenen funktionalen Teile der Telefonnummer zu extrahieren, z. b. Ländercode oder geografischer flächencode.
 
-[**Phonenumberformatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) formatiert eine Zeichenfolge oder eine **phonenumberinfo** für die Anzeige, auch wenn die Zeichenfolge eine partielle Telefonnummer darstellt. Sie können diese partielle Nummernformatierung verwenden, um eine Zahl zu formatieren, die gerade von einem Benutzer eingegeben wird.
+[**Phonenumberformatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) formatiert eine Zeichenfolge oder eine **phonenumberinfo** für die Anzeige, auch wenn die Zeichenfolge eine partielle Telefonnummer darstellt. Mit dieser partiellen Zahlen Formatierung können Sie eine Zahl formatieren, wenn ein Benutzer die Zahl eingibt.
 
-Das folgende Beispiel veranschaulicht die Verwendung von **PhoneNumberFormatter** zum Formatieren einer Telefonnummer, die gerade eingegeben wird. Sobald sich der Text in einer **TextBox** mit dem Namen „phoneNumberInputTextBox“ ändert, wird der Inhalt des Textfelds gemäß der aktuellen Standardregion formatiert und in einem **TextBlock** mit dem Namen „phoneNumberOutputTextBlock“ angezeigt. Zu Demonstrationszwecken wird die Zeichenfolge auch für die Region Neuseeland formatiert und in einem TextBlock mit dem Namen phoneNumberOutputTextBlockNZ angezeigt.
+Das folgende Beispiel zeigt, wie Sie **phonenumberformatter** verwenden, um eine Telefonnummer zu formatieren, während Sie eingegeben wird. Jedes Mal, wenn Text in einem **Textfeld** mit dem Namen "phonenumberinputtextbox" geändert wird, wird der Inhalt des Textfelds mit dem aktuellen Standardbereich formatiert und in einem **TextBlock** mit dem Namen "phonenumberoutputtextblock" angezeigt. Zu Demonstrationszwecken wird die Zeichenfolge auch mit der Region für Neuseeland formatiert und in einem TextBlock mit dem Namen "phonenumberoutputtextblocknz" angezeigt.
   
 ```csharp
     using Windows.Globalization.PhoneNumberFormatting;
@@ -151,15 +151,15 @@ Das folgende Beispiel veranschaulicht die Verwendung von **PhoneNumberFormatter*
     }
 ```    
 
-Sie können den nachstehenden Code auf Ihrem PC testen. Ändern Sie dazu Land oder Region unter **Einstellungen** > **Zeit und Sprache** > **Region und Sprache** > **Land oder Region**. Wählen Sie ein Land oder eine Region aus (z. B. Neuseeland, um zu prüfen, ob die Formate stimmen), und führen Sie den Code erneut aus. Für Testdaten können Sie eine Websuche nach der Telefonnummer eines Unternehmens in Neuseeland durchführen.
+Sie können den obigen Code auf Ihrem eigenen PC testen, indem Sie das Land oder die Region in der **Einstellungs**  >  **Zeit & sprach**  >  **Region & Sprachen**  >  **Land oder der Region**ändern. Wählen Sie ein Land oder eine Region (vielleicht Neuseeland, um zu bestätigen, dass die Formate entsprechen), und führen Sie den Code erneut aus. Für Testdaten können Sie eine Websuche nach der Telefonnummer eines Unternehmens in Neuseeland durchführen.
 
-## <a name="the-users-language-and-cultural-preferences"></a>Sprach- und Kultureinstellungen des Benutzers
+## <a name="the-users-language-and-cultural-preferences"></a>Benutzersprache und Kultur Einstellungen
 
-Für Szenarien, in denen Sie basierend auf den Sprach-, Regions- und Kultureinstellungen des Benutzers unterschiedliche Funktionen bereitstellen möchten, bietet Windows die Möglichkeit, über [**Windows.System.UserProfile.GlobalizationPreferences**](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live) auf diese Einstellungen zuzugreifen. Verwenden Sie bei Bedarf die **GlobalizationPreferences**-Klasse, um den Wert der aktuellen Region des Benutzers sowie die bevorzugten Sprachen, Währungen usw. zu ermitteln. Aber vergessen Sie nicht: Wenn die Zeichenfolgen/Bilder Ihrer App nicht für die bevorzugte Sprache des Benutzers lokalisiert sind, werden Datum, Uhrzeit und andere Daten, die für diese bevorzugte Sprache formatiert sind, nicht mit den Zeichenfolgen übereinstimmen, die Sie anzeigen.
+Für Szenarien, in denen Sie unterschiedliche Funktionen bereitstellen möchten, die ausschließlich auf der Sprache, der Region oder den kulturellen Einstellungen des Benutzers basieren, bietet Windows Ihnen eine Möglichkeit, überWindows.System auf diese Einstellungen zuzugreifen [**. User Profile. globalizationpreferences**](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live). Verwenden Sie bei Bedarf die **GlobalizationPreferences**-Klasse, um den Wert der aktuellen Region des Benutzers sowie die bevorzugten Sprachen, Währungen usw. zu ermitteln. Beachten Sie jedoch Folgendes: Wenn die Zeichen folgen/Images Ihrer APP nicht für die bevorzugte Sprache des Benutzers lokalisiert sind, entsprechen Datums-und Uhrzeitangaben und andere Daten, die für diese bevorzugte Sprache formatiert sind, nicht den angezeigten Zeichen folgen.
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-* [Datetimeformatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
 * [Kalender](/uwp/api/windows.globalization.calendar?branch=live)
 * [Phonenumberformatierung](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
@@ -168,12 +168,12 @@ Für Szenarien, in denen Sie basierend auf den Sprach-, Regions- und Kultureinst
 ## <a name="related-topics"></a>Verwandte Themen
 
 * [Kalender-, Datums- und Uhrzeitsteuerelemente](../controls-and-patterns/date-and-time.md)
-* [Grundlegendes zu Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md)
+* [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md)
 * [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>Beispiele
 
-* [Kalender Details und mathematische Beispiele](https://code.msdn.microsoft.com/windowsapps/Calendar-details-and-math-b1683bb7)
-* [Beispiel für Datums-und Uhrzeit Formatierung](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
-* [Beispiel für Globalisierungs Einstellungen](https://code.msdn.microsoft.com/windowsapps/Globalization-preferences-6654eb36)
-* [Beispiel zum Formatieren und Testen von Zahlen](https://code.msdn.microsoft.com/windowsapps/Number-formatting-and-bb10ba3d)
+* [Kalenderdetails und Mathematikbeispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Calendar%20details%20and%20math%20sample%20(Windows%208))
+* [Beispiel für Datums- und Uhrzeitformatierung](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))
+* [Beispiel für Globalisierungseinstellungen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208))
+* [Beispiel für Zahlenformatierung und Analyse](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Number%20formatting%20and%20parsing%20sample%20(Windows%208))

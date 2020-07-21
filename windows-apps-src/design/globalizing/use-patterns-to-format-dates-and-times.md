@@ -6,46 +6,46 @@ label: Use patterns to format dates and times
 template: detail.hbs
 ms.date: 11/09/2017
 ms.topic: article
-keywords: Windows 10, UWP, Globalisierung, Lokalisierbarkeit, Lokalisierung
+keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 183fa684f81f1e3289e9e197020ce7c6cba5ebdf
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: da4d9b2c7380a085efdcb234ad210eafca40b1c3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258127"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493605"
 ---
-# <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Verwenden von Mustern zum Formatieren von Datums- und Uhrzeitwerten
+# <a name="use-templates-and-patterns-to-format-dates-and-times"></a>Verwenden von Vorlagen und Mustern zum Formatieren von Datums- und Uhrzeitwerten
 
-Verwenden Sie Klassen im Namespace [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) mit benutzerdefinierten Vorlagen und Mustern, um Daten und Zeiten im gewünschten Format anzuzeigen.
+Verwenden Sie Klassen im [**Windows. Globalization. datetimeformatierung**](/uwp/api/windows.globalization.datetimeformatting?branch=live) -Namespace mit benutzerdefinierten Vorlagen und Mustern, um Datumsangaben und Uhrzeiten in genau dem gewünschten Format anzuzeigen.
 
 ## <a name="introduction"></a>Einführung
 
-Die Klasse [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) bietet vielfältige Möglichkeiten, um Daten und Uhrzeiten für Sprachen und Regionen rund um die Welt ordnungsgemäß zu formatieren. In den meisten Fällen können Sie Standardformate für Jahr, Monat, Tag usw. verwenden. Oder Sie können eine Formatvorlage an das *FormatTemplate*-Argument des **DateTimeFormatter**-Konstruktors übergeben, beispielsweise „longdate” oder „month day”.
+Die [**datetimeformatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) -Klasse bietet verschiedene Methoden zum ordnungsgemäßen Formatieren von Datums-und Uhrzeiten für Sprachen und Regionen auf der ganzen Welt. Sie können Standardformate für Jahr, Monat, Tag usw. verwenden. Oder Sie können eine Formatvorlage an das *Format Template* -Argument des **datetimeformatter** -Konstruktors übergeben, z. b. "longDate" oder "Month Day".
 
-Wenn Sie allerdings noch mehr Kontrolle über Reihenfolge und Format der Komponenten des anzuzeigenden [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) -Objekts haben möchten, können Sie ein Formatmuster an das *formatTemplate*-Argument des Konstruktors übergeben. Ein Formatmuster verwendet eine spezielle Syntax, mit der Sie einzelne Komponenten eines **DateTime**-Objekts (beispielsweise nur den Monatsnamen oder nur den Jahreswert) abrufen können, um sie in einem bestimmten benutzerdefinierten Format anzuzeigen. Darüber hinaus kann das Muster mittels Lokalisierung für andere Sprachen und Regionen angepasst werden.
+Wenn Sie jedoch eine noch größere Kontrolle über die Reihenfolge und das Format der Komponenten des [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) -Objekts wünschen, das Sie anzeigen möchten, können Sie ein Format Muster an das Format *Template* -Argument des Konstruktors übergeben. Ein Format Muster verwendet eine spezielle Syntax, mit der Sie einzelne Komponenten eines **DateTime** -Objekts nur mit &mdash; dem Monatsnamen oder nur dem Year-Wert abrufen können, um &mdash; Sie z. b. in einem beliebigen benutzerdefinierten Format anzuzeigen. Darüber hinaus kann das Muster mittels Lokalisierung für andere Sprachen und Regionen angepasst werden.
 
-**Beachten Sie**  dies nur eine Übersicht über Format Muster ist. Eine ausführlichere Besprechung der Formatvorlagen und Formatmuster finden Sie in der Dokumentation zur [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live)-Klasse im Abschnitt „Anmerkungen“.
+**Hinweis**    Dies ist nur eine Übersicht über Format Muster. Eine ausführlichere Besprechung der Formatvorlagen und Formatmuster finden Sie in der Dokumentation zur [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live)-Klasse im Abschnitt „Anmerkungen“.
 
-## <a name="the-difference-between-format-templates-and-format-patterns"></a>Der Unterschied zwischen Formatvorlagen und Formatmustern
+## <a name="the-difference-between-format-templates-and-format-patterns"></a>Der Unterschied zwischen Formatvorlagen und Format Mustern
 
-Eine Formatvorlage ist eine kulturunabhängige Formatzeichenfolge. Wenn Sie also einen **DateTimeFormatter** mithilfe einer Formatvorlage erstellen, zeigt der Formatierer Ihre Formatkomponenten in der richtigen Reihenfolge für die aktuelle Sprache an. Im Gegensatz dazu ist ein Formatmuster kulturspezifisch. Wenn Sie einen **DateTimeFormatter** mithilfe eines Formatmusters erstellen, verwendet der Formatierer genau das vorgegebene Muster. Somit ist ein Muster nicht unbedingt für verschiedenen Kulturen anwendbar.
+Eine Formatvorlage ist eine Kultur unabhängige Format Zeichenfolge. Wenn Sie also einen **datetimeformatter** mithilfe einer Formatvorlage erstellen, zeigt der Formatierer ihre Format Komponenten in der richtigen Reihenfolge für die aktuelle Sprache an. Umgekehrt ist ein Format Muster Kultur spezifisch. Wenn Sie einen **datetimeformatter** mithilfe eines Format Musters erstellen, verwendet der Formatierer das Muster genau wie angegeben. Folglich ist ein Muster nicht in allen Kulturen, die nicht unbedingt notwendig sind.
 
-Betrachten Sie den Unterschied anhand des folgenden Beispiels. Wir übergeben eine einfache Formatvorlage (kein Muster) an den **DateTimeFormatter**-Konstruktor. Dies ist die Formatvorlage „month day”.
+Sehen wir uns diesen Unterschied mit einem Beispiel an. Wir übergeben eine einfache Formatvorlage (kein Muster) an den **datetimeformatter** -Konstruktor. Dies ist die Formatvorlage "Month Day".
 
 ```csharp
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
 
-Hierdurch wird ein Formatierer erstellt, der auf dem Sprach- und Regionswert des aktuellen Kontexts basiert. Die Reihenfolge der Komponenten in einer Formatvorlage spielt keine Rolle. Der Formatierer zeigt sie in der richtigen Reihenfolge für die aktuelle Sprache. Er zeigt also „January 1” für Englisch (USA), „1 janvier“ für Französisch (Frankreich) und „1月1日“ für Japanisch an.
+Hierdurch wird ein Formatierer erstellt, der auf dem Sprach- und Regionswert des aktuellen Kontexts basiert. Die Reihenfolge der Komponenten in einer Formatvorlage spielt keine Rolle. der Formatierer zeigt Sie in der richtigen Reihenfolge der aktuellen Sprache an. Daher wird "1. Januar" für Englisch (USA), "1 janvier" für Französisch (Frankreich) und "1 月 1 日" für Japanisch angezeigt.
 
-Dagegen ist ein Formatmuster kulturspezifisch. Wir greifen auf das Format Muster für unsere Formatvorlage zu.
+Auf der anderen Seite ist ein Format Muster Kultur spezifisch. Wir greifen auf das Format Muster für unsere Formatvorlage zu.
 
 ```csharp
 IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;
 ```
 
-Wir erhalten unterschiedliche Ergebnisse, je nach Laufzeitsprache und Region. Unterschiedliche Regionen können unterschiedliche Komponenten in unterschiedlicher Reihenfolge und mit oder ohne zusätzliche Zeichen und Leerzeichen verwenden.
+Dies führt abhängig von der Laufzeit-Sprache und-Region zu unterschiedlichen Ergebnissen. In unterschiedlichen Regionen können unterschiedliche Komponenten, in unterschiedlichen Reihen folgen, mit oder ohne zusätzliche Zeichen und Abstände verwendet werden.
 
 ```syntax
 En-US: "{month.full} {day.integer}"
@@ -53,13 +53,13 @@ Fr-FR: "{day.integer} {month.full}"
 Ja-JP: "{month.integer}月{day.integer}日"
 ```
 
-Im obigen Beispiel haben wir eine kulturunabhängige Formatzeichenfolge eingegeben und eine kulturspezifische Formatzeichenfolge erhalten (die eine Funktion der Sprache und Region war, die beim Aufruf von `dateFormatter.Patterns` gültig waren). Wenn Sie also einen **DateTimeFormatter** aus einem kulturspezifischen Formatmuster erstellen, ist er nur für bestimmte Sprachen/Regionen gültig.
+Im obigen Beispiel wurde eine Kultur unabhängige Format Zeichenfolge zurückgegeben, und wir haben eine kulturspezifische Formatierungs Zeichenfolge zurückgegeben (bei der es sich um eine Funktion der Sprache und der Region handelte, die beim Aufrufen von in Kraft trat `dateFormatter.Patterns` ). Wenn Sie also einen **datetimeformatter** aus einem kulturspezifischen Format Muster erstellen, ist er nur für bestimmte Sprachen/Regionen gültig.
 
 ```csharp
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-Der obige Formatierer gibt kulturspezifische Werte für die einzelnen Komponenten innerhalb der eckigen Klammern {}zurück. Aber die Reihenfolge der Komponenten in einem Formatmuster ist unveränderlich. Sie erhalten also stets genau das, was Sie anfordern, und das ist unter Umständen nicht immer für die jeweilige Kultur geeignet. Diese Formatierer gilt für Englisch (USA), aber nicht für Französisch (Frankreich) oder Japanisch.
+Der obige Formatierer gibt kulturspezifische Werte für die einzelnen Komponenten innerhalb der Klammern zurück {} . Die Reihenfolge der Komponenten in einem Format Muster ist jedoch invariant. Sie erhalten genau das, was Sie Fragen, was möglicherweise in der Kultur angemessen ist. Dieser Formatierer ist für Englisch (USA) gültig, aber nicht für Französisch (Frankreich) und Japanisch.
 
 ``` syntax
 En-US: January 1
@@ -67,28 +67,28 @@ Fr-FR: janvier 1 (inappropriate for France; non-standard order)
 Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 ```
 
-Zudem kann ein Muster, das heute korrekt ist, in Zukunft falsch sein. Länder und Regionen können Änderungen an ihren Kalendersystemen vornehmen, die eine Anpassung einer Formatvorlage erfordern. Windows aktualisiert die Ausgabe von Formatierern basierend auf Formatvorlagen, um solchen Änderungen Rechnung zu tragen Daher sollten Sie die Mustersyntax nur unter einer oder mehreren dieser Bedingungen verwenden:
+Außerdem ist ein Muster, das heute richtig ist, in Zukunft möglicherweise nicht korrekt. Länder oder Regionen können Ihre Kalendersysteme ändern, wodurch eine Formatvorlage geändert wird. Windows aktualisiert die Ausgabe der Formatierer auf der Grundlage von Formatvorlagen, um solche Änderungen zu ermöglichen. Daher sollten Sie nur die Muster Syntax unter einer oder mehreren dieser Bedingungen verwenden.
 
 -   Sie benötigen keine bestimmte Ausgabe für ein Format.
 -   Das Format muss keinen bestimmten kulturspezifischen Standard erfüllen.
 -   Das Muster soll bewusst für alle Kulturen unveränderlich sein.
--   Sie beabsichtigen, die Musterformat-Zeichenfolge selbst zu lokalisieren.
+-   Sie beabsichtigen, die tatsächliche Format Muster Zeichenfolge zu lokalisieren.
 
-Hier eine Zusammenfassung der Unterschiede zwischen Formatvorlagen und Formatmustern:
+Im folgenden finden Sie eine Zusammenfassung der Unterscheidung zwischen Formatvorlagen und Format Mustern.
 
 **Format Vorlagen, z. b. "Month Day"**
 
--   Eine abstrahierte Darstellung des [DateTime](/uwp/api/windows.foundation.datetime?branch=live)-Formats, die Werte für Tag , Monat usw. in einer bestimmten Reihenfolge enthält.
+-   Abstrahierte Darstellung eines [DateTime](/uwp/api/windows.foundation.datetime?branch=live) -Formats, das Werte für den Monat, den Tag usw. enthält, in beliebiger Reihenfolge.
 -   Gibt für alle von Windows unterstützten Sprach- und Regionswerte stets ein gültiges Standardformat zurück.
 -   Liefert stets eine entsprechend der Kultur formatierte Zeichenfolge für die angegebene Sprache und Region.
--   Nicht alle Kombinationen der Komponenten sind gültig. Beispielsweise ist „dayofweek day ” ungültig.
+-   Nicht alle Kombinationen von Komponenten sind gültig. Beispielsweise ist "DayOfWeek Day" nicht gültig.
 
 **Format Muster, z. b. "{Month. Full} {Day. Integer}"**
 
--   Eine Zeichenfolge mit explizit festgelegter Reihenfolge, die den vollständigen Monatsnamen, gefolgt von einem Leerzeichen, gefolgt von einer ganze Zahl (für den Tag) angibt, und zwar in dieser Reihenfolge oder gemäß dem angegebenen spezifischen Formatmuster.
--   Entspricht möglicherweise nicht dem gültigen Standardformat für jedes Sprache-Region-Paar.
--   Ist nicht unbedingt der Kultur angemessen.
--   Es kann eine beliebige Kombination von Komponenten in einer beliebigen Reihenfolge angegeben werden.
+-   Explizit geordnete Zeichenfolge, die den vollständigen Monatsnamen, gefolgt von einem Leerzeichen, gefolgt von der ganzzahligen Ganzzahl, in dieser Reihenfolge oder einem bestimmten, von Ihnen angegebenen Format Muster ausdrückt.
+-   Entspricht möglicherweise nicht dem gültigen Standardformat für jedes Sprach-Region-Paar.
+-   Ist nicht in jedem Fall der Kultur angemessen.
+-   Eine beliebige Kombination von Komponenten kann in beliebiger Reihenfolge angegeben werden.
 
 ## <a name="examples"></a>Beispiele
 
@@ -98,7 +98,7 @@ Angenommen, Sie möchten den aktuellen Monat und den aktuellen Tag zusammen mit 
 June 25 | 1:38 PM
 ```
 
-Die Datumskomponente entspricht der Formatvorlage „month day“, die Uhrzeitkomponente der Formatvorlage „hour minute“. Daher können Sie Formatierungs Programme für die relevanten Formatvorlagen für Datum und Uhrzeit erstellen und dann Ihre Ausgabe mit einer lokalisierbaren Format Zeichenfolge verketten.
+Der Datums Teil entspricht der Formatvorlage "Month Day", und der Uhrzeit Teil entspricht der Formatvorlage "Hour-Minute". Daher können Sie Formatierungs Programme für die relevanten Formatvorlagen für Datum und Uhrzeit erstellen und dann Ihre Ausgabe mit einer lokalisierbaren Format Zeichenfolge verketten.
 
 ```csharp
 var dateToFormat = System.DateTime.Now;
@@ -113,9 +113,9 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` ist ein Ressourcen Bezeichner, der auf eine lokalisierbare Ressource in einer Ressourcen Datei (. resw) verweist. Für eine Standardsprache in englischer Sprache (USA) wird diese Einstellung auf den Wert "{0} | {1}"zusammen mit einem Kommentar, der angibt, dass"{0}"das Datum und"{1}"die Uhrzeit ist. Somit können Übersetzer die Formatelemente wie gewünscht anpassen. Sie können beispielsweise die Reihenfolge der Komponenten ändern, falls in bestimmten Sprachen oder Regionen die Uhrzeit vor dem Datum stehen soll. Oder Sie können „|“ durch ein anderes Trennzeichen ersetzen.
+`CustomDateTimeFormatString`ein Ressourcen Bezeichner, der sich auf eine lokalisierbare Ressource in einer Ressourcen Datei (. resw) bezieht. Für eine Standardsprache in englischer Sprache (USA) wird dies auf den Wert " {0} | {1} " und einen Kommentar festgelegt, der angibt, dass " {0} " das Datum und " {1} " die Uhrzeit ist. Auf diese Weise können Konvertierer die Format Elemente nach Bedarf anpassen. Sie können z. b. die Reihenfolge der Elemente ändern, wenn Sie in einer Sprache oder Region in einer anderen Sprache oder Region der Zeit vorangestellt ist. Oder Sie können „|“ durch ein anderes Trennzeichen ersetzen.
 
-Eine andere Möglichkeit zum Implementieren dieses Beispiels besteht darin, die beiden Formatierer nach ihren Formatmustern abzufragen, diese miteinander zu verketten und dann aus dem resultierenden Formatmuster einen dritten Formatierer zu erstellen.
+Eine andere Möglichkeit zur Implementierung dieses Beispiels besteht darin, die beiden Formatierungs Programme für Ihre Format Muster abzufragen, diese miteinander zu verketten und dann ein drittes Formatierungs Programm aus dem resultierenden Format Muster zu erstellen.
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -135,10 +135,10 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-* [Windows. Globalization. datetimeformatierung](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [Datetimeformatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [Windows.Globalization.DateTimeFormatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Beispiel für Datums-und Uhrzeit Formatierung](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [Beispiel für Datums- und Uhrzeitformatierung](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))

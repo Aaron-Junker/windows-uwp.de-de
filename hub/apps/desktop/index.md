@@ -7,12 +7,12 @@ keywords: Windows Win32, Desktopentwicklung
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d052ad0f670bccd9b32d2e3643520dd6129ed22a
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 20399b9a6398b1f17f74d2de74cc4b5e4ba270ac
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262741"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492995"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>Erstellen von Desktop-Apps für Windows-PCs
 
@@ -20,9 +20,7 @@ Dieser Artikel enthält Informationen, die Sie benötigen, um mit dem Entwickeln
 
 ## <a name="platforms-for-desktop-apps"></a>Plattformen für Desktop-Apps
 
-Es gibt vier Hauptplattformen zum Entwickeln von Desktop-Apps für Windows-PCs. Jede Plattform bietet ein App-Modell, das den Lebenszyklus der App definiert, einen vollständigen Satz von UI-Steuerelementen und Zugriff auf einen umfassenden Satz verwalteter oder nativer APIs für die Verwendung von Windows-Features.
-
-In der folgenden Tabelle werden die Plattformen vorgestellt. Einen ausführlichen Vergleich dieser Plattformen sowie zusätzliche Ressourcen für jede Plattform finden Sie unter [Auswählen Ihrer App-Plattform](choose-your-platform.md).
+Es gibt vier Hauptplattformen zum Entwickeln von Desktop-Apps für Windows-PCs. Jede Plattform bietet ein App-Modell, das den Lebenszyklus der App definiert, ein vollständiges UI-Framework mit einem vollständigen Satz von UI-Steuerelementen, mit denen Sie Desktop-Apps wie Word, Excel und Photoshop erstellen können, sowie Zugriff auf einen umfassenden Satz verwalteter oder nativer APIs für die Verwendung von Windows-Features. Einen ausführlichen Vergleich dieser Plattformen sowie zusätzliche Ressourcen für jede Plattform finden Sie unter [Auswählen Ihrer App-Plattform](choose-your-platform.md).
 
 <br/>
 
@@ -46,8 +44,8 @@ In der folgenden Tabelle werden die Plattformen vorgestellt. Einen ausführliche
 <td><a href="/windows/uwp/get-started/">Erste Schritte</a><br/><a href="/uwp/">API-Referenz</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">Beispiele</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
-<td><p>Die Plattform der Wahl für native C/C++-Windows-Apps, die direkten Zugriff auf Windows und Hardware erfordern.</p></td>
+<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><p>Die Plattform der Wahl für native Windows-Apps, die direkten Zugriff auf Windows und Hardware erfordern.</p></td>
 <td><a href="/windows/win32/desktop-programming/">Erste Schritte</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API-Referenz</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">Beispiele</a></td>
 </tr>
 <tr class="odd">
@@ -64,7 +62,7 @@ In der folgenden Tabelle werden die Plattformen vorgestellt. Einen ausführliche
 </table>
 
 > [!NOTE]
-> Alle diese Anwendungsplattformen bietet ein komplettes Benutzeroberflächen-Framework und eine Reihe von Benutzeroberflächen-Steuerelementen, mit denen Desktopanwendungen wie Word, Excel und Photoshop erstellen werden können, die auf dem klassischen Windows-Desktop laufen und die spezifischen Features dieser Umgebung voll ausnutzen können. Unter Windows 10 unterstützen alle diese Plattformen auch die Windows-UI-Bibliothek (WinUI) zum Erstellen ihrer Benutzeroberflächen. Weitere Informationen zu WinUI für Desktop-Apps finden Sie in [diesem Abschnitt](choose-your-platform.md#windows-ui-library).
+> Unter Windows 10 unterstützen alle diese Plattformen auch die Windows-UI-Bibliothek (WinUI) zum Erstellen von Benutzeroberflächen. Weitere Informationen zu WinUI für Desktop-Apps finden Sie in [diesem Abschnitt](choose-your-platform.md#windows-ui-library).
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>Aktualisieren vorhandener Desktop-Apps für Windows 10
 
@@ -94,6 +92,7 @@ Wenn Sie eine neue Desktop-App für Windows erstellen, finden Sie hier einige Re
 | Artikel | Beschreibung |
 |---------|-------------|
 | [Auswählen Ihrer App-Plattform](choose-your-platform.md) | Bietet einen ausführlichen Vergleich der wichtigsten Desktop-App-Plattformen und unterstützt Sie bei der Auswahl der richtigen Plattform für Ihre Bedürfnisse. Außerdem finden Sie in diesem Artikel nützliche Links zur Dokumentation für jede Plattform. |
+| [Visual Studio-Projektvorlagen für Windows-Apps](visual-studio-templates.md) | Beschreibt die Projekt- und Elementvorlagen, die Visual Studio bereitstellt, um Sie beim Erstellen von Apps für Windows 10-Geräte mithilfe von C\# oder C++ zu unterstützen. |
 | [Modernisieren von Desktop-Apps](/windows/apps/desktop/modernize) | Beschreibt die neuesten Windows 10- und UWP-Entwicklungsfeatures, die Sie in beliebigen Desktop-Apps wie WPF-, Windows Forms- und C++-Win32-Apps verwenden können. |
 | [Features und Technologien](/windows/apps/features-and-technologies) | Bietet eine Übersicht über die Windows-Features, auf die über jede der Hauptplattformen für Desktop-Apps zugegriffen werden kann, sowie Links zur zugehörigen Dokumentation. |
 
