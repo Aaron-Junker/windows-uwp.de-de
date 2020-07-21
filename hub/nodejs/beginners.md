@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von NodeJS, Node unter Windows, Node unter Windows für Anfänger, Entwickeln mit Node unter Windows, Entwickler mit Node.js unter Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 433eb5701696f590f10d8b3276481098b9ec073d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d40d701dc3ae973e0834d0b329527e69854b9e36
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75657082"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492865"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>Erste Schritte bei der Verwendung von Node.js unter Windows für Anfänger
 
@@ -67,9 +67,9 @@ Node.js ist eine JavaScript-Runtime, die primär zum Erstellen von Webanwendunge
 > [!TIP]
 > Probiere auch das neue [Windows-Terminal](https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md) aus, wenn du mehrere Befehlszeilen (Ubuntu, PowerShell, Windows-Eingabeaufforderung usw.) verwenden oder [das Terminal anpassen](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md) möchtest (einschließlich Text, Hintergrundfarben, Tastenkombinationen, mehrere Fensterbereiche usw.).
 
-## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>Einrichten eines grundlegenden Web-App-Frameworks mithilfe von Express
+## <a name="set-up-a-basic-web-app-framework-by-using-express"></a>Einrichten eines einfachen Web-App-Frameworks mit Express
 
-Express ist ein minimales, flexibles und optimiertes Node.js-Framework für eine vereinfachte Entwicklung von Web-Apps, die mehrere Arten von Anforderungen wie GET, PUT, POST und DELETE verarbeiten können. Express bietet einen Anwendungsgenerator, der automatisch eine Dateiarchitektur für deine App erstellt.
+Express ist ein minimales, flexibles und optimiertes Node.js-Framework, das die Entwicklung einer Web-App vereinfacht, die mehrere Typen von Anforderungen wie GET, PUT, POST und DELETE verarbeiten kann. Express enthält einen Anwendungsgenerator, der automatisch eine Dateiarchitektur für Ihre App erstellt.
 
 So erstellst du ein Projekt mit Express.js
 
@@ -78,18 +78,18 @@ So erstellst du ein Projekt mit Express.js
 3. Erstelle mit Express eine HelloWorld-Projektvorlage: `npx express-generator HelloWorld --view=pug`
 
 >[!NOTE]
-> Wir verwenden hier den Befehl `npx`, um das Node-Paket von Express.js auszuführen, ohne es tatsächlich zu installieren (bzw. durch temporäres Installieren, je nach Betrachtungsweise). Wenn du versuchst, den Befehl `express` zu verwenden oder die installierte Version von Express mit `express --version` zu überprüfen, erhältst du als Antwort, dass Express nicht gefunden werden kann. Wenn du Express global installieren möchtest, um es immer wieder verwenden zu können, verwendest du `npm install -g express-generator`. Mithilfe von `npm list` kannst du eine Liste der Pakete anzeigen, die von npm installiert wurden. Sie werden nach Tiefe (der Anzahl der geschachtelten Verzeichnisse) aufgelistet. Die von dir installierten Pakete haben die Tiefe 0. Die Abhängigkeiten des Pakets haben die Tiefe 1, weitere Abhängigkeiten die Tiefe 2 usw. Weitere Informationen findest du unter [Difference between npx and npm?](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) (Unterschiede zwischen npx und npm) auf Stack Overflow.
+> Wir verwenden hier den Befehl `npx`, um das Node-Paket von Express.js auszuführen, ohne es tatsächlich zu installieren (bzw. durch temporäres Installieren, je nach Betrachtungsweise). Wenn du versuchst, den Befehl `express` zu verwenden oder die installierte Version von Express mit `express --version` zu überprüfen, erhältst du als Antwort, dass Express nicht gefunden werden kann. Wenn du Express global installieren möchtest, um es immer wieder verwenden zu können, verwendest du `npm install -g express-generator`. Mithilfe von `npm list` kannst du eine Liste der Pakete anzeigen, die von npm installiert wurden. Sie werden nach der Tiefe (Anzahl der geschachtelten Verzeichnisebenen) aufgelistet. Pakete, die Sie installiert haben, liegen auf Ebene 0. Die Abhängigkeiten dieses Pakets liegen auf Ebene 1, weitere Abhängigkeiten auf Ebene 2 usw. Weitere Informationen findest du unter [Difference between npx and npm?](https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm) (Unterschiede zwischen npx und npm) auf Stack Overflow.
 
 4. Untersuche die in Express enthaltenen Dateien und Ordner, indem du das Projekt in VS Code öffnest: `code .`
 
    Die von Express generierten Dateien erstellen eine Web-App mit einer Architektur, die zunächst etwas überwältigend wirken kann. Du kannst im Fenster des VS Code-**Explorers** (angezeigt mit STRG+UMSCHALT+E) erkennen, dass die folgenden Dateien und Ordner erstellt wurden:
 
-   - `bin`. Enthält die ausführbare Datei, mit der die App gestartet wird. Sie startet einen Server (an Port 3000, wenn keine andere Angabe erfolgt) und richtet die grundlegende Fehlerbehandlung ein. 
-   - `public`. Enthält alle Dateien, auf die öffentlich zugegriffen wird, einschließlich JavaScript-Dateien, CSS-Stylesheets, Schriftartdateien, Bilder und aller anderen Ressourcen, die Benutzer benötigen, wenn sie eine Verbindung mit deiner Website herstellen.
-   - `routes`. Enthält alle Routenhandler für die Anwendung. In diesem Ordner werden automatisch die beiden Dateien `index.js` und `users.js` generiert, die als Beispiele für das Trennen der Routenkonfiguration deiner Anwendung dienen.
-   - `views`. Enthält die Dateien, die von deiner Vorlagen-Engine verwendet werden. Express ist so konfiguriert, dass es hier nach einer übereinstimmenden Ansicht sucht, wenn die Methode zum Rendern aufgerufen wird. Die Standardvorlagen-Engine ist Jade, aber Jade wurde zugunsten von Pug als veraltet markiert. Daher haben wir das `--view`-Flag verwendet, um die Ansichts-Engine (Vorlagen-Engine) zu ändern. Du kannst die Optionen für das `--view`-Flag und andere mithilfe von `express --help` anzeigen.
-   - `app.js`. Der Ausgangspunkt deiner App. Damit wird alles geladen und damit begonnen, Benutzeranforderungen zu beantworten. Dies ist im Grunde der Klebstoff, der alle Teile miteinander verbindet.
-   - `package.json`. Enthält die Projektbeschreibung, den Skript-Manager und das App-Manifest. Der Hauptzweck besteht darin, die Abhängigkeiten der App und ihre jeweiligen Versionen zu verfolgen.
+   - `bin`. Enthält die ausführbare Datei, die Ihre App startet. Startet einen Server (an Port 3000, wenn keine Alternative angegeben wird) und richtet eine grundlegende Fehlerbehandlung ein. 
+   - `public`. Enthält alle öffentlich zugänglichen Dateien einschließlich JavaScript-Dateien, CSS-Stylesheets, Schriftartdateien, Bildern und allen anderen Ressourcen, die Benutzer benötigen, wenn sie eine Verbindung mit Ihrer Website herstellen.
+   - `routes`. Enthält alle Routenhandler für die Anwendung. Zwei Dateien, `index.js` und `users.js`, werden in diesem Ordner automatisch generiert, um als Beispiele zum Aussondern der Routenkonfiguration Ihrer Anwendung zu dienen.
+   - `views`. Enthält die Dateien, die von Ihrer Vorlagen-Engine verwendet werden. Express ist dazu konfiguriert, hier nach einer übereinstimmenden Ansicht zu suchen, wenn die Rendermethode aufgerufen wird. Die Standardvorlagen-Engine ist Jade, aber sie wurde von Pug abgelöst, daher haben wir das `--view`-Flag verwendet, um die Anzeige-Engine (Vorlagen-Engine) zu ändern. Sie können die `--view`-Flagoptionen und andere mittels `express --help` anzeigen.
+   - `app.js`. Der Startpunkt der App. Sie lädt alles und beginnt, Benutzeranforderungen zu verarbeiten. Im Grunde hält sie alle verschiedenen Teile wie ein Klebstoff zusammen.
+   - `package.json`. Sie enthält Projektbeschreibung, Skripts-Manager und App-Manifest. Ihr Hauptzweck ist, die Abhängigkeiten Ihrer App und ihre jeweiligen Versionen nachzuverfolgen.
 
 5. Du musst nun die von Express verwendeten Abhängigkeiten installieren, um deine Express-App „HelloWorld“ zu erstellen und auszuführen (die Pakete, die für Aufgaben wie das Ausführen des Servers verwendet werden, wie in der Datei `package.json` definiert). Öffne in VS Code ein Terminal, indem du **Anzeigen** > **Terminal** auswählst (oder drücke STRG+` (Graviszeichen)). Achte darauf, dass du dich weiterhin im Projektverzeichnis „HelloWorld“ befindest. Installiere die Express-Paketabhängigkeiten mit:
 
@@ -97,7 +97,7 @@ So erstellst du ein Projekt mit Express.js
 npm install
 ```
 
-6. An diesem Punkt hast du das Framework für eine Web-App mit mehreren Seiten eingerichtet, die Zugriff auf eine Vielzahl von APIs und HTTP-Hilfsprogrammmethoden und Middleware hat, sodass es einfacher ist, eine robuste API zu erstellen. Starte die Express-App auf einem virtuellen Server, indem du Folgendes eingibst:
+6. An diesem Punkt haben Sie das Framework für eine mehrseitige Web-App mit Zugriff auf eine Vielzahl von APIs und nützliche HTTP-Methoden und Middleware eingerichtet, was das Erstellen einer stabilen API erleichtert. Starte die Express-App auf einem virtuellen Server, indem du Folgendes eingibst:
 
 ```bash
 npx cross-env DEBUG=HelloWorld:* npm start
@@ -114,21 +114,21 @@ npx cross-env DEBUG=HelloWorld:* npm start
 
 9. Gib in deinem Terminal Folgendes ein, um die Ausführung der Express-App zu beenden: **STRG+C**
 
-## <a name="try-using-a-nodejs-module"></a>Verwenden eines Node.js-Moduls
+## <a name="try-using-a-nodejs-module"></a>Ausprobieren eines Node.js-Moduls
 
-Node.js verfügt über Tools, die dich beim Entwickeln von serverseitigen Web-Apps unterstützen. Einige von ihnen sind integriert und viele weitere über npm verfügbar. Diese Module helfen bei vielen Aufgaben:
+Node.js verfügt über viele Tools zur Entwicklung serverseitiger Web-Apps – einige sind integriert und viele weitere über npm verfügbar. Diese Module können bei zahlreichen Aufgaben hilfreich sein:
 
 |Tool               |Verwendung                                                                                                  |
 |:----------------- |:---------------------------------------------------------------------------------------------------------|
-|gm, sharp          |Bildanpassung, einschließlich Bearbeitung, Größenänderung, Komprimierung usw., direkt im JavaScript-Code |
+|gm, sharp          |Bildbearbeitung, einschließlich Bearbeitung, Größenänderung, Komprimierung usw., direkt in Ihrem JavaScript-Code |
 |PDFKit             |PDF-Generierung                                                                                            |
 |validator.js       |Zeichenfolgenvalidierung                                                                                         |
 |imagemin, UglifyJS2|Minimierung                                                                                              |
-|spritesmith        |Sprite-Blattgenerierung                                                                                   |
+|spritesmith        |Sprite-Sheet-Generierung                                                                                   |
 |winston            |Protokollierung                                                                                                  |
-|commander.js       |Erstellen von Befehlszeilenanwendungen                                                                       |
+|commander.js       |Erstellung von Befehlszeilenanwendungen                                                                       |
 
-Verwenden wir nun das integrierte Betriebssystemmodul, um einige Informationen zum Betriebssystem deines Computers abzurufen:
+Wir verwenden das integrierte BS-Modul, um einige Informationen zum Betriebssystem Ihres Computers abzurufen:
 
 1) Öffne an der Befehlszeile die Node.js-Befehlszeilenschnittstelle. Nach der Eingabe von `node` wird die Eingabeaufforderung `>` angezeigt. Sie gibt an, dass du Node.js verwendest.
 
@@ -148,5 +148,5 @@ Verwenden wir nun das integrierte Betriebssystemmodul, um einige Informationen z
 In dieser Anleitung hast du einige grundlegende Informationen zu den Möglichkeiten von Node.js kennengelernt. Du hast die Verwendung der Node.js-Befehlszeile in VS Code ausprobiert, mit Express.js eine einfache Web-App erstellt und diese lokal in deinem Webbrowser ausgeführt und dann einige der integrierten Node.js-Module ausprobiert. Weitere Informationen zum Installieren und Verwenden einiger gängiger Node.js-Webframeworks findest du in der nächsten Anleitung zu Next.js (ein auf dem Server gerendertes Webframework auf der Grundlage von React), Nuxt.js (ein auf dem Server gerendertes Webframework auf der Grundlage von Vue) und Gatsby (ein statisch gerendertes Webframework auf der Grundlage von React). Du kannst auch direkt mit der Verwendung von MongoDB- oder PostgreSQL-Datenbanken oder Docker-Containern fortfahren.
 
 - [Erste Schritte mit Node.js-Webframeworks unter Windows](./web-frameworks.md)
-- [Erste Schritte beim Verbinden von Node.js-Apps mit einer Datenbank](./databases.md)
+- [Erste Schritte beim Verbinden von Node.js-Apps mit einer Datenbank](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [Erste Schritte bei der Verwendung von Docker-Containern mit Node.js](./containers.md)

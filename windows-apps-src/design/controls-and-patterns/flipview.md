@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f4871b4a43284052a89d0fd37412528840e1ea5a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 51c43efc859e20606679b385051684730eee1922
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968735"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493385"
 ---
 # <a name="flip-view"></a>Flip-Ansicht
 
@@ -24,9 +24,10 @@ Verwenden Sie eine Flip-Ansicht zum Durchsuchen von Bildern oder anderen Element
 
 **Abrufen der Windows-UI-Bibliothek**
 
-|  |  |
-| - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+<img src="images/winui-logo-64x64.png" alt="WinUI logo"
+     style="float: left; margin-right: 15px;" />
+
+Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek).
 
 > **Plattform-APIs:** [Klasse „FlipView“](/uwp/api/windows.ui.xaml.controls.flipview), [Eigenschaft „ItemsSource“](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [Eigenschaft „ItemTemplate“](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
@@ -207,7 +208,7 @@ Für größere Sammlungen (10-25 Elemente) kann eine Anzeige mit mehr Kontext, z
 
 ![Beispiel für die Kontextanzeige](images/controls_contextindicator.jpg)
 
-Beispielcode, der veranschaulicht, wie Sie einem FlipView-Element eine Kontextanzeige hinzufügen, finden Sie unter [Beispiel für XAML FlipView](https://code.msdn.microsoft.com/windowsapps/XAML-FlipView-control-0ae45312).
+Beispielcode, der veranschaulicht, wie Sie einem FlipView-Element eine Kontextanzeige hinzufügen, finden Sie unter [Beispiel für XAML FlipView](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20FlipView%20control%20sample%20(Windows%208)).
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 

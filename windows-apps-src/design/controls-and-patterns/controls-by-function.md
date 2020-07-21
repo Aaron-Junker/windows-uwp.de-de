@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c593ea76535bec6a9d8ab41f0bcd4f2299162615
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: fc695b483eefef4210432d5ce55a23ae201740bc
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437204"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493145"
 ---
 # <a name="controls-by-function"></a>Steuerelemente nach Funktion
 
@@ -324,7 +324,7 @@ Referenz: [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Im
 
 Design und Vorgehensweise: [Image und ImageBrush](images-imagebrushes.md) 
 
-Beispielcode: [Beispiel für XAML-Bilder](https://code.msdn.microsoft.com/windowsapps/0f5d56ae-5e57-48e1-9cd9-993115b027b9)
+Beispielcode: [XAML-Steuerelementekatalog](https://docs.microsoft.com/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/)
 
 ## <a name="graphics-and-ink"></a>Grafiken und Freihandstriche
 
@@ -353,7 +353,7 @@ Referenz: [Formen](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes.Sha
 
 Ausführung [Zeichnen von Formen](../../graphics/drawing-shapes.md) 
 
-Beispielcode: [Beispiel für vektorbasierte XAML-Zeichnung](https://code.msdn.microsoft.com/windowsapps/Drawing-bfc39296)
+Beispielcode: [Beispiel für vektorbasierte XAML-Zeichnung](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20vector-based%20drawing%20sample%20(Windows%208))
 
 ## <a name="layout-controls"></a>Layoutsteuerelemente
 
@@ -453,7 +453,7 @@ Referenz: [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Cont
 
 Design und Vorgehensweise: [Leitfaden für Steuerelemente für Bildlauf und Schwenken](scroll-controls.md) 
 
-Beispielcode: [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+Beispielcode: [Beispiel für XAML-Bildlauf, -Verschiebung und -Zoom](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample%20(Windows%208))
 
 ### <a name="stack-panel"></a>StackPanel
 Ein Layoutpanel, das untergeordnete Elemente in einer einzelnen Zeile anordnet. Die Zeile kann horizontal oder vertikal ausgerichtet werden.
@@ -591,7 +591,7 @@ Referenz: [WebView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.
 
 Design und Vorgehensweise: Richtlinien für Webansichten 
 
-Beispielcode: [Beispiel für XAML-WebView-Steuerelement](https://code.msdn.microsoft.com/windowsapps/XAML-WebView-control-sample-58ad63f7)
+Beispielcode: [Beispiel für XAML-WebView-Steuerelement](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20WebView%20control%20sample%20(Windows%208))
 
 ### <a name="semantic-zoom"></a>Semantischer Zoom
 
@@ -612,7 +612,7 @@ Referenz: [SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Cont
 
 Design und Vorgehensweise: [Leitfaden für semantisches Zoomsteuerelement](semantic-zoom.md)
 
-Beispielcode: [Beispiel für XAML-GridView-Gruppierung und -SemanticZoom](https://code.msdn.microsoft.com/windowsapps/groupedgridview-77c59e8e)
+Beispielcode: [Beispiel für XAML-GridView-Gruppierung und -SemanticZoom](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20GridView%20grouping%20and%20SemanticZoom%20sample%20(Windows%208))
 
 ## <a name="progress-controls"></a>Statussteuerelemente
 
@@ -682,7 +682,7 @@ Referenz: [PasswordBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Contr
 
 Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [Richtlinien für Kennwortfelder](password-box.md) 
 
-Beispielcode: [Beispiel für die XAML-Textanzeige](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a), [Beispiel für die XAML-Textbearbeitung](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+Beispielcode: [Beispiel für die XAML-Textanzeige](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208)), [Beispiel für die XAML-Textbearbeitung](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
 
 ### <a name="rich-edit-box"></a>Rich-Edit-Feld
 Ein Steuerelement, mit dem der Benutzer Rich-Text-Dokumente mit Inhalten wie formatiertem Text, Links und Bildern bearbeiten kann.
@@ -695,7 +695,7 @@ Referenz: [RichEditBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Contr
 
 Design und Vorgehensweise: [Textsteuerelemente](text-controls.md), [Leitfaden für RichEditBox-Steuerelement](rich-edit-box.md)
 
-Beispielcode: [Beispiel für XAML-Text](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+Beispielcode: [Beispiel für XAML-Text](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="search-box"></a>Suchfeld
 Siehe „Feld mit automatischen Vorschlägen“.
