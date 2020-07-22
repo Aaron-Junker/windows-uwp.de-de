@@ -2,29 +2,29 @@
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
 description: Erfahre, wie du eine UWP-App schreibst, die mit dem Windows-Geräteportal eine Webseite hostet und Diagnoseinformationen bereitstellt.
-ms.date: 03/24/2017
+ms.date: 07/06/2020
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 4881fe961979243849728d3f835c449e0f71f4b4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b806344fa7e0517caf4d04efaaa605371a200202
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683843"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493205"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Schreiben eines benutzerdefinierten Plug-Ins für das Geräteportal
 
 Erfahre, wie du eine UWP-App schreibst, die mit dem Windows-Geräteportal eine Webseite hostet und Diagnoseinformationen bereitstellt.
 
-Seit dem Creators Update kannst du die Diagnoseschnittstellen deiner App im Geräteportal hosten. In diesem Artikel werden die drei Aspekte beschrieben, die zum Erstellen eines DevicePortalProvider für deine App erforderlich sind: die appxmanifest-Änderungen, das Einrichten der App-Verbindung mit dem Geräteportal-Dienst und das Behandeln eingehender Anforderungen. Eine Beispiel-App wird auch bereitgestellt, um den Einstieg zu erleichtern (in Kürze verfügbar). 
+Seit dem Windows 10 Creators Update (Version 1703, Build 15063) kannst du die Diagnoseschnittstellen deiner App im Geräteportal hosten. In diesem Artikel werden die drei Aspekte beschrieben, die zum Erstellen eines DevicePortalProvider für deine App erforderlich sind: die [Anwendungspaketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)-Änderungen, das Einrichten der App-Verbindung mit dem [Geräteportal-Dienst](/windows/uwp/debug-test-perf/device-portal) und das Behandeln eingehender Anforderungen.
 
 ## <a name="create-a-new-uwp-app-project"></a>Erstellen eines neuen UWP-App-Projekts
-In dieser Anleitung erstellen wir der Einfachheit halber alles in einer Projektmappe.
 
-Erstelle in Microsoft Visual Studio 2019 ein neues UWP-App-Projekt. Wechsele zu „Datei“ > „Neu“ > „Projekt“, wähle „Leere App (Universelles Windows: C#)“ aus, und klicke dann auf „Weiter“. Konfiguriere dein neues Projekt im Dialogfeld. Benenne das Projekt mit „DevicePortalProvider“, und klicke dann auf „Erstellen“. Diese App enthält später den App-Dienst. Du musst zur Unterstützung unbedingt „Windows 10 Creators Update (10.0; Build 15063)“ auswählen.  Möglicherweise musst du Visual Studio aktualisieren oder das neue SDK installieren. Details dazu findest du [hier](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/). 
+Erstelle in Microsoft Visual Studio ein neues UWP-App-Projekt. Wechsele zu **Datei > Neu > Projekt**, wähle **Leere App (Universelles Windows: C#)** aus, und klicke dann auf **Weiter**. **Konfiguriere dein neues Projekt** im Dialogfeld. Benenne das Projekt mit „DevicePortalProvider“, und klicke dann auf **Erstellen**. Diese App enthält später den App-Dienst. Möglicherweise musst du Visual Studio aktualisieren oder das aktuelle [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) installieren.
 
-## <a name="add-the-deviceportalprovider-extension-to-your-packageappxmanifest-file"></a>Hinzufügen der devicePortalProvider-Erweiterung zur Datei „package.appxmanifest“
+## <a name="add-the-deviceportalprovider-extension-to-your-application-package-manifest"></a>Hinzufügen der devicePortalProvider-Erweiterung zum Anwendungspaketmanifest
+
 Du musst in der Datei *package.appxmanifest* Code hinzufügen, damit deine App als Geräteportal-Plug-In genutzt werden kann. Füge zunächst die folgenden Namespacedefinitionen am Beginn der Datei ein. Füge sie auch dem `IgnorableNamespaces`-Attribut hinzu.
 
 ```xml

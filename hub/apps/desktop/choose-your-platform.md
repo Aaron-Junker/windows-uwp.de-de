@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: Windows Win32, Desktopentwicklung
-ms.openlocfilehash: c14b092b9cce9ce7e3b180eaedef657e2d3d03db
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580007"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493005"
 ---
 # <a name="choose-your-app-platform"></a>Auswählen Ihrer App-Plattform
 
@@ -39,6 +39,7 @@ Nicht nur können Sie UWP zum Erstellen von Desktopanwendungen für Windows-PCs 
 Weitere Informationen zu UWP finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte](/windows/uwp/get-started/)
+* [Projektvorlagen](visual-studio-templates.md#uwp-templates)
 * [Design und Benutzeroberfläche](/windows/uwp/design/)
 * [Technologien und Features](/windows/uwp/develop/)
 * [API-Referenz](/uwp/)
@@ -50,7 +51,8 @@ WPF ist die etablierte Plattform für verwaltete Windows-Anwendungen mit Zugriff
 
 Weitere Informationen zu WPF finden Sie in den folgenden Artikeln:
 
-* [Erste Schritte (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/).
+* [Erste Schritte (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [Projektvorlagen](visual-studio-templates.md#net-templates)
 * [Erstellen Ihrer ersten App (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [Erstellen Ihrer ersten App (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [Migrieren von WPF-Apps zu .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
@@ -64,6 +66,7 @@ Windows Forms ist die ursprüngliche Plattform für verwaltete Windows-Anwendung
 Weitere Informationen zu Windows Forms finden Sie in den folgenden Artikeln:
 
 * [Erste Schritte mit Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Projektvorlagen](visual-studio-templates.md#net-templates)
 * [Erstellen Ihrer ersten Windows Forms-App](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [Tutorial: Erstellen eines Bildanzeigeprogramms](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [API-Referenz (.NET)](https://docs.microsoft.com/dotnet/api/index)
@@ -84,6 +87,7 @@ Hier finden Sie einige Highlights der Win32-API mit C++, die Ihnen die Erstellun
 Weitere Informationen findest du in den folgenden Artikeln:
 
 * [Erste Schritte](/windows/win32/desktop-programming/)
+* [Projektvorlagen](visual-studio-templates.md#cwin32-templates)
 * [Erstellen Ihrer ersten Win32- und C++-App](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [Technologien und Features](/windows/win32/desktop-app-technologies)
 * [API-Referenz](/windows/win32/apiindex/windows-api-list/)
@@ -97,7 +101,7 @@ Sie können WinUI auf folgende Weise in Desktop-Apps einsetzen:
 
 * UWP-Apps können WinUI-Steuerelemente anstelle der vom Windows SDK bereitgestellten UWP-Steuerelemente nutzen.
 * Sie können vorhandene WPF-, Windows Forms- und C++/Win32-Anwendungen aktualisieren, um [XAML-Inseln](modernize/xaml-islands.md) zum Hosten von WinUI 2.x-Steuerelementen in den Apps zu verwenden.
-* Ab [WinUI 3.0 Vorschau 1](../winui/winui3/index.md) können Sie [.NET- und C++/Win32-Apps erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche](../winui/winui3/get-started-winui3-for-desktop.md) aufweisen.
+* Ab [WinUI 3.0](../winui/winui3/index.md) können Sie [.NET- und C++/Win32-Apps erstellen, die eine vollständig WinUI-basierte Benutzeroberfläche](../winui/winui3/get-started-winui3-for-desktop.md) aufweisen.
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>Plattformvergleich: UWP, WPF und Windows Forms
 

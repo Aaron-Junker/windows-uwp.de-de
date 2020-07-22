@@ -4,12 +4,12 @@ description: Hiermit werden die Quellen nach verfügbaren Anwendungen abgefragt,
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 366d2176fe9465495d8ed8f2eeb7912229bd07f1
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 7038f9b31c4c0446e3af56cac2d118598347d4d3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334479"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493255"
 ---
 # <a name="search-command-winget"></a>Befehl „search“ (winget)
 
@@ -42,13 +42,13 @@ Wenn der Befehl „search“ keine Filter oder Optionen enthält, werden alle ve
 
 Suchzeichenfolgen können mit den folgenden Optionen gefiltert werden.
 
-| Option  | Beschreibung |
+| Option  | BESCHREIBUNG |
  --------------|-------------|
 | **--id**        |   Schränkt die Suche auf die ID der Anwendung ein. Die ID enthält den Herausgeber und den Anwendungsnamen. |
 | **--name**      |  Schränkt die Suche auf den Namen der Anwendung ein. |
 | **--moniker**  |    Schränkt die Suche auf den angegebenen Moniker ein. |
 | **--tag**    |  Schränkt die Suche auf die für die Anwendung aufgelisteten Tags ein. |
-| **--command**   |   Schränkt die Suche auf den Namen der Anwendung ein. |
+| **--command**   |   Schränkt die Suche auf die für die Anwendung aufgelisteten Befehle ein. |
 
 Die Zeichenfolge wird als Teilzeichenfolge behandelt. Bei der Suche wird standardmäßig auch die Groß-/Kleinschreibung beachtet. `winget search micro` könnte z. B. Folgendes zurückgeben:
 

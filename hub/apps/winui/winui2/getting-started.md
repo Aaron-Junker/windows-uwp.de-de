@@ -2,23 +2,23 @@
 title: Erste Schritte mit der Windows-UI-Bibliothek
 description: Installieren und Verwenden der Windows-UI-Bibliothek.
 ms.topic: reference
-ms.date: 05/08/2020
+ms.date: 07/15/2020
 keywords: windows 10, uwp, toolkit-sdk
-ms.openlocfilehash: d96efb2f3de3084d74e06e70ff2811a944604f56
-ms.sourcegitcommit: 47899c30a39087bca1f058a4395cf58daacf5ae9
+ms.openlocfilehash: 336439d35c74073db490772dbfdae4ca3e580625
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345474"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492955"
 ---
-# <a name="getting-started-with-the-windows-ui-library"></a>Erste Schritte mit der Windows-UI-Bibliothek
+# <a name="getting-started-with-the-windows-ui-2x-library"></a>Erste Schritte mit der Windows-UI 2.x-Bibliothek
 
 [WinUI 2.4](release-notes/winui-2.4.md) ist die neueste stabile Version von WinUI und sollte für Apps in Produktionsumgebungen verwendet werden.
 
 Die Bibliothek ist als NuGet-Paket verfügbar, die zu jedem neuen oder vorhandenen Visual Studio-Projekt hinzugefügt werden kann.
 
 > [!NOTE]
-> Weitere Informationen zum Testen von frühen Vorschauversionen von WinUI 3.0 findest du unter [WinUI 3.0 Preview 1](../winui3/index.md).
+> Weitere Informationen zum Ausprobieren früherer Vorschauversionen von WinUI 3 finden Sie unter [WinUI-Bibliothek 3 Vorschau 2 (Juli 2020)](../winui3/index.md).
 
 ## <a name="download-and-install-the-windows-ui-library"></a>Herunterladen und Installieren der Windows UI-Bibliothek
 

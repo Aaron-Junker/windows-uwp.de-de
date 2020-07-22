@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, XAML, benutzerdefiniert, vorlagenbasiert, Steuerelement
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a6cde5a62367dccd83ca8dc6a46c203587850422
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2bd71e5ec78f3e0d1317c4e69ecd234985b2d8ab
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80760522"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492845"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT
 
@@ -21,7 +21,8 @@ ms.locfileid: "80760522"
 Eines der leistungsstärksten Features der universellen Windows-Plattform (UWP) ist die Flexibilität des Benutzeroberflächenstapels hinsichtlich der Erstellung benutzerdefinierter Steuerelemente auf der Grundlage des XAML-Typs [**Control**](/uwp/api/windows.ui.xaml.controls.control). Das XAML-Benutzeroberflächenframework bietet Features wie [benutzerdefinierte Abhängigkeitseigenschaften](/windows/uwp/xaml-platform/custom-dependency-properties) und [angefügte Eigenschaften](/windows/uwp/xaml-platform/custom-attached-properties) sowie [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates) zur mühelosen Erstellung vielseitiger und anpassbarer Steuerelemente. In diesem Thema werden die Schritte zum Erstellen eines benutzerdefinierten (vorlagenbasierten) Steuerelements mit C++/WinRT beschrieben.
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>Erstellen einer leeren App (BgLabelControlApp)
-Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein **Leere App (C++/WinRT)** -Projekt, lege dessen Name auf *BgLabelControlApp* fest, und stelle sicher, dass **Legen Sie die Projektmappe und das Projekt im selben Verzeichnis ab** deaktiviert ist (damit deine Ordnerstruktur mit der exemplarischen Vorgehensweise übereinstimmt).
+
+Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein **Leere App (C++/WinRT)** -Projekt, lege dessen Name auf *BgLabelControlApp* fest, und stelle sicher, dass **Legen Sie die Projektmappe und das Projekt im selben Verzeichnis ab** deaktiviert ist (damit deine Ordnerstruktur mit der exemplarischen Vorgehensweise übereinstimmt). Die neueste allgemein verfügbare Version von Windows SDK (d. h. keine Vorschauversion).
 
 Führe den Buildvorgang für dein Projekt erst aus, wenn du weiter unten in diesem Thema dazu aufgefordert wirst.
 
@@ -50,11 +51,13 @@ Das obige Listing veranschaulicht das Muster zum Deklarieren einer Abhängigkeit
 > [!NOTE]
 > Wenn du eine Abhängigkeitseigenschaft mit einem Gleitkommatyp erstellen möchtest, lege sie auf `double` (`Double` in [MIDL 3.0](/uwp/midl-3/)) fest. Wenn du eine Abhängigkeitseigenschaft vom Typ `float` (`Single` in MIDL) deklarierst und implementierst und anschließend im XAML-Markup einen Wert für diese Abhängigkeitseigenschaft festlegst, tritt der folgende Fehler auf: *Fehler beim Erstellen von "Windows.Foundation.Single" aus dem Text "<NUMBER>".* .
 
-Speichere die Datei, und erstelle das Projekt. Während des Buildprozesses wird das Tool `midl.exe` ausgeführt, um eine Windows-Runtime-Metadatendatei (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) zu erstellen, die die Laufzeitklasse beschreibt. Danach wird das Tool `cppwinrt.exe` ausgeführt, um Quellcodedateien zu generieren, die dich bei der Erstellung und Nutzung deiner Laufzeitklasse unterstützen. Diese Dateien enthalten Stubs zur Implementierung der Laufzeitklasse **BgLabelControl**, die du in deiner IDL deklariert hast. Diese Stubs sind `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` und `BgLabelControl.cpp`.
+Speichern Sie die Datei. Im aktuellen Zustand wird das Projekt zwar nicht vollständig erstellt, die Erstellung ist jedoch hilfreich, da dadurch die Quellcodedateien generiert werden, in denen die Laufzeitklasse **BgLabelControl** implementiert wird. Erstellen Sie daher als Nächstes das Projekt. (Die in dieser Phase zu erwartenden Buildfehler sind auf ein „nicht behobenes externes Problem“ zurückzuführen.)
+
+Während des Buildprozesses wird das Tool `midl.exe` ausgeführt, um eine Windows-Runtime-Metadatendatei (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) zu erstellen, die die Laufzeitklasse beschreibt. Danach wird das Tool `cppwinrt.exe` ausgeführt, um Quellcodedateien zu generieren, die dich bei der Erstellung und Nutzung deiner Laufzeitklasse unterstützen. Diese Dateien enthalten Stubs zur Implementierung der Laufzeitklasse **BgLabelControl**, die du in deiner IDL deklariert hast. Diese Stubs sind `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` und `BgLabelControl.cpp`.
 
 Kopiere die Stub-Dateien `BgLabelControl.h` und `BgLabelControl.cpp` aus `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` in den Projektordner `\BgLabelControlApp\BgLabelControlApp\`. Vergewissern Sie sich im **Projektmappen-Explorer**, dass **Alle Dateien anzeigen** aktiviert ist. Klicke mit der rechten Maustaste auf die kopierten Stub-Dateien, und klicke auf **Zu Projekt hinzufügen**.
 
-Du siehst eine `static_assert`-Deklaration am Anfang von `BgLabelControl.h` und `BgLabelControl.cpp`, die du entfernen musst, bevor das Projekt erstellt wird.
+Du siehst eine `static_assert`-Deklaration am Anfang von `BgLabelControl.h` und `BgLabelControl.cpp`, die du entfernen musst. Jetzt wird das Projekt erstellt.
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>Implementieren der benutzerdefinierten Steuerelementklasse **BgLabelControl**
 Als Nächstes öffnen wir `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` und `BgLabelControl.cpp` und implementieren unsere Laufzeitklasse. Ändere in `BgLabelControl.h` den Konstruktor, um den Standarddesignschlüssel festzulegen, implementiere **Label** und **LabelProperty**, füge einen statischen Ereignishandler namens **OnLabelChanged** für die Verarbeitung von Wertänderungen der Abhängigkeitseigenschaft hinzu, und füge einen privaten Member zum Speichern des Unterstützungsfelds für **LabelProperty** hinzu.
@@ -213,6 +216,6 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [Klasse „FrameworkElement“](/uwp/api/windows.ui.xaml.frameworkelement)
 * [Klasse „UIElement“](/uwp/api/windows.ui.xaml.uielement)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Steuerelementvorlagen](/windows/uwp/design/controls-and-patterns/control-templates)
 * [Benutzerdefinierte Abhängigkeitseigenschaften](/windows/uwp/xaml-platform/custom-dependency-properties)
