@@ -90,13 +90,13 @@
           href: controls-and-patterns/combo-box.md
         - name: Hyperlinks
           href: controls-and-patterns/hyperlinks.md
-        - name: Optionsfeld
+        - name: Optionsfelder
           href: controls-and-patterns/radio-button.md
         - name: Bewertungssteuerelement
           href: controls-and-patterns/rating.md
-        - name: Slider
+        - name: Schieberegler
           href: controls-and-patterns/slider.md
-        - name: Ein-/Ausschalten
+        - name: Umschalter
           href: controls-and-patterns/toggles.md
     - name: Sammlungen
       items:
@@ -360,7 +360,7 @@
                   items:
                     - name: Übersicht
                       href: shell/tiles-and-notifications/toast-desktop-apps.md
-                    - name: 'C#-Apps'
+                    - name: C#-Apps
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL-Apps
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
@@ -527,7 +527,7 @@
   items:
     - name: Übersicht
       href: usability/index.md
-    - name: Eingabehilfen
+    - name: Zugriff
       href: accessibility/accessibility.md
       items:
         - name: Übersicht
