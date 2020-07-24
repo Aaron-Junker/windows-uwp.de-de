@@ -8,12 +8,12 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1db38120252febefd55933fa106f473b3f920d8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8e672d67909a9090ac622ec53894a53fa8485f16
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234867"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997767"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>Festlegen der Sprache für die Spracherkennung
 
@@ -33,7 +33,7 @@ Sie sollten über Grundkenntnisse in den Bereichen Spracherkennung und Erkennung
 
 Wenn Sie mit der Entwicklung von Windows-apps noch nicht vertraut sind, können Sie sich diese Themen ansehen, um sich mit den hier behandelten Technologien vertraut zu machen.
 
--   [Erstellen Ihrer ersten App](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
+-   [Erste App erstellen](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   Informationen zu Ereignissen finden Sie unter [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
 
 **Richtlinien für die Benutzer Leistung:**
@@ -90,13 +90,7 @@ Bei einer SRGS-Grammatik handelt es sich um ein offenes XML-Standardformat, das 
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-**Entwickler**
-
 * [Spracherkennungsinteraktionen](speech-interactions.md)
-
-**Designer**
-
-* [Richtlinien für den Sprachentwurf](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
 
 **Beispiele**
 

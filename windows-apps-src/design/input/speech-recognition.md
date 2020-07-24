@@ -8,19 +8,19 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 8ecdd882357a7e20506ab6116748d57ab0dde33f
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218380"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997717"
 ---
 # <a name="speech-recognition"></a>Spracherkennung
 
 
 Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer Aktion, eines Befehls oder einer Aufgabe.
 
-> **Wichtige APIs**: [**Windows.Media.SpeechRecognition**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition)
+> **Wichtige APIs**: [ **Windows. Media. Sprech Erkennung**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition)
 
 Die Spracherkennung besteht aus einer Sprachlaufzeit, Erkennungs-APIs zum Programmieren der Laufzeit, einsatzfähiger Grammatik für das Diktieren und die Websuche und einer Standard-UI, die Benutzern das Auffinden und Verwenden der Spracherkennungsfeatures erleichtert.
 
@@ -221,21 +221,21 @@ Die Standardgrammatik der Freitext-Diktierfunktion erkennt die meisten Wörter u
 Die Grammatik für die Websuche enthält wie die Diktiergrammatik eine große Anzahl von Wörtern und Ausdrücken, die Benutzer sagen können. Sie ist allerdings für die Erkennung von Begriffen optimiert, die beim Suchen im Web häufig verwendet werden.
 
 > [!NOTE]
-> , da vordefinierte Diktat-und websuchgrammatiken groß sein können, und da Sie Online (nicht auf dem Gerät) sind, ist die Leistung möglicherweise nicht so schnell wie bei einer auf dem Gerät installierten benutzerdefinierten Grammatik.     
+> Da vordefinierte Diktat-und websuchgrammatiken groß sein können und da Sie Online (nicht auf dem Gerät) sind, ist die Leistung möglicherweise nicht so schnell wie bei einer benutzerdefinierten Grammatik, die auf dem Gerät installiert ist.     
 
 Diese vordefinierten Grammatiken können zum Erkennen von bis zu zehn Sekunden Spracheingabe verwendet werden. Sie müssen dazu keinen Code selbst erstellen. Sie erfordern jedoch eine Netzwerkverbindung.
 
-Zum Verwenden der Webdiensteinschränkungen muss die Unterstützung für die Spracheingabe und das Diktieren unter **Einstellungen** **-> Datenschutz -> Datenschutzeinstellungen für Sprache, Freihand, Eingabe** aktiviert sein.
+Um Webdienst Einschränkungen zu verwenden, muss die Spracheingabe und die Diktat Unterstützung in den **Einstellungen** aktiviert werden, indem die Option "Get to Know Me" in **Settings-> Privacy-> Speech, Inking und Input**aktiviert wird.
 
-Hier wird erläutert, wie Sie testen, ob die Spracheingabe aktiviert ist, und wie Sie die Seite „Einstellungen -> Datenschutz -> Datenschutzeinstellungen für Sprache, Freihand und Eingabe“ öffnen.
+Hier wird gezeigt, wie Sie testen können, ob die Spracheingabe aktiviert ist, und wie Sie die Einstellungen > den Datenschutz > Sprache, das Inking und die Eingabe Seite öffnen.
 
-Zuerst initialisieren wir eine globale Variable (HResultPrivacyStatementDeclined) für den HResult-Wert 0x80045509. Weitere Informationen finden Sie [unter Ausnahmebehandlung für in C-\# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
+Zuerst initialisieren wir eine globale Variable (HResultPrivacyStatementDeclined) für den HResult-Wert 0x80045509. Weitere Informationen finden Sie [unter Ausnahmebehandlung für in C \# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
 ```
 
-Anschließend fangen wir während der Erkennung alle standardmäßigen Ausnahmen ab und testen, ob der [**HResult**](https://docs.microsoft.com/uwp/api/Windows.Foundation.HResult)-Wert dem Wert der HResultPrivacyStatementDeclined-Variablen entspricht. Wenn ja, zeigen wir eine Warnung an und rufen `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` auf, um die Seite „Einstellungen“ zu öffnen.
+Wir fangen dann alle Standard Ausnahmen während der Neuverteilung ab und testen, ob der [**HRESULT**](https://docs.microsoft.com/uwp/api/Windows.Foundation.HResult) -Wert gleich dem Wert der hresultprivacystatus-Variablen Variable ist. Wenn dies der Fall ist, wird eine Warnung angezeigt und aufgerufen `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` , um die Seite "Einstellungen" zu öffnen.
 
 ```csharp
 catch (Exception exception)
@@ -278,9 +278,9 @@ Eine Speech Recognition Grammar Specification (SRGS)-Grammatik ist ein statische
 
 Verwenden Sie eine Voice Command Definition-(VCD-)XML-Datei, um die Befehle zu definieren, mit denen der Benutzer Aktionen initiieren kann, wenn er Ihre App aktiviert. Weitere Details finden Sie unter [Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
 
-Siehe [**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+Siehe [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**Beachten** Sie,  der Typ des Einschränkungs Typs, den Sie verwenden, von der Komplexität der Erkennungsfunktion abhängt, die Sie erstellen möchten. Für eine bestimmte Erkennungsaufgabe kann jeweils einer der Ansätze am besten geeignet sein, und vielleicht haben Sie in Ihrer App sogar für alle Einschränkungsarten Verwendung.
+**Hinweis**    Der Typ des Einschränkungs Typs, den Sie verwenden, hängt von der Komplexität der Erkennungsfunktion ab, die Sie erstellen möchten. Für eine bestimmte Erkennungsaufgabe kann jeweils einer der Ansätze am besten geeignet sein, und vielleicht haben Sie in Ihrer App sogar für alle Einschränkungsarten Verwendung.
 Informationen zu den ersten Schritten mit Einschränkungen finden Sie unter [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md).
 
 Die vordefinierte Diktiergrammatik von universellen Windows-Apps erkennt die meisten Wörter und kurzen Wortgruppen einer Sprache. Sie wird standardmäßig aktiviert, wenn ein Spracherkennungsobjekt ohne benutzerdefinierte Einschränkungen instanziiert wird.
@@ -368,17 +368,8 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
+* [Spracherkennungsinteraktionen](speech-interactions.md)
 
-**Entwickler**
-* [Interaktionen mit der Spracherkennung](speech-interactions.md)
-**Designer**
-* [Entwicklungsrichtlinien für die Spracherkennung](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
 **Beispiele**
-* [Beispiel für Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
 
- 
-
-
-
-
+* [Beispiel zu Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

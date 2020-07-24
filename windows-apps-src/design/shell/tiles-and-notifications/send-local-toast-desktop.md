@@ -1,6 +1,6 @@
 ---
 Description: Erfahren Sie, wie Win32-c#-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
-title: Lokale Popup Benachrichtigung von Desktop-c#-apps senden
+title: Senden von Popupbenachrichtigungen von C#-Desktop-Apps
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
@@ -8,14 +8,14 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, sparsesloadpakete, c#, C Sharp, Popup Benachrichtigung, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8332745b44bc688fbf2ca7cf3b42cf7300d579
-ms.sourcegitcommit: 179f8098d10e338ad34fa84934f1654ec58161cd
+ms.openlocfilehash: 6f1eef86045f44fa75363b54fa58e3e7089d64e0
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85717647"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997927"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Lokale Popup Benachrichtigung von Desktop-c#-apps senden
+# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Senden von Popupbenachrichtigungen von C#-Desktop-Apps
 
 Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie keine msix-oder Sparse-Pakete verwenden.
 
@@ -58,17 +58,17 @@ public class MyNotificationActivator : NotificationActivator
 Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren. Je nachdem, ob Sie msix/Sparse-Pakete oder klassisches Win32 verwenden, gibt es unterschiedliche Schritte. Wenn Sie beide unterstützen, müssen Sie beide Schritte ausführen (Sie müssen jedoch nicht Ihren Code verzweigen, da die Bibliothek dies für Sie erledigt!).
 
 
-### <a name="msixsparse-packages"></a>Msix/Pakete mit geringer Dichte
+#### <a name="msixsparse-packages"></a>[Msix/Pakete mit geringer Dichte](#tab/msix-sparse)
 
 Fügen Sie in der Datei " **Package. appxmanifest**" Folgendes hinzu, wenn Sie ein [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -Paket oder ein [Sparse-Paket](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) verwenden (oder beide unterstützen):
 
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
 3. Im **ignorablenamespaces** -Attribut, **com** und **Desktop**
-4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, `Arguments="-ToastActivated"` dass Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
-5. **Desktop: Erweiterung** für **Windows. toastnotificationactivation** zum Deklarieren der Popup-Activator-CLSID (die GUID aus Schritt #3).
+4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #2 verwendet. Achten Sie darauf, `Arguments="-ToastActivated"` dass Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
+5. **Desktop: Erweiterung** für **Windows. toastnotificationactivation** zum Deklarieren der Popup-Activator-CLSID (die GUID aus Schritt #2).
 
-**"Package. appxmanifest"**
+**Package.appxmanifest**
 
 ```xml
 <!--Add these namespaces-->
@@ -104,15 +104,15 @@ Fügen Sie in der Datei " **Package. appxmanifest**" Folgendes hinzu, wenn Sie e
 ```
 
 
-### <a name="classic-win32"></a>Klassisches Win32
+#### <a name="classic-win32"></a>[Klassisches Win32](#tab/classic)
 
-Wenn Sie klassisches Win32 verwenden (oder wenn Sie beides unterstützen), müssen Sie die Anwendungs Benutzer Modell-ID (aumid) und die Popup-Activator-CLSID (die GUID aus Schritt #3) in der Verknüpfung ihrer App im Startmenü deklarieren.
+Wenn Sie klassisches Win32 verwenden (oder wenn Sie beides unterstützen), müssen Sie die Anwendungs Benutzer Modell-ID (aumid) und die Popup-Activator-CLSID (die GUID aus Schritt #2) in der Verknüpfung ihrer App im Startmenü deklarieren.
 
 Wählen Sie eine eindeutige aumid aus, mit der ihre Win32-App identifiziert wird. Dies erfolgt in der Regel in der Form [CompanyName]. [AppName], aber Sie möchten sicherstellen, dass dies in allen apps eindeutig ist (Sie können am Ende einige Ziffern hinzufügen).
 
-#### <a name="step-31-wix-installer"></a>Schritt 3,1: WiX-Installer
+### <a name="step-31-wix-installer"></a>Schritt 3,1: WiX-Installer
 
-Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #3 in eingeschlossen ist, `{}` wie unten gezeigt.
+Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei " **Product. wxs** ", um die beiden Verknüpfungs Eigenschaften zur Start Menü Verknüpfung hinzuzufügen, wie unten gezeigt. Stellen Sie sicher, dass die GUID aus Schritt #2 in eingeschlossen ist, `{}` wie unten gezeigt.
 
 **Product. wxs**
 
@@ -132,9 +132,9 @@ Wenn Sie WiX für das Installationsprogramm verwenden, bearbeiten Sie die Datei 
 > Um Benachrichtigungen tatsächlich verwenden zu können, müssen Sie die APP zunächst vor dem Debuggen über das Installationsprogramm installieren, damit die Start Verknüpfung mit ihrer aumid und CLSID vorhanden ist. Nachdem die Start Verknüpfung vorhanden ist, können Sie in Visual Studio mit F5 Debuggen.
 
 
-#### <a name="step-32-register-aumid-and-com-server"></a>Schritt 3,2: Registrieren von aumid und com-Server
+### <a name="step-32-register-aumid-and-com-server"></a>Schritt 3,2: Registrieren von aumid und com-Server
 
-Rufen Sie dann unabhängig vom Installationsprogramm im Startcode Ihrer APP (vor dem Aufrufen von Benachrichtigungs-APIs) die **registeraumidandcomserver** -Methode auf, und geben Sie dann die Benachrichtigungs-Activator-Klasse aus Schritt #3 und ihrer zuvor verwendeten aumid an.
+Rufen Sie dann unabhängig vom Installationsprogramm im Startcode Ihrer APP (vor dem Aufrufen von Benachrichtigungs-APIs) die **registeraumidandcomserver** -Methode auf, und geben Sie dann die Benachrichtigungs-Activator-Klasse aus Schritt #2 und ihrer zuvor verwendeten aumid an.
 
 ```csharp
 // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
@@ -145,12 +145,14 @@ Wenn Sie sowohl das msix/Sparse-Paket als auch das klassische Win32-Paket unters
 
 Diese Methode ermöglicht es Ihnen, die Kompatibilitäts-APIs aufzurufen, um Benachrichtigungen zu senden und zu verwalten, ohne die aumid ständig bereitstellen zu müssen. Außerdem wird der Registrierungsschlüssel LocalServer32 für den com-Server eingefügt.
 
+---
+
 
 ## <a name="step-4-register-com-activator"></a>Schritt 4: Registrieren des com-Activators
 
 Sowohl für das msix/Sparse-Paket als auch für klassische Win32-apps müssen Sie den Typ des Benachrichtigungs aktivierers registrieren, damit Sie Popup Aktivierungen verarbeiten können.
 
-Aufrufen Sie im Startcode Ihrer APP die folgende **registeractivator** -Methode, und übergeben Sie die Implementierung der **notificationactivator** -Klasse, die Sie in Schritt #3 erstellt haben. Dies muss aufgerufen werden, damit Sie beliebige Popup Aktivierungen empfangen können.
+Aufrufen Sie im Startcode Ihrer APP die folgende **registeractivator** -Methode, und übergeben Sie die Implementierung der **notificationactivator** -Klasse, die Sie in Schritt #2 erstellt haben. Dies muss aufgerufen werden, damit Sie beliebige Popup Aktivierungen empfangen können.
 
 ```csharp
 // Register COM server and activator type
@@ -165,7 +167,7 @@ Das Senden einer Benachrichtigung ist mit UWP-apps identisch, mit dem Unterschie
 > [!NOTE]
 > Installieren Sie die [Benachrichtigungs Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) , damit Sie mithilfe von c#, wie unten gezeigt, Benachrichtigungen erstellen können, anstatt unformatierten XML-Code zu verwenden.
 
-Stellen Sie sicher, dass Sie den unten gezeigten **Inhalts Inhalt** verwenden (oder die toastgeneric-Vorlage, wenn Sie ein manuelles Erstellen von XML verwenden), da die Legacy-Windows 8.1 Popup Benachrichtigungs Vorlagen den in Schritt #3 erstellten com-Benachrichtigungs Aktivator nicht aktivieren.
+Stellen Sie sicher, dass Sie den unten gezeigten **Inhalts Inhalt** verwenden (oder die toastgeneric-Vorlage, wenn Sie ein manuelles Erstellen von XML verwenden), da die Legacy-Windows 8.1 Popup Benachrichtigungs Vorlagen den in Schritt #2 erstellten com-Benachrichtigungs Aktivator nicht aktivieren.
 
 > [!IMPORTANT]
 > Http-Images werden nur in msix/Sparse-Paket-Apps unterstützt, die über die Internetfunktion in ihrem Manifest verfügen. Klassische Win32-apps unterstützen keine http-Bilder. Sie müssen das Image in Ihre lokalen app-Daten herunterladen und lokal darauf verweisen.
