@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 2 (Juli 2020)
 description: Übersicht über das Release von WinUI 3 Vorschau 2.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 6dd29b7da0ce2d0f3a08538d392792337f1e1b5a
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 0acea4520f10d5f64baa29cb64fdf0ba1cc4552e
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493057"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997957"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows-UI-Bibliothek 3 Vorschau 2 (Juli 2020)
 
@@ -72,14 +72,14 @@ Wenn Sie ein Projekt mit WinUI 3 Vorschau 1 erstellt haben, können Sie Ihr Pr
 
 Sie können diese WinUI-Projektvorlagen verwenden, um Apps zu erstellen.
 
-| Vorlage | Language | Beschreibung |
+| Vorlage | Language | BESCHREIBUNG |
 |----------|----------|-------------|
 | Leere App, Gepackt (WinUI in Desktop) | C# und C++ | Erstellt eine .NET 5 (C#)-Desktop- oder native Win32 (C++ )-App mit einer WinUI-basierten Benutzeroberfläche. Das generierte Projekt enthält ein einfaches Fenster, das von der **Microsoft.UI.Xaml.Window**-Klasse in der WinUI-Bibliothek abgeleitet ist, die Sie als Ausgangspunkt verwenden können, um Ihre Benutzeroberfläche zu entwickeln. Weitere Informationen zu diesem Projekttyp finden Sie unter [Erste Schritte mit WinUI für Desktop-Apps](get-started-winui3-for-desktop.md).<p></p>Die Lösung umfasst außerdem ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App in ein [MSIX-Paket](/windows/msix/overview) umwandelt. Dies bietet eine moderne Bereitstellungserfahrung, die Möglichkeit zur Integration in Windows 10-Features mittels Paketerweiterungen und vieles mehr.  |
 | Leere App (WinUI in UWP)  | C# und C++ | Erstellt eine UWP-App mit einer WinUI-basierten Benutzeroberfläche. Das generierte Projekt enthält eine einfache Seite, die von der **Microsoft.UI.Xaml.Controls.Page**-Klasse in der WinUI-Bibliothek abgeleitet ist, die Sie als Ausgangspunkt verwenden können, um Ihre Benutzeroberfläche zu entwickeln. Weitere Informationen zu diesem Projekttyp finden Sie unter [Erste Schritte mit WinUI für UWP-Apps](get-started-winui3-for-uwp.md). |
 
 Sie können diese WinUI-Projektvorlagen verwenden, um Komponenten zu erstellen, die von einer WinUI-basierten App geladen und verwendet werden können.
 
-| Vorlage | Language | Beschreibung |
+| Vorlage | Language | BESCHREIBUNG |
 |----------|----------|-------------|
 | Klassenbibliothek (WinUI in Desktop) | Nur C# | Erstellt eine verwaltete .NET 5-Klassenbibliothek (DLL) in C# , die von anderen .NET 5-Desktop-Apps mit einer WinUI-basierten Benutzeroberfläche verwendet werden kann.  |
 | Klassenbibliothek (WinUI in UWP)  | Nur C# | Erstellt eine verwaltete Klassenbibliothek (DLL) in C#, die von anderen UWP-Apps mit einer WinUI-basierten Benutzeroberfläche verwendet werden kann. |
@@ -103,6 +103,9 @@ Die folgenden Elementvorlagen stehen für die Verwendung in einem WinUI-Projekt 
 ## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>Fehlerkorrekturen und andere Verbesserungen in WinUI 3 Preview 2
 
 Dies ist eine umfassende Liste von Fehlerkorrekturen und anderen Updates für Preview 2. Eine Liste der wichtigsten Fehlerkorrekturen, die in diesem Release behoben wurden, finden Sie in unserer [Release-Ankündigung](https://aka.ms/winui3/preview2-announcement).
+
+> [!NOTE]
+> WinUI 3 Preview 2 verwendet Version 2.4.2 der WinUI 2-Bibliothek. 
 
 - [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) und [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) funktionieren jetzt erwartungsgemäß in C#-Desktop-Apps.
   - Dadurch wurden einige andere Probleme behoben, die sich auf Auflistungssteuerelemente bezogen, die zwar im Back-End, aber nicht in der Benutzeroberfläche aktualisiert wurden.

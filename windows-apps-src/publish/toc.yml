@@ -178,11 +178,9 @@
       href: ../publish/insights-report.md
     - name: Bericht zur Anzeigenleistung
       href: ../publish/advertising-performance-report.md
-    - name: Werbekampagnenbericht
-      href: ../publish/ad-campaign-report.md
     - name: Herunterladen von Analyseberichten
       href: ../publish/download-analytic-reports.md
-- name: Bezahlung
+- name: Erhalten der Bezahlung
   href: ../publish/getting-paid-apps.md
   items:
     - name: Einrichten von Auszahlungskonten und Steuerformularen
@@ -210,3 +208,5 @@
       href: ../publish/store-app-quality.md
     - name: Verhaltensregeln für Entwickler
       href: ../publish/store-developer-code-of-conduct.md
+    - name: 'Microsoft Store: Produktranking, Platzierung und Marketing-Offenlegungserklärung'
+      href: 'https://aka.ms/disclosurepolicypdf'
