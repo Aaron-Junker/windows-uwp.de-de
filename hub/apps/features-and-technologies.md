@@ -6,12 +6,12 @@ ms.date: 05/08/2019
 ms.localizationpriority: medium
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 6bae7fdef4e9cdf05dfa6f56160f1021033123e6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c214a31162b64853fd2115170ef1fd7766cafe96
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77705775"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997947"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>Features und Technologien für Windows-Apps
 
@@ -38,9 +38,9 @@ Weitere Informationen zu den verschiedenen Möglichkeiten der Verwendung von Win
 
 ### <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
-![initial Erkennung screen for a constraint based on a sgrs grammar file](images/speech-listening-initial.png)
+![Erster Erkennungsbildschirm für eine Einschränkung basierend auf einer SGRS-Grammatikdatei](images/speech-listening-initial.png)
 
-![final Erkennung screen for a constraint based on a sgrs grammar file](images/speech-listening-complete.png)
+![Letzter Erkennungsbildschirm für eine Einschränkung basierend auf einer SGRS-Grammatikdatei](images/speech-listening-complete.png)
 
 Windows bietet zahlreiche Möglichkeiten zum Integrieren von Spracherkennung und Text-zu-Sprache (auch als Text-to-Speech, TTS oder Sprachsynthese bezeichnet) direkt in die Benutzeroberfläche Ihrer App. Über Sprache können Sie Ihren Benutzern eine stabile und angenehme Möglichkeit zur Interaktion mit Ihrer App bieten und zudem die Interaktion per Tastatur, Maus, Toucheingabe und Gesten ergänzen oder sogar ersetzen.
 

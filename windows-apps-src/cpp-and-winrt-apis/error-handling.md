@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, fehler, behandlung, ausnahme
 ms.localizationpriority: medium
-ms.openlocfilehash: 37819d1626d3adc6f5647f447567a9273e72668d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1092427659cfbf2fb7d1b5dbfc9cb8802dcfeccd
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270133"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296161"
 ---
 # <a name="error-handling-with-cwinrt"></a>Fehlerbehandlung bei C++/WinRT
 
@@ -19,7 +19,7 @@ In diesem Thema werden Strategien zur Behandlung von Fehlern bei der Programmier
 ## <a name="avoid-catching-and-throwing-exceptions"></a>Vermeiden des Abfangens und Auslösens von Ausnahmen
 Es wird empfohlen, weiterhin [ausnahmesicheren Code](/cpp/cpp/how-to-design-for-exception-safety) zu schreiben, aber auch nach Möglichkeit zu vermeiden, dass Ausnahmen abgefangen und ausgelöst werden. Wenn kein Handler für eine Ausnahme vorhanden ist, generiert Windows automatisch einen Fehlerbericht (einschließlich eines Minidumps des Absturzes). Dieser hilft Ihnen dabei, zu ermitteln, wo das Problem liegt.
 
-Lösen Sie keine Ausnahme aus, die erwartungsgemäß abgefangen wird. Und verwenden Sie keine Ausnahmen für erwartete Fehler. Lösen Sie eine Ausnahme *nur dann aus, wenn ein unerwarteter Laufzeitfehler auftritt*, und behandeln Sie alles andere mit Fehler-/Ergebniscodes – direkt und in der Nähe der Fehlerquelle. So wissen Sie, wenn eine Ausnahme *ausgelöst wird*, dass die Ursache entweder ein Fehler im Code oder ein außergewöhnlicher Fehlerstatus im System ist.
+Lösen Sie keine Ausnahme aus, die erwartungsgemäß abgefangen wird. Und verwenden Sie keine Ausnahmen für erwartete Fehler. Lösen Sie eine Ausnahme ** nur dann aus, wenn ein unerwarteter Laufzeitfehler auftritt&mdash;, und behandeln Sie alles andere mit Fehler-/Ergebniscodes – direkt und in der Nähe der Fehlerquelle. So wissen Sie, wenn eine Ausnahme *ausgelöst wird*, dass die Ursache entweder ein Fehler im Code oder ein außergewöhnlicher Fehlerstatus im System ist.
 
 Betrachten Sie das Szenario beim Zugreifen auf die Windows-Registrierung. Wenn Ihre App einen Wert aus der Registrierung nicht lesen kann, ist dies zu erwarten und Sie sollten dies ordnungsgemäß handhaben. Lösen Sie keine Ausnahme aus. Geben Sie stattdessen einen `bool`- oder `enum`-Wert zurück, der darauf hinweist, dass der Wert nicht gelesen wurde, und ggf. auch den Grund dafür angibt. Kann ein Wert nicht in die Registrierung *geschrieben* werden, weist dies wahrscheinlich darauf hin, dass ein größeres Problem vorliegt, als Sie sinnvoll in Ihrer Anwendung behandeln könnten. In solch einem Fall sollte Ihre Anwendung nicht fortgesetzt werden. Folglich ist eine Ausnahme, die zu einem Fehlerbericht führt, die schnellste Möglichkeit zu verhindern, dass Ihre Anwendung Schäden verursacht.
 
@@ -58,7 +58,7 @@ IAsyncAction MakeThumbnailsAsync()
         }
         catch (winrt::hresult_error const& ex)
         {
-            winrt::hresult hr = ex.to_abi(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
+            winrt::hresult hr = ex.code(); // HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND).
             winrt::hstring message = ex.message(); // The system cannot find the file specified.
         }
     }
@@ -66,6 +66,8 @@ IAsyncAction MakeThumbnailsAsync()
 ```
 
 Verwenden Sie dieses Muster in einer Coroutine beim Aufrufen einer `co_await`-ed-Funktion. Ein weiteres Beispiel für diese Konvertierung von HRESULT in eine Ausnahme ist, wenn eine Komponenten-API E_OUTOFMEMORY zurückgibt, wodurch eine **std::bad_alloc**-Ausnahme ausgelöst wird.
+
+Bevorzugen Sie [**winrt::hresult_error::code**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function), wenn Sie einen HRESULT-Code nur einsehen. Die [**winrt::hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function)-Funktion hingegen führt eine Konvertierung in ein COM-Fehlerobjekt aus und sendet den Status per Push in den lokalen COM-Threadspeicher.
 
 ## <a name="throwing-exceptions"></a>Auslösen von Ausnahmen
 Es gibt Fälle, in denen Sie entscheiden, dass, wenn Ihr Aufruf einer bestimmten Funktion fehlschlägt, Ihre Anwendung nicht mehr wiederhergestellt werden kann (Sie könnten sich dann nicht mehr darauf verlassen, dass die Anwendung wie erwartet funktioniert). Im Codebeispiel unten wird ein [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle)-Wert als Wrapper für den HANDLE verwendet, der von [**CreateEvent**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-createeventa) zurückgegeben wird. Anschließend wird der Handle (es wird daraus ein `bool`-Wert erstellt) an die Funktionsvorlage [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) übergeben. **winrt::check_bool** funktioniert mit einem `bool`-Wert oder mit einem beliebigen Wert, der in `false` (Fehler) oder `true` (Erfolg) konvertiert werden kann.

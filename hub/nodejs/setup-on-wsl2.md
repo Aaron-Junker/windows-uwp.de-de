@@ -7,13 +7,13 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von Node.js, Node unter Windows, Node im WSL, Node unter Linux unter Windows, Installieren von Node unter Windows, NodeJS mit VS Code, Entwickeln mit Node unter Windows, Entwickeln mit NodeJS unter Windows, Installieren von Node in WSL, NodeJS im Windows-Subsystem für Linux
 ms.localizationpriority: medium
-ms.date: 06/09/2020
-ms.openlocfilehash: e8fb06cb1e68d5dfa7f23e6966f917c96eb79859
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.date: 07/28/2020
+ms.openlocfilehash: ce4e736751d5586c6ab4489e976fc397b1be0301
+ms.sourcegitcommit: 6b83f1854a113490dcd4f52425ecade9e66e0b44
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493275"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87333794"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>Einrichten einer Node.js-Entwicklungsumgebung mit WSL 2
 
@@ -85,7 +85,10 @@ Obwohl nvm derzeit der beliebteste Versions-Manager für Node ist, gibt es auch 
 
 ## <a name="install-your-favorite-code-editor"></a>Installieren des bevorzugten Code-Editors
 
-Es wird empfohlen, **Visual Studio Code** mit der **Remote-WSL-Erweiterung** für Node.js-Projekte zu verwenden. Dadurch wird VS Code in eine Client-Server-Architektur aufgeteilt, wobei der Client (die Benutzeroberfläche) auf einem Windows-Computer und der Server (der Code, Git, Plug-Ins usw.) remote ausgeführt wird.
+Es wird empfohlen, Visual Studio Code mit der Remote-WSL-Erweiterung für Node.js-Projekte zu verwenden. Dadurch wird VS Code in eine Client-Server-Architektur aufgeteilt, wobei der Client (die VS Code-Benutzeroberfläche) auf einem Windows-Betriebssystem und der Server (der Code, Git, Plug-Ins usw.) remote auf Ihrer WSL Linux-Verteilung ausgeführt wird. 
+
+> [!NOTE]
+> Dieses „Remoteszenario“ unterscheidet sich geringfügig von dem, was Sie vielleicht gewohnt sind. Die WSL unterstützt eine echte Linux-Verteilung, bei der Ihr Projektcode getrennt von Ihrem Windows-Betriebssystem, aber immer noch auf Ihrem lokalen Computer ausgeführt wird. Die Remote-WSL-Erweiterung stellt eine Verbindung mit Ihrem Linux-Subsystem her, als handle es sich um einen Remoteserver, auch wenn sie nicht in der Cloud ausgeführt wird… Sie wird weiterhin auf dem lokalen Computer in der WSL-Umgebung ausgeführt, die Sie für die Ausführung parallel zu Windows aktiviert haben. 
 
 - Linux-basierte Funktionen wie IntelliSense und Linting werden unterstützt.
 - Dein Projekt wird automatisch unter Linux erstellt.
