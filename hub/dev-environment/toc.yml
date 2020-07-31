@@ -1,101 +1,117 @@
 - name: Windows-Entwicklungsumgebung
-  href: index.yml
+  href: overview.md
   items:
-    - name: Entwickeln mit Python
+    - name: Übersicht
       items:
-        - name: Übersicht
-          href: ../python/index.yml
-        - name: Erste Schritte für Einsteiger
-          href: ../python/beginners.md
-        - name: Erste Schritte mit der Webentwicklung
-          href: ../python/web-frameworks.md
-        - name: Erste Schritte mit Automatisierung
-          href: ../python/scripting.md
-        - name: Erste Schritte mit Datenbanken
-          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
-        - name: Häufig gestellte Fragen
-          href: ../python/faqs.md
-        - name: Ressourcen
-          href: ../python/resources.md
-    - name: Entwickeln mit Node.js
-      items:
-        - name: Übersicht
-          href: ../nodejs/index.yml
-        - name: Setup mit WSL2 (Linux)
-          href: ../nodejs/setup-on-wsl2.md
-        - name: Setup mit Windows (Einsteiger)
-          href: ../nodejs/setup-on-windows.md
-        - name: Erste Schritte für Einsteiger
-          href: ../nodejs/beginners.md
-        - name: Erste Schritte mit Webframeworks
-          href: ../nodejs/web-frameworks.md
-        - name: Erste Schritte mit Datenbanken
-          href: '.https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
-        - name: Erste Schritte mit Containern
-          href: ../nodejs/containers.md
-    - name: Entwickeln mit Android
-      items:
-        - name: Übersicht
-          href: ../android/overview.md
-        - name: Erste Schritte mit Android (nativ)
-          href: ../android/native-android.md
-        - name: Erste Schritte mit plattformübergreifenden Tools
-          items:
-            - name: Xamarin (nativ)
-              href: ../android/xamarin-android.md
-            - name: Xamarin Forms
-              href: ../android/xamarin-forms.md
-            - name: React Native
-              href: ../android/react-native.md
-            - name: 'PWA (Ionic, PhoneGap, Cordova)'
-              href: ../android/pwa.md
-        - name: Defender-Einstellungen zur Verbesserung der Leistung
-          href: ../android/defender-settings.md
-        - name: Testen auf Gerät oder Emulator
-          href: ../android/emulator.md
-    - name: Windows Paket-Manager
-      items:
-        - name: Übersicht
-          href: ../package-manager/index.md
-        - name: Verwenden des Tools „winget“
-          items:
-            - name: Übersicht
-              href: ../package-manager/winget/index.md
-            - name: Befehl „hash“
-              href: ../package-manager/winget/hash.md
-            - name: Befehl „help“
-              href: ../package-manager/winget/help.md
-            - name: Befehl „install“
-              href: ../package-manager/winget/install.md
-            - name: Befehl „search“
-              href: ../package-manager/winget/search.md
-            - name: Befehl „show“
-              href: ../package-manager/winget/show.md
-            - name: Befehl „source“
-              href: ../package-manager/winget/source.md
-            - name: Befehl „validate“
-              href: ../package-manager/winget/validate.md
-        - name: Übermitteln von Paketen
-          items:
-            - name: Übersicht
-              href: ../package-manager/package/index.md
-            - name: Erstellen des Paketmanifests
-              href: ../package-manager/package/manifest.md
-            - name: Übermitteln des Manifests an das Repository
-              href: ../package-manager/package/repository.md
-    - name: Windows-Subsystem für Linux
-      href: 'https://docs.microsoft.com/windows/wsl/'
-    - name: Windows-Terminal
-      href: 'https://docs.microsoft.com/windows/terminal/'
-    - name: Leitfaden für Mac zu Windows
-      items:
-        - name: Ändern der Entwicklungsumgebung
+        - name: Tipps zu Workflow und Leistung
+          href: tips.md
+        - name: Entwicklergeschichten
+          href: dev-stories.md
+        - name: Beliebte Tutorials
+          href: tutorials.md
+        - name: Leitfaden für Mac zu Windows
           href: mac-to-windows.md
         - name: Tastenkombinationen
           href: mac-to-windows.md#keyboard-shortcuts
-        - name: Trackpad-Tastenkombinationen
-          href: mac-to-windows.md#trackpad-shortcuts
-        - name: Terminal und Shell
-          href: mac-to-windows.md#terminal-and-shell
-        - name: Apps und Hilfsprogramme
-          href: mac-to-windows.md#apps-and-utilities
+    - name: Entwicklungspfade
+      items:
+        - name: Erste Schritte mit Python
+          items:
+            - name: Übersicht
+              href: ../python/index.yml
+            - name: Erste Schritte für Einsteiger
+              href: ../python/beginners.md
+            - name: Erste Schritte mit der Webentwicklung
+              href: ../python/web-frameworks.md
+            - name: Erste Schritte mit Automatisierung
+              href: ../python/scripting.md
+            - name: Häufig gestellte Fragen
+              href: ../python/faqs.md
+        - name: Erste Schritte mit Node.js
+          items:
+            - name: Übersicht
+              href: ../nodejs/index.yml
+            - name: Setup mit WSL2
+              href: ../nodejs/setup-on-wsl2.md
+            - name: Setup mit Windows (Einsteiger)
+              href: ../nodejs/setup-on-windows.md
+            - name: Erste Schritte für Einsteiger
+              href: ../nodejs/beginners.md
+            - name: Erste Schritte mit Webframeworks
+              href: ../nodejs/web-frameworks.md
+        - name: Erste Schritte mit Android
+          items:
+            - name: Übersicht
+              href: ../android/overview.md
+            - name: Erste Schritte mit Android (nativ)
+              href: ../android/native-android.md
+            - name: Erste Schritte mit plattformübergreifenden Tools
+              items:
+                - name: Xamarin (nativ)
+                  href: ../android/xamarin-android.md
+                - name: Xamarin Forms
+                  href: ../android/xamarin-forms.md
+                - name: React Native
+                  href: ../android/react-native.md
+                - name: 'PWA (Ionic, PhoneGap, Cordova)'
+                  href: ../android/pwa.md
+            - name: Defender-Einstellungen zur Verbesserung der Leistung
+              href: ../android/defender-settings.md
+            - name: Testen auf Gerät oder Emulator
+              href: ../android/emulator.md
+        - name: Erste Schritte mit C und C++
+          href: 'https://docs.microsoft.com/cpp/'
+        - name: Erste Schritte mit C#
+          href: 'https://docs.microsoft.com/dotnet/csharp/'
+        - name: Erste Schritte Java in Azure
+          href: 'https://docs.microsoft.com/azure/developer/java/'
+        - name: Erste Schritte mit PowerShell
+          href: 'https://docs.microsoft.com/powershell/'
+        - name: Erste Schritte mit Datenbanken in WSL
+          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
+    - name: Tools und Plattformen
+      items:
+        - name: Windows-Subsystem für Linux
+          href: 'https://docs.microsoft.com/windows/wsl/'
+        - name: Windows-Terminal
+          href: 'https://docs.microsoft.com/windows/terminal/'
+        - name: Windows Paket-Manager
+          items:
+            - name: Übersicht
+              href: ../package-manager/index.md
+            - name: Verwenden des Tools „winget“
+              items:
+                - name: Übersicht
+                  href: ../package-manager/winget/index.md
+                - name: Befehl „hash“
+                  href: ../package-manager/winget/hash.md
+                - name: Befehl „help“
+                  href: ../package-manager/winget/help.md
+                - name: Befehl „install“
+                  href: ../package-manager/winget/install.md
+                - name: Befehl „search“
+                  href: ../package-manager/winget/search.md
+                - name: Befehl „show“
+                  href: ../package-manager/winget/show.md
+                - name: Befehl „source“
+                  href: ../package-manager/winget/source.md
+                - name: Befehl „validate“
+                  href: ../package-manager/winget/validate.md
+            - name: Übermitteln von Paketen
+              items:
+                - name: Übersicht
+                  href: ../package-manager/package/index.md
+                - name: Erstellen des Paketmanifests
+                  href: ../package-manager/package/manifest.md
+                - name: Übermitteln des Manifests an das Repository
+                  href: ../package-manager/package/repository.md
+        - name: PowerToys
+          href: 'https://github.com/microsoft/PowerToys'
+        - name: VS-Code
+          href: 'https://code.visualstudio.com/docs'
+        - name: Visual Studio
+          href: 'https://docs.microsoft.com/visualstudio/windows/?view=vs-2019'
+        - name: Azure
+          href: 'https://docs.microsoft.com/azure/?product=featured'
+        - name: .NET
+          href: 'https://docs.microsoft.com/dotnet/'

@@ -108,6 +108,12 @@
           topicHref: /windows/android/overview
         - name: Mac zu Windows
           topicHref: /windows/dev-environment/mac-to-windows
+        - name: Tipps
+          topicHref: /windows/dev-environment/tips
+        - name: Entwicklergeschichten
+          topicHref: /windows/dev-environment/dev-stories
+        - name: Lernprogramme
+          topicHref: /windows/dev-environment/tutorials
         - name: Windows-Subsystem für Linux
           tocHref: /windows/dev-environment/wsl
           topicHref: /windows/wsl/about
