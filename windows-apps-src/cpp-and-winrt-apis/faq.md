@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f5ad82831b6b07e0bbc2127947f777f0cd50e5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759923"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296188"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
 Hier finden Sie Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
@@ -197,6 +197,9 @@ Um eines oder beide Probleme zu beheben, können Sie wie folgt vorgehen.
 #pragma pop_macro("TRY")
 #pragma pop_macro("GetCurrentTime")
 ```
+
+## <a name="how-do-i-speed-up-symbol-loading"></a>Wie kann ich das Laden von Symbolen beschleunigen?
+Aktivieren Sie in Visual Studio die Option *Nur angegebene Module laden* unter **Extras** > **Optionen** > **Debuggen** > **Symbole**. Sie können dann mit der rechten Maustaste auf DLLs in der Stapelliste klicken und einzelne Module laden.
 
 > [!NOTE]
 > Wenn Ihre Frage in diesem Thema nicht beantwortet wurde, finden Sie möglicherweise Hilfe in der [Visual Studio C++-Entwicklercommunity](https://developercommunity.visualstudio.com/spaces/62/index.html), oder verwenden Sie das [`c++-winrt`-Tag auf Stack Overflow](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt).

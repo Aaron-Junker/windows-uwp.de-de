@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c23a9539d0fc3902f715917b380e8b6b3e132c15
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 23cadaca6f82d7cb43834f5a86c56a3fa34cb00e
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68974453"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997797"
 ---
 # <a name="tutorial-create-a-user-interface"></a>Tutorial: Erstellen einer Benutzeroberfläche
 
@@ -558,5 +558,4 @@ Nachdem du nun die grundlegende Benutzeroberfläche erstellt hast, schau dir die
 
 ## <a name="get-the-final-version-of-the-photolab-sample"></a>Abrufen der endgültigen Version des PhotoLab-Beispiels
 
-Dieses Tutorial behandelt nicht die gesamte Fotobearbeitungs-App. Lies daher die [endgültige Version](https://github.com/Microsoft/Windows-appsample-photo-lab), um Features wie z.B. benutzerdefinierte Animationen und Telefonsupport kennenzulernen.
-
+Dieses Tutorial behandelt nicht die gesamte Fotobearbeitungs-App. Lesen Sie daher die [endgültige Version](https://github.com/Microsoft/Windows-appsample-photo-lab) zu weiteren Features wie z. B. benutzerdefinierte Animationen und adaptive Layouts.

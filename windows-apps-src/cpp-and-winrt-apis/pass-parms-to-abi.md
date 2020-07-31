@@ -5,12 +5,12 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, übergeben, Parameter, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 51cde2332d3d9df9d1f488aa7f8246f9e1e2ed36
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255254"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997977"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>Übergabe von Parametern in die ABI-Grenze
 
@@ -57,7 +57,7 @@ Windows-Runtime-Sammlungen sind bereits **IIterable**.
 
 Beachten Sie, dass **IIterable\<U\>** und **std::vector\<U\>** nicht zulässig sind, selbst wenn **U** in **T** konvertiert werden kann. Für **std::vector\<U\>** können Sie die Version mit doppeltem Iterator verwenden (weitere Informationen finden Sie unten).
 
-In manchen Fällen implementiert das Objekt, über das Sie verfügen, möglicherweise tatsächlich die gewünschte Instanz von **IIterable**. Beispielsweise wird **IIterable<StorageFile>** durch das von [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) erzeugte **IVectorView\<StorageFile\>** implementiert. Es implementiert jedoch auch **IIterable<IStorageItem>** ; Sie müssen es lediglich explizit anfordern.
+In manchen Fällen implementiert das Objekt, über das Sie verfügen, möglicherweise tatsächlich die gewünschte Instanz von **IIterable**. Beispielsweise wird, **IIterable\<StorageFile\>** durch das von [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) erzeugte **IVectorView\<StorageFile\>** implementiert. Es implementiert jedoch auch **IIterable\<IStorageItem\>** ; Sie müssen es lediglich explizit anfordern.
 
 ```cppwinrt
 IVectorView<StorageFile> pickedFiles{ co_await filePicker.PickMultipleFilesAsync() };

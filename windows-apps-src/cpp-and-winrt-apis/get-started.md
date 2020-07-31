@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 968c347927edf0ad44476ec4bdca97aae19bb9a4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 3e17e3f8107e82547ec0d367099f621e5b2e590a
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493035"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997847"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
@@ -71,7 +71,9 @@ Mit den Standardprojekteinstellungen kommen die enthaltenen Header aus dem Windo
 Die Header enthalten Windows-APIs, die in C++/WinRT projiziert werden. Anders ausgedrückt: Für jeden einzelnen Windows-Typ definiert C++/WinRT ein C++-freundliches Äquivalent (wird als *projizierter Typ* bezeichnet). Ein projizierter Typ verfügt über den gleichen vollqualifizierten Namen wie der Windows-Typ, befindet sich aber im C++/**winrt**-Namespace. Wenn Sie diese in Ihrem vorkompilierten Header platzieren, werden die inkrementellen Buildzeiten reduziert.
 
 > [!IMPORTANT]
-> Wann immer Sie einen Typ aus einem Windows-Namespace verwenden möchten, schließen Sie die entsprechende C++/WinRT-Windows-Namespace-Headerdatei wie oben gezeigt ein. Der *zugehörige* Header ist derjenige mit dem gleichen Namen wie der Namespace des Typs. Um z.B. die C++/WinRT-Projektion für die Laufzeitklasse [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) zu verwenden, fügen Sie Folgendes ein: `#include <winrt/Windows.Foundation.Collections.h>`. Wenn Sie `winrt/Windows.Foundation.Collections.h` einschließen, müssen Sie nicht *außerdem*`winrt/Windows.Foundation.h` einschließen. Jeder C++/WinRT-Projektionsheader schließt automatisch die Headerdatei seines übergeordneten Namespace ein, sodass Sie sie nicht explizit einschließen *müssen*. Es tritt aber auch kein Fehler auf, wenn Sie dies trotzdem tun.
+> Wann immer Sie einen Typ aus einem Windows-Namespace verwenden möchten, müssen Sie ein `#include` für die entsprechende C++/WinRT-Windows-Namespace-Headerdatei ausführen, wie oben gezeigt ein. Der *zugehörige* Header ist derjenige mit dem gleichen Namen wie der Namespace des Typs. Um z. B. die C++/WinRT-Projektion für die Laufzeitklasse [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) zu verwenden, schließen Sie den `winrt/Windows.Foundation.Collections.h`-Header ein.
+> 
+> Es ist üblich, dass ein C++/WinRT-Projektionsheader automatisch seine übergeordnete Namespace-Headerdatei einschließt. So schließt `winrt/Windows.Foundation.Collections.h` beispielsweise `winrt/Windows.Foundation.h` ein. Aber Sie sollten sich nicht auf dieses Verhalten verlassen, da es sich um ein Implementierungsdetail handelt, das mit der Zeit geändert werden kann. Sie müssen explizit alle benötigten Header einschließen.
 
 ```cppwinrt
 using namespace winrt;

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f08c2cc39bb4cdf9a49351f70143a0f86df1fb7
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2c717a74824db43984794b67638dd19b51b5dacd
+ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254726"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87160879"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Beispieldaten für die Entwurfsoberfläche und Prototyperstellung
 =============================================================================================
@@ -26,6 +26,10 @@ Möglicherweise ist es nicht möglich oder nicht erwünscht (z. B. aus Gründen 
 
 -   Laden Sie die App [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) herunter.
 -   Laden Sie die App [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) herunter.
+
+
+> [!NOTE]
+> Die Screenshots in diesem Artikel stammen aus einer früheren Version von Visual Studio. Wenn Sie Visual Studio 2019 verwenden, stimmen sie möglicherweise nicht genau mit Ihrer Entwicklungsoberfläche überein.
 
 <a name="setting-datacontext-in-markup"></a>Festlegen des DataContext im Markup
 -----------------------------
@@ -44,7 +48,7 @@ Jedoch stehen Ihnen bei Verwendung dieses Verfahrens weniger Designmöglichkeite
 
 ![Benutzeroberfläche mit geringen Entwurfsmöglichkeiten](images/displaying-data-in-the-designer-01.png)
 
-Als Abhilfe können Sie die **DataContext**-Zuweisung auskommentieren und den **DataContext** stattdessen im Seitenmarkup festlegen. Dies bewirkt, dass die Livedaten zur Entwurfszeit und zur Laufzeit angezeigt werden. Öffnen Sie hierzu zunächst die XAML-Seite. Klicken Sie dann im Fenster **Dokumentgliederung** auf das Stammentwurfselement (in der Regel mit der Bezeichnung **\[Page\]** ), um es auszuwählen. Suchen Sie im **Eigenschaftenfenster** die **DataContext**-Eigenschaft (in der Kategorie „Allgemein“), und klicken Sie dann auf **Neu**. Klicken Sie im Dialogfeld **Objekt auswählen** auf den Ansichtsmodelltyp, und klicken Sie dann auf **OK**.
+Als Abhilfe können Sie die **DataContext**-Zuweisung auskommentieren und den **DataContext** stattdessen im Seitenmarkup festlegen. Dies bewirkt, dass die Livedaten zur Entwurfszeit und zur Laufzeit angezeigt werden. Öffnen Sie hierzu zunächst die XAML-Seite. Klicken Sie dann im Fenster **Dokumentgliederung** auf das Stammentwurfselement (in der Regel mit der Bezeichnung **\[Page\]** ), um es auszuwählen. Suchen Sie im Eigenschaftenfenster die **DataContext**-Eigenschaft (in der Kategorie **Allgemein**), und ändern Sie sie. Wählen Sie im Dialogfeld **Objekt auswählen** den Ansichtsmodelltyp aus, und klicken Sie dann auf **OK**.
 
 ![Benutzeroberfläche zum Festlegen des „DataContext“](images/displaying-data-in-the-designer-02.png)
 

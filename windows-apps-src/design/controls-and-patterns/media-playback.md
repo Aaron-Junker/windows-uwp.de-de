@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bc12d76cf34b5a631435a7535567aab0cafb0f44
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: dcccc862768b276c3c7965e51e8b2c30dca61e59
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970375"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998007"
 ---
 # <a name="media-player"></a>Media Player
 
@@ -85,7 +85,7 @@ Die Transportsteuerelemente unterstützen Layouts mit einer Zeile und mit Doppel
 
 Das Layout mit doppelzeiligen Steuerelementen (siehe unten) wird für die meisten Nutzungsszenarien empfohlen, insbesondere für größere Bildschirme. Dieses Layout bietet mehr Platz für Steuerelemente und erleichtert dem Benutzer die Bedienung der Zeitachse.
 
-![Beispiel für MTC-Steuerelemente, Doppelzeile](images/controls/mtc_double_inprod.png)
+![Beispiel für MTC-Steuerelemente, doppelte Zeile](images/controls/mtc_double_inprod.png)
 
 **Steuerelemente für den Systemmedientransport**
 

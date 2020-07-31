@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projektion, Parallelität, async, asynchron, Asynchronität
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ff00264d0806e7fbdfcabd000ec68857b1485dcd
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267499"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296152"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>Erweiterte Parallelität und Asynchronie mit C++/WinRT
 
@@ -81,11 +81,14 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     co_await winrt::resume_background();
     // Do compute-bound work here.
 
-    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+    // Switch to the foreground thread associated with textblock.
+    co_await winrt::resume_foreground(textblock.Dispatcher());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+Die Funktion **winrt::resume_foreground** nimmt einen optionalen Prioritätsparameter an. Wenn Sie diesen Parameter verwenden, dann ist das oben gezeigte Muster angemessen. Andernfalls können Sie `co_await winrt::resume_foreground(someDispatcherObject);` in `co_await someDispatcherObject;` vereinfachen.
 
 ## <a name="execution-contexts-resuming-and-switching-in-a-coroutine"></a>Ausführungskontexte, Fortsetzen und Wechseln in einer Coroutine
 
@@ -595,7 +598,7 @@ int main()
 ```
 
 > [!NOTE]
-> Implementieren Sie für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Du kannst entweder einen einzelnen Delegaten für das Abschlussereignis verwenden oder `co_await` dafür ausführen. Wenn Sie beide Abschlusshandler nutzen, schlägt der zweite fehl. Für ein asynchrones Objekt können Sie einen der beiden folgenden Abschlusshandlertypen verwenden, jedoch nicht beide.
+> Implementiere für asynchrone Aktionen oder Vorgänge nicht mehrere *Abschlusshandler*. Du kannst entweder einen einzelnen Delegaten für das Abschlussereignis verwenden oder `co_await` dafür ausführen. Wenn Sie beide Abschlusshandler nutzen, schlägt der zweite fehl. Für ein asynchrones Objekt können Sie einen der beiden folgenden Abschlusshandlertypen verwenden, jedoch nicht beide.
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };
@@ -655,7 +658,7 @@ Das erste Argument (*sender*) bleibt unbenannt, weil es nie verwendet wird. Aus 
 
 ## <a name="awaiting-a-kernel-handle"></a>Warten auf ein Kernelhandle
 
-C++/WinRT stellt eine **resume_on_signal**-Klasse bereit, mit der ein Prozess ausgesetzt werden kann, bis ein Kernelereignis signalisiert wird. Sie müssen sicherstellen, dass das Handle gültig bleibt, bis `co_await resume_on_signal(h)` wieder zurückgegeben wird. **resume_on_signal** selbst kann das nicht ausführen, da das Handle bereits verloren gegangen sein kann, bevor **resume_on_signal** startet – wie in diesem ersten Beispiel zu sehen.
+C++/WinRT stellt eine [**winrt::resume_on_signal**](/uwp/cpp-ref-for-winrt/resume-on-signal)-Funktion bereit, mit der ein Prozess ausgesetzt werden kann, bis ein Kernelereignis signalisiert wird. Sie müssen sicherstellen, dass das Handle gültig bleibt, bis `co_await resume_on_signal(h)` wieder zurückgegeben wird. **resume_on_signal** selbst kann das nicht ausführen, da das Handle bereits verloren gegangen sein kann, bevor **resume_on_signal** startet – wie in diesem ersten Beispiel zu sehen.
 
 ```cppwinrt
 IAsyncAction Async(HANDLE event)
@@ -712,6 +715,21 @@ IAsyncAction SampleCaller()
     event.close(); // Our handle is closed, but Async still has a valid handle.
 
     co_await async; // Will wake up when *event* is signaled.
+}
+```
+
+Sie können einen Timeoutwert an **resume_on_signal** übergeben, wie in diesem Beispiel gezeigt.
+
+```cppwinrt
+winrt::handle event = ...
+
+if (co_await winrt::resume_on_signal(event.get(), std::literals::2s))
+{
+    puts("signaled");
+}
+else
+{
+    puts("timed out");
 }
 ```
 
@@ -846,4 +864,4 @@ property_value.GetInt32Array(my_array); // Unbox back into an array.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 * [Parallelität und asynchrone Vorgänge](concurrency.md)
-* [Verarbeiten von Ereignissen über Delegaten in C++/WinRT](handle-events.md)
+* [Behandeln von Ereignissen mithilfe von Delegaten in C++/WinRT](handle-events.md)

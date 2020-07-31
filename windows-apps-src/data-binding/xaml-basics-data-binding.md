@@ -5,12 +5,12 @@ keywords: XAML, UWP, Erste Schritte
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d8f8d869bd18b6d3e6897d91b2616bc4eb1335d0
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67820341"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997837"
 ---
 # <a name="create-data-bindings"></a>Erstellen von Datenbindungen
 
@@ -18,7 +18,7 @@ Angenommen, du hast eine schöne Benutzeroberfläche entworfen und implementiert
 
 In diesem Tutorial erfährst du, wie du deine Textbausteine durch Datenbindungen ersetzt und andere direkte Links zwischen der Benutzeroberfläche und den Daten erstellst. Außerdem erfährst du, wie du deine Daten für die Anzeige formatierst oder konvertierst und die Benutzeroberfläche und die Daten synchron hältst. Wenn du dieses Tutorial durcharbeitest, kannst du den XAML- und C#-Code vereinfachen und besser organisieren, sodass er einfacher zu verwalten und zu erweitern ist.
 
-Du beginnst mit einer vereinfachten Version des PhotoLab-Beispiels. Dieses Starterversion umfasst die vollständige Datenebene und ein grundlegendes XAML-Layout und lässt viele kleinere Features aus, damit der Code einfacher zu durchsuchen ist. In diesem Tutorial lernst du nicht das Erstellen der vollständigen App. Lies daher die endgültige Version zu Features wie benutzerdefinierten Animationen und Telefonsupport. Die endgültige Version findest du im Stammordner des Repositorys [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). 
+Du beginnst mit einer vereinfachten Version des PhotoLab-Beispiels. Dieses Starterversion umfasst die vollständige Datenebene und ein grundlegendes XAML-Layout und lässt viele kleinere Features aus, damit der Code einfacher zu durchsuchen ist. In diesem Tutorial lernen Sie nicht das Erstellen der vollständigen App. Lesen Sie daher die endgültige Version zu Features wie benutzerdefinierten Animationen und adaptive Layouts. Die endgültige Version findest du im Stammordner des Repositorys [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -198,7 +198,7 @@ Um dies zu testen, fügen wir vorübergehend eine Schaltfläche hinzu, die das d
 
     Diese Methode löscht das ausgewählte Bild aus der Sammlung **Images**. 
 
-Führe jetzt die App aus, und verwende die Schaltfläche, um einige Bilder zu löschen. Wie du siehst, wird die Benutzeroberfläche dank der Datenbindung und dem Typ **ObservableCollection\<T\>** automatisch aktualisiert. 
+Führe jetzt die App aus, und verwende die Schaltfläche, um einige Bilder zu löschen. Wie Sie sehen, wird die Benutzeroberfläche dank der Datenbindung und dem Typ **ObservableCollection\<T\>** automatisch aktualisiert. 
 
 > [!Note]
 > Versuche als Herausforderung, zwei Schaltflächen hinzuzufügen, die das ausgewählte Bild in der Liste nach oben oder unten verschieben, und binde dann die Click-Ereignisse dieser beiden neuen Methoden per „x:Bind“ an DeleteSelectedImage.
@@ -428,7 +428,7 @@ Zunächst musst du jedoch die **DetailPage** anhängen, sodass die App zu ihr na
 1. Suche in „MainPage.xaml“ die **GridView** mit dem Namen **ImageGridView**, und füge ein **ItemClick**-Attribut hinzu. 
 
     > [!TIP] 
-    > Wenn du die nachstehende Änderung eingibst, anstatt sie zu kopieren und einzufügen, wird ein IntelliSense-Popup mit der Bezeichnung \<Neuer Ereignishandler\> angezeigt. Wenn du die Tab-Taste drückst, wird der Wert mit einem Standardnamen für einen Methodenhandler ausgefüllt und die im nächsten Schritt dargestellte Methode automatisch ohne Funktion angelegt. Du kannst dann F12 drücken, um im CodeBehind zu der Methode zu navigieren. 
+    > Wenn Sie die nachstehende Änderung eingeben, anstatt sie zu kopieren und einzufügen, wird ein IntelliSense-Popup mit der Bezeichnung \<New Event Handler\> angezeigt. Wenn du die Tab-Taste drückst, wird der Wert mit einem Standardnamen für einen Methodenhandler ausgefüllt und die im nächsten Schritt dargestellte Methode automatisch ohne Funktion angelegt. Du kannst dann F12 drücken, um im CodeBehind zu der Methode zu navigieren. 
 
     **Vorher:**
     ```xaml

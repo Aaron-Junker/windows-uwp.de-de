@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 4249618a4b26fd7e8129547a679c80c5e2ed6903
-ms.sourcegitcommit: a2b340dc3a28e845830eeb9ce00342a3f7351d62
+ms.openlocfilehash: db66e276ffa0337da943917543a0065ac160e468
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85834998"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296169"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
@@ -333,6 +333,14 @@ GUID abiguid;
 |-|-|-|
 | Von **winrt::guid** in **GUID** | `abiguid = winrtguid;` | `abiguid = reinterpret_cast<GUID&>(winrtguid);` |
 | Von **GUID** in **winrt::guid** | `winrtguid = abiguid;` | `winrtguid = reinterpret_cast<winrt::guid&>(abiguid);` |
+
+Sie können **winrt::guid** wie folgt konstruieren.
+
+```cppwinrt
+winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };
+```
+
+Ein Gist, das zeigt, wie **winrt::guid** aus einer Zeichenfolge konstruiert wird, finden Sie unter [make_guid.cpp](https://gist.github.com/kennykerr/6c948882de395c25b3218ad8d4daf362).
 
 ## <a name="interoperating-with-the-abis-hstring"></a>Interaktion mit dem HSTRING der ABI
 

@@ -4,7 +4,7 @@ title: Befehlsleiste
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.date: 05/19/2017
+ms.date: 07/23/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 97507e0d9a954bc102bd4d2bcd825369df4cced7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7b2c260d20c95012297c1f78037626844f6badf
+ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970045"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87160884"
 ---
 # <a name="command-bar"></a>Befehlsleiste
 
@@ -54,10 +54,6 @@ Das CommandBar-Steuerelement ist ein allgemeines, flexibles und kleines Steuerel
 Eine erweiterte Befehlsleiste.
 
 ![Erweiterte Befehlsleiste](images/control-examples/command-bar-photos.png)
-
-Eine Befehlsleiste im Outlook-Kalender auf einem Windows Phone:
-
-![Befehlsleiste in der Outlook-Kalender-App](images/control-examples/command-bar-calendar-phone.png)
 
 ## <a name="anatomy"></a>Aufbau
 
@@ -260,7 +256,7 @@ Auch wenn die Modi „Minimal“ und „Hidden“ in einigen Situationen nützli
 Das Ändern von ClosedDisplayMode, um mehr oder weniger Informationen für die Benutzer bereitzustellen, hat Auswirkungen auf das Layout der umgebenden Elemente. Das Wechseln zwischen dem geschlossenen und geöffneten Zustand von CommandBar hat hingegen keine Auswirkungen auf das Layout von anderen Elementen.
 
 ## <a name="placement"></a>Platzierung
-Befehlsleisten können am oberen Rand des App-Fensters, am unteren Rand des App-Fensters und inline platziert werden.
+Befehlsleisten können am oberen Rand des App-Fensters, am unteren Rand des App-Fensters und inline platziert werden, indem sie in ein Layoutsteuerelement wie ```Grid.row``` eingebettet werden.
 
 ![Beispiel 1 für die Platzierung der App-Leiste](images/AppbarGuidelines_Placement1.png)
 
