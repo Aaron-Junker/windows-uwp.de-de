@@ -5,12 +5,12 @@ ms.date: 05/22/2020
 ms.topic: article
 keywords: Windows 10 s, immer verbunden, arm, ARM64, x86-Emulation
 ms.localizationpriority: medium
-ms.openlocfilehash: 006de4f1f04ffb98d46b6ceb981d3d0fba311026
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 679afeb1915bfcb84445ca97453a884654249a0e
+ms.sourcegitcommit: 2aa82d60d7f9edf7ae7f9a550a8d044e2040c08a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854746"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87443355"
 ---
 # <a name="windows-10-on-arm"></a>Windows 10 auf ARM
 Ursprünglich konnte Windows 10 (wie von Windows 10 Mobile unterschieden) nur auf PCs ausgeführt werden, die von x86-und x64-Prozessoren unter betrieben wurden. Jetzt kann Windows 10 Desktop auf Computern ausgeführt werden, die von ARM64-Prozessoren mit dem Fall Creators Update oder neuer unter betrieben werden. Mit dem Energiesparmodus der ARM-CPU-Architektur können diese PCs die gesamte Akku Lebensdauer und Unterstützung für mobile Daten Netzwerke aufweisen. Diese PCs stellen eine hervorragend vorhandene Anwendungs Kompatibilität bereit und ermöglichen es Ihnen, vorhandene x86-Win32-Anwendungen unverändert auszuführen. Weitere Informationen oder eine Demo finden Sie im [Channel 9-Video für den stets verbundenen PC](https://channel9.msdn.com/Events/Build/2017/P4171).
@@ -41,11 +41,11 @@ Visual Studio 2019 bietet verschiedene Tools zum Herunterladen von Tools für Wi
 
 ### <a name="visual-c-redistributable"></a>Visual C++ Redistributable
 
-Das Visual C++ Redist-Paket ist für Arm-apps verfügbar. Wechseln Sie auf der [Seite Visual Studio-Downlaods](https://visualstudio.microsoft.com/downloads/) zu **alle Downloads**, öffnen Sie **andere Tools und Frameworks**, und navigieren Sie dann zum Eintrag **Microsoft Visual C++ Redistributable für Visual Studio 2019** . Aktivieren Sie das Optionsfeld **ARM64** , und **Laden Sie dann herunter**.
+Das Visual C++ Redist-Paket ist für Arm-apps verfügbar. Besuchen Sie die [Visual Studio-Downloadseite](https://visualstudio.microsoft.com/downloads/) , Scrollen Sie nach unten zu **alle Downloads**, öffnen Sie **andere Tools und Frameworks**, und navigieren Sie dann zum Eintrag **Microsoft Visual C++ Redistributable für Visual Studio 2019** . Aktivieren Sie das Optionsfeld **ARM64** , und **Laden Sie dann herunter**.
 
 ### <a name="remote-tools"></a>-Remotetools
 
-Remotetools für Visual Studio sind für Arm-apps verfügbar. Besuchen Sie die [Seite Visual Studio-Downlaods](https://visualstudio.microsoft.com/downloads/) , Scrollen Sie nach unten zu **alle Downloads**, öffnen Sie **Tools für Visual Studio 2019**, und navigieren Sie dann zum Eintrag **Remotetools für Visual Studio 2019** . Wählen Sie das Optionsfeld **ARM64* und dann **herunterladen**aus.
+Remotetools für Visual Studio sind für Arm-apps verfügbar. Besuchen Sie die [Visual Studio-Downloadseite](https://visualstudio.microsoft.com/downloads/) , Scrollen Sie nach unten zu **alle Downloads**, öffnen Sie **Tools für Visual Studio 2019**, und navigieren Sie dann zum Eintrag **Remotetools für Visual Studio 2019** . Wählen Sie das Optionsfeld **ARM64* und dann **herunterladen**aus.
 
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
