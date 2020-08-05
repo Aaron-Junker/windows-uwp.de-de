@@ -9,20 +9,20 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 14c447312361166148da6a5a8c2b20165fabbe97
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
+ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80487524"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87547312"
 ---
 # <a name="create-and-register-a-winmain-com-background-task"></a>Erstellen und Registrieren einer WinMain-com-Hintergrundaufgabe
 
 > [!TIP]
-> die Methode backgroundtaskbuilder. settaskentrypointclsid ab Windows 10, Version 2004, verfügbar.
+> Die Methode backgroundtaskbuilder. settaskentrypointclsid ist ab Windows 10, Version 2004, verfügbar.
 
 > [!NOTE]
-> dieses Szenario ist nicht auf gepackte WinMain-apps anwendbar. Bei UWP-Anwendungen treten Fehler auf, wenn versucht wird, dieses Szenario zu implementieren.
+> Dieses Szenario gilt nur für gepackte WinMain-apps. Bei UWP-Anwendungen treten Fehler auf, wenn versucht wird, dieses Szenario zu implementieren.
 
 **Wichtige APIs**
 
@@ -41,15 +41,15 @@ In den folgenden Schritten wird gezeigt, wie Sie eine neue Klasse schreiben, die
 2.  Implementieren Sie in dieser neuen Klasse die [**ibackgroundtask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) -Schnittstelle. Die [**ibackgroundtask. Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) -Methode ist ein erforderlicher Einstiegspunkt, der aufgerufen wird, wenn das angegebene Ereignis ausgelöst wird. Diese Methode ist in jeder Hintergrundaufgabe erforderlich.
 
 > [!NOTE]
-> Die Hintergrundaufgaben Klasse selbst&mdash;und alle anderen Klassen im Hintergrundaufgaben Projekt&mdash;**öffentlich**sein müssen.
+> Die Hintergrundaufgaben Klasse selbst &mdash; und alle anderen Klassen im Hintergrundaufgaben Projekt &mdash; müssen **öffentlich**sein.
 
 Der folgende Beispielcode zeigt eine grundlegende Klasse von Hintergrundaufgaben, die Primes zählt und in eine Datei schreibt, bis Sie zum Abbrechen aufgefordert wird.
 
-Im C++/WinRT-Beispiel wird die Hintergrundaufgaben Klasse als [**com-Co-Klasse**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)implementiert.
+Im Beispiel C++/WinRT wird die Hintergrundaufgaben Klasse als [**com-Co-Klasse**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)implementiert.
 
 
 <details>
-<summary>Codebeispiel für Hintergrundaufgaben</summary>
+<summary>Codebeispiel für Hintergrundaufgabe</summary>
 <p>
 
 ```csharp
@@ -264,9 +264,9 @@ namespace PackagedWinMainBackgroundTaskSample {
 
 ## <a name="add-the-support-code-to-instantiate-the-com-class"></a>Fügen Sie den Unterstützungs Code zum Instanziieren der com-Klasse hinzu.
 
-Damit die Hintergrundaufgabe in eine vollständig vertrauenswürdige WinMain-Anwendung aktiviert werden kann, muss die Hintergrundaufgaben Klasse über Unterstützungs Code verfügen, damit com versteht, wie der App-Prozess gestartet werden soll, wenn er nicht ausgeführt wird, und dann weiß, welche Instanz des Prozesses ist. der Server, der derzeit neue Aktivierungen für diese Hintergrundaufgabe behandelt.
+Damit die Hintergrundaufgabe in eine vollständig vertrauenswürdige WinMain-Anwendung aktiviert werden kann, muss die Hintergrundaufgaben Klasse über Unterstützungs Code verfügen, damit com versteht, wie der App-Prozess gestartet werden soll, wenn er nicht ausgeführt wird, und dann weiß, welche Instanz des Prozesses aktuell der Server für die Verarbeitung neuer Aktivierungen für diese Hintergrundaufgabe ist.
 
-1.  COM muss wissen, wie der App-Prozess gestartet wird, wenn er nicht bereits ausgeführt wird. Der App-Prozess, der den Hintergrundaufgaben Code hostet, muss im Paket Manifest deklariert werden. Der folgende Beispielcode zeigt, wie der **Sample Task** in " **samplebackgroundapp. exe**" gehostet wird. Wenn die Hintergrundaufgabe gestartet wird, während kein Prozess ausgeführt wird, wird **samplebackgroundapp. exe** mit den Prozess Argumenten **"-startsampletaskserver"** gestartet.
+1.  COM muss wissen, wie der App-Prozess gestartet wird, wenn er nicht bereits ausgeführt wird. Der App-Prozess, der den Hintergrundaufgaben Code hostet, muss im Paket Manifest deklariert werden. Der folgende Beispielcode zeigt, wie der **Sample Task** in **SampleBackgroundApp.exe**gehostet wird. Wenn die Hintergrundaufgabe gestartet wird, ohne dass ein Prozess ausgeführt wird, wird **SampleBackgroundApp.exe** mit den Prozess Argumenten **"-startsampletaskserver"** gestartet.
 
 ```xml
 
@@ -1043,13 +1043,13 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 </details>
 
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Anders als UWP-apps, die Hintergrundaufgaben im modernen Standby ausführen können, können WinMain-apps keinen Code aus den unteren Energie Phasen des modernen Standbymodus ausführen. Weitere Informationen finden Sie unter [moderner Standby](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby) -Modus.
 
 Eine API-Referenz, konzeptionelle Richtlinien zu Hintergrundaufgaben und ausführlichere Anweisungen zum Schreiben von Apps, die Hintergrundaufgaben verwenden, finden Sie unter den folgenden verwandten Themen:
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Reagieren auf Systemereignisse mit Hintergrundaufgaben](respond-to-system-events-with-background-tasks.md)
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)
@@ -1058,15 +1058,15 @@ Eine API-Referenz, konzeptionelle Richtlinien zu Hintergrundaufgaben und ausfüh
 * [Behandeln einer abgebrochenen Hintergrundaufgabe](handle-a-cancelled-background-task.md)
 * [Überwachen des Status und Abschlusses von Hintergrundaufgaben](monitor-background-task-progress-and-completion.md)
 * [Ausführen einer Hintergrundaufgabe für einen Timer](run-a-background-task-on-a-timer-.md)
-* [Erstellen und Registrieren einer Hintergrundaufgabe innerhalb des Prozesses](create-and-register-an-inproc-background-task.md)
-* [Konvertieren einer Out-of-Process-Hintergrundaufgabe in eine Prozess interne Hintergrundaufgabe](convert-out-of-process-background-task.md)
+* [Erstellen und registrieren Sie eine Prozess interne Hintergrundaufgabe](create-and-register-an-inproc-background-task.md).
+* [Konvertieren einer Out-of-Process-Hintergrundaufgabe in eine In-Process-Hintergrundaufgabe](convert-out-of-process-background-task.md)
 
-**Leitfaden für Hintergrundaufgaben**
+**Ratschläge zu Hintergrundaufgaben**
 
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
 * [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
-**API-Referenz für Hintergrundaufgaben**
+**Hintergrundaufgabe – API-Referenz**
 
-* [**Windows. applicationmodel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
