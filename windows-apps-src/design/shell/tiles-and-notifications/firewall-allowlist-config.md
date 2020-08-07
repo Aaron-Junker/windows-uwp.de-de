@@ -1,19 +1,18 @@
 ---
-author: mijacobs
 Description: Viele Unternehmen verwenden Firewalls zum Blockieren von unerwünschtem Datenverkehr. In diesem Dokument wird beschrieben, wie Sie den WNS-Datenverkehr durch Firewalls passieren können.
-title: Hinzufügen von WNS-Datenverkehr zur Firewall-AllowList
+title: Hinzufügen von WNS-Datenverkehr zur Firewall-Zulassungsliste
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 05/20/2019
 ms.topic: article
 keywords: Windows 10, UWP, WNS, Windows-Benachrichtigungsdienst, Benachrichtigung, Windows, Firewall, Problembehandlung, IP, Datenverkehr, Unternehmen, Netzwerk, IPv4, VIP, FQDN, öffentliche IP-Adresse
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f87dc0cc174a22f474c91a58f3ffeb738822fa8
-ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
+ms.openlocfilehash: 9594b90bd3bf9a4db082586a2823f4013340b85a
+ms.sourcegitcommit: b5232934702b28102c4014a96b34f2e459c9660d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82868909"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87928007"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>Unternehmens Firewall-und Proxy Konfigurationen zur Unterstützung von WNS-Datenverkehr
 
@@ -84,7 +83,7 @@ Im folgenden finden Sie Erläuterungen zu den im obigen XML-Code Ausschnitt verw
 Wenn Sie den Legacy-Benachrichtigungsdienst (mpns) verwenden, sind die IP-Adressbereiche, die Sie der Zulassungsliste hinzufügen müssen, im Download Center verfügbar: [öffentliche IP-Adressbereiche des Microsoft-pushbenachrichtigungsdiensts (mpns)](https://www.microsoft.com/download/details.aspx?id=44535).
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Schnellstart: Senden einer Pushbenachrichtigung](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
 * [So wird's gemacht: Anfordern, Erstellen und Speichern eines Benachrichtigungskanals](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
