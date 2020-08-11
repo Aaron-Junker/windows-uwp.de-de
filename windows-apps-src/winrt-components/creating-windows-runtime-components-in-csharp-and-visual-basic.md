@@ -4,17 +4,17 @@ description: Ab .NET 4,5 können Sie verwalteten Code verwenden, um eigene Windo
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 12/04/2018
 ms.topic: article
+keywords: Windows 10, UWP
+ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-keywords: Windows 10, UWP
-ms.localizationpriority: medium
-ms.openlocfilehash: 3ac5e08b328e8e094906d2e1793ea87fa2e66ae4
-ms.sourcegitcommit: 91ac6db556fa2a49374fffb143f55fed864200ac
+ms.openlocfilehash: a52bca6ecc08016d1cb7633acadd362e2215cd3a
+ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82173486"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88047777"
 ---
 # <a name="windows-runtime-components-with-c-and-visual-basic"></a>Komponenten für Windows-Runtime in C# und Visual Basic
 
@@ -281,6 +281,6 @@ Nachdem Sie eine Komponente für Windows-Runtime für eigene Zwecke erstellt hab
 
 Weitere Informationen zu Visual Basic-und c#-sprach Features sowie zu .NET-Unterstützung für die Windows-Runtime finden Sie unter [Visual Basic-und c#-Sprachreferenz](https://docs.microsoft.com/visualstudio/welcome-to-visual-studio-2015?view=vs-2015).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [.NET für UWP-Apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
 * [Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C# oder Visual Basic und Aufrufen der Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
