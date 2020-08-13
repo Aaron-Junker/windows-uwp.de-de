@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: 32472f698381f4b109f280f0b964f00cdbcec66a
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: e1580bdc62585cb777334c217419b4de6a691add
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606199"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162565"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Deklarieren von Hintergrundaufgaben im Anwendungsmanifest
 
@@ -21,7 +21,7 @@ ms.locfileid: "82606199"
 **Wichtige APIs**
 
 -   [**BackgroundTasks-Schema**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows. applicationmodel. Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 Sie können die Verwendung von Hintergrundaufgaben aktivieren, indem Sie diese im App-Manifest als Erweiterungen deklarieren.
 
@@ -90,7 +90,7 @@ Kopieren Sie diesen Code in das "Extensions"-Element (Attribute werden in den fo
 
 2.  Ändern Sie die Liste der Aufgabentypenattribute, um den für diese Hintergrundaufgabe verwendeten Typ der Aufgabenregistrierung anzugeben. Wenn die Hintergrundaufgabe mit mehreren Triggertypen registriert wird, fügen Sie für jeden Typ zusätzliche Task-Elemente und Type-Attribute hinzu.
 
-    **Hinweis**  stellen Sie sicher, dass Sie jeden der von Ihnen verwendeten Auslösertypen auflisten oder wenn die Hintergrundaufgabe nicht mit den nicht deklarierten Auslösertypen registriert wird (die [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) -Methode schlägt fehl und löst eine Ausnahme aus).
+    **Hinweis**    Stellen Sie sicher, dass Sie jeden der von Ihnen verwendeten Auslösertypen auflisten oder wenn die Hintergrundaufgabe nicht mit den nicht deklarierten Auslösertypen registriert wird (die [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) -Methode schlägt fehl und löst eine Ausnahme aus).
 
     Dieses Beispiel für einen Codeausschnitt gibt die Verwendung von Systemereignistriggern und Pushbenachrichtigungen an:
 
@@ -107,7 +107,7 @@ Kopieren Sie diesen Code in das "Extensions"-Element (Attribute werden in den fo
 
 Wiederholen Sie Schritt 2 für alle weiteren, von Ihrer App registrierten Hintergrundaufgabenklassen.
 
-Das folgende Beispiel zeigt das vollständige "Application"-Element aus dem [Hintergrundaufgabenbeispiel]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9): Es zeigt die Verwendung von zwei Hintergrundaufgabenklassen mit insgesamt drei Triggertypen. Kopieren Sie den Abschnitt „Extensions“ aus diesem Beispiel, und ändern Sie ihn nach Bedarf, um Hintergrundaufgaben im Anwendungsmanifest zu deklarieren.
+Das folgende Beispiel zeigt das vollständige "Application"-Element aus dem [Hintergrundaufgabenbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask): Es zeigt die Verwendung von zwei Hintergrundaufgabenklassen mit insgesamt drei Triggertypen. Kopieren Sie den Abschnitt „Extensions“ aus diesem Beispiel, und ändern Sie ihn nach Bedarf, um Hintergrundaufgaben im Anwendungsmanifest zu deklarieren.
 
 ```xml
 <Applications>
@@ -152,7 +152,7 @@ Das folgende Beispiel zeigt das vollständige "Application"-Element aus dem [Hin
 
 Sie können angeben, wo Ihre Hintergrundaufgaben ausgeführt werden:
 
-* Standardmäßig werden Sie im Prozess backgroundtaskhost. exe ausgeführt.
+* Standardmäßig werden Sie im BackgroundTaskHost.exe Prozess ausgeführt.
 * In demselben Prozess wie Ihre Vordergrund Anwendung.
 * Verwenden `ResourceGroup` Sie, um mehrere Hintergrundaufgaben in denselben Host Prozess zu platzieren oder um Sie in verschiedene Prozesse aufzuteilen.
 * Verwenden `SupportsMultipleInstances` Sie, um den Hintergrundprozess in einem neuen Prozess auszuführen, der beim Auslösen eines neuen Auslösers seine eigenen Ressourcen Limits (Arbeitsspeicher, CPU) abruft.
@@ -209,7 +209,7 @@ Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wir
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>Ausführung bei jedem Auslösen eines Triggers mit dem supportsmultipleinhaltungen-Attribut in einem neuen Prozess
 
-In diesem Beispiel wird ein Hintergrund Task deklariert, der in einem neuen Prozess ausgeführt wird, der bei jedem Auslösen eines neuen Auslösers seine eigenen Ressourcen Limits (Arbeitsspeicher und CPU) abruft. Beachten Sie die Verwendung `SupportsMultipleInstances` von, die dieses Verhalten ermöglicht. Um dieses Attribut zu verwenden, müssen Sie die SDK-Version "10.0.15063" (Windows 10 Creators Update) oder höher als Ziel verwenden.
+In diesem Beispiel wird ein Hintergrund Task deklariert, der in einem neuen Prozess ausgeführt wird, der bei jedem Auslösen eines neuen Auslösers seine eigenen Ressourcen Limits (Arbeitsspeicher und CPU) abruft. Beachten Sie die Verwendung von `SupportsMultipleInstances` , die dieses Verhalten ermöglicht. Um dieses Attribut zu verwenden, müssen Sie die SDK-Version "10.0.15063" (Windows 10 Creators Update) oder höher als Ziel verwenden.
 
 ```xml
 <Package
@@ -230,9 +230,9 @@ In diesem Beispiel wird ein Hintergrund Task deklariert, der in einem neuen Proz
 ```
 
 > [!NOTE]
-> Sie können oder `ResourceGroup` `ServerName` nicht in Verbindung mit `SupportsMultipleInstances`angeben.
+> Sie können `ResourceGroup` oder nicht `ServerName` in Verbindung mit angeben `SupportsMultipleInstances` .
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)

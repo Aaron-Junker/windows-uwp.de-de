@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: d2b6ba88587f4f536d4fe6fc2750a520166fde18
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: f660c17cd981ca830f0751819d01bf2141408ecc
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606349"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162555"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Behandeln einer abgebrochenen Hintergrundaufgabe
 
@@ -67,7 +67,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-Fügen Sie der Background-Aufgaben Klasse eine Flag-Variable namens ** \_cancelangeforderten** hinzu. Diese Variable wird verwendet, um anzuzeigen, ob eine Abbruchanforderung erfolgt ist.
+Fügen Sie der Background-Aufgaben Klasse eine Flag-Variable namens ** \_ cancelangeforderten** hinzu. Diese Variable wird verwendet, um anzuzeigen, ob eine Abbruchanforderung erfolgt ist.
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-Legen Sie in der **OnCancel-** Methode, die Sie in Schritt 1 erstellt haben, die Flag-Variable ** \_cancelangeforderten** auf **true**fest.
+Legen Sie in der **OnCancel-** Methode, die Sie in Schritt 1 erstellt haben, die Flag-Variable ** \_ cancelangeforderten** auf **true**fest.
 
-Die vollständige [Hintergrundaufgaben-Beispiel]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) Methode " ** \_OnCancel"** wird auf " **true** " festgelegt und schreibt eine potenziell nützliche Debugausgabe. **OnCanceled**
+Die vollständige [Hintergrundaufgaben-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) Methode " ** \_ OnCancel"** wird auf " **true** " festgelegt und schreibt eine potenziell nützliche Debugausgabe. **OnCanceled**
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -131,9 +131,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>Behandeln des Abbruchs durch Beenden der Hintergrundaufgabe
 
-Wenn eine Abbruch Anforderung empfangen wird, muss Ihre Methode, die Hintergrundarbeit durchführt, die Arbeit beenden und den Vorgang beenden, indem Sie erkennt, wenn ** \_cancelangeforderten** auf **true**festgelegt ist. Für Prozess interne Hintergrundaufgaben bedeutet dies, dass von der **onbackgroundaktivierten** -Methode zurückgegeben wird. Für Out-of-Process-Hintergrundaufgaben bedeutet dies, dass von der **Run** -Methode zurückgegeben wird.
+Wenn eine Abbruch Anforderung empfangen wird, muss Ihre Methode, die Hintergrundarbeit durchführt, die Arbeit beenden und den Vorgang beenden, indem Sie erkennt, wenn ** \_ cancelangeforderten** auf **true**festgelegt ist. Für Prozess interne Hintergrundaufgaben bedeutet dies, dass von der **onbackgroundaktivierten** -Methode zurückgegeben wird. Für Out-of-Process-Hintergrundaufgaben bedeutet dies, dass von der **Run** -Methode zurückgegeben wird.
 
-Ändern Sie den Code der Hintergrundaufgabenklasse, um die Kennzeichenvariable zu überprüfen, während die Hintergrundaufgabe ausgeführt wird. Wenn ** \_cancelangeforderten** auf true festgelegt wird, können Sie die Arbeit nicht fortsetzen.
+Ändern Sie den Code der Hintergrundaufgabenklasse, um die Kennzeichenvariable zu überprüfen, während die Hintergrundaufgabe ausgeführt wird. Wenn ** \_ cancelangeforderten** auf true festgelegt wird, können Sie die Arbeit nicht fortsetzen.
 
 Das [Beispiel für eine Hintergrundaufgabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) schließt eine Prüfung ein, die den periodischen Zeit Geber Rückruf stoppt, wenn der Hintergrund Task abgebrochen wird.
 
@@ -253,7 +253,7 @@ else
 }
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Sie können das [Beispiel zur Hintergrundaufgabe](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask) herunterladen, um diese Codebeispiele im Kontext von Methoden anzuzeigen.
 
@@ -400,7 +400,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Erstellen und registrieren Sie eine Prozess interne Hintergrundaufgabe](create-and-register-an-inproc-background-task.md).
 - [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
