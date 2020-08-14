@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Barrierefreiheit in Windows 10, Barrierefreiheit, Erstellen barrierefreier Win32-Apps, Erstellen barrierefreier UWP-Apps, Erstellen barrierefreier WPF-Apps, Erstellen barrierefreier WinForms-Apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 04dc3571f6b2d8ddf57a3695330070d7c5b5061e
+ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76725933"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88047787"
 ---
 # <a name="accessibility-in-windows-10"></a>Barrierefreiheit unter Windows 10
 
@@ -73,7 +73,7 @@ Diese Seite informiert darüber, wie die verschiedenen Windows-Entwicklungsframe
    :::column:::
       ![WPF-Plattform](images/platform-wpf2-small.png)
 
-      **WPF (Windows Presentation Foundation)**
+      **Windows Presentation Foundation (WPF)**
 
       Entwickeln Sie barrierefreie Apps und Tools auf der bekannten Plattform für verwaltete Windows-Anwendungen mit einem XAML-UI-Modell und dem .NET Framework.
 
@@ -87,11 +87,11 @@ Diese Seite informiert darüber, wie die verschiedenen Windows-Entwicklungsframe
 
       [Steuerelementmuster für Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [Textmuster für Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [Textmuster zur Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
       [Steuerelementtypen der Benutzeroberflächenautomatisierung](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [Benutzeroberflächenautomatisierung – Spezifikation und Zusage an die Community](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      [Spezifikation für die Benutzeroberflächenautomatisierung und Zusicherung an die Community](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
       ![Apps für Windows Forms-Plattform](images/platform-winforms.png)
@@ -106,7 +106,7 @@ Diese Seite informiert darüber, wie die verschiedenen Windows-Entwicklungsframe
 
       [Eigenschaften für Windows Forms-Steuerelemente, die Richtlinien für Eingabehilfen unterstützen](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [Informationen über Eingabehilfen für Steuerelemente in Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [Informationen über Eingabehilfen für Steuerelemente in Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -135,12 +135,12 @@ Laden Sie vollständige Windows-Beispiele herunter, die verschiedene Barrierefre
 
 :::row:::
    :::column:::
-      [Codebeispielbrowser](https://docs.microsoft.com/samples/browse/)
+      [Browser für Codebeispiele](https://docs.microsoft.com/samples/browse/)
 
       Der neue Beispielebrowser ersetzt den MSDN-Codekatalog.
    :::column-end:::
    :::column:::
-      [MSDN-Codekatalog (eingestellt)](https://code.msdn.microsoft.com/site/search?query=accessibility&f%5B0%5D.Value=accessibility&f%5B0%5D.Type=SearchText&ac=2)
+      [MSDN Code Gallery (GitHub-Archiv)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample)
 
       Laden Sie Beispiele für Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight und andere Produkte herunter.
    :::column-end:::

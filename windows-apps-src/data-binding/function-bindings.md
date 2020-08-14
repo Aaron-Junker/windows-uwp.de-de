@@ -5,17 +5,17 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 879be9591bae36a1dbcd485387fbb4ac7f502fea
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
+ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66360074"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87871686"
 ---
 # <a name="functions-in-xbind"></a>Funktionen in x:Bind
 
 > [!NOTE]
-> Allgemeine Informationen zur Verwendung der Datenbindung in Ihrer App mit **{x:Bind}** (sowie einen Gesamtvergleich von **{x:Bind}** und **{Binding}** ) finden Sie unter [Datenbindung im Detail](data-binding-in-depth.md).
+> Allgemeine Informationen zur Verwendung der Datenbindung in Ihrer App mit **{x:Bind}** (sowie einen Gesamtvergleich von **{x:Bind}** and **{Binding}** ) finden Sie unter [Datenbindung im Detail](data-binding-in-depth.md) und [Markuperweiterung {x:Bind}](../xaml-platform/x-bind-markup-extension.md).
 
 Ab Windows 10, Version 1607, unterstützt **{x: Bind}** die Verwendung einer Funktion als blattbildenden Schritt des Bindungspfades. Dadurch wird Folgendes ermöglicht:
 
@@ -61,7 +61,7 @@ class ColorEntry
 
 ## <a name="path-to-the-function"></a>Pfad der Funktion
 
-Der Pfad der Funktion wird wie jeder andere Eigenschaftspfad angegeben. Er kann Punkte (.), Indexer oder Umwandlungen für die Suche nach der Funktion enthalten.
+Der [Pfad der Funktion](../xaml-platform/x-bind-markup-extension.md#property-path) wird wie jeder andere Eigenschaftspfad angegeben. Er kann [Punkte](../xaml-platform/x-bind-markup-extension.md#property-path-resolution) (.), [Indexer](../xaml-platform/x-bind-markup-extension.md#collections) oder [Umwandlungen](../xaml-platform/x-bind-markup-extension.md#casting) für die Suche nach der Funktion enthalten.
 
 Statische Funktionen können mithilfe der XMLNamespace:ClassName.MethodName-Syntax angegeben werden. Verwende z. B. die folgende Syntax zum Binden an statische Funktionen in CodeBehind.
 
@@ -120,7 +120,7 @@ Die Bindungs-Engine reagiert auf ausgelöste Benachrichtigungen über Eigenschaf
 ```
 
 ```csharp
-public class Person:INotifyPropertyChanged
+public class Person : INotifyPropertyChanged
 {
     //Implementation for an Icon property and a CancellationToken property with PropertyChanged notifications
     ...
@@ -183,3 +183,6 @@ In einem Szenario mit bidirektionaler Bindung muss eine zweite Funktion für die
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
+
+## <a name="see-also"></a>Siehe auch
+* [Markuperweiterung {x:Bind}](../xaml-platform/x-bind-markup-extension.md)

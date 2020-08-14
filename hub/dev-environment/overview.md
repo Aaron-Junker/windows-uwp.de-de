@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Fenster einrichten, Entwicklungsumgebung, Entwicklertools, Entwicklungspfade, Microsoft, Windows, Developer, Tipps, Leistung, WSL, Terminal, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: e62ca938a23910290a8c63682fc2fde77ec0ea92
-ms.sourcegitcommit: 1e06168ada5ce6013b1d07c428548f084464a286
+ms.openlocfilehash: 4c9311c8aacf708e92feaea0b26ac20a01403257
+ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87363728"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162575"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>Einrichten der Entwicklungsumgebung unter Windows 10
 
@@ -87,8 +87,8 @@ Dieser Leitfaden erleichtert Ihnen den Einstieg bei der Installation der Sprache
     :::column:::
        [![Windows-Paket-Manager](../images/winget.png)](https://docs.microsoft.com/windows/package-manager/)<br>
         **[Windows-Paket-Manager](https://docs.microsoft.com/windows/package-manager/)**<br>
-        Verwenden von WinGet, dem umfassenden Paket-Manager, mit Ihrer Befehlszeile zum Installieren von Anwendungen unter Windows 10.<br>
-        [ Installieren von WinGet (öffentliche Vorschau)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
+        Verwenden des winget.exe-Clients, dem umfassenden Paket-Manager, mit Ihrer Befehlszeile zum Installieren von Anwendungen unter Windows 10.<br>
+        [Installieren des Windows-Paket-Managers (öffentliche Vorschau)](https://docs.microsoft.com/windows/package-manager/winget/#install-winget)
     :::column-end:::
     :::column:::
        [![PowerToys](../images/powertoys.png)](https://github.com/microsoft/PowerToys)<br>

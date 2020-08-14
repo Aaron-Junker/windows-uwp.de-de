@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Standard, c++, cpp, winrt, Projektion, stark, schwach, Verweis
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc991ff485d9e4ba90264e1b8082a40e0f4ab801
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8ca914737698c22d52657d20ee655d20491b3e8
+ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267479"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88180765"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>Starke und schwache Verweise in C++/WinRT
 
@@ -21,7 +21,7 @@ Windows-Runtime ist ein System mit Verweiszählung. Es ist wichtig, dass Sie mit
 
 Weitere Informationen zu Coroutinen und Codebeispiele finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
-Die Codeauflistung unten zeigt ein typisches Beispiel einer Coroutine, die eine Memberfunktion einer Klasse ist. Sie können dieses Beispiel kopieren und es in einem neuen **Windows-Konsolenanwendung (C++/WinRT)** -Projekt in die angegebenen Dateien einfügen.
+Die Codeauflistung unten zeigt ein typisches Beispiel einer Coroutine, die eine Memberfunktion einer Klasse ist. Sie können dieses Beispiel kopieren und es in einem neuen **Windows-Konsolenanwendung (C++/WinRT)**-Projekt in die angegebenen Dateien einfügen.
 
 ```cppwinrt
 // pch.h
@@ -105,7 +105,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-Eine C++/WinRT-Klasse leitet sich direkt oder indirekt aus der Vorlage [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) ab. Daher kann das C++/WinRT-Objekt seine geschützte Memberfunktion [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) aufrufen, um einen starken Verweis auf ihren *this*-Zeiger abzurufen. Beachten Sie, dass es nicht erforderlich ist, die `strong_this`-Variable im Codebeispiel oben tatsächlich zu verwenden; einfach durch das Aufrufen von **get_strong** wird der Verweiszähler des C++/WinRT-Objekts erhöht und die Gültigkeit dessen impliziten *this*-Zeigers bewahrt.
+Eine C++/WinRT-Klasse leitet sich direkt oder indirekt aus der Vorlage [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) ab. Daher kann das C++/WinRT-Objekt seine geschützte Memberfunktion [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) aufrufen, um einen starken Verweis auf ihren *this*-Zeiger abzurufen. Beachten Sie, dass es nicht erforderlich ist, die `strong_this`-Variable im Codebeispiel oben tatsächlich zu verwenden; einfach durch das Aufrufen von **get_strong** wird der Verweiszähler des C++/WinRT-Objekts erhöht und die Gültigkeit dessen impliziten *this*-Zeigers bewahrt.
 
 > [!IMPORTANT]
 > Da **get_strong** eine Memberfunktion der Strukturvorlage **winrt::implements** ist, können Sie sie nur aus einer Klasse aufrufen, die direkt oder indirekt von **winrt::implements** abgeleitet ist, wie etwa eine C++/WinRT-Klasse. Weitere Informationen für das Ableiten aus **winrt::implements** und Beispiele finden Sie unter [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
@@ -134,9 +134,9 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 
 Im Beispiel oben verhindert der schwache Verweis die Zerstörung der Klasseninstanz nicht, wenn keine starken Verweise verbleiben. Sie gibt Ihnen aber die Möglichkeit, zu prüfen, ob ein starker Verweis erworben werden kann, bevor Sie auf die Membervariable zugreifen.
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Sicherer Zugriff auf den *this*-Zeiger mit einer Stellvertretung zum Ereignishandling
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>Sicheres Zugreifen auf den *this*-Zeiger mit einem Delegaten für die Ereignisbehandlung
 
-### <a name="the-scenario"></a>Das Szenario
+### <a name="the-scenario"></a>Szenario
 
 Allgemeine Informationen zum Ereignishandling finden Sie unter [Verarbeiten von Ereignissen über Delegaten in C++/WinRT](handle-events.md).
 
@@ -253,7 +253,7 @@ In beiden Fällen erfassen wir lediglich den nackten *this*-Zeiger. Und das gesc
 
 ### <a name="the-solution"></a>Die Lösung
 
-Die Lösung besteht darin, einen starken Verweis zu erfassen (oder, wie wir sehen werden, einen schwachen Verweis, wenn ein solcher besser geeignet ist.). Ein starker Verweis *setzt* den Verweiszähler herauf, und er *hält* das aktuelle Objekt am Leben. Sie deklarieren einfach eine Erfassungsvariable (die in diesem Beispiel `strong_this` heißt) und initialisieren Sie mit einem Aufruf an [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), die einen starken Verweis auf unseren *this*-Zeiger abruft.
+Die Lösung besteht darin, einen starken Verweis zu erfassen (oder, wie wir sehen werden, einen schwachen Verweis, wenn ein solcher besser geeignet ist.). Ein starker Verweis *setzt* den Verweiszähler herauf, und er *hält* das aktuelle Objekt am Leben. Sie deklarieren einfach eine Erfassungsvariable (die in diesem Beispiel `strong_this` heißt) und initialisieren Sie mit einem Aufruf an [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), die einen starken Verweis auf unseren *this*-Zeiger abruft.
 
 > [!IMPORTANT]
 > Da **get_strong** eine Memberfunktion der Strukturvorlage **winrt::implements** ist, können Sie sie nur aus einer Klasse aufrufen, die direkt oder indirekt von **winrt::implements** abgeleitet ist, wie etwa eine C++/WinRT-Klasse. Weitere Informationen für das Ableiten aus **winrt::implements** und Beispiele finden Sie unter [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
