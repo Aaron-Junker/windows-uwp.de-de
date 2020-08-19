@@ -6,28 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, DirectX 9, DirectX 11, portieren
 ms.localizationpriority: medium
-ms.openlocfilehash: e0643773ca529540284f0749de6e91349f4e9c47
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 3470c8153cc0f6ba6d272e5ed1163c7f2c911c4c
+ms.sourcegitcommit: 7c1711d68496b781ed7d5b54e8ef5442e58661fa
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730231"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88578224"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>Zuordnung von DirectX 9-Funktionen zu DirectX 11-APIs
 
-
-
-**Zusammenfassung**
-
--   [Planen der DirectX-Portierung](plan-your-directx-port.md)
--   [Wichtige Änderungen beim Wechsel von Direct3D 9 zu Direct3D 11](understand-direct3d-11-1-concepts.md)
--   Featurezuordnung
-
-
 Erfahren Sie, wie die Features Ihres Direct3D 9-Spiels zu Direct3D 11 und zur Universellen Windows-Plattform (UWP) zugeordnet werden.
 
-## <a name="mapping-direct3d-9-to-directx-11-apis"></a>Zuordnen von Direct3D 9-Features zu DirectX 11-APIs
+Siehe auch [Planen Ihres DirectX-Ports](plan-your-directx-port.md)und [wichtige Änderungen von Direct3D 9 bis Direct3D 11](understand-direct3d-11-1-concepts.md).
 
+## <a name="mapping-direct3d-9-to-directx-11-apis"></a>Zuordnen von Direct3D 9-Features zu DirectX 11-APIs
 
 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d) ist nach wie vor die Grundlage von DirectX-Grafiken; die API wurde seit DirectX 9 jedoch geändert:
 
@@ -39,7 +31,6 @@ Eine vollständige Liste der Direct3D 11-Funktionen finden Sie unter [Features 
 
 ## <a name="moving-from-direct2d-9-to-direct2d-11"></a>Umstellung von Direct2D 9 auf Direct2D 11
 
-
 [Direct2D (Windows)](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-portal) ist weiterhin ein wichtiger Bestandteil von DirectX-Grafiken und Windows. Sie können mit Direct2D weiterhin 2D-Spiele und Direct3D-basierte Überlagerungen (HUDs) zeichnen.
 
 Direct2D baut auf Direct3D auf. 2D-Spiele können mit beiden APIs implementiert werden. Ein mit Direct3D implementiertes 2D-Spiel kann z. B. die orthografische Projektion verwenden, Z-Werte zum Steuern der Zeichnungsreihenfolge von Grundtypen festlegen und mit Pixelshadern Spezialeffekte hinzufügen.
@@ -50,7 +41,6 @@ Die [DirectWrite](https://docs.microsoft.com/windows/desktop/DirectWrite/direct-
 
 ## <a name="replace-deprecated-helper-libraries"></a>Ersetzen veralteter Hilfsbibliotheken
 
-
 D3DX und DXUT sind veraltet und können nicht in UWP-Spielen verwendet werden. Von diesen Hilfsbibliotheken wurden Ressourcen für Aufgaben wie das Laden von Texturen und Gittern bereitgestellt.
 
 -   In der exemplarischen Vorgehensweise [Einfache Portierung von Direct3D 9 zu UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) wird gezeigt, wie ein Fenster eingerichtet, Direct3D initialisiert und einfaches 3D-Rendering durchgeführt wird.
@@ -59,17 +49,15 @@ D3DX und DXUT sind veraltet und können nicht in UWP-Spielen verwendet werden. V
 
 ## <a name="move-shader-programs-from-fx-to-hlsl"></a>Umstellung von Shaderprogrammen von FX auf HLSL
 
-
 Die D3DX-Hilfsprogrammbibliothek (D3DX 9, D3DX 10 und D3DX 11), einschließlich Effects, ist veraltet und für UWP nicht mehr verfügbar. Alle DirectX-Spiele für UWP steuern die Grafikpipeline mit [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) ohne Effects.
 
 Visual Studio verwendet FXC weiterhin im Hintergrund zum Kompilieren von Shaderobjekten. UWP-Spielshader werden vorab kompiliert. Der Bytecode wird zur Laufzeit geladen. Anschließend wird jede Shaderressource während des entsprechenden Renderingdurchgangs an die Grafikpipeline gebunden. Shader sollten in eigene separate HLSL-Dateien verschoben werden, und Renderingtechniken sollten im C++-Code implementiert werden.
 
 Einen kurzen Überblick über das Laden von Shaderressourcen finden Sie unter [Einfache Portierung von Direct3D 9 zu UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-In Direct3D 11 wurde das Shader-Modell 5 eingeführt, das Direct3D\_-Funktionsebene 11 0 (oder höher) erfordert. Siehe [Funktionen von HLSL-Shadermodell 5 für Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl).
+In Direct3D 11 wurde das Shader-Modell 5 eingeführt, das Direct3D-Funktionsebene 11 \_ 0 (oder höher) erfordert. Siehe [Funktionen von HLSL-Shadermodell 5 für Direct3D 11](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl).
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>Ersetzen von XNAMath und D3DXMath
-
 
 Code mit XNAMath (oder D3DXMath) sollte zu [DirectXMath](https://docs.microsoft.com/windows/desktop/dxmath/directxmath-portal) migriert werden. DirectXMath enthält Typen, die zwischen x86, x64 und ARM portierbar sind. Siehe [Codemigration von der XNAMath-Bibliothek](https://docs.microsoft.com/windows/desktop/dxmath/pg-xnamath-migration).
 
@@ -77,13 +65,11 @@ Beachten Sie, dass sich Float-Typen von DirectXMath zur Verwendung mit Shadern e
 
 ## <a name="replace-directsound-with-xaudio2-and-background-audio"></a>Ersetzen von DirectSound durch XAudio2 (und Hintergrundaudio)
 
-
 DirectSound wird für UWP nicht unterstützt:
 
 -   Verwenden Sie [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal), um Ihrem Spiel Soundeffekte hinzuzufügen.
 
 ##  <a name="replace-directinput-with-xinput-and-windows-runtime-apis"></a>Ersetzen von DirectInput durch XInput-und Windows-Runtime-APIs
-
 
 DirectInput wird für UWP nicht unterstützt:
 
@@ -93,11 +79,9 @@ DirectInput wird für UWP nicht unterstützt:
 
 ## <a name="use-microsoft-media-foundation-instead-of-directshow"></a>Verwenden von Microsoft Media Foundation anstelle von DirectShow
 
-
 DirectShow ist nicht mehr in der DirectX-API (oder der Windows-API) enthalten. [Microsoft Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk) stellt Videoinhalte mithilfe von freigegebenen Oberflächen für Direct3D bereit. Siehe [Direct3D 11-Video-APIs](https://docs.microsoft.com/windows/desktop/medfound/direct3d-11-video-apis).
 
 ## <a name="replace-directplay-with-networking-code"></a>Ersetzen von DirectPlay durch Netzwerkcode
-
 
 Microsoft DirectPlay ist veraltet und nicht mehr verfügbar. Falls Ihr Spiel Netzwerkdienste verwendet, müssen Sie Netzwerkcode bereitstellen, der den UWP-Anforderungen entspricht. Verwenden Sie die folgenden APIs:
 
@@ -112,12 +96,11 @@ In den folgenden Artikeln finden Sie Informationen zum Hinzufügen von Netzwerkf
 -   [Herstellen einer Verbindung mit Sockets (UWP-apps mit c#/VB/C + + und XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
 -   [Herstellen einer Verbindung mit websockets (UWP-apps mit c#/VB/C + + und XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
 -   [Herstellen einer Verbindung mit Webdiensten (UWP-apps mit c#/VB/C + + und XAML) (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
--   [Grundlagen zum Netzwerk](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
+-   [Netzwerkgrundlagen](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
 
 Beachten Sie, dass alle UWP-Apps (einschließlich Spiele) bestimmte Hintergrundaufgaben verwenden, um die Verbindung aufrechtzuerhalten, während die App angehalten ist. Wenn Ihr Spiel den Verbindungsstatus aufrechterhalten muss, während es angehalten ist, gehen Sie wie unter [Grundlagen zum Netzwerk](https://docs.microsoft.com/windows/uwp/networking/networking-basics) beschrieben vor.
 
 ## <a name="function-mapping"></a>Funktionszuordnung
-
 
 Ziehen Sie beim Konvertieren von Code von Direct3D 9 in Direct3D 11 die folgende Tabelle zurate. Diese Informationen können Ihnen auch die Unterscheidung zwischen Gerät und Gerätekontext erleichtern.
 
@@ -231,15 +214,12 @@ Ziehen Sie beim Konvertieren von Code von Direct3D 9 in Direct3D 11 die folgen
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-checkdeviceformat">IDirect3DDevice9: CheckDeviceFormat</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-getdevicecaps">IDirect3DDevice9: getde vicecaps</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-validatedevice">IDirect3DDevice9: ValidateDevice</a></p></td>
-<td align="left"><p>Funktionsbits werden durch Funktionsebenen ersetzt. Nur einige wenige Format- und Funktionsverwendungsfälle sind für alle Funktionsebenen optional. Diese können mit <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device:: checkfeaturesupport</a> und <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device:: checkformatsupport</a>überprüft werden.</p></td>
+<td align="left"><p>Funktionalitäts Bits werden durch Funktionsebenen ersetzt. Nur einige wenige Format- und Funktionsverwendungsfälle sind für alle Funktionsebenen optional. Diese können mit <a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport">ID3D11Device:: checkfeaturesupport</a> und <a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-checkformatsupport">ID3D11Device:: checkformatsupport</a>überprüft werden.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
-
 ## <a name="surface-format-mapping"></a>Oberflächenformatzuordnung
-
 
 Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgende Tabelle heran.
 
@@ -342,7 +322,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>Beachten Sie</strong>    , dass Sie in Shader ". r" verwenden, um rot zu anderen Komponenten zu duplizieren, um das Direct3D 9-Verhalten
+<strong>Hinweis</strong>    Verwenden Sie. r Swizzle in Shader, um rot zu anderen Komponenten zu duplizieren, um das Direct3D 9-Verhalten zu erhalten.
 </div>
 <div>
  
@@ -352,7 +332,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>Hinweis Verwenden Sie</strong>    Swizzle. rrrg im Shader, um rot zu duplizieren, und bewegen Sie grün zu den Alpha Komponenten, um Direct3D 9-Verhalten zu erhalten.
+<strong>Hinweis</strong>    Verwenden Sie Swizzle. rrrg im Shader, um rot zu duplizieren, und bewegen Sie grün zu den Alpha Komponenten, um Direct3D 9-Verhalten zu erhalten.
 </div>
 <div>
  
@@ -398,7 +378,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>Hinweis</strong>    in Direct3D 9 wurden die Daten um 255.0 f zentral hochskaliert, dies kann jedoch im Shader behandelt werden.
+<strong>Hinweis</strong>    In Direct3D 9 wurden die Daten um 255.0 f zentral hochskaliert, dies kann jedoch im Shader behandelt werden.
 </div>
 <div>
  
@@ -412,7 +392,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>Hinweis</strong>    in Direct3D 9 wurden die Daten um 255.0 f zentral hochskaliert, dies kann jedoch im Shader behandelt werden.
+<strong>Hinweis</strong>    In Direct3D 9 wurden die Daten um 255.0 f zentral hochskaliert, dies kann jedoch im Shader behandelt werden.
 </div>
 <div>
  
@@ -426,7 +406,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM & DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>Beachten Sie</strong>    , dass DXT1 und DXT2 in Bezug auf die API/Hardware identisch sind. Der einzige Unterschied besteht darin, ob prämultipliziertes Alpha verwendet wird, was von einer App nachverfolgt werden kann und kein separates Format erfordert.
+<strong>Hinweis</strong>    DXT1 und DXT2 sind im Hinblick auf die API/Hardware identisch. Der einzige Unterschied besteht darin, ob prämultipliziertes Alpha verwendet wird, was von einer App nachverfolgt werden kann und kein separates Format erfordert.
 </div>
 <div>
  
@@ -440,7 +420,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM & DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>Beachten Sie</strong>    , dass DXT3 und DXT4 in Bezug auf die API/Hardware identisch sind. Der einzige Unterschied besteht darin, ob prämultipliziertes Alpha verwendet wird, was von einer App nachverfolgt werden kann und kein separates Format erfordert.
+<strong>Hinweis</strong>    DXT3 und DXT4 sind im Hinblick auf die API/Hardware identisch. Der einzige Unterschied besteht darin, ob prämultipliziertes Alpha verwendet wird, was von einer App nachverfolgt werden kann und kein separates Format erfordert.
 </div>
 <div>
  
@@ -506,7 +486,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>Beachten Sie</strong>    , dass Sie mit ". r" im Shader rot zu anderen Komponenten duplizieren, um das d3d9-Verhalten zu erhalten.
+<strong>Hinweis</strong>    Verwenden Sie. r Swizzle in Shader, um rot zu anderen Komponenten zu duplizieren, um das d3d9-Verhalten zu erhalten.
 </div>
 <div>
  
@@ -580,7 +560,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>Beachten Sie</strong>    , dass der Shader uint-Werte erhält, aber wenn Direct3D 9-Format ganzzahlige Gleit Komma Zahlen benötigt werden (0,0 f, 1.0 f... 255. f), uint kann einfach im Shader in float32 konvertiert werden.
+<strong>Hinweis</strong>    Der Shader ruft uint-Werte ab, aber wenn die ganzzahligen Gleit Komma Zahlen Direct3D 9 nicht benötigt werden (0,0 f, 1.0 f... 255. f), uint kann einfach im Shader in float32 konvertiert werden.
 </div>
 <div>
  
@@ -590,7 +570,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>Beachten Sie</strong>    , dass der Shader Sint-Werte erhält, aber wenn Direct3D 9-Format ganzzahlige Gleit Komma Zahlen erforderlich sind, kann Sint einfach in float32 im Shader konvertiert werden.
+<strong>Hinweis</strong>    Der Shader ruft Sint-Werte ab, aber wenn Direct3D 9-Format ganzzahlige Gleit Komma Zahlen erforderlich sind, kann Sint einfach in float32 im Shader konvertiert werden.
 </div>
 <div>
  
@@ -600,7 +580,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>Beachten Sie</strong>    , dass der Shader Sint-Werte erhält, aber wenn Direct3D 9-Format ganzzahlige Gleit Komma Zahlen erforderlich sind, kann Sint einfach in float32 im Shader konvertiert werden.
+<strong>Hinweis</strong>    Der Shader ruft Sint-Werte ab, aber wenn Direct3D 9-Format ganzzahlige Gleit Komma Zahlen erforderlich sind, kann Sint einfach in float32 im Shader konvertiert werden.
 </div>
 <div>
  
@@ -646,7 +626,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>Hinweis</strong>    erfordert die Featureebene 10,0 oder höher
+<strong>Hinweis</strong>    Erfordert die Featureebene 10,0 oder höher
 </div>
 <div>
  
@@ -656,7 +636,7 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>Hinweis</strong>    erfordert die Featureebene 10,0 oder höher
+<strong>Hinweis</strong>    Erfordert die Featureebene 10,0 oder höher
 </div>
 <div>
  
@@ -665,12 +645,28 @@ Ziehen Sie beim Konvertieren von Direct3D 9-Formaten in DXGI-Formate die folgen
 </tbody>
 </table>
 
- 
+## <a name="additional-mapping-info"></a>Weitere Informationen zur Zuordnung
 
- 
+- **IDirect3DDevice9:: setcurrsorposition** wird durch [**setcurrsorpos**](/windows/desktop/api/winuser/nf-winuser-setcursorpos)ersetzt.
+- **IDirect3DDevice9:: setcursorproperties** wird durch [**SetCursor**](/windows/desktop/api/winuser/nf-winuser-setcursor)ersetzt.
+- **IDirect3DDevice9:: setindiziert** wird durch [**Verknüpfung id3d11devicecontext aus:: iasetindexbuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer)ersetzt.
+- **IDirect3DDevice9:: "::** *" wird durch " [**Verknüpfung id3d11devicecontext aus:: omabtrendertargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets)" ersetzt.
+- **IDirect3DDevice9:: szcissorrect** wird durch [**Verknüpfung id3d11devicecontext aus:: rssetcissorrects**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetscissorrects)ersetzt.
+- **IDirect3DDevice9:: SetStreamSource** wird durch [**Verknüpfung id3d11devicecontext aus:: iasetvertexbuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers)ersetzt.
+- **IDirect3DDevice9:: setvertexdeclaration** wird durch [**Verknüpfung id3d11devicecontext aus:: iasetinputlayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)ersetzt.
+- **IDirect3DDevice9:: setviewport** wird durch [**Verknüpfung id3d11devicecontext aus:: rssetviewports**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports)ersetzt.
+- **IDirect3DDevice9:: ShowCursor** wird durch [**ShowCursor**](/windows/desktop/api/winuser/nf-winuser-showcursor)ersetzt.
 
- 
+Die Steuerung der Hardware-Gamma-Rampe der Grafikkarte durch **IDirect3DDevice9:: setgammaramp** wird durch **idxgioutput:: setgammacontrol**ersetzt. Siehe [Verwenden von Gammakorrektur](/windows/win32/direct3ddxgi/using-gamma-correction).
 
+**IDirect3DDevice9::P rocess Vertices** wird durch die Stream-Output-Funktionalität von Geometry-Shadern ersetzt. Weitere Informationen finden Sie unter [Getting Started with the Stream-Output Stage](/windows/win32/direct3d11/d3d10-graphics-programming-guide-output-stream-stage-getting-started).
 
+Die **IDirect3DDevice9:: setclipplane** -Methode zum Festlegen von User Clip-Ebenen wurde entweder durch die HLSL- **SV_ClipDistance** Vertex-Shader-Ausgabe [Semantik (siehe Semantik](/windows/win32/direct3dhlsl/dx-graphics-hlsl-semantics)), verfügbar in VS_4_0 und nach oben oder das neue HLSL clipplane-Funktions Attribut ersetzt (Weitere Informationen finden Sie unter [User Clip Plane on Feature Level 9 Hardware](/windows/win32/direct3dhlsl/user-clip-planes-on-10level9)).
 
+**IDirect3DDevice9:: setpaletteentries** und **IDirect3DDevice9:: setcurrenttexturepalette** sind veraltet. Ersetzen Sie diese durch einen PixelShader, der stattdessen Farben in einer **R8G8B8A8** -Textur von 256x1 sucht.
 
+Mosaik Funktionen mit fester Funktionsweise wie **drawrectpatch**, **drawselpatch**, **setnpatchmode**und **deletepatch** sind veraltet. Ersetzen Sie diese durch Programmier-Shader der programmierbaren SM 5.0-Pipeline (wenn Hardware Mosaik-Shader unterstützt).
+
+**IDirect3DDevice9:: setf VF**-und f-Code-Codes werden nicht mehr unterstützt. Vor dem Portieren auf D3D11-Eingabe Layouts sollten Sie aus D3D8/d3d9 FVF-Codes in d3d9 Vertex-Deklarationen portieren.
+
+Alle **D3DDECLTYPE** Typen, die nicht direkt unterstützt werden, können mit einer kleinen Anzahl von bitweisen Vorgängen am Anfang eines Vertex-Shaders in VS_4_0 und nach oben Recht effizient emuliert werden.
