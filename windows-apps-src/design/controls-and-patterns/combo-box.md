@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f484df97c6d29281941c8eed7b91fd0b156fff60
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 65f65fc62f839e379535f4e1a3df8a188620fed9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968778"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502359"
 ---
 # <a name="combo-box-and-list-box"></a>Kombinationsfeld und Listenfeld
 
@@ -23,7 +23,7 @@ Verwenden Sie ein Kombinationsfeld (auch als Dropdownliste bezeichnet), um eine 
 
 Wenn das Kombinationsfeld geschlossen ist, wird entweder die aktuelle Auswahl angezeigt oder das Feld ist leer, wenn kein Element ausgewählt ist. Wenn der Benutzer das Kombinationsfeld erweitert, wird die Liste der auswählbaren Elemente angezeigt.
 
-![Beispiel für eine Dropdownliste im kompakten Zustand](images/combo_box_collapsed.png)
+![Beispiel für eine Dropdownliste im kompakten Zustand](images/combo-box-expand.gif)
 
 > _Kombinationsfeld im kompakten Zustand mit einer Überschrift._
 
