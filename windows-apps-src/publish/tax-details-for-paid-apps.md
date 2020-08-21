@@ -6,15 +6,20 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, Steuern, App-steuern, steuerliche Anforderungen, Handels Erweiterung, Steuersatz
 ms.localizationpriority: medium
-ms.openlocfilehash: f81d469760e8c690066e668416116d9fc8ba879d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f1147ab6ee76b1d7615d6acaadaf6190db96c668
+ms.sourcegitcommit: 829af8cf4679a6aa9e7ecad961e1e33a09235028
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234567"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681261"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Steuer Details für Windows-App/Spielentwickler und Azure Marketplace-Herausgeber
 
+Im Allgemeinen werden die Verantwortlichkeiten für Steuern des Endkunden Umsatzes zwischen Microsoft und einem Entwickler/Verleger basierend auf dem Land und dem Kauf Szenario, in dem Angebote verkauft werden, zugeordnet.  In bestimmten Ländern (Von Microsoft verwaltete Länder) trägt Microsoft die Verantwortung für die Verwaltung der Endkundenbesteuerung, z. B. Überprüfung des Geschäftsstatus von Kunden anhand von Steuernummern oder Freistellungsbescheinigungen, umfassend verwaltete Beziehungen mit Kunden sowie Berechnung, Erhebung und/oder Abführung von Steuern. In den Fällen, in denen Verkäufe über Partner erfolgen, geht Microsoft davon aus, dass alle Partner Unternehmen sind und ihren Steuerverpflichtungen entsprechend nachkommen. Microsoft verwaltet die Endkundenbesteuerung für Herausgeber zur Vereinfachung und ist von den gängigsten Szenarien ausgegangen, um die Länder und Strategien für die Verwaltung der Endkundenbesteuerung zu bestimmen.  Microsoft übernimmt keine Garantien, dass die Maßnahmen von Microsoft die Verpflichtungen der Herausgeber in den von Microsoft verwalteten Ländern vollständig erfüllen. Für alle von Microsoft verwalteten Länder empfiehlt Microsoft dringend, dass Entwickler/Verleger mit ihren eigenen Steuerberatern zusammenarbeiten, um zu ermitteln, ob die von Microsoft verwaltete Steuer Abweisung ausreichend den Complianceanforderungen des Entwicklers/Herausgebers entspricht. Dies ist besonders wichtig für alle von Microsoft verwalteten Länder, in denen Herausgeber ihre Produkte verkaufen. Beispielsweise kann ein Entwickler-/Herausgeber, der in Saudi-Arabien eingerichtet ist und Angebote anbietet, feststellen, dass der Zugriff auf Microsoft zum Steuern der Steuern möglicherweise nicht ausreicht, um die Konformitäts Verpflichtungen des Entwicklers/Herausgebers zu erfüllen
+
+Bei allen Ländern, bei denen es sich nicht um von Microsoft verwaltete Länder handelt (von Entwicklern und Verlegern verwaltete Länder), bestätigen und erklären Sie, dass Verleger die alleinige Verantwortung für die Bestimmung und Verwaltung der Kunden steuern können, wie z. b. Registrierung, steuerliche Berechnung, Erfassung und Rückmeldung, Überprüfung des Geschäfts Status von Kunden und Bereitstellung von Steuer Rechnungen für Kunden. Herausgeber bestätigen, dass Microsoft in Bezug auf jeden Verkauf in einem von Entwicklern/Verleger verwalteten Land derzeit möglicherweise nicht in der Lage ist, bereitzustellen.
+
+In einigen Fällen können von Microsoft verwaltete Länder Länder, die von Entwicklern und Verlegern verwaltet werden, und umgekehrt werden.
 
 In den folgenden Tabellen finden Sie Informationen zu den Steuer Überlegungen für die Preis Auswahl und die Steuer Verantwortlichkeit im Rahmen des App-Entwickler Vertrags oder der modernen Herausgeber Vereinbarung.
 
@@ -74,7 +79,7 @@ In den folgenden Tabellen finden Sie Informationen zu den Steuer Überlegungen f
 | Kaimaninseln                   | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Zentralafrikanische Republik         | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Tschad                             | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
-| Chile                            | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
+| Chile                            | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern. Steuern werden vor der Auszahlung vom Preis abgezogen. teuer.       | Preis abzüglich 19 % Steuern, abzüglich Store-Gebühr  | Microsoft          |
 | China                            | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Weihnachtsinsel                 | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Kokosinseln          | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
@@ -164,7 +169,7 @@ In den folgenden Tabellen finden Sie Informationen zu den Steuer Überlegungen f
 | Mauretanien                       | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Mauritius                        | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Mayotte                          | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
-| Mexiko                           | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
+| Mexiko                           | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern. Steuern werden vor der Auszahlung vom Preis abgezogen.              | Preis abzüglich 16 % Steuern, abzüglich Store-Gebühr  | Microsoft          |
 | Mikronesien                       | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Moldau                          | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern.                                                                   | Preis abzüglich Store-Gebühr                 | Entwickler          |
 | Monaco                           | Der ausgewählte Preis ist der endgültige Verkaufspreis und umfasst sämtliche anwendbaren Steuern. Steuern werden vor der Auszahlung vom Preis abgezogen.              | Preis abzüglich 20 % Steuern, abzüglich Store-Gebühr  | Microsoft          |
