@@ -4,20 +4,20 @@ description: Erfahren Sie mehr über die Implementierung der Cloud als Back-End 
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.date: 03/27/2018
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Cloud-Dienste
+keywords: Windows 10, UWP, Games, Cloud Services
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d5f8e76e6141f61344c53f29f95ad0bda2cb18
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3d959c490474a6280d878be9679abafc31b565d8
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684437"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846860"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Nutzen von Clouddiensten für UWP-Spiele
 
 Die Universelle Windows-Plattform (UWP) in Windows 10 bietet eine Reihe von APIs, die zur Entwicklung von Spielen für Microsoft-Geräte verwendet werden können. Bei der Entwicklung von Spielen für alle Plattformen und Geräte können Sie ein Cloud-Back-End nutzen, um das Spiel je nach Bedarf zu skalieren.
 
-Wenn Sie eine vollständige Cloud-Back-End-Lösung für Ihr Spiel suchen, finden Sie weitere Informationen unter [Software-as-a Service für Game-Back-Ends](#software-as-a-service-for-game-backend).
+Wenn Sie nach einer umfassenden Cloud-Back-End-Lösung für Ihr Spiel suchen, lesen Sie [Software-as-a-Service für Game Backend](#software-as-a-service-for-game-backend).
 
 ##  <a name="what-is-cloud-computing"></a>Was ist Cloud Computing?
 
@@ -48,48 +48,48 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
     <col width="30%" />
     </colgroup>
     <tr class="header" align="left">
-        <th>Entwickler</th>
+        <th>Developer</th>
         <th>Beschreibung</th>
         <th>Kerndaten des Spiels</th>
-        <th>Mehr erfahren</th>
+        <th>Weitere Informationen</th>
     </tr>
     <tr>
         <td><a href="https://www.tencent.com">Tencent-Spiele</a></td>
-        <td><b>Tencent-Spiele</b> hat eine innovative Lösung mit Azure Service Fabric entwickelt, das es herkömmlichen PC-Spielen ermöglicht, als Dienst bereitgestellt zu werden. Deren Cloud-Spielelösung verwendet ein "Thin Client + Rich Cloud"-Modell, das Arbeitslasten im Back-End als Microservices verwendet.</td>
+        <td><b>Tencent Games</b> hat eine innovative Lösung mithilfe von Azure Service Fabric ermöglicht, herkömmliche PC-Spiele als Dienst bereitzustellen. Ihre cloudspiellösung verwendet ein "Thin Client + Rich Cloud"-Modell, das Arbeits Auslastungen als mikrodienste im Back-End durchführt.</td>
         <td>
             <ul>
-                <li>Herkömmlichen PC-Spiele werden als Cloud-Spiele für Benutzer auf der ganzen Welt bereitgestellt. <li>Optimierte Spiel-Übermittlungsprozesse <li>Spielfunktionen, die als Microservices isoliert sind reduzieren die Komplexität, die wiederholten Arbeitslasten aufgrund von Abhängigkeiten und ermöglichen das unabhängige Aktualisieren neuer Feature. <li>Kleine Installationspaket-Downloads für die Wiedergabe der neuesten Spielinhalte (verminderte Größe des Pakets von GB auf MB) <li>Geringere Wartungskosten </ul>
+                <li>Herkömmliche PCs werden als cloudspiele an Benutzer auf der ganzen Welt übermittelt. <li>Optimierter spielverarbeitungs Prozess <li>Spiele Funktionen, die als "mikroservices" isoliert sind, um die Komplexität zu reduzieren, Workloads aufgrund von Abhängigkeiten zu reduzieren und neue Features unabhängig zu aktualisieren <li>Download von kleinen Installationspaketen zum Abspielen neuester Spielinhalte (reduzierte Paketgröße von GB auf MB) <li>Geringere Wartungskosten </ul>
         </td>
         <td>
             <ul>
                 <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent Games und Microsoft haben die cloudspiellösung erstellt</a>
-                <li>Entwickeln von <a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=38m33s">spielen mit Service Fabric: Details zur Implementierung von tencent (Video)</a>
+                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=38m33s">Entwickeln von spielen mit Service Fabric: Details zur Implementierung von tencent (Video)</a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.halowaypoint.com/">343 Branchen</a></td>
-        <td><b>Halo 5: Guardians</b> implementierte <a href="https://www.halowaypoint.com/spartan-companies">Halo: Spartan Companies</a> mithilfe von Microsoft Azure DocumentDB als Social-Gaming-Plattform. Azure Cosmos DB (via DocumentDB API) wurde aufgrund der schnellen und flexiblen Funktionen für die automatische Indizierung ausgewählt.</td>
+        <td><a href="https://www.halowaypoint.com/">343 Industries</a></td>
+        <td><b>Halo 5: Wächter</b> haben <a href="https://www.halowaypoint.com/spartan-companies">Halo: Spartan-Unternehmen</a> als soziale Spielplattform mithilfe von Azure Cosmos DB (über die documentdb-API) implementiert, die aufgrund ihrer automatischen Indizierungs Funktionen für die Geschwindigkeit und Flexibilität ausgewählt wurde.</td>
         <td>
             <ul>
                 <li>Skalierbare Datenebene zur Verarbeitung der Erstellung und Verwaltung von Gruppen beim Multiplayer-Gameplay <li>Integration des Spiels mit sozialen Medien <li>Echtzeit-Datenabfragen über mehrere Attribute <li>Synchronisierung von Erfolgen und Statistiken im Spiel </ul>
         </td>
         <td>
             <ul>
-                <li><a href="https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/">Soziales Spiel, das mithilfe Azure Cosmos DB (über die documentdb-API) implementiert</a> wird
+                <li><a href="https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/">Mit Azure Cosmos DB implementiertes soziales Spiel (über die documentdb-API)</a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="https://web.ageofascent.com/">Illyriad-Spiele</a></td>
-        <td>Illyriad Games entwickelte mit <b>Age of Ascent</b> ein herausragendes 3D-MMO (Massively Multiplayer Online), das auf Geräten mit modernen Browsern gespielt werden kann. Das Spiel kann also auf PCs, Laptops, Smartphones und anderen mobilen Geräten ohne Plug-Ins genutzt werden. Das Spiel verwendet ASP.NET Core, HTML5, WebGL und Azure.</td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
+        <td>Illyriad Games entwickelte mit <b>Age of Ascent</b> ein herausragendes 3D-MMO (Massively Multiplayer Online), das auf Geräten mit modernen Browsern gespielt werden kann. Dieses Spiel kann also auf PCs, Laptops, Mobiltelefonen und anderen mobilen Geräten ohne Plug-ins wiedergegeben werden. Das Spiel verwendet ASP.net Core, HTML5, WebGL und Azure.</td>
         <td>
             <ul>
                 <li>Plattformübergreifendes, browserbasiertes Spiel <li>Eine einzige große und persistente offenen Welt <li>Durchführung von intensiven Gameplay-Berechnungen in Echtzeit <li>Skalierung mit der Anzahl der Spieler </ul>
         </td>
         <td>
             <ul>
-                <li>Entwickeln <a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">von spielen mit Service Fabric: Age of Ascent MMO Game (Video)</a>
+                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Entwickeln von spielen mit Service Fabric: Age of Ascent MMO Game (Video)</a>
                 <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Verwalten von Spielkomponenten als Mikro Dienste mithilfe von Azure Service Fabric (Video)</a> 
                 <li><a href="/Blogs/Azure/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Interview mit Alter of Ascent Developers (Video)</a>
             </ul>
@@ -101,18 +101,18 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
         </td>
         <td>
             <ul>
-                <li>Plattformübergreifend <li>Rundenbasiertes Multiplayer-Spiel <li>Flexible Leistungsskalierung <li>Spielerschutz vor Betrug <li>Dynamische Inhaltsübermittlung </ul>
+                <li>Plattformübergreifend <li>Rundenbasiertes Multiplayer-Spiel <li>Flexible Leistungsskalierung <li>Schutz vor gambetrugs <li>Dynamische Inhalts Übermittlung </ul>
         </td>
         <td>
             <ul>
-                <li><a href="https://azure.microsoft.com/blog/how-we-built-it-next-games-global-online-gaming-platform-on-azure/">Wie wir es erstellt haben: Next Games Global Online Gaming Platform in Azure (Blog mit Video)</a>
-                <li><a href="https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/">Beim Durchlaufen von Dead verwendet Azure Cosmos DB (über die documentdb-API), um einen schnelleren Entwicklungs-und ausführlicheren Spiel</a>
+                <li><a href="https://azure.microsoft.com/blog/how-we-built-it-next-games-global-online-gaming-platform-on-azure/">So haben wir es erstellt: Next Games Global Online Gaming Platform in Azure (Blog mit Video)</a>
+                <li><a href="https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/">Beim Durchlaufen von Dead verwendet Azure Cosmos DB (über die documentdb-API), um den Entwicklungszeitraum zu beschleunigen</a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">Pixel-Kader</a></td>
-        <td>Pixel Squad entwickelte mit der Unity-Engine und Azure das Spiel <b>Crime Coast</b>. <b>Crime Coast</b> ist ein Social-Strategiespiel für Android, iOS und Windows. Für das Spiel wurden Azure Blob Speicher, Managed Azure Redis Cache und mehrere IIS-VMs mit Lastenausgleich sowie der Microsoft Notification-Hub eingesetzt. Erfahren Sie, wie die Skalierung und Handhabung der Spieler bei 5.000 gleichzeitigen Spielern möglich ist.
+        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
+        <td>Pixel Squad entwickelte mit der Unity-Engine und Azure das Spiel <b>Crime Coast</b>. <b>Crime Coast</b> ist ein Social-Strategiespiel für Android, iOS und die Windows-Plattformen. Für das Spiel wurden Azure Blob Speicher, Managed Azure Redis Cache und mehrere IIS-VMs mit Lastenausgleich sowie der Microsoft Notification-Hub eingesetzt. Erfahren Sie, wie die Skalierung und Handhabung der Spieler bei 5.000 gleichzeitigen Spielern möglich ist.
         </td>
         <td>
             <ul>
@@ -120,8 +120,8 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
         </td>
         <td>
             <ul>
-                <li>Verwendung von Azure Cloud Services
-             durch das <a href="https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te">Crime Coast-MMO-Spiel</a></ul>
+                <li><a href="https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te">Verwendung von Azure Cloud Services durch das Crime Coast-Spiel</a>
+            </ul>
         </td>
     </tr> 
 </table>
@@ -130,8 +130,8 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
 ### <a name="other-links"></a>Weitere Links
 
 * [Hitman und Azure: Erstellen Sie Spiel Features wie ein schwer fassbares Ziel, die nur mit der Cloud möglich sind.](https://channel9.msdn.com/Series/Hitman)
-* [Azure als geheime Sauce für hitcents, Game Trooper und innospark](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
-* [Spiele-Startups im BizSpark-Programm mit Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
+* [Azure als Geheimwaffe für Hitcents, Game Troopers und InnoSpark](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Spiele-Startups im Bizspark-Programm nutzen Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
 ## <a name="how-to-design-your-cloud-backend"></a>Design des Cloud-Back-Ends
@@ -152,21 +152,21 @@ Zunächst müssen Sie entscheiden, welche Dienstform für Spiel am besten geeign
 
 * [Software-as-a-Service (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
 
-    Software-as-a-Service (SaaS) ermöglicht Benutzern, sich mit cloudbasierten Apps zu verbinden und diese über das Internet zu verwenden. Es bietet eine vollständige Softwarelösung an, die Sie auf Basis eines nutzungsbasierten Zahlungsmodells von einem Cloud-Dienstanbieter erwerben.  Allgemeine Beispiele sind E-Mail, Kalender und Office-Tools (z. B. Microsoft Office 365). Sie vermieten die Verwendung einer App für Ihre Organisation, und Ihre Benutzer können eine Verbindung über das Internet, in der Regel über einen Webbrowser, herstellen. Die gesamte zugrunde liegende Infrastruktur, Middleware, App-Software und App-Daten befinden sich im Dienstanbieter-Rechenzentrum. Der Dienstanbieter verwaltet die Hardware und Software, und garantieren mit dem entsprechenden Servicevertrag die Verfügbarkeit und die Sicherheit des Spiels und Ihrer Daten. SaaS ermöglicht Ihrer Organisation den schnellen Einstieg für eine App mit minimale vorherigen Kosten.
+    Mit Software-as-a-Service (SaaS) können Benutzer eine Verbindung mit cloudbasierten Apps über das Internet herstellen und diese Apps verwenden. Es bietet eine umfassende Softwarelösung, die Sie auf Basis eines clouddienstanbieters erwerben.  Gängige Beispiele hierfür sind e-Mail-, Kalender-und Office-Tools (z. b. Microsoft 365 Office-Apps). Sie vermieten die Verwendung einer APP für Ihre Organisation, und Ihre Benutzer stellen eine Verbindung über das Internet her, normalerweise mit einem Webbrowser. Alle zugrunde liegenden Komponenten wie Infrastruktur, Middleware, App-Software und App-Daten befinden sich im Rechenzentrum des Dienstanbieters. Der Dienstanbieter verwaltet die Hardware und Software und mit dem entsprechenden Dienstvertrag die Verfügbarkeit sowie die Sicherheit des Spiels und ihrer Daten. Mit SaaS kann Ihr Unternehmen eine App mit minimalen Investitionskosten schnell bereitstellen.
 
 
 ### <a name="design-your-game-infrastructure-using-azure"></a>Entwerfen der Spieleinfrastruktur mit Azure
 
 In diesem Abschnitt lernen Sie Möglichkeiten zur Nutzung der Azure Cloudangebote für ein Spiel kennen. Azure arbeitet mit Windows, Linux und bekannten Open-Source-Technologien wie Ruby, Python, Java und PHP. Weitere Informationen finden Sie unter [Azure für Gaming](https://azure.microsoft.com/solutions/gaming/).
 
-| Anforderungen                 | Aktivitätsszenarien                            | Produktangebot                      | Produktfunktionen                                    |
+| Requirements (Anforderungen)                 | Aktivitätsszenarien                            | Produktangebot                      | Produktfunktionen                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | Hosten Ihrer Domäne in der Cloud     | Effizientes Beantworten von DNS-Abfragen            | [Azure DNS](https://azure.microsoft.com/services/dns/) | Hosten Ihrer Domäne mit hoher Leistung und Verfügbarkeit  |
-| Anmeldung, Identitätsüberprüfung      | Spieler meldet sich an und seine Identität wird authentifiziert  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) (AAD) | Einmaliges Anmelden mit mehrstufiger Authentifizierung für alle Cloud-Web-Apps und lokalen Web-Apps            | 
+| Anmeldung, Identitätsüberprüfung      | Spieler meldet sich an und seine Identität wird authentifiziert  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Einmaliges Anmelden mit mehrstufiger Authentifizierung für alle Cloud-Web-Apps und lokalen Web-Apps            | 
 | Spiel nutzt IaaS-Modell      | Spiel wird auf virtuellen Computern in der Cloud gehostet       | [Virtuelle Azure-Computer](https://azure.microsoft.com/services/virtual-machines/) | Skalierung der Game-Server von einer VM-Instanz bis zu mehreren tausend inkl. Virtual-Networking und Lastenausgleich; hybride Konsistenz mit lokalen Systemen           |
 | Web-Spiele oder mobile Spiele nutzen PaaS-Modell            | Spiel wird auf einer verwalteten Plattform gehostet                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | PaaS für Websites oder mobile Spiele (über Azure-VMs mit Middleware, Entwicklungstools, BI, DB-Management)   |
-| Skalierbares mehrstufiges Cloud-Spiel mit hoher Verfügbarkeit und mit mehr Kontrolle über das Betriebssystem (PaaS)        | Spiel wird auf einer verwalteten Plattform gehostet                | [Azure-Clouddienst](https://azure.microsoft.com/services/app-service/) | PaaS wurde entwickelt, um Anwendungen zu unterstützen, die skalierbar, zuverlässig und günstig ausgeführt werden   |
-| Regionaler Lastenausgleich für eine verbesserte Leistung und Verfügbarkeit | Leitet eingehende Spielanfragen weiter. Kann als ersten Ebene des Lastenausgleichs fungieren.       | [Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager/) | Bietet mehrere automatische Failover-Optionen und Möglichkeit, Ihren Datenverkehr gleichmäßig oder mit gewichteten Werten zu verteilen. Kann nahtlos lokale und Cloud-Systeme kombinieren. |
+| Hoch verfügbar, skalierbares, skalierbares n-Tier-cloudspiel mit mehr Kontrolle über das Betriebssystem (PAS)        | Spiel wird auf einer verwalteten Plattform gehostet                | [Azure-Clouddienst](https://azure.microsoft.com/services/app-service/) | Mit der Unterstützung von skalierbaren, zuverlässigen und kostengünstigen Anwendungen   |
+| Lastenausgleich über Regionen hinweg zur Verbesserung der Leistung und Verfügbarkeit | Leitet eingehende Spiel Anforderungen weiter. Kann als erste Ebene des Lasten Ausgleichs fungieren.       | [Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager/) | Bietet mehrere Optionen für automatisches Failover und die Möglichkeit, den Datenverkehr gleichmäßig oder mit gewichteten Werten zu verteilen. Lokale und cloudbasierte Systeme können nahtlos kombiniert werden. |
 | Cloud-Speicher für Spieldaten       | Aktuelle Spieledaten werden in der Cloud gespeichert und an die Client-Geräte gesendet | [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/)| Keine Einschränkung hinsichtlich der Art der zu speichernden Datei, Objektspeicher für große Mengen an unstrukturierten Daten wie Bilder, Audioinhalte, Video und mehr.  |
 | Temporäre Tabellen zur Datenspeicherung| Spieletransaktionen (Änderungen von Spielzuständen) werden vorübergehend in Tabellen gespeichert | [Azure Table Storage](https://azure.microsoft.com/services/storage/tables/)| Spieledaten können in einem flexiblen Schema gemäß den Anforderungen des Spiels gespeichert werden |
 | Warteschlange für Spieltransaktionen/-anfragen| Spieletransaktionen werden über eine Warteschlange verarbeitet | [Azure Queue Storage](https://azure.microsoft.com/services/storage/queues/)| Warteschlangen fangen unerwartete Datenverkehrsspitzen auf und könnten verhindern, dass Server durch eine plötzliche Flut von Anfragen überlastet werden   |
@@ -174,36 +174,36 @@ In diesem Abschnitt lernen Sie Möglichkeiten zur Nutzung der Azure Cloudangebot
 | Skalierbare verteilte Spieldatenbank mit geringer Latenz| Schnelles Lesen, Schreiben und Abfragen von Spiel- und Spielerdaten mit Schemaflexibilität | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| NoSQL-Dokumentdatenbank als Dienst mit geringer Latenz   |
 | Nutzung eines eigenen Datencenters mit Azure-Diensten | Spiel aus dem eigenen Datacenter abgerufen und an die Client-Geräte gesendet | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | Ermöglicht Ihrer Organisation die Bereitstellung von Azure-Diensten über Ihr eigenes Datacenter  |
 | Übertragung großer Datenmengen| Große Dateien wie Bilder, Audio und Videos können mit Azure CDN über den nächstgelegenen CDN-Pop-Standort (Content Delivery Network) an die Benutzer gesendet werden.    | [Übersicht über das Azure Content Delivery Network (CDN)](https://azure.microsoft.com/services/cdn/) | Azure CDN basiert auf einer modernen Netzwerktopologie mit großen, zentralen Knoten und verarbeitet auch plötzliche Verkehrsspitzen und hohe Lasten. So steigen die Geschwindigkeit und Verfügbarkeit deutlich, und das Benutzererlebnis wird verbessert  |
-| Niedrige Latenz               | Nutzen Sie die Zwischenspeicherung, um schnelle und skalierbare Spiele mit mehr Kontrolle und einer garantierten Isolation der Daten zu erstellen. Verbessern Sie außerdem die Mach-Making-Funktion des Spiels. | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | Datenzugriff mit hohem Durchsatz und einer konsistent geringen Latenz für schnelle und skalierbare Azure-Anwendungen  |
+| Geringe Wartezeit               | Nutzen Sie die Zwischenspeicherung, um schnelle und skalierbare Spiele mit mehr Kontrolle und einer garantierten Isolation der Daten zu erstellen. Verbessern Sie außerdem die Mach-Making-Funktion des Spiels. | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | Datenzugriff mit hohem Durchsatz und einer konsistent geringen Latenz für schnelle und skalierbare Azure-Anwendungen  |
 | Hohe Skalierbarkeit, geringe Latenz | Verarbeitung von Fluktuationen bei der Anzahl der Benutzer im Spiel mit geringer Latenz für Lese- und Schreibvorgänge | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | Für die komplexesten und datenintensiven Szenarien mit geringer Latenz und zuverlässiger Skalierung für viele gleichzeitige Benutzer geeignet. Service Fabric ermöglicht Ihnen die Entwicklung von Spielen, ohne einen für statuslose Apps erforderlichen separaten Speicher oder Zwischenspeicher erstellen zu müssen |
 | Sammeln von mehreren Millionen Ereignissen pro Sekunde von Geräten                         | Protokollieren von mehreren Millionen Ereignissen pro Sekunde von Geräten | [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) | Telemetrieaufnahme von Spielen, Websites, Apps und Geräten auf Cloud-Niveau  |
 | Verarbeiten von Spieldaten in Echtzeit  | Durchführen von Echtzeitanalyse von Spielerdaten zur Verbesserung des Gameplays| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | Echtzeit-Datenstromverarbeitung in der Cloud  |
 | Entwickeln eines vorausschauenden Gameplays         | Erstellen eines angepassten, dynamischen Gameplays auf Basis der Spielerdaten  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | Ein vollständig verwalteter Cloud-Dienst, mit dem Sie ganz einfach Predictive-Analytics-Lösungen erstellen, bereitstellen und freigeben können  |
 | Sammeln und Analysieren von Spieldaten| Massive Parallelverarbeitung von Daten aus relationalen und nicht-relationalen Datenbanken | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| Flexibles Data-Warehouse als Dienst mit Enterprise-Funktionen   |
-| Wecken des Benutzerinteresses für eine erhöhte Verwendung und Aufbewahrung| Senden von benutzerorientierten Pushbenachrichtigung an Plattformen von jedem Back-End zur Generierung von Interesse und Förderung bestimmter Spielaktionen | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| Mit dem schnellen Übertragungs-Push erreichen Sie Millionen Mobilgeräte auf allen wichtigen Plattformen &mdash;iOS, Android, Windows, Kindle, Baidu. Ihr Spiel kann auf jedem Back-End gehostet werden &mdash;Cloud oder lokal.|
-| Medieninhalte für Ihr Publikum lokal und weltweit bei gleichzeitigem Schutz Ihrer Inhalte wiedergeben| Qualitativ hochwertige Trailer für Spiele und Kino-Clips können von allen Geräten wiedergegeben werden| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| Bedarfsgesteuertes und Live-Videostreaming mit integrierten Netzwerkfunktionen für die Inhaltsübermittlung. Verwendung eines Spielers für alle Wiedergabeanforderungen, einschließlich Inhaltsschutz und Verschlüsselung.| 
-| Entwicklung, Verteilen und Beta-Tests für Ihre mobilen Apps | Testen und Verteilen Ihrer mobilen App. Verwalten von App-Leistung und Benutzererfahrung. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Integriert Absturzberichte und Benutzermetriken mit einer Plattform für die App-Verteilung und Benutzer-Feedback. Unterstützt Android, Cordova, iOS, OS X, Unity, Windows und Xamarin-Apps. Beachten Sie auch [Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; Mission Control für apps, die umfangreiche Analysen, Absturzberichte, Pushbenachrichtigungen, App-Verteilung und vieles mehr kombiniert. |
-| Erstellen von Marketingkampagnen zur Steigerung und Erhaltung der Nutzungszahlen  | Senden von Push-Benachrichtigungen an Zielgruppen zur Generierung von Interesse und Förderung bestimmter Spielaktionen gemäß Datenanalysen | [Mobile-Engagement](https://azure.microsoft.com/services/mobile-engagement/) – wird im März 2018 eingestellt und steht derzeit nur für vorhandene Kunden zur Verfügung. |  Steigerung der Spielzeit und der Benutzerzahlen auf allen wichtigen Plattformen (iOS, Android, Windows, Windows Phone) |
+| Einbinden von Benutzern zur Steigerung der Nutzung und Aufbewahrung| Senden Sie gezielte Pushbenachrichtigungen an beliebige Plattformen von jedem Back-End aus, um Interessen zu generieren und bestimmte Spiele Aktionen zu fördern. | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| Schnelles Broadcast Push zum Erreichen von Millionen mobiler Geräte auf allen wichtigen Plattformen unter &mdash; IOS, Android, Windows, Kindle, Baidu. Ihr Spiel kann in jeder Back &mdash; -End-Cloud oder lokal gehostet werden.|
+| Streamen von Medieninhalten an lokale und weltweite Zielgruppen, während Sie Ihre Inhalte schützen| Spiele-und kinoclips für Broadcast Qualität können von allen Geräten aus überwacht werden.| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| On-Demand-und Live-Video Streaming mit integrierten Content Delivery Network Funktionen. Verwenden Sie einen Player für alle Wiedergabe Anforderungen, einschließlich Inhalts Schutz und Verschlüsselung.| 
+| Entwickeln, verteilen und Beta-Testen Ihrer mobilen apps | Testen und verteilen Sie Ihre Mobile App. App-Leistung und Verwaltung von Benutzer Erlebnisses. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Integration von Absturz Berichterstattung und benutzermetriken in eine APP-Verteilung und eine Benutzer Feedback Plattform. Unterstützt Android-, Cordova-, Ios-, OS X-, Unity-, Windows-und xamarin-apps. Beachten Sie auch [Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; Mission Control für apps, die umfangreiche Analysen, Absturzberichte, Pushbenachrichtigungen, App-Verteilung und vieles mehr kombinieren. |
+| Erstellen von Marketingkampagnen zur Steigerung und Erhaltung der Nutzungszahlen  | Senden von Push-Benachrichtigungen an Zielgruppen zur Generierung von Interesse und Förderung bestimmter Spielaktionen gemäß Datenanalysen | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) : wird vom März 2018 eingestellt und ist zurzeit nur für Bestandskunden verfügbar. |  Steigerung der Spielzeit und der Benutzerzahlen auf allen wichtigen Plattformen (iOS, Android, Windows, Windows Phone) |
 
 
 ##  <a name="startup-and-developer-resources"></a>Ressourcen für Startups und Entwickler
 
 * [Microsoft für Startups](https://startups.microsoft.com)
 
-    Microsoft für Startups bietet produktspezifische, technische und Markteinführungsvorteile, um das Wachstum der Startups zu beschleunigen. Ein Vorteil ist ein kostenlose Azure-Konto. Sie haben eine Gutschrift von 200 USD auf Dienste für 30 Tage, 12 Monate beliebte kostenlose Dienste und mehr als 25 kostenlose Dienste. Weitere Informationen finden Sie unter [Bring your startup’s ideas to life with an Azure free account](https://azure.microsoft.com/free/startups/).
+    Microsoft für Startups bietet Produkt-, technische und Markt Einführungs Vorteile, um das Wachstum von Startups zu beschleunigen. Ein Vorteil besteht darin, ein kostenloses Azure-Konto zu erhalten. Sie haben $200 Gutschrift für die Untersuchung von Diensten für 30 Tage, 12 Monate beliebte kostenlose Dienste und sind immer 25 Dienste kostenlos. Weitere Informationen finden Sie unter [einbringen Ihrer Ideen zum Leben mit einem kostenlosen Azure-Konto](https://azure.microsoft.com/free/startups/).
     
-* [Entwickler Programme](e2e.md#developer-programs)
+* [Entwicklerprogramme](e2e.md#developer-programs)
 
-    Microsoft bietet mehrere Entwicklerprogramme wie like [ID@Xbox](https://www.xbox.com/Developers/id) und [Xbox Live Creators-Programm](https://developer.microsoft.com/games/xbox/xboxlive/creator) an, die Sie bei der Entwicklung und Veröffentlichung von Windows-Spielen unterstützen.
+    Microsoft bietet mehrere Entwickler Programme wie [ID@Xbox](https://www.xbox.com/Developers/id) und das [Xbox Live Creators-Programm](https://developer.microsoft.com/games/xbox/xboxlive/creator) an, um Sie beim entwickeln und Veröffentlichen von spielen zu unterstützen.
 
 ## <a name="learning-resources"></a>Lernressourcen
 
-* //Build 2016: [CodeLabs &mdash; Einsatz von Microsoft Azure App Service und Microsoft SQL Azure als Back-End zur Speicherung von Spielständen in Unity](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
+* Build 2016: [codelta ABS &mdash; verwendet Microsoft Azure App Service und Microsoft SQL Azure Backend zum Speichern der Spielergebnisse in Unity](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
 * Build 2017: [Bereitstellung von erstklassigen Spiel Erlebnissen mithilfe von Microsoft Azure: Lektionen, die von Titeln wie Halo, Hitman und Walking Dead (Video) gelernt wurden](https://channel9.msdn.com/Events/Build/2017/P4062)
-* Wiederverwendbare leistungsstarke Bausteine, Projekte, Dienste und bewährte Methoden, die allgemeine Gaming-Arbeitslasten mithilfe von Azure auf GitHub unterstützen: [Bausteine für Spiele in Azure](https://github.com/MicrosoftDX/nether)
+* Wiederverwendbare Bausteine, Projekte, Dienste und bewährte Methoden für die Unterstützung gängiger Gaming-Workloads mit Azure auf GitHub: [Bausteine für Spiele in Azure](https://github.com/MicrosoftDX/nether)
 * [Gaming Services in Azure (Videos)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
-## <a name="tools-and-other-useful-links"></a>Tools und andere nützliche Links
+## <a name="tools-and-other-useful-links"></a>Tools und andere hilfreiche Links
 
 * [MSDN-Foren &mdash; Azure Platform](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
 * [Cloudbasiertes Auslastungs Test Tool](https://visualstudio.microsoft.com/team-services/cloud-load-testing/)
@@ -211,13 +211,13 @@ In diesem Abschnitt lernen Sie Möglichkeiten zur Nutzung der Azure Cloudangebot
     
 ## <a name="software-as-a-service-for-game-backend"></a>Software-as-a Service für Game-Back-Ends
 
-[Playfab](https://playfab.com/) unterstützt derzeit 1.200 Live-Spiele mit 80 Millionen monatlich aktiven Spielern. Es handelt sich um eine vollständige Back-End-Plattform, die die gesamte Fertigungstiefe von LiveOps mit Echtzeit-Steuerelementen enthält. 
+[Playfab](https://playfab.com/) unterstützt derzeit mehr als 1.200 Live Spiele mit 80 Millionen monatlich aktiven Playern. Es handelt sich um eine vollständige Back-End-Plattform, die vollständige Stapel LiveOps mit Echtzeitsteuerung umfasst. 
 
-Sie können diese Lösung in Ihr Mobiltelefon, PC oder auf Konsolespielen mit SDKs integrieren. SDKs sind für alle beliebten Spielengines und Plattformen verfügbar, einschließlich Android, iOS, Unreal, Unity und Windows. Informationen zu ersten Schritten finden Sie in der [Dokumentation](https://api.playfab.com/).
+Sie können diese Lösung mithilfe von SDK in Ihre mobilen, PC-oder Konsolenspiele integrieren. Es stehen SDKs für alle gängigen Spiel-Engines und-Plattformen zur Verfügung, einschließlich Android, Ios, Unreal, Unity und Windows. Informationen zu den ersten Schritten finden Sie in der [Dokumentation](https://api.playfab.com/).
 
-Es bietet Spielediensten wie Authentifizierung, Spielerverwaltung, mehrere Spieler und in Echtzeit-Analyse, damit Ihr Spiel seine Benutzeranzahl vergrößert. Nutzen Sie die Leistung von Echtzeitdaten-Pipelines und LiveOps, um Ihre Benutzer mit benutzerdefinierten In-Game-Elementen, Ereignissen und Sonderangeboten zu fesseln. Sie haben auch die Möglichkeit, A/B-Tests durchzuführen, Berichte zu generieren, Pushbenachrichtigungen zu senden und vieles mehr. 
+Es bietet Spieldienste wie Authentifizierung, Player-Datenverwaltung, multiplayerfunktionen und Echtzeitanalysen, damit Ihr Spiel seine Benutzerbasis vergrößern kann. Nutzen Sie die Leistungsfähigkeit von Echtzeitdaten Pipeline und Live OPS, um Ihre Benutzer mit angepassten in-Game-Elementen,-Ereignissen und-Aktionen zu versorgen. Außerdem haben Sie die Möglichkeit, A/B-Tests durchzuführen, Berichte zu generieren, Pushbenachrichtigungen zu senden und vieles mehr. 
 
-Wir bieten ständig Innovationen an und fügen neue Features hinzu. Weitere Informationen finden Sie unter [Features](https://playfab.com/features/) und Preise finden Sie unter [Simple pricing that scales with you](https://playfab.com/pricing/).
+Wir sind ständig auf dem neuesten stellen und fügen neue Features hinzu. Weitere Informationen finden Sie unter [Features](https://playfab.com/features/) und für Preise. Weitere Informationen finden [Sie unter einfache Preise für die Skalierung mit Ihnen](https://playfab.com/pricing/).
 
 ## <a name="related-links"></a>Verwandte Links
 

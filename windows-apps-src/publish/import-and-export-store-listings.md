@@ -1,108 +1,108 @@
 ---
-Description: Sie können die Store-Angebote für Ihre apps erstellen, ohne den Partner Center Ihre Angebote in eine CSV-Datei exportieren, geben Sie Ihre Informationen und Ressourcen und importieren Sie dann die aktualisierte Datei.
+Description: Sie können Speicher Listen für Ihre apps erstellen, ohne Partner Center zu verwenden, indem Sie Ihre Auflistungen in einer CSV-Datei exportieren, Ihre Informationen und Assets eingeben und dann die aktualisierte Datei importieren.
 title: Importieren und Exportieren von Store-Einträgen
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, Store-Einträge importieren, Store-Einträge exportieren, Export importieren, Store-Einträge CSV
+keywords: Windows 10, UWP, Import Store-Auflistungen, Exportieren von Store-Listen, Importieren von Export, Speichern von CSV
 ms.localizationpriority: medium
-ms.openlocfilehash: b45f12a9ef7212ddb23b647894189491bfa73549
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8f2cbf0da1dfae05db428712c836835571372776
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320637"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846870"
 ---
 # <a name="import-and-export-store-listings"></a>Importieren und Exportieren von Store-Einträgen
 
-Anstelle von [eingeben von Informationen für Ihre Angebote Store direkt im Partner Center](create-app-store-listings.md), Sie haben die Möglichkeit zum Hinzufügen oder Aktualisieren von Informationen durch Ihre Angebote in eine CSV-Datei exportieren, geben Sie Ihre Informationen und Ressourcen und importieren Sie dann die aktualisierte Datei. Sie können diese Methode verwenden, um Einträge von Grund auf neu zu erstellen oder Angebote zu aktualisieren, die Sie bereits erstellt haben.
+Anstatt [Informationen für Ihre Store-Einträge direkt in Partner Center einzugeben](create-app-store-listings.md), können Sie Informationen hinzufügen oder aktualisieren, indem Sie Ihre Listen in einer CSV-Datei exportieren, Ihre Informationen und Assets eingeben und dann die aktualisierte Datei importieren. Sie können diese Methode verwenden, um Auflistungen von Grund auf neu zu erstellen oder die bereits erstellten Listen zu aktualisieren.
 
-Diese Option ist besonders nützlich, wenn Sie Store-Einträge für Ihr Produkt in mehreren Sprachen erstellen oder aktualisieren möchten, da Sie die Informationen in mehrere Felder kopieren/einfügen und problemlos alle Änderungen vornehmen können, die für bestimmte Sprachen gelten sollen. Allerdings können keine diese Methode zum Erstellen oder aktualisieren [plattformspezifischen Store-Angebote](create-platform-specific-store-listings.md) für zuvor veröffentlichte apps, die ältere Betriebssystemversionen unterstützen. 
+Diese Option ist besonders nützlich, wenn Sie Speicher Listen für Ihr Produkt in mehreren Sprachen erstellen oder aktualisieren möchten, da Sie die gleichen Informationen kopieren und in mehrere Felder einfügen und problemlos Änderungen vornehmen können, die auf bestimmte Sprachen angewendet werden sollen. Sie können diese Methode jedoch nicht verwenden, um [plattformspezifische Speicher Listen](create-platform-specific-store-listings.md) für zuvor veröffentlichte apps zu erstellen oder zu aktualisieren, die ältere Betriebssystemversionen unterstützen. 
 
 > [!TIP]
-> Sie können dieses Feature auch zum Importieren und Exportieren von Details für einen Store-Eintrag für ein Add-On anzeigen. Für Add-Ons ist der Prozess identisch, mit Ausnahme davon, dass [nur die Felder, die relevant für Add-Ons sind](#add-ons) enthalten sind.
+> Sie können diese Funktion auch zum Importieren und Exportieren von Speicher Listen Details für ein Add-on verwenden. Bei Add-ons funktioniert der Prozess mit der Ausnahme, dass [nur die für Add-ons relevanten Felder](#add-ons) eingeschlossen werden.
 
-Bedenken Sie, dass Sie immer erstellen oder Aktualisieren von Listen direkt im Partner Center (selbst wenn Sie die Import/Export-Methode zuvor verwendet haben) können. Aktualisieren direkt im Partner Center kann einfacher sein, Sie sind nur eine einfache Änderung vornehmen, aber Sie können beide Methoden verwenden, zu einem beliebigen Zeitpunkt.
+Beachten Sie, dass Sie Listen immer direkt im Partner Center erstellen oder aktualisieren können (auch wenn Sie zuvor die Import-/Exportmethode verwendet haben). Das direkte aktualisieren in Partner Center ist möglicherweise einfacher, wenn Sie nur eine einfache Änderung vornehmen, aber Sie können beide Methoden jederzeit verwenden.
 
-## <a name="export-listings"></a>Exportieren von Einträgen
+## <a name="export-listings"></a>Listen exportieren
 
-Klicken Sie auf der Übermittlungsübersicht für eine App auf **Eintrag exportieren** (im Abschnitt **Store-Einträge**), um eine im UTF-8 codierte CSV-Datei zu generieren. Speichern Sie diese Datei an einem Speicherort auf Ihrem Computer.
+Klicken Sie auf der Seite Übermittlungs Übersicht für eine APP auf die **Liste exportieren** (im Abschnitt **Store-Listen** ), um eine CSV-Datei zu generieren, die in UTF-8 codiert ist. Speichern Sie diese Datei an einem Speicherort auf Ihrem Computer.
 
-Sie können Microsoft Excel oder einem anderen Editor zum Bearbeiten dieser Datei verwenden. Beachten Sie, dass es sich bei Office 365-Versionen von Excel können Sie eine CSV-Datei als speichern **CSV UTF-8 (Komma-getrennt) (*.csv)** , andere Versionen ist jedoch nicht unterstützt dies. Nähere Informationen dazu, welche Versionen von Excel dieses Feature unterstützen finden Sie im [Excel 2016 New Features Bulletin](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US) und Weitere Informationen zur Codierung als UTF-8 in verschiedenen Editoren finden Sie [hier](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
+Sie können Microsoft Excel oder einen anderen Editor verwenden, um diese Datei zu bearbeiten. Beachten Sie, dass Sie mit Microsoft 365 Versionen von Excel eine CSV-Datei als **CSV-UTF-8-Datei (durch Trennzeichen getrennt) (*. CSV)** speichern können, die von anderen Versionen jedoch möglicherweise nicht unterstützt wird. Informationen zu den Versionen von Excel, die dieses Feature unterstützen, finden Sie im [Bulletin zu neuen Features in Excel 2016](https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&rs=en-001&ad=US)und weitere Informationen zur Codierung als UTF-8 in [verschiedenen Editoren](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
       
-Wenn Sie bisher noch keine Einträge für Ihr Produkt erstellt haben, enthält die exportierte CSV-Datei keine benutzerdefinierten Daten. Sie sehen Spalten für **Feld**, **ID**, **Typ** und **Standard**, sowie Zeilen, die jedem Element entsprechen, das in einem Store-Eintrag angezeigt werden kann.
+Wenn Sie noch keine Auflistungen für Ihr Produkt erstellt haben, enthält die CSV-Datei, die Sie exportiert haben, keine benutzerdefinierten Daten. Sie sehen Spalten für **Feld**, **ID**, **Typ**und **Standard**und Zeilen, die jedem Element entsprechen, das in einer Speicher Auflistung angezeigt werden kann.
 
-Wenn Sie bereits Einträge erstellt haben (oder Pakete hochgeladen haben), sehen Sie auch Spalten mit Gebietsschemacodes, die der Sprache jedes Eintrags entsprechen, den Sie erstellt haben (oder den wir in Ihren Paketen entdeckt haben), sowie alle Eintragsinformationen, die Sie zuvor angegeben haben.
+Wenn Sie bereits Auflistungen erstellt (oder Pakete hochgeladen haben), sehen Sie auch Spalten mit sprach Gebiets Schema-Codes, die der Sprache für jede von Ihnen erstellte Auflistung entsprechen (oder in ihren Paketen erkannt wurden), sowie alle aufgelisteten Informationen, die Sie zuvor bereitgestellt haben.
      
-Nachfolgend finden Sie ein Überblick darüber, was in jeder der Spalten in der exportierten CSV-Datei enthalten ist:
-- Die Spalte **Feld** enthält einen Namen, der mit jedem Teil eines Store-Eintrags verknüpft ist. Diese entsprechen die gleichen Elemente, die Sie beim Erstellen von Store-Angebote im Partner Center bereitstellen können, obwohl einige der Namen geringfügig unterscheiden. Für Elemente, für die Sie mehr als eine Antwort für den gleichen Typ eingeben können, sehen Sie mehrere Zeilen, bis zur maximalen Anzahl, die Sie angeben können. Für **App-Features** sehen Sie **Feature1**, **Feature2**usw., bis zu **Feature20** (da Sie nur bis zu 20 Features der App angeben können).
-- Die **ID** Spalte enthält eine Anzahl, die Partner Center mit jedem Feld zuordnet. 
-- Die **Typ** Spalte stellt die allgemeine Anleitung dazu, welche Art von Informationen zum Bereitstellen für dieses Feld, z. B. **Text** oder **relativen Pfad (oder die URL zur Datei im Partner Center)** . 
-- Die Spalte **Standard** (und alle Spalten, die mit Gebietsschemacodes gekennzeichnet sind) stellen den Text oder Objekte dar, die mit jedem Teil der Store-Eintrag verknüpft sind. Sie können die Felder in diesen Spalten aktualisieren, um Ihre Store-Einträge zu bearbeiten.
+Im folgenden finden Sie eine Übersicht darüber, was in den einzelnen Spalten der exportierten CSV-Datei enthalten ist:
+- Die Spalte **Feld** enthält einen Namen, der jedem Teil einer Speicher Auflistung zugeordnet ist. Diese entsprechen denselben Elementen, die Sie beim Erstellen von Store-Auflistungen im Partner Center bereitstellen können. einige der Namen unterscheiden sich jedoch geringfügig. Für Elemente, bei denen Sie mehr als einen der gleichen Elementtypen eingeben können, werden mehrere Zeilen angezeigt, bis zur maximalen Anzahl, die Sie angeben können. Für **App-Features** werden z. b. **Feature1**, **Feature2**usw. angezeigt, die bis zu **Feature20** werden (da Sie bis zu 20 App-Features bereitstellen können).
+- Die **ID** -Spalte enthält eine Zahl, die Partner Center den einzelnen Feldern zuordnet. 
+- Die **Typspalte** enthält allgemeine Anleitungen dazu, welche Art von Informationen für dieses Feld bereitgestellt werden soll, z. b. **Text** oder **relativer Pfad (oder URL zu Datei im Partner Center)**. 
+- Die **Standard** Spalte (und alle Spalten, die mit Language-Locale-Codes gekennzeichnet sind) stellen den Text oder die Assets dar, die jedem Teil der Store-Auflistung zugeordnet sind. Sie können die Felder in diesen Spalten bearbeiten, um Aktualisierungen an den Store-Listen vorzunehmen.
 
 >[!IMPORTANT]
-> Ändern Sie die Informationen in den Spalten **Feld**, **ID** oder **Typ** nicht. Die Informationen in diesen Spalten muss in der Reihenfolge unverändert bleiben, damit die importierte Datei verarbeitet werden kann.
+> Ändern Sie keine der Informationen in den Spalten **Feld**, **ID**oder **Typ** . Die Informationen in diesen Spalten müssen unverändert bleiben, damit die importierte Datei verarbeitet wird.
 
-## <a name="update-listing-info"></a>Aktualisierte Eintragsinformationen
+## <a name="update-listing-info"></a>Aktualisieren von Listen Informationen
 
-Nachdem Sie Ihre Einträge exportiert und die CSV-Datei gespeichert haben, können Sie die Eintragsinformationen direkt in der CSV-Datei bearbeiten. 
+Nachdem Sie Ihre Auflistungen exportiert und die CSV-Datei gespeichert haben, können Sie Ihre Auflistungs Informationen direkt in der CSV-Datei bearbeiten. 
 
-Zusammen mit der Spalte **Standard** enthält jede Sprache, für die Sie einen Eintrag erstellt haben, eine eigene Spalte. Die Änderungen, die Sie in einer Spalte vornehmen, werden für die Beschreibung in dieser Sprache angewendet. Sie können Einträge für neue Sprachen durch Hinzufügen des Gebietsschemacodes in der nächsten leere Spalte in der obersten Zeile hinzufügen. Eine Liste der gültigen Gebietsschemacodes finden Sie unter [Unterstützte Sprachen](supported-languages.md).
+Zusammen mit der **Standard** Spalte verfügt jede Sprache, für die Sie eine Auflistung erstellt haben, über eine eigene Spalte. Die Änderungen, die Sie in einer Spalte vornehmen, werden auf die Beschreibung in dieser Sprache angewendet. Sie können Auflistungen für neue Sprachen erstellen, indem Sie den sprach Gebiets Schema-Code der nächsten leeren Spalte in der obersten Zeile hinzufügen. Eine Liste der gültigen sprach Gebiets Schema Codes finden Sie [unter Unterstützte Sprachen](supported-languages.md).
 
-Sie können die Spalte **Standard** verwenden, um Informationen einzugeben, die Sie für alle App-Beschreibungen freigeben möchten. Wenn das Feld für eine bestimmte Sprache leer ist, werden die Informationen aus der Spalte „Standard” für diese Sprache verwendet. Sie können dieses Feld für eine bestimmte Sprache überschreiben, indem Sie verschiedene Informationen für die jeweilige Sprache eingeben.
+Sie können die Spalte **Standard** verwenden, um Informationen einzugeben, die Sie in allen Beschreibungen Ihrer APP freigeben möchten. Wenn das Feld für eine bestimmte Sprache leer bleibt, werden die Informationen aus der Standard Spalte für diese Sprache verwendet. Sie können dieses Feld für eine bestimmte Sprache überschreiben, indem Sie unterschiedliche Informationen für diese Sprache eingeben.
 
-Die meisten der Store-Eintragsfelder sind optional. Eine **Beschreibung** und ein Bildschirmfoto ist für jeden Eintrag erforderlich. Für Sprachen, die keine zugeordneten Pakete haben, müssen Sie ebenfalls einen **Titel** angeben, der vorschreibt, welcher Ihrer reservierten App-Name für diesen Eintrag verwendet werden soll. Für alle anderen Felder können Sie das Feld leer lassen, wenn es nicht im Eintrag eingeschlossen sein soll. Wenn Sie für eine bestimmte Sprache ein Feld leer lassen, wird überprüft, ob Informationen in diesem Feld in der Standardspalte vorhanden sind. Wenn dies der Fall ist, werden diese Informationen verwendet. 
+Die meisten Speicher Listenfelder sind optional. Die **Beschreibung** und ein Screenshot sind für jede Auflistung erforderlich. für Sprachen, denen keine Pakete zugeordnet sind, müssen Sie auch einen **Titel** angeben, um anzugeben, welche ihrer reservierten APP-Namen für diese Auflistung verwendet werden sollen. Für alle anderen Felder können Sie das Feld leer lassen, wenn Sie es nicht in die Liste aufnehmen möchten. Wenn Sie ein Feld für eine bestimmte Sprache leer lassen, überprüfen wir, ob in der Standard Spalte Informationen in diesem Feld vorhanden sind. Wenn dies der Fall ist, werden diese Informationen verwendet. 
 
-Nehmen wir folgendes Beispiel: 
+Sehen Sie sich z. b. das folgende Beispiel an: 
 
-![Beispiel für einen exportierten Eintrag](images/listingimport.png)
+![Beispiel für exportierte Auflistung](images/listingimport.png)
      
-- Der Text "Standardbeschreibung" wird für das Feld **Beschreibung** im englischen und französischen Eintrag verwendet. Das Feld **Beschreibung** im englischen Eintrag würden allerdings den Text "Spanische Beschreibung" verwenden. 
-- Für das Feld **Versionshinweise** wird der Text "englische Versionshinweise" für englisch verwendet und der Text "Französische Versionshinweise" wird für französisch verwendet. Es werden jedoch keine Versionshinweise für Spanisch angezeigt.
+- Der Text "Default Description" wird für das **Beschreibungs** Feld in den Listen "en-US" und "fr-FR" verwendet. Allerdings würde das **Beschreibungs** Feld in der Liste "es-es" den Text "Spanish Description" verwenden. 
+- Für das Feld **ReleaseNotes** wird der Text "German Release Notes" für en-US verwendet, und der Text "französische Versions Hinweise" wird für "fr-FR" verwendet. Für es-es werden jedoch keine Versions Anmerkungen angezeigt.
 
-Wenn Sie auf keinem bestimmten Feld Änderungen vornehmen möchten, können Sie die gesamte Zeile aus dem Arbeitsblatt löschen **mit Ausnahme der Zeilen für Trailer und ihren zugehörigen Miniaturansichten und Titeln**. Das Löschen einer Zeile hat außer für diese Elemente keine Auswirkung auf die zugehörigen Daten für das Feld des Eintrags. So können Sie jegliche Zeilen entfernen, die Sie nicht bearbeiten möchten, damit Sie sich auf die Felder konzentrieren können, in denen Sie Änderungen vornehmen möchten.
+Wenn Sie keine Änderungen an einem bestimmten Feld vornehmen möchten, können Sie die gesamte Zeile aus der Tabelle löschen, **mit Ausnahme der Zeilen für die Nachspann und der zugehörigen Miniaturansichten und Titel**. Abgesehen von diesen Elementen wirkt sich das Löschen einer Zeile nicht auf die Daten aus, die mit diesem Feld in den Listen verknüpft sind. Auf diese Weise können Sie alle Zeilen entfernen, die Sie nicht bearbeiten möchten, sodass Sie sich auf die Felder konzentrieren können, in denen Sie Änderungen vornehmen.
 
-Das Löschen der Informationen aus einem Feld für eine Sprache, ohne dabei die ganze Zeile zu entfernen, funktioniert unterschiedlich, je nach dem Feld. Für die Felder, deren **Typ** **Text** ist, löscht die Informationen aus einem Feld den gesamten Eintrag aus der Liste in dieser Sprache.  Löschen die Informationen in einem Feld um ein Bild, z. B. einen Screenshot oder ein Logo, müssen jedoch keine Auswirkungen; der vorherigen Abbildung wird weiterhin verwendet werden, es sei denn, Sie entfernen, indem Sie direkt im Partner Center bearbeiten. Löschen die Informationen für ein Feld Nachspann wird dieses Nachspanns tatsächlich aus Partner Center entfernen, seien Sie sicher, dass Sie eine Kopie aller erforderlichen Dateien verfügen, bevor Sie diesen Vorgang ausführen.
+Das Löschen der Informationen in einem Feld für eine Sprache, ohne die gesamte Zeile zu entfernen, funktioniert je nach Feld anders. Bei Feldern, **Type** deren Typ **Text**ist, wird dieser Eintrag durch das Löschen der Informationen in einem Feld einfach aus der Auflistung in dieser Sprache entfernt.  Das Löschen der Informationen in einem Feld für ein Bild, z. b. Screenshot oder Logo, hat jedoch keine Auswirkungen. das vorherige Bild wird weiterhin verwendet, es sei denn, Sie entfernen es durch direktes Bearbeiten im Partner Center. Wenn Sie die Informationen für ein Nachspann Feld löschen, wird dieser nach Spann aus Partner Center entfernt. Stellen Sie also sicher, dass Sie über eine Kopie aller benötigten Dateien verfügen, bevor Sie dies tun.
 
-Viele der Felder in den exportierten Einträgen erfordern eine Texteingabe, wie im obigen Beispiel **Beschreibung** und **Versionshinweise** gezeigt. Geben Sie für diese Arten Felder einfach den entsprechenden Text in das Feld für jede Sprache ein. Folgen Sie unbedingt der Länge und anderen Anforderungen für die einzelnen Felder. Weitere Informationen zu diesen Anforderungen finden Sie unter [App Store-Einträge erstellen](create-app-store-listings.md).
+Viele der Felder in den exportierten Auflistungen erfordern einen Text Eintrag, wie z. b. die im obigen Beispiel, **Description** und **ReleaseNotes**. Geben Sie für diese Typen von Feldern einfach den entsprechenden Text in das Feld für jede Sprache ein. Achten Sie darauf, dass Sie die Längen-und anderen Anforderungen für jedes Feld einhalten. Weitere Informationen zu diesen Anforderungen finden Sie unter [Erstellen von App Store-Listen](create-app-store-listings.md).
 
-Das Bereitstellen von Informationen für Felder, die Ressourcen entsprechen, wie z. B. Bilder und Trailer, sind etwas komplizierter. Statt **Text**, **Typ** für diese Objekte ist **relativen Pfad (oder die URL zur Datei im Partner Center)** . 
+Das Bereitstellen von Informationen für Felder, die Assets entsprechen (z. b. Bilder und Nachspann), ist etwas komplizierter. Anstelle von **Text**handelt es sich bei dem **Typ** für diese Assets um einen **relativen Pfad (oder eine URL zu einer Datei im Partner Center)**. 
      
-Wenn Sie bereits Ressourcen für Ihre Store-Einträge hochgeladen haben, werden diese Ressourcen von der URL dargestellt. Diese URLs können in mehreren Beschreibungen für ein Produkt oder sogar über verschiedene Produkte im gleichen Entwicklerkonto wiederverwendet werden, damit Sie diese URLs kopieren und sie in einem anderen Feld wiederverwenden, wenn Sie dies wünschen.
+Wenn Sie bereits Assets für Ihre Store-Einträge hochgeladen haben, werden diese Objekte dann durch eine URL dargestellt. Diese URLs können in mehreren Beschreibungen für ein Produkt oder sogar über verschiedene Produkte innerhalb desselben Entwickler Kontos wieder verwendet werden, sodass Sie diese URLs kopieren können, um Sie in einem anderen Feld wiederzuverwenden, wenn Sie möchten.
 
 > [!TIP]
-> Um zu bestätigen, welche Ressource einer bestimmten URL entspricht, können Sie die URL in einen Browser eingeben, um das Bild anzuzeigen (oder den Videotrailer herunterladen).  Sie müssen mit Ihrem Partner Center-Konto in dieser URL funktioniert angemeldet sein.
+> Um zu bestätigen, welches Asset einer URL entspricht, können Sie die URL in einen Browser eingeben, um das Bild anzuzeigen (oder das Nachspann Video herunterzuladen).  Sie müssen bei Ihrem Partner Center-Konto angemeldet sein, damit diese URL funktioniert.
 
-Wenn Sie ein neues Medienobjekt zu verwenden, das Sie zum Partner Center zuvor hinzugefügt haben möchten, können Sie dafür durch Ihre Angebote als einen Ordner und nicht als eine CSV-Datei importieren. Sie müssen einen Ordner erstellen, der die CSV-Datei enthält. Fügen Sie dann Ihre Bilder diesem Ordner hinzu, entweder im Stammverzeichnis oder in einem Unterordner. Sie müssen den vollständigen Pfad in das Feld eingeben, z. B. den Namen des Stammordners.
+Wenn Sie ein neues Asset verwenden möchten, das Sie dem Partner Center noch nicht hinzugefügt haben, können Sie dies tun, indem Sie die Auflistungen als Ordner anstatt als einzelne CSV-Datei importieren. Sie müssen einen Ordner erstellen, der die CSV-Datei enthält. Fügen Sie dann die Images desselben Ordners hinzu, entweder im Stamm Ordner oder in einem Unterordner. Sie müssen den vollständigen Pfad, einschließlich des Stamm Ordner namens, in das Feld eingeben.
 
 > [!TIP]
-> Achten Sie für optimale Ergebnisse darauf, wenn Sie Ihren Eintrag als Ordner importieren, dass Sie die neueste Version von Microsoft Edge, Chrome oder Firefox verwenden.
+> Um optimale Ergebnisse zu erzielen, wenn Sie Ihre Auflistungen als Ordner importieren, stellen Sie sicher, dass Sie die neueste Version von Microsoft Edge, Chrome oder Firefox verwenden.
 
-Wenn der Stammordner beispielsweise **My_folder** heißt und Sie ein Bild verwenden möchten, dass **screenshot1.png** für **DesktopScreenshot1** heißt, können Sie screenshot1.png dem Stammverzeichnis dieses Ordners hinzufügen, und dann **my_folder/screenshot1.png** in das Feld **DesktopScreenshot1** eingeben. Wenn Sie einen Ordner für Images im Stammordner erstellt haben und dann screenshot1.jpg dort abgelegt wurde, geben Sie **my_folder/images/screenshot1.png** an. Beachten Sie, dass nach dem Importieren Ihre Angebote über einen Ordner, Pfade zu Bildern in URLs auf die Dateien im Partner Center das nächste Mal konvertiert werden, das Sie Ihre Angebote exportieren. Sie können diese URLs kopieren und sie erneut einfügen (z. B. um die gleichen Ressourcen in mehreren Sprachen des Eintrags zu verwenden). 
+Wenn der Stamm Ordner beispielsweise **my_folder**lautet und Sie ein Bild mit dem Namen **screenshot1.png** für **DesktopScreenshot1**verwenden möchten, können Sie screenshot1.png dem Stamm dieses Ordners hinzufügen und dann **my_folder/screenshot1.png** im Feld **DesktopScreenshot1** eingeben. Wenn Sie einen Ordner Images in ihrem Stamm Ordner erstellt und dann screenshot1.jpg dort abgelegt haben, geben Sie **my_folder/Images/-screenshot1.png**ein. Beachten Sie Folgendes: Nachdem Sie Ihre Auflistungen mithilfe eines Ordners importiert haben, werden die Pfade zu Ihren Bildern beim nächsten Exportieren der Listen in URLs in die Dateien in Partner Center konvertiert. Sie können diese URLs kopieren und einfügen, um Sie erneut zu verwenden (z. b. um dieselben Ressourcen in mehreren Auflistungs Sprachen zu verwenden). 
 
 > [!IMPORTANT]
-> Wenn Ihre exportierten Auflistung Nachspann enthält, denken Sie daran, dass die URL der Nachspann oder die Miniaturansicht aus der CSV-Datei vollständig, die gelöschte Datei aus Partner Center löschen wird, und Sie nicht mehr in der können sie es darauf zugreifen werden (es sei denn, es wird auch in Ano verwendet RE auflisten, in denen es nicht gelöscht wurde). 
+> Wenn die exportierte Auflistung nach spannenden enthält, sollten Sie beachten, dass durch das Löschen der URL zum Nachspann oder des Miniatur Bilds aus der CSV-Datei die gelöschte Datei vollständig aus dem Partner Center entfernt wird und Sie dort nicht mehr darauf zugreifen können (es sei denn, Sie wird auch in einer anderen Liste verwendet, in der Sie nicht gelöscht wurde). 
 
-## <a name="import-listings"></a>Importieren von Einträgen
+## <a name="import-listings"></a>Listen importieren
 
-Nachdem Sie alle Ihre Änderungen in der CSV-Datei eingegeben haben (und alle Objekte, die Sie hochladen möchten), müssen Sie die Datei speichern, bevor Sie sie hochladen. Wenn Sie eine Version von Microsoft Excel verwenden, die UTF-8 Codierung unterstützt, stellen Sie sicher, dass Sie **Speichern als** verwenden und das **CSV UTF-8 (Komma-getrennt) (*.csv)** -Format verwenden. Wenn Sie einen anderen Editor verwenden, um die CSV-Datei anzuzeigen und zu bearbeiten, stellen Sie sicher, dass die CSV-Datei vor dem Hochladen in UTF-8 codiert ist.
+Nachdem Sie alle Änderungen in die CSV-Datei eingegeben haben (und alle Assets eingefügt haben, die Sie hochladen möchten), müssen Sie die Datei vor dem Hochladen speichern. Wenn Sie eine Version von Microsoft Excel verwenden, die UTF-8-Codierung unterstützt, wählen Sie **Speichern** unter aus, und verwenden Sie das **CSV-UTF-8-Format (durch Kommas getrennt) (*. CSV)** . Wenn Sie einen anderen Editor zum Anzeigen und Bearbeiten der CSV-Datei verwenden, stellen Sie sicher, dass die CSV-Datei vor dem Hochladen in UTF-8 codiert ist.
 
-Wenn Sie die aktualisierte CSV-Datei hochladen möchten und die Daten des Eintrags importieren, wählen Sie in der Übermittlungsübersicht **Einträge importieren** aus. Wenn Sie nur eine CSV-Datei importieren, wählen Sie **CSV importieren**, navigieren Sie zur Datei, und klicken Sie auf **Öffnen**. Wenn Sie einen Ordner mit Bilddateien importieren, wählen Sie „Ordner importieren”, navigieren Sie zu dem Ordner, und klicken Sie auf **Ordner auswählen**. Stellen Sie sicher, dass sich nur eine CSV-Datei im Ordner befindet, sowie alle Objekte, die Sie hochladen. 
+Wenn Sie bereit sind, die aktualisierte CSV-Datei hochzuladen und die Auflistungs Daten zu importieren, wählen Sie auf der Seite "Übermittlungs Übersicht" **Import Listen** Wenn Sie nur eine CSV-Datei importieren, wählen Sie **Import. CSV**aus, navigieren Sie zu Ihrer Datei, und klicken Sie auf **Öffnen**. Wenn Sie einen Ordner mit Bilddateien importieren, wählen Sie Ordner importieren aus, navigieren Sie zu Ihrem Ordner, und klicken Sie auf **Ordner auswählen**. Stellen Sie sicher, dass in Ihrem Ordner nur eine CSV-Datei zusammen mit allen Assets vorhanden ist, die Sie hochladen. 
 
-Beim Verarbeiten Ihrer importierten CSV-Datei wird eine Statusanzeige eingeblendet, die den Status des Imports und der Überprüfung angezeigt. Dies kann einige Zeit dauern, insbesondere dann, wenn viele Einträge und/oder Bilddateien vorhanden sind. 
+Beim Verarbeiten der importierten CSV-Datei wird eine Statusanzeige angezeigt, die den Import-und Validierungs Status widerspiegelt. Dies kann einige Zeit in Anspruch nehmen, insbesondere dann, wenn viele Auflistungen und/oder Bilddateien vorhanden sind. 
 
-Wenn Probleme erkannt werden, sehen Sie einen Hinweis, der angibt, dass Sie erforderlichen Updates vornehmen müssen. Versuchen Sie es dann erneut. Wählen Sie das Link **Fehler anzeigen**, um anzuzeigen, welche Felder ungültig werden und warum. Sie müssen diese Probleme in der CSV-Datei beheben (oder ungültige Ressourcen ersetzen) und Ihre Einträge erneut importieren.
+Wenn Probleme erkannt werden, wird ein Hinweis angezeigt, dass Sie erforderliche Updates vornehmen müssen, und versuchen Sie es noch mal. Wählen Sie den Link **Fehler anzeigen** aus, um anzuzeigen, welche Felder ungültig sind und warum. Sie müssen diese Probleme in Ihrer CSV-Datei beheben (oder alle ungültigen Assets ersetzen) und ihre Auflistungen dann erneut importieren.
 
 > [!TIP]
-> Sie können diese Informationen später erneut über das Link **Anzeigen von Fehlern für den letzten Import** abrufen.
+> Sie können diese Informationen später erneut über den Link **Fehler für den letzten Import anzeigen** aufrufen.
 
-Keines der Informationen aus der CSV-Datei wird im Partner Center gespeichert werden, bis alle Fehler in der Datei, sogar für Felder ohne Fehler behoben wurden. Nachdem Sie eine CSV-Datei, die keine Fehler aufweist importiert haben, der Auflistung-Informationen, die, den von Ihnen bereitgestellte, wird im Partner Center gespeichert und für dieser Übermittlung verwendet werden.
+Keine der Informationen aus Ihrer CSV-Datei wird im Partner Center gespeichert, bis alle Fehler in der Datei behoben wurden, auch wenn die Felder fehlerfrei sind. Nachdem Sie eine CSV-Datei mit Fehlern importiert haben, werden die von Ihnen bereitgestellten Informationen im Partner Center gespeichert und für diese Übermittlung verwendet.
 
-Sie können weiterhin Updates zu Ihren Angeboten stellen, entweder durch eine andere aktualisierte CSV-Datei importieren oder durch die Änderungen direkt in Partner Center.
+Sie können Ihre Auflistungen weiterhin aktualisieren, indem Sie eine andere aktualisierte CSV-Datei importieren oder Änderungen direkt im Partner Center vornehmen.
 
 ## <a name="add-ons"></a>Add-Ons
 
-Für Add-ons, importieren und Exportieren von Store-Angebote verwendet die oben beschriebenen Prozess mit dem Unterschied, dass Sie nur, dass die drei Felder, die relevant für sehen [-Add-On-Store-Angebote](create-add-on-store-listings.md): **Beschreibung**, **Titel**, und **StoreLogo300x300** (bezeichnet als **Symbol** in der Store-Angebotsseite im Partner Center). Das Feld **Titel** ist erforderlich, und die beiden anderen Felder sind optional.
+Für Add-ons verwendet das Importieren und Exportieren von Speicher Listen den oben beschriebenen Prozess, mit dem Unterschied, dass Ihnen nur die drei Felder angezeigt werden, die für [Add-on-Speicher Listen](create-add-on-store-listings.md)relevant sind: **Description**, **Title**und **StoreLogo300x300** (als **Symbol** auf der Seite "Store-Auflistung" im Partner Center bezeichnet). Das Feld " **Title** " ist erforderlich, und die beiden anderen Felder sind optional.
 
-Beachten Sie, dass Sie Store-Einträge separat für jedes Add-On in Ihrer App importieren und exportieren müssen, indem Sie zu der Übermittlungsübersicht für das Add-On navigieren.
+Beachten Sie, dass Sie Speicher Listen für jedes Add-on in Ihrer APP separat importieren und exportieren müssen, indem Sie zur Seite "Übermittlungs Übersicht" für das Add-on navigieren.
 
 
