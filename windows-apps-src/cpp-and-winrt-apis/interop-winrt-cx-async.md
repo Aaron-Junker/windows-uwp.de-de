@@ -5,12 +5,12 @@ ms.date: 08/06/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, C++/CX, PPL, Aufgabe, Coroutine
 ms.localizationpriority: medium
-ms.openlocfilehash: daa263836e9024a0aaa55b239b1a0db9437f1cd5
-ms.sourcegitcommit: a9f44bbb23f0bc3ceade3af7781d012b9d6e5c9a
+ms.openlocfilehash: d80fedcadaee96dcd4fae4081dcc117b55a1e498
+ms.sourcegitcommit: 2a90b41e455ba0a2b7aff6f771638fb3a2228db4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181072"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88513427"
 ---
 # <a name="asynchrony-and-interop-between-cwinrt-and-ccx"></a>Asynchronität und Interoperabilität zwischen C++/WinRT und C++/CX
 
@@ -19,28 +19,33 @@ ms.locfileid: "88181072"
 
 Dies ist ein fortgeschrittenes Thema im Zusammenhang mit der schrittweisen Portierung von [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) von [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx). Dieses Thema fährt dort fort, wo das Thema [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) aufgehört hat.
 
-Sie benötigen einen Portierungsprozess, bei dem C++/CX- und C++/WinRT-Code eine Zeit lang nebeneinander im selben Projekt existieren, wenn die Größe oder Komplexität Ihrer Codebasis eine schrittweise Portierung erforderlich macht. Wenn Sie über asynchronen Code verfügen, müssen Sie möglicherweise PPL-Aufgabenketten (Parallel Patterns Library) und Coroutinen parallel in Ihrem Projekt haben, während Sie den Quellcode schrittweise portieren. Dieses Thema konzentriert sich auf Methoden für die Interoperabilität zwischen asynchronem C++/CX-Code und asynchronem C++/WinRT-Code. Sie können diese Methoden einzeln oder kombinieren verwenden.
+Sie benötigen einen Portierungsprozess, bei dem C++/CX- und C++/WinRT-Code eine Zeit lang nebeneinander im selben Projekt existieren, wenn die Größe oder Komplexität Ihrer Codebasis eine schrittweise Portierung erforderlich macht. Wenn Sie über asynchronen Code verfügen, müssen Sie möglicherweise PPL-Aufgabenketten (Parallel Patterns Library) und Coroutinen parallel in Ihrem Projekt haben, während Sie den Quellcode schrittweise portieren. Dieses Thema konzentriert sich auf Methoden für die Interoperabilität zwischen asynchronem C++/CX-Code und asynchronem C++/WinRT-Code. Sie können diese Methoden einzeln oder kombinieren verwenden. Die Techniken ermöglichen es Ihnen, auf dem Weg zur Übertragung Ihres gesamten Projekts graduelle, kontrollierte lokale Änderungen vorzunehmen, ohne dass sich jede Änderung unkontrollierbar wie eine Kaskade durch das Produkt fortsetzt.
 
-Bevor Sie dieses Thema lesen, empfiehlt es sich, [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) zu lesen. In diesem Thema wird gezeigt, wie Sie Ihr Projekt für eine schrittweise Portierung vorbereiten. Es gibt Ihnen ferner eine Einführung in zwei Hilfsfunktionen, die Sie für die Konvertierung eines C++/CX-Objekts in ein C++/WinRT-Objekt (und umgekehrt) verwenden können. Dieses Thema zu Asynchronie baut auf diesen Informationen auf und verwendet diese Hilfsfunktionen.
+Bevor Sie dieses Thema lesen, empfiehlt es sich, [Interoperabilität zwischen C++/WinRT und C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx) zu lesen. In diesem Thema wird gezeigt, wie Sie Ihr Projekt für eine schrittweise Portierung vorbereiten. Es gibt Ihnen ferner eine Einführung in zwei Hilfsfunktionen, die Sie für die Konvertierung eines C++/CX-Objekts in ein C++/WinRT-Objekt (und umgekehrt) verwenden können. Dieses Thema über Asynchronität baut auf diesen Informationen auf und verwendet diese Hilfsfunktionen.
 
 > [!NOTE]
-> Für die schrittweise Portierung gelten einige Einschränkungen. Bei einem Windows-Runtime-Komponentenprojekt ist eine schrittweise Portierung nicht möglich, und Sie müssen das Projekt in einem Durchgang portieren. Bei einem XAML-Projekt müssen Ihre XAML-Seitentypen zu jedem beliebigen Zeitpunkt *entweder* alle in C++/WinRT *oder* alle in C++/CX vorliegen. Weitere Informationen finden Sie unter [Umstellen von C++/CX auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
+> Für die schrittweise Portierung von C++/CX zu C++/WinRT gelten einige Einschränkungen. Bei einem [Windows-Runtime-Komponentenprojekt](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) ist eine schrittweise Portierung nicht möglich, und Sie müssen das Projekt in einem Durchgang portieren. Bei einem XAML-Projekt müssen Ihre XAML-Seitentypen zu jedem beliebigen Zeitpunkt *entweder* alle in C++/WinRT *oder* alle in C++/CX vorliegen. Weitere Informationen finden Sie im Thema [Umstellen von C++/CX auf C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
 
 ## <a name="the-reason-an-entire-topic-is-dedicated-to-asynchronous-code-interop"></a>Der Grund, warum ein ganzes Thema der Interoperabilität von asynchronem Code gewidmet ist
 
-Die Portierung von C++/CX nach C++/WinRT ist im Allgemeinen unkompliziert, mit der einzigen Ausnahme der Portierung von [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)-Aufgaben zu Coroutinen. Die Modelle unterscheiden sich. Es gibt keine natürliche 1:1-Zuordnung von PPL-Aufgaben zu Coroutinen, und es gibt keine einfache Methode, den Code, der für alle Fälle funktioniert, automatisch zu portieren.
+Die Portierung von C++/CX nach C++/WinRT ist im Allgemeinen unkompliziert, mit der einzigen Ausnahme der Portierung von [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)-Aufgaben zu Coroutinen. Die Modelle unterscheiden sich. Es gibt keine natürliche 1:1-Zuordnung von PPL-Aufgaben zu Coroutinen, und es gibt keine einfache Methode (die für alle Fälle funktioniert), den Code automatisch zu portieren.
 
 Die gute Nachricht ist, dass die Konvertierung von Aufgaben in Coroutinen zu signifikanten Vereinfachungen führt. Entwicklungsteams berichten außerdem regelmäßig, dass, sobald sie die Hürde der Portierung ihres asynchronen Codes genommen haben, der Rest der Portierung weitgehend automatisch erfolgt.
 
-Häufig wurde ein Algorithmus ursprünglich für synchrone APIs geschrieben. Und anschließend wurde er dann in Aufgaben und explizite Fortsetzungen übersetzt – das Ergebnis war dann häufig eine unbeabsichtigte Verschleierung der zugrunde liegenden Logik. Schleifen werden beispielsweise zu Rekursionen, if-else-Verzweigungen werden zu geschachtelten Strukturen (einer Kette) von Aufgaben und freigegebene Variablen werden zu **shared_ptr**. Um die oft unnatürliche Struktur von PPL-Quellcode zu dekonstruieren, empfehlen wir, dass Sie zunächst einen Schritt zurückgehen und die Absicht des ursprünglichen Codes verstehen (d. h. die ursprüngliche synchrone Version untersuchen). Anschließend fügen Sie dann `co_await` an den entsprechenden Stellen ein.
+Häufig wurde ein Algorithmus ursprünglich für synchrone APIs geschrieben. Und anschließend wurde er dann in Aufgaben und explizite Fortsetzungen übersetzt – das Ergebnis war dann häufig eine unbeabsichtigte Verschleierung der zugrunde liegenden Logik. Schleifen werden beispielsweise zu Rekursionen, if-else-Verzweigungen werden zu geschachtelten Strukturen (einer Kette) von Aufgaben und freigegebene Variablen werden zu **shared_ptr**. Um die oft unnatürliche Struktur von PPL-Quellcode zu dekonstruieren, empfehlen wir, dass Sie zunächst einen Schritt zurückgehen und die Absicht des ursprünglichen Codes verstehen (d. h. die ursprüngliche synchrone Version untersuchen). Anschließend fügen Sie dann `co_await` (kooperatives „await“) an den entsprechenden Stellen ein.
 
 Wenn Sie also eine C#-Version (statt C++/CX) des asynchronen Codes haben, die als Ausgangspunkt Ihrer Portierung dient, kann Ihnen dies deshalb die Sache erleichtern und die Portierung übersichtlicher gestalten. C#-Code verwendet `await`. Somit befolgt C#-Code also bereits schon im Wesentlichen eine Philosophie, bei der mit einer synchronen Version begonnen und dann an den geeigneten Stellen `await` eingefügt wird.
 
+Wenn Sie *nicht* über eine C#-Version Ihres Projekts verfügen, können Sie die in diesem Thema beschriebenen Techniken verwenden. Außerdem ist die Struktur Ihres asynchronen Codes nach einmal erfolgter Portierung zu C++/WinRT leichter nach C# zu übertragen, sollten Sie das wünschen.
+
 ## <a name="some-background-in-asynchronous-programming"></a>Ein paar Hintergrundinformationen zur asynchronen Programmierung
 
-Damit wir einen festen Referenzrahmen für die Konzepte und Terminologie der asynchronen Programmierung haben, legen wir kurz die Szene in Bezug auf die asynchrone Windows-Runtime-Programmierung im Allgemeinen fest, und klären wir, wie die beiden C++-Sprachprojektionen jeweils auf ihre unterschiedliche Weise darauf aufbauen.
+Damit wir einen gemeinsamen Bezugsrahmen für die Konzepte und Terminologie der asynchronen Programmierung haben, legen wir kurz die Szene in Bezug auf die asynchrone Windows-Runtime-Programmierung im Allgemeinen fest, und klären wir, wie die beiden C++-Sprachprojektionen jeweils auf ihre unterschiedliche Weise darauf aufbauen.
 
-Ihr Projekt verfügt über Methoden, die asynchron funktionieren. In vielen Fällen sollten Sie auf den Abschluss der Arbeit warten, bevor Sie etwas anderes tun. Damit Sie auf eine asynchrone Methode warten können, die dann ein asynchrones Vorgangsobjekt (operation) zurückgibt. Doch manchmal möchten oder müssen Sie nicht auf den Abschluss der asynchronen Vorgänge warten. In diesem Fall muss die Methode kein asynchrones Vorgangsobjekt zurückgeben. Eine asynchrone Methode, auf die Sie nicht warten, wird als *Fire-and-Forget-* -Methode („auslösen und vergessen“) bezeichnet.
+Ihr Projekt verfügt über Methoden, die asynchron funktionieren, und davon gibt es zwei Hauptarten.
+
+- Es ist üblich, auf den Abschluss der asynchronen Arbeit zu warten, bevor Sie etwas anderes tun. Eine Methode, die ein asynchrones Vorgangsobjekt zurückgibt, ist eine Methode, auf die Sie warten können.
+- Doch manchmal möchten oder müssen Sie nicht auf den Abschluss der asynchronen Vorgänge warten. In diesem Fall ist es effizienter, wenn die asynchrone Methode *kein* asynchrones Vorgangsobjekt zurückgibt. Eine asynchrone Methode, auf&mdash;die Sie nicht warten&mdash;, wird als *Fire-and-Forget*-Methode („auslösen und vergessen“) bezeichnet.
 
 ### <a name="windows-runtime-async-objects-iasyncxxx"></a>Asynchrone Windows-Runtime-Objekte (**IAsyncXxx**)
 
@@ -57,7 +62,7 @@ Wenn wir in diesem Thema die praktische Abkürzung **IAsyncXxx** verwenden, bezi
 
 Asynchroner C++/CX-Code nutzt [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)-Tasks. Eine PPL-Aufgabe wird von der [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)-Klasse dargestellt.
 
-In der Regel verkettet eine asynchrone C++/CX-Methode PPL-Aufgaben miteinander unter Verwendung von Lambda-Funktionen mit [**concurrency::create_task**](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task) und [**concurrency::task::then**](/cpp/parallel/concrt/reference/task-class#then). Jede dieser Lambda-Funktionen gibt eine Aufgabe zurück, die, sobald sie abgeschlossen ist, einen Wert erzeugt, der dann an die Lambda-Funktion der *Fortsetzung*der Aufgabe übergeben wird.
+In der Regel verkettet eine asynchrone C++/CX-Methode PPL-Aufgaben miteinander unter Verwendung von Lambda-Funktionen mit [**concurrency::create_task**](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task) und [**concurrency::task::then**](/cpp/parallel/concrt/reference/task-class#then). Jede Lambda-Funktion gibt eine Aufgabe zurück, die, sobald sie abgeschlossen ist, einen Wert erzeugt, der dann an die Lambda-Funktion der *Fortsetzung* der Aufgabe übergeben wird.
 
 Alternativ kann eine asynchrone C++/CX-Methode, anstatt **create_task** aufzurufen, um eine Aufgabe zu erstellen, [**concurrency::create_async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async) aufrufen, um ein **IAsyncXxx**\^ zu erstellen.
 
@@ -66,32 +71,34 @@ Somit kann der Rückgabetyp einer asynchronen C++/CX-Methode eine PPL-Aufgabe od
 In beiden Fällen verwendet die Methode selbst das `return`-Schlüsselwort, um ein asynchrones Objekt zurückzugeben, das, wenn es abgeschlossen ist, den Wert erzeugt, den der Aufrufer tatsächlich wünscht (vielleicht eine Datei, ein Bytearray oder einen booleschen Wert).
 
 > [!NOTE]
-> Wenn eine asynchrone C++/CX-Methode ein **IAsyncXxx**\^ zurückgibt, kann **TResult** nur einen Windows-Runtime-Typ annehmen. Ein boolescher Wert ist z. B. ein Windows-Runtime-Typ, aber ein C++/CX-projizierter Typ (z. B. **Platform::Array<byte>** ^) ist dies nicht.
+> Wenn eine asynchrone C++/CX-Methode ein **IAsyncXxx**\^ zurückgibt, kann **TResult** (falls überhaupt) nur einen Windows-Runtime-Typ annehmen. Ein boolescher Wert ist z. B. ein Windows-Runtime-Typ, aber ein C++/CX-projizierter Typ (z. B. **Platform::Array<byte>** ^) ist dies nicht.
 
 ### <a name="cwinrt-async"></a>Asynchrones C++/WinRT
 
 C++/WinRT integriert C++-Coroutinen in das Programmiermodell. Coroutinen und die `co_await`-Anweisung bieten eine natürliche Möglichkeit, um kooperativ auf ein Ergebnis zu warten.
 
-Jeder der asynchronen **IAsyncXxx**-Typen in einen entsprechenden Typ im C++/WinRT-Namespace **winrt::Windows::Foundation** projiziert. Diese bezeichnen wir als **winrt::IAsyncXxx**. Der Rückgabetyp einer C++/WinRT-Coroutine ist entweder ein **winrt::IAsyncXxx** oder [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget). Und anstatt das `return`-Schlüsselwort zu verwenden, um ein asynchrones Objekt zurückzugeben, verwendet eine Coroutine das `co_return`-Schlüsselwort, um den Wert zurückzugeben, den der Aufrufer tatsächlich wünscht (vielleicht eine Datei, ein Bytearray oder einen booleschen Wert).
+Jeder der asynchronen **IAsyncXxx**-Typen in einen entsprechenden Typ im C++/WinRT-Namespace **winrt::Windows::Foundation** projiziert. Bezeichnen wir diese als **winrt::IAsyncXxx** (gegenüber den **IAsyncXxx**\^ von C++/CX).
+
+Der Rückgabetyp einer C++/WinRT-Coroutine ist entweder ein **winrt::IAsyncXxx** oder [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget). Und anstatt das `return`-Schlüsselwort zu verwenden, um ein asynchrones Objekt zurückzugeben, verwendet eine Coroutine das `co_return`-Schlüsselwort, um kooperativ den Wert zurückzugeben, den der Aufrufer tatsächlich wünscht (vielleicht eine Datei, ein Bytearray oder einen booleschen Wert).
 
 Wenn eine Methode mindestens eine `co_await`-Anweisung (oder mindestens eine `co_return` oder `co_yield`) enthält, ist die Methode aus diesem Grund eine Coroutine.
 
-Weitere Informationen finden Sie unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+Weitere Informationen und Codebeispiele findest du unter [Parallelität und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 ## <a name="the-direct3d-game-sample-simple3dgamedx"></a>Das Direct3D-Spielbeispiel (**Simple3DGameDX**)
 
-Dieses Thema enthält mehrere exemplarische Vorgehensweisen, die veranschaulichen, wie Sie asynchronen Code schrittweise portieren. Um als Fallstudie fungieren zu können, verwenden wir die C++/CX-Version des [Direct3D-Spielbeispiels](/samples/microsoft/windows-universal-samples/simple3dgamedx/) (das den Namen **Simple3DGameDX** trägt). Wir zeigen Ihnen einige Beispiele dafür, wie Sie den ursprünglichen C++/CX-Quellcode in dieses Projekt übernehmen und seinen asynchronen Code schrittweise zu C++/WinRT portieren können.
+Dieses Thema enthält mehrere exemplarische Vorgehensweisen zu verschiedenen spezifischen Programmiertechniken, die veranschaulichen, wie Sie asynchronen Code schrittweise portieren. Um als Fallstudie fungieren zu können, verwenden wir die C++/CX-Version des [Direct3D-Spielbeispiels](/samples/microsoft/windows-universal-samples/simple3dgamedx/) (das den Namen **Simple3DGameDX** trägt). Wir zeigen Ihnen einige Beispiele dafür, wie Sie den ursprünglichen C++/CX-Quellcode in dieses Projekt übernehmen und seinen asynchronen Code schrittweise zu C++/WinRT portieren können.
 
 - Laden Sie die ZIP-Datei unter dem obigen Link herunter, und entpacken Sie sie.
 - Öffnen Sie das C++/CX-Projekt (es befindet sich im Ordner namens `cpp`) in Visual Studio.
-- Anschließend müssen Sie dem Projekt C++/WinRT-Unterstützung hinzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. Der Schritt zum Hinzufügen der `interop_helpers.h`-Headerdatei zu Ihem Projekt ist besonders wichtig, da wir in diesem Thema von diesen Hilfsfunktionen abhängig sind.
+- Anschließend müssen Sie dem Projekt C++/WinRT-Unterstützung hinzufügen. Die Schritte, die Sie dazu ausführen müssen, sind in [Erweitern eines bestehenden C++/CX-Projekts um C++/WinRT-Unterstützung](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx#taking-a-ccx-project-and-adding-cwinrt-support) beschrieben. In diesem Abschnitt ist der Schritt zum Hinzufügen der `interop_helpers.h`-Headerdatei zu Ihrem Projekt besonders wichtig, da wir in diesem Thema von diesen Hilfsfunktionen abhängig sind.
 - Fügen Sie schließlich `#include <pplawait.h>` zu `pch.h` hinzu. Dadurch erhält Ihre Coroutine Unterstützung für PPL (weitere Informationen zu dieser Unterstützung finden Sie im folgenden Abschnitt).
 
-Wenn Sie den Build erstellen, erhalten Sie Fehler, weil **byte** nicht eindeutig ist. So beheben Sie dieses Problem.
+Erstellen Sie jetzt noch keinen Build, sonst erhalten Sie Fehler, weil **byte** nicht eindeutig ist. So beheben Sie dieses Problem.
 
 - Öffnen Sie `BasicLoader.cpp`, und kommentieren Sie `using namespace std;` aus.
-- In derselben Quellcodedatei müssen Sie dann **shared_ptr** als **std::shared_ptr** qualifizieren. Dies können Sie mit einem Suchen-und-Ersetzen-Vorgang in dieser Datei durchführen.
-- Qualifizieren Sie **vector** als **std::vector** und **string** als **std::string**.
+- In derselben Quellcodedatei müssen Sie dann **shared_ptr** als **std::shared_ptr** qualifizieren. Dies können Sie mit einem Suchen-und-Ersetzen-Vorgang innerhalb dieser Datei durchführen.
+- Qualifizieren Sie anschließend **vector** als **std::vector** und **string** als **std::string**.
 
 Das Projekt wird nun erneut erstellt, besitzt C++/WinRT-Unterstützung und enthält die Interoperabilitätshilfsfunktionen **from_cx** und **to_cx**.
 
@@ -99,30 +106,32 @@ Sie haben das **Simple3DGameDX**-Projekt nun fertig eingerichtet, um die weitere
 
 ## <a name="overview-of-porting-ccx-async-to-cwinrt"></a>Übersicht über das Portieren von asynchronem C++/CX zu C++/WinRT
 
-Kurz gesagt, werden wir beim Portieren PPL-Aufgabenketten in Aufrufe von `co_await` ändern. Wir ändern den Rückgabewert einer Methode von einer PPL-Aufgabe in entweder ein C++/WinRT **IAsyncXxx**-Objekt oder in ein **IAsyncXxx**\^. Und wir ändern alle **IAsyncXxx**\^ in ein C++/WinRT **IAsyncXxx**.
+Kurz gesagt, werden wir beim Portieren PPL-Aufgabenketten in Aufrufe von `co_await` ändern. Wir ändern den Rückgabewert einer Methode von einer PPL-Aufgabe in ein C++/WinRT **winrt::IAsyncXxx**-Objekt. Und wir ändern außerdem alle **IAsyncXxx**\^ in ein C++/WinRT **winrt::IAsyncXxx**.
 
-Sie erinnern sich, dass eine Coroutine jede Methode ist, die `co_xxx` aufruft. Eine C++/WinRT-Coroutine verwendet `co_return`, um ihren Wert zurückzugeben. Dank der Coroutinenunterstützung für PPL(dank `pplawait.h`) können Sie auch `co_return` verwenden, um eine PPL-Aufgabe aus einer Coroutine zurückzugeben. Außerdem können Sie auch `co_await` für sowohl Aufgaben als auch für **IAsyncXxx** verwenden. Aber Sie können nicht `co_return` verwenden, um ein **IAsyncXxx**\^ zurückzugeben. In der folgenden Tabelle wird die Unterstützung für die Interoperabilität zwischen den verschiedenen asynchronen Methoden beschrieben.
+Sie erinnern sich, dass eine Coroutine jede Methode ist, die `co_xxx` aufruft. Eine C++/WinRT-Coroutine verwendet `co_return`, um ihren Wert kooperativ zurückzugeben. Dank der Coroutinenunterstützung für PPL(dank `pplawait.h`) können Sie auch `co_return` verwenden, um eine PPL-Aufgabe aus einer Coroutine zurückzugeben. Außerdem können Sie auch `co_await` für sowohl Aufgaben als auch für **IAsyncXxx** verwenden. Aber Sie können nicht `co_return` verwenden, um ein **IAsyncXxx**\^ zurückzugeben. In der folgenden Tabelle wird die Unterstützung für die Interoperabilität zwischen den verschiedenen asynchronen Methoden beschrieben, wenn `pplawait.h` im Bild ist.
 
-|Methode|Kann sie `co_await`en?|Kann von ihr aus `co_return` erfolgen?|
+|Methode|Können Sie sie `co_await`en?|Können Sie aus Ihr `co_return`en?|
 |-|-|-|
-|Methode gibt Aufgabe\<void\> zurück.|Ja|Ja|
-|Methode gibt Aufgabe\<T\> zurück.|Nein|Ja|
-|Methode gibt IAsyncXxx\^ zurück.|Ja|Nein. Aber Sie umschließen eine Aufgabe, die `co_return` verwendet, mit **create_async**.|
-|Methode gibt „winrt::IAsyncXxx“ zurück.|Ja|Ja|
+|Methode gibt **Aufgabe\<void\>** zurück|Ja|Ja|
+|Methode gibt **Aufgabe\<T\>** zurück|Nein|Ja|
+|Methode gibt **IAsyncXxx**^ zurück|Ja|Nein. Aber Sie umschließen eine Aufgabe, die `co_return` verwendet, mit **create_async**.|
+|Methode gibt **winrt::IAsyncXxx** zurück|Ja|Ja|
 
-Verwenden Sie diese Tabelle, um direkt zu einer Interoperabilitätsmethode Ihrer Wahl zu springen.
+Verwenden Sie diese nächste Tabelle, um direkt zu dem Abschnitt in diesem Thema zu wechseln, in dem eine interessierende Interop-Technik beschrieben wird, oder lesen Sie einfach weiter.
 
 |Asynchrone Interoperabilitätsmethode|Abschnitt in diesem Thema|
 |-|-|
-|Verwenden Sie `co_await`, um auf eine **Aufgabe\<void\>** -Methode aus einer Fire-and-Forget-Methode zu warten.|[Warten auf eine **Aufgabe\<void\>** innerhalb einer Fire-and-Forget-Methode](#await-taskvoid-within-a-fire-and-forget-method)|
+|Verwenden von `co_await`, um auf eine **Aufgabe\<void\>** -Methode aus einer Fire-and-Forget-Methode oder innerhalb eines Konstruktors zu warten.|[Warten auf eine **Aufgabe\<void\>** innerhalb einer Fire-and-Forget-Methode](#await-taskvoid-within-a-fire-and-forget-method)|
 |Verwenden Sie `co_await`, um auf eine **Aufgabe\<void\>** -Methode aus einer **Aufgabe\<void\>** -Methode zu warten.|[Warten auf eine **Aufgabe\<void\>** innerhalb einer **Aufgabe\<void\>** -Methode](#await-taskvoid-within-a-taskvoid-method)|
 |Verwenden Sie `co_await`, um auf eine **Aufgabe\<void\>** -Methode aus einer **Aufgabe\<T\>** -Methode zu warten.|[Warten auf eine **Aufgabe\<void\>** innerhalb einer **Aufgabe\<T\>** -Methode](#await-taskvoid-within-a-taskt-method)|
 |Verwenden Sie `co_await`, um auf eine **IAsyncXxx**^-Methode zu warten.|[Warten auf ein **IAsyncXxx**^ in einer **Aufgabe**-Methode, wobei der Rest des Projekts unverändert bleibt](#await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged)|
 |Verwenden Sie `co_return` innerhalb einer **Aufgabe\<void\>** -Methode.|[Warten auf eine **Aufgabe\<void\>** innerhalb einer **Aufgabe\<void\>** -Methode](#await-taskvoid-within-a-taskvoid-method)|
-|Verwenden von `co_return` innerhalb einer **Aufgabe\<T\>** -Methode|[Warten auf ein **IAsyncXxx**^ in einer **Aufgabe**-Methode, wobei der Rest des Projekts unverändert bleibt](#await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged)|
-|Umschließen einer Aufgabe, die `co_return` verwendet, mit **create_async**|[Umschließen eine Aufgabe, die `co_return` verwendet, mit **create_async**](#wrap-create_async-around-a-task-that-uses-co_return)|
-|Portieren von **concurrency::wait**|[Portieren von **concurrency::wait** zu `co_await winrt::resume_after`](#port-concurrencywait-to-co_await-winrtresume_after)|
+|Verwenden Sie `co_return` innerhalb einer **Aufgabe\<T\>** -Methode.|[Warten auf ein **IAsyncXxx**^ in einer **Aufgabe**-Methode, wobei der Rest des Projekts unverändert bleibt](#await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged)|
+|Umschließen einer Aufgabe, die `co_return` verwendet, mit **create_async**.|[Umschließen eine Aufgabe, die `co_return` verwendet, mit **create_async**](#wrap-create_async-around-a-task-that-uses-co_return)|
+|Portieren von **concurrency::wait**.|[Portieren von **concurrency::wait** zu `co_await winrt::resume_after`](#port-concurrencywait-to-co_await-winrtresume_after)|
 |Zurückgeben von **winrt::IAsyncXxx** anstelle einer **Aufgabe\<void\>** .|[Portieren eines **Aufgabe\<void\>** -Rückgabetyps zu **winrt::IAsyncXxx**](#port-a-taskvoid-return-type-to-winrtiasyncxxx)|
+|Konvertieren einer **winrt::IAsyncXxx\<T\>** (T ist primitiv) in eine **Aufgabe\<T\>** .|[Konvertieren einer **winrt::IAsyncXxx\<T\>** (T ist primitiv) in eine **Aufgabe\<T\>** ](#convert-a-winrtiasyncxxxt-t-is-primitive-to-a-taskt)|
+|Konvertieren einer **winrt::IAsyncXxx\<T\>** (T ist ein Windows Runtime-Typ) in eine **Aufgabe\<T^\>** .|[Konvertieren einer **winrt::IAsyncXxx\<T\>** (T ist ein Windows Runtime-Typ) in eine **Aufgabe\<T^\>** ](#convert-a-winrtiasyncxxxt-t-is-a-windows-runtime-type-to-a-taskt)|
 
 Im Folgenden finden Sie ein kurzes Codebeispiel, das einen Teil der Unterstützung veranschaulicht.
 
@@ -138,10 +147,11 @@ concurrency::task<bool> TaskAsync()
 
 Windows::Foundation::IAsyncOperation<bool>^ IAsyncXxxCppCXAsync()
 {
-    // co_return true; // Error! Can't do that.
-    return concurrency::create_async([=]() -> task<bool> {
+    // co_return true; // Error! Can't do that. But you can do
+    // the following.
+    return concurrency::create_async([=]() -> concurrency::task<bool> {
         co_return true;
-    });
+        });
 }
 
 winrt::Windows::Foundation::IAsyncOperation<bool> IAsyncXxxCppWinRTAsync()
@@ -153,7 +163,7 @@ concurrency::task<bool> CppCXAsync()
 {
     bool b1 = co_await TaskAsync();
     bool b2 = co_await IAsyncXxxCppCXAsync();
-    bool b3 = co_await IAsyncXxxCppWinRTAsync();
+    co_return co_await IAsyncXxxCppWinRTAsync();
 }
 
 winrt::fire_and_forget CppWinRTAsync()
@@ -164,13 +174,17 @@ winrt::fire_and_forget CppWinRTAsync()
 }
 ```
 
-Selbst bei diesen hervorragenden Interoperabilitätsoptionen hängt das schrittweise Portieren von der Auswahl von Änderungen ab, die wir mit chirurgischer Präzision vornehmen können, ohne dass sie sich auf den Rest des Systems auswirken. Wir möchten vermeiden, an einem beliebigen losen Ende zu zupfen und so das gesamte Projekt „aufzuribbeln“. Hierfür müssen wir die Dinge in einer bestimmten Reihenfolge erledigen. Sehen wir uns einige Beispiele für die Vornahme dieser Art von asynchroniebezogenen Portierungsänderungen an.
+> [!IMPORTANT]
+> Selbst bei diesen hervorragenden Interoperabilitätsoptionen hängt das schrittweise Portieren von der Auswahl von Änderungen ab, die wir mit chirurgischer Präzision vornehmen können, ohne dass sie sich auf den Rest des Projekts auswirken. Wir möchten vermeiden, an einem beliebigen losen Ende zu zupfen und so die gesamte Struktur des Projekts „aufzuribbeln“. Hierfür müssen wir die Dinge in einer bestimmten Reihenfolge erledigen. Sehen wir uns als Nächstes einige Beispiele für die Vornahme dieser Art von asynchroniebezogenen Portierungs-/Interopänderungen an.
 
 ## <a name="await-a-taskvoid-method-leaving-the-rest-of-the-project-unchanged"></a>Warten auf eine **Aufgabe\<void\>** -Methode, wobei der Rest des Projekts unverändert bleibt
 
-Eine Methode, die **Aufgabe\<void\>** zurückgibt, führt Arbeit asynchron aus, erzeugt aber letztendlich keinen Wert. Wir können auf eine Methode wie diese `co_await`en.
+Eine Methode, die **Aufgabe\<void\>** zurückgibt, führt Arbeit asynchron aus und gibt ein asynchrones Vorgangsobjekt zurück, erzeugt aber letztendlich keinen Wert. Wir können auf eine Methode wie diese `co_await`en.
 
-Ein guter Ausgangspunkt, um asynchronen Code schrittweise zu portieren, ist es also, die Stellen zu finden, an denen Sie diese Methoden aufrufen. Diese Stellen umfassen das Erstellen und/oder Zurückgeben einer Aufgabe und/oder eine Aufgabenkette, bei der von keiner Aufgabe ein Wert an die jeweilige Fortsetzung weitergegeben wird. An solchen Stellen können Sie den asynchronen Code einfach durch `co_await`-Anweisungen ersetzen, wie wir zeigen werden.
+Ein guter Ausgangspunkt, um asynchronen Code schrittweise zu portieren, ist es also, die Stellen zu finden, an denen Sie derartige Methoden aufrufen. Diese Stellen gehen mit dem Erstellen und/oder Zurückgeben einer Aufgabe einher. Möglicherweise kommt auch die Art von Aufgabenkette vor, bei denen kein Wert von den einzelnen Aufgaben an ihre Nachfolger übergeben wird. An solchen Stellen können Sie den asynchronen Code einfach durch `co_await`-Anweisungen ersetzen, wie wir zeigen werden.
+
+> [!NOTE]
+> Im Verlauf dieses Themas sehen Sie die Vorteile dieser Strategie. Wenn eine bestimmte **Aufgabe\<void\>** -Methode ausschließlich über `co_await` aufgerufen wird, steht es Ihnen im Anschluss frei, diese Methode nach C++/WinRT zu portieren und sie eine **winrt::IAsyncXxx** zurückgeben zu lassen.
 
 Sehen wir uns ein paar Beispiele an. Öffnen Sie das **Simple3DGameDX**-Projekt (siehe [Das Direct3D-Spielbeispiel](#the-direct3d-game-sample-simple3dgamedx)).
 
@@ -183,11 +197,11 @@ Beginnen wir damit, dass wir auf die **Aufgabe\<void\>** innerhalb von *Fire-and
 
 Suchen Sie in Richtung Stamm des Abhängigkeitsdiagramms Ihres Projekts nach `void`-Methoden, die **create_task** und/oder Aufgabenketten enthalten, in denen nur **Aufgabe\<void\>** -Methoden aufgerufen werden.
 
-In **Simple3DGameDX** finden Sie eine Entsprechung in der Implementierung der-Methode **GameMain::Update**. Sie befindet sich in der Quellcodedatei `GameMain.cpp`.
+In **Simple3DGameDX** finden Sie Code dieser Art in der Implementierung der Methode **GameMain::Update**. Sie befindet sich in der Quellcodedatei `GameMain.cpp`.
 
 #### <a name="gamemainupdate"></a>**GameMain::Update**
 
-Hier sehen Sie einen Auszug aus der C++/CX-Version der Methode, in dem die beiden Teile gezeigt werden, die asynchron abgeschlossen werden.
+Hier sehen Sie einen Auszug aus der C++/CX-Version der Methode, in dem die beiden Teile der Methode gezeigt werden, die asynchron abgeschlossen werden.
 
 ```cppcx
 void GameMain::Update()
@@ -215,7 +229,7 @@ void GameMain::Update()
 
 Sie sehen einen Aufruf der **Simple3DGame::LoadLevelAsync**-Methode sehen (die eine PPL-**Aufgabe\<void\>** ) zurückgibt. Danach befindet sich eine *Fortsetzung*, die synchrone Arbeiten durchführt. **LoadLevelAsync** ist asynchron, gibt aber keinen Wert zurück. Daher wird kein Wert von der Aufgabe an die Fortsetzung weitergegeben.
 
-Wir können den Code an diesen beiden Stellen auf dieselbe Weise ändern. Der Code wird im Anschluss an das nachfolgenden Listing erläutert. Wir könnten an dieser Stelle die sichere Methode für den Zugriff auf den *this*-Zeiger in einer Klassenember-Coroutine besprechen. Doch wir verschieben dies auf einen späteren Abschnitt. Vorerst funktioniert der Code.
+Wir können an diesen beiden Stellen die gleiche Art Änderung am Code vornehmen. Der Code wird im Anschluss an das nachfolgenden Listing erläutert. Wir könnten an dieser Stelle die sichere Methode für den Zugriff auf den *this*-Zeiger in einer Klassenember-Coroutine besprechen. Stellen wir das bis zu einem späteren Abschnitt ([Die aufgeschobene Diskussion über `co_await` und den *this*-Zeiger](#the-deferred-discussion-about-co_await-and-the-this-pointer))zurück &mdash; für unsere augenblicklichen Zwecke funktioniert dieser Code.
 
 ```cppcx
 winrt::fire_and_forget GameMain::Update()
@@ -239,15 +253,15 @@ winrt::fire_and_forget GameMain::Update()
 
 Wie Sie sehen können, können wir , weil **LoadLevelAsync** eine Aufgabe zurückgibt, es `co_await`. Und wir benötigen keine explizite Fortsetzung – der Code, der auf eine `co_await` folgt, wird nur ausgeführt, wenn **LoadLevelAsync** abgeschlossen ist.
 
-Durch die Einführung von `co_await` wird die Methode in eine Coroutine umgewandelt, sodass sie nicht `void` zurückgeben kann. Es handelt sich um eine Fire-and-Forget-Methode, sodass wir [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) zurückgeben.
+Durch die Einführung von `co_await` wird die Methode in eine Coroutine umgewandelt, sodass wir sie nicht weiterhin `void` zurückgeben lassen können. Es handelt sich um eine Fire-and-Forget-Methode, daher haben wir sie so geändert, dass sie [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) zurückgibt.
 
-Sie müssen außerdem den Rückgabetyp von **GameMain::Update** von `void` in **winrt::fire_and_forget** in der Deklaration in `GameMain.h` ändern.
+Außerdem müssen Sie `GameMain.h`bearbeiten. Ändern Sie in der Deklaration dort außerdem den Rückgabewert von **GameMain::Update** von `void` in **winrt::fire_and_forget**.
 
 Sie können diese Änderung an Ihrer Kopie des Projekts vornehmen, woraufhin das Spiel immer noch erstellt und unverändert ausgeführt wird. Der Quellcode ist nach wie vor grundsätzlich C++/CX, aber er verwendet nun dieselben Muster wie C++/WinRT, sodass wir der Fähigkeit zum automatischen Portieren des Rests des Codes etwas nähergekommen sind.
 
 #### <a name="gamemainresetgame"></a>**GameMain::ResetGame**
 
-**GameMain::ResetGame** ist eine weitere Fire-and-Forget-Methode, die ebenfalls **LoadLevelAsync** aufruft. Somit können wir hier dieselbe Änderung vornehmen.
+**GameMain::ResetGame** ist eine weitere Fire-and-Forget-Methode, die ebenfalls **LoadLevelAsync** aufruft. Sie können dort die gleiche Codeänderung vornehmen, wenn Sie üben möchten.
 
 #### <a name="gamemainondevicerestored"></a>**GameMain::OnDeviceRestored**
 
@@ -289,7 +303,7 @@ void GameMain::OnDeviceRestored()
 
 Um den asynchronen Code zu portieren, entfernen Sie alle **create_task**- und **then**-Aufrufe mit deren geschweiften Klammern, und vereinfachen Sie die Methode in eine vereinfachte Reihe von Anweisungen.
 
-Ändern Sie alle `return` (die eine Aufgabe zurückgeben) in eine `co_await`. Es bleibt ein `return` zurück, das nichts zurückgibt, weshalb Sie es einfach löschen. Wenn Sie fertig sind, ist die No-Op-Aufgabe nicht mehr vorhanden, und die Gliederung der asynchronen Teile der Methode sieht wie folgt aus. Wiederum wird der weniger interessante synchrone Code durch Ellipsen dargestellt.
+Ändern Sie jedes `return`, das eine Aufgabe zurückgibt, in ein `co_await`. Es bleibt ein `return` übrig, das nichts zurückgibt, also löschen Sie dies einfach. Wenn Sie fertig sind, ist die No-Op-Aufgabe nicht mehr vorhanden, und die Gliederung der asynchronen Teile der Methode sieht wie folgt aus. Wiederum wird der weniger interessante synchrone Code durch Ellipsen markiert.
 
 ```cppcx
 winrt::fire_and_forget GameMain::OnDeviceRestored()
@@ -306,7 +320,7 @@ winrt::fire_and_forget GameMain::OnDeviceRestored()
 }
 ```
 
-Wie Sie sehen können, ist er wesentlich einfacher und leichter zu lesen.
+Wie Sie sehen können, ist diese Form asynchroner Struktur erheblich einfacher und leichter zu lesen.
 
 #### <a name="gamemaingamemain"></a>**GameMain::GameMain**
 
@@ -344,7 +358,7 @@ GameMain::GameMain(...) : ...
 }
 ```
 
-Ein Konstruktor kann jedoch keine **winrt::fire_and_forget** zurückgeben, weshalb wird den asynchronen Code in eine neue **GameMain::ConstructInBackground**-Fire-and-Forget-Methode verschieben, den Code zu `co_await`-Anweisungen vereinfachen und die neue Methode aus dem Konstruktor aufrufen.
+Ein Konstruktor kann jedoch keine **winrt::fire_and_forget** zurückgeben, weshalb wird den asynchronen Code in eine neue **GameMain::ConstructInBackground**-Fire-and-Forget-Methode verschieben, den Code zu `co_await`-Anweisungen vereinfachen und die neue Methode aus dem Konstruktor aufrufen. Dies ist das Ergebnis.
 
 ```cppcx
 GameMain::GameMain(...) : ...
@@ -368,7 +382,7 @@ winrt::fire_and_forget GameMain::ConstructInBackground()
 }
 ```
 
-Somit wurden nun alle Fire-and-Forget-Methoden – tatsächlich der gesamte asynchrone Code wurde – in **GameMain** in Coroutinen umgewandelt. Wenn Sie möchten, könnten Sie in anderen Klassen nach Fire-and-Forget-Methoden suchen und ähnliche Änderungen vornehmen.
+Jetzt wurden alle Fire-and-Forget-Methoden &mdash; tatsächlich sogar der gesamte asynchrone Code &mdash; in **GameMain** in Coroutinen umgewandelt. Wenn Sie möchten, könnten Sie in anderen Klassen nach Fire-and-Forget-Methoden suchen und ähnliche Änderungen vornehmen.
 
 ### <a name="the-deferred-discussion-about-co_await-and-the-this-pointer"></a>Die verschobene Besprechung von `co_await` und dem *this*-Zeiger
 
@@ -378,7 +392,7 @@ Dies gilt für alle Methoden, die wir bisher geändert haben. Ferner gilt es auc
 
 Die kurze Version lautet, dass die Lösung [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) aufgerufen wird. Doch eine vollständige Behandlung des Problems und seiner Lösung finden Sie unter [Sicherer Zugriff auf den *this*-Zeiger in einer Klassenmember-Coroutine](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
-Sie können **implements::get_strong** nur in einer Klasse verwenden, die von [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) abgeleitet ist.
+Sie können **implements::get_strong** nur in einer Klasse aufrufen, die von [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) abgeleitet ist.
 
 #### <a name="derive-gamemain-from-winrtimplements"></a>Ableiten von **GameMain** von **winrt::implements**
 
@@ -411,6 +425,8 @@ void App::Load(Platform::String^)
 
 Nachdem nun aber **GameMain** von **winrt::implements** abgeleitet wird, müssen wir es auf andere Weise erstellen. In diesem Fall verwenden wir die Funktionsvorlage [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self). Weitere Informationen finden Sie unter [Instanziierung und Rückgabe von Implementierungstypen und Schnittstellen](/windows/uwp/cpp-and-winrt-apis/author-apis#instantiating-and-returning-implementation-types-and-interfaces).
 
+Ersetzen Sie die betreffende Codezeile hierdurch.
+
 ```cppwinrt
     ...
     m_main = winrt::make_self<GameMain>(m_deviceResources);
@@ -430,7 +446,7 @@ private:
 };
 ```
 
-Ändern Sie die Deklaration von *m_main* in diese.
+Ändern Sie die betreffende Deklaration von *m_main* in diese.
 
 ```cppwinrt
     ...
@@ -454,7 +470,7 @@ winrt::fire_and_forget GameMain::Update()
 
 ### <a name="await-taskvoid-within-a-taskvoid-method"></a>Warten auf eine **Aufgabe\<void\>** innerhalb einer **Aufgabe\<void\>** -Methode
 
-Der zweit einfachste Fall ist das Warten auf die **Aufgabe\<void\>** in einer Methode, die wiederum selbst eine **Aufgabe\<void\>** zurückgibt, da wir auf eine **Aufgabe\<void\>** `co_await`en und wir aus einer Aufgabe `co_return` können.
+Der zweit einfachste Fall ist das Warten auf die **Aufgabe\<void\>** in einer Methode, die wiederum selbst eine **Aufgabe\<void\>** zurückgibt. Das liegt daran, dass wir auf eine **Aufgabe\<void\>** `co_await`en können und aus ihr `co_return`en können.
 
 Ein besonders einfaches Beispiel finden Sie in der Implementierung der Methode **Simple3DGame::LoadLevelAsync**. Sie befindet sich in der Quellcodedatei `Simple3DGame.cpp`.
 
@@ -480,11 +496,13 @@ task<void> Simple3DGame::LoadLevelAsync()
 }
 ```
 
+Das sieht nicht nach einer tiefgreifenden Änderung aus. Da wir jetzt jedoch **GameRenderer::LoadLevelResourcesAsync** per `co_await` aufrufen, können wir sie auch portieren, um eine **winrt::IAsyncXxx** anstelle einer Aufgabe zurückzugeben. Das erledigen wir später im Abschnitt [Portieren eines **Aufgabe\<void\>** -Rückgabetyps zu **winrt::IAsyncXxx**](#port-a-taskvoid-return-type-to-winrtiasyncxxx).
+
 ### <a name="await-taskvoid-within-a-taskt-method"></a>Warten auf eine **Aufgabe\<void\>** innerhalb einer **Aufgabe\<T\>** -Methode
 
 Zwar gibt es keine geeigneten Beispiele in **Simple3DGameDX-** , doch können wir uns ein hypothetisches Beispiel ausdenken, nur um das Muster zu veranschaulichen.
 
-Das folgende Codebeispiel veranschaulicht lediglich das einfache `co_await` einer **Aufgabe\<void\>** . Dann, um den **Aufgabe\<T\>** -Rückgabetyp zu erfüllen, geben wir asynchron ein **StorageFile\^** mittels co_awaiting einer Windows-Runtime-Methode zurück und `co_return` die resultierende Datei.
+Die erste Zeile im folgenden Codebeispiel veranschaulicht lediglich das einfache `co_await` einer **Aufgabe\<void\>** . Um dann dem Rückgabetyp der **Aufgabe\<T\>** zu genügen, müssen wir eine **StorageFile\^** asynchron zurückgeben. Zu diesem Zweck `co_await`en wir eine Windows Runtime-API und `co_return`en die resultierende Datei.
 
 ```cppcx
 task<StorageFile^> Simple3DGame::LoadLevelAndRetrieveFileAsync(
@@ -496,7 +514,7 @@ task<StorageFile^> Simple3DGame::LoadLevelAndRetrieveFileAsync(
 }
 ```
 
-Der nächste Schritt hierbei bestünde darin, mehr von der Methode zu C++/WinRT zu portieren, und zwar wie folgt.
+In der gleichen Weise könnten wir sogar noch mehr von der Methode zu C++/WinRT portieren.
 
 ```cppcx
 winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFile>
@@ -513,9 +531,11 @@ Der *m_renderer*-Datenmember ist noch in C++/CX in diesem Beispiel.
 
 ## <a name="await-an-iasyncxxx-in-a-task-method-leaving-the-rest-of-the-project-unchanged"></a>Warten auf ein **IAsyncXxx**^ in einer **Aufgabe**-Methode, wobei der Rest des Projekts unverändert bleibt
 
-Wir haben gesehen, wie Sie eine **Aufgabe\<void\>** `co_await`en können. Sie können auch eine Methode `co_await`en, die **IAsyncXxx** zurückgibt, unabhängig davon, ob es sich um eine Methode in Ihrem Projekt oder um eine asynchrone Windows-API (z. B. [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)) handelt.
+Wir haben gesehen, wie Sie eine **Aufgabe\<void\>** `co_await`en können. Sie können auch eine Methode `co_await`en, die eine **IAsyncXxx** zurückgibt, unabhängig davon, ob es sich um eine Methode in Ihrem Projekt oder um eine asynchrone Windows-API handelt (z. B. [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync), für die wir im vorherigen Abschnitt ein kooperatives await verwendet hatten).
 
-Ein Beispiel für die Stelle, an der wir diese Codeänderung vornehmen können, finden wir bei **BasicReaderWriter::ReadDataAsync** (implementiert in `BasicReaderWriter.cpp`). Hier ist die ursprüngliche C++/CX-Version.
+Ein Beispiel für die Stelle, an der wir diese Art von Codeänderung vornehmen können, finden wir bei **BasicReaderWriter::ReadDataAsync** (implementiert in `BasicReaderWriter.cpp`).
+
+Hier ist die ursprüngliche C++/CX-Version.
 
 ```cppcx
 task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
@@ -534,7 +554,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-Wir können nicht nur Windows-APIs `co_await`en, sondern wir können auch `co_return` den Wert, den die Methode asynchron zurückgibt (in diesem Fall ein Bytearray). Der erste Schritt zeigt, wie Sie nur diese Änderungen vornehmen. Die tatsächliche Portierung des C++/CX-Codes zu C++/WinRT erfolgt im nächsten Abschnitt.
+Das Codelisting unten zeigt, dass wir Windows-APIs, die **IAsyncXxx**^ zurückgeben, `co_await`en können. Nicht nur das, wir können außerdem den Wert `co_return`en, den **BasicReaderWriter::ReadDataAsync** asynchron zurückgibt (in diesem Fall ein Bytearray). Der erste Schritt zeigt, wie Sie nur diese Änderungen vornehmen. Die tatsächliche Portierung des C++/CX-Codes zu C++/WinRT erfolgt im nächsten Abschnitt.
 
 ```cppcx
 task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
@@ -580,30 +600,128 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 ```
 
 > [!NOTE]
-> In **ReadDataAsync** haben wir ein neues C++/CX-Array erstellt und zurückgegeben. Und natürlich haben wir dies getan, um den Rückgabetyp der Methode zu erfüllen (damit wir nicht den Rest des Projekts ändern mussten).
+> In **ReadDataAsync** oben haben wir ein neues C++/CX-Array erstellt und zurückgegeben. Und natürlich haben wir dies getan, um den Rückgabetyp der Methode zu erfüllen (damit wir nicht den Rest des Projekts ändern mussten).
 >
-> Ihnen können weitere Beispiele in Ihrem eigenen Projekt begegnen, in denen Sie nach dem Portieren das Ende der Methode erreichen, und alles, was vorhanden ist, ist ein C++/WinRT-Objekt. Um dieses zu `co_return`, rufen Sie einfach **to_cx** auf, um es zu konvertieren. Hier sehen Sie ein hypothetisches Beispiel.
+> Ihnen können weitere Beispiele in Ihrem eigenen Projekt begegnen, in denen Sie nach dem Portieren das Ende der Methode erreichen, und alles, was vorhanden ist, ist ein C++/WinRT-Objekt. Um dieses zu `co_return`, rufen Sie einfach **to_cx** auf, um es zu konvertieren. Weitere Informationen dazu und ein Beispiel finden Sie im nächsten Abschnitt.
+
+## <a name="convert-a-winrtiasyncxxxt-to-a-taskt"></a>Konvertieren einer **winrt::IAsyncXxx\<T\>** in eine **Aufgabe\<T\>**
+
+Dieser Abschnitt behandelt die Situation, dass Sie eine asynchrone Methode zu C++/WinRT portiert haben (sodass sie eine **winrt::IAsyncXxx\<T\>** zurückgibt), Sie aber immer noch über C++/CX-Code verfügen, der diese Methode aufruft, als gäbe sie immer noch eine Aufgabe zurück.
+
+- In einem dieser Fälle ist **T** primitiv, was keine Konvertierung erfordert.
+- Der andere Fall ist, dass **T** ein Windows-Runtime Typ ist, in diesem Fall müssen Sie ihn in einen **T**^ konvertieren.
+
+### <a name="convert-a-winrtiasyncxxxt-t-is-primitive-to-a-taskt"></a>Konvertieren einer **winrt::IAsyncXxx\<T\>** (T ist primitiv) in eine **Aufgabe\<T\>**
+
+Das Muster in diesem Abschnitt trifft zu, wenn Sie einen primitiven Wert asynchron zurückgeben (wir verwenden zur Verdeutlichung einen Booleschen Wert). Sehen Sie sich ein Beispiel an, in dem eine Methode, die Sie bereits zu C++/WinRT portiert haben, diese Signatur aufweist.
+
+```cppwinrt
+winrt::Windows::Foundation::IAsyncOperation<bool>
+MyClass::GetBoolMemberFunctionAsync()
+{
+    bool value = ...
+    co_return value;
+}
+```
+
+Sie können einen Aufruf dieser Methode in dieser Weise in eine Aufgabe konvertieren.
 
 ```cppcx
-task<Windows::Storage::StorageFile^> RetrieveFileAsync()
+task<bool> MyClass::RetrieveBoolTask()
 {
-    winrt::Windows::Storage::StorageFile storageFile = co_await ...
+    co_return co_await GetBoolMemberFunctionAsync();
+}
+```
+
+Oder in dieser Weise.
+
+```cppcx
+task<bool> MyClass::RetrieveBoolTask()
+{
+    return concurrency::create_task(
+        [this]() -> concurrency::task<bool> {
+            auto result = co_await GetBoolMemberFunctionAsync();
+            co_return result;
+        });
+}
+```
+
+Beachten Sie, dass der **Aufgabe**-Rückgabetyp der Lambda-Funktion explizit ist, da der Compiler ihn nicht ableiten kann.
+
+Wir könnten die Methode auch aus einer beliebigen Aufgabenkette aufrufen, wie hier. Wiederum mit einem expliziten Lambda-Rückgabetyp.
+
+```cppcx
+...
+.then([this]() -> concurrency::task<bool> {
+    co_return co_await GetBoolMemberFunctionAsync();
+}).then([this](bool result) {
+    ...
+});
+...
+```
+
+### <a name="convert-a-winrtiasyncxxxt-t-is-a-windows-runtime-type-to-a-taskt"></a>Konvertieren einer **winrt::IAsyncXxx\<T\>** (T ist ein Windows Runtime-Typ) in eine **Aufgabe\<T^\>**
+
+Das Muster in diesem Abschnitt trifft zu, wenn Sie asynchron einen Windows Runtime-Wert zurückgeben (wir verwenden zur Verdeutlichung einen **StorageFile**-Wert). Sehen Sie sich ein Beispiel an, in dem eine Methode, die Sie bereits zu C++/WinRT portiert haben, diese Signatur aufweist.
+
+```cppwinrt
+winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::StorageFile>
+MyClass::GetStorageFileMemberFunctionAsync()
+{
+    co_return co_await winrt::Windows::Storage::StorageFile::GetFileFromPathAsync
+    (L"MyFile.txt");
+}
+```
+
+In der nächsten Auflistung sehen Sie, wie Sie einen Aufruf dieser Methode in eine Aufgabe konvertieren. Beachten Sie, dass wir die Interop-Hilfsfunktion **to_cx** aufrufen müssen, um das zurückgegebene C++/WinRT-Objekt in ein C++/CX-Handleobjekt zu konvertieren (auch als *hat* bezeichnet).
+
+```cppcx
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    winrt::Windows::Storage::StorageFile storageFile =
+        co_await GetStorageFileMemberFunctionAsync();
     co_return to_cx<Windows::Storage::StorageFile>(storageFile);
 }
 ```
 
+Hier das Gleiche in einer kompakteren Version.
+
+```cppcx
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    co_return to_cx<Windows::Storage::StorageFile>(GetStorageFileMemberFunctionAsync());
+}
+```
+
+Sie können sich sogar dafür entscheiden, dieses Muster mit einer wiederverwendbaren Funktionsvorlage zu umschließen und es zu `return`en, wie Sie normalerweise eine Aufgabe zurückgeben.
+
+```cppcx
+template<typename ResultTypeCX, typename Awaitable>
+concurrency::task<ResultTypeCX^> to_task(Awaitable awaitable)
+{
+    co_return to_cx<ResultTypeCX>(co_await awaitable);
+}
+
+task<Windows::Storage::StorageFile^> RetrieveStorageFileTask()
+{
+    return to_task<Windows::Storage::StorageFile>(GetStorageFileMemberFunctionAsync());
+}
+```
+
+Wenn Ihnen diese Idee gefällt, kann es nützlich sein, `interop_helpers.h` **to_task** hinzuzufügen.
+
 ## <a name="wrap-create_async-around-a-task-that-uses-co_return"></a>Umschließen einer Aufgabe, die `co_return` verwendet, mit **create_async**
 
-Sie können eine **IAsyncXxx**\^ nicht direkt `co_return`, aber Sie können etwas Ähnliches erreichen. Wenn Sie eine Aufgabe haben, die `co_return` verwendet, können Sie diese mit [**concurrency::create_async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async) umschließen.
+Sie können eine **IAsyncXxx**\^ nicht direkt `co_return`, aber Sie können etwas Ähnliches erreichen. Wenn Sie über eine Aufgabe verfügen, die einen Wert kooperativ zurückgibt, können Sie sie in einen Aufruf an [**concurrency::create_async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async) einschließen.
 
 Im Folgenden sehen Sie ein hypothetisches Beispiel, da es kein Beispiel gibt, das wir aus **Simple3DGameDX** verwenden können.
 
 ```cppcx
-Windows::Foundation::IAsyncOperation<bool>^ Simple3DGame::ReturnBooleanAsync()
+Windows::Foundation::IAsyncOperation<bool>^ MyClass::RetrieveBoolAsync()
 {
     return concurrency::create_async(
         [this]() -> concurrency::task<bool> {
-            bool result = co_await BooleanMemberFunctionAsync();
+            bool result = co_await GetBoolMemberFunctionAsync();
             co_return result;
         });
 }
@@ -670,7 +788,7 @@ Beachten Sie die beiden anderen Änderungen, die wir vornehmen mussten. Wir habe
 
 In dieser Phase unserer Arbeit mit **Simple3DGameDX** wird an allen Stellen im Projekt, an denen **Simple3DGame::LoadLevelAsync** aufgerufen wird, `co_await` zum Aufrufen davon verwendet.
 
-Dies bedeutet, dass wir den Rückgabetyp dieser Methode von **Aufgabe\<void\>** in **winrt::Windows::Foundation::IAsyncAction** ändern können.
+Das bedeutet, dass wir den Rückgabetyp der betreffenden Methode einfach aus **Aufgabe\<void\>** in **winrt::Windows::Foundation::IAsyncAction** ändern (und ihren Rest unverändert lassen) können.
 
 ```cppcx
 winrt::Windows::Foundation::IAsyncAction Simple3DGame::LoadLevelAsync()
@@ -681,7 +799,7 @@ winrt::Windows::Foundation::IAsyncAction Simple3DGame::LoadLevelAsync()
 }
 ```
 
-Nun sollte es recht automatisch ablaufen, um den Rest dieser Methode mit ihren Abhängigkeiten zu C++/WinRT zu portieren.
+Nun sollte es recht automatisch ablaufen, den Rest dieser Methode mit ihren Abhängigkeiten (wie *m_level* usw.) zu C++/WinRT zu portieren.
 
 ### <a name="gamerendererloadlevelresourcesasync"></a>**GameRenderer::LoadLevelResourcesAsync**
 
@@ -732,9 +850,11 @@ winrt::Windows::Foundation::IAsyncAction GameRenderer::LoadLevelResourcesAsync()
 }
 ```
 
-### <a name="basicreaderwriterreaddataasync"></a>**BasicReaderWriter::ReadDataAsync**
+### <a name="the-goalmdashfully-port-a-method-to-cwinrt"></a>Das Ziel &mdash; vollständiges Portieren einer Methode zu C++/WinRT
 
-Schließen wir nun diese exemplarische Vorgehensweise ab, indem wir **BasicReaderWriter::ReadDataAsync** vollständig zu C++/WinRT portieren. Das letzte Mal, als wir es uns angesehen haben (in „[Portieren von **ReadDataAsync** (das Meiste) zu C++/WinRT, wobei der Rest des Projekts unverändert bleibt](#port-readdataasync-mostly-to-cwinrt-leaving-the-rest-of-the-project-unchanged)“]), war es größtenteils zu C++/WinRT portiert. Es gab aber immer noch eine Aufgabe von **Platform::Array\<byte\>** ^ zurück.
+Lassen Sie uns diese exemplarische Vorgehensweise mit einem Beispiel für das Endziel zusammenfassen, indem wir die Methode **BasicReaderWriter::ReadDataAsync** vollständig zu C++/WinRT portieren.
+
+Das letzte Mal, als wir uns diese Methode angesehen haben (im Abschnitt „[Portieren von **ReadDataAsync** (das Meiste) zu C++/WinRT, wobei der Rest des Projekts unverändert bleibt](#port-readdataasync-mostly-to-cwinrt-leaving-the-rest-of-the-project-unchanged)“), war es *größtenteils* zu C++/WinRT portiert. Es gab aber immer noch eine Aufgabe von **Platform::Array\<byte\>** ^ zurück.
 
 ```cppwinrt
 task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
@@ -752,7 +872,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-Anstatt eine Aufgabe zurückzugeben, ändern wir dies so, dass asynchron ein C++/WinRT [**IBuffer**](/uwp/api/windows.storage.streams.ibuffer)-Objekt zurückgegeben wird, wenn dies auch bedeutet, dass der Code an allen Aufrufstellen geändert werden muss.
+Anstatt eine Aufgabe zurückzugeben, ändern wir sie so, dass sie eine **IAsyncOperation**zurückgibt. Und statt ein Bytearray über diese **IAsyncOperation** zurückzugeben, geben wir stattdessen ein C++/WinRT [**IBuffer**](/uwp/api/windows.storage.streams.ibuffer)-Objekt zurück. Dafür ist außerdem eine geringfügige Änderung am Code an den aufrufenden Stellen erforderlich, wie wir sehen werden.
 
 Im Folgenden sehen Sie, wie die Methode nach der Portierung ihrer Implementierung, ihrer Parameter und des *m_location*-Datenmembers aussieht, um C++/WinRT-Syntax und -Objekte zu verwenden.
 
@@ -803,10 +923,10 @@ winrt::Windows::Foundation::IAsyncAction BasicLoader::LoadTextureAsync(...)
 
 ## <a name="important-apis"></a>Wichtige APIs
 
-* [IAsyncAction](/uwp/api/windows.foundation.iasyncaction),
-* [IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress-1),
-* [IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation-1) und
-* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress-2).
+* [IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
+* [IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress-1)
+* [IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation-1)
+* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)
 * [implements::get_strong](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 * [concurrency::create_async](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_async)
 * [concurrency::create_task](/cpp/parallel/concrt/reference/concurrency-namespace-functions#create_task)

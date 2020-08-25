@@ -4,16 +4,16 @@ title: Richtlinien für App-Einstellungen
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 418c33952c4be6be08683b5e396f423f771bb997
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233986"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502379"
 ---
 # <a name="guidelines-for-app-settings"></a>Richtlinien für App-Einstellungen
 
@@ -46,13 +46,13 @@ Die Methode, mit der Benutzer auf die Einstellungsseite Ihrer App zugreifen, sol
 
 Bei einem Navigationsbereichs-Layout sollten App-Einstellungen das letzte Element in der Navigationsliste und am Ende der Liste angeheftet sein:
 
-![App-Einstellungen-Einstiegspunkt für Navigationsbereich](images/appsettings-entrypoint-navpane.png)
+![App-Einstellungen-Einstiegspunkt für Navigationsbereich](images/appsettings-nav-settings.png)
 
 **App-Leiste**
 
-Bei Verwendung einer [App-Leiste](../controls-and-patterns/app-bars.md) oder Toolleiste sollte der Einstiegspunkt für die Einstellungen das letzte Element im Überlaufmenü „Mehr“ sein. Wenn Sie den Einstiegspunkt für die Einstellungen in Ihrer App intuitiver positionieren möchten, platzieren Sie ihn direkt auf der App-Leiste und nicht im Überlaufmenü.
+Bei Verwendung einer [App-Leiste](../controls-and-patterns/app-bars.md) oder Toolleiste sollte der Einstiegspunkt für die Einstellungen eins der letzten Elemente im Überlaufmenü „Mehr“ sein. Wenn Sie den Einstiegspunkt für die Einstellungen in Ihrer App intuitiver positionieren möchten, platzieren Sie ihn direkt auf der App-Leiste und nicht im Überlaufmenü.
 
-![App-Einstellungen-Einstiegspunkt für die App-Leiste](images/appsettings-entrypoint-tabs.png)
+![App-Einstellungen-Einstiegspunkt für die App-Leiste](../controls-and-patterns/images/appbar_rs2_overflow_icons.png)
 
 **Hub**
 
@@ -69,15 +69,10 @@ Anstatt den Einstiegspunkt für App-Einstellungen innerhalb eines Master/Details
 ## <a name="layout"></a>Layout
 
 
-Auf Desktops und Mobilgeräten sollte sich das Fenster der App-Einstellungen im Vollbildmodus öffnen und das gesamte Fenster ausfüllen. Wenn das App-Einstellungsmenü über bis zu vier Gruppen auf oberster Ebene verfügt, sollten diese Gruppen eine Spalte nach unten kaskadieren.
-
-Desktop:
+Das Fenster der App-Einstellungen sollte sich im Vollbildmodus öffnen und das gesamte Fenster ausfüllen. Wenn das App-Einstellungsmenü über bis zu vier Gruppen auf oberster Ebene verfügt, sollten diese Gruppen eine Spalte nach unten kaskadieren.
 
 ![Layout der Seite für App-Einstellungen auf Desktops](images/appsettings-layout-navpane-desktop.png)
 
-Mobiltelefon:
-
-![Layout der Seite für App-Einstellungen auf Smartphones](images/appsettings-layout-navpane-mobile.png)
 
 ## <a name="color-mode-settings"></a>Einstellungen für den Farbmodus
 

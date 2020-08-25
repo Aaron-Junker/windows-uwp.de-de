@@ -4,19 +4,19 @@ title: Semantischer Zoom
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/07/2020
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3398be1569143e253b2b9cb9ee25133ee7fe5fd9
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081572"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502339"
 ---
 # <a name="semantic-zoom"></a>Semantischer Zoom
 
@@ -59,17 +59,17 @@ Der semantische Zoom ist nicht mit dem optischen Zoom zu verwechseln. Sie zeigen
 </tr>
 </table>
 
+**XAML-Steuerelementekatalog**
+
+Der Abschnitt SemanticZoom im Steuerelementekatalog veranschaulicht eine Navigationsoberfläche, die es dem Benutzer ermöglicht, gruppierte Abschnitte von Steuerelementtypen schnell zu vergrößern und verkleinern. 
+
+![Beispiel für die Verwendung des semantischen Zooms im XAMl-Steuerelementekatalog](images/semanticzoom-gallery.gif)
+
 **Fotos-App**
 
 Hier ist ein in der Fotos-App verwendeter semantischer Zoom. Fotos werden nach Monat gruppiert. Durch Auswahl einer Monatskopfzeile in der standardmäßigen Rasteransicht wird die Ansicht der Monatsliste verkleinert, um schneller navigieren zu können.
 
 ![In der Fotos-App verwendeter semantischer Zoom](images/control-examples/semantic-zoom-photos.png)
-
-**Adressbuch**
-
-Ein Adressbuch ist ein weiteres Beispiel für einen Datensatz, der sich mit einem Steuerelement für semantisches Zoomen sehr viel einfacher durchblättern lässt. Sie können die verkleinerte Ansicht verwenden, um schnell zu dem gewünschten Buchstaben zu springen (linkes Bild), während die vergrößerte Ansicht die einzelnen Datenelemente zeigt (rechtes Bild).
-
-![Beispiel für semantischen Zoom in einer Kontaktliste](images/semanticzoom-win10.png)
 
 ## <a name="create-a-semantic-zoom"></a>Erstellen eines semantischen Zooms
 

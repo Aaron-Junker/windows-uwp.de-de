@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c6eb22fbe0488fa9a36160ce9e704d10727e4c9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8bb01c76879bd00e10286ef429415cf4817315b7
+ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364481"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88502410"
 ---
 # <a name="search-and-find-in-page"></a>Suche und „Auf Seite suchen“
 
@@ -56,7 +56,7 @@ Die Suche ist ein gängiges Feature, und die entsprechenden UI-Elemente begegnen
 
 Im Anschluss finden Sie einige gängige Suchbereiche:
 
-**Global** und **Kontext/Eingrenzung.**   Übergreifende Suche für mehrere Quellen mit Cloud-basierten und lokalen Inhalten. Zu den unterschiedlichen Ergebnisse zählen beispielsweise URLs, Dokumente, Medien, Aktionen und Apps.
+**Global** und **Kontext/Eingrenzung.**  Übergreifende Suche für mehrere Quellen mit Cloud-basierten und lokalen Inhalten. Zu den unterschiedlichen Ergebnisse zählen beispielsweise URLs, Dokumente, Medien, Aktionen und Apps.
 
 **Web.**   Suche nach einem Webindex. Die Ergebnisse können unter anderem Seiten, Entitäten und Antworten umfassen.
 
@@ -87,13 +87,12 @@ Bei den meisten Apps empfiehlt sich die Verwendung eines Textfelds als Sucheinst
 
 Vor dem Klicken auf das Suchsymbol:
 
-![example of a search icon und collapsed search box](images/search-icon-collapsed.png)
+![example of a search icon und collapsed search box](images/search-icon-collapsed-maps.png)
 
- 
 
 Nach dem Klicken auf das Suchsymbol:
 
-![example of a search icon und expunded search box](images/search-icon-expanded.png)
+![Beispiel für die Suche in einem Navigationsmenü](images/search-icon-expanded-maps.png)
 
  
 
@@ -120,13 +119,13 @@ Suche als Aktion auf der Symbolleiste von Windows:
 
 Suche als Eingabe auf der App-Canvas:
 
-![Beispiel für die Suche auf der App-Canvas](images/search-canvas-contacts.png)
+![Beispiel für die Suche auf der App-Canvas](images/search-app-canvas.png)
 
  
 
-Suche in einem Navigationsbereich:
+Suche in einem Navigationsbereich in der Windows-Karten-App:
 
-![Beispiel für die Suche in einem Navigationsmenü](images/search-navmenu.png)
+![Beispiel für die Suche in einem Navigationsmenü](images/search-icon-expanded-maps.png)
 
  
 
