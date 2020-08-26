@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b835c837ca750f2ccc1ebad9ec119047b02ce7
-ms.sourcegitcommit: 97d2ef33253af210ad2d4f036b4820056ff03f62
+ms.openlocfilehash: 7cf4cfa4b87842cd7113b36220cdfdff69449a3a
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85441627"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846790"
 ---
 # <a name="web-account-manager"></a>Web Account Manager
 
@@ -20,7 +20,7 @@ In diesem Artikel wird beschrieben, wie Sie mit **[accountsettingspane](https://
 > [!NOTE]
 > Ein umfassendes Codebeispiel finden Sie im [webaccountmanagement-Beispiel auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement).
 
-## <a name="get-set-up"></a>Vorbereiten
+## <a name="get-set-up"></a>Einrichtung
 
 Erstellen Sie zunächst eine neue leere App in Visual Studio. 
 
@@ -174,7 +174,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 In diesem Beispiel übergeben wir die Zeichenfolge "wl. Basic" an den _Scope_ -Parameter. „scope“ steht für den Typ von Informationen, die Sie vom bereitstellenden Dienst für einen bestimmten Benutzer anfordern. Bestimmte Bereiche ermöglichen nur den Zugriff auf die grundlegenden Informationen eines Benutzers, z. b. Name und e-Mail-Adresse. andere Bereiche gewähren möglicherweise Zugriff auf vertrauliche Informationen, wie z. b. die Fotos oder den e-Mail- Im Allgemeinen sollte Ihre APP den geringsten Gültigkeitsbereich verwenden, der erforderlich ist, um ihre Funktion zu erreichen. Dienstanbieter bieten Dokumentation dazu, welche Bereiche erforderlich sind, um Token für die Verwendung mit Ihren Diensten zu erhalten. 
 
-* Informationen zu Office 365- und Outlook.com-Bereichen finden Sie unter [Authentifizieren von Office 365- und Outlook.com-APIs mit dem v2.0-Authentifizierungsendpunkt](https://developer.microsoft.com/graph/docs/concepts/auth_overview). 
+* Informationen zu Microsoft 365-und Outlook.com-Bereichen finden Sie unter [use the Outlook Rest API (Version 2,0)](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). 
 * Informationen zu onedrive-Bereichen finden Sie [unter onedrive-Authentifizierung und-Anmeldung](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
@@ -398,7 +398,7 @@ Halten Sie Headertext kurz und einfach, und vermeiden Sie überflüssige Informa
 
 Sie können dem AccountsSettingsPane benutzerdefinierte Befehle hinzufügen, die als Links unter den unterstützten WebAccountProviders angezeigt werden. Benutzerdefinierte Befehle eignen sich hervorragend für einfache Aufgaben in Verbindung mit Benutzerkonten, z. B. das Anzeigen einer Datenschutzrichtlinie oder das Öffnen einer Supportseite, wenn auf Benutzerseite ein Problem auftritt. 
 
-Im Folgenden ein Beispiel: 
+Hier sehen Sie ein Beispiel: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -420,7 +420,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 Einstellungsbefehle lassen sich grundsätzlich überall verwenden. Es wird jedoch empfohlen, diese Art Befehle auf die oben beschriebenen intuitiven Kontoszenarien zu beschränken. 
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows.Security.Authentication.Web.Core-Namespace](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 

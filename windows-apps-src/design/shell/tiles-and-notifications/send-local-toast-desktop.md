@@ -6,14 +6,14 @@ label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, sparsesloadpakete, c#, C Sharp, Popup Benachrichtigung, WPF
+keywords: 'Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Senden eines Popup, Senden eines lokalen Popup, Desktop Bridge, msix, sparsesloadbenachrichtigungen, c#, C-Sharp, Popup Benachrichtigung, WPF, Senden von Popup Benachrichtigungen WPF, Popup Benachrichtigung, e/a, Popup Benachrichtigung C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f1eef86045f44fa75363b54fa58e3e7089d64e0
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 8a339a4f2dca52a9bc04b1bba92f149a3e627878
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997927"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846750"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Senden von Popupbenachrichtigungen von C#-Desktop-Apps
 
