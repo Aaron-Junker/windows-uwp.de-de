@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d7805e7ae936e5c7427b54f2eb9b0ad4b4c3e9
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: c871149f764024de41309f21dbd036848633a2af
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257381"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846730"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -80,7 +80,7 @@ Es gibt mehrere Möglichkeiten, einer Desktop-App Identität zuzuweisen:
 
 Es spielt keine Rolle, ob Sie eine UWP-App erstellen, die ausschließlich auf die Familie der Desktopgeräte ausgerichtet ist, oder ob Sie UWP-Steuerelemente in einer WPF-, Windows Forms- oder C++-Win32-Desktop-App nutzen möchten: Die folgenden neuen und aktualisierten UWP-Steuerelemente sind für Desktop-optimierte Benutzeroberflächen basierend auf dem [Fluent Design-System](/windows/uwp/design/fluent-design-system/index) ausgelegt. Diese Steuerelemente wurden in Version 1809 von Windows 10 eingeführt (Update vom Oktober 2018 oder Version 10.0.17763).
 
-| Steuerelement |  Beschreibung |
+| Control |  Beschreibung |
 |------ |--------------|
 | [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Eine schnelle und einfache Möglichkeit, eine Reihe von Befehlen für Apps verfügbar zu machen, für die ggf. ein höherer Grad an Organisation und Gruppierung als bei **CommandBar** erforderlich ist. |
 | [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Ein Chevron als visueller Indikator wird angezeigt, um anzugeben, dass ein angefügtes Flyout mit weiteren Optionen vorhanden ist.  |
@@ -97,7 +97,7 @@ Es spielt keine Rolle, ob Sie eine UWP-App erstellen, die ausschließlich auf di
 
 Microsoft Graph ist eine Sammlung mit APIs, die Sie zum Erstellen von Apps für Organisationen und Verbraucher verwenden können, die mit den Daten von Millionen von Benutzern interagieren. Microsoft Graph macht REST-APIs und Clientbibliotheken verfügbar, um auf Daten der folgenden Art zuzugreifen:
 * Azure Active Directory
-* Office 365-Dienste: SharePoint, OneDrive, Outlook/Exchange, Microsoft Teams, OneNote, Planer und Excel
+* Microsoft 365 Office-Apps: SharePoint, OneDrive, Outlook/Exchange, Microsoft Teams, OneNote, Planer und Excel
 * Enterprise Mobility + Security-Dienste: Identity Manager, Intune, Advanced Threat Analytics und Advanced Threat Protection.
 * Windows 10-Dienste: Aktivitäten und Geräte
 
