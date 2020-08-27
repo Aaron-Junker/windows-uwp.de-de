@@ -1,17 +1,17 @@
 ---
 title: Änderungsverlauf für Microsoft Store-Richtlinien
-description: Änderungsverlauf für Microsoft Store-Richtlinien
+description: Zeigen Sie eine Tabelle an, die den Verlauf der Änderungen für Microsoft Store-Richtlinien mit Beschreibungen von Hinzufügungen, Updates und Löschungen für jede Änderung zeigt.
 ms.date: 10/01/2019
 ms.topic: article
 keywords: Store-Richtlinienvereinbarung
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: bfdcaca05d704b0f6b62aa5c1023ea09ed2392c0
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607280"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942860"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Änderungsverlauf für Microsoft Store-Richtlinien
 
