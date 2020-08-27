@@ -1,24 +1,24 @@
 ---
-Description: Verwalten Sie Ad-Kampagnen für Ihre apps in Partner Center.
 title: Verwalten Ihrer Anzeigenkampagne
+description: Erfahren Sie mehr über die Features von Partner Center zum Verwalten der Werbekampagnen für Ihre APP, einschließlich Informationen zur Bearbeitung und Berichterstattung.
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f7ee8f95ad1471c73d5ac9e7bb08796dadd6411
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 6a2cccf0392c4e71cc76449d1cfe505af092871e
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507024"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970148"
 ---
 # <a name="manage-your-ad-campaign"></a>Verwalten Ihrer Anzeigenkampagne
 
 >[!WARNING]
 > Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Wenn Sie Ad-Kampagnen für Ihre APP in [Partner Center](https://partner.microsoft.com/dashboard)verwalten möchten **, erweitern Sie** im linken Navigationsmenü die Option anzeigen, und wählen Sie dann AD- **Kampagnen**aus. Sie sehen aller Ihrer App zugeordneten Anzeigenkampagnen und für jede Anzeigenkampagne die Aufrufe, Klicks und Installationen. Weitere Informationen zu Aufrufen, Klicks und Installationen finden Sie unter den Definitionen dieser Begriffe im [Bericht „Anzeigenkampagne“](promote-your-app-report.md).
+Wenn Sie Ad-Kampagnen für Ihre APP in [Partner Center](https://partner.microsoft.com/dashboard)verwalten möchten **, erweitern Sie** im linken Navigationsmenü die Option anzeigen, und wählen Sie dann AD- **Kampagnen**aus. Sie sehen alle Ad-Kampagnen, die mit ihren apps verknüpft sind, zusammen mit den Eindrücken, Klicks und Installationen für jede Werbekampagne. Weitere Informationen zu Eindrücken, Klicks und Installationen finden Sie im Bericht zu Definitionen für diese Begriffe in der [AD-Kampagne](promote-your-app-report.md).
 
 Zum Filtern der Anzeigenkampagnenliste klicken Sie auf die Dropdownliste **Abschnittsfilter** und treffen eine Auswahl aus den folgenden Filtern:
 
@@ -33,7 +33,7 @@ Zum Filtern der Anzeigenkampagnenliste klicken Sie auf die Dropdownliste **Absch
 ## <a name="reporting"></a>Berichterstellung
 
 
-Auf dieser Seite werden die Details des Berichts angezeigt. Weitere Informationen finden Sie unter [Bericht „Anzeigenkampagne“](promote-your-app-report.md).
+Berichts Details werden auf dieser Seite angezeigt. Weitere Informationen finden Sie unter [AD-Kampagnenbericht](promote-your-app-report.md).
 
 
 ## <a name="edit-an-ad-campaign"></a>Bearbeiten einer Anzeigenkampagne
@@ -41,13 +41,13 @@ Auf dieser Seite werden die Details des Berichts angezeigt. Weitere Informatione
 Zum Vornehmen von Änderungen an einer Anzeigenkampagne klicken Sie auf deren Namen, um die Detailseite für die Anzeigenkampagne aufzurufen. Nachdem Sie die Änderungen vorgenommen haben, klicken Sie auf **Überprüfen**, lesen Sie die Details, und klicken Sie dann auf **Bestätigen**.
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 
-* [Erstellen einer Werbekampagne für Ihre APP](create-an-ad-campaign-for-your-app.md)
-* [Informationen zu Haus anzeigen](about-house-ads.md)
+* [Erstellen einer Anzeigenkampagne für Ihre App](create-an-ad-campaign-for-your-app.md)
+* [Über Eigenwerbung](about-house-ads.md)
 * [Bericht „Anzeigen für die App-Installation“](app-install-ads-reports.md)
-* [Häufige Fragen](common-questions.md)
+* [Häufig gestellte Fragen](common-questions.md)
  
 
  

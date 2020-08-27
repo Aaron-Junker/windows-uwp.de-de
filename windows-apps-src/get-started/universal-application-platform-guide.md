@@ -2,20 +2,27 @@
 title: Was ist eine App der universellen Windows-Plattform (UWP)?
 description: Erfahren Sie mehr über Apps für die universelle Windows-Plattform (UWP), die auf einer Vielzahl von Geräten unter Windows 10 ausgeführt werden können.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 05/07/2018
+ms.date: 08/21/2020
 ms.topic: article
 keywords: Windows 10, UWP, universell
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b2c270538ec49a139b88fb1c7eddb92acad10a
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 412dfe7d9e2387a90bc51f834755e8565f170812
+ms.sourcegitcommit: ab68ff43139f2423091bf8830c00f8a0fc7326ee
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730092"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88785032"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>Was ist eine App der universellen Windows-Plattform (UWP)?
 
-![Apps für die universelle Windows-Plattform können auf einer Vielzahl von Geräten ausgeführt werden, unterstützen adaptive Benutzeroberflächen, natürliche Benutzereingaben, einen Store, ein Partner Center und Clouddienste.](images/universalapps-overview.png)
+
+## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>Wie passt UWP in die Microsoft-Entwicklungsgeschichte?
+
+UWP ist eine von vielen Methoden zum Erstellen von Clientanwendungen für Windows. UWP-Apps verwenden WinRT-APIs, um leistungsstarke Benutzeroberflächen und erweiterte asynchrone Features bereitzustellen, die für mit dem Internet verbundene Geräte ideal sind. UWP-Apps können weiterhin Win32-APIs und .NET-Klassen verwenden (weitere Informationen finden Sie unter [API-Sammlungen für UWP-Apps](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85)), [DLLs für UWP-Apps](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85)) und [.NET für UWP-Apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)).
+
+Die Microsoft-Entwicklungsgeschichte entwickelt sich ständig weiter, und zusammen mit Initiativen wie [WinUI](https://docs.microsoft.com/windows/apps/winui/), [MSIX](https://docs.microsoft.com/windows/msix/) und [Project Reunion](https://github.com/microsoft/ProjectReunion) ist UWP ein leistungsstarkes Tool für die Erstellung von Clientanwendungen.
+
+## <a name="features-of-a-uwp-app"></a>Funktionen einer UWP-App
 
 Eine UWP-App:
 
@@ -77,7 +84,7 @@ Sie können wählen, wie Sie Ihre App gewinnbringend nutzen. Es gibt eine Reihe 
 - Ein kostenpflichtiger Download ist die einfachste Möglichkeit. Geben Sie einfach nur den Preis an.
 - Mit Testversionen können Benutzer Ihre App vor dem Kauf ausprobieren. Dies verbessert gegenüber den herkömmlicheren „Freemium“-Optionen die Auffindbarkeit und erhöht die Anzahl der Abschlüsse.
 - Angebotspreise bieten Anreize für Benutzer.
-- Darüber hinaus sind In-App-Käufe und -Anzeigen verfügbar.
+- In-App-Käufe.
 
 ### <a name="apps-from-the-microsoft-store-provide-a-seamless-install-uninstall-and-upgrade-experience"></a>Apps aus dem Microsoft Store sorgen für eine nahtlose Installations-, Deinstallations- und Upgradeerfahrung
 

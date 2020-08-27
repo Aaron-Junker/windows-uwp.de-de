@@ -1,19 +1,19 @@
 ---
-Description: Du kannst Erweiterungen nutzen, um deine gepackte Desktop-App in vordefinierter Weise in Windows 10 zu integrieren.
+description: Du kannst Erweiterungen nutzen, um deine gepackte Desktop-App in vordefinierter Weise in Windows 10 zu integrieren.
 title: Modernisieren vorhandener Desktop-Apps mit Desktop-Brücke
-ms.date: 04/18/2018
+ms.date: 08/25/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d9f5ca95678a8b31ed53cfdf2c4e6433bca504c8
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: fb1daddeb743909417d6483223d5386e64ca5241
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334457"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942780"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>Integrieren deiner Desktop-App in Windows 10 und UWP
 
@@ -406,11 +406,15 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>Platzieren deiner DLL-Dateien in einem beliebigen Ordner des Pakets
 
-Verwende eine Erweiterung, um diese Ordner zu identifizieren. Auf diese Weise kann das System die darin platzierten Dateien ermitteln und laden. Du kannst dir diese Erweiterung als Ersatz für die Umgebungsvariable _%PATH%_ vorstellen.
+Verwenden Sie die Erweiterung [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride), um bis zu fünf Ordnerpfade im App-Paket relativ zum Stammpfad des App-Pakets zu deklarieren, die im Suchpfad des Ladeprogramms für die Prozesse der App verwendet werden sollen.
 
-Wenn du diese Erweiterung nicht verwendest, durchsucht das System das Paketabhängigkeitsdiagramm des Prozesses, den Paketstammordner und anschließend das Systemverzeichnis ( _%SystemRoot%\system32_) in dieser Reihenfolge. Weitere Informationen hierzu findest du unter [Suchreihenfolge von Windows-Apps](https://docs.microsoft.com/windows/desktop/Dlls/dynamic-link-library-search-order).
+Die [DLL-Suchreihenfolge](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order) für Windows-Apps enthält Pakete im Paketabhängigkeitsdiagramm, wenn die Pakete über Ausführungsrechte verfügen. Standardmäßig umfasst dies Haupt-, optionale und Frameworkpakete, obwohl dies durch das [uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution)-Element im Paketmanifest überschrieben werden kann.
 
-Jedes Paket kann nur eine dieser Erweiterungen enthalten. Das bedeutet, du kannst deinem Hauptpaket und dann jedem deiner [optionalen Pakete und zugehörigen Sätzen](/windows/msix/package/optional-packages) eine Erweiterung hinzufügen.
+Ein Paket, das in der DLL-Suchreihenfolge enthalten ist, enthält standardmäßig seinen *effektiven Pfad*. Weitere Informationen zu effektiven Pfaden finden Sie unter der [EffectivePath](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.effectivepath)-Eigenschaft (WinRT) und der [PackagePathType](https://docs.microsoft.com/windows/win32/api/appmodel/ne-appmodel-packagepathtype)-Enumeration (Win32).
+
+Wenn ein Paket [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) angibt, werden diese Informationen anstelle des effektiven Pfads des Pakets verwendet.
+
+Jedes Paket kann nur eine [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride)-Erweiterung enthalten. Das bedeutet, du kannst deinem Hauptpaket und dann jedem deiner [optionalen Pakete und zugehörigen Sätzen](/windows/msix/package/optional-packages) eine Erweiterung hinzufügen.
 
 #### <a name="xml-namespace"></a>XML-Namespace
 
@@ -429,10 +433,10 @@ Deklariere diese Erweiterung auf der Paketebene deines App-Manifests.
 
 ```
 
-|Name | Beschreibung |
+|Name | BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.loaderSearchPathOverride``.
-|FolderPath | Der Pfad des Ordners, der deine DLL-Dateien enthält. Gib einen Pfad relativ zum Stammordner des Pakets an. Du kannst bis zu fünf Pfade in einer Erweiterung angeben. Wenn das System nach Dateien im Stammordner des Pakets suchen soll, verwende eine leere Zeichenfolge für einen dieser Pfade. Füge keine doppelten Pfade ein, und stelle sicher, dass die Pfade keine voran- bzw. nachgestellten Schrägstriche oder umgekehrten Schrägstriche enthalten. <br><br> Das System durchsucht keine Unterordner. Stelle deshalb sicher, dass du jeden Ordner mit DLL-Dateien, die das System laden soll, explizit auflistest.|
+|Category |Immer ``windows.loaderSearchPathOverride``.
+|FolderPath | Der Pfad des Ordners, der Ihre DLL-Dateien enthält. Gib einen Pfad relativ zum Stammordner des Pakets an. Du kannst bis zu fünf Pfade in einer Erweiterung angeben. Wenn das System nach Dateien im Stammordner des Pakets suchen soll, verwende eine leere Zeichenfolge für einen dieser Pfade. Fügen Sie keine doppelten Pfade ein, und stellen Sie sicher, dass die Pfade keine voran- bzw. nachgestellten Schrägstriche oder umgekehrten Schrägstriche enthalten. <br><br> Das System durchsucht keine Unterordner. Stelle deshalb sicher, dass du jeden Ordner mit DLL-Dateien, die das System laden soll, explizit auflistest.|
 
 #### <a name="example"></a>Beispiel
 
@@ -494,11 +498,11 @@ Gib an, wie sich die App verhält, wenn ein Benutzer mehrere Dateien gleichzeiti
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
-|MultiSelectModel |Siehe unten. |
+|MultiSelectModel |Siehe unten |
 |FileType |Die relevanten Dateierweiterungen. |
 
 **MultiSelectModel**
@@ -569,9 +573,9 @@ Ermögliche es Benutzern, eine Miniaturansicht des Dateiinhalts anzuzeigen, wenn
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |FileType |Die relevanten Dateierweiterungen. |
 |Clsid   |Die Klassen-ID deiner App. |
@@ -631,9 +635,9 @@ Ermögliche es Benutzern, die Inhalte einer Datei im Vorschaubereich des Datei-E
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |FileType |Die relevanten Dateierweiterungen. |
 |Clsid   |Die Klassen-ID deiner App. |
@@ -696,9 +700,9 @@ Weitere Informationen zum **Kind**-Feld und den Werten, die du für dieses Feld 
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |FileType |Die relevanten Dateierweiterungen. |
 |value |Ein gültiger [Kind-Wert](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
@@ -757,9 +761,9 @@ Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uw
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fileTypeAssociation``.
+|Category |Immer ``windows.fileTypeAssociation``.
 |Name |Der Name der Dateitypzuordnung. Mit diesem Namen kannst du Dateitypen organisieren und gruppieren. Der Name darf nur Kleinbuchstaben und keine Leerzeichen umfassen. |
 |FileType |Die relevanten Dateierweiterungen. |
 |Clsid  |Die Klassen-ID deiner App. |
@@ -823,7 +827,7 @@ Wenn deine Desktopanwendung einen [Kontextmenühandler](https://docs.microsoft.c
 
 Die vollständige Schemareferenz findest du hier: [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) und [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus).
 
-#### <a name="instructions"></a>Anweisungen
+#### <a name="instructions"></a>Instructions
 
 Folge diesen Anweisungen, um deinen Kontextmenühandler zu registrieren.
 
@@ -913,9 +917,9 @@ Registriere die Handler, die du in deiner Anwendung implementierst. Du kannst au
 
 ```
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.cloudfiles``.
+|Category |Immer ``windows.cloudfiles``.
 |iconResource |Das Symbol, das deinen Clouddateianbieter-Dienst repräsentiert. Dieses Symbol wird im Navigationsbereich des Datei-Explorers angezeigt.  Benutzer wählen dieses Symbol aus, um Dateien aus deinem Clouddienst anzuzeigen. |
 |CustomStateHandler Clsid |Die Klassen-ID der App, die den CustomStateHandler implementiert. Das System verwendet diese Klassen-ID, um benutzerdefinierte Statuswerte und Spalten für Clouddateien anzufordern. |
 |ThumbnailProviderHandler Clsid |Die Klassen-ID der App, die den ThumbnailProviderHandler implementiert. Das System verwendet diese Klassen-ID, um Miniaturansichten für Clouddateien anzufordern. |
@@ -983,9 +987,9 @@ Protokollzuordnungen ermöglichen es anderen Programmen und Systemkomponenten, m
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.protocol``.
+|Category |Immer ``windows.protocol``.
 |Name |Der Name des Protokolls. |
 |Parameter |Die Liste der Parameter und Werte, die bei der Aktivierung deiner App als Ereignisargumente an deine App übergeben werden sollen. Wenn eine Variable einen Dateipfad enthalten kann, schließe den Parameterwert in Anführungszeichen ein. So werden Probleme vermieden, die bei Pfaden mit Leerzeichen auftreten können. |
 
@@ -1035,9 +1039,9 @@ Benutzer und andere Prozesse können einen Alias verwenden, um deine App zu star
 </Extension>
 ```
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.appExecutionAlias``.
+|Category |Immer ``windows.appExecutionAlias``.
 |Ausführbare Datei |Der relative Pfad zur ausführbaren Datei, die beim Aufrufen des Alias gestartet wird. |
 |Alias |Der Kurzname für deine App. Er muss immer mit der Erweiterung „.exe“ enden. Für die einzelnen Anwendungen im Paket kann immer nur einzelner App-Ausführungsalias angegeben werden. Wenn sich mehrere Apps mit dem gleichen Alias registrieren, ruft das System die zuletzt registrierte App auf. Wählen Sie daher einen eindeutigen Alias, um die Wahrscheinlichkeit einer Überschreibung durch andere Apps möglichst gering zu halten.
 |
@@ -1098,12 +1102,12 @@ Benutzer können die Startaufgabe Ihrer App manuell mithilfe des Task-Managers d
 </Extension>
 ```
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.startupTask``.|
+|Category |Immer ``windows.startupTask``.|
 |Ausführbare Datei |Der relative Pfad der ausführbaren Datei, die gestartet werden soll. |
 |TaskId |Ein eindeutiger Bezeichner für deine Aufgabe. Mit diesem Bezeichner kann deine App die APIs in der [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask)-Klasse aufrufen, um eine Startaufgabe programmgesteuert zu aktivieren oder zu deaktivieren. |
-|Enabled |Gibt an, ob die Aufgabe zunächst aktiviert oder deaktiviert wird. Aktivierte Aufgaben werden bei der nächsten Anmeldung des Benutzers ausgeführt (es sei denn, der Benutzer deaktiviert sie). |
+|Aktiviert |Gibt an, ob die Aufgabe zunächst aktiviert oder deaktiviert wird. Aktivierte Aufgaben werden bei der nächsten Anmeldung des Benutzers ausgeführt (es sei denn, der Benutzer deaktiviert sie). |
 |DisplayName |Der Name der Aufgabe, die im Task-Manager angezeigt wird. Du kannst diese Zeichenfolge mit ```ms-resource``` lokalisieren. |
 
 #### <a name="example"></a>Beispiel
@@ -1153,13 +1157,13 @@ Du kannst deine Anwendung als Option für die automatische Wiedergabe anzeigen, 
   </AutoPlayHandler>
 ```
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.autoPlayHandler``.
+|Category |Immer ``windows.autoPlayHandler``.
 |ActionDisplayName |Diese Zeichenfolge repräsentiert die Aktion, die Benutzer für ein Gerät ausführen können, das sie an einen PC anschließen (beispielsweise „Dateien importieren“ oder „Video wiedergeben“). |
 |ProviderDisplayName | Eine Zeichenfolge, die deine App oder deinen Dienst repräsentiert (beispielsweise „Contoso-Videoplayer“). |
 |ContentEvent |Der Name eines Inhaltsereignisses, durch das Benutzer eine Aufforderung zu deinem ``ActionDisplayName`` und ``ProviderDisplayName`` erhalten. Ein Inhaltsereignis wird ausgelöst, wenn ein Volumegerät wie etwa die Speicherkarte einer Kamera, eine DVD oder ein USB-Stick in den PC eingelegt bzw. daran angeschlossen wird. Die vollständige Liste dieser Ereignisse findest du [hier](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
-|Verb |Die Einstellung „Verb“ dient zum Angeben eines Werts, der für die ausgewählte Option an deine App übergeben wird. Du kannst mehrere Startaktionen für Ereignisse der automatischen Wiedergabe angeben und mit der Einstellung „Verb“ ermitteln, welche Option ein Benutzer für deine App ausgewählt hat. Für welche Option sich der Benutzer entschieden hat, erfährst du durch Überprüfen der verb-Eigenschaft der an die App übergebenen Startereignisargumente. Für die Einstellung „Verb“ kannst du einen beliebigen Wert verwenden. Die einzige Ausnahme ist „open“, dieser Wert ist reserviert. |
+|Verb |Die Einstellung „Verb“ dient zum Angeben eines Werts, der für die ausgewählte Option an deine App übergeben wird. Sie können mehrere Startaktionen für Ereignisse der automatischen Wiedergabe angeben und mit der Einstellung Verb ermitteln, welche Option ein Benutzer für Ihre App ausgewählt hat. Für welche Option sich der Benutzer entschieden hat, erfahren Sie durch Überprüfen der verb-Eigenschaft der an die App übergebenen Startereignisargumente. Für die Einstellung Verb können Sie einen beliebigen Wert verwenden. Einzige Ausnahme ist open: Dieser Wert ist reserviert. |
 |DropTargetHandler |Die Klassen-ID der Anwendung, die die [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle implementiert. Dateien von Wechselmedien werden an die [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)-Methode deiner [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Implementierung übergeben.  |
 |Parameter |Du musst die [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle nicht für alle Inhaltsereignisse implementieren. Für jedes der Inhaltsereignisse kannst du Befehlszeilenparameter bereitstellen, anstatt die [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)-Schnittstelle zu implementieren. Bei diesen Ereignissen verwendet die automatische Wiedergabe diese Befehlszeilenparameter, um deine App zu starten. Du kannst durch eine Analyse dieser Parameter im Initialisierungscode deiner App festzustellen, ob sie von der automatischen Wiedergabe gestartet wurde, und dann deine benutzerdefinierte Implementierung bereitstellen. |
 |DeviceEvent |Der Name eines Geräteereignisses, bei dem Benutzer eine Aufforderung zu deinem ``ActionDisplayName`` und ``ProviderDisplayName`` erhalten. Ein Geräteereignis wird ausgelöst, wenn ein Gerät an den PC angeschlossen wird. Geräteereignisse beginnen mit der Zeichenfolge ``WPD`` und sind [hier](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference) aufgelistet. |
@@ -1240,9 +1244,9 @@ Du musst deine Anwendung so einrichten, dass sie Daten im XPS-Format (XML Paper 
 
 Die vollständige Schemareferenz findest du [hier](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.appPrinter``.
+|Category |Immer ``windows.appPrinter``.
 |DisplayName |Der Name, der in der Liste der Druckziele für eine App angezeigt werden soll. |
 |Parameter |Alle Parameter, die deine App zur ordnungsgemäßen Verarbeitung der Anforderung benötigt. |
 
@@ -1290,10 +1294,10 @@ Gibt deine benutzerdefinierten Schriftarten für andere Windows-Anwendungen frei
 
 Die vollständige Schemareferenz findest du [hier](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.sharedFonts``.
-|File |Die Datei mit der Schriftart, die du freigeben möchtest. |
+|Category |Immer ``windows.sharedFonts``.
+|Datei |Die Datei mit der Schriftart, die du freigeben möchtest. |
 
 #### <a name="example"></a>Beispiel
 
@@ -1336,9 +1340,9 @@ Starte einen Win32-Prozess, der als vollständig vertrauenswürdig eingestuft wi
 </Extension>
 ```
 
-|Name |Beschreibung |
+|Name |BESCHREIBUNG |
 |-------|-------------|
-|Kategorie |Immer ``windows.fullTrustProcess``.
+|Category |Immer ``windows.fullTrustProcess``.
 |GroupID |Eine Zeichenfolge zum Identifizieren einer Reihe von Parametern, die du an die ausführbare Datei übergeben möchtest. |
 |Parameter |Parameter, die du an die ausführbare Datei übergeben möchtest. |
 

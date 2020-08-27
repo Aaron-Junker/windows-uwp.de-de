@@ -1,6 +1,6 @@
 ---
-Description: Optimieren Sie Ihre APP für die Eingabe von Xbox Gamepad und Remote Steuerung.
 title: Interaktionen mit Gamepad und Fernbedienung
+description: Hier finden Sie Anleitungen, Empfehlungen und Vorschläge zum Optimieren Ihrer APP für die Eingabe von Xbox Gamepad und Remote Steuerung.
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 34bdda207350d980e323b27a7b98e3c0112d06f4
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234674"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970178"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>Interaktionen mit Gamepad und Fernbedienung
 
@@ -45,7 +45,7 @@ Im folgenden finden Sie einige weitere Möglichkeiten zum Optimieren Ihrer APP f
 > [!NOTE]
 > Da Xbox Gamepads und Remote Steuerelemente viele Windows-Tastatur Verhalten und-Erfahrungen unterstützen, sind diese Empfehlungen für beide Eingabetypen geeignet. Ausführlichere Informationen zur Tastatur finden Sie unter [Tastatur Interaktionen](keyboard-interactions.md) .
 
-| Funktion        | BESCHREIBUNG           |
+| Feature        | Beschreibung           |
 | -------------------------------------------------------------- |--------------------------------|
 | [XY-Fokusnavigation und -interaktion](#xy-focus-navigation-and-interaction) | Die **XY-Fokus Navigation** ermöglicht dem Benutzer, um die Benutzeroberfläche Ihrer APP zu navigieren. Dies begrenzt Benutzer jedoch auf eine Navigation nach oben, unten, links und rechts. In diesem Abschnitt finden Sie Empfehlungen für den Umgang mit diesen und anderen Überlegungen. |
 | [Mausmodus](#mouse-mode)|Die XY-Fokus Navigation ist für einige Arten von Anwendungen, z. b. Karten oder das Zeichnen und Zeichnen von apps, nicht praktikabel oder sogar möglich. In diesen Fällen ermöglicht der **Maus Modus** Benutzern, mit einem Gamepad oder einer Remote Steuerung wie der Maus auf einem PC frei zu navigieren.|
@@ -71,7 +71,7 @@ Wie Sie im Diagramm erkennen können, werden einige Schaltflächen auf Gamepads 
 
 In der folgenden Tabelle werden alle Hardware Schaltflächen aufgelistet, die von Windows-Apps unterstützt werden, und welches Eingabegerät diese unterstützt.
 
-| Schaltfläche                    | Gamepad   | Remotesteuerung    |
+| Taste                    | Gamepad   | Remotesteuerung    |
 |---------------------------|-----------|-------------------|
 | A/Auswahl-Taste           | Ja       | Ja               |
 | B/Zurück-Taste             | Ja       | Ja               |
@@ -292,7 +292,7 @@ Was geschieht, wenn Sie  an einer Stelle `CommandBar` *oberhalb* der Liste/des R
 
 Zwar ist das vertikale Stapeln der `CommandBar`-Elemente nicht möglich, die Platzierung gegen die Bildlaufrichtung (etwa links oder rechts von einer vertikal laufenden Liste oder über/unter einer horizontal laufenden Liste) ist eine weitere Option, die Sie nutzen können, wenn dies gut zu Ihrem Benutzeroberflächenlayout passt.
 
-Wenn Ihre App eine `CommandBar` umfasst, auf deren Elemente die Benutzer zugreifen müssen, sollten Sie diese Elemente möglicherweise innerhalb einer [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft platzieren und sie aus der `CommandBar` entfernen. `ContextFlyout`ist eine Eigenschaft von " [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) " und ist das [Kontextmenü](../controls-and-patterns/dialogs-and-flyouts/index.md) , das diesem Element zugeordnet ist. Wenn Sie auf einem PC mit der rechten Maustaste auf ein Element mit einem `ContextFlyout` klicken, wird das Kontextmenü eingeblendet. Auf Xbox One geschieht dies beim Drücken der **Menü**-Taste, während ein entsprechendes Element den Fokus hat.
+Wenn Ihre App eine `CommandBar` umfasst, auf deren Elemente die Benutzer zugreifen müssen, sollten Sie diese Elemente möglicherweise innerhalb einer [ContextFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextflyout)-Eigenschaft platzieren und sie aus der `CommandBar` entfernen. `ContextFlyout` ist eine Eigenschaft von " [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) " und ist das [Kontextmenü](../controls-and-patterns/dialogs-and-flyouts/index.md) , das diesem Element zugeordnet ist. Wenn Sie auf einem PC mit der rechten Maustaste auf ein Element mit einem `ContextFlyout` klicken, wird das Kontextmenü eingeblendet. Auf Xbox One geschieht dies beim Drücken der **Menü**-Taste, während ein entsprechendes Element den Fokus hat.
 
 ### <a name="ui-layout-challenges"></a>Herausforderungen beim UI-Layout
 
@@ -319,7 +319,7 @@ Die [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListV
 
 #### <a name="solutions"></a>Lösungen
 
-**Neuanordnung der Benutzeroberfläche<a name="ui-rearrange"></a>**
+**Neuanordnung der Benutzeroberfläche <a name="ui-rearrange"></a>**
 
 Sofern nicht der anfängliche Fokus auf das Ende der Seite gesetzt ist, sind über einer langen Bildlaufliste platzierte UI-Elemente typischerweise einfacher erreichbar, als solche unterhalb einer solchen Liste.
 Wenn dieses neue Layout für andere Geräte funktioniert, kann das Ändern des Layouts für alle Gerätefamilien kostengünstiger sein als das Vornehmen spezieller UI-Änderungen nur für die Xbox One.
@@ -327,7 +327,7 @@ Weiterhin gilt, dass die Platzierung von UI-Elementen gegen die Bildlaufrichtung
 
 ![Immobilien-App: Platzieren von Schaltflächen oberhalb einer langen Bildlaufliste](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**Fokus Einbindung<a name="engagement"></a>**
+**Fokus Einbindung <a name="engagement"></a>**
 
 Ist die Aktivierung *erforderlich*, wird die gesamte `ListView` zu einem einzigen Fokusziel. Der Benutzer kann die Inhalte der Liste übergehen, um zum nächsten fokussierbaren Element zu gelangen. Erfahren Sie mehr darüber, welche Steuerelemente die Aktivierung unterstützen, und wie Sie sie in der [Fokusaktivierung](#focus-engagement) verwenden können.
 
@@ -548,14 +548,14 @@ Einige Steuerelemente führen häufig genug dazu, dass Benutzer in einem Steuere
 
 | Control               | Standardeinstellung in Bezug auf die Fokusaktivierung  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | Andererseits                        |
+| CalendarDatePicker    | Ein                        |
 | FlipView              | Aus                       |
 | GridView              | Aus                       |
 | ListBox               | Aus                       |
 | ListView              | Aus                       |
 | ScrollViewer          | Aus                       |
 | SemanticZoom          | Aus                       |
-| Slider                | Andererseits                        |
+| Schieberegler                | Ein                        |
 
 Alle anderen Windows-Steuerelemente führen zu keinem Verhalten oder visuellen Änderungen, wenn dies der Fall ist `IsFocusEngagementEnabled="True"` .
 

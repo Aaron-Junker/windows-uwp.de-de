@@ -1,17 +1,17 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Timergesteuertes Übermitteln einer Arbeitsaufgabe
-description: Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
+description: Erfahren Sie, wie Sie einen Timer erstellen, der ein Arbeits Element übermittelt, wenn der Timer in einer universelle Windows-Plattform-app (UWP) mithilfe der threadpooltimer-API abläuft.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Timer, Threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b5c0982c10cde25fc5f61314c540c194d6519a2
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: 2c34f50d7b5abec28b11fc67a7e0515f07206060
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619334"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970128"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Timergesteuertes Übermitteln einer Arbeitsaufgabe
 
@@ -27,7 +27,7 @@ Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die nach dem Ablaufen e
 
 Verwenden Sie die [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Methode, um einen Timer für die Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *delay*-Parameter an, wie lange der Threadpool warten soll, bevor er die Arbeitsaufgabe einem verfügbaren Thread zuweist. Die Verzögerung wird mithilfe einer [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)-Struktur angegeben.
 
-> **Beachten**  Sie, dass Sie [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) verwenden können, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
+> **Hinweis**    Sie können " [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) " verwenden, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
 
 Im folgenden Beispiel wird ein Arbeitselement erstellt, die in drei Minuten ausgeführt wird:
 
@@ -217,7 +217,7 @@ Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird,
 > DelayTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 UWP (Universelle Windows-Plattform)-Apps können **Thread.Sleep** nicht verwenden, da dies den UI-Thread blockieren kann. Verwenden Sie zum Erstellen einer Arbeitsaufgabe stattdessen einen [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer). Dieser Timer verzögert die von der Arbeitsaufgabe ausgeführte Aufgabe, ohne den UI-Thread zu blockieren.
 
@@ -229,7 +229,7 @@ Informationen zu Wiederholungstimern finden Sie unter [Erstellen einer regelmä�
 
 * [Senden ein Arbeitselement an den Threadpool](submit-a-work-item-to-the-thread-pool.md)
 * [Bewährte Methoden zum Verwenden des Threadpools](best-practices-for-using-the-thread-pool.md)
-* [Senden einer Arbeitsaufgabe mithilfe eines Timers](use-a-timer-to-submit-a-work-item.md)
+* [Timergesteuertes Übermitteln einer Arbeitsaufgabe](use-a-timer-to-submit-a-work-item.md)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77b47866bc064baec7c0ecf556eb615f67af0554
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8599d1f493dc37095c0cb9464aa1d14c22072413
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234384"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846840"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>Neuigkeiten für Entwickler in Windows 10, Build 17763
 
@@ -47,7 +47,7 @@ Anleitung für Beitragende | Wir haben [unsere Anleitung für Beitragende](https
 DirectX Graphics Infastructure (DXGI) | Es wurde neue Dokumentation für fehlende DXGI-APIs hinzugefügt, und es gibt nun einen Artikel zu bewährten Methoden für Darstellungen unter Windows 10. </br> * [Beste Leistung mit DXGI-Flipmodell](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model): Enthält Anleitungen, wie Leistung und Effizienz im Präsentationsstapel unter modernen Windows-Versionen maximiert werden können. </br> * [IDXGIOutput6::CheckHardwareCompositionSupport-Methode](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport): Benachrichtigt Anwendungen darüber, dass Hardwarestreckung unterstützt wird. </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS-Enumeration](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags): Beschreibt, welche Ebenen der Hardwarezusammenstellung unterstützt werden.
 Erste Schritte | Der [Erste Schritte](../get-started/index.md)-Inhalt wurde mit neuen Themen belebt, die Informationen und Anleitungen dazu bereitstellen, wie Entwickler, für die Windows 10 Neuland ist, die folgenden üblichen Aufgaben erledigen können: </br> * [Erstellen eines Formulars](../get-started/construct-form-learning-track.md) </br> * [Anzeigen von Kunden in einer Liste](../get-started/display-customers-in-list-learning-track.md) </br> * [Speichern und Laden von Einstellungen](../get-started/settings-learning-track.md) </br> * [Arbeiten mit Dateien](../get-started/fileio-learning-track.md)
 Map Style Sheet Editor | Verwenden Sie die neue [Map Style Sheet Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft?rtc=1#activetab=pivot:overviewtab)-Anwendung, um die Darstellung von Karten, die Sie zu Ihrer Anwendung hinzufügen, interaktiv anzupassen.
-Microsoft Learn | Die neue [Microsoft Learn-Website](https://www.microsoft.com/learning/default.aspx) bietet neue praktische Lern- und Schulungsmöglichkeiten für Microsoft-Entwickler. Derzeit bietet Microsoft-Learn Schulung und Zertifizierung für Microsoft 365, Microsoft Azure, Office 365 und Windows Server.
+Microsoft Learn | Die neue [Microsoft Learn-Website](https://www.microsoft.com/learning/default.aspx) bietet neue praktische Lern- und Schulungsmöglichkeiten für Microsoft-Entwickler. Derzeit bietet Microsoft Learn Schulung und Zertifizierung für Microsoft 365, Microsoft Azure und Windows Server.
 Editor | [Editor wurde aktualisiert](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/). Es wurden Zoomen, rollierendes Suchen/Ersetzen und Unterstützung für Zeilenenden im Unix/Linux- (LF) und Macintosh-Format (CR) hinzugefügt.
 Project Rome | [Project Rome](https://docs.microsoft.com/windows/project-rome/) bietet jetzt eine konsistente Programmieroberfläche über die unterstützten Plattformen und SDKs. </br>  Neue [Microsoft Graph-Benachrichtigungen](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview) verwenden „Project Rome“, um eine personenzentrierte plattformübergreifende Benachrichtigungsplattform für Ihre App bereitzustellen.
 Bildschirmausschnitte | Neue [URI-Schemas](../launch-resume/launch-screen-snipping.md) ermöglichen es Ihrer App, einen neuen Ausschnitt programmgesteuert zu öffnen oder die „Ausschneiden und skizzieren“-App mit einem bestimmten Bild für eine Anmerkung zu starten.

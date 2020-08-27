@@ -1,30 +1,30 @@
 ---
-Description: Erfahren Sie, wie Sie Benachrichtigungen im Aktions Center mithilfe von Sammlungen gruppieren.
-title: Popupsammlungen
+title: Popup Auflistungen
+description: Erfahren Sie, wie Sie Popup Benachrichtigungen für Ihre APP organisieren, indem Sie Benachrichtigungs Sammlungen im Aktions Center erstellen, aktualisieren oder entfernen.
 label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018
 ms.topic: article
-keywords: Windows 10, UWP, Benachrichtigungen, Sammlungen, Sammlung, Gruppenbenachrichtigungen, Gruppieren von Benachrichtigungen, gruppieren, organisieren, Info-Center, Popup
+keywords: Windows 10, UWP, Benachrichtigung, Sammlungen, Sammlung, Gruppen Benachrichtigungen, Gruppierungs Benachrichtigungen, Gruppe, organisieren, Aktions Center, Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: 19fc1ed49fe5a3ea7d628684226b960ef2bc0732
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: aff6b933e04611013761c10ad7a76824f7347855
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684180"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970068"
 ---
-# <a name="grouping-toast-notifications-with-collections"></a>Gruppieren von Popupbenachrichtigungen mit Sammlungen
-Verwenden Sie Sammlungen, um Ihre App-Popups im Info-Center zu organisieren. Mithilfe von Sammlungen können Benutzer Informationen im Info-Center leichter finden und Entwickler können ihre Benachrichtigungen besser verwalten.  Die folgenden APIs ermöglichen das Entfernen, Erstellen und Aktualisieren von Benachrichtigungssammlungen.
+# <a name="grouping-toast-notifications-with-collections"></a>Gruppieren von Popup Benachrichtigungen mit Sammlungen
+Verwenden Sie Sammlungen zum Organisieren der APP-Auflistungen im Aktions Center. Mithilfe von Sammlungen können Benutzerinformationen im Aktions Center leichter finden und Entwicklern eine bessere Verwaltung Ihrer Benachrichtigungen ermöglichen.  Mit den unten aufgeführten APIs können Sie Benachrichtigungs Sammlungen entfernen, erstellen und aktualisieren.
 
 > [!IMPORTANT]
-> **Erfordert Creators Update**: Sie müssen als Ziel das SDK 15063 angeben und Build 15063 oder höher ausführen, um Popupbenachrichtigungen zu verwenden. Zugehörige APIs: [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection) und [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Erfordert Creators Update**: Sie müssen das SDK 15063 als Ziel verwenden und Build 15063 oder höher ausführen, um Popup Auflistungen zu verwenden. Zu den zugehörigen APIs zählen [Windows. UI. Notification. deastcollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection)und [Windows. UI. Benachrichtigungen.](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
-Sie sehen das folgende Beispiel einer Messaging-App, die die Benachrichtigungen basierend auf der Chatgruppe trennt. Jeder Titel (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Team Chat) ist eine separate Sammlung.  Beachten Sie, wie die Benachrichtigungen unterschiedlich gruppiert werden, als wären sie von einer separaten App, obwohl sie alle Benachrichtigungen von derselben App sind.  Wenn Sie Benachrichtigungen auf raffiniertere Art organisieren möchten, lesen Sie [Popup-Header](toast-headers.md).  
+Das Beispiel unten zeigt eine Messaging-APP, die die Benachrichtigungen auf der Grundlage der Chatgruppe trennt. Jeder Titel (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Teamchat) ist eine separate Sammlung.  Beachten Sie, dass die Benachrichtigungen eindeutig gruppiert werden, als ob Sie aus einer separaten App stammen, auch wenn Sie alle Benachrichtigungen von derselben APP sind.  Wenn Sie eine detailliertere Methode zum Organisieren von Benachrichtigungen suchen, finden Sie weitere Informationen unter Popup [Header](toast-headers.md).  
 ![Sammlungs Beispiel mit zwei verschiedenen Gruppen von Benachrichtigungen](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>Erstellen von Sammlungen
-Bei der Erstellung jeder Sammlung müssen Sie einen Anzeigenamen und ein Symbol angeben, die als Teil des Sammlungstitels im Info-Center angezeigt werden, wie in der Abbildung oben dargestellt. Sammlungen erfordern außerdem ein Start-Argument, damit die App zur richtigen Stelle in der App navigieren kann, wenn ein Benutzer auf den Titel der Sammlung klickt.  
+Wenn Sie jede Sammlung erstellen, müssen Sie einen anzeigen Amen und ein Symbol angeben, die im Aktions Center als Teil des Sammlungs Titels angezeigt werden, wie in der Abbildung oben gezeigt. Auflistungen benötigen auch ein Launch-Argument, um der APP zu helfen, zur richtigen Position innerhalb der APP zu navigieren, wenn der Benutzer auf den Titel der Sammlung klickt.  
 
 ### <a name="create-a-collection"></a>Erstellen einer Sammlung
 
@@ -50,9 +50,9 @@ public async void CreateToastCollection()
 ```
 
 ## <a name="sending-notifications-to-a-collection"></a>Senden von Benachrichtigungen an eine Sammlung
-Wir betrachten das Senden von Benachrichtigungen aus drei verschiedenen Popup-Pipelines: lokal, geplant und push.  Für jedes dieser Beispiele erstellen wir ein Beispielpopup, das mit dem nachfolgenden Code sofort gesendet wird. Dann konzentrieren wir uns darauf, wie das Popup über jede Pipeline einer Sammlung hinzugefügt wird.
+Wir werden das Senden von Benachrichtigungen aus drei verschiedenen Popup Pipelines abdecken: local, scheduled und Push.  Für jedes dieser Beispiele wird ein Beispiel für den Toast erstellt, der mit dem Code direkt unterhalb von gesendet werden soll. anschließend konzentrieren wir uns auf das Hinzufügen des Popups zu einer Sammlung über jede Pipeline.
 
-Erstellen der Benachrichtigungsnutzlast:
+Erstellen Sie die Benachrichtigungs Nutzlast:
 
 ``` csharp
 public const string toastCollectionId = "MyToastCollection";
@@ -75,7 +75,7 @@ public async void SendToastToToastCollection()
     ToastNotification toast = new ToastNotification(toastXml);
 ```
 
-### <a name="send-a-toast-to-a-collection"></a>Senden eines Popups an eine Sammlung
+### <a name="send-a-toast-to-a-collection"></a>Einen Toast an eine Sammlung senden
 
 ```csharp
 // Get the collection notifier
@@ -98,8 +98,8 @@ var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForTo
 notifier.AddToSchedule(scheduledToast);
 ```
 
-### <a name="send-a-push-toast-to-a-collection"></a>Senden eines Push-Popups an eine Sammlung
-Für Push-Popups müssen Sie den X-WNS-CollectionId-Header zur POST-Nachricht hinzufügen.
+### <a name="send-a-push-toast-to-a-collection"></a>Pushtoast an eine Sammlung senden
+Für pushtoasts müssen Sie den Header "X-WNS-CollectionId" der Post-Nachricht hinzufügen.
 ```csharp
 // Add header to HTTP request
 request.Headers.Add("X-WNS-CollectionId", collectionId); 
@@ -107,19 +107,19 @@ request.Headers.Add("X-WNS-CollectionId", collectionId);
 ```
 
 ## <a name="managing-collections"></a>Verwalten von Sammlungen
-#### <a name="create-the-toast-collection-manager"></a>Erstellen der Popupsammlungsverwaltung
-Für die verbleibenden Codeausschnitte in diesem Abschnitt „Verwalten von Sammlungen“ verwenden wir den folgenden collectionManager.
+#### <a name="create-the-toast-collection-manager"></a>Erstellen des Popup-Sammlungs-Managers
+Für den Rest der Code Ausschnitte im Abschnitt "Verwalten von Sammlungen" wird der folgende collectionmanager verwendet.
 ```csharp
 ToastCollectionManger collectionManager = ToastNotificationManager.GetDefault().GetToastCollectionManager();
 ```
 
-#### <a name="get-all-collections"></a>Abrufen aller Sammlungen
+#### <a name="get-all-collections"></a>Alle Sammlungen abrufen
 
 ``` csharp
 IReadOnlyList<ToastCollection> collections = await collectionManager.FindAllToastCollectionsAsync();
 ``` 
 
-#### <a name="get-the-number-of-collections-created"></a>Abrufen der Anzahl der erstellten Sammlungen
+#### <a name="get-the-number-of-collections-created"></a>Anzahl der erstellten Sammlungen erhalten
 
 ``` csharp
 int toastCollectionCount = (await collectionManager.FindAllToastCollectionsAsync()).Count;
@@ -132,7 +132,7 @@ await collectionManager.RemoveToastCollectionAsync(MainPage.toastCollectionId);
 ```
 
 #### <a name="update-a-collection"></a>Aktualisieren einer Sammlung
-Sie können Sammlungen aktualisieren, indem Sie eine neue Sammlung mit derselben ID erstellen und die neue Instanz der Sammlung speichern.
+Sie können Sammlungen aktualisieren, indem Sie eine neue Sammlung mit der gleichen ID erstellen und die neue Instanz der Sammlung speichern.
 ``` csharp
 string displayName = "Updated Display Name"; 
 string launchArg = "UpdatedLaunchArgs"; 
@@ -147,12 +147,12 @@ ToastCollection updatedToastCollection = new ToastCollection(MainPage.toastColle
 // Calls the platform to update the collection by saving the new instance
 await collectionManager.SaveToastCollectionAsync(updatedToastCollection);                               
 ```
-## <a name="managing-toasts-within-a-collection"></a>Verwalten von Popups in einer Sammlung
-#### <a name="group-and-tag-properties"></a>Gruppierungs- und Tag-Eigenschaften
-Die Gruppierungs- und Tag-Eigenschaften identifizieren zusammen eine Benachrichtigung in einer Sammlung eindeutig.  Gruppe (und Tag) dienen als zusammengesetzter primärer Schlüssel (mehr als eine ID) zur Identifizierung der Benachrichtigung. Wenn Sie z. B. eine Benachrichtigung entfernen oder ersetzen möchten, müssen Sie angeben können, *welche Benachrichtigung* entfernt/ersetzt werden soll. Dies erreichen Sie durch Angabe von Tag und Gruppe. Ein Beispiel ist eine Messaging-App.  Der Entwickler könnte die Unterhaltungs-ID als Gruppe und die Nachrichten-ID als Tag verwenden.
+## <a name="managing-toasts-within-a-collection"></a>Verwalten von Einfassungen innerhalb einer Sammlung
+#### <a name="group-and-tag-properties"></a>Gruppen-und Tageigenschaften
+Die Gruppen-und Tageigenschaften identifizieren eine Benachrichtigung innerhalb einer Sammlung eindeutig.  Die Gruppe (und das Tag) dient als zusammengesetzter Primärschlüssel (mehr als einen Bezeichner) zum Identifizieren der Benachrichtigung. Wenn Sie z. b. eine Benachrichtigung entfernen oder ersetzen möchten, müssen Sie in der Lage sein, die *Benachrichtigung* anzugeben, die Sie entfernen/ersetzen möchten; Dies erreichen Sie, indem Sie das Tag und die Gruppe angeben. Ein Beispiel hierfür ist eine Messaging-app.  Der Entwickler kann die Konversations-ID als Gruppe und die Nachrichten-ID als-Tag verwenden.
 
-#### <a name="remove-a-toast-from-a-collection"></a>Entfernen eines Popups aus einer Sammlung
-Sie können einzelne Popups mithilfe der Tag- und Gruppen-IDs entfernen oder alle Popups in einer Sammlung löschen.
+#### <a name="remove-a-toast-from-a-collection"></a>Entfernen eines Toast aus einer Sammlung
+Sie können einzelne-Auflistungen mithilfe der Tag-und Gruppen-IDs entfernen oder alle-Auflistungen in einer Sammlung löschen.
 ``` csharp
 // Get the history
 var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
@@ -161,7 +161,7 @@ var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryFo
 collectionHistory.Remove(tag, group); 
 ```
 
-#### <a name="clear-all-toasts-within-a-collection"></a>Löschen aller Popups in einer Sammlung
+#### <a name="clear-all-toasts-within-a-collection"></a>Alle Auflistungen innerhalb einer Sammlung löschen
 ``` csharp
 // Get the history
 var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(MainPage.toastCollectionId);
@@ -171,23 +171,23 @@ collectionHistory.Clear();
 ```
 
 
-## <a name="collections-in-notifications-visualizer"></a>Sammlungen im Notifications Visualizer
-Sie können beim Entwerfen Ihrer Sammlungen das Tool [Notifications Visualizer](notifications-visualizer.md) verwenden. Führen Sie die unten beschriebenen Schritte aus.
+## <a name="collections-in-notifications-visualizer"></a>Sammlungen in der Benachrichtigungs Schnellansicht
+Sie können das [Benachrichtigungs](notifications-visualizer.md) schnell Ansichts Tool zum Entwerfen von Sammlungen verwenden. Führen Sie diese Schritte aus:
 
-* Klicken Sie in der unteren rechten Ecke auf das Zahnradsymbol. 
-* Wählen Sie „Popupsammlungen“ aus.
-* Über der Vorschau des Popups wird das Dropdownmenü „Popupsammlungen“ angezeigt. Wählen Sie die Option zum Verwalten von Sammlungen aus.
-* Klicken Sie auf „Sammlung hinzufügen“, geben Sie die Details zur Sammlung an, und speichern Sie.
-* Sie können weitere Sammlungen hinzufügen oder die Option zum Verwalten von Sammlungen deaktivieren, um zum Hauptbildschirm zurückzukehren.
-* Wählen Sie im Dropdownmenü „Popupsammlung“ die Sammlung aus, der Sie das Popup hinzufügen möchten.
-* Wenn das Popup ausgelöst wird, wird es der entsprechenden Sammlung im Info-Center hinzugefügt.
+* Klicken Sie in der unteren rechten Ecke auf das Zahnrad Symbol. 
+* Wählen Sie "Popup Sammlungen" aus.
+* Oberhalb der Vorschau des Popup befindet sich das Dropdown Menü "Popup Sammlung". Wählen Sie Sammlungen verwalten aus.
+* Klicken Sie auf "Sammlung hinzufügen", geben Sie die Details für die Sammlung ein, und speichern Sie Sie.
+* Sie können weitere Sammlungen hinzufügen oder auf aus dem Feld Sammlungen verwalten klicken, um zum Hauptbildschirm zurückzukehren.
+* Wählen Sie im Dropdown Menü "Popup Sammlung" die Sammlung aus, der Sie den Popup hinzufügen möchten.
+* Wenn Sie den Popup auslösen, wird er der entsprechenden Sammlung im Aktions Center hinzugefügt.
 
 
 ## <a name="other-details"></a>Weitere Details
-Die Popupsammlungen, die Sie erstellen, werden auch in den Benachrichtigungseinstellungen des Benutzers angezeigt.  Benutzer können die Einstellungen für jede einzelne Sammlung umschalten, um diese Untergruppen zu aktivieren oder zu deaktivieren.  Wenn Benachrichtigungen auf der obersten Ebene für die App deaktiviert werden, werden auch alle Sammlungsbenachrichtigungen deaktiviert.  Jede Sammlung zeigt standardmäßig drei Benachrichtigungen im Info-Center an. Der Benutzer kann sie erweitern, um bis zu 20 Benachrichtigungen anzuzeigen.
+Die von Ihnen erstellten Popup Auflistungen werden auch in den Benachrichtigungseinstellungen des Benutzers berücksichtigt.  Benutzer können die Einstellungen für jede einzelne Sammlung umschalten, um diese Untergruppen ein-oder auszuschalten.  Wenn Benachrichtigungen auf der obersten Ebene der APP deaktiviert werden, werden alle Sammlungs Benachrichtigungen ebenfalls ausgeschaltet.  Außerdem werden für jede Sammlung standardmäßig 3 Benachrichtigungen im Aktions Center angezeigt, und der Benutzer kann ihn erweitern, sodass bis zu 20 Benachrichtigungen angezeigt werden.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-* [Popup Inhalt](adaptive-interactive-toasts.md)
+* [Popupinhalt](adaptive-interactive-toasts.md)
 * [Popup Header](toast-headers.md)
 * [Benachrichtigungs Bibliothek auf GitHub (Teil des Windows Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

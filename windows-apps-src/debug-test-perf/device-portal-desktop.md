@@ -2,20 +2,23 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Geräteportal für Windows-Desktop
 description: Hier erfahren Sie, wie das Windows Device Portal Diagnose und Automatisierung auf dem Windows-Desktop öffnet.
-ms.date: 02/06/2019
+ms.date: 08/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: dc3ca2379ae7dd704d96e383cc02314ee9423fb7
+ms.sourcegitcommit: 508fb9e763aa5967beebf7bf5e77d7ad12baa566
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210186"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714497"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Geräteportal für Windows-Desktop
 
-Im Windows-Geräteportal kannst du Diagnoseinformationen anzeigen und über HTTP aus dem Browserfenster mit deinem Desktop interagieren. Sie haben im Device Portal folgende Möglichkeiten:
+Das Windows-Geräteportal ist ein Debugtool, mit dem Sie Diagnoseinformationen anzeigen und über HTTP von einem Webbrowser aus mit Ihrem Desktop-PC interagieren können. Informationen zum Debuggen anderer Geräte finden Sie unter [Übersicht über das Windows-Geräteportal](device-portal.md).
+
+
+Sie haben im Device Portal folgende Möglichkeiten:
 - Anzeigen und Bearbeiten einer Liste laufender Prozesse
 - Installieren, Löschen, Starten und Beenden von Apps
 - Ändern von WLAN-Profilen und Anzeigen der Signalstärke und der ipconfig
@@ -35,44 +38,59 @@ Ab Windows 10, Version 1607, sind einige der neueren Funktionen für den Desktop
 
 ### <a name="turn-on-device-portal"></a>Aktivieren des Geräteportals
 
-Du kannst das Geräteportal im Bereich **Für Entwickler** unter **Einstellungen** aktivieren. Wenn du es aktivierst, musst du auch einen entsprechenden Benutzernamen und ein Kennwort erstellen. Verwenden Sie nicht Ihr Microsoft-Konto oder andere Windows-Anmeldeinformationen. 
+Du kannst das Geräteportal im Bereich **Für Entwickler** unter **Einstellungen** aktivieren. Wenn du es aktivierst, musst du auch einen entsprechenden Benutzernamen und ein Kennwort erstellen. Verwenden Sie nicht Ihr Microsoft-Konto oder andere Windows-Anmeldeinformationen.
 
-![Geräteportalabschnitt der Einstellungen-App](images/device-portal/device-portal-desk-settings.png) 
+![Geräteportalabschnitt der Einstellungen-App](images/device-portal/device-portal-desk-settings.png)
 
-Sobald das Geräteportal aktiviert ist, werden unten im Abschnitt Links angezeigt. Beachte die Portnummer am Ende der aufgeführten URLs: Diese Nummer wird zufällig generiert, wenn das Geräteportal aktiviert ist, sollte aber zwischen den Neustarts des Desktops konsistent bleiben. 
+Sobald das Geräteportal aktiviert ist, werden unten im Abschnitt Links angezeigt. Beachte die Portnummer am Ende der aufgeführten URLs: Diese Nummer wird zufällig generiert, wenn das Geräteportal aktiviert ist, sollte aber zwischen den Neustarts des Desktops konsistent bleiben.
 
-Diese Links bieten zwei Möglichkeiten, sich mit dem Geräteportal zu verbinden: über das lokale Netzwerk (einschließlich VPN) oder über den lokalen Host.
+Diese Links bieten zwei Möglichkeiten, sich mit dem Geräteportal zu verbinden: über das lokale Netzwerk (einschließlich VPN) oder über den lokalen Host. Sobald Sie eine Verbindung hergestellt haben, sollte es ungefähr so aussehen:
+
+![Geräteportal](images/device-portal/device-portal-example.png)
+
+
+### <a name="turn-off-device-portal"></a>Deaktivieren des Geräteportals
+
+Sie können das Geräteportal im Bereich **Für Entwickler** unter **Einstellungen** deaktivieren.
 
 ### <a name="connect-to-device-portal"></a>Verbinden mit dem Geräteportal
 
-Um eine Verbindung über einen lokalen Host herzustellen, öffne ein Browserfenster und gib die hier angezeigte Adresse für den von dir verwendeten Verbindungstyp ein.
+Um eine Verbindung über einen lokalen Host herzustellen, öffnen Sie ein Browserfenster und geben die hier angezeigte Adresse für den von Ihnen verwendeten Verbindungstyp ein.
 
 * Localhost: `http://127.0.0.1:<PORT>` oder `http://localhost:<PORT>`
 * Lokales Netzwerk: `https://<IP address of the desktop>:<PORT>`
 
 Für die Authentifizierung und sichere Kommunikation ist HTTPS erforderlich.
 
-Du kannst die Authentifizierung deaktivieren, wenn du das Geräteportal in einer geschützten Umgebung verwendest, z. B. in einem Testlabor, in dem du allen im lokalen Netzwerk vertraust, keine persönlichen Informationen auf dem Gerät gespeichert hast und in dem spezielle Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse deines Computers kennt, kann sich verbinden und ihn steuern.
+Sie können die Authentifizierungsoption deaktivieren, wenn Sie das Geräteportal in einer geschützten Umgebung verwenden, z. B. in einem Testlabor, in dem Sie allen Benutzern im lokalen Netzwerk vertrauen, keine persönlichen Informationen auf dem Gerät gespeichert haben und eindeutige Anforderungen bestehen. Dies ermöglicht eine unverschlüsselte Kommunikation, und jeder, der die IP-Adresse deines Computers kennt, kann sich verbinden und ihn steuern.
 
 ## <a name="device-portal-content-on-windows-desktop"></a>Geräteportal-Inhalte auf dem Windows-Desktop
 
-Das Geräteportal auf dem Windows-Desktop bietet die Standardseiten. Ausführliche Beschreibungen findest du unter [Übersicht über das Windows-Geräteportal](device-portal.md).
+Das Geräteportal unter Windows Desktop zeigt eine Sammlung von Seiten an, die in [Übersicht über das Windows-Geräteportal](device-portal.md) beschrieben wird.
 
 - App-Manager
+- Xbox Live
 - Datei-Explorer
-- Laufende Prozesse
+- Ausgeführte Prozesse
 - Leistung
-- Debugprotokolle
-- Ereignisablaufverfolgung für Windows (ETW)
+- Debuggen
+- ETW-Protokollierung (Event Tracing for Windows, Ereignisablaufverfolgung für Windows)
 - Leistungsüberwachung
 - Geräte-Manager
+- Bluetooth
 - Netzwerk
 - Absturzdaten
 - Features
 - Mixed Reality
 - Streaming Install-Debugger
-- Speicherort
+- Position
 - Entwurf
+
+## <a name="using-device-portal-for-windows-desktop-to-test-and-debug-msix-apps"></a>Verwenden des Geräteportals für Windows Desktop zum Testen und Debuggen von MSIX-Apps
+
+
+> [!VIDEO https://www.youtube.com/embed/PdgXeOMt4hk]
+
 
 ## <a name="more-device-portal-options"></a>Weitere Optionen für das Geräteportal
 
@@ -105,7 +123,7 @@ Unter dem gleichen regkey-Pfad kannst du auch die Authentifizierungsanforderung 
     - Führe eine eigenständige Version des Geräteportals mit einer bestimmten Konfiguration und sichtbaren Debugmeldungen aus. Dies ist besonders nützlich für die Erstellung eines [gepackten Plugins](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
     - Lies den [Artikel im MSDN Magazine](https://msdn.microsoft.com/magazine/mt826332.aspx) mit Details darüber, wie du es als „System” ausführen kannst, um dein gepacktes Plugin vollständig zu testen.
 
-## <a name="common-errors-and-issues"></a>Häufige Fehler und Probleme
+## <a name="troubleshooting"></a>Problembehandlung
 
 Im folgenden findest du einige häufige Fehler, die beim Einrichten des Geräteportals auftreten können.
 
@@ -129,7 +147,7 @@ Dieser Fehler wird möglicherweise angezeigt, wenn die Entwicklerpakete nicht in
 
 Dieser Fehler wird möglicherweise angezeigt, wenn du über eine getaktete Internetverbindung verfügst. Du kannst die Entwicklerpakete nicht über eine getaktete Verbindung herunterladen.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 * [Übersicht über das Windows-Geräteportal](device-portal.md)
-* [Referenz zur Kern-API des Geräteportals](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Referenz zu Kern-APIs des Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

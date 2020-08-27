@@ -1,6 +1,6 @@
 ---
-Description: Verwenden Sie das Steuerelement „Aktualisieren durch Ziehen“, um neue Inhalte in eine Liste abzurufen.
 title: Aktualisieren durch Ziehen
+description: Erfahren Sie, wie Sie ein Steuerelement für „Aktualisieren durch Ziehen“ implementieren können, mit dem Benutzer aktuelle Daten in einer Liste durch das Ausführen einer Ziehbewegung von oben nach unten auf der Liste abrufen können.
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 03/07/2018
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: faff0857679d50f6995640bbf9bf0222bb0d2e37
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1164113b4e4c6b64c6ee1e3d98e0bdc4c8b635ea
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081612"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942850"
 ---
 # <a name="pull-to-refresh"></a>Aktualisierung durch Ziehen
 
