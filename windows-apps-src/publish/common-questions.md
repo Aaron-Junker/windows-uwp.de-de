@@ -1,17 +1,17 @@
 ---
-Description: Häufige Fragen zu Anzeigenkampagnen
-title: Häufige Fragen zu Anzeigenkampagnen
+title: Hier finden Sie Antworten auf häufig gestellte Fragen zu Werbekampagnen für Ihre apps zu Themen wie Kosten, Abrechnung, Anpassung und Support.
+description: Häufige Fragen zu Anzeigenkampagnen
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.date: 02/18/2020
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eec32cab8da41b6069862484372ae8bc55ad1a0c
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 9294ea5928b5da9feb1c94e6b134dc45ccb1c053
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506824"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943010"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>Häufige Fragen zu Anzeigenkampagnen
 
@@ -24,7 +24,7 @@ Das entscheiden Sie selbst. Denken Sie jedoch an eines: Je mehr Sie ausgeben, de
 
 ### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>Wie kann ich das für meine Anzeigenkampagne maximal zulässige monatliche Budget erhöhen?
 
-Wenn Sie in einem Monat mehr als 10.000 USD für Ihre Anzeigenkampagnen ausgeben möchten, wenden Sie sich an [aiacare@microsoft.com](mailto:aiacare@microsoft.com). Wir werden Sie auf ein Premiumkonto aktualisieren, in dem Sie bis zu 50.000 USD pro Kampagne ausgeben können. Ein Premiumkonto stellt Ihnen darüber hinaus zusätzliche Funktionen bereit, wie die Möglichkeit, Start- und Enddaten für Kampagnen festzulegen und eine Ziel-URL für Ihre Kampagne anzugeben.
+Wenn Sie planen, mehr als $10.000 pro Monat für Ihre Werbekampagnen auszugeben, wenden Sie sich an [aiacare@microsoft.com](mailto:aiacare@microsoft.com) . Wir werden Sie auf ein Premiumkonto aktualisieren, in dem Sie bis zu 50.000 USD pro Kampagne ausgeben können. Ein Premiumkonto stellt Ihnen darüber hinaus zusätzliche Funktionen bereit, wie die Möglichkeit, Start- und Enddaten für Kampagnen festzulegen und eine Ziel-URL für Ihre Kampagne anzugeben.
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>Kann ich Anzeigen für eine meiner Apps in anderen Apps präsentieren?
 
@@ -40,11 +40,11 @@ Wenn Sie eine der Standardanzeigenvorlagen verwenden, können Sie die Größe, d
 
 ### <a name="where-will-my-ad-appear"></a>Wo erscheint meine Anzeige?
 
-Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemversion Ihrer App entsprechen. Diese Eigenschaften legen Sie fest, wenn Sie Ihre APP im Microsoft Store veröffentlichen. Für „universelle” Kampagnen werden Ihre Anzeigen auch in MSN.com, Outlook.com, Skype und anderen Microsoft-Premium-Eigenschaften angezeigt.
+Ihre Anzeige erscheint in Apps, die der Altersfreigabe und der Betriebssystemversion Ihrer App entsprechen. Diese Eigenschaften legen Sie fest, wenn Sie Ihre APP im Microsoft Store veröffentlichen. Für universelle Kampagnen werden Ihre Werbeeinblendungen auch innerhalb von MSN.com, Outlook.com, Skype und anderen Microsoft Premium-Eigenschaften angezeigt.
 
 Anzeigenkampagnen werden derzeit in folgenden Ländern und Regionen unterstützt:
 
-Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Guatemala, Haiti, Honduras, Hongkong (SAR), Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vereinigtes Königreich, Vietnam.
+Ägypten, Algerien, Argentinien, Australien, Bahamas, Bahrain, Barbados, Belgien, Belize, Bolivien, Brasilien, Chile, China, Dänemark, Dominikanische Republik, Ecuador, El Salvador, Finnland, Frankreich, Großbritannien, Guatemala, Haiti, Honduras, Hongkong, Indien, Indonesien, Irak, Irland, Italien, Jamaika, Jordan, Kanada, Katar, Kolumbien, Kuwait, Libanon, Malaysia, Marokko, Mexiko, Neuseeland, Nicaragua, Niederlande, Norwegen, Oman, Österreich, Panama, Paraguay, Peru, Philippinen, Puerto Rico, Saudi-Arabien, Schweden, Schweiz, Singapur, Spanien, Südafrika, Taiwan, Thailand, Trinidad und Tobago, Tunesien, Uruguay, Venezuela, Vereinigte Arabische Emirate, Vereinigte Staaten, Vietnam.
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>Welche Sprachen werden für Anzeigenkampagnen unterstützt?
 
@@ -62,5 +62,5 @@ Wenn Sie nicht warten möchten, bis die Abrechnung erstellt wird, können Sie Ih
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>Wie kann ich eine Kreditkarte löschen oder die Details einer Kreditkarte bearbeiten?
 
-Wechseln Sie zu [https://commerce.microsoft.com](https://commerce.microsoft.com), melden Sie sich mit Ihren Microsoft-Konto Anmelde Informationen an, und nehmen Sie die erforderlichen Änderungen vor.
+Navigieren Sie zu [https://commerce.microsoft.com](https://commerce.microsoft.com) , melden Sie sich mit Ihren Microsoft-Konto Anmelde Informationen an, und nehmen Sie die erforderlichen Änderungen vor.
 

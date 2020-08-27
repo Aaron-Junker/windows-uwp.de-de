@@ -1,17 +1,17 @@
 ---
-title: 'Referenz zur API für Bereitstellungsinformationen des Geräteportals '
-description: Erfahren Sie, wie Sie programmgesteuert auf die API für die Bereitstellung von Informationen zugreifen.
+title: API-Referenz zur Bereitstellung des Geräte Portals
+description: Erfahren Sie, wie Sie die Rest-API DeployInfo des Xbox-Geräte Portals verwenden, um Bereitstellungs Informationen für mindestens ein installiertes Paket anzufordern.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 7543b41c6ee1d9c07f4540012f84dccc10bb4d76
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5260125625ced6c258a683bcfb9b552e57d07f06
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57638005"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943000"
 ---
-# <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Fordert Bereitstellungsinformationen für ein oder mehrere installierte Pakete an.
+# <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>Fordert Bereitstellungs Informationen für mindestens ein installiertes Paket an.
 
 **Anforderung**
 
@@ -32,34 +32,34 @@ POST | /ext/app/deployinfo
 Ein JSON-Array im folgenden Format:
 
 * DeployInfo
-  * PackageFullName: Name des Pakets, zu dem wir Informationen anfordern
-  * OverlayFolder: Optionaler Pfad zu einem Overlay-Ordnerpfad, wenn dieses Feature verwendet wird
+  * Packagefullname: der Name des Pakets, zu dem Informationen angefordert werden.
+  * Overlayfolder: optionaler Pfad zu einem Überlagerungs Ordner Pfad, wenn dieses Feature verwendet wird.
 
 ###<a name="response"></a>Antwort
 
 **Antworttext**
 
-Ein JSON-Array in folgendem Format (einige Felder sind optional):
+Ein JSON-Array im folgenden Format (einige Felder sind optional):
 
 * DeployInfo
-  * PackageFullName: Name des Pakets, zu dem wir Informationen erhalten.
-  * DeployType: Der Bereitstellungstyp.
-  * DeployPathOrSpecifiers: Ein Bereitstellungspfad für lose Bereitstellungen oder installierte Bezeichner für Bereitstellungen in Paketen.
-  * DeployDrive: Das Laufwerk, für das das Paket für die entsprechenden Bereitstellungstypen bereitgestellt wird
-  * DeploySizeInBytes: Die Größe des Pakets in Byte für die entsprechenden Bereitstellungstypen
-  * OverlayFolder: Der Overlay-Ordner für Bereitstellungen, die dieses Feature unterstützen
+  * Packagefullname: Name des Pakets, über das wir Informationen erhalten.
+  * Deploytype: der Bereitstellungstyp.
+  * Deploypthorspecifieres: ein Bereitstellungs Pfad für lose bereit Stellungen oder installierte Spezifizierer für gepackte bereit Stellungen.
+  * Deploydrive: das Laufwerk, auf dem das Paket für anwendbare Bereitstellungs Typen bereitgestellt wird.
+  * Bereitstellungstyp: die Größe des Pakets in Bytes für anwendbare Bereitstellungs Typen.
+  * Overlayfolder: der über Lagerungs Ordner für bereit Stellungen, die diese Funktion unterstützen.
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | Beschreibung
+HTTP-Statuscode      | BESCHREIBUNG
 :------     | :-----
-200 | Möglich
+200 | Erfolg
 4XX | Fehlercodes
 5XX | Fehlercodes
 <br />
 
-**Gerätefamilien verfügbar**
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox

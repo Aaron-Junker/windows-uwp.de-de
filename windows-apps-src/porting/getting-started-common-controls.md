@@ -1,17 +1,17 @@
 ---
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: Erste Schritte mit allgemeinen Steuerelementen
 title: Erste Schritte mit allgemeinen Steuerelementen
+description: Zeigen Sie eine Liste mit Links zu Themen über allgemeine universelle Windows-Plattform (UWP)-Steuerelemente und ihre entsprechenden IOS-Steuerelemente an.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 979dabe193fc1ab6ecaa8c31a70ca2364448986e
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 86debeae4a4d8d3e3fb1a4084a3cf1ebef10f9d6
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493285"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943070"
 ---
 # <a name="getting-started-common-controls"></a>Erste Schritte: Allgemeine Steuerelemente
 
@@ -57,7 +57,7 @@ Unter [Steuerelementliste](https://docs.microsoft.com/windows/uwp/design/control
 
 [Einstieg: Navigation](getting-started-navigation.md)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Build 2014: Was ist mit XAML-Benutzeroberflächen und -Steuerelementen?](https://channel9.msdn.com/Events/Build/2014/2-516)
 * [Build 2014: Entwickeln von Apps mit dem gemeinsamen XAML-Benutzeroberflächenframework](https://channel9.msdn.com/Events/Build/2014/2-507)

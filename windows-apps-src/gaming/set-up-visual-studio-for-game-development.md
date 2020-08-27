@@ -1,17 +1,17 @@
 ---
 title: Visual Studio-Tools für die Spieleprogrammierung
-description: Sie erhalten eine Übersicht über spezielle DirectX-Tools, die unter Visual Studio verfügbar sind.
+description: Erfahren Sie mehr über die Tools für die DirectX-Spielprogrammierung, die in Visual Studio verfügbar sind, einschließlich der Bildbearbeitung, des Modell-Editors und des Shader-Designers.
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Visual Studio, Tools, DirectX
+keywords: Windows 10, UWP, Games, Visual Studio, Tools, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: f4ff471ae4c45761a1c1dad5819e97c8245746a1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c97c24eca55cf43559b9f518eaf2fbc4656aa374
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368137"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942809"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Visual Studio-Tools für die Spieleprogrammierung
 
@@ -19,7 +19,7 @@ ms.locfileid: "66368137"
 
 **Zusammenfassung**
 
--   [Erstellen Sie ein DirectX-Spiele-Projekt aus einer Vorlage](user-interface.md)
+-   [Erstellen eines DirectX-Spieleprojekts aus einer Vorlage](user-interface.md)
 -   Visual Studio-Tools für die Programmierung von DirectX-Spielen
 
 
@@ -27,25 +27,25 @@ Wenn Sie Visual Studio Ultimate zum Entwickeln von DirectX-Apps verwenden, könn
 
 Dieses Thema enthält eine Übersicht über diese Grafiktools.
 
-## <a name="image-editor"></a>Grafik-Editor
+## <a name="image-editor"></a>Bildbearbeitung
 
 
 Nutzen Sie den Grafik-Editor zum Arbeiten mit den Arten von umfassenden Textur- und Bildformaten, die von DirectX verwendet werden. Der Grafik-Editor unterstützt die folgenden Formate:
 
--   PNG
--   JPG, JPEG, JPE, JFIF
--   DDS
--   GIF
+-   .png
+-   .jpg, .jpeg, .jpe, .jfif
+-   .dds
+-   .gif
 -   BMP
 -   DIB
--   TIF, TIFF
--   TGA
+-   .tif, .tiff
+-   .tga
 
 Erstellen Sie [Buildanpassungsdateien](#build-customizations-for-3d-assets), um diese Formate zur Buildzeit in DDS-Dateien zu konvertieren.
 
 Weitere Informationen finden Sie unter [Arbeiten mit Texturen und Bildern](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
 
-> **Beachten Sie**  der Bild-Editor dient kein Ersatz für eine vollständige Funktion Image app bearbeiten, jedoch ist für viele einfach anzeigen und Bearbeiten von Szenarien geeignet.
+> **Hinweis**    Der Bild-Editor ist nicht als Ersatz für eine vollständige App zum Bearbeiten von Features gedacht, eignet sich jedoch für viele einfache Anzeige-und Bearbeitungs Szenarien.
 
  
 
@@ -64,7 +64,7 @@ Dies ist ein Screenshot eines Modells im Editor, auf das Beleuchtungsfunktionen 
 
 Weitere Informationen finden Sie unter [Arbeiten mit 3D-Modellen](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015).
 
-> **Beachten Sie**  der Modell-Editor dient kein Ersatz für eine vollständige Funktionsmodell app bearbeiten, aber für viele einfach anzeigen und Bearbeiten von Szenarien geeignet ist.
+> **Hinweis**    Der Modell-Editor ist nicht als Ersatz für eine vollständige App zum Bearbeiten von Features gedacht, eignet sich jedoch für viele einfache Anzeige-und Bearbeitungs Szenarien.
 
  
 
@@ -114,9 +114,9 @@ Weitere Informationen finden Sie unter [Arbeiten mit Shadern](https://docs.micro
 ## <a name="build-customizations-for-3d-assets"></a>Buildanpassungen für 3D-Objekte
 
 
-Sie können dem Projekt Buildanpassungen hinzufügen, sodass Ressourcen von Visual Studio in nutzbare Formate konvertiert werden. Danach können Sie die Objekte in die App laden und verwenden, indem Sie DirectX-Ressourcen wie in jeder anderen DirectX-App auch erstellen und füllen.
+Sie können dem Projekt Buildanpassungen hinzufügen, sodass Ressourcen von Visual Studio in nutzbare Formate konvertiert werden. Danach können Sie die Ressourcen in die App laden und sie verwenden. Dazu erstellen und füllen Sie DirectX-Ressourcen so, wie Sie es in jeder anderen DirectX-App tun würden.
 
-Zum Hinzufügen von Buildanpassungen klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und wählen die Option **Buildanpassungen...** . Sie können dem Projekt die folgenden Arten von Buildanpassungen hinzufügen:
+Um eine Buildanpassung hinzuzufügen, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie buildanpassungen **...** aus. Sie können dem Projekt die folgenden Typen von buildananpassungen hinzufügen.
 
 -   Von der Bildinhaltpipeline werden Bilddateien als Eingaben verwendet und DirectDraw Surface-Dateien (.dds) ausgegeben.
 -   Von der Gitterinhaltpipeline werden Gitterdateien (z. B. FBX) als Eingabe verwendet und CMO-Gitterdateien ausgegeben.

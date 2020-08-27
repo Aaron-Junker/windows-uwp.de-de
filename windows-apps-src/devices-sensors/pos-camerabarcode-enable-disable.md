@@ -1,30 +1,30 @@
 ---
-title: Kamera-Strichcodescannerkonfiguration
-description: Aktivieren oder Deaktivieren des Kamera-Strichcodescanners
+title: Kamera-Barcode Scanner-Konfiguration
+description: Erfahren Sie, wie Sie einen System Registrierungsschlüssel in Windows 10 festlegen, um den Software Decoder für den Kamera Barcode Scanner zu aktivieren oder zu deaktivieren.
 ms.date: 04/08/2019
 ms.topic: article
-keywords: Windows 10, UWP, Point Of Service, POS
+keywords: Windows 10, UWP, Point of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 8394f79e9581101d6def0f1568cb000ffdee5987
-ms.sourcegitcommit: 0dec04de501a3db6b22dfd4a320fc09b5c4a21b5
+ms.openlocfilehash: fefe15dd36cbc08fcae3b5bc0199eafad400cf1f
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243314"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943060"
 ---
-# <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>Enthält Informationen zum aktivieren oder deaktivieren der Standard-Software-Decoder, der mit im Lieferumfang von Windows enthalten ist
+# <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>Aktivieren oder Deaktivieren des im Lieferumfang von Windows enthaltenen Software Decoders
 
-In Windows 10, Version 1803, ist der Software-Decoder installiert und standardmäßig aktiviert.  Sie können den im Lieferumfang von Windows enthaltenen Software-Decoder deaktivieren, wenn Sie den Kamera-Strichcodescanner nicht wünschen oder einen Decoder von einem Drittanbieter haben, der mit Windows.Devices.PointOfService.BarcodeScanner-APIs verwendet werden kann und nicht beide verwenden möchten.
+In Windows 10, Version 1803, ist der Software Decoder standardmäßig installiert und aktiviert.  Sie können den Software Decoder deaktivieren, der im Lieferumfang von Windows enthalten ist, wenn Sie den Kamera Barcode Scanner nicht verwenden möchten, oder wenn Sie einen Drittanbieter Decoder erworben haben, der mit Windows. Devices. poindefservice. Barcodescanner-APIs arbeitet und nicht beides verwenden soll.
 
-## <a name="enable-or-disable-using-the-system-registry"></a>Aktivieren Sie oder deaktivieren Sie die Verwendung der Registrierung
+## <a name="enable-or-disable-using-the-system-registry"></a>Aktivieren oder deaktivieren mithilfe der Systemregistrierung
 
-Der Softwaredecoder, der im Lieferumfang von Windows enthalten ist, kann über die Registrierung durch Hinzufügen des Registrierungsschlüssels *InboxDecoder* unter *HKLM\Software\ Microsoft \PointOfService\ BarcodeScanner* aktiviert oder deaktiviert werden, indem Sie den Wert *Aktivieren* wie folgt festlegen.
+Der Software Decoder, der im Lieferumfang von Windows enthalten ist, kann über die Systemregistrierung aktiviert oder deaktiviert werden, indem Sie den Registrierungsschlüssel " *inboxdecoder* " unter *hklm\software\microsoft\pointos\barcodescanner* hinzufügen und den Wert *enable* wie unten beschrieben festlegen.
 
-| Wertname  | Werttyp | Wert | Status |
+| Wertname  | Werttyp | value | Status |
 | ----------- | --------- | -------|--------|
-| Aktivieren      | DWORD     | 1 (Standard)<br/>0 |  Enthält Informationen zum aktivieren des Standard-Software-Decoders, der im Lieferumfang von Windows enthalten ist <br/> Enthält Informationen zum deaktivieren des Standard-Software-Decoders, der im Lieferumfang von Windows enthalten ist |
+| Aktivieren      | DWORD     | 1 (Standard)<br/>0 |  Aktiviert den Software Decoder, der mit Windows ausgeliefert wird. <br/> Deaktiviert den Software Decoder, der im Lieferumfang von Windows enthalten ist. |
 
-Hier ist eine Beispiel-Registrierungsdatei, die Sie zum **deaktivieren** des Softwaredecoders verwenden können, der im Lieferumfang von Windows enthalten ist:
+Im folgenden finden Sie ein Beispiel für eine Registrierungsdatei, mit der Sie den im Lieferumfang von Windows enthaltenen Software Decoder **Deaktivieren** können:
 
 ```text
 Windows Registry Editor Version 5.00
@@ -33,7 +33,7 @@ Windows Registry Editor Version 5.00
 "Enable"=dword:0000000
 ```  
 
-Verwenden Sie die Beispiel-Registrierungsdatei zum **aktivieren** des Softwaredecoders, der im Lieferumfang von Windows enthalten ist:
+Verwenden Sie diese Beispiel Registrierungsdatei, um den im Lieferumfang von Windows enthaltenen Software Decoder zu **aktivieren** :
 
 ```text
 Windows Registry Editor Version 5.00
@@ -43,13 +43,13 @@ Windows Registry Editor Version 5.00
 ```  
 
 > [!Warning]
-> Wird die Registrierung falsch angepasst, können schwerwiegende Probleme auftreten.  Für den zusätzlichen Schutz, sichern Sie die Registrierung, bevor Sie diese ändern.  Sie können dann die Registrierung wiederherstellen, falls ein Problem auftritt.  Weitere Informationen zur Sicherung und zum Wiederherstellen der Registrierung erhalten Sie in der nachstehende Artikelnummer des Microsoft Knowledge Base-Artikels: <br/><br/> [322756](https://support.microsoft.com/help/322756/how-to-back-up-and-restore-the-registry-in-windows) Sichern und Wiederherstellen der Registrierung in Windows.
+> Wenn Ihnen beim Bearbeiten der Registrierung ein Fehler unterläuft, kann dies zu schwerwiegenden Problemen führen.  Sichern Sie die Registrierung zum zusätzlichen Schutz, bevor Sie sie ändern.  Sie können dann die Registrierung wiederherstellen, falls ein Problem auftritt.  Weitere Informationen zum Sichern und Wiederherstellen der Registrierung erhalten Sie, indem Sie auf die folgende Artikelnummer klicken, um den Artikel in der Microsoft Knowledge Base anzuzeigen: <br/><br/> [322756](https://support.microsoft.com/help/322756/how-to-back-up-and-restore-the-registry-in-windows) sichern und Wiederherstellen der Registrierung in Windows.
 
 > [!NOTE]
-> Der in Windows 10 integrierte Softwaredecoder stammt von [**Digimarc Corporation**](https://www.digimarc.com/).
+> Der in Windows 10 integrierte Software Decoder wird von der  [**Digimarc Corporation**](https://www.digimarc.com/)bereitgestellt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-### <a name="samples"></a>Proben
+### <a name="samples"></a>Beispiele
 
 - [Beispiel für Barcode Scanner](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

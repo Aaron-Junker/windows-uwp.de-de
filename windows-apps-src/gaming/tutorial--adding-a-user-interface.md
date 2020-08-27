@@ -1,17 +1,17 @@
 ---
 title: Hinzufügen einer Benutzeroberfläche
-description: Erfahren Sie, wie Sie einem DirectX UWP-Spiel eine Überlagerung der 2D-Benutzeroberfläche hinzufügen.
+description: Erfahren Sie, wie Sie mithilfe von Direct2D-APIs dem DirectX UWP-Spiel eine Überlagerung der 2D-Benutzeroberfläche mit den Menüs "Heads up" und "Game State" hinzufügen.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, User Interface, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: b6b59bd4f42d31e1f29cc1af298199b42cce6781
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: cbe67a50cd51f17aa628ff2e02955fd90781392f
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409539"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942820"
 ---
 # <a name="add-a-user-interface"></a>Hinzufügen einer Benutzeroberfläche
 
@@ -240,9 +240,9 @@ Das Overlay wird mithilfe der [**gameinfooverlay**](https://github.com/Microsoft
 
 Das Overlay ist in zwei Abschnitte unterteilt: **Status** und **Aktion**. Der **statussecton** ist weiter unterteilt in **Titel** und **Text** Rechtecke. Der **Aktions** Abschnitt hat nur ein Rechteck. Jedes Rechteck hat einen anderen Zweck.
 
--   `titleRectangle`enthält den Titeltext.
--   `bodyRectangle`enthält den Textkörper.
--   `actionRectangle`enthält den Text, der den Player anweist, eine bestimmte Aktion auszuführen.
+-   `titleRectangle` enthält den Titeltext.
+-   `bodyRectangle` enthält den Textkörper.
+-   `actionRectangle` enthält den Text, der den Player anweist, eine bestimmte Aktion auszuführen.
 
 Das Spiel hat sechs Zustände, die festgelegt werden können. Der Zustand des Spiels, das mithilfe des **Status** Teils der Überlagerung übermittelt wird. Die **Status** Rechtecke werden mithilfe einer Reihe von Methoden aktualisiert, die den folgenden Zuständen entsprechen.
 
@@ -317,7 +317,7 @@ Bei der [**gameinfooverlay:: createwindowssizedependentresources**](https://gith
     ```
 
 - Eine Bitmap wird `m_levelBitmap` mit dem Namen erstellt, wobei der aktuelle dpi-Wert mithilfe von " **kreatebitmap**" berücksichtigt wird.
-- `m_levelBitmap`wird als 2D-Renderziel mithilfe von [**ID2D1DeviceContext:: SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget)festgelegt.
+- `m_levelBitmap` wird als 2D-Renderziel mithilfe von [**ID2D1DeviceContext:: SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget)festgelegt.
 - Die Bitmap wird bei jedem Pixel, das mit [**ID2D1RenderTarget:: Clear**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-clear)schwarz gemacht wurde, gelöscht.
 - [**ID2D1RenderTarget:: beginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) wird aufgerufen, um das Zeichnen zu initiieren. 
 - **DrawText** wird aufgerufen, um den in `m_titleString` , und gespeicherten Text `m_bodyString` `m_actionString` im approperiate-Rechteck mithilfe des entsprechenden **ID2D1SolidColorBrush**zu zeichnen.

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: Verwenden des Gyrometers
-description: Hier erfahren Sie, wie Sie mithilfe des Gyrometers Bewegungsänderungen des Benutzers erkennen.
+description: Erfahren Sie, wie Sie die Gyrometer-API verwenden, um die Gyrometer-Eingabe in Ihre APP zu integrieren, die Änderungen an der Benutzer Bewegung erkennt, z. b. Winkelgeschwindigkeit und Bewegung
 ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 10d65a6b752c904d7145c3c5e09194dab7c8e0a5
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493125"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943090"
 ---
 # <a name="use-the-gyrometer"></a>Verwenden des Gyrometers
 
@@ -178,6 +178,6 @@ Die neuen Werte werden in die TextBlock-Elemente des XAML-Projektcodes geschrieb
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## <a name="related-topics"></a>Verwandte Themen
+ ## <a name="related-topics"></a>Zugehörige Themen
 
 * [Gyrometerbeispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Gyrometer%20sensor%20sample%20(Windows%208))

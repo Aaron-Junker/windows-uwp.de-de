@@ -1,6 +1,6 @@
 ---
-Description: Erfahren Sie, wie die fließende Bewegung Direktionalität und Schwerkraft verwendet.
 title: Direktionalität und Schwerkraft-Animation in Windows-apps
+description: Hier finden Sie Informationen zur Verwendung von Bewegungsrichtung, Navigationsrichtung und Schwerkraft in animierten Szenen durch Anzeigen von Beispielen.
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ddcfac5e36500a8fc6dc41c7c86037f5a1483203
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b6fbc639ac225e68a6ae1b008537cba6f72ead
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970645"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943110"
 ---
 # <a name="directionality-and-gravity"></a>Direktionalität und Schwerkraft
 
@@ -59,7 +59,7 @@ Wenn die Navigation bewirkt, dass ein Objekt von der vorherigen Szene zur neuen 
 
 Bei der rückwärts Navigation wird der Verschiebe Vorgang umgekehrt (B-zu-A). Wenn der Benutzer zurück navigiert, wird erwartet, dass er so bald wie möglich in den vorherigen Zustand zurückversetzt wird. Die zeitliche Steuerung ist schneller, direkter und verwendet die Verlangsamung der Verlangsamung.
 
-Hier werden diese primär Elemente angewendet, wenn das ausgewählte Element während der vorwärts-und rückwärts Navigation auf dem Bildschirm bleibt.
+Hier werden diese Prinzipien angewendet, wenn das ausgewählte Element während der vorwärts-und rückwärts Navigation auf dem Bildschirm bleibt.
 
 ![UI-Beispiel für kontinuierliche Bewegung](images/continuous3.gif)
 

@@ -1,18 +1,18 @@
 ---
-Description: Kunden gewinnen und Bewerben von Apps
-title: Kunden gewinnen und Bewerben von Apps
+title: Kunden gewinnen und ihre apps bewerben
+description: Erfahren Sie mehr über die Features in Partner Center wie Werbekampagnen, Aktionscodes und Verkaufspreise, die Ihnen helfen, Ihre apps zu bewerben und Kunden zu unterstützen.
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c5991e8101d0d9836c72e3ecb458a11e23e0364
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 2532683c7f5762f35640ef7e80180827404cde73
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057318"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88943030"
 ---
-# <a name="attract-customers-and-promote-your-apps"></a>Kunden gewinnen und Bewerben von Apps
+# <a name="attract-customers-and-promote-your-apps"></a>Kunden gewinnen und ihre apps bewerben
 
 Wenn sich Ihre APP im Microsoft Store befindet, ist es an der Zeit, Sie so viele Kunden wie möglich zu erhalten. [Partner Center](https://partner.microsoft.com/dashboard) bietet viele Features, mit denen Sie Ihre Produkte herauf Stufen und ihre Kundenbasis steigern können, einschließlich Werbekampagnen, Aktionscodes, Verkaufspreise und mehr.
 
@@ -65,7 +65,7 @@ Diese Kampagnen führen kostenlos Anzeigen in Apps aus, die von anderen Teilnehm
         ![Banneranzeigen und Banner-Interstitialwerbung](images/ads-ban-example.png)
     :::column-end:::
     :::column span="2":::
-**Banner und Banner mit Interstitial anzeigen**
+**Banneranzeigen und Banner-Interstitialwerbung**
 
 Banneranzeigen verwenden einen Teil des verfügbaren Platzes in der App. Banner-Interstitialwerbungen sind Vollbildanzeigen, die die vollständige Aufmerksamkeit der Benutzer erwecken.
 
@@ -78,9 +78,9 @@ Banneranzeigen verwenden einen Teil des verfügbaren Platzes in der App. Banner-
         ![Videoanzeigen](images/ads-video-example.png)
     :::column-end:::
     :::column span="2":::
-**Video anzeigen**
+**Videoanzeigen**
 
-Videoanzeigen sind Vollbildanzeigen, die Benutzern die Features Ihres Spiels auf eine visuell ansprechende Weise präsentieren. Videoanzeigen sind derzeit für Kampagnen mit einem hohen Budget verfügbar. Um weitere Informationen zu erhalten, senden Sie uns eine e-Mail an aiacare@microsoft.com.
+Videoanzeigen sind Vollbildanzeigen, die Benutzern die Features Ihres Spiels auf eine visuell ansprechende Weise präsentieren. Videoanzeigen sind derzeit für Kampagnen mit einem hohen Budget verfügbar. Um weitere Informationen zu erhalten, senden Sie eine e-Mail an aiacare@microsoft.com .
 
 [Weitere >](../monetize/interstitial-ads.md)
     :::column-end:::
@@ -115,15 +115,15 @@ Durch native Anzeigen können Sie jede einzelne Komponente Ihrer Anzeige für di
 
 ![Werbeanalyse](images/ads-promotion-analytics.png)
 
-[Werbekampagnen-Bericht](promote-your-app-report.md)
+[Werbekampagnenbericht](promote-your-app-report.md)
 
 [Bericht „Käufe“](acquisitions-report.md)
 
-[Abrufen von Analysedaten unter Verwendung unserer REST-API](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+[Analysedaten mithilfe unserer Rest-API](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
 
 ## <a name="other-ways-to-promote-your-app"></a>Weitere Möglichkeiten zum Bewerben Ihrer App
 
-[Werbecodes](generate-promotional-codes.md)
+[Aktionscodes](generate-promotional-codes.md)
 
 [Sonderpreise](put-apps-and-add-ons-on-sale.md)
 
@@ -133,6 +133,6 @@ Durch native Anzeigen können Sie jede einzelne Komponente Ihrer Anzeige für di
 
 [Microsoft Store Marketing Richtlinien für apps](app-marketing-guidelines.md)
 
-[Verknüpfung mit Ihrer APP](link-to-your-app.md)
+[Erstellen eines Links zu Ihrer App](link-to-your-app.md)
 
-[Vereinfachen der herauf Stufung Ihrer APP](make-your-app-easier-to-promote.md)
+[Einfacheres Bewerben Ihrer App](make-your-app-easier-to-promote.md)
