@@ -1,6 +1,6 @@
 ---
-Description: Verwenden Sie das Steuerelement "Parser", um der APP Tiefe und Bewegung hinzuzufügen.
 title: Verwenden Sie Parallax, um der App Tiefe und Bewegung hinzuzufügen.
+description: Erfahren Sie, wie Sie mit dem Steuerelement "Parser" in einer UWP-APP einen visuellen Effekt erstellen, bei dem Elemente, die näher am Viewer liegen, schneller als Elemente im Hintergrund verschoben werden.
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970495"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043572"
 ---
 # <a name="parallax"></a>Parallax
 
@@ -45,7 +45,7 @@ ms.locfileid: "82970495"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>"Parser" und "flüssiges Design System"
 
- Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. "Parser" ist eine fließende Entwurfs System Komponente, die Ihre APP um Bewegung, Tiefe und Skalierung erweitert. Weitere Informationen finden Sie in der [Übersicht über das fließende Design](/windows/apps/fluent-design-system).
+ Mit dem Fluent Design-System können Sie moderne, klare Benutzeroberflächen erstellen, die Licht, Tiefe, Bewegung, Material und Skalierung enthalten. "Parser" ist eine fließende Entwurfs System Komponente, die Ihre APP um Bewegung, Tiefe und Skalierung erweitert. Weitere Informationen finden Sie in der [Übersicht über Fluent Design](/windows/apps/fluent-design-system).
 
 ## <a name="how-it-works-in-a-user-interface"></a>Funktionsweise in einer Benutzeroberfläche
 
@@ -125,4 +125,4 @@ Eine umfassende Liste der Möglichkeiten zum Anpassen von "Parser" finden Sie in
 
 - [Parametanview-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design für UWP](/windows/apps/fluent-design-system)
-- [Wissenschaft im System: fließende Design und Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [Wissenschaft im System: Fluent Design und Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

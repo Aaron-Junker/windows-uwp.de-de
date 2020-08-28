@@ -1,24 +1,24 @@
 ---
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: Hier erfahren Sie, wie AdControl-Fehler in Ihrer App aufgefangen werden.
 title: Exemplarische Vorgehensweise zur Fehlerbehandlung in XAML/C#
+description: In dieser exemplarischen Vorgehensweise erfahren Sie, wie Sie Fehler von einem adcontrol-Element in einer XAML/c#-App abfangen und behandeln.
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP, Anzeige, Werbung, Fehlerbehandlung, XAML, C#
+keywords: 'Windows 10, UWP, Werbung, Werbung, Fehlerbehandlung, XAML, c #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c856322c4940e5bbb28cb17c6da7fa49d4c3465
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 4526f44c1a38af79886a7404eb932416a4414f77
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507124"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043502"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>Exemplarische Vorgehensweise zur Fehlerbehandlung in XAML/C#
 
 >[!WARNING]
 > Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Anzeigen-bezogene Fehler in Ihrer App erfasst werden können. In dieser exemplarischen Vorgehensweise wird ein [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) verwendet, um eine Banneranzeige anzuzeigen, die allgemeinen Konzepte gelten jedoch auch für Interstitialwerbung und native Anzeigen.
+In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie AD-bezogene Fehler in Ihrer APP erfassen. In dieser exemplarischen Vorgehensweise wird ein [adcontrol](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) -Element verwendet, um eine Banner-Werbeeinblendungen anzuzeigen, aber die allgemeinen Konzepte in dieser exemplarischen Vorgehensweise gelten auch für austauschbare
 
 In diesen Beispielen wird davon ausgegangen, dass Sie eine XAML/C#-App haben, die ein **AdControl** enthält. Schritt-für-Schritt-Anleitungen, die zeigen, wie ein **AdControl** zu Ihrer App hinzugefügt wird, finden Sie unter [AdControl in XAML und .NET](adcontrol-in-xaml-and--net.md). 
 
@@ -76,6 +76,6 @@ In diesen Beispielen wird davon ausgegangen, dass Sie eine XAML/C#-App haben, di
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Anzeigenbeispiele auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
+* [Anzeigenbeispiele bei GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

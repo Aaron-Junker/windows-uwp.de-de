@@ -1,26 +1,26 @@
 ---
-title: Geräteportal-SSH-PINs – API-Referenz
-description: Hier erfahren Sie, wie alle vertrauenswürdigen SSH-PINs programmgesteuert entfernt werden.
+title: Referenz zur SSH-Pins-API des Geräte Portals
+description: Erfahren Sie, wie Sie alle vertrauenswürdigen Secure Shell (SSH)-Pins Programm gesteuert mithilfe der/ext/App/sshpins Xbox Device Portal-Rest-API entfernen.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 2c7dc6fab021c11c98276ee53af161bea25601a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 307af4cdd4e998832f4a2fe7a8f874615fe10ad7
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663355"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043532"
 ---
-# <a name="ssh-pins-api-reference"></a>SSH-PINs – API-Referenz
-Sie können alle vertrauenswürdigen SSH-PINs in Ihrem Entwickler-Kit mit dieser REST-API entfernen.
+# <a name="ssh-pins-api-reference"></a>SSH-Pins-API-Referenz
+Mit dieser Rest-API können Sie alle vertrauenswürdigen SSH-Pins in Ihrem devkit entfernen.
 
-## <a name="remove-trusted-ssh-pins"></a>Entfernen von vertrauenswürdigen SSH-PINs
+## <a name="remove-trusted-ssh-pins"></a>Entfernen vertrauenswürdiger SSH-Pins
 
 **Anforderung**
 
 Methode      | Anforderungs-URI
 :------     | :-----
-DELETE | /ext/App/sshpins
+Delete | /ext/app/sshpins
 <br />
 **URI-Parameter**
 
@@ -38,18 +38,18 @@ DELETE | /ext/App/sshpins
 
 - Keine 
 
-**Statuscode:**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
 HTTP-Statuscode      | Beschreibung
 :------     | :-----
-204 | Die Anforderung zum Löschen der PINs war erfolgreich.
+204 | Die Anforderung zum Löschen der Pins war erfolgreich.
 4XX | Fehlercodes
 5XX | Fehlercodes
 
 <br />
-**Gerätefamilien verfügbar**
+**Verfügbare Gerätefamilien**
 
 * Windows Xbox
 

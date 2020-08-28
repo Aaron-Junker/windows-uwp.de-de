@@ -1,31 +1,31 @@
 ---
 title: Abrufen und Verstehen von Strichcode-Daten
-description: Informationen Sie zum Abrufen und Interpretieren der Barcodedaten, die Sie überprüfen.
+description: Erfahren Sie, wie Sie Daten von einem Barcode Scanner in einem barcodescannerreport-Objekt abrufen und dessen Format und Inhalt verstehen.
 ms.date: 08/29/2018
 ms.topic: article
-keywords: Windows 10, UWP, Point Of Service, POS
+keywords: Windows 10, UWP, Point of Service, POS
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ece246ffd369ee21c089598f07b2566424757f55
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5d2ab873774ce8b48252b82ce6cf7521165554d4
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605965"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043442"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>Abrufen und Verstehen von Strichcode-Daten
 
-Nachdem Sie den Barcodescanner eingerichtet haben, benötigen Sie natürlich eine Möglichkeit zum Verständnis der Daten, die Sie suchen. Beim Scannen eines Barcodes, die ["DataReceived"](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) Ereignis wird ausgelöst. Die [ClaimedBarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) sollte dieses Ereignis abonnieren. Die **"DataReceived"** Ereignis übergibt eine [BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) -Objekt, das Sie verwenden können, auf die Barcodedaten zugreifen.
+Nachdem Sie den Barcode Scanner eingerichtet haben, benötigen Sie natürlich eine Möglichkeit, die Daten zu verstehen, die Sie scannen. Wenn Sie einen Barcode Scannen, wird das [DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived) -Ereignis ausgelöst. Der [claimedbarcodescanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) sollte dieses Ereignis abonnieren. Das **DataReceived** -Ereignis übergibt ein [barcodescannerdatareceivedeventargs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) -Objekt, das Sie verwenden können, um auf die Barcode Daten zuzugreifen.
 
-## <a name="subscribe-to-the-datareceived-event"></a>Abonnieren des Ereignisses "DataReceived"
+## <a name="subscribe-to-the-datareceived-event"></a>DataReceived-Ereignis abonnieren
 
-Nachdem Sie haben eine **ClaimedBarcodeScanner**, Sie abonnieren das **"DataReceived"** Ereignis:
+Wenn Sie über ein **claimedbarcodescanner**verfügen, abonnieren Sie das **DataReceived** -Ereignis:
 
 ```cs
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-Der Ereignishandler übergeben die **ClaimedBarcodeScanner** und **BarcodeScannerDataReceivedEventArgs** Objekt. Sie können die Barcodedaten zugreifen, mithilfe dieses Objekts [Bericht](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) -Eigenschaft, die vom Typ [BarcodeScannerReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport).
+Dem Ereignishandler werden das **claimedbarcodescanner** -und das **barcodescannerdatareceivedeventargs** -Objekt übermittelt. Sie können über die [Berichts](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) Eigenschaft des-Objekts, die vom Typ " [barcodescannerreport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)" ist, auf die Barcode Daten zugreifen.
 
 ```cs
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -34,23 +34,23 @@ private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner send
 }
 ```
 
-## <a name="get-the-data"></a>Abrufen der Daten
+## <a name="get-the-data"></a>Abrufen von Daten
 
-Nachdem Sie haben die **BarcodeScannerReport**, zugreifen und die Barcodedaten analysiert werden können. **BarcodeScannerReport** verfügt über drei Eigenschaften:
+Sobald Sie über den **barcodescannerreport**verfügen, können Sie auf die Barcode Daten zugreifen und diese analysieren. **Barcodescannerreport** hat drei Eigenschaften:
 
-* [ScanData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata): Die vollständige, unformatierte Barcodedaten.
-* [ScanDataLabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): Der decodierte barcodeetiketts, der nicht den Header, Checksum und sonstige Informationen enthält.
-* [ScanDataType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): Der Typ des decodierten Barcode-Bezeichnung. Mögliche Werte werden definiert, der [BarcodeSymbologies](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) Klasse.
+* [Scandata](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandata): die vollständigen, Rohdaten des Barcodes.
+* [Scandatalabel](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): die decodierte Barcode Bezeichnung, die den Header, die Prüfsumme und andere sonstige Informationen nicht enthält.
+* [Scandatatype](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): der Typ der decodierten Barcode Bezeichnung. Mögliche Werte sind in der [barcodesymbologien](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) -Klasse definiert.
 
-Wenn Sie darauf zugreifen möchten **ScanDataLabel** oder **ScanDataType**, müssen Sie zunächst festlegen [IsDecodeDataEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) zu **"true"**.
+Wenn Sie entweder auf " **scandatalabel** " oder " **scandatatype**" zugreifen möchten, müssen Sie " [isdecodedataaktivierte](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) " zuerst auf " **true**" festlegen.
 
 ```cs
 claimedBarcodeScanner.IsDecodeDataEnabled = true;
 ```
 
-### <a name="get-the-scan-data-type"></a>Ruft den Typ der Überprüfung Daten
+### <a name="get-the-scan-data-type"></a>Abrufen des Scan Datentyps
 
-Abrufen des Typs der decodierte Barcode-Bezeichnung ist ganz einfach&mdash;rufen wir einfach [GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) auf **ScanDataType**.
+Das Abrufen des decodierten Barcode Bezeichnungs Typs ist recht trivial &mdash; . wir nennen einfach [GetName](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) für " **scandatatype**".
 
 ```cs
 private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
@@ -59,9 +59,9 @@ private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-### <a name="get-the-scan-data-label"></a>Die überprüfungsbezeichnung für die Daten zu erhalten
+### <a name="get-the-scan-data-label"></a>Abrufen der Bezeichnung für Scan Daten
 
-Um die decodierte barcodeetiketts zu erhalten, gibt es einige Dinge, denen Sie berücksichtigen müssen. Nur bestimmte Datentypen codierten Text enthalten, sodass Sie zuerst überprüfen sollten, wenn die Symbologie in eine Zeichenfolge konvertiert werden kann, und konvertieren dann den Puffer, die wir von erhalten **ScanDataLabel** auf UTF-8 codierte Zeichenfolge.
+Um die decodierte Barcode Bezeichnung zu erhalten, gibt es einige Dinge, die Sie beachten müssen. Nur bestimmte Datentypen enthalten codierten Text. Daher sollten Sie zunächst überprüfen, ob die Symbologie in eine Zeichenfolge konvertiert werden kann, und dann den Puffer, den wir von " **scandatalabel** " erhalten, in eine codierte UTF-8-Zeichenfolge konvertieren.
 
 ```cs
 private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
@@ -99,9 +99,9 @@ private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-### <a name="get-the-raw-scan-data"></a>Rufen Sie die Rohscan-Daten
+### <a name="get-the-raw-scan-data"></a>Abrufen der Rohdaten der Überprüfung
 
-Rufen Sie die vollständige unformatierten Daten aus den Barcode konvertieren wir einfach den Puffer, die wir von erhalten **ScanData** in eine Zeichenfolge.
+Um die vollständigen Rohdaten des Barcodes zu erhalten, konvertieren wir einfach den Puffer, den wir von " **scandata** " erhalten, in eine Zeichenfolge.
 
 ```cs
 private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
@@ -120,23 +120,23 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 }
 ```
 
-Diese Daten sind in der Regel im Format wie die Überprüfung übermittelt. Nachrichteninformationen Header- und nachspannsegmente werden entfernt, aber da sie enthalten keine nützlichen Informationen für eine Anwendung, und wahrscheinlich Scanner-spezifische.
+Diese Daten sind im Allgemeinen im Format, das vom Scanner bereitgestellt wird. Nachrichten Header-und nach Spann Informationen werden jedoch entfernt, da Sie keine nützlichen Informationen für eine Anwendung enthalten und wahrscheinlich Scanner-spezifisch sind.
 
-Allgemeine Headerinformationen ist ein Präfixzeichen (z. B. ein STX-Zeichen). Allgemeine nachspanninformationen ist ein Abschlusszeichen (z. B. ein ETX oder CR-Zeichen) und ein Block-Check-Zeichen, wenn eine vom Scanner generiert wird.
+Allgemeine Header Informationen sind ein Präfix Zeichen (z. b. ein STX-Zeichen). Allgemeine Nachspann Informationen sind ein Abschluss Zeichen (z. b. ein ETX-oder CR-Zeichen) und ein Block Häkchen, wenn eine vom Scanner generiert wird.
 
-Diese Eigenschaft sollte ein Symbologie Zeichen enthalten, wenn eine von der Überprüfung zurückgegeben wird (z. B. eine **ein** für UPC-A). Es sollte auch Kontrollkästchen Ziffern enthalten, wenn sie in der Bezeichnung vorhanden sind und von der Überprüfung zurückgegeben. (Beachten Sie, dass sowohl die Symbologie Zeichen als auch die Prüfziffern können möglicherweise nicht vorhanden ist, abhängig von der Konfiguration der Überprüfung. Die Überprüfung wird zurücksenden, wenn vorhanden, jedoch nicht generiert oder berechnen lassen, wenn sie nicht vorhanden sind.)
+Diese Eigenschaft sollte ein symbologiezeichen enthalten, wenn eine von der Überprüfung zurückgegeben wird (z. b **. ein-Objekt für UPC** -a). Sie sollte auch Prüfziffern enthalten, wenn Sie in der Bezeichnung vorhanden sind und von der Überprüfung zurückgegeben werden. (Beachten Sie, dass je nach Scannerkonfiguration sowohl symbologiezeichen als auch Prüfziffern vorhanden sein können. Der Scanner gibt Sie zurück, falls vorhanden, generiert oder berechnet Sie jedoch nicht, wenn Sie nicht vorhanden sind.)
 
-Einige Waren kann mit einem zusätzlichen Barcode gekennzeichnet werden. Dieser Barcode befindet sich rechts neben der wichtigsten Barcode in der Regel, und es besteht eine zusätzliche zwei oder fünf Zeichen von Informationen aus. Wenn die Überprüfung waren liest, die Haupt- und zusätzliche Barcodes enthält, die ergänzenden Zeichen werden die wichtigsten Zeichen angehängt und das Ergebnis wird als eine Bezeichnung an die Anwendung übermittelt. (Beachten Sie, dass eine Überprüfung möglicherweise eine Konfiguration unterstützt, die aktiviert oder deaktiviert das Lesen des zusätzlichen Codes.)
+Einige waren können mit einem ergänzenden Barcode gekennzeichnet werden. Dieser Barcode wird in der Regel rechts vom Haupt Barcode platziert und besteht aus zusätzlichen zwei oder fünf Zeichen. Wenn der Scanner waren liest, die sowohl die Haupt-als auch die ergänzenden Barcodes enthalten, werden die zusätzlichen Zeichen an die Haupt Zeichen angehängt, und das Ergebnis wird als eine Bezeichnung an die Anwendung übermittelt. (Beachten Sie, dass ein Scanner eine Konfiguration unterstützen kann, die das Lesen zusätzlicher Codes aktiviert oder deaktiviert.)
 
-Einige waren möglicherweise mit mehreren Beschriftungen versehen, bezeichnet gekennzeichnet *mit mehreren Symbolen Bezeichnungen* oder *Ebenen Bezeichnungen*. Diese Barcodes in der Regel vertikal angeordnet werden, und sein, die dasselbe oder ein anderes Symbologie. Wenn die Überprüfung waren, die mehrere Bezeichnungen enthält liest, wird jede Barcode an die Anwendung als eine separate Bezeichnung übermittelt. Dies ist aufgrund des aktuellen Mangels von Standardisierung dieser Barcode Typen erforderlich. Eine kann nicht auf allen Varianten, die basierend auf den einzelnen Barcode-Daten zu bestimmen. Aus diesem Grund muss die Anwendung zu bestimmen, wenn mehrere Bezeichnung Barcodes basierend auf den zurückgegebenen Daten gelesen wurde. (Beachten Sie, dass ein Scanner kann möglicherweise den Lesevorgang für mehrere Bezeichnungen nicht unterstützt.)
+Einige waren können mit mehreren Bezeichnungen gekennzeichnet werden, die manchmal auch als mehrfach *Symbol Bezeichnungen oder mehr* *stufige Bezeichnungen*bezeichnet werden. Diese Barcodes sind in der Regel vertikal angeordnet und können dieselbe oder eine andere Symbologie aufweisen. Wenn der Scanner waren, die mehrere Bezeichnungen enthalten, liest, wird jeder Barcode als separate Bezeichnung an die Anwendung übermittelt. Dies ist aufgrund der aktuellen fehlenden Standardisierung dieser Barcode Typen erforderlich. Eine kann nicht alle Variationen basierend auf den einzelnen Barcode Daten bestimmen. Aus diesem Grund muss die Anwendung bestimmen, ob ein Code mit mehreren Bezeichnungen auf der Grundlage der zurückgegebenen Daten gelesen wurde. (Beachten Sie, dass ein Scanner das Lesen mehrerer Bezeichnungen möglicherweise unterstützt.)
 
-Dieser Wert wird festgelegt, vor einem **"DataReceived"** -Ereignis ausgelöst wird, um die Anwendung.
+Dieser Wert wird festgelegt, bevor ein **DataReceived** -Ereignis für die Anwendung ausgelöst wird.
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 * [Barcodescanner](pos-barcodescanner.md)
-* [ClaimedBarcodeScanner-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
-* [BarcodeScannerDataReceivedEventArgs-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
-* [BarcodeScannerReport-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
-* [BarcodeSymbologies-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)
+* [Claimedbarcodescanner-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
+* [Barcodescannerdatareceivedeventargs-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
+* [Barcodescannerreport-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerreport)
+* [Barcodesymbologien-Klasse](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)

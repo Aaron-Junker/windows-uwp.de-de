@@ -1,23 +1,24 @@
 ---
-title: PointOfService-Geräteobjekte
-description: Hier erfahren Sie, wie PointOfService-Geräteobjekte erstellt werden.
+title: Punkt Dienst-Geräte Objekte
+description: Erfahren Sie, wie Sie ein pointfservice-Geräte Objekt erstellen und Informationen zum Lebenszyklus von Geräte Objekten im UWP-Anwendungsmodell (universelle Windows-Plattform) erhalten.
 ms.date: 06/19/2018
 ms.topic: article
-keywords: Windows 10, UWP, Point Of Service, POS
+keywords: Windows 10, UWP, Point of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: a2fa7e107d890a5be7c8d27af03289b839ec3c09
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 4c9a5008756831eed9819a3b323d167dcc4b2744
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209986"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043402"
 ---
-# <a name="pointofservice-device-objects"></a>PointOfService-Geräteobjekte
+# <a name="pointofservice-device-objects"></a>Punkt Dienst-Geräte Objekte
 
 ## <a name="creating-a-device-object"></a>Erstellen eines Geräteobjekts
-Nachdem Sie das PointOfService-Gerät, das Sie verwenden möchten, identifiziert haben, entweder über eine neue Aufzählung oder eine gespeicherte Geräte-ID, rufen Sie einfach [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) mit der [**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) auf, die Sie programmgesteuert ausgewählt haben oder die der Benutzer ausgewählt hat, um ein neues PointofService-Geräteobjekt zu erstellen.
 
-In diesem Beispiel wird versucht, ein neues BarcodeScanner-Objekt mit FromIdAsync über eine Geräte-ID zu erstellen. Kommt es beim Erstellen des Objekts zu einem Fehler, wird eine Debugmeldung ausgegeben.
+Nachdem Sie das zu verwendende pointfservice-Gerät durch eine neue Enumeration oder eine gespeicherte DeviceID identifiziert haben, rufen Sie einfach [**fromittlerasync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) mit der[**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) auf, die Sie Programm gesteuert ausgewählt haben, oder der Benutzer hat sich für die Erstellung eines neuen Point of Service-Geräte Objekts entschieden.
+
+In diesem Beispiel wird versucht, ein neues Barcodescanner-Objekt mit fromittel Async mithilfe einer DeviceID zu erstellen. Wenn beim Erstellen des Objekts ein Fehler aufgetreten ist, wird eine Debugmeldung geschrieben.
 
 ```Csharp
 
@@ -34,17 +35,18 @@ In diesem Beispiel wird versucht, ein neues BarcodeScanner-Objekt mit FromIdAsyn
     
 ```
 
-Wenn Sie ein Geräteobjekt haben, können Sie auf die Methoden, Eigenschaften und Ereignisse des Geräts zugreifen.  
+Sobald Sie über ein Geräte Objekt verfügen, können Sie auf die Methoden, Eigenschaften und Ereignisse des Geräts zugreifen.  
 
-## <a name="device-object-lifecycle"></a>Lebenszyklus des Geräteobjekts
-Vor Windows 8 hatten Apps einen einfachen Lebenszyklus. Win32- und .NET-Apps werden entweder ausgeführt oder nicht. Und PointOfService-Peripheriegeräte wurden für gewöhnlich für den gesamten App-Lebenszyklus in Anspruch genommen. Wenn ein Benutzer eine App minimiert oder verlässt, wird sie weiterhin ausgeführt. Dies war in Ordnung, bis tragbare Geräte und die effiziente Energienutzung immer wichtiger wurden.
+## <a name="device-object-lifecycle"></a>Lebenszyklus von Geräte Objekten
 
-In Windows 8 wurde mit UWP-Apps ein neues Anwendungsmodell eingeführt. Auf oberer Ebene wurde der neue Zustand „Angehalten“ eingeführt. Kurze Zeit, nachdem der Benutzer eine UWP-App minimiert oder zu einer anderen App wechselt, wird sie angehalten. Dies bedeutet Folgendes: die Threads der App werden angehalten, die App verbleibt im Arbeitsspeicher, es sei denn, das Betriebssystem muss Ressourcen zurückfordern, und alle Geräteobjekte, die PointOfService-Peripheriegeräte darstellen, werden automatisch geschlossen, damit andere Anwendungen auf die Peripheriegeräte zugreifen können. Wenn der Benutzer zur App zurückwechselt, kann diese schnell in einen ausgeführten Zustand wiederhergestellt werden, und auch die Verbindungen mit PointOfService-Peripheriegeräten werden wiederhergestellt, sofern sie zum Fortsetzen noch verfügbar sind.
+Vor Windows 8 hatten Apps einen einfachen Lebenszyklus. Win32-und .net-apps werden entweder ausgeführt oder werden nicht ausgeführt, und pointservice-Peripheriegeräte wurden in der Regel für den gesamten App-Lebenszyklus beansprucht. Wenn ein Benutzer eine App minimiert oder verlässt, wird sie weiterhin ausgeführt. Dies war in Ordnung, bis tragbare Geräte und die effiziente Energienutzung immer wichtiger wurden.
 
-Sie können erkennen, wenn ein Objekt aus irgendeinem Grund mit einem \<DeviceObject\>geschlossen wird. Der geschlossene Ereignishandler notieren Sie sich die Geräte-ID, um die Verbindung in Zukunft wiederherzustellen.   Alternativ möchten Sie dies ggf. mit einer Benachrichtigung zum Anhalten der App handhaben, um die Geräte-IDs zur Wiederherstellung der Geräteverbindungen bei Benachrichtigung zum Fortsetzen der App zu speichern.  Stellen Sie sicher, dass Sie nicht auf den Ereignis Handlern und den doppelten Aktionen für das Geräte Objekt auf \<DeviceObject-\>doppelklicken. Closed und App Suspend.
+Mit Windows 8 wurde ein neues Anwendungsmodell mit UWP-apps eingeführt. Auf oberer Ebene wurde der neue Zustand „Angehalten“ eingeführt. Eine UWP-APP wird kurz nach dem minimieren oder wechseln zu einer anderen APP angehalten. Dies bedeutet, dass die Threads der App beendet werden. die APP wird im Arbeitsspeicher belassen, es sei denn, das Betriebssystem muss Ressourcen freigeben, und alle Geräte Objekte, die pointarfservice-Peripheriegeräte darstellen, werden automatisch geschlossen, damit andere Anwendungen auf die Peripheriegeräte zugreifen können. Wenn der Benutzer zur APP zurück wechselt, kann er schnell in einen laufenden Zustand wieder hergestellt werden, und es kann sein, dass er nach dem Fortsetzen von pointfservice-Peripheriegeräten wieder hergestellt wird.
+
+Sie können erkennen, wenn ein Objekt aus irgendeinem Grund mit einem geschlossen wird \<DeviceObject\> . Der geschlossene Ereignishandler notieren Sie sich die Geräte-ID, um die Verbindung in Zukunft wiederherzustellen.   Alternativ dazu können Sie dies auch in einer APP unterbrechen, um die Geräte-IDs zum erneuten Einrichten der Geräte Verbindungen bei der Benachrichtigung über die APP-Wiederaufnahme zu speichern.  Stellen Sie sicher, dass Sie nicht auf den Ereignis Handlern und den doppelten Aktionen für das Geräte Objekt für beides doppelklicken \<DeviceObject\> . Closed und App Suspend.
 
 > [!TIP]
-> Weitere Informationen zum Anwendungslebenszyklus für die Universelle Windows-Plattform (UWP) in Windows 10 finden Sie in den folgenden Themen:
+> Weitere Informationen zum Lebenszyklus von Windows 10 universelle Windows-Plattform (UWP)-Anwendungen finden Sie in den folgenden Themen:
 > - [Lebenszyklus der Windows 10 universelle Windows-Plattform-app (UWP)](../launch-resume/app-lifecycle.md)
 > - [Behandeln der APP-Aussetzung](../launch-resume/suspend-an-app.md)
 > - [Behandeln der App-Fortsetzung](../launch-resume/resume-an-app.md)
