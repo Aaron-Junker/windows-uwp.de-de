@@ -1,55 +1,55 @@
 ---
-title: Pull-to-Refresh mit Source-Modifiern
-description: Erstellen Sie benutzerdefinierte Pull-to-Refresh-Steuerelemente mit SourceModifiern
+title: Pull-to-refresh mit quellmodifizierervorgängen
+description: Erfahren Sie, wie Sie mit der SourceModifier-Funktion eines interaktiontracker ein benutzerdefiniertes Pull-to-refresh-Steuerelement erstellen.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, animation
+keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e4eb90b4801d01ecb85c91b5e64ccc9155d199
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b20b4b22d1de2252864287b97bedc4a1fc176602
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318097"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053960"
 ---
-# <a name="pull-to-refresh-with-source-modifiers"></a>Pull-to-Refresh mit Source-Modifiern
+# <a name="pull-to-refresh-with-source-modifiers"></a>Pull-to-refresh mit quellmodifizierervorgängen
 
-In diesem Artikel gehen wir näher auf die Verwendung des SourceModifier-Features von InteractionTracker ein und demonstrieren dessen Verwendung, indem wir ein benutzerdefiniertes Pull-to-Refresh-Steuerelement erstellen.
+In diesem Artikel erfahren Sie, wie Sie das Feature "SourceModifier" eines interaktiontracker verwenden und dessen Verwendung veranschaulichen, indem Sie ein benutzerdefiniertes Pull-to-refresh-Steuerelement erstellen.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
+Wir gehen davon aus, dass Sie mit den Konzepten vertraut sind, die in den folgenden Artikeln erläutert werden:
 
-- [Eingabe-driven Animationen](input-driven-animations.md)
-- [Benutzerdefinierte Bearbeitung Erfahrungen mit InteractionTracker](interaction-tracker-manipulations.md)
-- [Beziehung basierend Animationen](relation-animations.md)
+- [Eingabegesteuerte Animationen](input-driven-animations.md)
+- [Benutzerdefinierte Manipulations Erfahrung mit interaktiontracker](interaction-tracker-manipulations.md)
+- [Beziehungs basierte Animationen](relation-animations.md)
 
-## <a name="what-is-a-sourcemodifier-and-why-are-they-useful"></a>Was sind SourceModifier und warum sind sie nützlich?
+## <a name="what-is-a-sourcemodifier-and-why-are-they-useful"></a>Was ist ein SourceModifier, und warum sind Sie nützlich?
 
-Wie [InertiaModifiers](inertia-modifiers.md) ermöglichen SourceModifiers eine feinere Kontrolle über die Bewegung eines InteractionTrackers. Im Gegensatz zu InertiaModifiers, die die Bewegung definieren, nachdem der InteractionTracker die Trägheit angewendet hat, definieren SourceModifiers die Bewegung, während sich der InteractionTracker noch im Zustand der Interaktion befindet. In diesen Fällen wünschen Sie sich ein anderes Erlebnis als das traditionelle "dem Finger folgen".
+Wie " [inertiamodifiers](inertia-modifiers.md)" erhalten Sie mit sourcemodifizierern eine präzisere Kontrolle über die Bewegung einer interaktiontracker. Aber im Gegensatz zu inertiamodifiers, die die Bewegung definieren, nachdem interaktiontracker in Trägheit gelangt ist, definieren sourcemodifizierer die Bewegung, während sich interaktiontracker noch im Interaktionszustand befindet. In diesen Fällen benötigen Sie eine andere Möglichkeit als die herkömmliche "Peitsche an den Finger".
 
-Ein klassisches Beispiel dafür ist das Pull-to-Refresh-Erlebnis: Wenn der Benutzer die Liste zieht, um den Inhalt und die Liste mit der Geschwindigkeit des Fingers zu aktualisieren und nach einer bestimmten Strecke stoppt, würde sich die Bewegung abrupt und mechanisch anfühlen. Ein natürlicheres Erlebnis wäre es, ein Gefühl des Widerstands zu erzeugen, während der Benutzer aktiv mit der Liste interagiert. Diese kleine Nuance trägt dazu bei, dass die Interaktion mit einer Liste dynamischer und ansprechender wird. Im Abschnitt „Beispiel“ gehen wir detaillierter darauf ein, wie man dies umsetzen kann.
+Ein klassisches Beispiel hierfür ist die Pull-to-refresh-Benutzeroberfläche. wenn der Benutzer die Liste durchläuft, um den Inhalt zu aktualisieren, und die Liste der Auflistungen mit der gleichen Geschwindigkeit wie der Finger. Eine natürlichere Erfahrung besteht darin, ein Gefühl für den Widerstand zu bringen, während der Benutzer aktiv mit der Liste interagiert. Diese kleine Nuance trägt dazu bei, dass die Interaktion mit einer Liste dynamischer und ansprechender wird. Im Beispiel Abschnitt wird ausführlicher erläutert, wie Sie dies erstellen.
 
-Es gibt 2 SourceModifier-Typen:
+Es gibt zwei Typen von quellmodifizierertypen:
 
-- DeltaPosition – Das Delta zwischen der aktuellen Frame-Position und der vorherigen Frame-Position des Fingers während der Schwenken-Interaktion per Touch. Mit diesem Source-Modifier können Sie die Delta-Position der Interaktion verändern, bevor Sie sie zur weiteren Verarbeitung senden. Dies ist ein Parameter vom Typ Vector3 und der Entwickler kann wählen, ob er die X-, Y- oder Z-Attribute der Position ändern will, bevor er sie an den InteractionTracker übergibt.
-- DeltaScale - Das Delta zwischen dem aktuellen Frame-Maßstab und dem vorherigen Frame-Maßstab, das während der Touch-Zoom-Interaktion angewendet wurde. Mit diesem Source-Modifier können Sie die Zoomstufe der Interaktion verändern. Dies ist ein Float-Attribut, das der Entwickler modifizieren kann, bevor er es an den InteractionTracker übergibt.
+- Deltaposition – ist das Delta zwischen der aktuellen Frame Position und der vorherigen Rahmen Position des Fingers während der Touch Pan-Interaktion. Dieser quellmodifizierer ermöglicht es Ihnen, die Delta Position der Interaktion vor dem Senden zur weiteren Verarbeitung zu ändern. Dabei handelt es sich um einen Vector3-Typparameter, und der Entwickler kann die X-oder Y-oder Z-Attribute der Position ändern, bevor er an die interaktiontracker übergeben wird.
+- Deltascale-ist das Delta zwischen der aktuellen Frame Skala und der vorherigen Frame Skala, die während der Interaktion mit dem Fingerabdruck angewendet wurde. Mit diesem quellmodifizierer können Sie den Zoom Grad der Interaktion ändern. Dabei handelt es sich um ein Attribut vom Typ float, das der Entwickler ändern kann, bevor es an den interaktiontracker übergeben wird.
 
-Wenn sich InteractionTracker im Zustand „Interacting“ befindet, wertet er jeden ihm zugeordneten Source-Modifier aus und stellt fest, ob einer von ihnen zutrifft. Das bedeutet, dass Sie mehrere Source-Modifier erstellen und einem InteractionTracker zuweisen können. Bei der Definition eines jeden müssen Sie jedoch Folgendes tun:
+Wenn sich interaktiontracker im Interaktionszustand befindet, wertet es jeden der zugewiesenen quellmodifier aus und bestimmt, ob eine dieser Elemente zutrifft. Dies bedeutet, dass Sie mehrere quellmodifiziererer erstellen und einer interaktionstracker zuweisen können. Wenn Sie die einzelnen definieren, müssen Sie die folgenden Schritte ausführen:
 
-1. Definieren Sie die Bedingung – ein Ausdruck, der die bedingte Anweisung definiert, bei der dieser spezifische Source-Modifier angewendet werden soll.
-1. Definieren Sie DeltaPosition/DeltaScale – Der Source-Modifier, der die DeltaPosition oder DeltaScale ändert, wenn die oben definierte Bedingung erfüllt ist.
+1. Definieren Sie die Bedingung – ein Ausdruck, der die bedingte Anweisung definiert, wenn dieser spezifische quellmodifizierer angewendet werden soll.
+1. Definieren Sie die Delta Position/Delta Position/Delta Position – den quellmodifiziererausdruck, der die Delta Position oder Delta Position ändert, wenn die oben definierte Bedingung erfüllt ist.
 
 ## <a name="example"></a>Beispiel
 
-Sehen wir uns nun an, wie Sie Source-Modifier verwenden können, um ein benutzerdefiniertes Pull-to-Refresh-Erlebnis mit einem bestehenden XAML ListView-Steuerelement zu erstellen. Wir werden ein Canvas als „Refresh-Panel“ verwenden, das auf einem XAML ListView gestapelt wird.
+Sehen wir uns nun an, wie Sie quellmodifizierers verwenden können, um eine benutzerdefinierte Pull-to-Refresh-Funktion mit einem vorhandenen XAML-ListView-Steuerelement zu erstellen. Wir verwenden eine Canvas als "Aktualisierungs Panel", die auf einer XAML-ListView gestapelt wird, um diese Oberfläche zu erstellen.
 
-Für die Endbenutzererfahrung möchten wir den Effekt des „Widerstandes“ erzeugen, da der Benutzer die Liste aktiv (mit Berührung) schwenkt und das Schwenken stoppt, nachdem die Position einen bestimmten Punkt überschritten hat.
+Für den Endbenutzer ist es sinnvoll, die Auswirkung von "Widerstand" zu erstellen, da der Benutzer die Liste (mit Fingerabdruck) aktiv durchläuft und die schwenken beendet, nachdem die Position einen bestimmten Punkt überschreitet.
 
-![Liste mit Pull-to-Refresh](images/animation/city-list.gif)
+![Liste mit Pull-to-refresh](images/animation/city-list.gif)
 
-Den Arbeitscode für diese Erfahrung finden Sie im [Window UI Dev Labs-Repo auf GitHub](https://github.com/microsoft/WindowsCompositionSamples). Hier ist die exemplarische Vorgehensweise zum Erstellen der Erfahrung.
-In Ihrem XAML-Markup-Code haben Sie folgendes:
+Den funktionierenden Code für diese Erfahrung finden Sie im Repository " [Windows UI dev Labs" auf GitHub](https://github.com/microsoft/WindowsCompositionSamples). Hier finden Sie Schritt-für-Schritt-Anleitungen zum Aufbau dieser Vorgehensweise.
+In Ihrem XAML-Markup Code haben Sie Folgendes:
 
 ```xaml
 <StackPanel Height="500" MaxHeight="500" x:Name="ContentPanel" HorizontalAlignment="Left" VerticalAlignment="Top" >
@@ -67,9 +67,9 @@ ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.IsScrollInertiaEnabled="F
 </StackPanel>
 ```
 
-Da es sich bei dem ListView (`ThumbnailList`) um ein XAML-Steuerelement handelt, das bereits scrollt, müssen Sie das Scrolling mit dem übergeordneten Element (`ContentPanel`) verknüpfen, wenn es das oberste Element erreicht und nicht mehr scrollen kann. ("ContentPanel" ist, in dem Sie die Modifizierer für die Quelle angewendet wird.) Um dies zu ermöglichen, müssen Sie ScrollViewer.IsVerticalScrollChainingEnabled festlegen, um **"true"** im ListView-Markup. Außerdem müssen Sie den Verkettungsmodus in VisualInteractionSource auf **Always** setzen.
+Da ListView ( `ThumbnailList` ) ein XAML-Steuerelement ist, das bereits einen Bildlauf ausführt, muss der Bildlauf mit dem übergeordneten Element () verkettet werden, `ContentPanel` Wenn es das oberste Element erreicht und keinen Bildlauf mehr durchführen kann. (In ContentPanel werden die quellmodifizierer angewendet.) Hierfür müssen Sie ScrollViewer. isverticalscrollchainingenabled im ListView-Markup auf " **true** " festlegen. Sie müssen auch den Verkettungs Modus für "visualinteraktionsource" auf " **Always**" festlegen.
 
-Sie müssen den PointerPressedEvent-Handler mit dem _handlingEventsToo_-Parameter auf **true** setzen. Ohne diese Option wird PointerPressedEvent nicht mit ContentPanel verkettet, da das ListView-Steuerelement diese Ereignisse als behandelt markiert und sie nicht über die visuelle Verkettung gesendet werden.
+Sie müssen den pointerpressedevent-Handler mit dem Parameter " _shanddeventstoo_ " als " **true**" festlegen. Ohne diese Option wird das pointerpressedevent-Element nicht mit dem ContentPanel verkettet, da das ListView-Steuerelement diese Ereignisse als behandelt kennzeichnet und nicht in der visuellen Kette gesendet wird.
 
 ```csharp
 //The PointerPressed handler needs to be added using AddHandler method with the //handledEventsToo boolean set to "true"
@@ -78,7 +78,7 @@ Sie müssen den PointerPressedEvent-Handler mit dem _handlingEventsToo_-Paramete
 ContentPanel.AddHandler(PointerPressedEvent, new PointerEventHandler( Window_PointerPressed), true);
 ```
 
-Jetzt sind Sie bereit, dies mit InteractionTracker zu verknüpfen. Beginnen Sie mit der Einrichtung von InteractionTracker, VisualInteractionSource und dem Ausdruck, der die Position von InteractionTracker nutzt.
+Nun können Sie das mit interaktiontracker verknüpfen. Beginnen Sie mit dem Einrichten von interaktiontracker, der visualinteraktionsource und dem Ausdruck, der die Position von interaktiontracker nutzt.
 
 ```csharp
 // InteractionTracker and VisualInteractionSource setup.
@@ -100,7 +100,7 @@ m_positionExpression.SetReferenceParameter("tracker", _tracker);
 _contentPanelVisual.StartAnimation("Offset.Y", m_positionExpression);
 ```
 
-Bei dieser Einstellung befindet sich das Refresh-Panel außerhalb des Ansichtsfensters in seiner Ausgangsposition und alles was der Benutzer sieht ist das ListView. Wenn das Schwenken das ContentPanel erreicht, wird das PointerPressed-Ereignis ausgelöst, bei dem Sie das System auffordern, InteractionTracker zu verwenden, um das Manipulationserlebnis zu steuern.
+Bei dieser Einrichtung befindet sich der Bereich "Aktualisieren" außerhalb des Viewports an der Anfangsposition, und alle Benutzer sehen die ListView, wenn das Schwenken den ContentPanel erreicht. das pointerpressed-Ereignis wird ausgelöst, wobei Sie das System zum Verwenden von Interaction Tracker zum Steuern der Manipulations Umgebung auffordern.
 
 ```csharp
 private void Window_PointerPressed(object sender, PointerRoutedEventArgs e)
@@ -113,11 +113,11 @@ if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Touch
 ```
 
 > [!NOTE]
-> Wenn das Verketten von behandelten Ereignissen nicht benötigt wird, kann der PointerPressedEvent-Handler mit dem Attribut (`PointerPressed="Window_PointerPressed"`) direkt über das XAML-Markup hinzugefügt werden.
+> Wenn die Verkettung behandelter Ereignisse nicht erforderlich ist, kann das Hinzufügen des pointerpressedevent-Handlers mithilfe des-Attributs () direkt über das XAML-Markup erfolgen `PointerPressed="Window_PointerPressed"` .
 
-Der nächste Schritt ist das Einrichten der Source-Modifier. Sie werden zwei Source-Modifier verwenden, um dieses Verhalten zu erreichen: _Resistance_ und _Stop_.
+Der nächste Schritt besteht im Einrichten der quellmodifizierer. Sie verwenden 2 quellmodifizierer, um dieses Verhalten zu erhalten. _Widerstand_ und _Beendigung_.
 
-- Resistance – Bewegen Sie die DeltaPosition Y mit halber Geschwindigkeit, bis sie die Höhe des RefreshPanels erreicht.
+- Resistance – verschiebt die Delta Position. Y mit der Hälfte der Geschwindigkeit, bis die Höhe des aktualenden Bereichs erreicht ist.
 
 ```csharp
 CompositionConditionalValue resistanceModifier = CompositionConditionalValue.Create (_compositor);
@@ -131,7 +131,7 @@ resistanceModifier.Condition = resistanceCondition;
 resistanceModifier.Value = resistanceAlternateValue;
 ```
 
-- Stop – Stoppen Sie die Bewegung, nachdem das gesamte RefreshPanel auf dem Bildschirm angezeigt wird.
+- Beendigung – fahren Sie fort, nachdem sich der gesamte Fensterbereich auf dem Bildschirm befindet.
 
 ```csharp
 CompositionConditionalValue stoppingModifier = CompositionConditionalValue.Create (_compositor);
@@ -147,10 +147,10 @@ List<CompositionConditionalValue> modifierList = new List<CompositionConditional
 _interactionSource.ConfigureDeltaPositionYModifiers(modifierList);
 ```
 
-Dieses Diagramm zeigt eine Visualisierung des SourceModifiers-Setups.
+Dieses Diagramm bietet eine Visualisierung der SourceModifier-Einrichtung.
 
-![Schwenken-Diagramm](images/animation/source-modifiers-diagram.png)
+![Schwenken des Diagramms](images/animation/source-modifiers-diagram.png)
 
-Mit den SourceModifiers werden Sie beim Schwenken der ListView nach unten und dem Erreichen des obersten Elemente bemerken, dass das Refresh-Panel mit der halben Geschwindigkeit des Schwenkens heruntergezogen wird, bis es die Höhe von RefreshPanels erreicht. Dann stoppt die Bewegung.
+Mit den sourcemodifiziererelementen werden Sie feststellen, dass beim Schwenken der ListView nach unten und beim Erreichen des obersten Elements das Aktualisierungs Panel mit der Hälfte der Zeitangabe nach unten gezogen wird, bis die Höhe des Aktualisierungs Bereichs erreicht ist. Anschließend wird der Verschiebe Vorgang beendet.
 
-Im vollständigen Beispiel wird eine Keyframe-Animation verwendet, um ein Symbol während der Interaktion im RefreshPanel zu drehen. Jeder Inhalt kann stattdessen werden oder die Position von InteractionTracker nutzen, um diese Animation separat zu steuern.
+Im vollständigen Beispiel wird eine Keyframe-Animation verwendet, um ein Symbol während der Interaktion im Bereich "erfrischendes Panel" zu drehen. Alle Inhalte können an ihrer Stelle verwendet werden oder die Position von interaktiontracker verwenden, um diese Animation separat zu steuern.

@@ -1,6 +1,6 @@
 ---
-Description: Erfahren Sie, wie Sie Seiten Übergänge in Ihren Windows-Apps verwenden.
 title: Seitenübergänge
+description: Erfahren Sie, wie Sie universelle Windows-Plattform (UWP)-Seiten Übergänge verwenden, um Benutzern Feedback zur Beziehung zwischen Seiten in Ihrer APP zu geben.
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
@@ -8,12 +8,12 @@ keywords: Windows 10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6239d8409767cab06d4d2c8c9c3abb9d743ca1c9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c77f99e170bdfe6689a9bfd4e8d8075ec2154d28
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970515"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094676"
 ---
 # <a name="page-transitions"></a>Seitenübergänge
 
@@ -101,7 +101,7 @@ Sie können verwenden `Frame.GoBack(NavigationTransitionInfo)` , um einen bestim
 
 Dies kann hilfreich sein, wenn Sie das Navigationsverhalten dynamisch basierend auf der Bildschirmgröße ändern. beispielsweise in einem reaktionsfähigen Master-/Detail-Szenario.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 - [Navigieren zwischen zwei Seiten](../basics/navigate-between-two-pages.md)
 - [Bewegung in uwindowswp-apps](index.md)

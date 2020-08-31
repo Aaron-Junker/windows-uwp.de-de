@@ -1,19 +1,19 @@
 ---
 description: Hier erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten, damit Benutzer eine E-Mail senden können. Sie können die Felder der E-Mail vor dem Anzeigen des Dialogfelds mit Daten füllen. Die Nachricht wird erst gesendet, wenn Benutzer auf die Schaltfläche „Senden“ tippen.
-title: Senden von E-Mail
+title: E-Mail senden
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: Kontakte, E-Mail, Senden
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e7839a26afca81913e50296ac5ed9bb9210edbf2
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 47d07fa1932aae87704f7922762a8f0b7e430444
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997897"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154664"
 ---
-# <a name="send-email"></a>Senden von E-Mail
+# <a name="send-email"></a>E-Mail senden
 
 Hier erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten, damit Benutzer eine E-Mail senden können. Sie können die Felder der E-Mail vor dem Anzeigen des Dialogfelds mit Daten füllen. Die Nachricht wird erst gesendet, wenn Benutzer auf die Schaltfläche „Senden“ tippen.
 
@@ -25,7 +25,7 @@ Hier erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten, da
 
 ## <a name="launch-the-compose-email-dialog"></a>Starten des Dialogfelds zum Verfassen einer E-Mail
 
-Erstellen Sie ein neues [**EmailMessage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Email.EmailMessage)-Objekt, und legen Sie die Daten fest, die im Dialogfeld zum Verfassen einer E-Mail bereits vorhanden sein sollen. Rufen Sie [**ShowComposeNewEmailAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) auf, um das Dialogfeld anzuzeigen.
+Erstellen Sie ein neues [**EmailMessage**](/uwp/api/Windows.ApplicationModel.Email.EmailMessage)-Objekt, und legen Sie die Daten fest, die im Dialogfeld zum Verfassen einer E-Mail bereits vorhanden sein sollen. Rufen Sie [**ShowComposeNewEmailAsync**](/uwp/api/windows.applicationmodel.email.emailmanager.showcomposenewemailasync) auf, um das Dialogfeld anzuzeigen.
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -47,11 +47,11 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> Anlagen, die Sie einer e-Mail mithilfe der [emailattachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) -Klasse hinzufügen, werden nur in der Mail-App angezeigt. Wenn Benutzer ein anderes e-Mail-Programm als Standard-e-Mail-Programm konfiguriert haben, wird das Fenster verfassen ohne Anhang angezeigt. Dies ist ein bekanntes Problem.
+> Anlagen, die Sie einer e-Mail mithilfe der [emailattachment](/uwp/api/windows.applicationmodel.email.emailattachment) -Klasse hinzufügen, werden nur in der Mail-App angezeigt. Wenn Benutzer ein anderes e-Mail-Programm als Standard-e-Mail-Programm konfiguriert haben, wird das Fenster verfassen ohne Anhang angezeigt. Dies ist ein bekanntes Problem.
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
-In diesem Thema haben Sie erfahren, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten. Informationen zum Auswählen von Kontakten als E-Mail-Empfänger finden Sie unter [Auswählen von Kontakten](selecting-contacts.md). Informationen zum Auswählen einer Datei als E-Mail-Anlage finden Sie unter [**PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync).
+In diesem Thema haben Sie erfahren, wie Sie das Dialogfeld zum Verfassen einer E-Mail starten. Informationen zum Auswählen von Kontakten als E-Mail-Empfänger finden Sie unter [Auswählen von Kontakten](selecting-contacts.md). Informationen zum Auswählen einer Datei als E-Mail-Anlage finden Sie unter [**PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync).
 
 ## <a name="related-topics"></a>Zugehörige Themen
 

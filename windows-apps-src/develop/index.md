@@ -1,16 +1,16 @@
 ---
-description: Informationen zum Entwickeln einer UWP-App
+description: Hier finden Sie eine Liste mit Links zu Artikeln über die Entwicklung von UWP-Apps (Universelle Windows-Plattform) für Windows 10, einschließlich Übersicht, Beispiele und API-Referenz.
 title: Entwickeln von UWP-Apps
 keywords: UWP App Entwicklung Threading asynchron Plattform Übersicht Portal entwickeln Entwickler
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86fa9fb7f2cea7f190640b02fdcf219c3376115d
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: 6d1f4b63f6caee6b7bb081a03158dc4798c0435d
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882855"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094716"
 ---
 # <a name="develop-uwp-apps"></a>Entwickeln von UWP-Apps
 

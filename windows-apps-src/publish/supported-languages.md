@@ -6,19 +6,19 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a3b3ada3415e6f1abc98dc3c351f6db791adc984
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 79d729f97bef68a429c57894e6c0eeeab389c642
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043432"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170894"
 ---
 # <a name="supported-languages"></a>Unterstützte Sprachen
 
 
 Sie können apps an die Microsoft Store in mehr als 100 Sprachen übermitteln.
 
-Weitere Informationen zum Konfigurieren von Sprachen in ihren apps finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md) und Grundlegendes zu [Benutzerprofil Sprachen und Sprachen für das App-Manifest](../design/globalizing/manage-language-and-region.md). Wir bieten auch ein [Multilingual App Toolkit](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat), mit dessen Hilfe Sie Apps programmieren können, die mehrere Sprachen unterstützen.
+Weitere Informationen zum Konfigurieren von Sprachen in ihren apps finden Sie unter [Globalisierung und Lokalisierung](../design/globalizing/globalizing-portal.md) und Grundlegendes zu [Benutzerprofil Sprachen und Sprachen für das App-Manifest](../design/globalizing/manage-language-and-region.md). Wir bieten auch ein [Multilingual App Toolkit](../design/globalizing/use-mat.md), mit dessen Hilfe Sie Apps programmieren können, die mehrere Sprachen unterstützen.
 
 ## <a name="supported-languages"></a>Unterstützte Sprachen
 
@@ -120,7 +120,7 @@ Sprachcodes, die hier nicht enthalten sind, werden vom Speicher nicht unterstüt
 | Tamilisch                 | ta, ta-in                                                                                                                                                                                             |
 | Tatarisch                 | tt-arab, tt-cyrl, tt-latn, tt-ru                                                                                                                                                                      |
 | Telugu                | te, te-in                                                                                                                                                                                             |
-| Thailändisch                  | th, th-th                                                                                                                                                                                             |
+| Thai                  | th, th-th                                                                                                                                                                                             |
 | Tigrinya              | ti, ti-et                                                                                                                                                                                             |
 | Türkisch               | tr, tr-tr                                                                                                                                                                                             |
 | Turkmenisch               | tk-cyrl, tk-latn, tk-tm, tk-latn-tr, tk-cyrl-tr                                                                                                                                                       |
@@ -138,7 +138,3 @@ Sprachcodes, die hier nicht enthalten sind, werden vom Speicher nicht unterstüt
  
 
  
-
-
-
-

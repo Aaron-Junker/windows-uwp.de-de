@@ -1,17 +1,17 @@
 ---
 title: Erste Schritte mit der Navigation
-description: Erste Schritte mit der Navigation
+description: Erfahren Sie, wie Sie eine Seitennavigation zu einer Windows 10-app hinzufügen, die mehrere Ansichten mit der universelle Windows-Plattform (UWP)-Frame Klasse aufweist.
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d2f73ba6a14ace1319285ca436db4738f84548
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 3d26bf6e63c61207142b8945c48f9925a7459844
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493295"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094687"
 ---
 # <a name="getting-started-navigation"></a>Erste Schritte: Navigation
 

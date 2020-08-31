@@ -1,16 +1,16 @@
 ---
 title: Bewährte Methoden für Xbox
-description: Hier erfahren Sie, wie Sie Ihre Anwendung für Xbox optimieren.
+description: Erfahren Sie, wie Sie Ihre universelle Windows-Plattform-Anwendung (UWP) für Xbox One optimieren, indem Sie diese bewährten Methoden für die Xbox-Entwicklung befolgen.
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce69549996a5adfb8c5d2d585753cf95ef3fdc3
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 8aaf8759b59c8ccbb5b09ba969675096700ce9e8
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684904"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094457"
 ---
 # <a name="xbox-best-practices"></a>Bewährte Methoden für Xbox
 
@@ -49,28 +49,28 @@ Fernsehgeräte gehen mit hohen Farbintensitäten nicht so gut wie Computermonito
 
 UWP-Apps werden automatisch skaliert, um sicherzustellen, dass Elemente der Benutzeroberfläche wie Steuerelemente und Schriftarten auf allen Geräten lesbar sind. XAML-Apps werden auf 200 %, skaliert, während HTML-Apps auf 150 % skaliert werden. Wenn Sie eine bessere Kontrolle über das Aussehen Ihrer App auf der Xbox möchten, deaktivieren Sie den Standardskalierungsfaktor und verwenden Sie die tatsächliche Pixelanzahl eines HDTV-Geräts (1920 x 1080). Sehen Sie sich [So wird's gemacht: Deaktivieren der Skalierung](disable-scaling.md) und [Effektive Pixel und Skalierung](../design/basics/design-and-ui-intro.md#effective-pixels-and-scaling) an, um Informationen zum Anpassen Ihrer App für die Xbox zu erhalten.
 
-Wenn Sie erfahren möchten, wie diese Methoden auf eine UWP-App angewendet werden, sollten Sie sich dieses Video ansehen!
+Wenn Sie einen Überblick über diese Vorgehensweisen erhalten möchten, die auf eine UWP-App angewendet werden, sehen Sie sich dieses Video an.
 </br>
 </br>
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="channel-9"></a>Channel 9
+## <a name="channel-9"></a>Channel 9
 
-Die folgenden Gespräche auf [Channel 9](https://channel9.msdn.com/) sind eine hervorragende Informationsquelle für beeindruckende Apps auf Xbox:
+Die folgenden Gespräche auf [Channel 9](https://channel9.msdn.com/) sind eine hervorragende Informationsquelle zum Entwickeln von tollen apps auf Xbox:
 
 - [Erstellen von großartigen UWP-Apps (Universelle Windows-Plattform) für Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
 - [Passen Sie Ihre App für die Xbox One und den Fernseher an](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP-Entwicklung 1: Aufbau einer adaptiven Benutzeroberfläche](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Web-Apps über den Browser hinaus: plattformübergreifende Geräte übergreifende Geräte](https://channel9.msdn.com/Events/Build/2016/B888)
+- [UWP-Entwicklung 1: Erstellen einer adaptiven Benutzeroberfläche](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [Web-Apps über den Browser hinaus: plattformübergreifende und geräteübergreifende Entwicklung](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="app-dev-on-xbox"></a>App dev auf Xbox
+## <a name="app-dev-on-xbox"></a>App-Entwicklung auf Xbox
 
 Das **App dev on Xbox** -Ereignis ist ein idealer Ausgangspunkt für Entwickler, die noch nicht mit der Entwicklung von apps auf Xbox vertraut sind.
 
 * [Ansehen der aufgezeichneten Sitzungen](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [Blogbeiträge lesen](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 
 - [UWP auf Xbox One](index.md)
 - [Entwerfen für Xbox und Fernsehgeräte](../design/devices/designing-for-tv.md)

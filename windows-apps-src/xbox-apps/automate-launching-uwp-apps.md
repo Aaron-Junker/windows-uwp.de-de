@@ -4,12 +4,12 @@ description: Mit der Protokoll- und Startaktivierung können Entwickler ihre UWP
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: abc0b40178dc9b7c386342af6a6d85c6fb61945a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 661576ede9a940f7f8aa71715900306d2c2b28a9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320269"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154874"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Automatisieren des Starts von UWP-Apps unter Windows 10
 
@@ -48,7 +48,7 @@ Die App wird per Protokoll aktiviert, indem Sie die Befehlszeile mit dem Startbe
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-Das Uri-Objekt verfügt über Methoden zum Analysieren einer URI-Zeichenfolge in diesem Format. Weitere Informationen finden Sie unter [Uri-Klasse (MSDN)](https://docs.microsoft.com/uwp/api/windows.foundation.uri). 
+Das Uri-Objekt verfügt über Methoden zum Analysieren einer URI-Zeichenfolge in diesem Format. Weitere Informationen finden Sie unter [Uri-Klasse (MSDN)](/uwp/api/windows.foundation.uri). 
 
 Beispiele:
 
@@ -136,7 +136,7 @@ Diese Option unterstützt keine Befehlszeilenargumente.
 
 ### <a name="launcher-application"></a>Startanwendung
 
-Sie können eine separate Anwendung erstellen, die den Einsatz von COM zum Starten unterstützt. Das folgende Beispiel zeigt den C++-Code für den Start mit Startaktivierung in einem Startprogramm. Mit diesem Code erstellen Sie ein **ApplicationActivationManager**-Objekt und rufen **ActivateApplication** auf, indem Sie die zuvor gefundene AUMID und beliebige Argumente übergeben. Weitere Informationen zu den anderen Parametern finden Sie unter [IApplicationActivationManager::ActivateApplication-Methode (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication).
+Sie können eine separate Anwendung erstellen, die den Einsatz von COM zum Starten unterstützt. Das folgende Beispiel zeigt den C++-Code für den Start mit Startaktivierung in einem Startprogramm. Mit diesem Code erstellen Sie ein **ApplicationActivationManager**-Objekt und rufen **ActivateApplication** auf, indem Sie die zuvor gefundene AUMID und beliebige Argumente übergeben. Weitere Informationen zu den anderen Parametern finden Sie unter [IApplicationActivationManager::ActivateApplication-Methode (MSDN)](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication).
 
 ```
 #include <ShObjIdl.h>
@@ -210,6 +210,5 @@ void OnActivated(IActivatedEventArgs^ args)
 ## <a name="summary"></a>Zusammenfassung
 Zusammenfassend lässt sich sagen, dass für den Start der UWP-App verschiedene Methoden zur Verfügung stehen. Je nach Anforderungen und Anwendungsfällen können manche Methoden besser geeignet sein als andere. 
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 - [UWP auf Xbox One](index.md)
-

@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad94d7b887e28ac01156592ac47cfc9ac4783193
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: ff252faf4dd49929ec46c2ceaa02f94011e6b225
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775911"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169324"
 ---
 # <a name="connected-animation-for-windows-apps"></a>Verbundene Animation für Windows-apps
 
@@ -22,7 +22,7 @@ Mit verbundenen Animationen können Sie dynamische und ansprechende Navigationsf
 
 In einer verbundenen Animation scheint ein Element während einer Änderung des UI-Inhalts "Fortfahren" zwischen zwei Ansichten zu wechseln, und über den Bildschirm von seiner Position in der Quell Ansicht bis zum Ziel in der neuen Ansicht zu wechseln. Dadurch wird der gemeinsame Inhalt zwischen den Ansichten hervorgehoben, und es wird ein schöner und dynamischer Effekt als Teil eines Übergangs erzeugt.
 
-> **Wichtige APIs**: [connectedanimation Class](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [connectedanimationservice-Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
+> **Wichtige APIs**:  [connectedanimation Class](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [connectedanimationservice-Klasse](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
 
 
 ## <a name="examples"></a>Beispiele
@@ -63,12 +63,12 @@ Beim Navigieren zwischen den Seiten ist es wichtig, dass der Benutzer weiß, wel
 
 ## <a name="when-to-use-connected-animation"></a>Verwendungszwecke der verbundenen Animation
 
-Verbundene Animationen werden im Allgemeinen verwendet, wenn Seiten geändert werden. Sie können jedoch auf jede beliebige Oberfläche angewendet werden, bei der Sie den Inhalt in einer Benutzeroberfläche ändern und den Benutzer den Kontext beibehalten möchten. Sie sollten die Verwendung einer verbundenen Animation anstelle eines Drilldowns [im Navigations Übergang in](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) Erwägung gezogen, wenn ein Bild oder eine andere Benutzeroberfläche von der Quell-und Ziel Ansicht gemeinsam genutzt wird.
+Verbundene Animationen werden im Allgemeinen verwendet, wenn Seiten geändert werden. Sie können jedoch auf jede beliebige Oberfläche angewendet werden, bei der Sie den Inhalt in einer Benutzeroberfläche ändern und den Benutzer den Kontext beibehalten möchten. Sie sollten die Verwendung einer verbundenen Animation anstelle eines Drilldowns [im Navigations Übergang in](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) Erwägung gezogen, wenn ein Bild oder eine andere Benutzeroberfläche von der Quell-und Ziel Ansicht gemeinsam genutzt wird.
 
 ## <a name="configure-connected-animation"></a>Verbundene Animation konfigurieren
 
 > [!IMPORTANT]
-> Für dieses Feature ist es erforderlich, dass die Zielversion Ihrer APP Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher ist. Die-Konfigurations Eigenschaft ist in früheren sdert nicht verfügbar. Sie können eine minimale Version als SDK 17763 als Ziel verwenden, indem Sie adaptiven Code oder bedingtes XAML verwenden. Weitere Informationen finden Sie unter [Version Adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
+> Für dieses Feature ist es erforderlich, dass die Zielversion Ihrer APP Windows 10, Version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) oder höher ist. Die-Konfigurations Eigenschaft ist in früheren sdert nicht verfügbar. Sie können eine minimale Version als SDK 17763 als Ziel verwenden, indem Sie adaptiven Code oder bedingtes XAML verwenden. Weitere Informationen finden Sie unter [Version Adaptive apps](../../debug-test-perf/version-adaptive-apps.md).
 
 Ab Windows 10, Version 1809, können verbundene Animationen den fließenden Entwurf weiter untersuchen, indem Sie Animations Konfigurationen bereitstellen, die speziell für vorwärts-und rückwärts Seitennavigation zugeschnitten sind
 
@@ -101,8 +101,8 @@ Um die verschiedenen Auswirkungen zu erzielen, werden diese Eigenschaften von ei
 | Konfiguration | Respektiert defaultduration? | Respektiert defaulteasingfunction? |
 | - | - | - |
 | Ernst | Ja | Ja* <br/> **Die grundlegende Übersetzung von A in B verwendet diese Beschleunigungs Funktion, aber die "Gravity Dip" hat eine eigene Beschleunigungs Funktion.*  |
-| Direkt | No <br/> *Animiert mehr als 150 ms.*| No <br/> *Verwendet die verlangsamnde Beschleunigungs Funktion.* |
-| Basic | Yes | Ja |
+| Direkt | Nein <br/> *Animiert mehr als 150 ms.*| Nein <br/> *Verwendet die verlangsamnde Beschleunigungs Funktion.* |
+| Basic | Ja | Ja |
 
 ## <a name="how-to-implement-connected-animation"></a>Implementieren einer verbundenen Animation
 

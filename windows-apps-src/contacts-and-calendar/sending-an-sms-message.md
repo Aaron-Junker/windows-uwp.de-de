@@ -6,22 +6,22 @@ keywords: Kontakte, SMS, Senden
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ea262e026f31e1d690673f9b1d88e882d88ee4aa
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ceaeffdb0d8b3207a95e981f16590fe8e9e12e46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255005"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154654"
 ---
 # <a name="send-an-sms-message"></a>Senden einer SMS
 
 In diesem Thema erfahren Sie, wie Sie das Dialogfeld zum Verfassen einer SMS starten, damit Benutzer eine SMS senden können. Sie können die Felder der SMS vor dem Anzeigen des Dialogfelds mit Daten füllen. Die Nachricht wird erst gesendet, wenn Benutzer auf die Schaltfläche „Senden“ tippen.
 
-Um diesen Code aufzurufen, deklarieren Sie die Funktionen **Chat**, **smssend**und **Chatsystem** in Ihrem Paket Manifest. Dies sind [eingeschränkte Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) , aber Sie können Sie in Ihrer APP verwenden. Sie benötigen nur dann eine Genehmigung, wenn Sie beabsichtigen, Ihre APP im Store zu veröffentlichen. Weitere Informationen finden Sie unter [Konto Typen, Standorte und Gebühren](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees).
+Um diesen Code aufzurufen, deklarieren Sie die Funktionen **Chat**, **smssend**und **Chatsystem** in Ihrem Paket Manifest. Dies sind [eingeschränkte Funktionen](../packaging/app-capability-declarations.md#special-and-restricted-capabilities) , aber Sie können Sie in Ihrer APP verwenden. Sie benötigen nur dann eine Genehmigung, wenn Sie beabsichtigen, Ihre APP im Store zu veröffentlichen. Weitere Informationen finden Sie unter [Konto Typen, Standorte und Gebühren](../publish/account-types-locations-and-fees.md).
 
 ## <a name="launch-the-compose-sms-dialog"></a>Starten des Dialogfelds zum Verfassen einer SMS
 
-Erstellen Sie ein neues [**ChatMessage**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatmessage)-Objekt, und legen Sie die Daten fest, die im Dialogfeld zum Verfassen einer E-Mail bereits vorhanden sein sollen. Rufen Sie [**ShowComposeSmsMessageAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) auf, um das Dialogfeld anzuzeigen.
+Erstellen Sie ein neues [**ChatMessage**](/uwp/api/windows.applicationmodel.chat.chatmessage)-Objekt, und legen Sie die Daten fest, die im Dialogfeld zum Verfassen einer E-Mail bereits vorhanden sein sollen. Rufen Sie [**ShowComposeSmsMessageAsync**](/uwp/api/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) auf, um das Dialogfeld anzuzeigen.
 
 ```cs
 private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -65,6 +65,6 @@ if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Applicatio
 
 In diesem Thema haben Sie erfahren, wie Sie das Dialogfeld zum Verfassen einer SMS starten. Informationen zum Auswählen von Kontakten als SMS-Empfänger finden Sie unter [Auswählen von Kontakten](selecting-contacts.md). Laden Sie die [Beispiele für universelle Windows-Apps](https://github.com/Microsoft/Windows-universal-samples) von GitHub herunter, um sich weitere Beispiele zum Senden und Empfangen von SMS-Nachrichten unter Verwendung einer Hintergrundaufgabe anzusehen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Auswählen von Kontakten](selecting-contacts.md)

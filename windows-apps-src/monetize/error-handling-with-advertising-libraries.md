@@ -4,33 +4,33 @@ description: Hier erfahren Sie, wie Sie mit Fehlern umgehen, die in den Microsof
 title: Behandeln von Fehlern bei Anzeigen
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP, Anzeige, Werbung, Fehlerbehandlung, Javascript, XAML, C#
+keywords: 'Windows 10, UWP, Werbung, Werbung, Fehlerbehandlung, JavaScript, XAML, c #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3cc4d3d0b0cde40117a8534589f48c9d463c44
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 2a1a82c9977bfbe61712d39e4d23fdd68cd598ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507114"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171554"
 ---
 # <a name="handle-ad-errors"></a>Behandeln von Fehlern bei Anzeigen
 
 >[!WARNING]
 > Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Die einzelnen Klassen [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol), [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) und [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) verfügen über ein **ErrorOccurred**-Ereignis, das ausgelöst wird, wenn ein Fehler im Zusammenhang mit Anzeigen auftritt. Der App-Code kann dieses Ereignis behandeln und die Eigenschaften von [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) und [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) des Ereignisarguments untersuchen, um die Ursache des Fehlers zu bestimmen.
+Die Klassen [adcontrol](/uwp/api/microsoft.advertising.winrt.ui.adcontrol),  [interstitialad](/uwp/api/microsoft.advertising.winrt.ui.interstitialad)und [NativeAdsManagerV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) verfügen jeweils über ein **erroreingetreten** -Ereignis, das ausgelöst wird, wenn ein Ad-bezogener Fehler auftritt. Ihr app-Code kann dieses Ereignis behandeln und die Eigenschaften [errorCode](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) und [ErrorMessage](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) des ereignisargs-Objekts überprüfen, um die Ursache des Fehlers zu ermitteln.
 
 <span id="bkmk-dotnet"/>
 
 ## <a name="xaml-apps"></a>XAML-Apps
 
-So behandeln Sie Anzeigen-bezogene Fehler in einer XAML-App:
+So behandeln Sie AD-bezogene Fehler in einer XAML-App:
 
-1. Weisen Sie das **ErrorOccurred**-Ereignis des Objekts **AdControl**, **InterstitialAd** oder **NativeAdsManagerV2** dem Namen eines Ereignishandlerdelegaten zu.
+1. Weisen Sie das Ereignis **erroreingetreten** Ihres **adcontrol**-, **interstitialad**-oder **NativeAdsManagerV2** -Objekts dem Namen eines Ereignishandlerdelegaten zu.
 
-2. Codieren Sie den Ereignishandlerdelegaten so, dass er zwei Parameter verwendet: ein **Objekt** für den Absender und ein [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs)-Objekt.
+2. Codieren Sie den Ereignishandlerdelegaten so, dass er zwei Parameter verwendet: ein **Objekt** für den Absender und ein [AdErrorEventArgs](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs)-Objekt.
 
-Hier ist ein Beispiel, das einen Delegaten mit dem Namen **OnAdError**dem Ereignis **ErrorOccurred** des **AdControl**-Objekts mit Namen *myBannerAdControl* zuweist.
+Es folgt ein Beispiel, das dem Ereignis **erroreingetreten** einen Delegaten namens **onaderror** für ein **adcontrol** -Objekt mit dem Namen *mybanneradcontrol*zuweist.
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -54,13 +54,13 @@ Unter [Exemplarische Vorgehensweise zur Fehlerbehandlung in XAML/C#](error-handl
 
 ## <a name="javascripthtml-apps"></a>JavaScript/HTML-Apps
 
-So behandeln Sie **ErrorOccur** Fehler in einer JavaScript-App:
+So behandeln **Sie** Fehler Fehler in einer JavaScript-App:
 
 1.  Weisen Sie das **OnErrorOccurred**-Ereignis einem Ereignishandler zu.
 
 2.  Codieren Sie den Ereignishandler.
 
-Hier ist ein Beispiel, das einen Ereignishandler mit dem Namen **errorLogger** dem Ereignis **ErrorOccurred** des **AdControl**-Objekts zuweist.
+Es folgt ein Beispiel, das dem Ereignis **erroreingetreten** eines **adcontrol** -Objekts einen Ereignishandler mit dem Namen **errorlogger** zuweist.
 
 > [!div class="tabbedCodeSnippets"]
 ``` html
@@ -70,9 +70,9 @@ Hier ist ein Beispiel, das einen Ereignishandler mit dem Namen **errorLogger** d
 </div>
 ```
 
-Die Fehlerbehandlungsfunktion ist deklarativ und muss in die Funktion [MarkSupportedForProcessing](https://docs.microsoft.com/previous-versions/windows/apps/hh967819(v=win.10)) eingeschlossen werden.
+Die Fehlerbehandlungsfunktion ist deklarativ und muss in die Funktion [MarkSupportedForProcessing](/previous-versions/windows/apps/hh967819(v=win.10)) eingeschlossen werden.
 
-Der Fehlerhandler fängt das JavaScript-Fehlerobjekt auf, wenn ein Fehler auftritt. Das Fehlerobjekt liefert dem Fehlerhandler zwei Argumente. Weitere Informationen finden Sie unter [Eigenschaften spezieller Fehler von asynchronen Methoden von Windows-Runtime](https://docs.microsoft.com/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods).
+Der Fehlerhandler fängt das JavaScript-Fehler Objekt ab, wenn ein Fehler auftritt. Das Fehlerobjekt liefert dem Fehlerhandler zwei Argumente. Weitere Informationen finden Sie unter [Eigenschaften spezieller Fehler von asynchronen Methoden von Windows-Runtime](/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods).
 
 Hier ist ein Beispiel für eine Fehlerbehandlungsfunktion mit dem Namen **ErrorLogger**, die das Ereignis **OnErrorOccurred** behandelt.
 

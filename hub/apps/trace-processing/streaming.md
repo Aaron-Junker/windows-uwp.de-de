@@ -5,12 +5,12 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: e04f306a6a5c03d1f502b9cfb6c2cbb737e0098f
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 6ad0f5977ed4d739ce3133c9e67c0eefc6e0cbd9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629081"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168824"
 ---
 # <a name="use-streaming-with-traceprocessor"></a>Streaming mit traceprocessor verwenden
 
@@ -141,7 +141,7 @@ Standardmäßig werden alle Streamingdaten während des ersten Durchlaufs der Ab
 
 Einige wesentliche Unterschiede bei der Verwendung von Pufferung und Streaming:
 
-1. Bei der Pufferung wird ein [ipdingresult-&lt;t&gt;](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.ipendingresult-1)zurückgegeben, und das Ergebnis, das es enthält, ist nur verfügbar, bevor die Ablauf Verfolgung verarbeitet wurde. Nachdem die Ablauf Verfolgung verarbeitet wurde, können die Ergebnisse mithilfe von Techniken wie foreach und LINQ aufgezählt werden.
+1. Bei der Pufferung wird ein [ipdingresult &lt; T &gt; ](/dotnet/api/microsoft.windows.eventtracing.ipendingresult-1)zurückgegeben, und das Ergebnis, das es enthält, ist nur verfügbar, bevor die Ablauf Verfolgung verarbeitet wurde. Nachdem die Ablauf Verfolgung verarbeitet wurde, können die Ergebnisse mithilfe von Techniken wie foreach und LINQ aufgezählt werden.
 2. Streaming gibt void zurück und nimmt stattdessen ein Rückruf Argument an. Der Rückruf wird einmal aufgerufen, sobald jedes Element verfügbar ist. Da die Daten nicht gepuffert werden, gibt es keine Liste der Ergebnisse, die mit foreach oder LINQ aufgezählt werden müssen – der streamingabrückruf muss den zu speichernden Teil der Daten Puffern, nachdem die Verarbeitung abgeschlossen ist.
 3. Der Code für die Verarbeitung von gepufferten Daten wird nach dem Aufrufen von Trace angezeigt. Process (), wenn die ausstehenden Ergebnisse verfügbar sind.
 4. Der Code für die Verarbeitung von Streamingdaten wird vor dem aufzurufenden Trace angezeigt. Process () als Rückruf für die Ablauf Verfolgung. Usestreaming. use... ()-Methode.
@@ -151,7 +151,7 @@ Einige wesentliche Unterschiede bei der Verwendung von Pufferung und Streaming:
 
 Manchmal werden Ablauf Verfolgungs Daten in einer Sequenz von Ereignissen angezeigt – beispielsweise werden syscalls über separate Enter-und Exit-Ereignisse protokolliert, aber die kombinierten Daten beider Ereignisse können hilfreicher sein. Die Ablauf Verfolgungs Methode der Methode. Usestreaming (). Mit "US-Dateien ()" werden die Daten beider Ereignisse korreliert und bereitgestellt, da das Paar verfügbar wird. Einige Arten von korrelierten Daten sind über die Ablauf Verfolgung verfügbar. Usestreaming ():
 
-| Code                                        | Beschreibung                                                                                                                                     |
+| Code                                        | BESCHREIBUNG                                                                                                                                     |
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ablauf Verfolgungs. Usestreaming (). Usecontexenwitchdata () | Streamt korrelierte Kontextwechsel Daten (von kompakten und nicht kompakten Ereignissen mit genaueren switchinthreadids als unkomprimierte unkomprimierte Ereignisse). |
 | Ablauf Verfolgungs. Usestreaming (). Usescheduledtasks ()    | Streamt korrelierte geplante Aufgaben Daten.                                                                                                         |
@@ -162,7 +162,7 @@ Manchmal werden Ablauf Verfolgungs Daten in einer Sequenz von Ereignissen angeze
 
 Führen Sie außerdem die Ablauf Verfolgung aus Usestreaming () stellt analysierte Ereignisse für eine Reihe von verschiedenen eigenständigen Ereignis Typen bereit:
 
-| Code                                               | Beschreibung                                     |
+| Code                                               | BESCHREIBUNG                                     |
 |----------------------------------------------------|-------------------------------------------------|
 | Ablauf Verfolgungs. Usestreaming (). Uselastbranchrecorentvents ()   | Datenströme wurden als LBR-Ereignisse (Last Branch Record) analysiert. |
 | Ablauf Verfolgungs. Usestreaming (). Usereadythreadevents ()        | Datenströme wurden für fertige Thread Ereignisse analysiert.             |
@@ -176,7 +176,7 @@ Führen Sie außerdem die Ablauf Verfolgung aus Usestreaming () stellt analysier
 
 Und schließlich Trace. Usestreaming () stellt auch die zugrunde liegenden Ereignisse bereit, die zum Korrelieren von Daten in der obigen Liste verwendet werden. Diese zugrunde liegenden Ereignisse lauten:
 
-| Code                                                        | Beschreibung                                                                                | Enthalten in                                 |
+| Code                                                        | BESCHREIBUNG                                                                                | Teil von                                 |
 |-------------------------------------------------------------|--------------------------------------------------------------------------------------------|---------------------------------------------|
 | Ablauf Verfolgungs. Usestreaming (). Usecompactcontexungswitchevents ()        | In Streams analysierte komprimierte Kontextwechsel Ereignisse.                                              | Ablauf Verfolgungs. Usestreaming (). Usecontexenwitchdata () |
 | Ablauf Verfolgungs. Usestreaming (). Usecontexungswitchevents ()               | Von Streams analysierte Kontextwechsel Ereignisse. Switchinthreadids ist in einigen Fällen möglicherweise nicht korrekt. | Ablauf Verfolgungs. Usestreaming (). Usecontexenwitchdata () |

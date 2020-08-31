@@ -1,85 +1,85 @@
 ---
 title: Federanimationen
-description: Lernen Sie, wie natürliche Spring-Bewegungsanimationen verwenden.
+description: Erfahren Sie, wie Sie mithilfe der naturalmotionanimation-APIs Spring Motion-Erfahrungen in ihren apps erstellen.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, animation
+keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: f86ab8b3e55b7680c5ba3e47c37d1cda8c42cebb
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: ecfb6fc001fbf42f70d40ee16abc45aa221c0a75
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062006"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053870"
 ---
 # <a name="spring-animations"></a>Federanimationen
 
-Der Artikel zeigt, wie man Feder-NaturalMotionAnimations verwendet.
+Der Artikel zeigt, wie Spring naturalmotionanimationen verwendet werden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Wir gehen hier davon aus, dass Sie mit den in diesen Artikeln behandelten Konzepten vertraut sind:
+Wir gehen davon aus, dass Sie mit den Konzepten vertraut sind, die in den folgenden Artikeln erläutert werden:
 
 - [Naturbewegungs Animationen](natural-animations.md)
 
-## <a name="why-springs"></a>Warum Federanimationen?
+## <a name="why-springs"></a>Warum?
 
-Federanimationen sind ein allgemeines Bewegungserlebnis, das wir alle irgendwann einmal in unserem Leben erlebt haben; von Spielzeug bis hin zum Physikunterricht mit einem Federblock. Die oszillierende Bewegung einer Feder löst oft eine spielerische und heitere emotionale Reaktion der Betrachter aus. Das Ergebnis ist, dass die Bewegung einer Feder sich gut in eine Benutzeroberfläche für die Anwendung übersetzen lässt, die ein lebendigeres Bewegungserlebnis schaffen möchte, das dem Endbenutzer mehr überzeugt als eine traditionelle Cubic-Bezier-Animation. In diesen Fällen sorgt die Federbewegung nicht nur für ein lebendigeres Bewegungserlebnis, sondern kann auch die Aufmerksamkeit auf neue oder gerade animierte Inhalte lenken. Je nach Anwendungs-Branding oder Bewegungssprache ist die Federbewegung ausgeprägter und sichtbarer und in anderen Fällen subtiler.
+Quellen sind eine gängige Bewegungserfahrung, die wir zu einem beliebigen Zeitpunkt im Leben haben. von den Bereichen "Slinky Toys" bis "Physik Classroom" mit einem Spring-gebundenen Block. Die oskaerende Bewegung einer Spring-Bewegung erbt häufig eine spielerische und helle emotionale Reaktion von denjenigen, die Sie beobachten. Folglich übersetzt die Bewegung einer Spring-Bewegung die Benutzeroberfläche der Anwendung für Benutzer, die eine lebendige Bewegungs Oberfläche erstellen möchten, die dem Endbenutzer mehr als eine herkömmliche kubische Bezier-Funktion erscheint. In diesen Fällen erzeugt Spring Motion nicht nur eine lebendige Bewegungs Darstellung, sondern auch die Aufmerksamkeit auf neue oder derzeit animierte Inhalte. Abhängig vom Anwendungs Branding oder der Bewegungssprache ist die Schwingung deutlicher und sichtbar, aber in anderen Fällen ist Sie feiner.
 
-![Motion mit Spring Animation](images/animation/offset-spring.gif)
-![Bewegung mit kubischer Bezier-Animation](images/animation/offset-cubic-bezier.gif)
+![Motion with Spring Animation ](images/animation/offset-spring.gif)
+ ![ Motion with kubische Bezier-Animation](images/animation/offset-cubic-bezier.gif)
 
-## <a name="using-springs-in-your-ui"></a>Verwendung von Federbewegungen in Ihrem UI
+## <a name="using-springs-in-your-ui"></a>Verwenden von Quellen in der Benutzeroberfläche
 
-Wie bereits erwähnt, können Federanimationen eine nützliche Bewegung sein, um sich in Ihre App zu integrieren und ein sehr vertrautes und spielerisches UI-Erlebnis einzuführen. Übliche Verwendung von Federanimationen in UIs sind:
+Wie bereits erwähnt, können Quellen eine nützliche Bewegung für die Integration in Ihre APP sein, um eine sehr vertraute und Spiel Bare Benutzeroberfläche bereitzustellen. Allgemeine Verwendung von Quellen in der Benutzeroberfläche:
 
-| Beschreibung der Verwendung der Federanimation | Visuelles Beispiel |
+| Beschreibung der Spring-Verwendung | Visuelles Beispiel |
 | ------------------------ | -------------- |
-| Eine Bewegungserfahrung „herausstechen“ und lebendiger aussehen lassen. (Animating Scale) | ![Skalierungsbewegung mit Federanimation](images/animation/scale-spring.gif) |
-| Eine Bewegungserfahrung subtil energetischer wirken lassen (Animating Offset) | ![Offset-Bewegung mit Federanimation](images/animation/offset-spring.gif) |
+| Einen Bewegungs Vorgang für "Pop" durchführen und die Lebendigkeit sehen. (Animieren der Skala) | ![Bewegung mit Spring Animation skalieren](images/animation/scale-spring.gif) |
+| Eine Bewegungserfahrung mit einem sehr viel kräftigsten Verhalten zu gestalten (Animation Offset) | ![Offset Bewegung mit Spring Animation](images/animation/offset-spring.gif) |
 
-In jedem dieser Fälle kann die Federbewegung entweder durch „Auffedern“ und Schwingen um einen neuen Wert oder Schwingen um den aktuellen Wert mit einer Anfangsgeschwindigkeit ausgelöst werden.
+In jedem dieser Fälle kann die Spring-Bewegung ausgelöst werden, indem "Spring to" ausgelöst wird, und um einen neuen Wert zu bewegen oder um den aktuellen Wert durch eine anfängliche Geschwindigkeit zu durchlaufen.
 
-![Federanimation-Schwingung](images/animation/spring-animation-diagram.png)
+![Spring Animation-osziierung](images/animation/spring-animation-diagram.png)
 
-## <a name="defining-your-spring-motion"></a>Definition Ihrer Federbewegung
+## <a name="defining-your-spring-motion"></a>Definieren von Spring Motion
 
-Mit den NaturalMotionAnimation-APIs schaffen Sie eine Federbewegung. Insbesondere erstellen Sie eine SpringNaturalMotionAnimation mit den Create*-Methoden des Compositors. Anschließend können Sie die folgenden Eigenschaften der Bewegung definieren:
+Sie erstellen eine Spring-Darstellung mithilfe der naturalmotionanimation-APIs. Insbesondere erstellen Sie eine springnaturalmotionanimation, indem Sie die Create *-Methoden aus dem Compositor verwenden. Anschließend können Sie die folgenden Eigenschaften der Bewegung definieren:
 
-- DampingRatio – Gibt den Dämpfungsgrad der in der Animation verwendeten Federbewegung an.
+- Dämpfung – drückt den Grad der Dämpfung der Spring Motion aus, die in der Animation verwendet wird.
 
-| Damping-Ratio-Wert | Beschreibung |
+| Wert für das Dämpfungs Verhältnis | BESCHREIBUNG |
 | ------------------- | ----------- |
-| DampingRatio = 0 | Nicht gedämpft – Feder wird für längere Zeit schwingen |
-| 0 < DampingRatio < 1 | Wenig gedämpft – Feder wird von leicht zu viel schwingen |
-| DampingRatio = 1 | Criticallydamped – Feder führ keine Schwingung aus |
-| DampingRation > 1 | Stark gedämpft – Feder erreicht schnell ihr Ziel mit einer abrupten Verlangsamung und keine Schwingung |
+| Dämpfingratio = 0 | Undamped – die Spring-Zeit wird für einen langen Zeitraum in der springenden |
+| 0 < < 1 für "Dämpfung" | Unterschätzt – Spring wird von etwas zu viel zu laufen. |
+| "Dämpfingratio = 1" | Criticallydämpfed – die Spring Vorgang führt keine Schwingungen aus. |
+| Dämpfung > 1 | Überlastet – der Spring Vorgang erreicht schnell sein Ziel mit einer abrupten Verlangsamung und ohne Schwingung |
 
-- Period – Die Zeit zum Ausführen eines einzelnen Schwingungsvorgangs.
-- Final-/Starting-Wert – Definierte Start- und Endpositionen der Federbewegung (wenn nicht definiert, wird Startwert bzw. Endwert aktueller Wert sein).
-- Initial Velocity – Programmatische Anfangsgeschwindigkeit für die Bewegung.
+- Period – die Zeit, die der Spring Vorgang zum Ausführen einer einzelnen Schwingung benötigt.
+- Final/Startwert – definierte Anfangs-und Endpositionen der Spring Motion (wenn nicht definiert, ist der Startwert und/oder der endgültige Wert der aktuelle Wert).
+- Anfängliche Geschwindigkeit – programmgesteuerte anfängliche Geschwindigkeit für die Bewegung.
 
-Sie können auch eine Reihe von Eigenschaften der Bewegung definieren, die mit KeyFrameAnimations identisch sind:
+Sie können auch einen Satz von Eigenschaften der Bewegung definieren, die mit Keyframeanimation identisch sind:
 
-- DelayTime/Delay Behavior
-- StopBehavior
+- Delta Zeit-/Verzögerungs Verhalten
+- Stopbehavior
 
-In den üblichen Fällen, in denen Offset und Skalierung/Größe animiert werden, werden die folgenden Werte für DampingRatio und Period für verschiedene Federtypen vom Windows Design Team empfohlen:
+In den häufigen Fällen der Animation von Offset und Skalierung/Größe werden die folgenden Werte vom Windows-Entwurfs Team für "Dämpfung" und "Period" für unterschiedliche Arten von Sprüngen empfohlen:
 
-| Eigenschaft | Normal Federung | Gedämpfte Federung | Weniger gedämpfte Federung |
+| Eigenschaft | Normaler Spring | Gedämpfte Spring | Weniger gedämpft Spring |
 | -------- | ------------- | --------------- | -------------------- |
-| Offset | Damping Ratio = 0,8 <br/> Period = 50 ms | Damping Ratio = 0,85 <br/> Period = 50 ms | Damping Ratio = 0,65 <br/> Period = 60 ms |
-| Skalierung/Größe | Damping Ratio = 0,7 <br/> Period = 50 ms | Damping Ratio = 0,8 <br/> Period = 50 ms | Damping Ratio = 0,6 <br/> Period = 60 ms |
+| Offset | Dämpfungs Verhältnis = 0,8 <br/> Zeitraum = 50 ms | Dämpfungs Verhältnis = 0,85 <br/> Zeitraum = 50 ms | Dämpfungs Verhältnis = 0,65 <br/> Zeitraum = 60 ms |
+| Skalierung/Größe | Dämpfungs Verhältnis = 0,7 <br/> Zeitraum = 50 ms | Dämpfungs Verhältnis = 0,8 <br/> Zeitraum = 50 ms | Dämpfungs Verhältnis = 0,6 <br/> Zeitraum = 60 ms |
 
-Nachdem Sie die Eigenschaften definiert haben, können Sie Ihre Feder-NaturalMotionAnimation an die Methode StartAnimation eines CompositionObjects oder die Motion-Eigenschaft eines InteractionTracker InertiaModifier übergeben.
+Nachdem Sie die Eigenschaften definiert haben, können Sie die Spring naturalmotionanimation an die startanimation-Methode eines compositionobject oder die Motion-Eigenschaft eines Interaction Tracker-inertiamodifier übergeben.
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel erstellen Sie eine Navigations- und Canvas-Benutzeroberfläche, in der ein Navigationsbereich durch Klicken auf eine Erweitern-Schaltfläche mit einer federnden Pendelbewegung animiert wird.
+In diesem Beispiel erstellen Sie eine Benutzeroberfläche für Navigation und Canvas, bei der der Benutzer auf eine Erweiterungs Schaltfläche klickt, sodass ein Navigationsbereich mit einer springenden, schwingenden Bewegung animiert wird.
 
-![Federanimation per Klick](images/animation/spring-animation-on-click.gif)
+![Spring Animation beim Klicken](images/animation/spring-animation-on-click.gif)
 
-Definieren Sie zunächst die Federanimation innerhalb des angeklickten Ereignisses für das Erscheinen des Navigationsbereichs. Anschließend definieren Sie die Eigenschaften der Animation, indem Sie die Funktion InitialValueExpression verwenden, um einen Ausdruck zur Definition des FinalValue zu verwenden. Sie können außerdem verfolgen, ob der Bereich geöffnet ist oder nicht und die Animation starten.
+Definieren Sie zunächst die Spring Animation innerhalb des angeklickten Ereignisses, wenn der Navigationsbereich angezeigt wird. Anschließend definieren Sie die Eigenschaften der Animation mithilfe der Funktion "initialvalueexpression", um einen Ausdruck zum Definieren von finalvalue zu verwenden. Außerdem behalten Sie den Überblick, ob der Bereich geöffnet ist, und starten die Animation, wenn Sie bereit sind.
 
 ```csharp
 private void Button_Clicked(object sender, RoutedEventArgs e)
@@ -103,11 +103,11 @@ _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 25
 }
 ```
 
-Was wäre, wenn Sie diese Eingabe mit der Bewegung verknüpfen wollten? Wenn der Endbenutzer heraus wischt, soll eine Federbewegung erscheinen. Noch wichtiger ist, wenn der Benutzer härter oder schneller wischt, passt sich die Bewegung an die Geschwindigkeit des Endbenutzers an.
+Was ist, wenn Sie diese Bewegung mit Eingaben verknüpfen möchten? Wenn der Endbenutzer also den Bereich verlässt, werden die Bereiche mit Spring Motion angezeigt? Noch wichtiger ist, dass sich die Bewegung basierend auf der Geschwindigkeit des Endbenutzers anpasst, wenn der Benutzer härter oder schneller schwimmt.
 
-![Federanimation beim Wischen](images/animation/spring-animation-on-swipe.gif)
+![Spring Animation beim Schwenken](images/animation/spring-animation-on-swipe.gif)
 
-Dazu können Sie die gleiche Federanimation nehmen und in einen InertiaModifier mit InteractionTracker übergeben. Weitere Informationen zu InputAnimations und InteractionTracker finden Sie unter [Benutzerdefinierte Manipulationserfahrungen mit InteractionTracker](interaction-tracker-manipulations.md). Wir gehen davon aus, dass Sie für dieses Codebeispiel bereits Ihren InteractionTracker und VisualInteractionSource eingerichtet haben. Wir konzentrieren uns auf die Entwicklung der InertiaModifier, die eine NaturalMotionAnimation, in diesem Fall eine Feder, aufnehmen.
+Zu diesem Zweck können Sie die gleiche Spring Animation verwenden und Sie mit interaktiontracker an einen inertiamodifier übergeben. Weitere Informationen zu inputanimationen und interaktiontracker finden Sie unter [benutzerdefinierte Bearbeitungsfunktionen mit interaktiontracker](interaction-tracker-manipulations.md). Wir gehen davon aus, dass Sie für dieses Codebeispiel bereits interaktiontracker und visualinteraktionsource eingerichtet haben. Wir konzentrieren uns auf das Erstellen der inertiamodifiers, die eine naturalmotionanimation, in diesem Fall eine Spring.
 
 ```csharp
 // InteractionTracker and the VisualInteractionSource previously setup
@@ -145,18 +145,18 @@ StartAnimation("Translation.X", exp);
 }
 ```
 
-Jetzt haben Sie sowohl eine programmatische als auch eine eingabegesteuerte Federanimation in Ihrer Benutzeroberfläche!
+Nun haben Sie sowohl eine programmgesteuerte als auch eine Eingabe gesteuerte Spring Animation in Ihrer Benutzeroberfläche!
 
-Zusammenfassend sehen die Schritte zur Verwendung von Federanimationen so aus:
+Zusammengefasst sind die Schritte zum Verwenden einer Spring-Animation in Ihrer APP:
 
-1. Erstellen Sie Ihre SpringAnimation aus Ihrem Compositor.
-1. Definieren Sie Eigenschaften der SpringAnimation, wenn Sie nicht die Standardwerte wünschen:
-    - DampingRatio
-    - Period
-    - Final Value
-    - Initial Value
-    - Initial Velocity
-1. Zum Ziel zuweisen.
-    - Wenn Sie eine CompositionObject-Eigenschaft animieren, übergeben Sie SpringAnimation als Parameter an StartAnimation.
-    - Wenn Sie mit Eingaben arbeiten wollen, setzen Sie die NaturalMotion-Eigenschaft eines InertiaModifier auf SpringAnimation.
+1. Erstellen Sie Ihre springanimation aus Ihrem Compositor.
+1. Definieren Sie die Eigenschaften der springanimung, wenn Sie nicht standardmäßige Werte wünschen:
+    - Dämpfingratio
+    - Zeitraum
+    - Endwert
+    - Anfangswert
+    - Anfängliche Geschwindigkeit
+1. Ziel zuweisen.
+    - Wenn Sie eine compositionobject-Eigenschaft animieren, übergeben Sie springanimation als Parameter an startanimation.
+    - Wenn Sie with Input verwenden möchten, legen Sie die NaturalMotion-Eigenschaft eines inertiamodifier auf springanimations fest.
 

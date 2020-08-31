@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
-description: Technologien für den Zugriff auf Netzwerke und Webdienste
+description: Hier finden Sie eine Liste mit Links zu Artikeln über Netzwerk- und Webdiensttechnologien, die für Entwickler von UWP-Apps (Universelle Windows-Plattform) verfügbar sind.
 title: Netzwerk- und Webdienste
 ms.date: 11/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 673f774c4d686726b59ff4e52e356ec0bc319379
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 169412c21714f2777db3e6078a6528dc863277ea
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66370762"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094607"
 ---
 # <a name="networking-and-web-services"></a>Netzwerk- und Webdienste
 
@@ -19,7 +19,7 @@ Die folgenden Netzwerk- und Webdiensttechnologien sind für Entwickler von UWP (
 
 | Thema | Beschreibung |
 | - | - |
-| [Grundlagen zum Netzwerk](networking-basics.md) | Aktionen, die Sie für eine netzwerkfähige App ausführen müssen. |
+| [Netzwerkgrundlagen](networking-basics.md) | Aktionen, die Sie für eine netzwerkfähige App ausführen müssen. |
 | [Welche Netzwerktechnologie?](which-networking-technology.md) | Eine kurze Übersicht über die Netzwerktechnologien, die für UWP-Entwickler zur Verfügung stehen, mit Vorschlägen zum Auswählen der Technologien, die für Ihre App geeignet sind. |
 | [Netzwerkkommunikation im Hintergrund](network-communications-in-the-background.md) | Um die Netzwerkkommunikation fortzusetzen, während sie sich nicht im Vordergrund befindet, kann eine App Hintergrundaufgaben und entweder Socketbroker- oder Steuerkanaltrigger verwenden. |
 | [Sockets](sockets.md) | Sockets sind eine einfache Datenübertragungstechnologie und bilden die Grundlage zahlreicher Netzwerkprotokollimplementierungen. UWP bietet TCP- und UDP-Socketklassen für Client-Server- oder Peer-to-Peer-Anwendungen, unabhängig davon, ob Verbindungen langlebig sind oder keine bestehende Verbindung erforderlich ist. |

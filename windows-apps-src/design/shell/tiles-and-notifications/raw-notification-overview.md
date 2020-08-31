@@ -1,5 +1,5 @@
 ---
-Description: Unformatierte Benachrichtigungen sind kurze, allgemeine Pushbenachrichtigungen.
+description: Erfahren Sie mehr über unformatierte Benachrichtigungen, bei denen es sich um kurze, allgemeine Pushbenachrichtigungen handelt, die streng Anweisungs fähig sind und keine UI-Komponente enthalten.
 title: Übersicht über unformatierte Benachrichtigungen
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eb90e47a1d821c489e06a9ce19c913eb6702767
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 2c4072070837d0bde67b644e2536bc2c93b0efc3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493235"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053970"
 ---
 # <a name="raw-notification-overview"></a>Übersicht über unformatierte Benachrichtigungen
 

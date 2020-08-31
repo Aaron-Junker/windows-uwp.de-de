@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ad128aca1a633c5ce33830b5ee9231f7a794a60c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 320d5cc4232d613a4fb437fbd11f3c83287b3030
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969675"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154104"
 ---
 # <a name="accessibility-in-the-store"></a>Barrierefreiheit im Store  
 
@@ -40,7 +40,7 @@ Sie sollten Ihre App als barrierefrei erklären, wenn Sie diese unter Berücksic
     * Tastenkombinationen für wichtige Funktionen der App zu verwenden.
     * Verwenden von Sprachausgabe-Touchgesten für TAB- und Pfeilnavigation für Geräte ohne Tastatur.
 * Visuelle Barrierefreiheit der App-UI sicherstellen: Kontrastverhältnis von mindestens 4.5:1, keine ausschließlich auf Farben basierende Darstellung von Informationen usw.
-* Tools zum Testen der Barrierefreiheit wurden eingesetzt, z. B. [**Inspect**](https://docs.microsoft.com/windows/desktop/WinAuto/inspect-objects) und [**UIAVerify**](https://docs.microsoft.com/windows/desktop/WinAuto/ui-automation-verify), um die Implementierung der Barrierefreiheit zu überprüfen und alle Fehler der Priorität 1 zu beheben, die von diesen Tools gemeldet werden.
+* Tools zum Testen der Barrierefreiheit wurden eingesetzt, z. B. [**Inspect**](/windows/desktop/WinAuto/inspect-objects) und [**UIAVerify**](/windows/desktop/WinAuto/ui-automation-verify), um die Implementierung der Barrierefreiheit zu überprüfen und alle Fehler der Priorität 1 zu beheben, die von diesen Tools gemeldet werden.
 * Die primären Szenarien Ihrer App unter Verwendung von Sprachausgabe, Bildschirmlupe, Bildschirmtastatur, einem Design mit hohem Kontrast und angepassten DPI-Einstellungen wurden überprüft.
 
 Unter [Prüfliste für die Barrierefreiheit](accessibility-checklist.md) werden diese Verfahren erläutert. Zudem finden Sie dort Links zu Ressourcen, die Ihnen beim Durchführen der Verfahren helfen.
@@ -48,4 +48,4 @@ Unter [Prüfliste für die Barrierefreiheit](accessibility-checklist.md) werden 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>Zugehörige Themen    
-* [Barrierefreiheit](accessibility.md) 
+* [Bedienungshilfen](accessibility.md)

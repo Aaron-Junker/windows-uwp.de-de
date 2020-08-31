@@ -6,12 +6,12 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d992baf42f320856134f0e8fba845c5ad61393
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: a1683cdad189b9e369700e25b47a6f0bf0796702
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945928"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171024"
 ---
 # <a name="in-app-ads"></a>In-App-Anzeigen
 
@@ -61,8 +61,8 @@ Nachdem Sie die neue Ad-Einheit erstellt haben, wird Sie in der Tabelle mit den 
 
 Nachdem Sie Ad-Einheiten für eine oder mehrere apps in Ihrem Konto erstellt haben, werden diese Ad-Einheiten in einer Tabelle am unteren **Monetize** Rand der Seite " &gt; **in-App-Werbung** monetarisieren" angezeigt. In dieser Tabelle werden die **Anwendungs-ID** und die Ad-Einheiten- **ID** für jede Ad-Einheit zusammen mit anderen Informationen angezeigt. Zum Anzeigen von Werbeeinblendungen in der APP müssen Sie diese Werte in Ihrem Code verwenden. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](../monetize/set-up-ad-units-in-your-app.md).
 
-* Wenn Ihre APP [Banner Anzeigen](../monetize/banner-ads.md)anzeigt, weisen Sie diese Werte den [Eigenschaften ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) und [adunitid](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) Ihres [adcontrol](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) -Objekts zu.
-* Wenn Ihre APP [Interstitial ADS](../monetize/interstitial-ads.md)anzeigt, übergeben Sie diese Werte an die [requestad](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) -Methode Ihres [interstitialad](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) -Objekts.
+* Wenn Ihre APP [Banner Anzeigen](../monetize/banner-ads.md)anzeigt, weisen Sie diese Werte den [Eigenschaften ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) und [adunitid](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) Ihres [adcontrol](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) -Objekts zu.
+* Wenn Ihre APP [Interstitial ADS](../monetize/interstitial-ads.md)anzeigt, übergeben Sie diese Werte an die [requestad](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) -Methode Ihres [interstitialad](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) -Objekts.
 * Wenn Ihre APP [native Werbung](../monetize/native-ads.md)anzeigt, übergeben Sie diese Werte an den **NativeAdsManagerV2** -Konstruktor.
   > [!IMPORTANT]
   > Sie können jede Ad-Einheit nur in einer App verwenden. Wenn Sie eine Ad-Einheit in mehr als einer App verwenden, werden ADS nicht für diese Ad-Einheit bereitgestellt.
@@ -111,7 +111,7 @@ So konfigurieren Sie die AD-Vermittlungs Einstellungen für eine UWP-Ad-Einheit 
 
 In der folgenden Tabelle werden die kostenpflichtigen Netzwerke aufgelistet, die derzeit für jeden AD-Typ unterstützt werden. Beachten Sie, dass einige dieser Netzwerke [nicht in allen Märkten zur Verfügung](#network-markets)stehen.
 
-|  Anzeigennetzwerk  |  Beschreibung  |  Unterstützte Ad-Typen  |
+|  Anzeigennetzwerk  |  BESCHREIBUNG  |  Unterstützte Ad-Typen  |
 |--------------|---------------|---------------------|
 | Oath und appnexus |  Dies ist ein von Microsoft verwaltetes Ad-Netzwerk, das Werbeeinblendungen über unsere Partnernetzwerke, Oath und appnexus, bietet.<p/>**Hinweis**: Oath und appnexus werden immer zuerst in der Liste der **kostenpflichtigen Ad-Netzwerke** für Banner-Werbe Einheiten sortiert und können für diese Art von Werbung nicht in eine niedrigere Rangfolge geändert werden. | Banner, Video Interstitial |
 | Appnexus (Direct) | Wählen Sie diese Option aus, um Werbung von [appnexus](https://www.appnexus.com)zu verarbeiten. | Video Interstitial, Native  |
@@ -133,7 +133,7 @@ In der folgenden Tabelle werden die kostenpflichtigen Netzwerke aufgelistet, die
 
 In der folgenden Tabelle sind die anderen Netzwerke aufgelistet, die zurzeit für jeden AD-Typ unterstützt werden.
 
-|  Anzeigennetzwerk  |  Beschreibung  |  Unterstützte Ad-Typen  |
+|  Anzeigennetzwerk  |  BESCHREIBUNG  |  Unterstützte Ad-Typen  |
 |--------------|---------------|---------------------|
 | Microsoft Community ADS |  Wenn Sie [eine Werbe-Werbekampagne für eine Ihrer Apps erstellen](create-an-ad-campaign-for-your-app.md) und diese Kampagne als Community- [Werbekampagne](about-community-ads.md)konfigurieren, wählen Sie diese Optionen aus, um Werbeeinblendungen anzuzeigen. | Banner, Banner Interstitial |
 | Microsoft-Haus Werbung | Wenn Sie [eine Werbe-Werbekampagne für eine Ihrer Apps erstellen](create-an-ad-campaign-for-your-app.md) und diese Kampagne als Haus- [Werbekampagne](about-house-ads.md)konfigurieren, wählen Sie diese Optionen aus, um Werbeeinblendungen anzuzeigen. | Banner, Banner Interstitial  |

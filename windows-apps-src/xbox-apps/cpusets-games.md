@@ -4,12 +4,12 @@ description: Dieser Artikel enthält eine Übersicht über die CPUSets-API,die i
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a20838a6d58eede75efb2441680aba6629db1700
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322155"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154204"
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets für die Entwicklung von Spielen
 
@@ -43,20 +43,20 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 Jede Instanz von zurückgegebenen **SYSTEM_CPU_SET_INFORMATION** enthält Informationen zu einer eindeutigen Verarbeitungseinheit, die auch als CPU-Satz bezeichnet wird. Dies bedeutet nicht notwendigerweise, dass er ein eindeutiges physisches Hardwaregerät darstellt. CPUs, die Hyperthreading nutzen, verfügen über mehrere logische Kerne, die auf einem einzigen physischen Verarbeitungskern ausgeführt werden. Das Planen von mehreren Threads auf verschiedenen logischen Kernen, die sich auf dem gleichen physischen Kern befinden, ermöglicht eine Optimierung von Ressourcen auf Hardware-Ebene, für die andernfalls zusätzliche Arbeit auf der Kernel-Ebene durchgeführt werden müsste. Zwei Threads, die auf separaten logischen Kernen auf dem gleichen physischen Kern geplant sind, müssen die CPU-Zeit teilen, würden aber effizienter ausgeführt werden, als wenn sie auf dem gleichen logischen Kern geplant worden wären.
 
-### <a name="systemcpusetinformation"></a>SYSTEM_CPU_SET_INFORMATION
+### <a name="system_cpu_set_information"></a>SYSTEM_CPU_SET_INFORMATION
 
 Die Informationen in jeder Instanz dieser Datenstruktur, die von **GetSystemCpuSetInformation** zurückgegeben wird, enthalten Informationen zu einer eindeutigen Verarbeitungseinheit, auf der Threads geplant werden können. Angesichts der möglichen Bandbreite von Zielgeräten gelten möglicherweise viele der Informationen in der **SYSTEM_CPU_SET_INFORMATION**-Datenstruktur nicht für die Entwicklung von Spielen. Tabelle 1 enthält eine Erläuterung der Datenmember, die für die Entwicklung von Spielen hilfreich sind.
 
- **Tabelle 1. Der Datenmember ist nützlich für die Entwicklung von Spielen.**
+ **Tabelle 1. Datenmember, die für die Spieleentwicklung nützlich sind.**
 
-| Membername  | Datentyp | Beschreibung |
+| Membername  | Datentyp | BESCHREIBUNG |
 | ------------- | ------------- | ------------- |
 | Typ  | CPU_SET_INFORMATION_TYPE  | Der Typ der Informationen in der Struktur. Wenn der Wert nicht **CpuSetInformation** lautet, sollte er ignoriert werden.  |
-| Id  | ohne Vorzeichen lang  | Die ID des angegebenen CPU-Satzes. Dies ist die ID, die mit CPU-Satz-Funktionen wie **SetThreadSelectedCpuSets** verwendet werden sollte.  |
-| Gruppieren  | ohne Vorzeichen kurz  | Gibt die „Prozessorgruppe“ des CPU-Satzes an. Mit Prozessorgruppen kann ein PC mehr als 64 logische Prozessorkerne haben, und ein Austausch von CPUs per Hot-Swap bei laufendem System wird möglich. Es kommt nicht oft vor, dass ein PC kein Server mit mehr als einer Gruppe ist. Wenn Sie nicht gerade Anwendungen schreiben, die auf großen Servern oder Serverfarmen ausgeführt werden sollen, empfiehlt es sich, CPU-Sätze in einer einzelnen Gruppe zu verwenden, da die meisten Verbraucher-PCs nur eine Prozessorgruppe haben. Alle anderen Werte in dieser Struktur beziehen sich auf die Gruppe.  |
-| LogicalProcessorIndex  | char-Wert ohne Vorzeichen  | Zur Gruppe relativer Index des CPU-Satzes  |
-| CoreIndex  | char-Wert ohne Vorzeichen  | Zur Gruppe relativer Index des physischen CPU-Kerns, auf dem sich der CPU-Satz befindet.  |
-| LastLevelCacheIndex  | char-Wert ohne Vorzeichen  | Zur Gruppe relativer Index des letzten Caches, der diesem CPU-Satz zugeordnet ist. Dies ist der langsamste Cache, es sei denn, das System verwendet NUMA-Knoten, in der Regel den L2- oder L3-Cache.  |
+| Id  | unsigned long  | Die ID des angegebenen CPU-Satzes. Dies ist die ID, die mit CPU-Satz-Funktionen wie **SetThreadSelectedCpuSets** verwendet werden sollte.  |
+| Gruppieren  | unsigned short  | Gibt die „Prozessorgruppe“ des CPU-Satzes an. Mit Prozessorgruppen kann ein PC mehr als 64 logische Prozessorkerne haben, und ein Austausch von CPUs per Hot-Swap bei laufendem System wird möglich. Es kommt nicht oft vor, dass ein PC kein Server mit mehr als einer Gruppe ist. Wenn Sie nicht gerade Anwendungen schreiben, die auf großen Servern oder Serverfarmen ausgeführt werden sollen, empfiehlt es sich, CPU-Sätze in einer einzelnen Gruppe zu verwenden, da die meisten Verbraucher-PCs nur eine Prozessorgruppe haben. Alle anderen Werte in dieser Struktur beziehen sich auf die Gruppe.  |
+| LogicalProcessorIndex  | unsigned char  | Zur Gruppe relativer Index des CPU-Satzes  |
+| CoreIndex  | unsigned char  | Zur Gruppe relativer Index des physischen CPU-Kerns, auf dem sich der CPU-Satz befindet.  |
+| LastLevelCacheIndex  | unsigned char  | Zur Gruppe relativer Index des letzten Caches, der diesem CPU-Satz zugeordnet ist. Dies ist der langsamste Cache, es sei denn, das System verwendet NUMA-Knoten, in der Regel den L2- oder L3-Cache.  |
 
 <br />
 
@@ -64,15 +64,15 @@ Die anderen Datenmember liefern Informationen, von denen es unwahrscheinlich ist
 
 Im Folgenden sind einige Beispiele für die Art der Informationen aufgeführt, die von UWP-Anwendungen gesammelt werden, die auf verschiedene Arten von Hardware ausgeführt werden.
 
-**Tabelle 2. Informationen, die von einer UWP-App zurückgegeben werden, die auf einem Microsoft Lumia 950 ausgeführt wird. Dies ist ein Beispiel für ein System, das über mehrere Caches der letzten Ebene verfügt. Die Lumia 950 verfügt über ein Qualcomm 808 Snapdragon-Prozess, der eine dual-Core-ARM Cortex A57 und Quad-Core-ARM Cortex-A53 CPUs enthält.**
+**Tabelle 2. Informationen, die von einer UWP-App zurückgegeben werden, die auf einer Microsoft Lumia 950 ausgeführt wird Dies ist ein Beispiel für ein System, das über mehrere Caches der letzten Ebene verfügt. Die Lumia 950 bietet einen Qualcomm 808 Snapdragon-Prozess, der einen Dual-Core-Arm-und vier-Kern-ARM-Cortex A53 CPUs enthält.**
 
-  ![Tabelle 2](images/cpusets-table2.png)
+  ![Tabelle 2](images/cpusets-table2.png)
 
-**Tabelle 3. Informationen, die von einer UWP-App zurückgegeben werden, die auf einem herkömmlichen PC ausgeführt wird. Dies ist ein Beispiel für ein System, das Hyperthreading verwendet; jeder physische Kern verfügt über zwei logische Kerne, auf denen Threads geplant werden können. In diesem Fall enthalten das System ein Intel Xenon CPU E5-2620.**
+**Tabelle 3. Informationen aus einer UWP-APP, die auf einem typischen PC ausgeführt wird. Dies ist ein Beispiel für ein System, das Hyperthreading verwendet. Jeder physische Kern verfügt über zwei logische Kerne, auf die Threads geplant werden können. In diesem Fall enthielt das System eine Intel Xenon-CPU E5-2620.**
 
   ![Tabelle 3](images/cpusets-table3.png)
 
-**Tabelle 4. Informationen, die von einer UWP-App zurückgegeben werden, die auf einem Quad-Core Microsoft Surface Pro 4 ausgeführt wird. Dieses System musste eine Intel Core i5-6300 CPU.**
+**Tabelle 4. Informationen, die von einer UWP-App zurückgegeben werden, die auf einem Quad Core Microsoft Surface pro 4 ausgeführt wird Dieses System verfügte über eine Intel Core i5-6300-CPU.**
 
   ![Tabelle 4](images/cpusets-table4.png)
 
@@ -182,7 +182,7 @@ for (size_t i = 0; i < count; ++i)
 
 Das in Abbildung 1 dargestellte Cache-Layout ist ein Beispiel für die Art von Layout, die Sie möglicherweise bei einem System sehen. In dieser Abbildung sehen Sie eine Darstellung der Caches in einem Microsoft Lumia 950. Threadübergreifende Kommunikation zwischen CPU 256 und CPU 260 würde erheblichen Overhead verursachen, da das System seine L2-Caches kohärent halten müsste.
 
-**Abbildung 1. Cache-Architektur, die auf einem Gerät Microsoft Lumia 950 gefunden.**
+**Abbildung 1. Die Cache Architektur wurde auf einem Microsoft Lumia 950-Gerät gefunden.**
 
 ![Lumia 950-Cache](images/cpusets-lumia950cache.png)
 
@@ -191,7 +191,6 @@ Das in Abbildung 1 dargestellte Cache-Layout ist ein Beispiel für die Art von L
 Die für UWP-Entwicklung verfügbare CPUSets-API bietet eine beträchtliche Menge an Informationen und Kontrolle über Ihre Multithreading-Optionen. Der zusätzliche Komplexität im Vergleich zu früheren Multithread-APIs für die Windows-Entwicklung ist mit einer Lernkurve verbunden. Die gestiegene Flexibilität ermöglicht aber letztendlich eine bessere Leistung auf unterschiedlichen Verbraucher-PCs und anderen Hardwarezielen.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-- [CPU-Gruppen (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
-- [ATG gebotenen CPUSets-Beispiel](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [CPU-Sätze (MSDN)](/windows/desktop/ProcThread/cpu-sets)
+- [Von ATG bereitgestelltes CPUSets-Beispiel](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [UWP auf Xbox One](index.md)
-

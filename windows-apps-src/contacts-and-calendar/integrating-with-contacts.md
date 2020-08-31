@@ -4,19 +4,19 @@ MSHAttr: PreferredLib:/library/windows/apps
 title: Verbinden der App mit Aktionen auf einer Visitenkarte
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Kontakte, Visitenkarte, Anmerkung
+keywords: Windows 10, UWP, Kontakte, Kontaktkarte, Anmerkung
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 8310b7c5b629d8d3a35a05b1124b140ebf35cf17
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 246a74ca008e1b8c89460aabb652accf35c842b1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061875"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154714"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>Verbinden der App mit Aktionen auf einer Visitenkarte
 
-Ihre App kann neben Aktionen auf einer Visitenkarte oder kleinen Kontaktkarte angezeigt werden. Benutzer können Ihre App auswählen, um eine Aktion auszuführen, z. B. eine Profilseite zu öffnen, einen Anruf zu tätigen oder eine Nachricht zu senden.
+Ihre App kann neben Aktionen auf einer Visitenkarte oder kleinen Kontaktkarte angezeigt werden. Benutzer können Ihre App auswählen, um eine Aktion auszuführen, z. B. eine Profilseite zu öffnen, einen Anruf zu tätigen oder eine Nachricht zu senden.
 
 ![Visitenkarte und kleine Kontaktkarte](images/all-contact-cards.png)
 
@@ -181,13 +181,13 @@ Genau wie die Visitenkarte wird für jede Registerkarte die App vermerkt, die de
 
 ## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>Ausführen von Vorgängen, wenn Benutzer Ihre App in einer Visitenkarte auswählen
 
-Überschreiben Sie die [Application.OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)-Methode in Ihrer **App.cs**-Datei, und leiten Sie Benutzer zu einer Seite in Ihrer App. Das [Beispiel für die Integration von Visitenkarten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) zeigt eine Möglichkeit, das zu tun.
+Überschreiben Sie die [Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)-Methode in Ihrer **App.cs**-Datei, und leiten Sie Benutzer zu einer Seite in Ihrer App. Das [Beispiel für die Integration von Visitenkarten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) zeigt eine Möglichkeit, das zu tun.
 
-Überschreiben Sie in dem Code für die Datei der Seite, die [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto)-Methode. Die Visitenkarte übergibt dieser Methode den Namen des Vorgangs und die ID des Benutzers.
+Überschreiben Sie in dem Code für die Datei der Seite, die [Page.OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto)-Methode. Die Visitenkarte übergibt dieser Methode den Namen des Vorgangs und die ID des Benutzers.
 
-Informationen zum Starten eines Video- oder Audioanrufs finden Sie in dem [VoIP-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Sie finden die vollständige API im Namespace [Windows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls).
+Informationen zum Starten eines Video- oder Audioanrufs finden Sie in dem [VoIP-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). Sie finden die vollständige API im Namespace [Windows.ApplicationModel.Calls](/uwp/api/windows.applicationmodel.calls).
 
-Informationen zur Vereinfachung des Messaging finden Sie im Namespace [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat).
+Informationen zur Vereinfachung des Messaging finden Sie im Namespace [Windows.ApplicationModel.Chat](/uwp/api/windows.applicationmodel.chat).
 
 Sie können auch eine andere App starten. Dieser Code führt folgende Aktionen aus:
 

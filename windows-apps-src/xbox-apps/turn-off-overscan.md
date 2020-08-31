@@ -1,17 +1,17 @@
 ---
 title: So wird's gemacht - Zeichnen der Benutzeroberfläche bis zum Bildschirmrand
-description: So deaktivieren Sie die automatische Skalierung für den Titelschutzbereich.
+description: Erfahren Sie, wie Sie die Standard Ränder, die an den Rändern des Viewports platziert werden, deaktivieren und die Benutzeroberfläche an die Ränder des Bildschirms zeichnen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 1adb221f-6f70-4255-9329-2046a486ca45
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac49d80f1d99a56eff565a0daa8f2f3e9289636
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d34da1bbf129358f4549b3a4a04a7c3f84f872ab
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57624505"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154844"
 ---
 # <a name="how-to-draw-ui-to-the-edge-of-the-screen"></a>So wird's gemacht - Zeichnen der Benutzeroberfläche bis zum Bildschirmrand   
 Standardmäßig befinden sich die Begrenzungen von Anwendungen an den Rändern des Viewports, um den fernsehsicheren Bereich zu berücksichtigen (Weitere Informationen finden Sie unter [Entwerfen für Xbox und Fernsehgeräte](../design/devices/designing-for-tv.md#tv-safe-area)). 
@@ -25,6 +25,6 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 > [!NOTE]
 > Für C++-/DirectX-Anwendungen ist dies nicht relevant. Das System rendert die Anwendung immer bis zum Bildschirmrand.
 
-## <a name="see-also"></a>Siehe auch
-- [Bewährte Methoden für die Xbox](tailoring-for-xbox.md)
+## <a name="see-also"></a>Weitere Informationen
+- [Bewährte Methoden für Xbox](tailoring-for-xbox.md)
 - [UWP auf Xbox One](index.md)

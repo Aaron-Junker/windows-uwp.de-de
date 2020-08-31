@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff826be0f5b0b8e9a6723fbb1593663f1748c3d
-ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
+ms.openlocfilehash: 7d41e49f599e1fe5e835443f7c8cb732e625491e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069467"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168594"
 ---
 # <a name="bluetooth-developer-faq"></a>Bluetooth-Entwickler – Häufig gestellte Fragen
 
@@ -22,7 +22,7 @@ Im Rahmen dieses allgemeinen Themas gibt es verschiedene Diskussionen, sodass wi
 
 ### <a name="bluetooth-le-windowsdevicesbluetoothgenericattributeprofile"></a>Bluetooth Le (Windows. Devices. Bluetooth. generiertributeprofile)
 
-Verwenden Sie die GATT-APIs, wenn Sie mit einem Gerät kommunizieren, das Bluetooth Low Energy unterstützt. Wenn Ihr Anwendungsfall selten, eine geringe Bandbreite oder eine geringe Leistung erfordert, ist Bluetooth Low Energy die Antwort. Der Haupt Namespace, der diese Funktion enthält, ist [Windows. Devices. Bluetooth. generiertributeprofile](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
+Verwenden Sie die GATT-APIs, wenn Sie mit einem Gerät kommunizieren, das Bluetooth Low Energy unterstützt. Wenn Ihr Anwendungsfall selten, eine geringe Bandbreite oder eine geringe Leistung erfordert, ist Bluetooth Low Energy die Antwort. Der Haupt Namespace, der diese Funktion enthält, ist [Windows. Devices. Bluetooth. generiertributeprofile](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile). 
 
 **Verwendung von Bluetooth Le nicht**
 - Hohe Bandbreite, Szenarios mit hoher Häufigkeit. Wenn Sie ständig mit großen Datenmengen synchronisiert werden müssen, empfiehlt sich die Verwendung von Bluetooth Classic oder vielleicht sogar WiFi. 
@@ -33,7 +33,7 @@ Die RFCOMM-APIs geben Entwicklern einen Socket für die Ausführung bidirektiona
 
 **Verwendung von Bluetooth RFCOMM nicht** 
 - Anbot. Das Bluetooth GATT-Protokoll verfügt über einen bestimmten Befehl für diesen und führt zu einer deutlich geringeren Stromversorgung und schnelleren Reaktionszeiten. 
-- Überprüfen der Near-oder Anwesenheits Erkennung. Die Verwendung der Ankündigungs- [APIs](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement) und die Verbindung über Bluetooth Le ist besser. 
+- Überprüfen der Near-oder Anwesenheits Erkennung. Die Verwendung der Ankündigungs- [APIs](/uwp/api/windows.devices.bluetooth.advertisement) und die Verbindung über Bluetooth Le ist besser. 
 
 
 ## <a name="why-does-my-bluetooth-le-device-stop-responding-after-a-disconnect"></a>Warum reagiert mein Bluetooth LE-Gerät nach einem Trennvorgang nicht mehr?
@@ -63,7 +63,7 @@ In diesem Beispiel wird die Kopplung mit einem Gerät ohne Verschlüsselung init
 
 Sie müssen Geräte nicht koppeln, bevor Sie Sie verwenden, wenn Sie Bluetooth RFCOMM (klassisch) nutzen. Ab Windows 10, Version 1607, können Sie einfach Geräte in der Nähe suchen und eine Verbindung herstellen. Das aktualisierte [RFCOMM Chat-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) veranschaulicht diese Funktionalität. 
 
-**(14393 und niedriger)** Diese Funktion ist nicht für Bluetooth Low Energy (GATT-Client) verfügbar, daher müssen Sie entweder über die Seite "Einstellungen" oder mithilfe der [Windows. Devices. Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) -APIs koppeln, um auf diese Geräte zuzugreifen.
+**(14393 und niedriger)** Diese Funktion ist nicht für Bluetooth Low Energy (GATT-Client) verfügbar, daher müssen Sie entweder über die Seite "Einstellungen" oder mithilfe der [Windows. Devices. Enumeration](/uwp/api/windows.devices.enumeration) -APIs koppeln, um auf diese Geräte zuzugreifen.
 
 **(15030 und höher)** Die Kopplung von Bluetooth-Geräten ist nicht mehr erforderlich. Verwenden Sie die neuen Async-APIs wie getgattservicesasync und getcharakteristicsasync, um den aktuellen Status des Remote Geräts abzufragen. Weitere Informationen finden Sie in der [Client](gatt-client.md) Dokumentation. 
 

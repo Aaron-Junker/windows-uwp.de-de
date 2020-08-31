@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ac50cdba542de56ffb1daee01da12d4979ac45
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 01e3a1d012e6c309f1c486417708457dd31c2c22
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945976"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171004"
 ---
 # <a name="package-version-numbering"></a>Paketversionsnummern
 
-Jedes von Ihnen bereitgestellte Paket muss eine Versionsnummer aufweisen (als Wert im **Version** -Attribut des [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)-Elements im App-Manifest). Der Microsoft Store erzwingt bestimmte Regeln im Zusammenhang mit Versionsnummern, die in unterschiedlichen Betriebssystemversionen etwas unterschiedlich funktionieren.
+Jedes von Ihnen bereitgestellte Paket muss eine Versionsnummer aufweisen (als Wert im **Version** -Attribut des [Package/Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)-Elements im App-Manifest). Der Microsoft Store erzwingt bestimmte Regeln im Zusammenhang mit Versionsnummern, die in unterschiedlichen Betriebssystemversionen etwas unterschiedlich funktionieren.
 
 > [!NOTE]
 > Dieses Thema bezieht sich auf "Pakete", aber sofern nicht anders angegeben, gelten die gleichen Regeln auch für Versionsnummern sowohl für msix-, AppX-und msixbundle-/appxbundle-Dateien.
@@ -28,7 +28,7 @@ Jedes von Ihnen bereitgestellte Paket muss eine Versionsnummer aufweisen (als We
 
 Wenn Sie ein UWP-Paket aus ihrer veröffentlichten Übermittlung auswählen, wird für das Microsoft Store immer das Paket mit der höchsten Versions Angabe verwendet, das für das Windows 10-Gerät des Kunden anwendbar ist. Dadurch sind Sie flexibler und haben die Kontrolle darüber, welche Pakete Kunden auf bestimmten Gerätetypen bereitgestellt werden. Außerdem können Sie diese Pakete in beliebiger Reihenfolge übermitteln; Sie sind nicht darauf beschränkt, bei nachfolgenden Übermittlungen Pakete mit höheren Versionsnummern bereitzustellen.
 
-Sie können mehrere UWP-Pakete mit der gleichen Versionsnummer bereitstellen. Pakete mit der gleichen Versionsnummer können jedoch nicht dieselbe Architektur aufweisen, da die vollständige Identität eindeutig sein muss, die der Store für die einzelnen Pakete verwendet. Weitere Informationen finden Sie unter [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
+Sie können mehrere UWP-Pakete mit der gleichen Versionsnummer bereitstellen. Pakete mit der gleichen Versionsnummer können jedoch nicht dieselbe Architektur aufweisen, da die vollständige Identität eindeutig sein muss, die der Store für die einzelnen Pakete verwendet. Weitere Informationen finden Sie unter [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
 
 Wenn Sie mehrere UWP-Pakete bereitstellen, die dieselbe Versionsnummer verwenden, wird die-Architektur (in der Reihenfolge x64, x86, arm, neutral) verwendet, um zu entscheiden, welcher Wert höher ist (wenn der Speicher bestimmt, welches Paket für das Gerät eines Kunden bereitgestellt werden soll). Beim Bewerten von App-Bündeln mit gleicher Versionsnummer gilt der höchste Architekturrang im Bündel: ein App-Bündel, das ein x64-Paket enthält, besitzt einen höheren Rang als ein App-Bündel, das lediglich ein x86-Paket enthält.
 

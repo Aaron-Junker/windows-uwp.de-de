@@ -6,12 +6,12 @@ ms.date: 03/05/2019
 ms.topic: article
 keywords: Windows 10, UWP, Steuern, App-steuern, steuerliche Anforderungen, Handels Erweiterung, Steuersatz
 ms.localizationpriority: medium
-ms.openlocfilehash: f1147ab6ee76b1d7615d6acaadaf6190db96c668
-ms.sourcegitcommit: 829af8cf4679a6aa9e7ecad961e1e33a09235028
+ms.openlocfilehash: 2d78a5a6af362a52b55830f279b3fffc1fb74346
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88681261"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170874"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>Steuer Details für Windows-App/Spielentwickler und Azure Marketplace-Herausgeber
 
@@ -24,10 +24,10 @@ In einigen Fällen können von Microsoft verwaltete Länder Länder, die von Ent
 In den folgenden Tabellen finden Sie Informationen zu den Steuer Überlegungen für die Preis Auswahl und die Steuer Verantwortlichkeit im Rahmen des App-Entwickler Vertrags oder der modernen Herausgeber Vereinbarung.
 
 > [!NOTE]
-> Die Regulierung zur Markterweiterung (Commerce Expansion Adjustment) hat in einigen wenigen Ländern/Regionen möglicherweise Auswirkungen auf die Auszahlung. Weitere Informationen über die Regulierung zur Markterweiterung (Commerce Expansion Adjustment) und die entsprechenden Märkte finden Sie in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) und in der Liste der [betreffenden Länder/Regionen](define-market-selection.md#price-considerations-for-specific-markets).
+> Die Regulierung zur Markterweiterung (Commerce Expansion Adjustment) hat in einigen wenigen Ländern/Regionen möglicherweise Auswirkungen auf die Auszahlung. Weitere Informationen über die Regulierung zur Markterweiterung (Commerce Expansion Adjustment) und die entsprechenden Märkte finden Sie in der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement) und in der Liste der [betreffenden Länder/Regionen](define-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
-> Die steuerliche Zuständigkeit für Reseller-Länder/-Regionen und-Regionen (wie [unten](#reseller-countriesregions)beschrieben) wird von der Abbildung C der [App-Entwickler Vereinbarung](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)abgedeckt, ungeachtet der Informationen in der folgenden Tabelle.
+> Die steuerliche Zuständigkeit für Reseller-Länder/-Regionen und-Regionen (wie [unten](#reseller-countriesregions)beschrieben) wird von der Abbildung C der [App-Entwickler Vereinbarung](/legal/windows/agreements/app-developer-agreement)abgedeckt, ungeachtet der Informationen in der folgenden Tabelle.
 > Beachten Sie, dass die Spalte für die **Auszahlungs Implikation** nur für Windows-App-/Spielentwickler gilt. Die in dieser Spalte aufgeführten Steuersätze können jederzeit geändert werden, und Microsoft kann nicht garantieren, dass die Sätze in den folgenden Tabellen stets genau sind.
 
 
@@ -289,7 +289,7 @@ Bestimmte Microsoft-Abrechnungspartner erheben möglicherweise Umsatzsteuer, Geb
 
 ## <a name="reseller-countriesregions"></a>Händlerländer/-regionen
 
-In bestimmten Ländern/Regionen fungiert Microsoft nicht als Agent, sondern als Händler, der Ihre App(s) und In-App-Produkte im Store verfügbar macht. Weitere Informationen zu den Bedingungen für Händlerländer/-regionen finden Sie in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+In bestimmten Ländern/Regionen fungiert Microsoft nicht als Agent, sondern als Händler, der Ihre App(s) und In-App-Produkte im Store verfügbar macht. Weitere Informationen zu den Bedingungen für Händlerländer/-regionen finden Sie in der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement).
 
 Folgendes gilt nur für Entwickler von Windows-apps/spielen:   
 

@@ -1,20 +1,20 @@
 ---
 title: Deaktivieren des Mausmodus
-description: Anleitungen zum Deaktivieren des Standardmausmodus.
+description: Erfahren Sie, wie Sie den standardmäßigen Maus Modus in HTML-und XAML/c#-universelle Windows-Plattform (UWP)-Anwendungen deaktivieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 16b2df2d84c0064c2549c75d867123d90e663314
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57656625"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094597"
 ---
 # <a name="how-to-disable-mouse-mode"></a>Deaktivieren des Mausmodus
-Der Mausmodus ist standardmäßig für alle Anwendungen aktiviert. Das bedeutet, dass alle Anwendungen, für die die Option nicht deaktiviert wurde, einen Mauszeiger erhalten (ähnlich dem Zeiger im Microsoft Edge-Browser auf der Konsole). Es wird nachdrücklich empfohlen, diese Option zu deaktivieren und die direktionale Navigation über den Controller zu optimieren.   
+Der Mausmodus ist standardmäßig für alle Anwendungen aktiviert. Das bedeutet, dass alle Anwendungen, für die die Option nicht deaktiviert wurde, einen Mauszeiger erhalten (ähnlich dem Zeiger im Edge-Browser auf der Konsole). Es wird nachdrücklich empfohlen, diese Option zu deaktivieren und die direktionale Navigation über den Controller zu optimieren.   
    
 ## <a name="html"></a>HTML   
 Um die direktionale Navigation über den Controller in einer JavaScript-UWP-App (Universelle Windows-Plattform) zu aktivieren, verwenden Sie die JavaScript-Bibliothek [TVHelpers für die direktionale Navigation](https://github.com/Microsoft/TVHelpers/wiki/Using-DirectionalNavigation). Fügen Sie die JavaScript-Datei für die direktionale Navigation in Ihr App-Paket ein, und fügen Sie einen Verweis auf diese in allen HTML-Seiten ein, die eine direktionale Navigation über den Controller erfordern:
@@ -46,7 +46,7 @@ public App() {
 ## <a name="cdirectx"></a>C++/DirectX   
 Wenn Sie eine C++-/DirectX-App schreiben, müssen Sie keine Schritte ausführen. Der Mausmodus gilt nur für HTML- und XAML-Anwendungen.
 
-## <a name="see-also"></a>Siehe auch
-- [Bewährte Methoden für die Xbox](tailoring-for-xbox.md)
+## <a name="see-also"></a>Weitere Informationen
+- [Bewährte Methoden für Xbox](tailoring-for-xbox.md)
 - [UWP auf Xbox One](index.md)
 

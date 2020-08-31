@@ -1,17 +1,17 @@
 ---
-description: Informationen zu von XAML verwendeten Regeln für die Leerzeichenverarbeitung.
+description: Erfahren Sie mehr über die Regeln, die von XAML für die Verarbeitung des Leerraums, der Zeilenvorschub und der Registerkarte verwendet werden.
 title: XAML und Leerzeichen
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 521e794680df6449ebc49745319c4aeec74405d1
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 16d5b0b3faa4d356ced2eb352192bd1a91882475
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589955"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094627"
 ---
 # <a name="xaml-and-whitespace"></a>XAML und Leerzeichen
 
@@ -20,16 +20,16 @@ Informationen zu von XAML verwendeten Regeln für die Leerzeichenverarbeitung.
 
 ## <a name="whitespace-processing"></a>Leerzeichenverarbeitung
 
-In XAML werden genau wie in XML Leerstellen, Zeilenvorschub und Tabulator als Leerzeichen verwendet. Diese entsprechen den Unicode-Werten "0020", "000A" bzw. "0009". Standardmäßig wird diese Leerzeichennormalisierung angewendet, wenn ein XAML-Verarbeiter auf internen Text zwischen Elementen in einer XAML-Datei stößt:
+In Übereinstimmung mit XML sind Leerzeichen in XAML Leerzeichen, Zeilenvorschub und Tabulator. Diese entsprechen den Unicode-Werten 0020, 000A bzw. 0009. Standardmäßig wird diese Leerzeichennormalisierung angewendet, wenn ein XAML-Verarbeiter auf internen Text zwischen Elementen in einer XAML-Datei stößt:
 
 -   Zeilenvorschubzeichen zwischen ostasiatischen Zeichen werden entfernt.
--   Alle Leerzeichen (Leerstelle, Zeilenvorschub, Tabulator) werden in Leerstellen umgewandelt.
--   Alle aufeinanderfolgenden Leerstellen werden gelöscht und durch eine einzelne Leerstelle ersetzt.
--   Direkt auf das Starttag folgende Leerstellen werden gelöscht.
--   Leerstellen, die sich direkt vor dem Endtag befinden, werden gelöscht.
--   Mit *ostasiatischen Zeichen* sind die Unicode-Zeichenbereiche „U+20000 bis U+2FFFD“ und „U+30000 bis U+3FFFD“ gemeint. Diese Teilmenge wird gelegentlich auch als *CJK-Ideogramm* bezeichnet. Weitere Informationen finden Sie unter http://www.unicode.org.
+-   Alle Leerraumzeichen (Leerzeichen, Zeilenvorschub, Tabulator) werden in Leerzeichen konvertiert.
+-   Alle aufeinander folgenden Leerzeichen werden gelöscht und durch ein Leerzeichen ersetzt.
+-   Ein Leerzeichen unmittelbar nach dem Starttag wird gelöscht.
+-   Ein Leerzeichen unmittelbar vor dem Endtag wird gelöscht.
+-   Mit *ostasiatischen Zeichen* sind die Unicode-Zeichenbereiche „U+20000 bis U+2FFFD“ und „U+30000 bis U+3FFFD“ gemeint. Diese Teilmenge wird manchmal auch als *cjk-ideograph*bezeichnet. Weitere Informationen finden Sie unter http://www.unicode.org.
 
-"Default" entspricht dem Zustand, der durch den Standardwert des **xml:space**-Attributs angegeben wird.
+„Standard“ entspricht dem Zustand, der durch den Standardwert des **xml:space** -Attribut bezeichnet wird.
 
 ### <a name="whitespace-in-inner-text-and-string-primitives"></a>Leerzeichen in internem Text und Zeichenfolgen-Grundtypen
 
@@ -44,13 +44,13 @@ Die oben angegebenen Normalisierungsregeln gelten für internen Text innerhalb v
 
 In der Praxis ist der Erhalt von Leerzeichen nur bei einem Teil der möglichen Inhaltsmodelle von Bedeutung. Zu diesem Teil gehören Inhaltsmodelle, die ein Singleton vom Typ **String** in beliebiger Form, eine dedizierte Sammlung mit Elementen vom Typ **String** oder eine Mischung aus **String** und anderen Typen in Listen, Sammlungen oder Wörterbüchern akzeptieren.
 
-Auch bei Inhaltsmodellen, die Zeichenfolgen akzeptieren, gilt das folgende Standardverhalten: Verbleibende Leerzeichen werden als unbedeutend erachtet.
+Sogar für Inhaltsmodelle, die Zeichenfolgen unterstützen, besteht das Standardverhalten innerhalb dieser Inhaltsmodelle darin, dass alle verbleibenden Leerräume als nicht signifikant behandelt werden.
 
 ### <a name="preserving-whitespace"></a>Beibehalten von Leerzeichen
 
 Leerzeichen im Quell-XAML-Code können für die spätere Darstellung auf unterschiedliche Arten beibehalten werden. Diese sind von der XAML-Leerzeichennormalisierung des XAML-Verarbeiters nicht betroffen.
 
-`xml:space="preserve"`: Legen Sie dieses Attribut auf der Ebene des Elements, in denen Leerraum beibehalten werden muss. Beachten Sie, dass dadurch alle Leerzeichen erhalten bleiben, einschließlich derer, die möglicherweise von Codeeditoren oder Entwurfsoberflächen hinzugefügt werden, um Markupelemente als visuell intuitive Schachtelung auszurichten. Ob diese Leerzeichen gerendert werden ist ebenfalls wieder eine Frage des Inhaltsmodells für das Containerelement. Wir raten davon ab, `xml:space="preserve"` auf Stammebene anzugeben, da die Mehrzahl an Objektmodellen Leerzeichen in der Regel nicht als signifikant ansehen. Legen Sie das Attribut stattdessen explizit nur auf der Ebene der Elemente fest, die Leerzeichen innerhalb von Zeichenfolgen rendern oder bei denen es sich um Sammlungen handelt, in denen Leerzeichen von Bedeutung sind.
+`xml:space="preserve"`: Geben Sie dieses Attribut auf der Ebene des Elements an, für das die Leerzeichen erhalten bleiben sollen. Beachten Sie, dass dadurch alle Leerzeichen erhalten bleiben, einschließlich derer, die möglicherweise von Codeeditoren oder Entwurfsoberflächen hinzugefügt werden, um Markupelemente als visuell intuitive Schachtelung auszurichten. Ob diese Leerzeichen gerendert werden ist ebenfalls wieder eine Frage des Inhaltsmodells für das Containerelement. Wir raten davon ab, `xml:space="preserve"` auf Stammebene anzugeben, da die Mehrzahl an Objektmodellen Leerzeichen in der Regel nicht als signifikant ansehen. Es ist besser, das Attribut nur auf der Ebene von Elementen spezifisch festzulegen, die Leerräume in Zeichenfolgen rendern oder leeraumsignifikate Auflistungen sind.
 
-Entitäten und geschützte Leerzeichen: XAML unterstützt, platziert eine Unicode-Entität in einem Textobjektmodell. Sie können dedizierte Entitäten wie geschützte Leerzeichen (in UTF-8-Codierung) verwenden. Darüber hinaus können Sie Rich-Text-Steuerelemente verwenden, die geschützte Leerzeichen unterstützen. Gehen Sie mit Bedacht vor, wenn Sie Layoutmerkmale wie Einzüge mithilfe von Entitäten simulieren, da die Laufzeitausgabe der Entitäten von einer größeren Anzahl von Faktoren abhängt als bei den allgemeinen Layoutkomponenten, beispielsweise der ordnungsgemäßen Verwendung von Bereichen und Rändern.
+Entitäten und geschützte Leerzeichen: In XAML kann eine beliebige Unicodeentität innerhalb eines Textobjektmodells angegeben werden. Sie können dedizierte Entitäten wie geschützte Leerzeichen (in UTF-8-Codierung) verwenden. Sie können auch Rich-Text-Steuerelemente verwenden, die geschützte Leerzeichen unterstützen. Gehen Sie mit Bedacht vor, wenn Sie Layoutmerkmale wie Einzüge mithilfe von Entitäten simulieren, da die Laufzeitausgabe der Entitäten von einer größeren Anzahl von Faktoren abhängt als bei den allgemeinen Layoutkomponenten, beispielsweise der ordnungsgemäßen Verwendung von Bereichen und Rändern.
 

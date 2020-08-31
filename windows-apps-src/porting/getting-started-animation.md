@@ -4,14 +4,14 @@ ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: In diesem Projekt verschieben wir ein Rechteck, wenden einen Ausblendeeffekt an und blenden es wieder ein
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b30f2e9d08fd36686045523c54180829570cbd2d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5da59c85f2b091ce21b9da5bb676a410a4b318ba
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372873"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171314"
 ---
 # <a name="getting-started-animation"></a>Erste Schritte: Animation
 
@@ -40,7 +40,7 @@ Tippen Sie im Fenster **Objekte und Zeitachsen** auf das Plussymbol (**Neu**) un
 
 ![Hinzufügen eines Storyboards](images/ios-to-uwp/blend-3.png)
 
-Ein Storyboard wird im Fenster **Objekte und Zeitachsen** angezeigt (möglicherweise müssen Sie die Größe der Ansicht anpassen, damit es ordnungsgemäß angezeigt wird). Die Anzeige der **Designansicht** ändert sich, um anzuzeigen, dass die Zeitachsenaufzeichnung für **Storyboard1 aktiviert ist**. Tippen Sie im Fenster **Objekte und Zeitachsen** über dem gelben Pfeil auf die Schaltfläche **Keyframe aufzeichnen**, um den aktuellen Status des Rechtecks zu erfassen, wie in der folgenden Abbildung gezeigt.
+Ein Storyboard wird im Fenster **Objekte und Zeitachsen** angezeigt (möglicherweise müssen Sie die Größe der Ansicht anpassen, damit es ordnungsgemäß angezeigt wird). Die Anzeige der **Designansicht** ändert sich, um anzuzeigen, dass die Zeitachsenaufzeichnung für Storyboard1 aktiviert ist****. Tippen Sie im Fenster **Objekte und Zeitachsen** über dem gelben Pfeil auf die Schaltfläche **Keyframe aufzeichnen**, um den aktuellen Status des Rechtecks zu erfassen, wie in der folgenden Abbildung gezeigt.
 
 ![Aufzeichnen eines Keyframes](images/ios-to-uwp/blend-4.png)
 
@@ -48,15 +48,15 @@ Lassen Sie uns das Rechteck nun verschieben und ausblenden. Ziehen Sie dazu den 
 
 ![Fenster „Eigenschaften“ und Schaltfläche „Wiedergeben“](images/ios-to-uwp/blend-5.png)
 
-Als Nächstes möchten wir das Rechteck wieder einblenden. Doppelklicken Sie im Fenster **Objekte und Zeitachsen** auf **Storyboard1**. Wählen Sie dann wie in der folgenden Abbildung gezeigt im Fenster **Eigenschaften** im Bereich **Allgemein** **AutoReverse** aus.
+Als Nächstes möchten wir das Rechteck wieder einblenden. Doppelklicken Sie im Fenster **Objekte und Zeitachsen** auf **Storyboard1**. Wählen Sie dann wie in der folgenden Abbildung gezeigt im Fenster **Eigenschaften** im Bereich **Allgemein****AutoReverse** aus.
 
 ![Auswählen eines Storyboards](images/ios-to-uwp/blend-6.png)
 
 Klicken Sie schließlich auf die Schaltfläche **Wiedergeben**, um das Ergebnis zu überprüfen.
 
-Sie können das Projekt erstellen und ausführen, indem Sie auf die grüne Schaltfläche „Ausführen“ am oberen Rand des Fensters klicken (oder F5 drücken). Wenn Sie dies tun, wird das Projekt tatsächlich erstellt und ausgeführt, das grüne Rechteck ist jedoch weiterhin vorhanden. Zum Starten der Animation müssen Sie dem Projekt eine Zeile mit Code hinzufügen. Gehen Sie dazu wie folgt vor:
+Sie können das Projekt erstellen und ausführen, indem Sie auf die grüne Schaltfläche „Ausführen“ am oberen Rand des Fensters klicken (oder F5 drücken). Wenn Sie dies tun, wird das Projekt tatsächlich erstellt und ausgeführt, das grüne Rechteck ist jedoch weiterhin vorhanden. Zum Starten der Animation müssen Sie dem Projekt eine Zeile mit Code hinzufügen. Gehen Sie folgendermaßen vor:
 
-Speichern Sie das Projekt, indem Sie das Menü **Datei** Menü öffnen und **MainPage.xaml speichern** wählen. Kehren Sie zu Visual Studio zurück. Wenn in Visual Studio ein Dialogfeld mit der Frage angezeigt wird, ob Sie die geänderte Datei erneut laden möchten, wählen Sie **Ja**. Doppelklicken Sie zum Öffnen auf die Datei **MainPage.xaml.cs** unter **MainPage.xaml**, und fügen Sie folgenden Code direkt über der public MainPage()-Methode hinzu:
+Speichern Sie das Projekt, indem Sie das Menü **Datei** Menü öffnen und **MainPage.xaml speichern** wählen. Kehren Sie zurück zu Visual Studio. Wenn in Visual Studio ein Dialogfeld mit der Frage angezeigt wird, ob Sie die geänderte Datei erneut laden möchten, wählen Sie **Ja**. Doppelklicken Sie zum Öffnen auf die Datei **MainPage.xaml.cs** unter **MainPage.xaml**, und fügen Sie folgenden Code direkt über der public MainPage()-Methode hinzu:
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -68,7 +68,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 Führen Sie das Projekt erneut aus, und sehen Sie sich die Animation des Rechtecks an. Fertig!
 
-Wenn Sie die Datei MainPage.xaml in der **XAML**-Ansicht öffnen, können Sie den XAML-Code sehen, den Blend für Sie hinzugefügt hat, während Sie im Designer gearbeitet haben. Sehen Sie sich insbesondere den Code in den `<Storyboard>`- und `<Rectangle>`-Elementen an. Der folgende Code zeigt ein Beispiel. Auslassungspunkte stellen Code ohne Bezug dar, der aus Platzgründen ausgelassen wird. Zur besseren Lesbarkeit des Codes wurden Zeilenumbrüche hinzugefügt.
+Wenn Sie die Datei MainPage.xaml in der **XAML**-Ansicht öffnen, können Sie den XAML-Code sehen, den Blend für Sie hinzugefügt hat, während Sie im Designer gearbeitet haben. Sehen Sie sich insbesondere den Code in den `<Storyboard>`- und `<Rectangle>`-Elementen an. Der folgende Code enthält hierzu ein Beispiel. Auslassungspunkte stellen Code ohne Bezug dar, der aus Platzgründen ausgelassen wird. Zur besseren Lesbarkeit des Codes wurden Zeilenumbrüche hinzugefügt.
 
 ```xml
 ...
@@ -124,10 +124,10 @@ Wenn Sie die Datei MainPage.xaml in der **XAML**-Ansicht öffnen, können Sie de
 ...
 ```
 
-Sie können diesen XAML-Code manuell bearbeiten oder zu Blend zurückkehren, um dort weiter an diesem zu arbeiten. Mit Blend können Sie spielerisch interessante Benutzeroberflächen erstellen und sie mit einem Grafiktool animieren, was die Entwicklung erheblich beschleunigt. Weitere Informationen zu Animationen finden Sie unter [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview).
+Sie können diesen XAML-Code manuell bearbeiten oder zu Blend zurückkehren, um dort weiter an diesem zu arbeiten. Mit Blend können Sie spielerisch interessante Benutzeroberflächen erstellen und sie mit einem Grafiktool animieren, was die Entwicklung erheblich beschleunigt. Weitere Informationen zu Animationen finden Sie unter [Übersicht über Animationen](../design/motion/xaml-animation.md).
 
-**Beachten Sie**  Informationen zu Animationen für <span class="legacy-term">UWP-apps mit JavaScript und HTML</span>, finden Sie unter [animieren Ihre Benutzeroberfläche (HTML)](https://docs.microsoft.com/previous-versions/windows/apps/hh465165(v=win.10)).
+**Hinweis**    Informationen zu Animationen für <span class="legacy-term">UWP-apps, die JavaScript und HTML verwenden</span>, finden Sie unter [Animieren Ihrer Benutzeroberfläche (HTML)](/previous-versions/windows/apps/hh465165(v=win.10)).
 
 ### <a name="next-step"></a>Nächster Schritt
 
-[Erste Schritte: Was kommt als nächstes?](getting-started-what-next.md)
+[Erste Schritte: Was tue ich jetzt?](getting-started-what-next.md)

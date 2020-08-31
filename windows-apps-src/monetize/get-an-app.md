@@ -1,28 +1,28 @@
 ---
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API zum Abrufen von Informationen zu einer bestimmten app, die mit Ihrem Partner Center-Konto registriert ist.
+description: Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um Informationen zu einer bestimmten app abzurufen, die bei Ihrem Partner Center-Konto registriert ist.
 title: Abrufen einer App
 ms.date: 02/28/2018
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, App
 ms.localizationpriority: medium
-ms.openlocfilehash: 96efc6145d382d4f6a996e541d638f2a1d896e80
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 29f4b7fdb196e1463f4e738618694363094933f0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372662"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171474"
 ---
 # <a name="get-an-app"></a>Abrufen einer App
 
-Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API zum Abrufen von Informationen zu einer bestimmten app, die mit Ihrem Partner Center-Konto registriert ist.
+Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um Informationen zu einer bestimmten app abzurufen, die bei Ihrem Partner Center-Konto registriert ist.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store Übermittlungs-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 ## <a name="request"></a>Anforderung
 
@@ -35,16 +35,16 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Name        | Typ   | Beschreibung                                                                 |
+| Name        | Typ   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der abzurufenden App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | Zeichenfolge | Erforderlich. Die Store-ID der abzurufenden App. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -53,7 +53,7 @@ Stellen Sie keinen Anforderungstext für diese Methode bereit.
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie Informationen über eine App mit dem Store-ID-Wert 9NBLGGH4R315 abgerufen werden können.
+Im folgenden Beispiel wird veranschaulicht, wie Informationen zu einer APP mit dem Store-ID-Wert 9nblggh4r315 abgerufen werden.
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTTP/1.1
@@ -88,15 +88,15 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die Antwort einen der folgenden HTTP-Fehlercodes.
 
-| Fehlercode |  Beschreibung   |
+| Fehlercode |  BESCHREIBUNG   |
 |--------|------------------|
 | 404  | Die angegebene App konnte nicht gefunden werden. |
-| 409  | Die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Die APP verwendet ein Partner Center-Feature, das [derzeit von der Microsoft Store Übermittlungs-API nicht unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird.  |
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Alle apps abrufen](get-all-apps.md)
-* [Paket Flüge für eine app zu erhalten.](get-flights-for-an-app.md)
-* [Abrufen von Add-ons für eine app](get-add-ons-for-an-app.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Abrufen aller Apps](get-all-apps.md)
+* [Flight-Pakete für eine App abrufen](get-flights-for-an-app.md)
+* [Add-Ons für eine App abrufen](get-add-ons-for-an-app.md)

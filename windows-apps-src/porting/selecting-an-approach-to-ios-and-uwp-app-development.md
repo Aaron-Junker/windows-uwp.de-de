@@ -1,17 +1,17 @@
 ---
-description: Welche Optionen gibt es beim Entwickeln von plattformübergreifenden Apps?
+description: Erfahren Sie mehr über Tools und Techniken, die Ihnen beim Schreiben von Apps helfen können, die Windows, IOS und Android unterstützen.
 title: Auswählen eines Ansatzes für die Entwicklung von iOS- und UWP-Apps
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
-ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
+ms.openlocfilehash: 83a316a729fc1c2042dde5541e2b187bf8903188
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82148584"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171184"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>Auswählen eines Ansatzes für die Entwicklung von iOS- und UWP-Apps
 

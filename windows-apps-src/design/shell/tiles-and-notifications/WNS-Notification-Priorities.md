@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, WinRT-API, WNS
 localizationpriority: medium
-ms.openlocfilehash: 3310b34b2748bd684e46e04775c973680f8e03a9
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 3b6642054f9c63a03764267e5886b67fd4a9ac7d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282239"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169214"
 ---
 # <a name="wns-notification-priorities"></a>WNS-Benachrichtigungs Prioritäten
 Durch Festlegen der Priorität einer Benachrichtigung mit einem einfachen Header auf WNS-Post-Nachrichten können Sie steuern, wie Benachrichtigungen in Akku sensiblen Situationen zugestellt werden.
@@ -30,10 +30,10 @@ Es stehen vier Prioritäten für eine App zur Verfügung, die beim Senden von Pu
 
 Die Prioritäten lauten: 
 
-|    Priority    |    Benutzer Außerkraftsetzung    |    Beschreibung    |    Beispiel    |
+|    Priorität    |    Benutzer Außerkraftsetzung    |    BESCHREIBUNG    |    Beispiel    |
 |----------------|---------------------|-------------------|---------------|
-|    Hoch    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Die wichtigsten Benachrichtigungen, die sofort übermittelt werden müssen, wenn das Gerät Benachrichtigungen empfangen kann. Dinge wie VoIP-Anrufe oder kritische Warnungen, die das Gerät reaktivieren sollten, fallen in diese Kategorie.    |    VoIP-Anrufe, zeitkritische Warnungen    |
-|    Mittel    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Dabei handelt es sich um Dinge, die nicht so wichtig sind, aber Dinge, die nicht sofort ausgeführt werden müssen. die Benutzer sind jedoch verärgert, wenn Sie nicht im Hintergrund ausgeführt werden.    |    Sekundäre e-Mail-Konto Synchronisierung, Live-Kachel Aktualisierungen    |
+|    High    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Die wichtigsten Benachrichtigungen, die sofort übermittelt werden müssen, wenn das Gerät Benachrichtigungen empfangen kann. Dinge wie VoIP-Anrufe oder kritische Warnungen, die das Gerät reaktivieren sollten, fallen in diese Kategorie.    |    VoIP-Anrufe, zeitkritische Warnungen    |
+|    Medium    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Dabei handelt es sich um Dinge, die nicht so wichtig sind, aber Dinge, die nicht sofort ausgeführt werden müssen. die Benutzer sind jedoch verärgert, wenn Sie nicht im Hintergrund ausgeführt werden.    |    Sekundäre e-Mail-Konto Synchronisierung, Live-Kachel Aktualisierungen    |
 |    Niedrig    |    Ja – der Benutzer kann alle Benachrichtigungen von einer APP blockieren oder verhindern, dass eine APP im Akku Spar Modus gedrosselt wird.    |    Benachrichtigungen, die nur sinnvoll sind, wenn der Benutzer das Gerät verwendet oder wenn Hintergrund Aktivität sinnvoll ist. Diese werden zwischengespeichert und erst verarbeitet, wenn sich der Benutzer anmeldet oder in seinem Gerät einfügt.    |    Kontakt Status (Online/Offline)    |
 |    Sehr niedrig     |    Nein – es kann nicht verhindern, dass Benachrichtigungen mit sehr niedriger Priorität im Akku Spar Modus gedrosselt werden.    |    Dies ist fast identisch mit niedriger Priorität, außer dass Benutzer die Akku-sparrichtlinie nicht außer Kraft setzen können. Diese Benachrichtigungen werden nie in Akku Schoner zugestellt.    |    Synchronisieren von Dateien für einen Synchronisierungs Dienst.    |
 
@@ -41,11 +41,11 @@ Beachten Sie, dass viele apps über den gesamten Lebenszyklus hinweg Benachricht
 
 ## <a name="setting-the-priority"></a>Festlegen der Priorität
 
-Das Festlegen der Priorität für die Benachrichtigungs Anforderung erfolgt über einen zusätzlichen Header in der Post-Anforderung, `X-WNS-PRIORITY`. Dies ist ein ganzzahliger Wert zwischen 1 und 4, der einer Priorität zugeordnet ist: 
+Das Festlegen der Priorität für die Benachrichtigungs Anforderung erfolgt über einen zusätzlichen Header in der Post-Anforderung `X-WNS-PRIORITY` . Dies ist ein ganzzahliger Wert zwischen 1 und 4, der einer Priorität zugeordnet ist: 
 
 | Prioritäts Name | X-WNS-Priority-Wert | Standardwert für: |
 |---------------|----------------------|------------------|
-| Hoch | 1 | Popups |
+| High | 1 | Popups |
 | Mittlerer | 2 | Kacheln und Abzeichen |
 | Niedrig | 3 | Raw |
 | Sehr niedrig | 4 |  |
@@ -58,17 +58,17 @@ Wenn Sie Ihre APP über viele verschiedene SKUs von Windows versenden, empfiehlt
 
 Spezifischere Empfohlene Verhaltensweisen für jede Priorität sind unten aufgeführt. Dies ist keine Garantie dafür, dass jedes Gerät genau entsprechend dem Diagramm funktioniert. OEMs können das Verhalten anders konfigurieren, aber die meisten sind in der Nähe dieses Diagramms. 
 
-| Gerätestatus    | HABEN Hoch    |    HABEN Mittel        | HABEN Niedrig    |    HABEN Sehr niedrig    |
+| Device State    | Priorität: hoch    |    Priorität: Mittel        | Priorität: niedrig    |    Priorität: sehr niedrig    |
 |-------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|----------------------------------------------------|--------------------------|
-|    Bildschirm ein-oder angeschlossen    |    Umsetzen    |    Umsetzen    |    Umsetzen    |    Umsetzen    |
-|    Bildschirm aus und Akku    |    Umsetzen    |    Wenn Benutzer ausgenommen: Übermitteln von else: Batch     |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache *    |    Cache    |
+|    Bildschirm ein-oder angeschlossen    |    Bereitstellen    |    Bereitstellen    |    Bereitstellen    |    Bereitstellen    |
+|    Bildschirm aus und Akku    |    Bereitstellen    |    Wenn Benutzer ausgenommen: Übermitteln von else: Batch     |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache *    |    Cache    |
 |    Akku Schoner aktiviert    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Cache     |
 |    Auf Akku + Akku Schoner aktiviert + Bildschirm aus    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Wenn Benutzer ausgenommen: Übermitteln von else: Cache    |    Cache    |
 
 Beachten Sie, dass Benachrichtigungen mit niedriger Priorität standardmäßig für den Abbild Modus und Batterie nur für Windows Phone basierte Geräte übermittelt werden. Dies ist die Kompatibilität mit einer bereits vorhandenen mpns-Richtlinie. Beachten Sie auch, dass die vierte und fünfte Zeile identisch sind, indem Sie lediglich verschiedene Szenarien aufrufen.
 
-Um eine APP im Akku Spar Modus auszumachen, müssen die Benutzer in den Einstellungen zur "Akku Nutzung nach app" wechseln und "zulassen, dass die APP Hintergrundaufgaben ausführen" auswählen. Bei Auswahl dieser Option wird die APP vom Akku Schoner für Benachrichtigungen mit hoher, mittlerer und niedriger Priorität ausgenommen. Sie können auch die [backgroundexecutionmanager-API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) anrufen, um die Berechtigung des Benutzers Programm gesteuert anzufordern.  
+Um eine APP im Akku Spar Modus auszumachen, müssen die Benutzer in den Einstellungen zur "Akku Nutzung nach app" wechseln und "zulassen, dass die APP Hintergrundaufgaben ausführen" auswählen. Bei Auswahl dieser Option wird die APP vom Akku Schoner für Benachrichtigungen mit hoher, mittlerer und niedriger Priorität ausgenommen. Sie können auch die [backgroundexecutionmanager-API](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) anrufen, um die Berechtigung des Benutzers Programm gesteuert anzufordern.  
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 - [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
-- [Anfordern der Berechtigung zum Ausführen im Hintergrund](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)
+- [Anfordern der Berechtigung zum Ausführen im Hintergrund](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_)

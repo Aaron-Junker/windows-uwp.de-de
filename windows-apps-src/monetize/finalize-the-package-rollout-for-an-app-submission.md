@@ -1,31 +1,31 @@
 ---
-description: Verwenden Sie diese Methode der Microsoft Store-Übermittlungs-API, um den Paketrollout für eine App-Übermittlung fertigzustellen.
+description: Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um den Paket Rollout für eine APP-Übermittlung abzuschließen.
 title: Abschließen des Rollouts für eine App-Übermittlung
 ms.date: 04/17/2018
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Paketrollout, App-Übermittlung, fertigstellen
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Paket Rollout, App-Übermittlung, Finalize
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: bfab2a56c3b8c7508042091f16a33d45b3272106
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 65c3d976607d260cca38e8ee09520d6a60e758a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371777"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171514"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>Abschließen des Rollouts für eine App-Übermittlung
 
 
-Verwenden Sie diese Methode der Microsoft Store-Übermittlungs-API zur [Fertigstellung des Paketrollouts](../publish/gradual-package-rollout.md#completing-the-rollout) für eine App-Übermittlung. Weitere Informationen zum Erstellungsprozess einer App-Übermittlung mithilfe der Microsoft Store-Übermittlungs-API finden Sie unter [Verwalten von App-Übermittlungen](manage-app-submissions.md).
+Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um [den Paket Rollout](../publish/gradual-package-rollout.md#completing-the-rollout) für eine APP-Übermittlung abzuschließen. Weitere Informationen zum Prozess der Erstellung einer APP-Übermittlung mithilfe der Microsoft Store Übermittlungs-API finden Sie unter [Verwalten von App](manage-app-submissions.md)-Übermittlungen.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
-* Erstellen Sie eine Eingabe für eine app in Ihrem Partner Center-Konto an. Sie können dies im Partner Center, oder Sie erreichen dies, indem die [erstellen Sie ein app-Einsendung](create-an-app-submission.md) Methode.
-* Ermöglichen Sie einen schrittweisen Paketrollout für die Übermittlung. Hierzu können Sie [im Partner Center](../publish/gradual-package-rollout.md), oder Sie können dazu [mithilfe der Microsoft Store-Übermittlung API](manage-app-submissions.md#manage-gradual-package-rollout).
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store Übermittlungs-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Erstellen Sie eine Übermittlung für eine app in Ihrem Partner Center-Konto. Dies können Sie in Partner Center tun, oder Sie können dies mithilfe der Methode zum [Erstellen einer APP-Übermittlung](create-an-app-submission.md) tun.
+* Ermöglichen Sie einen schrittweisen Paketrollout für die Übermittlung. Dies können Sie [in Partner Center](../publish/gradual-package-rollout.md)tun, oder Sie können dies [mithilfe der Microsoft Store](manage-app-submissions.md#manage-gradual-package-rollout)Übermittlungs-API tun.
 
 ## <a name="request"></a>Anforderung
 
@@ -38,17 +38,17 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Name        | Typ   | Beschreibung                                                                 |
+| Name        | Typ   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App mit der Übermittlung, deren Paketrollout fertig gestellt werden soll. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | String | Erforderlich. Die ID der Übermittlung mit dem Paketrollout, der fertig gestellt werden soll. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer App-Übermittlung](create-an-app-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
+| applicationId | Zeichenfolge | Erforderlich. Die Store-ID der App mit der Übermittlung, deren Paketrollout fertig gestellt werden soll. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).  |
+| submissionId | Zeichenfolge | Erforderlich. Die ID der Übermittlung mit dem Paketrollout, der fertig gestellt werden soll. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer APP-Übermittlung](create-an-app-submission.md)verfügbar. Für eine Übermittlung, die im Partner Center erstellt wurde, ist diese ID auch in der URL für die Übermittlungs Seite im Partner Center verfügbar.  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -82,14 +82,14 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die Antwort einen der folgenden HTTP-Fehlercodes.
 
-| Fehlercode |  Beschreibung   |
+| Fehlercode |  BESCHREIBUNG   |
 |--------|------------------|
 | 404  | Die Übermittlung konnte nicht gefunden werden. |
-| 409  | Dieser Code weist auf einen der folgenden Fehler hin:<br/><br/><ul><li>Die Übermittlung befindet sich nicht in einem gültigen Status für den schrittweisen Rollout (vor dem Aufrufen dieser Methode muss die Übermittlung veröffentlicht und der Wert für [PackageRolloutStatus](manage-app-submissions.md#package-rollout-object) auf **PackageRolloutInProgress** festgelegt werden).</li><li>Die Übermittlung gehört nicht zur angegebenen App.</li><li>Die app verwendet eine DevPartner-Center-Funktion, die [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).</li></ul> |   
+| 409  | Dieser Code weist auf einen der folgenden Fehler hin:<br/><br/><ul><li>Die Übermittlung befindet sich nicht in einem gültigen Status für den schrittweisen Rollout (vor dem Aufrufen dieser Methode muss die Übermittlung veröffentlicht und der Wert für [PackageRolloutStatus](manage-app-submissions.md#package-rollout-object) auf **PackageRolloutInProgress** festgelegt werden).</li><li>Die Übermittlung gehört nicht zur angegebenen App.</li><li>Die APP verwendet ein DevPartner Center-Feature, das [derzeit von der Microsoft Store Übermittlungs-API nicht unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird.</li></ul> |   
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Schrittweise Paket rollout](../publish/gradual-package-rollout.md)
-* [Verwalten der Übermittlung von Apps mit die Übermittlung zum Microsoft Store-API](manage-app-submissions.md)
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Schrittweiser Paketrollout](../publish/gradual-package-rollout.md)
+* [Verwalten von Microsoft Store App](manage-app-submissions.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)

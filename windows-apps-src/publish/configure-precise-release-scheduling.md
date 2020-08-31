@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Zeitplan, Veröffentlichungsdatum, Datumsangaben, starten
 ms.localizationpriority: medium
-ms.openlocfilehash: b674b2569a40a4f7a504bc6b7bc55ac932b83d01
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 0ad59071b6a7298cbb6d896bb7dd60a9a5ee0451
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234802"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171144"
 ---
 # <a name="configure-precise-release-scheduling"></a>Konfigurieren des genauen Veröffentlichungszeitplans
 
@@ -36,7 +36,7 @@ Die Auswahl, die Sie für den Basis Zeitplan treffen, gilt für alle Märkte, in
 
 Hier werden zwei Optionen angezeigt: **Release** und **Beendigung des Erwerbs**.
 
-## <a name="release"></a>Release
+## <a name="release"></a>Freigabe
 
 In der **Dropdown** -Dropdown-Datei können Sie festlegen, wann Ihre APP im Store verfügbar sein soll. Dies bedeutet, dass die APP im Store durchsuchen oder durchsuchen sichtbar ist und dass Kunden ihre Store-Auflistung anzeigen und die APP erwerben können.
 
@@ -63,7 +63,7 @@ Es ist wichtig zu verstehen, dass diese Option die gleichen Auswirkungen hat wie
 
 ## <a name="customize-the-schedule-for-specific-markets"></a>Anpassen des Zeitplans für bestimmte Märkte
 
-Standardmäßig gelten die oben ausgewählten Optionen für alle Märkte, in denen Ihre APP angeboten wird. Um den Preis für bestimmte Märkte anzupassen, klicken Sie auf **für bestimmte Märkte anpassen**. Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem alle Märkte aufgelistet werden, in denen Sie Ihre APP zur Verfügung stellen. Wenn Sie Märkte im Abschnitt " [Märkte](define-pricing-and-market-selection.md) " ausgeschlossen haben, werden diese Märkte nicht angezeigt.
+Standardmäßig gelten die oben ausgewählten Optionen für alle Märkte, in denen Ihre APP angeboten wird. Um den Preis für bestimmte Märkte anzupassen, klicken Sie auf **für bestimmte Märkte anpassen**. Das Popup Fenster für die **Markt Auswahl** wird angezeigt, in dem alle Märkte aufgelistet werden, in denen Sie Ihre APP zur Verfügung stellen. Wenn Sie Märkte im Abschnitt " [Märkte](./define-market-selection.md) " ausgeschlossen haben, werden diese Märkte nicht angezeigt.
 
 Um einen Zeitplan für einen Markt hinzuzufügen, wählen Sie ihn aus, und klicken Sie auf **Speichern**. Anschließend werden die gleichen **Freigabe** -und **Erfassungs** Optionen angezeigt, die oben beschrieben werden, aber die von Ihnen vorgestellte Auswahl gilt nur für diesen Markt.
 
@@ -103,7 +103,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Belgien  |  (UTC+01:00) Brüssel, Kopenhagen, Madrid, Paris |
 | Belize  |  (UTC-06:00) Central Time (USA und Kanada) |
 | Benin  |  (UTC+01:00) West-Zentralafrika |
-| Bermudas  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Bermuda  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
 | Bhutan  |  (UTC+06:00) Dhaka |
 | Bolivarische Republik Venezuela  |  (UTC-04:00) Caracas |
 | Bolivien  |  (UTC-04:00) Georgetown, La Paz, Manaus, San Juan |
@@ -121,7 +121,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | CÃ ́te Ivoire  |  (UTC+00:00) Monrovia, Reykjavik |
 | Kambodscha  |  (UTC+07:00) Bangkok, Hanoi, Jakarta |
 | Kamerun  |  (UTC+01:00) West-Zentralafrika |
-| Canada  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Kanada  |  (UTC-05:00) Eastern Time (USA und Kanada) |
 | Cabo Verde  |  (UTC-01:00) Cabo Verde Is. |
 | Kaimaninseln  |  (UTC-05:00) Eastern Time (USA und Kanada) |
 | Zentralafrikanische Republik  |  (UTC+01:00) West-Zentralafrika |
@@ -132,8 +132,8 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Kokosinseln  |  (UTC+06:30) Yangon (Rangun) |
 | Kolumbien  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
 | Komoren  |  (UTC+03:00) Nairobi |
-| Kongo (Demokratische Republik)  |  (UTC+01:00) West-Zentralafrika |
-| Kongo (DRC)  |  (UTC+01:00) West-Zentralafrika |
+| Kongo  |  (UTC+01:00) West-Zentralafrika |
+| Kongo (DRK)  |  (UTC+01:00) West-Zentralafrika |
 | Cookinseln  |  (UTC-10:00) Hawaii |
 | Costa Rica  |  (UTC-06:00) Central Time (USA und Kanada) |
 | Kroatien  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
@@ -152,11 +152,11 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Estland  |  (UTC+02:00) Chisinau |
 | Äthiopien  |  (UTC+03:00) Nairobi |
 | Falklandinseln (Malwinen)  |  (UTC-04:00) Santiago |
-| Färöer  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| Faröer  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
 | Fidschi  |  (UTC+12:00) Fidschi |
 | Finnland  |  (UTC+02:00) Helsinki, Kiew, Riga, Sofia, Tallinn, Wilna |
 | Frankreich  |  (UTC+01:00) Brüssel, Kopenhagen, Madrid, Paris |
-| Französisch-Guyana  |  (UTC-03:00) Cayenne, Fortaleza |
+| Französisch-Guayana  |  (UTC-03:00) Cayenne, Fortaleza |
 | Französisch-Polynesien  |  (UTC-10:00) Hawaii |
 | Französische Süd- und Antarktisgebiete  |  (UTC+05:00) Aschgabat, Taschkent |
 | Gabun  |  (UTC+01:00) West-Zentralafrika |
@@ -174,12 +174,12 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Guernsey  |  (UTC+00:00) Monrovia, Reykjavik |
 | Guinea  |  (UTC+00:00) Monrovia, Reykjavik |
 | Guinea-Bissau  |  (UTC+00:00) Monrovia, Reykjavik |
-| Guayana  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
+| Guyana  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
 | Haiti  |  (UTC-05:00) Eastern Time (USA und Kanada) |
 | Heard und McDonaldinseln  |  (UTC-05:00) Bogota, Lima, Quito, Rio Branco |
 | Heiliger Stuhl (Vatikanstadt)  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
 | Honduras  |  (UTC-06:00) Central Time (USA und Kanada) |
-| Hongkong (SAR)  |  (UTC+08:00) Beijing, Chongqing, Hongkong, Ürümqi |
+| Hongkong SAR  |  (UTC+08:00) Beijing, Chongqing, Hongkong, Ürümqi |
 | Ungarn  |  (UTC+01:00) Belgrad, Bratislava, Budapest, Ljubljana, Prag |
 | Island  |  (UTC+00:00) Monrovia, Reykjavik |
 | Indien  |  (UTC+05:30) Chennai, Kolkata, Mumbai, Neu-Delhi |
@@ -188,10 +188,10 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Irland  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
 | Israel  |  (UTC+02:00) Jerusalem |
 | Italien  |  (UTC+01:00) Amsterdam, Berlin, Bern, Rom, Stockholm, Wien |
-| Jamaika  |  (UTC-05:00) Eastern Time (USA und Kanada) |
+| Jamaica  |  (UTC-05:00) Eastern Time (USA und Kanada) |
 | Japan  |  (UTC+09:00) Osaka, Sapporo, Tokio |
 | Jersey  |  (UTC+00:00) Monrovia, Reykjavik |
-| Jordan  |  (UTC+02:00) Chisinau |
+| Jordanien  |  (UTC+02:00) Chisinau |
 | Kasachstan  |  (UTC+05:00) Aschgabat, Taschkent |
 | Kenia  |  (UTC+03:00) Nairobi |
 | Kiribati  |  (UTC+14:00) Kiritimati-Insel |
@@ -215,14 +215,14 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Mali  |  (UTC+00:00) Monrovia, Reykjavik |
 | Malta  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
 | Man, Isle of  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
-| Marshallinseln  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
+| Marshall-Inseln  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
 | Martinique  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
 | Mauretanien  |  (UTC+00:00) Monrovia, Reykjavik |
 | Mauritius  |  (UTC+04:00) Port Louis |
 | Mayotte  |  (UTC+03:00) Nairobi |
 | Mexiko  |  (UTC-06:00) Guadalajara, Mexiko-Stadt, Monterrey |
 | Mikronesien  |  (UTC+10:00) Guam, Port Moresby |
-| Moldau  |  (UTC+02:00) Chisinau |
+| Moldawien  |  (UTC+02:00) Chisinau |
 | Monaco  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
 | Mongolei  |  (UTC+07:00) Krasnojarsk |
 | Montenegro  |  (UTC+01:00) Sarajewo, Skopje, Warschau, Zagreb |
@@ -284,7 +284,7 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Salomonen  |  (UTC+11:00) Salomonen, Neukaledonien |
 | Somalia  |  (UTC+03:00) Nairobi |
 | Südafrika  |  (UTC+02:00) Harare, Pretoria |
-| Südgeorgien und Südliche Sandwichinseln  |  (UTC-02:00) Mittelatlantik – Alt |
+| Südgeorgien und die Südlichen Sandwichinseln  |  (UTC-02:00) Mittelatlantik – Alt |
 | Spanien  |  (UTC+01:00) Brüssel, Kopenhagen, Madrid, Paris |
 | Sri Lanka  |  (UTC+05:30) Chennai, Kolkata, Mumbai, Neu-Delhi |
 | Surinam  |  (UTC-03:00) Cayenne, Fortaleza |
@@ -305,13 +305,13 @@ Im folgenden finden Sie eine Tabelle, in der gezeigt wird, welche bestimmten Zei
 | Türkei  |  (UTC+03:00) Istanbul |
 | Turkmenistan  |  (UTC+05:00) Aschgabat, Taschkent |
 | Turks- und Caicosinseln  |  (UTC-05:00) Eastern Time (USA und Kanada) |
-| Tuwalu  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
+| Tuvalu  |  (UTC+12:00) Petropawlowsk-Kamtschatski – Alt |
 | USA Kleinere Amerikanische Überseeinseln  |  (UTC+13:00) Samoa |
 | USA Jungferninseln  |  (UTC-04:00) Atlantik-Zeit (Kanada) |
 | Uganda  |  (UTC+03:00) Nairobi |
 | Ukraine  |  (UTC+02:00) Chisinau |
 | Vereinigte Arabische Emirate  |  (UTC+04:00) Abu Dhabi, Maskat |
-| United Kingdom  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
+| Vereinigtes Königreich  |  (UTC+00:00) Dublin, Edinburgh, Lissabon, London |
 | USA  |  (UTC-05:00) Eastern Time (USA und Kanada) |
 | Uruguay  |  (UTC-03:00) Brasília |
 | Usbekistan  |  (UTC+05:00) Aschgabat, Taschkent |

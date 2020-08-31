@@ -1,43 +1,43 @@
 ---
-Description: Hier erfahren Sie, wie Sie die Notification-Listener zu verwenden, um auf alle Benachrichtigungen des Benutzers zuzugreifen.
-title: Notification-Listener
+Description: Erfahren Sie, wie Sie mit dem benachrichtigungslistener auf alle Benachrichtigungen des Benutzers zugreifen.
+title: Benachrichtigungs Listener
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
 template: detail.hbs
 ms.date: 06/13/2017
 ms.topic: article
-keywords: Windows 10, Uwp, notification listener, Usernotificationlistener, Dokumentation, Zugriff auf Benachrichtigungen
+keywords: Windows 10, UWP, benachrichtigungslistener, usernotificationlistener, Dokumentation, Zugriffs Benachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c18740cbba0ea037440300edbe2d7ba4fd116e
-ms.sourcegitcommit: 1d04910a6bbfcaa985d2074caf8f898c35eab7ab
+ms.openlocfilehash: dc2afb36337439cd115273cd9df8ee1cb2eb3741
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933157"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169184"
 ---
-# <a name="notification-listener-access-all-notifications"></a>Listener für benutzerbenachrichtigungen: Zugriff auf alle Benachrichtigungen
+# <a name="notification-listener-access-all-notifications"></a>Benachrichtigungslistener: Zugriff auf alle Benachrichtigungen
 
-Der Notification-Listener ermöglicht den Zugriff auf die Benachrichtigungen eines Benutzers. Smartwatches und andere Wearables können die Benachrichtigungsfunktion nutzen, um die Benachrichtigungen des Telefons an das tragbare Gerät zu senden. Listener für benutzerbenachrichtigungen können heimautomatisierung apps bestimmte Aktionen ausführen, wenn Benachrichtigungen, beispielsweise können, die die Lichter blinken zu lassen empfangen werden, wenn Sie einen Anruf erhalten. 
+Der benachrichtigungslistener ermöglicht den Zugriff auf die Benachrichtigungen eines Benutzers. Smartwatches und andere Wearables können den benachrichtigungslistener verwenden, um die Telefon Benachrichtigungen an das tragbaren-Gerät zu senden. Home Automation-Apps können benachrichtigungslistener verwenden, um beim Empfang von Benachrichtigungen bestimmte Aktionen auszuführen, z. b. das Blinken der Beleuchtung beim Empfang eines Aufrufes. 
 
 > [!IMPORTANT]
-> **Erfordert Anniversary Update**: Sie müssen SDK 14393 ausgerichtet und Build 14393 oder höher, um Listener für Benutzerbenachrichtigungen verwenden ausgeführt werden.
+> **Erfordert Anniversary Update**: Sie müssen das SDK 14393 als Ziel verwenden und Build 14393 oder höher ausführen, um den benachrichtigungslistener zu verwenden.
 
 
-> **Wichtige APIs:** [UserNotificationListener Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger-Klasse](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **Wichtige APIs**: [usernotificationlistener-Klasse](/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [usernotificationchangedauslöserklasse](/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
-## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Aktivieren des Listeners durch Hinzufügen der User Notification-Funktion 
+## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>Aktivieren Sie den Listener durch Hinzufügen der Benutzer Benachrichtigungsfunktion. 
 
-Um den Notification-Listener verwenden zu können, müssen Sie die User Notification Listener-Funktion zu Ihrem Anwendungsmanifest hinzufügen.
+Um den benachrichtigungslistener zu verwenden, müssen Sie dem App-Manifest die Funktion "benutzerbenachrichtigungslistener"
 
-1. Klicken Sie in Visual Studio im Projektmappen-Explorer doppelt auf Ihre `Package.appxmanifest`-Datei, um den Manifestdesigner zu öffnen.
-2. Öffnen Sie die Registerkarte „Funktionen“.
-3. Überprüfen Sie die **User Notification Listener**-Funktion.
+1. Doppelklicken Sie in Visual Studio im Projektmappen-Explorer auf die `Package.appxmanifest` Datei, um den Manifest-Designer zu öffnen.
+2. Öffnen Sie die Registerkarte Funktionen.
+3. Überprüfen Sie die **benutzerbenachrichtigungslistener**
 
 
-## <a name="check-whether-the-listener-is-supported"></a>Prüfen, ob der Listener unterstützt wird
+## <a name="check-whether-the-listener-is-supported"></a>Überprüfen, ob der Listener unterstützt wird
 
-Wenn Ihre App ältere Versionen von Windows 10 unterstützt, müssen Sie die [ApiInformation](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.ApiInformation)-Klasse verwenden, um zu überprüfen, ob der Listener unterstützt wird.  Wenn der Listener nicht unterstützt wird, vermeiden Sie Aufrufe der Listener-APIs.
+Wenn Ihre APP ältere Versionen von Windows 10 unterstützt, müssen Sie die [apiinformation-Klasse](/uwp/api/Windows.Foundation.Metadata.ApiInformation) verwenden, um zu überprüfen, ob der Listener unterstützt wird.  Wenn der Listener nicht unterstützt wird, sollten Sie keine Aufrufe der listenerapis ausführen.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Notifications.Management.UserNotificationListener"))
@@ -52,9 +52,9 @@ else
 ```
 
 
-## <a name="requesting-access-to-the-listener"></a>Zugriff auf den Listener anfordern
+## <a name="requesting-access-to-the-listener"></a>Anfordern des Zugriffs auf den Listener
 
-Da der Listener den Zugriff auf die Benachrichtigungen des Benutzers erlaubt, müssen Benutzer Ihrer App Zugriffsberechtigung für die Benachrichtigungen erteilen. Während der ersten Ausführung Ihrer App sollten Sie den Zugriff beantragen, um den Notification-Listener zu verwenden. Wenn Sie möchten, können Sie eine Vorab-Benutzeroberfläche anzeigen, die erklärt, warum Ihre Anwendung Zugriff auf die Benachrichtigungen des Benutzers benötigt, bevor Sie [RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.RequestAccessAsync) aufrufen, damit der Benutzer versteht, warum er Zugriff erlauben sollte.
+Da der Listener den Zugriff auf die Benutzer Benachrichtigungen zulässt, müssen die Benutzer Ihrer APP die Berechtigung erteilen, auf Ihre Benachrichtigungen zuzugreifen. Während der ersten Laufzeiten Ihrer APP sollten Sie den Zugriff für die Verwendung des Benachrichtigungs-Listener anfordern. Wenn Sie möchten, können Sie einige vorläufige Benutzeroberflächen anzeigen, in denen erläutert wird, warum Ihre APP Zugriff auf die Benutzer Benachrichtigungen benötigt, bevor Sie [requestaccessasync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.RequestAccessAsync)aufrufen, sodass der Benutzer versteht, warum er den Zugriff erlauben soll.
 
 ```csharp
 // Get the listener
@@ -91,12 +91,12 @@ switch (accessStatus)
 }
 ```
 
-Der Benutzer kann den Zugriff jederzeit über Windows-Einstellungen widerrufen. Ihre app sollte daher immer Überprüfen des Zugriffsstatus über die [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) Methode vor dem Ausführen von Code, der die Listener für benutzerbenachrichtigungen verwendet. Wenn der Benutzer den Zugriff widerruft, schlagen die APIs stillschweigend fehl, anstatt eine Ausnahme auszulösen (z. B. gibt die API zum Abrufen aller Benachrichtigungen einfach eine leere Liste zurück).
+Der Benutzer kann den Zugriff jederzeit über die Windows-Einstellungen widerrufen. Daher sollte Ihre APP den Zugriffsstatus stets über die [getaccessstatus](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) -Methode überprüfen, bevor Sie Code ausführen, der den benachrichtigungslistener verwendet. Wenn der Benutzer den Zugriff widerruft, schlagen die APIs automatisch fehl, anstatt eine Ausnahme auszulösen (z. b. gibt die API zum Abrufen aller Benachrichtigungen einfach eine leere Liste zurück).
 
 
-## <a name="access-the-users-notifications"></a>Zugriff auf Benachrichtigungen des Benutzers
+## <a name="access-the-users-notifications"></a>Zugreifen auf die Benachrichtigungen des Benutzers
 
-Mit dem Listener können Sie eine Liste der aktuellen Benachrichtigungen des Benutzers erhalten. Rufen Sie einfach die Methode [GetNotificationsAsync](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) auf und geben Sie den Typ der Benachrichtigungen an, die Sie erhalten möchten (derzeit werden nur Popup-Benachrichtigungen unterstützt).
+Mit dem benachrichtigungslistener können Sie eine Liste der aktuellen Benachrichtigungen des Benutzers erhalten. Aufrufen Sie einfach die [getnotificationsasync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) -Methode, und geben Sie den Typ der Benachrichtigungen an, die abgerufen werden sollen (derzeit werden nur Popup Benachrichtigungen unterstützt).
 
 ```csharp
 // Get the toast notifications
@@ -106,7 +106,7 @@ IReadOnlyList<UserNotification> notifs = await listener.GetNotificationsAsync(No
 
 ## <a name="displaying-the-notifications"></a>Anzeigen der Benachrichtigungen
 
-Jede Benachrichtigung wird als [UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification) dargestellt, die Informationen über die App, von der die Benachrichtigung stammt, den Zeitpunkt der Erstellung der Benachrichtigung, die Benachrichtigungs-ID und die Benachrichtigung selbst enthält.
+Jede Benachrichtigung wird als [usernotification](/uwp/api/windows.ui.notifications.usernotification)dargestellt, das Informationen über die APP bereitstellt, von der aus die Benachrichtigung stammt, den Zeitpunkt, zu dem die Benachrichtigung erstellt wurde, die ID der Benachrichtigung und die Benachrichtigung selbst.
 
 ```csharp
 public sealed class UserNotification
@@ -118,10 +118,10 @@ public sealed class UserNotification
 }
 ```
 
-Die [AppInfo](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.AppInfo) -Eigenschaft enthält die Informationen, die mit der Benachrichtigung angezeigt werden sollen.
+Die [appinfo](/uwp/api/windows.ui.notifications.usernotification.AppInfo) -Eigenschaft enthält die Informationen, die Sie zum Anzeigen der Benachrichtigung benötigen.
 
 > [!NOTE]
-> Wir empfehlen, Ihren gesamten Code für die Verarbeitung einer einzelnen Benachrichtigung von einem Try/Catch zu umschließen, falls beim Erfassen einer einzelnen Benachrichtigung eine unerwartete Ausnahme auftritt. Das Anzeigen von anderen Benachrichtigungen sollte nicht komplett fehlschlagen, nur weil ein Problem mit einer bestimmten Benachrichtigung aufgetreten ist.
+> Es wird empfohlen, den gesamten Code für die Verarbeitung einer einzelnen Benachrichtigung in einem try/catch-Vorgang zu umgeben, falls eine unerwartete Ausnahme auftritt, wenn Sie eine einzelne Benachrichtigung erfassen. Sie sollten nicht vollständig fehlschlagen, um andere Benachrichtigungen nur aufgrund eines Problems mit einer bestimmten Benachrichtigung anzuzeigen.
 
 ```csharp
 // Select the first notification
@@ -136,9 +136,9 @@ RandomAccessStreamReference appLogoStream = notif.AppInfo.DisplayInfo.GetLogo(ne
 await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 ```
 
-Der Inhalt der Benachrichtigung selbst, wie z. B. der Benachrichtigungstext, ist in der Eigenschaft [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.Notification) enthalten. Diese Eigenschaft enthält den visuellen Teil der Benachrichtigung. (Wenn Sie mit dem Senden von Benachrichtigungen unter Windows vertraut sind, werden Sie feststellen, dass die [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification.Visual)- und [Visual Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual.Bindings)-Eigenschaften im [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification)-Objekt dem entsprechen, was Entwickler beim anzeigen einer Benachrichtigung senden.)
+Der Inhalt der Benachrichtigung selbst (z. b. der Benachrichtigungs Text) ist in der [Benachrichtigungs](/uwp/api/windows.ui.notifications.usernotification.Notification) Eigenschaft enthalten. Diese Eigenschaft enthält den visuellen Teil der Benachrichtigung. (Wenn Sie mit dem Senden von Benachrichtigungen unter Windows vertraut sind, werden Sie feststellen, dass die Eigenschaften " [Visual](/uwp/api/windows.ui.notifications.notification.Visual) " und " [Visual.](/uwp/api/windows.ui.notifications.notificationvisual.Bindings) Binding" im [Benachrichtigungs](/uwp/api/windows.ui.notifications.notification) Objekt den Anforderungen entsprechen, die Entwickler beim pping einer Benachrichtigung senden.)
 
-Wir wollen nach der Toast-Bindung suchen (für fehlersicheren Code sollten Sie überprüfen, ob die Bindung nicht null ist). Aus der Bindung können Sie die Textelemente entnehmen. Sie können sich beliebig viele Textelemente anzeigen lassen. (Im Idealfall sollten Sie alle angezeigt.) Sie können auswählen, der die Textelemente anders behandelt werden sollen; Behandeln Sie z. B. das erste Konto als Titeltext und nachfolgenden Elemente als Textkörper.
+Wir möchten nach der Toast Bindung suchen (bei fehlerfestem Code sollten Sie überprüfen, ob die Bindung nicht NULL ist). Aus der Bindung können Sie die Textelemente abrufen. Sie können beliebig viele Textelemente anzeigen. (Im Idealfall sollten Sie alle anzeigen.) Sie können auswählen, dass die Textelemente anders behandelt werden sollen. behandeln Sie z. b. die erste als Titeltext und nachfolgende Elemente als Textkörper Text.
 
 ```csharp
 // Get the toast binding, if present
@@ -159,9 +159,9 @@ if (toastBinding != null)
 ```
 
 
-## <a name="remove-a-specific-notification"></a>Eine bestimmte Benachrichtigung entfernen
+## <a name="remove-a-specific-notification"></a>Entfernen einer bestimmten Benachrichtigung
 
-Wenn Ihr Wearable oder Service es dem Benutzer erlaubt, Benachrichtigungen zu schließen, können Sie die Benachrichtigung entfernen, so dass der Benutzer sie später nicht mehr auf seinem Telefon oder PC sieht. Geben Sie einfach die Benachrichtigungs-ID (die Sie vom Objekt [UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification) erhalten haben) der Benachrichtigung an, die Sie entfernen möchten: 
+Wenn die tragbaren oder der Dienst dem Benutzer das Verwerfen von Benachrichtigungen ermöglicht, können Sie die tatsächliche Benachrichtigung entfernen, sodass der Benutzer Sie später nicht mehr auf dem Telefon oder PC sehen kann. Geben Sie einfach die Benachrichtigungs-ID (abgerufen aus dem [usernotification](/uwp/api/windows.ui.notifications.usernotification) -Objekt) der Benachrichtigung an, die Sie entfernen möchten: 
 
 ```csharp
 // Remove the notification
@@ -171,7 +171,7 @@ listener.RemoveNotification(notifId);
 
 ## <a name="clear-all-notifications"></a>Alle Benachrichtigungen löschen
 
-Die Methode [UserNotificationListener.ClearNotifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) löscht alle Benachrichtigungen des Benutzers. Verwenden Sie diese Methode mit Vorsicht. Sie sollten nur dann alle Benachrichtigungen löschen, wenn in Ihrem Wearable oder Service ALLE Benachrichtigungen angezeigt werden. Wenn Ihr Wearable oder Service nur bestimmte Benachrichtigungen anzeigt, wenn der Benutzer auf die Schaltfläche „?Benachrichtigungen löschen“ klickt, erwartet der Benutzer lediglich, dass bestimmte Benachrichtigungen entfernt werden. Wenn Sie jedoch die [ClearNotifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications)-Methode aufrufen, werden tatsächlich alle Benachrichtigungen, einschließlich der Benachrichtigungen, die nicht angezeigt werden, entfernt.
+Mit der [usernotificationlistener. clearnotification](/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) -Methode werden alle Benachrichtigungen des Benutzers gelöscht. Verwenden Sie diese Methode mit Vorsicht. Sie sollten nur alle Benachrichtigungen löschen, wenn die tragbaren oder der Dienst alle Benachrichtigungen anzeigt. Wenn die tragbaren oder der Dienst nur bestimmte Benachrichtigungen anzeigt und der Benutzer auf die Schaltfläche "Benachrichtigungen löschen" klickt, erwartet der Benutzer nur, dass die Benachrichtigungen entfernt werden. das Aufrufen der [clearnotification](/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) -Methode würde jedoch bewirken, dass alle Benachrichtigungen, einschließlich derjenigen, die von ihrer tragbaren oder dem Dienst nicht angezeigt wurden, entfernt werden.
 
 ```csharp
 // Clear all notifications. Use with caution.
@@ -179,11 +179,11 @@ listener.ClearNotifications();
 ```
 
 
-## <a name="background-task-for-notification-addeddismissed"></a>Hintergrundaufgabe für hinzugefügte/geschlossene Benachrichtigung
+## <a name="background-task-for-notification-addeddismissed"></a>Hintergrundaufgabe zum Hinzufügen/Verwerfen von Benachrichtigungen
 
-Eine gängige Methode, um eine Anwendung zum Abrufen von Benachrichtigungen zu erstellen, ist die Einrichtung einer Hintergrundaufgabe, damit Sie wissen, wann eine Benachrichtigung hinzugefügt oder geschlossen wurde, unabhängig davon, ob Ihre Anwendung gerade läuft.
+Eine gängige Methode, um einer APP das Lauschen auf Benachrichtigungen zu ermöglichen, ist das Einrichten einer Hintergrundaufgabe, damit Sie wissen, wann eine Benachrichtigung hinzugefügt oder verworfen wurde, unabhängig davon, ob Ihre APP aktuell ausgeführt wird.
 
-Dank des [gemeinsamen Prozessmodells](../../../launch-resume/create-and-register-an-inproc-background-task.md), das im Anniversary Update hinzugefügt wurde, ist das Hinzufügen von Hintergrundaufgaben relativ einfach. Nachdem Sie im Code Ihrer Hauptanwendung den Zugriff des Benutzers auf Notification-Listener erhalten haben und Zugriff auf die Ausführung von Hintergrundaufgaben erhalten haben, registrieren Sie einfach eine neue Hintergrundaufgabe und setzen Sie den [UserNotificationChangedTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) mit der [Toast-Benachrichtigung](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationkinds).
+Dank des [einzelnen Prozessmodells](../../../launch-resume/create-and-register-an-inproc-background-task.md) , das in der Anniversary Update-Aktualisierung hinzugefügt wurde, ist das Hinzufügen von Hintergrundaufgaben recht einfach. Nachdem Sie den Benutzer Zugriff auf den benachrichtigungslistener erhalten und Zugriff zum Ausführen von Hintergrundaufgaben erhalten haben, registrieren Sie einfach eine neue Hintergrundaufgabe, und legen Sie [usernotificationchangedauslöst](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) mithilfe der Popup [Benachrichtigungs Art](/uwp/api/windows.ui.notifications.notificationkinds)fest.
 
 ```csharp
 // TODO: Request/check Listener access via UserNotificationListener.Current.RequestAccessAsync
@@ -207,7 +207,7 @@ if (!BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name.Equals("UserNotif
 }
 ```
 
-Dann überschreiben Sie in Ihrer App.xaml.cs die [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.OnBackgroundActivated)-Methode, falls Sie es noch nicht getan haben, und verwenden eine Switch-Anweisung für den Tasknamen, um festzustellen, welche Ihrer vielen Trigger für Hintergrundaufgaben aufgerufen wurde.
+Überschreiben Sie anschließend in Ihrer APP.XAML.cs die [onbackgroundaktivierte](/uwp/api/windows.ui.xaml.application.OnBackgroundActivated) Methode, wenn Sie dies noch nicht getan haben, und verwenden Sie eine Switch-Anweisung für den Aufgaben Namen, um zu bestimmen, welcher der vielen Hintergrund Task Trigger aufgerufen wurde.
 
 ```csharp
 protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
@@ -227,14 +227,14 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 }
 ```
 
-Die Hintergrundaufgabe ist lediglich ein Hinweis: Sie gibt keine Auskunft darüber, welche Benachrichtigung hinzugefügt oder entfernt wurde. Wenn Ihre Hintergrundaufgabe ausgelöst wird, sollten Sie die Benachrichtigungen auf Ihrem Wearable synchronisieren, damit sie die Benachrichtigungen in der Plattform widerspiegeln. Wenn Ihre Hintergrundaufgabe fehlschlägt, können Sie beim nächsten Ausführen Ihrer Hintergrundaufgabe immer noch Benachrichtigungen über Ihre Wearable wiederherstellen.
+Bei der Hintergrundaufgabe handelt es sich einfach um eine "Schulter Tap": Sie stellt keine Informationen darüber bereit, welche bestimmte Benachrichtigung hinzugefügt oder entfernt wurde. Wenn Ihre Hintergrundaufgabe ausgelöst wird, sollten Sie die Benachrichtigungen auf ihrer tragbaren synchronisieren, damit Sie die Benachrichtigungen auf der Plattform widerspiegeln. Dadurch wird sichergestellt, dass bei einem Fehler bei der Hintergrundaufgabe die Benachrichtigungen auf ihrer tragbaren weiterhin wieder hergestellt werden können, wenn die Hintergrundaufgabe das nächste Mal ausgeführt wird.
 
-`SyncNotifications` ist eine Methode, die Sie implementieren. der nächste Abschnitt zeigt, wie. 
+`SyncNotifications` ist eine Methode, die Sie implementieren. im nächsten Abschnitt wird gezeigt, wie. 
 
 
-## <a name="determining-which-notifications-were-added-and-removed"></a>Ermitteln welche Benachrichtigungen hinzugefügt und entfernt wurden
+## <a name="determining-which-notifications-were-added-and-removed"></a>Ermitteln der hinzugefügten und entfernten Benachrichtigungen
 
-In Ihrer `SyncNotifications`-Methode müssen Sie das Delta zwischen Ihrer aktuellen Benachrichtigungssammlung und den Benachrichtigungen in der Plattform berechnen (Benachrichtigungen mit Ihrem Wearable synchronisieren), um festzustellen, welche Benachrichtigungen hinzugefügt oder entfernt wurden.
+Wenn Sie in Ihrer- `SyncNotifications` Methode ermitteln möchten, welche Benachrichtigungen hinzugefügt oder entfernt wurden (Synchronisieren von Benachrichtigungen mit ihrer Wearable), müssen Sie das Delta zwischen der aktuellen Benachrichtigungs Sammlung und den Benachrichtigungen in der Plattform berechnen.
 
 ```csharp
 // Get all the current notifications from the platform
@@ -274,12 +274,12 @@ foreach (uint id in toBeRemoved)
 ```
 
 
-## <a name="foreground-event-for-notification-addeddismissed"></a>Vordergrundereignis für hinzugefügt/geschlossene Benachrichtigungen
+## <a name="foreground-event-for-notification-addeddismissed"></a>Vordergrund Ereignis für hinzugefügte/verwerfen Benachrichtigung
 
 > [!IMPORTANT] 
-> Bekanntes Problem: Builds vor dem Erstellen von 17763 / Oktober 2018 Update / Version 1809, das Vordergrund-Ereignis führt dazu, dass eine Schleife für die CPU- bzw. nicht funktioniert. Wenn Sie Unterstützung bei diesen früheren Builds benötigen, verwenden Sie stattdessen die Hintergrundaufgabe auf.
+> Bekanntes Problem: in Builds vor Build 17763/Oktober 2018 Update/Version 1809 verursacht das Vordergrund Ereignis eine CPU-Schleife und/oder funktioniert nicht. Wenn Sie Unterstützung für diese früheren Builds benötigen, verwenden Sie stattdessen die Hintergrundaufgabe.
 
-Sie können auch Benachrichtigungen von einem in-Memory-Ereignishandler wiedergeben...
+Sie können auch Benachrichtigungen von einem in-Memory-Ereignishandler überwachen...
 
 ```csharp
 // Subscribe to foreground event
@@ -292,6 +292,6 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>Behebung von Verzögerungen im Hintergrund ausführen
+## <a name="howto-fixdelays-in-the-background-task"></a>Beheben von Verzögerungen in der Hintergrundaufgabe
 
-Wenn Ihre app zu testen, werden Sie feststellen, dass die Hintergrundaufgabe manchmal verzögert wird und nicht für mehrere Minuten auslösen. Um die Verzögerung zu beheben, fordert die Systemeinstellungen zu -> System -> Akku Akkunutzung von app ->, Ihre app in der Liste zu finden, auszuwählen, und legen Sie ihn auf "immer im Hintergrund zulässig." Danach sollte die Hintergrundaufgabe immer in rund um die Benachrichtigung empfangen wird von einer Sekunde ausgelöst werden.
+Wenn Sie Ihre APP testen, bemerken Sie möglicherweise, dass die Hintergrundaufgabe manchmal verzögert ist und nicht mehrere Minuten lang auslöst. Um die Verzögerung zu beheben, fordern Sie den Benutzer auf, zu den Systemeinstellungen zu wechseln-> System > Akku-> Akku Nutzung nach APP, suchen Sie Ihre APP in der Liste, wählen Sie Sie aus, und legen Sie Sie auf "immer zugelassen im Hintergrund" fest.Danach sollte die Hintergrundaufgabe immer innerhalb von ungefähr einer Sekunde der empfangenen Benachrichtigung ausgelöst werden.
