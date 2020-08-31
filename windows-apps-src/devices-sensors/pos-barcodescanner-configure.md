@@ -1,33 +1,33 @@
 ---
 title: Konfigurieren eines Strichcodescanners
-description: Erfahren Sie, wie Sie einen Barcode-Scanner für die betroffene Anwendung zu konfigurieren.
+description: Erfahren Sie, wie Sie einen Barcode Scanner für die beabsichtigte Anwendung konfigurieren.
 ms.date: 08/29/2018
 ms.topic: article
-keywords: Windows 10, UWP, Point Of Service, POS
+keywords: Windows 10, UWP, Point of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 8466c56ef73a1c38c67e28cf52de7f380e6c563a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 96deeb82f0aa04929ac33001b1aee0603e6474c7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321586"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168504"
 ---
 # <a name="configure-a-barcode-scanner"></a>Konfigurieren eines Strichcodescanners
 
-Strichcodescanner können in mehreren verschiedenen Modi konfiguriert werden.  Es ist wichtig für Ihren Strichcodescanner, dass er für die Anwendung ordnungsgemäß konfiguriert ist.
+Barcode Scanner können in verschiedenen Modi konfiguriert werden.  Es ist wichtig, dass der Barcode Scanner für die vorgesehene Anwendung ordnungsgemäß konfiguriert ist.
 
-Viele Strichcodescanner können im **Tastatur Wedge**-Modus konfiguriert werden. Dabei wird der Strichcodescanner als eine Tastatur auf Windows angezeigt.  Dadurch können Sie Strichcodes in Anwendungen scannen, die keine Strichcodescanner unterstützen, wie Notepad.  Wenn Sie einen Strichcode in diesem Modus scannen, werden die decodierten Daten aus dem Strichcodescanner an der Einfügemarke eingefügt, als ob Sie die Daten über die Tastatur eingegeben.  Wenn Sie mehr Kontrolle über Ihren Strichcodescanner von der UWP-App haben möchten, müssen Sie diesen in einem Modus ohne Tastatur-Wedge konfigurieren.
+Viele Barcode Scanner können im Tastatur- **Keil** -Modus konfiguriert werden, sodass der Barcode Scanner als Tastatur für Windows angezeigt wird.  Dies ermöglicht Ihnen das Scannen von Barcodes in Anwendungen, bei denen es sich nicht um Barcode Scanner handelt, z. b. Notepad.  Wenn Sie in diesem Modus einen Barcode Scannen, werden die decodierten Daten aus dem Barcode Scanner an der Einfügemarke eingefügt, als wenn Sie die Daten mit der Tastatur eingegeben haben.  Wenn Sie über Ihre UWP-Anwendung mehr Kontrolle über den Barcode Scanner wünschen, müssen Sie ihn in einem nicht-Tastatur-Keil-Modus konfigurieren.
 
-## <a name="usb-barcode-scanner"></a>USB-Strichcodescanner
-Ein USB-verbundener Strichcodescanner muss im **HID POS-Scanner**-Modus mit den Strichcodescannertreiber konfiguriert werden, der in Windows enthalten ist. Dieser Treiber ist eine Implementierung von der **HID Punkt von Sale Nutzung Tabellen** Spezifikation veröffentlicht [USB HID](https://www.usb.org/hid).  Weitere Informationen finden Sie in der Dokumentation der Strichcodescanner oder wenden Sie sich an den Hersteller des Scanners für weitere Anweisungen zum Aktivieren des **POS-HID-Scanner**-Modus.  Wenn der Strichcodescanner als **POS-HID-Scanner** konfiguriert ist, erscheint er im Geräte-Manager unter dem **POS-Strichcodescanner**-Knoten als **POS HID Strichcodescanner**.
+## <a name="usb-barcode-scanner"></a>USB-Barcode Scanner
+Ein USB-verbundener Barcode Scanner muss im **HID POS-Scanner** -Modus konfiguriert werden, damit er mit dem Barcode Scanner-Treiber funktioniert, der in Windows enthalten ist. Dieser Treiber ist eine Implementierung der " **HID Point of Sale Usage Tables** "-Spezifikation, die auf [USB-HID](https://www.usb.org/hid)veröffentlicht wird.  Anweisungen zum Aktivieren des Modus " **HID POS Scanner** " finden Sie in der Dokumentation zum Barcode Scanner.  Nach der Konfiguration des **Scanners "HID POS** " wird der Barcode Scanner in Geräte-Manager unter dem **POS-Barcode** Scanner-Knoten als POS-unterstrich- **Barcode Scanner**angezeigt.
 
-Der Hersteller des Strichcodescanners hat möglicherweise einen anbieterspezifischen Treiber, der die UWP Strichcodescanner-APIs in einem anderen Modus als **POS-HID-Scanner** unterstützt.  Wenn Sie einen Hersteller bereitgestellte Treiber, die kompatibel mit UWP-Barcode-Scanner-APIs bereits installiert haben, können Sie sehen, dass eine anbieterspezifische Geräte unter **POS Barcode-Scanner** im Geräte-Manager.
+Der Barcode Scanner kann auch über einen herstellerspezifischen Treiber verfügen, der die UWP-Barcode Scanner-APIs in einem anderen Modus als der **HID POS-Scanner**unterstützt.  Wenn Sie bereits einen vom Hersteller bereitgestellten Treiber installiert haben, der mit UWP-Barcode Scanner kompatibel ist, wird in Geräte-Manager möglicherweise ein herstellerspezifisches Gerät angezeigt, das unter **POS-Barcode Scanner** aufgeführt ist.
 
-## <a name="bluetooth-barcode-scanner"></a>Bluetooth-Strichcodescanner
-Ein mit Bluetooth verbundener Scanner muss im **Seriellen Port-Protokoll – einfache serielle Schnittstelle (SPP-SSI)** -Modus für die Arbeit mit UWP Strichcodescanner-APIs konfiguriert sein.  Weitere Informationen finden Sie in der Dokumentation der Strichcodescanner oder wenden Sie sich an den Hersteller des Scanners für weitere Anweisungen zum Aktivieren des **SSI-SPP-Modus**.
+## <a name="bluetooth-barcode-scanner"></a>Bluetooth-Barcode Scanner
+Ein Bluetooth-verbundener Scanner muss im **spp-SSI-Modus (Serial Port Protocol-Simple Serial Interface)** konfiguriert werden, um mit den UWP-Barcode Scanner-APIs arbeiten zu können.  Anweisungen zum Aktivieren des **spp-SSI-Modus**finden Sie in der Dokumentation zum Barcode Scanner, oder wenden Sie sich an Ihren Barcode Scanner.
 
-Vor der Verwendung des Bluetooth-Barcode-Scanners müssen Sie es mit koppeln **Einstellungen > Geräte > Bluetooth & andere Geräte > Bluetooth hinzufügen oder ein anderes Gerät**.
+Bevor Sie den Bluetooth-Barcode Scanner verwenden können, müssen Sie ihn mithilfe von **Einstellungen > Geräte > Bluetooth & anderen Geräten koppeln, > Bluetooth oder ein anderes Gerät hinzufügen**.
 
-Können Sie zu initiieren und steuern, die ereignispaarbildung Prozess mithilfe der [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) Namespace.  Finden Sie unter [Paar Geräte](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices) für Weitere Informationen.
+Sie können den paarungsprozess mit dem [Windows. Devices. Enumeration](/uwp/api/windows.devices.enumeration) -Namespace initiieren und steuern.  Weitere Informationen finden Sie unter [Pair Devices](./pair-devices.md) .
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

@@ -1,134 +1,134 @@
 ---
-Description: Der Xbox-Analytics-Bericht im Partner Center zeigt Sie eine Statistik zur wie Ihre Kunden mit der Xbox-Funktionen in Ihrem Produkt ansprechender sind.
-title: Bericht der Xbox Analyse
+Description: Der Xbox Analytics-Bericht in Partner Center zeigt Ihnen, wie sich Ihre Kunden mit den Xbox-Features in Ihrem Produkt beschäftigen.
+title: Xbox-Analysebericht
 ms.date: 03/21/2019
 ms.topic: article
-keywords: Windows 10, UWP, Xbox Analyse, Xbox Live-Analyse, Xbox-Statistiken
+keywords: Windows 10, UWP, Xbox Analytics, Xbox Live Analytics, Xbox Statistics
 ms.localizationpriority: medium
-ms.openlocfilehash: a6dc1650e1220cd808422a2aa705d4cbab9f59fb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d38e60fbe99db09f5fb49e440249ed9454d44c35
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788172"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157934"
 ---
-# <a name="xbox-analytics-report"></a>Bericht der Xbox Analyse
+# <a name="xbox-analytics-report"></a>Xbox-Analysebericht
 
-Die **Xbox Analytics** Bericht im [Partner Center](https://partner.microsoft.com/dashboard) erfahren Sie Statistiken dazu, wie Ihre Kunden ansprechende, mit der Xbox-Funktionen in Ihrem Spiel sind. Es enthält auch Informationen zur Dienstintegrität, um Clientfehler zu beheben.
+Der **Xbox Analytics** -Bericht in [Partner Center](https://partner.microsoft.com/dashboard) zeigt Ihnen, wie sich Ihre Kunden mit den Xbox-Features in Ihrem Spiel beschäftigen. Außerdem werden Dienst Integritäts Informationen bereitstellt, die Ihnen bei der Behebung von Client Fehlern helfen.
 
 > [!IMPORTANT]
-> Dieser Bericht wird nur angezeigt, wenn Sie ein Spiel für Xbox oder ein Spiel veröffentlichen, das Xbox Live-Dienste verwendet. Wechseln Sie zu diesem Zweck über die [Konzept Genehmigungsprozess](../gaming/concept-approval.md), wozu Spiele, die von veröffentlichten [Microsoft-Partner](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#microsoft-partners) und Spiele, die gesendet werden, über die [ ID@Xbox Programm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#id). Spiele veröffentlicht wird, über die [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) sind derzeit nicht sichtbar in diesem Bericht.
+> Dieser Bericht wird nur angezeigt, wenn Sie ein Spiel für Xbox oder ein Spiel veröffentlichen, das Xbox Live-Dienste verwendet. Zu diesem Zweck müssen Sie den [Genehmigungsprozess des Konzepts](../gaming/concept-approval.md)durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](/gaming/xbox-live/developer-program-overview#microsoft-partners) und-spielen veröffentlicht wurden, die über das [ ID@Xbox Programm](/gaming/xbox-live/developer-program-overview#id)übermittelt wurden. Spiele, die über das [Xbox Live Creators-Programm](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) veröffentlicht werden, sind in diesem Bericht zurzeit nicht sichtbar.
 
-Sehen Sie die **Xbox Analytics** Bericht im linken Navigationsmenü für Ihr Spiel durch Erweitern **analysieren** und **Xbox Analytics**.  Sie können diese Daten anzeigen, im Partner Center oder [Bericht herunterladen](download-analytic-reports.md) offline anzeigen.
+Sie können den **Xbox Analytics** -Bericht im linken Navigationsmenü des Spiels anzeigen, indem Sie **analysieren** und **Xbox Analytics**auswählen.  Sie können diese Daten im Partner Center anzeigen oder [den Bericht herunterladen, um den Bericht](download-analytic-reports.md) offline anzuzeigen.
 
 
-## <a name="overview-tab"></a>Registerkarte Übersicht
+## <a name="overview-tab"></a>Registerkarte „Übersicht“
 
-Die Abschnitte der Registerkarte **Übersicht** zeigen Informationen über die Spieler und deren Interaktion mit Xbox Live-Features an.
+In den Abschnitten auf der Registerkarte " **Übersicht** " finden Sie Informationen dazu, wer Ihre Player sind und wie Sie sich mit Xbox Live-Features beschäftigen.
 
-Für viele dieser Statistiken zeigen wir auch den **Xbox Durchschnitt** an, damit Sie leicht erkennen können, wie Ihre Kunden im Vergleich zu den durchschnittlichen Xbox-Kunden mit Xbox interagieren.
+Für viele dieser Statistiken wird auch der **Xbox-Durchschnitt** angezeigt, sodass Sie leicht erkennen können, wie Ihre Kunden im Vergleich zum durchschnittlichen Xbox-Kunden mit der Xbox interagieren.
 
 > [!NOTE]
-> Diese Statistiken enthalten Kunden, die mit Xbox Live verbunden sind und nicht alle Xbox-Kunden.
+> Diese Statistiken stammen von Kunden, die mit Xbox Live verbunden sind, nicht von allen Xbox-Kunden.
 
 
-### <a name="concurrent-usage"></a>Gleichzeitige Nutzung
+### <a name="concurrent-usage"></a>Parallele Verwendung
 
-In diesem Abschnitt zeigt die Nutzungsdaten nahezu in Echtzeit an (5-15 Minuten Latenz) gegenüber der Anzahl Kunden, die Ihr Spiel stündlich oder pro Minute spielen. Sie können den Zeitraum auswählen (von **Letzte Stunde** bis **Letzten 7 Tage**), indem Sie das Filtersymbol in der oberen rechten Ecke in diesem Abschnitt auswählen.
+In diesem Abschnitt werden Verwendungs Daten nahezu in Echtzeit (mit einer Latenz von 5-15 Minuten) über die durchschnittliche Anzahl der Kunden, die Ihr Spiel pro Minute oder Stunde spielen, angezeigt. Sie können den Zeitbereich (von der **letzten Stunde** bis zum **letzten 7 Tagen**) auswählen, indem Sie das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen.
 
 
 ### <a name="gamerscore-distribution"></a>Gamerscore-Verteilung
 
-In diesem Abschnitt finden Sie Informationen zum Gamerscore Ihrer Kunden. Sie können **alle Spiele** auswählen, um die Verteilung aller Gamerscores Ihren Kunden anzuzeigen oder **dieses Spiel** auswählen, um die Verteilung von Gamerscores anzuzeigen, die nur durch Ihr Spiel erhalten wurden.
+In diesem Abschnitt werden Informationen zum Gamerscore ihrer Kunden angezeigt. Sie können **alle Spiele** auswählen, um die Verteilung des gesamten Gamerscore-Werts für Ihre Kunden anzuzeigen, oder **dieses Spiel** auswählen, um die Verteilung von Gamerscore anzuzeigen, die nur über Ihr Spiel abgerufen wurde.
 
 
-### <a name="achievement-unlocks"></a>Freigeschaltete Erfolge
+### <a name="achievement-unlocks"></a>Entsperren von Leistungen
 
-In diesem Abschnitt wird die Gesamtanzahl der Kunden angezeigt, die im angegebenen Zeitraum den Erfolg freigeschaltet haben. Sie können den Zeitraum auswählen (**Letzter Tag**, **Letzen 30 Tage** oder **Lebensdauer**), indem Sie das Filtersymbol in der oberen rechten Ecke in diesem Abschnitt auswählen.
+In diesem Abschnitt wird die Gesamtzahl der Kunden angezeigt, die die einzelnen Leistungen im angegebenen Zeitraum entsperrt haben. Sie können den Zeitbereich (**Letzter Tag**, die **letzten 30 Tage**oder die **Lebensdauer**) auswählen, indem Sie das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen.
 
 
-### <a name="game-statistics"></a>Spielstatistiken
+### <a name="game-statistics"></a>Spielstatistik
 
-Dieser Abschnitt enthält Registerkarten, die Sie auswählen können, um unterschiedliche Daten über die Kunden Ihres Spiels anzuzeigen. Beachten Sie, dass die Statistiken in diesem Abschnitt auf die allgemeine Featureverwendung hinweisen und nicht auf Ihr bestimmtes Produkt.
+In diesem Abschnitt sind Registerkarten enthalten, die Sie auswählen können, um unterschiedliche Daten für die Kunden des Spiels anzuzeigen. Beachten Sie, dass die Statistiken in diesem Abschnitt auf die Verwendung von Features im allgemeinen und nicht in Ihrem speziellen Produkt verweisen.
 
-- Die Registerkarte **Social Usage** zeigt Daten im Zusammenhang über die sozialen Interaktionen Ihrer Kunden an.
-   - **Spieleinladungen** zeigt den Prozentsatz Ihrer Kunden an, denen Sie Einladungen (für ein Spiel) gesendet haben.
-   - **Party-Chat** zeigt den Prozentsatz Ihrer Kunden an, die Party-Chat verwenden (für alle Spiele).
-   - **SMS** zeigt den Prozentsatz Ihrer Kunden an, die Nachrichten über die Xbox-Shell senden (für ein Spiel).
-- Die Registerkarte **Streaming Usage** zeigt die Prozentsätze der Kunden Ihrer Spiele an, die Spiele auf Twitch und YouTube ansehen oder streamen (für alle Spiele).
-- Die Registerkarte **Game DVR usage** zeigt Daten darüber an, wie Ihre Kunden Spiele aufzeichnen und anzeigen. Sie können die Prozentsätze der Kunden sehen, die Spielclips und Bildschirmfotos des Spiels angezeigt und hochgeladen haben (für alle Spiele).
+- Auf der Registerkarte **soziale Nutzung** werden Daten angezeigt, die sich auf die soziale Interaktion Ihrer Kunden beziehen.
+   - **Spiele-Einladungen** zeigt den Prozentsatz der Kunden an, die Einladungen gesendet haben (für jedes Spiel).
+   - **Party Chat** zeigt den Prozentsatz der Kunden an, die Party Chat (für ein beliebiges Spiel) verwenden.
+   - **SMS** zeigt den Prozentsatz der Kunden an, die Nachrichten über die Xbox Shell (für ein beliebiges Spiel) senden.
+- Auf der Registerkarte **Streaming-Verwendung** werden die Prozentsätze der Kunden Ihres Spiels angezeigt, die das Spiel (für jedes Spiel) auf Twitch und YouTube ansehen oder streamen.
+- Die Registerkarte Verwendung von " **Game DVR** " zeigt Daten im Zusammenhang mit der Aufzeichnung und Anzeige von spielen Ihrer Kunden. Sie können die Prozentsätze von Kunden anzeigen, die Spiel Clips und Screenshots des Spiels (für jedes Spiel) angezeigt und hochgeladen haben.
 
 
 ### <a name="friends-and-followers"></a>Freunde und Follower
 
-In diesem Abschnitt wird die **durchschnittliche Anzahl der Freunde** und **die durchschnittliche Anzahl der Follower** für Kunden angezeigt, die Ihr Spiel spielen.
+In diesem Abschnitt wird die **durchschnittliche Anzahl von Freunden** und die **durchschnittliche Anzahl von Followern** für die Kunden angezeigt, die Ihr Spiel spielen.
 
 
-### <a name="accessory-usage"></a>Nutzung des Zubehörs
+### <a name="accessory-usage"></a>Zubehör Verwendung
 
-Dieses Diagramm zeigt die Prozentsätze der Kunden Ihres Spiels an, die externe Festplatten und Xbox Elite Wireless Controller verwenden (auf der Xbox).
+In diesem Diagramm werden die Prozentsätze der Kunden eines Spiels angezeigt, die externe Festplatten verwenden, und die mit Xbox Elite-drahtlos Controller (auf Xbox) verwenden.
 
-Diese Daten bedeutet nicht, das diese Kunden Ihr Produkt auf externen Festplatten installiert haben oder Elite-Controller während der Wiedergabe verwenden. Er bezieht sich darauf, wie viele Kunden Ihres Produkts diese Features in der Regel verwenden.
+Diese Daten bedeuten nicht, dass diese Kunden das Produkt auf externen Festplatten installiert haben oder während der Wiedergabe einen Elite Controller verwendet haben. Es bezieht sich darauf, wie viele Kunden des Produkts diese Features im Allgemeinen verwenden.
 
 
 ### <a name="connection-type"></a>Verbindungstyp
 
-Dieses Diagramm zeigt die Prozentsätze für die Benutzer Ihres Produkts an, die **verkabelte** Internetverbindungen im Vergleich zu **WLAN** nutzen (auf der Xbox).
+Dieses Diagramm zeigt die Prozentsätze der Kunden Ihres Produkts, die **kabelgebundene** Internetverbindungen und **drahtlos** Verbindungen (auf Xbox) verwenden.
 
 
-## <a name="xbox-live-service-health-tab"></a>Xbox Live Registerkarte „Dienstintegrität”
+## <a name="xbox-live-service-health-tab"></a>Registerkarte "Xbox Live Service Health"
 
-In den Abschnitten auf der **Xbox Live Registerkarte „Dienstintegrität”** können Sie die Auswirkung der Xbox Live Clientfehler sehen, einschließlich der Begrenzung der Übertragungsrate. Außerdem können Sie einen Drilldown nach Endpunkt und Statuscode durchführen, um Informationen abzurufen, die bei der Behebung der Probleme helfen. Sie können dort ebenfalls die Verfügbarkeit von Xbox Live-Diensten für die Aufrufe Ihres Produkts einsehen.
+Mithilfe der Abschnitte auf der **Registerkarte "Xbox Live Service Health** " können Sie die Auswirkungen von Xbox Live-Client Fehlern, einschließlich der Raten Begrenzung, nachvollziehen. Außerdem können Sie einen Drilldown nach dem Endpunkt und dem Statuscode durchführen, um Informationen zu erhalten, die Ihnen helfen, diese Probleme zu beheben, und Sie erhalten Informationen zur Verfügbarkeit des Xbox Live-Dienstanbieter, die für die
 
 > [!NOTE]
-> Wenn Sie diese Informationen einsehen und Probleme behandeln, empfehlen wir ein Priorisieren der Begrenzung der Übertragungsrate, da diese Fehler in der Regel die größte Auswirkung auf Ihre Kunden haben.
+> Wenn Sie diese Informationen überprüfen und Probleme beheben, empfehlen wir die Priorisierung der Raten Begrenzung, da diese Fehler in der Regel die größte Auswirkung auf die Kunden haben.
 
 
 ### <a name="apply-filters"></a>Anwenden von Filtern
 
-Im oberen Bereich der Registerkarte können Sie den Zeitraum auswählen, für den die Daten angezeigt werden sollen. Die Standardeinstellung ist **30D** (30 Tage), aber Sie können Daten für **7D** (7 Tage) oder einen benutzerdefinierten Datumsbereich auswählen, den Sie festlegen (nicht mehr als 30 Tage). Beachten Sie für einen benutzerdefinierten Datumsbereich, dass alle Diagramme den Diagrammbereich auf den ersten und letzten Tag der Daten innerhalb des Bereichs kürzen, den Sie eingegeben haben.
+Im oberen Bereich der Registerkarte können Sie den Zeitraum auswählen, für den Sie Daten anzeigen möchten. Die Standardauswahl beträgt **30D** (30 Tage), Sie können jedoch auswählen, dass die Daten für **7D** (7 Tage) oder für einen von Ihnen angegebenen benutzerdefinierten Datumsbereich (nicht mehr als 30 Tage) angezeigt werden. Beachten Sie für einen benutzerdefinierten Datumsbereich, dass alle Diagramme den Diagrammbereich auf den ersten und den letzten Tag der Daten kürzen, die innerhalb des von Ihnen eingegebenen Datums Bereichs bereitgestellt werden.
 
-Sie können ebenfalls **Filter** erweitern, um alle Daten auf dieser Seite nach Paketversion, Gerätetyp und/oder Sandbox zu filtern.
-- **Paketversion**: Der Standardfilter ist **alle Versionen**, aber Sie können einschränken, die Dienst-integritätsdaten, um eine spezielle Version des Pakets.
-- **Gerätetyp**: Die Standardeinstellung ist **alle Geräte**, aber Sie können die Service Health-Daten zu einem bestimmten Gerätetyp einschränken.
-- **Sandbox**: Die Standardeinstellung ist **RETAIL**, aber Sie können die Health-Dienstdaten einer bestimmten Sandbox einschränken.
+Sie können auch **Filter** erweitern, um alle Daten auf dieser Seite nach Paketversion, Gerätetyp und/oder Sandbox zu filtern.
+- **Paketversion**: der Standardfilter ist **alle Versionen**, aber Sie können die Dienst Integritäts Daten auf eine bestimmte Paketversion beschränken.
+- **Gerätetyp**: die Standardeinstellung ist " **alle Geräte**", aber Sie können die Dienst Integritäts Daten auf einen bestimmten Gerätetyp beschränken.
+- **Sandbox**: die Standardeinstellung ist " **Retail**", aber Sie können die Dienst Integritäts Daten auf einen bestimmten Sandkasten beschränken.
 
-Die Informationen in allen unten angezeigten Diagrammen beziehen sich auf den ausgewählten Zeitraum und alle von Ihnen ausgewählten Filter. In einigen Abschnitten können Sie zusätzliche Filter anwenden.
+Die Informationen in allen unten aufgeführten Diagrammen spiegeln den Datumsbereich und alle Filter wider, die Sie ausgewählt haben. In einigen Abschnitten können Sie auch zusätzliche Filter anwenden.
 
 
-### <a name="client-errors-by-service"></a>Clientfehler pro Dienst
+### <a name="client-errors-by-service"></a>Client Fehler nach Dienst
 
-Das Diagramm **Clientfehler pro Dienst** zeigt die Anzahl der täglichen Clientfehler (4xx) auf jedem Xbox Live-Dienst über einen ausgewählten Zeitraum an.
+Im Diagramm **Client Fehler nach Dienst wird** die Anzahl der täglichen Client Fehler (4xx) für jeden Xbox Live-Dienst im ausgewählten Zeitraum angezeigt.
 
-Sie können auch nur Ratenbegrenzungsfehler anzeigen, indem Sie **Begrenzung der Übertragungsrate** auswählen. Zeigt die täglichen Fehler bei der Begrenzung der Übertragungsrate (429) und der Ratenbegrenzungsausnahmen (429E) bei Xbox Live-Diensten über den ausgewählten Zeitraum an.
-
-> [!NOTE]
-> Ein Statuscode 429E wurde tatsächlich erfolgreich als Statuscode 200 zurückgegeben, wäre jedoch in der Rate begrenzt, wenn der Dienst ein hohes Volumen zu dem Zeitpunkt hatte, daher wird empfohlen, dass Sie es den Fehler genauso behandeln, als ob er erzwungen (429) wurde.
-
-Dieses Diagramm zeigt standardmäßig die sechs Top-Dienste nach Fehleranzahl an. Sie können das Filtersymbol in der oberen rechten Ecke dieses Abschnitts auswählen, um unterschiedliche Dienste auszuwählen. Sie können Fehler für maximal sechs Dienste auf einmal anzeigen.
+Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Begrenzung**auswählen. Dadurch wird die Anzahl 429 der Pro Xbox Live-Dienste (429e) für die einzelnen Xbox Live-Dienste über den ausgewählten Zeitraum hinweg angezeigt.
 
 > [!NOTE]
-> Die Legende zeigt nur die unterschiedlichen Präfixe für die einzelnen Dienste an (z. B. **presence** anstelle von **presence.xboxlive.com**). Sie finden die vollständige Service-Adresse in der Tabelle **Clientfehler nach Endpunkt** weiter unten in der Registerkarte **Xbox Live-Dienstintegrität** .
+> Der Statuscode "429e" wurde tatsächlich erfolgreich als 200-Statuscode zurückgegeben, wäre aber nur raten beschränkt, wenn der Dienst zu diesem Zeitpunkt ein hohes Volumen aufwies. Deshalb wird empfohlen, ihn genau so zu behandeln, als wäre er erzwungen (429).
+
+In diesem Diagramm werden standardmäßig die ersten sechs Dienste nach Fehler Anzahl angezeigt. Sie können das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen, um verschiedene Dienste auszuwählen. Sie können Fehler für bis zu sechs Dienste gleichzeitig anzeigen.
+
+> [!NOTE]
+> In der Legende wird nur das Präfix-Präfix für jeden Dienst angezeigt (z. b. **Anwesenheit** anstelle von **Presence.XboxLive.com**). Sie finden die vollständige Dienst Adresse in der Tabelle **Client Fehler nach Endpunkt** unten auf der Registerkarte **Xbox Live Service Health** .
 
 
 ### <a name="service-availability"></a>Dienstverfügbarkeit
 
-Das Diagramm **Dienstverfügbarkeit** zeigt die tägliche Verfügbarkeit aller Xbox Live-Dienste über den ausgewählten Zeitraum an. Dies wird als *1-(Serverfehler insgesamt (5xx) /Antworten insgesamt)* berechnet. Dies ist produktspezifisch und nicht Xbox Live-spezifisch.
+Das **Dienst Verfügbarkeits** Diagramm zeigt die tägliche Verfügbarkeit für jeden Xbox Live-Dienst über den ausgewählten Zeitraum an. Dies wird als *1-(Server mit dem Gesamt Server (5xx)/Gesamtzahl der Antworten)* berechnet und ist für Ihr produktspezifisch, nicht für Xbox Live als Ganzes.
 
-Dieses Diagramm zeigt standardmäßig die sechs Dienste mit der niedrigsten Verfügbarkeit an. Sie können das Filtersymbol in der oberen rechten Ecke dieses Abschnitts auswählen, um unterschiedliche Dienste auszuwählen. Sie können die Verfügbarkeit für maximal sechs Dienste auf einmal anzeigen.
-
-> [!NOTE]
-> Die Legende zeigt nur die unterschiedlichen Präfixe für die einzelnen Dienste an (z. B. **presence** anstelle von **presence.xboxlive.com**). Sie finden die vollständige Service-Adresse in der Tabelle **Clientfehler nach Endpunkt** weiter unten in der Registerkarte **Xbox Live-Dienstintegrität** .
-
-
-### <a name="client-errors-by-endpoint"></a>Clientfehler nach Endpunkt
-
-Die Tabelle **Clientfehler nach Endpunkt** zeigt die Anzahl der täglichen Clientfehler (4xx) pro Xbox Live-Dienst, Endpunkt und Statuscode über einen ausgewählten Zeitraum an. Standardmäßig wird diese Tabelle nach der Gesamtzahl der Service-Antworten in absteigender Reihenfolge sortiert, Sie können die Sortierreihenfolge allerdings ändern, indem Sie auf die Spaltenüberschriften klicken.
-
-Sie können auch nur Ratenbegrenzungsfehler anzeigen, indem Sie **Begrenzung der Übertragungsrate** auswählen. Zeigt die täglichen Fehler bei der Begrenzung der Übertragungsrate (429) und der Ratenbegrenzungsausnahmen (429E) bei Xbox Live-Diensten, Endpunkten und Statuscodes über den ausgewählten Zeitraum an.
+In diesem Diagramm werden standardmäßig die sechs Dienste angezeigt, die die niedrigste Verfügbarkeit aufweisen. Sie können das Filter Symbol in der oberen rechten Ecke dieses Abschnitts auswählen, um verschiedene Dienste auszuwählen. Sie können die Verfügbarkeit für bis zu sechs Dienste gleichzeitig anzeigen.
 
 > [!NOTE]
-> Ein Statuscode 429E wurde tatsächlich erfolgreich als Statuscode 200 zurückgegeben, wäre jedoch in der Rate begrenzt, wenn der Dienst ein hohes Volumen zu dem Zeitpunkt hatte, daher wird empfohlen, dass Sie es den Fehler genauso behandeln, als ob er erzwungen (429) wurde.
+> In der Legende wird nur das Präfix-Präfix für jeden Dienst angezeigt (z. b. **Anwesenheit** anstelle von **Presence.XboxLive.com**). Sie finden die vollständige Dienst Adresse in der Tabelle **Client Fehler nach Endpunkt** unten auf der Registerkarte **Xbox Live Service Health** .
+
+
+### <a name="client-errors-by-endpoint"></a>Client Fehler nach Endpunkt
+
+In der Tabelle **Client Fehler nach Endpunkt** wird die Anzahl der täglichen Client Fehler (4xx) angezeigt, die von den einzelnen Xbox Live-Diensten, dem Endpunkt und dem Statuscode im ausgewählten Zeitraum aufgeschlüsselt sind. Standardmäßig wird die Tabelle nach der Gesamtzahl der Dienst Antworten in absteigender Reihenfolge sortiert, aber Sie können die Sortierreihenfolge ändern, indem Sie auf eine der Spaltenüberschriften klicken.
+
+Sie können auch nur raten Einschränkungs Fehler anzeigen, indem Sie **Raten Begrenzung**auswählen. Dadurch wird die Anzahl der Pro Xbox Live-Dienst, Endpunkt und Statuscode über den ausgewählten Zeitraum ausgeschlossenen (429) und Raten einschränkenden Fehler (429e) angezeigt.
+
+> [!NOTE]
+> Der Statuscode "429e" wurde tatsächlich erfolgreich als 200-Statuscode zurückgegeben, wäre aber nur raten beschränkt, wenn der Dienst zu diesem Zeitpunkt ein hohes Volumen aufwies. Deshalb wird empfohlen, ihn genau so zu behandeln, als wäre er erzwungen (429).
 
 
 

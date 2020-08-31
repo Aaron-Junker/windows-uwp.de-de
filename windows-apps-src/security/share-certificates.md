@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe9a6fe94fa388c35f181341972211b9ed6c03f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cbe4f1e2a9b3e5290cd26edae10af6ac9bb0dbfc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371922"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155294"
 ---
 # <a name="share-certificates-between-apps"></a>Freigabe von Zertifikaten zwischen Apps
 
@@ -28,14 +28,14 @@ Apps können für die Authentifizierung bei einem Webdienst ein Zertifikat verwe
 In diesem Artikel werden die Microsoft-Internetinformationsdienste (Microsoft Internet Information Services, IIS) als Beispiel verwendet. IIS ist standardmäßig nicht aktiviert. Sie können IIS über die Systemsteuerung aktivieren.
 
 1.  Öffnen Sie die Systemsteuerung, und wählen Sie **Programme** aus.
-2.  Wählen Sie die Option **Windows-Features aktivieren oder deaktivieren** aus.
+2.  Wählen Sie Windows-Funktionen ein- **oder ausschalten aus**.
 3.  Erweitern Sie **Internetinformationsdienste** und dann **WWW-Dienste**. Erweitern Sie **Anwendungsentwicklungsfeatures**, und wählen Sie **ASP.NET 3.5** und **ASP.NET 4.5**. Das Auswählen führt dazu, dass **Internetinformationsdienste** automatisch aktiviert wird.
 4.  Klicken Sie auf **OK**, um die Änderungen zu übernehmen.
 
 ## <a name="create-and-publish-a-secured-web-service"></a>Erstellen und Veröffentlichen eines sicheren Webdiensts
 
 
-1.  Führen Sie Microsoft Visual Studio als Administrator aus, und wählen Sie auf der Startseite die Option **Neues Projekt** aus. Für die Veröffentlichung eines Webdiensts auf einem IIS-Server ist Administratorzugriff erforderlich. Ändern Sie im Dialogfeld „Neues Projekt“ das Framework in **.NET Framework 3.5**. Wählen Sie **Visual C#**   - &gt; **Web**  - &gt; **Visual Studio**  - &gt; **ASP.NET-Webdienstanwendung**. Geben Sie der Anwendung den Namen „FirstContosoBank“. Klicken Sie auf **OK**, um das Projekt zu erstellen.
+1.  Führen Sie Microsoft Visual Studio als Administrator aus, und wählen Sie auf der Startseite die Option **Neues Projekt** aus. Für die Veröffentlichung eines Webdiensts auf einem IIS-Server ist Administratorzugriff erforderlich. Ändern Sie im Dialogfeld „Neues Projekt“ das Framework in **.NET Framework 3.5**. Wählen Sie **Visual c#**  - &gt; **Web**  - &gt; **Visual Studio**  - &gt; **ASP.NET Webdienst Anwendung**aus. Geben Sie der Anwendung den Namen „FirstContosoBank“. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 2.  Ersetzen Sie in der Datei **Service1.asmx.cs** die standardmäßige Webmethode **HelloWorld** durch die folgende "Login"-Methode.
     ```cs
             [WebMethod]
@@ -58,23 +58,23 @@ In diesem Artikel werden die Microsoft-Internetinformationsdienste (Microsoft In
 
 
 1.  Führen Sie den **Internetinformationsdienste (IIS)-Manager** aus.
-2.  Erweitern Sie die Websites für Ihren IIS-Server. Wählen Sie unter **Standardwebsite** den neuen Webdienst "FirstContosoBank". Wählen Sie im Abschnitt **Aktionen** die Option **Erweiterte Einstellungen...** .
+2.  Erweitern Sie die Websites für Ihren IIS-Server. Wählen Sie unter **Standardwebsite** den neuen Webdienst "FirstContosoBank". Wählen Sie im Abschnitt **Aktionen** die Option **Erweiterte Einstellungen...**.
 3.  Legen Sie den **Anwendungspool** auf **.NET v2.0** fest, und klicken Sie auf **OK**.
-4.  Wählen Sie im **Internetinformationsdienste (IIS)-Manager** Ihren IIS-Server aus, und doppelklicken Sie anschließend auf **Serverzertifikate**. Wählen Sie im Abschnitt **Aktionen** die Option **Selbstsigniertes Zertifikat erstellen...** . Geben Sie "ContosoBank" als Anzeigenamen für das Zertifikat ein, und klicken Sie auf **OK**. Es wird ein neues Zertifikat zur Verwendung durch den IIS-Server im Format „&lt;Servername&gt;.&lt;Domänenname&gt;“ erstellt.
-5.  Wählen Sie im **Internetinformationsdienste (IIS)-Manager** die Standardwebsite aus. Wählen Sie im Abschnitt **Aktionen** die Option **Bindung**, und klicken Sie anschließend auf **Hinzufügen...** . Wählen Sie als Typ https, legen Sie den Port auf 443 fest, und geben Sie den vollständigen Hostnamen für Ihren IIS-Server ein („&lt;Servername&gt;.&lt;Domänenname&gt;“). Legen Sie das SSL-Zertifikat auf „ContosoBank“ fest. Klicken Sie auf **OK**. Klicken Sie im Fenster **Sitebindungen** auf **Schließen**.
+4.  Wählen Sie im **Internetinformationsdienste (IIS)-Manager** Ihren IIS-Server aus, und doppelklicken Sie anschließend auf **Serverzertifikate**. Wählen Sie im Abschnitt **Aktionen** die Option **selbst signiertes Zertifikat erstellen...** aus. Geben Sie "contosobank" als anzeigen Amen für das Zertifikat ein, und klicken Sie auf **OK**. Es wird ein neues Zertifikat zur Verwendung durch den IIS-Server im Format „&lt;Servername&gt;.&lt;Domänenname&gt;“ erstellt.
+5.  Wählen Sie im **Internetinformationsdienste (IIS)-Manager** die Standardwebsite aus. Wählen Sie im Abschnitt **Aktionen** die Option **Bindung** aus, und klicken Sie dann auf **hinzufügen...**. Wählen Sie "https" als Typ aus, legen Sie den Port auf "443" fest, und geben Sie den vollständigen Hostnamen für Ihren IIS-Server ein (" &lt; Servername" &gt; . &lt; Domänen Name &gt; "). Legen Sie das SSL-Zertifikat auf „ContosoBank“ fest. Klicken Sie auf **OK**. Klicken Sie im Fenster **Sitebindungen** auf **Schließen**.
 6.  Wählen Sie im **Internetinformationsdienste (IIS)-Manager** den Webdienst "FirstContosoBank" aus. Doppelklicken Sie auf **SSL-Einstellungen**. Aktivieren Sie **SSL erforderlich**. Wählen Sie unter **Clientzertifikate** die Option **Erforderlich**. Klicken Sie im Abschnitt **Aktionen** auf **Übernehmen**.
-7.  Sie können überprüfen, ob der Webdienst richtig konfiguriert ist, indem Sie den Webbrowser öffnen und die folgende Webadresse eingeben: https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx. Beispiel: "https://myserver.example.com/FirstContosoBank/Service1.asmx“. Wenn der Webdienst richtig konfiguriert ist, werden Sie zum Auswählen eines Clientzertifikats für den Zugriff auf den Webdienst aufgefordert.
+7.  Sie können überprüfen, ob der Webdienst richtig konfiguriert ist, indem Sie den Webbrowser öffnen und die folgende Webadresse eingeben: https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx. Beispiel: „https://myserver.example.com/FirstContosoBank/Service1.asmx“. Wenn der Webdienst richtig konfiguriert ist, werden Sie zum Auswählen eines Clientzertifikats für den Zugriff auf den Webdienst aufgefordert.
 
 Sie können diese Schritte wiederholen, um mehrere Webdienste zu erstellen, auf die mit demselben Clientzertifikat zugegriffen werden kann.
 
-## <a name="create-a-uwp-app-that-uses-certificate-authentication"></a>Erstellen einer UWP-App mit Verwendung der Authentifizierung per Zertifikat
+## <a name="create-a-uwp-app-that-uses-certificate-authentication"></a>Erstellen einer UWP-APP, die die Zertifikat Authentifizierung verwendet
 
 
-Nachdem Sie nun über mindestens einen sicheren Webdienst verfügen, können Ihre Apps Zertifikate für die Authentifizierung bei diesen Webdiensten verwenden. Wenn Sie mithilfe des [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)-Objekts eine Anforderung an einen authentifizierten Webdienst senden, enthält die erste Anforderung kein Clientzertifikat. Der authentifizierte Webdienst antwortet mit einer Anforderung der Clientauthentifizierung. Daraufhin fragt der Windows-Client den Zertifikatspeicher automatisch nach verfügbaren Clientzertifikaten ab. Der Benutzer kann für die Authentifizierung beim Webdienst eine Auswahl aus diesen Zertifikaten treffen. Da einige Zertifikate kennwortgeschützt sind, müssen Sie es Benutzern ermöglichen, das Kennwort für ein Zertifikat einzugeben.
+Nachdem Sie nun über mindestens einen sicheren Webdienst verfügen, können Ihre Apps Zertifikate für die Authentifizierung bei diesen Webdiensten verwenden. Wenn Sie mithilfe des [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient)-Objekts eine Anforderung an einen authentifizierten Webdienst senden, enthält die erste Anforderung kein Clientzertifikat. Der authentifizierte Webdienst antwortet mit einer Anforderung der Clientauthentifizierung. Daraufhin fragt der Windows-Client den Zertifikatspeicher automatisch nach verfügbaren Clientzertifikaten ab. Der Benutzer kann für die Authentifizierung beim Webdienst eine Auswahl aus diesen Zertifikaten treffen. Da einige Zertifikate kennwortgeschützt sind, müssen Sie es Benutzern ermöglichen, das Kennwort für ein Zertifikat einzugeben.
 
 Falls keine Clientzertifikate verfügbar sind, muss der Benutzer dem Zertifikatspeicher ein Zertifikat hinzufügen. Sie können Code in die App einfügen, der Benutzern die Auswahl einer PFX-Datei mit einem Clientzertifikat und das Importieren dieses Zertifikats in den Clientzertifikatspeicher ermöglicht.
 
-**Tipp**  können Sie makecert.exe erstellen Sie eine PFX-Datei mit diesem Schnellstart verwenden. Informationen zur Verwendung von „makecert.exe“ finden Sie unter [MakeCert](https://docs.microsoft.com/windows/desktop/SecCrypto/makecert).
+**Tipp**    Sie können makecert.exe verwenden, um eine PFX-Datei zu erstellen, die mit diesem Schnellstart verwendet werden kann. Informationen zur Verwendung von „makecert.exe“ finden Sie unter [MakeCert](/windows/desktop/SecCrypto/makecert).
 
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7c8d3fd007e688bd11423c32bd175203a6f1917d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372623"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157884"
 ---
 # <a name="intro-to-certificates"></a>Einführung in Zertifikate
 
@@ -22,7 +22,7 @@ In diesem Artikel wird die Verwendung von Zertifikaten in Apps für die universe
 
 ### <a name="shared-certificate-stores"></a>Freigegebene Zertifikatspeicher
 
-UWP-apps verwenden Sie das neue isolationistencliquen-Anwendungsmodell in Windows 8 eingeführt wurde. In diesem Modell werden Apps in einem Low-Level-Betriebssystemkonstrukt ausgeführt, das App-Container genannt wird. In diesem Konstrukt wird verhindert, dass die App auf Ressourcen oder Dateien zugreift, die außerhalb des eigenen Umfangs liegen, wobei der Zugriff auch ausdrücklich erlaubt und dadurch ermöglicht werden kann. In den folgenden Abschnitten werden die Auswirkungen auf die Public Key-Infrastruktur (PKI) erläutert.
+UWP-Apps verwenden das neue Isolationsanwendungsmodell, das in Windows 8 eingeführt wurde. In diesem Modell werden Apps in einem Low-Level-Betriebssystemkonstrukt ausgeführt, das App-Container genannt wird. In diesem Konstrukt wird verhindert, dass die App auf Ressourcen oder Dateien zugreift, die außerhalb des eigenen Umfangs liegen, wobei der Zugriff auch ausdrücklich erlaubt und dadurch ermöglicht werden kann. In den folgenden Abschnitten werden die Auswirkungen auf die Public Key-Infrastruktur (PKI) erläutert.
 
 ### <a name="certificate-storage-per-app-container"></a>Zertifikatspeicher pro App-Container
 
@@ -53,25 +53,25 @@ Der Standard für X.509-Zertifikate für öffentliche Schlüssel wurde mit der Z
 
 ![x.509-Zertifikatversionen 1, 2 und 3](images/x509certificateversions.png)
 
-Manche dieser Felder und Erweiterungen können direkt angegeben werden, wenn Sie mit der [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties)-Klasse eine Zertifikatanforderung erstellen. Die meisten sind dazu nicht in der Lage. Diese Felder können von der ausstellenden Behörde aufgefüllt oder leer gelassen werden. Weitere Informationen zu den Feldern finden Sie in den folgenden Abschnitten:
+Manche dieser Felder und Erweiterungen können direkt angegeben werden, wenn Sie mit der [**CertificateRequestProperties**](/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties)-Klasse eine Zertifikatanforderung erstellen. Die meisten sind dazu nicht in der Lage. Diese Felder können von der ausstellenden Behörde aufgefüllt oder leer gelassen werden. Weitere Informationen zu den Feldern finden Sie in den folgenden Abschnitten:
 
 ### <a name="version-1-fields"></a>Felder von Version 1
 
-| Feld | Beschreibung |
+| Feld | BESCHREIBUNG |
 |-------|-------------|
 | Version | Gibt die Versionsnummer des codierten Zertifikats an. Derzeit sind die möglichen Werte dieses Felds 0, 1 und 2. |
 | Seriennummer | Enthält eine positive, eindeutige Ganzzahl, die dem Zertifikat von der Zertifizierungsstelle zugewiesen wurde. |
 | Signaturalgorithmus | Enthält einen Objektbezeichner (OID), die den Algorithmus angibt, mit dem die Zertifizierungsstelle das Zertifikat signiert. 1.2.840.113549.1.1.5 gibt beispielsweise einen SHA-1-Hashalgorithmus an, der mit dem RSA-Verschlüsselungsalgorithmus von RSA Laboratories kombiniert ist. |
-| Aussteller | Enthält den X.500-Distinguished Name (DN) der Zertifizierungsstelle, die das Zertifikat erstellt und signiert hat. |
-| Gültigkeit | Gibt die Zeitspanne an, für die das Zertifikat gültig ist. Für Datumsangaben bis Ende 2049 wird das Coordinated Universal Time (Greenwich Mean Time)-Format (yymmddhhmmssz) verwendet. Für Datumsangaben ab dem 1. Januar 2050 wird das generalisierte Zeitformat (yyyymmddhhmmssz) verwendet. |
-| Antragsteller | Enthält einen X.500-Distinguished Name der Entität, die dem öffentlichen Schlüssel im Zertifikat zugeordnet ist. |
+| Issuer (Aussteller) | Enthält den X.500-Distinguished Name (DN) der Zertifizierungsstelle, die das Zertifikat erstellt und signiert hat. |
+| Gültigkeitsdauer | Gibt die Zeitspanne an, für die das Zertifikat gültig ist. Für Datumsangaben bis Ende 2049 wird das Coordinated Universal Time (Greenwich Mean Time)-Format (yymmddhhmmssz) verwendet. Für Datumsangaben ab dem 1. Januar 2050 wird das generalisierte Zeitformat (yyyymmddhhmmssz) verwendet. |
+| Subject | Enthält einen X.500-Distinguished Name der Entität, die dem öffentlichen Schlüssel im Zertifikat zugeordnet ist. |
 | Öffentlicher Schlüssel | Enthält den öffentlichen Schlüssel und Informationen zum zugehörigen Algorithmus. |
 
 ### <a name="version-2-fields"></a>Felder von Version 2
 
 Ein X.509-Zertifikat der Version 2 enthält die grundlegenden Felder, die in Version 1 definiert sind, sowie zusätzlich die folgenden Felder.
 
-| Feld | Beschreibung |
+| Feld | BESCHREIBUNG |
 |-------|-------------|
 | Issuer Unique Identifier | Enthält einen eindeutigen Wert, mit dem der X.500-Name der Zertifizierungsstelle eindeutig festgelegt werden kann, wenn dieser im Lauf der Zeit von verschiedenen Entitäten wiederverwendet wird. |
 | Issuer Unique Identifier | Enthält einen eindeutigen Wert, mit dem der X.500-Name des Zertifikatantragstellers eindeutig festgelegt werden kann, wenn dieser im Lauf der Zeit von verschiedenen Entitäten wiederverwendet wird. |
@@ -80,7 +80,7 @@ Ein X.509-Zertifikat der Version 2 enthält die grundlegenden Felder, die in Ver
 
 Ein X.509-Zertifikat der Version 3 enthält die Felder, die in Version 1 und Version 2 definiert sind, und es werden Zertifikaterweiterungen hinzugefügt.
 
-| Feld  | Beschreibung |
+| Feld  | BESCHREIBUNG |
 |--------|-------------|
 | Zertifizierungsstellenschlüssel-ID | Gibt den öffentlichen Schlüssel der Zertifizierungsstelle an, der dem privaten Schlüssel der Zertifizierungsstelle entspricht, mit dem das Zertifikat signiert wird. |
 | Basiseinschränkungen. | Gibt an, ob die Entität als Zertifizierungsstelle fungieren kann, und wenn dies der Fall ist, wie viele untergeordnete Zertifizierungsstellen in der Zertifikatkette darunter vorhanden sein können. |
@@ -96,4 +96,3 @@ Ein X.509-Zertifikat der Version 3 enthält die Felder, die in Version 1 und Ver
 | Alternativer Antragstellername | Gibt einen oder mehrere alternative Namen für den Antragsteller der Zertifikatanforderung an. Beispiele für alternative Namen sind E-Mail-Adressen, DNS-Namen, IP-Adressen und URIs. |
 | Subject Directory Attributes | Vermittelt identifizierende Attribute, beispielsweise die Nationalität des Zertifikatantragstellers. Der Erweiterungswert ist eine Folge von OID-Wertepaaren. |
 | Schlüsselkennung des Antragstellers | Unterscheidet zwischen mehreren öffentlichen Schlüsseln im Besitz des Zertifikatantragstellers. Der Erweiterungswert ist normalerweise ein SHA-1-Hash des Schlüssels. |
-

@@ -1,17 +1,17 @@
 ---
 title: Nutzen von Clouddiensten für UWP-Spiele
-description: Erfahren Sie mehr über die Implementierung der Cloud als Back-End für Ihre UWP-Spiele.
+description: Verwenden Sie bei der Entwicklung von UWP-spielen auf verschiedenen Plattformen und Geräten ein Cloud-Back-End, um Ihre Spiele nach Bedarf zu skalieren.
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, Games, Cloud Services
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d959c490474a6280d878be9679abafc31b565d8
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 7c0cfd98a37c4822d80eded7fe69e23c54bcdc89
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846860"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054410"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>Nutzen von Clouddiensten für UWP-Spiele
 
@@ -48,8 +48,8 @@ Hier erfahren Sie, wie andere Entwickler Cloudlösungen in ihre Spiele implement
     <col width="30%" />
     </colgroup>
     <tr class="header" align="left">
-        <th>Developer</th>
-        <th>Beschreibung</th>
+        <th>Entwickler</th>
+        <th>BESCHREIBUNG</th>
         <th>Kerndaten des Spiels</th>
         <th>Weitere Informationen</th>
     </tr>
@@ -159,7 +159,7 @@ Zunächst müssen Sie entscheiden, welche Dienstform für Spiel am besten geeign
 
 In diesem Abschnitt lernen Sie Möglichkeiten zur Nutzung der Azure Cloudangebote für ein Spiel kennen. Azure arbeitet mit Windows, Linux und bekannten Open-Source-Technologien wie Ruby, Python, Java und PHP. Weitere Informationen finden Sie unter [Azure für Gaming](https://azure.microsoft.com/solutions/gaming/).
 
-| Requirements (Anforderungen)                 | Aktivitätsszenarien                            | Produktangebot                      | Produktfunktionen                                    |
+| Anforderungen                 | Aktivitätsszenarien                            | Produktangebot                      | Produktfunktionen                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | Hosten Ihrer Domäne in der Cloud     | Effizientes Beantworten von DNS-Abfragen            | [Azure DNS](https://azure.microsoft.com/services/dns/) | Hosten Ihrer Domäne mit hoher Leistung und Verfügbarkeit  |
 | Anmeldung, Identitätsüberprüfung      | Spieler meldet sich an und seine Identität wird authentifiziert  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Einmaliges Anmelden mit mehrstufiger Authentifizierung für alle Cloud-Web-Apps und lokalen Web-Apps            | 

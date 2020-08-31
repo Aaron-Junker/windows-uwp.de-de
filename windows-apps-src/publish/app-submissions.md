@@ -6,12 +6,12 @@ keywords: Prüfliste, Windows, UWP, Übermittlung, Übermittlung, Spiel, APP, Ü
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a71a54fcc2792b799f630a94d1382c01643536
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 1359fb530dec1a35b2ab2994442b65ec441cc0ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945968"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158064"
 ---
 # <a name="app-submissions"></a>App-Übermittlungen
 
@@ -40,7 +40,7 @@ Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind 
 ### <a name="pricing-and-availability-page"></a>Seite „Preise und Verfügbarkeit“
 | Feldname                    | Notizen                                       | Weitere Informationen                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Märkte**                   | Standard: alle möglichen Märkte  | [Festlegen des Preises und Auswählen der Märkte](define-pricing-and-market-selection.md)         |
+| **Märkte**                   | Standard: alle möglichen Märkte  | [Festlegen des Preises und Auswählen der Märkte](./define-market-selection.md)         |
 | **Zielgruppe**                | Standard: Public Audience | [Zielgruppe](choose-visibility-options.md#audience) |
 | **Erkennbarkeit**                | Standard: diese app verfügbar machen und im Store auffallen. | [Erkennbarkeit](choose-visibility-options.md#discoverability) |
 | **Zeitplan**                  | Standard: Release so bald wie möglich        | [Konfigurieren des genauen Veröffentlichungszeitplans](configure-precise-release-scheduling.md) |
@@ -56,12 +56,12 @@ Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind 
 | Feldname                    | Notizen                                       | Weitere Informationen                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Kategorie und Unterkategorie**  | Erforderlich                                    | [Kategorie- und Unterkategorietabelle](category-and-subcategory-table.md)       |
-| **URL zur Datenschutzrichtlinie**            | Für viele apps erforderlich. Siehe den [App-Entwickler Vertrag](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) und die [Microsoft Store Richtlinien](store-policies.md#105-personal-information) | [URL zur Datenschutzrichtlinie](enter-app-properties.md#privacy-policy-url)        |
+| **URL zur Datenschutzrichtlinie**            | Für viele apps erforderlich. Siehe den [App-Entwickler Vertrag](/legal/windows/agreements/app-developer-agreement) und die [Microsoft Store Richtlinien](store-policies.md#105-personal-information) | [URL zur Datenschutzrichtlinie](enter-app-properties.md#privacy-policy-url)        |
 | **Website**                   | Optional                                    | [Website](enter-app-properties.md#website)                   |
 | **Support – Kontaktinfos**      | Erforderlich, wenn Ihr Produkt auf Xbox verfügbar ist. andernfalls optional (aber empfohlen)                                   | [Support – Kontaktinfos](enter-app-properties.md#support-contact-info)              |
 | **Spiele Einstellungen**             | Optional (gilt nur für Spiele)         | [Spiele Einstellungen](enter-app-properties.md#game-settings) |
 | **Anzeigemodus**             | Optional                   | [Anzeigemodus](enter-app-properties.md#display-mode) |
-| **Produktdeklarationen**          | Standard: Kunden können diese App auf alternativen Laufwerken oder Wechselmedien installieren. Windows kann die Daten dieser App in automatische Sicherungen auf OneDrive einschließen. | [Produktdeklarationen](app-declarations.md) |
+| **Produktdeklarationen**          | Standard: Kunden können diese App auf alternativen Laufwerken oder Wechselmedien installieren. Windows kann die Daten dieser App in automatische Sicherungen auf OneDrive einschließen. | [Produktdeklarationen](./product-declarations.md) |
 | **Systemanforderungen**      | Optional                                    | [Systemanforderungen](enter-app-properties.md#system-requirements)      |
 
 <span/>
@@ -70,7 +70,7 @@ Die erforderlichen Elemente sind im Folgenden aufgeführt. Einige Bereiche sind 
 
 | Feldname                    | Notizen                                       | Weitere Informationen                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
-| **Alters Bewertungen**               | Erforderlich                                    | [Alters Bewertungen](age-ratings.md)          |
+| **Altersfreigaben**               | Erforderlich                                    | [Altersfreigaben](age-ratings.md)          |
 
 <span/>
 
@@ -91,7 +91,7 @@ Sie benötigen alle erforderlichen Informationen für mindestens eine der von Ih
 | Feldname                    | Notizen                                       | Weitere Informationen                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Beschreibung**               | Erforderlich                                    | [Erstellen einer interessanten App-Beschreibung](write-a-great-app-description.md) |
-| **Neuerungen in dieser Version**   | Optional                                 | [Versionshinweise](create-app-store-listings.md#whats-new-in-this-version)       |
+| **Neuerungen in dieser Version**   | Optional                                 | [Anmerkungen zu dieser Version](create-app-store-listings.md#whats-new-in-this-version)       |
 | **App-Features**              | Optional                                    | [Produkt Features](create-app-store-listings.md#product-features)         |
 | **Screenshots**               | Erforderlich (mindestens ein Screenshot; vier oder mehr empfohlen)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
 | **Store-Logos**               | Empfohlen erforderlich für einige Betriebssystemversionen | [Store-Logos](app-screenshots-and-images.md#store-logos)             |

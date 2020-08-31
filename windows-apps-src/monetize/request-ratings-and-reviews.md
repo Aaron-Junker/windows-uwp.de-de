@@ -1,34 +1,34 @@
 ---
 Description: Erfahren Sie mehr über verschiedene Möglichkeiten, wie Sie Kundenprogramm gesteuert ermöglichen können, Ihre APP zu bewerten und zu überprüfen.
-title: Anfordern von Bewertungen und Prüfungen für Ihre App
+title: Anfordern von Bewertungen und Überprüfungen für Ihre APP
 ms.date: 01/22/2019
 ms.topic: article
-keywords: Windows 10, UWP, Bewertungen, Rezensionen
+keywords: Windows 10, UWP, Bewertungen, Reviews
 ms.localizationpriority: medium
-ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: c0a668ac66f48e386a6299a64e5bcc18cec4fccc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210716"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158374"
 ---
-# <a name="request-ratings-and-reviews-for-your-app"></a>Anfordern von Bewertungen und Prüfungen für Ihre App
+# <a name="request-ratings-and-reviews-for-your-app"></a>Anfordern von Bewertungen und Überprüfungen für Ihre APP
 
-Sie können Code zu Ihrer Universellen Windows-Plattform (UWP)-App hinzufügen, um Ihre Kunden programmgesteuert aufzufordern, Ihre App zu bewerten oder zu rezensieren. Hierfür stehen Ihnen mehrere Möglichkeiten zur Verfügung:
-* Sie können ein Bewertungs- und Rezensionsdialogfeld direkt im Kontext Ihrer App anzeigen.
-* Sie können programmgesteuert die Bewertungs- und Rezensionsseite für Ihre App im Microsoft Store öffnen.
+Sie können Ihrer APP für universelle Windows-Plattform (UWP) Code hinzufügen, um Ihre Kundenprogramm gesteuert aufzufordern, Ihre APP zu bewerten oder zu überprüfen. Es gibt mehrere Möglichkeiten, dies zu erreichen:
+* Sie können ein Dialogfeld für die Bewertung und Überprüfung direkt im Kontext ihrer App anzeigen.
+* Sie können die Seite Bewertung und Überprüfung für Ihre APP Programm gesteuert in der Microsoft Store öffnen.
 
 Wenn Sie bereit sind, Ihre Bewertungen zu analysieren und Daten zu überprüfen, können Sie die Daten im Partner Center anzeigen oder die Microsoft Store Analytics-API verwenden, um diese Daten Programm gesteuert abzurufen.
 
 > [!IMPORTANT]
-> Wenn Sie in Ihrer APP eine Bewertungsfunktion hinzufügen, müssen alle Überprüfungen den Benutzer unabhängig von der gewählten Star-Bewertung an die Bewertungsmechanismen des Stores senden. Wenn Sie Feedback oder Kommentare von Benutzern erfassen, muss klar sein, dass es nicht mit der APP-Bewertung oder Überprüfungen im Store verknüpft ist, sondern direkt an den App-Entwickler gesendet wird. Weitere Informationen im Zusammenhang mit [betrügerischen oder unehrlichen Aktivitäten](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)finden Sie im Entwickler-Verhaltenskodex.
+> Wenn Sie in Ihrer APP eine Bewertungsfunktion hinzufügen, müssen alle Überprüfungen den Benutzer unabhängig von der gewählten Star-Bewertung an die Bewertungsmechanismen des Stores senden. Wenn Sie Feedback oder Kommentare von Benutzern erfassen, muss klar sein, dass es nicht mit der APP-Bewertung oder Überprüfungen im Store verknüpft ist, sondern direkt an den App-Entwickler gesendet wird. Weitere Informationen im Zusammenhang mit [betrügerischen oder unehrlichen Aktivitäten](/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)finden Sie im Entwickler-Verhaltenskodex.
 
-## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Ein Bewertungs- und Rezensionsdialogfeld in Ihrer App anzeigen
+## <a name="show-a-rating-and-review-dialog-in-your-app"></a>Anzeigen des Dialog Felds "Bewertung und Überprüfung" in Ihrer APP
 
-Um Programm gesteuert einen Dialog in Ihrer APP anzuzeigen, der Ihren Kunden auffordert, Ihre APP zu bewerten und einen Review zu übermitteln, rufen Sie die [requestrateandreviewappasync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) -Methode im [Windows. Services. Store](https://docs.microsoft.com/uwp/api/windows.services.store) -Namespace auf. 
+Um Programm gesteuert einen Dialog in Ihrer APP anzuzeigen, der Ihren Kunden auffordert, Ihre APP zu bewerten und einen Review zu übermitteln, rufen Sie die [requestrateandreviewappasync](/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) -Methode im [Windows. Services. Store](/uwp/api/windows.services.store) -Namespace auf. 
 
 > [!IMPORTANT]
-> Die Anforderung zum Anzeigen des Bewertungs- und Rezensionsdialogfelds muss im UI-Thread in Ihrer App aufgerufen werden.
+> Die Anforderung zum Anzeigen des Dialog Felds Bewertung und Überprüfung muss im UI-Thread ihrer app aufgerufen werden.
 
 ```csharp
 using Windows.ApplicationModel.Store;
@@ -103,11 +103,11 @@ private async Task PromptUserToRateApp()
 
 Die **requestrateandreviewappasync** -Methode wurde in Windows 10, Version 1809, eingeführt und kann nur in Projekten verwendet werden, die auf das **Windows 10-Update vom Oktober 2018 abzielen (10,0; Build 17763)** oder eine spätere Version in Visual Studio.
 
-### <a name="response-data-for-the-rating-and-review-request"></a>Antwortdaten für die Bewertungs- und Rezensionsanforderung
+### <a name="response-data-for-the-rating-and-review-request"></a>Antwortdaten für die Bewertungs-und Überprüfungs Anforderung
 
-Nachdem Sie die Anforderung zum Anzeigen des Dialog Felds "Bewertung und Überprüfung" eingereicht haben, enthält die [extendedjsondata](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) -Eigenschaft der [storerateandreviewresult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult) -Klasse eine JSON-formatierte Zeichenfolge, die angibt, ob die Anforderung erfolgreich war.
+Nachdem Sie die Anforderung zum Anzeigen des Dialog Felds "Bewertung und Überprüfung" eingereicht haben, enthält die [extendedjsondata](/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) -Eigenschaft der [storerateandreviewresult](/uwp/api/windows.services.store.storerateandreviewresult) -Klasse eine JSON-formatierte Zeichenfolge, die angibt, ob die Anforderung erfolgreich war.
 
-Das folgende Beispiel veranschaulicht den Rückgabewert für diese Anforderung, nachdem der Kunde erfolgreich eine Bewertung oder Rezension übermittelt hat.
+Im folgenden Beispiel wird der Rückgabewert für diese Anforderung veranschaulicht, nachdem der Kunde eine Bewertung oder Überprüfung erfolgreich übermittelt hat.
 
 ```json
 { 
@@ -119,7 +119,7 @@ Das folgende Beispiel veranschaulicht den Rückgabewert für diese Anforderung, 
 }
 ```
 
-Das folgende Beispiel veranschaulicht den Rückgabewert für diese Anforderung, nachdem der Kunde gewählt hat, keine Bewertung oder Rezension zu übermitteln.
+Im folgenden Beispiel wird der Rückgabewert für diese Anforderung veranschaulicht, nachdem der Kunde entschieden hat, keine Bewertung oder Überprüfung zu senden.
 
 ```json
 { 
@@ -128,32 +128,32 @@ Das folgende Beispiel veranschaulicht den Rückgabewert für diese Anforderung, 
 }
 ```
 
-In der folgenden Tabelle werden die Felder in der Zeichenfolge im JSON-Format erläutert.
+In der folgenden Tabelle werden die Felder in der JSON-formatierten Daten Zeichenfolge beschrieben.
 
-| Field          | Beschreibung                                                                                                                                   |
+| Feld          | BESCHREIBUNG                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *Stands*       | Eine Zeichenfolge, die angibt, ob der Kunde eine Bewertung oder Rezension erfolgreich gesendet hat. Die unterstützten Werte sind **success** und **aborted**. |
-| *Vorrats*         | Ein Objekt, das nur einen booleschen Wert mit dem Namen *aktualisiert* enthält. Dieser Wert gibt an, ob der Kunde eine vorhandene Bewertung oder Rezension aktualisiert hat. Das *data*-Objekt ist nur in den Erfolgsantworten enthalten. |
-| *errorDetails* | Eine Zeichenfolge, die Fehlerdetails für die Anforderung enthält.                                                                                     |
+| *status*       | Eine Zeichenfolge, die angibt, ob der Kunde eine Bewertung oder Überprüfung erfolgreich übermittelt hat. Die unterstützten Werte sind **Erfolg** und werden **abgebrochen**. |
+| *data*         | Ein-Objekt, das einen einzelnen booleschen Wert mit dem Namen " *aktualisiert*" enthält. Dieser Wert gibt an, ob der Kunde eine vorhandene Bewertung oder Überprüfung aktualisiert hat. Das *Daten* Objekt ist nur in Erfolgs Antworten enthalten. |
+| *errorDetails* | Eine Zeichenfolge, die die Fehlerdetails für die Anforderung enthält.                                                                                     |
 
-## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Die Bewertungs- und Rezensionsseite für Ihre App im Store starten
+## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Starten Sie die Seite "Bewertung und Überprüfung" für Ihre APP im Store.
 
-Wenn Sie programmgesteuert eine Bewertungs- und Rezensionsseite für Ihre App im Store öffnen möchten, können Sie die [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode mit dem ```ms-windows-store://review```-URI-Schema verwenden, wie in diesem Codebeispiel gezeigt wird.
+Wenn Sie die Seite "Bewertung und Überprüfung" für Ihre APP im Store Programm gesteuert öffnen möchten, können Sie die [launchuriasync](/uwp/api/windows.system.launcher.launchuriasync) -Methode mit dem URI-Schema verwenden, ```ms-windows-store://review``` wie in diesem Codebeispiel gezeigt.
 
 ```csharp
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));
 ```
 
-Weitere Informationen finden Sie unter [Die Microsoft Store App starten](../launch-resume/launch-store-app.md).
+Weitere Informationen finden Sie unter [Starten der Microsoft Store-App](../launch-resume/launch-store-app.md).
 
-## <a name="analyze-your-ratings-and-reviews-data"></a>Ihre Bewertungs- und Rezensionsdaten analysieren
+## <a name="analyze-your-ratings-and-reviews-data"></a>Analysieren von Bewertungen und Überprüfen von Daten
 
-Sie haben mehrere Optionen, um die Bewertungs- und Rezensionsdaten von Ihren Kunden zu analysieren:
-* Sie können den Bericht [Reviews](../publish/reviews-report.md) im Partner Center verwenden, um die Bewertungen und Bewertungen ihrer Kunden anzuzeigen. Sie können diesen Bericht auch herunterladen, um ihn offline zu sehen.
-* Sie können die [Abrufen von App-Bewertungen](get-app-ratings.md)- und [Abrufen von App-Rezensionen](get-app-reviews.md)-Methoden in der Store-Analyse-API zum programmgesteuerten Abrufen der Bewertungen und Prüfungen von Ihren Kunden im JSON-Format verwenden.
+Zum Analysieren der Bewertungen und zum Überprüfen von Daten von ihren Kunden stehen Ihnen mehrere Optionen zur Verfügung:
+* Sie können den Bericht [Reviews](../publish/reviews-report.md) im Partner Center verwenden, um die Bewertungen und Bewertungen ihrer Kunden anzuzeigen. Sie können diesen Bericht auch herunterladen, um ihn offline anzuzeigen.
+* Sie können die Methoden " [Get App Ratings](get-app-ratings.md) " und " [Get App Reviews](get-app-reviews.md) " in der Store Analytics-API verwenden, um die Bewertungen und Reviews von ihren Kunden im JSON-Format Programm gesteuert abzurufen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Anforderungen an den Speicher senden](send-requests-to-the-store.md)
+* [Senden von Anfragen an den Store](send-requests-to-the-store.md)
 * [Starten der Microsoft Store-App](../launch-resume/launch-store-app.md)
-* [Rezensionsbericht](../publish/reviews-report.md)
+* [Bericht „Rezensionen“](../publish/reviews-report.md)

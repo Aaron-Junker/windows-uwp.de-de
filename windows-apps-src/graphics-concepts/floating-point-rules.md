@@ -1,161 +1,157 @@
 ---
 title: Gleitkommaregeln
-description: Direct3D unterstützt verschiedene Gleitkommadarstellungen. Alle Gleitkommaberechnungen arbeiten unter einer definierten Teilmenge von IEEE 754, 32-Bit-Gleitkommaregeln mit einfacher Genauigkeit.
+description: Direct3D unterstützt mehrere Gleit Komma Darstellungen. Alle Gleit Komma Berechnungen arbeiten unter einer definierten Teilmenge der IEEE 754 32-Bit-Gleit Komma Regeln mit einfacher Genauigkeit.
 ms.assetid: 3B0C95E2-1025-4F70-BF14-EBFF2BB53AFF
 keywords:
 - Gleitkommaregeln
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a29fbe49e45b819ddf4ffc3172445996d3622360
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7832d4ad344e425bc479d52e1516ae0c63dff624
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370619"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168064"
 ---
-# <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Gleitkomma-Regeln
+# <a name="span-iddirect3dconceptsfloating-point_rulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>Gleitkommaregeln
 
 
-Direct3D unterstützt verschiedene Gleitkommadarstellungen. Alle Gleitkommaberechnungen arbeiten unter einer definierten Teilmenge von IEEE 754, 32-Bit-Gleitkommaregeln mit einfacher Genauigkeit.
+Direct3D unterstützt mehrere Gleit Komma Darstellungen. Alle Gleit Komma Berechnungen arbeiten unter einer definierten Teilmenge der IEEE 754 32-Bit-Gleit Komma Regeln mit einfacher Genauigkeit.
 
-## <a name="span-idalpha32bitspanspan-idalpha32bitspan32-bit-floating-point-rules"></a><span id="alpha_32_bit"></span><span id="ALPHA_32_BIT"></span>32-Bit-Gleitkommazahl-Regeln
+## <a name="span-idalpha_32_bitspanspan-idalpha_32_bitspan32-bit-floating-point-rules"></a><span id="alpha_32_bit"></span><span id="ALPHA_32_BIT"></span>32-Bit-Gleit Komma Regeln
 
 
-Es gibt zwei Gruppen von Regeln – solche, die IEEE-754 entsprechen, und solche, die von diesem Standard abweichen.
+Es gibt zwei Sätze von Regeln: die, die IEEE-754 entsprechen, und die Regeln, die vom Standard abweichen.
 
-### <a name="span-idalpha754rulesspanspan-idalpha754rulesspanspan-idalpha754rulesspanhonored-ieee-754-rules"></a><span id="alpha_754_Rules"></span><span id="alpha_754_rules"></span><span id="ALPHA_754_RULES"></span>Berücksichtigt IEEE-754-Regeln
+### <a name="span-idalpha_754_rulesspanspan-idalpha_754_rulesspanspan-idalpha_754_rulesspanhonored-ieee-754-rules"></a><span id="alpha_754_Rules"></span><span id="alpha_754_rules"></span><span id="ALPHA_754_RULES"></span>IEEE-754-Regeln wurden berücksichtigt.
 
-Einige dieser Regeln entsprechen nur einer einzigen der von IEEE-754 angebotenen Optionen.
+Einige dieser Regeln stellen eine einzelne Option dar, bei der IEEE-754 Optionen bietet.
 
--   Die Division durch 0 ergibt +/-INF. Ausnahme: 0/0 ergibt NaN.
--   Die Berechnung des Logarithmus von (+/-) 0 ergibt -INF.  
+-   Division durch 0 erzeugt +/-inf, mit Ausnahme von 0/0, was zu Nan führt.
+-   das Protokoll von (+/-) 0 erzeugt-inf.  
 
-    Die Berechnung des Logarithmus eines negativen Werts (außer -0) ergibt NaN.
--   Die Berechnung der reziproken Quadratwurzel (rsq) oder der Quadratwurzel (sqrt) einer negativen Zahl ergibt NaN.  
+    das Protokoll eines negativen Werts (mit Ausnahme von-0) erzeugt Nan.
+-   Die gegenseitige Quadratwurzel (RSQ) oder die Quadratwurzel (sqrt) einer negativen Zahl erzeugt Nan.  
 
-    Die Ausnahme ist -0: sqrt(-0) ergibt -0, und rsq(-0) ergibt -INF.
--   INF - INF = NaN
--   (+/-)INF / (+/-)INF = NaN
--   (+/-)INF \* 0 = NaN
--   NaN (beliebiger Operand) beliebiger Wert = NaN
--   Die Vergleiche EQ, GT, GE, LT und LE liefern **FALSE**, wenn einer der Operanden der NaN-Wert ist oder beide diesen Wert besitzen.
--   Bei Vergleichen wird das Vorzeichen von 0 ignoriert (somit ist +0 gleich -0).
--   Der Vergleich NE ergibt **TRUE**, wenn einer der Operanden der NaN-Wert ist oder beide diesen Wert besitzen.
--   Vergleiche mit +/-INF ergeben für jeden Wert (außer NaN) das richtige Ergebnis.
+    Die Ausnahme ist-0; SQRT (-0) erzeugt-0, und RSQ (-0) erzeugt-inf.
+-   INF-INF = Nan
+-   (+/-) Inf/(+/-) INF = Nan
+-   (+/-) INF \* 0 = Nan
+-   Nan (beliebiger OP) beliebiger Wert = NaN
+-   Die Vergleiche EQ, gt, ge, lt und Le, wenn einer oder beide Operanden NaN ist, wird **false**zurückgegeben.
+-   Vergleiche ignorieren das Vorzeichen von 0 (also + 0 ist 0).
+-   Der Vergleichs-ne, wenn einer oder beide Operanden NaN ist, wird **true**zurückgegeben.
+-   Vergleiche eines beliebigen nicht-NaN-Werts mit +/-INF geben das korrekte Ergebnis zurück.
 
-### <a name="span-idalpha754deviationsspanspan-idalpha754deviationsspanspan-idalpha754deviationsspandeviations-or-additional-requirements-from-ieee-754-rules"></a><span id="alpha_754_Deviations"></span><span id="alpha_754_deviations"></span><span id="ALPHA_754_DEVIATIONS"></span>Abweichungen oder zusätzliche Anforderungen von IEEE-754-Regeln
+### <a name="span-idalpha_754_deviationsspanspan-idalpha_754_deviationsspanspan-idalpha_754_deviationsspandeviations-or-additional-requirements-from-ieee-754-rules"></a><span id="alpha_754_Deviations"></span><span id="alpha_754_deviations"></span><span id="ALPHA_754_DEVIATIONS"></span>Abweichungen oder zusätzliche Anforderungen von IEEE-754-Regeln
 
--   Gemäß IEEE-754 muss ein Gleitkommavorgang als Ergebnis den einem unendlich genauen Ergebnis nächstliegenden darstellbaren Wert liefern (sog. mathematisches Runden).
+-   IEEE-754 erfordert Gleit Komma Vorgänge, um ein Ergebnis zu erhalten, das den nächstgelegenen darstellbaren Wert zu einem unendlich präzisen Ergebnis ist, das auch als "Round-to-Next-even" bezeichnet wird.
 
-    Direct3D 11 und die gleiche Anforderung als IEEE-754 bis zu definieren: 32-Bit-Gleitkommaoperationen erzeugt ein Ergebnis, das innerhalb von 0,5 Einheit letzten-direkte (ULP) des Ergebnisses wird unendlich präzise ist. Dies bedeutet beispielsweise, dass Hardware keine mathematische Rundung durchführen muss, sondern Ergebnisse nach 32 Bits abschneiden darf, da das zu einem Fehler von höchstens 0,5 ULP führen würde. Diese Regel gilt nur für Addition, Subtraktion und Multiplikation.
+    Direct3D 11 und up definieren dieselbe Anforderung wie IEEE-754:32-Bit-Gleit Komma Vorgänge führen zu einem Ergebnis, das sich innerhalb von 0,5 Unit-Last-Place (ULP) mit dem unendlich präzisen Ergebnis befindet. Dies bedeutet, dass Hardware z. b. die Ergebnisse in 32-Bit Abschneiden darf, anstatt Sie auf die nächstgelegene Weise zu durchführen, da dies zu einem Fehler von höchstens 0,5 ULP führen würde. Diese Regel gilt nur für Addition, Subtraktion und Multiplikation.
 
-    Frühere Versionen von Direct3D definieren als IEEE-754 großzügiger erforderlich: 32-Bit-Gleitkommaoperationen erzeugt ein Ergebnis aus dem Komponententest-Last-zentral (1 ULP) des Ergebnisses wird unendlich genauer an. Dies bedeutet beispielsweise, dass Hardware keine mathematische Rundung durchführen muss, sondern Ergebnisse nach 32 Bits abschneiden darf, da das zu einem Fehler von höchstens 1 ULP führen würde.
+    Frühere Versionen von Direct3D definieren eine mehrdimensionale Anforderung als IEEE-754:32-Bit-Gleit Komma Vorgänge führen zu einem Ergebnis, das sich innerhalb eines Einheits Last Orts (1 ULP) mit dem unendlich präzisen Ergebnis befindet. Dies bedeutet, dass Hardware z. b. die Ergebnisse in 32-Bit Abschneiden darf, anstatt Sie durch eine roundTo-Next-even-Methode auszuführen, da dies zu einem Fehler bei höchstens einer ULP führen würde.
 
--   Ausnahmen für Gleitkommaberechnungen, Statusbits oder Traps werden nicht unterstützt.
--   In allen mathematischen Gleitkommavorgängen werden Ein- oder Ausgabewerte, bei denen es sich um denormalisierte Werte (Denorms) handelt, auf Null gesetzt (Flush-To-Zero), wobei das Vorzeichen erhalten bleibt. Ausnahmen werden für alle E/A- oder Datenverschiebevorgänge gemacht, bei denen die Daten unverändert bleiben.
--   Zustände, die Gleitkommawerte enthalten, beispielsweise Werte für Viewport MinDepth/MaxDepth oder BorderColor, können als denormalisierte Werte bereitgestellt und möglicherweise auf Null gesetzt werden, bevor die Hardware sie verwendet.
--   Min- oder Max-Vorgänge setzen Denorms für den Vergleich auf Null, aber das Ergebnis muss nicht unbedingt ein solcher Denorm sein.
--   NaN als Eingabe für einen Vorgang ergibt immer NaN als Ausgabe. Jedoch muss das genaue Bitmuster des NaN-Werts dabei nicht erhalten bleiben (es sei denn, der Vorgang ist eine reine Verschiebeanweisung – eine solche ändert keine Daten).
--   Min- oder oder Max-Vorgänge, bei denen nur ein Operand der NaN-Wert ist, geben den anderen Operanden als Ergebnis zurück (im Gegensatz zu den weiter oben behandelten Vergleichsregeln). Dies ist eine IEEE 754R-Regel.
+-   Es gibt keine Unterstützung für Gleit Komma Ausnahmen, Status Bits oder Traps.
+-   Denorms werden bei einem Eingabe-und Ausgabewert einer mathematischen Gleit Komma Operation in die Signierung NULL geleert. Ausnahmen werden für alle e/a-oder Daten Verschiebungs Vorgänge ausgelöst, die die Daten nicht verändern.
+-   Zustände, die Gleit Komma Werte enthalten, wie z. b. Viewport mintiefe/maxtiefe oder BorderColor-Werte, können als denorm-Werte angegeben werden und werden möglicherweise nicht geleert, bevor Sie von der Hardware verwendet werden.
+-   Bei minimalen oder maximalen Vorgängen werden denorms zum Vergleichen geleert, das Ergebnis kann jedoch nicht mit denorm geleert werden.
+-   Die Nan-Eingabe für einen Vorgang erzeugt immer Nan in der Ausgabe. Es ist jedoch nicht erforderlich, das genaue Bitmuster des Nan unverändert zu bleiben (es sei denn, der Vorgang ist eine unformatierte Move-Anweisung, die keine Daten ändert).
+-   Bei minimalen oder maximalen Vorgängen, bei denen nur ein Operand NaN ist, wird der andere Operand als Ergebnis zurückgegeben (im Gegensatz zu den zuvor übersuchten Vergleichs Regeln). Dies ist eine IEEE 754r-Regel.
 
-    Die IEEE-754R-Spezifikation für Min- und Max-Vorgänge mit Gleitkommazahlen legt Folgendes fest: Ist eine der Eingaben ein QNaN-Wert (Quiet NaN), muss das Ergebnis des Vorgangs der andere Parameter sein. Zum Beispiel:
+    Die IEEE-754r-Spezifikation für Gleit Komma-und Max-Vorgänge gibt an, dass das Ergebnis der Operation der andere Parameter ist, wenn eine der Eingaben für "min" oder "Max" ein stiller QNAN-Wert ist. Beispiel:
 
     ```ManagedCPlusPlus
     min(x,QNaN) == min(QNaN,x) == x (same for max)
     ```
 
-    Die überarbeitete Version der IEEE-754R-Spezifikation definiert ein anderes Verhalten für die Min- und Max-Vorgänge, wenn in der Eingabe ein QNaN-Wert durch einen SNaN-Wert (Signaling NaN) ersetzt wird:
+    Eine Revision der IEEE-754r-Spezifikation hat ein anderes Verhalten für "min" und "Max" übernommen, wenn eine Eingabe ein "Signalisierender"-Wert im Vergleich zu einem QNAN-Wert ist:
 
     ```ManagedCPlusPlus
     min(x,SNaN) == min(SNaN,x) == QNaN (same for max)
      
     ```
 
-    In der Regel folgt Direct3D die Standards für die Arithmetik: IEEE-754- und IEEE-754R. Aber in diesem Fall liegt eine Abweichung vor.
+    Im allgemeinen befolgt Direct3D die Standards für Arithmetik: IEEE-754 und IEEE-754r. In diesem Fall haben wir jedoch eine Abweichung.
 
-    Die arithmetischen Regeln in Direct3D 10 und höher unterscheiden nicht zwischen Quiet NaN-Werten und Signaling NaN-Werten (QNaN statt SNaN). Alle NaN-Werte werden in gleicher Weise behandelt. In Min- und Max-Vorgängen verhält sich Direct3D für jeden NaN-Wert so, wie es die IEEE-754R-Definition für einen QNaN-Wert vorschreibt. (Der Vollständigkeit halber: Sind beide Eingaben NaN-Werte, wird irgendein NaN-Wert zurückgegeben.)
+    Die arithmetischen Regeln in Direct3D 10 und höher machen keine Unterschiede zwischen Stillen und signalisierenden Nan-Werten (QNAN und SNaN). Alle NaN-Werte werden auf dieselbe Weise behandelt. Im Fall von min und Max entspricht das Direct3D-Verhalten für jeden NaN-Wert der Art und Weise, wie QNAN in der IEEE-754r-Definition behandelt wird. (Aus Gründen der Vollständigkeit: Wenn beide Eingaben Nan sind, wird ein beliebiger NaN-Wert zurückgegeben.)
 
--   Eine andere IEEE 754R-Regel besagt: min(-0,+0) == min(+0,-0) == - 0 und max(-0,+0) == max(+0,-0) == +0. Es wird also das Vorzeichen berücksichtigt, im Gegensatz zu den weiter oben genannten Vergleichsregeln für eine vorzeichenbehaftete Null. Direct3D empfiehlt hier das IEEE 754R-Verhalten, erzwingt es jedoch nicht. Es ist zulässig, dass das Ergebnis eines Vergleichs von Nullen von der Reihenfolge der Parameter abhängig ist, wenn die Vergleichsmethode die Vorzeichen ignoriert.
--   X\*1. 0f führt immer X (mit Ausnahme der Denorm geleert).
--   x/1.0f ergibt immer x (außer für auf Null gesetzte Denorms).
--   x +/- 0.0f ergibt immer x (außer für auf Null gesetzte Denorms). Es gilt aber -0 + 0 = +0.
--   Fused-Vorgänge (z. B. mad und dp3) liefern Ergebnisse, die nicht ungenauer sind als die denkbar schlechteste serielle Anordnung einer Auswertung der Unfused-Erweiterung des Vorgangs. Bezüglich der Toleranz ist die Definition der denkbar schlechtesten Anordnung keine feste Definition für einen bestimmten Fused-Vorgang, sondern sie ist von den jeweiligen Eingabewerten abhängig. Für jeden einzelnen Schritt in einer Unfused-Erweiterung ist eine Toleranz von 1 ULP zugelassen (oder für jede Anweisung, die Direct3D mit einer höheren Toleranz als 1 ULP aufruft, ist diese höhere Toleranz zulässig).
--   Für Fused-Vorgänge gelten dieselben NaN-Regeln wie für Unfused-Vorgänge.
--   Die Toleranz für sqrt und rcp beträgt 1 ULP. Für die Shader-Anweisungen [**rcp**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) zur Berechnung des Kehrwerts und [**rsq**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/rsq--sm4---asm-) zur Berechnung der reziproken Quadratwurzel gelten eigene, ebenfalls weniger strikte Genauigkeitsanforderungen.
--   Multiplizieren und Dividieren erfolgt jeweils auf der Genauigkeitsebene von 32-Bit-Gleitkommavorgängen (0,5 ULP Genauigkeit für das Multiplizieren und 1,0 ULP für reziproke Vorgänge). Wenn x/y direkt implementiert ist, muss die Genauigkeit der Ergebnisse größer oder gleich der Genauigkeit sein, die eine Methode mit zwei Schritten liefert.
+-   Eine weitere IEEE 754r-Regel ist, dass min (-0, + 0) = = min (+ 0,-0) = =-0 und Max (-0, + 0) = = Max (+ 0,-0) = = + 0, das das Vorzeichen berücksichtigt, im Gegensatz zu den Vergleichs Regeln für den Wert signed Zero (wie zuvor gesehen). Direct3D empfiehlt das IEEE 754r-Verhalten hier, erzwingt es jedoch nicht. Es ist zulässig, dass das Ergebnis des Vergleichs von Nullen von der Reihenfolge der Parameter abhängig ist. dabei wird ein Vergleich verwendet, bei dem die Vorzeichen ignoriert werden.
+-   x \* 1.0 f ergibt immer x (außer denorm geleert).
+-   x/1.0 f ergibt immer x (außer denorm geleert).
+-   x +/-0,0 f ergibt immer x (außer denorm geleert). Aber-0 + 0 = + 0.
+-   Beim Durchlaufen von Vorgängen (z. b. Mad, DP3) werden Ergebnisse erzeugt, die nicht weniger genau sind als die schlechtesten mögliche serielle Reihenfolge der Auswertung der nicht geschmolzenen Erweiterung des Vorgangs. Die Definition der schlechtesten Reihenfolge ist für die Toleranz keine festgelegte Definition für einen angegebenen Fused-Vorgang. Dies hängt von den jeweiligen Werten der Eingaben ab. Die einzelnen Schritte in der nicht zugezierten Erweiterung sind jeweils als 1 ULP-Toleranz zulässig (oder für Anweisungen Direct3D Aufrufe mit einer weniger Lax-Toleranz als 1 ULP, je weniger Lax-Toleranz zulässig ist).
+-   Bei der durchgeführten Ausführung werden die gleichen Nan-Regeln wie nicht-Fused-Vorgänge befolgt.
+-   Sqrt und RCP haben eine ULP-Toleranz. Die wechselseitigen und gegenseitigen Square-root-Anweisungen, [**RCP**](/previous-versions/windows/desktop/legacy/hh447205(v=vs.85)) und [**RSQ**](/windows/desktop/direct3dhlsl/rsq--sm4---asm-), weisen eine eigene separate, gelockerte Genauigkeits Anforderung auf.
+-   Multiplizieren und Dividieren der einzelnen Vorgänge auf der 32-Bit-Ebene für Gleit Komma Genauigkeit (Genauigkeit zu 0,5 ULP für Multiplikation, 1,0 ULP für die gegenseitige Verwendung). Wenn x/y direkt implementiert wird, müssen die Ergebnisse größer oder gleich der Genauigkeit als eine zweistufige Methode sein.
 
-## <a name="span-iddoubleprec64bitspanspan-iddoubleprec64bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64-Bit-(doppelte Genauigkeit) floating-Point-Regeln
-
-
-Hardware und Anzeigetreiber unterstützen optional Gleitkommazahlen doppelter Genauigkeit. Um die Unterstützung, wenn Sie aufrufen [ **ID3D11Device::CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) mit [ **D3D11\_FEATURE\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature), die treibersätze **DoublePrecisionFloatShaderOps** von [ **D3D11\_FEATURE\_Daten\_DOUBLES** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) auf "true". Treiber und Hardware müssen dann alle Gleitkommaanweisungen mit doppelter Genauigkeit unterstützen.
-
-Anweisungen mit doppelter Genauigkeit befolgen IEEE 754R-Verhaltensanforderungen.
-
-Für Daten mit doppelter Genauigkeit ist Unterstützung zum Generieren denormalisierter Werte erforderlich (kein Flush-To-Zero-Verhalten). Entsprechend lesen Anweisungen denormalisierte Daten nicht als vorzeichenbehaftete Nullen, sondern berücksichtigen die Denorm-Werte.
-
-## <a name="span-idalpha16bitspanspan-idalpha16bitspan16-bit-floating-point-rules"></a><span id="alpha_16_bit"></span><span id="ALPHA_16_BIT"></span>16-Bit-Gleitkommazahl-Regeln
+## <a name="span-iddouble_prec_64_bitspanspan-iddouble_prec_64_bitspan64-bit-double-precision-floating-point-rules"></a><span id="double_prec_64_bit"></span><span id="DOUBLE_PREC_64_BIT"></span>64-Bit-Gleit Komma Regeln (doppelte Genauigkeit)
 
 
-Direct3D unterstützt auch 16-Bit-Darstellungen von Gleitkommazahlen.
+Hardware-und Anzeigetreiber unterstützen optional Gleit Komma Zahlen mit doppelter Genauigkeit. Um Unterstützung anzugeben, legt der Treiber beim Anrufen von [**ID3D11Device:: checkfeaturesupport**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) mit [**D3D11 \_ Feature \_ **](/windows/desktop/api/d3d11/ne-d3d11-d3d11_feature)Double den Wert **Double precisionfloatshaderops** von [**D3D11 \_ Feature \_ Data \_ Doubles**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_doubles) auf true fest. Der Treiber und die Hardware müssen dann alle Gleit Komma Anweisungen mit doppelter Genauigkeit unterstützen.
 
-Format:
+Anweisungen mit doppelter Genauigkeit folgen den Anforderungen an das IEEE 754r-Verhalten.
 
--   1 Vorzeichenbit (s) an der MSB-Position
--   5 Bits für den Biased-Exponenten (e)
--   10 Fraktionsbits (f) mit einem zusätzliche Hidden-Bit
+Die Unterstützung für die Generierung von denormalisierten Werten ist für Daten mit doppelter Genauigkeit erforderlich (kein Verhalten beim leeren zu null). Ebenso werden von den Anweisungen keine denormalisierten Daten als signierte NULL-Werte gelesen, Sie berücksichtigen den denorm-Wert.
 
-Für einen float16-Wert (v) gelten folgende Regeln:
-
--   Wenn e == 31 und f != 0, dann ist v unabhängig von s ein NaN-Wert.
--   Wenn e == 31 und f == 0 ist, dann V (-1) = s\*unendlich (mit Vorzeichen unendlich)
--   Wenn e zwischen 0 und 31, dann V = (-1) s\*2(e-15)\*(1.f)
--   Wenn e == 0 "und" f! = 0, dann V (-1) = s\*2(e-14)\*(0.f) (denormalisierte Zahlen)
--   Wenn e == 0 "und" f == 0 ist, dann V (-1) = s\*0 (null mit Vorzeichen)
-
-Die Regeln für 32-Bit-Gleitkommazahlen gelten auch für 16-Bit-Gleitkommazahlen, die an das weiter oben beschriebene Bitlayout angepasst sind. Ausnahmen bilden die folgenden Fälle:
-
--   Genauigkeit: Nicht fixiert Vorgänge für 16-Bit-Gleitkommazahlen erzeugt ein Ergebnis, das den nächsten darstellbaren Wert, ein unendlich als dem precise-Ergebnis (runde nächste auch, pro IEEE-754 auf 16-Bit-Werte angewendet). Für 32-Bit-Gleitkommazahlen gilt eine Toleranz von 1 ULP. Für 16-Bit-Gleitkommazahlen gilt ein Toleranz von 0,5 ULP bei Unfused-Vorgängen und von 0,6 ULP bei Fused-Vorgängen.
--   16-Bit-Gleitkommazahlen erhalten Denorms.
-
-## <a name="span-idalpha11bitspanspan-idalpha11bitspan11-bit-and-10-bit-floating-point-rules"></a><span id="alpha_11_bit"></span><span id="ALPHA_11_BIT"></span>11-Bit- und 10-Bit-Gleitkommazahl-Regeln
+## <a name="span-idalpha_16_bitspanspan-idalpha_16_bitspan16-bit-floating-point-rules"></a><span id="alpha_16_bit"></span><span id="ALPHA_16_BIT"></span>16-Bit-Gleit Komma Regeln
 
 
-Direct3D unterstützt auch 11-Bit- und 10-Bit-Gleitkommazahlenformate.
+Direct3D unterstützt auch 16-Bit-Darstellungen von Gleit Komma Zahlen.
 
 Format:
 
--   Kein Vorzeichenbit
--   5 Bits für den Biased-Exponenten (e)
--   6 Fraktionsbits (f) für ein 11-Bit-Format, 5 Fraktionsbits (f) für ein 10-Bit-Format, dazu jeweils ein zusätzliches Hidden-Bit.
+-   1 Signier Bit (e) an der MSB-Bitposition
+-   5 Bits von unparteiischen Exponent (e)
+-   10 Bits des Bruchteils (f) mit einem zusätzlichen ausgeblendeten Bit
 
-Für einen float11/float10-Wert (v) gelten folgende Regeln:
+Ein float16-Wert (v) folgt diesen Regeln:
 
--   Wenn e == 31 und f != 0, dann ist v ein NaN-Wert.
--   Wenn e == 31 und f == 0, dann v = +Unendlich
--   Wenn e zwischen 0 und 31, klicken Sie dann V = 2(e-15)\*(1.f)
--   Wenn e == 0 "und" f! = 0, V = \*2(e-14)\*(0.f) (denormalisierte Zahlen)
--   Wenn e == 0 und f == 0, dann v = 0 (Null)
+-   Wenn e = = 31 und f! = 0 ist, dann ist v unabhängig von s
+-   Wenn e = = 31 und f = = 0, dann v = (-1) s \* unendlich (Vorzeichen unendlich)
+-   Wenn e zwischen 0 und 31 liegt, dann v = (-1) s \* 2 (e-15) \* (1. f)
+-   Wenn e = = 0 und f! = 0, dann v = (-1) s \* 2 (e-14) \* (0. f) (Denormalisierte Zahlen)
+-   Wenn e = = 0 und f = = 0, dann v = (-1) s \* 0 (signierte null)
 
-Die Regeln für 32-Bit-Gleitkommazahlen gelten auch für 11-Bit- und 10-Bit-Gleitkommazahlen, die an das weiter oben beschriebene Bitlayout angepasst sind. Dabei gibt es folgende Ausnahmen:
+32-Bit-Gleit Komma Regeln enthalten auch für 16-Bit-Gleit Komma Zahlen, die für das zuvor beschriebene bitlayout angepasst wurden. Ausnahmen bilden die folgenden Fälle:
 
--   Genauigkeit: 32-Bit-Gleitkommazahl-Regeln an und 0,5 ULP.
--   10/11-Bit-Gleitkommazahlen erhalten Denorms.
--   Bei jedem Vorgang, der zu einer Zahl kleiner als Null führen würde, wird das Ergebnis auf Null beschränkt.
+-   Genauigkeit: bei unfused-Vorgängen für 16-Bit-Gleit Komma Zahlen wird ein Ergebnis erzeugt, bei dem es sich um den nächstgelegenen darstellbaren Wert eines unendlich präzisen Ergebnisses handelt (abgerundet auf den nächstgelegenen Wert, auch pro IEEE-754, auf 16-Bit-Werte angewendet). 32-Bit-Gleit Komma Regeln entsprechen 1 ULP-Toleranz, 16-Bit-Gleit Komma Regeln entsprechen 0,5 ULP für unfused-Vorgänge und 0,6 ULP für Fused-Vorgänge.
+-   16-Bit-Gleit Komma Zahlen behalten denorms bei.
+
+## <a name="span-idalpha_11_bitspanspan-idalpha_11_bitspan11-bit-and-10-bit-floating-point-rules"></a><span id="alpha_11_bit"></span><span id="ALPHA_11_BIT"></span>11-Bit-und 10-Bit-Gleit Komma Regeln
+
+
+Direct3D unterstützt auch 11-Bit-und 10-Bit-Gleit Komma Formate.
+
+Format:
+
+-   Kein Signier Bit
+-   5 Bits von unparteiischen Exponent (e)
+-   6 Bits des Bruchteils (f) für ein 11-Bit-Format, 5 Bits von Bruchteil (f) für ein 10-Bit-Format, mit einem zusätzlichen ausgeblendeten Bit in beiden Fällen.
+
+Ein float11/float10-Wert (v) folgt den folgenden Regeln:
+
+-   Wenn e = = 31 und f! = 0 ist, dann ist v Nan.
+-   Wenn e = = 31 und f = = 0, dann v = + unendlich
+-   Wenn e zwischen 0 und 31 liegt, dann v = 2 (e-15) \* (1. f)
+-   Wenn e = = 0 und f! = 0, dann v = \* 2 (e-14) \* (0. f) (Denormalisierte Zahlen)
+-   Wenn e = = 0 und f = = 0, dann v = 0 (null)
+
+32-Bit-Gleit Komma Regeln enthalten auch für 11-Bit-und 10-Bit-Gleit Komma Zahlen, die für das zuvor beschriebene bitlayout angepasst wurden. Zu den Ausnahmen zählen:
+
+-   Genauigkeit: 32-Bit-Gleit Komma Regeln entsprechen 0,5 ULP.
+-   10/11-Bit-Gleit Komma Zahlen behalten denorms bei.
+-   Jeder Vorgang, der zu einer Zahl kleiner als 0 (null) führt, wird an NULL gebunden.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
 [Anhänge](appendix.md)
 
-[Ressourcen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources)
+[Ressourcen](/windows/desktop/direct3d11/overviews-direct3d-11-resources)
 
-[Texturen](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
-
- 
+[Texturen](/windows/desktop/direct3d11/overviews-direct3d-11-resources-textures)
 
  
 
-
-
-
+ 

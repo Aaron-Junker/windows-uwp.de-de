@@ -1,19 +1,19 @@
 ---
-Description: Entwerfen Sie effektive Hilfe, die reaktiv innerhalb Ihrer App angezeigt wird.
+description: Erfahren Sie mehr über die Verwendung der reaktiven in-App-Hilfe als Standardmethode zum Anzeigen der Hilfe für Benutzer und über Typen der in-App-Hilfe.
 title: Richtlinien zum Entwerfen von In-App-Hilfe.
 label: In-app help
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
 ms.localizationpriority: medium
-ms.openlocfilehash: 4783d28e4da6c06df0d0676f4a7d28ef3995481a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d7144a72dd3af1c9c902e0dfd401799f50ea55b0
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610055"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054170"
 ---
 # <a name="in-app-help-pages"></a>In-App-Hilfeseiten
 
@@ -35,27 +35,27 @@ In-App-Hilfe kann unterschiedliche Formen annehmen, entspricht jedoch in Bezug a
 
 Nützliche Anweisungen können schnell und einfach auf einer oder mehreren separaten Hilfeseiten in Ihrer App angezeigt werden.
 
--   **Prägnant sein:** Eine umfangreiche Bibliothek von Hilfethemen ist sehr unhandlich und Zahlenangaben in-app-Hilfe.
--   **Konsistent sein:** Stellen Sie sicher, dass Benutzer Ihre Hilfeseiten die gleiche Weise von einem beliebigen Teil der app erreichen können. Sie sollten nie danach suchen müssen.
--   **Benutzer zu scannen, nicht gelesen werden:** Da die Hilfe, die gesuchten Benutzer auf derselben Seite wie die anderen Hilfethemen sein könnte, stellen Sie sicher, dass sie leicht erkennen können, müssen sie eine konzentrieren.
+-   **Seien Sie präzise:** Eine umfangreiche Bibliothek mit Hilfethemen ist umständlich und für eine In-App-Hilfe nicht geeignet.
+-   **Konsistent sein:** Stellen Sie sicher, dass Benutzer die Hilfeseiten in jedem Bereich der App auf die gleiche Weise aufrufen können. Sie sollten nie danach suchen müssen.
+-   **Benutzer überfliegen Inhalte und lesen sie nicht:** Da sich das Hilfethema, nach dem ein Benutzer sucht, möglicherweise auf derselben Seite wie andere Hilfethemen befindet, müssen Sie darauf achten, dass das gesuchte Hilfethema leicht zu erkennen ist.
 
 
 #### <a name="popups"></a>Popups
 
 Popups bieten die Möglichkeit, stark kontextbezogene Hilfe einzublenden. Das heißt, es werden Anweisungen und Ratschläge angezeigt, die für die jeweilige Aufgabe des Benutzers relevant sind.
 
--   **Fokus auf ein Problem:** Speicherplatz ist noch mehr als eine Hilfeseite in einem Popupfenster eingeschränkt. Hilfepopups müssen sich speziell auf eine einzelne Aufgabe beziehen, damit sie effektiv sind.
--   **Sichtbarkeit ist wichtig:** Da die Hilfe-Popups nur von einem Ort angezeigt werden können, stellen Sie sicher, dass sie eindeutig für den Benutzer sichtbar sind, ohne dass obstructive. Wenn der Benutzer das Popup nicht sieht, ignoriert er es womöglich und sucht nach einer Hilfeseite.
--   **Verwenden Sie nicht zu viele Ressourcen:** Hilfe, die Verzögerung darf nicht oder werden langsam geladen. Popups mit Videos oder Audiodateien oder Bildern mit hoher Auflösung führen beim Benutzer eher zur Verärgerung anstatt ihm zu helfen.
+-   **Auf ein Thema konzentrieren:** Ein Popup bietet noch weniger Platz als eine Hilfeseite. Hilfepopups müssen sich speziell auf eine einzelne Aufgabe beziehen, damit sie effektiv sind.
+-   **Die Sichtbarkeit ist wichtig:** Da Hilfepopups nur an einem Ort angezeigt werden können, stellen Sie sicher, dass sie für die Benutzer deutlich sichtbar sind, ohne zu stören. Wenn der Benutzer das Popup nicht sieht, ignoriert er es womöglich und sucht nach einer Hilfeseite.
+-   **Beanspruchen Sie nicht zu viele Ressourcen:** Die Hilfe sollte keine Verzögerungen verursachen oder langsam geladen werden. Popups mit Videos oder Audiodateien oder Bildern mit hoher Auflösung führen beim Benutzer eher zur Verärgerung anstatt ihm zu helfen.
 
 #### <a name="descriptions"></a>Beschreibungen
 
 In manchen Fällen kann es hilfreich sein, weitere Informationen zu einem Feature bereitzustellen, wenn ein Benutzer es prüft. Beschreibungen ähneln Anweisungen auf der Benutzeroberfläche. Doch der Hauptunterschied besteht darin, dass Anweisungen auf der Benutzeroberfläche versuchen, dem Benutzer Lerninhalte zu Features zu vermitteln, die er noch nicht kennt. Eine ausführliche Beschreibung dagegen vertieft die Kenntnisse des Benutzers über App-Features, an denen er bereits interessiert ist.
 
--   **Bringen Sie die Grundlagen nicht:** Wird davon ausgegangen Sie, dass der Benutzer bereits über die Grundlagen der Gewusst wie: Verwenden Sie das Element beschriebenen kennt. In dem Fall ist es hilfreich, etwas zu verdeutlichen oder weitere Informationen anzubieten. Bereits Bekanntes zu vermitteln ist dagegen nicht sinnvoll.
--   **Beschreiben Sie die interessante Interaktionen:** Eine der besten Verwendungsoptionen für Beschreibungen ist informieren den Benutzer auf die Interaktion einer Features, denen sie bereits kennen. Dadurch erfahren die Benutzer mehr über Funktionen, die sie bereits gerne verwenden.
--   **Bleiben Sie aus dem Weg:** Viel wie Benutzeroberfläche die Lehre, müssen Beschreibungen vermeiden stören könnte eines Benutzers, der app.
+-   **Keine Grundlagen vermitteln:** Angenommen, der Benutzer weiß im Großen und Ganzen bereits, wie das beschriebene Element verwendet wird. In dem Fall ist es hilfreich, etwas zu verdeutlichen oder weitere Informationen anzubieten. Bereits Bekanntes zu vermitteln ist dagegen nicht sinnvoll.
+-   **Beschreiben Sie interessante Interaktionen:** Beschreibungen sind ideal geeignet, um Benutzern zu zeigen, wie diesen bereits bekannte Features interagieren können. Dadurch erfahren die Benutzer mehr über Funktionen, die sie bereits gerne verwenden.
+-   **Stören Sie nicht:** Ähnlich wie Anweisungen in der Benutzeroberfläche dürfen Beschreibungen die Nutzung der App durch die Benutzer nicht behindern.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Richtlinien zum app-Hilfe](guidelines-for-app-help.md)
+* [Anleitungen für die App-Hilfe](guidelines-for-app-help.md)

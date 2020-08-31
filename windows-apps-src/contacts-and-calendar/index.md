@@ -1,17 +1,17 @@
 ---
-description: Erfahren Sie, wie Kontakte und Kalenderinformationen in Ihrer UWP-App verwendet werden.
+description: Hier finden Sie Möglichkeiten, wie Benutzer auf ihre Kontakte und Termine zugreifen können, um Inhalte, E-Mails, Kalenderinformationen oder Nachrichten zu teilen.
 title: Kontakte und Kalender
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP, Kontakte, Kalender, Termine, E-Mail-Nachrichten
 ms.localizationpriority: medium
-ms.openlocfilehash: b2e3f0b1d93d2b2c32e117f61fd7514077ca3923
-ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
+ms.openlocfilehash: e94810ef3fac9c21221181338b7efd8d78fefb97
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/13/2020
-ms.locfileid: "84756546"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054150"
 ---
 # <a name="contacts-my-people-and-calendar"></a>Kontakte, Meine Kontakte und Kalender
 

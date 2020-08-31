@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 9232acbf83659c661e1b1f3c35a7fb7ad546e819
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210426"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157924"
 ---
 # <a name="view-app-identity-details"></a>Anzeigen von Details zur App-Identität
 
@@ -21,15 +21,15 @@ Sie können Details im Zusammenhang mit der eindeutigen Identität, die Ihrer AP
 Um diese Informationen zu suchen, navigieren Sie zu einer Ihrer Apps und erweitern im linken Navigationsmenü **App-Verwaltung**. Wählen Sie **App-Identität** aus, um diese Details anzuzeigen.
 
 
-## <a name="values-to-include-in-your-app-package-manifest"></a>In das App-Paketmanifest einzuschließende Werte
+## <a name="values-to-include-in-your-app-package-manifest"></a>Werte, die in das App-Paket Manifest aufgenommen werden sollen
 
-Die folgenden Werte müssen im Paket Manifest enthalten sein. Wenn Sie Ihre [Pakete mit Microsoft Visual Studio erstellen](/windows/msix/package/packaging-uwp-apps) und mit demselben Microsoft-Konto angemeldet sind, das Sie mit Ihrem Entwicklerkonto verknüpft haben, werden diese Details automatisch eingefügt. Wenn Sie Ihr Paket manuell erstellen, müssen Sie folgende Details selbst hinzufügen:
+Die folgenden Werte müssen im Paket Manifest enthalten sein. Wenn Sie [Microsoft Visual Studio zum Erstellen der Pakete verwenden](/windows/msix/package/packaging-uwp-apps)und mit demselben Microsoft-Konto angemeldet sind, das Sie mit Ihrem Entwicklerkonto verknüpft haben, werden diese Details automatisch eingeschlossen. Wenn Sie das Paket manuell entwickeln, müssen Sie die folgenden Elemente hinzufügen:
 
--   **Package/Identity/Name**
--   **Paket/Identität/Verleger**
+-   **Paket/Identität/Name**
+-   **Paket/Identität/Herausgeber**
 -   **Package/Properties/publisherdisplayname**
 
-Weitere Informationen finden Sie unter [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) in der [Paketmanifestschema-Referenz](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
+Weitere Informationen finden Sie unter [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) in der [Paketmanifestschema-Referenz](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 
 Zusammen werden durch diese Elemente die Identität Ihrer App deklariert und die „Paketfamilie“ gebildet, der alle zugehörigen Pakete angehören. Einzelne Pakete verfügen über zusätzliche Details, z. B. die Architektur und Version.
 
@@ -38,24 +38,20 @@ Zusammen werden durch diese Elemente die Identität Ihrer App deklariert und die
 
 Die folgenden zusätzlichen Werte beziehen sich auf die Paketfamilie der App, werden aber nicht in Ihr Manifest eingeschlossen.
 
--   **Paketfamilienname (PFN)** : Dieser Wert wird bei bestimmten Windows-APIs verwendet.
+-   **Paketfamilienname (PFN)**: Dieser Wert wird bei bestimmten Windows-APIs verwendet.
 -   **Paket-SID**: Sie benötigen diesen Wert, um WNS-Benachrichtigungen an Ihre App zu senden. Weitere Informationen finden Sie unter [Übersicht über den Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 
 
 ## <a name="link-to-your-apps-listing"></a>Erstellen eines Links zum Eintrag Ihrer App
 
-Der direkte Link zu Ihrer App-Seite kann geteilt werden, um Kunden das Auffinden der App im Store zu erleichtern. Dieser Link hat das Format **`https://www.microsoft.com/store/apps/<your app's Store ID>`** . Wenn ein Kunde auf diesen Link klickt, wird die webbasierte Eintragsseite für Ihre App geöffnet. Auf Windows-Geräten wird die Store-App auch ebenfalls Ihren App-Eintrag starten und anzeigen.
+Der direkte Link zur Seite Ihrer APP kann freigegeben werden, damit Ihre Kunden die APP im Store finden. Dieser Link weist das Format auf **`https://www.microsoft.com/store/apps/<your app's Store ID>`** . Wenn ein Kunde auf diesen Link klickt, wird die webbasierte Auflistungs Seite für Ihre APP geöffnet. Auf Windows-Geräten wird die Store-App auch gestartet und die Liste der apps angezeigt.
 
 Die **Store-ID** Ihrer App wird in diesem Abschnitt auch angezeigt. Diese Store-ID kann dazu verwendet werden, [Store-Badges zu generieren](https://developer.microsoft.com/store/badges) oder Ihre App anderweitig zu identifizieren.
 
-Das **Store-Protokolllink** kann verwendet werden, um Ihre App im Store direkt und ohne einen neuen Browser zu öffnen, als ob Sie es innerhalb der App verknüpfen. Weitere Informationen finden Sie unter [Erstellen eines Links zu Ihrer App](link-to-your-app.md).
+Der **Link "Store-Protokoll** " kann verwendet werden, um direkt eine Verbindung mit Ihrer APP im Store zu herstellen, ohne einen Browser zu öffnen, z. b. Wenn Sie eine Verknüpfung innerhalb einer App herstellen. Weitere Informationen finden Sie unter [Verknüpfen mit Ihrer APP](link-to-your-app.md).
 
 
 
  
 
  
-
-
-
-

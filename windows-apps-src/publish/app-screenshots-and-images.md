@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, UWP, Nachspann, Video, Screenshot, Bild, Symbol, Store-Auflistung, Listen Bilder speichern
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a09395a57a83eaa57124173723b96a87d14b3b3
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: da9d6517a43550693596d15c735e3134c5c60a7a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746750"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155314"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>App-Screenshots, -Bilder und -Trailer
 
@@ -32,7 +32,7 @@ Sie haben die Möglichkeit, Screenshots für die verschiedenen Gerätefamilien b
 Für ihre Übermittlung ist nur ein Screenshot (für eine beliebige Gerätefamilie) erforderlich, aber Sie können auch mehrere bereitstellen. bis zu 9 Desktop Screenshots und bis zu 8 Screenshots für die anderen Gerätefamilien. Es wird empfohlen, für jede Gerätefamilie, die ihre App unterstützt, mindestens vier Screenshots bereitzustellen, damit Benutzer sehen können, wie die APP Ihren Gerätetyp untersucht. (Schließen Sie keine Screenshots für Gerätefamilien ein, die Ihre APP nicht unterstützt.) Beachten Sie, dass **Desktop-** Screenshots auch Kunden auf Surface Hub Geräten angezeigt werden.
 
 > [!NOTE]
-> Microsoft Visual Studio bietet ein [Tool, das Sie beim Erfassen von Screenshots unterstützt](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
+> Microsoft Visual Studio bietet ein [Tool, das Sie beim Erfassen von Screenshots unterstützt](/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
 
 Jeder Screenshot muss eine PNG-Datei in der Querformat-oder Hochformat-Ausrichtung sein, und die Dateigröße darf nicht größer als 50 MB sein.
 
@@ -81,7 +81,7 @@ Dieses Bild wird möglicherweise auf verschiedenen Store-Seiten für Windows 10 
 
 Dieses Bild ist für die ordnungsgemäße Anzeige auf Windows Phone 8,1 und früher erforderlich. Wenn Ihre zuvor veröffentlichte APP Windows Phone 8,1 oder früher unterstützt, und Sie dieses Image nicht bereitstellen, wird für diese Kunden ein leeres Symbol mit der Liste Ihrer Apps angezeigt. (Dies gilt auch für Kunden unter Windows 10, wenn Ihre APP nur Pakete für Windows Phone 8,1 oder früher verwendet.)
 
-Wenn Ihre Übermittlung *nur* UWP-Pakete umfasst, müssen Sie dieses Image nicht bereitstellen (es sei denn, Sie aktivieren das Kontrollkästchen **für Kunden unter Windows 10 und Xbox, zeigen Sie hochgeladene Logo Bilder anstelle der Bilder aus den Paketen**an, wie im nächsten Abschnitt beschrieben).
+Wenn Ihre Übermittlung *nur* UWP-Pakete umfasst, müssen Sie dieses Image nicht bereitstellen (es sei denn, Sie aktivieren das Kontrollkästchen  **für Kunden unter Windows 10 und Xbox, zeigen Sie hochgeladene Logo Bilder anstelle der Bilder aus den Paketen**an, wie im nächsten Abschnitt beschrieben).
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>Nur hochgeladene Logo Bilder im Store anzeigen
 
@@ -169,7 +169,7 @@ Je nach Dateityp gibt es weitere Anforderungen.
 
 | Video | Audio |
 | --- | --- |
-| <ul><li>Codec: [H. 264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressiver Scan (keine Überlappung)</li><li>Hohes Profil</li><li>2 aufeinander folgende B-Frames</li><li>Geschlossener GOP. GOP der Hälfte der Framerate</li><li>CABAC</li><li>50 MB/s </li><li>Farbraum: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Kanäle: Stereo-oder Umschließungs Sound</li><li>Abtastrate: 48 kHz</li><li>Audiobitrate: 384 KB/s für Stereo, 512 KB/s für den umgebenden Sound</li></ul> |
+| <ul><li>Codec: [H. 264](/windows/desktop/DirectShow/h-264-video-types) (AVC1)  </li><li>Progressiver Scan (keine Überlappung)</li><li>Hohes Profil</li><li>2 aufeinander folgende B-Frames</li><li>Geschlossener GOP. GOP der Hälfte der Framerate</li><li>CABAC</li><li>50 MB/s </li><li>Farbraum: 4.2.0</li></ul> | <ul><li>Codec: AAC-LC</li><li>Kanäle: Stereo-oder Umschließungs Sound</li><li>Abtastrate: 48 kHz</li><li>Audiobitrate: 384 KB/s für Stereo, 512 KB/s für den umgebenden Sound</li></ul> |
 
 > [!WARNING]
 > Kunden hören möglicherweise keine Audiodaten für MP4-Dateien, die mit anderen Codecs als AVC1 codiert sind.
@@ -231,7 +231,3 @@ Wenn Ihre zuvor übermittelte App frühere Betriebssystemversionen unterstützt 
 > Stellen Sie sicher, dass Sie ein Symbol für die APP-Kachel "300 x 300 app" im Abschnitt " [Store-Logos](#store-logos) " bereitstellen, um die Übermittlung Windows Phone 8,1 oder früher Dadurch wird sichergestellt, dass Ihre APP nicht im Store mit einem leeren Symbol angezeigt wird.  
 
 **Bei Windows 8.1 und früheren**Versionen können einige Werbe Layouts ein Image in der **414 x 180** Pixelgröße verwenden. Wenn Ihre APP unter Windows 8.1 oder früher ausgeführt wird, empfiehlt es sich, ein Image in dieser Größe bereitzustellen.
-
-
-
-

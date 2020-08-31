@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Threads, Thread Pool
 ms.localizationpriority: medium
-ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: 3576f907e4ab601013d22fe9ae7697e0ec523ce4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619344"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155204"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Senden ein Arbeitselement an den Threadpool
 
-\[Aktualisiert für UWP-apps unter Windows 10. Informationen zu Windows 8. x-Artikeln finden Sie im [Archiv](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
+\[ Aktualisiert für UWP-apps unter Windows 10. Informationen zu Windows 8. x-Artikeln finden Sie im [Archiv](/previous-versions/windows/apps/mt244353(v=win.10))\]
 
 <b>Wichtige APIs</b>
 
--   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
--   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
+-   [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction)
 
 Hier erfahren Sie, wie Sie Arbeit in einem separaten Thread erledigen können, indem Sie ein Arbeitselement an den Threadpool übermitteln. Somit sorgen Sie dafür, dass die Benutzeroberfläche bei der Erledigung von Arbeit, die viel Zeit in Anspruch nimmt, reaktionsfähig bleibt, und Sie können mehrere Aufgaben parallel bearbeiten.
 
 ## <a name="create-and-submit-the-work-item"></a>Erstellen und Senden des Arbeitselement
 
-Erstellen Sie eine Arbeitsaufgabe, indem Sie [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) aufrufen. Stellen Sie einen Delegaten zur Durchführung der Arbeit bereit (Sie können eine Lambda-Funktion oder Delegatfunktion verwenden). **RunAsync** gibt ein [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)-Objekt zurück. Speichern Sie dieses Objekt, da es im nächsten Schritt verwendet wird.
+Erstellen Sie eine Arbeitsaufgabe, indem Sie [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) aufrufen. Stellen Sie einen Delegaten zur Durchführung der Arbeit bereit (Sie können eine Lambda-Funktion oder Delegatfunktion verwenden). **RunAsync** gibt ein [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction)-Objekt zurück. Speichern Sie dieses Objekt, da es im nächsten Schritt verwendet wird.
 
-Drei Versionen von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) sind verfügbar. Damit können Sie optional die Priorität der Arbeitsaufgabe angeben und steuern, ob sie gleichzeitig mit anderen Arbeitsaufgaben ausgeführt wird.
+Drei Versionen von [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) sind verfügbar. Damit können Sie optional die Priorität der Arbeitsaufgabe angeben und steuern, ob sie gleichzeitig mit anderen Arbeitsaufgaben ausgeführt wird.
 
 >[!NOTE]
->Verwenden Sie [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) , um auf den UI-Thread zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
+>Verwenden Sie [**coredispatcher. runasync**](/uwp/api/windows.ui.core.coredispatcher.runasync) , um auf den UI-Thread zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
 
 Im folgenden Beispiel werden ein Arbeitselement erstellt und ein Lambda für die Verarbeitung angegeben:
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-Nach dem Aufruf von [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) wird die Arbeitsaufgabe vom Threadpool in eine Warteschlange eingereiht und ausgeführt, wenn ein Thread verfügbar wird. Arbeitselemente im Threadpool werden asynchron und in einer beliebigen Reihenfolge ausgeführt. Stellen Sie daher sicher, dass Ihre Arbeitselemente über eine unabhängige Funktionsweise funktionieren.
+Nach dem Aufruf von [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) wird die Arbeitsaufgabe vom Threadpool in eine Warteschlange eingereiht und ausgeführt, wenn ein Thread verfügbar wird. Arbeitselemente im Threadpool werden asynchron und in einer beliebigen Reihenfolge ausgeführt. Stellen Sie daher sicher, dass Ihre Arbeitselemente über eine unabhängige Funktionsweise funktionieren.
 
-Beachten Sie, dass von der Arbeitsaufgabe die [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status)-Eigenschaft überprüft und bei einem Abbruch der Arbeitsaufgabe beendet wird.
+Beachten Sie, dass von der Arbeitsaufgabe die [**IAsyncInfo.Status**](/uwp/api/windows.foundation.iasyncinfo.status)-Eigenschaft überprüft und bei einem Abbruch der Arbeitsaufgabe beendet wird.
 
 ## <a name="handle-work-item-completion"></a>Behandeln der Vervollständigung des Arbeitselement.
 
-Stellen Sie einen Vervollständigungshandler zur Verfügung, indem Sie die [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed)-Eigenschaft der Arbeitsaufgabe festlegen. Geben Sie einen Delegaten an (Sie können eine Lambda-Funktion oder Delegatfunktion nutzen), mit dem das Arbeitselement durchgeführt wird. Verwenden Sie z. B. [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync), um auf den Benutzeroberflächenthread zuzugreifen und das Ergebnis anzuzeigen.
+Stellen Sie einen Vervollständigungshandler zur Verfügung, indem Sie die [**IAsyncAction.Completed**](/uwp/api/windows.foundation.iasyncaction.completed)-Eigenschaft der Arbeitsaufgabe festlegen. Geben Sie einen Delegaten an (Sie können eine Lambda-Funktion oder Delegatfunktion nutzen), mit dem das Arbeitselement durchgeführt wird. Verwenden Sie z. B. [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync), um auf den Benutzeroberflächenthread zuzugreifen und das Ergebnis anzuzeigen.
 
 Im folgenden Beispiel wird die Benutzeroberfläche mit dem Ergebnis der in Schritt 1 übermittelten Arbeitselement aktualisiert:
 
@@ -350,11 +350,11 @@ Beachten Sie, dass vom Vervollständigungshandler überprüft wird, ob das Arbei
 
 ## <a name="summary-and-next-steps"></a>Zusammenfassung und nächste Schritte
 
-Weitere Informationen finden Sie, indem Sie den Code aus dieser Schnellstartanleitung in das [Beispiel Erstellen eines Thread Pool-Arbeits Elements](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) für Windows 8.1 schreiben und den Quellcode in einer Win\_UNAP Windows 10-APP wieder verwenden.
+Weitere Informationen finden Sie, indem Sie den Code aus dieser Schnellstartanleitung in das [Beispiel Erstellen eines Thread Pool-Arbeits Elements](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) für Windows 8.1 schreiben und den Quellcode in einer Win \_ UNAP Windows 10-APP wieder verwenden.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
 * [Senden ein Arbeitselement an den Threadpool](submit-a-work-item-to-the-thread-pool.md)
 * [Bewährte Methoden zum Verwenden des Threadpools](best-practices-for-using-the-thread-pool.md)
-* [Senden einer Arbeitsaufgabe mithilfe eines Timers](use-a-timer-to-submit-a-work-item.md)
+* [Timergesteuertes Übermitteln einer Arbeitsaufgabe](use-a-timer-to-submit-a-work-item.md)
  

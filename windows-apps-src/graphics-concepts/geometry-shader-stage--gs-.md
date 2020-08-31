@@ -1,82 +1,82 @@
 ---
 title: Geometryshaderphase (GS)
-description: Die Geometry-Shader-Stufe (GS-Stufe) verarbeitet vollständige Grundformen (Dreiecke, Linien und Punkte) zusammen mit deren angrenzenden Vertices.
+description: Die Geometrie-Shader-Phase (GS) verarbeitet ganze primitive, Linien und Punkte sowie die angrenzenden Scheitel Punkte.
 ms.assetid: 8A1350DD-B006-488F-9DAF-14CD2483BA4E
 keywords:
 - Geometryshaderphase (GS)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ea3e7ec73b042eeef560af3d88754afdfa5b441
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 61d794e93718bc9450c1a0f3dce2e921da7e513d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370458"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168074"
 ---
 # <a name="geometry-shader-gs-stage"></a>Geometryshaderphase (GS)
 
 
-Die Geometry-Shader-Stufe (GS-Stufe) verarbeitet vollständige Grundformen (Dreiecke, Linien und Punkte) zusammen mit deren angrenzenden Vertices. Sie ist nützlich für Algorithmen wie Point Sprite Expansion, Dynamic Particle Systems, und Shadow Volume Generation. Sie unterstützt Geometrieverstärkung und -abschwächung.
+Die Geometrie-Shader-Phase (GS) verarbeitet vollständige primitive: Dreiecke, Linien und Punkte, zusammen mit ihren angrenzenden Scheitel Punkten. Dies ist nützlich für Algorithmen, einschließlich Punkt Sprite-Erweiterung, dynamische Partikelsysteme und die Generierung von schattenvolumes. Es unterstützt die Geometrie Verstärkung und die Aufhebung der deverstärkung.
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Zweck und Verwendung
-
-
-Die Geometry-Shader-Stufe verarbeitet vollständige Grundformen: Dreiecke (3 Vertices mit bis zu 3 angrenzenden Vertices), Linien (2 Vertices mit bis zu 2 angrenzenden Vertices) und Punkte (1 Vertex).
-
-![Illustration eines Dreiecks und einer Linie mit angrenzenden Vertices](images/d3d10-gs.png)
-
-Der Geometry-Shader unterstützt auch beschränkte Geometrieverstärkung und -abschwächung. Der Geometry-Shader kann eine eingegebene Grundform verwerfen oder daraus eine oder mehrere neue Grundformen generieren.
-
-Die Geometry-Shader-Stufe (GS-Stufe) ist eine programmierbare Shaderstufe. Sie wird als abgerundeter Block im [Grafikpipeline](graphics-pipeline.md)-Diagramm angezeigt. Diese Shaderstufe stellt eine eigene, auf Shadermodellen basierende Funktionalität bereit (s. [Gemeinsamer Shaderkern](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core))
-
-Die Geometry-Shader-Stufe ist besonders geeignet für folgende Algorithmen:
-
--   Point Sprite Expansion
--   Dynamic Particle Systems
--   Fur/Fin Generation
--   Shadow Volume Generation
--   Single Pass Render-to-Cubemap
--   Per-Primitive Material Swapping
--   Per-Primitive Material Setup: Hierzu gehört das Erstellen baryzentrischer Koordinaten als Daten für Grundformen, sodass ein Pixel-Shader allgemeine Attribute interpolieren kann.
-
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Eingabe
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Zweck und Verwendung
 
 
-Die Geometry-Shader-Stufe führt anwendungsspezifischen Shadercode aus, mit vollständigen Grundformen als Eingabe und der Fähigkeit, Vertices als Ausgabe zu generieren. Im Gegensatz zu den Eingaben für einen Vertex-Shader, der einen einzelnen Vertex verarbeitet, sind die Eingaben für einen Geometry-Shader die Vertices vollständiger Grundformen (drei Vertices für ein Dreieck, zwei Vertices für eine Linie oder ein Vertex für einen Punkt). Geometry-Shader können auch die Vertexdaten für die am Rand anschließenden Grundformen als Eingabe übernehmen (drei zusätzliche Vertices für ein Dreieck, zwei zusätzliche Vertices für eine Line).
+Die Geometry-Shader-Stufe verarbeitet ganze primitive: Dreiecke (3 Scheitel Punkte mit bis zu 3 angrenzenden Scheitel Punkten), Linien (2 Scheitel Punkte mit bis zu 2 angrenzenden Scheitel Punkten) und Punkte (1 Scheitel Punkte).
 
-Die Geometrie-Shader-Stufe nutzen kann die **SV\_PrimitiveID** vom System generierter Wert, der automatisch generierten durch die [Eingabe-Assembler (IA) Phase](input-assembler-stage--ia-.md). Damit können Grundformdaten abgerufen oder bei Bedarf verarbeitet werden.
+![Abbildung eines Dreiecks und einer Linie mit angrenzenden Vertices](images/d3d10-gs.png)
 
-Wenn ein Geometry-Shader aktiv ist, wird er einmal für jede Grundform aufgerufen, die übergeben oder weiter oben in der Pipeline generiert wurde. Für jeden Aufruf des Geometry-Shaders dienen Daten der aufrufenden Grundform (ein einzelner Punkt, eine einzelne Line oder ein einzelnes Dreieck) als Eingabe. Ein Dreieckstrip von weiter oben in die Pipeline würde für jedes einzelne Dreieck im Strip zum Aufruf des Geometry-Shaders führen (so als würde der Strip in eine Dreiecksliste erweitert). Alle Eingabedaten für jeden Vertex in der einzelnen Grundform sind verfügbar ist (also 3 Vertices für ein Dreieck), dazu die Daten angrenzender Vertices (falls vorhanden und verfügbar).
+Der Geometry-Shader unterstützt auch die eingeschränkte Geometrie Verstärkung und die Aufhebung der deverstärkung. Wenn ein Eingabe primitiv angegeben ist, kann der Geometry-Shader den primitiven verwerfen oder eine oder mehrere neue primitive ausgeben.
 
-Übliche Vertexabkürzungen:
+Die Stufe "Geometry-Shader (GS)" ist eine programmierbare Shader-Stufe. Sie wird im [Grafik Pipeline](graphics-pipeline.md) Diagramm als abgerundeter Block angezeigt. Diese Shader-Phase stellt eine eigene einzigartige Funktionalität bereit, die auf den shadermodellen basiert (siehe [Common-Shader Core](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-common-core)).
+
+Die Geometrie-Shader-Stufe eignet sich gut für Algorithmen, einschließlich:
+
+-   Punkt Sprite-Erweiterung
+-   Dynamische Partikelsysteme
+-   Pelz/FIN-Generierung
+-   Schattenvolumengenerierung
+-   Einzelne Pass-to-cubemap
+-   Pro primitiver Material Austausch
+-   Einrichtung pro primitiver Materialien: Diese Funktion umfasst das Generieren von baryzentrierten Koordinaten als primitive Daten, sodass ein Pixelshader benutzerdefinierte Attribut Interpolationen durchführen kann.
+
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Der
+
+
+Die Geometrie-Shader-Stufe führt den von der Anwendung angegebenen Shader-Code mit vollständigen primitiven als Eingabe und die Möglichkeit zum Generieren von Scheitel Punkten bei der Ausgabe aus. Anders als bei Vertex-Shadern, die auf einem einzelnen Scheitelpunkt arbeiten, sind die Eingaben des Geometry-Shaders die Scheitel Punkte für einen vollständigen primitiven (drei Scheitel Punkte für Dreiecke, zwei Scheitel Punkte für Linien oder einzelner Scheitelpunkt für Punkt). Geometry-Shader können auch die Scheitelpunkt Daten für die Edge-angrenzenden primitiven als Eingabe (weitere drei Scheitel Punkte für ein Dreieck, eine zusätzliche zwei Scheitel Punkte für eine Linie) einbringen.
+
+Die Geometrie-Shader-Stufe kann den vom System generierten **SV \_ primitiveid** -Wert nutzen, der automatisch von der [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md)generiert wird. Dies ermöglicht das Abrufen und berechnen primitiver Daten, wenn gewünscht.
+
+Wenn ein Geometry-Shader aktiv ist, wird er einmal für jedes primitive aufgerufen, das in der Pipeline weiter unten oder generiert wurde. Bei jedem Aufruf des Geometry-Shaders werden die Daten für den aufrufenden primitiven als Eingabe angezeigt, unabhängig davon, ob es sich um einen einzelnen Punkt, eine einzelne Zeile oder ein einzelnes Dreieck handelt. Ein Dreiecks Streifen von früheren in der Pipeline führt zu einem Aufruf des Geometry-Shaders für jedes einzelne Dreieck im Strip (als wäre der Strip in eine Dreiecks Liste ausgelagert). Alle Eingabedaten für jeden Scheitelpunkt in der einzelnen primitiven sind verfügbar (d. h. 3 Scheitel Punkte für ein Dreieck) sowie angrenzende Scheitelpunkt Daten, sofern zutreffend und verfügbar.
+
+Allgemeine Scheitelpunkt Abkürzungen:
 
 |     |                 |
 |-----|-----------------|
-| TV  | Triangle vertex (Dreiecksvertex) |
-| LV  | Line vertex (Linienvertex)     |
-| AV  | Adjacent vertex (angrenzender Vertex) |
+| TV  | Dreiecks Scheitelpunkt |
+| LV  | Zeilen Scheitelpunkt     |
+| Staff  | Angrenzender Scheitelpunkt |
 
  
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgabe
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgeben
 
 
-Die Geometry-Shader-Stufe (GS-Stufe) kann mehrere Vertices ausgeben, die eine einzelne ausgewählte Topologie darstellen. Ausgabetopologien des Geometry-Shaders sind **Tristrip**, **Linestrip** und **Pointlist**. Die Anzahl der ausgegebenen Grundformen kann mit jedem Aufruf des Geometry-Shaders variieren. Die maximale Anzahl auszugebender Vertices muss allerdings statisch deklariert werden muss. Die nach einem Geometry-Shader-Aufruf ausgegeben Strips können beliebig lang sein. Neue Strips können mit der HLSL-Funktion [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) erstellt werden.
+Die Geometrie-Shader-Phase (GS) kann mehrere Scheitel Punkte ausstellen, die eine einzelne ausgewählte Topologie bilden. Verfügbare Geometry-Shader-ausgabetopologien sind **tristrip**, **linestrip**und **PointList**. Die Anzahl der ausgegebenen primitiven kann in jedem Aufruf des Geometry-Shaders frei variieren, obwohl die maximale Anzahl von Scheitel Punkten, die ausgegeben werden konnten, statisch deklariert werden muss. Von einem Geometry-Shader-Aufruf ausgegebene Bereichs Längen können beliebig sein, und neue Bänder können über die Funktion " [restartstrip](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL" erstellt werden.
 
-Die Ausführung einer Geometry-Shader-Instanz erfolgt unabhängig von anderen Aufrufen, nur die Daten werden den Streams seriell hinzugefügt. Die Ausgaben eines bestimmten Geometry-Shader-Aufrufs sind unabhängig von anderen Aufrufen (jedoch wird die Reihenfolge berücksichtigt). Ein Geometry-Shader, der Dreieckstrips generiert, beginnt nach jedem Aufruf mit einem neuen Strip.
+Die Ausführung einer Geometry-shaderinstanz ist atomarisch von anderen aufrufen, mit dem Unterschied, dass die den Streams hinzugefügten Daten seriell sind. Die Ausgaben eines gegebenen Aufrufs eines Geometry-Shaders sind von anderen aufrufen unabhängig (obwohl die Reihenfolge beachtet wird). Ein Geometry-Shader, der Dreiecks Streifen erzeugt, startet bei jedem Aufruf einen neuen Strip.
 
-Eine Geometry-Shader-Ausgabe kann über die Streamausgabestufe in eine Rasterizerstufe und/oder in einen Vertexpuffer im Speicher geleitet werden. In den Speicher geleitete Ausgaben werden in einzelne Punkt-, Zeilen- oder Dreieckslisten erweitert (genau so, als würden sie an den Rasterizer übergeben).
+Die Geometrie-Shader-Ausgabe kann in der Raster-Phase und/oder in einem Vertex-Puffer im Arbeitsspeicher über die Stream-Ausgabe Phase ausgegeben werden. Die Ausgabe in den Arbeitsspeicher wird auf einzelne Punkt-/Linien-/dreiterlisten erweitert (genau so, wie Sie an den Rasterizer übermittelt werden).
 
-Ein Geometry-Shader gibt jeweils Daten für einen Vertex aus, der einem Ausgabestreamobjekt angefügt wird. Die Topologie der Streams wird durch eine Deklaration festgelegt, wobei ein **TriangleStream**, **LineStream** oder **PointStream** als Ausgabe einer GS-Stufe vorgegeben werden kann.
+Ein Geometry-Shader gibt Daten jeweils einen Scheitelpunkt aus, indem er Vertices an ein ausgabestreamobjekt anfügt. Die Topologie der Streams wird durch eine Fixed-Deklaration bestimmt, wobei ein " **zanglestream**", " **LineStream** " und " **pointstream** " als Ausgabe für die GS-Stufe ausgewählt werden.
 
-Es gibt drei Arten von Streamobjekten verfügbar: **TriangleStream**, **LineStream** und **PointStream**, die alle auf Vorlagen basierende Objekte sind. Die Topologie der Ausgabe wird durch ihren jeweiligen Objekttyp bestimmt, während das Format der in den Datenstrom angefügten Vertices durch den Vorlagentyp bestimmt wird.
+Es stehen drei Arten von Streamobjekten zur Verfügung: " **dreianglestream**", " **LineStream** " und " **pointstream**", bei denen es sich um Vorlagen Objekte handelt. Die Topologie der Ausgabe wird durch den jeweiligen Objekttyp bestimmt, während das Format der Scheitel Punkte, die an den Stream angehängt werden, durch den Vorlagentyp bestimmt wird.
 
-Wenn eine Geometrie-Shader-Ausgabe als einen Wert für die System-interpretiert identifiziert wird (z. B. **SV\_RenderTargetArrayIndex** oder **SV\_Position**), Hardware untersucht diese Daten und führt einige Verhalten hängt von dem Wert, sondern um die Daten selbst in die nächste shaderstufe für die Eingabe übergeben. Wenn solche Daten aus der Geometrie-Shader Bedeutung für die Hardware pro primitiven aufweist (z. B. **SV\_RenderTargetArrayIndex** oder **SV\_ViewportArrayIndex**), statt auf einer pro-Vertex-Basis (z. B. **SV\_ClipDistance\[n\]**  oder **SV\_Position**), die primitiven Daten erstellt aus der führende Vertex ausgegeben, für den primitiven Typ.
+Wenn eine Geometrie-Shader-Ausgabe als vom System interpretierter Wert (z. b. **SV \_ rendertargetarrayindex** oder **SV- \_ Position**) identifiziert wird, untersucht die Hardware diese Daten und führt ein gewisses Verhalten aus, das von dem Wert abhängt, zusätzlich zur Möglichkeit, die Daten selbst an die nächste Shader-Stufe für die Eingabe zu übergeben. Wenn eine solche Datenausgabe aus dem Geometry-Shader für die Hardware auf primitiver Basis (z. b. **SV \_ rendertargetarrayindex** oder **SV \_ viewportarrayindex**) und nicht pro Scheitelpunkt (z. b. **SV \_ clipdistance \[ n \] ** oder **SV \_ Position**) Bedeutung hat, werden die pro-primitive Daten aus dem führenden Vertex entnommen, der für das primitive ausgegeben wurde
 
-Vom Geometry-Shader können unvollständige Grundformen ausgegeben werden, wenn der Geometry-Shader beendet wird, bevor die Grundform fertig ist. Solche unvollständigen Grundformen werden ohne Rückmeldung verworfen. Das entspricht der Art und Weise, in der ein Input-Assembler (IA) unvollständige Grundformen behandelt.
+Teilweise abgeschlossene primitive können vom Geometry-Shader generiert werden, wenn der Geometrie-Shader endet und der primitive unvollständig ist. Unvollständige primitive werden automatisch verworfen. Dies ähnelt der Art und Weise, in der die IA teilweise abgeschlossene primitive behandelt.
 
-Die Geometry-Shader kann Lade- und Textur Sampling-Vorgänge ausführen, für die keine Screenspaceableitungen erforderlich sind (**Samplelevel**, **Samplecmplevelzero**, **Samplegrad**).
+Der Geometry-Shader kann Lade-und Textur-samplingvorgänge ausführen, bei denen keine Bildschirm breiten Ableitungen erforderlich sind (**samplelevel**, **samplecmplevelzero**, **samplegrad**).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
@@ -86,7 +86,3 @@ Die Geometry-Shader kann Lade- und Textur Sampling-Vorgänge ausführen, für di
  
 
  
-
-
-
-

@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie Sie die Benachrichtigungs Spiegelung für ihre Popup Benachrichtigungen verwenden.
+description: Erfahren Sie, wie Sie die Benachrichtigungs Spiegelung, die vom Wartungs Center in der Cloud betrieben wird, verwenden, um die Popup Benachrichtigungen Ihres Telefons auf Ihrem PC anzuzeigen.
 title: Benachrichtigungsspiegelung
 label: Notification mirroring
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: Windows 10, UWP, Toast, Aktions Center in der Cloud, Benachrichtigungs Spiegelung, Benachrichtigung, Geräte übergreifend
 ms.localizationpriority: medium
-ms.openlocfilehash: b897c6574f6cbfe78406d1c624f2e3b7286ef582
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13e3e9f0b675ef0e5f9e0787f0544f87689cf74a
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971055"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054010"
 ---
 # <a name="notification-mirroring"></a>Benachrichtigungsspiegelung
 
@@ -52,7 +52,7 @@ Entwickler, Unternehmen und Benutzer von Windows-Apps können die Benachrichtigu
 
 Gelegentlich haben Sie möglicherweise eine gerätespezifische Benachrichtigung, dass Sie nicht auf andere Geräte gespiegelt werden möchten. Sie können verhindern, dass eine bestimmte Benachrichtigung gespiegelt wird, indem Sie die **Spiegelungs** Eigenschaft in der Popup Benachrichtigung festlegen. Diese Spiegelungs Eigenschaft kann derzeit nur für lokale Benachrichtigungen festgelegt werden (Sie kann nicht angegeben werden, wenn eine WNS-Pushbenachrichtigung gesendet wird).
 
-**Bekanntes Problem**: Wenn Sie die Spiegelungs Eigenschaft über `ToastNotificationHistory.GetHistory()` die der API abrufen, wird immer der Standardwert (**zulässig**) anstelle der von Ihnen angegebenen Option zurückgegeben. Keine Sorge, alles ist funktionsfähig. es wird nur der Wert abgerufen, der beschädigt ist.
+**Bekanntes Problem**: Wenn Sie die Spiegelungs Eigenschaft über die der API abrufen, `ToastNotificationHistory.GetHistory()` wird immer der Standardwert (**zulässig**) anstelle der von Ihnen angegebenen Option zurückgegeben. Keine Sorge, alles ist funktionsfähig. es wird nur der Wert abgerufen, der beschädigt ist.
 
 ```csharp
 var toast = new ToastNotification(xml)
@@ -67,7 +67,7 @@ ToastNotificationManager.CreateToastNotifier().Show(toast);
 
 ### <a name="as-a-developer-opt-out-completely"></a>Als Entwickler, vollständig ablehnen
 
-Einige Entwickler entscheiden sich möglicherweise dafür, Ihre APP aus der Benachrichtigungs Spiegelung vollständig zu abonnieren Obwohl wir der Meinung sind, dass alle apps von der Spiegelung profitieren würden, ist es einfach, sich zu entscheiden. Nennen Sie einfach die folgende Methode einmal, und Ihre APP wird deaktiviert. Beispielsweise können Sie diesen-Befehl in den Konstruktor Ihrer APP einfügen `App.xaml.cs`...
+Einige Entwickler entscheiden sich möglicherweise dafür, Ihre APP aus der Benachrichtigungs Spiegelung vollständig zu abonnieren Obwohl wir der Meinung sind, dass alle apps von der Spiegelung profitieren würden, ist es einfach, sich zu entscheiden. Nennen Sie einfach die folgende Methode einmal, und Ihre APP wird deaktiviert. Beispielsweise können Sie diesen-Befehl in den Konstruktor Ihrer APP einfügen `App.xaml.cs` ...
 
 ```csharp
 public App()

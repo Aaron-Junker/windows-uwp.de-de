@@ -1,54 +1,54 @@
 ---
-Description: Sprechen Sie für bessere Interaktion, Kundenbindung und Monetarisierung bestimmte Segmente Ihrer Kunden mit personalisiertem Inhalt an.
-title: Verwenden Sie zielgerichtete Angebote, um Interaktionen und Abschlüsse zu maximieren.
+Description: Richten Sie bestimmte Segmente der Kunden mit personalisierten Inhalten ein, um Engagement, Beibehaltung und Monetarisierung zu steigern.
+title: Verwenden gezielter Angebote zum Maximieren von Engagement und Konvertierungen
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, gezielte Angebote, Angebote, Benachrichtigungen
 ms.localizationpriority: medium
-ms.openlocfilehash: fd4cf135e5129ed4f3dbdbcebfb2003e7573182a
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: ff2c3049154ffcc18164b8084bc9e34a9121905d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685099"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155304"
 ---
-# <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Verwenden Sie zielgerichtete Angebote, um Interaktionen und Abschlüsse zu maximieren.
+# <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>Verwenden gezielter Angebote zum Maximieren von Engagement und Konvertierungen
 
-Sprechen Sie für bessere Interaktion, Kundenbindung und Monetarisierung bestimmte Segmente Ihrer Kunden mit attraktivem, personalisiertem Inhalt an.
+Richten Sie bestimmte Segmente Ihrer Kunden mit ansprechenden, personalisierten Inhalten ein, um Engagement, Beibehaltung und Monetarisierung zu steigern.
 
 > [!IMPORTANT]
-> Zielgerichtete Angebote können nur mit UWP-Apps verwendet werden, die Add-Ons enthalten.
+> Gezielte Angebote können nur mit UWP-Apps verwendet werden, die Add-ons enthalten.
 
-## <a name="targeted-offer-overview"></a>Übersicht über zielgerichtete Angebote
+## <a name="targeted-offer-overview"></a>Übersicht über das gezielte Angebot
 
-Allgemein gesagt müssen Sie drei durchführen, um die zielgerichteten Angebote zu verwenden:
+Auf hoher Ebene müssen Sie drei Dinge durchführen, um gezielte Angebote zu verwenden:
 
-1. **Erstellen Sie das Angebot im [Partner Center](https://partner.microsoft.com/dashboard).** Navigieren Sie zur Seite **Bewerben > zielgerichtete Angebote**, um Angebote zu erstellen. Weitere Informationen zu diesem Prozess sind im Folgenden beschrieben.
-2. **Implementieren Sie das in-App-Angebot.** Verwenden Sie die *Microsoft Store zielgerichteten Angebote-API* im Code Ihrer APP, um die verfügbaren Angebote für einen bestimmten Benutzer abzurufen. Sie müssen auch die In-App-Umgebung für das gezielte Angebot erstellen. Weitere Informationen finden Sie unter [Verwalten gezielter Angebote mithilfe von Store-Diensten](../monetize/manage-targeted-offers-using-windows-store-services.md).
-3. **Senden Sie Ihre APP an den Store.** Ihre App muss mit dem integrierten In-App-Angebot veröffentlicht werden, damit die Angebote für Kunden verfügbar sind.
+1. **Erstellen Sie das Angebot im [Partner Center](https://partner.microsoft.com/dashboard).** Navigieren Sie zur Seite **einbinden > Ziel Angebote** , um Angebote zu erstellen. Weitere Informationen zu diesem Prozess werden unten beschrieben.
+2. **Implementieren Sie das in-App-Angebot.** Verwenden Sie die *Microsoft Store zielgerichteten Angebote-API* im Code Ihrer APP, um die verfügbaren Angebote für einen bestimmten Benutzer abzurufen. Außerdem müssen Sie die in-App-Funktion für das Ziel Angebot erstellen. Weitere Informationen finden Sie unter [Verwalten von zielgerichteten angeboten mithilfe von Store Services](../monetize/manage-targeted-offers-using-windows-store-services.md).
+3. **Senden Sie Ihre APP an den Store.** Ihre APP muss mit der in-App-Angebots Funktion veröffentlicht werden, damit die Angebote den Kunden zur Verfügung gestellt werden können.
 
-Nachdem Sie diese Schritte abgeschlossen haben, werden Kunden, die Ihre App verwenden, die Angebote angezeigt, die zu diesem Zeitpunkt für ihn verfügbar sind, basierend auf seiner Mitgliedschaft in dem diesem Angebot zugeordneten Segment. Beachten Sie, dass wir zwar bemüht sind, alle verfügbaren Angebote für Ihre Kunden anzuzeigen, es jedoch gelegentlich zu Problemen kommen kann, die die Angebotsverfügbarkeit beeinträchtigen.
+Nachdem Sie diese Schritte ausgeführt haben, sehen Kunden, die Ihre APP verwenden, die Angebote, die Ihnen zu diesem Zeitpunkt zur Verfügung stehen, basierend auf Ihrer Mitgliedschaft in den Segmenten, die ihren angeboten zugeordnet sind. Bitte beachten Sie, dass Sie bei jedem Versuch, alle verfügbaren Angebote für Ihre Kunden anzuzeigen, gelegentlich Probleme auftreten, die sich auf die Verfügbarkeit des Angebots auswirken.
 
 
-## <a name="to-create-and-send-a-targeted-offer"></a>So erstellen und senden Sie ein gezieltes Angebot
+## <a name="to-create-and-send-a-targeted-offer"></a>So erstellen und senden Sie ein Ziel Angebot
 
 1.  Erweitern Sie im [Partner Center](https://partner.microsoft.com/dashboard)im linken Navigationsmenü die Option **einbinden** , und wählen Sie dann **gezielte Angebote**aus.
-2.  Überprüfen Sie auf der Seite **zielgerichtete Angebote** die verfügbaren Angebote. Wählen Sie **Create new offer** für ein Angebot, das Sie implementieren möchten.
+2.  Überprüfen Sie die verfügbaren Angebote auf der Seite mit den **Ziel angeboten** . Wählen Sie **Neues Angebot** für alle Angebote erstellen aus, die Sie implementieren möchten.
 
     > [!NOTE]
-    > Die angezeigten verfügbaren Angebote ändern sich im Laufe der Zeit und auf der Grundlage von Kontokriterien.
+    > Die verfügbaren Angebote können sich im Laufe der Zeit und basierend auf den Konto Kriterien unterscheiden.
 
-3.  Wählen Sie in der neuen Zeile, die unter den verfügbaren Angebote angezeigt wird, das Produkt (App) aus, in dem das Angebot zur Verfügung steht. Wählen Sie dann das Add-On aus, das Sie dem Angebot zuordnen möchten.
-4.  Wiederholen Sie die Schritte 2 und 3, wenn Sie weitere Angebote erstellen möchten. Sie können den gleichen Angebotstyp mehrmals in derselben App implementieren, solange Sie für jedes Angebot andere Add-Ons auswählen. Darüber hinaus können Sie das gleiche Add-On mehr als einem Angebotstyp zuordnen.
-5.  Klicken Sie auf **Speichern**, wenn Sie mit dem Erstellen der Angebote fertig sind.
+3.  Wählen Sie in der neuen Zeile, die unterhalb der verfügbaren Angebote angezeigt wird, das Produkt (app) aus, in dem das Angebot verfügbar sein soll. Wählen Sie dann das Add-on aus, das Sie dem Angebot zuordnen möchten.
+4.  Wiederholen Sie die Schritte 2 und 3, wenn Sie weitere Angebote erstellen möchten. Sie können denselben Angebotstyp mehrmals für dieselbe App implementieren, solange Sie für jedes Angebot verschiedene Add-ons auswählen. Darüber hinaus können Sie dasselbe Add-on mit mehr als einem Angebotstyp verknüpfen.
+5.  Wenn Sie die Erstellung der Angebote abgeschlossen haben, klicken Sie auf **Speichern**.
 
 Nachdem Sie Ihre Angebote implementiert haben, können Sie zur Seite " **Ziel Angebote** " im Partner Center zurückkehren, um die gesamten Konvertierungen für jedes Angebot anzuzeigen.
 
-Wenn Sie sich entscheiden, kein Angebot zu verwenden (oder wenn Sie es nicht mehr verwenden möchten), klicken Sie auf **Löschen**.
+Wenn Sie ein Angebot nicht verwenden möchten (oder wenn Sie es nicht mehr verwenden möchten, klicken Sie auf **löschen.**
 
 > [!IMPORTANT]
-> Achten Sie darauf, dass Sie den Code veröffentlichen, um die verfügbaren Angebote für einen bestimmten Benutzer abzurufen und die In-App-Umgebung zu erstellen. Weitere Informationen finden Sie unter [Verwalten gezielter Angebote mithilfe von Store-Diensten](../monetize/manage-targeted-offers-using-windows-store-services.md).
+> Stellen Sie sicher, dass Sie den Code veröffentlicht haben, um die verfügbaren Angebote für einen bestimmten Benutzer abzurufen und die app in der APP zu erstellen. Weitere Informationen finden Sie unter [Verwalten von zielgerichteten angeboten mithilfe von Store Services](../monetize/manage-targeted-offers-using-windows-store-services.md).
 >
-> Beachten Sie bei den Inhalten gezielter Angebote, dass sie wie der gesamte App-Inhalt die [Inhaltsrichtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies) des Stores erfüllen müssen.
+> Beachten Sie bei der Überlegung des Inhalts Ihrer Ziel Angebote, dass der Inhalt in ihren angeboten wie bei allen APP-Inhalten den Store- [Inhaltsrichtlinien](/legal/windows/agreements/store-policies)entsprechen muss.
 >
-> Beachten Sie außerdem Folgendes: Wenn ein Kunde, der Ihre App verwendet (und zum Zeitpunkt, zu dem die Segmentmitgliedschaft bestimmt wird, mit seinem Microsoft-Konto angemeldet ist) das Gerät später an eine andere Person übergibt, sieht die andere Person unter Umständen das Angebot, das für den ursprünglichen Kunden bestimmt war.
+> Beachten Sie auch, dass ein Kunde, der Ihre APP verwendet (und bei der Festlegung der Segment Mitgliedschaft mit seiner Microsoft-Konto angemeldet ist), das Gerät an andere Personen weitergeben kann, die auf den ursprünglichen Kunden ausgerichtet waren.

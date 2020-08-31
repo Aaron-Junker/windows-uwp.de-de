@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Rendering
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a3f689f86e629ce81946927fa732a3ab692b219
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: a87382aeffb0e0b7a8eaca1c4baec8561049e91e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409509"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168244"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>Renderingframework II: Spiel Rendering
 
@@ -21,7 +21,7 @@ ms.locfileid: "85409509"
 In [Renderingframework I](tutorial--assembling-the-rendering-pipeline.md)haben wir erläutert, wie wir die szeneninformationen übernehmen und auf dem Bildschirm anzeigen. Nun gehen wir einen Schritt zurück und erfahren, wie Sie die Daten für das Rendering vorbereiten.
 
 >[!Note]
->Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](/windows/uwp/get-started/get-uwp-app-samples).
+>Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](../get-started/get-app-samples.md).
 
 ## <a name="objective"></a>Ziel
 
@@ -243,7 +243,7 @@ Diese Methode wird für Folgendes verwendet:
 * Erstellen eines [samplerstatusobjekts](tutorial--assembling-the-rendering-pipeline.md#sampler-state) , das Stichproben Informationen für eine Textur kapselt
 * Erstellen Sie eine Aufgaben Gruppe, die alle asynchronen Tasks enthält, die von der-Methode erstellt wurden. Er wartet auf den Abschluss aller asynchronen Aufgaben und ruft dann __finalizecreategamedeviceresources__auf.
 * Erstellen Sie ein Lade Modul mithilfe des [Basic-Lade](tutorial--assembling-the-rendering-pipeline.md#the-basicloader-class)Moduls. Fügen Sie die Async-Ladevorgänge des Lade Moduls als Aufgaben in die zuvor erstellte Aufgaben Gruppe ein.
-* Methoden wie __basicloader:: loadshaderasync__ und __basicloader:: loadtextureasync__ werden zum Laden von verwendet:
+* Methoden wie __basicloader:: loadshaderasync__ und  __basicloader:: loadtextureasync__ werden zum Laden von verwendet:
     * kompilierte Shader-Objekte (vertextshader. CSO, vertexshaderflat. CSO, Pixelshader. CSO und pixelshaderflat. CSO). Weitere Informationen finden Sie unter [verschiedene Shader-Dateiformate](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats).
     * Spiele spezifische Texturen (Assets \\ seeloor. DDS, metal_texture. DDS, cellceiling. DDS, cellfloor. DDS, cellwall. DDS).
 

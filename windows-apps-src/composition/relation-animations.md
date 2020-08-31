@@ -1,99 +1,99 @@
 ---
-title: Relationsbasierte Animationen
-description: Erstellen sie Bewegungen auf Basis einer Eigenschaft eines anderen Objekts.
+title: Beziehungs basierte Animationen
+description: Erfahren Sie, wie Sie expressionanimationen verwenden, um Beziehungs basierte Animationen zu erstellen, wenn Bewegung von einer Eigenschaft eines anderen Objekts abhängig ist.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, animation
+keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: bfed00cf4866d79d4ac3097026cc09c70f9327cd
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318170"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054420"
 ---
-# <a name="relation-based-animations"></a>Relationsbasierte Animationen
+# <a name="relation-based-animations"></a>Beziehungs basierte Animationen
 
-Dieser Artikel gibt einen kurzen Überblick darüber, wie man relationsbasierte Animationen mit Composition-ExpressionAnimations erstellt.
+Dieser Artikel bietet einen kurzen Überblick über die Erstellung von Beziehungs basierten Animationen mithilfe der Komposition expressionanimation.
 
-## <a name="dynamic-relation-based-experiences"></a>Erfahrungen auf Basis dynamischer Beziehungen
+## <a name="dynamic-relation-based-experiences"></a>Dynamische Beziehungs basierte Erfahrungen
 
-Beim Erstellen von Bewegungserlebnissen in einer App gibt es Zeiten, in denen die Bewegung nicht zeitabhängig, sondern von einer Eigenschaft eines anderen Objekts abhängig ist. KeyFrameAnimations sind nicht besonders gut in der Lage, diese Art von Bewegungserlebnissen auszudrücken. In diesen speziellen Fällen muss die Bewegung nicht mehr diskret und vordefiniert sein. Stattdessen kann sich die Bewegung dynamisch aufgrund ihrer Beziehung zu anderen Objekteigenschaften anpassen. Beispielsweise können Sie die Deckkraft eines Objekts anhand seiner horizontalen Position animieren. Andere Beispiele sind Bewegungserlebnisse wie Sticky Header und Parallax.
+Bei der Erstellung von Bewegungs Erlebnissen in einer APP gibt es Zeiten, in denen die Bewegung nicht Zeit basiert ist, sondern von einer Eigenschaft eines anderen Objekts abhängig ist. Keyframeanimationen sind nicht in der Lage, diese Arten von Bewegungs Erlebnissen sehr leicht auszudrücken. In diesen speziellen Fällen muss Motion nicht mehr diskret und vordefiniert sein. Stattdessen kann die Bewegung dynamisch basierend auf der Beziehung zu anderen Objekteigenschaften angepasst werden. Beispielsweise können Sie die Deckkraft eines Objekts auf der Grundlage seiner horizontalen Position animieren. Weitere Beispiele hierfür sind Bewegungsmöglichkeiten wie z. b. kurzkopfzeilen und die-Element
 
-Diese Art von Bewegungserlebnissen ermöglicht es Ihnen, eine Benutzeroberfläche zu schaffen, die sich verbundener anstatt eigenständig und unabhängig anfühlt. Benutzern vermittelt dies den Eindruck eines dynamischen UI-Erlebnisses.
+Diese Art von Bewegungsmöglichkeiten ermöglicht es Ihnen, Benutzeroberflächen zu erstellen, die eine größere Verbindung haben, statt sich als Singular und unabhängig zu fühlen. Für den Benutzer hat dies einen Eindruck von einer dynamischen Benutzeroberfläche.
 
-![Um Kreis umlaufend](images/animation/orbit.gif)
+![Zirkel Umlauf](images/animation/orbit.gif)
 
-![Listenansicht mit Parallax](images/animation/parallax.gif)
+![Listenansicht mit "initiallax"](images/animation/parallax.gif)
 
-## <a name="using-expressionanimations"></a>Verwenden von ExpressionAnimations
+## <a name="using-expressionanimations"></a>Verwenden von expressionanimationen
 
-Um relationsbasierte Bewegungserlebnisse zu erstellen, verwenden Sie den Typ ExpressionAnimation. ExpressionAnimations (oder kurz Expressions/Ausdrücke), ist eine neue Art der Animation, die es Ihnen erlaubt, eine mathematische Beziehung auszudrücken – eine Beziehung, die das System verwendet, um den Wert einer animierenden Eigenschaft jedes Frame zu berechnen. Anders ausgedrückt: Ausdrücke sind einfach eine mathematische Gleichung, die den gewünschten Wert einer Animationseigenschaft pro Frame definiert. Ausdrücke sind eine sehr vielseitige Komponente, die in einer Vielzahl von Szenarien verwendet werden kann, einschließlich:
+Zum Erstellen von Beziehungs basierten Bewegungs Erlebnissen verwenden Sie den Typ expressionanimation. Expressionanimationen (oder Ausdrücke für Short) sind eine neue Art von Animation, mit der Sie eine mathematische Beziehung Ausdrücken können – eine Beziehung, die das System verwendet, um den Wert einer animierten Eigenschaft jedes Frame zu berechnen. Anders ausgedrückt: Ausdrücke sind einfach eine mathematische Gleichung, die den gewünschten Wert einer animierenden Eigenschaft pro Frame definiert. Ausdrücke sind eine sehr vielseitige Komponente, die in einer Vielzahl von Szenarios verwendet werden kann, einschließlich der folgenden:
 
 - Relative Größe, Offset-Animationen.
-- Sticky Header, Parallax mit ScrollViewer. (Siehe [Erweitern vorhandener ScrollViewer-Erfahrungen](scroll-input-animations.md).)
-- Andockpunkte mit InertiaModifiers und InteractionTracker. (Siehe [Erstellen von Andockpunkten mit Inertia-Modifiern](inertia-modifiers.md).)
+- Kurzkopfzeilen, mit ScrollViewer. (Siehe [verbessern vorhandener ScrollViewer-Erfahrungen](scroll-input-animations.md).)
+- Andocken von Punkten mit inertiamodifiers und interaktiontracker. (Siehe [Erstellen von Snap-Points mit trägheitmodifizierer](inertia-modifiers.md)
 
-Bei der Arbeit mit ExpressionAnimations gibt es ein paar Dinge, die im Vorfeld erwähnenswert sind:
+Beim Arbeiten mit expressionanimationen sind einige Dinge erwähnenswert:
 
-- Keine Beendigung – Im Gegensatz zu KeyFrameAnimation haben Ausdrücke keine endliche Dauer. Da Ausdrücke mathematische Beziehungen sind, sind sie Animationen, die ständig „ablaufen“. Sie haben die Möglichkeit, diese Animationen zu stoppen.
-- Ausführung ohne ständige Auswertung – Leistung ist immer ein Anliegen bei ständig laufenden Animationen. Das System ist so intelligent, dass der Ausdruck nur dann neu bewertet wird, wenn sich irgendwelche Eingaben oder Parameter geändert haben.
-- Auflösen in den richtigen Objekttyp – Da Ausdrücke mathematische Beziehungen sind, ist es wichtig sicherzustellen, dass die Gleichung, die der Ausdruck definiert, in den Eigenschaftstyp aufgelöst wird, auf die die Animation abzielt. Wenn Sie beispielsweise Offset animieren, sollte Ihr Ausdruck in einen Vector3-Typ aufgelöst werden.
+- Niemals beenden – im Gegensatz zum gleich geordneten Keyframeanimation-Element haben Ausdrücke keine begrenzte Dauer. Da Ausdrücke mathematische Beziehungen sind, handelt es sich um Animationen, die ständig ausgeführt werden. Wenn Sie auswählen, haben Sie die Möglichkeit, diese Animationen anzuhalten.
+- Das Ausführen, aber nicht immer das Auswerten der –-Leistung ist immer ein Problem mit Animationen, die ständig ausgeführt werden. Es ist jedoch nicht erforderlich, dass das System intelligent genug ist, dass der Ausdruck nur neu ausgewertet wird, wenn eine der Eingaben oder Parameter geändert wurde.
+- Auflösen in den richtigen Objekttyp – da Ausdrücke mathematische Beziehungen sind, ist es wichtig sicherzustellen, dass die Gleichung, die den Ausdruck definiert, in denselben Typ der Eigenschaft aufgelöst wird, die Ziel der Animation ist. Wenn Sie z. b. den Offset animieren, sollte der Ausdruck in einen Vector3-Typ aufgelöst werden.
 
-### <a name="components-of-an-expression"></a>Bestandteile eines Ausdrucks
+### <a name="components-of-an-expression"></a>Komponenten eines Ausdrucks
 
 Beim Aufbau der mathematischen Beziehung eines Ausdrucks gibt es mehrere Kernkomponenten:
 
-- Parameter – Werte, die konstante Werte darstellen oder Verweise auf andere Composition-Objekte.
-- Mathematische Operatoren – Die typischen mathematischen Operatoren plus (+), minus (-), multiplizieren (*), dividieren (/), die Parameter zu einer Gleichung zusammenfügen. Ebenfalls enthalten sind bedingte Operatoren wie Größer als (>), Gleich (==), ternärer Operator (Bedingung ? ifTrue : ifFalse) etc.
-- Mathematische Funktionen – Mathematische Funktionen/Verknüpfungen basierend auf System.Numerik. Eine vollständige Liste der unterstützten Funktionen finden Sie unter [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
+- Parameter – Werte, die Konstante Werte oder Verweise auf andere Kompositions Objekte darstellen.
+- Mathematische Operatoren – die typischen mathematischen Operatoren Plus (+), minus (-), Multiplikation (*), Division (/), die Parameter zum bilden einer Gleichung zusammenfügen. Die enthaltenen sind auch bedingte Operatoren wie größer als (>), gleich (= =), ternärer Operator (Bedingung? IfTrue: IfFalse) usw.
+- Mathematische Funktionen – mathematische Funktionen/Verknüpfungen auf der Grundlage von "System. Numerics". Eine vollständige Liste der unterstützten Funktionen finden Sie unter [expressionanimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
 
-Ausdrücke unterstützen eine Reihe von Schlüsselwörtern – Spezielle Begriffe, die nur innerhalb des ExpressionAnimation-Systems eine eindeutige Bedeutung haben. Diese sind (zusammen mit der vollständigen Liste der mathematischen Funktionen) in der [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation)-Dokumentation aufgeführt.
+Ausdrücke unterstützen auch eine Reihe von Schlüsselwörtern – spezielle Ausdrücke, die nur innerhalb des expressionanimation-Systems unterschiedliche Bedeutungen haben. Diese werden in der [expressionanimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) -Dokumentation (zusammen mit der vollständigen Liste der mathematischen Funktionen) aufgelistet.
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>Erstellen von Ausdrücken mit ExpressionBuilder
 
-Es gibt zwei Möglichkeiten, Expressions in der UWP-Apps zu erstellen:
+Es gibt zwei Optionen zum Entwickeln von Ausdrücken in der UWP-App:
 
-1. Erstellen der Gleichung als Zeichenkette über die offizielle, öffentliche API.
-1. Erstellen der Gleichung in einem typsicheren Objektmodell mit Hilfe des Open Source ExpressionBuilder-Tools. Siehe [Github-Quellcode und Dokumentation](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
+1. Das Entwickeln der Gleichung als Zeichenfolge über die offizielle öffentliche API.
+1. Erstellung der Gleichung in einem typsicheren Objektmodell über das Open Source-Tool "ExpressionBuilder". Siehe [GitHub-Quelle und-Dokumentation](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder).
 
-In diesem Dokument werden wir unsere Ausdrücke mit Hilfe von ExpressionBuilder definieren.
+Für dieses Dokument definieren wir unsere Ausdrücke mithilfe von ExpressionBuilder.
 
 ### <a name="parameters"></a>Parameter
 
-Parameter bilden das Kernstück eines Ausdrucks. Zwei Parametertypen stehen zur Verfügung:
+Parameter bilden den Kern eines Ausdrucks. Es gibt zwei Arten von Parametern:
 
-- Konstanten: Dies sind Parameter, die System.Numeric-Variablen repräsentieren. Diese Parameter werden beim Start der Animation einmalig mit Werten belegt.
-- Referenzen: Dies sind Parameter, die Verweise auf CompositionObjects darstellen – diese Parameter werden nach dem Start einer Animation fortlaufend aktualisiert.
+- Konstanten: Dies sind Parameter, die typisierte System. numeric-Variablen darstellen. Diese Parameter erhalten ihre Werte einmal, wenn die Animation gestartet wird.
+- Verweise: Hierbei handelt es sich um Parameter, die Verweise auf compositionobjects darstellen – diese Parameter erhalten kontinuierlich ihre Werte, nachdem eine Animation gestartet wurde.
 
-Im Allgemeinen sind Referenzen dafür verantwortlich, wie sich die Ausgabe eines Ausdrucks dynamisch ändern kann. Wenn sich diese Referenzen ändern, ändert sich dadurch die Ausgabe des Ausdrucks. Wenn Sie Ihren Ausdruck mit Zeichenfolgen erstellen oder in einem Templating-Szenario verwenden (mit Ihrem Ausdruck für mehrere CompositionObjects), müssen Sie die Werte Ihrer Parameter benennen und festlegen. Weitere Informationen finden Sie im Abschnitt „Beispiel“.
+Im Allgemeinen sind Verweise der Hauptaspekt, wie sich die Ausgabe eines Ausdrucks dynamisch ändern kann. Wenn sich diese Verweise ändern, ändert sich die Ausgabe des Ausdrucks als Ergebnis. Wenn Sie den Ausdruck mit Zeichen folgen erstellen oder in einem Vorlagen Szenario verwenden (verwenden Sie den Ausdruck, um mehrere compositionobjects als Ziel festzulegen), müssen Sie die Werte der Parameter benennen und festlegen. Weitere Informationen finden Sie im Abschnitt „Beispiel“.
 
-### <a name="working-with-keyframeanimations"></a>Arbeiten mit KeyFrameAnimations
+### <a name="working-with-keyframeanimations"></a>Arbeiten mit keyframeanimationen
 
-Ausdrücke können auch mit KeyFrameAnimations verwendet werden. In diesen Fällen möchten Sie einen Ausdruck verwenden, um den Wert eines KeyFrames zu einem bestimmten Zeitpunkt zu definieren – diese KeyFrame-Typen werden als ExpressionKeyFrames bezeichnet.
+Ausdrücke können auch mit Keyframeanimation verwendet werden. In diesen Fällen möchten Sie einen Ausdruck verwenden, um den Wert eines Keyframes zu einem Zeitpunkt zu definieren – diese typkeyframes werden als expressionkeyframes bezeichnet.
 
 ```csharp
 KeyFrameAnimation.InsertExpressionKeyFrame(Single, String)
 KeyFrameAnimation.InsertExpressionKeyFrame(Single, ExpressionNode)
 ```
 
-Im Gegensatz zu ExpressionAnimations werden ExpressionKeyFrames jedoch nur einmalig beim Start der KeyFrameAnimation ausgewertet. Beachten Sie, dass Sie in einer ExpressionAnimation nicht den Wert des KeyFrame übergeben, sondern eine Zeichenfolge (oder einen ExpressionNode, wenn Sie ExpressionBuilder verwenden).
+Anders als bei expressionanimation werden expressionkeyframes jedoch nur einmal ausgewertet, wenn Keyframeanimation gestartet wird. Beachten Sie, dass Sie eine expressionanimation nicht als Wert für den Keyframe übergeben, sondern eine Zeichenfolge (oder ein ExpressionNode, wenn Sie ExpressionBuilder verwenden).
 
 ## <a name="example"></a>Beispiel
 
-Gehen wir nun ein Beispiel für die Verwendung von Ausdrücken durch. Es handelt sich um das PropertySet-Beispiel aus der Windows UI-Beispielgalerie. Wir betrachten den Ausdruck, der das Orbit-Bewegungsverhalten der blauen Kugel steuert.
+Sehen wir uns nun ein Beispiel für die Verwendung von Ausdrücken an, insbesondere das PropertySet-Beispiel aus dem Beispiel Katalog der Windows-Benutzeroberfläche. Wir betrachten den Ausdruck, der das Verhalten der Umlaufbewegung der blauen Kugel verwaltet.
 
-![Um Kreis umlaufend](images/animation/orbit.gif)
+![Zirkel Umlauf](images/animation/orbit.gif)
 
-Für die Gesamterfahrung spielen drei Komponenten eine Rolle:
+Es gibt drei Komponenten, die für die gesamte Darstellung verfügbar sind:
 
-1. Eine KeyFrameAnimation, die den Y-Offset des roten Balls animiert.
-1. Ein PropertySet mit einer **Rotation**-Eigenschaft, die den Orbit steuert, animiert durch eine andere KeyFrameAnimation.
-1. Eine ExpressionAnimation, die den Offset der blauen Kugel mit Bezug auf den Offset der roten Kugel und die Rotation-Eigenschaft steuert, um eine perfekte Umlaufbahn aufrechtzuerhalten.
+1. Eine Keyframeanimation, die den Y-Offset der roten Kugel animiert.
+1. Ein PropertySet mit einer **Rotations** Eigenschaft, die die durch eine andere Keyframeanimation animierte Animation unterstützt.
+1. Eine expressionanimation, die den Offset der blauen Kugel, die auf den roten Kugel Offset verweist, und die Rotations Eigenschaft steuert, um eine perfekte Umlaufbahn zu erhalten.
 
-Wir konzentrieren uns auf die in Schritt 3 definierte ExpressionAnimation. Wir werden auch die ExpressionBuilder-Klassen verwenden, um diesen Ausdruck zu konstruieren. Eine Kopie des Codes, der verwendet wird, um dieses Erlebnis über Zeichenfolgen zu erzeugen, ist am Ende zu finden.
+Wir konzentrieren uns auf die expressionanimation, die in #3 definiert ist. Wir verwenden auch die ExpressionBuilder-Klassen, um diesen Ausdruck zu erstellen. Eine Kopie des Codes, der zum Erstellen dieser Benutzer Darstellung über Zeichen folgen verwendet wird, wird am Ende aufgeführt.
 
-In dieser Gleichung gibt es zwei Eigenschaften, die Sie aus dem PropertySet referenzieren müssen: die eine ist ein Mittelpunktversatz und die andere die Rotation.
+In dieser Gleichung sind zwei Eigenschaften vorhanden, auf die vom PropertySet verwiesen werden muss. eine ist ein Mittelpunkt Offset, und die andere ist die Drehung.
 
 ```
 var propSetCenterPoint =
@@ -103,7 +103,7 @@ _propertySet.GetReference().GetVector3Property("CenterPointOffset");
 var propSetRotation = _propertySet.GetReference().GetScalarProperty("Rotation");
 ```
 
-Als nächstes müssen Sie die Vector3-Komponente definieren, die die tatsächliche Rotation der Umlaufbahn berücksichtigt.
+Als nächstes müssen Sie die Vector3-Komponente definieren, die die tatsächliche Umlauf Drehung berücksichtigt.
 
 ```
 var orbitRotation = EF.Vector3(
@@ -112,18 +112,18 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` ist eine Kurzschreibweise für "using" ExpressionBuilder.ExpressionFunctions definieren.
+> `EF` ist eine Kurznotiz "using"-Notation zum Definieren von ExpressionBuilder. expressionfunctions.
 
-Schließlich kombinieren Sie diese Komponenten und referenzieren die Position der roten Kugel, um die mathematische Beziehung zu definieren.
+Kombinieren Sie schließlich diese Komponenten zusammen, und verweisen Sie auf die Position der roten Kugel, um die mathematische Beziehung zu definieren.
 
 ```
 var orbitExpression = redSprite.GetReference().Offset + propSetCenterPoint + orbitRotation;
 blueSprite.StartAnimation("Offset", orbitExpression);
 ```
 
-Was wäre, wenn Sie denselben Ausdruck verwenden wollten, aber mit zwei anderen Visuals 2 Sätze von kreisenden Kugel verwenden möchten? Mit CompositionAnimations können Sie die Animation wiederverwenden und mehrere CompositionObjects als Zielobjekt auswählen. Das einzige, was Sie ändern müssen, wenn Sie diesen Ausdruck für den zusätzlichen Orbit verwenden, ist der Verweis auf das Visual. Wir nennen das „Templating“.
+Wenn Sie in einer hypothetischen Situation denselben Ausdruck verwenden möchten, aber mit zwei anderen visuellen Elementen, bedeutet das, dass zwei Sätze von umkreisenden Kreisen. Mit compositionanimationen können Sie die Animation wieder verwenden und mehrere compositionobjects als Ziel verwenden. Das einzige, was Sie ändern müssen, wenn Sie diesen Ausdruck für den zusätzlichen Umlauf Fall verwenden, ist der Verweis auf das visuelle Element. Diese Vorlage wird als "Vorlage" bezeichnet.
 
-In diesem Fall modifizieren Sie den zuvor erstellten Ausdruck. Anstatt eine Referenz auf das CompositionObject zu „abzurufen“, erstellen Sie eine Referenz mit einem Namen und vergeben dann andere Werte:
+In diesem Fall ändern Sie den Ausdruck, den Sie zuvor erstellt haben. Anstatt einen Verweis auf das compositionobject zu erhalten, erstellen Sie einen Verweis mit einem Namen und weisen dann unterschiedliche Werte zu:
 
 ```
 var orbitExpression = ExpressionValues.Reference.CreateVisualReference("orbitRoundVisual");
@@ -134,7 +134,7 @@ orbitExpression.SetReferenceParameter("orbitRoundVisual", yellowSprite);
 greenSprite.StartAnimation("Offset", orbitExpression);
 ```
 
-Hier ist der Code, wenn Sie Ihren Ausdruck mit Zeichenfolgen über die öffentliche API definiert haben.
+Dies ist der Code, wenn Sie Ihren Ausdruck mit Zeichen folgen über die öffentliche API definiert haben.
 
 ```
 ExpressionAnimation expressionAnimation =

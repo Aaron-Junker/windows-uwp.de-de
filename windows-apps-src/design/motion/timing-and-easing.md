@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie die fließende Bewegung Zeit Steuerungs-und Beschleunigungsfunktionen verwendet.
+description: Informieren Sie sich über die Wichtigkeit der zeitlichen Steuerung und Beschleunigung bei der Bewegung von Bewegungs Charakter für Objekte, die in der Benutzeroberfläche eintreten, beenden oder verschieben.
 title: Timing und Beschleunigung
 label: Timing and easing
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 098a75da573a977aa393197a61a62b0337f0dc06
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 46ec373ffb7ad141bcff36c33fa35900c888daf8
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970505"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054430"
 ---
 # <a name="timing-and-easing"></a>Timing und Beschleunigung
 

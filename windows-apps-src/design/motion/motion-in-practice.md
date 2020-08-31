@@ -1,5 +1,5 @@
 ---
-Description: Erfahren Sie, wie die Grundlagen zu den Grundlagen der Bewegung in Ihrer APP
+description: Erfahren Sie, wie Sie in Ihrer APP auf grundlegende Grundlagen wie zeitliche Steuerung, Beschleunigung, Direktionalität und Schwerkraft stoßen.
 title: 'Bewegung in der Praxis: Animation in Windows-apps'
 label: Motion in practice
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 45ab6c593b9e20f778e4b352a8b284cefe57c9a8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8604d925ffefc96cd74726909afab6e2016cce76
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970325"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054530"
 ---
 # <a name="bringing-it-together"></a>Zusammenbringen
 
@@ -95,7 +95,7 @@ Sie können Änderungen an den folgenden Eigenschaften implizit animieren:
   - **Opacity**
   - **Drehung**
   - **Skalieren**
-  - **Sprachübersetzung**
+  - **Übersetzung**
 
 - [Border](/uwp/api/windows.ui.xaml.controls.border)Rahmen, [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)oder [Panel](/uwp/api/windows.ui.xaml.controls.panel)
   - **Hintergrund**

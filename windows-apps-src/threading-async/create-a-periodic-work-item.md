@@ -1,39 +1,39 @@
 ---
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
-title: Erstellen einer regelmäßigen Arbeitsaufgabe
-description: Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die regelmäßig wiederholt wird.
+title: Erstellen ein regelmäßiges Arbeitselement
+description: Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die regelmäßig wiederholt wird.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, regelmäßige Arbeitsaufgabe, Threading, Timer
+keywords: Windows 10, UWP, periodisches Arbeits Element, Threading, Timer
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e045c12f96cc9404abb4ba9be395eb49b1ab850
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 0a69ddc9afd051808a047af0e34b4e33d4250dc1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321999"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155234"
 ---
-# <a name="create-a-periodic-work-item"></a>Erstellen einer regelmäßigen Arbeitsaufgabe
+# <a name="create-a-periodic-work-item"></a>Erstellen ein regelmäßiges Arbeitselement
 
 
 <b>Wichtige APIs</b>
 
--   [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)
--   [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer)
+-   [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)
+-   [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer)
 
-Hier erfahren Sie, wie Sie eine Arbeitsaufgabe erstellen, die regelmäßig wiederholt wird.
+Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die regelmäßig wiederholt wird.
 
-## <a name="create-the-periodic-work-item"></a>Erstellen der regelmäßigen Arbeitsaufgabe
+## <a name="create-the-periodic-work-item"></a>Erstellen das regelmäßige Arbeitselement
 
-Verwenden Sie die [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)-Methode, um eine regelmäßige Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *period*-Parameter das Intervall zwischen den Übermittlungen an. Das Intervall wird anhand einer [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)-Struktur angegeben. Nach jedem Verstreichen des Intervalls wird die Arbeitsaufgabe erneut gesendet. Stellen Sie daher sicher, dass es lang genug ist, um die Arbeit auszuführen.
+Verwenden Sie die [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)-Methode, um eine regelmäßige Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *period*-Parameter das Intervall zwischen den Übermittlungen an. Das Intervall wird anhand einer [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)-Struktur angegeben. Nach jedem Verstreichen des Intervalls wird das Arbeitselement erneut gesendet. Stellen Sie daher sicher, dass es lang genug ist, um die Arbeit auszuführen.
 
-[**CreateTimer** ](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) gibt eine [ **ThreadPoolTimer** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer) Objekt. Speichern Sie das Objekt für den Fall, dass der Timer abgebrochen werden muss.
+[**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) gibt ein [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer)-Objekt zurück. Speichern Sie das Objekt für den Fall, dass der Timer abgebrochen werden muss.
 
-> **Beachten Sie**  vermeiden Sie dabei den Wert 0 (null) (oder ein Wert kleiner als eine Millisekunde) für das Intervall. Andernfalls verhält sich der regelmäßige Timer wie ein einmaliger Timer.
+> **Hinweis**    Vermeiden Sie den Wert 0 (null) (oder einen Wert kleiner als eine Millisekunde) für das Intervall. Andernfalls verhält sich der regelmäßige Timer wie ein einmaliger Timer.
 
-> **Beachten Sie**  können [ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) auf die Benutzeroberfläche zugreifen und Anzeigen des Status von der Arbeitsaufgabe.
+> **Hinweis**    Sie können " [**coredispatcher. runasync**](/uwp/api/windows.ui.core.coredispatcher.runasync) " verwenden, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
 
-Das folgende Beispiel erstellt eine Arbeitsaufgabe, die alle 60 Sekunden ausgeführt wird:
+Das folgende Beispiel erstellt ein Arbeitselement, die alle 60 Sekunden ausgeführt wird:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -85,11 +85,11 @@ Das folgende Beispiel erstellt eine Arbeitsaufgabe, die alle 60 Sekunden ausgef
 >         }), period);
 > ```
 
-## <a name="handle-cancellation-of-the-periodic-work-item-optional"></a>Behandeln des Abbruchs der regelmäßigen Arbeitsaufgabe (optional)
+## <a name="handle-cancellation-of-the-periodic-work-item-optional"></a>Behandeln des Abbruchs des regelmäßigen Arbeitselement (optional)
 
-Bei Bedarf können Sie den Abbruch des regelmäßigen Timers mit einem [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler)-Element verarbeiten. Stellen Sie mithilfe der [**CreatePeriodicTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)-Überladung eine zusätzliche Lambda-Funktion bereit, die den Abbruch der regelmäßigen Arbeitsaufgabe behandelt.
+Bei Bedarf können Sie den Abbruch des regelmäßigen Timers mit einem [**TimerDestroyedHandler**](/uwp/api/windows.system.threading.timerdestroyedhandler)-Element verarbeiten. Stellen Sie mithilfe der [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)-Überladung eine zusätzliche Lambda-Funktion bereit, die den Abbruch der regelmäßigen Arbeitsaufgabe behandelt.
 
-Das folgende Beispiel erstellt eine regelmäßige Arbeitsaufgabe, die alle 60 Sekunden wiederholt wird, und stellt außerdem einen Abbruchhandler bereit:
+Das folgende Beispiel erstellt ein regelmäßiges Arbeitselement, die alle 60 Sekunden wiederholt wird, und stellt außerdem einen Abbruchhandler bereit:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -186,7 +186,7 @@ Das folgende Beispiel erstellt eine regelmäßige Arbeitsaufgabe, die alle 60 S
 
 ## <a name="cancel-the-timer"></a>Abbrechen des Zeitgebers
 
-Rufen Sie ggf. die [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel)-Methode auf, um die Wiederholung der regelmäßigen Arbeitsaufgabe zu beenden. Falls die Arbeitsaufgabe beim Abbruch des regelmäßigen Timers ausgeführt wird, kann sie noch abgeschlossen werden. Das [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler)-Element (sofern verwendet) wird aufgerufen, wenn alle Instanzen der regelmäßigen Arbeitsaufgabe abgeschlossen wurden.
+Rufen Sie ggf. die [**Cancel**](/uwp/api/windows.system.threading.threadpooltimer.cancel)-Methode auf, um die Wiederholung der regelmäßigen Arbeitsaufgabe zu beenden. Falls das Arbeitselement beim Abbruch des regelmäßigen Timers ausgeführt wird, kann sie noch abgeschlossen werden. Das [**TimerDestroyedHandler**](/uwp/api/windows.system.threading.timerdestroyedhandler)-Element (sofern verwendet) wird aufgerufen, wenn alle Instanzen der regelmäßigen Arbeitsaufgabe abgeschlossen wurden.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -196,13 +196,13 @@ Rufen Sie ggf. die [**Cancel**](https://docs.microsoft.com/uwp/api/windows.syste
 > PeriodicTimer->Cancel();
 > ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Informationen zu einmaligen Timern finden Sie unter [Senden einer Arbeitsaufgabe mithilfe eines Timers](use-a-timer-to-submit-a-work-item.md).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Senden einer Arbeitsaufgabe an den Threadpool](submit-a-work-item-to-the-thread-pool.md)
+* [Senden ein Arbeitselement an den Threadpool](submit-a-work-item-to-the-thread-pool.md)
 * [Bewährte Methoden zum Verwenden des Threadpools](best-practices-for-using-the-thread-pool.md)
-* [Senden einer Arbeitsaufgabe mithilfe eines Timers](use-a-timer-to-submit-a-work-item.md)
+* [Timergesteuertes Übermitteln einer Arbeitsaufgabe](use-a-timer-to-submit-a-work-item.md)
  

@@ -1,32 +1,32 @@
 ---
-Description: Erfahren Sie, wie Sie sekundäre Kacheln an Taskleiste anheften.
-title: Sekundäre Kacheln an Taskleiste anheften
+description: Erfahren Sie, wie Sie sekundäre Kacheln an die Taskleiste anheften, um Ihren Benutzern einen schnellen Zugriff auf Inhalte in Ihrer APP zu bieten.
+title: Anheften von sekundären Kacheln an die Taskleiste
 label: Pin secondary tiles to taskbar
 template: detail.hbs
 ms.date: 11/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, an Taskleiste anheften, sekundäre Kachel, sekundäre Kacheln an Taskleiste anheften, Verknüpfung
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d4041faf2fbc729291da902e66be1e0979f9d97
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a57fa9c6a268b22df3c1772e0aec111c769d907b
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971015"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054190"
 ---
-# <a name="pin-secondary-tiles-to-taskbar"></a>Sekundäre Kacheln an Taskleiste anheften
+# <a name="pin-secondary-tiles-to-taskbar"></a>Anheften von sekundären Kacheln an die Taskleiste
 
 Wie beim anheften sekundärer Kacheln, können Sie sekundäre Kacheln an die Taskleiste anheften, sodass Ihre Benutzer schnell auf Inhalte in ihrer App zugreifen können.
 
 <img alt="Taskbar pinning" src="../images/taskbar/pin-secondary-ui.png" width="972"/>
 
 > [!IMPORTANT]
-> **Eingeschränkte Zugriffs-API**: Diese API ist ein eingeschränktes Zugriffs Feature. Wenden [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar)Sie sich an, um diese API zu verwenden.
+> **Eingeschränkte Zugriffs-API**: Diese API ist ein eingeschränktes Zugriffs Feature. Wenden Sie sich an, um diese API zu verwenden [taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar) .
 
 > **Erfordert das Update vom Oktober 2018**: Sie müssen das SDK 17763 als Ziel haben und Build 17763 oder höher ausführen, um an die Taskleiste anzuheften.
 
 
-## <a name="guidance"></a>Leitlinien
+## <a name="guidance"></a>Leitfaden
 
 Eine sekundäre Kachel bietet Benutzern eine konsistente und effiziente Möglichkeit, direkt auf bestimmte Bereiche innerhalb einer APP zuzugreifen. Obwohl ein Benutzer entscheidet, ob eine sekundäre Kachel an die Taskleiste angeheftet werden soll, werden die gepinbaren Bereiche in einer APP vom Entwickler bestimmt. Weitere Anleitungen finden Sie unter [Leitfaden für sekundäre Kacheln](secondary-tiles-guidance.md).
 
@@ -229,4 +229,4 @@ await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 ## <a name="resources"></a>Ressourcen
 
 * [Taskbarmanager-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Anheften sekundärer Kacheln](secondary-tiles-pinning.md)
+* [Anheften von sekundären Kacheln an „Start“](secondary-tiles-pinning.md)

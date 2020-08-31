@@ -1,17 +1,17 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: Verwenden des Beschleunigungsmessers
-description: Hier erfahren Sie, wie Sie mithilfe des Beschleunigungsmessers auf Benutzerbewegungen reagieren können.
+description: Erfahren Sie, wie Sie eine einfache APP erstellen, die auf einem einzelnen Sensor, dem Beschleunigungsmesser, basiert, um auf Benutzer Bewegungen zu reagieren.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b2fe6fe4c7fe22d71e2154be2db082bb43cc4ed1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e38d64750b410369a9ff9ebf871267b03e0ad07e
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369692"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054340"
 ---
 # <a name="use-the-accelerometer"></a>Verwenden des Beschleunigungsmessers
 
@@ -19,19 +19,19 @@ ms.locfileid: "66369692"
 **Wichtige APIs**
 
 -   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
+-   [**Beschleunigungsmesser**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 **Beispiel**
 
--   Eine umfassendere Implementierung finden Sie unter [Beispiel für einen Beschleunigungsmesser](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
+-   Eine umfassendere Implementierung finden Sie im [Beschleunigungsmesser Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
 
 Hier erfahren Sie, wie Sie mithilfe des Beschleunigungsmessers auf Benutzerbewegungen reagieren können.
 
 Eine einfache Spiele-App verwendet als Eingabegerät einen einzigen Sensor: den Beschleunigungsmesser. Diese Apps verwenden für die Eingabe in der Regel nur eine oder zwei Achsen. Als weitere Eingabequelle kann aber auch das Schüttelereignis verwendet werden.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
+Sie sollten mit XAML (Extensible Application Markup Language), Microsoft Visual C# und Ereignissen vertraut sein.
 
 Das verwendete Gerät oder der Emulator muss einen Beschleunigungsmesser unterstützen.
 
@@ -39,7 +39,7 @@ Das verwendete Gerät oder der Emulator muss einen Beschleunigungsmesser unterst
 
 Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnitt enthält die Schritte zum Erstellen einer einfachen Beschleunigungsmesseranwendung. Im zweiten Unterabschnitt wird die erstellte App dann näher erläutert.
 
-### <a name="instructions"></a>Anweisungen
+### <a name="instructions"></a>Instructions
 
 -   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
@@ -136,13 +136,13 @@ Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen erset
 
 Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie etwa ein Projekt mit dem Namen **AccelerometerCS**erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="AccelerometerCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:AccelerometerCS"`.
 
--   Drücken Sie F5, oder wählen Sie **Debuggen** &gt; **Debuggen starten** zum Erstellen, bereitstellen und Ausführen der app.
+-   Drücken Sie F5 oder wählen Sie **Debuggen** &gt; **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
 
 Wenn die App ausgeführt wird, können Sie die Beschleunigungsmesserwerte ändern, indem Sie das Gerät bewegen oder die Emulatortools verwenden.
 
--   Beenden Sie die app, indem Sie zu Visual Studio und drücken UMSCHALT + F5 oder wählen Sie **Debuggen** &gt; **Debuggen beenden** auf die app zu beenden.
+-   Beenden Sie die App, indem Sie zu Visual Studio zurückkehren und UMSCHALT+F5 drücken oder **Debuggen** &gt; **Debugging beenden** auswählen.
 
-### <a name="explanation"></a>Erläuterung
+### <a name="explanation"></a>Erklärung
 
 Das vorherige Beispiel zeigt, wie wenig Code Sie schreiben müssen, um Beschleunigungsmesserwerte in Ihre App zu integrieren.
 

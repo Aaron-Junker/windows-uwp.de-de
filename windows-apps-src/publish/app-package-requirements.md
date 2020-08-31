@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Paket Anforderungen, Pakete, Paketformat, unterstützte Version, übermitteln
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c478b038ff729f753696d10fc18b21391a3a7de
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 851aaa28a7c42d395a16ee78a49a7e8bc5712f62
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945988"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158104"
 ---
 # <a name="app-package-requirements"></a>App-Paketanforderungen
 
@@ -47,9 +47,9 @@ Bei einem App-Bündel lädt der Benutzer nicht alle vorhandenen Ressourcen, sond
 
 ## <a name="building-the-app-package-manually"></a>Manuelles Erstellen des App-Pakets
 
-Wenn Sie Ihr Paket nicht mit Visual Studio erstellen, müssen Sie Ihr [Paketmanifest manuell erstellen](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-create-a-package-manifest-manually).
+Wenn Sie Ihr Paket nicht mit Visual Studio erstellen, müssen Sie Ihr [Paketmanifest manuell erstellen](/uwp/schemas/appxpackage/how-to-create-a-package-manifest-manually).
 
-Ausführliche Informationen und die Anforderungen für Manifeste finden Sie in der Dokumentation zum [App-Paketmanifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest). Es werden nur Apps zertifiziert, deren Manifest dem Paketmanifestschema entspricht.
+Ausführliche Informationen und die Anforderungen für Manifeste finden Sie in der Dokumentation zum [App-Paketmanifest](/uwp/schemas/appxpackage/appx-package-manifest). Es werden nur Apps zertifiziert, deren Manifest dem Paketmanifestschema entspricht.
 
 Ihr Manifest muss spezifische konto- und App-bezogene Informationen enthalten. Sie finden diese Informationen unter [Anzeigen von Details zur App-Identität](view-app-identity-details.md) im Abschnitt **App-Verwaltung** der App-Übersichtsseite im Dashboard.
 
@@ -57,7 +57,7 @@ Ihr Manifest muss spezifische konto- und App-bezogene Informationen enthalten. S
 > Bei Werten im Manifest wird die Groß-/Kleinschreibung beachtet. Leerzeichen und Satzzeichen müssen ebenfalls übereinstimmen. Geben Sie die Werte richtig ein, und überprüfen Sie sie anschließend auf ihre Korrektheit.
 
 
-App-Bündel (. msixbundle oder. appxbundle) verwenden ein anderes Manifest. Ausführliche Informationen und die Anforderungen für App-Bündel finden Sie in der Dokumentation zum [Bündelmanifest](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest). Beachten Sie, dass das Manifest jedes enthaltenen Pakets in einer msixbundle-oder appxbundle-Datei dieselben Elemente und Attribute verwenden muss, mit Ausnahme des Attributs **ProcessorArchitecture** des [Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) -Elements.
+App-Bündel (. msixbundle oder. appxbundle) verwenden ein anderes Manifest. Ausführliche Informationen und die Anforderungen für App-Bündel finden Sie in der Dokumentation zum [Bündelmanifest](/uwp/schemas/bundlemanifestschema/bundle-manifest). Beachten Sie, dass das Manifest jedes enthaltenen Pakets in einer msixbundle-oder appxbundle-Datei dieselben Elemente und Attribute verwenden muss, mit Ausnahme des Attributs **ProcessorArchitecture** des [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) -Elements.
 
 > [!TIP]
 > Stellen Sie sicher, dass Sie das [zertifizierungskit für Windows-apps](../debug-test-perf/windows-app-certification-kit.md) ausführen, bevor Sie Ihre Pakete So können Sie feststellen, ob es mit Ihrem Manifest Probleme gibt, die Zertifizierungs- oder Einreichungsfehler verursachen können.
@@ -77,7 +77,7 @@ Ihre App-Pakete müssen die folgenden Anforderungen erfüllen:
 
 ## <a name="supported-versions"></a>Unterstützte Versionen
 
-Für UWP-apps müssen alle Pakete eine Version von Windows 10 als Ziel haben, die vom Speicher unterstützt wird. Die Versionen, die Ihr Paket unterstützt, müssen in den Attributen **MinVersion** und **maxversiongetedes** [targetdevicefamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) -Elements des App-Manifests angegeben werden.
+Für UWP-apps müssen alle Pakete eine Version von Windows 10 als Ziel haben, die vom Speicher unterstützt wird. Die Versionen, die Ihr Paket unterstützt, müssen in den Attributen **MinVersion** und **maxversiongetedes** [targetdevicefamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) -Elements des App-Manifests angegeben werden.
 
 Die derzeit unterstützten Versionen reichen von folgenden Versionen: 
 - Minimal: 10.0.10240.0
@@ -86,12 +86,8 @@ Die derzeit unterstützten Versionen reichen von folgenden Versionen:
 
 ## <a name="storemanifest-xml-file"></a>Datei „StoreManifest.xml“
 
-„StoreManifest.xml“ ist eine optionale Konfigurationsdatei, die in App-Pakete aufgenommen werden kann. Der Zweck besteht darin, Features zu aktivieren, wie z. b. das Deklarieren der App als Microsoft Store Geräte-APP oder das Deklarieren von Anforderungen, von denen ein Paket abhängig ist, damit es auf ein Gerät anwendbar ist. Wenn Sie verwendet wird, wird StoreManifest.xml mit dem App-Paket übermittelt und muss sich im Stamm Ordner des Hauptprojekts Ihrer APP befinden. Weitere Informationen finden Sie unter [StoreManifest-Schema](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
+„StoreManifest.xml“ ist eine optionale Konfigurationsdatei, die in App-Pakete aufgenommen werden kann. Der Zweck besteht darin, Features zu aktivieren, wie z. b. das Deklarieren der App als Microsoft Store Geräte-APP oder das Deklarieren von Anforderungen, von denen ein Paket abhängig ist, damit es auf ein Gerät anwendbar ist. Wenn Sie verwendet wird, wird StoreManifest.xml mit dem App-Paket übermittelt und muss sich im Stamm Ordner des Hauptprojekts Ihrer APP befinden. Weitere Informationen finden Sie unter [StoreManifest-Schema](/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
  
 
  
-
-
-
-

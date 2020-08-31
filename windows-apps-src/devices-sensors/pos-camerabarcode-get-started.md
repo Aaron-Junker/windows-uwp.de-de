@@ -5,12 +5,12 @@ ms.date: 09/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, Point of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: f48d0d8c06a9718479c73ff4523f62ddd2fa0a06
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: f7206250b2495ae2c905d2aece2b8cd1b85d6859
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053740"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168474"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>Ersten Schritten mit einem Kamera Barcode Scanner
 
@@ -49,7 +49,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 
 ## <a name="step-4-enumerate-all-barcode-scanners"></a>Schritt 4: Auflisten aller Barcode Scanner
 
-Wenn Sie nicht erwarten, dass sich die Liste der Geräte im Laufe der Lebensdauer Ihrer Anwendung ändert, können Sie eine Momentaufnahme nur einmal mit der [Datei "endviceinformation. findallasync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)" auflisten, aber wenn Sie der Meinung sind, dass sich die Liste der Barcode Scanner während der Lebensdauer Ihrer Anwendung ändern könnte, sollten Sie stattdessen einen [devicewatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher) verwenden.  
+Wenn Sie nicht erwarten, dass sich die Liste der Geräte im Laufe der Lebensdauer Ihrer Anwendung ändert, können Sie eine Momentaufnahme nur einmal mit der [Datei "endviceinformation. findallasync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)" auflisten, aber wenn Sie der Meinung sind, dass sich die Liste der Barcode Scanner während der Lebensdauer Ihrer Anwendung ändern könnte, sollten Sie stattdessen einen [devicewatcher](/uwp/api/windows.devices.enumeration.devicewatcher) verwenden.  
 
 > [!Important]
 > Die Verwendung von getdefaultasync zum Auflisten von pointfservice-Geräten kann zu inkonsistentem Verhalten führen, da es einfach das erste in der-Klasse gefundene Gerät zurückgibt, das sich von Sitzung zu Sitzung ändern kann.
@@ -61,7 +61,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 ```
 
 > [!TIP]
-> Weitere Informationen zur Verwendung von *findallasync*finden Sie unter Auflisten [*einer Momentaufnahme von Geräten*](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-a-snapshot-of-devices) .
+> Weitere Informationen zur Verwendung von *findallasync*finden Sie unter Auflisten [*einer Momentaufnahme von Geräten*](./enumerate-devices.md#enumerate-a-snapshot-of-devices) .
 
 ### <a name="option-b-enumerate-available-barcode-scanners-and-watch-for-changes-to-the-available-scanners"></a>**Option B: Auflisten der verfügbaren Barcode Scanner und beobachten der Änderungen an verfügbaren Scannern**
 
@@ -74,13 +74,13 @@ watcher.Start();
 ```
 
 > [!TIP]
-> Weitere Informationen finden Sie unter Auflisten [*und Überwachen von Geräteänderungen*](https://docs.microsoft.com/windows/uwp/devices-sensors/enumerate-devices#enumerate-and-watch-devices) und [*devicewatcher*](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) .
+> Weitere Informationen finden Sie unter Auflisten [*und Überwachen von Geräteänderungen*](./enumerate-devices.md#enumerate-and-watch-devices) und [*devicewatcher*](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) .
 
 ## <a name="step-5-identify-camera-barcode-scanners"></a>Schritt 5: Identifizieren der Kamera Barcode Scanner
 
 Ein Kamera-Barcode Scanner wird dynamisch erstellt, da Windows die Kamera (n) mit einem Software Decoder an Ihren Computer anfügt.  Jedes Kamera-Decoder-Paar ist ein voll funktionsfähiger Barcode Scanner.
 
-Für jeden Barcode Scanner in der sich ergebenden Geräte Sammlung können Sie die Barcode Scanner und physische Barcode Scanner unterscheiden, indem Sie die Eigenschaft [*Barcodescanner. videodeviceid*](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) überprüfen.  Eine videodebug-ID, die nicht NULL ist, gibt an, dass das Barcode Scanner-Objekt aus der Geräte Sammlung ein Kamera-Barcode Scanner ist.  Wenn Sie mehr als einen Kamera Barcode Scanner haben, können Sie eine separate Sammlung erstellen, die physische Barcode Scanner ausschließt.
+Für jeden Barcode Scanner in der sich ergebenden Geräte Sammlung können Sie die Barcode Scanner und physische Barcode Scanner unterscheiden, indem Sie die Eigenschaft [*Barcodescanner. videodeviceid*](/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) überprüfen.  Eine videodebug-ID, die nicht NULL ist, gibt an, dass das Barcode Scanner-Objekt aus der Geräte Sammlung ein Kamera-Barcode Scanner ist.  Wenn Sie mehr als einen Kamera Barcode Scanner haben, können Sie eine separate Sammlung erstellen, die physische Barcode Scanner ausschließt.
 
 Kamera Barcode Scanner, die den im Lieferumfang von Windows enthaltenen Decoder verwenden, werden wie folgt identifiziert:
 
@@ -125,7 +125,7 @@ private async void ScannerSelection_Changed(object sender, SelectionChangedEvent
 
 ## <a name="step-6-claim-the-camera-barcode-scanner"></a>Schritt 6: Anfordern des Kamera Barcode Scanners
 
-Verwenden Sie " [Barcodescanner. claimscannerasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) ", um den Kamera Barcode Scanner exklusiv zu verwenden.
+Verwenden Sie " [Barcodescanner. claimscannerasync](/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) ", um den Kamera Barcode Scanner exklusiv zu verwenden.
 
 ```csharp
 private async Task SelectScannerAsync(string scannerDeviceId)
@@ -153,18 +153,18 @@ private async Task SelectScannerAsync(string scannerDeviceId)
 
 ## <a name="step-7-system-provided-preview"></a>Schritt 7: vom System bereitgestellte Vorschau
 
-Eine Kamera Vorschau ist erforderlich, damit der Benutzer die Kamera bei Barcodes erfolgreich verfolgen kann.  Windows bietet eine einfache Kamera Vorschau, mit der ein Dialogfeld für die grundlegende Steuerung des Kamera Barcode Scanners gestartet wird.  Nennen Sie einfach [claimedbarcodescanner. showvideopreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) , um das Dialogfeld zu öffnen, und [claimedbarcodescanner. hidevideopreview](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) , um es zu schließen, wenn Sie fertig sind.
+Eine Kamera Vorschau ist erforderlich, damit der Benutzer die Kamera bei Barcodes erfolgreich verfolgen kann.  Windows bietet eine einfache Kamera Vorschau, mit der ein Dialogfeld für die grundlegende Steuerung des Kamera Barcode Scanners gestartet wird.  Nennen Sie einfach [claimedbarcodescanner. showvideopreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) , um das Dialogfeld zu öffnen, und [claimedbarcodescanner. hidevideopreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) , um es zu schließen, wenn Sie fertig sind.
 
 > [!TIP]
 > Weitere Informationen finden Sie in der [hostingvorschau](pos-camerabarcode-hosting-preview.md) zum Hosten der Vorschau für den Kamera Barcode Scanner in Ihrer Anwendung
 
 ## <a name="step-8-initiate-scan"></a>Schritt 8: Initiieren der Überprüfung
 
-Sie können den Scanvorgang initiieren, indem Sie [**startsoftwaretriggerasync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync)aufrufen.
+Sie können den Scanvorgang initiieren, indem Sie [**startsoftwaretriggerasync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync)aufrufen.
 
-Abhängig vom Wert von [**isdisabledondatareceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) scannt der Scanner möglicherweise nur einen Barcode und beendet oder scannt fortlaufend, bis Sie [**stopsoftwaretriggerasync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync)aufrufen.
+Abhängig vom Wert von [**isdisabledondatareceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) scannt der Scanner möglicherweise nur einen Barcode und beendet oder scannt fortlaufend, bis Sie [**stopsoftwaretriggerasync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync)aufrufen.
 
-Legen Sie den gewünschten Wert von [**isdisabledondatareceived**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) fest, um das scannerverhalten zu steuern, wenn ein Barcode decodiert wird.
+Legen Sie den gewünschten Wert von [**isdisabledondatareceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) fest, um das scannerverhalten zu steuern, wenn ein Barcode decodiert wird.
 
 | Wert | BESCHREIBUNG |
 | ----- | ----------- |
@@ -173,6 +173,6 @@ Legen Sie den gewünschten Wert von [**isdisabledondatareceived**](https://docs.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-### <a name="samples"></a>Proben
+### <a name="samples"></a>Beispiele
 
 - [Beispiel für Barcode Scanner](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

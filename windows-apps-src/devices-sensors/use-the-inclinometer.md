@@ -1,17 +1,17 @@
 ---
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Verwenden des Neigungsmessers
-description: Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Nick-, Roll- und Gierwinkel ermitteln.
+description: Erfahren Sie, wie Sie eine einfache APP erstellen, die das Neigungsmesser-Eingabegerät verwendet, um die Höhe, den Rollenwert und den Wert für die
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 15ea49ea0e8e334158000248caf26f662ee5bd35
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ebfbdda8f5f7bf308ee427ab79d8dd45969e3108
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369645"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054330"
 ---
 # <a name="use-the-inclinometer"></a>Verwenden des Neigungsmessers
 
@@ -19,19 +19,19 @@ ms.locfileid: "66369645"
 **Wichtige APIs**
 
 -   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Neigungsmesser**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
+-   [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
 
 **Beispiel**
 
--   Eine umfassendere Implementierung finden Sie unter [Beispiel für einen Neigungsmesser](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
+-   Eine umfassendere Implementierung finden Sie im Beispiel für das [Neigungsmesser](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 Hier erfahren Sie, wie Sie mithilfe des Neigungsmessers Werte für Nick-, Roll- und Gierwinkel ermitteln.
 
 Bei einigen 3D-Spielen wird ein Neigungsmesser als Eingabegerät benötigt. Ein gängiges Beispiel hierfür ist ein Flugsimulator, der die drei Achsen des Neigungsmessers (X, Y und Z) dem Höhenleitwerk sowie dem Quer- und Seitenruder eines Flugzeugs zuordnet.
 
- ## <a name="prerequisites"></a>Vorraussetzungen
+ ## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
+Sie sollten mit XAML (Extensible Application Markup Language), Microsoft Visual C# und Ereignissen vertraut sein.
 
 Das verwendete Gerät oder der Emulator muss einen Neigungsmesser unterstützen.
 
@@ -39,7 +39,7 @@ Das verwendete Gerät oder der Emulator muss einen Neigungsmesser unterstützen.
 
 Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnitt enthält die Schritte zum Erstellen einer einfachen Neigungsmesseranwendung. Im zweiten Unterabschnitt wird die erstellte App dann näher erläutert.
 
-###  <a name="instructions"></a>Anweisungen
+###  <a name="instructions"></a>Instructions
 
 -   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
@@ -136,13 +136,13 @@ Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen erset
 
 Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z. B. ein Projekt mit dem Namen **InclinometerCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="InclinometerCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:InclinometerCS"`.
 
--   Drücken Sie F5 oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
+-   Drücken Sie F5, **oder wählen Sie**  >  **Debuggen Debugging starten** aus, um die APP zu erstellen, bereitzustellen und auszuführen
 
 Wenn die App ausgeführt wird, können Sie die Neigungsmesserwerte ändern, indem Sie das Gerät bewegen oder die Emulatortools verwenden.
 
--   Beenden Sie die App, indem Sie zu Visual Studio zurückkehren und UMSCHALT+F5 drücken oder **Debuggen** > **Debugging beenden** auswählen.
+-   Halten Sie die APP an, indem Sie zu Visual Studio zurückkehren und UMSCHALT + F5 drücken, **oder wählen Sie**  >  **Debuggen Debuggen** , um die APP
 
-###  <a name="explanation"></a>Erläuterung
+###  <a name="explanation"></a>Erklärung
 
 Das vorherige Beispiel zeigt, wie wenig Code Sie schreiben müssen, um Neigungsmessereingaben in Ihre App zu integrieren.
 

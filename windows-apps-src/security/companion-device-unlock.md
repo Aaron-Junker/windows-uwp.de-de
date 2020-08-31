@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e1e27ad47385b3ded743d39cc6a347cab5960ce
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d9d9041b5e90ce8ffc16fe0158dda597f99b41bc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493135"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157944"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Entsperren von Windows mit Windows Hello-Begleitgeräten (IoT)
 
@@ -40,7 +40,7 @@ Das Windows Hello-Begleitgeräteframework kann auf unterschiedliche Weise verwen
 
 ### <a name="biometric-enabled-windows-hello-companion-devices"></a>Biometriefähige Windows Hello-Begleitgeräte
 
-Falls das Begleitgerät über Biometrieunterstützung verfügt, ist das [Windows-Biometrieframework](https://msdn.microsoft.com/windows/hardware/commercialize/design/device-experiences/windows-hello) in manchen Fällen eine bessere Lösung als das Windows Hello-Begleitgeräteframework. Wenden Sie sich an, [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) und wir helfen Ihnen bei der Auswahl des richtigen Ansatzes.
+Falls das Begleitgerät über Biometrieunterstützung verfügt, ist das [Windows-Biometrieframework](/windows-hardware/design/device-experiences/windows-hello) in manchen Fällen eine bessere Lösung als das Windows Hello-Begleitgeräteframework. Wenden Sie sich an, [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) und wir helfen Ihnen bei der Auswahl des richtigen Ansatzes.
 
 ### <a name="components-of-the-solution"></a>Komponenten der Lösung
 
@@ -52,7 +52,7 @@ Das Windows Hello-Begleitgeräteframework wird als Dienst unter Windows implemen
 
 Die Integration des Windows Hello-Begleitgeräteframeworks erfordert Folgendes:
 
-- Eine aus dem Windows Store heruntergeladene, für das Windows Hello-Begleitgerät bestimmte Begleitgeräte-App für die [universelle Windows-Plattform (UWP)](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). 
+- Eine aus dem Windows Store heruntergeladene, für das Windows Hello-Begleitgerät bestimmte Begleitgeräte-App für die [universelle Windows-Plattform (UWP)](../get-started/universal-application-platform-guide.md). 
 - Die Möglichkeit, auf dem Windows Hello-Begleitgerät zwei 256-Bit-HMAC-Schlüssel zu erstellen und damit HMAC (mit SHA-256) zu generieren.
 - Ordnungsgemäß konfigurierte Sicherheitsreinstellungen auf dem Windows 10-Desktopgerät. Bevor Windows Hello-Begleitgeräte eingebunden werden können, muss diese PIN für den Begleitauthentifizierungsdienst eingerichtet werden. Die Benutzer müssen über „Einstellungen“ > „Konten“ > „Anmeldeoptionen“ eine PIN einrichten.
 
@@ -92,7 +92,7 @@ Im Anschluss sehen Sie einen typischen Benutzerworkflow:
 - Der Benutzer richtet die PIN auf jedem der Windows 10-Zieldesktopgeräte ein, die er mit dem Windows Hello-Begleitgerät entsperren möchte.
 - Der Benutzer führt auf dem Windows 10-Desktopgerät die Windows Hello-Begleitgeräte-App aus, um sein Windows Hello-Begleitgerät bei dem Windows 10-Desktopgerät zu registrieren.
 
-Notizen:
+Hinweise:
 
 - Wir empfehlen die Ermittlung, den Download und den Start der Windows Hello Companion device-APP, die optimiert und, wenn möglich, automatisiert ist (z. b. kann die App heruntergeladen werden, wenn das Windows Hello Companion-Gerät auf einem NFC-Reader auf der Windows 10-Desktop Geräteseite tippt). Dies ist allerdings Aufgabe des Windows Hello-Begleitgeräts und der Windows Hello-Begleitgeräte-App.
 - In einer Unternehmensumgebung kann die Windows Hello-Begleitgeräte-App per MDM bereitgestellt werden.
