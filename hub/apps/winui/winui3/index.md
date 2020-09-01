@@ -3,12 +3,12 @@ title: WinUI 3 Vorschau 2 (Juli 2020)
 description: Übersicht über das Release von WinUI 3 Vorschau 2.
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 4d971ffd3ec44ab766122dbb80847b9c2ccfc891
-ms.sourcegitcommit: e6b1ed3c9ddcf650e2f71c29d81bffac6ab292f4
+ms.openlocfilehash: c57132ec5219ef32f2b2b69168592e07f49d904b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89116805"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168774"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows-UI-Bibliothek 3 Vorschau 2 (Juli 2020)
 
@@ -54,7 +54,7 @@ WinUI 3 Vorschau 2 enthält Visual Studio-Projektvorlagen, die Ihnen beim Erst
 
 4. Laden Sie das [WinUI 3 Vorschau 2-VSIX-Paket](https://aka.ms/winui3/previewdownload) herunter und installieren Sie es. Das VSIX-Paket fügt Visual Studio 2019 die WinUI 3-Projektvorlagen und das NuGet-Paket mit den WinUI 3-Bibliotheken hinzu.
 
-    Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Suchen nach und Verwenden von Visual Studio-Erweiterungen](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
+    Anweisungen zum Hinzufügen des VSIX-Pakets zu Visual Studio finden Sie unter [Suchen nach und Verwenden von Visual Studio-Erweiterungen](/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box).
 
 
 ## <a name="create-winui-projects"></a>Erstellen von WinUI-Projekten
@@ -76,7 +76,7 @@ Wenn Sie ein Projekt mit WinUI 3 Vorschau 1 erstellt haben, können Sie Ihr Pr
 
 Sie können diese WinUI-Projektvorlagen verwenden, um Apps zu erstellen.
 
-| Vorlage | Language | Beschreibung |
+| Vorlage | Language | BESCHREIBUNG |
 |----------|----------|-------------|
 | Leere App, Gepackt (WinUI in Desktop) | C# und C++ | Erstellt eine .NET 5 (C#)-Desktop- oder native Win32 (C++ )-App mit einer WinUI-basierten Benutzeroberfläche. Das generierte Projekt enthält ein einfaches Fenster, das von der **Microsoft.UI.Xaml.Window**-Klasse in der WinUI-Bibliothek abgeleitet ist, die Sie als Ausgangspunkt verwenden können, um Ihre Benutzeroberfläche zu entwickeln. Weitere Informationen zu diesem Projekttyp finden Sie unter [Erste Schritte mit WinUI für Desktop-Apps](get-started-winui3-for-desktop.md).<p></p>Die Lösung umfasst außerdem ein [Paketerstellungsprojekt für Windows-Anwendungen](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net), das so konfiguriert ist, dass es die App in ein [MSIX-Paket](/windows/msix/overview) umwandelt. Dies bietet eine moderne Bereitstellungserfahrung, die Möglichkeit zur Integration in Windows 10-Features mittels Paketerweiterungen und vieles mehr.  |
 | Leere App (WinUI in UWP)  | C# und C++ | Erstellt eine UWP-App mit einer WinUI-basierten Benutzeroberfläche. Das generierte Projekt enthält eine einfache Seite, die von der **Microsoft.UI.Xaml.Controls.Page**-Klasse in der WinUI-Bibliothek abgeleitet ist, die Sie als Ausgangspunkt verwenden können, um Ihre Benutzeroberfläche zu entwickeln. Weitere Informationen zu diesem Projekttyp finden Sie unter [Erste Schritte mit WinUI für UWP-Apps](get-started-winui3-for-uwp.md). |
@@ -99,10 +99,10 @@ Die folgenden Elementvorlagen stehen für die Verwendung in einem WinUI-Projekt 
 |----------|----------|-------------|
 | Leere Seite (WinUI) | C# und C++ | Fügt eine XAML- und Codedatei hinzu, die eine neue Seite definieren, die von der **Microsoft.UI.Xaml.Controls.Page**-Klasse in der WinUI-Bibliothek abgeleitet ist. |
 | Leeres Fenster (WinUI in Desktop) | C# und C++ | Fügt eine XAML- und Codedatei hinzu, die ein neues Fenster definiert, das von der **Microsoft.UI.Xaml.Window**-Klasse in der WinUI-Bibliothek abgeleitet ist. |
-| Benutzerdefiniertes Steuerelement (WinUI) | C# und C++ | Fügt eine Codedatei zum Erstellen eines Steuerelements mit Vorlagen mit einem Standardstil hinzu. Das Steuerelement mit Vorlagen wird von der **Microsoft.UI.Xaml.Controls.Control**-Klasse in der WinUI-Bibliothek abgeleitet.<p></p>Eine exemplarische Vorgehensweise, in der die Verwendung dieser Elementvorlage veranschaulicht wird, finden Sie unter [XAMl-Steuerelemente mit Vorlagen für UWP- und WinUI 3-Apps mit C++/WinRT](xaml-templated-controls-cppwinrt-winui3.md). Weitere Informationen zu Steuerelementen mit Vorlagen finden Sie unter [Benutzerdefinierte XAML-Steuerelemente](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+| Benutzerdefiniertes Steuerelement (WinUI) | C# und C++ | Fügt eine Codedatei zum Erstellen eines Steuerelements mit Vorlagen mit einem Standardstil hinzu. Das Steuerelement mit Vorlagen wird von der **Microsoft.UI.Xaml.Controls.Control**-Klasse in der WinUI-Bibliothek abgeleitet.<p></p>Eine exemplarische Vorgehensweise, in der die Verwendung dieser Elementvorlage veranschaulicht wird, finden Sie unter [XAMl-Steuerelemente mit Vorlagen für UWP- und WinUI 3-Apps mit C++/WinRT](xaml-templated-controls-cppwinrt-winui3.md). Weitere Informationen zu Steuerelementen mit Vorlagen finden Sie unter [Benutzerdefinierte XAML-Steuerelemente](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 | Ressourcenverzeichnis (WinUI) | C# und C++ | Fügt eine leere, mit Schlüsseln versehene Sammlung von XAML-Ressourcen hinzu. Weitere Informationen finden Sie unter [ResourceDictionary- und XAML-Ressourcenverweise](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references). |
 | Ressourcendatei (WinUI) | C# und C++ | Fügt eine Datei zum Speichern von Zeichenfolgen- und bedingten Ressourcen für Ihre App hinzu. Mithilfe dieses Elements können Sie Ihre App lokalisieren. Weitere Informationen finden Sie unter [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im Paketmanifest der App](/windows/uwp/app-resources/localize-strings-ui-manifest). |
-| Benutzersteuerelement (WinUI) | C# und C++ | Fügt eine XAML- und Codedatei zum Erstellen eines Benutzersteuerelements hinzu, das von der **Microsoft.UI.Xaml.Controls.UserControl**-Klasse in der WinUI-Bibliothek abgeleitet ist. In der Regel kapselt ein Benutzersteuerelement zugehörige vorhandene Steuerelemente und stellt eine eigene Logik bereit.<p></p>Weitere Informationen zu Benutzersteuerelementen finden Sie unter [Benutzerdefinierte XAML-Steuerelemente](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+| Benutzersteuerelement (WinUI) | C# und C++ | Fügt eine XAML- und Codedatei zum Erstellen eines Benutzersteuerelements hinzu, das von der **Microsoft.UI.Xaml.Controls.UserControl**-Klasse in der WinUI-Bibliothek abgeleitet ist. In der Regel kapselt ein Benutzersteuerelement zugehörige vorhandene Steuerelemente und stellt eine eigene Logik bereit.<p></p>Weitere Informationen zu Benutzersteuerelementen finden Sie unter [Benutzerdefinierte XAML-Steuerelemente](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
 
 ## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>Fehlerkorrekturen und andere Verbesserungen in WinUI 3 Preview 2
 
@@ -111,10 +111,10 @@ Dies ist eine umfassende Liste von Fehlerkorrekturen und anderen Updates für Pr
 > [!NOTE]
 > WinUI 3 Preview 2 verwendet Version 2.4.2 der WinUI 2-Bibliothek. 
 
-- [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) und [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) funktionieren jetzt erwartungsgemäß in C#-Desktop-Apps.
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) und [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) funktionieren jetzt erwartungsgemäß in C#-Desktop-Apps.
   - Dadurch wurden einige andere Probleme behoben, die sich auf Auflistungssteuerelemente bezogen, die zwar im Back-End, aber nicht in der Benutzeroberfläche aktualisiert wurden.
   - *Dank geht an @hshristov, der ein [ähnliches Problem](https://github.com/microsoft/microsoft-ui-xaml/issues/2490) auf GitHub gemeldet hat!*
-- Vorschau 2 ist jetzt mit [.NET 5 Vorschau 5](https://docs.microsoft.com/dotnet/api/?view=net-5.0) für Desktop-Apps kompatibel.
+- Vorschau 2 ist jetzt mit [.NET 5 Vorschau 5](/dotnet/api/?view=net-5.0) für Desktop-Apps kompatibel.
 - WinUI 3 verfügt jetzt über Parität mit [WinUI 2.4](../winui2/release-notes/winui-2.4.md), das neue Steuerelemente und Features wie [hierarchische NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) und [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring) umfasst.
 - Absturz behoben: Verwenden von [TabView](/windows/uwp/design/controls-and-patterns/tab-view) mit Toucheingabe
 - [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) im [XAML-Steuerelementekatalog-Beispiel](#xaml-controls-gallery-winui-3-preview-2-branch) verwendet jetzt den „Left“-Modus anstelle des „Left-compact“-Modus.
@@ -122,7 +122,7 @@ Dies ist eine umfassende Liste von Fehlerkorrekturen und anderen Updates für Pr
   - *Dank geht an @paulovilla, der [dieses Problem](https://github.com/microsoft/microsoft-ui-xaml/issues/2563) auf GitHub gemeldet hat!*
 - Absturz behoben: Interagieren mit der XAML-Benutzeroberfläche bei angezeigtem [TextBox](/windows/uwp/design/controls-and-patterns/text-box)-Menü
 - Titeltext im [XAML-Steuerelementekatalog-Beispiel](#xaml-controls-gallery-winui-3-preview-2-branch) ist nach dem Navigieren zu mehreren Seiten nicht mehr durcheinander
-- Die Verwendung von Toucheingabe mit [WebView2](https://docs.microsoft.com/microsoft-edge/webview2/) führt nicht mehr zu einem leichten Versatz bei der Positionierung
+- Die Verwendung von Toucheingabe mit [WebView2](/microsoft-edge/webview2/) führt nicht mehr zu einem leichten Versatz bei der Positionierung
 - Klassen in „WinUIEdit.dll“ wurden aus dem „Windows.UI.Text“-Namespace in den „Microsoft.UI.Text“-Namespace verschoben.
 - Absturz behoben: Auswählen eines Elements in [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) im Mehrfachauswahlmodus (in Windows 10, Version 1803)
 - Die Member „Point“, „Rect“ und „Size“ sind nun vom Typ „Double“ in der C#-Projektion der APIs für Desktop-Apps.
@@ -152,7 +152,7 @@ Die folgenden Features und Funktionen wurden in WinUI 3 Vorschau 1 eingeführt
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView-Aktualisierungen](/windows/uwp/design/controls-and-patterns/tab-view)
 - Aktualisierungen am dunklen Design
-- Verbesserungen und Aktualisierungen für [WebView2](https://docs.microsoft.com/microsoft-edge/hosting/webview2)
+- Verbesserungen und Aktualisierungen für [WebView2](/microsoft-edge/hosting/webview2)
   - Unterstützung hoher DPI-Werte
   - Unterstützung des Änderns der Größe und Verschiebens von Fenstern
   - Für eine neuere Version von Microsoft Edge aktualisiert

@@ -3,12 +3,12 @@ title: Versionsanmerkungen zu WinUI
 description: Index der WinUI-Versionsanmerkungen.
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 4161b8d8a74ffc493c44bba5104c54cb911861c6
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 33d4b9dfb497017f446549d4f3daf737a8fa5ebb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492875"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166694"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Versionshinweise zu Windows-UI-Bibliothek 2.x
 
@@ -22,7 +22,7 @@ WinUI enthält zwei NuGet-Pakete:
 
 * [Microsoft.UI.Xaml.Core.Direct](https://www.nuget.org/packages/Microsoft.UI.Xaml.Core.Direct): Low-Level-APIs für die Verwendung in Middlewarekomponenten.
 
-Du kannst WinUI-Pakete mit dem NuGet-Paket-Manager herunterladen und in deiner App verwenden. Weitere Informationen findest du unter [Erste Schritte mit der Windows-UI-Bibliothek](https://docs.microsoft.com/uwp/toolkits/winui/getting-started).
+Du kannst WinUI-Pakete mit dem NuGet-Paket-Manager herunterladen und in deiner App verwenden. Weitere Informationen findest du unter [Erste Schritte mit der Windows-UI-Bibliothek](/uwp/toolkits/winui/getting-started).
 
 ## <a name="examples"></a>Beispiele
 

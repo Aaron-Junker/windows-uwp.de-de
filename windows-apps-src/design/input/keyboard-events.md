@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cb82c137bf2aa0d1cd4e03025d3babace07549b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 151abd02b34263cdd92b917127f306c25ebc5e0d
+ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
 ms.translationtype: MT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173414"
+ms.locfileid: "89187837"
 ---
 # <a name="keyboard-events"></a>Tastaturereignisse
 
@@ -107,15 +107,16 @@ Das [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown)-Ereignis wird ausg
 
 Zusatztasten sind Tasten wie beispielsweise STRG oder UMSCHALT, die Benutzer normalerweise in Kombination mit anderen Tasten drücken. Ihre App kann diese Kombinationen als Tastenkombinationen zum Aufrufen von App-Befehlen nutzen.
 
-Sie erkennen Tastenkombinationen mithilfe des Codes in den Ereignishandlern [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) und [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup). Sie können dann den Zustand "Gedrückt" der Zusatztasten überwachen, die für Sie von Interesse sind. Wenn für eine Nichtzusatztaste ein Tastaturereignis auftritt, können Sie überprüfen, ob gleichzeitig eine Zusatztaste gedrückt wurde.
+Sie können Tastenkombinationen in den [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) -und [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) -Ereignis Handlern erkennen. Wenn für eine nicht-Modifizierertaste ein Tastaturereignis auftritt, können Sie überprüfen, ob sich eine Modifizierertaste im gedrückten Zustand befindet.
+
+Alternativ kann die [**GetKeyState ()**](/uwp/api/windows.ui.core.corewindow.getkeystate) -Funktion von [**corewindow**](/uwp/api/windows.ui.core.corewindow) (über [**corewindow. getforcurrentthread ()**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread)abgerufen) auch zum Überprüfen des modifiziererzustands verwendet werden, wenn eine nicht-Modifizierertaste gedrückt wird.
+
+In den folgenden Beispielen wird diese zweite Methode implementiert, während auch Stubcode für die erste Implementierung eingeschlossen wird.
 
 > [!NOTE]
 > Die ALT-Taste wird durch den Wert **VirtualKey.Menu** dargestellt.
 
- 
-
 ### <a name="shortcut-keys-example"></a>Beispiel für Tastenkombinationen
-
 
 Im folgenden Beispiel wird die Implementierung von Tastenkombinationen gezeigt. In diesem Beispiel können Benutzer die Medienwiedergabe mit den Schaltflächen „Play“, „Pause“ und „Stop“ oder mit den Tastenkombinationen STRG+P, STRG+A und STRG+S steuern. Das Schaltflächen-XAML zeigt die Tastenkombinationen in Form von QuickInfos und [**AutomationProperties**](/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties)-Eigenschaften in den Schaltflächenbeschriftungen. Diese Selbstdokumentation ist wichtig, um die Benutzerfreundlichkeit und Barrierefreiheit der App zu erhöhen. Weitere Informationen finden Sie unter [Tastatur Barrierefreiheit](../accessibility/keyboard-accessibility.md).
 

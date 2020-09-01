@@ -490,19 +490,19 @@
       href: input/cortana-interactions.md
       items:
         - name: Entwurfsrichtlinien
-          href: 'https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines'
+          href: /cortana/voice-commands/voicecommand-design-guidelines
         - name: Aktivieren einer Vordergrund-App
-          href: 'https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana'
+          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
         - name: Ändern von VCD-Begriffslisten
-          href: 'https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists'
+          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
         - name: Starten einer Hintergrund-App
-          href: 'https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana'
+          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
         - name: Interagieren mit einer Hintergrund-App
-          href: 'https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana'
+          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
         - name: Deep-Link aus einer Hintergrund-App
-          href: 'https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana'
+          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
         - name: Unterstützen von Sprachbefehlen in natürlicher Sprache
-          href: 'https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana'
+          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
     - name: Mehrfacheingaben
       href: input/multiple-input-design-guidelines.md
     - name: Eingabeeinfügung

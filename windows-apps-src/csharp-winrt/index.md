@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C#, WinRT, CSWinRT, Projektion
 ms.localizationpriority: medium
-ms.openlocfilehash: e52763d78937405b308c4c4fe06f6d231fa3abcf
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8fb098cb247890dc1b3919f6123b76b54366d60f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580277"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154324"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -23,9 +23,9 @@ C#/WinRT bietet derzeit Unterstützung für die Verarbeitung von WinRT-Typen, un
 
 ## <a name="motivation-for-cwinrt"></a>Motivation für C#/WinRT
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) stellt den Schwerpunkt der .NET-Plattform dar, und .NET 5 ist die nächste Hauptversion. Dabei handelt es sich um eine plattformübergreifende Open-Source-Laufzeit, mit der Geräte-, Cloud- und IoT-Anwendungen erstellt werden können.
+[.NET Core](/dotnet/core/) stellt den Schwerpunkt der .NET-Plattform dar, und .NET 5 ist die nächste Hauptversion. Dabei handelt es sich um eine plattformübergreifende Open-Source-Laufzeit, mit der Geräte-, Cloud- und IoT-Anwendungen erstellt werden können.
 
-In frühere Versionen von .NET Framework und .NET Core waren Kenntnisse über WinRT integriert, eine Windows-spezifische Technologie. Zur Unterstützung der Portabilitäts- und Effizienzziele von .NET 5 haben wir die Unterstützung für die WinRT-Projektion aus dem .NET-Compiler und der .NET-Laufzeit in das C#/WinRT-Toolkit verschoben. C#/WinRT soll für Parität mit der integrierten WinRT-Unterstützung sorgen, die in früheren Versionen des C#-Compilers und der .NET-Laufzeit bereitgestellt wird. Einzelheiten hierzu finden Sie unter [.NET-Zuordnungen von Windows-Runtime-Typen](https://docs.microsoft.com/windows/uwp/winrt-components/net-framework-mappings-of-windows-runtime-types).
+In frühere Versionen von .NET Framework und .NET Core waren Kenntnisse über WinRT integriert, eine Windows-spezifische Technologie. Zur Unterstützung der Portabilitäts- und Effizienzziele von .NET 5 haben wir die Unterstützung für die WinRT-Projektion aus dem .NET-Compiler und der .NET-Laufzeit in das C#/WinRT-Toolkit verschoben. C#/WinRT soll für Parität mit der integrierten WinRT-Unterstützung sorgen, die in früheren Versionen des C#-Compilers und der .NET-Laufzeit bereitgestellt wird. Einzelheiten hierzu finden Sie unter [.NET-Zuordnungen von Windows-Runtime-Typen](../winrt-components/net-framework-mappings-of-windows-runtime-types.md).
 
 C#/WinRT unterstützt auch WinUI 3.0. Mit dieser Version von WinUI werden systemeigene Steuerelemente und Features der Microsoft-Benutzeroberfläche aus dem Betriebssystem herausgelöst. Dadurch können App-Entwickler die neuesten Steuerelemente und Visuals unter Windows 10, Version 1803 und höheren Versionen verwenden.
 
@@ -124,7 +124,7 @@ C#/WinRT bietet auch einen Aktivierungs-Fallbackpfad, wenn Windows den Typ nicht
 2. Contoso.Controls.dll
 3. Contoso.dll
 
-C#/WinRT verwendet die [alternative LoadLibrary-Suchreihenfolge](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order?#alternate-search-order-for-desktop-applications), um eine Implementierungs-DLL aufzufinden. Eine App, die sich auf ein derartiges Fallbackverhalten stützt, muss die Implementierungs-DLL neben dem App-Modul verpacken.
+C#/WinRT verwendet die [alternative LoadLibrary-Suchreihenfolge](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications), um eine Implementierungs-DLL aufzufinden. Eine App, die sich auf ein derartiges Fallbackverhalten stützt, muss die Implementierungs-DLL neben dem App-Modul verpacken.
 
 ## <a name="known-issues"></a>Bekannte Probleme
 

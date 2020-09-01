@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e6d91b5a4147237cd04b46dc5b69b8151fece9
-ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
+ms.openlocfilehash: 08471b8a04d37c34378b549b8534979a4188d7b8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84978382"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173954"
 ---
 # <a name="controls-for-windows-apps"></a>Steuerelemente für Windows-Apps
 
@@ -44,7 +44,7 @@ Das XAML-Framework bietet zahlreiche Anpassungsmöglichkeiten für die App-Darst
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Einige Steuerelemente sind nur in der Windows-UI-Bibliothek (WinUI) verfügbar. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures enthält. Informationen dazu, wie Sie diese abrufen, finden Sie im Artikel mit der [Übersicht über die Windows-UI-Bibliothek und Installationsanweisungen](/uwp/toolkits/winui/).<br/>Ab WinUI 2.2 wurde das Standardformat für viele Steuerelemente dahin gehend aktualisiert, dass abgerundete Ecken verwendet werden. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Einige Steuerelemente sind nur in der Windows-UI-Bibliothek (WinUI) verfügbar. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures enthält. Informationen dazu, wie Sie diese abrufen, finden Sie im Artikel mit der [Übersicht über die Windows-UI-Bibliothek und Installationsanweisungen](/uwp/toolkits/winui/).<br/>Ab WinUI 2.2 wurde das Standardformat für viele Steuerelemente dahin gehend aktualisiert, dass abgerundete Ecken verwendet werden. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). |
 
 ## <a name="alphabetical-index"></a>Alphabetischer Index
 
@@ -79,7 +79,7 @@ Detaillierte Informationen zu bestimmten Steuerelementen und Mustern. (Eine nach
 - [Bilder und Bildpinsel](images-imagebrushes.md)
 - [Steuerelemente für Freihandeingaben](inking-controls.md)
 - [Listenansicht](listview-and-gridview.md)
-- [Kartensteuerelement](../../maps-and-location/controls-map.md)
+- [Kartensteuerelement](../../maps-and-location/display-maps.md)
 - [Master/Details](master-details.md) (Muster)
 - [Medienwiedergabe](media-playback.md)
 - [Menüleiste](menus.md#create-a-menu-bar) ![WinUI-Logo](images/winui-logo-16x16.png)

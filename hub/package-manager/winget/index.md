@@ -4,12 +4,12 @@ description: Mit dem Befehlszeilentool „winget“ können Entwickler Anwendung
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b3f108de117fb937a7a670497a4a1a1d5810aca
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 4c918dccb2873f47a16669c195c47180e2129476
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334530"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168744"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>Installieren und Verwalten von Anwendungen mit dem Tool „winget“
 
@@ -38,7 +38,7 @@ Das Verhalten des Installationsprogramms kann abhängig davon unterschiedlich se
 
 * Wenn Sie **winget** ohne Administratorberechtigungen ausführen, benötigen einige Anwendungen für die Installation möglichweise [mehr Berechtigungen](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/). Wenn das Installationsprogramm ausgeführt wird, werden Sie von Windows [zum Gewähren der entsprechenden Berechtigungen](https://docs.microsoft.com/windows/security/identity-protection/user-account-control) aufgefordert. Wenn Sie dies nicht tun, kann die Anwendung nicht installiert werden.  
 
-* Wenn Sie **winget** an einer Administrator-Eingabeaufforderung ausführen, werden keine [Aufforderungen zum Gewähren weiterer Berechtigungen](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/how-user-account-control-works) angezeigt, wenn dies für die Anwendung erforderlich ist. Gehen Sie immer vorsichtig vor, wenn Sie die Eingabeaufforderung als Administrator ausführen, und installieren Sie nur Anwendungen, denen Sie vertrauen.
+* Wenn Sie **winget** an einer Administrator-Eingabeaufforderung ausführen, werden keine [Aufforderungen zum Gewähren weiterer Berechtigungen](/windows/security/identity-protection/user-account-control/how-user-account-control-works) angezeigt, wenn dies für die Anwendung erforderlich ist. Gehen Sie immer vorsichtig vor, wenn Sie die Eingabeaufforderung als Administrator ausführen, und installieren Sie nur Anwendungen, denen Sie vertrauen.
 
 ## <a name="use-winget"></a>Verwenden von „winget“
 
