@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4145fbc67c6788a1d742fb0db616ecbc719e4b34
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: e5ac10a1cc4e9feee609a56e5db6285284c41b98
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619314"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163694"
 ---
 # <a name="playready-encrypted-media-extension"></a>Verschlüsselte Medienerweiterung von PlayReady
 
@@ -34,7 +34,7 @@ In der folgenden Liste werden die neuen Features und Änderungen der verschlüss
 -   Unterstützt das proaktive Abrufen nicht persistenter Lizenzen.
 -   Unterstützt das Abrufen mehrerer Lizenzen in einer Nachricht.
 
-    Sie können entweder wie in Windows 8.1 ein PlayReady-Objekt mit mehreren Schlüsselkennungen (KeyIDs) oder [Content Decryption Model (CDM)-Daten (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN) mit mehreren KeyIDs verwenden.
+    Sie können entweder wie in Windows 8.1 ein PlayReady-Objekt mit mehreren Schlüsselkennungen (KeyIDs) oder [Content Decryption Model (CDM)-Daten (CDMData)](/previous-versions/windows/apps/dn457361(v=ieb.10)) mit mehreren KeyIDs verwenden.
 
     > [!NOTE]
     > In Windows 10 werden mehrere Schlüsselkennungen unter &lt;KeyID&gt; in CDMData unterstützt.
@@ -72,7 +72,7 @@ Um das Hardware-DRM mit PlayReady zu verwenden, sollte Ihre JavaScript-Web-App d
 Mitunter werden Inhalte jedoch nicht vom Hardware-DRM unterstützt. Cocktail-Inhalte werden nie vom Hardware-DRM unterstützt. Wenn Sie Cocktail-Inhalte wiedergeben möchten, müssen Sie das Hardware-DRM außer Kraft setzen. Einige Hardware-DRM-Typen unterstützen HEVC, andere dagegen nicht. Wenn Sie HEVC-Inhalte wiedergeben möchten und diese nicht vom Hardware-DRM unterstützt werden, sollten Sie das Hardware-DRM in diesem Fall ebenfalls außer Kraft setzen.
 
 > [!NOTE]
-> Um festzustellen, ob HEVC-Inhalte unterstützt werden, verwenden Sie nach der Instanziierung von `com.microsoft.playready` die [**PlayReadyStatics.CheckSupportedHardware**](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)-Methode.
+> Um festzustellen, ob HEVC-Inhalte unterstützt werden, verwenden Sie nach der Instanziierung von `com.microsoft.playready` die [**PlayReadyStatics.CheckSupportedHardware**](/uwp/api/windows.media.protection.playready.playreadystatics.checksupportedhardware)-Methode.
 
 ## <a name="add-secure-stop-to-your-web-app"></a>Hinzufügen des sicheren Beendens zur Web-App
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> Die Daten der sicheren Beendigung `<SessionID>B64 encoded session ID</SessionID>` im obigen Beispiel können ein Sternchen (\*) sein, bei dem es sich um eine Platzhalter für alle aufgezeichneten sicheren Stopps handelt. Das heißt, das **SessionID** -Tag kann eine bestimmte Sitzung oder eine Platzhalter (\*) sein, um alle sicheren endsitzungen auszuwählen.
+> Die Daten der sicheren Beendigung `<SessionID>B64 encoded session ID</SessionID>` im obigen Beispiel können ein Sternchen () sein \* , bei dem es sich um eine Platzhalter für alle aufgezeichneten sicheren Stopps handelt. Das heißt, das **SessionID** -Tag kann eine bestimmte Sitzung oder eine Platzhalter () sein, \* um alle sicheren endsitzungen auszuwählen.
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Überlegungen zur Programmierung für verschlüsselte Medienerweiterungen (Encrypted Media Extensions, EME)
 
 Dieser Abschnitt enthält Hinweise zur Programmierung, die Sie beim Erstellen Ihrer PlayReady-fähigen Web-App für Windows 10 berücksichtigen sollten.
 
-Die von Ihrer App erstellten Objekte **MSMediaKeys** und **MSMediaKeySession** müssen aktiv bleiben, bis die App geschlossen wird. Eine Möglichkeit, um sicherzustellen, dass diese Objekte aktiv bleiben, ist deren Zuweisung als globale Variablen (die Variablen würden den Gültigkeitsbereich verlassen und der Garbage Collection zugeführt, wenn sie innerhalb einer Funktion als lokale Variable deklariert werden). Im folgenden Beispiel werden die Variablen *g\_msmediakeys* und *\_g mediakeysession* als globale Variablen zugewiesen, die dann den **msmediakeys** -und **msmediakeysession** -Objekten in der-Funktion zugewiesen werden.
+Die von Ihrer App erstellten Objekte **MSMediaKeys** und **MSMediaKeySession** müssen aktiv bleiben, bis die App geschlossen wird. Eine Möglichkeit, um sicherzustellen, dass diese Objekte aktiv bleiben, ist deren Zuweisung als globale Variablen (die Variablen würden den Gültigkeitsbereich verlassen und der Garbage Collection zugeführt, wenn sie innerhalb einer Funktion als lokale Variable deklariert werden). Im folgenden Beispiel werden die Variablen *g \_ msmediakeys* und *g \_ mediakeysession* als globale Variablen zugewiesen, die dann den **msmediakeys** -und **msmediakeysession** -Objekten in der-Funktion zugewiesen werden.
 
 ``` syntax
 var g_msMediaKeys;
@@ -298,9 +298,5 @@ function foo() {
 
 Weitere Informationen finden Sie in den [Beispielanwendungen](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/PlayReady).
 
-## <a name="see-also"></a>Siehe auch
-- [PlayReady-DRM](playready-client-sdk.md)
-
-
-
-
+## <a name="see-also"></a>Weitere Informationen
+- [PlayReady DRM](playready-client-sdk.md)

@@ -4,20 +4,20 @@ description: In diesem Thema wird das URI-Schema „ms-people“ beschrieben. Ih
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dd1048ad0d3c5d542c5d7fb398261f3e29316396
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595565"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162614"
 ---
 # <a name="launch-the-people-app"></a>Starten der Kontakte-App
 
-In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann dieses URI-Schema verwenden, um die Kontakte-App für bestimmte Aktionen zu starten.
+In diesem Thema wird das **ms-people:**-URI-Schema beschrieben. Ihre App kann dieses URI-Schema verwenden, um die Kontakte-App für bestimmte Aktionen zu starten.
 
-## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI-Schema-Verweis
+## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI-Schemaverweis
 
 <table>
 <colgroup>
@@ -47,7 +47,7 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 </div>
 <div>
 </div></td>
-<td align="left">ms-people:search?SearchString=&lt;contactsearchinfo&gt;</td>
+<td align="left">MS-People: Search? SearchString = &lt; contactsearchinfo&gt;</td>
 </tr>
 <tr class="even">
 <td align="left">Startet mit einer vorhandenen Kontaktkarte, wenn der Kontakt gefunden wurde. Oder startet mit einer temporären Kontaktkarte, wenn kein Kontakt gefunden wird. Wenn kein Eingabeparameter angegeben wird, wird die Kontakte-App mit einer Kontaktliste gestartet.
@@ -58,7 +58,7 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 </div>
 <div> 
 </div></td>
-<td align="left">MS-Benutzer: Viewcontact? Kontakt-ID =&lt;Contactid&gt;&amp;AggregatedId =&lt;Aggid&gt;&amp;"PhoneNumber" = &lt;Phonenum&gt;&amp;-e-Mail =&lt;-e-Mail &gt; &amp;ContactName =&lt;Namen&gt;&amp;Kontakt =&lt;Contactobj&gt;</td>
+<td align="left">MS-People: viewcontact? ContactId = &lt; ContactId &gt; &amp; aggregatedid = &lt; aggid &gt; &amp; PhoneNumber = &lt; phoneNum &gt; &amp; Email = &lt; Email &gt; &amp; ContactName = &lt; Name &gt; &amp; Contact = &lt; contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">Startet mit einer „Kontakt speichern“-Seite innerhalb der Kontakte-App, um den angegeben Kontakt mit der angegebenen Telefonnummer oder E-Mail-Adresse zu speichern.
@@ -68,18 +68,18 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 </div>
 <div>
 </div></td>
-<td align="left">ms-people:savetocontact?PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;</td>
+<td align="left">MS-People: SaveTo Contact? PhoneNumber = &lt; phoneNum &gt; &amp; Email = &lt; Email &gt; &amp; ContactName = &lt; Name&gt;</td>
 </tr>
 <tr class="even">
-<td align="left">Startet mit der Seite „Neuen Kontakt hinzufügen“ innerhalb der Kontakte-App, um den angegeben Kontakt zu speichern.
-<div class="alert"><p>Verwenden Sie <a href="https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_">LaunchUriForResultsAsync</a>, um die Seite „Neuen Kontakt speichern“ zu öffnen. Mit <strong>LaunchUriAsync</strong> wird nur die Hauptseite der Kontakte-App gestartet.</p>
+<td align="left">Öffnet die Seite neuen Kontakt hinzufügen innerhalb der People-APP, um den gegebenen Kontakt zu speichern.
+<div class="alert"><p>Öffnen Sie mithilfe von <a href="/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_">launchuriforresulzasync</a> die Seite neuen Kontakt speichern. Wenn Sie <strong>launchuriasync</strong> verwenden, wird nur die Hauptseite der People-App gestartet.</p>
 <p>Bei den Parametern wird die Groß-/Kleinschreibung beachtet.</p>
 <p>Die Reihenfolge der Parameter spielt keine Rolle.</p>
-<p>Die unterstützten Parametern können in beliebiger Kombination verwendet werden.</p>
+<p>Sie können eine beliebige Kombination unterstützter Parameter verwenden.</p>
 </div>
 <div>
 </div></td>
-<td align="left">ms-people:savecontacttask?PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;</td>
+<td align="left">MS-People: savecontacttask? PhoneNumber = &lt; phoneNum &gt; &amp; Email = &lt; Email &gt; &amp; ContactName = &lt; Name&gt;</td>
 </tr>
 </tbody>
 </table>
@@ -95,14 +95,14 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 <thead>
 <tr class="header">
 <th align="left">Parameter</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 <th align="left">Beispiel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><b>SearchString</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Die Suchzeichenfolge für die Informationen zur Kontaktsuche.</p>
 <p>Die Telefonnummer oder den Namen des Kontakts.</p></td>
 <td align="left"><p>ms-people:search?SearchString=Smith</p></td>
@@ -121,38 +121,38 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 <thead>
 <tr class="header">
 <th align="left">Parameter</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 <th align="left">Beispiel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><b>ContactId</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Die Kontakt-ID des Kontakts.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
 <td align="left"><b>PhoneNumber</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Die Telefonnummer des Kontakts.</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><b>E-Mail</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Die E-Mail-Adresse des Kontakts.</p></td>
-<td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
+<td align="left"><p>MS-People: viewcontact? E-Mail =johnsmith@contsco.com</p></td>
 </tr>
 <tr class="even">
 <td align="left"><b>ContactName</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Der Name des Kontakts.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><b>Kontakt</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Das Kontaktobjekt.</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
 </tr>
@@ -170,33 +170,33 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 <thead>
 <tr class="header">
 <th align="left">Parameter</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 <th align="left">Beispiel</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><b>PhoneNumber</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Die Telefonnummer des Kontakts.</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="even">
 <td align="left"><b>E-Mail</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Die E-Mail-Adresse des Kontakts.</p></td>
-<td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
+<td align="left"><p>MS-People: SaveTo Contact? E-Mail =johnsmith@contsco.com</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><b>ContactName</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Der Name des Kontakts.</p></td>
-<td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com&amp;ContactName= John%20%Smith</p></td>
+<td align="left"><p>MS-People: SaveTo Contact? Email = johnsmith@contsco.com &amp; ContactName = John %20% Smith</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="ms-peoplesavecontacttask-parameter-reference"></a>ms-people:savecontacttask: Parameterverweis
+## <a name="ms-peoplesavecontacttask-parameter-reference"></a>MS-People: savecontacttask: Parameter Verweis
 
 <table>
 <colgroup>
@@ -207,164 +207,164 @@ In diesem Thema wird beschrieben, die **ms-Personen:** URI-Schema. Ihre App kann
 <thead>
 <tr class="header">
 <th align="left">Parameter</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><b>Firma</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><b>Company</b></td>
+<td align="left"><p>Dies ist optional.</p>
 <p>Firmenname des Kontakts.</p></td>
 
 </tr>
 <tr class="even">
 <td align="left"><b>Vorname</b></td>
-<td align="left"><p>Optional.</p>
-<p>Vorname des Kontakts.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Der Vorname des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
 <td align="left"><b>HomeAddressCity</b></td>
-<td align="left"><p>Optional.</p>
-<p>Ort der Wohnanschrift.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Stadt der Privatadresse.</p></td>
 
 </tr>
 <tr class="even">
 <td align="left"><b>HomeAddressCountry</b></td>
-<td align="left"><p>Optional.</p>
-<p>Land der Wohnanschrift.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Land der Privatadresse.</p></td>
 
 </tr>
 <tr class="odd">
 <td align="left"><b>HomeAddressState</b></td>
-<td align="left"><p>Optional.</p>
-<p>Bundesland der Wohnanschrift.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Der Status der Privatadresse.</p></td>
 
 </tr>
 <tr class="even">
 <td align="left"><b>HomeAddressStreet</b></td>
-<td align="left"><p>Optional.</p>
-<p>Straße der Wohnanschrift.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Straße der Privatadresse.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>HomeAddressZipCode</b></td>
-<td align="left"><p>Optional.</p>
-<p>Postleitzahl der Wohnanschrift.</p></td>
+<td align="left"><b>Homeaddresszipcode</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Die Postleitzahl der Privatadresse.</p></td>
 
 </tr>
 <tr class="even">
 <td align="left"><b>"HomePhone"</b></td>
-<td align="left"><p>Optional.</p>
-<p>Private Telefonnummer des Kontakts.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Telefonnummer des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
 <td align="left"><b>JobTitle</b></td>
-<td align="left"><p>Optional.</p>
-<p>Berufsbezeichnung des Kontakts.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Die Position des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>"LastName"</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><b>Nachname</b></td>
+<td align="left"><p>Dies ist optional.</p>
 <p>Nachname des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>middleName</b></td>
-<td align="left"><p>Optional.</p>
-<p>Zweiter Vorname des Kontakts.</p></td>
+<td align="left"><b>MiddleName</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Der zweite Name des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>"Mobilephone"</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><b>MobilePhone</b></td>
+<td align="left"><p>Dies ist optional.</p>
 <p>Mobiltelefonnummer des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>der Spitzname</b></td>
-<td align="left"><p>Optional.</p>
-<p>Spitzname des Kontakts.</p></td>
+<td align="left"><b>Namen</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Der Spitzname des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>Hinweise</b></td>
-<td align="left"><p>Optional.</p>
-<p>Notizen zum Kontakt.</p></td>
+<td align="left"><b>Notizen</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Hinweise zum Kontakt.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>OtherEmail</b></td>
-<td align="left"><p>Optional.</p>
-<p>Weitere E-Mail-Adresse des Kontakts.</p></td>
+<td align="left"><b>Otheremail</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Andere e-Mail-Adresse des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>PersonalEmail</b></td>
-<td align="left"><p>Optional.</p>
-<p>Private E-Mail-Adresse des Kontakts.</p></td>
+<td align="left"><b>Personalemail</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Persönliche e-Mail-Adresse des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
 <td align="left"><b>Suffix</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><p>Dies ist optional.</p>
 <p>Suffix des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
 <td align="left"><b>Titel</b></td>
-<td align="left"><p>Optional.</p>
-<p>Anrede des Kontakts.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Der Titel des Kontakts.</p></td>
 </tr>
 
 <tr class="odd">
 <td align="left"><b>Website</b></td>
-<td align="left"><p>Optional.</p>
-<p>Webseite des Kontakts.</p></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Website des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>WorkAddressCity</b></td>
-<td align="left"><p>Optional.</p>
-<p>Ort der Geschäftsadresse.</p></td>
+<td align="left"><b>Workaddresscity</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Stadt der Arbeitsadresse.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>WorkAddressCountry</b></td>
-<td align="left"><p>Optional.</p>
-<p>Land der Geschäftsadresse.</p></td>
+<td align="left"><b>Workaddresscountry</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Land der Arbeitsadresse.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>WorkAddressState</b></td>
-<td align="left"><p>Optional.</p>
-<p>Bundesland der Geschäftsadresse.</p></td>
+<td align="left"><b>Workaddressstate</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Der Status der Arbeitsadresse.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>WorkAddressStreet</b></td>
-<td align="left"><p>Optional.</p>
-<p>Straße der Geschäftsadresse.</p></td>
+<td align="left"><b>Workaddressstreet</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Straße der Arbeitsadresse.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>WorkAddressZipCode</b></td>
-<td align="left"><p>Optional.</p>
-<p>Postleitzahl der Geschäftsadresse.</p></td>
+<td align="left"><b>Workaddresszipcode</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Die Postleitzahl der Arbeitsadresse.</p></td>
 </tr>
 
 <tr class="odd">
-<td align="left"><b>Geschäftlichen</b></td>
-<td align="left"><p>Optional.</p>
-<p>Geschäftliche E-Mail-Adresse des Kontakts.</p></td>
+<td align="left"><b>Workemail</b></td>
+<td align="left"><p>Dies ist optional.</p>
+<p>Geschäftliche e-Mail-Adresse des Kontakts.</p></td>
 </tr>
 
 <tr class="even">
-<td align="left"><b>Tel_geschäftlich</b></td>
-<td align="left"><p>Optional.</p>
+<td align="left"><b>Arbeits Telefon</b></td>
+<td align="left"><p>Dies ist optional.</p>
 <p>Geschäftliche Telefonnummer des Kontakts.</p></td>
 </tr>
 </tbody>

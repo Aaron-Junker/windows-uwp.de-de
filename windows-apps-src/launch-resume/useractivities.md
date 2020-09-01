@@ -1,48 +1,48 @@
 ---
-title: Benutzeraktivitäten geräteübergreifend fortsetzen
-description: In diesem Thema wird beschrieben, wie Benutzer fortsetzen können, was sie in ihrer App erledigt haben, auch über mehrere Geräte hinweg.
-keywords: benutzeraktivität, benutzeraktivitäten, zeitachse, cortana aufgaben weiterführen, cortana begonnene aufgaben bearbeiten, project rome
+title: Fortsetzen von Benutzeraktivitäten (auch geräteübergreifend)
+description: In diesem Thema wird beschrieben, wie Sie Benutzern dabei helfen können, ihre Aufgaben in Ihrer APP wieder aufzunehmen, sogar über mehrere Geräte hinweg.
+keywords: Benutzeraktivität, Benutzeraktivitäten, Zeitachse, Cortana nehmen Sie an der Stelle an, an der Sie aufgehört haben, Cortana an der Stelle, an der ich aufgehört habe, Project
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ddceda3457ef5251cb2b1e384dbb880725103fa
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: ebaca3b831ae30637a88d01319a89d139dde1cf8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282309"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162624"
 ---
-# <a name="continue-user-activity-even-across-devices"></a>Benutzeraktivitäten geräteübergreifend fortsetzen
+# <a name="continue-user-activity-even-across-devices"></a>Fortsetzen von Benutzeraktivitäten (auch geräteübergreifend)
 
-In diesem Thema wird beschrieben, wie Benutzer fortsetzen können, was sie in ihrer App, auf ihrem PC und anderen Geräten erledigt haben.
+In diesem Thema wird beschrieben, wie Sie Benutzern das Fortsetzen Ihrer APP auf Ihrem PC und auf Geräten unterstützen können.
 
-## <a name="user-activities-and-timeline"></a>Benutzeraktivitäten und die Zeitachse
+## <a name="user-activities-and-timeline"></a>Benutzeraktivitäten und Zeitachse
 
-Jeden Tag verbringen wir viel Zeit an unterschiedlichen Geräten. Im Bus benutzen wir unser Telefon, tagsüber im Büro den PC und abends surfen wir auf dem Smartphone oder dem Tablet. Wenn Sie in Windows 10, Build 1803 oder höher, eine [Benutzeraktivität](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) erstellen, wird diese Aktivität in der Windows-Zeitachse und in der Funktion „Dort fortfahren, wo Sie aufgehört haben” in Cortana angezeigt. Die Zeitachse bietet eine umfassende Aufgabenansicht, die Ihnen über Benutzeraktivitäten in einer chronologischen Ansicht anzeigt, woran Sie bisher gearbeitet haben. Hier kann auch aufgezeichnet werden, woran Sie auf unterschiedlichen Geräten gearbeitet haben.
+Unsere Zeit täglich ist auf mehrere Geräte verteilt. Wir können unser Telefon auf dem Bus, einem PC während des Tages, einem Telefon oder Tablet am Abend verwenden. Beginnend mit Windows 10 Build 1803 oder höher wird durch das Erstellen einer [Benutzeraktivität](/uwp/api/windows.applicationmodel.useractivities.useractivity) die Aktivität in der Windows-Zeitachse und in Cortana an der Stelle, an der das Feature ausgelassen wurde, angezeigt. Die Zeitachse ist eine umfangreiche Aufgaben Ansicht, die Benutzeraktivitäten nutzt, um eine chronologische Darstellung ihrer Arbeit anzuzeigen. Es kann auch sein, dass Sie über Geräte hinweg gearbeitet haben.
 
-![Bild der Windows-Zeitachse](images/timeline.png)
+![Windows-Zeitachsen Bild](images/timeline.png)
 
-Wenn Sie Ihr Smartphone mit Ihrem Windows-PC verbinden, können Sie an den Aufgaben weiterarbeiten, die Sie auf Ihrem iOS- oder Android-Gerät begonnen haben.
+Wenn Sie Ihr Telefon mit Ihrem Windows-PC verknüpfen, können Sie auch den Vorgang fortsetzen, den Sie zuvor auf Ihrem IOS-oder Android-Gerät durchgeführt haben.
 
-Bei einer **UserActivity** handelt es sich um eine bestimmte Aufgabe, die der Nutzer in Ihrer App bearbeitet hat. Ein Beispiel für eine **UserActivity** könnte ein Feed Ihres RSS-Readers sein, den Sie kürzlich gelesen haben. Wenn Sie ein Spiel spielen, ist die **UserActivity** möglicherweise das Level, das Sie erreicht haben. Ein anderes Beispiel für eine **UserActivity** könnte eine Playlist in Ihrer Musik-App sein. Wenn Sie an einem Dokument arbeiten, stellt die **UserActivity** unter Umständen die Stelle dar, an der Sie aufgehört haben zu arbeiten.  Kurz gesagt: Bei einer **UserActivity** handelt es sich um ein Ziel in Ihrer App, das ein Nutzer erreichen und an dem er später weiter die Arbeit wieder aufnehmen kann.
+Stellen Sie sich eine **useractivity** als etwas spezifisches Element vor, an dem der Benutzer in Ihrer APP gearbeitet hat. Wenn Sie z. b. einen RSS-Reader verwenden, könnte eine **useractivity** der Feed sein, den Sie lesen. Wenn Sie ein Spiel spielen, kann die **useractivity** die Ebene sein, die Sie spielen. Wenn Sie eine Musik-app lauschen, kann die **useractivity** die Wiedergabeliste sein, die Sie überwachen. Wenn Sie an einem Dokument arbeiten, kann es sein, dass die **useractivity** an der Stelle ist, an der Sie daran gearbeitet haben, usw.  Kurz gesagt, eine **useractivity** stellt ein Ziel innerhalb Ihrer APP dar, sodass der Benutzer das fortsetzen kann.
 
-Wenn Sie mit einer **UserActivity** interagieren, indem Sie [UserActivity.CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession) aufrufen, erstellt das System einen Verlaufsdatensatz, der die Start- und Endzeit der **UserActivity** angibt. Wie Sie mit der **UserActivity** im Laufe der Zeit mehrmals interagieren, werden mehrere Verlaufsdatensätze für sie aufgezeichnet.
+Wenn Sie eine **useractivity** durch Aufrufen von [useractivity. CreateSession](/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession)einbinden, erstellt das System einen Verlaufs Daten Satz, der die Start-und Endzeit für diese **useractivity**angibt. Wenn Sie sich im Laufe der Zeit mit dieser **useractivity** erneut in Verbindung treten, werden mehrere Verlaufs Datensätze für Sie aufgezeichnet.
 
-## <a name="add-user-activities-to-your-app"></a>Benutzeraktivitäten zur App hinzufügen
+## <a name="add-user-activities-to-your-app"></a>Hinzufügen von Benutzeraktivitäten zu Ihrer APP
 
-Über die [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) wird die Benutzerbindung in Windows gemessen. Sie besteht aus drei Teilen: einem URI zur Aktivierung der App, zu der die Aktivität gehört, visuelle Elemente sowie Metadaten, die die Aktivität beschreiben.
+Eine [useractivity](/uwp/api/windows.applicationmodel.useractivities.useractivity) ist die Einheit der Benutzer Bindung in Windows. Sie besteht aus drei Teilen: einem URI, der zum Aktivieren der APP verwendet wird, zu der die Aktivität gehört, visuellen Elementen und Metadaten, die die Aktivität beschreiben.
 
-1. Der [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) wird verwendet, um die Anwendung in einem bestimmten Kontext fortzusetzen. Dieser Link übernimmt in der Regel die Form des Protokoll Handlers für ein Schema (z. b. "My-App://Page2? Action = Edit") oder einen appurihandler (z. b. http://constoso.com/page2?action=edit).
-2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) stellt eine Klasse bereit, die es dem Benutzer ermöglicht, eine Aktivität visuell mit einem Titel, einer Beschreibung oder Adaptive Karten-Elementen zu identifizieren.
-3. In [Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) können Sie Metadaten für die Aktivität speichern, die zum Gruppieren und Abrufen von Aktivitäten in einem bestimmten Kontext verwendet werden können. Häufig handelt es sich hierbei um [https://schema.org](https://schema.org)-Daten.
+1. Der [ActivationUri](/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) wird verwendet, um die Anwendung mit einem bestimmten Kontext wieder aufzunehmen. Dieser Link übernimmt in der Regel die Form des Protokoll Handlers für ein Schema (z. b. "My-App://Page2? Action = Edit") oder ein appurihandler (z http://constoso.com/page2?action=edit) . b.).
+2. [Visualelements](/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) macht eine Klasse verfügbar, die es dem Benutzer ermöglicht, eine Aktivität mit einem Titel, einer Beschreibung oder adaptiven Karten Elementen visuell zu identifizieren.
+3. Und schließlich können Sie Metadaten für die Aktivität [speichern, die](/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) zum Gruppieren und Abrufen von Aktivitäten in einem bestimmten Kontext verwendet werden kann. Häufig ist dies die Form von [https://schema.org](https://schema.org) Daten.
 
-So fügen Sie Ihrer App eine **UserActivity** hinzu:
+So fügen Sie eine **useractivity** zu Ihrer APP hinzu:
 
-1. Wenn der Kontext des Benutzers innerhalb der App geändert wird (z. B. Seitennavigation, neues Spiellevel etc.), erstellen Sie **UserActivity**-Objekte.
-2. Füllen Sie **useractivity** -Objekte mit dem minimalen Satz erforderlicher Felder auf: " [ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)", " [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)" und " [useractivity. visualelements. DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)".
-3. Fügen Sie Ihrer App einen benutzerdefinierten Schema-Handler hinzu, damit er erneut durch eine **UserActivity** aktiviert werden kann.
+1. Generieren Sie **useractivity** -Objekte, wenn sich der Kontext des Benutzers innerhalb der app ändert (z. b. Seitennavigation, neue spielsebene usw.).
+2. Füllen Sie **useractivity** -Objekte mit dem minimalen Satz erforderlicher Felder auf: " [ActivityId](/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)", " [ActivationUri](/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)" und " [useractivity. visualelements. DisplayText](/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)".
+3. Fügen Sie Ihrer APP einen benutzerdefinierten Schema Handler hinzu, damit dieser durch eine **useractivity**reaktiviert werden kann.
 
-Eine **UserActivity** kann mit nur wenigen Codezeilen in eine App integriert werden. Angenommen, dieser Code befindet sich in „MainPage.xaml.cs” in der MainPage-Klasse (Hinweis: es wird von `using Windows.ApplicationModel.UserActivities;` ausgegangen):
+Eine **useractivity** kann mit nur wenigen Codezeilen in eine APP integriert werden. Stellen Sie sich beispielsweise den folgenden Code in MainPage.XAML.cs innerhalb der MainPage-Klasse vor (Hinweis: geht davon aus `using Windows.ApplicationModel.UserActivities;` ):
 
 ```csharp
 UserActivitySession _currentActivity;
@@ -65,21 +65,21 @@ private async Task GenerateActivityAsync()
 }
 ```
 
-Die erste Zeile in der oben genannten `GenerateActivityAsync()`-Methode ruft [UserActivityChannel ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel) eines Benutzers auf. Hierbei handelt es sich um den Feed, in dem die Aktivitäten dieser App veröffentlicht werden. Die nächste Zeile fragt den Kanal einer Aktivität namens `MainPage` an.
+In der ersten Zeile der `GenerateActivityAsync()` obigen Methode wird der [useractivitychannel](/uwp/api/windows.applicationmodel.useractivities.useractivitychannel)eines Benutzers abgerufen. Dies ist der Feed, in dem die Aktivitäten dieser App veröffentlicht werden. In der nächsten Zeile wird der Kanal einer Aktivität mit dem Namen abgefragt `MainPage` .
 
-* Ihre App sollte Aktivitäten so benennen, dass jedes Mal dieselbe ID generiert wird, wenn der Benutzer sich an einer bestimmten Stelle in der App befindet. Wenn die App beispielsweise seitenbasiert ist, verwenden Sie einen Bezeichner für die Seite. Wenn sie dokumentbasiert ist, verwenden Sie den Dokumentnamen (oder ein Hash des Namens).
-* Wenn im Feed eine vorhandene Aktivität mit derselben ID vorhanden ist, wird die Aktivität vom Kanal so zurückgegeben, dass `UserActivity.State`den Status [Veröffentlicht](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitystate)) hat. Wenn keine Aktivität mit diesem Namen vorhanden ist, wird neue Aktivität mit dem `UserActivity.State`**Neu**  zurückgegeben.
-* Aktivitäten sind auf Ihre App beschränkt. Es gibt keine Konflikte zwischen Ihrer Aktivitäts-ID und Aktivitäts-IDs in anderen Apps.
+* Ihre APP sollte Aktivitäten so benennen, dass dieselbe ID generiert wird, wenn sich der Benutzer an einem bestimmten Speicherort in der APP befindet. Wenn Ihre APP z. b. Seiten basiert ist, verwenden Sie einen Bezeichner für die Seite. Wenn das Dokument basiert, verwenden Sie den Namen des Dokuments (oder einen Hash des Namens).
+* Wenn eine Aktivität im Feed mit der gleichen ID vorhanden ist, wird diese Aktivität vom Kanal zurückgegeben, wobei `UserActivity.State` auf [veröffentlicht](/uwp/api/windows.applicationmodel.useractivities.useractivitystate)festgelegt ist. Wenn keine-Aktivität mit diesem Namen vorhanden ist, wird eine neue-Aktivität zurückgegeben, wobei `UserActivity.State` auf **New**festgelegt ist.
+* Aktivitäten werden auf Ihre APP beschränkt. Sie müssen sich keine Gedanken über ihre Aktivitäts-ID machen, die mit IDs in anderen apps in Konflikt steht.
 
-Nach dem Abrufen oder Erstellen der **UserActivity**, geben Sie die beiden anderen erforderlichen Felder an: `UserActivity.VisualElements.DisplayText`und `UserActivity.ActivationUri`.
+Nachdem Sie die **useractivity**erhalten oder erstellt haben, geben Sie die beiden anderen Pflichtfelder an:  `UserActivity.VisualElements.DisplayText` und `UserActivity.ActivationUri` .
 
-Speichern Sie anschließend die **UserActivity**-Metadaten durch Aufrufen von [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync) und schließlich [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), die eine [UserActivitySession ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession) zurückgibt. Mit dem Objekt **UserActivitySession** können wir verwalten, wann der Benutzer tatsächlich mit der **UserActivity**  beschäftigt ist. Wir sollten z. B. `Dispose()` in der **UserActivitySession** aufrufen, wenn der Benutzer die Seite verlässt. Im obigen Beispiel rufen wir auch `Dispose()` in `_currentActivity` auf, bevor wir `CreateSession()` aufrufen. Dies ist der Fall, weil wir `_currentActivity` zu einem Mitgliedsfeld unserer Seite gemacht haben und alle vorhandenen Aktivität beenden möchten, bevor wir die neue starten (Hinweis: `?`ist der [Operator mit NULL-Bedingung](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-), der auf Null testet, bevor der Member-Zugriff durchgeführt wird).
+Speichern Sie als nächstes die **useractivity** -Metadaten, indem Sie [saveasync](/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync)aufrufen und schließlich [CreateSession](/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), die eine [useractivitysession](/uwp/api/windows.applicationmodel.useractivities.useractivitysession)zurückgibt. **Useractivitysession** ist das Objekt, mit dem Sie verwalten können, wann der Benutzer tatsächlich mit der **useractivity**beschäftigt ist. Beispielsweise sollten wir für `Dispose()` die **useractivitysession** aufrufen, wenn der Benutzer die Seite verlässt. Im obigen Beispiel wird auch aufgerufen, `Dispose()` `_currentActivity` bevor aufgerufen wird `CreateSession()` . Dies liegt daran, dass wir `_currentActivity` ein Element Feld unserer Seite erstellt haben und alle vorhandenen Aktivitäten vor dem Start der neuen Aktivität abbrechen möchten (Hinweis: `?` ist der [null bedingte Operator](/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-) , der vor der Ausführung des Element Zugriffs auf Null testet).
 
-Da es sich in diesem Fall beim `ActivationUri` um ein benutzerdefiniertes Schema handelt, müssen wir außerdem das Protokoll im Anwendungsmanifest registrieren. Dies erfolgt in der Package.appmanifest XML-Datei oder mithilfe des Designers.
+Da in diesem Fall `ActivationUri` ein benutzerdefiniertes Schema ist, müssen wir auch das Protokoll im Anwendungs Manifest registrieren. Dies erfolgt in der XML-Datei "Package. AppManifest" oder mithilfe des Designers.
 
-Wenn Sie die Änderung mit dem Designer durchführen möchten, doppelklicken Sie auf die Datei „Package.appmanifest” in Ihrem Projekt, um den Designer zu starten. Wählen Sie dann die Registerkarte **Deklarationen** und fügen Sie eine **Protokoll**-Definition hinzu. Die einzige Eigenschaft, die ausgefüllt werden muss, ist **Name**. Sie sollte mit dem URI übereinstimmen, den wir oben angegeben haben – `my-app`.
+Um die Änderung mit dem Designer vorzunehmen, doppelklicken Sie in Ihrem Projekt auf die Datei Package. AppManifest, um den Designer zu starten, wählen Sie die Registerkarte **Deklarationen** aus, und fügen Sie eine **Protokoll** Definition hinzu. Die einzige Eigenschaft, die ausgefüllt werden muss, ist vorerst " **Name**". Er sollte dem URI entsprechen, den wir oben angegeben haben `my-app` .
 
-Nun müssen wir etwas Code schreiben, um der App mitzuteilen, was passiert, wenn sie von einem Protokoll aktiviert wird. Wir überschreiben die `OnActivated`-Methode in „App.xaml.cs” wie folgt, sodass der URI an die Hauptseite übergeben wird:
+Nun müssen wir Code schreiben, um der APP mitzuteilen, was zu tun ist, wenn Sie durch ein Protokoll aktiviert wird. Wir überschreiben die- `OnActivated` Methode in app.XAML.cs, um den URI wie folgt an die Hauptseite zu übergeben:
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
@@ -99,15 +99,15 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-Der Code bewirkt, dass erkannt wird, ob die App über ein Protokoll aktiviert wurde. Wenn dem so ist, wird ermittelt, wie die App den Vorgang fortsetzen kann, für den sie aktiviert wurde. Die einzige Aktivität, die von dieser APP fortgesetzt wird, ist eine einfache APP, die Sie beim Eintreffen der APP auf der sekundären Seite vornimmt.
+Mit diesem Code wird erkannt, ob die APP über ein Protokoll aktiviert wurde. Wenn dies der Fall ist, wird überprüft, was die APP tun sollte, um die Aufgabe fortzusetzen, für die Sie aktiviert wird. Die einzige Aktivität, die von dieser APP fortgesetzt wird, ist eine einfache APP, die Sie beim Eintreffen der APP auf der sekundären Seite vornimmt.
 
-## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>Adaptive Karten verwenden, um die Zeitachse zu verbessern
+## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>Verwenden von adaptiven Karten zur Verbesserung der Zeitachsen Darstellung
 
-Aktivitäten des Benutzers werden in Cortana und der Zeitachse angezeigt. Wenn Aktivitäten in der Zeitachse angezeigt werden, geschieht dies über das [Adaptive Karten](https://adaptivecards.io/)-Framework. Wenn Sie nicht für jede Aktivität eine adaptive Karte angeben, erstellt die Zeitachse automatisch eine einfache Aktivitätskarte basierend auf dem App-Namen und -Symbol, dem Titelfeld und optional auf der Beschreibung. Es folgt ein Beispiel für die Nutzlast einer adaptiven Karte sowie die Karte, die produziert wird.
+Benutzeraktivitäten werden in Cortana und Timeline angezeigt. Wenn Aktivitäten in der Zeitachse angezeigt werden, werden Sie mit dem [adaptiven Karten](https://adaptivecards.io/) Framework angezeigt. Wenn Sie für jede Aktivität keine adaptive Karte angeben, erstellt die Zeitachse automatisch eine einfache Aktivitäts Karte, die auf dem Anwendungsnamen und-Symbol, dem Titelfeld und dem optionalen Beschreibungsfeld basiert. Im folgenden finden Sie ein Beispiel für eine Adaptive Karten Nutzlast und die von ihr erzeugte Karte.
 
-![Eine adaptive Karte](images/adaptivecard.png)]
+![Eine Adaptive Karte](images/adaptivecard.png)]
 
-Beispiel für die Nutzlast einer adaptiven Karte mit JSON-Zeichenfolge:
+Beispiel-JSON-Zeichenfolge für Adaptive Karten Nutzlast:
 
 ```json
 { 
@@ -140,36 +140,36 @@ Beispiel für die Nutzlast einer adaptiven Karte mit JSON-Zeichenfolge:
 }
 ```
 
-Fügen Sie die Nutzlast einer adaptiven Karte mit JSON-Zeichenfolge wie folgt zur **UserActivity** hinzu:
+Fügen Sie die Nutzlast der adaptiven Karten als JSON-Zeichenfolge der **useractivity** wie folgt hinzu:
 
 ```csharp
 activity.VisualElements.Content = 
 Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); // where jsonCardText is a JSON string that represents the card
 ```
 
-## <a name="cross-platform-and-service-to-service-integration"></a>Plattformübergreifende Integration und Integration zwischen Diensten
+## <a name="cross-platform-and-service-to-service-integration"></a>Plattformübergreifende und Dienst-zu-Dienst-Integration
 
-Wenn Ihre App plattformübergreifend ausgeführt wird (z. B. auf Android und iOS) oder der Benutzerzustand in der Cloud verwaltet wird, können Sie UserActivities über [Microsoft Graph](https://developer.microsoft.com/graph) veröffentlichen.
-Nachdem Ihre App oder Ihr Dienst mit einem Microsoft-Konto authentifiziert wurde, sind lediglich zwei einfache REST-Aufrufe erforderlich, um anhand der gleichen Daten wie weiter oben beschrieben [Aktivitäts](https://docs.microsoft.com/graph/api/resources/projectrome-activity)- und [Verlaufs](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem)-Objekte zu generieren.
+Wenn Ihre APP plattformübergreifend ausgeführt wird (z. b. unter Android und IOS) oder den Benutzer Zustand in der Cloud verwaltet, können Sie useractivities über [Microsoft Graph](https://developer.microsoft.com/graph)veröffentlichen.
+Nachdem Ihre Anwendung oder Ihr Dienst mit einem Microsoft-Konto authentifiziert wurde, werden nur zwei einfache Rest-Aufrufe zum Generieren von [Aktivitäts](/graph/api/resources/projectrome-activity) [-und](/graph/api/resources/projectrome-historyitem) Verlaufs Objekten erstellt. dabei werden dieselben Daten wie oben beschrieben verwendet.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Sie können die [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)-API verwenden, um Ihre App in der Zeitachse und Cortana anzeigen zu lassen.
-* Weitere Informationen zur [ **useractivity** -API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
-* Sehen Sie sich den [Beispielcode](https://github.com/Microsoft/project-rome) an.
-* Hier finden Sie [weitere ausgeklügelte adaptive Karten](https://adaptivecards.io/).
-* Veröffentlichen Sie eine **UserActivity** von iOS, Android oder Ihrem Webdienst über [Microsoft Graph](https://developer.microsoft.com/graph).
-* Erfahren Sie mehr zu [Project Rome auf GitHub](https://github.com/Microsoft/project-rome).
+Sie können die [useractivity](/uwp/api/windows.applicationmodel.useractivities) -API verwenden, um Ihre APP in der Zeitachse und in Cortana anzuzeigen.
+* Weitere Informationen zur [ **useractivity** -API](/uwp/api/windows.applicationmodel.useractivities)
+* Sehen Sie sich den [Beispielcode](https://github.com/Microsoft/project-rome)an.
+* [Weitere anspruchsvollere Adaptive Karten](https://adaptivecards.io/)finden Sie unter.
+* Veröffentlichen Sie über [Microsoft Graph](https://developer.microsoft.com/graph)eine **useractivity** von IOS, Android oder Ihrem Webdienst.
+* Weitere Informationen zu [Project Rom finden Sie auf GitHub](https://github.com/Microsoft/project-rome).
 
 ## <a name="key-apis"></a>Wichtige APIs
 
-* [Useractivities-Namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities-Namespace](/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Benutzeraktivitäten (Project Rom-Dokumentation)](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [Adaptive Karten](https://docs.microsoft.com/adaptive-cards/)
+* [Benutzeraktivitäten (Project Rom-Dokumentation)](/windows/project-rome/user-activities/)
+* [Adaptive Karten](/adaptive-cards/)
 * [Bildschirm Abbildung von adaptiven Karten, Beispiele](https://adaptivecards.io/)
-* [Behandeln der URI-Aktivierung](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+* [Behandeln der URI-Aktivierung](./handle-uri-activation.md)
 * [Verwenden der Microsoft Graph, des Aktivitäts Feeds und adaptiver Karten für Ihre Kunden auf beliebigen Plattformen](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

@@ -1,27 +1,27 @@
 ---
 title: Konstantenpufferansicht (CBV)
-description: Konstantenpuffer enthalten Konstantendaten für Shader. Der Nutzen ist, dass die Daten erhalten bleiben und jeder GPU-Shader darauf zugreifen kann, bis eine Änderung der Daten erforderlich wird.
+description: Konstante Puffer enthalten shaderkonstantendaten. Der Wert dafür ist, dass die Daten weiterhin vorhanden sind und von jedem GPU-Shader auf Sie zugegriffen werden kann, bis die Daten geändert werden müssen.
 ms.assetid: 99AEC6B0-A43B-4B61-8C3A-ECC8DE1B69A7
 keywords:
 - Konstantenpufferansicht (CBV)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7179f8644970a24a9e7b9ce50a4bcb4d5d225d46
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50b590ab931f60b67ecd527629b681c9ffe63f71
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370455"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162744"
 ---
 # <a name="constant-buffer-view-cbv"></a>Konstantenpufferansicht (CBV)
 
 
-Konstantenpuffer enthalten Konstantendaten für Shader. Der Nutzen ist, dass die Daten erhalten bleiben und jeder GPU-Shader darauf zugreifen kann, bis eine Änderung der Daten erforderlich wird.
+Konstante Puffer enthalten shaderkonstantendaten. Der Wert dafür ist, dass die Daten weiterhin vorhanden sind und von jedem GPU-Shader auf Sie zugegriffen werden kann, bis die Daten geändert werden müssen.
 
-Typische Daten für einen Konstantenpuffer sind globale, Ansichts- und Projektionsmatrizen, die während des Zeichnens eines Frames konstant bleiben.
+Typische Daten für einen konstanten Puffer wären Welt-, Projektions-und Ansichts Matrizen, die während der Zeichnung eines Frames konstant bleiben.
 
-Das Konstantenpuffer-Layout sollte mit dem HLSL-Layout übereinstimmen (weitere Informationen finden Sie unter [Regeln für das Packen von Konstantenvariablen](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-packing-rules)).
+Das konstantenpufferlayout sollte dem HLSL-Layout entsprechen (siehe [Verpackungs Regeln für konstante Variablen](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-packing-rules)).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
@@ -31,7 +31,3 @@ Das Konstantenpuffer-Layout sollte mit dem HLSL-Layout übereinstimmen (weitere 
  
 
  
-
-
-
-

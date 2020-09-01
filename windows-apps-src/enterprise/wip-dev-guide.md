@@ -2,26 +2,26 @@
 Description: Dieses Handbuch hilft Ihnen, Ihre App zur Handhabung der Unternehmensdaten, die von der Windows Information Protection (WIP)-Richtlinie verwaltet werden, sowie von persönlichen Daten zu optimieren.
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: Entwicklerhandbuch für Windows Information Protection (WIP)
+title: Entwicklerhandbuch zu Windows Information Protection (WIP)
 ms.date: 06/21/2017
 ms.topic: article
-keywords: Windows 10, UWP, WIP, Windows Information Protection, Unternehmensdaten, Unternehmensdatenschutz, edp, optimierte Apps
+keywords: Windows 10, UWP, WIP, Windows Information Protection, Unternehmensdaten, Unternehmens Datenschutz, EDP, aktivierte apps
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d026c00b1aec4fd8e80b10c0b86c8bd8145f925
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d6454fdf63fb757c703ec31dba46a86e2a46aec6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258598"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163254"
 ---
-# <a name="windows-information-protection-wip-developer-guide"></a>Entwicklerhandbuch für Windows Information Protection (WIP)
+# <a name="windows-information-protection-wip-developer-guide"></a>Entwicklerhandbuch zu Windows Information Protection (WIP)
 
 Eine *optimierte* App unterscheidet zwischen Firmen- oder persönlichen Daten und weiß, welche sie schützen soll, basierend auf Windows Information Protection (WIP)-Richtlinien, die vom Administrator definiert werden.
 
 In diesem Handbuch zeigen wir Ihnen, wie eine erstellt wird. Wenn Sie fertig sind, werden Richtlinienadministratoren Ihrer App vertrauen, Daten für ihre Organisation zu verwenden. Und Mitarbeiter schätzen es, dass ihre persönlichen Daten auf den Geräten unangetastet bleiben, auch wenn sie die Registrierung des Geräts in der mobilen Geräteverwaltung (Mobile Device Management, MDM) aufheben oder das Unternehmen ganz verlassen.
 
-__Hinweis:__ Dieses Handbuch hilft Ihnen beim Optimieren einer UWP-App. Wenn Sie eine C++-Windows-Desktop-App optimieren möchten, lesen Sie die Informationen unter [Entwicklerhandbuch für Windows Information Protection (WIP) (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN).
+__Hinweis__ Dieses Handbuch unterstützt Sie beim aufklären einer UWP-app. Wenn Sie eine C++-Windows-Desktop-App aufklären möchten, finden Sie weitere Informationen im [Entwicklerhandbuch zu Windows Information Protection (WIP) (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide).
 
 Weitere Informationen zu WIP und optimierten Apps hier: [Windows Information Protection (WIP)](wip-hub.md).
 
@@ -33,9 +33,9 @@ Wenn Sie bereit sind, die einzelnen Aufgaben durchzugehen, lassen Sie uns starte
 
 Sie benötigen Folgendes:
 
-* Einen virtuellen Testcomputer mit Windows 10, Version 1607, oder höher. Sie debuggen Ihre App unter Verwendung dieses virtuellen Testcomputers.
+* Ein virtueller Testcomputer (Virtual Machine, VM), auf dem Windows 10, Version 1607 oder höher, ausgeführt wird. Sie debuggen Ihre App unter Verwendung dieses virtuellen Testcomputers.
 
-* Einen Entwicklungscomputer mit Windows 10, Version 1607, oder höher. Dies kann Ihr virtueller Testcomputer sein, wenn Visual Studio darauf installiert ist.
+* Einen Entwicklungs Computer, auf dem Windows 10, Version 1607 oder höher, ausgeführt wird. Dies kann Ihr virtueller Testcomputer sein, wenn Visual Studio darauf installiert ist.
 
 ## <a name="setup-your-development-environment"></a>Richten Sie Ihre Entwicklungsumgebung ein.
 
@@ -49,7 +49,7 @@ Sie führen folgende Schritte aus:
 
 * [Remote Debuggen einrichten](#setup-remote-debugging)
 
-* [Hinzufügen von Namespaces zu Ihren Code Dateien](#add-namespaces)
+* [Fügen Sie die Namespaces zu Ihren Codedateien hinzu.](#add-namespaces)
 
 <a id="install-assistant" />
 
@@ -61,7 +61,7 @@ Sie führen folgende Schritte aus:
 
 <a id="create-protection-policy" />
 
-### <a name="create-a-protection-policy"></a>Erstellen Sie eine Schutzrichtlinie.
+### <a name="create-a-protection-policy"></a>Erstellen einer Schutzrichtlinie
 
 Definieren Sie die Richtlinie, indem Sie in jedem Abschnitt des WIP Setup Developer Assistant Informationen eingeben. Um mehr über die Verwendung der einzelnen Einstellungen zu erfahren, wählen Sie das daneben angezeigte Hilfesymbol aus.
 
@@ -77,12 +77,12 @@ Allgemeine Informationen zur Verwendung dieses Tools finden Sie im Abschnitt „
 
     ![UWP-Erweiterungen hinzufügen](images/extensions.png)
 
-3. Fügen Sie diese Funktion der Paketmanifestdatei hinzu:
+3. Fügen Sie diese Funktion Ihrer Paket Manifest-Datei hinzu:
 
     ```xml
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >*Optionale Info*: Das Präfix „Rescap“ bedeutet *eingeschränkte Funktion*. Siehe [Spezielle und eingeschränkte Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+   >*Optionale Info*: Das Präfix „Rescap“ bedeutet *eingeschränkte Funktion*. Siehe [Spezielle und eingeschränkte Funktionen](../packaging/app-capability-declarations.md).
 
 4. Fügen Sie diesen Namespace der Paketmanifestdatei hinzu:
 
@@ -103,7 +103,7 @@ Allgemeine Informationen zur Verwendung dieses Tools finden Sie im Abschnitt „
 
 Installieren Sie Visual Studio-Remotetools auf Ihrem virtuellen Testcomputer nur dann, wenn Sie Ihre App auf einem anderem Computer als einem virtuellen Computer entwickeln. Starten Sie den Remotedebugger auf dem Entwicklungscomputer, und überprüfen Sie, ob Ihre App auf dem virtuellen Testcomputer ausgeführt wird.
 
-Siehe [Anweisungen zu Remote-PCs](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+Siehe [Anweisungen zu Remote-PCs](../debug-test-perf/deploying-and-debugging-uwp-apps.md).
 
 <a id="add-namespaces" />
 
@@ -131,9 +131,9 @@ using Windows.Foundation.Metadata;
 using Windows.Web.Http.Headers;
 ```
 
-## <a name="determine-whether-to-use-wip-apis-in-your-app"></a>Bestimmen Sie, ob WIP-APIs in Ihrer App verwendet werden sollen.
+## <a name="determine-whether-to-use-wip-apis-in-your-app"></a>Bestimmen, ob WIP-APIs in Ihrer APP verwendet werden sollen
 
-Stellen Sie sicher, dass das Betriebssystem, das Ihre App ausführt, WIP unterstützt und WIP auf dem Gerät aktiviert ist.
+Stellen Sie sicher, dass das Betriebssystem, mit dem Ihre APP ausgeführt wird, WIP unterstützt und WIP auf dem Gerät aktiviert ist.
 
 ```csharp
 bool use_WIP_APIs = false;
@@ -149,26 +149,26 @@ else
     use_WIP_APIs = false;
 }
 ```
-Rufen Sie keine WIP-APIs auf, wenn das Betriebssystem WIP nicht unterstützt oder WIP nicht auf dem Gerät aktiviert ist.
+Die WIP-APIs werden nicht aufgerufen, wenn das Betriebssystem WIP nicht unterstützt, oder WIP nicht auf dem Gerät aktiviert ist.
 
 ## <a name="read-enterprise-data"></a>Lesen von Unternehmensdaten
 
-Ihre App muss Zugriff anfordern, um geschützte Dateien, Netzwerkendpunkte, Daten aus der Zwischenablage und Daten zu lesen, die Sie von einem Freigabe-Vertrag akzeptieren.
+Um geschützte Dateien, Netzwerk Endpunkte, Zwischenablage Daten und Daten zu lesen, die Sie aus einem Freigabe Vertrag akzeptieren, muss Ihre APP Zugriff anfordern.
 
-Windows Information Protection erteilt Ihrer App die Berechtigung, wenn Ihre App in der Liste der zugelassenen Apps der Schutzrichtlinie enthalten ist.
+Windows Information Protection erteilt Ihrer APP die Berechtigung, wenn Ihre APP in der Liste der zulässigen Schutzrichtlinien enthalten ist.
 
 **In diesem Abschnitt:**
 
 * [Lesen von Daten aus einer Datei](#read-file)
-* [Lesen von Daten aus einem Netzwerk Endpunkt](#read-network)
-* [Lesen von Daten aus der Zwischenablage](#read-clipboard)
-* [Lesen von Daten aus einem Freigabe Vertrag](#read-share)
+* [Lesen Sie Daten von einem Netzwerkendpunkt aus](#read-network)
+* [Daten aus der Zwischenablage lesen](#read-clipboard)
+* [Lesen von Daten aus einem Freigabe-Vertrag](#read-share)
 
 <a id="read-file" />
 
 ### <a name="read-data-from-a-file"></a>Lesen von Daten aus einer Datei
 
-**Schritt 1: Datei Handle erhalten**
+**Schritt 1: Dateihandle herunterladen**
 
 ```csharp
     Windows.Storage.StorageFolder storageFolder =
@@ -178,9 +178,9 @@ Windows Information Protection erteilt Ihrer App die Berechtigung, wenn Ihre App
         await storageFolder.GetFileAsync(fileName);
 ```
 
-**Schritt 2: bestimmen, ob die APP die Datei öffnen kann**
+**Schritt 2: Stellen Sie fest, ob Ihre App die Datei öffnen kann**
 
-Rufen Sie [FileProtectionManager.GetProtectionInfoAsync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync) auf, um festzustellen, ob Ihre App die Datei öffnen kann.
+Überprüfen Sie [fileschutzmanager. getschutzinfoasync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync) , um zu bestimmen, ob Ihre APP die Datei öffnen kann.
 
 ```csharp
 FileProtectionInfo protectionInfo = await FileProtectionManager.GetProtectionInfoAsync(file);
@@ -197,25 +197,25 @@ else if (protectionInfo.Status == FileProtectionStatus.Revoked)
 }
 ```
 
-Ein [FileProtectionStatus](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionstatus)-Wert von **Geschützt** bedeutet, dass die Datei geschützt ist und Ihre App sie öffnen kann, da Ihre App in der Liste der zugelassenen Apps der Richtlinie enthalten ist.
+Der [fileschutzstatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus) -Wert **Protected** bedeutet, dass die Datei geschützt ist und Ihre APP Sie öffnen kann, da ihre app in der Liste der zulässigen Richtlinien enthalten ist.
 
-Ein [FileProtectionStatus](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionstatus)-Wert von **Ungeschützt** bedeutet, dass die Datei nicht geschützt ist, und Ihre App die Datei sogar öffnen kann, wenn Sie nicht in der Liste der zugelassenen Apps der Richtlinie enthalten ist.
+Der [fileschutzstatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus) -Wert **ungeschützt** bedeutet, dass die Datei nicht geschützt ist und die APP die Datei öffnen kann, auch wenn Ihre APP nicht in der Liste der zulässigen Richtlinien enthalten ist.
 
 > **APIs** <br>
-[Fileschutzmanager. getschutzinfoasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync)<br>
-[Fileschutzinfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectioninfo)<br>
-[Fileschutzstatus](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
-[Schutzpolicymanager. isidentitymanaged](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)
+[FileProtectionManager.GetProtectionInfoAsync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync)<br>
+[Fileschutzinfo](/uwp/api/windows.security.enterprisedata.fileprotectioninfo)<br>
+[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
+[ProtectionPolicyManager.IsIdentityManaged](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)
 
-**Schritt 3: Lesen der Datei in einen Stream oder Puffer**
+**Schritt 3: Lesen Sie die Datei in einen Datenstrom oder Puffer ein**
 
-*Datei in einen Stream lesen*
+*Lesen Sie die Datei in einen Datenstrom*
 
 ```csharp
 var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```
 
-*Datei in einen Puffer lesen*
+*Lesen Sie die Datei in einen Puffer*
 
 ```csharp
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
@@ -226,7 +226,7 @@ var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 
 Erstellen Sie einen geschützten Threadkontext zum Lesen aus einem Unternehmens-Endpunkt.
 
-**Schritt 1: erhalten der Identität des Netzwerk Endpunkts**
+**Schritt 1: Abrufen der Identität des Netzwerkendpunktes**
 
 ```csharp
 Uri resourceURI = new Uri("http://contoso.com/stockData.xml");
@@ -241,10 +241,10 @@ string identity = await ProtectionPolicyManager.
 Wenn der Endpunkt nicht mithilfe der Gruppenrichtlinie verwaltet wird, erhalten Sie einen leeren String zurück.
 
 > **APIs** <br>
-[Schutzpolicymanager. getprimarymanagedidentityfornetworkendpointasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync)
+[ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync)
 
 
-**Schritt 2: Erstellen eines geschützten Thread Kontexts**
+**Schritt 2: Erstellen eines geschützten Threadkontexts**
 
 Wenn der Endpunkt durch die Richtlinie verwaltet wird, erstellen Sie einen geschützten Threadkontext. Dadurch werden alle Netzwerkverbindungen markiert, die mit dieser Identität auf demselben Thread hergestellt werden.
 
@@ -264,18 +264,18 @@ else
     return await GetDataFromNetworkRedirectHelperMethod(resourceURI);
 }
 ```
-Dieses Beispiel umschließt Socket-Aufrufe in einem ``using``-Block. Wenn Sie dies nicht tun, stellen Sie sicher, dass Sie den Threadkontext schließen, nachdem Sie die Ressource abgerufen haben. Siehe [ThreadNetworkContext.Close](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.threadnetworkcontext.close).
+Dieses Beispiel umschließt Socket-Aufrufe in einem ``using``-Block. Wenn Sie dies nicht tun, stellen Sie sicher, dass Sie den Threadkontext schließen, nachdem Sie die Ressource abgerufen haben. Siehe [ThreadNetworkContext.Close](/uwp/api/windows.security.enterprisedata.threadnetworkcontext.close).
 
 Erstellen Sie keine persönlichen Dateien auf geschützten Threads, da diese Dateien automatisch verschlüsselt werden.
 
-Die [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)-Methode gibt ein [**ThreadNetworkContext**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.threadnetworkcontext)-Objekt zurück, unabhängig davon, ob der Endpunkt durch die Richtlinie verwaltet wird. Wenn Ihre App persönliche und Unternehmensressourcen behandelt, rufen Sie [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) für alle Identitäten auf.  Nachdem Sie die Ressource erhalten haben, geben Sie den ThreadNetworkContext frei, um jedes Identitätstag des aktuellen Threads zu deaktivieren.
+Die [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)-Methode gibt ein [**ThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.threadnetworkcontext)-Objekt zurück, unabhängig davon, ob der Endpunkt durch die Richtlinie verwaltet wird. Wenn Ihre App persönliche und Unternehmensressourcen behandelt, rufen Sie [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) für alle Identitäten auf.  Nachdem Sie die Ressource erhalten haben, geben Sie den ThreadNetworkContext frei, um jedes Identitätstag des aktuellen Threads zu deaktivieren.
 
 > **APIs** <br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)<br>
-[Schutzpolicymanager. kreatecurrentthreadnetworkcontext](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)<br>
+[ProtectionPolicyManager.CreateCurrentThreadNetworkContext](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)
 
-**Schritt 3: Lesen der Ressource in einen Puffer**
+**Schritt 3: Lesen Sie die Ressource in einen Puffer**
 
 ```csharp
 private static async Task<IBuffer> GetDataFromNetworkHelperMethod(Uri resourceURI)
@@ -330,7 +330,7 @@ private static async Task<IBuffer> GetDataFromNetworkbyUsingHeaderHelperMethod(H
 }
 ```
 
-**Seiten Umleitungen verarbeiten**
+**Handle-Seite leitet weiter**
 
 In einigen Fällen leitet ein Webserver Datenverkehr auf eine aktuellere Version einer Ressource weiter.
 
@@ -380,18 +380,18 @@ private static async Task<IBuffer> GetDataFromNetworkRedirectHelperMethod(Uri re
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. getprimarymanagedidentityfornetworkendpointasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync)<br>
-[Schutzpolicymanager. kreatecurrentthreadnetworkcontext](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)<br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
+[ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync)<br>
+[ProtectionPolicyManager.CreateCurrentThreadNetworkContext](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)<br>
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
 
 <a id="read-clipboard" />
 
 ### <a name="read-data-from-the-clipboard"></a>Daten aus der Zwischenablage lesen
 
-**Berechtigung zum Verwenden von Daten aus der Zwischenablage**
+**Erhalten Sie die Berechtigung zum Verwenden von Daten aus der Zwischenablage**
 
-Zum Abrufen von Daten aus der Zwischenablage bitten Sie Windows um Erlaubnis. Verwenden Sie dazu [**DataPackageView.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.requestaccessasync) .
+Zum Abrufen von Daten aus der Zwischenablage bitten Sie Windows um Erlaubnis. Verwenden Sie dazu [**DataPackageView.RequestAccessAsync**](/uwp/api/windows.applicationmodel.datatransfer.datapackageview.requestaccessasync) .
 
 ```csharp
 public static async Task PasteText(TextBox textBox)
@@ -412,9 +412,9 @@ public static async Task PasteText(TextBox textBox)
 ```
 
 > **APIs** <br>
-[Datapackageview. requestaccessasync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.requestaccessasync)
+[DataPackageView.RequestAccessAsync](/uwp/api/windows.applicationmodel.datatransfer.datapackageview.requestaccessasync)
 
-**Ausblenden oder Deaktivieren von Funktionen, die Zwischenablage Daten verwenden**
+**Ausblenden oder Deaktivieren von Features, die Daten aus der Zwischenablage verwenden**
 
 Ermitteln Sie, ob die aktuelle Ansicht über die Berechtigung zum Abrufen von Daten, die sich in der Zwischenablage befinden, verfügt.
 
@@ -439,11 +439,11 @@ private bool IsClipboardAllowedAsync()
 ```
 
 > **APIs** <br>
-[Schutzpolicyevaluationresult](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult)<br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
+[ProtectionPolicyEvaluationResult](/uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult)<br>
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
 
-**Verhindern, dass Benutzer über ein Zustimmungs Dialogfeld aufgefordert werden**
+**Verhindern Sie, dass Benutzer mit einem Dialogfeld zur Zustimmung aufgefordert werden**
 
 Ein neues Dokument ist nicht *persönlich* oder *Unternehmen*. Es ist einfach neu. Wenn ein Benutzer Unternehmensdaten in die Datei einsetzt, setzt Windows Richtlinien durch und der Benutzer wird aufgefordert, einem Dialogfeld zuzustimmen. Dieser Code verhindert, dass dies geschieht. Es geht bei dieser Aufgabe nicht darum, Daten zu schützen. Es geht mehr darum, Benutzer davon abzuhalten, Dialogfelder zur Zustimmung zu sehen – in Fällen, in denen Ihre App ein völlig neues Element erstellt hat.
 
@@ -479,9 +479,9 @@ private async void PasteText(bool isNewEmptyDocument)
 ```
 
 > **APIs** <br>
-[Datapackageview. requestaccessasync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datapackageview.requestaccessasync)<br>
-[Schutzpolicyevaluationresult](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult)<br>
-[Schutzpolicymanager. tryapplyprocessuipolicy](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy)
+[DataPackageView.RequestAccessAsync](/uwp/api/windows.applicationmodel.datatransfer.datapackageview.requestaccessasync)<br>
+[ProtectionPolicyEvaluationResult](/uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult)<br>
+[ProtectionPolicyManager.TryApplyProcessUIPolicy](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy)
 
 <a id="read-share" />
 
@@ -535,9 +535,9 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. requestaccessasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.requestaccessasync)<br>
-[Schutzpolicyevaluationresult](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult)<br>
-[Schutzpolicymanager. tryapplyprocessuipolicy](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy)
+[Schutzpolicymanager. requestaccessasync](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.requestaccessasync)<br>
+[ProtectionPolicyEvaluationResult](/uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult)<br>
+[ProtectionPolicyManager.TryApplyProcessUIPolicy](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy)
 
 ## <a name="protect-enterprise-data"></a>Unternehmensdaten schützen
 
@@ -545,13 +545,13 @@ Schützen Sie Unternehmensdaten, die Ihre App verlassen. Daten verlassen Ihre Ap
 
 **In diesem Abschnitt:**
 
-* [Schützen von Daten, die in Seiten angezeigt werden](#protect-pages)
+* [Schützen Sie Daten, die auf Seiten angezeigt werden.](#protect-pages)
 * [Schützen von Daten in einer Datei als Hintergrundprozess](#protect-background)
-* [Schützen eines Teils einer Datei](#protect-part-file)
-* [Lesen des geschützten Teils einer Datei](#read-protected)
-* [Schützen von Daten in einem Ordner](#protect-folder)
-* [Schützen von Daten auf einem Netzwerk Endpunkt](#protect-network)
-* [Schützen von Daten, die Ihre APP über einen Freigabe Vertrag freigibt](#protect-share)
+* [Einen Teil einer Datei schützen](#protect-part-file)
+* [Lesen Sie den geschützten Teil einer Datei](#read-protected)
+* [Schützen Sie Daten in einem Ordner](#protect-folder)
+* [Schützen Sie Daten in einem Netzwerkendpunkt](#protect-network)
+* [Schützen Sie Daten, die Ihre App über einen Freigabe-Vertrag teilt](#protect-share)
 * [Schützen von Dateien, die Sie an einen anderen Speicherort kopieren](#protect-other-location)
 * [Unternehmensdaten schützen, wenn der Bildschirm des Geräts gesperrt ist](#protect-locked)
 
@@ -578,10 +578,10 @@ ProtectionPolicyManager.GetForCurrentView().Identity = String.Empty;
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
 
-**Tagprozess**
+**Markieren des Prozesses**
 
 Vorgehensweise, wenn alle Ansichten in der App mit nur einem Typ von Daten (persönlich oder Unternehmen) verwendet werden.
 
@@ -600,7 +600,7 @@ ProtectionPolicyManager.ClearProcessUIPolicy();
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. tryapplyprocessuipolicy](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy)
+[ProtectionPolicyManager.TryApplyProcessUIPolicy](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy)
 
 <a id="protect-file" />
 
@@ -608,7 +608,7 @@ ProtectionPolicyManager.ClearProcessUIPolicy();
 
 Erstellen Sie eine geschützte Datei, und schreiben Sie dann hinein.
 
-**Schritt 1: ermitteln, ob Ihre APP eine Unternehmens Datei erstellen kann**
+**Schritt 1: Ermitteln Sie, ob Ihre App eine Unternehmensdatei erstellen kann**
 
 Ihre App kann eine Unternehmensdatei erstellen, wenn der Identitätsstring durch die Richtlinie verwaltet wird und Ihre App sich auf der Liste der zulässigen Apps von dieser Richtlinie befindet.
 
@@ -617,10 +617,10 @@ Ihre App kann eine Unternehmensdatei erstellen, wenn der Identitätsstring durch
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. isidentitymanaged](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)
+[ProtectionPolicyManager.IsIdentityManaged](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)
 
 
-**Schritt 2: Erstellen Sie die Datei, und schützen Sie Sie in der Identität.**
+**Schritt 2: Erstellen Sie die Datei, und schützen Sie die Identität**
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -632,11 +632,11 @@ FileProtectionInfo fileProtectionInfo =
 ```
 
 > **APIs** <br>
-[Fileschutzmanager. protectasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.protectasync)
+[FileProtectionManager.ProtectAsync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.protectasync)
 
-**Schritt 3: Schreiben Sie diesen Stream oder Puffer in die Datei.**
+**Schritt 3: Schreiben Sie die Datenströme oder Puffer in die Datei**
 
-*Schreiben eines Streams*
+*Schreiben Sie einen Datenstrom*
 
 ```csharp
     if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
@@ -668,8 +668,8 @@ FileProtectionInfo fileProtectionInfo =
 ```
 
 > **APIs** <br>
-[Fileschutzinfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectioninfo)<br>
-[Fileschutzstatus](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
+[Fileschutzinfo](/uwp/api/windows.security.enterprisedata.fileprotectioninfo)<br>
+[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
 
 <a id="protect-background" />
 
@@ -679,7 +679,7 @@ Während der Bildschirm des Geräts gesperrt ist, kann dieser Code ausgeführt w
 
 Sie müssen einen Ansatz verwenden, der das Datei-Handle geöffnet hält, wenn Sie eine Datei erstellen.  
 
-**Schritt 1: ermitteln, ob Sie eine Unternehmens Datei erstellen können**
+**Schritt 1: Ermitteln Sie, ob Sie eine Unternehmensdatei erstellen können**
 
 Sie können eine Unternehmensdatei erstellen, wenn die Identität, die Sie verwenden, durch die Richtlinie verwaltet wird und Ihre App sich auf der Liste der zulässigen Apps dieser Richtlinie befindet.
 
@@ -688,11 +688,11 @@ if (!ProtectionPolicyManager.IsIdentityManaged(identity)) return false;
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. isidentitymanaged](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)
+[ProtectionPolicyManager.IsIdentityManaged](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)
 
-**Schritt 2: Erstellen Sie eine Datei, und schützen Sie Sie in der Identität.**
+**Schritt 2: Erstellen Sie eine Datei, und schützen Sie die Identität**
 
-Der [**FileProtectionManager.CreateProtectedAndOpenAsync**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync) erstellt eine geschützte Datei und hält das Datei-Handle geöffnet, während Sie einen Schreibvorgang ausführen.
+Der [**FileProtectionManager.CreateProtectedAndOpenAsync**](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync) erstellt eine geschützte Datei und hält das Datei-Handle geöffnet, während Sie einen Schreibvorgang ausführen.
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -703,9 +703,9 @@ ProtectedFileCreateResult protectedFileCreateResult =
 ```
 
 > **APIs** <br>
-[Fileschutzmanager. kreateprotectedandopenasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync)
+[FileProtectionManager.CreateProtectedAndOpenAsync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.createprotectedandopenasync)
 
-**Schritt 3: Schreiben eines Streams oder Puffers in die Datei**
+**Schritt 3: Schreiben Sie Datenströme oder Puffer in die Datei**
 
 Dieses Beispiel schreibt einen Datenstrom in eine Datei.
 
@@ -732,9 +732,9 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 ```
 
 > **APIs** <br>
-[Protectedfilekreateresult. schutzinfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectedfilecreateresult.protectioninfo)<br>
-[Fileschutzstatus](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
-[Protectedfilekreateresult. Stream](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectedfilecreateresult.stream)<br>
+[ProtectedFileCreateResult.ProtectionInfo](/uwp/api/windows.security.enterprisedata.protectedfilecreateresult.protectioninfo)<br>
+[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
+[ProtectedFileCreateResult.Datenstrom](/uwp/api/windows.security.enterprisedata.protectedfilecreateresult.stream)<br>
 
 <a id="protect-part-file" />
 
@@ -744,7 +744,7 @@ In den meisten Fällen ist es sauberer, Unternehmens- und persönliche Daten sep
 
 Verschlüsseln Sie die Unternehmensdaten, jedoch nicht die gesamte Datei. Auf diese Weise können Benutzer weiterhin mit der Datei arbeiten, selbst wenn sie von MDM aufgehoben werden oder ihre Unternehmensdatenzugriffsrechte widerrufen werden. Darüber hinaus sollte Ihre App den Überblick behalten, welche Daten sie verschlüsselt, damit bekannt ist, welche Daten zu schützen sind, wenn sie die Datei zurück in den Arbeitsspeicher liest.
 
-**Schritt 1: Hinzufügen von Unternehmensdaten zu einem verschlüsselten Stream oder Puffer**
+**Schritt 1: Hinzufügen von Unternehmensdaten zu einem verschlüsselten Datenstrom oder Puffer**
 
 ```csharp
 string enterpriseDataString = "<employees><employee><name>Bill</name><social>xxx-xxx-xxxx</social></employee></employees>";
@@ -759,11 +759,11 @@ enterpriseData= result.Buffer;
 ```
 
 > **APIs** <br>
-[Dataschutzmanager. protectasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.dataprotectionmanager.protectasync)<br>
-[Bufferprotectunprotectresult. Buffer](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.bufferprotectunprotectresult.buffer)
+[DataProtectionManager.ProtectAsync](/uwp/api/windows.security.enterprisedata.dataprotectionmanager.protectasync)<br>
+[BufferProtectUnprotectResult.Puffer](/uwp/api/windows.security.enterprisedata.bufferprotectunprotectresult.buffer)
 
 
-**Schritt 2: Hinzufügen personenbezogener Daten zu einem unverschlüsselten Stream oder Puffer**
+**Schritt 2: Hinzufügen von persönlichen Daten zu einem unverschlüsselten Datenstrom oder Puffer**
 
 ```csharp
 string personalDataString = "<recipies><recipe><name>BillsCupCakes</name><cooktime>30</cooktime></recipe></recipies>";
@@ -772,7 +772,7 @@ var personalData = Windows.Security.Cryptography.CryptographicBuffer.ConvertStri
     personalDataString, Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
 ```
 
-**Schritt 3: Schreiben von Datenströmen oder Puffern in eine Datei**
+**Schritt 3: Schreiben Sie Datenströme oder Puffer in eine Datei**
 
 ```csharp
 StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
@@ -797,7 +797,7 @@ using (var outputStream = stream.GetOutputStreamAt(0))
 }
 ```
 
-**Schritt 4: verfolgen Sie den Speicherort der Unternehmensdaten in der Datei.**
+**Schritt 4: Behalten Sie den Überblick über den Speicherort Ihrer Unternehmensdaten in der Datei**
 
 Ihre App ist dafür verantwortlich, die zum Unternehmen gehörigen Daten in der Datei im Blick zu behalten.
 
@@ -815,11 +815,11 @@ await Windows.Storage.FileIO.WriteTextAsync
 ```
 <a id="read-protected" />
 
-### <a name="read-the-protected-part-of-a-file"></a>Lesen Sie den geschützten Teil einer Datei.
+### <a name="read-the-protected-part-of-a-file"></a>Lesen Sie den geschützten Teil einer Datei
 
 Hier wird beschrieben, wie die Unternehmensdaten aus der Datei gelesen werden würde.
 
-**Schritt 1: erhalten Sie die Position der Unternehmensdaten in der Datei.**
+**Schritt 1: Abrufen der Position Ihrer Unternehmensdaten in der Datei**
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder =
@@ -841,7 +841,7 @@ uint endPosition =
     Convert.ToUInt16((doc.FirstChild.Attributes.GetNamedItem("end")).InnerText);
 ```
 
-**Schritt 2: Öffnen Sie die Datendatei, und stellen Sie sicher, dass Sie nicht geschützt ist.**
+**Schritt 2: Öffnen Sie die Datei, und stellen Sie sicher, dass sie nicht geschützt ist**
 
 ```csharp
 Windows.Storage.StorageFile dataFile =
@@ -855,11 +855,11 @@ if (protectionInfo.Status == FileProtectionStatus.Protected)
 ```
 
 > **APIs** <br>
-[Fileschutzmanager. getschutzinfoasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync)<br>
-[Fileschutzinfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectioninfo)<br>
-[Fileschutzstatus](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
+[FileProtectionManager.GetProtectionInfoAsync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync)<br>
+[Fileschutzinfo](/uwp/api/windows.security.enterprisedata.fileprotectioninfo)<br>
+[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus)<br>
 
-**Schritt 3: Lesen der Unternehmensdaten aus der Datei**
+**Schritt 3: Lesen Sie in den Unternehmensdaten aus der Datei.**
 
 ```csharp
 var stream = await dataFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -871,7 +871,7 @@ Windows.Storage.Streams.Buffer tempBuffer = new Windows.Storage.Streams.Buffer(5
 IBuffer enterpriseData = await stream.ReadAsync(tempBuffer, endPosition, InputStreamOptions.None);
 ```
 
-**Schritt 4: Entschlüsseln des Puffers, der Unternehmensdaten enthält**
+**Schritt 4: Entschlüsseln Sie den Puffer, der Unternehmensdaten enthält**
 
 ```csharp
 DataProtectionInfo dataProtectionInfo =
@@ -891,12 +891,12 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 ```
 
 > **APIs** <br>
-[Dataschutzinfo](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.dataprotectioninfo)<br>
-[Dataschutzmanager. getschutzinfoasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync)<br>
+[DataProtectionInfo](/uwp/api/windows.security.enterprisedata.dataprotectioninfo)<br>
+[DataProtectionManager.GetProtectionInfoAsync](/uwp/api/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync)<br>
 
 <a id="protect-folder" />
 
-### <a name="protect-data-to-a-folder"></a>Schützen Sie Daten in einem Ordner.
+### <a name="protect-data-to-a-folder"></a>Schützen Sie Daten in einem Ordner
 
 Sie können einen Ordner erstellen und diesen schützen. Auf diese Weise sind alle Elemente, die Sie zu diesem Ordner hinzufügen, automatisch geschützt.
 
@@ -924,18 +924,18 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 Stellen Sie sicher, dass der Ordner leer ist, bevor Sie ihn schützen. Es ist nicht möglich, einen Ordner zu schützen, der bereits Elemente enthält.
 
 > **APIs** <br>
-[Schutzpolicymanager. isidentitymanaged](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)<br>
-[Fileschutzmanager. protectasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.protectasync)<br>
-[Fileschutzinfo. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectioninfo.identity)<br>
-[Fileschutzinfo. Status](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectioninfo.status)
+[ProtectionPolicyManager.IsIdentityManaged](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged)<br>
+[FileProtectionManager.ProtectAsync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.protectasync)<br>
+[FileProtectionInfo.Identity](/uwp/api/windows.security.enterprisedata.fileprotectioninfo.identity)<br>
+[FileProtectionInfo.Status](/uwp/api/windows.security.enterprisedata.fileprotectioninfo.status)
 
 <a id="protect-network" />
 
-### <a name="protect-data-to-a-network-end-point"></a>Schützen Sie Daten in einem Netzwerkendpunkt.
+### <a name="protect-data-to-a-network-end-point"></a>Schützen Sie Daten in einem Netzwerkendpunkt
 
 Erstellen Sie einen geschützten Threadkontext zum Senden von Daten an einen Unternehmensendpunkt.  
 
-**Schritt 1: erhalten der Identität des Netzwerk Endpunkts**
+**Schritt 1: Abrufen der Identität des Netzwerkendpunktes**
 
 ```csharp
 Windows.Networking.HostName hostName =
@@ -946,9 +946,9 @@ string identity = await ProtectionPolicyManager.
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. getprimarymanagedidentityfornetworkendpointasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync)
+[ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getprimarymanagedidentityfornetworkendpointasync)
 
-**Schritt 2: Erstellen eines geschützten Thread Kontexts und Senden von Daten an den Netzwerk Endpunkt**
+**Schritt 2: Erstellen eines geschützten Threadkontexts und Senden von Daten an den Netzwerkendpunkt**
 
 ```csharp
 HttpClient client = null;
@@ -979,15 +979,15 @@ else
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)<br>
-[Schutzpolicymanager. kreatecurrentthreadnetworkcontext](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)<br>
+[ProtectionPolicyManager.CreateCurrentThreadNetworkContext](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext)
 
 <a id="protect-share" />
 
-### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>Schützen Sie Daten, die Ihre App über einen Freigabe-Vertrag teilt.
+### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>Schützen Sie Daten, die Ihre App über einen Freigabe-Vertrag teilt
 
-Wenn Benutzer Inhalt aus Ihrer App freigeben sollen, müssen Sie einen Freigabe-Vertrag implementieren und das Ereignis [**DataTransferManager.DataRequested**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) behandeln.
+Wenn Benutzer Inhalt aus Ihrer App freigeben sollen, müssen Sie einen Freigabe-Vertrag implementieren und das Ereignis [**DataTransferManager.DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) behandeln.
 
 Legen Sie in Ihrem Ereignishandler den Unternehmensidentitätskontext im Datenpaket fest.
 
@@ -1013,8 +1013,8 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)
 
 <a id="protect-other-location" />
 
@@ -1037,7 +1037,7 @@ private async void CopyProtectionFromOneFileToAnother
 ```
 
 > **APIs** <br>
-[Fileschützmanager. copyschutzasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync)<br>
+[FileProtectionManager.CopyProtectionAsync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync)<br>
 
 <a id="protect-locked" />
 
@@ -1045,9 +1045,9 @@ private async void CopyProtectionFromOneFileToAnother
 
 Entfernen Sie alle sensible Daten im Arbeitsspeicher, wenn das Gerät gesperrt wird. Wenn der Benutzer das Gerät entsperrt, kann Ihre App diese Daten wieder sicher hinzufügen.
 
-Behandeln des [**ProtectionPolicyManager.ProtectedAccessSuspending**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending) Ereignis, damit Ihre App weiß, wann der Bildschirm gesperrt ist. Dieses Ereignis wird nur ausgelöst, wenn der Administrator einen sicheren Datenschutz bei Sperre in den Richtlinien konfiguriert. Windows entfernt vorübergehend die Datenschutzschlüssel, welche auf dem Gerät bereitgestellt werden. Windows entfernt diese Schlüssel, um sicherzustellen, dass es keine nicht autorisierten Zugriffe auf verschlüsselte Daten gibt, wenn das Gerät gesperrt und möglicherweise nicht im Besitz des Besitzers ist.  
+Behandeln des [**ProtectionPolicyManager.ProtectedAccessSuspending**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending) Ereignis, damit Ihre App weiß, wann der Bildschirm gesperrt ist. Dieses Ereignis wird nur ausgelöst, wenn der Administrator einen sicheren Datenschutz bei Sperre in den Richtlinien konfiguriert. Windows entfernt vorübergehend die Datenschutzschlüssel, welche auf dem Gerät bereitgestellt werden. Windows entfernt diese Schlüssel, um sicherzustellen, dass es keine nicht autorisierten Zugriffe auf verschlüsselte Daten gibt, wenn das Gerät gesperrt und möglicherweise nicht im Besitz des Besitzers ist.  
 
-Behandeln des [**ProtectionPolicyManager.ProtectedAccessResumed**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed) Ereignis, damit Ihre App weiß, wann der Bildschirm entsperrt ist. Dieses Ereignis wird ausgelöst, unabhängig davon, ob der Administrator einen sicheren Datenschutz bei Sperre in den Richtlinien konfiguriert.
+Behandeln des [**ProtectionPolicyManager.ProtectedAccessResumed**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed) Ereignis, damit Ihre App weiß, wann der Bildschirm entsperrt ist. Dieses Ereignis wird ausgelöst, unabhängig davon, ob der Administrator einen sicheren Datenschutz bei Sperre in den Richtlinien konfiguriert.
 
 #### <a name="remove-sensitive-data-in-memory-when-the-screen-is-locked"></a>Entfernen Sie sensible Daten im Arbeitsspeicher, wenn der Bildschirm gesperrt wird
 
@@ -1087,19 +1087,19 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. protectedaccesssuspendieren](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending)<br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)</br>
-[Dataschutzmanager. protectasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.dataprotectionmanager.protectasync)<br>
-[Bufferprotectunprotectresult. Buffer](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.bufferprotectunprotectresult.buffer)<br>
-[Protectedaccesssuspendingeventargs. getdeferral](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectedaccesssuspendingeventargs.getdeferral)<br>
-[Deferral. Complete](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete)<br>
+[ProtectionPolicyManager.ProtectedAccessSuspending](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccesssuspending)<br>
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)</br>
+[DataProtectionManager.ProtectAsync](/uwp/api/windows.security.enterprisedata.dataprotectionmanager.protectasync)<br>
+[BufferProtectUnprotectResult.Puffer](/uwp/api/windows.security.enterprisedata.bufferprotectunprotectresult.buffer)<br>
+[ProtectedAccessSuspendingEventArgs.GetDeferral](/uwp/api/windows.security.enterprisedata.protectedaccesssuspendingeventargs.getdeferral)<br>
+[Deferral.Complete](/uwp/api/windows.foundation.deferral.complete)<br>
 
 #### <a name="add-back-sensitive-data-when-the-device-is-unlocked"></a>Fügen Sie wieder sensible Daten ein, wenn das Gerät entsperrt wurde
 
-[**Schutzpolicymanager. protectedaccessfort**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed) setzen wird ausgelöst, wenn das Gerät entsperrt wird und die Schlüssel auf dem Gerät wieder verfügbar sind.
+[**ProtectionPolicyManager.ProtectedAccessResumed**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed) wird ausgelöst, wenn das Gerät entsperrt ist und die Schlüssel wieder auf dem Geräts verfügbar sind.
 
-[**Protectedaccessresumedebug. Identities**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectedaccessresumedeventargs.identities) ist eine leere Sammlung, wenn der Administrator keinen sicheren Datenschutz unter Sperr Richtlinie konfiguriert hat.
+[**ProtectedAccessResumedEventArgs.Identities**](/uwp/api/windows.security.enterprisedata.protectedaccessresumedeventargs.identities) ist eine leere Collection, wenn der Administrator keinen sicheren Datenschutz bei Sperre in den Richtlinien konfiguriert hat.
 
 In diesem Beispiel erfolgt das Gegenteil der Aktionen des vorherigen Beispiels. Es entschlüsselt den Puffer, fügt Informationen dieses Puffers zum Textfeld hinzu und gibt anschließend den Puffer frei.
 
@@ -1124,15 +1124,15 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender,
 ```
 
 > **APIs** <br>
-[Schutzpolicymanager. protectedaccessfort gesetzt](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed)<br>
-[Schutzpolicymanager. getforcurrentview](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
-[Schutzpolicymanager. Identity](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager)</br>
-[Dataschutzmanager. unprotectasync](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.dataprotectionmanager.unprotectasync)<br>
-[Bufferprotectunprotectresult. Status](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.bufferprotectunprotectresult)<br>
+[ProtectionPolicyManager.ProtectedAccessResumed](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed)<br>
+[ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
+[ProtectionPolicyManager.Identity](/uwp/api/windows.security.enterprisedata.protectionpolicymanager)</br>
+[DataProtectionManager.UnprotectAsync](/uwp/api/windows.security.enterprisedata.dataprotectionmanager.unprotectasync)<br>
+[PufferProtectUnprotectResult.Status](/uwp/api/windows.security.enterprisedata.bufferprotectunprotectresult)<br>
 
 ## <a name="handle-enterprise-data-when-protected-content-is-revoked"></a>Behandeln Sie Unternehmensdaten, wenn der geschützte Inhalt verweigert wird
 
-Wenn Ihre App benachrichtigt werden soll, wenn ein Gerät von MDM aufgehoben ist oder wenn der Richtlinien-Administrator explizit den Zugriff auf Unternehmensdaten widerruft, behandeln Sie das [**ProtectionPolicyManager_ProtectedContentRevoked**](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked)-Ereignis.
+Wenn Ihre App benachrichtigt werden soll, wenn ein Gerät von MDM aufgehoben ist oder wenn der Richtlinien-Administrator explizit den Zugriff auf Unternehmensdaten widerruft, behandeln Sie das [**ProtectionPolicyManager_ProtectedContentRevoked**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked)-Ereignis.
 
 In diesem Beispiel wird bestimmt, ob die Daten in einem Unternehmenspostfach für eine E-Mail-App gesperrt wurden.
 
@@ -1159,8 +1159,8 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 ```
 
 > **APIs** <br>
-[ProtectionPolicyManager_ProtectedContentRevoked](https://docs.microsoft.com/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked)<br>
+[ProtectionPolicyManager_ProtectedContentRevoked](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked)<br>
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-[Windows Information Protection-Beispiel (WIP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)
+[Windows Information Protection (WIP)-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)

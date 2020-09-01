@@ -1,20 +1,20 @@
 ---
-title: Funktionsweise der x86- und ARM32-Emulation auf ARM
-description: Eine Übersicht über die Emulation von x86-Apps auf ARM.
+title: Funktionsweise der x86-und ARM32-Emulation auf Arm
+description: Erfahren Sie, wie die Emulation für x86-apps das umfangreiche Ökosystem vorhandener Win32-apps auf Arm-Geräten bereitstellt.
 ms.date: 02/15/2018
 ms.topic: article
-keywords: windows 10 s, always connected, x86-emulation of ARM
+keywords: Windows 10 s, immer verbunden, x86-Emulation auf Arm
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af6ba39468dd16a043040b797a03c862d6ce7db
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 61d994a4a022da671b4141ded80c6235ae38bae6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319655"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162324"
 ---
 # <a name="how-x86-emulation-works-on-arm"></a>Funktionsweise der x86-Emulation auf ARM
-Emulation für x86-Anwendungen macht das reichhaltige Ökosystem von Win32-Anwendungen auf ARM verfügbar. Dies bietet dem Benutzer die einzigartige Erfahrung, eine bestehende x86 win32-App ohne Änderungen an der App auszuführen. Die App selbst weiß nicht einmal, dass sie unter Windows auf einem ARM-PC ausgeführt wird, es sei denn, sie ruft bestimmte APIs auf ([IsWoW64Process2](https://docs.microsoft.com/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2)).
+Die Emulation für x86-apps macht das umfangreiche Ökosystem von Win32-apps auf Arm verfügbar. Dadurch wird dem Benutzer die magische Darstellung der Ausführung einer vorhandenen x86-Win32-App ohne Änderungen an der App ermöglicht. Die APP weiß nicht einmal, dass Sie auf einem Windows auf Arm-PC ausgeführt wird, es sei denn, Sie ruft bestimmte APIs auf ([IsWoW64Process2](/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2)).
 
-Die [WOW64](https://docs.microsoft.com/windows/desktop/WinProg64/running-32-bit-applications)-Ebene von Windows 10 ermöglicht das Ausführen von x86-Code auf der ARM64-Version von Windows 10. Die x86-Emulation funktioniert durch Kompilieren von Blöcken von x86-Anweisungen in ARM64-Anweisungen mit Optimierungen zur Verbesserung der Leistung. Diese übersetzten Codeblöcke werden von einem Dienst zwischengespeichert, um den Aufwand der Befehlsübersetzung zu reduzieren und eine Optimierung zu ermöglichen, wenn der Code erneut ausgeführt wird. Die Caches werden für jedes Modul erstellt, so dass andere Apps sie beim ersten Start verwenden können. 
+Die [WOW64](/windows/desktop/WinProg64/running-32-bit-applications) -Ebene von Windows 10 ermöglicht das Ausführen von x86-Code in der ARM64-Version von Windows 10. bei der x86-Emulation werden Blöcke mit x86-Anweisungen in ARM64-Anweisungen mit Optimierungen kompiliert, um die Leistung zu verbessern. Ein Dienst speichert diese übersetzten Code Blöcke zwischen, um den mehr Aufwand der Anweisungs Übersetzung zu verringern und die Optimierung zu ermöglichen, wenn der Code erneut ausgeführt wird. Die Caches werden für jedes Modul erstellt, sodass andere apps diese beim ersten Start verwenden können. 
 
-Weitere Informationen zu diesen Technologien, finden Sie im [Channel9-Video „Windows 10 auf ARM”](https://channel9.msdn.com/Events/Build/2017/P4171). 
+Weitere Informationen zu diesen Technologien finden Sie im Video zu [Windows 10 auf Arm](https://channel9.msdn.com/Events/Build/2017/P4171) channel9.

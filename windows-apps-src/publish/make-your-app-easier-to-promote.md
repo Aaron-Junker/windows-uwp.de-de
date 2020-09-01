@@ -1,50 +1,46 @@
 ---
-Description: Machen Sie auf Ihre App aufmerksam! Neben einer möglichst ansprechenden Gestaltung Ihrer App bieten sich einige weitere Methoden an, die das Bewerben Ihrer App im Microsoft Store und auf anderen Websites erleichtern und dazu beitragen, dass die App mehr Aufmerksamkeit erhält.
+Description: Machen Sie auf Ihre App aufmerksam! Abgesehen davon, dass Ihre APP am besten geeignet ist, können Sie dies tun, was Sie tun können, damit die Microsoft Store und anderen Websites Ihre APP veranschaulichen und Sie dabei unterstützen können.
 title: Einfacheres Bewerben Ihrer App
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP, werben, Werbung, Highlights, Showcase, Store
+keywords: Windows 10, UWP, Promotion, Promotion, vorgestellt, Showcase, Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ea3123ac5a971c42547f8542143b88a6f2a2ab4
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: c2503dbd6d585452c8bfec0ac217e2144a4da384
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63807407"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161904"
 ---
 # <a name="make-your-app-easier-to-promote"></a>Einfacheres Bewerben Ihrer App
 
 
-Machen Sie auf Ihre App aufmerksam! Neben einer möglichst ansprechenden Gestaltung Ihrer App bieten sich einige weitere Methoden an, die das Bewerben Ihrer App im Microsoft Store und auf anderen Websites erleichtern und dazu beitragen, dass die App mehr Aufmerksamkeit erhält.
+Machen Sie auf Ihre App aufmerksam! Abgesehen davon, dass Ihre APP am besten geeignet ist, können Sie dies tun, was Sie tun können, damit die Microsoft Store und anderen Websites Ihre APP veranschaulichen und Sie dabei unterstützen können.
 
 
-## <a name="microsoft-store-requirements-for-featured-apps"></a>Microsoft Store-Anforderungen für Apps
+## <a name="microsoft-store-requirements-for-featured-apps"></a>Microsoft Store Anforderungen für die vorgestellten Apps
 
-Im Microsoft Store werden verschiedene Apps nach Kategorie oder Thema angezeigt. Es gibt viel zu viele Apps, um alle anzubieten, und es besteht keine Garantie, dass Ihre App ausgewählt wird. Sie haben jedoch einige Möglichkeiten, dafür zu sorgen, dass Ihre App im Store beworben wird. Wenn diese Richtlinien beachten, wird das Bewerben Ihrer App in Rezensionen, sozialen Netzwerken und weiteren Medien auch für andere Personen einfacher.
+Die Microsoft Store zeigt verschiedene apps nach Kategorie oder Design gruppiert an. Es gibt viel zu viele Apps, um alle anzubieten, und es besteht keine Garantie, dass Ihre App ausgewählt wird. Sie haben jedoch einige Möglichkeiten, dafür zu sorgen, dass Ihre App im Store beworben wird. Wenn Sie diese Richtlinien befolgen, können auch andere Benutzer ihre app in Reviews, sozialen Medien oder anderen Veranstaltungsorten unterstützen.
 
--   **Sind gute Screenshots und Bilder**
+-   **Tolle Screenshots und Bilder einschließen**
 
-    Bei der Präsentation von Apps können [App-Screenshots und -Bilder](app-screenshots-and-images.md) im Microsoft Store in verschiedenen Layouts angezeigt werden. Erstellen Sie ansprechende Screenshots, die Ihre App optimal darstellen, und stellen Sie sicher, dass der erste Screenshot besonders aussagekräftig und attraktiv ist. Sie können verschiedene Gruppen von Bildschirmfotos anzeigen, um zu sehen, wie die App für jeden Gerätetyp aussieht, der sie unterstützt.
+    Bei der Verwendung von Apps können die Microsoft Store Ihre [App-Screenshots und Bilder](app-screenshots-and-images.md) in verschiedenen Layouts verwenden. Erstellen Sie ansprechende Screenshots, die Ihre App optimal darstellen, und stellen Sie sicher, dass der erste Screenshot besonders aussagekräftig und attraktiv ist. Sie können unterschiedliche Sätze von Screenshots bereitstellen, um anzuzeigen, wie die APP auf jedem unterstützten Gerätetyp aussieht.
 
-    Um Ihre Wahrscheinlichkeit zu maximieren, dass Ihre App im Store angezeigt wird, geben Sie alle erforderlichen Bilder in die Abschnitte **Store Logos** und **Zusätzliche Grafikobjekte** Ihres Store-Eintrags ein. Die **9:16 Poster Art (720 x 1080 oder 1440 × 2160 in Pixel)** und **16:9 Superheld Art (Pixel 1920 × 1080 oder 3840 × 2160)** Images sind besonders wichtig. Wenn Ihre App die Xbox und/oder Hologramm-Gerätefamilie unterstützt, wird empfohlen, alle erforderlichen Bilder auch für diese Gerätefamilien bereitstellen. Weitere Informationen und Richtlinien finden Sie unter [App-Screenshots, Bilder und Trailer](app-screenshots-and-images.md).
+    Um die Wahrscheinlichkeit Ihrer APP im Store zu maximieren, geben Sie alle anwendbaren Images in den Abschnitten **Store-Logos** und **zusätzliche Kunstobjekte** ihrer Store-Liste an. Das **9:16-Poster-Grafik-(720 x 1080 oder 1440 x 2160 Pixel)** und **16:9 Superhero-Kunst (1920 x 1080 oder 3840 x 2160 Pixel)** sind besonders wichtig. Wenn Ihre APP die Xbox-und/oder Holographic-Gerätefamilie unterstützt, empfiehlt es sich, für diese Gerätefamilien auch alle anwendbaren Images bereitzustellen. Weitere Informationen und Richtlinien finden Sie unter [App-Screenshots, Bilder und](app-screenshots-and-images.md)Nachspann.
 
--   **Erstellen Sie eine Version Ihrer app, nicht auf eine kostenlose Version und eine unterschiedliche kostenpflichtige version**
+-   **Erstellen Sie nur eine Version Ihrer App, nicht eine kostenlose Version und eine separate kostenpflichtige Version**
 
-    Anstatt separate kostenlose und kostenpflichtige Versionen derselben App zu veröffentlichen, bieten Sie eine kostenlose Testversion Ihrer kostenpflichtigen Version an. Alternativ können Sie anstatt einer kostenpflichtigen Version eine kostenlose Version mit Add-Ons zum Hinzufügen zusätzlicher Funktionen anbieten. Auf diese Weise kann ein einziger Eintrag zu Ihrer App für alle Kunden zur Verfügung gestellt werden, unabhängig davon, ob diese sich nur für kostenlose Downloads interessieren oder zum Kauf einer App bereit sind.
+    Anstatt separate kostenlose und kostenpflichtige Versionen der gleichen APP zu veröffentlichen, bieten Sie eine kostenlose Testversion für Ihre kostenpflichtige app an, oder erstellen Sie eine kostenlose App, und bieten Sie Add-ons, damit Kunden erweiterte Funktionen erwerben können. Auf diese Weise verfügt Ihre APP über eine Auflistung, die für alle Kunden geeignet ist: diejenigen, die nur an kostenlosen Downloads interessiert sind, und diejenigen, die möglicherweise für einen Einkauf bereit sind.
 
--   **Auflisten der app in allen relevanten Märkte und Sprachen**
+-   **Anbieten Ihrer App in allen relevanten Märkten und Sprachen**
 
-    Durch das Einreichen Ihrer App an alle relevanten [Märkte](define-pricing-and-market-selection.md) können Sie eine breitere Abdeckung für Ihre App erzielen. Selbstverständlich sollten Sie sicherstellen, dass Ihre App geeignet ist und alle lokalen Richtlinien der ausgewählten Märkte erfüllt. Eine Lokalisierung des Inhalts Ihrer App und die Informationen über den Store-Eintrag in möglichst vielen [Sprachen](supported-languages.md) ist ebenfalls hilfreich.
+    Durch das Einreichen Ihrer App an alle relevanten [Märkte](./define-market-selection.md) können Sie eine breitere Abdeckung für Ihre App erzielen. Selbstverständlich sollten Sie sicherstellen, dass Ihre App geeignet ist und alle lokalen Richtlinien der ausgewählten Märkte erfüllt. Die Lokalisierung der Inhalte Ihrer APP und die Speicherung von Listen Informationen in weitere [Sprachen](supported-languages.md) können ebenfalls hilfreich sein.
 
--   **Aktivieren Sie die Filter für apps, die mit 16 + und 18 +-Inhalt**
+-   **Aktivieren Sie Filter für Apps, deren Inhalt nur für eine Zielgruppe über 16 bzw. 18 Jahren geeignet ist.**
 
-    In den meisten Fällen werden Apps, deren Inhalt nur für eine Zielgruppe über 16 Jahren geeignet ist, im Microsoft Store nicht beworben, es sei denn, die App enthält einen Inhaltsfilter, damit alle für eine Zielgruppe über 16 Jahren geeigneten Inhalte ausgeblendet sind, bis Benutzer sie ausdrücklich anzeigen. Der Inhaltsfilter sollte standardmäßig aktiviert, kennwortgeschützt und in der App (nicht auf einer separaten Website) verfügbar sein.
+    In den meisten Fällen werden bei der Microsoft Store keine apps mit mehr als 16 Inhalten in Erwägung gezogen, es sei denn, die APP verwendet die Inhalts Filterung, sodass Inhalte, die nur für das Alter 16 + geeignet sind, für Benutzer ausgeblendet werden, bis Sie explizit angezeigt werden. Der Inhaltsfilter sollte standardmäßig aktiviert, kennwortgeschützt und in der App (nicht auf einer separaten Website) verfügbar sein.
 
 
 
  
-
-
-
-

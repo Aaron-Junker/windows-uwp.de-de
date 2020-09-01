@@ -1,21 +1,21 @@
 ---
 Description: Dieser Artikel stellt eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheits Szenarien für Windows-apps dar.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
-title: Barrierefreiheit im Überblick
+title: Übersicht zu Bedienungshilfen
 label: Accessibility overview
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 386ea9a5ea9b66b0756963da10f72c3dbed53ff9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a790af10f6cfc06029e269dba4c984a041932239
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969655"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163434"
 ---
-# <a name="accessibility-overview"></a>Barrierefreiheit im Überblick
+# <a name="accessibility-overview"></a>Übersicht zu Bedienungshilfen
 
 Dieser Artikel stellt eine Übersicht über die Konzepte und Technologien im Zusammenhang mit Barrierefreiheits Szenarien für Windows-apps dar.
 
@@ -43,7 +43,7 @@ Zudem können Sie mithilfe von Datenbindungs-, Stil- und Vorlagenfeatures die Un
 
 ## <a name="ui-automation"></a>Benutzeroberflächenautomatisierung
 
-Die Unterstützung der Barrierefreiheit stammt hauptsächlich aus der integrierten Unterstützung für das Microsoft-Benutzeroberflächenautomatisierungs-Framework. Diese Unterstützung wird mithilfe von Basisklassen und des integrierten Verhaltens der Klassenimplementierung für Steuerelementtypen sowie einer Schnittstellendarstellung der Anbieter-API für die Benutzeroberflächenautomatisierung bereitgestellt. Jede Steuerelementklasse verwendet als Benutzeroberflächenautomatisierungskonzepte Automatisierungspeers und Automatisierungsmuster, von denen die Rolle und der Inhalt des Steuerelements an die Benutzeroberflächenautomatisierungsclients gemeldet werden. Die App wird von der Benutzeroberflächenautomatisierung als Hauptfenster behandelt. Über das Benutzeroberflächenautomatisierungs-Framework ist der gesamte für die Barrierefreiheit relevante Inhalt des App-Fensters für einen Benutzeroberflächenautomatisierungsclient verfügbar. Weitere Informationen zur Benutzeroberflächenautomatisierung finden Sie unter [Übersicht über die Benutzeroberflächenautomatisierung](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-uiautomationoverview).
+Die Unterstützung der Barrierefreiheit stammt hauptsächlich aus der integrierten Unterstützung für das Microsoft-Benutzeroberflächenautomatisierungs-Framework. Diese Unterstützung wird mithilfe von Basisklassen und des integrierten Verhaltens der Klassenimplementierung für Steuerelementtypen sowie einer Schnittstellendarstellung der Anbieter-API für die Benutzeroberflächenautomatisierung bereitgestellt. Jede Steuerelementklasse verwendet als Benutzeroberflächenautomatisierungskonzepte Automatisierungspeers und Automatisierungsmuster, von denen die Rolle und der Inhalt des Steuerelements an die Benutzeroberflächenautomatisierungsclients gemeldet werden. Die App wird von der Benutzeroberflächenautomatisierung als Hauptfenster behandelt. Über das Benutzeroberflächenautomatisierungs-Framework ist der gesamte für die Barrierefreiheit relevante Inhalt des App-Fensters für einen Benutzeroberflächenautomatisierungsclient verfügbar. Weitere Informationen zur Benutzeroberflächenautomatisierung finden Sie unter [Übersicht über die Benutzeroberflächenautomatisierung](/windows/desktop/WinAuto/uiauto-uiautomationoverview).
 
 <span id="Assistive_technology"/>
 <span id="assistive_technology"/>
@@ -85,7 +85,7 @@ Es sind einige andere Automatisierungseigenschaften verfügbar (einschließlich 
 
 ## <a name="keyboard-support"></a>Tastaturunterstützung
 
-Um eine gute Tastaturunterstützung bereitzustellen, müssen Sie dafür sorgen, dass jeder Teil Ihrer Anwendung mit einer Tastatur verwendet werden kann. Wenn Ihre App hauptsächlich die Standardsteuerelemente und keine benutzerdefinierten Steuerelemente verwendet, ist das meiste schon getan. Das grundlegende XAML-Steuerelementmodell bietet integrierte Tastaturunterstützung, einschließlich Unterstützung für die TAB-Navigation, Texteingaben und steuerelementspezifischer Unterstützung. Die Elemente, die als Layoutcontainer dienen (z. B. Panels), verwenden die Layoutreihenfolge, um eine Standardaktivierreihenfolge festzulegen. Diese Reihenfolge ist häufig die richtige Aktivierreihenfolge zur barrierefreien Darstellung der UI. Wenn Sie die Steuerelemente [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) und [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) zum Anzeigen von Daten verwenden, bieten diese Steuerelemente eine integrierte Unterstützung für die Navigation mittels Pfeiltasten. Oder wenn Sie ein [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)-Steuerelement verwenden, werden die LEERTASTE oder EINGABETASTE bereits zur Schaltflächenaktivierung behandelt.
+Um eine gute Tastaturunterstützung bereitzustellen, müssen Sie dafür sorgen, dass jeder Teil Ihrer Anwendung mit einer Tastatur verwendet werden kann. Wenn Ihre App hauptsächlich die Standardsteuerelemente und keine benutzerdefinierten Steuerelemente verwendet, ist das meiste schon getan. Das grundlegende XAML-Steuerelementmodell bietet integrierte Tastaturunterstützung, einschließlich Unterstützung für die TAB-Navigation, Texteingaben und steuerelementspezifischer Unterstützung. Die Elemente, die als Layoutcontainer dienen (z. B. Panels), verwenden die Layoutreihenfolge, um eine Standardaktivierreihenfolge festzulegen. Diese Reihenfolge ist häufig die richtige Aktivierreihenfolge zur barrierefreien Darstellung der UI. Wenn Sie die Steuerelemente [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) und [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) zum Anzeigen von Daten verwenden, bieten diese Steuerelemente eine integrierte Unterstützung für die Navigation mittels Pfeiltasten. Oder wenn Sie ein [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)-Steuerelement verwenden, werden die LEERTASTE oder EINGABETASTE bereits zur Schaltflächenaktivierung behandelt.
 
 Weitere Informationen zu allen Aspekten der Tastaturunterstützung, einschließlich Aktivierreihenfolge und tastenbasierter Aktivierung oder Navigation, finden Sie unter [Barrierefreiheit der Tastaturnavigation](keyboard-accessibility.md).
 
@@ -95,7 +95,7 @@ Weitere Informationen zu allen Aspekten der Tastaturunterstützung, einschließl
 
 ## <a name="media-and-captioning"></a>Medien und Untertitelung
 
-Sie zeigen audiovisuelle Medien normalerweise über ein [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-Objekt an. Mit **MediaElement**-APIs steuern Sie die Medienwiedergabe. Stellen Sie aus Gründen der Barrierefreiheit Steuerelemente bereit, mit denen Benutzer die Medienwiedergabe nach Bedarf starten, anhalten oder beenden können. Gelegentlich umfassen Medien zusätzliche Komponenten, die für die Barrierefreiheit vorgesehen sind, z. B. Untertitelung oder alternative Audiospuren mit einer Sprachausgabe der Beschreibungen.
+Sie zeigen audiovisuelle Medien normalerweise über ein [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)-Objekt an. Mit **MediaElement**-APIs steuern Sie die Medienwiedergabe. Stellen Sie aus Gründen der Barrierefreiheit Steuerelemente bereit, mit denen Benutzer die Medienwiedergabe nach Bedarf starten, anhalten oder beenden können. Gelegentlich umfassen Medien zusätzliche Komponenten, die für die Barrierefreiheit vorgesehen sind, z. B. Untertitelung oder alternative Audiospuren mit einer Sprachausgabe der Beschreibungen.
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
@@ -127,7 +127,7 @@ Beim Entwerfen von Apps sollten Sie immer berücksichtigen, wie diese von Mensch
 
 In vielen Fällen können Sie wesentliche Informationen mithilfe mehrerer Techniken transportieren, um die Zielgruppe zu vergrößern. Sie können beispielsweise Informationen sowohl durch Symbole als auch mit Farbinformationen hervorheben, um farbenblinden Benutzern zu helfen, und Sie können visuelle Hinweise zusammen mit Soundeffekten verwenden, um Unterstützung für hörgeschädigte Benutzer bereitzustellen.
 
-Falls notwendig, können Sie alternative, barrierefreie UI-Elemente bereitstellen, durch die unwesentliche Elemente und Animationen vollständig entfernt werden, und weitere Vereinfachungen bereitstellen, um die Benutzererfahrung zu optimieren. Das folgende Codebeispiel zeigt, wie je nach Benutzereinstellung eine [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)-Instanz anstelle einer anderen angezeigt werden kann.
+Falls notwendig, können Sie alternative, barrierefreie UI-Elemente bereitstellen, durch die unwesentliche Elemente und Animationen vollständig entfernt werden, und weitere Vereinfachungen bereitstellen, um die Benutzererfahrung zu optimieren. Das folgende Codebeispiel zeigt, wie je nach Benutzereinstellung eine [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl)-Instanz anstelle einer anderen angezeigt werden kann.
 
 XAML
 
@@ -192,7 +192,7 @@ Weitere Informationen zum Ausweis der Barrierefreiheit und zum Veröffentlichen 
 
 ## <a name="assistive-technology-support-in-custom-controls"></a>Hilfstechnologieunterstützung in benutzerdefinierten Steuerelementen
 
-Beim Erstellen eines benutzerdefinierten Steuerelements empfehlen wir, dass Sie auch eine oder mehrere [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)-Unterklassen implementieren oder erweitern, um Unterstützung für Barrierefreiheit bereitzustellen. In einigen Fällen bietet die Automatisierungsunterstützung für Ihre abgeleitete Klasse eine ausreichende Grundfunktionalität, wenn Sie die gleiche Peerklasse verwenden, die von der Basissteuerungsklasse verwendet wurde. Sie müssen dies jedoch testen. Dennoch wird die Implementierung eines Peers als bewährte Methode empfohlen, damit der Peer den Namen der Klasse Ihrer neuen Steuerelementklasse richtig melden kann. Das Implementieren eines benutzerdefinierten Automatisierungspeers umfasst einige Schritte. Weitere Informationen finden Sie unter [benutzerdefinierte Automatisierungs Peers](custom-automation-peers.md).
+Beim Erstellen eines benutzerdefinierten Steuerelements empfehlen wir, dass Sie auch eine oder mehrere [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)-Unterklassen implementieren oder erweitern, um Unterstützung für Barrierefreiheit bereitzustellen. In einigen Fällen bietet die Automatisierungsunterstützung für Ihre abgeleitete Klasse eine ausreichende Grundfunktionalität, wenn Sie die gleiche Peerklasse verwenden, die von der Basissteuerungsklasse verwendet wurde. Sie müssen dies jedoch testen. Dennoch wird die Implementierung eines Peers als bewährte Methode empfohlen, damit der Peer den Namen der Klasse Ihrer neuen Steuerelementklasse richtig melden kann. Das Implementieren eines benutzerdefinierten Automatisierungspeers umfasst einige Schritte. Weitere Informationen finden Sie unter [Benutzerdefinierte Automatisierungspeers](custom-automation-peers.md).
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -200,12 +200,12 @@ Beim Erstellen eines benutzerdefinierten Steuerelements empfehlen wir, dass Sie 
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>Hilfstechnologie in Apps, die XAML/Microsoft DirectX Interop unterstützt
 
-Auf in einer XAML-Benutzeroberfläche gehostete Microsoft DirectX-Inhalte (mit [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) oder [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) kann standardmäßig nicht direkt zugegriffen werden. Im [Beispiel für SwapChainPanel-Beispiel für DirectX/XAML-Interoperabilität](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) wird veranschaulicht, wie Benutzeroberflächenautomatisierungs-Peers für den gehosteten DirectX-Inhalt erstellt werden. Diese Technik erlaubt den Zugriff auf den gehosteten Inhalt per Benutzeroberflächenautomatisierung.
+Auf in einer XAML-Benutzeroberfläche gehostete Microsoft DirectX-Inhalte (mit [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) oder [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) kann standardmäßig nicht direkt zugegriffen werden. Im [Beispiel für SwapChainPanel-Beispiel für DirectX/XAML-Interoperabilität](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample) wird veranschaulicht, wie Benutzeroberflächenautomatisierungs-Peers für den gehosteten DirectX-Inhalt erstellt werden. Diese Technik erlaubt den Zugriff auf den gehosteten Inhalt per Benutzeroberflächenautomatisierung.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-* [**Windows. UI. XAML. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [Entwerfen für Barrierefreiheit](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [**Windows.UI.Xaml.Automation**](/uwp/api/Windows.UI.Xaml.Automation)
+* [Entwerfen für Barrierefreiheit]()
 * [XAML-Beispiel für Barrierefreiheit](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
-* [Barrierefreiheit](accessibility.md)
+* [Bedienungshilfen](accessibility.md)
 * [Einstieg in die Sprachausgabe](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

@@ -1,37 +1,37 @@
 ---
-Description: Erfahren Sie, wie Sie die leistungsstarke „Visits Tracking”-Funktion (besuchte Standorte) für eine praktischere Standortnachverfolgung verwenden können.
+Description: Hier erfahren Sie, wie Sie die leistungsstarke Funktion für die Nachverfolgung besuchter Standorte (Visits Tracking) für eine praktischere Standortnachverfolgung verwenden können.
 title: Richtlinien für die Verwendung von Visits Tracking
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 05/18/2017
 ms.topic: article
-keywords: Windows 10, UWP, Karte, Standort, Geovisit, geovisits
+keywords: Windows 10, UWP, map, Location, geovisit, geovisits
 ms.localizationpriority: medium
-ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640775"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162514"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>Richtlinien für die Verwendung von Visits Tracking
 
-Die Funktion Visits optimiert den Prozess der Standortnachverfolgung, um die praktische Erfahrung vieler Apps effizienter zu gestalten. Ein Besuch (Visit) wird als wichtiger geografischer Bereich definiert, den der Benutzer betritt und wieder verlässt. Besuche ähneln [Geofences](guidelines-for-geofencing.md) darin, dass die App benachrichtigt wird, wenn der Benutzer ein bestimmtes Interessengebiet betritt oder verlässt. Dies macht die kontinuierlichen Standortnachverfolgung überflüssig, die die Akkulaufzeit beeinträchtigt. Allerdings werden im Gegensatz zu Geofences die Bereiche eines Besuchs dynamisch auf der Plattform identifiziert und müssen nicht explizit durch einzelne Apps definiert werden. Außerdem wird die Auswahl der Besuche, die eine App aufzeichnet, durch eine einzelne Genauigkeitseinstellung behandelt und nicht durch das Abonnieren einzelner Orte.
+Die Funktion "Besuche" optimiert den Prozess der Standortüberwachung, um Sie für die praktischen Zwecke vieler apps effizienter zu gestalten. Ein Besuch wird als signifikanter geografischer Bereich definiert, den der Benutzer eingibt und verlässt. Besuche ähneln den [geozäunen](guidelines-for-geofencing.md) insofern, als Sie zulassen, dass die app nur benachrichtigt wird, wenn der Benutzer bestimmte relevante Bereiche eingibt oder verlässt. Dadurch entfällt die Notwendigkeit einer kontinuierlichen Positions Nachverfolgung, die die Akku Lebensdauer ausgleichen kann. Im Unterschied zu geozäunen werden die Bereiche jedoch dynamisch auf Platt Form Ebene identifiziert, und Sie müssen nicht explizit von einzelnen apps definiert werden. Außerdem wird die Auswahl, welche Besuche eine APP verfolgt, von einer einzelnen granularitätseinstellung behandelt, anstatt einzelne Orte zu abonnieren.
 
 ## <a name="preliminary-setup"></a>Vorläufige Einrichtung
 
-Bevor Sie fortfahren, stellen Sie sicher, dass Ihre App auf die Position des Geräts zugreifen kann. Sie müssen die `Location`-Funktion im Manifest angeben und die **[Geolocator.RequestAccessAsync](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)**-Methode aufrufen, um sicherzustellen, dass Benutzer der App Standortberechtigungen verleihen. Weitere Informationen hierzu finden Sie unter [Position des Benutzers abrufen](get-location.md). 
+Bevor Sie fortfahren, stellen Sie sicher, dass Ihre APP auf den Speicherort des Geräts zugreifen kann. Sie müssen die `Location` Funktion im Manifest deklarieren und die **[GeoLocator. requestaccessasync](/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** -Methode aufrufen, um sicherzustellen, dass Benutzer den App-Standort Berechtigungen erteilt werden. Weitere Informationen zur Vorgehensweise finden Sie unter [Get the User es Location](get-location.md) . 
 
-Denken Sie daran, Ihrer Klasse einen `Geolocation`-Namespace hinzuzufügen. Dies ist für die einwandfreie Ausführung aller Codeausschnitte in diesem Handbuch erforderlich.
+Denken Sie daran, den `Geolocation` Namespace zu ihrer Klasse hinzuzufügen. Dies wird benötigt, damit alle Code Ausschnitte in diesem Handbuch funktionieren.
 
 ```csharp
 using Windows.Devices.Geolocation;
 ```
 
-## <a name="check-the-latest-visit"></a>Überprüfen Sie den neusten Besuch
-Die einfachste Möglichkeit, die „Visits Tracking”-Funktion zu verwenden, ist die letzte bekannte Statusänderung abzurufen, die mit dem Besuch verbunden ist. Eine Statusänderung ist ein von der Plattform protokolliertes Ereignis, wobei der Benutzer entweder einen wichtigen Standort betritt/verlässt, seit dem letzten Bericht eine beträchtliche Veränderung geschah oder wenn der Standort des Benutzers verloren geht (Informationen finden Sie in der Enumeration **[VisitStateChange](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.visitstatechange)**). Statusänderungen werden durch **[Geovisit](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisit)**-Instanzen dargestellt. Um die **Geovisit**-Instanz der letzten aufgezeichneten Statusänderung aufzurufen, verwenden Sie einfach die dafür vorgesehene Methode in der **[GeovisitMonitor](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisitmonitor)**-Klasse.
+## <a name="check-the-latest-visit"></a>Überprüfen Sie den aktuellen Besuch.
+Die einfachste Möglichkeit, die Funktion zum Nachverfolgen von besuchen zu verwenden, ist das Abrufen der letzten bekannten Änderungs Zustandsänderung. Eine Statusänderung ist ein Platt Form protokolliertes Ereignis, bei dem der Benutzer einen Speicherort der Bedeutung eingibt oder verlässt, da seit dem letzten Bericht bedeutende Verschiebungen vorhanden sind oder der Speicherort des Benutzers verloren geht (siehe **[visitstatechange](/uwp/api/windows.devices.geolocation.visitstatechange)** Enum). Zustandsänderungen werden durch **[geovisit](/uwp/api/windows.devices.geolocation.geovisit)** -Instanzen dargestellt. Um die **geovisit** -Instanz für die zuletzt aufgezeichnete Zustandsänderung abzurufen, verwenden Sie einfach die angegebene Methode in der **[geovisitmonitor](/uwp/api/windows.devices.geolocation.geovisitmonitor)** -Klasse.
 
 > [!NOTE]
-> Das Überprüfen des letzten angemeldeten Besuchs garantiert nicht, dass alle Besuche derzeit vom System nachverfolgt werden. Um Besuche direkt nachzuverfolgen, müssen Sie diese entweder im Vordergrund überwachen oder sich für die Verfolgung von Hintergrundaufgaben anmelden (siehe unten).
+> Durch das Überprüfen des letzten angemeldeten Besuchs ist nicht sichergestellt, dass die Besuche aktuell vom System nachverfolgt werden. Um Besuche zu verfolgen, während Sie auftreten, müssen Sie Sie entweder im Vordergrund überwachen oder für die Hintergrund Verfolgung registrieren (siehe nachfolgende Abschnitte).
 
 ```csharp
 private async void GetLatestStateChange() {
@@ -44,8 +44,8 @@ private async void GetLatestStateChange() {
 }
 ```
 
-### <a name="parse-a-geovisit-instance-optional"></a>Analysieren einer Geovisit-Instanz (optional)
-Die folgende Methode konvertiert alle in einer **Geovisit**-Instanz gespeicherten Informationen in eine leicht lesbare Zeichenfolge. Dies kann in allen Szenarien dieses Handbuchs verwendet werden, um Feedback für die gemeldeten Besuche bereitzustellen.
+### <a name="parse-a-geovisit-instance-optional"></a>Analysieren einer geovisit-Instanz (optional)
+Mit der folgenden Methode werden alle in einer **geovisit** -Instanz gespeicherten Informationen in eine leicht lesbare Zeichenfolge konvertiert. Sie kann in jedem der Szenarien in dieser Anleitung verwendet werden, um Feedback für die gemeldeten Besuche bereitzustellen.
 
 ```csharp
 private string ParseGeovisit(Geovisit visit){
@@ -79,9 +79,9 @@ private string ParseGeovisit(Geovisit visit){
 }
 ```
 
-## <a name="monitor-visits-in-the-foreground"></a>Besuche im Vordergrund überwachen
+## <a name="monitor-visits-in-the-foreground"></a>Überwachen von besuchen im Vordergrund
 
-Die **GeovisitMonitor**-Klasse, die im vorherigen Abschnitt verwendet wurde, sorgt auch für das Szenario der Überwachung der Statusänderung in einem gewissen Zeitraum. Verwenden Sie hierzu die Instanziierung der Klasse, die Registrierung einer Handlermethode für das Ereignis und das Aufrufen der `Start`-Methode.
+Die im vorherigen Abschnitt verwendete **geovisitmonitor** -Klasse behandelt außerdem das Szenario der Überwachung von Zustandsänderungen über einen bestimmten Zeitraum. Dies können Sie erreichen, indem Sie diese Klasse instanziieren, eine Handlermethode für das zugehörige-Ereignis registrieren und die- `Start` Methode aufrufen.
 
 ```csharp
 // this GeovisitMonitor instance will belong to the class scope
@@ -102,7 +102,7 @@ public void RegisterForVisits() {
 }
 ```
 
-In diesem Beispiel übernimmt die `OnVisitStateChanged`-Methode eingehende Bericht über Besuche. Das entsprechende **Geovisit**-Instanz wird über den Ereignisparameter übergeben.
+In diesem Beispiel verarbeitet die- `OnVisitStateChanged` Methode eingehende Besuchsberichte. Die entsprechende **geovisit** -Instanz wird durch den Ereignis Parameter übergeben.
 
 ```csharp
 private void OnVisitStateChanged(GeoVisitWatcher sender, GeoVisitStateChangedEventArgs args) {
@@ -113,7 +113,7 @@ private void OnVisitStateChanged(GeoVisitWatcher sender, GeoVisitStateChangedEve
     // and the type of state change.
 }
 ```
-Wenn die App mit der Überwachung der Statusänderungen, die mit dem Besuch verbunden sind, fertig ist, sollte die Überwachung beendet werden und die Registrierung des Ereignishandlers aufgehoben werden. Dies sollte auch dann durchgeführt werden, wenn die App angehalten oder geschlossen wird.
+Wenn die APP das Überwachen von Änderungen im Zusammenhang mit dem Änderungs Status abgeschlossen hat, sollte Sie den Monitor beenden und die Registrierung der Ereignishandler aufheben. Dies sollte auch immer dann erfolgen, wenn die APP angehalten oder geschlossen wird.
 
 ```csharp
 public void UnregisterFromVisits() {
@@ -127,17 +127,17 @@ public void UnregisterFromVisits() {
 }
 ```
 
-## <a name="monitor-visits-in-the-background"></a>Besuche im Hintergrund überwachen
+## <a name="monitor-visits-in-the-background"></a>Überwachen von besuchen im Hintergrund
 
-Sie können ebenfalls die Überwachung der Besuche als Hintergrundaufgabe implementieren, damit die mit dem Besuch verbundene Aktivitäten auf dem Gerät auch dann verarbeitet werden kann, wenn Ihre App nicht geöffnet ist. Diese Methode wird empfohlen, da sie vielseitiger und energieeffizienter ist. 
+Sie können auch die Überwachung von Überwachungen in einer Hintergrundaufgabe implementieren, damit die besuchte Aktivität auch dann auf dem Gerät verarbeitet werden kann, wenn Ihre APP nicht geöffnet ist. Dies ist die empfohlene Methode, da Sie vielseitiger und energieeffizienter ist. 
 
-Dieses Handbuch verwendet das unter [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb des Prozesses](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) beschriebene Modell, in dem die Hauptanwendungsdateien sich in einem Projekt befindet und die Hintergrundaufgabendatei sich in einem separaten Projekt in der gleichen Lösung befindet. Wenn Sie nicht mit dem Implementieren von Hintergrundaufgaben vertraut sind, empfiehlt es sich, dass Sie dieser Anleitung vorwiegend folgen und die erforderlichen Ersetzungen durchführen, um eine Aufgabe als Hintergrundaufgabe zu erstellen, die die Besuche behandelt.
+In diesem Handbuch wird das Modell in [Erstellen und Registrieren eines Out-of-Process-Hintergrund](../launch-resume/create-and-register-a-background-task.md)Tasks verwendet, in dem die Haupt Anwendungs Dateien in einem Projekt und die Hintergrundaufgaben Datei in einem separaten Projekt in derselben Projekt Mappe gespeichert sind. Wenn Sie noch nicht mit der Implementierung von Hintergrundaufgaben vertraut sind, wird empfohlen, dass Sie diese Anleitung in erster Linie befolgen, indem Sie die unten aufgeführten Schritte durchführen, um eine Hintergrundaufgabe für die Hintergrundverarbeitung zu erstellen
 
 > [!NOTE]
-> In den folgenden Codeausschnitten wurden einige wichtige Funktionen wie z. B. die Fehlerbehandlung und das lokale Speichern aus Gründen der Einfachheit weggelassen. Eine robuste Implementierung der Behandlung der Besuche im Hintergrund finden Sie in der [Beispiel-App](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation).
+> In den folgenden Code Ausschnitten fehlen einige wichtige Funktionen, wie z. b. Fehlerbehandlung und lokaler Speicher, aus Gründen der Einfachheit. Eine robuste Implementierung der Verarbeitung von Hintergrund besuchen finden Sie in der [Beispiel-App](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation).
 
 
-Stellen Sie zunächst sicher, dass Ihre App die Berechtigung für Hintergrundaufgaben deklariert hat. Fügen Sie dem `Application/Extensions`-Element Ihrer *"Package.appxmanifest"*-Datei die folgende Erweiterung hinzu (fügen Sie ein `Extensions`-Element hinzu, wenn es nicht bereits existiert).
+Stellen Sie zunächst sicher, dass Ihre APP Berechtigungen für Hintergrundaufgaben deklariert hat. `Application/Extensions`Fügen Sie im-Element der Datei " *Package. appxmanifest* " die folgende Erweiterung hinzu (fügen Sie ein Element hinzu, `Extensions` Falls noch nicht vorhanden).
 
 ```xml
 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.VisitBackgroundTask">
@@ -147,7 +147,7 @@ Stellen Sie zunächst sicher, dass Ihre App die Berechtigung für Hintergrundauf
 </Extension>
 ```
 
-Fügen Sie als Nächstes in der Definition der Hintergrundaufgabenklasse folgenden Code hinzu. Die `Run`-Methode dieser Hintergrundaufgabe übergibt die Triggerdetails (die die Besuchsinformationen enthalten) ganz einfach an eine separate Methode.
+Fügen Sie als nächstes in der Definition der Hintergrundaufgaben Klasse den folgenden Code ein. Die- `Run` Methode dieser Hintergrundaufgabe übergibt einfach die Details des Auslösers (die die Besuchs Informationen enthalten) in eine separate Methode.
 
 ```csharp
 using Windows.ApplicationModel.Background;
@@ -175,7 +175,7 @@ namespace Tasks {
 }
 ```
 
-Definieren Sie die `GetVisitReports`-Methode an einer beliebigen Stelle in dieser Klasse.
+Definieren Sie die `GetVisitReports` Methode irgendwo in derselben Klasse.
 
 ```csharp
 private void GetVisitReports(GeovisitTriggerDetails triggerDetails) {
@@ -197,7 +197,7 @@ private void GetVisitReports(GeovisitTriggerDetails triggerDetails) {
 }
 ```
 
-Sie müssen als Nächstes im Hauptprojekt Ihrer App die Registrierung der Hintergrundaufgabe ausführen. Erstellen Sie eine Registrierungsmethode, die durch eine Benutzeraktion aufgerufen werden kann, oder jedes Mal aufgerufen wird, wenn die Klasse aktiviert wird.
+Als nächstes müssen Sie im Hauptprojekt Ihrer APP die Registrierung dieser Hintergrundaufgabe ausführen. Erstellen Sie eine Registrierungsmethode, die von einer Benutzeraktion aufgerufen werden kann oder jedes Mal aufgerufen wird, wenn die-Klasse aktiviert wird.
 
 ```csharp
 // a reference to this registration should be declared at the class level
@@ -264,11 +264,11 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 }
 ```
 
-Dadurch wird festgelegt, dass eine Hintergrundaufgabenklasse mit dem Namen `VisitBackgroundTask` im Namespace `Tasks` eine Aktion mit dem `location`-Triggertyp durchführt. 
+Dadurch wird festgelegt, dass eine Hintergrundaufgaben Klasse, `VisitBackgroundTask` die im-Namespace aufgerufen `Tasks` wird, mit dem `location` auslösertyp funktioniert. 
 
-Ihre App sollte nun das Registrieren der Hintergrundaufgabe für Besuche behandeln können, und diese Aufgabe sollte aktiviert werden, sobald das Gerät eine Änderung im Zusammenhang mit einem Besuch protokolliert. Sie müssen die Logik in Ihrer Hintergrundaufgabenklasse ausfüllen, welche Aktion mit dieser Zustandsänderungsinformation ausgeführt werden soll.
+Ihre APP sollte nun in der Lage sein, die Hintergrundaufgabe für die Besuchs Behandlung zu registrieren. diese Aufgabe sollte aktiviert werden, wenn das Gerät eine Besuchs bezogene Zustandsänderung protokolliert. Sie müssen die Logik in der Hintergrundaufgaben Klasse ausfüllen, um zu bestimmen, was mit diesen Zustands Änderungs Informationen zu tun ist.
 
-## <a name="related-topics"></a>Verwandte Themen
-* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+## <a name="related-topics"></a>Zugehörige Themen
+* [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](../launch-resume/create-and-register-a-background-task.md)
 * [Abrufen der Position eines Benutzers](get-location.md)
-* [Windows.Devices.Geolocation-namespace](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
+* [Windows. Devices. Geolokation-Namespace](/uwp/api/windows.devices.geolocation)

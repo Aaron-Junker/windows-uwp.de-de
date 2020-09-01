@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2532683c7f5762f35640ef7e80180827404cde73
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: b6ffbbb13646fe085fa81c99f4ecf45e328a01f7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943030"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164264"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>Kunden gewinnen und ihre apps bewerben
 
@@ -105,21 +105,21 @@ Durch native Anzeigen können Sie jede einzelne Komponente Ihrer Anzeige für di
 
 [Erstellen einer Anzeigenkampagne im Dashboard](create-an-ad-campaign-for-your-app.md)
 
-[Erstellen einer Anzeigenkampagne mithilfe unserer REST-API](https://docs.microsoft.com/windows/uwp/monetize/run-ad-campaigns-using-windows-store-services)
+[Erstellen einer Anzeigenkampagne mithilfe unserer REST-API](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
-[Überprüfen der Kampagnen-Leistungsdaten im Dashboard](promote-your-app-report.md)
+[Überprüfen der Kampagnen-Leistungsdaten im Dashboard](/windows/uwp/publish/ad-campaign-report)
 
-[Abrufen von Kampagnen-Leistungsdaten mithilfe unserer REST-API](https://docs.microsoft.com/windows/uwp/monetize/)
+[Abrufen von Kampagnen-Leistungsdaten mithilfe unserer REST-API](../monetize/index.md)
 
 ## <a name="promotion-analytics"></a>Werbeanalyse
 
 ![Werbeanalyse](images/ads-promotion-analytics.png)
 
-[Werbekampagnenbericht](promote-your-app-report.md)
+[Werbekampagnenbericht](/windows/uwp/publish/ad-campaign-report)
 
 [Bericht „Käufe“](acquisitions-report.md)
 
-[Analysedaten mithilfe unserer Rest-API](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+[Analysedaten mithilfe unserer Rest-API](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## <a name="other-ways-to-promote-your-app"></a>Weitere Möglichkeiten zum Bewerben Ihrer App
 

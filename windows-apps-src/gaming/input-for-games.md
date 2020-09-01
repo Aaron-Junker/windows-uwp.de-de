@@ -4,24 +4,24 @@ description: In diesem Abschnitt wird die Arbeit mit Gamepads und anderen Eingab
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Eingabe
+keywords: Windows 10, UWP, Games, Input
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0c9565f02356b776738bb325eb9a29e84582f4ad
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631665"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163094"
 ---
 # <a name="input-for-games"></a>Eingaben für Spiele
 
 In diesem Abschnitt werden die verschiedenen Arten von Eingabegeräten beschrieben, die in Spielen für die universelle Windows-Plattform (UWP) unter Windows 10 und auf Xbox One verwendet werden können. Darüber hinaus wird ihre grundlegende Nutzung veranschaulicht, und es werden Muster und Verfahren für die effektive Eingabeprogrammierung in Spielen empfohlen.
 
-> **Hinweis**    Es gibt weitere Arten von Eingabegeräten für den Einsatz in UWP-Spielen, z. B. benutzerdefinierte Eingabegeräte, die genre- oder spielspezifisch sein können. Diese Geräte und deren Programmierung werden in diesem Abschnitt nicht behandelt. Informationen zu den Schnittstellen, die die Bereitstellung benutzerdefinierter Eingabegeräte ermöglichen, finden Sie unter dem [Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)-Namespace.
+> **Hinweis**    Es gibt weitere Arten von Eingabegeräten für den Einsatz in UWP-Spielen, z. B. benutzerdefinierte Eingabegeräte, die genre- oder spielspezifisch sein können. Diese Geräte und deren Programmierung werden in diesem Abschnitt nicht behandelt. Informationen zu den Schnittstellen, die die Bereitstellung benutzerdefinierter Eingabegeräte ermöglichen, finden Sie unter dem [Windows.Gaming.Input.Custom](/uwp/api/windows.gaming.input.custom)-Namespace.
 
 ## <a name="gaming-input-devices"></a>Eingabegeräte für Spiele
 
-Eingabegeräte für Spiele werden in UWP-Spielen und -Apps für Windows 10 und Xbox One durch den [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)-Namespace unterstützt.
+Eingabegeräte für Spiele werden in UWP-Spielen und -Apps für Windows 10 und Xbox One durch den [Windows.Gaming.Input](/uwp/api/windows.gaming.input)-Namespace unterstützt.
 
 ### <a name="gamepads"></a>Gamepads
 
@@ -41,25 +41,25 @@ Rennlenkräder sind Eingabegeräte, die Benutzern das Gefühl vermitteln, in ein
 
 Informationen zur Verwendung von Rennlenkrädern in Ihrem UWP-Spiel finden Sie unter [Rennlenkräder und Kraftrückmeldung](racing-wheel-and-force-feedback.md).
 
-### <a name="flight-sticks"></a>Steuerknüppel
+### <a name="flight-sticks"></a>Flugsticks
 
-Flight-Sticks sind Spieleingabegeräte, die das Gefühl eines Steuerknüppels reproduzieren, der in Flugzeugen oder Raumschiffen benutzt wird. Sie sind das perfekte Eingabegerät für die schnelle und genaue Steuerung von Fluggeräten.
+Bei Flight Sticks handelt es sich um Gaming-Eingabegeräte, die das Gefühl der flugsticks reproduzieren, die im Cockpit einer Ebene oder des Netz Schiffs gefunden werden. Sie sind das perfekte Eingabegerät für die schnelle und exakte Kontrolle des Flugs.
 
-Weitere Informationen zu Flight-Sticks für Ihr UWP-Spiel finden Sie unter [Flight-Stick](flight-stick.md).
+Weitere Informationen zur Verwendung von flugsticks in Ihrem UWP-Spiel finden Sie unter [Flight Stick](flight-stick.md).
 
-### <a name="raw-game-controllers"></a>Unformatierte Gamecontroller
+### <a name="raw-game-controllers"></a>Rohspiel Controller
 
-Ein unformatierter Gamecontroller bietet eine generische Darstellung mit den typischen allgemeinen Eingaben eines Gamecontrollers. Diese Eingaben sind als einfache Arrays von unbenannten Schaltflächen, Hebeln und Knöpfen dargestellt. Mit einem unformatierten Gamecontroller kann ein Kunde benutzerdefinierte Eingabe-Zuordnungen erstellen, unabhängig von seinem verwendeten Controllertyp.
+Ein unformatierte Spielcontroller ist eine generische Darstellung eines Spiel Controllers, wobei Eingaben auf vielen unterschiedlichen Arten von gängigen Spiel Controllern gefunden werden. Diese Eingaben werden als einfache Arrays unbenannter Schaltflächen, Switches und Achsen verfügbar gemacht. Mithilfe eines unformatierten Spiel Controllers können Sie es Kunden ermöglichen, benutzerdefinierte Eingabe Zuordnungen zu erstellen, unabhängig davon, welche Art von Controller Sie verwenden.
 
-Weitere Informationen zu unformatierten Gamecontrollern für Ihr UWP-Spiel finden Sie unter [Unformatierte Gamecontroller](raw-game-controller.md).
+Weitere Informationen zur Verwendung von rohspiel Controllern in Ihrem UWP-Spiel finden Sie unter [RAW Game Controller](raw-game-controller.md).
 
-### <a name="ui-navigation-controllers"></a>Benutzeroberflächen-Navigationscontroller
+### <a name="ui-navigation-controllers"></a>UI-Navigations Controller
 
 Benutzeroberflächen-Navigationscontroller sind logische Eingabegeräte, die einen allgemeingültigen Befehlskontext für die Benutzeroberflächennavigation bieten. So wird bei unterschiedlichen Spielen und physischen Eingabegeräten eine einheitliche Benutzererfahrung gewährleistet. Für die Benutzeroberfläche eines Spiels sollten anstelle gerätespezifischer Schnittstellen die UINavigationController-Schnittstellen verwendet werden.
 
 Weitere Informationen zur Verwendung der Benutzeroberflächen-Navigationscontroller in UWP-Spielen finden Sie unter [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md).
 
-### <a name="headsets"></a>Headsets
+### <a name="headsets"></a>Lenkköpfe
 
 Headsets sind Geräte für die Audioaufnahme und -wiedergabe, die einem bestimmten Benutzer zugeordnet werden, wenn er über sein Eingabegerät verbunden ist. Sie werden häufig in Onlinespielen für Sprach-Chats verwendet, können jedoch auch die Immersion von Spielern verbessern oder Gameplayfeatures in Online- und Offlinespielen bereitstellen.
 
@@ -73,6 +73,6 @@ Weitere Informationen zur Verwaltung von Benutzern und ihren Eingabegeräten fin
 
 ## <a name="see-also"></a>Weitere Informationen
 
-* [Eingabe-Methoden für Spiele](input-practices-for-games.md)
-* [Windows.Gaming.Input-namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom-namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Eingabemethoden für Spiele](input-practices-for-games.md)
+* [Windows. Gaming. Input-Namespace](/uwp/api/windows.gaming.input)
+* [Windows. Gaming. Input. Custom-Namespace](/uwp/api/windows.gaming.input.custom)

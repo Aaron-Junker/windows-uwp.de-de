@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, Latency, DXGI, Austausch Ketten, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ecce9d95d3c2e852b049e3cac9579850022df9
-ms.sourcegitcommit: d2aabe027a2fff8a624111a00864d8986711cae6
+ms.openlocfilehash: 41d11865daadacf8ff90971836cab7cd941c4182
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82880860"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163044"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>Reduzieren der Latenz mit DXGI 1.3-Swapchains
 
@@ -21,11 +21,11 @@ Verwenden Sie DXGI 1.3 zum Reduzieren der geltenden Framelatenz, indem Sie warte
 
 Bei der Flipmodell-Swapchain werden „Flips“ des Hintergrundpuffers jeweils in die Warteschlange eingereiht, wenn vom Spiel [**IDXGISwapChain::Present**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-present) aufgerufen wird. Wenn von der Renderschleife „Present()“ aufgerufen wird, blockiert das System den Thread, bis die Darstellung eines vorherigen Frames abgeschlossen ist. So wird in der Warteschlange Platz für den neuen Frame geschaffen, bevor dieser dargestellt wird. Dies verursacht zusätzliche Latenz zwischen dem Zeitpunkt, zu dem vom Spiel ein Frame gezeichnet wird, und dem Zeitpunkt, zu dem die Anzeige des Frames vom System zugelassen wird. In vielen Fällen wird vom System ein stabiles Gleichgewicht erreicht, bei dem vom Spiel zwischen dem Rendern und Darstellen des Frames immer nahezu einen ganzen zusätzlichen Frame lang abgewartet wird. Es ist besser zu warten, bis das System zum Akzeptieren eines neuen Frames bereit ist, als den Frame basierend auf den aktuellen Daten zu rendern und sofort in die Warteschlange einzureihen.
 
-Erstellen Sie eine ausnutzbare Austausch Kette mit dem [**\_DXGI\_-\_\_SwapChain-\_Flag\_, das das\_wanutzbare Objekt**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) hat. Swapchains, die auf diese Art erstellt werden, können Ihre Renderschleife benachrichtigen, wenn das System zum Akzeptieren eines neuen Frames bereit ist. So kann das Spiel anhand der aktuellen Daten rendern und das Ergebnis sofort in die vorhandene Warteschlange einfügen.
+Erstellen Sie eine ausnutzbare Austausch Kette mit dem [**DXGI-SwapChain-Flag, das das \_ \_ \_ \_ \_ \_ wanutzbare \_ Objekt**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) hat. Swapchains, die auf diese Art erstellt werden, können Ihre Renderschleife benachrichtigen, wenn das System zum Akzeptieren eines neuen Frames bereit ist. So kann das Spiel anhand der aktuellen Daten rendern und das Ergebnis sofort in die vorhandene Warteschlange einfügen.
 
 ## <a name="step-1-create-a-waitable-swap-chain"></a>Schritt 1: Erstellen einer ausnutzbaren Austausch Kette
 
-Geben Sie beim Aufrufen von " [**kreateswapchadetailcorewindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)" das Flag " [**\_DXGI-\_SwapChain\_-Flag\_\_für das\_wanutzbare\_Objekt**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) " an.
+Geben Sie beim Aufrufen von " [**kreateswapchadetailcorewindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)" das Flag " [**DXGI-SwapChain-Flag für das \_ \_ \_ \_ \_ \_ wanutzbare \_ Objekt**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) " an.
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
@@ -73,7 +73,7 @@ Rufen Sie [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/ap
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>Schritt 4: Vor dem Rendern der einzelnen Frames warten
+## <a name="step-4-wait-before-rendering-each-frame"></a>Schritt 4. Vor dem Rendern der einzelnen Frames warten
 
 Die Renderschleife sollte warten, bis die Swapchain über das Objekt mit Wartemöglichkeit ein Signal sendet, bevor sie mit dem Rendern eines Frames beginnt. Dies gilt auch für den ersten Frame, der mit der Swapchain gerendert wird. Verwenden Sie [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex), und stellen Sie das in Schritt 2 abgerufene „wait“-Handle bereit, um den Start eines Frames zu signalisieren.
 
@@ -141,7 +141,7 @@ Weitere Informationen zur Programmierung mit Multithreading unter Windows finden
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)
 * [**Windows.System.Threading**](/uwp/api/Windows.System.Threading)
-* [Asynchrone Programmierung in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [Asynchrone Programmierung in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
 * [Prozesse und Threads](/windows/win32/procthread/processes-and-threads)
-* [Synchron](/windows/win32/sync/synchronization)
+* [Synchronisierung](/windows/win32/sync/synchronization)
 * [Verwenden von Ereignisobjekten (Windows)](/windows/win32/sync/using-event-objects)

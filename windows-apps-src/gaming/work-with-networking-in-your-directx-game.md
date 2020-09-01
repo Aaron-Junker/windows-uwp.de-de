@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, Networking, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0dd6168d932d1c131ca6bcd4530795c6ed1ba3
-ms.sourcegitcommit: b408494ebe8489b9ba84fb8bfd893d90c8524020
+ms.openlocfilehash: 6d6d9d927c60cb74f1b19de607480e0811f47cbb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88576853"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162934"
 ---
 # <a name="networking-for-games"></a>Netzwerk für Spiele
 
@@ -27,7 +27,7 @@ Bei Peer-zu-Peer-Spielen werden die Eingaben und Grafiken in der App jedes Spiel
 
 Bei Spielen mit einem Spieler wird oft ein zentraler Webserver oder -service zum Speichern von Benutzernamen, Spielständen und weiteren Informationen verwendet. Bei diesen Spielen stellt die Geschwindigkeit und Latenz von Netzwerkübertragungen in der Regel kein Problem dar, da die Spielvorgänge nicht unmittelbar damit zusammenhängen.
 
-Netzwerkbedingungen können sich jederzeit ändern, sodass jedes Spiel, für das Netzwerk-APIs verwendet werden, eventuell auftretende Netzwerkausnahmen behandeln muss. Weitere Informationen zum Behandeln von Netzwerkausnahmen finden Sie unter [Grundlagen zum Netzwerk](/windows/uwp/networking/networking-basics).
+Netzwerkbedingungen können sich jederzeit ändern, sodass jedes Spiel, für das Netzwerk-APIs verwendet werden, eventuell auftretende Netzwerkausnahmen behandeln muss. Weitere Informationen zum Behandeln von Netzwerkausnahmen finden Sie unter [Grundlagen zum Netzwerk](../networking/networking-basics.md).
 
 Firewalls und Webproxys werden häufig verwendet und können die Verwendung von Netzwerkfeatures beeinträchtigen. In einem Spiel über ein Netzwerk müssen Firewalls und Proxys ordnungsgemäß verarbeitet werden können.
 
@@ -362,7 +362,7 @@ using namespace Windows::Web::Http;
 * [Herstellen einer Verbindung mit einer Netzwerkressource mit einem Streamsocket](/previous-versions/windows/apps/jj150599(v=win.10))
 * [Herstellen einer Verbindung mit Netzwerkdiensten](/previous-versions/windows/apps/hh452976(v=win.10))
 * [Herstellen von Verbindungen mit Webdiensten](/previous-versions/windows/apps/hh761504(v=win.10))
-* [Netzwerkgrundlagen](/windows/uwp/networking/networking-basics)
+* [Netzwerkgrundlagen](../networking/networking-basics.md)
 * [So wird's gemacht: Konfigurieren von Netzwerkisolationsfunktionen](/previous-versions/windows/apps/hh770532(v=win.10))
 * [Aktivieren von Loopback und Debuggen der Netzwerkisolation](/previous-versions/windows/apps/hh780593(v=win.10))
 

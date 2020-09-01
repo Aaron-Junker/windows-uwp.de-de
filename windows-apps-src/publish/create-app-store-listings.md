@@ -6,12 +6,12 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, UWP, Auflistung, Beschreibung, Store-Seite, Anmerkungen zu dieser Version, Titel
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e8ba40129197f77b2bbbd3950a6bcf214bae787
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 6124ea17d8c1c348e9093882df901c829f2cd90e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493015"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164194"
 ---
 # <a name="create-app-store-listings"></a>Erstellen von Store-Einträgen für Apps
 
@@ -153,7 +153,7 @@ Zusätzliche Urheberrecht- und Markeninformationen können Sie bei Bedarf hier e
 
 ### <a name="additional-license-terms"></a>Zusätzliche Lizenzbedingungen
 
-Lassen Sie dieses Feld leer, wenn Sie möchten, dass Ihre App für Kunden gemäß den **Standardbedingungen für anwendungsbezogene Lizenzen** (am Ende der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)) lizenziert wird.
+Lassen Sie dieses Feld leer, wenn Sie möchten, dass Ihre App für Kunden gemäß den **Standardbedingungen für anwendungsbezogene Lizenzen** (am Ende der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement)) lizenziert wird.
 
 Wenn sich Ihre Lizenzbedingungen von den **Standardbedingungen für anwendungsbezogene Lizenzen** unterscheiden, geben Sie sie hier ein.
 

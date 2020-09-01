@@ -5,12 +5,12 @@ ms.date: 05/22/2020
 ms.topic: article
 keywords: Windows 10 s, immer verbunden, arm, ARM64, x86-Emulation
 ms.localizationpriority: medium
-ms.openlocfilehash: 679afeb1915bfcb84445ca97453a884654249a0e
-ms.sourcegitcommit: 2aa82d60d7f9edf7ae7f9a550a8d044e2040c08a
+ms.openlocfilehash: 39ff5b2aa6c72feaeaea0a7a61100196c109257c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87443355"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162294"
 ---
 # <a name="windows-10-on-arm"></a>Windows 10 auf ARM
 Ursprünglich konnte Windows 10 (wie von Windows 10 Mobile unterschieden) nur auf PCs ausgeführt werden, die von x86-und x64-Prozessoren unter betrieben wurden. Jetzt kann Windows 10 Desktop auf Computern ausgeführt werden, die von ARM64-Prozessoren mit dem Fall Creators Update oder neuer unter betrieben werden. Mit dem Energiesparmodus der ARM-CPU-Architektur können diese PCs die gesamte Akku Lebensdauer und Unterstützung für mobile Daten Netzwerke aufweisen. Diese PCs stellen eine hervorragend vorhandene Anwendungs Kompatibilität bereit und ermöglichen es Ihnen, vorhandene x86-Win32-Anwendungen unverändert auszuführen. Weitere Informationen oder eine Demo finden Sie im [Channel 9-Video für den stets verbundenen PC](https://channel9.msdn.com/Events/Build/2017/P4171).
@@ -59,5 +59,5 @@ Remotetools für Visual Studio sind für Arm-apps verfügbar. Besuchen Sie die [
 ## <a name="related-topics"></a>Zugehörige Themen
 |Thema | BESCHREIBUNG |
 |-----|-----|
-|[Entwickeln von ARM64-Treibern mit dem WDK](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)|Anweisungen zum Entwickeln eines ARM64-Treibers. |
-| [Debugging von x86-apps auf Arm](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64) | Leitfaden zum Debuggen von x86-apps auf Arm. |
+|[Entwickeln von ARM64-Treibern mit dem WDK](/windows-hardware/drivers/develop/building-arm64-drivers)|Anweisungen zum Entwickeln eines ARM64-Treibers. |
+| [Debugging von x86-apps auf Arm](/windows-hardware/drivers/debugger/debugging-arm64) | Leitfaden zum Debuggen von x86-apps auf Arm. |

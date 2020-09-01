@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Märkte, Länder, Regionen
 ms.localizationpriority: medium
-ms.openlocfilehash: ed80d8ef727d3c9be276b295a504b8cc02b373aa
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 63650ad15f4a3083b4f500bc16591bb6bd8d8185
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234655"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162024"
 ---
 # <a name="define-market-selection"></a>Festlegen der Marktauswahl
 
@@ -88,7 +88,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Benin</td>
   </tr>
   <tr>
-    <td>Bermudas</td>
+    <td>Bermuda</td>
     <td>Bhutan</td>
     <td>Bolivien</td>
     <td>Bonaire</td>
@@ -113,7 +113,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
   </tr>
   <tr>
     <td>Kamerun</td>
-    <td>Canada</td>
+    <td>Kanada</td>
     <td>Kaimaninseln</td>
     <td>Zentralafrikanische Republik</td>
   </tr>
@@ -127,10 +127,10 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Kokosinseln</td>
     <td>Kolum</td>
     <td>Komoren</td>
-    <td>Kongo (Demokratische Republik)</td>
+    <td>Kongo</td>
   </tr>
   <tr>
-    <td>Kongo (DRC)</td>
+    <td>Kongo (DRK)</td>
     <td>Cookinseln</td>
     <td>Costa Rica</td>
     <td>Côte d'Ivoire</td>
@@ -160,13 +160,13 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Falklandinseln</td>
   </tr>
   <tr>
-    <td>Färöer</td>
+    <td>Faröer</td>
     <td>Fidschi</td>
     <td>Finnlands</td>
     <td>Frankreichs</td>
   </tr>
   <tr>
-    <td>Französisch-Guyana</td>
+    <td>Französisch-Guayana</td>
     <td>Französisch-Polynesien</td>
     <td>Französische Süd- und Antarktisgebiete</td>
     <td>Gabun</td>
@@ -192,7 +192,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
   <tr>
     <td>Guinea</td>
     <td>Guinea-Bissau</td>
-    <td>Guayana</td>
+    <td>Guyana</td>
     <td>Haiti</td>
   </tr>
   <tr>
@@ -214,10 +214,10 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Italiener</td>
   </tr>
   <tr>
-    <td>Jamaika</td>
+    <td>Jamaica</td>
     <td>Japan</td>
     <td>Jersey</td>
-    <td>Jordan</td>
+    <td>Jordanien</td>
   </tr>
   <tr>
     <td>Kasachstan</td>
@@ -253,7 +253,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Malediven</td>
     <td>Mali</td>
     <td>Malta</td>
-    <td>Marshallinseln</td>
+    <td>Marshall-Inseln</td>
   </tr>
   <tr>
     <td>Martinique</td>
@@ -264,7 +264,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
   <tr>
     <td>Mexiko</td>
     <td>Mikronesien</td>
-    <td>Moldau</td>
+    <td>Moldawien</td>
     <td>Monaco</td>
   </tr>
   <tr>
@@ -354,7 +354,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
   <tr>
     <td>Somalia</td>
     <td>Südafrika *</td>
-    <td>Südgeorgien und Südliche Sandwichinseln</td>
+    <td>Südgeorgien und die Südlichen Sandwichinseln</td>
     <td>Spanische</td>
   </tr>
   <tr>
@@ -385,7 +385,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
     <td>Tru</td>
     <td>Turkmenistan</td>
     <td>Turks- und Caicosinseln</td>
-    <td>Tuwalu</td>
+    <td>Tuvalu</td>
   </tr>
   <tr>
     <td>USA Kleinere Amerikanische Überseeinseln</td>
@@ -422,7 +422,7 @@ Sie können Ihre App (oder Ihr Add-On) für mindestens einen der folgenden Märk
 
 ## <a name="price-considerations-for-specific-markets"></a>Überlegungen zu Preisen für die einzelnen Märkte
 
-Zahlungsmethoden wie Geschenkkarten und die Abrechnung mit dem Mobilfunkanbieter können den Absatz kostenpflichtiger Apps und In-App-Einkaufsartikel fördern. Da für die Bereitstellung dieser Zahlungsmethoden höhere Kosten anfallen, wird der anhand der Nettoeinnahmen ermittelten Store-Gebühr ein Aufschlag zur Regulierung der Markterweiterung (Commerce Expansion Adjustment) hinzugerechnet, um die für kostenpflichtige Apps und In-App-Transaktionen zu zahlenden Anwendungserlöse in den Ländern/Regionen, in denen die in den Tabellen unten aufgeführten Zahlungsmethoden verwendet werden, zu berechnen. Unter Umständen empfiehlt es sich, bei der Festlegung Ihrer App-Preise für die einzelnen Märkte zu berücksichtigen, ob bzw. wo der Aufschlag zur Regulierung der Markterweiterung anfällt. Nähere Informationen zu der Regulierung zur Markterweiterung finden Sie in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
+Zahlungsmethoden wie Geschenkkarten und die Abrechnung mit dem Mobilfunkanbieter können den Absatz kostenpflichtiger Apps und In-App-Einkaufsartikel fördern. Da für die Bereitstellung dieser Zahlungsmethoden höhere Kosten anfallen, wird der anhand der Nettoeinnahmen ermittelten Store-Gebühr ein Aufschlag zur Regulierung der Markterweiterung (Commerce Expansion Adjustment) hinzugerechnet, um die für kostenpflichtige Apps und In-App-Transaktionen zu zahlenden Anwendungserlöse in den Ländern/Regionen, in denen die in den Tabellen unten aufgeführten Zahlungsmethoden verwendet werden, zu berechnen. Unter Umständen empfiehlt es sich, bei der Festlegung Ihrer App-Preise für die einzelnen Märkte zu berücksichtigen, ob bzw. wo der Aufschlag zur Regulierung der Markterweiterung anfällt. Nähere Informationen zu der Regulierung zur Markterweiterung finden Sie in der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement).
 
 Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf alle für das jeweilige Land/die jeweilige Region verarbeiteten Transaktionen und Zahlungsmethoden erhoben. Diese Informationen werden monatlich aktualisiert. Neu hinzugekommene Länder/Regionen und Zahlungsmethoden werden innerhalb von dreißig (30) Tagen nach Inkrafttreten der Regulierung zur Markterweiterung für das jeweilige Land/die jeweilige Region und Zahlungsmethode in die Liste aufgenommen.
 
@@ -435,7 +435,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Österreich              | Geschenkkarte       | 2,24%                         | März 2016     |
 | Belgien              | Geschenkkarte       | 2,24%                         | März 2016     |
 | Brasilien               | Geschenkkarte       | 2,24%                         | März 2016     |
-| Canada               | Geschenkkarte       | 2,24%                         | März 2016     |
+| Kanada               | Geschenkkarte       | 2,24%                         | März 2016     |
 | Chile                | Geschenkkarte       | 2,24%                         | März 2016     |
 | China                | Geschenkkarte       | 2,24%                         | März 2016     |
 | Kolumbien             | Geschenkkarte       | 2,24%                         | März 2016     |
@@ -469,7 +469,7 @@ Die Regulierung zur Markterweiterung wird ab dem Datum des Inkrafttretens auf al
 | Taiwan               | Geschenkkarte       | 2,24%                         | März 2016     |
 | Türkei               | Geschenkkarte       | 2,24%                         | März 2016     |
 | Vereinigte Arabische Emirate | Geschenkkarte       | 2,24%                         | März 2016     |
-| United Kingdom       | Geschenkkarte       | 2,24%                         | März 2016     |
+| Vereinigtes Königreich       | Geschenkkarte       | 2,24%                         | März 2016     |
 | USA        | Geschenkkarte       | 2,24%                         | März 2016     |
 
  
@@ -510,7 +510,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
   <tr>
     <td>Belize</td>
     <td>Benin</td>
-    <td>Bermudas</td>
+    <td>Bermuda</td>
     <td>Bhutan</td>
   </tr>
   <tr>
@@ -541,10 +541,10 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Weihnachtsinsel</td>
     <td>Kokosinseln</td>
     <td>Komoren</td>
-    <td>Kongo (Demokratische Republik)</td>
+    <td>Kongo</td>
   </tr>
   <tr>
-    <td>Kongo (DRC)</td>
+    <td>Kongo (DRK)</td>
     <td>Cookinseln</td>
     <td>Côte d'Ivoire</td>
     <td>Curaçao</td>
@@ -563,9 +563,9 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
   </tr>
   <tr>
     <td>Falklandinseln</td>
-    <td>Färöer</td>
+    <td>Faröer</td>
     <td>Fidschi</td>
-    <td>Französisch-Guyana</td>
+    <td>Französisch-Guayana</td>
   </tr>
   <tr>
     <td>Französisch-Polynesien</td>
@@ -589,7 +589,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Guernsey</td>
     <td>Guinea</td>
     <td>Guinea-Bissau</td>
-    <td>Guayana</td>
+    <td>Guyana</td>
   </tr>
   <tr>
     <td>Haiti</td>
@@ -599,7 +599,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
   </tr>
   <tr>
     <td>Isle of Man</td>
-    <td>Jamaika</td>
+    <td>Jamaica</td>
     <td>Jersey</td>
     <td>Kenia</td>
   </tr>
@@ -622,7 +622,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Mali</td>
   </tr>
   <tr>
-    <td>Marshallinseln</td>
+    <td>Marshall-Inseln</td>
     <td>Martinique</td>
     <td>Mauretanien</td>
     <td>Mauritius</td>
@@ -630,7 +630,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
   <tr>
     <td>Mayotte</td>
     <td>Mikronesien</td>
-    <td>Moldau</td>
+    <td>Moldawien</td>
     <td>Monaco</td>
   </tr>
   <tr>
@@ -694,7 +694,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Somalia</td>
   </tr>
   <tr>
-    <td>Südgeorgien und Südliche Sandwichinseln</td>
+    <td>Südgeorgien und die Südlichen Sandwichinseln</td>
     <td>Surinam</td>
     <td>Spitzbergen und Jan Mayen</td>
     <td>Swasiland</td>
@@ -712,7 +712,7 @@ Folgende Märkte sind in "Restliche Welt" für Windows 8.x enthalten:
     <td>Turks- und Caicosinseln</td>
   </tr>
   <tr>
-    <td>Tuwalu</td>
+    <td>Tuvalu</td>
     <td>Uganda</td>
     <td>USA Kleinere Amerikanische Überseeinseln</td>
     <td>USA Jungferninseln</td>

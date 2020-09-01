@@ -4,14 +4,14 @@ description: Hier finden Sie Lösungen für allgemeine Entwicklungsprobleme mit 
 title: XAML- und C#-Handbuch zur Problembehandlung
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP, Werbung, Advertising, AdControl, Problembehandlung, XAML, c#
+keywords: 'Windows 10, UWP, ADS, Werbung, adcontrol, Problembehandlung, XAML, c #'
 ms.localizationpriority: medium
-ms.openlocfilehash: ab8ba3930c13ffcb00d2cb9701a89cafe581b4ff
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 719e05d67d68627fcd631edfd6c688b17f8507bd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506884"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164384"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML- und C#-Handbuch zur Problembehandlung
 
@@ -21,14 +21,14 @@ ms.locfileid: "77506884"
 Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Microsoft Advertising-Bibliotheken in XAML-Apps.
 
 * [XAML](#xaml)
-  * [Adcontrol wird nicht angezeigt.](#xaml-notappearing)
-  * [Schwarze Felder blinkt und verschwinden](#xaml-blackboxblinksdisappears)
-  * [Werbung wird nicht aktualisiert](#xaml-adsnotrefreshing)
+  * [AdControl wird nicht angezeigt](#xaml-notappearing)
+  * [Blackbox blinkt und wird ausgeblendet](#xaml-blackboxblinksdisappears)
+  * [Anzeigen werden nicht aktualisiert](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [Adcontrol wird nicht angezeigt.](#csharp-adcontrolnotappearing)
-  * [Schwarze Felder blinkt und verschwinden](#csharp-blackboxblinksdisappears)
-  * [Werbung wird nicht aktualisiert](#csharp-adsnotrefreshing)
+  * [AdControl wird nicht angezeigt](#csharp-adcontrolnotappearing)
+  * [Blackbox blinkt und wird ausgeblendet](#csharp-blackboxblinksdisappears)
+  * [Anzeigen werden nicht aktualisiert](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -38,7 +38,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="adcontrol-not-appearing"></a>AdControl wird nicht angezeigt
 
-1.  Stellen Sie sicher, dass die **Internet (Client)** -Funktion in „Package.appxmanifest“ ausgewählt ist.
+1.  Stellen Sie sicher, dass die **Internet (Client)**-Funktion in „Package.appxmanifest“ ausgewählt ist.
 
 2.  Überprüfen Sie die ID der Anwendung und der Anzeigeneinheit. Diese IDs müssen mit der Anwendungs-ID und der Ad Unit ID identisch sein, die Sie im Partner Center abgerufen haben. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
@@ -48,7 +48,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
                   Width="728" Height="90" />
     ```
 
-3.  Überprüfen Sie die **Height**-Eigenschaft und **Width**-Eigenschaft. Diese müssen auf eine der [unterstützten Anzeigengrößen für Werbebanner](supported-ad-sizes-for-banner-ads.md) festgelegt werden.
+3.  Überprüfen Sie die Eigenschaften für **Höhe** und **Breite** . Diese müssen auf eine der [unterstützten Werbe Größen für Banner Anzeigen](supported-ad-sizes-for-banner-ads.md)festgelegt werden.
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -57,7 +57,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
                   Width="728" Height="90" />
     ```
 
-4.  Überprüfen Sie die Elementposition. [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) muss sich im sichtbaren Bereich befinden.
+4.  Überprüfen Sie die Elementposition. [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) muss sich im sichtbaren Bereich befinden.
 
 5.  Überprüfen Sie die **Visibility**-Eigenschaft. Die optionale **Visibility**-Eigenschaft darf nicht auf „collapsed“ oder „hidden“ festgelegt werden. Diese Eigenschaft kann als Inlineeigenschaft (wie unten dargestellt) oder in einem externen Stylesheet festgelegt werden.
 
@@ -82,7 +82,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 7.  Stellen Sie sicher, dass **AdControl** im Viewport nicht ausgeblendet ist. **AdControl** muss sichtbar sein, damit Anzeigen ordnungsgemäß dargestellt werden.
 
-8.  Echte Werte für **ApplicationId** und **AdUnitId** sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **AdControl** erwartungsgemäß funktioniert, verwenden Sie [test values](set-up-ad-units-in-your-app.md#test-ad-units) sowohl für **ApplicationId** und **AdUnitId**.
+8.  Echte Werte für **ApplicationId** und **AdUnitId** sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **adcontrol** erwartungsgemäß funktioniert, verwenden Sie die [Testwerte](set-up-ad-units-in-your-app.md#test-ad-units) für " **ApplicationId** " und " **adunitid**".
 
 <span id="xaml-blackboxblinksdisappears"/>
 
@@ -116,7 +116,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
     Eine Blackbox wird am häufigsten dadurch verursacht, dass keine Anzeige verfügbar ist. Dieser Fehler bedeutet, dass durch die Anforderung keine Anzeige zurückgegeben werden kann.
 
-3.  [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) verhält sich normal.
+3.  [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) verhält sich normal.
 
     **AdControl** wird standardmäßig reduziert, wenn keine Anzeige dargestellt werden kann. Wenn andere Elemente demselben übergeordneten Element untergeordnet sind, können sie verschoben werden, um den freien Platz des reduzierten **AdControl**-Elements zu füllen, und bei der nächsten Anforderung erweitert werden.
 
@@ -124,7 +124,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="ads-not-refreshing"></a>Anzeigen werden nicht aktualisiert
 
-1.  Überprüfen Sie die [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled)-Eigenschaft. Diese optionale Eigenschaft ist standardmäßig auf **True** festgelegt. Beim Wert **False** muss die [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh)-Methode verwendet werden, um eine weitere Anzeige abzurufen.
+1.  Überprüfen Sie die [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled)-Eigenschaft. Diese optionale Eigenschaft ist standardmäßig auf **true**festgelegt. Wenn diese Einstellung auf " **false**" festgelegt ist, muss die [Aktualisierungs](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh) Methode zum Abrufen einer anderen Werbung verwendet werden
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -134,7 +134,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
                   IsAutoRefreshEnabled="True" />
     ```
 
-2.  Überprüfen Sie Aufrufe der **Refresh**-Methode. Bei Verwendung der automatischen Aktualisierung kann **Refresh** nicht verwendet werden, um eine weitere Anzeige abzurufen. Bei Verwendung der manuellen Aktualisierung sollte **Refresh** abhängig von der aktuellen Datenverbindung des Geräts erst nach mindestens 30 bis 60 Sekunden aufgerufen werden.
+2.  Überprüfen Sie die Aufrufe der **Refresh** -Methode. Bei Verwendung der automatischen Aktualisierung kann **Refresh** nicht verwendet werden, um eine weitere Anzeige abzurufen. Bei Verwendung der manuellen Aktualisierung sollte **Refresh** abhängig von der aktuellen Datenverbindung des Geräts erst nach mindestens 30 bis 60 Sekunden aufgerufen werden.
 
     In den folgenden Codeausschnitten wird die Verwendung der **Refresh**-Methode veranschaulicht. Der erste Ausschnitt ist das XAML-UI-Markup.
 
@@ -163,13 +163,13 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 <span id="csharp"/>
 
-## <a name="c"></a>C-\# #
+## <a name="c"></a>C\# #
 
 <span id="csharp-adcontrolnotappearing"/>
 
 ### <a name="adcontrol-not-appearing"></a>AdControl wird nicht angezeigt
 
-1.  Stellen Sie sicher, dass die **Internet (Client)** -Funktion in „Package.appxmanifest“ ausgewählt ist.
+1.  Stellen Sie sicher, dass die **Internet (Client)**-Funktion in „Package.appxmanifest“ ausgewählt ist.
 
 2.  Stellen Sie sicher, dass **AdControl** instanziiert ist. Wenn **AdControl** nicht instanziiert wird, ist es nicht verfügbar.
 
@@ -219,7 +219,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 8.  Überprüfen Sie das übergeordnete Element von **AdControl**. Das übergeordnete Element muss aktiv und sichtbar sein.
 
-9. Echte Werte für **ApplicationId** und **AdUnitId** sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **AdControl** erwartungsgemäß funktioniert, verwenden Sie [test values](set-up-ad-units-in-your-app.md#test-ad-units) sowohl für **ApplicationId** und **AdUnitId**.
+9. Echte Werte für **ApplicationId** und **AdUnitId** sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **adcontrol** erwartungsgemäß funktioniert, verwenden Sie die [Testwerte](set-up-ad-units-in-your-app.md#test-ad-units) für " **ApplicationId** " und " **adunitid**".
 
 <span id="csharp-blackboxblinksdisappears"/>
 
@@ -249,9 +249,9 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="ads-not-refreshing"></a>Anzeigen werden nicht aktualisiert
 
-1.  Überprüfen Sie, ob in der [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx)-Eigenschaft **AdControl** auf „false“ festgelegt ist. Diese optionale Eigenschaft ist standardmäßig auf **true** festgelegt. Wenn sie auf **false** festgelegt ist, muss die Methode **Refresh** verwendet werden, um eine weitere Anzeige abzurufen.
+1.  Überprüfen Sie, ob in der [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx)-Eigenschaft **AdControl** auf „false“ festgelegt ist. Diese optionale Eigenschaft ist standardmäßig auf **true**festgelegt. Wenn diese Einstellung auf " **false**" festgelegt ist, muss die **Aktualisierungs** Methode zum Abrufen einer anderen Werbung verwendet werden
 
-2.  Überprüfen Sie Aufrufe der [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx)-Methode. Bei Verwendung der automatischen Aktualisierung ((**IsAutoRefreshEnabled** ist **true**)) kann **Refresh** nicht verwendet werden, um eine weitere Anzeige abzurufen. Bei Verwendung der manuellen Aktualisierung (**IsAutoRefreshEnabled** ist **false**) sollte **Refresh** abhängig von der aktuellen Datenverbindung des Geräts erst nach mindestens 30 bis 60 Sekunden aufgerufen werden.
+2.  Überprüfen Sie die Aufrufe der [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) -Methode. Bei Verwendung der automatischen Aktualisierung ((**IsAutoRefreshEnabled** ist **true**)) kann **Refresh** nicht verwendet werden, um eine weitere Anzeige abzurufen. Bei Verwendung der manuellen Aktualisierung (**IsAutoRefreshEnabled** ist **false**) sollte **Refresh** abhängig von der aktuellen Datenverbindung des Geräts erst nach mindestens 30 bis 60 Sekunden aufgerufen werden.
 
     Das folgende Beispiel veranschaulicht, wie die **Refresh**-Methode aufgerufen wird.
 

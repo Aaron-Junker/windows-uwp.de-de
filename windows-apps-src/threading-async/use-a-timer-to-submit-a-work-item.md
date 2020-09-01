@@ -6,28 +6,28 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Timer, Threads
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c34f50d7b5abec28b11fc67a7e0515f07206060
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: a93b023120957f6335c14a4d40013f51e4e7be2a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970128"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164114"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>Timergesteuertes Übermitteln einer Arbeitsaufgabe
 
 
 <b>Wichtige APIs</b>
 
--   [**Windows.UI.Core-Namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
--   [**Windows.System.Threading-Namespace**](https://docs.microsoft.com/uwp/api/Windows.System.Threading)
+-   [**Windows.UI.Core-Namespace**](/uwp/api/Windows.UI.Core)
+-   [**Windows.System.Threading-Namespace**](/uwp/api/Windows.System.Threading)
 
 Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die nach dem Ablaufen eines Timers ausgeführt wird.
 
 ## <a name="create-a-single-shot-timer"></a>Erstellen eines einmaligen Timers
 
-Verwenden Sie die [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Methode, um einen Timer für die Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *delay*-Parameter an, wie lange der Threadpool warten soll, bevor er die Arbeitsaufgabe einem verfügbaren Thread zuweist. Die Verzögerung wird mithilfe einer [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)-Struktur angegeben.
+Verwenden Sie die [**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Methode, um einen Timer für die Arbeitsaufgabe zu erstellen. Stellen Sie eine Lambda-Funktion zum Ausführen der Arbeit bereit, und geben Sie mit dem *delay*-Parameter an, wie lange der Threadpool warten soll, bevor er die Arbeitsaufgabe einem verfügbaren Thread zuweist. Die Verzögerung wird mithilfe einer [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)-Struktur angegeben.
 
-> **Hinweis**    Sie können " [**coredispatcher. runasync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) " verwenden, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
+> **Hinweis**    Sie können " [**coredispatcher. runasync**](/uwp/api/windows.ui.core.coredispatcher.runasync) " verwenden, um auf die Benutzeroberfläche zuzugreifen und den Fortschritt des Arbeits Elements anzuzeigen.
 
 Im folgenden Beispiel wird ein Arbeitselement erstellt, die in drei Minuten ausgeführt wird:
 
@@ -87,7 +87,7 @@ Im folgenden Beispiel wird ein Arbeitselement erstellt, die in drei Minuten ausg
 
 ## <a name="provide-a-completion-handler"></a>Bereitstellen eines Abschlusshandlers
 
-Behandeln Sie den Abbruch und Abschluss der Arbeitsaufgabe ggf. mit einem [**TimerDestroyedHandler**](https://docs.microsoft.com/uwp/api/windows.system.threading.timerdestroyedhandler)-Element. Stellen Sie mithilfe der [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Überladung eine zusätzliche Lambda-Funktion bereit. Diese Funktion wird ausgeführt, wenn der Timer abgebrochen oder das Arbeitselement abgeschlossen wird.
+Behandeln Sie den Abbruch und Abschluss der Arbeitsaufgabe ggf. mit einem [**TimerDestroyedHandler**](/uwp/api/windows.system.threading.timerdestroyedhandler)-Element. Stellen Sie mithilfe der [**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer)-Überladung eine zusätzliche Lambda-Funktion bereit. Diese Funktion wird ausgeführt, wenn der Timer abgebrochen oder das Arbeitselement abgeschlossen wird.
 
 Das folgende Beispiel erstellt einen Zeitgeber, der das Arbeitselement sendet, und ruft eine Methode auf, wenn das Arbeitselement abgeschlossen oder der Zeitgeber abgebrochen wird:
 
@@ -207,7 +207,7 @@ Das folgende Beispiel erstellt einen Zeitgeber, der das Arbeitselement sendet, u
 
 ## <a name="cancel-the-timer"></a>Abbrechen des Zeitgebers
 
-Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird, rufen Sie [**Cancel**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.cancel) auf. Der Timer wird abgebrochen, und das Arbeitselement wird nicht an den Threadpool übermittelt.
+Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird, rufen Sie [**Cancel**](/uwp/api/windows.system.threading.threadpooltimer.cancel) auf. Der Timer wird abgebrochen, und das Arbeitselement wird nicht an den Threadpool übermittelt.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -219,7 +219,7 @@ Wenn der Timer weiter läuft, die Arbeitsaufgabe aber nicht mehr benötigt wird,
 
 ## <a name="remarks"></a>Bemerkungen
 
-UWP (Universelle Windows-Plattform)-Apps können **Thread.Sleep** nicht verwenden, da dies den UI-Thread blockieren kann. Verwenden Sie zum Erstellen einer Arbeitsaufgabe stattdessen einen [**ThreadPoolTimer**](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPoolTimer). Dieser Timer verzögert die von der Arbeitsaufgabe ausgeführte Aufgabe, ohne den UI-Thread zu blockieren.
+UWP (Universelle Windows-Plattform)-Apps können **Thread.Sleep** nicht verwenden, da dies den UI-Thread blockieren kann. Verwenden Sie zum Erstellen einer Arbeitsaufgabe stattdessen einen [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer). Dieser Timer verzögert die von der Arbeitsaufgabe ausgeführte Aufgabe, ohne den UI-Thread zu blockieren.
 
 Ein vollständiges Codebeispiel für Arbeitsaufgaben, Arbeitsaufgaben mit Zeitgeber und regelmäßige Arbeitsaufgaben finden Sie im [Beispiel für den Threadpool](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample). Das Codebeispiel wurde ursprünglich für Windows 8.1 geschrieben, der Code kann jedoch für Windows 10 wiederverwendet werden.
 

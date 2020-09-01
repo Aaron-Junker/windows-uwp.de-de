@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie Ihre UWP-apps auf Xbox Unterstützung für sp
 ms.date: 10/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, Xbox, Speech, Voice-aktivierte Shell
-ms.openlocfilehash: f51ec2c93a904893dc337545f634d04affde10fd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: db846e906917f29781200f3c312f6dbd6e2b2dd1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685180"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161664"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>Verwenden von Sprache zum Aufrufen von UI-Elementen
 
@@ -51,16 +51,16 @@ VES ist ein Benutzeroberflächenautomatisierungs-Client und basiert auf Informat
 
 Alle UWP-apps haben Zugriff auf das Benutzeroberflächenautomatisierungs-Framework und können Informationen über die Benutzeroberfläche unabhängig von dem Grafik Framework verfügbar machen, auf dem Sie basieren (XAML, DirectX/Direct3D, xamarin usw.).  In einigen Fällen, wie z. b. XAML, erfolgt der größte Teil der Arbeit durch das Framework
 
-Weitere Informationen zur Benutzeroberflächen Automatisierung finden Sie unter [Grundlagen der Benutzeroberflächen Automatisierung](https://msdn.microsoft.com/library/ms753107(v=vs.110).aspx "Grundlagen der Benutzeroberflächenautomatisierung").
+Weitere Informationen zur Benutzeroberflächen Automatisierung finden Sie unter [Grundlagen der Benutzeroberflächen Automatisierung](/dotnet/framework/ui-automation/ui-automation-fundamentals "Grundlagen der Benutzeroberflächenautomatisierung").
 
 ## <a name="control-invocation-name"></a>Name des Steuerungs aufnamens ##
 Ves verwendet die folgende heuristische, um zu bestimmen, welcher Ausdruck mit der Spracherkennung als Name des Steuer Elements registriert werden soll (d. h., was der Benutzer zum Aufrufen des Steuer Elements sprechen muss).  Dies ist auch der Ausdruck, der in der Sprech Tip Bezeichnung angezeigt wird.
 
 Quelle des Namens in der Prioritäts Reihenfolge:
 
-1. Wenn das Element über eine `LabeledBy` angefügte Eigenschaft verfügt, verwendet Ves die `AutomationProperties.Name` dieser Text Bezeichnung.
-2. `AutomationProperties.Name` des Elements.  In XAML wird der Text Inhalt des Steuer Elements als Standardwert für `AutomationProperties.Name`verwendet.
-3. Wenn das Steuerelement ein ListItem oder eine Schaltfläche ist, sucht Ves nach dem ersten untergeordneten Element mit einem gültigen `AutomationProperties.Name`.
+1. Wenn das Element über eine `LabeledBy` angefügte Eigenschaft verfügt, verwendet Ves den `AutomationProperties.Name` dieser Text Bezeichnung.
+2. `AutomationProperties.Name` des-Elements.  In XAML wird der Text Inhalt des-Steuer Elements als Standardwert für verwendet `AutomationProperties.Name` .
+3. Wenn das Steuerelement ein ListItem oder eine Schaltfläche ist, sucht Ves nach dem ersten untergeordneten Element mit einem gültigen `AutomationProperties.Name` .
 
 ## <a name="actionable-controls"></a>Handlungsfähige Steuerelemente ##
 Ves betrachtet, dass ein Steuerelement handlungsfähig ist, wenn eines der folgenden Automatisierungs Steuerelement Muster implementiert wird:
@@ -76,16 +76,16 @@ Ves betrachtet, dass ein Steuerelement handlungsfähig ist, wenn eines der folge
 - **ScrollPattern** (z. b. List): stellt Steuerelemente dar, die als scrollbare Container für eine Auflistung von untergeordneten Elementen fungieren.
 
 ## <a name="scrollable-containers"></a>Scrollbare Container ##
-Für Bild lauffähige Container, die das ScrollPattern unterstützen, lauscht VES auf Sprachbefehle wie "Scroll Left", "Scroll right" usw. und führt einen Bildlauf mit den entsprechenden Parametern aus, wenn der Benutzer einen dieser Befehle auslöst.  Scrollbefehle werden basierend auf dem Wert der Eigenschaften `HorizontalScrollPercent` und `VerticalScrollPercent` eingefügt.  Wenn `HorizontalScrollPercent` beispielsweise größer als 0 ist, wird "Scroll Left" hinzugefügt, wenn es kleiner als 100 ist, "Scroll right" hinzugefügt wird usw.
+Für Bild lauffähige Container, die das ScrollPattern unterstützen, lauscht VES auf Sprachbefehle wie "Scroll Left", "Scroll right" usw. und führt einen Bildlauf mit den entsprechenden Parametern aus, wenn der Benutzer einen dieser Befehle auslöst.  Scrollbefehle werden basierend auf dem Wert der `HorizontalScrollPercent` Eigenschaften und eingefügt `VerticalScrollPercent` .  Wenn beispielsweise `HorizontalScrollPercent` größer als 0 ist, wird "Scroll Left" hinzugefügt, wenn es kleiner als 100 ist, "Scroll right" hinzugefügt wird usw.
 
 ## <a name="narrator-overlap"></a>Sprachausgabe Überlappung ##
-Die Sprachausgabe Anwendung ist auch ein Benutzeroberflächenautomatisierungs-Client und verwendet die `AutomationProperties.Name`-Eigenschaft als eine der Quellen für den Text, den Sie für das aktuell ausgewählte UI-Element liest.  Um eine bessere Barrierefreiheits Funktion bereitzustellen, haben viele App-Entwickler die `Name`-Eigenschaft mit langem beschreibenden Text überladen, der beim Lesen durch die Sprachausgabe Weitere Informationen und Kontext bereitstellt.  Dies verursacht jedoch einen Konflikt zwischen den beiden Features: Ves benötigt kurze Ausdrücke, die mit dem sichtbaren Text des Steuer Elements übereinstimmen oder genau übereinstimmen, während die Sprachausgabe von längeren, aussagekräftigeren Ausdrücken profitiert, um einen besseren Kontext zu bieten.
+Die Sprachausgabe Anwendung ist auch ein Benutzeroberflächenautomatisierungs-Client und verwendet die- `AutomationProperties.Name` Eigenschaft als eine der Quellen für den Text, den Sie für das aktuell ausgewählte UI-Element liest.  Um eine bessere Barrierefreiheits Funktion bereitzustellen, haben viele App-Entwickler die- `Name` Eigenschaft mit langem beschreibenden Text überladen, der beim Lesen durch die Sprachausgabe Weitere Informationen und Kontext bereitstellt.  Dies verursacht jedoch einen Konflikt zwischen den beiden Features: Ves benötigt kurze Ausdrücke, die mit dem sichtbaren Text des Steuer Elements übereinstimmen oder genau übereinstimmen, während die Sprachausgabe von längeren, aussagekräftigeren Ausdrücken profitiert, um einen besseren Kontext zu bieten.
 
-Um dieses Problem zu beheben, wurde mit Windows 10 Creators Update die Sprachausgabe aktualisiert, um auch die `AutomationProperties.HelpText`-Eigenschaft zu überprüfen.  Wenn diese Eigenschaft nicht leer ist, spricht der Sprachausgabe Inhalt zusätzlich zu `AutomationProperties.Name`.  Wenn `HelpText` leer ist, liest die Sprachausgabe nur den Inhalt des Namens.  Dies ermöglicht es, dass bei Bedarf längere beschreibende Zeichen folgen verwendet werden, behält aber einen kürzeren Ausdrucks Erkennungs Ausdruck in der `Name`-Eigenschaft bei.
+Um dieses Problem zu beheben, wurde mit Windows 10 Creators Update die Sprachausgabe aktualisiert, um auch die-Eigenschaft zu überprüfen `AutomationProperties.HelpText` .  Wenn diese Eigenschaft nicht leer ist, wird der Inhalt von der Sprachausgabe zusätzlich zu gesprochen `AutomationProperties.Name` .  Wenn `HelpText` leer ist, liest die Sprachausgabe nur den Inhalt des Namens.  Dies ermöglicht es, dass bei Bedarf längere beschreibende Zeichen folgen verwendet werden, behält aber einen kürzeren Ausdrucks Erkennungs Ausdruck in der- `Name` Eigenschaft bei.
 
 ![](images/ves_narrator.jpg)
 
-Weitere Informationen finden Sie [unter Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche](https://msdn.microsoft.com/library/ff400332(vs.95).aspx "Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche").
+Weitere Informationen finden Sie [unter Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche").
 
 ## <a name="active-listening-mode-alm"></a>Aktiver Überwachungsmodus (ALM) ##
 ### <a name="entering-alm"></a>Wechseln in Alm ###
@@ -113,7 +113,7 @@ Das System bleibt in Alm, während der Benutzer mit der Benutzeroberfläche übe
 In Alm kann der Benutzer mithilfe von Voice mit der Benutzeroberfläche interagieren.  Wenn die Benutzeroberfläche ordnungsgemäß konfiguriert ist (mit namens Eigenschaften, die mit dem sichtbaren Text übereinstimmen), sollte die Verwendung von Voice zum Ausführen von Aktionen eine nahtlose, natürliche Oberfläche sein  Der Benutzer sollte in der Lage sein, nur zu sagen, was er auf dem Bildschirm angezeigt wird.
 
 ## <a name="overlay-ui-on-xbox"></a>Overlay-Benutzeroberfläche auf Xbox ##
-Der Name des-Steuer Elements, das für ein Steuerelement abgeleitet ist, kann sich von dem tatsächlich sichtbaren Text in der Benutzeroberfläche  Dies kann darauf zurückzuführen sein, dass die `Name`-Eigenschaft des Steuer Elements oder das angefügte `LabeledBy` Element explizit auf eine andere Zeichenfolge festgelegt wird.  Oder das Steuerelement verfügt über keinen GUI-Text, sondern nur über ein Symbol oder Bildelement.
+Der Name des-Steuer Elements, das für ein Steuerelement abgeleitet ist, kann sich von dem tatsächlich sichtbaren Text in der Benutzeroberfläche  Dies kann darauf zurückzuführen sein, dass die- `Name` Eigenschaft des Steuer Elements oder das angefügte `LabeledBy` Element explizit auf eine andere Zeichenfolge festgelegt wird.  Oder das Steuerelement verfügt über keinen GUI-Text, sondern nur über ein Symbol oder Bildelement.
 
 In diesen Fällen benötigen Benutzer eine Möglichkeit, um zu sehen, was zu sagen ist, um ein solches Steuerelement aufzurufen.  Aus diesem Grund können Sie nach dem aktiven lauschen die sprach Tipps anzeigen, indem Sie "Bezeichnungen anzeigen" sagen.  Dies bewirkt, dass Sprech Tip Bezeichnungen oberhalb jedes umsetzbaren Steuer Elements angezeigt werden.
 
@@ -151,7 +151,7 @@ Bei Bild lauffähigen Steuerelementen werden die sprach Tipps für die scrollbef
 ## <a name="disambiguation"></a>Mehrdeutigkeitsvermeidung ##
 Wenn mehrere Benutzeroberflächen Elemente denselben Namen aufweisen oder die Spracherkennung mit mehreren Kandidaten übereinstimmt, wechselt Ves in den disambialisierungsmodus.  In diesem Modus werden voicetip-Bezeichnungen für die beteiligten Elemente angezeigt, sodass der Benutzer das richtige Element auswählen kann. Der Benutzer kann den disambitätsmodus abbrechen, indem er "Abbrechen" sagt.
 
-Zum Beispiel:
+Beispiel:
 
 - Im aktiven Empfangsmodus, vor der Eindeutigkeit; der Benutzer sagt: "ist ich mehrdeutig":
 
@@ -209,16 +209,16 @@ Das obige Beispiel zeigt, wie die Benutzeroberfläche mit und ohne sprach Tipp B
 
     ![](images/ves_alm_labels.png) 
 
-Im Fall von `button1`füllt XAML die `AutomationProperties.Name`-Eigenschaft automatisch mit Text aus dem sichtbaren Text Inhalt des Steuer Elements auf.  Aus diesem Grund gibt es auch dann eine Sprech Tip Bezeichnung, wenn kein expliziter `AutomationProperties.Name` festgelegt ist.
+Im Fall von `button1` füllt XAML die `AutomationProperties.Name` Eigenschaft automatisch mit Text aus dem sichtbaren Text Inhalt des Steuer Elements auf.  Aus diesem Grund gibt es auch dann eine Sprech Tip Bezeichnung, wenn keine explizite `AutomationProperties.Name` Menge vorhanden ist.
 
-Mit `button2`legen wir die `AutomationProperties.Name` explizit auf einen anderen Wert als den Text des Steuer Elements fest.
+Mit `button2` legen wir den explizit `AutomationProperties.Name` auf einen anderen als den Text des Steuer Elements fest.
 
-Mit `comboBox`haben wir die Eigenschaft `LabeledBy` verwendet, um als Quelle der Automatisierungs `Name`auf `label1` zu verweisen. in `label1` wir die `AutomationProperties.Name` auf einen natürlicheren Ausdruck festgelegt, der nicht auf dem Bildschirm gerendert wird ("Wochentag" statt "Tag der Woche auswählen").
+Mit wird `comboBox` die-Eigenschaft verwendet, `LabeledBy` um `label1` als Quelle für die Automatisierung zu verweisen `Name` , und in wird `label1` der auf einen natürlicheren Ausdruck festgelegt, der nicht auf dem `AutomationProperties.Name` Bildschirm gerendert wird ("Wochentag" statt "Tag der Woche auswählen").
 
-Zum Schluss greift mit `button3`die `Name` vom ersten untergeordneten Element ab, da für `button3` selbst kein `AutomationProperties.Name` festgelegt ist.
+Schließlich wird mit `button3` von Ves der `Name` aus dem ersten untergeordneten Element übernommen, da `button3` selbst über keinen `AutomationProperties.Name` Satz verfügt.
 
-## <a name="see-also"></a>Weitere Informationen:
-- [Grundlagen der Benutzeroberflächenautomatisierung](https://msdn.microsoft.com/library/ms753107(v=vs.110).aspx "Grundlagen der Benutzeroberflächenautomatisierung")
-- [Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche](https://msdn.microsoft.com/library/ff400332(vs.95).aspx "Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche")
+## <a name="see-also"></a>Weitere Informationen
+- [Grundlagen der Benutzeroberflächenautomatisierung](/dotnet/framework/ui-automation/ui-automation-fundamentals "Grundlagen der Benutzeroberflächenautomatisierung")
+- [Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "Automatisierungs Eigenschaften für die Barrierefreiheits Unterstützung in der Benutzeroberfläche")
 - [Häufig gestellte Fragen](frequently-asked-questions.md)
 - [UWP auf Xbox One](index.md)

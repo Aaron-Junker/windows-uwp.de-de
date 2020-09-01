@@ -1,26 +1,26 @@
 ---
 title: Geräteportal – API-Referenz für Fiddler
-description: Erfahren Sie, wie Sie die Fiddler-Ablaufverfolgung programmgesteuert aktivieren/deaktivieren.
+description: Erfahren Sie, wie Sie die Fiddler-Netzwerk Ablauf Verfolgung in Ihrem devkit mithilfe der Xbox-Geräte Portal-Rest-API aktivieren und deaktivieren.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: f431adae41021432dfcfca6b4e79df5237fcb283
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240018"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163994"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler-Einstellungen – API-Referenz   
 Sie können die Fiddler-Netzwerkablaufverfolgung für Ihr Dev Kit mittels dieser REST-API aktivieren und deaktivieren.
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>Ermitteln, ob die Fiddler-Ablaufverfolgung aktiviert ist
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>Bestimmen, ob die Fiddler-Ablauf Verfolgung aktiviert ist
 
 **Anforderung**
 
-Sie können mit der folgenden Anforderung überprüfen, ob die Fiddler-Ablaufverfolgung auf dem Gerät aktiviert ist.
+Mithilfe der folgenden Anforderung können Sie überprüfen, ob die Fiddler-Ablauf Verfolgung auf dem Gerät aktiviert ist.
 
 Methode      | Anforderungs-URI
 :------     | :-----
@@ -41,15 +41,15 @@ GET | /ext/fiddler
 
 **Antwort**   
 
-- Die boolesche JSON-Eigenschaft „ IsProxyEnabled“ gibt an, ob der Proxy aktiviert ist.
+- JSON-boolesche Eigenschaft isproxyaktivierte, die spezifigibt, ob der Proxy aktiviert ist.
 
 **Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | Beschreibung
+HTTP-Statuscode      | BESCHREIBUNG
 :------     | :-----
-200 | Erfolgreich
+200 | Erfolg
 4XX | Fehlercodes
 5XX | Fehlercodes
 
@@ -67,7 +67,7 @@ POST | /ext/fiddler
 
 Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
-| URI-Parameter      | Beschreibung     | 
+| URI-Parameter      | BESCHREIBUNG     | 
 | ------------------ |-----------------|
 | proxyAddress       | Die IP-Adresse oder der Hostnamen des Geräts, auf dem Fiddler ausgeführt wird. |
 | proxyPort          | Der Port, den Fiddler für die Überwachung des Datenverkehrs verwendet. Der Standardport ist 8888. |
@@ -90,7 +90,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | Beschreibung
+HTTP-Statuscode      | BESCHREIBUNG
 :------     | :-----
 204 | Die Anforderung für die Aktivierung von Fiddler wurde akzeptiert. Fiddler wird aktiviert, wenn das Gerät das nächste Mal neu gestartet wird.
 4XX | Fehlercodes
@@ -104,7 +104,7 @@ Sie können die Fiddler-Ablaufverfolgung mithilfe der folgenden Anforderung für
 
 Methode      | Anforderungs-URI
 :------     | :-----
-DELETE | /ext/fiddler
+Delete | /ext/fiddler
 
 **URI-Parameter**
 
@@ -126,7 +126,7 @@ DELETE | /ext/fiddler
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-HTTP-Statuscode      | Beschreibung
+HTTP-Statuscode      | BESCHREIBUNG
 :------     | :-----
 204 | Die Anforderung zum Deaktivieren der Fiddler-Ablaufverfolgung war erfolgreich. Die Nachverfolgung wird deaktiviert, wenn das Gerät das nächste Mal neu gestartet wird.
 4XX | Fehlercodes
@@ -137,6 +137,6 @@ HTTP-Statuscode      | Beschreibung
 
 * Windows Xbox
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 - [Konfigurieren von Fiddler für UWP auf Xbox](uwp-fiddler.md)
 

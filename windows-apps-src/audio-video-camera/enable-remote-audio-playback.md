@@ -5,12 +5,12 @@ ms.date: 05/03/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d4a4ab7664833308fe059e8bf07f68adea82b3e
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 8a23758612b3c595f808fe2ffe4f38e558cf0740
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262751"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163964"
 ---
 # <a name="enable-audio-playback-from-remote-bluetooth-connected-devices"></a>Aktivieren der Audiowiedergabe auf Geräten mit Remoteverbindung über Bluetooth
 
@@ -32,7 +32,7 @@ Die [devicewatcher](/uwp/api/windows.devices.enumeration.devicewatcher) -Klasse 
 
 Das Ereignis [devicewatcher. Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) wird für jedes Gerät ausgelöst, das verbunden ist, wenn der Geräte-Watcher gestartet wird, sowie für alle Geräte, die verbunden sind, während der Geräte-Watcher ausgeführt wird. Das [devicewatcher. removed](/uwp/api/windows.devices.enumeration.devicewatcher.removed) -Ereignis wird ausgelöst, wenn ein zuvor verbundenes Gerät die Verbindung trennt. 
 
-Wenden Sie sich an [devicewatcher. Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) , um mit der Überwachung auf verbundene Geräte zu beginnen, die Audiowiedergabe Verbindungen unterstützen In diesem Beispiel starten wir den Geräte-Manager, wenn das Haupt **Raster** -Steuerelement in der Benutzeroberfläche geladen wird. Weitere Informationen zur Verwendung von **devicewatcher**finden Sie unter [Aufzählen von Geräten](/windows/uwp/devices-sensors/enumerate-devices).
+Wenden Sie sich an [devicewatcher. Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) , um mit der Überwachung auf verbundene Geräte zu beginnen, die Audiowiedergabe Verbindungen unterstützen In diesem Beispiel starten wir den Geräte-Manager, wenn das Haupt **Raster** -Steuerelement in der Benutzeroberfläche geladen wird. Weitere Informationen zur Verwendung von **devicewatcher**finden Sie unter [Aufzählen von Geräten](../devices-sensors/enumerate-devices.md).
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_MainGridLoaded":::
 
@@ -87,7 +87,3 @@ Sie sollten den Fall behandeln, in dem ein Gerät entfernt wird, während eine V
 
 
  
-
-
-
-

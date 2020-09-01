@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Analysen, Berichte, Dashboards, apps, Daten, Metriken
 ms.localizationpriority: medium
-ms.openlocfilehash: 13cd8d08fb4c93bdcc273e84fbfdcfe986f28140
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 9b14ee776b31e21fbb8a0ee1d66b933648549b69
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846720"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162084"
 ---
 # <a name="analyze-app-performance"></a>Analysieren der App-Leistung
 
@@ -37,7 +37,7 @@ In diesem Abschnitt erhalten Sie Details zu den Informationen, die in den folgen
 -   [Xbox-Analysebericht](xbox-analytics-report.md)
 -   [Datenbericht](insights-report.md)
 -   [Bericht zur Anzeigenleistung](advertising-performance-report.md)
--   [Werbekampagnenbericht](promote-your-app-report.md)
+-   [Werbekampagnenbericht](/windows/uwp/publish/ad-campaign-report)
 
 
 > [!NOTE]
@@ -64,4 +64,4 @@ Verwenden Sie die folgenden Ressourcen, um mit Power BI auf Ihre Analysedaten zu
 * [Informationen zum Einsetzen des Windows Dev Center-Inhaltspakets für Power BI, um eine Verbindung zu Ihren Analysedaten herzustellen](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Zum Herstellen einer Verbindung mit dem Windows dev Center-Inhalts Paket für Power BI empfiehlt es sich, Anmelde Informationen aus einem Azure AD Verzeichnis anzugeben, das Ihrem Partner Center-Konto zugeordnet ist. Wenn Sie die Anmeldeinformationen Ihres Microsoft-Kontos verwenden, werden Ihre Analysedaten in Power BI nicht automatisch aktualisiert. Für eine Aktualisierung müssen Sie sich dann in Power BI anmelden. Wenn Ihre Organisation bereits Microsoft 365 oder andere Unternehmens Dienste von Microsoft verwendet, verfügen Sie bereits über Azure AD. Andernfalls können Sie es [kostenlos abrufen](https://account.azure.com/organization). Weitere Informationen zum Einrichten der Zuordnung finden [Sie unterzuordnen von Azure Active Directory zu Ihrem Partner Center-Konto](associate-azure-ad-with-dev-center.md).
+> Zum Herstellen einer Verbindung mit dem Windows dev Center-Inhalts Paket für Power BI empfiehlt es sich, Anmelde Informationen aus einem Azure AD Verzeichnis anzugeben, das Ihrem Partner Center-Konto zugeordnet ist. Wenn Sie die Anmeldeinformationen Ihres Microsoft-Kontos verwenden, werden Ihre Analysedaten in Power BI nicht automatisch aktualisiert. Für eine Aktualisierung müssen Sie sich dann in Power BI anmelden. Wenn Ihre Organisation bereits Microsoft 365 oder andere Unternehmens Dienste von Microsoft verwendet, verfügen Sie bereits über Azure AD. Andernfalls können Sie es [kostenlos abrufen](https://account.azure.com/organization). Weitere Informationen zum Einrichten der Zuordnung finden [Sie unterzuordnen von Azure Active Directory zu Ihrem Partner Center-Konto](./associate-azure-ad-with-partner-center.md).

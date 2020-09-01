@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Games, Main-Objekt
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a6d087be6df93ee6798c29147f7fd1c820bd225
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 497a1f0dc16308b4b9360aff958b94f04b6283ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409559"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162994"
 ---
 # <a name="define-the-main-game-object"></a>Definieren des Hauptobjekts für das Spiel
 
@@ -249,7 +249,7 @@ Die von **Simple3DGame** definierten öffentlichen Member-Funktionen enthalten d
 
 - **Initialisieren**. Legt die Anfangswerte der globalen Variablen fest und initialisiert die Spielobjekte. Dies wird im Abschnitt [initialisieren und Starten des Spiels](#initialize-and-start-the-game) beschrieben.
 - **LoadGame**. Initialisiert eine neue Ebene und beginnt damit, Sie zu laden.
-- **LoadLevelAsync**. Eine Coroutine, die die Ebene initialisiert und dann eine weitere Coroutine für den Renderer aufruft, um die gerätespezifischen ebenendourcen zu laden. Diese Methode wird in einem gesonderten Thread ausgeführt. Daher können in diesem Thread nur [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device)-Methoden (und keine [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)-Methoden) aufgerufen werden. Alle Gerätekontextmethoden werden in der **FinalizeLoadLevel**-Methode aufgerufen. Wenn Sie mit der asynchronen Programmierung noch nicht vertraut sind, finden Sie weitere Informationen unter Parallelität [und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+- **LoadLevelAsync**. Eine Coroutine, die die Ebene initialisiert und dann eine weitere Coroutine für den Renderer aufruft, um die gerätespezifischen ebenendourcen zu laden. Diese Methode wird in einem gesonderten Thread ausgeführt. Daher können in diesem Thread nur [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device)-Methoden (und keine [**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)-Methoden) aufgerufen werden. Alle Gerätekontextmethoden werden in der **FinalizeLoadLevel**-Methode aufgerufen. Wenn Sie mit der asynchronen Programmierung noch nicht vertraut sind, finden Sie weitere Informationen unter Parallelität [und asynchrone Vorgänge mit C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 - **FinalizeLoadLevel**. Führt alle Aktionen zum Laden des Levels aus, die im Hauptthread durchgeführt werden müssen. Dies schließt alle Aufrufe von Direct3D 11-Gerätekontextmethoden ([**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) ein.
 - **StartLevel**. Startet das Spiel für eine neue Ebene.
 - **PauseGame**. Hält das Spiel an.

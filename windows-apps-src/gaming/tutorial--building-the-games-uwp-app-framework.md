@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5052b4e71196950b6a8a91aaa271b5550fb448b5
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 2d762aebeaa5c97c1b23a91f0765cb5c09a91b46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409619"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163054"
 ---
 #  <a name="define-the-games-uwp-app-framework"></a>Definieren des UWP-App-Frameworks für das Spiel
 
@@ -124,7 +124,7 @@ Der **gamemain** -Konstruktor (und die anderen Member-Funktionen, die er aufruft
 
 Windows erzwingt eine Beschränkung für die Zeit, die das Spiel dauern kann, bevor die Verarbeitung der Eingabe beginnt. Daher bedeutet die Verwendung von asyc, wie wir hier Vorgehen, bedeutet, dass die **Last** schnell zurückgegeben werden kann, während die begonnene Arbeit im Hintergrund fortgesetzt wird. Wenn das Laden sehr lange dauert, oder wenn viele Ressourcen vorhanden sind, ist die Bereitstellung der Benutzer mit einer häufig aktualisierten Statusanzeige eine gute Idee. 
 
-Wenn Sie mit der asynchronen Programmierung noch nicht vertraut sind, finden Sie weitere Informationen unter Parallelität [und asynchrone Vorgänge mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+Wenn Sie mit der asynchronen Programmierung noch nicht vertraut sind, finden Sie weitere Informationen unter Parallelität [und asynchrone Vorgänge mit C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
 
 ```cppwinrt
 GameMain::GameMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) :
