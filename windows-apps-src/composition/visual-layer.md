@@ -4,74 +4,74 @@ title: Visuelle Ebene
 description: Die Windows.UI.Composition-API ermöglicht den Zugriff auf die Kompositionsebene zwischen der Frameworkebene (XAML) und der Grafikebene (DirectX).
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ac41d461982a39a939e460b7a81b144e5a08fdb3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3cdd7c17bc0d419a7449b366b620a4d5654cccc4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255526"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160724"
 ---
 # <a name="visual-layer"></a>Visuelle Ebene
 
-Die visuelle Ebene bietet eine hohe Leistung, Speichermodus-API für Grafiken, Effekte und Animationen und ist die Grundlage für alle UI-Elemente für Windows-Geräte. Sie definieren die Benutzeroberfläche auf deklarative Weise, und die visuelle Schicht basiert auf der Beschleunigung der Grafikhardware, um sicherzustellen, dass Ihre Inhalte, Effekte und Animationen unabhängig vom UI-Thread der APP nahtlos und problemlos gerendert werden.
+Die visuelle Schicht bietet eine leistungsstarke API für den beibehaltenen Modus für Grafiken, Effekte und Animationen und bildet die Grundlage für alle Benutzeroberflächen auf Windows-Geräten.Sie definieren die Benutzeroberfläche auf deklarative Weise, und die visuelle Schicht basiert auf der Beschleunigung der Grafikhardware, um sicherzustellen, dass Ihre Inhalte, Effekte und Animationen unabhängig vom UI-Thread der APP nahtlos und problemlos gerendert werden.
 
 Wichtige Highlights:
 
 * Vertraute WinRT-APIs
-* Entwickelt für eine dynamischere Benutzeroberfläche und Interaktionen
-* Konzepte an Entwurfstools ausgerichtet
-* Lineare Skalierbarkeit ohne plötzliche Leistungsprobleme
+* Architektur für eine dynamischere Benutzeroberfläche und Interaktionen
+* Konzepte, die mit Entwurfs Tools ausgerichtet sind
+* Lineare Skalierbarkeit ohne plötzliche Leistungs Klippen
 
-Die Windows-UWP-Apps verwenden bereits die visuelle Ebene über eines der UI-Frameworks. Sie können die visuelle Ebene auch direkt mit wenig Aufwand zum benutzerdefinierten Rendern, für Effekte und Animationen nutzen.
+Ihre Windows UWP-Apps verwenden bereits die visuelle Schicht über eines der Benutzeroberflächen-Frameworks. Sie können die visuelle Schicht auch direkt für benutzerdefiniertes Rendering, Effekte und Animationen nutzen, mit sehr geringem Aufwand.
 
-![Anordnung des UI-Framework: Die Frameworkebene (Windows.UI.XAML) basiert auf der visuellen Ebene (Windows.UI.Composition), die wiederum auf der Grafikebene (DirectX) basiert.](images/layers-win-ui-composition.png)
+![UI-Framework-Schichten: die Frameworkebene (Windows. UI. XAML) basiert auf der visuellen Ebene (Windows. UI. Composition), die auf der Grafik Schicht (DirectX) basiert.](images/layers-win-ui-composition.png)
 
-## <a name="whats-in-the-visual-layer"></a>Was befindet sich in der visuellen Ebene?
+## <a name="whats-in-the-visual-layer"></a>Was ist in der visuellen Schicht?
 
-Die wichtigsten Funktionen der visuellen Ebene sind:
+Die primären Funktionen der visuellen Ebene sind:
 
-1. **Inhalt**: Einfache Zusammensetzung des benutzerdefinierten gezeichneten Inhalts
-1. **Effekte**: UI-Effektsystem in Echtzeit, dessen Effekte animiert, verkettet und angepasst werden können
-1. **Animationen**: Ausdrucksstarke, Framework-agnostische Animationen, die unabhängig vom UI-Thread ausgeführt werden
+1. **Inhalt**: Lightweight Zusammensetzung of Custom Drawn Content
+1. **Effekte**: echt Zeiteffekte der Benutzeroberflächen Effekte, deren Effekte animiert, verkettet und angepasst werden können
+1. **Animationen**: ausdrucksstarke, Framework-agnostische Animationen, die unabhängig vom UI-Thread ausgeführt werden
 
 ### <a name="content"></a>Inhalt
 
-Inhalt wird vom Animations- und Effektsystem mit visuellen Elementen für die Verwendung gehostet, transformiert und zur Verfügung gestellt. An der Basis der Klassenhierarchie befindet sich die [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)-Klasse, ein leichter Thread-Agile-Proxy im App-Prozess zum visuellen Zustand im Kompositor. Zu den untergeordneten Klassen von Visual gehört  [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) , damit untergeordnete Elemente Strukturen von visuellen Elementen und [**spritevisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) erstellen können, die Inhalte enthalten und entweder mit voll Tonfarben, mit benutzerdefiniertem gezeichneten Inhalt oder mit visuellen Effekten gezeichnet werden können. Zusammen bilden diese Visual-Typen die visuelle Struktur für die 2D-UI und stützen die meisten sichtbaren XAML-FrameworkElements.
+Der Inhalt wird gehostet, transformiert und zur Verwendung durch das Animations-und Effekte System mithilfe von visuellen Elementen zur Verfügung gestellt. An der Basis der Klassenhierarchie befindet sich die [**visuelle**](/uwp/api/Windows.UI.Composition.Visual) Klasse, ein schlanker Thread-Agile-Proxy im App-Prozess für den visuellen Zustand im Compositor. Zu den untergeordneten Klassen von Visual gehört  [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) , damit untergeordnete Elemente Strukturen von visuellen Elementen und [**spritevisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) erstellen können, die Inhalte enthalten und entweder mit voll Tonfarben, mit benutzerdefiniertem gezeichneten Inhalt oder mit visuellen Effekten gezeichnet werden können. Diese visuellen Typen bilden gemeinsame Struktur der visuellen Struktur für die 2D-Benutzeroberfläche und die meisten sichtbaren XAML-Frameworkelemente.
 
-Weitere Informationen finden Sie in der Übersicht [Visuelle Kompositionseffekte](composition-visual-tree.md).
+Weitere Informationen finden Sie unter Übersicht über die [Komposition](composition-visual-tree.md) .
 
 ### <a name="effects"></a>Effekte
 
-Das Effektsystem in der visuellen Ebene ermöglicht Ihnen das Anwenden einer Kette von Filter- und Transparenzeffekten auf ein visuelles Element oder eine Struktur der visuellen Elemente. Dies ist ein UI-Effektsystem und nicht zu verwechseln mit Bild- und Medieneffekten. Effekte funktionieren in Verbindung mit dem Animationssystem und ermöglichen, dass Benutzer nahtlos und dynamisch Animationen von Effekteigenschaften erzielen können, die unabhängig vom UI-Thread gerendert wurden. Effekte in der visuellen Ebene bieten kreative Bausteine, die kombiniert und animiert werden können, um speziell angepasste und interaktive Benutzeroberflächen zu erstellen.
+Mit dem Effects-System in der visuellen Schicht können Sie eine Kette von Filter-und Transparenz Effekten auf ein visuelles Element oder eine visuelle Struktur anwenden. Dabei handelt es sich um ein System mit Benutzeroberflächen Effekten, das nicht mit Bild-und Medien Effekten verwechselt werden kann. Effekte funktionieren in Verbindung mit dem Animationssystem, sodass Benutzer Smooth-und dynamische Animationen von Effekt Eigenschaften erreichen können, die unabhängig vom UI-Thread gerendert werden. Effekte in der visuellen Ebene bieten die kreativen Bausteine, die kombiniert und animiert werden können, um maßgeschneiderte und interaktive Benutzeroberflächen zu erstellen.
 
-Neben animierbaren Effektketten unterstützt die visuelle Ebene auch ein Lichtmodell, mit dem visuelle Elemente Materialeigenschaften durch die Reaktion auf animierbare Lichter nachahmen können. Visuelle Elemente können auch Schatten werfen. Licht und Schatten können kombiniert werden, um eine Wahrnehmung von Tiefe und Realismus zu erstellen.
+Zusätzlich zu den animier baren Effektketten unterstützt die visuelle Schicht auch ein Beleuchtungsmodell, das visuellen Elementen das imitieren von Materialeigenschaften ermöglicht, indem Sie auf animier Bare Leuchten antwortet. Visuelle Elemente können auch Schatten umwandeln. Beleuchtung und Schatten können kombiniert werden, um einen Eindruck von Tiefe und Realismus zu schaffen.
 
 Weitere Informationen finden Sie in der Übersicht [Kompositionseffekte](composition-effects.md).
 
 ### <a name="animations"></a>Animationen
 
-Das Animationssystem in der visuellen Ebene ermöglicht das Verschieben von visuellen Elementen, Animieren von Effekten und Erstellen von Transformationen, Clips und anderen Eigenschaften.  Dabei handelt es sich um ein Framework-agnostisches System, das von Grund auf im Hinblick auf die Leistung entworfen wurde.  Sie wird unabhängig vom UI-Thread ausgeführt, um glätbarkeit und Skalierbarkeit zu gewährleisten.  Obwohl Sie mit Ihnen vertraute Keyframe-Animationen verwenden können, um Eigenschafts Änderungen im Laufe der Zeit zu steuern, können Sie auch mathematische Beziehungen zwischen verschiedenen Eigenschaften einrichten, einschließlich der Benutzereingaben, sodass Sie nahtlose, choreographte Umgebungen direkt erstellen können.
+Das Animationssystem in der visuellen Ebene ermöglicht Ihnen das Verschieben von visuellen Elementen, das Animieren von Effekten und das Steuern von Transformationen, Clips und anderen Eigenschaften.Dabei handelt es sich um ein Framework-agnostisches System, das von Grund auf im Hinblick auf die Leistung entworfen wurde.Sie wird unabhängig vom UI-Thread ausgeführt, um glätbarkeit und Skalierbarkeit zu gewährleisten.Obwohl Sie mit Ihnen vertraute Keyframe-Animationen verwenden können, um Eigenschafts Änderungen im Laufe der Zeit zu steuern, können Sie auch mathematische Beziehungen zwischen verschiedenen Eigenschaften einrichten, einschließlich der Benutzereingaben, sodass Sie nahtlose, choreographte Umgebungen direkt erstellen können.
 
 Weitere Informationen finden Sie in der Übersicht [Kompositionsanimationen](composition-animation.md).
 
-### <a name="working-with-your-xaml-uwp-app"></a>Arbeit mit der XAML-UWP-App
+### <a name="working-with-your-xaml-uwp-app"></a>Arbeiten mit ihrer XAML-UWP-App
 
-Sie können auf ein visuelles Element, das über das XAML-Framework erstellt wurde, zugreifen und ein sichtbares FrameworkElement sichern, indem Sie die [**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)-Klasse in [**Windows.UI.Xaml.Hosting**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting) verwenden. Beachten Sie, dass einige Einschränkungen der Anpassung für visuelle Elemente gelten, die über das Framework für Sie erstellt wurden. Dies liegt daran, dass das Framework Offsets, Transformationen und Lebensdauer-Zeitspannen verwaltet. Sie können jedoch Ihre eigenen visuellen Elemente erstellen und sie einem vorhandenen XAML-Element über ElementCompositionPreview anhängen. Sie können sie auch einem vorhandenen ContainerVisual an einer beliebigen Stelle in der visuellen Struktur hinzufügen.
+Mithilfe der [**elementcompositionpreview**](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) -Klasse in [**Windows. UI. XAML. Hosting**](/uwp/api/Windows.UI.Xaml.Hosting)können Sie zu einem vom XAML-Framework erstellten visuellen Element gelangen und ein sichtbares FrameworkElement-Element unterstützen. Beachten Sie, dass die für Sie durch das Framework erstellten Visualisierungen einige Beschränkungen für die Anpassung haben. Dies liegt daran, dass das Framework Offsets, Transformationen und Lebens dauern verwaltet. Sie können jedoch eigene Visualisierungen erstellen und Sie über elementcompositionpreview an ein vorhandenes XAML-Element anfügen, oder indem Sie es einer vorhandenen containervisualisierung irgendwo in der visuellen Struktur hinzufügen.
 
-Weitere Informationen finden Sie in der Übersicht [Benutzung der visuellen Ebene mit XAML](using-the-visual-layer-with-xaml.md).
+Weitere Informationen finden Sie in der Übersicht über das [Verwenden der visuellen Ebene mit XAML](using-the-visual-layer-with-xaml.md) .
 
 ### <a name="working-with-your-desktop-app"></a>Arbeiten mit ihrer Desktop-App
 
-Mithilfe der visuellen Ebene können Sie das Aussehen, das Gefühl und die Funktionalität Ihrer WPF-, Windows Forms-und C++ Win32-Desktop-Apps verbessern. Sie können Inhalts Inseln migrieren, um die visuelle Schicht zu verwenden, und den Rest der Benutzeroberfläche im vorhandenen Framework beibehalten. Dies bedeutet, dass Sie bedeutende Updates und Verbesserungen an der Benutzeroberfläche der Anwendung vornehmen können, ohne umfassende Änderungen an der vorhandenen Codebasis vornehmen zu müssen.
+Mithilfe der visuellen Ebene können Sie das Aussehen, das Gefühl und die Funktionalität Ihrer WPF-, Windows Forms-und C++ Win32-Desktop-Apps verbessern. Sie können Inhalts Inseln migrieren, um die visuelle Schicht zu verwenden, und den Rest der Benutzeroberfläche im vorhandenen Framework beibehalten. So kannst du erhebliche Updates und Verbesserungen an der Benutzeroberfläche deiner Anwendung vornehmen, ohne die vorhandene Codebasis umfassend ändern zu müssen.
 
 Weitere Informationen finden Sie unter [Modernize your desktop app using the Visual layer](/windows/apps/desktop/modernize/visual-layer-in-desktop-apps) (Modernisieren Ihrer Desktop-App über die visuelle Ebene).
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-* [**Vollständige Referenz Dokumentation für die API**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition)
+* [**Vollständige Referenz Dokumentation für die API**](/uwp/api/Windows.UI.Composition)
 * Erweiterte UI und Kompositionsbeispiele in dem [WindowsUIDevLabs-GitHub](https://github.com/microsoft/WindowsCompositionSamples).
 * [Beispiel Katalog für Windows. UI. Composition](https://www.microsoft.com/store/apps/9pp1sb5wgnww)
-* [Twitter-Feed @windowsui](https://twitter.com/windowsui)
-* Lesen Sie den MSDN-Artikel von Kenny Kerr zu dieser API: [Grafiken und Animationen – Windows Composition wird 10](https://msdn.microsoft.com/magazine/mt590968)
+* [@windowsui Twitter-Feed ](https://twitter.com/windowsui)
+* Lesen Sie den MSDN-Artikel von Kenny Kerr zu dieser API: [Grafiken und Animationen – Windows Composition wird 10](/archive/msdn-magazine/2015/windows-10-special-issue/graphics-and-animation-windows-composition-turns-10)

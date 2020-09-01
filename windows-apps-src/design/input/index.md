@@ -1,5 +1,5 @@
 ---
-description: Optimieren Sie Ihre App für Stift, Surface Dial und andere Eingabetypen.
+description: Erfahren Sie, wie Sie Ihre UWP-App (Universelle Windows-Plattform) für die Interaktion mit bestimmten Eingabetypen wie Stift, Surface Dial und Sprache anpassen können.
 title: Eingabe und Interaktionen
 keywords: App-Eingaben, Anpassen einer UWP-Anwendung
 label: Input and interactions
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c54101306d2382a4e0301e89410d58abfb87743
-ms.sourcegitcommit: dccba7256765116f06cf96143eb3cbaa12d7fe0b
+ms.openlocfilehash: 4fc0fa50bbf015c32934785e96b59924889d2f45
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87523536"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094767"
 ---
 # <a name="input-and-interactions"></a>Eingabe und Interaktionen
 

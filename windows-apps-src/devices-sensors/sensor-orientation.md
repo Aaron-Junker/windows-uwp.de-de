@@ -6,21 +6,21 @@ ms.date: 07/03/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b61b7bcd18419ec9be719b5f565e5503953be7c3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8836753778b1dd5dcbc8856b0df5ec1f11d8e753
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493469"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159804"
 ---
 # <a name="sensor-orientation"></a>Sensorausrichtung
 
-Sensordaten der Klassen [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer) und [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) sind durch ihre Referenzachsen definiert. Diese Achsen werden durch den Verweis Rahmen des Geräts definiert und drehen sich mit dem Gerät, während der Benutzer Sie einschalten. Falls Ihre App die automatische Drehung unterstützt und sie sich selbst entsprechend der Drehung des Geräts neu ausrichtet, müssen Sie die Sensordaten für die Drehung anpassen, bevor Sie sie verwenden.
+Sensordaten der Klassen [**Accelerometer**](/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer) und [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) sind durch ihre Referenzachsen definiert. Diese Achsen werden durch den Verweis Rahmen des Geräts definiert und drehen sich mit dem Gerät, während der Benutzer Sie einschalten. Falls Ihre App die automatische Drehung unterstützt und sie sich selbst entsprechend der Drehung des Geräts neu ausrichtet, müssen Sie die Sensordaten für die Drehung anpassen, bevor Sie sie verwenden.
 
 ### <a name="important-apis"></a>Wichtige APIs
 
-- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
-- [**Windows. Devices. Sensors. Custom**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Windows. Devices. Sensors. Custom**](/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>Bildschirmausrichtung und Geräteausrichtung
 
@@ -30,22 +30,22 @@ Um die Referenzachse für Sensoren begreifen zu können, muss zwischen Bildschir
 > Die positive z-Achse erweitert den Bildschirm des Geräts, wie in der folgenden Abbildung dargestellt.
 > :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="Z-Achse für Laptop":::
 
-In den folgenden Diagrammen befinden sich sowohl das Gerät als auch die Anzeige Ausrichtung im [quer](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) Format (die angezeigten Sensor Achsen sind spezifisch für Querformat).
+In den folgenden Diagrammen befinden sich sowohl das Gerät als auch die Anzeige Ausrichtung im [quer](/uwp/api/Windows.Graphics.Display.DisplayOrientations) Format (die angezeigten Sensor Achsen sind spezifisch für Querformat).
 
 
-Dieses Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung im [quer](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)Format an.
+Dieses Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung im [quer](/uwp/api/Windows.Graphics.Display.DisplayOrientations)Format an.
 
 :::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="Bildschirm- und Geräteausrichtung im Querformat":::
 
-Das nächste Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung in " [landscapeflipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)" an.
+Das nächste Diagramm zeigt sowohl die Anzeige als auch die Geräte Ausrichtung in " [landscapeflipped](/uwp/api/Windows.Graphics.Display.DisplayOrientations)" an.
 
 :::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="Bildschirm- und Geräteausrichtung im LandscapeFlipped-Format":::
 
-In diesem abschließenden Diagramm wird die Anzeige Ausrichtung im Querformat dargestellt, während die Geräte Ausrichtung [Landschafts](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)basiert ist.
+In diesem abschließenden Diagramm wird die Anzeige Ausrichtung im Querformat dargestellt, während die Geräte Ausrichtung [Landschafts](/uwp/api/Windows.Graphics.Display.DisplayOrientations)basiert ist.
 
 :::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="Bildschirmausrichtung im Querformat und Geräteausrichtung im LandscapeFlipped-Format":::
 
-Sie können die Ausrichtungswerte mithilfe der [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation)-Klasse abfragen, indem Sie die [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview)-Methode mit der [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation)-Eigenschaft verwenden. Anschließend können Sie durch einen Vergleich mit der [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)-Enumeration eine Logik erstellen. Bedenken Sie, dass Sie für jede unterstützte Ausrichtung eine Konvertierung der Referenzachsen in die jeweilige Ausrichtung unterstützen müssen.
+Sie können die Ausrichtungswerte mithilfe der [**DisplayInformation**](/uwp/api/Windows.Graphics.Display.DisplayInformation)-Klasse abfragen, indem Sie die [**GetForCurrentView**](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview)-Methode mit der [**CurrentOrientation**](/uwp/api/windows.graphics.display.displayinformation.currentorientation)-Eigenschaft verwenden. Anschließend können Sie durch einen Vergleich mit der [**DisplayOrientations**](/uwp/api/Windows.Graphics.Display.DisplayOrientations)-Enumeration eine Logik erstellen. Bedenken Sie, dass Sie für jede unterstützte Ausrichtung eine Konvertierung der Referenzachsen in die jeweilige Ausrichtung unterstützen müssen.
 
 ## <a name="landscape-first-vs-portrait-first-devices"></a>Für Querformat und für Hochformat ausgelegte Geräte
 
@@ -70,8 +70,8 @@ Die Kompassrichtung hängt von den Referenzachsen ab und ändert sich daher mit 
 
 | Bildschirmausrichtung | Referenzachse für Kompassrichtung | API-Kompass-Überschrift, wenn nach Norden (Querformat) | API-Kompass-Überschrift, wenn nach Norden (Hochformat) |Kompensierung der Kompass Überschrift (Querformat zuerst) | Kompensierung der Kompass Überschrift (Hochformat-zuerst) |
 |---------------------|------------------------------------|---------------------------------------------------------|--------------------------------------------------------|------------------------------------------------|-----------------------------------------------|
-| Querformat           | -Z | 0   | 270 | Richtung               | (Richtung + 90) % 360  |
-| Hochformat            |  J | 90  | 0   | (Richtung + 270) % 360 |  Richtung              |
+| Querformat           | -Z | 0   | 270 | Überschrift               | (Richtung + 90) % 360  |
+| Hochformat            |  J | 90  | 0   | (Richtung + 270) % 360 |  Überschrift              |
 | LandscapeFlipped    |  Z | 180 | 90  | (Richtung + 180) % 360 | (Richtung + 270) % 360 |
 | PortraitFlipped     |  J | 270 | 180 | (Richtung + 90) % 360  | (Richtung + 180) % 360 |
 
@@ -164,7 +164,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>Bildschirmausrichtung und Geräteausrichtung
 
-Die [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)-Daten müssen auf andere Weise geändert werden. Betrachten Sie diese verschiedenen Ausrichtungen als Drehungen gegen den Uhrzeigersinn zur z-Achse, sodass wir die Drehung umkehren müssen, um die Ausrichtung des Benutzers zurückzusetzen. Für Quaterniondaten können wir anhand der eulerschen Formel eine Drehung mit einer Referenzquaternion definieren, und außerdem können wir eine Referenzdrehungsmatrix verwenden.
+Die [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)-Daten müssen auf andere Weise geändert werden. Betrachten Sie diese verschiedenen Ausrichtungen als Drehungen gegen den Uhrzeigersinn zur z-Achse, sodass wir die Drehung umkehren müssen, um die Ausrichtung des Benutzers zurückzusetzen. Für Quaterniondaten können wir anhand der eulerschen Formel eine Drehung mit einer Referenzquaternion definieren, und außerdem können wir eine Referenzdrehungsmatrix verwenden.
 
 :::image type="content" source="images/eulers-formula.png" alt-text="Eulersche Formel":::
 
@@ -183,4 +183,4 @@ Im vorangehenden Ausdruck wird das absolute Objekt von den Sensordaten zurückge
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Integrieren von Bewegungs- und Ausrichtungssensoren](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)
+[Integrieren von Bewegungs- und Ausrichtungssensoren](/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)

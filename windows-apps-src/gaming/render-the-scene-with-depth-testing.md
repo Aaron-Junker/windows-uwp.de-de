@@ -4,21 +4,21 @@ description: Erstellen Sie einen Schatteneffekt, indem Sie dem Vertex-Shader (bz
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Rendern, Szene, Tiefentest, Direct3D, Schatten
+keywords: Windows 10, UWP, Games, Rendering, Scene, tiefen Tests, Direct3D, Shadows
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c2c4e5d45b28c318085f4ce257b587f23f1426
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fd38378e0a1f4cbdf4f9ded246b4b94ed3a705eb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368099"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159244"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>Rendern der Szene mit Tiefentest
 
 
 
 
-Erstellen Sie einen Schatteneffekt, indem Sie dem Vertex-Shader (bzw. Geometry-Shader) und dem Pixel-Shader einen Tiefentest hinzufügen. Teil 3 von [Exemplarische Vorgehensweise: Implementieren Sie mithilfe von Tiefenpuffern in Direct3D 11 Schattenvolumen](implementing-depth-buffers-for-shadow-mapping.md).
+Erstellen Sie einen Schatteneffekt, indem Sie dem Vertex-Shader (bzw. Geometry-Shader) und dem Pixel-Shader einen Tiefentest hinzufügen. Teil 3 von [Exemplarische Vorgehensweise: Implementieren von Schattenvolumes mithilfe von Tiefenpuffern in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="include-transformation-for-light-frustum"></a>Einfügen der Transformation für Licht-Frustum
 
@@ -67,7 +67,7 @@ Als Nächstes wird vom Pixelshader die vom Vertex-Shader bereitgestellte interpo
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>Testen, ob sich die Position im Licht-Frustum befindet
 
 
-Prüfen Sie zuerst, ob sich das Pixel im Ansichts-Frustum des Lichts befindet, indem Sie die X- und Y-Koordinaten normalisieren. Wenn beide innerhalb des Bereichs \[0, 1\] ist es möglich, dass das Pixel im Schatten. Andernfalls können Sie den Tiefentest überspringen. Mit einem Shader kann dies ohne viel Zeitaufwand getestet werden, indem [Saturate](https://docs.microsoft.com/windows/desktop/direct3dhlsl/saturate) aufgerufen und das Ergebnis mit dem Originalwert verglichen wird.
+Prüfen Sie zuerst, ob sich das Pixel im Ansichts-Frustum des Lichts befindet, indem Sie die X- und Y-Koordinaten normalisieren. Wenn beide im Bereich von 0 liegen \[ , \] ist es möglich, dass das Pixel im Schatten ist. Andernfalls können Sie den Tiefentest überspringen. Mit einem Shader kann dies ohne viel Zeitaufwand getestet werden, indem [Saturate](/windows/desktop/direct3dhlsl/saturate) aufgerufen und das Ergebnis mit dem Originalwert verglichen wird.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -89,7 +89,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## <a name="depth-test-against-the-shadow-map"></a>Tiefentest unter Verwendung der Schattenmap
 
 
-Verwenden Sie eine Samplevergleichsfunktion (entweder [SampleCmp](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) oder [SampleCmpLevelZero](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)), um die Tiefe des Pixels im Lichtraum unter Verwendung der Tiefenmap zu testen. Berechnen Sie den normalisierten Lichtraum-Tiefenwert, für den `z / w` gilt, und übergeben Sie den Wert an die Vergleichsfunktion. Da wir für den Sampler einen LessOrEqual-Vergleichstest verwenden, wird von der systeminternen Funktion null zurückgegeben, wenn der Vergleichstest bestanden wurde; dies gibt an, dass das Pixel im Schatten liegt.
+Verwenden Sie eine Samplevergleichsfunktion (entweder [SampleCmp](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) oder [SampleCmpLevelZero](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero)), um die Tiefe des Pixels im Lichtraum unter Verwendung der Tiefenmap zu testen. Berechnen Sie den normalisierten Lichtraum-Tiefenwert, für den `z / w` gilt, und übergeben Sie den Wert an die Vergleichsfunktion. Da wir für den Sampler einen LessOrEqual-Vergleichstest verwenden, wird von der systeminternen Funktion null zurückgegeben, wenn der Vergleichstest bestanden wurde; dies gibt an, dass das Pixel im Schatten liegt.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -161,7 +161,3 @@ Der nächste Teil dieser exemplarischen Vorgehensweise beschäftigt sich mit dem
  
 
  
-
-
-
-

@@ -7,12 +7,12 @@ keywords: IME, Eingabemethoden-Editor, Eingabe, Interaktion
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf150973defb0a431fc7248181ddf648576ac77
-ms.sourcegitcommit: 86ce67a03e87fa1282849b2fcb4f89d1cf23a091
+ms.openlocfilehash: 5a34c15826bff757b7c4277b87cc5fed53a6f109
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87840044"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160004"
 ---
 # <a name="custom-input-method-editor-ime-requirements"></a>Anforderungen an den benutzerdefinierten Eingabemethoden-Editor (IME)
 
@@ -181,7 +181,7 @@ Wenn Alternativen bereitgestellt werden, sollte die APP jede Alternative als Abf
 
 ## <a name="ui-design-guidelines"></a>Entwurfs Richtlinien für Benutzeroberflächen
 
-Alle IMEs müssen den in [Entwerfen und Codieren von Windows-apps](/windows/uwp/design/)beschriebenen Richtlinien für die Benutzer Leistung entsprechen.
+Alle IMEs müssen den in [Entwerfen und Codieren von Windows-apps](../index.md)beschriebenen Richtlinien für die Benutzer Leistung entsprechen.
 
 ### <a name="dont-use-sticky-windows"></a>Keine kurzfenster verwenden
 
@@ -206,7 +206,7 @@ IME-Marken Symbole werden durch ein weißes Feld definiert, in dem ein typografi
 
 Die Symbole des IME-Modus werden durch ein weißes typografisches Symbol in einer modernen Schriftart definiert, das einen äußeren Strich von 1 Pixel in schwarz mit einer Deckkraft von 50% enthält.
 
-| Symbol | Beschreibung |
+| Symbol | BESCHREIBUNG |
 | --- | --- |
 | :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie)."::: | Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie). |
 | :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="Beispiel für ein IME-Marken Symbol für traditionelles Chinesisch (New changejie)."::: | Beispiel für das IME-Marken Symbol für traditionelles Chinesisch (changejie). |
@@ -256,7 +256,7 @@ Wenn Sie Ihre IME mithilfe von Microsoft Visual Studio erstellen, erstellen Sie 
 Die folgenden Schritte zeigen, wie Sie InstallShield verwenden, um ein Setup-Projekt für Ihre IME-DLL zu erstellen.
 
 - Installieren von Visual Studio.
-- Starten Sie Visual Studio.
+- Starten Sie Visual Studio.
 - Zeigen Sie im Menü **Datei** auf **neu** , und wählen Sie **Projekt**aus. Das Dialogfeld " **Neues Projekt** " wird geöffnet.
 - Navigieren Sie im linken Bereich zu **Vorlagen > anderen Projekttypen > Setup und Bereitstellung**, klicken Sie auf **InstallShield Limited Edition aktivieren**, und klicken Sie auf **OK**. Befolgen Sie die Installationsanweisungen.
 - Starten Sie Visual Studio neu.
@@ -290,7 +290,7 @@ Implementieren Sie die folgende Konvention, damit Ihre IMEs den Barrierefreiheit
 - Wenn sich der aktuelle ausgewählte Kandidat ändert, löst die Kandidatenliste eine **UIA_SelectionItem_ElementSelectedEventId**aus. Für das ausgewählte Element sollte eine Eigenschaft **UIA_SelectionItemIsSelectedPropertyId** gleich **true**sein.
 - Die **UIA_NamePropertyId** für jedes Element in der Kandidatenliste muss der Name des Kandidaten sein. Optional können Sie zusätzliche Informationen bereitstellen, um Kandidaten über **UIA_HelpTextPropertyId**zu unterscheiden.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Eingabemethoden-Editor (IME)](input-method-editors.md)
 - [Itffngetpreferredtouchkeyboardlayout](/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout)
@@ -301,4 +301,4 @@ Implementieren Sie die folgende Konvention, damit Ihre IMEs den Barrierefreiheit
 - [Itffnsearchcandidateprovider](/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider)
 - [Itfintegratablecandidatelistuielement](/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement)
 - [SendInput](/windows/win32/api/winuser/nf-winuser-sendinput)
-- [Bedienungshilfen](/windows/uwp/design/accessibility/accessibility)
+- [Bedienungshilfen](../accessibility/accessibility.md)

@@ -4,53 +4,53 @@ title: Benutzung des Visual Layer mit XAML
 description: Lernen Sie Methoden für die Verwendung der Visual Layer APIs in Kombination mit existierendem XAML-Inhalten kennen, um Animationen und fortgeschrittene Effekte zu erzeugen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d6c1b4c477bfe5c4f584227491ef5a94e375fa2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5b0c8f9909f59cb3a0dd5e16a6bb1c46fc069bfb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255661"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160804"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>Benutzung des Visual Layer mit XAML
 
 Die meisten Apps, die die Visual-Layer-Funktionen nutzen, verwenden XAML, um den Hauptinhalt der Benutzeroberfläche zu definieren. Im Rahmen des Windows 10 Anniversary Update sind neue Features im XAML-Framework und dem Visual Layer erschienen, die es einfacher machen, diese beiden Technologien zum Erstellen beeindruckender Erlebnisse für den Benutzer kombinieren.
-Funktionen von XAML und Visual Layer "Interop" kann zum Erstellen von erweiterten Animationen und Effekte nicht allein mithilfe von XAML-API verwendet werden. Dazu zählen:
+Mithilfe von XAML-und Visual Layer-Interop-Funktionen können erweiterte Animationen und Effekte erstellt werden, die nicht allein mit XAML-APIs verfügbar sind. Dies schließt Folgendes ein:
 
-- Pinseleffekte wie Weichzeichnen und Milchglas
+- Pinsel Effekte wie weich und Stirn Glas
 - Dynamische Beleuchtungseffekte
 - Durch Scrollen gesteuerte Animationen und Parallax-Bildlauf
 - Automatische Layout-Animationen
-- Pixelperfekte Schlagschatten
+- Pixel-perfekte Schlag Schatten
 
-Diese Effekte und Animationen können auf vorhandenen XAML-Inhalt angewendet werden, damit Sie Ihre XAML-App nicht erheblich umstrukturieren müssen, um neue Funktionen nutzen zu können.
+Diese Effekte und Animationen können auf vorhandene XAML-Inhalte angewendet werden, sodass Sie Ihre XAML-APP nicht drastisch strukturieren müssen, um die neuen Funktionen nutzen zu können.
 Layoutanimationen, Schatten und Effekte für Unschärfe werden im folgenden Rezepteabschnitt behandelt. Ein Codebeispiel, das Parallax implementiert, finden Sie unter [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). Die [WindowsUIDevLabs Repository](https://github.com/microsoft/WindowsCompositionSamples) verfügt außerdem über weitere Beispiele für die Implementierung von Animationen, Schatten und Effekte.
 
-## <a name="the-xamlcompositionbrushbase-class"></a>Die XamlCompositionBrushBase-Klasse
+## <a name="the-xamlcompositionbrushbase-class"></a>Die xamlcompositionbrushbase-Klasse
 
-**XamlCompositionBrush** bietet eine Basisklasse für XAML-Pinsel, die einen Bereich mit einem **CompositionBrush** zeichnen. Damit können problemlos Kompositionseffekte wie Weichzeichnen oder Milchglas für XAML-UI-Elemente verwendet werden.
+**Xamlcompositionbrush** stellt eine Basisklasse für XAML-Pinsel bereit, die einen Bereich mit einem **compositionbrush**zeichnen. Dies kann verwendet werden, um auf einfache Weise Kompositions Effekte wie weich oder Stirn Glas auf XAML-Benutzeroberflächen Elemente anzuwenden.
 
-Weitere Informationen zum Verwenden von Pinseln mit XAML-UI finden Sie im Abschnitt [**Pinsel**](/windows/uwp/design/style/brushes#xamlcompositionbrushbase).
+Weitere Informationen zur Verwendung von Pinseln mit der XAML-Benutzeroberfläche finden Sie im Abschnitt [**Pinsel**](../design/style/brushes.md#xamlcompositionbrushbase) .
 
-Codebeispiele finden Sie auf der Referenzseite für [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Codebeispiele finden Sie auf der Referenzseite für [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
-## <a name="the-xamllight-class"></a>Die XamlLight-Klasse
+## <a name="the-xamllight-class"></a>Die xamllight-Klasse
 
-**XamlLight** bietet eine Basisklasse für XAML-Beleuchtungseffekte, die dynamisch einen Bereich mit **CompositionLight** beleuchten.
+**Xamllight** stellt eine Basisklasse für XAML-Beleuchtungseffekte bereit, mit denen ein Bereich mit einer **compositionlight**dynamisch beleuchtet wird.
 
-Weitere Informationen zur Verwendung von Licht, einschließlich der Beleuchtung von XAML-UI-Elementen, finden Sie im Abschnitt [**Beleuchtung**](xaml-lighting.md).
+Weitere Informationen zur Verwendung von Lichtern finden Sie im Abschnitt [**Beleuchtung**](xaml-lighting.md) , einschließlich der Beleuchtung von XAML-Benutzeroberflächen Elementen.
 
-Codebeispiele finden Sie auf der Referenzseite für [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight).
+Codebeispiele finden Sie auf der Referenzseite für [**xamllight**](/uwp/api/windows.ui.xaml.media.xamllight).
 
-## <a name="the-elementcompositionpreview-class"></a>Die ElementCompositionPreview-Klasse
+## <a name="the-elementcompositionpreview-class"></a>Die ElementCompositionPreview Klasse
 
-[**Elementcompositionpreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) ist eine statische Klasse, die XAML-und Visual Layer-Interop-Funktionen bereitstellt. Eine Übersicht über die visuelle Ebene und die zugehörige Funktionalität finden Sie unter [Visual Layer](https://docs.microsoft.com/windows/uwp/graphics/visual-layer). Die **ElementCompositionPreview** Klasse bietet die folgenden Methoden:
+[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) ist eine statische Klasse, die Kompatibilität mit XAML- und Visual Layer-Funktionalitäten bietet. Eine Übersicht über die visuelle Ebene und die zugehörige Funktionalität finden Sie unter [Visual Layer](./visual-layer.md). Die **ElementCompositionPreview** Klasse bietet die folgenden Methoden:
 
--   [**Getelementvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): dient zum Erstellen eines "Handout"-visuellen Elements, das zum Rendering dieses Elements verwendet wird.
--   [**Setelementchildvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): legt eine "handin"-Visualisierung als letztes untergeordnetes Element der visuellen Struktur dieses Elements fest. Dieses Visual wird über den Rest des Elements gezeichnet. 
--   [**Getelementchildvisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Abrufen der visuellen Gruppe mithilfe von " **setelementchildvisual** "
--   [**Getscrollviewermanipulationpropertyset**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Rufen Sie ein Objekt ab, das zum Erstellen von 60fps-Animationen auf der Grundlage des Bild Lauf Offsets in einem **ScrollViewer** verwendet werden kann.
+-   [**GetElementVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Erhalten Sie eine „Handout“-Grafik, die verwendet wurde, um dieses Element zu rendern
+-   [**SetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Legt ein "handin" Visual als untersten Ordner in der Struktur dieses Elements fest. Dieses Visual wird über den Rest des Elements gezeichnet. 
+-   [**GetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Rufen Sie das Visual Set ab, indem Sie **SetElementChildVisual** benutzen
+-   [**GetScrollViewerManipulationPropertySet**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Erhalten Sie ein Objekt, das zur Erstellung von Animationen mit 60 fps basierend auf der Scrollposition in einem **ScrollViewer** verwendet werden kann
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>Hinweise auf ElementCompositionPreview.GetElementVisual
 
@@ -96,7 +96,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>**GetAlphaMask** Methoden
 
-" [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)", " [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)" und " [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) " implementieren jeweils eine Methode namens " **getAlphaMask** ", die einen **compositionbrush** zurückgibt, der ein Graustufenbild mit der Form des Elements darstellt. Dieser **CompositionBrush** kann als Eingabe für eine Komposition **DropShadow** dienen, also kann der Schatten die Form des Elements anstelle eines Rechtecks haben. Das ermöglicht auf Pixel abgestimmte, Konturbasierte Schatten für Text, Bilder mit Alpha und Formen. Sie können unter *Schlagschatten* im Folgenden ein Beispiel für diese API finden.
+[**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image), [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), und [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) implementieren jede eine Methode, die **GetAlphaMask** genannt wird, welche eine **CompositionBrush** ausgibt, die ein Graustufenbild in der Form des Elements darstellt. Dieser **CompositionBrush** kann als Eingabe für eine Komposition **DropShadow** dienen, also kann der Schatten die Form des Elements anstelle eines Rechtecks haben. Das ermöglicht auf Pixel abgestimmte, Konturbasierte Schatten für Text, Bilder mit Alpha und Formen. Sie können unter *Schlagschatten* im Folgenden ein Beispiel für diese API finden.
 
 ## <a name="recipes"></a>Rezepte
 
@@ -104,7 +104,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 Indem er die Komposition impliziter Animationen nutzt, kann Entwickler automatisch Änderungen im Layout eines Elements relativ zum übergeordneten Element animieren. Wenn Sie z.B. den **Rand** von der Taste unten ändern, wird es automatisch an die neue Layoutposition animieren.
 
-#### <a name="implementation-overview"></a>Übersicht über die Implementierung
+#### <a name="implementation-overview"></a>Implementierungsübersicht
 
 1. Rufen das Handout **Visual** für das Zielelement ab
 1. Erstellen einer **ImplicitAnimationCollection** , die automatisch Änderungen der **Offset** Eigenschaft animiert
@@ -144,14 +144,14 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 
 Wenden Sie Pixelgenaue Schlagschatten auf ein **UIElement**, z. B. einer **Ellipse** an, die ein Bild enthält. Da der Schatten ein **SpriteVisual**, der durch die App erstellt wird, erfordert, müssen wir ein "Hostelement" erstellen, das die **SpriteVisual** enthält. Benutzt wird dazu **ElementCompositionPreview.SetElementChildVisual**.
 
-#### <a name="implementation-overview"></a>Übersicht über die Implementierung
+#### <a name="implementation-overview"></a>Implementierungsübersicht
 
 1. Rufen Sie das Handout **Visual** für das Hostelement ab
 2. Erstellen einer Windows.UI.Composition **DropShadow**
 3. Konfigurieren Sie den **DropShadow**, damit er seine Form vom Zielelement über eine Maske bekommt
     - **DropShadow** ist in den Standarteinstellung rechteckig, sodass dies nicht nötig ist, wenn das Zielelement rechteckig ist
 4. Fügen Sie einen Schatten an einen neuen **SpriteVisual** an, und legen Sie das **SpriteVisual** als untergeordnetes Element des Hostelements fest
-5. Legen Sie die Größe des **SpriteVisual**-Elements auf die Größe des Hosts fest, indem Sie eine **ExpressionAnimation** verwenden
+5. Legen Sie die Größe des **SpriteVisual** auf die Größe des Hosts fest, mit einer **ExpressionAnimation**
 
 ```xaml
 <Grid Width="200" Height="200">
@@ -199,7 +199,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-Die folgenden zwei Auflistungen zeigen die [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index)- und [C++/CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)-Entsprechungen des vorherigen C&#35;-Codes mit der gleichen XAML-Struktur.
+Die folgenden zwei Auflistungen zeigen die [C++/WinRT](../cpp-and-winrt-apis/index.md) -und [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) -Entsprechungen des vorherigen C-&#35; Codes, der die gleiche XAML-Struktur verwendet.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -285,14 +285,14 @@ void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Wi
 
 Erstellen Sie einen Effekt, der den Inhalt verwischt und den Hintergrund färbt. Beachten Sie, dass Entwickler das Win2D NuGet-Paket installieren müssen, um Effekte verwenden. Sie finden unter der [Win2D Homepage](https://microsoft.github.io/Win2D/html/Introduction.htm) Installationsanweisungen.
 
-#### <a name="implementation-overview"></a>Übersicht über die Implementierung
+#### <a name="implementation-overview"></a>Implementierungsübersicht
 
 1.  Rufen Sie das Handout **Visual** für das Hostelement ab
 2.  Erstellen Sie einen Unschärfeeffektstruktur, indem Sie die Win2D und **CompositionEffectSourceParameter** nutzen
 3.  Erstellen Sie **CompositionEffectBrush**, basierend auf der Effekt-Struktur
 4.  Legen Sie die Eingabe von der **CompositionEffectBrush** zu einer **CompositionBackdropBrush**, was ihnen einen Effekt ermöglicht, der auf den Inhalt hinter einem **SpriteVisual** angewendet werden kann.
-5.  Legen Sie **CompositionEffectBrush** als Inhalt eines neuen **SpriteVisual**-Elements fest, und legen Sie das **SpriteVisual**-Element als untergeordnetes Element des Hostelements fest. Alternativ könnten Sie eine XamlCompositionBrushBase verwenden.
-6.  Legen Sie die Größe des **SpriteVisual**-Elements auf die Größe des Hosts fest, indem Sie eine **ExpressionAnimation** verwenden
+5.  Legen Sie **compositioneffectbrush** als Inhalt eines neuen **spritevisual**-Elements fest, und legen Sie **spritevisual** als untergeordnetes Element des-Host Elements fest. Alternativ können Sie eine xamlcompositionbrushbase verwenden.
+6.  Legen Sie die Größe des **SpriteVisual** auf die Größe des Hosts fest, mit einer **ExpressionAnimation**
 
 ```xaml
 <Grid Width="300" Height="300" Grid.Column="1">
@@ -362,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>Weitere Ressourcen
 
-- [Übersicht über die visuelle Schicht](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
-- [**Elementcompositionpreview** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
+- [Übersicht über die visuelle Ebene](./visual-layer.md)
+- [**Elementcompositionpreview** -Klasse](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - Erweiterte UI und Kompositionsbeispiele in dem [WindowsUIDevLabs-GitHub](https://github.com/microsoft/WindowsCompositionSamples).
-- [Basicxamlinterop-Beispiel](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
-- [Beispiel für "beispieltems"](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+- [BasicXamlInterop-Beispiel](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
+- [ParallaxingListItems-Beispiel](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

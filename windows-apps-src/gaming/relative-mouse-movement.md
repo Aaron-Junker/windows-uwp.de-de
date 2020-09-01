@@ -1,17 +1,17 @@
 ---
 title: Relative Mausbewegung
-description: Verwendung relativer Maussteuerungen, die nicht den Systemcursor verwenden und keine absoluten Bildschirmkoordinaten zurückgeben, um das Pixeldelta zwischen Mausebewegungen in Spielen nachzuverfolgen.
+description: Verwenden Sie relative Maus Steuerelemente, die nicht den System Cursor verwenden und keine absoluten Bildschirm Koordinaten zurückgeben, um das Pixel Delta zwischen Mausbewegungen in spielen zu verfolgen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Maus, Eingabe
+keywords: Windows 10, UWP, Spiele, Maus, Eingabe
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d36d81aa3f4e0124f79cf8c736b715eb91590d0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 155fed8e4bc1cb12196fcaaca4b7232b84c19032
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368194"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159254"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>Relative Mausbewegung und CoreWindow
 
@@ -39,7 +39,7 @@ Bei diesem Muster wird die Position des absoluten Mauszeigers beim Wechsel in de
 ## <a name="handling-relative-mouse-movement"></a>Behandeln der relativen Mausbewegung
 
 
-Führen Sie die Registrierung für das [MouseDevice::MouseMoved](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved)-Ereignis aus, um auf die relativen Mausdeltawerte zuzugreifen, so wie hier gezeigt.
+Führen Sie die Registrierung für das [MouseDevice::MouseMoved](/uwp/api/windows.devices.input.mousedevice.mousemoved)-Ereignis aus, um auf die relativen Mausdeltawerte zuzugreifen, so wie hier gezeigt.
 
 
 ```cpp
@@ -85,18 +85,18 @@ void MoveLookController::OnMouseMoved(
 
 ```
 
-Der Ereignishandler in diesem Codebeispiel, **OnMouseMoved**, rendert die Ansicht basierend auf den Bewegungen der Maus. Die Position des Mauszeigers wird als [MouseEventArgs](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseEventArgs)-Objekt an den Handler übergeben. 
+Der Ereignishandler in diesem Codebeispiel, **OnMouseMoved**, rendert die Ansicht basierend auf den Bewegungen der Maus. Die Position des Mauszeigers wird als [MouseEventArgs](/uwp/api/Windows.Devices.Input.MouseEventArgs)-Objekt an den Handler übergeben. 
 
-Überspringen Sie die Verarbeitung der absoluten Mausdaten aus dem [CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)-Ereignis, wenn Ihre App in den Modus zur Behandlung relativer Mausbewegungswerte wechselt. Überspringen Sie diese Eingabe jedoch nur, wenn das **CoreWindow::PointerMoved**-Ereignis als Ergebnis einer Mauseingabe (und nicht einer Fingereingabe) aufgetreten ist. Der Cursor wird ausgeblendet, indem [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) auf **nullptr** festgelegt wird. 
+Überspringen Sie die Verarbeitung der absoluten Mausdaten aus dem [CoreWindow::PointerMoved](/uwp/api/windows.ui.core.corewindow.pointermoved)-Ereignis, wenn Ihre App in den Modus zur Behandlung relativer Mausbewegungswerte wechselt. Überspringen Sie diese Eingabe jedoch nur, wenn das **CoreWindow::PointerMoved**-Ereignis als Ergebnis einer Mauseingabe (und nicht einer Fingereingabe) aufgetreten ist. Der Cursor wird ausgeblendet, indem [CoreWindow::PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) auf **nullptr** festgelegt wird. 
 
 ## <a name="returning-to-absolute-mouse-movement"></a>Zurückkehren zur absoluten Mausbewegung
 
-Wenn die App den Bearbeitungsmodus für 3D-Objekte/-Szenen verlässt und die relative Mausbewegung nicht mehr verwendet (wenn sie z. B. einen Menübildschirm anzeigt), sollte die App zur normalen Verarbeitung der absoluten Mausbewegung zurückkehren. Beenden Sie zu diesem Zeitpunkt das Lesen der relativen Mausdaten, starten Sie die Verarbeitung der standardmäßigen Maus- und Zeigerereignisse neu, und setzen Sie [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) auf einen Wert ungleich NULL. 
+Wenn die App den Bearbeitungsmodus für 3D-Objekte/-Szenen verlässt und die relative Mausbewegung nicht mehr verwendet (wenn sie z. B. einen Menübildschirm anzeigt), sollte die App zur normalen Verarbeitung der absoluten Mausbewegung zurückkehren. Beenden Sie zu diesem Zeitpunkt das Lesen der relativen Mausdaten, starten Sie die Verarbeitung der standardmäßigen Maus- und Zeigerereignisse neu, und setzen Sie [CoreWindow::PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) auf einen Wert ungleich NULL. 
 
 > **Hinweis**  
 Wenn sich Ihre App im Bearbeitungsmodus für 3D-Objekte/-Szenen befindet, in dem relative Mausbewegungen bei deaktiviertem Cursor verarbeitet werden, kann die Maus keine UI am Bildschirmrand aufrufen, z. B. Charms, Stapel für die Rückwärtsnavigation oder App-Leiste. Daher ist es wichtig, einen Mechanismus bereitzustellen, um diesen besonderen Modus zu beenden, z. B. die allgemein verwendete **Esc**-Taste.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Move-suchen-Steuerelemente für Spiele](tutorial--adding-move-look-controls-to-your-directx-game.md) 
-* [Fingereingabe-Steuerelemente für Spiele](tutorial--adding-touch-controls-to-your-directx-game.md)
+* [Verschiebungs Steuerelemente für Spiele](tutorial--adding-move-look-controls-to-your-directx-game.md) 
+* [Toucheingabesteuerelemente für Spiele](tutorial--adding-touch-controls-to-your-directx-game.md)

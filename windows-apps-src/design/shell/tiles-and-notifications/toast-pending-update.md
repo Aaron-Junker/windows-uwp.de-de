@@ -1,53 +1,53 @@
 ---
-Description: Erfahren Sie, wie Sie mit mehreren Schritte Interaktionen in Ihren Benachrichtigungen erstellen.
-title: Popups mit ausstehenden Updates in Aktion
+description: Erfahren Sie, wie Sie Toast mit ausstehender Update Aktivierung verwenden können, um Interaktionen mit mehreren Schritten in ihren Popup Benachrichtigungen zu erstellen.
+title: Toast mit ausstehender Update Aktivierung
 label: Toast with pending update activation
 template: detail.hbs
 ms.date: 12/14/2017
 ms.topic: article
-keywords: Windows 10, UWP, Popup, ausstehende Updates, ausstehendes Update, Interaktivität aus mehreren Schritten, Interaktivitäten aus mehreren Schritten
+keywords: Windows 10, UWP, Toast, ausstehendes Update, pdingupdate, Interaktivität mit mehreren Schritten, Interaktionen mit mehreren Schritten
 ms.localizationpriority: medium
-ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 00551414fbefe5591813731337653964bd2524f3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648555"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054540"
 ---
-# <a name="toast-with-pending-update-activation"></a>Popups mit ausstehenden Updates in Aktion
+# <a name="toast-with-pending-update-activation"></a>Toast mit ausstehender Update Aktivierung
 
-Verwenden Sie das **PendingUpdate** zum Erstellen der Interaktivität aus mehreren Schritten innerhalb Ihrer Popups. Beispielsweise können Sie, wie unten dargestellt, eine Reihe von Popups erstellen, deren Antworten von den vorherigen Popups der nachfolgenden Popupbenachrichtigungen abhängt.
+Sie können " **" mit "** " "" "mit" "in den Popup Benachrichtigungen mehrstufige Interaktionen erstellen. Beispielsweise können Sie wie unten gezeigt eine Reihe von Popups erstellen, in denen die nachfolgenden Popups von Antworten aus den vorherigen Popups abhängen.
 
-![Popup mit ausstehendem Update](images/toast-pendingupdate.gif)
+![Toast mit ausstehenden Updates](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **Erfordert Desktop Fall Creators Update und 2.0.0 des benachrichtigungsbibliothek**: Sie müssen Desktop Build 16299 oder höher, um die ausstehende Arbeit aktualisieren finden Sie unter ausgeführt werden. Sie müssen Version 2.0.0 oder höher der [UWP Community Toolkit Benachrichtigungen NuGet-Bibliothek](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) verwenden, um **PendingUpdate** auf Ihre Schaltflächen anzuwenden. **PendingUpdate** wird nur auf Desktop unterstützt und auf anderen Geräten ignoriert.
+> **Erfordert Desktop Fall Creators Update und 2.0.0 der Benachrichtigungs Bibliothek**: Sie müssen den Desktop-Build 16299 oder höher ausführen, um ausstehende Aktualisierungs arbeiten anzuzeigen. Sie müssen in der [nuget-Bibliothek der UWP-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) Version 2.0.0 oder höher verwenden, um " **kdingupdate** " auf Ihren Schaltflächen zuzuweisen. " **Pdingupdate** " wird nur auf dem Desktop unterstützt und wird auf anderen Geräten ignoriert.
 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Dieser Artikel erfordert Grundkenntnisse in...
+In diesem Artikel wird davon ausgegangen, dass Sie wissen, dass...
 
-- [Erstellen von toasts Inhalt](adaptive-interactive-toasts.md)
-- [Ein Popup senden und Behandeln von Hintergrund-Aktivierung](send-local-toast.md)
+- [Erstellen von Popup Inhalten](adaptive-interactive-toasts.md)
+- [Senden eines Toast und behandeln der Hintergrund Aktivierung](send-local-toast.md)
 
 
 ## <a name="overview"></a>Übersicht
 
-Um ein Popup zu implementieren, das „ausstehende Updates” als Verhalten nach der Aktivierung verwendet...
+So implementieren Sie einen Toast, der das ausstehende Update als nach dem Aktivierungs Verhalten verwendet...
 
-1. Geben Sie auf den Schaltflächen für die Hintergrundaktivierung ein **AfterActivationBehavior** des **PendingUpdate** an
+1. Geben Sie auf den Schaltflächen für Popup-Hintergrund Aktivierung ein **afteractivationbehavior** -Ereignis vom Typ "Name **" an.**
 
-2. Weisen Sie beim Senden Ihrer Popups einen **Tag** (und optional eine **Gruppe**) hinzu
+2. Zuweisen eines **Tags** (und optional einer **Gruppe**) beim Senden des Toast
 
-3. Wenn der Benutzer die Schaltfläche anklickt, wird die Hintergrundaufgabe aktiviert und das Popup auf dem Bildschirm in einem Zustand des ausstehenden Updates beibehalten
+3. Wenn der Benutzer auf die Schaltfläche klickt, wird die Hintergrundaufgabe aktiviert, und der Popup wird auf dem Bildschirm in einem ausstehenden Aktualisierungs Status gespeichert.
 
-4. Senden Sie in Ihrer Hintergrundaufgabe eine neue Popupbenachrichtigung mit dem neuen Inhalt, mit dem gleichen **Tag** und der **Gruppe**
+4. Senden Sie in der Hintergrundaufgabe einen neuen Toast mit Ihrem neuen Inhalt, und verwenden Sie dabei dasselbe **Tag** und dieselbe **Gruppe** .
 
 
-## <a name="assign-pendingupdate"></a>Zuweisen von PendingUpdate
+## <a name="assign-pendingupdate"></a>Zuweisen von "pdingupdate"
 
-Setzen Sie auf den Schaltflächen für die Hintergrundaktivierung das **AfterActivationBehavior** auf **PendingUpdate**. Beachten Sie, dass dies nur für Schaltflächen funktioniert, die einen **ActivationType** im **Hintergrund** habe.
+Legen Sie in den Schaltflächen für die Hintergrund Aktivierung für " **afteractivationbehavior** " den Wert " **pdingupdate**" fest Beachten Sie, dass dies nur für Schaltflächen funktioniert, die über den **ActivationType** " **Background**" verfügen.
 
 ```csharp
 new ToastButton("Yes", "action=orderLunch")
@@ -70,9 +70,9 @@ new ToastButton("Yes", "action=orderLunch")
 ```
 
 
-## <a name="use-a-tag-on-the-notification"></a>Verwenden Sie ein Tag auf der Benachrichtigung
+## <a name="use-a-tag-on-the-notification"></a>Verwenden eines Tags für die Benachrichtigung
 
-Um die Benachrichtigung später zu ersetzen, müssen wir den **Tag** (und optional die **Gruppe**) auf die Benachrichtigung zuweisen.
+Um die Benachrichtigung zu einem späteren Zeitpunkt zu ersetzen, müssen wir das **Tag** (und optional die **Gruppe**) der Benachrichtigung zuweisen.
 
 ```csharp
 // Create the notification
@@ -86,11 +86,11 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 ```
 
 
-## <a name="replace-the-toast-with-new-content"></a>Ersetzen Sie das Popup mit neuem Inhalt
+## <a name="replace-the-toast-with-new-content"></a>Den Toast durch neuen Inhalt ersetzen
 
-Wenn der Benutzer auf die Schaltfläche klickt, wird die Hintergrundaufgabe ausgelöst, und das Popup muss durch neuen Inhalt ersetzt werden. Ersetzen Sie das Popup durch Senden einer neuen Popupbenachrichtigung mit den gleichen **Tag** und der gleichen **Gruppe**.
+Wenn der Benutzer auf die Schaltfläche klickt, wird die Hintergrundaufgabe ausgelöst, und Sie müssen den Toast durch neuen Inhalt ersetzen. Sie ersetzen den Toast, indem Sie einfach einen neuen Toast mit dem gleichen **Tag** und der gleichen **Gruppe**senden.
 
-Es wird dringend empfohlen, als Antwort auf eine angeklickte Schaltfläche die **Audiowiedergabe auf lautlos festzulegen**, da der Benutzer bereits mit Ihrem Popup interagiert.
+Es wird dringend empfohlen, **das Audiogerät** bei Ersetzungen als Reaktion auf einen Schaltflächen Klick festzulegen, da der Benutzer bereits mit dem Toast interagiert.
 
 ```csharp
 // Generate new content
@@ -116,7 +116,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [Senden Sie eine lokale Popup- und Handle-Aktivierung](send-local-toast.md)
-- [Toast-Content-Dokumentation](adaptive-interactive-toasts.md)
-- [Toast-Statusanzeige](toast-progress-bar.md)
+- [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
+- [Senden eines lokalen Popups und behandeln der Aktivierung](send-local-toast.md)
+- [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)
+- [Statusanzeige für Popup](toast-progress-bar.md)

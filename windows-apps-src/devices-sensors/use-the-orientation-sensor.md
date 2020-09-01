@@ -4,36 +4,36 @@ title: Verwenden des Ausrichtungssensors
 description: Hier erfahren Sie, wie Sie mithilfe der Ausrichtungssensoren die Ausrichtung des Geräts ermitteln.
 ms.date: 06/06/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 407c76c41d4a8620e2168e8e03dd2a3e24d73b61
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0217567fd2b78542b745a02fbdfa3bd816d9a2b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369574"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159454"
 ---
 # <a name="use-the-orientation-sensor"></a>Verwenden des Ausrichtungssensors
 
 
 **Wichtige APIs**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)
--   [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Orientationsensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)
+-   [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation)
 
 **Beispiele**
 
--   [Ausrichtung Sensor-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
--   [Beispiel für einfache Ausrichtung-sensor](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
+-   [Beispiel für den Orientierungs Sensor](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
+-   [Beispiel für Simple Orientation Sensor](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
 
 Hier erfahren Sie, wie Sie mithilfe der Ausrichtungssensoren die Ausrichtung des Geräts ermitteln.
 
-Es gibt zwei verschiedene Arten von APIs, die in enthaltenen ausrichtungssensor der [ **Windows.Devices.Sensors** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) Namespace: [**OrientationSensor** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) und [ **SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation). Zwar handelt es sich bei beiden Sensoren um Ausrichtungssensoren, sie werden jedoch für vollkommen unterschiedliche Zwecke verwendet. Aber da beide Ausrichtungssensoren sind, werden auch beide in diesem Artikel behandelt.
+Der [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)-Namespace enthält zwei unterschiedliche Arten von Ausrichtungssensor-APIs: [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) und [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation). Zwar handelt es sich bei beiden Sensoren um Ausrichtungssensoren, sie werden jedoch für vollkommen unterschiedliche Zwecke verwendet. Aber da beide Ausrichtungssensoren sind, werden auch beide in diesem Artikel behandelt.
 
-Die [**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)-API wird in 3D-Apps verwendet, um eine Quaternionen- und eine Drehungsmatrix zu erhalten. Eine Quaternion kann am einfachsten verstanden werden, wie eine Drehung mit einem Punkt \[X, y, Z\] über eine beliebige Achse (Gegenüberstellung mit einer Drehung-Matrix, die nacheinander um drei Achsen darstellt). Die Mathematik hinter Quaternions ist recht exotisch, da sie die geometrischen Eigenschaften komplexer Zahlen und die mathematischen Eigenschaften imaginärer Zahlen umfasst. Das Arbeiten mit ihnen ist jedoch einfach, und sie werden von Frameworks wie DirectX unterstützt. Eine komplexe 3D-App kann mithilfe des Ausrichtungssensors die Perspektive des Benutzers anpassen. Dieser Sensor kombiniert Eingaben von Beschleunigungssensor, Gyrometer und Kompass.
+Die [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)-API wird in 3D-Apps verwendet, um eine Quaternionen- und eine Drehungsmatrix zu erhalten. Eine Quaternion kann am einfachsten als Drehung eines Punkts \[ x, y, z \] über eine beliebige Achse (Gegenüberstellung einer Rotations Matrix, die Drehungen um drei Achsen darstellt) verstanden werden. Die Mathematik hinter Quaternions ist recht exotisch, da sie die geometrischen Eigenschaften komplexer Zahlen und die mathematischen Eigenschaften imaginärer Zahlen umfasst. Das Arbeiten mit ihnen ist jedoch einfach, und sie werden von Frameworks wie DirectX unterstützt. Eine komplexe 3D-App kann mithilfe des Ausrichtungssensors die Perspektive des Benutzers anpassen. Dieser Sensor kombiniert Eingaben von Beschleunigungssensor, Gyrometer und Kompass.
 
-Die [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.SimpleOrientation)-API dient zum Ermitteln der aktuellen Ausrichtung des Geräts gemäß Definitionen wie „portrait up“, „portrait down“, „landscape left“ und „landscape right“. Außerdem kann sie erkennen, ob die Oberseite des Geräts nach oben oder nach unten zeigt. Dieser Sensor zurückgegebene Drehungswert aus und gibt die Eigenschaften wie "Hochformat" oder "Querformat links", nicht: "Nicht gedreht", "Rotated90DegreesCounterclockwise" und So weiter. In der folgenden Tabelle werden die allgemeinen Ausrichtungseigenschaften den entsprechenden Sensorwerten zugeordnet.
+Die [**SimpleOrientation**](/uwp/api/Windows.Devices.Sensors.SimpleOrientation)-API dient zum Ermitteln der aktuellen Ausrichtung des Geräts gemäß Definitionen wie „portrait up“, „portrait down“, „landscape left“ und „landscape right“. Außerdem kann sie erkennen, ob die Oberseite des Geräts nach oben oder nach unten zeigt. Dieser Sensor gibt keine Eigenschaften wie „portrait up“ oder „landscape left“, sondern Rotationswerte wie „Not rotated“, „Rotated90DegreesCounterclockwise“ usw. zurück. In der folgenden Tabelle werden die allgemeinen Ausrichtungseigenschaften den entsprechenden Sensorwerten zugeordnet.
 
 | Ausrichtung     | Entsprechender Sensorwert      |
 |-----------------|-----------------------------------|
@@ -42,9 +42,9 @@ Die [**SimpleOrientation**](https://docs.microsoft.com/uwp/api/Windows.Devices.S
 | Portrait Down   | Rotated180DegreesCounterclockwise |
 | Landscape Right | Rotated270DegreesCounterclockwise |
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-Sie sollten mit Extensible Application Markup Language (XAML), Microsoft Visual vertraut sein C#, und Ereignisse.
+Sie sollten mit XAML (Extensible Application Markup Language), Microsoft Visual C# und Ereignissen vertraut sein.
 
 Das verwendete Gerät oder der Emulator muss einen Ausrichtungssensor unterstützen.
 
@@ -52,7 +52,7 @@ Das verwendete Gerät oder der Emulator muss einen Ausrichtungssensor unterstüt
 
 Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnitt enthält die Schritte zum Erstellen einer Ausrichtungsanwendung. Im zweiten Unterabschnitt wird die erstellte App dann näher erläutert.
 
-###  <a name="instructions"></a>Anweisungen
+###  <a name="instructions"></a>Instructions
 
 -   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
@@ -177,13 +177,13 @@ Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen erset
 
 Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z. B. ein Projekt mit dem Namen **OrientationSensorCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="OrientationSensorCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:OrientationSensorCS"`.
 
--   Drücken Sie F5 oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
+-   Drücken Sie F5, **oder wählen Sie**  >  **Debuggen Debugging starten** aus, um die APP zu erstellen, bereitzustellen und auszuführen
 
 Wenn die App ausgeführt wird, können Sie die Ausrichtung ändern, indem Sie das Gerät bewegen oder die Emulatortools verwenden.
 
--   Beenden Sie die App, indem Sie zu Visual Studio zurückkehren und UMSCHALT+F5 drücken oder **Debuggen** > **Debugging beenden** auswählen.
+-   Halten Sie die APP an, indem Sie zu Visual Studio zurückkehren und UMSCHALT + F5 drücken, **oder wählen Sie**  >  **Debuggen Debuggen** , um die APP
 
-###  <a name="explanation"></a>Erläuterung
+###  <a name="explanation"></a>Erklärung
 
 Das vorherige Beispiel zeigt, wie wenig Code Sie schreiben müssen, um Angaben des Ausrichtungssensors in Ihre App zu integrieren.
 
@@ -214,7 +214,7 @@ Die neuen Werte werden in die TextBlock-Elemente des XAML-Projektcodes geschrieb
 
 Dieser Abschnitt ist in zwei Unterabschnitte unterteilt: Der erste Unterabschnitt enthält die Schritte zum Erstellen einer einfachen Ausrichtungsanwendung. Im zweiten Unterabschnitt wird die erstellte App dann näher erläutert.
 
-### <a name="instructions"></a>Anweisungen
+### <a name="instructions"></a>Instructions
 
 -   Erstellen Sie ein neues Projekt. Wählen Sie dabei unter den Projektvorlagen für **Visual C#** die Option **Leere App (Universelle Windows-App)** aus.
 
@@ -323,13 +323,13 @@ Sie müssen den Namespace im vorhergehenden Codeausschnitt durch den Namen erset
 
 Sie müssen den ersten Teil des Klassennamens im vorhergehenden Codeausschnitt durch den Namespace Ihrer App ersetzen. Wenn Sie z. B. ein Projekt mit dem Namen **SimpleOrientationCS** erstellt haben, ersetzen Sie `x:Class="App1.MainPage"` durch `x:Class="SimpleOrientationCS.MainPage"`. Ersetzen Sie außerdem `xmlns:local="using:App1"` durch `xmlns:local="using:SimpleOrientationCS"`.
 
--   Drücken Sie F5 oder wählen Sie **Debuggen** > **Debugging starten** aus, um die App zu erstellen, bereitzustellen und auszuführen.
+-   Drücken Sie F5, **oder wählen Sie**  >  **Debuggen Debugging starten** aus, um die APP zu erstellen, bereitzustellen und auszuführen
 
 Wenn die App ausgeführt wird, können Sie die Ausrichtung ändern, indem Sie das Gerät bewegen oder die Emulatortools verwenden.
 
--   Beenden Sie die App, indem Sie zu Visual Studio zurückkehren und UMSCHALT+F5 drücken oder **Debuggen** > **Debugging beenden** auswählen.
+-   Halten Sie die APP an, indem Sie zu Visual Studio zurückkehren und UMSCHALT + F5 drücken, **oder wählen Sie**  >  **Debuggen Debuggen** , um die APP
 
-### <a name="explanation"></a>Erläuterung
+### <a name="explanation"></a>Erklärung
 
 Das vorherige Beispiel zeigt, wie wenig Code Sie schreiben müssen, um Angaben des SimpleOrientation-Sensors in eine App zu integrieren.
 

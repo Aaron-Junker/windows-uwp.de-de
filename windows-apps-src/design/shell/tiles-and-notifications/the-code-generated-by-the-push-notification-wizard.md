@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a3429607ecd9245dd10722fbb47d06d7aa6ef75
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 1f2f4ad915d565ad56865dd89d25174f1ed9c2bb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234835"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159904"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>Vom Assistenten für Pushbenachrichtigungen generierter Code
  
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>Registrierung für Pushbenachrichtigungen
 
 
-In Push. Register. \* registriert die uploadchannel-Methode das Gerät für den Empfang von Pushbenachrichtigungen. Vom Store werden die installierten Instanzen Ihrer App nachverfolgt, und der Kanal für Pushbenachrichtigungen wird bereitgestellt. Siehe [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
+In Push. Register. \* registriert die uploadchannel-Methode das Gerät für den Empfang von Pushbenachrichtigungen. Vom Store werden die installierten Instanzen Ihrer App nachverfolgt, und der Kanal für Pushbenachrichtigungen wird bereitgestellt. Siehe [**PushNotificationChannelManager**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
 
 Der Client-Code ist für das JavaScript-Back-End und .NET-Back-End identisch. Beim Hinzufügen von Pushbenachrichtigungen zu einem JavaScript-Back-End-Dienst wird eine benutzerdefinierte API zum NotifyAllUsers-Aufruf in der UploadChannel-Methode eingefügt.
 
@@ -174,9 +174,9 @@ Tags für Push-Benachrichtigungen können Sie auf die Benachrichtigungen auf ein
 ## <a name="server-side-scripts-javascript-backend-only"></a>Serverseitige Skripts (nur JavaScript-Back-End)
 
 
-Bei mobilen Dienste, die JavaScript-Back-End verwenden, werden serverseitige Skripts beim Löschen, Einfügen, Lesen oder Aktualisieren von Vorgängen ausgeführt. Von den Skripts werden diese Vorgänge nicht implementiert, sondern sie werden ausgeführt, wenn diese Ereignisse per Clientaufruf der Windows Mobile-REST-API ausgelöst werden. Von den Skripts wird die Steuerung dann an die Vorgänge selbst übergeben, indem „request.execute“ oder „request.respond“ aufgerufen wird, um eine Antwort an den aufrufenden Kontext auszugeben. Weitere Infos finden Sie unter [REST-API für Azure-Mobile Dienste – Referenz](https://msdn.microsoft.com/library/azure/jj710108.aspx).
+Bei mobilen Dienste, die JavaScript-Back-End verwenden, werden serverseitige Skripts beim Löschen, Einfügen, Lesen oder Aktualisieren von Vorgängen ausgeführt. Von den Skripts werden diese Vorgänge nicht implementiert, sondern sie werden ausgeführt, wenn diese Ereignisse per Clientaufruf der Windows Mobile-REST-API ausgelöst werden. Von den Skripts wird die Steuerung dann an die Vorgänge selbst übergeben, indem „request.execute“ oder „request.respond“ aufgerufen wird, um eine Antwort an den aufrufenden Kontext auszugeben. Weitere Infos finden Sie unter [REST-API für Azure-Mobile Dienste – Referenz](/previous-versions/azure/reference/jj710108(v=azure.100)).
 
-Im serverseitigen Skript steht eine Auswahl von Funktionen zur Verfügung. Weitere Infos erhalten Sie unter [Registrieren von Tabellenvorgängen für Azure-Mobile-Dienste](https://msdn.microsoft.com/library/azure/dn167708.aspx). Eine Referenz mit allen verfügbaren Funktionen finden Sie unter [Serverskript für Mobile Dienste – Referenz](https://msdn.microsoft.com/library/windowsazure/jj554226).
+Im serverseitigen Skript steht eine Auswahl von Funktionen zur Verfügung. Weitere Infos erhalten Sie unter [Registrieren von Tabellenvorgängen für Azure-Mobile-Dienste](https://msdn.microsoft.com/library/azure/dn167708.aspx). Eine Referenz mit allen verfügbaren Funktionen finden Sie unter [Serverskript für Mobile Dienste – Referenz](/previous-versions/azure/reference/jj554226(v=azure.100)).
 
 Außerdem wird der folgende benutzerdefinierte API-Code in „Notifyallusers.js“ erstellt:
 
@@ -216,24 +216,24 @@ Von der sendNotifications-Funktion wird eine einzelne Benachrichtigung als Popup
 
 Von Windows werden auch Benachrichtigungen unterstützt, bei denen es sich nicht um Pushbenachrichtigungen handelt. Allgemeine Informationen zu Benachrichtigungen finden Sie unter [Auswählen einer Benachrichtigungs Übermittlungs Methode](choosing-a-notification-delivery-method.md).
 
-Die Nutzung von Popupbenachrichtigungen ist einfach. Im "Insert.js"-Code der für Sie generierten Kanaltabelle ist dazu ein Beispiel enthalten. Wenn Sie die Verwendung von Kachel- oder Signalbenachrichtigungen planen, müssen Sie eine XML-Vorlage für die Kachel und das Signal erstellen und die Codierung der verpackten Informationen in der Vorlage angeben. Weitere Informationen finden Sie unter [Arbeiten mit Kacheln, Abzeichen und Popup Benachrichtigungen](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10)).
+Die Nutzung von Popupbenachrichtigungen ist einfach. Im "Insert.js"-Code der für Sie generierten Kanaltabelle ist dazu ein Beispiel enthalten. Wenn Sie die Verwendung von Kachel- oder Signalbenachrichtigungen planen, müssen Sie eine XML-Vorlage für die Kachel und das Signal erstellen und die Codierung der verpackten Informationen in der Vorlage angeben. Weitere Informationen finden Sie unter [Arbeiten mit Kacheln, Abzeichen und Popup Benachrichtigungen](/previous-versions/windows/apps/hh868259(v=win.10)).
 
 Da Windows auf Pushbenachrichtigungen reagiert, können die meisten dieser Benachrichtigungen verarbeitet werden, wenn die App nicht ausgeführt wird. Mit einer Pushbenachrichtigung können Benutzer beispielsweise auch dann darüber informiert werden, dass eine neue E-Mail-Nachricht verfügbar ist, wenn die lokale Mail-App nicht ausgeführt wird. Von Windows wird eine Popupbenachrichtigung verarbeitet, indem eine Meldung angezeigt wird, z. B. die erste Zeile einer Textnachricht. Bei Kachel- oder Signalbenachrichtigungen aktualisiert Windows die Live-Kachel einer App, um die Anzahl neuer E-Mail-Nachrichten anzugeben. So können Sie Benutzer Ihrer App auffordern, die neuen Informationen mit der App zu prüfen. Ihre App kann unformatierte Benachrichtigungen empfangen, wenn sie ausgeführt wird, und Sie können sie verwenden, um Daten an die App zu senden. Wenn die App nicht ausgeführt wird, können Sie eine Hintergrundaufgabe zum Überwachen von Pushbenachrichtigungen einrichten.
 
-Sie sollten Pushbenachrichtigungen gemäß den Richtlinien für Windows-Apps verwenden, da diese Benachrichtigungen die Ressourcen eines Benutzers verwenden und ggf. ablenkend sind. Weitere Informationen finden Sie unter [Richtlinien und Prüfliste für Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview).
+Sie sollten Pushbenachrichtigungen gemäß den Richtlinien für Windows-Apps verwenden, da diese Benachrichtigungen die Ressourcen eines Benutzers verwenden und ggf. ablenkend sind. Weitere Informationen finden Sie unter [Richtlinien und Prüfliste für Pushbenachrichtigungen](./windows-push-notification-services--wns--overview.md).
 
-Wenn Sie Live-Kacheln mit Pushbenachrichtigungen aktualisieren, sollten Sie auch die Richtlinien unter [Richtlinien und Prüfliste für Kacheln und Signale](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles) beachten.
+Wenn Sie Live-Kacheln mit Pushbenachrichtigungen aktualisieren, sollten Sie auch die Richtlinien unter [Richtlinien und Prüfliste für Kacheln und Signale](./creating-tiles.md) beachten.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>Verwenden der Windows-Pushbenachrichtigungsdienste (Windows Push Notification Service, WNS)
 
-Sie können den Windows-Pushbenachrichtigungsdienst (WNS) auch direkt aufrufen, wenn Mobile Services nicht genügend Flexibilität bietet, wenn Sie Ihren Servercode in C# oder Visual Basic schreiben möchten oder wenn Sie bereits über einen Clouddienst verfügen und darüber Pushbenachrichtigungen senden möchten. Indem Sie WNS direkt aufrufen, können Sie Pushbenachrichtigungen über Ihren eigenen Clouddienst senden. Dies kann beispielsweise eine Workerrolle sein, mit der Daten aus einer Datenbank oder einem anderen Webdienst überwacht werden. Der Clouddienst muss gegenüber WNS authentifiziert sein, damit Pushbenachrichtigungen an Ihre Apps gesendet werden können. Weitere Infos finden Sie unter [So wird's gemacht: Authentifizieren mit dem Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS) (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) oder [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10)).
+Sie können den Windows-Pushbenachrichtigungsdienst (WNS) auch direkt aufrufen, wenn Mobile Services nicht genügend Flexibilität bietet, wenn Sie Ihren Servercode in C# oder Visual Basic schreiben möchten oder wenn Sie bereits über einen Clouddienst verfügen und darüber Pushbenachrichtigungen senden möchten. Indem Sie WNS direkt aufrufen, können Sie Pushbenachrichtigungen über Ihren eigenen Clouddienst senden. Dies kann beispielsweise eine Workerrolle sein, mit der Daten aus einer Datenbank oder einem anderen Webdienst überwacht werden. Der Clouddienst muss gegenüber WNS authentifiziert sein, damit Pushbenachrichtigungen an Ihre Apps gesendet werden können. Weitere Infos finden Sie unter [So wird's gemacht: Authentifizieren mit dem Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WNS) (JavaScript)](/previous-versions/windows/apps/hh465407(v=win.10)) oder [(C#/C++/VB)](/previous-versions/windows/apps/hh868206(v=win.10)).
 
-Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Dienst eine geplante Aufgabe ausführen. Weitere Informationen finden Sie unter [Planen von wiederkehrenden Aufträgen in Mobile Services](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/).
+Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Dienst eine geplante Aufgabe ausführen. Weitere Informationen finden Sie unter [Planen von wiederkehrenden Aufträgen in Mobile Services](/azure/).
 
-**Warnung**    Wenn Sie den Assistenten für Pushbenachrichtigungen einmal ausgeführt haben, führen Sie den Assistenten nicht ein zweites Mal aus, um den Registrierungscode für einen anderen mobilen Dienst hinzuzufügen. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. Beispielsweise können Sie dies erreichen, indem Sie den vom Assistenten generierten Code in Push. Register verschieben. \* (einschließlich des Aufrufes " **foratepushnotificationchannelforapplicationasync**") außerhalb des OnCreated-Ereignisses, aber die Besonderheiten dieser Informationen hängen von der Architektur ihrer App ab.
+**Warnung**    Wenn Sie den Assistenten für Pushbenachrichtigungen einmal ausgeführt haben, führen Sie den Assistenten nicht ein zweites Mal aus, um den Registrierungscode für einen anderen mobilen Dienst hinzuzufügen. Wenn Sie den Assistenten mehr als einmal pro Projekt ausführen, wird Code generiert, der überlappende Aufrufe in der [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync)-Methode zur Folge hat. Dies führt zu einer Laufzeitausnahme. Wenn Sie sich für Pushbenachrichtigungen für mehr als einen mobilen Dienst registrieren möchten, führen Sie den Assistenten einmal aus. Schreiben Sie dann den Registrierungscode neu, um sicherzustellen, dass Aufrufe für **CreatePushNotificationChannelForApplicationAsync** nicht zur gleichen Zeit ausgeführt werden. Beispielsweise können Sie dies erreichen, indem Sie den vom Assistenten generierten Code in Push. Register verschieben. \* (einschließlich des Aufrufes " **foratepushnotificationchannelforapplicationasync**") außerhalb des OnCreated-Ereignisses, aber die Besonderheiten dieser Informationen hängen von der Architektur ihrer App ab.
 
  
 
@@ -242,13 +242,9 @@ Sie können Pushbenachrichtigungen auch senden, indem Sie in Ihrem mobilen Diens
 
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 * [Übersicht über unformatierte Benachrichtigungen](raw-notification-overview.md)
-* [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [Schnellstart: Hinzufügen von Pushbenachrichtigungen für einen mobilen Dienst (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (JavaScript)](/previous-versions/windows/apps/dn263160(v=win.10))
+* [Herstellen einer Verbindung mit Microsoft Azure-Mobile Dienste (C#/C++/VB)](/previous-versions/windows/apps/dn263175(v=win.10))
+* [Schnellstart: Hinzufügen von Pushbenachrichtigungen für einen mobilen Dienst (JavaScript)](/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  
-
-
-
-

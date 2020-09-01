@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android, Windows, Emulator, Virtual Device, Device Setup, Enable Device, Developer, Configuration, Virtualization, Visual Studio, Hyper-v, Intel, haxm, AMD, Windows Hypervisor Platform, whpx
 ms.date: 04/28/2020
-ms.openlocfilehash: c651661d573695902368ffa595ce5d3014791a9a
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 57e1d8d62ea7b3918c5e52724c11febcb9f03d72
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255154"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161554"
 ---
 # <a name="test-on-an-android-device-or-emulator"></a>Testen auf einem Android-Gerät oder-Emulator
 
@@ -29,12 +29,12 @@ Für ein Gerät, auf dem eine aktuelle Version von Android 9.0 und höher ausgef
 1. Verbinden Sie Ihr Gerät mit Ihrem Windows-Entwicklungs Computer mit einem USB-Kabel. Möglicherweise erhalten Sie eine Benachrichtigung, dass ein USB-Treiber installiert wird.
 2. Öffnen Sie den Bildschirm **Einstellungen** auf Ihrem Android-Gerät.
 3. Wählen **Sie**Info aus.
-4. Scrollen Sie nach unten, und tippen Sie sieben Mal auf **Buildnummer** , bis **Sie nun Entwickler sind!** ist sichtbar.
+4. Scrollen Sie nach unten, und tippen Sie sieben Mal auf **Buildnummer** , bis **Sie nun Entwickler sind!** angezeigt wird.
 5. Kehren Sie zum vorherigen Bildschirm zurück, und wählen Sie **System**aus.
 6. Wählen Sie **erweitert**aus, Scrollen Sie nach unten, und tippen Sie auf **Entwickler Optionen**.
 7. Scrollen Sie im Fenster **Entwickler Optionen** nach unten, um das **USB-Debugging**zu suchen und zu aktivieren.
 
-Ein Gerät, auf dem eine ältere Version von Android ausgeführt wird, finden [Sie unter Einrichten des Geräts für die Entwicklung](https://docs.microsoft.com/xamarin/android/get-started/installation/set-up-device-for-development).
+Ein Gerät, auf dem eine ältere Version von Android ausgeführt wird, finden [Sie unter Einrichten des Geräts für die Entwicklung](/xamarin/android/get-started/installation/set-up-device-for-development).
 
 ### <a name="run-your-app-on-the-device"></a>Ausführen der APP auf dem Gerät
 
@@ -63,9 +63,9 @@ Bevor Sie ein virtuelles Gerät mit dem Android-Emulator erstellen, empfiehlt es
 > * Ausführen von Windows 10 Build 1803 + ([Überprüfen Sie den Build #](ms-settings:about))
 > * Über aktualisierte Grafiktreiber verfügen (Geräte-Manager > Adapter > Update-Treiber anzeigen)
 >
-> Wenn Ihr Computer diese Kriterien nicht erfüllt, können Sie möglicherweise [Intel haxm](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) oder [AMD Hypervisor](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors)ausführen. Weitere Informationen finden Sie im folgenden Artikel: [Hardware Beschleunigung für die emulatorleistung](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) oder die [Android Studio Emulator-Dokumentation](https://developer.android.com/studio/run/emulator).
+> Wenn Ihr Computer diese Kriterien nicht erfüllt, können Sie möglicherweise [Intel haxm](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) oder [AMD Hypervisor](https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors)ausführen. Weitere Informationen finden Sie im folgenden Artikel: [Hardware Beschleunigung für die emulatorleistung](/xamarin/android/get-started/installation/android-emulator/hardware-acceleration) oder die [Android Studio Emulator-Dokumentation](https://developer.android.com/studio/run/emulator).
 
-1. Vergewissern Sie sich, dass die Computer Hardware und Software mit Hyper-V kompatibel ist, indem Sie eine Eingabeaufforderung öffnen und den folgenden Befehl eingeben:`systeminfo`
+1. Vergewissern Sie sich, dass die Computer Hardware und Software mit Hyper-V kompatibel ist, indem Sie eine Eingabeaufforderung öffnen und den folgenden Befehl eingeben: `systeminfo`
 
     ![Hyper-V-Anforderungen von System Info an der Eingabeaufforderung](../images/systeminfo.png)
 
@@ -73,7 +73,7 @@ Bevor Sie ein virtuelles Gerät mit dem Android-Emulator erstellen, empfiehlt es
 
 3. Nachdem die Liste mit den **Windows-Features** angezeigt wird, Scrollen **Sie zu** **Hyper-V** suchen (enthält sowohl Verwaltungs Tools und Plattform) als auch **Windows Hypervisor Platform**. Stellen Sie sicher, dass das Kontrollkästchen aktiviert ist, um beides zu aktivieren.
 
-4. Starten Sie den Computer neu, wenn Sie dazu aufgefordert werden.
+4. Starten Sie nach Aufforderung den Computer neu.
 
 ### <a name="emulator-for-native-development-with-android-studio"></a>Emulator für die native Entwicklung mit Android Studio
 
@@ -98,13 +98,13 @@ Für Windows-PCs sind viele [Android-Emulatoroptionen](https://www.androidauthor
 
 ### <a name="install-android-emulator-with-visual-studio"></a>Android-Emulator mit Visual Studio installieren
 
-1. Wenn Sie es noch nicht installiert haben, laden Sie [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)herunter. Verwenden Sie die Visual Studio-Installer, um [Ihre Workloads zu ändern](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) und sicherzustellen, dass Sie über die **Arbeitsauslastung Mobile-Entwicklung mit .net**verfügen.
+1. Wenn Sie es noch nicht installiert haben, laden Sie [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)herunter. Verwenden Sie die Visual Studio-Installer, um [Ihre Workloads zu ändern](/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads) und sicherzustellen, dass Sie über die **Arbeitsauslastung Mobile-Entwicklung mit .net**verfügen.
 
-2. Erstellen Sie ein neues Projekt. Nachdem Sie [die Android-Emulator eingerichtet](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/)haben, können Sie die [Android Device Manager](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager?tabs=windows&pivots=windows#requirements) verwenden, um eine Vielzahl von virtuellen Android-Geräten zu erstellen, zu duplizieren, anzupassen und zu starten. Starten Sie die Android Device Manager im Menü Extras mit: **Tools** > **Android** > **Android Device Manager**.
+2. Erstellen Sie ein neues Projekt. Nachdem Sie [die Android-Emulator eingerichtet](/xamarin/android/get-started/installation/android-emulator/)haben, können Sie die [Android Device Manager](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#requirements) verwenden, um eine Vielzahl von virtuellen Android-Geräten zu erstellen, zu duplizieren, anzupassen und zu starten. Starten Sie die Android Device Manager im Menü Extras mit: **Tools**  >  **Android**  >  **Android Device Manager**.
 
 3. Wenn das Android Device Manager geöffnet ist, wählen Sie **+ neu** aus, um ein neues Gerät zu erstellen.
 
-4. Sie müssen dem Gerät einen Namen geben, den Basistyp des Geräts in einem Dropdown Menü auswählen, einen Prozessor und eine Betriebssystemversion sowie mehrere andere Variablen für das virtuelle Gerät auswählen. Weitere Informationen [Android Device Manager Hauptbildschirm](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager?tabs=windows&pivots=windows#main-screen).
+4. Sie müssen dem Gerät einen Namen geben, den Basistyp des Geräts in einem Dropdown Menü auswählen, einen Prozessor und eine Betriebssystemversion sowie mehrere andere Variablen für das virtuelle Gerät auswählen. Weitere Informationen [Android Device Manager Hauptbildschirm](/xamarin/android/get-started/installation/android-emulator/device-manager?pivots=windows&tabs=windows#main-screen).
 
 5. Wählen Sie in der Visual Studio-Symbolleiste zwischen **Debuggen** (wird an den Anwendungsprozess angefügt, der im Emulator ausgeführt wird, nachdem die APP gestartet wurde) oder im **Releasemodus** (deaktiviert den Debugger). Wählen Sie dann im Dropdown Menü Gerät ein virtuelles Gerät aus, und wählen Sie die **Wiedergabe** Schaltfläche ▷, um die Anwendung im Emulator auszuführen.
 
@@ -112,6 +112,6 @@ Für Windows-PCs sind viele [Android-Emulatoroptionen](https://www.androidauthor
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Entwickeln Sie Dual-Screen-Apps für Android, und erhalten Sie das Surface Duo-Geräte-SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Entwickeln Sie Dual-Screen-Apps für Android, und erhalten Sie das Surface Duo-Geräte-SDK](/dual-screen/android/)
 
 - [Windows Defender-Ausschlüsse zum Verbessern der Leistung hinzufügen](defender-settings.md)

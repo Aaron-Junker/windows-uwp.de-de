@@ -7,12 +7,12 @@ keywords: IME, Eingabemethoden-Editor, Eingabe, Interaktion
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 438c53a0f3fbec1fdac0206bde3584c738759de4
-ms.sourcegitcommit: 86ce67a03e87fa1282849b2fcb4f89d1cf23a091
+ms.openlocfilehash: 8e7782dea8cd634fd9fe3bac4a3e4c870cd680e9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87840021"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159944"
 ---
 # <a name="input-method-editors-ime"></a>Eingabemethoden-Editoren (IME)
 
@@ -41,7 +41,7 @@ Ein Drittanbieter-IME muss die folgenden Anforderungen erfüllen:
 
 - Muss digital signiert werden
 - Muss das [Text Dienste-Framework (TSF)](/windows/win32/tsf/text-services-framework) unterstützen, wobei geeignete IME-Flags ordnungsgemäß festgelegt sind.
-- Muss den in den Anforderungen für den [Eingabemethoden-Editor (IME)](input-method-editor-requirements.md) beschriebenen Richtlinien und dem [Entwerfen und Codieren von Windows-apps](/windows/uwp/design/)
+- Muss den in den Anforderungen für den [Eingabemethoden-Editor (IME)](input-method-editor-requirements.md) beschriebenen Richtlinien und dem [Entwerfen und Codieren von Windows-apps](../index.md)
 
 Die Ausführung eines Drittanbieter-IME, der diese Anforderungen nicht erfüllt, wird blockiert.
 
@@ -58,7 +58,7 @@ Weitere Informationen zu bewährten Methoden und Entwurfs Richtlinien für IMEs 
 - Vermeiden Sie modale Erfahrungen, und zeigen Sie bei Bedarf nur das IME-Fenster
 - Symbole nur schwarz und weiß einschließen
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Anforderungen an den Eingabemethoden-Editor (IME)](input-method-editor-requirements.md)
 - [Itffngetpreferredtouchkeyboardlayout](/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout)

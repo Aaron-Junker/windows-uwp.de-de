@@ -4,21 +4,21 @@ description: Führen Sie das Rendern aus dem Blickwinkel durch, aus dem das Lich
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Rendern, Schattenkarte, Tiefenpuffer, Direct3D
+keywords: Windows 10, UWP, Spiele, Rendering, schattenkarte, tiefen Puffer, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ae67df457d4abafc8fb689a747139f62ca0e0e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f492b1007a96b893abf6cdd1e7c6686cd5a41ee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368074"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159234"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>Rendern der Schattenmap zum Tiefenpuffer
 
 
 
 
-Führen Sie das Rendern aus dem Blickwinkel durch, aus dem das Licht kommt, um eine zweidimensionale Tiefenkarte zu erstellen, mit der das Schattenvolumen dargestellt wird. Mithilfe der Tiefenmap wird eine Maske für den Raum erstellt, der im Schatten gerendert wird. Teil 2 von [Exemplarische Vorgehensweise: Implementieren Sie mithilfe von Tiefenpuffern in Direct3D 11 Schattenvolumen](implementing-depth-buffers-for-shadow-mapping.md).
+Führen Sie das Rendern aus dem Blickwinkel durch, aus dem das Licht kommt, um eine zweidimensionale Tiefenkarte zu erstellen, mit der das Schattenvolumen dargestellt wird. Mithilfe der Tiefenmap wird eine Maske für den Raum erstellt, der im Schatten gerendert wird. Teil 2 von [Exemplarische Vorgehensweise: Implementieren von Schattenvolumes mithilfe von Tiefenpuffern in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
 ## <a name="clear-the-depth-buffer"></a>Löschen des Tiefenpuffers
 
@@ -37,7 +37,7 @@ Geben Sie für den Schattenrenderdurchlauf einen Tiefenpuffer an, aber geben Sie
 
 Geben Sie den Viewport für das Licht und einen Vertex-Shader an, und legen Sie die Konstantenpuffer für den Lichtraum fest. Verwenden Sie für diesen Durchlauf das Vorderseiten-Culling, um die in den Schattenpuffer eingefügten Tiefenwerte zu optimieren.
 
-Beachten Sie, dass Sie auf den meisten Geräten "nullptr" für den Pixelshader angeben können (oder die Angabe eines Pixelshaders ganz weglassen können). Für einige Treiber wird jedoch möglicherweise eine Ausnahme ausgelöst, wenn Sie auf dem Direct3D-Gerät einen Draw-Aufruf durchführen, während ein Null-Pixelshader festgelegt ist. Sie können einen minimalen Pixel-Shader für den Schattenrenderdurchlauf festlegen, um diese Ausnahme zu vermeiden. Die Ausgabe dieses Shaders wird nicht aufbewahrt. Für jedes Pixel kann [**discard**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard) aufgerufen werden.
+Beachten Sie, dass Sie auf den meisten Geräten "nullptr" für den Pixelshader angeben können (oder die Angabe eines Pixelshaders ganz weglassen können). Für einige Treiber wird jedoch möglicherweise eine Ausnahme ausgelöst, wenn Sie auf dem Direct3D-Gerät einen Draw-Aufruf durchführen, während ein Null-Pixelshader festgelegt ist. Sie können einen minimalen Pixel-Shader für den Schattenrenderdurchlauf festlegen, um diese Ausnahme zu vermeiden. Die Ausgabe dieses Shaders wird nicht aufbewahrt. Für jedes Pixel kann [**discard**](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard) aufgerufen werden.
 
 Rendern Sie die Objekte, die Schatten werfen können. Um Geometrieelemente, die keinen Schatten werfen können, brauchen Sie sich jedoch nicht zu kümmern (z. B. ein Boden in einem Raum oder Objekte, die zum Zweck der Optimierung aus dem Schattendurchlauf entfernt werden).
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimieren Sie die Ansicht Frustums:**  Stellen Sie sicher, dass Ihre Implementierung eine umfassende Ansicht Frustums berechnet, damit, dass Ihnen die Genauigkeit Ihrer Tiefenpuffer bietet. Weitere Tipps zu Schattenmethoden finden Sie unter [Häufig verwendete Methoden zur Verbesserung von Tiefenmaps für Schatten](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps).
+**Optimieren des Frustums:**  Stellen Sie sicher, dass in Ihrer Implementierung ein exaktes Frustum berechnet wird, damit Sie mit dem Tiefenpuffer die größtmögliche Präzision erzielen. Weitere Tipps zu Schattenmethoden finden Sie unter [Häufig verwendete Methoden zur Verbesserung von Tiefenmaps für Schatten](/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps).
 
 ## <a name="vertex-shader-for-shadow-pass"></a>Vertex-Shader für Schattendurchlauf
 
@@ -153,7 +153,3 @@ Im nächsten Teil dieser exemplarischen Vorgehensweise erfahren Sie, wie Sie Sch
  
 
  
-
-
-
-

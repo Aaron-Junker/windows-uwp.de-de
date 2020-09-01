@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, Visual Studio, Tools, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: c97c24eca55cf43559b9f518eaf2fbc4656aa374
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 250450b2174ce249d1ec5afaf4c5188df9266f5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942809"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159264"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>Visual Studio-Tools für die Spieleprogrammierung
 
@@ -43,7 +43,7 @@ Nutzen Sie den Grafik-Editor zum Arbeiten mit den Arten von umfassenden Textur- 
 
 Erstellen Sie [Buildanpassungsdateien](#build-customizations-for-3d-assets), um diese Formate zur Buildzeit in DDS-Dateien zu konvertieren.
 
-Weitere Informationen finden Sie unter [Arbeiten mit Texturen und Bildern](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
+Weitere Informationen finden Sie unter [Arbeiten mit Texturen und Bildern](/visualstudio/designers/working-with-textures-and-images?view=vs-2015).
 
 > **Hinweis**    Der Bild-Editor ist nicht als Ersatz für eine vollständige App zum Bearbeiten von Features gedacht, eignet sich jedoch für viele einfache Anzeige-und Bearbeitungs Szenarien.
 
@@ -62,7 +62,7 @@ Dies ist ein Screenshot eines Modells im Editor, auf das Beleuchtungsfunktionen 
 
 ![Teekanne](images/modeleditor.png)
 
-Weitere Informationen finden Sie unter [Arbeiten mit 3D-Modellen](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015).
+Weitere Informationen finden Sie unter [Arbeiten mit 3D-Modellen](/visualstudio/designers/working-with-3-d-models?view=vs-2015).
 
 > **Hinweis**    Der Modell-Editor ist nicht als Ersatz für eine vollständige App zum Bearbeiten von Features gedacht, eignet sich jedoch für viele einfache Anzeige-und Bearbeitungs Szenarien.
 
@@ -109,7 +109,7 @@ float3 LambertLighting(
 }
 ```
 
-Weitere Informationen finden Sie unter [Arbeiten mit Shadern](https://docs.microsoft.com/visualstudio/designers/working-with-shaders?view=vs-2015).
+Weitere Informationen finden Sie unter [Arbeiten mit Shadern](/visualstudio/designers/working-with-shaders?view=vs-2015).
 
 ## <a name="build-customizations-for-3d-assets"></a>Buildanpassungen für 3D-Objekte
 
@@ -122,7 +122,7 @@ Um eine Buildanpassung hinzuzufügen, klicken Sie im **Projektmappen-Explorer** 
 -   Von der Gitterinhaltpipeline werden Gitterdateien (z. B. FBX) als Eingabe verwendet und CMO-Gitterdateien ausgegeben.
 -   Von der Shaderinhaltpipeline werden visuelle Shaderdiagramme (.dgsl) aus dem Shader-Editor von Visual Studio verwendet und kompilierte Shaderausgabedateien (.cso) ausgegeben.
 
-Weitere Informationen finden Sie unter [Verwenden von 3D-Objekten im Spiel oder in der App](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
+Weitere Informationen finden Sie unter [Verwenden von 3D-Objekten im Spiel oder in der App](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015).
 
 ## <a name="debugging-directx-graphics"></a>Debuggen von DirectX-Grafiken
 
@@ -139,7 +139,7 @@ Visual Studio enthält grafikspezifische Debugtools. Verwenden Sie diese Tools z
 -   Begrenzte Direct2D-Unterstützung
 -   Betriebssystem- und SDK-Anforderungen
 
-Weitere Informationen finden Sie unter [Debuggen von DirectX-Grafiken](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
+Weitere Informationen finden Sie unter [Debuggen von DirectX-Grafiken](/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015).
 
 
  
@@ -147,7 +147,3 @@ Weitere Informationen finden Sie unter [Debuggen von DirectX-Grafiken](https://d
  
 
  
-
-
-
-
