@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: a3e95eae10fb06135f0fed1b92f1717f5e5fdf4d
-ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
+ms.openlocfilehash: 5d36d1d47670023b2ee462ba9cd88449b2769079
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83280280"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174324"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>Broker Windows-Runtime Komponenten für eine neben geladene UWP-App
 
@@ -42,9 +42,9 @@ Dieses Feature basiert auf der allgemeinen Anwendungsarchitektur, die als MVVM (
 
 Bei der Desktopkomponente in diesem Feature handelt es sich um einen neuen Anwendungstyp, der als Teil dieses Features eingeführt wird. Diese Desktop Komponente kann nur in C geschrieben werden \# und muss für Windows 10 auf .NET 4,6 oder höher ausgerichtet sein. Der Projekttyp ist ein Hybrid für die Common Language Runtime (CLR) für UWP, da das Format für die prozessübergreifende Kommunikation UWP-Typen und -Klassen enthält, während die Desktopkomponente alle Teile der .NET-Laufzeit-Klassenbibliothek aufrufen darf. Die Auswirkungen auf das Visual Studio-Projekt werden später ausführlich beschrieben. Diese Hybridkonfiguration ermöglicht den Aufruf von UWP-Typen für die auf den Desktopkomponenten basierenden Anwendung, während gleichzeitig der Desktop-CLR-Code innerhalb der Desktopkomponentenimplementierung aufgerufen werden kann.
 
-**Bedingungen**
+**Vertrag**
 
-Der Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente wird mithilfe des UWP-Typsystems beschrieben. Dies umfasst das Deklarieren einer oder mehrerer C- \# Klassen, die eine UWP darstellen können. Im MSDN [-Thema Erstellen von Windows-Runtime Komponenten in c \# und Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br230301(v=vs.140)) finden Sie spezifische Anforderungen für die Erstellung Windows-Runtime Klasse mithilfe von c \# .
+Der Vertrag zwischen der quergeladenen Anwendung und der Desktopkomponente wird mithilfe des UWP-Typsystems beschrieben. Dies umfasst das Deklarieren einer oder mehrerer C- \# Klassen, die eine UWP darstellen können. Im MSDN [-Thema Erstellen von Windows-Runtime Komponenten in c \# und Visual Basic](/previous-versions/windows/apps/br230301(v=vs.140)) finden Sie spezifische Anforderungen für die Erstellung Windows-Runtime Klasse mithilfe von c \# .
 
 >**Hinweis**   Enums werden zurzeit nicht in den Windows-Runtime Komponenten Vertrag zwischen Desktop Komponenten und sideloloaded-Anwendungen unterstützt.
 
@@ -106,7 +106,7 @@ Hierdurch wird die Klasse „EnterpriseServer“ definiert, die von der quergela
 
 Klicken Sie dazu in Visual Studio mit der rechten Maustaste auf das neu erstellte Projekt, und wählen Sie „Projekt entladen“ aus. Klicken Sie anschließend erneut mit der rechten Maustaste, und wählen Sie „EnterpriseServer.csproj bearbeiten“ aus, um die Projektdatei, eine XML-Datei, für die Bearbeitung zu öffnen.
 
-Suchen Sie in der geöffneten Datei nach dem \< Tag OutputType, \> und ändern Sie dessen Wert in "winmdobj".
+Suchen Sie in der geöffneten Datei das Tag \<OutputType\>, und ändern Sie den Wert in „Winmdobj“.
 
 **Schritt 3:** Erstellen Sie eine Buildregel, die eine Windows-Metadatendatei (WINMD-Datei) als „Verweis“ erstellt. Das bedeutet, es gibt keine Implementierung.
 
@@ -179,7 +179,7 @@ Wie bereits erwähnt, wird die quergeladene Anwendung genau wie jede andere UWP-
 
 Die Kategorie lautet „inProcessServer“, da die outOfProcessServer-Kategorie mehrere Einträge enthält, die für diese Anwendungskonfiguration nicht anwendbar sind. Beachten Sie, dass die <Path>-Komponente stets „clrhost.dll“ enthalten muss (dies wird jedoch **nicht** erzwungen, und das Angeben eines anderen Werts führt zu einem undefinierten Fehler).
 
-Der <ActivatableClass>-Abschnitt entspricht einer echten prozessinternen RuntimeClass, die von einer Windows-Runtime-Komponente im App-Paket bevorzugt wird. <ActivatableClassAttribute>ist ein neues Element, und die Attribute Name = "desktopapplicationpath" und Type = "String" sind obligatorisch und invariant. Das Value-Attribut verweist auf den Ort, an dem sich die winmd-Implementierungsdatei der Desktopkomponente befindet (weitere Einzelheiten hierzu finden Sie im folgenden Abschnitt). Jede von der Desktopkomponente bevorzugte RuntimeClass sollte eine eigene <ActivatableClass>-Elementstruktur besitzen. Die ActivatableClassId muss dem vollständig qualifizierten Namespacenamen der RuntimeClass entsprechen.
+Der <ActivatableClass>-Abschnitt entspricht einer echten prozessinternen RuntimeClass, die von einer Windows-Runtime-Komponente im App-Paket bevorzugt wird. <ActivatableClassAttribute> ist ein neues Element, und die Attribute Name = "desktopapplicationpath" und Type = "String" sind obligatorisch und invariant. Das Value-Attribut verweist auf den Ort, an dem sich die winmd-Implementierungsdatei der Desktopkomponente befindet (weitere Einzelheiten hierzu finden Sie im folgenden Abschnitt). Jede von der Desktopkomponente bevorzugte RuntimeClass sollte eine eigene <ActivatableClass>-Elementstruktur besitzen. Die ActivatableClassId muss dem vollständig qualifizierten Namespacenamen der RuntimeClass entsprechen.
 
 Wie im Abschnitt „Definieren des Vertrags“ erwähnt wurde, muss ein Projektverweis auf die winmd-Verweisdatei der Desktopkomponente vorgenommen werden. Das Visual Studio-Projektsystem erstellt normalerweise eine aus zwei Ebenen bestehende Verzeichnisstruktur mit demselben Namen. Im Beispiel ist dies enterpriseipcapplication \\ enterpriseipcapplication. Die **winmd**-Verweisdatei wird manuell in dieses Verzeichnis der zweiten Ebene kopiert. Anschließend wird das Dialogfeld „Projektverweise“ verwendet (klicken Sie auf die Schaltfläche **Durchsuchen**...), um diese **winmd**-Datei zu suchen und zu referenzieren. Danach sollte der Namespace auf oberster Ebene der Desktop Komponente (z. b. fabrikam) als Knoten der obersten Ebene im Verweis Teil des Projekts angezeigt werden.
 
@@ -406,7 +406,7 @@ In der Regel werden nur andere projektübergreifenden Verweise vorgenommen. Ein 
 
 Die oben erwähnten Verweise sind eine sorgfältige Mischung aus Verweisen, die für die korrekte Ausführung dieses Hybridservers entscheidend sind. Das normale Verfahren besteht darin, die CSPROJ-Datei (wie für die Bearbeitung des Projekts OutputType beschrieben) zu öffnen und diese Verweise wie erforderlich hinzuzufügen.
 
-Sobald die Verweise korrekt konfiguriert wurden, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Weitere Informationen finden [Sie im Thema bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWP-apps mit C \# /VB/C + + und XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh750311(v=win.10)).
+Sobald die Verweise korrekt konfiguriert wurden, besteht die nächste Aufgabe darin, die Funktionalität des Servers zu implementieren. Weitere Informationen finden [Sie im Thema bewährte Methoden für die Interoperabilität mit Windows-Runtime-Komponenten (UWP-apps mit C \# /VB/C + + und XAML)](/previous-versions/windows/apps/hh750311(v=win.10)).
 Die Aufgabe besteht darin, eine Windows-Runtime-Komponenten-DLL zu erstellen, die Desktopcode als Teil der Implementierung aufrufen kann. Das Begleitbeispiel enthält die in der Windows-Runtime verwendeten Hauptmuster:
 
 -   Methodenaufrufe
@@ -476,7 +476,7 @@ Da die IPC-Methode das Marshalling von Windows-Runtime-Schnittstellen zwischen z
 
 **Erstellen des Proxys in Visual Studio**
 
-Der Prozess zum Erstellen und Registrieren von Proxys und stubys für die Verwendung in einem regulären UWP-App-Paket wird im Thema zum Erstellen von [Ereignissen in Windows-Runtime Komponenten](https://docs.microsoft.com/previous-versions/windows/apps/dn169426(v=vs.140))beschrieben.
+Der Prozess zum Erstellen und Registrieren von Proxys und stubys für die Verwendung in einem regulären UWP-App-Paket wird im Thema zum Erstellen von [Ereignissen in Windows-Runtime Komponenten](/previous-versions/windows/apps/dn169426(v=vs.140))beschrieben.
 Die in diesem Artikel beschriebenen Schritte sind komplizierter als der nachfolgend beschriebene Prozess, da sie das Registrieren des Proxys/Stubs innerhalb des Anwendungspakets enthalten (im Gegensatz zur globalen Registrierung).
 
 **Schritt 1:** Erstellen Sie mithilfe der Projektmappe für das Desktopkomponentenprojekt ein Proxy-/Stub-Projekt in Visual Studio:
@@ -577,7 +577,7 @@ Im Beispiel ist dargestellt, wie mithilfe entsprechender asynchroner Techniken Z
 
 Wenn Sie Änderungen am Server vornehmen, müssen Sie sicherstellen, dass zuvor ausgeführte Instanzen nicht mehr ausgeführt werden. COM sorgt schließlich für das Bereinigen des Prozesses, die vom Rundown-Timer benötigte Zeit ist jedoch zu lang für eine iterative Entwicklung. Das Beenden einer zuvor ausgeführten Instanz ist somit ein regulärer Schritt im Rahmen der Entwicklung. Hierfür muss der Entwickler laufend verfolgen, welche dllhost-Instanz den Server hostet.
 
-Der Serverprozess kann im Task-Manager oder in anderen Drittanbieter-Apps aufgesucht und beendet werden. Das Befehlszeilen Tool **tasklist. exe** ist ebenfalls enthalten und verfügt über eine flexible Syntax, z. b.:
+Der Serverprozess kann im Task-Manager oder in anderen Drittanbieter-Apps aufgesucht und beendet werden. Außerdem ist das Befehlszeilen Tool **TaskList.exe** enthalten und verfügt über eine flexible Syntax, z. b.:
 
   
  | **Befehl** | **Aktion** |
@@ -594,9 +594,8 @@ In der Liste der Module für einen Broker-Server muss *clrhost.dll* als geladene
 
 -   [Bereitstellung zuverlässiger und vertrauenswürdiger Microsoft Store-Apps](https://blogs.msdn.com/b/b8/archive/2012/05/17/delivering-reliable-and-trustworthy-metro-style-apps.aspx)
 
--   [App-Verträge und -Erweiterungen (Windows Store-Apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))
+-   [App-Verträge und -Erweiterungen (Windows Store-Apps)](/previous-versions/windows/apps/hh464906(v=win.10))
 
--   [Querladen von Apps unter Windows 10](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
+-   [Querladen von Apps unter Windows 10](../get-started/enable-your-device-for-development.md)
 
 -   [Bereitstellen von UWP-Apps für Unternehmen](https://blogs.msdn.com/b/windowsstore/archive/2012/04/25/deploying-metro-style-apps-to-businesses.aspx)
-

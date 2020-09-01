@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d6ddf03541e94f89d0950a4f4c03eebaa0e396e
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 242f7c30260956bc84478153f39b0da4d8461e12
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234476"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173404"
 ---
 # <a name="mouse-interactions"></a>Mausinteraktionen
 
@@ -86,46 +86,46 @@ Ein kompakter Satz von Mausinteraktionen wird durchgängig im ganzen System verw
 
 ## <a name="mouse-input-events"></a>Mauseingabe Ereignisse
 
-Die meisten Maus Eingaben können durch die allgemeinen Routing Eingabeereignisse behandelt werden, die von allen [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) -Objekten unterstützt werden. Dazu gehören:
+Die meisten Maus Eingaben können durch die allgemeinen Routing Eingabeereignisse behandelt werden, die von allen [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) -Objekten unterstützt werden. Dazu zählen unter anderem folgende Einstellungen:
 
-- [**Bringingeviewangeforderten**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
-- [**Charakteristik empfangen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
-- [**Contextabgeb Rochen**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
-- [**Contextrequessiert**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
-- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
-- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
-- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
-- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
-- [**DragStart**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Dropdown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
-- [**Dropdown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
-- [**Gettingfocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
-- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
-- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
-- [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
-- [**Losingfocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
-- [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
-- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
-- [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
-- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
-- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
-- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
-- [**Nofocus candidatefound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
-- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
-- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
-- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
-- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
-- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
-- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
-- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
-- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
-- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
-- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**Bringingeviewangeforderten**](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
+- [**Charakteristik empfangen**](/uwp/api/windows.ui.xaml.uielement.characterreceived)
+- [**Contextabgeb Rochen**](/uwp/api/windows.ui.xaml.uielement.contextcanceled)
+- [**Contextrequessiert**](/uwp/api/windows.ui.xaml.uielement.contextrequested)
+- [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DragEnter**](/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**DragLeave**](/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**DragOver**](/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**DragStart**](/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**Dropdown**](/uwp/api/windows.ui.xaml.uielement.drop)
+- [**Dropdown**](/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**Gettingfocus**](/uwp/api/windows.ui.xaml.uielement.gettingfocus)
+- [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)
+- [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup)
+- [**Losingfocus**](/uwp/api/windows.ui.xaml.uielement.losingfocus)
+- [**LostFocus**](/uwp/api/windows.ui.xaml.uielement.lostfocus)
+- [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
+- [**ManipulationInertiaStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**ManipulationStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**Nofocus candidatefound**](/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefound)
+- [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**PreviewKeyDown**](/uwp/api/windows.ui.xaml.uielement.previewkeydown)
+- [**PreviewKeyUp**](/uwp/api/windows.ui.xaml.uielement.previewkeyup)
+- [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)
 
-Sie können jedoch die spezifischen Funktionen der einzelnen Geräte (z. b. Mausrad Ereignisse) mithilfe der Zeiger-, Gesten-und Bearbeitungs Ereignisse in [Windows. UI. Input](https://docs.microsoft.com/uwp/api/windows.ui.input)nutzen.
+Sie können jedoch die spezifischen Funktionen der einzelnen Geräte (z. b. Mausrad Ereignisse) mithilfe der Zeiger-, Gesten-und Bearbeitungs Ereignisse in [Windows. UI. Input](/uwp/api/windows.ui.input)nutzen.
 
 **Beispiele:** Weitere Informationen finden Sie in unserem [basicinput-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)für.
 
@@ -144,7 +144,7 @@ Allgemeine Informationen zum visuellen Feedback finden Sie unter [Richtlinien f�
 
 Für einen Mauszeiger ist eine Reihe von Standardcursor verfügbar. Diese Cursor werden verwendet, um die primäre Aktion eines Elements anzugeben.
 
-Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das einem Standardcursor zugewiesene Standardbild jederzeit ändern. Geben Sie über die [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor)-Funktion die Abbildung eines Cursors an.
+Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das einem Standardcursor zugewiesene Standardbild jederzeit ändern. Geben Sie über die [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor)-Funktion die Abbildung eines Cursors an.
 
 Beachten Sie beim Anpassen des Mauszeigers Folgendes:
 
@@ -158,7 +158,7 @@ Beachten Sie beim Anpassen des Mauszeigers Folgendes:
 
 - [Behandeln von Zeigereingaben](handle-pointer-input.md)
 - [Identifizieren von Eingabegeräten](identify-input-devices.md)
-- [Übersicht über Ereignisse und Routingereignisse](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- [Übersicht über Ereignisse und Routingereignisse](../../xaml-platform/events-and-routed-events-overview.md)
 
 ### <a name="samples"></a>Beispiele
 

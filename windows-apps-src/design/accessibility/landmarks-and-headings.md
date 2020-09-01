@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 942c24e8f5c7c521502ee5a9f9eb7175bf04b94f
-ms.sourcegitcommit: 2a1ceeacf5cdadc803bad83dc3ceb57a16ce79a3
+ms.openlocfilehash: 4c05f39c0497a2e2ef369abd04ed437f8387e60f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067512"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173994"
 ---
 # <a name="landmarks-and-headings"></a>Orientierungspunkte und Überschriften
 
@@ -33,14 +33,14 @@ Es gibt ein suchbearbeitungsfeld, das in einem Such-Landmark umschließt ist. Di
 
 Der Zugriff auf die Einstellungs-APP wäre ohne Überschriften und Überschriften möglich, Sie ist jedoch besser verwendbar. Ein Benutzer mit Bildschirm Leseberechtigung kann schnell und einfach die gewünschte Gruppe (das gewünschte Bildschirm) erreichen und dann schnell zur Untergruppe (Überschrift) gelangen.
 
-Verwenden Sie [AutomationProperties. landmarktypeproperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) , um das UI-Element als den gewünschten [Typ von "Landmark](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers) " einzurichten. Dieses Benutzeroberflächen Element von Landmark würde alle anderen Benutzeroberflächen Elemente kapseln, die für dieses Wahrzeichen sinnvoll sind.
+Verwenden Sie [AutomationProperties. landmarktypeproperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) , um das UI-Element als den gewünschten [Typ von "Landmark](/windows/desktop/WinAuto/landmark-type-identifiers) " einzurichten. Dieses Benutzeroberflächen Element von Landmark würde alle anderen Benutzeroberflächen Elemente kapseln, die für dieses Wahrzeichen sinnvoll sind.
 
-Verwenden Sie [AutomationProperties. localizedlandmarktypeproperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) , um das-Attribut explizit zu benennen. Wenn Sie einen vordefinierten Typ für den-Typ auswählen, z. b. Main oder Navigational, werden diese Namen für den Namen des wegzeichens verwendet. Wenn Sie jedoch den Typ "Landmark" auf "Custom" festlegen, müssen Sie das-Zeichen aus dieser Eigenschaft explizit benennen. Sie können diese Eigenschaft auch verwenden, um die Standardnamen der Nichtbenutzer definierten Typen zu überschreiben.
+Verwenden Sie [AutomationProperties. localizedlandmarktypeproperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) , um das-Attribut explizit zu benennen. Wenn Sie einen vordefinierten Typ für den-Typ auswählen, z. b. Main oder Navigational, werden diese Namen für den Namen des wegzeichens verwendet. Wenn Sie jedoch den Typ "Landmark" auf "Custom" festlegen, müssen Sie das-Zeichen aus dieser Eigenschaft explizit benennen. Sie können diese Eigenschaft auch verwenden, um die Standardnamen der Nichtbenutzer definierten Typen zu überschreiben.
 
-Verwenden Sie [AutomationProperties. headinglevel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) , um das UI-Element als Überschrift einer bestimmten Ebene von *Level1* bis *Level9*festzulegen.
+Verwenden Sie [AutomationProperties. headinglevel](/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) , um das UI-Element als Überschrift einer bestimmten Ebene von *Level1* bis *Level9*festzulegen.
 
 ## <a name="examples"></a>Beispiele
 
-Zahlreiche Codebeispiele, die veranschaulichen, wie viele häufige Probleme mit der programmgesteuerten Barrierefreiheit in Windows-Desktop-Apps gelöst werden können, finden Sie unter [Codebeispiele zum Beheben allgemeiner Probleme mit der programmgesteuerten Barrierefreiheit in Windows](https://docs.microsoft.com/accessibility-tools-docs/)
+Zahlreiche Codebeispiele, die veranschaulichen, wie viele häufige Probleme mit der programmgesteuerten Barrierefreiheit in Windows-Desktop-Apps gelöst werden können, finden Sie unter [Codebeispiele zum Beheben allgemeiner Probleme mit der programmgesteuerten Barrierefreiheit in Windows](/accessibility-tools-docs/)
 
 Auf diese Codebeispiele wird direkt von[ Microsoft-Barrierefreiheits Informationen für Windows](https://github.com/microsoft/accessibility-insights-windows)verwiesen, was Ihnen helfen kann, viele Barrierefreiheits Probleme in der Benutzeroberfläche zu beleuchten.

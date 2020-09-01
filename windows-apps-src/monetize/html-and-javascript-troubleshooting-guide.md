@@ -4,14 +4,14 @@ description: Erfahren Sie mehr über Lösungen für allgemeine Entwicklungsprobl
 title: Handbuch zur Problembehandlung für HTML und JavaScript
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP, Anzeigen, Werbung, AdControl, Problembehandlung, HTML, Javascript
+keywords: Windows 10, UWP, ADS, Werbung, adcontrol, Problembehandlung, HTML, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: e9427218bc2ee6e7de7d5cb367da21d7b4bbfe30
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 53c2d18c56626d4a71b4326b1ab7e292a2267dca
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507094"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174984"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>Handbuch zur Problembehandlung für HTML und JavaScript
 
@@ -21,14 +21,14 @@ ms.locfileid: "77507094"
 Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Microsoft Advertising-Bibliotheken in JavaScript/HTML-Apps.
 
 * [HTML](#html)
-  * [Adcontrol wird nicht angezeigt.](#html-notappearing)
-  * [Schwarze Felder blinkt und verschwinden](#html-blackboxblinksdisappears)
-  * [Werbung wird nicht aktualisiert](#html-adsnotrefreshing)
+  * [AdControl wird nicht angezeigt](#html-notappearing)
+  * [Blackbox blinkt und wird ausgeblendet](#html-blackboxblinksdisappears)
+  * [Anzeigen werden nicht aktualisiert](#html-adsnotrefreshing)
 
-* [Ja](#js)
-  * [Adcontrol wird nicht angezeigt.](#js-adcontrolnotappearing)
-  * [Schwarze Felder blinkt und verschwinden](#js-blackboxblinksdisappears)
-  * [Werbung wird nicht aktualisiert](#js-adsnotrefreshing)
+* [JavaScript](#js)
+  * [AdControl wird nicht angezeigt](#js-adcontrolnotappearing)
+  * [Blackbox blinkt und wird ausgeblendet](#js-blackboxblinksdisappears)
+  * [Anzeigen werden nicht aktualisiert](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -36,7 +36,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="adcontrol-not-appearing"></a>AdControl wird nicht angezeigt
 
-1.  Stellen Sie sicher, dass die **Internet (Client)** -Funktion in „Package.appxmanifest“ ausgewählt ist.
+1.  Stellen Sie sicher, dass die **Internet (Client)**-Funktion in „Package.appxmanifest“ ausgewählt ist.
 
 2.  Stellen Sie sicher, dass der JavaScript-Verweis vorhanden ist. Ohne den Verweis ad.js im Abschnitt &lt;head&gt; (nach dem Verweis default.js) kann **AdControl** nicht angezeigt werden, und während der Erstellung tritt ein Fehler auf.
 
@@ -73,9 +73,9 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     </div>
     ```
 
-5.  Überprüfen Sie die Elementpositionierung. [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) muss sich im sichtbaren Bereich befinden.
+5.  Überprüfen Sie die Elementpositionierung. [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) muss sich im sichtbaren Bereich befinden.
 
-6.  Überprüfen Sie die Eigenschaft **visibility**. Diese Eigenschaft darf nicht auf reduziert oder ausgeblendet festgelegt sein. Diese Eigenschaft kann als Inlineeigenschaft (wie unten dargestellt) oder in einem externen Stylesheet festgelegt werden.
+6.  Überprüfen Sie die Eigenschaft **Sichtbarkeit** . Diese Eigenschaft darf nicht auf reduziert oder ausgeblendet festgelegt sein. Diese Eigenschaft kann als Inlineeigenschaft (wie unten dargestellt) oder in einem externen Stylesheet festgelegt werden.
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -139,7 +139,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 11. Stellen Sie sicher, dass **AdControl** im Viewport nicht ausgeblendet ist. **AdControl** muss sichtbar sein, damit Anzeigen ordnungsgemäß dargestellt werden.
 
-12. Echte Werte für [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) und [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **AdControl** erwartungsgemäß funktioniert, verwenden Sie [test values](set-up-ad-units-in-your-app.md#test-ad-units) sowohl für **ApplicationId** und **AdUnitId**.
+12. Echte Werte für [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) und [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **adcontrol** erwartungsgemäß funktioniert, verwenden Sie die [Testwerte](set-up-ad-units-in-your-app.md#test-ad-units) für " **ApplicationId** " und " **adunitid**".
 
 <span id="html-blackboxblinksdisappears"/>
 
@@ -172,7 +172,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="ads-not-refreshing"></a>Anzeigen werden nicht aktualisiert
 
-1.  Überprüfen Sie die Eigenschaft **isAutoRefreshEnabled**. Diese optionale Eigenschaft ist standardmäßig auf true festgelegt. Wenn sie auf false festgelegt ist, muss die **refresh**-Methode verwendet werden, um eine weitere Anzeige abzurufen.
+1.  Überprüfen Sie die **isautorefreshaktivierte** Eigenschaft. Diese optionale Eigenschaft ist standardmäßig auf true festgelegt. Wenn diese Einstellung auf "false" festgelegt ist, muss die **Aktualisierungs** Methode zum Abrufen einer anderen Werbung verwendet werden
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -186,7 +186,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     </div>
     ```
 
-2.  Überprüfen Sie Aufrufe der Methode **refresh**. Bei Verwendung der automatischen Aktualisierung kann **refresh** nicht verwendet werden, um eine weitere Anzeige abzurufen. Bei Verwendung der manuellen Aktualisierung sollte **refresh** abhängig von der aktuellen Datenverbindung des Geräts erst nach mindestens 30 bis 60 Sekunden aufgerufen werden.
+2.  Überprüfen Sie Aufrufe der Methode **refresh**. Wenn Sie die automatische Aktualisierung verwenden, kann die **Aktualisierung** nicht zum Abrufen einer anderen Werbeanzeige verwendet werden. Wenn Sie die manuelle Aktualisierung verwenden, sollte die **Aktualisierung** abhängig von der aktuellen Datenverbindung des Geräts nur nach mindestens 30 bis 60 Sekunden aufgerufen werden.
 
     In diesem Beispiel wird die Verwendung der Methode **refresh** gezeigt. Der folgende HTML-Code zeigt ein Beispiel für die Instanziierung von **AdControl**, wenn **isAutoRefreshEnabled** auf false festgelegt ist.
 
@@ -226,7 +226,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="adcontrol-not-appearing"></a>AdControl wird nicht angezeigt
 
-1.  Stellen Sie sicher, dass die **Internet (Client)** -Funktion in „Package.appxmanifest“ ausgewählt ist.
+1.  Stellen Sie sicher, dass die **Internet (Client)**-Funktion in „Package.appxmanifest“ ausgewählt ist.
 
 2.  Stellen Sie sicher, dass **AdControl** instanziiert ist. Wenn **AdControl** nicht instanziiert ist, ist es nicht verfügbar.
 
@@ -263,7 +263,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
     }
     ```
 
-3.  Überprüfen Sie das übergeordnete Element. Das übergeordnete Element **&lt;div&gt;** muss richtig zugewiesen, aktiv und sichtbar sein.
+3.  Überprüfen Sie das übergeordnete Element. Das übergeordnete ** &lt; div &gt; ** -Element muss ordnungsgemäß zugewiesen, aktiv und sichtbar sein.
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -286,7 +286,7 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 5.  Überprüfen Sie das übergeordnete Element von **AdControl**. Das übergeordnete Element muss aktiv und sichtbar sein.
 
-6.  Echte Werte für **ApplicationId** und **AdUnitId** sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **AdControl** erwartungsgemäß funktioniert, verwenden Sie [test values](set-up-ad-units-in-your-app.md#test-ad-units) sowohl für **ApplicationId** und **AdUnitId**.
+6.  Echte Werte für **ApplicationId** und **AdUnitId** sollten nicht im Emulator getestet werden. Um sicherzustellen, dass **adcontrol** erwartungsgemäß funktioniert, verwenden Sie die [Testwerte](set-up-ad-units-in-your-app.md#test-ad-units) für " **ApplicationId** " und " **adunitid**".
 
 <span id="js-blackboxblinksdisappears"/>
 
@@ -341,9 +341,9 @@ Dieses Thema enthält Lösungen für allgemeine Entwicklungsprobleme mit den Mic
 
 ### <a name="ads-not-refreshing"></a>Anzeigen werden nicht aktualisiert
 
-1.  Überprüfen Sie, ob in der [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx)-Eigenschaft **AdControl** auf „false“ festgelegt ist. Diese optionale Eigenschaft ist standardmäßig auf **true** festgelegt. Wenn sie auf **false** festgelegt ist, muss die Methode **Refresh** verwendet werden, um eine weitere Anzeige abzurufen.
+1.  Überprüfen Sie, ob in der [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx)-Eigenschaft **AdControl** auf „false“ festgelegt ist. Diese optionale Eigenschaft ist standardmäßig auf **true**festgelegt. Wenn diese Einstellung auf " **false**" festgelegt ist, muss die **Aktualisierungs** Methode zum Abrufen einer anderen Werbung verwendet werden
 
-2.  Überprüfen Sie Aufrufe der [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx)-Methode. Bei Verwendung der automatischen Aktualisierung ((**IsAutoRefreshEnabled** ist **true**)) kann **Refresh** nicht verwendet werden, um eine weitere Anzeige abzurufen. Bei Verwendung der manuellen Aktualisierung (**IsAutoRefreshEnabled** ist **false**) sollte **Refresh** abhängig von der aktuellen Datenverbindung des Geräts erst nach mindestens 30 bis 60 Sekunden aufgerufen werden.
+2.  Überprüfen Sie die Aufrufe der [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) -Methode. Bei Verwendung der automatischen Aktualisierung ((**IsAutoRefreshEnabled** ist **true**)) kann **Refresh** nicht verwendet werden, um eine weitere Anzeige abzurufen. Bei Verwendung der manuellen Aktualisierung (**IsAutoRefreshEnabled** ist **false**) sollte **Refresh** abhängig von der aktuellen Datenverbindung des Geräts erst nach mindestens 30 bis 60 Sekunden aufgerufen werden.
 
     Dieses Beispiel zeigt das Erstellen von **div** für **AdControl**.
 

@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Spieleentwicklung
 ms.localizationpriority: medium
-ms.openlocfilehash: 24414ba36e2ee1af8f391eec38b04d9e17bb7237
-ms.sourcegitcommit: 2e597438dafedde3bde24424ef005bb4c24ba3bf
+ms.openlocfilehash: cf1566b804caaf39def783d95752a389536daa3b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84800326"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175334"
 ---
 # <a name="windows-10-game-development-guide"></a>Handbuch zur Entwicklung von Spielen unter Windows 10
 
@@ -111,9 +111,9 @@ Microsoft bietet mehrere Entwicklerprogramme an, die Sie bei der Entwicklung und
 
 #### <a name="xbox-live-creators-program"></a>Xbox Live Creators-Programm
 
-Das Xbox Live Creators-Programm ermöglicht allen Benutzern, Xbox Live in ihren Titel zu integrieren und auf Xbox One und Windows 10 zu veröffentlichen. Es ist ein vereinfachtes Zertifizierungsverfahren vorhanden, und es ist keine Konzept Genehmigung außerhalb der standardmäßigen [Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)erforderlich.
+Das Xbox Live Creators-Programm ermöglicht allen Benutzern, Xbox Live in ihren Titel zu integrieren und auf Xbox One und Windows 10 zu veröffentlichen. Es ist ein vereinfachtes Zertifizierungsverfahren vorhanden, und es ist keine Konzept Genehmigung außerhalb der standardmäßigen [Microsoft Store-Richtlinien](/legal/windows/agreements/store-policies)erforderlich.
 
-Sie können Ihr Spiel im Creators-Programm ohne dediziertes dev-Kit bereitstellen, entwerfen und veröffentlichen. dabei wird nur die Einzelhandels Hardware verwendet. Laden Sie zunächst die Entwickler [Modus-Aktivierungs-App](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) auf Ihrer Xbox One herunter.
+Sie können Ihr Spiel im Creators-Programm ohne dediziertes dev-Kit bereitstellen, entwerfen und veröffentlichen. dabei wird nur die Einzelhandels Hardware verwendet. Laden Sie zunächst die Entwickler [Modus-Aktivierungs-App](../xbox-apps/devkit-activation.md) auf Ihrer Xbox One herunter.
 
 Wenn Sie noch mehr über die Xbox Live-Funktionen, dedizierte Marketing-und Entwicklungsunterstützung und die Gelegenheit verfügen möchten, im Hauptspeicher von Xbox One zu finden, wenden Sie sich auf das [ID@Xbox](https://www.xbox.com/Developers/id) Programm an.
 
@@ -138,11 +138,11 @@ Das ID@Xbox Programm unterstützt qualifizierte Spieleentwickler bei der Selbstv
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>ID@XboxEntwicklerprogramm</td>
+        <td>ID@Xbox Entwicklerprogramm</td>
         <td><a href="https://www.xbox.com/Developers/id">Unabhängiges Entwicklerprogramm für Xbox One</a></td>
     </tr>
     <tr>
-        <td>ID@Xboxconsumersite</td>
+        <td>ID@Xbox consumersite</td>
         <td><a href="https://www.idatxbox.com/">ID@Xbox</a></td>
     </tr>
 </table>
@@ -463,7 +463,7 @@ Die HyperText Markup Language (HTML) ist eine häufig verwendete Markup-Sprache 
     </tr>
 </table>
  
-####Kombinieren von Präsentations Technologien
+#### Kombinieren von Präsentations Technologien
 
 Die Microsoft DirectX Graphic Infrastructure (DXGI) bietet Interoperabilität und Kompatibilität über mehrere Arten von Grafiktechnologie hinweg. Für Hochleistungsgrafiken können Sie XAML und DirectX kombinieren, indem Sie XAML für Menüs und andere einfache UI-Elemente und DirectX für das Rendern von komplexen 2D- und 3D-Szenen nutzen. DXGI bietet auch Kompatibilität zwischen Direct2D, Direct3D, DirectWrite, DirectCompute und der Microsoft Media Foundation.
 
@@ -516,7 +516,7 @@ C# (sprich: „C sharp“) ist eine moderne, innovative Sprache, die einfach, le
     </tr>
 </table>
  
-####Ja
+#### Ja
 
 JavaScript ist eine dynamische Skriptsprache, die häufig für moderne Webanwendungen und Rich-Clientanwendungen eingesetzt wird.
 
@@ -706,7 +706,7 @@ Ab Unity 5,4 unterstützt Unity die Direct3D 12-Entwicklung.
     </tr>
 </table>
  
-####Havok
+#### Havok
 
 Mit den Tools und Technologien aus der modular aufgebauten Suite von Havok erreichen Spieleentwickler eine noch nie dagewesene Interaktivität und Immersion. Havok bietet äußerst realistische Physik, interaktive Simulationen und beeindruckende Effekte. Version 2015,1 und höher unterstützt offiziell UWP in Visual Studio 2015 auf x86, 64-Bit und Arm.
 
@@ -729,7 +729,7 @@ Mit den Tools und Technologien aus der modular aufgebauten Suite von Havok errei
     </tr>
 </table>
  
-####MonoGame
+#### MonoGame
 
 MonoGame ist ein plattformübergreifendes Open-Source-Framework für die Spieleentwicklung, das ursprünglich auf XNA Framework 4.0 von Microsoft basierte. MonoGame unterstützt derzeit Windows, Windows Phone und Xbox sowie Linux, macOS, iOS, Android und verschiedene andere Plattformen.
 
@@ -909,7 +909,7 @@ Im Anschluss finden Sie praktische Handbücher, die sich ausführlich mit UWP-Ap
     </tr>
 </table>
  
-###Einstieg in die UWP-Entwicklung
+### Einstieg in die UWP-Entwicklung
 
 Die Vorbereitung auf die Entwicklung einer UWP-App (Universelle Windows-Plattform) ist ganz einfach und im Handumdrehen erledigt. Die erforderlichen Schritte werden in den folgenden Handbüchern erläutert:
 
@@ -997,7 +997,7 @@ Dies sind einige Links, mit denen Sie Ihr Windows-Desktop Spiel auf UWP umstelle
     </tr>
 </table>
  
-###Verwaltung der Prozess Lebensdauer
+### Verwaltung der Prozess Lebensdauer
 
 Prozesslebensdauer-Verwaltung (oder App-Lebenszyklus) beschreibt die verschiedenen Aktivierungszustände, die eine UWP-App (Universelle Windows-Plattform) durchlaufen kann. Ihr Spiel kann aktiviert, angehalten, fortgesetzt oder beendet werden und diese Zustände auf unterschiedliche Arten durchlaufen.
 
@@ -1016,7 +1016,7 @@ Prozesslebensdauer-Verwaltung (oder App-Lebenszyklus) beschreibt die verschieden
     </tr>
 </table>
  
-###Entwerfen von Spiel-UX
+### Entwerfen von Spiel-UX
 
 Großartigen Spielen liegt in der Regel ein kreatives Design zugrunde.
 
@@ -1047,7 +1047,7 @@ Zusätzlich zum UX-Design müssen Sie sich auch mit dem Gameplay-Design auseinan
     </tr>   
 </table>
  
-####Farb Richtlinie und Palette
+#### Farb Richtlinie und Palette
 
 Die Befolgung einer einheitlichen Farbrichtlinie für das Spiel sorgt für eine Verbesserung der Ästhetik und der Navigation und ist ein wirksames Mittel, um Spieler über Menü- und HUD-Funktionen zu informieren. Eine einheitliche Farbgestaltung von Spielelementen wie Warnungen, Schäden, Erfahrungspunkten und Erfolgen kann zu einer aufgeräumteren Benutzeroberfläche führen und explizite Bezeichnungen überflüssig machen.
 
@@ -1201,7 +1201,7 @@ Erfahren Sie mehr über die Änderungen in Direct3D 12 und wie Sie mit der Prog
     </tr>
 </table>
  
-####DirectX-Toolkit und Bibliotheken
+#### DirectX-Toolkit und Bibliotheken
 
 Das DirectX-Toolkit, die DirectX-Texturverarbeitungsbibliothek, die DirectXMesh-Geometrieverarbeitungsbibliothek, die UVAtlas-Bibliothek und die DirectXMath-Bibliothek bieten textur-, gitter- und spritebezogene sowie weitere Hilfsprogrammfunktionen und Hilfsklassen für die DirectX-Entwicklung. Diese Bibliotheken können Ihnen helfen, Entwicklungszeit und -aufwand einzusparen.
 
@@ -1267,7 +1267,7 @@ Dies sind einige zusätzliche DirectX-Dokumentationen, die von externen Partnern
     </tr>
 </table>
 
-## <a name="production"></a>Produktion
+## <a name="production"></a>Bereitstellung
 
 Ihr Studio ist jetzt vollständig eingebunden und beginnt mit dem Produktionszyklus, wobei die Arbeiten auf die einzelnen Teammitglieder aufgeteilt werden. Der Prototyp wird optimiert, überarbeitet und erweitert, um ein vollständiges Spiel zu erhalten.
 
@@ -1337,11 +1337,11 @@ Ein Add-on (in-App-Produkt) ist ein zusätzliches Element, das Spieler im Spiel 
     </tr>
 </table>
  
-###Debuggen, Leistungsoptimierung und Überwachung
+### Debuggen, Leistungsoptimierung und Überwachung
 
 Um die Leistung zu optimieren, nutzen Sie den Spielmodus in Windows 10, um Ihren Gamern das beste Spiel zu bieten, indem Sie die Kapazität ihrer aktuellen Hardware voll ausschöpfen.
 
-Das Windows Performance Toolkit (WPT) besteht aus Leistungsüberwachungstools, die detaillierte Leistungsprofile von Windows-Betriebssystemen und -Anwendungen erstellen. Dies ist besonders hilfreich für die Überwachung der Speicherverwendung und zum Verbessern der Leistung eines Spiels. Das Windows Performance Toolkit ist im SDK für Windows 10 und im Windows ADK enthalten. Dieses Toolkit besteht aus zwei unabhängigen Tools: Windows Performance Recorder (WPR) und Windows Performance Analyzer (WPA). Procdump, das Teil von [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default)ist, ist ein Befehlszeilen-Hilfsprogramm, das CPU-Spitzen überwacht und Dumpdateien bei Spiel abstürzen generiert. 
+Das Windows Performance Toolkit (WPT) besteht aus Leistungsüberwachungstools, die detaillierte Leistungsprofile von Windows-Betriebssystemen und -Anwendungen erstellen. Dies ist besonders hilfreich für die Überwachung der Speicherverwendung und zum Verbessern der Leistung eines Spiels. Das Windows Performance Toolkit ist im SDK für Windows 10 und im Windows ADK enthalten. Dieses Toolkit besteht aus zwei unabhängigen Tools: Windows Performance Recorder (WPR) und Windows Performance Analyzer (WPA). Procdump, das Teil von [Windows Sysinternals](/sysinternals/)ist, ist ein Befehlszeilen-Hilfsprogramm, das CPU-Spitzen überwacht und Dumpdateien bei Spiel abstürzen generiert. 
 
 <table>
     <colgroup>
@@ -1471,7 +1471,7 @@ Entwickeln Sie Windows-Spiele für den weltweiten Markt, und erfahren Sie mehr �
 
 Die folgenden Handbücher und Informationen sorgen für eine möglichst reibungslose Veröffentlichung und Übermittlung.
 
-### <a name="publishing"></a>Veröffentlichen
+### <a name="publishing"></a>Veröffentlichung
 
 Sie verwenden [Partner Center](https://partner.microsoft.com/dashboard) zum Veröffentlichen und Verwalten von Spielpaketen.
 
@@ -1610,7 +1610,7 @@ Wer glaubt, sich nach dem Abschluss der Entwicklung und der Auslieferung eines S
     </tr>
 </table>
  
-###Visual Studio-Application Insights
+### Visual Studio-Application Insights
 
 Visual Studio Application Insights bietet Leistungs-, Telemetrie- und Verwendungsanalysen für Ihr veröffentlichtes Spiel. Application Insights unterstützt Sie nach der Veröffentlichung Ihres Spiels beim Erkennen und Beheben von Problemen sowie bei der kontinuierlichen Überwachung und Optimierung der Verwendung und beim Nachvollziehen der weiteren Spielerinteraktionen mit Ihrem Spiel. Application Insights funktioniert durch Hinzufügen eines SDK zu Ihrer App, welches Telemetriedaten an das [Azure-Portal](https://portal.azure.com/)sendet.
 
@@ -1686,7 +1686,7 @@ Zum Aktualisieren Ihres veröffentlichten Spiels übermitteln Sie ein neues App-
 Xbox Live ist ein erstklassiges Gamingnetzwerk, das Millionen von Spielern weltweit verbindet. Entwickler erhalten Zugriff auf Xbox Live-Features, die die Zielgruppe von spielen, einschließlich Xbox Live Anwesenheits, Bestenlisten, cloudspeicherungen, Spiele-Hubs, Clubs, Party Chat, Game DVR und mehr, erweitern können.
 
 > [!Note]
-> Wenn Sie Xbox Live-fähige Titel entwickeln möchten, stehen Ihnen mehrere Optionen zur Verfügung. Informationen zu den verschiedenen Programmen finden Sie unter [Übersicht über das Entwicklerprogramm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview).
+> Wenn Sie Xbox Live-fähige Titel entwickeln möchten, stehen Ihnen mehrere Optionen zur Verfügung. Informationen zu den verschiedenen Programmen finden Sie unter [Übersicht über das Entwicklerprogramm](/gaming/xbox-live/developer-program-overview).
 
 <table>
     <colgroup>

@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, Sound
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e624c750bfce0633bc91d440fd883341b831836
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 04a9ea70914be3c60826df8753eca2ad1c30f19d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409649"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175184"
 ---
 # <a name="add-sound"></a>Hinzufügen von Sound
 
@@ -21,7 +21,7 @@ ms.locfileid: "85409649"
 In diesem Thema erstellen wir mithilfe von [XAudio2](/windows/desktop/xaudio2/xaudio2-introduction) -APIs eine einfache Sound-Engine. Wenn Sie noch nicht mit __XAudio2__vertraut sind, haben wir eine kurze Einführung in [audiokonzepte](#audio-concepts)integriert.
 
 >[!Note]
->Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](/windows/uwp/get-started/get-uwp-app-samples).
+>Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](../get-started/get-app-samples.md).
 
 ## <a name="objective"></a>Ziel
 
@@ -482,7 +482,7 @@ Weitere Informationen finden Sie unter [XAudio2 Stimmen](/windows/desktop/xaudio
 
 Das audiodiagramm ist eine Sammlung von [XAudio2 Stimmen](/windows/desktop/xaudio2/xaudio2-voices). Audiodaten werden an einer Seite eines audiodiagramms in den Quell Stimmen gestartet. optional wird eine oder mehrere Teil Mischungs Stimmen durchlaufen, und eine Stimme an. Ein audiodiagramm enthält eine Quell Stimme für jeden aktuell wiedergegebenen Sound, 0 (null) oder mehr Teil Mischungs Stimmen und eine Stimme. Das einfachste audiodiagramm und die Mindestanforderungen für die Durchführung eines Rauschens in XAudio2 ist eine einzelne Quelle, die direkt auf eine Mastering-Stimme aussteht. Weitere Informationen finden Sie in den [audiodiagrammen](/windows/desktop/xaudio2/audio-graphs).
 
-### <a name="additional-reading"></a>Weiterführende Literatur
+### <a name="additional-reading"></a>Zusätzliche Lektüre
 
 * [So wird's gemacht: Initialisieren von XAudio2](/windows/desktop/xaudio2/how-to--initialize-xaudio2)
 * [So wird's gemacht: Laden von Datendateien in XAudio2](/windows/desktop/xaudio2/how-to--load-audio-data-files-in-xaudio2)

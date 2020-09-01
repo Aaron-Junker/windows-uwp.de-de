@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Werbung, Werbung, Anmerkungen zu dieser Version
 ms.localizationpriority: medium
-ms.openlocfilehash: 10762d28191dfe59ae6f63f06cbeb0dd3e8a9f51
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 8faf352040b9d7bdc9fc8bc79804d5903573d41d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969918"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174964"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Versions Hinweise für die Werbe Bibliotheken
 
@@ -35,7 +35,7 @@ Wenn Sie die Microsoft Advertising-Bibliotheken verwenden, können Sie in Ihrem 
 
 ## <a name="c-support"></a>C++-Unterstützung
 
-Die Microsoft Advertising-Bibliotheken (in den die Klassen **AdControl** und **InterstitialAd** enthalten sind) unterstützen in C++ geschriebene Apps sowie DirectX mit Windows-Runtime-Interoperabilität (*interop*). Weitere Informationen und Beispiele zum Programmieren mit XAML und C++ finden Sie unter [Typsystem](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx).
+Die Microsoft Advertising-Bibliotheken (in den die Klassen **AdControl** und **InterstitialAd** enthalten sind) unterstützen in C++ geschriebene Apps sowie DirectX mit Windows-Runtime-Interoperabilität (*interop*). Weitere Informationen und Beispiele zum Programmieren mit XAML und C++ finden Sie unter [Typsystem](/cpp/cppcx/type-system-c-cx).
 
 ## <a name="no-toolbox-control"></a>Kein Toolbox-Steuerelement
 

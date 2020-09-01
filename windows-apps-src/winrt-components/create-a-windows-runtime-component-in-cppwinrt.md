@@ -1,41 +1,41 @@
 ---
-title: Windows-Runtime Komponenten mit C++/WinRT
-description: In diesem Thema wird gezeigt, wie [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) verwendet wird, um eine Windows-Runtime Komponente zu erstellen und zu nutzen, &mdash; die von einer universellen Windows-app aufgerufen werden kann, die mit einer beliebigen Windows-Runtime Sprache erstellt wurde.
+title: Windows-Runtime-Komponenten mit C++/WinRT
+description: In diesem Thema wird gezeigt, wie [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) verwendet wird, um eine Windows-Runtime Komponente zu erstellen und zu nutzen, &mdash; die von einer universellen Windows-app aufgerufen werden kann, die mit einer beliebigen Windows-Runtime Sprache erstellt wurde.
 ms.date: 07/06/2020
 ms.topic: article
 keywords: Windows 10, UWP, Windows, Runtime, Komponente, Komponenten, Windows-Runtime Komponente, WRC, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: e47175579fcfc5544587ff36baaaa653003c4c63
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 1f84158311ef789851c268e9e21dbf5317063370
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86494149"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174314"
 ---
-# <a name="windows-runtime-components-with-cwinrt"></a>Windows-Runtime Komponenten mit C++/WinRT
+# <a name="windows-runtime-components-with-cwinrt"></a>Windows-Runtime-Komponenten mit C++/WinRT
 
-In diesem Thema wird gezeigt, wie [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) verwendet wird, um eine Windows-Runtime Komponente zu erstellen und zu nutzen, &mdash; die von einer universellen Windows-app aufgerufen werden kann, die mit einer beliebigen Windows-Runtime Sprache erstellt wurde.
+In diesem Thema wird gezeigt, wie [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) verwendet wird, um eine Windows-Runtime Komponente zu erstellen und zu nutzen, &mdash; die von einer universellen Windows-app aufgerufen werden kann, die mit einer beliebigen Windows-Runtime Sprache erstellt wurde.
 
 Es gibt verschiedene Gründe für das Entwickeln einer Windows-Runtime Komponente in C++/WinRT.
 - Um die Leistungsvorteile von C++ in komplexen oder rechenintensiven Vorgängen zu nutzen.
 - Zum wieder verwenden von Standard-C++-Code, der bereits geschrieben und getestet wurde.
 - Zum verfügbar machen von Win32-Funktionen für eine in geschriebene universelle Windows-Plattform (UWP)-app, z. b. c#.
 
-Wenn Sie die C++/WinRT-Komponente erstellen, können Sie im allgemeinen Typen aus der C++-Standardbibliothek und integrierte Typen verwenden, außer an der Grenze der Anwendungs Binärschnittstelle (ABI), an die Sie Daten an den Code in einem anderen `.winmd` Paket übergeben. Verwenden Sie in der ABI Windows-Runtime Typen. Verwenden Sie außerdem im C++/WinRT-Code Typen wie Delegat und Ereignis, um Ereignisse zu implementieren, die von der Komponente ausgelöst und in einer anderen Sprache behandelt werden können. Weitere Informationen zu C++/WinRT. finden Sie unter [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) .
+Wenn Sie die C++/WinRT-Komponente erstellen, können Sie im allgemeinen Typen aus der C++-Standardbibliothek und integrierte Typen verwenden, außer an der Grenze der Anwendungs Binärschnittstelle (ABI), an die Sie Daten an den Code in einem anderen `.winmd` Paket übergeben. Verwenden Sie in der ABI Windows-Runtime Typen. Verwenden Sie außerdem im C++/WinRT-Code Typen wie Delegat und Ereignis, um Ereignisse zu implementieren, die von der Komponente ausgelöst und in einer anderen Sprache behandelt werden können. Weitere Informationen zu C++/WinRT. finden Sie unter [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) .
 
 Im restlichen Teil dieses Themas erfahren Sie, wie Sie eine Windows-Runtime Komponente in C++/WinRT erstellen und dann in einer Anwendung verwenden.
 
 Die Windows-Runtime Komponente, die Sie in diesem Thema erstellen, enthält eine Lauf Zeit Klasse, die ein Bankkonto darstellt. Das Thema veranschaulicht auch eine Core-APP, die die Bankkonto-Lauf Zeit Klasse nutzt und eine Funktion aufruft, um das Guthaben anzupassen.
 
 > [!NOTE]
-> Informationen zum Installieren und Verwenden der Visual Studio-Erweiterung (VSIX) [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) (Visual Studio-Unterstützung für C++/WinRT, XAML, die VSIX-Erweiterung und das NuGet-Paket).
+> Informationen zum Installieren und Verwenden der Visual Studio-Erweiterung (VSIX) [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen) findest du unter [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) (Visual Studio-Unterstützung für C++/WinRT, XAML, die VSIX-Erweiterung und das NuGet-Paket).
 
 > [!IMPORTANT]
-> Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis) sowie unter [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> Wichtige Konzepte und Begriffe im Zusammenhang mit der Nutzung und Erstellung von Laufzeitklassen mit C++/WinRT findest du unter [Verwenden von APIs mit C++/WinRT](../cpp-and-winrt-apis/consume-apis.md) sowie unter [Erstellen von APIs mit C++/WinRT](../cpp-and-winrt-apis/author-apis.md).
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>Erstellen einer Komponente für Windows-Runtime (BankAccountWRC)
 
-Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein Projekt vom Typ **Leere App (C++/WinRT)** , und nenne es *BankAccountWRC* (Bankkonto-Komponente für Windows-Runtime). Stellen Sie sicher, dass **Projekt Mappe und Projekt in demselben Verzeichnis platzieren** nicht aktiviert ist. Die neueste allgemein verfügbare Version von Windows SDK (d. h. keine Vorschauversion). Wenn du das Projekt *BankAccountWRC* benennst, erleichtert dies die Ausführung der restlichen Schritte in diesem Thema. 
+Erstelle zunächst ein neues Projekt in Microsoft Visual Studio. Erstelle ein Projekt vom Typ **Leere App (C++/WinRT)** , und nenne es *BankAccountWRC* (Bankkonto-Komponente für Windows-Runtime). Stellen Sie sicher, dass **Platzieren Sie die Projektmappe und das Projekt im selben Verzeichnis** deaktiviert ist. Die neueste allgemein verfügbare Version von Windows SDK (d. h. keine Vorschauversion). Wenn du das Projekt *BankAccountWRC* benennst, erleichtert dies die Ausführung der restlichen Schritte in diesem Thema. 
 
 Führen Sie noch keinen Buildvorgang für das Projekt aus.
 
@@ -139,4 +139,4 @@ Jedes Mal, wenn Sie auf das Fenster klicken, erhöhen Sie den Saldo des Bank Kon
 
 Wenn Sie Ihrer C++/WinRT Windows-Runtime-Komponente noch mehr Funktionalität oder neue Windows-Runtime Typen hinzufügen möchten, können Sie die oben gezeigten Muster befolgen. Verwenden Sie zuerst IDL, um die Funktionalität zu definieren, die Sie verfügbar machen möchten. Erstellen Sie dann das Projekt in Visual Studio, um eine Stub-Implementierung zu generieren. Und schließen Sie die Implementierung dann entsprechend ab. Alle Methoden, Eigenschaften und Ereignisse, die Sie in IDL definieren, sind für die Anwendung sichtbar, die Ihre Windows-Runtime Komponente verwendet. Weitere Informationen zu IDL finden Sie unter [Einführung in Microsoft Interface Definition Language 3,0](/uwp/midl-3/intro).
 
-Ein Beispiel für das Hinzufügen eines Ereignisses zur Windows-Runtime Komponente finden Sie unter [Verfassen von Ereignissen in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
+Ein Beispiel für das Hinzufügen eines Ereignisses zur Windows-Runtime Komponente finden Sie unter [Verfassen von Ereignissen in C++/WinRT](../cpp-and-winrt-apis/author-events.md).

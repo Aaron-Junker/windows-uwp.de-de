@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Popup Benachrichtigungen, interaktive Toasts, Adaptive Toasts, Popup Inhalt, Toast Nutzlast
 ms.localizationpriority: medium
-ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 97dd16d712dca3de69a98c608b7c8947ebbddfea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970925"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173364"
 ---
 # <a name="toast-content"></a>Popupinhalt
 
@@ -22,7 +22,7 @@ Mithilfe von adaptiven und interaktiven Popup Benachrichtigungen können Sie fle
 > **Wichtige APIs:** [NuGet-Paket für UWP-Community-Toolkit-Benachrichtigungen](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Die Legacy Vorlagen aus Windows 8.1 und Windows Phone 8,1 finden Sie im Katalog mit der Legacy-Popup [Vorlage](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)).
+> Die Legacy Vorlagen aus Windows 8.1 und Windows Phone 8,1 finden Sie im Katalog mit der Legacy-Popup [Vorlage](/previous-versions/windows/apps/hh761494(v=win.10)).
 
 
 ## <a name="getting-started"></a>Erste Schritte
@@ -318,7 +318,7 @@ Weitere Informationen zum Verwenden von Headern finden Sie unter Popup [Header](
 
 Dieser zusätzliche Inhalt wird mithilfe von adaptiver angegeben. Weitere Informationen hierzu finden Sie in der [Dokumentation zu adaptiven Kacheln](create-adaptive-tiles.md).
 
-Beachten Sie, dass alle adaptiven Inhalte in einer [**adaptivegroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup)enthalten sein müssen. Andernfalls wird Sie nicht mit Adaptive gerendert.
+Beachten Sie, dass alle adaptiven Inhalte in einer [**adaptivegroup**](./toast-schema.md#adaptivegroup)enthalten sein müssen. Andernfalls wird Sie nicht mit Adaptive gerendert.
 
 
 ### <a name="columns-and-text-elements"></a>Spalten und Textelemente

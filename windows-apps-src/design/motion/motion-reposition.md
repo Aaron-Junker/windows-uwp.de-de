@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f469ab07794014b77ea08087ada793cb83133cc8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: dac1af8a14ede535d2087469cb559d7038f22032
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970525"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175534"
 ---
 # <a name="reposition-animations"></a>Animationen für Positionsänderungen
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970525"
 
 Verwenden Sie die Animation für das Ändern der Position, um eines oder mehrere Elemente an eine neue Position zu verschieben.
 
-> **Wichtige APIs**: [**repositionationmeanimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation), [**repositionationmetransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
+> **Wichtige APIs**: [**repositionationmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation), [**repositionationmetransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
 
@@ -31,15 +31,11 @@ Verwenden Sie die Animation für das Ändern der Position, um eines oder mehrere
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animieren von Änderungen der Position](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
-* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**RepositionThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)
-* [**RepositionThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
+* [Übersicht über Animationen](./xaml-animation.md)
+* [Animieren von Änderungen der Position](/previous-versions/windows/apps/jj649434(v=win.10))
+* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**RepositionThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation)
+* [**RepositionThemeTransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition)
 
 
  
-
-
-
-

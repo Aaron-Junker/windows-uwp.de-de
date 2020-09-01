@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 44cb122f70825df3ceef043d84e57cd077780749
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f4f2e9e13f492dd9a38d737c0c86dd3b1e632279
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234701"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173484"
 ---
 # <a name="keyboard-interactions"></a>Tastaturinteraktionen
 
@@ -115,7 +115,7 @@ Versuchen Sie, die wichtigsten Befehle, Steuerelemente und Inhalte zuerst in der
 
 **Hinweis** Die visuelle Reihenfolge ist auch vom Gebiets Schema und der Sprache abhängig.
 
-### <a name="initial-focus"></a>Ursprünglicher Fokus
+### <a name="initial-focus"></a>Anfänglicher Fokus
 
 Ursprünglicher Fokus gibt das Benutzeroberflächen Element an, das den Fokus erhält, wenn eine Anwendung oder eine Seite zum ersten Mal gestartet oder aktiviert wird. Wenn Sie eine Tastatur verwenden, ist es von diesem Element aus, dass ein Benutzer mit der Interaktion mit der Benutzeroberfläche Ihrer Anwendung beginnt.
 
@@ -143,10 +143,10 @@ Standardmäßig folgen UWP-Steuerelemente diesen grundlegenden Tastatur Verhalte
 -   **Tab-Taste** Navigieren zwischen handlungsfähigen/aktiven Steuerelementen in der Aktivier Reihenfolge.
 -   **UMSCHALT + TAB** Navigation Steuerelemente in umgekehrter Aktivier Reihenfolge. Wenn der Benutzer im Steuerelement mithilfe der Pfeiltaste navigiert hat, wird der Fokus auf den letzten bekannten Wert im Steuerelement festgelegt.
 -   **Pfeiltasten** machen eine Steuerelement spezifische "innere Navigation" verfügbar, wenn der Benutzer in "innere Navigation" wechselt, und die Pfeiltasten werden nicht aus einem Steuerelement navigiert. Beispiele hierfür sind:
-    -   Nach-oben/nach-unten-Taste Verschiebt den Fokus in `ListView` und`MenuFlyout`
-    -   Aktuell ausgewählte Werte für `Slider` und ändern`RatingsControl`
-    -   Einfügemarke in verschieben`TextBox`
-    -   Elemente in erweitern/reduzieren`TreeView`
+    -   Nach-oben/nach-unten-Taste Verschiebt den Fokus in `ListView` und `MenuFlyout`
+    -   Aktuell ausgewählte Werte für `Slider` und ändern `RatingsControl`
+    -   Einfügemarke in verschieben `TextBox`
+    -   Elemente in erweitern/reduzieren `TreeView`
 
 Verwenden Sie diese Standardverhalten, um die Tastaturnavigation Ihrer Anwendung zu optimieren.
 
@@ -260,7 +260,7 @@ Beschleuniger verfügen über die folgenden Eigenschaften:
 -   Sie sind in der gesamten Anwendung wirksam, wenn Sie unterstützt werden.
 -   Sie sollten konsistent zugewiesen werden, wenn Sie gespeichert und nicht direkt dokumentiert werden.
 
-#### <a name="access-keys"></a>Zugriffstasten
+#### <a name="access-keys"></a>Zugriffsschlüssel
 
 Weitere ausführliche Informationen zur Unterstützung von Zugriffs Schlüsseln mit UWP finden Sie auf der Seite " [Zugriffsschlüssel](access-keys.md) ".
 
@@ -280,11 +280,11 @@ In der folgenden Tabelle finden Sie eine kleine Stichprobe häufig verwendeter T
 
 | Aktion                               | Tastaturbefehl                                      |
 |--------------------------------------|--------------------------------------------------|
-| Alle auswählen                           | STRG + A                                           |
+| Alle auswählen                           | STRG+A                                           |
 | Fortlaufend auswählen                  | UMSCHALT+Pfeiltaste                                  |
 | Speichern                                 | STRG+S                                           |
 | Suchen                                 | STRG+F                                           |
-| print                                | STRG+P                                           |
+| Drucken                                | STRG+P                                           |
 | Kopieren                                 | STRG+C                                           |
 | Ausschneiden                                  | STRG+X                                           |
 | Einfügen                                | STRG+V                                           |
@@ -306,9 +306,9 @@ Sie können eine Gruppe verwandter oder ergänzender Steuerelemente in einer "St
 #### <a name="arrow-key-navigation"></a>Pfeiltasten Navigation
 
 Benutzer erwarten Unterstützung für die Pfeiltasten Navigation, wenn eine Gruppe ähnlicher, verwandter Steuerelemente in einer Benutzeroberflächen Region vorhanden ist:
--   `AppBarButtons`in einer`CommandBar`
--   `ListItems`oder `GridItems` innerhalb von `ListView` oder`GridView`
--   `Buttons`innen`ContentDialog`
+-   `AppBarButtons` in einer `CommandBar`
+-   `ListItems` oder `GridItems` innerhalb von `ListView` oder `GridView`
+-   `Buttons` innen `ContentDialog`
 
 UWP-Steuerelemente unterstützen standardmäßig die Navigation per Pfeiltaste. Verwenden Sie für benutzerdefinierte Layouts und Steuerelement Gruppen, `XYFocusKeyboardNavigation="Enabled"` um ein ähnliches Verhalten bereitzustellen.
 
@@ -347,7 +347,7 @@ Wenn Ihr Layout auf ein bekanntes UI-Muster für Steuerelement Gruppen folgt, ka
 
 Beispiele:
 -   `RadioButtons`
--   Mehrere `ListViews` und Verhalten sich wie ein einzelnes`ListView`
+-   Mehrere `ListViews` und Verhalten sich wie ein einzelnes `ListView`
 -   Alle Benutzeroberflächen, die so aussehen und Verhalten wie Raster von Kacheln (z. b. die Kacheln im Startmenü)
 
 #### <a name="specifying-control-group-behavior"></a>Festlegen des Verhaltens von Steuerelement Gruppen
@@ -405,8 +405,8 @@ Das folgende Beispiel zeigt einige Schlüssel Zuordnungen zwischen Tastatur, Gam
 | LeerZchn         | A-Taste                            | Schaltfläche auswählen       |
 | EINGABETASTE         | A-Taste                            | Schaltfläche auswählen       |
 | Escape        | B-Taste                            | Zurück-Schaltfläche         |
-| Start/Ende      | –                                 | –                 |
-| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | –                 |
+| Start/Ende      | Nicht zutreffend                                 | Nicht zutreffend                 |
+| Seite nach oben/unten  | Schaltfläche "auslöst" für vertikalen Bildlauf, Schaltfläche "Stoß Leiste"   | Nicht zutreffend                 |
 
 Einige wichtige Unterschiede, die Sie beim Entwerfen der UWP-App für die Verwendung mit Gamepad und der Verwendung der Remote Steuerung berücksichtigen sollten, sind:
 -   Der Text Eintrag erfordert, dass der Benutzer ein-Steuerelement zum Aktivieren eines Text Steuer Elements drückt.
@@ -509,9 +509,9 @@ Testen Sie Ihre APP mit allen unterstützten Eingabegeräten, um sicherzustellen
 ## <a name="related-articles"></a>Verwandte Artikel
 * [Tastaturereignisse](keyboard-events.md)
 * [Identifizieren von Eingabegeräten](identify-input-devices.md)
-* [Reagieren auf die Anzeige der Bildschirmtastatur](respond-to-the-presence-of-the-touch-keyboard.md)
+* [Reagieren auf das Vorhandensein der Bildschirmtastatur](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Beispiel für visuelle Fokuselemente](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-* [Storyboarding-Besonderheiten für navigationview-Steuerelement](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation) 
+* [Storyboarding-Besonderheiten für navigationview-Steuerelement](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
 
 ## <a name="appendix"></a>Anhang
 
@@ -579,4 +579,4 @@ Weitere Informationen zur Bildschirmtastatur finden Sie [auf der Bildschirmtasta
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md)
+- [Tastatureingabe](../accessibility/keyboard-accessibility.md)

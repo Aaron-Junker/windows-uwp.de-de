@@ -4,19 +4,19 @@ title: Übersicht über XAML
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ms.date: 07/18/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 6d45e70afa5b0dc6e903dbd253c09042bb2046c2
-ms.sourcegitcommit: f7ef7e894d7b7fc24483b4485605686abf8f2e93
+ms.openlocfilehash: 792712256e36b40cd376f0e378bb110ab33bc0fb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679210"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173734"
 ---
 # <a name="xaml-overview"></a>Übersicht über XAML
 
@@ -26,7 +26,7 @@ In diesem Artikel werden die XAML-Sprache und XAML-Konzepte der Windows-Runtime-
 
 XAML (Extensible Application Markup Language) ist eine deklarative Programmiersprache. Insbesondere kann XAML Objekte initialisieren und Eigenschaften von Objekten mithilfe einer Sprachstruktur festlegen, die hierarchische Beziehungen zwischen mehreren Objekten und einer Unterstützungs-typkonvention anzeigt, die die Erweiterung von Typen unterstützt. Sie können sichtbare UI-Elemente im deklarativen XAML-Markup erstellen. Anschließend können Sie eine separate CodeBehind-Datei für jede XAML-Datei zuordnen, die auf Ereignisse reagieren und die ursprünglich in XAML deklarierten Objekte verändern kann.
 
-Die XAML-Sprache unterstützt den Austausch von Quellen zwischen verschiedenen Tools und Rollen im Entwicklungsprozess, z. b. das Austauschen von XAML-Quellen zwischen Entwurfs Tools und einer interaktiven Entwicklungsumgebung (IDE) oder zwischen primären Entwicklern und Lokalisierung. Anbietern. Durch die Verwendung von XAML als Austauschformat können Designerrollen und Entwicklerrollen separat gehalten oder zusammengeführt und von Designern und Entwicklern während der Produktion einer App durchlaufen werden.
+Die XAML-Sprache unterstützt den Austausch von Quellen zwischen verschiedenen Tools und Rollen im Entwicklungsprozess, z. b. das Austauschen von XAML-Quellen zwischen Entwurfs Tools und einer interaktiven Entwicklungsumgebung (IDE) oder zwischen primären Entwicklern und Lokalisierungs Entwicklern. Durch die Verwendung von XAML als Austauschformat können Designerrollen und Entwicklerrollen separat gehalten oder zusammengeführt und von Designern und Entwicklern während der Produktion einer App durchlaufen werden.
 
 Im Rahmen Ihrer Windows-Runtime-App-Projekte handelt es sich bei den XAML-Dateien um XML-Dateien mit der Dateinamenerweiterung XAML.
 
@@ -50,7 +50,7 @@ Bei der allgemeinen Programmierung handelt es sich bei einem Namespace um ein Or
 
 Eine XAML-Datei deklariert beinahe immer einen Standard-XAML-Namespace im Stammelement. Der Standard-XAML-Namespace definiert, welche Elemente deklariert werden können, ohne sie durch ein Präfix zu qualifizieren. Bei typischen Windows-Runtime-App-Projekten enthält dieser Standardnamespace das gesamte integrierte XAML-Vokabular für die Windows-Runtime zur Definition der UI: Standardsteuerelemente, Textelemente, XAML-Grafiken und -Animationen, Datenbindungs- und Formatierungsunterstützungstypen usw. Beim Schreiben von XAML-Code für Windows-Runtime-Apps können Sie die Verwendung von XAML-Namespaces und -Präfixen also weitestgehend vermeiden, wenn Sie auf häufig genutzte UI-Elemente verweisen.
 
-Hier ist ein Code Ausschnitt, der eine Vorlage zeigt, die <xref:Windows.UI.Xaml.Controls.Page> Stamm der Anfangs Seite einer App erstellt wurde (nur das öffnende Tag und vereinfacht). Darin werden der Standardnamespace und der **x** -Namespace deklariert (wird als Nächstes erklärt).
+Hier ist ein Code Ausschnitt, der einen von der Vorlage erstellten Stamm <xref:Windows.UI.Xaml.Controls.Page> der Anfangs Seite für eine APP anzeigt (nur das öffnende Tag und vereinfacht). Darin werden der Standardnamespace und der **x** -Namespace deklariert (wird als Nächstes erklärt).
 
 ```xml
 <Page
@@ -66,13 +66,13 @@ Ein spezieller XAML-Namespace, der in fast jeder Windows-Runtime-XAML-Datei dekl
 
 Der XAML-Sprachnamespace mit dem Präfix „x“ enthält mehrere Programmierkonstrukte, die in XAML häufig verwendet werden. Die häufigsten lauten:
 
-| Begriff | Beschreibung |
+| Begriff | BESCHREIBUNG |
 |------|-------------|
-| [x:Key](x-key-attribute.md) | Legt einen eindeutigen benutzerdefinierten Schlüssel für jede Ressource in einem XAML-<xref:Windows.UI.Xaml.ResourceDictionary>fest. Die Schlüsseltoken-Zeichenfolge ist das Argument für die **StaticResource**-Markuperweiterung. Sie verwenden diesen Schlüssel später zum Abrufen der XAML-Ressourcen aus einer anderen XAML-Verwendung in der XAML Ihrer App. |
-| [x:Class](x-class-attribute.md) | Gibt den Code-Namespace und Codeklassennamen für die Klasse an, mit der CodeBehind-Daten für eine XAML-Seite bereitgestellt werden. Damit wird die Klasse benannt, die beim Erstellen Ihrer App erstellt oder zugeordnet wird. Diese Buildvorgänge unterstützen die XAML-Markupkompilierung und kombinieren das Markup und CodeBehind, wenn die App kompiliert wird. Eine solche Klasse ist für die Unterstützung von CodeBehind für eine XAML-Seite erforderlich. <xref:Windows.UI.Xaml.Window.Content%2A?displayProperty=nameWithType> im Standard Windows-Runtime Aktivierungs Modell. |
-| [x:Name](x-name-attribute.md) | Gibt einen Laufzeitobjektnamen für die Instanz in Laufzeitcode an, nachdem ein in XAML definiertes Objektelement verarbeitet wird. Das Festlegen von **x:Name** in XAML ist mit dem Deklarieren einer benannten Variable in Code vergleichbar. Wie Sie später erfahren werden, geschieht genau das, wenn XAML als Komponente einer Windows-Runtime-App geladen wird. <br/><div class="alert">**Beachten Sie** , dass <xref:Windows.UI.Xaml.FrameworkElement.Name%2A> eine ähnliche Eigenschaft im Framework ist, aber nicht von allen Elementen unterstützt wird. Verwenden Sie **x:Name** zur Identifizierung von Elementen, wenn **FrameworkElement.Name** für diesen Elementtyp nicht unterstützt wird. |
-| [x:UID-Direktive](x-uid-directive.md) | Bezeichnet Elemente, die für einige ihrer Eigenschaftswerte lokalisierte Ressourcen verwenden sollen. Weitere Informationen zur Verwendung von **x:Uid** finden Sie unter [Schnellstart: Übersetzen von UI-Ressourcen](/previous-versions/windows/apps/hh965329(v=win.10)). |
-| [Systeminterne XAML-Datentypen](xaml-intrinsic-data-types.md) | Diese Typen können Werte für einfache Werttypen angeben, wenn dies für ein Attribut oder eine Ressource erforderlich ist. Diese systeminternen Typen entsprechen den einfachen Werttypen, die normalerweise als Teil der systeminternen Definitionen der jeweiligen Programmiersprache definiert sind. Beispielsweise benötigen Sie möglicherweise ein Objekt, das einen **echten** booleschen Wert darstellt, der in einem <xref:Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames>-Storyboarding-visuellen Zustand verwendet werden soll. Für diesen Wert in XAML verwenden Sie den systeminternen **x:Boolean** -Typ als Object-Element, wie folgt: <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> |
+| [x:Key](x-key-attribute.md) | Legt einen eindeutigen benutzerdefinierten Schlüssel für jede Ressource in einem XAML fest <xref:Windows.UI.Xaml.ResourceDictionary> . Die Schlüsseltoken-Zeichenfolge ist das Argument für die **StaticResource**-Markuperweiterung. Sie verwenden diesen Schlüssel später zum Abrufen der XAML-Ressourcen aus einer anderen XAML-Verwendung in der XAML Ihrer App. |
+| [x:Class](x-class-attribute.md) | Gibt den Code-Namespace und Codeklassennamen für die Klasse an, mit der CodeBehind-Daten für eine XAML-Seite bereitgestellt werden. Damit wird die Klasse benannt, die beim Erstellen Ihrer App erstellt oder zugeordnet wird. Diese Buildvorgänge unterstützen die XAML-Markupkompilierung und kombinieren das Markup und CodeBehind, wenn die App kompiliert wird. Eine solche Klasse ist für die Unterstützung von CodeBehind für eine XAML-Seite erforderlich. <xref:Windows.UI.Xaml.Window.Content%2A?displayProperty=nameWithType> im Standard-Windows-Runtime Aktivierungs Modell. |
+| [x:Name](x-name-attribute.md) | Gibt einen Laufzeitobjektnamen für die Instanz in Laufzeitcode an, nachdem ein in XAML definiertes Objektelement verarbeitet wird. Das Festlegen von **x:Name** in XAML ist mit dem Deklarieren einer benannten Variable in Code vergleichbar. Wie Sie später erfahren werden, geschieht genau das, wenn XAML als Komponente einer Windows-Runtime-App geladen wird. <br/><div class="alert">**Hinweis** <xref:Windows.UI.Xaml.FrameworkElement.Name%2A> ist eine ähnliche Eigenschaft im Framework, aber nicht alle Elemente unterstützen diese Eigenschaft. Verwenden Sie **x:Name** zur Identifizierung von Elementen, wenn **FrameworkElement.Name** für diesen Elementtyp nicht unterstützt wird. |
+| [x:Uid](x-uid-directive.md) | Bezeichnet Elemente, die für einige ihrer Eigenschaftswerte lokalisierte Ressourcen verwenden sollen. Weitere Informationen zur Verwendung von **x:UID**finden Sie unter [Schnellstart: Übersetzen von UI-Ressourcen](/previous-versions/windows/apps/hh965329(v=win.10)). |
+| [Systeminterne XAML-Datentypen](xaml-intrinsic-data-types.md) | Diese Typen können Werte für einfache Werttypen angeben, wenn dies für ein Attribut oder eine Ressource erforderlich ist. Diese systeminternen Typen entsprechen den einfachen Werttypen, die normalerweise als Teil der systeminternen Definitionen der jeweiligen Programmiersprache definiert sind. Beispielsweise benötigen Sie möglicherweise ein Objekt, das einen **echten** booleschen Wert darstellt, der in einem in einem <xref:Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames> Storyboarding visuellen Zustand verwendet werden soll. Für diesen Wert in XAML verwenden Sie den systeminternen **x:Boolean** -Typ als Objekt Element, wie folgt: <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> |
 
 Es werden auch andere Programmierkonstrukte im XAML-Sprachnamespace verwendet. Diese sind jedoch weniger gebräuchlich.
 
@@ -104,21 +104,21 @@ Windows-Runtime-XAML unterstützt diese Markuperweiterungen, die unter dem Stand
 
 - [{x:Bind}](x-bind-markup-extension.md): unterstützt die Datenbindung, die die Eigenschafts Auswertung bis zur Laufzeit abruft, indem spezieller Code ausgeführt wird, der zum Zeitpunkt der Kompilierung generiert wird. Diese Markuperweiterung unterstützt einen weiten Bereich von Argumenten.
 - [{Binding}](binding-markup-extension.md): unterstützt die Datenbindung. Dadurch wird die Eigenschaftenauswertung durch Ausführung einer allgemeinen Laufzeitobjektüberprüfung bis zur Laufzeit zurückgestellt. Diese Markuperweiterung unterstützt einen weiten Bereich von Argumenten.
-- [{Statikresource}](staticresource-markup-extension.md): unterstützt verweisende Ressourcen Werte, die in einem <xref:Windows.UI.Xaml.ResourceDictionary>definiert sind. Diese Ressourcen können sich in einer anderen XAML-Datei befinden, müssen vom XAML-Parser zur Ladezeit jedoch auffindbar sein. Das-Argument einer `{StaticResource}` Verwendung identifiziert den Schlüssel (den Namen) für eine Schlüssel gebundene Ressource in einem <xref:Windows.UI.Xaml.ResourceDictionary>.
+- [{Statikresource}](staticresource-markup-extension.md): unterstützt verweisende Ressourcen Werte, die in einer definiert sind <xref:Windows.UI.Xaml.ResourceDictionary> . Diese Ressourcen können sich in einer anderen XAML-Datei befinden, müssen vom XAML-Parser zur Ladezeit jedoch auffindbar sein. Das-Argument einer `{StaticResource}` Verwendung identifiziert den Schlüssel (den Namen) für eine Schlüssel gebundene Ressource in einer <xref:Windows.UI.Xaml.ResourceDictionary> .
 - [{ThemeResource}](themeresource-markup-extension.md): ähnlich wie die [{StaticResource}](staticresource-markup-extension.md)-Markuperweiterung, kann jedoch auf Designänderungen während der Laufzeit reagieren. {ThemeResource} tritt bei den Windows-Runtime-XAML-Standardvorlagen relativ häufig auf, da die meisten dieser Vorlagen darauf ausgerichtet sind, dass der Benutzer das Design wechseln kann, während die App ausgeführt wird.
 - [{TemplateBinding}](templatebinding-markup-extension.md): Ein Sonderfall von [{Binding}](binding-markup-extension.md) , bei dem Steuerelementvorlagen in XAML und deren Nutzung zur Laufzeit unterstützt werden.
 - [{RelativeSource}](relativesource-markup-extension.md): Ermöglicht eine bestimmte Form der Vorlagenbindung, bei der die Werte aus dem vorlagenbasierten übergeordneten Element stammen.
 - [{CustomResource}](customresource-markup-extension.md): Für erweiterte Ressourcensuchszenarien.
 
-Die Windows-Runtime unterstützt außerdem die [{x:Null}-Markuperweiterung](x-null-markup-extension.md). Diese wird verwendet, um [**Nullable**](/dotnet/api/system.nullable-1)-Werte in XAML auf **null** festzulegen. Beispielsweise können Sie dies in einer Steuerelement Vorlage für eine <xref:Windows.UI.Xaml.Controls.CheckBox>verwenden, die **null** als unbestimmten Check-Zustand interpretiert (wodurch der "unbestimmte" visuelle Zustand ausgelöst wird).
+Die Windows-Runtime unterstützt außerdem die [{x:Null}-Markuperweiterung](x-null-markup-extension.md). Diese wird verwendet, um [**Nullable**](/dotnet/api/system.nullable-1)-Werte in XAML auf **null** festzulegen. Beispielsweise können Sie dies in einer Steuerelement Vorlage für ein-Steuerelement verwenden <xref:Windows.UI.Xaml.Controls.CheckBox> , das **null** als unbestimmten Prüf Zustand interpretiert (wodurch der "unbestimmte" visuelle Zustand ausgelöst wird).
 
 Eine Markup Erweiterung gibt im Allgemeinen eine vorhandene Instanz aus einem anderen Teil des Objekt Diagramms für die APP zurück oder entfernt einen Wert zur Laufzeit. Da Sie eine Markuperweiterung als Attributwert verwenden können und dies auch die übliche Art der Nutzung ist, ist häufig zu beobachten, dass Markuperweiterungen Werte für Eigenschaften vom Typ "Verweis" bereitstellen, für die andernfalls eine Eigenschaftselementsyntax erforderlich gewesen wäre.
 
-Hier ist beispielsweise die Syntax für das verweisen auf ein wiederverwendbares <xref:Windows.UI.Xaml.Style> aus einem <xref:Windows.UI.Xaml.ResourceDictionary>: `<Button Style="{StaticResource SearchButtonStyle}"/>`. Bei einem <xref:Windows.UI.Xaml.Style> handelt es sich um einen Verweistyp, nicht um einen einfachen Wert, sodass Sie ohne die `{StaticResource}` Verwendung ein `<Button.Style>` Property-Element und eine `<Style>` Definition benötigen, um die <xref:Windows.UI.Xaml.FrameworkElement.Style%2A?displayProperty=nameWithType>-Eigenschaft festzulegen.
+Hier ist beispielsweise die Syntax für das verweisen auf ein wiederverwendbares <xref:Windows.UI.Xaml.Style> von einem <xref:Windows.UI.Xaml.ResourceDictionary> : `<Button Style="{StaticResource SearchButtonStyle}"/>` . <xref:Windows.UI.Xaml.Style>Bei einem handelt es sich um einen Verweistyp, nicht um einen einfachen Wert, sodass Sie ohne die `{StaticResource}` Verwendung ein `<Button.Style>` Property-Element und eine darin `<Style>` enthaltenen Definitionen benötigen, um die Eigenschaft festzulegen <xref:Windows.UI.Xaml.FrameworkElement.Style%2A?displayProperty=nameWithType> .
 
 Bei Einsatz von Markuperweiterungen kann jede Eigenschaft, die unter XAML festgelegt werden kann, praktisch auch in Attributsyntax festgelegt werden. Mithilfe der Attributsyntax können Sie auch dann Verweiswerte für eine Eigenschaft bereitstellen, wenn diese ansonsten keine Attributsyntax für die direkte Objektinstanziierung unterstützt. Oder Sie können ein spezifisches Verhalten aktivieren, das die allgemeine Anforderung zurückstellt, dass XAML-Eigenschaften durch Wertetypen oder neu erstellte Verweistypen gefüllt werden.
 
-Um dies zu veranschaulichen, legt das nächste XAML-Beispiel den Wert der <xref:Windows.UI.Xaml.FrameworkElement.Style%2A?displayProperty=nameWithType>-Eigenschaft einer <xref:Windows.UI.Xaml.Controls.Border> mithilfe der Attribut Syntax fest. Die <xref:Windows.UI.Xaml.FrameworkElement.Style%2A?displayProperty=nameWithType>-Eigenschaft übernimmt eine Instanz der <xref:Windows.UI.Xaml.Style?displayProperty=nameWithType>-Klasse, ein Verweistyp, der standardmäßig nicht mithilfe einer Attribut Syntax Zeichenfolge erstellt werden konnte. In diesem Fall verweist jedoch das Attribut auf eine bestimmte Markuperweiterung, [StaticResource](staticresource-markup-extension.md). Wenn diese Markuperweiterung verarbeitet wird, gibt sie einen Verweis auf ein **Style**-Element zurück, das zuvor als Ressource mit Schlüssel in einem Ressourcenverzeichnis definiert wurde.
+Um dies zu veranschaulichen, legt das nächste XAML-Beispiel den Wert der- <xref:Windows.UI.Xaml.FrameworkElement.Style%2A?displayProperty=nameWithType> Eigenschaft eines <xref:Windows.UI.Xaml.Controls.Border> mithilfe der Attribut Syntax fest. Die- <xref:Windows.UI.Xaml.FrameworkElement.Style%2A?displayProperty=nameWithType> Eigenschaft nimmt eine Instanz der- <xref:Windows.UI.Xaml.Style?displayProperty=nameWithType> Klasse an, ein Verweistyp, der standardmäßig nicht mithilfe einer Attribut Syntax Zeichenfolge erstellt werden konnte. In diesem Fall verweist das Attribut jedoch auf eine bestimmte Markuperweiterung, [StaticResource](staticresource-markup-extension.md). Wenn diese Markuperweiterung verarbeitet wird, gibt sie einen Verweis auf ein **Style**-Element zurück, das zuvor als Ressource mit Schlüssel in einem Ressourcenverzeichnis definiert wurde.
 
 ```xml
 <Canvas.Resources>
@@ -135,19 +135,19 @@ Um dies zu veranschaulichen, legt das nächste XAML-Beispiel den Wert der <xref:
 
 Markuperweiterungen können geschachtelt werden. Die innerste Markuperweiterung wird zuerst ausgewertet.
 
-Aufgrund der Markuperweiterungen benötigen Sie für einen Literalwert „{“ in einem Attribut eine spezielle Syntax. Weitere Informationen finden Sie unter [Anleitung zur XAML-Syntax](xaml-syntax-guide.md).
+Aufgrund der Markuperweiterungen benötigen Sie für einen Literalwert „{“ in einem Attribut eine spezielle Syntax. Weitere Informationen finden Sie unter [XAML-Syntax Handbuch](xaml-syntax-guide.md).
 
-## <a name="events"></a>Ereignisse
+## <a name="events"></a>Events
 
 XAML ist eine deklarative Programmiersprache für Objekte und ihre Eigenschaften, sie enthält jedoch auch eine Syntax zum Anfügen von Ereignishandlern an Objekte im Markup. Die XAML-Ereignissyntax kann dann die XAML-deklarierten Ereignisse über das Windows-Runtime-Programmiermodell integrieren. Sie geben den Namen des Ereignisses als Attributnamen in dem Objekt an, in dem das Ereignis behandelt wird. Für den Attributwert geben Sie den Namen einer Ereignishandler-Funktion an, die Sie im Code definieren. Der XAML-Prozessor verwendet diesen Namen zum Erstellen einer Delegatdarstellung in der geladenen Objektstruktur und fügt den angegebenen Handler einer internen Handlerliste hinzu. Fast alle Windows-Runtime-Apps werden sowohl durch Markup- als auch durch CodeBehind-Quellen definiert.
 
-Dies ist ein einfaches Beispiel. Die <xref:Windows.UI.Xaml.Controls.Button>-Klasse unterstützt ein Ereignis mit dem Namen <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click>. Sie können einen Handler für **Click** schreiben, mit dem Code ausgeführt wird, der aufgerufen wird, nachdem Benutzer auf das **Button**-Element geklickt haben. Im XAML-Code geben Sie **Click** als Attribut des **Button**-Elements an. Stellen Sie für den Attributwert eine Zeichenfolge bereit, bei der es sich um den Methodennamen des Handlers handelt.
+Dies ist ein einfaches Beispiel. Die- <xref:Windows.UI.Xaml.Controls.Button> Klasse unterstützt ein Ereignis mit dem Namen <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> . Sie können einen Handler für **Click** schreiben, mit dem Code ausgeführt wird, der aufgerufen wird, nachdem Benutzer auf das **Button**-Element geklickt haben. Im XAML-Code geben Sie **Click** als Attribut des **Button**-Elements an. Stellen Sie für den Attributwert eine Zeichenfolge bereit, bei der es sich um den Methodennamen des Handlers handelt.
 
 ```xml
 <Button Click="showUpdatesButton_Click">Show updates</Button>
 ```
 
-Bei der Kompilierung wird vom Compiler dann erwartet, dass eine Methode mit dem Namen `showUpdatesButton_Click` in der CodeBehind-Datei und im Namespace definiert ist, der im [x:Class](x-class-attribute.md)-Wert der XAML-Seite deklariert wurde. Außerdem muss diese Methode den delegatvertrag für das <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> Ereignis erfüllen. Zum Beispiel:
+Bei der Kompilierung wird vom Compiler dann erwartet, dass eine Methode mit dem Namen `showUpdatesButton_Click` in der CodeBehind-Datei und im Namespace definiert ist, der im [x:Class](x-class-attribute.md)-Wert der XAML-Seite deklariert wurde. Außerdem muss diese Methode den delegatvertrag für das <xref:Windows.UI.Xaml.Controls.Primitives.ButtonBase.Click> Ereignis erfüllen. Beispiel:
 
 ```csharp
 namespace App1
@@ -201,9 +201,9 @@ Innerhalb eines Projekts wird XAML als XAML-Datei geschrieben, und Sie können m
 > [!NOTE]
 > Für C++/CX gibt es zwei Code-Behind-Dateien: eine ist ein Header (. XAML. h), und die andere ist die Implementierung (. XAML. cpp). Die Implementierung verweist auf den Header, und aus technischer Sicht ist es der Header, der den Einstiegspunkt für die CodeBehind-Verbindung darstellt.
 
-## <a name="resource-dictionaries"></a>Ressourcenwörterbücher
+## <a name="resource-dictionaries"></a>Ressourcenverzeichnis
 
-Das Erstellen eines <xref:Windows.UI.Xaml.ResourceDictionary> ist eine gängige Aufgabe, die in der Regel durch Erstellen eines Ressourcen Wörterbuchs als Bereich einer XAML-Seite oder einer separaten XAML-Datei erreicht wird. Ressourcenwörterbücher und ihre Verwendung sind ein umfangreicher Bereich, dessen Erläuterung den Rahmen dieses Themas sprengen würde. Weitere Informationen finden Sie unter [ResourceDictionary- und XAML-Ressourcenverweise](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).
+Das Erstellen eines <xref:Windows.UI.Xaml.ResourceDictionary> ist eine gängige Aufgabe, die in der Regel durch Erstellen eines Ressourcen Wörterbuchs als Bereich einer XAML-Seite oder einer separaten XAML-Datei erreicht wird. Ressourcenwörterbücher und ihre Verwendung sind ein umfangreicher Bereich, dessen Erläuterung den Rahmen dieses Themas sprengen würde. Weitere Informationen finden Sie unter [Ressourcen Verweise von ResourceDictionary und XAML](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md).
 
 ## <a name="xaml-and-xml"></a>XAML und XML
 
@@ -233,17 +233,17 @@ Unter Umständen haben Sie selbst, abhängig von Ihrer Rolle im Entwicklungsproz
 
 ## <a name="optimize-your-xaml-for-load-performance"></a>Optimieren des XAML-Codes für hohe Auslastung
 
-Im Folgenden sind einige Tipps zum Definieren von UI-Elementen in XAML-Code mithilfe der bewährten Methoden zur Verbesserung der Leistung aufgeführt. Viele dieser Tipps beziehen sich auf die Verwendung von XAML-Ressourcen. Sie wurden zur besseren Verständlichkeit jedoch auch hier in der allgemeinen XAML-Übersicht angegeben. Weitere Informationen zu XAML-Ressourcen finden Sie unter [ResourceDictionary- und XAML-Ressourcenverweise](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md). Weitere Tipps zur Leistung, z. B. XAML-Beispielcode, in dem absichtlich einige Praktiken veranschaulicht werden, die zu schlechter Leistung führen und vermieden werden sollten, finden Sie unter [Optimieren des XAML-Markups](../debug-test-perf/optimize-xaml-loading.md).
+Im Folgenden sind einige Tipps zum Definieren von UI-Elementen in XAML-Code mithilfe der bewährten Methoden zur Verbesserung der Leistung aufgeführt. Viele dieser Tipps beziehen sich auf die Verwendung von XAML-Ressourcen. Sie wurden zur besseren Verständlichkeit jedoch auch hier in der allgemeinen XAML-Übersicht angegeben. Weitere Informationen zu XAML-Ressourcen finden Sie unter [ResourceDictionary- und XAML-Ressourcenverweise](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md). Weitere Tipps zur Leistung, einschließlich XAML, die einige der schlechten Leistungs Praktiken veranschaulicht, die Sie in ihrer XAML vermeiden sollten, finden Sie unter Optimieren des [XAML-Markups](../debug-test-perf/optimize-xaml-loading.md).
 
-- Wenn Sie in der XAML-Datei den gleichen Farbpinsel häufig verwenden, definieren Sie eine <xref:Windows.UI.Xaml.Media.SolidColorBrush> als Ressource, anstatt jedes Mal eine benannte Farbe als Attribut Wert zu verwenden.
-- Wenn Sie dieselbe Ressource auf mehr als einer UI-Seite verwenden, sollten Sie Sie ggf. in <xref:Windows.UI.Xaml.Application.Resources%2A> und nicht auf jeder Seite definieren. Falls eine Ressource nur von einer Seite genutzt wird, ist die Definition unter **Application.Resources** nicht ratsam. Definieren Sie die Ressource stattdessen nur für die jeweilige Seite. Dies ist sowohl für die XAML-Zerlegung beim Entwerfen der App als auch zur Steigerung der Leistung während der XAML-Analyse hilfreich.
+- Wenn Sie den gleichen Farbpinsel häufig in Ihrem XAML verwenden, definieren Sie einen <xref:Windows.UI.Xaml.Media.SolidColorBrush> als Ressource, anstatt jedes Mal eine benannte Farbe als Attribut Wert zu verwenden.
+- Wenn Sie dieselbe Ressource auf mehr als einer UI-Seite verwenden, sollten Sie Sie in <xref:Windows.UI.Xaml.Application.Resources%2A> anstelle von auf jeder Seite definieren. Falls eine Ressource nur von einer Seite genutzt wird, ist die Definition unter **Application.Resources** nicht ratsam. Definieren Sie die Ressource stattdessen nur für die jeweilige Seite. Dies ist sowohl für die XAML-Zerlegung beim Entwerfen der App als auch zur Steigerung der Leistung während der XAML-Analyse hilfreich.
 - Führen Sie für Ressourcen, die von der App verpackt werden, eine Überprüfung auf ungenutzte Ressourcen durch (Ressourcen mit Schlüssel, für die in der App jedoch kein entsprechender [StaticResource](staticresource-markup-extension.md)-Verweis enthalten ist). Entfernen Sie diese vor der Freigabe der App aus dem XAML-Code.
-- Wenn Sie separate XAML-Dateien verwenden, die Entwurfs Ressourcen (<xref:Windows.UI.Xaml.ResourceDictionary.MergedDictionaries%2A>) bereitstellen, sollten Sie nicht verwendete Ressourcen aus diesen Dateien kommentieren oder entfernen. Auch wenn Sie über einen gemeinsamen XAML-Startpunkt verfügen, den Sie in mehr als einer App verwenden oder über den häufig verwendete Ressourcen für alle Apps bereitgestellt werden, werden die XAML-Ressourcen doch immer von Ihrer App verpackt und ggf. geladen.
+- Wenn Sie separate XAML-Dateien verwenden, die Entwurfs Ressourcen bereitstellen (), sollten Sie die Verwendung nicht verwendeter <xref:Windows.UI.Xaml.ResourceDictionary.MergedDictionaries%2A> Ressourcen aus diesen Dateien in Erwägung ziehen. Auch wenn Sie über einen gemeinsamen XAML-Startpunkt verfügen, den Sie in mehr als einer App verwenden oder über den häufig verwendete Ressourcen für alle Apps bereitgestellt werden, werden die XAML-Ressourcen doch immer von Ihrer App verpackt und ggf. geladen.
 - Definieren Sie keine UI-Elemente, die Sie für die Komposition nicht benötigen, und verwenden Sie nach Möglichkeit immer die Standardsteuerelementvorlagen (diese Vorlagen wurden bereits auf hohe Leistungsfähigkeit getestet und bestätigt).
-- Verwenden Sie Container, wie z. b. <xref:Windows.UI.Xaml.Controls.Border>, anstelle von über schreibungen von Benutzeroberflächen Elementen. Einfach ausgedrückt: Zeichnen Sie dasselbe Pixel nicht mehrere Male. Weitere Informationen zu über schreibungen und deren Prüfung finden Sie unter <xref:Windows.UI.Xaml.DebugSettings.IsOverdrawHeatMapEnabled?displayProperty=nameWithType>.
-- Verwenden Sie die Standardelement Vorlagen für <xref:Windows.UI.Xaml.Controls.ListView> oder <xref:Windows.UI.Xaml.Controls.GridView>. Diese verfügen über eine spezielle **präsentatorlogik** , mit der Leistungsprobleme beim Aufbau der visuellen Struktur für eine große Anzahl von Listenelementen gelöst werden.
+- Verwenden Sie Container wie <xref:Windows.UI.Xaml.Controls.Border> anstelle von absichtlichen über schreibungen von UI-Elementen. Einfach ausgedrückt: Zeichnen Sie dasselbe Pixel nicht mehrere Male. Weitere Informationen zu über schreibungen und deren Überprüfung finden Sie unter <xref:Windows.UI.Xaml.DebugSettings.IsOverdrawHeatMapEnabled?displayProperty=nameWithType> .
+- Verwenden Sie die standardmäßigen Element Vorlagen für <xref:Windows.UI.Xaml.Controls.ListView> oder <xref:Windows.UI.Xaml.Controls.GridView> . diese verfügen über eine spezielle **präsentatorlogik** , mit der Leistungsprobleme beim Erstellen der visuellen Struktur für eine große Anzahl von Listenelementen gelöst werden.
 
-## <a name="debug-xaml"></a>XAML Debuggen
+## <a name="debug-xaml"></a>Debuggen von XAML
 
 Da es sich bei XAML um eine Markupsprache handelt, sind einige der typischen Strategien für das Debuggen innerhalb von Microsoft Visual Studio nicht verfügbar. Beispielsweise besteht keine Möglichkeit zum Festlegen eines Haltepunkts innerhalb einer XAML-Datei. Jedoch bestehen andere Techniken, mit denen Sie Probleme mit UI-Definitionen oder XAML-Markups während der Appentwicklung beheben können.
 
@@ -251,9 +251,9 @@ Treten Probleme mit einer XAML-Datei auf, wird sehr wahrscheinlich von einem Sys
 
 XAML wird häufig innerhalb einer IDE, z. B. Visual Studio, und einer der XAML-Designoberflächen bearbeitet. Visual Studio kann in vielen Fällen Überprüfung zu Entwurfszeit und Fehlerüberprüfung einer XAML-Quelle während der Bearbeitung bereitstellen. Beispielsweise werden ungültige Attributwerte im XAML-Texteditor bei der Eingabe unter Umständen durch Wellenlinien gekennzeichnet, und Sie sehen noch vor der XAML-Kompilierung, dass die Benutzeroberflächendefinition fehlerhaft ist.
 
-Wird die App ausgeführt und wurden XAML-Analysefehler zur Entwurfszeit nicht erfasst, werden werden sie von der Common Language Runtime (CLR) als [**XamlParseException**](https://docs.microsoft.com/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0) gemeldet. Weitere Infos dazu, was im Falle einer Laufzeit-**XamlParseException** unternommen werden kann, finden Sie unter [Ausnahmebehandlung für Windows-Runtime-Apps in C# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
+Wird die App ausgeführt und wurden XAML-Analysefehler zur Entwurfszeit nicht erfasst, werden werden sie von der Common Language Runtime (CLR) als [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0) gemeldet. Weitere Informationen dazu, was Sie möglicherweise für eine Lauf Zeit- **xamlparameterexception**tun können, finden Sie unter [Ausnahmebehandlung für Windows-Runtime-apps in c# oder Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
 
 > [!NOTE]
-> Apps, die C++/CX für Code verwenden, erhalten nicht die spezifische [**xamlparameseexception**](https://docs.microsoft.com/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0). Die Meldung in der Ausnahme stellt die Fehlerursache als XAML-bezogen dar und enthält Kontextinfos, z. B. Zeilennummern in einer XAML-Datei, so wie **XamlParseException**.
+> Apps, die C++/CX für Code verwenden, erhalten die spezifische [**xamlparameseexception**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)nicht. Die Meldung in der Ausnahme stellt die Fehlerursache als XAML-bezogen dar und enthält Kontextinfos, z. B. Zeilennummern in einer XAML-Datei, so wie **XamlParseException**.
 
-Weitere Informationen zum Debuggen einer Windows-Runtime-App finden Sie unter [Starten einer Debuggingsitzung](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015).
+Weitere Informationen zum Debuggen einer Windows-Runtime-App finden Sie unter [Starten einer Debugsitzung](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015).

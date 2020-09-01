@@ -1,17 +1,17 @@
 ---
 title: Portieren von Unity-Spielen für Xbox auf die UWP
-description: UWP-Entwicklung für Unity-Spiele auf Xbox.
+description: Erfahren Sie, wie Sie ein Unity-Spiel aus einer universelle Windows-Plattform (UWP) Visual Studio-Projekt Mappe in Xbox One erstellen und bereitstellen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 ms.localizationpriority: medium
-ms.openlocfilehash: 64a686aea24d23b5e999780eaa0eda661af3637f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5b985372c52711dd7b6b4f865ab5164e25c88e0c
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611685"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238325"
 ---
 # <a name="bringing-unity-games-to-uwp-on-xbox"></a>Portieren von Unity-Spielen für Xbox auf die UWP
 
@@ -22,15 +22,15 @@ Beachten Sie auch die [Videoversion des Lernprogramms](https://www.youtube.com/w
 
 Möchten Sie eine Versionsverwaltung für Ihr Unity-UWP-Projekt verwenden? Siehe [Versionskontrolle für Ihr UWP-Projekt](development-lanes-unity-versioning.md).
 
-## <a name="step-0-ensure-unity-is-installed-correctly"></a>Dies ist Schritt 0: Stellen Sie sicher, dass Unity ordnungsgemäß installiert ist
+## <a name="step-0-ensure-unity-is-installed-correctly"></a>Schritt 0: Sicherstellen, dass Unity richtig installiert wurde
 
 Beim Installieren von Unity müssen folgende Komponenten ausgewählt sein:
 
 ![Installationskomponenten von Unity](images/unity-install-components.png)
 
-## <a name="step-1-building-the-uwp-solution"></a>Schritt 1: Die UWP-Lösung erstellen
+## <a name="step-1-building-the-uwp-solution"></a>Schritt 1: Erstellen der UWP-Lösung
 
-Öffnen Sie in Ihrem Unity-Spielprojekt das Fenster mit den **Build-Einstellungen** unter **Datei -> Build-Einstellungen**, und wechseln Sie zum Menü mit den Microsoft Store-Optionen.
+Öffnen Sie in Ihrem Unity-Spiel Projekt die Fenster mit den **Buildeinstellungen** unter **Datei > Buildeinstellungen**, und wechseln Sie zum Menü Microsoft Store Optionen.
 
 ![Fenster mit Build-Einstellungen](images/build-settings.png)
 
@@ -42,7 +42,7 @@ Unity hat eine neue Visual Studio-Lösung erstellt, die wir zum Bereitstellen Ih
 
 ![UWP-VS-Lösung](images/uwp-vs-solution.png)
 
-## <a name="step-2-deploying-your-game"></a>Schritt 2: Ihr Spiel bereitstellen
+## <a name="step-2-deploying-your-game"></a>Schritt 2: Bereitstellen des Spiels
 
 Öffnen Sie die neu erstellte Lösung im Ordner **UWP**, und ändern Sie die Zielplattform zu **x64**.
 
@@ -50,14 +50,14 @@ Unity hat eine neue Visual Studio-Lösung erstellt, die wir zum Bereitstellen Ih
 
 Nachdem Sie nun über eine Visual Studio-UWP-Lösung für Ihr Spiel verfügen, [befolgen Sie diese Schritte](getting-started.md), um Ihr Spiel erfolgreich auf Ihrer Xbox One-Konsole für den Einzelhandel bereitzustellen!
 
-## <a name="step-3-modify-and-rebuild"></a>Schritt 3: Ändern und neu erstellen
+## <a name="step-3-modify-and-rebuild"></a>Schritt 3: Ändern und Neuerstellen
 
 Wenn etwas anderes als ein Skript geändert wird, muss das Projekt im Editor neu erstellt werden (siehe __Schritt 1__), damit die Änderungen in den UWP-Build Ihres Spiel übernommen werden.
 
 ## <a name="versioning-your-uwp-project"></a>Versionsverwaltung für Ihr UWP-Projekt
 
-In bestimmten Situationen müssen Teile dieses neu generierten UWP-Verzeichnisses der Versionskontrolle hinzugefügt werden. Dies ist beispielsweise der Fall, wenn Sie dem UWP-Projekt eine neue Abhängigkeit (z. B. das Xbox Live SDK) hinzufügen.  Wir betrachten dieses Beispiel unter [Versionskontrolle für Ihr UWP-Projekt](development-lanes-unity-versioning.md) ausführlich.
+Es gibt einige häufige Situationen, in denen es erforderlich ist, Teile dieses neu generierten UWP-Verzeichnisses der Versionskontrolle hinzuzufügen. Dies ist beispielsweise der Fall, wenn Sie dem UWP-Projekt eine neue Abhängigkeit (z. B. das Xbox Live SDK) hinzufügen.  Wir betrachten dieses Beispiel unter [Versionskontrolle für Ihr UWP-Projekt](development-lanes-unity-versioning.md) ausführlich.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 - [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)

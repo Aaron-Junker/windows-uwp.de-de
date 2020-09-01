@@ -4,30 +4,30 @@ description: Sie portieren Ihren OpenGL Shader Language (GLSL)-Code zu Microsoft
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, glsl, hlsl, opengl, directx, Shader
+keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, Shader
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ab16566b6e86fe458dbd4a896c354d978994b6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d4b49edac6a6a9c2824cfa556a2ff02eb9f36f9c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368706"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175304"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL-zu-HLSL-Referenz
 
 
 
-Sie portieren Ihren OpenGL Shader Language (GLSL)-Code zu Microsoft High Level Shader Language (HLSL)-Code, wenn Sie Ihre [Grafikarchitektur von OpenGL ES 2.0 zu Direct3D 11 portieren](port-from-opengl-es-2-0-to-directx-11-1.md), um ein Spiel für die universelle Windows-Plattform (UWP) zu erstellen. Die hier verwendete GLSL ist kompatibel mit OpenGL ES 2.0, und die HLSL ist kompatibel mit Direct3D 11. Informationen zu den Unterschieden zwischen Direct3D 11 und Vorgängerversionen von Direct3D finden Sie unter [Funktionszuordnung](feature-mapping.md).
+Sie portieren ihren OpenGL Shader Language (GLSL)-Code auf den Microsoft High Level Shader Language (HLSL)-Code, wenn Sie [Ihre Grafik Architektur von OpenGL es 2,0 auf Direct3D 11 portieren](port-from-opengl-es-2-0-to-directx-11-1.md) , um ein Spiel für universelle Windows-Plattform (UWP) zu erstellen. Die hier verwendete GLSL ist kompatibel mit OpenGL ES 2.0, und die HLSL ist kompatibel mit Direct3D 11. Informationen zu den Unterschieden zwischen Direct3D 11 und Vorgängerversionen von Direct3D finden Sie unter [Funktionszuordnung](feature-mapping.md).
 
--   [Vergleichen von OpenGL ES 2.0 mit Direct3D 11](#comparing-opengl-es-20-with-direct3d-11)
--   [Portieren von GLSL-Variablen, um "HLSL"](#porting-glsl-variables-to-hlsl)
--   [Portieren von GLSL-Typen in "HLSL"](#porting-glsl-types-to-hlsl)
--   [Portieren von GLSL vordefinierte globale Variablen für die "HLSL"](#porting-glsl-pre-defined-global-variables-to-hlsl)
--   [Beispiele für Portieren GLSL-Variablen, um "HLSL"](#examples-of-porting-glsl-variables-to-hlsl)
-    -   [Einheitliche, Attribut- und variieren in GLSL](#uniform-attribute-and-varying-in-glsl)
-    -   [Konstante Puffer und Datenübertragungen in "HLSL"](#constant-buffers-and-data-transfers-in-hlsl)
--   [Portieren von OpenGL-Rendering-Code für Direct3D-Beispiele](#examples-of-porting-opengl-rendering-code-to-direct3d)
--   [Verwandte Themen](#related-topics)
+-   [Vergleich zwischen OpenGL ES 2.0 und Direct3D 11](#comparing-opengl-es-20-with-direct3d-11)
+-   [Portieren von GLSL-Variablen zu HLSL](#porting-glsl-variables-to-hlsl)
+-   [Portieren von GLSL-Typen zu HLSL](#porting-glsl-types-to-hlsl)
+-   [Portieren von vordefinierten globalen GLSL-Variablen zu HLSL](#porting-glsl-pre-defined-global-variables-to-hlsl)
+-   [Beispiele für das Portieren von GLSL-Variablen zu HLSL](#examples-of-porting-glsl-variables-to-hlsl)
+    -   [Uniform-Variable, Attribut und variierende Variable in GLSL](#uniform-attribute-and-varying-in-glsl)
+    -   [Konstantenpuffer und Datenübertragungen in HLSL](#constant-buffers-and-data-transfers-in-hlsl)
+-   [Beispiele für das Portieren von OpenGL-Renderingcode zu Direct3D](#examples-of-porting-opengl-rendering-code-to-direct3d)
+-   [Zugehörige Themen](#related-topics)
 
 ## <a name="comparing-opengl-es-20-with-direct3d-11"></a>Vergleich zwischen OpenGL ES 2.0 und Direct3D 11
 
@@ -63,9 +63,9 @@ Folgende allgemeine Unterschiede bestehen zwischen GLSL und HLSL:
 </tr>
 <tr class="even">
 <td align="left">In die Grafik-API integrierte Shaderkompilierung</td>
-<td align="left">Der HLSL-Compiler <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1">kompiliert den Shader</a> in eine binäre Zwischendarstellung, bevor er von Direct3D an den Treiber übergeben wird.
+<td align="left">Der HLSL-Compiler <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-part1">kompiliert den Shader</a> in eine binäre Zwischendarstellung, bevor er von Direct3D an den Treiber übergeben wird.
 <div class="alert">
-<strong>Beachten Sie</strong>  diese binäre Darstellung ist die Hardware, die unabhängig. Sie wird normalerweise beim Erstellen der App und nicht zur Laufzeit kompiliert.
+<strong>Hinweis</strong>    Diese binäre Darstellung ist Hardware unabhängig. Sie wird normalerweise beim Erstellen der App und nicht zur Laufzeit kompiliert.
 </div>
 <div>
  
@@ -84,17 +84,17 @@ Folgende allgemeine Unterschiede bestehen zwischen GLSL und HLSL:
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Funktion]</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample">texture.Sample</a> [Datentyp.Funktion]</td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-sample">texture.Sample</a> [Datentyp.Funktion]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [Datentyp]</td>
-<td align="left"><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> [Datentyp]</td>
+<td align="left"><a href="/windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> [Datentyp]</td>
 </tr>
 <tr class="odd">
 <td align="left">Zeilenmatrizen (Standard)</td>
 <td align="left">Spaltenmatrizen (Standard)
 <div class="alert">
-<strong>Beachten Sie</strong>    verwenden die <strong>Row_major</strong> Typmodifizierer so ändern Sie das Layout für eine Variable. Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">Variablensyntax</a>. Sie können auch ein Compilerkennzeichen oder ein Pragma angeben, um den globalen Standardwert zu ändern.
+<strong>Hinweis</strong>    Verwenden Sie den <strong>row_major</strong> Type-Modifier, um das Layout für eine Variable zu ändern. Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">Variablensyntax</a>. Sie können auch ein Compilerkennzeichen oder ein Pragma angeben, um den globalen Standardwert zu ändern.
 </div>
 <div>
  
@@ -102,18 +102,18 @@ Folgende allgemeine Unterschiede bestehen zwischen GLSL und HLSL:
 </tr>
 <tr class="even">
 <td align="left">Fragment-Shader</td>
-<td align="left">Pixelshader</td>
+<td align="left">Pixel-Shader</td>
 </tr>
 </tbody>
 </table>
 
  
 
-> **Beachten Sie**  HLSL hat, Texturen und Postprozessoren als zwei separate Objekte. In GLSL ist die Texturbindung wie bei Direct3D 9 Teil des Samplerstatus.
+> **Hinweis**    HLSL verfügt über Texturen und Samplern als zwei separate Objekte. In GLSL ist die Texturbindung wie bei Direct3D 9 Teil des Samplerstatus.
 
  
 
-In GLSL stellen Sie einen Großteil des OpenGL-Status in Form von vordefinierten globalen Variablen dar. Mit GLSL, verwenden Sie z. B. die **Gl\_Position** Variable, um Vertexposition anzugeben und die **Gl\_FragColor** Variable, um Fragment Farbe anzugeben. In HLSL übergeben Sie den Direct3D-Status explizit vom App-Code an den Shader. Bei Direct3D und HLSL muss die Eingabe für den Vertex-Shader z. B. dem Datumsformat im Scheitelpunktpuffer entsprechen, und die Struktur eines Konstantenpuffers im App-Code muss mit der Struktur eines Konstantenpuffers ([cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)) im Shadercode übereinstimmen.
+In GLSL stellen Sie einen Großteil des OpenGL-Status in Form von vordefinierten globalen Variablen dar. Bei GLSL verwenden Sie z. b. die ** \_ Position** -Variable von GL, um die Scheitelpunkt Position anzugeben, und die Variable **GL \_ fragcolor** , um die fragmentfarbe anzugeben. In HLSL übergeben Sie den Direct3D-Status explizit vom App-Code an den Shader. Bei Direct3D und HLSL muss die Eingabe für den Vertex-Shader z. B. dem Datumsformat im Scheitelpunktpuffer entsprechen, und die Struktur eines Konstantenpuffers im App-Code muss mit der Struktur eines Konstantenpuffers ([cbuffer](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)) im Shadercode übereinstimmen.
 
 ## <a name="porting-glsl-variables-to-hlsl"></a>Portieren von GLSL-Variablen zu HLSL
 
@@ -133,27 +133,27 @@ In GLSL wenden Sie Modifizierer (Qualifizierer) auf eine globale Shadervariablen
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>uniform</strong></p>
+<td align="left"><p><strong>gleich</strong></p>
 <p>Sie übergeben eine Uniform-Variable vom App-Code in die Vertex- und/oder Fragment-Shader. Sie müssen die Werte aller Uniform-Variablen festlegen, bevor Sie Dreiecke mit den Shadern zeichnen, damit ihre Werte gleich bleiben, während ein Dreieckgitter gezeichnet wird. Diese Werte sind einheitlich. Einige Uniform-Variablen werden für den gesamten Frame festgelegt und andere speziell für ein bestimmtes Vertex-/Pixelshaderpaar.</p>
 <p>Uniform-Variablen sind Variablen, die pro Polygon gelten.</p></td>
 <td align="left"><p>Verwenden Sie einen Konstantenpuffer.</p>
-<p>Finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">Vorgehensweise: Erstellen ein Konstantenpuffers</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">Shaderkonstanten</a>.</p></td>
+<p>Siehe <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">So wird's gemacht: Erstellen eines Konstantenpuffers</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants">Shaderkonstanten</a>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>varying</strong></p>
+<td align="left"><p><strong>Maß</strong></p>
 <p>Sie initialisieren eine variierende Variable im Vertex-Shader und übergeben sie an eine identisch benannte variierende Variable im Fragment-Shader. Da der Vertex-Shader nur den Wert der variierenden Variablen an jedem Scheitelpunkt festlegt, werden diese Werte vom Rasterizer (perspektivisch korrekt) interpoliert, um Pro-Fragment-Werte zu generieren, die dann in den Fragment-Shader übergeben werden. Diese Variablen sind bei jedem Dreieck unterschiedlich.</p></td>
 <td align="left">Verwenden Sie die vom Vertex-Shader zurückgegebene Struktur als Eingabe für den Pixelshader. Stellen Sie sicher, dass die Semantikwerte übereinstimmen.</td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>attribute</strong></p>
 <p>Ein Attribut ist Teil der Beschreibung eines Scheitelpunkts, die Sie vom App-Code an den Vertex-Shader übergeben. Anders als bei einer Uniform-Variable legen Sie den Wert jedes Attributs für jeden Scheitelpunkt fest, sodass jeder Scheitelpunkt einen anderen Wert haben kann. Attributvariablen sind Variablen, die pro Scheitelpunkt gelten.</p></td>
-<td align="left"><p>Definieren Sie einen Scheitelpunktpuffer in Ihrem Direct3D-App-Code, und passen Sie ihn an die im Vertex-Shader definierte Scheitelpunkteingabe an. Optional können Sie einen Indexpuffer definieren. Finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">Vorgehensweise: Erstellen Sie einen Vertexpuffer</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">Vorgehensweise: Erstellen Sie einen Indexpuffer</a>.</p>
+<td align="left"><p>Definieren Sie einen Scheitelpunktpuffer in Ihrem Direct3D-App-Code, und passen Sie ihn an die im Vertex-Shader definierte Scheitelpunkteingabe an. Optional können Sie einen Indexpuffer definieren. Siehe <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">So wird's gemacht: Erstellen eines Scheitelpunktpuffers</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">So wird's gemacht: Erstellen eines Indexpuffers</a>.</p>
 <p>Erstellen Sie ein Eingabelayout in Ihrem Direct3D-App-Code, und passen Sie die Semantikwerte an die Werte in der Scheitelpunkteingabe an. Siehe <a href="https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage-getting-started">Erstellen des Eingabelayouts</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
 <p>Konstanten werden in den Shader kompiliert und ändern sich nie.</p></td>
-<td align="left">Verwenden Sie <strong>static const</strong>. <strong>static</strong> bedeutet, dass der Wert nicht für Konstantenpuffer verfügbar gemacht wird, und <strong>const</strong> bedeutet, dass der Wert nicht vom Shader geändert werden kann. Der Wert wird also zur Kompilierzeit anhand seines Initialisierers bekannt gemacht.</td>
+<td align="left">Verwenden Sie <strong>static const</strong>. <strong>statisch</strong> bedeutet, dass der Wert nicht für konstante Puffer verfügbar <strong>gemacht wird,</strong> "konstant" bedeutet, dass der Shader den Wert nicht ändern kann. Der Wert wird also zur Kompilierzeit anhand seines Initialisierers bekannt gemacht.</td>
 </tr>
 </tbody>
 </table>
@@ -162,7 +162,7 @@ In GLSL wenden Sie Modifizierer (Qualifizierer) auf eine globale Shadervariablen
 
 In GLSL sind Variablen ohne Modifizierer einfach normale globale Variablen, die für jeden Shader privat sind.
 
-Wenn Sie Daten an Texturen ([Texture2D](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) in HLSL) und ihre zugehörigen Sampler ([SamplerState](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-sampler) in HLSL) übergeben, deklarieren Sie sie in der Regel als globale Variablen im Pixelshader.
+Wenn Sie Daten an Texturen ([Texture2D](/windows/desktop/direct3dhlsl/sm5-object-texture2d) in HLSL) und ihre zugehörigen Sampler ([SamplerState](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-sampler) in HLSL) übergeben, deklarieren Sie sie in der Regel als globale Variablen im Pixelshader.
 
 ## <a name="porting-glsl-types-to-hlsl"></a>Portieren von GLSL-Typen zu HLSL
 
@@ -213,9 +213,9 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <tr class="odd">
 <td align="left"><p>Matrixtyp</p>
 <ul>
-<li>MAT2: 2 x 2 "float"-matrix</li>
-<li>mat3: 3 x 3 "float"-matrix</li>
-<li>mat4: die "float" 4 x 4-matrix</li>
+<li>mat2: 2x2-Float-Matrix</li>
+<li>mat3: 3x3-Float-Matrix</li>
+<li>mat4: 4x4-Float-Matrix</li>
 </ul></td>
 <td align="left"><p>Matrixtyp</p>
 <ul>
@@ -231,7 +231,7 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>Sie können auch den <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">Matrixtyp</a> verwenden, um eine Matrix zu definieren.</p>
+<p>Sie können auch den <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-matrix">Matrixtyp</a> verwenden, um eine Matrix zu definieren.</p>
 <p>Beispiel: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
 <p>Die Matrix verfügt auch über eine Typdefinition "float4x4" (typedef matrix &lt;float, 4, 4&gt; matrix;). Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-user-defined">Benutzerdefinierter Typ</a>.</p></td>
 </tr>
@@ -257,7 +257,7 @@ Ziehen Sie beim Portieren Ihrer GLSL-Typen zu HLSL die folgende Tabelle zurate.
 <p>Dieser Typ dient für "10Level9" (<a href="https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">9_x-Funktionsebenen</a>). Ganze Zahlen werden dort durch Gleitkommazahlen dargestellt. Dies ist die Genauigkeit, die Sie erhalten, wenn Sie eine ganze Zahl mit einer 16-Bit-Gleitkommazahl emulieren.</p></li>
 <li>min16uint: min. 16-Bit-Ganzzahl ohne Vorzeichen</li>
 </ul>
-<p>Weitere Informationen finden Sie unter <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Skalare Typen</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Verwenden der HLSL-Mindestgenauigkeit</a>.</p></td>
+<p>Weitere Informationen finden Sie unter <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-scalar">Skalare Typen</a> und <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Verwenden der HLSL-Mindestgenauigkeit</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -299,7 +299,7 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Diese Semantik ist vom Typ <strong>float4</strong>.</p>
 <p>Ausgabe des Vertex-Shaders</p>
 <p>Scheitelpunktposition</p>
-<p>Beispiel: float4 vPosition: SV_Position;</p></td>
+<p>Beispiel: - float4 vPosition : SV_Position;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_PointSize</strong></p>
@@ -321,7 +321,7 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Diese Semantik ist vom Typ <strong>float4</strong>.</p>
 <p>Ausgabe des Pixelshaders</p>
 <p>Pixelfarbe</p>
-<p>Beispiel: Farbe von float4 [4]: SV_Target;</p></td>
+<p>Beispiel: - float4 Color[4] : SV_Target;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragData[n]</strong></p>
@@ -340,7 +340,7 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>Diese Semantik ist vom Typ <strong>float4</strong>.</p>
 <p>Eingabe des Pixelshaders</p>
 <p>Koordinaten des Bildschirmbereichs</p>
-<p>Beispiel: float4 ScreenSpace: SV_Position</p></td>
+<p>Beispiel: - float4 screenSpace : SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FrontFacing</strong></p>
@@ -363,7 +363,7 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 <p>VPOS ist vom Typ <strong>float2</strong>.</p>
 <p>Eingabe des Pixelshaders</p>
 <p>Pixel- oder Bildpunktposition im Bildschirmbereich</p>
-<p>Beispiel: float4 pos: SV_Position</p></td>
+<p>Beispiel: - float4 pos : SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragDepth</strong></p>
@@ -380,7 +380,7 @@ Ziehen Sie beim Portieren von vordefinierten globalen GLSL-Variablen zu HLSL die
 
  
 
-Geben Sie die Position, Farbe usw. für die Eingabe des Vertex-Shaders und die Eingabe des Pixelshaders mit Semantikwerten an. Die Semantikwerte im Eingabelayout müssen der Eingabe des Vertex-Shaders entsprechen. Beispiele finden Sie unter [Beispiele für das Portieren von GLSL-Variablen zu HLSL](#examples-of-porting-glsl-variables-to-hlsl). Weitere Informationen zur HLSL-Semantik finden Sie unter [Semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
+Geben Sie die Position, Farbe usw. für die Eingabe des Vertex-Shaders und die Eingabe des Pixelshaders mit Semantikwerten an. Die Semantikwerte im Eingabelayout müssen der Eingabe des Vertex-Shaders entsprechen. Beispiele finden Sie unter [Beispiele für das Portieren von GLSL-Variablen zu HLSL](#examples-of-porting-glsl-variables-to-hlsl). Weitere Informationen zur HLSL-Semantik finden Sie unter [Semantik](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics).
 
 ## <a name="examples-of-porting-glsl-variables-to-hlsl"></a>Beispiele für das Portieren von GLSL-Variablen zu HLSL
 
@@ -433,7 +433,7 @@ gl_FragColor = vec4(colorVarying, 1.0);
 
 ### <a name="constant-buffers-and-data-transfers-in-hlsl"></a>Konstantenpuffer und Datenübertragungen in HLSL
 
-Das folgende Beispiel zeigt, wie Sie Daten an den HLSL-Vertex-Shader übergeben, die anschließend zum Pixelshader übertragen werden. Definieren Sie in Ihrem App-Code einen Scheitelpunkt und einen Konstantenpuffer. Definieren Sie anschließend im Vertex-Shader-Code den Konstantenpuffer als [cbuffer](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants), und speichern Sie die Daten für einzelne Scheitelpunkte und die Eingabedaten des Pixelshaders. Hier verwenden als **VertexShaderInput** und **PixelShaderInput** bezeichnete Strukturen.
+Das folgende Beispiel zeigt, wie Sie Daten an den HLSL-Vertex-Shader übergeben, die anschließend zum Pixelshader übertragen werden. Definieren Sie in Ihrem App-Code einen Scheitelpunkt und einen Konstantenpuffer. Definieren Sie anschließend im Vertex-Shader-Code den Konstantenpuffer als [cbuffer](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants), und speichern Sie die Daten für einzelne Scheitelpunkte und die Eingabedaten des Pixelshaders. Hier verwenden als **VertexShaderInput** und **PixelShaderInput** bezeichnete Strukturen.
 
 Direct3D-App-Code
 
@@ -559,15 +559,11 @@ m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
 m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 
-* [Portieren von OpenGL ES 2.0 zu Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
-
- 
+* [Portieren von OpenGL ES 2.0 zu Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
 
  
 
-
-
-
+ 

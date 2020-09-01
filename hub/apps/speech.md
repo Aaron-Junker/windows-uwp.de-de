@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Sprache in Windows 10, Speech, Voice, Conversation, Win32 Speech apps, UWP Speech apps, WPF Speech apps, WinForms Speech apps
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 7ac8d782591ce8f3716e491714c4cbf241e80b6c
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: d810f08a2db60309e4528167bcb4bddc95d850c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726550"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174154"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Sprache, Stimme und Konversation in Windows 10
 
@@ -19,7 +19,7 @@ ms.locfileid: "76726550"
 
 Die Sprache kann eine effektive, natürliche und angenehme Methode für die Interaktion von Benutzern mit Ihren Windows-Anwendungen sein, die auf der Maus, Tastatur, Toucheingabe, dem Controller oder Gesten basiert, um traditionelle Interaktionen zu ergänzen oder sogar zu ersetzen.
 
-Sprachbasierte Funktionen, wie z. b. Spracherkennung, Diktat, Sprachsynthese (auch bekannt als Text-zu-Sprache oder TTS) und einschließende sprach-Assistenten (z. b. Cortana oder Alexa) können barrierefreie und inklusivbenutzer Umgebungen bereitstellen, die es Benutzern ermöglichen, Ihre Anwendungen können nicht ausreichen, wenn andere Eingabegeräte nicht ausreichen.
+Sprachbasierte Funktionen, wie z. b. Spracherkennung, Diktat, Sprachsynthese (auch bekannt als Text-zu-Sprache oder TTS) und einschließende sprach-Assistenten (z. b. Cortana oder Alexa) können barrierefreie und inklusivbenutzer Umgebungen bereitstellen, die es Benutzern ermöglichen, Ihre Anwendungen zu verwenden, wenn andere Eingabegeräte möglicherweise nicht ausreichen.
 
 Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklungs Frameworks Spracherkennung, Sprachsynthese und Unterstützung von Konversation für Entwickler bereitstellen, die Windows-Anwendungen erstellen.
 
@@ -33,17 +33,17 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       Erstellen Sie sprach fähige apps auf der modernen Plattform für Windows 10-Anwendungen und-Spiele auf allen Windows-Geräten (einschließlich PCs, Smartphones, Xbox One, hololens usw.), und veröffentlichen Sie Sie auf dem Microsoft Store.
 
-      [Sprachinteraktionen](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
+      [Sprachinteraktionen](/windows/uwp/design/input/speech-interactions)
 
-      [Spracherkennung](https://docs.microsoft.com/windows/uwp/design/input/speech-recognition)
+      [Spracherkennung](/windows/uwp/design/input/speech-recognition)
 
-      [Kontinuierliches Diktieren](https://docs.microsoft.com/windows/uwp/design/input/enable-continuous-dictation)
+      [Kontinuierliches Diktieren](/windows/uwp/design/input/enable-continuous-dictation)
 
-      [Sprachsynthese](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
+      [Sprachsynthese](/uwp/api/windows.media.speechsynthesis)
 
-      [Konversations-Agents](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent)
+      [Konversations-Agents](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Cortana-Sprachbefehle](https://docs.microsoft.com/cortana/voice-commands/vcd)
+      [Cortana-Sprachbefehle](/cortana/voice-commands/vcd)
    :::column-end:::
    :::column:::
       ![Win32-Plattform-Apps](images/platform-win32.png)
@@ -65,7 +65,7 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       Entwickeln Sie barrierefreie Apps und Tools auf der bekannten Plattform für verwaltete Windows-Anwendungen mit einem XAML-UI-Modell und dem .NET Framework.
 
-      [System.Speech-Programmierhandbuch für .NET Framework](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [System.Speech-Programmierhandbuch für .NET Framework](/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Azure-Sprachdienste](images/platform-azure-speech.png)
@@ -74,13 +74,13 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 
       Entwerfen, erstellen und testen Sie barrierefreie Websites mit Azure Speech Services.
 
-      [Sprache für Text](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
+      [Spracherkennung](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
-      [Text-zu-Sprache](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
+      [Sprachsynthese](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [Sprachübersetzung](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
 
-      [Voice-First Virtual Assistenten](https://docs.microsoft.com/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
+      [Voice-First Virtual Assistenten](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -92,16 +92,16 @@ Diese Seite enthält Informationen dazu, wie die verschiedenen Windows-Entwicklu
 :::row-end:::
 :::row:::
    :::column:::
-      [Microsoft-Agent](https://docs.microsoft.com/windows/win32/lwef/microsoft-agent)
+      [Microsoft-Agent](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech Application Software Development Kit (sasdk) Version 1,0](https://www.microsoft.com/download/details.aspx?id=2200)
    :::column-end:::
    :::column:::
-      [Microsoft Speech API (SAPI) 5,3](https://docs.microsoft.com/previous-versions/windows/desktop/ms723627(v=vs.85))
+      [Microsoft Speech API (SAPI) 5,3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
-      [Microsoft Speech API (SAPI) 5,4](https://docs.microsoft.com/previous-versions/windows/desktop/ee125663(v=vs.85))
+      [Microsoft Speech API (SAPI) 5,4](/previous-versions/windows/desktop/ee125663(v=vs.85))
 
-      [Das Bing-Spracheingabe Erkennungs Steuerelement](https://docs.microsoft.com/previous-versions/bing/speech/dn434583(v%3dmsdn.10))
+      [Das Bing-Spracheingabe Erkennungs Steuerelement](/previous-versions/bing/speech/dn434583(v=msdn.10))
    :::column-end:::
 :::row-end:::
 
@@ -111,7 +111,7 @@ Laden Sie vollständige Windows-Beispiele herunter, die verschiedene Barrierefre
 
 :::row:::
    :::column:::
-      [Codebeispielbrowser](https://docs.microsoft.com/samples/browse/?term=speech)
+      [Browser für Codebeispiele](/samples/browse/?term=speech)
 
       Der neue Beispiel Browser (ersetzt die MSDN Code Gallery).
    :::column-end:::

@@ -1,43 +1,43 @@
 ---
 title: Freigeben von „Meine Kontakte”
-description: Erläutert das Hinzufügen von Support für das Freigeben von „Meine Kontakte”
+description: Verwenden Sie meine Personen Freigaben, damit Benutzer Kontakte an Ihre Taskleiste anheften und problemlos von jedem beliebigen Ort in Windows aus in Kontakt treten können.
 ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ff37a243f88bdd378998070f58ec35196c62a6cf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683488"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173664"
 ---
 # <a name="my-people-sharing"></a>Freigeben von „Meine Kontakte”
 
-Die Feature „Meine Kontakte” ermöglicht Benutzern das Anheften von Kontakten an die Taskleiste, damit sie überall über Windows in Kontakt bleiben können unabhängig von der Anwendung, durch die sie verbunden sind. Jetzt können Benutzer Inhalte für ihre angeheftete Kontakte freigeben, indem sie Dateien aus dem Datei-Explorer auf die Startseite von „Meine Kontakte” anheften. Sie können Inhalte ebenfalls für alle Kontakte im Kontaktspeicher von Windows über den standardmäßigen Charms "Teilen" freigeben. Nachfolgend erhalten Sie weitere Informationen zum Aktivieren Ihrer Anwendung als Freigabeziel für Meine Kontakte.
+Mit der Funktion "meine Personen" können Benutzer Kontakte an Ihre Taskleiste anheften, sodass Sie von überall in Windows problemlos kontaktiert werden können, unabhängig von der Anwendung, mit der Sie verbunden sind. Nun können Benutzerinhalte mit ihren angehefteten Kontakten freigeben, indem Sie Dateien aus dem Datei-Explorer auf die PIN "meine Personen" ziehen. Sie können auch über den Charm "Standardteilen" für alle Kontakte im Windows-Kontakt Speicher freigeben. Lesen Sie weiter, um zu erfahren, wie Sie Ihre Anwendung als Freigabe Ziel für meine Personen aktivieren.
 
-![„Meine Kontakte”-Freigabecenter](images/my-people-sharing.png)
+![Freigabe Bereich "meine Personen"](images/my-people-sharing.png)
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
-+ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 und Microsoft Visual Studio 2019. Weitere Informationen zur Installation finden Sie unter [Einrichten von Visual Studio](../get-started/get-set-up.md).
++ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Informationen zu den ersten Schritten mit c# finden Sie unter [Erstellen einer "Hello, World"-App](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="overview"></a>Übersicht
 
-Es gibt drei Schritte, die Sie ausführen müssen, um die Anwendung als Freigabeziel für „Meine Kontakte” zu verwenden:
+Es gibt drei Schritte, die Sie durchführen müssen, um Ihre Anwendung als Freigabe Ziel für meine Personen zu aktivieren:
 
-1. [Deklarieren Sie die Unterstützung für den sharetarget-Aktivierungs Vertrag in Ihrem Anwendungs Manifest.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [Kommentieren Sie die Kontakte, die die Benutzer für die Verwendung Ihrer APP freigeben können.](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3. Unterstützen Sie mehrere Instanzen der Anwendung, die zur gleichen Zeit ausgeführt werden.  Benutzer müssen mit einer vollständigen Version Ihrer Anwendung interagieren und diese auch für andere Personen freigeben können. Sie können diese in mehreren Freigabefenstern gleichzeitig verwenden. Um dies zu unterstützen, muss Ihre Anwendung mehrere Ansichten gleichzeitig ausführen können. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views).
+1. [Deklarieren Sie die Unterstützung für den sharetarget-Aktivierungs Vertrag in Ihrem Anwendungs Manifest.](#declaring-support-for-the-share-contract)
+2. [Kommentieren Sie die Kontakte, die die Benutzer für die Verwendung Ihrer APP freigeben können.](#annotating-contacts)
+3. Unterstützung mehrerer Instanzen der Anwendung, die gleichzeitig ausgeführt werden.  Benutzer müssen in der Lage sein, mit einer vollständigen Version Ihrer Anwendung zu interagieren, während Sie Sie auch für andere Benutzer freigeben können. Sie können Sie in mehreren Freigabe Fenstern gleichzeitig verwenden. Um dies zu unterstützen, muss Ihre Anwendung in der Lage sein, mehrere Sichten gleichzeitig auszuführen. Weitere Informationen hierzu finden Sie im Artikel ["Anzeigen mehrerer Ansichten für eine App"](../design/layout/show-multiple-views.md).
 
-Wenn Sie dies getan haben, wird die Anwendung als Freigabeziel im Freigabefenster „Meine Kontakte” angezeigt, das auf zwei Arten gestartet werden kann:
-1. Ein Kontakt wird über den Charm "Freigabe" ausgewählt.
-2. Dateien werden über Drag & Drop auf einen Kontakt an die Taskleiste angeheftet.
+Wenn Sie dies abgeschlossen haben, wird die Anwendung als Freigabe Ziel im Freigabe Fenster "meine Personen" angezeigt, das auf zwei Arten gestartet werden kann:
+1. Ein Kontakt wird über den Charm "teilen" ausgewählt.
+2. Dateien werden per Drag und Drop an einem Kontakt abgelegt, der an die Taskleiste angeheftet wurde.
 
-## <a name="declaring-support-for-the-share-contract"></a>Deklarieren von Support für den Freigabe-Vertrag
+## <a name="declaring-support-for-the-share-contract"></a>Deklarieren der Unterstützung für den Freigabe Vertrag
 
-Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Sie die Anwendung zunächst in Visual Studio. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei **Package.appxmanifest** und wählen Sie **Öffnen mit** aus. Wählen Sie aus dem Menü anschließend **XML (Text)-Editor**, und klicken Sie auf **OK**. Nehmen Sie danach folgenden Änderungen am Manifest vor.
+Um die Unterstützung für Ihre Anwendung als Freigabe Ziel zu deklarieren, öffnen Sie zuerst die Anwendung in Visual Studio. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf **Package. appxmanifest** , und wählen Sie **Öffnen mit**aus. Wählen Sie im Menü **XML (Text)-Editor** aus, und klicken Sie auf **OK**. Nehmen Sie dann die folgenden Änderungen am Manifest vor:
 
 
 **Vorher**
@@ -75,15 +75,15 @@ Um Unterstützung für die Anwendung als Freigabeziel zu deklarieren, öffnen Si
 </Applications>
 ```
 
-Dieser Code fügt Unterstützung für alle Dateien und Daten-Formate hinzu. Sie können allerdings auch angeben, welche Arten von Dateien und Datenformate unterstützt werden (weitere Details finden Sie unter [ShareTarget Klassendokumentation](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)).
+Dieser Code bietet Unterstützung für alle Dateien und Datenformate, Sie können jedoch angeben, welche Dateitypen und Datenformate unterstützt werden (Weitere Informationen finden Sie in der [Dokumentation zur sharetarget-Klasse](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget) ).
 
-## <a name="annotating-contacts"></a>Kontakte mit Kommentaren versehen
+## <a name="annotating-contacts"></a>Kommentieren von Kontakten
 
-Um zuzulassen, dass das Freigabefenster für „Meine Kontakte” Ihre Anwendung als Freigabeziel für Ihre Kontakte angibt, müssen Sie diese auf den Windows-Kontaktspeicher schreiben. Weitere Informationen zum Schreiben von Kontakten finden Sie unter [Beispiel für die Visitenkartenintegration](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration). 
+Damit das Fenster "meine Personen freigeben" Ihre Anwendung als Freigabe Ziel für Ihre Kontakte anzeigen kann, müssen Sie Sie in den Windows-Kontakt Speicher schreiben. Informationen zum Schreiben von Kontakten finden Sie unter Beispiel für die [Integration der Kontaktkarte](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration). 
 
-Damit Ihre Anwendung als Freigabeziel für „Meine Kontakte” angezeigt werden kann, wenn Sie zu einen Kontakt freigeben, müssen sie eine Anmerkung darauf schreiben. Kommentare sind Datenteile von Ihrer Anwendung, die mit einem Kontakt verknüpft sind. Die Anmerkung muss die aktivierbare Klassen für die gewünschte Ansicht in seinem Element **ProviderProperties** und Support für den **Freigabe**-Vorgang deklarieren.
+Damit Ihre Anwendung bei der Freigabe an einen Kontakt als "meine Personen"-Freigabe Ziel angezeigt wird, muss Sie eine Anmerkung in diesen Kontakt schreiben. Anmerkungen sind Daten aus Ihrer Anwendung, die mit einem Kontakt verknüpft sind. Die-Anmerkung muss die aktivierbare Klasse enthalten, die der gewünschten Ansicht in Ihrem **providerproperties** -Member entspricht, und die Unterstützung für den **Freigabe** Vorgang deklarieren.
 
-Sie können Kontakten jederzeit einen Kommentar hinzufügen, während die App ausgeführt wird, aber in der Regel sollten Sie Kontakte sofort kommentieren, wenn sie dem Windows-Kontaktspeicher hinzugefügt werden.
+Sie können Kontakte jederzeit mit Anmerkungen versehen, während Ihre APP ausgeführt wird. in der Regel sollten Sie Kontakte kommentieren, sobald Sie dem Windows-Kontakt Speicher hinzugefügt werden.
 
 ```Csharp
 if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5))
@@ -103,11 +103,11 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-Die “appId” ist der Paketfamilienname, gefolgt von ‘!’ und einer aktivierbaren Klassen-ID. Um Ihren Paketfamilienname zu suchen, öffnen Sie **Package.appxmanifest** mithilfe des Standard-Editors, und suchen Sie den Namen auf der Registerkarte "Verpacken". Hier entspricht "App" der aktivierbaren Klassen der Zielfreigabeansicht.
+Die "AppID" ist der Paket Familienname, gefolgt von "!". und die aktivierbare Klassen-ID. Um den Paket Familiennamen zu ermitteln, öffnen Sie **Package. appxmanifest** mit dem Standard-Editor, und suchen Sie auf der Registerkarte "Packaging" (Verpacken). Hier ist "App" die aktivierbare Klasse, die der Freigabe Ziel Ansicht entspricht.
 
-## <a name="running-as-a-my-people-share-target"></a>Ausführung als Freigabeziel für „Meine Kontakte”
+## <a name="running-as-a-my-people-share-target"></a>Ausführen als Freigabe Ziel "meine Personen"
 
-Zum Ausführen der App müssen Sie die [OnShareTargetActivated](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_)-Methode in der App-Hauptklasse außer Kraft setzen, um die Zielfreigabeaktivierung behandeln zu können. Die [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties)-Eigenschaft enthält die Kontakte, die freigegeben werden, oder leer bleiben, wenn es sich um einen standardmäßigen Freigabevorgang handelt (und nicht eine Freigabe für „Meine Kontakte”).
+Zum Schluss müssen Sie zum Ausführen der APP die [onsharetargetaktivierte](/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) -Methode in der Hauptklasse Ihrer APP überschreiben, um die Freigabe Ziel Aktivierung zu verarbeiten. Die Eigenschaft " [sharetargetactivatedeventargs. shareoperation. Contacts](/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) " enthält die Kontakte, die für freigegeben werden, oder ist leer, wenn es sich um einen Standard Freigabe Vorgang (nicht um eine eigene Freigabe) handelt.
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 + [Unterstützung für meine Personen hinzufügen](my-people-support.md)
-+ [Sharetarget-Klasse](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
++ [Sharetarget-Klasse](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [Beispiel für eine Kontaktkarten Integration](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

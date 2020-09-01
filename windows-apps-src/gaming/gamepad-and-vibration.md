@@ -4,14 +4,14 @@ description: Verwenden Sie die Windows.Gaming.Input-Gamepad-APIs zum Erkennen, L
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
 ms.date: 09/06/2018
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Gamepad, Vibration
+keywords: Windows 10, UWP, Games, Gamepad, Vibration
 ms.localizationpriority: medium
-ms.openlocfilehash: e65b22039c381bd333516bd9f98c60bbddb9621c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 66844b78893ffa8cb92b6b17bd11d87c1d4b1aa0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210596"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175324"
 ---
 # <a name="gamepad-and-vibration"></a>Gamepad und Vibration
 
@@ -27,7 +27,7 @@ Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
 ## <a name="gamepad-overview"></a>Gamepadübersicht
 
-Gamepads wie der Xbox Wireless Controller und der Xbox Wireless Controller S sind allgemeine Eingabegeräte für Spiele. Sie sind die Standardeingabegeräte für Xbox One und werden auch häufig von Windows-Spielern als Alternative zur Tastatur und Maus genutzt. Gamepads werden in Windows 10- und UWP-Apps für Xbox durch den [Windows. Gaming. Input][]-Namespace unterstützt.
+Gamepads wie der Xbox Wireless Controller und der Xbox Wireless Controller S sind allgemeine Eingabegeräte für Spiele. Sie sind die Standardeingabegeräte für Xbox One und werden auch häufig von Windows-Spielern als Alternative zur Tastatur und Maus genutzt. Gamepads werden in Windows 10- und UWP-Apps für Xbox durch den [Windows.Gaming.Input][]-Namespace unterstützt.
 
 Xbox One-Gamepads sind mit einem direktionalen Pad (oder einem D-Pad) ausgestattet. Die Schaltflächen **A**, **B**, **X**, **Y**, **View**und **Menu** ; Left und Right thumbsticks,-Stoßdämpfer und-Trigger und insgesamt vier Vibrationsmotoren. Beide Ministicks liefern jeweils zwei analoge Werte für die X- und die Y-Achse und können auch gedrückt und somit als Taste verwendet werden. Jeder-Vorgang stellt eine analoge Lesefunktion bereit, die angibt, wie weit Sie zurückgezogen wird.
 
@@ -48,13 +48,13 @@ Weitere Informationen finden Sie in der [Übersicht über Vibration und Impulse 
 
 ### <a name="thumbstick-deadzones"></a>Inaktive Ministick-Bereiche
 
-Ein Ministick, der sich in der Mittelstellung (und damit im Ruhezustand) befindet, liefert im Idealfall immer den gleichen neutralen Wert für die X- und die Y-Achse. Aufgrund von mechanischen Kräften und der Empfindlichkeit des Ministicks handelt es sich bei den tatsächlichen Werten in der Mittelposition jedoch lediglich um (ggf. schwankende) Näherungswerte für den idealen neutralen Wert. Aus diesem Grund müssen Sie immer eine kleine _deadzone_&mdash;einen Wertebereich in der Nähe der idealen Mittelpunkt Position verwenden, die ignoriert werden&mdash;um Fertigungs Unterschiede, den mechanischen Verschleiß oder andere Gamepad-Probleme auszugleichen.
+Ein Ministick, der sich in der Mittelstellung (und damit im Ruhezustand) befindet, liefert im Idealfall immer den gleichen neutralen Wert für die X- und die Y-Achse. Aufgrund von mechanischen Kräften und der Empfindlichkeit des Ministicks handelt es sich bei den tatsächlichen Werten in der Mittelposition jedoch lediglich um (ggf. schwankende) Näherungswerte für den idealen neutralen Wert. Aus diesem Grund müssen Sie _immer einen_ &mdash; Bereich von Werten in der Nähe der idealen Mittelpunkt Position verwenden, die ignoriert werden, &mdash; um Fertigungs Unterschiede, den mechanischen Verschleiß oder andere Gamepad-Probleme auszugleichen.
 
 Durch größere inaktive Bereiche lassen sich ganz einfach beabsichtigte Eingaben von unbeabsichtigten Eingaben unterscheiden.
 
 Weitere Informationen finden Sie unter [Lesen der Ministicks](#reading-the-thumbsticks).
 
-### <a name="ui-navigation"></a>Navigation in der Benutzeroberfläche
+### <a name="ui-navigation"></a>Benutzeroberflächennavigation
 
 Um den Aufwand für die Unterstützung unterschiedlicher Eingabegeräte für die Benutzeroberflächennavigation zu verringern und die Konsistenz zwischen Spielen und Geräten zu fördern, dienen die meisten _physischen_ Eingabegeräte gleichzeitig als getrennte _logische_ Eingabegeräte, die als [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle über verschiedene Eingabegeräte hinweg bereit.
 
@@ -64,11 +64,11 @@ Bei einem UI-Navigations Controller ordnen Gamepads den [erforderlichen Satz](ui
 | ------------------:| ----------------------------------- |
 |                 Nach oben | Linker Ministick nach oben/Steuerkreuz nach oben       |
 |               Nach unten | Linker Ministick nach unten/Steuerkreuz nach unten   |
-|               Links | Linker Ministick nach links/Steuerkreuz nach links   |
-|              Rechts | Linker Ministick nach rechts/Steuerkreuz nach rechts |
-|               Anzeigen | Ansicht-Taste                         |
+|               Left | Linker Ministick nach links/Steuerkreuz nach links   |
+|              Right | Linker Ministick nach rechts/Steuerkreuz nach rechts |
+|               Sicht | Ansicht-Taste                         |
 |               Menü | Menü-Taste                         |
-|             Accept | A-Taste                            |
+|             Akzeptieren | A-Taste                            |
 |             Abbrechen | B-Taste                            |
 
 Darüber hinaus ordnen Gamepads den gesamten [optionalen Satz](ui-navigation-controller.md#optional-set) der Navigationsbefehle den restlichen Eingaben zu.
@@ -76,7 +76,7 @@ Darüber hinaus ordnen Gamepads den gesamten [optionalen Satz](ui-navigation-con
 | Navigationsbefehl | Gamepad-Eingabe          |
 | ------------------:| ---------------------- |
 |            BILD-AUF | Linker Trigger           |
-|          Seite nach unten | Rechter Trigger          |
+|          BILD-AB | Rechter Trigger          |
 |          Seite nach links | Linker Bumper            |
 |         Seite nach rechts | Rechter Bumper           |
 |          Bildlauf nach oben | Rechter Ministick nach oben    |
@@ -94,7 +94,7 @@ Gamepads werden vom System verwaltet. Daher müssen Sie diese nicht erstellen od
 
 ### <a name="the-gamepads-list"></a>Die Gamepadliste
 
-Die [Gamepad][]-Klasse stellt die statische Eigenschaft [Gamepads][] bereit. Hierbei handelt es sich um eine schreibgeschützte Liste mit derzeit verbundenen Gamepads. Da Sie möglicherweise nur an einigen der verbundenen Gamepads interessiert sind, empfiehlt es sich, eine eigene Sammlung beizubehalten, anstatt über die `Gamepads`-Eigenschaft auf Sie zuzugreifen.
+Die [Gamepad][]-Klasse stellt die statische Eigenschaft [Gamepads][] bereit. Hierbei handelt es sich um eine schreibgeschützte Liste mit derzeit verbundenen Gamepads. Da Sie möglicherweise nur an einigen der verbundenen Gamepads interessiert sind, wird empfohlen, dass Sie Ihre eigene Sammlung beibehalten, anstatt über die-Eigenschaft auf Sie zuzugreifen `Gamepads` .
 
 Im folgenden Beispiel werden alle verbundenen Gamepads in eine neue Sammlung kopiert. Beachten Sie Folgendes: da andere Threads im Hintergrund auf diese Auflistung zugreifen (in den Ereignissen " [gamepadadded][] " und " [gamepadremoved][] "), müssen Sie jeden Code sperren, der die Auflistung liest oder aktualisiert.
 
@@ -179,7 +179,7 @@ Gamepad.GamepadAdded += (object sender, Gamepad e) =>
 };
 ```
 
-Im folgenden Beispiel wird die Nachverfolgung eines Gamepad beendet, das entfernt wurde. Sie müssen auch den Inhalt der Gamepads behandeln, die Sie nachverfolgen, wenn Sie entfernt werden. mit diesem Code werden z. b. nur die Eingaben von einem Gamepad nachverfolgt, und es wird festgelegt, dass er beim Entfernen `nullptr`. Sie müssen jeden Frame überprüfen, wenn Ihr Gamepad aktiv ist, und das Gamepad aktualisieren, von dem Sie eine Eingabe sammeln, wenn Controller verbunden und getrennt sind.
+Im folgenden Beispiel wird die Nachverfolgung eines Gamepad beendet, das entfernt wurde. Sie müssen auch den Inhalt der Gamepads behandeln, die Sie nachverfolgen, wenn Sie entfernt werden. mit diesem Code werden z. b. nur die Eingaben von einem Gamepad nachverfolgt und einfach `nullptr` beim Entfernen festgelegt. Sie müssen jeden Frame überprüfen, wenn Ihr Gamepad aktiv ist, und das Gamepad aktualisieren, von dem Sie eine Eingabe sammeln, wenn Controller verbunden und getrennt sind.
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -231,7 +231,7 @@ Nachdem Sie das Gamepad identifiziert haben, für das Sie sich interessieren, k�
 
 ### <a name="polling-the-gamepad"></a>Abfragen des Gamepads
 
-Beim Abruf wird eine Momentaufnahme des Navigationsgeräts an einem bestimmten Zeitpunkt erfasst. Dieser Ansatz zum Erfassen von Eingaben ist für die meisten Spiele geeignet, da deren Logik üblicherweise in einer deterministischen Schleife ausgeführt wird und nicht ereignisgesteuert ist. Es ist in der Regel auch einfacher, Befehle in Spielen anhand von Eingaben zu interpretieren, die alle gemeinsam erfasst werden, als anhand zahlreicher Eingaben, die im Laufe der Zeit erfasst werden.
+Beim Abruf wird eine Momentaufnahme des Navigationsgeräts an einem bestimmten Zeitpunkt erfasst. Diese Vorgehensweise für die Eingabe Erfassung eignet sich gut für die meisten Spiele, da ihre Logik in der Regel in einer deterministischen Schleife ausgeführt wird, anstatt Sie als ereignisgesteuert zu betrachten. Es ist in der Regel einfacher, Spiel Befehle aus Eingaben zu interpretieren, die alle gleichzeitig gesammelt werden, als aus vielen einzelnen Eingaben, die im Laufe der Zeit gesammelt werden.
 
 Gamepads werden durch Aufrufen von [GetCurrentReading][] abgefragt. Diese Funktion gibt einen [GamepadReading][]-Wert mit dem Zustand des Gamepads zurück.
 
@@ -271,7 +271,7 @@ double rightStickX = reading.RightThumbstickX; // returns a value between -1.0 a
 double rightStickY = reading.RightThumbstickY; // returns a value between -1.0 and +1.0
 ```
 
-Sie werden feststellen, dass die gelesenen Ministickwerte nicht zuverlässig einen neutralen 0,0-Wert liefern, wenn sich der Ministick in der Mittelstellung (und damit im Ruhezustand) befindet. Stattdessen erhalten Sie verschiedene Näherungswerte für 0,0, wann immer der Ministicks bewegt wurde und wieder in die Mittelstellung zurückkehrt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorierenden Wertebereich nahe der idealen Mittelposition). Zur Implementierung eines inaktiven Bereichs können Sie beispielsweise ermitteln, wie weit sich der Ministick von der Mittelposition entfernt hat, und dabei die Werte ignorieren, die eine bestimmte, von Ihnen gewählte Entfernung unterschreiten. Sie können den Abstand ungefähr&mdash;, der nicht genau ist, da Fingerabdruck Werte im Grunde Polar sind, nicht planar, Werte&mdash;nur mithilfe des Pythagorean-Theorem. Dadurch entsteht ein radialer inaktiver Bereich.
+Sie werden feststellen, dass die gelesenen Ministickwerte nicht zuverlässig einen neutralen 0,0-Wert liefern, wenn sich der Ministick in der Mittelstellung (und damit im Ruhezustand) befindet. Stattdessen erhalten Sie verschiedene Näherungswerte für 0,0, wann immer der Ministicks bewegt wurde und wieder in die Mittelstellung zurückkehrt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorierenden Wertebereich nahe der idealen Mittelposition). Zur Implementierung eines inaktiven Bereichs können Sie beispielsweise ermitteln, wie weit sich der Ministick von der Mittelposition entfernt hat, und dabei die Werte ignorieren, die eine bestimmte, von Ihnen gewählte Entfernung unterschreiten. Sie können die Entfernung ungefähr so berechnen, &mdash; dass Sie nicht genau ist, da Finger erationswerte im wesentlichen Polar sind, nicht planar, &mdash; sondern nur mit dem Pythagorean-Theorem. Dadurch entsteht ein radialer inaktiver Bereich.
 
 Das folgende Beispiel veranschaulicht einen einfachen radialen inaktiven Bereich unter Verwendung des Satzes des Pythagoras.
 
@@ -331,12 +331,12 @@ double rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1
 
 ### <a name="reading-the-buttons"></a>Lesen der Tastenwerte
 
-Jede der Gamepad-Schaltflächen&mdash;vier Richtungen der D-Pad, Left und Right-Stoß Taste, Left und Right Ministick Press, **A**, **B**, **X**, **Y**, **View**und **Menu**&mdash;bietet ein digitales Lesematerial, das angibt, ob es gedrückt oder freigegeben wird (nach oben). Aus Effizienzgründen werden Schaltflächen Messwerte nicht als einzelne boolesche Werte dargestellt. Stattdessen werden Sie alle in ein einzelnes Bitfeld gepackt, das von der [gamepadbuttons][] -Enumeration repräsentiert wird.
+Jede der Gamepad-Schaltflächen &mdash; stellt die vier Richtungen des D-Pad, des linken und des rechten bupers, den linken und rechten Fingerabdruck Press, **A**, **B**, **X**, **Y**, **View**und **Menu** &mdash; bereit und stellt ein digitales Lesematerial bereit, das angibt, ob es gedrückt oder freigegeben wird (nach oben). Aus Effizienzgründen werden Schaltflächen Messwerte nicht als einzelne boolesche Werte dargestellt. Stattdessen werden Sie alle in ein einzelnes Bitfeld gepackt, das von der [gamepadbuttons][] -Enumeration repräsentiert wird.
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **paddle** buttons on its underside. These buttons are also represented in the `GamepadButtons` enumeration and their values are read in the same way as the standard gamepad buttons. -->
 
-Die Tastenwerte werden aus der `Buttons`-Eigenschaft der [GamepadReading][]-Struktur gelesen. Da diese Eigenschaft ein Bitfeld ist, wird eine bitweise Maskierung verwendet, um den Wert der Taste zu isolieren, an der Sie interessiert sind, Die Taste ist gedrückt (unten), wenn das entsprechende Bit festgelegt ist. Andernfalls ist sie nicht gedrückt (oben).
+Die Tastenwerte werden aus der `Buttons`-Eigenschaft der [GamepadReading][]-Struktur gelesen. Da diese Eigenschaft ein Bitfeld ist, wird eine bitweise Maskierung verwendet, um den Wert der Taste zu isolieren, an der Sie interessiert sind, Wenn das entsprechende Bit festgelegt ist, wird die Schaltfläche gedrückt (unten). Andernfalls wird Sie freigegeben (up).
 
 Im folgenden Beispiel wird ermittelt, ob die A-Taste gedrückt ist.
 
@@ -370,11 +370,11 @@ if (GamepadButtons.None == (reading.Buttons & GamepadButtons.A))
 }
 ```
 
-Manchmal möchten Sie möglicherweise feststellen, ob eine Schaltfläche von gedrückter zu freigegeben oder freigegeben ist, ob mehrere Schaltflächen gedrückt oder freigegeben werden, oder ob eine Reihe von Schaltflächen auf eine bestimmte Weise angeordnet ist,&mdash;ein gedrücktes, etwas nicht. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
+Manchmal möchten Sie möglicherweise ermitteln, ob eine Schaltfläche von gedrückter zu freigegeben oder freigegeben ist, ob mehrere Schaltflächen gedrückt oder freigegeben werden oder ob eine Reihe von Schaltflächen auf eine bestimmte Weise angeordnet ist &mdash; , nicht. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
 
 ## <a name="run-the-gamepad-input-sample"></a>Ausführen des Gamepad-Eingabebeispiels
 
-Im [GamepadUWP-Beispiel _(GitHub)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadUWP) wird veranschaulicht, wie Sie eine Verbindung mit einem Gamepad herstellen und dessen Zustand lesen.
+Im [GamepadUWP-Beispiel _(GitHub)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadUWP) wird veranschaulicht, wie Sie eine Verbindung mit einem Gamepad herstellen und dessen Zustand lesen.
 
 ## <a name="vibration-and-impulse-triggers-overview"></a>Übersicht über Vibration und Impulse Triggers
 
@@ -384,9 +384,9 @@ Xbox One-Gamepads sind mit insgesamt vier unabhängigen Vibrationsmotoren ausges
 
 ## <a name="using-vibration-and-impulse"></a>Verwenden von Vibrationen und Impulsen
 
-Gamepadvibrationen werden über die [Schwingungen][]-Eigenschaft der [Gamepad][]-Klasse gesteuert. `Vibration` ist eine Instanz der [gamepadvibration][] -Struktur, die aus vier Gleit Komma Werten besteht. Jeder Wert stellt die Intensität eines Motors dar.
+Gamepadvibrationen werden über die [Vibration][]-Eigenschaft der [Gamepad][]-Klasse gesteuert. `Vibration` eine Instanz der [gamepadvibration][] -Struktur, die aus vier Gleit Komma Werten besteht. Jeder Wert stellt die Intensität eines Motors dar.
 
-Obwohl die Elemente der `Gamepad.Vibration`-Eigenschaft direkt geändert werden können, empfiehlt es sich, eine separate `GamepadVibration` Instanz mit den gewünschten Werten zu initialisieren und Sie dann in die `Gamepad.Vibration`-Eigenschaft zu kopieren, um die tatsächlichen Motor Intensitäten gleichzeitig zu ändern.
+Obwohl die Elemente der `Gamepad.Vibration` Eigenschaft direkt geändert werden können, empfiehlt es sich, eine separate `GamepadVibration` Instanz mit den gewünschten Werten zu initialisieren und Sie dann in die- `Gamepad.Vibration` Eigenschaft zu kopieren, um die tatsächlichen Motor Intensitäten gleichzeitig zu ändern.
 
 Im folgenden Beispiel wird das gleichzeitige Ändern aller Motorintensitäten veranschaulicht.
 
@@ -436,7 +436,7 @@ vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 mainGamepad.Vibration = vibration;
 ```
 
-Vergessen Sie nicht, dass diese beiden Motoren nicht identisch sind. Wenn Sie die Eigenschaften also auf den gleichen Wert festlegen, werden in den beiden Motoren nicht die gleichen Vibrationen erzeugt. Bei einem beliebigen Wert erzeugt der linke Motor eine stärkere Vibrationen in einer niedrigeren Frequenz als der Rechte Motor, der für denselben Wert&mdash;&mdash;die eine schonerschwingung mit höherer Frequenz erzeugt. Selbst bei Verwendung des Maximalwerts erreicht der linke Motor nicht die hohen Frequenzen des rechten Motors, und mit dem rechten Motor lassen sich nicht die gleichen hohen Kräfte erzeugen wie mit dem linken Motor. Da die Motoren allerdings fest mit dem Gamepadgehäuse verbunden sind, nehmen Spieler die Vibrationen nicht vollständig unabhängig voneinander wahr, obwohl die Motoren unterschiedliche Eigenschaften haben und mit unterschiedlicher Intensität vibrieren können. Dadurch lässt sich eine größere, ausdrucksstärkere Bandbreite von Empfindungen vermitteln als mit zwei identischen Motoren.
+Vergessen Sie nicht, dass diese beiden Motoren nicht identisch sind. Wenn Sie die Eigenschaften also auf den gleichen Wert festlegen, werden in den beiden Motoren nicht die gleichen Vibrationen erzeugt. Bei einem beliebigen Wert erzeugt der linke Motor eine stärkere Vibrationen in einer niedrigeren Frequenz als der Rechte Motor, bei dem &mdash; für denselben Wert &mdash; eine schonerschwingung mit einer höheren Häufigkeit erzeugt wird. Selbst bei Verwendung des Maximalwerts erreicht der linke Motor nicht die hohen Frequenzen des rechten Motors, und mit dem rechten Motor lassen sich nicht die gleichen hohen Kräfte erzeugen wie mit dem linken Motor. Da die Motoren allerdings fest mit dem Gamepadgehäuse verbunden sind, nehmen Spieler die Vibrationen nicht vollständig unabhängig voneinander wahr, obwohl die Motoren unterschiedliche Eigenschaften haben und mit unterschiedlicher Intensität vibrieren können. Dadurch lässt sich eine größere, ausdrucksstärkere Bandbreite von Empfindungen vermitteln als mit zwei identischen Motoren.
 
 ### <a name="using-the-impulse-triggers"></a>Verwenden der Impulse Triggers
 
@@ -462,23 +462,23 @@ Im Gegensatz zu den anderen Motoren sind die beiden Vibrationsmotoren innerhalb 
 
 ## <a name="run-the-gamepad-vibration-sample"></a>Ausführen des Gamepad-Vibrationsbeispiels
 
-Das [GamepadVibrationUWP-Beispiel _(GitHub)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) veranschaulicht, wie mithilfe der Gamepad-Vibrationsmotoren und der Impulse Triggers eine Reihe von Effekten erzeugt wird.
+Das [GamepadVibrationUWP-Beispiel _(GitHub)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) veranschaulicht, wie mithilfe der Gamepad-Vibrationsmotoren und der Impulse Triggers eine Reihe von Effekten erzeugt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 * [Windows.Gaming.Input.UINavigationController][]
-* [Windows. Gaming. Input. igamecontroller][]
-* [Eingabe Praktiken für Spiele](input-practices-for-games.md)
+* [Windows.Gaming.Input.IGameController][]
+* [Eingabemethoden für Spiele](input-practices-for-games.md)
 
-[Windows. Gaming. Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[Windows. Gaming. Input. igamecontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[Gamepad]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.aspx
-[Gamepads]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepads.aspx
-[gamepadadded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepadadded.aspx
-[gamepadremoved]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.gamepadremoved.aspx
-[getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.getcurrentreading.aspx
-[Schwingungen]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepad.vibration.aspx
-[gamepadreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadreading.aspx
-[gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
-[gamepadvibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadvibration.aspx
+[Windows. Gaming. Input]: /uwp/api/Windows.Gaming.Input
+[Windows.Gaming.Input.UINavigationController]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[Windows.Gaming.Input.IGameController]: /uwp/api/Windows.Gaming.Input.IGameController
+[Gamepad]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepads]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadadded]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadremoved]: /uwp/api/Windows.Gaming.Input.Gamepad
+[getcurrentreading]: /uwp/api/Windows.Gaming.Input.Gamepad
+[vibration]: /uwp/api/Windows.Gaming.Input.Gamepad
+[gamepadreading]: /uwp/api/Windows.Gaming.Input.GamepadReading
+[gamepadbuttons]: /uwp/api/Windows.Gaming.Input.GamepadButtons
+[gamepadvibration]: /uwp/api/Windows.Gaming.Input.GamepadVibration

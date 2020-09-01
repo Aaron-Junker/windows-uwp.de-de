@@ -8,28 +8,28 @@ ms.topic: article
 ms.prod: uwp
 ms.technology: apps
 ms.date: 03/19/2020
-ms.openlocfilehash: b6cdab774389d4cbd41c53d6ca6a368eb182c339
-ms.sourcegitcommit: 4c7f1e5952ead9b9a71a8d13795d1771a5f3219e
+ms.openlocfilehash: 0f67795f57ba5a7af1fea54eac59e00b5664d6e8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80871013"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174544"
 ---
 # <a name="contribute-to-windows-docs-and-be-entered-to-win-some-swag"></a>Tragen Sie zu Windows docs bei, und geben Sie ein, um etwas zu gewinnen.
 
 Wenn Sie die Windows-Dokumentation verwenden, sollten Sie in Erwägung gezogen werden, Teil unserer Mitwirkenden zu werden.
 
-Folgendes ist erforderlich:
+Das müssen Sie tun:
 
-1. Richten Sie ein [Konto mit GitHub](https://github.com/join)ein, wenn Sie noch keines besitzen, und lesen Sie dann unser Leitfaden zu den Dokumentations [mitwirk](https://docs.microsoft.com/contribute/)enden.
+1. Richten Sie ein [Konto mit GitHub](https://github.com/join)ein, wenn Sie noch keines besitzen, und lesen Sie dann unser Leitfaden zu den Dokumentations [mitwirk](/contribute/)enden.
 2. Lesen Sie den folgenden Dokumentations Inhalt, und suchen Sie nach Inhalt, der besser geeignet sein könnte:
-    - **Erstellen von Desktop-Apps** - [UWP](https://docs.microsoft.com/windows/uwp/), [Win32](https://docs.microsoft.com/windows/win32/), [WPF](https://docs.microsoft.com/dotnet/framework/wpf/) [Windows Forms](https://docs.microsoft.com/dotnet/framework/winforms/)
-    - **Windows UI Library** - Steuer [Elemente für UWP-apps](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/), [steuert API-Referenz](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls?view=winui-2.3)
-    - Leitfaden zum **erstellen mit Windows** - [Windows-Subsystem für Linux](https://docs.microsoft.com/windows/wsl/about), [python](https://docs.microsoft.com/windows/python/), [nodejs](https://docs.microsoft.com/windows/nodejs/), [Mac und Windows](https://docs.microsoft.com/windows/dev-environment/mac-to-windows)
-    - **Windows-Hardware Entwickler** - [Tools und Treiber](https://docs.microsoft.com/windows-hardware/drivers/)
+    - **Erstellen von Desktop-Apps**  -  [UWP](/windows/uwp/), [Win32](/windows/win32/), [WPF](/dotnet/framework/wpf/), [Windows Forms](/dotnet/framework/winforms/)
+    - **Windows-Benutzeroberflächen Bibliothek**  -  Steuer [Elemente für UWP-apps](/windows/uwp/design/controls-and-patterns/), [steuert API-Referenz](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.3)
+    - **Mit Windows erstellen**  -  Leitfaden [für Windows-Subsystem für Linux](/windows/wsl/about), [python](./python/index.yml), [nodejs](./nodejs/index.yml), [Mac und Windows](./dev-environment/mac-to-windows.md)
+    - **Windows-Hardware Entwickler**  -  [Tools und Treiber](/windows-hardware/drivers/)
 3. Nehmen Sie Korrekturen an einer Dokumentationsseite vor, indem Sie oben auf der Seite die Schaltfläche **Bearbeiten** auswählen. Dadurch gelangen Sie zur markdown-Quelldatei in GitHub.
 4. Nachdem die Änderungen vorgenommen wurden. Datei ihren Pull Request (PR).
-5. Antworten Sie auf den [@WindowsDocs-Wettbewerbsbeitrag](https://twitter.com/WindowsDocs/status/1242088720209268736) mit einem Link zu Ihrem PR.
+5. Antworten Sie auf den [ @WindowsDocs Wettbewerbsbeitrag](https://twitter.com/WindowsDocs/status/1242088720209268736) mit einem Link zu Ihrem PR.
 
 Vielen Dank für Ihre Mitwirkenden!
 

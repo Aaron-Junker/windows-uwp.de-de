@@ -1,20 +1,20 @@
 ---
 title: Xbox Live-Test - Referenz zu den Benutzerverwaltungs-APIs
-description: Erfahren Sie, wie Sie programmgesteuert auf die Benutzerverwaltungs-APIs zugreifen.
+description: Erfahren Sie, wie Sie die Liste der Benutzer in der Konsole mithilfe der Xbox-Geräte Portal-Rest-API erhalten oder aktualisieren.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
-ms.openlocfilehash: 52f333af73084ed14982b9d09b6770c8294980f7
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.openlocfilehash: 0f05bc84469585fc10bfff6a7f0d0f0976a0080d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74902528"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174674"
 ---
 # <a name="xbox-live-user-management"></a>Xbox Live-Benutzerverwaltung
 
-## <a name="request"></a>Anfordern
+## <a name="request"></a>Anforderung
 
 Sie können die Liste der Benutzer auf der Konsole abrufen oder aktualisieren – Benutzer hinzufügen, entfernen, anmelden, abmelden oder vorhandene Benutzer ändern.
 
@@ -45,7 +45,7 @@ PUT-Aufrufe müssen ein JSON-Array mit folgender Struktur enthalten:
   * SponsoredUser (optional): Ein boolescher Wert, der angibt, ob ein gesponserter Benutzer hinzugefügt werden soll.
   * Delete (optional): bool, das angibt, dass dieser Benutzer aus der Konsole gelöscht werden soll
 
-## <a name="response"></a>Response
+## <a name="response"></a>Antwort
 
 **Antworttext**
 
@@ -60,11 +60,11 @@ GET-Aufrufe geben ein JSON-Array mit folgenden Eigenschaften zurück:
   * XboxUserId
   * SponsoredUser (optional)
   
-**Status Code**
+**Statuscode**
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-| HTTP-Statuscode   | Beschreibung     | 
+| HTTP-Statuscode   | BESCHREIBUNG     | 
 | ------------------ |-----------------|
 | 200                | Der GET-Aufruf war erfolgreich, und im Antworttext wurde ein JSON-Array mit Benutzern zurückgegeben. |
 | 204                | Der PUT-Aufruf war erfolgreich, und die Benutzer auf der Konsole wurden aktualisiert. |

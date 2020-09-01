@@ -5,12 +5,12 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: 170a8c3084e180714a319d67dca2b6a5756ea474
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: ef4d3df6e5a5dd93dbcb2caadc8e3f299aad581c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629111"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173694"
 ---
 # <a name="access-trace-data"></a>Zugreifen auf Ablauf Verfolgungs Daten
 
@@ -18,7 +18,7 @@ ms.locfileid: "77629111"
 
 Microsoft. Windows. eventtracing. processing. all
 
-Dieses Paket ermöglicht den Zugriff auf Daten in einer Ablauf Verfolgungs Datei. Wenn Sie noch nicht über eine Ablauf Verfolgungs Datei verfügen, können Sie diese mit [Windows Performance Recorder](https://docs.microsoft.com/windows-hardware/test/wpt/start-a-recording) erstellen.
+Dieses Paket ermöglicht den Zugriff auf Daten in einer Ablauf Verfolgungs Datei. Wenn Sie noch nicht über eine Ablauf Verfolgungs Datei verfügen, können Sie diese mit [Windows Performance Recorder](/windows-hardware/test/wpt/start-a-recording) erstellen.
 
 Die folgende Beispiel Konsolen-APP zeigt, wie Sie auf die Befehlszeilen aller in der Ablauf Verfolgung enthaltenen Prozesse zugreifen können:
 
@@ -56,13 +56,13 @@ class Program
 
 ## <a name="using-traceprocessor"></a>Verwenden von traceprocessor
 
-Rufen Sie [traceprocessor. Create](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor.create)auf, um eine Ablauf Verfolgung zu verarbeiten. Die Kernschnittstelle ist [itraceprocessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.itraceprocessor), und die Verwendung dieser Schnittstelle umfasst das folgende Muster:
+Rufen Sie [traceprocessor. Create](/dotnet/api/microsoft.windows.eventtracing.traceprocessor.create)auf, um eine Ablauf Verfolgung zu verarbeiten. Die Kernschnittstelle ist [itraceprocessor](/dotnet/api/microsoft.windows.eventtracing.itraceprocessor), und die Verwendung dieser Schnittstelle umfasst das folgende Muster:
 
 1. Teilen Sie dem Prozessor zunächst mit, welche Daten Sie aus einer Ablauf Verfolgung verwenden möchten.
 2. Zum anderen verarbeiten Sie die Ablauf Verfolgung. immer
 3. Schließlich greifen Sie auf die Ergebnisse zu.
 
-Wenn Sie dem Prozessor mitteilen, welche Arten von Daten Sie vorab benötigen, bedeutet dies, dass Sie keine Zeit für die Verarbeitung großer Mengen aller möglichen Arten von Ablauf Verfolgungs Daten aufwenden müssen. Stattdessen erledigt [traceprocessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor) nur die Arbeit, die Sie benötigen, um die spezifischen Arten von Daten bereitzustellen, die Sie anfordern.
+Wenn Sie dem Prozessor mitteilen, welche Arten von Daten Sie vorab benötigen, bedeutet dies, dass Sie keine Zeit für die Verarbeitung großer Mengen aller möglichen Arten von Ablauf Verfolgungs Daten aufwenden müssen. Stattdessen erledigt [traceprocessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor) nur die Arbeit, die Sie benötigen, um die spezifischen Arten von Daten bereitzustellen, die Sie anfordern.
 
 ## <a name="recommended-project-settings"></a>Empfohlene Projekteinstellungen
 
@@ -70,11 +70,11 @@ Es gibt einige Projekteinstellungen, die Sie mit traceprocessor verwenden sollte
 
 1. Es empfiehlt sich, exe als 64-Bit-Version zu ausführen.
 
-    Der Standardwert von Visual Studio für C# eine neue .NET Framework Konsolenanwendung ist eine beliebige CPU, bei der "32-Bit" bevorzugt aktiviert ist. Der Standardwert für .net Core hat möglicherweise bereits die empfohlene Einstellung.
+    Die Visual Studio-Standardeinstellung für eine neue c#-.NET Framework Konsolenanwendung ist eine beliebige CPU, bei der "32-Bit" bevorzugt aktiviert ist Der Standardwert für .net Core hat möglicherweise bereits die empfohlene Einstellung.
 
     Die Ablauf Verfolgungs Verarbeitung kann Speicher intensiv sein, insbesondere bei größeren Ablauf Verfolgungen, und es wird empfohlen, das Ziel der Plattform in den exe 32 zu ändern, die traceprocessor verwenden. Informationen zum Ändern dieser Einstellungen finden Sie auf der Registerkarte "Build" unter "Eigenschaften" für das Projekt. Um diese Einstellungen für alle Konfigurationen zu ändern, stellen Sie sicher, dass die Dropdown Liste Konfiguration auf alle Konfigurationen und nicht auf die Standardeinstellung der aktuellen Konfiguration festgelegt ist.
 
-2. Wir empfehlen die Verwendung von nuget im neueren packagereferenzierungsmodus anstelle des älteren Packages. config-Modus.
+2. Wir empfehlen die Verwendung von nuget mit dem Modus "im neueren Stil" packagereferenzierungsmodus anstelle des älteren packages.config Modus.
 
     Informationen zum Ändern der Standardeinstellung für neue Projekte finden Sie unter Tools, nuget-Paket-Manager, Paket-Manager-Einstellungen, Paketverwaltung, Standardpaket Verwaltungs Format.
 
@@ -82,7 +82,7 @@ Es gibt einige Projekteinstellungen, die Sie mit traceprocessor verwenden sollte
 
 Eine ETL-Datei kann viele Arten von Daten in einer Ablauf Verfolgung erfassen. Beachten Sie, dass die Daten in einer ETL-Datei davon abhängen, welche Anbieter beim Erfassen der Ablauf Verfolgung aktiviert wurden. In der folgenden Liste werden die Arten der von traceprocessor verfügbaren Ablauf Verfolgungs Daten angezeigt:
 
-| Code                                      | Beschreibung                                                                                                                | Verwandte WPA-Elemente                                                    |
+| Code                                      | BESCHREIBUNG                                                                                                                | Verwandte WPA-Elemente                                                    |
 |-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | Ablauf Verfolgungs. Useclassicevents ()                  | Stellt klassische ETW-Ereignisse aus einer Ablauf Verfolgung bereit, die keine Schema Informationen enthalten.                                         | Tabelle für generische Ereignisse (bei einem Ereignistyp "klassisch" oder "WPP")             |
 | Ablauf Verfolgungs. Useconnectedstandbydata ()           | Stellt Daten aus einer Ablauf Verfolgung bereit, über die das System in den verbundenen Standbymodus wechselt.                                        | CS-Zusammenfassungs Tabelle                                                     |
@@ -143,7 +143,7 @@ Eine ETL-Datei kann viele Arten von Daten in einer Ablauf Verfolgung erfassen. B
 | Ablauf Verfolgungs. Usewininetdata ()                    | Stellt Daten aus einer Ablauf Verfolgung über Internetaktivität über Windows Internet (WinInet) bereit.                                         | Detail Tabelle herunterladen                                               |
 | Ablauf Verfolgungs. Useworkingsetdata ()                 | Stellt Daten aus einer Ablauf Verfolgung zu virtuellen Arbeitsspeicher Seiten bereit, die im Workingset für die einzelnen Prozess-oder Kernel Kategorien enthalten waren. | Tabelle mit Momentaufnahmen des virtuellen Speichers                                       |
 
-Weitere Informationen finden Sie auch in den Erweiterungs Methoden für [itracesource](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.itracesource) für alle verfügbaren Ablauf Verfolgungs Daten, oder untersuchen Sie die in "Trace" verfügbare Methode. wird von IntelliSense angezeigt.
+Weitere Informationen finden Sie auch in den Erweiterungs Methoden für [itracesource](/dotnet/api/microsoft.windows.eventtracing.itracesource) für alle verfügbaren Ablauf Verfolgungs Daten, oder untersuchen Sie die in "Trace" verfügbare Methode. wird von IntelliSense angezeigt.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

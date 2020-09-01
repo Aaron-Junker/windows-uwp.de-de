@@ -1,64 +1,64 @@
 ---
-title: Natürliche Bewegungsanimationen
-description: Lernen Sie natürliche Animationen und deren Nutzung in der App-Benutzeroberfläche kennen.
+title: Naturbewegungs Animationen
+description: Erfahren Sie mehr übernatürliche Animations Animationen und deren Verwendung in ihrer App-Benutzeroberfläche.
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, animation
+keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02c76991a60205042642f57fed475755db8c8071
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630375"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174084"
 ---
-# <a name="natural-motion-animations"></a>Natürliche Bewegungsanimationen
+# <a name="natural-motion-animations"></a>Naturbewegungs Animationen
 
-Dieser Artikel gibt einen kurzen Überblick über den NaturalMotionAnimation-Raum und wie man konzeptionell mit diesen Animationen in der Benutzeroberfläche umgeht.
+Dieser Artikel bietet eine kurze Übersicht über den naturalmotionanimation-Bereich und erläutert, wie Sie sich konzeptionell Gedanken über die Verwendung dieser Animations Typen in der Benutzeroberfläche machen.
 
-## <a name="making-motion-feel-familiar-and-natural"></a>Bewegung vertraut und natürlich machen
+## <a name="making-motion-feel-familiar-and-natural"></a>Machen Sie sich mit der Bewegung vertraut.
 
-Tolle Apps sind solche, die Erlebnisse schaffen, die die Aufmerksamkeit der Benutzer auf sich ziehen und behalten und helfen, sie durch Aufgaben zu führen. Bewegung ist der entscheidende Unterscheidungsfaktor, der eine schlichte Benutzeroberfläche von einer Benutzererfahrung trennt, und eine Verbindung zwischen Benutzern und der Anwendung herstellt. Je besser diese Verbindung, desto mehr Engagement und Zufriedenheit der Endanwender.
+Großartige apps sind solche, die Benutzeroberflächen erstellen, die die Benutzer Aufmerksamkeit erfassen und beibehalten, und Benutzer durch Aufgaben leiten. Motion ist der entscheidende Faktor, bei dem eine Benutzeroberfläche von einer Benutzeroberfläche getrennt wird – eine Verbindung zwischen Benutzern und der Anwendung, mit der Sie interagieren. Je besser die Verbindung, desto höher das Engagement und die Zufriedenheit der Endbenutzer.
 
-Eine Möglichkeit dabei ist durch Bewegung Erfahrungen zu schaffen, die vertraut aussehen und sich vertraut anfühlen. Die Benutzer haben eine unbewusste Erwartung, wie sie Bewegungen wahrnehmen, die auf realen Lebenserfahrungen basieren. Wir sehen, wie Gegenstände über den Boden rutschen, vom Tisch fallen, ineinander hüpfen und mit einer Feder oszillieren. Bewegung, die diese Erwartung nutzt, indem sie auf der realen Welt der Physik basiert, sehen und fühlen sich natürlicher an. Die Bewegung wird natürlicher und interaktiver. Aber noch wichtiger ist, dass das gesamte Erlebnis unvergesslicher und angenehmer wird.
+Eine Möglichkeit, diese Verbindung zu erstellen, besteht darin, Benutzeroberflächen zu erstellen, die den Benutzern vertraut sind. Benutzer haben eine unbewusste Erwartung, wie Sie Bewegung auf der Grundlage von realen Erfahrungen erkennen. Wir sehen, wie sich Objekte im Boden befinden, aus der Tabelle springen, aufeinander springen und mit einer springenden Seite schwingen. Bewegung, die diese Erwartung durch die Verwendung auf der realen Physik nutzt, sieht in unserer Ansicht etwas natürlicher aus. Der bewegungsprozess wird natürlicher und interaktiver, aber noch wichtiger ist, dass die gesamte-Darstellung etwas wichtiger wird.
 
-![Skalieren Sie während der Übertragung ohne Animation](images/animation/scale-no-animation.gif)
-![Skalierung während der Übertragung mit kubische Bezier](images/animation/scale-cubic-bezier.gif)
-![Skalierung während der Übertragung mit Spring-Animation](images/animation/scale-spring.gif)
+![Bewegung ohne Animations ](images/animation/scale-no-animation.gif)
+ ![ Skalierungs Bewegung mit kubischer Bézier- ](images/animation/scale-cubic-bezier.gif)
+ ![ Skalierungs Bewegung mit Spring Animation skalieren](images/animation/scale-spring.gif)
 
-Das Ergebnis ist eine höhere Bindung und Bindung der Nutzer an die App.
+Das Ergebnis ist ein höheres Benutzer Engagement und eine Beibehaltung der app.
 
-## <a name="balancing-control-and-dynamism"></a>Balance von Kontrolle und Dynamik
+## <a name="balancing-control-and-dynamism"></a>Ausgleichs Kontrolle und-Dynamik
 
-In der traditionellen Benutzeroberfläche sind [KeyFrameAnimations](https://docs.microsoft.com/uwp/api/windows.ui.composition.keyframeanimation) die vorherrschende Art, Bewegung zu beschreiben. KeyFrames lieferte Designern und Entwicklern die größtmögliche Kontrolle, um Anfang, Ende und Interpolation zu definieren. Obwohl dies in vielen Fällen sehr nützlich ist, sind KeyFrame-Animationen nicht sehr dynamisch; die Bewegung ist nicht adaptiv und sieht unter allen Umständen gleich aus.
+In der herkömmlichen Benutzeroberfläche sind [Keyframeanimation](/uwp/api/windows.ui.composition.keyframeanimation)s die vorherrschende Methode zum Beschreiben von Bewegung. Keyframes bieten Designern und Entwicklern die größtmögliche Kontrolle über das Definieren von Start, Ende und interpolung. Obwohl dies in vielen Fällen sehr nützlich ist, sind Keyframe-Animationen nicht sehr dynamisch. die Bewegung ist nicht adaptiv und wird unter jeder Bedingung identisch sein.
 
-Am anderen Ende des Spektrums gibt es Simulationen, wie sie oft in Gaming- und Physik-Engines zu sehen sind. Diese Erfahrungen sind oft die lebensechtesten und dynamischsten, mit denen Benutzer interagieren – sie schaffen das Gefühl von Ambiente und Zufälligkeit, das sie jeden Tag sehen. Obwohl sich Bewegungen dadurch lebendiger und dynamischer anfühlen, haben Designer und Entwickler weniger Kontrolle, wodurch die Integration in herkömmliche Benutzeroberflächen erschwert wird.
+Am anderen Ende des Spektrums werden Simulationen häufig in Gaming-und Physik-Engines angezeigt. Diese Oberflächen sind häufig die gängigsten und dynamischen Möglichkeiten, mit denen Benutzer interagieren – und so den Sinn von Ambiente und Zufälligkeit erzielen, die Benutzern jeden Tag angezeigt werden. Obwohl das Gefühl der Bewegung lebendiger und dynamischer ist, haben Designer und Entwickler weniger Kontrolle, sodass es schwieriger ist, Sie in die herkömmliche Benutzeroberfläche zu integrieren.
 
-![Kontrollspektrumdiagramm](images/animation/natural-motion-diagram.png)
+![Diagramm für das steuerungsspektrum](images/animation/natural-motion-diagram.png)
 
-[NaturalMotionAnimations](https://docs.microsoft.com/uwp/api/windows.ui.composition.naturalmotionanimation) gibt es, um diese Kluft zu überbrücken – um eine Balance zwischen Kontrolle für die wichtigen Elemente einer Animation wie Start/Ziel zu ermöglichen, aber eine Bewegung beizubehalten, die natürlich aussieht und sich natürlich und dynamisch anfühlt.
+[Naturalmotionanimation](/uwp/api/windows.ui.composition.naturalmotionanimation)s ist vorhanden, um diese Unterteilung zu unterstützen – die Aktivierung eines Steuer Elements für die wichtigen Elemente einer Animation wie Start/Finish, aber die Aufrechterhaltung von Bewegung, die sich in natürlicher und dynamischer Weise sieht.
 
 > [!NOTE]
-> NaturalMotionAnimations sind nicht als Ersatz für KeyFrame-Animationen gedacht – es gibt immer noch Stellen in der Fluent Design-Sprache, an denen KeyFrames empfohlen werden. NaturalMotionAnimations sind für den Einsatz an Orten gedacht, an denen Bewegung benötigt wird, KeyFrame Animationen aber nicht dynamisch genug sind.
+> Naturalmotionanimationen sind nicht als Ersatz für Keyframe-Animationen gedacht – es gibt immer noch Positionen in der fließenden Entwurfs Sprache, in denen Keyframes empfohlen werden. "Naturalmotionanimationen" ist für die Verwendung an Stellen gedacht, an denen Bewegung erforderlich ist, Keyframe-Animationen aber nicht dynamisch genug sind.
 
-## <a name="using-naturalmotionanimations"></a>Verwenden von NaturalMotionAnimations
+## <a name="using-naturalmotionanimations"></a>Verwenden von naturalmotionanimationen
 
-Mit dem Fall Creators Update haben Sie Zugriff auf ein neues Bewegungserlebnis: **Federanimationen**. Siehe [Federanimationen](spring-animations.md) für ausführliche Informationen.
+Ab dem Fall Creators Update haben Sie Zugriff auf eine neue Bewegungs Darstellung: Spring- **Animationen**. Eine ausführlichere Exemplarische Vorgehensweise von Quellen finden Sie unter [Spring Animationen](spring-animations.md) .
 
-Erreicht wird diese Bewegungsart durch den Einsatz der neuen NaturalMotionAnimation – ein neuer Animationstyp, der es Entwicklern ermöglicht, vertraute und natürliche Bewegungen in ihre Benutzeroberfläche einzubauen, mit einer Balance aus Kontrolle und Dynamik. Sie bietet die folgenden Fähigkeiten:
+Dieser bewegstyp wird mithilfe der neuen naturalmotionanimation erreicht – ein neuer Animationstyp, der darauf ausgerichtet ist, Entwicklern den Einstieg in die Benutzeroberfläche zu ermöglichen und ein ausgewogenes Verhältnis zwischen Kontrolle und Dynamik zu erzielen. Sie stellen die folgenden Funktionen zur Verfügung:
 
-- Angeben von Start- und Endwerten.
-- Definieren von InitialVelocity und Anbindung an die Eingaben mit InteractionTracker.
-- Bewegungsspezifische Eigenschaften definieren (z. B. DampingRatio für Federanimationen).
+- Hiermit werden die Anfangs-und Endwerte definiert.
+- Definieren Sie InitialVelocity, und binden Sie die Eingabe mit interaktiontracker ein.
+- Definieren von Bewegungs spezifischen Eigenschaften (z. b. "dämpfingratio" für Springs)
 
 Allgemeine Formel für den Einstieg:
 
-1. Erstellen Sie die NaturalMotionAnimation aus dem Compositor mit einer der **Create**-Methoden.
+1. Erstellen Sie die naturalmotionanimation über den Compositor, indem Sie eine der **Create** -Methoden verwenden.
 1. Definieren Sie die Eigenschaften der Animation.
-1. Übergeben Sie die NaturalMotionAnimation als Parameter an den StartAnimation-Aufruf eines CompositionObjects.
-    - Oder setzen Sie die Motion-Eigenschaft eines InteractionTracker InertiaModifiers.
+1. Übergeben Sie die "naturalmotionanimation" als Parameter an den startanimation-Rückruf von einem "compositionobject".
+    - Oder auf die Motion-Eigenschaft eines interaktiontracker-inertiamodifier festgelegt ist.
 
-Ein einfaches Beispiel mit einer NaturalMotionAnimation-Federanimation, um eine visuelle „Feder“ zu einer neuen X-Offset-Position zu bewegen:
+Ein einfaches Beispiel für die Verwendung von Spring naturalmotionanimation, um eine visuelle Spring-Eigenschaft an einem neuen X-Offset-Speicherort zu erstellen:
 
 ```csharp
 _springAnimation = _compositor.CreateSpringScalarAnimation();

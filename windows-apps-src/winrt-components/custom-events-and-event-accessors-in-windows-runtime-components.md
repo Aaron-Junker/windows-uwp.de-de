@@ -4,14 +4,14 @@ description: Die .NET-Unterstützung für Windows-Runtime-Komponenten erleichter
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1891a89d83ea8a193d5c0fcedf939101323981e6
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 0b1666d938a83f8c8725523d3e5a1b14e416ca4e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340533"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174274"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Benutzerdefinierte Ereignisse und Ereignisaccessoren in Komponenten für Windows-Runtime
 
@@ -21,14 +21,14 @@ Die .NET-Unterstützung für Windows-Runtime-Komponenten erleichtert das Deklari
 
 Wenn Sie die Registrierung für die Behandlung eines Ereignisses in der UWP durchführen, gibt der Add-Accessor ein Token zurück. Um die Registrierung aufzuheben, übergeben Sie dieses Token an den Remove-Accessor. Dies bedeutet, dass sich die Signaturen der Add- und Remove-Accessoren für UWP-Ereignisse von den üblichen Accessoren unterscheiden.
 
-Glücklicherweise vereinfachen der Visual Basic und C# die Compiler diesen Prozess: Wenn Sie ein Ereignis mit benutzerdefinierten Accessoren in einer Windows-Runtime Komponente deklarieren, verwenden die Compiler automatisch das UWP-Muster. Beispielsweise erhalten Sie einen Compilerfehler, wenn Ihr Add-Accessor kein Token zurückgibt. .Net bietet zwei Typen zur Unterstützung der-Implementierung:
+Glücklicherweise vereinfachen der Visual Basic-und c#-Compiler diesen Prozess: Wenn Sie ein Ereignis mit benutzerdefinierten Accessoren in einer Windows-Runtime Komponente deklarieren, verwenden die Compiler automatisch das UWP-Muster. Beispielsweise erhalten Sie einen Compilerfehler, wenn Ihr Add-Accessor kein Token zurückgibt. .Net bietet zwei Typen zur Unterstützung der-Implementierung:
 
--   Die [EventRegistrationToken](https://docs.microsoft.com/uwp/api/windows.foundation.eventregistrationtoken)-Struktur stellt das Token dar.
--   Die [EventRegistrationTokenTable&lt;T&gt;](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1)-Klasse erstellt Token und verwaltet eine Zuordnung zwischen Token und Ereignishandlern. Das generische Typargument ist der Ereignisargumenttyp. Sie erstellen eine Instanz dieser Klasse für jedes Ereignis, wenn ein Ereignishandler zum ersten Mal für dieses Ereignis registriert wird.
+-   Die [EventRegistrationToken](/uwp/api/windows.foundation.eventregistrationtoken)-Struktur stellt das Token dar.
+-   Die [EventRegistrationTokenTable&lt;T&gt;](/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1)-Klasse erstellt Token und verwaltet eine Zuordnung zwischen Token und Ereignishandlern. Das generische Typargument ist der Ereignisargumenttyp. Sie erstellen eine Instanz dieser Klasse für jedes Ereignis, wenn ein Ereignishandler zum ersten Mal für dieses Ereignis registriert wird.
 
 Der folgende Code für das Ereignis „NumberChanged” zeigt das grundlegende Muster für UWP-Ereignisse. In diesem Beispiel übernimmt der Konstruktor für das Ereignisargumentobjekt „NumberChangedEventArgs” einen einzelnen ganzzahligen Parameter, der den geänderten numerischen Wert darstellt.
 
-> **Beachten Sie**  dies das gleiche Muster ist, das die Compiler für normale Ereignisse verwenden, die Sie in einer Windows-Runtime Komponente deklarieren.
+> **Hinweis**    Dies ist das gleiche Muster, das die Compiler für normale Ereignisse verwenden, die Sie in einer Windows-Runtime Komponente deklarieren.
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -96,31 +96,31 @@ Der folgende Code für das Ereignis „NumberChanged” zeigt das grundlegende M
 
 Die statische („Shared” in Visual Basic) Methode „GetOrCreateEventRegistrationTokenTable” erstellt die Instanz des Ereignisses des EventRegistrationTokenTable&lt;T&gt;-Objekts verzögert. Übergeben Sie das Feld auf Klassenebene, das die Tokentabelleninstanz enthalten soll, an diese Methode. Wenn das Feld leer ist, erstellt die Methode die Tabelle, speichert einen Verweis auf die Tabelle in dem Feld und gibt einen Verweis auf die Tabelle zurück. Wenn das Feld bereits einen Verweis auf die Tokentabelle enthält, gibt die Methode einfach diesen Verweis zurück.
 
-> **Wichtig**  um die Thread Sicherheit sicherzustellen, muss das Feld, das die Ereignis Instanz von eventregistrationdekentable&lt;t-&gt; enthält, ein Feld auf Klassenebene sein. Wenn dies ein Feld auf Klassenebene ist, stellt die Methode „GetOrCreateEventRegistrationTokenTable” sicher, dass alle Threads dieselbe Instanz der Tabelle abrufen, wenn mehrere Threads versuchen, die Tokentabelle zu erstellen. Für ein bestimmtes Ereignis müssen alle Aufrufe der Methode „GetOrCreateEventRegistrationTokenTable” dasselbe Feld auf Klassenebene verwenden.
+> **Wichtig**    Um die Thread Sicherheit zu gewährleisten, muss das Feld, das die Ereignis Instanz von eventregistrationdekentable T enthält, &lt; &gt; ein Feld auf Klassenebene sein. Wenn dies ein Feld auf Klassenebene ist, stellt die Methode „GetOrCreateEventRegistrationTokenTable” sicher, dass alle Threads dieselbe Instanz der Tabelle abrufen, wenn mehrere Threads versuchen, die Tokentabelle zu erstellen. Für ein bestimmtes Ereignis müssen alle Aufrufe der Methode „GetOrCreateEventRegistrationTokenTable” dasselbe Feld auf Klassenebene verwenden.
 
-Durch Aufrufen der Methode „GetOrCreateEventRegistrationTokenTable” im Remove-Accessor und in der Methode [RaiseEvent](https://docs.microsoft.com/dotnet/articles/visual-basic/language-reference/statements/raiseevent-statement) („OnRaiseEvent”-Methode in C#) wird sichergestellt, dass keine Ausnahmen ausgelöst werden, wenn diese Methoden aufgerufen werden, bevor Ereignishandlerdelegaten hinzugefügt wurden.
+Durch Aufrufen der Methode „GetOrCreateEventRegistrationTokenTable” im Remove-Accessor und in der Methode [RaiseEvent](/dotnet/articles/visual-basic/language-reference/statements/raiseevent-statement) („OnRaiseEvent”-Methode in C#) wird sichergestellt, dass keine Ausnahmen ausgelöst werden, wenn diese Methoden aufgerufen werden, bevor Ereignishandlerdelegaten hinzugefügt wurden.
 
 Zu den anderen Membern der EventRegistrationTokenTable&lt;T&gt;-Klasse, die im UWP-Ereignismuster verwendet werden, zählen:
 
--   Die [AddEventHandler](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.addeventhandler#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_AddEventHandler__0_)-Methode generiert ein Token für den Ereignishandlerdelegaten, speichert den Delegaten in der Tabelle, fügt ihn der Aufrufliste hinzu und gibt das Token zurück.
--   Die [RemoveEventHandler(EventRegistrationToken)](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.removeeventhandler#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_RemoveEventHandler_System_Runtime_InteropServices_WindowsRuntime_EventRegistrationToken_)-Methodenüberladung entfernt den Delegaten aus der Tabelle und der Aufrufliste.
+-   Die [AddEventHandler](/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.addeventhandler#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_AddEventHandler__0_)-Methode generiert ein Token für den Ereignishandlerdelegaten, speichert den Delegaten in der Tabelle, fügt ihn der Aufrufliste hinzu und gibt das Token zurück.
+-   Die [RemoveEventHandler(EventRegistrationToken)](/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.removeeventhandler#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_RemoveEventHandler_System_Runtime_InteropServices_WindowsRuntime_EventRegistrationToken_)-Methodenüberladung entfernt den Delegaten aus der Tabelle und der Aufrufliste.
 
-    >**Beachten Sie**  die AddEventHandler-Methode und die RemoveEventHandler-Methode (eventregistrationtoken) die Tabelle sperren, um die Thread Sicherheit zu gewährleisten.
+    >**Hinweis**    Die AddEventHandler-Methode und die RemoveEventHandler (eventregistrationtoken)-Methode sperren die Tabelle, um die Thread Sicherheit zu gewährleisten.
 
--   Die [InvocationList](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.invocationlist#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_InvocationList)-Eigenschaft gibt einen Delegaten zurück, der alle Ereignishandler enthält, die derzeit zum Behandeln des Ereignisses registriert sind. Verwenden Sie diesen Delegaten zum Auslösen des Ereignisses, oder verwenden Sie die Methoden der Delegate-Klasse, um die Handler einzeln aufzurufen.
+-   Die [InvocationList](/dotnet/api/system.runtime.interopservices.windowsruntime.eventregistrationtokentable-1.invocationlist#System_Runtime_InteropServices_WindowsRuntime_EventRegistrationTokenTable_1_InvocationList)-Eigenschaft gibt einen Delegaten zurück, der alle Ereignishandler enthält, die derzeit zum Behandeln des Ereignisses registriert sind. Verwenden Sie diesen Delegaten zum Auslösen des Ereignisses, oder verwenden Sie die Methoden der Delegate-Klasse, um die Handler einzeln aufzurufen.
 
-    >**Hinweis**  wir empfehlen, dass Sie das im Beispiel weiter oben in diesem Artikel angegebene Muster befolgen und den Delegaten vor dem Aufrufen in eine temporäre Variable kopieren. Dadurch wird eine Racebedingung verhindert, in der ein Thread den letzten Ereignishandler entfernt, indem der Delegat auf null festlegt wird, kurz bevor ein anderer Thread versucht, den Delegaten aufzurufen. Delegaten sind unveränderlich, sodass die Kopie weiterhin gültig ist.
+    >**Hinweis**    Es wird empfohlen, dass Sie das im Beispiel weiter oben in diesem Artikel angegebene Muster befolgen und den Delegaten vor dem Aufrufen in eine temporäre Variable kopieren. Dadurch wird eine Racebedingung verhindert, in der ein Thread den letzten Ereignishandler entfernt, indem der Delegat auf null festlegt wird, kurz bevor ein anderer Thread versucht, den Delegaten aufzurufen. Delegaten sind unveränderlich, sodass die Kopie weiterhin gültig ist.
 
 Nehmen Sie eigenen Code nach Bedarf in die Accessoren auf. Wenn Threadsicherheit wichtig ist, müssen Sie eigene Sperren für Ihren Code vorsehen.
 
 C#-Benutzer: Wenn Sie benutzerdefinierte Ereignisaccessoren im UWP-Ereignismuster schreiben, stellt der Compiler nicht die üblichen syntaktischen Verknüpfungen bereit. Es werden Fehler generiert, wenn Sie den Namen des Ereignisses im Code verwenden.
 
-Visual Basic Benutzer: in .net ist ein Ereignis nur ein Multicast Delegat, der alle registrierten Ereignishandler darstellt. Das Auslösen des Ereignisses bedeutet nur, dass der Delegat aufgerufen wird. Visual Basic-Syntax blendet im Allgemeinen die Interaktionen mit dem Delegaten aus, und der Compiler kopiert den Delegaten, bevor er aufgerufen wird, wie im Hinweis zu Threadsicherheit beschrieben. Wenn Sie ein benutzerdefiniertes Ereignis in einer Windows-Runtime Komponente erstellen, müssen Sie den Delegaten direkt behandeln. Dies bedeutet auch, dass Sie beispielsweise mit der [MulticastDelegate.GetInvocationList](https://docs.microsoft.com/dotnet/api/system.multicastdelegate.getinvocationlist#System_MulticastDelegate_GetInvocationList)-Methode ein Array mit einem separaten Delegaten für jeden Ereignishandler abrufen können, wenn Sie die Handler einzeln aufrufen möchten.
+Visual Basic Benutzer: in .net ist ein Ereignis nur ein Multicast Delegat, der alle registrierten Ereignishandler darstellt. Das Auslösen des Ereignisses bedeutet nur, dass der Delegat aufgerufen wird. Visual Basic-Syntax blendet im Allgemeinen die Interaktionen mit dem Delegaten aus, und der Compiler kopiert den Delegaten, bevor er aufgerufen wird, wie im Hinweis zu Threadsicherheit beschrieben. Wenn Sie ein benutzerdefiniertes Ereignis in einer Windows-Runtime Komponente erstellen, müssen Sie den Delegaten direkt behandeln. Dies bedeutet auch, dass Sie beispielsweise mit der [MulticastDelegate.GetInvocationList](/dotnet/api/system.multicastdelegate.getinvocationlist#System_MulticastDelegate_GetInvocationList)-Methode ein Array mit einem separaten Delegaten für jeden Ereignishandler abrufen können, wenn Sie die Handler einzeln aufrufen möchten.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Ereignisse (Visual Basic)](https://docs.microsoft.com/dotnet/articles/visual-basic/programming-guide/language-features/events/index)
-* [Ereignisse (C# Programmier Handbuch)](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/events/index)
-* [Übersicht über .net für UWP-apps](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
-* [.Net für UWP-apps](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
+* [Ereignisse (Visual Basic)](/dotnet/articles/visual-basic/programming-guide/language-features/events/index)
+* [Ereignisse (C#-Programmierhandbuch)](/dotnet/articles/csharp/programming-guide/events/index)
+* [Übersicht über .net für UWP-apps](/previous-versions/windows/apps/br230302(v=vs.140))
+* [.NET für UWP-Apps](/dotnet/api/index?view=dotnet-uwp-10.0)
 * [Exemplarische Vorgehensweise zum Erstellen einer Komponente für Windows-Runtime in C# oder Visual Basic und Aufrufen der Komponente über JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

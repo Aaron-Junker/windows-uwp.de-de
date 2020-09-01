@@ -4,12 +4,12 @@ description: In diesem Thema wird erläutert, wie benannte Objekte zwischen univ
 ms.date: 04/06/2020
 ms.topic: article
 keywords: Windows 10, UWP
-ms.openlocfilehash: 95bbecd85b1dfa6f6e12766c082f3338de549677
-ms.sourcegitcommit: 2d375e1c34473158134475af401532cc55fc50f4
+ms.openlocfilehash: 38d08e71c44945a7b22f124d15507c7889f8589d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888572"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175614"
 ---
 # <a name="sharing-named-objects"></a>Freigeben von benannten Objekten
 
@@ -17,13 +17,13 @@ In diesem Thema wird erläutert, wie benannte Objekte zwischen universelle Windo
 
 ## <a name="named-objects-in-packaged-applications"></a>Benannte Objekte in Paketanwendungen
 
-[Benannte Objekte](/windows/win32/sync/object-names) bieten eine einfache Möglichkeit für Prozesse, Objekt Handles gemeinsam zu nutzen. Nachdem ein Prozess ein benanntes Objekt erstellt hat, können andere Prozesse den Namen verwenden, um die entsprechende Funktion aufzurufen, um ein Handle für das Objekt zu öffnen. Benannte Objekte werden häufig für die [Thread Synchronisierung](/windows/win32/sync/interprocess-synchronization) und [prozessübergreifende Kommunikation](/windows/uwp/communication/interprocess-communication)verwendet.
+[Benannte Objekte](/windows/win32/sync/object-names) bieten eine einfache Möglichkeit für Prozesse, Objekt Handles gemeinsam zu nutzen. Nachdem ein Prozess ein benanntes Objekt erstellt hat, können andere Prozesse den Namen verwenden, um die entsprechende Funktion aufzurufen, um ein Handle für das Objekt zu öffnen. Benannte Objekte werden häufig für die [Thread Synchronisierung](/windows/win32/sync/interprocess-synchronization) und [prozessübergreifende Kommunikation](./interprocess-communication.md)verwendet.
 
 Standardmäßig können Paketanwendungen nur auf benannte Objekte zugreifen, die Sie erstellt haben. Um benannte Objekte mit App-Paketen gemeinsam zu nutzen, müssen beim Erstellen von Objekten Berechtigungen festgelegt werden, und Namen müssen qualifiziert werden, wenn Objekte geöffnet werden.
 
 ## <a name="creating-named-objects"></a>Erstellen benannter Objekte
 
-Benannte Objekte werden mit einer entsprechenden `Create`-API erstellt:
+Benannte Objekte werden mit einer entsprechenden `Create` API erstellt:
 
 * [CreateEvent](/windows/win32/api/synchapi/nf-synchapi-createeventexw)
 * [CreateFileMapping](/windows/win32/api/memoryapi/nf-memoryapi-createfilemappingw)
@@ -36,28 +36,28 @@ Alle diese APIs verwenden einen `LPSECURITY_ATTRIBUTES` Parameter, der es dem Au
 Sicherheits-IDs (SIDs) stellen Identitäten in ACLs dar. Jede gepackte Anwendung hat eine eigene sid, die auf dem zugehörigen Paket Familiennamen basiert. Sie können die sid für eine gepackte Anwendung generieren, indem Sie den Paket Familiennamen an [deriveappcontainersidfromappcontainername](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername)übergeben.
 
 > [!NOTE]
-> Der Paket Familienname befindet sich während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio, über das [Partner Center](/windows/uwp/publish/view-app-identity-details) für Anwendungen, die über das Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
+> Der Paket Familienname befindet sich während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio, über das [Partner Center](../publish/view-app-identity-details.md) für Anwendungen, die über das Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
 
 [Dieses Beispiel](/windows/win32/api/securityappcontainer/nf-securityappcontainer-getappcontainernamedobjectpath#examples) veranschaulicht das grundlegende Muster, das für die ACL eines benannten Objekts erforderlich ist. Um benannte Objekte für gepackte Anwendungen freizugeben, erstellen Sie eine [EXPLICIT_ACCESS](/windows/win32/api/accctrl/ns-accctrl-explicit_access_w) Struktur für jede Anwendung:
 
 * `grfAccessMode = GRANT_ACCESS`
-* `grfAccessPermissions =` geeigneter Berechtigungen basierend auf dem Objekt und der vorgesehenen Verwendung
+* `grfAccessPermissions =` entsprechende Berechtigungen basierend auf dem Objekt und der vorgesehenen Verwendung
     * [Generische Zugriffsrechte](/windows/win32/secauthz/generic-access-rights)
     * [Sicherheits-und Zugriffsrechte für das Synchronisierungs Objekt](/windows/win32/sync/synchronization-object-security-and-access-rights)
     * [Sicherheit und Zugriffsrechte für die Datei Zuordnung](/windows/win32/memory/file-mapping-security-and-access-rights)
 * `grfInheritance = NO_INHERITANCE`
 * `Trustee.TrusteeForm = TRUSTEE_IS_SID`
 * `Trustee.TrusteeType = TRUSTEE_IS_USER`
-* `Trustee.ptstrName =` der von [deriveappcontainersidfromappcontainername](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername) abgerufenen sid
+* `Trustee.ptstrName =`die von [deriveappcontainersidfromappcontainername](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername) abgerufene sid.
 
-Indem Sie den `LPSECURITY_ATTRIBUTES`-Parameter in `Create` aufrufen mit `EXPLICIT_ACCESS` Regeln für gepackte Anwendungen auffüllen, können Sie diesen Anwendungen den Zugriff gewähren, um das benannte Objekt zu öffnen.
+Durch Auffüllen des- `LPSECURITY_ATTRIBUTES` Parameters in `Create` Aufrufen mit Regeln für App-Pakete `EXPLICIT_ACCESS` können Sie Zugriff auf diese Anwendungen gewähren, um das benannte Objekt zu öffnen.
 
 > [!NOTE]
 > Win32-Anwendungen können auf alle benannten Objekte zugreifen, die von Paketanwendungen erstellt werden, sofern Sie die Objektnamen beim [Öffnen](#opening-named-objects)qualifizieren. Ihnen muss kein Zugriff gewährt werden.
 
 ## <a name="opening-named-objects"></a>Öffnen von benannten Objekten
 
-Benannte Objekte werden geöffnet, indem ein Name an eine entsprechende `Open`-API übergeben wird:
+Benannte Objekte werden geöffnet, indem ein Name an eine entsprechende `Open` API übergeben wird:
 
 * [OpenEvent](/windows/win32/api/synchapi/nf-synchapi-openeventw)
 * [Fehler bei OpenFileMapping](/windows/win32/api/memoryapi/nf-memoryapi-openfilemappingw)
@@ -70,16 +70,16 @@ Benannte Objekte, die von einer verpackten Anwendung erstellt werden, werden inn
 [Getappcontainernamedobjectpath](/windows/win32/api/securityappcontainer/nf-securityappcontainer-getappcontainernamedobjectpath) gibt den benannten Objekt Pfad für eine Paket Anwendung basierend auf der SID zurück. Sie können die sid für eine gepackte Anwendung generieren, indem Sie den Paket Familiennamen an [deriveappcontainersidfromappcontainername](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername)übergeben.
 
 > [!NOTE]
-> Der Paket Familienname befindet sich während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio, über das [Partner Center](/windows/uwp/publish/view-app-identity-details) für Anwendungen, die über das Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
+> Der Paket Familienname befindet sich während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio, über das [Partner Center](../publish/view-app-identity-details.md) für Anwendungen, die über das Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
 
-Verwenden Sie das Format `<PATH>\<NAME>`, wenn benannte Objekte geöffnet werden, die von einer verpackten Anwendung erstellt werden:
+Verwenden Sie das folgende Format, wenn benannte Objekte geöffnet werden, die von einer Paket Anwendung erstellt wurden `<PATH>\<NAME>` :
 
-* Ersetzen Sie `<PATH>` durch den benannten Objekt Pfad der Anwendung.
-* Ersetzen Sie `<NAME>` durch den Objektnamen.
+* Ersetzen Sie dies `<PATH>` durch den benannten Objekt Pfad der Anwendung.
+* Ersetzen Sie dies `<NAME>` durch den Objektnamen.
 
 > [!NOTE]
 > Das vorab Beheben von Objektnamen mit `<PATH>` ist nur erforderlich, wenn das Objekt von einer gepackten Anwendung erstellt wurde. Benannte Objekte, die von Win32-Anwendungen erstellt wurden, müssen nicht qualifiziert werden, obwohl der Zugriff immer noch gewährt werden muss, wenn die Objekte [erstellt](#creating-named-objects)werden.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Benannte Objekte in Paketanwendungen sind standardmäßig isoliert, um die Sicherheit zu gewährleisten und die Unterstützung für Anwendungslebenszyklus-Ereignisse wie anhalten und beenden sicherzustellen. Durch die gemeinsame Nutzung von benannten Objekten über mehrere Anwendungen hinweg werden strenge Bindungs-und Versions Einschränkungen eingeführt Aus diesen Gründen wird empfohlen, nur benannte Objekte zwischen Anwendungen desselben Herausgebers freizugeben.

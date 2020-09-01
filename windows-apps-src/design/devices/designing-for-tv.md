@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 491b67322c8b328c21446d50951daad61f15ad3d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234596"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175574"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Entwerfen für Xbox und Fernsehgeräte
 
@@ -170,7 +170,7 @@ Sie können für den Hintergrund eine statische Farbe, eine Designfarbe oder ein
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>Image
+### <a name="image"></a>Bild
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -185,7 +185,7 @@ Dies ist nicht optimal, da dies der App einen „Schachteleffekt“ verleiht. Te
 
 ### <a name="drawing-ui-to-the-edge"></a>Zeichnen der Benutzeroberfläche bis zum Rand
 
-Wir empfehlen Ihnen, bestimmte Benutzeroberflächenelemente zu verwenden, um die Benutzeroberfläche bis an die Ränder des Bildschirms zu erweitern und Benutzern eine immersivere Umgebung zu bieten. Dazu gehören [ScrollViewers](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [Navigationsbereiche](../controls-and-patterns/navigationview.md) und [CommandBars](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
+Wir empfehlen Ihnen, bestimmte Benutzeroberflächenelemente zu verwenden, um die Benutzeroberfläche bis an die Ränder des Bildschirms zu erweitern und Benutzern eine immersivere Umgebung zu bieten. Dazu gehören [ScrollViewers](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer), [Navigationsbereiche](../controls-and-patterns/navigationview.md) und [CommandBars](/uwp/api/Windows.UI.Xaml.Controls.CommandBar).
 
 Es ist jedoch auch wichtig, dass interaktive Elemente und Texte stets die Bildschirmränder vermeiden, um sicherzustellen, dass sie auf bestimmten Fernsehgeräten nicht abgeschnitten werden. Wir empfehlen Ihnen, nur nicht essentielle visuelle Elemente bis zu 5 % von den Rändern des Bildschirms entfernt zu zeichnen. Wie in [Anpassen von Benutzeroberflächenelementen](#ui-element-sizing) bereits erwähnt, nutzt eine UWP-App, die den Xbox One-Standardskalierungsfaktor von 200 % verwendet, einen Bereich von 960 x 540 epx. Sie sollten es daher vermeiden, in der Benutzeroberfläche Ihrer App essentielle Benutzerflächenelemente in den folgenden Bereichen zu platzieren:
 
@@ -205,7 +205,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-Mit dieser Codezeile wird das App-Fenster bis zu den Rändern des Bildschirms erweitert. Daher müssen Sie alle interaktiven und essentiellen Benutzeroberflächenelemente in den bereits beschriebenen fernsehsicheren Bereich verschieben. Kurzlebige Benutzeroberflächenelemente wie Kontextmenüs und geöffnete [Kombinationsfelder](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) bleiben automatisch im fernsehsicheren Bereich.
+Mit dieser Codezeile wird das App-Fenster bis zu den Rändern des Bildschirms erweitert. Daher müssen Sie alle interaktiven und essentiellen Benutzeroberflächenelemente in den bereits beschriebenen fernsehsicheren Bereich verschieben. Kurzlebige Benutzeroberflächenelemente wie Kontextmenüs und geöffnete [Kombinationsfelder](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) bleiben automatisch im fernsehsicheren Bereich.
 
 ![Kernfenstergrenzen](images/designing-for-tv/core-window-bounds.png)
 
@@ -213,7 +213,7 @@ Mit dieser Codezeile wird das App-Fenster bis zu den Rändern des Bildschirms er
 
 Navigationsbereiche werden in der Regel nahe am Rand des Bildschirms dargestellt. Daher sollte sich der Hintergrund in den nicht fernsehsicheren Bereich erstrecken, um hässliche Lücken zu vermeiden. Hierzu können Sie einfach die Hintergrundfarbe des Navigationsbereichs in der Hintergrundfarbe der App ändern.
 
-Mithilfe der oben beschriebenen Kernfenstergrenzen können Sie Ihr UI an den Rändern des Bildschirms darstellen. Sie sollten dann jedoch positive Ränder für die [SplitView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)-Inhalte nutzen, um diese innerhalb des fernsehsicheren Bereichs zu halten.
+Mithilfe der oben beschriebenen Kernfenstergrenzen können Sie Ihr UI an den Rändern des Bildschirms darstellen. Sie sollten dann jedoch positive Ränder für die [SplitView](/uwp/api/Windows.UI.Xaml.Controls.SplitView)-Inhalte nutzen, um diese innerhalb des fernsehsicheren Bereichs zu halten.
 
 ![Navigationsbereich bis an die Ränder des Bildschirms erweitert](images/designing-for-tv/tv-safe-areas-2.png)
 
@@ -239,7 +239,7 @@ Mit dem folgenden Codeausschnitt wird dieser Effekt erzielt:
 </SplitView>
 ```
 
-[CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) ist ein weiteres Beispiel für einen Bereich, der häufig in der Nähe eines oder mehrerer Ränder der App positioniert ist. Daher sollte dessen Hintergrund auf Fernsehbildschirmen bis an die Ränder des Bildschirms erweitert werden. In der Regel gibt es auf der rechten Seite die Schaltfläche **Mehr** (dargestellt durch „...“), die weiter im fernsehsicheren Bereich angezeigt werden sollte. Im Folgenden finden Sie einige unterschiedliche Strategien, um die gewünschten Interaktionen und visuellen Effekte zu erzielen.
+[CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) ist ein weiteres Beispiel für einen Bereich, der häufig in der Nähe eines oder mehrerer Ränder der App positioniert ist. Daher sollte dessen Hintergrund auf Fernsehbildschirmen bis an die Ränder des Bildschirms erweitert werden. In der Regel gibt es auf der rechten Seite die Schaltfläche **Mehr** (dargestellt durch „...“), die weiter im fernsehsicheren Bereich angezeigt werden sollte. Im Folgenden finden Sie einige unterschiedliche Strategien, um die gewünschten Interaktionen und visuellen Effekte zu erzielen.
 
 **Option 1**: Ändern der `CommandBar`-Hintergrundfarbe in transparent oder in die Farbe des Seitenhintergrunds:
 
@@ -280,7 +280,7 @@ Wenn eine Liste oder ein Raster wie hier beschrieben erweitert wird, ist es wich
 
 ![Bildlauffokus sollte weiter im fernsehsicheren Bereich angezeigt werden](images/designing-for-tv/scrolling-grid-focus.png)
 
-Die UWP verfügt über Funktionen, die dafür sorgen, dass die Fokusanzeige weiter innerhalb der [VisibleBounds](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds) angezeigt wird. Sie müssen jedoch Abstand hinzufügen, um sicherzustellen, dass für die Listen-/Rasterelemente ein Bildlauf in den Anzeigebereich des sicheren Bereichs durchgeführt werden kann. Genauer gesagt, müssen Sie für [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) oder [GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) deren [ItemsPresenter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter) einen positiven Rand hinzufügen, wie im folgenden Codeausschnitt gezeigt:
+Die UWP verfügt über Funktionen, die dafür sorgen, dass die Fokusanzeige weiter innerhalb der [VisibleBounds](/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds) angezeigt wird. Sie müssen jedoch Abstand hinzufügen, um sicherzustellen, dass für die Listen-/Rasterelemente ein Bildlauf in den Anzeigebereich des sicheren Bereichs durchgeführt werden kann. Genauer gesagt, müssen Sie für [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) oder [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView) deren [ItemsPresenter](/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter) einen positiven Rand hinzufügen, wie im folgenden Codeausschnitt gezeigt:
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle"
@@ -331,9 +331,9 @@ Sie platzieren den zuvor angezeigten Codeausschnitt entweder in die Seitenressou
 ```
 
 > [!NOTE]
-> Dieser Codeausschnitt gilt speziell für `ListView`-Elemente. Legen Sie bei einem `GridView`-Stil das [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)-Attribut für [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) und [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) auf `GridView` fest.
+> Dieser Codeausschnitt gilt speziell für `ListView`-Elemente. Legen Sie bei einem `GridView`-Stil das [TargetType](/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)-Attribut für [ControlTemplate](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) und [Style](/uwp/api/Windows.UI.Xaml.Style) auf `GridView` fest.
 
-Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können Sie in [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit die **ListView**- / **GridView** Sie vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
+Wenn Ihre Anwendung auf Version 1803 oder höher ausgerichtet ist, können Sie das [UIElement. bringindeviewangeforderten-Ereignis](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)verwenden, um eine präzisere Kontrolle darüber zu erhalten, wie Elemente in die Ansicht aufgenommen werden. Sie können Sie in [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ablegen, damit die **ListView**- / **GridView** Sie vor dem internen **ScrollViewer** abfängt, wie in den folgenden Code Ausschnitten:
 
 ```xaml
 <GridView x:Name="gridView">
@@ -403,7 +403,7 @@ Solange Ihre App diese Akzentfarben über Pinsel oder Farbressourcen aufruft, wi
 
 Beachten Sie auch, dass der Benutzerfarbensatz auf Xbox One nicht identisch mit dem Benutzerfarbensatz auf PCs, Smartphones und anderen Geräten ist.
 
-Solange Ihre APP eine Pinsel Ressource wie z. b. **systemcontrolforegroundaccentbrush**oder eine Color-Ressource (**systemaccentcolor**) verwendet oder stattdessen Akzentfarben direkt über die [uicolortype. Akzent *](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) -API aufruft, werden diese Farben durch die auf Xbox One verfügbaren Akzentfarben ersetzt. Pinsel Farben mit hohem Kontrast werden ebenfalls auf der gleichen Weise wie auf einem PC und Telefon vom System abgerufen.
+Solange Ihre APP eine Pinsel Ressource wie z. b. **systemcontrolforegroundaccentbrush**oder eine Color-Ressource (**systemaccentcolor**) verwendet oder stattdessen Akzentfarben direkt über die [uicolortype. Akzent *](/uwp/api/Windows.UI.ViewManagement.UIColorType) -API aufruft, werden diese Farben durch die auf Xbox One verfügbaren Akzentfarben ersetzt. Pinsel Farben mit hohem Kontrast werden ebenfalls auf der gleichen Weise wie auf einem PC und Telefon vom System abgerufen.
 
 Weitere Informationen zu Akzentfarben im Allgemeinen finden Sie unter [Akzentfarbe](../style/color.md#accent-color).
 
@@ -420,9 +420,9 @@ Die RGB-Werte einer Farbe stellen die Intensität für Rot, Grün und Blau dar. 
 In der Vergangenheit mussten apps auf der Xbox Ihre Farben so anpassen, dass Sie in diesen "TV-Safe"-Farbbereich fallen. ab dem Fall Creators Update skaliert Xbox One den vollständigen Inhalts Bereich jedoch automatisch in den Bereich TV-sicher. Dies bedeutet, dass sich die meisten App-Entwickler nicht mehr um TV-sichere Farben kümmern müssen.
 
 > [!IMPORTANT]
-> Bei Video Inhalten, die sich bereits im TV-sicheren Farbbereich befinden, wird dieser Farb Skalierungs Effekt bei der Wiedergabe mit [Media Foundation](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)nicht angewendet.
+> Bei Video Inhalten, die sich bereits im TV-sicheren Farbbereich befinden, wird dieser Farb Skalierungs Effekt bei der Wiedergabe mit [Media Foundation](/windows/desktop/medfound/microsoft-media-foundation-sdk)nicht angewendet.
 
-Wenn Sie eine APP unter Verwendung von DirectX 11 oder DirectX 12 entwickeln und eine eigene SwapChain zum Rendering der Benutzeroberfläche oder des Videos erstellen, können Sie den von Ihnen verwendeten Farbraum angeben, indem Sie [IDXGISwapChain3:: SetColorSpace1](https://docs.microsoft.com/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1)aufrufen. Dadurch wird dem System mitgeteilt, ob Farben skaliert werden müssen.
+Wenn Sie eine APP unter Verwendung von DirectX 11 oder DirectX 12 entwickeln und eine eigene SwapChain zum Rendering der Benutzeroberfläche oder des Videos erstellen, können Sie den von Ihnen verwendeten Farbraum angeben, indem Sie [IDXGISwapChain3:: SetColorSpace1](/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1)aufrufen. Dadurch wird dem System mitgeteilt, ob Farben skaliert werden müssen.
 
 ## <a name="guidelines-for-ui-controls"></a>Richtlinien für Benutzeroberflächensteuerelemente
 
@@ -430,13 +430,13 @@ Es gibt mehrere Benutzeroberflächen-Steuerelemente, die auf mehreren Geräten g
 
 ### <a name="pivot-control"></a>Pivotsteuerelement
 
-Ein [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) ermöglicht über verschiedene Header oder Registerkarten eine schnelle Navigation für Ansichten in einer App. Das Steuerelement unterstreicht jeweils den Header, der den Fokus hat. So wird bei der Nutzung von Gamepads/Remotesteuerungen deutlicher, welcher Header zurzeit ausgewählt ist.
+Ein [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) ermöglicht über verschiedene Header oder Registerkarten eine schnelle Navigation für Ansichten in einer App. Das Steuerelement unterstreicht jeweils den Header, der den Fokus hat. So wird bei der Nutzung von Gamepads/Remotesteuerungen deutlicher, welcher Header zurzeit ausgewählt ist.
 
 ![Pivotunterstreichung](images/designing-for-tv/pivot-underline.png)
 
-Sie können die [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty)-Eigenschaft auf `true` festlegen, damit Pivots stets die gleiche Position haben und die Kopfzeile des ausgewählten Pivots nicht stets an die erste Position verschoben wird. Dies ist besser für große Geräte mit großen Bildschirmanzeigen wie Fernsehgeräte geeignet, da Kopfzeilenumbrüche Benutzer stark ablenken können. Wenn nicht alle Pivotkopfzeilen gleichzeitig auf den Bildschirm passen, wird eine Bildlaufleiste angezeigt, damit Kunden die restlichen Kopfzeilen sehen. Sie sollten jedoch sicherstellen, dass alle Kopfzeilen auf den Bildschirm passen, um eine optimale Erfahrung bereitzustellen. Weitere Informationen finden Sie unter [Registerkarten und Pivots](/windows/uwp/design/controls-and-patterns/pivot).
+Sie können die [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty)-Eigenschaft auf `true` festlegen, damit Pivots stets die gleiche Position haben und die Kopfzeile des ausgewählten Pivots nicht stets an die erste Position verschoben wird. Dies ist besser für große Geräte mit großen Bildschirmanzeigen wie Fernsehgeräte geeignet, da Kopfzeilenumbrüche Benutzer stark ablenken können. Wenn nicht alle Pivotkopfzeilen gleichzeitig auf den Bildschirm passen, wird eine Bildlaufleiste angezeigt, damit Kunden die restlichen Kopfzeilen sehen. Sie sollten jedoch sicherstellen, dass alle Kopfzeilen auf den Bildschirm passen, um eine optimale Erfahrung bereitzustellen. Weitere Informationen finden Sie unter [Registerkarten und Pivots](../controls-and-patterns/pivot.md).
 
-### <a name="navigation-pane"></a>Navigationsbereich<a name="navigation-pane" />
+### <a name="navigation-pane"></a>Navigationsbereich <a name="navigation-pane" />
 
 Ein Navigationsbereich (auch *Hamburger-Menü* genannt) ist ein Navigationssteuerelement, das häufig in UWP-Apps verwendet wird. In der Regel handelt es sich um einen Bereich mit mehreren Optionen im Stil eine Liste, mit denen die Benutzer zu anderen Seiten wechseln können. Im Allgemeinen ist dieser Bereich zu Beginn reduziert, um Platz zu sparen. Der Benutzer kann ihn durch Klicken auf eine Schaltfläche öffnen.
 
@@ -444,7 +444,7 @@ Während Nav-Bereiche leicht über die Maus- und Touch-Bedienung genutzt werden 
 
 ### <a name="commandbar-labels"></a>CommandBar-Beschriftungen
 
-Es empfiehlt sich, die Beschriftungen rechts neben den Symbolen auf einer [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) zu platzieren. So bleibt dessen Höhe minimiert und konsistent. Sie erreichen dies, indem Sie die Eigenschaft [CommandBar.DefaultLabelPosition](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) auf `CommandBarDefaultLabelPosition.Right` festlegen.
+Es empfiehlt sich, die Beschriftungen rechts neben den Symbolen auf einer [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) zu platzieren. So bleibt dessen Höhe minimiert und konsistent. Sie erreichen dies, indem Sie die Eigenschaft [CommandBar.DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty) auf `CommandBarDefaultLabelPosition.Right` festlegen.
 
 ![CommandBar Beschriftungen rechts von Symbolen](images/designing-for-tv/commandbar.png)
 
@@ -452,7 +452,7 @@ Durch das Festlegen dieser Eigenschaft werden die Beschriftungen immer angezeigt
 
 ### <a name="tooltip"></a>QuickInfo
 
-Das Steuerelement [QuickInfo](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip) wurde eingeführt, um zusätzliche Informationen in der Benutzeroberfläche anzeigen zu können, wenn der Benutzer mit der Maus auf ein Element zeigt oder mit dem Finger auf ein Element tippt und den Finger darauf hält. Für Gamepad und Remote wird `Tooltip` kurz nachdem das Element den Fokus erhält angezeigt, bleibt für einen kurzen Zeitraum auf dem Bildschirm und verschwindet dann. Dieses Verhalten könnte ablenkend wirken, wenn zu viele `Tooltip`-Elemente verwendet werden. Versuchen Sie, `Tooltip`-Elemente bei Entwürfen für Fernsehgeräte zu vermeiden.
+Das Steuerelement [QuickInfo](/uwp/api/Windows.UI.Xaml.Controls.ToolTip) wurde eingeführt, um zusätzliche Informationen in der Benutzeroberfläche anzeigen zu können, wenn der Benutzer mit der Maus auf ein Element zeigt oder mit dem Finger auf ein Element tippt und den Finger darauf hält. Für Gamepad und Remote wird `Tooltip` kurz nachdem das Element den Fokus erhält angezeigt, bleibt für einen kurzen Zeitraum auf dem Bildschirm und verschwindet dann. Dieses Verhalten könnte ablenkend wirken, wenn zu viele `Tooltip`-Elemente verwendet werden. Versuchen Sie, `Tooltip`-Elemente bei Entwürfen für Fernsehgeräte zu vermeiden.
 
 ### <a name="button-styles"></a>Schaltflächenstile
 
@@ -468,7 +468,7 @@ Weitere Informationen zur geschachtelten UI finden Sie unter [Geschachtelte UI b
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-Das [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig*. Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der [TransportControls](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Eigenschaft von `MediaPlayerElement` für das `MediaTransportControls`-Element Folgendes fest: `IsCompact="False"`.
+Das [MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls)-Element ermöglicht Benutzern die Interaktion mit ihren Medien. Hierzu stellt es eine standardmäßige Wiedergabeumgebung bereit, in der Benutzer unter anderem die Wiedergabe starten und anhalten sowie Untertitel aktivieren können. Dieses Steuerelement ist eine Eigenschaft von [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) und unterstützt zwei Layoutoptionen: *einzeilig* und *zweizeilig*. Beim einzeiligen Layout befinden sich der Schieberegler und die Wiedergabeschaltflächen alle in einer Zeile, und die Schaltfläche für Wiedergabe/Pause wird links neben dem Schieberegler angezeigt. Beim zweizeiligen Layout befindet sich der Schieberegler in einer eigenen Zeile, und die Wiedergabeschaltflächen werden in einer Zeile darunter angezeigt. Bei Designs für die 10-Fuß-Erfahrung empfiehlt sich die Verwendung des zweizeiligen Layouts, da es eine bessere Gamepadnavigation ermöglicht. Wenn Sie das zweizeilige Layout aktivieren möchten, legen Sie in der [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)-Eigenschaft von `MediaPlayerElement` für das `MediaTransportControls`-Element Folgendes fest: `IsCompact="False"`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -482,7 +482,7 @@ Das [MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.
 
 Weitere Informationen zum Hinzufügen von Medien zu Ihrer App finden Sie unter [Medienwiedergabe](../controls-and-patterns/media-playback.md).
 
-> ![HINWEIS:] `MediaPlayerElement` steht erst ab der Windows 10-Version 1607 zur Verfügung. Bei Apps für niedrigere Windows 10-Versionen muss stattdessen [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Die hier angegebenen Empfehlungen gelten auch für `MediaElement`, und der Zugriff auf die `TransportControls`-Eigenschaft erfolgt auf die gleiche Weise.
+> ![HINWEIS:] `MediaPlayerElement` steht erst ab der Windows 10-Version 1607 zur Verfügung. Bei Apps für niedrigere Windows 10-Versionen muss stattdessen [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) verwendet werden. Die hier angegebenen Empfehlungen gelten auch für `MediaElement`, und der Zugriff auf die `TransportControls`-Eigenschaft erfolgt auf die gleiche Weise.
 
 ### <a name="search-experience"></a>Suchoberfläche
 

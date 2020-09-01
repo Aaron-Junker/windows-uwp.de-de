@@ -6,17 +6,17 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b5678ad1a0666e6f008a2ec69ba63c35441edf
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b44e4ba86ab96474d4770c32024b8edc5641c396
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493515"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174284"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Auslösen von Ereignissen in Komponenten für Windows-Runtime
 
 > [!NOTE]
-> Weitere Informationen zum Erstellen von Ereignissen in einer [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) -Komponente Windows-Runtime finden Sie unter [Verfassen von Ereignissen in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
+> Weitere Informationen zum Erstellen von Ereignissen in einer [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) -Komponente Windows-Runtime finden Sie unter [Verfassen von Ereignissen in C++/WinRT](../cpp-and-winrt-apis/author-events.md).
 
 Wenn die Windows-Runtime Komponente ein Ereignis eines benutzerdefinierten Delegattyps in einem Hintergrund Thread (Arbeits Thread) auslöst und JavaScript in der Lage sein soll, das Ereignis zu empfangen, können Sie diese implementieren und/oder auf eine beliebige Weise auslösen.
 
@@ -424,6 +424,6 @@ Wenn Sie die Projektmappe jetzt ausführen, erhalten Sie eine Fehlermeldung, die
 
 Das Projekt sollte nun erstellt werden. Führen Sie das Projekt aus und überprüfen Sie, ob Sie einen Toast erstellen können.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Komponenten für Windows-Runtime mit C++/CX](creating-windows-runtime-components-in-cpp.md)

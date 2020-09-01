@@ -1,17 +1,17 @@
 ---
-title: Optimieren der Eingabelatenz für UWP-DirectX-Spiele
+title: Optimieren der Eingabe Latenz für UWP DirectX-Spiele
 description: Die Eingabelatenz kann das Spielerlebnis erheblich beeinträchtigen. Spiele wirken professioneller, wenn in diesem Bereich eine Optimierung vorgenommen wird.
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Directx, Eingabelatenz
+keywords: Windows 10, UWP, Games, DirectX, Eingabe Latenz
 ms.localizationpriority: medium
-ms.openlocfilehash: a74e2e24810dee058aa166800091af91d55cdef4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f0f95e7bdc523751e0d9eea5ffdd1ef5b889ddfc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368448"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175264"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>Optimieren der Eingabelatenz für UWP-DirectX-Spiele (Universelle Windows-Plattform)
 
@@ -60,12 +60,12 @@ Wenn die Inhalte eines DirectX-Spiels gerendert und bereit für die Darstellung 
 
 Die Implementierung der Spielschleife wird unten für die einzelnen beschriebenen Fälle veranschaulicht, indem der Prozess eines einfachen Puzzlespiels durchlaufen wird. Die Entscheidungspunkte, Vorteile und Nachteile, die Teil jeder Implementierung sind, dienen Ihnen als Unterstützung beim Optimieren Ihrer Apps in Bezug auf eine niedrige Eingabelatenz und eine hohe Energieeffizienz.
 
-## <a name="scenario-1-render-on-demand"></a>Szenario 1: Bei Bedarf zu rendern
+## <a name="scenario-1-render-on-demand"></a>Szenario 1: Rendern bei Bedarf
 
 
 Beim ersten Durchlauf des Puzzlespiels wird der Bildschirm nur aktualisiert, wenn ein Benutzer ein Puzzleteil verschiebt. Benutzer können ein Puzzleteil entweder an seinen Platz ziehen oder das Teil auswählen und dann auf die richtige Position tippen. Im letzteren Fall wird das Puzzleteil ohne Animation oder Effekte eingefügt.
 
-Der Code umfasst eine Spielschleife mit einem einzelnen Thread in der [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Methode, für die das **CoreProcessEventsOption::ProcessOneAndAllPending**-Element verwendet wird. Mit dieser Option werden alle derzeit verfügbaren Ereignisse in der Warteschlange verteilt. Falls keine Ereignisse ausstehen, wartet die Spielschleife, bis ein Ereignis vorhanden ist.
+Der Code umfasst eine Spielschleife mit einem einzelnen Thread in der [**IFrameworkView::Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Methode, für die das **CoreProcessEventsOption::ProcessOneAndAllPending**-Element verwendet wird. Mit dieser Option werden alle derzeit verfügbaren Ereignisse in der Warteschlange verteilt. Falls keine Ereignisse ausstehen, wartet die Spielschleife, bis ein Ereignis vorhanden ist.
 
 ``` syntax
 void App::Run()
@@ -91,12 +91,12 @@ void App::Run()
 }
 ```
 
-## <a name="scenario-2-render-on-demand-with-transient-animations"></a>Szenario 2: Bei Bedarf mit vorübergehenden Animationen Rendern
+## <a name="scenario-2-render-on-demand-with-transient-animations"></a>Szenario 2: Rendern bei Bedarf mit kurzlebigen Animationen
 
 
 Beim zweiten Durchlauf wird das Spiel modifiziert. Wenn Benutzer ein Puzzleteil auswählen und dann auf die richtige Position für das Teil tippen, wird es auf dem Bildschirm per Animation an seine Zielposition verschoben.
 
-Wie im ersten Szenario verfügt der Code über eine Spielschleife mit einem einzelnen Thread, die mithilfe von **ProcessOneAndAllPending** die in der Warteschlange enthaltenen Eingabeereignisse verteilt. Der Unterschied besteht jetzt darin, dass die Schleife während der Animation zu **CoreProcessEventsOption::ProcessAllIfPresent**, damit nicht auf neue Eingabeereignisse gewartet wird. Wenn keine Ereignisse ausstehen, erfolgt die Rückgabe für [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) sofort, und die App kann den nächsten Frame der Animation darstellen. Nachdem die Animation abgeschlossen ist, wechselt die Schleife zurück zu **ProcessOneAndAllPending**, um die Bildschirmaktualisierungen zu begrenzen.
+Wie im ersten Szenario verfügt der Code über eine Spielschleife mit einem einzelnen Thread, die mithilfe von **ProcessOneAndAllPending** die in der Warteschlange enthaltenen Eingabeereignisse verteilt. Der Unterschied besteht jetzt darin, dass die Schleife während der Animation zu **CoreProcessEventsOption::ProcessAllIfPresent**, damit nicht auf neue Eingabeereignisse gewartet wird. Wenn keine Ereignisse ausstehen, erfolgt die Rückgabe für [**ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) sofort, und die App kann den nächsten Frame der Animation darstellen. Nachdem die Animation abgeschlossen ist, wechselt die Schleife zurück zu **ProcessOneAndAllPending**, um die Bildschirmaktualisierungen zu begrenzen.
 
 ``` syntax
 void App::Run()
@@ -139,7 +139,7 @@ void App::Run()
 
 Zur Unterstützung des Übergangs zwischen **ProcessOneAndAllPending** und **ProcessAllIfPresent** muss der Status von der App nachverfolgt werden, um ermitteln zu können, ob die Animation aktiv ist. In der Puzzle-App fügen Sie dazu eine neue Methode hinzu, die während der Spielschleife für die GameState-Klasse aufgerufen werden kann. Der Animationszweig der Spielschleife bewirkt die Aktualisierungen des Animationsstatus, indem die neue Update-Methode für GameState aufgerufen wird.
 
-## <a name="scenario-3-render-60-frames-per-second"></a>Szenario 3: Rendern von 60 Bildern pro Sekunde
+## <a name="scenario-3-render-60-frames-per-second"></a>Szenario 3: Rendern von 60 Frames pro Sekunde
 
 
 Beim dritten Durchlauf zeigt die App einen Zeitgeber an, um Benutzern mitzuteilen, wie lange sie bereits an der Lösung des Puzzles gearbeitet haben. Da die verstrichene Dauer bis auf Millisekunden genau angegeben wird, müssen 60 Frames pro Sekunde gerendert werden, um die Anzeige aktuell zu halten.
@@ -177,12 +177,12 @@ Dieser Ansatz ist die einfachste Möglichkeit, ein Spiel zu schreiben, da für d
 
 Die Einfachheit dieses Entwicklungsansatzes hat aber auch einen Nachteil. Beim Rendern mit 60 Frames pro Sekunde wird mehr Energie als beim Rendern bei Bedarf verbraucht. Am besten eignet sich **ProcessAllIfPresent**, wenn die Anzeige vom Spiel für jeden Frame geändert wird. Außerdem wird damit die Eingabelatenz um bis zu 16,7 ms erhöht, da die App die Spielschleife nun während des Synchronisierungsintervalls des Displays und nicht bei **ProcessEvents** blockiert. Unter Umständen werden einige Eingabeereignisse verworfen, da die Warteschlange nur einmal pro Frame (60 Hz) verarbeitet wird.
 
-## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>Szenario 4: Rendern von 60 Bildern pro Sekunde und die geringste Eingabe Latenz erzielen
+## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>Szenario 4: Rendern von 60 Frames pro Sekunde und Erzielen der geringstmöglichen Eingabelatenz
 
 
 Bei einigen Spielen kann es möglich sein, den Anstieg der Eingabelatenz aus Szenario 3 zu ignorieren oder auszugleichen. Wenn eine geringe Eingabelatenz für das Spielerlebnis und die Spielerrückmeldungen aber von entscheidender Bedeutung ist, müssen Spiele, die 60 Frames pro Sekunde rendern, die Eingabe in einem separaten Thread verarbeiten.
 
-Der vierte Durchlauf des Puzzlespiels baut auf Szenario 3 auf, indem die Eingabeverarbeitung und das Rendern der Grafiken aus der Spielschleife in separate Threads unterteilt wird. Mit der Nutzung separater Threads wird sichergestellt, dass die Eingabe durch die Grafikausgabe nicht verzögert werden kann. Der Code wird dadurch aber komplexer. In Szenario 4 ruft der Eingabethread [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) mit [**CoreProcessEventsOption::ProcessUntilQuit**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreProcessEventsOption) auf. Damit wird auf neue Ereignisse gewartet, und alle verfügbaren Ereignisse werden verteilt. Dieses Verhalten wird beibehalten, bis das Fenster geschlossen wird oder das Spiel [**CoreWindow::Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close) aufruft.
+Der vierte Durchlauf des Puzzlespiels baut auf Szenario 3 auf, indem die Eingabeverarbeitung und das Rendern der Grafiken aus der Spielschleife in separate Threads unterteilt wird. Mit der Nutzung separater Threads wird sichergestellt, dass die Eingabe durch die Grafikausgabe nicht verzögert werden kann. Der Code wird dadurch aber komplexer. In Szenario 4 ruft der Eingabethread [**ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) mit [**CoreProcessEventsOption::ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) auf. Damit wird auf neue Ereignisse gewartet, und alle verfügbaren Ereignisse werden verteilt. Dieses Verhalten wird beibehalten, bis das Fenster geschlossen wird oder das Spiel [**CoreWindow::Close**](/uwp/api/windows.ui.core.corewindow.close) aufruft.
 
 ``` syntax
 void App::Run()
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Die **DirectX 11 und XAML-App (Universelles Windows)** Vorlage in Microsoft Visual Studio 2015 teilt die spielschleife in mehreren Threads auf ähnliche Weise. Dabei wird das [**Windows::UI::Core::CoreIndependentInputSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreIndependentInputSource)-Objekt verwendet, um einen Thread für die Behandlung der Eingabe zu starten. Außerdem wird ein Renderthread erstellt, der unabhängig vom XAML-UI-Thread ist. Weitere Informationen zu diesen Vorlagen finden Sie unter [Erstellen eines UWP- und eines DirectX-Spieleprojekts aus einer Vorlage](user-interface.md).
+In der Vorlage **DirectX 11- und XAML-App (Universelle Windows-App)** in Microsoft Visual Studio 2015 wird die Spielschleife auf ähnliche Weise in mehrere Threads unterteilt. Dabei wird das [**Windows::UI::Core::CoreIndependentInputSource**](/uwp/api/Windows.UI.Core.CoreIndependentInputSource)-Objekt verwendet, um einen Thread für die Behandlung der Eingabe zu starten. Außerdem wird ein Renderthread erstellt, der unabhängig vom XAML-UI-Thread ist. Weitere Informationen zu diesen Vorlagen finden Sie unter [Erstellen eines UWP- und eines DirectX-Spieleprojekts aus einer Vorlage](user-interface.md).
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>Weitere Möglichkeiten zur Reduzierung der Eingabelatenz
 
@@ -242,13 +242,13 @@ Die **DirectX 11 und XAML-App (Universelles Windows)** Vorlage in Microsoft Visu
 
 DirectX-Spiele reagieren auf Benutzereingaben mit der Aktualisierung der Inhalte, die Benutzer auf dem Bildschirm sehen. Bei einem 60 Hz-Display wird der Bildschirm alle 16,7 ms (1 Sekunde/60 Frames) aktualisiert. In Abbildung 1 sind der ungefähre Lebenszyklus und die Reaktion auf ein Eingabeereignis relativ zum Aktualisierungssignal nach 16,7 ms (VBlank) für eine App dargestellt, die mit 60 Frames pro Sekunde gerendert wird:
 
-Abbildung 1
+Abbildung 1
 
 ![Abbildung 1: Eingabelatenz in DirectX ](images/input-latency1.png)
 
-In Windows 8.1, DXGI eingeführt, die **DXGI\_SWAP\_Kette\_FLAG\_FRAME\_LATENZ\_WAITABLE\_Objekt** Flag für den Austausch Kette, bei dem apps ganz einfach diese Latenzen verringert werden, ohne dass diese Heuristiken aus, um die Warteschlange vorhanden leer bleiben implementieren kann. Mit diesem Flag erstellte Swapchains werden als Swapchains mit Wartemöglichkeit bezeichnet. Abbildung 2 zeigt den ungefähren Lebenszyklus und die Reaktion auf ein Eingabeereignis bei Verwendung von Swapchains mit Wartemöglichkeit:
+In Windows 8.1 hat DXGI das Flag für die Auslagerungs-Flag für die Auslagerungs Kette der **DXGI-SwapChain für die Swapkette eingeführt, mit dem apps diese \_ \_ \_ \_ \_ \_ Wartezeit \_ ** problemlos reduzieren können, ohne dass eine Heuristik implementiert werden muss, damit die vorhandene Warteschlange nicht mehr Mit diesem Flag erstellte Swapchains werden als Swapchains mit Wartemöglichkeit bezeichnet. Abbildung 2 zeigt den ungefähren Lebenszyklus und die Reaktion auf ein Eingabeereignis bei Verwendung von Swapchains mit Wartemöglichkeit:
 
-Abbildung 2
+Abbildung 2
 
 ![Abbildung 2: Eingabelatenz in DirectX mit Wartemöglichkeit](images/input-latency2.png)
 
@@ -257,7 +257,3 @@ Diese Abbildungen zeigen, dass die Eingabelatenz bei Spielen um zwei volle Frame
  
 
  
-
-
-
-

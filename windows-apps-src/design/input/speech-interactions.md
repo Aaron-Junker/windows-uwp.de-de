@@ -8,23 +8,23 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fd33720255a04ffd8669673f027973afb4369086
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 94a93f9b1506d2b4dfcdad260bf86bf39c15d875
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684209"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173344"
 ---
 # <a name="speech-interactions"></a>Spracherkennungsinteraktionen
 
 Integrieren Sie Spracherkennung und Text-zu-Sprache (auch als Text-to-Speech, TTS oder Sprachsynthese bezeichnet) direkt in die Benutzeroberfläche Ihrer App.
 
-**Spracherkennung:** Die Spracherkennung konvertiert vom Benutzer gesprochene Wörter in Text für die Formulareingabe, für die Diktierfunktion, zum Angeben einer Aktion oder eines Befehls und zum Ausführen von Aufgaben. Unterstützt werden sowohl vordefinierte Grammatiken für das Freitext-Diktieren und die Websuche als auch benutzerdefinierte Grammatiken, die mithilfe von Speech Recognition Grammar Specification (SRGS) Version 1.0 erstellt werden.
+**Spracherkennung** Die Spracherkennung konvertiert Wörter, die vom Benutzer gesprochen werden, in Text für Formular Eingaben, für Text Diktat, zum Angeben einer Aktion oder eines Befehls sowie zum Ausführen von Aufgaben. Unterstützt werden sowohl vordefinierte Grammatiken für das Freitext-Diktieren und die Websuche als auch benutzerdefinierte Grammatiken, die mithilfe von Speech Recognition Grammar Specification (SRGS) Version 1.0 erstellt werden.
 
-**TTS:** TTS verwendet ein Sprachsynthesemodul (Sprache), um eine Textzeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z. B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
+**TTS** TTS verwendet eine Sprachsynthese-Engine (Voice), um eine Text Zeichenfolge in gesprochene Wörter zu konvertieren. Bei der Eingabezeichenfolge kann es sich um einfachen, schlichten Text oder komplexere Speech Synthesis Markup Language (SSML) handeln. SSML stellt eine Standardmethode zum Steuern der Eigenschaften der Sprachausgabe bereit, z. B. Aussprache, Lautstärke, Stimmlage, Rate bzw. Geschwindigkeit und Betonung.
 
-**Andere sprachrelevante Komponenten:** 
-**Cortana** in Windows-Anwendungen nutzt angepasste Sprachbefehle (gesprochen oder eingegeben), um Ihre App im Vordergrund zu starten (die App erhält wie beim Starten über das Startmenü den Fokus) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, es werden aber Ergebnisse aus der App angezeigt). Weitere Hinweise, um App-Funktionen in der **Cortana**-UI verfügbar machen, finden Sie in den [Richtlinien zu Cortana-Sprachbefehlen](https://docs.microsoft.com/cortana/voice-commands/vcd).
+**Weitere sprachbezogene Komponenten:** 
+ **Cortana** in Windows-Anwendungen verwendet angepasste Sprachbefehle (gesprochen oder typisiert), um Ihre APP im Vordergrund zu starten (die APP hat den Fokus, als ob Sie über das Startmenü gestartet wurde) oder als Hintergrunddienst zu aktivieren (**Cortana** behält den Fokus, liefert jedoch Ergebnisse aus der APP). Weitere Informationen finden Sie in den [Cortana Voice Command-Richtlinien (VCD)](/cortana/voice-commands/vcd) , wenn Sie die APP-Funktionalität in der **Cortana** -Benutzeroberfläche
 
 ## <a name="speech-interaction-design"></a>Integrieren der Spracherkennung
 
@@ -164,7 +164,7 @@ Eine benutzerdefinierte Grammatik ist eine von Ihnen entworfene und erstellte Gr
     -   Halten Sie jede Grammatik klein. Grammatiken, die weniger zu vergleichende Ausdrücke enthalten, bieten eine bessere Erkennungsgenauigkeit als größere Grammatiken mit vielen Ausdrücken. Es empfiehlt sich, anstelle einer einzigen Grammatik für die gesamte App mehrere kleinere Grammatiken für bestimmte Szenarien zu verwenden.
     -   Informieren Sie den Benutzer darüber, was er im jeweiligen App-Kontext sagen kann, und aktivieren bzw. deaktivieren Sie Grammatiken nach Bedarf.
     -   Entwerfen Sie jede Grammatik so, dass der Benutzer einen Befehl auf verschiedene Arten sprechen kann. Sie können z. B. die **GARBAGE**-Regel verwenden, um Spracheingaben abzugleichen, die in Ihrer Grammatik nicht definiert sind. So kann der Benutzer zusätzliche Wörter verwenden, die für Ihre App keine Bedeutung haben, beispielsweise "gib mir", "und", "äähm", "vielleicht" usw.
-    -   Verwenden Sie das [sapi:subset](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/jj572474(v=office.14))-Element, um den Vergleich von Spracheingaben zu erleichtern. Dies ist eine Microsoft-Erweiterung der SRGS-Spezifikation, die den Abgleich von Teilausdrücken ermöglicht.
+    -   Verwenden Sie das [sapi:subset](/previous-versions/office/developer/speech-technologies/jj572474(v=office.14))-Element, um den Vergleich von Spracheingaben zu erleichtern. Dies ist eine Microsoft-Erweiterung der SRGS-Spezifikation, die den Abgleich von Teilausdrücken ermöglicht.
     -   Definieren Sie in Ihrer Grammatik nach Möglichkeit keine einsilbigen Ausdrücke. Die Erkennung funktioniert bei Ausdrücken mit zwei oder mehr Silben meist genauer.
     -   Vermeiden Sie Ausdrücke, die ähnlich klingen. Ausdrücke wie „Geld“, „Held“ und „fällt“ können das Erkennungsmodul z. B. verwirren und zu einer schlechten Erkennungsgenauigkeit führen.
 
@@ -175,11 +175,11 @@ Eine benutzerdefinierte Grammatik ist eine von Ihnen entworfene und erstellte Gr
 
 Wenn Ihre App Spezialvokabular mit ungewöhnlichen oder fiktiven Wörtern oder Wörter mit ungewöhnlicher Aussprache enthält, können Sie die Erkennungsleistung für diese Wörter verbessern, indem Sie eine benutzerdefinierte Aussprache definieren.
 
-Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwendeter Wörter und Ausdrücke können Sie eine benutzerdefinierte Aussprache in einer SRGS-Grammatik erstellen. Weitere Informationen finden Sie unter [token-Element](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)).
+Für eine kleine Liste von Wörtern und Ausdrücken oder eine Liste selten verwendeter Wörter und Ausdrücke können Sie eine benutzerdefinierte Aussprache in einer SRGS-Grammatik erstellen. Weitere Informationen finden Sie unter [token-Element](/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)).
 
-Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
+Für größere Listen von Wörtern und Ausdrücken oder häufig verwendete Wörter und Ausdrücke können Sie separate Dokumente mit Aussprachewörterbüchern erstellen. Weitere Informationen dazu finden Sie unter [Info zu Lexika und phonetischen Alphabeten](/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)).
 
-## <a name="testing"></a>Testing
+## <a name="testing"></a>Testen
 
 Testen Sie die Genauigkeit der Spracherkennung und jede UI, die die Spracherkennung unterstützt, mit der Zielgruppe Ihrer App. So können Sie am besten herausfinden, wie effektiv die Sprachinteraktionsfunktion in Ihrer App ist. Erhalten Benutzer z. B. schlechte Erkennungsergebnisse, weil Ihre App nicht auf einen gängigen Ausdruck lauscht?
 
@@ -200,30 +200,27 @@ Hören Sie sich alle TTS-Zeichenfolgen an, um sicherzustellen, dass sie verstän
 -   Wenn eine ungewöhnliche Abfolge von Wörtern kombiniert wird oder Teilenummern oder Satzzeichen gesprochen werden, kann ein Satz unverständlich werden.
 -   Sprache kann unnatürlich klingen, wenn der Sprechrhythmus von der normalen Sprechweise eines Muttersprachlers abweicht.
 
-Beide Probleme können mithilfe von SSML anstelle von nur-Text als Eingabe für den Sprachsynthesizer adressiert werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
+Beide Probleme können mithilfe von SSML anstelle von nur-Text als Eingabe für den Sprachsynthesizer adressiert werden. Weitere Informationen zu SSML finden Sie unter [Steuerung der synthetischen Sprachausgabe mit SSML](/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)) und [Referenz für Speech Synthesis Markup Language](/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)).
 
 ## <a name="other-articles-in-this-section"></a>Andere Artikel in diesem Abschnitt 
 
-| Thema | Beschreibung |
+| Thema | BESCHREIBUNG |
 | --- | --- |
 | [Spracherkennung](speech-recognition.md) | Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer Aktion, eines Befehls oder einer Aufgabe. |
-| [Sprach Erkennungs Sprache angeben](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
-| [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md) | Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können. |
+| [Festlegen der Sprache für die Spracherkennung](specify-the-speech-recognizer-language.md) | Hier erfahren Sie, wie Sie eine installierte Sprache für die Spracherkennung auswählen. |
+| [Festlegen von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md) | Erfahren Sie, wie Sie benutzerdefinierte Einschränkungen für die Spracherkennung festlegen und verwenden können. |
 | [Ermöglichen kontinuierlicher Diktate](enable-continuous-dictation.md) |Hier erfahren Sie, wie Sie die Erfassung und Erkennung langer Spracheingaben für kontinuierliches Diktieren ermöglichen. |
-| [Verwalten von Problemen mit Audioeingaben](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
+| [Verwalten von Problemen bei der Audioeingabe](manage-issues-with-audio-input.md) | Erfahren Sie, wie Sie Probleme mit der Genauigkeit der Spracherkennung behandeln, die auf die Qualität der Audioeingabe zurückzuführen sind. |
 | [Festlegen von Timeouts für die Spracherkennung](set-speech-recognition-timeouts.md) | Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet. |
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Sprachinteraktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
-* [Cortana-Interaktionen](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)
+* [Sprachinteraktionen]()
+* [Cortana-Interaktionen](./cortana-interactions.md)
 
  **Beispiele**
 
-* [Beispiel für Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+* [Beispiel zu Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  
 
  
-
-
-

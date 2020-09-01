@@ -8,18 +8,18 @@ keywords: Windows 10, UWP
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c77f99e170bdfe6689a9bfd4e8d8075ec2154d28
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: b1fc38f5224ae9627f4c793a800ab747cfa1c2b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094676"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173854"
 ---
 # <a name="page-transitions"></a>Seitenübergänge
 
 Seiten Übergänge Navigieren durch Benutzer zwischen Seiten in einer APP und geben Feedback als Beziehung zwischen den Seiten an. Mithilfe von Seiten Übergängen können Benutzer verstehen, ob Sie sich am Anfang einer Navigations Hierarchie befinden, sich zwischen gleich geordneten Seiten bewegen oder tiefer in die Seiten Hierarchie navigieren.
 
-Zwei verschiedene Animationen werden für die Navigation zwischen Seiten in einer APP, *Seiten Aktualisierung* und Drilldown bereit *gestellt und durch*Unterklassen von [**navigationtransitioninfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo)dargestellt.
+Zwei verschiedene Animationen werden für die Navigation zwischen Seiten in einer APP, *Seiten Aktualisierung* und Drilldown bereit *gestellt und durch*Unterklassen von [**navigationtransitioninfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo)dargestellt.
 
 ## <a name="examples"></a>Beispiele
 
@@ -45,7 +45,7 @@ Das gewünschte Gefühl ist, dass der Benutzer schon einmal begonnen hat.
 
 ![Animation zur Seiten Aktualisierung](images/page-refresh.gif)
 
-Die Animation zur Seiten Aktualisierung wird durch die [**Klasse "entrancenavigationtransitioninfoclass**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo)" dargestellt.
+Die Animation zur Seiten Aktualisierung wird durch die [**Klasse "entrancenavigationtransitioninfoclass**](/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo)" dargestellt.
 
 ```csharp
 // Explicitly play the page refresh animation
@@ -53,7 +53,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**Hinweis**: ein [**Frame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame) verwendet automatisch [**navigationdermetransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) , um die Navigation zwischen zwei Seiten zu animieren. Die Animation ist standardmäßig eine Seiten Aktualisierung.
+**Hinweis**: ein [**Frame**](/uwp/api/windows.ui.xaml.controls.frame) verwendet automatisch [**navigationdermetransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) , um die Navigation zwischen zwei Seiten zu animieren. Die Animation ist standardmäßig eine Seiten Aktualisierung.
 
 ## <a name="drill"></a>Drill
 
@@ -63,7 +63,7 @@ Das gewünschte Gefühl besteht darin, dass der Benutzer die APP weiter vertieft
 
 ![Drill Animation](images/drill.gif)
 
-Die Drill Animation wird durch die [**drillinnavigationtransitioninfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) -Klasse dargestellt.
+Die Drill Animation wird durch die [**drillinnavigationtransitioninfo**](/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) -Klasse dargestellt.
 
 ```csharp
 // Play the drill in animation
@@ -86,7 +86,7 @@ myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { E
 
 ## <a name="suppress"></a>Suppress
 
-Um die Wiedergabe von Animationen während der Navigation zu vermeiden, verwenden Sie [**suppressnavigationtransitioninfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) anstelle anderer **navigationtransitioninfo** -Untertypen.
+Um die Wiedergabe von Animationen während der Navigation zu vermeiden, verwenden Sie [**suppressnavigationtransitioninfo**](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) anstelle anderer **navigationtransitioninfo** -Untertypen.
 
 ```csharp
 // Suppress the default animation
@@ -101,7 +101,7 @@ Sie können verwenden `Frame.GoBack(NavigationTransitionInfo)` , um einen bestim
 
 Dies kann hilfreich sein, wenn Sie das Navigationsverhalten dynamisch basierend auf der Bildschirmgröße ändern. beispielsweise in einem reaktionsfähigen Master-/Detail-Szenario.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Navigieren zwischen zwei Seiten](../basics/navigate-between-two-pages.md)
 - [Bewegung in uwindowswp-apps](index.md)

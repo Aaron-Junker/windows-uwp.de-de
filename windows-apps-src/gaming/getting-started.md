@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Einstieg
 localizationpriority: medium
-ms.openlocfilehash: eb2feeaa7d4ad67ecb9d6b54c5bc275faf9cc0bd
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7d3e50f5d32cd8c6a497ff3de67005972d3a0f7f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970238"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175314"
 ---
 # <a name="getting-started"></a>Erste Schritte
 
@@ -54,7 +54,7 @@ Weitere Beispiele finden Sie unter [Game Samples](e2e.md#game-samples).
 
 Wenn Sie ein Xbox-Spiel entwickeln oder Xbox Live-Features in Ihrem Spiel verwenden möchten, nehmen Sie am [Xbox Live Creators-Programm](https://developer.microsoft.com/games/xbox/xboxlive/creator) oder- [ID@Xbox](https://www.xbox.com/Developers/id) Programm Teil. 
 
-Weitere Informationen zu den Features von Xbox Live, die für die einzelnen Programme verfügbar sind, finden Sie unter [Feature Table](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table). Weitere Informationen finden Sie unter [Developer-Programme](e2e.md#developer-programs).
+Weitere Informationen zu den Features von Xbox Live, die für die einzelnen Programme verfügbar sind, finden Sie unter [Feature Table](/gaming/xbox-live/developer-program-overview.md#feature-table). Weitere Informationen finden Sie unter [Developer-Programme](e2e.md#developer-programs).
 
 > [!Note]
 > Das Xbox Live Creators-Programm ist für alle Entwickler verfügbar. **Jeder** kann ein Xbox-Spiel veröffentlichen. Wenn Sie Ihren Titel Teil des Xbox Live Creators-Programms machen möchten, müssen Sie diese Option einfach über Partner Center aktivieren. Weitere Informationen zum Registrieren für ein Partner Center-Konto finden Sie unten in [Schritt 5](#step-5-sign-up-for-a-partner-center-account) .

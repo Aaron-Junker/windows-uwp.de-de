@@ -1,15 +1,15 @@
 ---
 title: Unity – Versionskontrolle für Ihr UWP-Projekt
-description: Versionsverwaltung für Ihr Unity-UWP.
+description: Erfahren Sie, wie Sie die Versionskontrolle mit einem Unity-Spiel für Xbox mithilfe der universelle Windows-Plattform (UWP) verwenden.
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: b98fba394fb326d60451f07938504e99a92d764d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 3e4d98892b9bd738eca788d166ef79f81ea1b047
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089486"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173744"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: Versionskontrolle für Ihr UWP-Projekt
 
@@ -51,19 +51,19 @@ Wir möchten einige unterschiedliche Dateien und Ordner aus dem Ordner **UWP/Scr
 
 ## <a name="folders"></a>Ordner  
 
-`Assets` | ***einschließen*** | Enthält Microsoft Store Bilder  
-`Data`   | ***ignorieren*** | Wenn Unity das Projekt in kompiliert (Szenen, Shader, Skripts, Prefabs usw.)  
-`Dependencies` | ***einschließen*** | Dieser Ordner wurde erstellt, um alle UWP-Abhängigkeiten beizubehalten (z. b. "xboxlivesdk. dll").  
-`Properties` | ***einschließen*** | Enthält erweiterte Einstellungen, die vom Entwickler geändert werden können.  
-`Unprocessed` | ***ignorieren*** | Enthält Unity-`.dll` und `.pdb` Dateien  
+`Assets` | ***Einschließen*** | Enthält Microsoft Store Bilder  
+`Data`   | ***Ignorieren*** | Wenn Unity das Projekt in kompiliert (Szenen, Shader, Skripts, Prefabs usw.)  
+`Dependencies` | ***Einschließen*** | Dieser Ordner wurde erstellt, um alle UWP-Abhängigkeiten beizubehalten (z. b. XboxLiveSDK.dll).  
+`Properties` | ***Einschließen*** | Enthält erweiterte Einstellungen, die vom Entwickler geändert werden können.  
+`Unprocessed` | ***Ignorieren*** | Enthält Unity `.dll` und `.pdb` Dateien  
 
-## <a name="files"></a>Dateien  
+## <a name="files"></a>Files  
 
-`App.cs` | ***einschließen*** | Einstiegspunkt für Ihre UWP-Anwendung Diese kann geändert und mit anderen Quelldateien erweitert werden.  
-`Package.appxmanifest` | ***einschließen*** | App-Paket Manifest-Quelldatei für das msix-oder AppX-Paket  
-`project.json` | ***einschließen*** | Beschreibt die nuget-Pakete, von denen Ihre `*.csproj` abhängig ist.  
-`ScrapyardPhoenix.csproj` | ***einschließen*** | Beschreibt das UWP-Buildziel. Wenn Sie dem UWP-Projekt weitere Abhängigkeiten hinzufügen, enthält diese `*.csproj` Datei diese Informationen.  
-`ScrapyardPhoenix.csproj.user` | ***ignorieren*** | Diese Datei enthält lokale Benutzerinformationen.
+`App.cs` | ***Einschließen*** | Einstiegspunkt für Ihre UWP-Anwendung Diese kann geändert und mit anderen Quelldateien erweitert werden.  
+`Package.appxmanifest` | ***Einschließen*** | App-Paket Manifest-Quelldatei für das msix-oder AppX-Paket  
+`project.json` | ***Einschließen*** | Beschreibt die nuget-Pakete, von denen Sie `*.csproj` abhängig sind  
+`ScrapyardPhoenix.csproj` | ***Einschließen*** | Beschreibt das UWP-Buildziel. Wenn Sie dem UWP-Projekt zusätzliche Abhängigkeiten hinzufügen, `*.csproj` enthält diese Datei diese Informationen.  
+`ScrapyardPhoenix.csproj.user` | ***Ignorieren*** | Diese Datei enthält lokale Benutzerinformationen.
 
 ## <a name="resulting-gitignore"></a>Resultierende GITIGNORE-Datei
 
@@ -99,6 +99,6 @@ Fügen Sie Abhängigkeiten zu DLL- und WINMD-Dateien hinzu, indem Sie diese im U
 
 ***ScrapyardPhoenix (Universal Windows)*** ist das Projekt, dem Sie einen Verweis (etwa auf das Xbox Live SDK) hinzufügen würden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 - [Portieren vorhandener Spiele zu Xbox](development-lanes-landing.md)
 - [UWP auf Xbox One](index.md)

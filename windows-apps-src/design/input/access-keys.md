@@ -1,6 +1,6 @@
 ---
 Description: Erfahren Sie, wie Sie die Benutzerfreundlichkeit und den Zugriff auf Ihre Windows-App verbessern können, indem Sie Benutzern eine intuitive Möglichkeit bieten, schnell zu navigieren und mit der sichtbaren Benutzeroberfläche einer APP über eine Tastatur anstelle eines Zeiger Geräts (z. b. berühren oder Maus) zu interagieren.
-title: Entwurfs Richtlinien für Zugriffsschlüssel
+title: Zugriffstasten – Designrichtlinien
 label: Access keys design guidelines
 keywords: Tastatur, Zugriffstaste, KeyTip, schlüsseltipp, Barrierefreiheit, Navigation, Fokus, Text, Eingabe, Benutzerinteraktion
 template: detail.hbs
@@ -11,21 +11,21 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d5808c462beb72341fd83c6fc4c1cfc0178b2f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ca8c21729f27e30e7703291c04a940301a3feb26
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970975"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173894"
 ---
-# <a name="access-keys"></a>Zugriffstasten
+# <a name="access-keys"></a>Zugriffsschlüssel
 
 Zugriffstasten sind Tastenkombinationen, die die Benutzerfreundlichkeit und Barrierefreiheit Ihrer Windows-Anwendungen verbessern, indem Sie Benutzern eine intuitive Möglichkeit bieten, schnell zu navigieren und mit der sichtbaren Benutzeroberfläche einer APP über eine Tastatur anstelle eines Zeiger Geräts (z. b. berühren oder Maus) zu interagieren.
 
 Ausführliche Informationen zum Aufrufen allgemeiner Aktionen in einer Windows-Anwendung mit Tastenkombinationen finden Sie im Thema Zugriffs [Tasten](keyboard-accelerators.md) . 
 
 > [!NOTE]
-> Eine Tastatur ist für Benutzer mit bestimmten Behinderungen unverzichtbar (siehe [Tastatur Barrierefreiheit](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)) und ist auch ein wichtiges Tool für Benutzer, die Sie als effizientere Methode für die Interaktion mit einer APP bevorzugen.
+> Eine Tastatur ist für Benutzer mit bestimmten Behinderungen unverzichtbar (siehe [Tastatur Barrierefreiheit](../accessibility/keyboard-accessibility.md)) und ist auch ein wichtiges Tool für Benutzer, die Sie als effizientere Methode für die Interaktion mit einer APP bevorzugen.
 
 Die Windows-App bietet integrierte Unterstützung für Platt Form Steuerelemente sowohl für Tastatur basierte Zugriffsschlüssel als auch für das zugehörige Feedback der Benutzeroberfläche durch visuelle Hinweise, die als Schlüssel Tipps bezeichnet werden
 
@@ -72,11 +72,11 @@ Beispielsweise bietet Microsoft Word zwei Zugriffsschlüssel Bereiche: einen pri
 
 Die folgenden Abbildungen veranschaulichen die zwei Zugriffsschlüssel Bereiche in Word. Der erste zeigt die primären Zugriffsschlüssel, mit denen ein Benutzer eine Registerkarte und andere Befehle auf oberster Ebene auswählen kann, während die zweite die sekundären Zugriffsschlüssel für die Registerkarte "Home" anzeigt.
 
-![Primäre Zugriffsschlüssel in primären Microsoft](images/accesskeys/primary-access-keys-word.png)
-Word-_Zugriffs Schlüsseln in Microsoft Word_
+![Primäre Zugriffsschlüssel in primären Microsoft Word- ](images/accesskeys/primary-access-keys-word.png)
+ _Zugriffs Schlüsseln in Microsoft Word_
 
-![Sekundäre Zugriffsschlüssel in sekundären](images/accesskeys/secondary-access-keys-word.png)
-Microsoft Word-_Zugriffs Schlüsseln in Microsoft Word_
+![Sekundäre Zugriffsschlüssel in sekundären Microsoft Word- ](images/accesskeys/secondary-access-keys-word.png)
+ _Zugriffs Schlüsseln in Microsoft Word_
 
 Zugriffsschlüssel können für Elemente in unterschiedlichen Bereichen dupliziert werden. Im vorherigen Beispiel ist "2" der Zugriffsschlüssel für Rückgängigmachen im primären Bereich und auch "Kursiv" im sekundären Bereich.
 
@@ -241,7 +241,7 @@ Lokalisierte Zugriffsschlüssel werden in der Datei "Resources. resw" des Projek
 
 _Geben Sie die in der Datei "Resources. resw" angegebene AccessKey-Eigenschaft an._
 
-Weitere Informationen finden Sie unter über [setzen von UI-Ressourcen](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10)) .
+Weitere Informationen finden Sie unter über [setzen von UI-Ressourcen](/previous-versions/windows/apps/hh965329(v=win.10)) .
 
 ## <a name="key-tip-positioning"></a>Positionieren von Schlüssel Tipps
 
@@ -353,14 +353,12 @@ In diesem Beispiel wird veranschaulicht, wie diese Anwendungs Ressourcen geände
 
 Das XAML-Framework macht Automatisierungs Eigenschaften verfügbar, die es Benutzeroberflächenautomatisierungs-Clients ermöglichen, Informationen zu Elementen in der Benutzeroberfläche zu ermitteln.
 
-Wenn Sie die AccessKey-Eigenschaft für ein UIElement-oder Textelement-Steuerelement angeben, können Sie diesen Wert mit der [AutomationProperties. AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) -Eigenschaft erhalten. Barrierefreiheits Clients, z. b. die Sprachausgabe, lesen den Wert dieser Eigenschaft jedes Mal, wenn ein Element den Fokus erhält.
+Wenn Sie die AccessKey-Eigenschaft für ein UIElement-oder Textelement-Steuerelement angeben, können Sie diesen Wert mit der [AutomationProperties. AccessKey](/dotnet/api/system.windows.automation.automationproperties.accesskey) -Eigenschaft erhalten. Barrierefreiheits Clients, z. b. die Sprachausgabe, lesen den Wert dieser Eigenschaft jedes Mal, wenn ein Element den Fokus erhält.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Tastatur Interaktionen](keyboard-interactions.md)
-* [Tastaturbeschleuniger](keyboard-accelerators.md)
+* [Tastaturinteraktionen](keyboard-interactions.md)
+* [Tastaturkürzel](keyboard-accelerators.md)
 
 **Beispiele**
 * [Katalog der XAML-Steuerelemente (auch als xamluibasics bezeichnet)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
-
-

@@ -4,22 +4,22 @@ description: In diesem Thema werden verschiedene Möglichkeiten für die Durchf�
 ms.date: 03/23/2020
 ms.topic: article
 keywords: Windows 10, UWP
-ms.openlocfilehash: 5db029db3ffb538802f39aa616c96dbe75601eac
-ms.sourcegitcommit: bf7d4f6739aeeaac735aae3dd0dcbda63a8c5e69
+ms.openlocfilehash: 0aa3c62100ecbb30e136c52cee3a6862cf15bef2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85256380"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175624"
 ---
 # <a name="interprocess-communication-ipc"></a>Prozessübergreifende Kommunikation (Interprocess Communication, IPC)
 
 In diesem Thema werden verschiedene Möglichkeiten für die Durchführung der prozessübergreifenden Kommunikation (IPC) zwischen universelle Windows-Plattform Anwendungen (UWP) und Win32-Anwendungen erläutert.
 
-## <a name="app-services"></a>App-Dienste
+## <a name="app-services"></a>App Services
 
 Mit App Services können Anwendungen Dienste verfügbar machen, die Eigenschaften Behälter von primitiven ([**valueset**](/uwp/api/Windows.Foundation.Collections.ValueSet)) im Hintergrund akzeptieren und zurückgeben. Rich-Objekte können bei der [Serialisierung](https://stackoverflow.com/questions/46367985/how-to-make-a-class-that-can-be-added-to-the-windows-foundation-collections-valu)übermittelt werden.
 
-App-Dienste können entweder [außerhalb des Prozesses](/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) als Hintergrundaufgabe [oder innerhalb der](/windows/uwp/launch-resume/convert-app-service-in-process) Vordergrund Anwendung ausgeführt werden.
+App-Dienste können entweder [außerhalb des Prozesses](../launch-resume/how-to-create-and-consume-an-app-service.md) als Hintergrundaufgabe [oder innerhalb der](../launch-resume/convert-app-service-in-process.md) Vordergrund Anwendung ausgeführt werden.
 
 App Services werden am besten für die Freigabe kleiner Datenmengen verwendet, bei denen nahezu in Echtzeit Latenzzeiten nicht erforderlich sind.
 
@@ -27,13 +27,13 @@ App Services werden am besten für die Freigabe kleiner Datenmengen verwendet, b
 
 [Com](/windows/win32/com/component-object-model--com--portal) ist ein verteiltes objektorientiertes System zum Erstellen von binären Softwarekomponenten, die interagieren und kommunizieren können. Als Entwickler verwenden Sie com, um wiederverwendbare Softwarekomponenten und Automatisierungsebenen für eine Anwendung zu erstellen. COM-Komponenten können sich im Prozess befinden oder außerhalb des Prozesses befinden und über ein [Client-und Server](/windows/win32/com/com-clients-and-servers) Modell kommunizieren. Out-of-Process-COM-Server wurden lange als Mittel für die [Kommunikation zwischen Objekten](/windows/win32/com/inter-object-communication)verwendet.
 
-Gepackte Anwendungen mit der Funktion [runfulltrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) können prozessübergreifende com-Server für IPC über das [Paket Manifest](/uwp/schemas/appxpackage/uapmanifestschema/element-com-extension)registrieren. Dies wird als [Paket-com](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/)bezeichnet.
+Gepackte Anwendungen mit der Funktion [runfulltrust](../packaging/app-capability-declarations.md#restricted-capabilities) können prozessübergreifende com-Server für IPC über das [Paket Manifest](/uwp/schemas/appxpackage/uapmanifestschema/element-com-extension)registrieren. Dies wird als [Paket-com](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/)bezeichnet.
 
 ## <a name="filesystem"></a>Dateisystem
 
 ### <a name="broadfilesystemaccess"></a>Broadfilesystemaccess
 
-Paketanwendungen können IPC mithilfe des großen Dateisystems ausführen, indem Sie die eingeschränkte [broadfilesystemaccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations) -Funktion deklarieren. Diese Funktion gewährt [Windows. Storage](/uwp/api/Windows.Storage) -APIs und [xxxfromapp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) Win32-APIs Zugriff auf das umfangreiche Dateisystem.
+Paketanwendungen können IPC mithilfe des großen Dateisystems ausführen, indem Sie die eingeschränkte [broadfilesystemaccess](../files/file-access-permissions.md#accessing-additional-locations) -Funktion deklarieren. Diese Funktion gewährt [Windows. Storage](/uwp/api/Windows.Storage) -APIs und [xxxfromapp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) Win32-APIs Zugriff auf das umfangreiche Dateisystem.
 
 Standardmäßig ist IPC über das Dateisystem für gepackte Anwendungen auf die anderen in diesem Abschnitt beschriebenen Mechanismen beschränkt.
 
@@ -57,13 +57,13 @@ Wenn Sie mehrere Anwendungen veröffentlichen und einen einfachen Mechanismus f�
 
 ## <a name="fulltrustprocesslauncher"></a>Fulltrustprocesslauncher
 
-Mit der Funktion " [runfulltrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) " können gepackte Anwendungen [voll vertrauenswürdige Prozesse](/uwp/api/Windows.ApplicationModel.FullTrustProcessLauncher) innerhalb desselben Pakets starten.
+Mit der Funktion " [runfulltrust](../packaging/app-capability-declarations.md#restricted-capabilities) " können gepackte Anwendungen [voll vertrauenswürdige Prozesse](/uwp/api/Windows.ApplicationModel.FullTrustProcessLauncher) innerhalb desselben Pakets starten.
 
 Für Szenarien, in denen Paket Einschränkungen eine Belastung darstellen, oder wenn IPC-Optionen fehlen, könnte eine Anwendung einen voll vertrauenswürdigen Prozess als Proxy für die Schnittstelle mit dem System verwenden, und dann mit dem voll vertrauenswürdigen Prozess selbst über APP Services oder einen anderen gut unterstützten IPC-Mechanismus.
 
 ## <a name="launchuriforresultsasync"></a>LaunchUriForResultsAsync
 
-[Launchuriforresultasync](/windows/uwp/launch-resume/how-to-launch-an-app-for-results) wird für einen einfachen ([valueset](/uwp/api/Windows.Foundation.Collections.ValueSet)-) Datenaustausch mit anderen verpackten Anwendungen verwendet, die den [protocolforresults](/windows/uwp/launch-resume/how-to-launch-an-app-for-results#step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results) -Aktivierungs Vertrag implementieren. Im Unterschied zu app-Diensten, die in der Regel im Hintergrund ausgeführt werden, wird die Zielanwendung im Vordergrund gestartet.
+[Launchuriforresultasync](../launch-resume/how-to-launch-an-app-for-results.md) wird für einen einfachen ([valueset](/uwp/api/Windows.Foundation.Collections.ValueSet)-) Datenaustausch mit anderen verpackten Anwendungen verwendet, die den [protocolforresults](../launch-resume/how-to-launch-an-app-for-results.md#step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results) -Aktivierungs Vertrag implementieren. Im Unterschied zu app-Diensten, die in der Regel im Hintergrund ausgeführt werden, wird die Zielanwendung im Vordergrund gestartet.
 
 Dateien können freigegeben werden, indem [sharedstorageaccessmanager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) -Token über das valueset an die Anwendung übergeben werden.
 
@@ -78,7 +78,7 @@ Um die Sicherheit und die Netzwerk Isolation aufrechtzuerhalten, werden Loopback
     * Jede Anwendung muss die andere in den [loopbackaccessrules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)auflisten. Der Client deklariert eine "out"-Regel für den Server, und der Server deklariert "in"-Regeln für die unterstützten Clients.
 
 > [!NOTE]
-> Der Paket Familienname, der zum Identifizieren einer Anwendung in diesen Regeln erforderlich ist, kann während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio gefunden werden, über [Partner Center](/windows/uwp/publish/view-app-identity-details) für Anwendungen, die über das Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
+> Der Paket Familienname, der zum Identifizieren einer Anwendung in diesen Regeln erforderlich ist, kann während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio gefunden werden, über [Partner Center](../publish/view-app-identity-details.md) für Anwendungen, die über das Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen.
 
 Nicht gepackte Anwendungen und Dienste verfügen über keine Paket Identität und können daher nicht in [loopbackaccessrules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)deklariert werden. Sie können eine gepackte Anwendung so konfigurieren, dass eine Verbindung über Loopback mit nicht verpackten Anwendungen und Diensten über [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))hergestellt wird. Dies ist jedoch nur für querladen-oder Debugszenarien möglich, in denen Sie lokalen Zugriff auf den Computer haben und über Administratorrechte verfügen.
 
@@ -89,7 +89,7 @@ Nicht gepackte Anwendungen und Dienste verfügen über keine Paket Identität un
     * Das `-is` Flag wurde in Windows 10, Version 1607, eingeführt (10,0; Build 14393).
 
 > [!NOTE]
-> Der Paket Familienname, der für das `-n` Flag von [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) erforderlich ist, kann während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio, über [Partner Center](/windows/uwp/publish/view-app-identity-details) für Anwendungen, die über die Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen gefunden werden.
+> Der Paket Familienname, der für das `-n` Flag von [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) erforderlich ist, kann während der Entwicklungszeit über den Paket Manifest-Editor in Visual Studio, über [Partner Center](../publish/view-app-identity-details.md) für Anwendungen, die über die Microsoft Store veröffentlicht werden, oder über den PowerShell [-Befehl Get-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) für bereits installierte Anwendungen gefunden werden.
 
 [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10)) ist auch für das [Debuggen von Netzwerk Isolations Problemen](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues)nützlich.
 
@@ -100,7 +100,7 @@ Nicht gepackte Anwendungen und Dienste verfügen über keine Paket Identität un
 [Anonyme Pipes](/windows/win32/ipc/anonymous-pipes) und [Named Pipes](/windows/win32/ipc/named-pipes) werden mit den folgenden Einschränkungen unterstützt:
 
 * Benannte Pipes in verpackten Anwendungen werden standardmäßig nur zwischen Prozessen innerhalb desselben Pakets unterstützt, es sei denn, ein Prozess ist voll vertrauenswürdig.
-* Named Pipes können über Pakete hinweg freigegeben werden, und zwar gemäß den Richtlinien für die [Freigabe von benannten Objekten](/windows/uwp/communication/sharing-named-objects)
+* Named Pipes können über Pakete hinweg freigegeben werden, und zwar gemäß den Richtlinien für die [Freigabe von benannten Objekten](./sharing-named-objects.md)
 * Benannte Pipes in verpackten Anwendungen müssen die Syntax `\\.\pipe\LOCAL\` für den Pipenamen verwenden.
 
 ## <a name="registry"></a>Registrierung
@@ -122,6 +122,6 @@ RPC-Endpunkte können auch an bestimmte gepackte Anwendungen geleitet werden, um
 Die [Datei Zuordnung](/windows/win32/memory/sharing-files-and-memory) kann verwendet werden, um eine Datei oder einen Arbeitsspeicher zwischen zwei oder mehr Prozessen mit den folgenden Einschränkungen freizugeben:
 
 * Standardmäßig werden Dateizuordnungen in verpackten Anwendungen nur zwischen Prozessen innerhalb desselben Pakets unterstützt, es sei denn, ein Prozess ist voll vertrauenswürdig.
-* Dateizuordnungen können über Pakete hinweg freigegeben werden, und zwar gemäß den Richtlinien für die [Freigabe von benannten Objekten](/windows/uwp/communication/sharing-named-objects)
+* Dateizuordnungen können über Pakete hinweg freigegeben werden, und zwar gemäß den Richtlinien für die [Freigabe von benannten Objekten](./sharing-named-objects.md)
 
 Gemeinsam genutzter Arbeitsspeicher wird für die effiziente Freigabe und Bearbeitung großer Datenmengen empfohlen.

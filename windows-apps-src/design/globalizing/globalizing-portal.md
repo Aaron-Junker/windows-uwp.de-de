@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: d60f0e825cefec0ba6ad5bcdd6a705f0992019b4
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 479b5d21e40b998fac9380d34be1a50d7d87e9e0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82967915"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173474"
 ---
 # <a name="globalization-and-localization"></a>Globalisierung und Lokalisierung
 
@@ -38,7 +38,7 @@ Ihr Code muss in allen Kulturen, die von ihrer App unterstützt werden, gleicher
 - Sortierregeln
 
 >[!NOTE]
-> Eine Liste der unterstützten Gebiets Schema Namen in der Windows-Betriebssystemversion finden Sie in der Spalte Sprachtag der Tabelle in [Anhang a: Produktverhalten](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in der [Referenz zur Windows-Sprach Code Kennung (LCID)](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
+> Eine Liste der unterstützten Gebiets Schema Namen in der Windows-Betriebssystemversion finden Sie in der Spalte Sprachtag der Tabelle in [Anhang a: Produktverhalten](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c) in der [Referenz zur Windows-Sprach Code Kennung (LCID)](/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
 
 **Lokalisier barkeit** ist der Prozess, bei dem eine globalisierte App für die Lokalisierung vorbereitet und/oder überprüft wird, ob die APP für die Lokalisierung bereit ist. Eine ordnungsgemäße lokalisierbare App bedeutet, dass der spätere Lokalisierungsprozess keine funktionalen Fehler in der APP aufdecken wird. Die wichtigste Eigenschaft einer lokalisierbaren App besteht darin, dass der ausführbare Code ordnungsgemäß von den lokalisierbaren Ressourcen der APP getrennt wurde.
 
@@ -58,7 +58,7 @@ Die meisten Lokalisierungsteams verwenden spezielle Tools, um den Prozess zu unt
 | Artikel | BESCHREIBUNG |
 |---------|-------------|
 | [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md) | Entwerfen und entwickeln Sie Ihre APP so, dass Sie auf Systemen mit unterschiedlichen sprach-und Kultur Konfigurationen ordnungsgemäß funktioniert. |
-| [Grundlegendes zu Benutzerprofil Sprachen und App-Manifest-Sprachen](manage-language-and-region.md) | In diesem Thema werden die Begriffe "Benutzerprofil-Sprachliste", "App-Manifest-Sprachliste" und "App-Lauf Zeit Sprachliste" definiert. Diese Begriffe werden in diesem Thema und in anderen Themen dieses featurebereichs verwendet, daher ist es wichtig, zu wissen, was Sie bedeuten. |
+| [Benutzerprofilsprachen und App-Manifest-Sprachen verstehen](manage-language-and-region.md) | In diesem Thema werden die Begriffe "Benutzerprofil-Sprachliste", "App-Manifest-Sprachliste" und "App-Lauf Zeit Sprachliste" definiert. Diese Begriffe werden in diesem Thema und in anderen Themen dieses featurebereichs verwendet, daher ist es wichtig, zu wissen, was Sie bedeuten. |
 | [Globalisieren von Datums-, Uhrzeit- und Zahlenformaten](use-global-ready-formats.md) | Entwerfen Sie Ihre APP so, dass Sie Global bereit ist, indem Sie Datumsangaben, Uhrzeiten, Zahlen, Telefonnummern und Währungen entsprechend formatieren. Anschließend können Sie Ihre APP später für weitere Kulturen, Regionen und Sprachen auf dem globalen Markt anpassen. |
 | [Verwenden von Vorlagen und Mustern zum Formatieren von Datums- und Uhrzeitwerten](use-patterns-to-format-dates-and-times.md) | Verwenden Sie Klassen im [**Windows. Globalization. datetimeformatierung**](/uwp/api/windows.globalization.datetimeformatting?branch=live) -Namespace mit benutzerdefinierten Vorlagen und Mustern, um Datumsangaben und Uhrzeiten in genau dem gewünschten Format anzuzeigen. |
 | [Anpassen von Layout und Schriftarten und Unterstützen von „Von rechts nach links“](adjust-layout-and-fonts--and-support-rtl.md) | Entwerfen Sie Ihre APP, um die Layouts und Schriftarten mehrerer Sprachen zu unterstützen, einschließlich der Fluss Richtung von rechts nach links. |

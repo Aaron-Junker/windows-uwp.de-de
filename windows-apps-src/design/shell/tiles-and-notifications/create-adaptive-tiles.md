@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc0f23ad712850e565814febe5b7e681e58a85d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 7cee236b385b6129e7ab1a9cacd549f217f6e734
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234576"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175604"
 ---
 # <a name="create-adaptive-tiles"></a>Erstellen adaptiver Kacheln
 
-Vorlagen für adaptive Kacheln sind ein neues Feature in Windows 10 und ermöglichen den Entwurf eigener Inhalte für Kachelbenachrichtigungen mithilfe einer einfachen, flexiblen Markupsprache, die sich an unterschiedliche Bildschirmdichten anpasst. In diesem Artikel erfahren Sie, wie Sie Adaptive Live-Kacheln für Ihre Windows-app erstellen. Die vollständige Liste adaptiver Elemente und Attribute finden Sie unter [Adaptives Kachelschema](../tiles-and-notifications/tile-schema.md).
+Vorlagen für adaptive Kacheln sind ein neues Feature in Windows 10 und ermöglichen den Entwurf eigener Inhalte für Kachelbenachrichtigungen mithilfe einer einfachen, flexiblen Markupsprache, die sich an unterschiedliche Bildschirmdichten anpasst. Dieser Artikel beschreibt, wie Sie adaptive Live-Kacheln für Ihre App für Ihre Windows-App erstellen. Die vollständige Liste adaptiver Elemente und Attribute finden Sie unter [Adaptives Kachelschema](../tiles-and-notifications/tile-schema.md).
 
-(Wenn gewünscht, können Sie weiterhin die voreingestellten Vorlagen aus dem [Windows 8-Kachelvorlagenkatalog](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10)) beim Entwerfen von Benachrichtigungen für Windows 10 verwenden.)
+(Wenn gewünscht, können Sie weiterhin die voreingestellten Vorlagen aus dem [Windows 8-Kachelvorlagenkatalog](/previous-versions/windows/apps/hh761491(v=win.10)) beim Entwerfen von Benachrichtigungen für Windows 10 verwenden.)
 
 
 ## <a name="getting-started"></a>Erste Schritte
@@ -284,7 +284,7 @@ Wenn Sie in der Benachrichtigungsnutzlast kein Branding angeben, wird das Brandi
 
  
 
-## <a name="display-name"></a>`Display name`
+## <a name="display-name"></a>Anzeigename
 
 
 Sie können den Anzeigenamen einer Benachrichtigung überschreiben, indem Sie für das **displayName**-Attribut die gewünschte Textzeichenfolge eingeben. Wie beim Branding können Sie dies für das [tilevisual](../tiles-and-notifications/tile-schema.md#tilevisual) -Element angeben, das sich auf die gesamte Benachrichtigungs Nutzlast auswirkt, oder auf das [tilebinding](../tiles-and-notifications/tile-schema.md#tilebinding) -Element, das sich nur auf einzelne Kacheln auswirkt.
@@ -415,13 +415,13 @@ new AdaptiveText()
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
 | &lt;Text Hint-Style = " \* "/&gt; | Zeichenhöhe               | Schriftbreite |
-| caption                        | 12 effektive Pixel (epx) | Regular     |
-| body                           | 15 Epx                    | Regular     |
+| caption                        | 12 effektive Pixel (epx) | Regulär     |
+| body                           | 15 Epx                    | Regulär     |
 | base                           | 15 Epx                    | Halbfett    |
-| subtitle                       | 20 Epx                    | Regular     |
+| subtitle                       | 20 Epx                    | Regulär     |
 | title                          | 24 Epx                    | Semilight   |
-| subheader                      | 34 Epx                    | Leicht       |
-| Header                         | 46 Epx                    | Leicht       |
+| subheader                      | 34 Epx                    | Hell       |
+| Header                         | 46 Epx                    | Hell       |
 
  
 
@@ -592,19 +592,19 @@ Mit dem **hint-weight**-Attribut wird die Breite von Spalten gesteuert. Der **hi
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">Gesamtgewichtung: 4</td>
@@ -631,7 +631,7 @@ Um eine Spalte doppelt so groß wie eine andere Spalte darzustellen, weisen Sie 
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">33,3 %</td>
+<td align="left">33,3 %</td>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
@@ -1399,7 +1399,3 @@ TileWide = new TileBinding()
  
 
  
-
-
-
-

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8afe892b7b8e91e72c1be7c655c8bc00998dd4
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 0591b32671c7e1e74b47a41448f3b77b915a7dc7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094617"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174904"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Windows-Apps-Konzeptzuordnung für Android- und iOS-Entwickler
 
@@ -354,7 +354,7 @@ Siehe auch die Portierungsinformationen in [Wechsel von iOS zu UWP](ios-to-uwp-r
 <td align="left"><strong>Listen Ansichts Optimierung.</strong> <br><br>Integrierte Muster zum Optimieren von Datenlisten, die häufig eine geringe Leistung aufweisen, wenn große Mengen von Daten angezeigt werden müssen.</td>
 <td align="left">Das <strong>ViewHolder</strong>-Entwurfsmuster wird verwendet, um mehrfache Ansichtssuchvorgänge zu vermeiden, sodass Sie wiederverwendbare UI-Elemente verwenden können.</td>
 <td align="left">Die Leistung von <strong>UITableView</strong> kann mit einer Reihe von Optimierungen verbessert werden, es ist jedoch keine Optimierung integriert.</td>
-<td align="left">Sie können das <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">ListView</a>- und das <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a>-Steuerelement verwenden. Diese bieten bereits <strong>UI-Virtualisierung</strong> für gleichmäßiges Schwenken und gleichmäßigen Bildlauf sowie schnelleres Starten. Sie können auch <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> und <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a> in der Datenquelle implementieren, um <strong>Datenvirtualisierung</strong> bereitzustellen und die Leistung zusätzlich zu verbessern.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">Optimieren der ListView- und GridView-Benutzeroberfläche</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">Virtualisierung von ListView- und GridView-Daten</a></td>
+<td align="left">Sie können das <a href="/uwp/api/windows.ui.xaml.controls.listview">ListView</a>- und das <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a>-Steuerelement verwenden. Diese bieten bereits <strong>UI-Virtualisierung</strong> für gleichmäßiges Schwenken und gleichmäßigen Bildlauf sowie schnelleres Starten. Sie können auch <a href="/dotnet/api/system.collections.ilist">IList</a> und <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a> in der Datenquelle implementieren, um <strong>Datenvirtualisierung</strong> bereitzustellen und die Leistung zusätzlich zu verbessern.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">Optimieren der ListView- und GridView-Benutzeroberfläche</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">Virtualisierung von ListView- und GridView-Daten</a></td>
 </tr>
 </tbody>
 </table>
@@ -482,7 +482,7 @@ Siehe auch die Portierungsinformationen in [Wechsel von iOS zu UWP](ios-to-uwp-r
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Lokale Benachrichtigungen werden geplant.</strong> <br><br>Lokale Benachrichtigungen, die von der App zu einem geplanten Zeitpunkt gesendet werden.</td>
 <td align="left">Benachrichtigungen und Aktionen werden mit einem <strong>NotificationCompat.Builder</strong> definiert. Sie können mit <strong>AlarmManager</strong> und <strong>BroadcastReceiver</strong> in der App geplant und behandelt werden.</td>
-<td align="left">Lokale Benachrichtigungen werden mithilfe von <strong>uilocalnotification</strong>erstellt und können mit " <b> uilocalnotification. schedulelocalnotification:. |" geplant werden<strong>. Sie können eine Popup Benachrichtigung mithilfe </strong>von <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">scheduledtoastnotification</a>planen<strong>. Sie können eine Kachel Benachrichtigung über die </strong> <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">tilenotificlass</a>von Ihrer APP senden <strong> oder eine Kachel Benachrichtigung mit <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">scheduledtilenotifiplanen</a>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">Adaptive und interaktive Popupbenachrichtigungen</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">Benachrichtigung über lokale Kachel senden</a> | | </strong>Senden von Pushbenachrichtigungen.</b> Von einem Pushbenachrichtigungsserver wird eine Benachrichtigung gesendet, die optional in der App behandelt wird.</td>
+<td align="left">Lokale Benachrichtigungen werden mithilfe von <strong>uilocalnotification</strong>erstellt und können mit " <b> uilocalnotification. schedulelocalnotification:. |" geplant werden<strong>. Sie können eine Popup Benachrichtigung mithilfe </strong>von <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">scheduledtoastnotification</a>planen<strong>. Sie können eine Kachel Benachrichtigung über die </strong> <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">tilenotificlass</a>von Ihrer APP senden <strong> oder eine Kachel Benachrichtigung mit <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">scheduledtilenotifiplanen</a>.<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">Adaptive und interaktive Popupbenachrichtigungen</a><br/><br/><a href="/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">Benachrichtigung über lokale Kachel senden</a> | | </strong>Senden von Pushbenachrichtigungen.</b> Von einem Pushbenachrichtigungsserver wird eine Benachrichtigung gesendet, die optional in der App behandelt wird.</td>
 <td align="left"><strong>Google Cloud Messaging</strong> unterstützt Pushbenachrichtigungen für Android.</td>
 </tr>
 </tbody>

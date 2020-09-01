@@ -1,26 +1,26 @@
 ---
 title: xDeferLoadStrategy-Attribut
-description: „xDeferLoadStrategy“ verzögert die Erstellung eines Elements und seiner untergeordneten Elemente, verkürzt die Startzeit, erhöht aber leicht die Arbeitsspeicherauslastung. Jedes betroffene Element erhöht die Arbeitsspeicherauslastung um ca. 600 Bytes.
+description: „xDeferLoadStrategy“ verzögert die Erstellung eines Elements und seiner untergeordneten Elemente, verkürzt die Startzeit, erhöht aber leicht die Arbeitsspeicherauslastung.Jedes betroffene Element erhöht die Arbeitsspeicherauslastung um ca. 600 Bytes.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f445b186c42095bfdf6d10fa7960b78691ced792
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f37c04af132e742a54df8e88e5c875a32fa94beb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371096"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173774"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy-Attribut
 
 > [!IMPORTANT]
-> Ab Windows 10, Version 1703 (Creators Update) wird **x:DeferLoadStrategy** durch das [**x:Load-Attribut**](x-load-attribute.md) ersetzt. Die Verwendung von `x:Load="False"` ist der von `x:DeferLoadStrategy="Lazy"` gleichzustellen, jedoch ermöglicht x:Load bei Bedarf das Entladen der Benutzeroberfläche. Weitere Informationen finden Sie unter [x:Load-Attribut](x-load-attribute.md).
+> Ab Windows 10, Version 1703 (Creators Update), wird **x:deferloadstrategy** durch das [**x:Load-Attribut**](x-load-attribute.md)abgelöst. Die Verwendung `x:Load="False"` von entspricht `x:DeferLoadStrategy="Lazy"` , bietet jedoch die Möglichkeit, die Benutzeroberfläche bei Bedarf zu entladen. Weitere Informationen finden Sie unter dem [x:Load-Attribut](x-load-attribute.md) .
 
-Sie können **x:DeferLoadStrategy = "Lazy"** zur Optimierung des Starts oder der Strukturerstellungsleistung Ihrer XAML-App. Bei der Verwendung von **x:DeferLoadStrategy = "Lazy"** wird die Erstellung eines Elements und seiner untergeordneten Elemente verzögert, was zu einer verringerten Startzeit und Arbeitsspeicherkosten führt. Dies ist zur Reduzierung der Kosten für Elemente nützlich, die selten oder nur bedingt angezeigt werden. Das Element wird verwirklicht, wenn Code oder VisualStateManager darauf verweist.
+Sie können **x:deferloadstrategy = "Lazy"** verwenden, um die Leistung der Start-oder Baum Erstellung Ihrer XAML-APP zu optimieren. Wenn Sie **x:deferloadstrategy = "Lazy"** verwenden, wird die Erstellung eines Elements und seiner untergeordneten Elemente verzögert, wodurch die Startzeit und die Arbeitsspeicher Kosten reduziert werden. Dies ist hilfreich, um die Kosten für Elemente zu reduzieren, die selten oder bedingt angezeigt werden. Das-Element wird erkannt, wenn auf das Element von Code oder visualstatus Manager verwiesen wird.
 
-Durch die Verfolgung von verzögerten Elementen durch das XAML-Framework werden ca. 600 Bytes zur Speicherverwendung für jedes betroffene Element hinzugefügt. Je größer die verzögerte Elementstruktur ist, desto mehr Startzeit sparen Sie – aber auf Kosten eines größeren Arbeitsspeicherbedarfs. Daher ist es möglich, dass durch eine übermäßige Verwendung dieses Attributs die Leistung beeinträchtigt wird.
+Bei der Nachverfolgung von verzögerten Elementen durch das XAML-Framework werden allerdings ungefähr 600 Byte der Speicherauslastung für jedes betroffene Element hinzugefügt. Je größer die verzögerte Elementstruktur ist, desto mehr Startzeit sparen Sie – aber auf Kosten eines größeren Arbeitsspeicherbedarfs. Daher ist es möglich, dieses Attribut in dem Ausmaß zu überschreiten, in dem sich die Leistung verringert.
 
 ## <a name="xaml-attribute-usage"></a>XAML-Attributsyntax
 
@@ -28,42 +28,42 @@ Durch die Verfolgung von verzögerten Elementen durch das XAML-Framework werden 
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Die Einschränkungen für die Verwendung von **x:DeferLoadStrategy** sind:
 
-- Definieren Sie eine [X: Name](x-name-attribute.md) für das Element, wie es eine Möglichkeit, das Element später zu finden sein muss.
-- Sie können nur Typen ableiten, die von einem [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) oder [**FlyoutBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase) abgeleitet werden.
-- Die können keine Stammelemente in einer [**Page**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page), [**UserControls**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol) oder [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) zurückstellen.
-- Sie können keine Elemente in einem [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) zurückstellen.
-- Sie können keine losen XAML zurückstellen, die mit [**XamlReader.Load**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.xamlreader.load) geladen wurden.
+- Sie müssen einen [x:Name](x-name-attribute.md)   für das-Element definieren, da es eine Möglichkeit gibt, das-Element zu einem späteren Zeitpunkt zu finden.
+- Sie können nur Typen verzögern, die von " [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) " oder " [**flyoutbase**](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase)" abgeleitet werden.
+- Stamm Elemente können nicht auf einer [**Seite**](/uwp/api/windows.ui.xaml.controls.page), einem [**UserControl-Steuer**](/uwp/api/windows.ui.xaml.controls.usercontrol)Element oder auf einem [**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate)-Element verschoben werden.
+- Elemente in einem [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary)können nicht verschoben werden.
+- Mit " [**XamlReader. Load**](/uwp/api/windows.ui.xaml.markup.xamlreader.load)" geladene lose XAML kann nicht verschoben werden.
 - Durch das Verschieben eines übergeordneten Elements werden alle Elemente gelöscht, die nicht erkannt wurden.
 
 Es gibt mehrere Möglichkeiten, verzögerte Elementen zu erkennen:
 
-- Rufen Sie [**FindName**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.findname) mit dem Namen auf, der für das Element definiert wurde.
-- Rufen Sie [**GetTemplateChild**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.gettemplatechild) mit dem Namen auf, der für das Element definiert wurde.
-- Verwenden Sie in [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) eine [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter)- oder **Storyboard**-Animation, die auf das verzögerte Element ausgerichtet ist.
+- Ruft [**FindName**](/uwp/api/windows.ui.xaml.frameworkelement.findname) mit dem Namen auf, den Sie für das Element definiert haben.
+- Aufrufen von [**GetTemplateChild**](/uwp/api/windows.ui.xaml.controls.control.gettemplatechild) mit dem Namen, den Sie für das Element definiert haben.
+- Verwenden Sie in einem [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState)eine [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) -oder **Storyboard** -Animation, die das verzögerte Element als Ziel hat.
 - Legen Sie das verzögerte Elemente in allen **Storyboards** als Ziel fest.
-- Verwenden Sie eine Bindung, die auf das verzögerte Element ausgerichtet ist.
+- Verwenden Sie eine Bindung, die das verzögerte Element als Ziel hat.
 
-> HINWEIS: Nach dem Start der Instanziierung eines Elements wird es der UI-Thread erstellt, damit es verursachen die Benutzeroberfläche auf, wenn zu Stocken, dass viel auf einmal erstellt wird.
+> HINWEIS: Nach Start der Instanziierung eines Elements wird es im Benutzeroberflächen-Thread erstellt. Dies kann ggf. bewirken, dass die Oberfläche ruckelt, wenn zu viele auf einmal erstellt werden.
 
-Wenn ein verzögertes Element mit einer der oben aufgeführten Methoden erstellt wurde, passiert Folgendes:
+Nachdem ein verzögertes Element in einer der zuvor aufgeführten Methoden erstellt wurde, geschieht Folgendes:
 
-- Das [**Loaded**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.loaded)-Ereignis für das Element wird ausgelöst.
+- Das [**geladene**](/uwp/api/windows.ui.xaml.frameworkelement.loaded) -Ereignis für das-Element wird ausgelöst.
 - Alle Bindungen für das Element werden ausgewertet.
-- Wenn Sie sich für den Empfang von Benachrichtigungen über Änderungen an der Eigenschaft, die die verzögerten Elemente enthält, registriert haben, wird die Benachrichtigung ausgelöst.
+- Wenn Sie sich für das Empfangen von Benachrichtigungen über Eigenschafts Änderungen für die Eigenschaft registriert haben, die das verzögerte Element (en) enthält, wird die Benachrichtigung ausgelöst.
 
-Sie können verzögerte Elemente verschachteln, jedoch müssen Sie vom äußersten Element aus nach innen erkannt werden.  Wenn Sie versuchen, ein untergeordnetes Element zu erkennen, bevor das übergeordnete Element erkannt wurde, wird eine Ausnahme ausgelöst.
+Sie können verzögerte Elemente verschachteln, jedoch müssen Sie vom äußersten Element aus nach innen erkannt werden. Wenn Sie versuchen, ein untergeordnetes Element zu erkennen, bevor das übergeordnete Element erkannt wurde, wird eine Ausnahme ausgelöst.
 
-In der Regel wird empfohlen, dass Sie Elemente zurückstellen, die nicht im ersten Frame angezeigt werden. Bei der Suche nach zu verzögernden Kandidaten empfiehlt es sich, nach Elementen zu suchen, die mit reduzierter [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) erstellt werden. Eine Benutzeroberfläche, die durch eine Benutzerinteraktion ausgelöst wird, ist außerdem ein guter Ort zum Suchen nach Elementen, die zurückgestellt werden können.
+In der Regel wird empfohlen, Elemente zurückzustellen, die im ersten Frame nicht angezeigt werden können.Bei der Suche nach zu verzögernden Kandidaten empfiehlt es sich, nach Elementen zu suchen, die mit reduzierter [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) erstellt werden. Außerdem ist die Benutzeroberfläche, die durch Benutzerinteraktion ausgelöst wird, ein guter Ausgangspunkt, um nach Elementen zu suchen, die Sie verzögern können.
 
-Seien Sie vorsichtig beim Verzögern von Elementen in einem [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView), da so die Startzeit verringert, aber auch die Leistung beim Verschieben reduziert werden kann – je nachdem, was Sie erstellen. Wenn Sie die Leistung beim Verschieben erhöhen möchten, finden Sie in den Dokumentationen [{x:Bind}-Markuperweiterung](x-bind-markup-extension.md) und [x:Phase-Attribut](x-phase-attribute.md) weitere Informationen.
+Seien Sie vorsichtig, wenn Sie Elemente in einer [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)verzögern, da dadurch die Startzeit verringert wird, Sie können jedoch auch die Schwenk Leistung verringern, je nachdem, was Sie erstellen. Wenn Sie die Schwenk Leistung erhöhen möchten, finden Sie weitere Informationen in der Dokumentation zu [{x:Bind} Markup Erweiterung](x-bind-markup-extension.md) und [x:Phase-Attribut](x-phase-attribute.md) .
 
-Wenn das [x:Phase-Attribut](x-phase-attribute.md) zusammen mit **x:DeferLoadStrategy** verwendet wird und ein Element oder eine Elementstruktur realisiert wird, werden die Bindungen bis einschließlich zur aktuellen Phase angewendet. Die für **x:Phase** angegebene Phase wirkt sich nicht auf die Verzögerung des Elements aus und diese lässt sich darüber nicht steuern. Wenn ein Listenelement beim Schwenken wiederverwendet wird, verhalten sich realisierte Elemente wie andere Elemente, und kompilierte Bindungen ( **{x:Bind}** -Bindungen) werden unter Verwendung der gleichen Regeln einschließlich Phasing verarbeitet.
+Wenn das [x:Phase-Attribut](x-phase-attribute.md) in Verbindung mit **x:deferloadstrategy** verwendet wird, werden die Bindungen bis einschließlich der aktuellen Phase angewendet, wenn ein Element oder eine Elementstruktur realisiert wird. Die für **x:Phase** angegebene Phase wirkt sich nicht auf die Verzögerung des Elements aus oder steuert diese nicht. Wenn ein Listenelement im Rahmen der schwenken wieder verwendet wird, Verhalten sich erkannte Elemente auf dieselbe Weise wie andere aktive Elemente, und kompilierte Bindungen (**{x:Bind}** -Bindungen) werden mit denselben Regeln, einschließlich der Phasen Verarbeitung, verarbeitet.
 
-Eine allgemeine Richtlinie besteht darin, die Leistung Ihrer App vorher und nachher zu messen, um sicherzustellen, das Sie die gewünschte Leistung erhalten.
+Eine allgemeine Richtlinie besteht darin, die Leistung Ihrer APP vor und nach zu messen, um sicherzustellen, dass Sie die gewünschte Leistung erhalten.
 
 ## <a name="example"></a>Beispiel
 

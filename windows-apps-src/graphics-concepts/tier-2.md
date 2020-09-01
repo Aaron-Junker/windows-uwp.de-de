@@ -1,75 +1,71 @@
 ---
-title: Ebene 2
-description: Die Unterstützung der Ebene 2 für Streamingressourcen fügt über die Ebene 1 hinausgehende Funktionen hinzu, z. B. Garantieren eines nicht gepackten Textur-Mipmap, wenn die Größe mindestens eine Standardkachelform beträgt, Shaderanweisungen zur Klammerung der Detailebene (Level-of-Detail, LOD) und zum Abrufen des Status des Shadervorgangs sowie das Lesen aus NULL-zugeordneten Kacheln behandeln, deren Samplingwert null ergab.
+title: Ebene 2
+description: Die Unterstützung der Ebene 2 für Streaming-Ressourcen fügt Funktionen über Ebene 1 hinaus hinzu, z. b. die Gewährleistung der nicht gepackten Textur MipMap, wenn die Größe mindestens eine Standard Kachel Form ist shaderanweisungen zum Spannen der Detailebene (LOD) und zum Abrufen des Status über den shadervorgang. beim Lesen von mit NULL zugeordneten Kacheln wird der Stichproben Wert auch als 0 (null) behandelt.
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
 keywords:
-- Ebene 2
+- Ebene 2
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c48b02de34bd37acced8ef65859708f31fd78ca2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 62fbbf3f21d614739918478b58394e51dbe577f9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370858"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175164"
 ---
-# <a name="tier-2"></a>Ebene 2
+# <a name="tier-2"></a>Ebene 2
 
 
-Die Unterstützung der Ebene 2 für Streamingressourcen fügt über die Ebene 1 hinausgehende Funktionen hinzu, z. B. Garantieren eines nicht gepackten Textur-Mipmap, wenn die Größe mindestens eine Standardkachelform beträgt, Shaderanweisungen zur Klammerung der Detailebene (Level-of-Detail, LOD) und zum Abrufen des Status des Shadervorgangs sowie das Lesen aus NULL-zugeordneten Kacheln behandeln, deren Samplingwert null ergab.
+Die Unterstützung der Ebene 2 für Streaming-Ressourcen fügt Funktionen über Ebene 1 hinaus hinzu, z. b. die Gewährleistung der nicht gepackten Textur MipMap, wenn die Größe mindestens eine Standard Kachel Form ist shaderanweisungen zum Spannen der Detailebene (LOD) und zum Abrufen des Status über den shadervorgang. beim Lesen von mit NULL zugeordneten Kacheln wird der Stichproben Wert auch als 0 (null) behandelt.
 
-## <a name="span-idtier2generalsupportspanspan-idtier2generalsupportspanspan-idtier2generalsupportspantier-2-general-support"></a><span id="Tier_2_general_support"></span><span id="tier_2_general_support"></span><span id="TIER_2_GENERAL_SUPPORT"></span>Allgemeine Unterstützung von Ebene 2
-
-
-Der Support der Ebene 2 umfasst Folgendes:
-
--   Hardware mindestens auf Funktionsebene 11.1.
--   Alle Funktionen von der vorherigen Ebene (ohne [Ebene 1](tier-1.md) bestimmte Einschränkungen) sowie die Hinzufügungen in den folgenden Elementen:
--   Shader-Anweisungen für Klammerung-LOD und Feedback über den zugeordneten Status verfügbar. Siehe [Belichtung von HLSL-Streamingressourcen](hlsl-streaming-resources-exposure.md)
-
-Zusätzlich zu diesen gibt es einige bestimmte nachfolgende Supportfragen.
-
-## <a name="span-idnon-mappedtilesspanspan-idnon-mappedtilesspanspan-idnon-mappedtilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>Nicht zugeordnete Kacheln
+## <a name="span-idtier_2_general_supportspanspan-idtier_2_general_supportspanspan-idtier_2_general_supportspantier-2-general-support"></a><span id="Tier_2_general_support"></span><span id="tier_2_general_support"></span><span id="TIER_2_GENERAL_SUPPORT"></span>Allgemeiner Support der Ebene 2
 
 
-Lesevorgänge von nicht zugeordneten Kacheln geben den Wert 0 in allen nicht fehlenden Komponenten des Formats und den Standardwert für fehlende Komponenten zurück.
+Die Unterstützung der Ebene 2 umfasst Folgendes:
 
-Schreibvorgänge auf nicht zugeordnete Kacheln werden beim Wechsel in den Speicher angehalten. Sie könnten jedoch unter Umständen in Anwendungscaches enden, die möglicherweise von nachfolgenden Lesevorgängen auf die gleiche Adresse erfasst werden.
+-   Hardware auf Featureebene 11,1.
+-   Alle Features der vorherigen Ebene (ohne Einschränkungen der [Ebene 1](tier-1.md) ) sowie die Ergänzungen der folgenden Elemente:
+-   Shaderanweisungen zum Spannen von Lod und zugeordneten Status Feedback sind verfügbar. Weitere Informationen finden Sie unter [HLSL Streaming Resources](hlsl-streaming-resources-exposure.md).
 
-## <a name="span-idtexturefilteringspanspan-idtexturefilteringspanspan-idtexturefilteringspantexture-filtering"></a><span id="Texture_filtering"></span><span id="texture_filtering"></span><span id="TEXTURE_FILTERING"></span>Texturfilterung
+Zusätzlich gibt es einige spezielle Support Probleme, die Folgen.
 
-
-Filtern mit einem Abbild, welches die **NULL** und nicht-**NULL** Kacheln überspannt und 0 (standardmäßig nach fehlenden Format) für Texel auf **NULL** Kacheln in der gesamten Ausführung beiträgt. Ältere Hardware erfüllt diese Anforderung nicht und gibt 0 (mit standardmäßig nach fehlenden Format) für das vollständige Filterergebnis zurück, wenn jegliche Texel (mit ungleich NULL Breite) sich auf einer **NULL** Kachel befinden. Jede andere Hardware muss die Anforderung erfüllen, alle Texel (mit einer Gewichtung ungleich NULL) in den Filtervorgang einzubeziehen.
-
-**NULL** Texelzugriffe haben zur Folge, dass durch den [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) Vorgang der Feedbackstatus des Texturlesevorgangs mit „false” zurückgegeben wird. Dies ist unabhängig davon, wie die Schreibmaske des Texturzugriffsergebnisses im Shader erfolgt, und wie viele Komponenten im Texturformat vorhanden sind (deren Kombination möglicherweise den Eindruck vermittelt, dass auf die Textur nicht zugegriffen werden muss).
-
-## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>Ausrichtungbeschränkungen
+## <a name="span-idnon-mapped_tilesspanspan-idnon-mapped_tilesspanspan-idnon-mapped_tilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>Nicht zugeordnete Kacheln
 
 
-Ausrichtungbeschränkungen für standardkachel Formen: MipMaps, die mindestens eine standard-Kachel in allen Dimensionen füllen garantiert der standard, mit den übrigen betrachtet gepackt als Verwenden des kachelns eine **Einheit** in N-Kacheln (N, die die Anwendung gemeldet wurden). Die Anwendung kann die N-Kacheln in willkürlich getrennte Orte in einem Kachelpool zuordnen. Sie muss jedoch entweder oder keine der gepackten Kacheln zuordnen. Die Mip-Verpackung ist ein einzigartiger Satz von gepackten Kacheln pro Array-Segment.
+Lesevorgänge von nicht zugeordneten Kacheln geben 0 (null) in allen nicht fehlenden Komponenten des Formats und die Standardeinstellung für fehlende Komponenten zurück.
 
-## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Minimale/maximale Reduzierung filtern
+Schreibvorgänge in nicht zugeordnete Kacheln werden nicht mehr in den Arbeitsspeicher aufgenommen, werden jedoch möglicherweise in Caches gespeichert, bei denen nachfolgende Lesevorgänge in die gleiche Adresse möglicherweise nicht abgerufen werden.
 
-
-Min/Max-Reduzierungsfilterung wird unterstützt. Siehe [Textursampling-Features für Streamingressourcen](streaming-resources-texture-sampling-features.md)
-
-## <a name="span-idlimitationsspanspan-idlimitationsspanspan-idlimitationsspanlimitations"></a><span id="Limitations"></span><span id="limitations"></span><span id="LIMITATIONS"></span>Einschränkungen
+## <a name="span-idtexture_filteringspanspan-idtexture_filteringspanspan-idtexture_filteringspantexture-filtering"></a><span id="Texture_filtering"></span><span id="texture_filtering"></span><span id="TEXTURE_FILTERING"></span>Textur Filterung
 
 
-Streamingressourcen mit Mipmaps, die in jeglicher Dimension kleiner sind als die Standardkachelgröße, dürfen keine Arraygröße größer als 1 aufweisen.
+Bei der Textur Filterung mit einem Speicherplatz, der auf Kacheln von **null** und nicht**null** liegt, wird 0 (mit Standardwerten für fehlende Format Komponenten) für texeln auf **null** -Kacheln in den Gesamt Filter Vorgang einbezogen. Einige frühe Hardware erfüllt diese Anforderung nicht und gibt 0 (mit Standardwerten für fehlende Format Komponenten) für das vollständige Filterergebnis zurück, wenn eine texeln (mit einer Gewichtung ungleich null) auf eine **null** -Kachel fallen. Keine andere Hardware darf die Anforderung zum Einbeziehen aller (ungleich NULL gewichteten) texeln in den Filter Vorgang übersehen.
 
-Die Einschränkungen der Kachelzugriffe gelten weiterhin, wenn doppelte Zuordnungen vorhanden sind. Siehe [Kachelzugriffseinschränkungen bei doppelten Zuordnungen](tile-access-limitations-with-duplicate-mappings.md)
+**Null** -texuszugriffe bewirken, dass der [**checkaccessfullymapping**](/windows/desktop/direct3dhlsl/checkaccessfullymapped) -Vorgang für ein Textur Lesevorgang den Wert "false" zurückgibt. Dies ist unabhängig davon, wie das Ergebnis des Textur Zugriffs im Shader im Shader maskiert werden kann und wie viele Komponenten im Textur Format vorliegen (die Kombination aus, die den Anschein hat, dass auf die Textur nicht zugegriffen werden muss).
+
+## <a name="span-idalignment_constraintsspanspan-idalignment_constraintsspanspan-idalignment_constraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>Ausrichtungs Einschränkungen
+
+
+Ausrichtungs Einschränkungen für Standard Kachel Formen: bei MipMaps, bei denen mindestens eine Standard Kachel in allen Dimensionen ausgefüllt wird, wird garantiert die Standard-tiult verwendet, wobei der Rest als **Einheit als Einheit** in n Kacheln (der der Anwendung gemeldet wird) als gepackt betrachtet wird. Die Anwendung kann die N-Kacheln willkürlich nicht zusammenhängenden Positionen in einem Kachel Pool zuordnen, muss jedoch entweder alle oder keine der gepackten Kacheln zuordnen. Die MIP-Verpackung ist ein eindeutiger Satz von gepackten Kacheln pro Array Slice.
+
+## <a name="span-idmin_max_reduction_filteringspanspan-idmin_max_reduction_filteringspanspan-idmin_max_reduction_filteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>Minimale/maximale Reduzierungs Filterung
+
+
+Die minimale/maximale Reduzierungs Filterung wird unterstützt. Weitere Informationen finden Sie unter [Streaming Resources Textur Sampling Features](streaming-resources-texture-sampling-features.md).
+
+## <a name="span-idlimitationsspanspan-idlimitationsspanspan-idlimitationsspanlimitations"></a><span id="Limitations"></span><span id="limitations"></span><span id="LIMITATIONS"></span>Einschränken
+
+
+Das Streamen von Ressourcen mit allen Mipmaps, die kleiner als die Standard Kachel Größe in einer Dimension sind, darf nicht größer als 1 sein.
+
+Einschränkungen für den Zugriff auf Kacheln, wenn doppelte Zuordnungen vorhanden sind, werden weiterhin angewendet. Siehe [Kachel Zugriffs Einschränkungen mit doppelten Zuordnungen](tile-access-limitations-with-duplicate-mappings.md).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Streaming der Tarife der Ressourcen-Funktionen](streaming-resources-features-tiers.md)
+[Ebenen der Features von Streamingressourcen](streaming-resources-features-tiers.md)
 
  
 
  
-
-
-
-

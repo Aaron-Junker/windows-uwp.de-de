@@ -6,19 +6,19 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Spiele, Steuerelemente, Eingabe
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe864f0b8c16cce9cc8d413c41a4e3324cf2e9b
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 87a56c9213aabce23801f305d8a100f536f0889b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409659"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175234"
 ---
 # <a name="add-controls"></a>Hinzufügen von Steuerelementen
 
 > [!NOTE]
 > Dieses Thema ist Teil der Tutorial-Reihe zum [Erstellen eines einfachen universelle Windows-Plattform (UWP) mit DirectX](tutorial--create-your-first-uwp-directx-game.md) . Das Thema unter diesem Link legt den Kontext für die Reihe fest.
 
-\[Aktualisiert für UWP-apps unter Windows 10. Informationen zu Windows 8. x-Artikeln finden Sie im [Archiv](/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
+\[ Aktualisiert für UWP-apps unter Windows 10. Informationen zu Windows 8. x-Artikeln finden Sie im [Archiv](/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
 
 Ein gutes universelle Windows-Plattform-Spiel (UWP) unterstützt eine Vielzahl von Schnittstellen. Ein potenzieller Player kann Windows 10 auf einem Tablet ohne physische Schaltflächen, einem PC mit einem Xbox-Controller oder dem neuesten Desktop Gaming-Gerät mit einer Hochleistungs Tastatur für Maus und Spiele haben. In unserem Spiel werden die [**Steuer**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) Elemente in der Klasse "Klasse" von "Klasse" implementiert. Diese Klasse aggregiert alle drei Eingabetypen (Maus und Tastatur, Touchpad und Gamepad) in einem einzelnen Controller. Das Endergebnis ist ein Erstbenutzer-Shooter, das Genre Standard-Steuerelemente zum Verschieben von Steuerelementen verwendet, die mit mehreren Geräten funktionieren.
 
@@ -30,11 +30,11 @@ Ein gutes universelle Windows-Plattform-Spiel (UWP) unterstützt eine Vielzahl v
 
 An dieser Stelle haben wir ein Spiel, das rendert, aber wir können den Player nicht um die Ziele herum verschieben. Wir werfen einen Blick darauf, wie unser Spiel die Move-Look-Steuerelemente von First Person-Steuerelementen für die folgenden Typen von Eingaben im UWP DirectX-Spiel implementiert.
 - Maus und Tastatur
-- Toucheingabe
+- Touch
 - Gamepad
 
 >[!Note]
->Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](/windows/uwp/get-started/get-uwp-app-samples).
+>Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](../get-started/get-app-samples.md).
 
 ## <a name="common-control-behaviors"></a>Allgemeine Verhaltensweisen von Steuerelementen
 
@@ -80,7 +80,7 @@ Vollständiger Code für [**initwindow**](https://github.com/Microsoft/Windows-u
 
 Um zu ermitteln, wann das Spiel auf bestimmte Eingaben lauschen soll, verfügt **die Klasse "** Klasse" über drei Controller spezifische Zustände, unabhängig vom Controllertyp:
 
-State | Beschreibung
+State | BESCHREIBUNG
 :----- | :-------
 **None** | Dies ist der Initialisierungszustand für den Controller. Alle Eingaben werden ignoriert, da das Spiel keine Controller Eingaben erwartet.
 **WaitForInput** | Der Controller wartet darauf, dass der Spieler eine Nachricht vom Spiel bestätigt, indem er entweder einen linken Mausklick, ein touchereignis, die Menü Schaltfläche in einem Gamepad verwendet.

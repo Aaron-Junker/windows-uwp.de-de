@@ -1,34 +1,34 @@
 ---
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API, um einen neuen Paket-Flight-Übermittlung für eine app zu erstellen, die mit Ihrem Partner Center-Konto registriert ist.
+description: Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um eine neue paketflight-Übermittlung für eine APP zu erstellen, die bei Ihrem Partner Center-Konto registriert ist.
 title: Erstellen einer Flight-Paket-Übermittlung
 ms.date: 08/03/2017
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Erstellen einer Flight-Übermittlung
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Erstellung von Flug Mitteln
 ms.localizationpriority: medium
-ms.openlocfilehash: b6474c566795043a435e70b2b41d4f5b59280c15
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5b00439656bfd4bcfaa90d976d28c4c71ab81e27
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371978"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175074"
 ---
 # <a name="create-a-package-flight-submission"></a>Erstellen einer Flight-Paket-Übermittlung
 
-Verwenden Sie diese Methode in der Microsoft Store-Übermittlungs-API zum Erstellen einer neuen Übermittlung eines Flight-Pakets für eine App. Nachdem Sie erfolgreich eine neue Übermittlung mit dieser Methode erstellt haben, [aktualisieren Sie die Übermittlung](update-a-flight-submission.md), um erforderliche Änderungen an den Übermittlungsdaten vorzunehmen, und führen Sie ein [Commit für die Übermittlung](commit-a-flight-submission.md) zur Aufnahme und Veröffentlichung durch.
+Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um eine neue Übermittlung für einen paketflug für eine APP zu erstellen. Nachdem Sie erfolgreich eine neue Übermittlung mit dieser Methode erstellt haben, [aktualisieren Sie die Übermittlung](update-a-flight-submission.md), um erforderliche Änderungen an den Übermittlungsdaten vorzunehmen, und führen Sie ein [Commit für die Übermittlung](commit-a-flight-submission.md) zur Aufnahme und Veröffentlichung durch.
 
-Weitere Informationen dazu, wie diese Methode in das Erstellen einer Flight-Paketübermittlung mit der Microsoft Store-Übermittlungs-API passt, finden Sie unter [Verwalten von Flight-Paketübermittlungen](manage-flight-submissions.md).
+Weitere Informationen zur Vorgehensweise bei der Erstellung einer paketflight-Übermittlung mithilfe der Microsoft Store Übermittlungs-API finden Sie unter [Verwalten von paketflight](manage-flight-submissions.md)-Übermittlungen.
 
 > [!NOTE]
-> Diese Methode erstellt eine Übermittlung für einen vorhandenes Flight-Paket. Verwenden Sie zum Erstellen eines Flight-Pakets die Methode zum [Erstellen eines Flight-Pakets](create-a-flight.md).
+> Diese Methode erstellt eine Übermittlung für einen vorhandenen paketflug. Verwenden Sie zum Erstellen eines Flight-Pakets die Methode zum [Erstellen eines Flight-Pakets](create-a-flight.md).
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
-* Erstellen Sie einen Paket Flug für eine app. Sie können dies im Partner Center, oder Sie erreichen dies, indem die [erstellen Sie einen Paket Flug](create-a-flight.md) Methode.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store Übermittlungs-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Erstellen eines paketflugs für eine APP Dies können Sie in Partner Center tun, oder Sie können dies mithilfe der Methode zum [Erstellen eines Pakets](create-a-flight.md) tun.
 
 ## <a name="request"></a>Anforderung
 
@@ -41,17 +41,17 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Name        | Typ   | Beschreibung                                                                 |
+| Name        | Typ   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App, für die Sie eine Flight-Paketübermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | String | Erforderlich. Die ID des Flight-Pakets, für das Sie die Übermittlung hinzufügen möchten. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten.  |
+| applicationId | Zeichenfolge | Erforderlich. Die Store-ID der App, für die Sie eine Flight-Paketübermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).  |
+| flightId | Zeichenfolge | Erforderlich. Die ID des Flight-Pakets, für das Sie die Übermittlung hinzufügen möchten. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines paketflugs](create-a-flight.md) und [zum erhalten von Paket Flügen für eine APP](get-flights-for-an-app.md)verfügbar.  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -114,17 +114,17 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die Antwort einen der folgenden HTTP-Fehlercodes.
 
-| Fehlercode |  Beschreibung   |
+| Fehlercode |  BESCHREIBUNG   |
 |--------|------------------|
 | 400  | Die Flight-Paketübermittlung konnte nicht erstellt werden, da die Anforderung ungültig ist. |
-| 409  | Die Paket-Flight-Übermittlung konnte aufgrund des aktuellen Status der app nicht erstellt werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Die paketflight-Übermittlung konnte aufgrund des aktuellen Status der APP nicht erstellt werden, oder die APP verwendet ein Partner Center-Feature, das [von der Microsoft Store Übermittlungs-API derzeit nicht unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird. |   
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Verwalten von Paket-Flight-Übermittlungen](manage-flight-submissions.md)
-* [Erhalten Sie eine Paket-Flight-Eingabe](get-a-flight-submission.md)
-* [Übernehmen Sie eine Paket-Flight-Eingabe](commit-a-flight-submission.md)
-* [Aktualisieren Sie eine Paket-Flight-Eingabe](update-a-flight-submission.md)
-* [Löschen Sie eine Paket-Flight-Eingabe](delete-a-flight-submission.md)
-* [Abrufen des Status einer Paket-Flight-Übermittlung](get-status-for-a-flight-submission.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Verwalten von Flight-Paket-Übermittlungen](manage-flight-submissions.md)
+* [Abrufen einer Flight-Paket-Übermittlung](get-a-flight-submission.md)
+* [Ausführen eines Commit für eine Flight-Paketübermittlung](commit-a-flight-submission.md)
+* [Aktualisieren einer Flight-Paket-Übermittlung](update-a-flight-submission.md)
+* [Löschen einer Flight-Paket-Übermittlung](delete-a-flight-submission.md)
+* [Abrufen des Status einer Flight-Paketübermittlung](get-status-for-a-flight-submission.md)

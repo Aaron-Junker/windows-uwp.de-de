@@ -1,28 +1,28 @@
 ---
 ms.assetid: 039B8810-5C9E-4DB9-A6AF-33E7401311FF
-description: Verwenden Sie diese Methode der Microsoft Store-Übermittlungs-API, um den Status einer App-Übermittlung abzurufen.
+description: Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um den Status einer APP-Übermittlung zu erhalten.
 title: Abrufen des Status einer App-Übermittlung
 ms.date: 04/17/2018
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, App-Übermittlung, Status
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, App-Übermittlung, Status
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e3314f52ec39f9f262f274fcf2db70f0aad7d9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4f6adafe9d3ebbc1fcffad830c5214e18e9c515f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358777"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175004"
 ---
 # <a name="get-the-status-of-an-app-submission"></a>Abrufen des Status einer App-Übermittlung
 
-Verwenden Sie diese Methode der Microsoft Store-Übermittlungs-API, um den Status einer App-Übermittlung abzurufen. Weitere Informationen zum Erstellungsprozess einer App-Übermittlung mithilfe der Microsoft Store-Übermittlungs-API finden Sie unter [Verwalten von App-Übermittlungen](manage-app-submissions.md).
+Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um den Status einer APP-Übermittlung zu erhalten. Weitere Informationen zum Prozess der Erstellung einer APP-Übermittlung mithilfe der Microsoft Store Übermittlungs-API finden Sie unter [Verwalten von App](manage-app-submissions.md)-Übermittlungen.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store Übermittlungs-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 ## <a name="request"></a>Anforderung
 
@@ -35,17 +35,17 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Name        | Typ   | Beschreibung                                                                 |
+| Name        | Typ   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App mit der Übermittlung, für die der Status abgerufen werden soll. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | String | Erforderlich. Die ID der Übermittlung, für die der Status abgerufen werden sollen. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer App-Übermittlung](create-an-app-submission.md) verfügbar. Für eine Eingabe, die im Partner Center erstellt wurde, ist diese ID auch in die URL für die Seite für die Auftragsübermittlung im Partner Center verfügbar.  |
+| applicationId | Zeichenfolge | Erforderlich. Die Store-ID der App mit der Übermittlung, für die der Status abgerufen werden soll. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).  |
+| submissionId | Zeichenfolge | Erforderlich. Die ID der Übermittlung, für die der Status abgerufen werden sollen. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen einer APP-Übermittlung](create-an-app-submission.md)verfügbar. Für eine Übermittlung, die im Partner Center erstellt wurde, ist diese ID auch in der URL für die Übermittlungs Seite im Partner Center verfügbar.  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -78,27 +78,27 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 ### <a name="response-body"></a>Antworttext
 
-| Wert      | Typ   | Beschreibung                                                                                                                                                                                                                                                                         |
+| Wert      | Typ   | BESCHREIBUNG                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | String  | Der Status der Übermittlung. Folgende Werte sind möglich: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Version</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  Enthält zusätzliche Details über den Status der Übermittlung, einschließlich Informationen zu Fehlern. Weitere Informationen finden Sie in der [Statusdetails-Ressource](manage-app-submissions.md#status-details-object). |
+| status           | Zeichenfolge  | Der Status der Übermittlung. Mögliche Werte: <ul><li>Keine</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Veröffentlichung</li><li>Veröffentlicht</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Zertifizierung</li><li>CertificationFailed</li><li>Freigabe</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | Objekt (object)  |  Enthält zusätzliche Details über den Status der Übermittlung, einschließlich Informationen zu Fehlern. Weitere Informationen finden Sie in der [Statusdetails-Ressource](manage-app-submissions.md#status-details-object). |
 
 
 ## <a name="error-codes"></a>Fehlercodes
 
 Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die Antwort einen der folgenden HTTP-Fehlercodes.
 
-| Fehlercode |  Beschreibung   |
+| Fehlercode |  BESCHREIBUNG   |
 |--------|------------------|
 | 404  | Die Übermittlung konnte nicht gefunden werden. |
-| 409  | Die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Die APP verwendet ein Partner Center-Feature, das [derzeit von der Microsoft Store Übermittlungs-API nicht unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird.  |
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Erhalten Sie eine app-Übermittlung](get-an-app-submission.md)
-* [Erstellen Sie ein app-Übermittlung](create-an-app-submission.md)
-* [Übernehmen Sie eine app-Übermittlung](commit-an-app-submission.md)
-* [Aktualisieren einer app](update-an-app-submission.md)
-* [Löschen Sie ein app-Übermittlung](delete-an-app-submission.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Abrufen einer App-Übermittlung](get-an-app-submission.md)
+* [Erstellen einer App-Übermittlung](create-an-app-submission.md)
+* [Ausführen eines Commit für eine App-Übermittlung](commit-an-app-submission.md)
+* [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)
+* [Löschen einer App-Übermittlung](delete-an-app-submission.md)

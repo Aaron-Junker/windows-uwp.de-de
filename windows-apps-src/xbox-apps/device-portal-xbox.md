@@ -1,17 +1,17 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Geräteportal für Xbox
-description: Erfahren Sie, wie Sie das Geräte Portal für Xbox One aktivieren, das Ihnen den Remote Zugriff auf Ihre Entwicklungs-Xbox ermöglicht.
+description: Erfahren Sie, wie Sie das Xbox-Geräte Portal für Xbox One aktivieren, mit dem Sie Remote Zugriff auf Ihre Entwicklungs-Xbox erhalten.
 ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, UWP, Geräteportal
 ms.localizationpriority: medium
-ms.openlocfilehash: 485cd9dc5a7ecb437cacf4a2c9c6eee57c3717f1
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043482"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174784"
 ---
 # <a name="device-portal-for-xbox"></a>Geräteportal für Xbox
 
@@ -53,7 +53,7 @@ Unter **Xbox Live-Testkonten**können Sie die Konten verwalten, die mit Ihrer Xb
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (Spiel speichert)
 
-Sowohl das Windows-Geräte Portal als auch das Xbox-Geräte Portal verfügen über eine **Xbox Live** -Seite. Das Xbox-Geräte Portal verfügt jedoch über einen eindeutigen Abschnitt, das **Xbox Live-Spiel speichert**, wo Sie Daten für Spiele speichern können, die auf der Xbox installiert sind. Geben Sie die **Dienstkonfigurations-ID (SCID)** ein (Weitere Informationen finden Sie in der [Xbox Live Service-Konfiguration](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids) ). **Mitgliedsname (MSA)** und **paketfamilienname (PFN)** , die dem Titel und dem Spiel speichern zugeordnet sind, suchen Sie nach der **Eingabedatei (. JSON oder. Xml)**, und wählen Sie dann eine der Schaltflächen (**Zurücksetzen**, **importieren**, **exportieren**und **Löschen**) aus, um die Daten zu speichern.
+Sowohl das Windows-Geräte Portal als auch das Xbox-Geräte Portal verfügen über eine **Xbox Live** -Seite. Das Xbox-Geräte Portal verfügt jedoch über einen eindeutigen Abschnitt, das **Xbox Live-Spiel speichert**, wo Sie Daten für Spiele speichern können, die auf der Xbox installiert sind. Geben Sie die **Dienstkonfigurations-ID (SCID)** ein (Weitere Informationen finden Sie in der [Xbox Live Service-Konfiguration](/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids) ). **Mitgliedsname (MSA)** und **paketfamilienname (PFN)** , die dem Titel und dem Spiel speichern zugeordnet sind, suchen Sie nach der **Eingabedatei (. JSON oder. Xml)**, und wählen Sie dann eine der Schaltflächen (**Zurücksetzen**, **importieren**, **exportieren**und **Löschen**) aus, um die Daten zu speichern.
 
 Im Abschnitt **generieren** können Sie Dummydaten generieren und in der angegebenen Eingabedatei speichern. Geben Sie einfach die **Container (standardmäßig 2)**, die **BLOBs (Standardwert 3)** und die **blobgröße (standardmäßig 1024**) ein, und wählen Sie **generieren**aus.
 
@@ -202,4 +202,4 @@ Auf der Seite **Spiel Ereignisdaten** können Sie ein Echtzeit-Diagramm anzeigen
 ## <a name="see-also"></a>Weitere Informationen
 
 * [Übersicht über das Windows-Geräteportal](../debug-test-perf/device-portal.md)
-* [Referenz zu Kern-APIs des Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Referenz zu Kern-APIs des Device Portal](../debug-test-perf/device-portal-api-core.md)

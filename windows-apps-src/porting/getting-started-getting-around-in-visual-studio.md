@@ -4,14 +4,14 @@ title: Aufbau von Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 58d3b59d8fdd1587a0bec8369a78863d0c3d4557
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 02a0b3c631d3ee85353eb0516d5c6d1aa511f77e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358809"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174924"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>Erste Schritte: Aufbau von Visual Studio
 
@@ -44,7 +44,7 @@ Wiederholen Sie den Vorgang für das **TextBlock**-Steuerelement, sodass es wie 
 
 ![Entwerfen der Benutzeroberfläche in Visual Studio](images/ios-to-uwp/vs-add-button-label.png)
 
-Im Gegensatz zu Xcode, wo Layout- und Bindungsinformationen in einer XIB- oder einer Storyboard-Datei gespeichert sind, wird in Visual Studio empfohlen, die zum Speichern dieser Details verwendeten XAML-Dateien in einer umfangreichen, bearbeitbaren, deklarativen XML-ähnlichen Sprache zu bearbeiten. Weitere Informationen zu Extensible Application Markup Language (XAML) finden Sie in der [XAML-Übersicht](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview). Alle derzeit im Bereich **Entwurf** angezeigten Inhalte werden im **XAML**-Bereich definiert. Der **XAML**-Bereich ermöglicht bei Bedarf eine genaue Steuerung, und sobald Sie sich eingearbeitet haben, kommen Sie mit dem manuellen Schreiben von Benutzeroberflächencode schnell voran. An dieser Stelle konzentrieren wir uns jedoch ausschließlich auf die Bereiche **Entwurf** und **Eigenschaften**.
+Im Gegensatz zu Xcode, wo Layout- und Bindungsinformationen in einer XIB- oder einer Storyboard-Datei gespeichert sind, wird in Visual Studio empfohlen, die zum Speichern dieser Details verwendeten XAML-Dateien in einer umfangreichen, bearbeitbaren, deklarativen XML-ähnlichen Sprache zu bearbeiten. Weitere Informationen zu Extensible Application Markup Language (XAML) finden Sie in der [XAML-Übersicht](../xaml-platform/xaml-overview.md). Alle derzeit im Bereich **Entwurf** angezeigten Inhalte werden im **XAML**-Bereich definiert. Der **XAML**-Bereich ermöglicht bei Bedarf eine genaue Steuerung, und sobald Sie sich eingearbeitet haben, kommen Sie mit dem manuellen Schreiben von Benutzeroberflächencode schnell voran. An dieser Stelle konzentrieren wir uns jedoch ausschließlich auf die Bereiche **Entwurf** und **Eigenschaften**.
 
 Ändern wir nun die Schaltflächendetails. Wie Sie nachvollziehen können, muss zum Ändern des Namens der Schaltfläche in Xcode der Wert des Felds **Titel** im Eigenschaftenpanel geändert werden.
 
@@ -70,7 +70,7 @@ Visual Studio ist ähnlich aufgebaut. Rechts über den **Eigenschaften** befinde
 
 ![Schaltflächenereignisliste in Visual Studio](images/ios-to-uwp/vs-button-event.png)
 
-Um Code für das Click-Ereignis der Schaltfläche hinzuzufügen, wählen Sie im Bereich **Entwurf** zunächst die Schaltfläche aus. Klicken Sie als Nächstes auf die Schaltfläche mit dem Gewitterblitz, und doppelklicken Sie auf das leere Feld neben **Click**. Visual Studio fügt dann das Ereignis "MyButton\_klicken Sie auf" auf die **klicken Sie auf** Feld und fügt hinzu, und die entsprechenden Ereignishandler in der Datei "MainPage.Xaml.cs" wie folgt angezeigt.
+Um Code für das Click-Ereignis der Schaltfläche hinzuzufügen, wählen Sie im Bereich **Entwurf** zunächst die Schaltfläche aus. Klicken Sie als Nächstes auf die Schaltfläche mit dem Gewitterblitz, und doppelklicken Sie auf das leere Feld neben **Click**. Visual Studio fügt dann dem Click-Feld das Ereignis "myButton \_ Click" hinzu und fügt dann den entsprechenden Ereignishandler in der MainPage.XAML.cs-Datei wie folgt hinzu. **Click**
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ In Visual Studio müssen Sie das Steuerelement nicht zuordnen, da dies immer aut
 
 ![Fenster "Bezeichnungseigenschaften" in Visual Studio](images/ios-to-uwp/vs-label-properties.png)
 
-Lassen Sie uns nun dem Click-Ereignis der Schaltfläche Code hinzufügen. Zu diesem Zweck, tippen Sie auf die Datei "MainPage.Xaml.cs", und fügen Sie den folgenden Code, um die MyButton\_Click-Ereignishandler.
+Lassen Sie uns nun dem Click-Ereignis der Schaltfläche Code hinzufügen. Tippen Sie hierzu auf die Datei MainPage.XAML.cs, und fügen Sie den folgenden Code zum Click-Ereignishandler MyButton hinzu \_ .
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -124,5 +124,4 @@ Wenn Sie die App beenden möchten, tippen Sie in Visual Studio auf das Menü **D
 
 ## <a name="next-step"></a>Nächster Schritt
 
-[Erste Schritte: Allgemeine Steuerelemente](getting-started-common-controls.md)
-
+[Getting Started: allgemeine Steuerelemente](getting-started-common-controls.md)

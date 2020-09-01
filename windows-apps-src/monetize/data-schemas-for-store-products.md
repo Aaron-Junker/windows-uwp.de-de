@@ -1,41 +1,41 @@
 ---
-description: Beschreibt das erweiterte JSON-Datenschema für Store-Produkte im Windows.Services.Store-Namespace.
-title: Datenschemata für Store-Produkte
+description: Beschreibt das erweiterte JSON-Datenschema für Store-Produkte im Windows. Services. Store-Namespace.
+title: Datenschemas für Store-Produkte
 ms.date: 09/26/2017
 ms.topic: article
-keywords: Windows 10, UWP, ExtendedJsonData, Store-Produkte, Schema
+keywords: Windows 10, UWP, extendedjsondata, Store-Produkte, Schema
 ms.localizationpriority: medium
-ms.openlocfilehash: 77f63ce409a576b3c873d95df0d2e8d0f0933808
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 46feac06745cd875aaf99985d45ea1b5b126b540
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372536"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175094"
 ---
-# <a name="data-schemas-for-store-products"></a>Datenschemata für Store-Produkte
+# <a name="data-schemas-for-store-products"></a>Datenschemas für Store-Produkte
 
-Wenn Sie ein Produkt wie z. B. eine App oder ein Add-On im Store einreichen, verwaltet der Informationsspeicher einen umfassenden Satz von Daten für das Produkt und dessen Lizenzen. In Ihrem App-Code können Sie programmgesteuerten Zugriff auf einige dieser Daten mithilfe der Eigenschaften im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) Namespace nutzen. Zum Beispiel können Sie die Beschreibung und den Preis für die aktuelle App oder ein Add-On für die aktuelle App mithilfe der [StoreProduct.Description](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Description) und [StoreProduct.Price](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Price) Eigenschaften abrufen.
+Wenn Sie ein Produkt, z. b. eine APP oder ein Add-on, an den Store übermitteln, verwaltet der Store einen umfassenden Satz von Daten für das Produkt und seine Lizenzen. Im Code Ihrer APP können Sie Programm gesteuert auf einige dieser Daten zugreifen, indem Sie die Eigenschaften im [Windows. Services. Store](/uwp/api/windows.services.store) -Namespace verwenden. Beispielsweise können Sie die Beschreibung und den Preis der aktuellen APP oder ein Add-on für die aktuelle App mithilfe der Eigenschaften [storeproduct. Description](/uwp/api/windows.services.store.storeproduct.Description) und [storeproduct. Price](/uwp/api/windows.services.store.storeproduct.Price) abrufen.
 
-Viele Daten für Produkte im Store sind jedoch ist nicht über vordefinierte Eigenschaften im [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) Namespace verfügbar. Um auf die vollständigen Daten für ein Produkt in Ihrem Code zuzugreifen, können Sie die folgenden allgemeinen Eigenschaften verwenden:
+Ein Großteil der Daten für Produkte im Speicher wird jedoch nicht durch vordefinierte Eigenschaften im [Windows. Services. Store](/uwp/api/windows.services.store) -Namespace verfügbar gemacht. Für den Zugriff auf die vollständigen Daten für ein Produkt in Ihrem Code können Sie stattdessen die folgenden allgemeinen Eigenschaften verwenden:
 
-* [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)
-* [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData)
-* [StoreAvailability.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.ExtendedJsonData)
-*   [StoreCollectionData.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData)
-*   [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData)
-* [StoreLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense.ExtendedJsonData)
-*   [StorePurchaseProperties.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData)
+* [Storeproduct. extendedjsondata](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)
+* [Storesku. extendedjsondata](/uwp/api/windows.services.store.storesku.ExtendedJsonData)
+* [Storeavailability. extendedjsondata](/uwp/api/windows.services.store.storeavailability.ExtendedJsonData)
+*   [Storecollectiondata. extendedjsondata](/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData)
+*   [Storeapplicense. extendedjsondata](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData)
+* [Storelicense. extendedjsondata](/uwp/api/windows.services.store.storelicense.ExtendedJsonData)
+*   [Storepurchaseproperties. extendedjsondata](/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData)
 
-Diese Eigenschaften geben die vollständigen Daten für das entsprechende Objekt als JSON-formatierte Zeichenfolge zurück. Dieser Artikel enthält das vollständige Schema für die Daten von diesen Eigenschaften zurückgegeben werden.
+Diese Eigenschaften geben die gesamten Daten für das entsprechende Objekt als JSON-formatierte Zeichenfolge zurück. Dieser Artikel enthält das komplette Schema für die Daten, die von diesen Eigenschaften zurückgegeben werden.
 
 > [!NOTE]
-> Produkte im Store sind in einer Hierarchie von [Produkt](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct), [SKU](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) und [Verfügbarkeit](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) Objekten organisiert. Weitere Informationen finden Sie unter [Produkte, SKUs und Verfügbarkeiten](in-app-purchases-and-trials.md#products-skus).
+> Produkte im Geschäft sind in einer Hierarchie von [Produkt](/uwp/api/windows.services.store.storeproduct)-, [SKU](/uwp/api/windows.services.store.storesku)-und [Verfügbarkeits](/uwp/api/windows.services.store.storeavailability) Objekten organisiert. Weitere Informationen finden Sie unter [Produkte, SKUs und Verfügbarkeit](in-app-purchases-and-trials.md#products-skus).
 
-## <a name="schema-for-storeproduct-storesku-storeavailability-and-storecollectiondata"></a>Schema für StoreProduct, StoreSku, StoreAvailability und StoreCollectionData
+## <a name="schema-for-storeproduct-storesku-storeavailability-and-storecollectiondata"></a>Schema für storeproduct, storesku, storeavailability und storecollectiondata
 
-Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) zurückgegeben wird. Die [StoreSku.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.ExtendedJsonData), [StoreAvailability.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.ExtendedJsonData), und [StoreCollectionData.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData) Eigenschaften geben nur die Teile des Schemas zurück, die unter den Pfaden `DisplaySkuAvailabilities\Sku`, `DisplaySkuAvailabilities\Availabilities` und `DisplaySkuAvailabilities\Sku\CollectionData` definiert sind.
+Im folgenden Schema wird die JSON-formatierte Zeichenfolge beschrieben, die von [storeproduct. extendedjsondata](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)zurückgegeben wurde. Die Eigenschaften [storesku. extendedjsondata](/uwp/api/windows.services.store.storesku.ExtendedJsonData), [storeavailability. extendedjsondata](/uwp/api/windows.services.store.storeavailability.ExtendedJsonData)und [storecollectiondata. extendedjsondata](/uwp/api/windows.services.store.storecollectiondata.ExtendedJsonData) geben nur die Teile des Schemas zurück, die jeweils unter den `DisplaySkuAvailabilities\Sku` Pfaden, und definiert sind `DisplaySkuAvailabilities\Availabilities` `DisplaySkuAvailabilities\Sku\CollectionData` .
 
-Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) finden Sie [in diesem Abschnitt](#product-example).
+Ein Beispiel für eine JSON-formatierte Zeichenfolge, die von [storeproduct. extendedjsondata](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)zurückgegeben wurde, finden Sie in [diesem Abschnitt](#product-example).
 
 [!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
 
@@ -43,15 +43,15 @@ Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreProduct.ExtendedJ
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge von der [StoreProduct.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) Eigenschaft für die App.
+Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge, die von der [storeproduct. extendedjsondata](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) -Eigenschaft für die-APP zurückgegeben wird.
 
 [!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
 
-## <a name="schema-for-storeapplicense-and-storelicense"></a>Schema für StoreAppLicense und StoreLicense
+## <a name="schema-for-storeapplicense-and-storelicense"></a>Schema für storeapplicense und storelicense
 
-Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) zurückgegeben wird. Die [StoreLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense.ExtendedJsonData) Eigenschaft gibt nur die Teile des Schemas zurück, die unter dem `productAddOns` Pfad definiert sind.
+Im folgenden Schema wird die JSON-formatierte Zeichenfolge beschrieben, die von [storeapplicense. extendedjsondata](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData)zurückgegeben wurde. Die [storelicense. extendedjsondata](/uwp/api/windows.services.store.storelicense.ExtendedJsonData) -Eigenschaft gibt nur die Teile des Schemas zurück, die unter dem Pfad definiert sind `productAddOns` .
 
-Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) finden Sie [in diesem Abschnitt](#license-example).
+Ein Beispiel für eine JSON-formatierte Zeichenfolge, die von [storeapplicense. extendedjsondata](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData)zurückgegeben wurde, finden Sie in [diesem Abschnitt](#license-example).
 
 [!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
 
@@ -59,21 +59,21 @@ Ein Beispiel für eine JSON-formatierte Zeichenfolge von [StoreAppLicense.Extend
 
 ### <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge von der [StoreAppLicense.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) Eigenschaft für die App.
+Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge, die von der [storeapplicense. extendedjsondata](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) -Eigenschaft für die-APP zurückgegeben wird.
 
 [!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
 
-## <a name="schema-for-storepurchaseproperties"></a>Schema für StorePurchaseProperties
+## <a name="schema-for-storepurchaseproperties"></a>Schema für storepurchaseproperties
 
-Das folgende Schema beschreibt die JSON-formatierte Zeichenfolge die von [StorePurchaseProperties.ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData) zurückgegeben wird.
+Im folgenden Schema wird die JSON-formatierte Zeichenfolge beschrieben, die von [storepurchaseproperties. extendedjsondata](/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData)zurückgegeben wurde.
 
 [!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
-* [Abrufen von Produktinformationen für apps und -Add-Ons](get-product-info-for-apps-and-add-ons.md)
-* [Abrufen von Lizenzinformationen für apps und -Add-Ons](get-license-info-for-apps-and-add-ons.md)
-* [Aktivieren von in-app-Käufe von apps und -Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Aktivieren Sie nutzbar Add-on-Käufe](enable-consumable-add-on-purchases.md)
-* [Implementieren Sie eine Testversion von Ihrer app](implement-a-trial-version-of-your-app.md)
+* [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)
+* [Abrufen von Lizenzinformationen zu Apps und Add-Ons](get-license-info-for-apps-and-add-ons.md)
+* [Aktivieren von In-App-Käufen von Apps und Add-Ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Unterstützen von Endverbraucher-Add-On-Käufen](enable-consumable-add-on-purchases.md)
+* [Implementieren einer Testversion der App](implement-a-trial-version-of-your-app.md)

@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 5eac1b5d95dff4887258278f9ff700adaf663194
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043572"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175544"
 ---
 # <a name="parallax"></a>Parallax
 
@@ -56,14 +56,14 @@ In einer Benutzeroberfläche können Sie einen parameteffekt erstellen, indem Si
  
 ## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>Verwenden des Steuer Elements "parametenxview" zum Erstellen eines-Parametern
 
-Zum Erstellen eines-Parametern verwenden Sie das-Steuerelement " [Parser](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) ". Dieses Steuerelement bindet die Scrollposition eines Vordergrund Elements, z. b. eine Liste, an ein Hintergrund Element, z. b. ein Bild. Wenn Sie einen Bildlauf durch das Vordergrund Element durchführen, animiert es das background-Element, um einen-Effekt zu erzeugen. 
+Zum Erstellen eines-Parametern verwenden Sie das-Steuerelement " [Parser](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) ". Dieses Steuerelement bindet die Scrollposition eines Vordergrund Elements, z. b. eine Liste, an ein Hintergrund Element, z. b. ein Bild. Wenn Sie einen Bildlauf durch das Vordergrund Element durchführen, animiert es das background-Element, um einen-Effekt zu erzeugen. 
 
-Wenn Sie das Steuerelement "-Steuerelement" verwenden möchten, geben Sie ein Quell Element, ein Background-Element und die [verticalshift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) -Eigenschaften (für das vertikale Scrollen) und/oder [horizontalshift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (für horizontales Scrollen) auf einen Wert größer als 0 (null) an. 
-* Die Source-Eigenschaft nimmt einen Verweis auf das Vordergrund Element an. Damit der Teil des Parametern auftritt, sollte der Vordergrund ein [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) oder ein Element sein, das einen ScrollViewer enthält, z. b. ein [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) -oder [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)-Element. 
+Wenn Sie das Steuerelement "-Steuerelement" verwenden möchten, geben Sie ein Quell Element, ein Background-Element und die [verticalshift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) -Eigenschaften (für das vertikale Scrollen) und/oder [horizontalshift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (für horizontales Scrollen) auf einen Wert größer als 0 (null) an. 
+* Die Source-Eigenschaft nimmt einen Verweis auf das Vordergrund Element an. Damit der Teil des Parametern auftritt, sollte der Vordergrund ein [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) oder ein Element sein, das einen ScrollViewer enthält, z. b. ein [ListView](/uwp/api/windows.ui.xaml.controls.listview) -oder [RichTextBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)-Element. 
 
-* Um das background-Element festzulegen, fügen Sie dieses Element als untergeordnetes Element des-Steuer Elements "Parser" hinzu. Beim Background-Element kann es sich um ein beliebiges [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)handeln, z. b. ein [Bild](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) oder ein Panel, das zusätzliche Benutzeroberflächen Elemente 
+* Um das background-Element festzulegen, fügen Sie dieses Element als untergeordnetes Element des-Steuer Elements "Parser" hinzu. Beim Background-Element kann es sich um ein beliebiges [UIElement](/uwp/api/windows.ui.xaml.uielement)handeln, z. b. ein [Bild](/uwp/api/Windows.UI.Xaml.Controls.Image) oder ein Panel, das zusätzliche Benutzeroberflächen Elemente 
 
-Um einen Teil des Effekts zu erstellen, muss sich die "Parser"-Sicht hinter dem Vordergrund Element befinden. Mit dem [Raster](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) -und dem [Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas) -Panel können Sie Elemente auf der obersten Ebene anlagern, sodass Sie gut mit dem Steuerelement "parameallaxview" funktionieren.  
+Um einen Teil des Effekts zu erstellen, muss sich die "Parser"-Sicht hinter dem Vordergrund Element befinden. Mit dem [Raster](/uwp/api/windows.ui.xaml.controls.grid) -und dem [Canvas](/uwp/api/windows.ui.xaml.controls.canvas) -Panel können Sie Elemente auf der obersten Ebene anlagern, sodass Sie gut mit dem Steuerelement "parameallaxview" funktionieren.  
 
 In diesem Beispiel wird ein Teil des Parametern für eine Liste erstellt:
  
@@ -123,6 +123,6 @@ Eine umfassende Liste der Möglichkeiten zum Anpassen von "Parser" finden Sie in
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Parametanview-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
+- [Parametanview-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design für UWP](/windows/apps/fluent-design-system)
 - [Wissenschaft im System: Fluent Design und Tiefe](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 694ab7a3897bdf13189d61ab70ed05b9169b834c
-ms.sourcegitcommit: 020d0ff0e5abf46b2ed660eac61251b32bf150bc
+ms.openlocfilehash: 785047b3ee5f18fa4f6ea8fd78f6d8ab7a92e8e6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84716038"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173424"
 ---
 # <a name="keyboard-accelerators"></a>Tastaturkürzel
 
@@ -26,7 +26,7 @@ Zugriffstasten (oder Tastaturbeschleuniger) sind Tastenkombinationen, die die Be
 Weitere Informationen zum Navigieren in der Benutzeroberfläche einer Windows-Anwendung mit Tastenkombinationen finden Sie im Thema [Zugriffsschlüssel](access-keys.md) .
 
 > [!NOTE]
-> Eine Tastatur ist für Benutzer mit bestimmten Behinderungen unverzichtbar (siehe [Tastatur Barrierefreiheit](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)) und ist auch ein wichtiges Tool für Benutzer, die Sie als effizientere Methode für die Interaktion mit einer APP bevorzugen.
+> Eine Tastatur ist für Benutzer mit bestimmten Behinderungen unverzichtbar (siehe [Tastatur Barrierefreiheit](../accessibility/keyboard-accessibility.md)) und ist auch ein wichtiges Tool für Benutzer, die Sie als effizientere Methode für die Interaktion mit einer APP bevorzugen.
 
 ## <a name="overview"></a>Übersicht
 
@@ -54,7 +54,7 @@ Es wird empfohlen, dass Sie bei Bedarf Tastaturbeschleuniger in der Benutzerober
 
 ## <a name="specify-a-keyboard-accelerator"></a>Tastaturbeschleuniger angeben
 
-Verwenden Sie die [keyboardaccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) -APIs zum Erstellen von Tastatur Accelerators in UWP-apps. Mit diesen APIs müssen Sie nicht mehrere KeyDown-Ereignisse behandeln, um die gedrückte Tastenkombination zu erkennen, und Sie können Acceleratoren in den App-Ressourcen lokalisieren.
+Verwenden Sie die [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) -APIs zum Erstellen von Tastatur Accelerators in UWP-apps. Mit diesen APIs müssen Sie nicht mehrere KeyDown-Ereignisse behandeln, um die gedrückte Tastenkombination zu erkennen, und Sie können Acceleratoren in den App-Ressourcen lokalisieren.
 
 Es wird empfohlen, dass Sie für die gängigsten Aktionen in der APP Tastaturbeschleuniger festlegen und diese mithilfe der Menü Element Bezeichnung oder der QuickInfo dokumentieren. In diesem Beispiel deklarieren wir Tastaturbeschleuniger nur für die Befehle Rename und Copy.
 
@@ -129,11 +129,11 @@ Es wird empfohlen, dass Sie für die gängigsten Aktionen in der APP Tastaturbes
 ![In einer QuickInfo beschriebene Tastatur Beschleunigung](images/accelerators/accelerators_tooltip.png)  
 ***In einer QuickInfo beschriebene Tastatur Beschleunigung***
 
-Das [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) -Objekt verfügt über eine [keyboardaccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Auflistung ( [keyboardaccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)), in der Sie die benutzerdefinierten keyboardaccelerator-Objekte angeben und die Tastatureingaben für die Zugriffstaste definieren:
+Das [UIElement](/uwp/api/windows.ui.xaml.uielement) -Objekt verfügt über eine [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Auflistung ( [keyboardaccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)), in der Sie die benutzerdefinierten keyboardaccelerator-Objekte angeben und die Tastatureingaben für die Zugriffstaste definieren:
 
--   **[Key](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : der [virtualkey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey) , der für die Zugriffstaste verwendet wird.
+-   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** : der [virtualkey](/uwp/api/windows.system.virtualkey) , der für die Zugriffstaste verwendet wird.
 
--   **[Modifiziererer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – die für die Tastatur Zugriffstaste verwendeten [virtualkeymodifier](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers) . Wenn Modifizierer nicht festgelegt ist, ist der Standardwert None.
+-   **[Modifiziererer](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – die für die Tastatur Zugriffstaste verwendeten [virtualkeymodifier](/uwp/api/windows.system.virtualkeymodifiers) . Wenn Modifizierer nicht festgelegt ist, ist der Standardwert None.
 
 > [!NOTE]
 > Die Tastenkombination Single Key (A, DELETE, F2, SPACEBAR, ESC, Multimedia Key) und Multi-Key Accelerators (STRG + UMSCHALT + M) werden unterstützt. Die virtuellen Gamepad-Schlüssel werden jedoch nicht unterstützt.
@@ -150,7 +150,7 @@ Microsoft Outlook enthält z. b. die folgenden Accelerators:
 
 Kontextmenü Aktionen wirken sich nur auf bestimmte Bereiche oder Elemente aus, z. b. die ausgewählten Zeichen in einem Text-Editor oder ein Lied in einer Wiedergabeliste. Aus diesem Grund wird empfohlen, den Bereich der Tastaturbeschleuniger für Kontextmenü Elemente auf das übergeordnete Element des Kontextmenüs festzulegen.
 
-Verwenden Sie die Eigenschaft [scopeowner](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.ScopeOwner) , um den Gültigkeitsbereich der Tastatur Zugriffstaste anzugeben. In diesem Code wird veranschaulicht, wie ein Kontextmenü für eine ListView mit Bereichs bezogenen Tastatur Accelerators implementiert wird:
+Verwenden Sie die Eigenschaft [scopeowner](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.ScopeOwner) , um den Gültigkeitsbereich der Tastatur Zugriffstaste anzugeben. In diesem Code wird veranschaulicht, wie ein Kontextmenü für eine ListView mit Bereichs bezogenen Tastatur Accelerators implementiert wird:
 
 ``` xaml
 <ListView x:Name="MyList">
@@ -193,9 +193,9 @@ Das scopeowner-Attribut des menuflyoutitem. keyboardaccelerators-Elements markie
 
 ## <a name="invoke-a-keyboard-accelerator"></a>Aufrufen einer Tastatur Beschleunigung 
 
-Das [keyboardaccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Objekt verwendet das [UI Automation (UIA)-Steuerelement Muster](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview) , um eine Aktion auszuführen, wenn eine Zugriffstaste aufgerufen wird.
+Das [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Objekt verwendet das [UI Automation (UIA)-Steuerelement Muster](/windows/desktop/WinAuto/uiauto-controlpatternsoverview) , um eine Aktion auszuführen, wenn eine Zugriffstaste aufgerufen wird.
 
-Die UIA [Steuerelement Muster] machen allgemeine Steuerungsfunktionen verfügbar. Beispielsweise implementiert das Schaltflächen-Steuerelement das Start Steuerungs Muster zur Unterstützung des Click-Ereignisses (in der Regel wird ein Steuerelement aufgerufen, indem Sie [auf die Schalt](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke) Fläche klicken, doppelklicken oder drücken, eine vordefinierte Tastenkombination oder eine andere Kombination von Tastatureingaben). Wenn eine Tastenkombination verwendet wird, um ein Steuerelement aufzurufen, sucht das XAML-Framework, ob das Steuerelement das Aufruf Steuerungs Muster implementiert, und aktiviert es, wenn dies der Fall ist.
+Die UIA [Steuerelement Muster] machen allgemeine Steuerungsfunktionen verfügbar. Beispielsweise implementiert das Schaltflächen-Steuerelement das Start Steuerungs Muster zur Unterstützung des Click-Ereignisses (in der Regel wird ein Steuerelement aufgerufen, indem Sie [auf die Schalt](/windows/desktop/WinAuto/uiauto-implementinginvoke) Fläche klicken, doppelklicken oder drücken, eine vordefinierte Tastenkombination oder eine andere Kombination von Tastatureingaben). Wenn eine Tastenkombination verwendet wird, um ein Steuerelement aufzurufen, sucht das XAML-Framework, ob das Steuerelement das Aufruf Steuerungs Muster implementiert, und aktiviert es, wenn dies der Fall ist.
 
 Im folgenden Beispiel löst Control + S das Click-Ereignis aus, da die Schaltfläche das Aufruf Muster implementiert.
 
@@ -217,11 +217,11 @@ Wenn keine Entsprechung gefunden wird, ist die Zugriffstaste ungültig, und es w
 
 ## <a name="custom-keyboard-accelerator-behavior"></a>Benutzerdefiniertes Verhalten der Tastatur Beschleunigung
 
-Das aufgerufene Ereignis des [keyboardaccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Objekts wird ausgelöst, wenn die Zugriffstaste ausgeführt wird. Das [keyboardacceleratorinvokeabventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) -Ereignis Objekt enthält die folgenden Eigenschaften:
+Das aufgerufene Ereignis des [keyboardaccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) -Objekts wird ausgelöst, wenn die Zugriffstaste ausgeführt wird. Das [keyboardacceleratorinvokeabventargs](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) -Ereignis Objekt enthält die folgenden Eigenschaften:
 
-- [**Behandelt**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Die Standardeinstellung ist „false“.
-- - [**Element**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): das der Zugriffstaste zugeordnete Objekt.
-- [**Keyboardaccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): die Tastenkombination, mit der das aufgerufene Ereignis ausgelöst wird.
+- [**Behandelt**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled) (boolesch): Wenn diese Einstellung auf "true" festgelegt wird, wird verhindert, dass das Ereignis das-Steuerelement Muster auslöst, und das Der Standardwert ist false.
+- - [**Element**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element) (DependencyObject): das der Zugriffstaste zugeordnete Objekt.
+- [**Keyboardaccelerator**](/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): die Tastenkombination, mit der das aufgerufene Ereignis ausgelöst wird.
 
 Hier veranschaulichen wir, wie Sie eine Auflistung von Tastatur Accelerators für Elemente in einem ListView-Element definieren und wie Sie das aufgerufene Ereignis für jede Zugriffstaste verarbeiten.
 
@@ -251,9 +251,9 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ## <a name="override-default-keyboard-behavior"></a>Standardmäßiges Tastatur Verhalten überschreiben
 
-Einige Steuerelemente unterstützen, wenn Sie den Fokus haben, integrierte Tastaturbeschleuniger, die beliebige App-definierte Zugriffstasten überschreiben. Wenn z. b. ein [Textfeld](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) den Fokus besitzt, kopiert der Steuerelement-und C-Accelerator nur den aktuell markierten Text (app-definierte Acceleratoren werden ignoriert, und es werden keine weiteren Funktionen ausgeführt).
+Einige Steuerelemente unterstützen, wenn Sie den Fokus haben, integrierte Tastaturbeschleuniger, die beliebige App-definierte Zugriffstasten überschreiben. Wenn z. b. ein [Textfeld](/uwp/api/windows.ui.xaml.controls.textbox) den Fokus besitzt, kopiert der Steuerelement-und C-Accelerator nur den aktuell markierten Text (app-definierte Acceleratoren werden ignoriert, und es werden keine weiteren Funktionen ausgeführt).
 
-Obwohl es nicht empfehlenswert ist, das Standardverhalten von Steuerelementen aufgrund von Benutzer Vertrautheit und-Erwartungen zu überschreiben, können Sie die integrierte Tastatur Beschleunigung eines Steuer Elements überschreiben. Im folgenden Beispiel wird gezeigt, wie Sie die Control + C-Tastatur Beschleunigung für ein [Textfeld](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) über den [PreviewKeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown) -Ereignishandler überschreiben: 
+Obwohl es nicht empfehlenswert ist, das Standardverhalten von Steuerelementen aufgrund von Benutzer Vertrautheit und-Erwartungen zu überschreiben, können Sie die integrierte Tastatur Beschleunigung eines Steuer Elements überschreiben. Im folgenden Beispiel wird gezeigt, wie Sie die Control + C-Tastatur Beschleunigung für ein [Textfeld](/uwp/api/windows.ui.xaml.controls.textbox) über den [PreviewKeyDown](/uwp/api/windows.ui.xaml.uielement.previewkeydown) -Ereignishandler überschreiben: 
 
 ``` csharp
  private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
@@ -299,7 +299,7 @@ Wenn ein Steuerelement deaktiviert ist, wird auch die zugehörige Zugriffstaste 
 
 ## <a name="screen-readers-and-keyboard-accelerators"></a>Bildschirm Sprachausgaben und Tastaturbeschleuniger 
 
-Sprachausgaben wie die Sprachausgabe können Benutzern die Tastenkombination Tastenkombination ankündigen. Standardmäßig handelt es sich hierbei um jeden Modifizierer (in der Reihenfolge virtualmodifiers Enumeration), gefolgt von der Taste (und durch "+"-Zeichen getrennt). Sie können dies über die angefügte Eigenschaft " [AcceleratorKey](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.AcceleratorKeyProperty) AutomationProperties" anpassen. Wenn mehr als eine Zugriffstaste angegeben ist, wird nur der erste angekündigt.
+Sprachausgaben wie die Sprachausgabe können Benutzern die Tastenkombination Tastenkombination ankündigen. Standardmäßig handelt es sich hierbei um jeden Modifizierer (in der Reihenfolge virtualmodifiers Enumeration), gefolgt von der Taste (und durch "+"-Zeichen getrennt). Sie können dies über die angefügte Eigenschaft " [AcceleratorKey](/uwp/api/windows.ui.xaml.automation.automationproperties.AcceleratorKeyProperty) AutomationProperties" anpassen. Wenn mehr als eine Zugriffstaste angegeben ist, wird nur der erste angekündigt.
 
 In diesem Beispiel gibt AutomationProperty. AcceleratorKey die Zeichenfolge "Control + Shift + A" zurück:
 
@@ -365,7 +365,7 @@ Dies ist möglicherweise aufgrund von Unterschieden in der Funktionalität von a
 | In Standardansicht Zoomen | STRG + 0 | 
 | Speichern | STRG+ S | 
 | Schließen | STRG + W | 
-| print | STRG+P | 
+| Drucken | STRG+P | 
 
 Beachten Sie, dass einige der Kombinationen für lokalisierte Versionen von Windows nicht gültig sind. Beispielsweise wird in der spanischen Version von Windows STRG + N als fett formatiert anstelle von STRG + B verwendet. Es wird empfohlen, lokalisierte Tastaturbeschleuniger bereitzustellen, wenn die APP lokalisiert wird.
 
@@ -377,7 +377,7 @@ Da Tastaturbeschleuniger in der Regel nicht direkt in der Benutzeroberfläche de
 
 **Windows 10, Version 1803 (Update April 2018) und neuer**
 
-Beim Deklarieren von Tastatur Accelerators werden standardmäßig alle Steuerelemente (außer [menuflyoutitem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) und [togglemenuflyoutitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) die entsprechenden Tastenkombinationen in einer QuickInfo angezeigt.
+Beim Deklarieren von Tastatur Accelerators werden standardmäßig alle Steuerelemente (außer [menuflyoutitem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) und [togglemenuflyoutitem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) die entsprechenden Tastenkombinationen in einer QuickInfo angezeigt.
 
 > [!NOTE] 
 > Wenn für ein Steuerelement mehr als eine Zugriffstaste definiert ist, wird nur die erste angezeigt.
@@ -386,7 +386,7 @@ Beim Deklarieren von Tastatur Accelerators werden standardmäßig alle Steuerele
 
 *Kombinations Feld Tastenkombination in QuickInfo*
 
-Für [Schalt](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)Flächen-, [appbarbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)-und [appbartogglebutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) -Objekte wird die Tastatur Beschleunigung an die Standard-QuickInfo des Steuer Elements angefügt. Für [menuflyoutitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) -Objekte und " [degglemenuflyoutitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)"-Objekte wird die Tastatur Beschleunigung mit dem Flyout-Text angezeigt.
+Für [Schalt](/uwp/api/windows.ui.xaml.controls.button)Flächen-, [appbarbutton](/uwp/api/windows.ui.xaml.controls.appbarbutton)-und [appbartogglebutton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) -Objekte wird die Tastatur Beschleunigung an die Standard-QuickInfo des Steuer Elements angefügt. Für [menuflyoutitem](/uwp/api/windows.ui.xaml.controls.appbarbutton) -Objekte und " [degglemenuflyoutitem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)"-Objekte wird die Tastatur Beschleunigung mit dem Flyout-Text angezeigt.
 
 > [!NOTE]
 > Durch das Angeben einer QuickInfo (siehe Button1 im folgenden Beispiel) wird dieses Verhalten überschrieben.
@@ -460,7 +460,7 @@ Für [Schalt](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button
 
 *Kombinations Feld "Tastenkombination" an menuflyoutitem-Text angehängt*
 
-Steuern Sie das Darstellungs Verhalten, indem Sie die [keyboardacceleratorplacementmode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) -Eigenschaft verwenden, die zwei Werte akzeptiert: " [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) " oder " [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)".    
+Steuern Sie das Darstellungs Verhalten, indem Sie die [keyboardacceleratorplacementmode](/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) -Eigenschaft verwenden, die zwei Werte akzeptiert: " [Auto](/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) " oder " [Hidden](/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)".    
 
 ```xaml
 <Button Content="Save" Click="OnSave" KeyboardAcceleratorPlacementMode="Auto">
@@ -491,15 +491,15 @@ Hier wird gezeigt, wie die keyboardacceleratorplacementtarget-Eigenschaft verwen
 
 In einigen Fällen empfiehlt es sich, die Bezeichnung eines Steuer Elements zu verwenden, um zu bestimmen, ob das Steuerelement über eine zugeordnete Tastatur Zugriffstaste verfügt. wenn dies der Fall ist, ist dies die Tastenkombination 
 
-Einige Platt Form Steuerelemente führen dies standardmäßig aus, insbesondere das [menuflyoutitem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) [-Objekt und](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) das-Objekt für das Objekt ""-Objekt, während [appbarbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) und [appbartogglebutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) dies tun, wenn Sie im Überlauf Menü der [Befehlsleiste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar)angezeigt werden.
+Einige Platt Form Steuerelemente führen dies standardmäßig aus, insbesondere das [menuflyoutitem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) [-Objekt und](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) das-Objekt für das Objekt ""-Objekt, während [appbarbutton](/uwp/api/windows.ui.xaml.controls.appbarbutton) und [appbartogglebutton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) dies tun, wenn Sie im Überlauf Menü der [Befehlsleiste](/uwp/api/windows.ui.xaml.controls.commandbar)angezeigt werden.
 
 ![In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger](images/accelerators/accelerators_menuitemlabel.png)  
 *In einer Menü Element Bezeichnung beschriebene Tastaturbeschleuniger*
 
-Sie können den standardacceleratortext für die Bezeichnung über die [keyboardacceleratortexdeverride](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) -Eigenschaft der Steuerelemente [menuflyoutitem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [degglemenuflyoutitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [appbarbutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)und [appbartogglebutton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) überschreiben (verwenden Sie ein einzelnes Leerzeichen für keinen Text). 
+Sie können den standardacceleratortext für die Bezeichnung über die [keyboardacceleratortexdeverride](/uwp/api/windows.ui.xaml.controls.appbarbutton.KeyboardAcceleratorTextOverride) -Eigenschaft der Steuerelemente [menuflyoutitem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem), [degglemenuflyoutitem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem), [appbarbutton](/uwp/api/windows.ui.xaml.controls.appbarbutton)und [appbartogglebutton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) überschreiben (verwenden Sie ein einzelnes Leerzeichen für keinen Text). 
 
 > [!NOTE] 
-> Der Überschreibungs Text wird nicht angezeigt, wenn das System keine angefügte Tastatur erkennen kann (Sie können dies über die [keyboardpresent](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.KeyboardPresent) -Eigenschaft überprüfen).
+> Der Überschreibungs Text wird nicht angezeigt, wenn das System keine angefügte Tastatur erkennen kann (Sie können dies über die [keyboardpresent](/uwp/api/windows.devices.input.keyboardcapabilities.KeyboardPresent) -Eigenschaft überprüfen).
 
 ## <a name="advanced-concepts"></a>Weiterführende Konzepte
 
@@ -507,7 +507,7 @@ Hier überprüfen wir einige Aspekte von Tastatur Accelerators auf niedriger Ebe
 
 ### <a name="when-an-accelerator-is-invoked"></a>Wenn eine Zugriffstaste aufgerufen wird
 
-Accelerators bestehen aus zwei Arten von Schlüsseln: Modifizierern und nicht-Modifizierern. Modifizierertasten sind UMSCHALT, Menü, Steuerelement und die Windows-Taste, die über [virtualkeymodifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers)verfügbar gemacht werden. Nicht-Modifizierer sind eine beliebige virtuelle Taste, z. b. Delete, F3, Leertaste, ESC und alle alphanumerischen Zeichen und Interpunktions Zeichen. Eine Tastenkombination wird aufgerufen, wenn der Benutzer eine nicht-Modifizierertaste drückt, während er eine oder mehrere Modifizierertasten gedrückt hält. Wenn der Benutzer z. b. STRG + UMSCHALT + M drückt, wenn der Benutzer M drückt, prüft das Framework die modifiziererer (STRG und UMSCHALT) und löst die Zugriffstaste aus, sofern vorhanden.
+Accelerators bestehen aus zwei Arten von Schlüsseln: Modifizierern und nicht-Modifizierern. Modifizierertasten sind UMSCHALT, Menü, Steuerelement und die Windows-Taste, die über [virtualkeymodifiers](/uwp/api/Windows.System.VirtualKeyModifiers)verfügbar gemacht werden. Nicht-Modifizierer sind eine beliebige virtuelle Taste, z. b. Delete, F3, Leertaste, ESC und alle alphanumerischen Zeichen und Interpunktions Zeichen. Eine Tastenkombination wird aufgerufen, wenn der Benutzer eine nicht-Modifizierertaste drückt, während er eine oder mehrere Modifizierertasten gedrückt hält. Wenn der Benutzer z. b. STRG + UMSCHALT + M drückt, wenn der Benutzer M drückt, prüft das Framework die modifiziererer (STRG und UMSCHALT) und löst die Zugriffstaste aus, sofern vorhanden.
 
 > [!NOTE]
 > In der Entwurfs Ansicht wird die Zugriffstaste automatisch angezeigt (wenn der Benutzer z. b. STRG + UMSCHALT drückt und dann m gedrückt hält, wird die Zugriffstaste wiederholt aufgerufen, bis m freigegeben wird). Dieses Verhalten kann nicht geändert werden.
@@ -519,11 +519,11 @@ Eingabeereignisse treten in einer bestimmten Reihenfolge auf, die Sie basierend 
 
 In XAML wird eine Tastatureingabe so verarbeitet, als wäre es nur eine eingabebubtapipeline. Diese Eingabe Pipeline wird von KeyDown/KeyUp-Ereignissen und Zeichen Eingaben verwendet. Wenn ein Element z. b. den Fokus besitzt und der Benutzer eine Taste gedrückt drückt, wird ein KeyDown-Ereignis für das Element ausgelöst, gefolgt vom übergeordneten Element des Elements usw. bis zum args. Behandelte Eigenschaft ist "true".
 
-Das KeyDown-Ereignis wird auch von einigen Steuerelementen verwendet, um die integrierten Steuerelement Accelerators zu implementieren. Wenn ein Steuerelement über eine Zugriffstaste verfügt, wird das KeyDown-Ereignis behandelt, was bedeutet, dass kein KeyDown-Ereignis bubblinden vorhanden ist. Beispielsweise unterstützt das richeditbox Copy mit STRG + C. Wenn STRG gedrückt wird, wird das KeyDown-Ereignis ausgelöst und Blasen ausgelöst. wenn der Benutzer jedoch gleichzeitig C drückt, wird das KeyDown-Ereignis als behandelt markiert und nicht ausgelöst (es sei denn, der Parameter "shanddeventstoo" von " [UIElement. AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) " ist auf "true" festgelegt).
+Das KeyDown-Ereignis wird auch von einigen Steuerelementen verwendet, um die integrierten Steuerelement Accelerators zu implementieren. Wenn ein Steuerelement über eine Zugriffstaste verfügt, wird das KeyDown-Ereignis behandelt, was bedeutet, dass kein KeyDown-Ereignis bubblinden vorhanden ist. Beispielsweise unterstützt das richeditbox Copy mit STRG + C. Wenn STRG gedrückt wird, wird das KeyDown-Ereignis ausgelöst und Blasen ausgelöst. wenn der Benutzer jedoch gleichzeitig C drückt, wird das KeyDown-Ereignis als behandelt markiert und nicht ausgelöst (es sei denn, der Parameter "shanddeventstoo" von " [UIElement. AddHandler](/uwp/api/windows.ui.xaml.uielement.addhandler) " ist auf "true" festgelegt).
 
 #### <a name="the-characterreceived-event"></a>Das Ereignis "Merkmal empfangen"
 
-Da das Ereignis " [Merkmal empfangen](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.CharacterReceived) " nach dem [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.KeyDown) -Ereignis für Text Steuerelemente wie z. b. "TextBox" ausgelöst wird, können Sie die Zeicheneingabe im KeyDown-Ereignishandler abbrechen.
+Da das Ereignis " [Merkmal empfangen](/uwp/api/windows.ui.core.corewindow.CharacterReceived) " nach dem [KeyDown](/uwp/api/windows.ui.core.corewindow.KeyDown) -Ereignis für Text Steuerelemente wie z. b. "TextBox" ausgelöst wird, können Sie die Zeicheneingabe im KeyDown-Ereignishandler abbrechen.
 
 #### <a name="the-previewkeydown-and-previewkeyup-events"></a>Die PreviewKeyDown-und PreviewKeyUp-Ereignisse
 
@@ -551,9 +551,9 @@ Bereichs bezogene Tastaturbeschleuniger werden nur aufgerufen, wenn sich der Fok
 
 ### <a name="scoping-accelerators-programmatically"></a>Programm gesteuertes Festlegen von Bereichs Zugriffstasten
 
-Die [UIElement. tryinvokekeyboardaccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tryinvokekeyboardaccelerator) -Methode ruft alle übereinstimmenden Acceleratoren in der Teilstruktur des-Elements auf.
+Die [UIElement. tryinvokekeyboardaccelerator](/uwp/api/windows.ui.xaml.uielement.tryinvokekeyboardaccelerator) -Methode ruft alle übereinstimmenden Acceleratoren in der Teilstruktur des-Elements auf.
 
-Die [UIElement. onprocesskeyboardaccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.onprocesskeyboardaccelerators) -Methode wird vor der Tastatur Beschleunigung ausgeführt. Diese Methode übergibt ein [processkeyboardacceleratorargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) -Objekt, das den Schlüssel, den-Modifizierer und einen booleschen Wert enthält, der angibt, ob der Tastaturbeschleuniger behandelt wird. Wenn die Tastatur Beschleunigung als behandelt markiert ist, wird die Tastatur Beschleunigung aufgerufen (sodass die äußere Tastatur Beschleunigung nie aufgerufen wird).
+Die [UIElement. onprocesskeyboardaccelerators](/uwp/api/windows.ui.xaml.uielement.onprocesskeyboardaccelerators) -Methode wird vor der Tastatur Beschleunigung ausgeführt. Diese Methode übergibt ein [processkeyboardacceleratorargs](/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) -Objekt, das den Schlüssel, den-Modifizierer und einen booleschen Wert enthält, der angibt, ob der Tastaturbeschleuniger behandelt wird. Wenn die Tastatur Beschleunigung als behandelt markiert ist, wird die Tastatur Beschleunigung aufgerufen (sodass die äußere Tastatur Beschleunigung nie aufgerufen wird).
 
 > [!NOTE]
 > Onprocesskeyboardaccelerators werden immer ausgelöst, unabhängig davon, ob Sie behandelt werden oder nicht (ähnlich wie das OnKeyDown-Ereignis). Sie müssen überprüfen, ob das Ereignis als behandelt markiert wurde.
@@ -612,7 +612,7 @@ void AddAccelerator(
 
 ### <a name="override-keyboard-accelerator-behavior"></a>Verhalten der Tastatur Beschleunigung überschreiben
 
-Sie können das [keyboardaccelerator. aufgerufene](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Invoked) -Ereignis behandeln, um das Standardverhalten von keyboardaccelerator zu überschreiben.
+Sie können das [keyboardaccelerator. aufgerufene](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Invoked) -Ereignis behandeln, um das Standardverhalten von keyboardaccelerator zu überschreiben.
 
 In diesem Beispiel wird gezeigt, wie der Befehl "Alles auswählen" (STRG + eine Tastatur Beschleunigung) in einem benutzerdefinierten ListView-Steuerelement überschrieben wird. Wir legen auch die Eigenschaft behandelt auf true fest, um das Ereignis weiter zu verhindern.
 
@@ -635,7 +635,7 @@ public class MyListView : ListView
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Tastatur Interaktionen](keyboard-interactions.md)
+- [Tastaturinteraktionen](keyboard-interactions.md)
 - [Zugriffsschlüssel](access-keys.md)
 
 ### <a name="samples"></a>Beispiele

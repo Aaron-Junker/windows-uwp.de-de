@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c07a3bbff4b29d2b59ef7d6d8a5912ce3675a4e
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 2e13c656f02531d500a72aa74b2d3c5d6cc29aa4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730355"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174934"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>Wechseln von einer Desktop Anwendung zu einer UWP
 
@@ -70,7 +70,7 @@ Verwenden Sie dieselben Tools, um Ihren Code zu analysieren. Laden Sie die Tools
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-Wenn Ihr Code nicht mit dem Standard kompatibel ist, sollten Sie andere Möglichkeiten in Erwägung nehmen, den Code zu implementieren. Öffnen Sie zunächst den [.NET-API-Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). Sie können diesen Browser zum Überprüfen der APIs verwenden, die in der .NET Standard 2,0 verfügbar sind. Stellen Sie sicher, dass Sie den Bereich der Liste auf den .NET Standard 2,0 festlegen.
+Wenn Ihr Code nicht mit dem Standard kompatibel ist, sollten Sie andere Möglichkeiten in Erwägung nehmen, den Code zu implementieren. Öffnen Sie zunächst den [.NET-API-Browser](/dotnet/api/?view=netstandard-2.0). Sie können diesen Browser zum Überprüfen der APIs verwenden, die in der .NET Standard 2,0 verfügbar sind. Stellen Sie sicher, dass Sie den Bereich der Liste auf den .NET Standard 2,0 festlegen.
 
 ![DotNet-Option](images/desktop-to-uwp/dot-net-option.png)
 
@@ -82,7 +82,7 @@ Angenommen, wir verfügen über eine sehr einfache Windows Forms Anwendung, die 
 
 ![Windows Forms-App](images/desktop-to-uwp/win-forms-app.png)
 
-Das Projekt enthält eine .NET Standard 2,0-Klassenbibliothek mit einer statischen Klasse namens **Northwind**. Wenn Sie diesen Code in die **Northwind** -Klasse verschieben, wird er nicht kompiliert, da ``SQLConnection``er ``SqlCommand``die Klassen ``SqlDataReader`` , und verwendet, und die Klassen, die nicht im .NET Standard 2,0 verfügbar sind.
+Das Projekt enthält eine .NET Standard 2,0-Klassenbibliothek mit einer statischen Klasse namens **Northwind**. Wenn Sie diesen Code in die **Northwind** -Klasse verschieben, wird er nicht kompiliert, da er die ``SQLConnection`` ``SqlCommand`` Klassen, und verwendet, und die Klassen, die ``SqlDataReader`` nicht im .NET Standard 2,0 verfügbar sind.
 
 ```csharp
 public static ArrayList GetCustomerNames()
@@ -112,9 +112,9 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-Mit dem .net- [API-Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) können Sie jedoch eine Alternative suchen. Die ``DbConnection``Klassen ``DbCommand``, und ``DbDataReader`` sind alle im .NET Standard 2,0 verfügbar, damit wir Sie stattdessen verwenden können.  
+Mit dem .net- [API-Browser](/dotnet/api/?view=netstandard-2.0) können Sie jedoch eine Alternative suchen. Die ``DbConnection`` ``DbCommand`` Klassen, und ``DbDataReader`` sind alle im .NET Standard 2,0 verfügbar, damit wir Sie stattdessen verwenden können.  
 
-Diese überarbeitete Version verwendet diese Klassen, um eine Kundenliste zu erhalten. zum Erstellen ``DbConnection`` einer Klasse müssen wir jedoch ein Factoryobjekt übergeben, das in der Client Anwendung erstellt wird.
+Diese überarbeitete Version verwendet diese Klassen, um eine Kundenliste zu erhalten. zum Erstellen einer ``DbConnection`` Klasse müssen wir jedoch ein Factoryobjekt übergeben, das in der Client Anwendung erstellt wird.
 
 ```csharp
 public static ArrayList GetCustomerNames(DbProviderFactory factory)
@@ -216,7 +216,7 @@ public sealed partial class MainPage : Page
 }
 ```
 
-Informationen zu den ersten Schritten mit UWP finden Sie unter [Was ist eine UWP-App](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+Informationen zu den ersten Schritten mit UWP finden Sie unter [Was ist eine UWP-App](../get-started/universal-application-platform-guide.md).
 
 ### <a name="reach-ios-and-android-devices"></a>Erreichen von IOS-und Android-Geräten
 
@@ -239,7 +239,7 @@ Diese Vorlagen finden Sie im Dialogfeld **Neues Projekt hinzufügen** unter der 
 ![Xamarin-Apps](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->Plattformübergreifende Projekte eignen sich hervorragend für apps mit wenig plattformspezifischer Funktionalität. Sie können Sie verwenden, um eine native XAML-basierte Benutzeroberfläche zu erstellen, die unter IOS, Android und Windows ausgeführt wird. [Hier](https://docs.microsoft.com/xamarin/xamarin-forms/)erhalten Sie weitere Informationen.
+>Plattformübergreifende Projekte eignen sich hervorragend für apps mit wenig plattformspezifischer Funktionalität. Sie können Sie verwenden, um eine native XAML-basierte Benutzeroberfläche zu erstellen, die unter IOS, Android und Windows ausgeführt wird. [Hier](/xamarin/xamarin-forms/)erhalten Sie weitere Informationen.
 
 Fügen Sie dann in Ihrem Android-, IOS-oder plattformübergreifenden Projekt einen Verweis auf das Klassen Bibliotheksprojekt hinzu.
 
@@ -278,13 +278,13 @@ public class MainActivity : ListActivity
 }
 ```
 
-Informationen zu den ersten Schritten mit Android-, IOS-und plattformübergreifenden Projekten finden Sie im [xamarin-Entwickler Portal](https://docs.microsoft.com/xamarin).
+Informationen zu den ersten Schritten mit Android-, IOS-und plattformübergreifenden Projekten finden Sie im [xamarin-Entwickler Portal](/xamarin).
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-**Antworten auf Ihre Fragen**
+**Antworten auf deine Fragen**
 
-Haben Sie Fragen? Fragen Sie uns Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Sie können uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)Fragen.
+Haben Sie Fragen? Frage uns auf Stack Overflow. Unser Team überwacht diese [Tags](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge). Du kannst uns auch [hier](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D) fragen.
 
 **Feedback geben oder Funktions Vorschläge machen**
 
