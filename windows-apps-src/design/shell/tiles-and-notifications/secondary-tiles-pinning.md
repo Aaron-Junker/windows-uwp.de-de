@@ -1,20 +1,20 @@
 ---
 Description: Erfahren Sie, wie Sie eine sekundäre Kachel anheften, um Ihre Windows-APP zu starten.
-title: Anheften sekundärer Kacheln
+title: Anheften von sekundären Kacheln an „Start“
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, sekundäre Kacheln, PIN, anheften, Schnellstart, Codebeispiel, Beispiel, "secondarytile"
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c535e7e2abaf68212cb0a2f6daac8741b6548a5
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7499a9a4040850595f616a5de0badb9efeab635f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971045"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172314"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>Anheften sekundärer Kacheln
+# <a name="pin-secondary-tiles-to-start"></a>Anheften von sekundären Kacheln an „Start“
 
 
 In diesem Thema wird Schritt für Schritt erläutert, wie Sie eine sekundäre Kachel für Ihre Windows-app erstellen und an das Startmenü anheften.
@@ -181,6 +181,6 @@ Informationen zum Anzeigen von umfangreichen Inhalten auf der Kachel über Kache
 
 * [Übersicht über sekundäre Kacheln](secondary-tiles.md)
 * [Leitfaden für sekundäre Kacheln](secondary-tiles-guidance.md)
-* [Kachel Ressourcen](app-assets.md)
+* [Kachel Ressourcen](../../style/app-icons-and-logos.md)
 * [Dokumentation zu Kachel Inhalt](create-adaptive-tiles.md)
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)

@@ -1,31 +1,31 @@
 ---
 title: Ebenen der Features von Streamingressourcen
-description: Direct3D unterstützt Streamingressourcen in drei Featureebenen.
+description: Greifen Sie auf Artikel zu den drei Funktions Funktionen für Direct3D-Streamingressourcen zu, die zuvor als gekachelte Ressourcen bezeichnet wurden.
 ms.assetid: 6AE7EA72-3929-4BB4-8780-F0CF26192D87
 keywords:
 - Ebenen der Features von Streamingressourcen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c872d289c67161e414671d3d509401f0539a7675
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ee27244c4d4c2797b71c9d5c8c2c5185a99596b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631445"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173054"
 ---
 # <a name="streaming-resources-features-tiers"></a>Ebenen der Features von Streamingressourcen
 
 
-Direct3D unterstützt Streamingressourcen in drei Featureebenen.
+Direct3D unterstützt Streaming-Ressourcen in drei Ebenen von Funktionen.
 
-Ebene 1 stellt grundlegende Funktionen für Streamingressourcen bereit.
+Ebene 1 stellt grundlegende Funktionen für das Streamen von Ressourcen bereit.
 
-Ebene 2 fügt über die Ebene 1 hinausgehende Funktionen hinzu, z. B. Garantieren eines nicht gepackten Textur-Mipmap, wenn die Größe mindestens eine Standardkachelform beträgt, Shaderanweisungen zur Klammerung der Detailebene (Level-of-Detail, LOD) und zum Abrufen des Status des Shadervorgangs sowie das Lesen aus NULL-zugeordneten Kacheln behandeln, deren Samplingwert null ergab.
+Ebene 2 bietet Funktionen, die über Ebene 1 hinausgehen, z. b. das garantieren einer nicht verpackten Textur-MipMap, wenn die Größe mindestens einer Standard Kachel Form entspricht. shaderanweisungen zum Spannen der Detailebene (LOD) und zum Abrufen des Status über den shadervorgang. beim Lesen von mit NULL zugeordneten Kacheln wird der Stichproben Wert auch als 0 (null) behandelt.
 
-Ebene 3 fügt über Ebene 2 hinausgehende Texture3D-Funktionen hinzu.
+Ebene 3 bietet Texture3D-Funktionen, die über Ebene 2 hinausgehen.
 
-In den Versionen von Direct3D sind Abfragefunktionen zum Überprüfen der Hardware und der Treiberunterstützung für Streamingressourcen sowie der Ebene verfügbar.
+Abfragefunktionen stehen in den Versionen von Direct3D zur Verfügung, um die Unterstützung von Hardware und Treibern für Streamingressourcen und auf der Ebene der Ebene zu überprüfen.
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>In diesem Abschnitt
 
@@ -38,21 +38,21 @@ In den Versionen von Direct3D sind Abfragefunktionen zum Überprüfen der Hardwa
 <thead>
 <tr class="header">
 <th align="left">Thema</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tier-1.md">Ebene 1</a></p></td>
-<td align="left"><p>In diesem Abschnitt wird die Unterstützung für die Ebene 1 beschrieben.</p></td>
+<td align="left"><p>In diesem Abschnitt wird die Unterstützung für Ebene 1 beschrieben.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tier-2.md">Ebene 2</a></p></td>
-<td align="left"><p>Die Unterstützung der Ebene 2 für Streamingressourcen fügt über die Ebene 1 hinausgehende Funktionen hinzu, z. B. Garantieren eines nicht gepackten Textur-Mipmap, wenn die Größe mindestens eine Standardkachelform beträgt, Shaderanweisungen zur Klammerung der Detailebene (Level-of-Detail, LOD) und zum Abrufen des Status des Shadervorgangs sowie das Lesen aus NULL-zugeordneten Kacheln behandeln, deren Samplingwert null ergab.</p></td>
+<td align="left"><p>Die Unterstützung der Ebene 2 für Streaming-Ressourcen fügt Funktionen über Ebene 1 hinaus hinzu, z. b. die Gewährleistung der nicht gepackten Textur MipMap, wenn die Größe mindestens eine Standard Kachel Form ist shaderanweisungen zum Spannen der Detailebene (LOD) und zum Abrufen des Status über den shadervorgang. beim Lesen von mit NULL zugeordneten Kacheln wird der Stichproben Wert auch als 0 (null) behandelt.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="tier-3.md">Ebene 3</a></p></td>
-<td align="left"><p>Ebene 3 fügt zusätzlich zu den Funktionen der <a href="tier-2.md">Ebene 2</a> die Unterstützung für Texture3D für Streamingressourcen hinzu.</p></td>
+<td align="left"><p>Auf Ebene 3 wird zusätzlich zu den Funktionen der <a href="tier-2.md">Ebene 2</a> Texture3D für Streaming-Ressourcen unterstützt.</p></td>
 </tr>
 </tbody>
 </table>

@@ -1,28 +1,28 @@
 ---
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API zum Abrufen von Daten für einen Flug Paket für eine app, die mit Ihrem Partner Center-Konto registriert ist.
+description: Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um Daten für einen paketflug für eine APP zu erhalten, die bei Ihrem Partner Center-Konto registriert ist.
 title: Abrufen eines Flight-Pakets
 ms.date: 04/17/2018
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Flight, Flight-Pakete
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Flug, paketflug
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a02a299682610cd516067acefc795df9512a268
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3916328f2c48642596c6a0b11401f583957bc973
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371762"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172904"
 ---
 # <a name="get-a-package-flight"></a>Abrufen eines Flight-Pakets
 
-Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API zum Abrufen von Daten für einen Flug Paket für eine app, die mit Ihrem Partner Center-Konto registriert ist.
+Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um Daten für einen paketflug für eine APP zu erhalten, die bei Ihrem Partner Center-Konto registriert ist.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store Übermittlungs-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 ## <a name="request"></a>Anforderung
 
@@ -35,17 +35,17 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Name        | Typ   | Beschreibung                                                                 |
+| Name        | Typ   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App, die die Flight-Paketübermittlung enthält, die Sie abrufen möchten. Die Store-ID für die app ist im Partner Center verfügbar.  |
-| flightId | String | Erforderlich. Die ID des abzurufenden Flight-Pakets. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines Flight-Pakets](create-a-flight.md) und zum [Abrufen von Flight-Paketen für eine App](get-flights-for-an-app.md) enthalten. Für einen Flug, der im Partner Center erstellt wurde, ist diese ID auch in der URL für die Seite "aktiv" im Partner Center verfügbar.  |
+| applicationId | Zeichenfolge | Erforderlich. Die Store-ID der App, die die Flight-Paketübermittlung enthält, die Sie abrufen möchten. Die Store-ID für die APP ist im Partner Center verfügbar.  |
+| flightId | Zeichenfolge | Erforderlich. Die ID des abzurufenden Flight-Pakets. Diese ID ist in den Antwortdaten für Anforderungen zum [Erstellen eines paketflugs](create-a-flight.md) und [zum erhalten von Paket Flügen für eine APP](get-flights-for-an-app.md)verfügbar. Für einen Flug, der in Partner Center erstellt wurde, ist diese ID auch in der URL für die Flight-Seite im Partner Center verfügbar.  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -86,14 +86,14 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 ### <a name="response-body"></a>Antworttext
 
-| Wert      | Typ   | Beschreibung                                                                                                                                                                                                                                                                         |
+| Wert      | Typ   | BESCHREIBUNG                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | String  | Die ID für das Flight-Paket. Dieser Wert wird vom Partner Center bereitgestellt.  |
-| friendlyName           | String  | Der Name des Flight-Pakets nach Vorgabe des Entwicklers.   |  
-| lastPublishedFlightSubmission       | object | Ein Objekt, das Informationen über die letzte veröffentlichte Übermittlung für das Flight-Paket enthält. Weitere Informationen finden Sie unten im Abschnitt [Übermittlungsobjekt](#submission_object).  |
-| pendingFlightSubmission        | object  |  Ein Objekt, das Informationen über die aktuell ausstehende Übermittlung für das Flight-Paket enthält. Weitere Informationen finden Sie unten im Abschnitt [Übermittlungsobjekt](#submission_object).  |   
-| groupIds           | array  | Ein Array von Zeichenfolgen, die die IDs der Test-Flight-Gruppen enthalten, die dem Flight-Paket zugeordnet sind. Weitere Informationen zu Test-Flight-Gruppen finden Sie unter [Flight-Pakete](https://docs.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | String  | Der Anzeigename des Flight-Pakets, das den unmittelbar niedrigeren Rang als das aktuelle Flight-Paket erhält. Weitere Informationen zur Bewertung von Test-Flight-Gruppen finden Sie unter [Flight-Pakete](https://docs.microsoft.com/windows/uwp/publish/package-flights).  |
+| flightId            | Zeichenfolge  | Die ID für das Flight-Paket. Dieser Wert wird von Partner Center bereitgestellt.  |
+| friendlyName           | Zeichenfolge  | Der Name des Flight-Pakets nach Vorgabe des Entwicklers.   |  
+| lastPublishedFlightSubmission       | Objekt (object) | Ein Objekt, das Informationen über die letzte veröffentlichte Übermittlung für das Flight-Paket enthält. Weitere Informationen finden Sie unten im Abschnitt [Übermittlungsobjekt](#submission_object).  |
+| pendingFlightSubmission        | Objekt (object)  |  Ein Objekt, das Informationen über die aktuell ausstehende Übermittlung für das Flight-Paket enthält. Weitere Informationen finden Sie unten im Abschnitt [Übermittlungsobjekt](#submission_object).  |   
+| groupIds           | array  | Ein Array von Zeichenfolgen, die die IDs der Test-Flight-Gruppen enthalten, die dem Flight-Paket zugeordnet sind. Weitere Informationen zu Test-Flight-Gruppen finden Sie unter [Flight-Pakete](../publish/package-flights.md).   |
+| rankHigherThan           | Zeichenfolge  | Der Anzeigename des Flight-Pakets, das den unmittelbar niedrigeren Rang als das aktuelle Flight-Paket erhält. Weitere Informationen zur Bewertung von Test-Flight-Gruppen finden Sie unter [Flight-Pakete](../publish/package-flights.md).  |
 
 
 <span id="submission_object" />
@@ -102,25 +102,25 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 Die Werte *LastPublishedFlightSubmission* und *PendingFlightSubmission* im Antworttext enthalten Objekte mit Ressourceninformationen über eine Übermittlung für das Flight-Paket. Diese Objekte enthalten folgende Werte.
 
-| Wert           | Typ    | Beschreibung                                                                                                                                                                                                                          |
+| Wert           | Typ    | BESCHREIBUNG                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | String  | Die ID der Übermittlung.    |
-| resourceLocation   | String  | Ein relativer Pfad, den Sie an den Basisanforderungs-URI `https://manage.devcenter.microsoft.com/v1.0/my/` anfügen können, um die vollständigen Daten für die Übermittlung abzurufen.               |
+| id            | Zeichenfolge  | Die ID der Übermittlung.    |
+| resourceLocation   | Zeichenfolge  | Ein relativer Pfad, den Sie an den Basisanforderungs-URI `https://manage.devcenter.microsoft.com/v1.0/my/` anfügen können, um die vollständigen Daten für die Übermittlung abzurufen.               |
 
 
 ## <a name="error-codes"></a>Fehlercodes
 
 Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die Antwort einen der folgenden HTTP-Fehlercodes.
 
-| Fehlercode |  Beschreibung     |
+| Fehlercode |  BESCHREIBUNG     |
 |--------|---------------------  |
 | 400  | Die Anforderung ist ungültig. |
 | 404  | Das angegebene Flight-Paket konnte nicht gefunden werden.   |   
-| 409  | Die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |                                                                                                 
+| 409  | Die APP verwendet ein Partner Center-Feature, das [derzeit von der Microsoft Store Übermittlungs-API nicht unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird. |                                                                                                 
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Erstellen Sie einen Paket Flug](create-a-flight.md)
-* [Löschen Sie einen Paket Flug](delete-a-flight.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Erstellen eines Flight-Pakets](create-a-flight.md)
+* [Löschen eines Flight-Pakets](delete-a-flight.md)

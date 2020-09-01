@@ -5,12 +5,12 @@ author: maiak
 ms.author: maiak
 ms.date: 02/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: 162646baff9b2d08f6fc0ea4862802216cff9619
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 5f8671d8a1490710837908bb4df8f4aa3c99ecdd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629102"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172654"
 ---
 # <a name="quickstart-process-your-first-trace"></a>Schnellstart: Verarbeiten der ersten Ablauf Verfolgung
 
@@ -22,9 +22,9 @@ In diesem Schnellstart lernen Sie Folgendes:
 2. Erstellen Sie einen traceprocessor.
 3. Verwenden Sie traceprocessor, um auf die in der Ablauf Verfolgung enthaltenen Prozess Befehlszeilen zuzugreifen.
 
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
-Visual Studio 2019
+Visual Studio 2019
 
 ## <a name="install-the-traceprocessing-nuget-package"></a>Installieren des nuget-Pakets "traceprocessing"
 
@@ -34,7 +34,7 @@ Microsoft. Windows. eventtracing. processing. all
 
 Sie können dieses Paket in einer Konsolen-App verwenden, um die Prozess Befehlszeilen aufzulisten, die in einer etw-Ablauf Verfolgung (ETL-Datei) enthalten sind.
 
-1. Erstellen Sie eine neue .net Core-Konsolen-app. Wählen Sie in Visual Studio Datei, neu, Projekt... aus, und wählen Sie die Vorlage Konsolen-app (.net C#Core) für aus.
+1. Erstellen Sie eine neue .net Core-Konsolen-app. Wählen Sie in Visual Studio Datei, neu, Projekt... aus, und wählen Sie die Vorlage Konsolen-app (.net Core) für c# aus.
 
     Geben Sie einen Projektnamen ein, z. b. traceprocessorquickstart, und klicken Sie auf erstellen.
 
@@ -79,7 +79,7 @@ Sie können dieses Paket in einer Konsolen-App verwenden, um die Prozess Befehls
 
     Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie Eigenschaften aus. Wechseln Sie zur Registerkarte Debuggen, und geben Sie den Pfad zu einer Ablauf Verfolgung (ETL-Datei) in Anwendungs Argumente ein.
 
-    Wenn Sie noch nicht über eine Ablauf Verfolgungs Datei verfügen, können Sie diese mit [Windows Performance Recorder](https://docs.microsoft.com/windows-hardware/test/wpt/start-a-recording) erstellen.
+    Wenn Sie noch nicht über eine Ablauf Verfolgungs Datei verfügen, können Sie diese mit [Windows Performance Recorder](/windows-hardware/test/wpt/start-a-recording) erstellen.
 
 3. Führen Sie die Anwendung aus.
 
@@ -121,7 +121,7 @@ Sie können dieses Paket in einer Konsolen-App verwenden, um die Prozess Befehls
     }
     ```
 
-2. Führen Sie die Anwendung erneut aus.
+2. Erneutes Ausführen der Anwendung
 
     Dieses Mal sollten Sie eine Liste der Befehlszeilen aus allen Prozessen sehen, die ausgeführt wurden, während die Ablauf Verfolgung aufgezeichnet wurde.
 

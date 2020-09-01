@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, User Interface, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe67a50cd51f17aa628ff2e02955fd90781392f
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: eca248887985fc6d33ca6d6b552a0b61a98ce428
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942820"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173104"
 ---
 # <a name="add-a-user-interface"></a>Hinzufügen einer Benutzeroberfläche
 
@@ -21,7 +21,7 @@ ms.locfileid: "88942820"
 Nachdem das Spiel seine 3D-Visualisierungen eingerichtet hat, ist es an der Zeit, sich auf das Hinzufügen von 2D-Elementen zu konzentrieren, damit das Spiel dem Player Feedback zum Spielzustand geben kann. Dies kann erreicht werden, indem einfache Menü Optionen und Heads-Up-Anzeige Komponenten oberhalb der 3D-Grafik Pipeline Ausgabe hinzugefügt werden.
 
 >[!Note]
->Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](/windows/uwp/get-started/get-uwp-app-samples).
+>Wenn Sie den neuesten Spiel Code für dieses Beispiel nicht heruntergeladen haben, besuchen Sie das [Direct3D-Beispiel Spiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX). Dieses Beispiel ist Teil einer großen Auflistung von UWP-Funktions Beispielen. Anweisungen zum Herunterladen des Beispiels finden Sie unter herunterladen [der UWP-Beispiele von GitHub](../get-started/get-app-samples.md).
 
 ## <a name="objective"></a>Ziel
 

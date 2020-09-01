@@ -1,5 +1,5 @@
 ---
-Description: In diesem Artikel werden die vier Benachrichtigungs \#Optionen&8212, local, scheduled, periodisch und \#Push&8212 beschrieben, die Kachel-und Badge-Updates und Popup Benachrichtigungs Inhalte bereitzustellen.
+Description: In diesem Artikel werden die vier Benachrichtigungs Optionen&\# 8212, local, scheduled, periodisch und Push&8212 beschrieben, die \# Kachel-und Badge-Updates und Popup Benachrichtigungs Inhalte bereitzustellen.
 title: Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1df2048ea54b3ffc7c62270841b2be650bb90ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 166ff20e792c5cf4a5969e954ed1b7d04e5c5c9f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970825"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173294"
 ---
 # <a name="choose-a-notification-delivery-method"></a>Auswählen einer Methode für die Übermittlung von Benachrichtigungen
 
@@ -45,7 +45,7 @@ In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
 <tr class="header">
 <th align="left">Bereitstellungsmethode</th>
 <th align="left">Nutzung</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 <th align="left">Beispiele</th>
 </tr>
 </thead>
@@ -61,7 +61,7 @@ In dieser Tabelle sind die Benachrichtigungsübermittlungstypen zusammengefasst.
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Geplant</td>
+<td align="left">Scheduled</td>
 <td align="left">Kachel, Popup</td>
 <td align="left">Eine Reihe von API-Aufrufen, die eine Benachrichtigung im Voraus so planen, dass zum von Ihnen angegebenen Zeitpunkt eine Aktualisierung vorgenommen wird.</td>
 <td align="left"><ul>
@@ -154,7 +154,7 @@ Pushbenachrichtigungen laufen standardmäßig drei Tage nach Empfang durch das G
 Weitere Informationen finden Sie unter
 
 -   [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
--   [Richtlinien für Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+-   [Richtlinien für Pushbenachrichtigungen](./windows-push-notification-services--wns--overview.md)
 -   [Codebeispiele für Windows-App-Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
@@ -163,15 +163,11 @@ Weitere Informationen finden Sie unter
 
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)
 * [Senden einer lokalen Popupbenachrichtigung](send-local-toast.md)
-* [Richtlinien für Pushbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [Richtlinien für Popupbenachrichtigungen](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
+* [Richtlinien für Pushbenachrichtigungen](./windows-push-notification-services--wns--overview.md)
+* [Richtlinien für Popupbenachrichtigungen](./index.md)
 * [Übersicht über regelmäßige Benachrichtigungen](periodic-notification-overview.md)
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](windows-push-notification-services--wns--overview.md)
 * [Codebeispiele für Windows-App-Benachrichtigungen auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
-
-
-
-

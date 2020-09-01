@@ -1,17 +1,17 @@
 ---
 title: Referenz zur Medienerfassungs-API
-description: Erfahren Sie, wie Sie programmgesteuert auf die Medienerfassungs-API zugreifen.
+description: Erfahren Sie, wie Sie eine PNG-Darstellung des aktuellen Bildschirms mithilfe der Xbox-Geräte Portal-Rest-API erfassen.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dcd4c6c39a983ab11bfacd391bfa78942601258
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: ee1ccba3fe2a3f83a95c3538cb267730f7770c4c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244056"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172734"
 ---
 # <a name="media-capture-api-reference"></a>Referenz zur Medienerfassungs-API #
 
@@ -29,7 +29,7 @@ Mithilfe des folgenden Anforderungsformats können Sie eine PNG-Darstellung des 
 Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 
-| URI-Parameter      | Beschreibung     | 
+| URI-Parameter      | BESCHREIBUNG     | 
 | ------------------ |-----------------|
 | download (optional)| Ein boolescher Wert, der angibt, ob HTTP-Antwortheader festgelegt werden sollen, die angeben, dass der Hostbrowser den Screenshot als Anhang herunterladen soll, anstatt ihn im Browser zu rendern.  |
 
@@ -47,7 +47,7 @@ Sie können im Anforderungs-URI die folgenden zusätzlichen Parameter angeben:
 
 Diese API hat die folgenden erwarteten Statuscodes:
 
-| HTTP-Statuscode   | Beschreibung     | 
+| HTTP-Statuscode   | BESCHREIBUNG     | 
 | ------------------ |-----------------|
 | 200                | Die Screenshotanforderung war erfolgreich, und der erfasste Inhalt wurde zurückgegeben. |
 | 5XX                | Fehlercodes für unerwartete Fehler |

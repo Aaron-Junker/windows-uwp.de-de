@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf17a6b835e0e594454f433770edb598ae637a0
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e020972a8dff0b0721fd2c5726999a7896d359c4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942830"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167904"
 ---
 # <a name="launch-the-windows-maps-app"></a>Starten der Windows-Karten-App
 
@@ -51,7 +51,7 @@ Eine vollständige Liste der verfügbaren Parameter finden Sie unter dem [bingma
 ## <a name="launch-a-uri-from-your-app"></a>Starten eines URIs aus Ihrer App
 
 
-Um die Windows-Karten-App aus Ihrer App zu starten, rufen Sie die [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode mit einem **bingmaps:**-, **ms-drive-to:**- oder **ms-walk-to:**-URI auf. Im folgenden Beispiel wird derselbe URI wie im vorherigen Beispiel gestartet. Weitere Informationen zum Starten von Apps mithilfe des URIs finden Sie unter [Starten der Standard-App für einen URI](launch-default-app.md).
+Um die Windows-Karten-App aus Ihrer App zu starten, rufen Sie die [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)-Methode mit einem **bingmaps:**-, **ms-drive-to:**- oder **ms-walk-to:**-URI auf. Im folgenden Beispiel wird derselbe URI wie im vorherigen Beispiel gestartet. Weitere Informationen zum Starten von Apps mithilfe des URIs finden Sie unter [Starten der Standard-App für einen URI](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -63,7 +63,7 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-In diesem Beispiel wird die [**LauncherOptions**](https://docs.microsoft.com/uwp/api/Windows.System.LauncherOptions)-Klasse verwendet, um sicherzustellen, dass die Windows-Karten-App gestartet wird.
+In diesem Beispiel wird die [**LauncherOptions**](/uwp/api/Windows.System.LauncherOptions)-Klasse verwendet, um sicherzustellen, dass die Windows-Karten-App gestartet wird.
 
 ## <a name="display-known-locations"></a>Anzeigen bekannter Positionen
 
@@ -209,7 +209,7 @@ Die Syntax für jeden Parameter in dieser Tabelle wird mithilfe von ABNF (Augmen
 </tr>
 <tr class="odd">
 <td align="left"><p><b>where</b></p></td>
-<td align="left"><p>Standort</p></td>
+<td align="left"><p>Ort</p></td>
 <td align="left"><p>where = "where=" whereval</p>
 <p>whereval = 1 *(Alpha/Digit/"-"/"."/"_"/PCT-codiert/"!"/"$"/"" "/" ("/") "/"*"/" + "/", "/"; "/": "/" @" / " /"/"? ")</p>
 <p>Beispiel:</p>

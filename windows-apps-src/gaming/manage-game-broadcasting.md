@@ -6,18 +6,18 @@ ms.date: 09/27/2017
 ms.topic: article
 keywords: Windows 10, Game, Broadcasting
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dc7042a04ae653434b1742b913b2735b09e8b03
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 5cfa40c54511a411025d2d1c3be056dd0209865e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970118"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172004"
 ---
 # <a name="manage-game-broadcasting"></a>Verwalten der Spielübertragung
 In diesem Artikel erfahren Sie, wie Sie Game Broadcasting für eine UWP-App verwalten. Benutzer müssen die Übertragung mithilfe der in Windows integrierten Systembenutzer Oberfläche initiieren, aber ab Windows 10, Version 1709, können Apps die Benutzeroberfläche für das System Broadcast starten und Benachrichtigungen empfangen, wenn die Übertragung gestartet und beendet wird.
 
 ## <a name="add-the-windows-desktop-extensions-for-the-uwp-to-your-app"></a>Hinzufügen der Windows-Desktop Erweiterungen für die UWP zu Ihrer APP
-Die APIs zum Verwalten von App-Broadcast, die im **[Windows. Media. appbroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** -Namespace enthalten sind, sind nicht im Universal API-Vertrag enthalten. Um auf die APIs zuzugreifen, müssen Sie mit den folgenden Schritten einen Verweis auf die Windows-Desktop Erweiterungen für die UWP zu Ihrer APP hinzufügen.
+Die APIs zum Verwalten von App-Broadcast, die im **[Windows. Media. appbroadcasting](/uwp/api/windows.media.appbroadcasting)** -Namespace enthalten sind, sind nicht im Universal API-Vertrag enthalten. Um auf die APIs zuzugreifen, müssen Sie mit den folgenden Schritten einen Verweis auf die Windows-Desktop Erweiterungen für die UWP zu Ihrer APP hinzufügen.
 
 1. Erweitern Sie in Visual Studio in **Projektmappen-Explorer**das UWP-Projekt, klicken Sie mit der rechten Maustaste auf **Verweise** , und wählen Sie dann **Verweis hinzufügen...** aus. 
 2. Erweitern Sie den Knoten **Universal Windows** , und wählen Sie **Erweiterungen**aus.
@@ -25,23 +25,23 @@ Die APIs zum Verwalten von App-Broadcast, die im **[Windows. Media. appbroadcast
 4. Klicken Sie auf **OK**.
 
 ## <a name="launch-the-system-ui-to-allow-the-user-to-initiate-broadcasting"></a>Starten Sie die Systembenutzer Oberfläche, um dem Benutzer das Initiieren von Broadcast zu gestatten
-Es gibt mehrere Gründe, warum Ihre APP derzeit nicht übertragen werden kann, z. b., wenn das aktuelle Gerät nicht die Hardwareanforderungen für die Übertragung erfüllt oder wenn derzeit eine andere APP sendet. Vor dem Starten der Systembenutzer Oberfläche können Sie überprüfen, ob Ihre APP derzeit übertragen werden kann. Überprüfen Sie zunächst, ob die Broadcast-APIs auf dem aktuellen Gerät verfügbar sind. Die APIs sind nicht auf Geräten verfügbar, auf denen eine ältere Betriebssystemversion als Windows 10, Version 1709, ausgeführt wird. Anstatt eine bestimmte Betriebssystemversion zu überprüfen, verwenden Sie die Methode **[apiinformation. isapikontratpresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** , um die *Windows. Media. appbroadcasting. appbroadcastingcontract* -Version 1,0 abzufragen. Wenn dieser Vertrag vorhanden ist, sind die Broadcast-APIs auf dem Gerät verfügbar.
+Es gibt mehrere Gründe, warum Ihre APP derzeit nicht übertragen werden kann, z. b., wenn das aktuelle Gerät nicht die Hardwareanforderungen für die Übertragung erfüllt oder wenn derzeit eine andere APP sendet. Vor dem Starten der Systembenutzer Oberfläche können Sie überprüfen, ob Ihre APP derzeit übertragen werden kann. Überprüfen Sie zunächst, ob die Broadcast-APIs auf dem aktuellen Gerät verfügbar sind. Die APIs sind nicht auf Geräten verfügbar, auf denen eine ältere Betriebssystemversion als Windows 10, Version 1709, ausgeführt wird. Anstatt eine bestimmte Betriebssystemversion zu überprüfen, verwenden Sie die Methode **[apiinformation. isapikontratpresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** , um die *Windows. Media. appbroadcasting. appbroadcastingcontract* -Version 1,0 abzufragen. Wenn dieser Vertrag vorhanden ist, sind die Broadcast-APIs auf dem Gerät verfügbar.
 
-Rufen Sie als nächstes eine Instanz der **[AppBroadcastingUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui)** -Klasse ab, indem Sie die Factorymethode " **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetDefault)** " auf dem PC aufrufen, wobei ein einzelner Benutzer gleichzeitig angemeldet ist. Bei der Xbox, in der mehrere Benutzer angemeldet werden können, müssen Sie stattdessen **[getforuser](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.getforuser)** aufrufen. Anschließend können Sie **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetStatus)** aufrufen, um den Broadcast Status Ihrer APP zu erhalten.
+Rufen Sie als nächstes eine Instanz der **[AppBroadcastingUI](/uwp/api/windows.media.appbroadcasting.appbroadcastingui)** -Klasse ab, indem Sie die Factorymethode " **[GetDefault](/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetDefault)** " auf dem PC aufrufen, wobei ein einzelner Benutzer gleichzeitig angemeldet ist. Bei der Xbox, in der mehrere Benutzer angemeldet werden können, müssen Sie stattdessen **[getforuser](/uwp/api/windows.media.appbroadcasting.appbroadcastingui.getforuser)** aufrufen. Anschließend können Sie **[GetStatus](/uwp/api/windows.media.appbroadcasting.appbroadcastingui.GetStatus)** aufrufen, um den Broadcast Status Ihrer APP zu erhalten.
 
-Die **[canstartbroadcast](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** -Eigenschaft der **appbroadcastingstatus** -Klasse gibt Aufschluss darüber, ob die APP zurzeit mit der Übertragung beginnen kann. Wenn dies nicht der Wert ist, können Sie die Eigenschaft **[Details](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** überprüfen, um zu ermitteln, warum Broadcasting nicht verfügbar ist. Abhängig von der Ursache können Sie den Status des Benutzers anzeigen oder Anweisungen zum Aktivieren der Übertragung anzeigen.
+Die **[canstartbroadcast](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** -Eigenschaft der **appbroadcastingstatus** -Klasse gibt Aufschluss darüber, ob die APP zurzeit mit der Übertragung beginnen kann. Wenn dies nicht der Wert ist, können Sie die Eigenschaft **[Details](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** überprüfen, um zu ermitteln, warum Broadcasting nicht verfügbar ist. Abhängig von der Ursache können Sie den Status des Benutzers anzeigen oder Anweisungen zum Aktivieren der Übertragung anzeigen.
 
 [!code-cpp[CanStartBroadcast](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetCanStartBroadcast)]
 
-Fordern Sie an, dass die Benutzeroberfläche der APP-Übertragung vom System durch Aufrufen von **[ShowBroadcastUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)** angezeigt wird.
+Fordern Sie an, dass die Benutzeroberfläche der APP-Übertragung vom System durch Aufrufen von **[ShowBroadcastUI](/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)** angezeigt wird.
 
 > [!NOTE] 
-> Die **ShowBroadcastUI** -Methode stellt eine Anforderung dar, die je nach aktuellem Status des Systems möglicherweise nicht erfolgreich ist. Ihre APP sollte nicht davon ausgehen, dass die Übertragung begonnen hat, nachdem diese Methode aufgerufen wurde. Verwenden Sie das **[iscurrentappbroadcastingchanged](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** -Ereignis, um benachrichtigt zu werden, wenn die Übertragung startet oder beendet wird.
+> Die **ShowBroadcastUI** -Methode stellt eine Anforderung dar, die je nach aktuellem Status des Systems möglicherweise nicht erfolgreich ist. Ihre APP sollte nicht davon ausgehen, dass die Übertragung begonnen hat, nachdem diese Methode aufgerufen wurde. Verwenden Sie das **[iscurrentappbroadcastingchanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** -Ereignis, um benachrichtigt zu werden, wenn die Übertragung startet oder beendet wird.
 
 [!code-cpp[LaunchBroadcastUI](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetLaunchBroadcastUI)]
 
 ## <a name="receive-notifications-when-broadcasting-starts-and-stops"></a>Empfangen von Benachrichtigungen beim Starten und Beenden von Sendungen
-Registrieren Sie sich für den Empfang von Benachrichtigungen, wenn der Benutzer die Benutzeroberfläche des Systems zum Starten oder Beenden der Übertragung Ihrer APP verwendet, indem eine Instanz der **[appbroadcastingmonitor](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)** -Klasse initialisiert und ein Handler für das  **[iscurrentappbroadcastingchanged](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** -Ereignis registriert wird. Wie bereits im vorherigen Abschnitt erläutert, sollten Sie sicherstellen, **[dass die Broadcast](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** -APIs auf dem Gerät vorhanden sind, bevor Sie versuchen, Sie zu verwenden. 
+Registrieren Sie sich für den Empfang von Benachrichtigungen, wenn der Benutzer die Benutzeroberfläche des Systems zum Starten oder Beenden der Übertragung Ihrer APP verwendet, indem eine Instanz der **[appbroadcastingmonitor](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)** -Klasse initialisiert und ein Handler für das  **[iscurrentappbroadcastingchanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** -Ereignis registriert wird. Wie bereits im vorherigen Abschnitt erläutert, sollten Sie sicherstellen, **[dass die Broadcast](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** -APIs auf dem Gerät vorhanden sind, bevor Sie versuchen, Sie zu verwenden. 
 
 [!code-cpp[AppBroadcastingRegisterChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingRegisterChangedHandler)]
 
@@ -56,7 +56,3 @@ Im Handler für das **iscurrentappbroadcastingchanged** -Ereignis möchten Sie m
  
 
  
-
-
-
-

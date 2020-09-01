@@ -1,135 +1,135 @@
 ---
-description: Erfahren Sie, wie Sie den Windows.Services.Store-Namespace verwenden, um mit abonnementbasierte Add-Ons zu implementieren.
+description: Erfahren Sie, wie Sie den Windows. Services. Store-Namespace verwenden, um Add-ons für Abonnements zu implementieren.
 title: Aktivieren von Abonnement-Add-Ons für die App
-keywords: Windows 10, UWP, Abonnements, Lizenzen, Apps, Add-Ons, In-App-Einkäufe, IAPs, Windows.Services.Store
+keywords: Windows 10, UWP, Abonnements, Add-ons, in-App-Käufe, IAPS, Windows. Services. Store
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ba436ab760f589debeaf6909acd64d61df89a43d
-ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.openlocfilehash: 39f319d272e4dde465af68d4c5b7af7fb7a17799
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295733"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167714"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Aktivieren von Abonnement-Add-Ons für die App
 
-Ihre Universelle Windows-Plattform-App (UWP) bietet In-App-Käufen von *abonnementbasierte* Add-Ons für Ihre Kunden an. Sie können Abonnements nutzen, um digitale Produkte in Ihrer App zu verkaufen (z. B. App-Features oder digitale Inhalte), die mit einer automatisierten wiederkehrenden Abrechnung arbeiten.
+Ihre universelle Windows-Plattform-app (UWP) kann Ihren Kunden in-App-Käufe von Add-ons für *Abonnements* anbieten. Sie können Abonnements verwenden, um digitale Produkte in Ihrer APP (z. b. app-Features oder digitale Inhalte) mit automatisierten wiederkehrenden Abrechnungs Perioden zu verkaufen.
 
 > [!NOTE]
-> Um den Kauf des Abonnements von Add-Ons in Ihrer App zu aktivieren, muss Ihr Projekt für **Windows 10 Anniversary Edition (10.0; Build 14393)** oder eine höhere Version in Visual Studio entwickelt sein (dies entspricht Windows 10, Version 1607). Sie muss die APIs im **Windows.Services.Store**-Namespace verwenden, um die In-App Käufe anstelle von **Windows.ApplicationModel.Store** zu verwenden. Weitere Informationen zu den Unterschieden zwischen diesen Namespaces finden Sie unter [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md).
+> Um den Kauf von Add-ons für Abonnements in Ihrer APP zu aktivieren, muss Ihr Projekt auf **Windows 10 Anniversary Edition (10,0; Build 14393)** oder eine spätere Version in Visual Studio (Dies entspricht Windows 10, Version 1607). Außerdem müssen die APIs im **Windows. Services. Store** -Namespace verwendet werden, um die in-App-Kauf Umgebung anstelle des **Windows. applicationmodel. Store** -Namespace zu implementieren. Weitere Informationen zu den Unterschieden zwischen diesen Namespaces finden Sie unter [in-App-Käufe und-](in-app-purchases-and-trials.md)Testversionen.
 
-## <a name="feature-highlights"></a>Featurehighlights
+## <a name="feature-highlights"></a>Wichtige Features
 
-Abonnement-Add-Ons für UWP-Apps unterstützen die folgenden Features:
+Abonnement-Add-ons für UWP-apps unterstützen die folgenden Features:
 
-* Sie können Abonnementszeiträume von 1 Monat, 3 Monaten, 6 Monaten, 1 Jahr bzw. 2 Jahren auswählen.
-* Sie können die kostenlose Testversionzeiträume von 1 Woche oder 1 Monat zu Ihrem Abonnement hinzufügen.
-* Das Windows SDK [bietet APIs](#code-examples), die Sie in Ihrer App zum Abrufen von Informationen zu verfügbaren Abonnement-Add-Ons für die App und zum aktivieren des Kaufs eines Abonnement-Add-Ons nutzen können. Wir bieten außerdem REST-APIs, die Sie aus Ihren Diensten zum [Verwalten von Abonnements für einen Benutzer](#manage-subscriptions) aufrufen können.
-* Sie können Analyseberichte anzeigen, welche die Anzahl der Abonnementkäufe, der aktiven Abonnenten und der stornierte Abonnements in einem bestimmten Zeitraum anzeigen.
-* Die Kunden können ihr Abonnement auf der Seite [https://account.microsoft.com/services](https://account.microsoft.com/services) ihres Microsoft-Kontos verwalten. Die Kunden können diese Seite verwenden, um alle Abonnements anzeigen, die sie erworben haben, ein Abonnement zu kündigen und die Zahlungsmethode für ihr Abonnement zu ändern.
+* Sie können zwischen Abonnement Zeiträume von 1 Monat, 3 Monaten, 6 Monaten, 1 Jahr oder 2 Jahren wählen.
+* Sie können Ihrem Abonnementkosten lose Test Zeiträume von einer Woche oder einen Monat hinzufügen.
+* Der Windows SDK [stellt APIs bereit](#code-examples) , die Sie in Ihrer APP verwenden können, um Informationen zu verfügbaren Add-ons für Abonnements für die APP zu erhalten und den Erwerb eines Abonnement-Add-ons zu aktivieren. Wir stellen auch Rest-APIs bereit, die Sie von Ihren Diensten aus anrufen können, um [Abonnements für einen Benutzer zu verwalten](#manage-subscriptions).
+* In einem bestimmten Zeitraum können Sie analytische Berichte anzeigen, die die Anzahl von Abonnement Käufen, aktiven Abonnenten und abgebrochenen Abonnements bereitstellen.
+* Kunden können Ihr Abonnement auf der [https://account.microsoft.com/services](https://account.microsoft.com/services) Seite für Ihre Microsoft-Konto verwalten. Kunden können diese Seite verwenden, um alle von Ihnen erworbenen Abonnements anzuzeigen, ein Abonnement abzubrechen und die Art der Zahlung zu ändern, die Ihrem Abonnement zugeordnet ist.
 
-## <a name="steps-to-enable-a-subscription-add-on-for-your-app"></a>Schritte zum Aktivieren von Abonnements für Add-Ons für Ihre App
+## <a name="steps-to-enable-a-subscription-add-on-for-your-app"></a>Schritte zum Aktivieren eines Abonnement-Add-Ins für Ihre APP
 
-Gehen Sie folgendermaßen vor, um den Kauf von Abonnement-Add-Ons in Ihrer App zu aktivieren.
+Führen Sie die folgenden Schritte aus, um den Kauf von Abonnement-Add-ons in Ihrer APP zu aktivieren.
 
-1. [Erstellen Sie im Partner Center eine Add-on-Übermittlung](../publish/add-on-submissions.md) für Ihr Abonnement, und veröffentlichen Sie die Übermittlung. Beachten Sie im Rahmen des Add-On-Übermittlungsprozesses die folgenden Eigenschaften:
+1. [Erstellen Sie im Partner Center eine Add-on-Übermittlung](../publish/add-on-submissions.md) für Ihr Abonnement, und veröffentlichen Sie die Übermittlung. Beachten Sie bei der Übermittlung des Add-on-Vorgangs die folgenden Eigenschaften:
 
-    * [Produkttyp](../publish/set-your-add-on-product-id.md#product-type): Stellen Sie sicher, dass Sie **Abonnement** ausgewählt haben.
+    * [Produkttyp](../publish/set-your-add-on-product-id.md#product-type): Stellen Sie sicher, dass Sie das **Abonnement**auswählen.
 
-    * [Abonnementzeitraum](../publish/enter-add-on-properties.md#subscription-period): Wählen Sie den wiederholte Abrechnungszeitraum für Ihr Abonnement aus. Der können den Abonnementszeitraum nach der Veröffentlichung des Add-Ons nicht mehr ändern.
+    * [Abonnementzeitraum](../publish/enter-add-on-properties.md#subscription-period): Wählen Sie den wiederkehrenden Abrechnungszeitraum für Ihr Abonnement aus. Sie können den Abonnementzeitraum nicht ändern, nachdem Sie das Add-on veröffentlicht haben.
 
-        Jedes Abonnement-Add-On unterstützt einen einzelnen Abonnementzeitraum und einen Testzeitraum. Sie müssen ein anderes Abonnement-Add-On für jedes Abonnement erstellen, das Sie in Ihrer App anbieten möchten. Wenn Sie z. B. ein monatliches Abonnement ohne Teste, ein monatliches Abonnement mit einmonatigem Test, ein Jahresabonnement ohne Test und ein Jahresabonnement mit einem einmonatigen Test anbieten möchten, benötigen Sie vier Abonnement-Add-Ons.
+        Jedes Abonnement-Add-on unterstützt einen einzelnen Abonnementzeitraum und einen Testzeitraum. Sie müssen für jeden Abonnementtyp, den Sie in Ihrer APP anbieten möchten, ein anderes Abonnement-Add-on erstellen. Wenn Sie z. b. ein monatliches Abonnement ohne Testversion, ein monatliches Abonnement mit einer einmonatigen Testversion, ein Jahresabonnement ohne Testversion und ein Jahresabonnement mit einer einmonatigen Testversion anbieten möchten, müssen Sie vier Abonnement-Add-ons erstellen.
 
-    * [Testzeitraum](../publish/enter-add-on-properties.md#free-trial): Wählen Sie einen 1 Woche oder 1 Monat Testzeitraum für Ihr Abonnement, damit Benutzer Ihre Abonnement testen können, bevor sie dieses kaufen. Der können den Abonnementszeitraum und den Testzeitraum nach der Veröffentlichung des Abonnement-Add-Ons nicht mehr ändern.
+    * [Testzeitraum](../publish/enter-add-on-properties.md#free-trial): Wählen Sie einen Testzeitraum von 1 Woche oder 1 Monat für Ihr Abonnement aus, damit Benutzer Ihre Abonnement Inhalte testen können, bevor Sie Sie erwerben. Nach dem Veröffentlichen Ihres Abonnement-Add-Ins können Sie den Testzeitraum nicht ändern oder entfernen.
 
-        Um eine kostenlose Testversion Ihres Abonnements zu erwerben, muss der Benutzer Ihr Abonnement über den Standard-In-App-Einkauf-(inkl. gültiger Zahlungsmethode) erwerben. Während der Testphase wird nichts in Rechnung gestellt. Am Ende des Testzeitraums wandelt sich das Abonnement automatisch in ein vollständiges Abonnement um und die Zahlungsmittel des Benutzers werden für den ersten kostenpflichtigen Zeitraum des Abonnements belastet. Wenn der Benutzer das Abonnement während des Testzeitraums abbricht, bleibt das Abonnement bis zum Ende des Testzeitraums aktiv. Einige Testzeiträume sind nicht für alle Abonnements verfügbar.
+        Um eine kostenlose Testversion Ihres Abonnements zu erhalten, muss ein Benutzer Ihr Abonnement über den standardmäßigen in-App-Kaufprozess erwerben, einschließlich einer gültigen Zahlungsform. Während des Testzeitraums werden Ihnen keine Kosten in Rechnung gestellt. Am Ende des Testzeitraums wird das Abonnement automatisch in das vollständige Abonnement konvertiert, und das Zahlungsinstrument des Benutzers wird für den ersten Zeitraum des kostenpflichtigen Abonnements in Rechnung gestellt. Wenn der Benutzer das Abonnement während des Testzeitraums abbrechen möchte, bleibt das Abonnement bis zum Ende des Testzeitraums aktiv. Einige Test Zeiträume sind nicht für alle Abonnement Zeiträume verfügbar.
 
         > [!NOTE]
-        > Jeder Kunde kann nur einmal eine kostenlose Testversion für ein Abonnement-Add-On erwerben. Nachdem ein Kunde eine kostenlose Testversion für ein Abonnement erworben hat, verhindert der Store, dass derselbe Kunde das gleiche kostenlose Testabonnement erneut erhält.
+        > Jeder Kunde kann eine kostenlose Testversion für ein Abonnement-Add-on nur einmal erwerben. Nachdem ein Kunde eine kostenlose Testversion für ein Abonnement erworben hat, verhindert der Speicher, dass der gleiche Kunde das gleiche kostenlose Testabonnement wieder erhält.
 
-    * [Sichtbarkeit](../publish/set-add-on-pricing-and-availability.md#visibility): Wenn Sie ein Test-Add-On erstellen, das Sie nur verwenden, um die In-App-Einkaufserfahrung für Ihre Abonnement zu testen, empfehlen wir, eine der **Im Store ausgeblendet**-Optionen zu verwenden. Andernfalls können Sie die beste Sichtbarkeitsoption für Ihr Szenario auswählen.
+    * [Sichtbarkeit](../publish/set-add-on-pricing-and-availability.md#visibility): Wenn Sie ein Test-Add-on erstellen, das Sie nur zum Testen der in-App-Käufe für Ihr Abonnement verwenden, empfiehlt es sich, eine der ausgeblendeten Optionen **in den Store** -Optionen auszuwählen. Andernfalls können Sie die beste Sichtbarkeits Option für das Szenario auswählen.
 
-    * [Preise](../publish/set-add-on-pricing-and-availability.md?#pricing): Wählen Sie in diesem Abschnitt den Preis für Ihr Abonnement aus. Der können den Abonnementszeitraum nach der Veröffentlichung des Add-Ons nicht mehr erhöhen. Sie können den Preis jedoch später senken.
+    * [Preise](../publish/set-add-on-pricing-and-availability.md?#pricing): Wählen Sie den Preis Ihres Abonnements in diesem Abschnitt aus. Sie können den Preis des Abonnements nicht erhöhen, nachdem Sie das Add-on veröffentlicht haben. Sie können den Preis jedoch zu einem späteren Zeitpunkt senken.
         > [!IMPORTANT]
-        > Standardmäßig wird der Preis bei der Erstellung des Add-Ons auf **Kostenlos** festgelegt. Da Sie den Preis nach Abschluss der Add-On-Übermittlung nicht anheben können, stellen Sie sicher, dass Sie hier den gewünschten Preis für Ihr Abonnement auswählen.
+        > Wenn Sie ein Add-on erstellen, ist der Preisstandard mäßig auf **Free**festgelegt. Da Sie nach Abschluss der Add-on-Übermittlung den Preis für ein Add-on für Abonnements nicht erhöhen können, sollten Sie hier den Preis Ihres Abonnements auswählen.
 
-2. Verwenden Sie in Ihrer App die APIs im Namespace [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store), um zu ermitteln, ob der aktuelle Benutzer bereits Ihr Abonnement-Add-On erworben hat, und um es als In-App-Kauf anzubieten. In den [Codebeispielen](#code-examples) in diesem Artikel erhalten Sie weitere Informationen.
+2. Verwenden Sie in Ihrer APP APIs im [**Windows. Services. Store**](/uwp/api/windows.services.store) -Namespace, um zu bestimmen, ob der aktuelle Benutzer bereits Ihr Abonnement-Add-on erworben hat, und stellen Sie es dann dem Benutzer als in-App-Kauf zur Verfügung. Weitere Informationen finden Sie in den [Codebeispielen](#code-examples) in diesem Artikel.
 
-3. Testen Sie die In-App-Kauf-Implementierung Ihres Abonnements in Ihrer App. Sie müssen die App aus dem Store auf Ihr Entwicklungsgerät herunterladen, um dessen Lizenz zum Testen zu verwenden. Weitere Informationen finden Sie unter [Anweisungen zum Testen](in-app-purchases-and-trials.md#testing) für In-App-Käufe.  
+3. Testen Sie die in-App-Kauf Implementierung Ihres Abonnements in Ihrer APP. Sie müssen Ihre APP einmal aus dem Store auf Ihr Entwicklungs Gerät herunterladen, um Ihre Lizenz für Tests zu verwenden. Weitere Informationen finden Sie in unserer [Test Anleitung](in-app-purchases-and-trials.md#testing) für in-App-Käufe.  
 
-4. Erstellen und Veröffentlichen Sie eine App-Übermittlung, die das aktualisierte App-Paket inkl. des getesteten Codes enthält. Weitere Informationen finden Sie unter [App-Übermittlungen](../publish/app-submissions.md).
+4. Erstellen und veröffentlichen Sie eine APP-Übermittlung, die ihr aktualisiertes App-Paket enthält, einschließlich des getesteten Codes. Weitere Informationen finden Sie unter [App-Einreichungen](../publish/app-submissions.md).
 
 <span id="code-examples"/>
 
 ## <a name="code-examples"></a>Codebeispiele
 
-Die Codebeispiele in diesem Abschnitt zeigen, wie Sie die APIs im [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store)-Namespace zum Abrufen von Informationen zu Abonnement-Add-Ons für die aktuelle App nutzen und den Kauf eines Abonnement-Add-Ons im Namen des aktuellen Benutzers anfordern.
+Die Codebeispiele in diesem Abschnitt veranschaulichen, wie die APIs im [**Windows. Services. Store**](/uwp/api/windows.services.store) -Namespace verwendet werden, um Informationen zu Abonnement-Add-ons für die aktuelle APP zu erhalten und das Add-on für den Erwerb eines Abonnements für den aktuellen Benutzer anzufordern.
 
 Für diese Beispiele gelten die folgenden Voraussetzungen:
-* Ein Visual Studio-Projekt für eine UWP (Universelle Windows-Plattform)-App, die für **Windows 10 Anniversary Edition (10.0; Build 14393)** oder höher, geeignet ist.
-* Sie haben [eine APP-Übermittlung](https://docs.microsoft.com/windows/uwp/publish/app-submissions) im Partner Center erstellt, und diese APP wird im Store veröffentlicht. Optional können Sie die App so konfigurieren, daher sie während der Tests im Store nicht auffindbar ist. Weitere Informationen finden Sie unter [Hinweise für Tests](in-app-purchases-and-trials.md#testing).
+* Ein Visual Studio-Projekt für eine universelle Windows-Plattform-app (UWP), die auf **Windows 10 Anniversary Edition abzielt (10,0; Build 14393)** oder eine spätere Version.
+* Sie haben [eine APP-Übermittlung](../publish/app-submissions.md) im Partner Center erstellt, und diese APP wird im Store veröffentlicht. Optional können Sie die APP so konfigurieren, dass Sie im Speicher nicht erkennbar ist, während Sie Sie testen. Weitere Informationen finden Sie unter [Hinweise für Tests](in-app-purchases-and-trials.md#testing).
 * Sie haben [ein Abonnement-Add-on für die APP](../publish/add-on-submissions.md) im Partner Center erstellt.
 
-Der Code in diesen Beispielen geht von Folgendem aus:
-* Die Codedatei enthält **using**-Anweisungen für die Namespaces **Windows.Services.Store** und **System.Threading.Tasks**.
+Für den Code in diesen Beispielen wird Folgendes vorausgesetzt:
+* Die Codedatei enthält **Anweisungen** für die Namespaces " **Windows. Services. Store** " und " **System. Threading. Tasks** ".
 * Die App ist eine Einzelbenutzer-App, die nur im Kontext des Benutzers ausgeführt wird, der die App gestartet hat. Weitere Informationen finden Sie unter [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md#api_intro).
 
 > [!NOTE]
-> Wenn Sie über eine Desktopanwendung verfügen, die die [Desktop-Brücke](https://developer.microsoft.com/windows/bridges/desktop) verwendet, müssen Sie möglicherweise zusätzlichen, in diesen Beispielen nicht aufgeführten Code hinzufügen, um das [**StoreContext**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext)-Objekt zu konfigurieren. Weitere Informationen finden Sie unter [Verwenden der StoreContext-Klasse in einer Desktopanwendung, die die Desktop-Brücke verwendet](in-app-purchases-and-trials.md#desktop).
+> Wenn Sie über eine Desktop Anwendung verfügen, die die [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)verwendet, müssen Sie möglicherweise zusätzlichen Code hinzufügen, der in diesen Beispielen nicht angezeigt wird, um das [**storecontext**](/uwp/api/Windows.Services.Store.StoreContext) -Objekt zu konfigurieren. Weitere Informationen finden Sie unter [Verwenden der StoreContext-Klasse in einer Desktopanwendung, die die Desktop-Brücke verwendet](in-app-purchases-and-trials.md#desktop).
 
-### <a name="purchase-a-subscription-add-on"></a>Ein Abonnement-Add-On erwerben
+### <a name="purchase-a-subscription-add-on"></a>Erwerben eines Abonnement-Add-on
 
-In diesem Beispiel wird veranschaulicht, wie Sie den Kauf eines bekannten Abonnement-Add-Ons für Ihre App im Auftrag des aktuellen Kunden anfordern. Außerdem wird veranschaulicht, wie Sie den Fall behandeln, dass für das Abonnement ein Testzeitraum gilt.
+In diesem Beispiel wird veranschaulicht, wie Sie den Erwerb eines bekannten Abonnement-Add-on für Ihre APP im Auftrag des aktuellen Kunden anfordern. Dieses Beispiel zeigt auch, wie der Fall behandelt wird, in dem das Abonnement über einen Testzeitraum verfügt.
 
-1. Der Code bestimmt zunächst, ob der Kunde bereits eine aktive Lizenz für das Abonnement besitzt. Wenn der Kunde bereits über eine aktive Lizenz verfügt, sollte der Code die Abonnementfeatures nach Bedarf entsperren. (Da dies für Ihre App proprietär ist, ist dies im Beispiel mit einem Kommentar gekennzeichnet).
-2. Als Nächstes ruft der Code das Objekt [**StoreProduct**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) ab. Es stellt das Abonnement dar, das Sie im Auftrag des Kunden erwerben möchten. Der Code setzt voraus, dass Sie die [Store ID](in-app-purchases-and-trials.md#store-ids) des Abonnement-Add-Ons, das Sie kaufen möchten, bereits kennen, und dass Sie diesen Wert der Variablen *subscriptionStoreId* zugewiesen haben.
-3. Der Code ermittelt dann, ob eine Testversion für das Abonnement verfügbar ist. Optional kann Ihre App diese Informationen verwenden, um Details zur verfügbaren Testversion oder zum vollständigen Abonnement für den Kunden anzuzeigen.
-4. Schließlich ruft der Code die Methode [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) auf, um den Kauf des Abonnements anzufordern. Wenn eine Testversion für das Abonnement verfügbar ist, wird diese dem Kunden zum Kauf angeboten. Andernfalls wird das vollständige Abonnement zum Kauf angeboten.
+1. Der Code bestimmt zunächst, ob der Kunde bereits über eine aktive Lizenz für das Abonnement verfügt. Wenn der Kunde bereits über eine aktive Lizenz verfügt, sollte der Code die Abonnement Features bei Bedarf entsperren (da dies für Ihre APP von Nutzen ist, wird dies durch einen Kommentar im Beispiel identifiziert).
+2. Als Nächstes ruft der Code das [**storeproduct**](/uwp/api/windows.services.store.storeproduct) -Objekt ab, das das Abonnement darstellt, das Sie im Auftrag des Kunden erwerben möchten. Der Code geht davon aus, dass Sie bereits die [Speicher-ID](in-app-purchases-and-trials.md#store-ids) des Abonnement-Add-Ins kennen, das Sie kaufen möchten, und dass Sie diesen Wert der Variable " *abonnementstoreid* " zugewiesen haben.
+3. Der Code bestimmt dann, ob eine Testversion für das Abonnement verfügbar ist. Optional kann Ihre APP diese Informationen verwenden, um Details zu der verfügbaren Testversion oder zum vollständigen Abonnement des Kunden anzuzeigen.
+4. Schließlich ruft der Code die [**requestpurchaseasync**](/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) -Methode auf, um den Kauf des Abonnements anzufordern. Wenn eine Testversion für das Abonnement verfügbar ist, wird die Testversion dem Kunden zum Kauf angeboten. Andernfalls wird das vollständige Abonnement zum Kauf angeboten.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
 
-### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>Abrufen von Informationen zu Abonnement-Add-Ons für die aktuelle App
+### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>Informationen zu Abonnement-Add-ons für die aktuelle APP erhalten
 
-In diesem Codebeispiel wird veranschaulicht, wie Sie Informationen für alle Abonnement-Add-Ons abrufen, die in Ihrer App verfügbar sind. Um diese Informationen zu erhalten, verwenden Sie zunächst die [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync)-Methode, um eine Sammlung der [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct)-Objekte für alle in der App verfügbaren Add-Ons abzurufen. Rufen Sie dann die [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) für jedes Produkt und ab und verwenden Sie die Eigenschaften [**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) und [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo), um auf die Abonnementinformationen zuzugreifen.
+Dieses Codebeispiel veranschaulicht, wie Sie Informationen für alle Abonnement-Add-ons, die in ihrer app verfügbar sind, erhalten. Um diese Informationen zu erhalten, verwenden Sie zuerst die [**getassociatedstoreproduczasync**](/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) -Methode, um die Auflistung der [**storeproduct**](/uwp/api/Windows.Services.Store.StoreProduct) -Objekte zu erhalten, die die einzelnen verfügbaren Add-ons für die APP darstellen. Holen Sie sich dann die [**storesku**](/uwp/api/windows.services.store.storesku) für jedes Produkt, und verwenden Sie die Eigenschaften " [**isabonnement**](/uwp/api/windows.services.store.storesku.IsSubscription) " und " [**Abonnement Info**](/uwp/api/windows.services.store.storesku.SubscriptionInfo) ", um auf die Abonnement Informationen zuzugreifen.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
 
 <span id="manage-subscriptions" />
 
-## <a name="manage-subscriptions-from-your-services"></a>Verwalten von Abonnements über Ihre Dienste
+## <a name="manage-subscriptions-from-your-services"></a>Abonnements über ihre Dienste verwalten
 
-Nachdem die aktualisierte App im Store verfügbar ist und die Kunden Ihr Abonnement-Add-On erwerben können, gibt es möglicherweise Szenarien, in denen Sie das Abonnement für einen Kunden verwalten müssen. Wir bieten REST-APIs, die Sie aus Ihren Diensten zum Ausführen der folgenden Abonnement Verwaltungsaufgaben aufrufen können:
+Nachdem sich Ihre aktualisierte APP im Store befindet und Kunden Ihr Abonnement-Add-on erwerben können, haben Sie möglicherweise Szenarios, in denen Sie das Abonnement für einen Kunden verwalten müssen. Wir stellen Rest-APIs bereit, die Sie von Ihren Diensten aus anrufen können, um die folgenden Abonnement Verwaltungsaufgaben auszuführen:
 
-* [Rufen Sie die Abonnements ab, für die ein Benutzer berechtigt ist](get-subscriptions-for-a-user.md). Wenn Ihr Abonnement Teil eines plattformübergreifende Dienstes ist, können Sie diese API nutzen, um zu bestimmen, ob der angegebene Benutzer eine Berechtigung für Ihr Abonnement hat, und den Status ihrer Abonnements im Kontext Ihrer UWP-App abrufen. Diese Informationen können dann zum Aktualisieren des Status des Abonnements auf anderen von Ihrem Dienst unterstützten Plattformen nutzen.
+* [Holen Sie sich die Abonnements, für die ein Benutzer berechtigt ist, zu verwenden](get-subscriptions-for-a-user.md). Wenn Ihr Abonnement Teil eines plattformübergreifenden Dienstanbieter ist, können Sie diese API anrufen, um zu bestimmen, ob der angegebene Benutzer über eine Berechtigung für Ihr Abonnement und den Status seines Abonnements im Kontext der UWP-App verfügt. Sie können diese Informationen dann verwenden, um den Status des Abonnements auf anderen Plattformen zu aktualisieren, die der Dienst unterstützt.
 
-* [Ändern des Abrechnungszustands eines Abonnements für einen bestimmten Benutzer](change-the-billing-state-of-a-subscription-for-a-user.md). Verwenden Sie diese API, um die automatische Verlängerung für ein Abonnement zu stornieren, zu verlängern oder zu deaktivieren.
+* [Ändern des Abrechnungs Zustands eines Abonnements für einen bestimmten Benutzer](change-the-billing-state-of-a-subscription-for-a-user.md). Verwenden Sie diese API, um die automatische Verlängerung eines Abonnements abzubrechen, zu erweitern oder zu deaktivieren.
 
-## <a name="cancellations"></a>Stornierungen
+## <a name="cancellations"></a>Zug
 
-Die Kunden können die Seite [https://account.microsoft.com/services](https://account.microsoft.com/services) in ihrem Microsoft-Konto verwenden, um alle Abonnements anzuzeigen, die sie erworben haben, um ein Abonnement zu kündigen und um die Zahlungsmethode für ihr Abonnement zu ändern. Wenn ein Kunde ein Abonnement auf dieser Seite storniert, kann er für die Dauer der aktuellen Abrechnungsperiode weiterhin auf das Abonnement zugreifen. Er erhält keine Rückerstattung für einen Teil der aktuellen Abrechnungsperiode. Am Ende der aktuellen Abrechnungsperiode wird das Abonnement deaktiviert.
+Kunden können die [https://account.microsoft.com/services](https://account.microsoft.com/services) Seite für Ihre Microsoft-Konto verwenden, um alle von Ihnen erworbenen Abonnements anzuzeigen, ein Abonnement abzubrechen und die Art der Zahlung zu ändern, die Ihrem Abonnement zugeordnet ist. Wenn ein Kunde ein Abonnement auf dieser Seite abbricht, haben Sie weiterhin Zugriff auf das Abonnement für die Dauer des aktuellen Abrechnungszeitraums. Sie erhalten keine Rückerstattung für einen Teil des aktuellen Abrechnungszeitraums. Am Ende des aktuellen Abrechnungszeitraums wird das Abonnement deaktiviert.
 
-Sie können ein Abonnement auch im Auftrag eines Benutzers mithilfe unserer REST-API stornieren, um [Abrechnungszustand eines Abonnements für einen bestimmten Benutzer zu ändern](change-the-billing-state-of-a-subscription-for-a-user.md).
+Sie können ein Abonnement im Namen eines Benutzers auch abbrechen, indem Sie die Rest-API verwenden, um [den Abrechnungs Zustand eines Abonnements für einen bestimmten Benutzer zu ändern](change-the-billing-state-of-a-subscription-for-a-user.md).
 
-## <a name="subscription-renewals-and-grace-periods"></a>Verlängerung des Abonnements und Karenzzeiten
+## <a name="subscription-renewals-and-grace-periods"></a>Abonnement Erneuerungen und Toleranz Zeiträume
 
-Zu einem bestimmten Zeitpunkt während jeder Abrechnungsperiode werden wir versuchen, die Kreditkarte des Kunden für die nächste Abrechnungsperiode zu belasten. Wenn die Belastung fehlschlägt, gilt für das Abonnement des Kunden der Status *Mahnung*. Dies bedeutet, dass ihr Abonnement für den Rest der aktuellen Abrechnungsperiode noch aktiv ist, wir jedoch regelmäßig versuchen werden, die Kreditkarte zu belasten, um das Abonnement automatisch zu erneuern. Dieser Status kann bis zu zwei Wochen dauern, bis zum Ende des aktuellen Abrechnungszeitraums und dem Erneuerungsdatum für die nächsten Abrechnungsperiode
+Zu einem beliebigen Zeitpunkt während jedes Abrechnungszeitraums versuchen wir, die Kreditkarte des Kunden für den nächsten Abrechnungszeitraum zu berechnen. Wenn die Berechnung fehlschlägt, wird das *Abonnement des Kunden in den Zustand "* dunkel" versetzt. Dies bedeutet, dass Ihr Abonnement für den Rest des aktuellen Abrechnungszeitraums noch aktiv ist. wir versuchen jedoch regelmäßig, Ihre Kreditkarte zu berechnen, um das Abonnement automatisch zu erneuern. Dieser Status kann bis zu zwei Wochen dauern bis zum Ende des aktuellen Abrechnungszeitraums und zum Erneuerungsdatum für den nächsten Abrechnungszeitraum.
 
-Wir gewähren keine Karenzzeit für die Abonnementabrechnung. Wenn wir die Kreditkarte des Kunden bis zum Ende der aktuellen Abrechnungsperiode nicht erfolgreich belasten können, wird das Abonnement storniert, und der Kunde hat nach Ablauf der aktuellen Abrechnungsperiode keinen Zugriff mehr auf das Abonnement.
+Wir bieten keine Toleranz Zeiträume für die Abrechnung von Abonnements an. Wenn die Kreditkarte des Kunden bis zum Ende des aktuellen Abrechnungszeitraums nicht erfolgreich abgerechnet werden kann, wird das Abonnement abgebrochen, und der Kunde erhält nach dem aktuellen Abrechnungszeitraum keinen Zugriff mehr auf das Abonnement.
 
 ## <a name="unsupported-scenarios"></a>Nicht unterstützte Szenarien
 
-Die folgenden Szenarien werden für die Abonnement-Add-Ons derzeit nicht unterstützt.
+Die folgenden Szenarien werden für Abonnement-Add-ons derzeit nicht unterstützt.
 
-* Das Verkaufen von Abonnements direkt an Kunden über den Store wird zu diesem Zeitpunkt nicht unterstützt. Abonnements sind nur für In-App-Käufe von digitalen Produkten verfügbar.
-* Kunden können die Abonnementperioden nicht über die Seite [https://account.microsoft.com/services](https://account.microsoft.com/services) ihres Microsoft-Kontos ändern. Um zu einem anderen Abonnementzeitraum zu wechseln, müssen Kunden Ihr aktuelles Abonnement kündigen und dann ein Abonnement mit einem anderen Abonnementzeitraum Ihrer APP erwerben.
-* Das Wechseln von Ebenen wird aktuell nicht für Abonnement-Add-Ons unterstützt (z. B., wenn ein Kunde aus einem einfachen Abonnement in ein Premium-Abonnement mit mehr Features wechseln will).
-* [Verkäufe](../publish/put-apps-and-add-ons-on-sale.md) und [Werbecodes](../publish/generate-promotional-codes.md) für die Abonnement-Add-Ons werden derzeit nicht unterstützt.
+* Das einmalige verkaufen von Abonnements für Kunden über den Store wird derzeit nicht unterstützt. Abonnements sind nur für in-App-Käufe digitaler Produkte verfügbar.
+* Kunden können Abonnement Zeiträume nicht mithilfe der [https://account.microsoft.com/services](https://account.microsoft.com/services) Seite für Ihre Microsoft-Konto wechseln. Um zu einem anderen Abonnementzeitraum zu wechseln, müssen Kunden Ihr aktuelles Abonnement kündigen und dann ein Abonnement mit einem anderen Abonnementzeitraum Ihrer APP erwerben.
+* Der Ebenenwechsel wird derzeit nicht für Add-ons von Abonnements unterstützt (z. b. durch das Wechseln eines Kunden von einem Basic-Abonnement zu einem Premium-Abonnement mit weiteren Features).
+* [Verkaufs](../publish/put-apps-and-add-ons-on-sale.md) -und [Werbecodes](../publish/generate-promotional-codes.md) werden für Abonnement-Add-ons zurzeit nicht unterstützt.
 * Erneuern vorhandener Abonnements nach dem Festlegen der Sichtbarkeit Ihres Abonnement-Add-Ins, um die **Erfassung zu verhindern**. Weitere Informationen finden [Sie unter Festlegen von Add-on-Preisen und Verfügbarkeit](../publish/set-add-on-pricing-and-availability.md) .
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
-* [Produktinformationen für apps und Add-ons erhalten](get-product-info-for-apps-and-add-ons.md)
+* [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)

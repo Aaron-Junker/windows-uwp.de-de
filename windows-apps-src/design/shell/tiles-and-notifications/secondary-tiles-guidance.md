@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, sekundäre Kacheln, Anleitungen, Richtlinien, bewährte Methoden
 ms.localizationpriority: medium
-ms.openlocfilehash: 400b0d48fd68c720d613325d1938c0c4a70931a7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 83f8a095a4e15c3ec0ebb02eebc183cf4beb01ea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971025"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172334"
 ---
 # <a name="secondary-tile-guidance"></a>Leitfaden für sekundäre Kacheln
 
@@ -49,6 +49,6 @@ Beachten Sie die folgenden Empfehlungen, wenn Sie sekundäre Kacheln in Ihrer AP
 
 * [Übersicht über sekundäre Kacheln](secondary-tiles.md)
 * [Heften von sekundären](secondary-tiles-pinning.md)
-* [Kachel Ressourcen](app-assets.md)
+* [Kachel Ressourcen](../../style/app-icons-and-logos.md)
 * [Dokumentation zu Kachel Inhalt](create-adaptive-tiles.md)
 * [Senden einer lokalen Kachelbenachrichtigung](sending-a-local-tile-notification.md)

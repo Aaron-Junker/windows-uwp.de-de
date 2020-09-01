@@ -1,22 +1,22 @@
 ---
 Description: Erfahren Sie, wie Win32-C++ WRL-apps lokale Popup Benachrichtigungen senden können und den Benutzer durch Klicken auf den Toast behandeln können.
-title: Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps
+title: Senden von Popupbenachrichtigungen über C++ WRL-Apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Toast senden, lokalen Toast senden, Desktop Bridge, msix, Sparse-Paket, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e103c41de7bf169629085fd259e23e17804360d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: e1aae390cf9047c8c93b4d24084c87bc90af8d80
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234660"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172304"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden einer lokalen Popup Benachrichtigung von Desktop C++ WRL-apps
+# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>Senden von Popupbenachrichtigungen über C++ WRL-Apps
 
-Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
+Desktop-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie nicht msix oder ein sparsepaket verwenden.
 
 > [!IMPORTANT]
 > Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop c#](send-local-toast-desktop.md).
@@ -94,7 +94,7 @@ Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren.
 
 ### <a name="msixsparse-package"></a>Msix/sparsespaket
 
-Fügen Sie in der [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) Datei "Package. [sparse package](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) appxmanifest" in der Datei " **Package. appxmanifest**" Folgendes hinzu:
+Fügen Sie in der [MSIX](/windows/msix/desktop/source-code-overview) Datei "Package. [sparse package](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) appxmanifest" in der Datei " **Package. appxmanifest**" Folgendes hinzu:
 
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
@@ -102,7 +102,7 @@ Fügen Sie in der [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-
 4. **com: Erweiterung** für den com-Activator, der die GUID aus Schritt #4 verwendet. Achten Sie darauf, `Arguments="-ToastActivated"` dass Sie das einschließen, damit Sie wissen, dass der Start von einem Toast stammt.
 5. **Desktop: Erweiterung** für **Windows. toastnotificationactivation** zum Deklarieren der Popup-Activator-CLSID (die GUID aus Schritt #4).
 
-**"Package. appxmanifest"**
+**Package.appxmanifest**
 
 ```xml
 <Package
@@ -395,7 +395,7 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>Schritt 10: Bereitstellen und Debuggen
 
-Informationen zum Bereitstellen und Debuggen Ihrer msix/Sparse-Paket-app finden Sie unter [ausführen, Debuggen und Testen einer gepackten Desktop-App](/windows/uwp/porting/desktop-to-uwp-debug)
+Informationen zum Bereitstellen und Debuggen Ihrer msix/Sparse-Paket-app finden Sie unter [ausführen, Debuggen und Testen einer gepackten Desktop-App](/windows/msix/desktop/desktop-to-uwp-debug)
 
 Wenn Sie Ihre klassische Win32-App bereitstellen und debuggen möchten, müssen Sie die APP einmal vor dem Debuggen über das Installationsprogramm installieren, damit die Start Verknüpfung mit ihrer aumid und CLSID vorhanden ist. Nachdem die Start Verknüpfung vorhanden ist, können Sie in Visual Studio mit F5 Debuggen.
 
@@ -416,13 +416,13 @@ Wenn Sie zahlreiche `unresolved external symbol` Kompilierungsfehler erhalten, h
 
 Wenn Sie Windows 8.1 oder niedriger unterstützen, sollten Sie zur Laufzeit überprüfen, ob Sie unter Windows 10 ausgeführt werden, bevor Sie eine **desktopnotificationmanagercompat** -API aufrufen oder toastgenerische Toasts senden.
 
-In Windows 8 wurden Popup Benachrichtigungen eingeführt, aber es wurden die Legacy-Popup [Vorlagen](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))wie ToastText01 verwendet. Die Aktivierung wurde vom in-Memory- **aktivierten** Ereignis in der **toastnotification** -Klasse behandelt, da Popups nur kurze Popups waren, die nicht persistent waren. In Windows 10 wurden interaktive Popup- [Auffassungen](adaptive-interactive-toasts.md)eingeführt, und es wurde auch ein Aktions Center eingeführt, in dem Benachrichtigungen mehrere Tage lang aufbewahrt werden. Die Einführung des Aktions Centers erforderte die Einführung eines com-Activators, sodass der Toast Tage nach der Erstellung aktiviert werden kann.
+In Windows 8 wurden Popup Benachrichtigungen eingeführt, aber es wurden die Legacy-Popup [Vorlagen](/previous-versions/windows/apps/hh761494(v=win.10))wie ToastText01 verwendet. Die Aktivierung wurde vom in-Memory- **aktivierten** Ereignis in der **toastnotification** -Klasse behandelt, da Popups nur kurze Popups waren, die nicht persistent waren. In Windows 10 wurden interaktive Popup- [Auffassungen](adaptive-interactive-toasts.md)eingeführt, und es wurde auch ein Aktions Center eingeführt, in dem Benachrichtigungen mehrere Tage lang aufbewahrt werden. Die Einführung des Aktions Centers erforderte die Einführung eines com-Activators, sodass der Toast Tage nach der Erstellung aktiviert werden kann.
 
-| Betriebssystem | Mit dem generischen | COM-Activator | Legacy-Popup Vorlagen |
+| OS | Mit dem generischen | COM-Activator | Legacy-Popup Vorlagen |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | Unterstützt | Unterstützt | Unterstützt (com-Server wird jedoch nicht aktiviert) |
-| Windows 8.1/8 | – | – | Unterstützt |
-| Windows 7 und niedriger | – | – | – |
+| Windows 10 | Unterstützt | Unterstützt | Unterstützt (com-Server wird jedoch nicht aktiviert) |
+| Windows 8.1/8 | Nicht zutreffend | – | Unterstützt |
+| Windows 7 und niedriger | Nicht zutreffend | Nicht zutreffend | Nicht zutreffend |
 
 Um zu prüfen, ob Sie unter Windows 10 ausgeführt werden, schließen Sie den `<VersionHelpers.h>` -Header ein, und überprüfen Sie die **IsWindows10OrGreater** -Methode Wenn dies true zurückgibt, rufen Sie weiterhin alle Methoden auf, die in dieser Dokumentation beschrieben werden. 
 

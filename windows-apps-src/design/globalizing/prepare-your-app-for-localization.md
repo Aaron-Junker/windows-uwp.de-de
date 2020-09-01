@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f07e7901bf89ed73087833c92b7a3ba29165fec
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 4b914c0a2bcfae630b8b491ed702b237ce0eaaee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493445"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172534"
 ---
 # <a name="make-your-app-localizable"></a>App lokalisierbar machen
 
@@ -87,7 +87,7 @@ Wenn Sie eine App installieren, die lokalisierte Sprach Daten enthält, werden S
 > [!NOTE]
 > Es ist nicht möglich, nach der Erstinstallation zusätzliche Sprachunterstützung für Ihre APP zu installieren. Wenn Sie nach der Installation einer APP die Standardsprache ändern, verwendet die APP weiterhin nur die ursprünglichen Sprachressourcen.
 
-Wenn Sie sicherstellen möchten, dass nach der Installation alle Sprachressourcen verfügbar sind, erstellen Sie eine Konfigurationsdatei für das App-Paket, mit der angegeben wird, dass während der Installation bestimmte Ressourcen erforderlich sind (einschließlich der Sprachressourcen). Diese optimierte Installationsfunktion wird automatisch aktiviert, wenn die appxbundle-Datei Ihrer Anwendung während der Paket Erstellung generiert wird. Weitere Informationen finden Sie unter [sicherstellen, dass Ressourcen auf einem Gerät installiert sind, unabhängig davon, ob Sie von einem Gerät benötigt werden](https://docs.microsoft.com/previous-versions/dn482043(v=vs.140)).
+Wenn Sie sicherstellen möchten, dass nach der Installation alle Sprachressourcen verfügbar sind, erstellen Sie eine Konfigurationsdatei für das App-Paket, mit der angegeben wird, dass während der Installation bestimmte Ressourcen erforderlich sind (einschließlich der Sprachressourcen). Diese optimierte Installationsfunktion wird automatisch aktiviert, wenn die appxbundle-Datei Ihrer Anwendung während der Paket Erstellung generiert wird. Weitere Informationen finden Sie unter [sicherstellen, dass Ressourcen auf einem Gerät installiert sind, unabhängig davon, ob Sie von einem Gerät benötigt werden](/previous-versions/dn482043(v=vs.140)).
 
 Optional können Sie die. appxbundle-Generierung deaktivieren, wenn Sie Ihre APP packen, um sicherzustellen, dass alle Ressourcen installiert sind (nicht nur eine Teilmenge). Dies wird jedoch nicht empfohlen, da dadurch die Installationszeit der APP erhöht werden kann.
 
@@ -135,14 +135,14 @@ Nachdem die Zeichenfolgen in Ressourcendateien untergliedert wurden, können sie
 Berücksichtigen Sie diese Optionen.
 
 - **Die Ressourcendateien können zum Übersetzen direkt im Projekt geöffnet werden.** Diese Vorgehensweise eignet sich gut für ein Projekt mit einer kleinen Anzahl von Zeichen folgen, die in zwei oder drei Sprachen übersetzt werden müssen. Er könnte sich für Szenarien eignen, in denen ein Entwickler mehrere Sprachen spricht und die Übersetzung übernehmen kann. Diese Vorgehensweise hat den Vorteil, dass Sie schnell ist, keine Tools erfordert und das Risiko von mierungen minimiert. Es ist jedoch nicht skalierbar. Insbesondere kann es passieren, das die Ressourcen in verschiedenen Sprachen nicht mehr synchron sind, was eine mangelnde Benutzerfreundlichkeit und Verwaltungsprobleme zur Folge haben kann.
-- **Die Zeichen folgen-Ressourcen Dateien befinden sich im XML-oder resjson-Textformat und können daher mithilfe eines beliebigen Text-Editors für die Übersetzung übergeben werden. Die übersetzten Dateien werden dann wieder in das Projekt kopiert.** Bei diesem Ansatz besteht die Gefahr, dass Übersetzer versehentlich die XML-Tags bearbeiten. Andererseits besteht die Möglichkeit, Übersetzungen außerhalb des Microsoft Visual Studio-Projekts durchzuführen. Dieser Ansatz eignet sich gut für Projekte, die nur in wenige Sprachen übersetzt werden. Das XLIFF-Format ist ein XML-Format, das speziell für die Lokalisierung vorgesehen ist. Es sollte zudem von einigen Lokalisierungsanbietern oder -tools unterstützt werden. Sie können mit dem [Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)) XLIFF-Dateien aus anderen Ressourcendateien wie „.resw“ oder „.resjson“ generieren.
+- **Die Zeichen folgen-Ressourcen Dateien befinden sich im XML-oder resjson-Textformat und können daher mithilfe eines beliebigen Text-Editors für die Übersetzung übergeben werden. Die übersetzten Dateien werden dann wieder in das Projekt kopiert.** Bei diesem Ansatz besteht die Gefahr, dass Übersetzer versehentlich die XML-Tags bearbeiten. Andererseits besteht die Möglichkeit, Übersetzungen außerhalb des Microsoft Visual Studio-Projekts durchzuführen. Dieser Ansatz eignet sich gut für Projekte, die nur in wenige Sprachen übersetzt werden. Das XLIFF-Format ist ein XML-Format, das speziell für die Lokalisierung vorgesehen ist. Es sollte zudem von einigen Lokalisierungsanbietern oder -tools unterstützt werden. Sie können mit dem [Multilingual App Toolkit](/previous-versions/windows/apps/jj572370(v=win.10)) XLIFF-Dateien aus anderen Ressourcendateien wie „.resw“ oder „.resjson“ generieren.
 
 > [!NOTE]
 > Möglicherweise ist auch eine Lokalisierung für andere Ressourcen erforderlich, einschließlich Bildern und Audiodateien.
 
 Beachten Sie auch Folgendes:
 
-- **Lokalisierungstools** Es stehen eine Reihe von Lokalisierungstools zum Auswerten von Ressourcen Dateien zur Verfügung, sodass nur die übersetzbaren Zeichen folgen von Konvertierungsprogrammen bearbeitet werden können. Das Risiko, dass ein Übersetzer versehentlich XML-Tags bearbeitet, ist somit geringer. Der Nachteil ist aber, dass neue Tools und Prozesse in den Lokalisierungsprozess eingebunden werden müssen. Ein Lokalisierungs Tool eignet sich gut für Projekte mit einer großen Anzahl von Zeichen folgen, jedoch mit einer kleinen Anzahl von Sprachen. Weitere Informationen finden Sie unter [Verwenden des Multilingual App Toolkit](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10)).
+- **Lokalisierungstools** Es stehen eine Reihe von Lokalisierungstools zum Auswerten von Ressourcen Dateien zur Verfügung, sodass nur die übersetzbaren Zeichen folgen von Konvertierungsprogrammen bearbeitet werden können. Das Risiko, dass ein Übersetzer versehentlich XML-Tags bearbeitet, ist somit geringer. Der Nachteil ist aber, dass neue Tools und Prozesse in den Lokalisierungsprozess eingebunden werden müssen. Ein Lokalisierungs Tool eignet sich gut für Projekte mit einer großen Anzahl von Zeichen folgen, jedoch mit einer kleinen Anzahl von Sprachen. Weitere Informationen finden Sie unter [Verwenden des Multilingual App Toolkit](/previous-versions/windows/apps/jj572370(v=win.10)).
 - **Lokalisierungsanbieter** Ziehen Sie die Verwendung eines Lokalisierungs Anbieters in Erwägung, wenn Ihre Anwendung umfangreiche Zeichen folgen enthält, die in eine große Anzahl von Sprachen übersetzt werden müssen. Ein Lokalisierungsanbieter kann Sie hinsichtlich der Tools und Prozesse beraten sowie die Ressourcendateien übersetzen. Diese Lösung ist ideal, stellt allerdings auch die teuerste Option dar und kann die Bearbeitungszeit für den übersetzten Inhalt verlängern.
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>Zugriffsschlüssel und Bezeichnungen konsistent halten
@@ -180,7 +180,7 @@ Die Sortierung folgt dem **regionalen Format der Systemsteuerung**:
   - Wenn Furigana aktiviert ist, wird "希蒼" unter "の" sortiert.
   - Wenn Furigana fehlt, wird "希蒼" unter "漢字" sortiert.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Richtlinien für Globalisierung](guidelines-and-checklist-for-globalizing-your-app.md)
 - [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](../../app-resources/localize-strings-ui-manifest.md)

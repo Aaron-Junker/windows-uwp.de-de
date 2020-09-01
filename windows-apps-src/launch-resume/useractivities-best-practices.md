@@ -1,77 +1,77 @@
 ---
 title: Bewährte Methoden für Benutzeraktivitäten
-description: Dieses Handbuch beschreibt die empfohlenen Methoden zum Erstellen und Aktualisieren von Benutzeraktivitäten.
-keywords: benutzeraktivität, benutzeraktivitäten, zeitachse, cortana aufgaben weiterführen, cortana begonnene aufgaben bearbeiten, project rome
+description: Dieser Leitfaden beschreibt die empfohlenen Vorgehensweisen zum Erstellen und Aktualisieren von Benutzeraktivitäten.
+keywords: Benutzeraktivität, Benutzeraktivitäten, Zeitachse, Cortana nehmen Sie an der Stelle an, an der Sie aufgehört haben, Cortana an der Stelle, an der ich aufgehört habe, Project
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b2ad2e68c21167df7b0210a04b62e161fd264ab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f4e41ac4f340491e551fccc1c1d4700bbe8d8004
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318706"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172954"
 ---
 # <a name="user-activities-best-practices"></a>Bewährte Methoden für Benutzeraktivitäten
 
-Dieses Handbuch beschreibt die empfohlenen Methoden zum Erstellen und Aktualisieren von Benutzeraktivitäten. Eine Übersicht über die Benutzeraktivitäten-Funktion auf Windows, finden Sie unter [Benutzeraktivität, sogar auf Geräten weiterhin](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities). Alternativ finden Sie unter der [Benutzeraktivitäten Abschnitt](https://docs.microsoft.com/windows/project-rome/user-activities/) von Projekt "ROME" für die Implementierung der Aktivitäten auf anderen Entwicklungsplattformen zu nutzen.
+Dieser Leitfaden beschreibt die empfohlenen Vorgehensweisen zum Erstellen und Aktualisieren von Benutzeraktivitäten. Eine Übersicht über das Feature "Benutzeraktivitäten" unter Windows finden Sie unter [Fortsetzen der Benutzeraktivität (auch Geräte übergreifend](./useractivities.md)). Weitere Informationen finden Sie im [Abschnitt Benutzeraktivitäten](/windows/project-rome/user-activities/) von Project Rom für die Implementierungen von Aktivitäten auf anderen Entwicklungsplattformen.
 
-## <a name="when-to-create-or-update-user-activities"></a>Wenn beim Erstellen oder Aktualisieren von Benutzeraktivitäten
+## <a name="when-to-create-or-update-user-activities"></a>Wann sollten Benutzeraktivitäten erstellt oder aktualisiert werden?
 
-Da jede app anders ist, liegt es an jeden Entwickler, um zu bestimmen, die beste Möglichkeit, Benutzeraktivitäten Aktionen innerhalb der app zuzuordnen. Benutzeraktivitäten wird in Cortana und den Zeitplan, der auf die zunehmende Benutzer-Produktivität und Effizienz konzentrieren möchten, indem Sie hilft, die zurück auf Inhalte zu erhalten, die sie in der Vergangenheit besucht präsentiert.
+Da jede APP anders ist, muss jeder Entwickler die beste Methode zum Zuordnen von Aktionen innerhalb der APP zu Benutzeraktivitäten ermitteln. Ihre Benutzeraktivitäten werden in Cortana und Timeline vorgestellt, die sich auf die Produktivität und Effizienz der Benutzer konzentrieren, indem Sie Ihnen helfen, zu den in der Vergangenheit besuchten Inhalten zurückzukehren.
 
 **Allgemeine Richtlinien**
 
-* **Zeichnen Sie eine einzelne Aktivität für eine Gruppe von verwandten Benutzeraktionen.** Dies ist besonders relevant für Wiedergabelisten oder Fernsehsendungen: eine einzelne Aktivität kann in regelmäßigen Abständen entsprechend der Fortschritt des Benutzers aktualisiert werden. In diesem Fall müssen Sie eine einzelne Benutzeraktivität mit mehreren Verlaufselemente Zeiträume von Engagement über mehrere Tage oder Wochen darstellt. Das gleiche gilt für dokumentbasierte Aktivitäten, die auf denen der Benutzer den schrittweisen Fortschritt in der app vorgenommen.
-* **Store Benutzerdaten in der Cloud.** Wenn Sie Geräteübergreifende Aktivitäten unterstützen möchten, müssen Sie sicherstellen, dass der Inhalt, der erforderlich, um diese Aktivität erneut Kontakt aufzunehmen, die an einen cloudspeicherort gespeichert ist. Gerätespezifische-Aktivitäten werden auf der Zeitachse auf dem Gerät angezeigt, in die Aktivität erstellt wurde, aber möglicherweise nicht auf anderen Geräten angezeigt.
-* **Erstellen Sie keine Aktivitäten für Aktionen, die Benutzer nicht fortsetzen müssen.** Wenn Ihre Anwendung verwendet wird, einfache, einmalige Vorgänge durchführen, die nicht der Status beibehalten werden, müssen wahrscheinlich nicht Sie eine Benutzer-Aktivität erstellt.
-* **Für Aktionen, die von anderen Benutzern abgeschlossen werden keine Aktivitäten erstellt werden.** Wenn ein externes Konto dem Benutzer eine Nachricht sendet oder @-mentions sie in der app sollte nicht erstellen Sie eine Aktivität für diesen. Diese Art von Aktion wird von Wartungscenterbenachrichtigungen besser bereitgestellt.
-  * Szenarien für die Zusammenarbeit sind eine Ausnahme: Wenn mehrere Benutzer auf der gleichen Aktivität zusammen (z. B. ein Word-Dokument) arbeiten, fallen in Fällen, in denen ein anderer Benutzer nach dem der Benutzer Änderungen vorgenommen hat. In diesem Fall empfiehlt es sich um aktualisieren die vorhandene Aktivität, um Änderungen widerzuspiegeln, die auf das Dokument vorgenommen wurden. Dies würde betreffen, aktualisieren die vorhandenen Inhalt Benutzeraktivität-Daten ohne Erstellen eines neuen History-Elements.
+* **Aufzeichnen einer einzelnen Aktivität für eine Gruppe verwandter Benutzeraktionen.** Dies ist besonders relevant für Musikwiedergabe Listen oder Fernsehsendungen: eine einzelne Aktivität kann in regelmäßigen Abständen aktualisiert werden, um den Fortschritt des Benutzers widerzuspiegeln. In diesem Fall verfügen Sie über eine einzelne Benutzeraktivität mit mehreren Verlaufs Elementen, die Zeiträume für die Einbindung mehrerer Tage oder Wochen darstellen. Das gleiche gilt für Dokument basierte Aktivitäten, bei denen der Benutzer einen schrittweisen Fortschritt innerhalb Ihrer APP vornimmt.
+* **Speichern Sie Benutzerdaten in der Cloud.** Wenn Sie Geräte übergreifende Aktivitäten unterstützen möchten, müssen Sie sicherstellen, dass die Inhalte, die zum erneuten Einbinden dieser Aktivität erforderlich sind, an einem cloudspeicherort gespeichert werden. Gerätespezifische Aktivitäten werden auf dem Gerät, auf dem die Aktivität erstellt wurde, in der Zeitachse angezeigt, werden aber möglicherweise nicht auf anderen Geräten angezeigt.
+* **Erstellen Sie keine Aktivitäten für Aktionen, die von Benutzern nicht fortgesetzt werden müssen.** Wenn Ihre Anwendung verwendet wird, um einfache, einmalige Vorgänge abzuschließen, die den Status nicht beibehalten, müssen Sie wahrscheinlich keine Benutzeraktivität erstellen.
+* **Erstellen Sie keine Aktivitäten für Aktionen, die von anderen Benutzern abgeschlossen wurden.** Wenn ein externes Konto dem Benutzer eine Nachricht oder @-mentions diese innerhalb Ihrer APP sendet, sollten Sie keine Aktivität für dieses erstellen. Diese Art von Aktion wird von Benachrichtigungen im Aktions Center besser bedient.
+  * Zusammenarbeits Szenarien stellen eine Ausnahme dar: Wenn mehrere Benutzer gleichzeitig an derselben Aktivität Arbeiten (z. b. in einem Word-Dokument), gibt es Fälle, in denen ein anderer Benutzer Änderungen vorgenommen hat. In diesem Fall möchten Sie möglicherweise die vorhandene Aktivität aktualisieren, um Änderungen widerzuspiegeln, die am Dokument vorgenommen wurden. Dies umfasst das Aktualisieren der vorhandenen Inhaltsdaten der Benutzeraktivität ohne das Erstellen eines neuen Verlaufs Elements.
 
-**Richtlinien für bestimmte Typen von apps**
+**Richtlinien für bestimmte App-Typen**
 
-Während jede app anders ist, fallen die meisten apps in einem der folgenden Interaktionsmuster.
-* **Dokument-basierte apps** – erstellen Sie eine Aktivität pro Dokument, mit ein oder mehrere Verlaufselemente Verwendung widerspiegelt. Es ist wichtig, um Ihre Aktivität zu aktualisieren, wie das Dokument geändert wird.
-* **Spiele** – erstellen Sie eine Aktivität für jedes Spiel speichern "oder" www. Wenn Ihr Spiel nur eine einzigen Sequenz von Ebenen unterstützt, können Sie die gleiche Aktivität im Laufe der Zeit erneut veröffentlichen, obwohl möglicherweise Sie die Inhalte Daten zum Anzeigen der aktuellen Status oder Erfolge zu aktualisieren möchten.
-* **Hilfsprogramm apps** – liegt vor "nothing" in Ihrer app, die Benutzer benötigen würde, schließen und wieder aufnehmen, müssen Sie keine Benutzeraktivitäten zu verwenden. Ein gutes Beispiel ist eine einfache app wie Rechner.
-* **Line-of-Business-apps** – viele apps, die für die Verwaltung von einfachen Aufgaben oder Workflows vorhanden sind. Erstellen Sie eine Aktivität für jede separate Workflow erfolgt über Ihre app (z. B. Expense Berichte wäre jeweils eine separate-Aktivität, damit der Benutzer klicken kann eine Aktivität, um festzustellen, ob ein bestimmter Bericht genehmigt wurde).
-* **Wiedergabe Medienapps** – Erstellen einer Aktivität pro logische Gruppierung von Inhalten (z.B. eine Wiedergabeliste, Programme oder eigenständigen Inhalt). Die zugrunde liegende Frage für app-Entwickler ist, gibt an, ob ein jeder Teil des Inhalts (TV-folgen, "Song") als eigenständige Inhalte oder Teil einer Auflistung betrachtet. Wenn der Benutzer "OPTS", um eine Sammlung oder fortlaufende Inhalte wiederzugeben, ist die Auflistung als Ganzes als allgemeine Regel die Aktivität. Wenn sie sich entscheiden, um einen einzelnen Inhaltselement wiederzugeben, ist diese ein Teil des Inhalts der Aktivität. Finden Sie spezifischere Richtlinien unten.
-  * **Musik: Album/Interpreten / "Genre"** , klickt der Benutzer ein Album, Künstler, oder "Genre" und Treffer **spielen**, diese Sammlung ist die Aktivität, eine separate Aktivität für jede "Song" nicht erstellen. Für kurze wie ein einzelnes Album oder Sammlungen in zufälliger Reihenfolge wiedergegeben wird müssen Sie sich nicht um die Aktivität, um die aktuelle Position des Benutzers entsprechend zu aktualisieren. Für die lange sequenzielle Wiedergabe wie z. B. ein Album oder Wiedergabelisten vorliegen kann das Aufzeichnen von Ihrer Position innerhalb des Albums sinnvoll sein.
-  * **Musik: intelligente Wiedergabelisten** – Anwendungen, die Wiedergabe von Musik in zufälliger Reihenfolge sollten eine einzelne Aktivität für dieser Wiedergabeliste aufzeichnen. Wenn der Benutzer ein zweites Mal die Wiedergabeliste wiedergibt, erstellen Sie zusätzliche Datensätze für die gleiche Aktivität. Aufzeichnen der aktuellen Position des Benutzers in der Wiedergabeliste ist nicht erforderlich, da die Reihenfolge zufällig ist.
-  * **TV-Serie** – Wenn Ihre app konfiguriert ist, um der nächsten Folge wiederzugeben, nach der aktuellen Aktivität abgeschlossen ist, Schreiben Sie eine einzelne Aktivität für die TV-Serie. Wie Sie über mehrere Sitzungen der Anzeige der verschiedenen Episoden spielen, aktualisieren Sie Ihre Aktivität entsprechend die aktuelle Position in der Reihe, und mehrere Datensätze erstellt werden.
-  * **Film** – ein Film einen einzelnen Inhaltselement ist, und einen eigenen Datensatz verfügen. Wenn der Benutzer wird beendet, überwacht der Film teilweise wiedergegeben, ist es ratsam, ihre Position aufzeichnen. Wenn sie sie in der Zukunft fortsetzen möchten, konnte die Aktivität Fortsetzen des Films, wo sie aufgehört, oder bitten dem Benutzer sogar bei Bedarf wieder aufgenommen oder beginnen Sie am Anfang.
+Obwohl jede APP anders ist, werden die meisten apps auf eines der folgenden Interaktionsmuster aufgeteilt.
+* **Dokument basierte apps** – erstellen Sie eine Aktivität pro Dokument mit einem oder mehreren Verlaufs Elementen, in denen Zeiträume verwendet werden. Es ist wichtig, die Aktivität zu aktualisieren, wenn Änderungen am Dokument vorgenommen werden.
+* **Games** – erstellen Sie eine Aktivität für jede Spiele Speicherung oder Welt. Wenn Ihr Spiel nur eine einzelne Sequenz von Ebenen unterstützt, können Sie die gleiche Aktivität im Laufe der Zeit erneut veröffentlichen, obwohl Sie die Inhaltsdaten möglicherweise aktualisieren möchten, um den aktuellen Fortschritt oder die aktuellen Ergebnisse anzuzeigen.
+* **Hilfsprogrammanwendungen** – wenn in Ihrer APP nichts vorhanden ist, das Benutzer verlassen und fortsetzen müssen, müssen Sie keine Benutzeraktivitäten verwenden. Ein gutes Beispiel hierfür ist eine einfache APP wie Rechner.
+* **Branchenspezifische apps** – viele apps sind zum Verwalten einfacher Aufgaben oder Workflows vorhanden. Erstellen Sie eine Aktivität für jeden separaten Workflow, auf den über Ihre App zugegriffen wird (z. b. wären Ausgaben Berichte eine separate Aktivität, sodass der Benutzer dann auf eine Aktivität klicken kann, um zu überprüfen, ob ein bestimmter Bericht genehmigt wurde).
+* **Medienwiedergabe-apps** – erstellen Sie eine Aktivität pro logischer Gruppierung von Inhalt (z. b. eine Wiedergabeliste, ein Programm oder eigenständiger Inhalt). Die zugrunde liegende Frage für App-Entwickler ist, ob jedes Inhalts Element (TV-Episode, Lied) als eigenständiger Inhalt oder Teil einer Auflistung gezählt wird. Als allgemeine Regel gilt: Wenn der Benutzer eine Auflistung oder einen sequenziellen Inhalt wieder gibt, ist die Auflistung als Ganzes die Aktivität. Wenn Sie sich für die Wiedergabe eines einzelnen Inhalts entscheiden, ist dies ein Teil der Inhalte. Weitere spezifische Richtlinien finden Sie unten.
+  * **Musik: Album/Artist/Genre** – wenn der Benutzer ein Album, einen Künstler oder ein Genre auswählt und auf **spielen**trifft, ist diese Auflistung die Aktivität. Schreiben Sie für jeden Song keine separate Aktivität. Für kurze Auflistungen wie ein einzelnes Album oder Sammlungen, die in zufälliger Reihenfolge wiedergegeben werden, müssen Sie die Aktivität möglicherweise nicht aktualisieren, um die aktuelle Position des Benutzers widerzuspiegeln. Für eine lange sequenzielle Wiedergabe wie ein Album oder eine Wiedergabeliste ist es möglicherweise sinnvoll, die Position innerhalb des Albums aufzuzeichnen.
+  * **Musik: intelligente Wiedergabelisten** – Anwendungen, die Musik in zufälliger Reihenfolge abspielen, sollten eine einzelne Aktivität für diese Wiedergabeliste aufzeichnen. Wenn der Benutzer die Wiedergabeliste ein zweites Mal wieder gibt, würden Sie zusätzliche Verlaufs Datensätze für dieselbe Aktivität erstellen. Das Aufzeichnen der aktuellen Position des Benutzers in der Wiedergabeliste ist nicht erforderlich, da die Reihenfolge zufällig ist.
+  * **TV-Serie** – Wenn Ihre APP für die Wiedergabe der nächsten Folge konfiguriert ist, nachdem die aktuelle Folge fertig ist, sollten Sie eine einzelne Aktivität für die TV-Serie schreiben. Wenn Sie die verschiedenen Episoden über mehrere Anzeige Sitzungen hinweg wiedergeben, aktualisieren Sie Ihre Aktivität, um die aktuelle Position in der Reihe widerzuspiegeln, und es werden mehrere Verlaufs Datensätze erstellt.
+  * **Movie** – ein Film ist ein einzelner Inhalt und sollte über einen eigenen Verlaufs Daten Satz verfügen. Wenn der Benutzer den Film nicht mehr überwachen kann, ist es wünschenswert, seine Position aufzuzeichnen. Wenn Sie die Aktivität in Zukunft fortsetzen möchten, kann die Aktivität den Film fortsetzen, in dem Sie aufgehört hat, oder den Benutzer Fragen, ob er am Anfang fortgesetzt oder gestartet werden soll.
 
-## <a name="user-activity-design"></a>Gestaltung einer Aktivität
+## <a name="user-activity-design"></a>Entwurf der Benutzeraktivität
 
-Benutzeraktivitäten besteht aus drei Komponenten: einer Aktivierung URI, visuelle Daten und Metadaten Inhalts.
-* Die Aktivierung-URI ist ein URI, der für eine Anwendung oder eine Oberfläche zum Fortsetzen der Anwendung mit einem bestimmten Kontext übergeben werden kann. In der Regel haben es sich bei diesen Links, um die Form der Protokollhandler für ein Schema (z. B. "my-app://page2?action=edit"). Es ist Aufgabe des Entwicklers, um zu bestimmen, wie URI-Parameter von ihrer app verarbeitet werden. Finden Sie unter [behandeln URI Aktivierung](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation) für Weitere Informationen.
-* Der visuellen Daten, die aus einem Satz von erforderlichen und optionalen Eigenschaften (z. B.: Titel, Beschreibung oder Elemente an Adaptive Card), können Benutzer eine Aktivität visuell zu identifizieren. Nachfolgend finden Sie Richtlinien zum Erstellen von Adaptive Card Visualisierungen für Ihre Aktivität.
-* Die Metadaten des Inhalte ist JSON-Daten, die zum Gruppieren und Abrufen von Aktivitäten, die unter einem bestimmten Kontext verwendet werden können. Dies erfolgt in der Regel in Form von http://schema.org Daten. Nachfolgend finden Sie Richtlinien zum Ausfüllen dieser Daten.
+Benutzeraktivitäten bestehen aus drei Komponenten: einem Aktivierungs-URI, visuellen Daten und Inhalts Metadaten.
+* Der Aktivierungs-URI ist ein URI, der an eine Anwendung oder eine-Funktion übermittelt werden kann, um die Anwendung mit einem bestimmten Kontext fortzusetzen. In der Regel verwenden diese Verknüpfungen die Form des Protokoll Handlers für ein Schema (z. b. "My-App://Page2? Action = Edit"). Der Entwickler muss feststellen, wie URI-Parameter von der APP behandelt werden. Weitere Informationen finden Sie unter [handle-URI-Aktivierung](./handle-uri-activation.md) .
+* Die visuellen Daten, die aus einem Satz erforderlicher und optionaler Eigenschaften (z. b. Titel, Beschreibung oder adaptiver Kartenelemente) bestehen, ermöglichen Benutzern eine visuelle Identifizierung einer Aktivität. Im folgenden finden Sie Richtlinien zum Erstellen von adaptiven Karten Visualisierungen für Ihre Aktivität.
+* Die Inhalts Metadaten sind JSON-Daten, die zum Gruppieren und Abrufen von Aktivitäten in einem bestimmten Kontext verwendet werden können. In der Regel nimmt dies die Form von http://schema.org Daten an. Im folgenden finden Sie Richtlinien zum Ausfüllen dieser Daten.
 
-### <a name="adaptive-card-design-guidelines"></a>Richtlinien zum Entwerfen von Adaptive Card
+### <a name="adaptive-card-design-guidelines"></a>Entwurfs Richtlinien für Adaptive Karten
 
-Wenn Aktivitäten in der Zeitachse angezeigt werden, werden sie angezeigt, mit der [Adaptive Card Framework](https://docs.microsoft.com/adaptive-cards/). Wenn der Entwickler eine Adaptive Card nicht für jede Aktivität bereitstellt, wird eine einfache Karte, die basierend auf dem app-Namen/Symbol, das erforderliche Feld "Titel" und das optionale Feld "Beschreibung" von Zeitachse automatisch erstellt. 
+Wenn Aktivitäten in der Zeitachse angezeigt werden, werden Sie mit dem [adaptiven Karten Framework](/adaptive-cards/)angezeigt. Wenn der Entwickler keine adaptive Karte für jede Aktivität bereitstellt, erstellt die Zeitachse automatisch eine einfache Karte basierend auf dem APP-Namen/-Symbol, dem erforderlichen Titel Feld und dem optionalen Beschreibungsfeld. 
 
-App-Entwicklern werden empfohlen, benutzerdefinierte Karten, die unter Verwendung des einfachen Adaptive Card-JSON-Schemas bieten. Finden Sie unter den [mit Adaptive Cards Dokumentation](https://docs.microsoft.com/adaptive-cards/authoring-cards/getting-started) technische Anleitungen zur Adaptive Card-Objekte erstellt. Finden Sie in der folgenden Leitlinien für das Entwerfen mit Adaptive Cards in Benutzeraktivitäten.
-* Verwenden von images
-  * Verwenden Sie möglichst ein eindeutiges Image für jede Aktivität. Ihr Name der Anwendung und das Symbol werden neben die Aktivität der Karte automatisch angezeigt werden; zusätzlichen Bilder erleichtern es Benutzern, die die Aktivität zu suchen, sie suchen.
-  * Images darf keinen Text enthalten, die vom Benutzer zum Lesen erwartet wird. Dieser Text nicht für Benutzer mit Anforderungen an die Barrierefreiheit verfügbar und kann nicht durchsucht werden.
-  * Wenn das Bild nicht Text enthalten und zu einem Verhältnis 2:1-zugeschnitten werden kann, sollten Sie es als Hintergrundbild verwenden. Dies führt zu einem fett Aktivität Card in Zeitachse abhebt. Das Bild wird etwas dunkler werden, um sicherzustellen, dass der Text bleibt auf der Karte angezeigt werden soll, und es wird empfohlen, den Namen der Aktivität nur in diesem Fall verwenden, da kleinere Text schwer lesbar werden kann.
-  * Wenn das Bild kann nicht 2:1 zugeschnitten werden, sollten Sie es auf der Karte für die Aktivität abgelegt.  
-    * Ist das Seitenverhältnis Quadrat oder Hochformat, das Bild auf der rechten Seite der Karte ohne Ränder verankert werden.
-    * Ist das Seitenverhältnis Querformat festgelegt, das Bild an der oberen rechten Ecke der Karte verankert werden.
-* Jede Aktivität ist erforderlich, um einen Aktivitätsnamen ein, geben Sie die immer angezeigt werden soll.
-  * Dieser Name sollte in der oberen linken Ecke der Karte mit der Option für große fett formatierter Text angezeigt werden. Es ist wichtig, dass der Name leicht erkennbar, da dies der einzige Teil-Benutzer sehen, wenn die Aktivität im Cortana-Szenarien angezeigt wird. Mit dem gleichen Namen in Zeitachse erleichtert es Benutzern, eine große Anzahl von Aktivitäten zu durchsuchen.
-* Verwenden Sie die gleichen visuellen Stil für alle Aktivitäten in Ihrer app, sodass Benutzer die Ihrer app-Aktivitäten in der Zeitachse leicht finden können.
+App-Entwicklern wird empfohlen, benutzerdefinierte Karten mithilfe des JSON-Schemas für die einfache Adaptive Karte bereitzustellen. Technische Anweisungen zum Erstellen von adaptiven Karten Objekten finden Sie in der [Dokumentation zu adaptiven Karten](/adaptive-cards/authoring-cards/getting-started) . Beachten Sie die nachstehenden Richtlinien zum Entwerfen von adaptiven Karten in Benutzeraktivitäten.
+* Verwenden von Bildern
+  * Verwenden Sie, sofern möglich, ein eindeutiges Image für jede Aktivität. Der Name und das Symbol der Anwendung werden automatisch neben der Karte der Aktivität angezeigt. Weitere Images helfen Benutzern, die gesuchte Aktivität zu finden.
+  * Bilder sollten keinen Text enthalten, der vom Benutzer erwartet wird. Dieser Text ist nicht für Benutzer mit Barrierefreiheits Anforderungen verfügbar und kann nicht durchsucht werden.
+  * Wenn das Bild keinen Text enthält und auf ungefähr ein 2:1-Verhältnis zugeschnitten werden kann, sollten Sie es als Hintergrundbild verwenden. Dies führt zu einer fetten Aktivitäts Karte, die in der Zeitachse angezeigt wird. Das Bild wird leicht abgeblendet, um sicherzustellen, dass der Text auf der Karte sichtbar bleibt, und es wird empfohlen, in diesem Fall nur den Aktivitäts Namen zu verwenden, da kleinerer Text schwer lesbar werden kann.
+  * Wenn das Bild nicht auf 2:1 zugeschnitten werden kann, sollten Sie es in der Aktivitäts Karte ablegen.  
+    * Wenn das Seitenverhältnis Square oder Hochformat ist, verankern Sie das Bild auf der rechten Seite der Karte ohne Ränder.
+    * Wenn das Seitenverhältnis Querformat ist, verankern Sie das Bild in der oberen rechten Ecke der Karte.
+* Jede Aktivität muss einen Aktivitäts Namen bereitstellen, der immer angezeigt werden sollte.
+  * Dieser Name sollte in der oberen linken Ecke der Karte mit der Option für den großen fetten Text angezeigt werden. Es ist wichtig, dass der Name leicht erkennbar ist, da dies der einzige Teil ist, den Benutzer sehen, wenn die Aktivität in Cortana-Szenarios angezeigt wird. Wenn Sie den gleichen Namen in der Zeitachse anzeigen, ist es für Benutzer einfacher, eine große Anzahl von Aktivitäten zu durchsuchen.
+* Verwenden Sie für alle Aktivitäten Ihrer APP denselben visuellen Stil, damit Benutzer die Aktivitäten Ihrer APP auf der Zeitachse leicht finden können.
   * Beispielsweise sollten Aktivitäten alle die gleiche Hintergrundfarbe verwenden.
-* Verwenden Sie ergänzender Textinformationen nur selten. 
-  * Zu verhindern, dass die Karte mit Text, und nur zusätzliche Informationen, die unterstützt die Benutzer bei der Suche nach der richtigen Aktivität oder Statusinformationen (z. B. den aktuellen Status in einer bestimmten Aufgabe) widerspiegelt.
+* Verwenden Sie ergänzende Textinformationen sparsam. 
+  * Vermeiden Sie es, die Karte mit Text zu füllen, und verwenden Sie nur ergänzende Informationen, die Benutzern bei der Suche nach der richtigen Aktivität oder der Wiederverwendung von Zustandsinformationen (z. b. dem aktuellen Status einer bestimmten Aufgabe) unterstützt.
 
-### <a name="content-metadata-guidelines"></a>Inhaltsmetadaten-Richtlinien
+### <a name="content-metadata-guidelines"></a>Richtlinien für Inhalts Metadaten
 
-Benutzeraktivitäten können auch Inhalt Metadaten enthalten, die Windows und Cortana verwenden, um Aktivitäten zu kategorisieren und Rückschlüsse zu generieren. Aktivitäten können Sie dann zu einem bestimmten Thema, wie Speicherort (wenn der Benutzer Urlaubstage Recherche ist), -Objekt (falls der Benutzer etwas Recherche ist) oder Aktion gruppiert werden, (wenn der Benutzer über verschiedene apps und Websites für ein bestimmtes Produkt Warenkorb ist). Es ist eine gute Idee, die sowohl den Substantiven als auch die Verben in einer Aktivität beteiligt darstellen. 
+Benutzeraktivitäten können auch Inhalts Metadaten enthalten, die von Windows und Cortana zum Kategorisieren von Aktivitäten und zum Generieren von Rückschlüsse verwendet werden. Aktivitäten können dann nach einem bestimmten Thema gruppiert werden, z. b. nach einem Speicherort (wenn der Benutzer einen Urlaub untersucht), nach dem Objekt (wenn der Benutzer etwas untersucht) oder nach der Aktion (wenn der Benutzer ein bestimmtes Produkt über verschiedene apps und Websites hinweg kauft). Es empfiehlt sich, sowohl die Nomen als auch die Verben zu repräsentieren, die an einer Aktivität beteiligt sind. 
 
-Im folgenden Beispiel die Metadaten des Inhalts JSON, befolgen die jeweiligen Standards der [Schema.org](https://schema.org/), stellt das Szenario: "John abgespielt Unternehmens mit Steve,".
+Im folgenden Beispiel stellt der Content Metadata JSON (Content Metadata JSON) gemäß den Standards von [Schema.org](https://schema.org/)das Szenario dar: "John hat wütende Vögel mit Steve gespielt".
 
 ```json
 // John played angry birds with Steve.
@@ -95,13 +95,13 @@ Im folgenden Beispiel die Metadaten des Inhalts JSON, befolgen die jeweiligen St
 
 ## <a name="key-apis"></a>Wichtige APIs
 
-* [UserActivities-namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities-Namespace](/uwp/api/windows.applicationmodel.useractivities)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Benutzeraktivitäten (Projekt "ROME" Docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
-* [Mit Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
-* [Mit Adaptive Cards Visualizer, Beispiele](https://adaptivecards.io/)
-* [Behandeln der URI-Aktivierung](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-* [Interagieren mit Ihren Kunden auf jeder Plattform mit der Microsoft Graph, Aktivitätsfeed und mit Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [Benutzeraktivitäten (Project Rom-Dokumentation)](/windows/project-rome/user-activities/)
+* [Adaptive Karten](/adaptive-cards/)
+* [Bildschirm Abbildung von adaptiven Karten, Beispiele](https://adaptivecards.io/)
+* [Behandeln der URI-Aktivierung](./handle-uri-activation.md)
+* [Verwenden der Microsoft Graph, des Aktivitäts Feeds und adaptiver Karten für Ihre Kunden auf beliebigen Plattformen](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

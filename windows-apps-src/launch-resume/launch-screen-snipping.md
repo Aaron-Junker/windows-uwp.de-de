@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Uri, Snip, Sketch
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d9469dd6efd3598ab7abd9791a976385f4dfce49
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 2d7471f414922eb1e4923079082ee6abfd8418bd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684665"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167814"
 ---
 # <a name="launch-screen-snipping"></a>Starten von Ausschnitt und Skizze
 
@@ -23,11 +23,11 @@ Der **MS-screenclip:** URI ermöglicht der APP das automatische Öffnen und Star
 
 **MS-screenclip:** übernimmt die folgenden Parameter:
 
-| Parameter | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich | Beschreibung |
+| Parameter | Typ | Erforderlich | BESCHREIBUNG |
 | --- | --- | --- | --- |
-| Quelle | String | Nein | Eine frei Form Zeichenfolge, die die Quelle angibt, die den URI gestartet hat. |
-| delayInSeconds | int | Nein | Ein ganzzahliger Wert zwischen 1 und 30. Gibt die Verzögerung zwischen dem URI-Befehl und dem Beginn der Ermittlung in vollen Sekunden an. |
-| callbackformat | String | Nein | Dieser Parameter ist nicht verfügbar. |
+| source | Zeichenfolge | nein | Eine frei Form Zeichenfolge, die die Quelle angibt, die den URI gestartet hat. |
+| delayInSeconds | INT | Nein | Ein ganzzahliger Wert zwischen 1 und 30. Gibt die Verzögerung zwischen dem URI-Befehl und dem Beginn der Ermittlung in vollen Sekunden an. |
+| callbackformat | Zeichenfolge | nein | Dieser Parameter ist nicht verfügbar. |
 
 ## <a name="launching-the-snip--sketch-app"></a>Starten der Snip-& Sketch-App
 
@@ -35,14 +35,14 @@ Der **MS-screensketch:** -URI ermöglicht das programmgesteuerte Starten der Sni
 
 **MS-screensketch:** übernimmt die folgenden Parameter:
 
-| Parameter | Geben Sie in das Suchfeld auf der Taskleiste | Erforderlich | Beschreibung |
+| Parameter | Typ | Erforderlich | BESCHREIBUNG |
 | --- | --- | --- | --- |
-| sharedaccesstoken | String | Nein | Ein Token, das die Datei identifiziert, die in der Snip-& Sketch-app geöffnet werden soll. Aus " [sharedstorageaccessmanager. AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)" abgerufen. Wenn dieser Parameter ausgelassen wird, wird die APP gestartet, ohne dass eine Datei geöffnet ist. |
-| secondarysharedaccesstoken | String | Nein | Eine Zeichenfolge, die eine JSON-Datei mit Metadaten zum Snip identifiziert. Die Metadaten können ein **clippoints** -Feld mit einem Array von x, y-Koordinaten und/oder einer [useractivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity)enthalten. |
-| Quelle | String | Nein | Eine frei Form Zeichenfolge, die die Quelle angibt, die den URI gestartet hat. |
+| sharedaccesstoken | Zeichenfolge | nein | Ein Token, das die Datei identifiziert, die in der Snip-& Sketch-app geöffnet werden soll. Aus " [sharedstorageaccessmanager. AddFile](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)" abgerufen. Wenn dieser Parameter ausgelassen wird, wird die APP gestartet, ohne dass eine Datei geöffnet ist. |
+| secondarysharedaccesstoken | Zeichenfolge | nein | Eine Zeichenfolge, die eine JSON-Datei mit Metadaten zum Snip identifiziert. Die Metadaten können ein **clippoints** -Feld mit einem Array von x, y-Koordinaten und/oder einer [useractivity](/uwp/api/windows.applicationmodel.useractivities.useractivity)enthalten. |
+| source | Zeichenfolge | nein | Eine frei Form Zeichenfolge, die die Quelle angibt, die den URI gestartet hat. |
 | IsTemporary | bool | Nein | Wenn diese Einstellung auf "true" festgelegt ist, versucht die Bildschirm Skizze, die Datei nach dem Öffnen zu löschen. |
 
-Im folgenden Beispiel wird die [launchuriasync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) -Methode aufgerufen, um ein Bild an den Snip-& Sketch aus der APP des Benutzers zu senden.
+Im folgenden Beispiel wird die [launchuriasync](/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) -Methode aufgerufen, um ein Bild an den Snip-& Sketch aus der APP des Benutzers zu senden.
 
 ```csharp
 

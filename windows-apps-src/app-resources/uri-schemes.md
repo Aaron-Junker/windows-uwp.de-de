@@ -1,27 +1,27 @@
 ---
 Description: Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden.
-title: URI-Schemen
+title: URI-Schemas
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 8627bd7f9f405509cb1bff40d94f10552241f4ce
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2f5bf063c12362fe26e3810e6153b857b7c1a2e4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254594"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170524"
 ---
-# <a name="uri-schemes"></a>URI-Schemen
+# <a name="uri-schemes"></a>URI-Schemas
 
-Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden. Sie können diese URI-Schemen in Ihrem Code, im XAML-Markup, in Ihrem App-Paketmanifest oder in der Kachel und Popupbenachrichtigungsvorlage verwenden.
+Es gibt mehrere URI (Uniform Resource Identifier)-Schemen, die Sie verwenden können, um auf Dateien aus Ihrem App Paket, dem App-Ordner oder der Cloud zu verweisen. Sie können auch ein URI-Schema verwenden, um auf Zeichenfolgen zu verweisen, die von den App-Ressourcendateien (.resw) geladen wurden. Sie können diese URI-Schemas im Code, in Ihrem XAML-Markup, im App-Paket Manifest oder in ihren Kachel-und Popup Benachrichtigungs Vorlagen verwenden.
 
-## <a name="common-features-of-the-uri-schemes"></a>Allgemeine Features der URI-Schemen
+## <a name="common-features-of-the-uri-schemes"></a>Allgemeine Funktionen der URI-Schemas
 
-Alle in diesem Thema beschriebenen Schemen folgen den typischen URI-Schema-Regeln für die Normalisierung und den Ressourcenabruf. Weitere Informationen für die allgemeine Syntax für eine URI finden Sie unter [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt).
+Alle in diesem Thema beschriebenen Schemas befolgen typische URI-Schema Regeln für Normalisierung und Ressourcen Abruf. Die generische Syntax eines URIs finden Sie unter [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) .
 
-Bei allen URI-Schemen wird der hierarchische Teil gemäß [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) als die Autoritäts- und Pfadkomponenten des URI definiert:
+Alle URI-Schemas definieren den hierarchischen Teil pro [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) als Autoritäts-und Pfad Komponenten des URI.
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -31,25 +31,25 @@ hier-part   = "//" authority path-abempty
             / path-empty
 ```
 
-Dies bedeutet, dass es im Wesentlichen drei Komponenten für einen URI gibt. Unmittelbar nach den Schrägstrichen des URI *Schemas* ist eine Komponente (ggf. leer), die als *authority* bezeichnet ist. Und direkt danach befindet sich *path*. Als Beispiel: Bei der URI `http://www.contoso.com/welcome.png` ist das Schema "`http://`", die Autorität "`www.contoso.com`" und der Pfad "`/welcome.png`". Ein weiteres Beispiel ist die URI `ms-appx:///logo.png`, wobei die Autorität für die Komponenten leer ist und einen Standardwert annimmt.
+Dies bedeutet, dass im Wesentlichen drei Komponenten für einen URI vorhanden sind. Unmittelbar nach den beiden Schrägstrichen des URI- *Schemas* ist eine Komponente (die leer sein kann) als *Autorität*bezeichnet. Und unmittelbar darauf folgt der *Pfad*. Wenn Sie den URI als Beispiel nehmen, lautet das Schema "" `http://www.contoso.com/welcome.png` `http://` , die Autorität ist " `www.contoso.com` ", und der Pfad ist " `/welcome.png` ". Ein weiteres Beispiel ist der URI `ms-appx:///logo.png` , bei dem die Autoritäts Komponenten leer sind und einen Standardwert annimmt.
 
-Die Fragment-Komponente wird bei der schemenspezifischen Verarbeitung der hier aufgeführten URIs ignoriert. Beim Ressourcenabruf und Vergleich hat die Fragment-Komponente keine Bedeutung. Ebenen über einer bestimmten Implementierung können die Fragment-Komponente jedoch so interpretieren, dass sie eine sekundäre Ressource abruft.
+Die fragmentkomponente wird von der Schema spezifischen Verarbeitung der in diesem Thema erwähnten URIs ignoriert. Beim Abrufen und Vergleichen von Ressourcen hat die fragmentkomponente keine Auswirkungen. Allerdings können Ebenen oberhalb der spezifischen Implementierung das Fragment interpretieren, um eine sekundäre Ressource abzurufen.
 
-Der Vergleich findet byteweise nach der Normalisierung aller IRI-Komponenten statt.
+Der Vergleich erfolgt in Byte nach der Normalisierung aller IRI-Komponenten.
 
-## <a name="case-insensitivity-and-normalization"></a>Das Ignorieren der Groß-/Kleinschreibung und die Normalisierung
+## <a name="case-insensitivity-and-normalization"></a>Nichtbeachtung der Groß-/Kleinschreibung und Normalisierung
 
-Alle in diesem Thema beschriebenen URI-Schemen folgen den typischen URI-Regeln (RFC 3986) für die Normalisierung und den Ressourcenabruf für Schemen. Bei der normalisierten Form der URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt.
+Alle in diesem Thema beschriebenen URI-Schemas befolgen typische URI-Regeln (RFC 3986) für die Normalisierung und den Ressourcen Abruf für Schemas. Die normalisierte Form dieser URIs verwaltet die Groß-/Kleinschreibung und die prozentuale Decodieren von nicht reservierten Zeichen in RFC 3986.
 
-Für alle in diesem Thema beschriebenen URI-Schemen ignorieren *Schema*, *Autorität* und *Pfad* entweder standardmäßig die Groß- und Kleinschreibung oder werden andernfalls vom System als Ignorieren der Groß- und Kleinschreibung verarbeitet. **Hinweis:** Die einzige Ausnahme von dieser Regel ist die *Autorität*`ms-resource`, bei die Schreibweise von Bedeutung ist.
+Für alle in diesem Thema beschriebenen URI- *Schemas*werden von Schema, *Autorität*und *Pfad* weder die Groß-/Kleinschreibung als auch die Groß-/Kleinschreibung beachtet. **Hinweis** Die einzige Ausnahme von dieser Regel ist die *Autorität* von `ms-resource` , bei der die Groß-/Kleinschreibung beachtet wird.
 
-## <a name="ms-appx-and-ms-appx-web"></a>ms-appx und ms-appx-web
+## <a name="ms-appx-and-ms-appx-web"></a>MS-AppX und MS-AppX-Web
 
-Verwenden Sie `ms-appx` oder `ms-appx-web`-URI-Schemen, um auf eine Datei zu verweisen, die aus Ihrem App-Paket stammt (siehe [Verpacken von Apps](../packaging/index.md)). Bei diesen Dateien Ihres App-Pakets handelt es sich in der Regel um statische Bilder, Daten, Code und Layoutdateien. Das `ms-appx-web`-Schema greift auf die gleichen Dateien wie `ms-appx` zu, jedoch im Webdepot. Beispiele und weitere Informationen finden Sie unter [Verweisen auf ein Bild oder eine Ressource aus XAML-Markup und Code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
+Verwenden Sie das `ms-appx` `ms-appx-web` URI-Schema oder, um auf eine Datei zu verweisen, die aus dem Paket Ihrer APP stammt (siehe [Verpacken von apps](../packaging/index.md)). Dateien in Ihrem App-Paket sind in der Regel statische Bilder, Daten, Code und Layoutdateien. Das `ms-appx-web` Schema greift auf dieselben Dateien wie zu `ms-appx` , aber im webdepot. Beispiele und weitere Informationen finden Sie unter [verweisen auf ein Bild oder ein anderes Asset aus XAML-Markup und-Code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
-### <a name="scheme-name-ms-appx-and-ms-appx-web"></a>Schemaname (ms-appx und ms-appx-web)
+### <a name="scheme-name-ms-appx-and-ms-appx-web"></a>Schema Name (MS-AppX und MS-AppX-Web)
 
-Die Zeichenfolge "ms-appx" oder "ms-appx-web" stellt den URI-Schemanamen dar.
+Der URI-Schema Name ist die Zeichenfolge "MS-AppX" oder "MS-AppX-Web".
 
 ```xml
 ms-appx://
@@ -59,25 +59,25 @@ ms-appx://
 ms-appx-web://
 ```
 
-### <a name="authority-ms-appx-and-ms-appx-web"></a>Autorität (ms-appx und ms-appx-web)
+### <a name="authority-ms-appx-and-ms-appx-web"></a>Autorität (MS-AppX und MS-AppX-Web)
 
-Die Autorität ist der Paketidentitätsname, der im Paketmanifest definiert ist. Sie ist daher sowohl in der URI- als auch der IRI (Internationalized Resource Identifier)-Form auf den für den Paketidentitätsnamen zulässigen Zeichensatz beschränkt. Der Paketname muss ein Namen des Pakets im Paketabhängigkeitsdiagramms der ausgeführten App sein.
+Die Autorität ist der Name der Paket Identität, der im Paket Manifest definiert ist. Daher ist Sie sowohl im URI als auch im IRI-Formular (Internationalized Resource Identifier) auf den Zeichensatz beschränkt, der in einem Paket Identitäts Namen zulässig ist. Der Paketname muss der Name eines der Pakete im Paket Abhängigkeits Diagramm der aktuellen APP sein.
 
 ```xml
 ms-appx://Contoso.MyApp/
 ms-appx-web://Contoso.MyApp/
 ```
 
-Werden in der Autorität andere Zeichen angegeben, schlagen Abruf und Vergleich fehl. Der Standardwert für die Autorität ist das derzeit ausgeführte App-Paket.
+Wenn ein beliebiges anderes Zeichen in der Autorität angezeigt wird, schlagen Abruf und Vergleich fehl. Der Standardwert für die Autorität ist das Paket, das zurzeit in der app ausgeführt wird.
 
 ```xml
 ms-appx:///
 ms-appx-web:///
 ```
 
-### <a name="user-info-and-port-ms-appx-and-ms-appx-web"></a>Benutzerinformationen und Port (ms-appx und ms-appx-web)
+### <a name="user-info-and-port-ms-appx-and-ms-appx-web"></a>Benutzerinformationen und Port (MS-AppX und MS-AppX-Web)
 
-Das `ms-appx`-Schema definiert im Gegensatz zu anderen beliebten Schemen keine Benutzerinformationen oder Portkomponente. Da "@" and ":" nicht als gültige Autoritätswerte zulässig sind, schlägt die Suche fehl, wenn diese Zeichen enthalten sind. Folgende Beispiele schlagen fehl.
+Das `ms-appx` Schema definiert im Gegensatz zu anderen gängigen Schemas keine Benutzerinformationen oder eine Port Komponente. Da " @" and " :" nicht als gültige Autorität-Werte zulässig ist, schlägt die Suche fehl, wenn Sie eingeschlossen werden. Jedes der folgenden Fehler schlägt fehl.
 
 ```xml
 ms-appx://john@contoso.myapp/default.html
@@ -86,17 +86,17 @@ ms-appx://contoso.myapp:8080/default.html
 ms-appx://john:password@contoso.myapp:8080/default.html
 ```
 
-### <a name="path-ms-appx-and-ms-appx-web"></a>Pfad (ms-appx und ms-appx-web)
+### <a name="path-ms-appx-and-ms-appx-web"></a>Path (MS-AppX und MS-AppX-Web)
 
-Die Pfadkomponente entspricht der generischen RFC 3986-Syntax und unterstützt Nicht-ASCII-Zeichen in IRIs. Die Pfadkomponente definiert den logischen oder physischen Dateipfad einer Datei. Diese Datei ist in einem Ordner enthalten, der mit dem Installationsort des Pakets einer von der Autorität angegebenen App verknüpft ist.
+Die Pfadkomponente entspricht der generischen RFC 3986-Syntax und unterstützt nicht-ASCII-Zeichen in IRIS. Die Pfadkomponente definiert den logischen oder physischen Dateipfad einer Datei. Diese Datei befindet sich in einem Ordner, der dem installierten Speicherort des App-Pakets für die von der Autorität angegebene App zugeordnet ist.
 
-Wenn der Pfad auf einem physischen Pfad und Dateiname verweist, wird die physische Dateiressource abgerufen. Wenn keine physische Datei gefunden wird, wird die tatsächlich während des Abrufs zurückgegebene Ressource zur Laufzeit mittels Inhaltsaushandlung ermittelt. Diese Ermittlung basiert auf App, Betriebssystem und Benutzereinstellungen wie Sprache, Skalierungsfaktor, Designs, hoher Kontrast und andere Laufzeitkontexte. Eine Kombination der Sprachen der App, die Anzeigeeinstellungen des Systems und die hohen Kontrasteinstellungen des Benutzers werden beispielsweise  berücksichtigt, wenn der tatsächliche abzurufende Ressourcenwert ermittelt wird:
+Wenn sich der Pfad auf einen physischen Pfad und Dateinamen bezieht, wird das physische dateiasset abgerufen. Wenn jedoch keine solche physische Datei gefunden wird, wird die tatsächliche Ressource, die während des Abrufs zurückgegeben wird, mithilfe der Inhalts Aushandlung zur Laufzeit bestimmt. Diese Bestimmung basiert auf app-, Betriebssystem-und Benutzereinstellungen, wie z. b. Sprache, Anzeige Skalierungsfaktor, Design, hohem Kontrast und anderen Lauf Zeit Kontexten. Beispielsweise kann eine Kombination aus den Sprachen der APP, den Anzeigeeinstellungen des Systems und den Einstellungen für den hohen Kontrast des Benutzers berücksichtigt werden, wenn der tatsächliche Ressourcen Wert festgelegt wird, der abgerufen werden soll.
 
 ```xml
 ms-appx:///images/logo.png
 ```
 
-Die oben genannte URI kann tatsächlich eine Datei im aktuellen App-Paket mit folgendem physischen Dateinamen abrufen.
+Der obige URI kann tatsächlich eine Datei innerhalb des aktuellen App-Pakets mit dem folgenden physischen Dateinamen abrufen.
 
 <blockquote>
 <pre>
@@ -104,55 +104,55 @@ Die oben genannte URI kann tatsächlich eine Datei im aktuellen App-Paket mit fo
 </blockquote>
 </pre>
 
-Sie können natürlich auch die gleiche physische Datei abrufen, indem Sie direkt mit dem vollständigen Namen darauf verweisen.
+Natürlich können Sie dieselbe physische Datei auch abrufen, indem Sie direkt mit dem vollständigen Namen darauf verweisen.
 
 ```xaml
 <Image Source="ms-appx:///images/fr-FR/logo.scale-100_contrast-white.png"/>
 ```
 
-Bei der Pfadkomponente von `ms-appx(-web)` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Wenn beim zugrunde liegenden Dateisystem, von dem auf die Ressource zugegriffen wird, wie bei NTFS die Groß-/Kleinschreibung nicht berücksichtigt wird, wird auch beim Abrufen der Ressource die Groß-/Kleinschreibung ignoriert.
+Die Pfadkomponente von `ms-appx(-web)` ist, wie bei generischen URIs, Groß-/Kleinschreibung beachtet. Wenn jedoch das zugrunde liegende Dateisystem, mit dem auf die Ressource zugegriffen wird, Groß-/Kleinschreibung nicht beachtet, wie z. b. für NTFS, wird das Abrufen der Ressource ohne Beachtung der Groß-/Kleinschreibung
 
-Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher zum Abrufen der Datei "Hello#World.html" diese URI.
+Die normalisierte Form des URIs verwaltet die Groß-/Kleinschreibung und die prozentuale decodierungen (ein "%"-Symbol, gefolgt von der zweistelligen hexadezimalen Darstellung) RFC 3986 nicht reservierte Zeichen. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle Prozent codierten Zeichen werden vor dem Abruf entschlüsselt. Verwenden Sie daher diesen URI, um eine Datei mit dem Namen "Hello # World.html" abzurufen.
 
 ```xml
 ms-appx:///Hello%23World.html
 ```
 
-### <a name="query-ms-appx-and-ms-appx-web"></a>Abfrage (ms-appx und ms-appx-web)
+### <a name="query-ms-appx-and-ms-appx-web"></a>Abfrage (MS-AppX und MS-AppX-Web)
 
-Abfrageparameter werden während des Abrufens von Ressourcen ignoriert. Bei der normalisierten Form von Abfrageparametern wird die Groß-/Kleinschreibung erhalten. Abfrageparameter werden beim Vergleich nicht ignoriert.
+Abfrage Parameter werden beim Abrufen von Ressourcen ignoriert. Die normalisierte Form von Abfrage Parametern verwaltet die Groß-/Kleinschreibung. Abfrage Parameter werden während des Vergleichs nicht ignoriert.
 
 ## <a name="ms-appdata"></a>ms-appdata
 
-Verweisen Sie mithilfe des `ms-appdata`-URI Schemas auf App-Dateien, die aus den lokalen und temporären Datenordnern sowie Roamingdatenordnern stammen. Weitere Informationen zu diesen App-Datendateien finden Sie unter [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md).
+Verwenden `ms-appdata` Sie das URI-Schema, um auf Dateien zu verweisen, die aus den lokalen, Roaming-und temporären Daten Ordnern der APP stammen. Weitere Informationen zu diesen app-Daten Ordnern finden Sie unter [Speichern und Abrufen von Einstellungen und anderen APP-Daten](../design/app-settings/store-and-retrieve-app-data.md).
 
-Das `ms-appdata`-URI-Schema führt keine Laufzeit mittels Inhaltsaushandlung durch, die [ms-appx and ms-appx-web](#ms-appx-and-ms-appx-web) durchführen. Sie können allerdings auf den Inhalt des [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) reagieren und die richtigen Ressourcen über den gesamten physischen Dateiname im URI in App-Daten laden.
+Das `ms-appdata` URI-Schema führt die Aushandlung von Lauf Zeit Inhalten nicht durch, die von [MS-AppX und MS-AppX-Web](#ms-appx-and-ms-appx-web) erledigt werden. Sie können jedoch auf den Inhalt von [resourcecontext. qualifiervalues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) reagieren und die entsprechenden Ressourcen aus app-Daten mit dem vollständigen physischen Dateinamen im URI laden.
 
-### <a name="scheme-name-ms-appdata"></a>Schemaname (ms-appdata)
+### <a name="scheme-name-ms-appdata"></a>Schema Name (MS-APPDATA)
 
-Die Zeichenfolge „ms-appdata” stellt den URI-Schemanamen dar.
+Der URI-Schema Name ist die Zeichenfolge "MS-AppData".
 
 ```xml
 ms-appdata://
 ```
 
-### <a name="authority-ms-appdata"></a>Autorität (ms-appdata)
+### <a name="authority-ms-appdata"></a>Autorität (MS-APPDATA)
 
-Die Autorität ist der Paketidentitätsname, der im Paketmanifest definiert ist. Sie ist daher sowohl in der URI- als auch der IRI (Internationalized Resource Identifier)-Form auf den für den Paketidentitätsnamen zulässigen Zeichensatz beschränkt. Der Paketname muss der Name des aktuellen Pakets der ausgeführten App sein.
+Die Autorität ist der Name der Paket Identität, der im Paket Manifest definiert ist. Daher ist Sie sowohl im URI als auch im IRI-Formular (Internationalized Resource Identifier) auf den Zeichensatz beschränkt, der in einem Paket Identitäts Namen zulässig ist. Der Paketname muss der Name des Pakets der aktuellen APP sein.
 
 ```xml
 ms-appdata://Contoso.MyApp/
 ```
 
-Werden in der Autorität andere Zeichen angegeben, schlagen Abruf und Vergleich fehl. Der Standardwert für die Autorität ist das derzeit ausgeführte App-Paket.
+Wenn ein beliebiges anderes Zeichen in der Autorität angezeigt wird, schlagen Abruf und Vergleich fehl. Der Standardwert für die Autorität ist das Paket, das zurzeit in der app ausgeführt wird.
 
 ```xml
 ms-appdata:///
 ```
 
-### <a name="user-info-and-port-ms-appdata"></a>Benutzerinformationen und Port (ms-appdata)
+### <a name="user-info-and-port-ms-appdata"></a>Benutzerinformationen und Port (MS-APPDATA)
 
-Das `ms-appdata`-Schema definiert im Gegensatz zu anderen beliebten Schemen keine Benutzerinformationen oder Portkomponente. Da "@" and ":" nicht als gültige Autoritätswerte zulässig sind, schlägt die Suche fehl, wenn diese Zeichen enthalten sind. Folgende Beispiele schlagen fehl.
+Das `ms-appdata` Schema definiert im Gegensatz zu anderen gängigen Schemas keine Benutzerinformationen oder eine Port Komponente. Da " @" and " :" nicht als gültige Autorität-Werte zulässig ist, schlägt die Suche fehl, wenn Sie eingeschlossen werden. Jedes der folgenden Fehler schlägt fehl.
 
 ```xml
 ms-appdata://john@contoso.myapp/local/data.xml
@@ -161,9 +161,9 @@ ms-appdata://contoso.myapp:8080/local/data.xml
 ms-appdata://john:password@contoso.myapp:8080/local/data.xml
 ```
 
-### <a name="path-ms-appdata"></a>Pfad (ms-appdata)
+### <a name="path-ms-appdata"></a>Path (MS-APPDATA)
 
-Die Pfadkomponente entspricht der generischen RFC 3986-Syntax und unterstützt Nicht-ASCII-Zeichen in IRIs. Am Speicherort [Windows.Storage.ApplicationData](/uwp/api/Windows.Storage.ApplicationData?branch=live) befinden sich drei reservierte Ordner für lokale und temporäre Statusspeicher sowie für Roamingstatusspeicher. Das Schema `ms-appdata` ermöglicht den Zugriff auf Dateien und Ordner an diesen Speicherorten. Im ersten Segment der Pfadkomponente muss der bestimmte Ordner in folgendem Format angegeben werden. Daher ist die Form „path-empty” von „hier-part” nicht zulässig.
+Die Pfadkomponente entspricht der generischen RFC 3986-Syntax und unterstützt nicht-ASCII-Zeichen in IRIS. Innerhalb des Ordners " [Windows. Storage. ApplicationData](/uwp/api/Windows.Storage.ApplicationData?branch=live) " befinden sich drei Reservierte Ordner für den lokalen, Roaming-und temporären Zustands Speicher. Das `ms-appdata` Schema ermöglicht den Zugriff auf Dateien und Ordner an diesen Speicherorten. Das erste Segment der Pfadkomponente muss den jeweiligen Ordner auf folgende Weise angeben. Daher ist die "Path-Empty"-Form von "hier-Part" nicht zulässig.
 
 Lokaler Ordner.
 
@@ -183,62 +183,62 @@ Roamingordner.
 ms-appdata:///roaming/
 ```
 
-Bei der Pfadkomponente von `ms-appdata` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Wenn beim zugrunde liegenden Dateisystem, von dem auf die Ressource zugegriffen wird, wie bei NTFS die Groß-/Kleinschreibung nicht berücksichtigt wird, wird auch beim Abrufen der Ressource die Groß-/Kleinschreibung ignoriert.
+Die Pfadkomponente von `ms-appdata` ist, wie bei generischen URIs, Groß-/Kleinschreibung beachtet. Wenn jedoch das zugrunde liegende Dateisystem, mit dem auf die Ressource zugegriffen wird, Groß-/Kleinschreibung nicht beachtet, wie z. b. für NTFS, wird das Abrufen der Ressource ohne Beachtung der Groß-/Kleinschreibung
 
-Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher zum Abrufen der lokalen Datei "Hello#World.html" diese URI.
+Die normalisierte Form des URIs verwaltet die Groß-/Kleinschreibung und die prozentuale decodierungen (ein "%"-Symbol, gefolgt von der zweistelligen hexadezimalen Darstellung) RFC 3986 nicht reservierte Zeichen. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle Prozent codierten Zeichen werden vor dem Abruf entschlüsselt. Verwenden Sie daher diesen URI, um eine lokale Datei mit dem Namen "Hello # World.html" abzurufen.
 
 ```xml
 ms-appdata://local/Hello%23World.html
 ```
 
-Der Abruf der Ressource und die Identifikation des Segments für den Pfad auf oberster Ebene werden nach der Normalisierung von Punkten behandelt (".././b/c"). Daher können bei URIs keine Punkte für die reservierten Ordner verwendet werden. Die folgenden URI sind also nicht zulässig.
+Das Abrufen der Ressource und die Identifizierung des Pfad Segments der obersten Ebene werden nach der Normalisierung der Punkte (".. /./b/c"). Daher können sich URIs nicht selbst aus einem der reservierten Ordner heraus positionieren. Daher ist der folgende URI nicht zulässig.
 
 ```xml
 ms-appdata:///local/../hello/logo.png
 ```
 
-Diese URI ist jedoch zulässig (wenn auch redundant).
+Dieser URI ist jedoch zulässig (wenn redundant).
 
 ```xml
 ms-appdata:///local/../roaming/logo.png
 ```
 
-### <a name="query-ms-appdata"></a>Abfrage (ms-appdata)
+### <a name="query-ms-appdata"></a>Abfrage (MS-APPDATA)
 
-Abfrageparameter werden während des Abrufens von Ressourcen ignoriert. Bei der normalisierten Form von Abfrageparametern wird die Groß-/Kleinschreibung erhalten. Abfrageparameter werden beim Vergleich nicht ignoriert.
+Abfrage Parameter werden beim Abrufen von Ressourcen ignoriert. Die normalisierte Form von Abfrage Parametern verwaltet die Groß-/Kleinschreibung. Abfrage Parameter werden während des Vergleichs nicht ignoriert.
 
-## <a name="ms-resource"></a>ms-resource
+## <a name="ms-resource"></a>MS-Ressource
 
-Verwenden Sie das URI-Schema `ms-resource` , um auf Zeichenfolgen zu verweisen, die aus den Ressourcendateien Ihrer App (.resw) geladen wurden. Weitere Beispiele und Informationen zu Ressourcendateien (.resw) finden Sie unter [Lokalisieren der Zeichenfolge im Paketmanifest der Benutzeroberfläche und der App](localize-strings-ui-manifest.md).
+Verwenden Sie das `ms-resource` URI-Schema, um auf Zeichen folgen zu verweisen, die aus den Ressourcen Dateien (. resw) Ihrer APP geladen wurden. Beispiele und weitere Informationen zu Ressourcen Dateien finden Sie unter Lokalisieren von Zeichen folgen [in der Benutzeroberfläche und im App-Paket Manifest](localize-strings-ui-manifest.md).
 
-### <a name="scheme-name-ms-resource"></a>Schemaname (ms-resource)
+### <a name="scheme-name-ms-resource"></a>Schema Name (MS-Resource)
 
-Die Zeichenfolge „ms-resource” stellt den URI-Schemanamen dar.
+Der URI-Schema Name ist die Zeichenfolge "MS-Resource".
 
 ```xml
 ms-resource://
 ```
 
-### <a name="authority-ms-resource"></a>Autorität (ms-resource)
+### <a name="authority-ms-resource"></a>Autorität (MS-Resource)
 
-Bei der Autorität handelt es sich um die im Package Resource Index (PRI) definierte Ressourcenzuordnung der obersten Ebene, die in der Regel dem Paketidentitätsnamen entspricht, der im Paketmanifest festgelegt ist. Siehe [Verpacken von Apps](../packaging/index.md). Sie ist daher sowohl in der URI- als auch der IRI (Internationalized Resource Identifier)-Form auf den für den Paketidentitätsnamen zulässigen Zeichensatz beschränkt. Der Paketname muss ein Namen des Pakets im Paketabhängigkeitsdiagramms der ausgeführten App sein.
+Die Autorität ist die im Paket Ressourcen Index (PRI) definierte Ressourcen Zuordnung auf oberster Ebene, die in der Regel dem im Paket Manifest definierten Paket Identitäts Namen entspricht. Siehe [Verpacken von apps](../packaging/index.md)). Daher ist Sie sowohl im URI als auch im IRI-Formular (Internationalized Resource Identifier) auf den Zeichensatz beschränkt, der in einem Paket Identitäts Namen zulässig ist. Der Paketname muss der Name eines der Pakete im Paket Abhängigkeits Diagramm der aktuellen APP sein.
 
 ```xml
 ms-resource://Contoso.MyApp/
 ms-resource://Microsoft.WinJS.1.0/
 ```
 
-Werden in der Autorität andere Zeichen angegeben, schlagen Abruf und Vergleich fehl. Der Standardwert für die Autorität ist der die Groß-/Kleinschreibung beachtende Name der aktuell ausgeführten App.
+Wenn ein beliebiges anderes Zeichen in der Autorität angezeigt wird, schlagen Abruf und Vergleich fehl. Der Standardwert für die-Autorität ist der Paketname der aktuell laufenden app, der Groß-und Kleinschreibung beachtet.
 
 ```xml
 ms-resource:///
 ```
 
-Bei der Autorität wird die Groß-/Kleinschreibung berücksichtigt und bei der normalisierten Form die Groß-/Kleinschreibung erhalten. Bei der Suche nach einer Ressource wird die Groß-/Kleinschreibung jedoch ignoriert.
+Bei der Zertifizierungsstelle wird die Groß-/Kleinschreibung beachtet, und das normalisierte Formular behält den Fall Bei der Suche nach einer Ressource erfolgt die Groß-/Kleinschreibung jedoch nicht.
 
-### <a name="user-info-and-port-ms-resource"></a>Benutzerinformationen und Port (ms-resource)
+### <a name="user-info-and-port-ms-resource"></a>Benutzerinformationen und Port (MS-Resource)
 
-Das `ms-resource`-Schema definiert im Gegensatz zu anderen beliebten Schemen keine Benutzerinformationen oder Portkomponente. Da "@" and ":" nicht als gültige Autoritätswerte zulässig sind, schlägt die Suche fehl, wenn diese Zeichen enthalten sind. Folgende Beispiele schlagen fehl.
+Das `ms-resource` Schema definiert im Gegensatz zu anderen gängigen Schemas keine Benutzerinformationen oder eine Port Komponente. Da " @" and " :" nicht als gültige Autorität-Werte zulässig ist, schlägt die Suche fehl, wenn Sie eingeschlossen werden. Jedes der folgenden Fehler schlägt fehl.
 
 ```xml
 ms-resource://john@contoso.myapp/Resources/String1
@@ -247,32 +247,32 @@ ms-resource://contoso.myapp:8080/Resources/String1
 ms-resource://john:password@contoso.myapp:8080/Resources/String1
 ```
 
-### <a name="path-ms-resource"></a>Pfad (ms-resource)
+### <a name="path-ms-resource"></a>Path (MS-Resource)
 
-Der Pfad gibt den hierarchischen Ort der [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live)-Unterstruktur (siehe [Resource Management System](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))) und das darin enthaltene [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)-Element an. Dies entspricht in der Regel dem Dateinamen (ohne Erweiterung) der Ressourcendatei (.resw) und dem Bezeichner der darin enthaltenen Zeichenfolgenressource.
+Der Pfad identifiziert den hierarchischen Speicherort der [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) -Unterstruktur (siehe [Resource Management System](/previous-versions/windows/apps/jj552947(v=win.10))) und den darin enthaltenen [namedresource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) . In der Regel entspricht dies dem Dateinamen (ausgenommen Erweiterung) einer Ressourcen Datei (. resw) und dem Bezeichner einer darin enthaltenen Zeichen folgen Ressource.
 
-Beispiele und weitere Informationen finden Sie unter [Lokalisieren der Zeichenfolge im Paketmanifest der Benutzeroberfläche und der App](localize-strings-ui-manifest.md) und [Unterstützte Kachel- und Popupbenachrichtigungen für Sprache, Skalierungsfaktor und hohen Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
+Beispiele und weitere Informationen finden Sie unter Lokalisieren von Zeichen folgen [in Ihrer Benutzeroberfläche und App-Paket Manifest](localize-strings-ui-manifest.md) und [Unterstützung von Kacheln und Popup Benachrichtigungen für Sprache, Skalierung und hohen Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md).
 
-Bei der Pfadkomponente von `ms-resource` muss wie bei generischen URIs die Groß-/Kleinschreibung beachtet werden. Der zugrunde liegende Abruf bewirkt jedoch eine [comparestringordinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) , bei der *ignoreCase* auf `true`festgelegt ist.
+Die Pfadkomponente von `ms-resource` ist, wie bei generischen URIs, Groß-/Kleinschreibung beachtet. Der zugrunde liegende Abruf bewirkt jedoch eine [comparestringordinal](/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) , bei der *ignoreCase* auf festgelegt ist `true` .
 
-Bei der normalisierten Form des URI bleibt die Groß-/Kleinschreibung erhalten, und von nicht reservierten RFC 3986-Zeichen werden die Prozentzeichen entfernt. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle mit Prozentzeichen versehenen Zeichen werden vor dem Abrufen decodiert. Verwenden Sie daher diesen URI, um eine Zeichen folgen Ressource aus einer Ressourcen Datei mit dem Namen `Hello#World.resw`abzurufen.
+Die normalisierte Form des URIs verwaltet die Groß-/Kleinschreibung und die prozentuale decodierungen (ein "%"-Symbol, gefolgt von der zweistelligen hexadezimalen Darstellung) RFC 3986 nicht reservierte Zeichen. Die Zeichen "?", "#", "/", "*" und "" (doppelte Anführungszeichen) müssen in einem Pfad Prozent codiert sein, um Daten wie Datei-oder Ordnernamen darzustellen. Alle Prozent codierten Zeichen werden vor dem Abruf entschlüsselt. Verwenden Sie daher diesen URI, um eine Zeichen folgen Ressource aus einer Ressourcen Datei mit dem Namen abzurufen `Hello#World.resw` .
 
 ```xml
 ms-resource:///Hello%23World/String1
 ```
 
-### <a name="query-ms-resource"></a>Abfrage (ms-resource)
+### <a name="query-ms-resource"></a>Abfrage (MS-Resource)
 
-Abfrageparameter werden während des Abrufens von Ressourcen ignoriert. Bei der normalisierten Form von Abfrageparametern wird die Groß-/Kleinschreibung erhalten. Abfrageparameter werden beim Vergleich nicht ignoriert. Beim Vergleichen von Abfrageparametern wird die Groß-/Kleinschreibung berücksichtigt.
+Abfrage Parameter werden beim Abrufen von Ressourcen ignoriert. Die normalisierte Form von Abfrage Parametern verwaltet die Groß-/Kleinschreibung. Abfrage Parameter werden während des Vergleichs nicht ignoriert. Abfrage Parameter werden groß-und Kleinschreibung verglichen.
 
-Entwickler bestimmter Komponenten, die sich in Ebenen über dieser URI-Analyse befinden, können die Abfrageparameter flexibel verwenden.
+Entwickler bestimmter Komponenten, die oberhalb dieser URI-Verarbeitung angeordnet sind, können die Abfrage Parameter so verwenden, wie Sie sichtbar sind.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Uniform Resource Identifier (URI): generische Syntax](https://www.ietf.org/rfc/rfc3986.txt)
 * [Verpacken von Apps](../packaging/index.md)
 * [Verweisen auf ein Bild oder ein anderes Objekt aus XAML-Markup und Code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Speichern und Abrufen von Einstellungen und anderen App-Daten](../design/app-settings/store-and-retrieve-app-data.md)
-* [Lokalisieren von Zeichenfolgen auf der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
-* [Ressourcenverwaltungssystem](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
+* [Lokalisieren von Zeichenfolgen in der Benutzeroberfläche und im App-Paketmanifest](localize-strings-ui-manifest.md)
+* [Ressourcenverwaltungssystem](/previous-versions/windows/apps/jj552947(v=win.10))
 * [Unterstützung für Kachel-und Popup Benachrichtigungen für Sprache, Skalierung und hohen Kontrast](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

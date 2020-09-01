@@ -8,12 +8,12 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 13737e9aeb906e0430b2a18dd75ae1fce3a75956
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8608c1ff607c76c3f121fe5ed5fded9098911c9d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234583"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172434"
 ---
 # <a name="guidelines-for-touch-targets"></a>Richtlinien für Touch-Ziele
 
@@ -25,7 +25,7 @@ Alle UWP-Steuerelemente wurden mit standardmäßigen Berührungs Zielgrößen un
 
 In diesem Thema werden diese Standardverhalten beschrieben, damit Sie Ihre APP für maximale Nutzbarkeit mithilfe von Platt Form Steuerelementen und benutzerdefinierten Steuerelementen entwerfen können (falls Ihre APP Sie benötigt).
 
-> **Wichtige APIs**: [**Windows. UI. Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core), [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **Wichtige APIs**: [**Windows. UI. Core**](/uwp/api/Windows.UI.Core), [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Standard-Größenanpassung von Fluent
 
@@ -77,7 +77,7 @@ Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jew
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Einführung in Windows-App-Entwurf](../basics/design-and-ui-intro.md)
+- [Einführung in das Design von Windows-Apps](../basics/design-and-ui-intro.md)
 - [Größe und Dichte des Steuerelements](../style/spacing.md)
 - [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md)
 
@@ -95,6 +95,6 @@ Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jew
 - [Eingabe: Beispiel für Fingereingabe-Treffertests](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [Eingabe: vereinfachtes Freihandbeispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [Eingabe: Beispiel für Windows 8-Bewegungen](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Eingabe: Beispiel für Windows 8-Bewegungen](/samples/browse/?redirectedfrom=MSDN-samples)
 * [Eingabe: Manipulationen und Gesten (Beispiel)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [Beispiel für die DirectX-Fingereingabe](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

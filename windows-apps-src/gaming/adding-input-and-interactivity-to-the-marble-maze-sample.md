@@ -1,64 +1,64 @@
 ---
 title: Hinzufügen von Eingaben und Interaktivität zum Marble Maze-Beispiel
-description: Lernen Sie mehr über bewährte Methoden, die bei der Arbeit mit Eingabegeräten beachtet werden sollten.
+description: Informieren Sie sich über die wichtigsten Methoden, die bei der Arbeit mit Eingabegeräten zu berücksichtigen sind.
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Eingabe, Beispiel
+keywords: Windows 10, UWP, Games, Input, Sample
 ms.localizationpriority: medium
-ms.openlocfilehash: f078cd721406120105efb35d1519e7fd0b36e74c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d4c3742ed843deca9d7d8edba033addd2e4888fe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258608"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172074"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Hinzufügen von Eingaben und Interaktivität zum Marble Maze-Beispiel
 
 
 
 
-UWP-Spiele können auf den verschiedensten Geräten ausgeführt werden, beispielsweise auf Desktopcomputern, Laptops und Tablets. Für ein Gerät sind viele verschiedene Eingabe- und Steuerungsmechanismen möglich. In diesem Dokument werden die wichtigsten Methoden beschrieben, die Sie berücksichtigen sollten, wenn Sie mit Eingabegeräten arbeiten. Außerdem erfahren Sie, wie diese Methoden in Marble Maze angewendet werden.
+Universelle Windows-Plattform (UWP) Spiele auf einer Vielzahl von Geräten ausgeführt werden, z. b. auf Desktop Computern, Laptops und Tablets. Ein Gerät kann über eine Vielzahl von Eingabe-und Steuerungsmechanismen verfügen. In diesem Dokument werden die wichtigsten Methoden beschrieben, die Sie berücksichtigen sollten, wenn Sie mit Eingabegeräten arbeiten. Außerdem erfahren Sie, wie diese Methoden in Marble Maze angewendet werden.
 
 > [!NOTE]
-> Den Beispielcode für dieses Dokument finden Sie im [DirectX-Beispielspiel Marble Maze](https://github.com/microsoft/Windows-appsample-marble-maze).
+> Den diesem Dokument entsprechenden Beispielcode finden Sie im [DirectX Marble Maze-Spielbeispiel](https://github.com/microsoft/Windows-appsample-marble-maze).
 
  
 Hier sind einige der wichtigsten in diesem Dokument erörterten Punkte für das Arbeiten mit Eingaben in Ihrem Spiel:
 
--   Unterstützen Sie nach Möglichkeit mehrere Eingabegeräte, damit die Kunden Ihr Spiel ganz nach ihren persönlichen Vorlieben und Fähigkeiten spielen können. Die Verwendung eines Gamecontrollers und Sensors ist zwar optional, wird aber dringend empfohlen, um die Benutzerfreundlichkeit für die Spieler zu erhöhen. Die APIs für Gamecontroller und Sensoren soll Ihnen die Integration dieser Eingabegeräte erleichtern.
+-   Unterstützen Sie nach Möglichkeit mehrere Eingabegeräte, damit die Kunden Ihr Spiel ganz nach ihren persönlichen Vorlieben und Fähigkeiten spielen können. Die Verwendung eines Gamecontrollers und Sensors ist zwar optional, wird aber dringend empfohlen, um die Benutzerfreundlichkeit für die Spieler zu erhöhen. Wir haben die Spiele Controller-und Sensor-APIs entworfen, damit Sie diese Eingabegeräte einfacher integrieren können.
 
--   Zum Initialisieren der Toucheingabe müssen Sie sich für Windows-Ereignisse registrieren, beispielsweise für das Aktivieren, Freigeben und Verschieben des Zeigers. Zum Initialisieren des Beschleunigungsmessers erstellen Sie ein [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)-Objekt, wenn Sie die Anwendung initialisieren. Der Xbox-Controller muss nicht initialisiert werden.
+-   Zum Initialisieren der Toucheingabe müssen Sie sich für Windows-Ereignisse registrieren, beispielsweise für das Aktivieren, Freigeben und Verschieben des Zeigers. Zum Initialisieren des Beschleunigungsmessers erstellen Sie ein [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer)-Objekt, wenn Sie die Anwendung initialisieren. Der Xbox-Controller erfordert keine Initialisierung.
 
--   Überlegen Sie bei Spielen für einen Spieler, ob Sie die Eingaben aller möglichen Xbox-Controller kombinieren möchten. Auf diese Weise müssen Sie nicht nachverfolgen, welche Eingabe von welchem Controller kommt. Oder verfolgen Sie einfach die Eingaben vom zuletzt hinzugefügten Controller nach, wie in diesem Beispiel dargestellt.
+-   Für Einzelspieler Spiele sollten Sie überprüfen, ob Eingaben von allen möglichen Xbox-Controllern kombiniert werden. Auf diese Weise müssen Sie nicht nachverfolgen, welche Eingabe von welchem Controller kommt. Sie können auch einfach nur Eingaben vom zuletzt hinzugefügten Controller nachverfolgen, wie in diesem Beispiel.
 
 -   Verarbeiten Sie erst Windows-Ereignisse und dann Eingabegeräte.
 
--   Der Xbox-Controller und der Beschleunigungsmesser unterstützen Abrufe. Das heißt, Sie können Daten abrufen, wenn Sie sie benötigen. Für die Toucheingabe sollten Sie Touchereignisse in Datenstrukturen aufzeichnen, die für Ihren Eingabeverarbeitungscode verfügbar sind.
+-   Der Xbox-Controller und der Beschleunigungsmesser unterstützen den Abruf. Das heißt, Sie können Daten abrufen, wenn Sie sie benötigen. Für die Toucheingabe sollten Sie Touchereignisse in Datenstrukturen aufzeichnen, die für Ihren Eingabeverarbeitungscode verfügbar sind.
 
 -   Überlegen Sie, ob Sie Eingabewerte in ein gemeinsames Format normalisieren möchten. Auf diese Weise können Sie die Interpretation der Eingabe durch andere Komponenten des Spiels wie beispielsweise die Simulation von Physikeffekten vereinfachen und leichter Spiele schreiben, die sich für unterschiedliche Bildschirmauflösungen eignen.
 
 ## <a name="input-devices-supported-by-marble-maze"></a>Von Marble Maze unterstützte Eingabegeräte
 
 
-Marble Maze unterstützt Xbox-Controller, Maus und Toucheingabe zum Auswählen von Menüelementen und Xbox-Controller, Maus, Toucheingabe und Beschleunigungsmesser zum Steuern des Spielverlaufs. Marble Maze ruft die Eingaben vom Controller mithilfe der [Windows::Gaming::Input](https://docs.microsoft.com/uwp/api/windows.gaming.input)-API ab. Bei der Toucheingabe können Anwendungen Eingaben mit der Fingerspitze nachverfolgen und darauf reagieren. Ein Beschleunigungsmesser ist ein Sensor, der die Kraft misst, die entlang der X-, Y- und Z-Achsen angewendet wird. Mit der Windows-Runtime können Sie den aktuellen Zustand des Beschleunigungsmessers abrufen und Touchereignisse über den Ereignisbehandlungsmechanismus der Windows-Runtime empfangen.
+Marble Maze unterstützt den Xbox-Controller, die Maus und die Fingereingabe, um Menü Elemente auszuwählen, und den Xbox-Controller, die Maus, die Fingereingabe und den Beschleunigungsmesser zum Steuern von Spiel spielen. Marble Maze verwendet die [Windows:: Gaming:: Input](/uwp/api/windows.gaming.input) -APIs, um den Controller auf Eingaben abzufragen. Bei der Toucheingabe können Anwendungen Eingaben mit der Fingerspitze nachverfolgen und darauf reagieren. Ein Beschleunigungsmesser ist ein Sensor, der die auf die X-, Y-und Z-Achse angewendete Kraft misst. Mit der Windows-Runtime können Sie den aktuellen Zustand des Beschleunigungsmessers abrufen und Touchereignisse über den Ereignisbehandlungsmechanismus der Windows-Runtime empfangen.
 
 > [!NOTE]
-> In diesem Dokument wird der Begriff Toucheingabe für Touch- und Mauseingabe und sowie Zeigereingabe verwendet. Damit sind alle Geräte gemeint, die Zeigerereignisse verwenden. Da bei der Touch- und Mauseingabe Standardzeigerereignisse verwendet werden, können Sie jedes der Geräte verwenden, um Menüelemente auszuwählen und den Spielverlauf zu steuern.
+> In diesem Dokument wird die Fingereingabe verwendet, um auf ein beliebiges Gerät zu verweisen, das Zeiger Ereignisse verwendet. Da bei der Touch- und Mauseingabe Standardzeigerereignisse verwendet werden, können Sie jedes der Geräte verwenden, um Menüelemente auszuwählen und den Spielverlauf zu steuern.
 
  
 
 > [!NOTE]
-> Das Paketmanifest legt das **Querformat** als unterstützte Drehung für das Spiel fest. Damit wird verhindert, dass sich die Ausrichtung ändert, wenn Sie das Gerät drehen, um die Murmel zu bewegen. Um das Paketmanifest zu sehen, öffnen Sie **Package.appxmanifest** unter **Solution Explorer** in Visual Studio.
+> Das Paket Manifest legt **Landscape** als einzige unterstützte Drehung für das Spiel fest, um zu verhindern, dass sich die Ausrichtung ändert, wenn Sie das Gerät drehen, um das Spiel für den Marmor auszuführen. Öffnen Sie " **Package. appxmanifest** " im **Projektmappen-Explorer** in Visual Studio, um das Paket Manifest anzuzeigen.
 
  
 
 ## <a name="initializing-input-devices"></a>Initialisieren von Eingabegeräten
 
 
-Der Xbox-Controller muss nicht initialisiert werden. Zum Initialisieren der Toucheingabe müssen Sie sich für Windows-Ereignisse registrieren, beispielsweise für das Aktivieren (z. B. wenn der Benutzer die Maustaste drückt oder den Bildschirm berührt), Freigeben und Verschieben des Zeigers. Zum Initialisieren des Beschleunigungsmessers müssen Sie ein [Windows::Devices::Sensors::Accelerometer](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)-Objekt erstellen, wenn Sie die Anwendung initialisieren.
+Der Xbox-Controller erfordert keine Initialisierung. Um Touch zu initialisieren, müssen Sie sich für windowingereignisse registrieren, z. b. wenn der Zeiger aktiviert ist (z. b., wenn der Player die Maustaste drückt oder den Bildschirm berührt), freigegeben und verschoben wird. Zum Initialisieren des Beschleunigungsmessers müssen Sie ein [Windows::Devices::Sensors::Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer)-Objekt erstellen, wenn Sie die Anwendung initialisieren.
 
-Im folgenden Beispiel wird dargestellt, wie die **App::SetWindow**-Methode für die Zeigerereignisse [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed) und [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased) des [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved)-Elements registriert wird. Diese Ereignisse werden bei der Initialisierung der App und vor der Spielschleife registriert.
+Im folgenden Beispiel wird gezeigt, wie die **App:: SetWindow** -Methode für die Zeiger Ereignisse [Windows:: UI:: Core:: corewindow::P ointerpressed](/uwp/api/windows.ui.core.corewindow.PointerPressed), [Windows:: UI:: Core:: corewindow::P ointerreleased](/uwp/api/windows.ui.core.corewindow.PointerReleased)und [Windows:: UI:: Core:: corewindow::P ointerverschoder](/uwp/api/windows.ui.core.corewindow.PointerMoved) Zeiger registriert wird. Diese Ereignisse werden während der Anwendungs Initialisierung und vor der Spiel Schleife registriert.
 
 Die Ereignisse werden in einem separaten Thread behandelt, über den die Ereignishandler aufgerufen werden.
 
@@ -78,20 +78,20 @@ window->PointerMoved += ref new TypedEventHandler<CoreWindow^, PointerEventArgs^
     &App::OnPointerMoved);
 ```
 
-Die **MarbleMazeMain**-Klasse erstellt außerdem ein **std::map**-Objekt für Touchereignisse. Der Schlüssel für dieses Zuordnungsobjekt ist ein Wert, der den Eingabezeiger eindeutig identifiziert. Jeder Schlüssel ist der Entfernung zwischen jedem Touchpunkt und der Mitte des Bildschirms zugeordnet. Diese Werte verwendet Marble Maze später, um die Neigung des Labyrinths zu berechnen.
+Die **marblemazemain** -Klasse erstellt auch ein **Std:: Map** -Objekt zum Speichern von Berührungs Ereignissen. Der Schlüssel für dieses Zuordnungsobjekt ist ein Wert, der den Eingabezeiger eindeutig identifiziert. Jeder Schlüssel ist der Entfernung zwischen jedem Touchpunkt und der Mitte des Bildschirms zugeordnet. Diese Werte verwendet Marble Maze später, um die Neigung des Labyrinths zu berechnen.
 
 ```cpp
 typedef std::map<int, XMFLOAT2> TouchMap;
 TouchMap        m_touches;
 ```
 
-Die **MarbleMazeMain**-Klasse enthält ein [Beschleunigungsmesserobjekt](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer).
+Die **marblemazemain** -Klasse enthält auch ein [Beschleunigungsmesser](/uwp/api/Windows.Devices.Sensors.Accelerometer) -Objekt.
 
 ```cpp
 Windows::Devices::Sensors::Accelerometer^           m_accelerometer;
 ```
 
-Das **Beschleunigungsmesserobjekt** wird wie im folgenden Beispiel in der **MarbleMazeMain**-Konstruktor initialisiert. Die [Windows::Devices::Sensors::Accelerometer::GetDefault](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer.GetDefault)-Methode gibt eine Instanz des Standardbeschleunigungsmessers zurück. Wenn kein Standardbeschleunigungsmesser vorhanden ist, bleibt der **Accelerometer::GetDefault**-Wert **nullptr**.
+Das **Accelerometer** -Objekt wird im **marblemazemain** -Konstruktor initialisiert, wie im folgenden Beispiel gezeigt. Die [Windows::D EVICES:: Sensors:: Accelerometer:: GetDefault](/uwp/api/Windows.Devices.Sensors.Accelerometer.GetDefault) -Methode gibt eine Instanz des Standard Zugriffs Messers zurück. Wenn kein Standard Beschleunigungsmesser vorhanden ist, gibt **Accelerometer:: GetDefault** den Wert **nullptr**zurück.
 
 ```cpp
 // Returns accelerometer ref if there is one; nullptr otherwise.
@@ -100,16 +100,16 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 
 ##  <a name="navigating-the-menus"></a>Navigieren in den Menüs
 
-Sie haben folgende Möglichkeiten, mit der Maus, mit Toucheingabe oder mit dem Xbox-Controller in den Menüs zu navigieren:
+Sie können die Maus, den Touchscreen oder den Xbox-Controller verwenden, um die Menüs wie folgt zu navigieren:
 
 -   Verwenden Sie das Steuerkreuz, um das aktive Menüelement zu ändern.
--   Verwenden Sie Toucheingabe, die A-Taste oder die Menütaste, um ein Menüelement auszuwählen oder das aktuelle Menü zu schließen, beispielsweise die Highscoretabelle.
--   Verwenden Sie die Menütaste, um das Spiel anzuhalten oder fortzusetzen.
+-   Verwenden Sie die Schaltfläche "berühren", eine Schaltfläche oder die Menü Schaltfläche, um ein Menü Element auszuwählen oder das aktuelle Menü zu schließen, z. b. die Tabelle mit dem höchsten
+-   Verwenden Sie die Menü Schaltfläche, um das Spiel anzuhalten oder fortzusetzen.
 -   Klicken Sie mit der Maus auf ein Menüelement, um die jeweilige Aktion auszuwählen.
 
-###  <a name="tracking-xbox-controller-input"></a>Nachverfolgen von Xbox-Controllereingaben
+###  <a name="tracking-xbox-controller-input"></a>Nachverfolgen der Xbox Controller-Eingabe
 
-Um die derzeit verbundenen Gamepads nachzuverfolgen, definiert **MarbleMazeMain** eine Membervariable **M_myGamepads**, die eine Sammlung von [Windows::Gaming::Input::Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad)-Objekten ist. Dies wird im Konstruktor wie folgt initialisiert:
+Um die momentan mit dem Gerät verbundenen Gamepads nachzuverfolgen, definiert **marblemazemain** eine Member-Variable, **m_myGamepads**, die eine Auflistung von [Windows:: Gaming:: Input:: Gamepad](/uwp/api/windows.gaming.input.gamepad) -Objekten ist. Dies wird im Konstruktor wie folgt initialisiert:
 
 ```cpp
 m_myGamepads = ref new Vector<Gamepad^>();
@@ -120,7 +120,7 @@ for (auto gamepad : Gamepad::Gamepads)
 }
 ```
 
-Darüber hinaus registriert der **MarbleMazeMain**-Konstruktor Ereignisse, wenn Gamepads hinzugefügt oder entfernt werden:
+Außerdem registriert der **marblemazemain** -Konstruktor Ereignisse für den Fall, dass Gamepads hinzugefügt oder entfernt werden:
 
 ```cpp
 Gamepad::GamepadAdded += 
@@ -143,16 +143,16 @@ Gamepad::GamepadRemoved +=
 });
 ```
 
-Wenn ein Gamepad hinzugefügt wird, wird dieser **M_myGamepads** hinzugefügt; wenn ein Gamepad entfernt wird, wird überprüft, ob das Gamepad **M_myGamepads** ist, und wenn dies der Fall ist, entfernen wir diesen. In beiden Fällen legen wir **M_currentGamepadNeedsRefresh** auf **true** fest, was angibt, das wir **M_gamepad** erneut zuweisen müssen.
+Wenn ein Gamepad hinzugefügt wird, wird es **m_myGamepads**hinzugefügt. Wenn ein Gamepad entfernt wird, überprüfen wir, ob sich das Gamepad in **m_myGamepads**befindet, und wenn dies der Fall ist, wird es entfernt. In beiden Fällen legen wir **m_currentGamepadNeedsRefresh** auf " **true**" fest, um anzugeben, dass **m_gamepad**neu zugewiesen werden muss.
 
-Schließlich legen wir ein Gamepad, **M_gamepad** und **M_currentGamepadNeedsRefresh** auf **false** fest:
+Zum Schluss weisen wir **m_gamepad** ein Gamepad zu und legen **m_currentGamepadNeedsRefresh** auf " **false**" fest:
 
 ```cpp
 m_gamepad = GetLastGamepad();
 m_currentGamepadNeedsRefresh = false;
 ```
 
-In der **Update** -Methode wird überprüft, ob **M_gamepad** neu zugewiesen werden muss:
+In der **Update** -Methode wird überprüft, ob **m_gamepad** neu zugewiesen werden muss:
 
 ```cpp
 if (m_currentGamepadNeedsRefresh)
@@ -168,7 +168,7 @@ if (m_currentGamepadNeedsRefresh)
 }
 ```
 
-Wenn **M_gamepad** neu zugeordnet werden muss, müssen wir ihm den zuletzt hinzugefügten Gamepads mit **GetLastGamepad** zuweisen, der wie folgt definiert wird:
+Wenn **m_gamepad** neu zugewiesen werden muss, weisen wir ihm das zuletzt hinzugefügte Gamepad mithilfe von **getlastgamepad**zu, das wie folgt definiert ist:
 
 ```cpp
 Gamepad^ MarbleMaze::MarbleMazeMain::GetLastGamepad()
@@ -184,11 +184,11 @@ Gamepad^ MarbleMaze::MarbleMazeMain::GetLastGamepad()
 }
 ```
 
-Diese Methode gibt einfach den letzten Gamepad **M_myGamepads** zurück.
+Diese Methode gibt einfach das letzte Gamepad in **m_myGamepads**zurück.
 
-Sie können an ein Windows 10-Gerät bis zu vier Xbox-Controller anschließen. Um zu vermeiden, dass Sie herausfinden müssen, welcher Controller aktiv ist, verfolgen wir einfach nur Titel des zuletzt hinzugefügten Gamepads. Wenn Ihr Spiel mehrere Spieler unterstützt, müssen Sie die Eingabe für jeden Spieler getrennt nachverfolgen.
+Sie können bis zu vier Xbox-Controller mit einem Windows 10-Gerät verbinden. Um zu vermeiden, dass Sie ermitteln müssen, welcher Controller der aktive Controller ist, verfolgen wir einfach nur das zuletzt hinzugefügte Gamepad. Wenn Ihr Spiel mehrere Spieler unterstützt, müssen Sie die Eingabe für jeden Spieler getrennt nachverfolgen.
 
-Die **MarbleMazeMain::Update**-Methode fragt das Gamepad für die Eingabe ab:
+Die **marblemazemain:: Update** -Methode fragt das Gamepad nach Eingaben ab:
 
 ```cpp
 if (m_gamepad != nullptr)
@@ -198,9 +198,9 @@ if (m_gamepad != nullptr)
 }
 ```
 
-Wir behalten Sie den Überblick über die Eingabe durch den letzten Frame mit **m_oldReading** und die letzte Eingabe mit **m_newReading**, die wir durch Aufrufen von [Gamepad::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading) erhalten. Dies gibt ein [GamepadReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadreading)-Objekt zurück, das Informationen über den aktuellen Zustand des Gamepads enthält.
+Wir verfolgen die Eingaben, die wir im letzten Frame mit **m_oldReading**erhalten haben, und die letzte Eingabe mit **m_newReading**, die wir durch Aufrufen von " [Gamepad:: getcurrentreading](/uwp/api/windows.gaming.input.gamepad.GetCurrentReading)" erhalten. Dies gibt ein [gamepadreading](/uwp/api/windows.gaming.input.gamepadreading) -Objekt zurück, das Informationen über den aktuellen Zustand des Gamepad enthält.
 
-Um zu überprüfen, ob eine Schaltfläche einfach gedrückt oder losgelassen wurde, definieren wir **MarbleMazeMain::ButtonJustPressed** und **MarbleMazeMain::ButtonJustReleased**, was die Tasteneingabe aus diesem und dem letzten Frame vergleicht. So kann eine Aktion nur beim ersten Drücken einer Taste ausgeführt werden und nicht, wenn die Taste gedrückt gehalten oder losgelassen wird.
+Um zu überprüfen, ob eine Schaltfläche gerade gedrückt oder freigegeben wurde, definieren wir " **marblemazemain:: buttonjustpressed** " und " **marblemazemain:: buttonjustrelease**", die Schaltflächen Messwerte aus diesem Frame und dem letzten Frame vergleichen. Auf diese Weise können wir eine Aktion nur zu dem Zeitpunkt ausführen, zu dem eine Schaltfläche anfänglich gedrückt oder freigegeben wird, und nicht, wenn Sie gespeichert wird:
 
 ```cpp
 bool MarbleMaze::MarbleMazeMain::ButtonJustPressed(GamepadButtons selection)
@@ -222,9 +222,9 @@ bool MarbleMaze::MarbleMazeMain::ButtonJustReleased(GamepadButtons selection)
 }
 ```
 
-[GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)-Messwerte werden mit bitweisen Operationen&mdash;verglichen und es wird überprüft, ob eine Schaltfläche mit *bitweise und* (&) geklickt wird. Wir ermitteln, ob eine Schaltfläche einfach gedrückt oder losgelassen wurde, indem der alte Messwert und der neue Messwert verglichen werden.
+[Gamepadbuttons](/uwp/api/windows.gaming.input.gamepadbuttons) -Messwerte werden mithilfe von bitweisen Vorgängen verglichen &mdash; . wir überprüfen, ob eine Schaltfläche mithilfe des *bitweisen and* (&) gedrückt wird. Wir legen fest, ob eine Schaltfläche durch einen Vergleich der alten Lese-und neuen Lesevorgänge einfach gedrückt oder freigegeben wurde.
 
-Mithilfe der oben aufgeführten Methoden, überprüfen wir, ob bestimmte Schaltflächen gedrückt wurden und führen die entsprechenden Aktionen aus. Wenn beispielsweise die Menütaste (**GamepadButtons::Menu**) gedrückt wird, ändert sich der Spielzustand von aktiv in angehalten oder von angehalten in aktiv.
+Mithilfe der oben genannten Methoden überprüfen wir, ob bestimmte Schaltflächen gedrückt wurden, und führen alle entsprechenden Aktionen aus, die ausgeführt werden müssen. Wenn beispielsweise die Menü Schaltfläche (**gamepadbuttons:: Menu**) gedrückt wird, ändert sich der Spielzustand von aktiv in angehalten oder angehalten in aktiv.
 
 ```cpp
 if (ButtonJustPressed(GamepadButtons::Menu) || m_pauseKeyPressed)
@@ -242,7 +242,7 @@ if (ButtonJustPressed(GamepadButtons::Menu) || m_pauseKeyPressed)
 }
 ```
 
-Es wird auch überprüft, ob der Spieler die Ansicht-Taste drückt. In diesem Fall starten wir das Spiel erneut oder löschen die hohe Highscore-Tabelle:
+Wir überprüfen auch, ob der Player die Schaltfläche "Ansicht" drückt. in diesem Fall wird das Spiel neu gestartet oder die Tabelle "High Score" gelöscht:
 
 ```cpp
 if (ButtonJustPressed(GamepadButtons::View) || m_homeKeyPressed)
@@ -324,7 +324,7 @@ case GameState::InGamePaused:
 
 ### <a name="tracking-touch-and-mouse-input"></a>Nachverfolgen von Touch- und Mauseingaben
 
-Bei der Touch- und Mauseingabe wird ein Menüelement ausgewählt, wenn der Benutzer das Element berührt oder darauf klickt. Das folgende Beispiel zeigt, wie die **MarbleMazeMain::Update**-Methode die Zeigereingabe verarbeitet, um Menüelemente auszuwählen. Die Element Variable **m\_pointqueue** verfolgt die Speicherorte, an denen der Benutzer auf dem Bildschirm berührt oder darauf geklickt hat. Im Abschnitt [Verarbeiten von Zeigereingaben](#processing-pointer-input) wird ausführlicher beschrieben, wie Marble Maze die Zeigereingaben erfasst.
+Bei der Touch- und Mauseingabe wird ein Menüelement ausgewählt, wenn der Benutzer das Element berührt oder darauf klickt. Im folgenden Beispiel wird gezeigt, wie die **marblemazemain:: Update** -Methode Zeiger Eingaben für SELECT-Menü Elemente verarbeitet. Die Member-Variable **m \_ pointqueue** verfolgt die Speicherorte, an denen der Benutzer auf dem Bildschirm berührt oder darauf geklickt hat. Die Art und Weise, in der Marble Maze Zeiger Eingaben sammelt, wird weiter unten in diesem Dokument im Abschnitt [Verarbeiten von Zeiger Eingaben](#processing-pointer-input)ausführlicher beschrieben.
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -356,9 +356,9 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### <a name="updating-the-game-state"></a>Upgrade des Spielzustands
+### <a name="updating-the-game-state"></a>Aktualisieren des Spielzustands
 
-Wenn die **MarbleMazeMain::Update**-Methode die Controller- und Toucheingabe verarbeitet hat und eine Taste gedrückt wurde, aktualisiert sie den Spielzustand.
+Nachdem die **marblemazemain:: Update** -Methode Controller-und Berührungs Eingaben verarbeitet hat, aktualisiert Sie den Spielzustand, wenn eine beliebige Schaltfläche gedrückt wurde.
 
 ```cpp
 // Update the game state if the user chose a menu option. 
@@ -377,18 +377,18 @@ if (m_highScoreButton.IsPressed())
 ##  <a name="controlling-game-play"></a>Steuern des Spielverlaufs
 
 
-Die Spielschleife und die **MarbleMazeMain::Update**-Methode aktualisieren gemeinsam den Zustand der Spielobjekte. Wenn Ihr Spiel Eingaben von mehreren Geräten akzeptiert, können Sie die Eingaben aller Geräte in einem Satz von Variablen sammeln. Auf diese Weise können Sie Code schreiben, der sich leichter verwalten lässt. Die **MarbleMazeMain::Update**-Methode definiert einen Variablensatz, mit dem Bewegungen von allen Geräten gesammelt werden.
+Die Spiel Schleife und die **marblemazemain:: Update** -Methode arbeiten zusammen, um den Status von Spielobjekten zu aktualisieren. Wenn Ihr Spiel Eingaben von mehreren Geräten akzeptiert, können Sie die Eingaben aller Geräte in einem Satz von Variablen sammeln. Auf diese Weise können Sie Code schreiben, der sich leichter verwalten lässt. Die **marblemazemain:: Update** -Methode definiert einen Satz von Variablen, der die Bewegung von allen Geräten akkumuliert.
 
 ```cpp
 float combinedTiltX = 0.0f;
 float combinedTiltY = 0.0f;
 ```
 
-Die Eingabemechanismen der einzelnen Eingabegeräte können dabei unterschiedlich sein. Beispielsweise werden Zeigereingaben mit dem Ereignisbehandlungsmodell der Windows-Runtime behandelt. Die Eingabedaten des Xbox-Controllers dagegen rufen Sie bei Bedarf ab. Am besten halten Sie sich immer an die Eingabemechanismen, die für ein bestimmtes Gerät vorgeschrieben sind. In diesem Abschnitt wird beschrieben, wie Marble Maze die Eingaben von den einzelnen Geräten liest, die kombinierten Eingabewerte aktualisiert und sie verwendet, um den Spielzustand zu aktualisieren.
+Die Eingabemechanismen der einzelnen Eingabegeräte können dabei unterschiedlich sein. Beispielsweise werden Zeigereingaben mit dem Ereignisbehandlungsmodell der Windows-Runtime behandelt. Umgekehrt rufen Sie die Eingabedaten von Xbox Controller ab, wenn Sie Sie benötigen. Am besten halten Sie sich immer an die Eingabemechanismen, die für ein bestimmtes Gerät vorgeschrieben sind. In diesem Abschnitt wird beschrieben, wie Marble Maze die Eingaben von den einzelnen Geräten liest, die kombinierten Eingabewerte aktualisiert und sie verwendet, um den Spielzustand zu aktualisieren.
 
 ###  <a name="processing-pointer-input"></a>Verarbeiten von Zeigereingaben
 
-Wenn Sie mit Zeigereingaben arbeiten, rufen Sie die [Windows::UI::Core::CoreDispatcher::ProcessEvents](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)-Methode auf, um Windows-Ereignisse zu verarbeiten. Rufen Sie diese Methode in Ihrer Spielschleife auf, bevor Sie die Szene aktualisieren oder rendern. Marble Maze ruft dies in der **Implementierungscode**-Methode auf: 
+Wenn Sie mit Zeigereingaben arbeiten, rufen Sie die [Windows::UI::Core::CoreDispatcher::ProcessEvents](/uwp/api/windows.ui.core.coredispatcher.processevents)-Methode auf, um Windows-Ereignisse zu verarbeiten. Rufen Sie diese Methode in Ihrer Spielschleife auf, bevor Sie die Szene aktualisieren oder rendern. In Marble Maze wird dies in der **App:: Run** -Methode aufgerufen: 
 
 ```cpp
 while (!m_windowClosed)
@@ -413,9 +413,9 @@ while (!m_windowClosed)
 }
 ```
 
-Wenn das Fenster sichtbar ist, übergeben wir **CoreProcessEventsOption::ProcessAllIfPresent** an **ProcessEvents**, um alle Ereignisse in der Warteschlange sofort zu verarbeiten. Andernfalls übergeben wir **CoreProcessEventsOption::ProcessOneAndAllPending**, um alle Ereignisse in der Warteschlange zu verarbeiten und warten auf das das nächste neue Ereignis. Nach der Verarbeitung der Ereignisse rendert Marble Maze den nächsten Frame und zeigt ihn an.
+Wenn das Fenster sichtbar ist, übergeben wir **coreprocessiebsoption::P rocesallifpresent** an **ProcessEvents** , um alle Ereignisse in der Warteschlange zu verarbeiten und sofort zurückzukehren. Andernfalls übergeben wir **coreprocesereigsoption::P rocessoneandallpending** , um alle Ereignisse in der Warteschlange zu verarbeiten und auf das nächste neue Ereignis zu warten. Nach der Verarbeitung der Ereignisse rendert Marble Maze den nächsten Frame und zeigt ihn an.
 
-Die Windows-Runtime ruft den registrierten Handler für jedes aufgetretene Ereignis auf. Die **App::SetWindow**-Methode registriert sich für Ereignisse und leitet Zeigerinformationen an die **MarbleMazeMain**-Klasse weiter.
+Die Windows-Runtime ruft den registrierten Handler für jedes aufgetretene Ereignis auf. Die **App:: SetWindow** -Methode registriert sich für Ereignisse und leitet Zeiger Informationen an die **marblemazemain** -Klasse weiter.
 
 ```cpp
 void App::OnPointerPressed(
@@ -440,7 +440,7 @@ void App::OnPointerMoved(
 }
 ```
 
-Die **MarbleMazeMain**-Klasse reagiert auf Zeigerereignisse, indem sie das Zuordnungsobjekt aktualisiert, das Touchereignisse enthält. Die **MarbleMazeMain::AddTouch**-Methode wird aufgerufen, wenn der Zeiger zum ersten Mal gedrückt wird. Dies ist beispielsweise der Fall, wenn der Benutzer zum ersten Mal den Bildschirm eines touchfähigen Geräts berührt. Die **MarbleMazeMain::UpdateTouch**-Methode wird aufgerufen, wenn die Zeigerposition verschoben wird. Die **MarbleMazeMain::RemoveTouch**-Methode wird aufgerufen, wenn der Zeiger losgelassen wird. Dies ist beispielsweise der Fall, wenn der Benutzer den Bildschirm nicht mehr berührt.
+Die **marblemazemain** -Klasse reagiert auf Zeiger Ereignisse, indem das Map-Objekt aktualisiert wird, das Berührungs Ereignisse enthält. Die **marblemazemain:: addtouch** -Methode wird aufgerufen, wenn der Zeiger zum ersten Mal gedrückt wird, z. b. wenn der Benutzer den Bildschirm anfänglich auf einem touchfähigen Gerät berührt. Die **marblemazemain:: updatetouch** -Methode wird aufgerufen, wenn die Zeigerposition verschoben wird. Die **marblemazemain:: removetouch** -Methode wird aufgerufen, wenn der Zeiger freigegeben wird, z. b. wenn der Benutzer den Bildschirm nicht mehr berührt.
 
 ```cpp
 void MarbleMazeMain::AddTouch(int id, Windows::Foundation::Point point)
@@ -462,7 +462,7 @@ void MarbleMazeMain::RemoveTouch(int id)
 }
 ```
 
-Die **PointToTouch**-Funktion verschiebt die aktuelle Zeigerposition, sodass sich der Ursprung in der Mitte des Bildschirms befindet. Dann skaliert sie die Koordinaten so, dass sie ungefähr zwischen -1,0 und +1,0 liegen. Dadurch kann die einheitliche Neigung des Labyrinths für verschiedene Eingabemethoden leichter berechnet werden.
+Die **pointpotouchfunktion** übersetzt die aktuelle Zeigerposition, sodass sich der Ursprung in der Mitte des Bildschirms befindet, und skaliert dann die Koordinaten, sodass Sie ungefähr zwischen-1,0 und + 1,0 liegen. Dadurch kann die einheitliche Neigung des Labyrinths für verschiedene Eingabemethoden leichter berechnet werden.
 
 ```cpp
 inline XMFLOAT2 PointToTouch(Windows::Foundation::Point point, Windows::Foundation::Size bounds)
@@ -475,7 +475,7 @@ inline XMFLOAT2 PointToTouch(Windows::Foundation::Point point, Windows::Foundati
 }
 ```
 
-Die **MarbleMazeMain::Update**-Methode aktualisiert die kombinierten Eingabewerte, indem sie den Neigungsfaktor um einen konstanten Skalierungswert erhöht. Dieser Skalierungswert wurde durch Experimentieren mit verschiedenen Werten ermittelt.
+Die **marblemazemain:: Update** -Methode aktualisiert die kombinierten Eingabewerte, indem der Neigungs Faktor um einen konstanten Skalierungs Wert erhöht wird. Dieser Skalierungswert wurde durch Experimentieren mit verschiedenen Werten ermittelt.
 
 ```cpp
 // Account for touch input.
@@ -490,9 +490,9 @@ for (TouchMap::const_iterator iter = m_touches.cbegin();
 
 ### <a name="processing-accelerometer-input"></a>Verarbeiten von Beschleunigungsmessereingaben
 
-Zur Verarbeitung von Beschleunigungsmessereingaben ruft die **MarbleMazeMain::Update**-Methode die [Windows::Devices::Sensors::Accelerometer::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading)-Methode auf. Diese Methode gibt ein [Windows::Devices::Sensors::AccelerometerReading](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.AccelerometerReading)-Objekt zurück, das die Ablesung eines Beschleunigungsmessers darstellt. Die Eigenschaften **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** und **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** enthalten die Schwerkraftbeschleunigung entlang der X-Achse bzw. der Y-Achse.
+Um die Beschleunigungsmesser Eingabe zu verarbeiten, ruft die **marblemazemain:: Update** -Methode die [Windows::D EVICES:: Sensors:: Beschleunigungsmesser:: getcurrentreading](/uwp/api/windows.devices.sensors.accelerometer.getcurrentreading) -Methode auf. Diese Methode gibt ein [Windows::Devices::Sensors::AccelerometerReading](/uwp/api/Windows.Devices.Sensors.AccelerometerReading)-Objekt zurück, das die Ablesung eines Beschleunigungsmessers darstellt. Die Eigenschaften **Windows::D EVICES:: Sensors:: accelerometerreading:: accelerationx** und **Windows::D EVICES:: Sensors:: accelerometerreading:: accelerationy** enthalten die g-Force-Beschleunigung entlang der X-bzw. Y-Achse.
 
-Das folgende Beispiel zeigt, wie die **MarbleMazeMain::Update**-Methode den Beschleunigungsmesser abruft und die kombinierten Eingabewerte aktualisiert. Wenn Sie das Gerät neigen, bewegt sich die Murmel aufgrund der Schwerkraft schneller.
+Im folgenden Beispiel wird gezeigt, wie die **marblemazemain:: Update** -Methode den Beschleunigungsmesser abruft und die kombinierten Eingabewerte aktualisiert. Wenn Sie das Gerät neigen, bewegt sich die Murmel aufgrund der Schwerkraft schneller.
 
 ```cpp
 // Account for sensors.
@@ -512,11 +512,11 @@ if (m_accelerometer != nullptr)
 }
 ```
 
-Da Sie nicht sicher sein können, dass der Computer des Benutzers über einen [Beschleunigungsmesser](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer) verfügt, müssen Sie immer sicherstellen, dass Sie ein gültiges Beschleunigungsmesserobjekt haben, und erst dann die Werte vom Beschleunigungsmesser abrufen.
+Da Sie nicht sicher sein können, dass auf dem Computer des Benutzers ein Beschleunigungsmesser vorhanden ist, sollten Sie immer sicherstellen, dass Sie über ein gültiges [Beschleunigungsmesser](/uwp/api/Windows.Devices.Sensors.Accelerometer) Objekt verfügen, bevor Sie den Beschleunigungsmesser abrufen.
 
-### <a name="processing-xbox-controller-input"></a>Verarbeiten von Xbox-Controllereingaben
+### <a name="processing-xbox-controller-input"></a>Verarbeiten der Xbox Controller-Eingabe
 
-In der **MarbleMazeMain::Update**-Methode verwenden wir **m_newReading**-Eingaben vom linken Analogstick:
+In der **marblemazemain:: Update** -Methode verwenden wir **m_newReading** , um Eingaben vom linken analogen Stick zu verarbeiten:
 
 ```cpp
 float leftStickX = static_cast<float>(m_newReading.LeftThumbstickX);
@@ -532,23 +532,23 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 }
 ```
 
-Wir überprüfen, ob die Eingabe vom linken Analogstick außerhalb des inaktiven Bereichs liegt, und wenn dies der Fall ist, fügen wir **combinedTiltX** und **combinedTiltY** hinzu (multipliziert mit dem Skalierungsfaktor), um die Phase zu verändern.
+Wir überprüfen, ob die Eingabe vom linken analogen Stick außerhalb der unzustellbaren Zone liegt, und wenn dies der Fall ist, fügen wir Sie zu **combinedtiltx** und **combinedtilty** (multipliziert mit einem Skalierungsfaktor) hinzu, um die Stufe zu kippen.
 
 > [!IMPORTANT]
-> Berücksichtigen Sie immer den inaktiven Bereich, wenn Sie mit dem Xbox-Controller arbeiten. Der inaktive Bereich bezieht sich auf die unterschiedliche Empfindlichkeit von Gamepads für die ersten Bewegungen. Bei manchen Controllern ergibt eine kleine Bewegung keinen Messwert, während sie bei anderen zu einem messbaren Ergebnis führt. Berücksichtigen Sie dies in Ihrem Spiel, indem Sie für die ersten Bewegungen des Ministicks einen Bereich für Nichtbewegungen erstellen. Weitere Informationen finden über den inaktiven Bereich finden Sie unter [Lesen der Ministicks](gamepad-and-vibration.md#reading-the-thumbsticks).
+> Wenn Sie mit dem Xbox-Controller arbeiten, müssen Sie immer die unzustellbare Zone berücksichtigen. Der inaktive Bereich bezieht sich auf die unterschiedliche Empfindlichkeit von Gamepads für die ersten Bewegungen. Bei manchen Controllern ergibt eine kleine Bewegung keinen Messwert, während sie bei anderen zu einem messbaren Ergebnis führt. Berücksichtigen Sie dies in Ihrem Spiel, indem Sie für die ersten Bewegungen des Ministicks einen Bereich für Nichtbewegungen erstellen. Weitere Informationen zur unzustellbaren Zone finden Sie unter [Lesen der](gamepad-and-vibration.md#reading-the-thumbsticks)Fingerabdrücke.
 
  
 
 ###  <a name="applying-input-to-the-game-state"></a>Anwenden von Eingaben auf den Spielzustand
 
-Geräte melden Eingabewerte auf unterschiedliche Weise. So wird eine Zeigereingabe möglicherweise in Bildschirmkoordinaten angegeben, eine Controllereingabe aber in einem völlig anderen Format. Beim Kombinieren der Eingaben von mehreren Geräten in einem Satz von Eingabewerten besteht eine Herausforderung darin, die Werte in ein gemeinsames Format zu normalisieren oder konvertieren. Marble Maze normalisiert Werte, indem Sie Sie auf den Bereich \[-1,0, 1,0\]skalieren. Mit der weiter oben in diesem Abschnitt beschriebenen **PointToTouch**-Funktion werden Bildschirmkoordinaten in normalisierte Werte konvertiert. Diese Werte liegen ungefähr zwischen -1,0 und +1,0.
+Geräte melden Eingabewerte auf unterschiedliche Weise. So wird eine Zeigereingabe möglicherweise in Bildschirmkoordinaten angegeben, eine Controllereingabe aber in einem völlig anderen Format. Beim Kombinieren der Eingaben von mehreren Geräten in einem Satz von Eingabewerten besteht eine Herausforderung darin, die Werte in ein gemeinsames Format zu normalisieren oder konvertieren. Marble Maze normalisiert Werte, indem Sie Sie auf den Bereich \[ -1,0, 1,0, Skalieren \] . Die **pointtoken** -Funktion, die zuvor in diesem Abschnitt beschrieben wurde, konvertiert Bildschirm Koordinaten in normalisierte Werte, die ungefähr zwischen-1,0 und + 1,0 reichen.
 
 > [!TIP]
-> Auch wenn Ihre Anwendung eine einzige Eingabemethode verwendet, sollten Sie die Eingabewerte immer normalisieren. Auf diese Weise können Sie die Interpretation der Eingabe durch andere Komponenten des Spiels wie beispielsweise die Simulation von Physikeffekten vereinfachen und leichter Spiele schreiben, die sich für unterschiedliche Bildschirmauflösungen eignen.
+> Auch wenn die Anwendung eine Eingabemethode verwendet, empfiehlt es sich, die Eingabewerte immer zu normalisieren. Auf diese Weise können Sie die Interpretation der Eingabe durch andere Komponenten des Spiels wie beispielsweise die Simulation von Physikeffekten vereinfachen und leichter Spiele schreiben, die sich für unterschiedliche Bildschirmauflösungen eignen.
 
  
 
-Nachdem die **MarbleMazeMain::Update**-Methode die Eingabe verarbeitet hat, erstellt sie einen Vektor, der die Auswirkung der Neigung des Labyrinths auf die Murmel darstellt. Das folgende Beispiel zeigt, wie Marble Maze mit der [XMVector3Normalize](https://docs.microsoft.com/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize)-Funktion einen normalisierten Schwerkraftvektor erstellt. Die **maxTilt**-Variable schränkt die Neigung des Labyrinths ein und verhindert, dass das Labyrinth auf die Seite gekippt wird.
+Nachdem die **marblemazemain:: Update** -Methode Eingaben verarbeitet hat, wird ein Vektor erstellt, der die Auswirkung der Neigung des Maze auf den Marmor darstellt. Das folgende Beispiel zeigt, wie Marble Maze mit der [XMVector3Normalize](/windows/desktop/api/directxmath/nf-directxmath-xmvector3normalize)-Funktion einen normalisierten Schwerkraftvektor erstellt. Die Variable **maxtilt** schränkt den Betrag ein, um den das Maze kippt und verhindert, dass das Labyrinth auf der Seite gekippt wird.
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;
@@ -562,7 +562,7 @@ XMVECTOR gravity = XMVectorSet(
 gravity = XMVector3Normalize(gravity);
 ```
 
-Als letzten Schritt beim Aktualisieren der Szenenobjekte übergibt Marble Maze den aktualisierten Schwerkraftvektor der Simulation für Physikeffekte, aktualisiert diese Simulation für den seit dem vorherigen Frame verstrichenen Zeitraum und aktualisiert die Position und Ausrichtung der Murmel. Wenn die Murmel durch das Labyrinth gefallen ist, platziert die **MarbleMazeMain::Update**-Methode die Murmel wieder am letzten Prüfpunkt, den die Murmel berührt hat, und setzt den Zustand der Simulation für Physikeffekte zurück.
+Als letzten Schritt beim Aktualisieren der Szenenobjekte übergibt Marble Maze den aktualisierten Schwerkraftvektor der Simulation für Physikeffekte, aktualisiert diese Simulation für den seit dem vorherigen Frame verstrichenen Zeitraum und aktualisiert die Position und Ausrichtung der Murmel. Wenn das Labyrinth durch das Labyrinth gefallen hat, platziert die **marblemazemain:: Update** -Methode den Marmor an dem letzten Prüfpunkt, den der Marmor berührt hat, und setzt den Zustand der Physik Simulation zurück.
 
 ```cpp
 XMFLOAT3A g;
@@ -603,24 +603,20 @@ if (marblePosition.z >= resetDepth)
 }
 ```
 
-In diesem Abschnitt wird nicht beschrieben, wie die Simulation für Physikeffekte funktioniert. Details hierzu finden Sie in den Quellen für Marble Maze in **Physics.h** und **Physics.cpp**.
+In diesem Abschnitt wird nicht beschrieben, wie die Simulation für Physikeffekte funktioniert. Weitere Informationen hierzu finden Sie unter " **Physik. h** " und " **Physik. cpp** " in den Marble Maze-Quellen.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 
 Lesen Sie [Hinzufügen von Audio zum Marble Maze-Beispiel](adding-audio-to-the-marble-maze-sample.md). Dort finden Sie Informationen zu einigen der wichtigen Methoden, die Sie beim Arbeiten mit Audio berücksichtigen sollten. In diesem Dokument wird erörtert, wie Marble Maze mithilfe von Microsoft Media Foundation und XAudio2 Audioressourcen lädt, mischt und wiedergibt.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 
-* [Hinzufügen von Audiodaten zum Marble Maze-Beispiel](adding-audio-to-the-marble-maze-sample.md)
-* [Hinzufügen visueller Inhalte zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)
-* [Entwickeln von Marble Maze, einem UWP- C++ Spiel in und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
-
- 
+* [Hinzufügen von Audio zum Marble Maze-Beispiel](adding-audio-to-the-marble-maze-sample.md)
+* [Hinzufügen von visuellem Inhalt zum Marble Maze-Beispiel](adding-visual-content-to-the-marble-maze-sample.md)
+* [Entwickeln von Marble Maze, einem UWP-Spiel in C++ und DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 
-
-
-
+ 

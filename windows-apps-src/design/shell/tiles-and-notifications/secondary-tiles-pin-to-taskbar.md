@@ -7,12 +7,12 @@ ms.date: 11/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, an Taskleiste anheften, sekundäre Kachel, sekundäre Kacheln an Taskleiste anheften, Verknüpfung
 ms.localizationpriority: medium
-ms.openlocfilehash: a57fa9c6a268b22df3c1772e0aec111c769d907b
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 23feaf6cbc2293951116167662ab5647e3d35c44
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054190"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172324"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>Anheften von sekundären Kacheln an die Taskleiste
 
@@ -35,9 +35,9 @@ Eine sekundäre Kachel bietet Benutzern eine konsistente und effiziente Möglich
 
 Ältere Geräte verfügen nicht über die Task leisten-anheften-APIs (wenn Sie auf ältere Versionen von Windows 10 abzielen). Daher sollten Sie auf diesen Geräten keine PIN-Schaltfläche anzeigen, die nicht fixiert werden kann.
 
-Außerdem ist dieses Feature mit eingeschränktem Zugriff gesperrt. Wenden Sie sich an Microsoft, um Zugriff zu erhalten. API-Aufrufe an " **[taskbarmanager. requestpinsecondarytileasync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**", " **[taskbarmanager. issecondarytilepinnedasync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)**" und " **[taskbarmanager. tryunpinsecondarytileasync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** " schlagen mit einer Ausnahme vom Typ "Zugriff verweigert" fehl. Apps dürfen diese API ohne Berechtigungen nicht verwenden, und die API-Definition kann sich jederzeit ändern.
+Außerdem ist dieses Feature mit eingeschränktem Zugriff gesperrt. Wenden Sie sich an Microsoft, um Zugriff zu erhalten. API-Aufrufe an " **[taskbarmanager. requestpinsecondarytileasync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**", " **[taskbarmanager. issecondarytilepinnedasync](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)**" und " **[taskbarmanager. tryunpinsecondarytileasync](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** " schlagen mit einer Ausnahme vom Typ "Zugriff verweigert" fehl. Apps dürfen diese API ohne Berechtigungen nicht verwenden, und die API-Definition kann sich jederzeit ändern.
 
-Verwenden Sie die [apiinformation. ismethodpresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) -Methode, um zu bestimmen, ob die APIs vorhanden sind. Und verwenden Sie dann die **[limitedaccessfeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** -API, um die API zu entsperren.
+Verwenden Sie die [apiinformation. ismethodpresent](/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) -Methode, um zu bestimmen, ob die APIs vorhanden sind. Und verwenden Sie dann die **[limitedaccessfeatures](/uwp/api/windows.applicationmodel.limitedaccessfeatures)** -API, um die API zu entsperren.
 
 ```csharp
 if (ApiInformation.IsMethodPresent("Windows.UI.Shell.TaskbarManager", "RequestPinSecondaryTileAsync"))
@@ -70,7 +70,7 @@ else
 
 ## <a name="2-get-the-taskbarmanager-instance"></a>2. Get the taskbarmanager-Instanz
 
-Windows-Apps können auf einer Vielzahl von Geräten ausgeführt werden. nicht alle unterstützen die Taskleiste. Derzeit unterstützen nur Desktop Geräte die Taskleiste. Außerdem kann es vorkommen, dass die Taskleiste vorhanden ist. Um zu überprüfen, ob die Taskleiste aktuell vorhanden ist, müssen Sie die **[taskbarmanager. GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** -Methode aufrufen und überprüfen, ob die zurückgegebene Instanz nicht NULL ist. Zeigen Sie keine PIN-Schaltfläche an, wenn die Taskleiste nicht vorhanden ist.
+Windows-Apps können auf einer Vielzahl von Geräten ausgeführt werden. nicht alle unterstützen die Taskleiste. Derzeit unterstützen nur Desktop Geräte die Taskleiste. Außerdem kann es vorkommen, dass die Taskleiste vorhanden ist. Um zu überprüfen, ob die Taskleiste aktuell vorhanden ist, müssen Sie die **[taskbarmanager. GetDefault](/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** -Methode aufrufen und überprüfen, ob die zurückgegebene Instanz nicht NULL ist. Zeigen Sie keine PIN-Schaltfläche an, wenn die Taskleiste nicht vorhanden ist.
 
 Es wird empfohlen, für die Dauer eines einzelnen Vorgangs auf der-Instanz festzulegen, z. b. mit dem Anhebens und anschließendes Abrufen einer neuen Instanz, wenn Sie das nächste Mal einen weiteren Vorgang ausführen müssen.
 
@@ -90,7 +90,7 @@ else
 
 ## <a name="3-check-whether-your-tile-is-currently-pinned-to-the-taskbar"></a>3. Überprüfen Sie, ob Ihre Kachel aktuell an die Taskleiste angeheftet ist.
 
-Wenn die Kachel bereits angeheftet ist, sollten Sie stattdessen eine lösen-Schaltfläche anzeigen. Sie können die **[issecondarytilepinnedasync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** -Methode verwenden, um zu überprüfen, ob Ihre Kachel zurzeit fixiert ist (Benutzer können Sie jederzeit lösen). Bei dieser Methode übergeben Sie die **tileid** der Kachel, an die Sie wissen möchten, dass Sie fixiert ist.
+Wenn die Kachel bereits angeheftet ist, sollten Sie stattdessen eine lösen-Schaltfläche anzeigen. Sie können die **[issecondarytilepinnedasync](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** -Methode verwenden, um zu überprüfen, ob Ihre Kachel zurzeit fixiert ist (Benutzer können Sie jederzeit lösen). Bei dieser Methode übergeben Sie die **tileid** der Kachel, an die Sie wissen möchten, dass Sie fixiert ist.
 
 ```csharp
 if (await taskbarManager.IsSecondaryTilePinnedAsync("myTileId"))
@@ -107,7 +107,7 @@ else
 
 ## <a name="4-check-whether-pinning-is-allowed"></a>4. Überprüfen Sie, ob angeheften zulässig sind
 
-Das Anheften an die Taskleiste kann durch Gruppenrichtlinie deaktiviert werden. Mit der [taskbarmanager. ispinningallowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed) -Eigenschaft können Sie überprüfen, ob das Fixieren zulässig ist.
+Das Anheften an die Taskleiste kann durch Gruppenrichtlinie deaktiviert werden. Mit der [taskbarmanager. ispinningallowed](/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed) -Eigenschaft können Sie überprüfen, ob das Fixieren zulässig ist.
 
 Wenn der Benutzer auf die Schaltfläche zum Anheften klickt, sollten Sie diese Eigenschaft überprüfen. wenn der Wert false ist, sollten Sie ein Meldungs Dialogfeld anzeigen, das den Benutzer informiert, dass das Anheften auf diesem Computer nicht zulässig
 
@@ -136,7 +136,7 @@ Der Benutzer hat auf die Schaltfläche "Pin" geklickt, und Sie haben festgestell
 
 Erstellen Sie zuerst Ihre sekundäre Kachel wie beim anheulen an den Anfang. Weitere Informationen zu den Eigenschaften der sekundären Kachel finden Sie unter [anheften sekundärer Kacheln zum Starten](secondary-tiles-pinning.md). Beim anheften an die Taskleiste ist jedoch zusätzlich zu den zuvor erforderlichen Eigenschaften Square44x44Logo (das von der Taskleiste verwendete Logo) ebenfalls erforderlich. Andernfalls wird eine Ausnahme ausgelöst.
 
-Übergeben Sie dann die Kachel an die **[requestpinsecondarytileasync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** -Methode. Da dieses unter eingeschränkten Zugriff ist, wird ein Bestätigungs Dialogfeld nicht angezeigt, und es wird kein UI-Thread benötigt. Doch in Zukunft, wenn dieser über eingeschränkten Zugriff geöffnet wird, erhalten Aufrufer, die keinen eingeschränkten Zugriff verwenden, ein Dialogfeld, das für die Verwendung des UI-Threads benötigt wird.
+Übergeben Sie dann die Kachel an die **[requestpinsecondarytileasync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** -Methode. Da dieses unter eingeschränkten Zugriff ist, wird ein Bestätigungs Dialogfeld nicht angezeigt, und es wird kein UI-Thread benötigt. Doch in Zukunft, wenn dieser über eingeschränkten Zugriff geöffnet wird, erhalten Aufrufer, die keinen eingeschränkten Zugriff verwenden, ein Dialogfeld, das für die Verwendung des UI-Threads benötigt wird.
 
 ```csharp
 // Initialize the tile (all properties below are required)
@@ -155,7 +155,7 @@ Diese Methode gibt einen booleschen Wert zurück, der angibt, ob Ihre Kachel nun
 
 ## <a name="enumerate-tiles"></a>Kacheln aufzählen
 
-Wenn Sie alle Kacheln anzeigen möchten, die Sie erstellt haben und die immer noch an eine beliebige Stelle angeheftet sind (Start, Taskleiste oder beides), verwenden Sie **[findallasync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**. Anschließend können Sie überprüfen, ob diese Kacheln an die Taskleiste angeheftet sind und/oder gestartet werden. Wenn die Oberfläche nicht unterstützt wird, geben diese Methoden false zurück.
+Wenn Sie alle Kacheln anzeigen möchten, die Sie erstellt haben und die immer noch an eine beliebige Stelle angeheftet sind (Start, Taskleiste oder beides), verwenden Sie **[findallasync](/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**. Anschließend können Sie überprüfen, ob diese Kacheln an die Taskleiste angeheftet sind und/oder gestartet werden. Wenn die Oberfläche nicht unterstützt wird, geben diese Methoden false zurück.
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -179,12 +179,12 @@ foreach (SecondaryTile tile in await SecondaryTile.FindAllAsync())
 
 ## <a name="update-a-tile"></a>Aktualisieren einer Kachel
 
-Um eine bereits angeheftete Kachel zu aktualisieren, können Sie die Methode [**secondarytile. UpdateAsync**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync) verwenden, wie unter [Aktualisieren einer sekundären Kachel](secondary-tiles-pinning.md#updating-a-secondary-tile)beschrieben.
+Um eine bereits angeheftete Kachel zu aktualisieren, können Sie die Methode [**secondarytile. UpdateAsync**](/uwp/api/windows.ui.startscreen.secondarytile.updateasync) verwenden, wie unter [Aktualisieren einer sekundären Kachel](secondary-tiles-pinning.md#updating-a-secondary-tile)beschrieben.
 
 
 ## <a name="unpin-a-tile"></a>Lösen einer Kachel
 
-Wenn die Kachel aktuell fixiert ist, sollte Ihre APP eine lösen-Schaltfläche bereitstellen. Um die Kachel zu lösen, nennen Sie einfach **[tryunpinsecondarytileasync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**, und übergeben Sie dabei die **tileid** der sekundären Kachel, die Sie lösen möchten.
+Wenn die Kachel aktuell fixiert ist, sollte Ihre APP eine lösen-Schaltfläche bereitstellen. Um die Kachel zu lösen, nennen Sie einfach **[tryunpinsecondarytileasync](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**, und übergeben Sie dabei die **tileid** der sekundären Kachel, die Sie lösen möchten.
 
 Diese Methode gibt einen booleschen Wert zurück, der angibt, ob Ihre Kachel nicht mehr an die Taskleiste angeheftet ist. Wenn Ihre Kachel nicht an erster Stelle fixiert wurde, wird auch true zurückgegeben. Wenn das lösen nicht zulässig war, wird false zurückgegeben.
 
@@ -201,7 +201,7 @@ if (taskbarManager != null)
 
 ## <a name="delete-a-tile"></a>Löschen einer Kachel
 
-Verwenden Sie die **[requestdeleteasync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** -Methode, wenn Sie eine Kachel von überall aus lösen möchten (Start, Taskleiste).
+Verwenden Sie die **[requestdeleteasync](/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** -Methode, wenn Sie eine Kachel von überall aus lösen möchten (Start, Taskleiste).
 
 Dies ist für Fälle geeignet, in denen der vom Benutzer angeheftete Inhalt nicht mehr anwendbar ist. Wenn Sie mit Ihrer APP beispielsweise ein Notebook an den Start und die Taskleiste anheften und dann das Notebook löschen, sollten Sie einfach die dem Notebook zugeordnete Kachel löschen.
 
@@ -217,7 +217,7 @@ await toBeDeleted.RequestDeleteAsync();
 
 ## <a name="unpin-only-from-start"></a>Nur vom Start lösen
 
-Wenn Sie nur eine sekundäre Kachel aus dem Startmenü lösen möchten, während Sie auf der Taskleiste belassen wird, können Sie die Methode **[startscreenmanager. tryremovesecondarytileasync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** aufrufen. Auf diese Weise wird die Kachel gelöscht, wenn Sie nicht mehr an andere Oberflächen angeheftet ist.
+Wenn Sie nur eine sekundäre Kachel aus dem Startmenü lösen möchten, während Sie auf der Taskleiste belassen wird, können Sie die Methode **[startscreenmanager. tryremovesecondarytileasync](/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** aufrufen. Auf diese Weise wird die Kachel gelöscht, wenn Sie nicht mehr an andere Oberflächen angeheftet ist.
 
 Diese Methode gibt einen booleschen Wert zurück, der angibt, ob Ihre Kachel nicht mehr zum Starten fixiert ist. Wenn Ihre Kachel nicht an erster Stelle fixiert wurde, wird auch true zurückgegeben. Wenn das lösen nicht zulässig ist oder Start nicht unterstützt wird, wird false zurückgegeben.
 
@@ -228,5 +228,5 @@ await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 
 ## <a name="resources"></a>Ressourcen
 
-* [Taskbarmanager-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [Taskbarmanager-Klasse](/uwp/api/windows.ui.shell.taskbarmanager)
 * [Anheften von sekundären Kacheln an „Start“](secondary-tiles-pinning.md)

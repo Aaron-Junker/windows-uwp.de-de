@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, directink, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 819358fb775444d62cbad414668a779fc5c305ca
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 72076ffb27046a5c5e804cf30e8cb6c78b88cd69
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970245"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173334"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Speichern und Abrufen der Daten zu Windows Ink-Strichen
 
@@ -23,17 +23,17 @@ Windows-apps, die Windows Ink unterstützen, können Freihand Striche in eine IS
 > [!NOTE]
 > Bei ISF handelt es sich um die kompakteste permanente Freihanddarstellung. Sie kann in ein binäres Dokumentformat, z. B. in eine GIF-Datei, eingebettet oder direkt in der Zwischenablage platziert werden.
 
-> **Wichtige APIs**: [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows. UI. Input. Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **Wichtige APIs**: [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), [**Windows. UI. Input. Inking**](/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>Speichern von Freihandstrichen in einer Datei
 
-Hier wird veranschaulicht, wie Sie in einem [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement gezeichnete Freihandstriche speichern.
+Hier wird veranschaulicht, wie Sie in einem [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement gezeichnete Freihandstriche speichern.
 
 **Laden Sie dieses Beispiel aus [dem Speichern und Laden von frei Hand Strichen aus einer ISF-Datei (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip) herunter.**
 
 1.  Zuerst wird die Benutzeroberfläche eingerichtet.
 
-    Die Benutzeroberfläche enthält die Schaltflächen „Speichern“, „Laden“ und „Löschen“ sowie den [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
+    Die Benutzeroberfläche enthält die Schaltflächen „Speichern“, „Laden“ und „Löschen“ sowie den [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -63,7 +63,7 @@ Hier wird veranschaulicht, wie Sie in einem [**InkCanvas**](https://docs.microso
 
 2.  Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
 
-    Der [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
+    Der [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
 ```csharp
 public MainPage()
     {
@@ -85,11 +85,11 @@ public MainPage()
 
 3.  Schließlich werden die Freihanddaten im Click-Ereignishandler der Schaltfläche **Speichern** gespeichert.
 
-    Mit einem [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) kann der Benutzer die Datei und den Speicherort der Freihanddaten auswählen.
+    Mit einem [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) kann der Benutzer die Datei und den Speicherort der Freihanddaten auswählen.
 
-    Wenn eine Datei ausgewählt ist, wird ein auf [**ReadWrite**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream) festgelegter [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode)-Datenstrom geöffnet.
+    Wenn eine Datei ausgewählt ist, wird ein auf [**ReadWrite**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream) festgelegter [**IRandomAccessStream**](/uwp/api/Windows.Storage.FileAccessMode)-Datenstrom geöffnet.
 
-    Anschließend wird [**SaveAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync) aufgerufen, um die vom [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) verwalteten Freihandstriche in den Datenstrom zu serialisieren.
+    Anschließend wird [**SaveAsync**](/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync) aufgerufen, um die vom [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) verwalteten Freihandstriche in den Datenstrom zu serialisieren.
 
 ```csharp
 // Save ink data to a file.
@@ -155,17 +155,17 @@ public MainPage()
 ```
 
 > [!NOTE]
-> Zum Speichern von Freihanddaten wird nur das Format GIF unterstützt. Aus Gründen der Abwärtskompatibilität werden allerdings von der [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync)-Methode (im nächsten Abschnitt veranschaulicht) weitere Formate unterstützt.
+> Zum Speichern von Freihanddaten wird nur das Format GIF unterstützt. Aus Gründen der Abwärtskompatibilität werden allerdings von der [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync)-Methode (im nächsten Abschnitt veranschaulicht) weitere Formate unterstützt.
 
 ## <a name="load-ink-strokes-from-a-file"></a>Laden von Freihanddaten aus einer Datei
 
-Hier wird veranschaulicht, wie Freihandstriche aus einer Datei geladen und in einem [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement gerendert werden.
+Hier wird veranschaulicht, wie Freihandstriche aus einer Datei geladen und in einem [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement gerendert werden.
 
 **Laden Sie dieses Beispiel aus [dem Speichern und Laden von frei Hand Strichen aus einer ISF-Datei (Ink Serialized Format)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip) herunter.**
 
 1.  Zuerst wird die Benutzeroberfläche eingerichtet.
 
-    Die Benutzeroberfläche enthält die Schaltflächen „Speichern“, „Laden“ und „Löschen“ sowie den [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
+    Die Benutzeroberfläche enthält die Schaltflächen „Speichern“, „Laden“ und „Löschen“ sowie den [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -195,7 +195,7 @@ Hier wird veranschaulicht, wie Freihandstriche aus einer Datei geladen und in ei
 
 2.  Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
 
-    Der [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
+    Der [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) ist so konfiguriert, dass die Eingabedaten von Stift und Maus als Freihandstriche ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) interpretiert werden, und es werden Listener für die Klickereignisse der Schaltflächen deklariert.
 ```csharp
 public MainPage()
     {
@@ -217,11 +217,11 @@ public MainPage()
 
 3.  Schließlich werden die Freihanddaten im Click-Ereignishandler der Schaltfläche **Laden** geladen.
 
-    Mit einem [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) kann der Benutzer die Datei und den Speicherort auswählen, aus der bzw. dem die gespeicherten Freihanddaten abgerufen werden.
+    Mit einem [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) kann der Benutzer die Datei und den Speicherort auswählen, aus der bzw. dem die gespeicherten Freihanddaten abgerufen werden.
 
-    Wenn eine Datei ausgewählt ist, wird ein auf [**Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode) festgelegter [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream)-Datenstrom geöffnet.
+    Wenn eine Datei ausgewählt ist, wird ein auf [**Read**](/uwp/api/Windows.Storage.FileAccessMode) festgelegter [**IRandomAccessStream**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream)-Datenstrom geöffnet.
 
-    Anschließend wird [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) aufgerufen, um die gespeicherten Freihandstriche zu lesen, zu serialisieren und in den [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) zu laden. Das Laden der Striche in den **InkStrokeContainer** bewirkt, dass sie sofort vom [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) auf dem [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) gerendert werden.
+    Anschließend wird [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) aufgerufen, um die gespeicherten Freihandstriche zu lesen, zu serialisieren und in den [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) zu laden. Das Laden der Striche in den **InkStrokeContainer** bewirkt, dass sie sofort vom [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) auf dem [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) gerendert werden.
 
     > [!NOTE]
     > Alle vorhandenen Striche im InkStrokeContainer werden gelöscht, bevor neue Striche geladen werden.
@@ -260,7 +260,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!NOTE]
-> Zum Speichern von Freihanddaten wird nur das Format GIF unterstützt. Aus Gründen der Abwärtskompatibilität werden allerdings von der [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync)-Methode die folgenden Formate unterstützt.
+> Zum Speichern von Freihanddaten wird nur das Format GIF unterstützt. Aus Gründen der Abwärtskompatibilität werden allerdings von der [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync)-Methode die folgenden Formate unterstützt.
 
 | Format                    | BESCHREIBUNG |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -273,7 +273,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 Hier wird veranschaulicht, wie Sie mit der Zwischenablage Freihandstriche zwischen Apps übertragen.
 
-Damit die Zwischenablagefunktion unterstützt wird, müssen für die integrierten Befehle zum Ausschneiden und Kopieren von [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)-Inhalten ein oder mehrere Freihandstriche ausgewählt sein.
+Damit die Zwischenablagefunktion unterstützt wird, müssen für die integrierten Befehle zum Ausschneiden und Kopieren von [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)-Inhalten ein oder mehrere Freihandstriche ausgewählt sein.
 
 In diesem Beispiel wird die Strichauswahl aktiviert, wenn die Eingabe mit einer Zeichenstift-Drucktaste (oder der rechten Maustaste) geändert wird. Ein umfassendes Beispiel für das Implementieren der Strichauswahl finden Sie in [Zeichen- und Eingabestiftinteraktionen](pen-and-stylus-interactions.md) unter Durchlaufende Eingabe für die erweiterte Verarbeitung.
 
@@ -281,7 +281,7 @@ In diesem Beispiel wird die Strichauswahl aktiviert, wenn die Eingabe mit einer 
 
 1.  Zuerst wird die Benutzeroberfläche eingerichtet.
 
-    Die Benutzeroberfläche enthält die Schaltflächen „Ausschneiden“, „Kopiere“, „Einfügen“ und „Löschen“ sowie den [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und einen Auswahlzeichenbereich.
+    Die Benutzeroberfläche enthält die Schaltflächen „Ausschneiden“, „Kopiere“, „Einfügen“ und „Löschen“ sowie den [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und einen Auswahlzeichenbereich.
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -317,7 +317,7 @@ In diesem Beispiel wird die Strichauswahl aktiviert, wenn die Eingabe mit einer 
 
 2.  Dann werden einige grundlegende Verhalten für Freihandeingaben festgelegt.
 
-    Die [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Eigenschaft wird für die Interpretation von Eingabedaten von Stift oder Maus als Freihandstriche ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) konfiguriert. Hier werden außerdem Listener für die Click-Ereignisse der Schaltflächen sowie Zeiger- und Strichereignisse für die Auswahlfunktion deklariert.
+    Die [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)-Eigenschaft wird für die Interpretation von Eingabedaten von Stift oder Maus als Freihandstriche ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)) konfiguriert. Hier werden außerdem Listener für die Click-Ereignisse der Schaltflächen sowie Zeiger- und Strichereignisse für die Auswahlfunktion deklariert.
 
     Ein umfassendes Beispiel für das Implementieren der Strichauswahl finden Sie in [Zeichen- und Eingabestiftinteraktionen](pen-and-stylus-interactions.md) unter Durchlaufende Eingabe für die erweiterte Verarbeitung.
 ```csharp
@@ -367,9 +367,9 @@ public MainPage()
 
 3.  Nachdem die Unterstützung für die Strichauswahl hinzugefügt wurde, wird schließlich die Zwischenablagefunktion in den Click-Ereignishandlern der Schaltflächen **Ausschneiden**, **Kopieren** und **Einfügen** implementiert.
 
-    Für die Schaltfläche „Ausschneiden“ wird zunächst [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) für den [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) des [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) aufgerufen.
+    Für die Schaltfläche „Ausschneiden“ wird zunächst [**CopySelectedToClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) für den [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) des [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) aufgerufen.
 
-    Anschließend wird [**DeleteSelected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected) aufgerufen, um die Striche aus dem Freihandeingabe-Zeichenbereich zu entfernen.
+    Anschließend wird [**DeleteSelected**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected) aufgerufen, um die Striche aus dem Freihandeingabe-Zeichenbereich zu entfernen.
 
     Schließlich werden alle Auswahlstriche aus dem Auswahlzeichenbereich gelöscht.
     
@@ -403,7 +403,7 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-Zum Kopieren wird einfach [**copyselectedteclipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) für den [**inkstrokecontainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) von [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)aufgerufen.
+Zum Kopieren wird einfach [**copyselectedteclipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) für den [**inkstrokecontainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) von [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)aufgerufen.
 
 
 ```csharp
@@ -413,9 +413,9 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-Zum Einfügen wird [**canpastefromclipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) aufgerufen, um sicherzustellen, dass der Inhalt in der Zwischenablage in den frei Handzeichen Bereich eingefügt werden kann.
+Zum Einfügen wird [**canpastefromclipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) aufgerufen, um sicherzustellen, dass der Inhalt in der Zwischenablage in den frei Handzeichen Bereich eingefügt werden kann.
 
-Wenn dies der Fall ist, wird " [**pastefromclipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) " aufgerufen, um die Hand Striche in der Zwischenablage in den [**inkstrokecontainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) des [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)einzufügen, der dann die Striche in den frei Handzeichen Bereich rendert.
+Wenn dies der Fall ist, wird " [**pastefromclipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) " aufgerufen, um die Hand Striche in der Zwischenablage in den [**inkstrokecontainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) des [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)einzufügen, der dann die Striche in den frei Handzeichen Bereich rendert.
 
 ```csharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
@@ -447,6 +447,3 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [Tutorial zu den ersten Schritten: Unterstützung von frei Hand Eingaben in Ihrer Windows](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
 * [Malbuchbeispiel](https://github.com/Microsoft/Windows-appsample-coloringbook)
 * [Familiennotizbeispiel](https://github.com/Microsoft/Windows-appsample-familynotes)
-
-
-

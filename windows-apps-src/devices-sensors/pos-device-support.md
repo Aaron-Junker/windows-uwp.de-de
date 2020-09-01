@@ -1,40 +1,40 @@
 ---
-title: Unterstützung von Point of Service (POS)-Hardware
-description: Dieser Artikel enthält Informationen zur Unterstützung der Hardware für jede Point of Service (POS)-Geräteklasse
+title: Point of Service-Hardware Unterstützung
+description: Dieser Artikel enthält Informationen zur Hardwareunterstützung für jede der Punkt-zu-Dienst-Geräteklassen.
 ms.date: 06/13/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 11dadd91c3106f6881c357d5a13e09b451f2a1e8
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: bf5d6a2413ba6aeb2e3fd86122e865e34b8729fa
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259656"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172204"
 ---
-# <a name="supported-point-of-service-peripherals"></a>Unterstützte Point of Service-Peripheriegeräte
+# <a name="supported-point-of-service-peripherals"></a>Unterstützte Dienst Peripherie-Peripheriegeräte
 
-## <a name="barcode-scanner"></a>Strichcodescanner
+## <a name="barcode-scanner"></a>Barcodescanner
 | Konnektivität | Support |
 | -------------|-------------|
-| USB          | <p>Windows enthält für USB-verbundene Strichcodescanner einen integrierten Klassentreiber, dessen Spezifikation auf der von der [USB.org](https://www.usb.org/hid) definierten HID POS-Scanner-Nutzungstabelle (8c) basiert. Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle.  Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **USB.HID.POS Scanner**-Scannermodus konfigurieren. </p><p>Windows unterstützt auch die Implementierung von herstellerspezifischen Treibern für weitere Strichcodescanner, die den Scannerstandard „USB.HID.POS“ nicht unterstützen. Erfragen Sie beim Hersteller Ihres Strichcodescanners, ob ein herstellerspezifischer Treiber verfügbar ist.</p><p>Hersteller von Strichcodescannern sollten Sie sich an das [Strichcodescannertreiber-Entwurfshandbuch](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos/index) für weitere Informationen zum Erstellen eines benutzerdefinierten Strichcodescannertreibers wenden</p> |
-| Bluetooth    | <p>Windows unterstützt den auf Seriellem Port-Protokoll – einfacher serieller Schnittstelle (SPP-SSI) basierten Bluetooth-Strichcodescanner. Eine Liste bekannter kompatibler Geräte finden Sie in folgender Tabelle. Sehen Sie im Handbuch Ihres Strichcodescanners nach oder wenden Sie sich an den Hersteller, um zu erfahren, wie Sie Ihren Scanner im **SPP-SSI**-Scannermodus konfigurieren.</p> |
-| Webcam       | <p>Ab Windows 10, Version 1803, können Sie Strichcodescanner über ein Standard-Kameraobjektiv von einer universellen Windows-Anwendung lesen. Es wird empfohlen, dass Sie eine Kamera verwenden, die Autofokus und eine Auflösung von mindestens 1920 x 1440 unterstützt.  Einige niedrigere Auflösungen bei Kameras können Standardstrichcodes lesen, wenn der Strichcode groß genug gedruckt wird.  Barcodes mit weniger umfangreichen Elementen benötigen möglicherweise höhere Auflösungen bei einer Kamera.</p>| 
+| USB          | <p>Windows enthält einen in-Box-Klassen Treiber für USB-verbundene Barcode Scanner, die auf der von [USB.org](https://www.usb.org/hid)definierten Spezifikation für die Verwendung von HID POS-Überprüfungs Tabellen (8c) basieren. In der folgenden Tabelle finden Sie eine Liste bekannter kompatibler Geräte.  Wenden Sie sich an das manuelle für Ihren Barcode Scanner, oder wenden Sie sich an den Hersteller, um zu bestimmen, wie Sie den Scanner auf **USB HID. POS-Scanner** -Modus. </p><p>Windows unterstützt auch die Implementierung Hersteller spezifischer Treiber, um zusätzliche Barcode Scanner zu unterstützen, die den USB-Code nicht unterstützen. HID. POS-Scanner-Standard. Wenden Sie sich an den Hersteller des Barcode Scanners, um die herstellerspezifische Treiber Verfügbarkeit zu ermitteln.</p><p>Barcode Scanner-Hersteller weitere Informationen zum Erstellen eines benutzerdefinierten Barcode Scanner-Treibers finden Sie im [Entwurfs Handbuch für den Barcode Scanner](/windows-hardware/drivers/ddi/_pos/index) .</p> |
+| Bluetooth    | <p>Windows unterstützt serielle Port Protokoll-Simple Serial Interface (SPP-SSI)-basierte Bluetooth-Barcode Scanner. In der folgenden Tabelle finden Sie eine Liste bekannter kompatibler Geräte. Wenden Sie sich an das manuelle für Ihren Barcode Scanner, oder wenden Sie sich an den Hersteller, um zu bestimmen, wie Sie den Scanner im **spp-SSI-** Modus</p> |
+| Webcam       | <p>Ab Windows 10, Version 1803, können Sie Barcodes über einen Standardkamera-Foto aus einer universellen Windows-Anwendung lesen. Es wird empfohlen, dass Sie eine Kamera verwenden, die den automatischen Fokus und eine minimale Auflösung von 1920 x 1440 unterstützt.  Einige Kameras mit niedrigerer Auflösung können Standard-Barcodes lesen, wenn der Barcode groß genug gedruckt ist.  Barcodes mit dünneren Elementen erfordern möglicherweise eine höhere Auflösung von Kameras.</p>| 
 |
 
 
-| Hersteller  | Modell                          | Funktion | Verbindung    | Typ         | Modus                      |
+| Hersteller  | Modell                          | Funktion | Verbindung    | Typ         | Mode                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
 | Code          | Leser™ 950                    | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
 | Code          | Leser™ 1021                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
 | Code          | Leser™ 1421                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
-| Code          | Leser™ 5000                   | 2D         | USB          | Presentation | HID POS-Scanner           |
-| Honeywell     | Genesis 7580g                  | 2D         | USB          | Presentation | HID POS-Scanner           |
+| Code          | Leser™ 5000                   | 2D         | USB          | Präsentation | HID POS-Scanner           |
+| Honeywell     | Genesis 7580g                  | 2D         | USB          | Präsentation | HID POS-Scanner           |
 | Honeywell     | Granit 198xi                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
 | Honeywell     | Granit 191xi                   | 2D         | USB          | Gehaltenen     | HID POS-Scanner           |
 | Honeywell     | N5680                          | 2D         | Intern     | Komponente    | HID POS-Scanner           |
 | Honeywell     | N3680                          | 2D         | Intern     | Komponente    | HID POS-Scanner           |
-| Honeywell     | Umlauf 7190g                    | 2D         | USB          | Presentation | HID POS-Scanner           |
+| Honeywell     | Umlauf 7190g                    | 2D         | USB          | Präsentation | HID POS-Scanner           |
 | Honeywell     | Stratos 2700                   | 2D         | USB          | Im Zählers   | HID POS-Scanner           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | Gehaltenen     | HID POS-Scanner           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | Gehaltenen     | HID POS-Scanner           |
@@ -70,7 +70,7 @@ ms.locfileid: "74259656"
 <sup>1</sup> aktualisierbar zur Unterstützung von 2D-Barcodes durch Honeywell <br/>
 <sup>2</sup> mindestens erforderliche Firmware 009 (2018.07.09) erforderlich. Aktualisierbar mithilfe von Zebra [123scan](http://www.zebra.com/123scan).<br/>
 <sup>3</sup> mindestens erforderliche Firmware (2018.01.18) erforderlich. Aktualisierbar mithilfe von Zebra [123scan](http://www.zebra.com/123scan).<br/> 
-<sup>4</sup> mindestens erforderliche Firmware 023 (2019.03.11). Aktualisierbar mithilfe von Zebra [123scan](http://www.zebra.com/123scan).<br/>
+<sup>4</sup> minimale Firmware 023 (2019.03.11) erforderlich. Aktualisierbar mithilfe von Zebra [123scan](http://www.zebra.com/123scan).<br/>
 
 <hr>
 
@@ -97,41 +97,41 @@ ms.locfileid: "74259656"
 
 
 
-## <a name="cash-drawer"></a>Kassenschublade
+## <a name="cash-drawer"></a>Einschub Fach
 | Konnektivität | Support |
 | -------------|-------------|
-| Netzwerk/Bluetooth | <p> Eine direkte Verbindung zur Kassenschublade kann über das Netzwerk oder über Bluetooth hergestellt werden, je nach den Funktionen der Kassenschublade. </p><p>APG-Kassenschublade: NetPRO, BluePRO</p> |
-| DK-Port | <p> Kassenschubladen ohne Netzwerk- oder Bluetooth-Funktionen können über den DK-Port auf unterstützten Belegdruckern oder das Star Micronics DK-AirCash-Zubehör verbunden werden. </p>
-| OPOS    | <p> Unterstützt alle OPOS-kompatiblen Kassenschubladen über OPOS Service-Objekte, die vom Hersteller bereitgestellt werden. Installieren Sie die OPOS-Treiber für das Gerät entsprechend den Anweisungen des Herstellers. </p> |
+| Netzwerk/Bluetooth | <p> Die direkte Verbindung mit dem Bargeld Bereich kann über das Netzwerk oder über Bluetooth erfolgen, abhängig von den Funktionen der Einheiten für die Bargeld Schublade. </p><p>APG Cash-Schublade: NetPro, bluepro</p> |
+| DK-Port | <p> Bargeld Träger, die keine Netzwerk-oder Bluetooth-Funktionen aufweisen, können über den DK-Port auf einem unterstützten Empfangsdrucker oder das Star Micronics DK-aircash-Zubehör verbunden werden. </p>
+| OPOS    | <p> Unterstützt alle mit OPOS kompatiblen Bargeld-und vom Hersteller bereitgestellten OPOS-Dienst Objekte. Installieren Sie die OPOS-Treiber gemäß den Installationsanweisungen für Gerätehersteller. </p> |
 
 
-## <a name="customer-display-linedisplay"></a>Kunden-Anzeige (LineDisplay)
-Unterstützt alle OPOS-kompatiblen Zeilenanzeigen über OPOS Service-Objekte, die vom Hersteller bereitgestellt werden. Installieren Sie die OPOS-Treiber für das Gerät entsprechend den Anweisungen des Herstellers.
+## <a name="customer-display-linedisplay"></a>Kundenanzeige (LineDisplay)
+Unterstützt alle mit OPOS kompatiblen Zeilen anzeigen, die vom Hersteller bereitgestellt werden. Installieren Sie die OPOS-Treiber gemäß den Installationsanweisungen für Gerätehersteller.
 
 ## <a name="magnetic-stripe-reader"></a>Magnetstreifenleser
-Windows bietet Unterstützung für die folgenden Magnetstreifenleser von Magtek und IDTech, basierend auf deren Anbieter-ID und Produkt-ID (VID/PID).
+Windows bietet Unterstützung für die folgenden Magnetstreifenleser von MagTek und IDTech basierend auf ihrer Hersteller-ID und Produkt-ID (VID/PID).
 
-| Hersteller |    Model(le) |  Teilenummer |
+| Hersteller |    Modell (e) |  Teilenummer |
 |--------------|-----------|--------------|
-| IDTech | SecureMag (VID:0ACD PID:2010) | IDRE-3x5xxxx |
-| | MiniMag (VID:0ACD PID:0500) |   IDMB-3x5xxxx |
-| Magtek | MagneSafe (VID:0801 PID:0011) |  210730xx |
-| | Dynamag (VID:0801 PID:0002) |   210401xx |
+| IDTech | Securemag (vid: 0acd PID: 2010) | Idre-3x5xxxx |
+| | Minimag (vid: 0acd PID: 0500) |   Idmb-3x5xxxx |
+| MagTek | Magnesafe (vid: 0801 PID: 0011) |  210730xx |
+| | Dynamag (vid: 0801 PID: 0002) |   210401xx |
 
- Windows unterstützt die Implementierung der zusätzlichen anbieterspezifischen Treiber zur Unterstützung von Magnetstreifenlesern. Bitte prüfen Sie die Verfügbarkeit des Magnetstreifenlesers bei Ihrem Hersteller. Hersteller von Magnetstreifenlesers sollten sich an das [Magnetstreifenleser-Entwurfshandbuch](https://docs.microsoft.com/windows-hardware/drivers/ddi/_pos/index) für weitere Informationen zum Erstellen eines benutzerdefinierten Magnetstreifenlesers wenden.
+ Windows unterstützt die Implementierung zusätzlicher Anbieter spezifischer Treiber zur Unterstützung zusätzlicher Magnetstreifenleser. Informieren Sie sich bei Ihrem Magnet Stripe Reader-Hersteller über die Verfügbarkeit. Magnetstreifenleser-Hersteller Informationen zum Erstellen eines benutzerdefinierten Magnet Stripe-Reader-Treibers finden Sie im [Entwurfs Handbuch für den Magnet Stripe Reader-Treiber](/windows-hardware/drivers/ddi/_pos/index) .
 
-## <a name="receipt-printer-posprinter"></a>Belegdrucker (POSPrinter)
+## <a name="receipt-printer-posprinter"></a>Empfangsdrucker (posprinter)
 | Konnektivität | Support |
 | -------------|-------------|
-| Netzwerk und Bluetooth | <p>Windows unterstützt die Möglichkeit, mit der Epson ESC/POS-Druckersteuerungssprache auf Belegdruckern über Netzwerk und Bluetooth zu drucken.  Die unten aufgeführten Drucker werden automatisch über POSPrinter-APIs ermittelt. Zusätzliche Belegdrucker, die eine ESC/POS-Emulation bieten, funktionieren auch, müssen aber über einen [Out-Band-Kopplungs](https://docs.microsoft.com/windows/uwp/devices-sensors/point-of-service#out-of-band-pairing)-Prozess verknüpft werden .</p><p>Hinweis: Kassenbelegstationen und Journalstationen werden von dieser Methode nicht unterstützt.</p> |
-| OPOS    | <p> Unterstützt alle OPOS-kompatiblen Belegdrucker über OPOS-Dienstobjekte. Installieren Sie die OPOS-Treiber für das Gerät entsprechend den Anweisungen des Herstellers. </p> |
+| Netzwerk und Bluetooth | <p>Windows unterstützt Netzwerk-und Bluetooth-Empfangsdrucker, die die Epson ESC/POS-druckersteuerungssprache verwenden.  Die nachstehend aufgeführten Drucker werden automatisch mithilfe von posprinter-APIs erkannt. Zusätzliche Empfangsdrucker, die eine ESC/POS-Emulation bereitstellen, können auch funktionieren, müssen jedoch mithilfe eines [out-of-Band](./point-of-service.md#out-of-band-pairing) -Kopplung-Prozesses verknüpft werden.</p><p>Hinweis: die-Station und die Journal Stationen werden von dieser Methode nicht unterstützt.</p> |
+| OPOS    | <p> Unterstützt alle mit OPOS kompatiblen empfangsdruckern über OPOS-Dienst Objekte. Installieren Sie die OPOS-Treiber gemäß den Installationsanweisungen für Gerätehersteller. </p> |
 
-### <a name="stationary-receipt-printers-networkbluetooth"></a>Stationäre Belegdrucker (Netzwerk/ Bluetooth)
-| Hersteller |    Model(le) |
+### <a name="stationary-receipt-printers-networkbluetooth"></a>Drucker der stationären Bestätigung (Netzwerk/Bluetooth)
+| Hersteller |    Modell (e) |
 |--------------|-----------|
-| Epson |   TM-T88V, TM-T70, TM-T20, TM-U220 |
+| EP |   TM-T88V, TM-T70, TM-T20, TM-U220 |
 
 ### <a name="mobile-receipt-printers-bluetooth"></a>Mobile Belegdrucker (Bluetooth)
-| Hersteller |    Model(le) |
+| Hersteller |    Modell (e) |
 |--------------|-----------|
-| Epson |   Mobilink P20 (TM-P20), Mobilink P60 (TM-P60), Mobilink P80 (TM-P80) |
+| EP |   MobiLink P20 (TM-P20), MobiLink P60 (TM-P60), MobiLink P80 (TM-P80) |

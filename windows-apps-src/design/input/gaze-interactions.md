@@ -1,5 +1,5 @@
 ---
-title: Blick Interaktionen
+title: Interaktionen über Anvisieren
 Description: Erfahren Sie, wie Sie Ihre Windows-apps entwerfen und optimieren, um den Benutzern, die sich auf die Überblicks Eingaben von Eye-und Head-Tracker stützen, eine optimale Leistung zu bieten
 label: Gaze interactions
 template: detail.hbs
@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4cfd84d54ecd1425b3b7e66c54c96fbd78c2dd46
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c91de7eb0200780b04bad1853cb49caf41a22bc0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970125"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172504"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Blick Interaktionen und Eye Tracking in Windows-apps
 
@@ -25,9 +25,9 @@ ms.locfileid: "82970125"
 Unterstützung für die Nachverfolgung der Ansicht, Aufmerksamkeit und Präsenz eines Benutzers basierend auf der Position und Bewegung ihrer Augen.
 
 > [!NOTE]
-> Informationen zu Blick Eingaben in [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/)finden Sie unter [Blick](https://docs.microsoft.com/windows/mixed-reality/gaze).
+> Informationen zu Blick Eingaben in [Windows Mixed Reality](/windows/mixed-reality/)finden Sie unter [Blick](/windows/mixed-reality/gaze).
 
-**Wichtige APIs**: [Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [gazedevicepreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [gazepointpreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [gazeinputsourcepreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**Wichtige APIs**: [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview), [gazedevicepreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [gazepointpreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [gazeinputsourcepreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>Übersicht
 
@@ -36,21 +36,21 @@ Die Anzeige von Blick auf die Leistung ist eine leistungsstarke Möglichkeit zur
 Außerdem bietet die Überblicks Eingabe gleichermaßen überzeugende Möglichkeiten für Spiele (einschließlich Ziel Abruf und-Nachverfolgung) und herkömmlichen Produktivitätsanwendungen, Kiosken und andere interaktive Szenarios, in denen herkömmliche Eingabegeräte (Tastatur, Maus, Fingereingabe) nicht verfügbar sind, oder wenn es hilfreich bzw. hilfreich ist, die Benutzer für andere Aufgaben (z. b. die Aufbewahrung von Einkaufswagen) freizugeben
 
 > [!NOTE]
-> Die Unterstützung für die Eye Tracking-Hardware wurde in **Windows 10 Fall Creators Update** zusammen mit der [Eye Control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen zum Steuern des Bildschirm Zeigers, zum Eingeben mit der Bildschirmtastatur und zum kommunizieren mit Personen mithilfe von Text-zu-Sprache verwenden können. Eine Reihe von Windows-Runtime-APIs ([Windows. Devices. Input. Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) zum Erstellen von Anwendungen, die mit der Überwachungs Hardware interagieren können, finden Sie unter **Windows 10 April 2018 Update (Version 1803, Build 17134)** und neuer.
+> Die Unterstützung für die Eye Tracking-Hardware wurde in **Windows 10 Fall Creators Update** zusammen mit der [Eye Control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)eingeführt, einem integrierten Feature, mit dem Sie Ihre Augen zum Steuern des Bildschirm Zeigers, zum Eingeben mit der Bildschirmtastatur und zum kommunizieren mit Personen mithilfe von Text-zu-Sprache verwenden können. Eine Reihe von Windows-Runtime-APIs ([Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview)) zum Erstellen von Anwendungen, die mit der Überwachungs Hardware interagieren können, finden Sie unter **Windows 10 April 2018 Update (Version 1803, Build 17134)** und neuer.
 
 ## <a name="privacy"></a>Datenschutz
 
 Aufgrund der potenziell sensiblen personenbezogenen Daten, die von Augen Verfolgungs Geräten gesammelt wurden, müssen Sie die `gazeInput` Funktion im App-Manifest Ihrer Anwendung deklarieren (siehe folgenden Abschnitt zum **Setup** ). Wenn Sie deklariert wird, werden Benutzer von Windows automatisch mit einem Zustimmungs Dialogfeld (bei der ersten Durchführung der APP) aufgefordert, bei dem der Benutzer die Berechtigung für die APP erteilen muss, mit dem Auge Verfolgungs Gerät zu kommunizieren und auf diese Daten zuzugreifen.
 
-Außerdem müssen Sie, wenn Ihre APP Augen Verfolgungs Daten sammelt, speichert oder überträgt, dies in den Datenschutzbestimmungen Ihrer APP beschreiben und alle anderen Anforderungen für **persönliche Informationen** im [App-Entwickler Vertrag](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) und die Microsoft Store- [Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies)einhalten.
+Außerdem müssen Sie, wenn Ihre APP Augen Verfolgungs Daten sammelt, speichert oder überträgt, dies in den Datenschutzbestimmungen Ihrer APP beschreiben und alle anderen Anforderungen für **persönliche Informationen** im [App-Entwickler Vertrag](/legal/windows/agreements/app-developer-agreement) und die Microsoft Store- [Richtlinien](/legal/windows/agreements/store-policies)einhalten.
 
 ## <a name="setup"></a>Einrichten
 
 Wenn Sie die Blick Eingabe-APIs in Ihrer Windows-App verwenden möchten, müssen Sie folgende Schritte ausführen: 
 
-- Geben Sie `gazeInput` die Funktion im App-Manifest an.
+- Geben Sie die `gazeInput` Funktion im App-Manifest an.
 
-    Öffnen Sie die Datei " **Package. appxmanifest** " mit dem Visual Studio-Manifest-Designer, oder fügen Sie die Funktion manuell hinzu, indem `DeviceCapability` Sie **Code anzeigen**auswählen und Folgendes in den `Capabilities` Knoten einfügen:
+    Öffnen Sie die Datei " **Package. appxmanifest** " mit dem Visual Studio-Manifest-Designer, oder fügen Sie die Funktion manuell hinzu, indem Sie **Code anzeigen**auswählen und Folgendes `DeviceCapability` in den `Capabilities` Knoten einfügen:
 
     ```xaml
     <Capabilities>
@@ -66,7 +66,7 @@ Wenn Sie die Blick Eingabe-APIs in Ihrer Windows-App verwenden möchten, müssen
 
 In diesem Beispiel veranschaulichen wir, wie Sie den Benutzer Blick in einer Windows-App nachverfolgen und eine Zeit Steuerungsfunktion mit grundlegenden Treffer Tests verwenden, um anzugeben, wie gut Sie den Fokus auf ein bestimmtes Element bringen können.
 
-Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerhalb des Viewports der Anwendung befindet, während eine [radialprogressbar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) aus dem [Windows Community Toolkit](https://docs.microsoft.com/windows/communitytoolkit/) nach dem Zufallsprinzip in den Zeichenbereich eingefügt wird. Wenn der Fokus Fokus auf der Statusanzeige festgestellt wird, wird ein Timer gestartet, und die Statusleiste wird nach dem Zufallsprinzip in den Zeichenbereich verschoben, wenn die Statusanzeige 100% erreicht.
+Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerhalb des Viewports der Anwendung befindet, während eine [radialprogressbar](/windows/communitytoolkit/controls/radialprogressbar) aus dem [Windows Community Toolkit](/windows/communitytoolkit/) nach dem Zufallsprinzip in den Zeichenbereich eingefügt wird. Wenn der Fokus Fokus auf der Statusanzeige festgestellt wird, wird ein Timer gestartet, und die Statusleiste wird nach dem Zufallsprinzip in den Zeichenbereich verschoben, wenn die Statusanzeige 100% erreicht.
 
 ![Beispiel Überwachung mit Timer](images/gaze/gaze-input-timed2.gif)
 
@@ -154,7 +154,7 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerh
 
 2. Als nächstes initialisieren wir unsere app.
 
-    In diesem Code Ausschnitt deklarieren wir unsere globalen Objekte und setzen das [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) -Seiten Ereignis außer Kraft, um unseren Blick auf die [Geräte](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) Überwachung und das [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) -Seiten Ereignis zu überschreiben, um den Überwachungs [Geräte-Watcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)anzuhalten.
+    In diesem Code Ausschnitt deklarieren wir unsere globalen Objekte und setzen das [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) -Seiten Ereignis außer Kraft, um unseren Blick auf die [Geräte](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) Überwachung und das [OnNavigatedFrom](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) -Seiten Ereignis zu überschreiben, um den Überwachungs [Geräte-Watcher](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)anzuhalten.
 
     ```csharp
     using System;
@@ -233,15 +233,15 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerh
 
 3. Als Nächstes fügen wir unsere "Do Device Watcher"-Methoden hinzu. 
     
-    In `StartGazeDeviceWatcher`rufen wir " [devatewatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) " auf und deklarieren die Ereignislistener für das Überwachungs [DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated)Gerät ([deviceadded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), Debug-und [deviceremoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
+    In `StartGazeDeviceWatcher` rufen wir " [devatewatcher](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher) " auf und deklarieren die Ereignislistener für das Überwachungs [DeviceUpdated](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated)Gerät ([deviceadded](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added), Debug-und [deviceremoved](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed)).
 
-    In `DeviceAdded`wird der Status des Geräts für die Augen Verfolgung überprüft. Wenn ein funktionierendes Gerät aktiviert ist, wird die Anzahl der Geräte erhöht und die Nachverfolgung des Blicks aktiviert. Weitere Informationen finden Sie im nächsten Schritt.
+    In `DeviceAdded` wird der Status des Geräts für die Augen Verfolgung überprüft. Wenn ein funktionierendes Gerät aktiviert ist, wird die Anzahl der Geräte erhöht und die Nachverfolgung des Blicks aktiviert. Weitere Informationen finden Sie im nächsten Schritt.
 
-    In `DeviceUpdated`aktivieren wir auch die Nachverfolgung von Augenblicken, wenn dieses Ereignis ausgelöst wird, wenn ein Gerät neu gestartet wird.
+    In `DeviceUpdated` aktivieren wir auch die Nachverfolgung von Augenblicken, wenn dieses Ereignis ausgelöst wird, wenn ein Gerät neu gestartet wird.
 
-    In `DeviceRemoved`dekrelieren wir den Geräte Zählers und entfernen die Geräte Ereignishandler.
+    In `DeviceRemoved` dekrelieren wir den Geräte Zählers und entfernen die Geräte Ereignishandler.
 
-    In `StopGazeDeviceWatcher`wird der Blick auf Device Watcher heruntergefahren. 
+    In `StopGazeDeviceWatcher` wird der Blick auf Device Watcher heruntergefahren. 
 
 ```csharp
     /// <summary>
@@ -328,12 +328,12 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerh
     }
 ```
 
-4. Hier überprüfen wir, ob das Gerät in `IsSupportedDevice` geeignet ist, und wenn dies der Fall ist, versuchen Sie `TryEnableGazeTrackingAsync`, die Blick Verfolgung in zu aktivieren.
+4. Hier überprüfen wir, ob das Gerät in `IsSupportedDevice` geeignet ist, und wenn dies der Fall ist, versuchen Sie, die Blick Verfolgung in zu aktivieren `TryEnableGazeTrackingAsync` .
 
-    In `TryEnableGazeTrackingAsync`deklarieren wir die Ereignishandler für den Blick und rufen " [gazeinputsourcepreview. getforcurrentview ()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) " auf, um einen Verweis auf die Eingabe Quelle zu erhalten (Dies muss im UI-Thread aufgerufen werden. Weitere Informationen finden Sie unter [Keep the UI Thread Reaktions](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)fähig).
+    In `TryEnableGazeTrackingAsync` deklarieren wir die Ereignishandler für den Blick und rufen " [gazeinputsourcepreview. getforcurrentview ()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) " auf, um einen Verweis auf die Eingabe Quelle zu erhalten (Dies muss im UI-Thread aufgerufen werden. Weitere Informationen finden Sie unter [Keep the UI Thread Reaktions](../../debug-test-perf/keep-the-ui-thread-responsive.md)fähig).
 
     > [!NOTE]
-    > Sie sollten " [gazeinputsourcepreview. getforcurrentview ()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) " nur aufrufen, wenn ein kompatibles Überwachungsgerät verbunden ist und von Ihrer Anwendung benötigt wird. Andernfalls ist das Zustimmungs Dialogfeld unnötig.
+    > Sie sollten " [gazeinputsourcepreview. getforcurrentview ()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) " nur aufrufen, wenn ein kompatibles Überwachungsgerät verbunden ist und von Ihrer Anwendung benötigt wird. Andernfalls ist das Zustimmungs Dialogfeld unnötig.
 
 ```csharp
     /// <summary>
@@ -403,9 +403,9 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerh
 
 5. Als nächstes richten wir unsere Ereignishandler für den Blick ein.
 
-    Wir zeigen die Ellipse der Gaze-Nachverfolgung `GazeEntered` in `GazeExited`bzw. aus.
+    Wir zeigen die Ellipse der Gaze-Nachverfolgung `GazeEntered` in `GazeExited` bzw. aus.
 
-    In `GazeMoved`verschieben wir unsere Ellipse für die Sichtüberwachung basierend auf der vom [CurrentPoint-Wert von "CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) " des " [gazeenteredprevieweventargs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs)" bereitgestellten " [pipeposition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) " Außerdem wird der Timer-Fokus Zeit Geber auf der [radialprogressbar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar)verwaltet, die die Neupositionierung der Statusanzeige auslöst. Weitere Informationen finden Sie im nächsten Schritt.
+    In `GazeMoved` verschieben wir unsere Ellipse für die Sichtüberwachung basierend auf der vom [CurrentPoint-Wert von "CurrentPoint](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) " des " [gazeenteredprevieweventargs](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs)" bereitgestellten " [pipeposition](/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) " Außerdem wird der Timer-Fokus Zeit Geber auf der [radialprogressbar](/windows/communitytoolkit/controls/radialprogressbar)verwaltet, die die Neupositionierung der Statusanzeige auslöst. Weitere Informationen finden Sie im nächsten Schritt.
 
     ```csharp
     /// <summary>
@@ -499,9 +499,9 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerh
     ```
 6. Im folgenden finden Sie die Methoden, die zum Verwalten des Fokus Zeit Gebers für den Blick auf diese APP verwendet werden.
 
-    `DoesElementContainPoint`überprüft, ob sich der Mauszeiger über der Statusleiste befindet. Wenn dies der Fall ist, wird der Timer des zeitakts gestartet, und die Statusanzeige wird bei jedem Tick-Timer erhöht.
+    `DoesElementContainPoint` überprüft, ob sich der Mauszeiger über der Statusleiste befindet. Wenn dies der Fall ist, wird der Timer des zeitakts gestartet, und die Statusanzeige wird bei jedem Tick-Timer erhöht.
 
-    `SetGazeTargetLocation`legt die Anfangsposition der Statusanzeige fest, und wenn die Statusleiste abgeschlossen ist (abhängig vom Timer für den Blickpunkt), wird die Statusanzeige an einen zufälligen Speicherort verschoben.
+    `SetGazeTargetLocation` legt die Anfangsposition der Statusanzeige fest, und wenn die Statusleiste abgeschlossen ist (abhängig vom Timer für den Blickpunkt), wird die Statusanzeige an einen zufälligen Speicherort verschoben.
 
     ```csharp
     /// <summary>
@@ -596,11 +596,11 @@ Eine kleine Ellipse wird verwendet, um anzuzeigen, wo sich der Blickpunkt innerh
     }
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 ### <a name="resources"></a>Ressourcen
 
-- [Windows Community Toolkit-Blick Bibliothek](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows Community Toolkit-Blick Bibliothek](/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>Themenbeispiele
 

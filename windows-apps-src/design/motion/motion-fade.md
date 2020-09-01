@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b937ba4174d01096a09a98f7efd4e7e3dce9632
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2b33cee13e37f55fd69229c6e41311a41806c987
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970305"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172414"
 ---
 # <a name="fade-animations"></a>Ein- und Ausblendungsanimationen
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970305"
 
 Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nicht anzuzeigen. Die beiden üblichen Animationen dieser Art sind das Einblenden und das Ausblenden.
 
-> **Wichtige APIs**: [**faderpoinmeanimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation), [**fadeoutpoinmeanimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+> **Wichtige APIs**: [**faderpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation), [**fadeoutpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -34,16 +34,12 @@ Verwenden Sie Ein- und Ausblendungsanimationen, um Elemente anzuzeigen oder nich
 -   Ausblenden ist eine gute Möglichkeit, um ein Element zu entfernen.
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animieren von Ein- und Ausblendungen](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**FadeInThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
-* [**FadeOutThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+* [Übersicht über Animationen](./xaml-animation.md)
+* [Animieren von Ein- und Ausblendungen](/previous-versions/windows/apps/jj649429(v=win.10))
+* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**FadeInThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
+* [**FadeOutThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
  
 
  
-
-
-
-

@@ -6,21 +6,21 @@ ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf4cfa4b87842cd7113b36220cdfdff69449a3a
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 69e60d8ef919a05493f47f086ee992afe8bfeb4c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846790"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172834"
 ---
 # <a name="web-account-manager"></a>Web Account Manager
 
-In diesem Artikel wird beschrieben, wie Sie mit **[accountsettingspane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** ihre universelle Windows-Plattform-app (UWP) mit externen Identitäts Anbietern wie Microsoft oder Facebook verbinden, indem Sie die Windows 10-Webkonto-Manager-APIs verwenden. Sie erfahren, wie Sie die Berechtigung eines Benutzers anfordern, seinen Microsoft-Konto zu verwenden, ein Zugriffs Token abzurufen und dieses zum Ausführen grundlegender Vorgänge (z. b. Abrufen von Profildaten oder Hochladen von Dateien in das onedrive-Konto) zu verwenden. Die Schritte ähneln denen, die zum Abrufen einer Benutzerberechtigung und für den Zugriff über einen beliebigen Identitätsanbieter ausgeführt werden, der Web Account Manager unterstützt.
+In diesem Artikel wird beschrieben, wie Sie mit **[accountsettingspane](/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** ihre universelle Windows-Plattform-app (UWP) mit externen Identitäts Anbietern wie Microsoft oder Facebook verbinden, indem Sie die Windows 10-Webkonto-Manager-APIs verwenden. Sie erfahren, wie Sie die Berechtigung eines Benutzers anfordern, seinen Microsoft-Konto zu verwenden, ein Zugriffs Token abzurufen und dieses zum Ausführen grundlegender Vorgänge (z. b. Abrufen von Profildaten oder Hochladen von Dateien in das onedrive-Konto) zu verwenden. Die Schritte ähneln denen, die zum Abrufen einer Benutzerberechtigung und für den Zugriff über einen beliebigen Identitätsanbieter ausgeführt werden, der Web Account Manager unterstützt.
 
 > [!NOTE]
 > Ein umfassendes Codebeispiel finden Sie im [webaccountmanagement-Beispiel auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement).
 
-## <a name="get-set-up"></a>Einrichtung
+## <a name="get-set-up"></a>Vorbereiten
 
 Erstellen Sie zunächst eine neue leere App in Visual Studio. 
 
@@ -76,7 +76,7 @@ Wenn Sie Ihre App ausführen und auf die Anmeldeschaltfläche klicken, sollte ei
 Der Bereich ist leer, weil das System nur eine UI-Shell bereitstellt. Der Entwickler kann den Bereich programmgesteuert mit Identitätsanbietern auffüllen. 
 
 > [!TIP]
-> Optional können Sie **[showaddaccountasync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** anstelle von **[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** verwenden, wodurch eine **[iasyncaction-Aktion](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** zurückgegeben wird, um den Status des Vorgangs abzufragen. 
+> Optional können Sie **[showaddaccountasync](/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** anstelle von **[Show](/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** verwenden, wodurch eine **[iasyncaction-Aktion](/uwp/api/Windows.Foundation.IAsyncAction)** zurückgegeben wird, um den Status des Vorgangs abzufragen. 
 
 ## <a name="register-for-accountcommandsrequested"></a>Registrieren für AccountCommandsRequested
 
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 Beachten Sie, dass auch die Zeichenfolge „consumers“ an den optionalen *authority*-Parameter übergeben wird. Dies liegt daran, dass Microsoft zwei verschiedene Authentifizierungsmethoden bereitstellt: Microsoft-Konten (MSA) für „Heimanwender“ und Azure Active Directory (AAD) für „Organisationen“. Die Autorität „consumers“ gibt an, dass die MSA-Option verwendet werden soll. Wenn Sie eine Unternehmens-App entwickeln, verwenden Sie stattdessen die Zeichenfolge „organizations“.
 
-Fügen Sie schließlich den Anbieter der **accountsettingspane** hinzu, indem Sie einen neuen **[webaccountprovidercommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** wie den folgenden erstellen: 
+Fügen Sie schließlich den Anbieter der **accountsettingspane** hinzu, indem Sie einen neuen **[webaccountprovidercommand](/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** wie den folgenden erstellen: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -178,7 +178,7 @@ In diesem Beispiel übergeben wir die Zeichenfolge "wl. Basic" an den _Scope_ -P
 * Informationen zu onedrive-Bereichen finden Sie [unter onedrive-Authentifizierung und-Anmeldung](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
 > [!TIP]
-> Wenn Ihre APP einen Anmelde Hinweis verwendet (zum Auffüllen des Benutzer Felds mit einer Standard-e-Mail-Adresse) oder eine andere spezielle Eigenschaft im Zusammenhang mit dem Anmeldevorgang, können Sie Sie optional in der Eigenschaft **[webtokenrequest. appproperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** auflisten. Dies bewirkt, dass das System die Eigenschaft ignoriert, wenn das Webkonto zwischengespeichert wird, wodurch nicht übereinstimmende Konten im Cache verhindert werden.
+> Wenn Ihre APP einen Anmelde Hinweis verwendet (zum Auffüllen des Benutzer Felds mit einer Standard-e-Mail-Adresse) oder eine andere spezielle Eigenschaft im Zusammenhang mit dem Anmeldevorgang, können Sie Sie optional in der Eigenschaft **[webtokenrequest. appproperties](/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** auflisten. Dies bewirkt, dass das System die Eigenschaft ignoriert, wenn das Webkonto zwischengespeichert wird, wodurch nicht übereinstimmende Konten im Cache verhindert werden.
 
 Wenn Sie eine Unternehmens-App entwickeln, möchten Sie wahrscheinlich eine Verbindung mit einer Azure Active Directory (AAD)-Instanz herstellen und die Microsoft Graph-API anstelle regulärer MSA-Dienste verwenden. Verwenden Sie in diesem Szenario stattdessen folgenden Code: 
 
@@ -214,7 +214,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 > [!NOTE]
 > Wenn Sie beim Anfordern eines Tokens einen Fehler erhalten, stellen Sie sicher, dass Sie die APP mit dem Store verknüpft haben, wie in Schritt 1 beschrieben. Ihre App wird nicht in der Lage sein, ein Token abzurufen, wenn Sie diesen Schritt übersprungen haben. 
 
-Sobald Sie im Besitz des Tokens sind, können Sie darüber die API Ihres Anbieters aufrufen. Im folgenden Code wird die [Microsoft Live-API für Benutzerinformationen](https://docs.microsoft.com/office/) aufgerufen, um grundlegende Informationen über den Benutzer zu erhalten und in der Benutzeroberfläche anzuzeigen. Beachten Sie jedoch, dass es in den meisten Fällen empfehlenswert ist, das Token nach dem Abruf zu speichern und dann in einer separaten Methode zu verwenden.
+Sobald Sie im Besitz des Tokens sind, können Sie darüber die API Ihres Anbieters aufrufen. Im folgenden Code wird die [Microsoft Live-API für Benutzerinformationen](/office/) aufgerufen, um grundlegende Informationen über den Benutzer zu erhalten und in der Benutzeroberfläche anzuzeigen. Beachten Sie jedoch, dass es in den meisten Fällen empfehlenswert ist, das Token nach dem Abruf zu speichern und dann in einer separaten Methode zu verwenden.
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -250,7 +250,7 @@ Die Methode zum Aufrufen verschiedener REST-APIs ist je nach Anbieter verschiede
 
 Token sind hilfreich, um sofort Informationen über einen Benutzer abzurufen, in der Regel haben sie jedoch unterschiedliche Ablaufzeiten. MSA-Token sind beispielsweise nur wenige Stunden gültig. Glücklicherweise müssen Sie die **accountionsettingspane** nicht jedes Mal erneut anzeigen, wenn ein Token abläuft. Nachdem Ihre App einmal von einem Benutzer autorisiert wurde, können Sie die Kontoinformationen des Benutzers für die zukünftige Verwendung speichern. 
 
-Verwenden Sie hierzu die **[WebAccount](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount)** -Klasse. Ein **Webkonto** wird von derselben Methode zurückgegeben, die Sie zum Anfordern des Tokens verwendet haben:
+Verwenden Sie hierzu die **[WebAccount](/uwp/api/windows.security.credentials.webaccount)** -Klasse. Ein **Webkonto** wird von derselben Methode zurückgegeben, die Sie zum Anfordern des Tokens verwendet haben:
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -265,7 +265,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Sobald Sie über eine **WebAccount** -Instanz verfügen, können Sie Sie problemlos speichern. Im folgenden Beispiel verwenden wir LocalSettings. Weitere Informationen zur Verwendung von LocalSettings und anderen Methoden zum Speichern von Benutzerdaten finden Sie unter [Speichern und Abrufen von App-Einstellungen und Daten](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
+Sobald Sie über eine **WebAccount** -Instanz verfügen, können Sie Sie problemlos speichern. Im folgenden Beispiel verwenden wir LocalSettings. Weitere Informationen zur Verwendung von LocalSettings und anderen Methoden zum Speichern von Benutzerdaten finden Sie unter [Speichern und Abrufen von App-Einstellungen und Daten](../design/app-settings/store-and-retrieve-app-data.md).
 
 ```csharp
 private async void StoreWebAccount(WebAccount account)
@@ -338,7 +338,7 @@ Da der Tokenabruf im Hintergrund sehr einfach ist, sollten Sie diese Methode ver
 
 ## <a name="remove-a-stored-account"></a>Entfernen eines gespeicherten Kontos
 
-Wenn Sie ein Webkonto persistent speichern, können Sie Ihren Benutzern die Möglichkeit einräumen, Ihr Konto mit Ihrer APP zu trennen. Auf diese Weise können Sie die APP effektiv "Abmelden": Ihre Kontoinformationen werden beim Start nicht mehr automatisch geladen. Entfernen Sie zu diesem Zweck zunächst alle gespeicherten Konto-und Anbieter Informationen aus dem Speicher. Anschließend können Sie **[signoutasync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** aufrufen, um den Cache zu löschen und alle vorhandenen Token, die Ihre APP möglicherweise besitzt, ungültig zu machen 
+Wenn Sie ein Webkonto persistent speichern, können Sie Ihren Benutzern die Möglichkeit einräumen, Ihr Konto mit Ihrer APP zu trennen. Auf diese Weise können Sie die APP effektiv "Abmelden": Ihre Kontoinformationen werden beim Start nicht mehr automatisch geladen. Entfernen Sie zu diesem Zweck zunächst alle gespeicherten Konto-und Anbieter Informationen aus dem Speicher. Anschließend können Sie **[signoutasync](/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** aufrufen, um den Cache zu löschen und alle vorhandenen Token, die Ihre APP möglicherweise besitzt, ungültig zu machen 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -398,7 +398,7 @@ Halten Sie Headertext kurz und einfach, und vermeiden Sie überflüssige Informa
 
 Sie können dem AccountsSettingsPane benutzerdefinierte Befehle hinzufügen, die als Links unter den unterstützten WebAccountProviders angezeigt werden. Benutzerdefinierte Befehle eignen sich hervorragend für einfache Aufgaben in Verbindung mit Benutzerkonten, z. B. das Anzeigen einer Datenschutzrichtlinie oder das Öffnen einer Supportseite, wenn auf Benutzerseite ein Problem auftritt. 
 
-Hier sehen Sie ein Beispiel: 
+Ein Beispiel: 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -422,11 +422,11 @@ Einstellungsbefehle lassen sich grundsätzlich überall verwenden. Es wird jedoc
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Windows.Security.Authentication.Web.Core-Namespace](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+[Windows.Security.Authentication.Web.Core-Namespace](/uwp/api/windows.security.authentication.web.core)
 
-[Windows.Security.Credentials-Namespace](https://docs.microsoft.com/uwp/api/windows.security.credentials)
+[Windows.Security.Credentials-Namespace](/uwp/api/windows.security.credentials)
 
-[Accountorsettingspane-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
+[Accountorsettingspane-Klasse](/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
 [Webauthentifizierungsbroker](web-authentication-broker.md)
 

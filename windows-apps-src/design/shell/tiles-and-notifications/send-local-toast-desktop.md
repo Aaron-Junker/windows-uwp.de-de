@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'Windows 10, UWP, Win32, Desktop, Popup Benachrichtigungen, Senden eines Popup, Senden eines lokalen Popup, Desktop Bridge, msix, sparsesloadbenachrichtigungen, c#, C-Sharp, Popup Benachrichtigung, WPF, Senden von Popup Benachrichtigungen WPF, Popup Benachrichtigung, e/a, Popup Benachrichtigung C #'
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a339a4f2dca52a9bc04b1bba92f149a3e627878
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 1e78e68cdd44890b50209f3f900c538278bd523c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846750"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172294"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>Senden von Popupbenachrichtigungen von C#-Desktop-Apps
 
-Desktop-Apps (einschließlich gepackter [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie keine msix-oder Sparse-Pakete verwenden.
+Desktop-Apps (einschließlich gepackter [msix](/windows/msix/desktop/source-code-overview) -apps, apps, die [Pakete](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) mit geringer Dichte zum Abrufen der Paket Identität verwenden, und klassische, nicht gepackte Win32-Apps) können interaktive Popup Benachrichtigungen wie Windows-apps senden. Allerdings gibt es einige spezielle Schritte für Desktop-Apps aufgrund der verschiedenen Aktivierungs Schemas und des potenziellen Mangels an Paket Identität, wenn Sie keine msix-oder Sparse-Pakete verwenden.
 
 > [!IMPORTANT]
 > Wenn Sie eine UWP-app schreiben, finden Sie weitere Informationen in der [UWP-Dokumentation](send-local-toast.md). Weitere Desktop Sprachen finden Sie unter [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
@@ -60,7 +60,7 @@ Anschließend müssen Sie sich bei der Benachrichtigungs Plattform registrieren.
 
 #### <a name="msixsparse-packages"></a>[Msix/Pakete mit geringer Dichte](#tab/msix-sparse)
 
-Fügen Sie in der Datei " **Package. appxmanifest**" Folgendes hinzu, wenn Sie ein [msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) -Paket oder ein [Sparse-Paket](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) verwenden (oder beide unterstützen):
+Fügen Sie in der Datei " **Package. appxmanifest**" Folgendes hinzu, wenn Sie ein [msix](/windows/msix/desktop/source-code-overview) -Paket oder ein [Sparse-Paket](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) verwenden (oder beide unterstützen):
 
 1. Deklaration für **xmlns: com**
 2. Deklaration für **xmlns: Desktop**
@@ -338,7 +338,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-8-deploying-and-debugging"></a>Schritt 8: Bereitstellen und Debuggen
 
-Informationen zum Bereitstellen und Debuggen Ihrer msix-App finden Sie unter [ausführen, Debuggen und Testen einer gepackten Desktop-App](/windows/uwp/porting/desktop-to-uwp-debug)
+Informationen zum Bereitstellen und Debuggen Ihrer msix-App finden Sie unter [ausführen, Debuggen und Testen einer gepackten Desktop-App](/windows/msix/desktop/desktop-to-uwp-debug)
 
 Wenn Sie Ihre klassische Win32-App bereitstellen und debuggen möchten, müssen Sie die APP einmal vor dem Debuggen über das Installationsprogramm installieren, damit die Start Verknüpfung mit ihrer aumid und CLSID vorhanden ist. Nachdem die Start Verknüpfung vorhanden ist, können Sie in Visual Studio mit F5 Debuggen.
 
@@ -359,4 +359,3 @@ Wenn Sie sowohl das msix/Sparse-Paket als auch die klassische Win32-App installi
 * [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/desktop-toasts)
 * [Popup Benachrichtigungen aus Desktop-Apps](toast-desktop-apps.md)
 * [Dokumentation zu Popup Inhalten](adaptive-interactive-toasts.md)
-

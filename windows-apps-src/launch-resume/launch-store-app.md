@@ -1,36 +1,36 @@
 ---
 title: Starten der Microsoft Store-App
-description: In diesem Thema wird das URI-Schema „ms-windows-store“ beschrieben. Ihre app kann dieses URI-Schema verwenden, zum Starten der Microsoft Store-app auf bestimmte Seiten in den Store.
+description: In diesem Thema wird das URI-Schema „ms-windows-store“ beschrieben. Ihre APP kann dieses URI-Schema verwenden, um die Microsoft Store-App auf bestimmten Seiten im Speicher zu starten.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1a31c762c002e711a87e99e2f97de6c26e2c8b48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370784"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172984"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Starten der Microsoft Store-App
 
 
 
-In diesem Thema wird beschrieben, die **ms-Windows-Store:** URI-Schema. Ihre app kann dieses URI-Schema verwenden, um die Microsoft Store-app auf bestimmte Seiten im Speicher mithilfe von starten die [ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) Methode.
+In diesem Thema wird das **ms-windows-store:**-URI-Schema beschrieben. Ihre APP kann dieses URI-Schema verwenden, um die Microsoft Store-App auf bestimmten Seiten im Speicher mit der [**launchuriasync**](/uwp/api/windows.system.launcher.launchuriasync) -Methode zu starten.
 
-Dieses Beispiel zeigt, wie Sie den Store auf der Seite "Spiele" öffnen:
+Dieses Beispiel zeigt, wie der Store auf der Seite Games geöffnet wird:
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: URI-Schema-Verweis
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: URI-Schemaverweis
 
 <table>
-<tr><th>Beschreibung</th><th></th><th>URI-Schema</th></tr>
+<tr><th>BESCHREIBUNG</th><th></th><th>URI-Schema</th></tr>
 <tr><td>Startet die Startseite des Store.</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>Startet eine der obersten Ebenen im Store.<p>Hinweis: Nicht alle Benutzer besitzen Zugriff auf alle Branchen.</p>
+<tr><td>Startet eine der obersten Ebenen im Store.<p>Hinweis: Nicht alle Benutzer haben Zugriff auf allen Ebenen.</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -40,8 +40,8 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </td>
 </tr>
 <tr>
-<td rowspan="4">Startet die Seite mit Produktdetails für ein Produkt. <p>Store-ID wird empfohlen, für Kunden mit Windows 10 und funktioniert auf allen Betriebssystemversionen, aber die früheren Möglichkeiten, diese Elemente (z. B.: PFN) werden weiterhin unterstützt.</p>
-<p>Diese Werte finden Sie in <a href="https://partner.microsoft.com/dashboard">Partner Center</a> auf die <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">App-Identität</a> Seite im Abschnitt für die App-Verwaltung für jede app.</p>
+<td rowspan="4">Startet die Seite mit Produktdetails für ein Produkt. <p>Store-ID wird für Kunden mit Windows 10 empfohlen und funktioniert für alle Betriebssystemversionen. Die früheren Verfahren hierfür (Beispiel: PFN) werden jedoch weiterhin unterstützt.</p>
+<p>Diese Werte finden Sie im <a href="https://partner.microsoft.com/dashboard">Partner Center</a> auf der Seite <a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">App-Identität</a> im Abschnitt App-Verwaltung für jede APP.</p>
 </td>
 <td>
 Store-ID <p>(Empfohlen)</p>

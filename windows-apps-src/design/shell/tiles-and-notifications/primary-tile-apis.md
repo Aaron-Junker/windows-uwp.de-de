@@ -1,44 +1,44 @@
 ---
-Description: Sie können die primäre Kachel Ihrer eigenen App programmgesteuert an die Startseite anheften, genauso wie Sie sekundäre Kacheln anheften können. Und Sie können prüfen, ob sie derzeit angeheftet ist.
+Description: Sie können die primäre Kachel ihrer eigenen App Programm gesteuert anheften, so wie Sie sekundäre Kacheln anheften können. Und Sie können überprüfen, ob es zurzeit fixiert ist.
 title: Primäre Kachel-APIs
 label: Primary tile API's
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP, StartScreenManager, primäre Kachel anheften, primäre Kachel-APIs, überprüfen, ob die Kachel angeheftet ist, Live-Kachel
+keywords: Windows 10, UWP, startscreenmanager, primär Kachel anheften, primäre Kachel-APIs, überprüfen, ob Kachel fixiert, Live-Kachel
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 569ef5de9298a0fb9da58e4aaa88689c35b98c72
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596195"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172344"
 ---
-# <a name="primary-tile-apis"></a>Primärkachel-APIs
+# <a name="primary-tile-apis"></a>Primäre Kachel-APIs
  
 
-Mit Primärkachel-APIs können Sie überprüfen, ob die App auf der Startseite angeheftet ist und anfragen, ob Ihre App an die primäre Kachel der App angeheftet werden kann.
+Mit primären Kachel-APIs können Sie überprüfen, ob Ihre APP aktuell an den Start angeheftet ist, und die primäre Kachel Ihrer APP anheften.
 
 > [!IMPORTANT]
-> **Erfordert Creators Update**: Sie müssen SDK 15063 ausgerichtet und Build 15063 oder höher, um die primäre Kachel APIs verwenden ausgeführt werden.
+> **Erfordert Creators Update**: Sie müssen das SDK 15063 als Ziel verwenden und Build 15063 oder höher ausführen, um die primären Kachel-APIs zu verwenden.
 
-> **Wichtige APIs:** [**StartScreenManager Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager), [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_), [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
-
-
-## <a name="when-to-use-primary-tile-apis"></a>Verwendung von Primärkachel-APIs
-
-Sie haben großen Aufwand betrieben, um die primäre Kachel Ihrer App benutzerfreundlich zu gestalten, und jetzt haben Sie die Möglichkeit, den Benutzer aufzufordern, sie an die Startseite anzuheften. Bevor wir uns den Code genauer ansehen, sollten Sie beim Entwurf der Oberfläche aber noch Folgendes bedenken:
-
-* **Wir empfehlen**, eine unterbrechungsfreie und leicht ausblendbare UX in Ihrer App mit dem deutlichen Handlungsaufruf „Live-Kachel anheften“ zu entwerfen.
-* **Wir empfehlen**, die Vorteile der Live-Kachel Ihrer App deutlich zu erläutern, bevor Sie den Benutzer auffordern, sie anzuheften.
-* **Wir raten davon ab**, einen Benutzer zum Anheften der Kachel Ihrer App aufzufordern, wenn die Kachel bereits angeheftet ist oder sie vom Gerät nicht unterstützt wird (weitere Informationen folgen).
-* **Wir raten davon ab**, den Benutzer wiederholt zum Anheften der Kachel Ihrer App aufzufordern (es wird ihm wahrscheinlich lästig).
-* **Wir raten davon ab**, die Anheften-API ohne explizite Benutzerinteraktion aufzurufen, oder wenn die App minimiert/nicht geöffnet ist.
+> **Wichtige APIs**: [**startscreenmanager-Klasse**](/uwp/api/windows.ui.startscreen.startscreenmanager), " [kontainsapplistentryasync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)", " [requestaddapplistentryasync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) "
 
 
-## <a name="checking-whether-the-apis-exist"></a>Überprüfen, ob die APIs vorhanden sind
+## <a name="when-to-use-primary-tile-apis"></a>Verwendungszwecke von primären Kachel-APIs
 
-Wenn Ihre App ältere Versionen von Windows 10 unterstützt, müssen Sie überprüfen, ob diese Primärkachel-APIs verfügbar sind. Verwenden Sie dazu ApiInformation. Wenn die Primärkachel-APIs nicht verfügbar sind, vermeiden Sie, Aufrufe an die APIs durchzuführen.
+Sie haben viel Mühe gemacht, um eine hervorragende benutzerfreundliche Darstellung der primären Kachel Ihrer APP zu entwerfen. nun haben Sie die Möglichkeit, den Benutzer zu bitten, ihn anzuheften. Bevor wir uns jedoch mit dem Code beschäftigen, sind folgende Punkte zu beachten, wenn Sie Ihre Erfahrungen entwerfen:
+
+* Erstellen **Sie** eine nicht unterbrechungsfreie und leicht zu löschende Benutzeroberfläche in Ihrer APP mit dem Befehl "Live-Kachel anheften".
+* Erläutern Sie den Wert der Live-Kachel Ihrer **App eindeutig,** bevor Sie den Benutzer bitten, ihn anzuheften.
+* Bitten Sie einen Benutzer **nicht** , die Kachel Ihrer APP anzuheften, wenn die Kachel bereits angeheftet ist oder das Gerät Sie nicht unterstützt (Weitere Informationen finden Sie folgen).
+* Bitten Sie den Benutzer **nicht** wiederholt, die Kachel Ihrer APP anzuheften (Sie werden wahrscheinlich benachrichtigt).
+* Nennen Sie die PIN-API **nicht** ohne explizite Benutzerinteraktion oder wenn Ihre APP minimiert/nicht geöffnet ist.
+
+
+## <a name="checking-whether-the-apis-exist"></a>Es wird überprüft, ob die API vorhanden ist.
+
+Wenn Ihre APP ältere Versionen von Windows 10 unterstützt, müssen Sie überprüfen, ob diese primären Kachel-APIs verfügbar sind. Hierzu verwenden Sie apiinformation. Wenn die primären Kachel-APIs nicht verfügbar sind, sollten Sie keine Aufrufe der APIs ausführen.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.StartScreen.StartScreenManager"))
@@ -52,9 +52,9 @@ else
 ```
 
 
-## <a name="check-if-start-supports-your-app"></a>Überprüfen, ob Start die App unterstützt
+## <a name="check-if-start-supports-your-app"></a>Überprüfen, ob Start ihre App unterstützt
 
-Abhängig vom aktuellen Startmenü und dem Typ Ihrer App wird das Anheften Ihrer App an die aktuelle Startseite möglicherweise nicht unterstützt. Nur Desktop und Mobile unterstützen das Anheften der primären Kachel an die Startseite. Bevor Sie eine Anheften-UI anzeigen oder Anheften-Code ausführen, müssen Sie daher zunächst prüfen, ob Ihre App für die aktuelle Startseite überhaupt unterstützt wird. Wenn sie nicht unterstützt wird, fordern Sie den Benutzer nicht zum Anheften der Kachel auf.
+Abhängig vom aktuellen Startmenü und ihrer Art von App wird das Fixieren der APP an den aktuellen Startbildschirm möglicherweise nicht unterstützt. Nur Desktop-und Mobilgeräte Unterstützung zum Starten der primären Kachel. Daher müssen Sie vor dem Anzeigen der PIN-Benutzeroberfläche oder der Ausführung eines PIN-Codes zunächst überprüfen, ob Ihre APP sogar für den aktuellen Start Bildschirm unterstützt wird. Wenn dies nicht unterstützt wird, fordern Sie den Benutzer nicht auf, die Kachel anzuheften.
 
 ```csharp
 // Get your own app list entry
@@ -66,9 +66,9 @@ bool isSupported = StartScreenManager.GetDefault().SupportsAppListEntry(entry);
 ```
 
 
-## <a name="check-whether-youre-currently-pinned"></a>Überprüfen, ob die primäre Kachel derzeit angeheftet ist
+## <a name="check-whether-youre-currently-pinned"></a>Überprüfen Sie, ob Sie zurzeit fixiert sind
 
-Um festzustellen, ob die primäre Kachel derzeit an die Startseite angeheftet ist, verwenden Sie die Methode [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_).
+Wenn Sie feststellen möchten, ob Ihre primäre Kachel aktuell anheftet ist, verwenden [Sie die Methode](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) "" von "".
 
 ```csharp
 // Get your own app list entry
@@ -79,16 +79,16 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 ```
 
 
-##  <a name="pin-your-primary-tile"></a>Anheften Ihrer primären Kachel
+##  <a name="pin-your-primary-tile"></a>Anheften der primären Kachel
 
-Wenn die primäre Kachel aktuell nicht angeheftet ist und die Kachel von der Startseite unterstützt wird, sollten Sie Benutzern den Tipp anzeigen, dass die primäre Kachel angeheftet werden kann.
+Wenn Ihre primäre Kachel derzeit nicht fixiert ist und ihre Kachel vom Start unterstützt wird, können Sie Benutzern einen Tipp anzeigen, dass Sie Ihre primäre Kachel anheften können.
 
 > [!NOTE]
-> Sie müssen diese API über eine UI-Thread aufrufen, während Ihre app im Vordergrund, und Sie diese API nur aufrufen sollten, nachdem der Benutzer absichtlich angefordert hat die primäre Kachel angeheftet werden (z. B. nach dem der Benutzer auf Ja, Ihre Tipp zum Anheften der Kachel geklickt haben).
+> Sie müssen diese API von einem UI-Thread aus anrufen, während sich Ihre APP im Vordergrund befindet, und Sie sollten diese API nur dann anrufen, wenn der Benutzer absichtlich angefordert hat, dass die primäre Kachel angeheftet wurde (z. b. Nachdem der Benutzer auf Ja geklickt hat, um den Tipp zum Fixieren der Kachel zu erhalten).
 
-Klickt der Benutzer auf Ihre Schaltfläche, um die primäre Kachel anzuheften, würden Sie dann die Methode [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) aufrufen, um anzufordern, dass die Kachel an die Startseite angeheftet wird. Dadurch wird ein Dialogfeld angezeigt, das den Benutzer auffordert zu bestätigen, dass Ihre Kachel an die Startseite angeheftet werden soll.
+Wenn der Benutzer auf die Schaltfläche klickt, um die primäre Kachel anzuheften, können Sie die [requestaddapplistentryasync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) -Methode aufrufen, um anzufordern, dass Ihre Kachel an den Start angeheftet werden soll. Dadurch wird ein Dialogfeld angezeigt, in dem der Benutzer gefragt wird, ob die Kachel gestartet werden soll.
 
-Dadurch wird ein boolescher Wert zurückgegeben, der angibt, ob die Kachel jetzt an die Startseite angeheftet ist. Wenn die Kachel bereits angeheftet war, wird sofort „true“ zurückgegeben, ohne dass dem Benutzer das Dialogfeld angezeigt wird. Wenn der Benutzer im Dialogfeld auf „Nein“ klickt oder das Anheften Ihrer Kachel an die Startseite nicht unterstützt wird, wird „false“ zurückgegeben. Andernfalls hat der Benutzer auf „Ja“ geklickt und die Kachel wurde angeheftet, und die API gibt „true“ zurück.
+Dadurch wird ein boolescher Wert zurückgegeben, der angibt, ob die Kachel jetzt zum Starten angeheftet ist. Wenn die Kachel bereits angeheftet wurde, wird sofort true zurückgegeben, ohne dem Benutzer den Dialog anzuzeigen. Wenn der Benutzer im Dialogfeld auf Nein klickt oder die Kachel an Start nicht unterstützt wird, wird false zurückgegeben. Andernfalls hat der Benutzer auf Ja geklickt, und die Kachel wurde fixiert, und die API gibt true zurück.
 
 ```csharp
 // Get your own app list entry
@@ -101,7 +101,7 @@ bool isPinned = await StartScreenManager.GetDefault().RequestAddAppListEntryAsyn
 
 ## <a name="resources"></a>Ressourcen
 
-* [Vollständige Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
-* ["An Taskleiste anheften"](../pin-to-taskbar.md)
+* [Vollständiges Codebeispiel auf GitHub](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
+* [An Taskleiste anheften](../pin-to-taskbar.md)
 * [Kacheln, Signale und Benachrichtigungen](index.md)
-* [Kachel "Adaptive"-Dokumentation](create-adaptive-tiles.md)
+* [Dokumentation zu adaptiver Kachel](create-adaptive-tiles.md)

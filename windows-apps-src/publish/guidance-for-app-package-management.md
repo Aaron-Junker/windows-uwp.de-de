@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4615503c41df6cef891ab8e77024d9951c489b38
-ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
+ms.openlocfilehash: 5ecd8cc96196c31615eac032183956de3bee9e4b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84945947"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171054"
 ---
 # <a name="guidance-for-app-package-management"></a>Leitfaden für die App-Paketverwaltung
 
@@ -52,7 +52,7 @@ Nachdem Sie die APP nicht verfügbar gemacht haben, wird Sie weiterhin im Partne
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Entfernen von Paketen für eine zuvor unterstützte Gerätefamilie
 
-Wenn Sie alle Pakete für eine bestimmte [Gerätefamilie](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) entfernen, die zuvor von ihrer App unterstützt wurde, werden Sie aufgefordert, zu bestätigen, dass dies beabsichtigt ist, bevor Sie die Änderungen auf der Seite " **Pakete** " speichern können.
+Wenn Sie alle Pakete für eine bestimmte [Gerätefamilie](/uwp/extension-sdks/device-families-overview) entfernen, die zuvor von ihrer App unterstützt wurde, werden Sie aufgefordert, zu bestätigen, dass dies beabsichtigt ist, bevor Sie die Änderungen auf der Seite " **Pakete** " speichern können.
 
 Wenn Sie eine Übermittlung veröffentlichen, mit der alle Pakete entfernt werden, die auf einer Gerätefamilie ausgeführt werden können, die von Ihrer APP zuvor unterstützt wurde, können neue Kunden die APP nicht mehr auf dieser Gerätefamilie erwerben. Sie können jederzeit ein weiteres Update veröffentlichen, um erneut Pakete für diese Gerätefamilie anzubieten.
 

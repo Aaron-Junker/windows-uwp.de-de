@@ -6,12 +6,12 @@ ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 32c3460b1af226adfa969d02a695f1d6436390be
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: cfd507be6ca09818ec07d12a83c2a272514b08f6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970545"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172394"
 ---
 # <a name="pointer-click-animations"></a>Animationen für Zeigerklicks
 
@@ -20,7 +20,7 @@ ms.locfileid: "82970545"
 Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wenn diese auf ein Element tippen. Bei der Animation für „Zeiger nach unten“ wird das gedrückte Element leicht verkleinert und geneigt. Sie wird wiedergegeben, wenn erstmalig auf ein Element getippt wird. Die Animation für „Zeiger nach oben“, mit der der ursprüngliche Zustand des Elements wiederhergestellt wird, wird beim Loslassen des Zeigers wiedergegeben.
 
 
-> **Wichtige APIs**: [**pointeruppoinmeanimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**pointerdownpoinmeanimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
+> **Wichtige APIs**: [**pointeruppoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation), [**pointerdownpoinmeanimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -29,16 +29,12 @@ Verwenden Sie Zeigeranimationen, um Benutzern visuelles Feedback zu liefern, wen
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animieren von Zeigerklicks](https://docs.microsoft.com/previous-versions/windows/apps/jj649432(v=win.10))
-* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**PointerUpThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation)
-* [**PointerDownThemeAnimation-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
+* [Übersicht über Animationen](./xaml-animation.md)
+* [Animieren von Zeigerklicks](/previous-versions/windows/apps/jj649432(v=win.10))
+* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**PointerUpThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation)
+* [**PointerDownThemeAnimation-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation)
 
  
 
  
-
-
-
-

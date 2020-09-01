@@ -8,24 +8,24 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 026dd160ade3fa89af48e4f3ab8efaa85a80f490
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: c68b8aeb71ed4269b3a7fc52c6b616a8b0760b0b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997757"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173324"
 ---
 # <a name="set-speech-recognition-timeouts"></a>Festlegen von Timeouts für die Spracherkennung
 
 
 Legen Sie fest, wie lange eine Spracherkennung Stille oder nicht erkennbare Geräusche (Störgeräusche) ignoriert und weiterhin auf Spracheingabe wartet.
 
-> **Wichtige APIs**: [**Timeouts**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts), [**reden erkentungen**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
+> **Wichtige APIs**: [**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts), [**reden erkentungen**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
 
 ## <a name="set-a-timeout"></a>Festlegen eines Timeouts
 
 
-Hier geben wir verschiedene [**Timeouts**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts)-Werte an:
+Hier geben wir verschiedene [**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts)-Werte an:
 
 -   InitialSilenceTimeout – Die Zeitspanne, für die ein Spracherkennungsmodul Stille erkennt (vor Generierung etwaiger Erkennungsergebnisse) und davon ausgeht, dass keine Spracheingabe erfolgen wird.
 -   BabbleTimeout – Die Zeitspanne, für die ein Spracherkennungsmodul weiterhin auf erkennbare Geräusche (Störgeräusche) wartet, bevor davon ausgegangen wird, dass die Spracheingabe beendet ist, und der Erkennungsvorgangs beendet wird.
@@ -44,7 +44,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Spracherkennungsinteraktionen](speech-interactions.md)
+* [Sprachinteraktionen](speech-interactions.md)
 
 **Beispiele**
 

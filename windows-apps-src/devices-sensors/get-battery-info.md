@@ -4,33 +4,33 @@ title: Abrufen von Akkuinformationen
 description: Erfahren Sie, wie Sie mithilfe von APIs im Windows.Devices.Power-Namespace ausführliche Akkuinformationen erhalten
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ea9be48da57e260cdb3d5d1c9a9a0b564c1f4386
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 383cb37e044e7e13080526d8e8270e7fc36560ff
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370047"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172234"
 ---
 # <a name="get-battery-information"></a>Abrufen von Akkuinformationen
 
 
 ** Wichtige APIs **
 
--   [**Windows.Devices.Power**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power)
--   [**DeviceInformation.FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
+-   [**Windows.Devices.Power**](/uwp/api/Windows.Devices.Power)
+-   [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)
 
-Erfahren Sie, wie Sie mithilfe von APIs im [**Windows.Devices.Power**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power)-Namespace ausführliche Akkuinformationen erhalten In einem *Akkubericht* ([**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)) werden der Ladezustand, die Kapazität und der Status eines Akkus oder Akkuaggregats beschrieben. In diesem Thema wird veranschaulicht, wie Ihre App Akkuberichte abrufen und über Veränderungen informiert werden kann. Die Codebeispiele stammen aus der einfachen Akku-App, die am Ende dieses Themas angegeben wird.
+Erfahren Sie, wie Sie ausführliche Akku Informationen mithilfe von APIs im [**Windows. Devices. Power**](/uwp/api/Windows.Devices.Power) -Namespace erhalten. In einem *Akkubericht* ([**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport)) werden der Ladezustand, die Kapazität und der Status eines Akkus oder Akkuaggregats beschrieben. In diesem Thema wird veranschaulicht, wie Ihre App Akkuberichte abrufen und über Veränderungen informiert werden kann. Die Codebeispiele stammen aus der einfachen Akku-App, die am Ende dieses Themas angegeben wird.
 
 ## <a name="get-aggregate-battery-report"></a>Abrufen eines zusammengefassten Akkuberichts
 
 
-Einige Geräte verfügen über mehr als einen Akku, und es ist nicht immer eindeutig, in welcher Form die einzelnen Akkus zur gesamten Energiekapazität des Geräts beitragen. An dieser Stelle wird die [**AggregateBattery**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.aggregatebattery)-Klasse verwendet. *AggregateBattery* repräsentiert alle Akkucontroller, die mit dem Gerät verbunden sind. Damit kann ein zusammengefasstes [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)-Objekt bereitgestellt werden.
+Einige Geräte verfügen über mehr als einen Akku, und es ist nicht immer eindeutig, in welcher Form die einzelnen Akkus zur gesamten Energiekapazität des Geräts beitragen. An dieser Stelle wird die [**AggregateBattery**](/uwp/api/windows.devices.power.battery.aggregatebattery)-Klasse verwendet. *AggregateBattery* repräsentiert alle Akkucontroller, die mit dem Gerät verbunden sind. Damit kann ein zusammengefasstes [**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport)-Objekt bereitgestellt werden.
 
-**Beachten Sie**  ein [ **Akku** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery) Klasse entspricht tatsächlich einen Akku-Controller. Je nach Gerät kann der Controller auch am physischen Akku angeschlossen sein, und es kommt auch vor, dass er am Gehäuse des Geräts angeschlossen ist. So kann auch dann ein Akkuobjekt erstellt werden, wenn keine Akkus vorhanden sind. In anderen Fällen kann für das Akkuobjekt **null** gelten.
+**Hinweis**    Eine [**Akku**](/uwp/api/Windows.Devices.Power.Battery) Klasse entspricht tatsächlich einem Akku Controller. Je nach Gerät kann der Controller auch am physischen Akku angeschlossen sein, und es kommt auch vor, dass er am Gehäuse des Geräts angeschlossen ist. So kann auch dann ein Akkuobjekt erstellt werden, wenn keine Akkus vorhanden sind. In anderen Fällen kann für das Akkuobjekt **null** gelten.
 
-Wenn Sie über ein zusammengefasstes Akkuobjekt verfügen, rufen Sie [**GetReport**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getreport) auf, um den entsprechenden [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) abzurufen.
+Wenn Sie über ein zusammengefasstes Akkuobjekt verfügen, rufen Sie [**GetReport**](/uwp/api/windows.devices.power.battery.getreport) auf, um den entsprechenden [**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport) abzurufen.
 
 ```csharp
 private void RequestAggregateBatteryReport()
@@ -48,7 +48,7 @@ private void RequestAggregateBatteryReport()
 
 ## <a name="get-individual-battery-reports"></a>Abrufen von individuellen Akkuberichten
 
-Sie können auch ein [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)-Objekt für individuelle Akkus erstellen. Verwenden Sie [**GetDeviceSelector**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getdeviceselector) mit der [**FindAllAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)-Methode zum Abrufen einer Sammlung mit [**DeviceInformation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekten, die alle mit dem Gerät verbundenen Akkucontroller repräsentieren. Erstellen Sie anschließend mit der **Id**-Eigenschaft des gewünschten **DeviceInformation**-Objekts ein entsprechendes [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery)-Element mit der Methode [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.fromidasync). Rufen Sie zuletzt [**GetReport**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.getreport) auf, um den individuellen Akkubericht abzurufen.
+Sie können auch ein [**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport)-Objekt für individuelle Akkus erstellen. Verwenden Sie [**GetDeviceSelector**](/uwp/api/windows.devices.power.battery.getdeviceselector) mit der [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)-Methode zum Abrufen einer Sammlung mit [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)-Objekten, die alle mit dem Gerät verbundenen Akkucontroller repräsentieren. Erstellen Sie anschließend mit der **Id**-Eigenschaft des gewünschten **DeviceInformation**-Objekts ein entsprechendes [**Battery**](/uwp/api/Windows.Devices.Power.Battery)-Element mit der Methode [**FromIdAsync**](/uwp/api/windows.devices.power.battery.fromidasync). Rufen Sie zuletzt [**GetReport**](/uwp/api/windows.devices.power.battery.getreport) auf, um den individuellen Akkubericht abzurufen.
 
 Dieses Beispiel zeigt, wie Sie einen Akkubericht für alle Akkus erstellen, die mit dem Gerät verbunden sind.
 
@@ -77,7 +77,7 @@ async private void RequestIndividualBatteryReports()
 
 ## <a name="access-report-details"></a>Zugreifen auf Berichtdetails
 
-Das [**BatteryReport**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport)-Objekt liefert zahlreiche Akkuinformationen. Weitere Informationen finden Sie in der API-Referenz für die zugehörigen Eigenschaften: **Status** (eine [ **BatteryStatus** ](https://docs.microsoft.com/previous-versions/windows/dn818458(v=win.10)) Enumeration), [ **ChargeRateInMilliwatts**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.chargerateinmilliwatts), [ **DesignCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.designcapacityinmilliwatthours), [ **FullChargeCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours), und [  **RemainingCapacityInMilliwattHours**](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours). Dieses Beispiel enthält einige Eigenschaften des Akkuberichts, die von der einfachen Akku-App verwendet werden. Die App wird weiter unten in diesem Thema bereitgestellt.
+Das [**BatteryReport**](/uwp/api/Windows.Devices.Power.BatteryReport)-Objekt liefert zahlreiche Akkuinformationen. Weitere Informationen finden Sie in der API-Referenz für die Eigenschaften: **Status** (eine [**BatteryStatus**](/previous-versions/windows/dn818458(v=win.10))-Enumerierung), [**ChargeRateInMilliwatts**](/uwp/api/windows.devices.power.batteryreport.chargerateinmilliwatts), [**DesignCapacityInMilliwattHours**](/uwp/api/windows.devices.power.batteryreport.designcapacityinmilliwatthours), [**FullChargeCapacityInMilliwattHours**](/uwp/api/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours) und [**RemainingCapacityInMilliwattHours**](/uwp/api/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours). Dieses Beispiel enthält einige Eigenschaften des Akkuberichts, die von der einfachen Akku-App verwendet werden. Die App wird weiter unten in diesem Thema bereitgestellt.
 
 ```csharp
 ...
@@ -91,7 +91,7 @@ TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + re
 
 ## <a name="request-report-updates"></a>Anfordern von Berichtsaktualisierungen
 
-Das [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery)-Objekt löst das [**ReportUpdated**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.reportupdated)-Ereignis aus, wenn sich Ladezustand, Kapazität oder Status des Akkus ändern. Dies geschieht für Statusänderungen in der Regel sofort, und für alle anderen Änderungen in regelmäßigen Abständen. Dieses Beispiel zeigt, wie Sie die Registrierung für Aktualisierungen des Akkuberichts durchführen.
+Das [**Battery**](/uwp/api/Windows.Devices.Power.Battery)-Objekt löst das [**ReportUpdated**](/uwp/api/windows.devices.power.battery.reportupdated)-Ereignis aus, wenn sich Ladezustand, Kapazität oder Status des Akkus ändern. Dies geschieht für Statusänderungen in der Regel sofort, und für alle anderen Änderungen in regelmäßigen Abständen. Dieses Beispiel zeigt, wie Sie die Registrierung für Aktualisierungen des Akkuberichts durchführen.
 
 ```csharp
 ...
@@ -101,7 +101,7 @@ Battery.AggregateBattery.ReportUpdated += AggregateBattery_ReportUpdated;
 
 ## <a name="handle-report-updates"></a>Behandeln von Berichtsaktualisierungen
 
-Bei einer Aktualisierung des Akkuberichts übergibt das [**ReportUpdated**](https://docs.microsoft.com/uwp/api/windows.devices.power.battery.reportupdated)-Ereignis das entsprechende [**Battery**](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.Battery)-Objekt an die Ereignishandlermethode. Dieser Ereignishandler wird jedoch nicht über den UI-Thread aufgerufen. Sie müssen das [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt verwenden, um UI-Änderungen aufzurufen. Dies wird im folgenden Beispiel gezeigt.
+Bei einer Aktualisierung des Akkuberichts übergibt das [**ReportUpdated**](/uwp/api/windows.devices.power.battery.reportupdated)-Ereignis das entsprechende [**Battery**](/uwp/api/Windows.Devices.Power.Battery)-Objekt an die Ereignishandlermethode. Dieser Ereignishandler wird jedoch nicht über den UI-Thread aufgerufen. Sie müssen das [**Dispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt verwenden, um UI-Änderungen aufzurufen. Dies wird im folgenden Beispiel gezeigt.
 
 ```csharp
 async private void AggregateBattery_ReportUpdated(Battery sender, object args)
@@ -336,7 +336,6 @@ Wenn Ihre App nicht den Namen **App1** hat, müssen Sie den Namespace im vorheri
 
 Führen Sie schließlich Folgendes aus, um diese einfache Akku-App auszuführen: Klicken Sie im Menü **Debuggen** auf **Debuggen starten**, um die Projektmappe zu testen.
 
-**Tipp**  zum Empfangen von numerischer Werten aus der [ **BatteryReport** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Power.BatteryReport) Objekt, das Debuggen Ihrer app auf die **lokalen Computer** oder einer externen **Gerät** (z. B. eine Windows Phone). Beim Debuggen mit einem Geräteemulator gibt das **BatteryReport**-Objekt für die Kapazitäts- und Rateneigenschaften **null** zurück.
+**Tipp**    Um numerische Werte aus dem Objekt " [**batteryreport**](/uwp/api/Windows.Devices.Power.BatteryReport) " zu erhalten, Debuggen Sie die APP auf dem **lokalen Computer** oder einem externen **Gerät** (z. b. einem Windows Phone). Beim Debuggen mit einem Geräteemulator gibt das **BatteryReport**-Objekt für die Kapazitäts- und Rateneigenschaften **null** zurück.
 
  
-

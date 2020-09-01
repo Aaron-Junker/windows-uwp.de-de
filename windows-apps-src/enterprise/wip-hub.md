@@ -6,15 +6,15 @@ Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP)
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Windows Information Protection, Unternehmensdaten, Schutz von Unternehmensdaten, edp, optimierte Apps
+keywords: Windows 10, UWP, Windows Information Protection, Unternehmensdaten, Unternehmens Datenschutz, EDP, aktivierte apps
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e3839ac2c15c1f976a9135b121ffea26174d41
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 69bab48836d7679d8bcec5f9132bca88d7607cdb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259619"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173244"
 ---
 # <a name="windows-information-protection-wip"></a>Windows Information Protection (WIP)
 
@@ -31,7 +31,7 @@ WIP kann mit MDM dem Unternehmen mehr Kontrolle darüber geben, wie Daten des Un
 
 Mit MDM oder MAM können Administratoren angeben, welche Apps auf Dateien zugreifen dürfen, die dem Unternehmen gehören, und ob Benutzer Daten aus diesen Dateien kopieren und dann in persönliche Dokumente einsetzen können.
 
-So funktioniert’s. Benutzer registrieren ihre Geräte im System für Verwaltung mobiler Geräte (Mobile Device Management, MDM). Ein Administrator im Verwaltungsunternehmen verwendet Microsoft Intune oder System Center Configuration Manager (SCCM) zur Definition einer Richtlinie und anschließender Bereitstellung auf den registrierten Geräten.
+Dies funktioniert folgendermaßen: Benutzer registrieren ihre Geräte im System für Verwaltung mobiler Geräte (Mobile Device Management, MDM). Ein Administrator im Verwaltungsunternehmen verwendet Microsoft Intune oder System Center Configuration Manager (SCCM) zur Definition einer Richtlinie und anschließender Bereitstellung auf den registrierten Geräten.
 
 Wenn Benutzer ihre Geräte nicht registrieren müssen, verwenden Administratoren ihr MAM-System, um eine Richtlinie zu definieren und bereitzustellen, die für spezifische Apps gilt. Wenn Benutzer diese Apps installieren, erhalten sie die zugehörige Richtlinie.
 
@@ -43,7 +43,7 @@ Wenn Benutzer die Registrierung ihres Geräts im MDM-System der Organisation auf
 
 > **Weitere Informationen zu WIP** <br>
 * [Einführung in Windows Information Protection](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [Schützen von Unternehmensdaten mithilfe von Windows Information Protection (WIP)](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+* [Schützen von Unternehmensdaten mit Windows Information Protection (WIP)](/windows/whats-new/edp-whats-new-overview)
 
 Wenn Ihre App auf der Liste der zugelassenen Apps steht, unterliegen alle von der App erstellten Daten den Einschränkungen der Richtlinien. Das bedeutet: Wenn Administratoren den Zugriff des Benutzers auf Unternehmensdaten widerrufen, geht dem Benutzer der Zugriff auf alle Daten verloren, die Ihre App erstellt hat.
 
@@ -61,13 +61,13 @@ Beispiel: Wenn die Richtlinie Benutzern erlaubt, Unternehmensdaten in einem priv
 
 Wenn Sie bereit sind, die App zu optimieren, sehen Sie sich eines dieser Handbücher an:
 
-**Für universelle Windows-Plattform-Apps (UWP), die Sie mithilfe von erstellen.C#**
+**Für universelle Windows-Plattform-Apps (UWP), die Sie mithilfe von C erstellen #**
 
-[Entwicklerhandbuch für Windows Information Protection (WIP)](wip-dev-guide.md)
+[WIP-Entwicklerhandbuch (Windows Information Protection)](wip-dev-guide.md).
 
-**Für Desktop-Apps, die Sie mithilfe von erstellen.C++**
+**Für Desktop-Apps, die Sie mit C++ erstellen**
 
-[Entwicklerhandbuch für Windows Information Protection (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN)
+[Entwicklerhandbuch zu Windows Information Protection (WIP) (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide).
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>Erstellen einer nicht für Unternehmen optimierten App

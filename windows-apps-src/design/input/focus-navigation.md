@@ -1,5 +1,5 @@
 ---
-title: Fokus Navigation ohne Maus
+title: Fokusnavigation ohne Maus
 Description: Erfahren Sie, wie Sie mithilfe der Fokus Navigation umfassende und konsistente Interaktionen in Ihren Windows-apps und benutzerdefinierte Steuerelemente für Benutzer von Tastatur Anwendern, Benutzer mit Behinderungen und andere Barrierefreiheits Anforderungen sowie die 10-Fuß-Erfahrung von Fernsehbildschirmen und der Xbox One bereitstellen.
 label: ''
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad76db55ffb2f6073e565201ec42bebb418289ed
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 4ad0e986de3f3084cd33f217df7715c955cb6b57
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970135"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172574"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>Fokus Navigation für Tools der Tastatur, Gamepad, Remote Steuerung und Barrierefreiheit
 
@@ -58,26 +58,26 @@ Das e-Book zur Entwicklung von [Software für Barrierefreiheit](https://www.micr
 
 Der 2D-innere Navigationsbereich eines Steuer Elements oder einer Steuerelement Gruppe wird als "direktionaler Bereich" bezeichnet. Wenn sich der Fokus auf dieses Objekt verschiebt, können die Tastatur Pfeiltasten (Links, rechts, oben und nach unten) verwendet werden, um zwischen untergeordneten Elementen innerhalb des direktionalen Bereichs zu navigieren.
 
-![](images/keyboard/directional-area-small.png)
-direktionaler*2D-Navigationsbereich oder direktionaler Bereich einer Steuerelement Gruppe*
+![direktionaler ](images/keyboard/directional-area-small.png)
+ *2D-Navigationsbereich oder direktionaler Bereich einer Steuerelement Gruppe*
 
-Zum Verwalten der 2D-inneren Navigation mit den Tastatur Pfeiltasten können Sie die [xyfocekeyboardnavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) -Eigenschaft verwenden (die die möglichen Werte " [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)", " [aktiviert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)" oder " [deaktiviert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)" aufweist).
+Zum Verwalten der 2D-inneren Navigation mit den Tastatur Pfeiltasten können Sie die [xyfocekeyboardnavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) -Eigenschaft verwenden (die die möglichen Werte " [Auto](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)", " [aktiviert](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)" oder " [deaktiviert](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)" aufweist).
 
 > [!NOTE]
-> Die Aktivier Reihenfolge ist von dieser Eigenschaft nicht betroffen. Um eine verwirrende Navigation zu vermeiden, wird empfohlen, dass untergeordnete Elemente eines direktionalen Bereichs *nicht* explizit in der Navigations Reihenfolge der Registerkarten der Anwendung angegeben werden. Weitere Informationen zum Tabstopps-Verhalten für ein Element finden Sie unter den Eigenschaften [UIElement. tabfocronavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) und [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) .
+> Die Aktivier Reihenfolge ist von dieser Eigenschaft nicht betroffen. Um eine verwirrende Navigation zu vermeiden, wird empfohlen, dass untergeordnete Elemente eines direktionalen Bereichs *nicht* explizit in der Navigations Reihenfolge der Registerkarten der Anwendung angegeben werden. Weitere Informationen zum Tabstopps-Verhalten für ein Element finden Sie unter den Eigenschaften [UIElement. tabfocronavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) und [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) .
 
-### <a name="auto-default-behavior"></a>[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (Standardverhalten)
+### <a name="auto-default-behavior"></a>[Auto](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (Standardverhalten)
 
 Wenn die Einstellung auf "Auto" festgelegt ist, wird das direktionale Navigationsverhalten durch die Herkunft oder Vererbungs Hierarchie des Elements bestimmt Wenn alle Vorgänger im Standardmodus sind (festgelegt auf **Auto**), wird die direktionale Navigation mit der Tastatur *nicht* unterstützt.
 
-### <a name="disabled"></a>[Deaktiviert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="disabled"></a>[Disabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
 Legen Sie **xyfocquellkeyboardnavigation** auf **deaktiviert** fest, um die direktionale Navigation zum Steuerelement und dessen untergeordneten Elementen zu blockieren.
 
-![Das deaktivierte](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-*Verhalten von* xyfocrokeyboardnavigation ist nicht verfügbar.
+![Das deaktivierte ](images/keyboard/xyfocuskeyboardnav-disabled.gif)
+ *XYFocusKeyboardNavigation disabled behavior* Verhalten von xyfocrokeyboardnavigation ist nicht verfügbar.
 
-In diesem Beispiel ist für das primäre [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containerprimary) der Wert für " **xyfocus KeyboardNavigation** " auf " **aktiviert**" festgelegt. Alle untergeordneten Elemente erben diese Einstellung und können mit den Pfeiltasten dorthin navigiert werden. Die Elemente "B3" und "B4" befinden sich jedoch in einem sekundären [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containersecondary), wobei " **xyfocekeyboardnavigation** " auf " **deaktiviert**" festgelegt ist, wodurch der primäre Container überschrieben wird und die Pfeiltasten Navigation in sich selbst und zwischen den untergeordneten Elementen
+In diesem Beispiel ist für das primäre [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containerprimary) der Wert für " **xyfocus KeyboardNavigation** " auf " **aktiviert**" festgelegt. Alle untergeordneten Elemente erben diese Einstellung und können mit den Pfeiltasten dorthin navigiert werden. Die Elemente "B3" und "B4" befinden sich jedoch in einem sekundären [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containersecondary), wobei " **xyfocekeyboardnavigation** " auf " **deaktiviert**" festgelegt ist, wodurch der primäre Container überschrieben wird und die Pfeiltasten Navigation in sich selbst und zwischen den untergeordneten Elementen
 
 ```XAML
 <Grid 
@@ -125,16 +125,16 @@ In diesem Beispiel ist für das primäre [StackPanel](https://docs.microsoft.com
 </Grid>
 ```
 
-### <a name="enabled"></a>[Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="enabled"></a>[Aktiviert](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
-Legen Sie für **xyfocquellkeyboardnavigation** den Wert **aktiviert** fest, um die 2D-direktionale Navigation zu einem Steuerelement und den einzelnen untergeordneten [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) -Objekten
+Legen Sie für **xyfocquellkeyboardnavigation** den Wert **aktiviert** fest, um die 2D-direktionale Navigation zu einem Steuerelement und den einzelnen untergeordneten [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) -Objekten
 
 Wenn festgelegt, ist die Navigation mit den Pfeiltasten auf Elemente innerhalb des direktionalen Bereichs beschränkt. Die Registerkarten Navigation ist nicht betroffen, da alle Steuerelemente über die Hierarchie der Aktivier Reihenfolge zugänglich sind
 
-![Xyfocrokeyboardnavigation-fähiges](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-Verhalten (*xyfocrokeyboardnavigation* )
+![Xyfocrokeyboardnavigation-fähiges Verhalten ( ](images/keyboard/xyfocuskeyboardnav-enabled.gif)
+ *xyfocrokeyboardnavigation* )
 
-In diesem Beispiel ist für das primäre [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containerprimary) der Wert für " **xyfocus KeyboardNavigation** " auf " **aktiviert**" festgelegt. Alle untergeordneten Elemente erben diese Einstellung und können mit den Pfeiltasten dorthin navigiert werden. Die Elemente "B3" und "B4" befinden sich in einem sekundären [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containersecondary), in dem " **xyfocus KeyboardNavigation** " nicht festgelegt ist, was dann die primäre Container Einstellung erbt. Das Element "B5" befindet sich nicht in einem deklarierten direktionalen Bereich und unterstützt keine Pfeiltasten Navigation, unterstützt jedoch das Standardverhalten der Registerkarten Navigation.
+In diesem Beispiel ist für das primäre [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containerprimary) der Wert für " **xyfocus KeyboardNavigation** " auf " **aktiviert**" festgelegt. Alle untergeordneten Elemente erben diese Einstellung und können mit den Pfeiltasten dorthin navigiert werden. Die Elemente "B3" und "B4" befinden sich in einem sekundären [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (containersecondary), in dem " **xyfocus KeyboardNavigation** " nicht festgelegt ist, was dann die primäre Container Einstellung erbt. Das Element "B5" befindet sich nicht in einem deklarierten direktionalen Bereich und unterstützt keine Pfeiltasten Navigation, unterstützt jedoch das Standardverhalten der Registerkarten Navigation.
 
 ```xaml
 <Grid
@@ -194,8 +194,8 @@ Sie können über mehrere Ebenen von ngerichteten direktionalen Bereichen verfü
 
 Im folgenden finden Sie ein Beispiel für zwei geschachtelte direktionale Bereiche innerhalb eines Elements, das nicht explizit 2D-direktionale Navigation unterstützt. In diesem Fall wird die direktionale Navigation zwischen den beiden unterstützten Bereichen nicht unterstützt.
 
-!["Xyfocingkeyboardnavigation" aktiviert und das](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-netsted-Verhalten "*xyfocrokeyboardnavigation" aktiviert*
+!["Xyfocingkeyboardnavigation" aktiviert und das netsted-Verhalten " ](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
+ *xyfocrokeyboardnavigation" aktiviert*
 
 Im folgenden finden Sie ein komplexeres Beispiel für drei eingefügte Richtungs Bereiche, in denen:
 
@@ -211,7 +211,7 @@ Im folgenden finden Sie ein komplexeres Beispiel für drei eingefügte Richtungs
 
 Während die Pfeiltasten für die 2D-direktionale Navigations-witin eines Steuer Elements oder einer Steuerelement Gruppe verwendet werden können, kann die Tab-Taste verwendet werden, um zwischen allen Steuerelementen in einer Windows-Anwendung zu navigieren. 
 
-Alle interaktiven Steuerelemente unterstützen standardmäßig die Navigation über Tab-Taste ([isaktivierte](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) und [istabstopp](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) -Eigenschaft sind **true**), wobei die logische Aktivier Reihenfolge aus dem Steuerelement Layout in der Anwendung abgeleitet ist Die Standardreihenfolge ist jedoch nicht notwendigerweise mit der visuellen Reihenfolge identisch. Die tatsächliche Anzeigeposition kann vom übergeordneten Layoutcontainer und bestimmten Eigenschaften abhängen, die Sie für die untergeordneten Elemente festlegen können, um das Layout zu beeinflussen.
+Alle interaktiven Steuerelemente unterstützen standardmäßig die Navigation über Tab-Taste ([isaktivierte](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) und [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) -Eigenschaft sind **true**), wobei die logische Aktivier Reihenfolge aus dem Steuerelement Layout in der Anwendung abgeleitet ist Die Standardreihenfolge ist jedoch nicht notwendigerweise mit der visuellen Reihenfolge identisch. Die tatsächliche Anzeigeposition kann vom übergeordneten Layoutcontainer und bestimmten Eigenschaften abhängen, die Sie für die untergeordneten Elemente festlegen können, um das Layout zu beeinflussen.
 
 Vermeiden Sie eine benutzerdefinierte Aktivier Reihenfolge, mit der der Fokus in der Anwendung angezeigt wird. Eine Liste der Steuerelemente in einem Formular sollte z. b. eine Aktivier Reihenfolge aufweisen, die von oben nach unten und von links nach rechts (abhängig vom Gebiets Schema) verläuft.
 
@@ -219,15 +219,15 @@ In diesem Abschnitt wird beschrieben, wie diese Aktivier Reihenfolge vollständi
 
 ### <a name="set-the-tab-navigation-behavior"></a>Festlegen des Navigations Verhaltens der Registerkarte
 
-Die [tabfocronavigation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation) -Eigenschaft von [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) gibt das Navigationsverhalten der Registerkarte für die gesamte Objektstruktur (oder den direktionalen Bereich) an.
+Die [tabfocronavigation](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation) -Eigenschaft von [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) gibt das Navigationsverhalten der Registerkarte für die gesamte Objektstruktur (oder den direktionalen Bereich) an.
 
 > [!NOTE]
-> Verwenden Sie diese Eigenschaft anstelle der [Control. TabNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) -Eigenschaft für Objekte, die keine [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate) verwenden, um ihre Darstellung zu definieren.
+> Verwenden Sie diese Eigenschaft anstelle der [Control. TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) -Eigenschaft für Objekte, die keine [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) verwenden, um ihre Darstellung zu definieren.
 
-Wie bereits im vorherigen Abschnitt erwähnt, wird empfohlen, dass untergeordnete Elemente eines direktionalen Bereichs *nicht* explizit in der Navigations Reihenfolge der Registerkarten der Anwendung angegeben werden, um eine verwirrende Navigation zu vermeiden. Weitere Informationen zum Tabstopps-Verhalten für ein Element finden Sie in den Eigenschaften [UIElement. tabfocronavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) und [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) .   
-> Für ältere Versionen als Windows 10 Creators Update (Build 10.0.15063) waren die Registerkarten Einstellungen auf [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate) -Objekte beschränkt. Weitere Informationen finden Sie unter [Control. TabNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation).
+Wie bereits im vorherigen Abschnitt erwähnt, wird empfohlen, dass untergeordnete Elemente eines direktionalen Bereichs *nicht* explizit in der Navigations Reihenfolge der Registerkarten der Anwendung angegeben werden, um eine verwirrende Navigation zu vermeiden. Weitere Informationen zum Tabstopps-Verhalten für ein Element finden Sie in den Eigenschaften [UIElement. tabfocronavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) und [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) .   
+> Für ältere Versionen als Windows 10 Creators Update (Build 10.0.15063) waren die Registerkarten Einstellungen auf [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) -Objekte beschränkt. Weitere Informationen finden Sie unter [Control. TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation).
 
-[Tabfocenavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) hat einen Wert vom Typ [KeyboardNavigationMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) mit den folgenden möglichen Werten (Beachten Sie, dass es sich bei diesen Beispielen nicht um benutzerdefinierte Steuerelement Gruppen handelt und keine innere Navigation mit den Pfeiltasten erforderlich ist):
+[Tabfocenavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) hat einen Wert vom Typ [KeyboardNavigationMode](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) mit den folgenden möglichen Werten (Beachten Sie, dass es sich bei diesen Beispielen nicht um benutzerdefinierte Steuerelement Gruppen handelt und keine innere Navigation mit den Pfeiltasten erforderlich ist):
 
 - **Local** (Standard)   
   Registerkarten Indizes werden in der lokalen Unterstruktur innerhalb des Containers erkannt. In diesem Beispiel ist die Aktivier Reihenfolge B1, B2, B3, B4, B5, B6, B7, B1.
@@ -318,23 +318,23 @@ Hier ist der Code für die vorangehenden Beispiele (mit tabfocus Navigation = "C
 </Grid>
 ```
 
-### <a name="tabindex"></a>[TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
+### <a name="tabindex"></a>[TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
 
-Verwenden Sie [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) , um die Reihenfolge anzugeben, in der Elemente den Fokus erhalten, wenn der Benutzer mithilfe der Tab-Taste durch Steuerelemente navigiert. Ein Steuerelement mit einem niedrigeren Registerkarten Index erhält den Fokus vor einem Steuerelement mit einem höheren Index.
+Verwenden Sie [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) , um die Reihenfolge anzugeben, in der Elemente den Fokus erhalten, wenn der Benutzer mithilfe der Tab-Taste durch Steuerelemente navigiert. Ein Steuerelement mit einem niedrigeren Registerkarten Index erhält den Fokus vor einem Steuerelement mit einem höheren Index.
 
-Wenn für ein Steuerelement kein [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) angegeben ist, wird ihm ein höherer Indexwert zugewiesen als der aktuelle höchste Indexwert (und die niedrigste Priorität) aller interaktiven Steuerelemente in der visuellen Struktur, basierend auf dem Gültigkeitsbereich. 
+Wenn für ein Steuerelement kein [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) angegeben ist, wird ihm ein höherer Indexwert zugewiesen als der aktuelle höchste Indexwert (und die niedrigste Priorität) aller interaktiven Steuerelemente in der visuellen Struktur, basierend auf dem Gültigkeitsbereich. 
 
 Alle untergeordneten Elemente eines-Steuer Elements werden als Gültigkeitsbereich betrachtet, und wenn eines dieser Elemente auch untergeordnete Elemente aufweist, werden Sie als ein anderer Bereich betrachtet. Alle Mehrdeutigkeiten werden behoben, indem das erste Element in der visuellen Struktur des Bereichs ausgewählt wird. 
 
-Um ein Steuerelement aus der Aktivier Reihenfolge auszuschließen, legen Sie die Eigenschaft [istabstopp](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) auf **false**fest.
+Um ein Steuerelement aus der Aktivier Reihenfolge auszuschließen, legen Sie die Eigenschaft [istabstopp](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) auf **false**fest.
 
-Überschreiben Sie die Standard Aktivier Reihenfolge durch Festlegen der [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) -Eigenschaft.
+Überschreiben Sie die Standard Aktivier Reihenfolge durch Festlegen der [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) -Eigenschaft.
 
 > [!NOTE] 
-> [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) funktioniert auf dieselbe Weise mit [UIElement. tabfocennavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) und [Control. TabNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation).
+> [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) funktioniert auf dieselbe Weise mit [UIElement. tabfocennavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) und [Control. TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation).
 
 
-Hier zeigen wir, wie die [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) -Eigenschaft für bestimmte Elemente die Fokus Navigation beeinflussen kann. 
+Hier zeigen wir, wie die [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) -Eigenschaft für bestimmte Elemente die Fokus Navigation beeinflussen kann. 
 
 ![Lokale Registerkarten Navigation mit TabIndex-Verhalten](images/keyboard/tabnav-tabindex.gif)
 
@@ -438,7 +438,7 @@ Mithilfe der folgenden Eigenschaften der Navigations Strategie können Sie beein
 -   Xyfocleleftnavigationstrategy
 -   Xyfocus rightnavigationstrategy
 
-Diese Eigenschaften haben die möglichen Werte [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy) (Standard), [navigationdirectiondistance](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy), [Projection](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)oder [rectilineardistance ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy).
+Diese Eigenschaften haben die möglichen Werte [Auto](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy) (Standard), [navigationdirectiondistance](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy), [Projection](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)oder [rectilineardistance ](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy).
 
 Wenn der Wert auf " **Auto**" festgelegt ist, basiert das Verhalten des-Elements auf den übergeordneten Elementen des-Elements. Wenn alle-Elemente auf **Auto**festgelegt sind, wird die **Projektion** verwendet.
 
@@ -483,8 +483,5 @@ Diese Abbildung zeigt, wie die Richtung "B3", wenn "B1" den Fokus hat und die an
 
 ## <a name="related-articles"></a>Verwandte Artikel
 - [Programmgesteuerte Fokusnavigation](focus-navigation-programmatic.md)
-- [Tastatur Interaktionen](keyboard-interactions.md)
-- [Barrierefreiheit der Tastaturnavigation](../accessibility/keyboard-accessibility.md) 
-
-
-
+- [Tastaturinteraktionen](keyboard-interactions.md)
+- [Tastatureingabe](../accessibility/keyboard-accessibility.md)

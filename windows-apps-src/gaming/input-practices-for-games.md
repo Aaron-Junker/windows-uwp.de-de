@@ -6,12 +6,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, Games, Input
 ms.localizationpriority: medium
-ms.openlocfilehash: eb543e86221f8f1a37565c2e6e6bf1fe4a8d3635
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: d8ea74f7053cfdd0aeb6ef3dbe032afdb089f420
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054490"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173114"
 ---
 # <a name="input-practices-for-games"></a>Eingabemethoden für Spiele
 
@@ -25,23 +25,23 @@ In diesem Thema lernen Sie Folgendes:
 
 ## <a name="choosing-an-input-device-class"></a>Auswählen einer Eingabegeräte Klasse
 
-Ihnen stehen viele verschiedene Arten von Eingabe-APIs zur Verfügung, z. b. " [arcadebug](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)", " [Flightstick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick)" und " [Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad)". Wie entscheiden Sie, welche API für Ihr Spiel verwendet werden soll?
+Ihnen stehen viele verschiedene Arten von Eingabe-APIs zur Verfügung, z. b. " [arcadebug](/uwp/api/windows.gaming.input.arcadestick)", " [Flightstick](/uwp/api/windows.gaming.input.flightstick)" und " [Gamepad](/uwp/api/windows.gaming.input.gamepad)". Wie entscheiden Sie, welche API für Ihr Spiel verwendet werden soll?
 
 Sie sollten auswählen, welche API Ihnen die am besten geeignete Eingabe für das Spiel liefert. Wenn Sie z. b. ein 2D-Plattformspiel erstellen, können Sie wahrscheinlich einfach die **Gamepad** -Klasse verwenden und sich nicht mit der zusätzlichen Funktionalität von anderen Klassen beschäftigen. Dies würde das Spiel nur auf die Unterstützung von Gamepads beschränken und eine konsistente Schnittstelle bereitstellen, die über viele verschiedene Gamepads ohne zusätzlichen Code hinweg funktioniert.
 
-Andererseits können Sie für komplexe Flug-und Rennsimulationen alle [rawgamecontroller](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) -Objekte als Baseline auflisten, um sicherzustellen, dass Sie alle Nischen Geräte unterstützen, die von begeisterten Playern genutzt werden können, einschließlich Geräten wie separaten Pedalen oder Drosselungen, die noch von einem einzelnen Player verwendet werden. 
+Andererseits können Sie für komplexe Flug-und Rennsimulationen alle [rawgamecontroller](/uwp/api/windows.gaming.input.rawgamecontroller) -Objekte als Baseline auflisten, um sicherzustellen, dass Sie alle Nischen Geräte unterstützen, die von begeisterten Playern genutzt werden können, einschließlich Geräten wie separaten Pedalen oder Drosselungen, die noch von einem einzelnen Player verwendet werden. 
 
-Von dort aus können Sie die **fromgamecontroller** -Methode einer Eingabe Klasse, wie z [. b. Gamepad. fromgamecontroller](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.fromgamecontroller), verwenden, um festzustellen, ob jedes Gerät über eine allgemeinere Ansicht verfügt. Wenn das Gerät z. b. auch ein **Gamepad**ist, können Sie die Benutzeroberfläche der Schaltflächen Zuordnung anpassen, um dies widerzuspiegeln, und einige sinnvolle Standard Schaltflächen Zuordnungen bereitstellen, aus denen Sie auswählen können. (Im Gegensatz dazu muss der Spieler die Gamepad-Eingaben manuell konfigurieren, wenn Sie nur **rawgamecontroller**verwenden.) 
+Von dort aus können Sie die **fromgamecontroller** -Methode einer Eingabe Klasse, wie z [. b. Gamepad. fromgamecontroller](/uwp/api/windows.gaming.input.gamepad.fromgamecontroller), verwenden, um festzustellen, ob jedes Gerät über eine allgemeinere Ansicht verfügt. Wenn das Gerät z. b. auch ein **Gamepad**ist, können Sie die Benutzeroberfläche der Schaltflächen Zuordnung anpassen, um dies widerzuspiegeln, und einige sinnvolle Standard Schaltflächen Zuordnungen bereitstellen, aus denen Sie auswählen können. (Im Gegensatz dazu muss der Spieler die Gamepad-Eingaben manuell konfigurieren, wenn Sie nur **rawgamecontroller**verwenden.) 
 
-Alternativ können Sie sich die Hersteller-ID (vid) und die Produkt-ID (PID) eines **rawgamecontroller** (mit [hardwarevendorid](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId) bzw. [hardwareproductid](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId)) ansehen und vorgeschlagene Schaltflächen Zuordnungen für beliebte Geräte bereitstellen, während Sie weiterhin mit unbekannten Geräten kompatibel sind, die in der Zukunft über manuelle Zuordnungen durch den Player auftreten.
+Alternativ können Sie sich die Hersteller-ID (vid) und die Produkt-ID (PID) eines **rawgamecontroller** (mit [hardwarevendorid](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId) bzw. [hardwareproductid](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId)) ansehen und vorgeschlagene Schaltflächen Zuordnungen für beliebte Geräte bereitstellen, während Sie weiterhin mit unbekannten Geräten kompatibel sind, die in der Zukunft über manuelle Zuordnungen durch den Player auftreten.
 
 ## <a name="keeping-track-of-connected-controllers"></a>Verfolgen verbundener Controller
 
-Obwohl jeder Controllertyp eine Liste verbundener Controller (z [. b. Gamepad. Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.Gamepads)) enthält, empfiehlt es sich, eine eigene Liste von Controllern beizubehalten. Weitere Informationen finden Sie in [der Gamepads-Liste](gamepad-and-vibration.md#the-gamepads-list) (jeder Controllertyp weist einen entsprechend benannten Abschnitt zu einem eigenen Thema auf).
+Obwohl jeder Controllertyp eine Liste verbundener Controller (z [. b. Gamepad. Gamepads](/uwp/api/windows.gaming.input.gamepad.Gamepads)) enthält, empfiehlt es sich, eine eigene Liste von Controllern beizubehalten. Weitere Informationen finden Sie in [der Gamepads-Liste](gamepad-and-vibration.md#the-gamepads-list) (jeder Controllertyp weist einen entsprechend benannten Abschnitt zu einem eigenen Thema auf).
 
 Was geschieht jedoch, wenn der Player den Controller entschließt oder einen neuen einfügt? Sie müssen diese Ereignisse behandeln und die Liste entsprechend aktualisieren. Weitere Informationen finden Sie unter [Hinzufügen und Entfernen von Gamepads](gamepad-and-vibration.md#adding-and-removing-gamepads) (auch hier hat jeder Controllertyp einen ähnlich benannten Abschnitt zu einem eigenen Thema).
 
-Da die hinzugefügten und entfernten Ereignisse asynchron ausgelöst werden, erhalten Sie möglicherweise falsche Ergebnisse beim Umgang mit der Liste der Controller. Daher sollten Sie immer dann, wenn Sie auf die Controller Liste zugreifen, eine Sperre dafür durchführen, dass jeweils nur ein Thread darauf zugreifen kann. Dies kann mit dem [Concurrency Runtime](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime), insbesondere der CRITICAL_SECTION- [Klasse](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class), in ** &lt; ppl. h &gt; **erfolgen.
+Da die hinzugefügten und entfernten Ereignisse asynchron ausgelöst werden, erhalten Sie möglicherweise falsche Ergebnisse beim Umgang mit der Liste der Controller. Daher sollten Sie immer dann, wenn Sie auf die Controller Liste zugreifen, eine Sperre dafür durchführen, dass jeweils nur ein Thread darauf zugreifen kann. Dies kann mit dem [Concurrency Runtime](/cpp/parallel/concrt/concurrency-runtime), insbesondere der CRITICAL_SECTION- [Klasse](/cpp/parallel/concrt/reference/critical-section-class), in ** &lt; ppl. h &gt; **erfolgen.
 
 Ein weiterer Aspekt ist, dass die Liste der verbundenen Controller anfänglich leer ist und ein zweites oder zwei zum Auffüllen benötigt. Wenn Sie also nur das aktuelle Gamepad in der Start-Methode zuweisen, ist es **null**!
 
@@ -166,11 +166,11 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 ## <a name="tracking-users-and-their-devices"></a>Nachverfolgen von Benutzern und ihren Geräten
 
-Alle Eingabegeräte sind einem [Benutzer](https://docs.microsoft.com/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Benutzer können sich bei der Ausführung anmelden oder abmelden, und es ist üblich, dass sich ein anderer Benutzer auf einem Eingabegerät anmeldet, das mit dem System verbunden bleibt, nachdem sich der vorherige Benutzer abgemeldet hat. Wenn ein Benutzer sich anmeldet, wird das Ereignis [igamecontroller. userchanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) ausgelöst. Sie können einen Ereignishandler für dieses Ereignis registrieren, um Spieler und die von ihnen verwendeten Geräte nachzuverfolgen.
+Alle Eingabegeräte sind einem [Benutzer](/uwp/api/windows.system.user) zugeordnet, damit seine Identität mit seinem Spiel, seinen Erfolgen, geänderten Einstellungen und anderen Aktivitäten verknüpft werden kann. Benutzer können sich bei der Ausführung anmelden oder abmelden, und es ist üblich, dass sich ein anderer Benutzer auf einem Eingabegerät anmeldet, das mit dem System verbunden bleibt, nachdem sich der vorherige Benutzer abgemeldet hat. Wenn ein Benutzer sich anmeldet, wird das Ereignis [igamecontroller. userchanged](/uwp/api/windows.gaming.input.igamecontroller.UserChanged) ausgelöst. Sie können einen Ereignishandler für dieses Ereignis registrieren, um Spieler und die von ihnen verwendeten Geräte nachzuverfolgen.
 
 Die Benutzeridentität ist auch die Art und Weise, in der ein Eingabegerät dem entsprechenden [UI-Navigations Controller](ui-navigation-controller.md)zugeordnet ist.
 
-Aus diesen Gründen sollte die Eingabe von Player nachverfolgt und mit der [User](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.User) -Eigenschaft der Device-Klasse (geerbt von der [igamecontroller](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller) -Schnittstelle) korreliert werden.
+Aus diesen Gründen sollte die Eingabe von Player nachverfolgt und mit der [User](/uwp/api/windows.gaming.input.igamecontroller.User) -Eigenschaft der Device-Klasse (geerbt von der [igamecontroller](/uwp/api/windows.gaming.input.igamecontroller) -Schnittstelle) korreliert werden.
 
 Das [usergamepadplpyinguwp](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/) -Beispiel veranschaulicht, wie Sie die Benutzer und die von Ihnen verwendeten Geräte nachverfolgen können.
 
@@ -230,7 +230,7 @@ Diese beiden Funktionen leiten zuerst den booleschen Zustand der Schaltflächen 
 
 ## <a name="detecting-complex-button-arrangements"></a>Erkennen komplexer Tastenanordnungen
 
-Jede Schaltfläche eines Eingabe Geräts bietet ein digitales Lesematerial, das angibt, ob es gedrückt oder freigegeben wird (nach oben). Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Lesen bestimmter Tastenwerte wird eine bitweise Maskierung verwendet, um die für Sie relevanten Werte zu isolieren. Eine Schaltfläche wird gedrückt (unten), wenn das entsprechende Bit festgelegt ist. Andernfalls wird Sie freigegeben (up).
+Jede Schaltfläche eines Eingabe Geräts bietet ein digitales Lesematerial, das angibt, ob es gedrückt oder freigegeben wird (nach oben). Aus Effizienzgründen werden die Ablesewerte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in Bitfeldern zusammengefasst, die durch gerätespezifische Enumerationen wie [GamepadButtons](/uwp/api/windows.gaming.input.gamepadbuttons) dargestellt werden. Zum Lesen bestimmter Tastenwerte wird eine bitweise Maskierung verwendet, um die für Sie relevanten Werte zu isolieren. Eine Schaltfläche wird gedrückt (unten), wenn das entsprechende Bit festgelegt ist. Andernfalls wird Sie freigegeben (up).
 
 Erinnern Sie sich, wie einzelne Schaltflächen als gedrückt oder freigegeben festgelegt werden. Gamepads werden hier angezeigt, aber die Prinzipien sind für den Faden Strich, das Rennrad und die anderen Eingabegeräte Typen identisch.
 
@@ -297,13 +297,13 @@ Die Formel kann zum Testen einer beliebigen Anzahl von Tasten in einer beliebige
 
 ## <a name="get-the-state-of-the-battery"></a>Den Zustand des Akkus erhalten
 
-Für alle Spiele Controller, die die [igamecontrollerbatteryinfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) -Schnittstelle implementieren, können Sie [trygetbatteryreport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) für die Controller Instanz aufrufen, um ein [batteryreport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) -Objekt zu erhalten, das Informationen über den Akku im Controller bereitstellt. Sie können Eigenschaften wie die Geschwindigkeit, mit der der Akku belastet wird ([chargerateinmilliwatt](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), die geschätzte Energiekapazität eines neuen Akkus ([designcapacityinmilliwatthours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) und die vollständig berechnete Energiekapazität des aktuellen Akkus ([fullchargecapacityinmilliwatthours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)) erhalten.
+Für alle Spiele Controller, die die [igamecontrollerbatteryinfo](/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) -Schnittstelle implementieren, können Sie [trygetbatteryreport](/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) für die Controller Instanz aufrufen, um ein [batteryreport](/uwp/api/windows.devices.power.batteryreport) -Objekt zu erhalten, das Informationen über den Akku im Controller bereitstellt. Sie können Eigenschaften wie die Geschwindigkeit, mit der der Akku belastet wird ([chargerateinmilliwatt](/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts)), die geschätzte Energiekapazität eines neuen Akkus ([designcapacityinmilliwatthours](/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) und die vollständig berechnete Energiekapazität des aktuellen Akkus ([fullchargecapacityinmilliwatthours](/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)) erhalten.
 
 Für Game Controller, die eine ausführliche Akku Berichterstattung unterstützen, können Sie diese und weitere Informationen zum Akku erhalten, wie in " [Get Akku Information](../devices-sensors/get-battery-info.md)" beschrieben. Allerdings unterstützen die meisten Spiele Controller diese Ebene der Akku Berichterstattung nicht, sondern verwenden stattdessen kostengünstige Hardware. Für diese Controller müssen Sie die folgenden Aspekte berücksichtigen:
 
 * **Chargerateinmilliwatt** und **designcapacityinmilliwatthours** sind immer **null**.
 
-* Sie können den Akku Prozentsatz durch Berechnen von [restingcapacityinmilliwatthours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours)  /  **fullchargecapacityinmilliwatthours**erhalten. Die Werte dieser Eigenschaften sollten ignoriert werden, und es sollte nur der berechnete Prozentsatz behandelt werden.
+* Sie können den Akku Prozentsatz durch Berechnen von [restingcapacityinmilliwatthours](/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours)  /  **fullchargecapacityinmilliwatthours**erhalten. Die Werte dieser Eigenschaften sollten ignoriert werden, und es sollte nur der berechnete Prozentsatz behandelt werden.
 
 * Der Prozentsatz aus dem vorherigen Aufzählungs Punkt ist immer eine der folgenden:
 
@@ -316,7 +316,7 @@ Wenn Ihr Code Aktionen (z. b. das Zeichnen der Benutzeroberfläche) durchführt,
 
 ## <a name="see-also"></a>Weitere Informationen
 
-* [Windows.System. Benutzerklasse](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Windows. Gaming. Input. igamecontroller-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows. Gaming. Input. gamepadbuttons-Aufzählung](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows.System. Benutzerklasse](/uwp/api/windows.system.user)
+* [Windows. Gaming. Input. igamecontroller-Schnittstelle](/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows. Gaming. Input. gamepadbuttons-Aufzählung](/uwp/api/windows.gaming.input.gamepadbuttons)
 * [Usergamepadpiriinguwp-Beispiel](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)

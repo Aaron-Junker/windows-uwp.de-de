@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, Desktop Bridge, sekundäre Kacheln, PIN, Pinning, Schnellstart, Codebeispiel, Beispiel, secondarytile, Desktop Anwendung, Win32, WinForms, WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ddcd96eadbb6d2edbc3a72fa58ff3cc8931a09b
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 111d66e69ddb9cff56f36a26bd8094429fe808ef
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730365"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172374"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>Heften Sie sekundäre Kacheln aus der Desktop Anwendung
 
@@ -29,12 +29,12 @@ Das Hinzufügen einer sekundären Kachel aus Ihrer WPF-oder WinForms-Anwendung �
 
 ## <a name="package-your-app-with-desktop-bridge"></a>Verpacken Ihrer APP mit Desktop Bridge
 
-Wenn Sie Ihre APP nicht mit der Desktop Bridge gepackt haben, [müssen Sie dies zunächst tun](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) , bevor Sie eine Windows-Runtime-APIs verwenden können.
+Wenn Sie Ihre APP nicht mit der Desktop Bridge gepackt haben, [müssen Sie dies zunächst tun](/windows/msix/desktop/source-code-overview) , bevor Sie eine Windows-Runtime-APIs verwenden können.
 
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>Aktivieren des Zugriffs auf die iinitializewithwindow-Schnittstelle
 
-Wenn Ihre Anwendung in einer verwalteten Sprache wie z. b. c# oder Visual Basic geschrieben ist, deklarieren Sie die iinitializewithwindow-Schnittstelle mit dem [ComImport](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.comimportattribute) -und GUID-Attribut im Code der APP, wie im folgenden c#-Beispiel gezeigt. In diesem Beispiel wird davon ausgegangen, dass Ihre Codedatei über eine using-Anweisung für den System.Runtime.InteropServices-Namespace verfügt.
+Wenn Ihre Anwendung in einer verwalteten Sprache wie z. b. c# oder Visual Basic geschrieben ist, deklarieren Sie die iinitializewithwindow-Schnittstelle mit dem [ComImport](/dotnet/api/system.runtime.interopservices.comimportattribute) -und GUID-Attribut im Code der APP, wie im folgenden c#-Beispiel gezeigt. In diesem Beispiel wird davon ausgegangen, dass Ihre Codedatei über eine using-Anweisung für den System.Runtime.InteropServices-Namespace verfügt.
 
 ```csharp
 [ComImport]
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>Fenster Handle zuweisen
 
-Dies ist der wichtigste Schritt für Desktop Anwendungen. Wandeln Sie das Objekt in ein [iinitializewithwindow](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) -Objekt um. Aufrufen Sie dann die [iinitializewithwindow. Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) -Methode, und übergeben Sie das Handle des Fensters, das Sie als Besitzer für das modale Dialogfeld festlegen möchten. Im folgenden c#-Beispiel wird gezeigt, wie das Handle des Hauptfensters Ihrer APP an die-Methode übergeben wird.
+Dies ist der wichtigste Schritt für Desktop Anwendungen. Wandeln Sie das Objekt in ein [iinitializewithwindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) -Objekt um. Nennen Sie dann die [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) -Methode, und übergeben Sie das Handle des Fensters, das als Besitzer des modalen Dialog Felds fungieren soll. Im folgenden c#-Beispiel wird gezeigt, wie das Handle des Hauptfensters Ihrer APP an die-Methode übergeben wird.
 
 ```csharp
 // Assign the window handle
@@ -100,5 +100,5 @@ Das Senden von Kachel-oder Badge-Benachrichtigungen ist identisch mit UWP-apps. 
 * [Vollständiges Codebeispiel](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Übersicht über sekundäre Kacheln](secondary-tiles.md)
 * [Anheften von sekundären Kacheln (UWP)](secondary-tiles-pinning.md)
-* [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)
+* [Desktop-Brücke](https://developer.microsoft.com/windows/bridges/desktop)
 * [Desktop Bridge-Codebeispiele](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

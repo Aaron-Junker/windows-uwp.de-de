@@ -1,6 +1,6 @@
 ---
 Description: In diesem Thema wird die neue Windows-Benutzeroberfläche für die Rotation beschrieben und Richtlinien zur Benutzeroberfläche erläutert, die bei der Verwendung dieses neuen Interaktions Mechanismus in Ihrer Windows-App berücksichtigt werden sollten.
-title: Rotation
+title: Drehung
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 08d0eb18d59c9a5c19826eb7b6e8d4b65179b6fd
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 98ba886ffd74f03b4b502e1f7351c75c76646147
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970105"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172474"
 ---
-# <a name="rotation"></a>Rotation
+# <a name="rotation"></a>Drehung
 
 
 Dieser Artikel beschreibt die neue Windows-Benutzeroberfläche für die Rotation und bietet Richtlinien für die Benutzeroberfläche, die bei der Verwendung dieses neuen Interaktions Mechanismus in Ihrer Windows-App berücksichtigt werden sollten.
 
-> **Wichtige APIs**: [**Windows. UI. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **Wichtige APIs**: [**Windows. UI. Input**](/uwp/api/Windows.UI.Input), [**Windows. UI. XAML. Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="dos-and-donts"></a>Empfehlungen für die Vorgehensweise
 
@@ -44,7 +44,7 @@ Verwenden Sie Drehung, damit Benutzer leichter UI-Elemente direkt drehen können
 
 ![Diagramm zur Veranschaulichung verschiedener Fingerhaltungen, die für Drehungen unterstützt werden](images/ux-rotate-positions.png)
 
-**Beachten Sie**    intuitiv, und in den meisten Fällen ist der Drehpunkt einer der beiden Berührungspunkte, es sei denn, der Benutzer kann einen Drehpunkt angeben, der nicht mit den Kontaktpunkten verknüpft ist (z. b. in einer Zeichnungs-oder layoutanwendung). In den folgenden Abbildungen wird gezeigt, wie die Benutzeroberfläche beeinträchtigt werden kann, wenn der Drehungspunkt nicht auf diese Weise eingeschränkt ist.
+**Hinweis**    Intuitiv, und in den meisten Fällen ist der Drehpunkt einer der beiden Berührungspunkte, es sei denn, der Benutzer kann einen Drehpunkt angeben, der nicht mit den Kontaktpunkten verknüpft ist (z. b. in einer Zeichnungs-oder layoutanwendung). In den folgenden Abbildungen wird gezeigt, wie die Benutzeroberfläche beeinträchtigt werden kann, wenn der Drehungspunkt nicht auf diese Weise eingeschränkt ist.
 
 In der ersten Abbildung sehen Sie den ersten (Daumen) und den zweiten Berührungspunkt (Zeigefinger): Der Zeigefinger berührt einen Baum, und der Daumen berührt einen Holzblock.
 
@@ -88,7 +88,7 @@ Windows 10 unterstützt drei Arten der Drehung: kostenlos, eingeschränkt und ko
 <td align="left">Kombinierte Drehung</td>
 <td align="left"><p>Die kombinierte Drehung unterstützt freie Drehung mit Zonen (ähnlich wie Führungsschienen unter <a href="guidelines-for-panning.md">Richtlinien für Verschiebung</a>) an jedem der 90-Grad-Andockpunkte, die durch die eingeschränkte Drehung erzwungen werden. Wenn das Objekt außerhalb einer der 90-Grad-Zonen losgelassen wird, bleibt das Objekt in dieser Position. Anderenfalls wird das Objekt automatisch zu einem Andockpunkt gedreht.</p>
 <div class="alert">
-<strong>Hinweis</strong>  eine Benutzeroberflächen Schiene ist eine Funktion, bei der ein Bereich um ein Ziel die Bewegung auf einen bestimmten Wert oder Speicherort einschränkt, um die Auswahl zu beeinflussen.
+<strong>Hinweis</strong>    Eine Benutzeroberflächen Schiene ist eine Funktion, bei der ein Bereich um ein Ziel die Bewegung auf einen bestimmten Wert oder Speicherort beschränkt, um die Auswahl zu beeinflussen.
 </div>
 <div>
  
@@ -113,6 +113,6 @@ Windows 10 unterstützt drei Arten der Drehung: kostenlos, eingeschränkt und ko
 - [Eingabe: Beispiel für Fingereingabe-Treffertests](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
 - [Beispiel für XAML-scrollen, Schwenken und Zoomen](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [Eingabe: vereinfachtes Freihandbeispiel](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [Eingabe: Gesten und Manipulationen mit GestureRecognizer](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [Eingabe: Gesten und Manipulationen mit GestureRecognizer](/samples/browse/?redirectedfrom=MSDN-samples)
 - [Eingabe: Manipulationen und Gesten (Beispiel)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [Beispiel für die DirectX-Fingereingabe](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
