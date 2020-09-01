@@ -6,24 +6,24 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb40dc9fa65515a2b01d7a2c92145b27e04f075
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bcb82280d80467157faa8aa5195ad7b9d9a7336b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372565"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167214"
 ---
 # <a name="fingerprint-biometrics"></a>Biometrischer Fingerabdruck
 
 
 
 
-In diesem Artikel wird beschrieben, wie Sie die Funktion des biometrischen Fingerabdrucks Ihrer UWP-App (Universelle Windows-Plattform) hinzufügen. Sie können die Sicherheit Ihrer App erhöhen, indem Sie die Anforderung einer Authentifizierung per Fingerabdruck integrieren, wenn die Zustimmung des Benutzers für eine bestimmte Aktion erforderlich ist. So können Sie beispielsweise die Authentifizierung per Fingerabdruck vor der Autorisierung eines In-App-Kaufs oder vor dem Zugriff auf eingeschränkte Ressourcen anfordern. Die Verwaltung der Authentifizierung per Fingerabdruck erfolgt mithilfe der [**UserConsentVerifier**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier)-Klasse im [**Windows.Security.Credentials.UI**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI)-Namespace.
+In diesem Artikel wird beschrieben, wie Sie die Funktion des biometrischen Fingerabdrucks Ihrer UWP-App (Universelle Windows-Plattform) hinzufügen. Sie können die Sicherheit Ihrer App erhöhen, indem Sie die Anforderung einer Authentifizierung per Fingerabdruck integrieren, wenn die Zustimmung des Benutzers für eine bestimmte Aktion erforderlich ist. So können Sie beispielsweise die Authentifizierung per Fingerabdruck vor der Autorisierung eines In-App-Kaufs oder vor dem Zugriff auf eingeschränkte Ressourcen anfordern. Die Verwaltung der Authentifizierung per Fingerabdruck erfolgt mithilfe der [**UserConsentVerifier**](/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier)-Klasse im [**Windows.Security.Credentials.UI**](/uwp/api/Windows.Security.Credentials.UI)-Namespace.
 
 ## <a name="check-the-device-for-a-fingerprint-reader"></a>Suchen nach einem Fingerabdruckleser
 
 
-Durch Aufrufen der [**UserConsentVerifier.CheckAvailabilityAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync)-Methode kann ermittelt werden, ob das Gerät über einen Fingerabdruckleser verfügt. Auch wenn ein Gerät die Authentifizierung per Fingerabdruck unterstützt, sollte die App in den Einstellungen eine Option enthalten, mit der die Authentifizierung per Fingerabdruck aktiviert oder deaktiviert werden kann.
+Durch Aufrufen der [**UserConsentVerifier.CheckAvailabilityAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync)-Methode kann ermittelt werden, ob das Gerät über einen Fingerabdruckleser verfügt. Auch wenn ein Gerät die Authentifizierung per Fingerabdruck unterstützt, sollte die App in den Einstellungen eine Option enthalten, mit der die Authentifizierung per Fingerabdruck aktiviert oder deaktiviert werden kann.
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -70,9 +70,9 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 ## <a name="request-consent-and-return-results"></a>Anfordern der Zustimmung und Zurückgeben von Ergebnissen
 
 
-Wenn Sie die Benutzerzustimmung mithilfe eines Fingerabdruckscans anfordern möchten, rufen Sie die [**UserConsentVerifier.RequestVerificationAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync)-Methode auf. Damit die Authentifizierung per Fingerabdruck funktioniert, muss der Benutzer vorher einen Fingerabdruck in der Fingerabdruckdatenbank hinterlegt haben.
+Wenn Sie die Benutzerzustimmung mithilfe eines Fingerabdruckscans anfordern möchten, rufen Sie die [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync)-Methode auf. Damit die Authentifizierung per Fingerabdruck funktioniert, muss der Benutzer vorher einen Fingerabdruck in der Fingerabdruckdatenbank hinterlegt haben.
 
-Beim Aufrufen von [**UserConsentVerifier.RequestVerificationAsync**](https://docs.microsoft.com/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) wird dem Benutzer ein modales Dialogfeld angezeigt, in dem ein Fingerabdruckscan angefordert wird. Sie können in der Methode **UserConsentVerifier.RequestVerificationAsync** eine Meldung bereitstellen, die dem Benutzer im modalen Dialogfeld angezeigt wird (siehe folgende Abbildung).
+Beim Aufrufen von [**UserConsentVerifier.RequestVerificationAsync**](/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync) wird dem Benutzer ein modales Dialogfeld angezeigt, in dem ein Fingerabdruckscan angefordert wird. Sie können in der Methode **UserConsentVerifier.RequestVerificationAsync** eine Meldung bereitstellen, die dem Benutzer im modalen Dialogfeld angezeigt wird (siehe folgende Abbildung).
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)

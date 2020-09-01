@@ -4,34 +4,34 @@ title: Epson ESC/POS mit Formatierung
 description: Erfahren Sie, wie Sie die ESC/POS-Befehlssprache zum Formatieren von Text, z. B. in Fett und mit doppelter Größe, für Ihren Point of Service-Drucker verwenden.
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0731f551afaa2420451521b186515255c3724c36
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9fa9a0746e65fe3cbb42ce140a62a3129023d011
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370147"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165454"
 ---
 # <a name="epson-escpos-with-formatting"></a>Epson ESC/POS mit Formatierung
 
 
 **Wichtige APIs**
 
--   [**PointofService Printer**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
--   [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService)
+-   [**PointofService-Drucker**](/uwp/api/Windows.Devices.PointOfService)
+-   [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService)
 
 Erfahren Sie, wie Sie die ESC/POS-Befehlssprache zum Formatieren von Text, z. B. in Fett und mit doppelter Größe, für Ihren Point of Service-Drucker verwenden.
 
 ## <a name="escpos-usage"></a>ESC/POS-Verwendung
 
-Windows Point of Service ermöglicht die Verwendung einer Vielzahl von Druckern, z. B. mehrerer Drucker der Epson TM-Reihe. (Eine vollständige Liste der unterstützten Drucker finden Sie auf der Seite [PointofService-Drucker](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService).) Windows unterstützt das Drucken über die ESC/POS-Druckersteuerungssprache, die über effiziente und funktionale Befehle für die Kommunikation mit dem Drucker verfügt.
+Windows Point of Service ermöglicht die Verwendung einer Vielzahl von Druckern, z. B. mehrerer Drucker der Epson TM-Reihe. (Eine vollständige Liste der unterstützten Drucker finden Sie auf der Seite [PointofService-Drucker](/uwp/api/Windows.Devices.PointOfService).) Windows unterstützt das Drucken über die ESC/POS-Druckersteuerungssprache, die über effiziente und funktionale Befehle für die Kommunikation mit dem Drucker verfügt.
 
 ESC/POS ist ein von Epson erstelltes Befehlssystem, das für viele POS-Druckersysteme verwendet wird und mit dem inkompatible Befehlssätze vermieden werden sollen, indem für eine universelle Anwendbarkeit gesorgt wird. Die meisten modernen Drucker unterstützen ESC/POS.
 
 Alle Befehle beginnen mit dem ESC-Zeichen (ASCII 27, HEX 1B) oder GS (ASCII 29, HEX 1D), gefolgt von einem weiteren Zeichen, das für den Befehl steht. Normaler Text wird – getrennt durch Zeilenumbrüche – einfach an den Drucker gesendet.
 
-Die [**Windows PointOfService API**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) stellt einen Großteil der Funktionalität für Sie über die Methoden **Print()** oder **PrintLine()** bereit. Um bestimmte Formatierungen zu erzielen oder spezielle Befehle zu senden, müssen Sie jedoch ESC/POS-Befehle senden, die wie eine Zeichenfolge aufgebaut sind und an den Drucker gesendet werden.
+Die [**Windows PointOfService API**](/uwp/api/Windows.Devices.PointOfService) stellt einen Großteil der Funktionalität für Sie über die Methoden **Print()** oder **PrintLine()** bereit. Um bestimmte Formatierungen zu erzielen oder spezielle Befehle zu senden, müssen Sie jedoch ESC/POS-Befehle senden, die wie eine Zeichenfolge aufgebaut sind und an den Drucker gesendet werden.
 
 ## <a name="example-using-bold-and-double-size-characters"></a>Beispiel für die Verwendung von fetten Zeichen und Zeichen mit doppelter Größe
 
@@ -59,4 +59,4 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-Weitere Informationen zu ESC/POS, darunter zu den verfügbaren Befehlen, finden Sie unter [Epson ESC/POS – FAQ](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Ausführliche Informationen zu [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) sowie zu allen verfügbaren Funktionen finden Sie auf der MSDN-Website unter [PointofService Printer](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService).
+Weitere Informationen zu ESC/POS, darunter zu den verfügbaren Befehlen, finden Sie unter [Epson ESC/POS – FAQ](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Ausführliche Informationen zu [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService) sowie zu allen verfügbaren Funktionen finden Sie auf der MSDN-Website unter [PointofService Printer](/uwp/api/Windows.Devices.PointOfService).

@@ -1,39 +1,35 @@
 ---
 title: Computeshaderphase (CS)
-description: Die Computeshaderphase (CS) bietet schnelle, allgemeine Berechnungen und nutzt die große Anzahl von parallelen Prozessoren auf dem Grafikprozessor (GPU).
+description: Die COMPUTE-Shader-Phase (CS) bietet eine hohe Geschwindigkeit für das allgemeine Computing und nutzt die große Anzahl paralleler Prozessoren auf der GPU (Graphics Processing Unit).
 ms.assetid: 300D4C0C-5450-45F8-9F29-E1A101D38F73
 keywords:
 - Computeshaderphase (CS)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bce484921a987f06ed79ad65007eb38d646c3227
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 62951db34cfd63c8d47f95a887b79aedea77a1c5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259503"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165034"
 ---
 # <a name="compute-shader-cs-stage"></a>Computeshaderphase (CS)
 
 
-Die Computeshaderphase (CS) bietet schnelle, allgemeine Berechnungen und nutzt die große Anzahl von parallelen Prozessoren auf dem Grafikprozessor (GPU). Die Computeshaderphase (CS) bietet die Freigabe des Arbeitsspeichers und Threadsynchronisierung, um effektivere parallele Programmiermethoden zu ermöglichen.
+Die COMPUTE-Shader-Phase (CS) bietet eine hohe Geschwindigkeit für das allgemeine Computing und nutzt die große Anzahl paralleler Prozessoren auf der GPU (Graphics Processing Unit). Die COMPUTE-Shader-Stufe bietet Speicherfreigabe-und Thread Synchronisierungs Funktionen, um effizientere parallele Programmiermethoden zu ermöglichen.
 
-Ein Computeshader kann auf vielen Threads parallel ausgeführt werden.
+Ein Compute-Shader kann in vielen Threads parallel ausgeführt werden.
 
-Ein Computeshader ist eine [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl)-programmierbare Shaderphase, die Direct3D weit über Grafikprogrammierung mithilfe von [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx)-Technologie erweitert.
+Ein Compute-Shader ist eine [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl)-programmierbare Shader-Stufe, die Direct3D über die Programmierung von Grafiken hinaus erweitert, mithilfe der [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx) -Technologie.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Compute-Pipeline](compute-pipeline.md)
+[Berechnen der Pipeline](compute-pipeline.md)
 
 [Grafikpipeline](graphics-pipeline.md)
 
  
 
  
-
-
-
-

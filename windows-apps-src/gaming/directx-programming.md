@@ -6,12 +6,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, Game, Overview, programmieren, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c15516bc18eacd6c5dfcad8edec9a2c088fc7f
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 846c333a7cce9d8f373b01aabf525f103dba57f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970258"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165304"
 ---
 # <a name="directx-programming"></a>DirectX-Programmierung
 
@@ -25,7 +25,7 @@ Dieser Abschnitt enthält Informationen zum Entwickeln von UWP-spielen mit Direc
 <thead>
 <tr class="header">
 <th align="left">Thema</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 </tr>
 </thead>
 <tbody>
@@ -61,11 +61,5 @@ Dieser Abschnitt enthält Informationen zum Entwickeln von UWP-spielen mit Direc
 </table>
 
 
-Referenz-und Programmier Handbücher für DirectX finden Sie unter [Direct3D 11 graphics](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) and [Direct3D 12 graphics](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics).
+Referenz-und Programmier Handbücher für DirectX finden Sie unter [Direct3D 11 graphics](/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) and [Direct3D 12 graphics](/windows/desktop/direct3d12/direct3d-12-graphics).
  
-
-
-
-
-
-

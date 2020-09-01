@@ -4,16 +4,16 @@ description: Hier erfahren Sie, wie Sie Ihrem DirectX-Spiel herkömmliche Bewegu
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Bewegungs-/Blicksteuerungen, Steuerelemente
+keywords: Windows 10, UWP, Games, Move-Look, Steuerelemente
 ms.localizationpriority: medium
-ms.openlocfilehash: f1516ada043ac5e9d5c059f7cd2b91cb69a5eab1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ed17d38bfaa90956b22265d1dfc320bfcc13ede7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367853"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165124"
 ---
-# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Move-suchen-Steuerelemente für Spiele
+# <a name="span-iddev_gamingtutorial__adding_move-look_controls_to_your_directx_gamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Bewegungs-/Blicksteuerungen für Spiele
 
 
 
@@ -145,45 +145,45 @@ Unser Code enthält vier Gruppen privater Felder. Im Folgenden klären wir, wof�
 
 Als Erstes definieren wir einige nützliche Felder, die die aktualisierten Informationen zur Kameraansicht enthalten.
 
--   **m\_Position** ist die Position der Kamera (und daher die Viewplane) in der 3D-Szene, mit den Koordinaten der Szene.
--   **m\_Tonhöhe** ist die Schriftbreite der Kamera oder die auf-ab-Drehung um die Viewplane der x-Achse im Bogenmaß zurück.
--   **m\_Yaw bezeichnet** der Yaw von der Kamera oder die Rotation links nach rechts um die Viewplane der y-Achse im Bogenmaß im Bereich ist.
+-   die **m- \_ Position** ist die Position der Kamera (und somit die viewplane) in der 3D-Szene mithilfe von Szenen Koordinaten.
+-   **m- \_ Tonhöhe** ist die Tonhöhe der Kamera oder die nach-unten-Drehung um die x-Achse der viewplane im Bogenmaße.
+-   **m \_ Yaw** ist der Wert der Kamera oder die linke Drehung um die y-Achse der viewplane im Bogenmaße.
 
 Als Nächstes definieren wir die Felder, in denen Informationen zum Status und zur Position der Controller gespeichert werden. Die Felder, die wir für den fingereingabebasierten Bewegungscontroller benötigen, definieren wir zuerst. (Für die Tastaturimplementierung des Bewegungscontrollers sind keine speziellen Felder erforderlich. Es werden nur Tastaturereignisse mit bestimmten Handlern gelesen.)
 
--   **m\_MoveInUse** gibt an, ob der Move-Controller verwendet wird.
--   **m\_MovePointerID** ist die eindeutige ID für den aktuellen Zeiger zum Verschieben. Damit wird beim Überprüfen der Zeiger-ID zwischen dem Blickzeiger und dem Bewegungszeiger unterschieden.
--   **m\_MoveFirstDown** ist der Punkt, auf dem Bildschirm, in dem der Spieler zuerst berührt werden Bereich Zeiger Controller verschieben. Dieser Wert wird später verwendet, um einen inaktiven Bereich festzulegen, damit die Ansicht bei geringfügigen Bewegungen nicht zittert.
--   **m\_MovePointerPosition** ist der Punkt, auf dem Bildschirm, der Spieler hat derzeit den Zeiger auf verschoben. Wir verwenden, um welche Richtung bestimmen möchten, dass der Spieler verschieben, indem er sie relativ zum Untersuchen **m\_MoveFirstDown**.
--   **m\_MoveCommand** ist der endgültige berechnete-Befehl für den Controller verschieben: (vorwärts), Drehfeld (zurück), links oder rechts.
+-   **m \_ moveinuse** gibt an, ob der Verschiebungs Controller verwendet wird.
+-   " **m \_ movepointerid** " ist die eindeutige ID für den aktuellen Verschiebungs Zeiger. Damit wird beim Überprüfen der Zeiger-ID zwischen dem Blickzeiger und dem Bewegungszeiger unterschieden.
+-   **m \_ movefirstdown** ist der Punkt auf dem Bildschirm, an dem der Player zuerst den Zeiger Bereich des Verschiebungs Controllers berührt hat. Dieser Wert wird später verwendet, um einen inaktiven Bereich festzulegen, damit die Ansicht bei geringfügigen Bewegungen nicht zittert.
+-   "m" ist der Punkt auf dem Bildschirm, auf den der Player aktuell verschoben wurde. ** \_ ** Wir verwenden Sie, um zu bestimmen, welche Richtung der Player verschieben wollte, indem wir ihn relativ zu **m \_ movefirstdown**untersuchen.
+-   **m \_ movecommand** ist der endgültige berechnete Befehl für den Verschiebungs Controller: aufwärts (vorwärts), nach unten (zurück), Links oder rechts.
 
 Jetzt definieren wir die Felder für den Blickcontroller (für Maus- und Toucheingabeimplementierungen).
 
--   **m\_LookInUse** gibt an, ob die suchen-Steuerelements verwendet wird.
--   **m\_LookPointerID** ist die eindeutige ID für die Zeiger für den aktuellen aussehen. Damit wird beim Überprüfen der Zeiger-ID zwischen dem Blickzeiger und dem Bewegungszeiger unterschieden.
--   **m\_LookLastPoint** ist der letzte Punkt in Koordinaten der Szene, die in den vorherigen Frame aufgezeichnet wurde.
--   **m\_LookLastDelta** ist der berechnete Unterschied zwischen dem aktuellen **m\_Position** und **m\_LookLastPoint**.
+-   " **m \_ lookinuse** " gibt an, ob das Steuerelement "suchen" verwendet wird.
+-   **m \_ lookpointerid** ist die eindeutige ID für den aktuellen Look-Zeiger. Damit wird beim Überprüfen der Zeiger-ID zwischen dem Blickzeiger und dem Bewegungszeiger unterschieden.
+-   **m \_ looklastpoint** ist der letzte Punkt in Szenen Koordinaten, der im vorherigen Frame aufgezeichnet wurde.
+-   **m \_ looklastdelta** ist der berechnete Unterschied zwischen der aktuellen **m- \_ Position** und **m \_ looklastpoint**.
 
 Zum Schluss definieren wir sechs boolesche Werte für die sechs Bewegungsgrade, mit denen der aktuelle Zustand der einzelnen Bewegungsaktionen angegeben wird (Ein oder Aus):
 
--   **m\_Vorwärts**, **m\_wieder**, **m\_linken**, **m\_rechten**, **m\_einrichten** und **m\_unten**.
+-   **m \_ Vorwärts**, **m \_ zurück**, **m \_ Links**, **m \_ Rechts**, **m nach \_ oben** und **m \_ nach unten**.
 
 Die Eingabedaten zum Aktualisieren des Zustands der Controller werden mit sechs Ereignishandlern erfasst:
 
--   **OnPointerPressed**. Der Spieler hat die linke Maustaste gedrückt oder den Bildschirm berührt, während sich der Zeiger im Spielbildschirm befand.
--   **OnPointerMoved**. Der Spieler hat die Maus oder den Toucheingabezeiger auf dem Bildschirm bewegt, während sich der Zeiger im Spielbildschirm befand.
--   **OnPointerReleased**. Der Spieler hat die linke Maustaste losgelassen oder aufgehört, den Bildschirm zu berühren, während sich der Zeiger im Spielbildschirm befand.
+-   **Onpointerpressed**. Der Spieler hat die linke Maustaste gedrückt oder den Bildschirm berührt, während sich der Zeiger im Spielbildschirm befand.
+-   " **Onpointerverschoben**". Der Spieler hat die Maus oder den Toucheingabezeiger auf dem Bildschirm bewegt, während sich der Zeiger im Spielbildschirm befand.
+-   **Onpointerreleased**. Der Spieler hat die linke Maustaste losgelassen oder aufgehört, den Bildschirm zu berühren, während sich der Zeiger im Spielbildschirm befand.
 -   **OnKeyDown**. Der Spieler hat eine Taste gedrückt.
--   **OnKeyUp**. Der Spieler hat eine Taste losgelassen.
+-   **Onkeyup**. Der Spieler hat eine Taste losgelassen.
 
 Die folgenden Methoden und Eigenschaften verwenden wir, um die Zustandsinformationen der Controller zu initialisieren, auf sie zuzugreifen und sie zu aktualisieren.
 
--   **Initialize**. Die App ruft diesen Ereignishandler auf, um die Steuerungen zu initialisieren und an das [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt anzufügen, das das Anzeigefenster beschreibt.
+-   **Initialisieren**. Die App ruft diesen Ereignishandler auf, um die Steuerungen zu initialisieren und an das [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Objekt anzufügen, das das Anzeigefenster beschreibt.
 -   **SetPosition**. Die App ruft diese Methode auf, um die Koordinaten (X, Y und Z) der Steuerungen im Szenenbereich festzulegen.
 -   **SetOrientation**. Die App ruft diese Methode auf, um den Nick- und Gierwinkel der Kamera festzulegen.
--   **get\_Position**. Die App greift auf diese Eigenschaft zu, um die aktuelle Position der Kamera im Szenenbereich abzurufen. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
--   **get\_LookPoint**. Die App greift auf diese Eigenschaft zu, um den aktuellen Punkt abzurufen, auf den die Kamera gerichtet ist.
--   **Update**. Diese Methode liest den Zustand der Bewegungs- und Blickcontroller und aktualisiert die Kameraposition. Diese Methode wird in der Hauptschleife der App kontinuierlich aufgerufen, um die Kameracontrollerdaten und die Kameraposition im Szenenbereich zu aktualisieren.
+-   **get \_ Position**. Die App greift auf diese Eigenschaft zu, um die aktuelle Position der Kamera im Szenenbereich abzurufen. Diese Eigenschaft wird verwendet, um der App die aktuelle Kameraposition mitzuteilen.
+-   **get \_ Such Punkt**. Die App greift auf diese Eigenschaft zu, um den aktuellen Punkt abzurufen, auf den die Kamera gerichtet ist.
+-   **Aktualisieren**Sie. Diese Methode liest den Zustand der Bewegungs- und Blickcontroller und aktualisiert die Kameraposition. Diese Methode wird in der Hauptschleife der App kontinuierlich aufgerufen, um die Kameracontrollerdaten und die Kameraposition im Szenenbereich zu aktualisieren.
 
 Jetzt haben Sie alle Komponenten, die Sie zum Implementieren der Bewegungs-/Blicksteuerungen benötigen. Als Nächstes setzen wir diese Teile zusammen.
 
@@ -192,17 +192,17 @@ Jetzt haben Sie alle Komponenten, die Sie zum Implementieren der Bewegungs-/Blic
 
 Der Ereignisverteiler der Windows-Runtime stellt fünf Ereignisse bereit, die von Instanzen der **MoveLookController**-Klasse behandelt werden sollen:
 
--   [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerpressed)
--   [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)
--   [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased)
--   [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keyup)
--   [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.keydown)
+-   [**PointerPressed**](/uwp/api/windows.ui.core.corewindow.pointerpressed)
+-   [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)
+-   [**PointerReleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased)
+-   [**KeyUp**](/uwp/api/windows.ui.core.corewindow.keyup)
+-   [**KeyDown**](/uwp/api/windows.ui.core.corewindow.keydown)
 
-Diese Ereignisse sind im [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Typ implementiert. Es wird davon ausgegangen, dass Sie über ein **CoreWindow**-Objekt verfügen, mit dem Sie arbeiten können. Informationen dazu, wie Sie ein solches Objekt erhalten, finden Sie bei Bedarf unter [Einrichten der UWP-C++-App (Universals Windows Plattform) zum Anzeigen einer DirectX-Ansicht](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10)).
+Diese Ereignisse sind im [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Typ implementiert. Es wird davon ausgegangen, dass Sie über ein **CoreWindow**-Objekt verfügen, mit dem Sie arbeiten können. Informationen dazu, wie Sie ein solches Objekt erhalten, finden Sie bei Bedarf unter [Einrichten der UWP-C++-App (Universals Windows Plattform) zum Anzeigen einer DirectX-Ansicht](/previous-versions/windows/apps/hh465077(v=win.10)).
 
 Wenn diese Ereignisse während der Ausführung der App ausgelöst werden, aktualisieren die Handler die in den privaten Feldern definierten Zustandsinformationen der Controller.
 
-Als Erstes füllen wir die Ereignishandler für die Maus und den Toucheingabezeiger auf. Im ersten Ereignishandler (**OnPointerPressed()** ), rufen wir die X- und Y-Koordinaten des Zeigers vom [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Objekt ab, das die Anzeige verwaltet, wenn der Benutzer im Bereich des Blickcontrollers mit der Maus klickt oder den Bildschirm berührt.
+Als Erstes füllen wir die Ereignishandler für die Maus und den Toucheingabezeiger auf. Im ersten Ereignishandler (**OnPointerPressed()**), rufen wir die X- und Y-Koordinaten des Zeigers vom [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Objekt ab, das die Anzeige verwaltet, wenn der Benutzer im Bereich des Blickcontrollers mit der Maus klickt oder den Bildschirm berührt.
 
 **OnPointerPressed**
 
@@ -251,9 +251,9 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-Dieser Ereignishandler überprüft, ob es sich beim Zeiger um die Maus handelt (da in diesem Beispiel sowohl Maus als auch Toucheingabe unterstützt werden) und ob sich der Zeiger im Bereich des Bewegungscontrollers befindet. Wenn beide Kriterien "true" sind, er überprüft, ob der Mauszeiger gerade, insbesondere gedrückt wurde, ob nicht verknüpfte, klicken Sie ist auf eine vorherige verschieben oder Benutzereingaben, suchen, indem Sie testen, wenn **m\_MoveInUse** ist "false". Wenn also der Handler, in dem Drücken das aufgetreten ist, und legt sie fest, den Punkt im Bereich "Domänencontroller" verschieben erfasst **m\_MoveInUse** auf "true", damit sie nicht die Anfangsposition der Verschiebung, wenn dieser Handler erneut aufgerufen wird, überschrieben wird, Controller-Eingabe-Interaktion. Außerdem aktualisiert er die Zeiger-ID des Bewegungscontrollers mit der ID des aktuellen Zeigers.
+Dieser Ereignishandler überprüft, ob es sich beim Zeiger um die Maus handelt (da in diesem Beispiel sowohl Maus als auch Toucheingabe unterstützt werden) und ob sich der Zeiger im Bereich des Bewegungscontrollers befindet. Wenn beide Kriterien erfüllt sind, wird überprüft, ob der Zeiger gerade gedrückt wurde. Dies gilt insbesondere, ob dieser Klick mit einem vorherigen verschiebe-oder Einfügevorgang in Beziehung steht, indem getestet wird, ob **m \_ moveinuse** den Wert false hat. Wenn dies der Fall ist, erfasst der Handler den Punkt im Verschiebungs Bereich des Controllers, in dem der Druckvorgang aufgetreten ist, und legt **m \_ moveinuse** auf true fest, damit die Anfangsposition der Eingabe Interaktion des Verschiebungs Controllers nicht überschrieben wird, wenn dieser Handler erneut aufgerufen wird. Außerdem aktualisiert er die Zeiger-ID des Bewegungscontrollers mit der ID des aktuellen Zeigers.
 
-Wenn es sich beim Zeiger um die Maus handelt oder der Toucheingabezeiger sich nicht im Bereich des Bewegungscontrollers befindet, muss er sich im Bereich des Blickcontrollers befinden. Wird **m\_LookLastPoint** an der aktuellen Position, die der Benutzer die Maustaste gedrückt oder berührt und gedrückt ist, setzt das Delta und aktualisiert das Aussehen des Controllers Zeiger-ID mit der aktuellen Zeiger-ID Außerdem legt er den Zustand des Blickcontrollers auf „Aktiv“ fest.
+Wenn es sich beim Zeiger um die Maus handelt oder der Toucheingabezeiger sich nicht im Bereich des Bewegungscontrollers befindet, muss er sich im Bereich des Blickcontrollers befinden. **M \_ looklastpoint** wird auf die aktuelle Position festgelegt, an der der Benutzer die Maustaste gedrückt hat oder berührt und gedrückt wurde, das Delta zurücksetzt und die Zeiger-ID des Erscheinungsbild Controllers auf die aktuelle Zeiger-ID aktualisiert. Außerdem legt er den Zustand des Blickcontrollers auf „Aktiv“ fest.
 
 **OnPointerMoved**
 
@@ -299,11 +299,11 @@ void MoveLookController::OnPointerMoved(
 
 Der **OnPointerMoved**-Ereignishandler wird bei jeder Bewegung des Zeigers ausgelöst (in diesem Fall, wenn ein Toucheingabezeiger bewegt oder der Mauszeiger mit gedrückter linker Maustaste bewegt wird). Ist die Zeiger-ID mit der Zeiger-ID des Bewegungscontrollers identisch, ist es der Bewegungszeiger. Andernfalls wird überprüft, ob es sich beim aktiven Zeiger um den Zeiger des Blickcontrollers handelt.
 
-Wenn es sich um den Zeiger des Bewegungscontrollers handelt, wird nur die Zeigerposition aktualisiert. Die Position wird weiter aktualisiert, solange das [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved)-Ereignis ausgelöst wird, da die endgültige Position mit der ersten Position verglichen werden soll, die mit dem **OnPointerPressed**-Ereignishandler erfasst wurde.
+Wenn es sich um den Zeiger des Bewegungscontrollers handelt, wird nur die Zeigerposition aktualisiert. Die Position wird weiter aktualisiert, solange das [**PointerMoved**](/uwp/api/windows.ui.core.corewindow.pointermoved)-Ereignis ausgelöst wird, da die endgültige Position mit der ersten Position verglichen werden soll, die mit dem **OnPointerPressed**-Ereignishandler erfasst wurde.
 
 Wenn es sich um den Zeiger des Blickcontrollers handelt, wird es etwas komplizierter. Wir müssen einen neuen Blickpunkt berechnen und die Kamera auf diesen Punkt ausrichten. Dazu berechnen wir die Differenz zwischen dem letzten Blickpunkt und der aktuellen Bildschirmposition und multiplizieren sie mit dem Skalierungsfaktor, den wir einstellen können, um die Blickbewegungen in Bezug zur Distanz der Bildschirmbewegung zu verkleinern oder zu vergrößern. Anhand dieses Werts berechnen wir den Neigungswinkel und den Schwenkwinkel.
 
-Abschließend müssen wir die Bewegungs- oder Blickcontrollerverhalten deaktivieren, wenn der Spieler aufhört, die Maus zu bewegen oder den Bildschirm zu berühren. Wir verwenden **OnPointerReleased**, die wir beim Aufrufen [ **PointerReleased** ](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointerreleased) ausgelöst wird, entsprechend **m\_MoveInUse** oder **m\_LookInUse** auf "false" Deaktivieren der Kamera Pan-Bewegung und 0 (null), die Zeiger-ID.
+Abschließend müssen wir die Bewegungs- oder Blickcontrollerverhalten deaktivieren, wenn der Spieler aufhört, die Maus zu bewegen oder den Bildschirm zu berühren. Wir verwenden **onpointerreleased**, das beim Auslösen von [**pointerreleased**](/uwp/api/windows.ui.core.corewindow.pointerreleased) aufgerufen wird, um " **m \_ moveinuse** " oder " **m \_ lookinuse** " auf "false" festzulegen, und schalten die Schwenkbewegung der Kamera und die Zeiger-ID NULL aus.
 
 **OnPointerReleased**
 
@@ -424,7 +424,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-Die **Initialize**-Methode akzeptiert als Parameter einen Verweis auf die [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)-Instanz der App und registriert die von uns entwickelten Ereignishandler für die entsprechenden Ereignisse in dieser **CoreWindow**-Instanz. Sie initialisiert die Bewegungs- und Blickzeiger-IDs, legt den Befehlsvektor für die Touchscreen-Bewegungscontrollerimplementierung auf Null fest und richtet die Kameraansicht gerade nach vorn aus, wenn die App gestartet wird.
+Die **Initialize**-Methode akzeptiert als Parameter einen Verweis auf die [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)-Instanz der App und registriert die von uns entwickelten Ereignishandler für die entsprechenden Ereignisse in dieser **CoreWindow**-Instanz. Sie initialisiert die Bewegungs- und Blickzeiger-IDs, legt den Befehlsvektor für die Touchscreen-Bewegungscontrollerimplementierung auf Null fest und richtet die Kameraansicht gerade nach vorn aus, wenn die App gestartet wird.
 
 ## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>Abrufen und Festlegen der Position und Ausrichtung der Kamera
 
@@ -470,7 +470,7 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 ## <a name="updating-the-controller-state-info"></a>Aktualisieren der Zustandsinformationen der Controller
 
 
-Nun führen wir unsere Berechnungen, die die Informationen der Zeiger-Koordinate in nachverfolgt konvertieren **m\_MovePointerPosition** in neue-Koordinate Informationen entsprechenden unser globales Koordinatensystem. Die App ruft diese Methode bei jeder Aktualisierung der Hauptschleife auf. Daher berechnen wir an dieser Stelle die neuen Informationen zur Blickpunktposition, die an die App übergeben werden sollen, um die Ansichtsmatrix vor der Projektion in den Viewport zu aktualisieren.
+Nun führen wir unsere Berechnungen durch, mit denen die in **m "m" \_ nach** verfolgten Zeigerkoordinaten Informationen in die neuen Koordinaten Informationen des Weltkoordinaten Systems konvertiert werden. Die App ruft diese Methode bei jeder Aktualisierung der Hauptschleife auf. Daher berechnen wir an dieser Stelle die neuen Informationen zur Blickpunktposition, die an die App übergeben werden sollen, um die Ansichtsmatrix vor der Projektion in den Viewport zu aktualisieren.
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -557,7 +557,7 @@ Damit die Bewegung nicht "zittert", wenn der Spieler den fingereingabebasierten 
 
 Beim Berechnen der Geschwindigkeit setzen wir außerdem die von den Bewegungs- und Blickcontrollern empfangenen Koordinaten in die Bewegung des tatsächlichen Blickpunkts um, die wir an die Methode zum Berechnen der Ansichtsmatrix für die Szene senden. Als Erstes invertieren wir die X-Koordinate, da sich der Blickpunkt in der Szene in entgegengesetzter Richtung dreht (was die Drehung einer Kamera um ihre Mittelachse simuliert), wenn wir den Blickcontroller per Mausklick oder Toucheingabe nach links oder rechts bewegen. Anschließend vertauschen wir die Y- und Z-Achse, da eine Aufwärts-/Abwärtsbewegung mittels Taste oder Toucheingabe (interpretiert als Y-Achsenverhalten) mit dem Bewegungscontroller in eine Kameraaktion umgesetzt werden soll, durch die der Blickpunkt in den oder aus dem Bildschirm (Z-Achse) bewegt wird.
 
-Die letzte Position des Punkts Aussehen für den Player wird die letzte Position sowie die berechneten Geschwindigkeit und wird vom Renderer gelesen, beim Aufrufen der **erhalten\_Position** (sehr wahrscheinlich bereits während des Setups für jede Methode Frame). Danach setzen wir den Bewegungsbefehl auf Null zurück.
+Die letzte Position des Erscheinungs Bilds für den Player ist die letzte Position plus die berechnete Geschwindigkeit. Dies wird vom Renderer beim Aufrufen der **get- \_ Positions** Methode (höchstwahrscheinlich während der Einrichtung für jeden Frame) gelesen. Danach setzen wir den Bewegungsbefehl auf Null zurück.
 
 ## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>Aktualisieren der Ansichtsmatrix mit der neuen Kameraposition
 
@@ -575,14 +575,10 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-Herzlichen Glückwunsch! Sie haben einfache Bewegungs-/Blicksteuerungen für Touchscreens und Tastatur-/Mauseingabe in Ihrem Spiel implementiert.
+Glückwunsch! Sie haben einfache Bewegungs-/Blicksteuerungen für Touchscreens und Tastatur-/Mauseingabe in Ihrem Spiel implementiert.
 
 
 
  
 
  
-
-
-
-

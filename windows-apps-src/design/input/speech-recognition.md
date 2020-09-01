@@ -8,19 +8,19 @@ keywords: Sprache, Stimme, Spracherkennung, natürliche Sprache, diktieren, Eing
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ecdd882357a7e20506ab6116748d57ab0dde33f
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 249af1260b261733454fa353adc695818d113afc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997717"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165894"
 ---
 # <a name="speech-recognition"></a>Spracherkennung
 
 
 Nutzen Sie die Spracherkennung als Eingabemöglichkeit oder zum Ausführen einer Aktion, eines Befehls oder einer Aufgabe.
 
-> **Wichtige APIs**: [ **Windows. Media. Sprech Erkennung**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition)
+> **Wichtige APIs**: [ **Windows. Media. Sprech Erkennung**](/uwp/api/Windows.Media.SpeechRecognition)
 
 Die Spracherkennung besteht aus einer Sprachlaufzeit, Erkennungs-APIs zum Programmieren der Laufzeit, einsatzfähiger Grammatik für das Diktieren und die Websuche und einer Standard-UI, die Benutzern das Auffinden und Verwenden der Spracherkennungsfeatures erleichtert.
 
@@ -28,7 +28,7 @@ Die Spracherkennung besteht aus einer Sprachlaufzeit, Erkennungs-APIs zum Progra
 
 Um die Spracherkennung mit Ihrer APP zu unterstützen, muss der Benutzer auf seinem Gerät eine Verbindung herstellen und ein Mikrofon aktivieren und die Microsoft-Datenschutzrichtlinie akzeptieren, die der APP die Berechtigung erteilt, Sie zu verwenden.
 
-Um den Benutzer automatisch mit einem System Dialogfeld aufzufordern, das die Berechtigung für den Zugriff auf den audiofeed des Mikrofons (z. b. aus dem unten gezeigten [sprach Erkennungs-und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis) Beispiel) anfordert, legen Sie einfach die **Mikrofon** [Geräte Funktion](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) im [App-Paket Manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)fest. Weitere Details finden Sie unter [Deklarationen von App-Funktionen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+Um den Benutzer automatisch mit einem System Dialogfeld aufzufordern, das die Berechtigung für den Zugriff auf den audiofeed des Mikrofons (z. b. aus dem unten gezeigten [sprach Erkennungs-und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis) Beispiel) anfordert, legen Sie einfach die **Mikrofon** [Geräte Funktion](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability) im [App-Paket Manifest](/uwp/schemas/appxpackage/appx-package-manifest)fest. Weitere Details finden Sie unter [Deklarationen von App-Funktionen](../../packaging/app-capability-declarations.md).
 
 ![Datenschutzrichtlinie für den Mikrofon Zugriff](images/speech/privacy.png)
 
@@ -216,7 +216,7 @@ Sie können die folgenden Einschränkungs Typen zum Erkennen von Spracheingaben 
 
 Mit vordefinierten Diktier- und Websuchgrammatiken können Sie eine Spracherkennung für Ihre App bereitstellen, ohne eine Grammatik erstellen zu müssen. Bei Verwendung dieser Grammatiken wird die Spracherkennung von einem Remotewebdienst durchgeführt, und die Ergebnisse werden an das Gerät zurückgegeben.
 
-Die Standardgrammatik der Freitext-Diktierfunktion erkennt die meisten Wörter und Ausdrücke, die Benutzer in einer bestimmten Sprache sagen können, und ist für die Erkennung kurzer Ausdrücke optimiert. Die vordefinierte Grammatik für das Diktieren kommt dann zum Einsatz, wenn Sie keine Einschränkungen für Ihr [**SpeechRecognizer**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)-Objekt festlegen. Die Freitext-Diktierfunktion ist nützlich, wenn Sie nicht einschränken möchten, was Benutzer sagen können. Typische Verwendungsmöglichkeiten sind das Erstellen von Notizen oder das Diktieren eines Nachrichtentexts.
+Die Standardgrammatik der Freitext-Diktierfunktion erkennt die meisten Wörter und Ausdrücke, die Benutzer in einer bestimmten Sprache sagen können, und ist für die Erkennung kurzer Ausdrücke optimiert. Die vordefinierte Grammatik für das Diktieren kommt dann zum Einsatz, wenn Sie keine Einschränkungen für Ihr [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)-Objekt festlegen. Die Freitext-Diktierfunktion ist nützlich, wenn Sie nicht einschränken möchten, was Benutzer sagen können. Typische Verwendungsmöglichkeiten sind das Erstellen von Notizen oder das Diktieren eines Nachrichtentexts.
 
 Die Grammatik für die Websuche enthält wie die Diktiergrammatik eine große Anzahl von Wörtern und Ausdrücken, die Benutzer sagen können. Sie ist allerdings für die Erkennung von Begriffen optimiert, die beim Suchen im Web häufig verwendet werden.
 
@@ -225,17 +225,17 @@ Die Grammatik für die Websuche enthält wie die Diktiergrammatik eine große An
 
 Diese vordefinierten Grammatiken können zum Erkennen von bis zu zehn Sekunden Spracheingabe verwendet werden. Sie müssen dazu keinen Code selbst erstellen. Sie erfordern jedoch eine Netzwerkverbindung.
 
-Um Webdienst Einschränkungen zu verwenden, muss die Spracheingabe und die Diktat Unterstützung in den **Einstellungen** aktiviert werden, indem die Option "Get to Know Me" in **Settings-> Privacy-> Speech, Inking und Input**aktiviert wird.
+Um Webdienst Einschränkungen zu verwenden, muss die Spracheingabe und die Diktat Unterstützung in den **Einstellungen** aktiviert werden, indem die Option "Get to Know Me" in  **Settings-> Privacy-> Speech, Inking und Input**aktiviert wird.
 
 Hier wird gezeigt, wie Sie testen können, ob die Spracheingabe aktiviert ist, und wie Sie die Einstellungen > den Datenschutz > Sprache, das Inking und die Eingabe Seite öffnen.
 
-Zuerst initialisieren wir eine globale Variable (HResultPrivacyStatementDeclined) für den HResult-Wert 0x80045509. Weitere Informationen finden Sie [unter Ausnahmebehandlung für in C \# oder Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10)).
+Zuerst initialisieren wir eine globale Variable (HResultPrivacyStatementDeclined) für den HResult-Wert 0x80045509. Weitere Informationen finden Sie [unter Ausnahmebehandlung für in C \# oder Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
 ```
 
-Wir fangen dann alle Standard Ausnahmen während der Neuverteilung ab und testen, ob der [**HRESULT**](https://docs.microsoft.com/uwp/api/Windows.Foundation.HResult) -Wert gleich dem Wert der hresultprivacystatus-Variablen Variable ist. Wenn dies der Fall ist, wird eine Warnung angezeigt und aufgerufen `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` , um die Seite "Einstellungen" zu öffnen.
+Wir fangen dann alle Standard Ausnahmen während der Neuverteilung ab und testen, ob der [**HRESULT**](/uwp/api/Windows.Foundation.HResult) -Wert gleich dem Wert der hresultprivacystatus-Variablen Variable ist. Wenn dies der Fall ist, wird eine Warnung angezeigt und aufgerufen `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` , um die Seite "Einstellungen" zu öffnen.
 
 ```csharp
 catch (Exception exception)
@@ -258,7 +258,7 @@ catch (Exception exception)
 }
 ```
 
-Siehe [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint).
+Siehe [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint).
 
 ### <a name="programmatic-list-constraints"></a>Programmgesteuerte Listen Einschränkungen 
 
@@ -266,19 +266,19 @@ Einschränkungen per programmgesteuerter Liste sind eine unkomplizierte Methode 
 
 Eine Einschränkungsliste besteht aus einem Array von Zeichenfolgen, die die Spracheingaben darstellen, die von Ihrer App für einen Erkennungsvorgang akzeptiert werden. Sie können in Ihrer App eine Einschränkungsliste einrichten, indem Sie ein Einschränkungslistenobjekt für die Spracherkennung erstellen und ein Array mit Zeichenfolgen übergeben. Fügen Sie dieses Objekt dann der Einschränkungsauflistung der Erkennung hinzu. Die Erkennung ist erfolgreich, wenn die Spracherkennung die Zeichenfolgen des Arrays erkennt.
 
-Weitere Informationen finden Sie unter [**sprach Erkennungs-listeinschränkung**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint).
+Weitere Informationen finden Sie unter [**sprach Erkennungs-listeinschränkung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint).
 
 ### <a name="srgs-grammars"></a>SRGS-Grammatiken
 
 Eine Speech Recognition Grammar Specification (SRGS)-Grammatik ist ein statisches Dokument, das im Gegensatz zu einer Einschränkung per programmgesteuerter Liste das in [SRGS Version 1.0](https://www.w3.org/TR/speech-grammar/) definierte XML-Format verwendet. Eine SRGS-Grammatik bietet die höchstmögliche Kontrolle über die Spracherkennungsfunktion, da Sie mehrere semantische Bedeutungen in einem einzigen Erkennungsvorgang erfassen können.
 
- Siehe die [**Spracherkennung**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint).
+ Siehe die [**Spracherkennung**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint).
 
 ### <a name="voice-command-constraints"></a>Sprach Befehls Einschränkungen
 
-Verwenden Sie eine Voice Command Definition-(VCD-)XML-Datei, um die Befehle zu definieren, mit denen der Benutzer Aktionen initiieren kann, wenn er Ihre App aktiviert. Weitere Details finden Sie unter [Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
+Verwenden Sie eine Voice Command Definition-(VCD-)XML-Datei, um die Befehle zu definieren, mit denen der Benutzer Aktionen initiieren kann, wenn er Ihre App aktiviert. Weitere Details finden Sie unter [Aktivieren einer Vordergrund-App mit Sprachbefehlen über Cortana](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana).
 
-Siehe [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+Siehe [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
 **Hinweis**    Der Typ des Einschränkungs Typs, den Sie verwenden, hängt von der Komplexität der Erkennungsfunktion ab, die Sie erstellen möchten. Für eine bestimmte Erkennungsaufgabe kann jeweils einer der Ansätze am besten geeignet sein, und vielleicht haben Sie in Ihrer App sogar für alle Einschränkungsarten Verwendung.
 Informationen zu den ersten Schritten mit Einschränkungen finden Sie unter [Definieren von benutzerdefinierten Erkennungseinschränkungen](define-custom-recognition-constraints.md).
@@ -289,7 +289,7 @@ In diesem Beispiel zeigen wir Ihnen, wie Sie:
 
 - eine Spracherkennung erstellen,
 - die standardmäßigen Einschränkungen von universellen Windows-Apps kompilieren (es wurde keine Grammatik zum Grammatiksatz der Spracherkennung hinzugefügt) und
-- die Spracherkennung starten, indem Sie die einfache Erkennungs-UI und das TTS-Feedback der [**RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync)-Methode verwenden. Verwenden Sie die [**RecognizeAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync)-Methode, wenn die Standard-UI nicht benötigt wird.
+- die Spracherkennung starten, indem Sie die einfache Erkennungs-UI und das TTS-Feedback der [**RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync)-Methode verwenden. Verwenden Sie die [**RecognizeAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync)-Methode, wenn die Standard-UI nicht benötigt wird.
 
 ```CSharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
@@ -312,7 +312,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 ## <a name="customize-the-recognition-ui"></a>Anpassen der Erkennungs-UI
 
 
-Wenn Ihre App die Spracherkennung durch Aufruf von [**SpeechRecognizer.RecognizeWithUIAsync**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) zu leisten versucht, werden mehrere Bildschirme in der folgenden Reihenfolge angezeigt.
+Wenn Ihre App die Spracherkennung durch Aufruf von [**SpeechRecognizer.RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) zu leisten versucht, werden mehrere Bildschirme in der folgenden Reihenfolge angezeigt.
 
 Wenn Sie eine Einschränkung auf der Grundlage einer vordefinierten Grammatik (Diktat oder Websuche) verwenden:
 
@@ -334,7 +334,7 @@ Die folgende Abbildung zeigt ein Beispiel für den Fluss zwischen Bildschirmen f
 
 ![final Erkennung screen for a constraint based on a sgrs grammar file](images/speech-listening-complete.png)
 
-Der **Spracherkennung**-Bildschirm kann Beispiele für Wörter oder Ausdrücke zur Erkennung durch die App bereitstellen. Hier zeigen wir, wie Sie die Eigenschaften der [**SpeechRecognizerUIOptions**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions)-Klasse (abgerufen durch Aufrufen der [**SpeechRecognizer.UIOptions**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions)-Eigenschaft) zur Anpassung von Inhalten auf dem **Spracherkennung**-Bildschirm verwenden.
+Der **Spracherkennung**-Bildschirm kann Beispiele für Wörter oder Ausdrücke zur Erkennung durch die App bereitstellen. Hier zeigen wir, wie Sie die Eigenschaften der [**SpeechRecognizerUIOptions**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions)-Klasse (abgerufen durch Aufrufen der [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions)-Eigenschaft) zur Anpassung von Inhalten auf dem **Spracherkennung**-Bildschirm verwenden.
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -368,7 +368,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-* [Spracherkennungsinteraktionen](speech-interactions.md)
+* [Sprachinteraktionen](speech-interactions.md)
 
 **Beispiele**
 

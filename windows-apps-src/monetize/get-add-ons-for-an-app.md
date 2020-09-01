@@ -1,28 +1,28 @@
 ---
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
-description: Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API zum Abrufen von Informationen zu den in-app-Käufe für eine app, die für Ihre Partner Center registriert wird.
+description: Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um Informationen zu den in-App-Käufen für eine APP abzurufen, die bei Ihrem Partner Center registriert ist.
 title: Add-Ons für eine App abrufen
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Add-Ons, In-App-Produkte, IAPs
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Add-ons, in-App-Produkte, IAPS
 ms.localizationpriority: medium
-ms.openlocfilehash: 35b30d5760cb734fcdbd2df552ca5c5609414709
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 77d2bf238d74ca1576e45898afa752b78f05db0e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372171"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167674"
 ---
 # <a name="get-add-ons-for-an-app"></a>Add-Ons für eine App abrufen
 
-Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API, die Add-Ons für eine app aufgelistet, die mit Ihrem Partner Center-Konto registriert ist.
+Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um die Add-ons für eine APP aufzulisten, die bei Ihrem Partner Center-Konto registriert ist.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store Übermittlungs-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 ## <a name="request"></a>Anforderung
 
@@ -35,19 +35,19 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
 
-|  Name  |  Typ  |  Beschreibung  |  Erforderlich  |
+|  Name  |  Typ  |  BESCHREIBUNG  |  Erforderlich  |
 |------|------|------|------|
-|  applicationId  |  String  |  Die Store-ID der App, für die Sie Add-Ons abrufen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Ja  |
-|  top  |  ssNoversion  |  Die Anzahl von Elementen, die in der Anforderung zurückgegeben werden sollen (d. h. die Anzahl der zurückzugebenden-Add-Ons). Wenn die App mehr Add-Ons als der Wert verfügt, den Sie in der Abfrage festlegen, enthält der Antworttext einen relativen URI-Pfad, den Sie an den URI der Methode anfügen können, um die nächste Seite mit Daten anzufordern.  |  Nein  |
-|  skip |  ssNoversion  | Die Anzahl der Elemente, die in der Abfrage umgangen werden sollen, bevor die verbleibenden Elemente zurückgegeben werden. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Zum Beispiel werden bei top=10 und skip=0 die Elemente 1 bis 10 abgerufen, bei top=10 und skip=10 die Elemente 11 bis 20 und so weiter.   |  Nein  |
+|  applicationId  |  Zeichenfolge  |  Die Store-ID der App, für die Sie Add-Ons abrufen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).  |  Ja  |
+|  top  |  INT  |  Die Anzahl von Elementen, die in der Anforderung zurückgegeben werden sollen (d. h. die Anzahl der zurückzugebenden-Add-Ons). Wenn die App mehr Add-Ons als der Wert verfügt, den Sie in der Abfrage festlegen, enthält der Antworttext einen relativen URI-Pfad, den Sie an den URI der Methode anfügen können, um die nächste Seite mit Daten anzufordern.  |  Nein  |
+|  skip |  INT  | Die Anzahl der Elemente, die in der Abfrage umgangen werden sollen, bevor die verbleibenden Elemente zurückgegeben werden. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Zum Beispiel werden bei top=10 und skip=0 die Elemente 1 bis 10 abgerufen, bei top=10 und skip=10 die Elemente 11 bis 20 und so weiter.   |  Nein  |
 
 
 ### <a name="request-body"></a>Anforderungstext
@@ -95,26 +95,26 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext, der von einer erfolg
 
 ### <a name="response-body"></a>Antworttext
 
-| Wert      | Typ   | Beschreibung                                                                                                                                                                                                                                                                         |
+| Wert      | Typ   | BESCHREIBUNG                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | String | Wenn weitere Datenseiten vorhanden sind, enthält diese Zeichenfolge einen relativen Pfad, den Sie an den Basisanforderungs-URI `https://manage.devcenter.microsoft.com/v1.0/my/` zum Anfordern der nächsten Datenseite anfügen können. Wenn beispielsweise der Parameter *top* des anfänglichen Anforderungstexts auf 10 festgelegt ist, für die App jedoch 50 Add-Ons vorhanden sind, enthält der Antworttext den @nextLink-Wert `applications/{applicationid}/listinappproducts/?skip=10&top=10`, der angibt, dass Sie `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10` aufrufen können, um die nächsten 10 Add-Ons anzufordern. |
-| Wert      | array  | Ein Array von Objekten, die die Store-ID für jedes Add-On für die angegebene App auflisten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie unter [-Add-On-Ressource](get-app-data.md#add-on-object).                                                                                                                           |
-| totalCount | ssNoversion    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage (d. h. die Gesamtanzahl der Add-Ons für die angegebene App).    |
+| @nextLink  | Zeichenfolge | Wenn weitere Datenseiten vorhanden sind, enthält diese Zeichenfolge einen relativen Pfad, den Sie an den Basisanforderungs-URI `https://manage.devcenter.microsoft.com/v1.0/my/` zum Anfordern der nächsten Datenseite anfügen können. Wenn beispielsweise der *Top* -Parameter des ersten Anforderungs Texts auf 10 festgelegt ist, aber 50 Add-ons für die app vorhanden sind, enthält der Antworttext den @nextLink Wert `applications/{applicationid}/listinappproducts/?skip=10&top=10` , der angibt, dass Sie aufrufen können, `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10` um die nächsten 10 Add-ons anzufordern. |
+| value      | array  | Ein Array von Objekten, die die Store-ID für jedes Add-On für die angegebene App auflisten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie unter [-Add-On-Ressource](get-app-data.md#add-on-object).                                                                                                                           |
+| totalCount | INT    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage (d. h. die Gesamtanzahl der Add-Ons für die angegebene App).    |
 
 
 ## <a name="error-codes"></a>Fehlercodes
 
 Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die Antwort einen der folgenden HTTP-Fehlercodes.
 
-| Fehlercode |  Beschreibung   |
+| Fehlercode |  BESCHREIBUNG   |
 |--------|------------------|
 | 404  | Es wurden keine Add-Ons gefunden. |
-| 409  | Verwenden Sie die Add-Ons Partner Center-Features, die [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | Die Add-ons verwenden Features von Partner Center, die [derzeit nicht von der Microsoft Store Übermittlungs-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)werden.  |
 
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Alle apps abrufen](get-all-apps.md)
-* [Erhalten Sie eine app](get-an-app.md)
-* [Paket Flüge für eine app zu erhalten.](get-flights-for-an-app.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Abrufen aller Apps](get-all-apps.md)
+* [Abrufen einer App](get-an-app.md)
+* [Flight-Pakete für eine App abrufen](get-flights-for-an-app.md)

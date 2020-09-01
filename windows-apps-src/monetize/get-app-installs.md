@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store Services, Microsoft Store Analytics-API, App-Installationen
 ms.localizationpriority: medium
-ms.openlocfilehash: 9391ac3222f98a52d6c9aaf4ed39eb8ac2e3de56
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f6a22d8f7763b6f6048992e546a70a7b747e771e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492785"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164684"
 ---
 # <a name="get-app-installs"></a>Abrufen von App-Installationen
 
@@ -45,17 +45,17 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Parameter        | type   |  BESCHREIBUNG      |  Erforderlich  
+| Parameter        | Typ   |  BESCHREIBUNG      |  Erforderlich  
 |---------------|--------|---------------|------|
 | applicationId | Zeichenfolge | Die [Speicher-ID](in-app-purchases-and-trials.md#store-ids) der APP, für die Sie Installationsdaten abrufen möchten.  |  Ja  |
 | startDate | date | Das Startdatum im Datumsbereich der abzurufenden Installationsdaten. Als Standardeinstellung wird das aktuelle Datum festgelegt. |  Nein  |
 | endDate | date | Das Enddatum im Datumsbereich der abzurufenden Installationsdaten. Als Standardeinstellung wird das aktuelle Datum festgelegt. |  Nein  |
 | top | INT | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
 | skip | INT | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
-| filter | Zeichenfolge  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede-Anweisung enthält einen Feldnamen aus dem Antworttext und den Wert, die den **EQ** -oder **ne** -Operatoren zugeordnet sind, und-Anweisungen können mithilfe von **and** oder **or**kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>Marktforschungs</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>packageVersion</strong></li></ul> | Nein   |
+| filter | Zeichenfolge  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede-Anweisung enthält einen Feldnamen aus dem Antworttext und den Wert, die den **EQ** -oder **ne** -Operatoren zugeordnet sind, und-Anweisungen können mithilfe von **and** oder **or**kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>Marktforschungs</strong></li><li><strong>osVersion</strong></li><li><strong>den DeviceType "</strong></li><li><strong>packageVersion</strong></li></ul> | Nein   |
 | aggregationLevel | Zeichenfolge | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: <strong>day</strong>, <strong>week</strong> oder <strong>month</strong>. Wenn keine Angabe erfolgt, lautet der Standardwert <strong>day</strong>. | Nein |
-| orderby | Zeichenfolge | Eine-Anweisung, die die Ergebnisdaten Werte für jede Installation anordnet. Die Syntax lautet <em>OrderBy = Field [Order], Field [Order],...</em>. Der <em>Feld</em> Parameter kann eines der folgenden Felder aus dem Antworttext sein:<p/><ul><li><strong>applicationName</strong></li><li><strong>date</strong><li><strong>deviceType</strong></li><li><strong>Marktforschungs</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>erfolgreiche installcount</strong></li></ul><p>Der Parameter <em>order</em> ist optional und kann <strong>asc</strong> oder <strong>desc</strong> sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standardwert ist <strong>ASC</strong>.</p><p>Hier ist ein Beispiel für eine <em>OrderBy</em> -Zeichenfolge: <em>OrderBy = Date, Market</em></p> |  Nein  |
-| groupby | Zeichenfolge | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>applicationName</strong></li><li><strong>date</strong><li><strong>deviceType</strong></li><li><strong>Marktforschungs</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li></ul><p>Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter <em>groupby</em> angegeben sind, sowie die folgenden:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>erfolgreiche installcount</strong></li></ul><p>Der Parameter <em>groupby</em> kann mit dem Parameter <em>aggregationLevel</em> verwendet werden. Beispiel: <em> &amp; GroupBy = AgeGroup, Market &amp; aggregationlevel = Week</em></p> |  Nein  |
+| orderby | Zeichenfolge | Eine-Anweisung, die die Ergebnisdaten Werte für jede Installation anordnet. Die Syntax lautet <em>OrderBy = Field [Order], Field [Order],...</em>. Der <em>Feld</em> Parameter kann eines der folgenden Felder aus dem Antworttext sein:<p/><ul><li><strong>applicationName</strong></li><li><strong>date</strong><li><strong>den DeviceType "</strong></li><li><strong>Marktforschungs</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>erfolgreiche installcount</strong></li></ul><p>Der Parameter <em>order</em> ist optional und kann <strong>asc</strong> oder <strong>desc</strong> sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standardwert ist <strong>ASC</strong>.</p><p>Hier ist ein Beispiel für eine <em>OrderBy</em> -Zeichenfolge: <em>OrderBy = Date, Market</em></p> |  Nein  |
+| groupby | Zeichenfolge | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>applicationName</strong></li><li><strong>date</strong><li><strong>den DeviceType "</strong></li><li><strong>Marktforschungs</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li></ul><p>Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter <em>groupby</em> angegeben sind, sowie die folgenden:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>erfolgreiche installcount</strong></li></ul><p>Der Parameter <em>groupby</em> kann mit dem Parameter <em>aggregationLevel</em> verwendet werden. Beispiel: <em> &amp; GroupBy = AgeGroup, Market &amp; aggregationlevel = Week</em></p> |  Nein  |
 
  
 ### <a name="request-example"></a>Anforderungsbeispiel
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>Antworttext
 
-| Wert      | type   | BESCHREIBUNG                  |
+| Wert      | Typ   | BESCHREIBUNG                  |
 |------------|--------|-------------------------------------------------------|
 | Wert      | array  | Ein Array von-Objekten, die Aggregat Installationsdaten enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.                                                                                                                      |
 | @nextLink  | Zeichenfolge | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Dieser Wert wird z. b. zurückgegeben, wenn der **Top** -Parameter der Anforderung auf 10000 festgelegt ist, aber mehr als 10000 Zeilen mit Installationsdaten für die Abfrage vorhanden sind. |
@@ -84,12 +84,12 @@ Authorization: Bearer <your access token>
 
 Elemente im Array *Value* enthalten die folgenden Werte.
 
-| Wert               | type   | BESCHREIBUNG                           |
+| Wert               | Typ   | BESCHREIBUNG                           |
 |---------------------|--------|-------------------------------------------|
 | date                | Zeichenfolge | Das erste Datum im Datumsbereich für die Installationsdaten. Wenn die Anforderung einen einzelnen Tag angibt, ist dieses Datum dieser Wert. Wenn die Anforderung eine Woche, einen Monat oder einen anderen Datumsbereich angibt, ist dieser Wert das erste Datum in diesem Datumsbereich. |
 | applicationId       | Zeichenfolge | Die Speicher-ID der APP, für die Sie Installationsdaten abrufen.     |
 | applicationName     | Zeichenfolge | Der Anzeigename der App.     |
-| deviceType          | Zeichenfolge | Eine der folgenden Zeichen folgen, die den Typ des Geräts angibt, das die Installation abgeschlossen hat:<p/><ul><li><strong>PC</strong></li><li><strong>Smartphone</strong></li><li><strong>Konsole-Xbox One</strong></li><li><strong>Konsole-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unbekannt</strong></li></ul>  |
+| deviceType          | Zeichenfolge | Eine der folgenden Zeichen folgen, die den Typ des Geräts angibt, das die Installation abgeschlossen hat:<p/><ul><li><strong>PCs</strong></li><li><strong>Smartphone</strong></li><li><strong>Konsole-Xbox One</strong></li><li><strong>Konsole-Xbox Series X</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unbekannt</strong></li></ul>  |
 | packageVersion           | Zeichenfolge | Die Version des Pakets, das installiert wurde.  |
 | osVersion           | Zeichenfolge | Eine der folgenden Zeichen folgen, die die Betriebssystemversion angibt, auf der die Installation aufgetreten ist:<p/><ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unbekannt</strong></li></ul>   |
 | market              | Zeichenfolge | Der ISO 3166-Ländercode des Markts, an dem die Installation aufgetreten ist.    |
@@ -119,7 +119,7 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 }
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Installiert den Bericht.](../publish/installs-report.md)
+* [Installiert den Bericht.](../publish/acquisitions-report.md)
 * [Zugreifen auf Analytics-Daten mithilfe von Microsoft Store Services](access-analytics-data-using-windows-store-services.md)

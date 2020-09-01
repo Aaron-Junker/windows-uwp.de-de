@@ -1,27 +1,27 @@
 ---
-description: Mittels dieser Methode in der Microsoft Store-Analyse-API können Sie gesammelte Fehlerberichtsdaten für eine Desktopanwendung für einen bestimmten Zeitraum und andere optionale Filter abrufen.
+description: Verwenden Sie diese Methode in der Microsoft Store Analytics-API, um aggregierte Fehler Berichterstattungs Daten für eine Desktop Anwendung für einen bestimmten Datumsbereich und andere optionale Filter zu erhalten.
 title: Abrufen von Fehlerberichtsdaten für Ihre Desktopanwendung
 ms.date: 09/04/2018
 ms.topic: article
-keywords: Windows 10, UWP, Store-Dienste, Microsoft Store-Analyse-API, Fehler, Desktopanwendung
+keywords: Windows 10, UWP, Store Services, Microsoft Store Analytics-API, Fehler, Desktop Anwendung
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a628df7f557070a077cd0c4ec328bc49ffaf5bd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bb9c0bd3162f603bd9965a98c5e75bad5aae9c54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372116"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167594"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>Abrufen von Fehlerberichtsdaten für Ihre Desktopanwendung
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um gesammelte Fehlerberichtsdaten für eine Desktopanwendung abzurufen, die Sie dem [Windows-Desktopanwendungsprogramm](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) hinzugefügt haben. Diese Methode kann nur Fehler abrufen, die in den letzten 30 Tagen aufgetreten sind. Diese Informationen sind auch verfügbar in der [Integritätsbericht](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) für desktop-Anwendungen im Partner Center.
+Verwenden Sie diese Methode in der Microsoft Store Analytics-API, um aggregierte Fehler Berichterstattungs Daten für eine Desktop Anwendung zu erhalten, die Sie dem [Windows-Desktop Anwendungsprogramm](/windows/desktop/appxpkg/windows-desktop-application-program)hinzugefügt haben. Diese Methode kann nur Fehler abrufen, die innerhalb der letzten 30 Tage aufgetreten sind. Diese Informationen sind auch im Integritäts [Bericht](/windows/desktop/appxpkg/windows-desktop-application-program) für Desktop Anwendungen in Partner Center verfügbar.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store Analytics-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 ## <a name="request"></a>Anforderung
 
@@ -35,29 +35,29 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Parameter        | Typ   |  Beschreibung      |  Erforderlich  
+| Parameter        | Typ   |  BESCHREIBUNG      |  Erforderlich  
 |---------------|--------|---------------|------|
-| applicationId | String | Die Produkt-ID der Desktopanwendung, für die Fehlerberichtsdaten abgerufen werden sollen. Rufen Sie die Produkt-ID, einer Desktopanwendung öffnen [Analytics zu senden, damit die desktop-Anwendung im Partner Center](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program) (z. B. die **Integritätsbericht**) und die Produkt-ID aus der URL abzurufen. |  Ja  |
-| startDate | date | Das Startdatum im Datumsbereich der Fehlerberichtsdaten, die abgerufen werden sollen, im Format ```mm/dd/yyyy```. Der Standardwert ist das aktuelle Datum.<p/><p/>**Hinweis:** &nbsp;&nbsp;dieser Methode kann nur in den letzten 30 Tagen aufgetretenen Fehler abgerufen werden.  |  Nein  |
-| endDate | date | Das Enddatum im Datumsbereich der Fehlerberichtsdaten, die abgerufen werden sollen, im Format ```mm/dd/yyyy```. Der Standardwert ist das aktuelle Datum.   |  Nein  |
-| top | ssNoversion | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
-| skip | ssNoversion | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
-| filter |String  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede Anweisung enthält einen Feldnamen aus dem Antworttext und einen Wert, die mit den Operatoren **eq** oder **ne** verknüpft sind. Anweisungen können mit **and** oder **or** kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>fileName</strong></li><li><strong>applicationVersion</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>osBuild</strong></li><li><strong>osRelease</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>productName</strong></li><li><strong>date</strong></li></ul> | Nein   |
-| aggregationLevel | String | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **day**, **week** oder **month**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**. Wenn Sie **week** oder **month** angeben, sind die Werte *failureName* und *failureHash* auf 1000 Buckets begrenzt.<p/>  | Nein |
-| orderby | String | Eine Anweisung, die die Ergebnisdatenwerte anfordert. Die Syntax ist *orderby=field [order],field [order],...* . Der Parameter *field* kann eine der folgenden Zeichenfolgen sein:<ul><li><strong>fileName</strong></li><li><strong>applicationVersion</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>osBuild</strong></li><li><strong>osRelease</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>productName</strong></li><li><strong>date</strong></li></ul>Der Parameter *order* ist optional und kann **asc** oder **desc** sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standard ist **asc**.</p><p>Dies ist eine Beispielzeichenfolge für *orderby*: *orderby=date,market*</p> |  Nein  |
-| groupby | String | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder angeben:<ul><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li></ul><p>Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter *groupby* angegeben sind, sowie die folgenden:</p><ul><li>**date**</li><li>**applicationId**</li><li>**applicationName**</li><li>**eventCount**</li></ul><p>Der Parameter *groupby* kann mit dem Parameter *aggregationLevel* verwendet werden. Beispiel: *&amp;groupby=failureName,market&amp;aggregationLevel=week*</p></p> |  Nein  |
+| applicationId | Zeichenfolge | Die Produkt-ID der Desktop Anwendung, für die Sie Fehler Berichterstattungs Daten abrufen möchten. Wenn Sie die Produkt-ID einer Desktop Anwendung abrufen möchten, öffnen Sie einen beliebigen [Analysebericht für Ihre Desktop Anwendung im Partner Center](/windows/desktop/appxpkg/windows-desktop-application-program) (z. b. den Integritäts **Bericht**), und rufen Sie die Produkt-ID aus der URL ab. |  Ja  |
+| startDate | date | Das Startdatum im Datumsbereich der abzurufenden Fehler Berichterstattungs Daten im Format ```mm/dd/yyyy``` . Als Standardeinstellung wird das aktuelle Datum festgelegt.<p/><p/>**Hinweis:** &nbsp; &nbsp; Diese Methode kann nur Fehler abrufen, die innerhalb der letzten 30 Tage aufgetreten sind.  |  Nein  |
+| endDate | date | Das Enddatum im Datumsbereich der abzurufenden Fehler Berichterstattungs Daten im Format ```mm/dd/yyyy``` . Als Standardeinstellung wird das aktuelle Datum festgelegt.   |  Nein  |
+| top | INT | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
+| skip | INT | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
+| filter |Zeichenfolge  | Mindestens eine Anweisung, die die Zeilen in der Antwort filtert. Jede-Anweisung enthält einen Feldnamen aus dem Antworttext und den Wert, die den **EQ** -oder **ne** -Operatoren zugeordnet sind, und-Anweisungen können mithilfe von **and** oder **or**kombiniert werden. Zeichenfolgenwerte im Parameter *filter* müssen von einfachen Anführungszeichen eingeschlossen werden. Sie können die folgenden Felder aus dem Antworttext angeben:<p/><ul><li><strong>fileName</strong></li><li><strong>applicationVersion</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>Tick</strong></li><li><strong>osVersion</strong></li><li><strong>osBuild</strong></li><li><strong>osRelease</strong></li><li><strong>eventType</strong></li><li><strong>Marktforschungs</strong></li><li><strong>den DeviceType "</strong></li><li><strong>ProductName</strong></li><li><strong>date</strong></li></ul> | Nein   |
+| aggregationLevel | Zeichenfolge | Gibt den Zeitraum an, für den aggregierte Daten abgerufen werden sollen. Dies kann eine der folgenden Zeichenfolgen sein: **day**, **week** oder **month**. Wenn keine Angabe erfolgt, lautet der Standardwert **day**. Wenn Sie **week** oder **month** angeben, sind die Werte *failureName* und *failureHash* auf 1000 Buckets begrenzt.<p/>  | Nein |
+| orderby | Zeichenfolge | Eine Anweisung, die die Ergebnisdatenwerte anfordert. Die Syntax lautet *OrderBy = Field [Order], Field [Order],...*. Der *Feld* Parameter kann eine der folgenden Zeichen folgen sein:<ul><li><strong>fileName</strong></li><li><strong>applicationVersion</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>Tick</strong></li><li><strong>osVersion</strong></li><li><strong>osBuild</strong></li><li><strong>osRelease</strong></li><li><strong>eventType</strong></li><li><strong>Marktforschungs</strong></li><li><strong>den DeviceType "</strong></li><li><strong>ProductName</strong></li><li><strong>date</strong></li></ul>Der Parameter *order* ist optional und kann **asc** oder **desc** sein, um die auf- oder absteigende Anordnung der einzelnen Felder anzugeben. Der Standardwert ist **ASC**.</p><p>Hier ist ein Beispiel für eine *OrderBy* -Zeichenfolge: *OrderBy = Date, Market*</p> |  Nein  |
+| groupby | Zeichenfolge | Eine Anweisung, die nur auf die angegebenen Felder Datenaggregationen anwendet. Sie können die folgenden Felder angeben:<ul><li>**failureName**</li><li>**failureHash**</li><li>**Tick**</li><li>**osVersion**</li><li>**eventType**</li><li>**Marktforschungs**</li><li>**den DeviceType "**</li></ul><p>Die zurückgegebenen Datenzeilen enthalten die Felder, die im Parameter *groupby* angegeben sind, sowie die folgenden:</p><ul><li>**date**</li><li>**applicationId**</li><li>**applicationName**</li><li>**eventCount**</li></ul><p>Der Parameter *groupby* kann mit dem Parameter *aggregationLevel* verwendet werden. Beispiel: * &amp; GroupBy = failurename, Market &amp; aggregationlevel = Week*</p></p> |  Nein  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
-Die folgenden Beispiele zeigen verschiedene Anforderungen für das Abrufen von Fehlerberichtsdaten. Ersetzen Sie den Wert *applicationId* durch die Produkt-ID Ihrer Desktopanwendung.
+Die folgenden Beispiele zeigen verschiedene Anforderungen für das Abrufen von Fehlerberichtsdaten. Ersetzen Sie den Wert *ApplicationId* durch die Produkt-ID für Ihre Desktop Anwendung.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/failurehits?applicationId=10238467886765136388&startDate=1/1/2018&endDate=2/1/2018&top=10&skip=0 HTTP/1.1
@@ -72,34 +72,34 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>Antworttext
 
-| Wert      | Typ    | Beschreibung     |
+| Wert      | Typ    | BESCHREIBUNG     |
 |------------|---------|--------------|
 | Wert      | array   | Ein Array von Objekten, die gesammelte Fehlerberichtsdaten enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie unten im Abschnitt [Fehlerwerte](#error-values).     |
-| @nextLink  | String  | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10.000 Zeilen mit Fehlern für die Abfrage gibt. |
-| TotalCount | Ganzzahl | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.     |
+| @nextLink  | Zeichenfolge  | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10.000 Zeilen mit Fehlern für die Abfrage gibt. |
+| TotalCount | integer | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.     |
 
 
 ### <a name="error-values"></a>Fehlerwerte
 
 Elemente im Array *Value* enthalten die folgenden Werte.
 
-| Wert           | Typ    | Beschreibung        |
+| Wert           | Typ    | BESCHREIBUNG        |
 |-----------------|---------|---------------------|
-| date            | String  | Das erste Datum im Datumsbereich für die Fehlerdaten im Format ```yyyy-mm-dd```. Wenn die Anforderung einen einzelnen Tag angibt, ist dieses Datum dieser Wert. Wenn die Anforderung einen längeren Datumsbereich angibt, ist dieser Wert das erste Datum in diesem Datumsbereich. Für Anforderungen, die einen *aggregationLevel*-Wert von **hour** angeben, enthält dieser Wert auch einen Zeitwert im Format ```hh:mm:ss```.  |
-| applicationId   | String  | Die Produkt-ID der Desktopanwendung, für die Fehlerdaten abgerufen wurden.    |
-| productName | String  | Der Anzeigename der Desktopanwendung, der aus den Metadaten der zugehörigen ausführbaren Datei(en) abgeleitet wurde.   |
-| appName | String  |  TBD  |
-| fileName | String  | Der Name der ausführbaren Datei für die Desktopanwendung.   |
-| failureName     | String  | Der Name des Fehlers, der aus vier Teilen besteht: eine oder mehrere Problemklassen, ein Ausnahme/Fehlerprüfcode, der Name des Image, in dem der Fehler aufgetreten ist, und der zugehörige Funktionsname.  |
-| failureHash     | String  | Der eindeutige Bezeichner des Fehlers.   |
-| symbol          | String  | Das diesem Fehler zugewiesene Symbol. |
-| osBuild       | String  | Die vierteilige Buildnummer des Betriebssystems, auf dem der Fehler aufgetreten ist.  |
-| osVersion       | String  | Eine der folgenden Zeichenfolgen, die die Version des Betriebssystems angibt, auf dem die Desktopanwendung installiert wurde:<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>Unbekannt</strong></li></ul>   |   
-| osRelease | String  | Eine der folgenden Zeichenfolgen, die die Betriebssystemversion oder den Verteilungsring (als eine Subpopulation innerhalb der Betriebssystemversion) angibt, in der bzw. dem der Fehler aufgetreten ist.<p/><p>Für Windows 10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Preview-Version</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider langsam</strong></li></ul><p/><p>Für Windows Server 1709:</p><ul><li><strong>RTM</strong></li></ul><p>Für Windows Server 2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>Für Windows 8.1:</p><ul><li><strong>Update 1</strong></li></ul><p>Für Windows 7:</p><ul><li><strong>Servicepack 1</strong></li></ul><p>Wenn die Betriebssystemversion oder Verteilungsring unbekannt ist, hat dieses Feld den Wert <strong>Unknown</strong>.</p> |
-| eventType       | String  | Eine der folgenden Zeichenfolgen, die den Typ des Fehlerereignisses angibt:<ul><li>**crash**</li><li>**hang**</li><li>**memory**</li><li>**jse**</li></ul>       |
-| market          | String  | Der ISO 3166-Ländercode des Gerätemarkts.   |
-| deviceType      | String  | Eine der folgenden Zeichenfolgen, die den Typ des Geräts angibt, auf dem der Fehler aufgetreten ist:<p/><ul><li><strong>PC</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Unbekannt</strong></li></ul>    |
-| applicationVersion     | String  |   Die Version der ausführbaren Datei der Anwendung, in der der Fehler aufgetreten ist.    |
+| date            | Zeichenfolge  | Das erste Datum im Datumsbereich für die Fehler Daten im Format ```yyyy-mm-dd``` . Wenn die Anforderung einen einzelnen Tag angibt, ist dieser Wert dieses Datum. Wenn in der Anforderung ein längerer Datumsbereich angegeben wird, ist dieser Wert das erste Datum in diesem Datumsbereich. Bei Anforderungen, die einen *aggregationlevel* -Wert von **Hour**angeben, enthält dieser Wert auch einen Uhrzeitwert im Format ```hh:mm:ss``` .  |
+| applicationId   | Zeichenfolge  | Die Produkt-ID der Desktop Anwendung, für die Sie Fehler Daten abgerufen haben.    |
+| ProductName | Zeichenfolge  | Der Anzeige Name der Desktop Anwendung, die von den Metadaten der zugehörigen ausführbaren Dateien abgeleitet ist.   |
+| appName | Zeichenfolge  |  TBD  |
+| fileName | Zeichenfolge  | Der Name der ausführbaren Datei für die Desktop Anwendung.   |
+| failureName     | Zeichenfolge  | Der Name des Fehlers, der aus vier Teilen besteht: mindestens eine Problemklasse, ein Ausnahme-/Fehlerprüfcode, der Name des Abbilds, in dem der Fehler aufgetreten ist, und der zugehörige Funktionsname.  |
+| failureHash     | Zeichenfolge  | Der eindeutige Bezeichner des Fehlers.   |
+| Symbol          | Zeichenfolge  | Das diesem Fehler zugewiesene Symbol. |
+| osBuild       | Zeichenfolge  | Die vierteilige Buildnummer des Betriebssystems, auf dem der Fehler aufgetreten ist.  |
+| osVersion       | Zeichenfolge  | Eine der folgenden Zeichen folgen, die die Betriebssystemversion angibt, auf der die Desktop Anwendung installiert wird:<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>Unbekannt</strong></li></ul>   |   
+| osRelease | Zeichenfolge  | Eine der folgenden Zeichen folgen, die das Betriebssystem Release oder den flighting-Ring (als untergeordnete Population innerhalb der Betriebssystemversion) angibt, auf dem der Fehler aufgetreten ist.<p/><p>Für Windows 10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Version 1803</strong></li><li><strong>Releasevorschau</strong></li><li><strong>Insider fast</strong></li><li><strong>Insider langsam</strong></li></ul><p/><p>Für Windows Server 1709:</p><ul><li><strong>RTM</strong></li></ul><p>Für Windows Server 2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>Für Windows 8.1:</p><ul><li><strong>Update 1</strong></li></ul><p>Für Windows 7:</p><ul><li><strong>Service Pack 1</strong></li></ul><p>Wenn das Betriebssystem Release oder der flighting-Ring unbekannt ist, hat dieses Feld den Wert <strong>Unknown</strong>.</p> |
+| eventType       | Zeichenfolge  | Eine der folgenden Zeichen folgen, die den Typ des Fehler Ereignisses angibt:<ul><li>**um**</li><li>**hängen**</li><li>**Gedenkens**</li><li>**JSE**</li></ul>       |
+| market          | Zeichenfolge  | Der ISO 3166-Ländercode des Gerätemarkts.   |
+| deviceType      | Zeichenfolge  | Eine der folgenden Zeichen folgen, die den Typ des Geräts angibt, auf dem der Fehler aufgetreten ist:<p/><ul><li><strong>PCs</strong></li><li><strong>Server</strong></li><li><strong>Tablet</strong></li><li><strong>Unbekannt</strong></li></ul>    |
+| applicationVersion     | Zeichenfolge  |   Die Version der ausführbaren Datei der Anwendung, in der der Fehler aufgetreten ist.    |
 | eventCount      | number | Die Anzahl der Ereignisse, die diesem Fehler für die angegebene Aggregationsebene zugeordnet werden.      |
 
 
@@ -135,10 +135,10 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Bericht zur Integrität](../publish/health-report.md)
-* [Access-Analytics-Daten mithilfe von Microsoft Store services](access-analytics-data-using-windows-store-services.md)
-* [Abrufen von Details für einen Fehler in die desktop-Anwendung](get-details-for-an-error-in-your-desktop-application.md)
-* [Die stapelüberwachung für einen Fehler in die desktop-Anwendung abrufen.](get-the-stack-trace-for-an-error-in-your-desktop-application.md)
-* [Laden Sie die CAB-Datei in die desktop-Anwendung nach einem Fehler](download-the-cab-file-for-an-error-in-your-desktop-application.md)
+* [Integritätsbericht](../publish/health-report.md)
+* [Zugreifen auf Analytics-Daten mithilfe von Microsoft Store Services](access-analytics-data-using-windows-store-services.md)
+* [Abrufen von Details zu einem Fehler in Ihrer Desktopanwendung](get-details-for-an-error-in-your-desktop-application.md)
+* [Abrufen der Stapelüberwachung für einen Fehler in Ihrer Desktopanwendung](get-the-stack-trace-for-an-error-in-your-desktop-application.md)
+* [Herunterladen der CAB-Datei bei einem Fehler in der Desktopanwendung](download-the-cab-file-for-an-error-in-your-desktop-application.md)

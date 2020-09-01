@@ -1,11 +1,11 @@
 ---
 Description: Entwerfen Sie Ihre APP so, dass Sie gut aussieht und gut in gemischter Realität funktioniert.
-title: Design für Mixed Reality
+title: Entwerfen für gemischte Realität
 ms.assetid: ''
 label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
-keywords: Mixed Reality, Hololens, Erweiterte Realität, anvisieren, Stimme, Controller
+keywords: Gemischte Realität, hololens, Erweiterte Realität, Blick, Stimme, Controller
 ms.date: 02/05/2018
 ms.topic: article
 pm-contact: chigy
@@ -13,129 +13,129 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aaa5b5a51ab2aea863fece8fb466f274a00ace3
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c0b1ae069959e74239234ae5c9ba409fe7a65f23
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684253"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165974"
 ---
-# <a name="designing-for-mixed-reality"></a>Design für Mixed Reality
+# <a name="designing-for-mixed-reality"></a>Entwerfen für gemischte Realität
 
-Gestalten Sie Ihre Anwendung so, dass sie in Mixed Reality gut aussieht und nutzen Sie neue Eingabemethoden.
+Entwerfen Sie Ihre APP so, dass Sie in gemischter Realität gut aussieht, und profitieren Sie von neuen Eingabemethoden.
 
 ## <a name="overview"></a>Übersicht
 
-[Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) ist das Ergebnis der Verschmelzung der physischen Welt mit der digitalen Welt. Das Spektrum der Mixed Reality-Erfahrungen umfasst zum einen extreme Geräte wie HoloLens (ein Gerät, das computergenerierte Inhalte mit der realen Welt mischt) und zum anderen eine völlig Sicht auf die virtuelle Realität (wie mit einem Windows Mixed Reality-Headset). Siehe [Typen von Mixed Reality-Anwendungen](https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps) für Beispiele zu verschiedenen Erfahrungen.
+[Gemischte Realität](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) ist das Ergebnis der Mischung der physischen Welt mit der digitalen Welt. Das Spektrum gemischter Reality-Erfahrungen umfasst auf einem extrem Gerät, wie z. b. den hololens (ein Gerät, das vom computergenerierte Inhalte in der realen Welt mischt) und dem anderen eine vollständig immersive Ansicht der virtuellen Realität (wie in einem Windows Mixed Reality-Headset angezeigt). Unter [Typen von Mixed Reality-apps](https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps) finden Sie Beispiele dazu, wie sich die Benutzeroberflächen unterscheiden.
 
-Fast alle existierenden UWP-Apps laufen in der Mixed Reality-Umgebung ohne Änderungen als 2D-Anwendungen, obwohl die Erfahrung für den Benutzer verbessert werden kann, indem einige der Anleitungen in diesem Thema befolgt werden.
+Fast alle vorhandenen UWP-apps werden in der gemischten Reality-Umgebung als 2D-apps ohne Änderungen ausgeführt, obwohl die Benutzerumgebung durch die folgenden Anweisungen in diesem Thema verbessert werden kann.
 
-![Mixed Reality-Ansicht](images/MR-01.png)
+![Gemischte Realität (Ansicht)](images/MR-01.png)
 
-Sowohl HoloLens als auch die Windows Mixed Reality-Headsets unterstützen Anwendungen, die auf der UWP-Plattform laufen. Beide unterstützen zwei verschiedene Arten von Erfahrungen. 
+Sowohl das hololens-als auch das Windows Mixed Reality-Headsets unterstützen Anwendungen, die auf der UWP-Plattform ausgeführt werden, und beide unterstützen zwei verschiedene Arten von Funktionen. 
 
-### <a name="2d-vs-immersive-experience"></a>2D-Erfahrungen und immersive Erfahrung
+### <a name="2d-vs-immersive-experience"></a>2D und immersive Darstellung
 
-Eine immersive App übernimmt die gesamte für den Benutzer sichtbare Anzeige und stellt sie in den Mittelpunkt einer von der App erstellten Ansicht. Zum Beispiel könnte ein immersives Spiel den Benutzer auf die Oberfläche eines fremden Planeten bringen, oder eine Reiseleiter-App könnte den Beutzer in ein südamerikanisches Dorf bringen. Die Erstellung einer immersiven App erfordert 3D-Grafiken oder aufgenommene stereografische Videos. Immersive Apps werden oft mit einer Drittanbieter-Game-Engine wie Unity oder mit DirectX entwickelt.
+Eine immersive App übernimmt die gesamte Anzeige, die für den Benutzer sichtbar ist, und platziert Sie in der Mitte einer Ansicht, die von der App erstellt wurde. Beispielsweise kann ein immersives Spiel den Benutzer auf der Oberfläche eines fremden Planeten platzieren, oder eine Tour Guide-app könnte den Benutzer in einem Südamerika-Ort platzieren. Zum Erstellen einer immersiven APP sind 3D-Grafiken oder erfasste Stereografische Videos erforderlich. Immersive apps werden häufig mit einer Drittanbieter-Spiel-Engine wie Unity oder mit DirectX entwickelt.
 
-Wenn Sie immersive App erstellen, sollten Sie das [Windows Mixed Reality Dev Center](https://developer.microsoft.com/mixed-reality) besuchen, um weitere Informationen zu erhalten.
+Wenn Sie immersive Apps erstellen, besuchen Sie das [Windows Mixed Reality dev Center](https://developer.microsoft.com/mixed-reality) , um weitere Informationen zu erhalten.
 
-Eine 2D-App läuft als traditionelles, flaches Fenster im Blickfeld des Benutzers. Auf HoloLens ist dies Fenster an die Wand oder einen Punkt im Raum des eigenen Wohnzimmers oder Büros geheftet. In einem Windows Mixed Reality-Headset wird die App an eine Wand im [Mixed Reality Home](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (manchmal auch *Cliff House* genannt) geheftet.
+Eine 2D-APP wird als herkömmliches flaches Fenster in der Ansicht des Benutzers ausgeführt. Auf dem hololens bedeutet das, dass eine Ansicht an die Wand oder an einem Punkt im Raum der Benutzer in der Praxis der realen Wohn Räume oder im Büro ist. In einem Windows Mixed Reality-Headset wird die APP an eine Wand in der [Mixed Reality-Startseite](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) angeheftet (manchmal auch als " *drehhaus*" bezeichnet).
 
-![Mehrere App in Mixed Reality](images/MR-multiple.png)
-
-
-Diese 2D-Apps übernehmen nicht die gesamte Ansicht: Sie werden in ihr platziert. Mehrere 2D-Apps können gleichzeitig in der Umgebung existieren.
-
-Der Rest dieses Themas behandelt Designüberlegungen für die 2D-Erfahrung.
-
-## <a name="launching-2d-apps"></a>Starten von 2D-Apps
-
-![Mixed Reality-Startmenü](images/MR-start-options.png)
-
-Alle Apps werden über das Startmenü gestartet, aber es ist auch möglich, ein 3D-Objekt zu erstellen, das als App-Launcher fungiert. Details finden Sie in [diesem Video](https://www.youtube.com/watch?v=TxIslHsEXno).
-
-## <a name="the-2d-app-input-overview"></a>Die 2D-App-Input-Übersicht
-
-Tastaturen und Mäuse werden sowohl bei HoloLens als auch bei Mixed Reality-Plattformen unterstützt. Sie können eine Tastatur und Maus über Bluetooth direkt mit HoloLens verbinden. Mixed Reality-Apps unterstützen Maus und Tastatur, die mit dem Host-Computer verbunden sind. Beides kann in Situationen nützlich sein, in denen eine präzise Steuerung erforderlich ist.
-
-Andere, natürlichere Eingabemethoden werden ebenfalls unterstützt. Diese können besonders nützlich sein, wenn der Benutzer nicht an einem Schreibtisch mit einer echten Tastatur vor sich sitzt oder wenn keine präzise Steuerung erforderlich ist.
-
-Ohne zusätzliche Hardware oder Programmierung nutzen Apps bei der Arbeit mit 2D-apps das Anvisieren – den Vektor, in dem der Benutzer schaut – als Mauszeiger. Dies ist so implementiert, als ob ein Mauszeiger über etwas in der virtuellen Szene schwebt.
-
-In einer typischen Interaktion betrachtet Ihr Benutzer ein Steuerelement in Ihrer App, wodurch es hervorgehoben wird. Der Benutzer löst eine Aktion entweder mit einer Geste (bei HoloLens), mit einem Controller oder mit einem Sprachbefehl aus. Wenn der Benutzer ein Texteingabefeld auswählt, erscheint die Softwaretastatur. 
+![Mehrere apps, die in gemischter Realität ausgeführt werden](images/MR-multiple.png)
 
 
-![Die Pop-Up-Tastatur in Mixed Reality](images/MR-keyboard.png)
+Diese 2D-apps übernehmen nicht die gesamte Ansicht: Sie werden darin platziert. In der Umgebung können mehrere 2D-apps gleichzeitig vorhanden sein.
 
-Es ist wichtig zu beachten, dass diese Interaktionen automatisch und ohne zusätzliche Programmierung Ihrerseits erfolgen. Dies liegt an der Ausführung auf der UWP-Plattform. Die Eingaben von HoloLens und Mixed Reality-Headsets erscheinen für die 2D-App als Touch-Eingabe. Das bedeutet, dass viele UWP-Apps standardmäßig in Mixed Reality laufen und nutzbar sind. 
+Im weiteren Verlauf dieses Themas werden Entwurfs Überlegungen für die 2D-Funktion erläutert.
 
-Allerdings kann die Erfahrung mit etwas mehr Arbeit erheblich verbessert werden. Beispielsweise kann die [Sprachsteuerung](https://developer.microsoft.com/windows/mixed-reality/voice_design) besonders effektiv sein. Sowohl HoloLens als auch Mixed Reality-Umgebungen unterstützen Sprachbefehle zum Starten und Interagieren mit Apps, und die Sprachunterstützung wird als natürliche Erweiterung dieses Ansatzes wahrgenommen. Weitere Informationen zum Hinzufügen von Sprachunterstützung zu Ihrer UWP-App finden Sie unter [Sprachinteraktionen]( https://docs.microsoft.com/windows/uwp/design/input/speech-interactions). 
+## <a name="launching-2d-apps"></a>Starten von 2D-apps
+
+![Gemischtes Reality-Startmenü](images/MR-start-options.png)
+
+Alle apps werden über das Startmenü gestartet, es ist aber auch möglich, ein 3D-Objekt zu erstellen, das als App-Start Programm fungiert. Weitere Informationen finden Sie in [diesem Video](https://www.youtube.com/watch?v=TxIslHsEXno) .
+
+## <a name="the-2d-app-input-overview"></a>Übersicht über die 2D-App-Eingabe
+
+Tastaturen und Mäuse werden auf hololens-und Mixed Reality-Plattformen unterstützt. Sie können Tastatur und Maus direkt mit den hololens über Bluetooth koppeln. Mixed Reality-apps unterstützen die Maus und die Tastatur, die mit dem Host Computer verbunden sind. Beides kann in Situationen nützlich sein, in denen eine gute Kontrolle erforderlich ist.
+
+Andere, natürlichere Eingabemethoden werden ebenfalls unterstützt, und diese können besonders nützlich sein, wenn der Benutzer nicht an einem Schreibtisch mit einer echten Tastatur vorsitzt oder wenn eine Feinsteuerung erforderlich ist.
+
+Ohne zusätzliche Hardware oder Codierungen verwenden apps den Blick, und zwar den Vektor, den Ihr Benutzer beim Arbeiten mit 2D-Apps als Mauszeiger ansieht. Sie wird implementiert, als ob ein Mauszeiger auf etwas in der virtuellen Szene zeigt.
+
+Bei einer typischen Interaktion wird der Benutzer ein Steuerelement in Ihrer APP betrachten, wodurch es hervorgehoben wird. Der Benutzer löst eine Aktion aus, indem er entweder eine Bewegung (auf dem hololens) oder einen "Voice"-Befehl verwendet. Wenn der Benutzer ein Texteingabefeld auswählt, wird die Tastatur der Software angezeigt. 
 
 
-### <a name="selecting-the-right-controller"></a>Auswahl des richtigen Controllers
+![Die Popup Tastatur in gemischter Realität](images/MR-keyboard.png)
 
-![Mixed Reality-Motion-Controller](images/MR-controllers.png)
+Es ist wichtig zu beachten, dass alle diese Interaktionen automatisch ohne zusätzliche Codierung durchgeführt werden, weil Sie auf der UWP-Plattform ausgeführt werden. Eingaben aus dem hololens-und Mixed Reality-Headset werden als Berührungs Eingaben für die 2D-App angezeigt. Dies bedeutet, dass viele UWP-apps standardmäßig ausgeführt werden und in gemischter Realität verwendet werden können. 
 
-Mehrere neuartige Eingabemethoden wurden speziell für den Einsatz mit Mixed Reality entwickelt:
+Das heißt, mit einigen zusätzlichen Aufgaben kann die Leistung erheblich verbessert werden. Beispielsweise kann das [sprach Steuer](https://developer.microsoft.com/windows/mixed-reality/voice_design) Element besonders effektiv sein. Sowohl hololens-als auch Mixed Reality-Umgebungen unterstützen Sprachbefehle zum Starten und interagieren mit apps, und die Sprachunterstützung wird als natürliche Erweiterung dieses Ansatzes angezeigt. Weitere Informationen zum Hinzufügen von Sprachunterstützung zu ihrer UWP-App finden Sie unter [sprach Interaktionen]( ../input/speech-interactions.md) . 
 
-* [Handbewegungen](https://developer.microsoft.com/windows/mixed-reality/gestures) (nur HoloLens, aber nur zum Starten von 2D-Apps)
+
+### <a name="selecting-the-right-controller"></a>Auswählen des richtigen Controllers
+
+![Gemischte Reality-Motion-Controller](images/MR-controllers.png)
+
+Mehrere neuartige Eingabemethoden wurden speziell für die Verwendung mit gemischter Realität entworfen, insbesondere:
+
+* [Hand Gesten](https://developer.microsoft.com/windows/mixed-reality/gestures) (nur hololens, aber nur zum Starten von 2D-Apps)
 * [Gamepad-Unterstützung](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (beide Umgebungen)
-* [Klick-Gerät](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (nur HoloLens)
-* [Motion-Controller](https://docs.microsoft.com/windows/mixed-reality/motion-controllers) (nur Mixed Reality-Geräte, siehe oben)
+* [Clicker-Gerät](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (nur hololens)
+* [Bewegungs Controller](/windows/mixed-reality/motion-controllers) (nur Mixed Reality-Geräte, siehe oben)
 
-Diese Controller lassen die Interaktion mit virtuellen Objekten natürlich und präzise erscheinen. Einige der Interaktionen erhalten Sie kostenlos. Beispielsweise wird mit der hololens-Option "hololens" oder durch Klicken auf die Windows-Taste oder den-Wert des Motion-Controllers die Eingangs Antwort generiert.
+Diese Controller sorgen dafür, dass die Interaktion mit virtuellen Objekten naturgemäß und präzise erscheint. Einige der Interaktionen, die Sie kostenlos erhalten. Beispielsweise wird mit der hololens-Option "hololens" oder durch Klicken auf die Windows-Taste oder den-Wert des Motion-Controllers die Eingangs Antwort generiert.
 
-Manchmal werden Sie trotzdem Code hinzufügen wollen, um die Vorteile der zusätzlichen Informationen und Eingaben zu nutzen. Mit den Motion Controllern können z. B. Objekte präzise manipuliert werden, wenn Sie Code schreiben, der deren Position und Tastendruck berücksichtigt.
+Zu anderen Zeitpunkten sollten Sie Code hinzufügen, um die zusätzlichen Informationen und Eingaben zu nutzen, die zur Verfügung gestellt werden. Beispielsweise können die Motion-Controller verwendet werden, um Objekte mit einer guten Steuerungsebene zu bearbeiten, wenn Sie Code schreiben, der Ihre Position und Schaltfläche in das Konto drückt.
 
 > [!NOTE]
-> Fazit: Das Leitmotiv sollte sein, dem Anwender immer eine möglichst natürliche und reibungslose Eingabemethode zur Verfügung zu stellen.
+> Zusammenfassung: der Führungs Prinzipal sollte sein, dass der Benutzer immer eine Eingabemethode wie möglich mit einer natürlichen und reibungslosen Eingabemethode bereitstellt.
 
 
-## <a name="2d-app-design-considerations-functionality"></a>Überlegungen zum 2D-App-Design: Funktionalität
+## <a name="2d-app-design-considerations-functionality"></a>Überlegungen zur 2D-App-Entwicklung: Funktionalität
 
-Bei der Erstellung einer UWP-App, die möglicherweise auf einer Mixed Reality-Plattform verwendet wird, sind einige Dinge zu beachten.
+Beim Erstellen einer UWP-APP, die möglicherweise auf einer gemischten Reality-Plattform verwendet wird, sind einige Dinge zu beachten.
 
-* Drag and Drop funktioniert möglicherweise nicht gut, wenn es mit Motion Controllern, Gamepads oder Gesten verwendet wird. Wenn Ihre Anwendung stark von Drag&Drop abhängig ist, müssen Sie eine alternative Methode zur Unterstützung dieser Aktion anbieten, z. B. einen Dialog zur Bestätigung, ob Objekte an einen neuen Ort verschoben werden sollen.
+* Drag & Drop funktioniert möglicherweise nicht gut, wenn Sie mit Motion-Controllern, Gamepads oder Gesten verwendet werden. Wenn Ihre Anwendung stark von Drag & Drop abhängig ist, müssen Sie eine alternative Methode zur Unterstützung dieser Aktion bereitstellen, z. b. ein Dialogfeld, das bestätigt, ob Objekte an einen neuen Speicherort verschoben werden.
 
-* Seien Sie sich bewusst, wie sich der Klang verändert. Wenn Ihre App Soundeffekte erzeugt, erscheint die Quelle des Sounds als die festgelegte Position Ihrer App in der virtuellen Welt. Wenn sich der Benutzer von der App entfernt, wird der Sound leiser. Siehe [Raumklang](https://docs.microsoft.com/windows/mixed-reality/spatial-sound) für weitere Informationen.
+* Beachten Sie, wie sich Sound geändert hat. Wenn Ihre APP Soundeffekte generiert, scheint die Quelle des Sounds der angeheftet Speicherort Ihrer APP in der virtuellen Welt zu sein. Wenn sich der Benutzer von der app Weg bewegt, verringert sich der Sound. Weitere Informationen finden Sie unter [Spatial Sound](/windows/mixed-reality/spatial-sound) .
 
-* Berücksichtigen Sie das Sichtfeld und stellen Sie entsprechende Angebote bereit. Nicht jedes Gerät bietet ein so großes Sichtfeld wie ein Computermonitor. Siehe [Holografischer Rahmen](https://developer.microsoft.com/windows/mixed-reality/holographic_frame) für weitere Details. Außerdem kann es sein, dass sich der Benutzer in einiger Entfernung von einer laufenden App befindet. Das heißt, die App kann an einer anderen Stelle der Welt (real oder virtuell) an die Wand geheftet erscheinen. Möglicherweise muss Ihre App die Aufmerksamkeit der Benutzer auf sich ziehen oder berücksichtigen, dass die gesamte Ansicht nicht immer sichtbar ist. Popup-Benachrichtigungen sind verfügbar, aber eine andere Möglichkeit, die Aufmerksamkeit des Benutzers zu erregen, ist die Erzeugung eines Ton- oder [Sprachalarms](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs).
+* Betrachten Sie das Feld der Ansicht, und stellen Sie die Kosten bereit. Nicht jedes Gerät wird so groß wie ein Computermonitor bereitgestellt. Ausführliche Informationen finden Sie im [Holographic Frame](https://developer.microsoft.com/windows/mixed-reality/holographic_frame) . Außerdem kann es sein, dass der Benutzer eine gewisse Entfernung zu einer laufenden app hat. Das heißt, die APP erscheint an der Wand an einer anderen Stelle auf der Welt (Real oder virtuell). Möglicherweise muss Ihre APP den Benutzern Aufmerksamkeit schenken, oder Sie sollten berücksichtigen, dass die gesamte Ansicht nicht immer sichtbar ist. Popup Benachrichtigungen sind verfügbar, aber eine weitere Möglichkeit, um die Aufmerksamkeit des Benutzers zu erreichen, ist möglicherweise das Generieren einer Sound-oder [sprach](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs) Warnung.
 
-* Eine 2D-App wird automatisch mit einer [App-Leiste](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box) versehen, damit der Benutzer sie in der virtuellen Umgebung verschieben und skalieren kann. Die Ansichten können vertikal oder unter Beibehaltung des gleichen Seitenverhältnisses in der Größe verändert werden.
-
-
-## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zur Gestaltung von 2D-Apps: UI/UX
-
-* XAML-Steuerelemente, die das [Fluent Design-System](https://docs.microsoft.com/windows/uwp/design/fluent-design-system/) (z. B. die [Navigationsansicht](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) und Effekte wie [Acrylic ](https://docs.microsoft.com/windows/uwp/design/style/acrylic)) implementieren, funktionieren besonders gut in 2D-Mixed Reality-Apps.
-
-* Testen Sie die Text- und Fenstergröße Ihrer App in einem Mixed Reality-Gerät oder zumindest im Mixed Reality-Simulator. Ihre App hat eine Standardfenstergröße von 853 x 480 effektiven Pixeln. Verwenden Sie größere Schriftgrößen (eine Punktgröße von ca. 32 wird empfohlen), und lesen Sie [Aktualisieren Ihrer bestehenden universellen Apps für Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens). Der Artikel [Typografie](https://developer.microsoft.com/windows/mixed-reality/typography) behandelt dieses Thema im Detail. Bei der Arbeit in Visual Studio gibt es eine XAML-Design-Editor-Einstellung für eine 57 Zoll HoloLens 2D-App, die eine Ansicht mit dem richtigen Maßstab und den richtigen Abmessungen bietet. 
-
-![Text, der in Mixed Reality-Apps angezeigt wird, sollte groß sein.](images/MR-text.png)
-
-* [Ihr Blick dient als Maus](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). Wenn der Benutzer etwas ansieht, wird dies wie ein **Touch-Hover**-Ereignis behandelt, sodass ein einfaches Betrachten eines Objekts ein versehentliches Popup oder eine andere unerwünschte Interaktion auslösen kann. Möglicherweise müssen Sie feststellen, ob die App derzeit in Mixed Reality läuft, und dieses Verhalten ändern. Weitere Informationen finden Sie unter **Laufzeitunterstützung** unten. 
-
-* Wenn ein Benutzer mit einem Motion Controller auf etwas zeigt oder etwas anvisiert, wird ein **Touch-Hover**-Ereignis ausgelöst. Dieser besteht aus einem **PointerPoint**, wobei **PointerType** **Touch** ist, aber **IsInContact** **false** ist. Wenn irgendeine Form der Bestätigung auftritt (z. B. wird eine Taste des Gamepads gedrückt, ein Klick-Gerät gedrückt, ein Motion Controller-Trigger gedrückt oder die Spracherkennung löst „Select” aus), erfolgt ein **touch press**, wobei der **PointerPoint** den **IsInContact**-Wert **true** hat. Weitere Informationen zu diesen Eingabe-Ereignissen finden Sie unter [Touch-Interaktionen](https://docs.microsoft.com/windows/uwp/design/input/touch-interactions).
-
-* Denken Sie daran: das Anvisieren ist nicht so genau wie das Zeigen mit der Maus. Kleinere Mausziele oder Schaltflächen können zu Frustration bei Ihren Benutzern führen. Also passen Sie die Größe der Steuerelemente entsprechend an. Wenn sie für die Touch ausgelegt sind, funktionieren sie in Mixed Reality. Sie können sich jedoch auch dafür entscheiden, einige Schaltflächen zur Laufzeit zu vergrößern. Weitere Informationen finden Sie unter [Aktualisieren Ihrer bestehenden universellen App für Hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens).
-
-* HoloLens definiert die Farbe Schwarz als Abwesenheit von Licht. Sie wird einfach nicht gerendert und lässt die „reale Welt” so durchscheinen. Ihre Anwendung sollte kein schwarz verwenden, wenn dies Verwirrung stiften würde. In einem Mixed Reality-Headset ist Schwarz schwarz.
-
-* HoloLens unterstützt keine Farbdesigns in Apps und ist standardmäßig auf „Blau” eingestellt, um den Benutzern ein optimales Erlebnis zu bieten. Weitere Hinweise zur Farbauswahl finden Sie in [diesem Thema](https://developer.microsoft.com/windows/mixed-reality/color,_light_and_materials), das die Verwendung von Farbe und Material in Mixed Reality-Designs behandelt.
+* Einer 2D-APP wird automatisch eine [App-Leiste](https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box)  zugewiesen, damit Benutzer Sie in der virtuellen Umgebung verschieben und skalieren können. Die Größe der Sichten kann vertikal geändert werden, oder Sie können die Größe des gleichen Seitenverhältnisses ändern.
 
 
-## <a name="other-points-to-consider"></a>Weitere zu beachtende Punkte
+## <a name="2d-app-design-considerations-uiux"></a>Überlegungen zur 2D-App-Entwicklung: UI/UX
 
-* Obwohl die [Desktop-Brücke](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) dabei helfen kann, bestehende (Win32-)Desktop-Apps auf Windows 10 und den Microsoft Store zu aktualisieren, kann sie derzeit keine Apps erstellen, die auf HoloLens oder in Mixed Reality laufen.
+* XAML-Steuerelemente, die das [fließende Entwurfs System](/windows/uwp/design/fluent-design-system/) , z. b. die [Navigationsansicht](../controls-and-patterns/navigationview.md), und Effekte wie z. b. " [Acryl](../style/acrylic.md) " implementieren, funktionieren besonders gut in 2D Mixed Reality-apps
+
+* Testen Sie die Text-und Windows-Größe Ihrer APP in einem Mixed Reality-Gerät oder zumindest im Mixed Reality-Simulator. Ihre APP verfügt über eine standardmäßige Windows-Größe von 853x480 effektiven Pixeln. Verwenden Sie größere Schriftgrößen (eine Punktgröße von ungefähr 32 wird empfohlen), und lesen Sie [Aktualisieren Ihrer vorhandenen universellen App für hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens). In der [Typography](https://developer.microsoft.com/windows/mixed-reality/typography) Artikel typografieartikel wird dieses Thema ausführlich behandelt. Bei der Arbeit in Visual Studio gibt es eine XAML-Entwurfs-Editor-Einstellung für eine 57 "hololens 2D-APP, die eine Ansicht mit der richtigen Skala und den richtigen Dimensionen bereitstellt. 
+
+![Der in Mixed Reality-apps angezeigte Text sollte groß sein.](images/MR-text.png)
+
+* [Ihr Blick ist mit der Maus](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting). Wenn der Benutzer etwas ansieht, fungiert es als **Berührungs** Bewegungs Ereignis, sodass das einfache Überprüfen eines Objekts möglicherweise ein unbeabsichtigtes Popup oder eine andere unerwünschte Interaktion auslöst. Sie müssen möglicherweise erkennen, ob die APP derzeit in gemischter Realität ausgeführt wird, und dieses Verhalten ändern. Weitere Informationen finden Sie unten unter **Laufzeitunterstützung**. 
+
+* Wenn ein Benutzer mit einem Bewegungs Controller in Bezug auf etwas oder auf Punkte zeigt, tritt ein Finger **Abdruck Ereignis auf** . Dies besteht aus einem **pointerpoint** , bei dem " **PointerType** " " **berühren**" ist, aber **isincontact** " **false**" ist. Wenn ein Commit ausgeführt wird (z. b. Gamepad eine Schaltfläche, wird ein Clicker-Gerät gedrückt, ein Motion Controller-Befehl gedrückt oder sprach Erkennungs Köpfe "Select"), wird ein **touchpress** angezeigt, wobei der **pointerpoint** mit **isincontact** **true**wird. Weitere Informationen zu diesen Eingabe Ereignissen finden Sie unter [touchinteraktionen](../input/touch-interactions.md) .
+
+* Beachten Sie, dass der Blick nicht so genau ist wie der Mauszeiger. Kleinere Maus Ziele oder Schaltflächen können für Ihre Benutzer zu Frustrationen führen. ändern Sie daher die Größe der Steuerelemente entsprechend. Wenn Sie für die Fingereingabe konzipiert sind, funktionieren Sie in gemischter Realität, aber Sie können einige Schaltflächen zur Laufzeit vergrößern. Weitere Informationen finden [Sie unter Aktualisieren Ihrer vorhandenen universellen App für hololens](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens).
+
+* Der hololens definiert die Farbe schwarz als fehlende Beleuchtung. Sie wird einfach nicht gerendert und ermöglicht so die "reale Welt". Die Anwendung sollte nicht schwarz verwenden, wenn dies Verwirrung verursachen würde. In einem Mixed Reality-Headset ist schwarz schwarz.
+
+* Der hololens unterstützt keine Farbschemas in-apps, und der Standardwert ist blau, um die optimale Benutzer Leistung zu gewährleisten. Weitere Hinweise zum Auswählen von Farben finden Sie in [diesem Thema](https://developer.microsoft.com/windows/mixed-reality/color,_light_and_materials) , in dem die Verwendung von Farbe und Material in Mixed Reality-Entwürfen erläutert wird.
+
+
+## <a name="other-points-to-consider"></a>Weitere zu berücksichtigende Punkte
+
+* Obwohl die [Desktop Bridge](/windows/msix/desktop/source-code-overview) dabei helfen kann, vorhandene (Win32) Desktop-Apps auf Windows 10 und die Microsoft Store zu bringen, können keine apps erstellt werden, die zu diesem Zeitpunkt auf hololens oder in gemischter Realität ausgeführt werden.
 
 
 
 
 ## <a name="runtime-support"></a>Laufzeitunterstützung
 
-Ihre App kann zur Laufzeit feststellen, ob sie auf einem Mixed Reality-Gerät läuft, und dies als Gelegenheit nutzen, um die Größe der Steuerelemente zu ändern oder auf andere Weise die App für die Verwendung auf einem Headset zu optimieren.
+Ihre APP kann ermitteln, ob Sie zur Laufzeit auf einem gemischten Reality-Gerät ausgeführt wird, und diese als Gelegenheit zum Ändern der Größe von Steuerelementen oder auf andere Weise zur Optimierung der APP für die Verwendung auf einem Headset verwenden.
 
-Hier ist ein kurzes Stück Code, das die Größe des Textes innerhalb eines XAML-TextBlock-Steuerelements nur dann ändert, wenn die App auf einem Mixed Reality Gerät verwendet wird.
+Im folgenden finden Sie einen kurzen Code Abschnitt, der die Größe des Texts in einem XAML-TextBlock-Steuerelement nur dann ändert, wenn die APP auf einem Mixed Reality-Gerät verwendet wird.
 
 ```csharp
 
@@ -166,6 +166,4 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 * [Aktuelle Einschränkungen für apps, die APIs aus der Shell verwenden](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [Entwickeln von 2D-apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [Hololens: Entwickeln von UWP-2D-Apps für Microsoft hololens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Bedingte XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/conditional-xaml)
-
-
+* [Bedingtes XAML](../../debug-test-perf/conditional-xaml.md)

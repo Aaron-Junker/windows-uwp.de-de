@@ -6,12 +6,12 @@ ms.date: 05/29/2020
 ms.topic: article
 keywords: Windows 10, UWP, Zahlungen, App-Verkäufe, App-Verkäufe, Auszahlung, geschäftsgebühr, Auszahlungs Aufbewahrung, Prozentsatz
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d42677aeda694e2fc8924cee1832b62d98b15e5
-ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+ms.openlocfilehash: 5e2b67984c43d799f0f4e3a1c6662b57bdc6ae9d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84746770"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167394"
 ---
 # <a name="getting-paid"></a>Erhalten der Bezahlung
 Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre apps, Add-ons und Werbeeinnahmen.
@@ -24,16 +24,16 @@ Hier sind einige wichtige Informationen zum Empfangen von Zahlungen für Ihre ap
 
 ## <a name="store-fee"></a>Store-Gebühr
 
-Wenn Sie sich [für ein Entwicklerkonto registrieren](https://developer.microsoft.com/store/register), akzeptieren Sie die [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). In diesem Vertrag wird die Beziehung zwischen Ihnen und Microsoft erläutert, die sich auf das verkaufen von apps im Microsoft Store bezieht, einschließlich der Kosten für den Kauf, den Microsoft für jeden Verkauf berechnet.
+Wenn Sie sich [für ein Entwicklerkonto registrieren](https://developer.microsoft.com/store/register), akzeptieren Sie die [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement). In diesem Vertrag wird die Beziehung zwischen Ihnen und Microsoft erläutert, die sich auf das verkaufen von apps im Microsoft Store bezieht, einschließlich der Kosten für den Kauf, den Microsoft für jeden Verkauf berechnet.
 
-Die Gebühren sind in der [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) offiziell definiert. Schauen Sie sich stets das Dokument an, wenn Fragen auftreten.
+Die Gebühren sind in der [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement) offiziell definiert. Schauen Sie sich stets das Dokument an, wenn Fragen auftreten.
 
 Die Speicher Gebühr wird auf alle vom Microsoft Store erfassten App-Verkäufe, einschließlich Add-ons, angewendet.
 
 
 ## <a name="price-tiers"></a>Preisstufen
 
-Die von Ihnen ausgewählten Preisstufen legt den [Verkaufspreis](set-and-schedule-app-pricing.md#base-price) in allen Ländern fest, in denen Sie Ihre APP verteilen möchten. Sie können auch zusätzliche Preis Merkmale nutzen, wie z. b. das [Auswählen verschiedener Preise für verschiedene Märkte](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) oder [das Platzieren Ihrer APP](put-apps-and-add-ons-on-sale.md).
+Die von Ihnen ausgewählten Preisstufen legt den [Verkaufspreis](set-and-schedule-app-pricing.md#base-price) in allen Ländern fest, in denen Sie Ihre APP verteilen möchten. Sie können auch zusätzliche Preis Merkmale nutzen, wie z. b. das  [Auswählen verschiedener Preise für verschiedene Märkte](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) oder [das Platzieren Ihrer APP](put-apps-and-add-ons-on-sale.md).
 
 Sie können die App kostenlos anbieten oder einen Preis auswählen, den Kunden zahlen müssen, um die App zu erwerben. Die Preisstufen beginnen bei 0,99 USD und erhöhen sich dann in weiteren Schritten (1,09 USD, 1,19 USD usw.). Die Schrittweite zwischen den Preisstufen erhöht sich bei zunehmendem Preis.
 
@@ -72,7 +72,3 @@ Sobald Sie den Aufbewahrungsstatus für Zahlungen auf **Ein** festgelegt haben, 
  
 
  
-
-
-
-

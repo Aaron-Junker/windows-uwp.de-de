@@ -1,89 +1,89 @@
 ---
 title: Meine Kontakte – Benachrichtigungen
-description: Erläutert das Erstellen und Verwenden von Benachrichtigungen für Meine Kontakte, eine neue Art Popups.
+description: Erläutert das Erstellen und Verwenden von Benachrichtigungen für meine Personen, eine neue Art von Toast.
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3e00e3de9445a8b7c63ebaead70173c29b637b54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683498"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166324"
 ---
 # <a name="my-people-notifications"></a>Meine Kontakte – Benachrichtigungen
 
-„Meine Kontakte”-Benachrichtigungen bieten Benutzern eine neue Möglichkeit, sich mit den Menschen, die ihnen wichtig sind, durch schnelle, ausdrucksstarke Gesten zu verbinden. Dieser Artikel zeigt, wie Sie Meine Kontakte-Benachrichtigungen in Ihrer Anwendung entwerfen und implementieren. Vollständige Implementierungen finden Sie unter [Beispiel für „Meine Kontakte”.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
+Meine Personen Benachrichtigungen bieten eine neue Möglichkeit für Benutzer, sich mit den Personen zu verbinden, die Sie interessieren, und zwar durch schnelle, ausdrucksstarke Gesten. In diesem Artikel wird das Entwerfen und Implementieren von Benachrichtigungen für meine Personen in Ihrer Anwendung erläutert. Informationen zu den kompletten Implementierungen finden Sie im [Beispiel meine Personen Benachrichtigungen.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 
-![Herz-Emoji-Benachrichtigung](images/heart-emoji-notification-small.gif)
+![Benachrichtigung über Herz-Emoji](images/heart-emoji-notification-small.gif)
 
 ## <a name="requirements"></a>Anforderungen
 
-+ Windows 10 und Microsoft Visual Studio 2019. Ausführliche Informationen zur Installation finden Sie unter [Visual Studio einrichten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up).
-+ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Die ersten Schritte mit C# finden Sie unter [Erstellen der App „Hello, world“ (C++)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
++ Windows 10 und Microsoft Visual Studio 2019. Weitere Informationen zur Installation finden Sie unter [Einrichten von Visual Studio](../get-started/get-set-up.md).
++ Grundkenntnisse in C# oder einer ähnlichen objektorientierten Programmiersprache. Informationen zu den ersten Schritten mit c# finden Sie unter [Erstellen einer "Hello, World"-App](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## <a name="how-it-works"></a>Funktionsweise
 
-Als Alternative zur generischen Popupbenachrichtigungen können Sie jetzt Benachrichtigungen über das Feature „Meine Kontakte” senden, um eine persönlichere Erfahrung für Benutzer bereitzustellen. Dies ist eine neue Art von Popup, das von einem Kontakt gesendet wird, der mit der Funktion „Meine Kontakte” auf der Taskleiste des Benutzers angeheftet ist. Wenn die Benachrichtigung empfangen wird, wird das Bild des Kontakts auf der Taskleiste animiert und ein Sound wird abgespielt, was signalisiert, dass eine Benachrichtigung gestartet wird. Die Animation oder das in der Nutzlast angezeigte Bild werden für 5 Sekunden angezeigt (oder, wenn die Nutzlast eine Animation ist, die kürzer als 5 Sekunden dauert, wird diese wiederholt, bis die 5 Sekunden vorbei sind).
+Als Alternative zu generischen Popup Benachrichtigungen können Sie jetzt Benachrichtigungen über das Feature "meine Personen" senden, um Benutzern eine persönlichere Benutzer Funktionalität bereitzustellen. Dabei handelt es sich um eine neue Art von Toast, die von einem Kontakt gesendet wird, der auf der Taskleiste des Benutzers mit der Funktion "meine Personen" fixiert ist. Beim Empfang der Benachrichtigung wird das Kontakt Bild des Absenders in der Taskleiste animiert, und es wird ein Sound abgespielt, der signalisiert, dass die Benachrichtigung gestartet wird. Die in der Nutzlast angegebene Animation oder das Bild wird 5 Sekunden lang angezeigt (oder wenn es sich bei der Nutzlast um eine Animation handelt, die weniger als 5 Sekunden lang ist, wird die Schleife bis 5 Sekunden überschritten).
 
-## <a name="supported-image-types"></a>Unterstützte Abbildtypen
+## <a name="supported-image-types"></a>Unterstützte Bildtypen
 
 + GIF
 + Statisches Bild (JPEG, PNG)
-+ Spritesheet (nur vertikal)
++ SpriteSheet (nur vertikal)
 
 > [!NOTE]
-> Ein Spritesheet ist eine Animation, die von einem statischen Bild (JPEG- oder PNG) abgeleitet wird. Einzelne Frames werden vertikal angeordnet, so dass sich das erste Bild im Vordergrund befindet (Sie können eine andere Startframe in der Nutzlast der Popupbenachrichtigung angeben). Jedes Frame muss die gleiche Höhe haben, damit das Programm diese wiederholt, um eine animierte Sequenz zu erstellen (z. B. wie ein Flipbook mit seinen Seiten, die vertikal angeordnet sind). Ein Beispiel für ein Spritesheet wird unten gezeigt.
+> Ein SpriteSheet ist eine Animation, die von einem statischen Bild (JPEG oder PNG) abgeleitet ist. Einzelne Frames sind vertikal angeordnet, sodass sich der erste Frame im oberen Bereich befindet (obwohl Sie einen anderen Startframe in der Toast Nutzlast angeben können). Jeder Frame muss dieselbe Höhe aufweisen, die das Programm durchläuft, um eine animierte Sequenz zu erstellen (z. b. ein im Daumenkino, bei dem seine Seiten vertikal angeordnet sind). Ein Beispiel für ein SpriteSheet ist unten dargestellt.
 
-![Spritesheet in Regenbogenfarben](images/shoulder-tap-rainbow-spritesheet.png)
+![Regenbogen SpriteSheet](images/shoulder-tap-rainbow-spritesheet.png)
 
-## <a name="notification-parameters"></a>Benachrichtigungsparameter
-Benachrichtigungen von „Meine Kontakte” verwenden die [Popupbenachrichtigung](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)-Framework, aber erfordern einen zusätzlichen Bindungsknoten in der Nutzlast des Popups. Die zweite Bindung muss folgende Parameter enthalten:
+## <a name="notification-parameters"></a>Benachrichtigungs Parameter
+Meine Personen Benachrichtigungen verwenden das Popup [Benachrichtigungs](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) Framework, erfordern jedoch einen zusätzlichen Bindungs Knoten in der Toast Nutzlast. Diese zweite Bindung muss den folgenden Parameter enthalten:
 
 ```xml
 experienceType="shoulderTap"
 ```
 
-Dies bedeutet, dass das Popup als eine Benachrichtigung für „Meine Kontakte” behandelt werden soll.
+Dies gibt an, dass der Toast als meine Personen Benachrichtigung behandelt werden soll.
 
-Die Image-Knoten in der Bindung sollten die folgenden Parameter enthalten:
+Der Image-Knoten innerhalb der Bindung muss die folgenden Parameter enthalten:
 
 + **src**
-    + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein.
+    + Der URI des Assets. Dabei kann es sich entweder um den HTTP/HTTPS-Web-URI, einen msappx-URI oder um einen Pfad zu einer lokalen Datei handeln.
 + **SpriteSheet-src**
-    + Die URI des Elements. Dies kann sowohl HTTP/HTTPS web URI, eine msappx URI oder ein Pfad zu einer lokalen Datei sein. Ist nur für Spritesheet-Animationen erforderlich.
+    + Der URI des Assets. Dabei kann es sich entweder um den HTTP/HTTPS-Web-URI, einen msappx-URI oder um einen Pfad zu einer lokalen Datei handeln. Nur für SpriteSheet-Animationen erforderlich.
 + **SpriteSheet-Höhe**
-    + Die Framehöhe (in Pixeln). Ist nur für Spritesheet-Animationen erforderlich.
+    + Die Rahmenhöhe (in Pixel). Nur für SpriteSheet-Animationen erforderlich.
 + **SpriteSheet-fps**
-    + Frames pro Sekunde (FPS). Ist nur für Spritesheet-Animationen erforderlich. Es werden nur Werte von 1‑120 unterstützt.
+    + Frames pro Sekunde (fps). Nur für SpriteSheet-Animationen erforderlich. Es werden nur die Werte 1-120 unterstützt.
 + **SpriteSheet-startingframe**
-    + Die Framenummer, um die Animation zu starten. Wird nur für Spritesheet-Animationen verwendet und hat den Standardwert 0, wenn keine Angabe erfolgt.
+    + Die Frame Nummer, zu der die Animation beginnen soll. Wird nur für SpriteSheet-Animationen verwendet und ist standardmäßig auf 0 gesetzt, wenn nicht angegeben.
 + **alt**
-    + Text-Zeichenfolge, die als Bildschirmsprachausgabe verwendet wird.
+    + Text Zeichenfolge für die Sprachausgabe.
 
 > [!NOTE]
-> Bei einer animierten Benachrichtigung sollten Sie dennoch ein statisches Bild im Parameter „src” angeben. Es wird als Fallback verwendet, wenn die Animation nicht angezeigt wird.
+> Beim Erstellen einer animierten Benachrichtigung sollten Sie weiterhin ein statisches Bild im "src"-Parameter angeben. Sie wird als Fallback verwendet, wenn die Animation nicht angezeigt werden kann.
 
-Darüber hinaus muss der Knoten der obersten Ebene Popups **hint-people**-Parameter enthalten, um den Absender-Kontakt anzugeben. Dieser Parameter kann folgende Werte haben:
+Außerdem muss der Popup-Knoten der obersten Ebene den **Hint-People-** Parameter enthalten, um den Sende Kontakt anzugeben. Dieser Parameter kann einen der folgenden Werte aufweisen:
 
 + **E-Mail-Adresse** 
-    + z. B. ` mailto:johndoe@mydomain.com `
+    + Beispiel: ` mailto:johndoe@mydomain.com `
 + **Telefonnummer** 
-    + z. B. Tel:888-888-8888
+    + Beispiel: Tel: 888-888-8888
 + **Remote-ID** 
-    + z. B. remoteid:1234
+    + Beispiel: RemoteID: 1234
 
 > [!NOTE]
-> Falls Ihre App die [ContactStore APIs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und auf dem Smartphone gespeicherte Kontakte mithilfe der [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId)-Eigenschaft mit remote gespeicherten Kontakten verknüpft, muss der Wert für die RemoteId-Eigenschaft unbedingt stabil und eindeutig sein. Die Remote-ID muss also durchweg ein einzelnes Benutzerkonto identifizieren und ein eindeutiges Tag enthalten, um zu verhindern, dass sich Konflikte mit den Remote-IDs anderer Kontakte auf dem PC ergeben. Hierzu zählen auch Kontakte von anderen Apps.
-> Falls die Stabilität und Eindeutigkeit der von Ihrer App verwendeten Remote-IDs nicht gewährleistet ist, können Sie allen Ihren [RemoteIdHelper](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass) mithilfe der später in diesem Thema beschriebenen -Klasse ein eindeutiges Tag hinzufügen, bevor Sie die Remote-IDs dem System hinzufügen. Alternativ können Sie auch ganz auf die Verwendung der RemoteId-Eigenschaft verzichten und stattdessen eine benutzerdefinierte erweiterte Eigenschaft erstellen, um die Remote-IDs für Ihre Kontakte zu speichern.
+> Wenn Ihre APP die [contactstore-APIs](/uwp/api/windows.applicationmodel.contacts.contactstore) verwendet und die [storedcontact. RemoteID-](/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) Eigenschaft verwendet, um Kontakte zu verknüpfen, die auf dem PC mit den Remote gespeicherten Kontakten gespeichert sind, ist es von entscheidender Bedeutung, dass der Wert für die RemoteID-Eigenschaft stabil und eindeutig ist. Dies bedeutet, dass die Remote-ID ein einzelnes Benutzerkonto einheitlich identifizieren muss und ein eindeutiges Tag enthalten sollte, um sicherzustellen, dass es nicht mit den Remote-IDs anderer Kontakte auf dem PC in Konflikt steht, einschließlich der Kontakte, die sich im Besitz anderer apps befinden.
+> Wenn die Remote-IDs, die von Ihrer APP verwendet werden, nicht sicher und eindeutig sind, können Sie die [remoteidhelper-Klasse](/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass) verwenden, um allen Remote-IDs ein eindeutiges Tag hinzuzufügen, bevor Sie Sie dem System hinzufügen. Wahlweise können Sie auch auswählen, dass Sie nicht die RemoteID-Eigenschaft verwenden, sondern stattdessen eine benutzerdefinierte erweiterte Eigenschaft erstellen, in der Remote-IDs für Ihre Kontakte gespeichert werden.
 
-Neben der zweiten Bindung und der Nutzlast müssen Sie eine weitere Nutzlast in die erste Bindung für das Fallback-Popup aufnehmen. Die Benachrichtigung verwendet diese, wenn sie gezwungen ist, zu einem regulären Popup zurückzukehren (wird am [Ende dieses Artikels](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast) näher erläutert).
+Zusätzlich zur zweiten Bindung und Nutzlast müssen Sie eine andere Nutzlast in die erste Bindung für den Fall Back Toast einschließen. Diese Benachrichtigung wird verwendet, wenn die Wiederherstellung auf einen regulären Popup erzwungen wird (am [Ende dieses Artikels](#falling-back-to-toast)ausführlicher erläutert).
 
 ## <a name="creating-the-notification"></a>Erstellen der Benachrichtigung
-Sie können eine Benachrichtigungsvorlage für Meine Kontakte genau so erstellen wie eine [Popupbenachrichtigung](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
+Sie können eine Benachrichtigungs Vorlage für meine Personen wie eine Popup [Benachrichtigung](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)erstellen.
 
-Hier ist ein Beispiel für das Erstellen einer Benachrichtigung für „Meine Kontakte” mithilfe eines statischen Bilds:
+Im folgenden finden Sie ein Beispiel für das Erstellen einer Benachrichtigung für meine Personen mit einer statischen Bild Nutzlast:
 
 ```xml
 <toast hint-people="mailto:johndoe@mydomain.com">
@@ -99,11 +99,11 @@ Hier ist ein Beispiel für das Erstellen einer Benachrichtigung für „Meine Ko
 </toast>
 ```
 
-Wenn Sie die Benachrichtigung starten, sollte sie wie folgt aussehen:
+Wenn Sie die Benachrichtigung starten, sollte Sie wie folgt aussehen:
 
-![Benachrichtigung als statisches Bild](images/static-image-notification-small.gif)
+![Benachrichtigung über statisches Bild](images/static-image-notification-small.gif)
 
-Hier ist ein Beispiel, wie man eine „Meine Kontakte”-Benachrichtigung mit einer statischen Bild-Nutzlast erstellt: Dieses Spritesheet hat eine Framehöhe von 80 Pixel, die mit 25 Frames pro Sekunde animiert werden. Wir legen Sie den ersten Frame auf 15 fest und geben ihm ein statisches Fallback-Bild mit dem Parameter "Src". Das Fallback-Bild wird verwendet, wenn die Spritesheet-Animation nicht angezeigt wird.
+Im folgenden finden Sie ein Beispiel für das Erstellen einer Benachrichtigung mit einer animierten SpriteSheet-Nutzlast. Dieses SpriteSheet hat eine Rahmenhöhe von 80 Pixel, die wir mit 25 Frames pro Sekunde animieren werden. Wir legen den Startframe auf 15 fest und geben ihm ein statisches Fall Back-Bild im "src"-Parameter. Das Fall Back-Image wird verwendet, wenn die SpriteSheet-Animation nicht angezeigt werden kann.
 
 ```xml
 <toast hint-people="mailto:johndoe@mydomain.com">
@@ -121,12 +121,12 @@ Hier ist ein Beispiel, wie man eine „Meine Kontakte”-Benachrichtigung mit ei
 </toast>
 ```
 
-Wenn Sie die Benachrichtigung starten, sollte sie wie folgt aussehen:
+Wenn Sie die Benachrichtigung starten, sollte Sie wie folgt aussehen:
 
-![Benachrichtigung als Spritesheet](images/pizza-notification-small.gif)
+![SpriteSheet-Benachrichtigung](images/pizza-notification-small.gif)
 
-## <a name="starting-the-notification"></a>Starten der Benachrichtigung
-Um eine Benachrichtigung für „Meine Kontakte” zu starten, müssen wir die Popup-Vorlage in ein [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument)-Objekt konvertieren. Falls Sie das Popup in einer XML-Datei (hier „content.xml“ genannt) definiert haben, verwenden Sie diesen Code zum Starten verwenden:
+## <a name="starting-the-notification"></a>Die Benachrichtigung wird gestartet.
+Um eine Benachrichtigung für meine Personen zu starten, müssen wir die Popup Vorlage in ein [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) -Objekt konvertieren. Wenn Sie den Popup in einer XML-Datei (hier mit dem Namen "content.xml") definiert haben, können Sie diesen Code verwenden, um ihn zu starten:
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");
@@ -141,17 +141,17 @@ ToastNotification notification = new ToastNotification(xmlContent);
 ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
-## <a name="falling-back-to-toast"></a>Zurückgreifen auf Popupbenachrichtigungen
-Es gibt einige Fälle, wo eine Benachrichtigung über „Meine Kontakte” stattdessen als reguläre Popupbenachrichtigung angezeigt wird. Eine Benachrichtigung für „Meine Kontakte” greift unter folgenden Umständen auf eine Popupbenachrichtigung zurück:
+## <a name="falling-back-to-toast"></a>Fallback zum Toast
+In einigen Fällen wird die Benachrichtigung "meine Personen" stattdessen als reguläre Popup Benachrichtigung angezeigt. Eine Benachrichtigung für meine Personen wird unter den folgenden Bedingungen auf Toast zurückgreifen:
 
-+ Die Benachrichtigung wird nicht angezeigt
-+ Benachrichtigungen für „Meine Kontakte” sind nicht vom Empfänger aktiviert
-+ Der Kontakt des Absenders ist nicht an die Taskleiste des Empfängers angeheftet
++ Die Benachrichtigung kann nicht angezeigt werden.
++ Meine Personen Benachrichtigungen werden nicht vom Empfänger aktiviert.
++ Der Kontakt des Absenders ist nicht an die Taskleiste des Empfängers angeheftet.
 
-Wenn eine Benachrichtigung für „Meine Kontakte” erneut auf eine Popupbenachrichtigung zurückfällt, wird die zweite spezifische Bindung für „Meine Kontakte” ignoriert, und nur die erste Bindung wird verwendet, um das Popup anzuzeigen. Deshalb ist es wichtig, eine Fallback-Nutzlast in der ersten Popupbindung bereitzustellen.
+Wenn eine Benachrichtigung "meine Personen" auf Toast zurückgreift, wird die zweite meine Personen spezifische Bindung ignoriert, und nur die erste Bindung wird verwendet, um den Toast anzuzeigen. Aus diesem Grund ist es wichtig, eine Fall Back Nutzlast in der ersten Popup Bindung bereitzustellen.
 
-## <a name="see-also"></a>Weitere Informationen:
+## <a name="see-also"></a>Weitere Informationen
 + [Beispiel für meine Personen Benachrichtigungen](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Unterstützung für meine Personen hinzufügen](my-people-support.md)
 + [Adaptive Popup Benachrichtigungen](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [Klasse "-Benachrichtigungs Klasse"](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)
++ [Klasse "-Benachrichtigungs Klasse"](/uwp/api/windows.ui.notifications.toastnotification)

@@ -1,30 +1,30 @@
 ---
 title: Diffuse Lichtzuordnungen
-description: Matte Oberflächen haben eine diffuse Lichtreflektion.
+description: Erfahren Sie, wie Sie Textur Licht Zuordnungen zum simulieren komplexer diffuses lichtreflektion für Matte Oberflächen verwenden.
 ms.assetid: D02E76DB-1DA8-4B51-86EF-4DDB07C02541
 keywords:
 - Diffuse Lichtzuordnungen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0605de5313b59689c19b9560d10e088d26d29b52
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25089911a1dd273cd7513cda7e0a904b8d36d6f5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627735"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165024"
 ---
 # <a name="diffuse-light-maps"></a>Diffuse Lichtzuordnungen
 
 
-Matte Oberflächen haben eine diffuse Lichtreflektion. Die Helligkeit von diffusem Licht ist von der Entfernung zur Lichtquelle und dem Winkel zwischen der Oberflächennormale und dem Richtungsvektor der Lichtquelle abhängig. Texturlichtzuordnungen können komplexe diffuse Beleuchtung simulieren.
+Matte Oberflächen verfügen über diffuses lichtreflektion. Die Helligkeit von diffuses Licht hängt von der Entfernung von der Lichtquelle und vom Winkel zwischen der Oberflächen normalen und dem Lichtquellen-Vektor ab. Textur Licht Maps können komplexe diffuse Beleuchtung simulieren.
 
-Die von Beleuchtungsberechnungen simulierten diffusen Beleuchtungseffekte erzeugen nur allgemeine Effekte. Ihre Anwendung kann über Textur-Lichtzuordnungen eine komplexere diffuse Beleuchtung simulieren.
+Die durch Beleuchtungsberechnungen simulierten diffusen Beleuchtungseffekte ergeben nur allgemeine Auswirkungen. Die Anwendung kann komplexere diffuses Beleuchtung mit Textur hellen Karten simulieren.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Einfache Zuordnung mit Texturen](light-mapping-with-textures.md)
+[Lichtzuordnung mit Texturen](light-mapping-with-textures.md)
 
  
 

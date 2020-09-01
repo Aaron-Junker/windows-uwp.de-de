@@ -4,24 +4,24 @@ description: Erfahren Sie, wie Sie den Vorabstart von Apps durch Überschreiben 
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ms.date: 07/05/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4029bcdd554b05363397f6a6946b8ebc2bbdd1de
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 219ca73115d5605f1e1483f2af224a13c28791ff
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371648"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164864"
 ---
 # <a name="handle-app-prelaunch"></a>Behandeln des Vorabstarts von Apps
 
-Erfahren Sie, wie Sie den Vorabstart von Apps durch außer Kraft setzen der [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)-Methode behandeln.
+Erfahren Sie, wie Sie den Vorabstart von Apps durch außer Kraft setzen der [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)-Methode behandeln.
 
 ## <a name="introduction"></a>Einführung
 
-Wenn verfügbaren Systemressourcen möglich, wird die startleistung von UWP-apps auf desktop-Gerät Familie verbessert, durch die am häufigsten verwendeten apps des Benutzers im Hintergrund proaktiv zu starten. Eine vorab gestartete App wird kurz nach dem Start in den angehaltenen Zustand versetzt. Wenn der Benutzer die App dann aufruft, wird sie fortgesetzt, indem sie vom angehaltenen Zustand in den ausgeführten Zustand versetzt wird. Dies ist schneller als ein Kaltstart der App. Der Benutzer gewinnt den Eindruck, dass die App sehr schnell startet.
+Wenn die verfügbaren Systemressourcen dies zulassen, wird die Startleistung von UWP-apps auf Geräten der Desktop Gerätefamilie verbessert, indem die am häufigsten verwendeten apps im Hintergrund proaktiv gestartet werden. Eine vorab gestartete App wird kurz nach dem Start in den angehaltenen Zustand versetzt. Wenn der Benutzer die App dann aufruft, wird sie fortgesetzt, indem sie vom angehaltenen Zustand in den ausgeführten Zustand versetzt wird. Dies ist schneller als ein Kaltstart der App. Der Benutzer gewinnt den Eindruck, dass die App sehr schnell startet.
 
-Vor Windows 10 waren die Vorteile des Vorabstarts nicht automatisch für Apps verfügbar. In Windows 10 Version 1511 waren alle apps der universellen Windows-Plattform (UWP) Kandidaten für die vorab gestartet wird. In Windows 10, Version 1607, müssen Sie den Vorabstart aktivieren, in dem Sie [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch) aufrufen. Ein empfohlener Bereich für diesen Aufruf ist `OnLaunched()` in der Nähe der `if (e.PrelaunchActivated == false)`-Überprüfung.
+Vor Windows 10 waren die Vorteile des Vorabstarts nicht automatisch für Apps verfügbar. In Windows 10, Version 1511, wurden alle UWP (Universelle Windows-Plattform)-Apps für den Vorabstart eingerichtet. In Windows 10, Version 1607, müssen Sie den Vorabstart aktivieren, in dem Sie [CoreApplication.EnablePrelaunch(true)](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch) aufrufen. Ein empfohlener Bereich für diesen Aufruf ist `OnLaunched()` in der Nähe der `if (e.PrelaunchActivated == false)`-Überprüfung.
 
 Ob eine App vorab gestartet wird, ist von den Systemressourcen abhängig. Wenn die Systemressourcen ausgelastet sind, werden Apps nicht vorab gestartet.
 
@@ -35,7 +35,7 @@ Nach dem Vorabstart wechselt die App in den angehaltenen Zustand. (siehe [Behand
 
 ## <a name="detect-and-handle-prelaunch"></a>Erkennen und Behandeln des Vorabstarts
 
-Apps empfangen das [**LaunchActivatedEventArgs.PrelaunchActivated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.prelaunchactivated)-Kennzeichen während der Aktivierung. Verwenden Sie dieses Flag, um Code auszuführen, die nur ausgeführt werden soll, wenn der Benutzer explizit die app startet. Siehe die folgende Änderung auf [ **Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched).
+Apps empfangen das [**LaunchActivatedEventArgs.PrelaunchActivated**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.prelaunchactivated)-Kennzeichen während der Aktivierung. Verwenden Sie dieses Flag, um Code auszuführen, der nur ausgeführt werden soll, wenn der Benutzer die APP explizit startet, wie in der folgenden Änderung an " [**Application. ongestartete**](/uwp/api/windows.ui.xaml.application.onlaunched)" gezeigt.
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -110,13 +110,13 @@ private void TryEnablePrelaunch()
 }
 ```
 
-Beachten Sie die `TryEnablePrelaunch()` ordnungsgemäß verwendet werden, höher. Der Grund der Aufruf zum `CoreApplication.EnablePrelaunch()` wird Out in diese Funktion ist, da Wenn eine Methode aufgerufen wird, der JIT-Compiler (just-in-Time-Kompilierung) versucht, die gesamte Methode zu kompilieren. Wenn Ihre app auf eine Version von Windows 10 ausgeführt wird, die nicht unterstützt `CoreApplication.EnablePrelaunch()`, der JIT-Compiler nicht ausgeführt werden. Durch das Ausklammern von des Aufrufs an eine Methode, die nur aufgerufen wird, wenn die app feststellt, dass die Plattform unterstützt `CoreApplication.EnablePrelaunch()`, wir dieses Problem zu vermeiden.
+Beachten Sie die `TryEnablePrelaunch()` obige Funktion. Der Aufruf von `CoreApplication.EnablePrelaunch()` wird in diese Funktion einbezogen, weil die JIT (Just-in-Time-Kompilierung) versucht, die gesamte Methode zu kompilieren, wenn eine Methode aufgerufen wird. Wenn Ihre APP unter einer Version von Windows 10 ausgeführt wird, die von nicht unterstützt wird, tritt ein Fehler auf `CoreApplication.EnablePrelaunch()` . Durch Factoring des Aufrufs in eine Methode, die nur aufgerufen wird, wenn die APP ermittelt, dass die Plattform unterstützt `CoreApplication.EnablePrelaunch()` , wird dieses Problem vermieden.
 
-Es ist auch im obigen code, dass Sie die auskommentierung aufheben können, wenn Ihre app benötigt werden, zum Deaktivieren der Vorabstart der Ausführung unter Windows 10, Version 1511. In Version 1511, alle UWP-apps wurden automatisch von der Teilnahme in der Vorabstart, die möglicherweise nicht für Ihre app geeignet.
+Im obigen Beispiel gibt es auch Code, in dem Sie die Auskommentierung aufheben können, wenn die APP bei Ausführung unter Windows 10, Version 1511, den Vorstart deaktivieren muss. In Version 1511 wurden alle UWP-Apps automatisch in den Prelaunch integriert, was für Ihre APP möglicherweise nicht geeignet ist.
 
 ## <a name="use-the-visibilitychanged-event"></a>Verwenden des VisibilityChanged-Ereignisses
 
-Eine durch den Vorabstart aktivierte App ist für den Benutzer nicht sichtbar. Sie wird sichtbar, wenn der Benutzer zur App wechselt. Möglicherweise sollen bestimmte Vorgänge verzögert werden, bis das Hauptfenster der App sichtbar wird. Wenn Ihre App z. B. eine Liste mit Neuigkeiten aus einem Feed anzeigt, können Sie die Liste während des [**VisibilityChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.visibilitychanged)-Ereignisses aktualisieren, anstatt eine Liste zu verwenden, die beim Vorabstart der App erstellt wurde. Denn diese kann bereits veraltet sein, wenn der Benutzer die App aktiviert. Der folgende Code behandelt das **VisibilityChanged**-Ereignis für **MainPage**:
+Eine durch den Vorabstart aktivierte App ist für den Benutzer nicht sichtbar. Sie wird sichtbar, wenn der Benutzer zur App wechselt. Möglicherweise sollen bestimmte Vorgänge verzögert werden, bis das Hauptfenster der App sichtbar wird. Wenn Ihre App z. B. eine Liste mit Neuigkeiten aus einem Feed anzeigt, können Sie die Liste während des [**VisibilityChanged**](/uwp/api/windows.ui.xaml.window.visibilitychanged)-Ereignisses aktualisieren, anstatt eine Liste zu verwenden, die beim Vorabstart der App erstellt wurde. Denn diese kann bereits veraltet sein, wenn der Benutzer die App aktiviert. Der folgende Code behandelt das **VisibilityChanged**-Ereignis für **MainPage**:
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -138,7 +138,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="directx-games-guidance"></a>Leitfaden für DirectX-Spiele
 
-Für DirectX-Spiele sollte der Vorabstart im Allgemeinen nicht aktiviert werden, da bei vielen DirectX-Spielen Initialisierungsvorgänge ausgeführt werden, bevor der Vorabstart erkannt wird. Ab Windows-Version 1607 (Anniversary-Edition) werden Spiele nicht standardmäßig vorab gestartet.  Wenn Sie den Vorabstart für Ihr Spiel verwenden möchten, rufen Sie [CoreApplication.EnablePrelaunch(true)](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch) auf.
+Für DirectX-Spiele sollte der Vorabstart im Allgemeinen nicht aktiviert werden, da bei vielen DirectX-Spielen Initialisierungsvorgänge ausgeführt werden, bevor der Vorabstart erkannt wird. Ab Windows-Version 1607 (Anniversary-Edition) werden Spiele nicht standardmäßig vorab gestartet.  Wenn Sie den Vorabstart für Ihr Spiel verwenden möchten, rufen Sie [CoreApplication.EnablePrelaunch(true)](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch) auf.
 
 Wenn Ihr Spiel für eine frühere Version von Windows 10 geeignet ist, können Sie den Vorabstart zum Beenden der Anwendung verwenden:
 
@@ -180,7 +180,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
 
 ## <a name="winjs-app-guidance"></a>WinJS-App-Leitfaden
 
-Wenn Ihre WinJS-App für eine frühere Version von Windows 10 geeignet ist, können Sie den Vorabstart im [onactivated](https://docs.microsoft.com/previous-versions/windows/apps/br212679(v=win.10))-Handler behandeln:
+Wenn Ihre WinJS-App für eine frühere Version von Windows 10 geeignet ist, können Sie den Vorabstart im [onactivated](/previous-versions/windows/apps/br212679(v=win.10))-Handler behandeln:
 
 ```javascript
     app.onactivated = function (args) {
@@ -193,19 +193,19 @@ Wenn Ihre WinJS-App für eine frühere Version von Windows 10 geeignet ist, kö
     }
 ```
 
-## <a name="general-guidance"></a>Allgemeiner Leitfaden
+## <a name="general-guidance"></a>Allgemeine Leitlinien
 
 -   Apps sollten während des Vorabstarts keine Vorgänge mit langer Ausführungsdauer ausführen, da die App beendet wird, wenn sie nicht schnell angehalten werden kann.
--   Apps sollten keine Audiowiedergabe aus [**Application.OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) initiieren, wenn die App vorab gestartet wird, da die App nicht angezeigt wird und daher nicht offensichtlich ist, warum eine Audiowiedergabe stattfindet.
+-   Apps sollten keine Audiowiedergabe aus [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) initiieren, wenn die App vorab gestartet wird, da die App nicht angezeigt wird und daher nicht offensichtlich ist, warum eine Audiowiedergabe stattfindet.
 -   Apps sollten während des Starts keine Vorgänge ausführen, die voraussetzen, dass die App für den Benutzer sichtbar ist, oder davon ausgehen, dass die App explizit vom Benutzer gestartet wurde. Da eine App jetzt ohne explizite Benutzeraktion im Hintergrund gestartet werden kann, sollten Entwickler die Auswirkungen auf den Datenschutz, die Benutzerfreundlichkeit und Leistung berücksichtigen.
     -   Beispielsweise wird der Datenschutz beeinträchtigt, wenn eine soziale App den Benutzerstatus in „Online“ ändert. Die App sollte warten, bis der Benutzer zur App wechselt, anstatt den Status beim Vorabstart der App zu ändern.
     -   Ein Negativbeispiel für die Benutzerfreundlichkeit bietet eine App, z. B. ein Spiel, die beim Start eine Einführungssequenz präsentiert. Diese Einführungssequenz sollte verzögert werden, bis der Benutzer zur App wechselt.
     -   Hier ein Beispiel für eine Leistungsbeeinträchtigung: Um die aktuelle Wetterlage abzurufen, sollte gewartet werden, bis der Benutzer zur App wechselt. Die Infos sollten nicht beim Vorabstart der App geladen werden, weil sie erneut geladen werden müssen, wenn die App sichtbar wird, um sicherzustellen, dass die Informationen aktuell sind.
 -   Wenn die Live-Kachel Ihrer App beim Start gelöscht wird, stellen Sie diese Aktion bis zum VisibilityChanged-Ereignis zurück.
 -   Die Telemetrie für Ihre App sollte zwischen normalen Kachelaktivierungen und Vorabstartaktivierungen unterscheiden, damit eventuell auftretende Probleme leichter zu identifizieren sind.
--   Wenn Sie Microsoft Visual Studio 2015 Update 1 und Windows 10, Version 1511, Sie können simulieren Vorabstart der für Ihre app in Visual Studio 2015-App durch Auswahl **Debuggen** &gt; **andere Debugziele** &gt; **Debuggen von Windows-Universal-App der Vorabstart**.
+-   Wenn Sie Microsoft Visual Studio 2015 Update 1 und Windows 10, Version 1511, verwenden, können Sie den Vorabstart Ihrer App in Visual Studio 2015 simulieren, indem Sie **Debuggen** &gt; **Andere Debugziele** &gt; **Vorabstart der universellen Windows-App debuggen**auswählen.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [App-Lebenszyklus](app-lifecycle.md)
-* [CoreApplication.EnablePrelaunch](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)
+* [CoreApplication.EnablePrelaunch](/uwp/api/windows.applicationmodel.core.coreapplication.enableprelaunch)

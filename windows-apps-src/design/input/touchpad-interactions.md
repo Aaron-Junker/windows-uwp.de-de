@@ -8,12 +8,12 @@ keywords: Touchpad, PTP, Touch, Zeiger, Eingabe, Benutzerinteraktion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 9e83cb1ceca96e5c7b51e71cb419b86b0395ea99
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234488"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165864"
 ---
 # <a name="touchpad-design-guidelines"></a>Touchpad-Designrichtlinien
 
@@ -42,7 +42,7 @@ Mögliche Eingabedaten des Touchpadsensors:
 
 Ein Touchpad vereint die indirekte Multitoucheingabe mit der Präzisionseingabe eines Zeigergeräts (etwa eine Maus). Dadurch ist das Touchpad sowohl für die berührungsoptimierte Benutzeroberfläche als auch die kleineren Ziele der Produktivitäts-Apps und der Desktopumgebung geeignet. Optimieren Sie Ihren Windows-App-Entwurf für Touch input, und holen Sie sich standardmäßig Touchpad-Unterstützung
 
-Aufgrund der Konvergenz der Interaktionsformen, die von Touchpads unterstützt werden, empfehlen wir die Verwendung des [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)-Ereignisses, um zusätzlich zur integrierten Unterstützung für die Toucheingabe Benutzeroberflächenbefehle für die Mauseingabe bereitzustellen. Verwenden Sie beispielsweise Zurück- und Weiter-Schaltflächen, mit denen Benutzer sowohl Inhaltsseiten durchblättern als auch Inhalte verschieben können.
+Aufgrund der Konvergenz der Interaktionsformen, die von Touchpads unterstützt werden, empfehlen wir die Verwendung des [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered)-Ereignisses, um zusätzlich zur integrierten Unterstützung für die Toucheingabe Benutzeroberflächenbefehle für die Mauseingabe bereitzustellen. Verwenden Sie beispielsweise Zurück- und Weiter-Schaltflächen, mit denen Benutzer sowohl Inhaltsseiten durchblättern als auch Inhalte verschieben können.
 
 Die in diesem Thema beschriebenen Gesten und Richtlinien können dabei helfen, die Unterstützung der Touchpadeingabe nahtlos und mit minimalem Programmieraufwand in Ihre App zu integrieren.
 
@@ -119,7 +119,7 @@ Im Anschluss folgen einige Beispiele für touchpadoptimierte Gesten zum Ausführ
 ## <a name="hardware"></a>Hardware
 
 
-Fragen Sie die Funktionen des Mausgeräts ([**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities)) ab, um zu ermitteln, auf welche Elemente der Benutzeroberfläche Ihrer App die Touchpad-Hardware direkt zugreifen kann. Wir empfehlen die Bereitstellung einer Benutzeroberfläche, die sowohl Touch- als auch Mauseingabe ermöglicht.
+Fragen Sie die Funktionen des Mausgeräts ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) ab, um zu ermitteln, auf welche Elemente der Benutzeroberfläche Ihrer App die Touchpad-Hardware direkt zugreifen kann. Wir empfehlen die Bereitstellung einer Benutzeroberfläche, die sowohl Touch- als auch Mauseingabe ermöglicht.
 
 Weitere Informationen zum Abfragen von Gerätefunktionen finden Sie unter [Identifizieren von Eingabegeräten](identify-input-devices.md).
 
@@ -132,14 +132,14 @@ Weitere Informationen zum Abfragen von Gerätefunktionen finden Sie unter [Ident
 -   Verwenden Sie keine Fokusrechtecke für Interaktionen per Touchpad. Diese sind ausschließlich für Tastaturinteraktionen vorgesehen.
 -   Zeigen Sie für alle Elemente, die das gleiche Eingabeziel darstellen, das gleiche visuelle Feedback an.
 
-Allgemeine Informationen zum visuellen Feedback finden Sie unter [Richtlinien für visuelles Feedback](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback).
+Allgemeine Informationen zum visuellen Feedback finden Sie unter [Richtlinien für visuelles Feedback](./guidelines-for-visualfeedback.md).
 
 ## <a name="cursors"></a>Cursor
 
 
 In Windows Store-Apps sind einige Standardcursor verfügbar, die als Touchpad-Zeiger verwendet werden können. Diese Cursor werden verwendet, um die primäre Aktion eines Elements anzugeben.
 
-Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das einem Standardcursor zugewiesene Standardbild jederzeit ändern. UWP-Apps geben ein Cursor Bild über die [**pointercursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) -Funktion an.
+Jedem Standardcursor ist ein entsprechendes Standardbild zugewiesen. Benutzer einer App können das einem Standardcursor zugewiesene Standardbild jederzeit ändern. UWP-Apps geben ein Cursor Bild über die [**pointercursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) -Funktion an.
 
 Beachten Sie beim Anpassen des Mauszeigers Folgendes:
 

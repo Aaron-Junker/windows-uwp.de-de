@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d3f1f4cfa609ce7e5df83c98f2e815045a3209f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b79fd57ddd089542de83e04450c768654df2f78f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970225"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165844"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial-Interaktionen
 
@@ -57,7 +57,7 @@ Diese integrierten Tools passen sich an den aktuellen Systemkontext an und umfas
 - Ein Tool für die Systemhelligkeit, wenn der Benutzer mit dem Windows-Desktop arbeitet
 - Ein Tool für den vorherigen/nächsten Titel bei der Medienwiedergabe
 
-Das Surface Dial bietet nicht nur allgemeine Plattformunterstützung, sondern ist auch nahtlos in die Windows Ink-Plattformsteuerelemente ([**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)) integriert.
+Das Surface Dial bietet nicht nur allgemeine Plattformunterstützung, sondern ist auch nahtlos in die Windows Ink-Plattformsteuerelemente ([**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) und [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)) integriert.
 
 ![Surface Dial mit Surface-Stift](images/windows-wheel/dial-and-pen-400px.png)  
 *Surface Dial mit Surface-Stift*
@@ -127,7 +127,7 @@ Der Name des Tools wird im Toolmenü zusammen mit dem Toolsymbol angezeigt und a
 
 ### <a name="developer-guidance"></a>Anleitung für Entwickler
 
-Sie können die Funktionsweise des Surface Dial mit einer umfassenden Reihe von [Windows-Runtime-APIs](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController) anpassen, um die Funktionalität Ihrer Apps zu erweitern. 
+Sie können die Funktionsweise des Surface Dial mit einer umfassenden Reihe von [Windows-Runtime-APIs](/uwp/api/Windows.UI.Input.RadialController) anpassen, um die Funktionalität Ihrer Apps zu erweitern. 
 
 Wie erwähnt, verfügt das Standardmenü des Surface Dial bereits über mehrere integrierte Tools, die zahlreiche grundlegende Systemfeatures abdecken (Systemlautstärke, Systemhelligkeit, Scrollen, Zoomen, Rückgängigmachen sowie Mediensteuerung, wenn das System erkennt, dass Audio- oder Videomedien wiedergegeben werden). Möglicherweise stellen diese Standardtools aber nicht die für Ihre App erforderlichen Funktionen bereit. 
 
@@ -174,15 +174,15 @@ In diesem Beispiel wird ein einfaches benutzerdefiniertes Tool hinzugefügt, das
     </Grid>
     ```
 
-2. Anschließend fügen wir in der CodeBehind-Datei dem Surface Dial-Menü ein benutzerdefiniertes Tool hinzu und deklarieren die [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)-Eingabehandler. 
+2. Anschließend fügen wir in der CodeBehind-Datei dem Surface Dial-Menü ein benutzerdefiniertes Tool hinzu und deklarieren die [**RadialController**](/uwp/api/Windows.UI.Input.RadialController)-Eingabehandler. 
 
-   Wir rufen [**CreateForCurrentView**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.createforcurrentview) auf, um für das Surface Dial (myController) einen Verweis auf das [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)-Objekt zu erhalten.
+   Wir rufen [**CreateForCurrentView**](/uwp/api/windows.ui.input.radialcontroller.createforcurrentview) auf, um für das Surface Dial (myController) einen Verweis auf das [**RadialController**](/uwp/api/Windows.UI.Input.RadialController)-Objekt zu erhalten.
 
-   Anschließend erstellen wir eine [**RadialControllerMenuItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem)-Instanz (myItem), indem wir [**RadialControllerMenuItem.CreateFromIcon**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollermenuitem.createfromicon) aufrufen. 
+   Anschließend erstellen wir eine [**RadialControllerMenuItem**](/uwp/api/Windows.UI.Input.RadialControllerMenuItem)-Instanz (myItem), indem wir [**RadialControllerMenuItem.CreateFromIcon**](/uwp/api/windows.ui.input.radialcontrollermenuitem.createfromicon) aufrufen. 
 
    Als Nächstes fügen wir das Element an die Sammlung der Menüelemente an.
 
-   Wir deklarieren die Eingabeereignishandler ([**ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) und [**RotationChanged**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) für das [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)-Objekt.
+   Wir deklarieren die Eingabeereignishandler ([**ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked) und [**RotationChanged**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)) für das [**RadialController**](/uwp/api/Windows.UI.Input.RadialController)-Objekt.
 
    Zuletzt definieren wir die Ereignishandler.
 
@@ -247,7 +247,7 @@ Wenn wird die App ausführen, verwenden wir das Surface Dial, um mit ihr zu inte
 
 **Angeben der integrierten Tools**
 
-Mit der [**RadialControllerConfiguration**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration)-Klasse können Sie die Sammlung integrierter Menüelemente für Ihre App anpassen.
+Mit der [**RadialControllerConfiguration**](/uwp/api/Windows.UI.Input.RadialControllerConfiguration)-Klasse können Sie die Sammlung integrierter Menüelemente für Ihre App anpassen.
 
 Wenn Ihre App beispielsweise keine Scroll- oder Zoombereiche aufweist und keine Funktionen zum Rückgängigmachen/Wiederholen benötigt, können diese Tools aus dem Menü entfernt werden. Dadurch bietet das Menü mehr Platz für benutzerdefinierte Tools in Ihrer App. 
 
@@ -318,25 +318,25 @@ Folgende Richtlinien für drehbasierte Aktionen gelten für die integrierten Too
 
 |   |   |   |
 | --- | --- | --- |
-| Left<br/>Nach oben<br/>aus | ![Abbildung: Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Nach unten<br/>Geben Sie in |
+| Left<br/>Nach oben<br/>aus | ![Abbildung: Surface Dial](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Nach unten<br/>In |
 |   |   |   |
 
 | Konzeptionelle Richtung | Zuordnung des Surface Dial | Drehung im Uhrzeigersinn | Drehung gegen den Uhrzeigersinn |
 | --- | --- | --- | --- |
 | Horizontal | Links/Rechts-Zuordnung ausgehend von der Oberseite des Surface Dial | Right | Left |
 | Vertical | Oben/Unten-Zuordnung ausgehend von der linken Seite des Surface Dial | Nach unten | Nach oben |
-| Z-Achse | Hinein (oder näher) wird Oben/Rechts zugeordnet<br/>Heraus (oder weiter) wird Unten/Links zugeordnet | Geben Sie in | aus |
+| Z-Achse | Hinein (oder näher) wird Oben/Rechts zugeordnet<br/>Heraus (oder weiter) wird Unten/Links zugeordnet | In | aus |
 
 #### <a name="developer-guidance"></a>Anleitung für Entwickler
 
-Während der Benutzer das Gerät dreht, werden [**RadialController.RotationChanged**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationchanged)-Ereignisse auf Grundlage eines Deltas([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees)) relativ zur Drehrichtung ausgelöst. Die Empfindlichkeit (oder Auflösung) der Daten kann mit der [**RadialController.RotationResolutionInDegrees**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees)-Eigenschaft festgelegt werden.
+Während der Benutzer das Gerät dreht, werden [**RadialController.RotationChanged**](/uwp/api/windows.ui.input.radialcontroller.rotationchanged)-Ereignisse auf Grundlage eines Deltas([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](/uwp/api/windows.ui.input.radialcontrollerrotationchangedeventargs.rotationdeltaindegrees)) relativ zur Drehrichtung ausgelöst. Die Empfindlichkeit (oder Auflösung) der Daten kann mit der [**RadialController.RotationResolutionInDegrees**](/uwp/api/windows.ui.input.radialcontroller.rotationresolutionindegrees)-Eigenschaft festgelegt werden.
 
 > [!NOTE]
-> Ein Eingabeereignis für Drehungen wird standardmäßig nur an ein [**RadialController**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)-Objekt übergeben, wenn das Gerät mindestens um 10 Grad gedreht wird. Das Gerät vibriert bei jedem Eingabeereignis.
+> Ein Eingabeereignis für Drehungen wird standardmäßig nur an ein [**RadialController**](/uwp/api/Windows.UI.Input.RadialController)-Objekt übergeben, wenn das Gerät mindestens um 10 Grad gedreht wird. Das Gerät vibriert bei jedem Eingabeereignis.
 
 Im Allgemeinen wird empfohlen, haptisches Feedback zu deaktivieren, wenn die Drehauflösung auf weniger als 5 Grad festgelegt ist. Dadurch können kontinuierliche Interaktionen reibungsloser ausgeführt werden. 
 
-Sie können haptisches Feedback für benutzerdefinierte Tools aktivieren und deaktivieren, indem Sie die [**RadialController.UseAutomaticHapticFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.useautomatichapticfeedback)-Eigenschaft festlegen.
+Sie können haptisches Feedback für benutzerdefinierte Tools aktivieren und deaktivieren, indem Sie die [**RadialController.UseAutomaticHapticFeedback**](/uwp/api/windows.ui.input.radialcontroller.useautomatichapticfeedback)-Eigenschaft festlegen.
 
 > [!NOTE]
 > Für Systemtools wie die Lautstärkeregelung kann das haptische Verhalten nicht überschrieben werden. Für diese Tools kann das willkürliche Feedback nur vom Benutzer auf der Seite mit den Wheel-Einstellungen deaktiviert werden.
@@ -366,7 +366,7 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### <a name="click"></a>Klicken Sie auf 
+### <a name="click"></a>Klicken Sie auf
 
 Das Klicken mit dem Surface Dial ähnelt dem Klicken mit der linken Maustaste (der Drehzustand des Geräts hat keinen Einfluss auf diese Aktion).
 
@@ -380,13 +380,13 @@ Bei binären Vorgängen wie „Stummschalten/Stummschaltung aufheben“ oder „
 
 **Modale Tools sollten nicht durch Klicken mit dem Surface Dial aktiviert oder deaktiviert werden.**
 
-Einige App-/Toolmodi können Konflikte mit Interaktionen verursachen, die auf Drehungen basieren, oder diese deaktivieren. Tools wie das Lineal in der Windows Ink-Symbolleiste sollten durch andere UI-Angebote ein- oder ausgeblendet werden (die Freihandsymbolleiste bietet ein integriertes [**ToggleButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)-Steuerelement).
+Einige App-/Toolmodi können Konflikte mit Interaktionen verursachen, die auf Drehungen basieren, oder diese deaktivieren. Tools wie das Lineal in der Windows Ink-Symbolleiste sollten durch andere UI-Angebote ein- oder ausgeblendet werden (die Freihandsymbolleiste bietet ein integriertes [**ToggleButton**](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)-Steuerelement).
 
 Ordnen Sie bei modalen Tools das aktive Surface Dial-Menüelement dem Zieltool oder dem zuvor ausgewählten Menüelement zu.
 
 #### <a name="developer-guidance"></a>Anleitung für Entwickler
 
-Beim Klicken mit dem Surface Dial wird ein [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked)-Ereignis ausgelöst. [**RadialControllerButtonClickedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs) umfassen eine [**Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact)-Eigenschaft, die die Position und den Begrenzungsbereich der Surface Dial-Auflagefläche auf dem Surface Studio-Bildschirm enthält. Wenn das Surface Dial keinen Kontakt mit dem Bildschirm hat, ist diese Eigenschaft NULL. 
+Beim Klicken mit dem Surface Dial wird ein [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked)-Ereignis ausgelöst. [**RadialControllerButtonClickedEventArgs**](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs) umfassen eine [**Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact)-Eigenschaft, die die Position und den Begrenzungsbereich der Surface Dial-Auflagefläche auf dem Surface Studio-Bildschirm enthält. Wenn das Surface Dial keinen Kontakt mit dem Bildschirm hat, ist diese Eigenschaft NULL. 
 
 ### <a name="on-screen"></a>Onscreen-Modus
 
@@ -425,11 +425,11 @@ Wenn Sie das aktive Tool in Abhängigkeit vom UI-Kontext festlegen, z. B. von d
 
 #### <a name="developer-guidance"></a>Anleitung für Entwickler
 
-Wenn das Surface Dial auf der Digitalisiereroberfläche des Surface Studio platziert wird, wird ein [**RadialController.ScreenContactStarted**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.screencontactstarted)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt([**RadialControllerScreenContactStartedEventArgs.Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact)) werden an die App übermittelt.
+Wenn das Surface Dial auf der Digitalisiereroberfläche des Surface Studio platziert wird, wird ein [**RadialController.ScreenContactStarted**](/uwp/api/windows.ui.input.radialcontroller.screencontactstarted)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt([**RadialControllerScreenContactStartedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerscreencontactstartedeventargs.contact)) werden an die App übermittelt.
 
-Auch, wenn mit dem Surface Dial geklickt wird, während es sich auf der Digitalisiereroberfläche des Surface Studio befindet, wird ein [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt ([**RadialControllerButtonClickedEventArgs.Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact)) werden an die App übermittelt. 
+Auch, wenn mit dem Surface Dial geklickt wird, während es sich auf der Digitalisiereroberfläche des Surface Studio befindet, wird ein [**RadialController.ButtonClicked**](/uwp/api/windows.ui.input.radialcontroller.buttonclicked)-Ereignis ausgelöst, und die Informationen zum Bildschirmkontakt ([**RadialControllerButtonClickedEventArgs.Contact**](/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact)) werden an die App übermittelt. 
 
-Die Informationen zum Bildschirmkontakt ([**RadialControllerScreenContact**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) enthalten die X/Y-Koordinate für die Mitte des Surface Dial im Koordinatenbereich der App ([**RadialControllerScreenContact.Position**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact.position)) und das umgebende Rechteck ([**RadialControllerScreenContact.Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds)) in geräteunabhängigen Pixeln (DIPs). Diese Informationen sind sehr hilfreich, wenn es darum geht, Kontext für das aktive Tool bereitzustellen und dem Benutzer gerätebezogenes visuelles Feedback zu geben.
+Die Informationen zum Bildschirmkontakt ([**RadialControllerScreenContact**](/uwp/api/Windows.UI.Input.RadialControllerScreenContact)) enthalten die X/Y-Koordinate für die Mitte des Surface Dial im Koordinatenbereich der App ([**RadialControllerScreenContact.Position**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.position)) und das umgebende Rechteck ([**RadialControllerScreenContact.Bounds**](/uwp/api/windows.ui.input.radialcontrollerscreencontact.bounds)) in geräteunabhängigen Pixeln (DIPs). Diese Informationen sind sehr hilfreich, wenn es darum geht, Kontext für das aktive Tool bereitzustellen und dem Benutzer gerätebezogenes visuelles Feedback zu geben.
 
 Im folgenden Beispiel haben wir eine grundlegende App mit vier verschiedenen Abschnitten erstellt. Jeder Abschnitt enthält einen Schieberegler und eine Umschaltfläche. Anschließend bestimmen wir ausgehend von der Bildschirmposition des Surface Dial, welche Gruppe von Schieberegler und Umschaltfläche durch das Surface Dial gesteuert wird.
 
@@ -644,7 +644,7 @@ Dieses Thema bietet eine Übersicht über das Eingabegerät Surface Dial, enthä
 
 ## <a name="feedback"></a>Feedback
 
-Senden Sie Fragen, Vorschläge und Feedback an [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com).
+Senden Sie Fragen, Vorschläge und Feedback an [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) .
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
@@ -652,18 +652,18 @@ Senden Sie Fragen, Vorschläge und Feedback an [radialcontroller@microsoft.com](
 
 ### <a name="api-reference"></a>API-Referenz
 
-- [**Radialcontroller** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialController)
-- [**Radialcontrollerbuttonclickedeventargs** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
-- [**Radialcontrollerconfiguration** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
-- [**Radialcontrollercontrolacquiredeventargs** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
-- [**Radialcontrollermenu** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenu) 
-- [**Radialcontrollermenuitem** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
-- [**Radialcontrollerrotationchangedeventargs** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
-- [**Radialcontrollerscreencontact** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
-- [**Radialcontrollerscreencontactcontinuedeventargs** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
-- [**Radialcontrollerscreencontactstartedeventargs** -Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
-- [**Radialcontrollermenuknownicon** -Aufzählung](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
-- [**Radialcontrollersystemmenuitemkind** -Enumeration](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
+- [**Radialcontroller** -Klasse](/uwp/api/Windows.UI.Input.RadialController)
+- [**Radialcontrollerbuttonclickedeventargs** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
+- [**Radialcontrollerconfiguration** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerConfiguration) 
+- [**Radialcontrollercontrolacquiredeventargs** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs) 
+- [**Radialcontrollermenu** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerMenu) 
+- [**Radialcontrollermenuitem** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerMenuItem) 
+- [**Radialcontrollerrotationchangedeventargs** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs) 
+- [**Radialcontrollerscreencontact** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerScreenContact) 
+- [**Radialcontrollerscreencontactcontinuedeventargs** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) 
+- [**Radialcontrollerscreencontactstartedeventargs** -Klasse](/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)
+- [**Radialcontrollermenuknownicon** -Aufzählung](/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon) 
+- [**Radialcontrollersystemmenuitemkind** -Enumeration](/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
 ### <a name="samples"></a>Beispiele
 
@@ -671,7 +671,7 @@ Senden Sie Fragen, Vorschläge und Feedback an [radialcontroller@microsoft.com](
 
 [Radialcontroller-Anpassung](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip)
 
-#### <a name="other-samples"></a>Weitere Beispiele
+#### <a name="other-samples"></a>Andere Beispiele
 
 [Beispiel für ein Farb Buch](https://github.com/Microsoft/Windows-appsample-coloringbook)
 

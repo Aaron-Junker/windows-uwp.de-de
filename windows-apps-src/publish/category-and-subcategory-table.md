@@ -4,61 +4,61 @@ title: Kategorie- und Unterkategorietabelle
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.date: 03/21/2019
 ms.topic: article
-keywords: Windows 10, UWP, Kategorie, Unterkategorie, Genre, Kategorien, Genres
+keywords: Windows 10, UWP, Kategorie, Unterkategorie, Genre, Kategorien, Genres
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d7f3d01122bf4311e8f7b3a4a166478d5ba0ea6
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 49b22ceaf0f1cdefcc7f29f0a8ca79658aa15803
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320054"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167424"
 ---
 # <a name="category-and-subcategory-table"></a>Kategorie- und Unterkategorietabelle
 
 
 Das Zuweisen der richtigen Kategorie und Unterkategorie trägt dazu bei, dass Kunden Ihre App leichter finden und mehr Informationen dazu erhalten.
 
-Sie müssen Sie die Kategorie auswählen, die Ihre App am besten beschreibt. Wählen Sie optional, falls verfügbar, eine Unterkategorie aus. Falls Sie sich nicht sicher sind, welche Kategorie oder Unterkategorie Sie verwenden sollen, oder wenn Sie keine finden können, die Ihnen zusagt, suchen Sie die Kategorie aus, in der Kunden Ihrer Meinung nach am ehesten nach einer App wie Ihrer suchen.
+Sie müssen die Kategorie auswählen, mit der Ihre APP am besten beschrieben wird. Optional können Sie eine Unterkategorie auswählen, falls verfügbar. Wenn Sie nicht sicher sind, welche Kategorie oder Unterkategorie Sie verwenden möchten, oder wenn Sie nicht wissen, was eine genaue Anpassung ist, wählen Sie den Benutzer aus, den Kunden am wahrscheinlichsten sehen, wenn Sie versuchen, apps wie Ihre zu finden.
 
-Auf Wunsch **Spiele** für Ihre Kategorie, müssen Sie mindestens eine Unterkategorie auswählen (namens *"Genre"* für Spiele). Sie können beliebig viele Genres für Ihr Spiel auswählen. Um ein Spiel für Ihre Kunden auf Xbox zu veröffentlichen, müssen Sie das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) aktivieren oder den Prozess der [Konzeptgenehmigung](../gaming/concept-approval.md) durchlaufen). 
+Wenn Sie **Games** für Ihre Kategorie auswählen, müssen Sie mindestens eine Unterkategorie auswählen (als *Genre* für Spiele bezeichnet). Sie können so viele Genres auswählen, wie Sie für Ihr Spiel geeignet sind. Beachten Sie, dass Sie das [Xbox Live Creators-Programm](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) aktivieren oder den Genehmigungsprozess des [Konzepts](../gaming/concept-approval.md) durchlaufen müssen, um ein Spiel für Kunden auf der Xbox veröffentlichen zu können. 
 
 > [!IMPORTANT] 
-> Wenn Sie die App in der Kategorie **Spiele** veröffentlichen, ist es nicht möglich, eine andere Kategorie bei einer neuen Übermittlung auszuwählen. Sie muss weiterhin in der Kategorie **Spiele** veröffentlicht werden (Sie können allerdings die Auswahl des Genres in bei einer neuen Übermittlung ändern). Außerdem können Sie die Kategorie **Spiele** nicht bei einem Update der App auswählen, die Sie zuvor in einer anderen Kategorie veröffentlicht haben.
+> Wenn Sie die app in der Kategorie **Games** veröffentlichen, können Sie in einer neuen Übermittlung keine andere Kategorie auswählen. Sie muss weiterhin in der Kategorie " **Spiele** " veröffentlicht werden (Sie können die Genre Auswahl jedoch in einer neuen Übermittlung ändern). Ebenso ist es nicht möglich, die **Spiele** Kategorie auszuwählen, wenn Sie eine APP aktualisieren, die Sie zuvor in einer anderen Kategorie veröffentlicht haben.
 
-Für Apps, die keine Spiele sind, müssen Sie eine Kategorie auswählen und können optional aus allen Unterkategorien wählen, die verfügbar sind. Sie können nicht mehr als eine Unterkategorie für Apps auswählen, die nicht in der Kategorie **Spiele** enthalten sind. Nur einige Kategorien verfügen über Unterkategorien, und Sie können nur eine Unterkategorie verwenden, wenn sie zu der Kategorie gehört, die Sie ausgewählt haben.
+Bei apps, bei denen es sich nicht um Spiele handelt, müssen Sie eine Kategorie auswählen. Optional können Sie auch aus allen verfügbaren Unterkategorien auswählen. Es ist nicht möglich, mehr als eine Unterkategorie für apps auszuwählen, die nicht in der Kategorie **Spiele** angezeigt werden. Nur einige Kategorien haben Unterkategorien, und Sie können nur eine Unterkategorie verwenden, wenn Sie zu der ausgewählten Kategorie gehört.
 
-Um die Kategorie oder Unterkategorie einer bereits im Store enthaltenen App zu ändern (außer einer Änderung von **Spielen** auf eine andere Kategorie oder umgekehrt), können Sie dies durch das [Erstellen einer neuen Übermittlung](app-submissions.md) und Auswählen der neuen Kategorie oder Unterkategorie erledigen.
+[Erstellen Sie eine neue Übermittlung](app-submissions.md) , und wählen Sie die neue Kategorie oder Unterkategorie aus, um die Kategorie oder Unterkategorie einer APP zu ändern, die sich bereits im Speicher befindet (außer bei der Änderung von **spielen** in eine andere Kategorie oder umgekehrt).
 
 ## <a name="categories-and-subcategories"></a>Kategorien und Unterkategorien
 
-Im Microsoft Store werden Apps in folgende Kategorien und Unterkategorien unterteilt.
+Der Microsoft Store organisiert apps in den folgenden Kategorien und Unterkategorien.
 
 <table>
     <thead>
     <tr class="header">
-    <th align="left">Kategorie</th>
+    <th align="left">Category</th>
     <th align="left">Unterkategorie</th>
     </tr>
     </thead>
     <tbody>
 <tr>
     <td>Bücher + Lexika</td>
-    <td>E-Reader <br> Belletristik <br> Sachbuch <br> Referenz</td>
+    <td>E-Reader <br> Belletristik <br> Sachbuch <br> Verweis</td>
   </tr>
   <tr>
     <td>Business</td>
-    <td>Buchhaltung + Finanzen <br> Zusammenarbeit <br> CRM <br> Daten + Analysen <br> Dateiverwaltung <br> Lager + Logistik <br> Recht + Personalverwaltung <br> Projektmanagement <br> Remotedesktop <br> Vertrieb und Marketing <br> Zeit- + Kostenplanung</td>
+    <td>Buchhaltung + Finanzen <br> Zusammenarbeit <br> CRM <br> Daten + Analysen <br> Dateiverwaltung <br> Lager + Logistik <br> Recht + Personalverwaltung <br> Projektverwaltung <br> Remotedesktop <br> Vertrieb und Marketing <br> Zeit- + Kostenplanung</td>
   </tr>
   <tr>
     <td>Entwicklungstools</td>
-    <td>Datenbank <br> Designtools <br> Entwicklungskits <br> Netzwerk <br> Referenzen + Training <br> Server <br> Dienstprogramme <br> Webhosting</td>
+    <td>Datenbank <br> Designtools <br> Entwicklungskits <br> Netzwerk <br> Referenzen + Training <br> Server <br> Versorgungsunternehmen <br> Webhosting</td>
   </tr>
   <tr>
     <td>Education</td>
-    <td>Bücher + Lexika <br> Lernen im Vorschulalter <br> Lehrermaterial <br> Sprache <br> Prüfungsvorbereitung</td>
+    <td>Bücher + Lexika <br> Lernen im Vorschulalter <br> Lehrermaterial <br> Language <br> Prüfungsvorbereitung</td>
   </tr>
   <tr>
-    <td>Unterhaltung</td>
+    <td>Entertainment</td>
     <td>(Keine)</td>
   </tr>
   <tr>
@@ -67,7 +67,7 @@ Im Microsoft Store werden Apps in folgende Kategorien und Unterkategorien untert
   </tr>
   <tr>
     <td>Spiele</td>
-    <td>Action + Adventure <br> Karten- + Brettspiele <br> Kasino <br> Klassiker <br> Informatives <br> Kinder + Familie <br> Kampfspiele <br> Multi-Player Online Battle Arena <br> Musik <br> Andere <br> Jump ’n’ Run <br> Puzzle- + Ratespiele <br> Renn- + Flugspiele <br> Rollenspiele <br> Shooter <br> Simulation <br> Sport <br> Strategie <br> Tools <br> Word</td>
+    <td>Action + Adventure <br> Karten- + Brettspiele <br> Casino <br> Klassiker <br> Lernen <br> Kinder + Familie <br> Kampfspiele <br> Online-Aktionsbereich für mehrere Spieler <br> Musik <br> Sonstiges <br> Jump ’n’ Run <br> Puzzle- + Ratespiele <br> Renn- + Flugspiele <br> Rollenspiele <br> Shooter <br> Simulation <br> Sport <br> Strategie <br> Tools <br> Word</td>
   </tr>
   <tr>
     <td>Behörden + Politik</td>
@@ -79,11 +79,11 @@ Im Microsoft Store werden Apps in folgende Kategorien und Unterkategorien untert
   </tr>
   <tr>
     <td>Kinder und Familie</td>
-    <td>Bücher + Lexika <br> Unterhaltung <br> Hobbys und Spielzeug <br> Sport + Aktivitäten <br> Reisen</td>
+    <td>Bücher + Lexika <br> Entertainment <br> Hobbys und Spielzeug <br> Sport + Aktivitäten <br> Reise</td>
   </tr>
   <tr>
     <td>Lifestyle</td>
-    <td>Auto <br> Heimwerken <br> Haus + Garten <br> Beziehungen <br> Besondere Interessen <br> Style + Fashion</td>
+    <td>Automobilindustrie <br> Heimwerken <br> Haus + Garten <br> Beziehungen <br> Besondere Interessen <br> Style + Fashion</td>
   </tr>
   <tr>
     <td>Medizin</td>
@@ -103,15 +103,15 @@ Im Microsoft Store werden Apps in folgende Kategorien und Unterkategorien untert
   </tr>
   <tr>
     <td>News + Wetter</td>
-    <td>Neuigkeiten <br> Wetter</td>
+    <td>Neuigkeiten <br> Weather</td>
   </tr>
   <tr>
     <td>Meine Finanzen</td>
     <td>Bankgeschäfte <br> Budgets + Steuern</td>
   </tr>
   <tr>
-    <td>Personalization</td>
-    <td>Klingeltöne und Sounds <br> Designs <br> Hintergrund und Sperrbildschirm</td>
+    <td>Personalisierung</td>
+    <td>Klingeltöne und Sounds <br> Teilziele <br> Hintergrund und Sperrbildschirm</td>
   </tr>
   <tr>
     <td>Fotos + Videos</td>
@@ -130,7 +130,7 @@ Im Microsoft Store werden Apps in folgende Kategorien und Unterkategorien untert
     <td>(Keine)</td>
   </tr>
   <tr>
-    <td>Gemeinschaft</td>
+    <td>Soziale Netzwerke</td>
     <td>(Keine)</td>
   </tr>
   <tr>
@@ -138,7 +138,7 @@ Im Microsoft Store werden Apps in folgende Kategorien und Unterkategorien untert
     <td>(Keine)</td>
   </tr>
   <tr>
-    <td>Reisen</td>
+    <td>Reise</td>
     <td>Stadtführer <br>Hotels</td>
   </tr>
   <tr>
@@ -149,5 +149,4 @@ Im Microsoft Store werden Apps in folgende Kategorien und Unterkategorien untert
 </table>
 
 > [!NOTE] 
-> Einige der im Store für Kunden von Windows 8.x und Windows Phone 8.x und früheren Versionen verwendeten Kategorien und Unterkategorien werden möglicherweise anders als die oben genannten Kategorien angezeigt. 
-
+> Einige der Kategorien und Unterkategorien, die im Store für Kunden unter Windows 8. x und Windows Phone 8. x und früher verwendet werden, können anders als die oben aufgeführten Kategorien angezeigt werden.

@@ -8,12 +8,12 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4db3af0d2ec0ce1dbd0866f569ad9bf9b0392aa8
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 386920532f4598ee2d1519d292454b47c285555b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970565"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165834"
 ---
 # <a name="text-scaling"></a>Textskalierung
 
@@ -36,7 +36,7 @@ DirectWrite, GDI und XAML-Austausch Vorgänge unterstützen die Text Skalierung 
 
 <!-- If you want to support text scaling in your application with these frameworks, you’ll need to support the text scaling change event outlined below and provide alternative sizes for your UI and content.   -->
 
-## <a name="user-experience"></a>Benutzerfreundlichkeit
+## <a name="user-experience"></a>Benutzererfahrung
 
 Benutzer können die textskala mit dem Schieberegler größeren Text vergrößern auf der Seite Einstellungen > Easy of Access-> Vision/Anzeige Bildschirm anpassen.
 
@@ -116,7 +116,7 @@ Um sicherzustellen, dass das Layout Ihrer APP so flexibel und anpassungsfähig w
 
 Wenn Sie Text umschließen nicht angeben, verwendet die Plattform andere Methoden, um das Layout anzupassen, einschließlich Clipping (siehe vorheriges Beispiel).
 
-Hier verwenden wir die `AcceptsReturn` Text Feld `TextWrapping` Eigenschaften und, um sicherzustellen, dass unser Layout so flexibel wie möglich ist.
+Hier verwenden wir die `AcceptsReturn` `TextWrapping` Text Feldeigenschaften und, um sicherzustellen, dass unser Layout so flexibel wie möglich ist.
 
 ``` xaml
 <TextBox PlaceholderText="Type something here" 
@@ -133,7 +133,7 @@ Wenn Text Wrapping nicht das bevorzugte Verhalten ist, können Sie mit den meist
 > [!NOTE]
 > Wenn Sie den Text Abschneiden müssen, schneiden Sie das Ende der Zeichenfolge ab, nicht den Anfang.
 
-In diesem Beispiel zeigen wir, wie Sie Text in einem TextBlock mithilfe der [texttrimmen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) -Eigenschaft abschneiden.
+In diesem Beispiel zeigen wir, wie Sie Text in einem TextBlock mithilfe der [texttrimmen](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) -Eigenschaft abschneiden.
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -163,11 +163,11 @@ Hier fügen wir eine QuickInfo zu einem TextBlock hinzu, der keine Text Umbrüch
 
 Wenn Sie Schriftart basierte Symbole für die Betonung oder Ergänzung verwenden, deaktivieren Sie die Skalierung für diese Zeichen.
 
-Legen Sie für die meisten XAML-Steuerelemente die `false` Eigenschaft [istextscalefactor aktiviert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) auf fest.
+Legen Sie für die meisten XAML-Steuerelemente die Eigenschaft [istextscalefactor aktiviert](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) auf fest `false` .
 
 ### <a name="support-text-scaling-natively"></a>Unterstützung von nativer Text Skalierung
 
-Behandeln Sie das " [textscalefactorchanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) uisettings"-System Ereignis in Ihrem benutzerdefinierten Framework und in den Steuerelementen. Dieses Ereignis wird jedes Mal ausgelöst, wenn der Benutzer den Faktor für die Text Skalierung auf dem System festlegt.
+Behandeln Sie das " [textscalefactorchanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) uisettings"-System Ereignis in Ihrem benutzerdefinierten Framework und in den Steuerelementen. Dieses Ereignis wird jedes Mal ausgelöst, wenn der Benutzer den Faktor für die Text Skalierung auf dem System festlegt.
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -177,5 +177,5 @@ Dieses Thema enthält eine Übersicht über die Unterstützung von Text Skalieru
 
 ### <a name="api-reference"></a>API-Referenz
 
-- [Istextscalefactor aktiviert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
-- [Textscalefactor Changed](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)
+- [Istextscalefactor aktiviert](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
+- [Textscalefactor Changed](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)

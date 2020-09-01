@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: Android, Windows, Android Studio, Visual Studio, c++ Android Game, Windows Defender, Emulator, Virtual Device, install, Java, Kotlin
 ms.date: 04/28/2020
-ms.openlocfilehash: 31cdd5124c659b5d35a7e8192db1e87821b891f4
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: c9c718d2cccc6a38ac75d3220a79c7b2ec757f54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255224"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166844"
 ---
 # <a name="get-started-with-native-android-development-on-windows"></a>Beginnen Sie mit der nativen Android-Entwicklung unter Windows
 
@@ -25,13 +25,13 @@ Die direkteste Methode zum Erstellen einer nativen Android-App ist die Verwendun
 Android Studio ist die offizielle integrierte Entwicklungsumgebung für das Android-Betriebssystem von Google. [Laden Sie die neueste Version von Android Studio für Windows herunter](https://developer.android.com/studio).
 
 - Wenn Sie eine exe-Datei heruntergeladen haben (empfohlen), doppelklicken Sie darauf, um Sie zu starten.
-- Wenn Sie eine ZIP-Datei heruntergeladen haben, entpacken Sie die ZIP-Datei, kopieren Sie den Ordner "Android-Studio" in den Ordner "Programme", öffnen Sie dann den Ordner "Android-Studio > bin", und starten Sie "Studio64. exe" (für 64-Bit-Computer) oder "Studio. exe" (für 32-Bit
+- Wenn Sie eine ZIP-Datei heruntergeladen haben, entpacken Sie die ZIP-Datei, kopieren Sie den Ordner "Android-Studio" in den Ordner "Programme", öffnen Sie den Ordner "Android-Studio > bin", und starten Sie studio64.exe (für 64-Bit-Computer) oder studio.exe (für 32-Bit-Computer).
 
-Führen Sie den Setup-Assistenten in Android Studio aus, und installieren Sie alle von ihm empfohlenen SDK-Pakete. Wenn neue Tools und andere APIs verfügbar werden, werden Sie von Android Studio über ein Popup benachrichtigt, oder Sie suchen nach Updates, indem Sie **Hilfe** > **Prüfung für Update**auswählen.
+Führen Sie den Setup-Assistenten in Android Studio aus, und installieren Sie alle von ihm empfohlenen SDK-Pakete. Wenn neue Tools und andere APIs verfügbar werden, werden Sie von Android Studio über ein Popup benachrichtigt, oder Sie suchen nach Updates, indem Sie **Hilfe**  >  **Prüfung für Update**auswählen.
 
 ## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
 
-Wählen Sie **Datei** > **neu** > neues**Projekt**aus.
+Wählen Sie **Datei**  >  **neu**neues  >  **Projekt**aus.
 
 Im Fenster " **Projekt auswählen** " können Sie zwischen den folgenden Vorlagen wählen:
 
@@ -46,7 +46,7 @@ Im Fenster " **Projekt auswählen** " können Sie zwischen den folgenden Vorlage
 Vorlagen werden häufig zum Hinzufügen von Aktivitäten zu neuen und vorhandenen APP-Modulen verwendet. Um z. b. einen Anmeldebildschirm für die Benutzer Ihrer APP zu erstellen, fügen Sie eine Aktivität mit der [Anmelde Aktivitäts Vorlage](https://developer.android.com/studio/projects/templates#LoginActivity)hinzu.
 
 > [!NOTE]
-> Das Android-Betriebssystem basiert auf der Idee der **Komponenten** und verwendet die Begriffe " **Aktivität** " und " **Absicht** ", um Interaktionen zu definieren. Eine **Aktivität** stellt eine einzelne, fokussierte Aufgabe dar, die ein Benutzer ausführen kann. Eine **Aktivität** stellt ein Fenster zum Entwickeln der Benutzeroberfläche mithilfe von Klassen bereit, die auf der **Ansichts** Klasse basieren. Es gibt einen Lebenszyklus **für Aktivitäten** im Android-Betriebssystem, die durch eine Reihe von sechs Rückrufen `onCreate()`definiert `onStart()`werden `onResume()`: `onPause()`, `onStop()`,, `onDestroy()`, und. Die Aktivitäts Komponenten interagieren mithilfe von **Intent** -Objekten miteinander. Beabsichtigt definiert entweder die Aktivität, die gestartet werden soll, oder beschreibt den Typ der auszuführenden Aktion (und das System wählt die entsprechende Aktivität aus, die sogar von einer anderen Anwendung abgeleitet werden kann). Erfahren Sie mehr über [Aktivitäten](https://developer.android.com/reference/android/app/Activity), den [Aktivitäts Lebenszyklus](https://developer.android.com/guide/components/activities/activity-lifecycle)und [Intents](https://developer.android.com/reference/android/content/Intent.html) in der Android-Dokumentation.
+> Das Android-Betriebssystem basiert auf der Idee der **Komponenten** und verwendet die Begriffe " **Aktivität** " und " **Absicht** ", um Interaktionen zu definieren. Eine **Aktivität** stellt eine einzelne, fokussierte Aufgabe dar, die ein Benutzer ausführen kann. Eine **Aktivität** stellt ein Fenster zum Entwickeln der Benutzeroberfläche mithilfe von Klassen bereit, die auf der **Ansichts** Klasse basieren. Es gibt einen Lebenszyklus für **Aktivitäten** im Android-Betriebssystem, die durch eine Reihe von sechs Rückrufen definiert werden: `onCreate()` , `onStart()` , `onResume()` , `onPause()` , `onStop()` und `onDestroy()` . Die Aktivitäts Komponenten interagieren mithilfe von **Intent** -Objekten miteinander. Beabsichtigt definiert entweder die Aktivität, die gestartet werden soll, oder beschreibt den Typ der auszuführenden Aktion (und das System wählt die entsprechende Aktivität aus, die sogar von einer anderen Anwendung abgeleitet werden kann). Erfahren Sie mehr über [Aktivitäten](https://developer.android.com/reference/android/app/Activity), den [Aktivitäts Lebenszyklus](https://developer.android.com/guide/components/activities/activity-lifecycle)und [Intents](https://developer.android.com/reference/android/content/Intent.html) in der Android-Dokumentation.
 
 ### <a name="java-or-kotlin"></a>Java oder Kotlin
 
@@ -85,11 +85,11 @@ Das Fenster Android Studio **Projekt** enthält die folgenden Dateien (stellen S
 
 Die Hauptaktivität und der Einstiegspunkt für Ihre APP. Wenn Sie die APP erstellen und ausführen, wird vom System eine Instanz dieser Aktivität gestartet und das Layout geladen.
 
-**App > res > Layout > activity_main. XML**
+**App > res > Layout > activity_main.xml**
 
 Die XML-Datei, die das Layout für die Benutzeroberfläche der Aktivität definiert. Sie enthält ein TextView-Element mit dem Text "Hallo Welt".
 
-**App-> Manifeste > "androidmanifest. xml"**
+**App > Manifeste > AndroidManifest.xml**
 
 Die Manifest-Datei, die die grundlegenden Merkmale der APP und ihrer Komponenten beschreibt.
 
@@ -105,9 +105,9 @@ So erstellen Sie ein neues Projekt mit C/C++-Unterstützung:
 
 - Wählen Sie im Android Studio Assistenten im Abschnitt **Projekt auswählen** den Typ *native C++** Project aus. Wählen Sie **weiter**, füllen Sie die restlichen Felder aus, und klicken Sie dann erneut auf **weiter** .
 
-- Im Abschnitt **Anpassen der C++-Unterstützung** des Assistenten können Sie das Projekt mit dem **C++-Standard** Feld anpassen. Wählen Sie in der Dropdown Liste aus, welche Standardisierung von C++ Sie verwenden möchten. Bei Auswahl von **Toolchain default** wird die cmake-Standardeinstellung verwendet. Wählen Sie **Fertig stellen** aus.
+- Im Abschnitt **Anpassen der C++-Unterstützung** des Assistenten können Sie das Projekt mit dem **C++-Standard** Feld anpassen. Wählen Sie in der Dropdown Liste aus, welche Standardisierung von C++ Sie verwenden möchten. Bei Auswahl von **Toolchain default** wird die cmake-Standardeinstellung verwendet. Wählen Sie **Fertig stellen**aus.
 
-- Nachdem Android Studio das neue Projekt erstellt hat, finden Sie einen **cpp** -Ordner im **Projekt** Bereich, der die systemeigenen Quelldateien, Header, Buildskripts für cmake oder NDK-Build und vorgefertigte Bibliotheken enthält, die Teil des Projekts sind. Sie können auch eine Beispiel-C++-Quelldatei `native-lib.cpp`,, im `src/main/cpp/` Ordner finden, der eine `stringFromJNI()` einfache Funktion bereitstellt, die die Zeichenfolge "Hello from C++" zurückgibt. Außerdem finden Sie ein cmake-Buildskript [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html)() im Stammverzeichnis Ihres Moduls, das zum Erstellen der nativen Bibliothek erforderlich ist.
+- Nachdem Android Studio das neue Projekt erstellt hat, finden Sie einen **cpp** -Ordner im **Projekt** Bereich, der die systemeigenen Quelldateien, Header, Buildskripts für cmake oder NDK-Build und vorgefertigte Bibliotheken enthält, die Teil des Projekts sind. Sie können auch eine Beispiel-C++-Quelldatei, `native-lib.cpp` , im `src/main/cpp/` Ordner finden, der eine einfache Funktion bereitstellt, `stringFromJNI()` die die Zeichenfolge "Hello from C++" zurückgibt. Außerdem finden Sie ein cmake [`CMakeLists.txt`](https://developer.android.com/studio/projects/configure-cmake.html) -Buildskript () im Stammverzeichnis Ihres Moduls, das zum Erstellen der nativen Bibliothek erforderlich ist.
 
 Weitere Informationen finden Sie im Android docs Topic: [Hinzufügen von C-und C++-Code zu Ihrem Projekt](https://developer.android.com/studio/projects/add-native-code). Beispiele finden Sie in den [Android-NDK-Beispielen mit Android Studio C++-integrationsrepository](https://github.com/android/ndk-samples) auf GitHub. Um ein C++-Spiel unter Android zu kompilieren und auszuführen, verwenden Sie die [Google Play Game Services-API](https://developers.google.com/games/services/cpp/gettingStartedAndroid).
 
@@ -133,7 +133,7 @@ Außerdem bietet Microsoft Entwurfs Leit Fäden mit dem Ziel, eine nahtlose Dars
 
 - [Android-Anwendungs Grundlagen](https://developer.android.com/guide/components/fundamentals)
 
-- [Entwickeln Sie Dual-Screen-Apps für Android, und erhalten Sie das Surface Duo-Geräte-SDK](https://docs.microsoft.com/dual-screen/android/)
+- [Entwickeln Sie Dual-Screen-Apps für Android, und erhalten Sie das Surface Duo-Geräte-SDK](/dual-screen/android/)
 
 - [Windows Defender-Ausschlüsse zum Verbessern der Leistung hinzufügen](defender-settings.md)
 

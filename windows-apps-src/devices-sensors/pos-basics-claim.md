@@ -5,12 +5,12 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Point of Service, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 1977fd5db2f2e026ae4bbab21de9683f275e96d3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 391acd1f4acf0620a87e77f3c540c3dd0faa6def
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053750"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165404"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Point of Service-geräteanspruch und Aktivieren des Modells
 
@@ -25,11 +25,11 @@ Nachdem Sie erfolgreich ein pointservice-Geräte Objekt erstellt haben, müssen 
 
 |Sicherungsmedium|Anspruch | Freigabe | 
 |-|:-|:-|
-|BarcodeScanner | [Barcodescanner. claimscannerasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | [Claimedbarcodescanner. Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.close) |
-|CashDrawer | [Cashschublade. claimdrawerasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | [Claimedcashschublade. Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.close) | 
-|LineDisplay | [LineDisplay. claimasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.claimasync) |  [Claimedinedisplay. Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay.close) | 
-|"Magneticstripereader" | ["Magneticstripereader. claimreaderasync"](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.claimreaderasync) |  [Claimedmagneticstripereader. Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.close) | 
-|Posprinter | [Posprinter. claimprinterasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.claimprinterasync) |  [Claimedposprinter. Close](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.close) | 
+|BarcodeScanner | [Barcodescanner. claimscannerasync](/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) | [Claimedbarcodescanner. Close](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.close) |
+|CashDrawer | [Cashschublade. claimdrawerasync](/uwp/api/windows.devices.pointofservice.cashdrawer.claimdrawerasync) | [Claimedcashschublade. Close](/uwp/api/windows.devices.pointofservice.claimedcashdrawer.close) | 
+|LineDisplay | [LineDisplay. claimasync](/uwp/api/windows.devices.pointofservice.linedisplay.claimasync) |  [Claimedinedisplay. Close](/uwp/api/windows.devices.pointofservice.claimedlinedisplay.close) | 
+|"Magneticstripereader" | ["Magneticstripereader. claimreaderasync"](/uwp/api/windows.devices.pointofservice.magneticstripereader.claimreaderasync) |  [Claimedmagneticstripereader. Close](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.close) | 
+|Posprinter | [Posprinter. claimprinterasync](/uwp/api/windows.devices.pointofservice.posprinter.claimprinterasync) |  [Claimedposprinter. Close](/uwp/api/windows.devices.pointofservice.claimedposprinter.close) | 
  | 
 
 ## <a name="enable-device-for-io-operations"></a>Aktivieren des Geräts für e/a-Vorgänge
@@ -40,11 +40,11 @@ Mit der Anspruchs Aktion wird lediglich eine exklusive Berechtigung für das Ger
 
 | Sicherungsmedium | Aktivieren | Disable | IsEnabled? |
 |-|:-|:-|:-|
-|ClaimedBarcodeScanner | [Enableasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isenabled) | 
-|ClaimedCashDrawer | [Enableasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |
+|ClaimedBarcodeScanner | [Enableasync](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.enableasync) | [DisableAsync](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.disableasync) | [IsEnabled](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isenabled) | 
+|ClaimedCashDrawer | [Enableasync](/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |
 |ClaimedLineDisplay | Nicht zutreffend ¹ | Nicht zutreffend ¹ | Nicht zutreffend ¹ | 
-|ClaimedMagneticStripeReader | [Enableasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.isenabled) |  
-|ClaimedPosPrinter | [Enableasync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
+|ClaimedMagneticStripeReader | [Enableasync](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.enableasync) | [DisableAsync](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.disableasync) | [IsEnabled](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.isenabled) |  
+|ClaimedPosPrinter | [Enableasync](/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasync) | [IsEnabled](/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
 ¹ bei der Zeilen Anzeige ist es nicht erforderlich, das Gerät explizit für e/a-Vorgänge zu aktivieren.  Die Aktivierung von erfolgt automatisch durch die PointF-Dienst-LineDisplay-APIs, die e/a-Vorgänge ausführen.
@@ -142,9 +142,9 @@ Registrieren Sie anschließend den Ereignishandler in der Zuordnung zu ihrem bea
 
 |Angeforderter Gerät|Releasebenachrichtigung| Gerät beibehalten |
 |-|:-|:-|
-|ClaimedBarcodeScanner | [Releasedevicerequessiert](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.releasedevicerequested) | [Retaindevice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.retaindevice)
-|ClaimedCashDrawer | [Releasedevicerequessiert](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.releasedevicerequested) | [Retaindevice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.retaindevice)
-|ClaimedLineDisplay | [Releasedevicerequessiert](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay.releasedevicerequested) | [Retaindevice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay.retaindevice)
-|ClaimedMagneticStripeReader | [Releasedevicerequessiert](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.releasedevicerequested) | [Retaindevice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedlinedisplay.retaindevice)
-|ClaimedPosPrinter | [Releasedevicerequessiert](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.releasedevicerequested) | [Retaindevice](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.retaindevice)
+|ClaimedBarcodeScanner | [Releasedevicerequessiert](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.releasedevicerequested) | [Retaindevice](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.retaindevice)
+|ClaimedCashDrawer | [Releasedevicerequessiert](/uwp/api/windows.devices.pointofservice.claimedcashdrawer.releasedevicerequested) | [Retaindevice](/uwp/api/windows.devices.pointofservice.claimedcashdrawer.retaindevice)
+|ClaimedLineDisplay | [Releasedevicerequessiert](/uwp/api/windows.devices.pointofservice.claimedlinedisplay.releasedevicerequested) | [Retaindevice](/uwp/api/windows.devices.pointofservice.claimedlinedisplay.retaindevice)
+|ClaimedMagneticStripeReader | [Releasedevicerequessiert](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.releasedevicerequested) | [Retaindevice](/uwp/api/windows.devices.pointofservice.claimedlinedisplay.retaindevice)
+|ClaimedPosPrinter | [Releasedevicerequessiert](/uwp/api/windows.devices.pointofservice.claimedposprinter.releasedevicerequested) | [Retaindevice](/uwp/api/windows.devices.pointofservice.claimedposprinter.retaindevice)
 |

@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a7355241f9ba4cc7b4bb743b78ac09169d65d9
-ms.sourcegitcommit: 2747d9266e1678fca96d3822ce47499ca91a2c70
+ms.openlocfilehash: 3d4aa82f70e9bad7a60a97b6b28f28f3dfd008c9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77213677"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166404"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>Anpassen von Effekten & Erfahrungen mithilfe der Windows-Benutzeroberfläche
 
@@ -22,7 +22,7 @@ Die Benutzeroberflächen Anpassung ist eine umfassende Kategorie, die die Arbeit
 - Benutzereinstellungen für Animationen werden untersucht
 - Optimieren der Benutzeroberfläche für die angegebenen Hardwarefunktionen
 
-Hier erfahren Sie, wie Sie Ihre Effekte und Animationen in den oben aufgeführten Bereichen mit der visuellen Schicht anpassen, aber es gibt noch viele weitere Möglichkeiten, Ihre Anwendung anzupassen, um eine gute Benutzerumgebung zu gewährleisten. Leitfäden finden Sie unter so [passen Sie die Benutzeroberfläche](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) für verschiedene Geräte an und [Erstellen reaktionsfähige Benutzer](/windows/uwp/design/layout/responsive-design)Oberflächen.
+Hier erfahren Sie, wie Sie Ihre Effekte und Animationen in den oben aufgeführten Bereichen mit der visuellen Schicht anpassen, aber es gibt noch viele weitere Möglichkeiten, Ihre Anwendung anzupassen, um eine gute Benutzerumgebung zu gewährleisten. Leitfäden finden Sie unter so [passen Sie die Benutzeroberfläche](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) für verschiedene Geräte an und [Erstellen reaktionsfähige Benutzer](../design/layout/responsive-design.md)Oberflächen.
 
 ## <a name="user-effects-settings"></a>Benutzer Effekteinstellungen
 
@@ -38,10 +38,10 @@ Wenn diese aktiviert ist, werden alle Effekte, die Transparenz verwenden, erwart
 
 Wenn Sie ausgeschaltet ist, greift das Acrylmaterial automatisch auf eine voll Tonfarbe zurück, da der Acryl Pinsel von XAML standardmäßig auf dieses Ereignis lauscht. Hier sehen wir, dass die Rechner-APP entsprechend auf eine voll Tonfarbe zurückgreift, wenn Transparenzeffekte nicht aktiviert sind:
 
-![Rechner mit Acryl](images/tailoring-acrylic.png)
-![Rechner, bei dem mit dem Acryl auf Transparenz Einstellungen reagiert wird](images/tailoring-acrylic-fallback.png)
+![Rechner mit einem Acryl ](images/tailoring-acrylic.png)
+ ![ Rechner mit Acryl, der auf Transparenz Einstellungen reagiert](images/tailoring-acrylic-fallback.png)
 
-Allerdings muss die Anwendung für benutzerdefinierte Effekte auf die [uisettings. advancedeffectsenabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled) -Eigenschaft oder das [advancedeffectsenabledchanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) -Ereignis reagieren und das Effect/Effect-Diagramm auslagern, um einen Effekt zu verwenden, der keine Transparenz aufweist. Ein Beispiel hierfür finden Sie unten:
+Allerdings muss die Anwendung für benutzerdefinierte Effekte auf die [uisettings. advancedeffectsenabled](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled) -Eigenschaft oder das [advancedeffectsenabledchanged](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) -Ereignis reagieren und das Effect/Effect-Diagramm auslagern, um einen Effekt zu verwenden, der keine Transparenz aufweist. Ein Beispiel hierfür finden Sie unten:
 
 ```cs
 public MainPage()
@@ -59,7 +59,7 @@ private void Uisettings_AdvancedEffectsEnabledChanged(UISettings sender, object 
 
 ## <a name="animations-settings"></a>Animations Einstellungen
 
-Ebenso sollten Anwendungen die [uisettings. animationsenabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) -Eigenschaft überwachen und darauf reagieren, um sicherzustellen, dass Animationen basierend auf den Benutzereinstellungen in den Einstellungen > einfache Zugriffs > angezeigt werden.
+Ebenso sollten Anwendungen die [uisettings. animationsenabled](/uwp/api/windows.ui.viewmanagement.uisettings.animationsenabled) -Eigenschaft überwachen und darauf reagieren, um sicherzustellen, dass Animationen basierend auf den Benutzereinstellungen in den Einstellungen > einfache Zugriffs > angezeigt werden.
 
 ![Animations Option in "Einstellungen"](images/tailoring-animations-setting.png)
 
@@ -118,11 +118,11 @@ Vollständigen Beispielcode finden Sie im [GitHub](https://github.com/microsoft/
 
 Basierend auf dem Feedback der bereitgestellten [areeffectysupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) -Methode und der [areeffecungfast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) -Methode in der compositionmethods-API kann die Anwendung sich entscheiden, teure oder nicht unterstützte Auswirkungen auf andere Effekte ihrer Wahl auszutauschen, die für das Gerät optimiert sind. Einige Effekte sind so bekannt, dass Sie ständig ressourcenintensiver als andere sind und sparsam verwendet werden sollten. andere Effekte können auch mehr frei genutzt werden. Für alle Effekte sollte jedoch Vorsicht beim Verketten und animieren verwendet werden, da einige Szenarien oder Kombinationen die Leistungsmerkmale des Effekt Diagramms ändern können. Im folgenden finden Sie eine Reihe von Thumb-Leistungsmerkmalen für einzelne Effekte:
 
-- Effekte, die bekanntermaßen hohe Leistung haben, sind wie folgt – Gaußscher Weichzeichner, Schatten Maske, backdropbrush, hostbackdropbrush und ebenenvisualisierung. Diese werden für Low-End-Geräte [(Funktionsebene 9.1-9.3)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)nicht empfohlen und sollten auf High-End-Geräten umsichtig verwendet werden.
+- Effekte, die bekanntermaßen hohe Leistung haben, sind wie folgt – Gaußscher Weichzeichner, Schatten Maske, backdropbrush, hostbackdropbrush und ebenenvisualisierung. Diese werden für Low-End-Geräte [(Funktionsebene 9.1-9.3)](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro)nicht empfohlen und sollten auf High-End-Geräten umsichtig verwendet werden.
 - Zu den Effekten mit mittlerer Leistungs Beeinträchtigung zählen Farb Matrix, bestimmte Blend-Effekte blendmodes (Helligkeit, Farbe, Sättigung und Farbton), Spotlight, scenelightingeffect und (je nach Szenario) bordereffect. Diese Auswirkungen können mit bestimmten Szenarien auf Low-End-Geräten verwendet werden. bei der Verkettung und Animation sollte jedoch Vorsicht geboten werden. Es empfiehlt sich, die Verwendung auf zwei oder weniger zu beschränken und nur über Übergänge zu animieren.
 - Alle anderen Effekte haben geringe Auswirkungen auf die Leistung und funktionieren in allen sinnvollen Szenarien, wenn Animationen und Verkettung verwendet werden.
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [Reaktionsfähige UWP-Entwurfs Techniken](https://docs.microsoft.com/windows/uwp/design/layout/responsive-design)
-- [UWP-Geräte Anpassung](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+- [Reaktionsfähige UWP-Entwurfs Techniken](../design/layout/responsive-design.md)
+- [UWP-Geräte Anpassung](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)

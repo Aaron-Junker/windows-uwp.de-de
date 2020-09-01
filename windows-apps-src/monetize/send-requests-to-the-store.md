@@ -6,24 +6,24 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, storerequesthelper, sendrequestasync
 ms.localizationpriority: medium
-ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867330"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164494"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Senden von Anforderungen an den Microsoft Store
 
-Ab Windows 10, Version 1607, bietet das Windows SDK APIs für speicherbezogene Vorgänge (z. b. in-App-Käufe) im [Windows. Services. Store](https://docs.microsoft.com/uwp/api/windows.services.store) -Namespace. Obwohl die Dienste, die den Speicher unterstützen, ständig aktualisiert, erweitert und zwischen den Betriebssystemversionen verbessert werden, werden neue APIs in der Regel nur während der Hauptversionen des Betriebssystems dem Windows SDK hinzugefügt.
+Ab Windows 10, Version 1607, bietet das Windows SDK APIs für speicherbezogene Vorgänge (z. b. in-App-Käufe) im [Windows. Services. Store](/uwp/api/windows.services.store) -Namespace. Obwohl die Dienste, die den Speicher unterstützen, ständig aktualisiert, erweitert und zwischen den Betriebssystemversionen verbessert werden, werden neue APIs in der Regel nur während der Hauptversionen des Betriebssystems dem Windows SDK hinzugefügt.
 
-Wir stellen die [sendrequestasync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) -Methode als flexible Möglichkeit bereit, neue Speichervorgänge für universelle Windows-Plattform-Apps (UWP) verfügbar zu machen, bevor eine neue Version der Windows SDK veröffentlicht wird. Sie können diese Methode zum Senden von Anforderungen an den Store für neue Vorgänge verwenden, für die noch keine entsprechende API in der neuesten Version der Windows SDK verfügbar ist.
+Wir stellen die [sendrequestasync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) -Methode als flexible Möglichkeit bereit, neue Speichervorgänge für universelle Windows-Plattform-Apps (UWP) verfügbar zu machen, bevor eine neue Version der Windows SDK veröffentlicht wird. Sie können diese Methode zum Senden von Anforderungen an den Store für neue Vorgänge verwenden, für die noch keine entsprechende API in der neuesten Version der Windows SDK verfügbar ist.
 
 > [!NOTE]
 > Die **sendrequestasync** -Methode ist nur für apps verfügbar, die auf Windows 10, Version 1607 oder höher ausgerichtet sind. Einige der Anforderungen, die von dieser Methode unterstützt werden, werden nur in Releases nach Windows 10, Version 1607, unterstützt.
 
-**Sendrequestasync** ist eine statische Methode der [storerequesthelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper) -Klasse. Um diese Methode aufzurufen, müssen Sie die folgenden Informationen an die-Methode übergeben:
-* Ein [storecontext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) -Objekt, das Informationen über den Benutzer bereitstellt, für den Sie den Vorgang ausführen möchten. Weitere Informationen zu diesem Objekt finden Sie unter [Get Started with the storecontext Class](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class).
+**Sendrequestasync** ist eine statische Methode der [storerequesthelper](/uwp/api/windows.services.store.storerequesthelper) -Klasse. Um diese Methode aufzurufen, müssen Sie die folgenden Informationen an die-Methode übergeben:
+* Ein [storecontext](/uwp/api/windows.services.store.storecontext) -Objekt, das Informationen über den Benutzer bereitstellt, für den Sie den Vorgang ausführen möchten. Weitere Informationen zu diesem Objekt finden Sie unter [Get Started with the storecontext Class](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class).
 * Eine ganze Zahl, die die Anforderung identifiziert, die Sie an den Speicher senden möchten.
 * Wenn die Anforderung Argumente unterstützt, können Sie auch eine JSON-formatierte Zeichenfolge übergeben, die die Argumente enthält, die zusammen mit der Anforderung übergeben werden.
 
@@ -86,7 +86,7 @@ Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*
 }
 ```
 
-Nachdem Sie diese Anforderung gesendet haben, enthält die [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) -Eigenschaft des [storesendrequestresult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) -Rückgabewerts eine JSON-formatierte Zeichenfolge mit den folgenden Feldern.
+Nachdem Sie diese Anforderung gesendet haben, enthält die [Response](/uwp/api/windows.services.store.storesendrequestresult.Response) -Eigenschaft des [storesendrequestresult](/uwp/api/windows.services.store.storesendrequestresult) -Rückgabewerts eine JSON-formatierte Zeichenfolge mit den folgenden Feldern.
 
 |  Feld  |  BESCHREIBUNG  |
 |----------------------|---------------|
@@ -129,7 +129,7 @@ Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*
 }
 ```
 
-Wenn bei der Anforderung ein Fehler auftritt, enthält die [httpstatencode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) -Eigenschaft des Rückgabewerts [storesendrequestresult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) den Antwort Code.
+Wenn bei der Anforderung ein Fehler auftritt, enthält die [httpstatencode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) -Eigenschaft des Rückgabewerts [storesendrequestresult](/uwp/api/windows.services.store.storesendrequestresult) den Antwort Code.
 
 ### <a name="remove-the-current-device-or-user-from-a-flight-group"></a>Aktuelles Gerät oder Benutzer aus einer Fluggruppe entfernen
 
@@ -152,9 +152,9 @@ Das folgende Beispiel zeigt das Format der JSON-Daten, die an *parametersasjson*
 }
 ```
 
-Wenn bei der Anforderung ein Fehler auftritt, enthält die [httpstatencode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) -Eigenschaft des Rückgabewerts [storesendrequestresult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) den Antwort Code.
+Wenn bei der Anforderung ein Fehler auftritt, enthält die [httpstatencode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) -Eigenschaft des Rückgabewerts [storesendrequestresult](/uwp/api/windows.services.store.storesendrequestresult) den Antwort Code.
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
 * [Anzeigen des Dialog Felds "Bewertung und Überprüfung" in Ihrer APP](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
-* [Sendrequestasync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)
+* [Sendrequestasync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Sicherheit
 ms.localizationpriority: medium
-ms.openlocfilehash: abe151bd78a0340b91aa1600ad34282b94b6d216
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d8a4ff658e05f9483dc8afbb6beb9f70f39676a0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372595"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167244"
 ---
 # <a name="cryptography"></a>Kryptografie
 
@@ -25,7 +25,7 @@ Der Artikel enthält eine Übersicht über die für universelle Windows-Plattfor
 
 Die folgende Terminologie wird bei der Kryptografie und bei Public Key-Infrastrukturen (PKI) häufig verwendet.
 
-| Begriff                        | Beschreibung                                                                                                                                                                                           |
+| Begriff                        | BESCHREIBUNG                                                                                                                                                                                           |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Verschlüsselung                  | Das Verfahren zum Transformieren von Daten mithilfe von Kryptografiealgorithmus und -schlüssel. Die transformierten Daten können nur mithilfe desselben Algorithmus und desselben (symmetrischen) oder zugehörigen (öffentlichen) Schlüssels wiederhergestellt werden. |
 | Entschlüsselung                  | Das Verfahren zur Rückführung verschlüsselter Daten in ihre ursprüngliche Form.                                                                                                                                         |
@@ -93,7 +93,7 @@ Die vereinfachte Schnittstelle für die Anwendungsprogrammierung, die für Apps 
 
 ### <a name="cryptography-support"></a>Kryptografieunterstützung
 
-Sie können folgende Kryptografieaufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Core**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core) -Namespace.
+Sie können folgende Kryptografieaufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Core**](/uwp/api/Windows.Security.Cryptography.Core) -Namespace.
 
 -   Erstellen symmetrischer Schlüssel
 -   Ausführen der symmetrischen Verschlüsselung
@@ -104,18 +104,18 @@ Sie können folgende Kryptografieaufgaben ausführen. Weitere Informationen find
 -   Hashinhalt
 -   Digitales Signieren von Inhalt
 
-Das SDK enthält außerdem eine vereinfachte Schnittstelle für kennwortbasierten Datenschutz. Diese können Sie für folgende Aufgaben verwenden. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) -Namespace.
+Das SDK enthält außerdem eine vereinfachte Schnittstelle für kennwortbasierten Datenschutz. Diese können Sie für folgende Aufgaben verwenden. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection) -Namespace.
 
 -   Asynchroner Schutz statischer Daten
 -   Asynchroner Schutz eines statischen Datenstroms
 
 ### <a name="encoding-support"></a>Codierungsunterstützung
 
-Eine App kann kryptografische Daten für die Übertragung in einem Netzwerk codieren und Daten decodieren, die aus einer Netzwerkquelle empfangen wurden. Weitere Informationen finden Sie unter den statischen Methoden, die im [**Windows.Security.Cryptography**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography) -Namespace verfügbar sind.
+Eine App kann kryptografische Daten für die Übertragung in einem Netzwerk codieren und Daten decodieren, die aus einer Netzwerkquelle empfangen wurden. Weitere Informationen finden Sie unter den statischen Methoden, die im [**Windows.Security.Cryptography**](/uwp/api/Windows.Security.Cryptography) -Namespace verfügbar sind.
 
 ### <a name="pki-support"></a>PKI-Unterstützung
 
-Apps können folgende PKI-Aufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Certificates**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates) -Namespace.
+Apps können folgende PKI-Aufgaben ausführen. Weitere Informationen finden Sie im [**Windows.Security.Cryptography.Certificates**](/uwp/api/Windows.Security.Cryptography.Certificates) -Namespace.
 
 -   Erstellen eines Zertifikats
 -   Erstellen eines selbstsignierten Zertifikats
@@ -139,13 +139,13 @@ Sie können das Manifest außerdem für folgende Aktionen verwenden:
 
 Die folgenden Artikel enthalten weitere Informationen zu Sicherheitsszenarien:
 
-| Thema                                                                         | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Thema                                                                         | BESCHREIBUNG                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Zertifikate](certificates.md)                                               | In diesem Artikel wird die Verwendung von Zertifikaten in UWP-Apps beschrieben. Mit digitalen Zertifikaten wird ein öffentlicher Schlüssel in der Kryptografie für öffentliche Schlüssel an eine Person, an einen Computer oder an eine Organisation gebunden. Die gebundenen Identitäten werden meist dazu verwendet, eine Entität für die andere zu authentifizieren. Zertifikate werden z. B. häufig dazu verwendet, einen Webserver für einen Benutzer und einen Benutzer für einen Webserver zu authentifizieren. Sie können Zertifikatanforderungen erstellen und ausgestellte Zertifikate installieren oder importieren. Außerdem können Sie ein Zertifikat in einer Zertifikathierarchie registrieren. |
 | [Kryptografische Schlüssel](cryptographic-keys.md)                                   | In diesem Artikel wird erläutert, wie Sie mithilfe standardmäßiger Schlüsselableitungsfunktionen Schlüssel ableiten und wie Sie Inhalte mithilfe symmetrischer und asymmetrischer Schlüssel verschlüsseln können.                                                                                                                                                                                                                                                                                                                                                                             |
-| [Datenschutz](data-protection.md)                                         | In diesem Artikel wird erläutert, wie Sie mithilfe der [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)-Klasse im [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection)-Namespace digitale Daten in einer UWP-App verschlüsseln und entschlüsseln können.                                                                                                                                                                                                                  |
+| [Datenschutz](data-protection.md)                                         | In diesem Artikel wird erläutert, wie Sie mithilfe der [DataProtectionProvider](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)-Klasse im [Windows.Security.Cryptography.DataProtection](/uwp/api/Windows.Security.Cryptography.DataProtection)-Namespace digitale Daten in einer UWP-App verschlüsseln und entschlüsseln können.                                                                                                                                                                                                                  |
 | [MACs, Hashes und Signaturen](macs-hashes-and-signatures.md)               | In diesem Artikel wird erläutert, wie Nachrichtenmanipulationen mithilfe von Nachrichtenauthentifizierungscodes (Message Authentication Codes, MACs), Hashes und Signaturen in UWP-Apps erkannt werden können.                                                                                                                                                                                                                                                                                                                                                                                |
-| [Exportbeschränkungen hinsichtlich Kryptografie](export-restrictions-on-cryptography.md) | Anhand der Informationen in diesem Abschnitt können Sie ermitteln, ob Ihre App Kryptografiefunktionen in einer Weise verwendet, die unter Umständen dazu führt, dass sie im Microsoft Store nicht angezeigt wird.                                                                                                                                                                                                                                                                                                                                                                                            |
+| [Exportbeschränkungen hinsichtlich Kryptografie](export-restrictions-on-cryptography.md) | Verwenden Sie diese Informationen, um zu bestimmen, ob Ihre APP Kryptografie auf eine Weise verwendet, die möglicherweise verhindert, dass Sie im Microsoft Store aufgeführt wird.                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Allgemeine Kryptografieaufgaben](common-cryptography-tasks.md)                     | Die folgenden Artikel enthalten Beispielcode für allgemeine UWP-Kryptografieaufgaben, z. B. Erstellen zufälliger Zahlen, Vergleichen von Puffern, Konvertieren zwischen Zeichenfolgen und binären Daten, Kopieren in und aus Bytearrays sowie Codieren und Decodieren von Daten.                                                                                                                                                                                                                                                                                    |
 
  

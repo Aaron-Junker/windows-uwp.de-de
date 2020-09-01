@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Verwendung, benutzerdefiniertes Ereignis, Bericht, Telemetrie, Benutzersitzungen
 ms.localizationpriority: medium
-ms.openlocfilehash: bced71620b5e52e90b104a9a50d8fb774ba14228
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: d2839112d36822be5eb8297b838cdc38bab5c71b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846810"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167274"
 ---
 # <a name="usage-report"></a>Nutzungsbericht
 
@@ -73,7 +73,7 @@ Wie beim **Benutzer** Sitzungs Diagramm stellt eine Benutzersitzung einen eindeu
 
 Das Diagramm für **benutzerdefinierte Ereignisse** zeigt die Gesamtanzahl der Vorkommen für benutzerdefinierte Ereignisse an, die Sie für Ihre APP definiert haben. Dazu können mehrere Vorkommen für denselben Kunden gehören. Mit den Filtern können Sie die spezifischen benutzerdefinierten Ereignisse auswählen, für die Sie diese Daten anzeigen möchten.
 
-Benutzerdefinierte Ereignisse werden unter Verwendung der [StoreServicesCustomEventLogger.Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Methode im [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) implementiert.
+Benutzerdefinierte Ereignisse werden unter Verwendung der [StoreServicesCustomEventLogger.Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)-Methode im [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) implementiert.
 
 Weitere Informationen finden Sie unter [Protokollieren von benutzerdefinierten Ereignissen für dev Center](../monetize/log-custom-events-for-dev-center.md).
 

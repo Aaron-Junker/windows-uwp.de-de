@@ -1,24 +1,24 @@
 ---
-title: Komposition Schatten
-description: Der Schattenkopie-APIs können Sie die Inhalte der Benutzeroberfläche dynamische anpassbaren Schatten hinzugefügt.
+title: Kompositions Schatten
+description: Mit den Schatten-APIs können Sie Benutzeroberflächen Inhalten dynamisch anpassbare Schatten hinzufügen.
 ms.date: 07/16/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a47a5f8ffca1d9ca2ddab05fe0baf2f85977d7f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 29ca04ac3faf3a2884bcc2346177f49222cf786e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318191"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166424"
 ---
-# <a name="shadows-in-windows-ui"></a>Zeichnen von Schatten im Windows-Benutzeroberfläche
+# <a name="shadows-in-windows-ui"></a>Schatten in der Windows-Benutzeroberfläche
 
-Die [DropShadow](/uwp/api/Windows.UI.Composition.DropShadow) Klasse bietet die Möglichkeit, erstellen einen konfigurierbaren Schatten, die angewendet werden kann eine [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) oder [LayerVisual](/uwp/api/windows.ui.composition.layervisual) (eine Unterstruktur von visuellen Elementen). Wie üblich, für Objekte in der visuellen Ebene ist, können alle Eigenschaften der DropShadow-Steuerelements mit CompositionAnimations animiert werden.
+Die [DropShadow](/uwp/api/Windows.UI.Composition.DropShadow) -Klasse bietet die Möglichkeit, einen konfigurierbaren Schatten zu erstellen, der auf ein [spritevisual](/uwp/api/windows.ui.composition.spritevisual) oder [layervisual](/uwp/api/windows.ui.composition.layervisual) (Teilstruktur von visuellen Elementen) angewendet werden kann. Wie bei Objekten in der visuellen Ebene üblich, können alle Eigenschaften von DropShadow mithilfe von compositionanimationen animiert werden.
 
-## <a name="basic-drop-shadow"></a>Grundlegende Schlagschatten
+## <a name="basic-drop-shadow"></a>Grundlegender Schlag Schatten
 
-Um einen grundlegenden Schatten zu erstellen, Erstellen eines neuen DropShadow-Steuerelements und dem visuellen zuordnen. Der Schatten ist standardmäßig rechteckig. Ein standardmäßigen Satz von Eigenschaften sind verfügbar, um das Aussehen und Verhalten von Ihrem Schatten zu optimieren.
+Um einen grundlegenden Schatten zu erstellen, erstellen Sie einfach einen neuen DropShadow und ordnen ihn dem visuellen Element zu. Der Schatten ist standardmäßig rechteckig. Ein Standardsatz von Eigenschaften ist verfügbar, um das Aussehen und das Gefühl Ihres Schattens zu optimieren.
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -33,19 +33,19 @@ basicShadow.Offset = new Vector3(20, 20, 20);
 basicRectVisual.Shadow = basicShadow;
 ```
 
-![Rechteckige Visual mit grundlegenden DropShadow-Steuerelements](images/rectangular-dropshadow.png)
+![Rechteckige Visualisierung mit grundlegender DropShadow](images/rectangular-dropshadow.png)
 
 ## <a name="shaping-the-shadow"></a>Strukturieren des Schattens
 
-Es gibt mehrere Möglichkeiten, um die Form für Ihre DropShadow-Steuerelements zu definieren:
+Es gibt mehrere Möglichkeiten, die Form für Ihren DropShadow zu definieren:
 
-- **Verwenden Sie die Standardeinstellung** – standardmäßig ist die Form "DropShadow" durch den Modus "Standard" auf CompositionDropShadowSourcePolicy definiert. Für SpriteVisual ist die Standardeinstellung rechteckig, es sei denn, eine Maske bereitgestellt wird. Für LayerVisual wird standardmäßig eine Maske, mit dem Alphawert des visuellen Objekts Pinsels zu erben.
-- **Festlegen eine Maske** – Sie können festlegen, der [Maske](/uwp/api/windows.ui.composition.dropshadow.mask) Eigenschaft, um eine Deckkraftmaske für den Schatten zu definieren.
-- **Angeben, um geerbte Maske verwenden** : durch Festlegen der [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) Eigenschaft, die [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy). InheritFromVisualContent mit der Maske, die aus der Alphaversion des visuellen Objekts Pinsels generiert.
+- **Standard verwenden** : Standardmäßig wird die DropShadow-Form durch den Standardmodus für compositiondropshadowsourcepolicy definiert. Der Standardwert für spritevisual ist rechteckig, es sei denn, es wird eine Maske bereitgestellt. Bei layervisual wird standardmäßig eine Maske mit dem Alpha des visuellen Elements geerbt.
+- **Festlegen einer Maske** – Sie können die [Mask](/uwp/api/windows.ui.composition.dropshadow.mask) -Eigenschaft festlegen, um eine Deckkraft Maske für den Schatten zu definieren.
+- **Geben Sie an, dass geerbte Maske verwendet** werden soll – legen Sie die [sourcepolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) -Eigenschaft auf [compositiondropshadowsourcepolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)fest. Vererfromvisualcontent, um die Maske zu verwenden, die aus dem Alpha des visuellen Elements generiert wurde.
 
-## <a name="masking-to-match-your-content"></a>Maskierung entsprechend Ihrer Inhalte
+## <a name="masking-to-match-your-content"></a>Maskierung entsprechend ihren Inhalten
 
-Wenn Sie möchten Ihre Schattenkopien entsprechend der Inhalt des visuellen Objekts, Sie können entweder Verwenden des visuellen Objekts Pinsel für die Schattenkopien Mask-Eigenschaft, oder den Schatten Maske automatisch aus dem Inhalt zu erben. Wenn Sie eine LayerVisual verwenden zu können, wird der Schatten die Maske standardmäßig erben.
+Wenn Sie möchten, dass ihr Schatten mit dem Inhalt der Visualisierung identisch ist, können Sie entweder den Pinsel des visuellen Elements für ihre Schatten Masken Eigenschaft verwenden oder den Schatten so festlegen, dass die Maske automatisch vom Inhalt geerbt wird. Wenn ein layervisual verwendet wird, erbt der Schatten standardmäßig die Maske.
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -65,13 +65,13 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![Verbundene WebImage mit maskierten Schatten](images/ms-brand-web-dropshadow.png)
+![Verbundenes Webbild mit maskiertem Schlag Schatten](images/ms-brand-web-dropshadow.png)
 
-## <a name="using-an-alternative-mask"></a>Verwenden eine andere Maske
+## <a name="using-an-alternative-mask"></a>Verwenden einer alternativen Maske
 
-In einigen Fällen empfiehlt es sich um den Schatten strukturieren, dass die Visualisierung des Inhalts keine Übereinstimmung. Um diesen Effekt zu erzielen, müssen Sie explizit die Mask-Eigenschaft, die mit einem Pinsel Alpha festgelegt.
+In einigen Fällen möchten Sie den Schatten so strukturieren, dass er nicht mit dem Inhalt Ihrer Visualisierung identisch ist. Um diesen Effekt zu erzielen, müssen Sie die Mask-Eigenschaft mithilfe eines Pinsels mit Alpha explizit festlegen.
 
-In der folgenden Beispiel laden wir zwei Oberflächen – eine für den visuellen Inhalt und eine für die Schattenkopie-Maske:
+Im folgenden Beispiel werden zwei Oberflächen geladen: eine für den visuellen Inhalt und eine für die Schatten Maske:
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -93,11 +93,11 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![Verbundene Web-Image mit dem Kreis maskiert Schlagschatten](images/ms-brand-web-masked-dropshadow.png)
+![Verbundenes Webbild mit Kreis maskiertem Schlag Schatten](images/ms-brand-web-masked-dropshadow.png)
 
-## <a name="animating"></a>Animieren von
+## <a name="animating"></a>Animieren
 
-Als standard in der visuellen Ebene ist, können die DropShadow-Eigenschaften verwenden: Kompositionsanimationen animiert werden. Im folgenden ändern wir den Code aus der ein wenig Präsentationslogik Beispiel oben, um den Weichzeichnerradius für den Schatten zu animieren.
+Wie in der visuellen Schicht Standard, können DropShadow-Eigenschaften mithilfe von Kompositions Animationen animiert werden. Im folgenden wird der Code aus dem obigen Sprinkles-Beispiel geändert, um den Weichzeichnerradius für den Schatten zu animieren.
 
 ```cs
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -109,27 +109,27 @@ blurAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
 shadow.StartAnimation("BlurRadius", blurAnimation);
 ```
 
-## <a name="shadows-in-xaml"></a>Shadows in XAML
+## <a name="shadows-in-xaml"></a>Schatten in XAML
 
-Wenn Sie einen Schatten komplexere Frameworkelemente hinzufügen möchten, stehen Ihnen mehrere Möglichkeiten, Ihnen das Zusammenarbeiten mit Schatten zwischen XAML und dem Kompositionsthread:
+Wenn Sie komplexeren Frameworkelementen einen Schatten hinzufügen möchten, gibt es mehrere Möglichkeiten, mit Schatten zwischen XAML und Komposition zu interagieren:
 
-1. Verwenden der [DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) in das Windows-Community-Toolkit verfügbar. Finden Sie unter den [DropShadowPanel Dokumentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel) ausführliche Anleitungen verwenden.
-1. Erstellen Sie eine Visualisierung verwenden als Host für die Schattenkopien und Binde ihn dem Handout XAML Visual.
-1. Verwenden Sie die Kompositions-Beispielkatalog [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) benutzerdefiniertes CompositionShadow-Steuerelement. In diesem Beispiel für die Nutzung wird angezeigt.
+1. Verwenden Sie das [dropshadowpanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) , das im Windows Community Toolkit verfügbar ist. Ausführliche Informationen zur Verwendung finden Sie in der [dropshadowpanel-Dokumentation](/windows/uwpcommunitytoolkit/controls/DropShadowPanel) .
+1. Erstellen Sie ein visuelles Element, das als Schatten Host verwendet werden soll, & es mit dem XAML-Handout-visuellen Element verknüpfen.
+1. Verwenden Sie das benutzerdefinierte compositionshadow-Steuerelement [samplescommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) der Komposition Sample Gallery. Informationen zur Verwendung finden Sie hier.
 
 ## <a name="performance"></a>Leistung
 
-Obwohl der visuellen Ebene zahlreiche Optimierungen, die Auswirkungen auf effiziente und Benutzerfreundlicher machen verfügt, möglich Generieren von Schatten ein relativ teurer Vorgang je nachdem welche Optionen, die Sie festlegen. Im folgenden sind high Level "Kosten" für verschiedene Arten von Schatten. Beachten Sie, dass obwohl bestimmte Shadows teuer sein können sie immer noch nur selten in bestimmten Szenarien verwendet werden können.
+Obwohl auf der visuellen Ebene viele Optimierungen vorhanden sind, um Effekte effizient und verwendbar zu machen, kann das Erzeugen von Schatten in Abhängigkeit von den von Ihnen festgelegten Optionen ein relativ kostspieliger Vorgang sein. Unten sind die Kosten für unterschiedliche Schatten Typen aufgeführt. Beachten Sie, dass obwohl bestimmte Schatten vielleicht kostspielig sein können, dass Sie in bestimmten Szenarien weiterhin sparsam eingesetzt werden können.
 
-Volumeschattenkopie-Eigenschaften| Kosten
+Schatten Merkmale| „Cost“ (Kosten)
 ------------- | -------------
-„Rechteckiges Ausschneiden“    | Niedrig
-Shadow.Mask      | Hoch
-CompositionDropShadowSourcePolicy.InheritFromVisualContent | Hoch
-Statische Blur Radius | Niedrig
-Animieren von Blur Radius | Hoch
+Rechteck    | Niedrig
+Shadow. Mask      | High
+Compositiondropshadowsourcepolicy. vererfromvisualcontent | High
+Statischer weichzeichradius | Niedrig
+Animieren des weichungs RADIUS | High
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
-- [Komposition DropShadow-API](/uwp/api/Windows.UI.Composition.DropShadow)
-- [WindowsUIDevLabs GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)
+- [Komposition-DropShadow-API](/uwp/api/Windows.UI.Composition.DropShadow)
+- [GitHub-Repository windowsuidevlabs](https://github.com/microsoft/WindowsCompositionSamples)

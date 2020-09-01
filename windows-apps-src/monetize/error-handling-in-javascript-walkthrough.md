@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Werbung, Werbung, Fehlerbehandlung, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bbd892f47f0191455df3b235bdb5125a45ea4fc
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: f6567432714fb68618510923e49f2467daefdc54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970248"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167684"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>Exemplarische Vorgehensweise zur Fehlerbehandlung in JavaScript
 
 >[!WARNING]
 > Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie AD-bezogene Fehler in der JavaScript-App erfassen. In dieser exemplarischen Vorgehensweise wird ein [adcontrol](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) -Element verwendet, um eine Banner-Werbeeinblendungen anzuzeigen, aber die allgemeinen Konzepte in dieser exemplarischen Vorgehensweise gelten auch für austauschbare
+In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie AD-bezogene Fehler in der JavaScript-App erfassen. In dieser exemplarischen Vorgehensweise wird ein [adcontrol](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) -Element verwendet, um eine Banner-Werbeeinblendungen anzuzeigen, aber die allgemeinen Konzepte in dieser exemplarischen Vorgehensweise gelten auch für austauschbare
 
 In diesen Beispielen wird davon ausgegangen, dass Sie über eine JavaScript-App verfügen, die ein **adcontrol**enthält. Schritt-für-Schritt-Anleitungen, die zeigen, wie ein **AdControl** zu Ihrer App hinzugefügt wird, finden Sie unter [AdControl in HTML 5 und Javascript](adcontrol-in-html-5-and-javascript.md). Ein vollständiges Beispiel-Projekt mit einer Veranschaulichung, wie Sie mithilfe von C# und C++ Werbebanner einer JavaScript/HTML-App hinzufügen, finden Sie unter den [Anzeigenbeispielen auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).
 

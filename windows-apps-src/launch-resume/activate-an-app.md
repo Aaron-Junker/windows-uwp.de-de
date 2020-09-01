@@ -4,29 +4,29 @@ description: Erfahren Sie, wie Sie die App-Aktivierung durch Überschreiben der 
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ms.date: 07/02/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 622fc4246c0ce8051135feab07295034b55a82e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0c3aa86fd8eee3724e092799eea6d34f0b9d453b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370823"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164994"
 ---
 # <a name="handle-app-activation"></a>Behandeln der App-Aktivierung
 
-Erfahren Sie, wie zum Verarbeiten der app-Aktivierung durch Überschreiben der [ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched) Methode.
+Erfahren Sie, wie Sie die APP-Aktivierung durch Überschreiben der [**Application. ongestartete**](/uwp/api/windows.ui.xaml.application.onlaunched) -Methode behandeln.
 
 ## <a name="override-the-launch-handler"></a>Überschreiben des Starthandlers
 
-Beim Aktivieren einer Anwendung aus irgendeinem Grund das System sendet das [ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) Ereignis. Eine Liste der Aktivierungstypen finden Sie in der [**ActivationKind**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)-Enumeration.
+Wenn eine App aktiviert ist, sendet das System aus irgendeinem Grund das [**coreapplicationview. aktivierte**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) Ereignis. Eine Liste der Aktivierungstypen finden Sie in der [**ActivationKind**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)-Enumeration.
 
-Die [**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application)-Klasse definiert Methoden, die außer Kraft gesetzt werden können, um die verschiedenen Aktivierungstypen zu behandeln. Verschiedene Aktivierungstypen verfügen über eine spezifische Methode, die außer Kraft gesetzt werden kann. Setzen Sie für die übrigen Aktivierungstypen die [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated)-Methode außer Kraft.
+Die [**Windows.UI.Xaml.Application**](/uwp/api/Windows.UI.Xaml.Application)-Klasse definiert Methoden, die außer Kraft gesetzt werden können, um die verschiedenen Aktivierungstypen zu behandeln. Verschiedene Aktivierungstypen verfügen über eine spezifische Methode, die außer Kraft gesetzt werden kann. Setzen Sie für die übrigen Aktivierungstypen die [**OnActivated**](/uwp/api/windows.ui.xaml.application.onactivated)-Methode außer Kraft.
 
 Definieren Sie die Klasse für Ihre Anwendung.
 
@@ -37,10 +37,10 @@ Definieren Sie die Klasse für Ihre Anwendung.
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 ```
 
-Überschreiben Sie die [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)-Methode. Diese Methode wird immer dann aufgerufen, wenn der Benutzer die App startet. Der [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs)-Parameter enthält den vorherigen Status der App sowie die Aktivierungsargumente.
+Überschreiben Sie die [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)-Methode. Diese Methode wird immer dann aufgerufen, wenn der Benutzer die App startet. Der [**LaunchActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs)-Parameter enthält den vorherigen Status der App sowie die Aktivierungsargumente.
 
 > [!NOTE]
-> Auf Windows nicht das Starten von Start-Kachel oder eines app-Liste einer angehaltenen app diese Methode aufrufen.
+> Unter Windows wird durch das Starten einer angehaltenen App aus der Start Kachel oder der APP-Liste Diese Methode nicht aufgerufen.
 
 ```csharp
 using System;
@@ -187,7 +187,7 @@ void App::EnsurePageCreatedAndActivate()
 
 ## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>Wiederherstellen von App-Daten, wenn die App angehalten und dann beendet wurde
 
-Wenn der Benutzer zur beendeten App wechselt, sendet das System das [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)-Ereignis, wobei [**Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) auf **Launch** und [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) auf **Terminated** oder **ClosedByUser** festgelegt ist. Von der App werden die gespeicherten Anwendungsdaten geladen, und der angezeigte Inhalt wird aktualisiert.
+Wenn der Benutzer zur beendeten App wechselt, sendet das System das [**Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)-Ereignis, wobei [**Kind**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) auf **Launch** und [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) auf **Terminated** oder **ClosedByUser** festgelegt ist. Von der App werden die gespeicherten Anwendungsdaten geladen, und der angezeigte Inhalt wird aktualisiert.
 
 ```csharp
 async protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -259,19 +259,19 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-Wenn der Wert von [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) gleich **NotRunning** ist, konnten die Anwendungsdaten von der App nicht erfolgreich gespeichert werden. Die App muss in diesem Fall neu gestartet werden, als ob sie erstmalig gestartet wird.
+Wenn der Wert von [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) gleich **NotRunning** ist, konnten die Anwendungsdaten von der App nicht erfolgreich gespeichert werden. Die App muss in diesem Fall neu gestartet werden, als ob sie erstmalig gestartet wird.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 > [!NOTE]
-> Apps können die Initialisierung überspringen, wenn für das aktuelle Fenster bereits Inhalte festgelegt wurden. Sehen Sie sich die [ **LaunchActivatedEventArgs.TileId** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) Eigenschaft, um zu bestimmen, ob die app wurde von einer primären als auch eine sekundäre Kachel gestartet und, auf diesen Informationen basierend entscheiden Sie, ob sollten Sie Stellen Sie eine neue oder fortsetzen Sie der app-Erfahrung.
+> Apps können die Initialisierung überspringen, wenn für das aktuelle Fenster bereits Inhalte festgelegt wurden. Sie können die [**launchactivatedeventargs. tileid**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) -Eigenschaft überprüfen, um zu bestimmen, ob die APP von einer primären oder sekundären Kachel gestartet wurde, und entscheiden Sie, ob Sie auf der Grundlage dieser Informationen entscheiden, ob Sie eine neue APP-Oberfläche präsentieren möchten.
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Windows.ApplicationModel.Activation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation)
-* [Windows.UI.Xaml.Application](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application)
+* [Windows. applicationmodel. Activation](/uwp/api/Windows.ApplicationModel.Activation)
+* [Windows.UI.Xaml.Application](/uwp/api/Windows.UI.Xaml.Application)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [Behandeln des Anhaltens von Apps](suspend-an-app.md)
 * [Behandeln der App-Fortsetzung](resume-an-app.md)
-* [Richtlinien für die app anhalten und fortsetzen](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [Richtlinien für das Anhalten und Fortsetzen von Apps](./index.md)
 * [App-Lebenszyklus](app-lifecycle.md)

@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store promotionapi, Werbekampagnen
 ms.localizationpriority: medium
-ms.openlocfilehash: 560f9b545cc7c7b547e707bffb2b19904c36863b
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 9b9cb30d2a87d93df1790fb42ad3b4b243f0f713
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846770"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164554"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>Ausführen von Ad-Kampagnen mithilfe von Store Services
 
@@ -36,7 +36,7 @@ Vergewissern Sie sich, dass die folgenden Voraussetzungen erfüllt sind, bevor S
 
 * Bevor Sie mit dieser API eine AD-Kampagne erstellen und starten können, müssen Sie zunächst auf [der Seite mit den **Werbekampagnen** im Partner Center eine bezahlte Werbekampagne erstellen](../publish/create-an-ad-campaign-for-your-app.md), und Sie müssen mindestens ein Zahlungsinstrument auf dieser Seite hinzufügen. Nachdem Sie dies getan haben, können Sie mithilfe dieser API abrechenbare Übermittlungs Zeilen für Ad-Kampagnen erstellen. Mit Übermittlungs Zeilen für Ad-Kampagnen, die Sie mit dieser API erstellen, wird automatisch das standardmäßige Zahlungsinstrument abgerechnet, das auf der Seite mit den **Werbekampagnen** im Partner Center
 
-* Sie (oder Ihre Organisation) müssen über ein Azure AD-Verzeichnis verfügen, und Ihnen müssen die Berechtigungen [globaler Administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis gewährt worden sein. Wenn Sie Microsoft 365 oder andere Unternehmensdienste von Microsoft verwenden, verfügen Sie bereits über ein Azure AD-Verzeichnis. Andernfalls können Sie [eine neue Azure AD im Partner Center erstellen](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) , ohne dass zusätzliche Kosten anfallen.
+* Sie (oder Ihre Organisation) müssen über ein Azure AD-Verzeichnis verfügen, und Ihnen müssen die Berechtigungen [globaler Administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis gewährt worden sein. Wenn Sie Microsoft 365 oder andere Unternehmensdienste von Microsoft verwenden, verfügen Sie bereits über ein Azure AD-Verzeichnis. Andernfalls können Sie [eine neue Azure AD im Partner Center erstellen](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) , ohne dass zusätzliche Kosten anfallen.
 
 * Sie müssen Ihrem Partner Center-Konto eine Azure AD Anwendung zuordnen, die Mandanten-ID und die Client-ID für die Anwendung abrufen und einen Schlüssel generieren. Die Azure AD-Anwendung stellt die APP oder den Dienst dar, von dem aus Sie die Microsoft Store promotionapi abrufen möchten. Sie benötigen die Mandanten-ID, die Client-ID und den Schlüssel, um ein Azure AD-Zugriffstoken zu erhalten, das Sie an die API übergeben.
     > [!NOTE]
@@ -58,7 +58,7 @@ So ordnen Sie eine Azure AD Anwendung Ihrem Partner Center-Konto zu und rufen di
 
 Bevor Sie eine der Methoden in der Microsoft Store promotionapi aufrufen, müssen Sie zuerst ein Azure AD Zugriffs Token abrufen, das Sie an den **Autorisierungs** Header jeder Methode in der API übergeben. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Nachdem das Token abgelaufen ist, können Sie es aktualisieren, um es in weiteren Aufrufen an die API zu verwenden.
 
-Befolgen Sie zum Abrufen des Zugriffstokens die Anweisungen unter [Aufrufe zwischen Diensten mithilfe von Clientanmeldeinformationen](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), um eine HTTP POST-Anforderung an den ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```-Endpunkt zu senden. Hier ist ein Beispiel für eine Anforderung angegeben.
+Befolgen Sie zum Abrufen des Zugriffstokens die Anweisungen unter [Aufrufe zwischen Diensten mithilfe von Clientanmeldeinformationen](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow), um eine HTTP POST-Anforderung an den ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```-Endpunkt zu senden. Hier ist ein Beispiel für eine Anforderung angegeben.
 
 ```syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -73,7 +73,7 @@ grant_type=client_credentials
 
 Geben Sie als Mandanten- * \_ ID* im Post-URI und in den Parametern für die *Client- \_ ID* und den * \_ geheimen Client* Schlüssel die Mandanten-ID, die Client-ID und den Schlüssel für die Anwendung an, die Sie im vorherigen Abschnitt aus Partner Center abgerufen haben. Für den Parameter *resource* müssen Sie ```https://manage.devcenter.microsoft.com``` angeben.
 
-Nachdem das Zugriffstoken abgelaufen ist, können Sie es aktualisieren, indem Sie [diese Anleitung](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens) befolgen.
+Nachdem das Zugriffstoken abgelaufen ist, können Sie es aktualisieren, indem Sie [diese Anleitung](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens) befolgen.
 
 <span id="call-the-windows-store-promotions-api" />
 
@@ -86,7 +86,7 @@ Im Zusammenhang mit der Microsoft Store promotionapi besteht eine Werbekampagne 
 Weitere Informationen zu diesen Objekten und den zugehörigen Methoden finden Sie in der folgenden Tabelle.
 
 
-| Object       | Beschreibung   |
+| Object       | BESCHREIBUNG   |
 |---------------|-----------------|
 | Kampagnen |  Dieses Objekt stellt die AD-Kampagne dar und befindet sich oben in der Objektmodell Hierarchie für Ad-Kampagnen. Dieses Objekt identifiziert den Typ der Kampagne, die Sie ausführen (bezahlt, Haus oder Community), das Kampagnenziel, die Übermittlungs Zeilen für die Kampagne und weitere Details. Jede Kampagne kann nur einer APP zugeordnet werden.<br/><br/>Weitere Informationen zu den Methoden, die sich auf dieses Objekt beziehen, finden Sie unter [Verwalten von Ad-Kampagnen](manage-ad-campaigns.md).<br/><br/>**Note** &nbsp; Hinweis &nbsp; Nachdem Sie eine Werbekampagne erstellt haben, können Sie die Leistungsdaten für die Kampagne abrufen, indem Sie die [Leistungsdaten](get-ad-campaign-performance-data.md) Methode "AD-Kampagne abrufen" in der [Microsoft Store Analytics-API](access-analytics-data-using-windows-store-services.md)verwenden.  |
 | Übermittlungs Zeilen | Jede Kampagne verfügt über eine oder mehrere Übermittlungs Zeilen, mit denen Sie Inventar kaufen und ihre Werbeeinblendungen bereitstellen können. Für jede Übermittlungs Zeile können Sie die Zielgruppe festlegen, ihren Angebotspreis festlegen und entscheiden, wie viel Geld Sie aufwenden möchten, indem Sie ein Budget festlegen und mit den gewünschten Informationen verknüpfen.<br/><br/>Weitere Informationen zu den Methoden, die sich auf dieses Objekt beziehen, finden Sie unter [Verwalten von Übermittlungs Zeilen für Werbekampagnen](manage-delivery-lines-for-ad-campaigns.md). |

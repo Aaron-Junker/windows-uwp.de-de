@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Animation
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054420"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166364"
 ---
 # <a name="relation-based-animations"></a>Beziehungs basierte Animationen
 
@@ -46,9 +46,9 @@ Beim Aufbau der mathematischen Beziehung eines Ausdrucks gibt es mehrere Kernkom
 
 - Parameter – Werte, die Konstante Werte oder Verweise auf andere Kompositions Objekte darstellen.
 - Mathematische Operatoren – die typischen mathematischen Operatoren Plus (+), minus (-), Multiplikation (*), Division (/), die Parameter zum bilden einer Gleichung zusammenfügen. Die enthaltenen sind auch bedingte Operatoren wie größer als (>), gleich (= =), ternärer Operator (Bedingung? IfTrue: IfFalse) usw.
-- Mathematische Funktionen – mathematische Funktionen/Verknüpfungen auf der Grundlage von "System. Numerics". Eine vollständige Liste der unterstützten Funktionen finden Sie unter [expressionanimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).
+- Mathematische Funktionen – mathematische Funktionen/Verknüpfungen auf der Grundlage von "System. Numerics". Eine vollständige Liste der unterstützten Funktionen finden Sie unter [expressionanimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation).
 
-Ausdrücke unterstützen auch eine Reihe von Schlüsselwörtern – spezielle Ausdrücke, die nur innerhalb des expressionanimation-Systems unterschiedliche Bedeutungen haben. Diese werden in der [expressionanimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) -Dokumentation (zusammen mit der vollständigen Liste der mathematischen Funktionen) aufgelistet.
+Ausdrücke unterstützen auch eine Reihe von Schlüsselwörtern – spezielle Ausdrücke, die nur innerhalb des expressionanimation-Systems unterschiedliche Bedeutungen haben. Diese werden in der [expressionanimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation) -Dokumentation (zusammen mit der vollständigen Liste der mathematischen Funktionen) aufgelistet.
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>Erstellen von Ausdrücken mit ExpressionBuilder
 

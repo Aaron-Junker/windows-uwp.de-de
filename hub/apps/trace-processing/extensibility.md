@@ -5,16 +5,16 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: 59722f1f31364c464a8a763d28f3d15ef13609a8
-ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
+ms.openlocfilehash: f5680bdc6502c4b917667e5a59084286b445063c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77903287"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166734"
 ---
 # <a name="extend-traceprocessor"></a>Traceprocessor erweitern
 
-Viele Arten von Ablauf Verfolgungs Daten verfügen über eine integrierte Unterstützung in [traceprocessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor), aber wenn Sie über andere Anbieter verfügen, die Sie analysieren möchten (einschließlich ihrer eigenen benutzerdefinierten Anbieter), sind diese Daten während der Verarbeitung auch über die Live Ablauf Verfolgung verfügbar.
+Viele Arten von Ablauf Verfolgungs Daten verfügen über eine integrierte Unterstützung in [traceprocessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor), aber wenn Sie über andere Anbieter verfügen, die Sie analysieren möchten (einschließlich ihrer eigenen benutzerdefinierten Anbieter), sind diese Daten während der Verarbeitung auch über die Live Ablauf Verfolgung verfügbar.
 
 > [!NOTE]
 > Dieser Teil der API befindet sich in der Vorschau Phase und befindet sich in der aktiven Entwicklung. Dies kann sich in zukünftigen Versionen ändern.

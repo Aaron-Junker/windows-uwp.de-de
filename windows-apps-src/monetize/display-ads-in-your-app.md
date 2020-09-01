@@ -1,24 +1,24 @@
 ---
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: Mit dem Microsoft Advertising-SDK haben Sie mehrere Möglichkeiten zur Monetarisierung Ihrer App mit Anzeigen.
-title: Anzeigen von Werbung mithilfe der Microsoft Advertising-SDK in der App
+description: Das Microsoft Advertising SDK bietet Ihnen mehrere Möglichkeiten, Ihre APP mit Werbung zu verdienen.
+title: Anzeigen von Werbung mithilfe des Microsoft Advertising-SDK in der App
 ms.date: 02/18/2020
 ms.topic: article
-keywords: Windows 10, UWP, Anzeigen, Werbung, banner, Anzeigensteuerelement,Interstitial
+keywords: Windows 10, UWP, ADS, Werbung, Banner, Ad Control, Interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: d693b8a4e07e66eded7d1580291c552e7ab9ca64
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 4e9a67bb26d47d0bd9cc26c56df90efac5e2daa5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507224"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164834"
 ---
-# <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Anzeigen von Werbung mithilfe der Microsoft Advertising-SDK in der App
+# <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Anzeigen von Werbung mithilfe des Microsoft Advertising-SDK in der App
 
 >[!WARNING]
 > Ab dem 1. Juni 2020 wird die Microsoft AD-Monetarisierungsplattform für Windows UWP-apps heruntergefahren. [Weitere Informationen](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-Erhöhen Sie Ihre Umsatzchancen, indem Sie mithilfe des Microsoft Advertising-SDKs Anzeigen in Ihre universelle Windows-Plattform-App für Windows 10 einfügen. Unsere AD-Monetarisierungsplattform bietet eine Vielzahl von AD-Formaten, die nahtlos in ihre Apps integriert werden können und die Vermittlung mit vielen gängigen Ad-Netzwerken unterstützt. Unsere Plattform ist mit den Standards von OpenRTB, VAST 2.x, MRAID 2 und VPAID 3, sowie mit MOAT und IAS kompatibel. 
+Erhöhen Sie Ihre Verkaufschancen, indem Sie mit dem Microsoft Advertising SDK in ihrer universelle Windows-Plattform-app (UWP) für Windows 10 anzeigen. Unsere AD-Monetarisierungsplattform bietet eine Vielzahl von AD-Formaten, die nahtlos in ihre Apps integriert werden können und die Vermittlung mit vielen gängigen Ad-Netzwerken unterstützt. Unsere Plattform ist mit den Standards von OpenRTB, VAST 2.x, MRAID 2 und VPAID 3, sowie mit MOAT und IAS kompatibel. 
 
 <br/>
 
@@ -35,15 +35,15 @@ Erhöhen Sie Ihre Umsatzchancen, indem Sie mithilfe des Microsoft Advertising-SD
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>Erste Schritte</b><br/><br/>
-    <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">Installieren Sie das Microsoft Advertising SDK</a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK">Installieren des Microsoft Advertising SDK</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
 <td align="left"><b>Leitfaden für Entwickler</b><br/><br/>
     <a href="banner-ads.md">Banner Anzeigen</a>
     <br/>
-     von " 
-    <a href="interstitial-ads.md">Interstitial ADS</a> "<br/>
-    <a href="native-ads.md">Native ADS</a>
+    <a href="interstitial-ads.md">Interstitial-anzeigen</a>
+    <br/>
+    <a href="native-ads.md">Native Werbung</a>
     </td>
 <td align="left"><img src="images/api-reference.png" alt="API ref icon" /></td>
 <td align="left"><b>Weitere Ressourcen</b><br/><br/>
@@ -51,31 +51,31 @@ Erhöhen Sie Ihre Umsatzchancen, indem Sie mithilfe des Microsoft Advertising-SD
     <br/>
     <a href="best-practices-for-ads-in-apps.md">Bewährte Methoden</a>
     <br/>
-    <a href="https://docs.microsoft.com/uwp/api/overview/advertising">API-Referenz</a>
+    <a href="/uwp/api/overview/advertising">API-Referenz</a>
     </td>
 </tr>
 </tbody>
 </table>
 
-## <a name="step-1-install-the-microsoft-advertising-sdk"></a>Schritt 1: Installieren des Microsoft Advertising-SDK
+## <a name="step-1-install-the-microsoft-advertising-sdk"></a>Schritt 1: Installieren des Microsoft Advertising SDK
 
-Installieren Sie zunächst die [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) auf dem Entwicklungscomputer, den Sie verwenden, um Ihre App zu entwickeln. Installationsanweisungen finden Sie in [diesem Artikel](install-the-microsoft-advertising-libraries.md).
+Installieren Sie zunächst das [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) auf dem Entwicklungs Computer, den Sie zum Erstellen Ihrer APP verwenden. Installationsanweisungen finden Sie in [diesem Artikel](install-the-microsoft-advertising-libraries.md).
 
-## <a name="step-2-implement-ads-in-your-app"></a>Schritt 2: Implementieren von Werbung in Ihrer App
+## <a name="step-2-implement-ads-in-your-app"></a>Schritt 2: Implementieren von anzeigen in Ihrer APP
 
-Das Microsoft Advertising-SDK enthält verschiedene Arten von Anzeigenkontrollen, die in Ihrer App verwendet werden können. Wählen Sie, welche Arten von Anzeigen für Ihr Szenario am besten geeignet sind, und fügen Sie Code für Ihre App hinzu, um diese Anzeigen darzustellen. In diesem Schritt verwenden Sie eine Testanzeigeneinheit, um zu sehen, wie Ihre App die Anzeigen während der Testphase rendert.
+Das Microsoft Advertising SDK bietet verschiedene Typen von AD-Steuerelementen, die Sie in Ihrer APP verwenden können. Wählen Sie aus, welche Arten von Werbeeinblendungen für Ihr Szenario am besten geeignet sind, und fügen Sie dann der app Code hinzu In diesem Schritt verwenden Sie eine Test-Ad-Einheit, damit Sie sehen können, wie Ihre APP während des Tests anzeigen rendert.
 
 ### <a name="banner-ads"></a>Banneranzeigen
 
-Es handelt sich um statische Anzeigen von Werbung, die einen rechteckigen Teil einer Seite in Ihrer App zum Anzeigen von Werbeinhalten nutzen. Diese Anzeigen können in regelmäßigen Abständen automatisch aktualisiert werden. Sie sind ein guter Ausgangspunkt, wenn Sie noch nicht mit Werbung in Ihrer App vertraut sind.
+Dabei handelt es sich um statische Anzeige anzeigen, die einen rechteckigen Teil einer Seite in Ihrer APP verwenden, um Aktions Inhalte anzuzeigen. Diese anzeigen können in regelmäßigen Abständen automatisch aktualisiert werden. Dies ist ein guter Ausgangspunkt, wenn Sie mit der Werbung in Ihrer APP noch nicht vertraut sind.
 
 Anweisungen und Codebeispiele finden Sie in [diesem Artikel](adcontrol-in-xaml-and--net.md).
 
 ![addreferences](images/banner-ad.png)
 
-### <a name="interstitial-video-and-interstitial-banner-ads"></a>Interstitialwerbung durch Videos und Banneranzeigen
+### <a name="interstitial-video-and-interstitial-banner-ads"></a>Video-und Interstitial-Banner Anzeigen mit Interstitial
 
-Interstitialanzeigen sind Vollbildanzeigen, durch die der Benutzer in der Regel gezwungen wird, sich ein Video anzusehen oder sich durch die Anzeige zu klicken, um mit der App oder dem Spiel fortfahren zu können. Wir unterstützen zwei Arten von Interstitialanzeigen: Videos und Banner.
+Dabei handelt es sich um Vollbild-Werbeanzeigen, bei denen der Benutzer in der Regel ein Video ansehen oder durch diese klicken kann, um die APP oder das Spiel fortzusetzen. Wir unterstützen zwei Arten von Interstitial-Werbeeinblendungen: Video und Banner.
 
 Anweisungen und Codebeispiele finden Sie in [diesem Artikel](interstitial-ads.md).
 
@@ -83,7 +83,7 @@ Anweisungen und Codebeispiele finden Sie in [diesem Artikel](interstitial-ads.md
 
 ### <a name="native-ads"></a>Native Anzeigen
 
-Hierbei handelt es sich um komponentenbasierte Anzeigen anzeigen. Jeder Teil des Anzeigen-Creatives (z. B. Titel, Bild, Beschreibung und Handlungsaufforderungstext) wird als einzelnes Element an Ihre App übermittelt. Sie können die Elemente mit eigenen Schriften, Farben und anderen UI-Komponenten in Ihre App integrieren.
+Dabei handelt es sich um komponentenbasierte Werbung. Die einzelnen Teile der kreativen Werbeaktion (z. b. Titel, Bild, Beschreibung und Aktions Text) werden an Ihre APP als einzelnes Element übermittelt, das Sie in Ihre APP integrieren können, indem Sie Ihre eigenen Schriftarten, Farben und andere UI-Komponenten verwenden.
 
 Anweisungen und Codebeispiele finden Sie in [diesem Artikel](native-ads.md).
 
@@ -91,39 +91,39 @@ Anweisungen und Codebeispiele finden Sie in [diesem Artikel](native-ads.md).
 
 <span id="ad-mediation"/>
 
-## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>Schritt 3: Erstellen einer Anzeigeneinheit und Konfigurieren der Anzeigenvermittlung
+## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>Schritt 3: Erstellen einer Ad-Einheit und Konfigurieren der Vermittlung
 
-Nachdem Sie das Testen der APP abgeschlossen haben und Sie bereit sind, Sie an den Store zu übermitteln, erstellen Sie eine Ad-Einheit auf der Seite " [in-App-Werbung](../publish/in-app-ads.md) " im Partner Center. Aktualisieren Sie anschließend Ihren App-Code, um diese Anzeigeneinheit zu verwenden, damit Ihre App Live-Anzeigen empfängt. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
+Nachdem Sie das Testen der APP abgeschlossen haben und Sie bereit sind, Sie an den Store zu übermitteln, erstellen Sie eine Ad-Einheit auf der Seite " [in-App-Werbung](../publish/in-app-ads.md) " im Partner Center. Aktualisieren Sie dann Ihren app-Code so, dass diese Ad-Einheit verwendet wird, damit Ihre APP Live Werbung empfängt. Weitere Informationen finden Sie unter [Einrichten von Anzeigeneinheiten in der App](set-up-ad-units-in-your-app.md#live-ad-units).
 
-Standardmäßig zeigt Ihre App Werbung der Microsoft Netzwerke für kostenpflichtige Werbeanzeigen an. Zur Maximierung Ihres Anzeigenumsatzes können Sie für Ihre Anzeigeneinheit die [Anzeigenvermittlung](ad-mediation-service.md) aktivieren, um kostenpflichtige Anzeigen von weiteren Anzeigennetzwerken anzuzeigen (z. B. Taboola und Smaato). Sie können Ihrer App-Werbung auch steigern, indem Sie Anzeigen aus Microsoft App-Werbekampagnen darstellen.
+Standardmäßig zeigt Ihre APP Anzeigen von Werbeeinblendungen aus dem Microsoft-Netzwerk an. Um Ihren AD-Umsatz zu maximieren, können Sie [AD-Vermittlung](ad-mediation-service.md) für Ihre Ad-Einheit aktivieren, um Werbung von zusätzlichen kostenpflichtigen Ad-Netzwerken wie Taboola und smaato anzuzeigen. Sie können Ihre APP-herauf Stufungs Funktionen auch erhöhen, indem Sie Werbung aus Microsoft App Promotion-Kampagnen anordnen.
 
-Zum Starten der Anzeigenvermittlung in Ihrer UWP-App [Konfigurieren Sie die Anzeigenvermittlungseinstellungen](../publish/in-app-ads.md#mediation-settings) für Ihre Anzeigeneinheit. Standardmäßig werden die Einstellungen für die Anzeigenvermittlung automatisch mithilfe von Machine Learning-Algorithmen konfiguriert, die ihnen bei der Optimierung der Anzeigenumsätze in den verschiedenen Märkten helfen, die Ihre App unterstützt. Sie haben jedoch auch die Möglichkeit, die gewünschten Netzwerke manuell auszuwählen. In beiden Fällen werden die Einstellungen für die Anzeigenvermittlung vollständig auf unseren Servern konfiguriert; Sie müssen keine Codes in Ihrer App ändern.    
+Um mit der Verwendung von AD-Mediation in ihrer UWP-APP zu beginnen, [Konfigurieren Sie AD-Vermittlungs Einstellungen](../publish/in-app-ads.md#mediation-settings) für Ihre Ad-Einheit Standardmäßig werden die Vermittlungs Einstellungen mithilfe von Machine Learning-Algorithmen automatisch konfiguriert, damit Sie Ihre Werbeeinnahmen in den von Ihrer APP unterstützten Märkten maximieren können. Sie haben jedoch auch die Möglichkeit, die Netzwerke, die Sie verwenden möchten, manuell auszuwählen. In beiden Fällen werden die Vermittlungs Einstellungen auf unseren Servern vollständig konfiguriert. Sie müssen keine Codeänderungen in Ihrer APP vornehmen.    
 
-## <a name="step-4-submit-your-app-and-review-performance"></a>Schritt 4: Übermitteln der App und Überprüfen der Leistung
+## <a name="step-4-submit-your-app-and-review-performance"></a>Schritt 4: übermitteln der APP und Überprüfen der Leistung
 
-Nachdem Sie die Entwicklung Ihrer APP mit anzeigen abgeschlossen haben, können Sie [Ihre aktualisierte APP](https://docs.microsoft.com/windows/uwp/publish/app-submissions) im Partner Center einreichen, um Sie im Store verfügbar zu machen. Apps, die Anzeigen darstellen, müssen zusätzlich die Anforderungen erfüllen, die in [Abschnitt 10.10 der Microsoft Store-Richtlinien](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)[Anlage E der Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) angegeben sind.
+Nachdem Sie die Entwicklung Ihrer APP mit anzeigen abgeschlossen haben, können Sie [Ihre aktualisierte APP](../publish/app-submissions.md) im Partner Center einreichen, um Sie im Store verfügbar zu machen. Apps, die ADS anzeigen, müssen die zusätzlichen Anforderungen erfüllen, die in [Abschnitt 10,10 der Microsoft Store Richtlinien](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) und der [App-Entwickler Vereinbarung](/legal/windows/agreements/app-developer-agreement)angegeben sind.
 
-Nachdem Ihre App veröffentlicht und im Store verfügbar ist, können Sie Ihre [Leistungsberichte](../publish/advertising-performance-report.md) für Ankündigungen im Partner Center überprüfen und weiterhin Änderungen an den Vermittlungs Einstellungen vornehmen, um die Leistung Ihrer Werbeeinblendungen zu optimieren. Der Umsatz befindet sich in der [Auszahlungszusammenfassung](../publish/payout-summary.md).
+Nachdem Ihre App veröffentlicht und im Store verfügbar ist, können Sie Ihre [Leistungsberichte](../publish/advertising-performance-report.md) für Ankündigungen im Partner Center überprüfen und weiterhin Änderungen an den Vermittlungs Einstellungen vornehmen, um die Leistung Ihrer Werbeeinblendungen zu optimieren. Ihr Werbe Umsatz ist in Ihrer [Auszahlungs Zusammenfassung](../publish/payout-summary.md)enthalten.
 
 <span id="additional-help" />
 
 ## <a name="additional-help"></a>Zusätzliche Hilfe
 
-Weitere Hilfe zum Microsoft Advertising-SDK finden Sie in den folgenden Ressourcen.
+Verwenden Sie die folgenden Ressourcen, um zusätzliche Hilfe bei der Verwendung des Microsoft Advertising SDK zu erhalten.
 
-|  Aufgabe    | Ressource |               
+|  Aufgabe    | Resource |               
 |----------|-------|
-| Melden eines Fehlers und Supportunterstützung für Werbung     | Besuchen Sie die [Supportseite](https://developer.microsoft.com/windows/support), und wählen Sie **Werbung in Apps**.        |
+| Melden eines Fehlers und Supportunterstützung für Werbung     | Besuchen Sie die [Supportseite](https://developer.microsoft.com/windows/support) , und wählen Sie **ADS-in-Apps aus**.        |
 | Community-Support erhalten     | Besuchen des [Forums](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)       |
 | Herunterladen von Beispielprojekten, die veranschaulichen, wie Sie Banner- und Interstitialwerbung zu Apps hinzufügen.     | Siehe [Anzeigenbeispiele bei GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising).       |
 | Weitere Informationen zu den neuesten Umsatzchancen für Windows-Apps     | Besuchen Sie Seite [Monetarisierung Ihrer Apps](https://developer.microsoft.com/store/monetize).        |
 
-## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows 8.1 und Windows Phone 8.x-Apps
+## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows 8.1 und Windows Phone 8. x-apps
 
-Für Apps für Windows 8.1 und Windows Phone 8.x bieten wir das [Microsoft Advertising-SDK for Windows and Windows Phone 8.x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x). Weitere Informationen zur Verwendung des SDKs für Anzeigen in einer Windows 8.1- oder Windows Phone 8.x-App finden Sie in [diesem Artikel](https://docs.microsoft.com/previous-versions/windows/apps/dn792120(v=win.10)).
+Für Windows 8.1-und Windows Phone 8. x-apps stellen wir das [Microsoft Advertising SDK für Windows und Windows Phone 8. x](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)bereit. Weitere Informationen zur Verwendung dieses SDK zum Anzeigen von anzeigen in Windows 8.1 und Windows Phone 8. x-apps finden Sie in [diesem Artikel](/previous-versions/windows/apps/dn792120(v=win.10)).
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Microsoft Advertising-SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
 * [Bericht zur Anzeigenleistung](../publish/advertising-performance-report.md)
-* [Windows Premium ADS-Verleger Programm](windows-premium-ads-publishers-program.md)
+* [Programm für Herausgeber von Windows Premium-Anzeigen](windows-premium-ads-publishers-program.md)

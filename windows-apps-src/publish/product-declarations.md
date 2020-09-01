@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 9c4e8677a27128e6a33a844f5a887e921ca9ced3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79211006"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167364"
 ---
 # <a name="product-declarations"></a>Produktdeklarationen
 
@@ -21,7 +21,7 @@ In den folgenden Abschnitten werden einige der Deklarationen und Aspekte beschri
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>Mit dieser APP können Benutzer Einkäufe tätigen, aber nicht das Microsoft Store Commerce-System.
 
-Für fast jede Übermittlung sollten Sie dieses Kontrollkästchen nicht aktivieren, da apps, die Verkaufschancen für Artikel anbieten, die in Ihrer APP verwendet oder verwendet werden können, die Microsoft Store in-App-Kauf-API verwenden müssen, um die Add-ons zu erstellen und zu übermitteln. Gemäß der [App-Entwickler Vereinbarung](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)können apps, die vor dem 29. Juni 2015 erstellt und übermittelt wurden, weiterhin in-App-Kauf Funktionen anbieten, ohne die Microsoft-Handels-Engine zu verwenden, solange die Kauf Funktionalität den [Microsoft Store Richtlinien](store-policies.md#108-financial-transactions)entspricht. Wenn dies auf Ihre App zutrifft, müssen Sie dieses Kontrollkästchen aktivieren. Lassen Sie das Kontrollkästchen andernfalls deaktiviert.
+Für fast jede Übermittlung sollten Sie dieses Kontrollkästchen nicht aktivieren, da apps, die Verkaufschancen für Artikel anbieten, die in Ihrer APP verwendet oder verwendet werden können, die Microsoft Store in-App-Kauf-API verwenden müssen, um die Add-ons zu erstellen und zu übermitteln. Gemäß der [App-Entwickler Vereinbarung](/legal/windows/agreements/app-developer-agreement)können apps, die vor dem 29. Juni 2015 erstellt und übermittelt wurden, weiterhin in-App-Kauf Funktionen anbieten, ohne die Microsoft-Handels-Engine zu verwenden, solange die Kauf Funktionalität den [Microsoft Store Richtlinien](store-policies.md#108-financial-transactions)entspricht. Wenn dies auf Ihre App zutrifft, müssen Sie dieses Kontrollkästchen aktivieren. Lassen Sie das Kontrollkästchen andernfalls deaktiviert.
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>Diese App wurde auf Einhaltung der Richtlinien zur Barrierefreiheit getestet.
 
@@ -37,10 +37,10 @@ Sie sollten dieses Kontrollkästchen erst aktivieren, nachdem Sie die folgenden 
 
 Wenn Sie Ihre App als barrierefrei ausweisen, erklären Sie ausdrücklich, dass Ihre App eine Barrierefreiheit für alle Kunden aufweist, einschließlich für Personen mit Behinderungen. Das bedeutet beispielsweise, dass Sie die App im Modus mit hohem Kontrast und die Sprachausgabe getestet haben. Sie haben außerdem sichergestellt, dass die Benutzeroberfläche ordnungsgemäß mit der Tastatur, der Bildschirmlupe und weiteren Tools zur Unterstützung der Barrierefreiheit funktioniert.
 
-Weitere Informationen finden Sie unter [Barrierefreiheit](../design/accessibility/accessibility.md), [Barrierefreiheitstests](../design/accessibility/accessibility-testing.md) und [Barrierefreiheit im Store](../design/accessibility/accessibility-in-the-store.md).
+Weitere Informationen finden Sie unter [Barrierefreiheit](../design/accessibility/accessibility.md), [Barrierefreiheits Tests](../design/accessibility/accessibility-testing.md)und [Barrierefreiheit im Store](../design/accessibility/accessibility-in-the-store.md).
 
 > [!IMPORTANT]
-> Ihre APP nicht als verfügbar auflisten, es sei denn, Sie haben Sie speziell entwickelt und zu diesem Zweck getestet. Falls Ihre App als barrierefrei ausgewiesen ist, jedoch eigentlich keine Barrierefreiheit unterstützt, werden Sie wahrscheinlich negatives Feedback von der Community erhalten.
+> Listen Sie Ihre APP nicht als verfügbar auf, es sei denn, Sie haben Sie speziell für diesen Zweck entwickelt und getestet. Falls Ihre App als barrierefrei ausgewiesen ist, jedoch eigentlich keine Barrierefreiheit unterstützt, werden Sie wahrscheinlich negatives Feedback von der Community erhalten.
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>Kunden können diese App auf alternativen Laufwerken oder Wechselmedien installieren.
 
@@ -56,9 +56,9 @@ Dieses Kontrollkästchen ist standardmäßig aktiviert, damit die Daten Ihrer Ap
 Wenn Sie verhindern möchten, dass die App-Daten in automatische Sicherungen eingeschlossen werden, deaktivieren Sie das Kontrollkästchen.
 
 
-## <a name="this-app-sends-kinect-data-to-external-services"></a>Diese App sendet Kinect-Daten an externe Dienste. 
+## <a name="this-app-sends-kinect-data-to-external-services"></a>Diese APP sendet kinect-Daten an externe Dienste. 
 
-Wenn Ihre App Kinect-Daten verwendet und an einen externen Dienst sendet, müssen Sie dieses Kontrollkästchen aktivieren.
+Wenn Ihre APP kinect-Daten verwendet und an einen externen Dienst sendet, müssen Sie dieses Kontrollkästchen aktivieren.
 
 
 
@@ -67,7 +67,3 @@ Wenn Ihre App Kinect-Daten verwendet und an einen externen Dienst sendet, müsse
  
 
  
-
-
-
-
