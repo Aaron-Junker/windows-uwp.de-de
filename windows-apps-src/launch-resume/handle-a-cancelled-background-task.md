@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: f660c17cd981ca830f0751819d01bf2141408ecc
-ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
+ms.openlocfilehash: fe862bf1b23ae7969e043d2172aa1633bd633ade
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162555"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155824"
 ---
 # <a name="handle-a-cancelled-background-task"></a>Behandeln einer abgebrochenen Hintergrundaufgabe
 
 **Wichtige APIs**
 
--   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
--   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
--   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
+-   [**BackgroundTaskCanceledEventHandler**](/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
+-   [**IBackgroundTaskInstance**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
+-   [**ApplicationData.Current**](/uwp/api/windows.storage.applicationdata.current)
 
 Hier erfahren Sie, wie Sie eine Hintergrundaufgabe erstellen, die mithilfe des beständigen Speichers Abbruchanforderungen erkennt, die Ausführung beendet und den Abbruch an die App meldet.
 
@@ -177,7 +177,7 @@ else
 ```
 
 > [!NOTE]
-> Das oben gezeigte Codebeispiel verwendet die [**ibackgroundtaskinstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance). [**Fortschritts**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) Eigenschaft, die verwendet wird, um den Fortschritt des Hintergrund Tasks aufzuzeichnen Der Fortschritt wird der App mithilfe der [**BackgroundTaskProgressEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs)-Klasse gemeldet.
+> Das oben gezeigte Codebeispiel verwendet die [**ibackgroundtaskinstance**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance). [**Fortschritts**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) Eigenschaft, die verwendet wird, um den Fortschritt des Hintergrund Tasks aufzuzeichnen Der Fortschritt wird der App mithilfe der [**BackgroundTaskProgressEventArgs**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs)-Klasse gemeldet.
 
 Ändern Sie die **Run** -Methode so, dass nach dem Beenden der Arbeit aufgezeichnet wird, ob die Aufgabe abgeschlossen oder abgebrochen wurde. Dieser Schritt gilt für Hintergrundaufgaben außerhalb von Prozessen, da eine Möglichkeit für die Kommunikation zwischen Prozessen haben müssen, wenn die Hintergrundaufgabe abgebrochen wurde. Für Hintergrundaufgaben innerhalb von Prozessen können Sie den Status einfach mit der Anwendung teilen, um anzugeben, dass die Aufgabe abgebrochen wurde.
 
@@ -400,7 +400,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 }
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 - [Erstellen und registrieren Sie eine Prozess interne Hintergrundaufgabe](create-and-register-an-inproc-background-task.md).
 - [Erstellen und Registrieren einer Hintergrundaufgabe außerhalb von Prozessen](create-and-register-a-background-task.md)
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [Aktualisieren einer Live-Kachel über eine Hintergrundaufgabe](update-a-live-tile-from-a-background-task.md)
 - [Verwenden eines Wartungsauslösers](use-a-maintenance-trigger.md)
 - [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-- [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+- [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](/previous-versions/hh974425(v=vs.110))

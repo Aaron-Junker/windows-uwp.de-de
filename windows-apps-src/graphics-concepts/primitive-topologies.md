@@ -1,91 +1,87 @@
 ---
 title: Primitive Topologien
-description: Direct3D unterstützt mehrere primitive Topologien, die definieren, wie Scheitelpunkte, z. B. Punktlisten, Linienlisten und Dreieckstreifen von der Pipeline interpretiert und gerendert werden.
+description: Direct3D unterstützt mehrere primitive Topologien, die definieren, wie Scheitel Punkte von der Pipeline interpretiert und gerendert werden, z. b. Punkt Listen, Linien Listen und Dreieck Streifen.
 ms.assetid: 7AA5A4A2-0B7C-431D-B597-684D58C02BA5
 keywords:
 - Primitive Topologien
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7a60b3eba8545eeeea4cf477a40e044578c166
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 45abb0c356b4ee6923bf6edd0b462f568749de5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371243"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156334"
 ---
 # <a name="primitive-topologies"></a>Primitive Topologien
 
 
-Direct3D unterstützt mehrere primitive Topologien, die definieren, wie Scheitelpunkte, z. B. Punktlisten, Linienlisten und Dreieckstreifen von der Pipeline interpretiert und gerendert werden.
+Direct3D unterstützt mehrere primitive Topologien, die definieren, wie Scheitel Punkte von der Pipeline interpretiert und gerendert werden, z. b. Punkt Listen, Linien Listen und Dreieck Streifen.
 
-## <a name="span-idprimitivetypesspanspan-idprimitivetypesspanspan-idprimitivetypesspanbasic-primitive-topologies"></a><span id="Primitive_Types"></span><span id="primitive_types"></span><span id="PRIMITIVE_TYPES"></span>Grundlegende primitiven Topologien
+## <a name="span-idprimitive_typesspanspan-idprimitive_typesspanspan-idprimitive_typesspanbasic-primitive-topologies"></a><span id="Primitive_Types"></span><span id="primitive_types"></span><span id="PRIMITIVE_TYPES"></span>Grundlegende primitive Topologien
 
 
-Die folgenden grundlegenden primitiven Topologien (bzw. Grundtypen) werden unterstützt:
+Die folgenden grundlegenden primitiven Topologien (oder primitive Typen) werden unterstützt:
 
--   [Zeigen Sie Listen](point-lists.md)
--   [Zeile Listen](line-lists.md)
--   [Zeile leisten](line-strips.md)
+-   [Punktelisten](point-lists.md)
+-   [Zeilenlisten](line-lists.md)
+-   [Zeilenstrips](line-strips.md)
 -   [Dreieckslisten](triangle-lists.md)
--   [Dreieck-leisten](triangle-strips.md)
+-   [Dreiecksstrips](triangle-strips.md)
 
-Eine Visualisierung der einzelnen Grundtypen finden Sie im Diagramm weiter unten in diesem Thema unter [Wicklungsrichtung und führende Scheitelpunktpositionen](#winding-direction-and-leading-vertex-positions).
+Eine Visualisierung der einzelnen primitiven Typen finden Sie im Diagramm weiter unten in diesem Thema in der [Richtung "Richtung" und führenden Scheitelpunkt Positionen](#winding-direction-and-leading-vertex-positions).
 
-Die [Eingabeassemblerphase (IA)](input-assembler-stage--ia-.md) liest Daten aus Vertex- und Indexpuffern, setzt die Daten in diesen Grundtypen zusammen und sendet die Daten dann an die verbleibenden Pipelinephasen.
+Die [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md) liest Daten aus Scheitel Punkten und Index Puffern, assembliert die Daten in diese primitiven und sendet die Daten dann an die restlichen Pipeline Stufen.
 
-## <a name="span-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanspan-idprimitiveadjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>Primitive Nähe
-
-
-Alle Direct3D-Grundtypen (mit Ausnahme der Punkteliste) sind in zwei Versionen verfügbar: einem Grundtyp mit angrenzenden Daten und einen Grundtyp ohne angrenzende Daten. Grundtypen mit angrenzenden Daten enthalten einige der umgebenden Scheitelpunkte, während Grundtypen ohne angrenzende Daten nur die Scheitelpunkte des Zielgrundtyps enthalten. Beispielsweise ist für den Grundtyp „Zeilenliste“ ein entsprechender Grundtyp vorhanden, der angrenzende Daten umfasst.
-
-Grundtypen mit angrenzenden Daten stellen weitere Informationen über die Geometrie bereit und können nur über einen Geometrieshader angezeigt werden. Angrenzende Daten eignen sich für Geometrieshader, die Silhouettenerkennung, Schattenvolumenextrusion usw. verwenden.
-
-Beispiel: Sie möchten eine Dreiecksliste mit angrenzenden Daten zeichnen. Eine Dreiecksliste, die 36 Scheitelpunkte (mit angrenzenden Daten) enthält, ergibt 6 abgeschlossene Grundtypen. Grundtypen mit angrenzenden Daten (außer Zeilenstrips) enthalten genau doppelt so viele Scheitelpunkte wie der entsprechende Grundtyp ohne angrenzende Daten, wobei jeder zusätzliche Scheitelpunkt ein angrenzender Scheitelpunkt ist.
-
-## <a name="span-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwindingdirectionandleadingvertexpositionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>Wicklung Richtung und führenden Vertexpositionen
+## <a name="span-idprimitive_adjacencyspanspan-idprimitive_adjacencyspanspan-idprimitive_adjacencyspanprimitive-adjacency"></a><span id="Primitive_Adjacency"></span><span id="primitive_adjacency"></span><span id="PRIMITIVE_ADJACENCY"></span>Primitive Nähe
 
 
-Wie in der folgenden Abbildung gezeigt, ist ein führender Scheitelpunkt der nicht erste nicht angrenzende Scheitelpunkt in einen Grundtyp. Für einen Grundtyp können mehrere führende Scheitelpunkte definiert sein, vorausgesetzt, jeder wird für einen anderen Grundtyp verwendet.
+Alle primitiven Direct3D-Typen (außer der Punkt Liste) stehen in zwei Versionen zur Verfügung: ein primitiver Typ mit der Nähe und ein primitiver Typ ohne Unterschied. Primitive mit einer bestimmten Konsistenz enthalten einige der umgebenden Scheitel Punkte, während primitive ohne die unter Verwendung nur die Scheitel Punkte des zielprimitives enthalten. Beispielsweise verfügt der primitiv der Zeilen Liste über eine entsprechende Zeilen Listen primitive, die Informationen zu den Gründen enthält.
 
--   Für einen Dreiecksstrip mit angrenzenden Daten sind die führenden Scheitelpunkte 0, 2, 4, 6 usw.
--   Für einen Zeilenstrip mit angrenzenden Daten sind die führenden Scheitelpunkte 1, 2, 3 usw.
--   Andererseits hat ein Grundtyp mit angrenzenden Daten keinen führenden Scheitelpunkt.
+Angrenzende primitive dienen dazu, weitere Informationen über die Geometrie bereitzustellen, die nur über einen Geometry-Shader sichtbar sind. Die Verwendung ist nützlich für Geometry-Shader, die die Silhouette-Erkennung, die Schatten Volumeverschlüsselung usw. verwenden.
 
-Die folgende Abbildung zeigt die Scheitelpunktanordnung für alle Grundtypen, die der Eingabeassembler erzeugen kann.
+Nehmen Sie z. b. an, Sie möchten eine Dreiecks Liste mit Informationen zeichnen. Eine Dreiecks Liste, die 36 Scheitel Punkte (mit der Konsistenz) enthält, ergibt 6 abgeschlossene primitive. Primitive mit der Verwendung (mit Ausnahme von Zeilen Streifen) enthalten genau doppelt so viele Scheitel Punkte wie die äquivalente primitive, wobei jeder weitere Scheitelpunkt ein angrenzender Scheitelpunkt ist.
 
-![Diagramm der Scheitelpunktanordnungen für Grundtypen](images/d3d10-primitive-topologies.png)
+## <a name="span-idwinding_direction_and_leading_vertex_positionsspanspan-idwinding_direction_and_leading_vertex_positionsspanspan-idwinding_direction_and_leading_vertex_positionsspanspan-idwinding-direction-and-leading-vertex-positionsspanwinding-direction-and-leading-vertex-positions"></a><span id="Winding_Direction_and_Leading_Vertex_Positions"></span><span id="winding_direction_and_leading_vertex_positions"></span><span id="WINDING_DIRECTION_AND_LEADING_VERTEX_POSITIONS"></span><span id="winding-direction-and-leading-vertex-positions"></span>Richtung und führende Scheitelpunkt Positionen
 
-In der folgenden Tabelle werden die Symbole aus der obigen Abbildung beschrieben.
 
-| Symbol                                                                                   | Name              | Beschreibung                                                                         |
+Wie in der folgenden Abbildung dargestellt, ist ein führender Scheitelpunkt der erste nicht benachbarte Scheitelpunkt in einem primitiven. Für einen primitiven Typ können mehrere führende Vertices definiert werden, sofern jeder für einen anderen primitiven verwendet wird.
+
+-   Bei einem Dreiecks Streifen mit der Sicherheit sind die führenden Scheitel Punkte 0, 2, 4, 6 usw.
+-   Bei einem Zeilen Streifen mit der Sicherheit sind die führenden Vertices 1, 2, 3 usw.
+-   Ein angrenzender primitiv hat andererseits keinen führenden Scheitelpunkt.
+
+Die folgende Abbildung zeigt die Scheitelpunkt Anordnung für alle primitiven Typen, die vom Eingabe Assembler erzeugt werden können.
+
+![Diagramm der Scheitelpunkt Anordnung für primitive Typen](images/d3d10-primitive-topologies.png)
+
+Die Symbole in der vorangehenden Abbildung werden in der folgenden Tabelle beschrieben.
+
+| Symbol                                                                                   | name              | BESCHREIBUNG                                                                         |
 |------------------------------------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------------|
 | ![Symbol für einen Scheitelpunkt](images/d3d10-primitive-topologies-vertex.png)                     | Scheitelpunkt            | Ein Punkt im 3D-Raum.                                                                |
-| ![Symbol für Wicklungsrichtung](images/d3d10-primitive-topologies-winding-direction.png) | Wicklungsrichtung | Die Scheitelpunktanordnung beim Zusammensetzen eines Grundtyps. Kann im Uhrzeigersinn oder gegen den Uhrzeigersinn verlaufen. |
-| ![Symbol für führenden Scheitelpunkt](images/d3d10-primitive-topologies-leading-vertex.png)       | Führender Scheitelpunkt    | Der erste Scheitelpunkt ohne angrenzende Daten in einem Grundtyp, der Daten pro Konstante enthält.       |
+| ![Symbol für die Richtung der Richtung](images/d3d10-primitive-topologies-winding-direction.png) | Richtung | Die Scheitelpunkt Reihenfolge beim Assemblieren eines primitiven. Kann im Uhrzeigersinn oder gegen den Uhrzeigersinn stehen. |
+| ![Symbol für führenden Scheitelpunkt](images/d3d10-primitive-topologies-leading-vertex.png)       | Führender Scheitelpunkt    | Der erste nicht benachbarte Scheitelpunkt in einem primitiven, der Daten pro Konstante enthält.       |
 
  
 
-## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>Generieren mehrere Streifen
+## <a name="span-idgenerating_multiple_stripsspanspan-idgenerating_multiple_stripsspanspan-idgenerating_multiple_stripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>Erzeugen mehrerer Striche
 
 
-Mehrere Strips lassen sich mittels Schneiden von Strips generieren. Sie können einen Stripschnitt durchführen, indem Sie ausdrücklich die HSLS-Funktion [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) aufrufen, oder indem Sie einen besonderen Indexwert in den Indexpuffer einfügen. Dieser Wert ist-1, was 0xffffffff für 32-Bit-Indizes oder 0xffff für 16-Bit-Indizes entspricht.
+Sie können mehrere Striche durch die Bereichs Bearbeitung generieren. Sie können einen Strip-Cut ausführen, indem Sie die Funktion [restartstrip](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL explizit aufrufen oder einen speziellen Indexwert in den Index Puffer einfügen. Dieser Wert ist – 1, d. h. 0xFFFFFFFF für 32-Bit-Indizes oder 0xFFFF für 16-Bit-Indizes.
 
-Ein Index von -1 gibt ein explizites „Ausschneiden“ oder „Neustarten“ des aktuellen Strips an. Der vorherige Index schließt den vorherigen Grundtyp oder Strip ab, und der nächsten Index beginnt einen neuen Grundtyp oder Strip.
+Ein Index von – 1 gibt einen expliziten ' Cut ' oder ' restart ' des aktuellen Streifens an. Der vorherige Index schließt den vorherigen primitiven oder Strip ab, und der nächste Index startet einen neuen primitiven oder Strip.
 
-Weitere Informationen zum Generieren von mehreren Strips finden Sie unter [Geometryshaderphase (GS)](geometry-shader-stage--gs-.md).
+Weitere Informationen zum Erstellen mehrerer Striche finden Sie unter [Geometry-Shader (GS)-Phase](geometry-shader-stage--gs-.md).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Phase der Eingabe-Assembler (IA)](input-assembler-stage--ia-.md)
+[Eingabeassemblerphase (IA)](input-assembler-stage--ia-.md)
 
 [Grafikpipeline](graphics-pipeline.md)
 
  
 
  
-
-
-
-

@@ -4,14 +4,14 @@ description: Hier wird veranschaulicht, wie Sie ein einfaches Renderingframework
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Renderingframeworks, konvertieren, Direct3D 9, Direct3D 11
+keywords: Windows 10, UWP, Games, Rendering Framework, Direct3D 9, Direct3D 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 6629ba035a7fb0085e28f3fa033e58a1c1105ccf
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 780054dd7e51456c582265c27a7e415f92cba382
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368026"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159134"
 ---
 # <a name="convert-the-rendering-framework"></a>Konvertieren des Renderingframeworks
 
@@ -21,7 +21,7 @@ ms.locfileid: "66368026"
 
 -   [Teil 1: Initialisieren von Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
 -   Teil 2: Konvertieren des Renderingframeworks
--   [Teil 3: Die spielschleife Port](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
+-   [Teil 3: Portieren der Spielschleife](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
 Hier wird veranschaulicht, wie Sie ein einfaches Renderingframework von Direct3D 9 in Direct3D 11 konvertieren. Sie erfahren, wie Sie Geometriepuffer portieren, HLSL-Shaderprogramme kompilieren und laden und die Renderkette in Direct3D 11 implementieren. Teil 2 der exemplarischen Vorgehensweise [Portieren einer einfachen Direct3D 9-App zu DirectX 11 und UWP (Universelle Windows-Plattform)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
@@ -93,19 +93,19 @@ technique RenderSceneSimple
 }
 ```
 
-In Direct3D 11 können Sie weiterhin HLSL-Shader verwenden. Jeder Shader wird in eine eigene HLSL-Datei eingefügt, damit diese von Visual Studio in separate Dateien kompiliert werden. Später werden sie dann als separate Direct3D-Ressourcen geladen. Wir legen Sie das Ziel auf [Shader Model 4 Level 9\_1 (/ 4\_0\_Ebene\_9\_1)](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro) da diese Shader für DirectX 9.1 GPUs geschrieben werden.
+In Direct3D 11 können Sie weiterhin HLSL-Shader verwenden. Jeder Shader wird in eine eigene HLSL-Datei eingefügt, damit diese von Visual Studio in separate Dateien kompiliert werden. Später werden sie dann als separate Direct3D-Ressourcen geladen. Wir legen die Zielebene auf [Shader Model 4 Level 9 \_ 1 (/4 \_ 0 \_ Level \_ 9 \_ 1)](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro) fest, da diese Shader für DirectX 9,1-GPUs geschrieben werden.
 
 Beim Definieren des Eingabelayouts haben wir sichergestellt, dass die gleiche Datenstruktur abgebildet wurde, die zum Speichern der Daten pro Vertex im Systemspeicher und im GPU-Speicher verwendet wurde. Ebenso sollte die Ausgabe eines Vertex-Shaders mit der Struktur übereinstimmen, die als Eingabe für den Pixelshader verwendet wird. Die Regeln entsprechen dabei nicht den Regeln zum Übergeben von Daten aus einer Funktion in eine andere unter C++. Sie können nicht verwendete Variablen am Ende der Struktur weglassen. Die Reihenfolge kann jedoch nicht erneuert werden, und Sie können Inhalte in der Mitte der Datenstruktur nicht überspringen.
 
-> **Beachten Sie**    die Regeln in Direct3D 9 für die Bindung von Vertex-Shader auf Pixel-Shader lockereres als die Regeln in Direct3D 11 wurden. Die Direct3D 9-Anordnung war zwar flexibel, aber ineffizient.
+> **Hinweis**    Die Regeln in Direct3D 9 für die Bindung von Vertex-Shadern an Pixel-Shader waren stärker gelockert als die Regeln in Direct3D 11. Die Direct3D 9-Anordnung war zwar flexibel, aber ineffizient.
 
  
 
-Es ist möglich, dass die HLSL-Dateien verwendet älteren Syntax für Shader-Semantik – z. B. Farbe anstelle von SV\_Ziel. In diesem Fall müssen Sie den HLSL-Kompatibilitätsmodus (Compileroption "/Gec") aktivieren oder die Shader[semantik](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) auf die aktuelle Syntax aktualisieren. Der Vertex-Shader in diesem Beispiel wurde mit der aktuellen Syntax aktualisiert.
+Es ist möglich, dass die HLSL-Dateien ältere Syntax für die Shadersemantik verwenden, z. b. Color anstelle von SV \_ target. In diesem Fall müssen Sie den HLSL-Kompatibilitätsmodus (Compileroption "/Gec") aktivieren oder die Shader[semantik](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics) auf die aktuelle Syntax aktualisieren. Der Vertex-Shader in diesem Beispiel wurde mit der aktuellen Syntax aktualisiert.
 
 Unten ist der Vertex-Shader für die Hardwaretransformation in einer eigenen Datei definiert.
 
-> **Beachten Sie**  Vertex-Shader sind erforderlich, um die Ausgabe der SV\_Wert die POSITION des semantischen. Mit dieser Semantik werden die Vertexpositionsdaten zu Koordinatenwerten aufgelöst, wobei "x" zwischen -1 und 1 und "y" zwischen -1 und 1 liegt. "z" wird durch den ursprünglichen homogenen Koordinatenwert "w" dividiert (z/w), und "w" ist 1 dividiert durch den Originalwert "w" (1/w).
+> **Hinweis**    Vertex-Shader sind erforderlich, um die Semantik für den SV- \_ Positions System Wert auszugeben. Mit dieser Semantik werden die Vertexpositionsdaten zu Koordinatenwerten aufgelöst, wobei "x" zwischen -1 und 1 und "y" zwischen -1 und 1 liegt. "z" wird durch den ursprünglichen homogenen Koordinatenwert "w" dividiert (z/w), und "w" ist 1 dividiert durch den Originalwert "w" (1/w).
 
  
 
@@ -150,9 +150,9 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 }
 ```
 
-Dies ist alles, was wir für den Pass-Through-Pixelshader brauchen. Obwohl die Bezeichnung "Pass-Through" verwendet wird, werden für jedes Pixel jeweils für die Perspektive passende interpolierte Farbdaten abgerufen. Beachten Sie, dass die SV\_semantische System-Zielwert von unseren Pixel-Shader nach Bedarf von der API in die Ausgabe der Color-Wert angewendet wird.
+Dies ist alles, was wir für den Pass-Through-Pixelshader brauchen. Obwohl die Bezeichnung "Pass-Through" verwendet wird, werden für jedes Pixel jeweils für die Perspektive passende interpolierte Farbdaten abgerufen. Beachten Sie, dass die Semantik des SV- \_ Zielsystem Werts auf den Farbwert angewendet wird, der von unserem Pixel-Shader gemäß den Anforderungen der API ausgegeben wird.
 
-> **Beachten Sie**  Shader-Stufe 9\_x Pixel-Shader nicht werden aus der SV gelesen können\_Wert die POSITION des semantischen. Modell 4.0 (und höher)-Pixel-Shader können SV\_POSITION um die Pixelposition auf dem Bildschirm abzurufen, wobei x zwischen 0 und die Breite der Render-Ziel und y ist ist zwischen 0 und die Render-Ziel-Höhe (jede Offset von 0,5).
+> **Hinweis**    Shader Level 9 \_ x Pixel-Shader können nicht aus der SV- \_ Positions System Wert-Semantik lesen. Pixel-Shader von Modell 4,0 (und höher) können \_ die Position des Pixels auf dem Bildschirm mithilfe von "SV Position" abrufen, wobei "x" zwischen 0 und der renderzielbreite und y zwischen 0 und der Größe des Renderziels (jeder Offset um 0,5) liegt.
 
  
 
@@ -185,7 +185,7 @@ PS_OUTPUT main(PS_INPUT In)
 ## <a name="compile-and-load-shaders"></a>Kompilieren und Laden von Shadern
 
 
-In Direct3D 9-Spielen wurde die Effektbibliothek häufig als bequeme Möglichkeit zum Implementieren programmierbarer Pipelines genutzt. Effekte können zur Laufzeit mit der [**D3DXCreateEffectFromFile function**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dxcreateeffectfromfile)-Methode kompiliert werden.
+In Direct3D 9-Spielen wurde die Effektbibliothek häufig als bequeme Möglichkeit zum Implementieren programmierbarer Pipelines genutzt. Effekte können zur Laufzeit mit der [**D3DXCreateEffectFromFile function**](/windows/desktop/direct3d9/d3dxcreateeffectfromfile)-Methode kompiliert werden.
 
 Laden eines Effekts in Direct3D 9
 
@@ -234,19 +234,19 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-Fügen Sie zum Einbinden von Shader-Bytecode in das kompilierte App-Paket dem Visual Studio-Projekt einfach die HLSL-Datei hinzu. In Visual Studio wird das [Effektcompiler-Tool](https://docs.microsoft.com/windows/desktop/direct3dtools/fxc) (FXC) verwendet, um HLSL-Dateien in kompilierte Shaderobjekte (CSO-Dateien) zu kompilieren und in das App-Paket einzubinden.
+Fügen Sie zum Einbinden von Shader-Bytecode in das kompilierte App-Paket dem Visual Studio-Projekt einfach die HLSL-Datei hinzu. In Visual Studio wird das [Effektcompiler-Tool](/windows/desktop/direct3dtools/fxc) (FXC) verwendet, um HLSL-Dateien in kompilierte Shaderobjekte (CSO-Dateien) zu kompilieren und in das App-Paket einzubinden.
 
-> **Beachten Sie**    werden Sie sicher, dass die richtige Ziel-Funktionsebene für den HLSL-Compiler: mit der rechten Maustaste in den HLSL-Quelldatei in Visual Studio, wählen Sie Eigenschaften aus, und Ändern der **Shadermodell** Einstellung unter **HLSL-Compiler -&gt; allgemeine**. In Direct3D wird diese Eigenschaft anhand der Hardwarefunktionen überprüft, wenn von der App die Direct3D-Shaderressource erstellt wird.
+> **Hinweis**    Stellen Sie sicher, dass Sie die richtige Ziel Funktionsebene für den HLSL-Compiler festlegen: Klicken Sie mit der rechten Maustaste auf die HLSL-Quelldatei in Visual Studio, wählen Sie Eigenschaften aus, und ändern Sie die Einstellung **Shader-Modell** unter **HLSL Compiler- &gt; General**. In Direct3D wird diese Eigenschaft anhand der Hardwarefunktionen überprüft, wenn von der App die Direct3D-Shaderressource erstellt wird.
 
  
 
 ![HLSL-Shadereigenschaften](images/hlslshaderpropertiesmenu.png)![HLSL-Shadertyp](images/hlslshadertypeproperties.png)
 
-Dies ist ein guter Ort zum Erstellen des Eingabelayouts, welches der Deklaration des Vertexstreams in Direct3D 9 entspricht. Die Datenstruktur pro Vertex muss mit der Struktur übereinstimmen, die vom Vertex-Shader verwendet wird. In Direct3D 11 ist eine bessere Steuerung des Eingabelayouts möglich. Sie können die Arraygröße und Bitlänge von Gleitkommavektoren definieren und die Semantik für den Vertex-Shader angeben. Wir erstellen eine [ **D3D11\_Eingabe\_ELEMENT\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) strukturieren und zu verwenden, um Direct3D informieren aussehen die pro-Vertex-Daten. Wir haben das Laden des Vertex-Shaders abgewartet, bevor das Eingabelayout definiert wurde. Der Grund ist, dass das Eingabelayout von der API anhand der Vertex-Shaderressource überprüft wird. Wenn das Eingabelayout nicht kompatibel ist, löst Direct3D eine Ausnahme aus.
+Dies ist ein guter Ort zum Erstellen des Eingabelayouts, welches der Deklaration des Vertexstreams in Direct3D 9 entspricht. Die Datenstruktur pro Vertex muss mit der Struktur übereinstimmen, die vom Vertex-Shader verwendet wird. In Direct3D 11 ist eine bessere Steuerung des Eingabelayouts möglich. Sie können die Arraygröße und Bitlänge von Gleitkommavektoren definieren und die Semantik für den Vertex-Shader angeben. Wir erstellen eine [**D3D11 \_ input \_ - \_ Element**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) -Erstellungs Struktur und verwenden Sie, um Direct3D zu informieren, wie die pro-Vertex-Daten aussehen. Wir haben das Laden des Vertex-Shaders abgewartet, bevor das Eingabelayout definiert wurde. Der Grund ist, dass das Eingabelayout von der API anhand der Vertex-Shaderressource überprüft wird. Wenn das Eingabelayout nicht kompatibel ist, löst Direct3D eine Ausnahme aus.
 
-Daten pro Vertex müssen im Systemspeicher in Form von kompatiblen Typen gespeichert werden. DirectXMath-Datentypen können; z. B. DXGI\_FORMAT\_R32G32B32\_"float" entspricht [ **XMFLOAT3**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat3).
+Daten pro Vertex müssen im Systemspeicher in Form von kompatiblen Typen gespeichert werden. Directxmath-Datentypen können hilfreich sein. Beispielsweise entspricht das DXGI- \_ Format \_ R32G32B32 \_ float [**XMFLOAT3**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat3).
 
-> **Beachten Sie**    Konstantenpuffer verwendet einen festen eingabelayout, die jeweils vier Gleitkommazahlen entspricht. [**XMFLOAT4** ](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) (und seine ableitungen) werden für die Konstantenpuffer Daten empfohlen.
+> **Hinweis**    Konstante Puffer verwenden ein festes Eingabe Layout, das jeweils vier Gleit Komma Zahlen anpasst. [**XMFLOAT4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4) (und die Ableitungen) wird für die Daten von Konstantenpuffern empfohlen.
 
  
 
@@ -483,12 +483,8 @@ Darstellen eines Frames auf dem Bildschirm mithilfe von DirectX 11
 m_swapChain->Present(1, 0);
 ```
 
-Die gerade erstellte Renderkette wird von einer Spielschleife aufgerufen, die in der [**IFrameworkView::Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Methode implementiert ist. Dies wird im verdeutlicht [Teil 3: Viewport und Spiel Schleife](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
+Die gerade erstellte Renderkette wird von einer Spielschleife aufgerufen, die in der [**IFrameworkView::Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)-Methode implementiert ist. Dies wird unter [Teil 3: Viewport und Spielschleife](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md) veranschaulicht.
 
  
 
  
-
-
-
-

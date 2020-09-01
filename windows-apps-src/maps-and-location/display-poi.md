@@ -4,37 +4,37 @@ description: Mit Ortsmarken, Bildern, Formen und XAML-UI-Elementen können Sie i
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ms.date: 08/11/2017
 ms.topic: article
-keywords: windows 10, uwp, karten, standort, ortsmarken
+keywords: Windows 10, UWP, map, Location, Pushpins
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf8009232dbe3afcab2af28b76785fb261200f7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: c27132c0728c85238b80e710c62d2e733ee1dd5d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210296"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155804"
 ---
-# <a name="display-points-of-interest-on-a-map"></a>Anzeigen von interessanten Orten (POI) auf einer Karte
+# <a name="display-points-of-interest-on-a-map"></a>Relevante Punkte in einer Karte anzeigen
 
 Mit Ortsmarken, Bildern, Formen und XAML-UI-Elementen können Sie interessante Orte (Points of Interest, POI) auf einer Karte hinzufügen. Ein POI ist ein Punkt auf der Karte, der Orte angibt, die von Interesse sind. Beispiele sind die Position eines Geschäfts, eines Orts oder eines Freundes.
 
-Wenn Sie mehr über das Anzeigen von POIs in Ihrer App erfahren möchten, laden Sie das folgende Beispiel aus dem [Windows-universal-samples-Repository](https://github.com/Microsoft/Windows-universal-samples) auf GitHub herunter: [Universal Windows Platform (UWP)-Kartenbeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
+Wenn Sie weitere Informationen zum Anzeigen von POI in Ihrer APP haben, laden Sie das folgende Beispiel aus dem Repository [Windows-Universal-Samples](https://github.com/Microsoft/Windows-universal-samples) auf GitHub: [universelle Windows-Plattform (UWP) map Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)herunter.
 
-Zeigen Sie die Markiernadeln, Bilder und Formen auf der Karte an, indem Sie die Objekte [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) und [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) zu der **MapElements**-Sammlung eines [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer)-Objekts hinzufügen. Fügen Sie dann der **Layers**-Sammlung eines Kartensteuerelements das Layer-Objekt hinzu.
+Zeigen Sie Pushpins, Bilder und Formen auf der Karte an, indem Sie [**mapicon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)-, [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)-,  [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)-und [**mappolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) -Objekte zu einer **mapelements** -Auflistung eines [**mapelementslayer**](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) -Objekts hinzufügen. Fügen Sie dann dieses Ebenenobjekt der **Layers** Ebenenauflistung eines Karten Steuer Elements hinzu.
 
 >[!NOTE]
-> In früheren Versionen wurde in dieser Anleitung gezeigt, wie Sie der [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)-Sammlung Kartenelemente hinzufügen. Sie können diesen Ansatz weiterhin verwenden, doch werden Ihnen dann einige der Vorteile des neuen Kartenschichtenmodells nicht zur Verfügung stehen. Weitere Informationen hierzu finden Sie im Abschnitt [Arbeiten mit Schichten](#layers) dieser Anleitung.
+> In früheren Versionen haben Sie in dieser Anleitung gezeigt, wie Sie der [**mapelements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) -Auflistung Kartenelemente hinzufügen. Obwohl Sie diesen Ansatz weiterhin verwenden können, werden einige der Vorteile des neuen Karten Ebenen-Modells übersehen. Weitere Informationen finden Sie im Abschnitt [Arbeiten mit Ebenen](#layers) dieses Handbuchs.
 
-Sie können auch XAML-Benutzeroberflächenelemente wie [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button), [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) oder [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) auf der Karte einsetzen, indem Sie sie zu [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) hinzufügen oder als [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) für das [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) verwenden.
+Sie können auch XAML-Benutzeroberflächen Elemente wie z. b. eine [**Schaltfläche**](/uwp/api/Windows.UI.Xaml.Controls.Button), ein [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)oder einen [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) in der Zuordnung anzeigen, indem Sie Sie dem [**mapitemscontrol-Steuer**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) Element [**oder als unter**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) geordnete Elemente des [**mapcontrol-Steuer**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)Elements hinzufügen.
 
-Wenn Sie eine große Anzahl von Elementen auf der Karte platzieren möchten, sollten Sie [nebeneinander angeordnete Bilder auf der Karte überlagern](overlay-tiled-images.md). Informationen zum Anzeigen von Straßen auf der Karte finden Sie unter [Anzeigen von Routen und Wegbeschreibungen](routes-and-directions.md).
+Wenn Sie eine große Anzahl von Elementen auf der Karte platzieren möchten, sollten Sie [nebeneinander angeordnete Bilder auf der Karte überlagern](overlay-tiled-images.md). Weitere Informationen zum Anzeigen von Straßen auf der Karte finden Sie unter [Anzeigen von Routen und Anleitungen](routes-and-directions.md) .
 
-## <a name="add-a-pushpin"></a>Hinzufügen einer Markiernadel
+## <a name="add-a-pushpin"></a>Hinzufügen einer PushPin
 
-Verwenden Sie die Klasse [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), um Bilder wie eine Ortsmarke mit optionalem Text auf der Karte anzuzeigen. Sie können das Standardbild akzeptieren oder mit der [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)-Eigenschaft ein benutzerdefiniertes Bild bereitstellen. Die folgende Abbildung zeigt das Standardbild für ein **MapIcon** ohne festgelegten Wert für die Eigenschaft [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) mit einem kurzen Titel, einem langen Titel und einem sehr langen Titel.
+Verwenden Sie die Klasse [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), um Bilder wie eine Ortsmarke mit optionalem Text auf der Karte anzuzeigen. Sie können das Standardbild akzeptieren oder mit der [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)-Eigenschaft ein benutzerdefiniertes Bild bereitstellen. Die folgende Abbildung zeigt das Standardbild für ein **MapIcon** ohne festgelegten Wert für die Eigenschaft [**Title**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) mit einem kurzen Titel, einem langen Titel und einem sehr langen Titel.
 
 ![Beispiel für MapIcon mit Titeln unterschiedlicher Länge](images/mapctrl-mapicons.png)
 
-Im folgenden Beispiel wird einer Karte von Seattle ein [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) mit Standardbild und optionalem Titel hinzugefügt, um den Standort der Space Needle anzugeben. Außerdem wird die Karte auf dem Symbol zentriert und vergrößert. Allgemeine Informationen zur Verwendung des Kartensteuerelements finden Sie unter [Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten](display-maps.md).
+Im folgenden Beispiel wird einer Karte von Seattle ein [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) mit Standardbild und optionalem Titel hinzugefügt, um den Standort der Space Needle anzugeben. Außerdem wird die Karte auf dem Symbol zentriert und vergrößert. Allgemeine Informationen zum Verwenden des Karten Steuer Elements finden Sie unter [Anzeigen von Karten mit 2D-, 3D-und Streetside-Ansichten](display-maps.md).
 
 ```csharp
 public void AddSpaceNeedleIcon()
@@ -72,33 +72,33 @@ In diesem Beispiel wird der folgende interessante Ort (POI) auf der Karte angeze
 
 ![Karte mit MapIcon](images/displaypoidefault.png)
 
-Die folgende Codezeile zeigt [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) mit einem benutzerdefinierten Bild an, das im Ordner „Assets“ (Ressourcen) des Projekts gespeichert wurde. Die Eigenschaft [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) von **MapIcon** erwartet einen Wert vom Typ [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Dieser Typ erfordert die Anweisung **using** für den Namespace [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams).
+Die folgende Codezeile zeigt [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) mit einem benutzerdefinierten Bild an, das im Ordner „Assets“ (Ressourcen) des Projekts gespeichert wurde. Die Eigenschaft [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) von **MapIcon** erwartet einen Wert vom Typ [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Dieser Typ erfordert die Anweisung **using** für den Namespace [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams).
 
 >[!NOTE]
->Wenn Sie dasselbe Bild für mehrere Kartensymbole verwenden, deklarieren Sie [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) auf Seiten- oder App-Ebene, um eine optimale Leistung zu erzielen.
+>Wenn Sie das gleiche Bild für mehrere Kartensymbole verwenden, deklarieren Sie [**randomaccessstreamreference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) auf der Seiten-oder App-Ebene, um die beste Leistung zu erzielen.
 
 ```csharp
     MapIcon1.Image =
         RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/customicon.png"));
 ```
 
-Berücksichtigen Sie beim Arbeiten mit der [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)-Klasse Folgendes:
+Berücksichtigen Sie beim Arbeiten mit der [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)-Klasse Folgendes:
 
--   Die [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)-Eigenschaft unterstützt eine maximale Bildgröße von 2048 x 2048 Pixeln.
--   Standardmäßig wird die Anzeige des Bilds für das Kartensymbol nicht garantiert. Es wird möglicherweise ausgeblendet, wenn es andere Elemente oder Bezeichnungen auf der Karte verdeckt. Damit es sichtbar bleibt, legen Sie die [**CollisionBehaviorDesired**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.collisionbehaviordesired)-Eigenschaft des Kartensymbols auf [**MapElementCollisionBehavior.RemainVisible**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior) fest.
--   Die Anzeige des optionalen [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) für [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) wird nicht garantiert. Wenn der Text nicht angezeigt wird, verkleinern Sie die Ansicht, indem Sie den Wert der [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel)-Eigenschaft von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) verringern.
--   Wenn Sie ein [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)-Bild anzeigen, das auf eine bestimmte Position auf der Karte hinweist, z. B. eine Ortsmarkierung oder ein Pfeil, sollten Sie in Erwägung ziehen, den Wert der [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.normalizedanchorpoint)-Eigenschaft auf den ungefähren Standort des Zeigers auf dem Bild festzulegen. Wenn Sie den Wert von **NormalizedAnchorPoint** beim Standardwert (0, 0) belassen, der die obere linke Ecke des Bilds darstellt, führen Änderungen am [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) der Karte möglicherweise dazu, dass das Bild auf eine andere Position zeigt.
--   Wenn Sie [Altitude](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.basicgeoposition) und [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.AltitudeReferenceSystem) nicht explizit festlegen, wird [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) auf der Oberfläche platziert.
+-   Die [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)-Eigenschaft unterstützt eine maximale Bildgröße von 2048 x 2048 Pixeln.
+-   Standardmäßig wird die Anzeige des Bilds für das Kartensymbol nicht garantiert. Es wird möglicherweise ausgeblendet, wenn es andere Elemente oder Bezeichnungen auf der Karte verdeckt. Um die Sichtbarkeit beizubehalten, legen Sie die Eigenschaft " [**collisionverhaltenswunsch**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.collisionbehaviordesired) " des Karten Symbols auf [**mapelementcollisionbehavior. restvisible**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapElementCollisionBehavior)fest.
+-   Die Anzeige des optionalen [**Title**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) für [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) wird nicht garantiert. Wenn der Text nicht angezeigt wird, verkleinern Sie den Wert der [**Zoomlevel**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) -Eigenschaft des [**mapcontrol-Steuer**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)Elements.
+-   Wenn Sie ein [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)-Bild anzeigen, das auf eine bestimmte Position auf der Karte hinweist, z. B. eine Ortsmarkierung oder ein Pfeil, sollten Sie in Erwägung ziehen, den Wert der [**NormalizedAnchorPoint**](/uwp/api/windows.ui.xaml.controls.maps.mapicon.normalizedanchorpoint)-Eigenschaft auf den ungefähren Standort des Zeigers auf dem Bild festzulegen. Wenn Sie den Wert von **NormalizedAnchorPoint** beim Standardwert (0, 0) belassen, der die obere linke Ecke des Bilds darstellt, führen Änderungen am [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.zoomlevel) der Karte möglicherweise dazu, dass das Bild auf eine andere Position zeigt.
+-   Wenn Sie nicht explizit eine [Höhen](/uwp/api/windows.devices.geolocation.basicgeoposition) -und " [altitudereferencesystem](/uwp/api/windows.devices.geolocation.geopoint.AltitudeReferenceSystem)" festlegen, wird das [**mapicon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) auf der-Oberfläche platziert.
 
-## <a name="add-a-3d-pushpin"></a>Hinzufügen einer 3D-Markiernadel
+## <a name="add-a-3d-pushpin"></a>3D-PushPin hinzufügen
 
-Sie können dreidimensionale Objekte auf einer Karte hinzufügen. Verwenden Sie die Klasse [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d), um ein 3D-Objekt aus einer [3D Manufacturing Format (3MF)](https://3mf.io/specification/)-Datei zu importieren.
+Sie können dreidimensionale Objekte auf einer Karte hinzufügen. Verwenden Sie die [MapModel3D](/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) -Klasse, um ein 3D-Objekt aus einer [3MF-Datei (3D-Produktions Format)](https://3mf.io/specification/) zu importieren.
 
-Diese Abbildung verwendet 3D-Kaffeekannen, um die Standorte von Cafés der Umgebung zu markieren.
+In diesem Bild werden 3D-Kaffeetassen verwendet, um die Orte von Kaffee Geschäften in einer Umgebung zu markieren.
 
-![Tassen auf der Karte](images/mugs.png)
+![Bechern für Zuordnungen](images/mugs.png)
 
-Der folgende Code fügt der Karte eine Kaffeetasse hinzu, die aus einer 3MF-Datei importiert wird. Dieser Code fügt das Bild der Einfachheit halber in die Mitte der Karte ein. In Ihrem Code würden Sie das Bild wahrscheinlich an einer bestimmten Position einfügen.
+Der folgende Code fügt der Karte einen Kaffeebecher hinzu, indem Sie eine 3MF-Datei importieren. Um dies zu gewährleisten, fügt dieser Code das Bild in den Mittelpunkt der Karte ein, aber der Code würde das Bild wahrscheinlich einem bestimmten Speicherort hinzufügen.
 
 ```csharp
 public async void Add3DMapModel()
@@ -124,13 +124,13 @@ public async void Add3DMapModel()
 }
 ```
 
-## <a name="add-an-image"></a>Hinzufügen eines Bilds
+## <a name="add-an-image"></a>Hinzufügen eines Image
 
-Zeigen Sie große Bilder an, die im Zusammenhang mit Kartenpositionen (z. B. ein Bild von einem Restaurant oder einer Sehenswürdigkeit) stehen. Wenn der Benutzer verkleinert, wird das Bild proportional größer, damit der Benutzer mehr von der Karte anzeigen kann. Dies ist etwas anders als ein [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon), das einen bestimmten Ort kennzeichnet. Es ist in der Regel klein und bleibt bei der gleichen Größe wenn der Benutzer eine Karte verkleinert.
+Zeigen Sie große Bilder an, die sich auf Karten Orte beziehen, z. b. ein Bild eines Restaurants oder eines wegzeichens. Wenn Benutzer verkleinern, verkleinert sich das Bild proportional in der Größe, um dem Benutzer die Anzeige mehrerer Karten zu ermöglichen. Dies unterscheidet sich [**von einem mapicon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) , das eine bestimmte Position kennzeichnet, in der Regel klein ist und die gleiche Größe wie die Benutzer in einer Karte vergrößern und verkleinern kann.
 
-![MapBillboard-Bild](images/map-billboard.png)
+![Mapbillboard-Bild](images/map-billboard.png)
 
-Der folgende Code zeigt das [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) in der Abbildung oben.
+Der folgende Code zeigt das [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) , das in der obigen Abbildung dargestellt ist.
 
 ```csharp
 public void AddLandmarkPhoto()
@@ -163,30 +163,30 @@ public void AddLandmarkPhoto()
 }
 ```
 
-Drei Teile dieses Codes sollten ein bisschen näher untersucht werden: das Bild, die Referenzkamera und die [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)-Eigenschaft.
+Es gibt drei Teile dieses Codes, die etwas näher untersucht werden müssen: das Image, die Referenz Kamera und die [**normalizedanchorpoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) -Eigenschaft.
 
 ### <a name="image"></a>Bild
 
-In diesem Beispiel wird ein benutzerdefiniertes Bild im **Assets** Ordner des Projekts gespeichert. Die Eigenschaft [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) von [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) erwartet einen Wert vom Typ [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Dieser Typ erfordert die Anweisung **using** für den Namespace [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams).
+Dieses Beispiel zeigt ein benutzerdefiniertes Image, das im Ordner " **Assets** " des Projekts gespeichert ist. Die [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) -Eigenschaft von [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) erwartet einen Wert vom Typ [**randomaccessstreamreference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference). Dieser Typ erfordert die Anweisung **using** für den Namespace [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams).
 
 >[!NOTE]
->Wenn Sie dasselbe Bild für mehrere Kartensymbole verwenden, deklarieren Sie [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) auf Seiten- oder App-Ebene, um eine optimale Leistung zu erzielen.
+>Wenn Sie das gleiche Bild für mehrere Kartensymbole verwenden, deklarieren Sie [**randomaccessstreamreference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) auf der Seiten-oder App-Ebene, um die beste Leistung zu erzielen.
 
-### <a name="reference-camera"></a>Referenzkamera
+### <a name="reference-camera"></a>Referenz Kamera
 
- Da ein [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)-Bild skaliert sobald sich das [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) der Karte ändert, es ist wichtig zu definieren, bei welchem [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) das Bild mit einer normalen 1x-Skalierung angezeigt wird. Die Position ist in der Referenzkamera des [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) definiert. Um sie festzulegen müssen Sie ein [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) Objekt an den Konstruktor des [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) übergeben.
+ Da ein [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) -Bild beim Ändern der [**Zoomstufe**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) der Zuordnung horizontal hoch-und herunterskaliert wird, ist es wichtig, zu definieren, wo in diesem [**Zoomlevel**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) das Bild in einer normalen 1-stufigen Skala angezeigt wird. Diese Position wird in der Referenz Kamera von [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)definiert. um Sie festzulegen, müssen Sie ein [**mapcamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcamera) -Objekt an den Konstruktor von [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)übergeben.
 
- Können Sie die gewünschte Position in einem [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) definieren, und diesen [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) zum Erstellen eines [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) Objekts verwenden.  In diesem Beispiel verwenden wir jedoch das [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera)Objekt, das von der [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera)-Eigenschaft des Kartensteuerelements zurückgegeben wird. Hierbei handelt es sich um die interne Kamera der Karte. Die aktuelle Position der Kamera wird die Referenzkameraposition (die Position, in der das [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) Bild mit 1x Skalierung angezeigt wird.
+ Sie können die gewünschte Position in einem [**geopoint**](/uwp/api/windows.devices.geolocation.geopoint)definieren und dann mit diesem [**geopoint**](/uwp/api/windows.devices.geolocation.geopoint) ein [**mapcamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcamera) -Objekt erstellen.  In diesem Beispiel verwenden wir jedoch nur das [**mapcamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcamera) -Objekt, das von der [**actualcamera**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera) -Eigenschaft des Map-Steuer Elements zurückgegeben wird. Dies ist die interne Kamera der Karte. Die aktuelle Position dieser Kamera wird zur Position der Verweis Kamera. die Position, an der das [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) -Bild bei einer 1X-Skala angezeigt wird.
 
- Wenn Ihre App den Benutzern die Möglichkeit gibt, die Karte zu verkleinern, verringert das Bild die Größe, da die interne Kamera der Karte steigt während das Bild bei der 1x-Skalierung an der Referenzkameraposition verbleibt.
+ Wenn Ihre APP den Benutzern die Möglichkeit bietet, die Zuordnung zu vergrößern, wird die Größe des Bilds verringert, da die interne Karte der Maps in der Höhe zunimmt, während das Bild mit der 1X-Skala an der Position der Referenz Kamera bleibt.
 
-### <a name="normalizedanchorpoint"></a>NormalizedAnchorPoint
+### <a name="normalizedanchorpoint"></a>Normalizedanchorpoint
 
-Der [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) ist der Punkt des Bilds, das an der [**Speicherort**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) Eigenschaft des [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) verankert ist. Der Punkt 0,5,1 ist die untere Mitte des Bilds. Da wir die [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) Eigenschaft des [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)auf die untere Mitte des Kartensteuerelements festgelegt haben, wir die untere Mitte des Bilds an der unteren Mitte des Kartensteuerelements verankert. Wenn das Bild direkt über einem Punkt zentriert angezeigt werden soll, müssen Sie [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) auf 0.5,0.5 festlegen.  
+Der [**normalizedanchorpoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) ist der Punkt des Bilds, das mit der [**Location**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) -Eigenschaft von [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)verankert ist. Der Punkt 0,5, 1 ist die untere Mitte des Bilds. Da wir die [**Location**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) -Eigenschaft von [**mapbillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) auf den Mittelpunkt des Steuer Elements der Karte festgelegt haben, wird die untere Mitte des Bilds in der Mitte des Maps-Steuer Elements verankert. Wenn das Bild direkt über einen Punkt zentriert angezeigt werden soll, legen Sie [**normalizedanchorpoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) auf 0,5, 0,5 fest.  
 
 ## <a name="add-a-shape"></a>Hinzufügen einer Form
 
-Mithilfe der Klasse [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) können Sie eine Form mit mehreren Punkten auf der Karte anzeigen. Im folgenden Beispiel (aus dem [Beispiel zu UWP-Karten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)) wird ein rotes Feld mit blauem Rahmen auf der Karte angezeigt.
+Mithilfe der Klasse [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) können Sie eine Form mit mehreren Punkten auf der Karte anzeigen. Im folgenden Beispiel (aus dem [Beispiel zu UWP-Karten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)) wird ein rotes Feld mit blauem Rahmen auf der Karte angezeigt.
 
 ```csharp
 public void HighlightArea()
@@ -229,7 +229,7 @@ public void HighlightArea()
 ## <a name="add-a-line"></a>Hinzufügen einer Linie
 
 
-Mithilfe der Klasse [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) können Sie eine Linie auf der Karte anzeigen. Im folgenden Beispiel (aus dem [Beispiel zu UWP-Karten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)) wird eine gestrichelte Linie auf der Karte angezeigt.
+Mithilfe der Klasse [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) können Sie eine Linie auf der Karte anzeigen. Im folgenden Beispiel (aus dem [Beispiel zu UWP-Karten](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)) wird eine gestrichelte Linie auf der Karte angezeigt.
 
 ```csharp
 public void DrawLineOnMap()
@@ -270,10 +270,10 @@ public void DrawLineOnMap()
 
 Zeigen Sie benutzerdefinierte UI-Elemente mit XAML auf der Karte an. Positionieren Sie XAML auf der Karte, indem Sie die Position und den normalisierten Ankerpunkt für den XAML-Code angeben.
 
--   Rufen Sie [**SetLocation**](https://docs.microsoft.com/windows/desktop/tablet/icontextnode-setlocation) auf, um die Position auf der Karte festzulegen, an der der XAML-Code platziert werden soll.
--   Rufen Sie [**SetNormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setnormalizedanchorpoint) auf, um die relative Position des XAML-Codes festzulegen, die der angegebenen Position entspricht.
+-   Rufen Sie [**SetLocation**](/windows/desktop/tablet/icontextnode-setlocation) auf, um die Position auf der Karte festzulegen, an der der XAML-Code platziert werden soll.
+-   Legen Sie den relativen Speicherort für den XAML-Code fest, der der angegebenen Position entspricht, indem Sie [**setnormalizedanchorpoint**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.setnormalizedanchorpoint)aufrufen.
 
-Im folgenden Beispiel wird einer Karte von Seattle das XAML-Steuerelement [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) hinzugefügt, um den Standort der Space Needle anzugeben. Außerdem wird die Karte in diesem Bereich zentriert und vergrößert. Allgemeine Informationen zur Verwendung des Kartensteuerelements finden Sie unter [Anzeigen von Karten mit 2D-, 3D- und Streetside-Ansichten](display-maps.md).
+Im folgenden Beispiel wird einer Karte von Seattle das XAML-Steuerelement [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border) hinzugefügt, um den Standort der Space Needle anzugeben. Außerdem wird die Karte in diesem Bereich zentriert und vergrößert. Allgemeine Informationen zum Verwenden des Karten Steuer Elements finden Sie unter [Anzeigen von Karten mit 2D-, 3D-und Streetside-Ansichten](display-maps.md).
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -306,9 +306,9 @@ In diesem Beispiel wird ein blauer Rahmen auf der Karte angezeigt.
 
 ![Screenshot eines XAML-Elements, das am interessanten Ort auf der Karte angezeigt wird](images/displaypoixaml.png)
 
-Die nächsten Beispiele zeigen, wie XAML-UI-Elemente direkt im XAML-Markup der Seite mithilfe der Datenbindung hinzugefügt werden. Wie bei anderen XAML-Elementen zur Anzeige von Inhalten auch, stellt [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) die standardmäßige Inhaltseigenschaft von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) dar und muss nicht explizit im XAML-Markup angegeben werden.
+Die nächsten Beispiele zeigen, wie XAML-UI-Elemente direkt im XAML-Markup der Seite mithilfe der Datenbindung hinzugefügt werden. Wie bei anderen XAML-Elementen zur Anzeige von Inhalten auch, stellt [**Children**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) die standardmäßige Inhaltseigenschaft von [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) dar und muss nicht explizit im XAML-Markup angegeben werden.
 
-In diesem Beispiel wird gezeigt, wie zwei XAML-Steuerelemente als implizite untergeordnete Objekte von [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) angezeigt werden. Diese Steuerelemente werden auf der Karte an den datengebundenen Positionen angezeigt
+Dieses Beispiel zeigt, wie zwei XAML-Steuerelemente als implizite untergeordnete Elemente des [**mapcontrol-Steuer**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)Elements angezeigt werden. Diese Steuerelemente werden in der Karte an den Daten gebundenen Speicherorten angezeigt.
 
 ```xml
 <maps:MapControl>
@@ -317,14 +317,14 @@ In diesem Beispiel wird gezeigt, wie zwei XAML-Steuerelemente als implizite unte
 </maps:MapControl>
 ```
 
-Legen Sie diese Positionen mithilfe der Eigenschaften in der CodeBehind-Datei fest.
+Legen Sie diese Speicherorte fest, indem Sie in der Code Behind-Dateieigenschaften verwenden.
 
 ```csharp
 public Geopoint SeattleLocation { get; set; }
 public Geopoint BellevueLocation { get; set; }
 ```
 
-Dieses Beispiel zeigt, wie zwei XAML-Steuerelemente aus einem [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl)angezeigt werden. Diese Steuerelemente werden auf der Karte an den datengebundenen Positionen angezeigt.
+Dieses Beispiel zeigt, wie zwei XAML-Steuerelemente angezeigt werden, die in einem [**mapitemscontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl)-Element enthalten sind. Diese Steuerelemente werden in der Karte an den Daten gebundenen Speicherorten angezeigt.
 
 ```xml
 <maps:MapControl>
@@ -335,7 +335,7 @@ Dieses Beispiel zeigt, wie zwei XAML-Steuerelemente aus einem [**MapItemsControl
 </maps:MapControl>
 ```
 
-In diesem Beispiel wird eine Sammlung von XAML-Elementen angezeigt, die an [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) gebunden sind.
+Dieses Beispiel zeigt eine Auflistung von XAML-Elementen an, die an ein [**mapitemscontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl)-Element gebunden sind.
 
 ```xml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
@@ -352,7 +352,7 @@ In diesem Beispiel wird eine Sammlung von XAML-Elementen angezeigt, die an [**Ma
 </maps:MapControl>
 ```
 
-Die Eigenschaft ``ItemsSource`` im obigen Beispiel ist in der CodeBehind-Datei an eine Eigenschaft vom Typ [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) gebunden.
+Die- ``ItemsSource`` Eigenschaft im obigen Beispiel wird in der Code Behind-Datei an eine Eigenschaft vom Typ [IList](/dotnet/api/system.collections.ilist) gebunden.
 
 ```csharp
 public sealed partial class Scenario1 : Page
@@ -392,9 +392,9 @@ public sealed partial class Scenario1 : Page
 
 <a id="layers" />
 
-## <a name="working-with-layers"></a>Arbeiten mit Schichten
+## <a name="working-with-layers"></a>Arbeiten mit Ebenen
 
-In den Beispielen dieser Anleitung werden einer [MapElementLayers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer)-Sammlung Elemente hinzugefügt. Dann zeigen sie, wie diese Sammlung der Eigenschaft **Layers** des Kartensteuerelements hinzugefügt wird. In früheren Versionen wurde in dieser Anleitung gezeigt, wie Sie wie folgt der [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)-Sammlung Kartenelemente hinzufügen können:
+In den Beispielen in diesem Handbuch werden Elemente zu einer [MapElementLayers](/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) -Auflistung hinzugefügt. Anschließend zeigen Sie, wie diese Auflistung der **Ebenen** -Eigenschaft des Map-Steuer Elements hinzugefügt wird. In früheren Versionen haben Sie in dieser Anleitung gezeigt, wie der [**mapelements**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements) -Auflistung Kartenelemente wie folgt hinzugefügt werden:
 
 ```csharp
 var pikePlaceIcon = new MapIcon
@@ -409,13 +409,13 @@ var pikePlaceIcon = new MapIcon
 myMap.MapElements.Add(pikePlaceIcon);
 ```
 
-Sie können diesen Ansatz weiterhin verwenden, doch werden Ihnen dann einige der Vorteile des neuen Kartenschichtenmodells nicht zur Verfügung stehen. Durch die Gruppierung der Elemente in Schichten können Sie jede davon unabhängig bearbeiten. Beispielsweise verfügt jede Ebene über einen eigenen Satz an Ereignissen, sodass Sie auf ein Ereignis in einer bestimmten Ebene antworten und eine Aktion ausführen können, die speziell für das Ereignis gilt.
+Obwohl Sie diesen Ansatz weiterhin verwenden können, werden einige der Vorteile des neuen Karten Ebenen-Modells übersehen. Indem Sie die Elemente in Ebenen gruppieren, können Sie jede Ebene unabhängig voneinander bearbeiten. Beispielsweise verfügt jede Ebene über einen eigenen Satz an Ereignissen, sodass Sie auf ein Ereignis in einer bestimmten Ebene antworten und eine Aktion ausführen können, die speziell für das Ereignis gilt.
 
-Zudem können Sie XAML direkt an eine [MapLayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maplayer) binden. Das ist mit der [MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)-Sammlung nicht möglich.
+Außerdem können Sie XAML direkt an einen [maplayer](/uwp/api/windows.ui.xaml.controls.maps.maplayer)binden. Dies ist etwas, das Sie nicht mit der [mapelements](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)  -Auflistung tun können.
 
-Eine Möglichkeit besteht darin, eine Ansichtsmodellklasse, CodeBehind für eine XAML-Seite und eine XAML-Seite zu verwenden.
+Eine Möglichkeit besteht darin, eine Ansichts Modell Klasse, Code-Behind-XAML-Seite und eine XAML-Seite zu verwenden.
 
-### <a name="view-model-class"></a>Ansichtsmodellklasse
+### <a name="view-model-class"></a>Modell Klasse anzeigen
 
 ```csharp
 public class LandmarksViewModel
@@ -447,9 +447,9 @@ public class LandmarksViewModel
 
 ```
 
-### <a name="code-behind-a-xaml-page"></a>CodeBehind für eine XAML-Seite
+### <a name="code-behind-a-xaml-page"></a>Code Behind-XAML-Seite
 
-Verknüpfen Sie die Ansichtsmodellklasse mit der CodeBehind-Seite.
+Verbinden Sie die Ansichts Modell Klasse mit der Code Behind-Seite.
 
 ```csharp
 public LandmarksViewModel ViewModel { get; set; }
@@ -463,7 +463,7 @@ public myMapPage()
 
 ### <a name="xaml-page"></a>XAML-Seite
 
-Binden Sie in der XAML-Seite die Eigenschaft aus der Ansichtsmodellklasse, die die Ebene zurückgibt.
+Binden Sie in der XAML-Seite an die-Eigenschaft in der Ansichts Modell Klasse, die die Ebene zurückgibt.
 
 ```XML
 <maps:MapControl
@@ -471,13 +471,13 @@ Binden Sie in der XAML-Seite die Eigenschaft aus der Ansichtsmodellklasse, die d
     MapServiceToken="Your token" Layers="{x:Bind ViewModel.LandmarkLayer}"/>
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Bing Karten Developer Center](https://www.bingmapsportal.com/)
 * [Beispiel für UWP-Karte](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
-* [Entwurfsrichtlinien für Karten](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015-Video: Nutzen von Zuordnungen und Speicherort über Telefon, Tablet und PC in Ihren Windows-apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Entwurfsrichtlinien für Karten](./display-maps.md)
+* [Build 2015-Video: Nutzen von Karten und Ortung über Telefon, Tablet und PC in Ihren Windows-Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [Beispiel für eine UWP-App mit Verkehrsinformationen](https://github.com/Microsoft/Windows-appsample-trafficapp)
-* [**Mapicon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
-* [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
-* [**Mappolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)
+* [**MapIcon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
+* [**MapPolygon**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
+* [**MapPolyline**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

@@ -1,72 +1,72 @@
 ---
 title: Steuerknüppel
-description: Verwenden Sie die Windows.Gaming.Input-Steuerknüppel-APIs, um Eingaben von Steuerknüppeln zu lesen.
+description: Verwenden Sie die Flight-Stick-APIs von Windows. Gaming. Input zum Lesen von Eingaben aus Flight Sticks.
 ms.assetid: DC633F6B-FDC9-4D6E-8401-305861F31192
 ms.date: 03/06/2017
 ms.topic: article
-keywords: windows 10, uwp, Spiele, Eingabe, Steuerknüppel
+keywords: Windows 10, UWP, Games, Input, Flight Stick
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b9b4353a2736feb7cdfde9871c29f61de52e0c9a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609015"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156424"
 ---
 # <a name="flight-stick"></a>Steuerknüppel
 
-Auf dieser Seite werden die Grundlagen der Programmierung für Xbox One-zertifizierte Steuerknüppel mit [Windows.Gaming.Input.FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) und verwandten APIs für die Universelle Windows-Plattform (UWP) beschrieben.
+Auf dieser Seite werden die Grundlagen der Programmierung für Xbox One-zertifizierte Flight-Sticks mithilfe von [Windows. Gaming. Input. Flightstick](/uwp/api/windows.gaming.input.flightstick) und zugehörigen APIs für die universelle Windows-Plattform (UWP) beschrieben.
 
 Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 
-* Wie Sie eine Liste der verbundenen Steuerknüppel und ihrer Benutzer erstellen
-* Wie Sie ermitteln, ob ein Steuerknüppel hinzugefügt oder entfernt wurde
-* Wie Sie die Eingabe von einem oder mehreren Steuerknüppeln lesen
-* Wie sich Steuerknüppel als UI-Navigationsgeräte verhalten
+* Erfassen einer Liste mit verbundenen Flight-Sticks und ihren Benutzern
+* erkennen, dass ein flugstick hinzugefügt oder entfernt wurde
+* Lesen von Eingaben von mindestens einem flugsticks
+* Verhalten von Flight-Sticks als Benutzeroberflächen-Navigationsgeräte
 
 ## <a name="overview"></a>Übersicht
 
-Steuerknüppel sind Spieleingabegeräte, die das Gefühl eines Steuerknüppels reproduzieren, der in Flugzeugen oder Raumschiffen benutzt wird. Sie sind das perfekte Eingabegerät für die schnelle und genaue Steuerung von Fluggeräten. Steuerknüppel werden in Windows 10- und Xbox One-UWP-Apps durch den Namespace [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) unterstützt.
+Bei Flight Sticks handelt es sich um Spiele Eingabegeräte, die für das Reproduzieren der Meinung von flugsticks, die sich im Cockpit einer Ebene oder des Netz Schiffs befinden würden. Sie sind das perfekte Eingabegerät für die schnelle und exakte Kontrolle des Flugs. Flight-Sticks werden in Windows 10-und Xbox One-UWP-Apps durch den [Windows. Gaming. Input](/uwp/api/windows.gaming.input) -Namespace unterstützt.
 
-Xbox One-Steuerknüppel sind mit den folgenden Steuerelementen ausgestattet:
+Xbox One-flugsticks sind mit den folgenden Steuerelementen ausgestattet:
 
-* Einem drehbaren analogen Joystick, der Rollen, Nicken und Gieren ausführen kann
-* Einem analogen Schubregler
-* Zwei Feuern-Tasten
-* Einem digitalen 8-Wegeschalter
-* **Ansicht**- und **Menü**-Tasten
+* Ein twistable-Analog-Joystick, der Roll, Pitch und Yaw unterstützt.
+* Eine analoge Drosselung
+* Zwei Feuer Schaltflächen
+* Ein 8-Wege-Digital hat-Switch
+* **Anzeigen** und **Menü** Schaltflächen
 
 > [!NOTE]
-> Die **Ansicht**- und **Menü**-Tasten werden zur Unterstützung der Benutzeroberflächennavigation, nicht der Spielverlaufsbefehle verwendet. Daher kann auf diese Tasten nicht ohne Weiteres als Joystick-Tasten zugegriffen werden.
+> Die Schaltflächen **Ansicht** und **Menü** werden zur Unterstützung der Navigation in der Benutzeroberfläche, nicht zum Aufrufen von-Befehlen verwendet
 
 ### <a name="ui-navigation"></a>Benutzeroberflächennavigation
 
-Um den Aufwand für die Unterstützung unterschiedlicher Eingabegeräte für die Benutzeroberflächennavigation zu verringern und die Konsistenz zwischen Spielen und Geräten zu fördern, dienen die meisten _physischen_ Eingabegeräte gleichzeitig als getrennte _logische_ Eingabegeräte, die als [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md) bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle über verschiedene Eingabegeräte hinweg bereit.
+Um die Unterstützung der verschiedenen Eingabegeräte für die Navigation in der Benutzeroberfläche zu vereinfachen und die Konsistenz zwischen spielen und Geräten zu fördern, fungieren die meisten _physischen_ Eingabegeräte gleichzeitig als separate _logische_ Eingabegeräte, die als [UI-Navigations Controller](ui-navigation-controller.md)bezeichnet werden. Der Benutzeroberflächen-Navigationscontroller stellt ein gemeinsames Vokabular für Benutzeroberflächen-Navigationsbefehle über verschiedene Eingabegeräte hinweg bereit.
 
-Ein Steuerknüppel als Benutzeroberflächen-Navigationscontroller ordnet den [erforderlichen Satz](ui-navigation-controller.md#required-set) an Navigationsbefehlen dem Joystick und den Tasten **Ansicht**, **Menü**, **FirePrimary** und **FireSecondary** zu.
+Als Benutzeroberflächen-Navigations Controller ordnet ein flugstick die [erforderlichen](ui-navigation-controller.md#required-set) Navigations Befehle den Schaltflächen "Joystick" und " **Ansicht**", " **Menü**", " **fireprimary**" und " **firesecondary** " zu.
 
-| Navigationsbefehl | Steuerknüppeleingabe                  |
+| Navigationsbefehl | Flight-Stick-Eingabe                  |
 | ------------------:| ----------------------------------- |
 |                 Nach oben | Joystick nach oben                         |
-|               Nach unten | Joystick nach-unten                       |
-|               Nach links | Joystick nach links                       |
-|              Nach rechts | Joystick nach rechts                      |
-|               Ansicht | **Ansicht**-Taste                     |
-|               Menü | **Menü**-Taste                     |
-|             Annehmen | **FirePrimary**-Taste              |
-|             Abbrechen | **FireSecondary**-Taste            |
+|               Nach unten | Joystick nach unten                       |
+|               Left | Joystick nach links                       |
+|              Right | Joystick nach rechts                      |
+|               Sicht | **Anzeige** Schaltfläche                     |
+|               Menü | **Menü** Schaltfläche                     |
+|             Akzeptieren | **Fireprimary** -Schaltfläche              |
+|             Abbrechen | **Firesecondary** -Schaltfläche            |
 
-Steuerknüppel ordnen keinen der [optionalen Sätze](ui-navigation-controller.md#optional-set) an Navigationsbefehlen zu.
+Flight-Sticks ordnen keinen der optionalen Navigations Befehls [Sätze](ui-navigation-controller.md#optional-set) zu.
 
-## <a name="detect-and-track-flight-sticks"></a>Ermitteln und Nachverfolgen von Steuerknüppeln
+## <a name="detect-and-track-flight-sticks"></a>Erkennen und Nachverfolgen von flugsticks
 
-Ermitteln und Nachverfolgen von Steuerknüppeln funktioniert auf genau die gleiche Weise wie für Gamepads, außer bei der [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick)-Klasse anstelle der [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad)-Klasse. Weitere Informationen finden Sie unter [Gamepad und Vibration](gamepad-and-vibration.md).
+Das erkennen und Nachverfolgen von Flight Sticks funktioniert genauso wie für Gamepads, außer mit der [Flightstick](/uwp/api/windows.gaming.input.flightstick) -Klasse anstelle der [Gamepad](/uwp/api/Windows.Gaming.Input.Gamepad) -Klasse. Weitere Informationen finden Sie unter [Gamepad und Vibration](gamepad-and-vibration.md) .
 
 <!-- Flight sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected flight sticks and events to notify you when a flight stick is added or removed.
 
 ### The flight stick list
 
-The [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) class provides a static property, [FlightSticks](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick#Windows_Gaming_Input_FlightStick_FlightSticks), which is a read-only list of flight sticks that are currently connected. Because you might only be interested in some of the connected flight sticks, we recommend that you maintain your own collection instead of accessing them through the `FlightSticks` property.
+The [FlightStick](/uwp/api/windows.gaming.input.flightstick) class provides a static property, [FlightSticks](/uwp/api/windows.gaming.input.flightstick#Windows_Gaming_Input_FlightStick_FlightSticks), which is a read-only list of flight sticks that are currently connected. Because you might only be interested in some of the connected flight sticks, we recommend that you maintain your own collection instead of accessing them through the `FlightSticks` property.
 
 The following example copies all connected flight sticks into a new collection:
 
@@ -82,7 +82,7 @@ for (auto flightStick : FlightStick::FlightSticks)
 
 ### Adding and removing flight sticks
 
-When a flight stick is added or removed, the [FlightStickAdded](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick#Windows_Gaming_Input_FlightStick_FlightStickAdded) and [FlightStickRemoved](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick#Windows_Gaming_Input_FlightStick_FlightStickRemoved) events are raised. You can register handlers for these events to keep track of the flight sticks that are currently connected.
+When a flight stick is added or removed, the [FlightStickAdded](/uwp/api/windows.gaming.input.flightstick#Windows_Gaming_Input_FlightStick_FlightStickAdded) and [FlightStickRemoved](/uwp/api/windows.gaming.input.flightstick#Windows_Gaming_Input_FlightStick_FlightStickRemoved) events are raised. You can register handlers for these events to keep track of the flight sticks that are currently connected.
 
 The following example starts tracking a flight stick that's been added:
 
@@ -114,32 +114,32 @@ FlightStick::FlightStickRemoved +=
 
 Each flight stick can be associated with a user account to link their identity to their gameplay, and can have a headset attached to facilitate voice chat or in-game features. To learn more about working with users and headsets, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices) and [Headset](headset.md). -->
 
-## <a name="reading-the-flight-stick"></a>Lesen von Steuerknüppeleingaben
+## <a name="reading-the-flight-stick"></a>Lesen des Flug Sticks
 
-Nachdem Sie den Steuerknüppel identifiziert haben, für den Sie sich interessieren, können Sie Eingaben von ihm erfassen. Im Gegensatz zu anderen Eingaben, die Sie möglicherweise kennen, teilen Steuerknüppel Zustandsänderungen nicht durch das Auslösen von Ereignissen mit. Stattdessen müssen Sie den aktuellen Status regelmäßig lesen, indem Sie ihn _abrufen_.
+Nachdem Sie den gewünschten flugwert identifiziert haben, sind Sie bereit, Eingaben daraus zu erfassen. Anders als bei einigen anderen Arten von Eingaben, die möglicherweise verwendet werden, kommunizieren die Zustandsänderungen jedoch nicht durch das Durchsetzen von Ereignissen. Stattdessen müssen Sie den aktuellen Status regelmäßig lesen, indem Sie ihn _abrufen_.
 
-### <a name="polling-the-flight-stick"></a>Abrufen des Zustands von Steuerknüppeln
+### <a name="polling-the-flight-stick"></a>Abrufen des Flug Sticks
 
-Beim Abrufen wird ein Snapshot des Steuerknüppels zu einem bestimmten Zeitpunkt erstellt. Dieser Ansatz zur Eingabeerfassung ist für die meisten Spiele geeignet, da deren Logik normalerweise als deterministische Schleife, nicht ereignisgesteuert ausgeführt wird. Außerdem lassen sich Spielbefehle aus erfassten Eingaben einfacher interpretieren als aus vielen einzelnen Eingaben, die im Laufe der Zeit erfasst wurden.
+Bei der Abfrage wird eine Momentaufnahme des Flug Sticks zu einem bestimmten Zeitpunkt erfasst. Diese Vorgehensweise für die Eingabe Erfassung eignet sich gut für die meisten Spiele, da ihre Logik in der Regel in einer deterministischen Schleife ausgeführt wird, anstatt Sie als ereignisgesteuert zu betrachten. Es ist in der Regel einfacher, Spiel Befehle aus Eingaben zu interpretieren, die alle gleichzeitig gesammelt werden, als aus vielen einzelnen Eingaben, die im Laufe der Zeit gesammelt werden.
 
-Sie rufen den Zustand eines Steuerknüppels ab, indem Sie [FlightStick.GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick.GetCurrentReading) aufrufen. Diese Funktion gibt eine [FlightStickReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading)-Struktur zurück, die den Zustand des Steuerknüppels enthält.
+Sie rufen einen flugstick ab, indem Sie [Flightstick. getcurrentreading](/uwp/api/windows.gaming.input.flightstick.GetCurrentReading)aufrufen. Diese Funktion gibt ein [flightstickreading](/uwp/api/windows.gaming.input.flightstickreading) zurück, das den Zustand des Flug Sticks enthält.
 
-Im folgenden Beispiel wird der aktuelle Zustand eines Steuerknüppels abgerufen.
+Im folgenden Beispiel wird ein flugstick für seinen aktuellen Zustand abgefragt:
 
 ```cpp
 auto flightStick = myFlightSticks->GetAt(0);
 FlightStickReading reading = flightStick->GetCurrentReading();
 ```
 
-Zusätzlich zum Zustand des Steuerknüppels enthält jede Ablesung einen Zeitstempel, der den genauen Zeitpunkt angibt, zu dem der Zustand abgerufen wurde. Der Zeitstempel ist nützlich, um einen Bezug zu den Zeitpunkten vorheriger Ablesungen oder zum Zeitpunkt der Spielsimulation herzustellen.
+Zusätzlich zum Status des Flug Stapels enthält jede Lesevorgang einen Zeitstempel, der genau angibt, wann der Status abgerufen wurde. Der Zeitstempel ist nützlich, um einen Bezug zu den Zeitpunkten vorheriger Ablesungen oder zum Zeitpunkt der Spielsimulation herzustellen.
 
-### <a name="reading-the-joystick-and-throttle-input"></a>Lesen der Joystick- und Schubreglereingabe
+### <a name="reading-the-joystick-and-throttle-input"></a>Lesen der Joystick-und Drosselungs Eingabe
 
-Der Joystick liefert analoge Werte zwischen -1,0 und 1,0 in der X-, Y- und Z-Achse ( Rollen, Nicken bzw. Gieren). Beim Rollen entspricht der Wert -1,0 auf der X-Achse der äußerst linken Joystickposition und der Wert 1,0 der äußerst rechten Position. Beim Nicken entspricht der Wert -1,0 der untersten Joystickposition und der Wert 1,0 der obersten Position. Beim Gieren entspricht der Wert -1,0 der äußersten gegen den Uhrzeigersinn gedrehten Position und der Wert 1,0 der äußersten im Uhrzeigersinn gedrehten Position.
+Der Joystick bietet eine analoge Lesevorgang zwischen-1,0 und 1,0 in der X-, Y-und Z-Achse ("Roll", "Pitch" bzw. "Yaw"). Für "Roll" entspricht der Wert "-1,0" der am weitesten links gerichteten Joystick Position, während der Wert 1,0 der äußersten rechten Position entspricht. Bei der Tonhöhe entspricht der Wert-1,0 der untersten Joystick Position, während der Wert 1,0 der obersten Position entspricht. Bei einem Wert von "-1,0" entspricht der Wert "-" der am weitesten gegen den Uhrzeigersinn verdrehten Position, während der Wert 1,0 der am weitesten Uhrzeigersinn enden Position entspricht.
 
-Auf allen Achsen ist der Wert ungefähr 0,0, wenn sich der Joystick in der Mittelstellung befindet, aber normalerwiese weicht der genaue Wert etwas davon ab, sogar in aufeinanderfolgenden Messwerten. Strategien zur Minimierung dieser Abweichung werden weiter unten in diesem Abschnitt behandelt.
+Bei allen Achsen ist der Wert ungefähr 0,0, wenn sich der Joystick in der Mittelpunkt Position befindet, aber es ist normal, dass der genaue Wert auch bei nachfolgenden Messungen variiert. Strategien zum mindern dieser Variation werden weiter unten in diesem Abschnitt erläutert.
 
-Der Wert beim Rollen des Joysticks wird aus der [FlightStickReading.Roll](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Roll)-Eigenschaft gelesen, der Wert beim Nicken aus der [FlightStickReading.Pitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Pitch)-Eigenschaft und der Wert beim Gieren aus der [FlightStickReading.Yaw](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Yaw)-Eigenschaft:
+Der Wert für den rollforwardrollup wird aus der [flightstickreading. Roll](/uwp/api/windows.gaming.input.flightstickreading.Roll) -Eigenschaft gelesen. der Wert der Tonhöhe wird aus der [flightstickreading. Pitch](/uwp/api/windows.gaming.input.flightstickreading.Pitch) -Eigenschaft gelesen, und der Wert der Yaw wird aus der [flightstickreading. Yaw](/uwp/api/windows.gaming.input.flightstickreading.Yaw) -Eigenschaft gelesen:
 
 ```cpp
 // Each variable will contain a value between -1.0 and 1.0.
@@ -148,11 +148,11 @@ float pitch = reading.Pitch;
 float yaw = reading.Yaw;
 ```
 
-Sie werden feststellen, dass die gelesenen Joystickwerte nicht zuverlässig einen neutralen 0,0-Wert liefern, wenn sich der Joystick in der Mittelstellung (und damit im Ruhezustand) befindet. Stattdessen erhalten Sie verschiedene Näherungswerte für 0,0, wann immer der Joystick bewegt wurde und wieder in die Mittelstellung zurückkehrt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorierenden Wertebereich nahe der idealen Mittelposition).
+Wenn Sie die Joystick Werte lesen, werden Sie bemerken, dass Sie nicht zuverlässig ein neutrales Lesen von 0,0 ergeben, wenn sich der Joystick in der Mitte befindet. Stattdessen werden bei jedem Verschieben des Joysticks unterschiedliche Werte in der Nähe von 0,0 erzeugt. Zur Kompensierung dieser Abweichungen können Sie einen kleinen _inaktiven Bereich_ implementieren (also einen zu ignorierenden Wertebereich nahe der idealen Mittelposition).
 
-Zur Implementierung eines inaktiven Bereichs können Sie beispielsweise ermitteln, wie weit sich der Joystick von der Mittelposition entfernt hat, und dabei die Werte ignorieren, die eine bestimmte, von Ihnen gewählte Entfernung unterschreiten. Die grobe Entfernung kann mit dem Satz des Pythagoras berechnet werden. Die Berechnung ist allerdings nicht exakt, da die Joystickwerte im Grunde polar und nicht planar sind. Dadurch entsteht ein radialer inaktiver Bereich.
+Eine Möglichkeit, eine deadzone zu implementieren, besteht darin, zu bestimmen, wie weit der Joystick von der Mitte verschoben wurde, und die Messwerte zu ignorieren, die sich in der Nähe der von Ihnen gewählten Entfernung befinden. Sie können die Entfernung ungefähr so berechnen, &mdash; dass Sie nicht genau ist, da die Joystick-Messwerte im Grunde Polar sind, nicht planar, &mdash; sondern nur mit dem Pythagorean-Theorem. Dadurch entsteht ein radialer inaktiver Bereich.
 
-Das folgende Beispiel zeigt einen radialen inaktiven Bereich, berechnet nach dem Satz des Pythagoras:
+Im folgenden Beispiel wird eine grundlegende radiale deadzone mit dem Pythagorean-Theorem veranschaulicht:
 
 ```cpp
 // Choose a deadzone. Readings inside this radius are ignored.
@@ -170,16 +170,16 @@ if ((oppositeSquared + adjacentSquared) < deadzoneSquared)
 }
 ```
 
-### <a name="reading-the-buttons-and-hat-switch"></a>Lesen der Tasten und des Mehrwegeschalters
+### <a name="reading-the-buttons-and-hat-switch"></a>Lesen der Schaltflächen und des hat-Schalters
 
-Jede der beiden Feuern-Tasten des Steuerknüppels liefert einen digitalen Wert, der angibt, ob die Taste gedrückt ist (unten) oder nicht gedrückt (oben) ist. Aus Effizienzgründen werden die Werte der Tasten nicht als einzelne boolesche Werte dargestellt, sondern in einem einzelnen Bitfeld zusammengefasst, das durch die Enumeration [FlightStickButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickbuttons) dargestellt wird. Darüber hinaus bietet der 8-Wegeschalter eine in einem einzelnen Bitfeld zusammengefasste Richtung, die durch die Enumeration [GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition) dargestellt wird.
+Jede der beiden Feuer Schaltflächen des flugsticks bietet ein digitales Lesematerial, das angibt, ob es gedrückt oder freigegeben wird (nach oben). Aus Effizienzgründen werden Schaltflächen Messwerte nicht als einzelne boolesche Werte dargestellt &mdash; , sondern alle in ein einzelnes Bitfeld gepackt, das durch die [flightstickbuttons](/uwp/api/windows.gaming.input.flightstickbuttons) -Enumeration dargestellt wird. Außerdem bietet der 8-Wege-hat-Schalter eine Richtung, die in ein einzelnes Bitfeld gepackt ist, das von der [gamecontrollerswitchposition](/uwp/api/windows.gaming.input.gamecontrollerswitchposition) -Enumeration repräsentiert wird.
 
 > [!NOTE]
-> Steuerknüppel sind mit zusätzlichen Tasten für die Benutzeroberflächennavigation ausgestattet, zum Beispiel mit den Tasten **Ansicht** und **Menü**. Diese Tasten sind nicht in der Enumeration `FlightStickButtons` enthalten und können nur gelesen werden, wenn auf den Steuerknüppel als Benutzeroberflächen-Navigationsgerät zugegriffen wird. Weitere Informationen finden Sie unter [Benutzeroberflächen-Navigationscontroller](ui-navigation-controller.md).
+> Flugsticks sind mit zusätzlichen Schaltflächen ausgestattet, die **für die Benutzer** Oberflächen Navigation verwendet **Menu** werden. Diese Schaltflächen sind nicht Teil der `FlightStickButtons` -Enumeration und können nur gelesen werden, indem Sie als Navigationsgerät für die Benutzeroberfläche auf den flugstick zugreifen. Weitere Informationen finden Sie unter [UI-Navigations Controller](ui-navigation-controller.md).
 
-Die Tastenwerte werden aus der [FlightStickReading.Buttons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Buttons)-Eigenschaft gelesen. Da diese Eigenschaft ein Bitfeld ist, wird eine bitweise Maskierung verwendet, um den Wert der Taste zu isolieren, an der Sie interessiert sind, Die Taste ist gedrückt (unten), wenn das entsprechende Bit festgelegt ist. Andernfalls ist sie nicht gedrückt (oben).
+Die Schaltflächen Werte werden aus der [flightstickreading. Buttons](/uwp/api/windows.gaming.input.flightstickreading.Buttons) -Eigenschaft gelesen. Da diese Eigenschaft ein Bitfeld ist, wird eine bitweise Maskierung verwendet, um den Wert der Taste zu isolieren, an der Sie interessiert sind, Wenn das entsprechende Bit festgelegt ist, wird die Schaltfläche gedrückt (unten). Andernfalls wird Sie freigegeben (up).
 
-Im folgenden Beispiel wird ermittelt, ob die Taste **FirePrimary** gedrückt ist:
+Im folgenden Beispiel wird bestimmt, ob die **fireprimary** -Schaltfläche gedrückt wird:
 
 ```cpp
 if (FlightStickButtons::FirePrimary == (reading.Buttons & FlightStickButtons::FirePrimary))
@@ -188,7 +188,7 @@ if (FlightStickButtons::FirePrimary == (reading.Buttons & FlightStickButtons::Fi
 }
 ```
 
-Im folgenden Beispiel wird ermittelt, ob die Taste **FirePrimary** nicht gedrückt ist:
+Im folgenden Beispiel wird bestimmt, ob die **fireprimary** -Schaltfläche freigegeben wird:
 
 ```cpp
 if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrimary))
@@ -197,11 +197,11 @@ if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrima
 }
 ```
 
-In einigen Fällen möchten Sie vielleicht ermitteln, ob eine Taste von „gedrückt“ zu „nicht gedrückt“ bzw. umgekehrt wechselt, oder ob mehrere Tasten gedrückt bzw. nicht gedrückt oder in bestimmter Weise angeordnet sind&mdash;einige gedrückt, andere nicht. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
+Manchmal möchten Sie möglicherweise ermitteln, ob eine Schaltfläche von gedrückter zu freigegeben oder freigegeben ist, ob mehrere Schaltflächen gedrückt oder freigegeben sind oder ob ein Satz von Schaltflächen auf eine bestimmte Weise angeordnet &mdash; ist, nicht. Informationen zum Ermitteln dieser Bedingungen finden Sie unter [Erkennen von Tastenübergängen](input-practices-for-games.md#detecting-button-transitions) sowie unter [Erkennen von komplexen Tastenanordnungen](input-practices-for-games.md#detecting-complex-button-arrangements).
 
-Der Wert des Mehrwegeschalters wird aus der [FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.HatSwitch)-Eigenschaft gelesen. Da diese Eigenschaft ebenfalls ein Bitfeld ist, wird erneut die bitweise Maskierung verwendet, um die Position des Mehrwegeschalters zu ermitteln.
+Der hat-Schalter Wert wird aus der [flightstickreading. hatswitch](/uwp/api/windows.gaming.input.flightstickreading.HatSwitch) -Eigenschaft gelesen. Da diese Eigenschaft auch ein Bitfeld ist, wird die bitweise Maskierung erneut verwendet, um die Position des hat-Schalters zu isolieren.
 
-Im folgenden Beispiel wird ermittelt, ob sich der Mehrwegeschalter in der oberen Stellung befindet:
+Im folgenden Beispiel wird ermittelt, ob sich der hat-Switch in der aufwärts-Position befindet:
 
 ```cpp
 if (GameControllerSwitchPosition::Up == (reading.HatSwitch & GameControllerSwitchPosition::Up))
@@ -210,7 +210,7 @@ if (GameControllerSwitchPosition::Up == (reading.HatSwitch & GameControllerSwitc
 }
 ```
 
-Im folgenden Beispiel wird ermittelt, ob sich der Mehrwegeschalter in der Mittelstellung befindet:
+Im folgenden Beispiel wird bestimmt, ob sich der hat-Switch in der Mitte befindet:
 
 ```cpp
 if (GameControllerSwitchPosition::Center == (reading.HatSwitch & GameControllerSwitchPosition::Center))
@@ -223,8 +223,8 @@ if (GameControllerSwitchPosition::Center == (reading.HatSwitch & GameControllerS
 
 The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) demonstrates how to use flight sticks and different kinds of input devices in tandem, as well as how these input devices behave as UI navigation controllers.-->
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-* [Windows.Gaming.Input.UINavigationController-Klasse](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
-* [Windows.Gaming.Input.IGameController-Schnittstelle](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Eingabe-Methoden für Spiele](input-practices-for-games.md)
+* [Windows. Gaming. Input. UINavigationController-Klasse](/uwp/api/windows.gaming.input.uinavigationcontroller)
+* [Windows. Gaming. Input. igamecontroller-Schnittstelle](/uwp/api/windows.gaming.input.igamecontroller)
+* [Eingabemethoden für Spiele](input-practices-for-games.md)

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Store Services, Microsoft Store Analytics-API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 51b0180d6b550cda082b5ee10530194824a48e33
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 8becf9149d0afa888d0024619df06f2103c7bf8b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846800"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158644"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Zugreifen auf Analytics-Daten mithilfe von Store Services
 
@@ -30,7 +30,7 @@ Dazu müssen folgende Schritte ausgeführt werden:
 
 Bevor Sie mit dem Schreiben von Code beginnen, um die Microsoft Store Analytics-API aufzurufen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind.
 
-* Sie (oder Ihre Organisation) müssen über ein Azure AD-Verzeichnis verfügen, und Ihnen müssen die Berechtigungen [globaler Administrator](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis gewährt worden sein. Wenn Sie Microsoft 365 oder andere Unternehmensdienste von Microsoft verwenden, verfügen Sie bereits über ein Azure AD-Verzeichnis. Andernfalls können Sie [eine neue Azure AD im Partner Center erstellen](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) , ohne dass zusätzliche Kosten anfallen.
+* Sie (oder Ihre Organisation) müssen über ein Azure AD-Verzeichnis verfügen, und Ihnen müssen die Berechtigungen [globaler Administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) für das Verzeichnis gewährt worden sein. Wenn Sie Microsoft 365 oder andere Unternehmensdienste von Microsoft verwenden, verfügen Sie bereits über ein Azure AD-Verzeichnis. Andernfalls können Sie [eine neue Azure AD im Partner Center erstellen](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) , ohne dass zusätzliche Kosten anfallen.
 
 * Sie müssen Ihrem Partner Center-Konto eine Azure AD Anwendung zuordnen, die Mandanten-ID und die Client-ID für die Anwendung abrufen und einen Schlüssel generieren. Die Azure AD-Anwendung stellt die APP oder den Dienst dar, von dem aus Sie die Microsoft Store Analytics-API aufzurufen möchten. Sie benötigen die Mandanten-ID, die Client-ID und den Schlüssel, um ein Azure AD-Zugriffstoken zu erhalten, das Sie an die API übergeben.
     > [!NOTE]
@@ -52,7 +52,7 @@ So ordnen Sie eine Azure AD Anwendung Ihrem Partner Center-Konto zu und rufen di
 
 Bevor Sie eine der Methoden in der Microsoft Store Analytics-API aufrufen, müssen Sie zuerst ein Azure AD Zugriffs Token abrufen, das Sie an den **Autorisierungs** Header jeder Methode in der API übergeben. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Nachdem das Token abgelaufen ist, können Sie es aktualisieren, um es in weiteren Aufrufen an die API zu verwenden.
 
-Befolgen Sie zum Abrufen des Zugriffstokens die Anweisungen unter [Aufrufe zwischen Diensten mithilfe von Clientanmeldeinformationen](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/), um eine HTTP POST-Anforderung an den ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```-Endpunkt zu senden. Hier ist ein Beispiel für eine Anforderung angegeben.
+Befolgen Sie zum Abrufen des Zugriffstokens die Anweisungen unter [Aufrufe zwischen Diensten mithilfe von Clientanmeldeinformationen](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow), um eine HTTP POST-Anforderung an den ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```-Endpunkt zu senden. Hier ist ein Beispiel für eine Anforderung angegeben.
 
 ```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -67,7 +67,7 @@ grant_type=client_credentials
 
 Geben Sie als Mandanten- * \_ ID* im Post-URI und in den Parametern für die *Client- \_ ID* und den * \_ geheimen Client* Schlüssel die Mandanten-ID, die Client-ID und den Schlüssel für die Anwendung an, die Sie im vorherigen Abschnitt aus Partner Center abgerufen haben. Für den Parameter *resource* müssen Sie ```https://manage.devcenter.microsoft.com``` angeben.
 
-Nachdem das Zugriffstoken abgelaufen ist, können Sie es aktualisieren, indem Sie [diese Anleitung](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens) befolgen.
+Nachdem das Zugriffstoken abgelaufen ist, können Sie es aktualisieren, indem Sie [diese Anleitung](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens) befolgen.
 
 <span id="call-the-windows-store-analytics-api" />
 
@@ -95,18 +95,18 @@ Die folgenden Analysemethoden sind für UWP-apps im Partner Center verfügbar.
 
 ### <a name="methods-for-desktop-applications"></a>Methoden für Desktop Anwendungen
 
-Die folgenden Analysemethoden können von Entwickler Konten verwendet werden, die zum [Windows-Desktop Anwendungsprogramm](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)gehören.
+Die folgenden Analysemethoden können von Entwickler Konten verwendet werden, die zum [Windows-Desktop Anwendungsprogramm](/windows/desktop/appxpkg/windows-desktop-application-program)gehören.
 
 | Szenario       | Methoden      |
 |---------------|--------------------|
 | Video |  <ul><li>[Abrufen von Desktopanwendungsinstallationen](get-desktop-app-installs.md)</li></ul> |
 | Blöcke |  <ul><li>[Abrufen von Upgradeblockierungen für Ihre Desktopanwendung](get-desktop-block-data.md)</li><li>[Abrufen von Details zur Upgradeblockierung für Ihre Desktopanwendung](get-desktop-block-data-details.md)</li></ul> |
 | Anwendungsfehler |  <ul><li>[Abrufen von Fehlerberichtsdaten für Ihre Desktopanwendung](get-desktop-application-error-reporting-data.md)</li><li>[Abrufen von Details zu einem Fehler in Ihrer Desktopanwendung](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Abrufen der Stapelüberwachung für einen Fehler in Ihrer Desktopanwendung](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Herunterladen der CAB-Datei bei einem Fehler in der Desktopanwendung](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| Einblicke | <ul><li>[Abrufen von internen Daten für die Desktopanwendung](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| Einblicke | <ul><li>[Abrufen von Analysedaten für Ihre Desktopanwendung](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>Methoden für Xbox Live-Dienste
 
-Die folgenden zusätzlichen Methoden sind für Entwickler Konten mit Spielen verfügbar, die [Xbox Live-Dienste](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md)verwenden.
+Die folgenden zusätzlichen Methoden sind für Entwickler Konten mit Spielen verfügbar, die [Xbox Live-Dienste](/gaming/xbox-live/developer-program-overview.md)verwenden.
 
 | Szenario       | Methoden      |
 |---------------|--------------------|
@@ -116,7 +116,7 @@ Die folgenden zusätzlichen Methoden sind für Entwickler Konten mit Spielen ver
 
 ### <a name="methods-for-hardware-and-drivers"></a>Methoden für Hardware und Treiber
 
-Entwickler Konten, die zum [Windows-Hardware-dashboardprogramm](https://docs.microsoft.com/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) gehören, haben Zugriff auf einen zusätzlichen Satz von Methoden zum Abrufen von Analysedaten für Hardware und Treiber. Weitere Informationen finden Sie unter [Hardware Dashboard-API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api).
+Entwickler Konten, die zum [Windows-Hardware-dashboardprogramm](/windows-hardware/drivers/dashboard/get-started-with-the-hardware-dashboard) gehören, haben Zugriff auf einen zusätzlichen Satz von Methoden zum Abrufen von Analysedaten für Hardware und Treiber. Weitere Informationen finden Sie unter [Hardware Dashboard-API](/windows-hardware/drivers/dashboard/dashboard-api).
 
 ## <a name="code-example"></a>Codebeispiel
 

@@ -1,30 +1,30 @@
 ---
 title: Texturressourcen
-description: Texturen sind eine Art von Ressource, die zum Rendern verwendet wird.
+description: Erfahren Sie mehr über das Rendering mit Direct3D-Textur Ressourcen und darüber, wie Sie mehrere Textur Mischungen mithilfe von Textur Stufen unterstützen.
 ms.assetid: 016F6CDA-D361-4E6B-BA99-49E915A19364
 keywords:
 - Texturressourcen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f52a032b7fe61df67aaf35c57b2ca64ac8eef6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d82a5525601c98812d6aab97f5f5d4399ceddc91
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57591385"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156184"
 ---
 # <a name="texture-resources"></a>Texturressourcen
 
 
-Texturen sind eine Art von Ressource, die zum Rendern verwendet wird.
+Texturen sind ein Ressourcentyp, der zum Rendern verwendet wird.
 
-## <a name="span-idrenderingwithtextureresourcesspanspan-idrenderingwithtextureresourcesspanspan-idrenderingwithtextureresourcesspanrendering-with-texture-resources"></a><span id="Rendering_with_Texture_Resources"></span><span id="rendering_with_texture_resources"></span><span id="RENDERING_WITH_TEXTURE_RESOURCES"></span>Rendern mit texturressourcen
+## <a name="span-idrendering_with_texture_resourcesspanspan-idrendering_with_texture_resourcesspanspan-idrendering_with_texture_resourcesspanrendering-with-texture-resources"></a><span id="Rendering_with_Texture_Resources"></span><span id="rendering_with_texture_resources"></span><span id="RENDERING_WITH_TEXTURE_RESOURCES"></span>Rendering mit Textur Ressourcen
 
 
-Direct3D unterstützt mehrere Texturmischungen mithilfe des Konzepts der Texturphasen. Jeder Texturphase enthält eine Textur und Vorgänge, die darauf angewendet werden können. Die Texturen in den Texturphasen bilden den Satz der aktuell verwendeten Texturen. Siehe [Texturvermischung](texture-blending.md). Der Zustand jeder einzelnen Textur ist in der Texturphase eingekapselt.
+Direct3D unterstützt mehrere Textur-Mischungen durch das Konzept von Textur Stufen. Jede Textur Phase enthält eine Textur und Vorgänge, die für die Textur ausgeführt werden können. Die Texturen in den Textur Stufen bilden den Satz der aktuellen Texturen. Siehe [Textur Mischung](texture-blending.md). Der Zustand jeder Textur wird in der Textur Phase gekapselt.
 
-Ihre Anwendung kann auch die Texturperspektive und die Texturfilterungszustände einrichten. Siehe [Texturfilterung](texture-filtering.md).
+Die Anwendung kann auch die Textur Perspektive und die Textur Filter Zustände festlegen. Siehe [Textur Filterung](texture-filtering.md).
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 

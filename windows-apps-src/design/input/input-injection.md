@@ -1,24 +1,24 @@
 ---
 Description: Simulieren und automatisieren Sie Eingaben von Geräten wie Tastatur, Maus, Toucheingabe, Stift und Gamepad in Ihren Windows-apps.
-title: Simulieren von Benutzereingaben durch Eingabe Injektion
+title: Simulieren der Benutzereingabe über die Eingabeeinfügung
 label: Input injection
 template: detail.hbs
 keywords: Gerät, Digitalisierer, Eingabe, Interaktion, Injektion
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7bcd63d940e53d90d925f83f27e4c77165a11650
-ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
+ms.openlocfilehash: f06414362b6a821233eabfb396ae59001f35c30d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84124118"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156894"
 ---
-# <a name="simulate-user-input-through-input-injection"></a>Simulieren von Benutzereingaben durch Eingabe Injektion
+# <a name="simulate-user-input-through-input-injection"></a>Simulieren der Benutzereingabe über die Eingabeeinfügung
 
 Simulieren und automatisieren Sie Benutzereingaben von Geräten wie Tastatur, Maus, Toucheingabe, Stift und Gamepad in Ihren Windows-Anwendungen.
 
-> **Wichtige APIs**: [ **Windows. UI. Input. Preview. Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **Wichtige APIs**: [ **Windows. UI. Input. Preview. Injection**](/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>Übersicht
 
@@ -43,7 +43,7 @@ Wenn Sie die eingabeinjection-APIs in Ihrer Windows-App verwenden möchten, müs
 |:--:|
 | *Einschleusung der Eingabe Eingabe* |
 
-In diesem Beispiel wird veranschaulicht, wie die eingabeinjection-APIs ([Windows. UI. Input. Preview. Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)) verwendet werden, um Mauseingabe Ereignisse in einem Bereich einer APP zu überwachen und entsprechende Fingereingabe Ereignisse in einer anderen Region zu simulieren.
+In diesem Beispiel wird veranschaulicht, wie die eingabeinjection-APIs ([Windows. UI. Input. Preview. Injection](/uwp/api/windows.ui.input.preview.injection)) verwendet werden, um Mauseingabe Ereignisse in einem Bereich einer APP zu überwachen und entsprechende Fingereingabe Ereignisse in einer anderen Region zu simulieren.
 
 **Dieses Beispiel aus [Input Injection Sample (Maus auf berühren)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip) herunterladen**
 
@@ -168,13 +168,13 @@ In diesem Beispiel wird veranschaulicht, wie die eingabeinjection-APIs ([Windows
 
 2. Als nächstes initialisieren wir unsere app.
     
-    In diesem Code Ausschnitt deklarieren wir unsere globalen Objekte und deklarieren Listener für Zeiger Ereignisse ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)) im Eingabebereich der Maus, die in den Click-Ereignissen der Schaltfläche als behandelt markiert werden könnten.
+    In diesem Code Ausschnitt deklarieren wir unsere globalen Objekte und deklarieren Listener für Zeiger Ereignisse ([AddHandler](/uwp/api/windows.ui.xaml.uielement.addhandler)) im Eingabebereich der Maus, die in den Click-Ereignissen der Schaltfläche als behandelt markiert werden könnten.
 
-    Das [inputinjetor](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) -Objekt stellt das virtuelle Eingabegerät zum Senden der Eingabedaten dar.
+    Das [inputinjetor](/uwp/api/windows.ui.input.preview.injection.inputinjector) -Objekt stellt das virtuelle Eingabegerät zum Senden der Eingabedaten dar.
 
     Im- `ContainerInput_PointerPressed` Handler wird die Funktion für die Berührungs Injektion aufgerufen.
 
-    Im- `ContainerInput_PointerReleased` Handler wird "uninitializetouchinjection" aufgerufen, um das [inputinjetor](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) -Objekt zu schließen.
+    Im- `ContainerInput_PointerReleased` Handler wird "uninitializetouchinjection" aufgerufen, um das [inputinjetor](/uwp/api/windows.ui.input.preview.injection.inputinjector) -Objekt zu schließen.
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -251,13 +251,13 @@ In diesem Beispiel wird veranschaulicht, wie die eingabeinjection-APIs ([Windows
     ```
 3. Hier ist die einschleusungs Funktion der Fingereingabe.
 
-    Zuerst wird [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) aufgerufen, um das [inputinjetor](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) -Objekt zu instanziieren.
+    Zuerst wird [TryCreate](/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) aufgerufen, um das [inputinjetor](/uwp/api/windows.ui.input.preview.injection.inputinjector) -Objekt zu instanziieren.
 
-    Dann rufen wir [initializetouchinjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) mit einem [injetedinputvisualizationmode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) von auf `Default` .
+    Dann rufen wir [initializetouchinjection](/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) mit einem [injetedinputvisualizationmode](/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) von auf `Default` .
 
-    Nach dem Berechnen der Einschleusung der Injektion rufen wir " [injetedinputtouchinfo](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo) " auf, um die Liste der einzufügenden Berührungspunkte zu initialisieren (in diesem Beispiel erstellen wir einen Fingerabdruck, der dem Mauseingabe Zeiger entspricht).
+    Nach dem Berechnen der Einschleusung der Injektion rufen wir " [injetedinputtouchinfo](/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo) " auf, um die Liste der einzufügenden Berührungspunkte zu initialisieren (in diesem Beispiel erstellen wir einen Fingerabdruck, der dem Mauseingabe Zeiger entspricht).
 
-    Schließlich wird " [injettouchinput](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.injecttouchinput) " zweimal aufgerufen, der erste für einen Zeiger nach unten und der zweite für einen Zeiger.
+    Schließlich wird " [injettouchinput](/uwp/api/windows.ui.input.preview.injection.inputinjector.injecttouchinput) " zweimal aufgerufen, der erste für einen Zeiger nach unten und der zweite für einen Zeiger.
 
     ```csharp
     /// <summary>
@@ -359,9 +359,9 @@ In diesem Beispiel wird veranschaulicht, wie die eingabeinjection-APIs ([Windows
     }
     ```
 
-4. Schließlich behandeln wir beliebige Schaltflächen- [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase) -Routing Ereignisse im Eingabe einschleusungs Bereich und aktualisieren die Benutzeroberfläche mit dem Namen der Schaltfläche, auf die geklickt wird.
+4. Schließlich behandeln wir beliebige Schaltflächen- [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase) -Routing Ereignisse im Eingabe einschleusungs Bereich und aktualisieren die Benutzeroberfläche mit dem Namen der Schaltfläche, auf die geklickt wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 ### <a name="topic-samples"></a>Themenbeispiele
 

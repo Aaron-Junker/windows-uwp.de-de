@@ -1,63 +1,63 @@
 ---
 title: Verloren gegangene Geräte
-description: Ein Direct3D-Gerät kann sich entweder im Zustand „betriebsbereit” oder im Zustand „nicht mehr auffindbar” befinden.
+description: Ein Direct3D-Gerät kann entweder einen Betriebsstatus oder einen verlorenen Status aufweisen.
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
 keywords:
 - Verloren gegangene Geräte
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a280d07ab7d715adaa7da941be641cd54e24443
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d7f2c06564e0477fcec67418cae739e2fae123d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371013"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158854"
 ---
 # <a name="lost-devices"></a>Verloren gegangene Geräte
 
 
-Ein Direct3D-Gerät kann sich entweder im Zustand „betriebsbereit” oder im Zustand „nicht mehr auffindbar” befinden. Der Zustand *Operational* ist der normalen Zustand des Geräts. In diesem wird das Gerät ausgeführt die Renderingdarstellung läuft wie erwartet. Das Gerät wechselt zum *Lost*-Zustand sobald ein Ereignis, z. B. den Verlust des Tastaturfokus in einer Vollbildanwendung, auftritt und das Rendering somit unmöglich wird. Der verlorene Zustand gekennzeichnet sich durch einen nicht angezeigten Ausfall aller Rendering-Vorgänge, was dazu führt, dass die Renderingmethoden möglicherweise Erfolgscodes zurückgeben, obwohl das Rendering fehlschlägt.
+Ein Direct3D-Gerät kann entweder einen Betriebsstatus oder einen verlorenen Status aufweisen. Der *Betriebs* Status ist der normale Status des Geräts, auf dem das Gerät ausgeführt wird, und zeigt das gesamte Rendering erwartungsgemäß an. Das Gerät wechselt in den *verlorenen* Zustand, wenn ein Ereignis, z. b. der Verlust des Tastaturfokus in einer Vollbildanwendung, dazu führt, dass das Rendering unmöglich wird. Der Verlust Status wird durch den stillen Ausfall aller Renderingvorgänge gekennzeichnet, was bedeutet, dass die Renderingmethoden Erfolgs Codes zurückgeben können, auch wenn die Renderingvorgänge fehlschlagen.
 
-Standardmäßig werden nicht alle Szenarien angegeben, durch die ein Gerät nicht mehr auffindbar sein kann. Einige typische Beispiele sind der Fokusverlust wenn z. B. der Benutzer ALT+TAB drückt oder wenn ein Systemdialogfeld initialisiert wird. Geräte können auch durch ein Energieverwaltungsereignis oder wenn eine andere Anwendung den Vollbildmodus startet nicht mehr auffindbar sein. Darüber hinaus versetzen Fehler beim Zurücksetzen eines Geräts das Gerät in den nicht mehr auffindbaren Zustand.
+Der gesamte Satz von Szenarien, die dazu führen können, dass ein Gerät verloren geht, ist nicht angegeben. Einige typische Beispiele sind z. b. der Fokus Fokus, z. b. wenn der Benutzer Alt + Tab drückt oder wenn ein System Dialogfeld initialisiert wird. Geräte können auch aufgrund eines Energie Verwaltungs Ereignisses oder bei einer anderen Anwendung, die den voll Bild Betrieb annimmt, verloren gehen. Außerdem versetzt jeder Fehler beim Wiederherstellen eines Geräts das Gerät in einen verlorenen Zustand.
 
-Alle von [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) abgeleiteten Methoden funktionieren garantiert, wenn ein Gerät nicht mehr auffindbar ist. Wenn ein Gerät nicht mehr auffindbar ist, bietet jede Funktion in der Regel die folgenden drei Optionen:
+Alle Methoden, die von [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown) abgeleitet werden, funktionieren garantiert, nachdem ein Gerät verloren gegangen ist. Nach dem Verlust des Geräts verfügt jede Funktion in der Regel über die folgenden drei Optionen:
 
--   Fehlschlagen mit dem Fehler "Gerät nicht mehr auffindbar" – Dies bedeutet, dass die Anwendung erkennen muss, dass das Gerät nicht mehr auffindbar ist, damit die Anwendung identifizieren kann, dass etwas nicht wie erwartet abläuft.
--   Ohne Meldung fehl, Zurückgeben von S\_OK oder einen anderen Rückgabecode - Wenn eine Funktion im Hintergrund fehlschlägt, die Anwendung in der Regel kann nicht unterschieden zwischen dem Ergebnis von "Success" und "Automatische Fehler".
--   Einen Rückgabecode zurückgeben.
+-   Fehler beim Auftreten eines Fehlers mit dem Hinweis "das Gerät ist verloren". Dies bedeutet, dass die Anwendung erkennen muss, dass das Gerät verloren gegangen ist, damit die Anwendung erkennt, dass etwas nicht wie erwartet ausgeführt wird.
+-   Im Hintergrund tritt ein Fehler auf, oder es wird ein \_ beliebiger anderer Rückgabecode zurückgegeben. Wenn eine Funktion im Hintergrund fehlschlägt, kann die Anwendung im Allgemeinen nicht zwischen dem Ergebnis "Erfolg" und einem "stillen Fehler" unterscheiden.
+-   Rückgabecode zurückgeben.
 
-## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>Reagieren auf ein verloren gegangenes Gerät
-
-
-Ein nicht mehr auffindbares Gerät muss Ressourcen (einschließlich Videospeicherressourcen) neu erstellen, nachdem es zurückgesetzt wurde. Wenn ein Gerät nicht mehr auffindbar ist, schickt die Anwendung eine Abfrage an das Gerät, um festzustellen, ob dessen betriebsbereiter Zustand wiederhergestellt werden kann. Wenn dies nicht der Fall ist, wartet die Anwendung, bis das Gerät wiederhergestellt werden kann.
-
-Wenn das Gerät wiederhergestellt werden kann, bereitet die Anwendung das Gerät vor, indem sie alle Videospeicherressourcen und Swapchains vernichtet. Das Zurücksetzen ist die einzige effektive Methode bei einem nicht mehr auffindbaren Gerät, und es ist die einzige Möglichkeit, mit der eine Anwendung den Zustand des Geräts von „nicht mehr auffindbar” in „betriebsbereit” ändern kann. Das Zurücksetzen schlägt fehl, solange die Anwendung nicht alle reservierten Ressourcen freigibt, einschließlich Renderzielen und Tiefen/Schablonen-Oberflächen.
-
-In den meisten Fällen geben die häufigen Aufrufe von Direct3D keine Informationen darüber zurück, ob das Gerät nicht mehr auffindbar ist. Die Anwendung kann weiterhin Renderingmethoden aufrufen, ohne eine Benachrichtigung über ein nicht auffindbares Gerät zu erhalten. Intern werden diese Vorgänge bis zum Zurücksetzen des Geräts in den betriebsbereiten Zustand verworfen.
-
-## <a name="span-idlockingoperationsspanspan-idlockingoperationsspanspan-idlockingoperationsspanlocking-operations"></a><span id="Locking_Operations"></span><span id="locking_operations"></span><span id="LOCKING_OPERATIONS"></span>Sperren-Vorgänge
+## <a name="span-idresponding_to_a_lost_devicespanspan-idresponding_to_a_lost_devicespanspan-idresponding_to_a_lost_devicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>Reagieren auf ein verlorenes Gerät
 
 
-Direct3D leistet intern ausreichend Arbeit, um sicherzustellen, dass ein Sperrvorgang erfolgreich ausgeführt wird, wenn ein Gerät nicht mehr auffindbar ist. Es ist jedoch nicht gewährleistet, dass die Daten der Videospeicherressource während des Sperrvorgangs korrekt sein werden. Es ist gewährleistet, dass kein Fehlercode zurückgegeben wird. So können Anwendungen geschrieben werden, ohne während des Sperrvorgangs Bedenken wegen des nicht mehr vorhandenen Geräts zu haben.
+Ein verlorenes Gerät muss Ressourcen (einschließlich Videospeicher Ressourcen) neu erstellen, nachdem es zurückgesetzt wurde. Wenn ein Gerät verloren geht, wird das Gerät von der Anwendung abgefragt, um festzustellen, ob es im Betriebszustand wieder hergestellt werden kann. Andernfalls wartet die Anwendung, bis das Gerät wieder hergestellt werden kann.
 
-## <a name="span-idresourcesspanspan-idresourcesspanspan-idresourcesspanresources"></a><span id="Resources"></span><span id="resources"></span><span id="RESOURCES"></span>Ressourcen
+Wenn das Gerät wieder hergestellt werden kann, bereitet die Anwendung das Gerät vor, indem alle Videospeicher Ressourcen und alle Austausch Ketten zerstört werden. Das Zurücksetzen ist das einzige Verfahren, das eine Auswirkung hat, wenn ein Gerät verloren geht, und es ist die einzige Möglichkeit, mit der eine Anwendung das Gerät von einem Verlust in einen Betriebszustand wechseln kann. Die zurück Setzung schlägt fehl, es sei denn, die Anwendung gibt alle zugeordneten Ressourcen frei, einschließlich Renderziele und tiefen Schablone.
 
+Meistens werden bei den Hochleistungs Aufrufen von Direct3D keine Informationen darüber zurückgegeben, ob das Gerät verloren gegangen ist. Die Anwendung kann weiterhin Renderingmethoden aufzurufen, ohne eine Benachrichtigung über ein verlorenes Gerät zu erhalten. Intern werden diese Vorgänge verworfen, bis das Gerät auf den Betriebszustand zurückgesetzt wird.
 
-Ressourcen können Videospeicher verbrauchen. Da ein nicht auffindbares Gerät von dem Videospeicher des Adapters getrennt wird, ist es nicht möglich, die Zuordnung von Videospeicher zu gewährleisten, wenn das Gerät nicht mehr auffindbar ist. Daher werden alle Erstellungsmethoden für Ressourcen integriert, um erfolgreich ausgeführt zu werden, aber es wird tatsächlich nur Dummy-Systemspeicher zugeordnet. Da alle Videospeicherressourcen vernichtet werden müssen, bevor die Größe des Geräts geändert werden kann, entsteht nicht das Problem, dass zu viel Videospeicher zugeteilt wird. Diese Oberflächen-Platzhalter ermöglichen es, dass Sperr- und Kopiervorgänge normal funktionieren, bis die Anwendung erkennt, dass das Gerät nicht mehr auffindbar ist.
-
-Aller Videoarbeitsspeicher muss freigegeben werden, bevor ein Gerät aus dem Zustand „nicht mehr auffindbar” in den betriebsbereiten Zustand zurückgesetzt werden kann. Andere Zustandsdaten werden durch die Umstellung auf den betriebsbereiten Zustand automatisch gelöscht.
-
-Es wird empfohlen, Anwendungen mit einem einzelnen Codepfad zum Reagieren auf nicht mehr auffindbare Geräte zu entwickeln. Dieser Codepfad ähnelt oder ist identisch mit dem Codepfad zum Initialisieren des Geräts beim Starten.
-
-## <a name="span-idretrieveddataspanspan-idretrieveddataspanspan-idretrieveddataspanretrieved-data"></a><span id="Retrieved_Data"></span><span id="retrieved_data"></span><span id="RETRIEVED_DATA"></span>Die abgerufenen Daten
+## <a name="span-idlocking_operationsspanspan-idlocking_operationsspanspan-idlocking_operationsspanlocking-operations"></a><span id="Locking_Operations"></span><span id="locking_operations"></span><span id="LOCKING_OPERATIONS"></span>Sperr Vorgänge
 
 
-Direct3D ermöglicht es Anwendungen, Textur und Renderstatus anhand eines einzelnen Pass-Rendering der Hardware zu überprüfen.
+Intern führt Direct3D ausreichend Arbeit aus, um sicherzustellen, dass ein Sperr Vorgang erfolgreich ist, nachdem ein Gerät verloren gegangen ist. Es ist jedoch nicht sichergestellt, dass die Daten der Videospeicher Ressource während des Sperr Vorgangs korrekt sind. Es ist sichergestellt, dass kein Fehlercode zurückgegeben wird. Dies ermöglicht das Schreiben von Anwendungen, ohne dass bei einem Sperr Vorgang Geräte Verluste auftreten müssen.
 
-Direct3D ermöglicht es Anwendungen auch, generierte oder zuvor geschriebene Bilder von Videospeicherressourcen auf permanenten Systemspeicher Ressourcen zu kopieren. Da die Quellbilder solcher Übertragungen zu einem beliebigen Zeitpunkt verloren gehen können, ermöglicht Direct3D das Fehlschlagen solcher Kopiervorgänge, wenn das Gerät nicht mehr auffindbar ist.
+## <a name="span-idresourcesspanspan-idresourcesspanspan-idresourcesspanresources"></a><span id="Resources"></span><span id="resources"></span><span id="RESOURCES"></span>Verfügt
 
-Kopiervorgänge können fehlschlagen, da keine primäre Oberfläche vorhanden ist, wenn das Gerät nicht mehr auffindbar ist. Swapchains können ebenfalls fehlschlagen, da kein Hintergrundpuffer erstellt werden kann, wenn das Gerät nicht mehr auffindbar ist.
+
+Ressourcen können Videospeicher verbrauchen. Da ein verlorener Gerät von dem Videospeicher getrennt ist, der sich im Besitz des Adapters befindet, ist es nicht möglich, die Zuordnung von Video Arbeitsspeicher zu gewährleisten, wenn das Gerät verloren geht. Folglich werden alle Methoden zum Erstellen von Ressourcen so implementiert, dass Sie erfolgreich sind, aber tatsächlich nur den Pseudo System Arbeitsspeicher zuordnen. Da jede Videospeicher Ressource vor dem Ändern der Größe des Geräts zerstört werden muss, besteht kein Problem mit der Überbelegung von Video Arbeitsspeicher. Diese Pseudo Oberflächen ermöglichen das ordnungsgemäße Funktionieren von Sperr-und Kopier Vorgängen, bis die Anwendung erkennt, dass das Gerät verloren gegangen ist.
+
+Der gesamte Videospeicher muss freigegeben werden, bevor ein Gerät von einem verlorenen in einen Betriebsstatus zurückgesetzt werden kann. Andere Zustandsdaten werden automatisch durch den Übergang in einen Betriebsstatus zerstört.
+
+Es wird empfohlen, Anwendungen mit einem einzigen Codepfad zu entwickeln, um auf Geräte Verluste zu reagieren. Dieser Codepfad ist wahrscheinlich ähnlich, wenn er nicht identisch ist, mit dem Codepfad, der zum Initialisieren des Geräts beim Start verwendet wird.
+
+## <a name="span-idretrieved_dataspanspan-idretrieved_dataspanspan-idretrieved_dataspanretrieved-data"></a><span id="Retrieved_Data"></span><span id="retrieved_data"></span><span id="RETRIEVED_DATA"></span>Abgerufene Daten
+
+
+Direct3D ermöglicht Anwendungen das Überprüfen von Textur-und renderzuständen mit einem einzelnen Pass Rendering durch die Hardware.
+
+Direct3D ermöglicht Anwendungen auch das Kopieren generierter oder zuvor geschriebener Images aus Video-Memory-Ressourcen in nicht flüchtige Systemspeicher Ressourcen. Da die Quell Abbilder dieser Übertragungen jederzeit verloren gehen können, kann Direct3D dazu führen, dass solche Kopiervorgänge fehlschlagen, wenn das Gerät verloren geht.
+
+Bei Kopier Vorgängen kann ein Fehler auftreten, da keine primäre Oberfläche vorhanden ist, wenn das Gerät verloren geht. Das Erstellen von Austausch Ketten kann auch fehlschlagen, weil ein BackBuffer nicht erstellt werden kann, wenn das Gerät verloren geht.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
@@ -67,7 +67,3 @@ Kopiervorgänge können fehlschlagen, da keine primäre Oberfläche vorhanden is
  
 
  
-
-
-
-

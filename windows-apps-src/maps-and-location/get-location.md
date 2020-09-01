@@ -1,26 +1,26 @@
 ---
-title: Abrufen der Position eines Benutzers
+title: Abrufen des Benutzerstandorts
 description: Ermitteln Sie den Standort des Benutzers, und reagieren Sie auf Änderungen des Standorts. Der Zugriff auf die Position eines Benutzers wird über die Datenschutzeinstellungen in der Einstellungs-App verwaltet. In diesem Thema wird auch gezeigt, wie Sie überprüfen, ob Ihre App über die Berechtigung zum Zugriff auf den Benutzerstandort verfügt.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ms.date: 11/28/2017
 ms.topic: article
-keywords: Windows 10, UWP, Karte, Standort, Positionsfunktion
+keywords: Windows 10, UWP, map, Location, Location-Funktion
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f605164a496d00113b73ffeae669e3ff145535
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 79c34af48cf1b2d860d2a170fd642ef05945c15d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260396"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158714"
 ---
-# <a name="get-the-users-location"></a>Abrufen der Position eines Benutzers
+# <a name="get-the-users-location"></a>Abrufen des Benutzerstandorts
 
 
 
 
 Ermitteln Sie den Standort des Benutzers, und reagieren Sie auf Änderungen des Standorts. Der Zugriff auf die Position eines Benutzers wird über die Datenschutzeinstellungen in der Einstellungs-App verwaltet. In diesem Thema wird auch gezeigt, wie Sie überprüfen, ob Ihre App über die Berechtigung zum Zugriff auf den Benutzerstandort verfügt.
 
-**Tipp** Um mehr über das Zugreifen auf den Benutzerstandort in Ihrer App zu erfahren, laden Sie das folgende Beispiel aus den [API-Beispielen für die Universelle Windows-Plattform](https://github.com/Microsoft/Windows-universal-samples) auf GitHub herunter.
+**Tipp** Um mehr über das Zugreifen auf den Benutzerstandort in Ihrer App zu erfahren, laden Sie das folgende Beispiel aus dem [Repository Beispiele für Universelle Windows-Plattform](https://github.com/Microsoft/Windows-universal-samples) auf GitHub herunter.
 
 -   [Kartenbeispiel für die Universelle Windows-Plattform (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
@@ -28,7 +28,7 @@ Ermitteln Sie den Standort des Benutzers, und reagieren Sie auf Änderungen des 
 
 
 1.  Doppelklicken Sie im **Projektmappen-Explorer** auf **package.appxmanifest**, und wählen Sie die Registerkarte **Funktionen** aus.
-2.  Überprüfen Sie das Kontrollkästchen **Position** in der Liste **Funktionen**. Dadurch wird der Paketmanifestdatei die `location`-Gerätefunktion hinzugefügt.
+2.  Aktivieren Sie in der Liste der **Funktionen** das Kontrollkästchen für **Speicherort**. Dadurch wird der Paketmanifestdatei die `location`-Gerätefunktion hinzugefügt.
 
 ```XML
   <Capabilities>
@@ -40,11 +40,11 @@ Ermitteln Sie den Standort des Benutzers, und reagieren Sie auf Änderungen des 
 ## <a name="get-the-current-location"></a>Abrufen der aktuellen Position
 
 
-In diesem Abschnitt erfahren Sie, wie Sie den geografische Standort eines Benutzers über APIs im [**Windows.Devices.Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)-Namespace feststellen.
+In diesem Abschnitt erfahren Sie, wie Sie den geografische Standort eines Benutzers über APIs im [**Windows.Devices.Geolocation**](/uwp/api/Windows.Devices.Geolocation)-Namespace feststellen.
 
-### <a name="step-1-request-access-to-the-users-location"></a>Schritt 1: Anfordern des Zugriffs auf die Position des Benutzers
+### <a name="step-1-request-access-to-the-users-location"></a>Schritt 1: Anfordern des Zugriffs auf die Position des Benutzers
 
-Wenn Ihre APP keine grobe Standort Funktion hat (siehe Hinweis), müssen Sie den Zugriff auf den Speicherort des Benutzers mithilfe der [**requestaccessasync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) -Methode anfordern, bevor Sie versuchen, auf den Speicherort zuzugreifen. Sie müssen die **RequestAccessAsync**-Methode aus dem UI-Thread aufrufen, und die App muss sich im Vordergrund befinden. Ihre APP kann erst dann auf die Standortinformationen des Benutzers zugreifen, wenn der Benutzer die Berechtigung für Ihre APP erteilt hat.\*
+Wenn Ihre APP keine grobe Standort Funktion hat (siehe Hinweis), müssen Sie den Zugriff auf den Speicherort des Benutzers mithilfe der [**requestaccessasync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) -Methode anfordern, bevor Sie versuchen, auf den Speicherort zuzugreifen. Sie müssen die **RequestAccessAsync**-Methode aus dem UI-Thread aufrufen, und die App muss sich im Vordergrund ausgeführt werden. Ihre APP kann erst dann auf die Standortinformationen des Benutzers zugreifen, wenn der Benutzer die Berechtigung für Ihre APP erteilt hat.\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -54,13 +54,13 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 
 
-Die [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)-Methode fordert den Benutzer auf, den Zugriff auf seinen Standort zu genehmigen. Der Benutzer wird nur einmal (pro App) aufgefordert. Nachdem die Berechtigung erstmalig gewährt oder verweigert wurde, fordert die Methode keine Berechtigung mehr vom Benutzer an. Um das Ändern von Standortberechtigungen nach der Aufforderung für den Benutzer zu vereinfachen, sollten Sie einen Link zu den Standorteinstellungen bereitstellen (s. wie weiter unten in diesem Thema).
+Die [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)-Methode fordert den Benutzer auf, den Zugriff auf seinen Standort zu genehmigen. Der Benutzer wird nur einmal (pro App) aufgefordert. Nachdem die Berechtigung erstmalig gewährt oder verweigert wurde, fordert die Methode keine Berechtigung mehr vom Benutzer an. Um das Ändern von Standortberechtigungen nach der Aufforderung für den Benutzer zu vereinfachen, sollten Sie einen Link zu den Standorteinstellungen bereitstellen (s. wie weiter unten in diesem Thema).
 
->Hinweis: mit dem Feature "grobe Speicherort" kann Ihre APP einen absichtlich verfugenden (unpräzisen) Speicherort abrufen, ohne die explizite Berechtigung des Benutzers zu erhalten (der systemweite Schalter muss **jedoch weiterhin aktiviert sein)** . Informationen dazu, wie Sie eine grobe Position in Ihrer APP verwenden, finden Sie in der [**allowfallbacktoallowlesspositionen**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) -Methode in der [**GeoLocator**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator) -Klasse.
+>Hinweis: mit dem Feature "grobe Speicherort" kann Ihre APP einen absichtlich verfugenden (unpräzisen) Speicherort abrufen, ohne die explizite Berechtigung des Benutzers zu erhalten (der systemweite Schalter muss **jedoch weiterhin aktiviert sein)**. Informationen dazu, wie Sie eine grobe Position in Ihrer APP verwenden, finden Sie in der [**allowfallbacktoallowlesspositionen**](/uwp/api/windows.devices.geolocation.geolocator.allowfallbacktoconsentlesspositions) -Methode in der [**GeoLocator**](/uwp/api/windows.devices.geolocation.geolocator) -Klasse.
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>Schritt 2: Abrufen des Benutzerstandorts und Registrieren für Änderungen von Standortberechtigungen
 
-Die [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)-Methode liest einmalig den aktuellen Standort. Hier wird eine **switch**-Anweisung mit **accessStatus** (aus dem vorherigen Beispiel) verwendet, die nur aktiv ist, wenn der Zugriff auf den Standort des Benutzers zugelassen wird. Wenn der Zugriff auf die Position des Benutzers zugelassen wurde, erstellt der Code ein [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt, führt eine Registrierung für Änderungen von Standortberechtigungen aus und fordert den Standort des Benutzers an.
+Die [**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)-Methode liest einmalig den aktuellen Standort. Hier wird eine **switch**-Anweisung mit **accessStatus** (aus dem vorherigen Beispiel) verwendet, die nur aktiv ist, wenn der Zugriff auf den Standort des Benutzers zugelassen wird. Wenn der Zugriff auf die Position des Benutzers zugelassen wurde, erstellt der Code ein [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt, führt eine Registrierung für Änderungen von Standortberechtigungen aus und fordert den Standort des Benutzers an.
 
 ```csharp
 switch (accessStatus)
@@ -96,7 +96,7 @@ switch (accessStatus)
 
 ### <a name="step-3-handle-changes-in-location-permissions"></a>Schritt 3: Behandeln von Änderungen von Standortberechtigungen
 
-Das [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt löst das [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignis aus, um anzugeben, dass sich die Standorteinstellungen des Benutzers geändert haben. Das Ereignis übergibt den entsprechenden Status über die Eigenschaft **Status** des Arguments (des Typs [**PositionStatus**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.PositionStatus). Beachten Sie, dass diese Methode nicht vom UI-Thread aufgerufen wird und das [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt die UI-Änderungen aufruft.
+Das [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt löst das [**StatusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignis aus, um anzugeben, dass sich die Standorteinstellungen des Benutzers geändert haben. Das Ereignis übergibt den entsprechenden Status über die Eigenschaft **Status** des Arguments (des Typs [**PositionStatus**](/uwp/api/Windows.Devices.Geolocation.PositionStatus). Beachten Sie, dass diese Methode nicht vom UI-Thread aufgerufen wird und das [**Dispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt die UI-Änderungen aufruft.
 
 ```csharp
 using Windows.UI.Core;
@@ -165,18 +165,18 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 ## <a name="respond-to-location-updates"></a>Reagieren auf Standortupdates
 
 
-In diesem Abschnitt wird beschrieben, wie Sie mit dem [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis Standortupdates des Benutzers über einen bestimmten Zeitraum empfangen. Da der Benutzer den Zugriff auf den Standort jederzeit widerrufen kann, ist es wichtig, [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) aufzurufen und das [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignis zu verwenden wie im vorherigen Abschnitt dargestellt.
+In diesem Abschnitt wird beschrieben, wie Sie mit dem [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis Standortupdates des Benutzers über einen bestimmten Zeitraum empfangen. Da der Benutzer den Zugriff auf den Standort jederzeit widerrufen kann, ist es wichtig, [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) aufzurufen und das [**StatusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged)-Ereignis zu verwenden wie im vorherigen Abschnitt dargestellt.
 
-In diesem Abschnitt wird vorausgesetzt, dass Sie die Standortfunktion bereits aktiviert und [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) im UI-Thread der Vordergrund-App aufgerufen haben.
+In diesem Abschnitt wird vorausgesetzt, dass Sie die Standortfunktion bereits aktiviert und [**RequestAccessAsync**](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync) im UI-Thread der Vordergrund-App aufgerufen haben.
 
 ### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>Schritt 1: Definieren des Berichtsintervalls und Registrieren für Standortupdates
 
-In diesem Beispiel wird eine **switch**-Anweisung mit **accessStatus** (aus dem vorherigen Beispiel) verwendet, die nur aktiv ist, wenn der Zugriff auf den Standort eines Benutzers zugelassen wird. Wenn der Zugriff auf den Standort des Benutzers zugelassen wurde, erstellt der Code ein [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt, gibt den Nachverfolgungstyp an und führt eine Registrierung für Standortupdates aus.
+In diesem Beispiel wird eine **switch**-Anweisung mit **accessStatus** (aus dem vorherigen Beispiel) verwendet, die nur aktiv ist, wenn der Zugriff auf den Standort eines Benutzers zugelassen wird. Wenn der Zugriff auf den Standort des Benutzers zugelassen wurde, erstellt der Code ein [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt, gibt den Nachverfolgungstyp an und führt eine Registrierung für Standortupdates aus.
 
-Das [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt kann das [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis basierend auf einer Standortänderung (entfernungsbasierte Nachverfolgung) oder Zeitänderung (zeitraumbasierte Nachverfolgung) auslösen.
+Das [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt kann das [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis basierend auf einer Standortänderung (entfernungsbasierte Nachverfolgung) oder Zeitänderung (zeitraumbasierte Nachverfolgung) auslösen.
 
--   Für die entfernungsbasierte Nachverfolgung legen Sie die [**MovementThreshold**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.movementthreshold)-Eigenschaft fest.
--   Für die zeitraumbasierte Nachverfolgung legen Sie die [**ReportInterval**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.reportinterval)-Eigenschaft fest.
+-   Für die entfernungsbasierte Nachverfolgung legen Sie die [**MovementThreshold**](/uwp/api/windows.devices.geolocation.geolocator.movementthreshold)-Eigenschaft fest.
+-   Für die zeitraumbasierte Nachverfolgung legen Sie die [**ReportInterval**](/uwp/api/windows.devices.geolocation.geolocator.reportinterval)-Eigenschaft fest.
 
 Wenn keine der beiden Eigenschaften festgelegt wird, wird jede 1 Sekunde ein Standort zurückgegeben (entsprechend `ReportInterval = 1000`). Hier wird ein Berichtsintervall von 2 Sekunden (`ReportInterval = 2000`) verwendet.
 ```csharp
@@ -216,7 +216,7 @@ switch (accessStatus)
 
 ### <a name="step-2-handle-location-updates"></a>Schritt 2: Behandeln von Standortupdates
 
-Das [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt löst das [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis aus, um anzugeben, dass sich der Benutzerstandort geändert hat bzw. dass Zeit vergangen ist, je nachdem, welche Eigenschaft Sie konfiguriert haben. Dieses Ereignis übergibt den entsprechende Standort über die Eigenschaft **Position** des Arguments (des Typs [**Geoposition**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geoposition). In diesem Beispiel wird die Methode nicht vom UI-Thread aufgerufen. Die UI-Änderungen werden durch das [**Dispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt aufgerufen.
+Das [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt löst das [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged)-Ereignis aus, um anzugeben, dass sich der Benutzerstandort geändert hat bzw. dass Zeit vergangen ist, je nachdem, welche Eigenschaft Sie konfiguriert haben. Dieses Ereignis übergibt den entsprechende Standort über die Eigenschaft **Position** des Arguments (des Typs [**Geoposition**](/uwp/api/Windows.Devices.Geolocation.Geoposition). In diesem Beispiel wird die Methode nicht vom UI-Thread aufgerufen. Die UI-Änderungen werden durch das [**Dispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)-Objekt aufgerufen.
 
 ```csharp
 using Windows.UI.Core;
@@ -248,7 +248,7 @@ Wenn Ihre App gemäß den Standortdatenschutzeinstellungen nicht auf den Standor
 </TextBlock>
 ```
 
-Alternativ kann Ihre App die [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)-Methode aufrufen, um die **Einstellungs**-App per Code zu starten. Weitere Informationen finden Sie unter [Starten der Einstellungs-App von Windows](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app).
+Alternativ kann Ihre App die [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)-Methode aufrufen, um die **Einstellungs**-App per Code zu starten. Weitere Informationen finden Sie unter [Starten der Einstellungs-App von Windows](../launch-resume/launch-settings-app.md).
 
 ```csharp
 using Windows.System;
@@ -261,12 +261,12 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Bevor Ihre App auf die Position des Benutzers zugreifen kann, muss **Position** auf dem Gerät aktiviert sein. Vergewissern Sie sich in der **Einstellungs**-App, dass die folgenden **Datenschutzeinstellungen für den Standort** aktiviert sind:
 
--   **Speicherort für dieses Gerät..** . ist aktiviert **(** nicht zutreffend in Windows 10 Mobile)
+-   **Position dieses Geräts...** ist **aktiviert** (gilt nicht für Windows 10 Mobile)
 -   Die Einstellung **Position** der Positionsdienste ist **aktiviert**.
 -   Ihre App hat unter **Wählen Sie Apps aus, die Ihre Position verwenden dürfen** die Einstellung **Ein**.
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [UWP-Geolocation-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
-* [Entwurfs Richtlinien für Geofencing](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-for-geofencing)
-* [Entwurfsrichtlinien für Apps mit Positionsbestimmung](https://docs.microsoft.com/windows/uwp/maps-and-location/guidelines-and-checklist-for-detecting-location)
+* [Entwurfsrichtlinien für Geofencing](./guidelines-for-geofencing.md)
+* [Entwurfsrichtlinien für Apps mit Positionsbestimmung](./guidelines-and-checklist-for-detecting-location.md)

@@ -1,31 +1,31 @@
 ---
-description: Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Xbox Live Spielehubdaten abzurufen.
-title: Abrufen von Xbox Live Spielehubdaten
+description: Verwenden Sie diese Methode in der Microsoft Store Analytics-API, um Xbox Live Game Hub-Daten zu erhalten.
+title: Get Xbox Live Game Hub-Daten
 ms.date: 06/04/2018
 ms.topic: article
-keywords: Windows 10, Uwp, Store-Diensten, Microsoft Store-Analyse-API, Xbox Live Analyse, Spielehubs
+keywords: Windows 10, UWP, Store Services, Microsoft Store Analytics-API, Xbox Live Analytics, Game Hubs
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f86f4c7dc5fba10650701d2830a7dce809e4ce
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: aa714eafbc8357a66128045cf3b5f2effc9f067a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321798"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155554"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>Abrufen von Xbox Live Spielehubdaten
 
 
-Verwenden Sie diese Methode in der Microsoft Store-Analyse-API, um Spielehubdaten für Ihr [Xbox Live-fähiges Spiel](https://docs.microsoft.com/gaming/xbox-live/index.md) abzurufen. Diese Informationen sind auch verfügbar in der [Xbox-Analysebericht](../publish/xbox-analytics-report.md) im Partner Center.
+Verwenden Sie diese Methode in der Microsoft Store Analytics-API, um Game Hub-Daten für das [Live-aktivierte Xbox-Spiel](/gaming/xbox-live/index.md)zu erhalten. Diese Informationen sind auch im Bericht " [Xbox Analytics](../publish/xbox-analytics-report.md) " im Partner Center verfügbar.
 
 > [!IMPORTANT]
-> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Konzeptgenehmigungsprozess](../gaming/concept-approval.md) durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners) veröffentlicht wurden, sowie Spiele, die über das [ID@Xbox-Programm](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id) übermittelt wurden. Diese Methode unterstützt derzeit keine Spiele, die über das [Xbox Live Creators-Programm](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) eingereicht wurden.
+> Diese Methode unterstützt nur Spiele für Xbox oder Spiele, die Xbox Live-Dienste verwenden. Diese Spiele müssen den [Genehmigungsprozess des Konzepts](../gaming/concept-approval.md)durchlaufen, der Spiele umfasst, die von [Microsoft-Partnern](/gaming/xbox-live/developer-program-overview.md#microsoft-partners) und über das [ ID@Xbox Programm](/gaming/xbox-live/developer-program-overview.md#id)gesendeten spielen veröffentlicht wurden. Diese Methode unterstützt zurzeit keine Spiele, die über das [Xbox Live Creators-Programm](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)veröffentlicht wurden.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store-Analyse-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](access-analytics-data-using-windows-store-services.md#prerequisites) für die Microsoft Store Analytics-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
 
 ## <a name="request"></a>Anforderung
 
@@ -39,26 +39,26 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Parameter        | Typ   |  Beschreibung      |  Erforderlich  
+| Parameter        | Typ   |  BESCHREIBUNG      |  Erforderlich  
 |---------------|--------|---------------|------|
-| applicationId | String | Die [Store-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie die Xbox Live Spielehubdaten abrufen möchten.  |  Ja  |
-| metricType | String | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live-Analysedaten angibt. Geben Sie für diese Methode den Wert **communitymanagergamehub** an.  |  Ja  |
-| startDate | date | Das Startdatum im Datumsbereich der Spielehubdaten, die abgerufen werden sollen. Der Standardwert ist 30 Tage vor dem aktuellen Datum. |  Nein  |
-| endDate | date | Das Enddatum im Datumsbereich der Spielehubdaten, die abgerufen werden sollen. Der Standardwert ist das aktuelle Datum. |  Nein  |
-| top | ssNoversion | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
-| skip | ssNoversion | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
+| applicationId | Zeichenfolge | Die [Speicher-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Xbox Live Game Hub-Daten abrufen möchten.  |  Ja  |
+| metrictype | Zeichenfolge | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live Analytics-Daten angibt. Geben Sie für diese Methode den Wert **communitymanagergamehub**an.  |  Ja  |
+| startDate | date | Das Startdatum im Datumsbereich der abzurufenden spielhub-Daten. Der Standardwert ist 30 Tage vor dem aktuellen Datum. |  Nein  |
+| endDate | date | Das Enddatum im Datumsbereich der abzurufenden spielhub-Daten. Als Standardeinstellung wird das aktuelle Datum festgelegt. |  Nein  |
+| top | INT | Die Anzahl der Datenzeilen, die in der Anforderung zurückgegeben werden sollen. Der Maximal- und Standardwert ist 10.000, wenn nicht anders angegeben. Sind in der Abfrage keine weiteren Zeilen, enthält der Antworttext den Link „Weiter“, über den Sie die nächste Seite mit Daten anfordern können. |  Nein  |
+| skip | INT | Die Anzahl der Zeilen, die in der Abfrage übersprungen werden sollen. Verwenden Sie diesen Parameter, um große Datensätze durchzublättern. Beispielsweise rufen „top=10000“ und „skip=0“ die ersten 10.000 Datenzeilen ab, „top=10000“ und „skip=10000“ die nächsten 10.000 Datenzeilen usw. |  Nein  |
 
 
 ### <a name="request-example"></a>Anforderungsbeispiel
 
-Das folgende Beispiel zeigt eine Anforderung zum Abrufen von Spielehubdaten für Ihr Xbox Live-fähiges Spiel an. Ersetzen Sie den *applicationId*-Wert durch die Store-ID Ihres Spiels.
+Das folgende Beispiel zeigt eine Anforderung zum erhalten von spielhub-Daten für Ihr Xbox Live-fähiges Spiel. Ersetzen Sie den Wert *ApplicationId* durch die Store-ID für Ihr Spiel.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/gameanalytics?applicationId=9NBLGGGZ5QDR&metrictype=communitymanagergamehub&top=10&skip=0 HTTP/1.1
@@ -68,23 +68,23 @@ Authorization: Bearer <your access token>
 ## <a name="response"></a>Antwort
 
 
-| Wert      | Typ   | Beschreibung                  |
+| Wert      | Typ   | BESCHREIBUNG                  |
 |------------|--------|-------------------------------------------------------|
-| Wert      | array  | Ein Array von Objekten, die für jedes Datum im Datumsbereich der angegebenen Spielehubdaten enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.                                                                                                                      |
-| @nextLink  | String | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Beispielsweise wird dieser Wert zurückgegeben, wenn der Parameter **top** der Anforderung auf 10000 festgelegt ist, es jedoch mehr als 10000 Zeilen mit Daten für die Abfrage gibt. |
-| TotalCount | ssNoversion    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.  |
+| Wert      | array  | Ein Array von-Objekten, die spielhub Daten für jedes Datum im angegebenen Datumsbereich enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.                                                                                                                      |
+| @nextLink  | Zeichenfolge | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Dieser Wert wird z. b. zurückgegeben, wenn der **Top** -Parameter der Anforderung auf 10000 festgelegt ist, aber mehr als 10000 Daten Zeilen für die Abfrage vorhanden sind. |
+| TotalCount | INT    | Die Gesamtzahl der Zeilen im Datenergebnis für die Abfrage.  |
 
 
 Elemente im Array *Value* enthalten die folgenden Werte.
 
-| Wert               | Typ   | Beschreibung                           |
+| Wert               | Typ   | BESCHREIBUNG                           |
 |---------------------|--------|-------------------------------------------|
-| date                | String | Das Datum für die Spielehubdaten in diesem Objekt. |
-| applicationId       | String | Die Store-ID des Spiels, für das Sie Spielehubdaten abrufen.     |
-| gameHubLikeCount     | number |   Die Anzahl der Vorlieben, die zur Spielehubseite an dem angegebenen Datum hinzugefügt wurden.   |
-| gameHubCommentCount          | number |  Die Anzahl der Kommentare, die zur Spielehubseite für Ihre App an dem angegebenen Datum hinzugefügt wurden.  |
-| gameHubShareCount           | number | Die Anzahl der Male, die die Spielehubseite für Ihre App von Kunden am angegebenen Datum geteilt wurden.   |
-| gameHubFollowerCount          | number | Die Anzahl der Follower der ganzen Zeit für die Spielehubseite für Ihre App.   |
+| date                | Zeichenfolge | Das Datum für die spielhub-Daten in diesem-Objekt. |
+| applicationId       | Zeichenfolge | Die Speicher-ID des Spiels, für das Sie die spielhub-Daten abrufen.     |
+| gamehublikecount     | number |   Die Anzahl der der spielhub Seite am angegebenen Datum hinzugefügten likes.   |
+| gamehubcommentcount          | number |  Die Anzahl der Kommentare, die der spielhub Seite für Ihre APP am angegebenen Datum hinzugefügt werden.  |
+| gamehubsharecount           | number | Gibt an, wie oft die spielhub Seite für Ihre APP an dem angegebenen Datum von Kunden gemeinsam genutzt wurde.   |
+| gamehubfollowercount          | number | Die Anzahl aller Zeit-Follower für die spielhub Seite für Ihre APP.   |
 
 
 ### <a name="response-example"></a>Antwortbeispiel
@@ -116,11 +116,11 @@ Das folgende Beispiel zeigt ein Beispiel für einen JSON-Antworttext für diese 
 }
 ```
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Access-Analytics-Daten mithilfe von Microsoft Store services](access-analytics-data-using-windows-store-services.md)
-* [Abrufen von Xbox Live-Analytics-Daten](get-xbox-live-analytics.md)
-* [Abrufen von Daten für Xbox Live Erfolge](get-xbox-live-achievements-data.md)
-* [Abrufen von Xbox Live-Health-Daten](get-xbox-live-health-data.md)
-* [Abrufen von Xbox Live-Club-Daten](get-xbox-live-club-data.md)
-* [Abrufen von Xbox Live Multiplayer-Daten](get-xbox-live-multiplayer-data.md)
+* [Zugreifen auf Analytics-Daten mithilfe von Microsoft Store Services](access-analytics-data-using-windows-store-services.md)
+* [Abrufen von Xbox Live-Analysedaten](get-xbox-live-analytics.md)
+* [Abrufen von Xbox Live-Erfolgsdaten](get-xbox-live-achievements-data.md)
+* [Abrufen von Xbox Live-Integritätsdaten](get-xbox-live-health-data.md)
+* [Abrufen von Xbox Live-Clubdaten](get-xbox-live-club-data.md)
+* [Abrufen von Xbox Live Multiplayerdaten](get-xbox-live-multiplayer-data.md)

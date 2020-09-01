@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 02108ad2926fc1514ca94f08d11f565bc342a62d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2fd92209e821d0d07f5cffda0850423e0496b03a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970315"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156824"
 ---
 # <a name="edge-based-ui-animations"></a>Animationen für randbasierte Benutzeroberflächenelemente
 
@@ -23,7 +23,7 @@ ms.locfileid: "82970315"
 
 Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmrand ausgehen. Die Aktionen zum Anzeigen und Ausblenden können von Benutzern oder von der App initiiert werden. Die UI-Elemente können die Anwendung überlagern oder Teil der Hauptoberfläche der App sein. Wenn das UI-Element Teil der App-Oberfläche ist, müssen Sie möglicherweise die Größe der restlichen App entsprechend anpassen.
 
-> **Wichtige APIs**: [ **edgeuidermetransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **Wichtige APIs**: [ **edgeuidermetransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>Empfohlene und nicht empfohlene Vorgehensweisen
@@ -45,18 +45,14 @@ Randbasierte Animationen blenden UI-Elemente ein oder aus, die vom Bildschirmran
 
 
 **Für Entwickler**
-* [Übersicht über Animationen](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [Animieren der Rand-UI](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
-* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**EdgeUIThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
-* [**PaneThemeTransition-Klasse**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
-* [Animieren von Ein- und Ausblendungen](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [Animieren von Änderungen der Position](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
+* [Übersicht über Animationen](./xaml-animation.md)
+* [Animieren der Rand-UI](/previous-versions/windows/apps/jj649428(v=win.10))
+* [Schnellstart: Animieren der Benutzeroberfläche mithilfe von Bibliotheksanimationen](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**EdgeUIThemeTransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**PaneThemeTransition-Klasse**](/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [Animieren von Ein- und Ausblendungen](/previous-versions/windows/apps/jj649429(v=win.10))
+* [Animieren von Änderungen der Position](/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 
  
-
-
-
-

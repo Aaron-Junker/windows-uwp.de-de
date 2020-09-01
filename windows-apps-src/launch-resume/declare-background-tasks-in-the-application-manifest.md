@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: e1580bdc62585cb777334c217419b4de6a691add
-ms.sourcegitcommit: 894decaf374f22bf39d4aecc1ab50d34ac011e31
+ms.openlocfilehash: 5b66cffa25dce28be22a1347b10e121e75936c25
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162565"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155954"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>Deklarieren von Hintergrundaufgaben im Anwendungsmanifest
 
@@ -20,8 +20,8 @@ ms.locfileid: "88162565"
 
 **Wichtige APIs**
 
--   [**BackgroundTasks-Schema**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [**BackgroundTasks-Schema**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)
 
 Sie können die Verwendung von Hintergrundaufgaben aktivieren, indem Sie diese im App-Manifest als Erweiterungen deklarieren.
 
@@ -90,7 +90,7 @@ Kopieren Sie diesen Code in das "Extensions"-Element (Attribute werden in den fo
 
 2.  Ändern Sie die Liste der Aufgabentypenattribute, um den für diese Hintergrundaufgabe verwendeten Typ der Aufgabenregistrierung anzugeben. Wenn die Hintergrundaufgabe mit mehreren Triggertypen registriert wird, fügen Sie für jeden Typ zusätzliche Task-Elemente und Type-Attribute hinzu.
 
-    **Hinweis**    Stellen Sie sicher, dass Sie jeden der von Ihnen verwendeten Auslösertypen auflisten oder wenn die Hintergrundaufgabe nicht mit den nicht deklarierten Auslösertypen registriert wird (die [**Register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) -Methode schlägt fehl und löst eine Ausnahme aus).
+    **Hinweis**    Stellen Sie sicher, dass Sie jeden der von Ihnen verwendeten Auslösertypen auflisten oder wenn die Hintergrundaufgabe nicht mit den nicht deklarierten Auslösertypen registriert wird (die [**Register**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) -Methode schlägt fehl und löst eine Ausnahme aus).
 
     Dieses Beispiel für einen Codeausschnitt gibt die Verwendung von Systemereignistriggern und Pushbenachrichtigungen an:
 
@@ -171,7 +171,7 @@ Hier finden Sie ein XML-Beispiel, mit dem eine Hintergrundaufgabe deklariert wir
 </Extensions>
 ```
 
-Wenn Sie **entryPoint**angeben, erhält die Anwendung einen Rückruf für die angegebene Methode, wenn der-Triggertyp ausgelöst wird. Wenn Sie keinen **entryPoint**angeben, empfängt Ihre Anwendung den Rückruf über [onbackgroundaktivierte ()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated).  Ausführliche Informationen finden Sie [unter Erstellen und Registrieren eines in-Process-Hintergrund](create-and-register-an-inproc-background-task.md) Tasks.
+Wenn Sie **entryPoint**angeben, erhält die Anwendung einen Rückruf für die angegebene Methode, wenn der-Triggertyp ausgelöst wird. Wenn Sie keinen **entryPoint**angeben, empfängt Ihre Anwendung den Rückruf über  [onbackgroundaktivierte ()](/uwp/api/windows.ui.xaml.application.onbackgroundactivated).  Ausführliche Informationen finden Sie [unter Erstellen und Registrieren eines in-Process-Hintergrund](create-and-register-an-inproc-background-task.md) Tasks.
 
 ### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>Geben Sie an, wo die Hintergrundaufgabe mit dem Attribut ResourceGroup ausgeführt wird.
 
@@ -232,7 +232,7 @@ In diesem Beispiel wird ein Hintergrund Task deklariert, der in einem neuen Proz
 > [!NOTE]
 > Sie können `ResourceGroup` oder nicht `ServerName` in Verbindung mit angeben `SupportsMultipleInstances` .
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
 * [Registrieren einer Hintergrundaufgabe](register-a-background-task.md)

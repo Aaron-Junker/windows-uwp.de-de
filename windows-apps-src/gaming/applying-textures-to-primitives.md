@@ -4,30 +4,30 @@ description: Wir laden an dieser Stelle unformatierte Texturdaten und wenden die
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Texturen, DirectX
+keywords: Windows 10, UWP, Games, Texturen, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c1412029b20ffded0d33567713e969bc0fd5dc5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 349dcc4e8cc65a6265579e84c6810dcac79938a1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369119"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156484"
 ---
 # <a name="apply-textures-to-primitives"></a>Anwenden von Texturen auf Grundtypen
 
 Wir laden an dieser Stelle unformatierte Texturdaten und wenden diese auf einen 3D-Grundtyp an. Dazu verwenden wir den Würfel, den wir unter [Verwenden von Tiefe und Effekten auf Grundtypen](using-depth-and-effects-on-primitives.md) erstellt haben. Außerdem stellen wir ein einfaches Skalarprodukt-Lichtmodell vor. Die Oberflächen des Würfels im Modell sind, je nach Entfernung von der und Winkel zur Lichtquelle, heller oder dunkler.
 
-**Ziel:** Um Texturen auf primitive Typen angewendet werden soll.
+**Ziel:** Texturen auf Grundtypen anwenden.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-Um dieses Thema optimal nutzen zu können, müssen Sie mit C++ vertraut sein. Sie benötigen Grundkenntnisse beim auch mit der Grafikprogrammierung Konzepte. Und im Idealfall müssen Sie zusammen mit bereits durchgeführt haben [Schnellstart: Einrichten von DirectX-Ressourcen und Anzeigen eines Bilds](setting-up-directx-resources.md), [Shader erstellen, und zeichnen primitive](creating-shaders-and-drawing-primitives.md), und [verwenden Tiefe und Auswirkungen auf die primitive](using-depth-and-effects-on-primitives.md).
+Um dieses Thema optimal zu nutzen, müssen Sie mit C++ vertraut sein. Außerdem benötigen Sie grundlegende Kenntnisse in den Konzepten der Grafik Programmierung. Und im Idealfall müssen Sie sich bereits mit dem Schnellstart, dem [Einrichten von DirectX-Ressourcen und dem Anzeigen eines Bilds, dem](setting-up-directx-resources.md) [Erstellen von Shadern und dem Zeichnen von primitiven](creating-shaders-and-drawing-primitives.md)und [der Verwendung von tiefen und Effekten für primitive](using-depth-and-effects-on-primitives.md)befassen.
 
-**Zeit in Anspruch:** 20 Minuten.
+**Zeitaufwand:** 20 Minuten.
 
-<a name="instructions"></a>Anweisungen
+<a name="instructions"></a>Instructions
 ------------
-### <a name="1-defining-variables-for-a-textured-cube"></a>1. Definieren von Variablen für einen strukturierten cube
+### <a name="1-defining-variables-for-a-textured-cube"></a>1. Definieren von Variablen für einen Würfel mit Texturen
 
 Zunächst müssen wir die **BasicVertex**-Struktur und die **ConstantBuffer**-Struktur für den Würfel mit Texturen definieren. Diese Strukturen bestimmen die Vertexpositionen, die Ausrichtungen und die Texturen für den Würfel. Außerdem haben sie Einfluss darauf, wie der Würfel angezeigt wird. Weiterhin deklarieren wir Variablen analog zum vorangehenden Lernprogramm [Verwenden von Tiefe und Effekten für Grundtypen](using-depth-and-effects-on-primitives.md).
 
@@ -60,19 +60,19 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. Erstellen von Vertex- und Pixel-Shader mit Oberfläche und Textur-Elemente
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. Erstellen von Vertex- und Pixelshadern mit Oberflächen- und Texturelementen
 
 Die an dieser Stelle erstellten Vertex- und Pixelshader sind komplexer als die im vorangehenden Lernprogramm [Verwenden von Tiefe und Effekten für Grundtypen](using-depth-and-effects-on-primitives.md). Der Vertexshader dieser App wandelt jede Vertexposition in eine Projektionsfläche um und übergibt die Koordinaten der Vertexttextur über den Pixelshader.
 
-Der app-Array von [ **D3D11\_Eingabe\_ELEMENT\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) Strukturen, die beschreiben, das Layout der Vertex-Shader-Code verfügt über drei Layoutelemente: ein Element definiert die Position des Scheitelpunkts, ein anderes Element definiert die Oberfläche Normalenvektor (die Richtung, die die Oberfläche des normal steht), und das dritte Element definiert die Texturkoordinaten.
+Das Array der D3D11- [** \_ Eingabe \_ Element- \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) -Strukturen der APP, die das Layout des Vertex-Shader-Codes beschreiben, verfügt über drei Layoutelemente: ein Element definiert die Scheitelpunkt Position, ein anderes Element definiert den normalen Oberflächen Knoten (die Richtung, in der die Oberfläche normal ist), und das dritte Element definiert die Texturkoordinaten.
 
 Wir erstellen einen Vertex, einen Index sowie konstante Puffer, die einen kreisenden Würfel mit Textur definieren.
 
-**Zum Definieren einer einsetzen eines cube**
+**So erstellen Sie einen kreisenden Würfel mit Textur**
 
 1.  Zunächst definieren wir den Würfel. Jedem Vertex werden eine Position, ein normaler Oberflächenvektor sowie Texturkoordinaten zugewiesen. Um für die einzelnen Seiten unterschiedliche normale Vektoren und Texturkoordinaten definieren und verwenden zu können, werden mehrere Scheitelpunkte für jede Ecke definiert.
-2.  Als Nächstes wird beschrieben, die Vertex- und Indexpuffer ([**D3D11\_Puffer\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) und [ **D3D11\_SUBRESOURCE\_Daten**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) mithilfe der Cubedefinition. Wir rufen [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) einmal für jeden Puffer auf.
-3.  Als Nächstes erstellen wir ein Konstantenpuffer ([**D3D11\_Puffer\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) für die Übergabe von Modell, Ansichts-und Projektionsmatrix an den Vertex-Shader. Später können wir den Konstantenpuffer zum Drehen des Würfels und zum Anwenden einer Perspektivenprojektion auf den Würfel verwenden. Wir rufen [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) auf, um den Konstantenpuffer zu erstellen.
+2.  Als nächstes beschreiben wir die Vertex-und Index Puffer[**( \_ D3D11 \_ buffer**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) Debug and [**D3D11 \_ subresource \_ Data**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) mithilfe der Cubedefinition. Wir rufen [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) einmal für jeden Puffer auf.
+3.  Als Nächstes erstellen wir einen konstanten Puffer ([**D3D11 \_ buffer \_ **](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)Debug) zum Übergeben von Modell-, Ansichts-und Projektions Matrizen an den Vertex-Shader. Später können wir den Konstantenpuffer zum Drehen des Würfels und zum Anwenden einer Perspektivenprojektion auf den Würfel verwenden. Wir rufen [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) auf, um den Konstantenpuffer zu erstellen.
 4.  Abschließend geben wir die Transformation der Ansicht an, die der Kameraposition X = 0, Y = 1, Z = 2 entspricht.
 
 ```cppcx
@@ -261,19 +261,19 @@ auto createCubeTask = (createPSTask && createVSTask).then([this]()
 });
 ```
 
-### <a name="3-creating-textures-and-samplers"></a>3. Erstellen von Texturen und Postprozessoren
+### <a name="3-creating-textures-and-samplers"></a>3. Erstellen von Texturen und Mustern
 
-Während im vorangehenden Beispiel ([Verwenden von Tiefe und Effekten für Grundtypen](using-depth-and-effects-on-primitives.md)) Farben angewendet wurden, werden hier Texturdaten auf einen Würfel angewendet.
+Hier werden Textur Daten auf einen Cube angewendet, anstatt Farben wie im vorherigen Tutorial anzuwenden, [wobei Tiefe und Effekte für primitive verwendet](using-depth-and-effects-on-primitives.md)werden.
 
 Wir verwenden unformatierte Texturdaten, um die Texturen zu erstellen.
 
-**Zum Erstellen von Texturen und Postprozessoren**
+**Erstellen von Texturen und Samplern**
 
 1.  Wir beginnen damit, unformatierte Texturdaten aus der Datei „texturedata.bin“ auf dem Datenträger zu lesen.
-2.  Als Nächstes erstellen wir eine [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) Struktur, die die Rohdaten der texturdaten verweist.
-3.  Anschließend füllen wir einen [ **D3D11\_TEXTURE2D\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) Struktur, um die Textur zu beschreiben. Klicken Sie dann übergeben wir die [ **D3D11\_SUBRESOURCE\_Daten** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) und **D3D11\_TEXTURE2D\_DESC** Strukturen in eine aufrufen, um [ **ID3D11Device::CreateTexture2D** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) der Textur erstellt wird.
-4.  Jetzt erstellen wir eine Shaderressourcenansicht der Textur, damit diese von Shadern verwendet werden kann. Um die Ansicht des Shader-Ressource zu erstellen, füllen wir einen [ **D3D11\_SHADER\_Ressource\_Ansicht\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_shader_resource_view_desc) zum Beschreiben der Shader-Ressourcenansicht und übergeben Sie die Beschreibung der Shaderressource Ansicht und die Textur [ **ID3D11Device::CreateShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createshaderresourceview). Die Beschreibung der Ansicht sollte im Allgemeinen der Beschreibung der Textur entsprechen.
-5.  Anschließend erstellen wir einen Musterzustand für die Textur. Dieser Musterzustand legt anhand der relevanten Texturdaten fest, wie die Farbe für eine bestimmte Texturkoordinate bestimmt wird. Füllen wir einen [ **D3D11\_SAMPLER\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_sampler_desc) Struktur, um die samplerstatus zu beschreiben. Übergeben wir dann die **D3D11\_SAMPLER\_DESC** Struktur in einem Aufruf von [ **ID3D11Device::CreateSamplerState** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createsamplerstate) die samplerstatus zu erstellen.
+2.  Als Nächstes erstellen wir eine [**D3D11 \_ subresource- \_ Daten**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) Struktur, die auf die unformatierten Textur Daten verweist.
+3.  Anschließend füllen wir eine [**D3D11 \_ TEXTURE2D \_ **](/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) -Struktur, um die Textur zu beschreiben. Anschließend übergeben wir die [**D3D11 \_ subresource- \_ Daten**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) -und **D3D11 \_ TEXTURE2D- \_ ** Erstellungs Strukturen in einem-Rückruf an [**ID3D11Device:: CreateTexture2D**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) , um die Textur zu erstellen.
+4.  Jetzt erstellen wir eine Shaderressourcenansicht der Textur, damit diese von Shadern verwendet werden kann. Um die Shader-Ressourcen Ansicht zu erstellen, füllen wir eine [**D3D11 \_ Shader- \_ Ressourcen \_ Ansicht \_ **](/windows/desktop/api/d3d11/ns-d3d11-d3d11_shader_resource_view_desc) (Debug) auf, um die Shader-Ressourcen Ansicht zu beschreiben, und übergeben die Beschreibung der Shader-Ressourcen Ansicht und die Textur an [**ID3D11Device:: anateshaderresourceview**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createshaderresourceview). Die Beschreibung der Ansicht sollte im Allgemeinen der Beschreibung der Textur entsprechen.
+5.  Anschließend erstellen wir einen Musterzustand für die Textur. Dieser Musterzustand legt anhand der relevanten Texturdaten fest, wie die Farbe für eine bestimmte Texturkoordinate bestimmt wird. Wir füllen eine [**D3D11- \_ samplerstruktur \_ **](/windows/desktop/api/d3d11/ns-d3d11-d3d11_sampler_desc) auf, um den samplerstatus zu beschreiben. Anschließend übergeben wir die **D3D11 \_ - \_ samplerstruktur** in einem Aufrufen von [**ID3D11Device:: kreatesamplerstate**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createsamplerstate) , um den samplerzustand zu erstellen.
 6.  Zum Schluss deklarieren wir eine *degree*-Variable, mit deren Hilfe wir den Würfel animieren werden, indem er in jedem Frame gedreht wird.
 
 ```cppcx
@@ -384,24 +384,24 @@ auto constructSubresourceTask = loadTDTask.then([this](const std::vector<byte>& 
 float degree = 0.0f;
 ```
 
-### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. Drehen, und zeichnen den strukturierten Cube, und das gerenderte Bild darstellen
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. Drehen und Zeichnen des Würfels mit Texturen und Darstellen des gerenderten Bilds
 
-Um die Szene ohne Unterbrechung zu rendern und anzuzeigen, wird analog zu früheren Beispielen eine Endlosschleife aufgerufen. Wir rufen die **rotationY**-Inlinefunktion (BasicMath.h) mit einer Rotationsmenge auf, um die Werte festzulegen, mit deren Hilfe sich die Modellmatrix des Würfels um die Y-Achse dreht. Anschließend rufen wir [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) auf, um den Konstantenpuffer zu aktualisieren und das Würfelmodell zu drehen. Nun rufen wir [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) auf, um das Renderingziel und die Ansicht für die Tiefe/Schablone anzugeben. Wir rufen [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) auf, um das Renderziel in eine blaue Volltonfarbe zu bereinigen. Anschließend rufen wir [**ID3D11DeviceContext::ClearDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) auf, um den Tiefenpuffer zu leeren.
+Um die Szene ohne Unterbrechung zu rendern und anzuzeigen, wird analog zu früheren Beispielen eine Endlosschleife aufgerufen. Wir rufen die **rotationY**-Inlinefunktion (BasicMath.h) mit einer Rotationsmenge auf, um die Werte festzulegen, mit deren Hilfe sich die Modellmatrix des Würfels um die Y-Achse dreht. Anschließend rufen wir [**ID3D11DeviceContext::UpdateSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) auf, um den Konstantenpuffer zu aktualisieren und das Würfelmodell zu drehen. Nun rufen wir [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) auf, um das Renderingziel und die Ansicht für die Tiefe/Schablone anzugeben. Wir rufen [**ID3D11DeviceContext::ClearRenderTargetView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) auf, um das Renderziel in eine blaue Volltonfarbe zu bereinigen. Anschließend rufen wir [**ID3D11DeviceContext::ClearDepthStencilView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) auf, um den Tiefenpuffer zu leeren.
 
 In der Endlosschleife zeichnen wir auch den Würfel mit Texturen auf der blauen Oberfläche.
 
-**Zum Zeichnen der texturierten Würfels**
+**So zeichnen Sie den Würfel mit Texturen**
 
-1.  Wir rufen zunächst [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) auf, um das Streamen der Vertexpufferdaten in den Eingabeassemblerzustand zu beschreiben.
-2.  Als Nächstes rufen wir [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) und [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) auf, um die Vertex- und Indexpuffer an den Eingabeassemblerzustand zu binden.
-3.  Als Nächstes rufen wir [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) mit der [ **D3D11\_PRIMITIVEN\_Topologie\_ TRIANGLESTRIP** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) Wert, der für die Eingabe-Assembler Stufe die Vertexdaten als Farbstreifen Dreieck interpretiert angegeben.
-4.  Im nächsten Schritt rufen wir [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) auf, um die Vertexshaderphase mit dem Vertexshadercode zu initialisieren. Zudem rufen wir [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) auf, um die Pixelshaderphase mit dem Pixelshadercode zu initialisieren.
-5.  Dann rufen wir [**ID3D11DeviceContext::VSSetConstantBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) auf, um den im Vertexshader-Pipelinezustand verwendeten Konstantenpuffer festzulegen.
-6.  Danach rufen wir [**PSSetShaderResources**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshaderresources) auf, um die Shaderressourcenansicht der Textur an die Pipelinephase des Pixelshaders zu binden.
-7.  Danach rufen wir [**PSSetSamplers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetsamplers) auf, um den Musterzustand für die Pipelinephase des Pixelshaders festzulegen.
-8.  Schließlich rufen wir [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) auf, um den Würfel zu zeichnen und ihn an die Renderpipeline zu übermitteln.
+1.  Wir rufen zunächst [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) auf, um das Streamen der Vertexpufferdaten in den Eingabeassemblerzustand zu beschreiben.
+2.  Als Nächstes rufen wir [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) und [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) auf, um die Vertex- und Indexpuffer an den Eingabeassemblerzustand zu binden.
+3.  Im nächsten Schritt wird [**Verknüpfung id3d11devicecontext aus:: iasetprimitivetopology**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) mit dem Wert der [**D3D11- \_ primitiven \_ Topologie \_ Trianglestrip**](/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) aufgerufen, um anzugeben, dass die Vertex-Daten als Dreiecks Streifen in der Eingabe-Assembler-Phase interpretiert werden sollen.
+4.  Im nächsten Schritt rufen wir [**ID3D11DeviceContext::VSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) auf, um die Vertexshaderphase mit dem Vertexshadercode zu initialisieren. Zudem rufen wir [**ID3D11DeviceContext::PSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) auf, um die Pixelshaderphase mit dem Pixelshadercode zu initialisieren.
+5.  Dann rufen wir [**ID3D11DeviceContext::VSSetConstantBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) auf, um den im Vertexshader-Pipelinezustand verwendeten Konstantenpuffer festzulegen.
+6.  Danach rufen wir [**PSSetShaderResources**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshaderresources) auf, um die Shaderressourcenansicht der Textur an die Pipelinephase des Pixelshaders zu binden.
+7.  Danach rufen wir [**PSSetSamplers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetsamplers) auf, um den Musterzustand für die Pipelinephase des Pixelshaders festzulegen.
+8.  Schließlich rufen wir [**ID3D11DeviceContext::DrawIndexed**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) auf, um den Würfel zu zeichnen und ihn an die Renderpipeline zu übermitteln.
 
-Analog zu früheren Lernprogrammen wird mit einem Aufruf von [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) das gerenderte Bild im Fenster dargestellt.
+Analog zu früheren Lernprogrammen wird mit einem Aufruf von [**IDXGISwapChain::Present**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) das gerenderte Bild im Fenster dargestellt.
 
 ```cppcx
 // Update the constant buffer to rotate the cube model.
@@ -507,4 +507,4 @@ DX::ThrowIfFailed(
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Thema stellen wir unformatierte Daten geladen, und diese Daten auf einen primitiven 3D angewendet.
+In diesem Thema haben wir Rohdaten für die Textur geladen und diese Daten auf ein 3D-primitiv angewendet.

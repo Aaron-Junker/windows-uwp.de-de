@@ -7,18 +7,18 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Benachrichtigung, Sammlungen, Sammlung, Gruppen Benachrichtigungen, Gruppierungs Benachrichtigungen, Gruppe, organisieren, Aktions Center, Toast
 ms.localizationpriority: medium
-ms.openlocfilehash: aff6b933e04611013761c10ad7a76824f7347855
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7cd99519f7213f85c50a14db0597daa4e10f8360
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970068"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156754"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>Gruppieren von Popup Benachrichtigungen mit Sammlungen
 Verwenden Sie Sammlungen zum Organisieren der APP-Auflistungen im Aktions Center. Mithilfe von Sammlungen können Benutzerinformationen im Aktions Center leichter finden und Entwicklern eine bessere Verwaltung Ihrer Benachrichtigungen ermöglichen.  Mit den unten aufgeführten APIs können Sie Benachrichtigungs Sammlungen entfernen, erstellen und aktualisieren.
 
 > [!IMPORTANT]
-> **Erfordert Creators Update**: Sie müssen das SDK 15063 als Ziel verwenden und Build 15063 oder höher ausführen, um Popup Auflistungen zu verwenden. Zu den zugehörigen APIs zählen [Windows. UI. Notification. deastcollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection)und [Windows. UI. Benachrichtigungen.](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Erfordert Creators Update**: Sie müssen das SDK 15063 als Ziel verwenden und Build 15063 oder höher ausführen, um Popup Auflistungen zu verwenden. Zu den zugehörigen APIs zählen [Windows. UI. Notification. deastcollection](/uwp/api/windows.ui.notifications.toastcollection)und [Windows. UI. Benachrichtigungen.](/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 Das Beispiel unten zeigt eine Messaging-APP, die die Benachrichtigungen auf der Grundlage der Chatgruppe trennt. Jeder Titel (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Teamchat) ist eine separate Sammlung.  Beachten Sie, dass die Benachrichtigungen eindeutig gruppiert werden, als ob Sie aus einer separaten App stammen, auch wenn Sie alle Benachrichtigungen von derselben APP sind.  Wenn Sie eine detailliertere Methode zum Organisieren von Benachrichtigungen suchen, finden Sie weitere Informationen unter Popup [Header](toast-headers.md).  
 ![Sammlungs Beispiel mit zwei verschiedenen Gruppen von Benachrichtigungen](images/toast-collection-example.png)

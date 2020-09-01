@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, Werbung, Installation, SDK, Werbe Bibliothek
 ms.localizationpriority: medium
-ms.openlocfilehash: d5c5c18c41996c5d46c261f351a900fea2532a93
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: a7ec56281c5f1d441d3808fa91491d0d290018f3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094668"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155494"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Installieren des Microsoft Advertising-SDK
 
@@ -69,7 +69,7 @@ So installieren Sie das Microsoft Advertising SDK in einem bestimmten UWP-Projek
 
 5. Geben Sie im Suchfeld **Microsoft. Advertising. XAML** (für ein XAML-Projekt) oder **Microsoft.Advertising.JS** (bei einem JavaScript/HTML-Projekt) ein, und installieren Sie das entsprechende Paket. Wenn die Installation des Pakets abgeschlossen ist, speichern Sie die Projekt Mappe.
     > [!NOTE]
-    > Wenn das **Ausgabe** Fenster einen *Installationspaket* Fehler meldet, der angibt, dass der angegebene Pfad zu lang ist, müssen Sie möglicherweise nuget so konfigurieren, dass Pakete an einen alternativen Speicherort mit einem kürzeren Pfad als der Standard Speicherort extrahiert werden. Fügen Sie hierzu den `repositoryPath`-Wert einer nuget.config-Datei auf Ihrem Computer hinzu, und weisen Sie ihn einem kurzen Ordnerpfad zu, unter dem die NuGet-Pakete extrahiert werden können. Weitere Informationen finden Sie in [diesem Artikel](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior) in der NuGet-Dokumentation. Sie können auch versuchen, das Visual Studio-Projekt in einen anderen Ordner mit einem kürzeren Pfad zu verschieben.
+    > Wenn das **Ausgabe** Fenster einen *Installationspaket* Fehler meldet, der angibt, dass der angegebene Pfad zu lang ist, müssen Sie möglicherweise nuget so konfigurieren, dass Pakete an einen alternativen Speicherort mit einem kürzeren Pfad als der Standard Speicherort extrahiert werden. Fügen Sie hierzu den `repositoryPath`-Wert einer nuget.config-Datei auf Ihrem Computer hinzu, und weisen Sie ihn einem kurzen Ordnerpfad zu, unter dem die NuGet-Pakete extrahiert werden können. Weitere Informationen finden Sie in [diesem Artikel](/nuget/consume-packages/configuring-nuget-behavior) in der NuGet-Dokumentation. Sie können auch versuchen, das Visual Studio-Projekt in einen anderen Ordner mit einem kürzeren Pfad zu verschieben.
 
 6. Schließen Sie die Projekt Mappe, und öffnen Sie Sie erneut.
 
@@ -104,7 +104,7 @@ Exemplarische Vorgehensweisen, in denen die ersten Schritte mit den Werbe-APIs e
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>Grundlegendes zu Framework-Paketen im Microsoft Advertising SDK
 
-Die Microsoft.Advertising.dll Bibliothek im [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (für UWP-Apps) ist als frameworkpaket konfiguriert. *framework package* Diese Bibliothek enthält die Werbe-APIs in den [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising)- und [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui)-Namespaces.
+Die Microsoft.Advertising.dll Bibliothek im [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) (für UWP-Apps) ist als frameworkpaket konfiguriert. *framework package* Diese Bibliothek enthält die Werbe-APIs in den [Microsoft.Advertising](/uwp/api/microsoft.advertising)- und [Microsoft.Advertising.WinRT.UI](/uwp/api/microsoft.advertising.winrt.ui)-Namespaces.
 
 Da diese Bibliothek ein frameworkpaket ist, bedeutet dies, dass diese Bibliothek nach dem Installieren einer Version der APP, die diese Bibliothek verwendet, automatisch über Windows Update aktualisiert wird, wenn wir eine neue Version der Bibliothek mit Korrekturen und Leistungsverbesserungen veröffentlichen. Dadurch wird sichergestellt, dass Ihre Kunden immer die neueste verfügbare Version der Bibliothek auf Ihren Geräten installiert haben.
 

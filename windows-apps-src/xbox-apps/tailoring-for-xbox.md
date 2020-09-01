@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aaf8759b59c8ccbb5b09ba969675096700ce9e8
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 01ae58b7422215a0e4f90c5b3f59819d9a24fa36
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094457"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157774"
 ---
 # <a name="xbox-best-practices"></a>Bewährte Methoden für Xbox
 
@@ -30,7 +30,7 @@ Die meisten Xbox-Nutzer sitzen im Wohnzimmer am Fernseher. Denken Sie also daran
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*Empfohlen:* Integration in die SystemMediaTransportControls-Klasse
 
-Xbox-Benutzer möchten Medien-Apps mit der Xbox-Medienfernbedienung Cortana (insbesondere mit den Sprachbefehlen „Wiedergabe“ und „Anhalten“) und mit Xbox SmartGlass steuern. Diese Features erhalten Sie automatisch, wenn in Ihren Apps die [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols)-Klasse verwendet wird, die automatisch in den Xbox-Mediensteuerelementen enthalten ist. Wenn in Ihrer App benutzerdefinierte Mediensteuerelemente verwendet werden, stellen Sie sicher, dass diese in die **SystemMediaTransportControls**-Klasse integriert werden, damit diese Features für Ihre Nutzer bereitstehen. Wenn Sie eine App mit Hintergrundmusik erstellen, integrieren Sie die **SystemMediaTransportControls**-Klasse, um sicherzustellen, dass die Hintergrundmusik-Steuerelemente in der Xbox-Multitasking-Registerkarte richtig funktionieren.
+Xbox-Benutzer möchten Medien-Apps mit der Xbox-Medienfernbedienung Cortana (insbesondere mit den Sprachbefehlen „Wiedergabe“ und „Anhalten“) und mit Xbox SmartGlass steuern. Diese Features erhalten Sie automatisch, wenn in Ihren Apps die [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols)-Klasse verwendet wird, die automatisch in den Xbox-Mediensteuerelementen enthalten ist. Wenn in Ihrer App benutzerdefinierte Mediensteuerelemente verwendet werden, stellen Sie sicher, dass diese in die **SystemMediaTransportControls**-Klasse integriert werden, damit diese Features für Ihre Nutzer bereitstehen. Wenn Sie eine App mit Hintergrundmusik erstellen, integrieren Sie die **SystemMediaTransportControls**-Klasse, um sicherzustellen, dass die Hintergrundmusik-Steuerelemente in der Xbox-Multitasking-Registerkarte richtig funktionieren.
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->
@@ -74,4 +74,4 @@ Das **App dev on Xbox** -Ereignis ist ein idealer Ausgangspunkt für Entwickler,
 
 - [UWP auf Xbox One](index.md)
 - [Entwerfen für Xbox und Fernsehgeräte](../design/devices/designing-for-tv.md)
-- [Progressive Web-Apps für Xbox One](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [Progressive Web-Apps für Xbox One](/microsoft-edge/progressive-web-apps/xbox-considerations)

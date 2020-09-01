@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
-ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
+ms.openlocfilehash: 72b6196f0b4607f2414eb94220dd31190ef93245
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87547312"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156014"
 ---
-# <a name="create-and-register-a-winmain-com-background-task"></a>Erstellen und Registrieren einer WinMain-com-Hintergrundaufgabe
+# <a name="create-and-register-a-winmain-com-background-task"></a>Erstellen und Registrieren einer WinMain-COM-Hintergrundaufgabe
 
 > [!TIP]
 > Die Methode backgroundtaskbuilder. settaskentrypointclsid ist ab Windows 10, Version 2004, verfügbar.
@@ -26,18 +26,18 @@ ms.locfileid: "87547312"
 
 **Wichtige APIs**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
 Erstellen Sie eine com-Hintergrundaufgaben Klasse, und registrieren Sie Sie, um Sie als Antwort auf Trigger in der vollständig vertrauenswürdigen app "WinMain" auszuführen. Sie können mit Hintergrundaufgaben Funktionen bereitstellen, wenn Ihre App gerade ausgesetzt ist oder nicht ausgeführt wird. In diesem Thema wird veranschaulicht, wie Sie einen Hintergrund Task erstellen und registrieren, der im Vordergrund-App-Prozess oder einem anderen Prozess ausgeführt werden kann.
 
 ## <a name="create-the-background-task-class"></a>Erstellen einer Hintergrundaufgabenklasse
 
-Sie können Code im Hintergrund ausführen, indem Sie Klassen schreiben, die die [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)-Schnittstelle implementieren. Dieser Code wird ausgeführt, wenn ein bestimmtes Ereignis mithilfe von ausgelöst wird, z. b. [**Systemtrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) oder [**timetrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
+Sie können Code im Hintergrund ausführen, indem Sie Klassen schreiben, die die [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)-Schnittstelle implementieren. Dieser Code wird ausgeführt, wenn ein bestimmtes Ereignis mithilfe von ausgelöst wird, z. b. [**Systemtrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) oder [**timetrigger**](/uwp/api/Windows.ApplicationModel.Background.TimeTrigger).
 
-In den folgenden Schritten wird gezeigt, wie Sie eine neue Klasse schreiben, die die [**ibackgroundtask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) -Schnittstelle implementiert, und Sie dem Hauptprozess hinzufügen.
+In den folgenden Schritten wird gezeigt, wie Sie eine neue Klasse schreiben, die die [**ibackgroundtask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) -Schnittstelle implementiert, und Sie dem Hauptprozess hinzufügen.
 
-1.  [**Weitere Informationen finden**](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance) Sie in den Anweisungen zum Verweisen auf WinRT-APIs in Ihrer APP-Lösung Dies ist erforderlich, um ibackgroundtask und verwandte APIs zu verwenden.
+1.  [**Weitere Informationen finden**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) Sie in den Anweisungen zum Verweisen auf WinRT-APIs in Ihrer APP-Lösung Dies ist erforderlich, um ibackgroundtask und verwandte APIs zu verwenden.
 2.  Implementieren Sie in dieser neuen Klasse die [**ibackgroundtask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) -Schnittstelle. Die [**ibackgroundtask. Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) -Methode ist ein erforderlicher Einstiegspunkt, der aufgerufen wird, wenn das angegebene Ereignis ausgelöst wird. Diese Methode ist in jeder Hintergrundaufgabe erforderlich.
 
 > [!NOTE]
@@ -45,7 +45,7 @@ In den folgenden Schritten wird gezeigt, wie Sie eine neue Klasse schreiben, die
 
 Der folgende Beispielcode zeigt eine grundlegende Klasse von Hintergrundaufgaben, die Primes zählt und in eine Datei schreibt, bis Sie zum Abbrechen aufgefordert wird.
 
-Im Beispiel C++/WinRT wird die Hintergrundaufgaben Klasse als [**com-Co-Klasse**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)implementiert.
+Im Beispiel C++/WinRT wird die Hintergrundaufgaben Klasse als [**com-Co-Klasse**](../cpp-and-winrt-apis/author-coclasses.md#implement-the-coclass-and-class-factory)implementiert.
 
 
 <details>
@@ -391,7 +391,7 @@ sampleTaskServer.Start();
 
 ## <a name="register-the-background-task-to-run"></a>Registrieren der auszuführenden Hintergrundaufgabe
 
-1.  Stellen Sie fest, ob der Hintergrund Task bereits durch Iteration der [**backgroundtaskregistration. AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) -Eigenschaft registriert ist. *Dieser Schritt ist wichtig*. Wenn Ihre APP keine Überprüfung auf vorhandene Hintergrund Task Registrierungen durchführt, kann Sie die Aufgabe mühelos mehrmals registrieren, was zu Leistungsproblemen führt und die verfügbare CPU-Zeit der Aufgabe vor dem Abschluss der Arbeit beeinträchtigt. Eine Anwendung kann den gleichen Einstiegspunkt verwenden, um alle Hintergrundaufgaben zu verarbeiten, und andere Eigenschaften verwenden, wie z. b. den [**Namen**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) oder [**TaskID**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) , der einer [**backgroundtaskregistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) zugewiesen ist, um zu entscheiden, welche Arbeit durchgeführt werden soll.
+1.  Stellen Sie fest, ob der Hintergrund Task bereits durch Iteration der [**backgroundtaskregistration. AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) -Eigenschaft registriert ist. *Dieser Schritt ist wichtig*. Wenn Ihre APP keine Überprüfung auf vorhandene Hintergrund Task Registrierungen durchführt, kann Sie die Aufgabe mühelos mehrmals registrieren, was zu Leistungsproblemen führt und die verfügbare CPU-Zeit der Aufgabe vor dem Abschluss der Arbeit beeinträchtigt. Eine Anwendung kann den gleichen Einstiegspunkt verwenden, um alle Hintergrundaufgaben zu verarbeiten, und andere Eigenschaften verwenden, wie z. b. den [**Namen**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name) oder [**TaskID**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) , der einer [**backgroundtaskregistration**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) zugewiesen ist, um zu entscheiden, welche Arbeit durchgeführt werden soll.
 
 Im folgenden Beispiel wird die **AllTasks** -Eigenschaft durchlaufen und eine Flag-Variable auf true festgelegt, wenn die Aufgabe bereits registriert ist.
 
@@ -432,9 +432,9 @@ for (auto const& task : allTasks)
 
 ```
 
-1.  Wenn die Hintergrundaufgabe noch nicht registriert ist, verwenden Sie [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder), um eine Instanz Ihrer Hintergrundaufgabe zu generieren. Bei dem Einstiegspunkt der Aufgabe sollte es sich um den Namen der Hintergrundaufgabenklasse mit dem Namespace als Präfix handeln.
+1.  Wenn die Hintergrundaufgabe noch nicht registriert ist, verwenden Sie [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder), um eine Instanz Ihrer Hintergrundaufgabe zu generieren. Bei dem Einstiegspunkt der Aufgabe sollte es sich um den Namen der Hintergrundaufgabenklasse mit dem Namespace als Präfix handeln.
 
-Der Hintergrundaufgabenauslöser bestimmt, ob die Hintergrundaufgabe ausgeführt wird. Eine Liste der möglichen Trigger finden Sie im [**Windows. applicationmodel. Background**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background) -Namespace.
+Der Hintergrundaufgabenauslöser bestimmt, ob die Hintergrundaufgabe ausgeführt wird. Eine Liste der möglichen Trigger finden Sie im [**Windows. applicationmodel. Background**](/uwp/api/windows.applicationmodel.background) -Namespace.
 
 > [!NOTE]
 > Nur eine Teilmenge der Trigger wird für gepackte WinMain-Hintergrundaufgaben unterstützt.
@@ -471,7 +471,7 @@ if (!taskRegistered)
 
 ```
 
-1.  Sie können eine Bedingung hinzufügen, die bestimmt, wann Ihre Aufgabe ausgeführt wird, nachdem das Auslöseereignis eintritt (optional). Wenn Sie z. b. nicht möchten, dass der Task so lange ausgeführt wird, bis das Internet verfügbar ist, verwenden Sie die Bedingung **interverschachteltavailable**. Eine Liste mit möglichen Bedingungen finden Sie in [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
+1.  Sie können eine Bedingung hinzufügen, die bestimmt, wann Ihre Aufgabe ausgeführt wird, nachdem das Auslöseereignis eintritt (optional). Wenn Sie z. b. nicht möchten, dass der Task so lange ausgeführt wird, bis das Internet verfügbar ist, verwenden Sie die Bedingung **interverschachteltavailable**. Eine Liste mit möglichen Bedingungen finden Sie in [**SystemConditionType**](/uwp/api/Windows.ApplicationModel.Background.SystemConditionType).
 
 Der folgende Beispielcode weist eine Bedingung zu, die die Anwesenheit des Benutzers voraussetzt:
 
@@ -485,7 +485,7 @@ builder.AddCondition(SystemCondition{ SystemConditionType::InternetAvailable });
 // The code in the next step goes here.
 ```
 
-4.  Registrieren Sie die Hintergrundaufgabe, indem Sie die Register-Methode für das [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)-Objekt aufrufen. Speichern Sie das [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)-Ergebnis, sodass es im nächsten Schritt verwendet werden kann. Beachten Sie, dass die Register-Funktion möglicherweise Fehler in Form von Ausnahmen zurückgibt. Stellen Sie sicher, dass Sie "Register" in einem try-catch-Vorgang
+4.  Registrieren Sie die Hintergrundaufgabe, indem Sie die Register-Methode für das [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)-Objekt aufrufen. Speichern Sie das [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)-Ergebnis, sodass es im nächsten Schritt verwendet werden kann. Beachten Sie, dass die Register-Funktion möglicherweise Fehler in Form von Ausnahmen zurückgibt. Stellen Sie sicher, dass Sie "Register" in einem try-catch-Vorgang
 
 Der folgende Code registriert die Hintergrundaufgabe und speichert das Ergebnis:
 
@@ -1045,7 +1045,7 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 ## <a name="remarks"></a>Bemerkungen
 
-Anders als UWP-apps, die Hintergrundaufgaben im modernen Standby ausführen können, können WinMain-apps keinen Code aus den unteren Energie Phasen des modernen Standbymodus ausführen. Weitere Informationen finden Sie unter [moderner Standby](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby) -Modus.
+Anders als UWP-apps, die Hintergrundaufgaben im modernen Standby ausführen können, können WinMain-apps keinen Code aus den unteren Energie Phasen des modernen Standbymodus ausführen. Weitere Informationen finden Sie unter [moderner Standby](/windows-hardware/design/device-experiences/modern-standby) -Modus.
 
 Eine API-Referenz, konzeptionelle Richtlinien zu Hintergrundaufgaben und ausführlichere Anweisungen zum Schreiben von Apps, die Hintergrundaufgaben verwenden, finden Sie unter den folgenden verwandten Themen:
 
@@ -1065,8 +1065,8 @@ Eine API-Referenz, konzeptionelle Richtlinien zu Hintergrundaufgaben und ausfüh
 
 * [Richtlinien für Hintergrundaufgaben](guidelines-for-background-tasks.md)
 * [Debuggen einer Hintergrundaufgabe](debug-a-background-task.md)
-* [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [Gewusst wie: Starten von Suspend-, Resume-und Background-Ereignissen in UWP-Apps (beim Debuggen)](/previous-versions/hh974425(v=vs.110))
 
 **Hintergrundaufgabe – API-Referenz**
 
-* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)

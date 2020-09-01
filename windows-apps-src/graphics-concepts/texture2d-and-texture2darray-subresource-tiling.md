@@ -1,75 +1,71 @@
 ---
 title: Unterteilung von Texture2D- und Texture2DArray-Unterressourcen
-description: Diese Tabellen zeigen die Unterteilung von Texture2D- und Texture2DArray-Unterressourcen.
+description: Diese Tabellen zeigen, wie Texture2D und Texture2DArray-unter Ressourcen nebeneinander angeordnet werden.
 ms.assetid: 2DC14DFC-5299-44D9-895F-5A223D3FD530
 keywords:
 - Unterteilung von Texture2D- und Texture2DArray-Unterressourcen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e193ab7bce31c1f13cb40f04902922c6ff21056
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 28152f39983f4831a9efa981efcb85fb65fa0204
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370916"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156174"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Unterteilung von Texture2D- und Texture2DArray-Unterressourcen
 
 
-Diese Tabellen zeigen die Unterteilung von [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)- und [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)-Unterressourcen. Die Werte in dieser Tabelle beziehen keine Tail-MIP-Verpackung mit ein.
+Diese Tabellen zeigen, wie [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) und [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) -unter Ressourcen nebeneinander angeordnet werden. Die Werte in diesen Tabellen zählen nicht zum Ende der MIP-Verpackung.
 
-## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>Unterressourcen mit 1 für Multisampling
+## <a name="span-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spanspan-idsubresources-with-multisample-counts-of-1spansubresources-with-multisample-counts-of-1"></a><span id="Subresources-with-multisample-counts-of-1"></span><span id="subresources-with-multisample-counts-of-1"></span><span id="SUBRESOURCES-WITH-MULTISAMPLE-COUNTS-OF-1"></span>Unter Ressourcen mit Multisampling-Anzahl von 1
 
 
-Die folgende Tabelle zeigt die Unterteilung von [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)- und [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)-Unterressourcen mit Multisampling (1).
+Diese Tabelle zeigt, wie die unter Ressourcen [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) und [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) mit der Multisampling-Anzahl 1 nebeneinander dargestellt werden.
 
-| Bits/Pixel (1 Beispiel/Pixel) | Kachelabmessungen (Pixel, B x H) |
+| Bits/Pixel (1 Stichprobe/Pixel) | Kachel Dimensionen (Pixel, WxH) |
 |-----------------------------|-------------------------------|
-| 8                           | 256 x 256                       |
-| 16                          | 256 x 128                       |
-| 32                          | 128 x 128                       |
+| 8                           | 256x256                       |
+| 16                          | Größe 256x128                       |
+| 32                          | 128x128                       |
 | 64                          | 128 x 64                        |
 | 128                         | 64 x 64                         |
 | BC1, 4                       | 512 x 256                       |
-| BC2, 3, 5, 6, 7                 | 256 x 256                       |
+| BC2, 3, 5, 6, 7                 | 256x256                       |
 
  
 
-Format-Bit-Anzahl für das streaming von Ressourcen nicht unterstützt werden, 96 Bit pro Pixel Formate Videoformate, DXGI\_FORMAT\_R1\_UNORM, DXGI\_FORMAT\_R8G8\_B8G8\_UNORM, und DXGI\_FORMAT\_R8R8\_G8B8\_UNORM.
+Die für streamingingressourcen nicht unterstützten Formatbit-Zahlen sind 96 bpp-Formate, Videoformate, DXGI- \_ Format \_ R1 \_ unorm, DXGI- \_ Format \_ R8G8 \_ B8G8 \_ unorm und DXGI- \_ Format \_ R8R8 \_ G8B8 \_ unorm.
 
-## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>Unterressourcen mit verschiedenen für Multisampling
+## <a name="span-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspanspan-idsubresources-with-various-multisample-countsspansubresources-with-various-multisample-counts"></a><span id="Subresources-with-various-multisample-counts"></span><span id="subresources-with-various-multisample-counts"></span><span id="SUBRESOURCES-WITH-VARIOUS-MULTISAMPLE-COUNTS"></span>Unter Ressourcen mit verschiedenen Multisampling-Zählungen
 
 
-Die folgende Tabelle zeigt die Unterteilung von [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d)- und [**Texture2DArray**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2darray)-Unterressourcen mit verschiedenen Multisampling-Anzahlen.
+Diese Tabelle zeigt, wie [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) und [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) -unter Ressourcen mit verschiedenen Multisampling-Zählungen nebeneinander angeordnet werden.
 
-| Bits/Pixel (1 Beispiel/Pixel) | Kachelabmessungen (Pixel, B x H) |
+| Bits/Pixel (1 Stichprobe/Pixel) | Kachel Dimensionen (Pixel, WxH) |
 |-----------------------------|-------------------------------|
-| 1                           | 1 x 1                           |
-| 2                           | 2 x 1                           |
+| 1                           | 1x1                           |
+| 2                           | 2x1                           |
 | 4                           | 2 x 2                           |
-| 8                           | 4 x 2                           |
-| 16                          | 4 x 4                           |
+| 8                           | 4x2                           |
+| 16                          | 4x4                           |
 
  
 
-Es sind ausschließlich Beispielanzahlen von 1 und 4 erforderlich (und zulässig), um mit Streamingressourcen unterstützt zu werden. Anzahlen von 2, 8 und 16 werden derzeit von Streamingressourcen nicht unterstützt, auch wenn sie angezeigt werden.
+Nur die Stichproben Anzahl 1 und 4 sind erforderlich (und zulässig), damit Sie mit Streaming-Ressourcen unterstützt werden. Streaming-Ressourcen unterstützen derzeit nicht 2, 8 und 16, obwohl Sie angezeigt werden.
 
-In Implementierungen kann der Multiple Sample Antialiasing-Modus (MSAA) mit 2, 8 und/oder 16 Beispielen für Nicht-Streamingressourcen unterstützt werden, auch wenn dies von der Streamingressource nicht unterstützt wird.
+Implementierungen können für nicht Streaming-Ressourcen Unterstützung von 2, 8 und/oder 16 Sample Multisampling Antialiasing (MSAA)-Modus für nicht Streaming-Ressourcen auswählen, auch wenn Sie von der streamingressource nicht unterstützt werden.
 
-128-BpP-Formate können von Streamingressourcen mit Beispielanzahlen von mehr als 1 nicht verwendet werden.
+Streaming-Ressourcen mit einer Stichproben Anzahl von mehr als 1 können 128 bpp-Formate nicht verwenden.
 
-Die Einschränkungen bei der Anzahl unterstützter Beispiele und Formate gehen auf Hardwareinkonsistenzen in der Spezifikation zurück.
+Die Einschränkungen für unterstützte Stichproben Anzahl und-Formate sind auf Hardware Inkonsistenzen der Spezifikation zurückzuführen.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Wie ein streaming Ressourcenbereich gekachelt wird](how-a-streaming-resource-s-area-is-tiled.md)
+[So unterteilen Sie den Bereich einer Streamingressource](how-a-streaming-resource-s-area-is-tiled.md)
 
  
 
  
-
-
-
-

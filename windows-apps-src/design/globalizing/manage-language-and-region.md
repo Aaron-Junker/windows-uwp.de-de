@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Globalisierung, Lokalisier barkeit, Lokalisierung
 ms.localizationpriority: medium
-ms.openlocfilehash: 9998436b106acce6a9223140e66d2633c2210a54
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c4f1857ba4afe5eba271f7022c64aca26eb6b6b8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493355"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156934"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>Benutzerprofilsprachen und App-Manifest-Sprachen verstehen
 Ein Windows-Benutzer kann mit den **Einstellungen**  >  **Zeit & sprach**  >  **Region & Sprache** eine geordnete Liste von bevorzugten Anzeige Sprachen oder nur eine einzige bevorzugte Anzeige Sprache konfigurieren. Eine Sprache kann über eine regionale Variante verfügen. Sie können z. b. Spanisch als gesprochen in Spanien, Spanisch, wie in Mexiko gesprochen, Spanisch (Spanisch, wie in der USA gesprochen) auswählen.
@@ -193,7 +193,7 @@ Die folgende Tabelle enthält Beispiele dafür, was der Benutzer in der Benutzer
 </table>
 
 >[!NOTE]
-> Eine Liste der von Microsoft verwendeten Standard Codes für Länder und Regionen finden Sie in der [Liste offizieller Länder/](/windows/uwp/publish/supported-languages)Regionen.
+> Eine Liste der von Microsoft verwendeten Standard Codes für Länder und Regionen finden Sie in der [Liste offizieller Länder/](../../publish/supported-languages.md)Regionen.
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [Globalizationpreferences. Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
@@ -207,7 +207,7 @@ Die folgende Tabelle enthält Beispiele dafür, was der Benutzer in der Benutzer
 * [Globalizationpreferences. homegeocregion](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
 * [Geografische Region](/uwp/api/windows.globalization.geographicregion?branch=live)
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 * [BCP-47-Sprachtag](https://tools.ietf.org/html/bcp47)
 * [IANA-sprachsubtag-Registrierung](https://www.iana.org/assignments/language-subtag-registry)
 * [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern](../../app-resources/tailor-resources-lang-scale-contrast.md)

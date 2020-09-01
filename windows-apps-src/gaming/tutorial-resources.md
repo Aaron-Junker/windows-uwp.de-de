@@ -1,18 +1,18 @@
 ---
-title: Erweitern des Beispiel Spiels
-description: Erfahren Sie, wie Sie eine XAML-Überlagerung für ein UWP DirectX-Spiel implementieren.
+title: Erweitern des Spielbeispiels
+description: Erfahren Sie, wie Sie XAML anstelle von Direct2D für die Überlagerung im DirectX-Spiel Basic universelle Windows-Plattform (UWP) verwenden.
 keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 06b52e5b6fdba1db83c941e770cd49360085accf
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: be2ef3b4d5c3cce4a4305a8faa1f4af5dea3e8bc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409549"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156374"
 ---
-# <a name="extend-the-sample-game"></a>Erweitern des Beispiel Spiels
+# <a name="extend-the-sample-game"></a>Erweitern des Spielbeispiels
 
 > [!NOTE]
 > Dieses Thema ist Teil der Tutorial-Reihe zum [Erstellen eines einfachen universelle Windows-Plattform (UWP) mit DirectX](tutorial--create-your-first-uwp-directx-game.md) . Das Thema unter diesem Link legt den Kontext für die Reihe fest.
@@ -43,7 +43,7 @@ Definieren von Overlay | Definiert in einer XAML-Datei, `\*.xaml` . Nachdem Sie 
 Benutzeroberflächenelemente | XAML-Benutzeroberflächen Elemente stammen aus standardisierten Elementen, die Teil der Windows-Runtime XAML-APIs sind, darunter [**Windows:: UI:: XAML**](/uwp/api/Windows.UI.Xaml) und [**Windows:: UI:: XAML:: Controls**](/uwp/api/Windows.UI.Xaml.Controls). Der Code zum Behandeln des Verhaltens der XAML-UI-Elemente ist in der CodeBehind-Datei „Main.xaml.cpp“ definiert. | Einfache Formen können wie Rechtecke und Ellipsen gezeichnet werden.
 Fenstergröße ändern | Verarbeitet natürlich die Größen Änderungs-und Ansichts Zustands Änderungs Ereignisse und wandelt das Overlay entsprechend um | Sie müssen manuell angeben, wie die Komponenten der Überlagerung neu gezeichnet werden sollen.
 
-Ein weiterer großer Unterschied besteht in der [SwapChain](/windows/uwp/graphics-concepts/swap-chains). Sie müssen die SwapChain nicht an ein [**Windows:: UI:: Core:: corewindow**](/uwp/api/windows.ui.core.corewindow) -Objekt anfügen. Stattdessen ordnet eine DirectX-APP, die XAML integriert, eine austauschkette zu, wenn ein neues [**swapchainpanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) -Objekt erstellt wird. 
+Ein weiterer großer Unterschied besteht in der [SwapChain](../graphics-concepts/swap-chains.md). Sie müssen die SwapChain nicht an ein [**Windows:: UI:: Core:: corewindow**](/uwp/api/windows.ui.core.corewindow) -Objekt anfügen. Stattdessen ordnet eine DirectX-APP, die XAML integriert, eine austauschkette zu, wenn ein neues [**swapchainpanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) -Objekt erstellt wird. 
 
 Der folgende Code Ausschnitt zeigt, wie Sie XAML für das " **Swap** "-Element in der Datei " [**directxpage. XAML**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml) " deklarieren.
 ```xml
@@ -78,7 +78,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 
 Wenn Sie die konfigurierte [**SwapChain an die swapchainpanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) -Instanz anfügen möchten, die von Ihrem XAML-Code definiert wird, müssen Sie einen Zeiger auf die zugrunde liegende systemeigene [**iswapchainpanelnative**](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-iswapchainpanelnative) -Schnittstellen Implementierung abrufen und [**iswapchainpanelnative:: setwapchain**](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain) für Sie erstellen. 
 
-Der folgende Code Ausschnitt von [**DX::D eviceresources:: createwindowsizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) erläutert dies für DirectX/XAML-Interop:
+Der folgende Code Ausschnitt von  [**DX::D eviceresources:: createwindowsizedependentresources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) erläutert dies für DirectX/XAML-Interop:
 
 ```cpp
         ComPtr<IDXGIDevice3> dxgiDevice;

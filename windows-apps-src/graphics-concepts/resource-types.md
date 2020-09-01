@@ -1,23 +1,23 @@
 ---
 title: Ressourcentypen
-description: Die verschiedenen Ressourcentypen haben unterschiedliche Layouts (bzw. unterschiedliche Speicheranforderungen).
+description: Unterschiedliche Arten von Ressourcen haben ein unterschiedliches Layout (oder Speicherbedarf).
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
 keywords:
 - Ressourcentypen
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: b300747027f0c9466e7ca04b4c4b571882f57a6e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210096"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156434"
 ---
 # <a name="resource-types"></a>Ressourcentypen
 
 
-Die verschiedenen Ressourcentypen haben unterschiedliche Layouts (bzw. unterschiedliche Speicheranforderungen). Alle von der Direct3D-Pipeline verwendeten Ressourcen sind von zwei grundlegenden Ressourcentypen abgeleitet: [Puffer](#buffer-resources) und [Texturen](#texture-resources). Ein Puffer ist eine Sammlung von Rohdaten (Elemente); eine Textur ist eine Sammlung von Texeln (Textur-Elementen).
+Unterschiedliche Arten von Ressourcen haben ein unterschiedliches Layout (oder Speicherbedarf). Alle von der Direct3D-Pipeline verwendeten Ressourcen werden aus zwei grundlegenden Ressourcentypen abgeleitet: [Puffer](#buffer-resources) und [Texturen](#texture-resources). Ein Puffer ist eine Auflistung von Rohdaten (Elemente). eine Textur ist eine Auflistung von texeln (Textur Elemente).
 
 Es gibt zwei Möglichkeiten, das Layout (oder den Speicherbedarf) einer Ressource vollständig anzugeben:
 
@@ -29,17 +29,17 @@ Es gibt zwei Möglichkeiten, das Layout (oder den Speicherbedarf) einer Ressourc
 <thead>
 <tr class="header">
 <th align="left">Element</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Typ</p></td>
-<td align="left"><p>Typ wird bei der Erstellung der Ressource vollständig angegeben.</p></td>
+<td align="left"><p>Geben Sie den Typ beim Erstellen der Ressource vollständig an.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>Typen losen</p></td>
-<td align="left"><p>Typ wird vollständig angegeben, wenn die Ressource an die Pipeline gebunden wird.</p></td>
+<td align="left"><p>Geben Sie den Typ vollständig an, wenn die Ressource an die Pipeline gebunden ist.</p></td>
 </tr>
 </tbody>
 </table>
@@ -49,9 +49,9 @@ Es gibt zwei Möglichkeiten, das Layout (oder den Speicherbedarf) einer Ressourc
 ## <a name="span-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>Puffer Ressourcen
 
 
-Eine Pufferressource ist eine Sammlung vollständig typisierter Daten; intern enthält ein Puffer Elemente. Ein Element besteht aus ein bis vier Komponenten. Beispiele für Datentypen: ein gepackter Datenwert (z. B. R8G8B8A8), eine einzelne 8-Bit-Ganzzahl, vier 32-Bit-Float-Werte. Diese Datentypen dienen dem Speichern von Daten wie Positionsvektoren, Normalenvektoren, Texturkoordinaten in einem Vertexpuffer, Indizes in einem Indexpuffer oder Gerätestatus.
+Eine Puffer Ressource ist eine Sammlung von vollständig typisierten Daten. intern enthält ein Puffer-Elemente. Ein Element besteht aus 1 bis 4 Komponenten. Beispiele für Element Datentypen: ein gepackter Datenwert (z. b. R8G8B8A8), eine einzelne 8-Bit-Ganzzahl, 4 32-Bit-Float-Werte. Diese Datentypen werden verwendet, um Daten zu speichern, z. b. einen Positions Vektor, einen normalen Vektor, eine Textur Koordinate in einem Vertex-Puffer, einen Index in einem Index Puffer oder einen Gerätezustand.
 
-Ein Puffer wird als eine unstrukturierte Ressource erstellt. Da die Puffer unstrukturiert sind, können sie keine Mip-Map-Ebenen enthalten, werden beim Lesen nicht gefiltert und unterstützen kein Multisampling.
+Ein Puffer wird als unstrukturierte Ressource erstellt. Da es nicht strukturiert ist, kann ein Puffer keine MipMap-Ebenen enthalten, wird beim Lesen nicht gefiltert und kann nicht mit einem Multisampling verwendet werden.
 
 ### <a name="span-idbuffer_typesspanspan-idbuffer_typesspanspan-idbuffer_typesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>Puffer Typen
 
@@ -61,71 +61,71 @@ Ein Puffer wird als eine unstrukturierte Ressource erstellt. Da die Puffer unstr
 
 ### <a name="span-idvertex_bufferspanspan-idvertex_bufferspanspan-idvertex_bufferspanspan-idvertex-bufferspanvertex-buffer"></a><span id="Vertex_Buffer"></span><span id="vertex_buffer"></span><span id="VERTEX_BUFFER"></span><span id="vertex-buffer"></span>Vertex-Puffer
 
-Ein Puffer ist eine Sammlung von Elementen; ein Vertexpuffer enthält Daten pro Scheitelpunkt. Das einfachste Beispiel ist ein Vertexpuffer, der eine Art von Daten enthält, z. B. Positionsdaten. Dieser kann dargestellt werden, und sieht aus wie in folgender Abbildung.
+Ein Puffer ist eine Auflistung von Elementen. ein Vertex-Puffer enthält pro-Vertex-Daten. Das einfachste Beispiel ist ein Vertex-Puffer, der einen Datentyp enthält, z. b. Positionsdaten. Es kann wie in der folgenden Abbildung dargestellt werden.
 
-![Abbildung eines Vertexpuffers, der Positionsdaten enthält](images/d3d10-resources-single-element-vb2.png)
+![Abbildung eines Scheitelpunkt Puffers, der Positionsdaten enthält](images/d3d10-resources-single-element-vb2.png)
 
-Häufiger enthält ein Vertexpuffer aber alle erforderlichen Daten, um 3D-Scheitelpunkte vollständig dazustellen. Ein Beispiel dazu könnte ein Vertexpuffer sein, der eine Position pro Scheitelpunkt sowie Normale und Texturkoordinaten enthält. Diese Daten sind in der Regel als Sätze der Elemente pro Scheitelpunkt organisiert, wie in der folgenden Abbildung dargestellt.
+Häufig enthält ein Vertex-Puffer alle Daten, die erforderlich sind, um 3D-Vertices vollständig anzugeben. Ein Beispiel hierfür könnte ein Vertex-Puffer sein, der die Position des einzelnen Vertex, die normalen und die Texturkoordinaten enthält. Diese Daten werden in der Regel als Sätze von pro-Vertex-Elementen organisiert, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung eines Vertexpuffers, der Positionsdaten, Normale und Texturdaten enthält](images/d3d10-vertex-buffer-element.png)
+![Abbildung eines Scheitelpunkt Puffers, der Positions-, normal-und Textur Daten enthält](images/d3d10-vertex-buffer-element.png)
 
-Dieser Vertexpuffer enthält Daten pro Scheitelpunkt für acht Scheitelpunkte; jeder Scheitelpunkt speichert drei Elemente (Position, Normale und Texturkoordinaten). Position und Normale werden normalerweise mit drei 32-Bit-Gleitkommawerten und die Texturkoordinaten mit zwei 32-Bit-Gleitkommawerten angegeben.
+Dieser Vertex-Puffer enthält pro-Scheitelpunkt Daten für acht Vertices. jeder Scheitelpunkt speichert drei Elemente (Positions-, normal-und Texturkoordinaten). Die Position und normal werden jeweils in der Regel mit 3 32-Bit-Gleit Komma Werten und den Texturkoordinaten mit 2 32-Bit-Gleit Komma Zahlen angegeben.
 
-Um Daten aus einem Vertexpuffer abzurufen, müssen Sie den gewünschten Scheitelpunkt und die restlichen Pufferparameter kennen:
+Für den Zugriff auf Daten aus einem Vertex-Puffer müssen Sie wissen, auf welchen Scheitelpunkt zugegriffen werden soll, und diese anderen Puffer Parameter angeben:
 
--   *Offset* - Die Anzahl von Bytes vom Anfang des Puffers bis zu den Daten für den ersten Scheitelpunkt.
--   *BaseVertexLocation* - Die Anzahl der Bytes vom Offset bis zum ersten Scheitelpunkt, den der entsprechende Zeichnen-Aufruf verwendet.
+-   *Offset* : die Anzahl der Bytes vom Anfang des Puffers bis zu den Daten für den ersten Scheitelpunkt.
+-   *Basevertexlocation* : die Anzahl der Bytes vom Offset bis zum ersten Vertex, der vom entsprechenden zeichnen-Befehl verwendet wird.
 
-Bevor Sie einen Vertexpuffer erstellen, müssen Sie das Layout definieren, indem Sie ein Eingabelayout-Objekt erstellen. Nachdem das Eingabelayout-Objekt erstellt wurde, wird es an die Eingabeassemblerphase (IA-Phase) gebunden.
+Vor dem Erstellen eines Scheitelpunkt Puffers müssen Sie sein Layout definieren, indem Sie ein Eingabe Layoutobjekt erstellen. Nachdem das Eingabe Layout-Objekt erstellt wurde, binden Sie es an die Stufe Eingabe Assembler (IA).
 
 ### <a name="span-idindex_bufferspanspan-idindex_bufferspanspan-idindex_bufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>Index Puffer
 
-Ein Indexpuffer enthält eine aufeinanderfolgende Reihe von 16-Bit- oder 32-Bit-Indizes; jeder Index wird verwendet, um einen Scheitelpunkt im Vertexpuffer zu kennzeichnen. Den Vorgang, bei dem ein Indexpuffer mit einem oder mehreren Vertexpuffern Daten an die IA-Phase liefert, nennt man Indexierung. Ein Indexpuffer kann dargestellt werden, wie in der folgenden Abbildung.
+Ein Index Puffer enthält einen sequenziellen Satz von 16-Bit-oder 32-Bit-Indizes. Jeder Index wird zum Identifizieren eines Scheitel Punkts in einem Scheitelpunkt Puffer verwendet. Die Verwendung eines Index Puffers mit einem oder mehreren Scheitel Punkten zum Bereitstellen von Daten für die IA-Phase wird als Indizierung bezeichnet. Ein Index Puffer kann wie in der folgenden Abbildung dargestellt werden.
 
-![Abbildung eines Indexpuffers](images/d3d10-index-buffer.png)
+![Abbildung eines Index Puffers](images/d3d10-index-buffer.png)
 
-Die aufeinanderfolgenden Indizes in einem Indexpuffer werden mit den folgenden Parametern lokalisiert:
+Die in einem Index Puffer gespeicherten sequenziellen Indizes befinden sich mit den folgenden Parametern:
 
--   *Offset* - Die Anzahl an Bytes vom Anfang des Puffers bis zum ersten Index.
--   *StartIndexLocation* - Die Anzahl der Bytes vom Offset bis zum ersten Scheitelpunkt, den der entsprechende Zeichnen-Aufruf verwendet.
--   *IndexCount* – Die Anzahl der zu berechnenden und auszugebenden Indizes.
+-   *Offset* : die Anzahl von Bytes vom Beginn des Puffers bis zum ersten Index.
+-   *Startindexlocation* : die Anzahl der Bytes vom Offset bis zum ersten Vertex, der vom entsprechenden zeichnen-Befehl verwendet wird.
+-   *IndexCount* : die Anzahl der zu renderenden Indizes.
 
-Ein Indexpuffer kann mehrere Zeilen oder Dreiecksstreifen zusammenfügen ([primitive Topologien](primitive-topologies.md)), indem diese jeweils durch einen Streifenschnittindex getrennt werden. Mit einem Streifenschnittindex können mehrere Zeilen oder Dreiecksstreifen mit einem einzigen Zeichnen-Aufruf gezeichnet werden. Ein Streifenschnittindex ist der Maximalwert für den Index (0xffff für einen 16-Bit-Index, 0xffffffff für einen 32-Bit-Index). Der Streifenschnittindex setzt die Windungsreihenfolge in indizierten Primitiven zurück und kann verwendet werden, damit keine fehlerhaften Dreiecke mehr benötigt werden, die andernfalls möglicherweise erforderlich sind, um de richtige Windungsreihenfolge in einem Dreiecksstreifen zu erhalten. Die folgende Abbildung zeigt ein Beispiel für einen Streifenschnittindex.
+Ein Index Puffer kann mehrere Zeilen-oder Dreiecks Streifen (primitive Topologien) Durchtrennen der einzelnen Zeilen-oder Dreiecks Streifen ([primitive Topologien](primitive-topologies.md)) zusammenzufügen. Mit einem Strip-Cut-Index können mehrere Zeilen-oder Dreieck Striche mit einem einzelnen zeichnen-Befehl gezeichnet werden. Ein Strip-Ausschneide Index ist der maximal mögliche Wert für den Index (0xFFFF für einen 16-Bit-Index, 0xFFFFFFFF für einen 32-Bit-Index). Der Strip-Cut-Index setzt die aufzurufende Reihenfolge in indizierten primitiven zurück und kann verwendet werden, um den Bedarf an degenerierten Dreiecken zu entfernen, die andernfalls erforderlich sind, um die richtige Sortierreihenfolge in einem Dreiecks Band beizubehalten Die folgende Abbildung zeigt ein Beispiel für einen Index Ausschneide Index.
 
-![Abbildung eines Streifenschnittindex](images/d3d10-ia-strips-cut-value.png)
+![Abbildung eines Index Ausschneide Index](images/d3d10-ia-strips-cut-value.png)
 
 ### <a name="span-idshader_constant_bufferspanspan-idshader_constant_bufferspanspan-idshader_constant_bufferspanspan-idshader-constant-bufferspanconstant-buffer"></a><span id="Shader_Constant_Buffer"></span><span id="shader_constant_buffer"></span><span id="SHADER_CONSTANT_BUFFER"></span><span id="shader-constant-buffer"></span>Konstanter Puffer
 
-Direct3D verfügt über einen Puffer für die Bereitstellung von Shaderkonstanten, der als Shader-Konstanten-Puffer oder einfach Konstantenpuffer bezeichnet wird. Konzeptionell sieht dieser wie ein Vertexpuffer mit einem Element aus, wie in der folgenden Abbildung dargestellt.
+Direct3D verfügt über einen Puffer zum Bereitstellen von Shader-Konstanten, die als Shader-Konstantenpuffer oder einfach als konstanter Puffer bezeichnet werden. Konzeptionell sieht es wie ein Einzelelement-Vertexpuffer aus, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung eines Shader-Konstantenpuffers](images/d3d10-shader-resource-buffer.png)
+![Abbildung eines Shaders-konstantenpuffers](images/d3d10-shader-resource-buffer.png)
 
-Jedes Element speichert eine Konstante mit ein bis vier Komponenten, die durch das Format der gespeicherten Daten bestimmt wird.
+Jedes Element speichert eine 1-zu-4-Komponenten Konstante, die durch das Format der gespeicherten Daten bestimmt wird.
 
-Konstantenpuffer verringern die Bandbreite, die erforderlich ist, um Shaderkonstanten zu aktualisieren, indem sie die Gruppierung von Shaderkonstanten und das gleichzeitige Einchecken erlauben, anstatt einzelne Aufrufe zum Einchecken jeder einzelnen Konstante durchzuführen.
+Konstantenpuffer reduzieren die erforderliche Bandbreite, um shaderkonstanten zu aktualisieren, indem Sie zulassen, dass Shader-Konstanten gleichzeitig gruppiert und ein Commit ausgeführt werden, anstatt einzelne Aufrufe zum separaten Commit der einzelnen Konstanten zu erstellen.
 
-Ein Shader liest Variablen in einem Konstantenpuffer weiterhin direkt mit dem Variablennamen; auf die gleiche Art und Weise werden Variablen gelesen, die nicht Teil eines Konstantenpuffers sind.
+Ein Shader liest weiterhin Variablen in einem konstanten Puffer direkt über den Variablennamen in derselben Weise, wie Variablen, die nicht Teil eines konstanten Puffers sind, gelesen werden.
 
-Jede Shader-Phase ermöglicht bis zu 15 Shader-Konstantenpuffer; Jeder Puffer kann bis zu 4096 Konstanten vorhalten.
+Jede Shader-Stufe ermöglicht bis zu 15 Shader-Konstante Puffer. jeder Puffer kann bis zu 4096 Konstanten enthalten.
 
-Verwenden Sie einen Konstantenpuffer, um die Ergebnisse der Datenstromausgabephase zu speichern.
+Verwenden Sie einen konstanten Puffer, um die Ergebnisse der Stream-Output-Phase zu speichern.
 
-Unter [Shaderkonstanten (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) finden Sie ein Beispiel zum Erklären eines Konstantenpuffers in einem Shader.
+Ein Beispiel für das Deklarieren eines konstanten Puffers in einem Shader finden Sie unter [Shader-Konstanten (DirectX HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants) .
 
 ## <a name="span-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>Textur Ressourcen
 
 
-Eine Texturressource ist eine strukturierte Datensammlung, die für das Speichern von Texel entwickelt wurde. Im Gegensatz zu Puffern können Texturen von Textursamplern gefiltert werden, da sie von Shader-Einheiten gelesen werden. Der Texturtyp hat Einfluss darauf, wie die Textur gefiltert wird. Ein Texel repräsentiert die kleinste Einheit einer Textur, die von einer Pipeline gelesen oder geschrieben werden kann. Jeder textext enthält 1 bis 4 Komponenten, die in einem der DXGI-Formate angeordnet sind (siehe [**DXGI\_Format**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
+Eine Textur Ressource ist eine strukturierte Sammlung von Daten, die zum Speichern von texeln entwickelt wurden. Im Gegensatz zu puffern können Texturen durch Textur-samplz gefiltert werden, wenn Sie von Shader-Einheiten gelesen werden. Der Typ der Textur wirkt sich darauf aus, wie die Textur gefiltert wird. Ein Texel stellt die kleinste Einheit einer Textur dar, die von der Pipeline gelesen oder geschrieben werden kann. Jeder textextetyp enthält 1 bis 4 Komponenten, die in einem der DXGI-Formate angeordnet sind (siehe [**DXGI- \_ Format**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)).
 
-Texturen werden als strukturierte Ressource erstellt, damit ihre Größe bekannt ist. Jedoch kann jede Textur zum Zeitpunkt des Erstellens von Ressourcen typisiert oder typenlos sein, solange der Typ unter Verwendung einer Ansicht vollständig angegeben ist, wenn die Textur an die Pipeline gebunden ist.
+Texturen werden als strukturierte Ressource erstellt, sodass ihre Größe bekannt ist. Allerdings kann jede Textur zum Zeitpunkt der Ressourcen Erstellung eingegeben oder typlos sein, solange der Typ vollständig mit einer Sicht angegeben wird, wenn die Textur an die Pipeline gebunden ist.
 
--   [Textur Typen](#texture-types)
--   [Unter Ressourcen](#subresources)
+-   [Typen von Texturen](#texture-types)
+-   [Unterressourcen](#subresources)
 -   [Starke und schwache Typisierung](#typed)
 
 ### <a name="span-idtexture_typesspanspan-idtexture_typesspanspan-idtexture_typesspanspan-idtexture-typesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span><span id="texture-types"></span>Textur Typen
 
-Es gibt verschiedene Texturarten: 1D, 2D und 3D, von denen jede mit oder ohne Mipmaps erstellt werden kann. Direct3D unterstützt auch Texturarrays und multi-gesampelte Texturen.
+Es gibt mehrere Arten von Texturen: 1D, 2D, 3D, von denen jede mit oder ohne Mipmaps erstellt werden kann. Direct3D unterstützt auch Textur Arrays und Multisampling-Texturen.
 
 -   [1D-Textur](#texture1d-resource)
 -   [1D-Textur Array](#texture1d-array-resource)
@@ -134,117 +134,117 @@ Es gibt verschiedene Texturarten: 1D, 2D und 3D, von denen jede mit oder ohne Mi
 
 ### <a name="span-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1D-Textur
 
-In ihrer einfachsten Form enthält eine 1D-Textur die Texturdaten, die mit einer einzelnen Texturkoordinate behandelt werden können; sie können als Array von Texeln dargestellt werden, wie in der folgenden Abbildung dargestellt.
+Eine 1D-Textur in der einfachsten Form enthält Textur Daten, die mit einer einzelnen Textur Koordinate adressiert werden können. Sie kann als Array von Texels visualisiert werden, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung einer 1D-Textur](images/d3d10-1d-texture.png)
+![Abbildung einer 1D-Textur](images/d3d10-1d-texture.png)
 
-Jeder Texel enthält eine Reihe von Farbkomponenten, die vom Format der gespeicherten Daten abhängig sind. Um eine höhere Komplexität zu erreichen, können Sie eine 1D-Textur mit Mipmap-Ebenen erstellen, wie in der folgenden Abbildung dargestellt.
+Jede Texel enthält eine Reihe von Farbkomponenten, abhängig vom Format der gespeicherten Daten. Wenn Sie weitere Komplexität hinzufügen, können Sie eine 1D-Textur mit MipMap-Ebenen erstellen, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung einer 1D-Textur mit Mip-Map-Ebenen](images/d3d10-resource-texture1d.png)
+![Abbildung einer 1D-Textur mit MipMap-Ebenen](images/d3d10-resource-texture1d.png)
 
-Eine Mipmap-Ebene ist eine Textur, die um die Zweierpotenz kleiner ist als die Ebene darüber. Die oberste Ebene enthält die meisten Details und jede nachfolgende Ebene ist kleiner; bei einer 1D-Mip-Map enthält die niedrigste Ebene ein Texel. Die unterschiedlichen Ebenen werden durch einen Index bezeichnet, der LOD (Detailtiefe) genannt wird; Sie können die LOD verwenden, um auf eine kleinere Textur zuzugreifen, wenn Sie eine Geometrie berechnen und ausgeben, die nicht so nah bei der Kamera liegt.
+Bei einer MipMap-Ebene handelt es sich um eine Textur, bei der es sich um eine Potenz von zwei kleiner als der darüber liegenden Ebene handelt. Die oberste Ebene enthält die meisten Details, jede nachfolgende Ebene ist kleiner. bei einer 1D-MipMap enthält die kleinste Ebene eine texsebene. Die unterschiedlichen Ebenen werden durch einen Index identifiziert, der als "LOD" (Detailstufe) bezeichnet wird. Sie können den Lod verwenden, um auf eine kleinere Textur zuzugreifen, wenn Sie Geometrie rendern, die nicht so nah wie die Kamera ist.
 
 ### <a name="span-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1D-Textur Array
 
-Direct3D 10 verfügt außerdem über eine neue Datenstruktur für ein Texturarray. Ein 1D-Texturarray ähnelt vom Konzept her der folgenden Abbildung.
+Direct3D 10 verfügt auch über eine neue Datenstruktur für ein Array von Texturen. Ein Array von 1D-Texturen sieht konzeptionell wie in der folgenden Abbildung aus.
 
-![Abbildung eines 1D-Texturarrays](images/d3d10-resource-texture1darray.png)
+![Abbildung eines 1D-Textur Arrays](images/d3d10-resource-texture1darray.png)
 
-Dieses Texturarray enthält drei Texturen. Jede der drei Texturen verfügt über eine Texturbreite von 5 (bei der es sich um die Anzahl der Elemente in der ersten Ebene handelt). Jede Textur enthält auch eine Mip-Map mit 3 Ebenen.
+Dieses Textur Array enthält drei Texturen. Jede der drei Texturen hat eine Textur Breite von 5 (die Anzahl der Elemente in der ersten Ebene). Jede Textur enthält auch eine 3-Ebenen-MipMap.
 
-Alle Texturarrays in Direct3D sind ein homogenes Texturarray; das bedeutet, dass jede Textur in einem Texturarray dasselbe Datenformat und dieselbe Größe aufweisen muss (einschließlich der Texturbreite und der Anzahl der Mipmap-Ebenen). Sie können Texturarrays mit verschiedenen Größen erstellen, solange alle Texturen in jedem Array von der Größe her übereinstimmen.
+Alle Textur Arrays in Direct3D sind ein homogenes Array von Texturen. Dies bedeutet, dass jede Textur in einem Textur Array das gleiche Datenformat und die gleiche Größe aufweisen muss (einschließlich der Textur Breite und der Anzahl von MipMap-Ebenen). Sie können Textur Arrays mit unterschiedlichen Größen erstellen, sofern alle Texturen in den einzelnen Arrays in der Größe zueinander passen.
 
 ### <a name="span-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>2D-Textur und 2D-Textur Array
 
-Eine Texture2D-Ressource enthält ein Raster mit 2D-Texeln. Jedes Texel kann über einen u,v-Vektor angesprochen werden. Da es sich um eine Texturressource handelt, kann sie Mip-Map-Ebenen und Unterressourcen enthalten. Eine vollständig ausgefüllte 2D-Texturressource entspricht der folgenden Abbildung.
+Eine Texture2D-Ressource enthält ein 2D-Raster mit texeln. Jedes texttuton ist durch einen u-v-Vektor adressierbar. Da es sich um eine Textur Ressource handelt, kann Sie MipMap-Ebenen und untergeordnete Quellen enthalten. Eine vollständig aufgefüllte 2D-Textur Ressource sieht wie in der folgenden Abbildung aus.
 
-![Abbildung einer 2D-Texturressource](images/d3d10-resource-texture2d.png)
+![Abbildung einer 2D-Textur Ressource](images/d3d10-resource-texture2d.png)
 
-Diese Texturressource enthält eine einzelne 3x5-Textur mit drei Mipmap-Ebenen.
+Diese Textur Ressource enthält eine einzelne 3x5-Textur mit drei MipMap-Ebenen.
 
-+Eine Texture2DArray-Ressource ist ein homogenes 2D-Texturarray; das heißt, jede Textur hat dasselbe Datenformat und dieselben Dimensionen (z. B. Mip-Map-Ebenen). Es verfügt über ein ähnliches Layout wie das 1D-Texturarray, mit der Ausnahme, dass die Texturen jetzt 2D-Daten enthalten, und dementsprechend entspricht es der folgenden Abbildung.
+Eine Texture2DArray-Ressource ist ein homogenes Array von 2D-Texturen. Das heißt, jede Textur hat das gleiche Datenformat und die gleichen Dimensionen (einschließlich MipMap-Ebenen). Es verfügt über ein ähnliches Layout wie das 1D-Textur Array, mit dem Unterschied, dass die Texturen nun 2D-Daten enthalten und daher wie in der folgenden Abbildung aussehen.
 
-![Abbildung eines Arrays an 2D-Texturressourcen](images/d3d10-resource-texture2darray.png)
+![Abbildung eines Arrays von 2D-Textur Ressourcen](images/d3d10-resource-texture2darray.png)
 
-Dieses Texturarray enthält drei Texturen; jede Textur ist 3x5 mit zwei Mipmap-Ebenen.
+Dieses Textur Array enthält drei Texturen. Jede Textur ist 3x5 mit zwei MipMap-Ebenen.
 
 ### <a name="span-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>Verwenden eines Texture2DArray als Textur Cube
 
-Ein Textur-Würfel ist ein 2D-Texturarray, das sechs Texturen enthält, eine für jede Fläche des Würfels. Ein vollständig ausgefüllter Textur-Würfel entspricht der folgenden Abbildung.
+Ein Textur Cube ist ein 2D-Textur Array, das 6 Texturen enthält, eine für jedes Gesicht des Cubes. Ein vollständig aufgefüllter Textur Cube sieht wie die folgende Abbildung aus.
 
-![Abbildung eines Arrays an 2D-Texturressourcen, die einen Textur-Würfel darstellen](images/d3d10-resource-texturecube.png)
+![Abbildung eines Arrays von 2D-Textur Ressourcen, die einen Textur Cube darstellen](images/d3d10-resource-texturecube.png)
 
-Ein 2D-Texturarray mit sechs Texturen kann mit den der Würfelzuordnung innewohnenden Funktionen aus dem Inneren von Shadern gelesen werden, nachdem sie mit einer Würfel-Texturansicht an die Pipeline gebunden wurden. Textur-Würfel werden vom Shader aus mit einem 3D-Vektor angesprochen, der von der Mitte des Textur-Würfels nach außen weist.
+Ein 2D-Textur Array, das 6 Texturen enthält, kann aus Shader mit den intrinsischen cubemap-Funktionen gelesen werden, nachdem Sie mit einer cubetextansicht an die Pipeline gebunden wurden. Textur Cubes werden vom Shader mit einem 3D-Vektor adressiert, der aus der Mitte des Textur Cubes zeigt.
 
 ### <a name="span-idtexture3d_resourcespanspan-idtexture3d_resourcespanspan-idtexture3d_resourcespanspan-idtexture3d-resourcespan3d-texture"></a><span id="Texture3D_Resource"></span><span id="texture3d_resource"></span><span id="TEXTURE3D_RESOURCE"></span><span id="texture3d-resource"></span>3D-Textur
 
-Eine Texture3D-Ressource (auch bekannt als Volumentextur) enthält ein 3D-Volumen an Texeln. Da es sich um eine Texturressource handelt, kann sie Mip-Map-Ebenen enthalten. Eine vollständig ausgefüllte 3D-Textur entspricht der folgenden Abbildung.
+Eine Texture3D-Ressource (auch als volumetextur bezeichnet) enthält eine 3D-Menge an texeln. Da es sich um eine Textur Ressource handelt, kann Sie MipMap-Ebenen enthalten. Eine vollständig aufgefüllte 3D-Textur sieht wie in der folgenden Abbildung aus.
 
-![Abbildung einer 3D-Texturressource](images/d3d10-resource-texture3d.png)
+![Abbildung einer 3D--Textur Ressource](images/d3d10-resource-texture3d.png)
 
-Wenn ein 3D-Textur-Mipmap-Segment als Zielausgabe der Berechnung und der Ausgabe gebunden ist (mit einer Berechnen-Ziel-Ansicht), verhält sich die 3D-Textur analog zu einem 2D-Texturarray mit n Segmenten. Das konkrete Berechnungssegment wird aus der Geometrie-Shader-Phase ausgewählt.
+Wenn ein 3D-Textur-MipMap-Slice als renderzielausgabe (mit einer renderzielansicht) gebunden wird, verhält sich die 3D-Textur identisch mit einem 2D-Textur Array mit n Slices. Der jeweilige Rendering-Slice wird aus der Geometrie-Shader-Stufe ausgewählt.
 
-Es gibt kein Konzept eines 3D-Texturarrays; dementsprechend ist eine 3D-Texturunterressource eine einzelne Mipmap-Ebene.
+Es gibt kein Konzept eines 3D-Textur Arrays. Daher ist eine 3D-Textur-unter Quelle eine einzelne MipMap-Ebene.
 
 ### <a name="span-idsubresourcesspanspan-idsubresourcesspanspan-idsubresourcesspansubresources"></a><span id="Subresources"></span><span id="subresources"></span><span id="SUBRESOURCES"></span>Unter Ressourcen
 
-Die Direct3D-API verweist auf gesamte Ressourcen oder Teilmengen von Ressourcen. Um einen Teil der Ressourcen vorzugeben, hat Direct3D den Begriff der *Unterressourcen* geprägt, d.h. eine Teilmenge einer Ressource.
+Die Direct3D-API verweist auf ganze Ressourcen oder Teilmengen von Ressourcen. Um einen Teil der Ressourcen *anzugeben, hat Direct3D den Begriff unter*Berichte geprägt, d. h. eine Teilmenge einer Ressource.
 
-Ein Puffer wird als einzelne Unterressource definiert. Texturen sind etwas komplizierter, da es mehrere unterschiedliche Texturtypen gibt (1D, 2D usw.), von denen einige Mip-Map-Ebenen und/oder Texturarrays unterstützen. Beginnend mit dem einfachsten Fall, wird eine 1D-Textur als einzelne Unterressource definiert, wie in der folgenden Abbildung dargestellt.
+Ein Puffer ist als einzelne untergeordnete Quelle definiert. Texturen sind etwas komplizierter, da einige verschiedene Textur Typen (1D, 2D usw.) enthalten, von denen einige MipMap-Ebenen und/oder Textur Arrays unterstützen. Beginnend mit dem einfachsten Fall wird eine 1D-Textur als einzelne untergeordnete Quelle definiert, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung einer 1D-Textur](images/d3d10-1d-texture.png)
+![Abbildung einer 1D-Textur](images/d3d10-1d-texture.png)
 
-Das bedeutet, dass das Array an Texeln, die eine 1D-Textur bilden, in einer einzelnen Unterressource enthalten ist.
+Dies bedeutet, dass das Array von texeln, die eine 1D-Textur bilden, in einer einzelnen untergeordneten Quelle enthalten ist.
 
-Wenn Sie eine 1D-Textur mit drei Mip-Map-Ebenen erweitern, kann dies wie folgt dargestellt werden.
+Wenn Sie eine 1D-Textur mit drei MipMap-Ebenen erweitern, kann Sie wie folgt visualisiert werden.
 
-![Abbildung einer 1D-Textur mit Mip-Map-Ebenen](images/d3d10-resource-texture1d.png)
+![Abbildung einer 1D-Textur mit MipMap-Ebenen](images/d3d10-resource-texture1d.png)
 
-Stellen Sie sich dies als eine einzelne Textur vor, die aus drei Untertexturen besteht. Jede Untertextur zählt als Unterressource, so dass diese 1D-Textur 3 Unterressourcen enthält. Eine Untertextur (oder Unterressource) kann mithilfe der Detailtiefe (LOD) für eine einzelne Textur indiziert werden. Wenn Sie ein Texturarray verwenden, erfordert der Zugriff auf eine bestimmte Untertextur sowohl die LOD als auch die bestimmte Textur. Alternativ kombiniert die API diese zwei Informationselemente in einem einzigen nullbasierten Unterressourcenindex, wie hier gezeigt.
+Stellen Sie sich dies als eine einzelne Textur vor, die aus drei unter Texturen besteht. Jede Unterstruktur wird als untergeordnete Quelle gezählt, sodass diese 1D-Textur drei unter Ressourcen enthält. Eine Unterstruktur (oder untergeordnete Quelle) kann mit der Detailgenauigkeit (ausführlich) für eine einzelne Textur indiziert werden. Wenn Sie ein Array von Texturen verwenden, erfordert der Zugriff auf eine bestimmte Teil Textur sowohl die Lod als auch die bestimmte Textur. Alternativ kombiniert die API diese beiden Informationen in einem einzelnen Null basierten unter Quell Index, wie hier gezeigt.
 
-![Abbildung eines nullbasierten Unterressourcenindex](images/d3d10-resource-texture1darray-sub-indexing.png)
+![Abbildung eines NULL basierten unter Quell Indexes](images/d3d10-resource-texture1darray-sub-indexing.png)
 
 ### <a name="span-idselecting_subresourcesspanspan-idselecting_subresourcesspanspan-idselecting_subresourcesspanselecting-subresources"></a><span id="Selecting_Subresources"></span><span id="selecting_subresources"></span><span id="SELECTING_SUBRESOURCES"></span>Auswählen von unter Ressourcen
 
-Einige API greifen auf eine gesamte Ressource zu, andere greifen auf einen Teil einer Ressource zu. Die API, die auf einen Teil einer Ressource zugreifen, verwenden in der Regel eine Ansichtsbeschreibung, um die Unterressourcen festzulegen, auf welche der Zugriff erfolgen soll.
+Einige APIs greifen auf eine gesamte Ressource zu, von denen andere auf einen Teil einer Ressource zugreifen. Die APIs, die auf einen Teil einer Ressource zugreifen, verwenden im Allgemeinen eine Ansichts Beschreibung, um die unter Ressourcen anzugeben, auf die zugegriffen werden soll.
 
-Diese Abbildungen veranschaulichen die Begriffe, die durch eine Ansichtsbeschreibung verwendet werden, wenn auf ein Texturarray zugegriffen wird.
+Diese Abbildungen veranschaulichen die Begriffe, die durch eine Ansichts Beschreibung beim Zugriff auf ein Array von Texturen verwendet werden.
 
 ### <a name="span-idarray_slicespanspan-idarray_slicespanspan-idarray_slicespanarray-slice"></a><span id="Array_Slice"></span><span id="array_slice"></span><span id="ARRAY_SLICE"></span>Array Slice
 
-In einem Texturarray, jede Textur mit Mip-Maps, umfasst ein Array-Segment (dargestellt durch das weiße Rechteck) eine Textur und alle Untertexturen, wie in der folgenden Abbildung dargestellt.
+Bei einem Array von Texturen enthält jede Textur mit Mipmaps, ein Array Slice (dargestellt durch das weiße Rechteck), eine Textur und alle zugehörigen unter Texturen, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung eines Array-Segmentes](images/d3d10-resource-array-slice.png)
+![Abbildung eines Array Splice](images/d3d10-resource-array-slice.png)
 
 ### <a name="span-idmip_slicespanspan-idmip_slicespanspan-idmip_slicespanmip-slice"></a><span id="Mip_Slice"></span><span id="mip_slice"></span><span id="MIP_SLICE"></span>MIP-Slice
 
-Ein mip-Segment (dargestellt durch das weiße Rechteck) enthält eine Mip-Map-Ebene für jede Textur in einem Array, wie in der folgenden Abbildung dargestellt.
+Ein MIP-Slice (dargestellt durch das weiße Rechteck) enthält eine MipMap-Ebene für jede Textur in einem Array, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung eines mip-Segmentes](images/d3d10-resource-mip-slice.png)
+![Abbildung einer MIP-Splice](images/d3d10-resource-mip-slice.png)
 
 ### <a name="span-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>Auswählen einer einzelnen untergeordneten Quelle
 
-Sie können diese zwei Arten von Segmenten verwenden, um eine einzelne Unterressource auszuwählen, wie in der folgenden Abbildung dargestellt.
+Sie können diese beiden Arten von Slices verwenden, um eine einzelne untergeordnete Quelle auszuwählen, wie in der folgenden Abbildung dargestellt.
 
-![Abbildung zum Auswählen einer Unterressource durch Verwenden eines Array-Segmentes und eines mip-Segmentes](images/d3d10-resource-subresources-1.png)
+![Abbildung der Auswahl eines unter Berichts mithilfe eines Array Slice und eines MIP-Splice](images/d3d10-resource-subresources-1.png)
 
 ### <a name="span-idselecting_multiple_subresourcesspanspan-idselecting_multiple_subresourcesspanspan-idselecting_multiple_subresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>Auswählen mehrerer unter Ressourcen
 
-Oder Sie können diese zwei Arten von Segmenten mit der Anzahl der Mip-Map-Ebenen bzw. der Anzahl von Texturen verwenden, um mehrere Unterressourcen auszuwählen.
+Oder Sie können diese beiden Arten von Slices mit der Anzahl von MipMap-Ebenen und/oder der Anzahl von Texturen verwenden, um mehrere unter Ressourcen auszuwählen.
 
-![Abbildung zum Auswählen mehrerer Unterressourcen](images/d3d10-resource-subresources-2.png)
+![Darstellung der Auswahl mehrerer unter Ressourcen](images/d3d10-resource-subresources-2.png)
 
-Unabhängig davon, welchen Texturtyp Sie verwenden, mit oder ohne Mip-Maps, mit oder ohne Texturarray, sind häufig Hilfsfunktionen bereitgestellt, um den Index einer bestimmten Unterressource zu berechnen.
+Unabhängig davon, welchen Textur Typ Sie verwenden, mit oder ohne Mipmaps mit oder ohne ein Textur Array, werden häufig Hilfsfunktionen bereitgestellt, um den Index eines bestimmten unter Berichts zu berechnen.
 
 ### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>Starke und schwache Typisierung
 
-Das Erstellen einer vollständig typisierten Ressource beschränkt die Ressource auf das Format, in dem sie erstellt wurde. Dadurch kann die Runtime den Zugriff optimieren, insbesondere, wenn die Ressource mit Flags erstellt wird, die angeben, dass sie von der Anwendung nicht zugeordnet werden kann. Ressourcen, die mit einem bestimmten Typ erstellt wurden, können nicht über den Ansichtsmechanismus neu interpretiert werden.
+Durch das Erstellen einer vollständig typisierten Ressource wird die Ressource auf das Format beschränkt, mit dem Sie erstellt wurde. Dadurch kann die Laufzeit den Zugriff optimieren, insbesondere dann, wenn die Ressource mit Flags erstellt wird, die angeben, dass Sie nicht von der Anwendung zugeordnet werden kann. Ressourcen, die mit einem bestimmten Typ erstellt wurden, können nicht mit dem Ansichts Mechanismus neu interpretiert werden.
 
-In einer typenlosen Ressource ist der Datentyp unbekannt, wenn die Ressource erstmalig erstellt wird. Die Anwendung muss aus den verfügbaren typenlosen Formaten auswählen. Sie müssen die Größe des Speichers angeben, die zugeordnet werden soll, und ob die Runtime die Untertexturen in einer Mip-Map generieren muss.
+In einer typlosen Ressource ist der Datentyp unbekannt, wenn die Ressource erstmalig erstellt wird. Die Anwendung muss aus den verfügbaren typlosen Formaten ausgewählt werden. Sie müssen die Größe des zuzuordnenden Speichers angeben und angeben, ob die Laufzeit die Unterstrukturen in einer MipMap generieren muss.
 
-Das genaue Datenformat (ob der Speicher als Ganzzahlen, Gleitkommawerte, vorzeichenlose Ganzzahlen usw. interpretiert wird) wird erst bestimmt, wenn die Ressource mit einer Ansicht an die Pipeline gebunden wird. Da das Texturformat flexibel bleibt, bis die Textur an die Pipeline gebunden ist, wird die Ressource als schwach typisierter Speicher bezeichnet. Ein schwach typisierter Speicher hat den Vorteil, dass er wiederverwendet oder erneut interpretiert werden kann (in einem anderen Format), solange das Komponentenbit des neuen Formats der Anzahl der Bits des alten Formates entspricht.
+Allerdings wird das genaue Datenformat (unabhängig davon, ob der Arbeitsspeicher als ganze Zahlen, Gleit Komma Werte, ganze Zahlen ohne Vorzeichen usw. interpretiert wird) erst bestimmt, wenn die Ressource mit einer Ansicht an die Pipeline gebunden ist. Da das Textur Format flexibel bleibt, bis die Textur an die Pipeline gebunden ist, wird die Ressource als schwach typisierter Speicher bezeichnet. Schwach typisierter Speicher hat den Vorteil, dass er wieder verwendet oder erneut interpretiert werden kann (in einem anderen Format), solange das Komponenten Bit des neuen Formats mit der Bitzahl des alten Formats übereinstimmt.
 
-Eine einzelne Ressource kann an mehrere Pipelinephasen gebunden werden, solange jede über eine eindeutige Ansicht verfügt, welche die Formate an jedem Speicherort vollständig qualifiziert. Beispielsweise könnte eine mit einem typenlosen Format erstellte Ressource an verschiedenen Speicherorten in der Pipeline gleichzeitig als ein FLOAT-Format und ein UINT-Format verwendet werden.
+Eine einzelne Ressource kann an mehrere Pipeline Stufen gebunden werden, solange Sie jeweils über eine eindeutige Ansicht verfügen, die die Formate der einzelnen Speicherorte vollständig qualifiziert. Beispielsweise könnte eine Ressource, die mit einem typlosen Format erstellt wurde, als Float-Format und ein uint-Format an verschiedenen Positionen in der Pipeline gleichzeitig verwendet werden.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 

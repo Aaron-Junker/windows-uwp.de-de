@@ -1,54 +1,54 @@
 ---
 title: Streamausgabephase (SO)
-description: Die Streamausgabephase (Stream Output, SO) gibt (oder streamt) kontinuierlich Vertexdaten aus der vorherigen aktiven Phase an einen oder mehrere Puffer im Speicher aus. In den Arbeitsspeicher gestreamte Daten können als Eingabedaten der Pipeline wieder zugeführt oder von der CPU eingelesen werden.
+description: Die Datenstrom Ausgabe (so) gibt Vertex-Daten aus der vorherigen aktiven Phase kontinuierlich aus (oder streamt Sie an einen oder mehrere Speicherpuffer). Daten, die in den Arbeitsspeicher gestreamt werden, können wieder in die Pipeline als Eingabedaten oder aus der CPU zurückgeleitet werden.
 ms.assetid: DE89E99F-39BC-4B34-B80F-A7D373AA7C0A
 keywords:
 - Streamausgabephase (SO)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e3614b7bde3a87c8f5fa6fdc0eada560fd7bbcdc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f56036ecc083d72f552954860d04750c1c83b8b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370964"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156204"
 ---
 # <a name="stream-output-so-stage"></a>Streamausgabephase (SO)
 
 
-Die Streamausgabephase (Stream Output, SO) gibt (oder streamt) kontinuierlich Vertexdaten aus der vorherigen aktiven Phase an einen oder mehrere Puffer im Speicher aus. In den Arbeitsspeicher gestreamte Daten können als Eingabedaten der Pipeline wieder zugeführt oder von der CPU eingelesen werden.
+Die Datenstrom Ausgabe (so) gibt Vertex-Daten aus der vorherigen aktiven Phase kontinuierlich aus (oder streamt Sie an einen oder mehrere Speicherpuffer). Daten, die in den Arbeitsspeicher gestreamt werden, können wieder in die Pipeline als Eingabedaten oder aus der CPU zurückgeleitet werden.
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Zweck und Verwendung
-
-
-![Diagramm der Position der Streamausgabephase in der Pipeline](images/d3d10-pipeline-stages-so.png)
-
-Die Streamausgabephase streamt Grundtypdaten auf dem Weg zum Rasterizer aus der Pipeline in den Arbeitsspeicher. Daten aus der vorherigen Phase können in den Arbeitsspeicher gestreamt und/oder in den Rasterizer übergeben werden. In den Arbeitsspeicher gestreamte Daten können als Eingabedaten der Pipeline wieder zugeführt oder von der CPU eingelesen werden.
-
-In den Arbeitsspeicher gestreamte Daten können in einem nachfolgenden Renderingdurchlauf zurück in die Pipeline gelesen oder in eine Stagingressource kopiert werden (damit sie von der CPU gelesen werden können). Die Menge der gestreamten Daten kann variieren. Direct3D behandelt die Daten, ohne dass die GPU abgefragt werden muss, welche Menge an Daten geschrieben wurde.&gt;
-
-Es gibt zwei Möglichkeiten, die Streamausgabedaten in die Pipeline zu stellen:
-
--   Streamausgabedaten können der Eingabeassemblerphase (IA) wieder zugeführt werden.
--   Streamausgabedaten können von programmierbaren Shadern mit [Load](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load)-Funktionen gelesen werden.
-
-## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Eingabe
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>Zweck und Verwendung
 
 
-Vertexdaten aus einer vorherigen Shaderphase.
+![Diagramm des Speicher Orts der Stream-Ausgabestufe in der Pipeline](images/d3d10-pipeline-stages-so.png)
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgabe
+Die Stream-Output-Phase streamt primitive Daten aus der Pipeline in den Arbeitsspeicher, sodass Sie an den Rasterizer weitergeben können. Daten aus der vorherigen Phase können in den Arbeitsspeicher gestreamt und/oder an den Rasterizer übermittelt werden. Daten, die in den Arbeitsspeicher gestreamt werden, können wieder in die Pipeline als Eingabedaten oder aus der CPU zurückgeleitet werden.
+
+Daten, die in den Arbeitsspeicher gestreamt werden, können in einem nachfolgenden Renderingdurchlauf wieder in die Pipeline eingelesen werden oder in eine stagingressource kopiert werden (damit Sie von der CPU gelesen werden kann). Die Menge der Daten, die gestreamt werden, kann variieren. Direct3D ist so konzipiert, dass die Daten verarbeitet werden, ohne dass eine Abfrage (GPU) zur Menge der geschriebenen Daten erforderlich ist.&gt;
+
+Es gibt zwei Möglichkeiten, Datenstrom Ausgabedaten in die Pipeline zu übermitteln:
+
+-   Stream-Ausgabedaten können wieder in die Eingabe Assembler-Stufe (IA) eingegeben werden.
+-   Stream-Ausgabedaten können von programmierbaren Shadern mithilfe von [Lade](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load) Funktionen gelesen werden.
+
+## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>Der
 
 
-Die Streamoutputstufe (SO-Stufe) liefert (streamt) kontinuierlich Vertexdaten aus der vorherigen aktiven Stufe (z. B. der Geometry-Shader-Stufe (GS-Stufe) ) in einen oder mehrere Puffer im Speicher. Die Phase des Geometrie-Shader (GS) inaktiv ist, wird ausgegeben die Stream-Ausgabe (SO)-Phase kontinuierlich Vertexdaten, von der Stufe Domain-Shader (DS), um Puffer im Arbeitsspeicher (oder wenn DS auch inaktiv ist, von der Vertex-Shader (VS)-Stufe ist).
+Vertex-Daten aus einer vorherigen Shader-Stufe.
 
-Wenn ein Dreiecks- oder Zeilenstrip an die Eingabeassemblerphase (IA) gebunden ist, wird jeder Strip in eine Liste konvertiert, bevor er gestreamt wird. Vertices werden immer als vollständige Grundtypen (z. B. gleichzeitig 3 Vertices für Dreiecke) ausgegeben. Unvollständige Grundtypen werden niemals gestreamt. Angrenzende Grundtypen verwerfen vor dem Streaming die angrenzenden Daten.
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Ausgeben
 
-Die Streamausgabephase unterstützt gleichzeitig bis zu 4 Puffer.
 
--   Wenn Sie Daten in mehrere Puffer streamen, kann jeder Puffer nur ein einzelnes Element (bis zu 4 Komponenten) pro Vertexdaten erfassen, mit einem impliziten Datenversatz, der der Elementbreite im jedem Puffer entspricht (kompatibel mit der Art, wie einzelne Elementpuffer für die Eingabe in Shaderphasen gebunden werden können). Wenn Puffer unterschiedliche Größen haben, wird darüber hinaus der Schreibvorgang angehalten, sobald einer der Puffer voll ist.
--   Wenn Sie Daten in einen einzelnen Puffer streamen, kann der Puffer bis zu 64 skalare Komponenten pro Vertexdaten erfassen (256 Byte oder weniger) oder der Vertexversatz kann bis zu 2048 Byte betragen.
+Die "Stream Output (so)"-Phase gibt Vertex-Daten aus der vorherigen aktiven Phase, wie z. b. der Geometrie-Shader-Phase (GS), kontinuierlich aus. Wenn die Geometrie-Shader-Phase (GS) inaktiv ist, gibt die Datenstrom Ausgabe (so) kontinuierlich Vertex-Daten aus der Domänen-Shader-Stufe (DS) an Puffer im Speicher aus (oder, wenn DS auch inaktiv ist, von der Vertex-Shader-Phase (VS)).
+
+Wenn ein Dreieck oder ein Zeilen Streifen an die Eingabe Assembler-Stufe (IA) gebunden ist, wird jeder Strip in eine Liste konvertiert, bevor diese gestreamt werden. Scheitel Punkte werden immer als umfassende primitive geschrieben (z. b. 3 Scheitel Punkte gleichzeitig für Dreiecke); unvollständige primitive werden niemals gestreamt. Primitive Typen mit der Konsistenz verwerfen vor dem Streamen von Daten die Daten der Daten.
+
+Die Stream-Output-Stufe unterstützt bis zu 4 Puffer gleichzeitig.
+
+-   Wenn Sie Daten in mehrere Puffer streamen, kann jeder Puffer nur ein einzelnes Element (bis zu 4 Komponenten) von pro-Vertex-Daten erfassen, wobei ein impliziter Daten Sprung gleich der Elementbreite in den einzelnen Puffern ist (kompatibel mit der Art und Weise, wie einzelne Element Puffer für Eingaben in Shader-Stufen gebunden werden können). Wenn die Puffer über unterschiedliche Größen verfügen, wird der Schreibvorgang beendet, sobald ein Puffer voll ist.
+-   Wenn Sie Daten in einen einzelnen Puffer streamen, kann der Puffer bis zu 64 skalare Komponenten von pro-Vertex-Daten (256 Bytes oder weniger) erfassen, oder der Scheitelpunkt Schritt kann bis zu 2048 Byte betragen.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
@@ -58,7 +58,3 @@ Die Streamausgabephase unterstützt gleichzeitig bis zu 4 Puffer.
  
 
  
-
-
-
-

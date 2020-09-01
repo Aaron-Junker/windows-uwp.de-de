@@ -6,12 +6,12 @@ keywords: frei Hand Eingabe, tuorial
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d0df2b531510d86591c44bc69f6ed5c6ad9f200f
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 1972a266297d41e357bd2086f8485c154153d582
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234622"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157034"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>Tutorial: unterstützen von Freihand in Ihrer Windows-App
 
@@ -27,7 +27,7 @@ Wir konzentrieren uns auf Folgendes:
 * Unterstützen der grundlegenden Form Erkennung
 * Speichern und Laden von frei Hand Eingaben
 
-Weitere Informationen zur Implementierung dieser Features finden Sie unter [Stift Interaktionen und Windows](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)-frei Hand Eingaben in Windows-apps.
+Weitere Informationen zur Implementierung dieser Features finden Sie unter [Stift Interaktionen und Windows](./pen-and-stylus-interactions.md)-frei Hand Eingaben in Windows-apps.
 
 ## <a name="introduction"></a>Einführung
 
@@ -40,8 +40,8 @@ Mit Windows Ink können Sie Ihren Kunden die digitale Entsprechung von fast jede
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * Abhängig von Ihrer Konfiguration müssen Sie möglicherweise das nuget-Paket [Microsoft. Netcore. universalwindowsplatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) installieren und den **Entwicklermodus** in Ihren Systemeinstellungen aktivieren (Einstellungen-> Update & Security-> für Entwickler, > Entwickler Features verwenden).
 * Wenn Sie mit der Entwicklung von Windows-apps mit Visual Studio noch nicht vertraut sind, sehen Sie sich diese Themen an, bevor Sie mit diesem Tutorial beginnen:  
-    * [Vorbereiten](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [Erstellen der App „Hello, world“ (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [Vorbereiten](../../get-started/get-set-up.md)
+    * [Erstellen der App „Hello, world“ (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 * **[Optional]** Ein digitaler Stift und ein Computer mit einer Anzeige, die Eingaben von diesem digitalen Stift unterstützt.
 
 > [!NOTE] 
@@ -66,10 +66,10 @@ Diese Objekte stellen den größten Teil der Einbindung von Windows-apps dar.
 
 | Komponente | BESCHREIBUNG |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | Ein XAML-UI-Plattformsteuerelement, das standardmäßig alle Eingaben von einem Stift als Freihandstriche oder Löschen von Freihandstrichen empfängt und anzeigt. |
-| [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Ein CodeBehind-Objekt, das zusammen mit einem [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement instanziiert wird (über die [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)-Eigenschaft verfügbar gemacht). Dieses Objekt stellt alle Standardfunktionen für die Erstellung bereit, die durch den [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)verfügbar gemacht werden, zusammen mit einem umfassenden Satz von APIs für die zusätzliche Anpassung und Personalisierung. |
-| [**Inktoolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Ein XAML-UI-Platt Form Steuerelement, das eine anpassbare und erweiterbare Auflistung von Schaltflächen enthält, die frei Hand Funktionen in einem zugeordneten [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)aktivieren. |
-| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Diese Funktion wird hier nicht behandelt. Weitere Informationen finden Sie im Beispiel zu [komplexen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)frei Hand Eingaben. | Ermöglicht das Rendern von Freihandstrichen im angegebenen Direct2D-Gerätekontext einer universellen Windows-App statt im standardmäßigen [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement. |
+| [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) | Ein XAML-UI-Plattformsteuerelement, das standardmäßig alle Eingaben von einem Stift als Freihandstriche oder Löschen von Freihandstrichen empfängt und anzeigt. |
+| [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | Ein CodeBehind-Objekt, das zusammen mit einem [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement instanziiert wird (über die [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter)-Eigenschaft verfügbar gemacht). Dieses Objekt stellt alle Standardfunktionen für die Erstellung bereit, die durch den [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)verfügbar gemacht werden, zusammen mit einem umfassenden Satz von APIs für die zusätzliche Anpassung und Personalisierung. |
+| [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | Ein XAML-UI-Platt Form Steuerelement, das eine anpassbare und erweiterbare Auflistung von Schaltflächen enthält, die frei Hand Funktionen in einem zugeordneten [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)aktivieren. |
+| [**IInkD2DRenderer**](/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>Diese Funktion wird hier nicht behandelt. Weitere Informationen finden Sie im Beispiel zu [komplexen](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)frei Hand Eingaben. | Ermöglicht das Rendern von Freihandstrichen im angegebenen Direct2D-Gerätekontext einer universellen Windows-App statt im standardmäßigen [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)-Steuerelement. |
 
 ## <a name="step-1-run-the-sample"></a>Schritt 1: Ausführen des Beispiels
 
@@ -94,13 +94,13 @@ Vielleicht haben Sie wahrscheinlich bereits bemerkt, dass die APP im ersten Form
 
 Beheben Sie dieses Problem in diesem Schritt.
 
-Fügen Sie zum Hinzufügen grundlegender Freihand-Funktionen einfach ein [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) -Steuerelement auf der entsprechenden Seite in der APP ein.
+Fügen Sie zum Hinzufügen grundlegender Freihand-Funktionen einfach ein [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) -Steuerelement auf der entsprechenden Seite in der APP ein.
 
 > [!NOTE]
-> Ein InkCanvas-Element verfügt über die Standardeigenschaften [**height**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height) und [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width) von 0 (null), es sei denn, es ist das untergeordnete Element eines Elements, das seine untergeordneten 
+> Ein InkCanvas-Element verfügt über die Standardeigenschaften [**height**](/uwp/api/windows.ui.xaml.frameworkelement.Height) und [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.Width) von 0 (null), es sei denn, es ist das untergeordnete Element eines Elements, das seine untergeordneten 
 
 ### <a name="in-the-sample"></a>Im Beispiel:
-1. Öffnen Sie die Datei MainPage.xaml.cs.
+1. Öffnen Sie die Datei „MainPage.xaml.cs“.
 2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("//Schritt 2: Verwenden von InkCanvas zum unterstützen von grundlegenden Daten").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen. (Diese Verweise sind für die Funktionalität erforderlich, die in den nachfolgenden Schritten verwendet wird.)  
 
@@ -112,7 +112,7 @@ Fügen Sie zum Hinzufügen grundlegender Freihand-Funktionen einfach ein [**InkC
 ```
 
 4. Öffnen Sie die Datei "MainPage. XAML".
-5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 2: Grundlegendes zu InkCanvas-->").
+5. Suchen Sie den mit dem Titel dieses Schritts markierten Code (" \<!-- Step 2: Basic inking with InkCanvas --> ").
 6. Entfernen Sie die Auskommentierung der folgenden Zeile.  
 
 ``` xaml
@@ -129,17 +129,17 @@ Führen Sie die App nun erneut aus. Machen Sie sich mit Scribble, schreiben Sie 
 
 Sie werden feststellen, dass Ink standardmäßig nur für Stift Eingaben unterstützt wird. Wenn Sie versuchen, mit Ihrem Finger, mit der Maus oder dem Touchpad zu schreiben oder zu zeichnen, sind Sie enttäuscht.
 
-Um diese Stirnrunzeln zu deaktivieren, müssen Sie eine zweite Codezeile hinzufügen. Dieses Mal befindet er sich im Code Behind für die XAML-Datei, in der Sie den [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)deklariert haben. 
+Um diese Stirnrunzeln zu deaktivieren, müssen Sie eine zweite Codezeile hinzufügen. Dieses Mal befindet er sich im Code Behind für die XAML-Datei, in der Sie den [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)deklariert haben. 
 
-In diesem Schritt stellen wir das [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) -Objekt vor, das eine präzisere Verwaltung der Eingabe, Verarbeitung und Darstellung von frei Hand Eingaben (Standard und geändert) im [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)ermöglicht.
+In diesem Schritt stellen wir das [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) -Objekt vor, das eine präzisere Verwaltung der Eingabe, Verarbeitung und Darstellung von frei Hand Eingaben (Standard und geändert) im [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)ermöglicht.
 
 > [!NOTE]
 > Standard Freihand Eingabe (Stift Tipp oder radierertipp/Schaltfläche) wird nicht mit einem sekundären Hardware Verfahren, wie z. b. einem Stift-oder einem ähnlichen Mechanismus, geändert. 
 
-Legen Sie die [**inputdebug-YPES**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) -Eigenschaft von [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter) auf die Kombination der gewünschten [**coreinputabvicetypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) -Werte fest, um die Erfassung von Maus-und Berührungs Eingaben zu aktivieren.
+Legen Sie die [**inputdebug-YPES**](/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) -Eigenschaft von [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) auf die Kombination der gewünschten [**coreinputabvicetypes**](/uwp/api/windows.ui.core.coreinputdevicetypes) -Werte fest, um die Erfassung von Maus-und Berührungs Eingaben zu aktivieren.
 
 ### <a name="in-the-sample"></a>Im Beispiel:
-1. Öffnen Sie die Datei MainPage.xaml.cs.
+1. Öffnen Sie die Datei „MainPage.xaml.cs“.
 2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("//Schritt 3: unterstützen von Freihand with Touchscreen and Mouse").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen.  
 
@@ -153,19 +153,19 @@ Legen Sie die [**inputdebug-YPES**](https://docs.microsoft.com/uwp/api/windows.u
 Führen Sie die APP erneut aus, und Sie werden feststellen, dass all Ihre Finger-Paint-on-a-Computer-Screen-Träume wahr sind!
 
 > [!NOTE]
-> Wenn Sie Eingabegeräte Typen angeben, müssen Sie die Unterstützung für jeden spezifischen Eingabetyp (einschließlich Stift) angeben, da durch das Festlegen dieser Eigenschaft die Standardeinstellung " [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) " überschrieben wird.
+> Wenn Sie Eingabegeräte Typen angeben, müssen Sie die Unterstützung für jeden spezifischen Eingabetyp (einschließlich Stift) angeben, da durch das Festlegen dieser Eigenschaft die Standardeinstellung " [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) " überschrieben wird.
 
 ## <a name="step-4-add-an-ink-toolbar"></a>Schritt 4: Hinzufügen einer frei Handsymbol Leiste
 
-[**Inktoolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) ist ein UWP-Platt Form Steuerelement, das eine anpassbare und erweiterbare Auflistung von Schaltflächen zum Aktivieren frei Hand bezogener Features bereitstellt. 
+[**Inktoolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) ist ein UWP-Platt Form Steuerelement, das eine anpassbare und erweiterbare Auflistung von Schaltflächen zum Aktivieren frei Hand bezogener Features bereitstellt. 
 
-Standardmäßig enthält die [**inktoolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) einen grundlegenden Satz von Schaltflächen, mit denen Benutzer schnell zwischen einem Stift, einem Stift, einem highheller oder einem Radierer auswählen können, der gemeinsam mit einer Schablone (Lineal oder protraktor) verwendet werden kann. Die Schaltflächen Pen, Bleistift und highheller bieten jeweils auch ein Flyout zum Auswählen von frei Hand Farbe und Strich Größe.
+Standardmäßig enthält die [**inktoolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) einen grundlegenden Satz von Schaltflächen, mit denen Benutzer schnell zwischen einem Stift, einem Stift, einem highheller oder einem Radierer auswählen können, der gemeinsam mit einer Schablone (Lineal oder protraktor) verwendet werden kann. Die Schaltflächen Pen, Bleistift und highheller bieten jeweils auch ein Flyout zum Auswählen von frei Hand Farbe und Strich Größe.
 
-Wenn Sie einer Freihand-App eine Standard- [**inktoolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) hinzufügen möchten, platzieren Sie Sie einfach auf der gleichen Seite wie der [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) , und ordnen Sie die beiden Steuerelemente zu.
+Wenn Sie einer Freihand-App eine Standard- [**inktoolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) hinzufügen möchten, platzieren Sie Sie einfach auf der gleichen Seite wie der [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) , und ordnen Sie die beiden Steuerelemente zu.
 
 ### <a name="in-the-sample"></a>Im Beispiel
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 4: Hinzufügen einer frei Handsymbol Leiste-->").
+2. Suchen Sie den mit dem Titel dieses Schritts markierten Code (" \<!-- Step 4: Add an ink toolbar --> ").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen.  
 
 ``` xaml
@@ -177,9 +177,9 @@ Wenn Sie einer Freihand-App eine Standard- [**inktoolbar**](https://docs.microso
 ```
 
 > [!NOTE]
-> Um die Benutzeroberfläche und den Code so einfach wie möglich zu halten, verwenden wir ein grundlegendes Raster Layout und deklarieren die [**inktoolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) nach dem [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) in einer Raster Zeile. Wenn Sie die Datei vor dem [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)deklarieren, wird die [**inktoolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) zuerst hinter der Canvas gerendert und ist für den Benutzer nicht zugänglich.  
+> Um die Benutzeroberfläche und den Code so einfach wie möglich zu halten, verwenden wir ein grundlegendes Raster Layout und deklarieren die [**inktoolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) nach dem [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) in einer Raster Zeile. Wenn Sie die Datei vor dem [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)deklarieren, wird die [**inktoolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) zuerst hinter der Canvas gerendert und ist für den Benutzer nicht zugänglich.  
 
-Führen Sie die App nun erneut aus, um die [**inktoolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) anzuzeigen, und probieren Sie einige der Tools aus.
+Führen Sie die App nun erneut aus, um die [**inktoolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) anzuzeigen, und probieren Sie einige der Tools aus.
 
 ![Inktoolbar aus dem Schrägung des Ink-Arbeitsbereichs](images/ink/ink-inktoolbar-default-small.png)
 
@@ -193,11 +193,11 @@ Führen Sie die App nun erneut aus, um die [**inktoolbar**](https://docs.microso
 </td>
 <td>
 
-Im folgenden finden Sie ein Beispiel für eine benutzerdefinierte **[inktoolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)** (von "schrägungspad" im Windows Ink-Arbeitsbereich).
+Im folgenden finden Sie ein Beispiel für eine benutzerdefinierte **[inktoolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** (von "schrägungspad" im Windows Ink-Arbeitsbereich).
 
 ![Inktoolbar von der "schrägungspad" im Arbeitsbereich "Ink"](images/ink/ink-inktoolbar-sketchpad-small.png)
 
-Weitere Informationen zum Anpassen von [inktoolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)finden [Sie unter Hinzufügen einer inktoolbar zu einer Windows-App-App zum Freihand](ink-toolbar.md).
+Weitere Informationen zum Anpassen von [inktoolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)finden [Sie unter Hinzufügen einer inktoolbar zu einer Windows-App-App zum Freihand](ink-toolbar.md).
 
 </td>
 </tr>
@@ -219,7 +219,7 @@ In diesem Schritt verwenden wir die Handschrifterkennungsfunktionen von Windows 
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 5: Unterstützung von Handschrifterkennung-->").
+2. Suchen Sie den mit dem Titel dieses Schritts markierten Code (" \<!-- Step 5: Support handwriting recognition --> ").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen.  
 
 ``` xaml
@@ -235,7 +235,7 @@ In diesem Schritt verwenden wir die Handschrifterkennungsfunktionen von Windows 
                 Margin="50,0,0,0" />
 ```
 
-4. Öffnen Sie die Datei MainPage.xaml.cs.
+4. Öffnen Sie die Datei „MainPage.xaml.cs“.
 5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("Schritt 5: unterstützen Sie die Handschrifterkennung").
 6. Entfernen Sie die Auskommentierung der folgenden Zeilen.  
 
@@ -347,7 +347,7 @@ In diesem Beispiel versuchen wir nicht, frei Hand Striche neu zu zeichnen (obwoh
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 6: Erkennen von Formen-->").
+2. Suchen Sie den mit dem Titel dieses Schritts markierten Code (" \<!-- Step 6: Recognize shapes --> ").
 3. Kommentieren Sie diese Zeile aus.  
 
 ``` xaml
@@ -402,7 +402,7 @@ In diesem Schritt verbinden wir die Schaltflächen " **Speichern** " und " **Lad
 
 ### <a name="in-the-sample"></a>Im Beispiel:
 1. Öffnen Sie die Datei "MainPage. XAML".
-2. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist (" \< !--Schritt 7: Speichern und Laden von frei Hand Eingaben->").
+2. Suchen Sie den mit dem Titel dieses Schritts markierten Code (" \<!-- Step 7: Saving and loading ink --> ").
 3. Entfernen Sie die Auskommentierung der folgenden Zeilen. 
 
 ``` xaml
@@ -418,7 +418,7 @@ In diesem Schritt verbinden wir die Schaltflächen " **Speichern** " und " **Lad
             Margin="5,0,0,0"/>
 ```
 
-4. Öffnen Sie die Datei MainPage.xaml.cs.
+4. Öffnen Sie die Datei „MainPage.xaml.cs“.
 5. Suchen Sie den Code, der mit dem Titel dieses Schritts gekennzeichnet ist ("//Schritt 7: Speichern und Laden von frei Hand Eingaben").
 6. Entfernen Sie die Auskommentierung der folgenden Zeilen.  
 

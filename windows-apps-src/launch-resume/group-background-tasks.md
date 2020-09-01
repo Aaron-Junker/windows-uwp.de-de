@@ -3,35 +3,35 @@ title: Registrieren von Gruppen-Hintergrundaufgaben
 description: Registrieren/Aufheben der Registrierung von Hintergrundaufgaben als Teil einer Gruppe, um diese Registrierungen zu isolieren.
 ms.date: 04/05/2017
 ms.topic: article
-keywords: Windows 10, Hintergrundaufgaben
-ms.openlocfilehash: a70c814e5e35359746076c5418d1f1d973e61773
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+keywords: Windows 10, Hintergrundaufgabe
+ms.openlocfilehash: 61419ac45acd27758e3c874ac4b03510561ccaf8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57623855"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155864"
 ---
 # <a name="group-background-task-registration"></a>Registrieren von Gruppen-Hintergrundaufgaben
 
 **Wichtige APIs**
 
-[BackgroundTaskRegistrationGroup-Klasse](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup)
+[Backgroundtaskregistrationgroup-Klasse](/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup)
 
-Hintergrundaufgaben können jetzt in einer Gruppe registriert werden, die Sie sich als logischen Namensraum vorstellen können. Durch diese Isolation kann sichergestellt werden, dass sich die einzelnen Komponenten einer App bzw. die verschiedenen Bibliotheken nicht gegenseitig bei der Registrierung von Hintergrundaufgaben beeinträchtigen.
+Hintergrundaufgaben können jetzt in einer Gruppe registriert werden, die Sie als logischen Namespace betrachten können. Durch diese Isolation wird sichergestellt, dass die unterschiedlichen Komponenten einer APP oder unterschiedlicher Bibliotheken nicht die Registrierung der Hintergrundaufgaben der anderen Anwendung beeinträchtigen.
 
-Wenn eine App und das von ihr verwendete Framework (bzw. die Bibliothek) eine gleichlautende Hintergrundaufgabe registrieren, könnte die App versehentlich die Registrierung der Hintergrundaufgabe des Frameworks entfernt. Zudem könnten App-Autoren versehentlich die Registrierungen von Hintergrundaufgaben des Frameworks oder der Bibliothek entfernen, da diese mittels [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks) die Registrierung alle registrierten Hintergrundaufgaben aufheben könnten.  Mithilfe von Gruppen können Sie die Registrierung Ihrer Hintergrundaufgaben isolieren, um dies zu verhindern.
+Wenn eine APP und das Framework (oder die Bibliothek) eine Hintergrundaufgabe mit dem gleichen Namen registriert, könnte die APP versehentlich die Hintergrund Task Registrierungen des Frameworks entfernen. App-Autoren können auch versehentlich Framework-und Bibliotheks Hintergrundaufgaben Registrierungen entfernen, da Sie die Registrierung aller registrierten Hintergrundaufgaben mithilfe von " [backgroundtaskregistration. AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks)" aufheben können.  Mit Gruppen können Sie Ihre Hintergrundaufgaben Registrierungen isolieren, damit dies nicht der Fall ist.
 
-## <a name="features-of-groups"></a>Funktionen von Gruppen
+## <a name="features-of-groups"></a>Features von Gruppen
 
-* Gruppen können durch eine GUID eindeutig identifiziert werden. Ihnen kann zudem auch ein Anzeigenamen zugeordnet sein, der beim Debugging für eine bessere Lesbarkeit sorgt.
-* In einer Gruppe können mehrere Hintergrundaufgaben registriert werden.
-* In einer Gruppe registrierte Hintergrundaufgaben werden unter [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks) nicht angezeigt. Somit können Apps, die derzeit mittels **BackgroundTaskRegistration.AllTasks** die Registrierung ihrer Aufgaben aufheben, die Registrierung von Hintergrundaufgaben, die in einer Gruppe registriert sind, nicht versehentlich aufheben. Finden Sie unter [Aufheben der Registrierung Hintergrundaufgaben in einer Gruppe](#unregister-background-tasks-in-a-group) unten, um Informationen zum Aufheben der Registrierung alle Hintergrund-Trigger, die als Teil einer Gruppe registriert wurden.
-* Jeder Registrierung einer Hintergrundaufgabe umfasst eine Gruppen-Eigenschaft, die bestimmt, welcher Gruppe sie zugeordnet ist.
-* Registrieren von In-Process-Hintergrundaufgaben mit einer Gruppe führt dazu, dass die Aktivierung über [BackgroundTaskRegistrationGroup.BackgroundActivated](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup.BackgroundActivated) Ereignis anstelle von [Application.OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated#Windows_UI_Xaml_Application_OnBackgroundActivated_Windows_ApplicationModel_Activation_BackgroundActivatedEventArgs_).
+* Gruppen können durch eine GUID eindeutig identifiziert werden. Sie können auch eine zugeordnete Anzeige Name-Zeichenfolge aufweisen, die beim Debuggen leichter lesbar ist.
+* Mehrere Hintergrundaufgaben können in einer Gruppe registriert werden.
+* Hintergrundaufgaben, die in einer Gruppe registriert sind, werden nicht in [backgroundtaskregistration. AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks)angezeigt. Daher wird die Registrierung von Hintergrundaufgaben, die in einer Gruppe registriert sind, von apps, die derzeit **backgroundtaskregistration. AllTasks** verwenden, nicht versehentlich aufgehoben. Weitere Informationen zum Aufheben der Registrierung aller Hintergrund Trigger, die als Teil einer Gruppe registriert wurden, finden Sie unter Aufheben der Registrierung von [Hintergrund Tasks in einer Gruppe](#unregister-background-tasks-in-a-group) unten.
+* Jede Hintergrundaufgaben Registrierung weist eine Group-Eigenschaft auf, um zu bestimmen, welcher Gruppe Sie zugeordnet ist.
+* Das Registrieren von in-Process-Hintergrundaufgaben bei einer Gruppe führt dazu, dass die Aktivierung das [backgroundtaskregistrationgroup. backgroundaktivierte](/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup.BackgroundActivated) Ereignis anstelle von " [Application. onbackgroundaktivi"](/uwp/api/windows.ui.xaml.application.onbackgroundactivated#Windows_UI_Xaml_Application_OnBackgroundActivated_Windows_ApplicationModel_Activation_BackgroundActivatedEventArgs_)durchläuft.
 
 ## <a name="register-a-background-task-in-a-group"></a>Registrieren einer Hintergrundaufgabe in einer Gruppe
 
-Nachfolgend ein Beispiel für die Registrierung einer Hintergrundaufgabe (hier ausgelöst durch eine Änderung der Zeitzone) als Teil einer Gruppe.
+Das folgende Beispiel zeigt, wie Sie eine Hintergrundaufgabe (in diesem Beispiel durch eine Zeit Zonen Änderung ausgelöst) als Teil einer Gruppe registrieren.
 
 ```csharp
 private const string groupFriendlyName = "myGroup";
@@ -77,8 +77,8 @@ public static void RegisterBackgroundTaskInGroup()
 
 ## <a name="unregister-background-tasks-in-a-group"></a>Aufheben der Registrierung von Hintergrundaufgaben in einer Gruppe
 
-Nachfolgend ein Beispiel für die Aufhebung der Registrierung von Hintergrundaufgaben, die als Teil einer Gruppe registriert wurden.
-Da in einer Gruppe registrierte Hintergrundaufgaben nicht in [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks) angezeigt werden, müssen Sie die Gruppen wiederholt durchlaufen, um die für jede Gruppe registrierten Hintergrundaufgaben zu finden und deren Registrierung aufzuheben.
+Das folgende Beispiel zeigt, wie Sie die Registrierung von Hintergrundaufgaben aufheben, die als Teil einer Gruppe registriert wurden.
+Da Hintergrundaufgaben, die in einer Gruppe registriert sind, nicht in [backgroundtaskregistration. AllTasks](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.AllTasks)angezeigt werden, müssen Sie die Gruppen durchlaufen, die für jede Gruppe registrierten Hintergrundaufgaben suchen und deren Registrierung aufheben.
 
 ```csharp
 private static void UnRegisterAllTasks()
@@ -100,9 +100,9 @@ private static void UnRegisterAllTasks()
 }
 ```
 
-## <a name="register-persistent-events"></a>Dauerhafte Ereignisse registrieren
+## <a name="register-persistent-events"></a>Permanente Ereignisse registrieren
 
-Wenn Sie Gruppen für die Registrierung der Hintergrundaufgaben von In-Process-Hintergrundaufgaben verwenden, werden die Hintergrundaktivierungen anstatt an das Anwendungs- bzw. CoreApplication-Objekt an das Gruppenereignis gerichtet. Dadurch kann die Aktivierung Ihrer App von verschiedenen Komponenten übernommen werden, da die Pfade sämtlicher Aktivierungscodes nicht im App-Objekt platziert werden müssen. Nachfolgend ein Beispiel für die Registrierung von im Hintergrund aktivierten Ereignissen einer Gruppe. Überprüfen Sie zunächst die [BackgroundTaskRegistration.GetTaskGroup](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.gettaskgroup), um zu ermitteln, ob die Gruppe bereits registriert wurde. Ist dies nicht der Fall, erstellen Sie eine neue Gruppe mit Ihrer ID und einem Anzeigenamen. Registrieren Sie anschließend in dieser Gruppe einen Ereignis-Handler für das Ereignis BackgroundActivated.
+Bei der Verwendung von Hintergrundaufgaben-Registrierungs Gruppen bei Prozess internen Hintergrundaufgaben werden die Hintergrund Aktivierungen an das Ereignis der Gruppe und nicht an das Objekt im Anwendungs-oder coreapplication-Objekt weitergeleitet. Dadurch können mehrere Komponenten in Ihrer APP die Aktivierung verarbeiten, anstatt alle Aktivierungs Codepfade im Anwendungs Objekt zu platzieren. Im folgenden wird gezeigt, wie Sie sich für das im Hintergrund aktivierte Ereignis der Gruppe registrieren. Überprüfen Sie zunächst [backgroundtaskregistration. gettaskgroup](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.gettaskgroup) , um zu ermitteln, ob die Gruppe bereits registriert wurde. Falls nicht, erstellen Sie eine neue Gruppe mit ihrer ID und dem anzeigen Amen. Registrieren Sie dann einen Ereignishandler für das backgroundaktivierte Ereignis in der Gruppe.
 
 ```csharp
 void RegisterPersistentEvent()

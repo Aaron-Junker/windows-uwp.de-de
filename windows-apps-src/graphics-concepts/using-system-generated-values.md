@@ -1,109 +1,105 @@
 ---
 title: Verwenden von systemgenerierten Werten
-description: Systemgenerierte Werte werden von der Eingabe-Assemblerphase (IA) generiert (basierend auf der vom Benutzer bereitgestellten Eingabesemantik), um bestimmte Effizienzvorteile in Shader-Operationen zu ermöglichen.
+description: Vom System generierte Werte werden von der Eingabe Assembler-Stufe (IA) generiert (basierend auf der vom Benutzer bereitgestellten Eingabe Semantik), um bestimmte Effizienz bei shadervorgängen zu ermöglichen.
 ms.assetid: C7CBA81D-68CA-4E9A-95E3-8185C280C843
 keywords:
 - Verwenden von systemgenerierten Werten
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d4be69d9a7869f5331d30225e93a22ad9e959c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7217b52c6e9f9882997649c5f843eb119d741e0b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371254"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156154"
 ---
-# <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Verwenden von vom System generierte Werte
+# <a name="span-iddirect3dconceptsusing_system-generated_valuesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>Verwenden von systemgenerierten Werten
 
 
-Systemgenerierte Werte werden von der [IEingabe-Assemblerphase (IA)](input-assembler-stage--ia-.md) generiert (basierend auf der vom Benutzer bereitgestellten Eingabe [semantics](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)), um bestimmte Effizienzvorteile in Shader-Operationen zu ermöglichen. Durch das Anhängen von Daten, wie beispielsweise der Instanz-ID (sichtbar für die [Vertexshaderphase (VS)](vertex-shader-stage--vs-.md)), einer Scheitelpunkt-ID (sichtbar für VS) oder einer Grundtypen-ID (sichtbar für die [Geometrieshaderphase (GS)](geometry-shader-stage--gs-.md)/[Pixelshaderphase (PS)](pixel-shader-stage--ps-.md)), kann eine nachfolgende Shaderphase nach diesen Systemwerten suchen, um die Verarbeitung in dieser Phase zu verbessern.
+Vom System generierte Werte werden von der [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md) generiert (basierend auf der vom Benutzer bereitgestellten Eingabe [Semantik](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)), um bestimmte Effizienz bei shadervorgängen zu ermöglichen. Durch das Anfügen von Daten, z. b. eine Instanz-ID (sichtbar für die [Vertex-Shader-Phase](vertex-shader-stage--vs-.md)), eine Scheitelpunkt-ID (sichtbar für vs) oder eine primitive ID (sichtbar für [Geometrie-Shader (GS) Stage](geometry-shader-stage--gs-.md) / [Pixel Shader (PS)](pixel-shader-stage--ps-.md)), kann eine nachfolgende Shader-Phase nach diesen System Werten suchen, um die Verarbeitung in
 
-Beispielsweise kann die VS-Phase nach der Instanzen-ID suchen, um zusätzliche Daten pro Scheitelpunkt für den Shader zu erfassen, oder um andere Vorgänge auszuführen, oder die GS- und die PS-Phase können die Grundtyp-ID verwenden, um Daten pro Grundtyp in der gleichen Weise zu erfassen.
+Beispielsweise kann in der vs-Phase nach der Instanz-ID gesucht werden, um zusätzliche pro-Vertex-Daten für den Shader zu erfassen oder um andere Vorgänge auszuführen. in den GS-und PS-Phasen kann die primitive ID verwendet werden, um einzelne Daten auf die gleiche Weise zu erfassen.
 
-## <a name="span-idvertexidspanspan-idvertexidspanspan-idvertexidspanvertexid"></a><span id="VertexID"></span><span id="vertexid"></span><span id="VERTEXID"></span>VertexID
-
-
-Jede Shader-Phase identifiziert Scheitelpunkte anhand der Scheitelpunkt-ID. Dies ist eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist. Sie wird einem Scheitelpunkt zugewiesen, wenn der Grundtyp von der [Eingabe-Assembler (IA)-Phase](input-assembler-stage--ia-.md) verarbeitet wird. Fügen Sie die Scheitelpunkt-ID-Semantik der Anfügen der Shader-Eingabedeklaration hinzu, um die IA-Phase anzuweisen, eine ID für jeden Scheitelpunkt zu generieren.
-
-Die IA-Phase fügt jedem Scheitelpunkt eine Scheitelpunkt-ID zur Verwendung durch Shader-Phasen hinzu. Die Scheitelpunkt-ID wird für jeden Draw-Aufruf um 1 erhöht. Über indizierte Draw-Aufrufe wird die Zählung wieder auf den Anfangswert zurückgesetzt. Wenn die Scheitelpunkt-IDs überlaufen (d. h. die Anzahl 2³² – 1 überschreitet), erfolgt ein Umbruch zu 0.
-
-Bei allen Grundtypen ist den Scheitelpunkten eine Scheitelpunkt-ID zugeordnet (unabhängig von der Nachbarschaft der Scheitelpunkte).
-
-## <a name="span-idprimitiveidspanspan-idprimitiveidspanspan-idprimitiveidspanprimitiveid"></a><span id="PrimitiveID"></span><span id="primitiveid"></span><span id="PRIMITIVEID"></span>PrimitiveID
+## <a name="span-idvertexidspanspan-idvertexidspanspan-idvertexidspanvertexid"></a><span id="VertexID"></span><span id="vertexid"></span><span id="VERTEXID"></span>Vertexid
 
 
-Jede Shader-Phase identifiziert Grundtypen anhand der Grundtyp-ID. Dies ist eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist. Sie wird einem Grundtyp zugewiesen, wenn er von der [Eingabe-Assembler (IA)-Phase](input-assembler-stage--ia-.md) verarbeitet wird. Fügen Sie die Grundtyp-ID-Semantik der Anfügen der Shader-Eingabedeklaration hinzu, um die IA-Phase anzuweisen, eine Grundtyp-ID zu generieren.
+Eine Scheitelpunkt-ID wird von jeder Shader-Stufe verwendet, um jeden Scheitelpunkt zu identifizieren. Dabei handelt es sich um eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist. Sie wird einem Scheitelpunkt zugewiesen, wenn die primitive durch die [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md)verarbeitet wird. Fügen Sie die Vertex-ID-Semantik an die shadereingabedeklaration an, um die IA-Phase anzuweisen, eine pro-Vertex-ID
 
-Die IA-Phase fügt jedem Grundtyp eine Grundtyp-ID zu Verwendung durch die [Geometrie-Shader (GS)-Phase](geometry-shader-stage--gs-.md) oder die [Scheitelpunkt-Shader (VS)-Phase](vertex-shader-stage--vs-.md) (je nachdem, welche die erste aktive Phase nach der IA-Phase ist) hinzu. Für jeden indizierten Draw-Aufruf wird die Grundtyp-ID um 1 erhöht; wenn eine neu8e Instanz beginnt, wird die Grundtyp-ID jedoch auf 0 zurückgesetzt. Alle anderen Draw-Aufrufe ändern den Wert der Instanz-ID nicht. Wenn die Instanz-IDs überlaufen (d. h. die Anzahl 2³² – 1 überschreitet), erfolgt ein Umbruch zu 0.
+Die IA fügt jedem Scheitelpunkt eine Scheitelpunkt-ID zur Verwendung in Shader-Stufen hinzu. Für jeden zeichnen-Befehl wird die Vertex-ID um 1 erhöht. Über indizierte zeichnen-Aufrufe wird die Anzahl zurück auf den Startwert zurückgesetzt. Wenn die Scheitelpunkt-ID überläuft (überschreitet 2 ³ ² – 1), wird Sie auf 0 (null) umschlossen.
 
-Die [Pixel-Shader (PS)-Phase](pixel-shader-stage--ps-.md) hat keine separate Eingabe für eine Grundtyp-ID; allerdings verwendet eine Pixel-Shader-Eingabe, die eine Grundtyp-ID angibt, einen Konstanteninterpolationsmodus.
+Für alle primitiven Typen sind Scheitel Punkte eine Scheitelpunkt-ID zugeordnet (unabhängig von der Verwendung).
 
-Die automatische Erzeugung einer Grundtyp-ID für benachbarte Grundtypen wird nicht unterstützt. Für Grundtypen mit Nachbarschaft, etwa einen Dreieckstreifen mit Nachbarschaft, wird nur für die inneren Grundtypen (die nicht-benachbarten Grundtypen) eine Grundtyp-ID geführt, ähnlich wie der Satz der Grundtypen in einem Dreieckstreifen ohne Nachbarschaft.
-
-## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceID
+## <a name="span-idprimitiveidspanspan-idprimitiveidspanspan-idprimitiveidspanprimitiveid"></a><span id="PrimitiveID"></span><span id="primitiveid"></span><span id="PRIMITIVEID"></span>Primitiveid
 
 
-Jede Shader-Phase identifiziert anhand einer Instanz-ID die Instanz der Geometrie, die derzeit verarbeitet wird. Dies ist eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist.
+Eine primitive ID wird von jeder Shader-Stufe verwendet, um die einzelnen primitiven zu identifizieren. Dabei handelt es sich um eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist. Sie wird einem primitiven zugewiesen, wenn die primitive durch die [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md)verarbeitet wird. Fügen Sie die primitive-ID-Semantik an die Shader-Eingabe Deklaration an, um die IA-Phase zu informieren und eine primitive ID zu generieren.
 
-Die [Eingabe-Assembler (IA)-Phase](input-assembler-stage--ia-.md) fügt jedem Scheitelpunkt eine Instanz-ID hinzu, wenn die Scheitelpunkt-Shader-Eingabedeklaration die Instanz-ID-Semantik enthält. Für jeden indizierten Draw-Aufruf wird die Instanz-ID um 1 erhöht. Alle anderen Draw-Aufrufe ändern den Wert der Instanz-ID nicht. Wenn die Instanz-IDs überlaufen (d. h. die Anzahl 2³² – 1 überschreitet), erfolgt ein Umbruch zu 0.
+In der IA-Phase wird jedem primitiven eine primitive ID für die Verwendung durch die [GS-Stufe (Geometry-Shader)](geometry-shader-stage--gs-.md) oder die [Vertex Shader (VS)](vertex-shader-stage--vs-.md) -Phase hinzugefügt (je nachdem, was die erste Phase ist, die nach der IA-Phase aktiv ist). Für jeden indizierten Draw-Aufruf wird die primitive ID um 1 erhöht. die primitive ID wird jedoch immer auf 0 zurückgesetzt, wenn eine neue Instanz beginnt. Alle anderen Draw-Aufrufe ändern den Wert der Instanz-ID nicht. Wenn die Instanz-ID überläuft (überschreitet 2 ³ ² – 1), wird Sie auf 0 (null) umschlossen.
+
+Die [Pixel-Shader-Stufe (PS)](pixel-shader-stage--ps-.md) besitzt keine separate Eingabe für eine primitive ID. Allerdings wird für jede Pixel-Shader-Eingabe, die eine primitive ID angibt, ein konstanter Interpolations Modus verwendet.
+
+Es gibt keine Unterstützung für das automatische Erstellen einer primitiven ID für benachbarte primitive. Bei primitiven Typen, wie z. b. einem Dreiecks Streifen mit der Verwendung, wird eine primitive ID nur für die inneren primitiven (die nicht angrenzenden primitiven) beibehalten, genauso wie der Satz von primitiven in einem Dreiecks Band ohne jegliche Notwendigkeit.
+
+## <a name="span-idinstanceidspanspan-idinstanceidspanspan-idinstanceidspaninstanceid"></a><span id="InstanceID"></span><span id="instanceid"></span><span id="INSTANCEID"></span>InstanceId
+
+
+Eine Instanz-ID wird von jeder Shader-Phase verwendet, um die Instanz der Geometrie zu identifizieren, die gerade verarbeitet wird. Dabei handelt es sich um eine 32-Bit-Ganzzahl ohne Vorzeichen, deren Standardwert 0 ist.
+
+In der [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md) wird jedem Scheitelpunkt eine Instanz-ID hinzugefügt, wenn die Vertexshader-Eingabe Deklaration die Semantik der Instanz-ID enthält. Für jeden indizierten zeichnen-Befehl wird die Instanz-ID um 1 erhöht. Alle anderen Draw-Aufrufe ändern den Wert der Instanz-ID nicht. Wenn die Instanz-ID überläuft (überschreitet 2 ³ ² – 1), wird Sie auf 0 (null) umschlossen.
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>Beispiel
 
 
-Die folgende Abbildung zeigt, wie einem instantiierten Dreieckstreifen in der [Eingabe-Assembler (IA)-Phase](input-assembler-stage--ia-.md) Systemwerte hinzugefügt werden.
+In der folgenden Abbildung wird gezeigt, wie System Werte an einen in der [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md)angefügten Dreiecks Streifen angefügt werden.
 
-![Illustration der Systemwerte für einen instantiierten Dreieckstreifen](images/d3d10-ia-example.png)
+![Abbildung der System Werte für einen instanziierten Dreiecks Streifen](images/d3d10-ia-example.png)
 
-Diese Tabellen zeigen die Systemwerte, die für beide Instanzen des gleichen Dreieckstreifens generiert werden. Die erste Instanz (Instanz U) wird blau angezeigt, die zweite Instanz (Instanz V) wird grün angezeigt. Die durchgezogenen Linien verbinden die Scheitelpunkte in den Grundtypen, die gestrichelten Linien verbinden die benachbarten Scheitelpunkte.
+In diesen Tabellen werden die für beide Instanzen desselben Dreiecks Streifens generierten System Werte angezeigt. Die erste Instanz (Instanz U) ist blau dargestellt, die zweite Instanz (Instanz V) ist grün dargestellt. Die durch gestrichelten Linien verbinden die Scheitel Punkte in den primitiven, die gestrichelten Linien verbinden die angrenzenden Scheitel Punkte.
 
-Die folgenden Tabellen zeigen die vom System generierten Werte für die Instanz U.
+In den folgenden Tabellen sind die vom System generierten Werte für die Instanz U aufgeführt.
 
-| Scheitelpunktdaten    | C, U | D, U | E, U | F, U | G, U | H, U | I, U | J, U | K, U | L, U |
+| Scheitelpunkt Daten    | C, U | D, U | E, U | F, U | G, U | H, U | I, U | J, U | K, U | L, U |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
+| **Vertexid**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
  
 
-Dreieckstreifen-Instanz U hat 3 Dreieck-Grundtypen, mit den folgenden vom System generierten Werten:
+Die Dreiecks Bereichs Instanz U hat drei Dreiecks primitive mit den folgenden vom System generierten Werten:
 
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
-| **PrimitiveID** | 0   | 1   | 2   |
+| **Primitiveid** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
 
  
 
-Die folgenden Tabellen zeigen die vom System generierten Werte für die Instanz V.
+In den folgenden Tabellen sind die vom System generierten Werte für die Instanz V aufgeführt.
 
-| Scheitelpunktdaten    | C, V | D, V | E, V | F, V | G, V | H, V | I, V | J, V | K, V | L, V |
+| Scheitelpunkt Daten    | C, V | D, V | E, V | F, V | G, V | H, V | I, V | J, V | K, V | L, V |
 |----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
+| **Vertexid**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
  
 
-Dreieckstreifen-Instanz V hat 3 Dreieck-Grundtypen, mit den folgenden vom System generierten Werten:
+Die Dreiecks Bereichs Instanz V verfügt über 3 Dreiecks primitive mit den folgenden vom System generierten Werten:
 
 |                 |     |     |     |
 |-----------------|-----|-----|-----|
-| **PrimitiveID** | 0   | 1   | 2   |
+| **Primitiveid** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |
 
  
 
-Die [Eingabe-Assembler (IA)-Phase](input-assembler-stage--ia-.md) generiert die IDs (Scheitelpunkt, Grundtyp und Instanz); Beachten Sie, dass jeder Instanz eine eindeutige Instanz-ID zugeordnet ist Die Daten enden mit dem Streifenschnitt, der die einzelnen Instanzen des Dreieckstreifens voneinander trennt.
+In der [Eingabe Assembler-Stufe (IA)](input-assembler-stage--ia-.md) werden die IDs (Vertex, primitiv und Instanz) generiert; Beachten Sie auch, dass jeder Instanz eine eindeutige Instanz-ID zugewiesen wird. Die Daten enden mit dem Strip-Cut, der die einzelnen Instanzen des Dreiecks Streifens trennt.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Phase der Eingabe-Assembler (IA)](input-assembler-stage--ia-.md)
+[Eingabeassemblerphase (IA)](input-assembler-stage--ia-.md)
 
  
 
  
-
-
-
-

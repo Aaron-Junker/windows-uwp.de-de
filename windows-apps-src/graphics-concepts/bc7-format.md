@@ -1,76 +1,76 @@
 ---
 title: BC7-Format
-description: Das BC7-Format ist ein Format für die Texturkomprimierung, das für die hochwertige Komprimierung von RGB- und RGBA-Daten verwendet wird.
+description: Das bzw bc7-Format ist ein Textur Komprimierungs Format, das für die hochwertige Komprimierung von RGB-und RGBA-Daten verwendet wird.
 ms.assetid: 788B6E8C-9A1F-45F9-BE49-742285E8D8A6
 keywords:
 - BC7-Format
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ee9960e55100eaf743d73d7007e9bcf51342ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4ca22bc897acf0d4cbd924002de96d13f2ba8549
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370724"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159024"
 ---
 # <a name="bc7-format"></a>BC7-Format
 
 
-Das BC7-Format ist ein Format für die Texturkomprimierung, das für die hochwertige Komprimierung von RGB- und RGBA-Daten verwendet wird.
+Das bzw bc7-Format ist ein Textur Komprimierungs Format, das für die hochwertige Komprimierung von RGB-und RGBA-Daten verwendet wird.
 
-Informationen zu den Blockmodi des BC7-Formats finden Sie unter [Verweis auf den BC7-Format-Modus](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference).
+Informationen zu den Block Modi des bzw bc7-Formats finden Sie unter [bzw bc7 formatmode Reference](/windows/desktop/direct3d11/bc7-format-mode-reference).
 
-## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>Informationen zu "bc7" nicht/DXGI\_FORMAT\_"bc7" nicht
-
-
-"Bc7" nicht angegeben ist, indem Sie die folgenden DXGI\_FORMAT-Enumerationswerte fest:
-
--   **DXGI\_FORMAT\_BC7\_TYPELESS**.
--   **DXGI\_FORMAT\_BC7\_UNORM**.
--   **DXGI\_FORMAT\_BC7\_UNORM\_SRGB**.
-
-Das BC7-Format kann für Texturressourcen wie [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (einschließlich Arrays), Texture3D oder TextureCube (einschließlich Arrays) verwendet werden. Das Format gilt ebenfalls für alle Mip-Map-Oberflächen, die mit diesen Ressourcen verbunden sind.
-
-BC7 verwendet eine feste Blockgröße von 16 Byte (128 Bit) und eine feste Kachelgröße von 4 × 4-Texel. Genau wie mit vorherigen BC-Formaten werden Texturbilder, die größer als die unterstützte Kachelgröße (4 × 4) sind, durch die Verwendung mehrerer Blöcke komprimiert. Diese Adressierungsidentität gilt auch für dreidimensionale Bilder, MIP-Maps, Cube-Zuordnungen und Texturarrays. Alle Bildkacheln müssen das gleiche Format aufweisen.
-
-BC7 komprimiert sowohl Drei-Kanal (RGB) und Vier-Kanal (RGBA) Datenimages mit Festpunkt. Normalerweise sind die Quelldaten 8 Bit pro Farbkomponente (Kanal), obwohl das Format Quelldaten mit höheren Bits pro Farbkomponenten codieren kann. Alle Bildkacheln müssen das gleiche Format aufweisen.
-
-Der BC7-Decoder führt eine Dekomprimierung aus, bevor die Texturfilterung angewendet wird.
-
-Die Hardware für die BC7-Dekomprimierung muss die Bit präzise wiedergeben. Das heißt, sie muss Ergebnisse zurückgeben, die mit dem in dieser Dokumentation beschriebenen Decoder übereinstimmen.
-
-## <a name="span-idbc7-implementationspanspan-idbc7-implementationspanspan-idbc7-implementationspanbc7-implementation"></a><span id="BC7-Implementation"></span><span id="bc7-implementation"></span><span id="BC7-IMPLEMENTATION"></span>"Bc7" nicht-Implementierung
+## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgi_format_bc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>Informationen zum bzw bc7/DXGI- \_ Format \_ bzw bc7
 
 
-Eine BC7-Implementierung kann einen von 8 Modi bestimmen, inklusive den Modus des Bit mit dem unerheblichsten Wert des 16 Byte-Blocks (128-Bit). Der Modus wird mit Null oder mehr Bit mit einem Wert von 0 codiert, gefolgt von einer 1.
+Bzw bc7 wird durch die folgenden DXGI- \_ formatenumerationswerte angegeben:
 
-Ein BC7-Block kann mehrere Endpunktpaare enthalten. Der Satz von Indizes, die einem Endpunktpaar entsprechen, kann als „Teilmenge” bezeichnet werden. In einigen Blockmodi wird die Darstellung der Endpunkte auch in einem Format codiert, das als „RBGP” bezeichnet wird, wobei das Bit „P” das gemeinsame Bit mit dem unerheblichsten Wert für die Farbkomponente des Endpunkts darstellt. Wenn beispielsweise die Darstellung des Endpunkts für das Format „RGB 5.5.5.1” ist, wird der Endpunkt als ein RGB-Wert von 6.6.6 interpretiert, wobei der Zustand des P-Bits das Bit mit dem unerheblichsten Wert jeder Komponente darstellt. Wenn die Darstellung für das Format für Quelldaten mit einem Alpha-Kanal „RGBAP 5.5.5.5.1” ist, wird der Endpunkt als RGBA 6.6.6.6 interpretiert. Je nach Blockmodus können Sie das gemeinsame Bit mit dem unerheblichsten Wert entweder für beide Endpunkten einer Teilmenge einzeln (2 P-Bit pro Teilmenge) oder zwischen Endpunkten einer Teilmenge gemeinsam (1 P-Bit pro Teilmenge) angeben.
+-   **DXGI \_ Format \_ bzw bc7 \_ typlose Formatierung**.
+-   **DXGI \_ Formatieren Sie \_ bzw bc7 \_ unorm**.
+-   **DXGI \_ Format \_ bzw bc7 \_ unorm \_ sRGB**.
 
-Ein BC7-Block, der die Alpha-Komponente nicht explizit codiert, besteht aus Modus-Bit, Partition-Bit, komprimierten Endpunkten, komprimierten Indizes und einem optionalen P-Bit. Die Endpunkte in den Blöcken haben eine reine RGB-Darstellung und die Alpha-Komponente wird als 1,0 für alle Texel in den Quelldaten decodiert.
+Das bzw bc7-Format kann für die Textur Ressourcen [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (einschließlich Arrays), Texture3D oder texturecube (einschließlich Arrays) verwendet werden. Ebenso gilt dieses Format für alle mit diesen Ressourcen verknüpften MIP-Map-Oberflächen.
 
-Ein BC7-Block, der gemeinsame Farb- und Alphawertkomponenten hat, besteht aus Modus-Bit, komprimierten Endpunkten, komprimierten Indizes und optionalen Partition-Bit und einem P-Bit. In diese Blöcken werden die Endpunktfarben im RGBA-Format dargestellt und die Alpha-Komponentenwerte werden zusammen mit den Werten der Farben interpoliert.
+Bzw bc7 verwendet eine fester Blockgröße von 16 Bytes (128 Bits) und eine fixierte Kachel Größe von 4 x 4 texeln. Wie bei früheren BC-Formaten werden Textur Bilder, die größer als die unterstützte Kachel Größe (4X4) sind, mithilfe mehrerer Blöcke komprimiert. Diese Adressierungs Identität gilt auch für dreidimensionale Bilder und MIP-Maps, Cubemaps und Textur Arrays. Alle Bildkacheln müssen das gleiche Format aufweisen.
 
-Ein BC7-Block, der separate Farb- und Alpha-Komponenten hat, besteht aus Modus-Bit, Rotations-Bit, komprimierten Endpunkten, komprimierten Indizes und einem optionalen Index-Selektor-Bit. Diese Blöcke haben einen effektiven RGB-Vektor \[R, G, B\] und eine skalare alpha-Kanal \[ein\] separat codierte.
+Bzw bc7 komprimiert sowohl Daten Abbilder mit drei Kanälen (RGB) als auch mit vier Kanälen (RGBA). Normalerweise handelt es sich bei den Quelldaten um 8 Bits pro Farbkomponente (Channel), obwohl das Format Quelldaten mit einer höheren Bits pro Color-Komponente codieren kann. Alle Bildkacheln müssen das gleiche Format aufweisen.
 
-Die folgende Tabelle enthält die Komponenten der einzelnen Blocktypen.
+Der bzw bc7-Decoder führt vor dem Anwenden der Textur Filterung eine Komprimierung durch.
 
-| BC7-Block enthält...     | Modus-Bit | Rotations-Bit | Index-Selektor- | Partition-Bit | Komprimierte Endpunkte | P-Bit    | Komprimierte Indizes |
+Bzw bc7-Komprimierungs Hardware muss etwas genau sein. Das heißt, dass die Hardware Ergebnisse zurückgeben muss, die mit den Ergebnissen identisch sind, die von dem in diesem Dokument beschriebenen Decoder zurückgegeben werden.
+
+## <a name="span-idbc7-implementationspanspan-idbc7-implementationspanspan-idbc7-implementationspanbc7-implementation"></a><span id="BC7-Implementation"></span><span id="bc7-implementation"></span><span id="BC7-IMPLEMENTATION"></span>Bzw bc7-Implementierung
+
+
+Eine bzw bc7-Implementierung kann einen von 8 Modi angeben, wobei der Modus im unwichtigsten Bit des 16-Byte-Blocks (128 Bit) angegeben wird. Der-Modus wird von 0 (null) oder mehr Bits mit einem Wert von 0 (null) gefolgt von einem 1 codiert.
+
+Ein bzw bc7-Block kann mehrere Endpunkt Paare enthalten. Der Satz von Indizes, die einem Endpunkt paar entsprechen, kann als "Teilmenge" bezeichnet werden. Außerdem wird die Endpunkt Darstellung in einigen Block Modi in einem Formular codiert, das als "rbgp" bezeichnet werden kann, wobei das "P"-Bit für die Farbkomponenten des Endpunkts ein gemeinsam genutztes Bit darstellt. Wenn die Endpunkt Darstellung für das Format z. b. "RGB 5.5.5.1" ist, wird der Endpunkt als RGB 6.6.6-Wert interpretiert, wobei der Status des P-Bits das unwichtigste Bit der einzelnen Komponenten definiert. Entsprechend wird bei Quelldaten mit einem Alphakanal der Endpunkt als RGBA 6.6.6.6 interpretiert, wenn die Darstellung für das Format "rgbap 5.5.5.5.1" lautet. Abhängig vom Block Modus können Sie das gemeinsame, unwichtigste Bit entweder für beide Endpunkte einer Teilmenge einzeln (2 p-Bits pro Teilmenge) oder für die gemeinsame Nutzung zwischen Endpunkten einer Teilmenge (1 p-Bit pro Teilmenge) angeben.
+
+Für bzw bc7-Blöcke, die die Alpha Komponente nicht explizit codieren, besteht ein bzw bc7-Block aus modusbits, Partitions Bits, komprimierten Endpunkten, komprimierten Indizes und einem optionalen P-Bit. In diesen Blöcken verfügen die Endpunkte über eine nur-RGB-Darstellung, und die Alpha Komponente wird als 1,0 für alle texeln in den Quelldaten decodiert.
+
+Für bzw bc7-Blöcke mit kombinierten Farben und Alpha Komponenten besteht ein Block aus modusbits, komprimierten Endpunkten, komprimierten Indizes und optionalen Partitions Bits und einem P-Bit. In diesen Blöcken werden die Endpunkt Farben im RGBA-Format ausgedrückt, und Alpha Komponentenwerte werden zusammen mit den Farbkomponenten Werten interpoliert.
+
+Für bzw bc7-Blöcke mit separaten Farb-und Alpha Komponenten besteht ein-Block aus modusbits, Rotations Bits, komprimierten Endpunkten, komprimierten Indizes und einem optionalen indexselektor-Bit. Diese Blöcke verfügen über einen effektiven RGB \[ -Vektor R, G, B \] und einen skalaren Alphakanal, der \[ \] separat codiert ist.
+
+In der folgenden Tabelle sind die Komponenten der einzelnen Blocktypen aufgeführt.
+
+| Bzw bc7-Block enthält...     | modusbits | Drehungs Bits | Index Auswahl Bit | Partitions Bits | komprimierte Endpunkte | P-Bit    | komprimierte Indizes |
 |---------------------------|-----------|---------------|--------------------|----------------|----------------------|----------|--------------------|
-| Nur Farbkomponenten     | Erforderlich  | Nicht zutreffend           | Nicht zutreffend                | Erforderlich       | Erforderlich             | Optional | Erforderlich           |
-| Farb- + Alphawert kombiniert    | Erforderlich  | Nicht zutreffend           | Nicht zutreffend                | Optional       | Erforderlich             | Optional | Erforderlich           |
-| Separater Farb- und Alphawert | Erforderlich  | Erforderlich      | Optional           | Nicht zutreffend            | Erforderlich             | Nicht zutreffend      | Erforderlich           |
+| nur Farbkomponenten     | Erforderlich  | Nicht zutreffend           | Nicht zutreffend                | Erforderlich       | Erforderlich             | Optional | Erforderlich           |
+| Farbe + Alpha, kombiniert    | Erforderlich  | Nicht zutreffend           | Nicht zutreffend                | Optional       | Erforderlich             | Optional | Erforderlich           |
+| Farbe und Alpha getrennt | Erforderlich  | Erforderlich      | Optional           | Nicht zutreffend            | Erforderlich             | Nicht zutreffend      | Erforderlich           |
 
  
 
-BC7 definiert eine Farbpalette auf einer ungefähren Linie zwischen zwei Endpunkten. Der Moduswert bestimmt die Anzahl der interpolierten Endpunktpaare pro Block. BC7 speichert einen Farbpaletten-Index pro Texel.
+Bzw bc7 definiert eine Palette von Farben in einer ungefähren Linie zwischen zwei Endpunkten. Der Mode-Wert bestimmt die Anzahl der interinterpolenden Endpunkt-Paare pro Block. Bzw bc7 speichert einen Palettenindex pro Texel.
 
-Für jede Teilmenge an Indizes, die einem Endpunktpaar entsprechen, legt der Encoder den Zustand eines Bit der komprimierten Indexdaten für diese Teilmenge fest. Dazu wird eine Reihenfolge der Endpunkte ausgewählt, mit der der Index für den angegebenen "korrigierten" Index das wichtigste Bit auf 0 festlegen kann. Dieses wird anschließend verworfen und es wird ein Bit pro Teilmenge gespeichert. Für Block-Modi mit nur einer einzigen Teilmenge ist der korrigierte Index immer der Index 0.
+Für jede Teilmenge von Indizes, die einem Paar von Endpunkten entspricht, korrigiert der Encoder den Zustand der komprimierten Indexdaten für diese Teilmenge. Dies geschieht, indem eine Endpunkt Reihenfolge ausgewählt wird, die es dem Index für den festgelegten "Fixup"-Index ermöglicht, das signifikanteste Bit auf 0 festzulegen, und das dann verworfen werden kann, wobei ein Bit pro Teilmenge gespeichert wird. Bei Block Modi mit nur einer einzelnen Teilmenge ist der fixupindex immer Index 0.
 
-## <a name="span-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspandecoding-the-bc7-format"></a><span id="Decoding-the-BC7-Format"></span><span id="decoding-the-bc7-format"></span><span id="DECODING-THE-BC7-FORMAT"></span>Das Format "bc7" nicht-Decodierung
+## <a name="span-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspanspan-iddecoding-the-bc7-formatspandecoding-the-bc7-format"></a><span id="Decoding-the-BC7-Format"></span><span id="decoding-the-bc7-format"></span><span id="DECODING-THE-BC7-FORMAT"></span>Decodieren des bzw bc7-Formats
 
 
-Der folgende Pseudocode zeigt die Schritte zur Dekomprimierung der Pixel (x, y) bei einem 16-Byte BC7-Block an.
+Der folgende Pseudo Code beschreibt die Schritte zum Dekomprimieren des Pixels bei (x, y), wenn der 16-Byte-bzw bc7-Block angegeben wird.
 
 ``` syntax
 decompress_bc7(x, y, block)
@@ -123,7 +123,7 @@ decompress_bc7(x, y, block)
 }
 ```
 
-Der folgende Pseudocode zeigt die Schritte an, um die Farbe eines Endpunkts und die Alpha-Komponenten für jede Teilmenge eines 16-Byte BC7-Blocks vollständig zu decodieren.
+Der folgende Pseudo Code beschreibt die Schritte zum vollständigen Decodieren der Endpunktfarbe und der Alpha Komponenten für jede Teilmenge, wenn ein 16-Byte-bzw bc7-Block angegeben wird.
 
 ``` syntax
 fully_decode_endpoints(endpoint_array, mode, block)
@@ -183,7 +183,7 @@ fully_decode_endpoints(endpoint_array, mode, block)
 }
 ```
 
-Um jede interpolierte Komponente für jede Teilmenge zu generieren, verwenden Sie folgenden Algorithmus: „c” ist die generierende Komponente, „e0” ist die Komponente von Endpunkt 0 der Teilmenge und „e1” ist die entsprechende Komponente von Endpunkt 1 dieser Teilmenge.
+Verwenden Sie den folgenden Algorithmus, um jede interpoliert Komponente für jede Teilmenge zu generieren: Let "c" ist die Komponente, die generiert werden soll. "E0" ist die Komponente von Endpunkt 0 der Teilmenge. und lassen Sie "E1" als Komponente von Endpunkt 1 der Teilmenge fest.
 
 ``` syntax
 UINT16 aWeight2[] = {0, 21, 43, 64};
@@ -201,7 +201,7 @@ UINT8 interpolate(UINT8 e0, UINT8 e1, UINT8 index, UINT8 indexprecision)
 }
 ```
 
-Der folgende Pseudocode veranschaulicht, wie Sie Indizes und die Bit-Anzahl an Farb- und Alphawertkomponenten extrahieren. Blöcke mit separaten Farb- und Alphawerten verfügen auch über zwei Sätze an Indexdaten: eine für den Vektor-Kanal und eine für den skalaren Kanal. Für Modus 4 sind diese Indizes unterschiedlich breit (2 oder 3 Bit) und ein 1-Bit-Selektor gibt an, ob die Vektor- oder skalaren Daten die 3-Bit-Indizes verwenden. (Das Extrahieren der Anzahl an Alpha-Bits ähnelt dem Extrahieren der Anzahl an Farb-Bits mit einem umgekehrtem Verhalten, das auf dem **IdxMode**-Bit basiert.)
+Der folgende Pseudo Code veranschaulicht, wie Indizes und Bitwerte für die Farb-und Alpha Komponenten extrahiert werden. Blöcke mit separater Farbe und Alpha haben ebenfalls zwei Sätze von Indexdaten: eine für den Vektor Kanal und eine für den skalaren Kanal. Für Modus 4 sind diese Indizes von unterschiedlichen breiten (2 oder 3 Bits), und es gibt eine Einbit-Auswahl, die angibt, ob der Vektor oder die skalaren Daten die 3-Bit-Indizes verwenden. (Das Extrahieren der Alpha Bitzahl ähnelt dem Extrahieren der farbbit-Anzahl, aber mit umgekehrtem Verhalten auf der Grundlage des **idxmode** -Bits.)
 
 ``` syntax
 bitcount get_color_bitcount(block, mode)
@@ -224,138 +224,134 @@ bitcount get_color_bitcount(block, mode)
 }
 ```
 
-## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a><span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>Referenz zu überwachungsprotokollformaten im Modus "bc7" nicht
+## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a><span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>Bzw bc7-formatmodusverweis
 
 
-Dieser Abschnitt enthält eine Liste der 8 Block-Modi und Bit-Zuordnungen für BC7-Blöcke im Texturkomprimierungsformat.
+Dieser Abschnitt enthält eine Liste der 8 Block Modi und bitbelegungen für bzw bc7 Textur Komprimierungs-Format Blöcke.
 
-Die Farben für jede Teilmenge in einem Block werden durch zwei explizite Endpunktfarben und ein Set an interpolierten Farben zwischen den beiden dargestellt. Je nach den der Genauigkeit des Block-Indexes kann jede Teilmenge über 4, 8 oder 16 mögliche Farben verfügen.
+Die Farben für jede Teilmenge innerhalb eines Blocks werden von zwei expliziten Endpunkt Farben und einem Satz interversierter Farben zwischen Ihnen dargestellt. Abhängig von der Index Genauigkeit des Blocks kann jede Teilmenge über 4, 8 oder 16 mögliche Farben verfügen.
 
-### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a><span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>0-Modus
+### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a><span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>Modus 0
 
-BC7-Modus 0 weist folgende Merkmale auf:
+Bzw bc7 Mode 0 weist die folgenden Eigenschaften auf:
 
 -   Nur Farbkomponenten (kein Alpha)
--   3 Teilmengen pro Block
--   RGBP 4.4.4.1-Endpunkte mit einem eindeutigen P-Bit pro Endpunkt
+-   3 Teilmengen pro Block
+-   Rgbp 4.4.4.1 Endpunkte mit einem eindeutigen P-Bit pro Endpunkt
 -   3-Bit-Indizes
 -   16 Partitionen
 
-![Modus 0-Bit-Layout](images/bc7-mode0.png)
+![Mode 0-bitlayout](images/bc7-mode0.png)
 
 ### <a name="span-idmode-1spanspan-idmode-1spanspan-idmode-1spanmode-1"></a><span id="Mode-1"></span><span id="mode-1"></span><span id="MODE-1"></span>Modus 1
 
-BC7-Modus 1 weist folgende Merkmale auf:
+Bzw bc7 Mode 1 weist die folgenden Eigenschaften auf:
 
 -   Nur Farbkomponenten (kein Alpha)
--   2 Teilmengen pro Block
--   RGBP 6.6.6.1 Endpunkte mit einem gemeinsamen P-Bit pro Teilmenge)
+-   2 Teilmengen pro Block
+-   Rgbp 6.6.6.1-Endpunkte mit einem freigegebenen P-Bit pro Teilmenge)
 -   3-Bit-Indizes
 -   64 Partitionen
 
-![Modus 1-Bit-Layout](images/bc7-mode1.png)
+![Mode-1-Bit-Layout](images/bc7-mode1.png)
 
 ### <a name="span-idmode-2spanspan-idmode-2spanspan-idmode-2spanmode-2"></a><span id="Mode-2"></span><span id="mode-2"></span><span id="MODE-2"></span>Modus 2
 
-BC7-Modus 2 weist folgende Merkmale auf:
+Bzw bc7 Mode 2 weist die folgenden Eigenschaften auf:
 
 -   Nur Farbkomponenten (kein Alpha)
--   3 Teilmengen pro Block
--   RGB 5.5.5-Endpunkte
+-   3 Teilmengen pro Block
+-   RGB 5.5.5 Endpunkte
 -   2-Bit-Indizes
 -   64 Partitionen
 
-![Modus 2-Bit-Layout](images/bc7-mode2.png)
+![Modus 2 Bit Layout](images/bc7-mode2.png)
 
 ### <a name="span-idmode-3spanspan-idmode-3spanspan-idmode-3spanmode-3"></a><span id="Mode-3"></span><span id="mode-3"></span><span id="MODE-3"></span>Modus 3
 
-BC7-Modus 3 weist folgende Merkmale auf:
+Bzw bc7 Mode 3 weist die folgenden Eigenschaften auf:
 
 -   Nur Farbkomponenten (kein Alpha)
--   2 Teilmengen pro Block
--   RGBP 7.7.7.1 Endpunkte mit einem eindeutigen P-Bit pro Teilmenge)
+-   2 Teilmengen pro Block
+-   Rgbp 7.7.7.1-Endpunkte mit einem eindeutigen P-Bit pro Teilmenge)
 -   2-Bit-Indizes
 -   64 Partitionen
 
-![Modus 3-Bit-Layout](images/bc7-mode3.png)
+![Modus 3 Bit Layout](images/bc7-mode3.png)
 
 ### <a name="span-idmode-4spanspan-idmode-4spanspan-idmode-4spanmode-4"></a><span id="Mode-4"></span><span id="mode-4"></span><span id="MODE-4"></span>Modus 4
 
-BC7-Modus 4 weist folgende Merkmale auf:
+Bzw bc7 Mode 4 weist die folgenden Eigenschaften auf:
 
--   Farbkomponenten mit separater Alpha-Komponente
--   1 Teilmenge pro Block
--   RGB 5.5.5-Farbendpunkte
+-   Farbkomponenten mit separater Alpha Komponente
+-   1 Teilmenge pro Block
+-   RGB 5.5.5 Farb Endpunkte
 -   6-Bit-Alpha-Endpunkte
--   16 x 2-Bit-Indizes
--   16 x 3-Bit-Indizes
--   Rotation der 2-Bit-Komponente
--   1-Bit-Index-Selektor (unabhängig davon, ob 2- oder 3-Bit-Indizes verwendet werden)
+-   16 x 2-Bit-Indizes
+-   16 x 3-Bit-Indizes
+-   2-Bit-Komponenten Drehung
+-   1-Bit-indexselektor (unabhängig davon, ob die Indizes mit 2 oder 3 Bit verwendet werden)
 
-![Modus 4-Bit-Layout](images/bc7-mode4.png)
+![Modus 4 Bit Layout](images/bc7-mode4.png)
 
 ### <a name="span-idmode-5spanspan-idmode-5spanspan-idmode-5spanmode-5"></a><span id="Mode-5"></span><span id="mode-5"></span><span id="MODE-5"></span>Modus 5
 
-BC7-Modus 5 weist folgende Merkmale auf:
+Bzw bc7 Mode 5 weist die folgenden Eigenschaften auf:
 
--   Farbkomponenten mit separater Alpha-Komponente
--   1 Teilmenge pro Block
--   RGB 7.7.7-Farbendpunkte
+-   Farbkomponenten mit separater Alpha Komponente
+-   1 Teilmenge pro Block
+-   RGB 7.7.7 Farb Endpunkte
 -   6-Bit-Alpha-Endpunkte
--   16 x 2-Bit-Farbindizes
--   16 x 2-Bit-Alpha-Indizes
--   Rotation der 2-Bit-Komponente
+-   16 x 2-Bit-Farbindizes
+-   16 x 2-Bit-Alpha Indizes
+-   2-Bit-Komponenten Drehung
 
-![Modus 5-Bit-Layout](images/bc7-mode5.png)
+![Layout des 5-Bit-Modus](images/bc7-mode5.png)
 
-### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a><span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>6-Modus
+### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a><span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>Modus 6
 
-BC7-Modus 6 weist folgende Merkmale auf:
+Bzw bc7 Mode 6 weist die folgenden Eigenschaften auf:
 
--   Kombinierte Farb- und Alpha-Komponenten
+-   Kombinierte Farbe und Alpha Komponenten
 -   Eine Teilmenge pro Block
--   RGBAP 7.7.7.7.1-Farb- (und Alpha)-Endpunkte (eindeutiger P-Bit pro Endpunkt)
--   16 x 3-Bit-Indizes
+-   Rgbap 7.7.7.7.1 Farbe (und Alpha) Endpunkte (eindeutiges P-Bit pro Endpunkt)
+-   16 x 4-Bit-Indizes
 
-![Modus 6-Bit-Layout](images/bc7-mode6.png)
+![Modus 6 Bit Layout](images/bc7-mode6.png)
 
-### <a name="span-idmode-7spanspan-idmode-7spanspan-idmode-7spanmode-7"></a><span id="Mode-7"></span><span id="mode-7"></span><span id="MODE-7"></span>7-Modus
+### <a name="span-idmode-7spanspan-idmode-7spanspan-idmode-7spanmode-7"></a><span id="Mode-7"></span><span id="mode-7"></span><span id="MODE-7"></span>Modus 7
 
-BC7-Modus 7 weist folgende Merkmale auf:
+Bzw bc7 Mode 7 weist die folgenden Eigenschaften auf:
 
--   Kombinierte Farb- und Alpha-Komponenten
--   2 Teilmengen pro Block
--   RGBAP 5.5.5.5.1-Farb- (und Alpha)-Endpunkte (eindeutiger P-Bit pro Endpunkt)
+-   Kombinierte Farbe und Alpha Komponenten
+-   2 Teilmengen pro Block
+-   Rgbap 5.5.5.5.1 Farbe (und Alpha) Endpunkte (eindeutiges P-Bit pro Endpunkt)
 -   2-Bit-Indizes
 -   64 Partitionen
 
-![Modus 7-Bit-Layout](images/bc7-mode7.png)
+![Modus 7 Bit Layout](images/bc7-mode7.png)
 
-### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>"Hinweise"
+### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Rede
 
-Modus 8 (das Bit mit dem unerheblichsten Wert ist auf 0 x 00 Byte festgelegt) ist reserviert. Verwenden Sie es nicht für den Encoder. Wenn Sie diesen Modus an die Hardware übergeben, wird ein initialisierter Block mit nur Nullen zurückgegeben.
+Modus 8 (das am wenigsten signifikante Byte ist auf 0x00 festgelegt) ist reserviert. Verwenden Sie Sie nicht in Ihrem Encoder. Wenn Sie diesen Modus an die Hardware übergeben, wird ein Block zurückgegeben, der mit allen Nullen initialisiert wird.
 
-In BC7 können Sie die Alpha-Komponente auf eine der folgenden Weisen codieren:
+In bzw bc7 können Sie die Alpha Komponente auf eine der folgenden Arten codieren:
 
--   Blocktypen ohne explizite Alpha-Komponenten-Codierung. In diesen Blöcken enthalten die Farbendpunkte eine reine RGB-Codierung, wobei die Alpha-Komponente auf 1,0 für alle Texel decodiert ist.
--   Blocktypen mit kombinierten Farb- und Alpha-Komponenten. Die Endpunkt-Farbwerte in diesen Blöcken werden im RGBA-Format angegeben und die Werte der Alpha-Komponente werden zusammen mit den Farbwerten interpoliert.
--   Blocktypen mit separaten Farb- und Alpha-Komponenten. Die Farb- und Alphawerte dieser Blöcke werden separat angegeben und enthalten jeweils ihr eigenes Set an Indizes. Sie haben daher eine effektive Vektor und einen skalaren Kanal, der separat codiert, wobei der Vektor der Farbkanäle häufig angibt \[R, G, B\] und der Skalar gibt den alpha-Kanal \[ein\]. Zur Unterstützung dieses Ansatzes wird ein eigenes 2-Bitfeld in der Codierung bereitgestellt, das die Spezifikation der separaten Kanal-Codierung als skalaren Wert zulässt. Daher kann der Block eine der folgenden vier verschiedenen Darstellungen dieser Alpha-Codierung haben (wie durch das 2-Bitfeld angezeigt):
-    -   RGB|A: separater Alpha-Kanal
-    -   AGB|R: „roter” separater Alpha-Kanal
-    -   RAB|G: „grüner” separater Alpha-Kanal
-    -   RGA|B: „blauer” separater Alpha-Kanal
+-   Block Typen ohne explizite Alpha Komponenten Codierung. In diesen Blöcken haben die Farb Endpunkte eine nur-RGB-Codierung, wobei die Alpha Komponente für alle Texels in 1,0 decodiert wird.
+-   Block Typen mit kombinierten Farben und Alpha Komponenten. In diesen Blöcken werden die endpunktfarbwerte im RGBA-Format angegeben, und die Alpha Komponenten Werte werden zusammen mit den Farbwerten interpoliert.
+-   Block Typen mit getrennten Farben und Alpha Komponenten. In diesen Blöcken werden die Werte für Farbe und Alpha separat angegeben, jeweils mit einem eigenen Satz von Indizes. Demzufolge verfügen Sie über einen effektiven Vektor und einen skalarchannel, der separat codiert ist, wobei der Vektor häufig die Farbkanäle \[ R, G \] und B angibt und der Skalar den Alphakanal \[ a angibt \] . Zur Unterstützung dieses Ansatzes wird in der Codierung ein separates 2-Bit-Feld bereitgestellt, das die Angabe der separaten Kanalcodierung als Skalarwert ermöglicht. Folglich kann der-Block eine der folgenden vier unterschiedlichen Darstellungen dieser Alpha Codierung aufweisen (wie durch das 2-Bit-Feld angegeben):
+    -   RGB | A: Alphakanal getrennt
+    -   AGB | R: "Roter" Farbkanal getrennt
+    -   Rab | G: "grün" Farbkanal getrennt
+    -   RGA | B: "blauer" Farbkanal getrennt
 
-    Der Decoder ordnet die Kanalreihenfolge nach der Decodierung wieder auf RGBA an, damit das interne Blockformat für den Entwickler unsichtbar ist. Schwarze Kanäle mit eigenen Farb- und Alpha-Komponenten verfügen auch über zwei Sätze an Indexdaten: einen für den Satz an Vektor-Kanälen und einen für den skalaren Kanal. (Im Fall von Modus 4, der diese Indizes werden mit unterschiedlichen Breiten und \[2 oder 3 Bits\]. Modus 4 enthält auch einen 1-Bit-Selektor, der angibt, ob der Vektor- oder der skalare Kanal die 3-Bit-Indizes verwendet.)
+    Der Decoder ordnet die Kanal Reihenfolge nach der Decodierung an RGBA zurück, sodass das interne Block Format für den Entwickler unsichtbar ist. Schwarze mit separaten Farb-und Alpha Komponenten verfügen auch über zwei Sätze von Indexdaten: einen für den Vektor Satz von Kanälen und einen für den skalaren Kanal. (Im Fall von Modus 4 haben diese Indizes eine abweichende Breite von \[ 2 oder 3 Bits \] . In Modus 4 ist auch ein 1-Bit-Selektor enthalten, der angibt, ob der Vektor oder der skalare Kanal die 3-Bit-Indizes verwendet.)
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 
 
-[Block-texturkomprimierung](texture-block-compression.md)
+[Texturblockkomprimierung](texture-block-compression.md)
 
  
 
  
-
-
-
-

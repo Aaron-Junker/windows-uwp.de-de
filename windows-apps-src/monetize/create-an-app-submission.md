@@ -1,31 +1,31 @@
 ---
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API, um eine neue Eingabe für eine app zu erstellen, die mit Ihrem Partner Center-Konto registriert ist.
+description: Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um eine neue Übermittlung für eine APP zu erstellen, die bei Ihrem Partner Center-Konto registriert ist.
 title: Erstellen einer App-Übermittlung
 ms.date: 07/10/2017
 ms.topic: article
-keywords: Windows 10, UWP, Microsoft Store-Übermittlungs-API, Erstellen einer App-Übermittlung
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, App-Übermittlung erstellen
 ms.localizationpriority: medium
-ms.openlocfilehash: e899b203a21f8c29c9c95973871881cc618b5d55
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cbaf7e13c937762716bfd0cf35fbfdfb4776b1f1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371221"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158624"
 ---
 # <a name="create-an-app-submission"></a>Erstellen einer App-Übermittlung
 
-Verwenden Sie diese Methode in der Microsoft Store-Übermittlung API, um eine neue Eingabe für eine app zu erstellen, die mit Ihrem Partner Center-Konto registriert ist. Nachdem Sie erfolgreich eine neue Übermittlung mit dieser Methode erstellt haben, [aktualisieren Sie die Übermittlung](update-an-app-submission.md), um erforderliche Änderungen an den Übermittlungsdaten vorzunehmen, und führen Sie ein [Commit für die Übermittlung](commit-an-app-submission.md) zur Aufnahme und Veröffentlichung durch.
+Verwenden Sie diese Methode in der Microsoft Store Übermittlungs-API, um eine neue Übermittlung für eine APP zu erstellen, die bei Ihrem Partner Center-Konto registriert ist. Nachdem Sie erfolgreich eine neue Übermittlung mit dieser Methode erstellt haben, [aktualisieren Sie die Übermittlung](update-an-app-submission.md), um erforderliche Änderungen an den Übermittlungsdaten vorzunehmen, und führen Sie ein [Commit für die Übermittlung](commit-an-app-submission.md) zur Aufnahme und Veröffentlichung durch.
 
-Weitere Informationen dazu, wie diese Methode zum Erstellen einer App-Übermittlung mithilfe der Microsoft Store-Übermittlungs-API passt, finden Sie unter [Verwalten von App-Übermittlungen](manage-app-submissions.md).
+Weitere Informationen dazu, wie diese Methode in den Prozess der Erstellung einer APP-Übermittlung mithilfe der Microsoft Store Übermittlungs-API passt, finden Sie unter [Verwalten von App](manage-app-submissions.md)-Übermittlungen.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
-* Falls noch nicht geschehen, erfüllen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store-Übermittlungs-API.
-* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nach Erhalt eines Zugriffstokens können Sie es 60 Minuten lang verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
-* Stellen Sie sicher, dass für die App bereits mindestens eine Übermittlung mit abgeschlossenen Informationen zu den [Altersfreigaben](https://docs.microsoft.com/windows/uwp/publish/age-ratings) vorhanden ist.
+* Wenn Sie dies nicht bereits getan haben, müssen Sie alle [Voraussetzungen](create-and-manage-submissions-using-windows-store-services.md#prerequisites) für die Microsoft Store Übermittlungs-API erfüllen.
+* [Rufen Sie ein Azure AD-Zugriffstoken ab](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token), das im Anforderungsheader für diese Methode verwendet wird. Nachdem Sie ein Zugriffstoken erhalten haben, haben Sie 60 Minuten Zeit, es zu verwenden, bevor es abläuft. Wenn das Token abgelaufen ist, können Sie ein neues abrufen.
+* Stellen Sie sicher, dass für die App bereits mindestens eine Übermittlung mit abgeschlossenen Informationen zu den [Altersfreigaben](../publish/age-ratings.md) vorhanden ist.
 
 ## <a name="request"></a>Anforderung
 
@@ -37,15 +37,15 @@ Diese Methode hat die folgende Syntax. In den folgenden Abschnitten finden Sie V
 
 ### <a name="request-header"></a>Anforderungsheader
 
-| Header        | Typ   | Beschreibung                                                                 |
+| Header        | type   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Autorisierung | String | Erforderlich. Die Azure AD-Zugriffstoken in der Form **Bearer** &lt; *token*&gt;. |
+| Authorization | Zeichenfolge | Erforderlich. Das Azure AD-Zugriffstoken im Format **Bearer** &lt;*token*&gt;. |
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Name        | Typ   | Beschreibung                                                                 |
+| Name        | Typ   | BESCHREIBUNG                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | String | Erforderlich. Die Store-ID der App, für die Sie eine Übermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | Zeichenfolge | Erforderlich. Die Store-ID der App, für die Sie eine Übermittlung erstellen möchten. Weitere Informationen zur Store-ID finden Sie unter [Anzeigen von Details zur App-Identität](../publish/view-app-identity-details.md).  |
 
 ### <a name="request-body"></a>Anforderungstext
 
@@ -179,16 +179,16 @@ Das folgende Beispiel veranschaulicht den JSON-Antworttext für einen erfolgreic
 
 Wenn die Anforderung nicht erfolgreich abgeschlossen werden kann, enthält die Antwort einen der folgenden HTTP-Fehlercodes.
 
-| Fehlercode |  Beschreibung   |
+| Fehlercode |  BESCHREIBUNG   |
 |--------|------------------|
 | 400  | Die Übermittlung konnte nicht erstellt werden, da die Anforderung ungültig ist. |
-| 409  | Die Übermittlung konnte aufgrund des aktuellen Status der app nicht erstellt werden, oder die app verwendet ein Partner Center-Feature, das [derzeit nicht durch die Übermittlung zum Microsoft Store-API unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | Die Übermittlung konnte aufgrund des aktuellen Status der APP nicht erstellt werden, oder die APP verwendet ein Partner Center-Feature, das [von der Microsoft Store Übermittlungs-API derzeit nicht unterstützt](create-and-manage-submissions-using-windows-store-services.md#not_supported)wird. |   
 
-## <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Zugehörige Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Erhalten Sie eine app-Übermittlung](get-an-app-submission.md)
-* [Übernehmen Sie eine app-Übermittlung](commit-an-app-submission.md)
-* [Aktualisieren einer app](update-an-app-submission.md)
-* [Löschen Sie ein app-Übermittlung](delete-an-app-submission.md)
-* [Abrufen des Status einer app-Übermittlung](get-status-for-an-app-submission.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)
+* [Abrufen einer App-Übermittlung](get-an-app-submission.md)
+* [Ausführen eines Commit für eine App-Übermittlung](commit-an-app-submission.md)
+* [Aktualisieren einer App-Übermittlung](update-an-app-submission.md)
+* [Löschen einer App-Übermittlung](delete-an-app-submission.md)
+* [Abrufen des Status einer App-Übermittlung](get-status-for-an-app-submission.md)

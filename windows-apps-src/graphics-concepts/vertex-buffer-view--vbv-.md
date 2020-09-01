@@ -1,25 +1,25 @@
 ---
 title: Vertexpuffer- (VBV) und Indexpufferansicht (IBV)
-description: Ein Scheitelpunktpuffer enthält Daten für eine Liste von Scheitelpunkten.
+description: Erfahren Sie mehr über die Vertex-Puffer Ansicht (VBV) und die Index Puffer Ansicht (IBV), die Daten und ganzzahlige Indizes für Vertices in Direct3D Rendering enthalten.
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
-- Scheitelpunktpufferansicht (VBV)
+- Vertex-Puffer Ansicht (VBV)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a616f2bad8f478b2d20e96b183ba944950fef8a8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636245"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156094"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>Vertexpuffer- (VBV) und Indexpufferansicht (IBV)
 
 
-Ein Scheitelpunktpuffer enthält Daten für eine Liste von Scheitelpunkten. Die Daten für jeden Scheitelpunkt können Position, Farbe, Normalvektor, Texturkoordinaten u. dgl. beinhalten. Ein Indexpuffer enthält Ganzzahlindizes (Offsets) für einen Scheitelpunktpuffer und wird verwendet, um ein Objekt, das aus einem Teil der Liste aller Scheitelpunkte besteht, zu definieren und zu rendern.
+Ein Vertex-Puffer enthält Daten für eine Liste von Vertices. Die Daten für jeden Scheitelpunkt können Position, Farbe, normaler Vektor, Texturkoordinaten usw. enthalten. Ein Index Puffer enthält ganzzahlige Indizes (Offsets) in einem Scheitelpunkt Puffer und wird verwendet, um ein Objekt zu definieren und zu Rendering, das aus einer Teilmenge der vollständigen Liste von Vertices besteht.
 
-Die Definition eines einzelnen Scheitelpunkts obliegt oft der Anwendung, zum Beispiel:
+Die Definition eines einzelnen Scheitel Punkts liegt häufig in der Definition der zu definierenden Anwendung vor, wie z. b.:
 
 ``` syntax
 struct CUSTOMVERTEX { 
@@ -30,7 +30,7 @@ struct CUSTOMVERTEX {
 }; 
 ```
 
-Die Definition von CUSTOMVERTEX würde dann an den Grafiktreiber übergeben werden, wenn Scheitelpunktpuffer erstellt werden.
+Die Definition von CustomVertex wird dann beim Erstellen von Scheitelpunkt Puffern an den Grafiktreiber weitergegeben.
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>Verwandte Themen
 

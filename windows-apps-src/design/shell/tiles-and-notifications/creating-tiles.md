@@ -1,6 +1,6 @@
 ---
 Description: Eine Kachel ist die Darstellung einer App im Startmenü. Jede App verfügt über eine Kachel. Wenn Sie ein neues Windows-App-Projekt in Microsoft Visual Studio erstellen, enthält es eine Standard Kachel, die den Namen und das Logo Ihrer APP anzeigt.
-title: Kacheln für Windows-apps
+title: Kacheln für Windows-Apps
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
@@ -8,14 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8823116b8fed3503ccf0dadc488956c93ae6c32b
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f2c2dd6df44e477e34dfddfd6d2c1315b8f32ec2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234450"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156774"
 ---
-# <a name="tiles-for-windows-apps"></a>Kacheln für Windows-apps
+# <a name="tiles-for-windows-apps"></a>Kacheln für Windows-Apps
 
  
 
@@ -51,15 +51,15 @@ Aktualisieren Sie die folgenden Elemente:
 -   ShortName: Da der Platz für Ihren Anzeigenamen auf Kacheln begrenzt ist, empfehlen wir, auch einen ShortName (Kurznamen) anzugeben, um sicherzustellen, dass der Name Ihrer App nicht abgeschnitten wird.
 -   Logobilder:
 
-    Ersetzen Sie diese Bilder durch eigene. Sie können Bilder für verschiedene visuelle Skalierungen bereitstellen, Sie müssen aber nicht alle bereitstellen. Um sicherzustellen, dass die App auf vielen Geräten gut aussieht, wird empfohlen, skalierte Versionen der Bilder mit jeweils 100 %, 200 % und 400 % bereitzustellen. Weitere Informationen zum Erstellen dieser Assets finden Sie unter [App-Symbole und-Logos](/windows/uwp/design/style/app-icons-and-logos) .
+    Ersetzen Sie diese Bilder durch eigene. Sie können Bilder für verschiedene visuelle Skalierungen bereitstellen, Sie müssen aber nicht alle bereitstellen. Um sicherzustellen, dass die App auf vielen Geräten gut aussieht, wird empfohlen, skalierte Versionen der Bilder mit jeweils 100 %, 200 % und 400 % bereitzustellen. Weitere Informationen zum Erstellen dieser Assets finden Sie unter [App-Symbole und-Logos](../../style/app-icons-and-logos.md) .
 
     Skalierte Bilder haben die folgende Benennungskonvention:
     
     * &lt; Bildname &gt; *. Skalierungs* &lt; Faktor &gt; *.* &lt; Image Dateierweiterung &gt; * 
 
-    Beispiel: SplashScreen. Scale-100. png
+    Beispiel: SplashScreen.scale-100.png
 
-    Wenn Sie auf das Image verweisen, verweisen Sie darauf als * &lt; Bildname &gt; *.* &lt; Image Dateierweiterung &gt; * ("SplashScreen. png" in diesem Beispiel). Das System wählt aus den bereitgestellten Bildern automatisch das entsprechend skalierte Bild für das Gerät aus.
+    Wenn Sie auf das Image verweisen, verweisen Sie darauf als * &lt; Bildname &gt; *.* &lt; Image Dateierweiterung &gt; * ("SplashScreen.png" in diesem Beispiel). Das System wählt aus den bereitgestellten Bildern automatisch das entsprechend skalierte Bild für das Gerät aus.
 
 -   Es wird ausdrücklich empfohlen, Logos für breite und große Kacheln bereitzustellen, damit der Benutzer die Größe der Kachel Ihrer App entsprechend anpassen kann. Um diese zusätzlichen Images bereitzustellen, erstellen Sie ein **defaulttile** -Element, und verwenden Sie die Attribute **Wide310x150Logo** und **Square310x310Logo** , um die zusätzlichen Images anzugeben:
 ```    XML

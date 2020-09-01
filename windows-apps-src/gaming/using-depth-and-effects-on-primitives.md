@@ -4,14 +4,14 @@ description: Hier zeigen wir Ihnen die Verwendung von Tiefen, Perspektiven, Farb
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, Spiele, Tiefe, Effekte, Grundtypen; directx
+keywords: Windows 10, UWP, Games, Tiefe, Effekte, primitive, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 63af04475e897dfade3afec91b2a0fa0d9790f84
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 99931ef0abef10cb5c517c4c5be04e2afe3056a2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367503"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159014"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>Verwenden von Tiefen und Effekten in Primitiven
 
@@ -19,22 +19,22 @@ ms.locfileid: "66367503"
 
 Hier zeigen wir Ihnen die Verwendung von Tiefen, Perspektiven, Farben und anderen Effekten in Primitiven.
 
-**Ziel:** So erstellen ein 3D-Objekt aus, und wenden grundlegende Vertex Lichteffekten und damit Farben.
+**Ziel:** Erstellen eines 3D-Objekts und Anwenden einer einfachen Vertexbeleuchtung und -färbung
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 
 Es wird davon ausgegangen, dass Sie mit C+ vertraut sind. Sie müssen außerdem mit den grundlegenden Konzepten der Grafikprogrammierung vertraut sein.
 
-Des Weiteren gehen wir davon aus, dass Sie die Themen [Schnellstart: Einrichten von DirectX-Ressourcen und Anzeigen von Bildern](setting-up-directx-resources.md) sowie [Erstellen von Shadern und Zeichnen von Primitiven](creating-shaders-and-drawing-primitives.md) bearbeitet haben.
+Außerdem wird davon ausgegangen, dass Sie [Schnellstart: Einrichten von DirectX-Ressourcen und Anzeigen eines Bilds](setting-up-directx-resources.md) und [Erstellen von Shadern und Zeichnen von primitiven](creating-shaders-and-drawing-primitives.md)durchgegangen sind.
 
-**Zeit in Anspruch:** 20 Minuten.
+**Zeitaufwand:** 20 Minuten.
 
-<a name="instructions"></a>Anweisungen
+<a name="instructions"></a>Instructions
 ------------
-### <a name="1-defining-cube-variables"></a>1. Definieren von Cubes-Variablen
+### <a name="1-defining-cube-variables"></a>1. Definieren von Würfelvariablen
 
-Zunächst müssen wir die **SimpleCubeVertex**-Struktur und die **ConstantBuffer**-Struktur für den Würfel definieren. In diesen Strukturen werden die Vertexpositionen und -farben für den Würfel sowie die Darstellung des Würfels angegeben. Wir deklarieren [**ID3D11DepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) und [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) mit [**ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) und eine Instanz von **ConstantBuffer**.
+Zunächst müssen wir die **SimpleCubeVertex**-Struktur und die **ConstantBuffer**-Struktur für den Würfel definieren. In diesen Strukturen werden die Vertexpositionen und -farben für den Würfel sowie die Darstellung des Würfels angegeben. Wir deklarieren [**ID3D11DepthStencilView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11depthstencilview) und [**ID3D11Buffer**](/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer) mit [**comptr**](/cpp/windows/comptr-class) und deklarieren eine Instanz von **constantbuffer**.
 
 ```cpp
 struct SimpleCubeVertex
@@ -64,9 +64,9 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### <a name="2-creating-a-depth-stencil-view"></a>2. Erstellen eine Ansicht der tiefenschablone
+### <a name="2-creating-a-depth-stencil-view"></a>2. Erstellen einer Tiefenschablonenansicht
 
-Zusätzlich zu der Renderzielansicht erstellen wir eine Tiefenschablonenansicht. Die Tiefenschablonenansicht ermöglicht Direct3D das effiziente Rendern von sich näher an der Kamera befindlichen Objekten vor Objekten, die sich weiter weg von der Kamera befinden. Bevor wir eine Ansicht für einen Tiefenschablonenpuffer erstellen können, müssen wir den Tiefenschablonenpuffer erstellen. Füllen wir einen [ **D3D11\_TEXTURE2D\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) tiefenschablone Puffer zu beschreiben, und rufen Sie anschließend [ **ID3D11Device::CreateTexture2D**  ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) tiefenschablone Puffer zu erstellen. Um die Ansicht der tiefenschablone erstellen, füllen wir einen [ **D3D11\_Tiefe\_SCHABLONE\_Ansicht\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_view_desc) beschreiben die Ansicht der tiefenschablone und übergeben die Beschreibung der tiefenschablone Ansicht und der tiefenschablone Puffer, [ **ID3D11Device::CreateDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createdepthstencilview).
+Zusätzlich zu der Renderzielansicht erstellen wir eine Tiefenschablonenansicht. Die Tiefenschablonenansicht ermöglicht Direct3D das effiziente Rendern von sich näher an der Kamera befindlichen Objekten vor Objekten, die sich weiter weg von der Kamera befinden. Bevor wir eine Ansicht für einen Tiefenschablonenpuffer erstellen können, müssen wir den Tiefenschablonenpuffer erstellen. Wir füllen eine [**D3D11 \_ TEXTURE2D- \_ Abteilung**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) auf, um den tiefen Schablone-Puffer zu beschreiben, und rufen dann [**ID3D11Device:: CreateTexture2D**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) auf, um den tiefen Schablonen Puffer zu erstellen. Um die Ansicht der tiefen Schablone zu erstellen, füllen wir eine [**D3D11- \_ tiefen \_ Schablone der Schablonen \_ Ansicht \_ **](/windows/desktop/api/d3d11/ns-d3d11-d3d11_depth_stencil_view_desc) aus, um die Ansicht der tiefen Schablone zu beschreiben und die Beschreibung der tiefen Schablone und den tiefen Schablone-Puffer an [**ID3D11Device:: featedepthstenatenview**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createdepthstencilview)zu übergeben.
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -111,7 +111,7 @@ Zusätzlich zu der Renderzielansicht erstellen wir eine Tiefenschablonenansicht.
             );
 ```
 
-### <a name="3-updating-perspective-with-the-window"></a>3. Perspektive mit dem Fenster aktualisieren
+### <a name="3-updating-perspective-with-the-window"></a>3. Aktualisieren der Perspektive mit dem Fenster
 
 Wir aktualisieren die Perspektivenprojektionsparameter für den Konstantenpuffer gemäß den Fensterabmessungen. Wir fixieren die Parameter auf ein 70-Grad-Sichtfeld mit einem Tiefenbereich von 0,01 bis 100.
 
@@ -144,19 +144,19 @@ Wir aktualisieren die Perspektivenprojektionsparameter für den Konstantenpuffer
             );
 ```
 
-### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. Erstellen mit Farbelemente Vertex und Pixel-Shader
+### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. Erstellen von Vertex- und Pixelshadern mit Farbelementen
 
 In dieser App erstellen wir Vertex- und Pixelshader, die im Vergleich zu der Beschreibung im vorherigen Lernprogramm [Erstellen von Shadern und Zeichnen von Primitiven](creating-shaders-and-drawing-primitives.md) einen höheren Komplexitätsgrad aufweisen. Der Vertexshader der App transformiert die Position der einzelnen Vertizes in den Projektionsbereich und übergibt die Vertexfarbe an den Pixelshader.
 
-Der app-Array von [ **D3D11\_Eingabe\_ELEMENT\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) Strukturen, die beschreiben, das Layout der Vertex-Shader-Code verfügt über zwei Layoutelemente: ein Element definiert die Position des Scheitelpunkts und das andere Element definiert die Farbe.
+Das Array der D3D11- [** \_ Eingabe \_ Element- \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) -Strukturen der APP, die das Layout des Vertex-Shader-Codes beschreiben, verfügt über zwei Layoutelemente: ein Element definiert die Scheitelpunkt Position, und das andere Element definiert die Farbe.
 
 Wir erstellen Vertex-, Index- und Konstantenpuffer, um einen kreisenden Würfel zu definieren.
 
-**Zum Definieren eines Cubes kreisende**
+**So definieren Sie einen kreisenden Würfel**
 
 1.  Zunächst definieren wir den Würfel. Wir weisen jedem Vertex neben einer Position auch eine Farbe zu. Dies ermöglicht dem Pixelshader eine unterschiedliche Farbgebung der einzelnen Flächen, sodass sie unterschieden werden können.
-2.  Als Nächstes wird beschrieben, die Vertex- und Indexpuffer ([**D3D11\_Puffer\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) und [ **D3D11\_SUBRESOURCE\_Daten**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) mithilfe der Cubedefinition. Wir rufen [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) einmal für jeden Puffer auf.
-3.  Als Nächstes erstellen wir ein Konstantenpuffer ([**D3D11\_Puffer\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) für die Übergabe von Modell, Ansichts-und Projektionsmatrix an den Vertex-Shader. Später können wir den Konstantenpuffer zum Drehen des Würfels und zum Anwenden einer Perspektivenprojektion auf den Würfel verwenden. Wir rufen [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) auf, um den Konstantenpuffer zu erstellen.
+2.  Als nächstes beschreiben wir die Vertex-und Index Puffer[**( \_ D3D11 \_ buffer**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) Debug and [**D3D11 \_ subresource \_ Data**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) mithilfe der Cubedefinition. Wir rufen [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) einmal für jeden Puffer auf.
+3.  Als Nächstes erstellen wir einen konstanten Puffer ([**D3D11 \_ buffer \_ **](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)Debug) zum Übergeben von Modell-, Ansichts-und Projektions Matrizen an den Vertex-Shader. Später können wir den Konstantenpuffer zum Drehen des Würfels und zum Anwenden einer Perspektivenprojektion auf den Würfel verwenden. Wir rufen [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) auf, um den Konstantenpuffer zu erstellen.
 4.  Als Nächstes geben wir die Ansichtstransformation an, die einer Kameraposition mit X = 0, Y = 1, Z = 2 entspricht.
 5.  Zum Schluss deklarieren wir eine *degree*-Variable, mit deren Hilfe wir den Würfel animieren werden, indem er in jedem Frame gedreht wird.
 
@@ -334,22 +334,22 @@ Wir erstellen Vertex-, Index- und Konstantenpuffer, um einen kreisenden Würfel 
         
 ```
 
-### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. Drehen, und zeichnen den Cube, und das gerenderte Bild darstellen
+### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. Drehen und Zeichnen des Würfels und Darstellen des gerenderten Bilds
 
-Wir rufen eine Endlosschleife auf, um die Szene fortlaufend zu rendern und anzuzeigen. Wir rufen die **rotationY**-Inlinefunktion (BasicMath.h) mit einer Rotationsmenge auf, um die Werte festzulegen, mit deren Hilfe sich die Modellmatrix des Würfels um die Y-Achse dreht. Anschließend rufen wir [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) auf, um den Konstantenpuffer zu aktualisieren und das Würfelmodell zu drehen. Wir rufen [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) auf, um das Renderziel aus Ausgabeziel anzugeben. In diesem **OMSetRenderTargets**-Aufruf übergeben wir die Tiefenschablonenansicht. Wir rufen [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) auf, um das Renderziel in eine blaue Volltonfarbe zu bereinigen. Anschließend rufen wir [**ID3D11DeviceContext::ClearDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) auf, um den Tiefenpuffer zu leeren.
+Wir rufen eine Endlosschleife auf, um die Szene fortlaufend zu rendern und anzuzeigen. Wir rufen die **rotationY**-Inlinefunktion (BasicMath.h) mit einer Rotationsmenge auf, um die Werte festzulegen, mit deren Hilfe sich die Modellmatrix des Würfels um die Y-Achse dreht. Anschließend rufen wir [**ID3D11DeviceContext::UpdateSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) auf, um den Konstantenpuffer zu aktualisieren und das Würfelmodell zu drehen. Wir rufen [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) auf, um das Renderziel aus Ausgabeziel anzugeben. In diesem **OMSetRenderTargets**-Aufruf übergeben wir die Tiefenschablonenansicht. Wir rufen [**ID3D11DeviceContext::ClearRenderTargetView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) auf, um das Renderziel in eine blaue Volltonfarbe zu bereinigen. Anschließend rufen wir [**ID3D11DeviceContext::ClearDepthStencilView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) auf, um den Tiefenpuffer zu leeren.
 
 In der Endlosschleife zeichnen wir den Würfel ebenfalls auf der blauen Oberfläche.
 
-**Um den Cube zu zeichnen.**
+**So zeichnen Sie den Würfel**
 
-1.  Wir rufen zunächst [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) auf, um das Streamen der Vertexpufferdaten in den Eingabeassemblerzustand zu beschreiben.
-2.  Als Nächstes rufen wir [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) und [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) auf, um die Vertex- und Indexpuffer an den Eingabeassemblerzustand zu binden.
-3.  Als Nächstes rufen wir [ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) mit der [ **D3D11\_PRIMITIVEN\_Topologie\_ TRIANGLESTRIP** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) Wert, der für die Eingabe-Assembler Stufe die Vertexdaten als Farbstreifen Dreieck interpretiert angegeben.
-4.  Im nächsten Schritt rufen wir [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) auf, um die Vertexshaderphase mit dem Vertexshadercode zu initialisieren. Zudem rufen wir [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) auf, um die Pixelshaderphase mit dem Pixelshadercode zu initialisieren.
-5.  Dann rufen wir [**ID3D11DeviceContext::VSSetConstantBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) auf, um den im Vertexshader-Pipelinezustand verwendeten Konstantenpuffer festzulegen.
-6.  Schließlich rufen wir [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) auf, um den Würfel zu zeichnen und ihn an die Renderpipeline zu übermitteln.
+1.  Wir rufen zunächst [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) auf, um das Streamen der Vertexpufferdaten in den Eingabeassemblerzustand zu beschreiben.
+2.  Als Nächstes rufen wir [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) und [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) auf, um die Vertex- und Indexpuffer an den Eingabeassemblerzustand zu binden.
+3.  Im nächsten Schritt wird [**Verknüpfung id3d11devicecontext aus:: iasetprimitivetopology**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) mit dem Wert der [**D3D11- \_ primitiven \_ Topologie \_ Trianglestrip**](/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) aufgerufen, um anzugeben, dass die Vertex-Daten als Dreiecks Streifen in der Eingabe-Assembler-Phase interpretiert werden sollen.
+4.  Im nächsten Schritt rufen wir [**ID3D11DeviceContext::VSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) auf, um die Vertexshaderphase mit dem Vertexshadercode zu initialisieren. Zudem rufen wir [**ID3D11DeviceContext::PSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) auf, um die Pixelshaderphase mit dem Pixelshadercode zu initialisieren.
+5.  Dann rufen wir [**ID3D11DeviceContext::VSSetConstantBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) auf, um den im Vertexshader-Pipelinezustand verwendeten Konstantenpuffer festzulegen.
+6.  Schließlich rufen wir [**ID3D11DeviceContext::DrawIndexed**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) auf, um den Würfel zu zeichnen und ihn an die Renderpipeline zu übermitteln.
 
-Wir rufen [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) auf, um das gerenderte Bild im Fenster darzustellen.
+Wir rufen [**IDXGISwapChain::Present**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) auf, um das gerenderte Bild im Fenster darzustellen.
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -448,12 +448,8 @@ Wir haben Tiefen, Perspektiven, Farben und andere Effekte in Primitiven verwende
 
 Als Nächstes wenden wir Texturen auf Primitive an.
 
-[Anwenden von Strukturen auf primitive Typen](applying-textures-to-primitives.md)
+[Anwenden von Texturen auf Primitive](applying-textures-to-primitives.md)
 
  
 
  
-
-
-
-
