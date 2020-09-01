@@ -3,7 +3,7 @@ title: Support und Feedback
 description: Support und Feedback Include-Datei
 ms.date: 06/12/2018
 ms.topic: include
-keywords: Windows 10, UWP, Point Of Service, POS
+keywords: Windows 10, UWP, Point of Service, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: e1b6850c294e0427ac05ad4a4d7b2945df0dc34f
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
@@ -14,7 +14,7 @@ ms.locfileid: "74260748"
 ---
 ## <a name="support-and-feedback"></a>Support und Feedback
 
-### <a name="find-answers-to-your-questions"></a>Finden Sie Antworten auf Ihre Fragen
+### <a name="find-answers-to-your-questions"></a>Antworten auf Ihre Fragen
 
 Haben Sie Fragen? Fragen Sie uns entweder [Stack Overflow](https://stackoverflow.com/questions/tagged/pointofservice) oder im [MSDN-UWP-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=wpdevelop&filter=alltypes&sort=relevancedesc&searchTerm=%5Bpointofservice%5D)
 

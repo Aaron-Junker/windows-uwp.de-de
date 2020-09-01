@@ -46,7 +46,7 @@ Zur Verwendung dieser Methode sind folgende Schritte erforderlich:
 
 ### <a name="request-parameters"></a>Anforderungsparameter
 
-| Parameter        | Typ   |  BESCHREIBUNG      |  Erforderlich  
+| Parameter        | type   |  BESCHREIBUNG      |  Erforderlich  
 |---------------|--------|---------------|------|
 | applicationId | Zeichenfolge | Die [Speicher-ID](in-app-purchases-and-trials.md#store-ids) des Spiels, für das Sie Xbox Live Game Hub-Daten abrufen möchten.  |  Ja  |
 | metrictype | Zeichenfolge | Eine Zeichenfolge, die den Typ der abzurufenden Xbox Live Analytics-Daten angibt. Geben Sie für diese Methode den Wert **communitymanagergamehub**an.  |  Ja  |
@@ -68,7 +68,7 @@ Authorization: Bearer <your access token>
 ## <a name="response"></a>Antwort
 
 
-| Wert      | Typ   | BESCHREIBUNG                  |
+| Wert      | type   | BESCHREIBUNG                  |
 |------------|--------|-------------------------------------------------------|
 | Wert      | array  | Ein Array von-Objekten, die spielhub Daten für jedes Datum im angegebenen Datumsbereich enthalten. Weitere Informationen zu den Daten in den einzelnen Objekten finden Sie in der folgenden Tabelle.                                                                                                                      |
 | @nextLink  | Zeichenfolge | Wenn weitere Seiten mit Daten vorhanden sind, enthält diese Zeichenfolge einen URI, mit dem Sie die nächste Seite mit Daten anfordern können. Dieser Wert wird z. b. zurückgegeben, wenn der **Top** -Parameter der Anforderung auf 10000 festgelegt ist, aber mehr als 10000 Daten Zeilen für die Abfrage vorhanden sind. |
@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 
 Elemente im Array *Value* enthalten die folgenden Werte.
 
-| Wert               | Typ   | BESCHREIBUNG                           |
+| Wert               | type   | BESCHREIBUNG                           |
 |---------------------|--------|-------------------------------------------|
 | date                | Zeichenfolge | Das Datum für die spielhub-Daten in diesem-Objekt. |
 | applicationId       | Zeichenfolge | Die Speicher-ID des Spiels, für das Sie die spielhub-Daten abrufen.     |
