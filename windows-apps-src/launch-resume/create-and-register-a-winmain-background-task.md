@@ -1,6 +1,6 @@
 ---
 title: Erstellen und Registrieren einer WinMain-Hintergrundaufgabe
-description: Erstellen Sie einen com-Hintergrund Task, der in Ihrem Hauptprozess oder außerhalb des Prozesses ausgeführt werden kann, wenn Ihre gepackte WinMain-App möglicherweise nicht ausgeführt wird.
+description: Erstellen Sie eine COM-Hintergrundaufgabe, die in Ihrem Hauptprozess oder außerhalb von Prozessen ausgeführt werden kann, wenn Ihre gepackte WinMain-App möglicherweise nicht ausgeführt wird.
 ms.assetid: 8CBD4986-6E65-4374-BC7C-C38908E417E1
 ms.date: 03/27/2020
 ms.topic: article
@@ -1043,7 +1043,7 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 </details>
 
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Anders als UWP-apps, die Hintergrundaufgaben im modernen Standby ausführen können, können WinMain-apps keinen Code aus den unteren Energie Phasen des modernen Standbymodus ausführen. Weitere Informationen finden Sie unter [moderner Standby](/windows-hardware/design/device-experiences/modern-standby) -Modus.
 

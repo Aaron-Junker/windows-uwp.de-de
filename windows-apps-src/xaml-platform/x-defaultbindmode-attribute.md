@@ -24,7 +24,7 @@ Gibt in XAML-Markup einen Standardmodus für x:Bind.
 <object x:DefaultBindMode="OneTime \| OneWay \| TwoWay" .../>
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 [x:Bind](x-bind-markup-extension.md) hat den Standardmodus " **OneTime**". Dies wurde aus Leistungsgründen gewählt, da die Verwendung von **OneWay** bewirkt, dass mehr Code generiert und die Änderungs Erkennung verarbeitet wird. Sie können **x:defaultbindmode** verwenden, um den Standardmodus für x:Bind für ein bestimmtes Segment der Markup Struktur zu ändern. Der angegebene Modus gilt für alle x:Bind-Ausdrücke auf diesem Element und seinen untergeordneten Elementen, die nicht explizit einen Modus als Teil der Bindung angeben.
 

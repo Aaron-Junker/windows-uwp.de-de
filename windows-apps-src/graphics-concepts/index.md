@@ -1,18 +1,18 @@
 ---
 title: Glossar für Direct3D-Grafiken
-description: Hier finden Sie eine Definition der von Microsoft Direct3D verwendeten Grafikbegriffe.
+description: In diesem Glossar werden allgemeine Begriffe für 3D-Computergrafiken definiert, die in der Spiele- und App-Entwicklung in Direct3D verwendet werden.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
 - Glossar für Direct3D-Grafiken
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 3359b81c6932bfc63c3939d2f857aaef9248e52f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63805639"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173074"
 ---
 # <a name="direct3d-graphics-glossary"></a>Glossar für Direct3D-Grafiken
 
@@ -30,7 +30,7 @@ Hier werden Begriffe für Microsoft Direct3D-Grafiken definiert. In diesem Gloss
 <thead>
 <tr class="header">
 <th align="left">Thema</th>
-<th align="left">Beschreibung</th>
+<th align="left">BESCHREIBUNG</th>
 </tr>
 </thead>
 <tbody>
@@ -67,7 +67,7 @@ Hier werden Begriffe für Microsoft Direct3D-Grafiken definiert. In diesem Gloss
 <td align="left"><p>Der Begriff &quot;Ansicht&quot; wird für &quot;Daten im erforderlichen Format&quot; verwendet. In einer Konstantenpufferansicht (Constant Buffer View, CBV) werden beispielweise ordnungsgemäß formatierte konstante Pufferdaten dargestellt. Dieser Abschnitt beschreibt die gängigsten und hilfreichsten Ansichten.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="compute-pipeline.md">Compute-Pipeline</a></p></td>
+<td align="left"><p><a href="compute-pipeline.md">Berechnen der Pipeline</a></p></td>
 <td align="left"><p>Die Direct3D-Compute-Pipeline wurde zur Verarbeitung von Berechnungen entwickelt, die meist parallel mit der Grafikpipeline ausgeführt werden können.</p></td>
 </tr>
 <tr class="even">

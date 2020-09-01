@@ -94,7 +94,7 @@ Diese Struktur verfügt über eine Instanz und enthält alle erforderlichen Komp
 
 ### <a name="prerequisites"></a>Voraussetzungen
 
--   Dies ist optional. Sehen Sie sich das Thema [Portieren von EGL-Code zu DXGI und Direct3D](moving-from-egl-to-dxgi.md) an. Lesen Sie sich die Informationen dieses Themas durch, um ein besseres Verständnis der von DirectX bereitgestellten Grafikschnittstelle zu entwickeln.
+-   Optional. Sehen Sie sich das Thema [Portieren von EGL-Code zu DXGI und Direct3D](moving-from-egl-to-dxgi.md) an. Lesen Sie sich die Informationen dieses Themas durch, um ein besseres Verständnis der von DirectX bereitgestellten Grafikschnittstelle zu entwickeln.
 
 ## <a name="span-idkeylinks_steps_headingspansteps"></a><span id="keylinks_steps_heading"></span>Schritte
 

@@ -28,7 +28,7 @@ Bei der Nachverfolgung von verzögerten Elementen durch das XAML-Framework werde
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Die Einschränkungen für die Verwendung von **x:DeferLoadStrategy** sind:
 

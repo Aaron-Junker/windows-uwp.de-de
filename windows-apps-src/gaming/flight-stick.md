@@ -24,7 +24,7 @@ Auf dieser Seite erhalten Sie Informationen zu folgenden Vorgängen:
 * Lesen von Eingaben von mindestens einem flugsticks
 * Verhalten von Flight-Sticks als Benutzeroberflächen-Navigationsgeräte
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Bei Flight Sticks handelt es sich um Spiele Eingabegeräte, die für das Reproduzieren der Meinung von flugsticks, die sich im Cockpit einer Ebene oder des Netz Schiffs befinden würden. Sie sind das perfekte Eingabegerät für die schnelle und exakte Kontrolle des Flugs. Flight-Sticks werden in Windows 10-und Xbox One-UWP-Apps durch den [Windows. Gaming. Input](/uwp/api/windows.gaming.input) -Namespace unterstützt.
 

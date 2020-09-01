@@ -166,13 +166,13 @@ Abhängig vom Wert von [**isdisabledondatareceived**](/uwp/api/windows.devices.p
 
 Legen Sie den gewünschten Wert von [**isdisabledondatareceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) fest, um das scannerverhalten zu steuern, wenn ein Barcode decodiert wird.
 
-| Wert | BESCHREIBUNG |
+| Value | BESCHREIBUNG |
 | ----- | ----------- |
 | True   | Nur einen Barcode Scannen und dann den Vorgang abbrechen |
-| Falsch  | Kontinuierliches Scannen von Barcodes ohne Beenden |
+| False  | Kontinuierliches Scannen von Barcodes ohne Beenden |
 
 ## <a name="see-also"></a>Weitere Informationen
 
-### <a name="samples"></a>Beispiele
+### <a name="samples"></a>Proben
 
 - [Beispiel für Barcode Scanner](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

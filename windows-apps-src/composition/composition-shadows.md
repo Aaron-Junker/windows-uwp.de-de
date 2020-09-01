@@ -123,10 +123,10 @@ Obwohl auf der visuellen Ebene viele Optimierungen vorhanden sind, um Effekte ef
 
 Schatten Merkmale| „Cost“ (Kosten)
 ------------- | -------------
-Rechteck    | Niedrig
+Rechteck    | Low (Niedrig)
 Shadow. Mask      | High
 Compositiondropshadowsourcepolicy. vererfromvisualcontent | High
-Statischer weichzeichradius | Niedrig
+Statischer weichzeichradius | Low (Niedrig)
 Animieren des weichungs RADIUS | High
 
 ## <a name="additional-resources"></a>Weitere Ressourcen

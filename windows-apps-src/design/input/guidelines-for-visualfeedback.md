@@ -116,7 +116,7 @@ Um die Farben pro Steuerelement zu ändern, bearbeiten Sie einfach die Eigenscha
 
 - [Benutzerdefinierte Benutzerinteraktionen](../layout/index.md)
 
-### <a name="samples"></a>Beispiele
+### <a name="samples"></a>Proben
 
 - [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
 - [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)

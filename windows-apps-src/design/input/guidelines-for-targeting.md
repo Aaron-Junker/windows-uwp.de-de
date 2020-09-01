@@ -81,7 +81,7 @@ Sie können diese Empfehlungen für die Zielgröße an die Anforderungen des jew
 - [Größe und Dichte des Steuerelements](../style/spacing.md)
 - [Ausrichtung, Rand, Abstand](../layout/alignment-margin-padding.md)
 
-### <a name="samples"></a>Beispiele
+### <a name="samples"></a>Proben
 
 - [Einfaches Eingabebeispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
 - [Eingabebeispiel mit geringer Latenz](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)

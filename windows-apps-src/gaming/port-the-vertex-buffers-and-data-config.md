@@ -299,7 +299,7 @@ m_d3dContext->DrawIndexed(
 
 [Portieren des GLSL-Codes](port-the-glsl.md)
 
-## <a name="remarks"></a>Bemerkungen
+## <a name="remarks"></a>Hinweise
 
 Fügen Sie den Code, mit dem unter [**ID3D11Device**](/windows/desktop/api/d3d11/nn-d3d11-id3d11device) Methoden aufgerufen werden, beim Strukturieren von Direct3D jeweils in eine Methode ein, die aufgerufen wird, wenn die Geräteressourcen neu erstellt werden müssen. (In der Direct3D-Projektvorlage befindet sich dieser Code in den **CreateDeviceResource**-Methoden des Rendererobjekts. Der Code zum Aktualisieren des Gerätekontexts ([**ID3D11DeviceContext**](/windows/desktop/api/d3d11/nn-d3d11-id3d11devicecontext)) wird jedoch in der **Render**-Methode platziert, da dort die Shaderphasen tatsächlich erstellt und die Daten gebunden werden.
 

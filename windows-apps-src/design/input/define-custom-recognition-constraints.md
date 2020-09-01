@@ -226,6 +226,6 @@ Mit den Eigenschaften [**SpeechRecognizerUIOptions.AudiblePrompt**](/uwp/api/win
 
 - [Sprachinteraktionen](speech-interactions.md)
 
-### <a name="samples"></a>Beispiele
+### <a name="samples"></a>Proben
 
 - [Beispiel zu Spracherkennung und Sprachsynthese](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

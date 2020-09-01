@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c871149f764024de41309f21dbd036848633a2af
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: d2ae73cc32fd4e3717fe40b8a6ec8c3397b40619
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846730"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161534"
 ---
 # <a name="modernize-your-desktop-apps"></a>Modernisieren Ihrer Desktop-Apps
 
@@ -20,7 +20,7 @@ Windows 10 und die Universelle Windows-Plattform (UWP) verfügen über viele Fe
 In diesem Artikel werden die Features von Windows 10 und der UWP beschrieben, die Sie derzeit in Ihren Desktop-Apps verwenden können. Ein Tutorial, das das Modernisieren einer vorhandenen App veranschaulicht, sodass sie viele der in diesem Artikel beschriebenen Features verwendet, finden Sie in Gestalt des Tutorials [Modernisieren einer WPF-App](modernize-wpf-tutorial.md).
 
 > [!NOTE]
-> Benötigen Sie Hilfe beim Migrieren Ihrer Desktop-Apps zu Windows 10? Mit dem Dienst [Desktop App Assure](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure) erhalten Entwickler, die ihre Apps zu Windows 10 portieren, direkten kostenlosen Support. Dieses Programm ist für alle ISVs und berechtigten Unternehmen verfügbar. Weitere Informationen zur Berechtigung und zum Programm selbst finden Sie unter [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered). [Senden Sie Ihre Anfrage](https://fasttrack.microsoft.com/dl/daa), um zu beginnen.
+> Benötigen Sie Hilfe beim Migrieren Ihrer Desktop-Apps zu Windows 10? Mit dem Dienst [Desktop App Assure](/FastTrack/win-10-desktop-app-assure) erhalten Entwickler, die ihre Apps zu Windows 10 portieren, direkten kostenlosen Support. Dieses Programm ist für alle ISVs und berechtigten Unternehmen verfügbar. Weitere Informationen zur Berechtigung und zum Programm selbst finden Sie unter [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). [Senden Sie Ihre Anfrage](https://fasttrack.microsoft.com/dl/daa), um zu beginnen.
 
 ## <a name="windows-ui-library"></a>Windows-UI-Bibliothek
 
@@ -45,7 +45,7 @@ Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](/windo
 
 .NET Core 3 ist die neueste Hauptversion von .NET Core. Das Highlight dieser Version ist der Support für Windows-Desktop-Apps, einschließlich Windows Forms- und WPF-Apps. Sie können neue und vorhandene Windows-Desktop-Apps unter .NET Core 3 ausführen und alle Vorteile von .NET Core genießen. UWP-Steuerelemente, die über [XAML-Inseln](xaml-islands.md) gehostet werden, können auch in Windows Forms- und WPF-Apps verwendet werden, die für .NET Core 3 bestimmt sind.
 
-Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0).
+Weitere Informationen finden Sie unter [Neues in .NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0).
 
 ## <a name="windows-runtime-apis"></a>Windows-Runtime-APIs
 
@@ -67,11 +67,11 @@ Weitere Informationen finden Sie unter [Modernize your desktop app using the Vis
 
 ## <a name="additional-features-available-to-apps-with-package-identity"></a>Zusätzliche Features für Apps mit Paketidentität
 
-Einige moderne Windows 10-Benutzeroberflächen sind nur in Desktop-Apps verfügbar, die über [Paketidentität](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) verfügen. Zu diesen Features gehören bestimmte Windows-Runtime-APIs, Paketerweiterungen und UWP-Komponenten. Weitere Informationen finden Sie unter [Features that require package identity](modernize-packaged-apps.md) (Features, für die Paketidentität benötigt wird).
+Einige moderne Windows 10-Benutzeroberflächen sind nur in Desktop-Apps verfügbar, die über [Paketidentität](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) verfügen. Zu diesen Features gehören bestimmte Windows-Runtime-APIs, Paketerweiterungen und UWP-Komponenten. Weitere Informationen finden Sie unter [Features that require package identity](modernize-packaged-apps.md) (Features, für die Paketidentität benötigt wird).
 
 Es gibt mehrere Möglichkeiten, einer Desktop-App Identität zuzuweisen:
 
-* Verpacken Sie sie in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root). MSIX ist ein modernes App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps, WPF, Windows Forms und Win32-Apps bereitgestellt wird. Dadurch erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
+* Verpacken Sie sie in einem [MSIX-Paket](/windows/msix/desktop/desktop-to-uwp-root). MSIX ist ein modernes App-Paketformat, bei dem eine universelle Verpackungsoberfläche für alle Windows-Apps, WPF, Windows Forms und Win32-Apps bereitgestellt wird. Dadurch erhalten Sie Zugriff auf eine stabile Installations- und Aktualisierungsoberfläche, ein verwaltetes Sicherheitsmodell mit einem flexiblen Funktionssystem, Support für den Microsoft Store, Unternehmensverwaltung und viele benutzerdefinierte Distributionsmodelle. Weitere Informationen finden Sie unter [Verpacken von Desktopanwendungen](/windows/msix/desktop/desktop-to-uwp-root) in der MSIX-Dokumentation.
 * Wenn es nicht möglich ist, MSIX-Pakete zur Bereitstellung Ihrer Desktop-App zu erstellen, können Sie ab Windows 10, Version 2004 Paketidentität bereitstellen, indem Sie ein *platzsparendes MSIX-Paket* erstellen, das nur ein Paketmanifest enthält. Weitere Informationen finden Sie unter [Identitätszuweisen für nicht verpackte Desktop-Apps](grant-identity-to-nonpackaged-apps.md).
 
 <a id="desktop-uwp-controls"></a>
@@ -82,14 +82,14 @@ Es spielt keine Rolle, ob Sie eine UWP-App erstellen, die ausschließlich auf di
 
 | Control |  Beschreibung |
 |------ |--------------|
-| [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Eine schnelle und einfache Möglichkeit, eine Reihe von Befehlen für Apps verfügbar zu machen, für die ggf. ein höherer Grad an Organisation und Gruppierung als bei **CommandBar** erforderlich ist. |
-| [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Ein Chevron als visueller Indikator wird angezeigt, um anzugeben, dass ein angefügtes Flyout mit weiteren Optionen vorhanden ist.  |
-| [SplitButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | Stellt eine Schaltfläche mit zwei Teilen bereit, die separat aufgerufen werden können. Ein Teil verhält sich wie eine Standardschaltfläche und bewirkt, dass sofort eine Aktion aufgerufen wird. Mit dem anderen Teil wird ein Flyout mit zusätzlichen Optionen aufgerufen, aus denen der Benutzer wählen kann.|
-| [ToggleSplitButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | Stellt eine Schaltfläche mit zwei Teilen bereit, die separat aufgerufen werden können. Ein Teil verhält sich wie eine Umschaltfläche, mit der eine Option aktiviert oder deaktiviert werden kann. Mit dem anderen Teil wird ein Flyout mit zusätzlichen Optionen aufgerufen, aus denen der Benutzer wählen kann. |
-| [CommandBarFlyout](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/command-bar-flyout) |  Ermöglicht das Anzeigen von häufigen Benutzeraufgaben im Kontext eines Elements auf Ihrer Benutzeroberflächen-Canvas. |
-| [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | Sie können ein Kombinationsfeld jetzt so gestalten, dass es bearbeitet werden kann, damit der Benutzer Werte eingeben kann, die unter dem Steuerelement nicht aufgelistet sind.  |
-| [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | Sie können jetzt eine Strukturansicht konfigurieren, um Datenbindung, Elementvorlagen und Drag & Drop zu aktivieren.  |
-| [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   Ermöglicht das flexible Anzeigen einer Sammlung mit Daten in Zeilen und Spalten. Dieses Steuerelement ist im [Windows-Community-Toolkit](https://docs.microsoft.com/windows/uwpcommunitytoolkit/) enthalten.  |
+| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Eine schnelle und einfache Möglichkeit, eine Reihe von Befehlen für Apps verfügbar zu machen, für die ggf. ein höherer Grad an Organisation und Gruppierung als bei **CommandBar** erforderlich ist. |
+| [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Ein Chevron als visueller Indikator wird angezeigt, um anzugeben, dass ein angefügtes Flyout mit weiteren Optionen vorhanden ist.  |
+| [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | Stellt eine Schaltfläche mit zwei Teilen bereit, die separat aufgerufen werden können. Ein Teil verhält sich wie eine Standardschaltfläche und bewirkt, dass sofort eine Aktion aufgerufen wird. Mit dem anderen Teil wird ein Flyout mit zusätzlichen Optionen aufgerufen, aus denen der Benutzer wählen kann.|
+| [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | Stellt eine Schaltfläche mit zwei Teilen bereit, die separat aufgerufen werden können. Ein Teil verhält sich wie eine Umschaltfläche, mit der eine Option aktiviert oder deaktiviert werden kann. Mit dem anderen Teil wird ein Flyout mit zusätzlichen Optionen aufgerufen, aus denen der Benutzer wählen kann. |
+| [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) |  Ermöglicht das Anzeigen von häufigen Benutzeraufgaben im Kontext eines Elements auf Ihrer Benutzeroberflächen-Canvas. |
+| [ComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | Sie können ein Kombinationsfeld jetzt so gestalten, dass es bearbeitet werden kann, damit der Benutzer Werte eingeben kann, die unter dem Steuerelement nicht aufgelistet sind.  |
+| [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) | Sie können jetzt eine Strukturansicht konfigurieren, um Datenbindung, Elementvorlagen und Drag & Drop zu aktivieren.  |
+| [DataGridView](/windows/communitytoolkit/controls/datagrid) |   Ermöglicht das flexible Anzeigen einer Sammlung mit Daten in Zeilen und Spalten. Dieses Steuerelement ist im [Windows-Community-Toolkit](/windows/uwpcommunitytoolkit/) enthalten.  |
 
 ## <a name="other-technologies-for-modern-desktop-apps"></a>Andere Technologien für moderne Desktop-Apps
 
@@ -101,10 +101,10 @@ Microsoft Graph ist eine Sammlung mit APIs, die Sie zum Erstellen von Apps für 
 * Enterprise Mobility + Security-Dienste: Identity Manager, Intune, Advanced Threat Analytics und Advanced Threat Protection.
 * Windows 10-Dienste: Aktivitäten und Geräte
 
-Weitere Informationen finden Sie in der [Microsoft Graph-Dokumentation](https://developer.microsoft.com/graph/docs/concepts/overview).
+Weitere Informationen finden Sie in der [Microsoft Graph-Dokumentation](/graph/overview).
 
 ### <a name="adaptive-cards"></a>Adaptive Karten
 
 Bei „Adaptive Karten“ handelt es sich um ein offenes plattformübergreifendes Framework, mit dem Sie kartenbasierte UI-Inhalte auf gängige und einheitliche Weise für Geräte und Plattformen austauschen können.
 
-Weitere Informationen finden Sie in der [Dokumentation zu „Adaptive Karten“](https://docs.microsoft.com/adaptive-cards/).
+Weitere Informationen finden Sie in der [Dokumentation zu „Adaptive Karten“](/adaptive-cards/).

@@ -1,21 +1,21 @@
 ---
-Description: Erfahren Sie, wie Sie Ihre Windows-Apps im Microsoft Store veröffentlichen.
+description: Erfahren Sie, wie Sie sich für Partner Center registrieren und es verwenden, um Ihre Windows-Apps und -Spiele im Microsoft Store zu veröffentlichen.
 title: Veröffentlichen von Windows-Apps
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Veröffentlichung, veröffentlichen, Verkauf, verkaufen, verteilen, Verteilung, Store, Dashboard
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d30eb37e9633496e510a2e05ec48cc819bd51c9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 19607823ce98aa71a8e3abecb94b82ff06a08352
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614974"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164124"
 ---
 # <a name="publish-windows-apps-and-games"></a>Veröffentlichen von Windows-Apps und -Spielen  
 
-Veröffentlichen Sie mit [Partner Center](https://partner.microsoft.com/dashboard) Ihre Apps und Spiele im Microsoft Store. [Registrieren Sie sich noch heute.](https://developer.microsoft.com/store/register)
+Veröffentlichen Sie mit [Partner Center](https://partner.microsoft.com/dashboard) Ihre Apps und Spiele im Microsoft Store. [Jetzt registrieren](https://developer.microsoft.com/store/register)
 
 <br/>
 

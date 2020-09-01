@@ -17,7 +17,7 @@ ms.locfileid: "89172984"
 
 
 
-In diesem Thema wird das **ms-windows-store:**-URI-Schema beschrieben. Ihre APP kann dieses URI-Schema verwenden, um die Microsoft Store-App auf bestimmten Seiten im Speicher mit der [**launchuriasync**](/uwp/api/windows.system.launcher.launchuriasync) -Methode zu starten.
+In diesem Thema wird das Schema " **MS-Windows-Store:** URI" beschrieben. Ihre APP kann dieses URI-Schema verwenden, um die Microsoft Store-App auf bestimmten Seiten im Speicher mit der [**launchuriasync**](/uwp/api/windows.system.launcher.launchuriasync) -Methode zu starten.
 
 Dieses Beispiel zeigt, wie der Store auf der Seite Games geöffnet wird:
 

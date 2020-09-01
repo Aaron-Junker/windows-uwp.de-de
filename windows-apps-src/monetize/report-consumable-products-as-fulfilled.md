@@ -54,7 +54,7 @@ Weitere Informationen finden Sie unter [Verwalten von Produkt Berechtigungen von
 
 ### <a name="request-body"></a>Anforderungstext
 
-| Parameter     | Typ         | BESCHREIBUNG         | Erforderlich |
+| Parameter     | type         | BESCHREIBUNG         | Erforderlich |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | Der Benutzer, für den dieser Artikel genutzt wird. Ausführlichere Informationen finden Sie in der unten stehenden Tabelle.        | Ja      |
 | itemId        | Zeichenfolge       | Der von einer [Abfrage für Produkte](query-for-products.md)zurückgegebene *ItemID* -Wert. Verwenden Sie diesen Parameter mit *trackingID* .      | Nein       |
@@ -65,7 +65,7 @@ Weitere Informationen finden Sie unter [Verwalten von Produkt Berechtigungen von
 
 Das UserIdentity-Objekt enthält die folgenden Parameter.
 
-| Parameter            | Typ   | BESCHREIBUNG       | Erforderlich |
+| Parameter            | type   | BESCHREIBUNG       | Erforderlich |
 |----------------------|--------|-------------------|----------|
 | identityType         | Zeichenfolge | Gibt den Zeichenfolgenwert **b2b** an.    | Ja      |
 | identityValue        | Zeichenfolge | Der [Microsoft Store ID-Schlüssel](view-and-grant-products-from-a-service.md#step-4) , der die Identität des Benutzers darstellt, für den Sie ein verbrautbares Produkt als erfüllt melden möchten.      | Ja      |

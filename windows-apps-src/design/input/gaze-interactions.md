@@ -29,7 +29,7 @@ Unterstützung für die Nachverfolgung der Ansicht, Aufmerksamkeit und Präsenz 
 
 **Wichtige APIs**: [Windows. Devices. Input. Preview](/uwp/api/windows.devices.input.preview), [gazedevicepreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [gazepointpreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [gazeinputsourcepreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Überblick
 
 Die Anzeige von Blick auf die Leistung ist eine leistungsstarke Möglichkeit zur Interaktion und Verwendung von Windows-Anwendungen, die besonders nützlich als Hilfstechnologie für Benutzer mit neuronalen Krankheiten (z. b. als) und anderen Behinderungen mit beeinträchtigtem Muskel-oder Nervenfunktionen sind.
 
@@ -44,7 +44,7 @@ Aufgrund der potenziell sensiblen personenbezogenen Daten, die von Augen Verfolg
 
 Außerdem müssen Sie, wenn Ihre APP Augen Verfolgungs Daten sammelt, speichert oder überträgt, dies in den Datenschutzbestimmungen Ihrer APP beschreiben und alle anderen Anforderungen für **persönliche Informationen** im [App-Entwickler Vertrag](/legal/windows/agreements/app-developer-agreement) und die Microsoft Store- [Richtlinien](/legal/windows/agreements/store-policies)einhalten.
 
-## <a name="setup"></a>Einrichten
+## <a name="setup"></a>Einrichtung
 
 Wenn Sie die Blick Eingabe-APIs in Ihrer Windows-App verwenden möchten, müssen Sie folgende Schritte ausführen: 
 

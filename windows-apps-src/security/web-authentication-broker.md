@@ -18,7 +18,7 @@ ms.locfileid: "89172824"
 
 
 
-In diesem Artikel wird erläutert, wie Ihre App für die universelle Windows-Plattform (UWP) eine Verbindung mit einem Onlineidentitätsanbieter herstellen kann, der Authentifizierungsprotokolle wie OpenID oder OAuth verwendet, z. B. Twitter, Facebook, Flickr, Instagram usw. Die [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync)-Methode sendet eine Anforderung an den Onlineidentitätsanbieter und erhält als Antwort ein Zugriffstoken, das die für die App zugänglichen Anbieterressourcen beschreibt.
+In diesem Artikel wird erläutert, wie Ihre App für die universelle Windows-Plattform (UWP) eine Verbindung mit einem Onlineidentitätsanbieter herstellen kann, der Authentifizierungsprotokolle wie OpenID oder OAuth verwendet, z. B. Twitter, Facebook, Flickr, Instagram usw. Die [**Authenti-easync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) -Methode sendet eine Anforderung an den Online-Identitäts Anbieter und ruft ein Zugriffs Token ab, das die Anbieter Ressourcen beschreibt, auf die die APP Zugriff hat.
 
 >[!NOTE]
 >Klonen Sie das Repository [webauthenticationbroker auf GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker), um ein umfassendes, funktionierendes Codebeispiel zu erhalten.
