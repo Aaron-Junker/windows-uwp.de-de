@@ -6,12 +6,12 @@ ms.date: 02/12/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2de9d5ae04c526c7c35fda4a7aef713814b4fbc2
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: db6cf7937e0d757d946154a4c87e7e4da3fde2cb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77258337"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175754"
 ---
 # <a name="app-to-app-communication"></a>App-zu-App-Kommunikation
 
@@ -25,9 +25,9 @@ Zusätzlich zum Freigabe-Vertrag können in Apps auch herkömmliche Verfahren zu
 
 UWP-Apps können auch [App-Dienste](../launch-resume/how-to-create-and-consume-an-app-service.md) erstellen, die Funktionen für andere UWP-Apps bereitstellen. Ein App-Dienst wird als Hintergrundaufgabe in der Host-App ausgeführt und kann seine Dienste auch anderen Apps bereitstellen. Beispielsweise kann der Barcode-Scanner eines App-Dienstes auch anderen Apps nützlich sein.
 
-## <a name="in-this-section"></a>Inhalt dieses Abschnitts
+## <a name="in-this-section"></a>In diesem Abschnitt
 
-| Thema | Beschreibung |
+| Thema | BESCHREIBUNG |
 |-------|-------------|
 | [Freigeben von Daten](share-data.md) | In diesem Artikel wird erläutert, wie der Freigabe-Vertrag in einer UWP-App unterstützt wird. Der Freigabe-Vertrag ist eine einfache Möglichkeit, Daten wie z. B. Text, Links, Fotos und Videos schnell für andere Apps freizugeben. Ein Benutzer möchte beispielsweise mit einer App für ein soziales Netzwerk eine Webseite mit seinen Freunden teilen, oder er möchte in einer Notiz-App einen Link für eine spätere Verwendung speichern. |
 | [Empfangen von Daten](receive-data.md) | In diesem Artikel wird erläutert, wie Sie in Ihrer UWP-App Inhalte empfangen, die in einer anderen App mithilfe des Freigabe-Vertrags freigegeben wurden. Mit diesem Freigabe-Vertrag kann Ihre App als Option angezeigt werden, wenn der Benutzer „Freigeben“ aufruft. |
@@ -35,6 +35,6 @@ UWP-Apps können auch [App-Dienste](../launch-resume/how-to-create-and-consume-a
 | [Drag & Drop](../design/input/drag-and-drop.md) | In diesem Artikel erfahren Sie, wie Sie Ihrer UWP-App Drag & Drop hinzufügen. Drag & Drop ist ein klassisches, natürliches Interaktionsmodell für Inhalte wie Bilder und Dateien. Nach der Implementierung stehen Drag & Drop-Vorgänge für sämtliche Richtungen (App zu App, App zu Desktop und Desktop zu App) zur Verfügung. |
 | [Erstellen und Verwenden eines App-Diensts](../launch-resume/how-to-create-and-consume-an-app-service.md) | In diesem Artikel wird erläutert, wie Sie einen App-Dienst in einer UWP-App erstellen, die Dienste für andere UWP-Apps bereitstellt.  |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-- [Entwickeln von UWP-Apps](https://docs.microsoft.com/windows/uwp/develop/)
+- [Entwickeln von UWP-Apps](../develop/index.md)
