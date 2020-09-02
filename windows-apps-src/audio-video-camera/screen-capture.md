@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, Bildschirmaufnahme
 ms.localizationpriority: medium
-ms.openlocfilehash: 829b99932c8035c2e9d493ed7319f640386f88ed
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
+ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163624"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89310071"
 ---
 # <a name="screen-capture"></a>Bildschirmaufnahme
 
@@ -24,6 +24,8 @@ Mit der Bildschirmaufnahme rufen Entwickler eine sichere Systembenutzer Oberflä
 
 > [!NOTE]
 > Die Bildschirmaufnahme-APIs werden nur auf Desktop-und Windows Mixed Reality-, immersiven Headsets unterstützt.
+
+In diesem Artikel wird das Erfassen eines einzelnen Bilds im Anzeige-oder Anwendungsfenster beschrieben. Informationen zum Codieren von Frames, die vom Bildschirm in eine Videodatei aufgezeichnet werden, finden Sie unter [Bildschirmaufnahme in Video](screen-capture-video.md) .
 
 ## <a name="add-the-screen-capture-capability"></a>Hinzufügen der Bildschirmaufnahme Funktion
 
@@ -686,8 +688,9 @@ End Class
 
 ## <a name="record-a-video"></a>Aufzeichnen eines Videos
 
-Wenn Sie ein Video der Anwendung aufzeichnen möchten, können Sie dies mit dem [Windows. Media. apprecording-Namespace](/uwp/api/windows.media.apprecording)vereinfachen. Diese Funktion ist Teil des Desktop Erweiterungs-SDKs, funktioniert daher nur auf dem Desktop und erfordert, dass Sie einen Verweis darauf aus dem Projekt hinzufügen. Weitere Informationen finden Sie unter [Übersicht über Gerätefamilien](/uwp/extension-sdks/device-families-overview) .
+Wenn Sie ein Video zu Ihrer Anwendung aufzeichnen möchten, können Sie die exemplarische Vorgehensweise befolgen, die im Artikel [Bildschirmaufnahme in Video zu Video](screen-capture-video.md). Oder Sie können den [Windows. Media. apprecording-Namespace](/uwp/api/windows.media.apprecording)verwenden. Diese Funktion ist Teil des Desktop Erweiterungs-SDKs, funktioniert daher nur auf dem Desktop und erfordert, dass Sie einen Verweis darauf aus dem Projekt hinzufügen. Weitere Informationen finden Sie unter [Übersicht über Gerätefamilien](/uwp/extension-sdks/device-families-overview) .
 
 ## <a name="see-also"></a>Weitere Informationen
 
-* [Windows. Graphics. Capture-Namespace](/uwp/api/windows.graphics.capture)
+* [Windows. Graphics. Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Bildschirmaufnahme zu Video](screen-capture-video.md)
