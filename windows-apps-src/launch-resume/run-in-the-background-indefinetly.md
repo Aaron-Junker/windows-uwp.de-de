@@ -6,12 +6,12 @@ keywords: Hintergrundaufgabe, erweiterte Ausführung, Ressourcen, Limits, Hinter
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec77b0f4777f12d20ec13bcfbac864993afd441
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33b41c432edde42bc31daa1d5631f60fb38d8397
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175114"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304502"
 ---
 # <a name="run-in-the-background-indefinitely"></a>Unbegrenzte Ausführung im Hintergrund
 
@@ -27,9 +27,14 @@ Wenn Sie eine App entwickeln, die nicht an die Microsoft Store übermittelt werd
 
 Die `extendedExecutionUnconstrained` Funktion wird als eingeschränkte Funktion im Manifest ihrer app hinzugefügt. Weitere Informationen zu eingeschränkten Funktionen finden Sie unter APP-Funktions [Deklarationen](../packaging/app-capability-declarations.md) .
 
-> **Hinweis:** Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
+> [!NOTE]
+> Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
+>
+> Weitere Informationen finden Sie im Abschnitt eingeschränkte Funktionen von App-Funktions [Deklarationen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ...
@@ -71,9 +76,14 @@ Wenn Sie sich für das **widerrufene** Ereignis registrieren, kann Ihre APP alle
 
 Im universelle Windows-Plattform handelt es sich bei Hintergrundaufgaben um Prozesse, die ohne Benutzeroberfläche im Hintergrund ausgeführt werden. Hintergrundaufgaben können in der Regel für maximal 20 bis fünf Sekunden ausgeführt werden, bevor Sie abgebrochen werden. Einige der Tasks mit längerer Ausführungszeit verfügen auch über eine Prüfung, um sicherzustellen, dass sich die Hintergrundaufgabe nicht im Leerlauf befindet oder Arbeitsspeicher verwendet. In Windows Creators Update (Version 1703) wurde die eingeschränkte [extendedbackgroundtasktime](../packaging/app-capability-declarations.md) -Funktion eingeführt, um diese Limits zu entfernen. Die **extendedbackgroundtasktime** -Funktion wird als eingeschränkte Funktion in der Manifest-Datei Ihrer app hinzugefügt:
 
-> **Hinweis:** Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
+> [!NOTE]
+> Fügen Sie die XML-Namespace Deklaration *xmlns: rescap* hinzu, und verwenden Sie das cmdx *-Präfix zum* Deklarieren der Funktion.
+>
+> Weitere Informationen finden Sie im Abschnitt eingeschränkte Funktionen von App-Funktions [Deklarationen](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
+>
 
 _Package.appxmanifest_
+
 ```xml
 <Package
     ... 

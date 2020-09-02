@@ -1,17 +1,17 @@
 ---
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Verwenden des Kompasses
-description: Hier erfahren Sie, wie Sie mithilfe des Kompasses die aktuelle Richtung ermitteln.
+description: Erfahren Sie, wie Sie die "universelle Windows-Plattform (UWP) Compass-API verwenden, um die aktuelle Überschrift in einer Navigations-APP zu bestimmen.
 ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 143d83a0c1257cf662fb686a5e0620db5cc6fb68
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bc0365ced06e85a99fa063c86cad0946526b3f26
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159524"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304662"
 ---
 # <a name="use-the-compass"></a>Verwenden des Kompasses
 

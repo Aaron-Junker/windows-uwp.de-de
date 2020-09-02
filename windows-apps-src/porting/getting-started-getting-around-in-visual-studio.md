@@ -1,17 +1,17 @@
 ---
 description: Aufbau von Visual Studio
-title: Aufbau von Visual Studio
+title: Erfahren Sie, wie Sie mit einem Microsoft Visual Studio Projekt beginnen, indem Sie Steuerelemente hinzufügen, deren Eigenschaften festlegen und auf Ereignisse reagieren.
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a0b3c631d3ee85353eb0516d5c6d1aa511f77e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 412a8409d85afedee2cb754672950805076bedd2
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174924"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304672"
 ---
 # <a name="getting-started-getting-around-in-visual-studio"></a>Erste Schritte: Aufbau von Visual Studio
 

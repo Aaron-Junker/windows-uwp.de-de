@@ -1,17 +1,17 @@
 ---
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: Erstellen ein regelmäßiges Arbeitselement
-description: Hier erfahren Sie, wie Sie ein Arbeitselement erstellen, die regelmäßig wiederholt wird.
+description: Erfahren Sie, wie Sie ein Arbeits Element erstellen, das regelmäßig wiederholt wird, indem Sie die Methode "-Methode" der universelle Windows-Plattform (UWP) threadpooltimer-API verwenden.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, periodisches Arbeits Element, Threading, Timer
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a69ddc9afd051808a047af0e34b4e33d4250dc1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e1b50858b2c7e3ce4cd60f9401cedb75eb950c7d
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155234"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304442"
 ---
 # <a name="create-a-periodic-work-item"></a>Erstellen ein regelmäßiges Arbeitselement
 

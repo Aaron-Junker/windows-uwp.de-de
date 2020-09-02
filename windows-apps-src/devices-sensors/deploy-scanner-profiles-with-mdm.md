@@ -1,17 +1,17 @@
 ---
 title: Bereitstellen von Barcode Scanner-Profilen mit MDM
-description: Barcode Scanner-Profile können mit einem MDM-Server bereitgestellt werden.
+description: Erfahren Sie, wie Sie Barcode Scanner-Profile mit einem MDM-Server (Mobile Device Management, Verwaltung mobiler Geräte) mithilfe des Konfigurations Dienstanbieters von enterpriseextfile System bereitstellen.
 ms.assetid: 99ED3BD8-022C-40C2-9C65-F599186548FE
 ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bac497ec52dd0897af8c6c606bcdc041007c579
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: de3a43386e37c9bb997340c35c8f16977871916d
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173274"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304722"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a>Bereitstellen von Barcode Scanner-Profilen mit MDM
 

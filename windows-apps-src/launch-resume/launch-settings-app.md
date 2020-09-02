@@ -10,12 +10,12 @@ ms.custom: 19H1
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 5f62fa915c7a00d2e359989e6e10718f704854ab
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d90669e03ae15acdc826d9e0b227f12d4ecf3cbc
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173004"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304712"
 ---
 # <a name="launch-the-windows-settings-app"></a>Starten der Windows-Einstellungs-App
 
@@ -151,7 +151,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Maus | ms-settings:easeofaccess-mouse |
 | Sprachausgabe | ms-settings:easeofaccess-narrator |
 | Weitere Optionen | MS-Settings: easeofakcess-otheroptions (**veraltet in Windows 10, Version 1809 und**höher) |
-| Spracheingabe | MS-Settings: easeofakcess-Sprechererkennung |
+| Spracheingabe/-ausgabe | MS-Settings: easeofakcess-Sprechererkennung |
 
 ## <a name="extras"></a>Extras
 
@@ -168,7 +168,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Game DVR | MS-Settings: Gaming-gamedvr |
 | Spielmodus | MS-Settings: Gaming-Gamemode |
 | Abspielen eines Spiel Vollbild | MS-Settings: quietmomentsgame |
-| TruePlay | MS-Settings: Gaming-trueplay (**veraltet in Windows 10, Version 1809 und**höher) |
+| TruePlay | MS-Settings: Gaming-trueplay (**ab Windows 10, Version 1809 (10,0; Build 17763), diese Funktion wird aus Windows entfernt**.) |
 | Xbox-Netzwerke | MS-Settings: Gaming-xboxnetworking |
 
 ## <a name="home-page"></a>Startseite
@@ -245,13 +245,13 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Kamera | ms-settings:privacy-webcam |
 | Kontakte | ms-settings:privacy-contacts |
 | Dokumente | MS-Settings: Privacy-Documents |
-| Email | ms-settings:privacy-email |
+| E-Mail | ms-settings:privacy-email |
 | Eyetracker. | MS-Settings: Privacy-Eyetracker (erfordert die "pipetracker"-Hardware) |
 | Feedback und Diagnose | ms-settings:privacy-feedback |
 | Dateisystem | MS-Settings: Privacy-broadfilesystemaccess |
 | Allgemein | MS-Settings: Privacy oder MS-Settings: Privacy (allgemein) |
 | Eingabe & Eingabe |ms-settings:privacy-speechtyping |
-| Ort | ms-settings:privacy-location |
+| Speicherort | ms-settings:privacy-location |
 | Nachrichten | ms-settings:privacy-messaging |
 | Mikrofon | ms-settings:privacy-microphone |
 | Bewegung | ms-settings:privacy-motion |
@@ -260,7 +260,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Telefonanrufe | MS-Settings: Privacy-phonecalls |
 | Bilder | MS-Settings: Privacy-Bilder |
 | Funkempfang | ms-settings:privacy-radios |
-| Spracheingabe | MS-Settings: Privacy-Speech |
+| Spracheingabe/-ausgabe | MS-Settings: Privacy-Speech |
 | Aufgaben | MS-Settings: Privacy-Tasks |
 | Videos | MS-Settings: Privacy-Videos |
 | Sprach Aktivierung | MS-Settings: Privacy-voiceactivation |
@@ -317,9 +317,9 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Datum und Uhrzeit | ms-settings:dateandtime |
 | Einstellungen für das IME | MS-Settings: regionlanguage-jpnime (verfügbar, wenn der Microsoft-Eingabemethoden-Editor von Microsoft installiert ist) |
 | Region | MS-Settings: regionformatierung |
-| Language | MS-Settings: Tastatur<br/>ms-settings:regionlanguage<br/>MS-Settings: regionlanguage-bpmfme<br/>MS-Settings: regionlanguage-cangjieime<br/>MS-Settings: regionlanguage-chsime-Pinyin-domainlexicon<br/>MS-Settings: regionlanguage-chsime-Pinyin-keyconfig<br/>MS-Settings: regionlanguage-chsime-Pinyin-UDP<br/>MS-Settings: regionlanguage-chsime-Wubi-UDP<br/>MS-Settings: regionlanguage-quickime |
+| Sprache | MS-Settings: Tastatur<br/>ms-settings:regionlanguage<br/>MS-Settings: regionlanguage-bpmfme<br/>MS-Settings: regionlanguage-cangjieime<br/>MS-Settings: regionlanguage-chsime-Pinyin-domainlexicon<br/>MS-Settings: regionlanguage-chsime-Pinyin-keyconfig<br/>MS-Settings: regionlanguage-chsime-Pinyin-UDP<br/>MS-Settings: regionlanguage-chsime-Wubi-UDP<br/>MS-Settings: regionlanguage-quickime |
 | Pinyin IME-Einstellungen | MS-Settings: regionlanguage-chsime-Pinyin (verfügbar, wenn der Microsoft Pinyin-Eingabemethoden-Editor installiert ist) |
-| Spracheingabe | ms-settings:speech |
+| Spracheingabe/-ausgabe | ms-settings:speech |
 | Wubi-IME-Einstellungen  | MS-Settings: regionlanguage-chsime-Wubi (verfügbar, wenn der Microsoft Wubi-Eingabemethoden-Editor installiert ist) |
 
 ## <a name="update--security"></a>Update und Sicherheit
@@ -335,7 +335,7 @@ Verwenden Sie die folgenden URIs, um verschiedenen Seiten der Einstellungs-App z
 | Problembehandlung | MS-Settings: Problembehandlung |
 | Windows-Sicherheit | MS-Settings: windowsdefender |
 | Windows-Insider-Programm | MS-Settings: windowsinsider (nur vorhanden, wenn der Benutzer in WIP registriert ist)<br/>MS-Settings: windowsinsider-optin |
-| Windows-Update | ms-settings:windowsupdate<br>MS-Settings: windowsupdate-Action |
+| Windows Update | ms-settings:windowsupdate<br>MS-Settings: windowsupdate-Action |
 | Erweiterte Windows Update Optionen | MS-Settings: windowsupdate-Optionen |
 | Optionen für Windows Update Neustart | MS-Settings: windowsupdate-restartoptions |
 | Windows Update-Update Verlauf anzeigen | MS-Settings: windowsupdate-History |

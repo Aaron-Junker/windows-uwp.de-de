@@ -1,5 +1,5 @@
 ---
-description: Beschreibt die Features und Überschriften der Barrierefreiheit.
+description: Erfahren Sie, wie Sie die Features und Überschriften der Benutzeroberflächen Automatisierung verwenden, um Abschnitte von Inhalten in Ihrer APP zu definieren, die Barrierefreiheit zu verbessern und Benutzern der Hilfstechnologie (at) die Navigation in der Benutzeroberfläche zu ermöglichen.
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Orientierungspunkte und Überschriften
 label: Landmarks and Headings
@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c05f39c0497a2e2ef369abd04ed437f8387e60f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 65af556180e39ea66bbeb553a50c0746f952a08c
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173994"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304742"
 ---
 # <a name="landmarks-and-headings"></a>Orientierungspunkte und Überschriften
 

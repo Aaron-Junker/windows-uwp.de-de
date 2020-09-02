@@ -1,18 +1,18 @@
 ---
 title: Ebene 1
-description: In diesem Abschnitt wird die Unterstützung für Ebene 1 beschrieben.
+description: Erfahren Sie mehr über die allgemeinen und spezifischen Einschränkungen, die sich auf die Unterstützung von Ebene 1 für Streaming-Ressourcen Features
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
 keywords:
 - Ebene 1
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fcd5debb367b73ad23492cf63d3acdd1797c23a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2ff90c75e3f4aefa28ddad5528d39d2f2d541bb0
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162704"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304642"
 ---
 # <a name="tier-1"></a>Ebene 1
 
