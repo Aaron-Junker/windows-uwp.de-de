@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Hintergrundaufgabe
 ms.localizationpriority: medium
-ms.openlocfilehash: fb585b46399d7b24eaafa531b2aae34f397dbeb2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
+ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155844"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285451"
 ---
 # <a name="guidelines-for-background-tasks"></a>Richtlinien für Hintergrundaufgaben
 
@@ -61,7 +61,7 @@ Hintergrundaufgaben, die im gleichen Prozess wie die Vordergrund-App ausgeführt
 
 > **Wichtig**    Ab Windows 10 müssen sich apps nicht mehr auf dem Sperrbildschirm befinden als Voraussetzung für die Durchführung von Hintergrundaufgaben.
 
-UWP (Universelle Windows-Plattform)-Apps können alle unterstützten Aufgabentypen ausführen, ohne auf dem Sperrbildschirm angeheftet zu sein. Apps müssen jedoch [**getaccessstate**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) aufrufen und überprüfen, dass die Ausführung der APP im Hintergrund nicht verweigert wird. Stellen Sie sicher, dass [**getaccessstatus**] nicht eine der abgelehnten [**backgroundaccessstatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) -Aufstände zurückgibt. Diese Methode gibt z. b. zurück ( https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) Wenn der Benutzer die Hintergrundaufgaben Berechtigungen für Ihre APP in den Geräteeinstellungen explizit verweigert hat.
+UWP (Universelle Windows-Plattform)-Apps können alle unterstützten Aufgabentypen ausführen, ohne auf dem Sperrbildschirm angeheftet zu sein. Apps müssen jedoch [**getaccessstate**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) aufrufen und überprüfen, dass die Ausführung der APP im Hintergrund nicht verweigert wird. Stellen Sie sicher, dass **getaccessstatus** nicht eine der abgelehnten [**backgroundaccessstatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) -Aufstände zurückgibt. Diese Methode gibt z. b. **backgroundaccessstatus. deniedbyuser** zurück, wenn der Benutzer die Berechtigungen für Hintergrundaufgaben für Ihre APP in den Geräteeinstellungen explizit verweigert hat.
 
 Wenn die Ausführung Ihrer APP im Hintergrund verweigert wird, sollte Ihre APP [**requestaccessasync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) aufrufen und sicherstellen, dass die Antwort nicht verweigert wird, bevor Hintergrundaufgaben registriert werden.
 
