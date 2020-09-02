@@ -6,12 +6,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: Windows 10, UWP, Erfassung, Video
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f12137bcb6dbb9984648ce141b4351d592902b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6d40e75dd88b84eb5d7244a2ad3ed3d605c17e0b
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160914"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362874"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>Erfassen von mehreren Quellen mit „MediaFrameSourceGroup“
 
@@ -28,14 +28,14 @@ Die **[mediaframesourcegroup. findallasync](/uwp/api/windows.media.capture.frame
 
 Beachten Sie, dass nicht jedes Gerät eine Quell Gruppe mit zwei Farbkameras enthalten wird. Daher sollten Sie überprüfen, ob eine Quell Gruppe gefunden wurde, bevor Sie versuchen, Video aufzuzeichnen.
 
-[!code-cs[MultiRecordFindSensorGroups](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordFindSensorGroups)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordFindSensorGroups":::
 
 ## <a name="initialize-the-mediacapture-object"></a>Initialisieren des MediaCapture-Objekts
 Die **[mediacapture](/uwp/api/windows.media.capture.mediacapture)** -Klasse ist die primäre Klasse, die für die meisten audiovorgänge, Video-und Foto Erfassungs Vorgänge in UWP-Apps verwendet wird. Initialisieren Sie das-Objekt durch Aufrufen von **[initializeasync](/uwp/api/windows.media.capture.mediacapture.InitializeAsync)**, und übergeben Sie ein **[mediacaptureinitializationsettings](/uwp/api/windows.media.capture.mediacaptureinitializationsettings)** -Objekt, das Initialisierungs Parameter enthält. In diesem Beispiel ist die einzige angegebene Einstellung die **[sourcegroup](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.SourceGroup)** -Eigenschaft, die auf die **mediaframesourcegroup** festgelegt wird, die im vorherigen Codebeispiel abgerufen wurde.
 
 Informationen zu anderen Vorgängen, die Sie mit **mediacapture** und anderen UWP-App-Features für die Erfassung von Medien ausführen können, finden Sie unter [Kamera](camera.md).
 
-[!code-cs[MultiRecordInitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordInitMediaCapture":::
 
 ## <a name="create-a-mediaencodingprofile"></a>Erstellen eines mediaencodingprofile
 Die Media **[encodingprofile](/uwp/api/windows.media.mediaproperties.mediaencodingprofile)** -Klasse teilt der Medien Erfassungs Pipeline mit, wie erfasste Audiodaten und Videos beim Schreiben in eine Datei codiert werden sollen. Für typische Aufzeichnungs-und Transcodierungs Szenarien stellt diese Klasse einen Satz statischer Methoden zum Erstellen allgemeiner Profile bereit, wie z. b. " **[kreateavi](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createavi)** " und " **[CreateMp3](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3)**". In diesem Beispiel wird ein Codierungs Profil manuell mithilfe eines MPEG4-Containers und der H264 Video-Codierung erstellt. Video Codierungs Einstellungen werden mithilfe eines **[videoencodingproperties](/uwp/api/windows.media.mediaproperties.videoencodingproperties)** -Objekts angegeben. Für jede Farbkamera, die in diesem Szenario verwendet wird, wird ein **videostreamdescriptor** -Objekt konfiguriert. Der Deskriptor wird mit dem **videoencodingproperties** -Objekt erstellt, das die Codierung angibt. Die **[Label](/uwp/api/windows.media.core.videostreamdescriptor.Label)** -Eigenschaft von **videostreamdescriptor** muss auf die ID der Medien Frame Quelle festgelegt werden, die im Stream aufgezeichnet wird. Auf diese Weise weiß die Aufzeichnungs Pipeline, welche Datenstrom Deskriptoren und Codierungs Eigenschaften für die einzelnen Kamera verwendet werden sollen. Die ID der Frame Quelle wird von den **[mediaframesourceinfo](/uwp/api/windows.media.capture.frames.mediaframesourceinfo)** -Objekten, die im vorherigen Abschnitt gefunden wurden, bei Auswahl von " **mediaframesourcegroup** " verfügbar gemacht.
@@ -44,7 +44,7 @@ Die Media **[encodingprofile](/uwp/api/windows.media.mediaproperties.mediaencodi
 Ab Windows 10, Version 1709, können Sie mehrere Codierungs Eigenschaften für ein **mediaencodingprofile** festlegen, indem Sie **[setvideotracks](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.setvideotracks)** aufrufen. Sie können die Liste der videostreamdeskriptoren abrufen, indem Sie **[getvideotracks](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.GetVideoTracks)** aufrufen. Beachten Sie Folgendes: Wenn Sie die **[Video](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.Video)** -Eigenschaft festlegen, die einen einzelnen Datenstrom Deskriptor speichert, wird die durch den Aufruf von **setvideotrack** festgelegte deskriptorliste durch eine Liste ersetzt, die den einzelnen Deskriptor enthält, den Sie angegeben haben.
 
 
-[!code-cs[MultiRecordMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordMediaEncodingProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordMediaEncodingProfile":::
 
 ### <a name="encode-timed-metadata-in-media-files"></a>Codieren von zeitgesteuerten Metadaten in Mediendateien
 
@@ -54,20 +54,20 @@ Codierungs Metadaten verwenden ein Muster, das für die Codierung von Audiodaten
 
 Im folgenden Beispiel wird gezeigt, wie ein **TimedMetadataStreamDescriptor** -Objekt initialisiert wird. Zuerst wird ein **TimedMetadataEncodingProperties** -Objekt erstellt, und der **Untertyp** wird auf eine GUID festgelegt, die den Typ der Metadaten identifiziert, die in den Stream eingeschlossen werden. In diesem Beispiel wird die GUID für die GoPro-Metadaten (gpmd) verwendet. Die [**setformatuserdata**](/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) -Methode wird aufgerufen, um Format spezifische Daten festzulegen. Bei MP4-Dateien werden die Format spezifischen Daten im Feld sampledescription (sampledescription Box, STSD) gespeichert. Anschließend wird ein neues **TimedMetadataStreamDescriptor** aus den Codierungs Eigenschaften erstellt. Die Eigenschaften " **Label** " und " **Name** " werden festgelegt, um den zu codierenden Stream zu identifizieren. 
 
-[!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetGetStreamDescriptor":::
 
 Aufrufen von [**mediaencodingprofile. SetTimedMetadataTracks**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) , um den metadatenstreamdeskriptor zum Codierungs Profil hinzuzufügen. Das folgende Beispiel zeigt eine Hilfsmethode, die zwei videostreamdeskriptoren, einen audiostreamdeskriptor und einen zeitgesteuerten metadatenstreamdeskriptor annimmt und ein **mediaencodingprofile** -Objekt zurückgibt, das zum Codieren der Streams verwendet werden kann.
 
-[!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetGetMediaEncodingProfile":::
 
 ## <a name="record-using-the-multi-stream-mediaencodingprofile"></a>Aufzeichnen mit dem Multistream mediaencodingprofile
 Der letzte Schritt in diesem Beispiel besteht darin, die Video Erfassung durch Aufrufen von **[startrecordtostoragefileasync](/uwp/api/windows.media.capture.mediacapture.startrecordtostoragefileasync)** und durch Übergabe der **storagefile-Datei** , in die das erfasste Medium geschrieben wird, und des im vorherigen Codebeispiel erstellten **mediaencodingprofile** zu initiieren. Nachdem Sie einige Sekunden gewartet haben, wird die Aufzeichnung mit einem Aufrufen von **[stoprecordasync](/uwp/api/windows.media.capture.mediacapture.StopRecordAsync)** beendet.
 
-[!code-cs[MultiRecordToFile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordToFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordToFile":::
 
 Wenn der Vorgang abgeschlossen ist, wird eine Videodatei erstellt, die das Video enthält, das von den einzelnen Kameras als separater Stream in der Datei codiert wurde. Informationen zur Wiedergabe von Mediendateien, die mehrere Videospuren enthalten, finden Sie unter [Medienelemente, Wiedergabelisten und Spuren](media-playback-with-mediasource.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
 * [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 72687db5bed8303b672ed8ed009108708cb126be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a0c816470f4a6caf79cb3370a39bc76abb7ef878
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161184"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364033"
 ---
 # <a name="play-media-in-the-background"></a>Wiedergeben von Medien im Hintergrund
 In diesem Artikel wird beschrieben, wie Sie Ihre App so konfigurieren, dass die Medienwiedergabe fortgesetzt wird, wenn die App vom Vordergrund in den Hintergrund wechselt. Dies bedeutet, dass die App weiterhin Audio wiedergeben kann, auch nachdem der Benutzer die App minimiert hat, zur Startseite zurückgekehrt ist oder die App auf andere Weise verlassen hat. 
@@ -68,19 +68,19 @@ Als Nächstes fügen Sie dem **Capabilities**-Element die *backgroundMediaPlayba
 ## <a name="handle-transitioning-between-foreground-and-background"></a>Verarbeiten der Übergänge zwischen Vordergrund und Hintergrund
 Wenn Ihre App vom Vordergrund in den Hintergrund wechselt, wird das [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground)-Ereignis ausgelöst. Wechselt die App dann wieder in den Vordergrund, wird das [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground)-Ereignis ausgelöst. Da es sich dabei um App-Lebenszyklusereignisse handelt, sollten Sie bei der App-Erstellung Handler für diese Ereignisse registrieren. In der Standardprojektvorlage wird der Handler dem **App**-Klassenkonstruktor in „App.xaml.cs“ hinzugefügt. 
 
-[!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetRegisterEvents":::
 
 Erstellen Sie eine Variable, um nachzuverfolgen, ob die App momentan im Hintergrund ausgeführt wird.
 
-[!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetDeclareBackgroundMode":::
 
 Wenn das [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground)-Ereignis ausgelöst wird, legen Sie die Nachverfolgungsvariable fest, um anzugeben, dass die App momentan im Hintergrund ausgeführt wird. Langzeitaufgaben sollten im **EnteredBackground**-Ereignis nicht ausgeführt werden, da der Übergang in den Hintergrund dem Benutzer dadurch langsam erscheinen könnte.
 
-[!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetEnteredBackground":::
 
 Im [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground)-Ereignishandler sollten Sie die Nachverfolgungsvariable festlegen, um anzugeben, dass die App nicht mehr im Hintergrund ausgeführt wird.
 
-[!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetLeavingBackground":::
 
 ### <a name="memory-management-requirements"></a>Anforderungen an die Speicherverwaltung
 Den wichtigsten Teil beim Übergang zwischen Vorder- und Hintergrund stellt die Verwaltung des von der App genutzten Speichers dar. Da die Ausführung im Hintergrund die Speicherressourcen verringert, die der App vom System gewährt werden, sollten Sie die App auch für das [**AppMemoryUsageIncreased**](/uwp/api/windows.system.memorymanager.appmemoryusageincreased)-Ereignis und das [**AppMemoryUsageLimitChanging**](/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging)-Ereignis registrieren. Wenn diese Ereignisse ausgelöst werden, sollten Sie die aktuelle Speicherbelegung und den aktuellen Grenzwert Ihrer App überprüfen und die Speichernutzung ggf. reduzieren. Informationen dazu, wie Sie die Speichernutzung während der Ausführung im Hintergrund reduzieren, finden Sie unter [Geben Sie Speicher frei, wenn Ihre App in den Hintergrund verschoben wird](../launch-resume/reduce-memory-usage.md).
@@ -90,7 +90,7 @@ Alle netzwerkfähigen Medienquellen, die nicht auf der Basis eines Datenstroms o
 
 Wenn Sie Netzwerk Aufrufe durchführen müssen, die im Hintergrund auftreten, wenn Medien nicht heruntergeladen werden, müssen diese in einer entsprechenden Aufgabe wie [**Maintenance-**](/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) oder [**time-Auslösers**](/uwp/api/Windows.ApplicationModel.Background.TimeTrigger)umschließt werden. Weitere Informationen finden [Sie unter unterstützen der APP mit Hintergrundaufgaben](../launch-resume/support-your-app-with-background-tasks.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Medienwiedergabe](media-playback.md)
 * [Wiedergeben von Audio- und Videoinhalten mit „MediaPlayer“](play-audio-and-video-with-mediaplayer.md)
 * [Integration in die Steuerelemente für den Systemmedientransport](integrate-with-systemmediatransportcontrols.md)

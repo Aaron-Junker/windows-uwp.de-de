@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1d4f7e24caf50db41851e237a832301df75cd0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 18ef0ee1efb7a69a8b305c9b95e84938fe6fde32
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163654"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363893"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>Verarbeiten von Audioframes mit „MediaFrameReader“
 
@@ -43,7 +43,7 @@ Nachdem Sie [**MediaCapture.Initializeasync**](/uwp/api/windows.media.capture.me
 
 Wenn die Abfrage mindestens eine Frame Quelle zurückgibt, können Sie die [**currentFormat**](/uwp/api/windows.media.capture.frames.mediaframesource.currentformat) -Eigenschaft überprüfen, um festzustellen, ob die Quelle das gewünschte Audioformat unterstützt (in diesem Beispiel: float-Audiodaten). Überprüfen Sie die [**audioencodingproperties**](/uwp/api/windows.media.capture.frames.mediaframeformat.audioencodingproperties) , um sicherzustellen, dass die gewünschte Audiocodierung von der Quelle unterstützt wird.
 
-[!code-cs[InitAudioFrameSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitAudioFrameSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetInitAudioFrameSource":::
 
 ## <a name="create-and-start-the-mediaframereader"></a>Erstellen und starten von "mediaframereader"
 
@@ -51,7 +51,7 @@ Rufen Sie eine neue Instanz von **mediaframereader** durch Aufrufen von [**media
 
 Registrieren Sie einen Handler für das [**mediaframereader. framekam**](/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) -Ereignis, das vom System ausgelöst wird, wenn ein neuer Rahmen der Audiodaten verfügbar ist. Aufrufen von [**startasync**](/uwp/api/windows.media.capture.frames.mediaframereader.startasync) , um mit dem Erwerb von Audioframes zu beginnen. Wenn der Frame Reader nicht gestartet werden kann, hat der vom-Befehl zurückgegebene Statuswert einen anderen Wert als [**Success**](/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus).
 
-[!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetCreateAudioFrameReader":::
 
 Rufen Sie im **framekam** -Ereignishandler [**tryacquirelatestframe**](/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) für das **mediaframereader** -Objekt auf, das als Absender an den-Handler weitergegeben wurde, um einen Verweis auf den letzten Medien Frame abzurufen. Beachten Sie, dass dieses Objekt NULL sein kann, daher sollten Sie immer überprüfen, bevor Sie das-Objekt verwenden. Der Typ des Medien Frames, der in der von **tryacquirelatestframe** zurückgegebenen **mediaframereferenzierung** umschließt ist, hängt davon ab, welche Art von Frame-Quelle oder welche Quellen Sie für den Frame Reader konfiguriert haben. Da der Frame Reader in diesem Beispiel zum Abrufen von Audioframes eingerichtet wurde, ruft er den zugrunde liegenden Frame mithilfe der [**audiomediaframe**](/uwp/api/windows.media.capture.frames.mediaframereference.audiomediaframe) -Eigenschaft ab. 
 
@@ -59,22 +59,22 @@ Diese **processaudioframe** -Hilfsmethode im folgenden Beispiel zeigt, wie Sie e
 
 Das Format der Daten hängt von der Frame Quelle ab. In diesem Beispiel haben wir bei der Auswahl einer Medien Frame Quelle explizit sichergestellt, dass die ausgewählte Frame Quelle einen einzelnen Kanal von float-Daten verwendet hat. Der Rest des Beispielcodes zeigt, wie die Dauer und die Anzahl der Stichproben für die Audiodaten im Frame bestimmt werden.  
 
-[!code-cs[ProcessAudioFrame](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetProcessAudioFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetProcessAudioFrame":::
 
 > [!NOTE] 
 > Um mit den Audiodaten arbeiten zu können, müssen Sie auf einen systemeigenen Speicherpuffer zugreifen. Zu diesem Zweck müssen Sie die **imemorybufferbyteaccess** -com-Schnittstelle verwenden, indem Sie das unten stehende Codelisting einschließen. Vorgänge für den systemeigenen Puffer müssen in einer Methode ausgeführt werden, die das **unsichere** Schlüsselwort verwendet. Sie müssen auch das Kontrollkästchen aktivieren, um unsicheren Code auf der Registerkarte **Build** des Dialog Felds **Eigenschaften für Projekt >** zuzulassen.
 
-[!code-cs[IMemoryBufferByteAccess](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetIMemoryBufferByteAccess)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/FrameRenderer.cs" id="SnippetIMemoryBufferByteAccess":::
 
 ## <a name="additional-information-on-using-mediaframereader-with-audio-data"></a>Weitere Informationen zur Verwendung von "mediaframereader" mit Audiodaten
 
 Sie können den [**audioabvicecontroller**](/uwp/api/Windows.Media.Devices.AudioDeviceController) abrufen, der der audioframe-Quelle zugeordnet ist, indem Sie auf die [**mediaframesource. Controller**](/uwp/api/windows.media.capture.frames.mediaframesource.controller) -Eigenschaft zugreifen. Dieses Objekt kann verwendet werden, um die streameigenschaften des Aufzeichnungs Geräts oder die Erfassungs Ebene zu steuern. Im folgenden Beispiel wird ein Hashwert für das Audiogerät angezeigt, sodass Frames weiterhin vom Frame Reader abgerufen werden, aber alle-Beispiele haben den Wert 0.
 
-[!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetAudioDeviceControllerMute":::
 
 Sie können ein [**audioframe**](/uwp/api/windows.media.audioframe) -Objekt verwenden, um von einer Medien Frame Quelle erfasste Audiodaten in einem [**audiograph**](/uwp/api/windows.media.audio.audiograph)zu übergeben. Übergeben Sie den Frame an die [**addframe**](/uwp/api/windows.media.audio.audioframeinputnode.addframe) -Methode eines [**audioframeinputnode**](/uwp/api/windows.media.audio.audioframeinputnode). Weitere Informationen zur Verwendung von audiodiagrammen, um Audiosignale zu erfassen, zu verarbeiten und zu mischen, finden Sie unter [audiodiagramme](audio-graphs.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Verarbeiten von Medienframes mit „MediaFrameReader“](process-media-frames-with-mediaframereader.md)
 * [Kamera](camera.md)

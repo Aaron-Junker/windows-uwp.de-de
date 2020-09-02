@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c11c4b630e6b38dd567fece782686743925e214
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4ed74149552e6582bf133550d4db1a45625e8c39
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161324"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364043"
 ---
 # <a name="share-data"></a>Freigeben von Daten
 
@@ -25,11 +25,11 @@ In diesem Artikel wird erläutert, wie der Freigabe-Vertrag in einer UWP-App (Un
 
 Fügen Sie einen [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested)-Ereignishandler hinzu, der aufgerufen werden soll, wenn der Benutzer das Teilen-Feature verwendet. Dies kann durch Tippen auf ein Steuerelement in Ihrer App (etwa eine Schaltfläche oder ein App-Leistenbefehl) oder automatisch in einem bestimmten Szenario geschehen (etwa wenn der Benutzer einen Level mit einer hohen Punktzahl abschließt).
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetPrepareToShare":::
 
 Wenn ein [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested)-Ereignis eintritt, empfängt Ihre App ein [**DataRequest**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)-Objekt. Dieses enthält ein [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage), mit dem Sie den Inhalt bereitstellen können, den der Benutzer freigeben möchte. Sie müssen einen Titel und die freizugebenden Daten angeben. Eine Beschreibung ist optional, wird aber empfohlen.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetCreateRequest":::
 
 ## <a name="choose-data"></a>Wählen von Daten
 
@@ -40,12 +40,12 @@ Sie können verschiedene Arten von Daten freigeben, einschließlich:
 -   HTML
 -   Formatierter Text
 -   Bitmaps
--   Files
+-   Dateien
 -   Vom Entwickler definierte Daten
 
 Das [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage)-Objekt kann mehrere dieser Formate in beliebiger Kombination enthalten. Im folgenden Beispiel wird das Freigeben von Text veranschaulicht.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetContent":::
 
 ## <a name="set-properties"></a>Eigenschaften festlegen
 
@@ -53,13 +53,13 @@ Beim Verpacken von Daten für die Freigabe können Sie eine Vielzahl von Eigensc
 
 Alle Eigenschaften mit Ausnahme des Titels sind optional. Die title-Eigenschaft ist erforderlich und muss festgelegt werden.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetProperties":::
 
 ## <a name="launch-the-share-ui"></a>Starten der Benutzeroberfläche für das Freigeben
 
 Eine Benutzeroberfläche für das Freigeben wird vom System bereitgestellt. Zum Starten rufen Sie die [**ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)-Methode auf.
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetShowUI":::
 
 ## <a name="handle-errors"></a>Behandeln von Fehlern
 
@@ -96,7 +96,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen 
+## <a name="see-also"></a>Siehe auch 
 
 * [App-zu-App-Kommunikation](index.md)
 * [Empfangen von Daten](receive-data.md)

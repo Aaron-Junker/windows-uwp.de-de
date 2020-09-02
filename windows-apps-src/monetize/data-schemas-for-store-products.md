@@ -5,12 +5,12 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: Windows 10, UWP, extendedjsondata, Store-Produkte, Schema
 ms.localizationpriority: medium
-ms.openlocfilehash: 46feac06745cd875aaf99985d45ea1b5b126b540
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e09e02d12afc436f5d22d11fad85fb0bad3507f6
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175094"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363183"
 ---
 # <a name="data-schemas-for-store-products"></a>Datenschemas für Store-Produkte
 
@@ -37,7 +37,7 @@ Im folgenden Schema wird die JSON-formatierte Zeichenfolge beschrieben, die von 
 
 Ein Beispiel für eine JSON-formatierte Zeichenfolge, die von [storeproduct. extendedjsondata](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData)zurückgegeben wurde, finden Sie in [diesem Abschnitt](#product-example).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json" range="1-729":::
 
 <span id="product-example" />
 
@@ -45,7 +45,7 @@ Ein Beispiel für eine JSON-formatierte Zeichenfolge, die von [storeproduct. ext
 
 Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge, die von der [storeproduct. extendedjsondata](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) -Eigenschaft für die-APP zurückgegeben wird.
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json" range="1-268":::
 
 ## <a name="schema-for-storeapplicense-and-storelicense"></a>Schema für storeapplicense und storelicense
 
@@ -53,7 +53,7 @@ Im folgenden Schema wird die JSON-formatierte Zeichenfolge beschrieben, die von 
 
 Ein Beispiel für eine JSON-formatierte Zeichenfolge, die von [storeapplicense. extendedjsondata](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData)zurückgegeben wurde, finden Sie in [diesem Abschnitt](#license-example).
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json" range="1-80":::
 
 <span id="license-example" />
 
@@ -61,15 +61,15 @@ Ein Beispiel für eine JSON-formatierte Zeichenfolge, die von [storeapplicense. 
 
 Das folgende Beispiel zeigt eine JSON-formatierte Zeichenfolge, die von der [storeapplicense. extendedjsondata](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) -Eigenschaft für die-APP zurückgegeben wird.
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json" range="1-28":::
 
 ## <a name="schema-for-storepurchaseproperties"></a>Schema für storepurchaseproperties
 
 Im folgenden Schema wird die JSON-formatierte Zeichenfolge beschrieben, die von [storepurchaseproperties. extendedjsondata](/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData)zurückgegeben wurde.
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json" range="1-12":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)

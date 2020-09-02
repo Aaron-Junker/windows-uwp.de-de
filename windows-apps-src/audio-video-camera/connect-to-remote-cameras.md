@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: 19H1
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5924ad4b969fbf29021b2b48440ce071a516fe09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c0e94e0ddaba027b38ecc76b1c97126204990f1a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175724"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363983"
 ---
 # <a name="connect-to-remote-cameras"></a>Herstellen einer Verbindung mit Remotekameras
 
@@ -43,10 +43,10 @@ Das folgende Beispiel zeigt eine Hilfsklasse, die einen **devicewatcher** verwen
 
 Außerdem wird in diesem Beispiel das [**devicewatcher. aktualisierte**](/uwp/api/windows.devices.enumeration.devicewatcher.updated) -Ereignis zusätzlich zu den **hinzugefügten** und **entfernten** Ereignissen behandelt. Im **aktualisierten** Handler wird das zugehörige Remote Kamera Gerät aus entfernt und dann wieder der Sammlung hinzugefügt.
 
-[!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/RemoteCameraPairingHelper.cs" id="SnippetRemoteCameraPairingHelper":::
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
 * [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 388d1bc2af9d39d08087c7ec5b9dcbc710e74bba
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b847b7162de19b81c83be2f3769042a5acc8a3a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163574"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363793"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Festlegen von Format, Auflösung und Bildfrequenz für „MediaCapture“
 
@@ -36,15 +36,15 @@ Die nachfolgend definierte Hilfsklasse behandelt die Typüberprüfung und -umwan
 
 Sie müssen den [**Windows.Media.MediaProperties**](/uwp/api/Windows.Media.MediaProperties)-Namespace in die Quelldatei für die Hilfsklasse einschließen.
 
-[!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMediaEncodingPropertiesUsing":::
 
-[!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs" id="SnippetStreamPropertiesHelper":::
 
 ## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>Bestimmen, ob der Vorschau- und Aufnahmedatenstrom voneinander unabhängig sind
 
 Auf einigen Geräten wird für den Vorschau- und Aufnahmedatenstrom der gleiche Hardwarekontakt verwendet. Bei diesen Geräten werden durch Festlegen der Codierungseigenschaften eines Datenstroms auch die Codierungseigenschaften des anderen Datenstroms festgelegt. Für Geräte, die unterschiedliche Hardwarekontakte für die Aufnahme und Vorschau verwenden, können die Eigenschaften für jeden Datenstrom unabhängig voneinander festgelegt werden. Mit dem folgenden Code können Sie bestimmen, ob der Vorschau- und Aufnahmedatenstrom unabhängig voneinander sind. Sie sollten die Benutzeroberfläche anpassen, um abhängig vom Ergebnis dieses Tests das eigenständige Festlegen der Datenströme zu aktivieren oder zu deaktivieren.
 
-[!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCheckIfStreamsAreIdentical":::
 
 ## <a name="get-a-list-of-available-stream-properties"></a>Abrufen einer Liste der verfügbaren Datenstromeigenschaften
 
@@ -52,17 +52,17 @@ Rufen Sie eine Liste der verfügbaren Datenstromeigenschaften für ein Aufnahmeg
 
 Wenn für die App bestimmte Anforderungen an die Auflösung oder Bildfrequenz gelten, können Sie programmgesteuert eine Reihe von Mediencodierungseigenschaften auswählen. Eine Kamera-App macht stattdessen die Liste der verfügbaren Eigenschaften auf der Benutzeroberfläche verfügbar und ermöglicht es dem Benutzer, die gewünschten Einstellungen auszuwählen. Für jedes Listenelement von **StreamPropertiesHelper**-Objekten in der Liste wird ein **ComboBoxItem** erstellt. Der Inhalt wird auf den von der Hilfsklasse zurückgegebenen Anzeigenamen festgelegt, und das Tag wird auf die Hilfsklasse selbst festgelegt, sodass es später zum Abrufen der zugeordneten Codierungseigenschaften verwendet werden kann. Anschließend werden dem an die Methode übergebenen **ComboBox**-Element die einzelnen **ComboBoxItem**-Elemente hinzugefügt.
 
-[!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPopulateStreamPropertiesUI":::
 
 ## <a name="set-the-desired-stream-properties"></a>Festlegen der gewünschten Datenstromeigenschaften
 
 Weisen Sie den Videogerätecontroller an, die gewünschten Codierungseigenschaften zu verwenden, indem Sie [**SetMediaStreamPropertiesAsync**](/uwp/api/windows.media.devices.videodevicecontroller.setmediastreampropertiesasync) aufrufen und den **MediaStreamType**-Wert übergeben, der angibt, ob Foto-, Video- oder Vorschaueigenschaften festgelegt werden sollen. In diesem Beispiel werden die angeforderten Codierungseigenschaften festgelegt, wenn der Benutzer ein Element in einem der **ComboBox**-Objekte auswählt, die mithilfe der **PopulateStreamPropertiesUI**-Hilfsmethode aufgefüllt wurden.
 
-[!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPreviewSettingsChanged":::
 
-[!code-cs[PhotoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhotoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPhotoSettingsChanged":::
 
-[!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetVideoSettingsChanged":::
 
 ## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>Abgleichen des Seitenverhältnisses von Vorschau- und Aufnahmedatenstrom
 
@@ -79,7 +79,7 @@ Eine typische Kamera-App stellt zwar UI-Elemente bereit, mit denen der Benutzer 
 
 Um sicherzustellen, dass das Seitenverhältnis des Foto- oder Videoaufnahme-Datenstroms mit dem Seitenverhältnis des Vorschaudatenstroms übereinstimmt, wird in diesem Beispiel [**VideoDeviceController.GetMediaStreamProperties**](/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties) aufgerufen und der **VideoPreview**-Enumerationswert übergeben, um die aktuellen Datenstromeigenschaften des Vorschaudatenstroms anzufordern. Anschließend wird ein kleines Toleranzfenster für das Seitenverhältnis definiert, damit Seitenverhältnisse eingeschlossen werden können, die nicht genau mit dem Seitenverhältnis des Vorschaudatenstroms übereinstimmen, solange die Abweichung nicht groß ist. Dann werden mithilfe einer Linq-Erweiterungsmethode nur die **StreamPropertiesHelper**-Objekte ausgewählt, in denen das Seitenverhältnis im definierten Toleranzbereich des Vorschaudatenstroms liegt.
 
-[!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMatchPreviewAspectRatio":::
 
  
 

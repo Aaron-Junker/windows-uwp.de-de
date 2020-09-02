@@ -6,12 +6,12 @@ ms.date: 12/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Lizenzen, apps, Add-ons, in-App-Käufe, IAPS, Windows. Services. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c83ecc7b5bfc8158d80469eab12710719fa0834
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 29f2e5ceee6d7d9c779c7fb544d507e31456b3fd
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164674"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363163"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>Abrufen von Lizenzinformationen zu Apps und Add-Ons
 
@@ -42,11 +42,11 @@ Verwenden Sie zum Abrufen von Lizenzinformationen für die aktuelle App die [Get
 Um auf die Lizenzen für permanente Add-ons der aktuellen App zuzugreifen, für die der Benutzer über die Berechtigung verfügt, zu verwenden, verwenden Sie die [addonlicenses](/uwp/api/windows.services.store.storeapplicense.addonlicenses) -Eigenschaft des [storeapplicense](/uwp/api/windows.services.store.storeapplicense) -Objekts. Diese Eigenschaft gibt eine Auflistung von [storelicense](/uwp/api/windows.services.store.storelicense) -Objekten zurück, die die Add-on-Lizenzen darstellen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs" id="GetLicenseInfo":::
 
 Eine vollständige Beispielanwendung finden Sie im [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)

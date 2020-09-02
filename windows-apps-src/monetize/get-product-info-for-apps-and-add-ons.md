@@ -6,12 +6,12 @@ ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, in-App-Käufe, IAPS, Add-ons, Windows. Services. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a46d9b0049e0dc9456a36c726a611cbaf00e9616
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 63072c243e4528d4625fe300697b1edbff64383a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164604"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363133"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>Abrufen von Produktinformationen zu Apps und Add-Ons
 
@@ -42,7 +42,7 @@ Der Code in diesen Beispielen geht von Folgendem aus:
 Verwenden Sie zum Abrufen von Store-Produktinformationen zur aktuellen App die [GetStoreProductForCurrentAppAsync](/uwp/api/windows.services.store.storecontext.getstoreproductforcurrentappasync)-Methode. Dies ist eine asynchrone Methode, die ein [StoreProduct](/uwp/api/windows.services.store.storeproduct)-Objekt zurückgibt, das Sie verwenden können, um Informationen wie den Preis abzurufen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs" id="GetAppInfo":::
 
 ## <a name="get-info-for-add-ons-with-known-store-ids-that-are-associated-with-the-current-app"></a>Erhalten Sie Informationen zu Add-ons mit bekannten Store-IDs, die der aktuellen App zugeordnet sind.
 
@@ -54,7 +54,7 @@ Verwenden Sie die [getstoreproductionasync](/uwp/api/windows.services.store.stor
 In diesem Beispiel werden Informationen für permanente Add-ons mit den angegebenen Speicher-IDs abgerufen, die der aktuellen App zugeordnet sind.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs" id="GetProductInfo":::
 
 ## <a name="get-info-for-add-ons-that-are-available-for-purchase-from-the-current-app"></a>Hier erhalten Sie Informationen zu Add-ons, die über die aktuelle App erworben werden können.
 
@@ -66,7 +66,7 @@ Verwenden Sie die [getassociatedstoreproductionasync](/uwp/api/windows.services.
 Im folgenden Beispiel werden Informationen für alle permanenten Add-ons, von Filialen verwaltete, nutzbare Add-ons und von Entwicklern verwaltete, nutzbare Add-ons abgerufen, die über die aktuelle App erworben werden können.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs" id="GetAddOnInfo":::
 
 
 ## <a name="get-info-for-add-ons-for-the-current-app-that-the-user-has-purchased"></a>Hier erhalten Sie Informationen zu Add-ons für die aktuelle APP, die der Benutzer gekauft hat.
@@ -79,9 +79,9 @@ Verwenden Sie die [getusercollectionasync](/uwp/api/windows.services.store.store
 Im folgenden Beispiel werden Informationen für permanente Add-ons mit den angegebenen [Speicher-IDs](in-app-purchases-and-trials.md#store_ids)abgerufen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs" id="GetUserCollection":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Lizenzinformationen zu Apps und Add-Ons](get-license-info-for-apps-and-add-ons.md)

@@ -6,12 +6,12 @@ keywords: UWP, Add-ons, in-App-Käufe, IAPS, Windows. applicationmodel. Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2b5937746f006c0f5efd296e9b4a4f3cb82696
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ac6fc8a6ac39c106e3d5d593a36595097c4bde45
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171574"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364113"
 ---
 # <a name="enable-in-app-product-purchases"></a>Unterstützen des Kaufs von In-App-Produkten
 
@@ -34,7 +34,7 @@ Sie können unabhängig davon, ob Ihre App kostenlos oder kostenpflichtig ist, I
 Rufen Sie bei der Initialisierung Ihrer App das [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation)-Objekt für Ihre App ab, indem Sie [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) oder [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) initialisieren, um Einkäufe von In-App-Produkten zu aktivieren.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="InitializeLicenseTest":::
 
 ## <a name="step-2-add-the-in-app-offers-to-your-app"></a>Schritt 2: Hinzufügen von In-App-Produktangeboten zu Ihrer App
 
@@ -61,7 +61,7 @@ Erstellen Sie für jedes Feature, das über ein In-App-Produkt zur Verfügung st
     Im folgenden Beispiel wird gezeigt, wie Sie Code für das Produkt-Feature **featureName** in einem lizenzspezifischen Bedingungsblock kodieren. Die Zeichenfolge **FeatureName**ist das Token, das dieses Produkt innerhalb der APP eindeutig identifiziert und auch zur Identifizierung im Speicher verwendet wird.
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="CodeFeature":::
 
 3.  **Fügen Sie die Kauf-UI für dieses Feature hinzu.**
 
@@ -70,7 +70,7 @@ Erstellen Sie für jedes Feature, das über ein In-App-Produkt zur Verfügung st
     Hier finden Sie ein Beispiel dafür, wie Sie testen, ob der Kunde bereits ein In-App-Produkt besitzt. Es veranschaulicht außerdem, wie das Kaufdialogfeld angezeigt wird, sodass der Kunde es ggf. erwerben kann. Ersetzen Sie den Kommentar „show the purchase dialog“ durch den benutzerdefinierten Code für das Kaufdialogfeld (z. B. ein Fenster mit der Schaltfläche „Diese App kaufen“) .
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="BuyFeature":::
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>Schritt 3: Ändern Sie den Testcode für die endgültigen Aufrufe.
 
@@ -89,7 +89,7 @@ Wenn Sie Ihren Kunden konsumierbare In-App-Produktoptionen (Elemente, die gekauf
 
 Wenn Sie anhand von Belegen überprüfen möchten, ob ein Kunde einen In-App-Einkauf getätigt hat, lesen Sie den Artikel [Überprüfen von Produktkäufen anhand von Belegen](use-receipts-to-verify-product-purchases.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 
 * [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md)

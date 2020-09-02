@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, in-App-Käufe, IAPS, Add-ons, Katalog, Windows. applicationmodel. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a6bd4d95365e33ee30df87247b3aec72f70fc5b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e3eb35e2fccede9dc6f0412a3762d3d6245847c0
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158424"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364093"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>Verwalten eines großen Katalogs von In-App-Produkten
 
@@ -35,7 +35,7 @@ Im Store wird nur die *offerId* aus der Kaufanforderung des entsprechenden [Purc
 Die Kaufanforderung für ein bestimmtes Produkt in einem umfangreichen Katalog wird ähnlich gehandhabt wie andere In-App-Kaufanforderungen. Wenn Ihre App die neue [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)-Methodenüberladung aufruft, stellt die App sowohl ein *OfferId* - als auch ein [ProductPurchaseDisplayProperties](/uwp/api/windows.applicationmodel.store.productpurchasedisplayproperties)-Objekt mit dem Namen des In-App-Produkts bereit.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="MakePurchaseRequest":::
 
 ## <a name="report-fulfillment-of-the-in-app-offer"></a>Melden der Erfüllung des In-App-Angebots
 
@@ -46,9 +46,9 @@ Wie bereits erwähnt verwendet der Store nur bereitgestellte Angebotsinformation
 Der folgende Code veranschaulicht den Erfüllungsaufruf sowie ein Muster für Meldungen auf der Benutzeroberfläche, in das die angebotsspezifischen Informationen eingefügt werden. Da keine produktspezifischen Informationen vorhanden sind, werden im Beispiel Informationen aus dem [ListingInformation](/uwp/api/Windows.ApplicationModel.Store.ListingInformation)-Element des Produkts verwendet.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="ReportFulfillment":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Unterstützen des Kaufs von In-App-Produkten](enable-in-app-product-purchases.md)
 * [Käufe von konsumierbaren In-App-Produkten aktivieren](enable-consumable-in-app-product-purchases.md)

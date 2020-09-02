@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, in-App-Käufe, IAPS, Bestätigungen, Windows. applicationmodel. Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bbdaa8164e5d3a7e660fc4667b7cfe3c090bc10
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ba818ffbe748a20491557f7404e3f06e10fd628a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171324"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363033"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>Überprüfen von Produktkäufen anhand von Belegen
 
@@ -92,7 +92,7 @@ Um die Authentizität eines Belegs zu überprüfen, muss das Back-End-System (ei
 Im Folgenden sehen Sie ein Beispiel für diesen Überprüfungsvorgang. Dieser Code wird in einer .NET Framework-Konsolenanwendung ausgeführt, die einen Verweis auf die **System.Security**-Assembly enthält.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/ReceiptVerificationSample/cs/Program.cs" id="ReceiptVerificationSample":::
 
 <span id="receipt-descriptions" />
 
@@ -104,7 +104,7 @@ In diesem Abschnitt werden die Elemente und Attribute in einen Beleg beschrieben
 
 Das Stammelement dieser Datei ist das Element **Receipt**, das Informationen zu App- und In-App-Käufen enthält. Dieses Element enthält die folgenden untergeordneten Elemente.
 
-|  Element  |  Erforderlich  |  Quantity (Menge)  |  BESCHREIBUNG   |
+|  Element  |  Erforderlich  |  Menge  |  BESCHREIBUNG   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    Nein        |  0 oder 1  |  Enthält Kaufinformationen für die aktuelle App.            |
 |  [ProductReceipt](#productreceipt)  |     Nein       |  0 oder mehr    |   Enthält Informationen zu einem In-App-Kauf für die aktuelle App.     |

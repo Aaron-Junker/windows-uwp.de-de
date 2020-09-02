@@ -1,57 +1,58 @@
 ---
-description: Verwenden Sie die Java-Codebeispiele in diesem Abschnitt, um mehr über das Einreichen von Spieloptionen und Trailern über die Verwendung der Microsoft Store-Übermittlungs-API zu erfahren.
-title: 'Java-Beispiel: App-Übermittlung mit Spieloptionen und Trailer'
+description: Verwenden Sie die Java-Codebeispiele in diesem Abschnitt, um mehr über das Senden von Spieloptionen und-Nachspann mithilfe der Microsoft Store Übermittlungs-API zu erfahren
+title: Java-Beispiel-App-Übermittlung mit Spieloptionen und-Nachspann
 ms.date: 07/10/2017
 ms.topic: article
-keywords: Windows 10, Uwp, Microsoft Store-Übermittlungs-API, Codebeispiele, Spieloptionen, Trailer, erweiterte Angebote, Java
+keywords: Windows 10, UWP, Microsoft Store Übermittlungs-API, Codebeispiele, Spieloptionen, Nachspann, erweiterte Auflistungen, Java
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c629d509aaf3f92c3010e18077270339c7d332
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 38351c06fd680a16eaf54b0f2f8c84460a275028
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334298"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363073"
 ---
-# <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Java-Beispiel: App-Übermittlung mit Spieloptionen und Trailer
+# <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Java-Beispiel: App-Übermittlung mit Spieloptionen und Trailern
 
-Dieser Artikel enthält Java-Codebeispiele zeigt das Verwenden der [Microsoft Store-Übermittlungs-API](create-and-manage-submissions-using-windows-store-services.md) für diese Aufgaben:
+Dieser Artikel enthält Java-Codebeispiele, die veranschaulichen, wie die Microsoft Store Übermittlungs- [API](create-and-manage-submissions-using-windows-store-services.md) für diese Aufgaben verwendet wird:
 
-* Abrufen eines Azure AD-Zugriffstokens zur Nutzung mit der Microsoft Store-Übermittlungs-API.
+* Rufen Sie ein Azure AD Zugriffs Token für die Verwendung mit der Microsoft Store Übermittlungs-API ab.
 * Erstellen einer App-Übermittlung
-* Konfigurieren von Store-Eintragsdateien für die App-Übermittlung, einschließlich der erweiterten Eintragsoptionen [Spiele](manage-app-submissions.md#gaming-options-object) und [Trailer](manage-app-submissions.md#trailer-object).
-* Hochladen der ZIP-Datei mit den Paketen, Eintragsbildern und Trailerdateien für die App-Übermittlung.
-* Ausführen des Commit für eine App-Übermittlung.
+* Konfigurieren Sie Speicher Listen Daten für die [App-Übermittlung](manage-app-submissions.md#trailer-object) , einschließlich der erweiterten Auflistungs Optionen für [Spiele](manage-app-submissions.md#gaming-options-object) und nach Spann.
+* Laden Sie die ZIP-Datei mit den Paketen, Auflistungs Bildern und Nachspann Dateien für die APP-Übermittlung hoch.
+* Commit der APP-Übermittlung.
 
 <span id="create-app-submission" />
 
 ## <a name="create-an-app-submission"></a>Erstellen einer App-Übermittlung
 
-Die `CreateAndSubmitSubmissionExample`-Klasse implementiert ein `main`-Programm, das andere Beispielmethoden aufruft, um die Microsoft Store-Übermittlungs-API zum Erstellen und Ausführen eines Commits einer App-Übermittlung mit Optionen und einem Trailer verwendet. So passen Sie den Code für eigene Zwecke an:
+Die- `CreateAndSubmitSubmissionExample` Klasse implementiert ein `main` Programm, das andere Beispiel Methoden aufruft, um die Microsoft Store Übermittlungs-API zum Erstellen und Commit einer APP-Übermittlung zu verwenden, die Spieloptionen und einen Nachspann enthält. So passen Sie diesen Code für Ihre eigene Verwendung an:
 
-* Weisen Sie die `tenantId`-Variable zur Mandanten-ID für Ihre App zu und weisen Sie die Variablen `clientId` und `clientSecret` zur Client-ID und dem Schlüssel für die App zu. Weitere Informationen finden Sie unter [eine Azure AD-Anwendung mit Ihrem Partner Center-Konto zuordnen.](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
-* Weisen Sie die `applicationId`-Variable zur [Store-ID](in-app-purchases-and-trials.md#store-ids) der App zu, für die eine Übermittlung erstellen möchten.
+* Weisen Sie die `tenantId` Variable der Mandanten-ID für Ihre APP zu, und weisen Sie die `clientId` Variablen und der Client- `clientSecret` ID und dem Schlüssel für Ihre APP zu. Weitere Informationen finden Sie unter [Zuordnen einer Azure AD Anwendung zu Ihrem Partner Center-Konto](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account) .
+* Weisen `applicationId` Sie die Variable der [Speicher-ID](in-app-purchases-and-trials.md#store-ids) der APP zu, für die Sie eine Übermittlung erstellen möchten.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java" range="1-313":::
 
 <span id="token" />
 
-## <a name="obtain-an-azure-ad-access-token"></a>Abrufen eines Azure AD-Zugriffstokens
+## <a name="obtain-an-azure-ad-access-token"></a>Abrufen eines Azure AD-Zugriffstokens
 
-Die `DevCenterAccessTokenClient`-Klasse definiert eine Hilfsmethode, die Ihre `tenantId`, `clientId` und `clientSecret` Werte zum Erstellen eines Azure AD-Zugriffstokens zur Verwendung mit Microsoft Store-Übermittlungs-API verwendet.
+Die `DevCenterAccessTokenClient` -Klasse definiert eine Hilfsmethode, die die `tenantId` Werte your, und verwendet, `clientId` `clientSecret` um ein Azure AD Zugriffs Token zur Verwendung mit der Microsoft Store Übermittlungs-API zu erstellen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java#L1-L69)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java" range="1-69":::
+
 
 <span id="utilities" />
 
-## <a name="helper-methods-to-invoke-the-submission-api-and-upload-submission-files"></a>Hilfsmethoden zum Aufrufen von der Übermittlungs-API und zum Hochladen von Übermittlungsdateien
+## <a name="helper-methods-to-invoke-the-submission-api-and-upload-submission-files"></a>Hilfsmethoden zum Aufrufen der Übermittlungs-API und Hochladen von Übermittlungs Dateien
 
-Die `DevCenterClient` Klasse definiert Hilfsmethoden, die eine Vielzahl von Methoden in der Microsoft Store-Übermittlungs-API aufrufen und die ZIP-Datei mit den Paketen, Bildern und Trailerdateien für die App-Übermittlung hochladen.
+Die `DevCenterClient` -Klasse definiert Hilfsmethoden, die eine Vielzahl von Methoden in der Microsoft Store Übermittlungs-API aufrufen und die ZIP-Datei mit den Paketen, Listen Bildern und Nachspann Dateien für die APP-Übermittlung hochladen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-java[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java#L1-L224)]
+:::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterClient.java" range="1-224":::
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-* [Erstellen und Verwalten von Übermittlungen, die mithilfe von Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Erstellen und Verwalten von Übermittlungen mithilfe von Microsoft Store Services](create-and-manage-submissions-using-windows-store-services.md)

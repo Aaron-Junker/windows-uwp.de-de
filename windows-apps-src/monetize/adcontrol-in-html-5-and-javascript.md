@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, ADS, Werbung, adcontrol, Ad Control, JavaScript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: d770e8a9a15835d7fab52e7383acca3a3df6c6cd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b99432c40bf2b4633e8902a5bb7b7eedab3119dc
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155674"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364053"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>„AdControl“ in HTML 5 und JavaScript
 
@@ -103,7 +103,7 @@ Das folgende Beispiel zeigt die vollständige index.html für eine einfache APP.
 In den vorherigen Schritten wird gezeigt, wie Sie ein **adcontrol** -Element im HTML-Markup deklarieren. Alternativ können Sie mithilfe von JavaScript Programm **gesteuert ein adcontrol** -Element erstellen. In diesem Beispiel wird davon ausgegangen, dass Sie ein vorhandenes **div** in Ihrem HTML-Code mit der ID **myad**verwenden.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/js/main.js" id="DeclareAdControl":::
 
 In diesem Beispiel wird davon ausgegangen, dass Sie die Ereignishandlermethoden **myAdError**, **myAdRefreshed** und **myAdEngagedChanged** bereits deklariert haben.
 
@@ -139,7 +139,7 @@ Sie können mehrere **adcontrol** -Objekte in einer einzelnen App verwenden (bei
 > [!IMPORTANT]
 > Sie können jede Ad-Einheit nur in einer App verwenden. Wenn Sie eine Ad-Einheit in mehr als einer App verwenden, werden ADS nicht für diese Ad-Einheit bereitgestellt.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Richtlinien für Banneranzeigen](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [Anzeigenbeispiele bei GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

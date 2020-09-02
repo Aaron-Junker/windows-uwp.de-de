@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, Testversion, in-App-Käufe, IAP, Windows. application
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 73ab8c2a525e741695051025f46da9a98c765a84
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a0ecc6a6d219262513508114cee226d72d91e386
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162484"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362743"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Ausschließen oder Einschränken von Features in einer Testversion
 
@@ -66,12 +66,12 @@ Rufen Sie beim Initialisieren der App das [LicenseInformation](/uwp/api/Windows.
 Zu diesem Zeitpunkt erhalten Sie simulierte Lizenzinformationen mithilfe von [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) anstelle von [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp). Bevor Sie die endgültige Version Ihrer App an den **Store** übermitteln, müssen Sie alle **CurrentAppSimulator**-Verweise in Ihrem Code durch **CurrentApp** ersetzen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTest":::
 
 Fügen Sie als Nächstes einen Ereignishandler hinzu, um Benachrichtigungen zu Lizenzänderungen während der Ausführung der App zu erhalten. Die App-Lizenz kann sich zum Beispiel ändern, wenn der Testzeitraum abläuft oder der Kunde die App in einem Store kauft.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTestWithEvent":::
 
 ## <a name="step-3-code-the-features-in-conditional-blocks"></a>Schritt 3: Schreiben Sie den Code für die Features in Bedingungsblöcken.
 
@@ -80,7 +80,7 @@ Beim Auslösen des Lizenzänderungsereignisses muss die App über einen Aufruf d
 Dieses Beispiel zeigt, wie der Lizenzstatus einer App ermittelt wird, um ein Feature Ihrer App zu aktivieren oder zu deaktivieren.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="ReloadLicense":::
 
 ## <a name="step-4-get-an-apps-trial-expiration-date"></a>Schritt 4: Rufen Sie das Ablaufdatums der Testversion einer App ab.
 
@@ -89,7 +89,7 @@ Fügen Sie Code ein, um das Ablaufdatum der Testversion einer App abzurufen.
 Der Code in diesem Beispiel legt eine Funktion fest, mit der das Ablaufdatum der Testversion einer App abgerufen wird. Ist die Lizenz noch gültig, wird das Ablaufdatum zusammen mit den verbleibenden Tagen bis zum Ablauf des Testzeitraums angezeigt.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="DisplayTrialVersionExpirationTime":::
 
 ## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>Schritt 5: Testen Sie die Features mithilfe simulierter Aufrufe an die Lizenz-API.
 
@@ -105,7 +105,7 @@ Nachdem Sie die App mit dem simulierten Lizenzserver getestet haben, ersetzen Si
 > Ihre APP muss das **currentapp** -Objekt verwenden, wenn Sie Ihre APP an einen Store übermitteln, oder die Zertifizierung schlägt fehl.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseRetailWithEvent":::
 
 ## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>Schritt 7: Beschreiben Sie für Ihre Kunden, wie die kostenlose Testversion funktioniert.
 
@@ -113,7 +113,7 @@ Beschreiben Sie, wie sich Ihre App während und nach dem kostenlosen Testzeitrau
 
 Weitere Informationen zum Beschreiben Ihrer App finden Sie unter [Erstellen von App-Beschreibungen](../publish/create-app-store-listings.md).
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Store-Beispiel (zeigt Testversionen und In-App-Käufe)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [Festlegen der Preise und Verfügbarkeit von Apps](../publish/set-app-pricing-and-availability.md)

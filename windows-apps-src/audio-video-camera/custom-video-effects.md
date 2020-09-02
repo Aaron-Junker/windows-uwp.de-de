@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 89bb542e0da8249253e40085163defe3ac24e805
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a80e00a44bbb1c401811f72eb7024aef25013f29
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170604"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363953"
 ---
 # <a name="custom-video-effects"></a>Benutzerdefinierte Videoeffekte
 
@@ -38,12 +38,12 @@ Sie definieren einen benutzerdefinierte Videoefekt in einer Klasse, die die [**I
 6.  Benennen Sie die Datei in *ExampleVideoEffect.cs*um. Visual Studio zeigt eine Eingabeaufforderung an, in der Sie gefragt werden, ob Sie alle Verweise mit dem neuen Namen aktualisieren möchten. Klicken Sie auf **Ja**.
 7.  Öffnen Sie **ExampleVideoEffect.cs** , und aktualisieren Sie die Klassendefinition, um die [**ibasicvideoeffect**](/uwp/api/Windows.Media.Effects.IBasicVideoEffect) -Schnittstelle zu implementieren.
 
-[!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetImplementIBasicVideoEffect":::
 
 
 Sie müssen die folgenden Namespaces in Ihre Effektklassendatei aufnehmen, um auf alle Typen, die in den Beispielen in diesem Artikel verwendet werden, zugreifen zu können.
 
-[!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetEffectUsing":::
 
 
 ## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>Implementieren der IBasicVideoEffect-Schnittstelle mit Softwareverarbeitung
@@ -55,7 +55,7 @@ Der Videoeffekt muss alle Methoden und Eigenschaften der [**IBasicVideoEffect**]
 
 Das System ruft die [**Close**](/uwp/api/windows.media.effects.ibasicvideoeffect.close)-Methode für die Klasse auf, wenn der Effekt beendet werden soll. Sie sollten diese Methode verwenden, um alle Ressourcen, die Sie erstellt haben, zu löschen. Das Argument für die-Methode ist ein [**mediaeffectclosedreason**](/uwp/api/Windows.Media.Effects.MediaEffectClosedReason) -Element, mit dem Sie wissen können, ob der Effekt normal geschlossen wurde, wenn ein Fehler aufgetreten ist oder der Effekt das erforderliche Codierungsformat nicht unterstützt.
 
-[!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetClose":::
 
 
 ### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames-Methode
@@ -63,7 +63,7 @@ Das System ruft die [**Close**](/uwp/api/windows.media.effects.ibasicvideoeffect
 Die [**DiscardQueuedFrames**](/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes)-Methode wird aufgerufen, wenn der Effekt zurückgesetzt werden soll. Ein typisches Szenario hierfür ist, wenn der Effekt zuvor verarbeitete Frames zum Verarbeiten des aktuellen Frames speichert. Wenn diese Methode aufgerufen wird, sollten Sie die zuvor gespeicherten Frames löschen. Diese Methode kann verwendet werden, um alle Zustände im Zusammenhang mit den vorherigen Frames zurückzusetzen, nicht nur Videoframes, die sich angesammelt haben.
 
 
-[!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetDiscardQueuedFrames":::
 
 
 
@@ -75,13 +75,13 @@ Die [**IsReadOnly**](/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly
 > Wenn die [**IsReadOnly**](/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly)-Eigenschaft auf „true“ festgelegt ist, kopiert das System den Eingabeframe in den Ausgabeframe, bevor [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) aufgerufen wird. Das Festlegen der **IsReadOnly**-Eigenschaft auf „true“ schränkt Sie nicht darin ein, in die Ausgabeframes in **ProcessFrame** zu schreiben.
 
 
-[!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetIsReadOnly":::
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties-Methode
 
 Das System ruft [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) für den Effekt auf, um Ihnen die Codierungseigenschaften für den Videostream mitzuteilen, für den der Effekt gilt. Diese Methode bietet auch einen Verweis auf das Direct3D-Gerät, welches für das Hardwarerendering verwendet wird. Die Verwendung dieses Geräts wird im Beispiel zur Hardwareverarbeitung weiter unten in diesem Artikel gezeigt.
 
-[!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSetEncodingProperties":::
 
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties-Eigenschaft
@@ -89,7 +89,7 @@ Das System ruft [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasi
 Das System überprüft die [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties)-Eigenschaft, um festzustellen, welche Codierungseigenschaften von dem Effekt unterstützt werden. Beachten Sie Folgendes: Wenn der Nutzer Ihres Effekts das Video mit den von Ihnen angegebenen Eigenschaften nicht codieren kann, wird [**Close**](/uwp/api/windows.media.effects.ibasicvideoeffect.close) für den Effekt aufgerufen und er wird aus der Videopipeline entfernt.
 
 
-[!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedEncodingProperties":::
 
 
 > [!NOTE] 
@@ -101,7 +101,7 @@ Das System überprüft die [**SupportedEncodingProperties**](/uwp/api/windows.me
 
 Das System überprüft die [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) Eigenschaft, um festzustellen, ob der Effekt auf Videoframes im Softwarespeicher oder im Hardwarearbeitsspeicher (GPU) zugreift. Wenn Sie [**MediaMemoryTypes.Cpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes) zurückgeben, werden an Ihren Effekt Ein- und Ausgabeframes übergeben, die Bilddaten in [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)-Objekten enthalten. Wenn Sie **MediaMemoryTypes.Gpu** zurückgeben, werden an Ihren Effekt Ein- und Ausgabeframes übergeben, die Bilddaten in [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface)-Objekten enthalten.
 
-[!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedMemoryTypes":::
 
 
 > [!NOTE]
@@ -113,19 +113,19 @@ Das System überprüft die [**SupportedMemoryTypes**](/uwp/api/windows.media.eff
 
 Die [**TimeIndependent**](/uwp/api/windows.media.effects.ibasicvideoeffect.timeindependent)-Eigenschaft teilt dem System mit, dass der Effekt kein einheitliches Timing erfordert. Bei Festlegung auf „true“ kann das System Optimierungen verwenden, die die Leistung des Effekts verbessern.
 
-[!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetTimeIndependent":::
 
 ### <a name="setproperties-method"></a>SetProperties-Methode
 
 Die [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties)-Methode ermöglicht es der App, die Ihren Effekt verwendet, die Effektparameter anzupassen. Die Eigenschaften werden als [**IPropertySet**](/uwp/api/Windows.Foundation.Collections.IPropertySet)-Zuordnung von Eigenschaftsnamen und -werten übergeben.
 
 
-[!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSetProperties":::
 
 
 In diesem einfachen Beispiel werden die Pixel in jedem Videoframe entsprechend einem angegebenen Wert abgeblendet. Eine Eigenschaft wird deklariert, und „TryGetValue“ wird verwendet, um den von der aufrufenden App festgelegten Wert abzurufen. Wenn kein Wert festgelegt wurde, wird der Standardwert 0,5 verwendet.
 
-[!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetFadeValue":::
 
 
 ### <a name="processframe-method"></a>ProcessFrame-Methode
@@ -136,12 +136,12 @@ Dieses Beispiel zeigt eine einfache Implementierung der **ProcessFrame**-Methode
 
 Für den Zugriff auf den Datenpuffer einer **SoftwareBitmap** ist COM-Interoperabilität erforderlich. Daher sollten Sie den Namespace **System.Runtime.InteropServices** in Ihre Effektklassendatei aufnehmen.
 
-[!code-cs[COMUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetCOMUsing":::
 
 
 Fügen Sie den folgenden Code in den Namespace für den Effekt ein, um die Schnittstelle für den Zugriff auf den Bildpuffer zu importieren.
 
-[!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetCOMImport":::
 
 
 > [!NOTE]
@@ -156,7 +156,7 @@ Sie können nun die **ProcessFrame**-Methodenimplementierung hinzufügen. Zunäc
 
 Nun, da die Datenpuffer abgerufen wurden, können Sie aus dem Eingabepuffer lesen und in den Ausgabepuffer schreiben. Das Layout des Puffers wird durch Aufrufen von [**GetPlaneDescription**](/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) abgerufen, das Informationen über die Breite und den anfänglichen Versatz des Puffers bereitstellt. Die Bits pro Pixel werden durch die Codierungseigenschaften bestimmt, die zuvor mit der [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties)-Methode festgelegt wurden. Anhand der Informationen zum Pufferformat wird der Index im Puffer für jedes Pixel gefunden. Der Pixelwert aus dem Quellpuffer wird in den Zielpuffer kopiert, wobei die Farbwerte mit der FadeValue-Eigenschaft multipliziert werden, die für diesen Effekt definiert ist, um sie um den angegebenen Wert abzublenden.
 
-[!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetProcessFrameSoftwareBitmap":::
 
 
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>Implementieren der IBasicVideoEffect-Schnittstelle mit Hardwareverarbeitung
@@ -177,36 +177,36 @@ Führen Sie die folgenden Schritte aus, um das Win2D-NuGet-Paket zu dem Projekt 
 
 Zusätzlich zu den Namespaces, die bei der grundlegenden Einrichtung des Projekts verwendet wurden, müssen Sie die folgenden von Win2D bereitgestellten Namespaces hinzufügen.
 
-[!code-cs[UsingWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetUsingWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetUsingWin2D":::
 
 
 Da dieser Effekt GPU-Speicher für die Aktionen mit den Bilddaten verwendet, sollten Sie [**MediaMemoryTypes.Gpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes) aus der [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes)-Eigenschaft zurückgeben.
 
-[!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSupportedMemoryTypesWin2D":::
 
 
 Legen Sie die Codierungseigenschaften, die vom Effekt unterstützt werden sollen, mit der [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties)-Eigenschaft fest. Wenn Sie mit Win2D arbeiten, müssen Sie die ARGB32-Codierung verwenden.
 
-[!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSupportedEncodingPropertiesWin2D":::
 
 
 Verwenden Sie die [**SetEncodingProperties**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert)-Methode, um ein neues Win2D-**CanvasDevice**-Objekt vom [**IDirect3DDevice**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) zu erstellen, das an die Methode übergeben wird.
 
-[!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSetEncodingPropertiesWin2D":::
 
 
 Die Implementierung von [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) ist mit dem vorherigen Beispiel zur Softwareverarbeitung identisch. Bei diesem Beispiel wird eine **BlurAmount**-Eigenschaft verwendet, um einen Win2D-Weichzeichnereffekt zu konfigurieren.
 
-[!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSetPropertiesWin2D":::
 
-[!code-cs[BlurAmountWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetBlurAmountWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetBlurAmountWin2D":::
 
 
 Der letzte Schritt besteht darin, die [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe)-Methode zu implementieren, die die Bilddaten tatsächlich verarbeitet.
 
 Unter Verwendung von Win2D-APIs wird eine **CanvasBitmap** von der [**Direct3DSurface**](/uwp/api/windows.media.videoframe.direct3dsurface)-Eigenschaft des Eingabeframes erstellt. Ein **CanvasRenderTarget** wird von der **Direct3DSurface** des Ausgabeframes und eine **CanvasDrawingSession** von diesem Renderziel erstellt. Es wird ein neuer Win2D-**GaussianBlurEffect** initialisiert. Mithilfe der **BlurAmount**-Eigenschaft wird der Effekt über [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) bereitgestellt. Schließlich wird die **CanvasDrawingSession.DrawImage**-Methode aufgerufen, um die Eingabebitmap mithilfe des Weichzeichnereffekts in das Renderziel zu ziehen.
 
-[!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetProcessFrameWin2D":::
 
 
 ## <a name="adding-your-custom-effect-to-your-app"></a>Hinzufügen des benutzerdefinierten Effekts zu Ihrer App
@@ -226,7 +226,7 @@ Um Ihren benutzerdefinierten Videoeffekt einem Kamerastream hinzuzufügen, erste
 
 Nachdem der Effekt hinzugefügt wurde, wird [**StartPreviewAsync**](/uwp/api/windows.media.capture.mediacapture.startpreviewasync) aufgerufen, um den Vorschaustream zu starten.
 
-[!code-cs[AddVideoEffectAsync](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddVideoEffectAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs" id="SnippetAddVideoEffectAsync":::
 
 
 
@@ -235,10 +235,10 @@ Nachdem der Effekt hinzugefügt wurde, wird [**StartPreviewAsync**](/uwp/api/win
 Allgemeine Informationen zum Erstellen von Medienkompositionen aus Videoclips finden Sie unter [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md). Der folgende Codeausschnitt zeigt das Erstellen einer einfachen Medienkomposition, die einen benutzerdefinierten Videoeffekt verwendet. Durch Aufruf von [**CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync) wird ein [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip)-Objekt erstellt. Dabei wird eine Videodatei übergeben, die von dem Benutzer mit einer [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) ausgewählt wurde, und der Clip wird zu einer neuen [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) hinzugefügt. Als Nächstes wird ein neues [**VideoEffectDefinition**](/uwp/api/Windows.Media.Effects.VideoEffectDefinition)-Objekt erstellt, wobei der Namespace und der Klassenname für Ihren Effekt an den Konstruktor übergeben wird. Schließlich wird die Effektdefinition zur [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions)-Sammlung des **MediaClip**-Objekts hinzugefügt.
 
 
-[!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs" id="SnippetAddEffectToComposition":::
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Einfacher Zugriff auf die Kameravorschau](simple-camera-preview-access.md)
 * [Medienkompositionen und -bearbeitung](media-compositions-and-editing.md)
 * [Win2D-Dokumentation](https://microsoft.github.io/Win2D/html/Introduction.htm)

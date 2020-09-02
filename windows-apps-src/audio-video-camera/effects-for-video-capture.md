@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b52cd60e14370970ddb3c85a2a5e4c91107bed45
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ffb379110a42579cd5bb2427f9c851637ff191be
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160874"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362673"
 ---
 # <a name="effects-for-video-capture"></a>Effekte für die Videoaufnahme
 
@@ -29,17 +29,17 @@ Um Videos mithilfe der Gerätekamera aufzunehmen oder in der Vorschau anzuzeigen
 
 Im folgenden Beispiel wird sowohl dem Vorschaudatenstrom als auch dem Aufnahmedatenstrom der Kamera ein Effekt hinzugefügt. Dieses Beispiel veranschaulicht, wie Sie überprüfen, ob der Aufnahme- und Vorschaudatenstrom identisch sind.
 
-[!code-cs[BasicAddEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetBasicAddEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetBasicAddEffect":::
 
 Beachten Sie, dass **AddVideoEffectAsync** ein Objekt zurückgibt, das die [**IMediaExtension**](/uwp/api/Windows.Media.IMediaExtension)-Schnittstelle implementiert, die den hinzugefügten Videoeffekt darstellt. Bei einigen Effekten können die Effekteinstellungen geändert werden, indem Sie [**PropertySet**](/uwp/api/Windows.Foundation.Collections.PropertySet) an die [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties)-Methode übergeben.
 
 Ab Windows 10, Version 1607, können Sie auch das von **AddVideoEffectAsync** zurückgegebene Objekt verwenden, um den Effekt aus der Videopipeline zu entfernen, indem Sie es an [**RemoveEffectAsync**](/uwp/api/windows.media.capture.mediacapture.removeeffectasync) übergeben. **RemoveEffectAsync** ermittelt automatisch, ob der Effektobjektparameter dem Vorschau- oder Aufnahmedatenstrom hinzugefügt wurde. Auf diese Weise müssen Sie beim Aufrufen keinen Datenstromtyp angeben.
 
-[!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetRemoveOneEffect":::
 
 Sie können auch alle Effekte aus dem Vorschau- oder Aufnahmedatenstrom entfernen, indem Sie [**ClearEffectsAsync**](/uwp/api/windows.media.capture.mediacapture.cleareffectsasync) aufrufen und den Datenstrom angeben, für den alle Effekte entfernt werden sollen.
 
-[!code-cs[ClearAllEffects](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetClearAllEffects)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetClearAllEffects":::
 
 ## <a name="video-stabilization-effect"></a>Videostabilisierungseffekt
 
@@ -51,15 +51,15 @@ Auf Geräten, die dies unterstützen, stabilisiert OIS (Optical Image Stabilizat
 
 Neben den Namespaces, die für die grundlegende Medienaufnahme erforderlich sind, erfordert die Verwendung des Videostabilisierungseffekts den folgenden Namespace.
 
-[!code-cs[VideoStabilizationEffectUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEffectUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetVideoStabilizationEffectUsing":::
 
 Deklarieren Sie eine Membervariable zum Speichern des [**VideoStabilizationEffect**](/uwp/api/Windows.Media.Core.VideoStabilizationEffect)-Objekts. Im Rahmen der Effektimplementierung ändern Sie die Codierungseigenschaften, die Sie für das Codieren des aufgezeichneten Videos verwenden. Deklarieren Sie zwei Variablen zum Speichern einer Sicherungskopie der ursprünglichen Eingabe- und Ausgabecodierungseigenschaften, sodass Sie diese später wiederherstellen können, wenn der Effekt deaktiviert ist. Deklarieren Sie abschließend eine Membervariable vom Typ [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile), da auf dieses Objekt von mehreren Positionen innerhalb des Codes aus zugegriffen wird.
 
-[!code-cs[DeclareVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetDeclareVideoStabilizationEffect":::
 
 Für dieses Szenario sollten Sie einer Membervariablen das Profilobjekt für die Mediencodierung zuweisen, damit Sie später darauf zugreifen können.
 
-[!code-cs[EncodingProfileMember](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetEncodingProfileMember)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetEncodingProfileMember":::
 
 ### <a name="initialize-the-video-stabilization-effect"></a>Initialisieren des Videostabilisierungseffekts
 
@@ -67,7 +67,7 @@ Erstellen Sie nach dem Initialisieren des **MediaCapture**-Objekts eine neue Ins
 
 Registrieren Sie einen Ereignishandler für das Ereignis [**EnabledChanged**](/uwp/api/windows.media.core.videostabilizationeffect.enabledchanged), und rufen Sie die Hilfsmethode **SetUpVideoStabilizationRecommendationAsync** auf. Beide werden später in diesem Artikel erläutert. Legen Sie abschließend die [**Enabled**](/uwp/api/windows.media.core.videostabilizationeffect.enabled)-Eigenschaft des Effekts auf „true“ fest, um den Effekt zu aktivieren.
 
-[!code-cs[CreateVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCreateVideoStabilizationEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetCreateVideoStabilizationEffect":::
 
 ### <a name="use-recommended-encoding-properties"></a>Verwenden empfohlener Codierungseigenschaften
 
@@ -83,7 +83,7 @@ Wenn der Videostabilisierungseffekt das Ausgabevideo zuschneiden muss, entsprech
 
 Legen Sie die [**Video**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.video)-Eigenschaft des **MediaEncodingProfile**-Objekts fest. Verwenden Sie vor dem Festlegen der neuen Eigenschaften die Membervariable, um die ursprünglichen Codierungseigenschaften zu speichern, damit Sie die Einstellungen wieder zurückändern können, wenn Sie den Effekt deaktivieren.
 
-[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetSetUpVideoStabilizationRecommendationAsync":::
 
 ### <a name="handle-the-video-stabilization-effect-being-disabled"></a>Behandeln des Deaktivierens des Videostabilisierungseffekts
 
@@ -91,15 +91,15 @@ Das System kann den Videostabilisierungseffekt automatisch deaktivieren, wenn Si
 
 In der Regel verwenden Sie dieses Ereignis zum Anpassen der Benutzeroberfläche Ihrer App, um den aktuellen Status der Videostabilisierung anzugeben.
 
-[!code-cs[VideoStabilizationEnabledChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetVideoStabilizationEnabledChanged":::
 
 ### <a name="clean-up-the-video-stabilization-effect"></a>Bereinigen des Videostabilisierungseffekts
 
 Rufen Sie zum Bereinigen des Videostabilisierungseffekts [**RemoveEffectAsync**](/uwp/api/windows.media.capture.mediacapture.removeeffectasync) auf, um den Effekt aus der Videopipeline zu entfernen. Wenn die Membervariablen mit den ursprünglichen Codierungseigenschaften nicht NULL sind, verwenden Sie diese zum Wiederherstellen der Codierungseigenschaften. Entfernen Sie schließlich den Ereignishandler **EnabledChanged**, und legen Sie den Effekt auf Null fest.
 
-[!code-cs[CleanUpVisualStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs" id="SnippetCleanUpVisualStabilizationEffect":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
 * [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)

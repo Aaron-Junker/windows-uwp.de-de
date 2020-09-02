@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, c#, Visual Basic, asynchron
 ms.localizationpriority: medium
-ms.openlocfilehash: 67037395e0505c0fce22da5ed8f5fe62a39340e2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 07813404abb4765b3e1d15bd76082a90da0f40de
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155274"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362523"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>Aufrufen asynchroner APIs in C# oder Visual Basic
 
@@ -33,8 +33,8 @@ Angenommen, Sie haben eine App, die Titel von Blogbeiträgen von einem bestimmte
 In diesem Beispiel wird durch Aufrufen der asynchronen Methode [**SyndicationClient.RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) die Liste mit den Blogbeiträgen abgerufen und auf das Ergebnis gewartet.
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
-[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/cs/MainPage.xaml.cs" id="SnippetDownloadRSS":::
+:::code language="vb" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/vb/MainPage.xaml.vb" id="SnippetDownloadRSS":::
 
 Zu diesem Beispiel gibt es eine Reihe wichtiger Dinge anzumerken. Zunächst verwendet die Zeile `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` den **await**-Operator mit dem Aufruf der asynchronen Methode [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync). Der **await**-Operator teilt dem Compiler gewissermaßen mit, dass Sie eine asynchrone Methode aufrufen. Der Compiler übernimmt daraufhin einen Teil der Arbeit für Sie. Als Nächstes enthält die Deklaration des Ereignishandlers das Schlüsselwort **async**. Sie müssen dieses Schlüsselwort in der Methodendeklaration aller Methoden angeben, in denen Sie den **await**-Operator verwenden.
 

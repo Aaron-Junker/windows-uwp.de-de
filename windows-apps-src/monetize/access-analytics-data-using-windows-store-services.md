@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Store Services, Microsoft Store Analytics-API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8becf9149d0afa888d0024619df06f2103c7bf8b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bf83105dc3b5a49746e0fb6e1d01db4accdb5c41
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158644"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363623"
 ---
 # <a name="access-analytics-data-using-store-services"></a>Zugreifen auf Analytics-Daten mithilfe von Store Services
 
@@ -123,7 +123,7 @@ Entwickler Konten, die zum [Windows-Hardware-dashboardprogramm](/windows-hardwar
 Im folgenden Codebeispiel wird veranschaulicht, wie Sie ein Azure AD Zugriffs Token abrufen und die Microsoft Store Analytics-API aus einer c#-Konsolen-App aufrufen. Wenn Sie dieses Codebeispiel verwenden möchten, weisen Sie die Variablen *TenantId*, *ClientId*, *ClientSecret* und *AppID* den entsprechenden Werten für Ihr Szenario zu. Für dieses Beispiel ist es erforderlich, dass das [JSON.net-Paket](https://www.newtonsoft.com/json) von newtonsoft die von der Microsoft Store Analytics-API zurückgegebenen JSON-Daten deserialisiert.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Analytics/cs/Program.cs" id="AnalyticsApiExample":::
 
 ## <a name="error-responses"></a>Fehlercodes
 

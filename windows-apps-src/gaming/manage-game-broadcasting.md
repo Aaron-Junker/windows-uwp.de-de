@@ -6,12 +6,12 @@ ms.date: 09/27/2017
 ms.topic: article
 keywords: Windows 10, Game, Broadcasting
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cfa40c54511a411025d2d1c3be056dd0209865e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 87c35bb4612ad970f01853b2ace46b44b1882781
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172004"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362493"
 ---
 # <a name="manage-game-broadcasting"></a>Verwalten der Spielübertragung
 In diesem Artikel erfahren Sie, wie Sie Game Broadcasting für eine UWP-App verwalten. Benutzer müssen die Übertragung mithilfe der in Windows integrierten Systembenutzer Oberfläche initiieren, aber ab Windows 10, Version 1709, können Apps die Benutzeroberfläche für das System Broadcast starten und Benachrichtigungen empfangen, wenn die Übertragung gestartet und beendet wird.
@@ -31,25 +31,25 @@ Rufen Sie als nächstes eine Instanz der **[AppBroadcastingUI](/uwp/api/windows.
 
 Die **[canstartbroadcast](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** -Eigenschaft der **appbroadcastingstatus** -Klasse gibt Aufschluss darüber, ob die APP zurzeit mit der Übertragung beginnen kann. Wenn dies nicht der Wert ist, können Sie die Eigenschaft **[Details](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** überprüfen, um zu ermitteln, warum Broadcasting nicht verfügbar ist. Abhängig von der Ursache können Sie den Status des Benutzers anzeigen oder Anweisungen zum Aktivieren der Übertragung anzeigen.
 
-[!code-cpp[CanStartBroadcast](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetCanStartBroadcast)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetCanStartBroadcast":::
 
 Fordern Sie an, dass die Benutzeroberfläche der APP-Übertragung vom System durch Aufrufen von **[ShowBroadcastUI](/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)** angezeigt wird.
 
 > [!NOTE] 
 > Die **ShowBroadcastUI** -Methode stellt eine Anforderung dar, die je nach aktuellem Status des Systems möglicherweise nicht erfolgreich ist. Ihre APP sollte nicht davon ausgehen, dass die Übertragung begonnen hat, nachdem diese Methode aufgerufen wurde. Verwenden Sie das **[iscurrentappbroadcastingchanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** -Ereignis, um benachrichtigt zu werden, wenn die Übertragung startet oder beendet wird.
 
-[!code-cpp[LaunchBroadcastUI](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetLaunchBroadcastUI)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetLaunchBroadcastUI":::
 
 ## <a name="receive-notifications-when-broadcasting-starts-and-stops"></a>Empfangen von Benachrichtigungen beim Starten und Beenden von Sendungen
 Registrieren Sie sich für den Empfang von Benachrichtigungen, wenn der Benutzer die Benutzeroberfläche des Systems zum Starten oder Beenden der Übertragung Ihrer APP verwendet, indem eine Instanz der **[appbroadcastingmonitor](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)** -Klasse initialisiert und ein Handler für das  **[iscurrentappbroadcastingchanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** -Ereignis registriert wird. Wie bereits im vorherigen Abschnitt erläutert, sollten Sie sicherstellen, **[dass die Broadcast](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** -APIs auf dem Gerät vorhanden sind, bevor Sie versuchen, Sie zu verwenden. 
 
-[!code-cpp[AppBroadcastingRegisterChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingRegisterChangedHandler)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetAppBroadcastingRegisterChangedHandler":::
 
 Im Handler für das **iscurrentappbroadcastingchanged** -Ereignis möchten Sie möglicherweise die Benutzeroberfläche Ihrer APP aktualisieren, um den aktuellen Übertragungs Status widerzuspiegeln.
 
-[!code-cpp[AppBroadcastingChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingChangedHandler)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetAppBroadcastingChangedHandler":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Spiele](index.md)
 

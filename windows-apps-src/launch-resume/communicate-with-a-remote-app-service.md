@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, verbundene Geräte, Remote Systeme, Rom, Project Rom, Hintergrundaufgabe, App Service
 ms.localizationpriority: medium
-ms.openlocfilehash: ccd0de91279b4466b662a5b5e85bbab55d0f7712
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 779205a47b85cf9f9a0aec9db910b97995dc2cd8
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156044"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363913"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>Kommunizieren mit einem App-Remotedienst
 
@@ -60,7 +60,7 @@ Das Gerät, von dem der App-Remotedienst aufgerufen werden soll, muss über eine
 
 Die folgenden **using**-Anweisungen werden für den Code in diesem Abschnitt benötigt, damit er wie gezeigt ausgeführt wird:
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetUsings":::
 
 
 Instanziieren Sie zunächst ein [**AppServiceConnection**](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)-Objekt, als ob Sie einen App-Dienst lokal aufrufen würden. Dieser Vorgang wird in [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md) ausführlicher behandelt. In diesem Beispiel ist der aufzurufende App-Dienst der Dienst für die Generierung von Zufallszahlen.
@@ -68,11 +68,11 @@ Instanziieren Sie zunächst ein [**AppServiceConnection**](/uwp/api/Windows.Appl
 > [!NOTE]
 > Es wird angenommen, dass ein [RemoteSystem](/uwp/api/Windows.System.RemoteSystems.RemoteSystem)-Objekt bereits innerhalb des Codes geladen wurde, der die folgende Methode aufruft. Anleitungen dazu, wie Sie dies einrichten können, finden Sie unter [Starten einer Remote-App](launch-a-remote-app.md).
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetAppService)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetAppService":::
 
 Als Nächstes wird ein [**RemoteSystemConnectionRequest**](/uwp/api/Windows.System.RemoteSystems.RemoteSystemConnectionRequest)-Objekt für das vorgesehene Remotegerät erstellt. Es wird dann zum Öffnen der **AppServiceConnection** zu diesem Gerät verwendet. Beachten Sie, dass im folgenden Beispiel Fehlerbehandlung und Berichte erheblich vereinfacht dargestellt werden, um das Beispiel kurz zu halten.
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetRemoteConnection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetRemoteConnection":::
 
 An diesem Punkt sollten Sie über eine offene Verbindung zu einem App-Dienst auf einem Remotecomputer verfügen.
 
@@ -80,11 +80,11 @@ An diesem Punkt sollten Sie über eine offene Verbindung zu einem App-Dienst auf
 
 Hier können Sie Nachrichten in Form von [**ValueSet**](/uwp/api/windows.foundation.collections.valueset)-Objekten an den Dienst senden und von dem Dienst empfangen (weitere Informationen finden Sie unter [Erstellen und Verwenden eines App-Diensts](how-to-create-and-consume-an-app-service.md)). Der Dienst für die Generierung von Zufallszahlen verwendet zwei Ganzzahlen mit den Schlüsseln `"minvalue"` und `"maxvalue"` als Eingaben, wählt nach dem Zufallsprinzip innerhalb dieses Bereichs eine Ganzzahl aus und gibt diese an den aufrufenden Prozess mit dem Schlüssel `"Result"` zurück.
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetSendMessage":::
 
 Sie haben jetzt eine Verbindung zu einem App-Dienst auf einem aufgerufenen Hostgerät hergestellt, einen Vorgang auf diesem Gerät ausgeführt und auf dem Clientgerät als Antwort Daten empfangen.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 [Übersicht über verbundene apps und Geräte (Project Rom)](connected-apps-and-devices.md)  
 [Starten einer Remote-App](launch-a-remote-app.md)  

@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, Add-ons, in-App-Käufe, IAPS, Windows. Services. Stor
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 36140b18c2358bf0b7ed497138ca7f9059900736
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3064a651715329a3602c0c3539394d2ce72f90a7
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171564"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362813"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>Aktivieren von In-App-Käufen von Apps und Add-Ons
 
@@ -46,7 +46,7 @@ Der Code in diesem Beispiel geht von folgenden Voraussetzungen aus:
 In diesem Beispiel wird die Verwendung der [RequestPurchaseAsync](/uwp/api/windows.services.store.storecontext.requestpurchaseasync)-Methode der [StoreContext](/uwp/api/windows.services.store.storecontext)-Klasse veranschaulicht, um eine App oder ein Add-On mit bekannter [Store-ID](in-app-purchases-and-trials.md#store-ids) zu erwerben. Eine vollständige Beispielanwendung finden Sie im [Store-Beispiel](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs" id="PurchaseAddOn":::
 
 ## <a name="video"></a>Video
 
@@ -55,7 +55,7 @@ Im folgenden Video sehen Sie eine Übersicht über die Implementierung von in-Ap
 <br/>
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Adding-In-App-Purchases-to-Your-UWP-App/player]
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)

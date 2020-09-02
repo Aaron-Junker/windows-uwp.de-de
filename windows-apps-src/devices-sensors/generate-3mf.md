@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c24e3bcc6ce10fb85f9e87ac213172e147d9e6b6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 032117349ea20cc3f4f6a3275969ff59a05502b4
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172274"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363943"
 ---
 # <a name="generate-a-3mf-package"></a>Generieren eines 3MF-Pakets
 
@@ -37,7 +37,7 @@ In Windows 10 entspricht die [**Printing3D3MFPackage**](/uwp/api/windows.graphic
 
 Die **Printing3D3MFPackage**-Klasse stellt ein vollständiges 3MF-Dokument dar, und den Kern eines 3MF-Dokuments bildet der Modellbestandteil, der durch die [**Printing3DModel**](/uwp/api/windows.graphics.printing3d.printing3dmodel)-Klasse dargestellt wird. Der Großteil der Informationen, die zu einem 3D-Modell angegeben werden, werden gespeichert, indem die Eigenschaften der **Printing3DModel**-Klasse und die Eigenschaften der zugrunde liegenden Klassen festgelegt werden.
 
-[!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetInitClasses":::
 
 <!-- >**Note** We do not yet associate the **Printing3D3MFPackage** with its corresponding **Printing3DModel** object. Only after fleshing out the **Printing3DModel** with all of the information we wish to specify will we make that association (see [link]). -->
 
@@ -45,7 +45,7 @@ Die **Printing3D3MFPackage**-Klasse stellt ein vollständiges 3MF-Dokument dar, 
 
 Der Modellteil eines 3MF-Dokuments kann Metadaten in Form von Schlüssel-Wert-Paaren von Zeichenfolgen enthalten, die in der **Metadata**-Eigenschaft gespeichert sind. Es gibt eine Reihe von vordefinierten Metadatennamen, aber es können weitere Paare als Teil einer Erweiterung hinzugefügt werden (dies wird in der [3MF-Spezifikation](https://3mf.io/what-is-3mf/3mf-specification/) ausführlicher beschrieben). Der Empfänger des Pakets (ein 3D-Fertigungsgerät) bestimmt, ob und wie Metadaten behandelt werden. Es empfiehlt sich jedoch, möglichst viele grundlegende Informationen im 3MF-Paket einzuschließen:
 
-[!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetMetadata":::
 
 ## <a name="mesh-data"></a>Gitterdaten
 
@@ -53,18 +53,18 @@ Im Kontext dieses Handbuchs bezeichnet ein Gitter einen Körper mit dreidimensio
 
 Mit der folgenden Methode werden einem Gitter Scheitelpunkte hinzugefügt. Diesen Scheitelpunkten wird dann im 3D-Raum eine Lage zugewiesen:
 
-[!code-cs[Vertices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetVertices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetVertices":::
 
 Die nächste Methode definiert alle Dreiecke, die über diese Scheitelpunkte gezeichnet werden sollen:
 
-[!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTriangleIndices":::
 
 > [!NOTE]
 > Die Indizes aller Dreiecke müssen gegen den Uhrzeigersinn definiert werden (bei Sicht auf das Dreieck von außerhalb des Gitterobjekts), sodass ihre Oberflächennormalvektoren nach außen zeigen.
 
 Wenn ein Printing3DMesh-Objekt gültige Sätze von Scheitelpunkten und Dreiecken enthält, sollte es anschließend der **Meshes**-Eigenschaft des Modells hinzugefügt werden. Alle **Printing3DMesh**-Objekte in einem Paket müssen unter der **Meshes**-Eigenschaft der **Printing3DModel**-Klasse gespeichert werden.
 
-[!code-cs[MeshAdd](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMeshAdd)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetMeshAdd":::
 
 
 ## <a name="create-materials"></a>Erstellen von Materialen
@@ -80,7 +80,7 @@ In diesem Handbuch wird zunächst beschrieben, wie verschiedene Materialarten in
 
 Der Standardmaterialtyp ist **Base Material**, der sowohl einen **Color Material**-Wert (nachfolgend beschrieben) als auch ein Namensattribut aufweist, mit dem der *Typ* des zu verwendenden Materials angegeben werden soll.
 
-[!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetBaseMaterialGroup":::
 
 > [!NOTE]
 > Das 3D-Fertigungsgerät bestimmt, welche verfügbaren physischen Materialien den jeweiligen im 3MF gespeicherten virtuellen Materialelementen zugeordnet werden. Die Materialzuordnung muss nicht 1:1 erfolgen: Wenn ein 3D-Drucker nur ein Material verwendet, wird das gesamte Modell in diesem Material gedruckt, unabhängig davon, welchen Objekten oder Oberflächen verschiedene Materialien zugeordnet wurden.
@@ -89,32 +89,32 @@ Der Standardmaterialtyp ist **Base Material**, der sowohl einen **Color Material
 
 **Farbmaterialien** ähneln den **Basismaterialien**, enthalten jedoch keinen Namen. Somit enthalten sie keine Anweisungen, welche Materialart vom Gerät verwendet werden soll. Sie enthalten lediglich Farbdaten und überlassen dem Gerät die Auswahl des Materialtyps (das Gerät kann anschließend den Benutzer zur Auswahl auffordern). Im folgenden Code werden die `colrMat`-Objekte aus der vorherigen Methode alleine verwendet.
 
-[!code-cs[ColorMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetColorMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetColorMaterialGroup":::
 
 ### <a name="composite-materials"></a>Zusammengesetzte Materialien
 
 **Zusammengesetzte Materialien** weisen das Fertigungsgerät an, eine einheitliche Mischung aus unterschiedlichen **Basismaterialien** zu verwenden. Jede **zusammengesetzte Materialgruppe** muss auf genau eine **Basismaterialgruppe** verweisen, aus der die Bestandteile entnommen werden sollen. Zusätzlich müssen die **Basismaterialien** in dieser Gruppe, die verfügbar gemacht werden sollen, in einer Liste mit den **Materialindizes** aufgeführt werden, auf die anschließend jedes **zusammengesetzte Material** verweist, wenn die Verhältnisse angeben werden (jedes **zusammengesetzte Material** ist lediglich ein Verhältnis der **Basismaterialien**).
 
-[!code-cs[CompositeMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetCompositeMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetCompositeMaterialGroup":::
 
 ### <a name="texture-coordinate-materials"></a>Texturkoordinatenmaterialien
 
 3MF unterstützt die Verwendung von 2D-Bildern, um die Oberflächen von 3D-Modellen einzufärben. Auf diese Weise kann das Modell deutlich mehr Farbdaten pro Dreiecksfläche übermitteln (als bei Verwendung eines einzelnen Farbwerts pro Dreiecksvertex). Ebenso wie **Farbmaterialien** können Texturkoordinatenmaterialien ausschließlich Farbdaten enthalten. Um eine 2D-Textur verwenden zu können, muss zunächst eine Texturressource deklariert werden:
 
-[!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTextureResource":::
 
 > [!NOTE]
 > Texturdaten gehören zum 3MF-Paket selbst und nicht zum Modellteil innerhalb des Pakets.
 
 Als Nächstes müssen die **Texture3Coord-Materialien** angegeben werden. Jedes dieser Materialien verweist auf eine Texturressource und gibt einen bestimmten Punkt im Bild an (in UV-Koordinaten).
 
-[!code-cs[Texture2CoordMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTexture2CoordMaterialGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTexture2CoordMaterialGroup":::
 
 ## <a name="map-materials-to-faces"></a>Zuordnung von Materialien zu Oberflächen
 
 Um festzulegen, welche Materialien welchen Scheitelpunkten der einzelnen Dreiecke zugeordnet werden sollen, wird noch einmal das Gitterobjekt für das Modell herangezogen (wenn ein Modell mehrere Gitter enthält, müssen die jeweiligen Materialien separat zugewiesen werden). Wie bereits erwähnt, werden die Materialien pro Vertex, pro Dreieck zugewiesen. Der nachfolgende Code veranschaulicht, wie diese Informationen eingegeben und interpretiert werden.
 
-[!code-cs[MaterialIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMaterialIndices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetMaterialIndices":::
 
 ## <a name="components-and-build"></a>Komponenten und Erstellung
 
@@ -124,24 +124,24 @@ Das Modell eines Autos könnte zum Beispiel aus einer „Karosserie“-**Printin
 
 Auf alle **Printing3DComponent**-Objekte muss direkt in der **Components**-Eigenschaft des Modells verwiesen werden. Die spezifische Komponente, die für den Druckauftrag verwendet werden soll, wird in der **Build**-Eigenschaft gespeichert.
 
-[!code-cs[Components](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetComponents":::
 
 ## <a name="save-package"></a>Speichern des Pakets
 Das vorliegende Modell mit den definierten Materialien und Komponenten kann nun im Paket gespeichert werden.
 
-[!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetSavePackage":::
 
 Diese Funktion stellt sicher, dass die Textur ordnungsgemäß angegeben wird.
 
-[!code-cs[FixTexture](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetFixTexture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetFixTexture":::
 
 Jetzt kann ein Druckauftrag in der App gestartet (siehe [3D-Drucken in der App](./3d-print-from-app.md)) oder das **Printing3D3MFPackage** als 3MF-Datei gespeichert werden.
 
 Die folgende Methode akzeptiert ein fertiges **Printing3D3MFPackage** und speichert die Daten in einer 3MF-Datei.
 
-[!code-cs[SaveTo3mf](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSaveTo3mf)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetSaveTo3mf":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 [3D-Druck über Ihre App](./3d-print-from-app.md)  
 [Beispiel für 3D-Druck – UWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)

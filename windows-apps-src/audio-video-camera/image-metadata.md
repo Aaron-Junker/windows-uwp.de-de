@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ca2a5abe5c0a7f60246322dd81fad9af8f0def77
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c020a2ca66c81bee81813402e546fc01ce77c7f3
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157494"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362563"
 ---
 # <a name="image-metadata"></a>Bildmetadaten
 
@@ -23,11 +23,11 @@ In diesem Artikel werden das Lesen und Schreiben von Eigenschaften von Bildmetad
 
 Die [**StorageFile.Properties**](/uwp/api/windows.storage.storagefile.properties)-Eigenschaft gibt ein [**StorageItemContentProperties**](/uwp/api/Windows.Storage.FileProperties.StorageItemContentProperties)-Objekt zurück, das Zugriff auf inhaltsbezogene Informationen zur Datei bietet. Rufen Sie die bildspezifischen Eigenschaften durch Aufruf von [**GetImagePropertiesAsync**](/uwp/api/windows.storage.fileproperties.storageitemcontentproperties.getimagepropertiesasync) ab. Das zurückgegebene [**ImageProperties**](/uwp/api/Windows.Storage.FileProperties.ImageProperties)-Objekt macht Member verfügbar, die Felder mit grundlegenden Bildmetadaten enthalten, z. B. den Titel des Bilds und das Aufnahmedatum.
 
-[!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetImageProperties":::
 
 Verwenden Sie für den Zugriff auf eine größere Menge von Dateimetadaten das Windows-Eigenschaftensystem, eine Reihe von Eigenschaften von Dateimetadaten, die mit einem eindeutigen Zeichenfolgenbezeichner abgerufen werden können. Erstellen Sie eine Liste mit Zeichenfolgen, und fügen Sie den Bezeichner für jede Eigenschaft hinzu, die Sie abrufen möchten. Die [**ImageProperties.RetrievePropertiesAsync**](/uwp/api/windows.storage.fileproperties.imageproperties.retrievepropertiesasync)-Methode verwendet diese Liste mit Zeichenfolgen und gibt ein Wörterbuch von Schlüssel-Wert-Paaren zurück, bei denen der Schlüssel der Eigenschaftsbezeichner und der Wert der Eigenschaftswert ist.
 
-[!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetWindowsProperties":::
 
 -   Eine umfassende Liste der Windows-Eigenschaften, einschließlich der Bezeichner und des Typs für jede Eigenschaft, finden Sie unter [Windows-Eigenschaften](/windows/desktop/properties/props).
 
@@ -41,11 +41,11 @@ Verwenden Sie für den Zugriff auf eine größere Menge von Dateimetadaten das W
 
 Wenn Sie bereits über ein [**Geopoint**](/uwp/api/Windows.Devices.Geolocation.Geopoint)-Objekt verfügen, das die Position darstellt, die Sie im Bild markieren möchten (entweder aus einer früheren Verwendung der Geolocation-APIs oder aus einer anderen Quelle), können Sie die Geomarkierungsdaten festlegen, indem Sie [**GeotagHelper.SetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagasync) aufrufen und eine [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) und einen **Geopoint** übergeben.
 
-[!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromPoint":::
 
 Um die Geomarkierungsdaten mithilfe der aktuellen Position des Geräts festzulegen, erstellen Sie ein neues [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)-Objekt, und rufen Sie [**GeotagHelper.SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync) auf. Übergeben Sie dabei die **Geolocator**-Klasse und die zu markierende Datei.
 
-[!code-cs[SetGeoDataFromGeolocator](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetSetGeoDataFromGeolocator":::
 
 -   Sie müssen die **location**-Gerätefunktion in das App-Manifest einschließen, um die [**SetGeotagFromGeolocatorAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.setgeotagfromgeolocatorasync)-API verwenden zu können.
 
@@ -55,7 +55,7 @@ Um die Geomarkierungsdaten mithilfe der aktuellen Position des Geräts festzuleg
 
 Um einen GeoPoint abzurufen, der die geomarkierte Position einer Bilddatei darstellt, rufen Sie [**GetGeotagAsync**](/uwp/api/windows.storage.fileproperties.geotaghelper.getgeotagasync) auf.
 
-[!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetGetGeoData":::
 
 ## <a name="decode-and-encode-image-metadata"></a>Decodieren und Codieren von Bildmetadaten
 
@@ -65,7 +65,7 @@ Um Bildmetadaten mit diesem Verfahren lesen zu können, benötigen Sie einen [**
 
 Nachdem Sie über den Decoder verfügen, erstellen Sie eine Liste mit Zeichenfolgen, und fügen Sie für jede abzurufende Metadateneigenschaft einen neuen Eintrag hinzu; verwenden Sie dabei entweder die ID-Zeichenfolge der Windows-Eigenschaft oder eine WIC-Metadatenabfrage. Rufen Sie die [**BitmapPropertiesView.GetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmappropertiesview.getpropertiesasync)-Methode für den [**BitmapProperties**](/uwp/api/Windows.Graphics.Imaging.BitmapProperties)-Member des Decoders auf, um die angegebenen Eigenschaften anzufordern. Die Eigenschaften werden in einem Wörterbuch mit Schlüssel-Wert-Paaren zurückgegeben, die den Eigenschaftsnamen oder den Pfad und den Eigenschaftswert enthalten.
 
-[!code-cs[ReadImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetReadImageMetadata":::
 
 -   Weitere Informationen zur WIC-Metadatenabfragesprache und den unterstützten Eigenschaften finden Sie unter [WIC Image Format Native Metadata Queries](/windows/desktop/wic/-wic-native-image-format-metadata-queries).
 
@@ -76,13 +76,13 @@ Um Bildmetadaten in den Datenstrom zu schreiben, muss der Bildausgabedatei ein *
 
 Erstellen Sie ein [**BitmapPropertySet**](/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet)-Objekt als Container für die festzulegenden Eigenschaftswerte. Erstellen Sie ein [**BitmapTypedValue**](/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue)-Objekt für den Eigenschaftswert. Dieses Objekt verwendet **object** als Wert und Member der [**PropertyType**](/uwp/api/Windows.Foundation.PropertyType)-Enumeration, die den Typ des Werts definiert. Fügen Sie den **BitmapTypedValue** dem **BitmapPropertySet** hinzu, und rufen Sie dann [**BitmapProperties.SetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmapproperties.setpropertiesasync) auf, damit der Encoder die Eigenschaften in den Datenstrom schreibt.
 
-[!code-cs[WriteImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.xaml.cs" id="SnippetWriteImageMetadata":::
 
 -   Ausführliche Informationen dazu, welche Eigenschaften für welche Bilddateitypen unterstützt werden, finden Sie unter [Windows-Eigenschaften](/windows/desktop/properties/props), [Richtlinien zu Fotometadaten](/windows/desktop/wic/photo-metadata-policies) und [WIC-Metadatenabfragen für systemeigene Bildformate](/windows/desktop/wic/-wic-native-image-format-metadata-queries).
 
 -   [Für **SetPropertiesAsync**](/uwp/api/windows.graphics.imaging.bitmapproperties.setpropertiesasync) tritt ein Fehler mit dem Fehlercode 0x88982F41 auf, wenn das dem Encoder zugeordnete Bild eine der angeforderten Eigenschaften nicht unterstützt.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Bildverarbeitung](imaging.md)
  

@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, consudbar, Add-ons, in-App-Käufe, IAPS, Windows. Ser
 ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f09b9a5c1f53c6a33f830c72514e061dc893348
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 01f1646c05b66d354a403e2621e3b032c22734d3
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171584"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363653"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>Unterstützen von Endverbraucher-Add-On-Käufen
 
@@ -73,7 +73,7 @@ Nachdem der Benutzer den [Kauf des Add-Ons](enable-in-app-purchases-of-apps-and-
 In diesem Beispiel wird gezeigt, wie ein vom Store verwalteter Verbrauchsartikel als erfüllt gemeldet wird.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs#ConsumeAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/ConsumeAddOnPage.xaml.cs" id="ConsumeAddOn":::
 
 <span id="get_balance" />
 
@@ -82,9 +82,9 @@ In diesem Beispiel wird gezeigt, wie ein vom Store verwalteter Verbrauchsartikel
 Dieses Beispiel zeigt, wie die [GetConsumableBalanceRemainingAsync](/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync)-Methode der [StoreContext](/uwp/api/windows.services.store.storecontext)-Klasse verwendet wird, um den Restbetrag für ein vom Store verwaltetes Endverbraucher-Add-On abzurufen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs" id="GetRemainingAddOnBalance":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)

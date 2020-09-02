@@ -1,7 +1,7 @@
 ---
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: In diesem Artikel wird beschrieben, wie Sie mit der [**cameracaptureui**](/uwp/api/windows.media.capture.cameracaptureui) -Klasse Fotos oder Videos mithilfe der in Windows integrierten Kamera-Benutzeroberfläche erfassen.
-title: Fotos und Videos mit der Windows-Benutzeroberfläche für integrierte Kameras erfassen
+title: Aufnehmen von Fotos und Videos mit der in Windows integrierten Kamera-UI
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: a512f72c01f2082dd067fc867f7434c92d2aa0c8
-ms.sourcegitcommit: 79e4b3a9c53060b64513e2e240f0a4f073cc5dab
+ms.openlocfilehash: 5b5e1369e37fc683a3a09c8f404b1998ee06bdab
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84978935"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364003"
 ---
-# <a name="capture-photos-and-video-with-the-windows-built-in-camera-ui"></a>Fotos und Videos mit der Windows-Benutzeroberfläche für integrierte Kameras erfassen
+# <a name="capture-photos-and-video-with-the-windows-built-in-camera-ui"></a>Aufnehmen von Fotos und Videos mit der in Windows integrierten Kamera-UI
 
 In diesem Artikel wird beschrieben, wie Sie mit der [**cameracaptureui**](/uwp/api/windows.media.capture.cameracaptureui) -Klasse Fotos oder Videos mithilfe der in Windows integrierten Kamera-Benutzeroberfläche erfassen. Diese Funktion ist einfach zu verwenden. Sie ermöglicht es Ihrer APP, ein Foto oder Video mit nur wenigen Codezeilen zu erhalten.
 
@@ -62,8 +62,8 @@ Rufen Sie [**OpenAsync**](/uwp/api/windows.storage.istoragefile.openasync) auf, 
 
 Um das Bild in der Benutzeroberfläche anzuzeigen, deklarieren Sie ein [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image)-Steuerelement auf der XAML-Seite.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cs/MainPage.xaml.cs" id="SnippetImageControl":::
-:::code language="cppwinrt" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cppwinrt/MainPage.cpp" id="SnippetImageControl":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cs/MainPage.xaml" id="SnippetImageControl":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cppwinrt/MainPage.xaml" id="SnippetImageControl":::
 
 Um die Software-Bitmap in der XAML-Seite zu verwenden, schließen Sie den [**Windows.UI.Xaml.Media.Imaging**](/uwp/api/Windows.UI.Xaml.Media.Imaging)-Namespace in Ihr Projekt ein.
 
@@ -95,7 +95,7 @@ Wenn die Videodatei von der Kameraaufnahme-Benutzeroberfläche zurückgegeben wi
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cs/MainPage.xaml.cs" id="SnippetPlayVideo":::
 :::code language="cppwinrt" source="~/../snippets-windows/windows-uwp/audio-video-camera/CameraCaptureUIWin10/cppwinrt/MainPage.cpp" id="SnippetPlayVideo":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
 * [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)

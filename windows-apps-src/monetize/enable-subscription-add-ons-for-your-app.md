@@ -5,12 +5,12 @@ keywords: Windows 10, UWP, Abonnements, Add-ons, in-App-Käufe, IAPS, Windows. S
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f319d272e4dde465af68d4c5b7af7fb7a17799
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 844af95545e34dab8adb6698624fcd0dccb2ab30
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167714"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362803"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>Aktivieren von Abonnement-Add-Ons für die App
 
@@ -88,14 +88,14 @@ In diesem Beispiel wird veranschaulicht, wie Sie den Erwerb eines bekannten Abon
 4. Schließlich ruft der Code die [**requestpurchaseasync**](/uwp/api/windows.services.store.storeproduct.RequestPurchaseAsync) -Methode auf, um den Kauf des Abonnements anzufordern. Wenn eine Testversion für das Abonnement verfügbar ist, wird die Testversion dem Kunden zum Kauf angeboten. Andernfalls wird das vollständige Abonnement zum Kauf angeboten.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs#PurchaseTrialSubscription)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnTrialPage.xaml.cs" id="PurchaseTrialSubscription":::
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>Informationen zu Abonnement-Add-ons für die aktuelle APP erhalten
 
 Dieses Codebeispiel veranschaulicht, wie Sie Informationen für alle Abonnement-Add-ons, die in ihrer app verfügbar sind, erhalten. Um diese Informationen zu erhalten, verwenden Sie zuerst die [**getassociatedstoreproduczasync**](/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) -Methode, um die Auflistung der [**storeproduct**](/uwp/api/Windows.Services.Store.StoreProduct) -Objekte zu erhalten, die die einzelnen verfügbaren Add-ons für die APP darstellen. Holen Sie sich dann die [**storesku**](/uwp/api/windows.services.store.storesku) für jedes Produkt, und verwenden Sie die Eigenschaften " [**isabonnement**](/uwp/api/windows.services.store.storesku.IsSubscription) " und " [**Abonnement Info**](/uwp/api/windows.services.store.storesku.SubscriptionInfo) ", um auf die Abonnement Informationen zuzugreifen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs" id="GetSubscriptions":::
 
 <span id="manage-subscriptions" />
 
@@ -129,7 +129,7 @@ Die folgenden Szenarien werden für Abonnement-Add-ons derzeit nicht unterstütz
 * [Verkaufs](../publish/put-apps-and-add-ons-on-sale.md) -und [Werbecodes](../publish/generate-promotional-codes.md) werden für Abonnement-Add-ons zurzeit nicht unterstützt.
 * Erneuern vorhandener Abonnements nach dem Festlegen der Sichtbarkeit Ihres Abonnement-Add-Ins, um die **Erfassung zu verhindern**. Weitere Informationen finden [Sie unter Festlegen von Add-on-Preisen und Verfügbarkeit](../publish/set-add-on-pricing-and-availability.md) .
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [In-App-Käufe und Testversionen](in-app-purchases-and-trials.md)
 * [Abrufen von Produktinformationen zu Apps und Add-Ons](get-product-info-for-apps-and-add-ons.md)

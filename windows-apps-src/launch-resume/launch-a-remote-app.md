@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, verbundene Geräte, Remote Systeme, Rom, Project Rom
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 784403ede6b21b79dcb14d1da6dde22df68c410e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4163106c5439ec8881c1b5042f63fb7abf4fd668
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158784"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362503"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>Starten einer App auf einem Remotegerät
 
@@ -45,18 +45,18 @@ Sie müssen zunächst das Gerät suchen, zu dem Sie eine Verbindung herstellen m
 
 Der Code in diesen Beispielen erfordert, dass Sie über eine- `using Windows.System.RemoteSystems` Anweisung in der Klassendatei (en) verfügen.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetBuildDeviceList":::
 
 Als Erstes müssen Sie vor einem Remotestart die Funktion `RemoteSystem.RequestAccessAsync()` aufrufen. Überprüfen Sie den Rückgabewert, um sicherzustellen, dass Ihre App auf Remotegeräte zugreifen darf. Diese Überprüfung ist beispielsweise nicht erfolgreich, wenn Sie Ihrer App nicht die Funktion `remoteSystem` hinzugefügt haben.
 
 Die Ereignishandler der Systemüberwachung werden aufgerufen, wenn ein Gerät, mit dem wir eine Verbindung herstellen können, erkannt wird oder nicht mehr verfügbar ist. Wir verwenden diese Ereignishandler, um eine fortlaufend aktualisierte Liste der Geräte zu führen, mit denen wir eine Verbindung herstellen können.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetEventHandlers":::
 
 
 Wir verfolgen die Geräte nach Remotesystem-ID unter Verwendung eines **Wörterbuchs** nach. Eine **ObservableCollection** dient zum Speichern der Liste der Geräte, die aufgelistet werden können. Mit **ObservableCollection** ist es auch einfach, die Liste der Geräte an die Benutzeroberfläche zu binden, obwohl dies in diesem Beispiel nicht der Fall ist.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetMembers":::
 
 Fügen Sie Ihrem App-Startcode einen Aufruf an `BuildDeviceList()` hinzu, bevor Sie versuchen, eine Remote-App zu starten.
 
@@ -68,11 +68,11 @@ Andere **RemoteLauncher.LaunchUriAsync**-Überladungen ermöglichen die Angabe v
 
 In Szenarien in der Praxis können Sie eine Benutzeroberfläche bereitstellen, um das Zielgerät auszuwählen. In diesem Beispiel verwenden wir zur Vereinfachung nur das erste Remotegerät in der Liste.
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetRemoteUriLaunch":::
 
 Das [**RemoteLaunchUriStatus**](/uwp/api/windows.system.remotelaunchuristatus)-Objekt, das von **RemoteLauncher.LaunchUriAsync()** zurückgegeben wird, enthält Informationen dazu, ob der Remotestart erfolgreich war. Wenn bei dem Remotestart ein Fehler aufgetreten ist, wird ein Grund angegeben.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 [API-Referenz für Remotesysteme](/uwp/api/Windows.System.RemoteSystems)  
 [Übersicht über verbundene apps und Geräte (Project Rom)](connected-apps-and-devices.md)  

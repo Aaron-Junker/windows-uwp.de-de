@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, verbundene Geräte, Remote Systeme, Rom, Project Rom
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c13a30c8869643badc69c546b0a5212308956f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a479cb20943b9c4b2df53b22751c9de2f5a8402c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155924"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363733"
 ---
 # <a name="discover-remote-devices"></a>Entdecken von Remotegeräten
 Ihre APP kann das Drahtlos Netzwerk, Bluetooth und die cloudverbindung zum Ermitteln von Windows-Geräten verwenden, die mit dem gleichen Microsoft-Konto wie das ermittelende Gerät angemeldet sind. Auf den Remotegeräten muss keine spezielle Software installiert sein, damit sie erkennbar sind.
@@ -27,7 +27,7 @@ Filter Objekte müssen vor oder während der Initialisierung des **remotesystemw
 > [!NOTE]
 > Der Code in diesen Beispielen erfordert, dass Sie über eine- `using Windows.System.RemoteSystems` Anweisung in der Datei verfügen.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetMakeFilterList":::
 
 > [!NOTE]
 > Der Filter Wert "proximal" garantiert nicht den Grad der physischen Nähe. Verwenden Sie für Szenarien, die eine zuverlässige physische Nähe erfordern, den Wert [**remotesystemdiscoverytype. spatiallyproximal**](/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) in Ihrem Filter. Derzeit sind mit diesem Filter nur Geräte zulässig, die von Bluetooth erkannt werden. Da neue Ermittlungs Mechanismen und Protokolle unterstützt werden, die die physische Nähe gewährleisten, werden Sie hier ebenfalls eingeschlossen.  
@@ -38,7 +38,7 @@ Es gibt auch eine Eigenschaft in der [**Remotesystem**](/uwp/api/Windows.System.
 
 Sobald eine Liste mit [**IRemoteSystemFilter**](/uwp/api/Windows.System.RemoteSystems.IRemoteSystemFilter)-Objekten erstellt wurde, kann sie an den Konstruktor eines **RemoteSystemWatcher**übergeben werden.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetCreateWatcher":::
 
 Wenn die [**Start**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.start)-Methode dieses Überwachungselements aufgerufen wird, wird das [**RemoteSystemAdded**](/uwp/api/windows.system.remotesystems.remotesystemwatcher.remotesystemadded)-Ereignis nur dann ausgelöst, wenn ein Gerät erkannt wird, das alle der folgenden Kriterien erfüllt:
 * Es kann von einer proximalen Verbindung erkannt werden
@@ -52,7 +52,7 @@ Einige Geräte sind möglicherweise nicht mit einem Benutzer verknüpft oder dur
 
 Ein **RemoteSystem**-Objekt wird abgerufen, wenn ein gültiges **HostName**-Objekt bereitgestellt wird. Wenn die Adressdaten ungültig sind, wird ein `null`-Objektverweis zurückgegeben.
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/DiscoverDevices/cs/MainPage.xaml.cs" id="SnippetFindByHostName":::
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>Abfragen einer Funktion auf einem Remote System
 
@@ -92,7 +92,7 @@ Um diese Einstellung zu ändern, muss der Benutzer die app " **Einstellungen** "
 
 ![Seite mit Einstellungen für freigegebene Erfahrungen](images/shared-experiences-settings.png)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 * [Verbundene Apps und Geräte (Projekt „Rome”)](connected-apps-and-devices.md)
 * [Starten einer Remote-App](launch-a-remote-app.md)
 * [API-Referenz für Remotesysteme](/uwp/api/Windows.System.RemoteSystems)

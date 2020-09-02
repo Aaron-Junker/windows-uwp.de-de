@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, Werbung, Werbung, Video, Scheduler, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6baf26b083cce08557a9b09f2ba95d5ad889f4a4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9d1a5c08d9965422d6fcd543ee38d3e628be8432
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175104"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364063"
 ---
 # <a name="show-ads-in-video-content"></a>Anzeigen von Werbung in Videoinhalten
 
@@ -44,7 +44,7 @@ Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürz
 
   Im folgenden Beispiel wird veranschaulicht, wie Sie einen [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) in JavaScript-Code einrichten.
 
-  [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
+  :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet1":::
 
 ## <a name="how-to-use-the-adscheduler-class-in-your-code"></a>Verwenden der AdScheduler-Klasse im Code
 
@@ -75,7 +75,7 @@ Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürz
 
 6.  Fügen Sie der Datei „main.js“ des Projekts Code hinzu, mit dem ein neues **AdScheduler**-Objekt erstellt wird. Übergeben Sie den **MediaPlayer**, mit dem Ihre Videoinhalte gehostet werden. Der Code muss so angeordnet werden, dass er nach [WinJS.UI.processAll](/previous-versions/windows/apps/hh440975) ausgeführt wird.
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet2":::
 
 7.  Verwenden Sie die **requestschedule** -Methode oder die **requestschedulebyurl** -Methode des **adscheduler** -Objekts, um einen AD-Zeitplan vom Server anzufordern und in die **Media Player** -Zeitachse einzufügen und dann die Video Medien wiederzugeben.
 
@@ -83,18 +83,18 @@ Werbung für Videoinhalte variiert in Abhängigkeit davon, ob das Programm kürz
 
         Diese Methode hat die Form einer [Zusicherung](../threading-async/asynchronous-programming-universal-windows-platform-apps.md#asynchronous-patterns-in-uwp-using-javascript), bei der es sich um ein asynchrones Konstrukt handelt, bei dem zwei Funktionszeiger übermittelt werden: ein Zeiger für die **OnComplete** -Funktion, die aufgerufen werden soll, wenn die Zusage erfolgreich abgeschlossen wird, und ein Zeiger für die **OnError** -Funktion, die bei einem Fehler aufgerufen wird Beginnen Sie in der **OnComplete** -Funktion mit der Wiedergabe von Videoinhalten. Die Werbe Wiedergabe wird zum geplanten Zeitpunkt wiedergegeben. Behandeln Sie den Fehler in der **OnError** -Funktion, und beginnen Sie dann mit der Wiedergabe Ihres Videos. Ihre Videoinhalte werden ohne Werbung wiedergegeben. Das-Argument der **OnError** -Funktion ist ein Objekt, das die folgenden Member enthält.
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet3":::
 
     * Verwenden Sie **requestschedulebyurl**, und übergeben Sie den Server-URI, um einen AD-Zeitplan von einem nicht-Microsoft-Ad-Server anzufordern. Diese Methode hat auch die Form einer **Zusicherung** , die Zeiger für die **OnComplete** -und **OnError** -Funktionen akzeptiert. Die vom Server zurückgegebene AD-Nutzlast muss den Nutz Last Formaten für die Video-und Videowiedergabe Vorlage (Vast) oder Video Multiple AD Wiedergabelisten (VMAP) entsprechen.
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet4":::
 
     > [!NOTE]
     > Warten Sie, bis **requestschedule** oder **requestschedulebyurl** zurückgegeben wird, bevor Sie mit der Wiedergabe der primären Videoinhalte in **Media Player**beginnen. Die Wiedergabe von Medien vor der Rückgabe von **requestschedule** (bei einer Pre-Roll-Ankündigung) führt dazu, dass der primäre Videoinhalt von der vorab Ausführung unterbrochen wird. Sie müssen auch " **Play** " aufruft, auch wenn die Funktion fehlschlägt, da der " **Media Player" den Media Player** anweist, die AD (s) zu überspringen und direkt zum Inhalt zu wechseln. **AdScheduler** Unter Umständen besteht bei Ihnen auch eine andere geschäftliche Anforderung, z. B. das Einfügen einer integrierten Anzeige, falls eine Anzeige nicht erfolgreich von einem Remotestandort abgerufen werden kann.
 
 8.  Während der Wiedergabe können Sie zusätzliche Ereignisse verarbeiten, mit denen Ihre App den Status bzw. Fehler nachverfolgen kann, die nach dem ersten Anzeigenabgleich auftreten. Der folgende Code zeigt einige dieser Ereignisse, einschließlich **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete** und **onErrorOccurred**.
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet5":::
 
 ## <a name="adscheduler-members"></a>Adscheduler-Mitglieder
 

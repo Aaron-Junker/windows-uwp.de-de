@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 38261e8f6a03e17ba94a064b8e475503414e91d6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b7f726365a2e476e650f4b66d484840c0efabda5
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174634"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363823"
 ---
 # <a name="process-media-files-in-the-background"></a>Verarbeiten von Mediendateien im Hintergrund
 
@@ -40,11 +40,11 @@ Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Symbo
 
 Fügen Sie in der umbenannten Klassendatei die folgenden **using**-Direktiven hinzu, um diese Namespaces in Ihr Projekt einzuschließen.
                                   
-[!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetBackgroundUsing":::
 
 Aktualisieren Sie die Klassendeklaration so, dass die Klasse von [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) erbt.
 
-[!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetBackgroundClass":::
 
 Fügen Sie der Klasse die folgenden Membervariablen hinzu:
 
@@ -53,7 +53,7 @@ Fügen Sie der Klasse die folgenden Membervariablen hinzu:
 -   Ein **CancellationTokenSource**-Objekt, mit dem der asynchrone Transcodierungsvorgang abgebrochen werden kann.
 -   Das [**MediaTranscoder**](/uwp/api/Windows.Media.Transcoding.MediaTranscoder)-Objekt, das zum Transcodieren von Mediendateien verwendet wird.
 
-[!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetBackgroundMembers":::
 
 Das System ruft die [**Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode einer Hintergrundaufgabe auf, wenn die Aufgabe gestartet wird. Legen Sie das an die Methode übergebene [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)-Objekt auf die entsprechende Membervariable fest. Registrieren Sie einen Handler für das [**Canceled**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled)-Ereignis, das ausgelöst wird, wenn das System die Hintergrundaufgabe herunterfahren muss. Legen Sie anschließend die [**Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress)-Eigenschaft auf 0 (null) fest.
 
@@ -63,7 +63,7 @@ Rufen Sie als Nächstes die **TranscodeFileAsync**-Hilfsmethode auf, die im näc
 
 Rufen Sie am Ende der **Run**-Methode die [**Complete**](/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete)-Methode für das Verzögerungsobjekt auf, um dem System mitzuteilen, dass die Hintergrundaufgabe abgeschlossen ist und beendet werden kann.
 
-[!code-cs[Run](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetRun":::
 
 In der **TranscodeFileAsync**-Hilfsmethode werden die Dateinamen für die Eingabe- und Ausgabedateien für die Transcodierungsvorgänge aus der [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings)-Eigenschaft für Ihre App abgerufen. Diese Werte werden von der Vordergrund-App festgelegt. Erstellen Sie ein [**StorageFile**](/uwp/api/Windows.Storage.StorageFile)-Objekt für die Eingabe- und Ausgabedateien, und erstellen Sie dann ein Codierungsprofil für die Transcodierung.
 
@@ -71,19 +71,19 @@ Rufen Sie [**PrepareFileTranscodeAsync**](/uwp/api/windows.media.transcoding.med
 
 Mit der **AsTask**-Methode können Sie den Status des asynchronen Vorgangs nachverfolgen oder den Vorgang abbrechen. Erstellen Sie ein neues **Progress**-Objekt, wobei Sie die gewünschten Statuseinheiten und den Namen der Methode angeben, die aufgerufen wird, um Sie über den aktuellen Status der Aufgabe zu informieren. Übergeben Sie das **Progress**-Objekt zusammen mit dem Abbruchtoken, das Ihnen das Abbrechen der Aufgabe ermöglicht, an die **AsTask**-Methode.
 
-[!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetTranscodeFileAsync":::
 
 Legen Sie in der Methode, die Sie zum Erstellen des Statusobjekts im vorherigen Schritt verwendet haben (**Progress**), den Status der Hintergrundaufgabeninstanz fest. Hierdurch wird der Status an die Vordergrund-App übergeben, sofern diese ausgeführt wird.
 
-[!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetProgress":::
 
 Die **SendToastNotification**-Hilfsmethode erstellt eine neue Popupbenachrichtigung, indem ein XML-Vorlagendokument für ein Popup abgerufen wird, das nur Text enthält. Das Textelement des Popup-XML-Codes wird festgelegt. Anschließend wird ein neues [**ToastNotification**](/uwp/api/Windows.UI.Notifications.ToastNotification)-Objekt aus dem XML-Dokument erstellt. Schließlich wird dem Benutzer das Popup durch Aufrufen von [**ToastNotifier.Show**](/uwp/api/windows.ui.notifications.toastnotifier.show) angezeigt.
 
-[!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetSendToastNotification":::
 
 Im Handler für das [**Canceled**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled)-Ereignis, das aufgerufen wird, wenn das System die Hintergrundaufgabe abbricht, können Sie den Fehler zu Telemetriezwecken protokollieren.
 
-[!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetOnCanceled":::
 
 ## <a name="register-and-launch-the-background-task"></a>Registrieren und Starten der Hintergrundaufgabe
 
@@ -104,17 +104,17 @@ Als Nächstes müssen Sie der Vordergrund-App einen Verweis auf die Hintergrunda
 
 Fügen Sie den restlichen Code in diesem Beispiel der Vordergrund-App hinzu. Zunächst müssen Sie dem Projekt die folgenden Namespaces hinzufügen.
 
-[!code-cs[ForegroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetForegroundUsing":::
 
 Als Nächstes fügen Sie die folgenden Membervariablen hinzu, die zum Registrieren der Hintergrundaufgabe benötigt werden.
 
-[!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetForegroundMembers":::
 
 Die **PickFilesToTranscode**-Hilfsmethode verwendet eine [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)-Klasse und eine [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker)-Klasse, um die Eingabe- und Ausgabedateien für die Transcodierung zu öffnen. Der Benutzer kann Dateien an einem Speicherort auswählen, auf den Ihre App keinen Zugriff auf. Um sicherzustellen, dass die Hintergrundaufgabe die Dateien öffnen kann, fügen Sie sie der [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist)-Eigenschaft für die App hinzu.
 
 Legen Sie abschließend Einträge für die Eingabe- und Ausgabedateinamen in der [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings)-Eigenschaft für Ihre App fest. Die Hintergrundaufgabe ruft die Dateinamen von diesem Speicherort ab.
 
-[!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetPickFilesToTranscode":::
 
 Um die Hintergrundaufgabe registrieren, erstellen Sie eine neue [**MediaProcessingTrigger**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger)-Klasse und eine neue [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)-Klasse. Legen Sie den Namen des Hintergrundaufgaben-Generators fest, damit Sie ihn später identifizieren können. Legen Sie die [**TaskEntryPoint**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint)-Eigenschaft auf die gleiche Namespace- und Klassennamenszeichenfolge fest, die Sie in der Manifestdatei verwendet haben. Legen Sie die [**Trigger**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.trigger)-Eigenschaft auf die **MediaProcessingTrigger** Instanz fest.
 
@@ -122,23 +122,23 @@ Stellen Sie vor dem Registrieren der Aufgabe sicher, dass Sie die Registrierung 
 
 Registrieren Sie die Hintergrundaufgabe durch Aufrufen von [**Register**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register). Registrieren Sie Handler für das [**Completed**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed)-Ereignis und das [**Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskregistration.progress)-Ereignis.
 
-[!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetRegisterBackgroundTask":::
 
 Eine typische App registriert Ihre Hintergrundaufgabe, wenn die APP anfänglich gestartet wird, z. b. im **OnNavigatedTo** -Ereignis.
 
 Starten Sie die Hintergrundaufgabe durch Aufrufen der [**RequestAsync**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger.requestasync)-Methode des **MediaProcessingTrigger**-Objekts. Das von dieser Methode zurückgegebene [**MediaProcessingTriggerResult**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTriggerResult)-Objekt informiert Sie darüber, ob die Hintergrundaufgabe erfolgreich gestartet wurde. Zudem teilt es Ihnen bei einem Fehler mit, warum die Hintergrundaufgabe nicht gestartet wurde. 
 
-[!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetLaunchBackgroundTask":::
 
 Eine typische App startet die Hintergrundaufgabe als Reaktion auf eine Benutzerinteraktion, z. b. im **Click** -Ereignis eines UI-Steuer Elements.
 
 Der **OnProgress**-Ereignishandler wird aufgerufen, wenn die Hintergrundaufgabe den Vorgangsstatus aktualisiert. Sie können diese Möglichkeit nutzen, um die Benutzeroberfläche mit Statusinformationen zu aktualisieren.
 
-[!code-cs[OnProgress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnProgress)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetOnProgress":::
 
 Der **OnCompleted**-Ereignishandler wird aufgerufen, wenn die Ausführung der Hintergrundaufgabe abgeschlossen ist. Dies ist eine weitere Möglichkeit zum Aktualisieren der Benutzeroberfläche, um Statusinformationen für den Benutzer bereitzustellen.
 
-[!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetOnCompleted":::
 
 
  

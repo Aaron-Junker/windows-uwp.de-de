@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Feedback-Hub, starten
 ms.localizationpriority: medium
-ms.openlocfilehash: efdc4a4b39f71b26658e3fbaf57287098b23e4be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 71ecb104f1864eefcf1e38f793a4af53a977f693
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158494"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363103"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>Starten des Feedback-Hubs über Ihre App
 
@@ -48,13 +48,13 @@ So starten Sie den Feedback-Hub über Ihre App
 
     Wenn diese Eigenschaft **true** zurückgibt, legen Sie fest, dass das Steuerelement sichtbar wird. Der folgende Code veranschaulicht die Vorgehensweise für eine [Schaltfläche](/uwp/api/windows.ui.xaml.controls.button).
 
-    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/FeedbackPage.xaml.cs" id="ToggleFeedbackVisibility":::
       > [!NOTE]
       > Obwohl der FeedHub zurzeit auf Xbox-Geräten nicht unterstützt wird, gibt die **IsSupported** -Eigenschaft zurzeit **true** auf Xbox-Geräten zurück, die Version 10.0.14271 oder höher von Windows 10 ausführen. Dies ist ein bekanntes Problem, das in einer zukünftigen Version des Microsoft Store Services SDK behoben sein wird.  
 
 8. Rufen Sie im Ereignishandler, der ausgeführt wird, wenn der Benutzer auf das Steuerelement klickt, ein [StoreServicesFeedbackLauncher](/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher)-Objekt ab, und rufen Sie die [LaunchAsync](/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync)-Methode auf, um die Feedback-Hub-App zu starten. Es gibt zwei Überladungen für diese Methode: eine ohne Parameter und eine weitere, die ein Wörterbuch mit Schlüssel-Wert-Paaren akzeptiert, die wiederum Metadaten enthalten, die Sie mit dem Feedback verknüpfen möchten. Im folgenden Beispiel wird gezeigt, wie Sie den Feedback-Hub im [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)-Ereignishandler für eine [Schaltfläche](/uwp/api/Windows.UI.Xaml.Controls.Button) starten.
 
-    [!code-csharp[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/FeedbackPage.xaml.cs" id="FeedbackButtonClick":::
 
 ## <a name="design-recommendations-for-your-feedback-ui"></a>Designempfehlungen für Ihre Feedback-Benutzeroberfläche
 
@@ -74,6 +74,6 @@ Außerdem wird empfohlen, mindestens eine der folgenden Platzierungsoptionen fü
 * **In einem ereignisgesteuerten Flyout**. Dies ist hilfreich, wenn Sie vor dem Start des Windows-Feedback-Hubs die Meinung Ihrer Kunden zu einer bestimmten Frage erfahren möchten. Beispiel: Nachdem Ihre App eine bestimmte Funktion verwendet, könnten Sie den Kunden mit einer gezielten Frage zu seiner Zufriedenheit mit diesem Feature dazu auffordern, Ihnen seine Meinung mitzuteilen. Wenn der Kunde auf die Frage reagieren möchte, wird über Ihre App der Feedback-Hub gestartet.
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Feedbackbericht](../publish/feedback-report.md)

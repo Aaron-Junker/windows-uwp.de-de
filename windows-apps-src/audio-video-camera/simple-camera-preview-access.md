@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f30611d649e0485a9cc89a162ae49768b05e00d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3487e79b689e5c47cc94ffc29a559a333fe66f47
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174504"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363773"
 ---
 # <a name="display-the-camera-preview"></a>Anzeigen der Kameravorschau
 
@@ -34,7 +34,7 @@ Damit Ihre App auf die Kamera eines Geräts zugreifen kann, müssen Sie die Verw
 
 Mithilfe eines [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) können Sie den Vorschaudatenstrom innerhalb der XAML-Seite anzeigen.
 
-[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml" id="SnippetCaptureElement":::
 
 
 
@@ -44,15 +44,15 @@ Das [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture)-Objekt ist d
 
 Fügen Sie using-Direktiven hinzu, um die folgenden Namespaces in die CS-Datei Ihrer Seite einzubeziehen.
 
-[!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSimpleCameraPreviewUsing":::
 
 Deklarieren Sie eine Klassenmembervariable für das **MediaCapture**-Objekt. Fügen Sie einen booleschen Member hinzu, um nachzuverfolgen, ob die Vorschau der Kamera gerade aktiv ist. 
 
-[!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareMediaCapture":::
 
 Deklarieren Sie eine Variable vom Typ [**DisplayRequest**](/uwp/api/Windows.System.Display.DisplayRequest), um sicherzustellen, dass die Anzeige während der Ausführung der Vorschau nicht deaktiviert wird.
 
-[!code-cs[DeclareDisplayRequest](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareDisplayRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareDisplayRequest":::
 
 Erstellen Sie eine Hilfsmethode, um die Kamera Vorschau zu starten, die in diesem Beispiel " **startpreviewasync** " genannt wird. Abhängig vom Szenario Ihrer APP können Sie dies vom **OnNavigatedTo** -Ereignishandler aus aufrufen, der aufgerufen wird, wenn die Seite geladen wird, oder warten und die Vorschau als Reaktion auf Benutzeroberflächen Ereignisse starten.
 
@@ -64,12 +64,12 @@ Verbinden Sie das **MediaCapture**-Objekt mit der **CaptureElement**-Klasse, ind
 
 Rufen Sie [**RequestActive**](/uwp/api/windows.system.display.displayrequest.requestactive) auf, um sicherzustellen, dass das Gerät während der Ausführung der Vorschau nicht in den Standbymodus wechselt. Legen Sie abschließend die [**DisplayInformation.AutoRotationPreferences**](/uwp/api/windows.graphics.display.displayinformation.autorotationpreferences)-Eigenschaft auf [**Landscape**](/uwp/api/Windows.Graphics.Display.DisplayOrientations) fest, um zu verhindern, dass die sich Benutzeroberfläche und das **CaptureElement** drehen, wenn der Benutzer die Ausrichtung des Geräts ändert. Weitere Informationen zum Behandeln von Änderungen an der Geräteausrichtung finden Sie unter [**Handhaben der Geräte- und Bildschirmausrichtung mit „MediaCapture“**](handle-device-orientation-with-mediacapture.md).  
 
-[!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartPreviewAsync":::
 
 ## <a name="handle-changes-in-exclusive-control"></a>Behandeln von Änderungen im exklusiven Steuerelement
 Wie im vorherigen Abschnitt erwähnt, löst **startpreviewasync** eine **FileLoadException** aus, wenn eine andere App eine exklusive Kontrolle über das Erfassungsgerät hat. Ab Windows 10, Version 1703, können Sie einen Handler für das Ereignis [mediacapture. capturedeviceexclusivecontrolstatuschangiregistrieren](/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged) , das immer dann ausgelöst wird, wenn der ausschließliche Steuerungs Status des Geräts geändert wird. Überprüfen Sie im Handler für dieses Ereignis die [mediacapturedeviceexclusivecontrolstatuschangedeventargs. Status](/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status) -Eigenschaft, um den aktuellen Status anzuzeigen. Wenn der neue Status **sharedreadonlyavailable**lautet, wissen Sie, dass Sie die Vorschau zurzeit nicht starten können, und Sie können die Benutzeroberfläche aktualisieren, um den Benutzer zu benachrichtigen. Wenn der neue Status " **exclusivecontrolavailable**" lautet, können Sie versuchen, die Kamera Vorschau erneut zu starten.
 
-[!code-cs[ExclusiveControlStatusChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetExclusiveControlStatusChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetExclusiveControlStatusChanged":::
 
 ## <a name="shut-down-the-preview-stream"></a>Beenden des Vorschaudatenstroms
 
@@ -81,22 +81,22 @@ Wenn Sie den Vorschaudatenstrom nicht mehr benötigen, sollten Sie ihn stets bee
 -   Legen Sie die **MediaCapture**-Membervariable auf NULL fest.
 -   Rufen Sie [**RequestRelease**](/uwp/api/windows.system.display.displayrequest.requestrelease) auf, wenn der Bildschirm bei Inaktivität ausgeschaltet werden soll.
 
-[!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCleanupCameraAsync":::
 
 Sie sollten den Vorschaudatenstrom durch Außerkraftsetzen der [**OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom)-Methode beenden, wenn der Benutzer Ihre Seite verlässt.
 
-[!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetOnNavigatedFrom":::
 
 Sie sollten den Vorschaudatenstrom auch ordnungsgemäß beenden, wenn die App angehalten wird. Registrieren Sie dazu im Konstruktor der Seite einen Handler für das [**Application.Suspending**](/uwp/api/windows.applicationmodel.core.coreapplication.suspending)-Ereignis.
 
-[!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRegisterSuspending":::
 
 Stellen Sie im **Suspending**-Ereignishandler zunächst sicher, dass die Seite im [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) der Anwendung angezeigt wird, indem Sie den Seitentyp mit der [**CurrentSourcePageType**](/uwp/api/windows.ui.xaml.controls.frame.currentsourcepagetype)-Eigenschaft vergleichen. Wird die Seite derzeit nicht angezeigt, sollten das **OnNavigatedFrom**-Ereignis bereits ausgelöst und der Vorschaudatenstrom geschlossen worden sein. Wird die Seite angezeigt, rufen Sie ein [**SuspendingDeferral**](/uwp/api/Windows.ApplicationModel.SuspendingDeferral)-Objekt aus den an den Handler übergebenen Ereignisargumenten ab, um sicherzustellen, dass das System Ihre App nicht anhält, bis der Vorschaudatenstrom beendet wurde. Rufen Sie nach dem Beenden des Datenstroms die [**Complete**](/uwp/api/windows.applicationmodel.suspendingdeferral.complete)-Methode der Verzögerung auf, damit das System die App weiterhin anhalten kann.
 
-[!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSuspendingHandler":::
 
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Kamera](camera.md)
 * [Allgemeine Foto-, Video- und Audioaufnahme mit „MediaCapture“](basic-photo-video-and-audio-capture-with-MediaCapture.md)

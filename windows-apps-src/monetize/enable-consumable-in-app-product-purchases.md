@@ -6,12 +6,12 @@ keywords: UWP, consudbar, Add-ons, in-App-Käufe, IAPS, Windows. applicationmode
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd4bc4d21a5f292cd50655c452522e07424f920
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb4119296b11e805fa72ff027383d13e6fb43818
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172924"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363693"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>Käufe von konsumierbaren In-App-Produkten aktivieren
 
@@ -33,7 +33,7 @@ Die erste Kaufanforderung wird wie bei jedem Kauf über den Store mit [RequestPr
 Im nächsten Beispiel wird eine In-App-Kaufanforderung für ein Consumable gezeigt. Sie sehen Codekommentare, die angeben, wann Ihre App den Kauf des konsumierbaren In-App-Produkts lokal erfüllen sollte, und zwar für zwei verschiedene Szenarien – eine erfolgreiche Kaufanforderung und eine nicht erfolgreiche Kaufanforderung aufgrund eines nicht erfüllten Kaufs desselben Produkts.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="MakePurchaseRequest":::
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>Schritt 2: Verfolgen der lokalen Kauferfüllung des Verbrauchsartikels
 
@@ -45,7 +45,7 @@ Wenn Sie dem Kunden Zugriff auf das konsumierbare In-App-Produkt gewähren, müs
 Im folgenden Beispiel wird die Verwendung von [PurchaseResults](/uwp/api/Windows.ApplicationModel.Store.PurchaseResults)-Eigenschaften aus dem [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)-Aufruf im vorangehenden Schritt zum Identifizieren des Produkts für die Kauferfüllung gezeigt. Es wird eine Sammlung verwendet, um die Produktinformationen an einem Ort zu speichern, auf den später verwiesen werden kann, um zu bestätigen, dass die lokale Erfüllung erfolgreich war.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="GrantFeatureLocally":::
 
 Im folgenden Beispiel wird die Verwendung des Arrays aus dem vorhergehenden Beispiel gezeigt, um auf Produkt-ID/Transaktions-ID-Paare zuzugreifen, die später beim Melden der Erfüllung an den Store verwendet werden.
 
@@ -53,7 +53,7 @@ Im folgenden Beispiel wird die Verwendung des Arrays aus dem vorhergehenden Beis
 > Je nachdem, welche Methodik Ihre APP zum Nachverfolgen und bestätigen der Erfüllung verwendet, muss Ihre APP eine Due-Sorgfalt vorweisen, um sicherzustellen, dass ihren Kunden keine Gebühren für nicht erhaltene Elemente berechnet werden.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="IsLocallyFulfilled":::
 
 ## <a name="step-3-reporting-product-fulfillment-to-the-store"></a>Schritt 3: Melden der Produkterfüllung an den Store
 
@@ -63,7 +63,7 @@ Nachdem die lokale Erfüllung abgeschlossen wurde, muss Ihre App einen [ReportCo
 > Wenn Sie nicht mit dem Bericht erfüllte nutzbare in-App-Produkte im Geschäft melden, kann der Benutzer dieses Produkt erst wieder kaufen, wenn die Ausführung des vorherigen Kaufs gemeldet wird.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="ReportFulfillment":::
 
 ## <a name="step-4-identifying-unfulfilled-purchases"></a>Schritt 4: Identifizieren nicht erfüllter Käufe
 
@@ -72,9 +72,9 @@ Ihre App kann jederzeit mithilfe der [GetUnfulfilledConsumablesAsync](/uwp/api/w
 Im folgenden Beispiel wird gezeigt, auf welche Weise [GetUnfulfilledConsumablesAsync](/uwp/api/windows.applicationmodel.store.currentapp.getunfulfilledconsumablesasync) verwendet werden kann, um nicht erfüllte Käufe konsumierbarer Produkte aufzuzählen, und wie Ihre App diese Liste iterieren kann, um die lokale Erfüllung abzuschließen.
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="GetUnfulfilledConsumables":::
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Unterstützen des Kaufs von In-App-Produkten](enable-in-app-product-purchases.md)
 * [Store-Beispiel (zeigt Testversionen und In-App-Käufe)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)

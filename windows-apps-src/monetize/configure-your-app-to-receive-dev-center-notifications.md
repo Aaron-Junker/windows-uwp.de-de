@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, gezielte Pushbenachrichtigungen, Partner Center
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: d6a420befac980574cf64e8a599d122df4c99ef4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: abb901c1b067dcf3609cbfb5c4cf3f81c9dc465c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155654"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364133"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>Konfigurieren der App für benutzerorientierte Pushbenachrichtigungen
 
@@ -36,19 +36,19 @@ So registrieren Sie Ihre APP für den Empfang gezielter Pushbenachrichtigungen v
 1. Suchen Sie in Ihrem Projekt einen Code Abschnitt, der während des Starts ausgeführt wird, in dem Sie Ihre APP registrieren können, um Benachrichtigungen zu empfangen.
 2. Fügen Sie zu Beginn der Codedatei die folgende Anweisung ein:
 
-    [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#EngagementNamespace)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="EngagementNamespace":::
 
 3. Rufen Sie ein [StoreServicesEngagementManager](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)-Objekt ab, und rufen Sie eine der [RegisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)-Überladungen in dem zuvor identifizierten Startcode auf. Diese Methode sollte bei jedem Start Ihrer App aufgerufen werden.
 
   * Wenn Partner Center einen eigenen Kanal-URI für die Benachrichtigungen erstellen soll, rufen Sie die Überladung [registernotificationchannelasync ()](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) auf.
 
-      [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
+      :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="RegisterNotificationChannelAsync1":::
       > [!IMPORTANT]
       > Wenn Ihre APP auch " [foratepushnotificationchannelforapplicationasync](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) " aufruft, um einen Benachrichtigungs Kanal für WNS zu erstellen, müssen Sie sicherstellen, dass der Code nicht " [foratepushnotificationchannelforapplicationasync](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) " aufruft und die [registernotificationchannelasync ()](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) -Überladung gleichzeitig ausgeführt wird. Wenn Sie beide Methoden aufrufen müssen, stellen Sie sicher, dass Sie sie nacheinander aufrufen und dass die Rückgabe einer der Methoden abgewartet wird, bevor die andere aufgerufen wird.
 
   * Wenn Sie den Kanal-URI angeben möchten, der für gezielte Pushbenachrichtigungen von Partner Center verwendet werden soll, müssen Sie die Überladung [registernotificationchannelasync (storeservicesnotificationchannelparameters)](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) aufrufen. Sie sollten dies beispielsweise tun, wenn Ihre App den Windows-Pushbenachrichtigungsdienst (WNS) bereits verwendet und Sie dieselbe Kanal-URI verwenden möchten. Erstellen Sie zuerst ein [StoreServicesNotificationChannelParameters](/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters)-Objekt, und weisen Sie die [CustomNotificationChannelUri](/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri)-Eigenschaft dem Kanal-URI zu.
 
-      [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
+      :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="RegisterNotificationChannelAsync2":::
 
 > [!NOTE]
 > Wenn Sie die **registernotificationchannelasync** -Methode aufrufen, wird eine Datei mit dem Namen MicrosoftStoreEngagementSDKId.txt im lokalen app-Datenspeicher für Ihre APP erstellt (der Ordner, der von der [ApplicationData. localfolder](/uwp/api/Windows.Storage.ApplicationData.LocalFolder) -Eigenschaft zurückgegeben wird). Diese Datei enthält eine ID, die von der Ziel Infrastruktur für Pushbenachrichtigungen verwendet wird. Stellen Sie sicher, dass diese Datei von Ihrer APP nicht geändert oder gelöscht wird. Andernfalls erhalten die Benutzer möglicherweise mehrere Instanzen von Benachrichtigungen, oder die Benachrichtigungen Verhalten sich auf andere Weise nicht ordnungsgemäß.
@@ -81,11 +81,11 @@ Die Art und Weise, wie diese Methode aufgerufen wird, hängt vom Aktivierungs Ty
 
 * Hat die Pushbenachrichtigung einen Vordergrund-Aktivierungstyp, rufen Sie diese Methode aus der [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)-Methodenüberschreibung in Ihrer App auf, und übergeben Sie die Argumente, die im [ToastNotificationActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)-Objekt verfügbar sind, an das Objekt, das an diese Methode übergeben wird. Im folgenden Codebeispiel wird davon ausgegangen, dass Ihre Codedatei **using**-Anweisungen für die Namespaces **Microsoft.Services.Store.Engagement** und **Windows.ApplicationModel.Activation** enthält.
 
-  [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/App.xaml.cs#OnActivated)]
+  :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/App.xaml.cs" id="OnActivated":::
 
 * Wenn die Pushbenachrichtigung einen Hintergrundaktivierungstyp hat, rufen Sie diese Methode aus der [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)-Methode für Ihre [Hintergrundaufgabe](../launch-resume/support-your-app-with-background-tasks.md) auf, und übergeben Sie die Argumente, die im [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail)-Objekt verfügbar sind, das an diese Methode übergeben wird. Im folgenden Codebeispiel wird davon ausgegangen, dass Ihre Codedatei **using**-Anweisungen für die Namespaces **Microsoft.Services.Store.Engagement**, **Windows.ApplicationModel.Background** und **Windows.UI.Notifications** enthält.
 
-  [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#Run)]
+  :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 
 <span id="unregister" />
 
@@ -93,11 +93,11 @@ Die Art und Weise, wie diese Methode aufgerufen wird, hängt vom Aktivierungs Ty
 
 Wenn Sie möchten, dass Ihre APP keine gezielten Pushbenachrichtigungen mehr von Partner Center empfängt, können Sie die [unregisternotificationchannelasync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) -Methode aufrufen.
 
-[!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="UnregisterNotificationChannelAsync":::
 
 Beachten Sie, dass diese Methode den Kanal, der für Benachrichtigungen verwendet wird, ungültig macht, damit die App keine Pushbenachrichtigungen *irgendwelcher* Dienste mehr empfängt. Nachdem Sie geschlossen wurde, kann der Kanal für keine Dienste erneut verwendet werden, einschließlich gezielter Pushbenachrichtigungen aus Partner Center und anderen Benachrichtigungen mithilfe von WNS. Damit wieder Pushbenachrichtigungen an diese App gesendet werden können, muss die App einen neuen Kanal anfragen.
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Senden von Pushbenachrichtigungen an die Kunden Ihrer App](../publish/send-push-notifications-to-your-apps-customers.md)
 * [Übersicht über die Windows-Pushbenachrichtigungsdienste (Windows Push Notification Services, WNS)](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
