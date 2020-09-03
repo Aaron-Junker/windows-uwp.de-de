@@ -1,17 +1,17 @@
 ---
-Description: Erfahren Sie, wie App-Pakete für Ihre Kunden verfügbar gemacht werden und bestimmte Paketszenarien verwaltet werden.
+description: Erfahren Sie, wie App-Pakete für Ihre Kunden verfügbar gemacht werden und bestimmte Paketszenarien verwaltet werden.
 title: Leitfaden für die App-Paketverwaltung
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ecd8cc96196c31615eac032183956de3bee9e4b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6035f5f21cd1b704415193c393ae0637d3e5dc37
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171054"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411974"
 ---
 # <a name="guidance-for-app-package-management"></a>Leitfaden für die App-Paketverwaltung
 
@@ -49,15 +49,13 @@ Nachdem Sie die APP nicht verfügbar gemacht haben, wird Sie weiterhin im Partne
 > [!NOTE]
 > Wenn Sie möchten, dass Ihre app verfügbar ist, Sie aber nicht weiter für neue Kunden mit einer bestimmten Betriebssystemversion anbieten möchten, können Sie eine neue Übermittlung erstellen und alle Pakete für die Betriebssystemversion entfernen, auf der Sie neue Akquisitionen verhindern möchten. Wenn Sie z. b. bereits Pakete für Windows Phone 8,1 und Windows 10 hatten und die APP den neuen Kunden auf Windows Phone 8,1 nicht weiter anbieten möchten, entfernen Sie alle Ihre Windows Phone 8,1-Pakete aus der Übermittlung. Nachdem das Update veröffentlicht wurde, können keine neuen Kunden auf Windows Phone 8,1 die APP erwerben, auch wenn Kunden, die Sie bereits besitzen, Sie weiterhin verwenden können. Die APP steht jedoch weiterhin für neue Kunden unter Windows 10 zur Verfügung.
 
-
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>Entfernen von Paketen für eine zuvor unterstützte Gerätefamilie
 
-Wenn Sie alle Pakete für eine bestimmte [Gerätefamilie](/uwp/extension-sdks/device-families-overview) entfernen, die zuvor von ihrer App unterstützt wurde, werden Sie aufgefordert, zu bestätigen, dass dies beabsichtigt ist, bevor Sie die Änderungen auf der Seite " **Pakete** " speichern können.
+Wenn Sie alle Pakete für eine bestimmte Gerätefamilie entfernen (siehe [Programmieren mit Erweiterungs-sdten](/uwp/extension-sdks/device-families-overview)), die Ihre APP zuvor unterstützt hat, werden Sie aufgefordert, zu bestätigen, dass dies beabsichtigt ist, bevor Sie Ihre Änderungen auf der Seite " **Pakete** " speichern können.
 
 Wenn Sie eine Übermittlung veröffentlichen, mit der alle Pakete entfernt werden, die auf einer Gerätefamilie ausgeführt werden können, die von Ihrer APP zuvor unterstützt wurde, können neue Kunden die APP nicht mehr auf dieser Gerätefamilie erwerben. Sie können jederzeit ein weiteres Update veröffentlichen, um erneut Pakete für diese Gerätefamilie anzubieten.
 
 Hinweis: Auch wenn Sie alle Pakete entfernen, die eine bestimmte Gerätefamilie unterstützen, können vorhandene Kunden, die die App auf diesem Gerätetyp bereits installiert haben, diese weiterhin verwenden und erhalten alle Updates, die Sie später zur Verfügung stellen.
-
 
 <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
 

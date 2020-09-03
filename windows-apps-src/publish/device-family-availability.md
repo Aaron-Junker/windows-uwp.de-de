@@ -1,16 +1,16 @@
 ---
-Description: Nachdem Ihre Pakete erfolgreich hochgeladen wurden, wird eine Tabelle angezeigt, in der angegeben wird, welche Pakete bestimmten Windows 10-Gerätefamilien (und ggf. früheren Betriebssystemversionen) in Rangfolge angeboten werden.
+description: Nachdem Ihre Pakete erfolgreich hochgeladen wurden, wird eine Tabelle angezeigt, in der angegeben wird, welche Pakete bestimmten Windows 10-Gerätefamilien (und ggf. früheren Betriebssystemversionen) in Rangfolge angeboten werden.
 title: Verfügbarkeit von Gerätefamilien
 ms.date: 03/21/2019
 ms.topic: article
 keywords: Windows 10, UWP, Pakete, Upload, Verfügbarkeit der Gerätefamilie
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b30b5805ffaf0cd591147bcfed9744b64afdb7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 48cbb0fd9ecf27c9926d55e22abc17d039d3674b
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161974"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411964"
 ---
 # <a name="device-family-availability"></a>Verfügbarkeit von Gerätefamilien
 
@@ -55,7 +55,7 @@ Wenn Ihre Übermittlung für eine zuvor veröffentlichte App Pakete enthält, di
 
 Es ist wichtig zu wissen, dass die im Abschnitt zur **Verfügbarkeit der Gerätefamilie** vorgetroffene Auswahl nur auf neue Akquisitionen anwendbar ist. Jede Person, die Ihre APP bereits verwendet, kann Sie weiterhin verwenden und erhält alle von Ihnen übermittelten Updates, auch wenn Sie Ihre Gerätefamilie hier entfernen. Dies gilt auch für Kunden, die Ihre App vor dem Upgrade auf Windows 10 erworben haben. Wenn Sie z. b. über eine veröffentlichte App mit Windows Phone 8,1-Paketen verfügen und ein Windows 10-Paket (UWP) für die Windows. Universal-Gerätefamilie hinzufügen, wird Windows 10 Mobile-Kunden mit Ihrem Windows Phone 8,1-Paket ein Update für dieses Windows 10-Paket (UWP) angeboten, auch wenn Sie das Kontrollkästchen für **Windows 10 Mobile**deaktiviert haben.
 
-Weitere Informationen zu Gerätefamilien finden Sie unter [**Übersicht über Gerätefamilien**](/uwp/extension-sdks/device-families-overview).
+Weitere Informationen zu Gerätefamilien finden Sie unter [Programmieren mit Erweiterungs-sdert](/uwp/extension-sdks/device-families-overview).
 
 
 ## <a name="understanding-ranking"></a>Grundlegendes zur Bewertung

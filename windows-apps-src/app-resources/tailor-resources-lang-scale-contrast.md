@@ -1,17 +1,17 @@
 ---
-Description: In diesem Thema wird das allgemeine Konzept von Qualifizierern, deren Verwendung und der Zweck der einzelnen Qualifizierernamen erläutert.
+description: In diesem Thema wird das allgemeine Konzept von Qualifizierern, deren Verwendung und der Zweck der einzelnen Qualifizierernamen erläutert.
 title: Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Ressourcen, Bild, Element, MRT, Qualifizierer
 ms.localizationpriority: medium
-ms.openlocfilehash: 3678d525fa00df07408b9d85af34a3dd825b4fcf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 59f0b636384ba133e985f0704e2033c1acc5f15e
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161334"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412014"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und anderen Qualifizierern
 
@@ -193,7 +193,7 @@ Es ist unwahrscheinlich, dass Sie den `dxfeaturelevel` Qualifizierernamen benöt
 
 Der `homeregion` Qualifizierer entspricht der Einstellung des Benutzers für Land oder Region. Es stellt den Start Speicherort des Benutzers dar. Zu den Werten gehören alle gültigen [bcp-47-Regions Tags](https://tools.ietf.org/html/bcp47). Das heißt, alle **ISO 3166-1 Alpha-2** aus zwei Buchstaben bestehenden Regions Codes sowie der Satz von **ISO 3166-1 numerischen** dreistelligen geografischen Codes für zusammengesetzte Regionen (siehe [United Nations Statistic Division M49 Composition of Region Codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)). Die Codes für "ausgewählte wirtschaftliche und andere Gruppierungen" sind ungültig.
 
-## <a name="language"></a>Language
+## <a name="language"></a>Sprache
 
 Ein `language` Qualifizierer entspricht der Einstellung der Anzeige Sprache. Zu den Werten gehören alle gültigen [bcp-47-Sprachtags](https://tools.ietf.org/html/bcp47). Eine Liste der Sprachen finden Sie in der [IANA Language Tags-Registrierung](https://www.iana.org/assignments/language-subtag-registry).
 
@@ -280,13 +280,13 @@ Aus Gründen der Abwärtskompatibilität enthält Windows Logik, um ein Mono-Sym
 * [Resourcecontext. qualifiervalues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [Setglobalqualifiervalue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
-## <a name="related-topics"></a>Zugehörige Themen
+## <a name="related-topics"></a>Verwandte Themen
 
 * [Effektive Pixel und Skalierungsfaktor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Ressourcenverwaltungssystem](resource-management-system.md)
 * [Vorbereiten der Lokalisierung](/previous-versions/windows/apps/hh967762(v=win.10))
 * [Erkennen der Plattform, auf der Ihre App ausgeführt wird](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Übersicht über Gerätefamilien](/uwp/extension-sdks/device-families-overview)
+* [Programmieren mit Erweiterungs-sdert](/uwp/extension-sdks/device-families-overview)
 * [Lokalisieren von UI-Zeichen folgen](localize-strings-ui-manifest.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
 * [Statistik Division der Vereinten Nationen M49 Komposition von Regions Codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

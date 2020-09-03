@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP, Bildschirmaufnahme
 ms.localizationpriority: medium
-ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
-ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
+ms.openlocfilehash: 96b8c52d8c1c6b6947b7b151df0b1b8bbfe42869
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89310071"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411924"
 ---
 # <a name="screen-capture"></a>Bildschirmaufnahme
 
@@ -688,9 +688,9 @@ End Class
 
 ## <a name="record-a-video"></a>Aufzeichnen eines Videos
 
-Wenn Sie ein Video zu Ihrer Anwendung aufzeichnen möchten, können Sie die exemplarische Vorgehensweise befolgen, die im Artikel [Bildschirmaufnahme in Video zu Video](screen-capture-video.md). Oder Sie können den [Windows. Media. apprecording-Namespace](/uwp/api/windows.media.apprecording)verwenden. Diese Funktion ist Teil des Desktop Erweiterungs-SDKs, funktioniert daher nur auf dem Desktop und erfordert, dass Sie einen Verweis darauf aus dem Projekt hinzufügen. Weitere Informationen finden Sie unter [Übersicht über Gerätefamilien](/uwp/extension-sdks/device-families-overview) .
+Wenn Sie ein Video zu Ihrer Anwendung aufzeichnen möchten, können Sie die exemplarische Vorgehensweise befolgen, die im Artikel [Bildschirmaufnahme in Video zu Video](screen-capture-video.md). Oder Sie können den [Windows. Media. apprecording-Namespace](/uwp/api/windows.media.apprecording)verwenden. Diese Funktion ist Teil des Desktop Erweiterungs-SDKs, funktioniert daher nur auf dem Desktop und erfordert, dass Sie einen Verweis darauf aus dem Projekt hinzufügen. Weitere Informationen finden Sie [unter Programmieren mit Erweiterungs-sdert](/uwp/extension-sdks/device-families-overview) .
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 * [Windows. Graphics. Capture-Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
 * [Bildschirmaufnahme zu Video](screen-capture-video.md)
