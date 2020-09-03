@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, Winrt, COM, Komponente, Klasse, Schnittstelle
 ms.localizationpriority: medium
-ms.openlocfilehash: d5fae09192262b63b11175bf08e7a2c522b31abd
-ms.sourcegitcommit: 82d441e3b9da920cf860fad6b59d6b848466c90f
+ms.openlocfilehash: 6ccd196b2cd571cc66523b34427ca17acd73388a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84271879"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170344"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>Verwenden von COM-Komponenten mit C++/WinRT
 
-Sie können die Möglichkeiten der [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Bibliothek verwenden, um COM-Komponenten zu nutzen, beispielsweise die sehr leistungsfähige 2D- und 3D-Grafik der DirectX-APIs. C++/WinRT ist die einfachste Möglichkeit, DirectX ohne Beeinträchtigung der Leistung zu verwenden. In diesem Thema wird anhand eines Direct2D-Codebeispiels verdeutlicht, wie Sie C++/WinRT für die Nutzung von COM-Klassen und -Schnittstellen verwenden. Sie können natürlich COM- und Windows-Runtimeprogrammierung gemischt innerhalb des gleichen C++/WinRT-Projekts verwenden.
+Sie können die Möglichkeiten der [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-Bibliothek verwenden, um COM-Komponenten zu nutzen, beispielsweise die sehr leistungsfähige 2D- und 3D-Grafik der DirectX-APIs. C++/WinRT ist die einfachste Möglichkeit, DirectX ohne Beeinträchtigung der Leistung zu verwenden. In diesem Thema wird anhand eines Direct2D-Codebeispiels verdeutlicht, wie Sie C++/WinRT für die Nutzung von COM-Klassen und -Schnittstellen verwenden. Sie können natürlich COM- und Windows-Runtimeprogrammierung gemischt innerhalb des gleichen C++/WinRT-Projekts verwenden.
 
 Am Ende dieses Themas finden Sie eine vollständige Quellcodeauflistung für eine minimale Direct2D-Anwendung. Wir greifen Ausschnitte aus diesem Code heraus und verwenden sie, um das Nutzen von COM-Komponenten mithilfe von C++/WinRT unter Verwendung verschiedener Möglichkeiten der C++/WinRT-Bibliothek zu veranschaulichen.
 
@@ -131,9 +131,9 @@ Sie können [**com_ptr::get**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-functio
 
 Sie können die freie Funktion [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) verwenden, um die Adresse der zugrunde liegenden Rohdaten-[IUnknown-Schnittstelle](/windows/win32/api/unknwn/nn-unknwn-iunknown) eines Objekts eines projektierten Typs (mit anderen Worten, einen Zeiger darauf) zurückzugeben. Sie können diese Adresse dann an eine Funktion übergeben, die einen **IUnknown-** -Schnittstellenzeiger annimmt.
 
-Informationen zu *projizierten Typen* finden Sie unter [Verwenden von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+Informationen zu *projizierten Typen* finden Sie unter [Verwenden von APIs mit C++/WinRT](./consume-apis.md).
 
-Ein Codebeispiel für **get_unknown** finden Sie unter [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) oder unter [Vollständige Quellcodeauflistung einer minimalen Direct2D-Anwendung](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) in diesem Thema.
+Ein Codebeispiel für **get_unknown** finden Sie unter [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) oder unter [Vollständige Quellcodeauflistung einer minimalen Direct2D-Anwendung](#full-source-code-listing-of-a-minimal-direct2d-application) in diesem Thema.
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>Übergabe und Rückgabe von intelligenten COM-Zeigern
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, Windows 10, Microsoft, Erlernen von NodeJS, Node unter Windows, Node unter Windows für Anfänger, Entwickeln mit Node unter Windows, Entwickler mit Node.js unter Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: d40d701dc3ae973e0834d0b329527e69854b9e36
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 5737316ae2de0520e5443f69cefaec25679a228f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492865"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166634"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>Erste Schritte bei der Verwendung von Node.js unter Windows für Anfänger
 
@@ -148,5 +148,5 @@ Wir verwenden das integrierte BS-Modul, um einige Informationen zum Betriebssyst
 In dieser Anleitung hast du einige grundlegende Informationen zu den Möglichkeiten von Node.js kennengelernt. Du hast die Verwendung der Node.js-Befehlszeile in VS Code ausprobiert, mit Express.js eine einfache Web-App erstellt und diese lokal in deinem Webbrowser ausgeführt und dann einige der integrierten Node.js-Module ausprobiert. Weitere Informationen zum Installieren und Verwenden einiger gängiger Node.js-Webframeworks findest du in der nächsten Anleitung zu Next.js (ein auf dem Server gerendertes Webframework auf der Grundlage von React), Nuxt.js (ein auf dem Server gerendertes Webframework auf der Grundlage von Vue) und Gatsby (ein statisch gerendertes Webframework auf der Grundlage von React). Du kannst auch direkt mit der Verwendung von MongoDB- oder PostgreSQL-Datenbanken oder Docker-Containern fortfahren.
 
 - [Erste Schritte mit Node.js-Webframeworks unter Windows](./web-frameworks.md)
-- [Erste Schritte beim Verbinden von Node.js-Apps mit einer Datenbank](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
+- [Erste Schritte beim Verbinden von Node.js-Apps mit einer Datenbank](/windows/wsl/tutorials/wsl-database)
 - [Erste Schritte bei der Verwendung von Docker-Containern mit Node.js](./containers.md)

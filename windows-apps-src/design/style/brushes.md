@@ -6,12 +6,12 @@ ms.date: 04/28/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 350b07e96d95b043116f2eb8029a2352360c50d6
-ms.sourcegitcommit: 490b563462853f10f14825f2358e4852ee1011fb
+ms.openlocfilehash: 9e70c76f3ed659a46dd9834442049849dd3b7761
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82633000"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175524"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>Verwenden von Pinseln zum Zeichnen von Vor- und Hintergründen sowie Rändern
 
@@ -50,7 +50,7 @@ In diesem Beispiel wird die [**Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fil
 
 *Auf ein Rechteck angewendeter SolidColorBrush*
 
-Wenn Sie einen [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) mit Code anstatt mit XAML definieren, sind die einzelnen benannten Farben als statische Eigenschaftswerte der [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors)-Klasse verfügbar. Wenn Sie z. B. einen [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color)-Wert eines **SolidColorBrush** zum Darstellen der benannten Farbe „Orchid“ deklarieren möchten, legen Sie den **Color**-Wert auf den statischen Wert [**Colors.Orchid**](/uwp/api/windows.ui.colors.orchid) fest.
+Wenn Sie einen [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) mit Code anstatt mit XAML definieren, sind die einzelnen benannten Farben als statische Eigenschaftswerte der [**Colors**](/uwp/api/windows.ui.colors)-Klasse verfügbar. Wenn Sie z. B. einen [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color)-Wert eines **SolidColorBrush** zum Darstellen der benannten Farbe „Orchid“ deklarieren möchten, legen Sie den **Color**-Wert auf den statischen Wert [**Colors.Orchid**](/uwp/api/windows.ui.colors.orchid) fest.
 
 ### <a name="hexadecimal-color-values"></a>Hexadezimale Farbwerte
 
@@ -66,7 +66,7 @@ In diesem XAML-Beispiel wird die [**Fill**](/uwp/api/windows.ui.xaml.shapes.shap
 
 ### <a name="property-element-syntax"></a>Syntax für Eigenschaftselemente
 
-Mithilfe der Syntax für Eigenschaftselemente können Sie einen [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) definieren. Diese Syntax ist ausführlicher als die zuvor gezeigten Methoden, und Sie können zusätzliche Eigenschaftswerte für ein Element angeben, wie z. B. die [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) des Pinsels. Weitere Informationen zur XAML-Syntax, einschließlich der Syntax für Eigenschaftselemente, finden Sie in der [XAML-Übersicht](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview) und der [Anleitung zur XAML-Syntax](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-syntax-guide).
+Mithilfe der Syntax für Eigenschaftselemente können Sie einen [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) definieren. Diese Syntax ist ausführlicher als die zuvor gezeigten Methoden, und Sie können zusätzliche Eigenschaftswerte für ein Element angeben, wie z. B. die [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) des Pinsels. Weitere Informationen zur XAML-Syntax, einschließlich der Syntax für Eigenschaftselemente, finden Sie in der [XAML-Übersicht](../../xaml-platform/xaml-overview.md) und der [Anleitung zur XAML-Syntax](../../xaml-platform/xaml-syntax-guide.md).
 
 In den voranstehenden Beispielen wird der erstellte Pinsel implizit und automatisch erstellt und ist Teil einer durchdachten Kurzschrift der XAML-Sprache, mit der die UI-Definitionen für die am häufigsten Anwendungsfälle unkompliziert gehalten werden. Im nächsten Beispiel werden ein [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) und dann explizit der [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) als Elementwert für eine [**Rectangle.Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill)-Eigenschaft erstellt. Die [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) von **SolidColorBrush** wird auf [**Blue**](/uwp/api/windows.ui.colors.blue) und die [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) auf 0,5 festgelegt.
 
@@ -184,7 +184,7 @@ Im nächsten Beispiel wird ein [**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.I
 
 *Ein gerenderter ImageBrush*
 
-[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) und [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) verweisen beide mit einem URI (Uniform Resource Identifier) auf eine Bildquelldatei. Die Bildquelldatei liegt dabei in verschiedenen Formaten vor. Diese Bildquelldateien werden als URIs angegeben. Weitere Informationen zum Angeben von Bildquellen, zu den verwendbaren Bildformaten und zum Packen dieser Dateien in einer App finden Sie unter [„Image“ und „ImageBrush“](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes).
+[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) und [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) verweisen beide mit einem URI (Uniform Resource Identifier) auf eine Bildquelldatei. Die Bildquelldatei liegt dabei in verschiedenen Formaten vor. Diese Bildquelldateien werden als URIs angegeben. Weitere Informationen zum Angeben von Bildquellen, zu den verwendbaren Bildformaten und zum Packen dieser Dateien in einer App finden Sie unter [„Image“ und „ImageBrush“](../controls-and-patterns/images-imagebrushes.md).
 
 ## <a name="brushes-and-text"></a>Pinsel und Text
 
@@ -198,9 +198,9 @@ Bei einem [**WebViewBrush**](/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush) han
 
 ## <a name="xamlcompositionbrushbase"></a>XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) ist eine Basisklasse zum Erstellen benutzerdefinierter Pinsel, die [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) verwenden, um XAML-UI Elemente zu zeichnen.
+[**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) ist eine Basisklasse zum Erstellen benutzerdefinierter Pinsel, die [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) verwenden, um XAML-UI Elemente zu zeichnen.
 
-Dies ermöglicht die „Dropdown”-Interoperabilität zwischen den Ebenen „Windows.UI.Xaml“ und „Windows.UI.Composition“, wie in der [**Übersicht über die visuelle Ebene**](/windows/uwp/composition/visual-layer) beschrieben. 
+Dies ermöglicht die „Dropdown”-Interoperabilität zwischen den Ebenen „Windows.UI.Xaml“ und „Windows.UI.Composition“, wie in der [**Übersicht über die visuelle Ebene**](../../composition/visual-layer.md) beschrieben. 
 
 Zum Erstellen eines benutzerdefinierten Pinsels erstellen Sie eine neue Klasse, die von „XamlCompositionBrushBase“ erbt und die erforderlichen Methoden implementiert.
 
@@ -243,7 +243,3 @@ Codebeispiele finden Sie unter [**WebViewBrush**](/uwp/api/Windows.UI.Xaml.Contr
  
 
  
-
-
-
-

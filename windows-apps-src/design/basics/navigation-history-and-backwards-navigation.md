@@ -7,16 +7,16 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 705b0ecb474c0bb821c3a21f4b8b66073984827f
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: fe9cbb9fdc9d73a38642a4f5894b1ef0f8182e69
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469575"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174514"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Navigationsverlauf und Rückwärtsnavigation für Windows-Apps
 
-> **Wichtige APIs:** [BackRequested-Ereignis](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **Wichtige APIs:** [BackRequested-Ereignis](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested), [SystemNavigationManager-Klasse](/uwp/api/Windows.UI.Core.SystemNavigationManager), [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 Die Windows-App enthält ein einheitliches System zur Rückwärtsnavigation, mit dem der Navigationsverlauf des Benutzers innerhalb einer App und je nach Gerät von App zu App durchlaufen werden kann.
 
@@ -74,7 +74,7 @@ Um UI-Elemente zu minimieren, die sich in Ihrer App bewegen, zeigen Sie eine dea
 
 ## <a name="code-example"></a>Codebeispiel
 
-Das folgende Codebeispiel demonstriert, wie man das Rückwärtsnavigationsverhalten mit einer Zurück-Schaltfläche implementiert. Der Code reagiert auf das Button-Ereignis [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) und deaktiviert/aktiviert die Sichtbarkeit der Schaltfläche in [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), das beim Navigieren zu einer neuen Seite aufgerufen wird. Das Codebeispiel behandelt auch Eingaben von Hardware- und Softwaresystem-Zurück-Schaltflächen, indem es einen Listener für das [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)-Ereignis registriert.
+Das folgende Codebeispiel demonstriert, wie man das Rückwärtsnavigationsverhalten mit einer Zurück-Schaltfläche implementiert. Der Code reagiert auf das Button-Ereignis [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) und deaktiviert/aktiviert die Sichtbarkeit der Schaltfläche in [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), das beim Navigieren zu einer neuen Seite aufgerufen wird. Das Codebeispiel behandelt auch Eingaben von Hardware- und Softwaresystem-Zurück-Schaltflächen, indem es einen Listener für das [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)-Ereignis registriert.
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -194,7 +194,7 @@ namespace winrt::PageNavTest::implementation
 
 Oben behandeln wir die Rückwärtsnavigation für eine einzelne Seite. Sie können die Navigation auf jeder Seite behandeln, wenn Sie bestimmte Seiten aus der Rückwärtsnavigation ausschließen oder vor dem Anzeigen der Seite Seitenebenencode ausführen möchten.
 
-Um die Rückwärtsnavigation für eine gesamte App zu behandeln, müssen Sie einen globalen Listener für das [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)-Ereignis in der CodeBehind-Datei `App.xaml` registrieren.
+Um die Rückwärtsnavigation für eine gesamte App zu behandeln, müssen Sie einen globalen Listener für das [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)-Ereignis in der CodeBehind-Datei `App.xaml` registrieren.
 
 App.xaml CodeBehind:
 
@@ -307,9 +307,9 @@ Die oben aufgeführten Codebeispiele zeigen, wie diese Eingaben behandelt werden
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>System-Rückwärtsverhalten für Rückwärtskompatibilitäten
 
-Bisher nutzten UWP-Apps [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) für die Rückwärtsnavigation. Die API wird aus Gründen der Abwärtskompatibilität weiterhin unterstützt, es wird jedoch davon abgeraten, sich auf die [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) zu verlassen. Stattdessen sollte Ihre App eine eigene Zurück-Schaltfläche in der App darstellen.
+Bisher nutzten UWP-Apps [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) für die Rückwärtsnavigation. Die API wird aus Gründen der Abwärtskompatibilität weiterhin unterstützt, es wird jedoch davon abgeraten, sich auf die [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) zu verlassen. Stattdessen sollte Ihre App eine eigene Zurück-Schaltfläche in der App darstellen.
 
-Wenn Ihre App weiterhin [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) verwendet, rendert die System-UI die Zurück-Schaltfläche des Systems in der Titelleiste. (Darstellung und Benutzerinteraktionen der Zurück-Schaltfläche bleiben gegenüber früheren Builds unverändert.)
+Wenn Ihre App weiterhin [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) verwendet, rendert die System-UI die Zurück-Schaltfläche des Systems in der Titelleiste. (Darstellung und Benutzerinteraktionen der Zurück-Schaltfläche bleiben gegenüber früheren Builds unverändert.)
 
 ![Zurück-Schaltfläche in der Titelleiste](images/nav-back-pc.png)
 

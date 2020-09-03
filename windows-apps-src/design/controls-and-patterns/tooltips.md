@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 621b687e54cfba55bfd176d4fe0072e47cf79183
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: 1635f1aa808355c246be96706400e384da8a9777
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437148"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175564"
 ---
 # <a name="tooltips"></a>QuickInfos
 
@@ -29,9 +29,9 @@ Eine QuickInfo ist eine kurze Beschreibung, die mit einem anderen Steuerelement 
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). „WinUI“ ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Plattform-APIs:** [ToolTip-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+> **Plattform-APIs:** [ToolTip-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService-Klasse](/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>Ist dies das richtige Steuerelement?
 
@@ -159,4 +159,4 @@ Wenn eine QuickInfo den Inhalt verdeckt, auf den sie sich bezieht, können Sie i
 
 ## <a name="related-articles"></a>Verwandte Artikel
 
-- [QuickInfo-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ToolTip)
+- [QuickInfo-Klasse](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)

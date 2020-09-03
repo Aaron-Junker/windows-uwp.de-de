@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 555459d427eae045d3cf7eda45a97ec806717380
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970625"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175514"
 ---
 # <a name="typography-in-windows-apps"></a>Typografie in Windows-Apps
 
@@ -106,7 +106,7 @@ Verwenden Sie „Header“ oder „Subheader“, wenn Text umgebrochen werden mu
 
 ## <a name="alignment"></a>Ausrichtung
 
-Standardmäßig ist das [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) links. In den meisten Fällen sorgt das Konzept „links bündig, rechts mit Flatterrand“ für eine konsistente Verankerung des Inhalts und für ein einheitliches Layout. Weitere Informationen für RTL-Sprachen finden Sie unter [Anpassen von Layout und Schriftarten zur Globalisierungsunterstützung](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
+Standardmäßig ist das [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) links. In den meisten Fällen sorgt das Konzept „links bündig, rechts mit Flatterrand“ für eine konsistente Verankerung des Inhalts und für ein einheitliches Layout. Weitere Informationen für RTL-Sprachen finden Sie unter [Anpassen von Layout und Schriftarten zur Globalisierungsunterstützung](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
 ![Zeigt linksbündigen Text.](images/type/alignment.svg)
 
@@ -152,7 +152,7 @@ Segoe UI ist unsere Schriftart für Englisch, für europäische Sprachen, Griech
 
 ### <a name="globalizinglocalizing-fonts"></a>Globalisierung/Lokalisierung von Schriftarten
 
-Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) für den programmgesteuerten Zugriff auf die Empfohlenen Einstellungen für Familie, Grad, Breite und Schnitt der Schriftart für eine spezielle Sprache. Das LanguageFont-Objekt ermöglicht den Zugriff auf die richtigen Schriftartinformationen für verschiedene Inhaltskategorien: UI-Kopfzeilen, Benachrichtigungen, Textkörper und Schriftarten für den Textkörper, die vom Benutzer bearbeitet werden können. Weitere Informationen finden Sie unter [Anpassen von Layout und Schriftarten zur Globalisierungsunterstützung](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
+Verwenden Sie die [LanguageFont-Schriftartenersetzungs-APIs](/uwp/api/Windows.Globalization.Fonts.LanguageFont) für den programmgesteuerten Zugriff auf die Empfohlenen Einstellungen für Familie, Grad, Breite und Schnitt der Schriftart für eine spezielle Sprache. Das LanguageFont-Objekt ermöglicht den Zugriff auf die richtigen Schriftartinformationen für verschiedene Inhaltskategorien: UI-Kopfzeilen, Benachrichtigungen, Textkörper und Schriftarten für den Textkörper, die vom Benutzer bearbeitet werden können. Weitere Informationen finden Sie unter [Anpassen von Layout und Schriftarten zur Globalisierungsunterstützung](../globalizing/adjust-layout-and-fonts--and-support-rtl.md).
 
 ### <a name="fonts-for-non-latin-languages"></a>Schriftarten für nicht lateinische Sprachen
 
@@ -340,4 +340,4 @@ Mit Serifenschriftarten lassen sich größere Textmengen gut darstellen.
 * [Textsteuerelemente](../controls-and-patterns/text-controls.md)
 * [XAML-Designressourcen](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML-Stile](../controls-and-patterns/xaml-styles.md)
-* [Microsoft Typografie](https://docs.microsoft.com/typography/)
+* [Microsoft Typografie](/typography/)

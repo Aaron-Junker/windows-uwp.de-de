@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bb01c76879bd00e10286ef429415cf4817315b7
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: 61334cc4d8d91347dac7fa477cc5d508ea8ab5d1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502410"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174484"
 ---
 # <a name="search-and-find-in-page"></a>Suche und „Auf Seite suchen“
 
@@ -24,7 +24,7 @@ ms.locfileid: "88502410"
 
 Die Suche ist eine der besten Möglichkeiten, um Inhalte in Ihrer App zu finden. In diesem Artikel werden Elemente der Suche sowie Suchbereiche, die Implementierung und Beispiele für die Suche im Kontext behandelt.
 
-> **Wichtige APIs:** [AutoSuggestBox-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
+> **Wichtige APIs:** [AutoSuggestBox-Klasse](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)
 
 ## <a name="elements-of-the-search-experience"></a>Elemente der Suche
 

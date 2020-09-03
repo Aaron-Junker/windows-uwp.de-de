@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, WinRT-API, Indexer, Suche
 localizationpriority: medium
-ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3103074e7d691897e9a8982a254ba36ee331a2b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66369265"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175394"
 ---
 # <a name="using-supplemental-properties"></a>Verwenden von Zusatzeigenschaften  
 
@@ -27,7 +27,7 @@ Benutzer können deutlich produktiver arbeiten, wenn sie die Möglichkeit erhalt
 Mehrere Jahrzehnte lang war der Indexer die Lösung für das schnelle Suchen unter Windows. Im Rahmen des Creators Update wurde er aktualisiert, um diese neuen Szenarien zu unterstützen. Apps können Dateien jetzt mit zusätzlichen Eigenschaften kennzeichnen, die über die vom System extrahierten Eigenschaften hinausgehen. Diese Eigenschaften werden vorrangig behandelt.  
 
 ## <a name="windows-properties"></a>Windows-Eigenschaften 
-Das [Windows-Eigenschaftensystem](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) war viele Jahre lang ein wichtiger Bestandteil der Interaktion mit Dateien. Es ermöglicht Apps das Lesen von Eigenschaften aus Dateien, ohne dass Informationen zu allen internen Merkmalen der unterschiedlichen Dateiformate oder Sprachen vorliegen müssen, die für eine Datei gelten können. All dies wird für dich als Entwickler abstrahiert, und du musst nur noch eine Liste anfordern und „Aufsteigend“ oder „Absteigend“ angeben.  
+Das [Windows-Eigenschaftensystem](/windows/desktop/properties/windows-properties-system) war viele Jahre lang ein wichtiger Bestandteil der Interaktion mit Dateien. Es ermöglicht Apps das Lesen von Eigenschaften aus Dateien, ohne dass Informationen zu allen internen Merkmalen der unterschiedlichen Dateiformate oder Sprachen vorliegen müssen, die für eine Datei gelten können. All dies wird für dich als Entwickler abstrahiert, und du musst nur noch eine Liste anfordern und „Aufsteigend“ oder „Absteigend“ angeben.  
 
 Das Eigenschaftensystem ist eng mit dem Indexer von Windows verknüpft. Es liest alle Eigenschaften aus den Dateien im jeweiligen Bereich aus und speichert sie. Wenn eine App später dann eine nach Änderungsdatum sortierte Liste mit allen DOCX-Dateien eines Ordners anfordert, die nicht von „John Smith“ erstellt wurden, kann diese Liste vom Indexer sofort zurückgegeben werden.  
 
@@ -158,4 +158,4 @@ Auch wenn dies für einige „Early Adopters“ ggf. ein interessantes Feature i
 ## <a name="conclusions"></a>Schlussfolgerung 
 Das ist alles. Zusatzeigenschaften stellen eine einfache Möglichkeit zum Speichern von mehr Dateieigenschaften im System dar. Die Nutzung ist natürlich optional, aber du kannst deiner App hiermit einen Vorteil gegenüber anderen Apps verschaffen, mit denen Daten nicht so schnell sortiert und durchsucht werden können. 
 
-Wir freuen uns auf den Einsatz dieser Eigenschaften in Apps. Falls du Fragen zur Verwendung des Headers hast, kannst du unten einen Kommentar eingeben. 
+Wir freuen uns auf den Einsatz dieser Eigenschaften in Apps. Falls du Fragen zur Verwendung des Headers hast, kannst du unten einen Kommentar eingeben.

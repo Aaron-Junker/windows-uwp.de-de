@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store für Unternehmen, Store für Bildungseinrichtungen, Unternehmenslizenzierung, Volumenlizenzierung, Unternehmen, Volumenkauf, Großauftrag
 localizationpriority: high
-ms.openlocfilehash: 880e472b9a6ed19bae85c00b4014b431e3185f61
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: f572a09c488cfff391fead603612148b6a85bc02
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81545020"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174744"
 ---
 # <a name="organizational-licensing-options"></a>Organisatorische Lizenzierungsoptionen
 
@@ -59,7 +59,7 @@ Standardmäßig ist das Kontrollkästchen **deaktiviert**. Du musst das Kontroll
 Aktuell können Entwicklerkonten in bestimmten Märkten Volumenkäufe kostenpflichtiger Apps über den Microsoft Store für Unternehmen anbieten. 
 
 > [!NOTE]
-> In einigen Märkten kann sich der Preis einer App im Microsoft Store für Unternehmen oder im Microsoft Store für Bildungseinrichtungen von dem Preis unterscheiden, der Einzelhandelskunden im Microsoft Store für das gleiche Preisniveau angezeigt wird. Die Auszahlung der Erlöse aus Unternehmenskäufen funktioniert genau wie die Auszahlung von Erlösen aus Verbraucherkäufen Ihrer App. Weitere Informationen finden Sie unter [Bezahlung](getting-paid-apps.md) und [Vereinbarung für App-Entwickler](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Eine Liste der Märkte, in denen Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen verfügbar sind, findest du unter [Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen – Übersicht](https://docs.microsoft.com/windows/manage/windows-store-for-business-overview#supported-markets).
+> In einigen Märkten kann sich der Preis einer App im Microsoft Store für Unternehmen oder im Microsoft Store für Bildungseinrichtungen von dem Preis unterscheiden, der Einzelhandelskunden im Microsoft Store für das gleiche Preisniveau angezeigt wird. Die Auszahlung der Erlöse aus Unternehmenskäufen funktioniert genau wie die Auszahlung von Erlösen aus Verbraucherkäufen Ihrer App. Weitere Informationen finden Sie unter [Bezahlung](getting-paid-apps.md) und [Vereinbarung für App-Entwickler](/legal/windows/agreements/app-developer-agreement). Eine Liste der Märkte, in denen Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen verfügbar sind, findest du unter [Microsoft Store für Unternehmen und Microsoft Store für Bildungseinrichtungen – Übersicht](/windows/manage/windows-store-for-business-overview#supported-markets).
 
 Sollte dein Land oder deine Region unten nicht aufgeführt sein, werden deine kostenpflichtigen Apps aktuell nicht im Microsoft Store für Unternehmen bzw. im Microsoft Store für Bildungseinrichtungen angeboten. In diesem Fall werden die Optionen für die Unternehmenslizenzierung, die du für deine kostenpflichtigen Apps festlegst, ggf. zu einem späteren Zeitpunkt angewendet, wenn die Unterstützung für Einreichungen aus weiteren Entwicklerkontomärkten hinzugefügt wird.
 

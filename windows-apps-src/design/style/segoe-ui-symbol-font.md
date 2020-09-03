@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c91053197cff231ec9fac85263b33306a3735ccd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0663f9947249f54a888bf2d3f52f522ceb885604
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82034214"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175784"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2-Symbole
 
@@ -22,7 +22,7 @@ ms.locfileid: "82034214"
 
 In diesem Artikel werden die Symbole der Schriftart Segoe MDL2 Assets aufgeführt. 
 
-> **Wichtige APIs:** [**Symbol-Enumeration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon-Klasse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **Wichtige APIs:** [**Symbol-Enumeration**](/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon-Klasse**](/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Informationen zu MDL2 Assets
 
@@ -43,13 +43,13 @@ Alle Glyphen in **Segoe MDL2 Assets** haben dieselbe feste Breite mit einer kons
 Viele der Symbole verfügen zudem über gespiegelte Formen, die in Sprachen verwendet werden können, in denen die Rechts-nach-Links-Ausrichtung verwendet wird, beispielsweise Arabisch, Dari, Persisch und Hebräisch.
 
 ## <a name="using-the-icons"></a>Verwenden der Symbole
-Wenn Sie eine App in C#/VB/C++ und XAML entwickeln, können Sie mithilfe der [Symbol-Enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol) bestimmte Glyphen der Schriftart Segoe MDL2 Assets verwenden. 
+Wenn Sie eine App in C#/VB/C++ und XAML entwickeln, können Sie mithilfe der [Symbol-Enumeration](/uwp/api/windows.ui.xaml.controls.symbol) bestimmte Glyphen der Schriftart Segoe MDL2 Assets verwenden. 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
 ```
 
-Wenn Sie eine Glyphe der Schriftart **Segoe MDL2 Assets** verwenden möchten, die nicht in der Symbol-Enumeration enthalten ist, verwenden Sie ein [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
+Wenn Sie eine Glyphe der Schriftart **Segoe MDL2 Assets** verwenden möchten, die nicht in der Symbol-Enumeration enthalten ist, verwenden Sie ein [**FontIcon**](/uwp/api/windows.ui.xaml.controls.fonticon).
 
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
@@ -5521,7 +5521,5 @@ Beachten Sie zudem, dass die Schriftart **Segoe MDL2-Ressourcen** viel mehr Symb
 ## <a name="related-articles"></a>Verwandte Artikel
 
 * [Richtlinien für Symbole](../style/icons.md)
-* [Symbol-Enumeration](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Symbol)
-* [FontIcon-Klasse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
-
-
+* [Symbol-Enumeration](/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [FontIcon-Klasse](/uwp/api/windows.ui.xaml.controls.fonticon)

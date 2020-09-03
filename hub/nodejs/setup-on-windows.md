@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js, Windows 10, nativ unter Windows, direkt unter Windows
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: fe1943da8c1de4f4fced5dec67079522d83f9a19
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8c865610ba2678c1c5ab1b25ff7a2c7410d11f15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82173466"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166584"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>Einrichten einer Node.js-Entwicklungsumgebung direkt unter Windows
 
@@ -64,7 +64,7 @@ Obwohl windows-nvm derzeit der beliebteste Versions-Manager für Node ist, gibt 
 Wechsele zum Installieren von Volta als Versions-Manager (anstelle von windows-nvm) zum Abschnitt **Windows-Installation** im [Leitfaden für die ersten Schritte](https://docs.volta.sh/guide/getting-started). Lade anschließend das Windows-Installationsprogramm herunter, führe es aus, und befolge die Setupanweisungen.
 
 > [!IMPORTANT]
-> Vor der Installation von Volta musst du sicherstellen, dass auf dem Windows-Computer der [Entwicklermodus](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) aktiviert ist.
+> Vor der Installation von Volta musst du sicherstellen, dass auf dem Windows-Computer der [Entwicklermodus](/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) aktiviert ist.
 
 Weitere Informationen zur Verwendung von Volta zum Installieren mehrerer Versionen von Node.js unter Windows findest du in der [Volta-Dokumentation](https://docs.volta.sh/guide/understanding#managing-your-toolchain).
 
@@ -101,4 +101,4 @@ Wenn du beabsichtigst, zusammen mit anderen zusammenzuarbeiten oder das Projekt 
 Die direkte Verwendung von Node.js unter Windows eignet sich hervorragend zum Erlernen und Experimentieren mit den Möglichkeiten. Wenn du bereit bist, produktionsfertige Web-Apps zu erstellen, die in der Regel auf einem Linux-basierten Server bereitgestellt werden, solltest du das Windows-Subsystem für Linux Version 2 (WSL 2) für die Entwicklung von Node.js-Web-Apps verwenden. Viele Node.js-Pakete und -Frameworks werden für eine *nix-Umgebung erstellt, und die meisten Node.js-Apps werden unter Linux bereitgestellt. Die Entwicklung im WSL stellt daher die Konsistenz zwischen deiner Entwicklungsumgebung und den Produktionsumgebungen sicher. Informationen zum Einrichten einer WSL-Entwicklungsumgebung findest du unter [Einrichten der Node.js-Entwicklungsumgebung mit WSL 2](./setup-on-wsl2.md).
 
 > [!NOTE]
-> Wenn du sich in der (sehr seltenen) Situation befindest, eine Node.js-App auf einem Windows-Server zu hosten, empfiehlt sich die [Verwendung eines Reverseproxys](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Es gibt dafür zwei Möglichkeiten: 1) [iisnode](https://harveywilliams.net/blog/installing-iisnode) oder [direkt](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Wir verwalten diese Ressourcen nicht und empfehlen [die Verwendung von Linux-Servern zum Hosten deiner Node.js-Apps](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
+> Wenn du sich in der (sehr seltenen) Situation befindest, eine Node.js-App auf einem Windows-Server zu hosten, empfiehlt sich die [Verwendung eines Reverseproxys](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca). Es gibt dafür zwei Möglichkeiten: 1) [iisnode](https://harveywilliams.net/blog/installing-iisnode) oder [direkt](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b). Wir verwalten diese Ressourcen nicht und empfehlen [die Verwendung von Linux-Servern zum Hosten deiner Node.js-Apps](/azure/app-service/app-service-web-get-started-nodejs).

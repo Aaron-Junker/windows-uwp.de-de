@@ -5,16 +5,16 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, Standard, C++, CPP, WinRT, Projizierung, portieren, migrieren, Interoperabilität, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: db66e276ffa0337da943917543a0065ac160e468
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: 71ae6245fe217277c7408a7eb6b5150900cc45d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296169"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170174"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>Interoperabilität zwischen C++/WinRT und der ABI
 
-In diesem Thema wird die Konvertierung zwischen SDK-ABI (Application Binary Interface) und [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Objekten behandelt. Die hier gezeigten Techniken ermöglichen die Implementierung von Interoperabilität zwischen Code, der diese beiden Programmiermethoden verwendet, und der Windows-Runtime. Außerdem kannst du damit deinen Code nach und nach von der ABI zu C++/WinRT migrieren.
+In diesem Thema wird die Konvertierung zwischen SDK-ABI (Application Binary Interface) und [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-Objekten behandelt. Die hier gezeigten Techniken ermöglichen die Implementierung von Interoperabilität zwischen Code, der diese beiden Programmiermethoden verwendet, und der Windows-Runtime. Außerdem kannst du damit deinen Code nach und nach von der ABI zu C++/WinRT migrieren.
 
 Im Allgemeinen macht C++/WinRT ABI-Typen als **void\*** verfügbar, sodass Sie keine Plattformheaderdateien einschließen müssen.
 
@@ -106,7 +106,7 @@ int main()
 }
 ```
 
-Die Implementierungen der **as**-Funktionen rufen [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) auf. Wenn du Konvertierungen auf einer niedrigeren Ebene benötigst, die nur [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) aufrufen, kannst du die Hilfsfunktionen [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) und [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) verwenden. Im nächsten Codebeispiel werden dem obigen Codebeispiel diese Konvertierungen auf niedrigerer Ebene hinzugefügt:
+Die Implementierungen der **as**-Funktionen rufen [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) auf. Wenn du Konvertierungen auf einer niedrigeren Ebene benötigst, die nur [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) aufrufen, kannst du die Hilfsfunktionen [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) und [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) verwenden. Im nächsten Codebeispiel werden dem obigen Codebeispiel diese Konvertierungen auf niedrigerer Ebene hinzugefügt:
 
 > [!IMPORTANT]
 > Bei der Zusammenarbeit mit ABI-Typen ist es entscheidend, dass der verwendete ABI-Typ der Standardschnittstelle des C++/WinRT-Objekts entspricht. Andernfalls werden durch Aufrufe von Methoden für den ABI-Typ am Ende tatsächlich Methoden im gleichen vtable-Slot auf der Standardschnittstelle aufgerufen, mit sehr unerwarteten Ergebnissen. Beachten Sie, dass [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) zur Kompilierungszeit nicht davor schützt, da es **void\*** für alle ABI-Typen verwendet und davon ausgeht, dass der Aufrufer darauf geachtet hat, die Typen nicht falsch abzugleichen. Damit soll vermieden werden, dass C++/WinRT-Header auf ABI-Header verweisen müssen, auch wenn ABI-Typen nie verwendet werden.
@@ -180,7 +180,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-Die Funktion ruft einfach [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) auf, um die Standardschnittstelle des gewünschten C++/WinRT-Typs abzufragen.
+Die Funktion ruft einfach [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) auf, um die Standardschnittstelle des gewünschten C++/WinRT-Typs abzufragen.
 
 Wie wir bereits gesehen haben, ist für die Konvertierung von einem C++/WinRT-Objekt in den entsprechenden ABI-Schnittstellenzeiger keine Hilfsfunktion erforderlich. Verwende einfach die Memberfunktion [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (oder [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)), um nach der gewünschten Schnittstelle zu suchen. Die Funktionen **as** und **try_as** geben ein [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)-Objekt zurück, das den angeforderten ABI-Typ umschließt.
 
@@ -286,7 +286,7 @@ To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
 }
 ```
 
-Weitere Informationen findest du auch unter [Verwenden von COM-Komponenten mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
+Weitere Informationen findest du auch unter [Verwenden von COM-Komponenten mit C++/WinRT](./consume-com.md).
 
 ### <a name="unsafe-interop-with-abi-com-interface-pointers"></a>Unsichere Interaktion mit ABI-COM-Schnittstellenzeigern
 
@@ -364,8 +364,8 @@ void GetString(_Out_ HSTRING* value);
 | **hstring** nach **HSTRING** kopieren | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | *h* erhält eine Kopie der Zeichenfolge. Zeichenfolgen, die zuvor im Besitz von *h* waren, gehen verloren. |
 
 ## <a name="important-apis"></a>Wichtige APIs
-* [Funktion „AddRef“](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
-* [Funktion „QueryInterface“](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [Funktion „AddRef“](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [Funktion „QueryInterface“](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [Funktion „winrt::attach_abi“](/uwp/cpp-ref-for-winrt/attach-abi)
 * [Strukturvorlage „winrt::com_ptr“](/uwp/cpp-ref-for-winrt/com-ptr)
 * [Funktion „winrt::copy_from_abi“](/uwp/cpp-ref-for-winrt/copy-from-abi)

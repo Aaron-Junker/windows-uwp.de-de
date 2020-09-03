@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c717a74824db43984794b67638dd19b51b5dacd
-ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
+ms.openlocfilehash: 84e11bc2a17039b65ae1282531af4b92240f4069
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87160879"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170074"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>Beispieldaten für die Entwurfsoberfläche und Prototyperstellung
 =============================================================================================
 
 
 
-**Hinweis** Der Bedarf an Beispieldaten und deren Nutzen für Sie hängen davon ab, ob für die Bindungen die [{Binding}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) oder die [{x:Bind}-Markuperweiterung](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) verwendet wird. Die in diesem Thema beschriebenen Verfahren basieren auf der Verwendung eines [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) und eignen sich deshalb nur für **{Binding}** . Wenn Sie jedoch **{x:Bind}** verwenden, zeigen die Bindungen zumindest Platzhalterwerte auf der Entwurfsoberfläche an (selbst für Elementsteuerelemente). Deshalb besteht ein geringerer Bedarf an Beispieldaten.
+**Hinweis** Der Bedarf an Beispieldaten und deren Nutzen für Sie hängen davon ab, ob für die Bindungen die [{Binding}-Markuperweiterung](../xaml-platform/binding-markup-extension.md) oder die [{x:Bind}-Markuperweiterung](../xaml-platform/x-bind-markup-extension.md) verwendet wird. Die in diesem Thema beschriebenen Verfahren basieren auf der Verwendung eines [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) und eignen sich deshalb nur für **{Binding}** . Wenn Sie jedoch **{x:Bind}** verwenden, zeigen die Bindungen zumindest Platzhalterwerte auf der Entwurfsoberfläche an (selbst für Elementsteuerelemente). Deshalb besteht ein geringerer Bedarf an Beispieldaten.
 
 Möglicherweise ist es nicht möglich oder nicht erwünscht (z. B. aus Gründen des Datenschutzes oder der Leistung), dass Ihre App Livedaten auf der Entwurfsoberfläche von Microsoft Visual Studio oder Blend für Visual Studio anzeigt. Es gibt mehrere Möglichkeiten, Entwurfszeit-Beispieldaten zu verwenden, damit die Steuerelemente mit Daten aufgefüllt werden (sodass Sie das Layout, die Vorlagen und andere visuelle Eigenschaften der App bearbeiten können). Beispieldaten können auch hilfreich sein und Zeit sparen, wenn Sie eine App als Skizze (oder Prototyp) erstellen. Sie können zur Laufzeit Beispieldaten in der Skizze oder im Prototyp verwenden, um Ihre Ideen zu veranschaulichen, ohne echte Livedaten nutzen zu müssen.
 
@@ -34,7 +34,7 @@ Möglicherweise ist es nicht möglich oder nicht erwünscht (z. B. aus Gründen 
 <a name="setting-datacontext-in-markup"></a>Festlegen des DataContext im Markup
 -----------------------------
 
-Entwickler verwenden häufig imperativen Code (in CodeBehind), um den [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) einer Seite oder eines Benutzersteuerelements auf eine Ansichtsmodellinstanz festzulegen.
+Entwickler verwenden häufig imperativen Code (in CodeBehind), um den [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) einer Seite oder eines Benutzersteuerelements auf eine Ansichtsmodellinstanz festzulegen.
 
 ``` csharp
 public MainPage()
@@ -99,11 +99,11 @@ Sie müssen lediglich eine Klasse für den zu verwendenden Befehl angeben. Der B
 </Page>
 ```
 
-Die verschiedenen xmlns-Deklarationen bedeuten, dass Attribute mit dem **d:** -Präfix nur zur Entwurfszeit interpretiert und während der Laufzeit ignoriert werden. Somit wirkt sich das **d:DataContext**-Attribut nur zur Entwurfszeit auf den Wert der Eigenschaft [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) aus und hat zur Laufzeit keine Auswirkungen. Sie können im Markup sogar sowohl **d:DataContext** als auch **DataContext** festlegen, wenn Sie dies wünschen. **d:DataContext** überschreibt zur Entwurfszeit, und **DataContext** überschreibt zur Laufzeit. Diese Überschreibungsregeln werden auf alle Entwurfszeit- und Laufzeitattribute angewendet.
+Die verschiedenen xmlns-Deklarationen bedeuten, dass Attribute mit dem **d:** -Präfix nur zur Entwurfszeit interpretiert und während der Laufzeit ignoriert werden. Somit wirkt sich das **d:DataContext**-Attribut nur zur Entwurfszeit auf den Wert der Eigenschaft [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) aus und hat zur Laufzeit keine Auswirkungen. Sie können im Markup sogar sowohl **d:DataContext** als auch **DataContext** festlegen, wenn Sie dies wünschen. **d:DataContext** überschreibt zur Entwurfszeit, und **DataContext** überschreibt zur Laufzeit. Diese Überschreibungsregeln werden auf alle Entwurfszeit- und Laufzeitattribute angewendet.
 
-Das **d:DataContext**-Attribut und alle anderen Entwurfszeitattribute sind im Thema [Designzeitattribute](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx) dokumentiert, das für Universelle Windows-Plattform (UWP)-Apps) weiterhin Gültigkeit hat.
+Das **d:DataContext**-Attribut und alle anderen Entwurfszeitattribute sind im Thema [Designzeitattribute](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95)) dokumentiert, das für Universelle Windows-Plattform (UWP)-Apps) weiterhin Gültigkeit hat.
 
-[**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) besitzt nicht die Eigenschaft **DataContext**, jedoch die Eigenschaft **Source**. Daher gibt es eine Eigenschaft **d:Source**, mit der Sie auf die Entwurfszeit beschränkte Beispieldaten in einer **CollectionViewSource** festlegen können.
+[**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) besitzt nicht die Eigenschaft **DataContext**, jedoch die Eigenschaft **Source**. Daher gibt es eine Eigenschaft **d:Source**, mit der Sie auf die Entwurfszeit beschränkte Beispieldaten in einer **CollectionViewSource** festlegen können.
 
 ``` xaml
     <Page.Resources>
@@ -152,6 +152,6 @@ Für die Prototyperstellung benötigen Sie Beispieldaten zur Entwurfszeit und zu
 
 Statt eine Klasse anzugeben, können Sie direkt im Bereich **Daten** das Schema der Beispieldatenquelle entwerfen. Sie können im Bereich **Daten** auch Beispieldatenwerte bearbeiten. Es ist nicht erforderlich, eine Datei zu öffnen und zu bearbeiten (obwohl Sie bei Bedarf die Möglichkeit dazu haben).
 
-Das Feature **Neue Beispieldaten** verwendet [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) und nicht **d:DataContext**. Daher sind die Beispieldaten sowohl beim Ausführen als auch beim Entwerfen der Skizze oder des Prototyps verfügbar. Und der Bereich **Daten** beschleunigt Ihre Entwurfs- und Bindungsaufgaben. Beispielsweise werden durch Ziehen einer Sammlungseigenschaft aus dem Bereich **Daten** auf die Entwurfsoberfläche ein datengebundenes Elementsteuerelement und die erforderlichen Vorlagen generiert, die sofort erstellt und ausgeführt werden können.
+Das Feature **Neue Beispieldaten** verwendet [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) und nicht **d:DataContext**. Daher sind die Beispieldaten sowohl beim Ausführen als auch beim Entwerfen der Skizze oder des Prototyps verfügbar. Und der Bereich **Daten** beschleunigt Ihre Entwurfs- und Bindungsaufgaben. Beispielsweise werden durch Ziehen einer Sammlungseigenschaft aus dem Bereich **Daten** auf die Entwurfsoberfläche ein datengebundenes Elementsteuerelement und die erforderlichen Vorlagen generiert, die sofort erstellt und ausgeführt werden können.
 
 ![Beispieldaten für die Prototyperstellung](images/displaying-data-in-the-designer-04.png)

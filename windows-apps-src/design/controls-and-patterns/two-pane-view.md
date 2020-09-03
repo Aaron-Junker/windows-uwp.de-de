@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bc080a58bc3e381fc26ddcc6a42af28e2dacaa65
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9c2fd792b9652e38637810b4ccd0aee94075895b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970445"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174694"
 ---
 # <a name="two-pane-view"></a>Ansicht mit zwei Bereichen
 
@@ -23,18 +23,18 @@ ms.locfileid: "82970445"
 Das TwoPaneView-Steuerelement funktioniert zwar auf allen Windows-Geräten, ist aber so konzipiert, dass Sie die Vorteile von Dual-Screen-Geräten automatisch und ohne spezielle Codierung voll ausschöpfen können. Bei Dual-Screen-Geräten stellt die Ansicht mit zwei Bereichen sicher, dass die Benutzeroberfläche sauber geteilt wird, wenn sie die Lücke zwischen den Bildschirmen umfasst, sodass die Inhalte auf beiden Seiten der Lücke dargestellt werden.
 
 > [!NOTE]
-> Ein _Dual-Screen-Gerät_ oder Doppelbildschirm-Gerät ist ein besonderer Gerätetyp mit einzigartigen Funktionen. Es ist nicht gleichbedeutend mit einem Desktopgerät mit mehreren Monitoren. Weitere Informationen zu Dual-Screen-Geräten finden Sie unter [Einführung zu Dual-Screen-Geräten](/dual-screen/introduction). (Weitere Informationen zu Möglichkeiten, wie du deine App für mehrere Monitore optimieren kannst, findest du unter [Anzeigen mehrerer Ansichten](/windows/uwp/design/layout/show-multiple-views).)
+> Ein _Dual-Screen-Gerät_ oder Doppelbildschirm-Gerät ist ein besonderer Gerätetyp mit einzigartigen Funktionen. Es ist nicht gleichbedeutend mit einem Desktopgerät mit mehreren Monitoren. Weitere Informationen zu Dual-Screen-Geräten finden Sie unter [Einführung zu Dual-Screen-Geräten](/dual-screen/introduction). (Weitere Informationen zu Möglichkeiten, wie du deine App für mehrere Monitore optimieren kannst, findest du unter [Anzeigen mehrerer Ansichten](../layout/show-multiple-views.md).)
 
 **Abrufen der Windows-UI-Bibliothek**
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TwoPaneView** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Das Steuerelement **TwoPaneView** ist als Bestandteil der Windows-UI-Bibliothek enthalten. Diese Bibliothek ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
 > **Windows-UI-Bibliotheks-APIs:** [TwoPaneView-Klasse](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 
 > [!TIP]
-> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> In diesem Dokument stellt der Alias **muxc** in XAML die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben dem [Page](/uwp/api/windows.ui.xaml.controls.page)-Element Folgendes hinzugefügt: `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >Im CodeBehind stellt ebenfalls der Alias **muxc** in C# die APIs der Windows-UI-Bibliothek dar, die wir in unser Projekt aufgenommen haben. Wir haben am Anfang der Datei die folgende **using**-Anweisung hinzugefügt: `using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -74,7 +74,7 @@ Die Ansicht mit zwei Bereichen verfügt über zwei getrennte Bereiche für Ihren
 
 Sie konfigurieren die Ansicht mit zwei Bereichen, indem Sie mit dem Element [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) festlegen, welcher Bereich angezeigt wird, wenn nur Platz für einen Bereich vorhanden ist. Dann geben Sie an, ob `Pane1` bei Hochformat im oberen oder unteren bzw. bei Querformat im linken oder rechten Fenster angezeigt wird.
 
-Die Ansicht mit zwei Bereichen steuert Größe und Anordnung der Bildhälften, aber Sie müssen dennoch dafür sorgen, dass der Inhalt innerhalb der Bereiche sich an die Größen- und Ausrichtungsänderungen anpasst. Weitere Informationen zum Erstellen einer adaptiven Benutzeroberfläche finden Sie unter [Dynamische Layouts mit XAML](/windows/uwp/design/layout/layouts-with-xaml) und [Layoutbereiche](/windows/uwp/design/layout/layout-panels).
+Die Ansicht mit zwei Bereichen steuert Größe und Anordnung der Bildhälften, aber Sie müssen dennoch dafür sorgen, dass der Inhalt innerhalb der Bereiche sich an die Größen- und Ausrichtungsänderungen anpasst. Weitere Informationen zum Erstellen einer adaptiven Benutzeroberfläche finden Sie unter [Dynamische Layouts mit XAML](../layout/layouts-with-xaml.md) und [Layoutbereiche](../layout/layout-panels.md).
 
 Das Steuerelement [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) verwaltet die Anzeige der Fensterbereiche basierend auf dem Aufteilungsstatus der Anwendung.
 
@@ -92,7 +92,7 @@ Das [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview)-Steuerelement
 
 ### <a name="add-content-to-the-panes"></a>Hinzufügen von Inhalt zu Bereichen
 
-Jeder Bereich einer Ansicht mit zwei Bereichen kann ein einzelnes XAML `UIElement` enthalten. Um Inhalt hinzuzufügen, platzieren Sie normalerweise ein XAML-Layoutpanel in jedem Bereich und fügen dann weitere Steuerelemente und Inhalte zum Panel hinzu. Die Bereiche können ihre Größe ändern und zwischen Querformat- und Hochformat-Modus wechseln, daher müssen Sie sicherstellen, dass sich der Inhalt in jedem Bereich an diese Änderungen anpassen kann. Weitere Informationen zum Erstellen einer adaptiven Benutzeroberfläche finden Sie unter [Dynamische Layouts mit XAML](/windows/uwp/design/layout/layouts-with-xaml) und [Layoutbereiche](/windows/uwp/design/layout/layout-panels).
+Jeder Bereich einer Ansicht mit zwei Bereichen kann ein einzelnes XAML `UIElement` enthalten. Um Inhalt hinzuzufügen, platzieren Sie normalerweise ein XAML-Layoutpanel in jedem Bereich und fügen dann weitere Steuerelemente und Inhalte zum Panel hinzu. Die Bereiche können ihre Größe ändern und zwischen Querformat- und Hochformat-Modus wechseln, daher müssen Sie sicherstellen, dass sich der Inhalt in jedem Bereich an diese Änderungen anpassen kann. Weitere Informationen zum Erstellen einer adaptiven Benutzeroberfläche finden Sie unter [Dynamische Layouts mit XAML](../layout/layouts-with-xaml.md) und [Layoutbereiche](../layout/layout-panels.md).
 
 In diesem Beispiel wird die im Abschnitt _Beispiele_ weiter oben gezeigte einfache Bild/Info-App-Benutzeroberfläche erstellt. Wenn sich die App über Doppelbildschirme erstreckt, werden das Bild und die Informationen auf separaten Bildschirmen angezeigt. Auf einem Einzelbildschirm kann der Inhalt in zwei Fenstern angezeigt oder in einem einzigen Fenster kombiniert werden, je nachdem, wie viel Platz zur Verfügung steht. (Wenn nur Platz für einen Bereich vorhanden ist, wird der Inhalt von Bereich 2 („Pane2“) in Bereich 1 („Pane1“) verschoben, und der Benutzer kann die ausgeblendeten Inhalte durch Scrollen anzeigen. Der entsprechende Code wird später im Abschnitt _Reagieren auf Modusänderungen_ dargestellt).
 
@@ -190,7 +190,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>Anpassen der Bereichsgröße
 
-Auf einem Doppelbildschirm wird die Größe der Bereiche durch die Eigenschaften [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) und [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) bestimmt. Diese verwenden die [GridLength](/uwp/api/windows.ui.xaml.gridlength)-Werte _Auto_ und _\*_ (Stern) zur Größenanpassung. Eine Erläuterung der automatischen Größenanpassung und der Größenanpassung mit der Sternvariablen finden Sie unter [Dynamische Layouts mit XAML](/windows/uwp/design/layout/layouts-with-xaml#layout-properties) im Abschnitt _Layouteigenschaften_.
+Auf einem Doppelbildschirm wird die Größe der Bereiche durch die Eigenschaften [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) und [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) bestimmt. Diese verwenden die [GridLength](/uwp/api/windows.ui.xaml.gridlength)-Werte _Auto_ und _\*_ (Stern) zur Größenanpassung. Eine Erläuterung der automatischen Größenanpassung und der Größenanpassung mit der Sternvariablen finden Sie unter [Dynamische Layouts mit XAML](../layout/layouts-with-xaml.md#layout-properties) im Abschnitt _Layouteigenschaften_.
 
 Standardmäßig ist `Pane1Length` auf `Auto` festgelegt und passt sich in seiner Größe automatisch dem Inhalt an. `Pane2Length` ist auf `*` festgelegt und verwendet den gesamten verbleibenden Platz.
 

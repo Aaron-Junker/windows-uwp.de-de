@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ed38be070263bbd619e44daf5c747a97299b3cf7
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 01ccd7a7ead6bd79b79e8beb3de7f3208b616b7c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233855"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174534"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Grundlagen des Navigationsdesigns für Windows-Apps
 
@@ -168,7 +168,7 @@ Nachdem du dich für eine Seitenstruktur entschieden hast, musst du dir überleg
         ![Abbildung: Frame](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 Für Apps mit mehreren Seiten wird fast immer ein Frame verwendet. Eine App verfügt in der Regel über eine Hauptseite, die den Frame und ein primäres Navigationselement (beispielsweise ein NavigationView-Steuerelement) enthält. Wenn der Benutzer eine Seite auswählt, wird sie durch den Frame geladen und angezeigt.
 :::row-end:::

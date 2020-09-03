@@ -4,12 +4,12 @@ description: Nachdem Sie ein Paketmanifest erstellt, das Ihre Anwendung beschrei
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: ef94a77d5012adcedf31ae1ecfddc036bcc3a059
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334598"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166504"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>Übermitteln des Manifests an das Repository
 
@@ -122,7 +122,7 @@ Während der Validierung wenden wir eine Reihe von Bezeichnungen auf die Pull Re
 
 * **Needs: author feedback** (Erforderlich: Autor-Feedback): Bei der Übermittlung ist ein Fehler aufgetreten. Der Pull Request wird Ihnen erneut zugewiesen. Wenn Sie das Problem nicht innerhalb von 10 Tagen beheben, schließen wir den Pull Request.
 * **Manifest-Validation-Error** (Manifestvalidierungfehler): Das übermittelte Manifest enthält einen Syntaxfehler.
-* **URL-Validation-Error** (URL-Validierungsfehler): Mindestens eine URLs in der Übermittlung hat die [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview)-Validierung nicht bestanden.
+* **URL-Validation-Error** (URL-Validierungsfehler): Mindestens eine URLs in der Übermittlung hat die [SmartScreen](/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview)-Validierung nicht bestanden.
 * **Binary-Validation-Error** (Binärdateien-Validierungsfehler): Der übermittelte Anwendungsinstaller hat die Virenscantests nicht bestanden, oder ein Hashkonflikt liegt vor.
 * **Pull-Request-Error** (Pull-Request-Fehler): Es liegt ein Problem mit dem Pull-Request vor. Die Ordnerstruktur weist beispielsweise nicht das [erforderliche Format](#step-3-add-your-manifest-to-the-local-repository) auf.
 * **Validation-Error** (Validierungsfehler): Die übermittelte Anwendung hat einen allgemeinen Validierungstest nicht bestanden.

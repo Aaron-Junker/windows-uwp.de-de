@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5c39ded4157181581412f01e54772db2bf9a1732
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971005"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174624"
 ---
 # <a name="app-icons-and-logos"></a>App-Symbole und Logos 
 
@@ -52,7 +52,7 @@ Standardmäßig speichert Visual Studio Symbolressourcen in einem Unterverzeichn
 | Badgelogo | Auf den Kacheln Ihrer App | BadgeLogo.png  |
 | Paketlogo/Store-Logo | App-Installationsprogramm, Partner Center, die Option „Eine App melden“ im Store, die Option „Eine Rezension schreiben“ im Store | StoreLogo.png  |
 
-\* Wird verwendet, außer Sie wählen aus, dass [nur hochgeladene Bilder im Store angezeigt werden sollen](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
+\* Wird verwendet, außer Sie wählen aus, dass [nur hochgeladene Bilder im Store angezeigt werden sollen](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store). 
 
 Um sicherzustellen, dass diese Symbole auf allen Bildschirmen scharf aussehen, können Sie mehrere Versionen desselben Symbols für unterschiedliche Skalierungsfaktoren von Anzeigegeräten erstellen. 
 
@@ -75,13 +75,13 @@ Da App-Symbolressourcen Bitmaps sind und Bitmaps sich nicht gut skalieren lassen
 
 „Wie gebe ich Bilder für den Eintrag meiner App im Microsoft Store an?“
 
-Standardmäßig verwenden wir einige der Bilder aus Ihren Paketen im Store, wie in der Tabelle am Anfang dieser Seite beschrieben (zusammen mit anderen [Bildern, die Sie während des Übermittlungsprozesses bereitstellen](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)). Sie haben jedoch die Möglichkeit, zu verhindern, dass der Store die Logobilder verwendet, die in den Paketen Ihrer App enthalten sind, wenn Ihr Eintrag für Kunden mit Windows 10 (einschließlich Xbox) angezeigt wird, und können den Store dazu zwingen, dass stattdessen nur Bilder verwendet werden, die Sie hochladen. Dies bietet Ihnen mehr Kontrolle über die Darstellung Ihrer App auf verschiedenen Anzeigegeräten im Store. (Beachten Sie, dass, wenn Ihr Produkt frühere Betriebssystemversionen unterstützt, diesen Kunden eventuell weiterhin Bilder aus Ihren Paketen angezeigt werden können, selbst wenn Sie diese Option verwenden.) Sie können dies im Abschnitt **Store-Logos** des Schritts **Store-Eintrag** des Übermittlungsprozesses erledigen.
+Standardmäßig verwenden wir einige der Bilder aus Ihren Paketen im Store, wie in der Tabelle am Anfang dieser Seite beschrieben (zusammen mit anderen [Bildern, die Sie während des Übermittlungsprozesses bereitstellen](../../publish/app-screenshots-and-images.md)). Sie haben jedoch die Möglichkeit, zu verhindern, dass der Store die Logobilder verwendet, die in den Paketen Ihrer App enthalten sind, wenn Ihr Eintrag für Kunden mit Windows 10 (einschließlich Xbox) angezeigt wird, und können den Store dazu zwingen, dass stattdessen nur Bilder verwendet werden, die Sie hochladen. Dies bietet Ihnen mehr Kontrolle über die Darstellung Ihrer App auf verschiedenen Anzeigegeräten im Store. (Beachten Sie, dass, wenn Ihr Produkt frühere Betriebssystemversionen unterstützt, diesen Kunden eventuell weiterhin Bilder aus Ihren Paketen angezeigt werden können, selbst wenn Sie diese Option verwenden.) Sie können dies im Abschnitt **Store-Logos** des Schritts **Store-Eintrag** des Übermittlungsprozesses erledigen.
 
 ![Angeben von Store-Logos während des App-Übermittlungsprozesses](images/app-icons/storelogodisplay.png)
 
 Durch Aktivieren dieses Kontrollkästchens wird ein neuer Abschnitt namens **Bilder für die Store-Anzeige** angezeigt. Hier können sie 3 Bildgrößen hochladen, die vom Store anstelle von Logobildern aus den Paketen Ihrer App verwendet werden: 300 x 300, 150 x 150 und 71 x 71 Pixel. Nur die Größe 300 x 300 ist erforderlich, obwohl wir empfehlen, alle 3 Größen bereitzustellen.
 
-Weitere Informationen finden Sie unter [Nur hochgeladene Logobilder im Store anzeigen](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).
+Weitere Informationen finden Sie unter [Nur hochgeladene Logobilder im Store anzeigen](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store).
 
 <!-- ### Fallback images for the Store
 
@@ -96,7 +96,7 @@ If these images aren't provided, the Store will search all matching images of th
 
 The Store may also use your app's tile and other images that you include in your app's package. 
 
-For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
+For more information, see [App screenshots, images, and trailers in the Microsoft Store](../../publish/app-screenshots-and-images.md). -->
 
 
 ## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>Verwalten von App-Symbolen mit dem Visual Studio Manifest-Designer
@@ -185,7 +185,7 @@ Beispiel:
 
 Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Beachten Sie, dass Visual Studio das Badgelogo nicht standardmäßig generiert. Der Grund hierfür ist, dass Ihr Badgelogo einzigartig ist und nicht mit Ihren anderen App-Symbolen übereinstimmen sollte. Weitere Informationen finden Sie in dem Artikel [Signalbenachrichtigungen für Windows-Apps](/windows/uwp/design/shell/tiles-and-notifications/badges). 
+Beachten Sie, dass Visual Studio das Badgelogo nicht standardmäßig generiert. Der Grund hierfür ist, dass Ihr Badgelogo einzigartig ist und nicht mit Ihren anderen App-Symbolen übereinstimmen sollte. Weitere Informationen finden Sie in dem Artikel [Signalbenachrichtigungen für Windows-Apps](../shell/tiles-and-notifications/badges.md). 
 
 
 ## <a name="more-about-app-icon-assets"></a>Weitere Informationen zu App-Symbolressourcen
@@ -253,13 +253,13 @@ Nachfolgend finden Sie die Größenempfehlungen für zielbasierte Ressourcen mit
 
 
 ## <a name="more-about-splash-screen-assets"></a>Weitere Informationen zu Ressourcen für den Begrüßungsbildschirm
-Weitere Informationen zu Begrüßungsbildschirmen finden Sie unter [Begrüßungsbildschirme für Windows-Apps](/windows/uwp/launch-resume/splash-screens).
+Weitere Informationen zu Begrüßungsbildschirmen finden Sie unter [Begrüßungsbildschirme für Windows-Apps](../../launch-resume/splash-screens.md).
 
 ## <a name="more-about-badge-logo-assets"></a>Weitere Informationen zu Badgelogoressourcen
 
 Wenn Sie den Asset-Generator verwenden, um alle benötigten Ressourcen zu generieren, gibt es einen Grund, warum er Badgelogos nicht standardmäßig generiert: Sie unterscheiden sich sehr stark von anderen App-Ressourcen. Das Badgelogo ist ein Statusbild, das in Benachrichtigungen und auf den Kacheln der App angezeigt wird. 
 
-Weitere Informationen finden Sie unter [Signalbenachrichtigungen für Windows-Apps](/windows/uwp/design/shell/tiles-and-notifications/badges).
+Weitere Informationen finden Sie unter [Signalbenachrichtigungen für Windows-Apps](../shell/tiles-and-notifications/badges.md).
 
 
 ## <a name="customizing-asset-padding"></a>Anpassen der Abstandsauffüllung von Ressourcen
@@ -313,16 +313,3 @@ In diesem Beispiel sind die Ränder zu eng:
 In diesem Artikel wurde beschrieben, wie Sie Ressourcen für bestimmte Skalierungsfaktoren erstellen, aber Sie können auch Ressourcen für eine Vielzahl verschiedener Bedingungen und Kombinationen von Bedingungen erstellen. Beispielsweise können Sie Symbole für Anzeigegeräte mit hohem Kontrast oder für die hellen und dunklen Designs erstellen. Sie können sogar Ressourcen für bestimmte Sprachen erstellen.
 
 Anleitungen hierzu finden Sie unter [Anpassen von Ressourcen mit Qualifizierern für Sprache, Skalierung, hohen Kontrast und andere Eigenschaften](../../app-resources/tailor-resources-lang-scale-contrast.md).
-
-
-
-
-
-
-
-
-
-
-
-
-

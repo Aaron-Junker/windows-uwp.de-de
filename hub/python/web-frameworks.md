@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Python, Windows 10, Microsoft, Python unter Windows, Python-Web mit WSL, Python-Web-App mit Windows-Subsystem für Linux, Python-Webentwicklung unter Windows, Flask-App unter Windows, Django-App unter Windows, Python-Web, Flask-Webentwicklung unter Windows, Django-Webentwicklung unter Windows, Windows-Webentwicklung mit Python, VS Code Python-Webentwicklung, Remote-WSL-Erweiterung, Ubuntu, WSL, venv, PIP, Microsoft Python-Erweiterung, Python unter Windows ausführen, Python unter Windows verwenden, mit Python unter Windows erstellen
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3ae3b04738152ff1a142e1599cc05357006456b9
-ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
+ms.openlocfilehash: fedfb42e4c1604b3570c2b4db21b12926bea3762
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83717139"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174564"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>Erste Schritte bei der Verwendung von Python für die Webentwicklung unter Windows
 
@@ -29,14 +29,14 @@ Wenn Sie Python für andere Vorgänge als die Webentwicklung verwenden, empfiehl
 
 Mit WSL können Sie eine GNU/Linux-Befehlszeilenumgebung ausführen, die direkt in Windows und Ihre bevorzugten Tools wie Visual Studio Code, Outlook usw. integriert ist.
 
-Zum Aktivieren und Installieren von WSL (oder WSL 2, je nach Ihren Bedürfnissen) folgen Sie den Schritten in der [Dokumentation zur WSL-Installation](https://docs.microsoft.com/windows/wsl/install-win10). Diese Schritte umfassen die Auswahl einer Linux-Verteilung (z. B. Ubuntu).
+Zum Aktivieren und Installieren von WSL (oder WSL 2, je nach Ihren Bedürfnissen) folgen Sie den Schritten in der [Dokumentation zur WSL-Installation](/windows/wsl/install-win10). Diese Schritte umfassen die Auswahl einer Linux-Verteilung (z. B. Ubuntu).
 
 Nachdem Sie WSL und eine Linux-Verteilung installiert haben, öffnen Sie die Linux-Verteilung (sie befindet sich im Windows-Startmenü), und überprüfen Sie die Version und den Codenamen mit dem Befehl `lsb_release -dc`.
 
 Es empfiehlt sich, die Linux-Verteilung regelmäßig zu aktualisieren, z. B. auch unmittelbar nach der Installation, um sicherzustellen, dass Sie über die neuesten Pakete verfügen. Dieses Update wird unter Windows nicht automatisch verarbeitet. Verwenden Sie den Befehl `sudo apt update && sudo apt upgrade`, um die Verteilung zu aktualisieren.  
 
 > [!TIP]
-> Erwägen Sie [die Installation der neuen Windows-Terminal-Version aus dem Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701), um mehrere Registerkarten zu aktivieren (schnelles Umschalten zwischen mehreren Linux-Befehlszeilen, Windows-Eingabeaufforderung, PowerShell, Azure CLI usw.), benutzerdefinierte Tastenkombinationen zu erstellen (Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, zum Kopieren und Einfügen usw.), die Suchfunktion zu verwenden sowie benutzerdefinierte Designs einzurichten (Farbschemata, Schriftschnitte und Schriftgrade, Hintergrundbild/Weichzeichnen/Transparenz). [Weitere Informationen](https://docs.microsoft.com/windows/terminal)
+> Erwägen Sie [die Installation der neuen Windows-Terminal-Version aus dem Microsoft Store](https://www.microsoft.com/store/apps/9n0dx20hk701), um mehrere Registerkarten zu aktivieren (schnelles Umschalten zwischen mehreren Linux-Befehlszeilen, Windows-Eingabeaufforderung, PowerShell, Azure CLI usw.), benutzerdefinierte Tastenkombinationen zu erstellen (Tastenkombinationen zum Öffnen oder Schließen von Registerkarten, zum Kopieren und Einfügen usw.), die Suchfunktion zu verwenden sowie benutzerdefinierte Designs einzurichten (Farbschemata, Schriftschnitte und Schriftgrade, Hintergrundbild/Weichzeichnen/Transparenz). [Weitere Informationen](/windows/terminal)
 
 ## <a name="set-up-visual-studio-code"></a>Einrichten von Visual Studio Code
 
@@ -321,5 +321,5 @@ Herzlichen Glückwunsch, Sie haben eine Django-Webanwendung mithilfe von Visual 
 
 - [Tutorial zu Python in Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial): Ein Einführungstutorial zu VS Code als Python-Umgebung, im Wesentlichen Informationen zum Bearbeiten, Ausführen und Debuggen von Code.
 - [Git-Unterstützung in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support): Informationen zur Verwendung der Git-Versionskontrolle in VS Code.  
-- [Erfahren Sie mehr über die demnächst mit WSL 2 verfügbaren Updates](https://docs.microsoft.com/windows/wsl/wsl2-index): Diese neue Version ändert die Interaktion von Linux-Distributionen mit Windows. Dadurch wird die Leistung des Dateisystems erhöht und vollständige Kompatibilität mit Systemaufrufen hinzugefügt.
-- [Verwenden mehrerer Linux-Distributionen unter Windows](https://docs.microsoft.com/windows/wsl/wsl-config): Informationen zum Verwalten mehrerer verschiedener Linux-Distributionen auf Ihrem Windows-Computer.
+- [Erfahren Sie mehr über die demnächst mit WSL 2 verfügbaren Updates](/windows/wsl/wsl2-index): Diese neue Version ändert die Interaktion von Linux-Distributionen mit Windows. Dadurch wird die Leistung des Dateisystems erhöht und vollständige Kompatibilität mit Systemaufrufen hinzugefügt.
+- [Verwenden mehrerer Linux-Distributionen unter Windows](/windows/wsl/wsl-config): Informationen zum Verwalten mehrerer verschiedener Linux-Distributionen auf Ihrem Windows-Computer.

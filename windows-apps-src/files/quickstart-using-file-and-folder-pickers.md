@@ -6,22 +6,22 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b3143247eab0bd8ed4266b78e34ec54dafa4dd7e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8a438c5c0fa0e3dbe932c393291afe05b28b3e4a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259570"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175424"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>Öffnen von Dateien und Ordnern mit einer Auswahl
 
 **Wichtige APIs**
 
--   [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)
--   [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker)
--   [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)
+-   [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)
+-   [**FolderPicker**](/uwp/api/Windows.Storage.Pickers.FolderPicker)
+-   [**StorageFile**](/uwp/api/Windows.Storage.StorageFile)
 
-Greifen Sie auf Dateien und Ordner zu, indem Sie Benutzern die Interaktion mit einer Auswahl ermöglichen. Mithilfe der Klassen [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) und [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) können Sie auf Dateien und mithilfe der Klasse [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker) auf einen Ordner zugreifen.
+Greifen Sie auf Dateien und Ordner zu, indem Sie Benutzern die Interaktion mit einer Auswahl ermöglichen. Mithilfe der Klassen [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) und [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) können Sie auf Dateien und mithilfe der Klasse [**FolderPicker**](/uwp/api/Windows.Storage.Pickers.FolderPicker) auf einen Ordner zugreifen.
 
 > [!NOTE]
 > Ein vollständiges Beispiel findest du im [Beispiel für die Dateiauswahl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
@@ -31,7 +31,7 @@ Greifen Sie auf Dateien und Ordner zu, indem Sie Benutzern die Interaktion mit e
 
 -   **Kenntnisse in der asynchronen Programmierung für Apps für die universelle Windows-Plattform (UWP)**
 
-    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    Informationen zum Schreiben von asynchronen Apps in C# oder Visual Basic finden Sie unter [Aufrufen asynchroner APIs in C# oder Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). Informationen zum Schreiben von asynchronen Apps in C++ finden Sie unter [Asynchrone Programmierung in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
 
 -   **Zugriffsberechtigungen für den Speicherort**
 
@@ -55,9 +55,9 @@ Eine E-Mail-App zeigt möglicherweise eine Dateiauswahl an, damit der Benutzer A
 ## <a name="how-pickers-work"></a>Funktionsweise der Auswahl
 
 
-Mithilfe einer Auswahl kann Ihre App Zugriff auf Dateien und Ordner auf dem System des Benutzers erlangen und diese durchsuchen und speichern. Ihre App erhält diese Auswahl als [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)- und [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder)-Objekte, die Sie dann verarbeiten können.
+Mithilfe einer Auswahl kann Ihre App Zugriff auf Dateien und Ordner auf dem System des Benutzers erlangen und diese durchsuchen und speichern. Ihre App erhält diese Auswahl als [**StorageFile**](/uwp/api/Windows.Storage.StorageFile)- und [**StorageFolder**](/uwp/api/Windows.Storage.StorageFolder)-Objekte, die Sie dann verarbeiten können.
 
-Die Auswahl verwendet eine einzige, einheitliche Oberfläche, über die der Benutzer Dateien und Ordner im Dateisystem oder in anderen Apps auswählen kann. Mit Dateien, die in anderen Apps ausgewählt werden, verhält es sich genauso wie mit Dateien im Dateisystem: Sie werden als [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)-Objekte zurückgegeben. Im Allgemeinen kann Ihre App genauso mit ihnen arbeiten wie mit anderen Objekten. Andere Apps stellen Dateien bereit, indem sie an Verträgen für die Dateiauswahl teilnehmen. Wenn Ihre App Dateien, einen Speicherort oder Dateiupdates für andere Apps bereitstellen soll, finden Sie Informationen dazu unter [Integration mit Verträgen für die Dateiauswahl](https://docs.microsoft.com/previous-versions/windows/apps/hh465192(v=win.10)).
+Die Auswahl verwendet eine einzige, einheitliche Oberfläche, über die der Benutzer Dateien und Ordner im Dateisystem oder in anderen Apps auswählen kann. Mit Dateien, die in anderen Apps ausgewählt werden, verhält es sich genauso wie mit Dateien im Dateisystem: Sie werden als [**StorageFile**](/uwp/api/Windows.Storage.StorageFile)-Objekte zurückgegeben. Im Allgemeinen kann Ihre App genauso mit ihnen arbeiten wie mit anderen Objekten. Andere Apps stellen Dateien bereit, indem sie an Verträgen für die Dateiauswahl teilnehmen. Wenn Ihre App Dateien, einen Speicherort oder Dateiupdates für andere Apps bereitstellen soll, finden Sie Informationen dazu unter [Integration mit Verträgen für die Dateiauswahl](/previous-versions/windows/apps/hh465192(v=win.10)).
 
 Beispielsweise können Sie die Dateiauswahl in Ihrer App aufrufen und dem Benutzer so ermöglichen, eine Datei zu öffnen. Dadurch wird Ihre App zur aufrufenden App. Die Dateiauswahl interagiert mit dem System und/oder anderen Apps, damit der Benutzer zu einer Datei navigieren und diese auswählen kann. Wählt der Benutzer eine Datei aus, gibt die Dateiauswahl diese Datei an Ihre App zurück. Dies ist der Prozess für einen Fall, in dem ein Benutzer eine Datei in einer bereitstellenden App wie etwa OneDrive auswählt.
 
@@ -103,13 +103,13 @@ Das Verwenden der Dateiauswahl umfasst das Erstellen und Anpassen eines Dateiaus
     ```
     Legen Sie Eigenschaften für das Dateiauswahlobjekt fest, die für Ihre Benutzer und Ihre App relevant sind.
 
-    Dieses Beispiel erstellt eine ansprechende visuelle Darstellung von Bildern an einem praktischen Ort, aus denen der Benutzer wählen kann, indem drei Eigenschaften festgelegt werden: [**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode), [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) und [**FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter).
+    Dieses Beispiel erstellt eine ansprechende visuelle Darstellung von Bildern an einem praktischen Ort, aus denen der Benutzer wählen kann, indem drei Eigenschaften festgelegt werden: [**ViewMode**](/uwp/api/windows.storage.pickers.fileopenpicker.viewmode), [**SuggestedStartLocation**](/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) und [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter).
 
-    -   Wenn [**ViewMode**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.viewmode) auf den **Thumbnail**-Enumerationswert [**PickerViewMode**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode) festgelegt wird, entsteht eine ansprechende visuelle Darstellung, da Miniaturbilder als Darstellung für die Dateien in der Dateiauswahl erscheinen. Dies gilt für die Auswahl visueller Dateien wie Bilder oder Videos. Verwenden Sie andernfalls [**PickerViewMode.List**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerViewMode). Eine hypothetische E-Mail-App mit **Bild oder Video anfügen**- und **Dokument anfügen**-Funktionen würde den **ViewMode** auf die entsprechende Funktion vor dem Anzeigen der Dateiauswahl festlegen.
+    -   Wenn [**ViewMode**](/uwp/api/windows.storage.pickers.fileopenpicker.viewmode) auf den **Thumbnail**-Enumerationswert [**PickerViewMode**](/uwp/api/Windows.Storage.Pickers.PickerViewMode) festgelegt wird, entsteht eine ansprechende visuelle Darstellung, da Miniaturbilder als Darstellung für die Dateien in der Dateiauswahl erscheinen. Dies gilt für die Auswahl visueller Dateien wie Bilder oder Videos. Verwenden Sie andernfalls [**PickerViewMode.List**](/uwp/api/Windows.Storage.Pickers.PickerViewMode). Eine hypothetische E-Mail-App mit **Bild oder Video anfügen**- und **Dokument anfügen**-Funktionen würde den **ViewMode** auf die entsprechende Funktion vor dem Anzeigen der Dateiauswahl festlegen.
 
-    -   Wenn [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) mithilfe von [**PickerLocationId.PicturesLibrary**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId) auf Bilder festgelegt wird, beginnt der Benutzer in einem Pfad, der mit hoher Wahrscheinlichkeit Bilder enthält. Legen Sie **SuggestedStartLocation** auf einen Speicherort fest, der dem Typ der ausgewählten Datei entspricht, z. B. Musik, Bilder, Videos oder Dokumente. Der Benutzer kann vom Ausgangspfad aus zu anderen Speicherorten navigieren.
+    -   Wenn [**SuggestedStartLocation**](/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) mithilfe von [**PickerLocationId.PicturesLibrary**](/uwp/api/Windows.Storage.Pickers.PickerLocationId) auf Bilder festgelegt wird, beginnt der Benutzer in einem Pfad, der mit hoher Wahrscheinlichkeit Bilder enthält. Legen Sie **SuggestedStartLocation** auf einen Speicherort fest, der dem Typ der ausgewählten Datei entspricht, z. B. Musik, Bilder, Videos oder Dokumente. Der Benutzer kann vom Ausgangspfad aus zu anderen Speicherorten navigieren.
 
-    -   Mit [**FileTypeFilter**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) zum Angeben von Dateitypen wählt der Benutzer weiterhin relevante Dateien aus. Um ältere Dateitypen im **FileTypeFilter** durch neue Einträgen zu ersetzen, verwenden Sie [**ReplaceAll**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.replaceall) anstelle von [**Add**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileextensionvector.append).
+    -   Mit [**FileTypeFilter**](/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter) zum Angeben von Dateitypen wählt der Benutzer weiterhin relevante Dateien aus. Um ältere Dateitypen im **FileTypeFilter** durch neue Einträgen zu ersetzen, verwenden Sie [**ReplaceAll**](/uwp/api/windows.storage.pickers.fileextensionvector.replaceall) anstelle von [**Add**](/uwp/api/windows.storage.pickers.fileextensionvector.append).
 
 2.  **Anzeigen von FileOpenPicker**
 
@@ -173,4 +173,4 @@ else
 ```
 
 > [!TIP]
-> Füge die Datei oder den Ordner zur Verbesserung der Nachverfolgbarkeit zu [**FutureAccessList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) oder zu [**MostRecentlyUsedList**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) der App hinzu, wenn deine App über eine Dateiauswahl auf eine Datei oder einen Ordner zugreift. Weitere Informationen zur Verwendung dieser Listen finden Sie in [So wird's gemacht: Nachverfolgen kürzlich verwendeter Dateien und Ordner](how-to-track-recently-used-files-and-folders.md).
+> Füge die Datei oder den Ordner zur Verbesserung der Nachverfolgbarkeit zu [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) oder zu [**MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) der App hinzu, wenn deine App über eine Dateiauswahl auf eine Datei oder einen Ordner zugreift. Weitere Informationen zur Verwendung dieser Listen finden Sie in [So wird's gemacht: Nachverfolgen kürzlich verwendeter Dateien und Ordner](how-to-track-recently-used-files-and-folders.md).

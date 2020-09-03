@@ -151,6 +151,8 @@
       href: ../audio-video-camera/codec-query.md
     - name: Bildschirmaufnahme
       href: ../audio-video-camera/screen-capture.md
+    - name: Bildschirmaufnahme in Video
+      href: ../audio-video-camera/screen-capture-video.md
 - name: Kommunikation
   items:
     - name: App-zu-App-Kommunikation

@@ -5,16 +5,16 @@ ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, verzögerte zerstörung, sichere abfragen
 ms.localizationpriority: medium
-ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6b15c32bb35bec1f6a8e8d59e6aefe17ebf74b5d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71329558"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170327"
 ---
 # <a name="extension-points-for-your-implementation-types"></a>Erweiterungspunkte für Ihre Implementierungstypen
 
-Die [winrt::implements-Strukturvorlage](/uwp/cpp-ref-for-winrt/implements) bildet die Basis, von der Ihre eigenen [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)-Implementierungen (von Laufzeitklassen und Aktivierungsfactorys) direkt oder indirekt abgeleitet sind.
+Die [winrt::implements-Strukturvorlage](/uwp/cpp-ref-for-winrt/implements) bildet die Basis, von der Ihre eigenen [C++/WinRT](./intro-to-using-cpp-with-winrt.md)-Implementierungen (von Laufzeitklassen und Aktivierungsfactorys) direkt oder indirekt abgeleitet sind.
 
 In diesem Thema werden die Erweiterungspunkte von **winrt::implements** in C++/WinRT 2.0 erörtert. Sie können sich dafür entscheiden, diese Erweiterungspunkte für Ihre Implementierungstypen zu implementieren, um das Standardverhalten von Inspectable-Objekten (*inspectable* im Sinne der [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)-Schnittstelle) anzupassen.
 
@@ -22,7 +22,7 @@ Mit diesen Erweiterungspunkten können Sie die Zerstörung ihrer Implementierung
 
 ## <a name="deferred-destruction"></a>Verzögerte Zerstörung
 
-Im Artikel [Diagnostizieren direkter Zuordnungen](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc) wurde darauf hingewiesen, dass Ihr Implementierungstyp keinen privaten Destruktor aufweisen kann.
+Im Artikel [Diagnostizieren direkter Zuordnungen](./diag-direct-alloc.md) wurde darauf hingewiesen, dass Ihr Implementierungstyp keinen privaten Destruktor aufweisen kann.
 
 Der Vorteil eines öffentlichen Destruktors besteht darin, dass er die verzögerte Zerstörung ermöglicht. Dabei handelt es sich um die Fähigkeit, den endgültigen Aufruf von [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) für das Objekt zu erkennen und den Besitz des Objekts zu übernehmen, um dessen Zerstörung unbefristet zu verzögern.
 

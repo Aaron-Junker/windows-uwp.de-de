@@ -5,16 +5,16 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, Standard, C++, cpp, winrt, Projektion, Erste Schritte
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e17e3f8107e82547ec0d367099f621e5b2e590a
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 412f34d21ddb24f637450fdfc71214c360445841
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997847"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170194"
 ---
 # <a name="get-started-with-cwinrt"></a>Erste Schritte mit C++/WinRT
 
-Um Sie bei der Verwendung von [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) schnell auf den neuesten Stand zu bringen, führt Sie dieses Thema durch ein einfaches Codebeispiel, das auf einem neuen **Windows Console Application (C++/WinRT)** -Projekt basiert. Dieses Thema zeigt außerdem das [Hinzufügen von C++/WinRT-Unterstützung zu einem Windows Desktop-Anwendungsprojekt](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
+Um Sie bei der Verwendung von [C++/WinRT](./intro-to-using-cpp-with-winrt.md) schnell auf den neuesten Stand zu bringen, führt Sie dieses Thema durch ein einfaches Codebeispiel, das auf einem neuen **Windows Console Application (C++/WinRT)** -Projekt basiert. Dieses Thema zeigt außerdem das [Hinzufügen von C++/WinRT-Unterstützung zu einem Windows Desktop-Anwendungsprojekt](#modify-a-windows-desktop-application-project-to-add-cwinrt-support).
 
 > [!NOTE]
 > Wir empfehlen zwar, dass Sie mit den neuesten Versionen von Visual Studio und dem Windows SDK entwickeln, doch wenn Sie Visual Studio 2017 (Version 15.8.0 oder höher) und als Zielversion Windows SDK Version 10.0.17134.0 (Windows 10, Version 1803) verwenden, tritt beim Kompilieren eines neu erstellten C++/WinRT-Projekts möglicherweise der Fehler „*Fehler C3861: 'from_abi': Bezeichner wurde nicht gefunden*“ zusammen mit anderen Fehlern auf, die von *base.h* verursacht werden. Die Lösung besteht darin, für das Projekt eine höhere (konformere) Version des Windows SDK zu verwenden oder die Projekteigenschaft **C/C++**  > **Sprache** > **Konformitätsmodus: Nein** festzulegen (auch wenn **/permissive-** in der Projekteigenschaft **C/C++**  > **Sprache** > **Befehlszeile** unter **Zusätzliche Optionen** angezeigt wird. Löschen Sie es dann).
@@ -22,7 +22,7 @@ Um Sie bei der Verwendung von [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-
 ## <a name="a-cwinrt-quick-start"></a>Ein Schnelleinstieg in C++/WinRT
 
 > [!NOTE]
-> Informationen zum Einrichten von Visual Studio für die C++/WinRT-Entwicklung&mdash;einschließlich Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen)&mdash; finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> Informationen zum Einrichten von Visual Studio für die C++/WinRT-Entwicklung&mdash;einschließlich Installieren und Verwenden der C++/WinRT Visual Studio-Erweiterung (VSIX) und des NuGet-Pakets (die zusammen die Projektvorlage und Buildunterstützung bereitstellen)&mdash; finden Sie unter [Visual Studio-Unterstützung für C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Erstellen Sie ein neues **Windows Console Application (C++/WinRT)** -Projekt.
 
@@ -129,7 +129,7 @@ Optional können Sie die Erweiterung [C++/WinRT Visual Studio Extension (VSIX)](
 
 Wechseln Sie zu den Projekteigenschaften **Allgemein** \> **Windows SDK-Version**, und wählen Sie **Alle Konfigurationen** und **Alle Plattformen** aus. Achten Sie darauf, dass die **Windows SDK-Version** auf 10.0.17134.0 (Windows 10, Version 1803) oder höher festgelegt ist.
 
-Bestätigen Sie, dass Sie nicht von [Warum wird mein neues Projekt nicht kompiliert?](/windows/uwp/cpp-and-winrt-apis/faq) betroffen sind.
+Bestätigen Sie, dass Sie nicht von [Warum wird mein neues Projekt nicht kompiliert?](./faq.md) betroffen sind.
 
 Da C++/WinRT Features aus dem C++17-Standard verwendet, legen Sie die Projekteigenschaft **C/C++**  > **Sprache** > **C++-Sprachstandard** auf *ISO C++17 Standard (/std:c++17)* fest.
 
@@ -167,19 +167,19 @@ Wenn Sie C++/WinRT verwenden und sich damit ebenso wie mit der restlichen Dokume
 
 ### <a name="consuming-windows-runtime-apis-and-types"></a>Verarbeiten von Windows-Runtime-APIs und -Typen
 
-Mit anderen Worten: Es geht um das *Verwenden* oder *Aufrufen* von APIs. Beispiele sind API-Aufrufe für die Kommunikation über Bluetooth, das Streamen und Präsentieren von Videos, die Integration in die Windows-Shell usw. C++/WinRT unterstützt diese Kategorie von Szenarien uneingeschränkt. Weitere Informationen finden Sie unter [Nutzen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+Mit anderen Worten: Es geht um das *Verwenden* oder *Aufrufen* von APIs. Beispiele sind API-Aufrufe für die Kommunikation über Bluetooth, das Streamen und Präsentieren von Videos, die Integration in die Windows-Shell usw. C++/WinRT unterstützt diese Kategorie von Szenarien uneingeschränkt. Weitere Informationen finden Sie unter [Nutzen von APIs mit C++/WinRT](./consume-apis.md).
 
 ### <a name="authoring-windows-runtime-apis-and-types"></a>Erstellen von Windows-Runtime APIs und -Typen
 
-Das heißt, das *Erstellen* von APIs und Typen. Beispielsweise werden die Arten von APIs erzeugt, die im Abschnitt oben beschrieben werden, die Grafik-APIs oder die Speicher- und Dateisystem-APIs, die Netzwerk-APIs usw. Weitere Informationen finden Sie unter [Erstellen von APIs mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+Das heißt, das *Erstellen* von APIs und Typen. Beispielsweise werden die Arten von APIs erzeugt, die im Abschnitt oben beschrieben werden, die Grafik-APIs oder die Speicher- und Dateisystem-APIs, die Netzwerk-APIs usw. Weitere Informationen finden Sie unter [Erstellen von APIs mit C++/WinRT](./author-apis.md).
 
-Das Erstellen von APIs mit C++/WinRT ist etwas komplizierter als deren Verwendung, da Sie die Form der API mit IDL definieren müssen, bevor Sie sie implementieren können. Eine exemplarische Vorgehensweise finden Sie unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/binding-property).
+Das Erstellen von APIs mit C++/WinRT ist etwas komplizierter als deren Verwendung, da Sie die Form der API mit IDL definieren müssen, bevor Sie sie implementieren können. Eine exemplarische Vorgehensweise finden Sie unter [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](./binding-property.md).
 
 ### <a name="xaml-applications"></a>XAML-Anwendungen
 
 Dieses Szenario dient dem Entwickeln von Anwendungen und Steuerelementen im XAML-UI-Framework. Das Arbeiten in einer XAML-Anwendung vereint Nutzung und Erstellung. Da XAML heute jedoch das vorherrschende UI-Framework unter Windows ist und dessen Auswirkungen auf die Windows-Runtime entsprechend zunehmen, verdient es eine eigene Kategorie von Szenarien.
 
-Beachten Sie, dass XAML am besten für Programmiersprachen geeignet ist, die Reflektion unterstützen. In C++/WinRT müssen Sie manchmal einen etwas höheren Aufwand betreiben, um mit dem XAML-Framework zusammenzuarbeiten. Alle diese Fälle werden in der Dokumentation behandelt. Ein guter Ausgangspunkt ist [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](/windows/uwp/cpp-and-winrt-apis/binding-property) sowie [Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl).
+Beachten Sie, dass XAML am besten für Programmiersprachen geeignet ist, die Reflektion unterstützen. In C++/WinRT müssen Sie manchmal einen etwas höheren Aufwand betreiben, um mit dem XAML-Framework zusammenzuarbeiten. Alle diese Fälle werden in der Dokumentation behandelt. Ein guter Ausgangspunkt ist [XAML-Steuerelemente: Binden an eine C++/WinRT-Eigenschaft](./binding-property.md) sowie [Benutzerdefinierte (vorlagenbasierte) XAML-Steuerelemente mit C++/WinRT](./xaml-cust-ctrl.md).
 
 ## <a name="important-apis"></a>Wichtige APIs
 * [SyndicationClient::RetrieveFeedAsync-Methode](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

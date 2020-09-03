@@ -4,12 +4,12 @@ description: Wenn Sie ein Softwarepaket an das Windows-Paket-Manager-Repository 
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 960caede306228c492bc88c81ac3c1c841b6c18c
-ms.sourcegitcommit: 9c2b21081158e712a856158d25dce76b3e213a9c
+ms.openlocfilehash: 4b2c42fb8a9f8eb741ce253c3ea110fe4eeb10a3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129747"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166494"
 ---
 # <a name="create-your-package-manifest"></a>Erstellen des Paketmanifests
 
@@ -169,7 +169,7 @@ Sie können oft herausfinden, welche automatischen `Switches` für ein Installat
 
 | Installer | Befehl  | Dokumentation |  
 | :--- | :-- | :--- |  
-| MSI | `/q` | [Befehlszeilenoptionen für MSI](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| MSI | `/q` | [Befehlszeilenoptionen für MSI](/windows/win32/msi/command-line-options) |
 | InstallShield | `/s`  | [InstallShield-Befehlszeilenparameter](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
 | Inno Setup | `/SILENT or /VERYSILENT` | [Inno Setup-Dokumentation](https://jrsoftware.org/ishelp/) |
 | Nullsoft | `/S` | [Nullsoft-Installer für die Installation/Deinstallation im Hintergrund](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |

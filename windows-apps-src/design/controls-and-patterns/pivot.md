@@ -10,16 +10,16 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb3d8fc251a357f4251552ba80e4c922878fe805
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a927e7fa81499ef9eb5a8b798679f13b6d838d17
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970815"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174454"
 ---
 # <a name="pivot"></a>Pivot
 
-Das [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)-Steuerelement ermöglicht Touch-Wischen zwischen einem kleinen Satz von Inhaltsabschnitten.
+Das [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)-Steuerelement ermöglicht Touch-Wischen zwischen einem kleinen Satz von Inhaltsabschnitten.
 
 ![Standardfokus als Unterstrich des ausgewählten Headers](images/pivot_focus_selectedHeader.png)
 
@@ -27,9 +27,9 @@ Das [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)-S
 
 |  |  |
 | - | - |
-| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](/windows/uwp/design/style/rounded-corner). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
+| ![WinUI-Logo](images/winui-logo-64x64.png) | Die Bibliothek „Windows UI“ enthält ab Version 2.2 eine neue Vorlage für dieses Steuerelement, die abgerundete Ecken verwendet. Weitere Informationen finden Sie unter [Eckradius](../style/rounded-corner.md). WinUI ist ein NuGet-Paket, das neue Steuerelemente und Benutzeroberflächenfeatures für Windows-Apps enthält. Weitere Informationen, einschließlich Installationsanweisungen, finden Sie unter [Windows UI Library](/uwp/toolkits/winui/) (Windows-UI-Bibliothek). |
 
-> **Plattform-APIs:** [Pivot-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot), [NavigationView-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **Plattform-APIs:** [Pivot-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Pivot), [NavigationView-Klasse](/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>Beispiele
 
@@ -145,15 +145,15 @@ Dieser Code erzeugt ein grundlegendes Pivot-Steuerelement mit 3 Inhaltsabschnitt
 
 ### <a name="pivot-items"></a>Pivot-Elemente
 
-Pivot ist ein [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl), daher kann es eine Sammlung von Elementen jeden Typs enthalten. Jedes zum Pivot-Steuerelement hinzugefügte Element, das nicht ausdrücklich ein [PivotItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PivotItem)-Element ist, wird implizit in ein PivotItem eingeschlossen. Da ein Pivot-Element häufig zum Navigieren zwischen Inhaltsseiten verwendet wird, ist es üblich, die Sammlung von [Elementen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) direkt mit XAML-UI-Elementen zu füllen. Alternativ können Sie die Eigenschaft [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Datenquelle festlegen. In der ItemsSource gebundene Elemente können beliebigen Typs sein, wenn es sich jedoch nicht explizit um PivotItems handelt, müssen Sie eine [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)- und eine [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.headertemplate)-Eigenschaft definieren, um festzulegen, wie die Elemente angezeigt werden sollen.
+Pivot ist ein [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl), daher kann es eine Sammlung von Elementen jeden Typs enthalten. Jedes zum Pivot-Steuerelement hinzugefügte Element, das nicht ausdrücklich ein [PivotItem](/uwp/api/Windows.UI.Xaml.Controls.PivotItem)-Element ist, wird implizit in ein PivotItem eingeschlossen. Da ein Pivot-Element häufig zum Navigieren zwischen Inhaltsseiten verwendet wird, ist es üblich, die Sammlung von [Elementen](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) direkt mit XAML-UI-Elementen zu füllen. Alternativ können Sie die Eigenschaft [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) auf eine Datenquelle festlegen. In der ItemsSource gebundene Elemente können beliebigen Typs sein, wenn es sich jedoch nicht explizit um PivotItems handelt, müssen Sie eine [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)- und eine [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.pivot.headertemplate)-Eigenschaft definieren, um festzulegen, wie die Elemente angezeigt werden sollen.
 
-Mit der Eigenschaft [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) können Sie das aktive Element des Pivot-Steuerelements abrufen oder festlegen. Mit der Eigenschaft [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) können Sie den Index des aktiven Elements abrufen oder festlegen.
+Mit der Eigenschaft [SelectedItem](/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) können Sie das aktive Element des Pivot-Steuerelements abrufen oder festlegen. Mit der Eigenschaft [SelectedIndex](/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) können Sie den Index des aktiven Elements abrufen oder festlegen.
 
 ### <a name="pivot-headers"></a>Pivotheader
 
-Sie können die Eigenschaften [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) und [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) verwenden, um weitere Steuerelemente zum Pivotheader hinzuzufügen.
+Sie können die Eigenschaften [LeftHeader](/uwp/api/windows.ui.xaml.controls.pivot.leftheader) und [RightHeader](/uwp/api/windows.ui.xaml.controls.pivot.rightheader) verwenden, um weitere Steuerelemente zum Pivotheader hinzuzufügen.
 
-Sie können dem RightHeader des Pivot-Steuerelements z. B. eine [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars) hinzufügen.
+Sie können dem RightHeader des Pivot-Steuerelements z. B. eine [CommandBar](./app-bars.md) hinzufügen.
 
 ```xaml
 <Pivot>
@@ -191,7 +191,7 @@ Das Steuerelement ist in zwei Modi verfügbar:
 - Durch Tippen auf eine Pivotbeschriftung wird die entsprechende Seite aufgerufen, und die aktive Pivotbeschriftung rückt an die erste Position.
 - Pivotelemente in einer Karussellschleife wechseln vom letzten zum ersten Pivotabschnitt.
 
-> **Hinweis** Pivotheader sollten in einer [10-Fuß-Umgebung](../devices/designing-for-tv.md) nicht in einer Karussellansicht dargestellt werden. Legen Sie die [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled)-Eigenschaft auf **false** fest, wenn Ihre App auf der Xbox ausgeführt wird.
+> **Hinweis** Pivotheader sollten in einer [10-Fuß-Umgebung](../devices/designing-for-tv.md) nicht in einer Karussellansicht dargestellt werden. Legen Sie die [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled)-Eigenschaft auf **false** fest, wenn Ihre App auf der Xbox ausgeführt wird.
 
 ## <a name="recommendations"></a>Empfehlungen
 
@@ -203,5 +203,5 @@ Das Steuerelement ist in zwei Modi verfügbar:
 
 ## <a name="related-topics"></a>Zugehörige Themen
 
-- [Pivot-Klasse](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
+- [Pivot-Klasse](/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 - [Navigationsdesigngrundlagen](../basics/navigation-basics.md)

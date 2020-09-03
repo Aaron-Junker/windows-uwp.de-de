@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP, erste App, Hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4d4ba374c68509c0378e769262afda0dae7422
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492835"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175254"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>Erstellen einer „Hello, World“- App (XAML)
 
@@ -74,7 +74,7 @@ Hier erfahren Sie Folgendes:
 
 Doppelklicken Sie zum Anzeigen und Bearbeiten einer Datei im Projekt im **Projektmappen-Explorer** auf die gewünschte Datei. Erweitern Sie eine XAML-Datei genau wie einen Ordner, um die zugeordnete Codedatei anzuzeigen. XAML-Dateien werden in einer geteilten Ansicht geöffnet, die sowohl die Entwurfsoberfläche als auch den XAML-Editor enthält.
 > [!NOTE]
-> Was ist XAML? Extensible Application Markup Language (XAML) ist die Sprache, die zum Definieren der Benutzeroberfläche Ihrer App verwendet wird. Sie kann manuell eingegeben oder mit den Visual Studio-Entwicklungstools erstellt wurden. Eine XAML-Datei verfügt über eine CodeBehind-Datei („.xaml.cs“), die die Logik enthält. Zusammen bilden XAML und CodeBehind eine vollständige Klasse. Weitere Informationen finden Sie in der [XAML-Übersicht](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview).
+> Was ist XAML? Extensible Application Markup Language (XAML) ist die Sprache, die zum Definieren der Benutzeroberfläche Ihrer App verwendet wird. Sie kann manuell eingegeben oder mit den Visual Studio-Entwicklungstools erstellt wurden. Eine XAML-Datei verfügt über eine CodeBehind-Datei („.xaml.cs“), die die Logik enthält. Zusammen bilden XAML und CodeBehind eine vollständige Klasse. Weitere Informationen finden Sie in der [XAML-Übersicht](../xaml-platform/xaml-overview.md).
 
 *„App.xaml“ und „App.xaml.cs“*
 
@@ -87,7 +87,7 @@ Doppelklicken Sie zum Anzeigen und Bearbeiten einer Datei im Projekt im **Projek
 
 -   In „MainPage.xaml“ definieren Sie die Benutzeroberfläche für Ihre App. Sie können Elemente direkt per XAML-Markup hinzufügen oder die Designtools von Visual Studio verwenden.
 -   „MainPage.xaml.cs“ ist die CodeBehind-Seite für „MainPage.xaml“. Hier fügen Sie Ihre App-Logik und Ereignishandler hinzu.
--   Zusammen definieren diese beiden Dateien im `HelloWorld`-Namespace eine neue Klasse mit dem Namen `MainPage`, die von [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) erbt.
+-   Zusammen definieren diese beiden Dateien im `HelloWorld`-Namespace eine neue Klasse mit dem Namen `MainPage`, die von [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) erbt.
 
 *Package.appxmanifest*
 -   Eine Manifestdatei, die Ihre App beschreibt (Name, Beschreibung, Kachel, Startseite usw.)
@@ -224,7 +224,7 @@ Gib nun unbedingt das **async**-Schlüsselwort in der Methodensignatur an, oder 
 
 ### <a name="what-did-we-just-do"></a>Was haben wir gerade gemacht?
 
-Dieser Code verwendet Windows-APIs zum Erstellen eines Sprachsyntheseobjekts und gibt dann zu sprechenden Text an. (Weitere Informationen zur Verwendung von SpeechSynthesis finden Sie in den Dokumenten zum [SpeechSynthesis-Namespace](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis).)
+Dieser Code verwendet Windows-APIs zum Erstellen eines Sprachsyntheseobjekts und gibt dann zu sprechenden Text an. (Weitere Informationen zur Verwendung von SpeechSynthesis finden Sie in den Dokumenten zum [SpeechSynthesis-Namespace](/uwp/api/windows.media.speechsynthesis).)
 
 Wenn Sie die App ausführen und auf die Schaltfläche klicken, sagt Ihr Computer (oder das Handy) wörtlich „Hello, World!“.
 
@@ -233,13 +233,13 @@ Wenn Sie die App ausführen und auf die Schaltfläche klicken, sagt Ihr Computer
 
 Herzlichen Glückwunsch, du hast deine erste App für Windows 10 und die UWP erstellt!
 
-Informationen dazu, wie du XAML für die Gestaltung der Steuerelemente in deiner App verwendest, findest du im [Tutorial zu Rastern](../design/layout/grid-tutorial.md). Du kannst auch direkt mit den [nächsten Schritten](learn-more.md) fortfahren.
+Informationen dazu, wie du XAML für die Gestaltung der Steuerelemente in deiner App verwendest, findest du im [Tutorial zu Rastern](../design/layout/grid-tutorial.md). Du kannst auch direkt mit den [nächsten Schritten](./create-uwp-apps.md) fortfahren.
 
 ## <a name="see-also"></a>Weitere Informationen
 
 * [Deine erste App](your-first-app.md)
-* [Veröffentlichen deiner UWP-App](https://docs.microsoft.com/windows/uwp/publish/)
-* [Anleitungen zur Entwicklung von UWP App](https://docs.microsoft.com/windows/uwp/develop/)
+* [Veröffentlichen deiner UWP-App](../publish/index.md)
+* [Anleitungen zur Entwicklung von UWP App](../develop/index.md)
 * [Codebeispiele für UWP-Entwickler](https://developer.microsoft.com/windows/samples)
 * [Was ist eine universelle Windows-App?](universal-application-platform-guide.md)
 * [Registrieren für ein Windows-Konto](sign-up.md)

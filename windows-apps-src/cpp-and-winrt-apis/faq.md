@@ -5,15 +5,15 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projektion, häufig, gestellte, fragen, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: e37f5b585554f4ec214f7f72a896545d66dde3d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296188"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170204"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>Häufig gestellte Fragen zu C++/WinRT
-Hier finden Sie Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
+Hier finden Sie Antworten auf Fragen zur Erstellung und Nutzung von Windows-Runtime-APIs mit [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 
 > [!IMPORTANT]
 > Versionshinweise zu C++/WinRT finden Sie unter [Neuerungen und Änderungen in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20).
@@ -54,7 +54,7 @@ Nur wenn die Laufzeitklasse so konzipiert ist, dass sie von außerhalb ihrer imp
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>Warum gibt der Linker den Fehler „LNK2019: Nicht aufgelöstes externes Symbol“ aus?
 Wenn es sich bei dem nicht aufgelösten Symbol um eine API aus den Windows-Namespaceheadern für die C++/WinRT-Projektion (im **WinRT**-Namespace) handelt, wird die API in einem eingebundenen Header forward-deklariert, aber ihre Definition befindet sich in einem noch nicht eingebundenen Header. Binden Sie den Header ein, der für den Namespace der API benannt ist, und führen Sie eine erneute Erstellung durch. Weitere Informationen finden Sie unter [C++/WinRT-Projektionsheader](consume-apis.md#cwinrt-projection-headers).
 
-Wenn es sich bei dem nicht aufgelösten Symbol um eine freie Windows-Runtime-Funktion (wie [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)) handelt, müssen Sie die Überbibliothek [WindowsApp.lib](/uwp/win32-and-com/win32-apis) in Ihrem Projekt explizit verknüpfen. Die C++/WinRT-Projektion hängt von einigen dieser freien Funktionen (Nicht-Memberfunktionen) und Einstiegspunkten ab. Wenn Sie eine der Projektvorlagen von [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) für Ihre Anwendung verwenden, wird `WindowsApp.lib` automatisch für Sie verknüpft. Andernfalls können Sie die Projektverknüpfungseinstellungen verwenden, um sie einzuschließen, oder dies im Quellcode festlegen.
+Wenn es sich bei dem nicht aufgelösten Symbol um eine freie Windows-Runtime-Funktion (wie [RoInitialize](/windows/desktop/api/roapi/nf-roapi-roinitialize)) handelt, müssen Sie die Überbibliothek [WindowsApp.lib](/uwp/win32-and-com/win32-apis) in Ihrem Projekt explizit verknüpfen. Die C++/WinRT-Projektion hängt von einigen dieser freien Funktionen (Nicht-Memberfunktionen) und Einstiegspunkten ab. Wenn Sie eine der Projektvorlagen von [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) für Ihre Anwendung verwenden, wird `WindowsApp.lib` automatisch für Sie verknüpft. Andernfalls können Sie die Projektverknüpfungseinstellungen verwenden, um sie einzuschließen, oder dies im Quellcode festlegen.
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -70,7 +70,7 @@ Eine mögliche Ursache ist, dass Ihre Windows Runtime-Komponente nicht geladen w
 
 ### <a name="uniform-construction"></a>Einheitliche Konstruktion
 
-Dieser Fehler kann auch auftreten, wenn Sie versuchen, eine lokal implementierte Laufzeitklasse über einen der Konstruktoren des projizierten Typs zu instanziieren (nicht über den **std::nullptr_t**-Konstruktor). Hierfür benötigen Sie das C++/WinRT-2.0-Feature, das häufig als einheitliche Konstruktion bezeichnet wird. Wenn Sie dieses Feature abonnieren möchten, finden Sie weitere Informationen und Codebeispiele unter [Aktivieren von einheitlicher Konstruktion und direktem Implementierungszugriff](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access).
+Dieser Fehler kann auch auftreten, wenn Sie versuchen, eine lokal implementierte Laufzeitklasse über einen der Konstruktoren des projizierten Typs zu instanziieren (nicht über den **std::nullptr_t**-Konstruktor). Hierfür benötigen Sie das C++/WinRT-2.0-Feature, das häufig als einheitliche Konstruktion bezeichnet wird. Wenn Sie dieses Feature abonnieren möchten, finden Sie weitere Informationen und Codebeispiele unter [Aktivieren von einheitlicher Konstruktion und direktem Implementierungszugriff](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access).
 
 Informationen zum Instanziieren von lokal implementierten Laufzeitklassen, die *keine* einheitliche Konstruktion erfordern, finden Sie unter [XAML-Steuerelemente; Binden an eine C++/WinRT-Eigenschaft](binding-property.md).
 
@@ -177,7 +177,7 @@ a.f();
 Das oben dargestellte empfohlene Muster gilt nicht nur für C++/WinRT, sondern für alle Windows-Runtime-Sprachprojektionen.
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>Wie konvertiere ich eine Zeichenfolge in einen Typ – z. B. für die Navigation?
-Am Ende des [Codebeispiels für die Navigationsansicht](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (das größtenteils in C# geschrieben ist) finden Sie einen C++/WinRT-Codeausschnitt, der zeigt, wie das geht.
+Am Ende des [Codebeispiels für die Navigationsansicht](../design/controls-and-patterns/navigationview.md#code-example) (das größtenteils in C# geschrieben ist) finden Sie einen C++/WinRT-Codeausschnitt, der zeigt, wie das geht.
 
 ## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>Wie löse ich Mehrdeutigkeiten bei „GetCurrentTime“ und/oder „TRY“ auf?
 
